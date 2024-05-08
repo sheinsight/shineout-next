@@ -7,6 +7,7 @@ import {
   CheckedStatusType,
   TreeContext,
   UpdateFunc,
+  TreeDatum,
 } from './use-tree.type';
 import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
@@ -49,7 +50,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     mode,
     active: activeProp,
     expanded: expandedProp,
-    // dataUpdate,
+    dataUpdate = true,
     defaultExpanded = [],
     defaultExpandAll,
     disabled: disabledProps,
@@ -93,7 +94,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
-    const expandeds = expanded || defaultExpanded;
+    const expandeds = expanded;
 
     if (defaultExpandAll) {
       return { active: isActive, expanded: true };
@@ -186,17 +187,17 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return { IS_NOT_MATCHED_VALUE: true, value: id };
   };
 
-  const getDataByValues = (values: KeygenResult[] | KeygenResult) => {
+  const getDataByValues = (values: KeygenResult[] | KeygenResult): DataItem | DataItem[] | null => {
     if (isArray(values)) {
-      return values.map(getDataById);
+      return values.map(getDataById) as DataItem[] | null;
     }
 
-    return getDataById(values);
+    return getDataById(values) as DataItem | null;
   };
 
   const isUnMatched = usePersistFn((data: any) => {
     return isUnMatchedData(data);
-  })
+  });
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
@@ -429,15 +430,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   }, []);
 
   useEffect(() => {
-    setValue(value);
+    if (props.datum) return;
+    if (!dataUpdate) return;
     setData(data);
   }, [data]);
 
-  const datum = useLatestObj({
+  useEffect(() => {
+    if (props.datum) return;
+    setValue(value);
+  }, [value]);
+
+  const datum: TreeDatum<DataItem> = useLatestObj({
     get,
     set,
-    childrenKey,
-    data,
     getPath,
     getValue,
     getChecked,
@@ -451,6 +456,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     bindUpdate,
     unBindUpdate,
     isUnMatched,
+    childrenKey,
+    data,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,
@@ -458,7 +465,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   return {
-    datum,
+    datum: props.datum || datum,
     expanded,
     onExpand,
   };
