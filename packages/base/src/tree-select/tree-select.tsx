@@ -358,7 +358,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
     if (!datum) return undefined as DataItem;
     const origin = datum?.getDataById(id);
-    if (!datum?.isUnMatched(origin)) {
+    if (!props.noCache && !datum?.isUnMatched(origin)) {
       context.cachedMap.set(id, origin);
     }
 
