@@ -490,7 +490,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       .map((id) => {
         return getDataById(id);
       })
-      .filter((item) => item !== underline);
+      .filter((item) => item !== undefined);
     return result;
   });
 
