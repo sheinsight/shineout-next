@@ -297,7 +297,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     e.stopPropagation();
     if (!datum) return;
     datum.setValue([]);
-    onChange([]);
+    onChange(multiple ? [] : ['']);
 
     if (onChangeAddition) {
       onChangeAddition({
