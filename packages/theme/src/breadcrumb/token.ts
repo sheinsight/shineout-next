@@ -25,7 +25,7 @@ const breadcrumbTokenDescription = {
 const breadcrumbTokenValue = {};
 
 const breadcrumbTokenExtraValue = {
-  font: { size: 'Font-14', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5', wieght: 'Weight-regular' },
   link: {
     color: 'Neutral-text-3',
     hover: {
@@ -33,9 +33,6 @@ const breadcrumbTokenExtraValue = {
     },
   },
   list: {
-    background: { color: 'Neutral-fill-1' },
-    shadow: 'Shadow-1',
-    border: { color: '#f4f5f8' },
     padding: { y: 'Spacing-4' },
     item: {
       border: {

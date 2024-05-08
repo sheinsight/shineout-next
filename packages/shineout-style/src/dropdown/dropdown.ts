@@ -130,7 +130,7 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
   itemWrapper: {},
   item: {
     display: 'block',
-    borderRadius: 4,
+    borderRadius: token.dropdownOptionBorderRadius,
     lineHeight: token.lineHeightDynamic,
     color: token.dropdownOptionFontColor,
     backgroundColor: token.dropdownOptionBackgroundColor,

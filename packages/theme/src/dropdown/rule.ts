@@ -27,6 +27,10 @@ const dropdownRules = {
     ['', 'hover', 'active', 'select', 'disabled'],
     ['background-color', 'font-color'],
   ],
+  listOptionBorder: [
+    ['option'],
+    ['border-radius'],
+  ],
   Column: [['column'], ['padding-x', 'padding-y']],
   OptionGroup: [
     ['option'],

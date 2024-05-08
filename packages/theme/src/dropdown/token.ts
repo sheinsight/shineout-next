@@ -58,6 +58,7 @@ const dropdownTokenValue = {
     active: { background: { color: 'Neutral-fill-3' }, font: { color: 'Neutral-text-5' } },
     select: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
     disabled: { background: { color: 'Neutral-fill-1' }, font: { color: 'Neutral-text-2' } },
+    border: { radius: 'Radius-default' },
     group: {
       padding: { x: 'Spacing-8', top: 'Spacing-10', bottom: 'Spacing-2' },
       font: { size: 'Font-12', color: 'Neutral-text-3' },

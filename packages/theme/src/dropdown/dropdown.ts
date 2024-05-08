@@ -38,6 +38,7 @@ const dropdownTokens: DropdownTokens = {
   dropdownOptionSelectFontColor: 'Brand-6',
   dropdownOptionDisabledBackgroundColor: 'Neutral-fill-1',
   dropdownOptionDisabledFontColor: 'Neutral-text-2',
+  dropdownOptionBorderRadius: 'Radius-default',
   dropdownColumnPaddingX: 'Spacing-4',
   dropdownColumnPaddingY: 'Spacing-4',
   dropdownOptionGroupPaddingX: 'Spacing-8',

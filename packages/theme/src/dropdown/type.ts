@@ -208,6 +208,12 @@ export interface DropdownTokens {
   dropdownOptionDisabledFontColor: string;
   /**
    * @type {string}
+   * @token Radius-default
+   * @description 下拉菜单选项边框圆角
+   */
+  dropdownOptionBorderRadius: string;
+  /**
+   * @type {string}
    * @token Spacing-4
    * @description 下拉菜单多列平铺模式下每列的内边距（水平方向）
    */
