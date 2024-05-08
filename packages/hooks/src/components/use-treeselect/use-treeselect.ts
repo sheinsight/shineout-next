@@ -1,5 +1,9 @@
+import { useMemo } from 'react';
 import { useInputAble } from '../../common/use-input-able';
+import usePersistFn from '../../common/use-persist-fn';
 import { BaseTreeSelectProps } from './use-treeselect.type';
+import { isArray } from '../../utils/is';
+import type { KeygenResult } from '../../common/type';
 
 const useTreeSelect = <DataItem, Value>(props: BaseTreeSelectProps<DataItem, Value>) => {
   const {
@@ -9,6 +13,7 @@ const useTreeSelect = <DataItem, Value>(props: BaseTreeSelectProps<DataItem, Val
     beforeChange,
     onChange: onChangeProp,
     filterSameChange,
+    multiple,
   } = props;
 
   const { value, onChange } = useInputAble({
@@ -20,9 +25,26 @@ const useTreeSelect = <DataItem, Value>(props: BaseTreeSelectProps<DataItem, Val
     filterSameChange,
   });
 
+  const valueArr = useMemo(() => {
+    if (value === undefined || value === null || value === '') return [];
+    return Array.isArray(value) ? value : [value];
+  }, [value, multiple]) as KeygenResult[];
+
+  const handleChange = usePersistFn((v: KeygenResult[], ...reset) => {
+    if (!multiple && isArray(v)) {
+      onChange?.(v[0] as Value, ...reset);
+    }
+    if (multiple && !isArray(v)) {
+      if (v === undefined || v === null) {
+        onChange?.([] as Value, ...reset);
+      } else onChange?.([v] as Value, ...reset);
+    }
+    onChange?.(v as Value, ...reset);
+  });
+
   return {
-    value,
-    onChange,
+    value: valueArr,
+    onChange: handleChange,
   };
 };
 

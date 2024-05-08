@@ -10,7 +10,7 @@ import { ChangeType, InputAbleProps } from './use-Input-able.type';
 export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbleProps<T, V>) {
   const { value: valuePo, onChange, control, beforeChange, delay } = props;
 
-  const [stateValue, changeStateValue] = useState<T | undefined>(props.value || props.defaultValue);
+  const [stateValue, changeStateValue] = useState<T | undefined>(props.value ?? props.defaultValue);
 
   const { current: context } = useRef<{
     timer: NodeJS.Timeout | null;
