@@ -30,23 +30,23 @@ const formTokenValue = {};
 
 const formTokenExtraValue = {
   item: {
-    font: { size: '14/regular', color: 'Neutral-text-5' },
+    font: { size: 'Font-14', color: 'Neutral-text-5' },
     margin: {
-      y: { end: 'Margin-12' },
-      x: { end: 'Margin-16' },
+      y: { end: 'Spacing-12' },
+      x: { end: 'Spacing-16' },
     },
     label: {
       width: '140px',
-      padding: { y: 'Padding-5' },
-      margin: { x: { end: 'Margin-8' } },
+      padding: { y: 'Spacing-5' },
+      margin: { x: { end: 'Spacing-8' } },
     },
     danger: {
       color: 'Danger-6',
     },
     tip: {
-      min: { height: '20px' },
+      min: { height: 'Size-10' },
       font: {
-        size: '12/regular',
+        size: 'Font-12',
         color: 'Neutral-text-3',
       },
     },

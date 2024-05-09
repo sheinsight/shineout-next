@@ -1,9 +1,11 @@
 import Token from '../token/token';
-import { Tokens } from '../token/type';
-import { replaceNonAlphanumeric } from '../utils/css-var';
+import { Tokens as BaseToken } from '../token/type';
+import { ThemeTokens } from '../index';
+import { camelCaseToDash } from '../utils/css-var';
 import { getConfig } from '../config';
 import hash from './hash';
 
+export type Tokens = BaseToken & ThemeTokens;
 export interface Attributes {
   [key: string]: any;
 }
@@ -74,6 +76,10 @@ const getExtraToken = (prefix: string) => {
 
 const replaceCssVarValue = (innerHTML: string, cssvar: string, targetValue?: string) => {
   const regex = new RegExp(`(${cssvar}:.*?;)`);
+  // 如果没有 token ，则向后插入新的 token
+  if (innerHTML.indexOf(cssvar) === -1) {
+    return innerHTML.slice(0, -1) + `;${cssvar}: ${targetValue};` + innerHTML.slice(-1);
+  }
   return innerHTML.replace(regex, `${cssvar}: ${targetValue};`);
 };
 
@@ -97,12 +103,12 @@ const setToken = (options?: Options) => {
 
   const tag: HTMLElement = cacheTag || document.createElement(tagName);
   const tokens: string[] = [];
-  const defaultToken = token || Token;
+  const defaultToken = (token || Token) as Tokens;
   const extraToken = getExtraToken(prefix);
 
   if (update && token) {
     Object.keys(token).forEach((key: string) => {
-      const cssvar = `--${prefix}-${replaceNonAlphanumeric(key)}`;
+      const cssvar = `--${prefix}-${camelCaseToDash(key)}`;
       const targetValue = token[key as keyof Tokens];
       tag.innerHTML = replaceCssVarValue(tag.innerHTML, cssvar, targetValue);
     });
@@ -114,16 +120,12 @@ const setToken = (options?: Options) => {
     Object.keys(defaultToken)
       .filter((item) => (customExtraToken || ['Brand-6', 'Neutral-6']).includes(item))
       .forEach((key: string) => {
-        const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${
-          defaultToken[key as keyof Tokens]
-        }`;
+        const token = `--${prefix}-${camelCaseToDash(key)}:${defaultToken[key as keyof Tokens]}`;
         tokens.push(token);
       });
   } else {
     Object.keys(defaultToken).forEach((key: string) => {
-      const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${
-        defaultToken[key as keyof Tokens]
-      }`;
+      const token = `--${prefix}-${camelCaseToDash(key)}:${defaultToken[key as keyof Tokens]}`;
       tokens.push(token);
     });
   }

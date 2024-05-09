@@ -16,7 +16,7 @@ const emptyTokenDescription = { empty: '空状态' };
  * 注意，该映射表的内容不与 emptyRules 强关联，非 emptyRules 规则内的 token 需手动增加或删减。
  */
 const emptyTokenValue = {
-  font: { size: '14/regular', color: 'Neutral-text-3' },
+  font: { size: 'Font-14', color: 'Neutral-text-3' },
 };
 
 const emptyTokenExtraValue = {};

@@ -4,15 +4,15 @@
 import { UploadTokens } from './type';
 
 const uploadTokens: UploadTokens = {
-  uploadResultPaddingX: 'Padding-16',
-  uploadResultPaddingY: 'Padding-5',
+  uploadResultPaddingX: 'Spacing-16',
+  uploadResultPaddingY: 'Spacing-5',
   uploadResultBackgroundColor: 'Neutral-fill-2',
-  uploadResultGap: 'Margin-4',
-  uploadResultMarginY: 'Margin-8',
+  uploadResultGap: 'Spacing-4',
+  uploadResultMarginY: 'Spacing-8',
   uploadResultIconSize: 'Size-7',
   uploadResultIconColor: 'Neutral-text-4',
   uploadResultIconHoverBackgroundColor: 'Neutral-fill-2',
-  uploadResultFontSize: '14/regular',
+  uploadResultFontSize: 'Font-14',
   uploadResultFontColor: 'Neutral-text-5',
   uploadResultBorderRadius: 'Radius-4',
   uploadResultErrorFontColor: 'Danger-6',
@@ -41,8 +41,8 @@ const uploadTokens: UploadTokens = {
   uploadImageResultErrorBorderColor: 'Danger-6',
   uploadImageResultErrorFontColor: 'Danger-6',
   uploadImageResultTipBackgroundColor: 'Neutral-fill-1',
-  uploadImageResultTipFontSize: '12/regular',
-  uploadFontSize: '14/regular',
+  uploadImageResultTipFontSize: 'Font-12',
+  uploadFontSize: 'Font-14',
 };
 
 export default uploadTokens;

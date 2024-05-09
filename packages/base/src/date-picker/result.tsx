@@ -1,4 +1,5 @@
-import { DatePickerProps, getLocale, useConfig } from '@sheinx/base';
+import { getLocale, useConfig } from '../config';
+import { DatePickerProps } from './date-picker.type';
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 

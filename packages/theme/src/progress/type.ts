@@ -4,7 +4,7 @@
 export interface ProgressTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 进度条字体字号
    */
   progressFontSize: string;
@@ -52,7 +52,7 @@ export interface ProgressTokens {
   progressLineHeight: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 进度条行间距
    */
   progressLineGap: string;
@@ -64,13 +64,13 @@ export interface ProgressTokens {
   progressLineInnerHeight: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 进度条行内嵌文案模式间距
    */
   progressLineInnerGap: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 进度条行内嵌文案模式内边距（水平方向）
    */
   progressLineInnerPaddingX: string;
@@ -82,7 +82,7 @@ export interface ProgressTokens {
   progressLineInnerFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 进度条行内嵌文案模式字体字号
    */
   progressLineInnerFontSize: string;

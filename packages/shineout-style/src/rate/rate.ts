@@ -71,7 +71,8 @@ const rateStyle: JsStyles<RateClassType> = {
   itemHalf: {
     position: 'absolute',
     top: 0,
-    left: 0,
+    '&[dir=ltr]': { left: 0 },
+    '&[dir=rtl]': { right: 0 },
     bottom: 0,
     overflow: 'hidden',
     width: '50%',

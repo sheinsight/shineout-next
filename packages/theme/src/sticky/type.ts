@@ -4,7 +4,7 @@
 export interface StickyTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 附着字体字号
    */
   stickyFontSize: string;

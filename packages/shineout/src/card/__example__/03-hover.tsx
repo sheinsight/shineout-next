@@ -50,7 +50,7 @@ const HoverCard: React.FC<{ className?: string }> = (props) => (
       <div style={{ display: 'flex' }}>
         <div
           style={{
-            marginRight: 8,
+            marginInlineEnd: 8,
             ...iconStyle,
           }}
         >
@@ -69,7 +69,7 @@ const HoverCard: React.FC<{ className?: string }> = (props) => (
         </div>
         <div
           style={{
-            marginRight: 8,
+            marginInlineEnd: 8,
             ...iconStyle,
           }}
         >

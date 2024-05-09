@@ -4,13 +4,7 @@
 export interface CascaderTokens {
   /**
    * @type {string}
-   * @token Size-120
-   * @description 级联选择器宽度
-   */
-  cascaderWidth: string;
-  /**
-   * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 级联选择器字体字号
    */
   cascaderFontSize: string;
@@ -34,13 +28,13 @@ export interface CascaderTokens {
   cascaderBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器内边距（水平方向）
    */
   cascaderPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 级联选择器内边距（垂直方向）
    */
   cascaderPaddingY: string;
@@ -58,79 +52,79 @@ export interface CascaderTokens {
   cascaderIconColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 级联选择器小尺寸字体字号
    */
   cascaderSmallFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器小尺寸内边距（水平方向）
    */
   cascaderSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 级联选择器小尺寸内边距（垂直方向）
    */
   cascaderSmallPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器小尺寸选项内部容器的内边距（水平方向）
    */
   cascaderSmallOptionInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 级联选择器小尺寸选项内部容器的内边距（垂直方向）
    */
   cascaderSmallOptionInnerPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 级联选择器大尺寸字体字号
    */
   cascaderLargeFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 级联选择器大尺寸内边距（水平方向）
    */
   cascaderLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-3
+   * @token Spacing-3
    * @description 级联选择器大尺寸内边距（垂直方向）
    */
   cascaderLargePaddingY: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 级联选择器大尺寸选项内部容器的内边距（水平方向）
    */
   cascaderLargeOptionInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器大尺寸选项内部容器的内边距（垂直方向）
    */
   cascaderLargeOptionInnerPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 级联选择器大尺寸占位符外边距（垂直方向）
    */
   cascaderLargePlaceholderMarginY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器内部容器的内边距（水平方向）
    */
   cascaderInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 级联选择器内部容器的内边距（垂直方向）
    */
   cascaderInnerPaddingY: string;
@@ -142,7 +136,7 @@ export interface CascaderTokens {
   cascaderPlaceholderColor: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 级联选择器占位符外边距（垂直方向）
    */
   cascaderPlaceholderMarginY: string;
@@ -160,7 +154,7 @@ export interface CascaderTokens {
   cascaderClearColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器清除按钮的内边距
    */
   cascaderClearPadding: string;
@@ -226,19 +220,19 @@ export interface CascaderTokens {
   cascaderResultTextBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 级联选择器展示框文本内边距（水平方向）
    */
   cascaderResultTextPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 级联选择器展示框文本小尺寸内边距（水平方向）
    */
   cascaderResultTextSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-10
+   * @token Spacing-10
    * @description 级联选择器展示框文本大尺寸内边距（水平方向）
    */
   cascaderResultTextLargePaddingX: string;
@@ -316,13 +310,13 @@ export interface CascaderTokens {
   cascaderOptionHeight: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 级联选择器选项内边距（水平方向）
    */
   cascaderOptionPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 级联选择器选项内边距（垂直方向）
    */
   cascaderOptionPaddingY: string;
@@ -340,13 +334,13 @@ export interface CascaderTokens {
   cascaderOptionActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器选项内部容器的内边距（水平方向）
    */
   cascaderOptionInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 级联选择器选项内部容器的内边距（垂直方向）
    */
   cascaderOptionInnerPaddingY: string;
@@ -388,19 +382,19 @@ export interface CascaderTokens {
   cascaderOptionDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 级联选择器折叠内容的内边距（水平方向）
    */
   cascaderMorePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-14
+   * @token Spacing-14
    * @description 级联选择器折叠内容的内边距（垂直方向）
    */
   cascaderMorePaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器列表头部的内边距
    */
   cascaderHeaderPadding: string;
@@ -418,31 +412,31 @@ export interface CascaderTokens {
   cascaderGroupTitleFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 级联选择器分组标题的字体字号
    */
   cascaderGroupTitleFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 级联选择器分组标题的内边距（水平方向）
    */
   cascaderGroupTitlePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-6
+   * @token Spacing-6
    * @description 级联选择器分组标题的内边距（垂直方向）
    */
   cascaderGroupTitlePaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 级联选择器多列模式下内边距
    */
   cascaderColumnPadding: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 级联选择器多列模式下选项外边距
    */
   cascaderColumnOptionMargin: string;

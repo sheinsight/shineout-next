@@ -4,7 +4,7 @@
 export interface DividerTokens {
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 分割线字体字号
    */
   dividerFontSize: string;
@@ -28,19 +28,19 @@ export interface DividerTokens {
   dividerBorderWidth: string;
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 分割线水平模式外边距（垂直方向）
    */
   dividerHorizontalMarginY: string;
   /**
    * @type {string}
-   * @token Margin-16
+   * @token Spacing-16
    * @description 分割线水平模式带文字外边距（垂直方向）
    */
   dividerHorizontalTextMarginY: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 分割线垂直模式外边距（水平方向）
    */
   dividerVerticalMarginX: string;

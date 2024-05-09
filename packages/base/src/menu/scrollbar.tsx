@@ -96,6 +96,7 @@ const Scrollbar = (props: ScrollbarProps) => {
         props.direction === 'y' && classes?.scrollbarY,
         isDragging && classes?.scrollbarDragging,
       )}
+      dir={config.direction}
       onClick={handleBgClick}
     >
       <div className={classes?.scrolbarHandler} onMouseDown={handleMouseDown} style={style} />

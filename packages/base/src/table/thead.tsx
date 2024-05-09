@@ -5,6 +5,7 @@ import type { TableFormatColumn, TableHeadColumn, TableGroupColumn } from '@shei
 import Icons from '../icons';
 import classNames from 'classnames';
 import Checkbox from '../checkbox';
+import { useConfig } from '../config';
 
 export default (props: TheadProps) => {
   const { colgroup = [], sortInfo, onSorterChange, showSelectAll = true } = props;
@@ -13,6 +14,8 @@ export default (props: TheadProps) => {
     columns: props.columns,
     bordered: props.bordered,
   });
+
+  const config = useConfig();
 
   const { current: context } = useRef({ dragIndex: -1 });
 
@@ -51,7 +54,7 @@ export default (props: TheadProps) => {
     const isCustomRender = props.renderSorter && typeof props.renderSorter === 'function';
 
     return (
-      <div className={tableClasses?.sorterContainer}>
+      <div className={tableClasses?.sorterContainer} dir={config.direction}>
         {isCustomRender ? (
           props.renderSorter!({
             status: currentOrder,
@@ -101,6 +104,7 @@ export default (props: TheadProps) => {
           context.dragIndex = index;
           startDrag(e);
         }}
+        dir={config.direction}
       />
     );
   };
@@ -125,7 +129,7 @@ export default (props: TheadProps) => {
     if (fixed === 'right') {
       if (props.fixRightNum !== undefined) {
         return {
-          transform: `translate3d(-${props.fixRightNum}px, 0, 0)`,
+          transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
       const right = colgroup.slice(index + colSpan).reduce((a, b) => (a || 0) + (b || 0), 0);
@@ -154,6 +158,7 @@ export default (props: TheadProps) => {
       col.fixed === 'right' && tableClasses?.cellFixedRight,
       colTemp.align === 'center' && tableClasses?.cellAlignCenter,
       colTemp.align === 'right' && tableClasses?.cellAlignRight,
+      colTemp.align !== 'right' && colTemp.align !== 'center' && tableClasses?.cellAlignLeft,
       (col.lastFixed || col.firstFixed) && tableClasses?.cellFixedLast,
       isLast && tableClasses?.cellIgnoreBorder,
     );
@@ -167,6 +172,7 @@ export default (props: TheadProps) => {
           rowSpan={columnLevel - level + 1}
           key={col.key}
           style={fixedStyle}
+          dir={config.direction}
         >
           <div className={classNames(sorter && tableClasses?.hasSorter)}>
             {renderTitle(colTemp.title)}
@@ -180,7 +186,13 @@ export default (props: TheadProps) => {
 
     if (colTemp.type === 'checkbox') {
       trs[level].push(
-        <th className={cellClassName} key='checkbox' rowSpan={trs.length} style={fixedStyle}>
+        <th
+          className={cellClassName}
+          key='checkbox'
+          rowSpan={trs.length}
+          style={fixedStyle}
+          dir={config.direction}
+        >
           {showSelectAll && (
             <div style={{ lineHeight: 1, verticalAlign: 'middle' }}>
               {props.radio ? null : (
@@ -220,6 +232,7 @@ export default (props: TheadProps) => {
         style={style}
         key={colTemp2.key}
         colSpan={colTemp2.colSpan}
+        dir={config.direction}
       >
         <div>{colTemp2.name}</div>
       </th>,

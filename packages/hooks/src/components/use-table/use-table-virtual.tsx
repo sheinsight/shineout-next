@@ -9,6 +9,8 @@ interface UseTableVirtualProps {
   scrollRef: React.RefObject<HTMLDivElement>;
   innerRef: React.RefObject<HTMLDivElement>;
   scrollLeft?: number;
+  disabled?: boolean;
+  isRtl?: boolean;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -37,13 +39,17 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     if (t < 0) {
       t = 0;
     }
-    if (l < 0) {
+    if (!props.isRtl && l < 0) {
       l = 0;
     }
-    return `translate3d(-${l}px, -${t}px, 0)`;
+    if (props.isRtl && l > 0) {
+      l = 0;
+    }
+    return `translate3d(${0 - l}px, ${0 - t}px, 0)`;
   });
 
   const getContentHeight = (index: number) => {
+    if (props.disabled) return 0;
     let sum = 0;
     for (let i = 0; i <= index; i++) {
       sum += context.cachedHeight[i] || props.rowHeight;
@@ -52,6 +58,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   };
 
   const setRowHeight = usePersistFn((index: number, height: number) => {
+    if (props.disabled) return;
     const beforeHeight = context.cachedHeight[index];
     if (beforeHeight && beforeHeight === height) return;
 
@@ -69,6 +76,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   });
 
   const updateIndexAndTopFromTop = (scrollTop: number) => {
+    if (props.disabled) return;
     let sum = 0;
     let currentIndex = 0;
     let top = 0;
@@ -89,6 +97,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   };
 
   const updateRateScroll = usePersistFn((rate: number) => {
+    if (props.disabled) return;
     const { scrollRef } = props;
     const sumHeight = getContentHeight(props.data.length - 1);
     if (sumHeight === scrollHeight) return;
@@ -121,6 +130,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     const { scrollLeft, height, y, fromDrag } = info;
     let { scrollTop } = info;
     setLeft(scrollLeft);
+    if (props.disabled) {
+      setTop(scrollTop);
+      return;
+    }
     context.shouldUpdateHeight = !fromDrag;
     const sumHeight = getContentHeight(props.data.length - 1);
     const max = sumHeight - height;
@@ -128,13 +141,13 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       scrollTop = max;
     }
     // 拖动滚动条后保持滚动位置
-    if (context.controlScrollRate !== null) {
-      const top = context.controlScrollRate * max;
-      updateIndexAndTopFromTop(top);
-      updateRateScroll(context.controlScrollRate);
-      context.controlScrollRate = null;
-      return;
-    }
+    // if (context.controlScrollRate !== null) {
+    //   const top = context.controlScrollRate * max;
+    //   updateIndexAndTopFromTop(top);
+    //   updateRateScroll(context.controlScrollRate);
+    //   context.controlScrollRate = null;
+    //   return;
+    // }
     // 拖动滚动条
     if (fromDrag) {
       const top = y * max;
@@ -149,6 +162,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   };
 
   const scrollToIndex = usePersistFn((index: number) => {
+    if (props.disabled) return;
     if (props.scrollRef.current) {
       context.shouldUpdateHeight = true;
       const i = Math.max(0, Math.min(index, props.data.length - 1));
@@ -164,6 +178,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   });
 
   useEffect(() => {
+    if (props.disabled) return;
     if (offsetY) {
       if (props.scrollRef.current && props.innerRef.current) {
         setOffsetY(0);
@@ -174,10 +189,12 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   }, [offsetY, startIndex]);
 
   useEffect(() => {
+    if (props.disabled) return;
     setHeight(getContentHeight(props.data.length - 1));
   }, [props.data.length]);
 
   useEffect(() => {
+    if (props.disabled) return;
     if (context.heightCallback) {
       const cb = context.heightCallback;
       context.heightCallback = null;
@@ -185,7 +202,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   }, [scrollHeight]);
 
-  const renderData = [...props.data].slice(startIndex, startIndex + rowsInView);
+  const renderData = props.disabled
+    ? props.data
+    : [...props.data].slice(startIndex, startIndex + rowsInView);
 
   return {
     scrollHeight,

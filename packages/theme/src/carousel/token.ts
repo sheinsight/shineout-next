@@ -24,11 +24,11 @@ const carouselTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 carouselRules 强关联，非 carouselRules 规则内的 token 需手动增加或删减。
  */
-const carouselTokenValue = { font: { size: '14/regular' } };
+const carouselTokenValue = { font: { size: 'Font-14' } };
 
 const carouselTokenExtraValue = {
   arrow: {
-    margin: 'Margin-18',
+    margin: 'Spacing-18',
     size: 'Size-12',
     icon: { size: 'Size-10' },
     background: { color: 'rgba(255, 255, 255, 0.2)' },
@@ -40,10 +40,10 @@ const carouselTokenExtraValue = {
     background: { color: 'Neutral-fill-4' },
     active: { background: { color: 'Neutral-fill-1' } },
     wrapper: { height: 'Size-20' },
-    circle: { width: 'Size-3', gap: 'Margin-8' },
-    line: { width: 'Size-6', height: 'Size-2', gap: 'Margin-4' },
+    circle: { width: 'Size-3', gap: 'Spacing-8' },
+    line: { width: 'Size-6', height: 'Size-2', gap: 'Spacing-4' },
     arrow: { size: 'Size-8', color: 'Neutral-fill-4', hover: { color: 'Neutral-fill-1' } },
-    number: { color: 'Neutral-fill-1', font: { size: '14/regular' } },
+    number: { color: 'Neutral-fill-1', font: { size: 'Font-14' } },
     outer: {
       background: { color: 'Neutral-fill-4' },
       active: { background: { color: 'Neutral-fill-6' } },

@@ -20,7 +20,7 @@ export default () => {
     <div style={styleAbsolute}>
       <Select width={120} keygen data={data} placeholder='default' clearable />
       <Select
-        style={{ marginLeft: 16 }}
+        style={{ marginInlineStart: 16 }}
         width={300}
         absolute
         multiple

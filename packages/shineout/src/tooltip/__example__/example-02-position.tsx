@@ -22,7 +22,7 @@ const positions: Array<PopoverPosition[]> = [
 
 const style: React.CSSProperties = {
   margin: 4,
-  width: 100,
+  width: 110,
   display: 'inline-block',
 };
 

@@ -1,3 +1,10 @@
+## 3.1.0
+2024-05-09
+
+### 💅 Style
+
+- `Form.Item` 增加 `min-width: 0` 样式 ([#419](https://github.com/sheinsight/shineout-next/pull/419))
+
 ## 3.0.9
 2024-04-26
 

@@ -10,13 +10,13 @@ export interface SpinTokens {
   spinTipFontColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 加载动画垂直模式下与提示文字的外边距
    */
   spinVerticalMargin: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 加载动画水平模式下与提示文字的外边距
    */
   spinHorizontalMargin: string;

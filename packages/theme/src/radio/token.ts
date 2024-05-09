@@ -29,11 +29,11 @@ const radioTokenDescription = {
 const radioTokenValue = {};
 
 const radioTokenExtraValue = {
-  gap: 'Margin-24',
-  block: { gap: 'Margin-12' },
+  gap: 'Spacing-24',
+  block: { gap: 'Spacing-12' },
   icon: {
     width: 'Size-7',
-    gap: 'Margin-8',
+    gap: 'Spacing-8',
     border: { width: 'Border-2' },
     inner: { size: 'Size-3' },
     background: { color: 'Neutral-fill-1' },
@@ -47,19 +47,19 @@ const radioTokenExtraValue = {
     },
     wrapper: { fill: 'Neutral-fill-2', dark: 'Neutral-fill-3' },
   },
-  padding: { y: 'Padding-4' },
+  padding: { y: 'Spacing-4' },
   small: {
     icon: { width: 'Size-6', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },
-    label: { font: { size: '12/regular' } },
-    padding: { y: 'Padding-1' },
+    label: { font: { size: 'Font-12' } },
+    padding: { y: 'Spacing-1' },
   },
   large: {
-    icon: { width: 'Size-8', gap: '', border: { width: 'Border-2' }, inner: { size: 'Size-3.5' } },
-    label: { font: { size: '16/regular' } },
-    padding: { y: 'Padding-7' },
+    icon: { width: 'Size-8', gap: '', border: { width: 'Border-2' } },
+    label: { font: { size: 'Font-16' } },
+    padding: { y: 'Spacing-7' },
   },
   label: {
-    font: { color: 'Neutral-text-5', size: '14/regular' },
+    font: { color: 'Neutral-text-5', size: 'Font-14' },
     disabled: { font: { color: 'Neutral-text-2' } },
   },
 };

@@ -2,6 +2,7 @@ import { usePersistFn, usePopup, useRender, util } from '@sheinx/hooks';
 import AbsoluteList from '../absolute-list';
 import React, { useEffect } from 'react';
 import { PopoverProps } from './popover.type';
+import { useConfig } from '../config';
 import classNames from 'classnames';
 
 const Popover = (props: PopoverProps) => {
@@ -18,6 +19,8 @@ const Popover = (props: PopoverProps) => {
     zIndex = 1060,
   } = props;
   const { current: context } = React.useRef({ rendered: false });
+
+  const config = useConfig();
 
   const popoverStyle = jssStyle?.popover?.();
 
@@ -133,6 +136,7 @@ const Popover = (props: PopoverProps) => {
         {...util.getDataAttribute({ position, type })}
         ref={popupRef}
         onMouseLeave={events.onMouseLeave}
+        dir={config.direction}
       >
         {showArrow && <div className={popoverStyle?.arrow} />}
         <div

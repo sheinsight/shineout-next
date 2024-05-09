@@ -75,9 +75,6 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
       width: `${100 / colNum}%`,
       ...props.itemStyle,
     };
-    if (props.fixed) {
-      listStyle.height = lineHeight;
-    }
 
     return (
       <div key={key} className={classNames(listClasses?.item, rowClass)} style={listStyle}>
@@ -108,7 +105,11 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
 
   const renderColumn = usePersistFn((columnData: DataItem[], columnIndex: number) => {
     return (
-      <div key={columnIndex} className={listClasses?.row}>
+      <div
+        key={columnIndex}
+        className={listClasses?.row}
+        style={{ height: props.fixed ? lineHeight : 'auto' }}
+      >
         {columnData.map((item, rowIndex) => {
           const index = rowIndex + columnIndex * colNum;
           return renderItem(item, index);
@@ -146,7 +147,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     if (typeof scrollLoading !== 'function') return;
     const scrollTop = e.currentTarget.scrollTop;
     if (!scrollTop) return;
-    const isEnd = scrollTop + e.currentTarget.clientHeight >= e.currentTarget.scrollHeight;
+    const isEnd = e.currentTarget.scrollHeight - scrollTop - e.currentTarget.clientHeight < 1;
     if (isEnd) {
       scrollLoading();
     }

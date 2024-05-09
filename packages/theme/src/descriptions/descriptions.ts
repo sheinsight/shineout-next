@@ -4,17 +4,17 @@
 import { DescriptionsTokens } from './type';
 
 const descriptionsTokens: DescriptionsTokens = {
-  descriptionsTitlePaddingBottom: 'Padding-12',
-  descriptionsLabelPaddingBottom: 'Padding-12',
-  descriptionsLabelPaddingRight: 'Padding-8',
-  descriptionsValuePaddingBottom: 'Padding-12',
-  descriptionsTitleSmallSize: '14/medium',
-  descriptionsTitleDefaultSize: '16/medium',
-  descriptionsTitleLargeSize: '18/medium',
+  descriptionsTitlePaddingBottom: 'Spacing-12',
+  descriptionsLabelPaddingBottom: 'Spacing-12',
+  descriptionsLabelPaddingRight: 'Spacing-8',
+  descriptionsValuePaddingBottom: 'Spacing-12',
+  descriptionsTitleSmallSize: 'Font-14',
+  descriptionsTitleDefaultSize: 'Font-16',
+  descriptionsTitleLargeSize: 'Font-18',
   descriptionsBorderDefaultSize: '1px',
-  descriptionsFontSmallSize: '12/regular',
-  descriptionsFontDefaultSize: '14/regular',
-  descriptionsFontLargeSize: '16/regular',
+  descriptionsFontSmallSize: 'Font-12',
+  descriptionsFontDefaultSize: 'Font-14',
+  descriptionsFontLargeSize: 'Font-16',
   descriptionsLabelColor: 'Neutral-text-4',
   descriptionsValueColor: 'Neutral-text-5',
   descriptionsTitleColor: 'Neutral-text-5',
@@ -25,10 +25,10 @@ const descriptionsTokens: DescriptionsTokens = {
   descriptionsBorderRadius: 'Size-2',
   descriptionsBorderRightSize: '1px',
   descriptionsBorderBottomSize: '1px',
-  descriptionsBorderPaddingX: 'Padding-8',
-  descriptionsBorderPaddingY: 'Padding-12',
-  descriptionsInlineBorderPaddingX: 'Padding-8',
-  descriptionsInlineBorderPaddingY: 'Padding-12',
+  descriptionsBorderPaddingX: 'Spacing-8',
+  descriptionsBorderPaddingY: 'Spacing-12',
+  descriptionsInlineBorderPaddingX: 'Spacing-8',
+  descriptionsInlineBorderPaddingY: 'Spacing-12',
 };
 
 export default descriptionsTokens;

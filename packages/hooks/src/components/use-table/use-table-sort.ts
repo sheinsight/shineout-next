@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { usePersistFn } from '@sheinx/hooks';
+import usePersistFn from '../../common/use-persist-fn';
 import { TableColumnItem, TableFormatColumn, BaseTableProps } from './use-table.type';
 import { isObject, isFunc } from '../../utils/is';
 import { KeygenResult } from '../../common/type';

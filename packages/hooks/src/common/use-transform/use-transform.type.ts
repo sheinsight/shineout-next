@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 export interface UseTransformProps {
   /**
    * 滚动方向
@@ -19,4 +19,5 @@ export interface UseTransformProps {
    * 监听滚动
    */
   autoScroll?: boolean;
+  isRtl?: boolean;
 }

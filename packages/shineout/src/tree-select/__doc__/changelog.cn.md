@@ -1,7 +1,18 @@
+## 3.1.0
+2024-05-09
+
+### 🆕 Feature
+- `TreeSelect` 属性 `loader` 支持返回 Promise 来关闭加载状态 ([#417](https://github.com/sheinsight/shineout-next/pull/417))
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` 初次渲染时 `compressed` 没有生效的问题 ([#411](https://github.com/sheinsight/shineout-next/pull/411))
+
 ## 3.0.11
 2024-05-08
 
 ### 🐞 BugFix
+
 - 修复 `TreeSelect` 在多选模式下，进行过滤后选择新项会导致原有选择项被覆盖的问题 ([#411](https://github.com/sheinsight/shineout-next/pull/411))
 - 修复 `TreeSelect` 组件在渲染未匹配数据时可能出现的数据重复和无法删除的问题 ([#412](https://github.com/sheinsight/shineout-next/pull/412))
 

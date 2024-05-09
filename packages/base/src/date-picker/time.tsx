@@ -3,7 +3,7 @@ import { TimeProps } from './time.type';
 import { usePersistFn, useResize, useTimePick } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Button from '../button';
-import { getLocale, useConfig } from '@sheinx/base';
+import { getLocale, useConfig } from '../config';
 import PickerTitle from './pickerTitle';
 
 const TimeScroll = (props: {
@@ -102,7 +102,7 @@ const TimeScroll = (props: {
 
 const Time = (props: TimeProps) => {
   const styles = props.jssStyle?.datePicker?.();
-  const { locale } = useConfig();
+  const { locale, direction } = useConfig();
   const onChange = usePersistFn((date) => {
     props.setCurrent(date, 'time');
     props.onChange(date, true);
@@ -134,7 +134,7 @@ const Time = (props: TimeProps) => {
 
     if (!showRight) return null;
     return (
-      <div className={styles?.pickerFooter}>
+      <div className={styles?.pickerFooter} dir={direction}>
         {showRight && (
           <div className={styles?.pickerFooterRight}>
             <Button
@@ -156,6 +156,7 @@ const Time = (props: TimeProps) => {
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
       className={classNames(styles?.timePicker, styles?.picker)}
+      dir={direction}
     >
       {props.showTitle && <PickerTitle position={props.position} jssStyle={props.jssStyle} />}
       <div className={styles?.pickerBody}>

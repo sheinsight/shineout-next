@@ -33,25 +33,25 @@ const dropdownTokenDescription = {
 const dropdownTokenValue = {
   list: {
     border: { radius: 'Radius-4', color: 'Neutral-border-1', width: 'Border-1' },
-    padding: { x: 'Padding-4', y: 'Padding-4' },
-    font: { size: '14/regular', color: 'Neutral-text-5' },
+    padding: { x: 'Spacing-4', y: 'Spacing-4' },
+    font: { size: 'Font-14', color: 'Neutral-text-5' },
     small: {
       border: { radius: 'Radius-4' },
-      padding: { x: 'Padding-4', y: 'Padding-4' },
-      font: { size: '12/regular' },
+      padding: { x: 'Spacing-4', y: 'Spacing-4' },
+      font: { size: 'Font-12' },
     },
     large: {
       border: { radius: 'Radius-4' },
-      padding: { x: 'Padding-4', y: 'Padding-4' },
-      font: { size: '16/regular' },
+      padding: { x: 'Spacing-4', y: 'Spacing-4' },
+      font: { size: 'Font-16' },
     },
     background: { color: 'Neutral-fill-1' },
     box: { shadow: 'Shadow-2' },
   },
   option: {
-    padding: { x: 'Padding-8', y: 'Padding-5' },
-    small: { padding: { x: 'Padding-8', y: 'Padding-2' } },
-    large: { padding: { x: 'Padding-12', y: 'Padding-8' } },
+    padding: { x: 'Spacing-8', y: 'Spacing-5' },
+    small: { padding: { x: 'Spacing-8', y: 'Spacing-2' } },
+    large: { padding: { x: 'Spacing-12', y: 'Spacing-8' } },
     background: { color: 'Neutral-fill-1' },
     font: { color: 'Neutral-text-5' },
     hover: { background: { color: 'Neutral-fill-2' }, font: { color: 'Neutral-text-5' } },
@@ -59,21 +59,21 @@ const dropdownTokenValue = {
     select: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
     disabled: { background: { color: 'Neutral-fill-1' }, font: { color: 'Neutral-text-2' } },
     group: {
-      padding: { x: 'Padding-8', top: 'Padding-10', bottom: 'Padding-2' },
-      font: { size: '12/regular', color: 'Neutral-text-3' },
-      small: { x: 'Padding-8', top: 'Padding-4', bottom: '' },
-      large: { x: 'Padding-12', top: 'Padding-14', bottom: 'Padding-4' },
+      padding: { x: 'Spacing-8', top: 'Spacing-10', bottom: 'Spacing-2' },
+      font: { size: 'Font-12', color: 'Neutral-text-3' },
+      small: { x: 'Spacing-8', top: 'Spacing-4', bottom: '' },
+      large: { x: 'Spacing-12', top: 'Spacing-14', bottom: 'Spacing-4' },
     },
     divider: {
       background: { color: 'Neutral-border-1' },
-      padding: { x: 'Padding-8', y: 'Padding-2' },
+      padding: { x: 'Spacing-8', y: 'Spacing-2' },
       height: 'Border-1',
     },
   },
-  column: { padding: { x: 'Padding-4', y: 'Padding-4' } },
+  column: { padding: { x: 'Spacing-4', y: 'Spacing-4' } },
 };
 
-const dropdownTokenExtraValue = { caret: { margin: { left: 'Margin-4' } } };
+const dropdownTokenExtraValue = { caret: { margin: { left: 'Spacing-4' } } };
 
 module.exports = {
   dropdownTokenValue,

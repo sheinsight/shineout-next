@@ -16,7 +16,7 @@ export interface CheckboxTokens {
   checkboxIconBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 单选框图标边框圆角
    */
   checkboxIconBorderRadius: string;
@@ -106,7 +106,7 @@ export interface CheckboxTokens {
   checkboxIconCheckedDisabledColor: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 单选框图标间距
    */
   checkboxIconGap: string;
@@ -124,13 +124,19 @@ export interface CheckboxTokens {
   checkboxIconCircleDark: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 单选框字体字重
+   */
+  checkboxFontWeight: string;
+  /**
+   * @type {string}
    * @token Neutral-text-5
    * @description 单选框标签字体颜色
    */
   checkboxLabelFontColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 单选框标签字体字号
    */
   checkboxLabelFontSize: string;
@@ -142,13 +148,13 @@ export interface CheckboxTokens {
   checkboxLabelDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 单选框间距
    */
   checkboxGap: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 单选框块级之间间距
    */
   checkboxBlockGap: string;
@@ -160,7 +166,7 @@ export interface CheckboxTokens {
   checkboxSmallIconSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 单选框小尺寸标签字体字号
    */
   checkboxSmallLabelFontSize: string;
@@ -172,7 +178,7 @@ export interface CheckboxTokens {
   checkboxLargeIconSize: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 单选框大尺寸标签字体字号
    */
   checkboxLargeLabelFontSize: string;

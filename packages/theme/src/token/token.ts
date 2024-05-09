@@ -148,22 +148,6 @@ const Token: Tokens = {
   'Neutral-fill-3': '#E8EBF0',
   'Neutral-fill-2': '#F4F5F8',
   'Neutral-fill-1': '#FFFFFF',
-  '12/regular': '12px',
-  medium: '12px',
-  '14/regular': '14px',
-  '14/medium': '14px',
-  '16/regular': '16px',
-  '16/medium': '16px',
-  '18/regular': '18px',
-  '18/medium': '18px',
-  '24/regular': '24px',
-  '24/medium': '24px',
-  '32/regular': '32px',
-  '32/medium': '32px',
-  '36/regular': '36px',
-  '36/medium': '36px',
-  '48/regular': '48px',
-  '48/medium': '48px',
   'Padding-1': '1px',
   'Padding-2': '2px',
   'Padding-3': '3px',
@@ -307,16 +291,23 @@ const Token: Tokens = {
   'Size-20': '40px',
   'Size-21': '42px',
   'Size-22': '44px',
+  'Size-23': '46px',
+  'Size-24': '48px',
+  'Size-25': '50px',
+  'Size-26': '52px',
+  'Size-27': '54px',
+  'Size-28': '56px',
 };
 
-const CommonToken = {} as Tokens;
+// @ts-ignore
+const CommonToken: Tokens = {};
 
 Object.keys(Token).forEach((key) => {
   const { prefix } = getConfig();
-  CommonToken[key as keyof Tokens] = `var(--${prefix}-${replaceNonAlphanumeric(key)}, ${
-    Token[key as keyof Tokens]
-  })`;
+  // @ts-ignore
+  CommonToken[key] = `var(--${prefix}-${replaceNonAlphanumeric(key)}, ${Token[key]})`;
 });
 
 export { CommonToken };
+
 export default Token;

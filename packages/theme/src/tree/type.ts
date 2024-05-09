@@ -4,19 +4,19 @@
 export interface TreeTokens {
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 树组件文字内边距（垂直方向）
    */
   treeTextPaddingY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 树组件复选框外边距（水平方向）
    */
   treeCheckboxMarginX: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 树组件字体字号
    */
   treeFontSize: string;
@@ -28,7 +28,7 @@ export interface TreeTokens {
   treeLineHeight: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 树组件小尺寸字体字号
    */
   treeSmallFontSize: string;
@@ -40,7 +40,7 @@ export interface TreeTokens {
   treeSmallLineHeight: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 树组件大尺寸字体字号
    */
   treeLargeFontSize: string;
@@ -58,13 +58,13 @@ export interface TreeTokens {
   treeFontColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树组件内边距（水平方向）
    */
   treePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 树组件内边距（垂直方向）
    */
   treePaddingY: string;

@@ -58,9 +58,10 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   }) => {
     const current = Math.floor(info.scrollTop / lineHeight);
     const top = info.scrollTop - current * lineHeight;
-
+    props.onScroll?.(info);
     setTop(top);
     setCurrentIndex(current);
+
   };
 
   const scrollHeight = getScrollHeight();

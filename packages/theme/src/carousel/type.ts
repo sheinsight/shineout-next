@@ -4,7 +4,7 @@
 export interface CarouselTokens {
   /**
    * @type {string}
-   * @token Margin-18
+   * @token Spacing-18
    * @description 轮播图箭头外边距
    */
   carouselArrowMargin: string;
@@ -70,7 +70,7 @@ export interface CarouselTokens {
   carouselIndicatorCircleWidth: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 轮播图指示器圆形间距
    */
   carouselIndicatorCircleGap: string;
@@ -88,7 +88,7 @@ export interface CarouselTokens {
   carouselIndicatorLineHeight: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 轮播图指示器行间距
    */
   carouselIndicatorLineGap: string;
@@ -118,7 +118,7 @@ export interface CarouselTokens {
   carouselIndicatorNumberColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 轮播图指示器数字字体字号
    */
   carouselIndicatorNumberFontSize: string;
@@ -154,7 +154,7 @@ export interface CarouselTokens {
   carouselIndicatorOuterNumberColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 轮播图字体字号
    */
   carouselFontSize: string;

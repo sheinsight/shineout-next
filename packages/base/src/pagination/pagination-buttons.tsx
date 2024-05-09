@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { useState } from 'react';
-import { ButtonShape } from '@sheinx/hooks';
 import { PaginationButtonsProps, PaginationMoreTypes } from './pagination-buttons.type';
 import Icons from '../icons';
 import Button from './pagination-button';
 import Next from './pagination-next';
 import Prev from './pagination-prev';
+import { useConfig } from '../config';
 
 const PaginationButtons = (props: PaginationButtonsProps) => {
   const {
@@ -23,6 +23,8 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
 
   const [showPrevMore, setShowPrevMore] = useState(false);
   const [showNextMore, setShowNextMore] = useState(false);
+
+  const config = useConfig();
 
   const paginationStyle = jssStyle?.pagination?.();
   const rootClasses = classNames(paginationStyle?.section, paginationStyle?.buttons);
@@ -125,11 +127,11 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
 
   const renderMore = (type: PaginationMoreTypes) => {
     if (type === 'prev' && showPrevMore) {
-      return Icons.pagination.PrePage;
+      return config.direction === 'rtl' ? Icons.pagination.NetPage : Icons.pagination.PrePage;
     }
 
     if (type === 'next' && showNextMore) {
-      return Icons.pagination.NetPage;
+      return config.direction === 'rtl' ? Icons.pagination.PrePage : Icons.pagination.NetPage;
     }
 
     return Icons.pagination.More;
@@ -170,7 +172,6 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
           onMouseEnter={handleHoverMore}
           shape='square'
           onMouseLeave={handleHoverMore}
-          className={paginationStyle?.sectionSize}
         >
           <span className={paginationStyle?.icon}>
             {renderMore(pageNum as PaginationMoreTypes)}

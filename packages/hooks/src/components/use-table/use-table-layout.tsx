@@ -26,6 +26,7 @@ export interface UseTableLayoutProps
   theadRef: React.RefObject<HTMLElement>;
   tbodyRef: React.RefObject<HTMLElement>;
   scrollRef: React.RefObject<HTMLElement>;
+  isRtl?: boolean;
 }
 
 const useTableLayout = (props: UseTableLayoutProps) => {
@@ -85,7 +86,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     if (Number.isNaN(oWidth) || oWidth === 0) {
       oWidth = colEl.getBoundingClientRect().width;
     }
-    let w = oWidth + deltaX;
+    let w = props.isRtl ? oWidth - deltaX : oWidth + deltaX;
     if (isNumber(col.minWidth)) {
       w = Math.max(w, col.minWidth);
     } else {
@@ -206,7 +207,10 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const scrollEl = scrollRef.current!;
     const max = scrollEl.scrollWidth - scrollEl.clientWidth;
     const min = 0;
-    const left = scrollEl.scrollLeft;
+    let left = scrollEl.scrollLeft;
+    if (props.isRtl) {
+      left = left * -1;
+    }
 
     const l = left > min;
     // 缩放比例小于1时， 会出现小数， 导致判断错误

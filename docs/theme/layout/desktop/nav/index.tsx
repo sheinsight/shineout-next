@@ -2,37 +2,48 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
-// import { Dropdown, Input } from 'shineout';
-// import { getLocale, useConfig } from 'base';
+import { Button, setConfig } from 'shineout';
 
 const Nav = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const state = useSnapshot(store);
   const location = useLocation();
+  const search = location.search;
+  // 获取search参数
+  const searchParams = new URLSearchParams(search);
+  const direction = searchParams.get('direction') === 'rtl' ? 'rtl' : 'ltr';
+  const changeDirection = () => {
+    const nextDirection = direction === 'rtl' ? 'ltr' : 'rtl';
+    searchParams.set('direction', nextDirection);
+    navigate(location.pathname + '?' + searchParams.toString());
+    document.body.className = nextDirection;
+    setConfig({ direction: nextDirection });
+  };
+  
   // const { locale } = useConfig();
 
   // const navs = [
-    // {
-    //   title: 'Home',
-    //   path: `/${state.locales}/home`,
-    // },
-    // {
-    //   title: 'Design',
-    //   path: `/${state.locales}/design`,
-    // },
-    // {
-    //   title: 'Introduce',
-    //   path: `/${state.locales}/introduce`,
-    // },
-    // {
-    //   title: 'Component',
-    //   path: `/${state.locales}/component/${state.doc}`,
-    // },
-    // {
-    //   title: 'Changelog',
-    //   path: `/${state.locales}/changelog`,
-    // },
+  // {
+  //   title: 'Home',
+  //   path: `/${state.locales}/home`,
+  // },
+  // {
+  //   title: 'Design',
+  //   path: `/${state.locales}/design`,
+  // },
+  // {
+  //   title: 'Introduce',
+  //   path: `/${state.locales}/introduce`,
+  // },
+  // {
+  //   title: 'Component',
+  //   path: `/${state.locales}/component/${state.doc}`,
+  // },
+  // {
+  //   title: 'Changelog',
+  //   path: `/${state.locales}/changelog`,
+  // },
   // ];
 
   const handleChangeLocales = () => {
@@ -171,10 +182,12 @@ const Nav = () => {
             style={{ backgroundColor: '#F4F5F8', width: 280 }}
           ></Input>
         </li> */}
-        {/* <li style={{ padding: '0 12px' }}>
-          <Dropdown placeholder={<span style={{ color: '#141737' }}>RTL</span>} data={[]} />
-        </li> */}
-        <li style={{ paddingRight: 24 }} onClick={handleChangeLocales}>
+        <li style={{ padding: '0 12px' }}>
+          <Button size='small' mode="text" onClick={changeDirection}>
+            {direction === 'rtl' ? 'LTR' : 'RTL'}
+          </Button>
+        </li>
+        <li style={{ paddingInlineEnd: 24 }} onClick={handleChangeLocales}>
           <svg
             width='20'
             height='20'

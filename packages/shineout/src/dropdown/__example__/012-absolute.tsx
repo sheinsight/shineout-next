@@ -39,8 +39,7 @@ const data: DropdownItem[] = [
 const App: React.FC = () => (
   <div style={{ background: '#eee', padding: 20, borderRadius: 4, overflow: 'hidden' }}>
     <Dropdown
-      position={'bottom'}
-      outline
+      mode="outline"
       type={'primary'}
       absolute
       placeholder='Absolute'

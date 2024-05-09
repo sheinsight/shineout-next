@@ -1,6 +1,7 @@
 import { useButton } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
+import { useConfig } from '../config';
 import { ButtonClasses, ButtonProps } from './button.type';
 import ButtonGroup from './button-group';
 import Spin from '../spin';
@@ -26,6 +27,7 @@ const Button = (props: ButtonProps) => {
     renderLoading,
     ...rest
   } = props;
+  const config = useConfig();
   const { getButtonProps, getSpaceChildren, getAnchorProps, disabled } = useButton({
     loading,
     htmlType: htmlTypeProp,
@@ -111,7 +113,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     // eslint-disable-next-line react/button-has-type
-    <button {...buttonProps} type={htmlType} ref={onRef as any} className={rootClass} style={style}>
+    <button dir={config.direction} {...buttonProps} type={htmlType} ref={onRef as any} className={rootClass} style={style}>
       {loading && loadingEl}
       {buttonInnerEl}
     </button>

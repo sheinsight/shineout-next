@@ -28,35 +28,34 @@ const stepsTokenDescription = {
  * 注意，该映射表的内容不与 stepsRules 强关联，非 stepsRules 规则内的 token 需手动增加或删减。
  */
 const stepsTokenValue = {
-  icon: { width: 'Size-14', height: 'Size-14', font: { size: '16/regular' } },
+  icon: { width: 'Size-14', height: 'Size-14', font: { size: 'Font-16' } },
   small: {
-    icon: { width: 'Size-12', height: 'Size-12', font: { size: '14/regular' } },
-    title: { font: { size: '14/medium' } },
-    description: { font: { size: '12/regular' } },
-    arrow: { padding: { x: 'Padding-16', y: 'Padding-5' }, height: 'Size-28' },
+    icon: { width: 'Size-12', height: 'Size-12', font: { size: 'Font-14' } },
+    title: { font: { size: 'Font-14' } },
+    description: { font: { size: 'Font-12' } },
+    arrow: { padding: { x: 'Spacing-16', y: 'Spacing-5' } },
   },
   large: {
-    icon: { width: 'Size-16', height: 'Size-16', font: { size: '18/regular' } },
-    title: { font: { size: '18/medium' } },
-    description: { font: { size: '12/regular' } },
-    arrow: { padding: { x: 'Padding-16', y: 'Padding-11' }, height: 'Size-36' },
+    icon: { width: 'Size-16', height: 'Size-16', font: { size: 'Font-18' } },
+    title: { font: { size: 'Font-18' } },
+    description: { font: { size: 'Font-12' } },
+    arrow: { padding: { x: 'Spacing-16', y: 'Spacing-11' } },
   },
-  title: { font: { size: '16/regular' } },
-  description: { font: { size: '12/regular' } },
+  title: { font: { size: 'Font-16' } },
+  description: { font: { size: 'Font-12' } },
   wait: { font: { color: 'Neutral-text-4' }, background: { color: 'Neutral-fill-2' } },
   process: { font: { color: 'Neutral-text-1' }, background: { color: 'Brand-6' } },
   finish: { font: { color: 'Brand-6' }, background: { color: 'Brand-1' } },
   error: { font: { color: 'Neutral-text-1' }, background: { color: 'Danger-6' } },
   arrow: {
-    padding: { x: 'Padding-16', y: 'Padding-8' },
-    height: 'Size-32',
+    padding: { x: 'Spacing-16', y: 'Spacing-8' },
   },
   tail: { background: { color: 'Neutral-border-1' }, finish: { background: { color: 'Brand-6' } } },
-  nearly: { content: { margin: 'Margin-8' }, describe: { margin: 'Margin-4' } },
+  nearly: { content: { margin: 'Spacing-8' }, describe: { margin: 'Spacing-4' } },
 };
 
 const stepsTokenExtraValue = {
-  description: { font: { color: 'Neutral-text-3' }, title: { margin: { x: 'Margin-4' } } },
+  description: { font: { color: 'Neutral-text-3' }, title: { margin: { x: 'Spacing-4' } } },
 };
 
 module.exports = {

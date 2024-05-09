@@ -4,7 +4,7 @@
 export interface SliderTokens {
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 滑块字体字号
    */
   sliderFontSize: string;
@@ -106,13 +106,13 @@ export interface SliderTokens {
   sliderValueHoverRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 滑块文案鼠标移入时的内边距（水平方向）
    */
   sliderValueHoverPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-3
+   * @token Spacing-3
    * @description 滑块文案鼠标移入时的内边距（垂直方向）
    */
   sliderValueHoverPaddingY: string;
@@ -130,7 +130,7 @@ export interface SliderTokens {
   sliderScaleLineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 滑块刻度外边距（垂直方向）
    */
   sliderScaleMarginY: string;
@@ -142,7 +142,7 @@ export interface SliderTokens {
   sliderScaleFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 滑块刻度字体字号
    */
   sliderScaleFontSize: string;

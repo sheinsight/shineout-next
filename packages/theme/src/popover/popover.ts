@@ -4,9 +4,9 @@
 import { PopoverTokens } from './type';
 
 const popoverTokens: PopoverTokens = {
-  popoverFontSize: '14/regular',
-  popoverPaddingX: 'Padding-8',
-  popoverPaddingY: 'Padding-8',
+  popoverFontSize: 'Font-14',
+  popoverPaddingX: 'Spacing-8',
+  popoverPaddingY: 'Spacing-8',
   popoverRadius: 'Radius-4',
   popoverBorderWidth: 'Border-1',
   popoverFontColor: 'Neutral-text-5',
@@ -24,8 +24,8 @@ const popoverTokens: PopoverTokens = {
   popoverErrorFontColor: 'Danger-7',
   popoverErrorBackgroundColor: 'Danger-1',
   popoverErrorBorderColor: 'Danger-1',
-  popoverConfirmPaddingX: 'Padding-16',
-  popoverConfirmPaddingY: 'Padding-16',
+  popoverConfirmPaddingX: 'Spacing-16',
+  popoverConfirmPaddingY: 'Spacing-16',
   popoverConfirmBackgroundColor: 'transparent',
 };
 

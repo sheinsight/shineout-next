@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import App from './theme/index';
+import { setConfig } from 'shineout';
 import { setJssConfig } from '@sheinx/shineout-style';
+import { set } from 'cypress/types/lodash';
 
 if (process.env.NODE_ENV === 'development') {
   const camelToDash = (str: string) => str.replace(/([A-Z])/g, '-$1').toLowerCase();
@@ -18,7 +20,14 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
+const search = window.location.href.split('?')[1];
+const params = new URLSearchParams(search);
+const direction = params.get('direction') === 'rtl' ? 'rtl' : 'ltr';
+setConfig({direction});
+document.body.className = direction;
+
 const app = document.getElementById('app');
+
 if (app) {
   const root = ReactDOM.createRoot(app);
   root.render(<App></App>);

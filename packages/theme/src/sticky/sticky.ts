@@ -4,7 +4,7 @@
 import { StickyTokens } from './type';
 
 const stickyTokens: StickyTokens = {
-  stickyFontSize: '14/regular',
+  stickyFontSize: 'Font-14',
 };
 
 export default stickyTokens;
