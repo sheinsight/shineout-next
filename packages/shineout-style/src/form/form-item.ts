@@ -78,12 +78,8 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
   },
   control: {
     fontSize: token.formItemFontSize,
-    // minHeight: `calc(${token.lineHeightDynamic} + ${token.formItemLabelPaddingY} * 2)`,
-    // minWidth: '0',
-    // display: 'flex',
-    // flexFlow: 'row wrap',
-    // alignItems: 'center',
     flex: '1',
+    minWidth: 0,
     lineHeight: token.lineHeightDynamic,
     '$wrapperInline &': {
       padding: 0,
