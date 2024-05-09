@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -44,7 +44,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     data,
   } = props;
   const value = (
-    [null, undefined, ''].includes(valueProp as any) ? [] : Array.isArray(valueProp) ? valueProp : [valueProp]
+    [null, undefined, ''].includes(valueProp as any)
+      ? []
+      : Array.isArray(valueProp)
+      ? valueProp
+      : [valueProp]
   ) as Value;
 
   const [more, setMore] = useState(-1);
@@ -330,7 +334,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     handleResetMore();
   }, [valueProp, data]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (
       shouldResetMore &&
       more === -1 &&
