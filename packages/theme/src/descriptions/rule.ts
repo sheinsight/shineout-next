@@ -17,10 +17,14 @@ const descriptionsRules = {
   ],
   color: [['label', 'value', 'title', 'extra', 'background', 'border'], ['color']],
   weight: [['title'], ['font-weight']],
-  gap: [['title'], ['gap']],
+  gap: [['title', 'cell'], ['gap']],
   radius: [['border'], ['radius']],
-  border: [['border-right', 'border-bottom', 'border-padding'], ['size', 'x', 'y']],
+  border: [
+    ['border-right', 'border-bottom', 'border-padding'],
+    ['size', 'x', 'y'],
+  ],
   Inline: [['inline-border'], ['padding-x', 'padding-y']],
+  layout: [['vertical'], ['padding-bottom']],
 };
 
 module.exports = {

@@ -53,7 +53,6 @@ export default () => {
         title='User Info'
         layout='vertical'
         colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}
-        labelStyle={{ paddingBottom: '2px' }}
       />
     </div>
   );
