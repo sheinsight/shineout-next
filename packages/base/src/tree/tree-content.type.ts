@@ -23,7 +23,7 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   fetching: boolean;
   inlineNode?: boolean;
   highlight?: boolean;
-  loader?: (key: KeygenResult, data: DataItem) => void;
+  loader?: (key: KeygenResult, data: DataItem) => void | Promise<any>;
   setFetching: (value: boolean) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   onFetch: () => void;

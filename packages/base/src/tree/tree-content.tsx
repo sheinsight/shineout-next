@@ -77,8 +77,13 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
 
     if (data[childrenKey] !== undefined) return;
 
-    setFetching(true);
-    if (loader) loader(id, data);
+    if (loader) {
+      setFetching(true);
+      const result = loader(id, data) as any;
+      if (util.isPromise(result)) {
+        result.then(() => setFetching(false));
+      }
+    }
   };
 
   const handleNodeClick = () => {
@@ -158,7 +163,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     if (children && children.length > 0) return indicator;
     if (Array.isArray(children) || children === null) return null;
     if (fetching && !children) return renderLoading();
-    if (loader && !fetching) return indicator;
+    if (loader && children === undefined) return indicator;
 
     return null;
   };
