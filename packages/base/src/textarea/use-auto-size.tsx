@@ -19,6 +19,7 @@ const useAutoSize = (props: {
     if (!shadowRef.current) return;
     const v = value || '';
     if (shadowRef.current.value !== v) shadowRef.current.value = v;
+    if (shadowRef.current.scrollHeight === 0) return
     setHeight(shadowRef.current.scrollHeight);
   };
 

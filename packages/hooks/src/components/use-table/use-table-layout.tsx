@@ -146,16 +146,37 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   // 根据渲染内容计算colgroup
   const getColgroup = usePersistFn((fromDrag) => {
     const target = props?.data?.length ? tbodyRef : theadRef;
-    const group = target.current?.querySelector('colgroup');
-    if (!group) return;
-    const cols = group.querySelectorAll('col');
+    const tr = target.current?.querySelector('tr');
+    if (!tr) return;
+    const items = tr.children;
 
-    const newCols: number[] = [];
+    let newCols: number[] = [];
     let sum = 0;
-    for (let i = 0, count = cols.length; i < count; i++) {
-      const { width } = cols[i].getBoundingClientRect();
+    for (let i = 0, count = items.length; i < count; i++) {
+      const { width } = items[i].getBoundingClientRect();
       sum += width;
-      newCols.push(width);
+      const colspan = items[i].getAttribute('colspan');
+      const dfWidth = props.columns
+        .slice(i, i + (colspan ? parseInt(colspan, 10) : 1))
+        .map((v) => v.width);
+      let tempcols = [] as number[];
+      const emptyNum = dfWidth.filter((v) => v === undefined).length;
+      if (dfWidth.length === 1) {
+        // colspan = 1
+        tempcols = [width];
+      } else if (emptyNum === 0) {
+        // 都有宽度按照比例分
+        const all = dfWidth.reduce((a, b) => a! + b!, 0)!;
+        tempcols = dfWidth.map((v) => (v! / all) * width);
+      } else {
+        // 多余的平分
+        const all = dfWidth.reduce((a, b) => (a || 0) + (b || 0), 0)!;
+        const rest = width - all;
+        const agv = rest > 0 ? rest / emptyNum : 0;
+        tempcols = dfWidth.map((v) => (v ? v : agv));
+      }
+
+      newCols = [...newCols, ...tempcols];
     }
 
     if (fromDrag && props.columnResizable) {

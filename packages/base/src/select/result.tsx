@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, UnMatchedData, KeygenResult } from '@sheinx/hooks';
+import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
 import Input from './result-input';
 import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
 
-const { isObject, isEmpty, isNumber, getKey, isUnMatchedData, isFunc, isArray } = util;
+const { isObject, isEmpty, isNumber, isUnMatchedData, isFunc, isArray } = util;
 
 const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const {
@@ -44,7 +44,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     data,
   } = props;
   const value = (
-    [null, undefined, ''].includes(valueProp as any) ? [] : multiple ? valueProp : [valueProp]
+    [null, undefined, ''].includes(valueProp as any) ? [] : Array.isArray(valueProp) ? valueProp : [valueProp]
   ) as Value;
 
   const [more, setMore] = useState(-1);
@@ -149,20 +149,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     item: DataItem | UnMatchedData,
     index: number,
     nodes?: (DataItem | UnMatchedData)[],
+    v?: any,
   ): React.ReactNode => {
-    let key: KeygenResult;
-    if (isUnMatchedData(item)) {
-      if (isFunc(keygen)) {
-        key = keygen(item.value, index);
-        if (key === undefined) key = index;
-      } else {
-        key = item.value;
-      }
-    } else {
-      key = getKey(keygen, item as DataItem, index);
-    }
     const handleClose = () => {
-      onRemove?.(item, key, index);
+      onRemove?.(item, v);
     };
     let isDisabled;
     if (util.isFunc(disabled)) {
@@ -172,7 +162,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     let resultClassName;
     if (util.isFunc(props.resultClassName)) {
-      resultClassName = props.resultClassName(key as DataItem);
+      resultClassName = props.resultClassName(isUnMatchedData(item) ? item.value : item);
     } else {
       resultClassName = props.resultClassName;
     }
@@ -186,8 +176,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!content) return null;
 
     if (renderResultContentProp) {
+      // cascader 不渲染tag
       return renderResultContentProp({
-        key,
+        key: index,
         size,
         disabled: isDisabled,
         className: classNames(styles.tag, styles.hideTag, resultClassName),
@@ -199,7 +190,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
     return (
       <Tag
-        key={key}
+        key={index}
         disabled={isDisabled}
         size={size}
         style={{ opacity: more === index ? 0 : 1 }}
@@ -249,24 +240,29 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
+  const getValueArr = (v: any) => {
+    return (isArray(v) ? v : [v]).filter((v) => v !== undefined && v !== null);
+  };
+
   const renderMultipleResult = () => {
     if (isEmptyResult()) return renderNbsp();
     // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
-    let nextValue = value;
+    let nextValue = getValueArr(value);
     if (separator && util.isString(valueProp)) {
-      nextValue = valueProp.split(separator) as Value;
+      nextValue = valueProp.split(separator);
     }
-    const values = getDataByValues(nextValue);
-    const result = values.map((v, i) => {
-      if (renderResultContentProp && i !== values.length - 1) {
+    const datas = getDataByValues(nextValue as Value);
+    const result = datas.map((d, i) => {
+      const v = nextValue[i];
+      if (renderResultContentProp && i !== datas.length - 1) {
         return [
-          renderResultItem(v, i, values),
+          renderResultItem(d, i, datas, v),
           <span key={`separator-${i}`} className={classNames(styles.tag, styles.hideTag)}>
             /
           </span>,
         ];
       }
-      return renderResultItem(v, i, values);
+      return renderResultItem(d, i, datas, v);
     });
     return result;
   };

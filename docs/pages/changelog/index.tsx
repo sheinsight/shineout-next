@@ -33,8 +33,16 @@ const Changelog = () => {
 
   const markdowns = Object.keys(cn)
     .sort(
-      // 比较版本号 a 和 b 倒叙
-      (a, b) => b.localeCompare(a),
+      // 比较版本号 1.0.10 -> 1.0.9
+      (a, b) => {
+        const aArr = a.split('.').map((i) => parseInt(i, 10));
+        const bArr = b.split('.').map((i) => parseInt(i, 10));
+        for (let i = 0; i < 3; i++) {
+          if (aArr[i] > bArr[i]) return -1;
+          if (aArr[i] < bArr[i]) return 1;
+        }
+        return 0;
+      }
     )
     .map((version) => {
       const { time, changes } = cn[version];
