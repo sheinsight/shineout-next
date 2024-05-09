@@ -292,19 +292,19 @@ const Tr = (props: TrProps) => {
 
   const handleRowClick = usePersistFn((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    const { rowClickAttr = ['*'], onRowClick } = props;
+    const { rowClickAttr = '*', onRowClick } = props;
     if (onRowClick && rowClickAttr) {
       if (rowClickAttr === true || rowClickAttr === '*') {
-        onRowClick(props.rawData, props.rowIndex);
+        onRowClick(props.rawData, props.rowIndex, rowClickAttr);
       } else {
         const arrts = (
           Array.isArray(rowClickAttr)
             ? rowClickAttr
             : [rowClickAttr].filter((item) => typeof item === 'string')
         ) as string[];
-        const isMatch = arrts.some((attr) => attr === '*' || target.hasAttribute(attr));
-        if (isMatch) {
-          onRowClick(props.rawData, props.rowIndex);
+        const attIndex = arrts.findIndex((attr) => attr === '*' || target.hasAttribute(attr));
+        if (attIndex > -1) {
+          onRowClick(props.rawData, props.rowIndex, arrts[attIndex]);
         }
       }
     }
