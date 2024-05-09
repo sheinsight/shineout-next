@@ -15,9 +15,10 @@ export default function getRule<Value>(
     if ((rulePo as RuleResultValue).isInnerValidator) rulePo = (rulePo as RuleResultValue)();
     else return rulePo as ValidFunc;
   }
-  const { type = props.type, message, regExp, func, required, min, max } = rulePo;
 
-  po = Object.assign({}, po, { min, max });
+  const { type = props.type, message, regExp, func, required, min, max, args } = rulePo;
+
+  po = Object.assign({}, po, { min, max, args });
   po.message = typeof message === 'function' ? message(po) : message;
   let cb: ValidFunc<Value> = () => {};
   if (func) {

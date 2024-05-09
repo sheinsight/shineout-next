@@ -142,7 +142,8 @@ export type FormItemObjectRule = Type &
   Max &
   Required & {
     func?: ValidFunc;
-  };
+    args?: any;
+  }
 // 表单项校验传的rule 数组
 export type FormItemRule<Value, FormData = any, Props = any> = Array<
   | RuleResultValue
