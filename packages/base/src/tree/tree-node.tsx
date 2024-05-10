@@ -5,6 +5,7 @@ import { TreeNodeProps } from './tree-node.type';
 import TreeContent from './tree-content';
 import { useTreeContext } from './tree-context';
 import { useTreeNode, ObjectType, util, KeygenResult } from '@sheinx/hooks';
+import { useConfig } from '../config';
 
 let placeElement: HTMLDivElement | null = null;
 let innerPlaceElement: HTMLDivElement | null = null;
@@ -61,6 +62,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataI
   } = props;
 
   initPlaceElement();
+  const config = useConfig();
 
   const element = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
@@ -273,7 +275,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataI
     return dropEvents;
   };
   return (
-    <div {...getDropProps()} ref={element} className={rootClass}>
+    <div {...getDropProps()} ref={element} className={rootClass} dir={config.direction}>
       <TreeContent
         jssStyle={jssStyle}
         isControlled={isControlled}

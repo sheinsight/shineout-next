@@ -4,7 +4,7 @@
 import { SliderTokens } from './type';
 
 const sliderTokens: SliderTokens = {
-  sliderFontSize: '12/regular',
+  sliderFontSize: 'Font-12',
   sliderTrackSize: 'Size-2',
   sliderTrackBackgroundColor: 'Neutral-fill-2',
   sliderTrackActiveBackgroundColor: 'Brand-6',
@@ -21,13 +21,13 @@ const sliderTokens: SliderTokens = {
   sliderValueHoverBackgroundColor: 'Neutral-fill-9',
   sliderValueHoverFontColor: 'Neutral-text-1',
   sliderValueHoverRadius: 'Radius-2',
-  sliderValueHoverPaddingX: 'Padding-8',
-  sliderValueHoverPaddingY: 'Padding-3',
+  sliderValueHoverPaddingX: 'Spacing-8',
+  sliderValueHoverPaddingY: 'Spacing-3',
   sliderScaleLineSize: 'Size-3',
   sliderScaleLineBackgroundColor: 'Neutral-border-1',
-  sliderScaleMarginY: 'Margin-4',
+  sliderScaleMarginY: 'Spacing-4',
   sliderScaleFontColor: 'Neutral-text-4',
-  sliderScaleFontSize: '12/regular',
+  sliderScaleFontSize: 'Font-12',
 };
 
 export default sliderTokens;

@@ -27,6 +27,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     shouldFinal,
     onChange,
     onPathChange,
+    mode,
   } = props;
 
   const [loading, setLoading] = useState(false);
@@ -40,7 +41,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   const rootClass = classNames(
     styles.option,
     active && styles.activeOption,
-    isDisabled && styles.optionDisabled,
+    isDisabled && mode !== 4 && styles.optionDisabled,
   );
 
   const handlePathChange = () => {
@@ -51,7 +52,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     if (onPathChange) onPathChange(id, data, path, true);
     if (!multiple) {
       // 单选设置了 final 属性后 如果不是末节点不触发onChange
-      const shouldJump = shouldFinal && hasChildren
+      const shouldJump = shouldFinal && hasChildren;
       if (onChange && path && !shouldJump) onChange([...path, id] as Value, datum.getDataById(id));
     }
     if (
@@ -81,8 +82,9 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
   const getEvents = () => {
     const events: any = {};
-    if (!isDisabled && (expandTrigger !== 'hover-only' || !hasChildren)) {
-      events.onClick = handleClick;
+
+    if (expandTrigger !== 'hover-only' || !hasChildren) {
+      if (!isDisabled || props.mode === 4) events.onClick = handleClick;
     }
 
     if (expandTrigger === 'hover' || expandTrigger === 'hover-only') {

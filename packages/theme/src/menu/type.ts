@@ -4,7 +4,7 @@
 export interface MenuTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 菜单字体字号
    */
   menuFontSize: string;

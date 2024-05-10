@@ -12,10 +12,12 @@ export interface TreeContext<DataItem> {
   valueMap: Map<KeygenResult, CheckedStatusType>;
   unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
+  forceUpdateMap: Map<KeygenResult, () => void>;
   disabled: boolean | ((item: DataItem) => boolean);
   value?: KeygenResult[];
   cachedValue: KeygenResult[];
   data?: DataItem[];
+  valueDataCache: Map<KeygenResult, DataItem>;
 }
 
 export interface TreePathType {
@@ -103,4 +105,39 @@ export interface BaseTreeProps<DataItem> {
    * @cn 节点展开回调，参数为当前展开节点 key 数组
    */
   onExpand?: (value: KeygenResult[]) => void;
+  /**
+   * @private 保持数据缓存
+   */
+  keepCache?: boolean;
+  datum?: TreeDatum<DataItem>;
+}
+
+export interface TreeDatum<DataItem> {
+  get: (id: KeygenResult) => CheckedStatusType | undefined;
+  set: (
+    id: KeygenResult,
+    checked: CheckedStatusType,
+    direction?: 'asc' | 'desc',
+  ) => CheckedStatusType | null;
+  getPath: (id: KeygenResult) => TreePathType | undefined;
+  getValue: () => KeygenResult[];
+  getChecked: (id: KeygenResult) => boolean | 'indeterminate';
+  getKey: (item: DataItem, id?: KeygenResult, index?: number) => KeygenResult;
+  getDataByValues: (values: KeygenResult[] | KeygenResult) => DataItem | DataItem[] | null;
+  setValue: (value?: KeygenResult[]) => void;
+  setData: (data?: DataItem[]) => void;
+  isDisabled: (id: KeygenResult) => boolean;
+  bindNode: (id: KeygenResult, update: UpdateFunc) => { active: boolean; expanded: boolean };
+  getDataById: (
+    id: KeygenResult,
+  ) => DataItem | { IS_NOT_MATCHED_VALUE: boolean; value: KeygenResult } | null;
+  bindUpdate: (id: KeygenResult, update: () => void) => void;
+  unBindUpdate: (id: KeygenResult) => void;
+  isUnMatched: (data: any) => boolean;
+  updateMap: Map<KeygenResult, UpdateFunc>;
+  childrenKey: string;
+  data: DataItem[];
+  pathMap: Map<KeygenResult, TreePathType>;
+  dataMap: Map<KeygenResult, DataItem>;
+  valueMap: Map<KeygenResult, CheckedStatusType>;
 }

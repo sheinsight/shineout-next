@@ -47,7 +47,7 @@ export default () => {
         layout='horizontal'
         border
         tableLayout='fixed'
-        labelStyle={{ textAlign: 'right' }}
+        labelStyle={{ textAlign: 'end' }}
         style={{ marginBottom: '20px' }}
       />
       <Descriptions

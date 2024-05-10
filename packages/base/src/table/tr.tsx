@@ -6,6 +6,7 @@ import Icons from '../icons';
 import Checkbox from '../checkbox';
 import Radio from '../radio';
 import { TbodyProps, UseTableRowResult } from './tbody.type';
+import { useConfig } from '../config';
 
 interface TrProps
   extends Pick<
@@ -57,6 +58,8 @@ const Tr = (props: TrProps) => {
   const tableClasses = props.jssStyle?.table?.();
   const trRef = useRef<HTMLTableRowElement>(null);
   const expandRef = useRef<HTMLTableRowElement>(null);
+  const config = useConfig();
+  const isRtl = config.direction === 'rtl';
 
   const getFixedStyle = (fixed: 'left' | 'right' | undefined, index: number, colSpan: number) => {
     if (!props.isScrollX) return;
@@ -75,7 +78,7 @@ const Tr = (props: TrProps) => {
     if (fixed === 'right') {
       if (props.fixRightNum !== undefined) {
         return {
-          transform: `translate3d(-${props.fixRightNum}px, 0, 0)`,
+          transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
       const right = props.colgroup
@@ -109,13 +112,14 @@ const Tr = (props: TrProps) => {
     const className = tableClasses?.expandWrapper;
     const children = props.rawData[props.treeColumnsName!];
     const isExpanded = props.treeFunc.isTreeExpanded(props.rawData, props.rowIndex);
+    const dirName = isRtl ? 'Right' : 'Left';
     if (!children || (children.length === 0 && !props.treeEmptyExpand)) {
       return (
         <span
           className={className}
           style={{
-            marginLeft: level * treeIndent,
-            paddingLeft: props.isEmptyTree ? 0 : 22,
+            [`margin${dirName}`]: level * treeIndent,
+            [`padding${dirName}`]: props.isEmptyTree ? 0 : 22,
           }}
         >
           {content}
@@ -252,6 +256,7 @@ const Tr = (props: TrProps) => {
               props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
+            dir={config.direction}
           >
             {renderContent(col, data[i].data)}
           </td>
@@ -272,6 +277,7 @@ const Tr = (props: TrProps) => {
         return (
           <tr className={tableClasses?.rowExpand} ref={expandRef}>
             <td
+              dir={config.direction}
               className={tableClasses?.cellIgnoreBorder}
               colSpan={props.columns.length}
               style={{ padding: 0 }}
@@ -286,19 +292,19 @@ const Tr = (props: TrProps) => {
 
   const handleRowClick = usePersistFn((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    const { rowClickAttr = ['*'], onRowClick } = props;
+    const { rowClickAttr = '*', onRowClick } = props;
     if (onRowClick && rowClickAttr) {
       if (rowClickAttr === true || rowClickAttr === '*') {
-        onRowClick(props.rawData, props.rowIndex);
+        onRowClick(props.rawData, props.rowIndex, rowClickAttr);
       } else {
         const arrts = (
           Array.isArray(rowClickAttr)
             ? rowClickAttr
             : [rowClickAttr].filter((item) => typeof item === 'string')
         ) as string[];
-        const isMatch = arrts.some((attr) => attr === '*' || target.hasAttribute(attr));
-        if (isMatch) {
-          onRowClick(props.rawData, props.rowIndex);
+        const attIndex = arrts.findIndex((attr) => attr === '*' || target.hasAttribute(attr));
+        if (attIndex > -1) {
+          onRowClick(props.rawData, props.rowIndex, arrts[attIndex]);
         }
       }
     }

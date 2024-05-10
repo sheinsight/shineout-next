@@ -2,6 +2,7 @@ import { cloneElement, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { useMenuItem, util } from '@sheinx/hooks';
 import Icons from '../icons';
+import { useConfig } from '../config';
 
 import type { OptionalToRequired } from '@sheinx/hooks';
 import type { MenuItemProps } from './menu.type';
@@ -12,6 +13,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const itemContentRef = useRef<HTMLDivElement>(null);
   const timer = useRef<any>(null);
   const { inlineIndent = 24, frontCaretType = 'solid', collapse } = props;
+  const config = useConfig();
 
   const hasExpandAbleChildren = children.some(
     (item: any) => item && item.children && (props.looseChildren || item.children.length),
@@ -91,6 +93,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
               props.parentSelectable && classes?.expandHover,
             )}
             onClick={handleExpandClick}
+            dir={config.direction}
           >
             {
               <div className={classes?.icon}>
@@ -125,6 +128,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
                 classes?.expandBack,
                 props.parentSelectable && classes?.expandHover,
               )}
+              dir={config.direction}
             >
               <div className={classes?.icon}>{Icons.menu.CollapseArrow}</div>
             </div>
@@ -181,7 +185,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      // onTransitionEnd={handleTransitionEnd}
+      dir={config.direction}
     >
       {renderItem()}
       {renderCollapseItem()}
@@ -192,6 +196,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             isUp && classes?.childrenUp,
             hasExpandAbleChildren && classes?.childrenHasExpand,
           )}
+          dir={config.direction}
         >
           {children.map((item: any, index: number) => {
             const key = util.getKey(props.keygen, item, index);

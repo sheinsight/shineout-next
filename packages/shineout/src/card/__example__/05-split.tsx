@@ -44,7 +44,7 @@ const App: React.FC = () => (
         <div style={{ display: 'flex' }}>
           <div
             style={{
-              marginRight: 8,
+              marginInlineEnd: 8,
               ...iconStyle,
             }}
           >
@@ -63,7 +63,7 @@ const App: React.FC = () => (
           </div>
           <div
             style={{
-              marginRight: 8,
+              marginInlineEnd: 8,
               ...iconStyle,
             }}
           >

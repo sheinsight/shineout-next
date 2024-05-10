@@ -5,7 +5,7 @@
  *    -- can be controlled by visible
  */
 import React, { useState } from 'react';
-import { Button, Popover, Switch } from 'shineout';
+import { Button, Popover, Switch, config } from 'shineout';
 
 const App: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -20,13 +20,13 @@ const App: React.FC = () => {
       </div>
       <Button>
         <Popover
-          position='right'
+          priorityDirection='horizontal'
           visible={visible}
           onVisibleChange={(v) => {
             console.log('onVisibleChange', v);
           }}
         >
-          Some text
+          Some text1
         </Popover>
         Hover
       </Button>

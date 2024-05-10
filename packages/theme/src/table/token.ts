@@ -33,28 +33,28 @@ const tableTokenValue = {};
 
 const tableTokenExtraValue = {
   font: {
-    size: '14/regular',
+    size: 'Font-14',
   },
   cell: {
     padding: {
-      x: 'Padding-12',
-      y: 'Padding-8',
+      x: 'Spacing-12',
+      y: 'Spacing-8',
     },
     border: { color: 'Neutral-border-1' },
   },
   small: {
     cell: {
       padding: {
-        x: 'Padding-8',
-        y: 'Padding-4',
+        x: 'Spacing-8',
+        y: 'Spacing-4',
       },
     },
   },
   large: {
     cell: {
       padding: {
-        x: 'Padding-16',
-        y: 'Padding-16',
+        x: 'Spacing-16',
+        y: 'Spacing-16',
       },
     },
   },
@@ -101,7 +101,7 @@ const tableTokenExtraValue = {
   },
   pagination: {
     margin: {
-      y: 'Margin-12',
+      y: 'Spacing-12',
     },
   },
 };

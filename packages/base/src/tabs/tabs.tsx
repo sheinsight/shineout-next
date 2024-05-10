@@ -203,11 +203,7 @@ const Tabs = (props: TabsProps) => {
           className: classNames(stickyClassName, (sticky as StickyProps).className),
         };
       }
-      return (
-        <Sticky {...stickyProps}>
-          {header}
-        </Sticky>
-      );
+      return <Sticky {...stickyProps}>{header}</Sticky>;
     }
     return header;
   };

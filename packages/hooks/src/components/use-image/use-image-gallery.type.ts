@@ -5,4 +5,5 @@ export interface BaseImageGalleryProps {
   images: Images[];
   current: number;
   onClose?: (e?: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>) => void;
+  direction?: 'ltr' | 'rtl';
 }

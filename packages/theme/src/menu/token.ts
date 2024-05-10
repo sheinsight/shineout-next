@@ -28,7 +28,7 @@ const menuTokenDescription = {
 const menuTokenValue = {};
 
 const menuTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   icon: {
     color: 'Neutral-text-4',
   },

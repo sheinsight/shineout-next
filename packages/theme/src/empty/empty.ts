@@ -4,7 +4,7 @@
 import { EmptyTokens } from './type';
 
 const emptyTokens: EmptyTokens = {
-  emptyFontSize: '14/regular',
+  emptyFontSize: 'Font-14',
   emptyFontColor: 'Neutral-text-3',
 };
 

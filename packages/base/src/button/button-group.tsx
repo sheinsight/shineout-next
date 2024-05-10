@@ -1,9 +1,11 @@
 import React, { Children, cloneElement } from 'react';
 import classNames from 'classnames';
+import { useConfig } from '../config';
 import { ButtonClasses, ButtonGroupProps, ButtonProps } from './button.type';
 
 const Group = (props: ButtonGroupProps) => {
   const { children, className, style, jssStyle, size, mode, outline, text, shape, type } = props;
+  const config = useConfig();
 
   if (outline || text) {
     console.warn(
@@ -24,7 +26,7 @@ const Group = (props: ButtonGroupProps) => {
   const shapeSetted = shape === 'round' ? 'round' : undefined;
 
   return (
-    <div className={groupClass} style={style}>
+    <div className={groupClass} style={style} dir={config.direction}>
       {Children.toArray(children).map((child) => {
         const Child = child as React.ReactElement<ButtonProps>;
         return cloneElement<ButtonProps>(Child, {

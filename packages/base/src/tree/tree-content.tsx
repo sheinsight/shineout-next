@@ -1,11 +1,12 @@
 import classNames from 'classnames';
-import { KeygenResult, util } from '@sheinx/hooks';
+import { KeygenResult, util, useRender } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeContextProps } from './tree-content.type';
 import Checkbox from './tree-checkbox';
 import { useTreeContext } from './tree-context';
 import Icons from '../icons';
 import Spin from '../spin';
+import { useConfig } from '../config';
 
 const NodeContent = <DataItem, Value extends KeygenResult[]>(
   props: TreeContextProps<DataItem, Value>,
@@ -35,8 +36,12 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     onDragOver,
     onNodeClick,
   } = props;
-  const { isDisabled } = useTreeContext();
+  const forceUpdate = useRender();
+  const { isDisabled, bindUpdate } = useTreeContext();
+  const config = useConfig();
   const disabled = isDisabled(id);
+
+  bindUpdate(id, forceUpdate);
 
   const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
   const rootClass = classNames(contentStyle.contentWrapper, {
@@ -72,8 +77,13 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
 
     if (data[childrenKey] !== undefined) return;
 
-    setFetching(true);
-    if (loader) loader(id, data);
+    if (loader) {
+      setFetching(true);
+      const result = loader(id, data) as any;
+      if (util.isPromise(result)) {
+        result.then(() => setFetching(false));
+      }
+    }
   };
 
   const handleNodeClick = () => {
@@ -96,6 +106,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         className={contentStyle.iconWrapper}
         data-expanded={expanded}
         data-icon={hasExpandIcons}
+        dir={config.direction}
       >
         <Spin size={12} jssStyle={jssStyle}></Spin>
       </span>
@@ -119,8 +130,13 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           className={contentStyle.iconWrapper}
           data-expanded={expanded}
           data-icon={hasExpandIcons}
+          dir={config.direction}
         >
-          <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
+          <span
+            className={classNames(contentStyle.icon, iconClass)}
+            onClick={handleIndicatorClick}
+            dir={config.direction}
+          >
             {util.isFunc(icon) ? icon(data) : icon}
           </span>
         </span>
@@ -131,8 +147,13 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           className={contentStyle.iconWrapper}
           data-expanded={expanded}
           data-icon={hasExpandIcons}
+          dir={config.direction}
         >
-          <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
+          <span
+            className={classNames(contentStyle.icon, iconClass)}
+            onClick={handleIndicatorClick}
+            dir={config.direction}
+          >
             {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.tree.Expand}
           </span>
         </span>
@@ -142,7 +163,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     if (children && children.length > 0) return indicator;
     if (Array.isArray(children) || children === null) return null;
     if (fetching && !children) return renderLoading();
-    if (loader && !fetching) return indicator;
+    if (loader && children === undefined) return indicator;
 
     return null;
   };
@@ -173,11 +194,22 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   };
 
   return (
-    <div className={rootClass} onDragOver={onDragOver}>
+    <div className={rootClass} onDragOver={onDragOver} dir={config.direction}>
       {renderIndicator()}
-      <div ref={bindContent} className={contentClass} {...contentDataProps()} {...contentEvent}>
+      <div
+        dir={config.direction}
+        ref={bindContent}
+        className={contentClass}
+        {...contentDataProps()}
+        {...contentEvent}
+      >
         {onChange && renderCheckbox()}
-        <div className={textClass} onDoubleClick={handleNodeExpand} {...textEvent}>
+        <div
+          dir={config.direction}
+          className={textClass}
+          onDoubleClick={handleNodeExpand}
+          {...textEvent}
+        >
           {renderNode()}
         </div>
       </div>

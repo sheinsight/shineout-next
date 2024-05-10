@@ -23,8 +23,8 @@ const popoverTokenDescription = {
  * 注意，该映射表的内容不与 popoverRules 强关联，非 popoverRules 规则内的 token 需手动增加或删减。
  */
 const popoverTokenValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
-  padding: { x: 'Padding-8', y: 'Padding-8' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
+  padding: { x: 'Spacing-8', y: 'Spacing-8' },
   radius: 'Radius-4',
   border: { width: 'Border-1', color: 'Neutral-border-1' },
   background: { color: 'Neutral-fill-1' },
@@ -61,7 +61,7 @@ const popoverTokenValue = {
   },
   confirm: {
     font: { size: '' },
-    padding: { x: 'Padding-16', y: 'Padding-16' },
+    padding: { x: 'Spacing-16', y: 'Spacing-16' },
     background: { color: 'transparent' },
   },
 };

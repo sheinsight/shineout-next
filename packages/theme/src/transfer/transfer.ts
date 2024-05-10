@@ -4,11 +4,11 @@
 import { TransferTokens } from './type';
 
 const transferTokens: TransferTokens = {
-  transferFontSize: '14/regular',
+  transferFontSize: 'Font-14',
   transferHeaderHeight: 'Size-23',
-  transferSmallFontSize: '12/regular',
+  transferSmallFontSize: 'Font-12',
   transferSmallHeaderHeight: 'Size-22',
-  transferLargeFontSize: '16/regular',
+  transferLargeFontSize: 'Font-16',
   transferLargeHeaderHeight: 'Size-24',
   transferBorderColor: 'Neutral-border-1',
   transferFontColor: 'Neutral-text-5',
@@ -18,7 +18,7 @@ const transferTokens: TransferTokens = {
   transferBorderRadius: 'Radius-4',
   transferHeaderBackgroundColor: 'Neutral-fill-2',
   transferIconBackgroundColor: 'Neutral-fill-3',
-  transferIconNearlyMargin: 'Margin-8',
+  transferIconNearlyMargin: 'Spacing-8',
   transferItemHoverBackgroundColor: 'Neutral-fill-2',
   transferCheckboxHoverBackgroundColor: 'Neutral-fill-3',
 };

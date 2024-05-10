@@ -4,13 +4,13 @@
 export interface UploadTokens {
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 上传结果内边距（水平方向）
    */
   uploadResultPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 上传结果内边距（垂直方向）
    */
   uploadResultPaddingY: string;
@@ -22,13 +22,13 @@ export interface UploadTokens {
   uploadResultBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 上传结果内间距
    */
   uploadResultGap: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 上传结果外边距（垂直方向）
    */
   uploadResultMarginY: string;
@@ -52,7 +52,7 @@ export interface UploadTokens {
   uploadResultIconHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 上传结果字体字号
    */
   uploadResultFontSize: string;
@@ -226,13 +226,13 @@ export interface UploadTokens {
   uploadImageResultTipBackgroundColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 上传图片结果提示字体字号
    */
   uploadImageResultTipFontSize: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 上传字体字号
    */
   uploadFontSize: string;

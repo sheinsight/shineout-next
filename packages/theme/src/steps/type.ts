@@ -10,7 +10,7 @@ export interface StepsTokens {
   stepsDescriptionFontColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 步骤条描述信息标题模式外边距（水平方向）
    */
   stepsDescriptionTitleMarginX: string;
@@ -28,7 +28,7 @@ export interface StepsTokens {
   stepsIconHeight: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 步骤条图标字体字号
    */
   stepsIconFontSize: string;
@@ -46,7 +46,7 @@ export interface StepsTokens {
   stepsSmallIconHeight: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 步骤条小尺寸图标字体字号
    */
   stepsSmallIconFontSize: string;
@@ -64,37 +64,37 @@ export interface StepsTokens {
   stepsLargeIconHeight: string;
   /**
    * @type {string}
-   * @token 18/regular
+   * @token Font-18
    * @description 步骤条大尺寸图标字体字号
    */
   stepsLargeIconFontSize: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 步骤条标题模式字体字号
    */
   stepsTitleFontSize: string;
   /**
    * @type {string}
-   * @token 14/medium
+   * @token Font-14
    * @description 步骤条小尺寸标题模式字体字号
    */
   stepsSmallTitleFontSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 步骤条小尺寸描述信息字体字号
    */
   stepsSmallDescriptionFontSize: string;
   /**
    * @type {string}
-   * @token 18/medium
+   * @token Font-18
    * @description 步骤条大尺寸标题模式字体字号
    */
   stepsLargeTitleFontSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 步骤条大尺寸描述信息字体字号
    */
   stepsLargeDescriptionFontSize: string;
@@ -148,58 +148,40 @@ export interface StepsTokens {
   stepsErrorBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 步骤条箭头形状的内边距（水平方向）
    */
   stepsArrowPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 步骤条箭头形状的内边距（垂直方向）
    */
   stepsArrowPaddingY: string;
   /**
    * @type {string}
-   * @token Size-32
-   * @description 步骤条箭头形状的高度
-   */
-  stepsArrowHeight: string;
-  /**
-   * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 步骤条小尺寸箭头形状的内边距（水平方向）
    */
   stepsSmallArrowPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 步骤条小尺寸箭头形状的内边距（垂直方向）
    */
   stepsSmallArrowPaddingY: string;
   /**
    * @type {string}
-   * @token Size-28
-   * @description 步骤条小尺寸箭头形状的高度
-   */
-  stepsSmallArrowHeight: string;
-  /**
-   * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 步骤条大尺寸箭头形状的内边距（水平方向）
    */
   stepsLargeArrowPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-11
+   * @token Spacing-11
    * @description 步骤条大尺寸箭头形状的内边距（垂直方向）
    */
   stepsLargeArrowPaddingY: string;
-  /**
-   * @type {string}
-   * @token Size-36
-   * @description 步骤条大尺寸箭头形状的高度
-   */
-  stepsLargeArrowHeight: string;
   /**
    * @type {string}
    * @token Neutral-border-1
@@ -214,13 +196,13 @@ export interface StepsTokens {
   stepsTailFinishBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 步骤条相邻之间的容器外边距
    */
   stepsNearlyContentMargin: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 步骤条相邻之间的描述信息的外边距
    */
   stepsNearlyDescribeMargin: string;

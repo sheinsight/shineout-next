@@ -29,10 +29,6 @@ const usePopup = (props: BasePopupProps) => {
     };
   }, []);
 
-  useEffect(() => {
-    setOpenState(!!props.open);
-  }, [props.open]);
-
   const { current: context } = useRef({
     triggerTimer: null as NodeJS.Timeout | null,
     // 记录所有的子popup 点击子 popup 不关闭弹窗
@@ -58,6 +54,21 @@ const usePopup = (props: BasePopupProps) => {
 
   const position = (isPositionControl ? props.position : positionState) as PositionType;
 
+  const updatePosition = usePersistFn(() => {
+    if (isPositionControl) return;
+    if (props.position === 'auto' || !props.position) {
+      const newPosition = getPosition(targetRef.current, props.priorityDirection, autoMode);
+      if (newPosition !== position) setPositionState(newPosition);
+    }
+  });
+
+  useEffect(() => {
+    if (props.open) {
+      updatePosition();
+    }
+    setOpenState(!!props.open);
+  }, [props.open]);
+
   // const getPopUpHeight = () => {
   //   let height = 0;
   //   if (popupRef.current) {
@@ -78,11 +89,8 @@ const usePopup = (props: BasePopupProps) => {
   // };
 
   const handleFocus = (delay?: number) => {
-    if (!isPositionControl) {
-      if (props.position === 'auto' || !props.position) {
-        const newPosition = getPosition(targetRef.current, props.priorityDirection, autoMode);
-        if (newPosition !== position) setPositionState(newPosition);
-      }
+    if (props.open === undefined) {
+      updatePosition();
     }
     changeOpen(true, delay);
   };

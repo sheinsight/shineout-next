@@ -135,7 +135,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     },
   );
 
-  const isDisabledDate = (date: Date, position: 'start' | 'end' | undefined) => {
+  const isDisabledDate = usePersistFn((date: Date, position: 'start' | 'end' | undefined) => {
     const mode = getTypeMode(type);
     const disabled =
       position === 'end' ? context.modeDisabledEnd[mode] : context.modeDisabledStart[mode];
@@ -146,7 +146,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       isDisabled = disabledTime ? disabledTime(date) : false;
     }
     return isDisabled;
-  };
+  });
 
   const getFormatValueArr = (dateArr: (Date | undefined)[], fmt?: string) => {
     return dateArr.map((item) => {
@@ -289,6 +289,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     handleInputChange,
     registerModeDisabled,
     setCurrentArrWithParams,
+    isDisabledDate,
   });
 
   return {

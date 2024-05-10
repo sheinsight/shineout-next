@@ -5,6 +5,7 @@ import { UploadProps } from './upload.type';
 import Image from '../image';
 import { PopoverConfirm, PopoverConfirmProps } from '../popover';
 import icons from '../icons';
+import { useConfig } from '../config';
 
 interface ResultProps {
   onRemove: () => void;
@@ -27,6 +28,7 @@ interface ResultProps {
 const Result = (props: ResultProps) => {
   const uploadClasses = props.jssStyle?.upload?.();
   const { status, name, message, confirm, listType, src } = props;
+  const config = useConfig();
   const [isConfirm, setIsConfirm] = useState(false);
   const confirmProps = typeof confirm === 'string' ? { children: confirm } : confirm;
   const { current: context } = useRef({ preview: () => {} });
@@ -83,6 +85,7 @@ const Result = (props: ResultProps) => {
           uploadClasses?.customImageBtn,
         )}
         onClick={props.onRemove}
+        dir={config.direction}
       >
         {status === -1 ? icons.upload.RecoverImage : icons.upload.DeleteImage}
       </div>

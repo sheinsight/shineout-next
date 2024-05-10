@@ -111,6 +111,12 @@ export interface TreeSelectProps<DataItem, Value>
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
     BaseTipProps {
   /**
+   * @en Data cache, if data change asynchronously, better set true
+   * @cn 是否开启数据缓存，如果数据存在动态更新的情况建议开启
+   * @default false
+   */
+  noCache?: boolean;
+  /**
    * @en custom empty copy
    * @cn 自定义 empty 文案
    */

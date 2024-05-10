@@ -7,6 +7,7 @@ import StepsContext from './steps-context';
 import DefaultStep from './step.default';
 import DotStep from './step.dot';
 import ArrowStep from './step.arrow';
+import { useConfig } from '../config';
 
 const Step = (props: StepProps) => {
   const {
@@ -28,6 +29,7 @@ const Step = (props: StepProps) => {
     onClick,
     onChange,
   } = props;
+  const config = useConfig();
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const getLabelPlacement = () => {
     // dot 类型只支持 vertical labelPlacement
@@ -99,7 +101,7 @@ const Step = (props: StepProps) => {
     );
   };
 
-  return <div className={rootClass}>{renderStep()}</div>;
+  return <div className={rootClass} dir={config.direction}>{renderStep()}</div>;
 };
 
 const StepWidthContext = (props: BaseStepProps) => {

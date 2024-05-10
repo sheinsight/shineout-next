@@ -149,11 +149,9 @@ const hoverAfterStyles = {
   content: '""',
   position: 'absolute',
   top: -4,
-  right: 0,
-  bottom: 0,
+  right: -4,
+  bottom: -4,
   left: -4,
-  width: 24,
-  height: 24,
   borderRadius: '50%',
 };
 
@@ -265,6 +263,7 @@ const modalStyle: JsStyles<ModalClassType> = {
       },
       '& $body': {
         padding: `${token.modalDrawerBodyPaddingY} ${token.modalDrawerBodyPaddingX}`,
+        overflow: 'auto',
       },
       '& $bodyWithIcon': {
         paddingLeft: token.modalDrawerBodyPaddingX,

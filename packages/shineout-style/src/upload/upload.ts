@@ -231,8 +231,14 @@ const uploadStyle: JsStyles<UploadClassType> = {
   imageResultTopBtn: {
     position: 'absolute',
     top: 0,
-    right: 0,
-    transform: 'translate(50%, -50%)',
+    '&[dir=ltr]': {
+      right: 0,
+      transform: 'translate(50%, -50%)',
+    },
+    '&[dir=rtl]': {
+      left: 0,
+      transform: 'translate(-50%, -50%)',
+    },
     color: token.uploadImageResultBtnCloseColor,
     cursor: 'pointer',
     '$resultDeleted &': {

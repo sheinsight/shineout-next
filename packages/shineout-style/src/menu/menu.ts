@@ -98,8 +98,15 @@ const menuStyle: JsStyles<MenuClassType> = {
     '$wrapperVertical &': {
       position: 'absolute',
       top: 0,
-      right: '-6px',
-      transform: 'translateX(100%)',
+      '&[dir=ltr]': {
+        right: '-6px',
+        transform: 'translateX(100%)',
+      },
+      '&[dir=rtl]': {
+        left: '-6px',
+        transform: 'translateX(-100%)',
+      },
+
       minWidth: 'auto',
       borderRadius: '4px',
       '& > :first-child > $itemContent': {
@@ -407,7 +414,8 @@ const menuStyle: JsStyles<MenuClassType> = {
       },
     },
     '$wrapperVertical &': {
-      transform: 'rotate(-90deg)',
+      '&[dir=ltr]': { transform: 'rotate(-90deg)' },
+      '&[dir=rtl]': { transform: 'rotate(90deg)' },
     },
   },
   icon: {
@@ -458,6 +466,10 @@ const menuStyle: JsStyles<MenuClassType> = {
     width: '16px',
     boxSizing: 'border-box',
     borderWidth: '0 1px',
+    '&[dir=rtl]': {
+      left: 0,
+      right: 'auto',
+    },
   },
   scrolbarHandler: {
     position: 'absolute',

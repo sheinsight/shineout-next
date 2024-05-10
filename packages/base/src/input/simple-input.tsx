@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import React, { KeyboardEvent } from 'react';
 import { SimpleInputProps } from './input.type';
 import Icons from '../icons';
+import { useConfig } from '../config';
 
 const Input = (props: SimpleInputProps) => {
   const {
@@ -25,6 +26,7 @@ const Input = (props: SimpleInputProps) => {
   } = props;
 
   const inputStyle = jssStyle?.input?.();
+  const config = useConfig();
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
     onFocusedChange,
@@ -85,7 +87,9 @@ const Input = (props: SimpleInputProps) => {
         {inputEl}
         {showClear && (
           <div className={inputStyle?.clearWrapper} {...getClearProps()}>
-            <span className={inputStyle?.clear}>{clearIcon || Icons.input.Close}</span>
+            <span className={inputStyle?.clear} dir={config.direction}>
+              {clearIcon || Icons.input.Close}
+            </span>
           </div>
         )}
         {suffix}

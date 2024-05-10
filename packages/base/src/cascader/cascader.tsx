@@ -358,9 +358,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     handlePathChange(id, null, path as Value);
   };
 
-  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => {
-    const dataKey = util.isUnMatchedData(item) ? item.value : datum.getKey(item, key, index);
-
+  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult) => {
+    const dataKey = key ?? (util.isUnMatchedData(item) ? item.value : datum.getKey(item));
     const isDisabled = datum.isDisabled(dataKey);
 
     if (isDisabled) return;
@@ -531,6 +530,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         id={path[0]}
         parentId=''
         path={[] as unknown as Value}
+        mode={mode}
       />,
     ];
     const childs = path.map((p, i) => {
@@ -574,7 +574,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     const listStyle =
       data && data.length === 0
         ? { height: 'auto', minHeight: 232, width: '100%' }
-        : { height, minHeight: 232 };
+        : { height, minHeight: height || 232 };
     return (
       <div className={classNames(styles.listContent)} style={listStyle}>
         {cascaderList}
@@ -688,7 +688,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   return (
     <div
-      tabIndex={disabled === true ? -1 : 0}
+      tabIndex={disabled === true || showInput ? undefined : 0}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}

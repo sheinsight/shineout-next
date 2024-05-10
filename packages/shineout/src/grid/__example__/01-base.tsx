@@ -12,7 +12,7 @@ type SliderOnChange = SliderProps['onChange'];
 
 const gridStyle: React.CSSProperties = {
   color: '#fff',
-  paddingLeft: 8,
+  paddingInlineStart: 8,
   background: '#197afa',
   fontSize: 14,
 };

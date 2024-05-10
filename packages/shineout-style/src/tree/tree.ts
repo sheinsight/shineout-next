@@ -8,20 +8,22 @@ const treeStyle: JsStyles<TreeClassType> = {
   tree: {},
   line: {
     '& $node': {
+      '&[dir=ltr]::before': { left: 0 },
+      '&[dir=rtl]::before': { right: 0 },
       '&::before': {
         content: '""',
         position: 'absolute',
-        left: 0,
         top: -6,
         height: 'calc(100% + 6px)',
         width: 1,
         background: '#ebebeb',
       },
+      '&[dir=ltr]::after': { left: 0 },
+      '&[dir=rtl]::after': { right: 0 },
       '&::after': {
         content: '""',
         position: 'absolute',
         top: 18,
-        left: 0,
         height: 1,
         width: 16,
         background: '#ebebeb',
@@ -45,7 +47,8 @@ const treeStyle: JsStyles<TreeClassType> = {
     '& $contentWrapper': {},
 
     '& $iconWrapper': {
-      left: 16,
+      '&[dir=ltr]': { left: 16 },
+      '&[dir=rtl]': { right: 16 },
       width: 24,
       '& $icon': {
         // width: 16,
@@ -62,7 +65,8 @@ const treeStyle: JsStyles<TreeClassType> = {
 
     '& $iconWrapper[data-expanded="false"][data-icon="false"]': {
       '& $icon': {
-        transform: 'rotate(-90deg)',
+        '&[dir=ltr]': { transform: 'rotate(-90deg)' },
+        '&[dir=rtl]': { transform: 'rotate(90deg)' },
       },
     },
     '& $iconWrapper[data-expanded="true"][data-icon="false"]': {
@@ -149,8 +153,9 @@ const treeStyle: JsStyles<TreeClassType> = {
   leaf: {},
   childnode: {},
   iconWrapper: {
+    '&[dir=ltr]': { left: 0 },
+    '&[dir=rtl]': { right: 0 },
     position: 'absolute',
-    left: 0,
     width: 24,
     height: 26,
     display: 'inline-flex',

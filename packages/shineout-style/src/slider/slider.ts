@@ -47,7 +47,8 @@ const sliderStyle: JsStyles<SliderClassType> = {
     '$vertical &': {
       width: '100%',
       height: 'unset',
-      left: 0,
+      '&[dir=ltr]': { left: 0 },
+      '&[dir=rtl]': { right: 0 },
       bottom: '100%',
     },
     '$disabled &': {
@@ -91,26 +92,50 @@ const sliderStyle: JsStyles<SliderClassType> = {
   indicatorHover: {},
   indicatorStart: {
     '$wrapper:not($vertical) &': {
-      left: 0,
       top: '50%',
-      transform: 'translate(-50%, -50%)',
+      '&[dir=ltr]': {
+        left: 0,
+        transform: 'translate(-50%, -50%)',
+      },
+      '&[dir=rtl]': {
+        right: 0,
+        transform: 'translate(50%, -50%)',
+      },
     },
     '$vertical &': {
-      left: '50%',
       bottom: 0,
-      transform: 'translate(-50%, 50%)',
+      '&[dir=ltr]': {
+        left: '50%',
+        transform: 'translate(-50%, 50%)',
+      },
+      '&[dir=rtl]': {
+        right: '50%',
+        transform: 'translate(50%, 50%)',
+      },
     },
   },
   indicatorEnd: {
     '$wrapper:not($vertical) &': {
-      right: 0,
       top: '50%',
-      transform: 'translate(50%, -50%)',
+      '&[dir=ltr]': {
+        right: 0,
+        transform: 'translate(50%, -50%)',
+      },
+      '&[dir=rtl]': {
+        left: 0,
+        transform: 'translate(-50%, -50%)',
+      },
     },
     '$vertical &': {
-      left: '50%',
       top: 0,
-      transform: 'translate(-50%, -50%)',
+      '&[dir=ltr]': {
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+      },
+      '&[dir=rtl]': {
+        right: '50%',
+        transform: 'translate(50%, -50%)',
+      },
     },
   },
   value: {
@@ -125,28 +150,52 @@ const sliderStyle: JsStyles<SliderClassType> = {
   },
   startValue: {
     '$wrapper:not($vertical) &': {
-      left: 0,
       bottom: '100%',
-      transform: 'translate(-50%, -10px)',
+      '&[dir=ltr]': {
+        left: 0,
+        transform: 'translate(-50%, 10px)',
+      },
+      '&[dir=rtl]': {
+        right: 0,
+        transform: 'translate(50%, -10px)',
+      },
     },
     '$vertical &': {
       bottom: 0,
-      left: '100%',
-      transform: 'translate(10px, 50%)',
       padding: '1px 4px',
+      '&[dir=ltr]': {
+        left: '100%',
+        transform: 'translate(10px, 50%)',
+      },
+      '&[dir=rtl]': {
+        right: '100%',
+        transform: 'translate(-10px, 50%)',
+      },
     },
   },
   endValue: {
     '$wrapper:not($vertical) &': {
-      right: 0,
       bottom: '100%',
-      transform: 'translate(50%, -10px)',
+      '&[dir=ltr]': {
+        right: 0,
+        transform: 'translate(50%, -10px)',
+      },
+      '&[dir=rtl]': {
+        left: 0,
+        transform: 'translate(-50%, -10px)',
+      },
     },
     '$vertical &': {
       top: 0,
-      left: '100%',
-      transform: 'translate(10px, -50%)',
       padding: '1px 4px',
+      '&[dir=ltr]': {
+        left: '100%',
+        transform: 'translate(10px, -50%)',
+      },
+      '&[dir=rtl]': {
+        right: '100%',
+        transform: 'translate(-10px, -50%)',
+      },
     },
   },
   valueHover: {
@@ -223,14 +272,16 @@ const sliderStyle: JsStyles<SliderClassType> = {
     userSelect: 'none',
     color: token.sliderScaleFontColor,
     '$wrapper:not($vertical) &': {
-      transform: 'translate(-50%)',
+      '&[dir=ltr]': { transform: 'translate(-50%)' },
+      '&[dir=rtl]': { transform: 'translate(50%)' },
       lineHeight: token.lineHeightDynamic,
     },
     '$vertical &': {
       top: 0,
-      left: '100%',
       lineHeight: 1,
-      transform: 'translate(4px, -50%)',
+
+      '&[dir=ltr]': { left: '100%', transform: 'translate(4px, -50%)' },
+      '&[dir=rtl]': { right: '100%', transform: 'translate(-4px, -50%)' },
     },
   },
 };

@@ -91,19 +91,11 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginTop: 0,
         marginBottom: 0,
       },
-
-      '& $clearIcon': {
-        right: token.selectSmallPaddingX,
-      },
     },
     '&$wrapperLarge': {
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: token.selectLargePlaceholderMarginY,
         marginBottom: token.selectLargePlaceholderMarginY,
-      },
-
-      '& $clearIcon': {
-        right: token.selectLargePaddingX,
       },
     },
     '&:hover': {
@@ -346,7 +338,8 @@ const selectStyle: JsStyles<SelectClassType> = {
     justifyContent: 'center',
   },
   checkedIcon: {
-    right: 8,
+    '&[dir=ltr]': { right: 8 },
+    '&[dir=rtl]': { left: 8 },
     top: `calc(50% - 1em/2)`,
     position: 'absolute',
     display: 'inline-flex',

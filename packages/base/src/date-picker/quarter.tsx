@@ -4,9 +4,11 @@ import classNames from 'classnames';
 import Icons from '../icons';
 import React from 'react';
 import PickerTitle from './pickerTitle';
+import { useConfig } from '../config';
 
 const Quarter = (props: QuarterProps) => {
   const { jssStyle } = props;
+  const config = useConfig();
   const styles = jssStyle?.datePicker?.();
 
   const setCurrent = usePersistFn((date) => {
@@ -36,6 +38,7 @@ const Quarter = (props: QuarterProps) => {
 
     return (
       <td
+        dir={config.direction}
         className={classNames(
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
@@ -82,10 +85,14 @@ const Quarter = (props: QuarterProps) => {
       className={classNames(styles?.quarterPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={styles?.pickerHeader}>
+      <div className={styles?.pickerHeader} dir={config.direction}>
         <div className={styles?.pickerHeaderLeft}>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev}>
-            {Icons.datepicker.ArrowDoubleRight}
+          <span
+            className={styles?.pickerHeaderIcon}
+            onClick={func.handlePrev}
+            dir={config.direction}
+          >
+            {Icons.datepicker.ArrowDoubleLeft}
           </span>
         </div>
         <div className={styles?.pickerHeaderMid}>
@@ -99,7 +106,11 @@ const Quarter = (props: QuarterProps) => {
           </span>
         </div>
         <div className={styles?.pickerHeaderRight}>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handleNext}>
+          <span
+            className={styles?.pickerHeaderIcon}
+            onClick={func.handleNext}
+            dir={config.direction}
+          >
             {Icons.datepicker.ArrowDoubleRight}
           </span>
         </div>

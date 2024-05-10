@@ -76,19 +76,19 @@ export interface TabsTokens {
   tabsClickBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-15
+   * @token Spacing-15
    * @description 标签页页签内边距（水平方向）
    */
   tabsTabPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-9
+   * @token Spacing-9
    * @description 标签页页签内边距（垂直方向）
    */
   tabsTabPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 标签页页签字体字号
    */
   tabsTabFontSize: string;
@@ -100,55 +100,55 @@ export interface TabsTokens {
   tabsTabBorderRadius: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 标签页相邻之间的外边距
    */
   tabsNearlyMargin: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 标签页下划模式内边距（水平方向）
    */
   tabsLinePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-6
+   * @token Spacing-6
    * @description 标签页下划模式内边距（垂直方向）
    */
   tabsLinePaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 标签页下划模式内部容器的内边距（水平方向）
    */
   tabsLineInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 标签页下划模式内部容器的内边距（垂直方向）
    */
   tabsLineInnerPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 标签页填充模式内边距（水平方向）
    */
   tabsFillPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 标签页填充模式内边距（垂直方向）
    */
   tabsFillPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 标签页填充模式内部容器的内边距（水平方向）
    */
   tabsFillInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 标签页填充模式内部容器的内边距（垂直方向）
    */
   tabsFillInnerPaddingY: string;
@@ -160,25 +160,25 @@ export interface TabsTokens {
   tabsSplitBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 标签页操作按钮垂直模式内边距（水平方向）
    */
   tabsActionVerticalPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 标签页操作按钮垂直模式内边距（垂直方向）
    */
   tabsActionVerticalPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 标签页操作按钮水平模式内边距（水平方向）
    */
   tabsActionHorizontalPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 标签页操作按钮水平模式内边距（垂直方向）
    */
   tabsActionHorizontalPaddingY: string;

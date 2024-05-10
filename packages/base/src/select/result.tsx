@@ -1,13 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, UnMatchedData, KeygenResult } from '@sheinx/hooks';
+import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
 import Input from './result-input';
 import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
 
-const { isObject, isEmpty, isNumber, getKey, isUnMatchedData, isFunc, isArray } = util;
+const { isObject, isEmpty, isNumber, isUnMatchedData, isFunc, isArray } = util;
 
 const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const {
@@ -41,15 +41,20 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     checkUnMatched,
     onRemove,
     onResultItemClick,
+    data,
   } = props;
   const value = (
-    [null, undefined, ''].includes(valueProp as any) ? [] : multiple ? valueProp : [valueProp]
+    [null, undefined, ''].includes(valueProp as any)
+      ? []
+      : Array.isArray(valueProp)
+      ? valueProp
+      : [valueProp]
   ) as Value;
 
   const [more, setMore] = useState(-1);
+  const [shouldResetMore, setShouldResetMore] = useState(false);
 
   const resultRef = useRef<HTMLDivElement>(null);
-  const shouldResetMore = useRef(false);
   const prevMore = useRef(more);
   const showInput = allowOnFilter;
   const mounted = useRef(false);
@@ -148,19 +153,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     item: DataItem | UnMatchedData,
     index: number,
     nodes?: (DataItem | UnMatchedData)[],
+    v?: any,
   ): React.ReactNode => {
-    let key: KeygenResult;
-    if (isUnMatchedData(item)) {
-      if (isFunc(keygen)) {
-        key = keygen(item.value, index);
-      } else {
-        key = item.value;
-      }
-    } else {
-      key = getKey(keygen, item as DataItem, index);
-    }
     const handleClose = () => {
-      onRemove?.(item, key, index);
+      onRemove?.(item, v);
     };
     let isDisabled;
     if (util.isFunc(disabled)) {
@@ -170,7 +166,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     let resultClassName;
     if (util.isFunc(props.resultClassName)) {
-      resultClassName = props.resultClassName(key as DataItem);
+      resultClassName = props.resultClassName(isUnMatchedData(item) ? item.value : item);
     } else {
       resultClassName = props.resultClassName;
     }
@@ -184,8 +180,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!content) return null;
 
     if (renderResultContentProp) {
+      // cascader 不渲染tag
       return renderResultContentProp({
-        key,
+        key: index,
         size,
         disabled: isDisabled,
         className: classNames(styles.tag, styles.hideTag, resultClassName),
@@ -197,7 +194,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
     return (
       <Tag
-        key={key}
+        key={index}
         disabled={isDisabled}
         size={size}
         style={{ opacity: more === index ? 0 : 1 }}
@@ -247,24 +244,29 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
+  const getValueArr = (v: any) => {
+    return (isArray(v) ? v : [v]).filter((v) => v !== undefined && v !== null);
+  };
+
   const renderMultipleResult = () => {
     if (isEmptyResult()) return renderNbsp();
     // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
-    let nextValue = value;
+    let nextValue = getValueArr(value);
     if (separator && util.isString(valueProp)) {
-      nextValue = valueProp.split(separator) as Value;
+      nextValue = valueProp.split(separator);
     }
-    const values = getDataByValues(nextValue);
-    const result = values.map((v, i) => {
-      if (renderResultContentProp && i !== values.length - 1) {
+    const datas = getDataByValues(nextValue as Value);
+    const result = datas.map((d, i) => {
+      const v = nextValue[i];
+      if (renderResultContentProp && i !== datas.length - 1) {
         return [
-          renderResultItem(v, i, values),
+          renderResultItem(d, i, datas, v),
           <span key={`separator-${i}`} className={classNames(styles.tag, styles.hideTag)}>
             /
           </span>,
         ];
       }
-      return renderResultItem(v, i, values);
+      return renderResultItem(d, i, datas, v);
     });
     return result;
   };
@@ -313,7 +315,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const handleResetMore = () => {
     if (!compressed) return;
-    shouldResetMore.current = true;
+    if (isCompressedBound()) return;
+    setMore(-1);
+    setShouldResetMore(true);
   };
 
   useEffect(() => {
@@ -327,42 +331,39 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   }, [focus]);
 
   useEffect(() => {
-    if (!focus) return;
-    if (!resultRef.current) return;
-    if (!compressed) return;
-    if (isCompressedBound()) return;
     handleResetMore();
-  }, [valueProp, focus]);
+  }, [valueProp, data]);
 
-  useEffect(() => {
-    if (!compressed) return;
-    if (!resultRef.current) return;
-    console.log(more);
-    if (more === -1) {
+  useLayoutEffect(() => {
+    if (
+      shouldResetMore &&
+      more === -1 &&
+      compressed &&
+      resultRef.current &&
+      (props.value || [].length)
+    ) {
       const tagClassName = `.${styles.tag.split(' ')[0]}`;
-      if (shouldResetMore.current && isArray(value) && (value || []).length) {
-        shouldResetMore.current = false;
+      if (shouldResetMore && isArray(value) && (value || []).length) {
         const newMore = getResetMore(
           showInput,
           resultRef.current,
           resultRef.current.querySelectorAll(tagClassName),
         );
-
-        // 下次触发折叠逻辑的时候，将多余的 tag 隐藏，避免视图闪断
-        if (newMore !== prevMore.current && prevMore.current === -1 && newMore > prevMore.current) {
-          const tags = resultRef.current.querySelectorAll(tagClassName);
-          tags.forEach((tag, index) => {
-            if (index >= newMore) tag.setAttribute('style', 'opacity: 0');
-          });
-        }
         prevMore.current = newMore;
         setMore(newMore);
+        setShouldResetMore(false);
+      } else {
+        setShouldResetMore(false);
       }
+    } else {
+      setShouldResetMore(false);
     }
-  }, [valueProp, more]);
+  }, [shouldResetMore]);
 
   useEffect(() => {
     if (!resultRef.current) return;
+    if (!compressed) return;
+    if (isCompressedBound()) return;
 
     const cancelObserver = addResizeObserver(resultRef.current, handleResetMore, {
       direction: 'x',

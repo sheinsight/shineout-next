@@ -26,20 +26,20 @@ const descriptionsTokenDescription = {
  */
 const descriptionsTokenValue = {
   title: {
-    padding: { top: '', bottom: 'Padding-12', left: '', right: '' },
-    small: { size: '14/medium' },
-    default: { size: '16/medium' },
-    large: { size: '18/medium' },
+    padding: { top: '', bottom: 'Spacing-12', left: '', right: '' },
+    small: { size: 'Font-14' },
+    default: { size: 'Font-16' },
+    large: { size: 'Font-18' },
     color: 'Neutral-text-5',
     font: { weight: '500' },
     gap: 'Size-2',
   },
   label: {
-    padding: { top: '', bottom: 'Padding-12', left: '', right: 'Padding-8' },
+    padding: { top: '', bottom: 'Spacing-12', left: '', right: 'Spacing-8' },
     color: 'Neutral-text-4',
   },
   value: {
-    padding: { top: '', bottom: 'Padding-12', left: '', right: '' },
+    padding: { top: '', bottom: 'Spacing-12', left: '', right: '' },
     color: 'Neutral-text-5',
   },
   border: {
@@ -50,16 +50,16 @@ const descriptionsTokenValue = {
     radius: 'Size-2',
     right: { size: '1px', x: '', y: '' },
     bottom: { size: '1px', x: '', y: '' },
-    padding: { size: '', x: 'Padding-8', y: 'Padding-12' },
+    padding: { size: '', x: 'Spacing-8', y: 'Spacing-12' },
   },
   font: {
-    small: { size: '12/regular' },
-    default: { size: '14/regular' },
-    large: { size: '16/regular' },
+    small: { size: 'Font-12' },
+    default: { size: 'Font-14' },
+    large: { size: 'Font-16' },
   },
   extra: { color: '' },
   background: { color: 'Neutral-fill-2' },
-  inline: { border: { padding: { x: 'Padding-8', y: 'Padding-12' } } },
+  inline: { border: { padding: { x: 'Spacing-8', y: 'Spacing-12' } } },
 };
 
 const descriptionsTokenExtraValue = {};

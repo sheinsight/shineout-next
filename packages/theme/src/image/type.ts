@@ -64,13 +64,13 @@ export interface ImageTokens {
   imageErrorFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 图片加载错误时的字体字号
    */
   imageErrorFontSize: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 图片组相邻之间的外边距
    */
   imageGroupNearlyMargin: string;

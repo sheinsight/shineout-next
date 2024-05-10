@@ -30,7 +30,7 @@ const collapseTokenValue = {
     border: { size: 'Border-1', radius: 'Radius-4', color: 'Neutral-border-1' },
     line: { height: '' },
     gap: 'Size-12',
-    padding: { x: 'Padding-16', y: 'Padding-12', left: '', right: '' },
+    padding: { x: 'Spacing-16', y: 'Spacing-12', left: '', right: '' },
     font: { size: '' },
     weight: '',
     icon: { width: '' },
@@ -43,7 +43,7 @@ const collapseTokenValue = {
     line: { height: 'Size-11' },
     gap: 'Size-4',
     padding: { x: '', y: '', left: '', right: '' },
-    font: { size: '14/regular' },
+    font: { size: 'Font-14' },
     weight: '400',
     icon: { width: 'Size-7' },
     extra: { gap: 'Size-5' },
@@ -54,8 +54,8 @@ const collapseTokenValue = {
     border: { size: '', radius: '', color: '' },
     line: { height: 'Size-11' },
     gap: 'Size-12',
-    padding: { x: '', y: 'Padding-12', left: 'Size-19', right: 'Padding-16' },
-    font: { size: '14/regular' },
+    padding: { x: '', y: 'Spacing-12', left: 'Size-19', right: 'Spacing-16' },
+    font: { size: 'Font-14' },
     weight: '400',
     icon: { width: '' },
     extra: { gap: '' },
@@ -68,7 +68,7 @@ const collapseTokenValue = {
 
 const collapseTokenExtraValue = {
   icon: { color: 'Neutral-text-4', hover: { background: { color: 'Neutral-fill-3' } } },
-  extra: { margin: 'Margin-24' },
+  extra: { margin: 'Spacing-24' },
 };
 
 module.exports = {

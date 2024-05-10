@@ -4,16 +4,16 @@
 import { FormTokens } from './type';
 
 const formTokens: FormTokens = {
-  formItemFontSize: '14/regular',
+  formItemFontSize: 'Font-14',
   formItemFontColor: 'Neutral-text-5',
-  formItemMarginYEnd: 'Margin-12',
-  formItemMarginXEnd: 'Margin-16',
+  formItemMarginYEnd: 'Spacing-12',
+  formItemMarginXEnd: 'Spacing-16',
   formItemLabelWidth: '140px',
-  formItemLabelPaddingY: 'Padding-5',
-  formItemLabelMarginXEnd: 'Margin-8',
+  formItemLabelPaddingY: 'Spacing-5',
+  formItemLabelMarginXEnd: 'Spacing-8',
   formItemDangerColor: 'Danger-6',
-  formItemTipMinHeight: '20px',
-  formItemTipFontSize: '12/regular',
+  formItemTipMinHeight: 'Size-10',
+  formItemTipFontSize: 'Font-12',
   formItemTipFontColor: 'Neutral-text-3',
 };
 
