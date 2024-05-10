@@ -81,7 +81,8 @@ const Button = (props: ButtonProps) => {
 
   const childrenEl = React.Children.map(getSpaceChildren(children, space), (item) => {
     if (loading && isValidElement(item) && (item.type as any).isShineoutIcon) return null;
-  });
+    return item;
+  })?.filter(item => item !== null);
 
   let buttonInnerEl: React.ReactNode = childrenEl;
 

@@ -1,4 +1,4 @@
-## 3.1.1
+## 3.1.2
 2024-05-10
 ### 💎 Enhancement
 - 调整组件默认的 Spin 类型为 `ring` ([#422](https://github.com/sheinsight/shineout-next/pull/422))

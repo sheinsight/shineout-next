@@ -1,4 +1,4 @@
-## 3.1.1
+## 3.1.2
 2024-05-10
 ### 💅 Style
 - `Table` 容器增加 `min-width: 0` 样式 ([#422](https://github.com/sheinsight/shineout-next/pull/422))
