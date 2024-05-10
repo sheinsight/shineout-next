@@ -1,5 +1,13 @@
+## 3.1.5
+2024-05-10
+
+### 🐞 BugFix
+
+- `Table` 在没有设置 `width` 的情况下表头可能错位的问题 ([#426](https://github.com/sheinsight/shineout-next/pull/426))
+
 ## 3.1.2
 2024-05-10
+
 ### 💅 Style
 - `Table` 容器增加 `min-width: 0` 样式 ([#422](https://github.com/sheinsight/shineout-next/pull/422))
 
