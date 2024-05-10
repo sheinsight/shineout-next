@@ -45,7 +45,6 @@ export function getDefaultContainer() {
 }
 
 export const useConfig = () => {
-  console.log(config)
   return state.useSnapshot();
 };
 
