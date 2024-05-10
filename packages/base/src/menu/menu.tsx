@@ -41,8 +41,6 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
 
   if (collapse) delete style.width;
 
-  const nextStyle = collapse ? style : props.style;
-
   const listStyle = isVertical && !collapse ? { width: props.style?.width } : undefined;
 
   useEffect(() => {
@@ -68,7 +66,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
       )}
       style={{
         height: props.height,
-        ...nextStyle,
+        ...style,
       }}
     >
       <div className={classes?.scrollbox} ref={scrollRef}>

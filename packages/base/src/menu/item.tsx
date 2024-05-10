@@ -71,7 +71,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
       ) : null;
 
-    const isFirstLevelItem = collapse && props.level === 0;
+    const isFirstCollapseItem = collapse && props.level === 0;
 
     if (props.frontCaret) {
       return (
@@ -80,7 +80,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           className={classNames(
             classes?.itemContent,
             classes?.itemContentFront,
-            isFirstLevelItem && classes?.itemContentHide,
+            isFirstCollapseItem && classes?.itemContentHide,
           )}
           onClick={handleItemClick}
         >
@@ -113,7 +113,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           className={classNames(
             classes?.itemContent,
             classes?.itemContentBack,
-            isFirstLevelItem && classes?.itemContentHide,
+            isFirstCollapseItem && classes?.itemContentHide,
           )}
           onClick={handleItemClick}
         >
@@ -140,14 +140,14 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
 
   const renderCollapseItem = () => {
     if (!props.renderCollapse) return null;
-    const isFirstLevelItem = props.level === 0 && collapse;
+    const isFirstCollapseItem = props.level === 0 && collapse;
 
     return (
       <div
         className={classNames(
           classes?.collapseItem,
           isInPath && classes?.collapseItemInPath,
-          !isFirstLevelItem && classes?.collapseItemHide,
+          !isFirstCollapseItem && classes?.collapseItemHide,
         )}
         onClick={handleItemClick}
       >
@@ -160,16 +160,18 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     if (!itemContentRef.current) return;
     if (collapse === undefined) return;
     if (timer.current) clearTimeout(timer.current);
-    
+
     itemContentRef.current.style.overflow = 'hidden';
     itemContentRef.current.style.whiteSpace = 'nowrap';
 
+    timer.current = setTimeout(() => {
+      if (!itemContentRef.current) return;
+      itemContentRef.current.style.overflow = '';
+      itemContentRef.current.style.whiteSpace = '';
+    }, 300);
+
     return () => {
-      timer.current = setTimeout(() => {
-        if (!itemContentRef.current) return;
-        itemContentRef.current.style.overflow = '';
-        itemContentRef.current.style.whiteSpace = '';
-      }, 300);
+      if (timer.current) clearTimeout(timer.current);
     };
   }, [collapse]);
 
