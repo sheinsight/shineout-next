@@ -29,6 +29,7 @@ const tableStyle: JsStyles<TableClassType> = {
     position: 'relative',
     zIndex: 0,
     minHeight: 0,
+    minWidth: 0,
     fontSize: token.tableFontSize,
     '& table': {
       minWidth: '100%',
