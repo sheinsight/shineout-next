@@ -1,4 +1,4 @@
-import { cloneElement, useEffect } from 'react';
+import { cloneElement, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { useMenuItem, util } from '@sheinx/hooks';
 import Icons from '../icons';
@@ -9,6 +9,8 @@ import type { MenuItemProps } from './menu.type';
 const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
+  const itemContentRef = useRef<HTMLDivElement>(null);
+  const timer = useRef<any>(null);
   const { inlineIndent = 24, frontCaretType = 'solid', collapse } = props;
 
   const hasExpandAbleChildren = children.some(
@@ -45,10 +47,6 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     scrollRef: props.scrollRef,
   });
 
-  const handleTransitionEnd = () => {
-    console.log(999);
-  };
-
   const renderItem = () => {
     const item = util.render(props.renderItem, props.dataItem, props.index);
     const link = props.linkKey
@@ -76,6 +74,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     if (props.frontCaret) {
       return (
         <div
+          ref={itemContentRef}
           className={classNames(
             classes?.itemContent,
             classes?.itemContentFront,
@@ -107,6 +106,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     } else {
       return (
         <div
+          ref={itemContentRef}
           className={classNames(
             classes?.itemContent,
             classes?.itemContentBack,
@@ -141,12 +141,11 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     return (
       <div
         className={classNames(
-          classes.collapseItem,
+          classes?.collapseItem,
           isInPath && classes?.collapseItemInPath,
-          !isFirstLevelItem && classes.collapseItemHide,
+          !isFirstLevelItem && classes?.collapseItemHide,
         )}
         onClick={handleItemClick}
-        // onTransitionEnd={handleTransitionEnd}
       >
         {props.renderCollapse(props.dataItem, props.index)}
       </div>
@@ -154,8 +153,21 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   };
 
   useEffect(() => {
+    if (!itemContentRef.current) return;
+    if (collapse === undefined) return;
+    if (timer.current) clearTimeout(timer.current);
+    
+    itemContentRef.current.style.overflow = 'hidden';
+    itemContentRef.current.style.whiteSpace = 'nowrap';
 
-  }, []);
+    return () => {
+      timer.current = setTimeout(() => {
+        if (!itemContentRef.current) return;
+        itemContentRef.current.style.overflow = '';
+        itemContentRef.current.style.whiteSpace = '';
+      }, 300);
+    };
+  }, [collapse]);
 
   return (
     <li
@@ -169,6 +181,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      // onTransitionEnd={handleTransitionEnd}
     >
       {renderItem()}
       {renderCollapseItem()}

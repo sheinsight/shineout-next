@@ -13,7 +13,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     data = emptyArray,
     mode: modeProps = 'inline',
     theme = 'light',
-    collapse = false,
+    collapse,
   } = props;
   const mode = collapse ? 'vertical' : modeProps;
   const classes = props.jssStyle?.menu?.();
