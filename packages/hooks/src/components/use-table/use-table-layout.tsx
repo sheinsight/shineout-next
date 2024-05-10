@@ -121,7 +121,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const newColgroup = [...colgroup];
     newColgroup[index] = context.dragWidth;
     if (isFunc(props.onColumnResize)) {
-      const newColumns = props.columns.map((item) => ({ ...item, width: newColgroup[index] }));
+      const newColumns = props.columns.map((item, i) => ({ ...item, width: newColgroup[i] }));
       props.onColumnResize(newColumns);
       return;
     }
