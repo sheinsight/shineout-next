@@ -1,3 +1,9 @@
+## 3.1.6
+2024-05-11
+
+### 💅 Style
+- `Form.Item` 在行内模式下给标签增加 `width: auto` 样式 ([#430](https://github.com/sheinsight/shineout-next/pull/430))
+
 ## 3.1.0
 2024-05-09
 

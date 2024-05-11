@@ -17,6 +17,9 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
   },
   wrapperTip: {},
   label: {
+    '$wrapperInline &': {
+      width: 'auto',
+    },
     wordWrap: 'break-word',
     width: token.formItemLabelWidth,
     padding: `${token.formItemLabelPaddingY} 0`,
