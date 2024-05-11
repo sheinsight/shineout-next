@@ -1,3 +1,12 @@
+## 3.1.6
+2024-05-11
+
+### 🐞 BugFix
+
+- `Table` 表头分组场景下可能导致列宽计算错误的问题 ([#428](https://github.com/sheinsight/shineout-next/pull/428))
+- `Table` 属性 `onColumnResize` 参数返回错误的问题 ([#427](https://github.com/sheinsight/shineout-next/pull/427))
+
+
 ## 3.1.5
 2024-05-10
 

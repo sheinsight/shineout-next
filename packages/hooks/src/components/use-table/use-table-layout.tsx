@@ -151,16 +151,14 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const items = tr.children;
 
     let newCols: number[] = [];
-    let index = 0
+    let index = 0;
     let sum = 0;
     for (let i = 0, count = items.length; i < count; i++) {
       const { width } = items[i].getBoundingClientRect();
       sum += width;
       const colspan = items[i].getAttribute('colspan');
       const colspanNum = parseInt(colspan || '1', 10);
-      const dfWidth = props.columns
-        .slice(index, index + (colspanNum))
-        .map((v) => v.width);
+      const dfWidth = props.columns.slice(index, index + colspanNum).map((v) => v.width);
       let tempcols = [] as number[];
       const emptyNum = dfWidth.filter((v) => v === undefined).length;
       if (dfWidth.length === 1) {
@@ -254,8 +252,8 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     }
     //  当存在某列没有设置宽度的时候， 宽度会跟随内容的变化而变化， 这个时候当 data 改变需要重新计算宽度
     const hasNoWith = props.columns.find((v) => v.width === undefined);
-    if (hasNoWith && preData && props.data && props.data.length !== preData.length) {
-      if (preData.length === 0 || props.dataChangeResize) resetColGroup();
+    if (preData && props.data && props.data.length !== preData.length) {
+      if (preData.length === 0 || props.dataChangeResize || hasNoWith) resetColGroup();
     }
   }, [props.columns, props.data, props.dataChangeResize]);
 
