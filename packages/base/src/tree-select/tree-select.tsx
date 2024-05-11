@@ -611,6 +611,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           jssStyle={jssStyle}
           renderItem={renderItem}
           {...treeProps}
+          childrenKey={props.childrenKey}
           line={line}
           mode={mode}
           data={tiledData}
