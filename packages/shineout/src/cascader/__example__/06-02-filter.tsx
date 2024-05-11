@@ -56,7 +56,6 @@ export default () => {
     <div style={{ display: 'flex', gap: 32 }}>
       <Cascader
         wideMatch
-        mode={1}
         width={300}
         placeholder='Please select city'
         data={data}
