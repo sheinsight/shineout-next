@@ -1,3 +1,10 @@
+## 3.1.7
+2024-05-11
+
+### 🐞 BugFix
+
+- 修复 `Form` 属性 `value` 传入 proxy 对象会导致修改表单报错([#432](https://github.com/sheinsight/shineout-next/pull/432))
+
 ## 3.1.6
 2024-05-11
 
