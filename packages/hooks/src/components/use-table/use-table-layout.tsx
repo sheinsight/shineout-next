@@ -284,8 +284,8 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   }, [colgroup]);
 
   return {
-    isScrollX,
-    isScrollY,
+    isScrollX: !!isScrollX,
+    isScrollY: !!isScrollY,
     floatLeft,
     floatRight,
     scrollBarWidth,
