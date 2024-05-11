@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom/client';
 import App from './theme/index';
 import { setConfig } from 'shineout';
 import { setJssConfig } from '@sheinx/shineout-style';
-import { set } from 'cypress/types/lodash';
 
 if (process.env.NODE_ENV === 'development') {
   const camelToDash = (str: string) => str.replace(/([A-Z])/g, '-$1').toLowerCase();

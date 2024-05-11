@@ -40,9 +40,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     clientWidth: 0,
   });
 
-  const [isScrollX, setIsScrollX] = React.useState(false);
+  const [isScrollX, setIsScrollX] = React.useState<boolean | undefined>(undefined);
   const [deltaXSum, setDeltaXSum] = React.useState(0);
-  const [isScrollY, setIsScrollY] = React.useState(false);
+  const [isScrollY, setIsScrollY] = React.useState<boolean | undefined>(undefined);
   const [floatLeft, setFloatLeft] = React.useState(false);
   const [floatRight, setFloatRight] = React.useState(false);
   const [resizeFlag, setResizeFlag] = React.useState(0);
@@ -261,7 +261,10 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     let cancelFunc: () => void | undefined;
     syncScrollWidth();
     if (scrollRef.current) {
-      cancelFunc = addResizeObserver(scrollRef.current, handleResize, { direction: true });
+      cancelFunc = addResizeObserver(scrollRef.current, handleResize, {
+        direction: true,
+        timer: 10,
+      });
     }
     return () => {
       cancelFunc?.();
