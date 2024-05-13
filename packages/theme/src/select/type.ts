@@ -16,7 +16,13 @@ export interface SelectTokens {
   selectFontColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Weight-regular
+   * @description 选择器字体字重
+   */
+  selectFontWeight: string;
+  /**
+   * @type {string}
+   * @token Radius-default
    * @description 选择器边框圆角
    */
   selectBorderRadius: string;
@@ -26,6 +32,12 @@ export interface SelectTokens {
    * @description 选择器边框颜色
    */
   selectBorderColor: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 选择器边框宽度
+   */
+  selectBorderWidth: string;
   /**
    * @type {string}
    * @token Spacing-8
@@ -172,6 +184,12 @@ export interface SelectTokens {
   selectHoverClearColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-1
+   * @description 选择器鼠标移入时的背景颜色
+   */
+  selectHoverBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Brand-7
    * @description 选择器鼠标聚焦时的边框颜色
    */
@@ -182,6 +200,12 @@ export interface SelectTokens {
    * @description 选择器鼠标聚焦时的阴影
    */
   selectFocusShadow: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 选择器鼠标聚焦时的背景颜色
+   */
+  selectFocusBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2
@@ -214,7 +238,7 @@ export interface SelectTokens {
   selectDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 选择器结果文本边框圆角
    */
   selectResultTextBorderRadius: string;
@@ -250,10 +274,40 @@ export interface SelectTokens {
   selectErrorBorderColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-1
+   * @description 选择器错误状态的背景颜色
+   */
+  selectErrorBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Danger-1
    * @description 选择器错误状态的鼠标聚焦时的阴影
    */
   selectErrorFocusShadow: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 选择器错误状态的鼠标聚焦时的背景颜色
+   */
+  selectErrorFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 选择器错误状态的鼠标聚焦时的边框颜色
+   */
+  selectErrorFocusBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 选择器错误状态的鼠标移入时的背景颜色
+   */
+  selectErrorHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 选择器错误状态的鼠标移入时的边框颜色
+   */
+  selectErrorHoverBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-text-5
@@ -274,7 +328,7 @@ export interface SelectTokens {
   selectPanelShadow: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 选择器下拉面板的圆角
    */
   selectPanelRadius: string;
@@ -290,6 +344,18 @@ export interface SelectTokens {
    * @description 选择器选项高度
    */
   selectOptionHeight: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 选择器选项背景颜色
+   */
+  selectOptionBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 选择器选项字体颜色
+   */
+  selectOptionFontColor: string;
   /**
    * @type {string}
    * @token Spacing-4
@@ -334,7 +400,7 @@ export interface SelectTokens {
   selectOptionInnerPaddingRight: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 选择器选项内部容器的边框圆角
    */
   selectOptionInnerBorderRadius: string;
@@ -344,6 +410,12 @@ export interface SelectTokens {
    * @description 选择器选项鼠标移入时的背景颜色
    */
   selectOptionHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 选择器选项鼠标移入时的字体颜色
+   */
+  selectOptionHoverFontColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2
@@ -365,9 +437,15 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Spacing-8
-   * @description 选择器列表头部的内边距
+   * @description 选择器列表头部的内边距（水平方向）
    */
-  selectHeaderPadding: string;
+  selectHeaderPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 选择器列表头部的内边距（垂直方向）
+   */
+  selectHeaderPaddingY: string;
   /**
    * @type {string}
    * @token Neutral-border-1
@@ -386,6 +464,12 @@ export interface SelectTokens {
    * @description 选择器分组标题的字体字号
    */
   selectGroupTitleFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 选择器分组标题的字体字重
+   */
+  selectGroupTitleFontWeight: string;
   /**
    * @type {string}
    * @token Spacing-12
@@ -448,7 +532,7 @@ export interface SelectTokens {
   selectColumnOptionMargin: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 选择器多列模式下边框圆角
    */
   selectColumnBorderRadius: string;
@@ -458,4 +542,16 @@ export interface SelectTokens {
    * @description 选择器多列模式下背景颜色
    */
   selectColumnBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 选择器加载状态下的加载组件颜色
+   */
+  selectLoadingSpinColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 选择器undefined字体颜色
+   */
+  selectEmptyFontColor: string;
 }

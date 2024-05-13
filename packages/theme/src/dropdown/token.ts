@@ -32,16 +32,16 @@ const dropdownTokenDescription = {
  */
 const dropdownTokenValue = {
   list: {
-    border: { radius: 'Radius-4', color: 'Neutral-border-1', width: 'Border-1' },
+    border: { radius: 'Radius-default', color: 'Neutral-border-1', width: 'Border-1' },
     padding: { x: 'Spacing-4', y: 'Spacing-4' },
     font: { size: 'Font-14', color: 'Neutral-text-5' },
     small: {
-      border: { radius: 'Radius-4' },
+      border: { radius: 'Radius-default' },
       padding: { x: 'Spacing-4', y: 'Spacing-4' },
       font: { size: 'Font-12' },
     },
     large: {
-      border: { radius: 'Radius-4' },
+      border: { radius: 'Radius-default' },
       padding: { x: 'Spacing-4', y: 'Spacing-4' },
       font: { size: 'Font-16' },
     },
@@ -53,7 +53,7 @@ const dropdownTokenValue = {
     small: { padding: { x: 'Spacing-8', y: 'Spacing-2' } },
     large: { padding: { x: 'Spacing-12', y: 'Spacing-8' } },
     background: { color: 'Neutral-fill-1' },
-    font: { color: 'Neutral-text-5' },
+    font: { color: 'Neutral-text-5', weight: 'Weight-regular' },
     hover: { background: { color: 'Neutral-fill-2' }, font: { color: 'Neutral-text-5' } },
     active: { background: { color: 'Neutral-fill-3' }, font: { color: 'Neutral-text-5' } },
     select: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
@@ -74,7 +74,7 @@ const dropdownTokenValue = {
   column: { padding: { x: 'Spacing-4', y: 'Spacing-4' } },
 };
 
-const dropdownTokenExtraValue = { caret: { margin: { left: 'Spacing-4' } } };
+const dropdownTokenExtraValue = { caret: { margin: { left: 'Spacing-8' } } };
 
 module.exports = {
   dropdownTokenValue,

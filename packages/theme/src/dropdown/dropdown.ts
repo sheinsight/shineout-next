@@ -4,16 +4,16 @@
 import { DropdownTokens } from './type';
 
 const dropdownTokens: DropdownTokens = {
-  dropdownCaretMarginLeft: 'Spacing-4',
-  dropdownListBorderRadius: 'Radius-4',
+  dropdownCaretMarginLeft: 'Spacing-8',
+  dropdownListBorderRadius: 'Radius-default',
   dropdownListPaddingX: 'Spacing-4',
   dropdownListPaddingY: 'Spacing-4',
   dropdownListFontSize: 'Font-14',
-  dropdownListSmallBorderRadius: 'Radius-4',
+  dropdownListSmallBorderRadius: 'Radius-default',
   dropdownListSmallPaddingX: 'Spacing-4',
   dropdownListSmallPaddingY: 'Spacing-4',
   dropdownListSmallFontSize: 'Font-12',
-  dropdownListLargeBorderRadius: 'Radius-4',
+  dropdownListLargeBorderRadius: 'Radius-default',
   dropdownListLargePaddingX: 'Spacing-4',
   dropdownListLargePaddingY: 'Spacing-4',
   dropdownListLargeFontSize: 'Font-16',
@@ -39,6 +39,7 @@ const dropdownTokens: DropdownTokens = {
   dropdownOptionDisabledBackgroundColor: 'Neutral-fill-1',
   dropdownOptionDisabledFontColor: 'Neutral-text-2',
   dropdownOptionBorderRadius: 'Radius-default',
+  dropdownOptionFontWeight: 'Weight-regular',
   dropdownColumnPaddingX: 'Spacing-4',
   dropdownColumnPaddingY: 'Spacing-4',
   dropdownOptionGroupPaddingX: 'Spacing-8',

@@ -302,7 +302,7 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 占位符
    */
   placeholder?: string;
- 
+
   /**
    * @en empty input after select value
    * @cn 选中后是否清空输入框内容
@@ -349,4 +349,10 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    *
    */
   getComponentRef?: ((comp: CascaderRef) => void) | { current: CascaderRef | undefined };
+  /**
+   * @en Whether to adjust the position of the panel automatically. When the panel is blocked by the window, the position is adjusted automatically
+   * @cn 是否开启自动调整面板位置功能。当面板被窗口遮挡时，自动调整位置
+   * @default true
+   */
+  adjust?: boolean;
 }

@@ -38,6 +38,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     className,
     size,
     data,
+    adjust = true,
     treeData,
     header,
     footer,
@@ -663,7 +664,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     return (
       <div className={styles?.loading}>
-        <Spin jssStyle={jssStyle} size={14}></Spin>
+        <Spin jssStyle={jssStyle} size={14} className={styles.loadingSpin}></Spin>
       </div>
     );
   };
@@ -734,7 +735,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       {tipNode}
       {renderResult()}
       <AbsoluteList
-        adjust
+        adjust={adjust}
         focus={open}
         fixedWidth={autoAdapt ? 'min' : true}
         absolute={props.absolute}

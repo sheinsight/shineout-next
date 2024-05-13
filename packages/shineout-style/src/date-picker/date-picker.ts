@@ -7,34 +7,43 @@ export type DatePickerClassType = keyof DatePickerClasses;
 
 const inputBorderToken = {
   lineHeight: token.lineHeightDynamic,
-  borderRadius: token.datePickerBorderRadius,
+  borderRadius: token.inputBorderRadius,
 
-  fontSize: token.datePickerFontSize,
-  smallFontSize: token.datePickerSmallFontSize,
-  largeFontSize: token.datePickerLargeFontSize,
+  fontSize: token.inputFontSize,
+  fontWeight: token.inputFontWeight,
+  smallFontSize: token.inputSmallFontSize,
+  largeFontSize: token.inputLargeFontSize,
 
-  paddingY: token.datePickerPaddingY,
-  smallPaddingY: token.datePickerSmallPaddingY,
-  largePaddingY: token.datePickerLargePaddingY,
+  paddingY: token.inputPaddingY,
+  smallPaddingY: token.inputSmallPaddingY,
+  largePaddingY: token.inputLargePaddingY,
 
-  paddingX: token.datePickerPaddingX,
-  smallPaddingX: token.datePickerSmallPaddingX,
-  largePaddingX: token.datePickerLargePaddingX,
+  paddingX: token.inputPaddingX,
+  smallPaddingX: token.inputSmallPaddingX,
+  largePaddingX: token.inputLargePaddingX,
 
-  borderColor: token.datePickerBorderColor,
-  focusBorderColor: token.datePickerFocusBorderColor,
-  hoverBorderColor: token.datePickerHoverBorderColor,
-  disabledBorderColor: token.datePickerDisabledBorderColor,
-  errorBorderColor: token.datePickerErrorBorderColor,
+  borderColor: token.inputBorderColor,
+  borderWidth: token.inputBorderWidth,
+  focusBorderColor: token.inputFocusBorderColor,
+  hoverBorderColor: token.inputHoverBorderColor,
+  disabledBorderColor: token.inputDisabledBorderColor,
+  errorBorderColor: token.inputErrorBorderColor,
+  errorHoverBorderColor: token.inputErrorHoverBorderColor,
+  errorFocusBorderColor: token.inputErrorFocusBorderColor,
 
-  fontColor: token.datePickerFontColor,
-  disabledFontColor: token.datePickerDisabledFontColor,
+  fontColor: token.inputFontColor,
+  disabledFontColor: token.inputDisabledFontColor,
 
-  backgroundColor: token.datePickerBackgroundColor,
-  disabledBackgroundColor: token.datePickerDisabledBackgroundColor,
+  backgroundColor: token.inputBackgroundColor,
+  hoverBackgroundColor: token.inputHoverBackgroundColor,
+  focusBackgroundColor: token.inputFocusBackgroundColor,
+  disabledBackgroundColor: token.inputDisabledBackgroundColor,
+  errorBackgroundColor: token.inputErrorBackgroundColor,
+  errorFocusBackgroundColor: token.inputErrorFocusBackgroundColor,
+  errorHoverBackgroundColor: token.inputErrorHoverBackgroundColor,
 
-  focusShadow: token.datePickerFocusShadow,
-  errorFocusShadow: token.datePickerErrorFocusShadow,
+  focusShadow: token.inputFocusShadow,
+  errorFocusShadow: token.inputErrorFocusShadow,
 
   innerTitlePaddingY: token.inputInnerPaddingY,
   innerTitlePaddingX: token.inputInnerPaddingX,
@@ -45,6 +54,7 @@ const inputBorderToken = {
   largeInnerTitlePaddingY: token.inputInnerLargePaddingY,
   largeInnerTitlePaddingX: token.inputInnerLargePaddingX,
 };
+
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
