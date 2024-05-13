@@ -30,7 +30,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     clearable = true,
     disabled,
     size,
-    adjust,
+    adjust = true,
   } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
 
