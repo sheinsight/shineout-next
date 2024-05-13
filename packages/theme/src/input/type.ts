@@ -106,6 +106,12 @@ export interface InputTokens {
   inputPlaceholderColor: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 输入框占位符字体字重
+   */
+  inputPlaceholderFontWeight: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-1
    * @description 输入框背景颜色
    */
@@ -146,6 +152,12 @@ export interface InputTokens {
    * @description 输入框鼠标移入时的反转颜色
    */
   inputHoverToggleColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 输入框鼠标移入时的图标颜色
+   */
+  inputHoverIconColor: string;
   /**
    * @type {string}
    * @token Brand-7
@@ -230,6 +242,18 @@ export interface InputTokens {
    * @description 输入框错误状态的鼠标聚焦时的阴影
    */
   inputErrorFocusShadow: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 输入框组合模式字体颜色
+   */
+  inputGroupFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 输入框组合模式字体背景颜色
+   */
+  inputGroupFontBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-6
