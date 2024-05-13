@@ -1,4 +1,4 @@
-import { cloneElement } from 'react';
+import { cloneElement, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { useMenuItem, util } from '@sheinx/hooks';
 import Icons from '../icons';
@@ -10,7 +10,9 @@ import type { MenuItemProps } from './menu.type';
 const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
-  const { inlineIndent = 24, frontCaretType = 'solid' } = props;
+  const itemContentRef = useRef<HTMLDivElement>(null);
+  const timer = useRef<any>(null);
+  const { inlineIndent = 24, frontCaretType = 'solid', collapse } = props;
   const config = useConfig();
 
   const hasExpandAbleChildren = children.some(
@@ -46,6 +48,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     mode: props.mode,
     scrollRef: props.scrollRef,
   });
+
   const renderItem = () => {
     const item = util.render(props.renderItem, props.dataItem, props.index);
     const link = props.linkKey
@@ -68,10 +71,17 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
       ) : null;
 
+    const isFirstCollapseItem = collapse && props.level === 0;
+
     if (props.frontCaret) {
       return (
         <div
-          className={classNames(classes?.itemContent, classes?.itemContentFront)}
+          ref={itemContentRef}
+          className={classNames(
+            classes?.itemContent,
+            classes?.itemContentFront,
+            isFirstCollapseItem && classes?.itemContentHide,
+          )}
           onClick={handleItemClick}
         >
           {indent}
@@ -99,7 +109,12 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     } else {
       return (
         <div
-          className={classNames(classes?.itemContent, classes?.itemContentBack)}
+          ref={itemContentRef}
+          className={classNames(
+            classes?.itemContent,
+            classes?.itemContentBack,
+            isFirstCollapseItem && classes?.itemContentHide,
+          )}
           onClick={handleItemClick}
         >
           {indent}
@@ -122,6 +137,44 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       );
     }
   };
+
+  const renderCollapseItem = () => {
+    if (!props.renderCollapse) return null;
+    const isFirstCollapseItem = props.level === 0 && collapse;
+
+    return (
+      <div
+        className={classNames(
+          classes?.collapseItem,
+          isInPath && classes?.collapseItemInPath,
+          !isFirstCollapseItem && classes?.collapseItemHide,
+        )}
+        onClick={handleItemClick}
+      >
+        {props.renderCollapse(props.dataItem, props.index)}
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    if (!itemContentRef.current) return;
+    if (collapse === undefined) return;
+    if (timer.current) clearTimeout(timer.current);
+
+    itemContentRef.current.style.overflow = 'hidden';
+    itemContentRef.current.style.whiteSpace = 'nowrap';
+
+    timer.current = setTimeout(() => {
+      if (!itemContentRef.current) return;
+      itemContentRef.current.style.overflow = '';
+      itemContentRef.current.style.whiteSpace = '';
+    }, 300);
+
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [collapse]);
+
   return (
     <li
       className={classNames(
@@ -137,6 +190,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       dir={config.direction}
     >
       {renderItem()}
+      {renderCollapseItem()}
       {children.length > 0 && (
         <ul
           className={classNames(
