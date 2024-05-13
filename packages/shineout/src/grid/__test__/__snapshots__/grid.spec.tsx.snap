@@ -3,100 +3,111 @@
 exports[`Grid[Base] should render correctly  1`] = `
 <div>
   <div
-    class="cr01j5u soui-slider-wrapper"
+    class="c-bfk39a soui-slider-wrapper"
   >
     <div
-      class="c-45nbra soui-slider-track"
+      class="c-v3nf9i soui-slider-track"
     >
       <div
-        class="c-3k1h6s soui-slider-track-inner"
+        class="c-obx01w soui-slider-track-inner"
+        dir="ltr"
         style="left: 0%; right: 62.5%;"
       >
         <div
-          class="caeyd4u soui-slider-indicator cmbwsfx soui-slider-indicator-end"
+          class="cc1bewu soui-slider-indicator chw1n0d soui-slider-indicator-end"
+          dir="ltr"
         />
       </div>
     </div>
     <div
-      class="c-cqbcdi soui-slider-scale-wrapper"
+      class="c-h66ht2 soui-slider-scale-wrapper"
     >
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           1
         </div>
       </div>
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           2
         </div>
       </div>
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           3
         </div>
       </div>
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           5
         </div>
       </div>
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           8
         </div>
       </div>
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           13
         </div>
       </div>
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           21
         </div>
       </div>
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           34
         </div>
       </div>
       <div
-        class="c-46goxz soui-slider-scale"
+        class="c-v4gsg7 soui-slider-scale"
       >
         <div
-          class="c-4acihp soui-slider-label"
+          class="c-v8clzx soui-slider-label"
+          dir="ltr"
         >
           55
         </div>
@@ -111,7 +122,7 @@ exports[`Grid[Base] should render correctly  1`] = `
   >
     <div
       class="so-grid so-grid-full so-grid-md-20-000 "
-      style="color: rgb(255, 255, 255); padding-left: 8px; background: rgb(25, 122, 250); font-size: 14px;"
+      style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       1/5
     </div>
@@ -121,7 +132,7 @@ exports[`Grid[Base] should render correctly  1`] = `
   >
     <div
       class="so-grid so-grid-full so-grid-md-40-000 "
-      style="color: rgb(255, 255, 255); padding-left: 8px; background: rgb(25, 122, 250); font-size: 14px;"
+      style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       2/5
     </div>
@@ -131,7 +142,7 @@ exports[`Grid[Base] should render correctly  1`] = `
   >
     <div
       class="so-grid so-grid-full so-grid-md-60-000 "
-      style="color: rgb(255, 255, 255); padding-left: 8px; background: rgb(25, 122, 250); font-size: 14px;"
+      style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       3/5
     </div>
@@ -141,7 +152,7 @@ exports[`Grid[Base] should render correctly  1`] = `
   >
     <div
       class="so-grid so-grid-full so-grid-md-80-000 "
-      style="color: rgb(255, 255, 255); padding-left: 8px; background: rgb(25, 122, 250); font-size: 14px;"
+      style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       4/5
     </div>
@@ -151,7 +162,7 @@ exports[`Grid[Base] should render correctly  1`] = `
   >
     <div
       class="so-grid so-grid-full so-grid-md-100-000 "
-      style="color: rgb(255, 255, 255); padding-left: 8px; background: rgb(25, 122, 250); font-size: 14px;"
+      style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       5/5
     </div>

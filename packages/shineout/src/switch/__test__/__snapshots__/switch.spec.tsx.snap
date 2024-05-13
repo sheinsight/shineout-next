@@ -2,7 +2,7 @@
 
 exports[`Switch[Base] should render correctly  1`] = `
 <button
-  class="c-9womup soui-switch-wrapper"
+  class="cmotspb soui-switch-wrapper"
   role="switch"
   type="button"
 >
@@ -12,13 +12,14 @@ exports[`Switch[Base] should render correctly  1`] = `
     type="checkbox"
   />
   <div
-    class="c-esct9x soui-switch-indicator"
+    class="c-d5zrhx soui-switch-indicator"
+    dir="ltr"
   />
   <div
-    class="c-kk3avf soui-switch-content"
+    class="cc1f4ol soui-switch-content"
   >
     <div
-      class="c-9yikgw soui-switch-text-padding"
+      class="c-eonbhc soui-switch-text-padding"
     />
   </div>
 </button>
@@ -29,7 +30,7 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
   style="display: flex; flex-direction: row; gap: 24px; align-items: center;"
 >
   <button
-    class="c-9womup soui-switch-wrapper c-oyxg2w soui-switch-wrapper-checked c-doa0ph soui-switch-wrapper-disabled"
+    class="cmotspb soui-switch-wrapper c-umq5t4 soui-switch-wrapper-checked cnxbzmz soui-switch-wrapper-disabled"
     role="switch"
     type="button"
   >
@@ -41,22 +42,23 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
       type="checkbox"
     />
     <div
-      class="c-esct9x soui-switch-indicator"
+      class="c-d5zrhx soui-switch-indicator"
+      dir="ltr"
     >
       <div
-        class="c-uq6bd4 soui-switch-loading"
+        class="c1vc46w soui-switch-loading"
       />
     </div>
     <div
-      class="c-kk3avf soui-switch-content"
+      class="cc1f4ol soui-switch-content"
     >
       <div
-        class="c-9yikgw soui-switch-text-padding"
+        class="c-eonbhc soui-switch-text-padding"
       />
     </div>
   </button>
   <button
-    class="c-9womup soui-switch-wrapper c-doa0ph soui-switch-wrapper-disabled"
+    class="cmotspb soui-switch-wrapper cnxbzmz soui-switch-wrapper-disabled"
     role="switch"
     type="button"
   >
@@ -67,17 +69,18 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
       type="checkbox"
     />
     <div
-      class="c-esct9x soui-switch-indicator"
+      class="c-d5zrhx soui-switch-indicator"
+      dir="ltr"
     >
       <div
-        class="c-uq6bd4 soui-switch-loading"
+        class="c1vc46w soui-switch-loading"
       />
     </div>
     <div
-      class="c-kk3avf soui-switch-content"
+      class="cc1f4ol soui-switch-content"
     >
       <div
-        class="c-9yikgw soui-switch-text-padding"
+        class="c-eonbhc soui-switch-text-padding"
       />
     </div>
   </button>
@@ -89,7 +92,7 @@ exports[`Switch[Base] should render correctly about size 1`] = `
   style="display: flex; flex-direction: row; gap: 24px; align-items: center;"
 >
   <button
-    class="c-9womup soui-switch-wrapper c-451kp4 soui-switch-wrapper-small"
+    class="cmotspb soui-switch-wrapper c-8kwq4o soui-switch-wrapper-small"
     role="switch"
     type="button"
   >
@@ -99,18 +102,19 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="c-esct9x soui-switch-indicator"
+      class="c-d5zrhx soui-switch-indicator"
+      dir="ltr"
     />
     <div
-      class="c-kk3avf soui-switch-content"
+      class="cc1f4ol soui-switch-content"
     >
       <div
-        class="c-9yikgw soui-switch-text-padding"
+        class="c-eonbhc soui-switch-text-padding"
       />
     </div>
   </button>
   <button
-    class="c-9womup soui-switch-wrapper"
+    class="cmotspb soui-switch-wrapper"
     role="switch"
     type="button"
   >
@@ -120,18 +124,19 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="c-esct9x soui-switch-indicator"
+      class="c-d5zrhx soui-switch-indicator"
+      dir="ltr"
     />
     <div
-      class="c-kk3avf soui-switch-content"
+      class="cc1f4ol soui-switch-content"
     >
       <div
-        class="c-9yikgw soui-switch-text-padding"
+        class="c-eonbhc soui-switch-text-padding"
       />
     </div>
   </button>
   <button
-    class="c-9womup soui-switch-wrapper c-493g7o soui-switch-wrapper-large"
+    class="cmotspb soui-switch-wrapper c-8oyln8 soui-switch-wrapper-large"
     role="switch"
     type="button"
   >
@@ -141,13 +146,14 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="c-esct9x soui-switch-indicator"
+      class="c-d5zrhx soui-switch-indicator"
+      dir="ltr"
     />
     <div
-      class="c-kk3avf soui-switch-content"
+      class="cc1f4ol soui-switch-content"
     >
       <div
-        class="c-9yikgw soui-switch-text-padding"
+        class="c-eonbhc soui-switch-text-padding"
       />
     </div>
   </button>
@@ -159,7 +165,7 @@ exports[`Switch[Base] should render correctly about status 1`] = `
   style="display: flex; flex-direction: row; gap: 24px;"
 >
   <button
-    class="c-9womup soui-switch-wrapper c-oyxg2w soui-switch-wrapper-checked c-doa0ph soui-switch-wrapper-disabled"
+    class="cmotspb soui-switch-wrapper c-umq5t4 soui-switch-wrapper-checked cnxbzmz soui-switch-wrapper-disabled"
     role="switch"
     type="button"
   >
@@ -171,18 +177,19 @@ exports[`Switch[Base] should render correctly about status 1`] = `
       type="checkbox"
     />
     <div
-      class="c-esct9x soui-switch-indicator"
+      class="c-d5zrhx soui-switch-indicator"
+      dir="ltr"
     />
     <div
-      class="c-kk3avf soui-switch-content"
+      class="cc1f4ol soui-switch-content"
     >
       <div
-        class="c-9yikgw soui-switch-text-padding"
+        class="c-eonbhc soui-switch-text-padding"
       />
     </div>
   </button>
   <button
-    class="c-9womup soui-switch-wrapper c-doa0ph soui-switch-wrapper-disabled"
+    class="cmotspb soui-switch-wrapper cnxbzmz soui-switch-wrapper-disabled"
     role="switch"
     type="button"
   >
@@ -193,13 +200,14 @@ exports[`Switch[Base] should render correctly about status 1`] = `
       type="checkbox"
     />
     <div
-      class="c-esct9x soui-switch-indicator"
+      class="c-d5zrhx soui-switch-indicator"
+      dir="ltr"
     />
     <div
-      class="c-kk3avf soui-switch-content"
+      class="cc1f4ol soui-switch-content"
     >
       <div
-        class="c-9yikgw soui-switch-text-padding"
+        class="c-eonbhc soui-switch-text-padding"
       />
     </div>
   </button>

@@ -5,93 +5,93 @@ exports[`Alert[Base] should render correctly  1`] = `
   style="margin-bottom: -12px;"
 >
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body c-sq7998 soui-descriptions-inline-horizontal"
+      class="c-k8rt5j soui-descriptions-body cll8gmc soui-descriptions-inline-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Name
                   <span
-                    style="padding-left: 4px;"
+                    style="padding-inline-start: 4px;"
                   >
                     :
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   Mai Mai
                 </div>
               </div>
             </td>
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Residence
                   <span
-                    style="padding-left: 4px;"
+                    style="padding-inline-start: 4px;"
                   >
                     :
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   Beijing
                 </div>
               </div>
             </td>
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Address
                   <span
-                    style="padding-left: 4px;"
+                    style="padding-inline-start: 4px;"
                   >
                     :
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   Yingdu Building
                 </div>
@@ -99,50 +99,50 @@ exports[`Alert[Base] should render correctly  1`] = `
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Mobile
                   <span
-                    style="padding-left: 4px;"
+                    style="padding-inline-start: 4px;"
                   >
                     :
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   187-2323-9834
                 </div>
               </div>
             </td>
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
               colspan="2"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Hometown
                   <span
-                    style="padding-left: 4px;"
+                    style="padding-inline-start: 4px;"
                   >
                     :
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   Beijing
                 </div>
@@ -161,106 +161,106 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
   style="margin-bottom: -12px;"
 >
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
     style="margin-bottom: 12px;"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Name
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Residence
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Address
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Hometown
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Mobile
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="3"
             >
               187-2323-9834
@@ -271,111 +271,111 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
     </div>
   </div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
     style="margin-bottom: 12px;"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Name
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Residence
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Address
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Hometown
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Mobile
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="3"
             >
               187-2323-9834
@@ -386,119 +386,119 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
     </div>
   </div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body"
+      class="c-k8rt5j soui-descriptions-body"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
               style="padding-bottom: 2px;"
             >
               Name
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
               style="padding-bottom: 2px;"
             >
               Residence
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
               style="padding-bottom: 2px;"
             >
               Address
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
               style="padding-bottom: 2px;"
             >
               Hometown
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
               colspan="2"
               style="padding-bottom: 2px;"
             >
               Mobile
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="2"
             >
               187-2323-9834
@@ -516,11 +516,11 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
   style="margin-bottom: -12px;"
 >
   <div
-    class="c-l9d8jw soui-radio-group"
+    class="c-3srah8 soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-nntf3s soui-radio-wrapper c-i6mc3l soui-radio-wrapper-checked"
+      class="c-6kjs3c soui-radio-wrapper c-ds7wjl soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -529,21 +529,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         horizontal
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -551,21 +551,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         vertical
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -573,21 +573,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         inlineHorizontal
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -595,26 +595,26 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         inlineVertical
       </span>
     </div>
   </div>
   <div
-    class="c-l9d8jw soui-radio-group"
+    class="c-3srah8 soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-nntf3s soui-radio-wrapper c-i6mc3l soui-radio-wrapper-checked"
+      class="c-6kjs3c soui-radio-wrapper c-ds7wjl soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -623,21 +623,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         auto
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -645,26 +645,26 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         fixed
       </span>
     </div>
   </div>
   <div
-    class="c-l9d8jw soui-radio-group"
+    class="c-3srah8 soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-nntf3s soui-radio-wrapper c-i6mc3l soui-radio-wrapper-checked"
+      class="c-6kjs3c soui-radio-wrapper c-ds7wjl soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -673,21 +673,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         no border
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -695,120 +695,120 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         border
       </span>
     </div>
   </div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Name
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Residence
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Address
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Mobile
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               187-2323-9834
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Hometown
               <span
-                style="padding-left: 4px;"
+                style="padding-inline-start: 4px;"
               >
                 :
               </span>
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="3"
             >
               Beijing
@@ -824,81 +824,81 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
 exports[`Alert[Base] should render correctly about border 1`] = `
 <div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
     style="margin-bottom: 20px;"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body ccqliur soui-descriptions-border c-hxihkt soui-descriptions-table-layout-fixed c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body c8aqdf7 soui-descriptions-border cwdx8ar soui-descriptions-table-layout-fixed cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Name
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Residence
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Address
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Mobile
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               187-2323-9834
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Hometown
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="3"
             >
               Beijing
@@ -909,86 +909,86 @@ exports[`Alert[Base] should render correctly about border 1`] = `
     </div>
   </div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
     style="margin-bottom: 20px;"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body ccqliur soui-descriptions-border c-hxihkt soui-descriptions-table-layout-fixed c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body c8aqdf7 soui-descriptions-border cwdx8ar soui-descriptions-table-layout-fixed cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Name
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Residence
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Address
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Mobile
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               187-2323-9834
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Hometown
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="3"
             >
               Beijing
@@ -999,89 +999,89 @@ exports[`Alert[Base] should render correctly about border 1`] = `
     </div>
   </div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body ccqliur soui-descriptions-border c-hxihkt soui-descriptions-table-layout-fixed"
+      class="c-k8rt5j soui-descriptions-body c8aqdf7 soui-descriptions-border cwdx8ar soui-descriptions-table-layout-fixed"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Name
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Residence
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Address
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Mobile
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               187-2323-9834
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
               colspan="4"
             >
               Hometown
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="4"
             >
               Beijing
@@ -1099,65 +1099,65 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
   style="margin-bottom: -12px;"
 >
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
     style="margin-bottom: 12px;"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Name
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Mobile
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               187-2323-9834
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
+              class="cbvbc99 soui-descriptions-label"
             >
               Residence
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
@@ -1167,67 +1167,67 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
     </div>
   </div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Name
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Mobile
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               187-2323-9834
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Residence
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
@@ -1242,85 +1242,85 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
 exports[`Alert[Base] should render correctly about responsive 1`] = `
 <div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body ccqliur soui-descriptions-border c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body c8aqdf7 soui-descriptions-border cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Name
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Residence
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Address
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Mobile
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               187-2323-9834
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Hometown
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="3"
             >
               Beijing
@@ -1336,11 +1336,11 @@ exports[`Alert[Base] should render correctly about responsive 1`] = `
 exports[`Alert[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="c-l9d8jw soui-radio-group"
+    class="c-3srah8 soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1348,21 +1348,21 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         small
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper c-i6mc3l soui-radio-wrapper-checked"
+      class="c-6kjs3c soui-radio-wrapper c-ds7wjl soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -1371,21 +1371,21 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         default
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1393,53 +1393,53 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
     style="margin-bottom: 12px;"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body c-sq7998 soui-descriptions-inline-horizontal"
+      class="c-k8rt5j soui-descriptions-body cll8gmc soui-descriptions-inline-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Name
                   <span
@@ -1449,20 +1449,20 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   Mai Mai
                 </div>
               </div>
             </td>
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Residence
                   <span
@@ -1472,20 +1472,20 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   Beijing
                 </div>
               </div>
             </td>
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Address
                   <span
@@ -1495,7 +1495,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   Yingdu Building,Zhichun Road,Beijing
                 </div>
@@ -1503,16 +1503,16 @@ exports[`Alert[Base] should render correctly about size 1`] = `
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Mobile
                   <span
@@ -1522,21 +1522,21 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   187-2323-9834
                 </div>
               </div>
             </td>
             <td
-              class="c-hcf90y soui-descriptions-inline-table"
+              class="cwuw3pq soui-descriptions-inline-table"
               colspan="2"
             >
               <div
-                class="cj8aca soui-descriptions-item"
+                class="c-k8n8iu soui-descriptions-item"
               >
                 <div
-                  class="c64xpc6 soui-descriptions-label-inline"
+                  class="c-eouzwa soui-descriptions-label-inline"
                 >
                   Hometown
                   <span
@@ -1546,7 +1546,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="c-ig7sn1 soui-descriptions-value-inline"
+                  class="cvr3k3n soui-descriptions-value-inline"
                 >
                   Beijing
                 </div>
@@ -1558,85 +1558,85 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-6093pw soui-descriptions-wrapper"
+    class="c-1luo5w soui-descriptions-wrapper"
   >
     <div
-      class="cff2gic soui-descriptions-header"
+      class="caz7b2s soui-descriptions-header"
     >
       <div
-        class="cgpzxf5 soui-descriptions-title"
+        class="cbzv6ep soui-descriptions-title"
       >
         User Info
       </div>
     </div>
     <div
-      class="cj3ppl soui-descriptions-body ccqliur soui-descriptions-border c4xsu97 soui-descriptions-horizontal"
+      class="c-k8rt5j soui-descriptions-body c8aqdf7 soui-descriptions-border cy1y9d7 soui-descriptions-horizontal"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="cgpug6f soui-descriptions-table"
+        class="cbzpp5z soui-descriptions-table"
       >
         <tbody>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Name
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Mai Mai
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Residence
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Beijing
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Address
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
           </tr>
           <tr
-            class="c-29v1al soui-descriptions-row"
+            class="c-nhzil soui-descriptions-row"
           >
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Mobile
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
             >
               187-2323-9834
             </td>
             <td
-              class="cglg39p soui-descriptions-label"
-              style="text-align: right;"
+              class="cbvbc99 soui-descriptions-label"
+              style="text-align: end;"
             >
               Hometown
             </td>
             <td
-              class="cgqy8zu soui-descriptions-value"
+              class="cc0thze soui-descriptions-value"
               colspan="3"
             >
               Beijing

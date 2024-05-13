@@ -3,12 +3,15 @@
 exports[`Table[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-u9zjmz soui-table-wrapper cgwc04k soui-table-vertical-align-top c-v46b25 soui-table-default"
+    class="c-d6pwmj soui-table-wrapper c-gj61i4 soui-table-vertical-align-top c-e0wo1p soui-table-default"
+    dir="ltr"
   >
     <div
-      class="c-9ryqzx soui-table-body-wrapper"
+      class="ciccmmt soui-table-head-wrapper"
     >
-      <table>
+      <table
+        style="transform: translate3d(0px, 0, 0);"
+      >
         <colgroup>
           <col
             style="width: 0px;"
@@ -26,7 +29,8 @@ exports[`Table[Base] should render correctly  1`] = `
         <thead>
           <tr>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -38,7 +42,8 @@ exports[`Table[Base] should render correctly  1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -50,7 +55,8 @@ exports[`Table[Base] should render correctly  1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -62,7 +68,8 @@ exports[`Table[Base] should render correctly  1`] = `
               </div>
             </th>
             <th
-              class="cuwl7ha soui-table-cell-ignore-border"
+              class="c-2xciz8 soui-table-cell-align-left c-2iwu5e soui-table-cell-ignore-border"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -75,121 +82,178 @@ exports[`Table[Base] should render correctly  1`] = `
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Ephraim Wisozk
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Reunion
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Marketing Designer
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Miami
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Osvaldo Beer
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Syrian Arab Republic
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Financial Controller
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              San Paulo
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Dylan Ratke
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Peru
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Development Lead
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Boston
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Shaniya Jacobs
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Peru
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Developer
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Chengdu
-            </td>
-          </tr>
-        </tbody>
       </table>
+    </div>
+    <div
+      style="flex: 1; min-height: 0; min-width: 0; display: flex;"
+    >
+      <div
+        data-soui-role="scroll"
+        style="flex: 1; min-width: 0; min-height: 0; overflow: auto; width: 100%;"
+      >
+        <div
+          data-soui-role="scroll-container"
+          style="height: 100%; width: 100%; display: inline-flex; position: sticky; left: 0px; top: 0px;"
+        >
+          <div
+            style="flex-grow: 1;"
+          >
+            <table
+              style="transform: translate3d(0px, 0px, 0);"
+            >
+              <colgroup>
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+              </colgroup>
+              <tbody>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Ephraim Wisozk
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Reunion
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Marketing Designer
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Miami
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Osvaldo Beer
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Syrian Arab Republic
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Financial Controller
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    San Paulo
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Dylan Ratke
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Peru
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Development Lead
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Boston
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Shaniya Jacobs
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Peru
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Developer
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Chengdu
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          style="margin-top: 0px; margin-right: 1px; height: 0px; width: 0px; overflow: hidden;"
+        >
+           
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -198,12 +262,15 @@ exports[`Table[Base] should render correctly  1`] = `
 exports[`Table[Base] should render correctly about border 1`] = `
 <div>
   <div
-    class="c-u9zjmz soui-table-wrapper c-hdg853 soui-table-bordered cgwc04k soui-table-vertical-align-top c-v46b25 soui-table-default"
+    class="c-d6pwmj soui-table-wrapper cf827ex soui-table-bordered c-gj61i4 soui-table-vertical-align-top c-e0wo1p soui-table-default"
+    dir="ltr"
   >
     <div
-      class="c-9ryqzx soui-table-body-wrapper"
+      class="ciccmmt soui-table-head-wrapper"
     >
-      <table>
+      <table
+        style="transform: translate3d(0px, 0, 0);"
+      >
         <colgroup>
           <col
             style="width: 0px;"
@@ -221,7 +288,8 @@ exports[`Table[Base] should render correctly about border 1`] = `
         <thead>
           <tr>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -233,7 +301,8 @@ exports[`Table[Base] should render correctly about border 1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -245,7 +314,8 @@ exports[`Table[Base] should render correctly about border 1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -257,7 +327,8 @@ exports[`Table[Base] should render correctly about border 1`] = `
               </div>
             </th>
             <th
-              class="cuwl7ha soui-table-cell-ignore-border"
+              class="c-2xciz8 soui-table-cell-align-left c-2iwu5e soui-table-cell-ignore-border"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -270,121 +341,178 @@ exports[`Table[Base] should render correctly about border 1`] = `
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Ephraim Wisozk
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Reunion
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Marketing Designer
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Miami
-            </td>
-          </tr>
-          <tr
-            class="c-c1b1fp soui-table-row-striped"
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Osvaldo Beer
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Syrian Arab Republic
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Financial Controller
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              San Paulo
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Dylan Ratke
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Peru
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Development Lead
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Boston
-            </td>
-          </tr>
-          <tr
-            class="c-c1b1fp soui-table-row-striped"
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Shaniya Jacobs
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Peru
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Developer
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Chengdu
-            </td>
-          </tr>
-        </tbody>
       </table>
+    </div>
+    <div
+      style="flex: 1; min-height: 0; min-width: 0; display: flex;"
+    >
+      <div
+        data-soui-role="scroll"
+        style="flex: 1; min-width: 0; min-height: 0; overflow: auto; width: 100%;"
+      >
+        <div
+          data-soui-role="scroll-container"
+          style="height: 100%; width: 100%; display: inline-flex; position: sticky; left: 0px; top: 0px;"
+        >
+          <div
+            style="flex-grow: 1;"
+          >
+            <table
+              style="transform: translate3d(0px, 0px, 0);"
+            >
+              <colgroup>
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+              </colgroup>
+              <tbody>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Ephraim Wisozk
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Reunion
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Marketing Designer
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Miami
+                  </td>
+                </tr>
+                <tr
+                  class="c-aexznp soui-table-row-striped"
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Osvaldo Beer
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Syrian Arab Republic
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Financial Controller
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    San Paulo
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Dylan Ratke
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Peru
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Development Lead
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Boston
+                  </td>
+                </tr>
+                <tr
+                  class="c-aexznp soui-table-row-striped"
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Shaniya Jacobs
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Peru
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Developer
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Chengdu
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          style="margin-top: 0px; margin-right: 1px; height: 0px; width: 0px; overflow: hidden;"
+        >
+           
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -392,12 +520,15 @@ exports[`Table[Base] should render correctly about border 1`] = `
 
 exports[`Table[Base] should render correctly about group 1`] = `
 <div
-  class="c-u9zjmz soui-table-wrapper c-hdg853 soui-table-bordered cgwc04k soui-table-vertical-align-top c-v46b25 soui-table-default"
+  class="c-d6pwmj soui-table-wrapper cf827ex soui-table-bordered c-gj61i4 soui-table-vertical-align-top c-e0wo1p soui-table-default"
+  dir="ltr"
 >
   <div
-    class="c-9ryqzx soui-table-body-wrapper"
+    class="ciccmmt soui-table-head-wrapper"
   >
-    <table>
+    <table
+      style="transform: translate3d(0px, 0, 0);"
+    >
       <colgroup>
         <col
           style="width: 0px;"
@@ -421,8 +552,9 @@ exports[`Table[Base] should render correctly about group 1`] = `
       <thead>
         <tr>
           <th
-            class="c-i1de69 soui-table-cell-group"
+            class="c-2xciz8 soui-table-cell-align-left c-1y2rlt soui-table-cell-group"
             colspan="3"
+            dir="ltr"
             style="padding: 0px;"
           >
             <div>
@@ -434,7 +566,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class=""
+            class="c-2xciz8 soui-table-cell-align-left"
+            dir="ltr"
             rowspan="3"
           >
             <div
@@ -446,8 +579,9 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class="cuwl7ha soui-table-cell-ignore-border c-i1de69 soui-table-cell-group"
+            class="c-2xciz8 soui-table-cell-align-left c-2iwu5e soui-table-cell-ignore-border c-1y2rlt soui-table-cell-group"
             colspan="2"
+            dir="ltr"
             style="padding: 0px;"
           >
             <div>
@@ -459,15 +593,17 @@ exports[`Table[Base] should render correctly about group 1`] = `
         </tr>
         <tr>
           <th
-            class="c-i1de69 soui-table-cell-group"
+            class="c-2xciz8 soui-table-cell-align-left c-1y2rlt soui-table-cell-group"
             colspan="2"
+            dir="ltr"
           >
             <div>
               True Name
             </div>
           </th>
           <th
-            class=""
+            class="c-2xciz8 soui-table-cell-align-left"
+            dir="ltr"
             rowspan="2"
           >
             <div
@@ -479,7 +615,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class=""
+            class="c-2xciz8 soui-table-cell-align-left"
+            dir="ltr"
             rowspan="2"
           >
             <div
@@ -491,7 +628,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class="cuwl7ha soui-table-cell-ignore-border"
+            class="c-2xciz8 soui-table-cell-align-left c-2iwu5e soui-table-cell-ignore-border"
+            dir="ltr"
             rowspan="2"
           >
             <div
@@ -505,7 +643,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
         </tr>
         <tr>
           <th
-            class=""
+            class="c-2xciz8 soui-table-cell-align-left"
+            dir="ltr"
             rowspan="1"
           >
             <div
@@ -517,7 +656,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class=""
+            class="c-2xciz8 soui-table-cell-align-left"
+            dir="ltr"
             rowspan="1"
           >
             <div
@@ -530,169 +670,240 @@ exports[`Table[Base] should render correctly about group 1`] = `
           </th>
         </tr>
       </thead>
-      <tbody>
-        <tr
-          class=""
-        >
-          <td
-            class=""
-            colspan="1"
-          >
-            Ephraim
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Wisozk
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            nickname
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Reunion
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Miami
-          </td>
-          <td
-            class="cuwl7ha soui-table-cell-ignore-border"
-            colspan="1"
-          >
-            Marketing Designer
-          </td>
-        </tr>
-        <tr
-          class=""
-        >
-          <td
-            class=""
-            colspan="1"
-          >
-            Osvaldo
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Beer
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            nickname
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Syrian Arab Republic
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            San Paulo
-          </td>
-          <td
-            class="cuwl7ha soui-table-cell-ignore-border"
-            colspan="1"
-          >
-            Financial Controller
-          </td>
-        </tr>
-        <tr
-          class=""
-        >
-          <td
-            class=""
-            colspan="1"
-          >
-            Dylan
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Ratke
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            nickname
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Peru
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Boston
-          </td>
-          <td
-            class="cuwl7ha soui-table-cell-ignore-border"
-            colspan="1"
-          >
-            Development Lead
-          </td>
-        </tr>
-        <tr
-          class=""
-        >
-          <td
-            class=""
-            colspan="1"
-          >
-            Shaniya
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Jacobs
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            nickname
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Peru
-          </td>
-          <td
-            class=""
-            colspan="1"
-          >
-            Chengdu
-          </td>
-          <td
-            class="cuwl7ha soui-table-cell-ignore-border"
-            colspan="1"
-          >
-            Developer
-          </td>
-        </tr>
-      </tbody>
     </table>
+  </div>
+  <div
+    style="flex: 1; min-height: 0; min-width: 0; display: flex;"
+  >
+    <div
+      data-soui-role="scroll"
+      style="flex: 1; min-width: 0; min-height: 0; overflow: auto; width: 100%;"
+    >
+      <div
+        data-soui-role="scroll-container"
+        style="height: 100%; width: 100%; display: inline-flex; position: sticky; left: 0px; top: 0px;"
+      >
+        <div
+          style="flex-grow: 1;"
+        >
+          <table
+            style="transform: translate3d(0px, 0px, 0);"
+          >
+            <colgroup>
+              <col
+                style="width: 0px;"
+              />
+              <col
+                style="width: 0px;"
+              />
+              <col
+                style="width: 0px;"
+              />
+              <col
+                style="width: 0px;"
+              />
+              <col
+                style="width: 0px;"
+              />
+              <col
+                style="width: 0px;"
+              />
+            </colgroup>
+            <tbody>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Ephraim
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Wisozk
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  nickname
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Reunion
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Miami
+                </td>
+                <td
+                  class="c-2iwu5e soui-table-cell-ignore-border"
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Marketing Designer
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Osvaldo
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Beer
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  nickname
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Syrian Arab Republic
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  San Paulo
+                </td>
+                <td
+                  class="c-2iwu5e soui-table-cell-ignore-border"
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Financial Controller
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Dylan
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Ratke
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  nickname
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Peru
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Boston
+                </td>
+                <td
+                  class="c-2iwu5e soui-table-cell-ignore-border"
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Development Lead
+                </td>
+              </tr>
+              <tr
+                class=""
+              >
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Shaniya
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Jacobs
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  nickname
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Peru
+                </td>
+                <td
+                  class=""
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Chengdu
+                </td>
+                <td
+                  class="c-2iwu5e soui-table-cell-ignore-border"
+                  colspan="1"
+                  dir="ltr"
+                >
+                  Developer
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        style="margin-top: 0px; margin-right: 1px; height: 0px; width: 0px; overflow: hidden;"
+      >
+         
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -700,11 +911,11 @@ exports[`Table[Base] should render correctly about group 1`] = `
 exports[`Table[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="c-l9d8jw soui-radio-group"
+    class="c-3srah8 soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -712,21 +923,21 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         small
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper c-i6mc3l soui-radio-wrapper-checked"
+      class="c-6kjs3c soui-radio-wrapper c-ds7wjl soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -735,21 +946,21 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         default
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -757,27 +968,30 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="c-u9zjmz soui-table-wrapper cgwc04k soui-table-vertical-align-top c-v46b25 soui-table-default"
+    class="c-d6pwmj soui-table-wrapper c-gj61i4 soui-table-vertical-align-top c-e0wo1p soui-table-default"
+    dir="ltr"
   >
     <div
-      class="c-9ryqzx soui-table-body-wrapper"
+      class="ciccmmt soui-table-head-wrapper"
     >
-      <table>
+      <table
+        style="transform: translate3d(0px, 0, 0);"
+      >
         <colgroup>
           <col
             style="width: 0px;"
@@ -795,7 +1009,8 @@ exports[`Table[Base] should render correctly about size 1`] = `
         <thead>
           <tr>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -807,7 +1022,8 @@ exports[`Table[Base] should render correctly about size 1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -819,7 +1035,8 @@ exports[`Table[Base] should render correctly about size 1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="c-2xciz8 soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -831,7 +1048,8 @@ exports[`Table[Base] should render correctly about size 1`] = `
               </div>
             </th>
             <th
-              class="cuwl7ha soui-table-cell-ignore-border"
+              class="c-2xciz8 soui-table-cell-align-left c-2iwu5e soui-table-cell-ignore-border"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -844,121 +1062,178 @@ exports[`Table[Base] should render correctly about size 1`] = `
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Ephraim Wisozk
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Reunion
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Marketing Designer
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Miami
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Osvaldo Beer
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Syrian Arab Republic
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Financial Controller
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              San Paulo
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Dylan Ratke
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Peru
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Development Lead
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Boston
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-              colspan="1"
-            >
-              Shaniya Jacobs
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Peru
-            </td>
-            <td
-              class=""
-              colspan="1"
-            >
-              Developer
-            </td>
-            <td
-              class="cuwl7ha soui-table-cell-ignore-border"
-              colspan="1"
-            >
-              Chengdu
-            </td>
-          </tr>
-        </tbody>
       </table>
+    </div>
+    <div
+      style="flex: 1; min-height: 0; min-width: 0; display: flex;"
+    >
+      <div
+        data-soui-role="scroll"
+        style="flex: 1; min-width: 0; min-height: 0; overflow: auto; width: 100%;"
+      >
+        <div
+          data-soui-role="scroll-container"
+          style="height: 100%; width: 100%; display: inline-flex; position: sticky; left: 0px; top: 0px;"
+        >
+          <div
+            style="flex-grow: 1;"
+          >
+            <table
+              style="transform: translate3d(0px, 0px, 0);"
+            >
+              <colgroup>
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+                <col
+                  style="width: 0px;"
+                />
+              </colgroup>
+              <tbody>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Ephraim Wisozk
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Reunion
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Marketing Designer
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Miami
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Osvaldo Beer
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Syrian Arab Republic
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Financial Controller
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    San Paulo
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Dylan Ratke
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Peru
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Development Lead
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Boston
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Shaniya Jacobs
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Peru
+                  </td>
+                  <td
+                    class=""
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Developer
+                  </td>
+                  <td
+                    class="c-2iwu5e soui-table-cell-ignore-border"
+                    colspan="1"
+                    dir="ltr"
+                  >
+                    Chengdu
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          style="margin-top: 0px; margin-right: 1px; height: 0px; width: 0px; overflow: hidden;"
+        >
+           
+        </div>
+      </div>
     </div>
   </div>
 </div>

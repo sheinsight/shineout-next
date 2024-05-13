@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import EditableArea from '..';
 import mountTest from '../../tests/mountTest';
@@ -81,6 +81,7 @@ describe('EditableArea[Base]', () => {
   snapshotTest(<EditableAreaResult />);
   test('should render default', () => {
     const { container } = render(<EditableArea />);
+    
     const editableWrapper = container.querySelector(wrapper)!;
     classContentTest(editableWrapper, wrapperNoBorder);
     const editablePlace = editableWrapper.querySelector(place)!;
@@ -90,6 +91,7 @@ describe('EditableArea[Base]', () => {
     attributesTest(editablePlace, 'tabindex', '0');
     const editableContent = editablePlace.querySelector(content)!;
     expect(editableContent?.querySelector(placeholder)).toBeInTheDocument();
+    fireEvent.click(editablePlace);
     const editablePopup = document.querySelector(popup)!;
     expect(editablePopup).toBeInTheDocument();
     classLengthTest(editablePopup, 'textarea', 2);
@@ -128,13 +130,17 @@ describe('EditableArea[Base]', () => {
   });
   // TODO
   test('should render when set getPopupContainer', () => {
-    render(<EditableAreaContainer />);
+    const {container} = render(<EditableAreaContainer />);
+    const editablePlace = container.querySelector(place)!;
+    fireEvent.click(editablePlace);
     // TODO: should container.querySelectorAll, is a bug, but no problem on the browser
     expect(document.querySelectorAll('textarea').length).toBe(2);
   });
   test('should render when set maxHeight', () => {
     const maxHeight = 200;
-    render(<EditableArea maxHeight={maxHeight} />);
+    const { container } = render(<EditableArea maxHeight={maxHeight} />);
+    const editablePlace = container.querySelector(place)!;
+    fireEvent.click(editablePlace);
     styleContentTest(document.querySelectorAll('textarea')[0], `max-height: ${maxHeight}px;`);
   });
   test('should render when set renderFooter', () => {
@@ -146,6 +152,8 @@ describe('EditableArea[Base]', () => {
 describe('EditableArea[Value]', () => {
   test('should render when set defaultValue', () => {
     const { container } = render(<EditableArea defaultValue={defaultValue} />);
+    fireEvent.click(container.querySelector(place)!);
+    screen.debug()
     testValue(container, defaultValue);
   });
   test('should render when set value', () => {

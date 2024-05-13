@@ -3,25 +3,29 @@
 exports[`Tree[Base] should render correctly  1`] = `
 <div>
   <div
-    class="ca75d1o soui-tree-tree ca702oy soui-tree-line"
+    class="c-q5cq2c soui-tree-tree c-q5i0f2 soui-tree-line"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -36,10 +40,12 @@ exports[`Tree[Base] should render correctly  1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               node 0
             </div>
@@ -54,25 +60,29 @@ exports[`Tree[Base] should render correctly  1`] = `
 exports[`Tree[Base] should render correctly about disabled 1`] = `
 <div>
   <div
-    class="ca75d1o soui-tree-tree c-4b6snx soui-tree-noline"
+    class="c-q5cq2c soui-tree-tree cd5f5er soui-tree-noline"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="true"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -87,10 +97,11 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+              class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -98,17 +109,18 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 type="checkbox"
               />
               <span
-                class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
               >
                 <i
-                  class="c-bf0pb8 soui-checkbox-indicator"
+                  class="c-g55gbo soui-checkbox-indicator"
                   data-soui-role="checkbox-indicator"
                   tabindex="1"
                 />
               </span>
             </div>
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -119,22 +131,26 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
           </div>
         </div>
         <div
-          class="c-hviedv soui-tree-children"
+          class="c-s8rdf soui-tree-children"
           style="display: block;"
         >
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -149,11 +165,12 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
                 data-disabled="true"
+                dir="ltr"
               >
                 <div
-                  class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper ct4pags soui-checkbox-wrapper-disabled"
+                  class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper c8awl8c soui-checkbox-wrapper-disabled"
                 >
                   <input
                     disabled=""
@@ -162,17 +179,18 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                    class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="c-bf0pb8 soui-checkbox-indicator"
+                      class="c-g55gbo soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="-1"
                     />
                   </span>
                 </div>
                 <div
-                  class="ca753vf soui-tree-text c-3ivxqh soui-tree-text-disabled"
+                  class="c-q5cz8l soui-tree-text c-oargll soui-tree-text-disabled"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -184,18 +202,22 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -210,10 +232,11 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+                  class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -221,17 +244,18 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                    class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="c-bf0pb8 soui-checkbox-indicator"
+                      class="c-g55gbo soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -243,18 +267,22 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -269,10 +297,11 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+                  class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -280,17 +309,18 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                    class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="c-bf0pb8 soui-checkbox-indicator"
+                      class="c-g55gbo soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -311,26 +341,30 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
 exports[`Tree[Base] should render correctly about drag 1`] = `
 <div>
   <div
-    class="ca75d1o soui-tree-tree c-4b6snx soui-tree-noline"
+    class="c-q5cq2c soui-tree-tree cd5f5er soui-tree-noline"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -345,10 +379,12 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -360,19 +396,23 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -387,10 +427,12 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -402,19 +444,23 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -429,10 +475,12 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -444,19 +492,23 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -471,10 +523,12 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -493,26 +547,30 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
 exports[`Tree[Base] should render correctly about drag style 1`] = `
 <div>
   <div
-    class="ca75d1o soui-tree-tree c-4b6snx soui-tree-noline"
+    class="c-q5cq2c soui-tree-tree cd5f5er soui-tree-noline"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -527,10 +585,12 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -542,19 +602,23 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -569,10 +633,12 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -584,19 +650,23 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -611,10 +681,12 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -626,19 +698,23 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -653,10 +729,12 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -668,19 +746,23 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
         draggable="true"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -695,10 +777,12 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -720,7 +804,8 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
     style="margin-bottom: 24px;"
   >
     <button
-      class="c-98dy8e soui-button-secondary cmdnit0 soui-button-button cw6wzwg soui-button-outline ceq3w91 soui-button-small"
+      class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button c-68omio soui-button-outline c-c7w797 soui-button-small"
+      dir="ltr"
       type="button"
     >
       <span>
@@ -728,7 +813,8 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
       </span>
     </button>
     <button
-      class="c-98dy8e soui-button-secondary cmdnit0 soui-button-button cw6wzwg soui-button-outline ceq3w91 soui-button-small"
+      class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button c-68omio soui-button-outline c-c7w797 soui-button-small"
+      dir="ltr"
       type="button"
     >
       <span>
@@ -737,25 +823,29 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
     </button>
   </div>
   <div
-    class="ca75d1o soui-tree-tree c-4b6snx soui-tree-noline"
+    class="c-q5cq2c soui-tree-tree cd5f5er soui-tree-noline"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -770,10 +860,12 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -785,18 +877,22 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -811,10 +907,12 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -833,25 +931,29 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
 exports[`Tree[Base] should render correctly about highlight 1`] = `
 <div>
   <div
-    class="ca75d1o soui-tree-tree c-4b6snx soui-tree-noline"
+    class="c-q5cq2c soui-tree-tree cd5f5er soui-tree-noline"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -866,11 +968,13 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
             data-active="false"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -882,18 +986,22 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -908,11 +1016,13 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
             data-active="false"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -924,18 +1034,22 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -950,11 +1064,13 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
             data-active="false"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -966,18 +1082,22 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -992,11 +1112,13 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
             data-active="false"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -1008,18 +1130,22 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -1034,11 +1160,13 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
             data-active="false"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -1057,25 +1185,29 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
 exports[`Tree[Base] should render correctly about line 1`] = `
 <div>
   <div
-    class="ca75d1o soui-tree-tree c-4b6snx soui-tree-noline"
+    class="c-q5cq2c soui-tree-tree cd5f5er soui-tree-noline"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="true"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -1090,10 +1222,12 @@ exports[`Tree[Base] should render correctly about line 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -1104,22 +1238,26 @@ exports[`Tree[Base] should render correctly about line 1`] = `
           </div>
         </div>
         <div
-          class="c-hviedv soui-tree-children"
+          class="c-s8rdf soui-tree-children"
           style="display: block;"
         >
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="true"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -1134,10 +1272,12 @@ exports[`Tree[Base] should render correctly about line 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -1148,22 +1288,26 @@ exports[`Tree[Base] should render correctly about line 1`] = `
               </div>
             </div>
             <div
-              class="c-hviedv soui-tree-children"
+              class="c-s8rdf soui-tree-children"
               style="display: block;"
             >
               <div
-                class="ca71gvk soui-tree-node"
+                class="c-q5gm8g soui-tree-node"
+                dir="ltr"
               >
                 <div
-                  class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+                  class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+                  dir="ltr"
                 >
                   <span
-                    class="chz7qlo soui-tree-icon-wrapper"
+                    class="cjlksdo soui-tree-icon-wrapper"
                     data-expanded="false"
                     data-icon="false"
+                    dir="ltr"
                   >
                     <span
-                      class="ca6y1bb soui-tree-icon"
+                      class="c-q5k1sp soui-tree-icon"
+                      dir="ltr"
                     >
                       <svg
                         aria-hidden="true"
@@ -1178,10 +1322,12 @@ exports[`Tree[Base] should render correctly about line 1`] = `
                     </span>
                   </span>
                   <div
-                    class="c-axh5h1 soui-tree-content"
+                    class="cx5mszv soui-tree-content"
+                    dir="ltr"
                   >
                     <div
-                      class="ca753vf soui-tree-text"
+                      class="c-q5cz8l soui-tree-text"
+                      dir="ltr"
                     >
                       <span
                         style="display: inline-block;"
@@ -1195,18 +1341,22 @@ exports[`Tree[Base] should render correctly about line 1`] = `
             </div>
           </div>
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -1221,10 +1371,12 @@ exports[`Tree[Base] should render correctly about line 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -1245,25 +1397,29 @@ exports[`Tree[Base] should render correctly about line 1`] = `
 exports[`Tree[Base] should render correctly about loader 1`] = `
 <div>
   <div
-    class="ca75d1o soui-tree-tree c-4b6snx soui-tree-noline"
+    class="c-q5cq2c soui-tree-tree cd5f5er soui-tree-noline"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node ca6zzf0 soui-tree-leaf"
+        class="c-q5gm8g soui-tree-node c-q5i3p0 soui-tree-leaf"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper"
+          class="c700vrc soui-tree-content-wrapper"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -1278,10 +1434,11 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+              class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -1289,17 +1446,18 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
                 type="checkbox"
               />
               <span
-                class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
               >
                 <i
-                  class="c-bf0pb8 soui-checkbox-indicator"
+                  class="c-g55gbo soui-checkbox-indicator"
                   data-soui-role="checkbox-indicator"
                   tabindex="1"
                 />
               </span>
             </div>
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -1311,18 +1469,22 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node ca6zzf0 soui-tree-leaf"
+        class="c-q5gm8g soui-tree-node c-q5i3p0 soui-tree-leaf"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper"
+          class="c700vrc soui-tree-content-wrapper"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -1337,10 +1499,11 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+              class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -1348,17 +1511,18 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
                 type="checkbox"
               />
               <span
-                class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
               >
                 <i
-                  class="c-bf0pb8 soui-checkbox-indicator"
+                  class="c-g55gbo soui-checkbox-indicator"
                   data-soui-role="checkbox-indicator"
                   tabindex="1"
                 />
               </span>
             </div>
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -1370,18 +1534,22 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node ca6zzf0 soui-tree-leaf"
+        class="c-q5gm8g soui-tree-node c-q5i3p0 soui-tree-leaf"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper"
+          class="c700vrc soui-tree-content-wrapper"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -1396,10 +1564,11 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+              class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -1407,17 +1576,18 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
                 type="checkbox"
               />
               <span
-                class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
               >
                 <i
-                  class="c-bf0pb8 soui-checkbox-indicator"
+                  class="c-g55gbo soui-checkbox-indicator"
                   data-soui-role="checkbox-indicator"
                   tabindex="1"
                 />
               </span>
             </div>
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -1429,18 +1599,22 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node ca6zzf0 soui-tree-leaf"
+        class="c-q5gm8g soui-tree-node c-q5i3p0 soui-tree-leaf"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper"
+          class="c700vrc soui-tree-content-wrapper"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -1455,10 +1629,11 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+              class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -1466,17 +1641,18 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
                 type="checkbox"
               />
               <span
-                class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
               >
                 <i
-                  class="c-bf0pb8 soui-checkbox-indicator"
+                  class="c-g55gbo soui-checkbox-indicator"
                   data-soui-role="checkbox-indicator"
                   tabindex="1"
                 />
               </span>
             </div>
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -1488,18 +1664,22 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
         </div>
       </div>
       <div
-        class="ca71gvk soui-tree-node ca6zzf0 soui-tree-leaf"
+        class="c-q5gm8g soui-tree-node c-q5i3p0 soui-tree-leaf"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper"
+          class="c700vrc soui-tree-content-wrapper"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -1514,10 +1694,11 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+              class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -1525,17 +1706,18 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
                 type="checkbox"
               />
               <span
-                class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
               >
                 <i
-                  class="c-bf0pb8 soui-checkbox-indicator"
+                  class="c-g55gbo soui-checkbox-indicator"
                   data-soui-role="checkbox-indicator"
                   tabindex="1"
                 />
               </span>
             </div>
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               <span
                 style="display: inline-block;"
@@ -1554,11 +1736,11 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
 exports[`Tree[Base] should render correctly about onChange 1`] = `
 <div>
   <div
-    class="c-l9d8jw soui-radio-group"
+    class="c-3srah8 soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-nntf3s soui-radio-wrapper c-i6mc3l soui-radio-wrapper-checked"
+      class="c-6kjs3c soui-radio-wrapper c-ds7wjl soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -1567,21 +1749,21 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         模式 0
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1589,21 +1771,21 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         模式 1
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1611,21 +1793,21 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         模式 2
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1633,21 +1815,21 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         模式 3
       </span>
     </div>
     <div
-      class="c-nntf3s soui-radio-wrapper"
+      class="c-6kjs3c soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1655,15 +1837,15 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
         type="radio"
       />
       <span
-        class="clsri3z soui-radio-indicator-wrapper"
+        class="c-bmqjip soui-radio-indicator-wrapper"
       >
         <span
-          class="c-kc4scc soui-radio-indicator"
+          class="c-48u5rw soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-j0ne9w soui-radio-desc"
+        class="c-9af744 soui-radio-desc"
       >
         模式 4
       </span>
@@ -1676,25 +1858,29 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       style="flex: 1;"
     >
       <div
-        class="ca75d1o soui-tree-tree c-4b6snx soui-tree-noline"
+        class="c-q5cq2c soui-tree-tree cd5f5er soui-tree-noline"
       >
         <div
-          class="ca7413k soui-tree-root"
+          class="c-q5e20g soui-tree-root"
           style="display: block;"
         >
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -1709,10 +1895,11 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+                  class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -1720,17 +1907,18 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                    class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="c-bf0pb8 soui-checkbox-indicator"
+                      class="c-g55gbo soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -1742,18 +1930,22 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
             </div>
           </div>
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -1768,10 +1960,11 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+                  class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -1779,17 +1972,18 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                    class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="c-bf0pb8 soui-checkbox-indicator"
+                      class="c-g55gbo soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -1801,18 +1995,22 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
             </div>
           </div>
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -1827,10 +2025,11 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+                  class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -1838,17 +2037,18 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                    class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="c-bf0pb8 soui-checkbox-indicator"
+                      class="c-g55gbo soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -1860,18 +2060,22 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
             </div>
           </div>
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -1886,10 +2090,11 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+                  class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -1897,17 +2102,18 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                    class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="c-bf0pb8 soui-checkbox-indicator"
+                      class="c-g55gbo soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -1919,18 +2125,22 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
             </div>
           </div>
           <div
-            class="ca71gvk soui-tree-node"
+            class="c-q5gm8g soui-tree-node"
+            dir="ltr"
           >
             <div
-              class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+              class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+              dir="ltr"
             >
               <span
-                class="chz7qlo soui-tree-icon-wrapper"
+                class="cjlksdo soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
+                dir="ltr"
               >
                 <span
-                  class="ca6y1bb soui-tree-icon"
+                  class="c-q5k1sp soui-tree-icon"
+                  dir="ltr"
                 >
                   <svg
                     aria-hidden="true"
@@ -1945,10 +2155,11 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 </span>
               </span>
               <div
-                class="c-axh5h1 soui-tree-content"
+                class="cx5mszv soui-tree-content"
+                dir="ltr"
               >
                 <div
-                  class="c-jwiw0f soui-tree-checkbox cfisc68 soui-checkbox-wrapper"
+                  class="c-2t98zz soui-tree-checkbox ch55dy8 soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -1956,17 +2167,18 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="ccbsv87 soui-checkbox-indicator-wrapper c-3nloer soui-checkbox-dark-indicator-wrapper"
+                    class="c5y3mqf soui-checkbox-indicator-wrapper c-oda0ib soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="c-bf0pb8 soui-checkbox-indicator"
+                      class="c-g55gbo soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="ca753vf soui-tree-text"
+                  class="c-q5cz8l soui-tree-text"
+                  dir="ltr"
                 >
                   <span
                     style="display: inline-block;"
@@ -2011,25 +2223,29 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
 exports[`Tree[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="ca75d1o soui-tree-tree ca702oy soui-tree-line"
+    class="c-q5cq2c soui-tree-tree c-q5i0f2 soui-tree-line"
   >
     <div
-      class="ca7413k soui-tree-root"
+      class="c-q5e20g soui-tree-root"
       style="display: block;"
     >
       <div
-        class="ca71gvk soui-tree-node"
+        class="c-q5gm8g soui-tree-node"
+        dir="ltr"
       >
         <div
-          class="cbfw16w soui-tree-content-wrapper ce3zp68 soui-tree-childnode"
+          class="c700vrc soui-tree-content-wrapper c-oblx8w soui-tree-childnode"
+          dir="ltr"
         >
           <span
-            class="chz7qlo soui-tree-icon-wrapper"
+            class="cjlksdo soui-tree-icon-wrapper"
             data-expanded="false"
             data-icon="false"
+            dir="ltr"
           >
             <span
-              class="ca6y1bb soui-tree-icon"
+              class="c-q5k1sp soui-tree-icon"
+              dir="ltr"
             >
               <svg
                 aria-hidden="true"
@@ -2044,10 +2260,12 @@ exports[`Tree[Base] should render correctly about size 1`] = `
             </span>
           </span>
           <div
-            class="c-axh5h1 soui-tree-content"
+            class="cx5mszv soui-tree-content"
+            dir="ltr"
           >
             <div
-              class="ca753vf soui-tree-text"
+              class="c-q5cz8l soui-tree-text"
+              dir="ltr"
             >
               node 0
             </div>
