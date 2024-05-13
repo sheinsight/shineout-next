@@ -39,6 +39,9 @@ const formTokenExtraValue = {
       width: '140px',
       padding: { y: 'Spacing-5' },
       margin: { x: { end: 'Spacing-8' } },
+      top: {
+        padding: { y: 'Spacing-4' },
+      },
     },
     danger: {
       color: 'Danger-6',

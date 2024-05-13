@@ -46,6 +46,12 @@ export interface FormTokens {
   formItemLabelMarginXEnd: string;
   /**
    * @type {string}
+   * @token Spacing-4
+   * @description 表单项标签undefined内边距（垂直方向）
+   */
+  formItemLabelTopPaddingY: string;
+  /**
+   * @type {string}
    * @token Danger-6
    * @description 表单项危险色颜色
    */

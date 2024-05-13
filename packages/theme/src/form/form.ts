@@ -11,6 +11,7 @@ const formTokens: FormTokens = {
   formItemLabelWidth: '140px',
   formItemLabelPaddingY: 'Spacing-5',
   formItemLabelMarginXEnd: 'Spacing-8',
+  formItemLabelTopPaddingY: 'Spacing-4',
   formItemDangerColor: 'Danger-6',
   formItemTipMinHeight: 'Size-10',
   formItemTipFontSize: 'Font-12',
