@@ -1,3 +1,10 @@
+## 3.1.8
+2024-05-13
+
+### 🐞 BugFix
+
+- 修复 `Form` 属性 `onChange` 返回的 `value` 属性变成只读的问题 ([#434](https://github.com/sheinsight/shineout-next/pull/434))
+
 ## 3.1.7
 2024-05-11
 

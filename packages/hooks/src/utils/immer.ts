@@ -1,14 +1,22 @@
-// import { produce as produce2, getSnapshot } from '@shined/reactive/vanilla';
-
-// export const produce = ((...args: any) => {
-//   return produce2.apply(null, args);
-// }) as typeof produce2;
-
-// export const current = getSnapshot;
-
-import { produce as produce2 } from 'immer';
-
+import { produce as produce2, setAutoFreeze } from 'immer';
+import { Draft, PatchListener } from 'immer';
 export { current } from 'immer';
-export const produce = <T>(value: T, cb: (value: T) => void) => {
-  return produce2(value, cb);
-};
+
+declare const NOTHING: unique symbol;
+type ValidRecipeReturnType<State> =
+  | State
+  | void
+  | undefined
+  | (State extends undefined ? typeof NOTHING : never);
+interface IProduce {
+  <Base, D = Draft<Base>>( // By using a default inferred D, rather than Draft<Base> in the recipe, we can override it.
+    base: Base,
+    recipe: (draft: D) => ValidRecipeReturnType<D>,
+    listener?: PatchListener,
+  ): Base;
+}
+
+export const produce = ((...args: any) => {
+  setAutoFreeze(false);
+  return produce2.apply(null, args);
+}) as IProduce;
