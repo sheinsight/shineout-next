@@ -50,7 +50,13 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     borderCollapse: 'collapse',
     lineHeight: token.lineHeightDynamic,
   },
-  row: {},
+  row: {
+    // '&>td': {
+    //   '&:not(:last-child)': {
+    //     paddingRight: token.descriptionsCellGap,
+    //   },
+    // },
+  },
   label: {
     paddingRight: token.descriptionsLabelPaddingRight,
     paddingBottom: token.descriptionsLabelPaddingBottom,
@@ -69,7 +75,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
       paddingRight: 0,
     },
   },
-  inlineTable: {
+  cell: {
     textAlign: 'left',
     boxSizing: 'border-box',
     verticalAlign: 'top',
@@ -95,13 +101,25 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
       width: '1px',
     },
   },
+  vertical: {
+    '& $label': {
+      paddingBottom: token.descriptionsVerticalPaddingBottom,
+    },
+  },
   inlineHorizontal: {
     '& $item': {
       display: 'flex',
       alignItems: 'center',
     },
-    '& $inlineTable': {
+    '& $cell': {
       verticalAlign: 'middle',
+    },
+    '& $row': {
+      '&>td': {
+        '&:not(:last-child)': {
+          paddingRight: token.descriptionsCellGap,
+        },
+      },
     },
   },
   tableLayoutFixed: {
@@ -116,20 +134,20 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     border: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     borderRadius: token.descriptionsBorderRadius,
     '& $row:not(:last-child)': {
-      borderBottom: `${token.descriptionsBorderBottomSize} solid ${token.descriptionsBorderColor}`,
+      borderBottom: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $label': {
       padding: `${token.descriptionsBorderPaddingX} ${token.descriptionsBorderPaddingY}`,
       backgroundColor: token.descriptionsBackgroundColor,
-      borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
+      borderRight: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $value': {
       padding: `${token.descriptionsBorderPaddingX} ${token.descriptionsBorderPaddingY}`,
-      borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
+      borderRight: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     },
-    '& $inlineTable': {
+    '& $cell': {
       padding: `${token.descriptionsInlineBorderPaddingX} ${token.descriptionsInlineBorderPaddingY}`,
-      borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
+      borderRight: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $labelInline': {
       paddingRight: token.descriptionsLabelPaddingRight,

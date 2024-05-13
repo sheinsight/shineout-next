@@ -118,7 +118,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         }
       }
     }
-
     return newPosition;
   };
 

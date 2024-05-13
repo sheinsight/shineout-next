@@ -35,6 +35,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const {
     jssStyle,
     style,
+    adjust = true,
     width,
     height,
     className,
@@ -705,7 +706,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       {tipNode}
       {renderResult()}
       <AbsoluteList
-        adjust
+        adjust={adjust}
         focus={open}
         fixedWidth={false}
         absolute={absolute}

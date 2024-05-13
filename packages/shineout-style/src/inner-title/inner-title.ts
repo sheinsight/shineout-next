@@ -56,6 +56,13 @@ const innerTitle: JsStyles<keyof InnerTitleClasses> = {
   },
   top: {
     opacity: '0',
+    fontSize: token.inputInnerTopFontSize,
+    '$wrapperSmall &': {
+      fontSize: token.inputInnerTopSmallFontSize,
+    },
+    '$wrapperLarge &': {
+      fontSize: token.inputInnerTopLargeFontSize,
+    },
     '$wrapperOpen &': {
       opacity: '1',
       transition: `opacity 0s ease-in ${moveTime}`,

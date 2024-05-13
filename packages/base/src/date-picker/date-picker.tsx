@@ -22,7 +22,16 @@ const preventDefault = (e: React.MouseEvent) => {
 const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<Value>) => {
   const props = useWithFormConfig(props0);
   const { locale, direction } = useConfig();
-  const { jssStyle, range, type = 'date', border = true, clearable = true, disabled, size } = props;
+  const {
+    jssStyle,
+    range,
+    type = 'date',
+    border = true,
+    clearable = true,
+    disabled,
+    size,
+    adjust = true,
+  } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
 
   const styles = jssStyle?.datePicker?.();
@@ -240,7 +249,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
         focus={open}
         fixedWidth={false}
         popupGap={4}
-        adjust
+        adjust={adjust}
       >
         <AnimationList
           onRef={popupRef}

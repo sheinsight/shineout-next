@@ -23,9 +23,9 @@ const popoverTokenDescription = {
  * 注意，该映射表的内容不与 popoverRules 强关联，非 popoverRules 规则内的 token 需手动增加或删减。
  */
 const popoverTokenValue = {
-  font: { size: 'Font-14', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', weight: 'Weight-regular', color: 'Neutral-text-5' },
   padding: { x: 'Spacing-8', y: 'Spacing-8' },
-  radius: 'Radius-4',
+  radius: 'Radius-default',
   border: { width: 'Border-1', color: 'Neutral-border-1' },
   background: { color: 'Neutral-fill-1' },
   shadow: 'Shadow-2',
@@ -37,21 +37,21 @@ const popoverTokenValue = {
   },
   warning: {
     font: { color: '' },
-    background: { color: '#fff3e5' },
+    background: { color: 'Warning-1' },
     shadow: '',
-    border: { color: 'rgba(255, 140, 0, 0.1)' },
+    border: { color: 'Warning-2' },
   },
   info: {
     font: { color: '' },
-    background: { color: '#e8f1fe' },
+    background: { color: 'Brand-1' },
     shadow: '',
-    border: { color: 'rgba(25, 122, 250, 0.1)' },
+    border: { color: 'Brand-2' },
   },
   danger: {
     font: { color: '' },
-    background: { color: '#ffeded' },
+    background: { color: 'Danger-1' },
     shadow: '',
-    border: { color: 'rgba(255, 77, 80, 0.1)' },
+    border: { color: 'Danger-2' },
   },
   error: {
     font: { color: 'Danger-7' },
@@ -62,6 +62,7 @@ const popoverTokenValue = {
   confirm: {
     font: { size: '' },
     padding: { x: 'Spacing-16', y: 'Spacing-16' },
+    margin: { y: 'Spacing-16' },
     background: { color: 'transparent' },
   },
 };
