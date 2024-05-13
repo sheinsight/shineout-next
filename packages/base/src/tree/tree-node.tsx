@@ -89,7 +89,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataI
 
   const rootClass = classNames(
     contentStyle.node,
-    isLeaf() && leafClass,
+    isLeaf() && (util.isString(leafClass) ? leafClass : util.isFunc(leafClass) && leafClass(data)),
     util.isString(nodeClass) && nodeClass,
     util.isFunc(nodeClass) && nodeClass(data),
     {
