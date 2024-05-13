@@ -1,3 +1,16 @@
+## 3.1.7
+2024-05-11
+
+### 🐞 BugFix
+
+- 修复 `Form` 属性 `value` 传入 proxy 对象会导致修改表单报错([#432](https://github.com/sheinsight/shineout-next/pull/432))
+
+## 3.1.6
+2024-05-11
+
+### 💅 Style
+- `Form.Item` 在行内模式下给标签增加 `width: auto` 样式 ([#430](https://github.com/sheinsight/shineout-next/pull/430))
+
 ## 3.1.0
 2024-05-09
 

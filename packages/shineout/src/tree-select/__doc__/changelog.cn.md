@@ -1,3 +1,17 @@
+## 3.1.7
+2024-05-11
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` 属性 `childrenKey` 没有生效的问题 ([#432](https://github.com/sheinsight/shineout-next/pull/432))
+
+## 3.1.6
+2024-05-11
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` 本地筛选的时候防抖没有生效导致频繁渲染的问题 ([#428](https://github.com/sheinsight/shineout-next/pull/428))
+
 ## 3.1.0
 2024-05-09
 

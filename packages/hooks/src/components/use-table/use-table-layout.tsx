@@ -40,9 +40,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     clientWidth: 0,
   });
 
-  const [isScrollX, setIsScrollX] = React.useState(false);
+  const [isScrollX, setIsScrollX] = React.useState<boolean | undefined>(undefined);
   const [deltaXSum, setDeltaXSum] = React.useState(0);
-  const [isScrollY, setIsScrollY] = React.useState(false);
+  const [isScrollY, setIsScrollY] = React.useState<boolean | undefined>(undefined);
   const [floatLeft, setFloatLeft] = React.useState(false);
   const [floatRight, setFloatRight] = React.useState(false);
   const [resizeFlag, setResizeFlag] = React.useState(0);
@@ -121,7 +121,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const newColgroup = [...colgroup];
     newColgroup[index] = context.dragWidth;
     if (isFunc(props.onColumnResize)) {
-      const newColumns = props.columns.map((item) => ({ ...item, width: newColgroup[index] }));
+      const newColumns = props.columns.map((item, i) => ({ ...item, width: newColgroup[i] }));
       props.onColumnResize(newColumns);
       return;
     }
@@ -151,14 +151,14 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const items = tr.children;
 
     let newCols: number[] = [];
+    let index = 0;
     let sum = 0;
     for (let i = 0, count = items.length; i < count; i++) {
       const { width } = items[i].getBoundingClientRect();
       sum += width;
       const colspan = items[i].getAttribute('colspan');
-      const dfWidth = props.columns
-        .slice(i, i + (colspan ? parseInt(colspan, 10) : 1))
-        .map((v) => v.width);
+      const colspanNum = parseInt(colspan || '1', 10);
+      const dfWidth = props.columns.slice(index, index + colspanNum).map((v) => v.width);
       let tempcols = [] as number[];
       const emptyNum = dfWidth.filter((v) => v === undefined).length;
       if (dfWidth.length === 1) {
@@ -175,7 +175,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
         const agv = rest > 0 ? rest / emptyNum : 0;
         tempcols = dfWidth.map((v) => (v ? v : agv));
       }
-
+      index += colspanNum;
       newCols = [...newCols, ...tempcols];
     }
 
@@ -252,8 +252,8 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     }
     //  当存在某列没有设置宽度的时候， 宽度会跟随内容的变化而变化， 这个时候当 data 改变需要重新计算宽度
     const hasNoWith = props.columns.find((v) => v.width === undefined);
-    if (hasNoWith && preData && props.data && props.data.length !== preData.length) {
-      if (preData.length === 0 || props.dataChangeResize) resetColGroup();
+    if (preData && props.data && props.data.length !== preData.length) {
+      if (preData.length === 0 || props.dataChangeResize || hasNoWith) resetColGroup();
     }
   }, [props.columns, props.data, props.dataChangeResize]);
 
@@ -261,7 +261,10 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     let cancelFunc: () => void | undefined;
     syncScrollWidth();
     if (scrollRef.current) {
-      cancelFunc = addResizeObserver(scrollRef.current, handleResize, { direction: true });
+      cancelFunc = addResizeObserver(scrollRef.current, handleResize, {
+        direction: true,
+        timer: 10,
+      });
     }
     return () => {
       cancelFunc?.();
@@ -281,8 +284,8 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   }, [colgroup]);
 
   return {
-    isScrollX,
-    isScrollY,
+    isScrollX: !!isScrollX,
+    isScrollY: !!isScrollY,
     floatLeft,
     floatRight,
     scrollBarWidth,

@@ -1,6 +1,6 @@
 import { useButton } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React from 'react';
+import React, { isValidElement } from 'react';
 import { useConfig } from '../config';
 import { ButtonClasses, ButtonProps } from './button.type';
 import ButtonGroup from './button-group';
@@ -79,7 +79,10 @@ const Button = (props: ButtonProps) => {
     return 12;
   };
 
-  const childrenEl = getSpaceChildren(children, space);
+  const childrenEl = React.Children.map(getSpaceChildren(children, space), (item) => {
+    if (loading && isValidElement(item) && (item.type as any).isShineoutIcon) return null;
+    return item;
+  })?.filter(item => item !== null);
 
   let buttonInnerEl: React.ReactNode = childrenEl;
 
@@ -89,7 +92,7 @@ const Button = (props: ButtonProps) => {
 
   let loadingEl: React.ReactNode = (
     <div className={buttonStyle.spin}>
-      <Spin size={getSpinSize()} jssStyle={jssStyle}></Spin>
+      <Spin size={getSpinSize()} jssStyle={jssStyle} name='ring'></Spin>
     </div>
   );
 

@@ -19,10 +19,11 @@ export let config: ConfigOption = {
   locale: (processEnv.LOCALE as LanType) || 'en-US',
   delay: 0,
   trim: undefined,
-  spin: undefined,
+  spin: 'ring',
   direction: 'ltr',
   popupContainer: null,
 };
+
 
 const state = create<ConfigOption>(config);
 

@@ -106,7 +106,7 @@ const Scroll = (props: scrollProps) => {
           style={containerStyle}
           ref={containerRef}
         >
-          <div style={{ flexShrink: 0, flexGrow: 1 }}>{props.children}</div>
+          <div style={{ flexGrow: 1 }}>{props.children}</div>
         </div>
         <div style={placeStyle}>&nbsp;</div>
       </div>
