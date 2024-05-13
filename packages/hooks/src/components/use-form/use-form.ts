@@ -16,6 +16,7 @@ import {
   isObject,
   shallowEqual,
   wrapFormError,
+  deepClone,
 } from '../../utils';
 
 const emptyObj = {};
@@ -400,7 +401,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   React.useEffect(() => {
     context.removeLock = false;
     if (props.value === context.lastValue) return;
-    context.value = (props.value || emptyObj) as T;
+    context.value = (deepClone(props.value) || emptyObj) as T;
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
         const oldValue = deepGet(context.lastValue || emptyObj, key);

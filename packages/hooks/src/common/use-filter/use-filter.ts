@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { isFunc, getKey, getFilterTree } from '../../utils';
 import { UseFilterProps } from './use-filter.type';
 import { KeygenResult } from '../type';
@@ -21,7 +21,6 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     filterDelay = 400,
   } = props;
 
-  const [filterData, setFilterData] = useState<DataItem[] | undefined>(data);
   const [filterText, setFilterText] = useState<string | undefined>('');
   const [filterFunc, setFilterFunc] = useState<((d: DataItem) => boolean) | undefined>(undefined);
   const [inputText, setInputText] = useState('');
@@ -36,42 +35,6 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     onFilterWidthCreate ||
     ((item: DataItem, createdData: DataItem, key: string | number) => getKey(keygen, item) === key);
 
-  const getData = () => {
-    const newData = filterData || [];
-    if (createdData && !hideCreateOption) {
-      const newKey = getKey(keygen, createdData as DataItem);
-      const sameItem = newData.find((item) => filterFn(item, createdData as DataItem, newKey));
-      if (!sameItem) return [createdData, ...newData] as DataItem[];
-    }
-    return newData;
-  };
-
-  const getFirstMatchNode = (node: DataItem) => {
-    if (firstMatchNode.current) return;
-    firstMatchNode.current = node;
-  };
-
-  const getTreeData = () => {
-    let filterExpandedKeys: KeygenResult[] | undefined = expandedProp || [];
-    let newData: DataItem[] | undefined = treeData;
-    if (filterText) {
-      newData = getFilterTree(
-        treeData,
-        onFilter?.(filterText),
-        filterExpandedKeys,
-        (node: DataItem) => getKey(keygen, node),
-        childrenKey,
-        !!showHitDescendants,
-        firstMatch ? getFirstMatchNode : undefined,
-        { advanced: !!onAdvancedFilter },
-      ) as DataItem[];
-    }
-    return {
-      newData,
-      filterExpandedKeys,
-    };
-  };
-
   const handleClearCreatedData = () => {
     setCreatedData(undefined);
   };
@@ -82,20 +45,12 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   };
 
   const handleFilter = (text: string, from: string = 'edit') => {
+    if (context.filterTimer) clearTimeout(context.filterTimer);
     setInputText(text);
     setFilterText(text);
 
     firstMatchNode.current = null;
-    if (context.filterTimer) clearTimeout(context.filterTimer);
     if (!text) {
-      if (data) {
-        setFilterData(data);
-      }
-
-      if (treeData) {
-        setFilterData(treeData);
-      }
-
       setFilterFunc(undefined);
       handleClearCreatedData();
       // 没有 text 时触发一次 onFilter 以便外部重置数据
@@ -114,37 +69,67 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
       const next = onFilter(text, from);
 
       if (!isFunc(next)) return;
-
       setFilterFunc(() => next);
-
-      const nextData = data?.filter((item) => {
-        if (!groupKey) return next(item);
-        // 剔除分组项
-        if (item[groupKey as keyof typeof item]) return item;
-        return next(item);
-      });
-      setFilterData(nextData);
     }, filterDelay);
   };
-
-  useEffect(() => {
-    if (data) setFilterData(data);
-  }, [data]);
 
   useEffect(() => {
     if (context.filterTimer) clearTimeout(context.filterTimer);
   }, []);
 
-  let nextData: DataItem[] | undefined;
-  let nextExpanded: KeygenResult[] | undefined;
+  const [nextData, nextExpanded] = useMemo(() => {
+    
 
-  if (treeData) {
-    const { newData, filterExpandedKeys } = getTreeData();
-    nextData = newData;
-    nextExpanded = filterExpandedKeys;
-  } else if (data) {
-    nextData = getData();
-  }
+    if (treeData) {
+      const getTreeData = () => {
+        const getFirstMatchNode = (node: DataItem) => {
+          if (firstMatchNode.current) return;
+          firstMatchNode.current = node;
+        };
+        let filterExpandedKeys: KeygenResult[] | undefined = expandedProp || [];
+        let newData: DataItem[] | undefined = treeData;
+        if (filterFunc) {
+          newData = getFilterTree(
+            treeData,
+            filterFunc,
+            filterExpandedKeys,
+            (node: DataItem) => getKey(keygen, node),
+            childrenKey,
+            !!showHitDescendants,
+            firstMatch ? getFirstMatchNode : undefined,
+            { advanced: !!onAdvancedFilter },
+          ) as DataItem[];
+        }
+        return {
+          newData,
+          filterExpandedKeys,
+        };
+      };
+      const { newData, filterExpandedKeys } = getTreeData();
+      return [newData, filterExpandedKeys];
+    } else if (data) {
+      const getData = () => {
+        let newData =
+          (filterFunc
+            ? data?.filter((item) => {
+                if (!groupKey) return filterFunc(item);
+                // 剔除分组项
+                if (item[groupKey as keyof typeof item]) return item;
+                return filterFunc(item);
+              })
+            : data) || [];
+        if (createdData && !hideCreateOption) {
+          const newKey = getKey(keygen, createdData as DataItem);
+          const sameItem = newData.find((item) => filterFn(item, createdData as DataItem, newKey));
+          if (!sameItem) return [createdData, ...newData] as DataItem[];
+        }
+        return newData;
+      };
+      return [getData(), undefined];
+    } else {
+      return [undefined, undefined];
+    }
+  }, [data, treeData, filterFunc, createdData, expandedProp]);
 
   return {
     inputText,
