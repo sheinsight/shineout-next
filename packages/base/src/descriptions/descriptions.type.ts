@@ -22,7 +22,8 @@ export interface DescriptionsClasses {
   valueInline: string;
   inlineHorizontal: string;
   horizontal: string;
-  inlineTable: string;
+  vertical: string;
+  cell: string;
   small: string;
   large: string;
 }

@@ -24,6 +24,8 @@ const selectTokenDescription = {
   panel: '下拉面板的',
   top: '（顶部）',
   bottom: '（底部）',
+  loading: '加载状态下的',
+  spin: '加载组件',
 };
 
 /**
@@ -36,8 +38,8 @@ const selectTokenDescription = {
 const selectTokenValue = { font: { size: 'Font-14' } };
 
 const selectTokenExtraValue = {
-  font: { size: 'Font-14', color: 'Neutral-text-5' },
-  border: { radius: 'Radius-4', color: 'Neutral-border-2' },
+  font: { size: 'Font-14', color: 'Neutral-text-5', weight: 'Weight-regular' },
+  border: { radius: 'Radius-default', color: 'Neutral-border-2', width: 'Border-1' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
@@ -68,8 +70,16 @@ const selectTokenExtraValue = {
   placeholder: { color: 'Neutral-text-2', margin: { y: 'Spacing-2' } },
   background: { color: 'Neutral-fill-1' },
   clear: { color: 'Neutral-text-3', padding: 'Spacing-8' },
-  hover: { border: { color: 'Brand-6' }, clear: { color: 'Neutral-text-4' } },
-  focus: { border: { color: 'Brand-7' }, shadow: 'Brand-2' },
+  hover: {
+    border: { color: 'Brand-6' },
+    clear: { color: 'Neutral-text-4' },
+    background: { color: 'Neutral-fill-1' },
+  },
+  focus: {
+    border: { color: 'Brand-7' },
+    shadow: 'Brand-2',
+    background: { color: 'Neutral-fill-1' },
+  },
   disabled: {
     icon: { color: 'Neutral-text-2' },
     font: { color: 'Neutral-text-2' },
@@ -79,23 +89,36 @@ const selectTokenExtraValue = {
   },
   result: {
     text: {
-      border: { radius: 'Radius-4' },
+      border: { radius: 'Radius-default' },
       padding: { x: 'Spacing-4' },
       small: { padding: { x: 'Spacing-4' } },
       large: { padding: { x: 'Spacing-10' } },
       active: { background: { color: 'Brand-1' } },
     },
   },
-  error: { border: { color: 'Danger-6' }, focus: { shadow: 'Danger-1' } },
+  error: {
+    border: { color: 'Danger-6' },
+    background: { color: 'Neutral-fill-1' },
+    focus: {
+      shadow: 'Danger-1',
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Danger-6' },
+    },
+    hover: { background: { color: 'Neutral-fill-1' }, border: { color: 'Danger-6' } },
+  },
   panel: {
     color: 'Neutral-text-5',
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
-    radius: 'Radius-4',
+    radius: 'Radius-default',
     border: 'Neutral-border-1',
   },
   option: {
     height: 'Size-16',
+    background: { color: 'Neutral-fill-1' },
+    font: {
+      color: 'Neutral-text-5',
+    },
     padding: { x: 'Spacing-4', y: 'Spacing-1' },
     active: {
       color: 'Brand-6',
@@ -103,23 +126,28 @@ const selectTokenExtraValue = {
     },
     inner: {
       padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },
-      border: { radius: 'Radius-2' },
+      border: { radius: 'Radius-lesser' },
     },
-    hover: { background: { color: 'Neutral-fill-2' } },
+    hover: {
+      background: { color: 'Neutral-fill-2' },
+      font: {
+        color: 'Neutral-text-5',
+      },
+    },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },
   more: {
     padding: 'Spacing-8',
   },
   header: {
-    padding: 'Spacing-8',
+    padding: { x: 'Spacing-8', y: 'Spacing-8' },
     border: {
       color: 'Neutral-border-1',
     },
   },
   group: {
     title: {
-      font: { color: 'Neutral-text-3', size: 'Font-12' },
+      font: { color: 'Neutral-text-3', size: 'Font-12', weight: 'Weight-regular' },
       padding: { x: 'Spacing-12', top: 'Spacing-10', bottom: 'Spacing-2' },
       small: { x: 'Spacing-8', top: 'Spacing-4' },
       large: { x: 'Spacing-12', top: 'Spacing-14', bottom: 'Spacing-4' },
@@ -131,9 +159,19 @@ const selectTokenExtraValue = {
       margin: 'Spacing-8',
     },
     border: {
-      radius: 'Radius-4',
+      radius: 'Radius-default',
     },
     background: { color: 'Neutral-fill-2' },
+  },
+  loading: {
+    spin: {
+      color: 'Brand-6',
+    },
+  },
+  empty: {
+    font: {
+      color: 'Neutral-text-2',
+    },
   },
 };
 

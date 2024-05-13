@@ -40,6 +40,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     jssStyle,
     className,
     size,
+    adjust = true,
     value: valueProp,
     defaultValue,
     data = [],
@@ -661,7 +662,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       {tipNode}
       {renderResult()}
       <AbsoluteList
-        adjust
+        adjust={adjust}
         focus={open}
         fixedWidth='min'
         lazy={false}

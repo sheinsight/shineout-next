@@ -10,10 +10,34 @@ export interface InputTokens {
   inputFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Neutral-text-5
+   * @description 输入框字体颜色
+   */
+  inputFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 输入框字体字重
+   */
+  inputFontWeight: string;
+  /**
+   * @type {string}
+   * @token Radius-default
    * @description 输入框边框圆角
    */
   inputBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-2
+   * @description 输入框边框颜色
+   */
+  inputBorderColor: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 输入框边框宽度
+   */
+  inputBorderWidth: string;
   /**
    * @type {string}
    * @token Spacing-8
@@ -32,6 +56,12 @@ export interface InputTokens {
    * @description 输入框图标字号
    */
   inputIconSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 输入框图标颜色
+   */
+  inputIconColor: string;
   /**
    * @type {string}
    * @token Font-12
@@ -70,22 +100,10 @@ export interface InputTokens {
   inputLargePaddingY: string;
   /**
    * @type {string}
-   * @token Neutral-text-5
-   * @description 输入框字体颜色
-   */
-  inputFontColor: string;
-  /**
-   * @type {string}
    * @token Neutral-text-2
    * @description 输入框占位符颜色
    */
   inputPlaceholderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-border-2
-   * @description 输入框边框颜色
-   */
-  inputBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
@@ -106,16 +124,16 @@ export interface InputTokens {
   inputToggleColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
-   * @description 输入框图标颜色
-   */
-  inputIconColor: string;
-  /**
-   * @type {string}
    * @token Brand-6
    * @description 输入框鼠标移入时的边框颜色
    */
   inputHoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 输入框鼠标移入时的背景颜色
+   */
+  inputHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-4
@@ -134,6 +152,12 @@ export interface InputTokens {
    * @description 输入框鼠标聚焦时的边框颜色
    */
   inputFocusBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 输入框鼠标聚焦时的背景颜色
+   */
+  inputFocusBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-2
@@ -170,6 +194,36 @@ export interface InputTokens {
    * @description 输入框错误状态的边框颜色
    */
   inputErrorBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 输入框错误状态的背景颜色
+   */
+  inputErrorBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 输入框错误状态的鼠标移入时的边框颜色
+   */
+  inputErrorHoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 输入框错误状态的鼠标移入时的背景颜色
+   */
+  inputErrorHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 输入框错误状态的鼠标聚焦时的边框颜色
+   */
+  inputErrorFocusBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 输入框错误状态的鼠标聚焦时的背景颜色
+   */
+  inputErrorFocusBackgroundColor: string;
   /**
    * @type {string}
    * @token Danger-1
@@ -232,6 +286,12 @@ export interface InputTokens {
   inputInnerFontSize: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 输入框内嵌字体颜色
+   */
+  inputInnerFontColor: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 输入框内嵌小尺寸内边距（水平方向）
    */
@@ -268,8 +328,20 @@ export interface InputTokens {
   inputInnerLargeFontSize: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
-   * @description 输入框内嵌字体颜色
+   * @token Font-12
+   * @description 输入框内嵌undefined字体字号
    */
-  inputInnerFontColor: string;
+  inputInnerTopFontSize: string;
+  /**
+   * @type {string}
+   * @token Font-12
+   * @description 输入框内嵌undefined小尺寸字体字号
+   */
+  inputInnerTopSmallFontSize: string;
+  /**
+   * @type {string}
+   * @token Font-12
+   * @description 输入框内嵌undefined大尺寸字体字号
+   */
+  inputInnerTopLargeFontSize: string;
 }

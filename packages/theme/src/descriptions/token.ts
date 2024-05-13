@@ -31,7 +31,7 @@ const descriptionsTokenValue = {
     default: { size: 'Font-16' },
     large: { size: 'Font-18' },
     color: 'Neutral-text-5',
-    font: { weight: '500' },
+    font: { weight: 'Weight-medium' },
     gap: 'Size-2',
   },
   label: {
@@ -44,22 +44,20 @@ const descriptionsTokenValue = {
   },
   border: {
     small: { size: '' },
-    default: { size: '1px' },
+    default: { size: 'Border-1' },
     large: { size: '' },
     color: 'Neutral-border-1',
-    radius: 'Size-2',
+    radius: 'Radius-lesser',
     right: { size: '1px', x: '', y: '' },
     bottom: { size: '1px', x: '', y: '' },
     padding: { size: '', x: 'Spacing-8', y: 'Spacing-12' },
   },
-  font: {
-    small: { size: 'Font-12' },
-    default: { size: 'Font-14' },
-    large: { size: 'Font-16' },
-  },
+  font: { small: { size: 'Font-12' }, default: { size: 'Font-14' }, large: { size: 'Font-16' } },
   extra: { color: '' },
   background: { color: 'Neutral-fill-2' },
+  cell: { gap: 'Spacing-0' },
   inline: { border: { padding: { x: 'Spacing-8', y: 'Spacing-12' } } },
+  vertical: { padding: { bottom: 'Spacing-2' } },
 };
 
 const descriptionsTokenExtraValue = {};

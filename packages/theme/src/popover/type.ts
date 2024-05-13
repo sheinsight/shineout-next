@@ -10,6 +10,12 @@ export interface PopoverTokens {
   popoverFontSize: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 气泡字体字重
+   */
+  popoverFontWeight: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 气泡内边距（水平方向）
    */
@@ -22,7 +28,7 @@ export interface PopoverTokens {
   popoverPaddingY: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 气泡圆角
    */
   popoverRadius: string;
@@ -70,37 +76,37 @@ export interface PopoverTokens {
   popoverSuccessBorderColor: string;
   /**
    * @type {string}
-   * @token #fff3e5
+   * @token Warning-1
    * @description 气泡警告背景颜色
    */
   popoverWarningBackgroundColor: string;
   /**
    * @type {string}
-   * @token rgba(255, 140, 0, 0.1)
+   * @token Warning-2
    * @description 气泡警告边框颜色
    */
   popoverWarningBorderColor: string;
   /**
    * @type {string}
-   * @token #e8f1fe
+   * @token Brand-1
    * @description 气泡提示背景颜色
    */
   popoverInfoBackgroundColor: string;
   /**
    * @type {string}
-   * @token rgba(25, 122, 250, 0.1)
+   * @token Brand-2
    * @description 气泡提示边框颜色
    */
   popoverInfoBorderColor: string;
   /**
    * @type {string}
-   * @token #ffeded
+   * @token Danger-1
    * @description 气泡危险色背景颜色
    */
   popoverDangerBackgroundColor: string;
   /**
    * @type {string}
-   * @token rgba(255, 77, 80, 0.1)
+   * @token Danger-2
    * @description 气泡危险色边框颜色
    */
   popoverDangerBorderColor: string;
@@ -134,6 +140,12 @@ export interface PopoverTokens {
    * @description 气泡确认内边距（垂直方向）
    */
   popoverConfirmPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-16
+   * @description 气泡确认外边距（垂直方向）
+   */
+  popoverConfirmMarginY: string;
   /**
    * @type {string}
    * @token transparent

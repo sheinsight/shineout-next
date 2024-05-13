@@ -6,11 +6,9 @@ import { BreadcrumbTokens } from './type';
 const breadcrumbTokens: BreadcrumbTokens = {
   breadcrumbFontSize: 'Font-14',
   breadcrumbFontColor: 'Neutral-text-5',
+  breadcrumbFontWieght: 'Weight-regular',
   breadcrumbLinkColor: 'Neutral-text-3',
   breadcrumbLinkHoverColor: 'Brand-5',
-  breadcrumbListBackgroundColor: 'Neutral-fill-1',
-  breadcrumbListShadow: 'Shadow-1',
-  breadcrumbListBorderColor: '#f4f5f8',
   breadcrumbListPaddingY: 'Spacing-4',
   breadcrumbListItemBorderRadius: 'Radius-4',
   breadcrumbListItemWrapperPaddingX: 'Spacing-4',

@@ -395,4 +395,11 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 节点展开回调，参数为当前展开节点 key 数组
    */
   onExpand?: (value: KeygenResult[]) => void;
+
+  /**
+   * @en Whether to adjust the position of the panel automatically. When the panel is blocked by the window, the position is adjusted automatically
+   * @cn 是否开启自动调整面板位置功能。当面板被窗口遮挡时，自动调整位置
+   * @default true
+   */
+  adjust?: boolean;
 }

@@ -9,6 +9,7 @@ const inputBorderToken = {
   borderRadius: token.inputBorderRadius,
 
   fontSize: token.inputFontSize,
+  fontWeight: token.inputFontWeight,
   smallFontSize: token.inputSmallFontSize,
   largeFontSize: token.inputLargeFontSize,
 
@@ -21,16 +22,24 @@ const inputBorderToken = {
   largePaddingX: token.inputLargePaddingX,
 
   borderColor: token.inputBorderColor,
+  borderWidth: token.inputBorderWidth,
   focusBorderColor: token.inputFocusBorderColor,
   hoverBorderColor: token.inputHoverBorderColor,
   disabledBorderColor: token.inputDisabledBorderColor,
   errorBorderColor: token.inputErrorBorderColor,
+  errorHoverBorderColor: token.inputErrorHoverBorderColor,
+  errorFocusBorderColor: token.inputErrorFocusBorderColor,
 
   fontColor: token.inputFontColor,
   disabledFontColor: token.inputDisabledFontColor,
 
   backgroundColor: token.inputBackgroundColor,
+  hoverBackgroundColor: token.inputHoverBackgroundColor,
+  focusBackgroundColor: token.inputFocusBackgroundColor,
   disabledBackgroundColor: token.inputDisabledBackgroundColor,
+  errorBackgroundColor: token.inputErrorBackgroundColor,
+  errorFocusBackgroundColor: token.inputErrorFocusBackgroundColor,
+  errorHoverBackgroundColor: token.inputErrorHoverBackgroundColor,
 
   focusShadow: token.inputFocusShadow,
   errorFocusShadow: token.inputErrorFocusShadow,
@@ -269,7 +278,7 @@ const input: JsStyles<keyof InputClasses> = {
     '&::before': {
       display: 'block',
       position: 'absolute',
-      
+
       bottom: '100%',
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',

@@ -142,6 +142,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     position: 'relative',
     zIndex: 2,
     fontSize: token.popoverFontSize,
+    fontWeight: token.popoverFontWeight,
     color: token.popoverFontColor,
     background: 'inherit',
     borderRadius: 'inherit',
@@ -160,7 +161,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       backgroundColor: 'transparent',
       border: 0,
       padding: 0,
-      marginBottom: token.popoverConfirmPaddingY,
+      marginBottom: token.popoverConfirmMarginY,
     },
   },
   footer: {

@@ -11,7 +11,7 @@ const descriptionsTokens: DescriptionsTokens = {
   descriptionsTitleSmallSize: 'Font-14',
   descriptionsTitleDefaultSize: 'Font-16',
   descriptionsTitleLargeSize: 'Font-18',
-  descriptionsBorderDefaultSize: '1px',
+  descriptionsBorderDefaultSize: 'Border-1',
   descriptionsFontSmallSize: 'Font-12',
   descriptionsFontDefaultSize: 'Font-14',
   descriptionsFontLargeSize: 'Font-16',
@@ -20,15 +20,17 @@ const descriptionsTokens: DescriptionsTokens = {
   descriptionsTitleColor: 'Neutral-text-5',
   descriptionsBackgroundColor: 'Neutral-fill-2',
   descriptionsBorderColor: 'Neutral-border-1',
-  descriptionsTitleFontWeight: '500',
+  descriptionsTitleFontWeight: 'Weight-medium',
   descriptionsTitleGap: 'Size-2',
-  descriptionsBorderRadius: 'Size-2',
+  descriptionsCellGap: 'Spacing-0',
+  descriptionsBorderRadius: 'Radius-lesser',
   descriptionsBorderRightSize: '1px',
   descriptionsBorderBottomSize: '1px',
   descriptionsBorderPaddingX: 'Spacing-8',
   descriptionsBorderPaddingY: 'Spacing-12',
   descriptionsInlineBorderPaddingX: 'Spacing-8',
   descriptionsInlineBorderPaddingY: 'Spacing-12',
+  descriptionsVerticalPaddingBottom: 'Spacing-2',
 };
 
 export default descriptionsTokens;
