@@ -1,3 +1,10 @@
+## 3.2.0-rc.3
+2025-05-xx
+
+### 💅 Style
+
+- 修改 `Form.Item` 标签在顶部时的内边距 ([#436](https://github.com/sheinsight/shineout-next/pull/436))
+
 ## 3.1.8
 2024-05-13
 
