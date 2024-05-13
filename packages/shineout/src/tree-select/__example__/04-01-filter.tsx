@@ -56,6 +56,7 @@ export default () => {
     <div>
       <TreeSelect
         width={300}
+        multiple
         onFilter={handleFilter}
         mode={1}
         value={value}

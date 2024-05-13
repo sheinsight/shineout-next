@@ -28,7 +28,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: `0 0 ${token.descriptionsTitlePaddingBottom} 0`,
+    paddingBottom: token.descriptionsTitlePaddingBottom,
     fontSize: token.descriptionsTitleDefaultSize,
   },
   title: {
@@ -52,19 +52,21 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
   },
   row: {},
   label: {
-    padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
+    paddingRight: token.descriptionsLabelPaddingRight,
+    paddingBottom: token.descriptionsLabelPaddingBottom,
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsLabelColor,
     whiteSpace: 'nowrap',
   },
   value: {
-    padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
+    paddingRight: token.descriptionsLabelPaddingRight,
+    paddingBottom: token.descriptionsLabelPaddingBottom,
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsValueColor,
     '&:last-child': {
-      padding: `0 0 ${token.descriptionsLabelPaddingBottom} 0`,
+      paddingRight: 0,
     },
   },
   inlineTable: {
@@ -76,14 +78,14 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     paddingBottom: token.descriptionsLabelPaddingBottom,
   },
   labelInline: {
-    padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
+    paddingRight: token.descriptionsLabelPaddingRight,
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsLabelColor,
     whiteSpace: 'nowrap',
   },
   valueInline: {
-    padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
+    paddingRight: token.descriptionsLabelPaddingRight,
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsValueColor,
@@ -130,7 +132,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
       borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $labelInline': {
-      padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
+      paddingRight: token.descriptionsLabelPaddingRight,
     },
     '& $valueInline': {
       padding: 0,

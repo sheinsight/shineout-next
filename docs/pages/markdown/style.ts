@@ -106,6 +106,9 @@ export const useStyles = createUseStyles(
     },
     tag: {
       padding: '2px 8px',
+      '&:first-child': {
+        marginInlineStart: 0,
+      },
       borderRadius: '2px',
       margin: '0 4px',
       color: 'rgb( 78,89,105 )',

@@ -73,22 +73,41 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
   indicator: {
     width: token.switchCircleSize,
     height: token.switchCircleSize,
-    left: token.switchPaddingX,
+    '&[dir=ltr]': { left: token.switchPaddingX },
+    '&[dir=rtl]': { right: token.switchPaddingX },
     top: token.switchPaddingY,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: 'red',
     '$wrapperChecked &': {
-      right: token.switchPaddingX,
-      left: `calc(100% - ${token.switchCircleSize} - ${token.switchPaddingX})`,
+      '&[dir=ltr]': {
+        right: token.switchPaddingX,
+        left: `calc(100% - ${token.switchCircleSize} - ${token.switchPaddingX})`,
+      },
+      '&[dir=rtl]': {
+        left: token.switchPaddingX,
+        right: `calc(100% - ${token.switchCircleSize} - ${token.switchPaddingX})`,
+      },
       '$wrapperSmall&': {
-        right: token.switchSmallPaddingX,
-        left: `calc(100% - ${token.switchSmallCircleSize} - ${token.switchSmallPaddingX})`,
+        '&[dir=ltr]': {
+          right: token.switchSmallPaddingX,
+          left: `calc(100% - ${token.switchSmallCircleSize} - ${token.switchSmallPaddingX})`,
+        },
+        '&[dir=rtl]': {
+          left: token.switchSmallPaddingX,
+          right: `calc(100% - ${token.switchSmallCircleSize} - ${token.switchSmallPaddingX})`,
+        },
       },
       '$wrapperLarge&': {
-        right: token.switchLargePaddingX,
-        left: `calc(100% - ${token.switchLargeCircleSize} - ${token.switchLargePaddingX})`,
+        '&[dir=ltr]': {
+          right: token.switchLargePaddingX,
+          left: `calc(100% - ${token.switchLargeCircleSize} - ${token.switchLargePaddingX})`,
+        },
+        '&[dir=rtl]': {
+          left: token.switchLargePaddingX,
+          right: `calc(100% - ${token.switchLargeCircleSize} - ${token.switchLargePaddingX})`,
+        },
       },
     },
     '$wrapperSmall &': {

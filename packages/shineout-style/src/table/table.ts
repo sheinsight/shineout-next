@@ -29,9 +29,9 @@ const tableStyle: JsStyles<TableClassType> = {
     position: 'relative',
     zIndex: 0,
     minHeight: 0,
+    minWidth: 0,
     fontSize: token.tableFontSize,
     '& table': {
-      textAlign: 'left',
       minWidth: '100%',
       boxSizing: 'border-box',
       tableLayout: 'fixed',
@@ -46,15 +46,22 @@ const tableStyle: JsStyles<TableClassType> = {
         '&$cellFixedLeft, &$cellFixedRight': {
           zIndex: fixedIndex,
         },
-        '$bordered&::after': {
-          content: '""',
-          position: 'absolute',
-          zIndex: cellBaseIndex,
-          top: 0,
-          right: 0,
-          bottom: 0,
-          background: token.tableCellBorderColor,
-          borderLeft: `1px solid ${token.tableCellBorderColor}`,
+        '$bordered&': {
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            zIndex: cellBaseIndex,
+            top: 0,
+            bottom: 0,
+            background: token.tableCellBorderColor,
+            borderLeft: `1px solid ${token.tableCellBorderColor}`,
+          },
+          '&[dir=ltr]::after': {
+            right: 0,
+          },
+          '&[dir=rtl]::after': {
+            left: 0,
+          },
         },
       },
 
@@ -157,6 +164,7 @@ const tableStyle: JsStyles<TableClassType> = {
     position: 'sticky',
     left: 0,
     top: 0,
+    right: 0,
     justifyContent: 'center',
     display: 'flex',
     alignItems: 'center',
@@ -173,6 +181,7 @@ const tableStyle: JsStyles<TableClassType> = {
   cellFixedRight: {
     position: 'sticky',
   },
+  cellAlignLeft: { textAlign: 'left' },
   cellAlignCenter: { textAlign: 'center' },
   cellAlignRight: { textAlign: 'right' },
   cellFixedLast: {},
@@ -195,14 +204,22 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   floatLeft: {
-    '& $cellFixedLast$cellFixedLeft::after': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      bottom: 0,
-      width: '5px',
-      right: '-5px',
-      background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+    '& $cellFixedLast$cellFixedLeft': {
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        width: '5px',
+      },
+      '&[dir=ltr]::after': {
+        right: '-5px',
+        background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+      },
+      '&[dir=rtl]::after': {
+        left: '-5px',
+        background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
+      },
     },
     '& table': {
       '& th, & td': {
@@ -213,14 +230,22 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   floatRight: {
-    '& $cellFixedLast$cellFixedRight::before': {
-      content: '""',
-      width: '5px',
-      left: '-5px',
-      background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
-      top: 0,
-      bottom: 0,
-      position: 'absolute',
+    '& $cellFixedLast$cellFixedRight': {
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        width: '5px',
+      },
+      '&[dir=rtl]::before': {
+        right: '-5px',
+        background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+      },
+      '&[dir=ltr]::before': {
+        left: '-5px',
+        background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
+      },
     },
     '& table': {
       '& th, & td': {
@@ -239,7 +264,8 @@ const tableStyle: JsStyles<TableClassType> = {
     minWidth: '14px',
     width: '14px',
     position: 'relative',
-    transform: 'translateX(6px)',
+    '&[dir=rtl]': { transform: 'translateX(-6px)' },
+    '&[dir=ltr]': { transform: 'translateX(6px)' },
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -277,7 +303,8 @@ const tableStyle: JsStyles<TableClassType> = {
     zIndex: resizeIndex,
     position: 'absolute',
     opacity: 0,
-    right: '-1px',
+    '&[dir=rtl]': { left: '-1px' },
+    '&[dir=ltr]': { right: '-1px' },
     top: 0,
     bottom: 0,
     width: '3px',
@@ -403,6 +430,9 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   simple: {
+    '& th, & td': {
+      textAlign: 'left',
+    },
     '& table tr:hover td': {
       background: `${token.tableTbodyHoverBackgroundColor}`,
     },

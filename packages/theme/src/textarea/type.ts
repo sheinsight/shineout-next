@@ -4,7 +4,7 @@
 export interface TextareaTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 多行文本框字体字号
    */
   textareaFontSize: string;
@@ -16,49 +16,49 @@ export interface TextareaTokens {
   textareaBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 多行文本框内边距（水平方向）
    */
   textareaPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 多行文本框内边距（垂直方向）
    */
   textareaPaddingY: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 多行文本框小尺寸字体字号
    */
   textareaSmallFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 多行文本框小尺寸内边距（水平方向）
    */
   textareaSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 多行文本框小尺寸内边距（垂直方向）
    */
   textareaSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 多行文本框大尺寸字体字号
    */
   textareaLargeFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 多行文本框大尺寸内边距（水平方向）
    */
   textareaLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 多行文本框大尺寸内边距（垂直方向）
    */
   textareaLargePaddingY: string;

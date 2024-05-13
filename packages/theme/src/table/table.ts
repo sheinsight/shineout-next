@@ -4,14 +4,14 @@
 import { TableTokens } from './type';
 
 const tableTokens: TableTokens = {
-  tableFontSize: '14/regular',
-  tableCellPaddingX: 'Padding-12',
-  tableCellPaddingY: 'Padding-8',
+  tableFontSize: 'Font-14',
+  tableCellPaddingX: 'Spacing-12',
+  tableCellPaddingY: 'Spacing-8',
   tableCellBorderColor: 'Neutral-border-1',
-  tableSmallCellPaddingX: 'Padding-8',
-  tableSmallCellPaddingY: 'Padding-4',
-  tableLargeCellPaddingX: 'Padding-16',
-  tableLargeCellPaddingY: 'Padding-16',
+  tableSmallCellPaddingX: 'Spacing-8',
+  tableSmallCellPaddingY: 'Spacing-4',
+  tableLargeCellPaddingX: 'Spacing-16',
+  tableLargeCellPaddingY: 'Spacing-16',
   tableFixedShadow: 'rgba(2,11,24,.1)',
   tableTheadBackgroundColor: 'Neutral-fill-2',
   tableTheadFontColor: 'Neutral-text-5',
@@ -31,7 +31,7 @@ const tableTokens: TableTokens = {
   tableSorterActiveColor: 'Brand-6',
   tableResizeColor: 'Brand-7',
   tableSelectionBorderColor: 'Brand-6',
-  tablePaginationMarginY: 'Margin-12',
+  tablePaginationMarginY: 'Spacing-12',
 };
 
 export default tableTokens;

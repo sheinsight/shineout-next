@@ -27,7 +27,6 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       height: '8.4px',
       boxSizing: 'content-box',
       background: 'inherit',
-      borderLeft: 'none',
       borderBottom: 'none',
     },
     '&[data-soui-position^="bottom"]': {
@@ -69,7 +68,8 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="left"]': {
-      marginLeft: (arrowGap - 2) * -1,
+      '&[dir=ltr]': { marginLeft: (arrowGap - 2) * -1 },
+      '&[dir=rtl]': { marginRight: (arrowGap - 2) * -1 },
       '& $arrow': {
         right: token.popoverBorderWidth,
         transform: 'translate(50%, 0) rotate(45deg)',
@@ -88,7 +88,8 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="right"]': {
-      marginLeft: arrowGap - 2,
+      '&[dir=ltr]': { marginLeft: arrowGap - 2 },
+      '&[dir=rtl]': { marginRight: arrowGap - 2 },
       '& $arrow': {
         left: '0',
         transform: 'translate(-50%, 0) rotate(-135deg)',

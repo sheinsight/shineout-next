@@ -12,7 +12,7 @@ function renderFooter(text: string = '') {
     color: text.length > 20 ? 'var(--danger-6,#CC3D3A)' : 'inherit',
   };
   return (
-    <div style={{ textAlign: 'right', color: 'var(--neutral-text-2, #b3b7c1)' }}>
+    <div style={{ textAlign: 'end', color: 'var(--neutral-text-2, #b3b7c1)' }}>
       <span style={style}>{text.length}</span> / 20
     </div>
   );

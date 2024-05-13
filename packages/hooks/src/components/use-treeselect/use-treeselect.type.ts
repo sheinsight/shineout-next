@@ -6,4 +6,5 @@ export interface BaseTreeSelectProps<DataItem, Value> {
   beforeChange?: (value: Value) => any;
   onChange?: (value: Value, selected?: DataItem, path?: (string | number)[]) => void;
   filterSameChange?: boolean;
+  multiple?: boolean;
 }

@@ -10,7 +10,7 @@ export interface RateTokens {
   rateFontColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 评分字体字号
    */
   rateFontSize: string;

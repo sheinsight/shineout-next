@@ -55,7 +55,7 @@ export default () => {
         items={data}
         title='User Info'
         layout='horizontal'
-        labelStyle={{ textAlign: 'right' }}
+        labelStyle={{ textAlign: 'end' }}
         size={size}
         border
       />

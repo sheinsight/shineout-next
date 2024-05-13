@@ -6,4 +6,5 @@ export interface UseSliderProps<Value extends number | number[]> {
   step: number;
   vertical: boolean;
   onIncrease: (() => void) | undefined;
+  direction?: 'ltr' | 'rtl';
 }

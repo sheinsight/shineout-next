@@ -4,7 +4,7 @@
 export interface FormTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 表单项字体字号
    */
   formItemFontSize: string;
@@ -16,13 +16,13 @@ export interface FormTokens {
   formItemFontColor: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 表单项外边距（垂直方向）（后部）
    */
   formItemMarginYEnd: string;
   /**
    * @type {string}
-   * @token Margin-16
+   * @token Spacing-16
    * @description 表单项外边距（水平方向）（后部）
    */
   formItemMarginXEnd: string;
@@ -34,13 +34,13 @@ export interface FormTokens {
   formItemLabelWidth: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 表单项标签内边距（垂直方向）
    */
   formItemLabelPaddingY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 表单项标签外边距（水平方向）（后部）
    */
   formItemLabelMarginXEnd: string;
@@ -52,13 +52,13 @@ export interface FormTokens {
   formItemDangerColor: string;
   /**
    * @type {string}
-   * @token 20px
+   * @token Size-10
    * @description 表单项提示信息最小高度
    */
   formItemTipMinHeight: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 表单项提示信息字体字号
    */
   formItemTipFontSize: string;

@@ -28,14 +28,14 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&$arrow': {
       '& $step:not(:last-child)': {
         '&:after': {
-          top: `calc((100% - ${Token.stepsSmallArrowHeight})/2)`,
-          width: Token.stepsSmallArrowHeight,
-          height: Token.stepsSmallArrowHeight,
+          top: `calc(100% - 28px)`,
+          width: 56,
+          height: 56,
         },
         '&:before': {
-          top: `calc((100% - ${Token.stepsSmallArrowHeight})/2)`,
-          width: Token.stepsSmallArrowHeight,
-          height: Token.stepsSmallArrowHeight,
+          top: `calc(100% - 28px)`,
+          width: 56,
+          height: 56,
         },
       },
       '& $content': {
@@ -61,7 +61,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&$default': {
       '&$horizontal': {
         '& $tail': {
-          left: 94,
+          '&[dir=ltr]': { left: 94 },
+          '&[dir=rtl]': { right: 94 },
           top: `calc(${Token.stepsSmallIconWidth}/2)`,
           width: `calc(100% - 20px)`,
           '&:after': {
@@ -75,7 +76,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
         '& $tail': {
           paddingTop: 28,
-          left: 12,
+          '&[dir=ltr]': { left: 12 },
+          '&[dir=rtl]': { right: 12 },
         },
       },
       '& $verticalLabel': {
@@ -139,7 +141,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
       },
       '&$horizontal': {
         '& $tail': {
-          left: 102,
+          '&[dir=ltr]': { left: 102 },
+          '&[dir=rtl]': { right: 102 },
           top: `calc(${Token.stepsLargeIconWidth}/2)`,
           '&:after': {
             width: `calc(100% - ${Token.stepsLargeIconWidth} + 4px)`,
@@ -148,7 +151,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
       },
       '&$vertical': {
         '& $tail': {
-          left: 16,
+          '&[dir=ltr]': { left: 16 },
+          '&[dir=rtl]': { right: 16 },
           paddingTop: 36,
         },
       },
@@ -176,7 +180,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $tail': {
       width: 1,
       height: '100%',
-      left: 13,
+      '&[dir=ltr]': { left: 13 },
+      '&[dir=rtl]': { right: 13 },
       '&:after': {
         position: 'relative',
         width: 1,
@@ -205,16 +210,21 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $horizontalLabel': {
       '& $description': {},
       '& $title': {
-        '&:after': {
+        '&::after': {
           content: '""',
           display: 'block',
           background: Token.stepsTailBackgroundColor,
           height: 1,
-          left: '100%',
           marginLeft: 12,
           top: '50%',
           width: 999,
           position: 'absolute',
+        },
+        '&[dir=ltr]::after': {
+          left: '100%',
+        },
+        '&[dir=rtl]::after': {
+          right: '100%',
         },
       },
     },
@@ -377,7 +387,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
         marginLeft: 76,
       },
       '& $tail': {
-        left: 88,
+        '&[dir=ltr]': { left: 88 },
+        '&[dir=rtl]': { right: 88 },
         overflow: 'hidden',
         width: 'calc(100% - 8px)',
         '&:after': {
@@ -446,12 +457,17 @@ const stepsStyle: JsStyles<StepsClassType> = {
         position: 'absolute',
         width: 0,
         height: 0,
-        left: 0,
         top: 0,
         borderLeftWidth: 16,
         borderTopWidth: 20,
         borderBottomWidth: 20,
         borderLeftColor: '#ffffff',
+      },
+      '&[dir=ltr]:before': {
+        left: 0,
+      },
+      '&[dir=rtl]:before': {
+        right: 0,
       },
       // after
       '&:after': {
@@ -459,12 +475,18 @@ const stepsStyle: JsStyles<StepsClassType> = {
         position: 'absolute',
         width: 0,
         height: 0,
-        right: -16,
+
         top: 0,
         zIndex: 1,
         borderLeftWidth: 16,
         borderTopWidth: 20,
         borderBottomWidth: 20,
+      },
+      '&[dir=ltr]:after': {
+        right: -16,
+      },
+      '&[dir=rtl]:after': {
+        left: -16,
       },
     },
     '&$horizontal': {
@@ -482,8 +504,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
           borderLeftWidth: 26,
           borderTopWidth: 32,
           borderBottomWidth: 32,
-          right: -26,
         },
+        '&[dir=ltr]:after': { right: -26 },
+        '&[dir=rtl]:after': { left: -26 },
       },
     },
     '& $step:last-child': {
@@ -532,10 +555,15 @@ const stepsStyle: JsStyles<StepsClassType> = {
         color: Token.stepsProcessFontColor,
       },
       '&:after': {
-        right: -16,
         borderLeft: `16px solid ${Token.stepsProcessBackgroundColor}`,
         borderTop: `20px solid transparent`,
         borderBottom: `20px solid transparent`,
+      },
+      '&[dir=ltr]:after': {
+        right: -16,
+      },
+      '&[dir=rtl]:after': {
+        left: -16,
       },
       '&:before': {
         borderLeft: `16px solid #ffffff`,
@@ -571,8 +599,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
           borderLeftWidth: 26,
           borderTopWidth: 32,
           borderBottomWidth: 32,
-          right: -26,
         },
+        '&[dir=ltr]:after': { right: -26 },
+        '&[dir=rtl]:after': { left: -26 },
         '&:before': {
           borderLeftWidth: 26,
           borderTopWidth: 32,
@@ -596,7 +625,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&$horizontal': {
       '& $tail': {
         // left: `calc(50% + ${Token.stepsIconWidth}/2 + 4px)`,
-        left: 98,
+        '&[dir=ltr]': { left: 98 },
+        '&[dir=rtl]': { right: 98 },
         top: 13,
         '&:after': {
           width: `calc(100% - ${Token.stepsIconWidth} + 4px)`,

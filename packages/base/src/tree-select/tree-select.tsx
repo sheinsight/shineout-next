@@ -8,7 +8,7 @@ import {
   useFilter,
   UnMatchedData,
   KeygenResult,
-  useRender,
+  useTree,
 } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { TreeSelectProps, ResultItem } from './tree-select.type';
@@ -16,7 +16,6 @@ import { TreeSelectClasses } from './tree-select.type';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
-import { TreeContextProps } from '../tree/tree-context.type';
 import Result from '../select/result';
 import Spin from '../spin';
 import Icons from '../icons';
@@ -33,17 +32,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
   const props = useWithFormConfig(props0);
-  const render = useRender();
-  const { locale } = useConfig();
+  const { locale, direction } = useConfig();
+  const isRtl = direction === 'rtl';
+  const dfp = isRtl ? 'bottom-right' : 'bottom-left';
+
   const {
     jssStyle,
     className,
     size,
     value: valueProp,
     defaultValue,
-    data,
+    data = [],
     multiple,
-    mode,
+    mode = 1,
     line = false,
     innerTitle,
     clearable = true,
@@ -51,7 +52,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     underline,
     showArrow = true,
     focusSelected = true,
-    position: positionProp = 'bottom-left',
+    position: positionProp = dfp,
     open: openProp,
     onCollapse: onCollapseProp,
     disabled,
@@ -63,7 +64,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     loader,
     renderResult: renderResultProp,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
-    // maxLength,
     trim = false,
     placeholder,
     renderUnmatched,
@@ -92,9 +92,11 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
   const showInput = util.isFunc(props.onAdvancedFilter || onFilterProp);
 
-  const datum = useRef<TreeContextProps<DataItem>>();
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
+  const { current: context } = useRef({
+    cachedMap: new Map(),
+  });
   const [focused, setFocused] = useState(false);
 
   const { value, onChange } = useTreeSelect({
@@ -103,6 +105,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     defaultValue,
     control: 'value' in props,
     filterSameChange: filterSameChange,
+    multiple,
   });
 
   const checkEmpty = () => {
@@ -135,6 +138,22 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     showHitDescendants,
     onAdvancedFilter: 'onAdvancedFilter' in props,
     onFilter: onAdvancedFilter || onFilterProp,
+  });
+
+  const controlExpanded = 'expanded' in props || expanded?.length ? expanded : undefined;
+  const { datum, onExpand: onExpandTree } = useTree({
+    mode,
+    value,
+    data,
+    unmatch,
+    disabled,
+    childrenKey: childrenKey,
+    keygen,
+    onExpand,
+    expanded: controlExpanded,
+    defaultExpanded: defaultExpanded,
+    defaultExpandAll: defaultExpandAll,
+    isControlled: controlExpanded !== undefined,
   });
 
   const renderMoreIcon = () => {
@@ -214,11 +233,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     },
   );
 
-  const bindTreeDatum = (treeDatum: TreeContextProps<DataItem>) => {
-    datum.current = treeDatum;
-    render();
-  };
-
   const getRenderItem = (
     data: DataItem,
     expanded?: boolean,
@@ -284,9 +298,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!datum.current) return;
-    datum.current.setValue([]);
-    onChange((multiple ? [] : '') as Value);
+    if (!datum) return;
+    datum.setValue([]);
+    onChange(multiple ? [] : ['']);
 
     if (onChangeAddition) {
       onChangeAddition({
@@ -294,10 +308,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       });
     }
     if (open) closePop();
-  };
-
-  const handleExpand = (expands: KeygenResult[]) => {
-    onExpand?.(expands);
   };
 
   const renderClearable = () => {
@@ -343,39 +353,49 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     );
   };
 
+  const getDataById = usePersistFn((id: KeygenResult) => {
+    if (!props.noCache) {
+      if (context.cachedMap.has(id)) {
+        return context.cachedMap.get(id);
+      }
+    }
+    if (!datum) return undefined as DataItem;
+    const origin = datum?.getDataById(id);
+    if (!props.noCache && !datum?.isUnMatched(origin)) {
+      context.cachedMap.set(id, origin);
+    }
+
+    return origin;
+  });
+
   const getDataByValues = (values?: Value): (DataItem | UnMatchedData)[] => {
-    if (!datum.current || !values) return [];
-    return datum.current.getDataByValues(values) as DataItem[];
+    if (!datum || !values) return [];
+    return datum.getDataByValues(values) as DataItem[];
   };
 
   const getDataByValuesRef = (values: Value) => {
     type Result = Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
     if (util.isArray(values)) {
-      return values.map((id) => datum.current?.getDataById(id)) as Result;
+      return values.map((id) => datum?.getDataById(id)) as Result;
     }
 
-    return datum.current?.getDataById(values) as Result;
+    return datum?.getDataById(values) as Result;
   };
 
   const getValue = () => {
-    if (!datum.current) return;
-    const nextValue = datum.current.getValue();
+    if (!datum) return;
+    const nextValue = datum.getValue();
     if (multiple) return nextValue;
-    return nextValue.length ? nextValue[0] : '';
-  };
-
-  const getValueArray = (value?: Value) => {
-    if (!value) return [];
-    if (!Array.isArray(value)) return [value];
-    return value;
+    if (nextValue.length === 0) return [];
+    return [nextValue[0]];
   };
 
   const getContentClass = (data: DataItem) => {
-    if (!datum.current) return '';
+    if (!datum) return '';
 
-    const key = datum.current.getKey(data);
-    const isDisabled = datum.current?.isDisabled(key);
-    const isCheck = datum.current?.getChecked(key);
+    const key = datum.getKey(data);
+    const isDisabled = datum?.isDisabled(key);
+    const isCheck = datum?.getChecked(key);
 
     if (isDisabled) {
       return classNames(styles.optionDisabled);
@@ -415,56 +435,74 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   };
 
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
-    if (!datum.current) return;
-    if (disabled === true || datum.current?.isDisabled(id)) return;
-    const currentData = datum.current.getDataById(id) as DataItem;
+    if (disabled === true || datum?.isDisabled(id)) return;
+    const currentData = datum.getDataById(id) as DataItem;
     if (!multiple) {
-      datum.current.setValue([]);
-      datum.current.set(datum.current.getKey(item as DataItem), 1);
+      datum.setValue([]);
+      datum.set(datum.getKey(item as DataItem), 1);
     }
 
-    const nextValue = getValue() as Value;
+    const nextValue = getValue();
 
     if (onChange) {
-      onChange(nextValue, currentData, id ? (datum.current.getPath(id) || {}).path : undefined);
+      onChange(nextValue!, currentData, id ? (datum.getPath(id) || {}).path : undefined);
     }
 
     if (typeof onChangeAddition === 'function') {
       onChangeAddition({
-        data: getDataByValues(nextValue),
-        checked: multiple ? datum.current.get(id) : undefined,
+        data: getDataByValues(nextValue as Value),
+        checked: multiple ? datum.get(id) : undefined,
         current: currentData,
       });
     }
   };
 
-  const handleTreeChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
+  const handleTreeClick = (item: DataItem | UnMatchedData, id: KeygenResult) => {
     handleChange(item, id);
-    if (!multiple) closePop();
+    closePop();
   };
 
-  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => {
-    if (!datum.current) return;
+  const handleTreeChange = (_value: any, id: KeygenResult) => {
+    const item = datum.getDataById(id) as DataItem;
+    handleChange(item, id);
+  };
 
-    const dataKey = util.isUnMatchedData(item)
-      ? item.value
-      : datum.current.getKey(item, key, index);
+  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult) => {
+    if (!datum) return;
 
-    const isDisabled = datum.current.isDisabled(dataKey);
+    const dataKey = key ?? (util.isUnMatchedData(item) ? item.value : datum.getKey(item));
+
+    const isDisabled = datum.isDisabled(dataKey);
 
     if (isDisabled) return;
 
-    datum.current.set(dataKey, 0);
-    handleChange(item, datum.current.getKey(item as DataItem, key, index));
+    datum.set(dataKey, 0);
+    handleChange(item, dataKey);
   };
 
   // innerTitle 模式
   const renderInnerTitle = useInnerTitle({
-    open: open || !!value,
+    open: open || !!(value && value.length),
     size,
     jssStyle,
     innerTitle,
   });
+
+  const getResultByValue = usePersistFn((arr: Value) => {
+    const result = (Array.isArray(arr) ? arr : [arr])
+      .map((id) => {
+        return getDataById(id);
+      })
+      .filter((item) => item !== undefined);
+    return result;
+  });
+
+  const getResultValue = () => {
+    if (!multiple && Array.isArray(value)) {
+      return value[0];
+    }
+    return value;
+  };
 
   const renderResult = () => {
     const result = (
@@ -473,12 +511,11 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           trim={trim}
           jssStyle={jssStyle}
           size={size}
-          value={value}
-          data={tiledData as DataItem[]}
+          value={getResultValue() as any}
+          data={data}
           focus={open}
           keygen={keygen as any}
           disabled={disabled}
-          // maxLength={maxLength}
           compressed={compressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}
@@ -497,7 +534,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           onRef={inputRef}
           checkUnMatched={checkUnMatched}
           onClearCreatedData={onClearCreatedData}
-          getDataByValues={getDataByValues}
+          getDataByValues={getResultByValue}
           onRemove={handleRemove}
           classes={styles}
           setInputText={setInputText}
@@ -560,7 +597,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     if (multiple) {
       treeProps.onChange = handleTreeChange;
     } else {
-      treeProps.onClick = handleTreeChange;
+      treeProps.onClick = handleTreeClick;
       treeProps.renderItem = renderActive;
       treeProps.active = value;
     }
@@ -568,37 +605,35 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       treeProps.expanded = expanded;
     }
 
-    const nextValue = getValueArray(value);
     return (
       <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
         <Tree
           jssStyle={jssStyle}
-          getDatum={bindTreeDatum}
           renderItem={renderItem}
           {...treeProps}
-          keepCache={!props.noCache}
+          childrenKey={props.childrenKey}
           line={line}
           mode={mode}
           data={tiledData}
           keygen={keygen}
           unmatch={unmatch}
-          value={nextValue}
+          value={value}
           loader={loader}
-          expanded={'expanded' in props || expanded?.length ? expanded : undefined}
+          onExpand={onExpandTree}
+          expanded={controlExpanded}
+          defaultExpandAll={defaultExpandAll}
           expandIcons={tiledExpandIcons}
           disabled={disabled}
           parentClickExpand={parentClickExpand}
-          defaultExpanded={defaultExpanded}
-          defaultExpandAll={defaultExpandAll}
           contentClass={getContentClass}
-          onExpand={handleExpand}
+          datum={datum}
         ></Tree>
       </div>
     );
   };
 
   useEffect(() => {
-    if (getComponentRef && datum.current) {
+    if (getComponentRef && datum) {
       if (util.isFunc(getComponentRef)) {
         getComponentRef({ getDataByValues: getDataByValuesRef });
       } else {

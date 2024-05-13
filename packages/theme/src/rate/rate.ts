@@ -5,7 +5,7 @@ import { RateTokens } from './type';
 
 const rateTokens: RateTokens = {
   rateFontColor: 'Neutral-text-5',
-  rateFontSize: '14/regular',
+  rateFontSize: 'Font-14',
   rateGap: 'Size-3',
   rateSize: 'Size-12',
   rateBackgroundColor: 'Neutral-fill-3',

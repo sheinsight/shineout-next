@@ -25,7 +25,7 @@ const breadcrumbTokenDescription = {
 const breadcrumbTokenValue = {};
 
 const breadcrumbTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   link: {
     color: 'Neutral-text-3',
     hover: {
@@ -36,15 +36,15 @@ const breadcrumbTokenExtraValue = {
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-1',
     border: { color: '#f4f5f8' },
-    padding: { y: 'Padding-4' },
+    padding: { y: 'Spacing-4' },
     item: {
       border: {
         radius: 'Radius-4',
       },
       wrapper: {
-        padding: { x: 'Padding-4' },
+        padding: { x: 'Spacing-4' },
       },
-      padding: { x: 'Padding-8', y: 'Padding-5' },
+      padding: { x: 'Spacing-8', y: 'Spacing-5' },
       hover: {
         background: { color: 'Neutral-fill-2' },
         font: { color: 'Neutral-text-3' },
@@ -53,7 +53,7 @@ const breadcrumbTokenExtraValue = {
   },
   separator: {
     margin: {
-      x: 'Padding-8',
+      x: 'Spacing-8',
     },
   },
   icon: {

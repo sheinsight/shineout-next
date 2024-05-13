@@ -47,25 +47,25 @@ const tabsTokenValue = {
   },
   click: { font: { color: '' }, background: { color: 'Neutral-fill-4' }, border: { color: '' } },
   tab: {
-    padding: { x: 'Padding-15', y: 'Padding-9' },
-    font: { size: '14/regular' },
+    padding: { x: 'Spacing-15', y: 'Spacing-9' },
+    font: { size: 'Font-14' },
     border: { radius: 'Radius-4' },
   },
-  nearly: { margin: 'Margin-4' },
+  nearly: { margin: 'Spacing-4' },
   line: {
-    padding: { x: 'Padding-8', y: 'Padding-6' },
-    inner: { padding: { x: 'Padding-8', y: 'Padding-4' } },
+    padding: { x: 'Spacing-8', y: 'Spacing-6' },
+    inner: { padding: { x: 'Spacing-8', y: 'Spacing-4' } },
   },
   fill: {
-    padding: { x: 'Padding-4', y: 'Padding-4' },
+    padding: { x: 'Spacing-4', y: 'Spacing-4' },
     inner: {
-      padding: { x: 'Padding-16', y: 'Padding-5' },
+      padding: { x: 'Spacing-16', y: 'Spacing-5' },
     },
   },
   split: { border: { color: 'Neutral-border-2' } },
   action: {
-    vertical: { padding: { x: 'Padding-7', y: 'Padding-4' } },
-    horizontal: { padding: { x: 'Padding-7', y: 'Padding-8' } },
+    vertical: { padding: { x: 'Spacing-7', y: 'Spacing-4' } },
+    horizontal: { padding: { x: 'Spacing-7', y: 'Spacing-8' } },
   },
 };
 

@@ -4,43 +4,43 @@
 export interface DescriptionsTokens {
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表标题模式内边距底部
    */
   descriptionsTitlePaddingBottom: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表标签的内边距底部
    */
   descriptionsLabelPaddingBottom: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 描述列表标签的内边距右部
    */
   descriptionsLabelPaddingRight: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表值的内边距底部
    */
   descriptionsValuePaddingBottom: string;
   /**
    * @type {string}
-   * @token 14/medium
+   * @token Font-14
    * @description 描述列表标题模式小尺寸字号
    */
   descriptionsTitleSmallSize: string;
   /**
    * @type {string}
-   * @token 16/medium
+   * @token Font-16
    * @description 描述列表标题模式默认尺寸字号
    */
   descriptionsTitleDefaultSize: string;
   /**
    * @type {string}
-   * @token 18/medium
+   * @token Font-18
    * @description 描述列表标题模式大尺寸字号
    */
   descriptionsTitleLargeSize: string;
@@ -52,19 +52,19 @@ export interface DescriptionsTokens {
   descriptionsBorderDefaultSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 描述列表字体小尺寸字号
    */
   descriptionsFontSmallSize: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 描述列表字体默认尺寸字号
    */
   descriptionsFontDefaultSize: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 描述列表字体大尺寸字号
    */
   descriptionsFontLargeSize: string;
@@ -130,25 +130,25 @@ export interface DescriptionsTokens {
   descriptionsBorderBottomSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 描述列表边框内边距（水平方向）
    */
   descriptionsBorderPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表边框内边距（垂直方向）
    */
   descriptionsBorderPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 描述列表内联边框内边距（水平方向）
    */
   descriptionsInlineBorderPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表内联边框内边距（垂直方向）
    */
   descriptionsInlineBorderPaddingY: string;

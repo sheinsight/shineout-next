@@ -43,8 +43,8 @@ export default () => {
         </Tabs.Panel>
         <Tabs.Panel
           tab={
-            <span style={{ marginLeft: 4, display: 'flex', alignItems: 'center' }}>
-              <span style={{ marginRight: 4 }}>Tab2</span>
+            <span style={{ marginInlineStart: 4, display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginInlineEnd: 4 }}>Tab2</span>
               {renderIcon()}
             </span>
           }
@@ -53,9 +53,9 @@ export default () => {
         </Tabs.Panel>
         <Tabs.Panel
           tab={
-            <span style={{ marginLeft: 4, display: 'flex', alignItems: 'center' }}>
+            <span style={{ marginInlineStart: 4, display: 'flex', alignItems: 'center' }}>
               {renderIcon()}
-              <span style={{ marginLeft: 4 }}>Tab3</span>
+              <span style={{ marginInlineStart: 4 }}>Tab3</span>
             </span>
           }
         >

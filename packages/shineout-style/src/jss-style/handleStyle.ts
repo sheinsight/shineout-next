@@ -57,16 +57,16 @@ const handleRule = (key: string, rule: string, target: ObjectType) => {
     return;
   }
 
-  if ('text-align'.indexOf(key) > -1 && (rule === 'left' || rule === 'right')) {
+  if ('textAlign'.indexOf(key) > -1 && (rule === 'left' || rule === 'right')) {
     const condition = `@supports (text-align: start)`;
     const condition2 = `@supports not (text-align: start)`;
     target[`${condition}`] = {
       ...(target[`${condition}`] || {}),
-      'text-align': rule === 'left' ? 'start' : 'end',
+      'textAlign': rule === 'left' ? 'start' : 'end',
     };
     target[`${condition2}`] = {
       ...(target[`${condition2}`] || {}),
-      'text-align': rule,
+      'textAlign': rule,
     };
     return;
   }

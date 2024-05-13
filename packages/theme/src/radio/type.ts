@@ -4,13 +4,13 @@
 export interface RadioTokens {
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 单选框间距
    */
   radioGap: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 单选框块级间距
    */
   radioBlockGap: string;
@@ -22,7 +22,7 @@ export interface RadioTokens {
   radioIconWidth: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 单选框图标间距
    */
   radioIconGap: string;
@@ -112,7 +112,7 @@ export interface RadioTokens {
   radioIconWrapperDark: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 单选框内边距（垂直方向）
    */
   radioPaddingY: string;
@@ -136,13 +136,13 @@ export interface RadioTokens {
   radioSmallIconInnerSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 单选框小尺寸文案字体字号
    */
   radioSmallLabelFontSize: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 单选框小尺寸内边距（垂直方向）
    */
   radioSmallPaddingY: string;
@@ -160,19 +160,13 @@ export interface RadioTokens {
   radioLargeIconBorderWidth: string;
   /**
    * @type {string}
-   * @token Size-3.5
-   * @description 单选框大尺寸图标内嵌字号
-   */
-  radioLargeIconInnerSize: string;
-  /**
-   * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 单选框大尺寸文案字体字号
    */
   radioLargeLabelFontSize: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 单选框大尺寸内边距（垂直方向）
    */
   radioLargePaddingY: string;
@@ -184,7 +178,7 @@ export interface RadioTokens {
   radioLabelFontColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 单选框文案字体字号
    */
   radioLabelFontSize: string;

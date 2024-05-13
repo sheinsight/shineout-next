@@ -1,9 +1,24 @@
+import { getConfig } from '../config';
 import { Tokens } from './type';
+import { replaceNonAlphanumeric } from '../utils/css-var';
 
 const Token:Tokens = {
 <% tokens.forEach(function (item, i) { -%>
   '<%= item.token %>': '<%= item.value %>',
 <% }) -%>
 }
+
+// @ts-ignore
+const CommonToken:Tokens = {};
+
+Object.keys(Token).forEach((key) => {
+  const { prefix } = getConfig();
+  // @ts-ignore
+  CommonToken[key] = `var(--${prefix}-${replaceNonAlphanumeric(key)}, ${
+    Token[key]
+  })`;
+});
+
+export { CommonToken };
 
 export default Token;

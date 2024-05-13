@@ -1,4 +1,5 @@
-import { DatePickerProps, getLocale, useConfig } from '@sheinx/base';
+import { getLocale, useConfig } from '../config';
+import { DatePickerProps } from './date-picker.type';
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
@@ -152,7 +153,7 @@ const Result = (props: ResultProps) => {
 
     return (
       <div className={className}>
-        <div className={styles?.resultTextPadding}>
+        <span className={styles?.resultTextPadding}>
           {info.inputable ? (
             <Input
               key={info.index}
@@ -186,7 +187,8 @@ const Result = (props: ResultProps) => {
           ) : (
             info.target || info.value || <span className={styles?.placeholder}>{info.place}</span>
           )}
-        </div>
+        </span>
+        <div className={styles?.resultTextBg}></div>
       </div>
     );
   };

@@ -15,6 +15,10 @@ export default createUseStyles(
       background: '#fff',
       borderBottom: '1px solid rgba(232, 235, 240, 1)',
       transition: 'all 0.15s ease',
+      'body.rtl &': {
+        right: 260,
+        left: 0,
+      },
       '& .title': {
         fontSize: 36,
         fontWeight: 500,

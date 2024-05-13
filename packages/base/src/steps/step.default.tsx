@@ -3,6 +3,7 @@ import { util } from '@sheinx/hooks';
 import { StepsClasses } from './steps.type';
 import { StepStyleProps } from './steps.type';
 import Icons from '../icons';
+import { useConfig } from '../config';
 
 const DefaultStep = (props: StepStyleProps) => {
   const {
@@ -18,6 +19,7 @@ const DefaultStep = (props: StepStyleProps) => {
   } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = styles.default;
+  const config = useConfig();
   const iconClass = classNames(styles.icon, {
     [styles.finish]: status === 'finish',
     [styles.error]: status === 'error',
@@ -28,11 +30,19 @@ const DefaultStep = (props: StepStyleProps) => {
   const showTail = labelPlacement === 'vertical' || direction === 'vertical';
 
   const renderTail = () => {
-    return <div className={styles.tail}> </div>;
+    return (
+      <div className={styles.tail} dir={config.direction}>
+        {' '}
+      </div>
+    );
   };
 
   const renderTitle = () => {
-    return <div className={styles.title}>{util.isFunc(title) ? title(index, status!) : title}</div>;
+    return (
+      <div className={styles.title} dir={config.direction}>
+        {util.isFunc(title) ? title(index, status!) : title}
+      </div>
+    );
   };
 
   const renderDescription = () => {
@@ -42,7 +52,7 @@ const DefaultStep = (props: StepStyleProps) => {
   const renderIcon = () => {
     if (renderIconProp)
       return (
-        <div className={iconClass} onClick={onChange}>
+        <div className={iconClass} onClick={onChange} dir={config.direction}>
           <span className={styles.iconWrapper}>{renderIconProp(index, status)}</span>
         </div>
       );
