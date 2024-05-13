@@ -31,10 +31,7 @@ const ResultInput = (props: ResultInputProps) => {
     inputRef.current = ref;
   };
 
-  const handleBlur = (e: React.FocusEvent) => {
-    if ((e.target as HTMLInputElement).value === inputText) {
-      return;
-    }
+  const handleBlur = () => {
     if (trim) {
       return onInputBlur?.(inputText?.trim());
     }

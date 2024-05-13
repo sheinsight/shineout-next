@@ -359,9 +359,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     handlePathChange(id, null, path as Value);
   };
 
-  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => {
-    const dataKey = util.isUnMatchedData(item) ? item.value : datum.getKey(item, key, index);
-
+  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult) => {
+    const dataKey = key ?? (util.isUnMatchedData(item) ? item.value : datum.getKey(item));
     const isDisabled = datum.isDisabled(dataKey);
 
     if (isDisabled) return;

@@ -16,12 +16,14 @@ const Spin = (props: BaseSpinProps) => {
     props.style,
   );
 
+  const classname = classNames(className, styles?.spin)
+
   if (count < 1 || !render) {
-    return <div style={style} className={className} />;
+    return <div style={style} className={classname} />;
   }
 
   return (
-    <div style={style} className={classNames(className, styles?.spin)}>
+    <div style={style} className={classname}>
       {range(count + 1, 1).map((i) => render({ ...props, index: i }))}
     </div>
   );

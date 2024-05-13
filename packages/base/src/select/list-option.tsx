@@ -25,6 +25,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   };
 
   const handleClick = () => {
+    if (datum.disabledCheck(data)) return;
     if (isChecked && multiple) {
       datum.remove(data);
     } else {

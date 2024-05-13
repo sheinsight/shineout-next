@@ -111,11 +111,17 @@ const useTableRow = (props: TableRowProps) => {
         }),
       );
 
-      context.rowSelectMergeStartData[i] = data[i];
-      if (checkCol && typeof checkCol.rowSpan === 'function') {
-        const nextData = data[i + 1];
-        if (nextData && checkCol.rowSpan(data[i], nextData)) {
-          context.rowSelectMergeStartData[i + 1] = data[i];
+
+      {
+        //记录合并行合并到的数据需要从0 开始
+        const i0 = data.length - 1 - i;
+        const d0 = data[i0];
+        context.rowSelectMergeStartData[i0] = d0;
+        if (i0  > 0 && checkCol && typeof checkCol.rowSpan === 'function') {
+          const beforeData = data[i0 - 1];
+          if (beforeData !== null && checkCol.rowSpan(beforeData, d0)) {
+            context.rowSelectMergeStartData[i0] =  context.rowSelectMergeStartData[i0 - 1] ?? beforeData;
+          }
         }
       }
     }

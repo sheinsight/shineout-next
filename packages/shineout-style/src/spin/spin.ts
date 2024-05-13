@@ -37,7 +37,9 @@ const spinStyle: JsStyles<keyof SpinClasses> = {
   chasingRing,
   fade: {},
 
-  spin: {},
+  spin: {
+    margin: 'auto'
+  },
   content: {
     margin: 'auto',
     display: 'flex',

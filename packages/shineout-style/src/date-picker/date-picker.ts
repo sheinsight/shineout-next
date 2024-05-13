@@ -127,6 +127,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   resultText: {
     lineHeight: token.lineHeightDynamic,
     position: 'relative',
+    zIndex: 0,
     flex: '1',
     minWidth: 0,
     '&::before': {
@@ -135,7 +136,25 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     },
   },
   resultTextPadding: {
+    position: 'relative',
+    zIndex: 2,
+    '& > input': {
+      color: 'inherit',
+      padding: '0',
+      border: '0',
+      outline: '0',
+      fontSize: 'inherit',
+      lineHeight: token.lineHeightDynamic,
+      backgroundColor: 'transparent',
+      width: '100%',
+      '&::placeholder': {
+        color: token.datePickerPlaceholderColor,
+      },
+    },
+  },
+  resultTextBg: {
     position: 'absolute',
+    zIndex: 1,
     padding: `0 ${token.datePickerResultTextPaddingX}`,
     left: `calc(-1 * ${token.datePickerResultTextPaddingX})`,
     right: `calc(-1 * ${token.datePickerResultTextPaddingX})`,
@@ -157,7 +176,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     },
   },
   resultTextActive: {
-    '& $resultTextPadding': {
+    '& $resultTextBg': {
       backgroundColor: token.datePickerResultTextActiveBackgroundColor,
     },
   },

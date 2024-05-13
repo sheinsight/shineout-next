@@ -1,3 +1,10 @@
+## 3.0.10
+2024-05-06
+
+### 💅 Style
+
+-  `DatePicker` 高度支持被内容撑开 ([#410](https://github.com/sheinsight/shineout-next/pull/410))
+
 ## 3.0.8
 2024-04-26
 

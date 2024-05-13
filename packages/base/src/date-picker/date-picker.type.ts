@@ -36,6 +36,7 @@ export interface DatePickerClasses {
   resultTextWrapper: string;
   resultText: string;
   resultTextPadding: string;
+  resultTextBg: string;
   resultTextActive: string;
   resultTextDisabled: string;
   resultSeparator: string;

@@ -56,7 +56,7 @@
 - Table
   - 废弃 `fixed` 属性，使用 `virtual` 代替
 - Tag
-  - 废弃 `tyoe` 属性，使用 `color` 代替
+  - 废弃 `type` 属性，使用 `color` 代替
 
 
 ### 功能改进

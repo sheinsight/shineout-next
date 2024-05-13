@@ -7,7 +7,9 @@ import {
   CheckedStatusType,
   TreeContext,
   UpdateFunc,
+  TreeDatum,
 } from './use-tree.type';
+import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber, isArray, isUnMatchedData } from '../../utils/is';
 
@@ -48,14 +50,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     mode,
     active: activeProp,
     expanded: expandedProp,
-    // dataUpdate,
+    dataUpdate = true,
     defaultExpanded = [],
     defaultExpandAll,
     disabled: disabledProps,
     unmatch,
     isControlled,
     onExpand: onExpandProp,
-    keepCache,
   } = props;
 
   const { value: expanded, onChange: onExpand } = useInputAble({
@@ -69,6 +70,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const { current: context } = useRef<TreeContext<DataItem>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
+    forceUpdateMap: new Map<KeygenResult, () => void>(),
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     unmatchedValueMap: new Map<any, any>(),
@@ -79,11 +81,20 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     valueDataCache: new Map<KeygenResult, DataItem>(),
   });
 
+  // 注册刷新方法
+  const bindUpdate = usePersistFn((id: KeygenResult, update: () => void) => {
+    context.forceUpdateMap.set(id, update);
+  });
+
+  const unBindUpdate = usePersistFn((id: KeygenResult) => {
+    context.forceUpdateMap.delete(id);
+  });
+
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
-    const expandeds = expanded || defaultExpanded;
+    const expandeds = expanded;
 
     if (defaultExpandAll) {
       return { active: isActive, expanded: true };
@@ -168,32 +179,30 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const getDataById = (id: KeygenResult) => {
-    if (keepCache) {
-      if (!context.valueDataCache) {
-        context.valueDataCache = new Map();
-      }
-      const cache = context.valueDataCache.get(id);
-      if (cache !== undefined) return cache;
-    }
     const oroginData = context.dataMap.get(id);
     if (oroginData) {
-      if (keepCache) context.valueDataCache.set(id, oroginData);
       return oroginData;
     }
     if (!unmatch) return null;
     return { IS_NOT_MATCHED_VALUE: true, value: id };
   };
 
-  const getDataByValues = (values: KeygenResult[] | KeygenResult) => {
+  const getDataByValues = (values: KeygenResult[] | KeygenResult): DataItem | DataItem[] | null => {
     if (isArray(values)) {
-      return values.map(getDataById);
+      return values.map(getDataById) as DataItem[] | null;
     }
 
-    return getDataById(values);
+    return getDataById(values) as DataItem | null;
   };
+
+  const isUnMatched = usePersistFn((data: any) => {
+    return isUnMatchedData(data);
+  });
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
+    const update = context.forceUpdateMap.get(id);
+    if (update) update();
   };
 
   const setUnmatedValue = () => {
@@ -421,15 +430,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   }, []);
 
   useEffect(() => {
-    setValue(value);
+    if (props.datum) return;
+    if (!dataUpdate) return;
     setData(data);
   }, [data]);
 
-  const datum = useLatestObj({
+  useEffect(() => {
+    if (props.datum) return;
+    setValue(value);
+  }, [value]);
+
+  const datum: TreeDatum<DataItem> = useLatestObj({
     get,
     set,
-    childrenKey,
-    data,
     getPath,
     getValue,
     getChecked,
@@ -440,6 +453,11 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     isDisabled,
     bindNode,
     getDataById,
+    bindUpdate,
+    unBindUpdate,
+    isUnMatched,
+    childrenKey,
+    data,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,
@@ -447,7 +465,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   return {
-    datum,
+    datum: props.datum || datum,
     expanded,
     onExpand,
   };

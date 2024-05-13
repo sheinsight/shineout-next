@@ -115,8 +115,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
 
-  const isPreventBlur = useRef(false);
-  const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
   const optionListRef = useRef<OptionListRefType>();
 
@@ -149,15 +147,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const onCollapse = usePersistFn((collapse: boolean) => {
     onCollapseProp?.(collapse);
 
-    if (isPreventBlur.current) {
-      isPreventBlur.current = false;
-      return;
-    }
-
-    if (blurEvent.current && !collapse) {
-      blurEvent.current();
-      blurEvent.current = null;
-    }
     onClearCreatedData();
   });
 
@@ -371,12 +360,12 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (!onCreate) return;
     if (multiple && !text) return;
     // 防止点击 option 后触发 blur 事件，先把要做的事情存起来，后面再看要不要执行
-    blurEvent.current = () => {
-      if (createdData) {
-        handleChange(createdData as DataItem);
+    if (createdData) {
+      if (!datum.check(createdData)) {
+        datum.add(createdData as DataItem);
       }
       onClearCreatedData();
-    };
+    }
   };
 
   const handleFilter = (text: string, from?: string) => {
@@ -395,7 +384,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   };
 
   const handleOptionClick = () => {
-    isPreventBlur.current = true;
     if (multiple) return;
     // 单选结束后需要清除创建项
     onClearCreatedData();

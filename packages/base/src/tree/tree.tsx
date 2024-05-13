@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import classNames from 'classnames';
-import { KeygenResult, useTree, util, usePrevious, ObjectKey } from '@sheinx/hooks';
+import { KeygenResult, useTree, util, ObjectKey } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeProps } from './tree.type';
 import RootTree from './tree-root';
@@ -51,11 +51,9 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     onDragLeave,
     onDragOver,
     onDragStart,
-    keepCache,
+    datum: propsDatum,
     ...rest
   } = props;
-
-  const prevData = usePrevious(data);
 
   const { datum, expanded, onExpand } = useTree({
     mode,
@@ -73,7 +71,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     childrenKey: childrenKey,
     keygen,
     onExpand: onExpandProp,
-    keepCache,
+    datum: propsDatum,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
@@ -186,18 +184,6 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   useEffect(() => {
     handleUpdateExpanded(expanded);
   }, [expanded]);
-
-  useEffect(() => {
-    if (!prevData) return;
-    if (prevData !== data && dataUpdate) {
-      datum.setData(data);
-    }
-  }, [data]);
-
-  useEffect(() => {
-    if (!value) return;
-    datum.setValue(value);
-  }, [value]);
 
   useEffect(() => {
     if (getDatum) getDatum(datum);
