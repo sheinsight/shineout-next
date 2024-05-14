@@ -1,3 +1,13 @@
+## 3.1.9
+2024-05-14
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` 在单选的情况下会返回数组的问题 ([#440](https://github.com/sheinsight/shineout-next/pull/440))
+
+- 修复 `TreeSelect` 单选后节点没有高亮的问题  ([#439](https://github.com/sheinsight/shineout-next/pull/439))
+
+
 ## 3.1.7
 2024-05-11
 
