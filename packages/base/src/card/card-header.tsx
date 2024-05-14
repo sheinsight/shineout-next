@@ -29,6 +29,14 @@ const CardHeader = (props: CardHeaderProps) => {
     align === 'right' && cardClasses?.right,
   );
 
+  if (!props.extra && !collapsible) {
+    return (
+      <div className={classNames(cardClasses?.header, cardClasses?.simpleHeader, props.className)} style={props.style}>
+        {props.children}
+      </div>
+    );
+  }
+
   return (
     <div
       onMouseDown={handleDragMouseDown}
