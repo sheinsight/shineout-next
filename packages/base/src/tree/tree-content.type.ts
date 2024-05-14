@@ -12,7 +12,7 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   active: boolean;
   expanded: boolean;
   iconClass?: string;
-  leafClass?: string;
+  leafClass?: string | ((data: DataItem) => string);
   contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenKey: keyof DataItem;
