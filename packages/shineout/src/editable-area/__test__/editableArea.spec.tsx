@@ -154,7 +154,9 @@ describe('EditableArea[Value]', () => {
     const { container } = render(<EditableArea defaultValue={defaultValue} />);
     fireEvent.click(container.querySelector(place)!);
     screen.debug()
-    testValue(container, defaultValue);
+    document.querySelectorAll('textarea').forEach((item) => {
+      testValue(item, defaultValue);
+    })
   });
   test('should render when set value', () => {
     const { container } = render(<EditableArea value={value} />);
