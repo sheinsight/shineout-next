@@ -391,7 +391,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     paddingTop: 3,
     paddingBottom: 3,
     display: 'inline-block',
-    overflow: 'auto'
+    overflow: 'auto',
   },
   tag: {
     '&$tag + &$tag': {
@@ -440,6 +440,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     // hover
     '&:not($optionDisabled):hover': {
       '& $optionInner': {
+        color: token.cascaderOptionHoverFontColor,
         backgroundColor: token.cascaderOptionHoverBackgroundColor,
       },
     },
@@ -464,7 +465,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     whiteSpace: 'nowrap',
     minWidth: 44,
     display: 'flex',
+    color: token.cascaderOptionFontColor,
     fontSize: token.cascaderFontSize,
+    background: token.cascaderOptionBackgroundColor,
     lineHeight: token.lineHeightDynamic,
     padding: `${token.cascaderOptionInnerPaddingY} ${token.cascaderOptionInnerPaddingX}`,
     paddingRight: 30,
