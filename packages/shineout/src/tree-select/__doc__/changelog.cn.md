@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `TreeSelect` 属性 `childrenKey` 没有生效的问题 ([#432](https://github.com/sheinsight/shineout-next/pull/432))
+- 修复 `TreeSelect` 单选后节点没有高亮的问题 ([#439](https://github.com/sheinsight/shineout-next/pull/439))
 
 ## 3.1.6
 2024-05-11
