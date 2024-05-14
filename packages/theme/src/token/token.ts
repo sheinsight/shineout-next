@@ -301,6 +301,7 @@ const Token: Tokens = {
 
 // @ts-ignore
 const CommonToken: Tokens = {};
+const CommonTokenMap: Tokens = Token;
 
 Object.keys(Token).forEach((key) => {
   const { prefix } = getConfig();
@@ -308,6 +309,6 @@ Object.keys(Token).forEach((key) => {
   CommonToken[key] = `var(--${prefix}-${replaceNonAlphanumeric(key)}, ${Token[key]})`;
 });
 
-export { CommonToken };
+export { CommonToken, CommonTokenMap };
 
 export default Token;

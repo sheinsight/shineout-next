@@ -128,12 +128,7 @@ const inputTokenExtraValue = {
       icon: { color: '' },
     },
   },
-  group: {
-    font: {
-      color: 'Neutral-text-5',
-      background: { color: 'Neutral-fill-2' },
-    },
-  },
+  group: { font: { color: 'Neutral-text-5', background: { color: 'Neutral-fill-2' } } },
   info: {
     font: { color: 'Brand-6' },
     background: { color: 'Neutral-fill-1' },
