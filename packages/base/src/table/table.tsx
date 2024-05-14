@@ -200,6 +200,19 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     scrollEl.scrollLeft = Math.min(Math.max(scrollLeft, 0), max);
   });
 
+  const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    if (!target) return;
+    layoutFunc.checkFloat();
+    if (props.onScroll && typeof props.onScroll === 'function') {
+      const maxWidth = target.scrollWidth - target.clientWidth;
+      const maxHeight = target.scrollHeight - target.clientHeight;
+      const x = Math.min(target.scrollLeft / maxWidth, 1);
+      const y = Math.min(target.scrollTop / maxHeight, 1);
+      props.onScroll(x, y, target.scrollLeft);
+    }
+  });
+
   const handleVirtualScroll = usePersistFn(
     (info: {
       scrollLeft: number;
@@ -308,6 +321,18 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       css: sticky?.css,
       parent: tableRef?.current,
     };
+    if (!virtual && !isScrollY && !props.sticky && props.data?.length) {
+      return (
+        <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
+          <table style={{ width }} ref={tbodyRef}>
+            {Group}
+            {!props.hideHeader && <Thead {...headCommonProps} />}
+            {<Tbody {...bodyCommonProps} />}
+            {<Tfoot {...footCommonProps} />}
+          </table>
+        </div>
+      );
+    }
     return (
       <>
         {!props.hideHeader && (
