@@ -186,6 +186,11 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   }, [expanded]);
 
   useEffect(() => {
+    if (!active) return;
+    handleUpdateActive(active);
+  }, [active]);
+
+  useEffect(() => {
     if (getDatum) getDatum(datum);
   }, []);
 

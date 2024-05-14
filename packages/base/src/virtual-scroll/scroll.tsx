@@ -48,7 +48,7 @@ const Scroll = (props: scrollProps) => {
   } as React.CSSProperties;
 
   const placeStyle = {
-    marginTop: Math.max(0, scrollHeight - height),
+    marginTop: Math.max(0, Math.floor(scrollHeight - height)),
     [`margin${isRtl ? 'Left' : 'Right'}`]: scrollWidth,
     height: 0,
     width: 0,

@@ -1,3 +1,10 @@
+## 3.1.9
+2024-05-14
+
+### 🆎 Type
+
+- 修复 `Tree` 属性 `leafClass` 类型错误 ([#437](https://github.com/sheinsight/shineout-next/pull/437))
+
 ## 3.1.0
 2024-05-09
 
