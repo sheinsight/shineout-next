@@ -36,6 +36,11 @@ const virtualScrollerStyle = {
   overflow: 'auto',
   width: '100%',
 };
+
+const emptyStyle = {
+  ...virtualScrollerStyle,
+  height: 0,
+};
 const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex' };
 
 const emptyRef = { current: null };
@@ -330,7 +335,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
         <Scroll
           style={scrollWrapperStyle}
-          scrollerStyle={virtualScrollerStyle}
+          scrollerStyle={props.data?.length ? virtualScrollerStyle : emptyStyle}
           wrapperRef={scrollRef}
           scrollWidth={width || 1}
           scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
