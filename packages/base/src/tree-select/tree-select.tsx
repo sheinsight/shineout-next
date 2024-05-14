@@ -147,6 +147,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     data,
     unmatch,
     disabled,
+    active: multiple ? undefined : value[0],
     childrenKey: childrenKey,
     keygen,
     onExpand,
@@ -599,7 +600,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     } else {
       treeProps.onClick = handleTreeClick;
       treeProps.renderItem = renderActive;
-      treeProps.active = value;
+      treeProps.active = value[0];
     }
     if ('expanded' in props) {
       treeProps.expanded = expanded;
@@ -618,6 +619,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           keygen={keygen}
           unmatch={unmatch}
           value={value}
+          highlight
           loader={loader}
           onExpand={onExpandTree}
           expanded={controlExpanded}
