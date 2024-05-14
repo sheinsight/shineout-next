@@ -2,11 +2,13 @@ import React from 'react';
 import classNames from 'classnames';
 import { TfootProps, SummaryItem } from './tfoot.type';
 import { util } from '@sheinx/hooks';
+import { useConfig } from '../config';
 import type { ObjectType } from '@sheinx/hooks';
 const { isArray } = util;
 
 export default (props: TfootProps) => {
   const tableClasses = props.jssStyle?.table?.();
+  const config = useConfig();
 
   const getFixedStyle = (
     fixed: 'left' | 'right' | undefined,
@@ -58,14 +60,18 @@ export default (props: TfootProps) => {
         fixed['lastFixed'] = true;
       }
     }
+
     return (
       <td
+        dir={config.direction}
         key={index}
         colSpan={colSpan}
         style={getFixedStyle(fixed.fixed, index, colSpan)}
         className={classNames(
           fixed['fixed'] === 'left' && tableClasses?.cellFixedLeft,
           fixed['fixed'] === 'right' && tableClasses?.cellFixedRight,
+          fixed.firstFixed && tableClasses?.cellFixedLeft,
+          fixed.lastFixed && tableClasses?.cellFixedRight,
           (fixed.lastFixed || fixed.firstFixed) && tableClasses?.cellFixedLast,
           isLast && tableClasses?.cellIgnoreBorder,
         )}
