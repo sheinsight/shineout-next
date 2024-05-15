@@ -1,9 +1,10 @@
 ## 3.1.10
 2024-05-15
 
-### 💎 Enhancement
+### 🐞 BugFix
 
-- 修复 `FormDatum.set` 支持 `set(name, value)` 用法 ([#444](https://github.com/sheinsight/shineout-next/pull/444))
+
+- 修复 `FormDatum.set` 不支持 `set(name, value)` 用法 ([#444](https://github.com/sheinsight/shineout-next/pull/444))
 
 
 ## 3.1.8
