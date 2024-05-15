@@ -36,6 +36,11 @@ const virtualScrollerStyle = {
   overflow: 'auto',
   width: '100%',
 };
+
+const emptyStyle = {
+  ...virtualScrollerStyle,
+  height: 0,
+};
 const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex' };
 
 const emptyRef = { current: null };
@@ -200,6 +205,19 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     scrollEl.scrollLeft = Math.min(Math.max(scrollLeft, 0), max);
   });
 
+  const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    if (!target) return;
+    layoutFunc.checkFloat();
+    if (props.onScroll && typeof props.onScroll === 'function') {
+      const maxWidth = target.scrollWidth - target.clientWidth;
+      const maxHeight = target.scrollHeight - target.clientHeight;
+      const x = Math.min(target.scrollLeft / maxWidth, 1);
+      const y = Math.min(target.scrollTop / maxHeight, 1);
+      props.onScroll(x, y, target.scrollLeft);
+    }
+  });
+
   const handleVirtualScroll = usePersistFn(
     (info: {
       scrollLeft: number;
@@ -308,6 +326,18 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       css: sticky?.css,
       parent: tableRef?.current,
     };
+    if (!virtual && !isScrollY && !props.sticky && props.data?.length) {
+      return (
+        <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
+          <table style={{ width }} ref={tbodyRef}>
+            {Group}
+            {!props.hideHeader && <Thead {...headCommonProps} />}
+            {<Tbody {...bodyCommonProps} />}
+            {<Tfoot {...footCommonProps} />}
+          </table>
+        </div>
+      );
+    }
     return (
       <>
         {!props.hideHeader && (
@@ -330,7 +360,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
         <Scroll
           style={scrollWrapperStyle}
-          scrollerStyle={virtualScrollerStyle}
+          scrollerStyle={props.data?.length ? virtualScrollerStyle : emptyStyle}
           wrapperRef={scrollRef}
           scrollWidth={width || 1}
           scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
