@@ -8,8 +8,10 @@ import React from 'react';
 import { Switch } from 'shineout';
 
 const App: React.FC = () => (
-  <div>
+  <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>
+    <Switch size='small' defaultValue content={['ON', 'OFF']} />
     <Switch defaultValue content={['ON', 'OFF']} />
+    <Switch size='large' defaultValue content={['ON', 'OFF']} />
   </div>
 );
 

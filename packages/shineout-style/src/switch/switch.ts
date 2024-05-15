@@ -68,8 +68,12 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
   },
   wrapperChecked: {},
   textPadding: { display: 'inline-block', padding: `0 ${token.switchTextPaddingX}` },
-  wrapperSmall: {},
-  wrapperLarge: {},
+  wrapperSmall: {
+    fontSize: token.switchSmallFontSize,
+  },
+  wrapperLarge: {
+    fontSize: token.switchLargeFontSize,
+  },
   indicator: {
     width: token.switchCircleSize,
     height: token.switchCircleSize,
@@ -135,9 +139,24 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
     lineHeight: 1,
     paddingLeft: token.switchCircleSize,
     transition: `padding ${transition}`,
+    '$wrapperSmall &': {
+      paddingLeft: token.switchSmallCircleSize,
+    },
+    '$wrapperLarge &': {
+      paddingLeft: token.switchLargeCircleSize,
+    },
     '$wrapperChecked &': {
       paddingLeft: 0,
       paddingRight: token.switchCircleSize,
+      '$wrapperSmall&': {
+        paddingLeft: 0,
+        paddingRight: token.switchSmallCircleSize,
+      },
+      '$wrapperLarge&': {
+        paddingLeft: 0,
+        paddingRight: token.switchLargeCircleSize,
+      },
+
     },
   },
   wrapperDisabled: {
