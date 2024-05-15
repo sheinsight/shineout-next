@@ -39,6 +39,13 @@ const devGuide = [
   },
   {
     title: {
+      cn: '全局配置',
+      en: 'Config',
+    },
+    name: 'config',
+  },
+  {
+    title: {
       cn: '更新日志',
       en: 'Changelog',
     },
@@ -56,8 +63,6 @@ const MenuComponent = () => {
   // const lan = params.lan === 'en' ? 'en-US' : 'zh-CN';
   const groupLocale = docsLocale['shineout.menu.group'];
 
-  
-
   const handleClick = (component: Menu) => {
     dispatch.setDoctab('examples');
     const params = new URLSearchParams(location.search);
@@ -68,7 +73,6 @@ const MenuComponent = () => {
     });
     document.getElementById('layout')?.scrollTo(0, 0);
   };
-
 
   const handleDocClick = (name: string) => {
     const params = new URLSearchParams(location.search);
