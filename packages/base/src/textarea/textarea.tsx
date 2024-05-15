@@ -136,6 +136,7 @@ const Textarea = (props0: TextareaProps) => {
     if (!res) return null;
     const isError = res instanceof Error;
     const text = isError ? res.message : res;
+    if (!isError && !focused) return null;
     return (
       <div
         key='info'
