@@ -327,6 +327,10 @@ const modalStyle: JsStyles<ModalClassType> = {
     display: 'flex',
     marginBottom: token.modalPanelGap,
   },
+  headerEmptyTitle: {
+    marginBottom: 0,
+    height: 0,
+  },
   headerIcon: {
     '$wrapper &': {
       marginRight: token.modalHeaderIconMarginEnd,
