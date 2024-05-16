@@ -256,6 +256,7 @@ const input: JsStyles<keyof InputClasses> = {
       left: '0',
     },
     top: '100%',
+    zIndex: 1000,
     transformOrigin: '100% 0',
     marginTop: '10px',
     animation: 'so-input-fade .16s ease-in',
