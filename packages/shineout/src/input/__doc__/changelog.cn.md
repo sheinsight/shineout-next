@@ -1,3 +1,16 @@
+## 3.1.11
+2024-05-16
+
+### 🐞 BugFix
+
+- 修复 `Input.Number` 的 tip 提示样式问题 ([#450](https://github.com/sheinsight/shineout-next/pull/450))
+
+- 修复 `Input` 的 info 的样式问题 ([#450](https://github.com/sheinsight/shineout-next/pull/450))
+
+### 💅 Style
+
+- 调整 `Input` 的垂直对齐方式 ([#450](https://github.com/sheinsight/shineout-next/pull/450))
+
 ## 3.0.6
 2024-04-15
 
