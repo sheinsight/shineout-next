@@ -162,7 +162,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     zIndex: modalIndex,
     top: 0,
     left: 0,
-    // overflow: 'auto',
+    overflow: 'auto',
     wordWrap: 'break-word',
     width: '100%',
     boxSizing: 'border-box',
