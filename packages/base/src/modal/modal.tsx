@@ -1,23 +1,34 @@
 import ReactDom from 'react-dom';
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ModalContent from './modal-content';
 import { ModalProps } from './modal.type';
 import useContainer from '../absolute-list/use-container';
 
 const Modal = (props: ModalProps) => {
-  const { getRoot } = useContainer({
+  const { getRoot, unMount } = useContainer({
     container: props.container,
   });
   const [canDestroy, seCanDestroy] = useState(true);
-  const root = getRoot();
+  const { current: context } = useRef({ rendered: false });
 
-  if (props.destroy && !props.visible && canDestroy) {
+  const destroyed = props.destroy && !props.visible && canDestroy;
+  useEffect(() => {
+    if (destroyed) {
+      unMount();
+    }
+  }, [destroyed]);
+
+  if (destroyed) {
     return null;
   }
+  if (!context.rendered && !props.visible) {
+    return null;
+  }
+  context.rendered = true;
 
   const Content = <ModalContent {...props} shouldDestroy={seCanDestroy} autoShow={false} />;
-  if (!root) return null
-  return ReactDom.createPortal(Content, root);
+  if (!getRoot()) return null;
+  return ReactDom.createPortal(Content, getRoot()!);
 };
 
 export default Modal;
