@@ -27,8 +27,9 @@ const Modal = (props: ModalProps) => {
   context.rendered = true;
 
   const Content = <ModalContent {...props} shouldDestroy={seCanDestroy} autoShow={false} />;
-  if (!getRoot()) return null;
-  return ReactDom.createPortal(Content, getRoot()!);
+  const root = getRoot();
+  if (!root) return null;
+  return ReactDom.createPortal(Content, root);
 };
 
 export default Modal;
