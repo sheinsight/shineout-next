@@ -185,7 +185,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         height={height}
         lineHeight={lineHeight}
         rowsInView={itemsInView}
-        childrenStyle={{width: '100%'}}
         renderItem={renderItem}
         customRenderItem={renderGroupTitle}
         onControlTypeChange={onControlTypeChange}
