@@ -49,6 +49,15 @@ export default () => {
   const [layout, setLayout] = React.useState<layoutType>('horizontal');
   const [tableLayout, setTableLayout] = React.useState<tableLayoutType>('auto');
   const [border, setBorder] = React.useState<boolean>(false);
+  const labelStyle = {
+    marginBottom: layout === 'inlineVertical' ? '2px' : '',
+    paddingBottom: layout === 'vertical' ? '2px' : '',
+  };
+  Object.keys(labelStyle).forEach((key) => {
+    if (labelStyle[key] === '') {
+      delete labelStyle[key];
+    }
+  });
   return (
     <div style={{ marginBottom: '-12px' }}>
       <Radio.Group
@@ -81,10 +90,7 @@ export default () => {
         layout={layout}
         tableLayout={tableLayout}
         border={border}
-        labelStyle={{
-          marginBottom: layout === 'inlineVertical' ? '2px' : '',
-          paddingBottom: layout === 'vertical' ? '2px' : '',
-        }}
+        labelStyle={}
       />
     </div>
   );

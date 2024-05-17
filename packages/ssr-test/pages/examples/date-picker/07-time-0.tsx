@@ -7,7 +7,7 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const now = Date.now();
+const now = new Date('2020-01-01 12:00:00');
 
 const App: React.FC = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
