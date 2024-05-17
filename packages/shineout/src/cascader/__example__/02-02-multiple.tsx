@@ -50,6 +50,7 @@ export default () => {
       <Cascader
         clearable
         multiple
+        defaultValue={['jiangning', 'yuhuatai', 'nanjing', 'jiangsu', 'feidong', 'hefei', 'anhui']}
         mode={0}
         compressed
         width={300}
