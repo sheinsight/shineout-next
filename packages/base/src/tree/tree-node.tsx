@@ -82,6 +82,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataI
     dragImageStyle,
   });
 
+
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
 

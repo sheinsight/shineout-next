@@ -3,7 +3,7 @@
  *    -- 基础 Tree 组件用法，当配置 `children` 字段时，允许展开和收起节点
  * en - expand
  *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes
- * 
+ *
  */
 import { useState } from 'react';
 import { Tree, Button, TYPE } from 'shineout';
@@ -16,8 +16,9 @@ interface DataItem {
   children?: DataItem[];
 }
 
+const data: DataItem[] = createNestedArray([2, 2, 2]);
+
 export default () => {
-  const data: DataItem[] = createNestedArray([2, 2, 2]);
   const [expanded, setExpanded] = useState<TreeProps['expanded']>([]);
 
   const renderItem: TreeProps['renderItem'] = (node) => {
