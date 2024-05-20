@@ -53,7 +53,8 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     util.isString(contentClassProp) && contentClassProp,
     util.isFunc(contentClassProp) && contentClassProp(data),
   );
-  const textClass = classNames(contentStyle.text, disabled ? contentStyle.textDisabled : '');
+  // const textClass = classNames(contentStyle.text, disabled ? contentStyle.textDisabled : '');
+  const textClass = classNames(contentStyle.text);
   const hasExpandIcons = expandIcons !== undefined;
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
@@ -66,9 +67,9 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     if (highlight) {
       dataProps['data-active'] = active;
     }
-    if (disabled) {
-      dataProps['data-disabled'] = disabled;
-    }
+    // if (disabled) {
+    //   dataProps['data-disabled'] = disabled;
+    // }
     return dataProps;
   };
 
@@ -87,7 +88,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   };
 
   const handleNodeClick = () => {
-    if (disabled) return;
+    // if (disabled) return;
     if (parentClickExpand && hasChildren) {
       handleIndicatorClick();
     } else {
