@@ -1,5 +1,5 @@
-import { useState, useMemo, useRef, useContext } from 'react';
-import { usePersistFn, useDragMove, useDragResize } from '@sheinx/hooks';
+import { useState, useMemo, useRef, useContext, useEffect } from 'react';
+import { usePersistFn, useDragMove, useDragResize, useRender } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CardContext } from './card.context';
 import { CardAccordionContext, defualtCardAccordionContextValue } from './card-accordion-context';
@@ -12,6 +12,7 @@ const Card = (props: CardProps) => {
   const { style = {} } = props;
   const cardClasses = props.jssStyle?.card?.();
   const panelRef = useRef<HTMLDivElement>(null);
+  const forceUpdate = useRender();
   const { current: context } = useRef({
     id: undefined as number | undefined,
   });
@@ -26,9 +27,12 @@ const Card = (props: CardProps) => {
 
   const { inAccordion, activeId, getDefaultId, onActiveChange } = useContext(CardAccordionContext);
 
-  if (context.id === undefined) {
-    context.id = getDefaultId();
-  }
+  useEffect(() => {
+    if (context.id === undefined) {
+      context.id = getDefaultId();
+      forceUpdate();
+    }
+  }, []);
 
   const id = props.id ?? context.id;
 
