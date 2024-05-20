@@ -62,6 +62,7 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       backgroundColor: token.tooltipLightBackgroundColor,
       color: token.tooltipLightColor,
       border: `1px solid ${token.tooltipLightBorderColor}`,
+      boxSizing: 'border-box',
     },
     '&[data-soui-type^="primary"]': {
       backgroundColor: token.tooltipPrimaryBackgroundColor,
@@ -85,12 +86,12 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       content: '" "',
       display: 'block',
       border: `inherit`,
-      borderLeft: 'none',
+      borderLeftColor: 'transparent',
       width: '8.4px',
       height: '8.4px',
       boxSizing: 'content-box',
       background: 'inherit',
-      borderBottom: 'none',
+      borderBottomColor: 'transparent',
     },
     '&[data-soui-position^="bottom"]': {
       marginTop: arrowGap - 2,

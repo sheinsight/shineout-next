@@ -138,7 +138,7 @@ const Popover = (props: PopoverProps) => {
         onMouseLeave={events.onMouseLeave}
         dir={config.direction}
       >
-        {showArrow && <div className={popoverStyle?.arrow} />}
+        {showArrow && <div className={popoverStyle?.arrow} dir={config.direction} />}
         <div
           style={style}
           className={classNames(
