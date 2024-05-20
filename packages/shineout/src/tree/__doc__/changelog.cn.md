@@ -1,3 +1,10 @@
+## 3.1.13
+2024-05-20
+
+### 🐞 BugFix
+
+- 修复 `Tree` 属性 `defaultExpandAll` 没有效果的问题 ([#457](https://github.com/sheinsight/shineout-next/pull/457))
+
 ## 3.1.9
 2024-05-14
 
