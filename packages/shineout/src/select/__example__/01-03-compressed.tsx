@@ -13,6 +13,7 @@ export default () => {
     <div>
       <Select
         width={300}
+        defaultValue={data}
         multiple
         onChange={(v) => console.log(v)}
         data={data}
