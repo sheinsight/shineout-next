@@ -15,7 +15,7 @@ exports[`Tooltip[Base] should render correctly  1`] = `
 </div>
 `;
 
-exports[`Tooltip[Base] should render correctly  2`] = `
+exports[`Tooltip[Base] should render correctly about click 1`] = `
 <div>
   <noscript />
   <button
@@ -30,7 +30,7 @@ exports[`Tooltip[Base] should render correctly  2`] = `
 </div>
 `;
 
-exports[`Tooltip[Base] should render correctly  3`] = `
+exports[`Tooltip[Base] should render correctly about disabled 1`] = `
 <div>
   <noscript />
   <span

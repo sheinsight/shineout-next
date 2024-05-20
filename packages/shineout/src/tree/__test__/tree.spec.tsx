@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tree from '..';
 import { Button } from 'shineout';
@@ -81,12 +81,14 @@ const data = [
         children: [
           {
             id: '0-0-0',
+            children: []
           },
           {
             id: '0-0-1',
             children: [
               {
                 id: '0-0-1-0',
+                children: []
               },
             ],
           },
@@ -97,6 +99,7 @@ const data = [
         children: [
           {
             id: '0-1-0',
+            children: []
           },
         ],
       },
@@ -136,7 +139,13 @@ mountTest(<TreeTest />);
 
 describe('Tree[Base]', () => {
   displayTest(Tree as React.FC, 'ShineoutTree');
-  baseTest(TreeTest, treeClassName);
+  test('should render when set style and className', () => {
+    const { container } = render(<TreeTest className='test' style={{ color: 'black' }} />);
+    screen.debug()
+    const treeWrapper = container.querySelector(treeClassName)!;
+    classTest(treeWrapper, 'test');
+    styleTest(treeWrapper, 'color: black;');
+  })
   snapshotTest(<TreeBase />);
   snapshotTest(<TreeSize />, 'about size');
   snapshotTest(<TreeLine />, 'about line');

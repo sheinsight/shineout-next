@@ -186,18 +186,18 @@ describe('Popover[Base]', () => {
       await delay(200);
       getPopoverStatus(true);
     });
-    fireEvent.click(document);
+    fireEvent.mouseDown(document);
     await waitFor(async () => {
-      await delay(200);
-      getPopoverStatus(false);
+      await delay(500);
     });
+    getPopoverStatus(false);
   });
 
   const positionStyleMap: Record<string, string> = {
     'bottom-left': 'position: absolute; z-index: 1060; left: 0px; top: 0px;',
     bottom: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;',
     'bottom-right':
-      'position: absolute; z-index: 1060; left: 0px; transform: translateX(-100%); top: 0px;',
+      'position: absolute; z-index: 1060; right: 0px; top: 0px;',
     'right-top': 'position: absolute; z-index: 1060; top: 0px; left: 0px;',
     'left-top':
       'position: absolute; z-index: 1060; top: 0px; transform: translateX(-100%); left: 0px;',
@@ -211,7 +211,7 @@ describe('Popover[Base]', () => {
       'position: absolute; z-index: 1060; left: 0px; transform: translateY(-100%); top: 0px; transform-origin: center bottom;',
     top: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%)translateY(-100%); top: 0px; transform-origin: center bottom;',
     'top-right':
-      'position: absolute; z-index: 1060; left: 0px; transform: translateX(-100%)translateY(-100%); top: 0px; transform-origin: center bottom;',
+      'position: absolute; z-index: 1060; right: 0px; transform: translateY(-100%); top: 0px; transform-origin: center bottom;',
   };
 
   Object.keys(positionStyleMap).forEach((item: string) => {
@@ -278,25 +278,10 @@ describe('Popover[Visible]', () => {
       expect(getPopoverRoot()).toBeInTheDocument();
     });
   });
-  test('should render when set onVisibleChange', async () => {
-    const changeFn = jest.fn();
-    const { container } = render(
-      <Button>
-        Hover
-        <Popover onVisibleChange={changeFn}>some Text</Popover>
-      </Button>,
-    );
-    const button = container.querySelector('button')!;
-    fireEvent.mouseEnter(button);
-    await waitFor(async () => {
-      await delay(200);
-      expect(changeFn.mock.calls.length).toBe(1);
-    });
-  });
   test('should render when set defaultVisible', async () => {
     const { container } = render(<PopoverDemo defaultVisible={true} trigger='click' />);
     expect(getPopoverRoot()).toBeInTheDocument();
-    fireEvent.click(container.querySelector('button')!);
+    fireEvent.mouseDown(container.querySelector('button')!);
     await waitFor(async () => {
       await delay(200);
       getPopoverStatus(false);

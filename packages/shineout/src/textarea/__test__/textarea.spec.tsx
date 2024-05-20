@@ -107,7 +107,7 @@ describe('Textarea[Autosize]', () => {
     const textareas = container.querySelectorAll('textarea');
     expect(textareas.length).toBe(2);
     classTest(textareas[1], textareaShadowClassName);
-    styleTest(textareas[0], 'overflow: auto; max-height: 150px; height: 0px;');
+    styleTest(textareas[0], 'overflow: auto; max-height: 150px;');
     fireEvent.change(textareas[0] as HTMLTextAreaElement, {
       target: { value: 'test' },
     });

@@ -28,7 +28,7 @@ import { useState } from 'react';
 
 const SO_PREFIX = 'tag';
 const originClasses = ['tag', 'inline', 'closeIcon', 'input'];
-const originItemClasses = ['small', 'bright', 'default', 'disabled', 'rounded', 'info', 'danger', 'warning', 'success', 'large', 'fill', 'outline', 'brightOutline', 'tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'orange',];
+const originItemClasses = ['small', 'bright', 'default', 'disabled', 'rounded', 'info', 'danger', 'warning', 'success', 'large', 'fill', 'outline', 'brightOutline', 'tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown',];
 const {
   tag: tagClassName,
   inline: tagInlineClassName,
@@ -54,7 +54,7 @@ const {
   cyan: tagCyanClassName,
   neon: tagNeonClassName,
   lemon: tagLemonClassName,
-  orange: tagOrangeClassName,
+  brown: tagBrownClassName,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const TagColorArray = ['default', 'info', 'danger', 'warning', 'success'];
@@ -74,9 +74,9 @@ const TagColorMoreArray = [
   'cyan',
   'neon',
   'lemon',
-  'orange',
+  'brown',
 ];
-const TagColorMoreClasses = [tagTangerineClassName, tagMagentaClassName, tagPurpleClassName, tagIndigoClassName, tagCyanClassName, tagNeonClassName, tagLemonClassName, tagOrangeClassName];
+const TagColorMoreClasses = [tagTangerineClassName, tagMagentaClassName, tagPurpleClassName, tagIndigoClassName, tagCyanClassName, tagNeonClassName, tagLemonClassName, tagBrownClassName];
 
 const closeAttributes = [
   {
@@ -137,6 +137,7 @@ describe('Tag[Base]', () => {
   test('should render when set different more color', () => {
     const { container } = render(<TagColor />);
     const tags = container.querySelectorAll(tagClassName)!;
+    
     classLengthTest(container, tagClassName, TagColorMoreArray.length * TagModeArray.length);
     tags.forEach((tag, index) => {
       classContentTest(tag, TgaModeClasses[Math.floor(index / TagColorMoreArray.length)]);

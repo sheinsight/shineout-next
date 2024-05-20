@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import EditableArea from '..';
 import mountTest from '../../tests/mountTest';
@@ -7,6 +7,7 @@ import {
   attributesTest,
   baseTest,
   classContentTest,
+  classTest,
   createClassName,
   displayTest,
   snapshotTest,
@@ -152,21 +153,24 @@ describe('EditableArea[Base]', () => {
 describe('EditableArea[Value]', () => {
   test('should render when set defaultValue', () => {
     const { container } = render(<EditableArea defaultValue={defaultValue} />);
-    fireEvent.click(container.querySelector(place)!);
-    screen.debug()
+    textContentTest(container.querySelector(content)!, defaultValue);
+    fireEvent.click(container.querySelector(place)!);    
     document.querySelectorAll('textarea').forEach((item) => {
-      testValue(item, defaultValue);
+      textContentTest(item, defaultValue)
     })
   });
   test('should render when set value', () => {
     const { container } = render(<EditableArea value={value} />);
-    testValue(container, value);
+    textContentTest(container.querySelector(content)!, value);
     changeValueHandle(container, 'test\n');
     testValue(container, value);
   });
   test('should render when set value and defaultValue at the same time', () => {
     const { container } = render(<EditableArea defaultValue={defaultValue} value={value} />);
-    testValue(container, value);
+    fireEvent.click(container.querySelector(place)!); 
+    document.querySelectorAll('textarea').forEach((item) => {
+      textContentTest(item, value)
+    })
   });
   test('should render when set clearable', () => {
     const { container, rerender } = render(<EditableArea clearable />);
@@ -196,9 +200,9 @@ describe('EditableArea[Event]', () => {
   test('should render when set diabled', () => {
     const { container } = render(<EditableArea disabled />);
     const editableArea = container.querySelector(wrapper)!;
-    classContentTest(editableArea, wrapperDisabled);
+    classTest(editableArea, wrapperDisabled);
     fireEvent.click(container.querySelector(place)!);
-    classContentTest(document.querySelector(popup)!, popupShow, false);
+    expect(document.querySelector(popup)).not.toBeInTheDocument();
   });
   test('should render when set beforeChange', () => {
     const { container } = render(<EditableArea beforeChange={(v: string) => v + 1} />);

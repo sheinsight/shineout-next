@@ -140,7 +140,7 @@ describe('Tabs[Base]', () => {
     const headerWrapper = container.querySelector(tabsHeaderWrapperClassName)!;
     expect(headerWrapper).toBeTruthy();
     const header = headerWrapper.querySelector(tabsHeaderClassName)!;
-    attributesTest(header, 'data-soui-shape', 'card');
+    attributesTest(headerWrapper, 'data-soui-shape', 'card');
     styleTest(header.querySelector(tabsHeaderScrollClassName)!, 'transform: translateX(0px);');
     classLengthTest(tabs, tabsPanelWrapperClassName, 1);
   });
@@ -175,7 +175,7 @@ describe('Tabs[Shape]', () => {
   );
   const attTest = (container: HTMLElement, shape: string) => {
     const tabs = container.querySelector(tabsClassName)!;
-    const header = tabs.querySelector(tabsHeaderClassName)!;
+    const header = tabs.querySelector(tabsHeaderWrapperClassName)!;
     attributesTest(tabs, 'data-soui-shape', shape);
     attributesTest(header, 'data-soui-shape', shape);
   };
@@ -349,7 +349,11 @@ describe('Tabs[Children]', () => {
       </Tabs>,
     );
     classLengthTest(container, tabsTabClassName, 2);
-    container.querySelectorAll(tabsTabClassName).forEach((item) => {
+    container.querySelectorAll(tabsTabClassName).forEach((item, index) => {
+      if (index === 0) {
+        attributesTest(item, 'data-soui-state', 'active');
+        return
+      }
       attributesTest(item, 'data-soui-state', '');
     });
     classLengthTest(container, '.demo', 2);

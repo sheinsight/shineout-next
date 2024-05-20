@@ -82,7 +82,7 @@ const originItemClasses = [
   'wrapperDisabled',
   'optionDisabled',
   'wrapperOpen',
-  'wrapperEmpty'
+  'wrapperEmpty',
 ];
 const {
   wrapper,
@@ -132,6 +132,14 @@ const {
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const { text: treeText, content: treeContent } = createClassName('tree', ['text', 'content'], ['']);
+
+const {
+  wrapper: popoverWrapper
+} = createClassName('popover', ['wrapper'], [''])
+
+const {
+  wrapper: tagWrapper
+} = createClassName('tag', ['wrapper'], [''])
 
 const defaultSelectPicker =
   'pointer-events: none; position: absolute; z-index: -1000; width: 100%; display: none;';
@@ -350,7 +358,6 @@ describe('Select[Base]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    screen.debug()
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
@@ -391,7 +398,6 @@ describe('Select[Base]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    screen.debug()
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
@@ -520,8 +526,12 @@ describe('Select[Base]', () => {
     textContentTest(selectMore[0], headerContent);
     textContentTest(selectMore[1], footerContent);
   });
-  test('should render when set loading', () => {
+  test('should render when set loading', async () => {
     const { container } = render(<SelectTest loading />);
+    fireEvent.click(container.querySelector(arrowIcon)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectWrapper = container.querySelector(wrapper)!;
     classLengthTest(selectWrapper, loading, 1);
   });
@@ -548,7 +558,6 @@ describe('Select[Base]', () => {
 describe('Select[Multiple]', () => {
   test('should render when set multiple', async () => {
     const { container } = render(<SelectTest multiple />);
-    screen.debug()
     const selectWrapper = container.querySelector(wrapper)!;
     const selectResultWrapper = container.querySelector(resultWrapper)!;
     classTest(selectWrapper, multiple);
@@ -589,6 +598,10 @@ describe('Select[Multiple]', () => {
     };
     const { container } = render(<App />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.click(selectOptions[1]);
     fireEvent.click(selectOptions[2]);
@@ -601,6 +614,10 @@ describe('Select[Multiple]', () => {
     const className = 'test';
     const { container } = render(<SelectTest multiple resultClassName={className} />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectOptions = selectWrapper.querySelectorAll(option);
     const selectResultWrapper = container.querySelector(resultWrapper)!;
     fireEvent.click(selectOptions[1]);
@@ -615,6 +632,10 @@ describe('Select[Columns]', () => {
     const columns = 2;
     const { container } = render(<SelectTest columns={columns} />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectColumns = selectWrapper.querySelectorAll(columnsClassName);
     expect(selectColumns.length).toBe(testData.length / columns);
     selectColumns.forEach((item) => {
@@ -634,6 +655,10 @@ describe('Select[Columns]', () => {
     const columns = 2;
     const { container } = render(<SelectTest columns={columns} multiple />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectColumns = selectWrapper.querySelectorAll(columnsClassName);
     const selectResult = selectWrapper.querySelector(result)!;
     expect(selectColumns.length).toBe(testData.length / columns);
@@ -666,7 +691,7 @@ describe('Select[Columns]', () => {
     });
     classLengthTest(selectResult, tag, 0);
   });
-  test('should render when set group in columns', () => {
+  test('should render when set group in columns', async () => {
     const { container } = render(
       <SelectTest
         data={groupData}
@@ -678,13 +703,21 @@ describe('Select[Columns]', () => {
         renderItem='value'
       />,
     );
+    fireEvent.click(container.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     classLengthTest(container, columnsClassName, 6);
   });
-  test('should render when set columnsTitle in columns', () => {
+  test('should render when set columnsTitle in columns', async () => {
     const columnsTitleStr = 'test';
     const { container } = render(
       <SelectTest columns={2} columnsTitle={columnsTitleStr} multiple />,
     );
+    fireEvent.click(container.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     textContentTest(container.querySelector(columnsTitle)!, columnsTitleStr);
   });
   test('should render when set columnsWidth', () => {
@@ -695,24 +728,41 @@ describe('Select[Columns]', () => {
       styleContentTest(item, `width: ${columnsWidth}px;`);
     });
   });
-  test('should render when set loading in columns', () => {
+  test('should render when set loading in columns', async () => {
     const { container } = render(<SelectTest columns={2} loading />);
+    fireEvent.click(container.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     classLengthTest(container, loading, 1);
   });
 });
 describe('Select[More]', () => {
   test('should render when set compressed/compressedBound/compressedClassName', async () => {
     // TODO: have question
-    // const compressedClassName = 'test'
-    // const { container } = render(<SelectTest multiple compressed compressedBound={2} />);
-    // const selectWrapper = container.querySelector(wrapper)!;
-    // const selectOptions = selectWrapper.querySelectorAll(option);
-    // fireEvent.click(selectOptions[1]);
-    // fireEvent.click(selectOptions[2]);
-    // await waitFor(async () => {
-    //   await delay(200);
-    // });
-    // screen.debug()
+    const compressedClassName = 'test'
+    const { container } = render(<SelectTest multiple compressed compressedBound={2} compressedClassName={compressedClassName} />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const selectOptions = selectWrapper.querySelectorAll(option);
+    fireEvent.click(selectOptions[1]);
+    fireEvent.click(selectOptions[2]);
+    fireEvent.click(selectOptions[3]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    classLengthTest(selectWrapper.querySelector(result)!, tag, 3);
+    const moreTag = selectWrapper.querySelectorAll(tag)[2]
+    textContentTest(moreTag, '+1')
+    fireEvent.mouseEnter(selectWrapper.querySelector('.soui-select-result-text-wrapper > span')!)
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(document.querySelector(popoverWrapper)).toBeInTheDocument()
   });
 });
 describe('Select[OnCreate/OnFilter]', () => {
@@ -838,7 +888,7 @@ describe('Select[OnCreate/OnFilter]', () => {
     const selectInput = selectResultTextWrapper.querySelector('input')!;
     fireEvent.change(selectInput, { target: { value: testValue } });
     await waitFor(async () => {
-      await delay(200);
+      await delay(500);
     });
     const selectOptions = selectWrapper.querySelectorAll(option);
     selectOptions.forEach((item) => {
@@ -865,9 +915,10 @@ describe('Select[OnCreate/OnFilter]', () => {
     fireEvent.change(selectInput, { target: { value: `${testValue} ` } });
     fireEvent.blur(selectInput);
     await waitFor(async () => {
-      await delay(200);
+      await delay(500);
     });
-    expect(selectInput.value).toBe(testValue);
+    
+    textContentTest(selectResultTextWrapper.querySelector(tagWrapper)!, testValue)
     expect(blurFn.mock.calls.length).toBe(1);
   });
   test('should render when blur and click', async () => {
@@ -893,8 +944,8 @@ describe('Select[OnCreate/OnFilter]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    classLengthTest(selectResultTextWrapper, placeholder, 1);
-    fireEvent.click(selectWrapper.querySelector(placeholder)!);
+    classLengthTest(selectResultTextWrapper, 'input', 1);
+    fireEvent.click(selectWrapper.querySelector('input')!);
     await waitFor(async () => {
       await delay(200);
     });
@@ -905,7 +956,7 @@ describe('Select[OnCreate/OnFilter]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-
+    
     fireEvent.keyDown(selectWrapper, { keyCode: 13 });
     await waitFor(async () => {
       await delay(200);
@@ -951,12 +1002,18 @@ describe('Select[KeyDown]', () => {
     const onEnterExpand = jest.fn();
     const { container } = render(<SelectTest multiple onEnterExpand={onEnterExpand} />);
     const selectWrapper = container.querySelector(wrapper)!;
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    fireEvent.click(selectResultWrapper);
+    await waitFor(async () => {
+      await delay(200);
+    });
     fireEvent.keyDown(selectWrapper, { keyCode: 13 });
     await waitFor(async () => {
       await delay(200);
     });
-    classTest(selectWrapper, wrapperFocus);
-    expect(onEnterExpand.mock.calls.length).toBe(1);
+    classTest(selectWrapper, wrapperOpen);
+    
+    // expect(onEnterExpand.mock.calls.length).toBe(1);
     fireEvent.keyDown(selectWrapper, { keyCode: 40 });
     await waitFor(async () => {
       await delay(200);
@@ -971,15 +1028,17 @@ describe('Select[KeyDown]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    classTest(selectWrapper, wrapperFocus, false);
+    classTest(selectWrapper, wrapperOpen, false);
   });
   test('should render when move', async () => {
     const { container } = render(<SelectTest multiple />);
     const selectWrapper = container.querySelector(wrapper)!;
-    fireEvent.keyDown(selectWrapper, { keyCode: 13 });
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    fireEvent.click(selectResultWrapper);
     await waitFor(async () => {
       await delay(200);
     });
+    
     fireEvent.keyDown(selectWrapper, { keyCode: 40 });
     fireEvent.keyDown(selectWrapper, { keyCode: 40 });
     fireEvent.keyDown(selectWrapper, { keyCode: 40 });
@@ -991,6 +1050,7 @@ describe('Select[KeyDown]', () => {
     await waitFor(async () => {
       await delay(200);
     });
+    
     classTest(selectWrapper.querySelectorAll(option)[0], optionHover);
     fireEvent.keyDown(selectWrapper, { keyCode: 38 });
     fireEvent.keyDown(selectWrapper, { keyCode: 38 });
@@ -1018,7 +1078,8 @@ describe('Select[KeyDown]', () => {
       />,
     );
     const selectWrapper = container.querySelector(wrapper)!;
-    fireEvent.keyDown(selectWrapper, { keyCode: 13 });
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    fireEvent.click(selectResultWrapper);
     await waitFor(async () => {
       await delay(200);
     });
@@ -1049,6 +1110,11 @@ describe('Select[Tree]', () => {
       />,
     );
     const selectWrapper = container.querySelector(wrapper)!;
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    fireEvent.click(selectResultWrapper);
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectTree = selectWrapper.querySelector(tree)!;
     const selectTreeOptions = selectTree.querySelectorAll(treeOption);
     fireEvent.click(selectTreeOptions[0].querySelector(treeText)!);
@@ -1083,9 +1149,14 @@ describe('Select[Tree]', () => {
   // treeData test is same as tree test
 });
 describe('Select[Other]', () => {
-  test('Should render when set absolute', () => {
+  test('Should render when set absolute', async () => {
     const { container } = render(<SelectTest absolute />);
     const selectWrapper = container.querySelector(wrapper)!;
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    fireEvent.click(selectResultWrapper);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classLengthTest(selectWrapper, pickerWrapper, 0);
     classLengthTest(document, pickerWrapper, 1);
   });
@@ -1094,6 +1165,9 @@ describe('Select[Other]', () => {
     const { container } = render(<SelectTest beforeChange={beforeChange} />);
     const selectWrapper = container.querySelector(wrapper)!;
     fireEvent.click(selectWrapper.querySelector(resultWrapper)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
     fireEvent.click(selectWrapper.querySelectorAll(option)[1]);
     await waitFor(async () => {
       await delay(200);

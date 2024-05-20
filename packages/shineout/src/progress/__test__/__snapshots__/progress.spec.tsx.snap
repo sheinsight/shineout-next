@@ -103,7 +103,7 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
       >
         <div
           class="c-hbgug soui-progress-line-front"
-          style="width: 2.7999615687856085%;"
+          style="width: 9.05209812662865%;"
         />
       </div>
       <div
@@ -112,7 +112,7 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
         <div
           style="width: 50px;"
         >
-          3%
+          9%
         </div>
       </div>
     </div>
@@ -141,7 +141,7 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
           cy="32"
           fill="transparent"
           r="30"
-          stroke-dasharray="5.277803216898372,183.2177559984892"
+          stroke-dasharray="17.062802984514295,171.43275623087328"
           stroke-linecap="round"
           stroke-width="4"
         />
@@ -149,7 +149,7 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
       <div
         class="cel1uvw soui-progress-content"
       >
-        3%
+        9%
       </div>
     </div>
   </div>
@@ -691,17 +691,17 @@ exports[`Progress[Base] should render correctly about linepop 1`] = `
     >
       <div
         class="c-hbgug soui-progress-line-front"
-        style="width: 11.944916277371938%;"
+        style="width: 1.252901698769473%;"
       />
     </div>
     <div
       class="c-aqpmjx soui-progress-line-pop-wrapper"
-      style="left: 11.944916277371938%; transform: translateX(-50%) rotate(2.9862290693429845deg);"
+      style="left: 1.252901698769473%; transform: translateX(-50%) rotate(0.31322542469236825deg);"
     >
       <span
         class="c-n63s7j soui-progress-line-pop-value"
       >
-        11%
+        1%
       </span>
       <span
         class="c-nhchkn soui-progress-line-pop-arrow"

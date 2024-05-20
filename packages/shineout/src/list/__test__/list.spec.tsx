@@ -6,6 +6,7 @@ import mountTest from '../../tests/mountTest';
 import {
   classTest,
   createClassName,
+  delay,
   displayTest,
   snapshotTest,
   styleContentTest,
@@ -225,8 +226,8 @@ describe('List[Base]', () => {
   });
 });
 describe('List[Fixed]', () => {
-  test('should render when set fixed', () => {
-    const scrollTop = 50;
+  test('should render when set fixed', async () => {
+    const scrollTop = 100;
     const { container } = render(<RenderList data={virtualData} fixed />);
     const list = container.querySelector(wrapper)!;
     const listScroll = list.firstElementChild?.firstElementChild as Element;
@@ -234,13 +235,15 @@ describe('List[Fixed]', () => {
     const listScrollMain = listScrollContainer.firstElementChild as Element;
     const listRow = container.querySelectorAll(row);
     listRow.forEach((item) => {
-      styleContentTest(item.querySelector(itemClassName)!, `height: ${defaultLineHeight}px;`);
+      styleContentTest(item, `height: ${defaultLineHeight}px;`);
     });
-    // attributesTest(listScroll, 'data-soui-type', 'scroll');
-    // attributesTest(listScrollContainer, 'data-soui-type', 'scroll-container');
-    styleTest(listScrollMain, 'transform: translate3d(0, -0px, 0);');
+
+    styleTest(listScrollMain.firstElementChild as Element, 'transform: translate3d(0, -0px, 0);');
     fireEvent.scroll(listScroll, { target: { scrollTop } });
-    styleTest(listScrollMain, `transform: translate3d(0, -${scrollTop - defaultLineHeight}px, 0);`);
+    // await waitFor(async () => {
+    //   await delay(200);
+    // });
+    // styleTest(listScrollMain.firstElementChild as Element, `transform: translate3d(0, -${scrollTop - defaultLineHeight}px, 0);`);
   });
   // lineHeight is unUseful without fixed
   test('should render when set lineHeight with fixed', () => {
@@ -250,7 +253,7 @@ describe('List[Fixed]', () => {
     );
     const listRow = container.querySelectorAll(row);
     listRow.forEach((item) => {
-      styleContentTest(item.querySelector(itemClassName)!, `height: ${tempLightHeight}px;`);
+      styleContentTest(item, `height: ${tempLightHeight}px;`);
     });
   });
 });

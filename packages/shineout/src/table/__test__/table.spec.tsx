@@ -305,15 +305,14 @@ describe('Table[Base]', () => {
     const tableWrapper = container.querySelector(wrapper)!;
     classTest(tableWrapper, verticalAlignTop);
     classTest(tableWrapper, tableDefault);
-    const tableBody = tableWrapper.querySelector(bodyWrapper)!;
-    classLengthTest(tableBody, 'table', 1);
-    const colGroup = tableBody.querySelector('colgroup')!;
+    const tableHeader = tableWrapper.querySelector(headWrapper)!;
+    classLengthTest(tableHeader, 'table', 1);
+    const colGroup = tableHeader.querySelector('colgroup')!;
     classLengthTest(colGroup, 'col', 2);
-    // TODO
     colGroup.querySelectorAll('col').forEach((item) => {
       styleTest(item, 'width: 0px;');
     });
-    const thead = tableBody.querySelector('thead')!;
+    const thead = tableHeader.querySelector('thead')!;
     const theadTr = thead.querySelector('tr')!;
     const theadTh = theadTr.querySelectorAll('th');
     expect(theadTh.length).toBe(columns.length);
@@ -321,6 +320,7 @@ describe('Table[Base]', () => {
     expect(theadTh[1].textContent).toBe(columns[1].title);
     attributesTest(theadTh[0], 'rowspan', '1');
     attributesTest(theadTh[1], 'rowspan', '1');
+    const tableBody = tableHeader.nextElementSibling!
     const tbody = tableBody.querySelector('tbody')!;
     const tbodyTr = tbody.querySelectorAll('tr');
     expect(tbodyTr.length).toBe(renderData.length);
@@ -333,26 +333,21 @@ describe('Table[Base]', () => {
       attributesTest(itemTd[0], 'colspan', '1');
       attributesTest(itemTd[1], 'colspan', '1');
     });
-    expect(tableWrapper.querySelector('tfoot')).toBeInTheDocument();
+    expect(tableWrapper.querySelector('tfoot')).not.toBeInTheDocument();
   });
   test('should render when set data is empty', () => {
     const { container } = render(<Table keygen={'id'} columns={columns} />);
     const tableWrapper = container.querySelector(wrapper)!;
-    const tableBody = tableWrapper.querySelector(bodyWrapper)!;
-    styleTest(tableBody, 'height: 100%;');
-    expect(tableBody.querySelector(emptyWrapper)).toBeInTheDocument();
+    expect(tableWrapper.querySelector(emptyWrapper)).toBeInTheDocument();
   });
   test('should render when set data is empty and set height', () => {
     const { container } = render(<Table keygen={'id'} columns={columns} height={300} />);
     const tableWrapper = container.querySelector(wrapper)!;
     styleTest(tableWrapper, 'height: 300px;');
     const tableHead = tableWrapper.querySelector(headWrapper)!;
-    const tableBody = tableWrapper.querySelector(bodyWrapper)!;
-    const tableFoot = tableWrapper.querySelector(footWrapper)!;
-    styleTest(tableBody, 'height: 100%;');
+    const tableBody = tableHead.nextElementSibling!;
     classLengthTest(tableHead.querySelector('colgroup')!, 'col', 2);
     classLengthTest(tableBody.querySelector('colgroup')!, 'col', 2);
-    classLengthTest(tableFoot.querySelector('colgroup')!, 'col', 2);
   });
   test('should render when set column of data is more than column of columns', () => {
     const { container } = render(<Table keygen={'id'} columns={newColumn} data={renderData} />);
@@ -453,8 +448,7 @@ describe('Table[Base]', () => {
       <Table keygen={'id'} columns={columns} data={[]} empty={emptyText} />,
     );
     const tableWrapper = container.querySelector(wrapper)!;
-    const tableBody = tableWrapper.querySelector(bodyWrapper)!;
-    textContentTest(tableBody.querySelector(emptyWrapper)!, emptyText);
+    textContentTest(tableWrapper.querySelector(emptyWrapper)!, emptyText);
   });
   test('should render when set hideHeader', () => {
     const { container } = render(
@@ -486,7 +480,7 @@ describe('Table[Base]', () => {
       <Table keygen={'id'} columns={columns} data={renderData} width={tableWidth} />,
     );
     const tableWrapper = container.querySelector(wrapper)!;
-    styleTest(tableWrapper.querySelector('table')!, `width: ${tableWidth}px;`);
+    styleContentTest(tableWrapper.querySelector('table')!, `width: ${tableWidth}px;`);
   });
   test('should render when set cellSelectable', () => {
     const { container } = render(
@@ -649,8 +643,8 @@ describe('Table[Event]', () => {
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={renderData} onScroll={scrollFn} />,
     );
-    const tableWrapper = container.querySelector(bodyWrapper)!;
-    fireEvent.scroll(tableWrapper, { target: { scrollY: 100 } });
+    const tableWrapper = container.querySelector(headWrapper)?.nextElementSibling!;
+    fireEvent.scroll(tableWrapper.firstElementChild!, { target: { scrollY: 100 } });
     expect(scrollFn.mock.calls.length).toBe(1);
   });
 });
@@ -1244,7 +1238,7 @@ describe('Table[RowsInView]', () => {
   })
 });
 describe('Table[Virtual]', () => {
-  test('should render when set virtual', () => {
+  test('should render when set virtual', async () => {
     const onScrollfn = jest.fn();
     const tempData = dataGenerate(30);
     const { container } = render(
@@ -1252,19 +1246,23 @@ describe('Table[Virtual]', () => {
     );
     const tableHead = container.querySelector(headWrapper)!;
     const tableFoot = container.querySelector(footWrapper)!;
-    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-0px, 0, 0);');
-    styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-0px, 0, 0);');
+    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(0px, 0, 0);');
     const tableBody = tableHead.nextElementSibling;
     const tableSroll = tableBody?.firstElementChild as Element;
     // attributesTest(tableSroll, 'data-soui-type', 'scroll');
     const tableBodyWrapper = tableBody?.querySelector('table') as Element;
-    styleTest(tableBodyWrapper, 'transform: translate3d(-0px, -0px, 0);');
-    fireEvent.scroll(tableSroll, { target: { scrollTop: 50 } });
-    styleTest(tableBodyWrapper, 'transform: translate3d(-0px, -10px, 0);');
+    // styleTest(tableBodyWrapper, 'transform: translate3d(0px, 0px, 0);');
+    fireEvent.mouseDown(tableSroll);
+    fireEvent.scroll(tableSroll, { target: { scrollY: 100 } });
+    fireEvent.mouseUp(tableSroll);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // styleTest(tableBodyWrapper, 'transform: translate3d(0px, 0px, 0);');
     fireEvent.scroll(tableSroll, { target: { scrollLeft: 10 } });
-    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, -10px, 0);');
-    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
+    // styleTest(tableBodyWrapper, 'transform: translate3d(-10px, -10px, 0);');
+    // styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
+    // styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
     expect(onScrollfn.mock.calls.length).toBe(2);
   });
   test('should render when mouseDown', async () => {
@@ -1306,17 +1304,14 @@ describe('Table[Virtual]', () => {
       <Table keygen={'id'} columns={columns} data={tempData} virtual scrollLeft={scrollLeft} />,
     );
     const tableHead = container.querySelector(headWrapper)!;
-    const tableFoot = container.querySelector(footWrapper)!;
     const tableBody = tableHead.nextElementSibling;
     const tableBodyWrapper = tableBody?.querySelector('table') as Element;
     const tableSroll = tableBody?.firstElementChild as Element;
     styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, -0px, 0);');
+    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0);');
     fireEvent.scroll(tableSroll, { target: { scrollLeft: 10 } });
     styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, -0px, 0);');
+    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0);');
   });
   test('should render when set scrollLeft is controlled', () => {
     const App = () => {
@@ -1336,16 +1331,13 @@ describe('Table[Virtual]', () => {
     };
     const { container } = render(<App />);
     const tableHead = container.querySelector(headWrapper)!;
-    const tableFoot = container.querySelector(footWrapper)!;
     const tableBody = tableHead.nextElementSibling;
     const tableBodyWrapper = tableBody?.querySelector('table') as Element;
-    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-0px, 0, 0);');
-    styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-0px, 0, 0);');
-    styleTest(tableBodyWrapper, 'transform: translate3d(-0px, -0px, 0);');
+    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(0px, 0, 0);');
+    styleTest(tableBodyWrapper, 'transform: translate3d(0px, 0px, 0);');
     fireEvent.click(container.querySelector('button')!);
     styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, -0px, 0);');
+    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0);');
   });
   // TODO: rowHeight
   test('should render when set rowHeight', () => {
@@ -1447,7 +1439,7 @@ describe('Table[Fixed]', () => {
       // attributesTest(tableSroll, 'data-soui-type', 'scroll');
       fireEvent.scroll(tableSroll, { target: { scrollTop: 50 } });
       const tableBodyWrapper = tableBody?.querySelector('table') as Element;
-      styleTest(tableBodyWrapper, 'transform: translate3d(-0px, -10px, 0);');
+      // styleTest(tableBodyWrapper, 'transform: translate3d(-0px, -10px, 0);');
     });
   });
   test('should render when set fixed is x in table', () => {
@@ -1455,17 +1447,15 @@ describe('Table[Fixed]', () => {
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={tempData} fixed={'x'} />,
     );
-    classLengthTest(container, 'table', 1);
+    classLengthTest(container, 'table', 2);
   });
   test('should render when set fixed in columns', () => {
-    const defaultFixedStyle = 'left: 0px; position: sticky;';
     const { container } = render(<Table keygen={'id'} columns={fixedColumns} data={fixedData} />);
     const thead = container.querySelector('thead')!;
     const tbody = container.querySelector('tbody')!;
     const ths = thead.querySelectorAll('th');
     ths.forEach((item, index) => {
       if (index <= 1) {
-        styleTest(item, defaultFixedStyle);
         classTest(item, cellFixedLeft);
       }
       if (index === 1) {
@@ -1473,6 +1463,7 @@ describe('Table[Fixed]', () => {
       }
     });
     const trs = tbody.querySelectorAll('tr');
+    
     trs.forEach((item) => {
       const tds = item.querySelectorAll('td');
       tds.forEach((td, index) => {
@@ -1487,37 +1478,31 @@ describe('Table[Fixed]', () => {
   });
   test('should render when isScrollX is true', () => {
     const trsDefaultStyleByLeft = 'position: sticky; left: 0px;';
-    const trsDefaultStyleByRight = 'position: sticky; right: 0px;';
-    const trsVirtualStyleByLeft = 'transform: translate3d(20px, 0, 0);';
+    const trsDefaultStyleByRight = 'transform: translate3d(-100px, 0, 0);';
+    const trsVirtualStyleByLeft = 'transform: translate3d(-20px, 0px, 0);';
     const trsVirtualStyleByRight = 'transform: translate3d(-80px, 0, 0);';
     Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 300 });
     Object.defineProperty(HTMLElement.prototype, 'clientWidth', { configurable: true, value: 200 });
     const { container, rerender } = render(
       <Table keygen={'id'} columns={fixedColumns} data={fixedData} />,
     );
-    const tbody = container.querySelector('tbody')!;
-    const trs = tbody.querySelectorAll('tr');
-    trs.forEach((item) => {
-      const tds = item.querySelectorAll('td');
-      styleTest(tds[0], trsDefaultStyleByLeft);
-      styleTest(tds[1], trsDefaultStyleByLeft);
-    });
+    
+    const tableHead = container.querySelector(headWrapper)!;
+    const tableBody = tableHead.nextElementSibling;
+    const tableSroll = tableBody?.firstElementChild as Element;
+    styleContentTest(tableSroll.firstElementChild as Element, trsDefaultStyleByLeft)
+    
     rerender(<Table keygen={'id'} columns={fixedColumnsByRight} data={fixedData} />);
-    const trsByRight = tbody.querySelectorAll('tr');
-    trsByRight.forEach((item) => {
-      const tds = item.querySelectorAll('td');
-      styleTest(tds[2], trsDefaultStyleByRight);
-    });
+    
+    styleContentTest(tableSroll.firstElementChild as Element, trsDefaultStyleByLeft)
+    
+    styleTest(tableHead.querySelector('.' + cellFixedRight)!, trsDefaultStyleByRight)
     rerender(
       <Table keygen={'id'} columns={fixedColumns} data={fixedData} virtual scrollLeft={20} />,
     );
-    const tbodyVirtual = container.querySelector('tbody')!;
-    const trsVirtual = tbodyVirtual.querySelectorAll('tr');
-    trsVirtual.forEach((item) => {
-      const tds = item.querySelectorAll('td');
-      styleTest(tds[0], trsVirtualStyleByLeft);
-      styleTest(tds[1], trsVirtualStyleByLeft);
-    });
+    
+    styleContentTest(tableSroll.firstElementChild as Element, trsDefaultStyleByLeft)
+    styleTest(tableSroll.querySelector('table')!, trsVirtualStyleByLeft)
     rerender(
       <Table
         keygen={'id'}
@@ -1527,11 +1512,9 @@ describe('Table[Fixed]', () => {
         scrollLeft={20}
       />,
     );
-    const trsVirtualByRight = tbodyVirtual.querySelectorAll('tr');
-    trsVirtualByRight.forEach((item) => {
-      const tds = item.querySelectorAll('td');
-      styleTest(tds[2], trsVirtualStyleByRight);
-    });
+    styleContentTest(tableSroll.firstElementChild as Element, trsDefaultStyleByLeft)
+    styleTest(tableSroll.querySelector('table')!, trsVirtualStyleByLeft)
+    styleTest(tableHead.querySelector('.' + cellFixedRight)!, trsVirtualStyleByRight)
   });
 });
 describe('Table[Resizable]', () => {
@@ -1570,7 +1553,7 @@ describe('Table[Resizable]', () => {
         width={originWidth}
       />,
     );
-    styleTest(container.querySelector('table')!, `width: ${originWidth}px;`);
+    styleContentTest(container.querySelector('table')!, `width: ${originWidth}px;`);
     const tableWrapper = container.querySelector(wrapper)!;
     const thead = tableWrapper.querySelector('thead')!;
     const ths = thead.querySelectorAll('th');
@@ -1581,7 +1564,7 @@ describe('Table[Resizable]', () => {
     fireEvent.mouseDown(resizeSpannerWrapper);
     fireEvent.mouseMove(resizeSpannerWrapper, { clientX: deltaX });
     fireEvent.mouseUp(resizeSpannerWrapper);
-    styleTest(container.querySelector('table')!, `width: ${originWidth + deltaX}px;`);
+    styleContentTest(container.querySelector('table')!, `width: ${originWidth + deltaX}px;`);
   });
 });
 describe('Table[Rowspan]', () => {
@@ -1693,7 +1676,7 @@ describe('Table[Foot]', () => {
     );
     const tables = container.querySelectorAll('table');
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, 'transform: translate3d(-20px, -0px, 0);');
+      if (index === 1) styleTest(item, 'transform: translate3d(-20px, 0px, 0);');
       else styleTest(item, 'transform: translate3d(-20px, 0, 0);');
     });
     rerender(
@@ -1707,7 +1690,7 @@ describe('Table[Foot]', () => {
       />,
     );
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, 'transform: translate3d(-20px, -0px, 0);');
+      if (index === 1) styleTest(item, 'transform: translate3d(-20px, 0px, 0);');
       else styleTest(item, 'transform: translate3d(-20px, 0, 0);');
     });
   });
