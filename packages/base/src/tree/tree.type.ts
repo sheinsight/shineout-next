@@ -71,7 +71,7 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @en The class of leaf, the params of function is data
    * @cn 叶子节点的 class, 函数的参数为该条叶子节点数据
    */
-  leafClass?: string;
+  leafClass?: string | ((data: DataItem) => string);
   /**
    * @en Custom expand/collapse buttons
    * @cn 自定义展开/收起按钮

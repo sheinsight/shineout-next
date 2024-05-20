@@ -1,16 +1,25 @@
+## 3.1.12
+2024-05-16
+
+### 🐞 BugFix
+
+- 修复 `Form` 默认值传入 proxy 对象会导致修改表单报错  ([#456](https://github.com/sheinsight/shineout-next/pull/456))
+
+## 3.1.10
+2024-05-15
+
+### 🐞 BugFix
+
+
+- 修复 `FormDatum.set` 不支持 `set(name, value)` 用法 ([#444](https://github.com/sheinsight/shineout-next/pull/444))
+
+
 ## 3.1.8
 2024-05-13
 
 ### 🐞 BugFix
 
 - 修复 `Form` 属性 `onChange` 返回的 `value` 属性变成只读的问题 ([#434](https://github.com/sheinsight/shineout-next/pull/434))
-
-## 3.1.7
-2024-05-11
-
-### 🐞 BugFix
-
-- 修复 `Form` 属性 `value` 传入 proxy 对象会导致修改表单报错([#432](https://github.com/sheinsight/shineout-next/pull/432))
 
 ## 3.1.6
 2024-05-11

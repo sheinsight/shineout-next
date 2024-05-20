@@ -204,7 +204,8 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   });
 
   const checkFloat = usePersistFn(() => {
-    const scrollEl = scrollRef.current!;
+    const scrollEl = scrollRef?.current;
+    if (!scrollEl) return;
     const max = scrollEl.scrollWidth - scrollEl.clientWidth;
     const min = 0;
     let left = scrollEl.scrollLeft;

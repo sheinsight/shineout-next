@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -331,10 +331,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   }, [focus]);
 
   useEffect(() => {
-    handleResetMore();
+    setTimeout(handleResetMore)
   }, [valueProp, data]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (
       shouldResetMore &&
       more === -1 &&

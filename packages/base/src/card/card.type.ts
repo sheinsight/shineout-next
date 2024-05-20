@@ -14,6 +14,7 @@ export interface CardClasses {
   accordion: string;
   header: string;
   headerContent: string;
+  simpleHeader: string;
   headerExtra: string;
   indicator: string;
   indicatorIcon: string;

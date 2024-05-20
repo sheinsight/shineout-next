@@ -1,3 +1,18 @@
+## 3.1.13
+2024-05-20
+
+### 🐞 BugFix
+
+- 修复 `Select` 首次渲染 `compressed` 属性无效的问题 ([#458](https://github.com/sheinsight/shineout-next/pull/458))
+
+
+## 3.1.10
+2024-05-15
+
+### 🐞 BugFix
+
+- 修复 `Select` 选项文字过长没有截断并且出现滚动条的问题 ([#445](https://github.com/sheinsight/shineout-next/pull/445))
+
 ## 3.0.11
 2024-05-08
 
@@ -29,7 +44,6 @@
 ### 🐞 BugFix
 
 - 修复 `Select` noCache 属性无效的问题 ([#398](https://github.com/sheinsight/shineout-next/pull/398))
-- 修复 `Select` 首次渲染 `compressed` 属性无效的问题 ([#399](https://github.com/sheinsight/shineout-next/pull/399))
 
 ## 3.0.5
 2024-04-24
