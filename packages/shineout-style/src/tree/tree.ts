@@ -132,10 +132,13 @@ const treeStyle: JsStyles<TreeClassType> = {
         color: Token.treeContentActiveFontColor,
       },
     },
-    '&[data-disabled="true"]': {
-      cursor: 'not-allowed',
-    },
-    '&:hover:not([data-active="true"]):not([data-disabled="true"])': {
+    // '&[data-disabled="true"]': {
+    //   cursor: 'not-allowed',
+    // },
+    // '&:hover:not([data-active="true"]):not([data-disabled="true"])': {
+    //   background: Token.treeContentHoverBackgroundColor,
+    // },
+    '&:hover:not([data-active="true"])': {
       background: Token.treeContentHoverBackgroundColor,
     },
   },
@@ -152,9 +155,9 @@ const treeStyle: JsStyles<TreeClassType> = {
     paddingTop: Token.treeTextPaddingY,
     paddingBottom: Token.treeTextPaddingY,
   },
-  textDisabled: {
-    color: Token.treeItemDisabledFontColor,
-  },
+  // textDisabled: {
+  //   color: Token.treeItemDisabledFontColor,
+  // },
   list: {},
   node: {
     position: 'relative',

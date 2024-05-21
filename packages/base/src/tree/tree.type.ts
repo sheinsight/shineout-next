@@ -27,7 +27,7 @@ export type TreeClasses = {
   children: string;
   leaf: string;
   placement: string;
-  textDisabled: string;
+  // textDisabled: string;
 };
 export type JsstyleType = {
   tree: () => TreeClasses;
