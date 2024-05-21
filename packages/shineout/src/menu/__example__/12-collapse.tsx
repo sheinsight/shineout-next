@@ -121,31 +121,33 @@ const App: React.FC = () => {
       <Button style={{ marginBottom: 12 }} onClick={() => setCollapse(!collapse)}>
         {collapse ? 'open' : 'close'}
       </Button>
-      <Menu
-        style={{ borderRight: '1px solid #ebebeb', width: 200 }}
-        keygen='id'
-        collapse={collapse}
-        data={data}
-        disabled={(d) => d.id === '1'}
-        inlineIndent={24}
-        active={checkActive}
-        onClick={handleClick}
-        renderItem={renderItem}
-        renderCollapse={renderCollapse}
-      />
-      <Menu
-        style={{ borderRight: '1px solid #ebebeb', width: 200 }}
-        keygen='id'
-        theme='dark'
-        collapse={collapse}
-        data={data}
-        disabled={(d) => d.id === '1'}
-        inlineIndent={24}
-        active={checkActive}
-        onClick={handleClick}
-        renderItem={renderItem}
-        renderCollapse={renderCollapse}
-      />
+      <div style={{ display: 'flex', gap: 24 }}>
+        <Menu
+          style={{ borderRight: '1px solid #ebebeb', width: 200, zIndex: '2000' }}
+          keygen='id'
+          collapse={collapse}
+          data={data}
+          disabled={(d) => d.id === '1'}
+          inlineIndent={24}
+          active={checkActive}
+          onClick={handleClick}
+          renderItem={renderItem}
+          renderCollapse={renderCollapse}
+        />
+        <Menu
+          style={{ borderRight: '1px solid #ebebeb', width: 200 }}
+          keygen='id'
+          theme='dark'
+          collapse={collapse}
+          data={data}
+          disabled={(d) => d.id === '1'}
+          inlineIndent={24}
+          active={checkActive}
+          onClick={handleClick}
+          renderItem={renderItem}
+          renderCollapse={renderCollapse}
+        />
+      </div>
     </div>
   );
 };

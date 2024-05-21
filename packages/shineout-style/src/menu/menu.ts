@@ -5,6 +5,7 @@ const menuIndex = 1000;
 
 export type MenuClassType = keyof MenuClasses;
 
+const animationTime = '300ms';
 const arrow = {
   content: '""',
   position: 'absolute',
@@ -16,9 +17,10 @@ const arrow = {
 };
 
 const menuStyle: JsStyles<MenuClassType> = {
+  wrapperAnimation: {},
   wrapper: {
     height: '100%',
-    transition: 'width 0.3s',
+    transition: `width ${animationTime}`,
     backgroundColor: token.menuItemBackgroundColor,
   },
   wrapperLight: {},
@@ -28,8 +30,8 @@ const menuStyle: JsStyles<MenuClassType> = {
   collapse: {
     width: token.menuCollapseWidth,
     boxSizing: 'content-box',
-    '& $root': {
-      width: token.menuCollapseWidth,
+    '&:not($isTransition) $root': {
+      width: `${token.menuCollapseWidth}`,
     },
   },
   scrollbox: {
@@ -147,12 +149,15 @@ const menuStyle: JsStyles<MenuClassType> = {
       position: 'relative',
     },
   },
+  isTransition: {
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+  },
   collapseItem: {
-    // width: 40,
+    width: token.menuCollapseWidth,
     cursor: 'pointer',
     opacity: 1,
     height: token.menuCollapseWidth,
-    transition: 'all ease .3s',
     color: 'inherit',
     position: 'relative',
 
@@ -188,6 +193,9 @@ const menuStyle: JsStyles<MenuClassType> = {
       '$wrapperLight &': {
         color: token.menuCollapseItemActiveFontColor,
         background: token.menuCollapseItemActiveBackgroundColor,
+        '$isTransition&': {
+          background: token.menuItemActiveBackgroundColor,
+        },
       },
       '$wrapperDark &': {
         color: token.menuDarkCollapseItemActiveFontColor,
@@ -203,21 +211,22 @@ const menuStyle: JsStyles<MenuClassType> = {
         top: 0,
         bottom: 0,
         width: 3,
-        transition: 'all ease 0.3s',
+        transition: `all ease ${animationTime}`,
         backgroundColor: token.menuCollapseItemActiveFontColor,
       },
     },
   },
   collapseItemInPath: {},
   collapseItemHide: {
-    opacity: 0,
     width: 0,
+    transition: `all ${animationTime} ease , width  0s ease ${animationTime}`,
     // height: 0,
     // zIndex: -1,
     position: 'absolute',
     top: 0,
-    color: 'transparent',
-    background: 'transparent',
+    opacity: 0,
+    // color: 'transparent',
+    // background: 'transparent',
     '&$collapseItemInPath': {
       // background: token.menuItemBackgroundColor,
       '&::after': {
@@ -239,8 +248,7 @@ const menuStyle: JsStyles<MenuClassType> = {
     alignItems: 'center',
     cursor: 'pointer',
     position: 'relative',
-    // opacity: 1,
-    transition: 'all ease 0.3s',
+    transition: `visibility ease ${animationTime}`,
     '$wrapperLight &': {
       color: token.menuItemFontColor,
       backgroundColor: token.menuItemBackgroundColor,
@@ -353,6 +361,7 @@ const menuStyle: JsStyles<MenuClassType> = {
   },
   itemContentHide: {
     position: 'absolute',
+    width: '100%',
     overflow: 'hidden',
     pointerEvents: 'none',
     // opacity: 0,
@@ -370,6 +379,9 @@ const menuStyle: JsStyles<MenuClassType> = {
   title: {
     '&:hover': {
       color: 'inherit',
+    },
+    '$isTransition &': {
+      overflow: 'hidden',
     },
     flex: 1,
     textDecoration: 'none',
@@ -401,6 +413,9 @@ const menuStyle: JsStyles<MenuClassType> = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    '$isTransition$collapse &': {
+      width: 0,
+    },
     '$wrapperLight &': {
       color: token.menuIconColor,
     },
@@ -418,9 +433,7 @@ const menuStyle: JsStyles<MenuClassType> = {
       '&[dir=rtl]': { transform: 'rotate(90deg)' },
     },
   },
-  icon: {
-    transition: 'all ease 0.3s',
-  },
+  icon: {},
   expandHover: {
     '&:hover': {
       backgroundColor: token.menuExpandHoverBackgroundColor,

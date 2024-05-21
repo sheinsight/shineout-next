@@ -13,14 +13,18 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     data = emptyArray,
     mode: modeProps = 'inline',
     theme = 'light',
-    collapse,
+    animation = true,
   } = props;
-  const mode = collapse ? 'vertical' : modeProps;
+
+  const [collapse, setCollapse] = useState(props.collapse);
+  const [isTransition, setIsTransition] = useState(false);
+  const mode = collapse ? 'vertical-auto' : modeProps;
   const classes = props.jssStyle?.menu?.();
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
   const isHorizontal = mode === 'horizontal';
   const [hasOpen, setHasOpen] = useState(false);
   const [collapseOpenKeys, setCollapseOpenKeys] = useState([]);
+
   const { openKeys, onOpenChange, bindUpdate, unbindUpdate, changeActiveId } = useMenu({
     data,
     active: props.active,
@@ -28,6 +32,16 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     openKeys: props.collapse ? collapseOpenKeys : props.openKeys,
     onOpenChange: props.collapse ? setCollapseOpenKeys : (props.onOpenChange as any),
   });
+
+  useEffect(() => {
+    if (props.collapse === collapse) return;
+    setCollapse(!!props.collapse);
+    if (animation) {
+      setIsTransition(true);
+    }
+  }, [props.collapse]);
+
+  useEffect(() => {}, []);
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -63,10 +77,17 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         hasOpen && classes?.wrapperHasOpen,
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
         collapse && classes?.collapse,
+        isTransition && classes?.isTransition,
+        animation && classes?.wrapperAnimation,
       )}
       style={{
         height: props.height,
         ...style,
+      }}
+      onTransitionEnd={(e) => {
+        if (e.target === e.currentTarget) {
+          setIsTransition(false);
+        }
       }}
     >
       <div className={classes?.scrollbox} ref={scrollRef}>

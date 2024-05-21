@@ -12,6 +12,8 @@ export interface MenuClasses {
   wrapperHasOpen: string;
   wrapperLight: string;
   wrapperDark: string;
+  wrapperAnimation: string;
+  isTransition: string;
   collapse: string;
   root: string;
   children: string;
@@ -183,6 +185,13 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @default false
    */
   collapse?: boolean;
+
+  /**
+   * @en Whether to enable animation
+   * @cn 是否开启动画
+   * @default true
+   */
+  animation?: boolean;
 
   /**
    *

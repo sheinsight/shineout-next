@@ -1,4 +1,4 @@
-import { cloneElement, useEffect, useRef } from 'react';
+import { cloneElement, useRef } from 'react';
 import classNames from 'classnames';
 import { useMenuItem, util } from '@sheinx/hooks';
 import Icons from '../icons';
@@ -11,7 +11,6 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
   const itemContentRef = useRef<HTMLDivElement>(null);
-  const timer = useRef<any>(null);
   const { inlineIndent = 24, frontCaretType = 'solid', collapse } = props;
   const config = useConfig();
 
@@ -156,24 +155,24 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     );
   };
 
-  useEffect(() => {
-    if (!itemContentRef.current) return;
-    if (collapse === undefined) return;
-    if (timer.current) clearTimeout(timer.current);
+  // useEffect(() => {
+  //   if (!itemContentRef.current) return;
+  //   if (collapse === undefined) return;
+  //   if (timer.current) clearTimeout(timer.current);
 
-    itemContentRef.current.style.overflow = 'hidden';
-    itemContentRef.current.style.whiteSpace = 'nowrap';
+  //   itemContentRef.current.style.overflow = 'hidden';
+  //   itemContentRef.current.style.whiteSpace = 'nowrap';
 
-    timer.current = setTimeout(() => {
-      if (!itemContentRef.current) return;
-      itemContentRef.current.style.overflow = '';
-      itemContentRef.current.style.whiteSpace = '';
-    }, 300);
+  //   timer.current = setTimeout(() => {
+  //     if (!itemContentRef.current) return;
+  //     itemContentRef.current.style.overflow = '';
+  //     itemContentRef.current.style.whiteSpace = '';
+  //   }, 3000);
 
-    return () => {
-      if (timer.current) clearTimeout(timer.current);
-    };
-  }, [collapse]);
+  //   return () => {
+  //     if (timer.current) clearTimeout(timer.current);
+  //   };
+  // }, [collapse]);
 
   return (
     <li
