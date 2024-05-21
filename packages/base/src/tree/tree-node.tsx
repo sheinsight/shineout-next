@@ -249,6 +249,10 @@ const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataI
       onChange,
       onToggle,
       onNodeClick,
+      onDragOver,
+      onDragLeave,
+      onDragStart,
+      onDragEnd,
 
       bindNode,
       childrenClassName: childrenClass(data),
