@@ -198,6 +198,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
       {renderIndicator()}
       <div
         dir={config.direction}
+        data-expanded={expanded}
         ref={bindContent}
         className={contentClass}
         {...contentDataProps()}
