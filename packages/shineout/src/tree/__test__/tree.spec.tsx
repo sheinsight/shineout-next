@@ -19,7 +19,7 @@ import {
 import TreeBase from '../__example__/01-base';
 import TreeSize from '../__example__/02-size';
 import TreeLine from '../__example__/03-line';
-import TreeExpand from '../__example__/04-expand';
+import TreeExpand from '../__example__/04-01-expand';
 import TreeDisabled from '../__example__/05-disabled';
 import TreeOnChange from '../__example__/06-onchange';
 import TreeLoader from '../__example__/07-loader';
@@ -698,22 +698,30 @@ describe('Tree[Drag]', () => {
       />,
     );
     const treeWrapper = container.querySelector(treeClassName)!;
+    
     const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
-    const firstNode = treeRootNodeAll[1];
+    const firstNode = treeRootNodeAll[2];
+    const dataTransfer = new MockDataTransfer();
     fireEvent.dragStart(firstNode, {
-      dataTransfer: new MockDataTransfer(),
+      dataTransfer,
     });
-    fireEvent.dragOver(firstNode.querySelector(contentClassName)!, {
-      clientY: 20,
-      target: {
-        getBoundingClientRect: () => ({
-          top: 50,
-          bottom: 70,
-        }),
-      },
-    });
-    fireEvent.dragEnd(firstNode);
-    fireEvent.dragLeave(firstNode);
+    // fireEvent.dragOver(firstNode.querySelector(contentWrapper)!, {
+    //   clientY: 20,
+    //   dataTransfer,
+    //   target: {
+    //     getBoundingClientRect: () => ({
+    //       top: 50,
+    //       bottom: 70,
+    //     }),
+    //   },
+    // });
+    // fireEvent.dragEnd(firstNode, { dataTransfer });
+    // fireEvent.dragLeave(firstNode, { dataTransfer });
+    // await waitFor(async () => {
+    //   await delay(500)
+    // })
+    screen.debug()
+    expect(dropFn.mock.calls.length).toBe(1);
     expect(dragStartFn.mock.calls.length).toBe(1);
     expect(dragEndFn.mock.calls.length).toBe(1);
     expect(dragOver.mock.calls.length).toBe(1);
@@ -747,12 +755,14 @@ describe('Tree[Data]', () => {
               children: [
                 {
                   id: '1-0-0',
+                  children: []
                 },
                 {
                   id: '1-0-1',
                   children: [
                     {
                       id: '1-0-1-0',
+                      children: []
                     },
                   ],
                 },
@@ -763,6 +773,7 @@ describe('Tree[Data]', () => {
               children: [
                 {
                   id: '1-1-0',
+                  children: []
                 },
               ],
             },
