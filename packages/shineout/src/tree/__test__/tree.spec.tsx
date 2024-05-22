@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tree from '..';
 import { Button } from 'shineout';
@@ -141,7 +141,6 @@ describe('Tree[Base]', () => {
   displayTest(Tree as React.FC, 'ShineoutTree');
   test('should render when set style and className', () => {
     const { container } = render(<TreeTest className='test' style={{ color: 'black' }} />);
-    screen.debug()
     const treeWrapper = container.querySelector(treeClassName)!;
     classTest(treeWrapper, 'test');
     styleTest(treeWrapper, 'color: black;');
@@ -681,7 +680,7 @@ describe('Tree[Drag]', () => {
     expect(document.querySelectorAll(contentClassName).length).toBe(7);
     expect(dropFn.mock.calls.length).toBe(1);
   });
-  test('should render when set onDragStart/onDragEnd/onDragOver/onDragLeave', async () => {
+  test('should render when set onDragStart/onDragEnd/onDragOver/onDragLeave', () => {
     const dropFn = jest.fn();
     const dragStartFn = jest.fn();
     const dragEndFn = jest.fn();
@@ -700,32 +699,28 @@ describe('Tree[Drag]', () => {
     const treeWrapper = container.querySelector(treeClassName)!;
     
     const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
-    const firstNode = treeRootNodeAll[2];
+    const firstNode = treeRootNodeAll[0];
     const dataTransfer = new MockDataTransfer();
     fireEvent.dragStart(firstNode, {
       dataTransfer,
     });
-    // fireEvent.dragOver(firstNode.querySelector(contentWrapper)!, {
-    //   clientY: 20,
-    //   dataTransfer,
-    //   target: {
-    //     getBoundingClientRect: () => ({
-    //       top: 50,
-    //       bottom: 70,
-    //     }),
-    //   },
-    // });
-    // fireEvent.dragEnd(firstNode, { dataTransfer });
-    // fireEvent.dragLeave(firstNode, { dataTransfer });
-    // await waitFor(async () => {
-    //   await delay(500)
-    // })
-    screen.debug()
+    fireEvent.dragOver(firstNode.querySelector(contentWrapper)!, {
+      clientY: 20,
+      dataTransfer,
+      target: {
+        getBoundingClientRect: () => ({
+          top: 50,
+          bottom: 70,
+        }),
+      },
+    });
+    fireEvent.dragEnd(firstNode, { dataTransfer });
+    fireEvent.dragLeave(firstNode, { dataTransfer });
     expect(dropFn.mock.calls.length).toBe(1);
     expect(dragStartFn.mock.calls.length).toBe(1);
     expect(dragEndFn.mock.calls.length).toBe(1);
     expect(dragOver.mock.calls.length).toBe(1);
-    expect(dragLeaveFn.mock.calls.length).toBe(2);
+    expect(dragLeaveFn.mock.calls.length).toBe(1);
   });
   test('should render when set dragImageStyle', () => {
     const dropFn = jest.fn();

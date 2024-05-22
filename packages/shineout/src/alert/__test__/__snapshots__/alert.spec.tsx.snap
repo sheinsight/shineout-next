@@ -2,10 +2,10 @@
 
 exports[`Alert[Base] should render correctly  1`] = `
 <div
-  class="c1yst5c soui-alert-alert c-i9h152 soui-alert-info"
+  class="c-6g0906 soui-alert-alert c-72sxeo soui-alert-info"
 >
   <span
-    class="c-i9h92z soui-alert-icon c-z33bsd soui-alert-info-icon"
+    class="c-72t5cl soui-alert-icon c-jfi8av soui-alert-info-icon"
   >
     <svg
       aria-hidden="true"
@@ -19,10 +19,10 @@ exports[`Alert[Base] should render correctly  1`] = `
     </svg>
   </span>
   <div
-    class="c31x8kt soui-alert-content"
+    class="chb10xz soui-alert-content"
   >
     <div
-      class="c-i9a6iv soui-alert-text"
+      class="c-72m2sh soui-alert-text"
     >
       This is a line of important text for alerting purposes
     </div>
@@ -33,10 +33,10 @@ exports[`Alert[Base] should render correctly  1`] = `
 exports[`Alert[Base] should render correctly about closeable 1`] = `
 <div>
   <div
-    class="c1yst5c soui-alert-alert c-i9h152 soui-alert-info"
+    class="c-6g0906 soui-alert-alert c-72sxeo soui-alert-info"
   >
     <span
-      class="c-i9h92z soui-alert-icon c-z33bsd soui-alert-info-icon"
+      class="c-72t5cl soui-alert-icon c-jfi8av soui-alert-info-icon"
     >
       <svg
         aria-hidden="true"
@@ -50,16 +50,16 @@ exports[`Alert[Base] should render correctly about closeable 1`] = `
       </svg>
     </span>
     <div
-      class="c31x8kt soui-alert-content"
+      class="chb10xz soui-alert-content"
     >
       <div
-        class="c-i9a6iv soui-alert-text"
+        class="c-72m2sh soui-alert-text"
       >
         This is informative text.
       </div>
     </div>
     <div
-      class="c1zwlrg soui-alert-close"
+      class="c-6ewge2 soui-alert-close"
     >
       <svg
         aria-hidden="true"
@@ -78,10 +78,10 @@ exports[`Alert[Base] should render correctly about closeable 1`] = `
 
 exports[`Alert[Base] should render correctly about title 1`] = `
 <div
-  class="c1yst5c soui-alert-alert c-i9h152 soui-alert-info ce7t2m6 soui-alert-width-title"
+  class="c-6g0906 soui-alert-alert c-72sxeo soui-alert-info ca3i04 soui-alert-width-title"
 >
   <span
-    class="c-i9h92z soui-alert-icon c-z33bsd soui-alert-info-icon"
+    class="c-72t5cl soui-alert-icon c-jfi8av soui-alert-info-icon"
   >
     <svg
       aria-hidden="true"
@@ -95,21 +95,21 @@ exports[`Alert[Base] should render correctly about title 1`] = `
     </svg>
   </span>
   <div
-    class="c31x8kt soui-alert-content"
+    class="chb10xz soui-alert-content"
   >
     <div
-      class="c297afg soui-alert-title"
+      class="c-65lrq2 soui-alert-title"
     >
       Heading
     </div>
     <div
-      class="c-i9a6iv soui-alert-text"
+      class="c-72m2sh soui-alert-text"
     >
       This is a line of important text for alerting purposes
     </div>
   </div>
   <div
-    class="c1zwlrg soui-alert-close"
+    class="c-6ewge2 soui-alert-close"
   >
     <svg
       aria-hidden="true"
@@ -130,11 +130,11 @@ exports[`Alert[Base] should render correctly about type 1`] = `
   style="display: flex; flex-wrap: wrap; gap: 24px;"
 >
   <div
-    class="c1yst5c soui-alert-alert c-i9h152 soui-alert-info"
+    class="c-6g0906 soui-alert-alert c-72sxeo soui-alert-info"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="c-i9h92z soui-alert-icon c-z33bsd soui-alert-info-icon"
+      class="c-72t5cl soui-alert-icon c-jfi8av soui-alert-info-icon"
     >
       <svg
         aria-hidden="true"
@@ -148,21 +148,21 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="c31x8kt soui-alert-content"
+      class="chb10xz soui-alert-content"
     >
       <div
-        class="c-i9a6iv soui-alert-text"
+        class="c-72m2sh soui-alert-text"
       >
         This is informative text.
       </div>
     </div>
   </div>
   <div
-    class="c1yst5c soui-alert-alert crguref soui-alert-success"
+    class="c-6g0906 soui-alert-alert c-tb5i7j soui-alert-success"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="c-i9h92z soui-alert-icon cv9wz80 soui-alert-success-icon"
+      class="c-72t5cl soui-alert-icon cpfkk2y soui-alert-success-icon"
     >
       <svg
         aria-hidden="true"
@@ -176,21 +176,21 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="c31x8kt soui-alert-content"
+      class="chb10xz soui-alert-content"
     >
       <div
-        class="c-i9a6iv soui-alert-text"
+        class="c-72m2sh soui-alert-text"
       >
         This is success text.
       </div>
     </div>
   </div>
   <div
-    class="c1yst5c soui-alert-alert c5wvf0w soui-alert-warning"
+    class="c-6g0906 soui-alert-alert ck5z7e2 soui-alert-warning"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="c-i9h92z soui-alert-icon c-qqgviv soui-alert-warning-icon"
+      class="c-72t5cl soui-alert-icon c-wktanx soui-alert-warning-icon"
     >
       <svg
         aria-hidden="true"
@@ -204,21 +204,21 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="c31x8kt soui-alert-content"
+      class="chb10xz soui-alert-content"
     >
       <div
-        class="c-i9a6iv soui-alert-text"
+        class="c-72m2sh soui-alert-text"
       >
         This is warning text.
       </div>
     </div>
   </div>
   <div
-    class="c1yst5c soui-alert-alert c-8t2b9t soui-alert-danger"
+    class="c-6g0906 soui-alert-alert cekd1w5 soui-alert-danger"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="c-i9h92z soui-alert-icon c-en4ho8 soui-alert-danger-icon"
+      class="c-72t5cl soui-alert-icon c-sku2aa soui-alert-danger-icon"
     >
       <svg
         aria-hidden="true"
@@ -232,10 +232,10 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="c31x8kt soui-alert-content"
+      class="chb10xz soui-alert-content"
     >
       <div
-        class="c-i9a6iv soui-alert-text"
+        class="c-72m2sh soui-alert-text"
       >
         This is danger text.
       </div>

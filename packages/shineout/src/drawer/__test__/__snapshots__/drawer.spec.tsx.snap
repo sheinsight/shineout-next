@@ -2,25 +2,25 @@
 
 exports[`Drawer[Base] should render correctly about base 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
       style="width: 400px;"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Drawer Title
         </div>
         <div
-          class="cicfuum soui-modal-header-close"
+          class="cci3fpk soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -35,15 +35,15 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body"
+        class="c-rkfpuj soui-modal-body"
       >
         you are visited 1
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <button
-          class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button"
+          class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -52,7 +52,7 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
           </span>
         </button>
         <button
-          class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+          class="cmi4mna soui-button-primary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -68,26 +68,26 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
 
 exports[`Drawer[Base] should render correctly about close 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
       style="width: 400px;"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Modal Title
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body"
+        class="c-rkfpuj soui-modal-body"
       >
         The prop maskCloseAble is  
         false
@@ -96,10 +96,10 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
         You must click the button to close the Modal.
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <button
-          class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button c-68omio soui-button-outline"
+          class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -115,25 +115,25 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
 
 exports[`Drawer[Base] should render correctly about container 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
       style="width: 400px;"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Drawer Title
         </div>
         <div
-          class="cicfuum soui-modal-header-close"
+          class="cci3fpk soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -148,15 +148,15 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body"
+        class="c-rkfpuj soui-modal-body"
       >
         Drawer mount after Button
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <button
-          class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button"
+          class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -165,7 +165,7 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
           </span>
         </button>
         <button
-          class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+          class="cmi4mna soui-button-primary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -181,25 +181,25 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
 
 exports[`Drawer[Base] should render correctly about form 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
       style="width: 456px;"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Form
         </div>
         <div
-          class="cicfuum soui-modal-header-close"
+          class="cci3fpk soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -214,35 +214,35 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body"
+        class="c-rkfpuj soui-modal-body"
       >
         <form
-          class="c-mvmu4h soui-form-wrapper"
+          class="chsj1h soui-form-wrapper"
           style="max-width: 400px;"
         >
           <div
-            class="c4fjrmv soui-form-item-wrapper cfdft5y soui-form-item-wrapper-required"
+            class="c-1esni7 soui-form-item-wrapper c-pthow0 soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-wrmuig soui-form-item-label"
+              class="cqcutpe soui-form-item-label"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="c-67umq7 soui-form-item-control"
+              class="c-c271v9 soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="cdi0lqx soui-input-wrapper"
+                class="crr4e43 soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
-                  class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                  class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                 >
                   <input
-                    class="c-nmr774 soui-input-input"
+                    class="c-w1k9cm soui-input-input"
                     value=""
                   />
                 </div>
@@ -250,28 +250,28 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
             </div>
           </div>
           <div
-            class="c4fjrmv soui-form-item-wrapper cfdft5y soui-form-item-wrapper-required"
+            class="c-1esni7 soui-form-item-wrapper c-pthow0 soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-wrmuig soui-form-item-label"
+              class="cqcutpe soui-form-item-label"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="c-67umq7 soui-form-item-control"
+              class="c-c271v9 soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="cdi0lqx soui-input-wrapper"
+                class="crr4e43 soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
-                  class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                  class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                 >
                   <input
-                    class="c-nmr774 soui-input-input"
+                    class="c-w1k9cm soui-input-input"
                     type="password"
                     value=""
                   />
@@ -282,11 +282,11 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
         </form>
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <div>
           <button
-            class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button"
+            class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button"
             dir="ltr"
             type="button"
           >
@@ -295,7 +295,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
             </span>
           </button>
           <button
-            class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+            class="cmi4mna soui-button-primary c-hb33si soui-button-button"
             dir="ltr"
             type="button"
           >
@@ -312,24 +312,24 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
 
 exports[`Drawer[Base] should render correctly about full screen 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-8oxecv soui-modal-wrapper-full-screen c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask cwfn5rf soui-modal-wrapper-full-screen c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Profile
         </div>
         <div
-          class="cicfuum soui-modal-header-close"
+          class="cci3fpk soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -344,42 +344,42 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body"
+        class="c-rkfpuj soui-modal-body"
       >
         <div>
           <form
-            class="c-mvmu4h soui-form-wrapper"
+            class="chsj1h soui-form-wrapper"
           >
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 Name
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="cdi0lqx soui-input-wrapper"
+                  class="crr4e43 soui-input-wrapper"
                   data-soui-input-border="true"
                 >
                   <div
-                    class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                    class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                   >
                     <input
-                      class="c-nmr774 soui-input-input"
+                      class="c-w1k9cm soui-input-input"
                       placeholder="please input name"
                       value="zhangsan"
                     />
                     <div
-                      class="chcp5ts soui-input-clear-wrapper"
+                      class="c-lprrkq soui-input-clear-wrapper"
                     >
                       <span
-                        class="c-nq3hd9 soui-input-clear"
+                        class="c-w4wjir soui-input-clear"
                         dir="ltr"
                       >
                         <svg
@@ -404,27 +404,27 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 Password
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="cdi0lqx soui-input-wrapper"
+                  class="crr4e43 soui-input-wrapper"
                   data-soui-input-border="true"
                 >
                   <div
-                    class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                    class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                   >
                     <input
-                      class="c-nmr774 soui-input-input"
+                      class="c-w1k9cm soui-input-input"
                       placeholder="please input password"
                       value=""
                     />
@@ -433,35 +433,35 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 Email
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="cdi0lqx soui-input-wrapper"
+                  class="crr4e43 soui-input-wrapper"
                   data-soui-input-border="true"
                 >
                   <div
-                    class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                    class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                   >
                     <input
-                      class="c-nmr774 soui-input-input"
+                      class="c-w1k9cm soui-input-input"
                       placeholder="please input email"
                       value="zhangsan@qq.com"
                     />
                     <div
-                      class="chcp5ts soui-input-clear-wrapper"
+                      class="c-lprrkq soui-input-clear-wrapper"
                     >
                       <span
-                        class="c-nq3hd9 soui-input-clear"
+                        class="c-w4wjir soui-input-clear"
                         dir="ltr"
                       >
                         <svg
@@ -486,23 +486,23 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 Gendar
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c-3srah8 soui-radio-group"
+                  class="c-c7kcmq soui-radio-group"
                 >
                   <div
-                    class="c-6kjs3c soui-radio-wrapper"
+                    class="c7ok09u soui-radio-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -510,21 +510,21 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="radio"
                     />
                     <span
-                      class="c-bmqjip soui-radio-indicator-wrapper"
+                      class="ch6vfkl soui-radio-indicator-wrapper"
                     >
                       <span
-                        class="c-48u5rw soui-radio-indicator"
+                        class="c-g5gjj6 soui-radio-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c-9af744 soui-radio-desc"
+                      class="c1w8wma soui-radio-desc"
                     >
                       male
                     </span>
                   </div>
                   <div
-                    class="c-6kjs3c soui-radio-wrapper"
+                    class="c7ok09u soui-radio-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -532,15 +532,15 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="radio"
                     />
                     <span
-                      class="c-bmqjip soui-radio-indicator-wrapper"
+                      class="ch6vfkl soui-radio-indicator-wrapper"
                     >
                       <span
-                        class="c-48u5rw soui-radio-indicator"
+                        class="c-g5gjj6 soui-radio-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c-9af744 soui-radio-desc"
+                      class="c1w8wma soui-radio-desc"
                     >
                       female
                     </span>
@@ -549,23 +549,23 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 Course
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c4ssjyk soui-checkbox-group"
+                  class="ckgdng2 soui-checkbox-group"
                 >
                   <div
-                    class="ch55dy8 soui-checkbox-wrapper"
+                    class="c37ftc6 soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -573,22 +573,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="c5y3mqf soui-checkbox-indicator-wrapper"
+                      class="c-z8tvbj soui-checkbox-indicator-wrapper"
                     >
                       <i
-                        class="c-g55gbo soui-checkbox-indicator"
+                        class="cftho8y soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c9bgokk soui-checkbox-desc"
+                      class="cnkkgxq soui-checkbox-desc"
                     >
                       chinese
                     </span>
                   </div>
                   <div
-                    class="ch55dy8 soui-checkbox-wrapper"
+                    class="c37ftc6 soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -596,22 +596,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="c5y3mqf soui-checkbox-indicator-wrapper"
+                      class="c-z8tvbj soui-checkbox-indicator-wrapper"
                     >
                       <i
-                        class="c-g55gbo soui-checkbox-indicator"
+                        class="cftho8y soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c9bgokk soui-checkbox-desc"
+                      class="cnkkgxq soui-checkbox-desc"
                     >
                       maths
                     </span>
                   </div>
                   <div
-                    class="ch55dy8 soui-checkbox-wrapper"
+                    class="c37ftc6 soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -619,22 +619,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="c5y3mqf soui-checkbox-indicator-wrapper"
+                      class="c-z8tvbj soui-checkbox-indicator-wrapper"
                     >
                       <i
-                        class="c-g55gbo soui-checkbox-indicator"
+                        class="cftho8y soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c9bgokk soui-checkbox-desc"
+                      class="cnkkgxq soui-checkbox-desc"
                     >
                       english
                     </span>
                   </div>
                   <div
-                    class="ch55dy8 soui-checkbox-wrapper"
+                    class="c37ftc6 soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -642,16 +642,16 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="c5y3mqf soui-checkbox-indicator-wrapper"
+                      class="c-z8tvbj soui-checkbox-indicator-wrapper"
                     >
                       <i
-                        class="c-g55gbo soui-checkbox-indicator"
+                        class="cftho8y soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c9bgokk soui-checkbox-desc"
+                      class="cnkkgxq soui-checkbox-desc"
                     >
                       physics
                     </span>
@@ -660,53 +660,53 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 Enrollment date
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c6gxw4n soui-datePicker-wrapper"
+                  class="c-wlj19v soui-datePicker-wrapper"
                   data-soui-input-border="true"
                   data-soui-type="date"
                 >
                   <div
-                    class="c-6azt9y soui-datePicker-result-wrapper c-tp6bb3 soui-datePicker-wrapper-padding-box c-8019as soui-datePicker-wrapper-inner-title-top cea1gtw soui-datePicker-wrapper-inner-title-bottom"
+                    class="c-9xbh5c soui-datePicker-result-wrapper c50eh0n soui-datePicker-wrapper-padding-box c-fx3tdm soui-datePicker-wrapper-inner-title-top c3pi062 soui-datePicker-wrapper-inner-title-bottom"
                     tabindex="1"
                   >
                     <div
-                      class="c-2cjbuf soui-datePicker-result"
+                      class="c-86vqzh soui-datePicker-result"
                     >
                       <div
-                        class="c-flmwdf soui-datePicker-result-text-wrapper"
+                        class="cj3xvyb soui-datePicker-result-text-wrapper"
                       >
                         <div
-                          class="c-bf1nu2 soui-datePicker-result-text"
+                          class="c7ubpf4 soui-datePicker-result-text"
                         >
                           <span
-                            class="cfph89n soui-datePicker-result-text-padding"
+                            class="c-km21dr soui-datePicker-result-text-padding"
                           >
                             <span
-                              class="ck5dr5z soui-datePicker-placeholder"
+                              class="c-m24bpv soui-datePicker-placeholder"
                             >
                               please select date
                             </span>
                           </span>
                           <div
-                            class="c-xw0rgl soui-datePicker-result-text-bg"
+                            class="c78jsnp soui-datePicker-result-text-bg"
                           />
                         </div>
                       </div>
                     </div>
                     <div
-                      class="cxufr1h soui-datePicker-icon"
+                      class="clxtda7 soui-datePicker-icon"
                     >
                       <svg
                         aria-hidden="true"
@@ -726,29 +726,29 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 Score
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c-2da7j1 soui-rate-wrapper"
+                  class="cl055mx soui-rate-wrapper"
                 >
                   <div
-                    class="c-7z8rfe soui-rate-inner"
+                    class="c37fcb0 soui-rate-inner"
                   >
                     <div
-                      class="c-2jr071 soui-rate-item c-h7srh8 soui-rate-item-checked"
+                      class="c-vz3jhf soui-rate-item c-v5ic3a soui-rate-item-checked"
                     >
                       <span
-                        class="c-y62as8 soui-rate-item-bg"
+                        class="csg8p1e soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -761,7 +761,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="cvyovqe soui-rate-item-front"
+                        class="c-neu2r8 soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -775,10 +775,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="c-2jr071 soui-rate-item c-h7srh8 soui-rate-item-checked"
+                      class="c-vz3jhf soui-rate-item c-v5ic3a soui-rate-item-checked"
                     >
                       <span
-                        class="c-y62as8 soui-rate-item-bg"
+                        class="csg8p1e soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -791,7 +791,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="cvyovqe soui-rate-item-front"
+                        class="c-neu2r8 soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -805,10 +805,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="c-2jr071 soui-rate-item c-h7srh8 soui-rate-item-checked"
+                      class="c-vz3jhf soui-rate-item c-v5ic3a soui-rate-item-checked"
                     >
                       <span
-                        class="c-y62as8 soui-rate-item-bg"
+                        class="csg8p1e soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -821,7 +821,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="cvyovqe soui-rate-item-front"
+                        class="c-neu2r8 soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -835,10 +835,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="c-2jr071 soui-rate-item"
+                      class="c-vz3jhf soui-rate-item"
                     >
                       <span
-                        class="c-y62as8 soui-rate-item-bg"
+                        class="csg8p1e soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -851,7 +851,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="cvyovqe soui-rate-item-front"
+                        class="c-neu2r8 soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -865,10 +865,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="c-2jr071 soui-rate-item"
+                      class="c-vz3jhf soui-rate-item"
                     >
                       <span
-                        class="c-y62as8 soui-rate-item-bg"
+                        class="csg8p1e soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -881,7 +881,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="cvyovqe soui-rate-item-front"
+                        class="c-neu2r8 soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -899,27 +899,27 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 upload avatar
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c-yt0tcu soui-upload-wrapper c-qndvjb soui-upload-wrapper-image"
+                  class="c-j5fpvc soui-upload-wrapper c-u91pfx soui-upload-wrapper-image"
                 >
                   <span
-                    class="c-xyepkw soui-upload-image-handler"
+                    class="cxh1ihm soui-upload-image-handler"
                     style="width: 80px; height: 80px;"
                   >
                     <div
-                      class="c-n7klt3 soui-upload-image-handler-icon"
+                      class="chwzyb7 soui-upload-image-handler-icon"
                     >
                       <svg
                         aria-hidden="true"
@@ -942,43 +942,43 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               >
                 Address
               </div>
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c1m59hl soui-textarea-wrapper"
+                  class="c-cbkb4h soui-textarea-wrapper"
                   data-soui-input-border="true"
                 >
                   <textarea
-                    class="cj0hrmr soui-textarea-wrapper-padding-box c-9tg6ju soui-textarea-wrapper-inner-title-bottom c-366lz0 soui-textarea-textarea"
+                    class="cklo7ih soui-textarea-wrapper-padding-box cstsqws soui-textarea-wrapper-inner-title-bottom c-90j142 soui-textarea-textarea"
                     rows="4"
                   />
                 </div>
               </div>
             </div>
             <div
-              class="c4fjrmv soui-form-item-wrapper"
+              class="c-1esni7 soui-form-item-wrapper"
               data-soui-status="default"
               style="margin-top: 32px; margin-bottom: 0px;"
             >
               <div
-                class="c-wrmuig soui-form-item-label"
+                class="cqcutpe soui-form-item-label"
               />
               <div
-                class="c-67umq7 soui-form-item-control"
+                class="c-c271v9 soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <button
-                  class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+                  class="cmi4mna soui-button-primary c-hb33si soui-button-button"
                   dir="ltr"
                   type="submit"
                 >
@@ -987,7 +987,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                   </span>
                 </button>
                 <button
-                  class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button"
+                  class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button"
                   dir="ltr"
                   type="reset"
                 >
@@ -1001,10 +1001,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
         </div>
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <button
-          class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+          class="cmi4mna soui-button-primary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -1020,25 +1020,25 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
 
 exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-wd708s soui-modal-wrapper-hide-mask c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask c-d3tmzm soui-modal-wrapper-hide-mask c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
       style="width: 400px;"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Drawer Title
         </div>
         <div
-          class="cicfuum soui-modal-header-close"
+          class="cci3fpk soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -1053,15 +1053,15 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body"
+        class="c-rkfpuj soui-modal-body"
       >
         you are visited 1
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <button
-          class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button"
+          class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -1070,7 +1070,7 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
           </span>
         </button>
         <button
-          class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+          class="cmi4mna soui-button-primary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -1086,25 +1086,25 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 
 exports[`Drawer[Base] should render correctly about position 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
       style="width: auto;"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Form
         </div>
         <div
-          class="cicfuum soui-modal-header-close"
+          class="cci3fpk soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -1119,35 +1119,35 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body"
+        class="c-rkfpuj soui-modal-body"
       >
         <form
-          class="c-mvmu4h soui-form-wrapper"
+          class="chsj1h soui-form-wrapper"
           style="width: 500px;"
         >
           <div
-            class="c4fjrmv soui-form-item-wrapper cfdft5y soui-form-item-wrapper-required"
+            class="c-1esni7 soui-form-item-wrapper c-pthow0 soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-wrmuig soui-form-item-label"
+              class="cqcutpe soui-form-item-label"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="c-67umq7 soui-form-item-control"
+              class="c-c271v9 soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="cdi0lqx soui-input-wrapper"
+                class="crr4e43 soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
-                  class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                  class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                 >
                   <input
-                    class="c-nmr774 soui-input-input"
+                    class="c-w1k9cm soui-input-input"
                     value=""
                   />
                 </div>
@@ -1155,28 +1155,28 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
             </div>
           </div>
           <div
-            class="c4fjrmv soui-form-item-wrapper cfdft5y soui-form-item-wrapper-required"
+            class="c-1esni7 soui-form-item-wrapper c-pthow0 soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-wrmuig soui-form-item-label"
+              class="cqcutpe soui-form-item-label"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="c-67umq7 soui-form-item-control"
+              class="c-c271v9 soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="cdi0lqx soui-input-wrapper"
+                class="crr4e43 soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
-                  class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                  class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                 >
                   <input
-                    class="c-nmr774 soui-input-input"
+                    class="c-w1k9cm soui-input-input"
                     type="password"
                     value=""
                   />
@@ -1187,11 +1187,11 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
         </form>
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <div>
           <button
-            class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button c-68omio soui-button-outline"
+            class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
             dir="ltr"
             type="button"
           >
@@ -1200,7 +1200,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
             </span>
           </button>
           <button
-            class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+            class="cmi4mna soui-button-primary c-hb33si soui-button-button"
             dir="ltr"
             type="button"
           >
@@ -1217,25 +1217,25 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
 
 exports[`Drawer[Base] should render correctly about resizable 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
       style="width: auto;"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Form
         </div>
         <div
-          class="cicfuum soui-modal-header-close"
+          class="cci3fpk soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -1250,35 +1250,35 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body"
+        class="c-rkfpuj soui-modal-body"
       >
         <form
-          class="c-mvmu4h soui-form-wrapper"
+          class="chsj1h soui-form-wrapper"
           style="width: 500px;"
         >
           <div
-            class="c4fjrmv soui-form-item-wrapper cfdft5y soui-form-item-wrapper-required"
+            class="c-1esni7 soui-form-item-wrapper c-pthow0 soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-wrmuig soui-form-item-label"
+              class="cqcutpe soui-form-item-label"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="c-67umq7 soui-form-item-control"
+              class="c-c271v9 soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="cdi0lqx soui-input-wrapper"
+                class="crr4e43 soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
-                  class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                  class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                 >
                   <input
-                    class="c-nmr774 soui-input-input"
+                    class="c-w1k9cm soui-input-input"
                     value=""
                   />
                 </div>
@@ -1286,28 +1286,28 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
             </div>
           </div>
           <div
-            class="c4fjrmv soui-form-item-wrapper cfdft5y soui-form-item-wrapper-required"
+            class="c-1esni7 soui-form-item-wrapper c-pthow0 soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-wrmuig soui-form-item-label"
+              class="cqcutpe soui-form-item-label"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="c-67umq7 soui-form-item-control"
+              class="c-c271v9 soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="cdi0lqx soui-input-wrapper"
+                class="crr4e43 soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
-                  class="c-etsxty soui-input-wrapper-inner-title-top c-4unot6 soui-input-wrapper-inner-title-bottom criccmr soui-input-wrapper-padding-box c2ulxq7 soui-input-content"
+                  class="c-d8mhy8 soui-input-wrapper-inner-title-top c5pjvnk soui-input-wrapper-inner-title-bottom c-2e7583 soui-input-wrapper-padding-box ch3pq3d soui-input-content"
                 >
                   <input
-                    class="c-nmr774 soui-input-input"
+                    class="c-w1k9cm soui-input-input"
                     type="password"
                     value=""
                   />
@@ -1318,11 +1318,11 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         </form>
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <div>
           <button
-            class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button c-68omio soui-button-outline"
+            class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
             dir="ltr"
             type="button"
           >
@@ -1331,7 +1331,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
             </span>
           </button>
           <button
-            class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+            class="cmi4mna soui-button-primary c-hb33si soui-button-button"
             dir="ltr"
             type="button"
           >
@@ -1342,7 +1342,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         </div>
       </div>
       <div
-        class="c-6javo9 soui-modal-resize-x"
+        class="c7pswox soui-modal-resize-x"
         data-position="right"
       />
     </div>
@@ -1352,20 +1352,20 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
 
 exports[`Drawer[Base] should render correctly about type 1`] = `
 <div
-  class="c1pdjfa soui-modal-wrapper c-49k19u soui-modal-wrapper-animation cw78ofn soui-modal-wrapper-show c-srg87o soui-modal-wrapper-is-mask c-v4ux21 soui-modal-wrapper-drawer c637vat soui-modal-wrapper-drawer-right"
+  class="cfyhbsg soui-modal-wrapper cok1xtg soui-modal-wrapper-animation cqcw9al soui-modal-wrapper-show c-wd424a soui-modal-wrapper-is-mask c-yqiqyn soui-modal-wrapper-drawer c2gw7ff soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cwa6z7t soui-modal-mask"
+    class="c-rk8z0x soui-modal-mask"
   >
     <div
-      class="c6e2u2v soui-modal-panel"
+      class="c-20q82n soui-modal-panel"
       style="width: 500px;"
     >
       <div
-        class="c-ipadw6 soui-modal-header"
+        class="c4o4z9s soui-modal-header"
       >
         <span
-          class="c-olyfy5 soui-modal-header-icon c-i9h92z soui-alert-icon cv9wz80 soui-alert-success-icon"
+          class="cwhg1ex soui-modal-header-icon c-72t5cl soui-alert-icon cpfkk2y soui-alert-success-icon"
         >
           <svg
             aria-hidden="true"
@@ -1379,12 +1379,12 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
           </svg>
         </span>
         <div
-          class="cilqjim soui-modal-header-title"
+          class="ccre4dk soui-modal-header-title"
         >
           Drawer Title with success Icon
         </div>
         <div
-          class="cicfuum soui-modal-header-close"
+          class="cci3fpk soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -1399,7 +1399,7 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="cwa08e7 soui-modal-body cw539j2 soui-modal-body-with-icon"
+        class="c-rkfpuj soui-modal-body c-6xdnvg soui-modal-body-with-icon"
       >
         <span>
           Drawer type: 
@@ -1409,10 +1409,10 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
         </b>
       </div>
       <div
-        class="c-jhmf2g soui-modal-footer"
+        class="c3vsy3i soui-modal-footer"
       >
         <button
-          class="c-7m0wge soui-button-secondary c-vk6w5o soui-button-button"
+          class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -1421,7 +1421,7 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
           </span>
         </button>
         <button
-          class="c6ujj5s soui-button-primary c-vk6w5o soui-button-button"
+          class="cmi4mna soui-button-primary c-hb33si soui-button-button"
           dir="ltr"
           type="button"
         >

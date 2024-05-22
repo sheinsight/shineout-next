@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import DatePicker from '..';
 import {
@@ -209,10 +209,11 @@ describe('Alert[Base]', () => {
     const datePickerResultWrapper = datePickerWrapper.querySelector(resultWrapper)!;
     attributesTest(datePickerResultWrapper, 'tabindex', '1');
     const datePickerResult = datePickerResultWrapper.querySelector(result)!;
-    textContentTest(datePickerResult, '请选择日期');
+    textContentTest(datePickerResult, 'Please select date');
     const datePickerIcon = datePickerResultWrapper.querySelector(icon)!;
     classLengthTest(datePickerIcon, 'svg', 1);
     const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
+    screen.debug()
     attributesTest(datePickerPickerWrapper, 'data-sheinx-animation-duration', 'fast');
     attributesTest(datePickerPickerWrapper, 'data-sheinx-animation-type', 'fade');
     styleTest(datePickerPickerWrapper, styleWithoutShow);
@@ -968,8 +969,8 @@ describe('DatePicker[Range]', () => {
     textContentTest(datePickerResult?.querySelector(resultSeparator) as Element, '~');
     const DatePickTexts = datePickerResult?.querySelectorAll(resultText) as NodeListOf<Element>;
     expect(DatePickTexts?.length).toBe(2);
-    textContentTest(DatePickTexts[0], '开始季度');
-    textContentTest(DatePickTexts[1], '结束季度');
+    textContentTest(DatePickTexts[0], 'Start quarter');
+    textContentTest(DatePickTexts[1], 'End quarter');
     const pickers = datePickerWrapper.querySelectorAll(picker);
     expect(pickers.length).toBe(2);
     fireEvent.click(pickers[0].querySelectorAll('td')[2]);

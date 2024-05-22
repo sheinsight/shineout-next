@@ -3,110 +3,110 @@
 exports[`Grid[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-bfk39a soui-slider-wrapper"
+    class="c481088 soui-slider-wrapper"
   >
     <div
-      class="c-v3nf9i soui-slider-track"
+      class="c-7q823k soui-slider-track"
     >
       <div
-        class="c-obx01w soui-slider-track-inner"
+        class="c-u69f6y soui-slider-track-inner"
         dir="ltr"
         style="left: 0%; right: 62.5%;"
       >
         <div
-          class="cc1bewu soui-slider-indicator chw1n0d soui-slider-indicator-end"
+          class="c-1we5p8 soui-slider-indicator ceadt3r soui-slider-indicator-end"
           dir="ltr"
         />
       </div>
     </div>
     <div
-      class="c-h66ht2 soui-slider-scale-wrapper"
+      class="c-krubpo soui-slider-scale-wrapper"
     >
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           1
         </div>
       </div>
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           2
         </div>
       </div>
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           3
         </div>
       </div>
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           5
         </div>
       </div>
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           8
         </div>
       </div>
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           13
         </div>
       </div>
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           21
         </div>
       </div>
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           34
         </div>
       </div>
       <div
-        class="c-v4gsg7 soui-slider-scale"
+        class="c-7r1fa9 soui-slider-scale"
       >
         <div
-          class="c-v8clzx soui-slider-label"
+          class="c-7ux8tz soui-slider-label"
           dir="ltr"
         >
           55
@@ -121,7 +121,7 @@ exports[`Grid[Base] should render correctly  1`] = `
     style="background: rgb(232, 235, 240); margin-bottom: 4px; line-height: 30px;"
   >
     <div
-      class="so-grid so-grid-full so-grid-md-20-000 "
+      class="soui-grid soui-grid-full soui-grid-md-20-000 "
       style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       1/5
@@ -131,7 +131,7 @@ exports[`Grid[Base] should render correctly  1`] = `
     style="background: rgb(232, 235, 240); margin-bottom: 4px; line-height: 30px;"
   >
     <div
-      class="so-grid so-grid-full so-grid-md-40-000 "
+      class="soui-grid soui-grid-full soui-grid-md-40-000 "
       style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       2/5
@@ -141,7 +141,7 @@ exports[`Grid[Base] should render correctly  1`] = `
     style="background: rgb(232, 235, 240); margin-bottom: 4px; line-height: 30px;"
   >
     <div
-      class="so-grid so-grid-full so-grid-md-60-000 "
+      class="soui-grid soui-grid-full soui-grid-md-60-000 "
       style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       3/5
@@ -151,7 +151,7 @@ exports[`Grid[Base] should render correctly  1`] = `
     style="background: rgb(232, 235, 240); margin-bottom: 4px; line-height: 30px;"
   >
     <div
-      class="so-grid so-grid-full so-grid-md-80-000 "
+      class="soui-grid soui-grid-full soui-grid-md-80-000 "
       style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       4/5
@@ -161,7 +161,7 @@ exports[`Grid[Base] should render correctly  1`] = `
     style="background: rgb(232, 235, 240); margin-bottom: 4px; line-height: 30px;"
   >
     <div
-      class="so-grid so-grid-full so-grid-md-100-000 "
+      class="soui-grid soui-grid-full soui-grid-md-100-000 "
       style="color: rgb(255, 255, 255); padding-inline-start: 8px; background: rgb(25, 122, 250); font-size: 14px;"
     >
       5/5
@@ -175,11 +175,11 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
   style="background: rgb(232, 235, 240);"
 >
   <div
-    class="so-grid so-grid-full so-grid-md-100-000 "
+    class="soui-grid soui-grid-full soui-grid-md-100-000 "
     style="width: auto; display: block; margin-left: -4px; margin-right: -4px;"
   >
     <div
-      class="so-grid so-grid-full so-grid-md-12-500 "
+      class="soui-grid soui-grid-full soui-grid-md-12-500 "
       style="padding-left: 4px; padding-right: 4px;"
     >
       <div
@@ -189,7 +189,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
       </div>
     </div>
     <div
-      class="so-grid so-grid-full so-grid-md-12-500 "
+      class="soui-grid soui-grid-full soui-grid-md-12-500 "
       style="padding-left: 4px; padding-right: 4px;"
     >
       <div
@@ -199,7 +199,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
       </div>
     </div>
     <div
-      class="so-grid so-grid-full so-grid-md-12-500 "
+      class="soui-grid soui-grid-full soui-grid-md-12-500 "
       style="padding-left: 4px; padding-right: 4px;"
     >
       <div
@@ -209,7 +209,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
       </div>
     </div>
     <div
-      class="so-grid so-grid-full so-grid-md-12-500 "
+      class="soui-grid soui-grid-full soui-grid-md-12-500 "
       style="padding-left: 4px; padding-right: 4px;"
     >
       <div
@@ -219,7 +219,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
       </div>
     </div>
     <div
-      class="so-grid so-grid-full so-grid-md-12-500 "
+      class="soui-grid soui-grid-full soui-grid-md-12-500 "
       style="padding-left: 4px; padding-right: 4px;"
     >
       <div
@@ -229,7 +229,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
       </div>
     </div>
     <div
-      class="so-grid so-grid-full so-grid-md-12-500 "
+      class="soui-grid soui-grid-full soui-grid-md-12-500 "
       style="padding-left: 4px; padding-right: 4px;"
     >
       <div
@@ -239,7 +239,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
       </div>
     </div>
     <div
-      class="so-grid so-grid-full so-grid-md-12-500 "
+      class="soui-grid soui-grid-full soui-grid-md-12-500 "
       style="padding-left: 4px; padding-right: 4px;"
     >
       <div
@@ -249,7 +249,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
       </div>
     </div>
     <div
-      class="so-grid so-grid-full so-grid-md-12-500 "
+      class="soui-grid soui-grid-full soui-grid-md-12-500 "
       style="padding-left: 4px; padding-right: 4px;"
     >
       <div
@@ -264,17 +264,17 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
 
 exports[`Grid[Base] should render correctly about nested 1`] = `
 <div
-  class="so-grid so-grid-full so-grid-md-100-000 "
+  class="soui-grid soui-grid-full soui-grid-md-100-000 "
   style="text-align: center;"
 >
   <div
-    class="so-grid so-grid-full so-grid-md-50-000 "
+    class="soui-grid soui-grid-full soui-grid-md-50-000 "
     style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;"
   >
     1/2
   </div>
   <div
-    class="so-grid so-grid-full so-grid-md-50-000 "
+    class="soui-grid soui-grid-full soui-grid-md-50-000 "
     style="line-height: 30px;"
   >
     <div
@@ -284,19 +284,19 @@ exports[`Grid[Base] should render correctly about nested 1`] = `
     </div>
     <div>
       <div
-        class="so-grid so-grid-full so-grid-md-33-333 "
+        class="soui-grid soui-grid-full soui-grid-md-33-333 "
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;"
       >
         1/3
       </div>
       <div
-        class="so-grid so-grid-full so-grid-md-33-333 "
+        class="soui-grid soui-grid-full soui-grid-md-33-333 "
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(107, 181, 255); font-size: 14px;"
       >
         1/3
       </div>
       <div
-        class="so-grid so-grid-full so-grid-md-33-333 "
+        class="soui-grid soui-grid-full soui-grid-md-33-333 "
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;"
       >
         1/3
@@ -311,7 +311,7 @@ exports[`Grid[Base] should render correctly about offset 1`] = `
   style="background: rgb(232, 235, 240);"
 >
   <div
-    class="so-grid so-grid-full so-grid-md-33-333 so-offset-md-33-333"
+    class="soui-grid soui-grid-full soui-grid-md-33-333 soui-offset-md-33-333"
     style="color: rgb(255, 255, 255); line-height: 60px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;"
   >
     With 1/3, Offset 1/3
