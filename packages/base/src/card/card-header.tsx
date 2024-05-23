@@ -37,7 +37,7 @@ const CardHeader = (props: CardHeaderProps) => {
     const simpleHeaderClassName = classNames(cardClasses?.header, cardClasses?.simpleHeader, alignClass, props.className);
     
     return (
-      <div className={simpleHeaderClassName}>
+      <div className={simpleHeaderClassName} onMouseDown={handleDragMouseDown} onClick={onCollapse} style={props.style}>
         {props.children}
       </div>
     );
