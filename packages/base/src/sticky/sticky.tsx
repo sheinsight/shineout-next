@@ -32,8 +32,10 @@ const Sticky = (props: StickyProps) => {
     div: null as HTMLElement | null,
     observer: null as IntersectionObserver | null,
     parentObserver: null as IntersectionObserver | null,
-    isTop: false,
+    position: '',
     bodyObserver: null as IntersectionObserver | null,
+    lock: false,
+    scrollNumber: 0,
   });
 
   const [style, setStyle] = useState({} as React.CSSProperties);
@@ -55,18 +57,16 @@ const Sticky = (props: StickyProps) => {
     return null;
   };
 
+  // window resize 时需要重新计算底部附着的位置
   const updateStyle = usePersistFn(() => {
-    if (context.div && !context.isTop && show) {
+    if (context.div && context.position === 'bottom' && show) {
       const scrollRect = context.target!.getBoundingClientRect();
       const targetRect = elementRef.current!.getBoundingClientRect();
       const targetLeft = targetRect.left;
-      const { width, height } = targetRect;
       if (typeof bottom === 'number') {
         const outRootRect = context.target!.getBoundingClientRect();
         const style: React.CSSProperties = {
           position: 'absolute',
-          width: `${width}px`,
-          height: `${height}px`,
           top: `${scrollRect.bottom - (props.bottom || 0) - outRootRect.top}px`,
           left: `${targetLeft - outRootRect.left}px`,
           transform: 'translateY(-100%)',
@@ -76,6 +76,7 @@ const Sticky = (props: StickyProps) => {
     }
   });
 
+  // 有滚动容器时的定位
   const handleTargetPosition: IntersectionObserverCallback = usePersistFn((entries) => {
     const entry = entries[0];
     const scrollRect = entry.rootBounds;
@@ -84,17 +85,14 @@ const Sticky = (props: StickyProps) => {
     if (!entry.isIntersecting) {
       const targetLeft = targetRect.left;
       const outRootRect = context.div!.getBoundingClientRect();
-      const { width, height } = targetRect;
 
       if (scrollRect && targetRect.bottom < scrollRect.bottom) {
         // top in
-        context.isTop = true;
+        context.position = 'top';
         if (typeof top === 'number') {
           setShow(true);
           const style: React.CSSProperties = {
             position: 'absolute',
-            width: `${width}px`,
-            height: `${height}px`,
             top: `${scrollRect.top - outRootRect.top}px`,
             left: `${targetLeft - outRootRect.left}px`,
           };
@@ -102,14 +100,11 @@ const Sticky = (props: StickyProps) => {
         }
       } else if (scrollRect) {
         // bottom in
-        context.isTop = false;
+        context.position = 'bottom';
         if (typeof bottom === 'number') {
           setShow(true);
-          const outRootRect = context.target!.getBoundingClientRect();
           const style: React.CSSProperties = {
             position: 'absolute',
-            width: `${width}px`,
-            height: `${height}px`,
             top: `${scrollRect.bottom - outRootRect.top}px`,
             left: `${targetLeft - outRootRect.left}px`,
             transform: 'translateY(-100%)',
@@ -120,9 +115,11 @@ const Sticky = (props: StickyProps) => {
     }
     if (entry.isIntersecting) {
       setShow(false);
+      context.position = '';
     }
   });
 
+  // 父元素是否可见
   const handleParentVisible: IntersectionObserverCallback = usePersistFn((entries) => {
     const entry = entries[0];
     if (entry.isIntersecting) {
@@ -132,6 +129,23 @@ const Sticky = (props: StickyProps) => {
     }
   });
 
+  const setFixedStyle = usePersistFn((s: boolean, m?: 'top' | 'bottom', l: number = 0) => {
+    if (s !== show) {
+      setShow(s);
+    }
+    if (s && m) {
+      const newStyle: React.CSSProperties = {
+        position: 'fixed',
+        [m]: 0,
+        left: l,
+      };
+      if (!util.shallowEqual(style, newStyle)) {
+        setStyle(newStyle);
+      }
+    }
+  });
+
+  // 无滚动容器的时候，body 滚动 resize 计算
   const handleFixedPosition = usePersistFn(() => {
     const element = elementRef.current;
     if (!element) return;
@@ -139,42 +153,57 @@ const Sticky = (props: StickyProps) => {
     if (selfRect === null) return;
     // If the element is hidden, the width and height will be 0
     if (selfRect && selfRect.width === 0 && selfRect.height === 0) return;
-    // const { marginBottom, marginTop } = getComputedStyle(element);
-    // selfRect.height += parseFloat(marginBottom) + parseFloat(marginTop);
-    const scrollElement = document.body;
-    const scrollRect = scrollElement.getBoundingClientRect();
+    const scrollRect = document.body.getBoundingClientRect();
     const { top, bottom } = props;
     if (top !== undefined && Math.ceil(selfRect.top) <= top) {
-      setShow(true);
-      setStyle({
-        position: 'fixed',
-        top,
-        left: `${selfRect.left}px`,
-        width: `${selfRect.width}px`,
-      });
+      setFixedStyle(true, 'top', selfRect.left);
       return;
     } else if (bottom !== undefined && Math.ceil(selfRect.bottom) + bottom > scrollRect.bottom) {
-      setShow(true);
-      setStyle({
-        position: 'fixed',
-        bottom,
-        left: `${selfRect.left}px`,
-        width: `${selfRect.width}px`,
-      });
+      setFixedStyle(true, 'bottom', selfRect.left);
       return;
     } else {
-      setShow(false);
+      setFixedStyle(false);
     }
   });
 
-  const elementSize = useResize({ targetRef: elementRef, timer: 0, cb: handleFixedPosition });
+  // 无滚动容器时内滚场景触发
+  const handleFixedInter = usePersistFn((entries) => {
+    const entry = entries[0];
+    const scrollRect = entry.rootBounds;
+    const targetRect = entry.boundingClientRect;
+    if (scrollRect && scrollRect.top === 0 && scrollRect.bottom === 0) {
+      return;
+    }
+
+    if (!entry.isIntersecting) {
+      const targetLeft = targetRect.left;
+      const outRootRect = document.body.getBoundingClientRect();
+
+      if (scrollRect && targetRect.bottom < scrollRect.bottom) {
+        // top in
+        if (typeof top === 'number') {
+          setFixedStyle(true, 'top', targetLeft - outRootRect.left);
+        }
+      } else if (scrollRect) {
+        // bottom in
+        if (typeof bottom === 'number') {
+          setFixedStyle(true, 'bottom', targetLeft - outRootRect.left);
+        }
+      }
+    }
+    if (entry.isIntersecting) {
+      setFixedStyle(false);
+    }
+  });
+
+  const elementSize = useResize({ targetRef: elementRef, timer: 10, cb: handleFixedPosition });
 
   const createBodyObserver = () => {
     if (context.bodyObserver) {
       context.bodyObserver.disconnect();
     }
 
-    context.bodyObserver = new IntersectionObserver(handleFixedPosition, {
+    context.bodyObserver = new IntersectionObserver(handleFixedInter, {
       root: null,
       rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
       threshold: 1.0,
@@ -325,7 +354,7 @@ const Sticky = (props: StickyProps) => {
         className={props.className}
         style={{
           ...props.style,
-          ...show && parentVisible ? hideStyle : {},
+          ...(show && parentVisible ? hideStyle : {}),
         }}
         ref={handleElementRef}
       >
