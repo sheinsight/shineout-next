@@ -311,6 +311,11 @@ const Sticky = (props: StickyProps) => {
 
   const isFixed = style.position === 'fixed';
 
+  const hideStyle: any = {
+    opacity: 0,
+    pointerEvents: 'none',
+  };
+
   return (
     <>
       {isFixed
@@ -320,8 +325,7 @@ const Sticky = (props: StickyProps) => {
         className={props.className}
         style={{
           ...props.style,
-          opacity: show && parentVisible ? 0 : props.style?.opacity,
-          pointerEvents: show && parentVisible ? 'none' : 'auto',
+          ...show && parentVisible ? hideStyle : {},
         }}
         ref={handleElementRef}
       >
