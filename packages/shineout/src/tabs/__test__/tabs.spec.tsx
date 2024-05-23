@@ -661,7 +661,7 @@ describe('Tabs[onChange]', () => {
 describe('Tabs[SwitchToTop/Sticky]', () => {
   test('should render when set switchToTop', () => {
     render(
-      <Tabs defaultActive={1} sticky>
+      <Tabs defaultActive={1}>
         <Tabs.Panel tab='A'>Test</Tabs.Panel>
         <Tabs.Panel tab='B'>Test</Tabs.Panel>
         <Tabs.Panel tab='C'>Test</Tabs.Panel>

@@ -48,7 +48,6 @@ describe('Grid[Base]', () => {
   snapshotTest(<GridGutter />, 'about gutter');
   test('should render default', () => {
     const { container } = render(<Grid>{'Grid'}</Grid>);
-    screen.debug()
     const gridWrapper = container.querySelector(wrapper)!;
     classTest(gridWrapper, full);
     classTest(gridWrapper, mdDefaultClassName);

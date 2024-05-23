@@ -116,23 +116,10 @@ mountTest(<Card />);
 
 describe('Card[Base]', () => {
   displayTest(Card, 'ShineoutCard');
-  // baseTest(Card, wrapper);
+  baseTest(Card, wrapper);
   baseTest(Card.Header, header);
-  test('should render hader when set classname and style', () => {
-    const className = 'test';
-    const style = { color: 'red' };
-    const { container } = render(
-      <Card.Header className={className} style={style}>
-        {testHeaderContent}
-      </Card.Header>,
-    );
-    screen.debug()
-    const cardHeader = container.querySelector(header)!;
-    classTest(cardHeader, className);
-    styleTest(cardHeader, style);
-  })
-  // baseTest(Card.Body, body);
-  // baseTest(Card.Footer, footer);
+  baseTest(Card.Body, body);
+  baseTest(Card.Footer, footer);
   childrenTest(Card, wrapper);
   childrenTest(Card.Header, header);
   childrenTest(Card.Body, body);
