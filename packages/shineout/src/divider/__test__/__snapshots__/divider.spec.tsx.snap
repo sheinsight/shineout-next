@@ -8,7 +8,7 @@ exports[`Divider[Base] should render correctly  1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="c4vt7k4 soui-divider-wrapper c-k6f4od soui-divider-horizontal"
+    class="c-oz3lkq soui-divider-wrapper c-j5helr soui-divider-horizontal"
   />
   <p>
     A design is a plan or specification for the construction of an object.
@@ -24,10 +24,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="c4vt7k4 soui-divider-wrapper c-k6f4od soui-divider-horizontal cs5jjnm soui-divider-with-text c-qg25s9 soui-divider-with-text-center"
+    class="c-oz3lkq soui-divider-wrapper c-j5helr soui-divider-horizontal cpxr668 soui-divider-with-text c-q2l2mj soui-divider-with-text-center"
   >
     <span
-      class="c-38yf8s soui-divider-inner-text"
+      class="c-x9z8q soui-divider-inner-text"
     >
       Center
     </span>
@@ -36,10 +36,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="c4vt7k4 soui-divider-wrapper c-k6f4od soui-divider-horizontal cs5jjnm soui-divider-with-text c-944byv soui-divider-with-text-left"
+    class="c-oz3lkq soui-divider-wrapper c-j5helr soui-divider-horizontal cpxr668 soui-divider-with-text c-hjg3x5 soui-divider-with-text-left"
   >
     <span
-      class="c-38yf8s soui-divider-inner-text"
+      class="c-x9z8q soui-divider-inner-text"
     >
       Left
     </span>
@@ -48,10 +48,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="c4vt7k4 soui-divider-wrapper c-k6f4od soui-divider-horizontal cs5jjnm soui-divider-with-text c1o38xm soui-divider-with-text-right"
+    class="c-oz3lkq soui-divider-wrapper c-j5helr soui-divider-horizontal cpxr668 soui-divider-with-text coleebg soui-divider-with-text-right"
   >
     <span
-      class="c-38yf8s soui-divider-inner-text"
+      class="c-x9z8q soui-divider-inner-text"
     >
       Right
     </span>

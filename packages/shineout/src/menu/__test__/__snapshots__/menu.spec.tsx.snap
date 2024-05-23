@@ -3,24 +3,24 @@
 exports[`Menu[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline c3uli4s soui-menu-wrapper-light"
+    class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c669y4u soui-menu-wrapper-light"
     style="width: 256px; border: 1px solid #e8ebf0;"
   >
     <div
-      class="c-4ifpe3 soui-menu-scrollbox"
+      class="c-w4w0d soui-menu-scrollbox"
     >
       <ul
-        class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+        class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
       >
         <li
-          class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+          class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation One
@@ -29,25 +29,25 @@ exports[`Menu[Base] should render correctly  1`] = `
           </div>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+          class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Two
               </span>
             </a>
             <div
-              class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+              class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -63,21 +63,21 @@ exports[`Menu[Base] should render correctly  1`] = `
             </div>
           </div>
           <ul
-            class="cxy8keg soui-menu-children"
+            class="c-u37ira soui-menu-children"
             dir="ltr"
           >
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 1
@@ -86,17 +86,17 @@ exports[`Menu[Base] should render correctly  1`] = `
               </div>
             </li>
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 2
@@ -107,25 +107,25 @@ exports[`Menu[Base] should render correctly  1`] = `
           </ul>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+          class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Three
               </span>
             </a>
             <div
-              class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+              class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -141,21 +141,21 @@ exports[`Menu[Base] should render correctly  1`] = `
             </div>
           </div>
           <ul
-            class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+            class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
             dir="ltr"
           >
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 3
@@ -164,28 +164,28 @@ exports[`Menu[Base] should render correctly  1`] = `
               </div>
             </li>
             <li
-              class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+              class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 4
                   </span>
                 </a>
                 <div
-                  class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+                  class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -201,21 +201,21 @@ exports[`Menu[Base] should render correctly  1`] = `
                 </div>
               </div>
               <ul
-                class="cxy8keg soui-menu-children"
+                class="c-u37ira soui-menu-children"
                 dir="ltr"
               >
                 <li
-                  class="c-2cu1ic soui-menu-item"
+                  class="c-smhule soui-menu-item"
                   dir="ltr"
                 >
                   <div
-                    class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                    class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                   >
                     <div
                       style="width: 48px; flex-shrink: 0;"
                     />
                     <a
-                      class="c-1uw7yp soui-menu-title"
+                      class="c-yu5nv7 soui-menu-title"
                     >
                       <span>
                         Optic 1
@@ -224,17 +224,17 @@ exports[`Menu[Base] should render correctly  1`] = `
                   </div>
                 </li>
                 <li
-                  class="c-2cu1ic soui-menu-item"
+                  class="c-smhule soui-menu-item"
                   dir="ltr"
                 >
                   <div
-                    class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                    class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                   >
                     <div
                       style="width: 48px; flex-shrink: 0;"
                     />
                     <a
-                      class="c-1uw7yp soui-menu-title"
+                      class="c-yu5nv7 soui-menu-title"
                     >
                       <span>
                         Optic 2
@@ -247,14 +247,14 @@ exports[`Menu[Base] should render correctly  1`] = `
           </ul>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item"
+          class="c-smhule soui-menu-item"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Four
@@ -263,14 +263,14 @@ exports[`Menu[Base] should render correctly  1`] = `
           </div>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item"
+          class="c-smhule soui-menu-item"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 This is a very very very very long menu title
@@ -286,24 +286,24 @@ exports[`Menu[Base] should render correctly  1`] = `
 
 exports[`Menu[Base] should render correctly about click 1`] = `
 <div
-  class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline cevhoqi soui-menu-wrapper-has-open c3uli4s soui-menu-wrapper-light"
+  class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c-ockwzo soui-menu-wrapper-has-open c669y4u soui-menu-wrapper-light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
-    class="c-4ifpe3 soui-menu-scrollbox"
+    class="c-w4w0d soui-menu-scrollbox"
   >
     <ul
-      class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+      class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
     >
       <li
-        class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+        class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation One
@@ -312,25 +312,25 @@ exports[`Menu[Base] should render correctly about click 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item cpz6edi soui-menu-item-open c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item cwyud6w soui-menu-item-open c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Two
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -346,21 +346,21 @@ exports[`Menu[Base] should render correctly about click 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children"
+          class="c-u37ira soui-menu-children"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 1
@@ -369,17 +369,17 @@ exports[`Menu[Base] should render correctly about click 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 2
@@ -390,25 +390,25 @@ exports[`Menu[Base] should render correctly about click 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Three
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -424,21 +424,21 @@ exports[`Menu[Base] should render correctly about click 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+          class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 3
@@ -447,28 +447,28 @@ exports[`Menu[Base] should render correctly about click 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+            class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 4
                 </span>
               </a>
               <div
-                class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+                class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
                 dir="ltr"
               >
                 <div
-                  class="c-2cudvi soui-menu-icon"
+                  class="c-smi6yk soui-menu-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -484,21 +484,21 @@ exports[`Menu[Base] should render correctly about click 1`] = `
               </div>
             </div>
             <ul
-              class="cxy8keg soui-menu-children"
+              class="c-u37ira soui-menu-children"
               dir="ltr"
             >
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <div
                     style="width: 48px; flex-shrink: 0;"
                   />
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 1
@@ -507,17 +507,17 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                 </div>
               </li>
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <div
                     style="width: 48px; flex-shrink: 0;"
                   />
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 2
@@ -530,14 +530,14 @@ exports[`Menu[Base] should render correctly about click 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Four
@@ -552,35 +552,35 @@ exports[`Menu[Base] should render correctly about click 1`] = `
 
 exports[`Menu[Base] should render correctly about click father 1`] = `
 <div
-  class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline c3uli4s soui-menu-wrapper-light"
+  class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c669y4u soui-menu-wrapper-light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
-    class="c-4ifpe3 soui-menu-scrollbox"
+    class="c-w4w0d soui-menu-scrollbox"
   >
     <ul
-      class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+      class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
     >
       <li
-        class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Parent 1
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back cpzaa55 soui-menu-expand-hover"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back cnrhwnr soui-menu-expand-hover"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -596,21 +596,21 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children"
+          class="c-u37ira soui-menu-children"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 2
@@ -619,17 +619,17 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 3
@@ -640,25 +640,25 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Parent 4
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back cpzaa55 soui-menu-expand-hover"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back cnrhwnr soui-menu-expand-hover"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -674,21 +674,21 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children"
+          class="c-u37ira soui-menu-children"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 5
@@ -697,17 +697,17 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 6
@@ -718,14 +718,14 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Option 7
@@ -740,24 +740,24 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
 
 exports[`Menu[Base] should render correctly about control 1`] = `
 <div
-  class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline cevhoqi soui-menu-wrapper-has-open c3uli4s soui-menu-wrapper-light"
+  class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c-ockwzo soui-menu-wrapper-has-open c669y4u soui-menu-wrapper-light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
-    class="c-4ifpe3 soui-menu-scrollbox"
+    class="c-w4w0d soui-menu-scrollbox"
   >
     <ul
-      class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+      class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
     >
       <li
-        class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+        class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation One
@@ -766,25 +766,25 @@ exports[`Menu[Base] should render correctly about control 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item cpz6edi soui-menu-item-open c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item cwyud6w soui-menu-item-open c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Two
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -800,21 +800,21 @@ exports[`Menu[Base] should render correctly about control 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children"
+          class="c-u37ira soui-menu-children"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 1
@@ -823,17 +823,17 @@ exports[`Menu[Base] should render correctly about control 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 2
@@ -844,25 +844,25 @@ exports[`Menu[Base] should render correctly about control 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Three
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -878,21 +878,21 @@ exports[`Menu[Base] should render correctly about control 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+          class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 3
@@ -901,28 +901,28 @@ exports[`Menu[Base] should render correctly about control 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+            class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 4
                 </span>
               </a>
               <div
-                class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+                class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
                 dir="ltr"
               >
                 <div
-                  class="c-2cudvi soui-menu-icon"
+                  class="c-smi6yk soui-menu-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -938,21 +938,21 @@ exports[`Menu[Base] should render correctly about control 1`] = `
               </div>
             </div>
             <ul
-              class="cxy8keg soui-menu-children"
+              class="c-u37ira soui-menu-children"
               dir="ltr"
             >
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <div
                     style="width: 48px; flex-shrink: 0;"
                   />
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 1
@@ -961,17 +961,17 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                 </div>
               </li>
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <div
                     style="width: 48px; flex-shrink: 0;"
                   />
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 2
@@ -984,14 +984,14 @@ exports[`Menu[Base] should render correctly about control 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Four
@@ -1007,25 +1007,25 @@ exports[`Menu[Base] should render correctly about control 1`] = `
 exports[`Menu[Base] should render correctly about dark 1`] = `
 <div>
   <div
-    class="c-wz726u soui-menu-wrapper c19lts soui-menu-wrapper-vertical c-4gneww soui-menu-wrapper-dark"
+    class="coj3y7c soui-menu-wrapper c-8e264i soui-menu-wrapper-vertical c-6ofsea soui-menu-wrapper-dark"
     style="width: 256px;"
   >
     <div
-      class="c-4ifpe3 soui-menu-scrollbox"
+      class="c-w4w0d soui-menu-scrollbox"
     >
       <ul
-        class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+        class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
         style="width: 256px;"
       >
         <li
-          class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+          class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation One
@@ -1034,25 +1034,25 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
           </div>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+          class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Two
               </span>
             </a>
             <div
-              class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+              class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -1068,18 +1068,18 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
             </div>
           </div>
           <ul
-            class="cxy8keg soui-menu-children"
+            class="c-u37ira soui-menu-children"
             dir="ltr"
           >
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
               >
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 1
@@ -1088,14 +1088,14 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
               </div>
             </li>
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
               >
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 2
@@ -1106,25 +1106,25 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
           </ul>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+          class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Three
               </span>
             </a>
             <div
-              class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+              class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -1140,18 +1140,18 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
             </div>
           </div>
           <ul
-            class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+            class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
             dir="ltr"
           >
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
               >
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 3
@@ -1160,25 +1160,25 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
               </div>
             </li>
             <li
-              class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+              class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
               >
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 4
                   </span>
                 </a>
                 <div
-                  class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+                  class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -1194,18 +1194,18 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                 </div>
               </div>
               <ul
-                class="cxy8keg soui-menu-children"
+                class="c-u37ira soui-menu-children"
                 dir="ltr"
               >
                 <li
-                  class="c-2cu1ic soui-menu-item"
+                  class="c-smhule soui-menu-item"
                   dir="ltr"
                 >
                   <div
-                    class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                    class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                   >
                     <a
-                      class="c-1uw7yp soui-menu-title"
+                      class="c-yu5nv7 soui-menu-title"
                     >
                       <span>
                         Optic 1
@@ -1214,14 +1214,14 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                   </div>
                 </li>
                 <li
-                  class="c-2cu1ic soui-menu-item"
+                  class="c-smhule soui-menu-item"
                   dir="ltr"
                 >
                   <div
-                    class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                    class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                   >
                     <a
-                      class="c-1uw7yp soui-menu-title"
+                      class="c-yu5nv7 soui-menu-title"
                     >
                       <span>
                         Optic 2
@@ -1234,14 +1234,14 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
           </ul>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item"
+          class="c-smhule soui-menu-item"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+            class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
           >
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Four
@@ -1257,24 +1257,24 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
 
 exports[`Menu[Base] should render correctly about disabled 1`] = `
 <div
-  class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline c3uli4s soui-menu-wrapper-light"
+  class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c669y4u soui-menu-wrapper-light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
-    class="c-4ifpe3 soui-menu-scrollbox"
+    class="c-w4w0d soui-menu-scrollbox"
   >
     <ul
-      class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+      class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
     >
       <li
-        class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+        class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation One
@@ -1283,25 +1283,25 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-9z7mh4 soui-menu-item-disabled c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-7nj6h2 soui-menu-item-disabled c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Two
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -1317,21 +1317,21 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children"
+          class="c-u37ira soui-menu-children"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 1
@@ -1340,17 +1340,17 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 2
@@ -1361,25 +1361,25 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Three
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -1395,21 +1395,21 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+          class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 3
@@ -1418,28 +1418,28 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+            class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 4
                 </span>
               </a>
               <div
-                class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+                class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
                 dir="ltr"
               >
                 <div
-                  class="c-2cudvi soui-menu-icon"
+                  class="c-smi6yk soui-menu-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -1455,21 +1455,21 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
               </div>
             </div>
             <ul
-              class="cxy8keg soui-menu-children"
+              class="c-u37ira soui-menu-children"
               dir="ltr"
             >
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <div
                     style="width: 48px; flex-shrink: 0;"
                   />
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 1
@@ -1478,17 +1478,17 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                 </div>
               </li>
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <div
                     style="width: 48px; flex-shrink: 0;"
                   />
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 2
@@ -1501,14 +1501,14 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-9z7mh4 soui-menu-item-disabled"
+        class="c-smhule soui-menu-item c-7nj6h2 soui-menu-item-disabled"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Four
@@ -1526,28 +1526,28 @@ exports[`Menu[Base] should render correctly about front 1`] = `
   style="display: flex; gap: 24px;"
 >
   <div
-    class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline c3uli4s soui-menu-wrapper-light"
+    class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c669y4u soui-menu-wrapper-light"
     style="width: 256px; border: 1px solid #e8ebf0;"
   >
     <div
-      class="c-4ifpe3 soui-menu-scrollbox"
+      class="c-w4w0d soui-menu-scrollbox"
     >
       <ul
-        class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+        class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
       >
         <li
-          class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+          class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+            class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
           >
             <div
-              class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+              class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -1562,7 +1562,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </div>
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation One
@@ -1571,18 +1571,18 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           </div>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+          class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+            class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
           >
             <div
-              class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+              class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -1597,7 +1597,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </div>
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Two
@@ -1605,25 +1605,25 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             </a>
           </div>
           <ul
-            class="cxy8keg soui-menu-children"
+            class="c-u37ira soui-menu-children"
             dir="ltr"
           >
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <div
-                  class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                  class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -1638,7 +1638,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </div>
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 1
@@ -1647,21 +1647,21 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </li>
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <div
-                  class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                  class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -1676,7 +1676,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </div>
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 2
@@ -1687,18 +1687,18 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           </ul>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+          class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+            class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
           >
             <div
-              class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+              class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -1713,7 +1713,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </div>
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Three
@@ -1721,25 +1721,25 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             </a>
           </div>
           <ul
-            class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+            class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
             dir="ltr"
           >
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <div
-                  class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                  class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -1754,7 +1754,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </div>
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 3
@@ -1763,21 +1763,21 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </li>
             <li
-              class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+              class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <div
-                  class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                  class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -1792,7 +1792,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </div>
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 4
@@ -1800,25 +1800,25 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 </a>
               </div>
               <ul
-                class="cxy8keg soui-menu-children"
+                class="c-u37ira soui-menu-children"
                 dir="ltr"
               >
                 <li
-                  class="c-2cu1ic soui-menu-item"
+                  class="c-smhule soui-menu-item"
                   dir="ltr"
                 >
                   <div
-                    class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                    class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
                   >
                     <div
                       style="width: 48px; flex-shrink: 0;"
                     />
                     <div
-                      class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                      class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                       dir="ltr"
                     >
                       <div
-                        class="c-2cudvi soui-menu-icon"
+                        class="c-smi6yk soui-menu-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -1833,7 +1833,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       </div>
                     </div>
                     <a
-                      class="c-1uw7yp soui-menu-title"
+                      class="c-yu5nv7 soui-menu-title"
                     >
                       <span>
                         Optic 1
@@ -1842,21 +1842,21 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </li>
                 <li
-                  class="c-2cu1ic soui-menu-item"
+                  class="c-smhule soui-menu-item"
                   dir="ltr"
                 >
                   <div
-                    class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                    class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
                   >
                     <div
                       style="width: 48px; flex-shrink: 0;"
                     />
                     <div
-                      class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                      class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                       dir="ltr"
                     >
                       <div
-                        class="c-2cudvi soui-menu-icon"
+                        class="c-smi6yk soui-menu-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -1871,7 +1871,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       </div>
                     </div>
                     <a
-                      class="c-1uw7yp soui-menu-title"
+                      class="c-yu5nv7 soui-menu-title"
                     >
                       <span>
                         Optic 2
@@ -1884,18 +1884,18 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           </ul>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item"
+          class="c-smhule soui-menu-item"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+            class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
           >
             <div
-              class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+              class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -1910,7 +1910,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </div>
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Four
@@ -1922,28 +1922,28 @@ exports[`Menu[Base] should render correctly about front 1`] = `
     </div>
   </div>
   <div
-    class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline c3uli4s soui-menu-wrapper-light"
+    class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c669y4u soui-menu-wrapper-light"
     style="width: 256px; border: 1px solid #e8ebf0;"
   >
     <div
-      class="c-4ifpe3 soui-menu-scrollbox"
+      class="c-w4w0d soui-menu-scrollbox"
     >
       <ul
-        class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+        class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
       >
         <li
-          class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+          class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+            class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
           >
             <div
-              class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+              class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -1958,7 +1958,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </div>
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation One
@@ -1967,18 +1967,18 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           </div>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+          class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+            class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
           >
             <div
-              class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+              class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -1993,7 +1993,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </div>
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Two
@@ -2001,25 +2001,25 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             </a>
           </div>
           <ul
-            class="cxy8keg soui-menu-children"
+            class="c-u37ira soui-menu-children"
             dir="ltr"
           >
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <div
-                  class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                  class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -2034,7 +2034,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </div>
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 1
@@ -2043,21 +2043,21 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </li>
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <div
-                  class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                  class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -2072,7 +2072,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </div>
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 2
@@ -2083,18 +2083,18 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           </ul>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+          class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+            class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
           >
             <div
-              class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+              class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -2109,7 +2109,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </div>
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Three
@@ -2117,25 +2117,25 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             </a>
           </div>
           <ul
-            class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+            class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
             dir="ltr"
           >
             <li
-              class="c-2cu1ic soui-menu-item"
+              class="c-smhule soui-menu-item"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <div
-                  class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                  class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -2150,7 +2150,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </div>
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 3
@@ -2159,21 +2159,21 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </li>
             <li
-              class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+              class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
               dir="ltr"
             >
               <div
-                class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
               >
                 <div
                   style="width: 24px; flex-shrink: 0;"
                 />
                 <div
-                  class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                  class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                   dir="ltr"
                 >
                   <div
-                    class="c-2cudvi soui-menu-icon"
+                    class="c-smi6yk soui-menu-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -2188,7 +2188,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </div>
                 <a
-                  class="c-1uw7yp soui-menu-title"
+                  class="c-yu5nv7 soui-menu-title"
                 >
                   <span>
                     Option 4
@@ -2196,25 +2196,25 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 </a>
               </div>
               <ul
-                class="cxy8keg soui-menu-children"
+                class="c-u37ira soui-menu-children"
                 dir="ltr"
               >
                 <li
-                  class="c-2cu1ic soui-menu-item"
+                  class="c-smhule soui-menu-item"
                   dir="ltr"
                 >
                   <div
-                    class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                    class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
                   >
                     <div
                       style="width: 48px; flex-shrink: 0;"
                     />
                     <div
-                      class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                      class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                       dir="ltr"
                     >
                       <div
-                        class="c-2cudvi soui-menu-icon"
+                        class="c-smi6yk soui-menu-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -2229,7 +2229,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       </div>
                     </div>
                     <a
-                      class="c-1uw7yp soui-menu-title"
+                      class="c-yu5nv7 soui-menu-title"
                     >
                       <span>
                         Optic 1
@@ -2238,21 +2238,21 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   </div>
                 </li>
                 <li
-                  class="c-2cu1ic soui-menu-item"
+                  class="c-smhule soui-menu-item"
                   dir="ltr"
                 >
                   <div
-                    class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+                    class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
                   >
                     <div
                       style="width: 48px; flex-shrink: 0;"
                     />
                     <div
-                      class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+                      class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
                       dir="ltr"
                     >
                       <div
-                        class="c-2cudvi soui-menu-icon"
+                        class="c-smi6yk soui-menu-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -2267,7 +2267,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       </div>
                     </div>
                     <a
-                      class="c-1uw7yp soui-menu-title"
+                      class="c-yu5nv7 soui-menu-title"
                     >
                       <span>
                         Optic 2
@@ -2280,18 +2280,18 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           </ul>
         </li>
         <li
-          class="c-2cu1ic soui-menu-item"
+          class="c-smhule soui-menu-item"
           dir="ltr"
         >
           <div
-            class="c-uk0vlv soui-menu-item-content cljxl4c soui-menu-item-content-front"
+            class="c-wrt939 soui-menu-item-content c-qjvbgy soui-menu-item-content-front"
           >
             <div
-              class="c6jv09v soui-menu-expand cpy8gxy soui-menu-expand-front"
+              class="c-ldox23 soui-menu-expand cnqg3gk soui-menu-expand-front"
               dir="ltr"
             >
               <div
-                class="c-2cudvi soui-menu-icon"
+                class="c-smi6yk soui-menu-icon"
               >
                 <svg
                   aria-hidden="true"
@@ -2306,7 +2306,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               </div>
             </div>
             <a
-              class="c-1uw7yp soui-menu-title"
+              class="c-yu5nv7 soui-menu-title"
             >
               <span>
                 Navigation Four
@@ -2322,23 +2322,23 @@ exports[`Menu[Base] should render correctly about front 1`] = `
 
 exports[`Menu[Base] should render correctly about horizontal 1`] = `
 <div
-  class="c-wz726u soui-menu-wrapper c-hnw8ia soui-menu-wrapper-horizontal c3uli4s soui-menu-wrapper-light"
+  class="coj3y7c soui-menu-wrapper c-haf5ck soui-menu-wrapper-horizontal c669y4u soui-menu-wrapper-light"
 >
   <div
-    class="c-4ifpe3 soui-menu-scrollbox"
+    class="c-w4w0d soui-menu-scrollbox"
   >
     <ul
-      class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+      class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
     >
       <li
-        class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+        class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation One
@@ -2347,25 +2347,25 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Two
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -2381,29 +2381,29 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+          class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+            class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 1
                 </span>
               </a>
               <div
-                class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+                class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
                 dir="ltr"
               >
                 <div
-                  class="c-2cudvi soui-menu-icon"
+                  class="c-smi6yk soui-menu-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -2419,18 +2419,18 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
               </div>
             </div>
             <ul
-              class="cxy8keg soui-menu-children"
+              class="c-u37ira soui-menu-children"
               dir="ltr"
             >
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 1
@@ -2439,14 +2439,14 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
                 </div>
               </li>
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 2
@@ -2457,14 +2457,14 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
             </ul>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 2
@@ -2475,25 +2475,25 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Three
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -2509,18 +2509,18 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children"
+          class="c-u37ira soui-menu-children"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 3
@@ -2529,14 +2529,14 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 4
@@ -2547,14 +2547,14 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Four
@@ -2569,24 +2569,24 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
 
 exports[`Menu[Base] should render correctly about link 1`] = `
 <div
-  class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline c3uli4s soui-menu-wrapper-light"
+  class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c669y4u soui-menu-wrapper-light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
-    class="c-4ifpe3 soui-menu-scrollbox"
+    class="c-w4w0d soui-menu-scrollbox"
   >
     <ul
-      class="c-2coe39 soui-menu-root"
+      class="c-smc76b soui-menu-root"
     >
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
             href="https://www.google.com"
           >
             <span>
@@ -2596,14 +2596,14 @@ exports[`Menu[Base] should render correctly about link 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
             href="https://www.strackoverflow.com"
           >
             <span>
@@ -2613,14 +2613,14 @@ exports[`Menu[Base] should render correctly about link 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
             href="https://www.github.com"
           >
             <span>
@@ -2636,24 +2636,24 @@ exports[`Menu[Base] should render correctly about link 1`] = `
 
 exports[`Menu[Base] should render correctly about render 1`] = `
 <div
-  class="c-wz726u soui-menu-wrapper c-o206fx soui-menu-wrapper-inline cevhoqi soui-menu-wrapper-has-open c3uli4s soui-menu-wrapper-light"
+  class="coj3y7c soui-menu-wrapper c-n12gdb soui-menu-wrapper-inline c-ockwzo soui-menu-wrapper-has-open c669y4u soui-menu-wrapper-light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
-    class="c-4ifpe3 soui-menu-scrollbox"
+    class="c-w4w0d soui-menu-scrollbox"
   >
     <ul
-      class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+      class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
     >
       <li
-        class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+        class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <svg
               fill="none"
@@ -2673,14 +2673,14 @@ exports[`Menu[Base] should render correctly about render 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item cpz6edi soui-menu-item-open c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item cwyud6w soui-menu-item-open c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <svg
               fill="none"
@@ -2698,11 +2698,11 @@ exports[`Menu[Base] should render correctly about render 1`] = `
              Navigation Two
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -2718,21 +2718,21 @@ exports[`Menu[Base] should render correctly about render 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children"
+          class="c-u37ira soui-menu-children"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 1
@@ -2741,17 +2741,17 @@ exports[`Menu[Base] should render correctly about render 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 2
@@ -2762,14 +2762,14 @@ exports[`Menu[Base] should render correctly about render 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <svg
               fill="none"
@@ -2787,11 +2787,11 @@ exports[`Menu[Base] should render correctly about render 1`] = `
              Navigation Three
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -2807,21 +2807,21 @@ exports[`Menu[Base] should render correctly about render 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+          class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 3
@@ -2830,28 +2830,28 @@ exports[`Menu[Base] should render correctly about render 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+            class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <div
                 style="width: 24px; flex-shrink: 0;"
               />
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 4
                 </span>
               </a>
               <div
-                class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+                class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
                 dir="ltr"
               >
                 <div
-                  class="c-2cudvi soui-menu-icon"
+                  class="c-smi6yk soui-menu-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -2867,21 +2867,21 @@ exports[`Menu[Base] should render correctly about render 1`] = `
               </div>
             </div>
             <ul
-              class="cxy8keg soui-menu-children"
+              class="c-u37ira soui-menu-children"
               dir="ltr"
             >
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <div
                     style="width: 48px; flex-shrink: 0;"
                   />
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 1
@@ -2890,17 +2890,17 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                 </div>
               </li>
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <div
                     style="width: 48px; flex-shrink: 0;"
                   />
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 2
@@ -2913,14 +2913,14 @@ exports[`Menu[Base] should render correctly about render 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <svg
               fill="none"
@@ -2946,25 +2946,25 @@ exports[`Menu[Base] should render correctly about render 1`] = `
 
 exports[`Menu[Base] should render correctly about vertical 1`] = `
 <div
-  class="c-wz726u soui-menu-wrapper c19lts soui-menu-wrapper-vertical c3uli4s soui-menu-wrapper-light"
+  class="coj3y7c soui-menu-wrapper c-8e264i soui-menu-wrapper-vertical c669y4u soui-menu-wrapper-light"
   style="height: 300px; width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
-    class="c-4ifpe3 soui-menu-scrollbox"
+    class="c-w4w0d soui-menu-scrollbox"
   >
     <ul
-      class="c-2coe39 soui-menu-root c41u7os soui-menu-children-has-expand"
+      class="c-smc76b soui-menu-root c4fbaui soui-menu-children-has-expand"
       style="width: 256px;"
     >
       <li
-        class="c-2cu1ic soui-menu-item cpdrzsy soui-menu-item-active"
+        class="c-smhule soui-menu-item c-4h4tbw soui-menu-item-active"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation One
@@ -2973,25 +2973,25 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation Two
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -3007,18 +3007,18 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children"
+          class="c-u37ira soui-menu-children"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 1
@@ -3027,14 +3027,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 2
@@ -3045,14 +3045,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 21
@@ -3061,14 +3061,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 22
@@ -3077,14 +3077,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 23
@@ -3093,14 +3093,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 24
@@ -3109,14 +3109,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 25
@@ -3125,14 +3125,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 26
@@ -3141,14 +3141,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 27
@@ -3157,14 +3157,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 28
@@ -3173,14 +3173,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 29
@@ -3189,25 +3189,25 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+        class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 30
             </span>
           </a>
           <div
-            class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+            class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
             dir="ltr"
           >
             <div
-              class="c-2cudvi soui-menu-icon"
+              class="c-smi6yk soui-menu-icon"
             >
               <svg
                 aria-hidden="true"
@@ -3223,18 +3223,18 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           </div>
         </div>
         <ul
-          class="cxy8keg soui-menu-children c41u7os soui-menu-children-has-expand"
+          class="c-u37ira soui-menu-children c4fbaui soui-menu-children-has-expand"
           dir="ltr"
         >
           <li
-            class="c-2cu1ic soui-menu-item"
+            class="c-smhule soui-menu-item"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 3
@@ -3243,25 +3243,25 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
             </div>
           </li>
           <li
-            class="c-2cu1ic soui-menu-item c-btlxvn soui-menu-item-has-children"
+            class="c-smhule soui-menu-item c-k8xptx soui-menu-item-has-children"
             dir="ltr"
           >
             <div
-              class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+              class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
             >
               <a
-                class="c-1uw7yp soui-menu-title"
+                class="c-yu5nv7 soui-menu-title"
               >
                 <span>
                   Option 4
                 </span>
               </a>
               <div
-                class="c6jv09v soui-menu-expand ca007fu soui-menu-expand-back"
+                class="c-ldox23 soui-menu-expand c-juwlp0 soui-menu-expand-back"
                 dir="ltr"
               >
                 <div
-                  class="c-2cudvi soui-menu-icon"
+                  class="c-smi6yk soui-menu-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -3277,18 +3277,18 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
               </div>
             </div>
             <ul
-              class="cxy8keg soui-menu-children"
+              class="c-u37ira soui-menu-children"
               dir="ltr"
             >
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 1
@@ -3297,14 +3297,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
                 </div>
               </li>
               <li
-                class="c-2cu1ic soui-menu-item"
+                class="c-smhule soui-menu-item"
                 dir="ltr"
               >
                 <div
-                  class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+                  class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
                 >
                   <a
-                    class="c-1uw7yp soui-menu-title"
+                    class="c-yu5nv7 soui-menu-title"
                   >
                     <span>
                       Optic 2
@@ -3317,14 +3317,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </ul>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 31
@@ -3333,14 +3333,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 32
@@ -3349,14 +3349,14 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
         </div>
       </li>
       <li
-        class="c-2cu1ic soui-menu-item"
+        class="c-smhule soui-menu-item"
         dir="ltr"
       >
         <div
-          class="c-uk0vlv soui-menu-item-content c-m7xbwc soui-menu-item-content-back"
+          class="c-wrt939 soui-menu-item-content c-un93um soui-menu-item-content-back"
         >
           <a
-            class="c-1uw7yp soui-menu-title"
+            class="c-yu5nv7 soui-menu-title"
           >
             <span>
               Navigation 33

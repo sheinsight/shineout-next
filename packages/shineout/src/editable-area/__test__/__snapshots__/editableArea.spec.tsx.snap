@@ -2,18 +2,18 @@
 
 exports[`EditableArea[Base] should render correctly  1`] = `
 <div
-  class="c-cwcqx4 soui-editableArea-wrapper"
+  class="c-lboive soui-editableArea-wrapper"
   style="width: 300px;"
 >
   <div
-    class="ch8vb70 soui-editableArea-place c-vnwlri soui-editableArea-wrapper-padding-box c-9taow5 soui-editableArea-wrapper-inner-title-top c-8djruj soui-editableArea-wrapper-inner-title-bottom"
+    class="ci9t19m soui-editableArea-place cmccphs soui-editableArea-wrapper-padding-box c-2t2gzn soui-editableArea-wrapper-inner-title-top csrescj soui-editableArea-wrapper-inner-title-bottom"
     tabindex="0"
   >
     <div
-      class="c-njrexu soui-editableArea-content"
+      class="c-vz36w4 soui-editableArea-content"
     >
       <span
-        class="c-sf8lbc soui-editableArea-placeholder"
+        class="c-nvnjfu soui-editableArea-placeholder"
       >
         input something
       </span>
@@ -24,15 +24,15 @@ exports[`EditableArea[Base] should render correctly  1`] = `
 
 exports[`EditableArea[Base] should render correctly  2`] = `
 <div
-  class="c-cwcqx4 soui-editableArea-wrapper"
+  class="c-lboive soui-editableArea-wrapper"
   style="width: 300px;"
 >
   <div
-    class="ch8vb70 soui-editableArea-place c-vnwlri soui-editableArea-wrapper-padding-box c-9taow5 soui-editableArea-wrapper-inner-title-top c-8djruj soui-editableArea-wrapper-inner-title-bottom"
+    class="ci9t19m soui-editableArea-place cmccphs soui-editableArea-wrapper-padding-box c-2t2gzn soui-editableArea-wrapper-inner-title-top csrescj soui-editableArea-wrapper-inner-title-bottom"
     tabindex="0"
   >
     <div
-      class="c-njrexu soui-editableArea-content"
+      class="c-vz36w4 soui-editableArea-content"
     >
       i am a long text, i am a long text, i am a long text
     </div>
@@ -49,18 +49,18 @@ exports[`EditableArea[Base] should render correctly  3`] = `
     style="height: 50px;"
   />
   <div
-    class="c-cwcqx4 soui-editableArea-wrapper"
+    class="c-lboive soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div
-      class="ch8vb70 soui-editableArea-place c-vnwlri soui-editableArea-wrapper-padding-box c-9taow5 soui-editableArea-wrapper-inner-title-top c-8djruj soui-editableArea-wrapper-inner-title-bottom"
+      class="ci9t19m soui-editableArea-place cmccphs soui-editableArea-wrapper-padding-box c-2t2gzn soui-editableArea-wrapper-inner-title-top csrescj soui-editableArea-wrapper-inner-title-bottom"
       tabindex="0"
     >
       <div
-        class="c-njrexu soui-editableArea-content"
+        class="c-vz36w4 soui-editableArea-content"
       >
         <span
-          class="c-sf8lbc soui-editableArea-placeholder"
+          class="c-nvnjfu soui-editableArea-placeholder"
         >
           scroll in container
         </span>
@@ -76,18 +76,18 @@ exports[`EditableArea[Base] should render correctly  3`] = `
 exports[`EditableArea[Base] should render correctly  4`] = `
 <div>
   <div
-    class="c-cwcqx4 soui-editableArea-wrapper"
+    class="c-lboive soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div
-      class="ch8vb70 soui-editableArea-place c-vnwlri soui-editableArea-wrapper-padding-box c-9taow5 soui-editableArea-wrapper-inner-title-top c-8djruj soui-editableArea-wrapper-inner-title-bottom"
+      class="ci9t19m soui-editableArea-place cmccphs soui-editableArea-wrapper-padding-box c-2t2gzn soui-editableArea-wrapper-inner-title-top csrescj soui-editableArea-wrapper-inner-title-bottom"
       tabindex="0"
     >
       <div
-        class="c-njrexu soui-editableArea-content"
+        class="c-vz36w4 soui-editableArea-content"
       >
         <span
-          class="c-sf8lbc soui-editableArea-placeholder"
+          class="c-nvnjfu soui-editableArea-placeholder"
         >
           input something
         </span>
@@ -100,15 +100,15 @@ exports[`EditableArea[Base] should render correctly  4`] = `
 exports[`EditableArea[Base] should render correctly  5`] = `
 <div>
   <div
-    class="c-cwcqx4 soui-editableArea-wrapper"
+    class="c-lboive soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div
-      class="ch8vb70 soui-editableArea-place c-vnwlri soui-editableArea-wrapper-padding-box c-9taow5 soui-editableArea-wrapper-inner-title-top c-8djruj soui-editableArea-wrapper-inner-title-bottom"
+      class="ci9t19m soui-editableArea-place cmccphs soui-editableArea-wrapper-padding-box c-2t2gzn soui-editableArea-wrapper-inner-title-top csrescj soui-editableArea-wrapper-inner-title-bottom"
       tabindex="0"
     >
       <div
-        class="c-njrexu soui-editableArea-content"
+        class="c-vz36w4 soui-editableArea-content"
       >
         <div>
           Guessing what I inputed ?

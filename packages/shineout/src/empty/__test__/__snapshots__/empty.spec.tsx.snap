@@ -2,13 +2,13 @@
 
 exports[`Empty[Base] should render correctly  1`] = `
 <div
-  class="cl0oci2 soui-empty-empty"
+  class="c-6wvktw soui-empty-empty"
 >
   <div
-    class="c8hjk28 soui-empty-wrapper"
+    class="cfh7ivm soui-empty-wrapper"
   >
     <div
-      class="cl2v7fc soui-empty-image"
+      class="c-6uopwm soui-empty-image"
     >
       <svg
         fill="none"
@@ -197,7 +197,7 @@ exports[`Empty[Base] should render correctly  1`] = `
       </svg>
     </div>
     <div
-      class="cvk54jd soui-empty-description"
+      class="cxvtkjf soui-empty-description"
     >
       Data not found
     </div>
@@ -207,13 +207,13 @@ exports[`Empty[Base] should render correctly  1`] = `
 
 exports[`Empty[Base] should render correctly about icon 1`] = `
 <div
-  class="cl0oci2 soui-empty-empty"
+  class="c-6wvktw soui-empty-empty"
 >
   <div
-    class="c8hjk28 soui-empty-wrapper"
+    class="cfh7ivm soui-empty-wrapper"
   >
     <div
-      class="cl2v7fc soui-empty-image"
+      class="c-6uopwm soui-empty-image"
     >
       <svg
         fill="none"
@@ -400,7 +400,7 @@ exports[`Empty[Base] should render correctly about icon 1`] = `
       </svg>
     </div>
     <div
-      class="cvk54jd soui-empty-description"
+      class="cxvtkjf soui-empty-description"
     >
       No network
     </div>
@@ -410,13 +410,13 @@ exports[`Empty[Base] should render correctly about icon 1`] = `
 
 exports[`Empty[Base] should render correctly anout image 1`] = `
 <div
-  class="cl0oci2 soui-empty-empty"
+  class="c-6wvktw soui-empty-empty"
 >
   <div
-    class="c8hjk28 soui-empty-wrapper"
+    class="cfh7ivm soui-empty-wrapper"
   >
     <div
-      class="cl2v7fc soui-empty-image"
+      class="c-6uopwm soui-empty-image"
     >
       <img
         alt="empty"
@@ -424,10 +424,10 @@ exports[`Empty[Base] should render correctly anout image 1`] = `
       />
     </div>
     <div
-      class="cvk54jd soui-empty-description"
+      class="cxvtkjf soui-empty-description"
     >
       <button
-        class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+        class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
         dir="ltr"
         type="button"
       >

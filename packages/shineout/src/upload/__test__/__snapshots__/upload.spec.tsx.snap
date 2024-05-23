@@ -2,13 +2,13 @@
 
 exports[`Upload[Base] should render correctly  1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper"
+  class="c-fj4whm soui-upload-wrapper"
 >
   <span
-    class="c-y2vt35 soui-upload-handler"
+    class="c-ugkzpf soui-upload-handler"
   >
     <button
-      class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+      class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -40,13 +40,13 @@ exports[`Upload[Base] should render correctly  1`] = `
 
 exports[`Upload[Base] should render correctly about base button 1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper"
+  class="c-fj4whm soui-upload-wrapper"
 >
   <span
-    class="c-y2vt35 soui-upload-handler"
+    class="c-ugkzpf soui-upload-handler"
   >
     <button
-      class="c-v4l1yb soui-upload-button cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="c-o4x34x soui-upload-button cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       tabindex="0"
       type="button"
@@ -65,14 +65,14 @@ exports[`Upload[Base] should render correctly about base button 1`] = `
 
 exports[`Upload[Base] should render correctly about base image 1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper c-u91pfx soui-upload-wrapper-image"
+  class="c-fj4whm soui-upload-wrapper c1jzqt1 soui-upload-wrapper-image"
 >
   <span
-    class="cxh1ihm soui-upload-image-handler"
+    class="c-5r138k soui-upload-image-handler"
     style="width: 80px; height: 80px;"
   >
     <div
-      class="chwzyb7 soui-upload-image-handler-icon"
+      class="ctipo8l soui-upload-image-handler-icon"
     >
       <svg
         aria-hidden="true"
@@ -97,13 +97,13 @@ exports[`Upload[Base] should render correctly about base image 1`] = `
 exports[`Upload[Base] should render correctly about confirm 1`] = `
 <div>
   <div
-    class="c-j5fpvc soui-upload-wrapper"
+    class="c-fj4whm soui-upload-wrapper"
   >
     <span
-      class="c-y2vt35 soui-upload-handler"
+      class="c-ugkzpf soui-upload-handler"
     >
       <button
-        class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+        class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -130,13 +130,13 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       />
     </span>
     <div
-      class="c-nsofg8 soui-upload-result c-paenl1 soui-upload-result-success"
+      class="c-gt0gmu soui-upload-result c-xpqfjb soui-upload-result-success"
     >
       <div
-        class="c-6s806j soui-upload-result-text"
+        class="c-4gjk6h soui-upload-result-text"
       >
         <div
-          class="cu1xfqc soui-upload-icon"
+          class="c24diee soui-upload-icon"
         >
           <svg
             aria-hidden="true"
@@ -150,15 +150,15 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
           </svg>
         </div>
         <div
-          class="cemwimv soui-upload-result-text-body"
+          class="c-xgwdyf soui-upload-result-text-body"
         >
           mountain.png
         </div>
         <div
-          class="c3642ds soui-upload-result-text-footer"
+          class="certsb6 soui-upload-result-text-footer"
         >
           <div
-            class="cu1xfqc soui-upload-icon c-h4lkel soui-upload-result-status-icon"
+            class="c24diee soui-upload-icon c-5ivuh7 soui-upload-result-status-icon"
           >
             <svg
               aria-hidden="true"
@@ -174,7 +174,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
         </div>
       </div>
       <div
-        class="c2j7si8 soui-upload-result-close cu1xfqc soui-upload-icon c-u4wuo8 soui-upload-icon-hover"
+        class="c3k5iku soui-upload-result-close c24diee soui-upload-icon c-wcp85m soui-upload-icon-hover"
       >
         <noscript />
         <svg
@@ -193,15 +193,15 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
     </div>
   </div>
   <div
-    class="c-j5fpvc soui-upload-wrapper c-u91pfx soui-upload-wrapper-image"
+    class="c-fj4whm soui-upload-wrapper c1jzqt1 soui-upload-wrapper-image"
     style="margin-top: 24px;"
   >
     <span
-      class="cxh1ihm soui-upload-image-handler"
+      class="c-5r138k soui-upload-image-handler"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="chwzyb7 soui-upload-image-handler-icon"
+        class="ctipo8l soui-upload-image-handler-icon"
       >
         <svg
           aria-hidden="true"
@@ -220,30 +220,30 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       />
     </span>
     <div
-      class="c-nwpt2r soui-upload-image-result c-paenl1 soui-upload-result-success"
+      class="c-mvs305 soui-upload-image-result c-xpqfjb soui-upload-result-success"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="c-dx1mx7 soui-upload-image-bg cwkgdqi soui-image-image cc83jly soui-image-center c-zatfc4 soui-image-rounded"
+        class="c-aaqtjh soui-upload-image-bg c4mwgek soui-image-image c-1aphz0 soui-image-center c-sb5giq soui-image-rounded"
         style="width: auto; padding-bottom: 0px;"
       >
         <div
-          class="cx3jnhf soui-image-default-placeholder"
+          class="c-xdzcm7 soui-image-default-placeholder"
         >
           <div
-            class="c-t9wh2c soui-spin-ring c-t9vp02 soui-spin-spin"
+            class="cfhjrtq soui-spin-ring cfhkjw0 soui-spin-spin"
             style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
           />
         </div>
       </div>
       <div
-        class="cvjznkp soui-upload-image-result-mask"
+        class="cvxgqqf soui-upload-image-result-mask"
       >
         <div
-          class="c-um0ieb soui-upload-image-result-mask-operator"
+          class="cne8suz soui-upload-image-result-mask-operator"
         >
           <div
-            class="cu1xfqc soui-upload-icon"
+            class="c24diee soui-upload-icon"
           >
             <svg
               aria-hidden="true"
@@ -257,7 +257,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
             </svg>
           </div>
           <div
-            class="cu1xfqc soui-upload-icon"
+            class="c24diee soui-upload-icon"
           >
             <noscript />
             <svg
@@ -283,14 +283,14 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
 exports[`Upload[Base] should render correctly about default value 1`] = `
 <div>
   <div
-    class="c-j5fpvc soui-upload-wrapper"
+    class="c-fj4whm soui-upload-wrapper"
     style="width: 300px; margin-bottom: 30px;"
   >
     <span
-      class="c-y2vt35 soui-upload-handler"
+      class="c-ugkzpf soui-upload-handler"
     >
       <button
-        class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+        class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -319,13 +319,13 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
       />
     </span>
     <div
-      class="c-nsofg8 soui-upload-result c-paenl1 soui-upload-result-success"
+      class="c-gt0gmu soui-upload-result c-xpqfjb soui-upload-result-success"
     >
       <div
-        class="c-6s806j soui-upload-result-text"
+        class="c-4gjk6h soui-upload-result-text"
       >
         <div
-          class="cu1xfqc soui-upload-icon"
+          class="c24diee soui-upload-icon"
         >
           <svg
             aria-hidden="true"
@@ -339,15 +339,15 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
           </svg>
         </div>
         <div
-          class="cemwimv soui-upload-result-text-body"
+          class="c-xgwdyf soui-upload-result-text-body"
         >
           test file.png
         </div>
         <div
-          class="c3642ds soui-upload-result-text-footer"
+          class="certsb6 soui-upload-result-text-footer"
         >
           <div
-            class="cu1xfqc soui-upload-icon c-h4lkel soui-upload-result-status-icon"
+            class="c24diee soui-upload-icon c-5ivuh7 soui-upload-result-status-icon"
           >
             <svg
               aria-hidden="true"
@@ -363,7 +363,7 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
         </div>
       </div>
       <div
-        class="c2j7si8 soui-upload-result-close cu1xfqc soui-upload-icon c-u4wuo8 soui-upload-icon-hover"
+        class="c3k5iku soui-upload-result-close c24diee soui-upload-icon c-wcp85m soui-upload-icon-hover"
       >
         <svg
           aria-hidden="true"
@@ -386,15 +386,15 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
 exports[`Upload[Base] should render correctly about drag 1`] = `
 <div>
   <div
-    class="c-j5fpvc soui-upload-wrapper c-q6ktyh soui-upload-wrapper-drop"
+    class="c-fj4whm soui-upload-wrapper c-p5n3vv soui-upload-wrapper-drop"
     style="width: 400px;"
   >
     <span
-      class="c1scpe5 soui-upload-drop-item"
+      class="c-s2k3qp soui-upload-drop-item"
       data-soui-dragover="false"
     >
       <span
-        class="c-y2vt35 soui-upload-handler"
+        class="c-ugkzpf soui-upload-handler"
       >
         <div
           style="height: 200px; box-sizing: border-box; padding: 50px 16px; font-size: 12px; line-height: 16px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;"
@@ -430,14 +430,14 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
     style="margin-top: 24px;"
   />
   <div
-    class="c-j5fpvc soui-upload-wrapper c-u91pfx soui-upload-wrapper-image c-q6ktyh soui-upload-wrapper-drop"
+    class="c-fj4whm soui-upload-wrapper c1jzqt1 soui-upload-wrapper-image c-p5n3vv soui-upload-wrapper-drop"
   >
     <span
-      class="c1scpe5 soui-upload-drop-item"
+      class="c-s2k3qp soui-upload-drop-item"
       data-soui-dragover="false"
     >
       <span
-        class="cxh1ihm soui-upload-image-handler"
+        class="c-5r138k soui-upload-image-handler"
         style="width: 200px; height: 156px;"
       >
         <div
@@ -475,13 +475,13 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
 exports[`Upload[Base] should render correctly about handle error 1`] = `
 <div>
   <div
-    class="c-j5fpvc soui-upload-wrapper"
+    class="c-fj4whm soui-upload-wrapper"
   >
     <span
-      class="c-y2vt35 soui-upload-handler"
+      class="c-ugkzpf soui-upload-handler"
     >
       <button
-        class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+        class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -515,13 +515,13 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
 exports[`Upload[Base] should render correctly about recover 1`] = `
 <div>
   <div
-    class="c-j5fpvc soui-upload-wrapper"
+    class="c-fj4whm soui-upload-wrapper"
   >
     <span
-      class="c-y2vt35 soui-upload-handler"
+      class="c-ugkzpf soui-upload-handler"
     >
       <button
-        class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+        class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -548,13 +548,13 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       />
     </span>
     <div
-      class="c-nsofg8 soui-upload-result c-paenl1 soui-upload-result-success"
+      class="c-gt0gmu soui-upload-result c-xpqfjb soui-upload-result-success"
     >
       <div
-        class="c-6s806j soui-upload-result-text"
+        class="c-4gjk6h soui-upload-result-text"
       >
         <div
-          class="cu1xfqc soui-upload-icon"
+          class="c24diee soui-upload-icon"
         >
           <svg
             aria-hidden="true"
@@ -568,15 +568,15 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
           </svg>
         </div>
         <div
-          class="cemwimv soui-upload-result-text-body"
+          class="c-xgwdyf soui-upload-result-text-body"
         >
           mountain.png
         </div>
         <div
-          class="c3642ds soui-upload-result-text-footer"
+          class="certsb6 soui-upload-result-text-footer"
         >
           <div
-            class="cu1xfqc soui-upload-icon c-h4lkel soui-upload-result-status-icon"
+            class="c24diee soui-upload-icon c-5ivuh7 soui-upload-result-status-icon"
           >
             <svg
               aria-hidden="true"
@@ -592,7 +592,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
         </div>
       </div>
       <div
-        class="c2j7si8 soui-upload-result-close cu1xfqc soui-upload-icon c-u4wuo8 soui-upload-icon-hover"
+        class="c3k5iku soui-upload-result-close c24diee soui-upload-icon c-wcp85m soui-upload-icon-hover"
       >
         <svg
           aria-hidden="true"
@@ -610,15 +610,15 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
     </div>
   </div>
   <div
-    class="c-j5fpvc soui-upload-wrapper c-u91pfx soui-upload-wrapper-image"
+    class="c-fj4whm soui-upload-wrapper c1jzqt1 soui-upload-wrapper-image"
     style="margin-top: 24px;"
   >
     <span
-      class="cxh1ihm soui-upload-image-handler"
+      class="c-5r138k soui-upload-image-handler"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="chwzyb7 soui-upload-image-handler-icon"
+        class="ctipo8l soui-upload-image-handler-icon"
       >
         <svg
           aria-hidden="true"
@@ -637,30 +637,30 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       />
     </span>
     <div
-      class="c-nwpt2r soui-upload-image-result c-paenl1 soui-upload-result-success"
+      class="c-mvs305 soui-upload-image-result c-xpqfjb soui-upload-result-success"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="c-dx1mx7 soui-upload-image-bg cwkgdqi soui-image-image cc83jly soui-image-center c-zatfc4 soui-image-rounded"
+        class="c-aaqtjh soui-upload-image-bg c4mwgek soui-image-image c-1aphz0 soui-image-center c-sb5giq soui-image-rounded"
         style="width: auto; padding-bottom: 0px;"
       >
         <div
-          class="cx3jnhf soui-image-default-placeholder"
+          class="c-xdzcm7 soui-image-default-placeholder"
         >
           <div
-            class="c-t9wh2c soui-spin-ring c-t9vp02 soui-spin-spin"
+            class="cfhjrtq soui-spin-ring cfhkjw0 soui-spin-spin"
             style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
           />
         </div>
       </div>
       <div
-        class="cvjznkp soui-upload-image-result-mask"
+        class="cvxgqqf soui-upload-image-result-mask"
       >
         <div
-          class="c-um0ieb soui-upload-image-result-mask-operator"
+          class="cne8suz soui-upload-image-result-mask-operator"
         >
           <div
-            class="cu1xfqc soui-upload-icon"
+            class="c24diee soui-upload-icon"
           >
             <svg
               aria-hidden="true"
@@ -674,7 +674,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
             </svg>
           </div>
           <div
-            class="cu1xfqc soui-upload-icon"
+            class="c24diee soui-upload-icon"
           >
             <svg
               aria-hidden="true"
@@ -698,13 +698,13 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
 
 exports[`Upload[Base] should render correctly about request 1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper"
+  class="c-fj4whm soui-upload-wrapper"
 >
   <span
-    class="c-y2vt35 soui-upload-handler"
+    class="c-ugkzpf soui-upload-handler"
   >
     <button
-      class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+      class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -736,13 +736,13 @@ exports[`Upload[Base] should render correctly about request 1`] = `
 
 exports[`Upload[Base] should render correctly about request ignore 1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper"
+  class="c-fj4whm soui-upload-wrapper"
 >
   <span
-    class="c-y2vt35 soui-upload-handler"
+    class="c-ugkzpf soui-upload-handler"
   >
     <button
-      class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+      class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -774,14 +774,14 @@ exports[`Upload[Base] should render correctly about request ignore 1`] = `
 
 exports[`Upload[Base] should render correctly about request zip 1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper"
+  class="c-fj4whm soui-upload-wrapper"
   style="width: 300px;"
 >
   <span
-    class="c-y2vt35 soui-upload-handler"
+    class="c-ugkzpf soui-upload-handler"
   >
     <button
-      class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+      class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -812,13 +812,13 @@ exports[`Upload[Base] should render correctly about request zip 1`] = `
 
 exports[`Upload[Base] should render correctly about result 1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper"
+  class="c-fj4whm soui-upload-wrapper"
 >
   <span
-    class="c-y2vt35 soui-upload-handler"
+    class="c-ugkzpf soui-upload-handler"
   >
     <button
-      class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+      class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -850,14 +850,14 @@ exports[`Upload[Base] should render correctly about result 1`] = `
 
 exports[`Upload[Base] should render correctly about result image 1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper c-u91pfx soui-upload-wrapper-image"
+  class="c-fj4whm soui-upload-wrapper c1jzqt1 soui-upload-wrapper-image"
 >
   <span
-    class="cxh1ihm soui-upload-image-handler"
+    class="c-5r138k soui-upload-image-handler"
     style="width: 80px; height: 80px;"
   >
     <div
-      class="chwzyb7 soui-upload-image-handler-icon"
+      class="ctipo8l soui-upload-image-handler-icon"
     >
       <svg
         aria-hidden="true"
@@ -881,10 +881,10 @@ exports[`Upload[Base] should render correctly about result image 1`] = `
 
 exports[`Upload[Base] should render correctly about validate image 1`] = `
 <div
-  class="c-j5fpvc soui-upload-wrapper c-u91pfx soui-upload-wrapper-image"
+  class="c-fj4whm soui-upload-wrapper c1jzqt1 soui-upload-wrapper-image"
 >
   <span
-    class="cxh1ihm soui-upload-image-handler"
+    class="c-5r138k soui-upload-image-handler"
     style="width: 400px; height: 200px;"
   >
     <div
@@ -929,13 +929,13 @@ exports[`Upload[Base] should render correctly about validate image 1`] = `
 exports[`Upload[Base] should render correctly about validate size 1`] = `
 <div>
   <div
-    class="c-j5fpvc soui-upload-wrapper"
+    class="c-fj4whm soui-upload-wrapper"
   >
     <span
-      class="c-y2vt35 soui-upload-handler"
+      class="c-ugkzpf soui-upload-handler"
     >
       <button
-        class="c-ljqh2g soui-button-secondary c-hb33si soui-button-button c9ewgyu soui-button-outline"
+        class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
         dir="ltr"
         type="button"
       >

@@ -2,15 +2,15 @@
 
 exports[`Gap[Base] should render correctly  1`] = `
 <div
-  class="cbu8okn soui-gap-wrapper"
+  class="c-g3b8rb soui-gap-wrapper"
   style="margin-bottom: -8px; margin-right: -8px; width: 400px;"
 >
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -20,11 +20,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -34,11 +34,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -48,11 +48,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -62,11 +62,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -76,11 +76,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -90,11 +90,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -104,11 +104,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -118,11 +118,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -132,11 +132,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -150,10 +150,10 @@ exports[`Gap[Base] should render correctly  1`] = `
 
 exports[`Gap[Base] should render correctly about align 1`] = `
 <div
-  class="c-c7kcmq soui-radio-group"
+  class="cuvzs0g soui-radio-group"
 >
   <div
-    class="c7ok09u soui-radio-wrapper cgmhgbp soui-radio-wrapper-checked"
+    class="ceo7z38 soui-radio-wrapper c875odf soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -162,21 +162,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="ch6vfkl soui-radio-indicator-wrapper"
+      class="chkciqb soui-radio-indicator-wrapper"
     >
       <span
-        class="c-g5gjj6 soui-radio-indicator"
+        class="cp0qpb4 soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c1w8wma soui-radio-desc"
+      class="c-v30ja8 soui-radio-desc"
     >
       flex-start
     </span>
   </div>
   <div
-    class="c7ok09u soui-radio-wrapper"
+    class="ceo7z38 soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -184,21 +184,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="ch6vfkl soui-radio-indicator-wrapper"
+      class="chkciqb soui-radio-indicator-wrapper"
     >
       <span
-        class="c-g5gjj6 soui-radio-indicator"
+        class="cp0qpb4 soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c1w8wma soui-radio-desc"
+      class="c-v30ja8 soui-radio-desc"
     >
       center
     </span>
   </div>
   <div
-    class="c7ok09u soui-radio-wrapper"
+    class="ceo7z38 soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -206,21 +206,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="ch6vfkl soui-radio-indicator-wrapper"
+      class="chkciqb soui-radio-indicator-wrapper"
     >
       <span
-        class="c-g5gjj6 soui-radio-indicator"
+        class="cp0qpb4 soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c1w8wma soui-radio-desc"
+      class="c-v30ja8 soui-radio-desc"
     >
       flex-end
     </span>
   </div>
   <div
-    class="c7ok09u soui-radio-wrapper"
+    class="ceo7z38 soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -228,15 +228,15 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="ch6vfkl soui-radio-indicator-wrapper"
+      class="chkciqb soui-radio-indicator-wrapper"
     >
       <span
-        class="c-g5gjj6 soui-radio-indicator"
+        class="cp0qpb4 soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c1w8wma soui-radio-desc"
+      class="c-v30ja8 soui-radio-desc"
     >
       baseline
     </span>
@@ -254,23 +254,23 @@ exports[`Gap[Base] should render correctly about custom 1`] = `
     column:
   </div>
   <div
-    class="c481088 soui-slider-wrapper"
+    class="c7ubtly soui-slider-wrapper"
     style="flex: 1;"
   >
     <div
-      class="c-7q823k soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-u69f6y soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
         dir="ltr"
         style="left: 0%; right: 92%;"
       >
         <div
-          class="c-1we5p8 soui-slider-indicator ceadt3r soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
           dir="ltr"
         />
         <div
-          class="c-jepcrj soui-slider-end-value c-7pf33u soui-slider-value"
+          class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
           dir="ltr"
         >
           8
@@ -283,15 +283,15 @@ exports[`Gap[Base] should render correctly about custom 1`] = `
 
 exports[`Gap[Base] should render correctly about vertical 1`] = `
 <div
-  class="cbu8okn soui-gap-wrapper"
+  class="c-g3b8rb soui-gap-wrapper"
   style="margin-bottom: -10px; margin-right: -8px; width: 400px; flex-direction: column;"
 >
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -301,11 +301,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -315,11 +315,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -329,11 +329,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     </button>
   </div>
   <div
-    class="c-9gkh8h soui-gap-item"
+    class="c-qchimb soui-gap-item"
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="cmi4mna soui-button-primary c-hb33si soui-button-button"
+      class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
       dir="ltr"
       type="button"
     >
