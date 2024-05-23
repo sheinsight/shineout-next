@@ -23,11 +23,25 @@ const CardHeader = (props: CardHeaderProps) => {
     );
   };
 
-  const headerContentClassName = classNames(
-    cardClasses?.headerContent,
+  const alignClass = classNames(
     align === 'center' && cardClasses?.center,
     align === 'right' && cardClasses?.right,
   );
+
+  const headerContentClassName = classNames(
+    cardClasses?.headerContent,
+    alignClass
+  );
+
+  if (!props.extra && !collapsible) {
+    const simpleHeaderClassName = classNames(cardClasses?.header, cardClasses?.simpleHeader, alignClass, props.className);
+    
+    return (
+      <div className={simpleHeaderClassName}>
+        {props.children}
+      </div>
+    );
+  }
 
   return (
     <div

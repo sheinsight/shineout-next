@@ -22,7 +22,7 @@ const App: React.FC = () => {
         format='X'
         timeZone={tz}
         type='datetime'
-        defaultValue={new Date()}
+        defaultValue={new Date(2024, 10, 10, 12, 12, 12)}
         placeholder='Select datetime'
         onChange={(d) => console.log(d)}
         formatResult='YYYY-MM-DD HH:mm:ss'

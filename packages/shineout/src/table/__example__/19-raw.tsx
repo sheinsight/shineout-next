@@ -25,7 +25,7 @@ interface TableRowData {
 const data: TableRowData[] = user.fetchSync(6);
 
 const App: React.FC = () => (
-  <Table striped keygen='id'>
+  <Table striped keygen='id' bordered>
     <thead>
       <tr>
         <th>Name</th>

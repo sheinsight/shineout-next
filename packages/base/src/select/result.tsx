@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useRef,useEffect, useLayoutEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -316,8 +316,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const handleResetMore = () => {
     if (!compressed) return;
     if (isCompressedBound()) return;
-    setMore(-1);
     setShouldResetMore(true);
+    setMore(-1);
   };
 
   useEffect(() => {
@@ -330,8 +330,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     mounted.current = true;
   }, [focus]);
 
-  useEffect(() => {
-    handleResetMore();
+  useLayoutEffect(() => {
+    setTimeout(handleResetMore)
   }, [valueProp, data]);
 
   useLayoutEffect(() => {
@@ -340,7 +340,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       more === -1 &&
       compressed &&
       resultRef.current &&
-      (props.value || [].length)
+      ((props.value as any || []).length)
     ) {
       const tagClassName = `.${styles.tag.split(' ')[0]}`;
       if (shouldResetMore && isArray(value) && (value || []).length) {

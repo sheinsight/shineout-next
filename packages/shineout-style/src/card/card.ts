@@ -4,6 +4,13 @@ import { CardClasses } from '@sheinx/base';
 
 export type CardClassType = keyof CardClasses;
 
+const headerCommon = {
+  fontSize: token.cardTitleFontSize,
+  lineHeight: token.lineHeightDynamic,
+  fontWeight: 'bold',
+  minWidth: 0,
+}
+
 const cardStyle: JsStyles<CardClassType> = {
   wrapper: {
     display: 'flex',
@@ -57,11 +64,12 @@ const cardStyle: JsStyles<CardClassType> = {
     },
   },
   headerContent: {
-    fontSize: token.cardTitleFontSize,
-    lineHeight: token.lineHeightDynamic,
-    fontWeight: 'bold',
+    ...headerCommon,
     flex: 1,
-    minWidth: 0,
+  },
+  simpleHeader: {
+    ...headerCommon,
+    display: 'block'
   },
   center: {
     textAlign: 'center',

@@ -108,6 +108,22 @@ const treeStyle: JsStyles<TreeClassType> = {
     cursor: 'pointer',
     padding: `0 ${Token.treePaddingX}`,
     borderRadius: Token.treeContentBorderRadius,
+    position: 'relative',
+    '&[data-expanded="true"]::before': {
+      content: '""',
+      position: 'absolute',
+      top: 24,
+      bottom: 0,
+      left: -12,
+      width: 1,
+      background: '#ebebeb',
+    },
+    '&[dir=ltr][data-expanded="true"]::before': {
+      left: -12,
+    },
+    '&[dir=rtl][data-expanded="true"]::before': {
+      right: -12,
+    },
 
     '&[data-active="true"]': {
       background: Token.treeContentActiveBackgroundColor,
@@ -116,10 +132,13 @@ const treeStyle: JsStyles<TreeClassType> = {
         color: Token.treeContentActiveFontColor,
       },
     },
-    '&[data-disabled="true"]': {
-      cursor: 'not-allowed',
-    },
-    '&:hover:not([data-active="true"]):not([data-disabled="true"])': {
+    // '&[data-disabled="true"]': {
+    //   cursor: 'not-allowed',
+    // },
+    // '&:hover:not([data-active="true"]):not([data-disabled="true"])': {
+    //   background: Token.treeContentHoverBackgroundColor,
+    // },
+    '&:hover:not([data-active="true"])': {
       background: Token.treeContentHoverBackgroundColor,
     },
   },
@@ -137,9 +156,9 @@ const treeStyle: JsStyles<TreeClassType> = {
     paddingTop: Token.treeTextPaddingY,
     paddingBottom: Token.treeTextPaddingY,
   },
-  textDisabled: {
-    color: Token.treeItemDisabledFontColor,
-  },
+  // textDisabled: {
+  //   color: Token.treeItemDisabledFontColor,
+  // },
   list: {},
   node: {
     position: 'relative',

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, useTree, util, ObjectKey } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
@@ -54,6 +54,8 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     datum: propsDatum,
     ...rest
   } = props;
+
+  const { current: context } = useRef({ mounted: false });
 
   const { datum, expanded, onExpand } = useTree({
     mode,
@@ -182,6 +184,9 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   };
 
   useEffect(() => {
+    // 首次渲染不更新
+    if (!context.mounted) {return;}
+    if (!props.expanded) return;
     handleUpdateExpanded(expanded);
   }, [expanded]);
 
@@ -192,6 +197,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   useEffect(() => {
     if (getDatum) getDatum(datum);
+    context.mounted = true;
   }, []);
 
   return (

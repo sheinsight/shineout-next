@@ -62,6 +62,7 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       backgroundColor: token.tooltipLightBackgroundColor,
       color: token.tooltipLightColor,
       border: `1px solid ${token.tooltipLightBorderColor}`,
+      boxSizing: 'border-box',
     },
     '&[data-soui-type^="primary"]': {
       backgroundColor: token.tooltipPrimaryBackgroundColor,
@@ -85,20 +86,27 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       content: '" "',
       display: 'block',
       border: `inherit`,
+      borderLeftColor: 'transparent',
       width: '8.4px',
       height: '8.4px',
       boxSizing: 'content-box',
       background: 'inherit',
-      borderBottom: 'none',
+      borderBottomColor: 'transparent',
     },
     '&[data-soui-position^="bottom"]': {
       marginTop: arrowGap - 2,
       '&::before': {
         top: '0',
-        transform: 'translate(0, -50%) rotate(-45deg)',
+
         left: '0',
         right: '0',
         margin: 'auto',
+      },
+      '&[dir=ltr]::before': {
+        transform: 'translate(0, -50%) rotate(-45deg)',
+      },
+      '&[dir=rtl]::before': {
+        transform: 'translate(0, -50%) rotate(45deg)',
       },
       '&::after': {
         top: arrowGap * -1,
@@ -119,6 +127,12 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
         right: '0',
         margin: 'auto',
       },
+      '&[dir=ltr]::before': {
+        transform: 'translate(0, 50%) rotate(135deg)',
+      },
+      '&[dir=rtl]::before': {
+        transform: 'translate(0, 50%) rotate(-135deg)',
+      },
       '&::after': {
         bottom: arrowGap * -1,
         left: '0',
@@ -135,10 +149,15 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       '&[dir=rtl]': { marginRight: (arrowGap - 2) * -1 },
       '&::before': {
         right: 0,
-        transform: 'translate(50%, 0) rotate(45deg)',
         top: '0',
         bottom: '0',
         margin: 'auto',
+      },
+      '&[dir=ltr]::before': {
+        transform: 'translate(50%, 0) rotate(45deg)',
+      },
+      '&[dir=rtl]::before': {
+        transform: 'translate(50%, 0) rotate(135deg)',
       },
       '&::after': {
         left: arrowGap * -1,
@@ -156,10 +175,15 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       '&[dir=rtl]': { marginRight: arrowGap - 2 },
       '&::before': {
         left: '0',
-        transform: 'translate(-50%, 0) rotate(-135deg)',
         top: '0',
         bottom: '0',
         margin: 'auto',
+      },
+      '&[dir=ltr]::before': {
+        transform: 'translate(-50%, 0) rotate(-135deg)',
+      },
+      '&[dir=rtl]::before': {
+        transform: 'translate(-50%, 0) rotate(-45deg)',
       },
       '&::after': {
         left: arrowGap * -1,

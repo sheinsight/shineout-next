@@ -6,6 +6,7 @@ import { StickyProps } from './sticky.type';
 const { cssSupport } = util;
 const supportSticky = cssSupport('position', 'sticky');
 const defaultZIndex = 900;
+const events = ['scroll', 'pageshow', 'load', 'resize'];
 
 // const getFirstScrollParent = (el: HTMLElement) => {
 //   let parent = el.parentNode as HTMLElement;
@@ -32,6 +33,7 @@ const Sticky = (props: StickyProps) => {
     observer: null as IntersectionObserver | null,
     parentObserver: null as IntersectionObserver | null,
     isTop: false,
+    bodyObserver: null as IntersectionObserver | null,
   });
 
   const [style, setStyle] = useState({} as React.CSSProperties);
@@ -40,7 +42,6 @@ const Sticky = (props: StickyProps) => {
 
   const forceRender = useRender();
   const elementRef = useRef(null as HTMLElement | null);
-  const elementSize = useResize({ targetRef: elementRef, timer: 0 });
 
   const getTarget = () => {
     let { scrollContainer } = props;
@@ -51,12 +52,11 @@ const Sticky = (props: StickyProps) => {
     if (scrollContainer && (scrollContainer as HTMLElement).nodeType === 1) {
       return scrollContainer as HTMLElement;
     }
-    return document.body;
+    return null;
   };
 
   const updateStyle = usePersistFn(() => {
     if (context.div && !context.isTop && show) {
-      const shouldFixed = context.target === document.body;
       const scrollRect = context.target!.getBoundingClientRect();
       const targetRect = elementRef.current!.getBoundingClientRect();
       const targetLeft = targetRect.left;
@@ -64,7 +64,7 @@ const Sticky = (props: StickyProps) => {
       if (typeof bottom === 'number') {
         const outRootRect = context.target!.getBoundingClientRect();
         const style: React.CSSProperties = {
-          position: shouldFixed ? 'fixed' : 'absolute',
+          position: 'absolute',
           width: `${width}px`,
           height: `${height}px`,
           top: `${scrollRect.bottom - (props.bottom || 0) - outRootRect.top}px`,
@@ -76,16 +76,14 @@ const Sticky = (props: StickyProps) => {
     }
   });
 
-  const handlePosition: IntersectionObserverCallback = usePersistFn((entries) => {
+  const handleTargetPosition: IntersectionObserverCallback = usePersistFn((entries) => {
     const entry = entries[0];
     const scrollRect = entry.rootBounds;
     const targetRect = entry.boundingClientRect;
-    const shouldFixed = context.target === document.body;
+
     if (!entry.isIntersecting) {
       const targetLeft = targetRect.left;
-      const outRootRect = shouldFixed
-        ? { top: 0, bottom: 0, left: 0, right: 0 }
-        : context.div!.getBoundingClientRect();
+      const outRootRect = context.div!.getBoundingClientRect();
       const { width, height } = targetRect;
 
       if (scrollRect && targetRect.bottom < scrollRect.bottom) {
@@ -94,7 +92,7 @@ const Sticky = (props: StickyProps) => {
         if (typeof top === 'number') {
           setShow(true);
           const style: React.CSSProperties = {
-            position: shouldFixed ? 'fixed' : 'absolute',
+            position: 'absolute',
             width: `${width}px`,
             height: `${height}px`,
             top: `${scrollRect.top - outRootRect.top}px`,
@@ -109,7 +107,7 @@ const Sticky = (props: StickyProps) => {
           setShow(true);
           const outRootRect = context.target!.getBoundingClientRect();
           const style: React.CSSProperties = {
-            position: shouldFixed ? 'fixed' : 'absolute',
+            position: 'absolute',
             width: `${width}px`,
             height: `${height}px`,
             top: `${scrollRect.bottom - outRootRect.top}px`,
@@ -134,7 +132,57 @@ const Sticky = (props: StickyProps) => {
     }
   });
 
-  const cleanEvents = () => {
+  const handleFixedPosition = usePersistFn(() => {
+    const element = elementRef.current;
+    if (!element) return;
+    const selfRect = element.getBoundingClientRect();
+    if (selfRect === null) return;
+    // If the element is hidden, the width and height will be 0
+    if (selfRect && selfRect.width === 0 && selfRect.height === 0) return;
+    // const { marginBottom, marginTop } = getComputedStyle(element);
+    // selfRect.height += parseFloat(marginBottom) + parseFloat(marginTop);
+    const scrollElement = document.body;
+    const scrollRect = scrollElement.getBoundingClientRect();
+    const { top, bottom } = props;
+    if (top !== undefined && Math.ceil(selfRect.top) <= top) {
+      setShow(true);
+      setStyle({
+        position: 'fixed',
+        top,
+        left: `${selfRect.left}px`,
+        width: `${selfRect.width}px`,
+      });
+      return;
+    } else if (bottom !== undefined && Math.ceil(selfRect.bottom) + bottom > scrollRect.bottom) {
+      setShow(true);
+      setStyle({
+        position: 'fixed',
+        bottom,
+        left: `${selfRect.left}px`,
+        width: `${selfRect.width}px`,
+      });
+      return;
+    } else {
+      setShow(false);
+    }
+  });
+
+  const elementSize = useResize({ targetRef: elementRef, timer: 0, cb: handleFixedPosition });
+
+  const createBodyObserver = () => {
+    if (context.bodyObserver) {
+      context.bodyObserver.disconnect();
+    }
+
+    context.bodyObserver = new IntersectionObserver(handleFixedPosition, {
+      root: null,
+      rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
+      threshold: 1.0,
+    });
+    context.bodyObserver.observe(elementRef.current!);
+  };
+
+  const cancelObserver = () => {
     if (context.observer) {
       context.observer.disconnect();
       context.observer = null;
@@ -143,19 +191,16 @@ const Sticky = (props: StickyProps) => {
       context.parentObserver.disconnect();
       context.parentObserver = null;
     }
-    window.removeEventListener('resize', updateStyle);
   };
 
-  const createObserver = () => {
-    const target = getTarget();
-    if (!context.div && target !== document.body) {
+  const createObserver = (target: HTMLElement) => {
+    if (!context.div) {
       context.div = document.createElement('div');
       context.div.style.position = 'relative';
     }
-    if (target && target !== context.target) {
+    if (target) {
       forceRender();
-      context.target = target;
-      cleanEvents();
+      cancelObserver();
       if (context.div) {
         // append div
         if (target === document.body) {
@@ -173,7 +218,7 @@ const Sticky = (props: StickyProps) => {
         }
       }
       if (window.IntersectionObserver) {
-        const observer = new IntersectionObserver(handlePosition, {
+        const observer = new IntersectionObserver(handleTargetPosition, {
           root: target,
           rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
           threshold: 1.0,
@@ -199,17 +244,34 @@ const Sticky = (props: StickyProps) => {
   };
 
   useEffect(() => {
-    if (!css) {
-      createObserver();
+    if (css) return;
+    const target = getTarget();
+    context.target = target;
+    if (target) {
+      createObserver(target);
       window.addEventListener('resize', updateStyle);
+      return () => {
+        cancelObserver();
+        window.removeEventListener('resize', updateStyle);
+        if (context.div) {
+          context.div.remove();
+        }
+      };
+    } else {
+      // fixed 布局
+      createBodyObserver();
+      events.forEach((event) => {
+        window.addEventListener(event, handleFixedPosition);
+      });
+      return () => {
+        if (context.bodyObserver) {
+          context.bodyObserver.disconnect();
+        }
+        events.forEach((event) => {
+          window.removeEventListener(event, handleFixedPosition);
+        });
+      };
     }
-    return () => {
-      cleanEvents();
-      if (context.div) {
-        context.div.remove();
-        context.div = null;
-      }
-    };
   }, [css]);
 
   useEffect(() => {
@@ -249,6 +311,11 @@ const Sticky = (props: StickyProps) => {
 
   const isFixed = style.position === 'fixed';
 
+  const hideStyle: any = {
+    opacity: 0,
+    pointerEvents: 'none',
+  };
+
   return (
     <>
       {isFixed
@@ -258,7 +325,7 @@ const Sticky = (props: StickyProps) => {
         className={props.className}
         style={{
           ...props.style,
-          opacity: show && parentVisible ? 0 : props.style?.opacity,
+          ...show && parentVisible ? hideStyle : {},
         }}
         ref={handleElementRef}
       >
