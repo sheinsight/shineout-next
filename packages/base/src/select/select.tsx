@@ -715,7 +715,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       <AbsoluteList
         adjust
         focus={open}
-        fixedWidth={autoAdapt ? 'min' : !props.columns}
+        fixedWidth={!props.columns && (autoAdapt ? 'min' : true)}
         absolute={props.absolute}
         zIndex={props.zIndex}
         position={position}
