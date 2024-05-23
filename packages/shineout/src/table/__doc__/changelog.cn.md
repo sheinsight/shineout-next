@@ -3,7 +3,7 @@
 ### 🐞 BugFix
 
 - 修复 `Table` 异步加载数据可能导致滚动条闪烁的问题 ([#466](https://github.com/sheinsight/shineout-next/pull/466)) 
-- 修复 `Table` 值使用样式的用法的下边框样式问题 ([#469](https://github.com/sheinsight/shineout-next/pull/469)) 
+- 修复 `Table` 只使用样式的用法单元格下边框样式问题 ([#469](https://github.com/sheinsight/shineout-next/pull/469)) 
 
 ## 3.1.9
 2024-05-14
