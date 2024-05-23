@@ -148,6 +148,10 @@ const Sticky = (props: StickyProps) => {
   // 无滚动容器的时候，body 滚动 resize 计算
   const handleFixedPosition = usePersistFn(() => {
     const element = elementRef.current;
+    if (!parentVisible) {
+      setFixedStyle(false);
+      return;
+    }
     if (!element) return;
     const selfRect = element.getBoundingClientRect();
     if (selfRect === null) return;
@@ -168,6 +172,10 @@ const Sticky = (props: StickyProps) => {
 
   // 无滚动容器时内滚场景触发
   const handleFixedInter = usePersistFn((entries) => {
+    if (!parentVisible) {
+      setFixedStyle(false);
+      return;
+    }
     const entry = entries[0];
     const scrollRect = entry.rootBounds;
     const targetRect = entry.boundingClientRect;
