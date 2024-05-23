@@ -238,15 +238,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     groupBy,
   });
 
-  // const triggerOpen = usePersistFn(() => {
-  //   if (disabled === true) return;
-  //   if (open) {
-  //     closePop();
-  //   } else {
-  //     openPop();
-  //   }
-  // });
-
   const focusAndOpen = () => {
     if (!focused) {
       inputRef.current?.focus();
@@ -724,7 +715,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       <AbsoluteList
         adjust
         focus={open}
-        fixedWidth={autoAdapt ? 'min' : true}
+        fixedWidth={autoAdapt ? 'min' : !props.columns}
         absolute={props.absolute}
         zIndex={props.zIndex}
         position={position}
