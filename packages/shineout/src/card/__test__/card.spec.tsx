@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Card from '..';
 import {
@@ -132,16 +132,21 @@ describe('Card[Base]', () => {
   snapshotTest(<CardCollpase />, 'about collpase');
   snapshotTest(<CardAccordion />, 'about accordion');
   test('should render default', () => {
-    const { container } = render(<CardTest />);
+    const extraContent = 'test'
+    const { container, rerender } = render(<CardHeaderTest extra={extraContent} />);
     const cardWrapper = container.querySelector(wrapper)!;
     const cardHeader = cardWrapper.querySelector(header)!;
     const cardBody = cardWrapper.querySelector(body)!;
     const cardFooter = cardWrapper.querySelector(footer)!;
     const cardHeaderContent = cardHeader.querySelector(headerContent)!;
+
     textContentTest(cardHeaderContent, testHeaderContent);
+    textContentTest(cardHeader.querySelector(headerExtra)!, extraContent);
     textContentTest(cardBody, testBodyContent);
     textContentTest(cardFooter, testFooterContent);
     classTest(cardFooter, right);
+    rerender(<CardHeaderTest />);
+    expect(container.querySelector(headerContent)).not.toBeInTheDocument();
   });
   test('should render when set split', () => {
     const { container } = render(<CardTest split />);
@@ -172,6 +177,7 @@ describe('Card[Header]', () => {
   });
   test('should render when set align is center in header', () => {
     const { container } = render(<CardHeaderTest align='center' />);
+    screen.debug()
     const cardHeader = container.querySelector(header)!;
     classTest(cardHeader.querySelector(headerContent)!, center);
   });
