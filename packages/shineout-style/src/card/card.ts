@@ -68,7 +68,8 @@ const cardStyle: JsStyles<CardClassType> = {
     flex: 1,
   },
   simpleHeader: {
-    ...headerCommon
+    ...headerCommon,
+    display: 'block'
   },
   center: {
     textAlign: 'center',

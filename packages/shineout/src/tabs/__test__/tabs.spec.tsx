@@ -15,7 +15,7 @@ import {
   textContentTest,
 } from '../../tests/utils';
 import TabsBase from '../__example__/01-base';
-import TabsShape from '../__example__/02-shape';
+import TabsShape from '../__example__/02-01-line-shape';
 import TabsPositon from '../__example__/03-position';
 import TabsControl from '../__example__/04-control';
 import TabsAutofill from '../__example__/05-autofill';
