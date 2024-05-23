@@ -28,12 +28,11 @@ const App: React.FC = () => (
   <div>
     <Card style={cardStyle} split>
       <Card.Header
-        align='center'
-        // extra={
-        //   <Button mode='text' type='primary'>
-        //     Text Button
-        //   </Button>
-        // }
+        extra={
+          <Button mode='text' type='primary'>
+            Text Button
+          </Button>
+        }
       >
         Card title
       </Card.Header>

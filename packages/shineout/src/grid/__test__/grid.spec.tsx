@@ -21,11 +21,11 @@ import GridGutter from '../__example__/04-gutter';
 // const originItemClasses = ['full', 'md'];
 // const { full, md } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const wrapper = '.so-grid';
-const offsetPre = 'so-offset-md';
+const wrapper = '.soui-grid';
+const offsetPre = 'soui-offset-md';
 
-const full = 'so-grid-full';
-const md = 'so-grid-md';
+const full = 'soui-grid-full';
+const md = 'soui-grid-md';
 
 const mdClassName = (f: number | string, s: number | string = '000') => `${md}-${f}-${s}`;
 const mdDefaultClassName = mdClassName(100);
@@ -48,6 +48,7 @@ describe('Grid[Base]', () => {
   snapshotTest(<GridGutter />, 'about gutter');
   test('should render default', () => {
     const { container } = render(<Grid>{'Grid'}</Grid>);
+    screen.debug()
     const gridWrapper = container.querySelector(wrapper)!;
     classTest(gridWrapper, full);
     classTest(gridWrapper, mdDefaultClassName);

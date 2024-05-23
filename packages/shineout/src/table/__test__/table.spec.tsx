@@ -305,14 +305,14 @@ describe('Table[Base]', () => {
     const tableWrapper = container.querySelector(wrapper)!;
     classTest(tableWrapper, verticalAlignTop);
     classTest(tableWrapper, tableDefault);
-    const tableHeader = tableWrapper.querySelector(headWrapper)!;
-    classLengthTest(tableHeader, 'table', 1);
-    const colGroup = tableHeader.querySelector('colgroup')!;
+    const tableBody = tableWrapper.querySelector(bodyWrapper)!;
+    classLengthTest(tableBody, 'table', 1);
+    const colGroup = tableBody.querySelector('colgroup')!;
     classLengthTest(colGroup, 'col', 2);
     colGroup.querySelectorAll('col').forEach((item) => {
       styleTest(item, 'width: 0px;');
     });
-    const thead = tableHeader.querySelector('thead')!;
+    const thead = tableBody.querySelector('thead')!;
     const theadTr = thead.querySelector('tr')!;
     const theadTh = theadTr.querySelectorAll('th');
     expect(theadTh.length).toBe(columns.length);
@@ -320,7 +320,7 @@ describe('Table[Base]', () => {
     expect(theadTh[1].textContent).toBe(columns[1].title);
     attributesTest(theadTh[0], 'rowspan', '1');
     attributesTest(theadTh[1], 'rowspan', '1');
-    const tableBody = tableHeader.nextElementSibling!
+    // const tableBody = tableHeader.nextElementSibling!
     const tbody = tableBody.querySelector('tbody')!;
     const tbodyTr = tbody.querySelectorAll('tr');
     expect(tbodyTr.length).toBe(renderData.length);
@@ -333,7 +333,7 @@ describe('Table[Base]', () => {
       attributesTest(itemTd[0], 'colspan', '1');
       attributesTest(itemTd[1], 'colspan', '1');
     });
-    expect(tableWrapper.querySelector('tfoot')).not.toBeInTheDocument();
+    expect(tableBody.querySelector('tfoot')).toBeInTheDocument();
   });
   test('should render when set data is empty', () => {
     const { container } = render(<Table keygen={'id'} columns={columns} />);
@@ -643,8 +643,9 @@ describe('Table[Event]', () => {
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={renderData} onScroll={scrollFn} />,
     );
-    const tableWrapper = container.querySelector(headWrapper)?.nextElementSibling!;
-    fireEvent.scroll(tableWrapper.firstElementChild!, { target: { scrollY: 100 } });
+
+    const tableWrapper = container.querySelector(bodyWrapper)!;
+    fireEvent.scroll(tableWrapper, { target: { scrollY: 100 } });
     expect(scrollFn.mock.calls.length).toBe(1);
   });
 });
@@ -1447,7 +1448,7 @@ describe('Table[Fixed]', () => {
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={tempData} fixed={'x'} />,
     );
-    classLengthTest(container, 'table', 2);
+    classLengthTest(container, 'table', 1);
   });
   test('should render when set fixed in columns', () => {
     const { container } = render(<Table keygen={'id'} columns={fixedColumns} data={fixedData} />);
@@ -1477,9 +1478,10 @@ describe('Table[Fixed]', () => {
     });
   });
   test('should render when isScrollX is true', () => {
-    const trsDefaultStyleByLeft = 'position: sticky; left: 0px;';
-    const trsDefaultStyleByRight = 'transform: translate3d(-100px, 0, 0);';
-    const trsVirtualStyleByLeft = 'transform: translate3d(-20px, 0px, 0);';
+    const trsDefaultStyleByLeft = 'left: 0px; position: sticky;';
+    const trsDefaultStyleByRight = 'right: 0px; position: sticky;';
+    const trsVirtualStyleByLeft = 'transform: translate3d(-20px, 0, 0);';
+    const trsVirtualStyleByLeftHead = 'transform: translate3d(20px, 0, 0);';
     const trsVirtualStyleByRight = 'transform: translate3d(-80px, 0, 0);';
     Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 300 });
     Object.defineProperty(HTMLElement.prototype, 'clientWidth', { configurable: true, value: 200 });
@@ -1487,22 +1489,27 @@ describe('Table[Fixed]', () => {
       <Table keygen={'id'} columns={fixedColumns} data={fixedData} />,
     );
     
-    const tableHead = container.querySelector(headWrapper)!;
-    const tableBody = tableHead.nextElementSibling;
-    const tableSroll = tableBody?.firstElementChild as Element;
-    styleContentTest(tableSroll.firstElementChild as Element, trsDefaultStyleByLeft)
+    const tableBodyWrapper = container.querySelector(bodyWrapper)!;
+    const headerThs = tableBodyWrapper.querySelector('thead')?.querySelectorAll('th')!
+    
+
+    styleContentTest(headerThs[0], trsDefaultStyleByLeft)
+    styleContentTest(headerThs[1], trsDefaultStyleByLeft)
     
     rerender(<Table keygen={'id'} columns={fixedColumnsByRight} data={fixedData} />);
+    const headerThsRight = tableBodyWrapper.querySelector('thead')?.querySelectorAll('th')!
     
-    styleContentTest(tableSroll.firstElementChild as Element, trsDefaultStyleByLeft)
-    
-    styleTest(tableHead.querySelector('.' + cellFixedRight)!, trsDefaultStyleByRight)
+    styleContentTest(headerThsRight[2], trsDefaultStyleByRight)
     rerender(
       <Table keygen={'id'} columns={fixedColumns} data={fixedData} virtual scrollLeft={20} />,
     );
     
-    styleContentTest(tableSroll.firstElementChild as Element, trsDefaultStyleByLeft)
-    styleTest(tableSroll.querySelector('table')!, trsVirtualStyleByLeft)
+    const tableHead = container.querySelector(headWrapper)!;
+    styleTest(tableHead.querySelector('table')!, trsVirtualStyleByLeft)
+    const headerThsV = tableHead.querySelector('thead')?.querySelectorAll('th')!
+    
+    styleContentTest(headerThsV[0], trsVirtualStyleByLeftHead)
+    styleContentTest(headerThsV[1], trsVirtualStyleByLeftHead)
     rerender(
       <Table
         keygen={'id'}
@@ -1512,9 +1519,9 @@ describe('Table[Fixed]', () => {
         scrollLeft={20}
       />,
     );
-    styleContentTest(tableSroll.firstElementChild as Element, trsDefaultStyleByLeft)
-    styleTest(tableSroll.querySelector('table')!, trsVirtualStyleByLeft)
-    styleTest(tableHead.querySelector('.' + cellFixedRight)!, trsVirtualStyleByRight)
+    styleTest(tableHead.querySelector('table')!, trsVirtualStyleByLeft)
+    const headerThsVRight = tableHead.querySelector('thead')?.querySelectorAll('th')!
+    styleContentTest(headerThsVRight[2], trsVirtualStyleByRight)
   });
 });
 describe('Table[Resizable]', () => {

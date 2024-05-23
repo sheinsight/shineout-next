@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Card from '..';
 import {
@@ -79,8 +79,9 @@ const {
   wrapperMoveable,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const activeDefaultStyle = 'display: block;';
-const noActiveDefaultStyle = 'display: none;';
+const activeDefaultStyle = 'display: block; height: auto; transition: height 240ms ease-in-out;';
+const noActiveDefaultStyle = 'display: block; height: 0px; overflow: hidden;';
+const closeDefaultStyle = 'display: none; height: auto; transition: height 240ms ease-in-out;'
 
 const testHeaderContent = 'Header';
 const testBodyContent = 'body';
@@ -177,14 +178,13 @@ describe('Card[Header]', () => {
   });
   test('should render when set align is center in header', () => {
     const { container } = render(<CardHeaderTest align='center' />);
-    screen.debug()
     const cardHeader = container.querySelector(header)!;
-    classTest(cardHeader.querySelector(headerContent)!, center);
+    classTest(cardHeader, center);
   });
   test('should render when set align is right in footer', () => {
     const { container } = render(<CardHeaderTest align='right' />);
     const cardHeader = container.querySelector(header)!;
-    classTest(cardHeader.querySelector(headerContent)!, right);
+    classTest(cardHeader, right);
   });
 });
 describe('Card[Footer]', () => {
@@ -288,6 +288,7 @@ describe('Card[Form/Accordion]', () => {
         <CardTest />
       </Card.Accordion>,
     );
+    
     const cardAccordion = container.querySelector(accordion)!;
     const cardWrappers = cardAccordion.querySelectorAll(wrapper)!;
     cardWrappers.forEach((item) => {
@@ -296,12 +297,16 @@ describe('Card[Form/Accordion]', () => {
       styleContentTest(item.querySelector(bodyCollapse)!, noActiveDefaultStyle);
     });
     fireEvent.click(cardWrappers[0].querySelector(indicatorIcon)!);
+    await waitFor(async () => {
+      await delay(500)
+    })
+    
     styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, activeDefaultStyle);
     fireEvent.click(cardWrappers[1].querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
     });
-    styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, noActiveDefaultStyle);
+    styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, closeDefaultStyle);
     styleContentTest(cardWrappers[1].querySelector(bodyCollapse)!, activeDefaultStyle);
   });
 });
