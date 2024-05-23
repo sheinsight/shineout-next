@@ -56,10 +56,10 @@ const tableStyle: JsStyles<TableClassType> = {
             background: token.tableCellBorderColor,
             borderLeft: `1px solid ${token.tableCellBorderColor}`,
           },
-          '&[dir=ltr]::after': {
+          '[dir=ltr]&::after': {
             right: 0,
           },
-          '&[dir=rtl]::after': {
+          '[dir=rtl]&::after': {
             left: 0,
           },
         },
