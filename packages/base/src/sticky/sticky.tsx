@@ -1,6 +1,6 @@
 import { usePersistFn, util, useResize, useRender } from '@sheinx/hooks';
 import { createPortal } from 'react-dom';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { StickyProps } from './sticky.type';
 
 const { cssSupport } = util;
@@ -26,23 +26,22 @@ const events = ['scroll', 'pageshow', 'load', 'resize'];
 
 const Sticky = (props: StickyProps) => {
   const { children, top, bottom } = props;
-  const css = props.css || props.target;
+  // 是否使用css sticky
+  const css = (props.css || props.target) && supportSticky;
+  const forceUpdate = useRender();
   const { current: context } = useRef({
     target: null as HTMLElement | null,
     div: null as HTMLElement | null,
-    observer: null as IntersectionObserver | null,
-    parentObserver: null as IntersectionObserver | null,
     position: '',
-    bodyObserver: null as IntersectionObserver | null,
-    lock: false,
-    scrollNumber: 0,
+    targetObserver: null as IntersectionObserver | null,
+    parentObserver: null as IntersectionObserver | null,
+    fixedObserver: null as IntersectionObserver | null,
   });
 
   const [style, setStyle] = useState({} as React.CSSProperties);
   const [show, setShow] = useState(false);
   const [parentVisible, setParentVisible] = useState(true);
 
-  const forceRender = useRender();
   const elementRef = useRef(null as HTMLElement | null);
 
   const getTarget = () => {
@@ -81,6 +80,7 @@ const Sticky = (props: StickyProps) => {
     const entry = entries[0];
     const scrollRect = entry.rootBounds;
     const targetRect = entry.boundingClientRect;
+    console.log('handleTargetPosition', entry)
 
     if (!entry.isIntersecting) {
       const targetLeft = targetRect.left;
@@ -130,13 +130,14 @@ const Sticky = (props: StickyProps) => {
   });
 
   const setFixedStyle = usePersistFn((s: boolean, m?: 'top' | 'bottom', l: number = 0) => {
+    console.log('setFixedStyle', s, m, l)
     if (s !== show) {
       setShow(s);
     }
     if (s && m) {
       const newStyle: React.CSSProperties = {
         position: 'fixed',
-        [m]: 0,
+        [m]: m === 'top' ? top : bottom,
         left: l,
       };
       if (!util.shallowEqual(style, newStyle)) {
@@ -147,6 +148,7 @@ const Sticky = (props: StickyProps) => {
 
   // 无滚动容器的时候，body 滚动 resize 计算
   const handleFixedPosition = usePersistFn(() => {
+    if (css || context.target) return;
     const element = elementRef.current;
     if (!parentVisible) {
       setFixedStyle(false);
@@ -206,46 +208,43 @@ const Sticky = (props: StickyProps) => {
 
   const elementSize = useResize({ targetRef: elementRef, timer: 10, cb: handleFixedPosition });
 
-  const createBodyObserver = () => {
-    if (context.bodyObserver) {
-      context.bodyObserver.disconnect();
+  const cancelFixedObserver = () => {
+    if (context.fixedObserver) {
+      context.fixedObserver.disconnect();
+      context.fixedObserver = null;
     }
-
-    context.bodyObserver = new IntersectionObserver(handleFixedInter, {
+  };
+  const createFixedObserver = () => {
+    cancelFixedObserver();
+    context.fixedObserver = new IntersectionObserver(handleFixedInter, {
       root: null,
       rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
       threshold: 1.0,
     });
-    context.bodyObserver.observe(elementRef.current!);
+    context.fixedObserver.observe(elementRef.current!);
   };
 
   const cancelObserver = () => {
-    if (context.observer) {
-      context.observer.disconnect();
-      context.observer = null;
-    }
-    if (context.parentObserver) {
-      context.parentObserver.disconnect();
-      context.parentObserver = null;
+    if (context.targetObserver) {
+      context.targetObserver.disconnect();
+      context.targetObserver = null;
     }
   };
 
-  const createObserver = (target: HTMLElement) => {
+  const createObserver = () => {
     if (!context.div) {
       context.div = document.createElement('div');
       context.div.style.position = 'relative';
     }
-    if (target) {
-      forceRender();
-      cancelObserver();
+    if (context.target) {
       if (context.div) {
         // append div
-        if (target === document.body) {
+        if (context.target === document.body) {
           document.body.appendChild(context.div);
         } else {
-          target.parentNode!.insertBefore(context.div, target);
+          context.target.parentNode!.insertBefore(context.div, context.target);
         }
-        const style = window.getComputedStyle(target);
+        const style = window.getComputedStyle(context.target);
         if (style.position === 'absolute' || style.position === 'fixed') {
           context.div.style.position = style.position;
           context.div.style.top = style.top;
@@ -254,80 +253,109 @@ const Sticky = (props: StickyProps) => {
           context.div.style.bottom = style.bottom;
         }
       }
+      cancelFixedObserver();
       if (window.IntersectionObserver) {
         const observer = new IntersectionObserver(handleTargetPosition, {
-          root: target,
+          root: context.target,
           rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
           threshold: 1.0,
         });
-        context.observer = observer;
-
-        context.parentObserver = new IntersectionObserver(handleParentVisible, {
-          root: target,
-          rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
-          threshold: 0,
-        });
+        context.targetObserver = observer;
       }
     }
+  };
+
+  const cancelParentObserver = () => {
+    if (context.parentObserver) {
+      context.parentObserver.disconnect();
+      context.parentObserver = null;
+    }
+  };
+
+  const createParentObserver = () => {
+    if (!props.parent) return;
+    cancelParentObserver();
+    context.parentObserver = new IntersectionObserver(handleParentVisible, {
+      root: context.target,
+      rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
+      threshold: 0,
+    });
+    context.parentObserver.observe(props.parent);
+  };
+
+  // 存在滚动容器时的定位
+  const createTargetEvents = () => {
+    createObserver();
+    window.addEventListener('resize', updateStyle);
+  };
+
+  const cancelTargetEvents = () => {
+    cancelObserver();
+    window.removeEventListener('resize', updateStyle);
+    if (context.div) {
+      context.div.remove();
+      context.div = null;
+    }
+  };
+
+  const createFixedEvents = () => {
+    createFixedObserver();
+    events.forEach((event) => {
+      window.addEventListener(event, handleFixedPosition);
+    });
+  };
+
+  const cancelFixedEvents = () => {
+    cancelFixedObserver();
+    events.forEach((event) => {
+      window.removeEventListener(event, handleFixedPosition);
+    });
   };
 
   const handleElementRef = (el: HTMLElement | null) => {
     if (el) {
       elementRef.current = el;
-      if (el && context.observer) {
-        context.observer.observe(el);
+      if (context.targetObserver) {
+        if (!el) {
+          context.targetObserver.disconnect();
+        } else {
+          context.targetObserver.observe(el);
+        }
       }
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (css) return;
     const target = getTarget();
-    context.target = target;
-    if (target) {
-      createObserver(target);
-      window.addEventListener('resize', updateStyle);
-      return () => {
-        cancelObserver();
-        window.removeEventListener('resize', updateStyle);
-        if (context.div) {
-          context.div.remove();
-        }
-      };
+    if (context.target !== target) {
+      context.target = target;
+      forceUpdate();
+    }
+    if (context.target) {
+      createTargetEvents();
+      return cancelTargetEvents;
     } else {
       // fixed 布局
-      createBodyObserver();
-      events.forEach((event) => {
-        window.addEventListener(event, handleFixedPosition);
-      });
-      return () => {
-        if (context.bodyObserver) {
-          context.bodyObserver.disconnect();
-        }
-        events.forEach((event) => {
-          window.removeEventListener(event, handleFixedPosition);
-        });
-      };
+      createFixedEvents();
+      return cancelFixedEvents;
     }
   }, [css]);
 
   useEffect(() => {
-    if (props.parent && context.parentObserver) {
-      context.parentObserver.observe(props.parent);
+    if (props.parent && !css) {
+      createParentObserver();
+      context.parentObserver!.observe(props.parent);
     }
-    return () => {
-      if (context.parentObserver) {
-        context.parentObserver.disconnect();
-      }
-    };
-  }, [props.parent]);
+    return cancelParentObserver;
+  }, [props.parent, css, context.target]);
 
   // 纯css方法 直接使用css
   // js方法
   // 1. 不指定滚动容器 基于document.body 使用fixed + js计算
   // 2. 指定滚动容器 在滚动容器上方插入一个dom占位 基于该dom渲染和定位
   // 3. 使用 intersectionObserver 来判断是否需要sticky
-  if (css && supportSticky) {
+  if (css) {
     return (
       <div
         className={props.className}
