@@ -16,7 +16,7 @@ export default (props: InputGroupProps) => {
     eventMap: new WeakMap(),
     propsMap: new WeakMap(),
   });
-  const { size, disabled } = useWithFormConfig(props);
+  const { size, disabled, status, error } = useWithFormConfig(props);
 
   const getProps = (child: React.ReactElement) => {
     ref.current.propsMap.set(child, {
@@ -46,6 +46,7 @@ export default (props: InputGroupProps) => {
     size === 'large' && inputStyle?.groupLarge,
     !!disabled && inputStyle?.groupDisabled,
     !!focus && inputStyle?.groupFocus,
+    (status === 'error' || error) && inputStyle?.groupError,
   );
   return (
     <div

@@ -42,6 +42,7 @@ export interface InputClasses {
   groupLarge: string;
   groupFocus: string;
   groupDisabled: string;
+  groupError: string;
   // number
   wrapperNumber: string;
   numberStep: string;
