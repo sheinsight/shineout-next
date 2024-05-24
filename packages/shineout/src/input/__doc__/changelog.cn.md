@@ -1,3 +1,10 @@
+## 3.1.16
+2024-05-24
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 缺失 `status` 属性  ([#475](https://github.com/sheinsight/shineout-next/pull/475))
+
 ## 3.1.11
 2024-05-16
 

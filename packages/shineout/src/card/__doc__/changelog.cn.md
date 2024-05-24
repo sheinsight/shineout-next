@@ -1,5 +1,5 @@
-## 3.1.15
-2024-05-23
+## 3.1.16
+2024-05-24
 ### 🐞 BugFix
 
 - 修复 `Card.Header` 的 `simple` 模式下 `align` 不生效问题 ([#468](https://github.com/sheinsight/shineout-next/pull/468))
