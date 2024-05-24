@@ -79,7 +79,7 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              2024-05-23 20:27:34
+              2024-05-24 16:15:30
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -235,7 +235,7 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              20:27:34
+              16:15:30
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -564,7 +564,7 @@ exports[`Alert[Base] should render correctly about disable 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              2024-05-23
+              2024-05-24
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -849,7 +849,7 @@ exports[`Alert[Base] should render correctly about disable one 1`] = `
               <input
                 autocomplete="off"
                 placeholder="Please select date"
-                value="2024-05-23 20:27:34"
+                value="2024-05-24 16:15:30"
               />
             </span>
             <div
@@ -1060,7 +1060,7 @@ exports[`Alert[Base] should render correctly about disable two 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              2024-05-23 20:27:34
+              2024-05-24 16:15:30
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -1132,7 +1132,7 @@ exports[`Alert[Base] should render correctly about format 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              2024-5-23 20:27
+              2024-5-24 16:15
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -1236,7 +1236,7 @@ exports[`Alert[Base] should render correctly about format 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              24/05/23
+              24/05/24
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -1314,7 +1314,7 @@ exports[`Alert[Base] should render correctly about format 1`] = `
           class="cb1zvak soui-input-input"
           disabled=""
           placeholder="值"
-          value="2024-05-23 20:27:34"
+          value="2024-05-24 16:15:30"
         />
       </div>
     </div>
@@ -2959,7 +2959,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              20:27:34
+              16:15:30
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -3023,7 +3023,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              20:27
+              16:15
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -3087,7 +3087,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              08:27 PM
+              04:15 PM
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"
@@ -3156,7 +3156,7 @@ exports[`Alert[Base] should render correctly about timezone 1`] = `
             <span
               class="c-r4uoqp soui-datePicker-result-text-padding"
             >
-              2024-05-23 20:27:34
+              2024-05-24 16:15:30
             </span>
             <div
               class="ciu9il3 soui-datePicker-result-text-bg"

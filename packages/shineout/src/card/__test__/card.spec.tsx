@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Card from '..';
 import {
@@ -213,18 +213,24 @@ describe('Card[Collapse]', () => {
   });
   test('should render when set collapsible is true', async () => {
     const { container } = render(<CardTest collapsible />);
+    
     const cardWrapper = container.querySelector(wrapper)!;
     classTest(cardWrapper, wrapperCollapsible);
     const cardHeaderWrapper = cardWrapper.querySelector(header)!;
     const cardIndicatorWrapper = cardHeaderWrapper.querySelector(indicator)!;
     classLengthTest(cardIndicatorWrapper, indicatorIcon, 1);
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
+    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
+    await waitFor(async () => {
+      await delay(500);
+    });
     styleContentTest(cardBodyCollapse, activeDefaultStyle);
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
     });
-    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
+    
+    styleContentTest(cardBodyCollapse, closeDefaultStyle);
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
@@ -233,18 +239,27 @@ describe('Card[Collapse]', () => {
   });
   test('should render when set defaultCollapsed', async () => {
     const { container } = render(<CardTest collapsible defaultCollapsed />);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    
     const cardWrapper = container.querySelector(wrapper)!;
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
-    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
+    styleContentTest(cardBodyCollapse, closeDefaultStyle);
+    
     const cardIndicatorWrapper = cardWrapper.querySelector(indicator)!;
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
     });
+    
     styleContentTest(cardBodyCollapse, activeDefaultStyle);
   });
-  test('should render when set collapsed and defaultCollapsed at the same time', () => {
+  test('should render when set collapsed and defaultCollapsed at the same time', async () => {
     const { container } = render(<CardTest collapsible collapsed={false} defaultCollapsed />);
+    await waitFor(async () => {
+      await delay(500);
+    });
     const cardWrapper = container.querySelector(wrapper)!;
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
     styleContentTest(cardBodyCollapse, activeDefaultStyle);
