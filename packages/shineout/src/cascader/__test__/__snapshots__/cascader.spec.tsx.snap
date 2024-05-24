@@ -3,22 +3,22 @@
 exports[`Cascader[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable"
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="c-ffoinc soui-cascader-result"
+        class="cmk5gxz soui-cascader-result"
       >
         <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -26,732 +26,11 @@ exports[`Cascader[Base] should render correctly  1`] = `
           </span>
         </div>
       </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about compressed 1`] = `
-<div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable cs88pmz soui-cascader-multiple"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
       <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper cd43w9 soui-select-compressed-wrapper c-7vjtar soui-select-multiple-result-wrapper c-7a22yf soui-select-multiple-compressed-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="c-3t4ctn soui-cascader-compressed-icon cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about disabled 1`] = `
-<div
-  style="display: flex; flex-wrap: wrap; gap: 32px; width: 632px;"
->
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper c-447lrg soui-cascader-wrapper-disabled"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="-1"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-  <div
-    class="cqy5d2w soui-cascader-wrapper c-447lrg soui-cascader-wrapper-disabled"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="-1"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <div
-            class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright c-j04p53 soui-tag-disabled"
-            data-soui-type="dark"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-6g68ga soui-tag-wrapper c4kb4eu soui-tag-inline"
-            >
-              jiangsu
-            </span>
-            <div
-              class="c-pp0r9o soui-tag-close-icon"
-            >
-              <span
-                class="c98mzgf soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright c-j04p53 soui-tag-disabled"
-            data-soui-type="dark"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-6g68ga soui-tag-wrapper c4kb4eu soui-tag-inline"
-            >
-              nanjing
-            </span>
-            <div
-              class="c-pp0r9o soui-tag-close-icon"
-            >
-              <span
-                class="c98mzgf soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about filter 1`] = `
-<div
-  style="display: flex; gap: 32px;"
->
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Please select city"
-            style="width: 100%;"
-            value=""
-          />
-          <span
-            class="cu9dykw soui-select-input-mirror"
-          />
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Please select city"
-            style="width: 100%;"
-            value=""
-          />
-          <span
-            class="cu9dykw soui-select-input-mirror"
-          />
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about finalDismiss 1`] = `
-<div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about hideTag 1`] = `
-<div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
-<div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper c-9hu0ue soui-cascader-wrapper-inner-title clnszpo soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-o6szqp soui-inner-title-wrapper"
-      >
-        <div
-          class="c4kxj2s soui-inner-title-title cv1qspd soui-inner-title-top"
-        >
-          Inner Title
-        </div>
-        <div
-          class="c4irvcz soui-inner-title-place"
-        >
-          <div
-            class="c4kxj2s soui-inner-title-title"
-          >
-            Inner Title
-          </div>
-        </div>
-        <div
-          class="c-yu7nrf soui-inner-title-content"
-        >
-          <div
-            class="c-ffoinc soui-cascader-result"
-          >
-            <div
-              class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-            >
-              <span
-                class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-              >
-                <span>
-                  Please select city
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about loader 1`] = `
-<div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about multiple 1`] = `
-<div>
-  <div
-    class="c-ggxw0v soui-radio-group"
-    style="margin-bottom: 24px;"
-  >
-    <div
-      class="cx6oiet soui-radio-wrapper c-xza15a soui-radio-wrapper-checked"
-    >
-      <input
-        checked=""
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="c-smsfdq soui-radio-indicator-wrapper"
+        class="cb8gh80 soui-cascader-icon-wrapper"
       >
         <span
-          class="c-cz3aa7 soui-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="c-iv35qp soui-radio-desc"
-      >
-        模式 0
-      </span>
-    </div>
-    <div
-      class="cx6oiet soui-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="c-smsfdq soui-radio-indicator-wrapper"
-      >
-        <span
-          class="c-cz3aa7 soui-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="c-iv35qp soui-radio-desc"
-      >
-        模式 1
-      </span>
-    </div>
-    <div
-      class="cx6oiet soui-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="c-smsfdq soui-radio-indicator-wrapper"
-      >
-        <span
-          class="c-cz3aa7 soui-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="c-iv35qp soui-radio-desc"
-      >
-        模式 2
-      </span>
-    </div>
-    <div
-      class="cx6oiet soui-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="c-smsfdq soui-radio-indicator-wrapper"
-      >
-        <span
-          class="c-cz3aa7 soui-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="c-iv35qp soui-radio-desc"
-      >
-        模式 3
-      </span>
-    </div>
-    <div
-      class="cx6oiet soui-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="c-smsfdq soui-radio-indicator-wrapper"
-      >
-        <span
-          class="c-cz3aa7 soui-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="c-iv35qp soui-radio-desc"
-      >
-        模式 4
-      </span>
-    </div>
-  </div>
-  <div
-    style="display: flex;"
-  >
-    <div
-      style="flex: 1;"
-    >
-      <div
-        class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable cs88pmz soui-cascader-multiple"
-        data-soui-input-border="true"
-        style="width: 300px;"
-        tabindex="0"
-      >
-        <div
-          class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-        >
-          <div
-            class="c-ffoinc soui-cascader-result"
-          >
-            <div
-              class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-            >
-              <span
-                class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-              >
-                <span>
-                  Please select city
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <span
-          class="cpp7mbr soui-cascader-arrow-icon"
+          class="c-30ak94 soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -764,6 +43,952 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
             />
           </svg>
         </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about compressed 1`] = `
+<div>
+  <div
+    class="c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable cvvvm2i soui-cascader-multiple"
+    data-soui-input-border="true"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper cv6tew8 soui-cascader-compressed-wrapper c-mia750 soui-cascader-multiple-result-wrapper cgv4cqg soui-cascader-multiple-compressed-wrapper"
+        >
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              jiangning
+            </span>
+          </div>
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              yuhuatai
+            </span>
+          </div>
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              nanjing
+            </span>
+          </div>
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              jiangsu
+            </span>
+          </div>
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              feidong
+            </span>
+          </div>
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              hefei
+            </span>
+          </div>
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              anhui
+            </span>
+          </div>
+          <span
+            style="display: inline-flex;"
+          >
+            <div
+              class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+              style="position: absolute; z-index: -100; user-select: none; contain: layout; opacity: 0; pointer-events: none;"
+            >
+              <span
+                class="c-u4cme3 soui-tag-wrapper"
+              >
+                +
+              </span>
+            </div>
+            <noscript />
+          </span>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-724hqc soui-cascader-clear-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+            />
+          </svg>
+        </span>
+        <span
+          class="c7pvx50 soui-cascader-compressed-icon c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about disabled 1`] = `
+<div
+  style="display: flex; flex-wrap: wrap; gap: 32px; width: 632px;"
+>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-1wjat7 soui-cascader-wrapper-disabled"
+    data-soui-input-border="true"
+    style="width: 300px;"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <span
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+          >
+            <span>
+              Please select city
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
+    data-soui-input-border="true"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <span
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+          >
+            <span>
+              Please select city
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c-2pxx5j soui-cascader-wrapper c-1wjat7 soui-cascader-wrapper-disabled"
+    data-soui-input-border="true"
+    style="width: 300px;"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright csilwh6 soui-tag-disabled"
+            data-soui-type="dark"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              jiangsu
+            </span>
+          </div>
+          <div
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright csilwh6 soui-tag-disabled"
+            data-soui-type="dark"
+            style="opacity: 1;"
+          >
+            <span
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+            >
+              nanjing
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
+    data-soui-input-border="true"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <span
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+          >
+            <span>
+              Please select city
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about filter 1`] = `
+<div
+  style="display: flex; gap: 32px;"
+>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    data-soui-input-border="true"
+    style="width: 300px;"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <input
+            autocomplete="off"
+            placeholder="Please select city"
+            style="width: 100%;"
+            value=""
+          />
+          <span
+            class="c-cmwebl soui-cascader-input-mirror"
+          />
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    data-soui-input-border="true"
+    style="width: 300px;"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <input
+            autocomplete="off"
+            placeholder="Please select city"
+            style="width: 100%;"
+            value=""
+          />
+          <span
+            class="c-cmwebl soui-cascader-input-mirror"
+          />
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about final 1`] = `
+<div>
+  <div
+    class="cwvshv soui-form-item-wrapper"
+    data-soui-status="default"
+  >
+    <div
+      class="c-3i1zfg soui-form-item-label"
+    >
+      Single
+    </div>
+    <div
+      class="c-9qilv7 soui-form-item-control"
+      data-soui-role="form-control"
+    >
+      <div
+        class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+        data-soui-input-border="true"
+      >
+        <div
+          class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+        >
+          <div
+            class="cmk5gxz soui-cascader-result"
+          >
+            <div
+              class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+            >
+              <input
+                autocomplete="off"
+                style="width: 100%;"
+                value=""
+              />
+              <span
+                class="c-cmwebl soui-cascader-input-mirror"
+              />
+            </div>
+          </div>
+          <div
+            class="cb8gh80 soui-cascader-icon-wrapper"
+          >
+            <span
+              class="c-30ak94 soui-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cwvshv soui-form-item-wrapper"
+    data-soui-status="default"
+  >
+    <div
+      class="c-3i1zfg soui-form-item-label"
+    >
+      multiple
+    </div>
+    <div
+      class="c-9qilv7 soui-form-item-control"
+      data-soui-role="form-control"
+    >
+      <div
+        class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+        data-soui-input-border="true"
+      >
+        <div
+          class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+        >
+          <div
+            class="cmk5gxz soui-cascader-result"
+          >
+            <div
+              class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+            >
+              <input
+                autocomplete="off"
+                style="width: 100%;"
+                value=""
+              />
+              <span
+                class="c-cmwebl soui-cascader-input-mirror"
+              />
+            </div>
+          </div>
+          <div
+            class="cb8gh80 soui-cascader-icon-wrapper"
+          >
+            <span
+              class="c-30ak94 soui-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about finalDismiss 1`] = `
+<div>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    data-soui-input-border="true"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <span
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+          >
+            <span>
+              Please select city
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about hideTag 1`] = `
+<div>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
+    data-soui-input-border="true"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <span
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+          >
+            <span>
+              Please select city
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
+<div>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-djfbth soui-cascader-wrapper-inner-title c-71p6v7 soui-cascader-clearable"
+    data-soui-input-border="true"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="c9901z2 soui-inner-title-wrapper"
+      >
+        <div
+          class="c88kfib soui-inner-title-title c-1zj9og soui-inner-title-top"
+        >
+          Inner Title
+        </div>
+        <div
+          class="c86ersi soui-inner-title-place"
+        >
+          <div
+            class="c88kfib soui-inner-title-title"
+          >
+            Inner Title
+          </div>
+        </div>
+        <div
+          class="c-1eem1o soui-inner-title-content"
+        >
+          <div
+            class="cmk5gxz soui-cascader-result"
+          >
+            <div
+              class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+            >
+              <span
+                class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+              >
+                <span>
+                  Please select city
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about loader 1`] = `
+<div>
+  <div
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    data-soui-input-border="true"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+    >
+      <div
+        class="cmk5gxz soui-cascader-result"
+      >
+        <div
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+        >
+          <span
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+          >
+            <span>
+              Please select city
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
+      >
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cascader[Base] should render correctly about multiple 1`] = `
+<div>
+  <div
+    class="cuvzs0g soui-radio-group"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="ceo7z38 soui-radio-wrapper c875odf soui-radio-wrapper-checked"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="chkciqb soui-radio-indicator-wrapper"
+      >
+        <span
+          class="cp0qpb4 soui-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="c-v30ja8 soui-radio-desc"
+      >
+        模式 0
+      </span>
+    </div>
+    <div
+      class="ceo7z38 soui-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="chkciqb soui-radio-indicator-wrapper"
+      >
+        <span
+          class="cp0qpb4 soui-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="c-v30ja8 soui-radio-desc"
+      >
+        模式 1
+      </span>
+    </div>
+    <div
+      class="ceo7z38 soui-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="chkciqb soui-radio-indicator-wrapper"
+      >
+        <span
+          class="cp0qpb4 soui-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="c-v30ja8 soui-radio-desc"
+      >
+        模式 2
+      </span>
+    </div>
+    <div
+      class="ceo7z38 soui-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="chkciqb soui-radio-indicator-wrapper"
+      >
+        <span
+          class="cp0qpb4 soui-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="c-v30ja8 soui-radio-desc"
+      >
+        模式 3
+      </span>
+    </div>
+    <div
+      class="ceo7z38 soui-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="chkciqb soui-radio-indicator-wrapper"
+      >
+        <span
+          class="cp0qpb4 soui-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="c-v30ja8 soui-radio-desc"
+      >
+        模式 4
+      </span>
+    </div>
+  </div>
+  <div
+    style="display: flex;"
+  >
+    <div
+      style="flex: 1;"
+    >
+      <div
+        class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable cvvvm2i soui-cascader-multiple"
+        data-soui-input-border="true"
+        style="width: 300px;"
+        tabindex="0"
+      >
+        <div
+          class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+        >
+          <div
+            class="cmk5gxz soui-cascader-result"
+          >
+            <div
+              class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+            >
+              <span
+                class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+              >
+                <span>
+                  Please select city
+                </span>
+              </span>
+            </div>
+          </div>
+          <div
+            class="cb8gh80 soui-cascader-icon-wrapper"
+          >
+            <span
+              class="c-30ak94 soui-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
     <pre
@@ -797,22 +1022,22 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
 exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
 <div>
   <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable cs88pmz soui-cascader-multiple"
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable cvvvm2i soui-cascader-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="c-ffoinc soui-cascader-result"
+        class="cmk5gxz soui-cascader-result"
       >
         <div
-          class="cst20xc soui-select-result-text-wrapper cd43w9 soui-select-compressed-wrapper c-7vjtar soui-select-multiple-result-wrapper c-7a22yf soui-select-multiple-compressed-wrapper"
+          class="c-becq1t soui-cascader-result-text-wrapper cv6tew8 soui-cascader-compressed-wrapper c-mia750 soui-cascader-multiple-result-wrapper cgv4cqg soui-cascader-multiple-compressed-wrapper"
         >
           <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -820,21 +1045,25 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
           </span>
         </div>
       </div>
-    </div>
-    <span
-      class="c-3t4ctn soui-cascader-compressed-icon cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
       >
-        <path
-          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
-        />
-      </svg>
-    </span>
+        <span
+          class="c7pvx50 soui-cascader-compressed-icon c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -842,22 +1071,22 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
 exports[`Cascader[Base] should render correctly about renderResult 1`] = `
 <div>
   <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable"
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="c-ffoinc soui-cascader-result"
+        class="cmk5gxz soui-cascader-result"
       >
         <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -865,165 +1094,23 @@ exports[`Cascader[Base] should render correctly about renderResult 1`] = `
           </span>
         </div>
       </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Cascader[Base] should render correctly about tip 1`] = `
-<div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper clnszpo soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
       <div
-        class="c-ffoinc soui-cascader-result"
+        class="cb8gh80 soui-cascader-icon-wrapper"
       >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
         >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper c3g8ds soui-cascader-wrapper-error clnszpo soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-  </div>
-  <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper c3g8ds soui-cascader-wrapper-error clnszpo soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
-    >
-      <div
-        class="c-ffoinc soui-cascader-result"
-      >
-        <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
-        >
-          <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
-          >
-            <span>
-              Please select city
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-    <div
-      class=""
-      style=" position: absolute; top: 0px; left: 0px; width: 100% "
-    >
-      <div
-        class="c-q8zng5 soui-popover-wrapper cvd4ktx soui-popover-wrapper-open"
-        data-soui-position="bottom-left"
-        data-soui-type="error"
-        style="position: absolute; z-index: 1060; left: 0px; top: 0px;"
-      >
-        <div
-          class="c-30v18f soui-popover-arrow"
-        />
-        <div
-          class="cy4pqi9 soui-popover-content c-kpki4r soui-popover-text"
-          style="min-width: 200px; max-width: 400px;"
-        >
-          error
-        </div>
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
       </div>
     </div>
   </div>
@@ -1033,22 +1120,22 @@ exports[`Cascader[Base] should render correctly about tip 1`] = `
 exports[`Cascader[Base] should render correctly about trigger 1`] = `
 <div>
   <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper"
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="c-ffoinc soui-cascader-result"
+        class="cmk5gxz soui-cascader-result"
       >
         <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
+            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -1056,21 +1143,25 @@ exports[`Cascader[Base] should render correctly about trigger 1`] = `
           </span>
         </div>
       </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
       >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1078,65 +1169,51 @@ exports[`Cascader[Base] should render correctly about trigger 1`] = `
 exports[`Cascader[Base] should render correctly about unmatch 1`] = `
 <div>
   <div
-    class="cqy5d2w soui-cascader-wrapper"
+    class="c-2pxx5j soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="c-ffoinc soui-cascader-result"
+        class="cmk5gxz soui-cascader-result"
       >
         <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
         >
           <div
-            class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright"
+            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
             style="opacity: 1;"
           >
             <span
-              class="c-6g68ga soui-tag-wrapper c4kb4eu soui-tag-inline"
+              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
             >
               Unmatched: shanghai
             </span>
-            <div
-              class="c-pp0r9o soui-tag-close-icon"
-            >
-              <span
-                class="c98mzgf soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
           </div>
         </div>
       </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
       >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1146,19 +1223,18 @@ exports[`Cascader[Base] should render correctly about wide 1`] = `
   style="display: flex; gap: 32px;"
 >
   <div
-    class="c3d039 soui-cascader-wrapper-empty cqy5d2w soui-cascader-wrapper"
+    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
-    tabindex="0"
   >
     <div
-      class="c-jvtlwl soui-cascader-result-wrapper c-lgau0e soui-cascader-wrapper-padding-box c-w1o8xx soui-cascader-wrapper-inner-title-top ckz1gqt soui-cascader-wrapper-inner-title-bottom"
+      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="c-ffoinc soui-cascader-result"
+        class="cmk5gxz soui-cascader-result"
       >
         <div
-          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
+          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
         >
           <input
             autocomplete="off"
@@ -1167,25 +1243,29 @@ exports[`Cascader[Base] should render correctly about wide 1`] = `
             value=""
           />
           <span
-            class="cu9dykw soui-select-input-mirror"
+            class="c-cmwebl soui-cascader-input-mirror"
           />
         </div>
       </div>
-    </div>
-    <span
-      class="cpp7mbr soui-cascader-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="cb8gh80 soui-cascader-icon-wrapper"
       >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
+        <span
+          class="c-30ak94 soui-cascader-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;

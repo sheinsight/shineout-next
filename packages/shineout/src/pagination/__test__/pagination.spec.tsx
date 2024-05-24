@@ -34,6 +34,10 @@ const { pagination, section, jumper, small, large, center, right } = createClass
 );
 
 const {
+  arrowIcon
+} = createClassName('select', ['arrowIcon'], [''])
+
+const {
   disabled: disabledClassName,
   primary,
   outline: outlineClassName,
@@ -207,6 +211,10 @@ describe('Pagination[Base]', () => {
     const paginationWrapper = container.querySelector(pagination)!;
     const buttons = paginationWrapper.querySelectorAll('button');
     expect(buttons.length).toBe(9);
+    fireEvent.click(paginationWrapper.querySelector(arrowIcon)?.querySelector('svg')!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     fireEvent.click(document.querySelectorAll('li')[1]);
     await waitFor(async () => {
       await delay(200);

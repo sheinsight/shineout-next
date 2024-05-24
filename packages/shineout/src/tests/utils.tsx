@@ -98,6 +98,7 @@ export function baseTest(
     }
     const { container } = render(renderedComponent);
     const component = container.querySelector(selector)!;
+
     classTest(component, className);
     styleTest(component, styleRender);
   });

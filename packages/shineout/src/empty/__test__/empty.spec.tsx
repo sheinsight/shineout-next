@@ -41,7 +41,7 @@ describe('Empty[Base]', () => {
     classLengthTest(emptyImage, 'svg', 1);
     const emptyDescription = emptyWrapper.querySelector(description)!;
     expect(emptyDescription).toBeInTheDocument();
-    textContentTest(emptyDescription, '暂无数据');
+    textContentTest(emptyDescription, 'Data not found');
   });
   test('should render when set icon and description', () => {
     const { container } = render(<EmptyIcon />);

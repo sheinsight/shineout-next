@@ -2,42 +2,47 @@
 
 exports[`Slider[Base] should render correctly  1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper"
+  class="c7ubtly soui-slider-wrapper"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 0%; right: 50%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         50
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         0
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         100
       </div>
@@ -48,50 +53,57 @@ exports[`Slider[Base] should render correctly  1`] = `
 
 exports[`Slider[Base] should render correctly about disabled 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper c-35hdxi soui-slider-disabled"
+  class="c7ubtly soui-slider-wrapper c-25992v soui-slider-disabled"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 25%; right: 25%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cq0uspd soui-slider-indicator-start"
+        class="c-446j6m soui-slider-indicator c-po4lwg soui-slider-indicator-start"
+        dir="ltr"
       />
       <div
-        class="cpknyi5 soui-slider-start-value crbw1gz soui-slider-value"
+        class="c-1trb9g soui-slider-start-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         25
       </div>
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         75
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         0
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         100
       </div>
@@ -102,122 +114,137 @@ exports[`Slider[Base] should render correctly about disabled 1`] = `
 
 exports[`Slider[Base] should render correctly about format 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper"
+  class="c7ubtly soui-slider-wrapper"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 6.111111111111112%; right: 60%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cq0uspd soui-slider-indicator-start"
+        class="c-446j6m soui-slider-indicator c-po4lwg soui-slider-indicator-start"
+        dir="ltr"
       />
       <div
-        class="cpknyi5 soui-slider-start-value crbw1gz soui-slider-value"
+        class="c-1trb9g soui-slider-start-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         09:33
       </div>
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         12:36
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         09:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         10:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         11:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         12:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         13:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         14:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         15:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         16:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         17:00
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         18:00
       </div>
@@ -228,17 +255,19 @@ exports[`Slider[Base] should render correctly about format 1`] = `
 
 exports[`Slider[Base] should render correctly about hider all 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper"
+  class="c7ubtly soui-slider-wrapper"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 0%; right: 96%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
     </div>
   </div>
@@ -247,123 +276,137 @@ exports[`Slider[Base] should render correctly about hider all 1`] = `
 
 exports[`Slider[Base] should render correctly about hider auto 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper cg5kmdr soui-slider-auto-hide"
+  class="c7ubtly soui-slider-wrapper ch5sr8e soui-slider-auto-hide"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 0%; right: 75%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         4
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         1
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         2
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         3
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         5
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         8
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         13
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         21
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         34
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         55
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         89
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         144
       </div>
@@ -375,43 +418,48 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
 exports[`Slider[Base] should render correctly about increase 1`] = `
 <div>
   <div
-    class="c5io7bp soui-slider-wrapper"
+    class="c7ubtly soui-slider-wrapper"
     style="margin-bottom: 24px;"
   >
     <div
-      class="crb32h9 soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-g5pfb soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
+        dir="ltr"
         style="left: 0%; right: 50%;"
       >
         <div
-          class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+          dir="ltr"
         />
         <div
-          class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+          class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           50
         </div>
       </div>
     </div>
     <div
-      class="c-9dxizd soui-slider-scale-wrapper"
+      class="cb174ja soui-slider-scale-wrapper"
     >
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           0
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           100
         </div>
@@ -419,50 +467,57 @@ exports[`Slider[Base] should render correctly about increase 1`] = `
     </div>
   </div>
   <div
-    class="c5io7bp soui-slider-wrapper"
+    class="c7ubtly soui-slider-wrapper"
   >
     <div
-      class="crb32h9 soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-g5pfb soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
+        dir="ltr"
         style="left: 20%; right: 50%;"
       >
         <div
-          class="c-zb6pkf soui-slider-indicator cq0uspd soui-slider-indicator-start"
+          class="c-446j6m soui-slider-indicator c-po4lwg soui-slider-indicator-start"
+          dir="ltr"
         />
         <div
-          class="cpknyi5 soui-slider-start-value crbw1gz soui-slider-value"
+          class="c-1trb9g soui-slider-start-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           20
         </div>
         <div
-          class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+          dir="ltr"
         />
         <div
-          class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+          class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           50
         </div>
       </div>
     </div>
     <div
-      class="c-9dxizd soui-slider-scale-wrapper"
+      class="cb174ja soui-slider-scale-wrapper"
     >
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           0
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           100
         </div>
@@ -477,43 +532,48 @@ exports[`Slider[Base] should render correctly about input 1`] = `
   style="display: flex; align-items: center;"
 >
   <div
-    class="c5io7bp soui-slider-wrapper"
+    class="c7ubtly soui-slider-wrapper"
     style="flex: 1; margin-inline-end: 28px;"
   >
     <div
-      class="crb32h9 soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-g5pfb soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
+        dir="ltr"
         style="left: 0%; right: 50%;"
       >
         <div
-          class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+          dir="ltr"
         />
         <div
-          class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+          class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           50
         </div>
       </div>
     </div>
     <div
-      class="c-9dxizd soui-slider-scale-wrapper"
+      class="cb174ja soui-slider-scale-wrapper"
     >
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           0
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           100
         </div>
@@ -521,21 +581,21 @@ exports[`Slider[Base] should render correctly about input 1`] = `
     </div>
   </div>
   <div
-    class="c-8fzkdt soui-input-wrapper-number c-mm3jkq soui-input-wrapper"
+    class="cbz534u soui-input-wrapper-number cyqscxh soui-input-wrapper"
     data-soui-input-border="true"
     style="width: 100px;"
   >
     <div
-      class="cdk4afh soui-input-wrapper-inner-title-top c-t4daa5 soui-input-wrapper-inner-title-bottom c-yi6xxc soui-input-wrapper-padding-box c-x9i7lg soui-input-content"
+      class="ckoh7fi soui-input-wrapper-inner-title-top cgm7xfm soui-input-wrapper-inner-title-bottom c97ikpb soui-input-wrapper-padding-box co3dowr soui-input-content"
     >
       <input
-        class="c-x7d2ar soui-input-input"
+        class="cb1zvak soui-input-input"
         type="text"
         value="50"
       />
     </div>
     <div
-      class="c-s1ojpa soui-input-number-step"
+      class="c35bmoj soui-input-number-step"
     >
       <span>
         <svg
@@ -568,50 +628,57 @@ exports[`Slider[Base] should render correctly about input 1`] = `
 
 exports[`Slider[Base] should render correctly about range 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper"
+  class="c7ubtly soui-slider-wrapper"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 25%; right: 25%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cq0uspd soui-slider-indicator-start"
+        class="c-446j6m soui-slider-indicator c-po4lwg soui-slider-indicator-start"
+        dir="ltr"
       />
       <div
-        class="cpknyi5 soui-slider-start-value crbw1gz soui-slider-value"
+        class="c-1trb9g soui-slider-start-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         25
       </div>
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         75
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         0
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         100
       </div>
@@ -622,78 +689,87 @@ exports[`Slider[Base] should render correctly about range 1`] = `
 
 exports[`Slider[Base] should render correctly about scale 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper"
+  class="c7ubtly soui-slider-wrapper"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 0%; right: 100%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         0
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         0
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         10
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         100
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         250
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         500
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         1000
       </div>
@@ -704,50 +780,57 @@ exports[`Slider[Base] should render correctly about scale 1`] = `
 
 exports[`Slider[Base] should render correctly about step 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper"
+  class="c7ubtly soui-slider-wrapper"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 5%; right: 75%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cq0uspd soui-slider-indicator-start"
+        class="c-446j6m soui-slider-indicator c-po4lwg soui-slider-indicator-start"
+        dir="ltr"
       />
       <div
-        class="cpknyi5 soui-slider-start-value crbw1gz soui-slider-value"
+        class="c-1trb9g soui-slider-start-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         0.05
       </div>
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         0.25
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         0
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         1
       </div>
@@ -758,186 +841,207 @@ exports[`Slider[Base] should render correctly about step 1`] = `
 
 exports[`Slider[Base] should render correctly about step zero 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper"
+  class="c7ubtly soui-slider-wrapper"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 0%; right: 100%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+        dir="ltr"
       >
         0.8
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         0.8
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         1
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         1.2
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         1.4
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         1.7
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         2
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         2.4
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         2.8
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         3.3
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         4
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         4.8
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         5.6
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         6.7
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         8
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         9.5
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         11
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         13
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         16
       </div>
@@ -948,42 +1052,47 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
 
 exports[`Slider[Base] should render correctly about value hover 1`] = `
 <div
-  class="c5io7bp soui-slider-wrapper"
+  class="c7ubtly soui-slider-wrapper"
 >
   <div
-    class="crb32h9 soui-slider-track"
+    class="c-l913oi soui-slider-track"
   >
     <div
-      class="c-g5pfb soui-slider-track-inner"
+      class="c-rukz6w soui-slider-track-inner"
+      dir="ltr"
       style="left: 0%; right: 50%;"
     >
       <div
-        class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end cpuqai3 soui-slider-indicator-hover"
+        class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end c-pu943q soui-slider-indicator-hover"
+        dir="ltr"
       />
       <div
-        class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value ce59ifd soui-slider-value-hover"
+        class="clrhw2r soui-slider-end-value c-l884os soui-slider-value c-d95rc8 soui-slider-value-hover"
+        dir="ltr"
       >
         50
       </div>
     </div>
   </div>
   <div
-    class="c-9dxizd soui-slider-scale-wrapper"
+    class="cb174ja soui-slider-scale-wrapper"
   >
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         0
       </div>
     </div>
     <div
-      class="cra9pak soui-slider-scale"
+      class="c-l9ugv7 soui-slider-scale"
     >
       <div
-        class="cr6dvqu soui-slider-label"
+        class="c-ldqaex soui-slider-label"
+        dir="ltr"
       >
         100
       </div>
@@ -995,43 +1104,48 @@ exports[`Slider[Base] should render correctly about value hover 1`] = `
 exports[`Slider[Base] should render correctly about virtual 1`] = `
 <div>
   <div
-    class="c5io7bp soui-slider-wrapper cul0fg4 soui-slider-vertical"
+    class="c7ubtly soui-slider-wrapper cvl8kar soui-slider-vertical"
     style="height: 200px;"
   >
     <div
-      class="crb32h9 soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-g5pfb soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
+        dir="ltr"
         style="bottom: 0%; top: 50%;"
       >
         <div
-          class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+          dir="ltr"
         />
         <div
-          class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+          class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           50
         </div>
       </div>
     </div>
     <div
-      class="c-9dxizd soui-slider-scale-wrapper"
+      class="cb174ja soui-slider-scale-wrapper"
     >
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           0
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           100
         </div>
@@ -1039,51 +1153,58 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     </div>
   </div>
   <div
-    class="c5io7bp soui-slider-wrapper cul0fg4 soui-slider-vertical"
+    class="c7ubtly soui-slider-wrapper cvl8kar soui-slider-vertical"
     style="height: 200px;"
   >
     <div
-      class="crb32h9 soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-g5pfb soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
+        dir="ltr"
         style="bottom: 12%; top: 30.000000000000004%;"
       >
         <div
-          class="c-zb6pkf soui-slider-indicator cq0uspd soui-slider-indicator-start"
+          class="c-446j6m soui-slider-indicator c-po4lwg soui-slider-indicator-start"
+          dir="ltr"
         />
         <div
-          class="cpknyi5 soui-slider-start-value crbw1gz soui-slider-value"
+          class="c-1trb9g soui-slider-start-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           12
         </div>
         <div
-          class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+          dir="ltr"
         />
         <div
-          class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+          class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           70
         </div>
       </div>
     </div>
     <div
-      class="c-9dxizd soui-slider-scale-wrapper"
+      class="cb174ja soui-slider-scale-wrapper"
     >
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           0
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           100
         </div>
@@ -1091,65 +1212,72 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     </div>
   </div>
   <div
-    class="c5io7bp soui-slider-wrapper cul0fg4 soui-slider-vertical"
+    class="c7ubtly soui-slider-wrapper cvl8kar soui-slider-vertical"
     style="height: 200px;"
   >
     <div
-      class="crb32h9 soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-g5pfb soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
+        dir="ltr"
         style="bottom: 0%; top: 77.5%;"
       >
         <div
-          class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+          dir="ltr"
         />
       </div>
     </div>
     <div
-      class="c-9dxizd soui-slider-scale-wrapper"
+      class="cb174ja soui-slider-scale-wrapper"
     >
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           0℃
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           20℃
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           40℃
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           60℃
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           100℃
         </div>
@@ -1157,51 +1285,58 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     </div>
   </div>
   <div
-    class="c5io7bp soui-slider-wrapper cg5kmdr soui-slider-auto-hide cul0fg4 soui-slider-vertical"
+    class="c7ubtly soui-slider-wrapper ch5sr8e soui-slider-auto-hide cvl8kar soui-slider-vertical"
     style="height: 200px;"
   >
     <div
-      class="crb32h9 soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-g5pfb soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
+        dir="ltr"
         style="bottom: 12%; top: 30.000000000000004%;"
       >
         <div
-          class="c-zb6pkf soui-slider-indicator cq0uspd soui-slider-indicator-start"
+          class="c-446j6m soui-slider-indicator c-po4lwg soui-slider-indicator-start"
+          dir="ltr"
         />
         <div
-          class="cpknyi5 soui-slider-start-value crbw1gz soui-slider-value"
+          class="c-1trb9g soui-slider-start-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           12
         </div>
         <div
-          class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+          dir="ltr"
         />
         <div
-          class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+          class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           70
         </div>
       </div>
     </div>
     <div
-      class="c-9dxizd soui-slider-scale-wrapper"
+      class="cb174ja soui-slider-scale-wrapper"
     >
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           0
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           100
         </div>
@@ -1209,51 +1344,58 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     </div>
   </div>
   <div
-    class="c5io7bp soui-slider-wrapper c-35hdxi soui-slider-disabled cul0fg4 soui-slider-vertical"
+    class="c7ubtly soui-slider-wrapper c-25992v soui-slider-disabled cvl8kar soui-slider-vertical"
     style="height: 200px;"
   >
     <div
-      class="crb32h9 soui-slider-track"
+      class="c-l913oi soui-slider-track"
     >
       <div
-        class="c-g5pfb soui-slider-track-inner"
+        class="c-rukz6w soui-slider-track-inner"
+        dir="ltr"
         style="bottom: 12%; top: 30.000000000000004%;"
       >
         <div
-          class="c-zb6pkf soui-slider-indicator cq0uspd soui-slider-indicator-start"
+          class="c-446j6m soui-slider-indicator c-po4lwg soui-slider-indicator-start"
+          dir="ltr"
         />
         <div
-          class="cpknyi5 soui-slider-start-value crbw1gz soui-slider-value"
+          class="c-1trb9g soui-slider-start-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           12
         </div>
         <div
-          class="c-zb6pkf soui-slider-indicator cpoalu2 soui-slider-indicator-end"
+          class="c-446j6m soui-slider-indicator c-oxosmf soui-slider-indicator-end"
+          dir="ltr"
         />
         <div
-          class="ckr9r84 soui-slider-end-value crbw1gz soui-slider-value"
+          class="clrhw2r soui-slider-end-value c-l884os soui-slider-value"
+          dir="ltr"
         >
           70
         </div>
       </div>
     </div>
     <div
-      class="c-9dxizd soui-slider-scale-wrapper"
+      class="cb174ja soui-slider-scale-wrapper"
     >
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           0
         </div>
       </div>
       <div
-        class="cra9pak soui-slider-scale"
+        class="c-l9ugv7 soui-slider-scale"
       >
         <div
-          class="cr6dvqu soui-slider-label"
+          class="c-ldqaex soui-slider-label"
+          dir="ltr"
         >
           100
         </div>

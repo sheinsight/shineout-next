@@ -79,8 +79,9 @@ const {
   wrapperMoveable,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const activeDefaultStyle = 'display: block;';
-const noActiveDefaultStyle = 'display: none;';
+const activeDefaultStyle = 'display: block; height: auto; transition: height 240ms ease-in-out;';
+const noActiveDefaultStyle = 'display: block; height: 0px; overflow: hidden;';
+const closeDefaultStyle = 'display: none; height: auto; transition: height 240ms ease-in-out;'
 
 const testHeaderContent = 'Header';
 const testBodyContent = 'body';
@@ -132,16 +133,21 @@ describe('Card[Base]', () => {
   snapshotTest(<CardCollpase />, 'about collpase');
   snapshotTest(<CardAccordion />, 'about accordion');
   test('should render default', () => {
-    const { container } = render(<CardTest />);
+    const extraContent = 'test'
+    const { container, rerender } = render(<CardHeaderTest extra={extraContent} />);
     const cardWrapper = container.querySelector(wrapper)!;
     const cardHeader = cardWrapper.querySelector(header)!;
     const cardBody = cardWrapper.querySelector(body)!;
     const cardFooter = cardWrapper.querySelector(footer)!;
     const cardHeaderContent = cardHeader.querySelector(headerContent)!;
+
     textContentTest(cardHeaderContent, testHeaderContent);
+    textContentTest(cardHeader.querySelector(headerExtra)!, extraContent);
     textContentTest(cardBody, testBodyContent);
     textContentTest(cardFooter, testFooterContent);
     classTest(cardFooter, right);
+    rerender(<CardHeaderTest />);
+    expect(container.querySelector(headerContent)).not.toBeInTheDocument();
   });
   test('should render when set split', () => {
     const { container } = render(<CardTest split />);
@@ -173,12 +179,12 @@ describe('Card[Header]', () => {
   test('should render when set align is center in header', () => {
     const { container } = render(<CardHeaderTest align='center' />);
     const cardHeader = container.querySelector(header)!;
-    classTest(cardHeader.querySelector(headerContent)!, center);
+    classTest(cardHeader, center);
   });
   test('should render when set align is right in footer', () => {
     const { container } = render(<CardHeaderTest align='right' />);
     const cardHeader = container.querySelector(header)!;
-    classTest(cardHeader.querySelector(headerContent)!, right);
+    classTest(cardHeader, right);
   });
 });
 describe('Card[Footer]', () => {
@@ -207,18 +213,24 @@ describe('Card[Collapse]', () => {
   });
   test('should render when set collapsible is true', async () => {
     const { container } = render(<CardTest collapsible />);
+    
     const cardWrapper = container.querySelector(wrapper)!;
     classTest(cardWrapper, wrapperCollapsible);
     const cardHeaderWrapper = cardWrapper.querySelector(header)!;
     const cardIndicatorWrapper = cardHeaderWrapper.querySelector(indicator)!;
     classLengthTest(cardIndicatorWrapper, indicatorIcon, 1);
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
-    styleTest(cardBodyCollapse, activeDefaultStyle);
+    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    styleContentTest(cardBodyCollapse, activeDefaultStyle);
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
     });
-    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
+    
+    styleContentTest(cardBodyCollapse, closeDefaultStyle);
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
@@ -227,18 +239,27 @@ describe('Card[Collapse]', () => {
   });
   test('should render when set defaultCollapsed', async () => {
     const { container } = render(<CardTest collapsible defaultCollapsed />);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    
     const cardWrapper = container.querySelector(wrapper)!;
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
-    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
+    styleContentTest(cardBodyCollapse, closeDefaultStyle);
+    
     const cardIndicatorWrapper = cardWrapper.querySelector(indicator)!;
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
     });
+    
     styleContentTest(cardBodyCollapse, activeDefaultStyle);
   });
-  test('should render when set collapsed and defaultCollapsed at the same time', () => {
+  test('should render when set collapsed and defaultCollapsed at the same time', async () => {
     const { container } = render(<CardTest collapsible collapsed={false} defaultCollapsed />);
+    await waitFor(async () => {
+      await delay(500);
+    });
     const cardWrapper = container.querySelector(wrapper)!;
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
     styleContentTest(cardBodyCollapse, activeDefaultStyle);
@@ -282,6 +303,7 @@ describe('Card[Form/Accordion]', () => {
         <CardTest />
       </Card.Accordion>,
     );
+    
     const cardAccordion = container.querySelector(accordion)!;
     const cardWrappers = cardAccordion.querySelectorAll(wrapper)!;
     cardWrappers.forEach((item) => {
@@ -290,12 +312,16 @@ describe('Card[Form/Accordion]', () => {
       styleContentTest(item.querySelector(bodyCollapse)!, noActiveDefaultStyle);
     });
     fireEvent.click(cardWrappers[0].querySelector(indicatorIcon)!);
+    await waitFor(async () => {
+      await delay(500)
+    })
+    
     styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, activeDefaultStyle);
     fireEvent.click(cardWrappers[1].querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
     });
-    styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, noActiveDefaultStyle);
+    styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, closeDefaultStyle);
     styleContentTest(cardWrappers[1].querySelector(bodyCollapse)!, activeDefaultStyle);
   });
 });

@@ -2,20 +2,20 @@
 
 exports[`Modal[SnapShot] should render correctly  1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 400px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <span
-          class="c-xciga soui-modal-header-icon c-bp4sh4 soui-alert-icon c-fvfs4j soui-alert-success-icon"
+          class="cu9nnxj soui-modal-header-icon cuz1gq1 soui-alert-icon crr9030 soui-alert-success-icon"
         >
           <svg
             aria-hidden="true"
@@ -29,12 +29,12 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
           </svg>
         </span>
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           Modal Title
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -49,15 +49,16 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body c-8un6r3 soui-modal-body-with-icon"
+        class="cahew83 soui-modal-body c-5wfxsu soui-modal-body-with-icon"
       >
         you are visited 1
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+          class="c-nriuju soui-button-secondary c-abf4z4 soui-button-button cd17ack soui-button-outline"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -65,7 +66,8 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
           </span>
         </button>
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -80,25 +82,25 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
 
 exports[`Modal[SnapShot] should render correctly about close 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -113,15 +115,16 @@ exports[`Modal[SnapShot] should render correctly about close 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -136,25 +139,25 @@ exports[`Modal[SnapShot] should render correctly about close 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -169,15 +172,16 @@ exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -192,25 +196,25 @@ exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about container 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -225,15 +229,16 @@ exports[`Modal[SnapShot] should render correctly about container 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -248,25 +253,25 @@ exports[`Modal[SnapShot] should render correctly about container 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about focus 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -281,15 +286,16 @@ exports[`Modal[SnapShot] should render correctly about focus 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -304,25 +310,25 @@ exports[`Modal[SnapShot] should render correctly about focus 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about form 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -337,15 +343,16 @@ exports[`Modal[SnapShot] should render correctly about form 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -360,25 +367,25 @@ exports[`Modal[SnapShot] should render correctly about form 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about icon 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -393,15 +400,16 @@ exports[`Modal[SnapShot] should render correctly about icon 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -416,25 +424,25 @@ exports[`Modal[SnapShot] should render correctly about icon 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about move 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -449,15 +457,16 @@ exports[`Modal[SnapShot] should render correctly about move 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -472,25 +481,25 @@ exports[`Modal[SnapShot] should render correctly about move 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -505,15 +514,16 @@ exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -528,25 +538,25 @@ exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about position 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -561,15 +571,16 @@ exports[`Modal[SnapShot] should render correctly about position 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -584,25 +595,25 @@ exports[`Modal[SnapShot] should render correctly about position 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about type 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -617,15 +628,16 @@ exports[`Modal[SnapShot] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>
@@ -640,25 +652,25 @@ exports[`Modal[SnapShot] should render correctly about type 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
 <div
-  class="c-yeqlwd soui-modal-wrapper c-69knof soui-modal-wrapper-animation c-ey42ww soui-modal-wrapper-show c-kz79dz soui-modal-wrapper-is-mask"
+  class="cmy5alu soui-modal-wrapper coxj0z6 soui-modal-wrapper-animation csokpan soui-modal-wrapper-show c-k2lvc soui-modal-wrapper-is-mask"
 >
   <div
-    class="c-w6km5g soui-modal-mask"
+    class="cahln1p soui-modal-mask"
   >
     <div
-      class="c-36j10s soui-modal-panel"
+      class="c-tya5el soui-modal-panel"
       style="top: 10vh; width: 500px;"
     >
       <div
-        class="c-vbny4j soui-modal-header"
+        class="c-8uo2b6 soui-modal-header"
       >
         <div
-          class="c-sjm7tx soui-modal-header-title"
+          class="cf32kdm soui-modal-header-title"
         >
           This is a message
         </div>
         <div
-          class="c-sswwhx soui-modal-header-close"
+          class="cetrvpm soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -673,15 +685,16 @@ exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
         </div>
       </div>
       <div
-        class="c-w6rcz2 soui-modal-body"
+        class="cahew83 soui-modal-body"
       >
         this is show information
       </div>
       <div
-        class="c-w3zzat soui-modal-footer"
+        class="c-9n03hg soui-modal-footer"
       >
         <button
-          class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+          class="cq4fg10 soui-button-primary c-abf4z4 soui-button-button"
+          dir="ltr"
           type="button"
         >
           <span>

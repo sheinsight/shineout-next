@@ -5,24 +5,26 @@ exports[`Steps[Base] should render correctly  1`] = `
   style="width: 500px;"
 >
   <div
-    class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default chz4scu soui-steps-horizontal"
+    class="camw5u4 soui-steps-steps c-lho716 soui-steps-default c-luz38h soui-steps-horizontal"
   >
     <div
-      class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+          class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               aria-hidden="true"
@@ -39,10 +41,11 @@ exports[`Steps[Base] should render correctly  1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Succeeded
           </div>
@@ -50,30 +53,33 @@ exports[`Steps[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+          class="c-y15bws soui-steps-icon civfafo soui-steps-process"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             2
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Processing
           </div>
@@ -81,30 +87,33 @@ exports[`Steps[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             3
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Pending
           </div>
@@ -120,24 +129,26 @@ exports[`Steps[Base] should render correctly about description 1`] = `
   style="width: 500px;"
 >
   <div
-    class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default chz4scu soui-steps-horizontal"
+    class="camw5u4 soui-steps-steps c-lho716 soui-steps-default c-luz38h soui-steps-horizontal"
   >
     <div
-      class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+      class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+          class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               aria-hidden="true"
@@ -154,15 +165,16 @@ exports[`Steps[Base] should render correctly about description 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Succeeded
           </div>
           <div
-            class="cuesb82 soui-steps-description"
+            class="c30d1gh soui-steps-description"
           >
             This is a description
           </div>
@@ -170,35 +182,38 @@ exports[`Steps[Base] should render correctly about description 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+      class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+          class="c-y15bws soui-steps-icon civfafo soui-steps-process"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             2
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Processing
           </div>
           <div
-            class="cuesb82 soui-steps-description"
+            class="c30d1gh soui-steps-description"
           >
             This is a description
           </div>
@@ -206,35 +221,38 @@ exports[`Steps[Base] should render correctly about description 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             3
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Pending
           </div>
           <div
-            class="cuesb82 soui-steps-description"
+            class="c30d1gh soui-steps-description"
           >
             This is a description
           </div>
@@ -253,24 +271,26 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
     style="width: 500px; display: flex; gap: 32px; margin-bottom: 24px; align-items: flex-start;"
   >
     <div
-      class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default c-1p9c4g soui-steps-vertical"
+      class="camw5u4 soui-steps-steps c-lho716 soui-steps-default cmea5t soui-steps-vertical"
     >
       <div
-        class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c-s789a2 soui-steps-horizontal-label"
+        class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish c-8v3lwr soui-steps-horizontal-label"
+        dir="ltr"
       >
         <div
-          class="c-7tg1k9 soui-steps-default"
+          class="c-lho716 soui-steps-default"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+            class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             >
               <svg
                 aria-hidden="true"
@@ -287,10 +307,11 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
             </span>
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Succeeded
             </div>
@@ -298,30 +319,33 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c-s789a2 soui-steps-horizontal-label"
+        class="c-y0ylo9 soui-steps-step civfafo soui-steps-process c-8v3lwr soui-steps-horizontal-label"
+        dir="ltr"
       >
         <div
-          class="c-7tg1k9 soui-steps-default"
+          class="c-lho716 soui-steps-default"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+            class="c-y15bws soui-steps-icon civfafo soui-steps-process"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             >
               2
             </span>
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Processing
             </div>
@@ -329,30 +353,33 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c-s789a2 soui-steps-horizontal-label"
+        class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait c-8v3lwr soui-steps-horizontal-label"
+        dir="ltr"
       >
         <div
-          class="c-7tg1k9 soui-steps-default"
+          class="c-lho716 soui-steps-default"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+            class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             >
               3
             </span>
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Pending
             </div>
@@ -361,24 +388,26 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
       </div>
     </div>
     <div
-      class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default c-1p9c4g soui-steps-vertical"
+      class="camw5u4 soui-steps-steps c-lho716 soui-steps-default cmea5t soui-steps-vertical"
     >
       <div
-        class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-7tg1k9 soui-steps-default"
+          class="c-lho716 soui-steps-default"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+            class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             >
               <svg
                 aria-hidden="true"
@@ -395,15 +424,16 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
             </span>
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Succeeded
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -411,35 +441,38 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step civfafo soui-steps-process c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-7tg1k9 soui-steps-default"
+          class="c-lho716 soui-steps-default"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+            class="c-y15bws soui-steps-icon civfafo soui-steps-process"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             >
               2
             </span>
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Processing
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -447,35 +480,38 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-7tg1k9 soui-steps-default"
+          class="c-lho716 soui-steps-default"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+            class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             >
               3
             </span>
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Pending
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -488,31 +524,35 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
     style="width: 500px; display: flex; gap: 32px; align-items: flex-start;"
   >
     <div
-      class="c-xmgrr7 soui-steps-steps c-pdyajl soui-steps-dot c-1p9c4g soui-steps-vertical"
+      class="camw5u4 soui-steps-steps c-eug5ci soui-steps-dot cmea5t soui-steps-vertical"
     >
       <div
-        class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c-s789a2 soui-steps-horizontal-label"
+        class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish c-8v3lwr soui-steps-horizontal-label"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+            class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Succeeded
             </div>
@@ -520,28 +560,32 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c-s789a2 soui-steps-horizontal-label"
+        class="c-y0ylo9 soui-steps-step civfafo soui-steps-process c-8v3lwr soui-steps-horizontal-label"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+            class="c-y15bws soui-steps-icon civfafo soui-steps-process"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Processing
             </div>
@@ -549,28 +593,32 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c-s789a2 soui-steps-horizontal-label"
+        class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait c-8v3lwr soui-steps-horizontal-label"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+            class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Pending
             </div>
@@ -579,36 +627,40 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
       </div>
     </div>
     <div
-      class="c-xmgrr7 soui-steps-steps c-pdyajl soui-steps-dot c-1p9c4g soui-steps-vertical"
+      class="camw5u4 soui-steps-steps c-eug5ci soui-steps-dot cmea5t soui-steps-vertical"
     >
       <div
-        class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+            class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Succeeded
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -616,33 +668,37 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step civfafo soui-steps-process c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+            class="c-y15bws soui-steps-icon civfafo soui-steps-process"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Processing
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -650,33 +706,37 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+            class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Pending
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -693,24 +753,27 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
   style="width: 100%; overflow: auto;"
 >
   <div
-    class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default chz4scu soui-steps-horizontal"
+    class="camw5u4 soui-steps-steps c-lho716 soui-steps-default c-luz38h soui-steps-horizontal"
   >
     <div
-      class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+          class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
+          dir="ltr"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <span
               style="display: inline-block; width: 100%; height: 100%; background: rgb(0, 168, 95); overflow: hidden; border-radius: 50%;"
@@ -733,10 +796,11 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Step1
           </div>
@@ -744,21 +808,24 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+          class="c-y15bws soui-steps-icon civfafo soui-steps-process"
+          dir="ltr"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <span
               style="display: inline-block; width: 100%; height: 100%; background: rgb(245, 108, 10); overflow: hidden; border-radius: 50%;"
@@ -781,10 +848,11 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Step2
           </div>
@@ -792,21 +860,24 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
+          dir="ltr"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               fill="none"
@@ -839,10 +910,11 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Step3
           </div>
@@ -850,21 +922,24 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
+          dir="ltr"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               fill="none"
@@ -897,10 +972,11 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Step4
           </div>
@@ -916,19 +992,20 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
   style="width: 500px;"
 >
   <div
-    class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default chz4scu soui-steps-horizontal"
+    class="camw5u4 soui-steps-steps c-lho716 soui-steps-default c-luz38h soui-steps-horizontal"
   >
     <div
-      class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+      class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+          class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               aria-hidden="true"
@@ -945,15 +1022,16 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Succeeded
           </div>
           <div
-            class="cuesb82 soui-steps-description"
+            class="c30d1gh soui-steps-description"
           >
             This is a description
           </div>
@@ -961,30 +1039,32 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+      class="c-y0ylo9 soui-steps-step civfafo soui-steps-process c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+          class="c-y15bws soui-steps-icon civfafo soui-steps-process"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             2
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Processing
           </div>
           <div
-            class="cuesb82 soui-steps-description"
+            class="c30d1gh soui-steps-description"
           >
             This is a description
           </div>
@@ -992,30 +1072,32 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c-s789a2 soui-steps-horizontal-label cgc722o soui-steps-width-description"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait c-8v3lwr soui-steps-horizontal-label c-nhtb8v soui-steps-width-description"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             3
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Pending
           </div>
           <div
-            class="cuesb82 soui-steps-description"
+            class="c30d1gh soui-steps-description"
           >
             This is a description
           </div>
@@ -1031,25 +1113,27 @@ exports[`Steps[Base] should render correctly about size 1`] = `
   style="width: 500px;"
 >
   <div
-    class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default c-xmlbqb soui-steps-small chz4scu soui-steps-horizontal"
+    class="camw5u4 soui-steps-steps c-lho716 soui-steps-default camrlv0 soui-steps-small c-luz38h soui-steps-horizontal"
     style="margin-bottom: 32px;"
   >
     <div
-      class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+          class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               aria-hidden="true"
@@ -1066,10 +1150,11 @@ exports[`Steps[Base] should render correctly about size 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Succeeded
           </div>
@@ -1077,30 +1162,33 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+          class="c-y15bws soui-steps-icon civfafo soui-steps-process"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             2
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Processing
           </div>
@@ -1108,30 +1196,33 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             3
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Pending
           </div>
@@ -1140,25 +1231,27 @@ exports[`Steps[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default chz4scu soui-steps-horizontal"
+    class="camw5u4 soui-steps-steps c-lho716 soui-steps-default c-luz38h soui-steps-horizontal"
     style="margin-bottom: 32px;"
   >
     <div
-      class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+          class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               aria-hidden="true"
@@ -1175,10 +1268,11 @@ exports[`Steps[Base] should render correctly about size 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Succeeded
           </div>
@@ -1186,30 +1280,33 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+          class="c-y15bws soui-steps-icon civfafo soui-steps-process"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             2
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Processing
           </div>
@@ -1217,30 +1314,33 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             3
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Pending
           </div>
@@ -1249,24 +1349,26 @@ exports[`Steps[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default c-xqn78v soui-steps-large chz4scu soui-steps-horizontal"
+    class="camw5u4 soui-steps-steps c-lho716 soui-steps-default caipqcg soui-steps-large c-luz38h soui-steps-horizontal"
   >
     <div
-      class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+          class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               aria-hidden="true"
@@ -1283,10 +1385,11 @@ exports[`Steps[Base] should render correctly about size 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Succeeded
           </div>
@@ -1294,30 +1397,33 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+          class="c-y15bws soui-steps-icon civfafo soui-steps-process"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             2
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Processing
           </div>
@@ -1325,30 +1431,33 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             3
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Pending
           </div>
@@ -1364,24 +1473,26 @@ exports[`Steps[Base] should render correctly about status 1`] = `
   style="width: 500px;"
 >
   <div
-    class="c-xmgrr7 soui-steps-steps c-7tg1k9 soui-steps-default chz4scu soui-steps-horizontal"
+    class="camw5u4 soui-steps-steps c-lho716 soui-steps-default c-luz38h soui-steps-horizontal"
   >
     <div
-      class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+          class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               aria-hidden="true"
@@ -1398,10 +1509,11 @@ exports[`Steps[Base] should render correctly about status 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Succeeded
           </div>
@@ -1409,21 +1521,23 @@ exports[`Steps[Base] should render correctly about status 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-xu6wf6 soui-steps-error c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step caf6165 soui-steps-error cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-xu6wf6 soui-steps-error"
+          class="c-y15bws soui-steps-icon caf6165 soui-steps-error"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             <svg
               aria-hidden="true"
@@ -1438,10 +1552,11 @@ exports[`Steps[Base] should render correctly about status 1`] = `
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Error
           </div>
@@ -1449,30 +1564,33 @@ exports[`Steps[Base] should render correctly about status 1`] = `
       </div>
     </div>
     <div
-      class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+      class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+      dir="ltr"
     >
       <div
-        class="c-7tg1k9 soui-steps-default"
+        class="c-lho716 soui-steps-default"
       >
         <div
-          class="c-5o0jwm soui-steps-tail"
+          class="c-y0ycol soui-steps-tail"
+          dir="ltr"
         >
            
         </div>
         <div
-          class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+          class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
         >
           <span
-            class="c3paoj4 soui-steps-icon-wrapper"
+            class="c-np4l8h soui-steps-icon-wrapper"
           >
             3
           </span>
         </div>
         <div
-          class="c-hmny5t soui-steps-content"
+          class="c-vaw3mq soui-steps-content"
         >
           <div
-            class="c-xm3p02 soui-steps-title"
+            class="can98l9 soui-steps-title"
+            dir="ltr"
           >
             Pending
           </div>
@@ -1491,32 +1609,36 @@ exports[`Steps[Base] should render correctly about type 1`] = `
     style="width: 500px;"
   >
     <div
-      class="c-xmgrr7 soui-steps-steps c-pdyajl soui-steps-dot chz4scu soui-steps-horizontal"
+      class="camw5u4 soui-steps-steps c-eug5ci soui-steps-dot c-luz38h soui-steps-horizontal"
       style="margin-bottom: 32px;"
     >
       <div
-        class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label"
+        class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+            class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Succeeded
             </div>
@@ -1524,28 +1646,32 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label"
+        class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+            class="c-y15bws soui-steps-icon civfafo soui-steps-process"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Complete information
             </div>
@@ -1553,28 +1679,32 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+        class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+            class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Pending
             </div>
@@ -1583,37 +1713,41 @@ exports[`Steps[Base] should render correctly about type 1`] = `
       </div>
     </div>
     <div
-      class="c-xmgrr7 soui-steps-steps c-pdyajl soui-steps-dot chz4scu soui-steps-horizontal"
+      class="camw5u4 soui-steps-steps c-eug5ci soui-steps-dot c-luz38h soui-steps-horizontal"
       style="margin-bottom: 32px;"
     >
       <div
-        class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cgsrpbx soui-steps-finish"
+            class="c-y15bws soui-steps-icon c-vrcgtu soui-steps-finish"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Succeeded
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -1621,33 +1755,37 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon cwjnfwl soui-steps-process"
+            class="c-y15bws soui-steps-icon civfafo soui-steps-process"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Complete information
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               Please fill in your home address and phone number
             </div>
@@ -1655,33 +1793,37 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-pdyajl soui-steps-dot"
+          class="c-eug5ci soui-steps-dot"
         >
           <div
-            class="c-5o0jwm soui-steps-tail"
+            class="c-y0ycol soui-steps-tail"
+            dir="ltr"
           >
              
           </div>
           <div
-            class="c-5o7j4t soui-steps-icon c-5nymxt soui-steps-wait"
+            class="c-y15bws soui-steps-icon c-y0wfps soui-steps-wait"
+            dir="ltr"
           >
             <span
-              class="c3paoj4 soui-steps-icon-wrapper"
+              class="c-np4l8h soui-steps-icon-wrapper"
             />
           </div>
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Pending
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -1694,20 +1836,23 @@ exports[`Steps[Base] should render correctly about type 1`] = `
     style="min-width: 700px;"
   >
     <div
-      class="c-xmgrr7 soui-steps-steps c-xwe2sh soui-steps-arrow chz4scu soui-steps-horizontal"
+      class="camw5u4 soui-steps-steps cacyusu soui-steps-arrow c-luz38h soui-steps-horizontal"
       style="margin-bottom: 32px;"
     >
       <div
-        class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label"
+        class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label"
+        dir="ltr"
       >
         <div
-          class="c-xwe2sh soui-steps-arrow"
+          class="cacyusu soui-steps-arrow"
+          dir="ltr"
         >
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Succeeded
             </div>
@@ -1715,16 +1860,19 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label"
+        class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label"
+        dir="ltr"
       >
         <div
-          class="c-xwe2sh soui-steps-arrow"
+          class="cacyusu soui-steps-arrow"
+          dir="ltr"
         >
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Complete information
             </div>
@@ -1732,16 +1880,19 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label"
+        class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label"
+        dir="ltr"
       >
         <div
-          class="c-xwe2sh soui-steps-arrow"
+          class="cacyusu soui-steps-arrow"
+          dir="ltr"
         >
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Pending
             </div>
@@ -1750,24 +1901,27 @@ exports[`Steps[Base] should render correctly about type 1`] = `
       </div>
     </div>
     <div
-      class="c-xmgrr7 soui-steps-steps c-xwe2sh soui-steps-arrow chz4scu soui-steps-horizontal"
+      class="camw5u4 soui-steps-steps cacyusu soui-steps-arrow c-luz38h soui-steps-horizontal"
     >
       <div
-        class="c-5o0swa soui-steps-step cgsrpbx soui-steps-finish cgsrpbx soui-steps-finish c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step c-vrcgtu soui-steps-finish c-vrcgtu soui-steps-finish cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-xwe2sh soui-steps-arrow"
+          class="cacyusu soui-steps-arrow"
+          dir="ltr"
         >
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Succeeded
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
@@ -1775,21 +1929,24 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step cwjnfwl soui-steps-process c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step civfafo soui-steps-process cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-xwe2sh soui-steps-arrow"
+          class="cacyusu soui-steps-arrow"
+          dir="ltr"
         >
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Complete information
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               Please fill in your home address and phone number
             </div>
@@ -1797,21 +1954,24 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="c-5o0swa soui-steps-step c-5nymxt soui-steps-wait c2x429g soui-steps-vertical-label cgc722o soui-steps-width-description"
+        class="c-y0ylo9 soui-steps-step c-y0wfps soui-steps-wait cnc8ps3 soui-steps-vertical-label c-nhtb8v soui-steps-width-description"
+        dir="ltr"
       >
         <div
-          class="c-xwe2sh soui-steps-arrow"
+          class="cacyusu soui-steps-arrow"
+          dir="ltr"
         >
           <div
-            class="c-hmny5t soui-steps-content"
+            class="c-vaw3mq soui-steps-content"
           >
             <div
-              class="c-xm3p02 soui-steps-title"
+              class="can98l9 soui-steps-title"
+              dir="ltr"
             >
               Pending
             </div>
             <div
-              class="cuesb82 soui-steps-description"
+              class="c30d1gh soui-steps-description"
             >
               This is a description
             </div>
