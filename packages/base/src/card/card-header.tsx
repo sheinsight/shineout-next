@@ -33,6 +33,12 @@ const CardHeader = (props: CardHeaderProps) => {
     alignClass
   );
 
+  const commonHeaderProps = {
+    onMouseDown: handleDragMouseDown,
+    onClick: onCollapse,
+    style: props.style
+  }
+
   if (!props.extra && !collapsible) {
     const simpleHeaderClassName = classNames(
       cardClasses?.header,
@@ -44,9 +50,7 @@ const CardHeader = (props: CardHeaderProps) => {
     return (
       <div
         className={simpleHeaderClassName}
-        onMouseDown={handleDragMouseDown} 
-        onClick={onCollapse} 
-        style={props.style}
+        {...commonHeaderProps}
       >
         {props.children}
       </div>
@@ -55,10 +59,8 @@ const CardHeader = (props: CardHeaderProps) => {
 
   return (
     <div
-      onMouseDown={handleDragMouseDown}
-      onClick={onCollapse}
       className={classNames(props.className, cardClasses?.header)}
-      style={props.style}
+      {...commonHeaderProps}
     >
       {renderIndicator()}
       <div className={headerContentClassName}>{props.children}</div>
