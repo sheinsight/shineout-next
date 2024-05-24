@@ -80,7 +80,6 @@ const Sticky = (props: StickyProps) => {
     const entry = entries[0];
     const scrollRect = entry.rootBounds;
     const targetRect = entry.boundingClientRect;
-    console.log('handleTargetPosition', entry)
 
     if (!entry.isIntersecting) {
       const targetLeft = targetRect.left;
@@ -130,7 +129,6 @@ const Sticky = (props: StickyProps) => {
   });
 
   const setFixedStyle = usePersistFn((s: boolean, m?: 'top' | 'bottom', l: number = 0) => {
-    console.log('setFixedStyle', s, m, l)
     if (s !== show) {
       setShow(s);
     }
@@ -221,7 +219,6 @@ const Sticky = (props: StickyProps) => {
       rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
       threshold: 1.0,
     });
-    context.fixedObserver.observe(elementRef.current!);
   };
 
   const cancelObserver = () => {
@@ -240,7 +237,7 @@ const Sticky = (props: StickyProps) => {
       if (context.div) {
         // append div
         if (context.target === document.body) {
-          document.body.appendChild(context.div);
+          document.body.insertBefore(context.div, document.body.firstChild);
         } else {
           context.target.parentNode!.insertBefore(context.div, context.target);
         }
@@ -322,6 +319,13 @@ const Sticky = (props: StickyProps) => {
           context.targetObserver.observe(el);
         }
       }
+      if (context.fixedObserver) {
+        if (!el) {
+          context.fixedObserver.disconnect();
+        } else {
+          context.fixedObserver.observe(el);
+        }
+      }
     }
   };
 
@@ -340,15 +344,16 @@ const Sticky = (props: StickyProps) => {
       createFixedEvents();
       return cancelFixedEvents;
     }
-  }, [css]);
+  }, [css, top, bottom]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (props.parent && !css) {
+      // createParentObserver 用到context.target
       createParentObserver();
       context.parentObserver!.observe(props.parent);
     }
     return cancelParentObserver;
-  }, [props.parent, css, context.target]);
+  }, [props.parent, css, context.target, top, bottom]);
 
   // 纯css方法 直接使用css
   // js方法
