@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `TreeSelect` compressed 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
+- 修复 `TreeSelect` 属性  `compressed` 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
 
 ## 3.1.9
 2024-05-14

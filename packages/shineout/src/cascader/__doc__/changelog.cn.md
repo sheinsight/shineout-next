@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Cascader` compressed 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
+- 修复 `Cascader` 属性 `compressed` 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
 
 ## 3.0.11
 2024-05-08
