@@ -1,3 +1,10 @@
+## 3.1.17
+2024-05-24
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` compressed 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
+
 ## 3.1.9
 2024-05-14
 
@@ -28,9 +35,6 @@
 ### 🆕 Feature
 - `TreeSelect` 属性 `loader` 支持返回 Promise 来关闭加载状态 ([#417](https://github.com/sheinsight/shineout-next/pull/417))
 
-### 🐞 BugFix
-
-- 修复 `TreeSelect` 初次渲染时 `compressed` 没有生效的问题 ([#411](https://github.com/sheinsight/shineout-next/pull/411))
 
 ## 3.0.11
 2024-05-08
@@ -55,7 +59,6 @@
 ### 🐞 BugFix
 
 - 修复 `TreeSelect` noCache 属性无效的问题 ([#398](https://github.com/sheinsight/shineout-next/pull/398))
-- 修复 `TreeSelect` 首次渲染 `compressed` 属性无效的问题 ([#399](https://github.com/sheinsight/shineout-next/pull/399))
 
 ## 3.0.5
 2024-04-24
