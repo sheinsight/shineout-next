@@ -3,22 +3,22 @@
 exports[`Cascader[Base] should render correctly  1`] = `
 <div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper c-60rgsl soui-cascader-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -27,10 +27,10 @@ exports[`Cascader[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -52,101 +52,31 @@ exports[`Cascader[Base] should render correctly  1`] = `
 exports[`Cascader[Base] should render correctly about compressed 1`] = `
 <div>
   <div
-    class="c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable cvvvm2i soui-cascader-multiple"
+    class="c-4xqamx soui-cascader-wrapper c-60rgsl soui-cascader-clearable cy7k22k soui-cascader-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper cv6tew8 soui-cascader-compressed-wrapper c-mia750 soui-cascader-multiple-result-wrapper cgv4cqg soui-cascader-multiple-compressed-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper c-5x6xp6 soui-cascader-compressed-wrapper cvhz44a soui-cascader-multiple-result-wrapper ckyuzsm soui-cascader-multiple-compressed-wrapper"
         >
-          <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              jiangning
-            </span>
-          </div>
-          <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              yuhuatai
-            </span>
-          </div>
-          <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              nanjing
-            </span>
-          </div>
-          <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              jiangsu
-            </span>
-          </div>
-          <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              feidong
-            </span>
-          </div>
-          <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              hefei
-            </span>
-          </div>
-          <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              anhui
-            </span>
-          </div>
           <span
             style="display: inline-flex;"
           >
             <div
-              class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-              style="position: absolute; z-index: -100; user-select: none; contain: layout; opacity: 0; pointer-events: none;"
+              class="cavhhv2 soui-cascader-tag c50rhq soui-tag-tag cc50qtx soui-tag-default cr527za soui-tag-bright"
+              style=""
             >
               <span
-                class="c-u4cme3 soui-tag-wrapper"
+                class="ccz7i93 soui-tag-wrapper"
               >
-                +
+                +7
               </span>
             </div>
             <noscript />
@@ -154,10 +84,10 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-724hqc soui-cascader-clear-icon"
+          class="c-616rnq soui-cascader-clear-icon"
         >
           <svg
             aria-hidden="true"
@@ -171,7 +101,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
           </svg>
         </span>
         <span
-          class="c7pvx50 soui-cascader-compressed-icon c-30ak94 soui-cascader-arrow-icon"
+          class="cjbln2e soui-cascader-compressed-icon c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -195,21 +125,21 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
   style="display: flex; flex-wrap: wrap; gap: 32px; width: 632px;"
 >
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-1wjat7 soui-cascader-wrapper-disabled"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper c2n1r2b soui-cascader-wrapper-disabled"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -218,10 +148,10 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -238,22 +168,22 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper c-60rgsl soui-cascader-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -262,10 +192,10 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -282,37 +212,37 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="c-2pxx5j soui-cascader-wrapper c-1wjat7 soui-cascader-wrapper-disabled"
+    class="c-4xqamx soui-cascader-wrapper c2n1r2b soui-cascader-wrapper-disabled"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright csilwh6 soui-tag-disabled"
+            class="cavhhv2 soui-cascader-tag c50rhq soui-tag-tag cc50qtx soui-tag-default cr527za soui-tag-bright cezsuw8 soui-tag-disabled"
             data-soui-type="dark"
             style="opacity: 1;"
           >
             <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+              class="ccz7i93 soui-tag-wrapper cue8cxx soui-tag-inline"
             >
               jiangsu
             </span>
           </div>
           <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright csilwh6 soui-tag-disabled"
+            class="cavhhv2 soui-cascader-tag c50rhq soui-tag-tag cc50qtx soui-tag-default cr527za soui-tag-bright cezsuw8 soui-tag-disabled"
             data-soui-type="dark"
             style="opacity: 1;"
           >
             <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+              class="ccz7i93 soui-tag-wrapper cue8cxx soui-tag-inline"
             >
               nanjing
             </span>
@@ -320,10 +250,10 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -340,22 +270,22 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper c-60rgsl soui-cascader-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -364,10 +294,10 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -391,18 +321,18 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
   style="display: flex; gap: 32px;"
 >
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <input
             autocomplete="off"
@@ -411,15 +341,15 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
             value=""
           />
           <span
-            class="c-cmwebl soui-cascader-input-mirror"
+            class="c-l2869v soui-cascader-input-mirror"
           />
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -436,18 +366,18 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
     </div>
   </div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <input
             autocomplete="off"
@@ -456,15 +386,15 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
             value=""
           />
           <span
-            class="c-cmwebl soui-cascader-input-mirror"
+            class="c-l2869v soui-cascader-input-mirror"
           />
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -486,30 +416,30 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
 exports[`Cascader[Base] should render correctly about final 1`] = `
 <div>
   <div
-    class="cwvshv soui-form-item-wrapper"
+    class="c38k8hx soui-form-item-wrapper"
     data-soui-status="default"
   >
     <div
-      class="c-3i1zfg soui-form-item-label"
+      class="c-xcyska soui-form-item-label"
     >
       Single
     </div>
     <div
-      class="c-9qilv7 soui-form-item-control"
+      class="c-7eu5v5 soui-form-item-control"
       data-soui-role="form-control"
     >
       <div
-        class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+        class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper"
         data-soui-input-border="true"
       >
         <div
-          class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+          class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
         >
           <div
-            class="cmk5gxz soui-cascader-result"
+            class="c-7arc6v soui-cascader-result"
           >
             <div
-              class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+              class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
             >
               <input
                 autocomplete="off"
@@ -517,15 +447,15 @@ exports[`Cascader[Base] should render correctly about final 1`] = `
                 value=""
               />
               <span
-                class="c-cmwebl soui-cascader-input-mirror"
+                class="c-l2869v soui-cascader-input-mirror"
               />
             </div>
           </div>
           <div
-            class="cb8gh80 soui-cascader-icon-wrapper"
+            class="c2t4p9q soui-cascader-icon-wrapper"
           >
             <span
-              class="c-30ak94 soui-cascader-arrow-icon"
+              class="c-1zcu6i soui-cascader-arrow-icon"
             >
               <svg
                 aria-hidden="true"
@@ -544,30 +474,30 @@ exports[`Cascader[Base] should render correctly about final 1`] = `
     </div>
   </div>
   <div
-    class="cwvshv soui-form-item-wrapper"
+    class="c38k8hx soui-form-item-wrapper"
     data-soui-status="default"
   >
     <div
-      class="c-3i1zfg soui-form-item-label"
+      class="c-xcyska soui-form-item-label"
     >
       multiple
     </div>
     <div
-      class="c-9qilv7 soui-form-item-control"
+      class="c-7eu5v5 soui-form-item-control"
       data-soui-role="form-control"
     >
       <div
-        class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+        class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper"
         data-soui-input-border="true"
       >
         <div
-          class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+          class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
         >
           <div
-            class="cmk5gxz soui-cascader-result"
+            class="c-7arc6v soui-cascader-result"
           >
             <div
-              class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+              class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
             >
               <input
                 autocomplete="off"
@@ -575,15 +505,15 @@ exports[`Cascader[Base] should render correctly about final 1`] = `
                 value=""
               />
               <span
-                class="c-cmwebl soui-cascader-input-mirror"
+                class="c-l2869v soui-cascader-input-mirror"
               />
             </div>
           </div>
           <div
-            class="cb8gh80 soui-cascader-icon-wrapper"
+            class="c2t4p9q soui-cascader-icon-wrapper"
           >
             <span
-              class="c-30ak94 soui-cascader-arrow-icon"
+              class="c-1zcu6i soui-cascader-arrow-icon"
             >
               <svg
                 aria-hidden="true"
@@ -607,22 +537,22 @@ exports[`Cascader[Base] should render correctly about final 1`] = `
 exports[`Cascader[Base] should render correctly about finalDismiss 1`] = `
 <div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -631,10 +561,10 @@ exports[`Cascader[Base] should render correctly about finalDismiss 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -656,22 +586,22 @@ exports[`Cascader[Base] should render correctly about finalDismiss 1`] = `
 exports[`Cascader[Base] should render correctly about hideTag 1`] = `
 <div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper c-60rgsl soui-cascader-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -680,10 +610,10 @@ exports[`Cascader[Base] should render correctly about hideTag 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -705,42 +635,42 @@ exports[`Cascader[Base] should render correctly about hideTag 1`] = `
 exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
 <div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-djfbth soui-cascader-wrapper-inner-title c-71p6v7 soui-cascader-clearable"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper ckdodk9 soui-cascader-wrapper-inner-title c-60rgsl soui-cascader-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="c9901z2 soui-inner-title-wrapper"
+        class="c-tz2jr4 soui-inner-title-wrapper"
       >
         <div
-          class="c88kfib soui-inner-title-title c-1zj9og soui-inner-title-top"
+          class="cak8vid soui-inner-title-title c-vug2ta soui-inner-title-top"
         >
           Inner Title
         </div>
         <div
-          class="c86ersi soui-inner-title-place"
+          class="cai37sk soui-inner-title-place"
         >
           <div
-            class="c88kfib soui-inner-title-title"
+            class="cak8vid soui-inner-title-title"
           >
             Inner Title
           </div>
         </div>
         <div
-          class="c-1eem1o soui-inner-title-content"
+          class="cuemu7a soui-inner-title-content"
         >
           <div
-            class="cmk5gxz soui-cascader-result"
+            class="c-7arc6v soui-cascader-result"
           >
             <div
-              class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+              class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
             >
               <span
-                class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+                class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
               >
                 <span>
                   Please select city
@@ -751,10 +681,10 @@ exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -776,22 +706,22 @@ exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
 exports[`Cascader[Base] should render correctly about loader 1`] = `
 <div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -800,10 +730,10 @@ exports[`Cascader[Base] should render correctly about loader 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -825,11 +755,11 @@ exports[`Cascader[Base] should render correctly about loader 1`] = `
 exports[`Cascader[Base] should render correctly about multiple 1`] = `
 <div>
   <div
-    class="cuvzs0g soui-radio-group"
+    class="c2yfuoi soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="ceo7z38 soui-radio-wrapper c875odf soui-radio-wrapper-checked"
+      class="clnvxwm soui-radio-wrapper c-863kv soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -838,21 +768,21 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
         type="radio"
       />
       <span
-        class="chkciqb soui-radio-indicator-wrapper"
+        class="chxtlw1 soui-radio-indicator-wrapper"
       >
         <span
-          class="cp0qpb4 soui-radio-indicator"
+          class="c-4u63tq soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-v30ja8 soui-radio-desc"
+        class="c6yu2se soui-radio-desc"
       >
         模式 0
       </span>
     </div>
     <div
-      class="ceo7z38 soui-radio-wrapper"
+      class="clnvxwm soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -860,21 +790,21 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
         type="radio"
       />
       <span
-        class="chkciqb soui-radio-indicator-wrapper"
+        class="chxtlw1 soui-radio-indicator-wrapper"
       >
         <span
-          class="cp0qpb4 soui-radio-indicator"
+          class="c-4u63tq soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-v30ja8 soui-radio-desc"
+        class="c6yu2se soui-radio-desc"
       >
         模式 1
       </span>
     </div>
     <div
-      class="ceo7z38 soui-radio-wrapper"
+      class="clnvxwm soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -882,21 +812,21 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
         type="radio"
       />
       <span
-        class="chkciqb soui-radio-indicator-wrapper"
+        class="chxtlw1 soui-radio-indicator-wrapper"
       >
         <span
-          class="cp0qpb4 soui-radio-indicator"
+          class="c-4u63tq soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-v30ja8 soui-radio-desc"
+        class="c6yu2se soui-radio-desc"
       >
         模式 2
       </span>
     </div>
     <div
-      class="ceo7z38 soui-radio-wrapper"
+      class="clnvxwm soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -904,21 +834,21 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
         type="radio"
       />
       <span
-        class="chkciqb soui-radio-indicator-wrapper"
+        class="chxtlw1 soui-radio-indicator-wrapper"
       >
         <span
-          class="cp0qpb4 soui-radio-indicator"
+          class="c-4u63tq soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-v30ja8 soui-radio-desc"
+        class="c6yu2se soui-radio-desc"
       >
         模式 3
       </span>
     </div>
     <div
-      class="ceo7z38 soui-radio-wrapper"
+      class="clnvxwm soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -926,15 +856,15 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
         type="radio"
       />
       <span
-        class="chkciqb soui-radio-indicator-wrapper"
+        class="chxtlw1 soui-radio-indicator-wrapper"
       >
         <span
-          class="cp0qpb4 soui-radio-indicator"
+          class="c-4u63tq soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-v30ja8 soui-radio-desc"
+        class="c6yu2se soui-radio-desc"
       >
         模式 4
       </span>
@@ -947,22 +877,22 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
       style="flex: 1;"
     >
       <div
-        class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable cvvvm2i soui-cascader-multiple"
+        class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper c-60rgsl soui-cascader-clearable cy7k22k soui-cascader-multiple"
         data-soui-input-border="true"
         style="width: 300px;"
         tabindex="0"
       >
         <div
-          class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+          class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
         >
           <div
-            class="cmk5gxz soui-cascader-result"
+            class="c-7arc6v soui-cascader-result"
           >
             <div
-              class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+              class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
             >
               <span
-                class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+                class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
               >
                 <span>
                   Please select city
@@ -971,10 +901,10 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
             </div>
           </div>
           <div
-            class="cb8gh80 soui-cascader-icon-wrapper"
+            class="c2t4p9q soui-cascader-icon-wrapper"
           >
             <span
-              class="c-30ak94 soui-cascader-arrow-icon"
+              class="c-1zcu6i soui-cascader-arrow-icon"
             >
               <svg
                 aria-hidden="true"
@@ -1022,22 +952,22 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
 exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
 <div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable cvvvm2i soui-cascader-multiple"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper c-60rgsl soui-cascader-clearable cy7k22k soui-cascader-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper cv6tew8 soui-cascader-compressed-wrapper c-mia750 soui-cascader-multiple-result-wrapper cgv4cqg soui-cascader-multiple-compressed-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper c-5x6xp6 soui-cascader-compressed-wrapper cvhz44a soui-cascader-multiple-result-wrapper ckyuzsm soui-cascader-multiple-compressed-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -1046,10 +976,10 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c7pvx50 soui-cascader-compressed-icon c-30ak94 soui-cascader-arrow-icon"
+          class="cjbln2e soui-cascader-compressed-icon c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1071,22 +1001,22 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
 exports[`Cascader[Base] should render correctly about renderResult 1`] = `
 <div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper c-71p6v7 soui-cascader-clearable"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper c-60rgsl soui-cascader-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -1095,10 +1025,10 @@ exports[`Cascader[Base] should render correctly about renderResult 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1120,22 +1050,22 @@ exports[`Cascader[Base] should render correctly about renderResult 1`] = `
 exports[`Cascader[Base] should render correctly about trigger 1`] = `
 <div>
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <span
-            class="c5brkcp soui-cascader-placeholder co6ybzv soui-cascader-ellipsis"
+            class="c-33k7ll soui-cascader-placeholder cqimrzx soui-cascader-ellipsis"
           >
             <span>
               Please select city
@@ -1144,10 +1074,10 @@ exports[`Cascader[Base] should render correctly about trigger 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1169,26 +1099,26 @@ exports[`Cascader[Base] should render correctly about trigger 1`] = `
 exports[`Cascader[Base] should render correctly about unmatch 1`] = `
 <div>
   <div
-    class="c-2pxx5j soui-cascader-wrapper"
+    class="c-4xqamx soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <div
-            class="coeajg0 soui-cascader-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
+            class="cavhhv2 soui-cascader-tag c50rhq soui-tag-tag cc50qtx soui-tag-default cr527za soui-tag-bright"
             style="opacity: 1;"
           >
             <span
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
+              class="ccz7i93 soui-tag-wrapper cue8cxx soui-tag-inline"
             >
               Unmatched: shanghai
             </span>
@@ -1196,10 +1126,10 @@ exports[`Cascader[Base] should render correctly about unmatch 1`] = `
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1223,18 +1153,18 @@ exports[`Cascader[Base] should render correctly about wide 1`] = `
   style="display: flex; gap: 32px;"
 >
   <div
-    class="ct2uzms soui-cascader-wrapper-empty c-2pxx5j soui-cascader-wrapper"
+    class="c-j0xwyi soui-cascader-wrapper-empty c-4xqamx soui-cascader-wrapper"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="cqbbc7g soui-cascader-result-wrapper c-phw4zh soui-cascader-wrapper-padding-box cq544q2 soui-cascader-wrapper-inner-title-top c783a0m soui-cascader-wrapper-inner-title-bottom"
+      class="cqosfd6 soui-cascader-result-wrapper c8f7ke9 soui-cascader-wrapper-padding-box c-xzbvh0 soui-cascader-wrapper-inner-title-top c-fgnb9o soui-cascader-wrapper-inner-title-bottom"
     >
       <div
-        class="cmk5gxz soui-cascader-result"
+        class="c-7arc6v soui-cascader-result"
       >
         <div
-          class="c-becq1t soui-cascader-result-text-wrapper c-mia750 soui-cascader-multiple-result-wrapper"
+          class="cmiqzbx soui-cascader-result-text-wrapper cvhz44a soui-cascader-multiple-result-wrapper"
         >
           <input
             autocomplete="off"
@@ -1243,15 +1173,15 @@ exports[`Cascader[Base] should render correctly about wide 1`] = `
             value=""
           />
           <span
-            class="c-cmwebl soui-cascader-input-mirror"
+            class="c-l2869v soui-cascader-input-mirror"
           />
         </div>
       </div>
       <div
-        class="cb8gh80 soui-cascader-icon-wrapper"
+        class="c2t4p9q soui-cascader-icon-wrapper"
       >
         <span
-          class="c-30ak94 soui-cascader-arrow-icon"
+          class="c-1zcu6i soui-cascader-arrow-icon"
         >
           <svg
             aria-hidden="true"

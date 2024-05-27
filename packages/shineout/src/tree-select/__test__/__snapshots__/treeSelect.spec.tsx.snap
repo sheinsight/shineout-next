@@ -3,22 +3,22 @@
 exports[`TreeSelect[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper"
         >
           <span
-            class="cxw5w0d soui-treeSelect-placeholder c4658af soui-treeSelect-ellipsis"
+            class="cy9mz63 soui-treeSelect-placeholder c-z1xdfr soui-treeSelect-ellipsis"
           >
             <span>
               Please select content
@@ -27,10 +27,10 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -46,38 +46,38 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -93,13 +93,13 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -110,21 +110,21 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -140,13 +140,13 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -157,21 +157,21 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -187,13 +187,13 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -214,351 +214,31 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
 exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
 <div>
   <div
-    class="ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable cbv2id2 soui-treeSelect-multiple"
+    class="cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable c-rd03d4 soui-treeSelect-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper c-gbbxlg soui-treeSelect-compressed-wrapper cmpgp9c soui-treeSelect-multiple-result-wrapper c-j14pok soui-treeSelect-multiple-compressed-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper c-mu4kye soui-treeSelect-compressed-wrapper cq3z2 soui-treeSelect-multiple-result-wrapper ci3tuii soui-treeSelect-multiple-compressed-wrapper"
         >
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                1-1-1
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                1-1-2
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                1-1
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                1-2
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                1
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                2-1
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                2-2
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                2
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                3-1
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-            style="opacity: 1;"
-          >
-            <div
-              class="c-u4cme3 soui-tag-wrapper c-7nm94p soui-tag-inline"
-            >
-              <span
-                class="cs0exw3 soui-tag-container"
-              >
-                3
-              </span>
-            </div>
-            <div
-              class="cqtmrdv soui-tag-close-icon"
-            >
-              <span
-                class="c-jm1d00 soui-tag-close-icon-wrapper"
-              >
-                <svg
-                  height="10"
-                  viewBox="0 0 10 10"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
           <span
             style="display: inline-flex;"
           >
             <div
-              class="cis8ghg soui-treeSelect-tag clb0omk soui-tag-tag c-uyjdt9 soui-tag-default c-awse3c soui-tag-bright"
-              style="position: absolute; z-index: -100; user-select: none; contain: layout; opacity: 0; pointer-events: none;"
+              class="cmej9v6 soui-treeSelect-tag c50rhq soui-tag-tag cc50qtx soui-tag-default cr527za soui-tag-bright"
+              style=""
             >
               <span
-                class="c-u4cme3 soui-tag-wrapper"
+                class="ccz7i93 soui-tag-wrapper"
               >
-                +
+                +10
               </span>
             </div>
             <noscript />
@@ -566,10 +246,10 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cbitt4w soui-treeSelect-clear-icon"
+          class="c33i16m soui-treeSelect-clear-icon"
         >
           <svg
             aria-hidden="true"
@@ -588,7 +268,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </svg>
         </span>
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -604,38 +284,38 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -651,13 +331,13 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content c-mho2pr soui-treeSelect-option-active"
+                  class="cthg2zx soui-tree-content c-avycsd soui-treeSelect-option-active"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper c-o8c0zh soui-checkbox-wrapper-checked"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper c-cmmb23 soui-checkbox-wrapper-checked"
                   >
                     <input
                       style="display: none;"
@@ -665,10 +345,10 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       >
@@ -687,7 +367,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 1
@@ -696,21 +376,21 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -726,13 +406,13 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content c-mho2pr soui-treeSelect-option-active"
+                  class="cthg2zx soui-tree-content c-avycsd soui-treeSelect-option-active"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper c-o8c0zh soui-checkbox-wrapper-checked"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper c-cmmb23 soui-checkbox-wrapper-checked"
                   >
                     <input
                       style="display: none;"
@@ -740,10 +420,10 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       >
@@ -762,7 +442,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 2
@@ -771,21 +451,21 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -801,13 +481,13 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content c-mho2pr soui-treeSelect-option-active"
+                  class="cthg2zx soui-tree-content c-avycsd soui-treeSelect-option-active"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper c-o8c0zh soui-checkbox-wrapper-checked"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper c-cmmb23 soui-checkbox-wrapper-checked"
                   >
                     <input
                       style="display: none;"
@@ -815,10 +495,10 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       >
@@ -837,7 +517,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 3
@@ -856,21 +536,21 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
 exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
 <div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper c-cqszjr soui-treeSelect-wrapper-disabled cbj9401 soui-treeSelect-clearable"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper cl6aptz soui-treeSelect-wrapper-disabled c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 250px;"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper"
         >
           <span
-            class="cxw5w0d soui-treeSelect-placeholder c4658af soui-treeSelect-ellipsis"
+            class="cy9mz63 soui-treeSelect-placeholder c-z1xdfr soui-treeSelect-ellipsis"
           >
             <span>
               Please select content
@@ -879,10 +559,10 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -898,38 +578,38 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -945,13 +625,13 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content cblsohj soui-treeSelect-option-disabled"
+                  class="cthg2zx soui-tree-content caep6nt soui-treeSelect-option-disabled"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -962,21 +642,21 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -992,13 +672,13 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content cblsohj soui-treeSelect-option-disabled"
+                  class="cthg2zx soui-tree-content caep6nt soui-treeSelect-option-disabled"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1009,21 +689,21 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1039,13 +719,13 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content cblsohj soui-treeSelect-option-disabled"
+                  class="cthg2zx soui-tree-content caep6nt soui-treeSelect-option-disabled"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1061,22 +741,22 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 300px; margin-inline-start: 24px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper"
         >
           <span
-            class="cxw5w0d soui-treeSelect-placeholder c4658af soui-treeSelect-ellipsis"
+            class="cy9mz63 soui-treeSelect-placeholder c-z1xdfr soui-treeSelect-ellipsis"
           >
             <span>
               Please select content
@@ -1085,10 +765,10 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1104,38 +784,38 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1151,13 +831,13 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1168,21 +848,21 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1198,13 +878,13 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1215,21 +895,21 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1245,13 +925,13 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1272,18 +952,18 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
 exports[`TreeSelect[Base] should render correctly about filter 1`] = `
 <div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable cbv2id2 soui-treeSelect-multiple"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable c-rd03d4 soui-treeSelect-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper cmpgp9c soui-treeSelect-multiple-result-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper cq3z2 soui-treeSelect-multiple-result-wrapper"
         >
           <input
             autocomplete="off"
@@ -1292,15 +972,15 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
             value=""
           />
           <span
-            class="cfxhxc3 soui-treeSelect-input-mirror"
+            class="cgaz0ht soui-treeSelect-input-mirror"
           />
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1316,38 +996,38 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1363,13 +1043,13 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -1377,17 +1057,17 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 1
@@ -1396,21 +1076,21 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1426,13 +1106,13 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -1440,17 +1120,17 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 2
@@ -1459,21 +1139,21 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1489,13 +1169,13 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -1503,17 +1183,17 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 3
@@ -1532,18 +1212,18 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
 exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
 <div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper"
         >
           <input
             autocomplete="off"
@@ -1552,15 +1232,15 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
             value=""
           />
           <span
-            class="cfxhxc3 soui-treeSelect-input-mirror"
+            class="cgaz0ht soui-treeSelect-input-mirror"
           />
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1576,38 +1256,38 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1623,13 +1303,13 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1640,21 +1320,21 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1670,13 +1350,13 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1697,42 +1377,42 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
 exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
 <div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper c9zjdnz soui-treeSelect-wrapper-inner-title cbj9401 soui-treeSelect-clearable"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c3gqqb1 soui-treeSelect-wrapper-inner-title c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c9901z2 soui-inner-title-wrapper"
+        class="c-tz2jr4 soui-inner-title-wrapper"
       >
         <div
-          class="c88kfib soui-inner-title-title c-1zj9og soui-inner-title-top"
+          class="cak8vid soui-inner-title-title c-vug2ta soui-inner-title-top"
         >
           Please select content
         </div>
         <div
-          class="c86ersi soui-inner-title-place"
+          class="cai37sk soui-inner-title-place"
         >
           <div
-            class="c88kfib soui-inner-title-title"
+            class="cak8vid soui-inner-title-title"
           >
             Please select content
           </div>
         </div>
         <div
-          class="c-1eem1o soui-inner-title-content"
+          class="cuemu7a soui-inner-title-content"
         >
           <div
-            class="cku794z soui-treeSelect-result"
+            class="cn5vp51 soui-treeSelect-result"
           >
             <div
-              class="cc4lzfn soui-treeSelect-result-text-wrapper"
+              class="c5ltc2p soui-treeSelect-result-text-wrapper"
             >
               <div
-                class="c9uvu5c soui-treeSelect-space"
+                class="c7n3gny soui-treeSelect-space"
               >
                  
               </div>
@@ -1741,10 +1421,10 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1760,38 +1440,38 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1807,13 +1487,13 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1824,21 +1504,21 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1854,13 +1534,13 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1871,21 +1551,21 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -1901,13 +1581,13 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -1927,22 +1607,22 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
 
 exports[`TreeSelect[Base] should render correctly about loader 1`] = `
 <div
-  class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable cbv2id2 soui-treeSelect-multiple"
+  class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable c-rd03d4 soui-treeSelect-multiple"
   data-soui-input-border="true"
   style="width: 300px;"
   tabindex="0"
 >
   <div
-    class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+    class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
   >
     <div
-      class="cku794z soui-treeSelect-result"
+      class="cn5vp51 soui-treeSelect-result"
     >
       <div
-        class="cc4lzfn soui-treeSelect-result-text-wrapper cmpgp9c soui-treeSelect-multiple-result-wrapper"
+        class="c5ltc2p soui-treeSelect-result-text-wrapper cq3z2 soui-treeSelect-multiple-result-wrapper"
       >
         <span
-          class="cxw5w0d soui-treeSelect-placeholder c4658af soui-treeSelect-ellipsis"
+          class="cy9mz63 soui-treeSelect-placeholder c-z1xdfr soui-treeSelect-ellipsis"
         >
           <span>
             Please select content
@@ -1951,10 +1631,10 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
       </div>
     </div>
     <div
-      class="c-v8993g soui-treeSelect-icon-wrapper"
+      class="c-uus5xq soui-treeSelect-icon-wrapper"
     >
       <span
-        class="cfknqm4 soui-treeSelect-arrow-icon"
+        class="c75bynu soui-treeSelect-arrow-icon"
       >
         <svg
           aria-hidden="true"
@@ -1970,38 +1650,38 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
     </div>
   </div>
   <div
-    class="csf46m7 soui-treeSelect-picker-wrapper"
+    class="cwyp8hp soui-treeSelect-picker-wrapper"
     data-sheinx-animation-duration="fast"
     data-sheinx-animation-type="scale-y"
     style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
   >
     <div
-      class="ce2e3us soui-treeSelect-tree"
+      class="c-fsipa2 soui-treeSelect-tree"
       style="max-height: 250px;"
     >
       <div
-        class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+        class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
       >
         <div
-          class="c-ataces soui-tree-root"
+          class="cxy5wha soui-tree-root"
           style="display: block;"
         >
           <div
-            class="c-atcwms soui-tree-node c-atee3c soui-tree-leaf"
+            class="cxy3c9a soui-tree-node cxy1usq soui-tree-leaf"
             dir="ltr"
           >
             <div
-              class="cz7ei3o soui-tree-content-wrapper"
+              class="c-40o3mi soui-tree-content-wrapper"
               dir="ltr"
             >
               <span
-                class="c3g2ua8 soui-tree-icon-wrapper"
+                class="c18agsu soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
                 dir="ltr"
               >
                 <span
-                  class="c-atgc71 soui-tree-icon"
+                  class="cxxzwp1 soui-tree-icon"
                   dir="ltr"
                 >
                   <svg
@@ -2017,13 +1697,13 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                 </span>
               </span>
               <div
-                class="c-s0uxe9 soui-tree-content"
+                class="cthg2zx soui-tree-content"
                 data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
                 <div
-                  class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                  class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2031,17 +1711,17 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                    class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="cgufebk soui-checkbox-indicator"
+                      class="chvd4e6 soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="c-at99mx soui-tree-text"
+                  class="cxy6z95 soui-tree-text"
                   dir="ltr"
                 >
                   node 0
@@ -2050,21 +1730,21 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
             </div>
           </div>
           <div
-            class="c-atcwms soui-tree-node c-atee3c soui-tree-leaf"
+            class="cxy3c9a soui-tree-node cxy1usq soui-tree-leaf"
             dir="ltr"
           >
             <div
-              class="cz7ei3o soui-tree-content-wrapper"
+              class="c-40o3mi soui-tree-content-wrapper"
               dir="ltr"
             >
               <span
-                class="c3g2ua8 soui-tree-icon-wrapper"
+                class="c18agsu soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
                 dir="ltr"
               >
                 <span
-                  class="c-atgc71 soui-tree-icon"
+                  class="cxxzwp1 soui-tree-icon"
                   dir="ltr"
                 >
                   <svg
@@ -2080,13 +1760,13 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                 </span>
               </span>
               <div
-                class="c-s0uxe9 soui-tree-content"
+                class="cthg2zx soui-tree-content"
                 data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
                 <div
-                  class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                  class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2094,17 +1774,17 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                    class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="cgufebk soui-checkbox-indicator"
+                      class="chvd4e6 soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="c-at99mx soui-tree-text"
+                  class="cxy6z95 soui-tree-text"
                   dir="ltr"
                 >
                   node 1
@@ -2113,21 +1793,21 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
             </div>
           </div>
           <div
-            class="c-atcwms soui-tree-node c-atee3c soui-tree-leaf"
+            class="cxy3c9a soui-tree-node cxy1usq soui-tree-leaf"
             dir="ltr"
           >
             <div
-              class="cz7ei3o soui-tree-content-wrapper"
+              class="c-40o3mi soui-tree-content-wrapper"
               dir="ltr"
             >
               <span
-                class="c3g2ua8 soui-tree-icon-wrapper"
+                class="c18agsu soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
                 dir="ltr"
               >
                 <span
-                  class="c-atgc71 soui-tree-icon"
+                  class="cxxzwp1 soui-tree-icon"
                   dir="ltr"
                 >
                   <svg
@@ -2143,13 +1823,13 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                 </span>
               </span>
               <div
-                class="c-s0uxe9 soui-tree-content"
+                class="cthg2zx soui-tree-content"
                 data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
                 <div
-                  class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                  class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2157,17 +1837,17 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                    class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="cgufebk soui-checkbox-indicator"
+                      class="chvd4e6 soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="c-at99mx soui-tree-text"
+                  class="cxy6z95 soui-tree-text"
                   dir="ltr"
                 >
                   node 2
@@ -2176,21 +1856,21 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
             </div>
           </div>
           <div
-            class="c-atcwms soui-tree-node c-atee3c soui-tree-leaf"
+            class="cxy3c9a soui-tree-node cxy1usq soui-tree-leaf"
             dir="ltr"
           >
             <div
-              class="cz7ei3o soui-tree-content-wrapper"
+              class="c-40o3mi soui-tree-content-wrapper"
               dir="ltr"
             >
               <span
-                class="c3g2ua8 soui-tree-icon-wrapper"
+                class="c18agsu soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
                 dir="ltr"
               >
                 <span
-                  class="c-atgc71 soui-tree-icon"
+                  class="cxxzwp1 soui-tree-icon"
                   dir="ltr"
                 >
                   <svg
@@ -2206,13 +1886,13 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                 </span>
               </span>
               <div
-                class="c-s0uxe9 soui-tree-content"
+                class="cthg2zx soui-tree-content"
                 data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
                 <div
-                  class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                  class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2220,17 +1900,17 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                    class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="cgufebk soui-checkbox-indicator"
+                      class="chvd4e6 soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="c-at99mx soui-tree-text"
+                  class="cxy6z95 soui-tree-text"
                   dir="ltr"
                 >
                   node 3
@@ -2239,21 +1919,21 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
             </div>
           </div>
           <div
-            class="c-atcwms soui-tree-node c-atee3c soui-tree-leaf"
+            class="cxy3c9a soui-tree-node cxy1usq soui-tree-leaf"
             dir="ltr"
           >
             <div
-              class="cz7ei3o soui-tree-content-wrapper"
+              class="c-40o3mi soui-tree-content-wrapper"
               dir="ltr"
             >
               <span
-                class="c3g2ua8 soui-tree-icon-wrapper"
+                class="c18agsu soui-tree-icon-wrapper"
                 data-expanded="false"
                 data-icon="false"
                 dir="ltr"
               >
                 <span
-                  class="c-atgc71 soui-tree-icon"
+                  class="cxxzwp1 soui-tree-icon"
                   dir="ltr"
                 >
                   <svg
@@ -2269,13 +1949,13 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                 </span>
               </span>
               <div
-                class="c-s0uxe9 soui-tree-content"
+                class="cthg2zx soui-tree-content"
                 data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
                 <div
-                  class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                  class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2283,17 +1963,17 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
                     type="checkbox"
                   />
                   <span
-                    class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                    class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                   >
                     <i
-                      class="cgufebk soui-checkbox-indicator"
+                      class="chvd4e6 soui-checkbox-indicator"
                       data-soui-role="checkbox-indicator"
                       tabindex="1"
                     />
                   </span>
                 </div>
                 <div
-                  class="c-at99mx soui-tree-text"
+                  class="cxy6z95 soui-tree-text"
                   dir="ltr"
                 >
                   node 4
@@ -2311,22 +1991,22 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
 exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
 <div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable cbv2id2 soui-treeSelect-multiple"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable c-rd03d4 soui-treeSelect-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper cmpgp9c soui-treeSelect-multiple-result-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper cq3z2 soui-treeSelect-multiple-result-wrapper"
         >
           <span
-            class="cxw5w0d soui-treeSelect-placeholder c4658af soui-treeSelect-ellipsis"
+            class="cy9mz63 soui-treeSelect-placeholder c-z1xdfr soui-treeSelect-ellipsis"
           >
             <span>
               Please select content
@@ -2335,10 +2015,10 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -2354,38 +2034,38 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2401,13 +2081,13 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -2415,17 +2095,17 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 1
@@ -2434,21 +2114,21 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2464,13 +2144,13 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -2478,17 +2158,17 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 2
@@ -2497,21 +2177,21 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2527,13 +2207,13 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="cifii6l soui-tree-checkbox cznfus soui-checkbox-wrapper"
+                    class="cpf6gzz soui-tree-checkbox c-184xmm soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -2541,17 +2221,17 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="cyl6otv soui-checkbox-indicator-wrapper c-2wee9j soui-checkbox-dark-indicator-wrapper"
+                      class="cxe3705 soui-checkbox-indicator-wrapper c809nij soui-checkbox-dark-indicator-wrapper"
                     >
                       <i
-                        class="cgufebk soui-checkbox-indicator"
+                        class="chvd4e6 soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                   </div>
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     node 3
@@ -2572,22 +2252,22 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
   style="width: 100%; display: flex; align-items: center; gap: 24px;"
 >
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper c-8jkvom soui-treeSelect-wrapper-small cbj9401 soui-treeSelect-clearable"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c324u8s soui-treeSelect-wrapper-small c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper"
         >
           <span
-            class="cxw5w0d soui-treeSelect-placeholder c4658af soui-treeSelect-ellipsis"
+            class="cy9mz63 soui-treeSelect-placeholder c-z1xdfr soui-treeSelect-ellipsis"
           >
             <span>
               Please select content
@@ -2596,10 +2276,10 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -2615,38 +2295,38 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2662,13 +2342,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -2679,21 +2359,21 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2709,13 +2389,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -2726,21 +2406,21 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2756,13 +2436,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -2778,22 +2458,22 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper"
         >
           <span
-            class="cxw5w0d soui-treeSelect-placeholder c4658af soui-treeSelect-ellipsis"
+            class="cy9mz63 soui-treeSelect-placeholder c-z1xdfr soui-treeSelect-ellipsis"
           >
             <span>
               Please select content
@@ -2802,10 +2482,10 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -2821,38 +2501,38 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2868,13 +2548,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -2885,21 +2565,21 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2915,13 +2595,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -2932,21 +2612,21 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -2962,13 +2642,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -2984,22 +2664,22 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-8r9oo0 soui-treeSelect-wrapper-empty ceypeul soui-treeSelect-wrapper c-8nmr76 soui-treeSelect-wrapper-large cbj9401 soui-treeSelect-clearable"
+    class="c2ug19e soui-treeSelect-wrapper-empty cfzn4x7 soui-treeSelect-wrapper c2y2yq8 soui-treeSelect-wrapper-large c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper"
         >
           <span
-            class="cxw5w0d soui-treeSelect-placeholder c4658af soui-treeSelect-ellipsis"
+            class="cy9mz63 soui-treeSelect-placeholder c-z1xdfr soui-treeSelect-ellipsis"
           >
             <span>
               Please select content
@@ -3008,10 +2688,10 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -3027,38 +2707,38 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -3074,13 +2754,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -3091,21 +2771,21 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -3121,13 +2801,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -3138,21 +2818,21 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -3168,13 +2848,13 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -3195,32 +2875,32 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
 exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
 <div>
   <div
-    class="ceypeul soui-treeSelect-wrapper cbj9401 soui-treeSelect-clearable"
+    class="cfzn4x7 soui-treeSelect-wrapper c33xc1r soui-treeSelect-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-a4wpgw soui-treeSelect-result-wrapper c-1yxfi1 soui-treeSelect-wrapper-padding-box c-kim4uy soui-treeSelect-wrapper-inner-title-top c-bvrg92 soui-treeSelect-wrapper-inner-title-bottom"
+      class="c-5lbnle soui-treeSelect-result-wrapper c-8hq2uz soui-treeSelect-wrapper-padding-box cjztap4 soui-treeSelect-wrapper-inner-title-top c-7s0t6w soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="cku794z soui-treeSelect-result"
+        class="cn5vp51 soui-treeSelect-result"
       >
         <div
-          class="cc4lzfn soui-treeSelect-result-text-wrapper"
+          class="c5ltc2p soui-treeSelect-result-text-wrapper"
         >
           <span
-            class="c4658af soui-treeSelect-ellipsis"
+            class="c-z1xdfr soui-treeSelect-ellipsis"
           >
             I'm unmatched item
           </span>
         </div>
       </div>
       <div
-        class="c-v8993g soui-treeSelect-icon-wrapper"
+        class="c-uus5xq soui-treeSelect-icon-wrapper"
       >
         <span
-          class="cbitt4w soui-treeSelect-clear-icon"
+          class="c33i16m soui-treeSelect-clear-icon"
         >
           <svg
             aria-hidden="true"
@@ -3239,7 +2919,7 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
           </svg>
         </span>
         <span
-          class="cfknqm4 soui-treeSelect-arrow-icon"
+          class="c75bynu soui-treeSelect-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -3255,38 +2935,38 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
       </div>
     </div>
     <div
-      class="csf46m7 soui-treeSelect-picker-wrapper"
+      class="cwyp8hp soui-treeSelect-picker-wrapper"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="ce2e3us soui-treeSelect-tree"
+        class="c-fsipa2 soui-treeSelect-tree"
         style="max-height: 250px;"
       >
         <div
-          class="c-at90go soui-tree-tree c-n6xu2p soui-tree-noline"
+          class="cxy78fe soui-tree-tree cjwmakh soui-tree-noline"
         >
           <div
-            class="c-ataces soui-tree-root"
+            class="cxy5wha soui-tree-root"
             style="display: block;"
           >
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -3302,13 +2982,13 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -3319,21 +2999,21 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -3349,13 +3029,13 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>
@@ -3366,21 +3046,21 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
               </div>
             </div>
             <div
-              class="c-atcwms soui-tree-node"
+              class="cxy3c9a soui-tree-node"
               dir="ltr"
             >
               <div
-                class="cz7ei3o soui-tree-content-wrapper c-51q0do soui-tree-childnode"
+                class="c-40o3mi soui-tree-content-wrapper c-1ff6zy soui-tree-childnode"
                 dir="ltr"
               >
                 <span
-                  class="c3g2ua8 soui-tree-icon-wrapper"
+                  class="c18agsu soui-tree-icon-wrapper"
                   data-expanded="false"
                   data-icon="false"
                   dir="ltr"
                 >
                   <span
-                    class="c-atgc71 soui-tree-icon"
+                    class="cxxzwp1 soui-tree-icon"
                     dir="ltr"
                   >
                     <svg
@@ -3396,13 +3076,13 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
                   </span>
                 </span>
                 <div
-                  class="c-s0uxe9 soui-tree-content"
+                  class="cthg2zx soui-tree-content"
                   data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
                   <div
-                    class="c-at99mx soui-tree-text"
+                    class="cxy6z95 soui-tree-text"
                     dir="ltr"
                   >
                     <span>

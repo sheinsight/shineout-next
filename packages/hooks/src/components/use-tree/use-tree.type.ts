@@ -109,6 +109,9 @@ export interface BaseTreeProps<DataItem> {
    * @private 保持数据缓存
    */
   keepCache?: boolean;
+  /**
+   * @private 内部数据处理
+   */
   datum?: TreeDatum<DataItem>;
 }
 
