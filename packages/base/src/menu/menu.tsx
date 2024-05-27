@@ -9,24 +9,17 @@ import type { KeygenResult } from '@sheinx/hooks';
 
 const emptyArray: any[] = [];
 const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key>) => {
-  const {
-    data = emptyArray,
-    mode: modeProps = 'inline',
-    theme = 'light',
-    collapse,
-  } = props;
-  const mode = collapse ? 'vertical' : modeProps;
+  const { data = emptyArray, mode = 'inline', theme = 'light' } = props;
   const classes = props.jssStyle?.menu?.();
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
   const isHorizontal = mode === 'horizontal';
   const [hasOpen, setHasOpen] = useState(false);
-  const [collapseOpenKeys, setCollapseOpenKeys] = useState([]);
   const { openKeys, onOpenChange, bindUpdate, unbindUpdate, changeActiveId } = useMenu({
     data,
     active: props.active,
     defaultOpenKeys: props.defaultOpenKeys,
-    openKeys: props.collapse ? collapseOpenKeys : props.openKeys,
-    onOpenChange: props.collapse ? setCollapseOpenKeys : (props.onOpenChange as any),
+    openKeys: props.openKeys,
+    onOpenChange: props.onOpenChange as any,
   });
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -37,11 +30,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
 
   const showScrollBar = isHorizontal || isVertical;
 
-  const style = { ...props.style };
-
-  if (collapse) delete style.width;
-
-  const listStyle = isVertical && !collapse ? { width: props.style?.width } : undefined;
+  const listStyle = isVertical ? { width: props.style?.width } : undefined;
 
   useEffect(() => {
     const newOpen =
@@ -62,11 +51,10 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         mode === 'horizontal' && classes?.wrapperHorizontal,
         hasOpen && classes?.wrapperHasOpen,
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
-        collapse && classes?.collapse,
       )}
       style={{
         height: props.height,
-        ...style,
+        ...props.style,
       }}
     >
       <div className={classes?.scrollbox} ref={scrollRef}>
@@ -81,7 +69,6 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 level={0}
                 index={index}
                 parentId=''
-                collapse={collapse}
                 dataItem={item}
                 key={key}
                 keyResult={key}
@@ -97,7 +84,6 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 toggleDuration={props.toggleDuration}
                 disabled={props.disabled}
                 renderItem={props.renderItem}
-                renderCollapse={props.renderCollapse}
                 keygen={props.keygen}
                 jssStyle={props.jssStyle}
                 linkKey={props.linkKey}

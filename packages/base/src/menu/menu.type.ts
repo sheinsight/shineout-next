@@ -12,21 +12,16 @@ export interface MenuClasses {
   wrapperHasOpen: string;
   wrapperLight: string;
   wrapperDark: string;
-  collapse: string;
   root: string;
   children: string;
   childrenUp: string;
   item: string;
-  collapseItem: string;
-  collapseItemInPath: string;
-  collapseItemHide: string;
   itemActive: string;
   itemDisabled: string;
   itemOpen: string;
   itemInPath: string;
   itemHasChildren: string;
   itemContent: string;
-  itemContentHide: string;
   itemContentFront: string;
   itemContentBack: string;
   title: string;
@@ -176,21 +171,6 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @default 'title'
    */
   renderItem?: ((data: DataItem, index: number) => React.ReactNode) | ObjectKey<DataItem>;
-
-  /**
-   * @en Whether to collapse the menu horizontally
-   * @cn 是否水平折叠收起菜单
-   * @default false
-   */
-  collapse?: boolean;
-
-  /**
-   *
-   * @cn 折叠时的渲染方式,如果为字符串,则会以对应的值作为显示内容;如果为函数,则以函数返回的结果作为显示内容,函数参数为对应的数据对象
-   * @en Element render mode when collapsed. If it is a string, the corresponding value is taken as the display content; If it is a function, the result returned by the function is taken as the display content.
-   * @default null
-   */
-  renderCollapse?: (data: DataItem, index: number) => React.ReactNode;
 }
 
 export interface MenuItemProps
@@ -205,8 +185,6 @@ export interface MenuItemProps
       | 'caretColor'
       | 'jssStyle'
       | 'inlineIndent'
-      | 'collapse'
-      | 'renderCollapse'
     > {
   index: number;
   level: number;

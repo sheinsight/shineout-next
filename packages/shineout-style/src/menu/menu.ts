@@ -18,19 +18,11 @@ const arrow = {
 const menuStyle: JsStyles<MenuClassType> = {
   wrapper: {
     height: '100%',
-    transition: 'width 0.3s',
     backgroundColor: token.menuItemBackgroundColor,
   },
   wrapperLight: {},
   wrapperDark: {
     backgroundColor: token.menuDarkItemBackgroundColor,
-  },
-  collapse: {
-    width: token.menuCollapseWidth,
-    boxSizing: 'content-box',
-    '& $root': {
-      width: token.menuCollapseWidth,
-    },
   },
   scrollbox: {
     '$wrapperVertical &': {
@@ -142,89 +134,8 @@ const menuStyle: JsStyles<MenuClassType> = {
   item: {
     listStyle: 'none',
     flexShrink: 0,
-    position: 'relative',
     '$wrapperVertical &, $wrapperHorizontal &': {
       position: 'relative',
-    },
-  },
-  collapseItem: {
-    // width: 40,
-    cursor: 'pointer',
-    opacity: 1,
-    height: token.menuCollapseWidth,
-    transition: 'all ease .3s',
-    color: 'inherit',
-    position: 'relative',
-
-    '$wrapperLight &': {
-      background: token.menuItemBackgroundColor,
-      '&:hover': {
-        background: token.menuItemHoverBackgroundColor,
-        color: token.menuItemHoverFontColor,
-      },
-    },
-    '$wrapperLight $itemDisabled > &&': {
-      cursor: 'not-allowed',
-      color: token.menuCollapseItemDisabledFontColor,
-      background: token.menuCollapseItemDisabledBackgroundColor,
-    },
-
-    '$wrapperDark $itemDisabled > &&': {
-      cursor: 'not-allowed',
-      color: token.menuDarkCollapseItemDisabledFontColor,
-      background: token.menuDarkCollapseItemDisabledBackgroundColor,
-    },
-
-    '$wrapperDark &': {
-      color: token.menuDarkCollapseItemFontColor,
-      background: token.menuDarkCollapseItemBackgroundColor,
-      '&:hover': {
-        background: token.menuDarkCollapseItemHoverBackgroundColor,
-        color: token.menuDarkCollapseItemHoverFontColor,
-      },
-    },
-
-    '$itemActive > &&': {
-      '$wrapperLight &': {
-        color: token.menuCollapseItemActiveFontColor,
-        background: token.menuCollapseItemActiveBackgroundColor,
-      },
-      '$wrapperDark &': {
-        color: token.menuDarkCollapseItemActiveFontColor,
-        background: token.menuDarkCollapseItemActiveBackgroundColor,
-      },
-    },
-    '&$collapseItemInPath': {
-      // background: token.menuItemBackgroundColor,
-      '&::after': {
-        content: '""',
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        bottom: 0,
-        width: 3,
-        transition: 'all ease 0.3s',
-        backgroundColor: token.menuCollapseItemActiveFontColor,
-      },
-    },
-  },
-  collapseItemInPath: {},
-  collapseItemHide: {
-    opacity: 0,
-    width: 0,
-    // height: 0,
-    // zIndex: -1,
-    position: 'absolute',
-    top: 0,
-    color: 'transparent',
-    background: 'transparent',
-    '&$collapseItemInPath': {
-      // background: token.menuItemBackgroundColor,
-      '&::after': {
-        top: 20,
-        bottom: 20,
-        backgroundColor: 'transparent',
-      },
     },
   },
   itemActive: {},
@@ -239,8 +150,6 @@ const menuStyle: JsStyles<MenuClassType> = {
     alignItems: 'center',
     cursor: 'pointer',
     position: 'relative',
-    // opacity: 1,
-    transition: 'all ease 0.3s',
     '$wrapperLight &': {
       color: token.menuItemFontColor,
       backgroundColor: token.menuItemBackgroundColor,
@@ -351,20 +260,6 @@ const menuStyle: JsStyles<MenuClassType> = {
       },
     },
   },
-  itemContentHide: {
-    position: 'absolute',
-    overflow: 'hidden',
-    pointerEvents: 'none',
-    // opacity: 0,
-    visibility: 'hidden',
-    '& $title': {
-      pointerEvents: 'none',
-      whiteSpace: 'nowrap',
-    },
-    '& $menuIcon': {
-      opacity: 0,
-    },
-  },
   itemContentFront: {},
   itemContentBack: {},
   title: {
@@ -406,7 +301,6 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
     '& > $icon': {
       lineHeight: 1,
-      opacity: 1,
       width: token.menuExpandSize,
       height: token.menuExpandSize,
       '$wrapper:not($wrapperVertical) $itemOpen > $itemContent &': {
@@ -418,9 +312,7 @@ const menuStyle: JsStyles<MenuClassType> = {
       '&[dir=rtl]': { transform: 'rotate(90deg)' },
     },
   },
-  icon: {
-    transition: 'all ease 0.3s',
-  },
+  icon: {},
   expandHover: {
     '&:hover': {
       backgroundColor: token.menuExpandHoverBackgroundColor,
