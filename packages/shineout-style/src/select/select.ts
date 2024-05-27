@@ -229,7 +229,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   compressedWrapper: {
     width: 0,
-    overflow: 'hidden',
+    overflow: 'auto',
   },
   controlMouse: {
     '& $optionInner:not($optionDisabled):not($optionActive):hover': {
@@ -365,6 +365,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
   },
   tag: {
+    flexShrink: 0,
     '&$tag + &$tag': {
       marginLeft: 0,
     },
@@ -376,6 +377,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     '&$hideTag': {
       marginRight: 0,
     },
+  },
+  tagOnly: {
+    flexShrink: 1,
+    minWidth: 42,
   },
   space: {
     marginTop: token.selectPlaceholderMarginY,
