@@ -197,8 +197,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         key={index}
         disabled={isDisabled}
         size={size}
-        style={{ opacity: more === index ? 0 : 1 }}
-        className={classNames(styles.tag, resultClassName)}
+        className={classNames(styles.tag, more === 1 && styles.tagOnly, resultClassName)}
         closable={closeable && 'only'}
         onClose={closeable && handleClose}
         onClick={handleClick}
