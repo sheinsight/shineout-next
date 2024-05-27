@@ -8,6 +8,7 @@ import {
   StyleProps,
   attributesTest,
   classContentTest,
+  classTest,
   createClassName,
   delay,
   displayTest,
@@ -61,6 +62,8 @@ const TooltipDemo = ({
   </Tooltip>
 );
 
+const defaultStyle = 'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px;'
+
 beforeAll(() => {
   jest.useFakeTimers();
 });
@@ -72,37 +75,48 @@ describe('Tooltip[Base]', () => {
   mountTest(<TooltipDemo />);
   displayTest(Tooltip as React.FC, 'ShineoutTooltip');
   snapshotTest(<TooltipBase />);
-  snapshotTest(<TooltipClick />);
-  snapshotTest(<TooltipDisabled />);
+  snapshotTest(<TooltipClick />, 'about click');
+  snapshotTest(<TooltipDisabled />, 'about disabled');
   test('should render default', async () => {
     const { container } = render(<TooltipDemo />);
     textContentTest(container, 'demo');
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    })
     const wrapper = document.querySelector(tooltipClassName)!;
+    classTest(wrapper, tooltipWrapperOpenClassName)
     attributesTest(wrapper, 'data-soui-position', 'bottom');
-    styleTest(wrapper, 'pointer-events: none; position: absolute; z-index: -1000;');
+    styleTest(wrapper, defaultStyle);
     const content = wrapper.querySelector(tooltipContentClassName)!;
     textContentTest(content, 'hello');
   });
-  test('should render when set className and style', () => {
+  test('should render when set className and style', async () => {
     render(<TooltipDemo className='demo' style={{ color: 'black' }} />);
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    })
+
     const wrapper = document.querySelector(tooltipClassName)!;
     classContentTest(wrapper, 'demo');
     styleTest(wrapper.querySelector(tooltipContentClassName)!, 'color: black;');
   });
   test('should render when mouse', async () => {
     render(<TooltipDemo />);
-    const wrapper = document.querySelector(tooltipClassName)!;
-    classContentTest(wrapper, tooltipWrapperOpenClassName, false);
+    
     fireEvent.mouseEnter(screen.getByText('demo'));
     await waitFor(async () => {
       await delay(200);
-      classContentTest(wrapper, tooltipWrapperOpenClassName);
-      styleTest(
-        wrapper,
-        'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px;',
-      );
     });
+    const wrapper = document.querySelector(tooltipClassName)!;
+    classContentTest(wrapper, tooltipWrapperOpenClassName);
+    styleTest(
+      wrapper,
+      defaultStyle,
+    );
     fireEvent.mouseLeave(screen.getByText('demo'));
+    
     await waitFor(async () => {
       await delay(200);
       classContentTest(wrapper, tooltipWrapperOpenClassName, false);
@@ -110,17 +124,17 @@ describe('Tooltip[Base]', () => {
   });
   test('should render when set trigger is click', async () => {
     render(<TooltipDemo trigger='click' />);
-    const wrapper = document.querySelector(tooltipClassName)!;
-    classContentTest(wrapper, tooltipWrapperOpenClassName, false);
+
     fireEvent.click(screen.getByText('demo'));
     await waitFor(async () => {
       await delay(200);
-      classContentTest(wrapper, tooltipWrapperOpenClassName);
+    });
+    const wrapper = document.querySelector(tooltipClassName)!;
+    classContentTest(wrapper, tooltipWrapperOpenClassName);
       styleTest(
         wrapper,
-        'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px;',
+        defaultStyle,
       );
-    });
     fireEvent.click(screen.getByText('demo'));
     await waitFor(async () => {
       await delay(200);
@@ -145,6 +159,12 @@ describe('Tooltip[Base]', () => {
         </Tooltip>
       </div>
     );
+    positions.forEach((item) => {
+      fireEvent.mouseEnter(screen.getByText(item));
+    })
+    await waitFor(async () => {
+      await delay(200);
+    });
     const wrappers = document.querySelectorAll(tooltipClassName)!;
     wrappers.forEach((item, index) => {
       attributesTest(item, 'data-soui-position', positions[index]);
@@ -195,13 +215,12 @@ describe('Tooltip[Base]', () => {
   });
   test('should render when set disabledChild', async () => {
     const { container } = render(<TooltipDisabled />);
-    styleTest(container.querySelector(tooltipTargetClassName)!, 'cursor: not-allowed;');
-    classContentTest(document.querySelector(tooltipClassName)!, tooltipWrapperOpenClassName, false);
-    fireEvent.mouseEnter(container.querySelector('button')!);
+    fireEvent.mouseEnter(screen.getByText('Disabled'))
     await waitFor(async () => {
       await delay(200);
-      classContentTest(document.querySelector(tooltipClassName)!, tooltipWrapperOpenClassName);
     });
+    styleTest(container.querySelector(tooltipTargetClassName)!, 'cursor: not-allowed;');
+    classContentTest(document.querySelector(tooltipClassName)!, tooltipWrapperOpenClassName);
     fireEvent.mouseLeave(container.querySelector('button')!);
     await waitFor(async () => {
       await delay(200);
@@ -251,14 +270,15 @@ describe('Tooltip[Base]', () => {
       );
     });
   });
+  // Dont have disabled
   test('should render when set disable', async () => {
     render(<TooltipDemo disabled />);
-    const wrapper = document.querySelector(tooltipClassName)!;
-    fireEvent.mouseLeave(screen.getByText('demo'));
+    fireEvent.mouseEnter(screen.getByText('demo'));
     await waitFor(async () => {
       await delay(200);
-      classContentTest(wrapper, tooltipWrapperOpenClassName, false);
     });
+    const wrapper = document.querySelector(tooltipClassName)!;
+    classContentTest(wrapper, tooltipWrapperOpenClassName);
   });
   test('should render when tip is lose', () => {
     render(

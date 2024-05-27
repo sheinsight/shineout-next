@@ -78,8 +78,8 @@ describe('Popover[Base]', () => {
       .querySelector(popoverFooterClassName)
       ?.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;
     expect(buttons.length).toBe(2);
-    textContentTest(buttons[0], '取消');
-    textContentTest(buttons[1], '确定');
+    textContentTest(buttons[0], 'Cancel');
+    textContentTest(buttons[1], 'Ok');
     fireEvent.click(buttons[1]);
     await waitFor(async () => {
       await delay(200);
@@ -234,6 +234,21 @@ describe('Popover[OnCancel/OnOk]', () => {
     await waitFor(async () => {
       await delay(200);
       getPopoverStatus(false);
+    });
+  });
+  test('should render when set onVisibleChange', async () => {
+    const changeFn = jest.fn();
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover onVisibleChange={changeFn}>some Text</Popover>
+      </Button>,
+    );
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(changeFn.mock.calls.length).toBe(1);
     });
   });
 });

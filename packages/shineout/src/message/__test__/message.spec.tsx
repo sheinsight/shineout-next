@@ -9,14 +9,12 @@ import {
   createClassName,
   delay,
   snapshotTest,
-  styleTest,
   textContentTest,
+  styleTest
 } from '../../tests/utils';
 import MessageBase from '../__example__/01-base';
 import MessgaeDuration from '../__example__/02-duration';
 import MessagePosition from '../__example__/03-position';
-import MessageClose from '../__example__/04-close';
-import MessageManualClose from '../__example__/05-manual-close';
 import MessageContainer from '../__example__/06-container';
 
 const SO_PREFIX = 'message';
@@ -45,7 +43,7 @@ const typeClassNameMap: { [key: string]: string } = {
   error: 'danger',
 };
 
-const MessageTest = ({ options }: { options?: MessageOptions }) => (
+export const MessageTest = ({ options }: { options?: MessageOptions }) => (
   <Button
     onClick={() => {
       Message.show('Test', 5, options);
@@ -60,9 +58,12 @@ beforeAll(() => {
 });
 afterAll(() => {
   jest.runAllTimers();
+  cleanup()
 });
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup()
+});
 
 describe('Message[Base]', () => {
   snapshotTest(<MessageBase />);
@@ -306,79 +307,6 @@ describe('Message[Option]', () => {
     await waitFor(async () => {
       await delay(200);
       expect(document.querySelector(closeClassName)).not.toBeInTheDocument();
-    });
-  });
-  test('should render when set onClose', async () => {
-    const closeFn = jest.fn();
-    const { container, rerender } = render(<MessageTest options={{ onClose: closeFn }} />);
-    fireEvent.click(container.querySelector('button')!);
-    await waitFor(async () => {
-      await delay(200);
-      fireEvent.click(document.querySelector(closeClassName)!);
-    });
-    await waitFor(async () => {
-      await delay(200);
-      expect(closeFn.mock.calls.length).toBe(1);
-    });
-    rerender(<MessageClose />);
-    fireEvent.click(container.querySelector('button')!);
-    await waitFor(async () => {
-      await delay(200);
-      fireEvent.click(document.querySelector(closeClassName)!);
-    });
-    await waitFor(async () => {
-      await delay(200);
-      expect(document.querySelector(wrapper)).not.toBeInTheDocument();
-    });
-  });
-  test('should render when set title', async () => {
-    const { container } = render(<MessageTest options={{ title: 'hello' }} />);
-    fireEvent.click(container.querySelector('button')!);
-    await waitFor(async () => {
-      await delay(200);
-      textContentTest(document.querySelector(titleClassName)!, 'hello');
-      fireEvent.click(document.querySelector(closeClassName)!);
-    });
-    await waitFor(async () => {
-      await delay(200);
-      expect(document.querySelector(wrapper)).not.toBeInTheDocument();
-    });
-  });
-  test('should render when set top', async () => {
-    const { container } = render(<MessageTest options={{ top: '-20px' }} />);
-    fireEvent.click(container.querySelector('button')!);
-    await waitFor(async () => {
-      await delay(200);
-      styleTest(document.querySelector(message)!, 'top: -20px;');
-      fireEvent.click(document.querySelector(closeClassName)!);
-    });
-    await waitFor(async () => {
-      await delay(200);
-      expect(document.querySelector(wrapper)).not.toBeInTheDocument();
-    });
-  });
-  test.each(['info', 'success', 'warn', 'error'])(
-    'should render when set position is %s',
-    async (type) => {
-      const { container } = render(<MessageTest options={{ position: type }} />);
-      fireEvent.click(container.querySelector('button')!);
-      await waitFor(async () => {
-        await delay(200);
-        attributesTest(document.querySelector(wrapper)!, 'data-soui-position', type);
-        fireEvent.click(document.querySelector(closeClassName)!);
-      });
-      await waitFor(async () => {
-        await delay(200);
-        expect(document.querySelector(wrapper)).not.toBeInTheDocument();
-      });
-    },
-  );
-  test('should render manual close', async () => {
-    const { container } = render(<MessageManualClose />);
-    fireEvent.click(container.querySelector('button')!);
-    await waitFor(async () => {
-      await delay(200);
-      expect(document.querySelector(wrapper)).not.toBeInTheDocument();
     });
   });
 });

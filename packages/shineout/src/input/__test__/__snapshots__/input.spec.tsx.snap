@@ -1,0 +1,926 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input[Base] should render correctly  1`] = `
+<div
+  class="c-tanq89 soui-input-wrapper"
+  data-soui-input-border="true"
+  style="width: 300px;"
+>
+  <div
+    class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+  >
+    <input
+      class="c-gvk21e soui-input-input"
+      placeholder="input something"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about autoSelect 1`] = `
+<div
+  class="c-tanq89 soui-input-wrapper"
+  data-soui-input-border="true"
+  style="width: 300px;"
+>
+  <div
+    class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+  >
+    <input
+      class="c-gvk21e soui-input-input"
+      placeholder="input something"
+      value="hello world"
+    />
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about disabled 1`] = `
+<div>
+  <div
+    class="c-gwl40t soui-input-group c-rcfh1d soui-input-group-disabled"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <div
+      class="c-tanq89 soui-input-wrapper c-acsx65 soui-input-wrapper-disabled"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          disabled=""
+          placeholder="first name"
+          value=""
+        />
+      </div>
+    </div>
+    <span>
+      -
+    </span>
+    <div
+      class="c-tanq89 soui-input-wrapper c-acsx65 soui-input-wrapper-disabled"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          disabled=""
+          placeholder="last name"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper c-acsx65 soui-input-wrapper-disabled"
+    data-soui-input-border="true"
+    style="width: 300px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        disabled=""
+        placeholder="disabled input"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about enter 1`] = `
+<div>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <div
+      class="c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          placeholder="onKeyUp"
+          value=""
+        />
+      </div>
+    </div>
+    <b
+      class="onKeyUp"
+    >
+      onKeyUp: 0 times
+    </b>
+  </div>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <div
+      class="c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          placeholder="onKeyDown"
+          value=""
+        />
+      </div>
+    </div>
+    <b
+      class="onKeyDown"
+    >
+      onKeyDown: 0 times
+    </b>
+  </div>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <div
+      class="c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          placeholder="onEnterPress"
+          value=""
+        />
+      </div>
+    </div>
+    <b
+      class="onEnterPress"
+    >
+      onEnterPress: 0 times
+    </b>
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about group 1`] = `
+<div>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <b>
+      http://
+    </b>
+    <div
+      class="c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          placeholder="email"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <div
+      class="c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          placeholder="email"
+          value=""
+        />
+      </div>
+    </div>
+    <b>
+      .com
+    </b>
+  </div>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <b>
+      http://
+    </b>
+    <div
+      class="c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          placeholder="email"
+          value=""
+        />
+      </div>
+    </div>
+    <b>
+      .com
+    </b>
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about innerTitle 1`] = `
+<div
+  style="width: 300px; display: flex; flex-direction: column; gap: 24px;"
+>
+  <div
+    class="cwrp3sp soui-input-wrapper-inner-title c-tanq89 soui-input-wrapper c-gugdgw soui-input-wrapper-small"
+    data-soui-input-border="true"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <div
+        class="c-tz2jr4 soui-inner-title-wrapper csj93dz soui-inner-title-wrapper-small"
+      >
+        <div
+          class="cak8vid soui-inner-title-title c-vug2ta soui-inner-title-top"
+        >
+          Small title
+        </div>
+        <div
+          class="cai37sk soui-inner-title-place"
+        >
+          <div
+            class="cak8vid soui-inner-title-title"
+          >
+            Small title
+          </div>
+        </div>
+        <div
+          class="cuemu7a soui-inner-title-content"
+        >
+          <input
+            class="c-gvk21e soui-input-input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cwrp3sp soui-input-wrapper-inner-title c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <div
+        class="c-tz2jr4 soui-inner-title-wrapper"
+      >
+        <div
+          class="cak8vid soui-inner-title-title c-vug2ta soui-inner-title-top"
+        >
+          Medium Title
+        </div>
+        <div
+          class="cai37sk soui-inner-title-place"
+        >
+          <div
+            class="cak8vid soui-inner-title-title"
+          >
+            Medium Title
+          </div>
+        </div>
+        <div
+          class="cuemu7a soui-inner-title-content"
+        >
+          <input
+            class="c-gvk21e soui-input-input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cwrp3sp soui-input-wrapper-inner-title c-tanq89 soui-input-wrapper c-gyi8zg soui-input-wrapper-large"
+    data-soui-input-border="true"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <div
+        class="c-tz2jr4 soui-inner-title-wrapper csf77vf soui-inner-title-wrapper-large"
+      >
+        <div
+          class="cak8vid soui-inner-title-title c-vug2ta soui-inner-title-top"
+        >
+          Large Title
+        </div>
+        <div
+          class="cai37sk soui-inner-title-place"
+        >
+          <div
+            class="cak8vid soui-inner-title-title"
+          >
+            Large Title
+          </div>
+        </div>
+        <div
+          class="cuemu7a soui-inner-title-content"
+        >
+          <input
+            class="c-gvk21e soui-input-input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about limit 1`] = `
+<div
+  style="width: 300px;"
+>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="margin-bottom: 24px;"
+  >
+    <b
+      class="min"
+    >
+      min
+    </b>
+    <div
+      class="c-r8xilc soui-input-wrapper-number c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          placeholder="100"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="cxj975 soui-input-number-step"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </span>
+        <span>
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="margin-bottom: 24px;"
+  >
+    <b
+      class="max"
+    >
+      max
+    </b>
+    <div
+      class="c-r8xilc soui-input-wrapper-number c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          placeholder="200"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="cxj975 soui-input-number-step"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </span>
+        <span>
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c-gwl40t soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="margin-bottom: 24px;"
+  >
+    <b
+      class="maxLength"
+    >
+      maxLength
+    </b>
+    <div
+      class="c-tanq89 soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+      >
+        <input
+          class="c-gvk21e soui-input-input"
+          maxlength="5"
+          placeholder="5"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about number 1`] = `
+<div
+  style="width: 300px;"
+>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="digits undefined"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="digits 0"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="digits 1"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="digits 2"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="non-negative"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="integerLimit 3"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="digits 3; autoFix"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="positive;integerLimit 3"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-r8xilc soui-input-wrapper-number c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="positive; integerLimit 3"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="cxj975 soui-input-number-step"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </span>
+      <span>
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about number 2`] = `
+<div
+  class="c-r8xilc soui-input-wrapper-number c-tanq89 soui-input-wrapper"
+  data-soui-input-border="true"
+  style="width: 300px;"
+>
+  <div
+    class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+  >
+    <input
+      class="c-gvk21e soui-input-input"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    class="cxj975 soui-input-number-step"
+  >
+    <span>
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+        />
+      </svg>
+    </span>
+    <span>
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about password 1`] = `
+<form
+  class="c-qjtk4f soui-form-wrapper"
+>
+  <div
+    class="c-tanq89 soui-input-wrapper c-1atfih soui-input-password"
+    data-soui-input-border="true"
+    style="width: 300px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="input password"
+        type="text"
+        value="•••••••••••••••••••••••"
+      />
+      <div
+        class="c-jnwbfi soui-input-clear-wrapper"
+      >
+        <span
+          class="c-gywc7j soui-input-clear"
+          dir="ltr"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 23C5.924 23 1 18.076 1 12C1 5.924 5.924 1 12 1C18.076 1 23 5.924 23 12C23 18.076 18.076 23 12 23Z"
+              fill="currentColor"
+            />
+            <path
+              d="M9.6129 8.2097C9.22061 7.90468 8.65338 7.93241 8.29289 8.29289C7.90237 8.68342 7.90237 9.31658 8.29289 9.70711L10.413 11.828L8.29289 13.9497L8.2097 14.044C7.90468 14.4362 7.93241 15.0035 8.29289 15.364C8.68342 15.7545 9.31658 15.7545 9.70711 15.364L11.828 13.242L13.9497 15.364L14.044 15.4471C14.4362 15.7522 15.0035 15.7244 15.364 15.364C15.7545 14.9734 15.7545 14.3403 15.364 13.9497L13.242 11.828L15.364 9.70711L15.4471 9.6129C15.7522 9.22061 15.7244 8.65338 15.364 8.29289C14.9734 7.90237 14.3403 7.90237 13.9497 8.29289L11.828 10.413L9.70711 8.29289L9.6129 8.2097Z"
+              fill="white"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        class="ccl2yjv soui-input-password-toggle"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20.41 11.536C19.7483 10.8368 19.0313 10.1921 18.266 9.608C16.146 7.98 13.951 7 12 7C10.049 7 7.853 7.98 5.733 9.606C4.96801 10.19 4.25136 10.8348 3.59 11.534C3.34585 11.7967 3.34584 12.2033 3.58999 12.466C4.25208 13.1649 4.96941 13.8093 5.735 14.393C7.855 16.02 10.05 17 12.003 17C13.954 17 16.149 16.02 18.269 14.395C19.0333 13.8113 19.7493 13.1668 20.41 12.468C20.4106 12.4674 20.4111 12.4668 20.4117 12.4662C20.6554 12.2037 20.6547 11.7975 20.41 11.536ZM12 5C16.416 5 22.997 10.05 23 12.001C23.003 13.953 16.42 19.001 12.003 19C7.586 19 1.003 13.953 1 12.001C0.997002 10.05 7.583 5 12 5ZM12 15.5C10.067 15.5 8.5 13.933 8.5 12C8.5 10.067 10.067 8.5 12 8.5C13.933 8.5 15.5 10.067 15.5 12C15.5 13.933 13.933 15.5 12 15.5ZM12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Input[Base] should render correctly about size 1`] = `
+<div
+  style="width: 100%; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;"
+>
+  <div
+    class="c-tanq89 soui-input-wrapper c-gugdgw soui-input-wrapper-small"
+    data-soui-input-border="true"
+    style="width: 240px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="small size"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper"
+    data-soui-input-border="true"
+    style="width: 240px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="default size"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="c-tanq89 soui-input-wrapper c-gyi8zg soui-input-wrapper-large"
+    data-soui-input-border="true"
+    style="width: 240px;"
+  >
+    <div
+      class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+    >
+      <input
+        class="c-gvk21e soui-input-input"
+        placeholder="large size"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about tip 1`] = `
+<div
+  class="c-tanq89 soui-input-wrapper"
+  data-soui-input-border="true"
+  style="width: 300px;"
+>
+  <div
+    class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+  >
+    <input
+      class="c-gvk21e soui-input-input"
+      placeholder="input something"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about trim 1`] = `
+<div
+  class="c-tanq89 soui-input-wrapper"
+  data-soui-input-border="true"
+  style="width: 300px;"
+>
+  <div
+    class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+  >
+    <input
+      class="c-gvk21e soui-input-input"
+      placeholder="input something"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about underline 1`] = `
+<div
+  class="c-tanq89 soui-input-wrapper ckat6ad soui-input-wrapper-underline"
+  data-soui-input-border="true"
+  style="width: 300px;"
+>
+  <div
+    class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+  >
+    <input
+      class="c-gvk21e soui-input-input"
+      placeholder="Underline"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Input[Base] should render correctly about validate 1`] = `
+<div
+  class="c-tanq89 soui-input-wrapper"
+  data-soui-input-border="true"
+  style="width: 300px;"
+>
+  <div
+    class="c-gfj55w soui-input-wrapper-inner-title-top crivz7o soui-input-wrapper-inner-title-bottom ckt8amp soui-input-wrapper-padding-box cv31nq5 soui-input-content"
+  >
+    <input
+      class="c-gvk21e soui-input-input"
+      placeholder="email"
+      value=""
+    />
+  </div>
+</div>
+`;

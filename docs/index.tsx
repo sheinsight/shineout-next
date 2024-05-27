@@ -22,11 +22,12 @@ if (process.env.NODE_ENV === 'development') {
 const search = window.location.href.split('?')[1];
 const params = new URLSearchParams(search);
 const direction = params.get('direction') === 'rtl' ? 'rtl' : 'ltr';
-setConfig({direction});
+setConfig({ direction });
 document.body.className = direction;
 
 const app = document.getElementById('app');
 
+// ReactDOM.render(<App></App>, app);
 if (app) {
   const root = ReactDOM.createRoot(app);
   root.render(<App></App>);

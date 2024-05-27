@@ -132,7 +132,7 @@ export interface RuleFuncResult {
 export type RuleResult = { [key: string]: RuleFuncResult } | RuleCommonResult;
 
 // rule结果值
-export type RuleResultValue = ValueOf<RuleResult>;
+export type RuleResultValue = RuleFuncResult | ValueOf<RuleCommonResult>;
 
 // 表单项校验传的对象rule
 export type FormItemObjectRule = Type &

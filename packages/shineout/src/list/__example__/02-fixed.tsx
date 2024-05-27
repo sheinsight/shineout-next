@@ -59,6 +59,7 @@ const App: React.FC = () => (
     fixed
     keygen='id'
     bordered
+    colNum={2}
     data={names}
     renderItem={renderItem}
   />

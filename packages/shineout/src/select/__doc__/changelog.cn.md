@@ -1,3 +1,10 @@
+## 3.1.17
+2024-05-24
+
+### 🐞 BugFix
+
+- 修复 `Select` 属性 `compressed` 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
+
 ## 3.1.15
 2024-05-23
 
@@ -5,13 +12,6 @@
 
 - 修复 `Select` 在某些场景下弹出层会被遮挡的问题 ([#467](https://github.com/sheinsight/shineout-next/pull/467))
 
-
-## 3.1.13
-2024-05-20
-
-### 🐞 BugFix
-
-- 修复 `Select` 首次渲染 `compressed` 属性无效的问题 ([#458](https://github.com/sheinsight/shineout-next/pull/458))
 
 
 ## 3.1.10
