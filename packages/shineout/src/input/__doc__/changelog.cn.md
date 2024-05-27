@@ -1,3 +1,10 @@
+## 3.1.18
+2024-05-27
+
+### 🐞 BugFix
+
+- `Input` 兼容 `value = 0` 的场景 ([#480](https://github.com/sheinsight/shineout-next/pull/480))
+
 ## 3.1.16
 2024-05-24
 
