@@ -150,4 +150,17 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @default false
    */
   scrollDismiss?: boolean | (() => HTMLElement | null);
+  /**
+   * @private 适应位置
+   */
+  adjust?: boolean;
+  /**
+   * @en The class name of the arrow
+   * @cn 箭头的 class 名称
+   */
+  arrowClass?: string;
+  /**
+   * @private 属性
+   */
+  attributes?: React.HTMLAttributes<HTMLDivElement>;
 }

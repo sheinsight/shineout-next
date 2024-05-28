@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { useMenuItem, util } from '@sheinx/hooks';
 import Icons from '../icons';
 import { useConfig } from '../config';
+import Popover from '../../src/popover';
 
 import type { OptionalToRequired } from '@sheinx/hooks';
 import type { MenuItemProps } from './menu.type';
@@ -10,8 +11,11 @@ import type { MenuItemProps } from './menu.type';
 const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
-  const { inlineIndent = 24, frontCaretType = 'solid' } = props;
+  const { inlineIndent = 24, frontCaretType = 'solid', mode, toggleDuration =  200 } = props;
   const config = useConfig();
+  const shoudPop = mode === 'vertical' || mode === 'vertical-auto' || mode === 'horizontal';
+  const isVertical = mode === 'vertical' || mode === 'vertical-auto';
+  const isSubHorizontal = mode === 'horizontal' && props.level > 0;
 
   const hasExpandAbleChildren = children.some(
     (item: any) => item && item.children && (props.looseChildren || item.children.length),
@@ -41,11 +45,70 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     parentId: props.parentId,
     looseChildren: props.looseChildren,
     parentSelectable: props.parentSelectable,
-    toggleDuration: props.toggleDuration,
     disabled: props.disabled,
     mode: props.mode,
     scrollRef: props.scrollRef,
   });
+
+  const renderChildren = () => {
+    if (!children?.length) return null;
+
+    const content = (close?: () => void) => (
+      <ul
+        className={classNames(
+          shoudPop && classes?.childrenShow,
+          classes?.children,
+          isUp && classes?.childrenUp,
+          hasExpandAbleChildren && classes?.childrenHasExpand,
+        )}
+        // 子菜单点击弹出
+        onClick={close}
+        dir={config.direction}
+      >
+        {children.map((item: any, index: number) => {
+          const key = util.getKey(props.keygen, item, index);
+          return (
+            <MenuItem
+              {...props}
+              mode={mode}
+              parentId={id}
+              dataItem={item}
+              key={key}
+              index={index}
+              keyResult={key}
+              level={props.level + 1}
+            />
+          );
+        })}
+      </ul>
+    );
+    if (shoudPop) {
+      const position =
+        isVertical || isSubHorizontal ? (isUp ? 'right-bottom' : 'right-top') : 'bottom';
+      return (
+        <Popover
+          mouseLeaveDelay={toggleDuration}
+          className={classNames(classes?.popover)}
+          attributes={util.getDataAttribute({
+            theme: props.theme || 'light',
+            mode: isVertical ? 'vertical' : mode,
+          })}
+          jssStyle={props.jssStyle}
+          arrowClass={classNames(
+            classes?.popArrow,
+            props.theme === 'dark' && classes?.popArrowDark,
+          )}
+          position={position}
+        >
+          {(close) => {
+            return content(close);
+          }}
+        </Popover>
+      );
+    }
+
+    return content();
+  };
   const renderItem = () => {
     const item = util.render(props.renderItem, props.dataItem, props.index);
     const link = props.linkKey
@@ -67,7 +130,6 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       props.mode === 'inline' && props.level ? (
         <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
       ) : null;
-
     if (props.frontCaret) {
       return (
         <div
@@ -80,6 +142,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             className={classNames(
               classes?.expand,
               classes?.expandFront,
+              (isVertical || isSubHorizontal) && classes?.expandVertical,
               props.parentSelectable && classes?.expandHover,
             )}
             onClick={handleExpandClick}
@@ -111,6 +174,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
               className={classNames(
                 classes?.expand,
                 classes?.expandBack,
+                (isVertical || isSubHorizontal) && classes?.expandVertical,
                 props.parentSelectable && classes?.expandHover,
               )}
               dir={config.direction}
@@ -137,31 +201,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       dir={config.direction}
     >
       {renderItem()}
-      {children.length > 0 && (
-        <ul
-          className={classNames(
-            classes?.children,
-            isUp && classes?.childrenUp,
-            hasExpandAbleChildren && classes?.childrenHasExpand,
-          )}
-          dir={config.direction}
-        >
-          {children.map((item: any, index: number) => {
-            const key = util.getKey(props.keygen, item, index);
-            return (
-              <MenuItem
-                {...props}
-                parentId={id}
-                dataItem={item}
-                key={key}
-                index={index}
-                keyResult={key}
-                level={props.level + 1}
-              />
-            );
-          })}
-        </ul>
-      )}
+      {renderChildren()}
     </li>
   );
 };

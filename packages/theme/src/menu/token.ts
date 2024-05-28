@@ -49,11 +49,11 @@ const menuTokenExtraValue = {
     },
   },
   title: {
-    padding: { x: '16px', y: '9px' },
+    padding: { x: 'Spacing-16', y: 'Spacing-9' },
   },
   expand: {
-    width: '46px',
-    size: '14px',
+    width: 'Spacing-46',
+    size: 'Spacing-14',
     hover: {
       background: { color: 'Neutral-fill-3' },
     },

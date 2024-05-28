@@ -5,16 +5,6 @@ const menuIndex = 1000;
 
 export type MenuClassType = keyof MenuClasses;
 
-const arrow = {
-  content: '""',
-  position: 'absolute',
-  left: 0,
-  transform: 'translateY(-50%)',
-  border: '6px solid transparent',
-  borderRightColor: token.menuItemBackgroundColor,
-  marginLeft: '-10px',
-};
-
 const menuStyle: JsStyles<MenuClassType> = {
   wrapper: {
     height: '100%',
@@ -24,6 +14,37 @@ const menuStyle: JsStyles<MenuClassType> = {
   wrapperDark: {
     backgroundColor: token.menuDarkItemBackgroundColor,
   },
+  popover: {
+    '&&': {
+      border: 'none',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+      borderRadius: '4px',
+    },
+    '& $children': {
+      borderRadius: '4px',
+      '& > :first-child > $itemContent': {
+        borderTopRightRadius: '4px',
+        borderTopLeftRadius: '4px',
+      },
+      '& > :last-child > $itemContent': {
+        borderBottomRightRadius: '4px',
+        borderBottomLeftRadius: '4px',
+      },
+    },
+  },
+  popArrow: {
+    '&&&' : {
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+      width: '6px',
+      height: '6px',
+    }
+  },
+  popArrowDark: {
+    '&&&': {
+      backgroundColor: token.menuDarkItemBackgroundColor,
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+    },
+  },
   scrollbox: {
     '$wrapperVertical &': {
       overflow: 'hidden',
@@ -31,12 +52,6 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
     '$wrapperHorizontal &': {
       overflow: 'hidden',
-    },
-    '$wrapperHasOpen$wrapperVertical &': {
-      width: '100vw',
-    },
-    '$wrapperHasOpen$wrapperHorizontal &': {
-      height: '100vh',
     },
   },
   root: {
@@ -56,87 +71,25 @@ const menuStyle: JsStyles<MenuClassType> = {
     zIndex: menuIndex,
   },
   wrapperHorizontal: {
-    height: '42px',
     position: 'relative',
     zIndex: menuIndex,
   },
   wrapperHasOpen: {},
   children: {
     padding: '0',
+    margin: '0',
     display: 'none',
     minWidth: '100%',
     whiteSpace: 'nowrap',
-    '$itemOpen > &': {
+    '$itemOpen > &, $childrenShow&': {
       display: 'block',
     },
-    '$wrapper:not($wrapperInline) &': {
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-    },
-
-    '$wrapperHorizontal &': {
-      position: 'absolute',
-      bottom: '-2px',
-      left: 0,
-      transform: 'translateY(100%)',
-    },
-    '$wrapperHorizontal & &': {
-      position: 'absolute',
-      left: 'auto',
-      bottom: 'auto',
-      top: 0,
-      right: '-2px',
-      transform: 'translateX(100%)',
-    },
-    '$wrapperVertical &': {
-      position: 'absolute',
-      top: 0,
-      '&[dir=ltr]': {
-        right: '-6px',
-        transform: 'translateX(100%)',
-      },
-      '&[dir=rtl]': {
-        left: '-6px',
-        transform: 'translateX(-100%)',
-      },
-
-      minWidth: 'auto',
-      borderRadius: '4px',
-      '& > :first-child > $itemContent': {
-        borderTopRightRadius: '4px',
-        borderTopLeftRadius: '4px',
-      },
-      '& > :last-child > $itemContent': {
-        borderBottomRightRadius: '4px',
-        borderBottomLeftRadius: '4px',
-      },
-      '&$childrenUp': {
-        top: 'auto',
-        bottom: 0,
-      },
-      '&$childrenUp::before': {
-        top: 'auto',
-        bottom: '20%',
-        ...arrow,
-        '$wrapperDark&': {
-          borderRightColor: token.menuDarkItemBackgroundColor,
-        },
-      },
-      '&::before': {
-        top: '20%',
-        ...arrow,
-        '$wrapperDark&': {
-          borderRightColor: token.menuDarkItemBackgroundColor,
-        },
-      },
-    },
   },
+  childrenShow: {},
   childrenUp: {},
   item: {
     listStyle: 'none',
     flexShrink: 0,
-    '$wrapperVertical &, $wrapperHorizontal &': {
-      position: 'relative',
-    },
   },
   itemActive: {},
   itemDisabled: {},
@@ -150,7 +103,7 @@ const menuStyle: JsStyles<MenuClassType> = {
     alignItems: 'center',
     cursor: 'pointer',
     position: 'relative',
-    '$wrapperLight &': {
+    '[data-soui-theme=light] &': {
       color: token.menuItemFontColor,
       backgroundColor: token.menuItemBackgroundColor,
       '&:hover': {
@@ -159,7 +112,7 @@ const menuStyle: JsStyles<MenuClassType> = {
       },
     },
 
-    '$wrapperDark &': {
+    '[data-soui-theme=dark] &': {
       color: token.menuDarkFontColor,
       backgroundColor: token.menuDarkItemBackgroundColor,
       '&:hover': {
@@ -167,7 +120,7 @@ const menuStyle: JsStyles<MenuClassType> = {
         backgroundColor: token.menuDarkItemHoverBackgroundColor,
       },
     },
-    '$wrapperDark $itemOpen > &': {
+    '[data-soui-theme=dark] $itemOpen > &': {
       color: token.menuDarkItemOpenFontColor,
       backgroundColor: token.menuDarkItemOpenBackgroundColor,
       '& $icon': {
@@ -176,23 +129,24 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
 
     '$itemInPath > &&': {
-      '$wrapperLight &': {
+      '[data-soui-theme=light] &': {
         color: token.menuItemActiveFontColor,
         '& $icon': {
           color: token.menuItemActiveFontColor,
         },
       },
 
-      '$wrapperDark$wrapperInline &::before, $wrapperDark$wrapperVertical &::before': {
-        content: '""',
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        bottom: 0,
-        width: '3px',
-        backgroundColor: token.menuDarkItemActiveBackgroundColor,
-      },
-      '$wrapperLight$wrapperVertical &': {
+      '[data-soui-theme=dark][data-soui-mode=inline] &::before, [data-soui-theme=dark][data-soui-mode=vertical] &::before':
+        {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: '3px',
+          backgroundColor: token.menuDarkItemActiveBackgroundColor,
+        },
+      '[data-soui-theme=light][data-soui-mode=vertical] &': {
         '&::before': {
           display: 'block',
           content: '""',
@@ -208,25 +162,25 @@ const menuStyle: JsStyles<MenuClassType> = {
       },
     },
     '$itemActive > &&': {
-      '$wrapperLight &': {
+      '[data-soui-theme=light] &': {
         color: token.menuItemActiveFontColor,
         backgroundColor: token.menuItemActiveBackgroundColor,
         '& $icon': {
           color: token.menuItemActiveFontColor,
         },
       },
-      '$wrapperDark &': {
+      '[data-soui-theme=dark] &': {
         color: token.menuDarkItemActiveFontColor,
         backgroundColor: token.menuDarkItemActiveBackgroundColor,
         '& $icon': {
           color: token.menuDarkItemActiveFontColor,
         },
       },
-      '$wrapperLight$wrapperInline &,  $wrapperLight$wrapperHorizontal &': {
+      '[data-soui-theme=light][data-soui-mode=inline] &,  [data-soui-theme=light][data-soui-mode=horizontal] &': {
         '&::before': {
           content: '""',
           position: 'absolute',
-          display: 'block',
+          display: 'block!important',
           top: 0,
           right: 0,
           width: '3px',
@@ -234,7 +188,7 @@ const menuStyle: JsStyles<MenuClassType> = {
           backgroundColor: token.menuItemActiveFontColor,
         },
       },
-      '$wrapperLight$wrapperHorizontal $root > &::before': {
+      '[data-soui-theme=light][data-soui-mode=horizontal] $root > &::before': {
         width: '100%',
         height: '2px',
         top: 'auto',
@@ -243,7 +197,7 @@ const menuStyle: JsStyles<MenuClassType> = {
         right: 'auto',
       },
     },
-    '$wrapperLight $itemDisabled > &&': {
+    '[data-soui-theme=light] $itemDisabled > &&': {
       cursor: 'not-allowed',
       color: token.menuItemDisabledFontColor,
       backgroundColor: token.menuItemDisabledBackgroundColor,
@@ -251,7 +205,7 @@ const menuStyle: JsStyles<MenuClassType> = {
         color: token.menuItemDisabledFontColor,
       },
     },
-    '$wrapperDark $itemDisabled > &&': {
+    '[data-soui-theme=dark] $itemDisabled > &&': {
       cursor: 'not-allowed',
       color: token.menuDarkItemDisabledFontColor,
       backgroundColor: token.menuDarkItemDisabledBackgroundColor,
@@ -296,7 +250,7 @@ const menuStyle: JsStyles<MenuClassType> = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    '$wrapperLight &': {
+    '[data-soui-theme=light] &': {
       color: token.menuIconColor,
     },
     '& > $icon': {
@@ -307,10 +261,10 @@ const menuStyle: JsStyles<MenuClassType> = {
         transform: 'rotate(180deg)',
       },
     },
-    '$wrapperVertical &': {
-      '&[dir=ltr]': { transform: 'rotate(-90deg)' },
-      '&[dir=rtl]': { transform: 'rotate(90deg)' },
-    },
+  },
+  expandVertical: {
+    '&[dir=ltr]': { transform: 'rotate(-90deg)' },
+    '&[dir=rtl]': { transform: 'rotate(90deg)' },
   },
   icon: {},
   expandHover: {

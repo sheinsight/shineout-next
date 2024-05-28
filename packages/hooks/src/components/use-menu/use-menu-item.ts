@@ -8,9 +8,10 @@ const useMenuItem = (props: UseMenuItemProps) => {
   const { current: context } = useRef({
     id: '',
     timer: null as NodeJS.Timeout | null,
-    isUp: false,
   });
-  const { parentId = '', dataItem, toggleDuration = 200 } = props;
+  const { parentId = '', dataItem } = props;
+  const isLeaf = ((dataItem || {}).children || []).length === 0;
+
   if (!context.id) {
     context.id = `${parentId},${getUidStr()}`;
   }
@@ -21,6 +22,7 @@ const useMenuItem = (props: UseMenuItemProps) => {
   const expandAble = dataItem.children && (props.looseChildren || dataItem.children.length > 0);
   const [isChecked, setChecked] = useState(false);
   const [isInPath, setInPath] = useState(false);
+  const [isUp, setIsUp] = useState(false);
 
   const update: UpdateFunc = usePersistFn((getStatus) => {
     const status = getStatus(context.id, props.dataItem);
@@ -55,8 +57,11 @@ const useMenuItem = (props: UseMenuItemProps) => {
         props.onClick(dataItem);
       }
     }
-    const isLeaf = ((dataItem || {}).children || []).length === 0;
-    if (!isLeaf) e.nativeEvent.stopImmediatePropagation();
+    // 阻止冒泡
+    if (!isLeaf) {
+      e.stopPropagation();
+      e.nativeEvent.stopImmediatePropagation();
+    }
   });
 
   const handleExpandClick = usePersistFn((e: React.MouseEvent) => {
@@ -75,44 +80,46 @@ const useMenuItem = (props: UseMenuItemProps) => {
   });
 
   const handleMouseLeave = usePersistFn(() => {
-    if (expandAble && props.mode !== 'inline') {
-      if (context.timer) {
-        clearTimeout(context.timer);
-        context.timer = null;
-      }
-      context.timer = setTimeout(() => {
-        props.onOpenChange((before) => {
-          const openKeySet = new Set(before);
-          openKeySet.delete(props.keyResult);
-          return Array.from(openKeySet);
-        });
-      }, toggleDuration);
-      document.removeEventListener('click', handleMouseLeave);
-    }
+    // if (expandAble && props.mode !== 'inline') {
+    // if (context.timer) {
+    //   clearTimeout(context.timer);
+    //   context.timer = null;
+    // }
+    // context.timer = setTimeout(() => {
+    //   props.onOpenChange((before) => {
+    //     const openKeySet = new Set(before);
+    //     openKeySet.delete(props.keyResult);
+    //     return Array.from(openKeySet);
+    //   });
+    // }, toggleDuration);
+    // document.removeEventListener('click', handleMouseLeave);
+    // }
   });
 
   const handleMouseEnter = usePersistFn((e: React.MouseEvent) => {
     if (expandAble && props.mode !== 'inline') {
-      if (context.timer) {
-        clearTimeout(context.timer);
-        context.timer = null;
-      }
-      let isUp = false;
+      // if (context.timer) {
+      //   clearTimeout(context.timer);
+      //   context.timer = null;
+      // }
+      let up = false;
       if (props.mode === 'vertical-auto' && props.scrollRef?.current) {
         const target = e.currentTarget as HTMLElement;
         const rect = target.getBoundingClientRect();
         const scrollRect = props.scrollRef.current?.getBoundingClientRect();
         const topLine = scrollRect?.top;
         const bottomLine = scrollRect?.bottom;
-        isUp = rect.bottom - topLine > (bottomLine - topLine) / 2;
+        up = rect.bottom - topLine > (bottomLine - topLine) / 2;
       }
-      context.isUp = isUp;
-      props.onOpenChange((before) => {
-        const openKeySet = new Set(before);
-        openKeySet.add(props.keyResult);
-        return Array.from(openKeySet);
-      });
-      document.addEventListener('click', handleMouseLeave);
+      if (isUp !== up) {
+        setIsUp(up);
+      }
+      // props.onOpenChange((before) => {
+      //   const openKeySet = new Set(before);
+      //   openKeySet.add(props.keyResult);
+      //   return Array.from(openKeySet);
+      // });
+      // document.addEventListener('click', handleMouseLeave);
     }
   });
 
@@ -130,11 +137,12 @@ const useMenuItem = (props: UseMenuItemProps) => {
     isOpen: gopenKeySet.has(props.keyResult),
     isDisabled,
     expandAble,
-    isUp: context.isUp,
+    isUp,
     handleItemClick,
     handleMouseEnter,
     handleMouseLeave,
     handleExpandClick,
+    isLeaf,
   };
 };
 

@@ -1,6 +1,7 @@
 import type { UseMenuItemProps } from '@sheinx/hooks';
 import { KeygenResult, KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
+import { PopoverJssStyle } from '../popover/popover.type';
 
 export type MenuMode = 'inline' | 'vertical' | 'horizontal' | 'vertical-auto';
 
@@ -14,6 +15,7 @@ export interface MenuClasses {
   wrapperDark: string;
   root: string;
   children: string;
+  childrenShow: string;
   childrenUp: string;
   item: string;
   itemActive: string;
@@ -29,6 +31,7 @@ export interface MenuClasses {
   expandFront: string;
   expandBack: string;
   expandHover: string;
+  expandVertical: string;
   scrollbar: string;
   scrollbarX: string;
   scrollbarY: string;
@@ -37,11 +40,14 @@ export interface MenuClasses {
   scrollbox: string;
   icon: string;
   childrenHasExpand: string;
+  popover?: string;
+  popArrow?: string;
+  popArrowDark?: string;
 }
 
-export type MenuJssStyle = {
+export interface MenuJssStyle extends PopoverJssStyle {
   menu?: () => MenuClasses;
-};
+}
 /**
  * @title Menu
  */
@@ -67,7 +73,7 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @en theme of menu
    * @cn 主题
    */
-  theme?: 'dark';
+  theme?: 'dark' | 'light';
   /**
    * @en menu height
    * @cn 菜单高度
@@ -185,6 +191,7 @@ export interface MenuItemProps
       | 'caretColor'
       | 'jssStyle'
       | 'inlineIndent'
+      | 'theme'
     > {
   index: number;
   level: number;

@@ -30,8 +30,6 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
 
   const showScrollBar = isHorizontal || isVertical;
 
-  const listStyle = isVertical ? { width: props.style?.width } : undefined;
-
   useEffect(() => {
     const newOpen =
       (openKeys || []).filter((k) => data!.find((d, i) => util.getKey(props.keygen, d, i) === k))
@@ -52,16 +50,17 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         hasOpen && classes?.wrapperHasOpen,
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
       )}
+      {...util.getDataAttribute({
+        theme,
+        mode: isVertical ? 'vertical' : mode,
+      })}
       style={{
         height: props.height,
         ...props.style,
       }}
     >
       <div className={classes?.scrollbox} ref={scrollRef}>
-        <ul
-          className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}
-          style={listStyle}
-        >
+        <ul className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}>
           {data.map((item, index) => {
             const key = util.getKey(props.keygen, item, index);
             return (
@@ -92,6 +91,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 caretColor={props.caretColor}
                 inlineIndent={props.inlineIndent}
                 scrollRef={scrollRef}
+                theme={theme}
               />
             );
           })}

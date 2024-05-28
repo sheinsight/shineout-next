@@ -76,25 +76,25 @@ export interface MenuTokens {
   menuItemDisabledFontColor: string;
   /**
    * @type {string}
-   * @token 16px
+   * @token Spacing-16
    * @description 菜单标题模式内边距（水平方向）
    */
   menuTitlePaddingX: string;
   /**
    * @type {string}
-   * @token 9px
+   * @token Spacing-9
    * @description 菜单标题模式内边距（垂直方向）
    */
   menuTitlePaddingY: string;
   /**
    * @type {string}
-   * @token 46px
+   * @token Spacing-46
    * @description 菜单展开icon的宽度
    */
   menuExpandWidth: string;
   /**
    * @type {string}
-   * @token 14px
+   * @token Spacing-14
    * @description 菜单展开icon的字号
    */
   menuExpandSize: string;
