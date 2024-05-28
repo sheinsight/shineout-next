@@ -1,8 +1,6 @@
 import token from '@sheinx/theme';
 import { MenuClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
-const menuIndex = 1000;
-
 export type MenuClassType = keyof MenuClasses;
 
 const menuStyle: JsStyles<MenuClassType> = {
@@ -68,11 +66,9 @@ const menuStyle: JsStyles<MenuClassType> = {
   wrapperInline: {},
   wrapperVertical: {
     position: 'relative',
-    zIndex: menuIndex,
   },
   wrapperHorizontal: {
     position: 'relative',
-    zIndex: menuIndex,
   },
   wrapperHasOpen: {},
   children: {
