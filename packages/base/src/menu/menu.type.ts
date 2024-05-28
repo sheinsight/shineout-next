@@ -27,6 +27,8 @@ export interface MenuClasses {
   itemContentFront: string;
   itemContentBack: string;
   title: string;
+  titleIcon: string;
+  titleContent: string;
   expand: string;
   expandFront: string;
   expandBack: string;
@@ -177,6 +179,11 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @default 'title'
    */
   renderItem?: ((data: DataItem, index: number) => React.ReactNode) | ObjectKey<DataItem>;
+  /**
+   * @cn 渲染Icon
+   * @en Render Icon
+   */
+  renderIcon?: (data: DataItem) => React.ReactNode;
 }
 
 export interface MenuItemProps
@@ -192,6 +199,7 @@ export interface MenuItemProps
       | 'jssStyle'
       | 'inlineIndent'
       | 'theme'
+      | 'renderIcon'
     > {
   index: number;
   level: number;

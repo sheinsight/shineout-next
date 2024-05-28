@@ -85,7 +85,6 @@ const App: React.FC = () => {
         onClick={handleClick}
         style={{ width: 256 }}
         renderItem={renderItem}
-        mode='vertical-auto'
       />
     </div>
   );

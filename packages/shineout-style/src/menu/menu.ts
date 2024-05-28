@@ -33,11 +33,11 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
   },
   popArrow: {
-    '&&&' : {
+    '&&&': {
       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
       width: '6px',
       height: '6px',
-    }
+    },
   },
   popArrowDark: {
     '&&&': {
@@ -176,18 +176,19 @@ const menuStyle: JsStyles<MenuClassType> = {
           color: token.menuDarkItemActiveFontColor,
         },
       },
-      '[data-soui-theme=light][data-soui-mode=inline] &,  [data-soui-theme=light][data-soui-mode=horizontal] &': {
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          display: 'block!important',
-          top: 0,
-          right: 0,
-          width: '3px',
-          height: '100%',
-          backgroundColor: token.menuItemActiveFontColor,
+      '[data-soui-theme=light][data-soui-mode=inline] &,  [data-soui-theme=light][data-soui-mode=horizontal] &':
+        {
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            display: 'block!important',
+            top: 0,
+            right: 0,
+            width: '3px',
+            height: '100%',
+            backgroundColor: token.menuItemActiveFontColor,
+          },
         },
-      },
       '[data-soui-theme=light][data-soui-mode=horizontal] $root > &::before': {
         width: '100%',
         height: '2px',
@@ -244,6 +245,13 @@ const menuStyle: JsStyles<MenuClassType> = {
     '$childrenHasExpand $itemContentFront > &': {
       paddingLeft: 0,
     },
+  },
+  titleIcon: {
+    paddingRight: '8px',
+    lineHeight: 1,
+  },
+  titleContent: {
+    whiteSpace: 'pre-wrap',
   },
   expand: {
     alignSelf: 'stretch',

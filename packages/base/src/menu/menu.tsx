@@ -19,7 +19,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     active: props.active,
     defaultOpenKeys: props.defaultOpenKeys,
     openKeys: props.openKeys,
-    onOpenChange: props.onOpenChange as any,
+    onOpenChange: props.onOpenChange as any
   });
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -38,6 +38,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
       setHasOpen(newOpen);
     }
   }, [data, openKeys]);
+
 
   return (
     <div
@@ -92,6 +93,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 inlineIndent={props.inlineIndent}
                 scrollRef={scrollRef}
                 theme={theme}
+                renderIcon={props.renderIcon}
               />
             );
           })}

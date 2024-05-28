@@ -11,7 +11,7 @@ import type { MenuItemProps } from './menu.type';
 const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
-  const { inlineIndent = 24, frontCaretType = 'solid', mode, toggleDuration =  200 } = props;
+  const { inlineIndent = 24, frontCaretType = 'solid', mode, toggleDuration = 200 } = props;
   const config = useConfig();
   const shoudPop = mode === 'vertical' || mode === 'vertical-auto' || mode === 'horizontal';
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
@@ -110,6 +110,12 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     return content();
   };
   const renderItem = () => {
+    const icon = util.isFunc(props.renderIcon) ? props.renderIcon(props.dataItem) : null;
+    const iconEl = icon ? <div className={classes?.titleIcon}>{icon}</div> : null;
+    const indent =
+      props.mode === 'inline' && props.level ? (
+        <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
+      ) : null;
     const item = util.render(props.renderItem, props.dataItem, props.index);
     const link = props.linkKey
       ? (util.getKey(props.linkKey, props.dataItem, props.index) as string)
@@ -117,26 +123,36 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     let title: React.ReactNode = null;
     if (util.isLink(item)) {
       const mergeClass = classNames(classes?.title, item.props && item.props.className);
-      title = cloneElement(item, { className: mergeClass });
+      title = cloneElement(item, {
+        className: mergeClass,
+        children: (
+          <>
+            {indent}
+            {iconEl}
+            <div className={classes?.titleContent}>{item.props.children}</div>
+          </>
+        ),
+      });
     } else {
       const linkProps = {
         className: classes?.title,
         href: link,
       };
-      title = <a {...linkProps}>{util.wrapSpan(item)}</a>;
+      title = (
+        <a {...linkProps}>
+          {indent}
+          {iconEl}
+          <div className={classes?.titleContent}>{util.wrapSpan(item)}</div>
+        </a>
+      );
     }
 
-    const indent =
-      props.mode === 'inline' && props.level ? (
-        <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
-      ) : null;
     if (props.frontCaret) {
       return (
         <div
           className={classNames(classes?.itemContent, classes?.itemContentFront)}
           onClick={handleItemClick}
         >
-          {indent}
           <div
             style={{ color: props.caretColor }}
             className={classNames(
@@ -165,7 +181,6 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           className={classNames(classes?.itemContent, classes?.itemContentBack)}
           onClick={handleItemClick}
         >
-          {indent}
           {title}
           {expandAble && (
             <div
