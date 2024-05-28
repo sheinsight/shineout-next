@@ -13,6 +13,12 @@ import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber, isArray, isUnMatchedData } from '../../utils/is';
 
+function toArray<Value>(value: Value) {
+  if (!value) return [];
+  if (!Array.isArray(value)) return [value];
+  return value;
+}
+
 export const MODE = {
   /**
    * 返回全选数据，包含父节点和子节点
@@ -327,8 +333,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const setValue = (value?: KeygenResult[]) => {
-    context.value = value;
-    if (value && value !== context.cachedValue) {
+    context.value = toArray(value) as KeygenResult[];
+    if (value !== context.cachedValue) {
       initValue();
     }
     setUnmatedValue();
@@ -360,10 +366,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.valueMap = new Map();
     context.unmatchedValueMap = new Map();
     context.disabled = getDisabled();
-    context.data = data;
+    context.data = toArray(data) as DataItem[];
     if (!data) return;
 
-    initData(data, []);
+    initData(context.data, []);
     initValue();
     setValue(prevValue);
   };
