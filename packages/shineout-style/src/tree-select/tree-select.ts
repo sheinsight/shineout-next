@@ -245,7 +245,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   },
   compressedWrapper: {
     width: 0,
-    overflow: 'hidden',
+    overflow: 'auto',
   },
   controlMouse: {
     '& $optionInner:hover': {
@@ -364,6 +364,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     },
   },
   tag: {
+    flexShrink: 0,
     '&$tag + &$tag': {
       marginLeft: 0,
     },
@@ -375,6 +376,10 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     '&$hideTag': {
       marginRight: 0,
     },
+  },
+  tagOnly: {
+    flexShrink: 1,
+    minWidth: 42,
   },
   space: {
     marginTop: token.treeSelectPlaceholderMarginY,

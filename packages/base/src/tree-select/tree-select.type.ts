@@ -56,6 +56,7 @@ export type TreeSelectClasses = {
   tree: string;
   treeOption: string;
   tag: string;
+  tagOnly: string;
   space: string;
   inputMirror: string;
   moreWrapper: string;

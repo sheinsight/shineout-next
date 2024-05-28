@@ -272,7 +272,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   compressedWrapper: {
     width: 0,
-    overflow: 'hidden',
+    overflow: 'auto',
   },
   controlMouse: {
     '& $optionInner:hover': {
@@ -385,6 +385,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     overflow: 'auto'
   },
   tag: {
+    flexShrink: 0,
     '&$tag + &$tag': {
       marginLeft: 0,
     },
@@ -396,6 +397,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     '&$hideTag': {
       marginRight: 0,
     },
+  },
+  tagOnly: {
+    flexShrink: 1,
+    minWidth: 42,
   },
   space: {
     marginTop: token.cascaderPlaceholderMarginY,
