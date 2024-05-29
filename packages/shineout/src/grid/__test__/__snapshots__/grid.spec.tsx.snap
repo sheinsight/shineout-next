@@ -3,110 +3,110 @@
 exports[`Grid[Base] should render correctly  1`] = `
 <div>
   <div
-    class="cbgmmzo soui-slider-wrapper"
+    class="cf2xgde soui-slider-wrapper"
   >
     <div
-      class="c-yru59g soui-slider-track"
+      class="cmqgv4q soui-slider-track"
     >
       <div
-        class="c-piwj6u soui-slider-track-inner"
+        class="c-n7836s soui-slider-track-inner"
         dir="ltr"
         style="left: 0%; right: 62.5%;"
       >
         <div
-          class="c-6bywo0 soui-slider-indicator c6vcnmj soui-slider-indicator-end"
+          class="c-8jra5e soui-slider-indicator c-wcpy3n soui-slider-indicator-end"
           dir="ltr"
         />
       </div>
     </div>
     <div
-      class="c-s6vh6w soui-slider-scale-wrapper"
+      class="c3m5z22 soui-slider-scale-wrapper"
     >
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           1
         </div>
       </div>
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           2
         </div>
       </div>
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           3
         </div>
       </div>
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           5
         </div>
       </div>
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           8
         </div>
       </div>
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           13
         </div>
       </div>
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           21
         </div>
       </div>
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           34
         </div>
       </div>
       <div
-        class="c-ysnig5 soui-slider-scale"
+        class="cmpnhy1 soui-slider-scale"
       >
         <div
-          class="c-ywjbzv soui-slider-label"
+          class="cmlroeb soui-slider-label"
           dir="ltr"
         >
           55

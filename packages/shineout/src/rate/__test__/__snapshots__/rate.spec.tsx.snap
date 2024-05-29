@@ -2,16 +2,16 @@
 
 exports[`Rate[Base] should render correctly  1`] = `
 <div
-  class="c-61gxiz soui-rate-wrapper"
+  class="c-jk9z3x soui-rate-wrapper"
 >
   <div
-    class="c8a0ih4 soui-rate-inner"
+    class="c-op8xfe soui-rate-inner"
   >
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -24,7 +24,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -38,10 +38,10 @@ exports[`Rate[Base] should render correctly  1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -54,7 +54,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -68,10 +68,10 @@ exports[`Rate[Base] should render correctly  1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -84,7 +84,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -98,10 +98,10 @@ exports[`Rate[Base] should render correctly  1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -114,7 +114,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -128,10 +128,10 @@ exports[`Rate[Base] should render correctly  1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -144,7 +144,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -163,16 +163,16 @@ exports[`Rate[Base] should render correctly  1`] = `
 
 exports[`Rate[Base] should render correctly about color 1`] = `
 <div
-  class="c-61gxiz soui-rate-wrapper"
+  class="c-jk9z3x soui-rate-wrapper"
 >
   <div
-    class="c8a0ih4 soui-rate-inner"
+    class="c-op8xfe soui-rate-inner"
   >
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -185,7 +185,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="#ff4d4f"
@@ -199,10 +199,10 @@ exports[`Rate[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -215,7 +215,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="#ff4d4f"
@@ -229,10 +229,10 @@ exports[`Rate[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -245,7 +245,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="#ff4d4f"
@@ -259,10 +259,10 @@ exports[`Rate[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -275,7 +275,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="#ff4d4f"
@@ -289,10 +289,10 @@ exports[`Rate[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -305,7 +305,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="#ff4d4f"
@@ -324,16 +324,16 @@ exports[`Rate[Base] should render correctly about color 1`] = `
 
 exports[`Rate[Base] should render correctly about disable 1`] = `
 <div
-  class="c-61gxiz soui-rate-wrapper"
+  class="c-jk9z3x soui-rate-wrapper"
 >
   <div
-    class="c8a0ih4 soui-rate-inner"
+    class="c-op8xfe soui-rate-inner"
   >
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked ccefgvx soui-rate-item-disabled"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked ceq3wvz soui-rate-item-disabled"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -346,7 +346,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -360,10 +360,10 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked ccefgvx soui-rate-item-disabled"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked ceq3wvz soui-rate-item-disabled"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -376,7 +376,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -390,10 +390,10 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked ccefgvx soui-rate-item-disabled"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked ceq3wvz soui-rate-item-disabled"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -406,7 +406,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -420,10 +420,10 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked ccefgvx soui-rate-item-disabled"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked ceq3wvz soui-rate-item-disabled"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -436,7 +436,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -450,10 +450,10 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item ccefgvx soui-rate-item-disabled"
+      class="cva557n soui-rate-item ceq3wvz soui-rate-item-disabled"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -466,7 +466,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -485,16 +485,16 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
 
 exports[`Rate[Base] should render correctly about half 1`] = `
 <div
-  class="c-61gxiz soui-rate-wrapper"
+  class="c-jk9z3x soui-rate-wrapper"
 >
   <div
-    class="c8a0ih4 soui-rate-inner"
+    class="c-op8xfe soui-rate-inner"
   >
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -507,7 +507,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -520,7 +520,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -535,10 +535,10 @@ exports[`Rate[Base] should render correctly about half 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -551,7 +551,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -564,7 +564,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -579,10 +579,10 @@ exports[`Rate[Base] should render correctly about half 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -595,7 +595,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -608,7 +608,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -623,10 +623,10 @@ exports[`Rate[Base] should render correctly about half 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item c-6t1bb soui-rate-item-checked-half"
+      class="cva557n soui-rate-item c-8m4t9l soui-rate-item-checked-half"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -639,7 +639,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -652,7 +652,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -667,10 +667,10 @@ exports[`Rate[Base] should render correctly about half 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -683,7 +683,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -696,7 +696,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -719,17 +719,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
   style="display: flex; flex-direction: column; gap: 12px;"
 >
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -745,7 +745,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -762,11 +762,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -782,7 +782,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -799,11 +799,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -819,7 +819,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -836,11 +836,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -856,7 +856,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -873,11 +873,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -893,7 +893,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -912,17 +912,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -938,7 +938,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -955,11 +955,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -975,7 +975,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -992,11 +992,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1012,7 +1012,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1029,11 +1029,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1049,7 +1049,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1066,11 +1066,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1086,7 +1086,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1105,17 +1105,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1131,7 +1131,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1148,11 +1148,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1168,7 +1168,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1185,11 +1185,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1205,7 +1205,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1222,11 +1222,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1242,7 +1242,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1259,11 +1259,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1279,7 +1279,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1298,17 +1298,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1324,7 +1324,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1341,11 +1341,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1361,7 +1361,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1378,11 +1378,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1398,7 +1398,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1415,11 +1415,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1435,7 +1435,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1452,11 +1452,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1472,7 +1472,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1491,17 +1491,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1517,7 +1517,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1534,11 +1534,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1554,7 +1554,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1571,11 +1571,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1591,7 +1591,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1608,11 +1608,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1628,7 +1628,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1645,11 +1645,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1665,7 +1665,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="none"
@@ -1684,17 +1684,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1710,15 +1710,15 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         />
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1734,15 +1734,15 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         />
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1758,15 +1758,15 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         />
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1782,15 +1782,15 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         />
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="none"
@@ -1806,7 +1806,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         />
       </div>
     </div>
@@ -1816,16 +1816,16 @@ exports[`Rate[Base] should render correctly about level 1`] = `
 
 exports[`Rate[Base] should render correctly about max 1`] = `
 <div
-  class="c-61gxiz soui-rate-wrapper"
+  class="c-jk9z3x soui-rate-wrapper"
 >
   <div
-    class="c8a0ih4 soui-rate-inner"
+    class="c-op8xfe soui-rate-inner"
   >
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -1838,7 +1838,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -1852,10 +1852,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -1868,7 +1868,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -1882,10 +1882,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -1898,7 +1898,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -1912,10 +1912,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -1928,7 +1928,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -1942,10 +1942,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -1958,7 +1958,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -1972,10 +1972,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -1988,7 +1988,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2002,10 +2002,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2018,7 +2018,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2032,10 +2032,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2048,7 +2048,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2062,10 +2062,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2078,7 +2078,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2092,10 +2092,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2108,7 +2108,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2130,77 +2130,77 @@ exports[`Rate[Base] should render correctly about repeat 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           A
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           A
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           B
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           B
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           C
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           C
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           D
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           D
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           E
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           E
         </span>
@@ -2208,77 +2208,77 @@ exports[`Rate[Base] should render correctly about repeat 1`] = `
     </div>
   </div>
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           1
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           1
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           2
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           2
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+        class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           3
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           3
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           4
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           4
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           5
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           5
         </span>
@@ -2296,18 +2296,18 @@ exports[`Rate[Base] should render correctly about size 1`] = `
     16px
   </div>
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
     style="margin-bottom: 32px;"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2320,7 +2320,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2334,11 +2334,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2351,7 +2351,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2365,11 +2365,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2382,7 +2382,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2396,11 +2396,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2413,7 +2413,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2427,11 +2427,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2444,7 +2444,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2465,17 +2465,17 @@ exports[`Rate[Base] should render correctly about size 1`] = `
     24px
   </div>
   <div
-    class="c-61gxiz soui-rate-wrapper"
+    class="c-jk9z3x soui-rate-wrapper"
   >
     <div
-      class="c8a0ih4 soui-rate-inner"
+      class="c-op8xfe soui-rate-inner"
     >
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2488,7 +2488,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2502,11 +2502,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2519,7 +2519,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2533,11 +2533,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2550,7 +2550,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2564,11 +2564,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2581,7 +2581,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2595,11 +2595,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="c-dhb3of soui-rate-item"
+        class="cva557n soui-rate-item"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="c-rev5mi soui-rate-item-bg"
+          class="cfooz0o soui-rate-item-bg"
         >
           <svg
             fill="currentColor"
@@ -2612,7 +2612,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="c-g68fzs soui-rate-item-front"
+          class="c-cjxmm2 soui-rate-item-front"
         >
           <svg
             fill="currentColor"
@@ -2632,16 +2632,16 @@ exports[`Rate[Base] should render correctly about size 1`] = `
 
 exports[`Rate[Base] should render correctly about text 1`] = `
 <div
-  class="c-61gxiz soui-rate-wrapper"
+  class="c-jk9z3x soui-rate-wrapper"
 >
   <div
-    class="c8a0ih4 soui-rate-inner"
+    class="c-op8xfe soui-rate-inner"
   >
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2654,7 +2654,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2667,7 +2667,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -2682,10 +2682,10 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2698,7 +2698,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2711,7 +2711,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -2726,10 +2726,10 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2742,7 +2742,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2755,7 +2755,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -2770,10 +2770,10 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item czg0yx2 soui-rate-item-checked"
+      class="cva557n soui-rate-item cx88lfo soui-rate-item-checked"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2786,7 +2786,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2799,7 +2799,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -2814,10 +2814,10 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2830,7 +2830,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2843,7 +2843,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="c8n6zck soui-rate-item-half"
+        class="cfmuy5y soui-rate-item-half"
         dir="ltr"
       >
         <svg
@@ -2858,7 +2858,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="c-dh4dhh soui-rate-text"
+      class="cvabvel soui-rate-text"
     >
       very good
     </div>
@@ -2868,16 +2868,16 @@ exports[`Rate[Base] should render correctly about text 1`] = `
 
 exports[`Rate[Base] should render correctly bout clear 1`] = `
 <div
-  class="c-61gxiz soui-rate-wrapper"
+  class="c-jk9z3x soui-rate-wrapper"
 >
   <div
-    class="c8a0ih4 soui-rate-inner"
+    class="c-op8xfe soui-rate-inner"
   >
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2890,7 +2890,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2904,10 +2904,10 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2920,7 +2920,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2934,10 +2934,10 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2950,7 +2950,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2964,10 +2964,10 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -2980,7 +2980,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
@@ -2994,10 +2994,10 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
       </span>
     </div>
     <div
-      class="c-dhb3of soui-rate-item"
+      class="cva557n soui-rate-item"
     >
       <span
-        class="c-rev5mi soui-rate-item-bg"
+        class="cfooz0o soui-rate-item-bg"
       >
         <svg
           fill="currentColor"
@@ -3010,7 +3010,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="c-g68fzs soui-rate-item-front"
+        class="c-cjxmm2 soui-rate-item-front"
       >
         <svg
           fill="currentColor"
