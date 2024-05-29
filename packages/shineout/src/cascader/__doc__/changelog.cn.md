@@ -1,3 +1,11 @@
+## 3.1.19
+2024-05-29
+
+### 🐞 BugFix
+
+- 修复 `Cascader` 当 `value` 变为 `undefined` 时下拉选择状态没有更新的问题 ([#483](https://github.com/sheinsight/shineout-next/pull/483))
+
+
 ## 3.1.18
 2024-05-27
 
