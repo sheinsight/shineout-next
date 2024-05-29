@@ -160,7 +160,11 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         value,
         onSelected: onSelectChange,
       });
-      if (custom) return custom;
+      if (custom) return (
+        <div className={listClass} style={{ ...listStyle, height: listHeight }}>
+          {custom}
+        </div>
+      );
     }
 
     if (data && data.length === 0) {
