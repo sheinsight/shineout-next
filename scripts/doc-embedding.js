@@ -1,5 +1,4 @@
 
-const fs = require('fs');
 const path = require('path');
 const package = require('../package.json');
 const { compileContent, formatApi, formatExamples, formatGuides, capitalizeFirstLetter } = require('./doc-markdown')
@@ -51,8 +50,19 @@ const formatData = () => {
   }
 }
 
-const requestToServer = (data) => {
+const requestToServer = async () => {
   // send data to server
-
+  const res = formatData()
+  try {
+    await fetch(targetPath, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(res)
+    })
+  } catch (error) {
+    console.error(error)
+  }
 }
-console.log(formatData())
+console.log(requestToServer())
