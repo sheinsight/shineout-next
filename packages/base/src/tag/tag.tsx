@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { TagClasses, TagProps } from './tag.type';
 import useTag from './use-tag';
+import { util } from '@sheinx/hooks';
 import TagInput from './tag-input';
 
 const Done = 2;
@@ -39,7 +40,7 @@ const Tag = (props: TagProps) => {
       disabled,
       onCompleted,
       children,
-      closable
+      closable,
     });
 
   const modeSet = mode || 'bright';
@@ -73,15 +74,15 @@ const Tag = (props: TagProps) => {
     if (onClose) {
       return (
         <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
-          <span className={tagStyle.container}>{children}</span>
+          <div className={tagStyle.container}>{util.wrapSpan(children)}</div>
         </div>
       );
     }
 
     return (
-      <span className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
-        {children}
-      </span>
+      <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
+        {util.wrapSpan(children)}
+      </div>
     );
   };
 
