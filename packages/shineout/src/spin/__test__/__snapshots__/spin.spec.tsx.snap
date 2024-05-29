@@ -5,11 +5,11 @@ exports[`Spin[Base] should render correctly  1`] = `
   style="width: 20px;"
 >
   <div
-    class="ccthjtx soui-spin-chasing-dots c-as3972 soui-spin-spin"
+    class="calp6cj soui-spin-chasing-dots cxzczp0 soui-spin-spin"
     style="width: 40px; height: 40px;"
   >
     <div
-      class="c-as9k71 soui-spin-item"
+      class="cxz6op1 soui-spin-item"
     >
       <svg
         viewBox="0 0 100 100"
@@ -22,7 +22,7 @@ exports[`Spin[Base] should render correctly  1`] = `
       </svg>
     </div>
     <div
-      class="c-as9k71 soui-spin-item"
+      class="cxz6op1 soui-spin-item"
     >
       <svg
         viewBox="0 0 100 100"
@@ -49,14 +49,14 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="ccthjtx soui-spin-chasing-dots c-as3972 soui-spin-spin"
+          class="calp6cj soui-spin-chasing-dots cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         >
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               viewBox="0 0 100 100"
@@ -69,7 +69,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               viewBox="0 0 100 100"
@@ -83,7 +83,7 @@ exports[`Spin[Base] should render correctly  2`] = `
           </div>
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -97,42 +97,42 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="c-q19zed soui-spin-cube-grid c-as3972 soui-spin-spin"
+          class="c-j1m0kz soui-spin-cube-grid cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         >
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -146,21 +146,21 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="c3xcqw9 soui-spin-double-bounce c-as3972 soui-spin-spin"
+          class="c6916wb soui-spin-double-bounce cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         >
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           />
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -174,14 +174,14 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="c2hg0rd soui-spin-fading-circle c-as3972 soui-spin-spin"
+          class="c4t4grf soui-spin-fading-circle cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         >
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -196,7 +196,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -211,7 +211,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -226,7 +226,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -241,7 +241,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -256,7 +256,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -271,7 +271,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -286,7 +286,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -301,7 +301,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -316,7 +316,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -331,7 +331,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -346,7 +346,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-asbv9w soui-spin-fade"
+            class="cxz6op1 soui-spin-item cxz4dm6 soui-spin-fade"
           >
             <svg
               height="2.286px"
@@ -362,7 +362,7 @@ exports[`Spin[Base] should render correctly  2`] = `
           </div>
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -376,14 +376,14 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="c-ifu39c soui-spin-four-dots c-as3972 soui-spin-spin"
+          class="c-bg64fy soui-spin-four-dots cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         >
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               viewBox="0 0 100 100"
@@ -396,7 +396,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               viewBox="0 0 100 100"
@@ -409,7 +409,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               viewBox="0 0 100 100"
@@ -422,7 +422,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               viewBox="0 0 100 100"
@@ -436,7 +436,7 @@ exports[`Spin[Base] should render correctly  2`] = `
           </div>
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -450,14 +450,14 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="ckx197w soui-spin-plane c-as3972 soui-spin-spin"
+          class="c-c286om soui-spin-plane cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         />
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -475,14 +475,14 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="ckx78dl soui-spin-pulse c-as3972 soui-spin-spin"
+          class="c-c227ix soui-spin-pulse cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         />
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -496,14 +496,14 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="c-as419c soui-spin-ring c-as3972 soui-spin-spin"
+          class="cxzc7mq soui-spin-ring cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
         />
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -517,14 +517,14 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="c2hg0rd soui-spin-fading-circle c-as3972 soui-spin-spin"
+          class="c4t4grf soui-spin-fading-circle cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         >
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -539,7 +539,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -554,7 +554,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -569,7 +569,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -584,7 +584,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -599,7 +599,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -614,7 +614,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -629,7 +629,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -644,7 +644,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -659,7 +659,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -674,7 +674,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -689,7 +689,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item c-gw40xi soui-spin-scale-circle"
+            class="cxz6op1 soui-spin-item c-j3weew soui-spin-scale-circle"
           >
             <svg
               height="2.286px"
@@ -705,7 +705,7 @@ exports[`Spin[Base] should render correctly  2`] = `
           </div>
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -719,14 +719,14 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="c86bfiu soui-spin-three-bounce c-as3972 soui-spin-spin"
+          class="c5yj21g soui-spin-three-bounce cxzczp0 soui-spin-spin"
           style="width: 32px; height: auto;"
         >
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               height="8px"
@@ -741,7 +741,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               height="8px"
@@ -756,7 +756,7 @@ exports[`Spin[Base] should render correctly  2`] = `
             </svg>
           </div>
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
           >
             <svg
               height="8px"
@@ -772,7 +772,7 @@ exports[`Spin[Base] should render correctly  2`] = `
           </div>
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -786,35 +786,35 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="c-as102f soui-spin-wave c-as3972 soui-spin-spin"
+          class="cxzf8tn soui-spin-wave cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         >
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="width: 2px; margin-right: 1px;"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="width: 2px; margin-right: 1px;"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="width: 2px; margin-right: 1px;"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="width: 2px; margin-right: 1px;"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="width: 2px; margin-right: 1px;"
           />
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -828,31 +828,31 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+        class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
       >
         <div
-          class="cctqd1n soui-spin-chasing-ring c-as3972 soui-spin-spin"
+          class="calxzk9 soui-spin-chasing-ring cxzczp0 soui-spin-spin"
           style="width: 16px; height: 16px;"
         >
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="background-color: transparent; border-width: 1.6px;"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="background-color: transparent; border-width: 1.6px;"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="background-color: transparent; border-width: 1.6px;"
           />
           <div
-            class="c-as9k71 soui-spin-item"
+            class="cxz6op1 soui-spin-item"
             style="background-color: transparent; border-width: 1.6px;"
           />
         </div>
         <div
-          class="ctfthd7 soui-spin-tip"
+          class="ccjwfzd soui-spin-tip"
         >
           <span
             style="font-size: 12px; line-height: 20px; display: inline-block;"
@@ -874,14 +874,14 @@ exports[`Spin[Mode] should render correctly  1`] = `
     style="width: 100px;"
   >
     <div
-      class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+      class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
     >
       <div
-        class="c-as419c soui-spin-ring c-as3972 soui-spin-spin"
+        class="cxzc7mq soui-spin-ring cxzczp0 soui-spin-spin"
         style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
       />
       <div
-        class="ctfthd7 soui-spin-tip"
+        class="ccjwfzd soui-spin-tip"
       >
         <span
           style="font-size: 12px;"
@@ -895,14 +895,14 @@ exports[`Spin[Mode] should render correctly  1`] = `
     style="width: 100px;"
   >
     <div
-      class="co08555 soui-spin-content c-kfz8mk soui-spin-horizontal"
+      class="cahf3k7 soui-spin-content ckq807q soui-spin-horizontal"
     >
       <div
-        class="c-as419c soui-spin-ring c-as3972 soui-spin-spin"
+        class="cxzc7mq soui-spin-ring cxzczp0 soui-spin-spin"
         style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
       />
       <div
-        class="ctfthd7 soui-spin-tip"
+        class="ccjwfzd soui-spin-tip"
       >
         <span
           style="font-size: 12px;"
@@ -920,14 +920,14 @@ exports[`Spin[Tip] should render correctly  1`] = `
   style="width: 200px;"
 >
   <div
-    class="co08555 soui-spin-content cagciqu soui-spin-vertical"
+    class="cahf3k7 soui-spin-content chg0hk8 soui-spin-vertical"
   >
     <div
-      class="c-as419c soui-spin-ring c-as3972 soui-spin-spin"
+      class="cxzc7mq soui-spin-ring cxzczp0 soui-spin-spin"
       style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
     />
     <div
-      class="ctfthd7 soui-spin-tip"
+      class="ccjwfzd soui-spin-tip"
     >
       <div
         style="font-size: 14px;"
