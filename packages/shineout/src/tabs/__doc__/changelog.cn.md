@@ -1,3 +1,9 @@
+## 3.1.20
+2024-05-30
+### 💅 Style
+
+- 调整 `Tabs` 按钮和 tab 的间距 ([#489](https://github.com/sheinsight/shineout-next/pull/489)) 
+
 ## 3.0.2
 2024-04-18
 
