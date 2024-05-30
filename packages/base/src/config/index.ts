@@ -17,7 +17,7 @@ const processEnv: Record<string, any> = typeof process !== 'undefined' ? process
 export let config: ConfigOption = {
   prefix: 'soui',
   locale: (processEnv.LOCALE as LanType) || 'en-US',
-  delay: 0,
+  delay: 400,
   trim: undefined,
   spin: 'ring',
   direction: 'ltr',
