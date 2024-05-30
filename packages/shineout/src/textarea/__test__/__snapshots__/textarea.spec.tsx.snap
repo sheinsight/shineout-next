@@ -2,11 +2,11 @@
 
 exports[`Textarea[Base] should render correctly  1`] = `
 <div
-  class="c-iyxfkn soui-textarea-wrapper c-dfp8k1 soui-textarea-wrapper-focus"
+  class="croii37 soui-textarea-wrapper cpnd8qt soui-textarea-wrapper-focus"
   data-soui-input-border="true"
 >
   <textarea
-    class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea"
+    class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea"
     placeholder="input something"
     rows="4"
   />
@@ -15,17 +15,17 @@ exports[`Textarea[Base] should render correctly  1`] = `
 
 exports[`Textarea[Base] should render correctly about autosize 1`] = `
 <div
-  class="c-iyxfkn soui-textarea-wrapper"
+  class="croii37 soui-textarea-wrapper"
   data-soui-input-border="true"
 >
   <textarea
-    class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea"
+    class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea"
     placeholder="Please enter content, the height can be automatically adjusted"
     rows="2"
     style="overflow: auto; max-height: 150px;"
   />
   <textarea
-    class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea ctf3y16 soui-textarea-shadow"
+    class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea c-ewgqjk soui-textarea-shadow"
     placeholder="Please enter content, the height can be automatically adjusted"
     rows="2"
   />
@@ -34,16 +34,16 @@ exports[`Textarea[Base] should render correctly about autosize 1`] = `
 
 exports[`Textarea[Base] should render correctly about footer 1`] = `
 <div
-  class="c-iyxfkn soui-textarea-wrapper"
+  class="croii37 soui-textarea-wrapper"
   data-soui-input-border="true"
 >
   <textarea
-    class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea"
+    class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea"
     placeholder="input something"
     rows="3"
   />
   <div
-    class="c-jp8sal soui-textarea-wrapper-padding-box cndmohx soui-textarea-footer"
+    class="c-1qoaz7 soui-textarea-wrapper-padding-box c-kxy02t soui-textarea-footer"
   >
     <div
       style="text-align: end;"
@@ -59,11 +59,11 @@ exports[`Textarea[Base] should render correctly about footer 1`] = `
 
 exports[`Textarea[Base] should render correctly about info 1`] = `
 <div
-  class="c-iyxfkn soui-textarea-wrapper"
+  class="croii37 soui-textarea-wrapper"
   data-soui-input-border="true"
 >
   <textarea
-    class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea"
+    class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea"
     placeholder="input something"
     rows="4"
   />
@@ -72,11 +72,11 @@ exports[`Textarea[Base] should render correctly about info 1`] = `
 
 exports[`Textarea[Base] should render correctly about info by function 1`] = `
 <div
-  class="c-iyxfkn soui-textarea-wrapper"
+  class="croii37 soui-textarea-wrapper"
   data-soui-input-border="true"
 >
   <textarea
-    class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea"
+    class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea"
     placeholder="input something"
     rows="4"
   />
@@ -86,34 +86,34 @@ exports[`Textarea[Base] should render correctly about info by function 1`] = `
 exports[`Textarea[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="c-iyxfkn soui-textarea-wrapper c-d8l8iq soui-textarea-wrapper-small"
+    class="croii37 soui-textarea-wrapper cpuh8s4 soui-textarea-wrapper-small"
     data-soui-input-border="true"
     style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
-      class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea"
+      class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea"
       placeholder="small size"
       rows="3"
     />
   </div>
   <div
-    class="c-iyxfkn soui-textarea-wrapper"
+    class="croii37 soui-textarea-wrapper"
     data-soui-input-border="true"
     style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
-      class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea"
+      class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea"
       placeholder="default size"
       rows="3"
     />
   </div>
   <div
-    class="c-iyxfkn soui-textarea-wrapper c-dcn41a soui-textarea-wrapper-large"
+    class="croii37 soui-textarea-wrapper cpqfd9k soui-textarea-wrapper-large"
     data-soui-input-border="true"
     style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
-      class="c-jp8sal soui-textarea-wrapper-padding-box cvsp112 soui-textarea-wrapper-inner-title-bottom c-21hp3w soui-textarea-textarea"
+      class="c-1qoaz7 soui-textarea-wrapper-padding-box c-4o3b6o soui-textarea-wrapper-inner-title-bottom cniz6wq soui-textarea-textarea"
       placeholder="large size"
       rows="3"
     />

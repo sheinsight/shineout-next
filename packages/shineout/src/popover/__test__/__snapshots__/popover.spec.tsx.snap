@@ -2,17 +2,17 @@
 
 exports[`Popover[Base] should render default 1`] = `
 <div
-  class="cn24rum soui-popover-wrapper c-dn7kwo soui-popover-wrapper-open"
+  class="c-l9fwq4 soui-popover-wrapper c-ixbw1u soui-popover-wrapper-open"
   data-soui-position="bottom"
   dir="ltr"
   style="position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;"
 >
   <div
-    class="c-7jzmx8 soui-popover-arrow"
+    class="c-1os1x2 soui-popover-arrow"
     dir="ltr"
   />
   <div
-    class="cceq3tw soui-popover-content c-8fzoe soui-popover-text"
+    class="c-vwukqu soui-popover-content c-6x3d4k soui-popover-text"
   >
     some Text
   </div>
@@ -21,17 +21,17 @@ exports[`Popover[Base] should render default 1`] = `
 
 exports[`Popover[Snapshot] render snapshot default 1`] = `
 <div
-  class="cn24rum soui-popover-wrapper c-dn7kwo soui-popover-wrapper-open"
+  class="c-l9fwq4 soui-popover-wrapper c-ixbw1u soui-popover-wrapper-open"
   data-soui-position="bottom"
   dir="ltr"
   style="position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;"
 >
   <div
-    class="c-7jzmx8 soui-popover-arrow"
+    class="c-1os1x2 soui-popover-arrow"
     dir="ltr"
   />
   <div
-    class="cceq3tw soui-popover-content c-8fzoe soui-popover-text"
+    class="c-vwukqu soui-popover-content c-6x3d4k soui-popover-text"
   >
     some Text
   </div>
