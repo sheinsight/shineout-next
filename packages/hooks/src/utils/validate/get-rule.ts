@@ -4,6 +4,7 @@ import nullable from './nullable';
 import { isEmpty } from '../is';
 import typeOf from './type';
 import { FormError } from './error';
+import { substitute } from '../string';
 
 export default function getRule<Value>(
   rule: FormItemRule<Value>[number],
@@ -19,7 +20,7 @@ export default function getRule<Value>(
   const { type = props.type, message, regExp, func, required, min, max, args } = rulePo;
 
   po = Object.assign({}, po, { min, max, args });
-  po.message = typeof message === 'function' ? message(po) : message;
+  po.message = typeof message === 'function' ? message(po) : substitute(message!, po);
   let cb: ValidFunc<Value> = () => {};
   if (func) {
     cb = (value, formData, callback) => {
