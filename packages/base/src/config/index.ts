@@ -24,7 +24,6 @@ export let config: ConfigOption = {
   popupContainer: null,
 };
 
-
 const state = create<ConfigOption>(config);
 
 state.subscribe(() => {
@@ -50,7 +49,7 @@ export const useConfig = () => {
 
 export const setConfig = (option: Partial<ConfigOption>) => {
   for (const [key, value] of Object.entries(option)) {
-    if (value && key in config) {
+    if (key in config) {
       const k = key as keyof ConfigOption;
       // @ts-ignore
       state.mutate[k] = value;

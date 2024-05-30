@@ -2,15 +2,15 @@
 
 exports[`Input[Base] should render correctly  1`] = `
 <div
-  class="c-mazrev soui-input-wrapper"
+  class="c-gfs6ep soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
   <div
-    class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+    class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
   >
     <input
-      class="cq802ls soui-input-input"
+      class="c33d3uu soui-input-input"
       placeholder="input something"
       value=""
     />
@@ -20,15 +20,15 @@ exports[`Input[Base] should render correctly  1`] = `
 
 exports[`Input[Base] should render correctly about autoSelect 1`] = `
 <div
-  class="c-mazrev soui-input-wrapper"
+  class="c-gfs6ep soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
   <div
-    class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+    class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
   >
     <input
-      class="cq802ls soui-input-input"
+      class="c33d3uu soui-input-input"
       placeholder="input something"
       value="hello world"
     />
@@ -39,20 +39,20 @@ exports[`Input[Base] should render correctly about autoSelect 1`] = `
 exports[`Input[Base] should render correctly about disabled 1`] = `
 <div>
   <div
-    class="cq6z0md soui-input-group c4glz7l soui-input-group-disabled"
+    class="c32c1vf soui-input-group c-tibxl soui-input-group-disabled"
     data-soui-role="input-group"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="c-mazrev soui-input-wrapper ccki87p soui-input-wrapper-disabled"
+      class="c-gfs6ep soui-input-wrapper c-jdjcgl soui-input-wrapper-disabled"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           disabled=""
           placeholder="first name"
           value=""
@@ -63,14 +63,14 @@ exports[`Input[Base] should render correctly about disabled 1`] = `
       -
     </span>
     <div
-      class="c-mazrev soui-input-wrapper ccki87p soui-input-wrapper-disabled"
+      class="c-gfs6ep soui-input-wrapper c-jdjcgl soui-input-wrapper-disabled"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           disabled=""
           placeholder="last name"
           value=""
@@ -79,15 +79,15 @@ exports[`Input[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper ccki87p soui-input-wrapper-disabled"
+    class="c-gfs6ep soui-input-wrapper c-jdjcgl soui-input-wrapper-disabled"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         disabled=""
         placeholder="disabled input"
         value=""
@@ -100,20 +100,20 @@ exports[`Input[Base] should render correctly about disabled 1`] = `
 exports[`Input[Base] should render correctly about enter 1`] = `
 <div>
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="c-mazrev soui-input-wrapper"
+      class="c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           placeholder="onKeyUp"
           value=""
         />
@@ -126,20 +126,20 @@ exports[`Input[Base] should render correctly about enter 1`] = `
     </b>
   </div>
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="c-mazrev soui-input-wrapper"
+      class="c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           placeholder="onKeyDown"
           value=""
         />
@@ -152,20 +152,20 @@ exports[`Input[Base] should render correctly about enter 1`] = `
     </b>
   </div>
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="c-mazrev soui-input-wrapper"
+      class="c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           placeholder="onEnterPress"
           value=""
         />
@@ -183,7 +183,7 @@ exports[`Input[Base] should render correctly about enter 1`] = `
 exports[`Input[Base] should render correctly about group 1`] = `
 <div>
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
@@ -192,14 +192,14 @@ exports[`Input[Base] should render correctly about group 1`] = `
       http://
     </b>
     <div
-      class="c-mazrev soui-input-wrapper"
+      class="c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           placeholder="email"
           value=""
         />
@@ -207,20 +207,20 @@ exports[`Input[Base] should render correctly about group 1`] = `
     </div>
   </div>
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="c-mazrev soui-input-wrapper"
+      class="c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           placeholder="email"
           value=""
         />
@@ -231,7 +231,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
     </b>
   </div>
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
@@ -240,14 +240,14 @@ exports[`Input[Base] should render correctly about group 1`] = `
       http://
     </b>
     <div
-      class="c-mazrev soui-input-wrapper"
+      class="c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           placeholder="email"
           value=""
         />
@@ -265,34 +265,34 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
   style="width: 300px; display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-qnp891 soui-input-wrapper-inner-title c-mazrev soui-input-wrapper c-ftinea soui-input-wrapper-small"
+    class="cty1mz5 soui-input-wrapper-inner-title c-gfs6ep soui-input-wrapper c-4j7olk soui-input-wrapper-small"
     data-soui-input-border="true"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <div
-        class="c1tywhu soui-inner-title-wrapper cx2u59h soui-inner-title-wrapper-small"
+        class="c-3g5enc soui-inner-title-wrapper cc15nwv soui-inner-title-wrapper-small"
       >
         <div
-          class="ccvxbif soui-inner-title-title c9br610 soui-inner-title-top"
+          class="c-wkpug3 soui-inner-title-title c-yztijq soui-inner-title-top"
         >
           Small title
         </div>
         <div
-          class="cctrnsm soui-inner-title-place"
+          class="c-wmvi5w soui-inner-title-place"
         >
           <div
-            class="ccvxbif soui-inner-title-title"
+            class="c-wkpug3 soui-inner-title-title"
           >
             Small title
           </div>
         </div>
         <div
-          class="c-8tfriw soui-inner-title-content"
+          class="c-e3k2o2 soui-inner-title-content"
         >
           <input
-            class="cq802ls soui-input-input"
+            class="c33d3uu soui-input-input"
             value=""
           />
         </div>
@@ -300,34 +300,34 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
     </div>
   </div>
   <div
-    class="c-qnp891 soui-input-wrapper-inner-title c-mazrev soui-input-wrapper"
+    class="cty1mz5 soui-input-wrapper-inner-title c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <div
-        class="c1tywhu soui-inner-title-wrapper"
+        class="c-3g5enc soui-inner-title-wrapper"
       >
         <div
-          class="ccvxbif soui-inner-title-title c9br610 soui-inner-title-top"
+          class="c-wkpug3 soui-inner-title-title c-yztijq soui-inner-title-top"
         >
           Medium Title
         </div>
         <div
-          class="cctrnsm soui-inner-title-place"
+          class="c-wmvi5w soui-inner-title-place"
         >
           <div
-            class="ccvxbif soui-inner-title-title"
+            class="c-wkpug3 soui-inner-title-title"
           >
             Medium Title
           </div>
         </div>
         <div
-          class="c-8tfriw soui-inner-title-content"
+          class="c-e3k2o2 soui-inner-title-content"
         >
           <input
-            class="cq802ls soui-input-input"
+            class="c33d3uu soui-input-input"
             value=""
           />
         </div>
@@ -335,34 +335,34 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
     </div>
   </div>
   <div
-    class="c-qnp891 soui-input-wrapper-inner-title c-mazrev soui-input-wrapper c-fxkiwu soui-input-wrapper-large"
+    class="cty1mz5 soui-input-wrapper-inner-title c-gfs6ep soui-input-wrapper c-4n9k44 soui-input-wrapper-large"
     data-soui-input-border="true"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <div
-        class="c1tywhu soui-inner-title-wrapper cwys9qx soui-inner-title-wrapper-large"
+        class="c-3g5enc soui-inner-title-wrapper cbx3seb soui-inner-title-wrapper-large"
       >
         <div
-          class="ccvxbif soui-inner-title-title c9br610 soui-inner-title-top"
+          class="c-wkpug3 soui-inner-title-title c-yztijq soui-inner-title-top"
         >
           Large Title
         </div>
         <div
-          class="cctrnsm soui-inner-title-place"
+          class="c-wmvi5w soui-inner-title-place"
         >
           <div
-            class="ccvxbif soui-inner-title-title"
+            class="c-wkpug3 soui-inner-title-title"
           >
             Large Title
           </div>
         </div>
         <div
-          class="c-8tfriw soui-inner-title-content"
+          class="c-e3k2o2 soui-inner-title-content"
         >
           <input
-            class="cq802ls soui-input-input"
+            class="c33d3uu soui-input-input"
             value=""
           />
         </div>
@@ -377,7 +377,7 @@ exports[`Input[Base] should render correctly about limit 1`] = `
   style="width: 300px;"
 >
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="margin-bottom: 24px;"
@@ -388,21 +388,21 @@ exports[`Input[Base] should render correctly about limit 1`] = `
       min
     </b>
     <div
-      class="c4k3xnm soui-input-wrapper-number c-mazrev soui-input-wrapper"
+      class="c-q0dhk soui-input-wrapper-number c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           placeholder="100"
           type="text"
           value=""
         />
       </div>
       <div
-        class="c-1a94a9 soui-input-number-step"
+        class="c-pnx8lj soui-input-number-step"
       >
         <span>
           <svg
@@ -432,7 +432,7 @@ exports[`Input[Base] should render correctly about limit 1`] = `
     </div>
   </div>
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="margin-bottom: 24px;"
@@ -443,21 +443,21 @@ exports[`Input[Base] should render correctly about limit 1`] = `
       max
     </b>
     <div
-      class="c4k3xnm soui-input-wrapper-number c-mazrev soui-input-wrapper"
+      class="c-q0dhk soui-input-wrapper-number c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           placeholder="200"
           type="text"
           value=""
         />
       </div>
       <div
-        class="c-1a94a9 soui-input-number-step"
+        class="c-pnx8lj soui-input-number-step"
       >
         <span>
           <svg
@@ -487,7 +487,7 @@ exports[`Input[Base] should render correctly about limit 1`] = `
     </div>
   </div>
   <div
-    class="cq6z0md soui-input-group"
+    class="c32c1vf soui-input-group"
     data-soui-role="input-group"
     dir="ltr"
     style="margin-bottom: 24px;"
@@ -498,14 +498,14 @@ exports[`Input[Base] should render correctly about limit 1`] = `
       maxLength
     </b>
     <div
-      class="c-mazrev soui-input-wrapper"
+      class="c-gfs6ep soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
-        class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+        class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
       >
         <input
-          class="cq802ls soui-input-input"
+          class="c33d3uu soui-input-input"
           maxlength="5"
           placeholder="5"
           value=""
@@ -521,15 +521,15 @@ exports[`Input[Base] should render correctly about number 1`] = `
   style="width: 300px;"
 >
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="digits undefined"
         type="text"
         value=""
@@ -537,15 +537,15 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="digits 0"
         type="text"
         value=""
@@ -553,15 +553,15 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="digits 1"
         type="text"
         value=""
@@ -569,15 +569,15 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="digits 2"
         type="text"
         value=""
@@ -585,15 +585,15 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="non-negative"
         type="text"
         value=""
@@ -601,15 +601,15 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="integerLimit 3"
         type="text"
         value=""
@@ -617,15 +617,15 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="digits 3; autoFix"
         type="text"
         value=""
@@ -633,15 +633,15 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="positive;integerLimit 3"
         type="text"
         value=""
@@ -649,21 +649,21 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="c4k3xnm soui-input-wrapper-number c-mazrev soui-input-wrapper"
+    class="c-q0dhk soui-input-wrapper-number c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="positive; integerLimit 3"
         type="text"
         value=""
       />
     </div>
     <div
-      class="c-1a94a9 soui-input-number-step"
+      class="c-pnx8lj soui-input-number-step"
     >
       <span>
         <svg
@@ -696,21 +696,21 @@ exports[`Input[Base] should render correctly about number 1`] = `
 
 exports[`Input[Base] should render correctly about number 2`] = `
 <div
-  class="c4k3xnm soui-input-wrapper-number c-mazrev soui-input-wrapper"
+  class="c-q0dhk soui-input-wrapper-number c-gfs6ep soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
   <div
-    class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+    class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
   >
     <input
-      class="cq802ls soui-input-input"
+      class="c33d3uu soui-input-input"
       type="text"
       value=""
     />
   </div>
   <div
-    class="c-1a94a9 soui-input-number-step"
+    class="c-pnx8lj soui-input-number-step"
   >
     <span>
       <svg
@@ -742,27 +742,27 @@ exports[`Input[Base] should render correctly about number 2`] = `
 
 exports[`Input[Base] should render correctly about password 1`] = `
 <form
-  class="cuyhg9r soui-form-wrapper"
+  class="co9u2tl soui-form-wrapper"
 >
   <div
-    class="c-mazrev soui-input-wrapper c2bhdv9 soui-input-password"
+    class="c-gfs6ep soui-input-wrapper c-swbowx soui-input-password"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="input password"
         type="text"
         value="•••••••••••••••••••••••"
       />
       <div
-        class="c-imylcw soui-input-clear-wrapper"
+        class="c-7cnmk6 soui-input-clear-wrapper"
       >
         <span
-          class="cq4nsfn soui-input-clear"
+          class="c300top soui-input-clear"
           dir="ltr"
         >
           <svg
@@ -783,7 +783,7 @@ exports[`Input[Base] should render correctly about password 1`] = `
         </span>
       </div>
       <span
-        class="c45r6ll soui-input-password-toggle"
+        class="c-hhqawd soui-input-password-toggle"
       >
         <svg
           aria-hidden="true"
@@ -806,45 +806,45 @@ exports[`Input[Base] should render correctly about size 1`] = `
   style="width: 100%; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;"
 >
   <div
-    class="c-mazrev soui-input-wrapper c-ftinea soui-input-wrapper-small"
+    class="c-gfs6ep soui-input-wrapper c-4j7olk soui-input-wrapper-small"
     data-soui-input-border="true"
     style="width: 240px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="small size"
         value=""
       />
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper"
+    class="c-gfs6ep soui-input-wrapper"
     data-soui-input-border="true"
     style="width: 240px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="default size"
         value=""
       />
     </div>
   </div>
   <div
-    class="c-mazrev soui-input-wrapper c-fxkiwu soui-input-wrapper-large"
+    class="c-gfs6ep soui-input-wrapper c-4n9k44 soui-input-wrapper-large"
     data-soui-input-border="true"
     style="width: 240px;"
   >
     <div
-      class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+      class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
     >
       <input
-        class="cq802ls soui-input-input"
+        class="c33d3uu soui-input-input"
         placeholder="large size"
         value=""
       />
@@ -855,15 +855,15 @@ exports[`Input[Base] should render correctly about size 1`] = `
 
 exports[`Input[Base] should render correctly about tip 1`] = `
 <div
-  class="c-mazrev soui-input-wrapper"
+  class="c-gfs6ep soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
   <div
-    class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+    class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
   >
     <input
-      class="cq802ls soui-input-input"
+      class="c33d3uu soui-input-input"
       placeholder="input something"
       value=""
     />
@@ -873,15 +873,15 @@ exports[`Input[Base] should render correctly about tip 1`] = `
 
 exports[`Input[Base] should render correctly about trim 1`] = `
 <div
-  class="c-mazrev soui-input-wrapper"
+  class="c-gfs6ep soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
   <div
-    class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+    class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
   >
     <input
-      class="cq802ls soui-input-input"
+      class="c33d3uu soui-input-input"
       placeholder="input something"
       value=""
     />
@@ -891,15 +891,15 @@ exports[`Input[Base] should render correctly about trim 1`] = `
 
 exports[`Input[Base] should render correctly about underline 1`] = `
 <div
-  class="c-mazrev soui-input-wrapper ckoa9g3 soui-input-wrapper-underline"
+  class="c-gfs6ep soui-input-wrapper cosi871 soui-input-wrapper-underline"
   data-soui-input-border="true"
   style="width: 300px;"
 >
   <div
-    class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+    class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
   >
     <input
-      class="cq802ls soui-input-input"
+      class="c33d3uu soui-input-input"
       placeholder="Underline"
       value=""
     />
@@ -909,15 +909,15 @@ exports[`Input[Base] should render correctly about underline 1`] = `
 
 exports[`Input[Base] should render correctly about validate 1`] = `
 <div
-  class="c-mazrev soui-input-wrapper"
+  class="c-gfs6ep soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
   <div
-    class="chhkk7u soui-input-wrapper-inner-title-top c-wlk0ze soui-input-wrapper-inner-title-bottom cwey0k3 soui-input-wrapper-padding-box c-wyeffl soui-input-content"
+    class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
   >
     <input
-      class="cq802ls soui-input-input"
+      class="c33d3uu soui-input-input"
       placeholder="email"
       value=""
     />

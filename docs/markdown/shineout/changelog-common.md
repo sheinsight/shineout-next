@@ -1,3 +1,8 @@
+## 3.1.21
+2024-05-31
+### 🐞 BugFix
+- `setConfig` 设置 `delay: 0` 无效的问题  ([#491](https://github.com/sheinsight/shineout-next/pull/491))
+
 ## 3.1.20
 2024-05-30
 ### 🐞 BugFix
