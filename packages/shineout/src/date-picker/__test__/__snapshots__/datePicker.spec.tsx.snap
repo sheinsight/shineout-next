@@ -79,7 +79,7 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
             <span
               class="c-8mxd4s soui-datePicker-result-text-padding"
             >
-              2024-05-31 10:54:50
+              2024-05-31 11:45:53
             </span>
             <div
               class="cxf6mnm soui-datePicker-result-text-bg"
@@ -235,7 +235,7 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
             <span
               class="c-8mxd4s soui-datePicker-result-text-padding"
             >
-              10:54:50
+              11:45:53
             </span>
             <div
               class="cxf6mnm soui-datePicker-result-text-bg"
@@ -849,7 +849,7 @@ exports[`Alert[Base] should render correctly about disable one 1`] = `
               <input
                 autocomplete="off"
                 placeholder="Please select date"
-                value="2024-05-31 10:54:50"
+                value="2024-05-31 11:45:53"
               />
             </span>
             <div
@@ -1060,7 +1060,7 @@ exports[`Alert[Base] should render correctly about disable two 1`] = `
             <span
               class="c-8mxd4s soui-datePicker-result-text-padding"
             >
-              2024-05-31 10:54:50
+              2024-05-31 11:45:53
             </span>
             <div
               class="cxf6mnm soui-datePicker-result-text-bg"
@@ -1132,7 +1132,7 @@ exports[`Alert[Base] should render correctly about format 1`] = `
             <span
               class="c-8mxd4s soui-datePicker-result-text-padding"
             >
-              2024-5-31 10:54
+              2024-5-31 11:45
             </span>
             <div
               class="cxf6mnm soui-datePicker-result-text-bg"
@@ -1314,7 +1314,7 @@ exports[`Alert[Base] should render correctly about format 1`] = `
           class="c-aveut5 soui-input-input"
           disabled=""
           placeholder="值"
-          value="2024-05-31 10:54:50"
+          value="2024-05-31 11:45:53"
         />
       </div>
     </div>
@@ -2959,7 +2959,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
             <span
               class="c-8mxd4s soui-datePicker-result-text-padding"
             >
-              10:54:50
+              11:45:53
             </span>
             <div
               class="cxf6mnm soui-datePicker-result-text-bg"
@@ -3023,7 +3023,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
             <span
               class="c-8mxd4s soui-datePicker-result-text-padding"
             >
-              10:54
+              11:45
             </span>
             <div
               class="cxf6mnm soui-datePicker-result-text-bg"
@@ -3087,7 +3087,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
             <span
               class="c-8mxd4s soui-datePicker-result-text-padding"
             >
-              10:54 AM
+              11:45 AM
             </span>
             <div
               class="cxf6mnm soui-datePicker-result-text-bg"
@@ -3156,7 +3156,7 @@ exports[`Alert[Base] should render correctly about timezone 1`] = `
             <span
               class="c-8mxd4s soui-datePicker-result-text-padding"
             >
-              2024-05-31 10:54:50
+              2024-05-31 11:45:53
             </span>
             <div
               class="cxf6mnm soui-datePicker-result-text-bg"

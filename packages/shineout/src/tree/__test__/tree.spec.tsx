@@ -316,7 +316,7 @@ describe('Tree[Base]', () => {
       },
       { timeout: 2000 },
     );
-    await(() => classTest(treeRootNode[1], leaf, false));
+    classTest(treeRootNode[1], leaf, false)
   });
 });
 describe('Tree[Disabled]', () => {

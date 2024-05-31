@@ -182,13 +182,13 @@ describe('Message[Base]', () => {
     fireEvent.click(container.querySelector('button')!);
     await waitFor(async () => {
       await delay(200);
-      classContentTest(document.querySelector(item)!, 'test');
-      fireEvent.click(document.querySelector(closeClassName)!);
     });
+    waitFor(() => classContentTest(document.querySelector(item)!, 'test'))
+    fireEvent.click(document.querySelector(closeClassName)!);
     await waitFor(async () => {
       await delay(200);
-      expect(document.querySelector(wrapper)).not.toBeInTheDocument();
     });
+    waitFor(() => expect(document.querySelector(wrapper)).not.toBeInTheDocument());
   });
   test('should render when set duration', async () => {
     const { container, rerender } = render(
