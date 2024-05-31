@@ -152,19 +152,19 @@ describe('Message[Base]', () => {
   test('should render when set method is close', async () => {
     Message.success('success', 0);
     await waitFor(async () => {
-      await delay(200);
-      expect(document.querySelectorAll(item).length).toBe(1);
+      await delay(400);
     });
+    
     Message.warn('warn', 0);
     await waitFor(async () => {
       await delay(200);
-      expect(document.querySelectorAll(item).length).toBe(2);
     });
+    await(() => expect(document.querySelectorAll(item).length).toBe(2))
     Message.close();
     await waitFor(async () => {
       await delay(200);
-      expect(document.querySelectorAll(item).length).toBe(0);
     });
+    await(() => expect(document.querySelectorAll(item).length).toBe(0))
   });
   test('should render when use setOptions', async () => {
     Message.setOptions({

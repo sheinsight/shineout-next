@@ -3,22 +3,22 @@
 exports[`Card[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-wu60hv soui-card-wrapper c9eqmn1 soui-card-wrapper-split"
+    class="cvfjios soui-card-wrapper c-oxz6ci soui-card-wrapper-split"
     style="width: 360px;"
   >
     <div
-      class="c-3rzndp soui-card-header"
+      class="c-hqrm1o soui-card-header"
     >
       <div
-        class="c-nkkmwa soui-card-header-content"
+        class="c-n23ruz soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="c2iulf1 soui-card-header-extra"
+        class="c1eyeoc soui-card-header-extra"
       >
         <button
-          class="c25800a soui-button-primary c9j4dnu soui-button-button c-x8qcpn soui-button-text"
+          class="c-vk6maf soui-button-primary cd0yd2j soui-button-button cntlqli soui-button-text"
           dir="ltr"
           type="button"
         >
@@ -29,12 +29,12 @@ exports[`Card[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="cid33ly soui-card-right c-4kbojz soui-card-footer"
+      class="c1vgdnp soui-card-right c-ij3n7y soui-card-footer"
     >
       <div
         style="display: flex;"
@@ -111,19 +111,19 @@ exports[`Card[Base] should render correctly  1`] = `
 
 exports[`Card[Base] should render correctly about accordion 1`] = `
 <div
-  class="clj2436 soui-card-accordion"
+  class="c-c6ci7j soui-card-accordion"
 >
   <div
-    class="c-wu60hv soui-card-wrapper c-ydl1yr soui-card-wrapper-collapsible c-e071gm soui-card-wrapper-collapsed c9eqmn1 soui-card-wrapper-split c-6zsdy2 soui-card-wrapper-in-accordion"
+    class="cvfjios soui-card-wrapper c-skq702 soui-card-wrapper-collapsible c-2jjgrp soui-card-wrapper-collapsed c-oxz6ci soui-card-wrapper-split c-16xizd soui-card-wrapper-in-accordion"
   >
     <div
-      class="c-3rzndp soui-card-header"
+      class="c-hqrm1o soui-card-header"
     >
       <div
-        class="c-v0d0cn soui-card-indicator"
+        class="c6bcfbs soui-card-indicator"
       >
         <div
-          class="cwd3v2q soui-card-indicator-icon"
+          class="cwvkq41 soui-card-indicator-icon"
           dir="ltr"
         >
           <svg
@@ -139,19 +139,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-nkkmwa soui-card-header-content"
+        class="c-n23ruz soui-card-header-content"
       >
         Card title 1
       </div>
     </div>
     <div
-      class="c-s6d2gr soui-card-body-collapse"
+      class="c8i16iu soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
       style="display: none; height: 0px; overflow: hidden;"
     >
       <div
-        class="c2vj62g soui-card-body"
+        class="cp99aih soui-card-body"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -159,16 +159,16 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     </div>
   </div>
   <div
-    class="c-wu60hv soui-card-wrapper c-ydl1yr soui-card-wrapper-collapsible c9eqmn1 soui-card-wrapper-split c-6zsdy2 soui-card-wrapper-in-accordion"
+    class="cvfjios soui-card-wrapper c-skq702 soui-card-wrapper-collapsible c-oxz6ci soui-card-wrapper-split c-16xizd soui-card-wrapper-in-accordion"
   >
     <div
-      class="c-3rzndp soui-card-header"
+      class="c-hqrm1o soui-card-header"
     >
       <div
-        class="c-v0d0cn soui-card-indicator"
+        class="c6bcfbs soui-card-indicator"
       >
         <div
-          class="cwd3v2q soui-card-indicator-icon"
+          class="cwvkq41 soui-card-indicator-icon"
           dir="ltr"
         >
           <svg
@@ -184,19 +184,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-nkkmwa soui-card-header-content"
+        class="c-n23ruz soui-card-header-content"
       >
         Card title 2
       </div>
     </div>
     <div
-      class="c-s6d2gr soui-card-body-collapse"
+      class="c8i16iu soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
       style="display: block; height: 0px; overflow: hidden;"
     >
       <div
-        class="c2vj62g soui-card-body"
+        class="cp99aih soui-card-body"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -204,16 +204,16 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     </div>
   </div>
   <div
-    class="c-wu60hv soui-card-wrapper c-ydl1yr soui-card-wrapper-collapsible c-e071gm soui-card-wrapper-collapsed c9eqmn1 soui-card-wrapper-split c-6zsdy2 soui-card-wrapper-in-accordion"
+    class="cvfjios soui-card-wrapper c-skq702 soui-card-wrapper-collapsible c-2jjgrp soui-card-wrapper-collapsed c-oxz6ci soui-card-wrapper-split c-16xizd soui-card-wrapper-in-accordion"
   >
     <div
-      class="c-3rzndp soui-card-header"
+      class="c-hqrm1o soui-card-header"
     >
       <div
-        class="c-v0d0cn soui-card-indicator"
+        class="c6bcfbs soui-card-indicator"
       >
         <div
-          class="cwd3v2q soui-card-indicator-icon"
+          class="cwvkq41 soui-card-indicator-icon"
           dir="ltr"
         >
           <svg
@@ -229,19 +229,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-nkkmwa soui-card-header-content"
+        class="c-n23ruz soui-card-header-content"
       >
         Card title 3
       </div>
     </div>
     <div
-      class="c-s6d2gr soui-card-body-collapse"
+      class="c8i16iu soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
       style="display: none; height: 0px; overflow: hidden;"
     >
       <div
-        class="c2vj62g soui-card-body"
+        class="cp99aih soui-card-body"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -256,22 +256,22 @@ exports[`Card[Base] should render correctly about border 1`] = `
   style="padding: 32px; background: rgb(244, 245, 248);"
 >
   <div
-    class="c-wu60hv soui-card-wrapper c9eqmn1 soui-card-wrapper-split"
+    class="cvfjios soui-card-wrapper c-oxz6ci soui-card-wrapper-split"
     style="width: 360px;"
   >
     <div
-      class="c-3rzndp soui-card-header"
+      class="c-hqrm1o soui-card-header"
     >
       <div
-        class="c-nkkmwa soui-card-header-content"
+        class="c-n23ruz soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="c2iulf1 soui-card-header-extra"
+        class="c1eyeoc soui-card-header-extra"
       >
         <button
-          class="c25800a soui-button-primary c9j4dnu soui-button-button c-x8qcpn soui-button-text"
+          class="c-vk6maf soui-button-primary cd0yd2j soui-button-button cntlqli soui-button-text"
           dir="ltr"
           type="button"
         >
@@ -282,7 +282,7 @@ exports[`Card[Base] should render correctly about border 1`] = `
       </div>
     </div>
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
@@ -292,16 +292,16 @@ exports[`Card[Base] should render correctly about border 1`] = `
 
 exports[`Card[Base] should render correctly about collpase 1`] = `
 <div
-  class="c-wu60hv soui-card-wrapper c-ydl1yr soui-card-wrapper-collapsible"
+  class="cvfjios soui-card-wrapper c-skq702 soui-card-wrapper-collapsible"
 >
   <div
-    class="c-3rzndp soui-card-header"
+    class="c-hqrm1o soui-card-header"
   >
     <div
-      class="c-v0d0cn soui-card-indicator"
+      class="c6bcfbs soui-card-indicator"
     >
       <div
-        class="cwd3v2q soui-card-indicator-icon"
+        class="cwvkq41 soui-card-indicator-icon"
         dir="ltr"
       >
         <svg
@@ -317,56 +317,56 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
       </div>
     </div>
     <div
-      class="c-nkkmwa soui-card-header-content"
+      class="c-n23ruz soui-card-header-content"
     >
       Card title
     </div>
   </div>
   <div
-    class="c-s6d2gr soui-card-body-collapse"
+    class="c8i16iu soui-card-body-collapse"
     data-sheinx-animation-duration="fast"
     data-sheinx-animation-type="collapse"
     style="display: block; height: 0px; overflow: hidden;"
   >
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       <div>
         <div
-          class="c-i8ew9b soui-datePicker-wrapper"
+          class="c-hpy180 soui-datePicker-wrapper"
           data-soui-input-border="true"
           data-soui-type="date"
         >
           <div
-            class="c-hc8svg soui-datePicker-result-wrapper c-f9mk1h soui-datePicker-wrapper-padding-box c-h007dq soui-datePicker-wrapper-inner-title-top c-9v92yq soui-datePicker-wrapper-inner-title-bottom"
+            class="ckg3r1v soui-datePicker-result-wrapper cgzj59m soui-datePicker-wrapper-padding-box c-w9cil9 soui-datePicker-wrapper-inner-title-top c-7tdrfn soui-datePicker-wrapper-inner-title-bottom"
             tabindex="1"
           >
             <div
-              class="cocmh1b soui-datePicker-result"
+              class="c-a03by8 soui-datePicker-result"
             >
               <div
-                class="c-16353t soui-datePicker-result-text-wrapper"
+                class="cv32k7a soui-datePicker-result-text-wrapper"
               >
                 <div
-                  class="c-qcwh2s soui-datePicker-result-text"
+                  class="c-ew8wdv soui-datePicker-result-text"
                 >
                   <span
-                    class="cu50zj9 soui-datePicker-result-text-padding"
+                    class="c-8mxd4s soui-datePicker-result-text-padding"
                   >
                     <span
-                      class="c-gth3hr soui-datePicker-placeholder"
+                      class="c-gmqjww soui-datePicker-placeholder"
                     >
                       Please select date
                     </span>
                   </span>
                   <div
-                    class="crmbrox soui-datePicker-result-text-bg"
+                    class="cxf6mnm soui-datePicker-result-text-bg"
                   />
                 </div>
               </div>
             </div>
             <div
-              class="cu3qd97 soui-datePicker-icon"
+              class="c-kca2as soui-datePicker-icon"
             >
               <svg
                 aria-hidden="true"
@@ -391,42 +391,42 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
 
 exports[`Card[Base] should render correctly about form 1`] = `
 <div
-  class="c-wu60hv soui-card-wrapper"
+  class="cvfjios soui-card-wrapper"
   style="width: 360px;"
 >
   <div
-    class="c-3rzndp soui-card-header cne6vn9 soui-card-simple-header"
+    class="c-hqrm1o soui-card-header c-ayixca soui-card-simple-header"
   >
     Card title
   </div>
   <div
-    class="c2vj62g soui-card-body"
+    class="cp99aih soui-card-body"
   >
     <form
-      class="co9u2tl soui-form-wrapper"
+      class="chifk14 soui-form-wrapper"
     >
       <div
-        class="cv4pkil soui-form-item-wrapper c2jtvr2 soui-form-item-wrapper-label-top"
+        class="c-3808gy soui-form-item-wrapper c-xk9w5d soui-form-item-wrapper-label-top"
         data-soui-status="default"
       >
         <div
-          class="cyirtoe soui-form-item-label"
+          class="c-fx8lvl soui-form-item-label"
         >
           User name :
         </div>
         <div
-          class="ckhb65j soui-form-item-control"
+          class="c-dvemu0 soui-form-item-control"
           data-soui-role="form-control"
         >
           <div
-            class="c-gfs6ep soui-input-wrapper"
+            class="c-cxy700 soui-input-wrapper"
             data-soui-input-border="true"
           >
             <div
-              class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
+              class="c-imf5r1 soui-input-wrapper-inner-title-top clt0hi5 soui-input-wrapper-inner-title-bottom cnsforu soui-input-wrapper-padding-box c-nlcv0q soui-input-content"
             >
               <input
-                class="c33d3uu soui-input-input"
+                class="c-aveut5 soui-input-input"
                 value="user"
               />
             </div>
@@ -434,27 +434,27 @@ exports[`Card[Base] should render correctly about form 1`] = `
         </div>
       </div>
       <div
-        class="cv4pkil soui-form-item-wrapper c2jtvr2 soui-form-item-wrapper-label-top"
+        class="c-3808gy soui-form-item-wrapper c-xk9w5d soui-form-item-wrapper-label-top"
         data-soui-status="default"
       >
         <div
-          class="cyirtoe soui-form-item-label"
+          class="c-fx8lvl soui-form-item-label"
         >
           Email :
         </div>
         <div
-          class="ckhb65j soui-form-item-control"
+          class="c-dvemu0 soui-form-item-control"
           data-soui-role="form-control"
         >
           <div
-            class="c-gfs6ep soui-input-wrapper"
+            class="c-cxy700 soui-input-wrapper"
             data-soui-input-border="true"
           >
             <div
-              class="czg51j8 soui-input-wrapper-inner-title-top cgcogm4 soui-input-wrapper-inner-title-bottom chzktt5 soui-input-wrapper-padding-box c-r36uff soui-input-content"
+              class="c-imf5r1 soui-input-wrapper-inner-title-top clt0hi5 soui-input-wrapper-inner-title-bottom cnsforu soui-input-wrapper-padding-box c-nlcv0q soui-input-content"
             >
               <input
-                class="c33d3uu soui-input-input"
+                class="c-aveut5 soui-input-input"
                 value="test@example.com"
               />
             </div>
@@ -464,10 +464,10 @@ exports[`Card[Base] should render correctly about form 1`] = `
     </form>
   </div>
   <div
-    class="cid33ly soui-card-right c-4kbojz soui-card-footer"
+    class="c1vgdnp soui-card-right c-ij3n7y soui-card-footer"
   >
     <button
-      class="c25800a soui-button-primary c9j4dnu soui-button-button"
+      class="c-vk6maf soui-button-primary cd0yd2j soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -484,22 +484,22 @@ exports[`Card[Base] should render correctly about hover 1`] = `
   style="display: flex; flex-wrap: wrap; margin: -16px;"
 >
   <div
-    class="c-wu60hv soui-card-wrapper c98ogfz soui-card-wrapper-hover c9eqmn1 soui-card-wrapper-split"
+    class="cvfjios soui-card-wrapper c-p41cjk soui-card-wrapper-hover c-oxz6ci soui-card-wrapper-split"
     style="width: 360px; display: inline-flex; margin: 16px;"
   >
     <div
-      class="c-3rzndp soui-card-header"
+      class="c-hqrm1o soui-card-header"
     >
       <div
-        class="c-nkkmwa soui-card-header-content"
+        class="c-n23ruz soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="c2iulf1 soui-card-header-extra"
+        class="c1eyeoc soui-card-header-extra"
       >
         <button
-          class="c25800a soui-button-primary c9j4dnu soui-button-button c-x8qcpn soui-button-text"
+          class="c-vk6maf soui-button-primary cd0yd2j soui-button-button cntlqli soui-button-text"
           dir="ltr"
           type="button"
         >
@@ -510,12 +510,12 @@ exports[`Card[Base] should render correctly about hover 1`] = `
       </div>
     </div>
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="cid33ly soui-card-right c-4kbojz soui-card-footer"
+      class="c1vgdnp soui-card-right c-ij3n7y soui-card-footer"
     >
       <div
         style="display: flex;"
@@ -588,22 +588,22 @@ exports[`Card[Base] should render correctly about hover 1`] = `
     </div>
   </div>
   <div
-    class="custom-card-customCard-0-2-1 c-wu60hv soui-card-wrapper c98ogfz soui-card-wrapper-hover c9eqmn1 soui-card-wrapper-split"
+    class="custom-card-customCard-0-2-1 cvfjios soui-card-wrapper c-p41cjk soui-card-wrapper-hover c-oxz6ci soui-card-wrapper-split"
     style="width: 360px; display: inline-flex; margin: 16px;"
   >
     <div
-      class="c-3rzndp soui-card-header"
+      class="c-hqrm1o soui-card-header"
     >
       <div
-        class="c-nkkmwa soui-card-header-content"
+        class="c-n23ruz soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="c2iulf1 soui-card-header-extra"
+        class="c1eyeoc soui-card-header-extra"
       >
         <button
-          class="c25800a soui-button-primary c9j4dnu soui-button-button c-x8qcpn soui-button-text"
+          class="c-vk6maf soui-button-primary cd0yd2j soui-button-button cntlqli soui-button-text"
           dir="ltr"
           type="button"
         >
@@ -614,12 +614,12 @@ exports[`Card[Base] should render correctly about hover 1`] = `
       </div>
     </div>
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="cid33ly soui-card-right c-4kbojz soui-card-footer"
+      class="c1vgdnp soui-card-right c-ij3n7y soui-card-footer"
     >
       <div
         style="display: flex;"
@@ -697,31 +697,31 @@ exports[`Card[Base] should render correctly about hover 1`] = `
 exports[`Card[Base] should render correctly about shadow 1`] = `
 <div>
   <div
-    class="c-wu60hv soui-card-wrapper"
+    class="cvfjios soui-card-wrapper"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       Never
     </div>
   </div>
   <div
-    class="c-wu60hv soui-card-wrapper c98ogfz soui-card-wrapper-hover"
+    class="cvfjios soui-card-wrapper c-p41cjk soui-card-wrapper-hover"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       Hover
     </div>
   </div>
   <div
-    class="c-wu60hv soui-card-wrapper c7fvsl9 soui-card-wrapper-shadow"
+    class="cvfjios soui-card-wrapper c7ycnmk soui-card-wrapper-shadow"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       Always
     </div>
@@ -732,22 +732,22 @@ exports[`Card[Base] should render correctly about shadow 1`] = `
 exports[`Card[Base] should render correctly about split 1`] = `
 <div>
   <div
-    class="c-wu60hv soui-card-wrapper"
+    class="cvfjios soui-card-wrapper"
     style="width: 360px;"
   >
     <div
-      class="c-3rzndp soui-card-header"
+      class="c-hqrm1o soui-card-header"
     >
       <div
-        class="c-nkkmwa soui-card-header-content"
+        class="c-n23ruz soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="c2iulf1 soui-card-header-extra"
+        class="c1eyeoc soui-card-header-extra"
       >
         <button
-          class="c25800a soui-button-primary c9j4dnu soui-button-button c-x8qcpn soui-button-text"
+          class="c-vk6maf soui-button-primary cd0yd2j soui-button-button cntlqli soui-button-text"
           dir="ltr"
           type="button"
         >
@@ -758,12 +758,12 @@ exports[`Card[Base] should render correctly about split 1`] = `
       </div>
     </div>
     <div
-      class="c2vj62g soui-card-body"
+      class="cp99aih soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="cid33ly soui-card-right c-4kbojz soui-card-footer"
+      class="c1vgdnp soui-card-right c-ij3n7y soui-card-footer"
     >
       <div
         style="display: flex;"
