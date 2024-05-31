@@ -1,3 +1,4 @@
+import AlitaWebpackPlugin from '@alita/webpack-plugin';
 const path = require('path');
 const Webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
@@ -14,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, `../dist`),
-    publicPath: './',
+    publicPath: process.env.LEGO_FRONTEND_PUBLIC_PATH ?? '/',
     libraryTarget: 'umd',
     library: 'ShineoutDoc',
   },
@@ -57,6 +58,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new AlitaWebpackPlugin({
+      name: 'shineout',
+    }),
     new Webpack.ProvidePlugin({
       React: 'react',
     }),
