@@ -13,7 +13,6 @@ export interface TreeContext<DataItem> {
   unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
   forceUpdateMap: Map<KeygenResult, () => void>;
-  disabled: boolean | ((item: DataItem) => boolean);
   value?: KeygenResult[];
   cachedValue: KeygenResult[];
   data?: DataItem[];
