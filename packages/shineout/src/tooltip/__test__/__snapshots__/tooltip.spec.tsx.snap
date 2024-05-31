@@ -4,7 +4,7 @@ exports[`Tooltip[Base] should render correctly  1`] = `
 <div>
   <noscript />
   <button
-    class="c25800a soui-button-primary c9j4dnu soui-button-button"
+    class="c-vk6maf soui-button-primary cd0yd2j soui-button-button"
     dir="ltr"
     type="button"
   >
@@ -19,7 +19,7 @@ exports[`Tooltip[Base] should render correctly about click 1`] = `
 <div>
   <noscript />
   <button
-    class="c25800a soui-button-primary c9j4dnu soui-button-button"
+    class="c-vk6maf soui-button-primary cd0yd2j soui-button-button"
     dir="ltr"
     type="button"
   >
@@ -34,11 +34,11 @@ exports[`Tooltip[Base] should render correctly about disabled 1`] = `
 <div>
   <noscript />
   <span
-    class="ciqf7im soui-tooltip-target"
+    class="c-eyzes3 soui-tooltip-target"
     style="cursor: not-allowed;"
   >
     <button
-      class="cigcc58 soui-button-secondary c9j4dnu soui-button-button cj9dab8 soui-button-disabled"
+      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button c-v6n58r soui-button-disabled"
       dir="ltr"
       disabled=""
       style="pointer-events: none;"

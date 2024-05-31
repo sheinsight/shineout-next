@@ -881,12 +881,23 @@ describe('DatePicker[Value/DefaultValue/DefaultTime]', () => {
     textContentTest(container.querySelectorAll(resultText)[1], `${year}-${month}-${day}`);
   });
   test('should render when set value and defaultValue', () => {
+    const nowDate = new Date();
+
+    nowDate.setDate(nowDate.getDate() + 1);
+
+    const year = nowDate.getFullYear();
+    const month = nowDate.getMonth() + 1;
+    const day = nowDate.getDate();
+
+    const expectedDateString = `${year}-${getFormatTime(month)}-${getFormatTime(day)}`;
+
     const { container } = render(
-      <DatePicker defaultValue={Now} value={nowDate.getTime() + 24 * 60 * 60 * 1000} />,
+        <DatePicker defaultValue={Now} value={nowDate.getTime()} />,
     );
+
     textContentTest(
-      container.querySelector(resultText)!,
-      `${year}-${month}-${getFormatTime(Number(day) + 1)}`,
+        container.querySelector(resultText)!,
+        expectedDateString,
     );
   });
   test('should render when set defaultTime', async () => {

@@ -2,36 +2,36 @@
 
 exports[`Carousel[Base] should render correctly  1`] = `
 <div
-  class="carq27h soui-carousel-wrapper c-qa54nh soui-carousel-animation-slide cintnsr soui-carousel-direction-stop"
+  class="c9ntvgs soui-carousel-wrapper c-kha9os soui-carousel-animation-slide ciuk7dm soui-carousel-direction-stop"
   style="width: 600px; height: auto;"
 >
   <div
-    class="cnnerr soui-carousel-slider"
+    class="cl8r16w soui-carousel-slider"
     style="height: 280px;"
   >
     <div
-      class="ct1kw8p soui-carousel-item cbwlp1c soui-carousel-item-current"
+      class="cwjevne soui-carousel-item c7oxt27 soui-carousel-item-current"
     >
       <img
         src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
       />
     </div>
     <div
-      class="ct1kw8p soui-carousel-item"
+      class="cwjevne soui-carousel-item"
     >
       <img
         src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
       />
     </div>
     <div
-      class="ct1kw8p soui-carousel-item"
+      class="cwjevne soui-carousel-item"
     >
       <img
         src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
       />
     </div>
     <div
-      class="ct1kw8p soui-carousel-item"
+      class="cwjevne soui-carousel-item"
     >
       <img
         src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
@@ -39,26 +39,26 @@ exports[`Carousel[Base] should render correctly  1`] = `
     </div>
   </div>
   <div
-    class="cniawfe soui-carousel-indicator-wrapper c-mnfvz6 soui-carousel-indicator-center cohjn77 soui-carousel-indicator-type-circle"
+    class="c-clsvh1 soui-carousel-indicator-wrapper cf4wny5 soui-carousel-indicator-center c-eaepgu soui-carousel-indicator-type-circle"
   >
     <div
-      class="c-vvl7iv soui-carousel-indicator c-nmj3sh soui-carousel-indicator-active"
+      class="c-vd4chk soui-carousel-indicator ce5tg4u soui-carousel-indicator-active"
     />
     <div
-      class="c-vvl7iv soui-carousel-indicator"
+      class="c-vd4chk soui-carousel-indicator"
     />
     <div
-      class="c-vvl7iv soui-carousel-indicator"
+      class="c-vd4chk soui-carousel-indicator"
     />
     <div
-      class="c-vvl7iv soui-carousel-indicator"
+      class="c-vd4chk soui-carousel-indicator"
     />
   </div>
   <div
-    class="c-cumizr soui-carousel-arrow-hover ci0mve8 soui-carousel-arrow-wrapper"
+    class="c31w74q soui-carousel-arrow-hover cthag35 soui-carousel-arrow-wrapper"
   >
     <div
-      class="cxygci2 soui-carousel-arrow-left cxyeqmu soui-carousel-arrow-item"
+      class="cygx7jd soui-carousel-arrow-left cygvlo5 soui-carousel-arrow-item"
     >
       <svg
         aria-hidden="true"
@@ -72,7 +72,7 @@ exports[`Carousel[Base] should render correctly  1`] = `
       </svg>
     </div>
     <div
-      class="c-cp8q13 soui-carousel-arrow-right cxyeqmu soui-carousel-arrow-item"
+      class="c37a03e soui-carousel-arrow-right cygvlo5 soui-carousel-arrow-item"
     >
       <svg
         aria-hidden="true"
@@ -100,10 +100,10 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
       animation type:
     </div>
     <div
-      class="cmxd0kq soui-radio-group"
+      class="c8yl1wr soui-radio-group"
     >
       <div
-        class="cyirhq6 soui-radio-wrapper c-uazd13 soui-radio-wrapper-checked"
+        class="c-x0iku9 soui-radio-wrapper c-yin908 soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -112,21 +112,21 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           slide
         </span>
       </div>
       <div
-        class="cyirhq6 soui-radio-wrapper"
+        class="c-x0iku9 soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -134,21 +134,21 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           slide-y
         </span>
       </div>
       <div
-        class="cyirhq6 soui-radio-wrapper"
+        class="c-x0iku9 soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -156,15 +156,15 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           fade
         </span>
@@ -172,36 +172,36 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
     </div>
   </div>
   <div
-    class="carq27h soui-carousel-wrapper c-qa54nh soui-carousel-animation-slide cintnsr soui-carousel-direction-stop"
+    class="c9ntvgs soui-carousel-wrapper c-kha9os soui-carousel-animation-slide ciuk7dm soui-carousel-direction-stop"
     style="width: 600px; height: auto;"
   >
     <div
-      class="cnnerr soui-carousel-slider"
+      class="cl8r16w soui-carousel-slider"
       style="height: 280px;"
     >
       <div
-        class="ct1kw8p soui-carousel-item cbwlp1c soui-carousel-item-current"
+        class="cwjevne soui-carousel-item c7oxt27 soui-carousel-item-current"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
         />
       </div>
       <div
-        class="ct1kw8p soui-carousel-item"
+        class="cwjevne soui-carousel-item"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
         />
       </div>
       <div
-        class="ct1kw8p soui-carousel-item"
+        class="cwjevne soui-carousel-item"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
         />
       </div>
       <div
-        class="ct1kw8p soui-carousel-item"
+        class="cwjevne soui-carousel-item"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
@@ -209,19 +209,19 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
       </div>
     </div>
     <div
-      class="cniawfe soui-carousel-indicator-wrapper c-mnfvz6 soui-carousel-indicator-center cohjn77 soui-carousel-indicator-type-circle"
+      class="c-clsvh1 soui-carousel-indicator-wrapper cf4wny5 soui-carousel-indicator-center c-eaepgu soui-carousel-indicator-type-circle"
     >
       <div
-        class="c-vvl7iv soui-carousel-indicator c-nmj3sh soui-carousel-indicator-active"
+        class="c-vd4chk soui-carousel-indicator ce5tg4u soui-carousel-indicator-active"
       />
       <div
-        class="c-vvl7iv soui-carousel-indicator"
+        class="c-vd4chk soui-carousel-indicator"
       />
       <div
-        class="c-vvl7iv soui-carousel-indicator"
+        class="c-vd4chk soui-carousel-indicator"
       />
       <div
-        class="c-vvl7iv soui-carousel-indicator"
+        class="c-vd4chk soui-carousel-indicator"
       />
     </div>
   </div>
@@ -239,10 +239,10 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
       indicator position:
     </div>
     <div
-      class="cmxd0kq soui-radio-group"
+      class="c8yl1wr soui-radio-group"
     >
       <div
-        class="cyirhq6 soui-radio-wrapper"
+        class="c-x0iku9 soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -250,21 +250,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           left
         </span>
       </div>
       <div
-        class="cyirhq6 soui-radio-wrapper c-uazd13 soui-radio-wrapper-checked"
+        class="c-x0iku9 soui-radio-wrapper c-yin908 soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -273,21 +273,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           center
         </span>
       </div>
       <div
-        class="cyirhq6 soui-radio-wrapper"
+        class="c-x0iku9 soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -295,21 +295,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           right
         </span>
       </div>
       <div
-        class="cyirhq6 soui-radio-wrapper"
+        class="c-x0iku9 soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -317,15 +317,15 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           outer
         </span>
@@ -341,10 +341,10 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
       indicator type:
     </div>
     <div
-      class="cmxd0kq soui-radio-group"
+      class="c8yl1wr soui-radio-group"
     >
       <div
-        class="cyirhq6 soui-radio-wrapper c-uazd13 soui-radio-wrapper-checked"
+        class="c-x0iku9 soui-radio-wrapper c-yin908 soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -353,21 +353,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           circle
         </span>
       </div>
       <div
-        class="cyirhq6 soui-radio-wrapper"
+        class="c-x0iku9 soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -375,21 +375,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           line
         </span>
       </div>
       <div
-        class="cyirhq6 soui-radio-wrapper"
+        class="c-x0iku9 soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -397,15 +397,15 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="cmfinsp soui-radio-indicator-wrapper"
+          class="cmm97dk soui-radio-indicator-wrapper"
         >
           <span
-            class="c-7zjjk6 soui-radio-indicator"
+            class="cclk2uz soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-xmqy62 soui-radio-desc"
+          class="ckwqdut soui-radio-desc"
         >
           number
         </span>
@@ -413,36 +413,36 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
     </div>
   </div>
   <div
-    class="carq27h soui-carousel-wrapper c-qa54nh soui-carousel-animation-slide cintnsr soui-carousel-direction-stop"
+    class="c9ntvgs soui-carousel-wrapper c-kha9os soui-carousel-animation-slide ciuk7dm soui-carousel-direction-stop"
     style="width: 600px; height: auto;"
   >
     <div
-      class="cnnerr soui-carousel-slider"
+      class="cl8r16w soui-carousel-slider"
       style="height: 280px;"
     >
       <div
-        class="ct1kw8p soui-carousel-item cbwlp1c soui-carousel-item-current"
+        class="cwjevne soui-carousel-item c7oxt27 soui-carousel-item-current"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
         />
       </div>
       <div
-        class="ct1kw8p soui-carousel-item"
+        class="cwjevne soui-carousel-item"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
         />
       </div>
       <div
-        class="ct1kw8p soui-carousel-item"
+        class="cwjevne soui-carousel-item"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
         />
       </div>
       <div
-        class="ct1kw8p soui-carousel-item"
+        class="cwjevne soui-carousel-item"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
@@ -450,19 +450,19 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
       </div>
     </div>
     <div
-      class="cniawfe soui-carousel-indicator-wrapper c-mnfvz6 soui-carousel-indicator-center cohjn77 soui-carousel-indicator-type-circle"
+      class="c-clsvh1 soui-carousel-indicator-wrapper cf4wny5 soui-carousel-indicator-center c-eaepgu soui-carousel-indicator-type-circle"
     >
       <div
-        class="c-vvl7iv soui-carousel-indicator c-nmj3sh soui-carousel-indicator-active"
+        class="c-vd4chk soui-carousel-indicator ce5tg4u soui-carousel-indicator-active"
       />
       <div
-        class="c-vvl7iv soui-carousel-indicator"
+        class="c-vd4chk soui-carousel-indicator"
       />
       <div
-        class="c-vvl7iv soui-carousel-indicator"
+        class="c-vd4chk soui-carousel-indicator"
       />
       <div
-        class="c-vvl7iv soui-carousel-indicator"
+        class="c-vd4chk soui-carousel-indicator"
       />
     </div>
   </div>
