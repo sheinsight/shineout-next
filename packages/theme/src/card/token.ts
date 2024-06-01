@@ -41,7 +41,9 @@ const cardTokenExtraValue = {
   padding: { x: 'Spacing-16', y: 'Spacing-12' },
   title: {
     font: {
+      color: 'Neutral-text-5',
       size: 'Font-16',
+      weight: 'Weight-medium',
     },
   },
   header: {
@@ -49,12 +51,29 @@ const cardTokenExtraValue = {
     extra: {
       margin: { x: 'Spacing-16' },
     },
+    padding: { x: 'Spacing-16', y: 'Spacing-12' },
   },
   indicator: {
     size: 'Size-7',
     color: 'Neutral-text-4',
   },
-  body: {},
+  body: {
+    padding: { x: 'Spacing-16', y: 'Spacing-12' },
+    font: {
+      size: 'Font-14',
+      color: 'Neutral-text-5',
+      weight: 'Weight-regular',
+    },
+    border: {
+      color: 'Neutral-border-1',
+    },
+  },
+  footer: {
+    padding: { x: 'Spacing-16', y: 'Spacing-12' },
+    border: {
+      color: 'Neutral-border-1',
+    },
+  },
 };
 
 module.exports = {
