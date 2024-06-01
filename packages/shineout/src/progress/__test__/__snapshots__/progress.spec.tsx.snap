@@ -2,14 +2,14 @@
 
 exports[`Progress[Base] should render correctly  1`] = `
 <div
-  class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default"
+  class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
   style="width: 400px;"
 >
   <div
-    class="c-hguvhv soui-progress-line-bg"
+    class="soui-progress-line-bg"
   >
     <div
-      class="c-oo7e73 soui-progress-line-front"
+      class="soui-progress-line-front"
       style="width: 75%;"
     />
   </div>
@@ -20,19 +20,19 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
 <div>
   <div>
     <div
-      class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default"
+      class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
       style="width: 400px;"
     >
       <div
-        class="c-hguvhv soui-progress-line-bg"
+        class="soui-progress-line-bg"
       >
         <div
-          class="c-oo7e73 soui-progress-line-front"
+          class="soui-progress-line-front"
           style="width: 0%;"
         />
       </div>
       <div
-        class="c-vhl58b soui-progress-content"
+        class="soui-progress-content"
       >
         <div
           style="width: 50px;"
@@ -46,14 +46,14 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
     style="margin-top: 24px;"
   >
     <div
-      class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-pc0dwc soui-progress-wrapper-success"
+      class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-success"
       style="width: 64px; height: 64px;"
     >
       <svg
         viewBox="0 0 64 64"
       >
         <circle
-          class="c2w1uqx soui-progress-circle-bg"
+          class="soui-progress-circle-bg"
           cx="32"
           cy="32"
           fill="transparent"
@@ -61,7 +61,7 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
           stroke-width="4"
         />
         <circle
-          class="cg49mh1 soui-progress-circle-front"
+          class="soui-progress-circle-front"
           cx="32"
           cy="32"
           fill="transparent"
@@ -72,14 +72,14 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
         />
       </svg>
       <div
-        class="c-vhl58b soui-progress-content"
+        class="soui-progress-content"
       >
         0%
       </div>
     </div>
   </div>
   <button
-    class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+    class="soui-button-secondary soui-button-button"
     dir="ltr"
     style="margin-top: 24px;"
     type="button"
@@ -95,24 +95,24 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
 <div>
   <div>
     <div
-      class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default"
+      class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
       style="width: 400px;"
     >
       <div
-        class="c-hguvhv soui-progress-line-bg"
+        class="soui-progress-line-bg"
       >
         <div
-          class="c-oo7e73 soui-progress-line-front"
-          style="width: 5.784232228440813%;"
+          class="soui-progress-line-front"
+          style="width: 1.529445715116485%;"
         />
       </div>
       <div
-        class="c-vhl58b soui-progress-content"
+        class="soui-progress-content"
       >
         <div
           style="width: 50px;"
         >
-          6%
+          2%
         </div>
       </div>
     </div>
@@ -121,14 +121,14 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
     style="margin-top: 24px;"
   >
     <div
-      class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-pc0dwc soui-progress-wrapper-success"
+      class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-success"
       style="width: 64px; height: 64px;"
     >
       <svg
         viewBox="0 0 64 64"
       >
         <circle
-          class="c2w1uqx soui-progress-circle-bg"
+          class="soui-progress-circle-bg"
           cx="32"
           cy="32"
           fill="transparent"
@@ -136,25 +136,25 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
           stroke-width="4"
         />
         <circle
-          class="cg49mh1 soui-progress-circle-front"
+          class="soui-progress-circle-front"
           cx="32"
           cy="32"
           fill="transparent"
           r="30"
-          stroke-dasharray="10.903020885316185,177.5925383300714"
+          stroke-dasharray="2.882937253604602,185.61262196178296"
           stroke-linecap="round"
           stroke-width="4"
         />
       </svg>
       <div
-        class="c-vhl58b soui-progress-content"
+        class="soui-progress-content"
       >
-        6%
+        2%
       </div>
     </div>
   </div>
   <button
-    class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+    class="soui-button-secondary soui-button-button"
     dir="ltr"
     style="margin-top: 24px;"
     type="button"
@@ -171,14 +171,14 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
   style="display: flex; gap: 32px;"
 >
   <div
-    class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info"
+    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 64px; height: 64px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="c2w1uqx soui-progress-circle-bg"
+        class="soui-progress-circle-bg"
         cx="32"
         cy="32"
         fill="transparent"
@@ -186,7 +186,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         stroke-width="4"
       />
       <circle
-        class="cg49mh1 soui-progress-circle-front"
+        class="soui-progress-circle-front"
         cx="32"
         cy="32"
         fill="transparent"
@@ -197,7 +197,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       />
     </svg>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -214,14 +214,14 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper co54bp9 soui-progress-wrapper-warning"
+    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-warning"
     style="width: 64px; height: 64px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="c2w1uqx soui-progress-circle-bg"
+        class="soui-progress-circle-bg"
         cx="32"
         cy="32"
         fill="transparent"
@@ -229,7 +229,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         stroke-width="4"
       />
       <circle
-        class="cg49mh1 soui-progress-circle-front"
+        class="soui-progress-circle-front"
         cx="32"
         cy="32"
         fill="transparent"
@@ -240,7 +240,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       />
     </svg>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -257,14 +257,14 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-pc0dwc soui-progress-wrapper-success"
+    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-success"
     style="width: 64px; height: 64px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="c2w1uqx soui-progress-circle-bg"
+        class="soui-progress-circle-bg"
         cx="32"
         cy="32"
         fill="transparent"
@@ -272,7 +272,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         stroke-width="4"
       />
       <circle
-        class="cg49mh1 soui-progress-circle-front"
+        class="soui-progress-circle-front"
         cx="32"
         cy="32"
         fill="transparent"
@@ -283,7 +283,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       />
     </svg>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -300,14 +300,14 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-sua65a soui-progress-wrapper-danger"
+    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-danger"
     style="width: 64px; height: 64px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="c2w1uqx soui-progress-circle-bg"
+        class="soui-progress-circle-bg"
         cx="32"
         cy="32"
         fill="transparent"
@@ -315,7 +315,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         stroke-width="4"
       />
       <circle
-        class="cg49mh1 soui-progress-circle-front"
+        class="soui-progress-circle-front"
         cx="32"
         cy="32"
         fill="transparent"
@@ -326,7 +326,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       />
     </svg>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -348,35 +348,35 @@ exports[`Progress[Base] should render correctly about color 1`] = `
   style="width: 400px;"
 >
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 40%;"
       />
     </div>
     <div
-      class="c-vhl58b soui-progress-content"
+      class="soui-progress-content"
     >
       40%
     </div>
   </div>
   <br />
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-ommlbm soui-progress-line-inner"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 75%;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           75%
         </div>
@@ -385,7 +385,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
   </div>
   <br />
   <div
-    class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info"
+    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 64px; height: 64px;"
   >
     <svg
@@ -410,7 +410,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
         </lineargradient>
       </defs>
       <circle
-        class="c2w1uqx soui-progress-circle-bg"
+        class="soui-progress-circle-bg"
         cx="32"
         cy="32"
         fill="transparent"
@@ -418,7 +418,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
         stroke-width="4"
       />
       <circle
-        class="cg49mh1 soui-progress-circle-front"
+        class="soui-progress-circle-front"
         cx="32"
         cy="32"
         fill="transparent"
@@ -430,7 +430,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
       />
     </svg>
     <div
-      class="c-vhl58b soui-progress-content"
+      class="soui-progress-content"
     >
       60%
     </div>
@@ -443,24 +443,24 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
   style="display: flex; flex-direction: column; gap: 32px; width: 400px;"
 >
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-ommlbm soui-progress-line-inner c-rax7f6 soui-progress-line-inner-right"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner soui-progress-line-inner-right"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 0%;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           0%
         </div>
       </div>
     </div>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -475,24 +475,24 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-ommlbm soui-progress-line-inner c-rax7f6 soui-progress-line-inner-right"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner soui-progress-line-inner-right"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 5%;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           5%
         </div>
       </div>
     </div>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -507,24 +507,24 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-ommlbm soui-progress-line-inner"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 40%;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           10%
         </div>
       </div>
     </div>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -539,24 +539,24 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper co54bp9 soui-progress-wrapper-warning c-ommlbm soui-progress-line-inner"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-warning soui-progress-line-inner"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 50%;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           50%
         </div>
       </div>
     </div>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -571,24 +571,24 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-pc0dwc soui-progress-wrapper-success c-ommlbm soui-progress-line-inner"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-inner"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 100%;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           100%
         </div>
       </div>
     </div>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -603,24 +603,24 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-sua65a soui-progress-wrapper-danger c-ommlbm soui-progress-line-inner"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-danger soui-progress-line-inner"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 60%;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           60%
         </div>
       </div>
     </div>
     <div
-      class="ccrmer1 soui-progress-icon"
+      class="soui-progress-icon"
     >
       <svg
         aria-hidden="true"
@@ -642,33 +642,33 @@ exports[`Progress[Base] should render correctly about linePop 1`] = `
   style="width: 400px;"
 >
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default cqqbm2x soui-progress-line-pop"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default soui-progress-line-pop"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 0%;"
       />
     </div>
     <div
-      class="c-egmaeu soui-progress-line-pop-wrapper"
+      class="soui-progress-line-pop-wrapper"
       style="left: 0%; transform: translateX(-50%) rotate(0deg);"
     >
       <span
-        class="c-qnb0rc soui-progress-line-pop-value"
+        class="soui-progress-line-pop-value"
       >
         0%
       </span>
       <span
-        class="c-qyjq4g soui-progress-line-pop-arrow"
+        class="soui-progress-line-pop-arrow"
       />
     </div>
   </div>
   <br />
   <button
-    class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+    class="soui-button-secondary soui-button-button"
     dir="ltr"
     type="button"
   >
@@ -684,33 +684,33 @@ exports[`Progress[Base] should render correctly about linepop 1`] = `
   style="width: 400px;"
 >
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default cqqbm2x soui-progress-line-pop"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default soui-progress-line-pop"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
-        style="width: 0.5115505164607921%;"
+        class="soui-progress-line-front"
+        style="width: 4.4606823591229725%;"
       />
     </div>
     <div
-      class="c-egmaeu soui-progress-line-pop-wrapper"
-      style="left: 0.5115505164607921%; transform: translateX(-50%) rotate(0.12788762911519802deg);"
+      class="soui-progress-line-pop-wrapper"
+      style="left: 4.4606823591229725%; transform: translateX(-50%) rotate(1.1151705897807431deg);"
     >
       <span
-        class="c-qnb0rc soui-progress-line-pop-value"
+        class="soui-progress-line-pop-value"
       >
-        0%
+        4%
       </span>
       <span
-        class="c-qyjq4g soui-progress-line-pop-arrow"
+        class="soui-progress-line-pop-arrow"
       />
     </div>
   </div>
   <br />
   <button
-    class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+    class="soui-button-secondary soui-button-button"
     dir="ltr"
     type="button"
   >
@@ -724,11 +724,11 @@ exports[`Progress[Base] should render correctly about linepop 1`] = `
 exports[`Progress[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="c8yl1wr soui-radio-group"
+    class="soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-x0iku9 soui-radio-wrapper"
+      class="soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -736,21 +736,21 @@ exports[`Progress[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         small
       </span>
     </div>
     <div
-      class="c-x0iku9 soui-radio-wrapper c-yin908 soui-radio-wrapper-checked"
+      class="soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -759,21 +759,21 @@ exports[`Progress[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         default
       </span>
     </div>
     <div
-      class="c-x0iku9 soui-radio-wrapper"
+      class="soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -781,34 +781,34 @@ exports[`Progress[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
     style="width: 400px;"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 75%;"
       />
     </div>
     <div
-      class="c-vhl58b soui-progress-content"
+      class="soui-progress-content"
     >
       <span>
         75%
@@ -816,18 +816,18 @@ exports[`Progress[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-ommlbm soui-progress-line-inner"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
     style="width: 400px; margin-top: 24px;"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 40%;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           <span>
             40%
@@ -837,14 +837,14 @@ exports[`Progress[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info"
+    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 64px; height: 64px; margin-top: 24px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="c2w1uqx soui-progress-circle-bg"
+        class="soui-progress-circle-bg"
         cx="32"
         cy="32"
         fill="transparent"
@@ -852,7 +852,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
         stroke-width="4"
       />
       <circle
-        class="cg49mh1 soui-progress-circle-front"
+        class="soui-progress-circle-front"
         cx="32"
         cy="32"
         fill="transparent"
@@ -863,7 +863,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
       />
     </svg>
     <div
-      class="c-vhl58b soui-progress-content"
+      class="soui-progress-content"
     >
       <span>
         60%
@@ -876,11 +876,11 @@ exports[`Progress[Base] should render correctly about size 1`] = `
 exports[`Progress[Base] should render correctly about size 2`] = `
 <div>
   <div
-    class="c8yl1wr soui-radio-group"
+    class="soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-x0iku9 soui-radio-wrapper c-yin908 soui-radio-wrapper-checked"
+      class="soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         style="display: none;"
@@ -888,21 +888,21 @@ exports[`Progress[Base] should render correctly about size 2`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         small
       </span>
     </div>
     <div
-      class="c-x0iku9 soui-radio-wrapper"
+      class="soui-radio-wrapper"
     >
       <input
         checked=""
@@ -911,21 +911,21 @@ exports[`Progress[Base] should render correctly about size 2`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         default
       </span>
     </div>
     <div
-      class="c-x0iku9 soui-radio-wrapper"
+      class="soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -933,35 +933,35 @@ exports[`Progress[Base] should render correctly about size 2`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
     style="width: 400px;"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
       style="height: 3px; border-radius: 1.5px;"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 75%; border-radius: 1.5px;"
       />
     </div>
     <div
-      class="c-vhl58b soui-progress-content"
+      class="soui-progress-content"
     >
       <span
         style="font-size: 12px;"
@@ -971,19 +971,19 @@ exports[`Progress[Base] should render correctly about size 2`] = `
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-ommlbm soui-progress-line-inner"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
     style="width: 400px; margin-top: 24px;"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
       style="height: 16px; border-radius: 8px;"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 40%; border-radius: 8px;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           <span
             style="font-size: 12px;"
@@ -995,14 +995,14 @@ exports[`Progress[Base] should render correctly about size 2`] = `
     </div>
   </div>
   <div
-    class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info"
+    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 48px; height: 48px; margin-top: 24px;"
   >
     <svg
       viewBox="0 0 48 48"
     >
       <circle
-        class="c2w1uqx soui-progress-circle-bg"
+        class="soui-progress-circle-bg"
         cx="24"
         cy="24"
         fill="transparent"
@@ -1010,7 +1010,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
         stroke-width="4"
       />
       <circle
-        class="cg49mh1 soui-progress-circle-front"
+        class="soui-progress-circle-front"
         cx="24"
         cy="24"
         fill="transparent"
@@ -1021,7 +1021,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
       />
     </svg>
     <div
-      class="c-vhl58b soui-progress-content"
+      class="soui-progress-content"
     >
       <span
         style="font-size: 12px;"
@@ -1036,11 +1036,11 @@ exports[`Progress[Base] should render correctly about size 2`] = `
 exports[`Progress[Base] should render correctly about size 3`] = `
 <div>
   <div
-    class="c8yl1wr soui-radio-group"
+    class="soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-x0iku9 soui-radio-wrapper"
+      class="soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1048,21 +1048,21 @@ exports[`Progress[Base] should render correctly about size 3`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         small
       </span>
     </div>
     <div
-      class="c-x0iku9 soui-radio-wrapper"
+      class="soui-radio-wrapper"
     >
       <input
         checked=""
@@ -1071,21 +1071,21 @@ exports[`Progress[Base] should render correctly about size 3`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         default
       </span>
     </div>
     <div
-      class="c-x0iku9 soui-radio-wrapper c-yin908 soui-radio-wrapper-checked"
+      class="soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         style="display: none;"
@@ -1093,35 +1093,35 @@ exports[`Progress[Base] should render correctly about size 3`] = `
         type="radio"
       />
       <span
-        class="cmm97dk soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="cclk2uz soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="ckwqdut soui-radio-desc"
+        class="soui-radio-desc"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
     style="width: 400px;"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
       style="height: 8px; border-radius: 4px;"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 75%; border-radius: 4px;"
       />
     </div>
     <div
-      class="c-vhl58b soui-progress-content"
+      class="soui-progress-content"
     >
       <span
         style="font-size: 16px;"
@@ -1131,19 +1131,19 @@ exports[`Progress[Base] should render correctly about size 3`] = `
     </div>
   </div>
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-ommlbm soui-progress-line-inner"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
     style="width: 400px; margin-top: 24px;"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
       style="height: 24px; border-radius: 12px;"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 40%; border-radius: 12px;"
       >
         <div
-          class="c-vhl58b soui-progress-content"
+          class="soui-progress-content"
         >
           <span>
             40%
@@ -1153,14 +1153,14 @@ exports[`Progress[Base] should render correctly about size 3`] = `
     </div>
   </div>
   <div
-    class="c-lq6xks soui-progress-circle c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info"
+    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 80px; height: 80px; margin-top: 24px;"
   >
     <svg
       viewBox="0 0 80 80"
     >
       <circle
-        class="c2w1uqx soui-progress-circle-bg"
+        class="soui-progress-circle-bg"
         cx="40"
         cy="40"
         fill="transparent"
@@ -1168,7 +1168,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
         stroke-width="4"
       />
       <circle
-        class="cg49mh1 soui-progress-circle-front"
+        class="soui-progress-circle-front"
         cx="40"
         cy="40"
         fill="transparent"
@@ -1179,7 +1179,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
       />
     </svg>
     <div
-      class="c-vhl58b soui-progress-content"
+      class="soui-progress-content"
     >
       <span
         style="font-size: 16px;"
@@ -1196,52 +1196,52 @@ exports[`Progress[Base] should render correctly about type 1`] = `
   style="width: 400px;"
 >
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-pc0dwc soui-progress-wrapper-success c-lhbnnr soui-progress-line-default"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-default"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 100%;"
       />
     </div>
   </div>
   <br />
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-kfe0k3 soui-progress-wrapper-info c-lhbnnr soui-progress-line-default"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 90%;"
       />
     </div>
   </div>
   <br />
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper co54bp9 soui-progress-wrapper-warning c-lhbnnr soui-progress-line-default"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-warning soui-progress-line-default"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 80%;"
       />
     </div>
   </div>
   <br />
   <div
-    class="ccrog4o soui-progress-line c-ku6h7l soui-progress-wrapper c-sua65a soui-progress-wrapper-danger c-lhbnnr soui-progress-line-default"
+    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-danger soui-progress-line-default"
   >
     <div
-      class="c-hguvhv soui-progress-line-bg"
+      class="soui-progress-line-bg"
     >
       <div
-        class="c-oo7e73 soui-progress-line-front"
+        class="soui-progress-line-front"
         style="width: 70%;"
       />
     </div>

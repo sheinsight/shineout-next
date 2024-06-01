@@ -2,25 +2,25 @@
 
 exports[`Breadcrumb[Base] should render correctly 1`] = `
 <div
-  class="cnos5c9 soui-breadcrumb-wrapper"
+  class="soui-breadcrumb-wrapper"
 >
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
-      class="cd1dhbj soui-breadcrumb-content"
+      class="soui-breadcrumb-content"
       href="/"
     >
       Home
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
       href="/cn/components/shineout/button"
@@ -28,30 +28,30 @@ exports[`Breadcrumb[Base] should render correctly 1`] = `
       Button
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
-      class="cd1dhbj soui-breadcrumb-content"
+      class="soui-breadcrumb-content"
     >
       Handler
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <span
-      class="cd1dhbj soui-breadcrumb-content"
+      class="soui-breadcrumb-content"
     >
       Self
     </span>
@@ -61,25 +61,25 @@ exports[`Breadcrumb[Base] should render correctly 1`] = `
 
 exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
 <div
-  class="cnos5c9 soui-breadcrumb-wrapper"
+  class="soui-breadcrumb-wrapper"
 >
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
-      class="cd1dhbj soui-breadcrumb-content"
+      class="soui-breadcrumb-content"
       href="/"
     >
       Home
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
       href="/cn/components/shineout/button"
@@ -87,24 +87,24 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
       Button
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <div
-      class="c-rvu5ke soui-breadcrumb-item-with-drop"
+      class="soui-breadcrumb-item-with-drop"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Dropdown
       </a>
       <div
-        class="c83sc18 soui-breadcrumb-down"
+        class="soui-breadcrumb-down"
       >
         <svg
           aria-hidden="true"
@@ -119,16 +119,16 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
       </div>
     </div>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <span
-      class="cd1dhbj soui-breadcrumb-content"
+      class="soui-breadcrumb-content"
     >
       Self
     </span>
@@ -139,14 +139,14 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
 exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
 <div>
   <div
-    class="cnos5c9 soui-breadcrumb-wrapper"
+    class="soui-breadcrumb-wrapper"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
         href="#home"
       >
         <svg
@@ -163,16 +163,16 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
         </svg>
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
         href="https://www.google.com"
       >
         <svg
@@ -191,16 +191,16 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
         Custom
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <span
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         <svg
           fill="none"
@@ -220,10 +220,10 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
     </div>
   </div>
   <div
-    class="cnos5c9 soui-breadcrumb-wrapper"
+    class="soui-breadcrumb-wrapper"
   >
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
         href="#home"
@@ -245,13 +245,13 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
          
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
         href="https://www.google.com"
@@ -272,13 +272,13 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
         </svg>
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <span
         style="display: flex; align-items: center;"
@@ -304,56 +304,56 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
 
 exports[`Breadcrumb[Base] should render correctly about max 1`] = `
 <div
-  class="cnos5c9 soui-breadcrumb-wrapper"
+  class="soui-breadcrumb-wrapper"
 >
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
-      class="cd1dhbj soui-breadcrumb-content"
+      class="soui-breadcrumb-content"
       href="/"
     >
       Home
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <span
-      class="cd1dhbj soui-breadcrumb-content c-9hy6ed soui-breadcrumb-ellipsis"
+      class="soui-breadcrumb-content soui-breadcrumb-ellipsis"
     >
       ...
     </span>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
-      class="cd1dhbj soui-breadcrumb-content"
+      class="soui-breadcrumb-content"
     >
       Table
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <span
-      class="cd1dhbj soui-breadcrumb-content"
+      class="soui-breadcrumb-content"
     >
       Self
     </span>
@@ -363,10 +363,10 @@ exports[`Breadcrumb[Base] should render correctly about max 1`] = `
 
 exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
 <div
-  class="cnos5c9 soui-breadcrumb-wrapper"
+  class="soui-breadcrumb-wrapper"
 >
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
       href="#home"
@@ -374,13 +374,13 @@ exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
       home
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     <a
       href="https://www.google.com"
@@ -388,13 +388,13 @@ exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
       menu
     </a>
     <div
-      class="c-7dzztx soui-breadcrumb-separator"
+      class="soui-breadcrumb-separator"
     >
       /
     </div>
   </div>
   <div
-    class="c83vm8t soui-breadcrumb-item"
+    class="soui-breadcrumb-item"
   >
     self
   </div>
@@ -404,48 +404,48 @@ exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
 exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
 <div>
   <div
-    class="cnos5c9 soui-breadcrumb-wrapper"
+    class="soui-breadcrumb-wrapper"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
         href="/"
       >
         Home
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <span
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Self
       </span>
     </div>
   </div>
   <div
-    class="cnos5c9 soui-breadcrumb-wrapper"
+    class="soui-breadcrumb-wrapper"
   >
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
         href="/"
       >
         Home
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         <span>
           &gt;
@@ -453,10 +453,10 @@ exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <span
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Self
       </span>
@@ -468,26 +468,26 @@ exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
 exports[`Breadcrumb[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="cnos5c9 soui-breadcrumb-wrapper"
+    class="soui-breadcrumb-wrapper"
     style="font-size: 12px;"
   >
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
         href="/"
       >
         Home
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
         href="/cn/components/shineout/button"
@@ -495,56 +495,56 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
         Button
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Handler
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <span
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Self
       </span>
     </div>
   </div>
   <div
-    class="cnos5c9 soui-breadcrumb-wrapper"
+    class="soui-breadcrumb-wrapper"
     style="font-size: 14px; margin-top: 24px;"
   >
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
         href="/"
       >
         Home
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
         href="/cn/components/shineout/button"
@@ -552,56 +552,56 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
         Button
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Handler
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <span
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Self
       </span>
     </div>
   </div>
   <div
-    class="cnos5c9 soui-breadcrumb-wrapper"
+    class="soui-breadcrumb-wrapper"
     style="font-size: 16px; margin-top: 24px;"
   >
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
         href="/"
       >
         Home
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
         href="/cn/components/shineout/button"
@@ -609,30 +609,30 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
         Button
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <a
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Handler
       </a>
       <div
-        class="c-7dzztx soui-breadcrumb-separator"
+        class="soui-breadcrumb-separator"
       >
         /
       </div>
     </div>
     <div
-      class="c83vm8t soui-breadcrumb-item"
+      class="soui-breadcrumb-item"
     >
       <span
-        class="cd1dhbj soui-breadcrumb-content"
+        class="soui-breadcrumb-content"
       >
         Self
       </span>

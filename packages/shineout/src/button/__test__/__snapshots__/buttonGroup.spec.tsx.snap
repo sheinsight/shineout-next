@@ -5,11 +5,11 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;"
 >
   <div
-    class="crzo5ba soui-button-group"
+    class="soui-button-group"
     dir="ltr"
   >
     <button
-      class="c-vk6maf soui-button-primary cd0yd2j soui-button-button cntlqli soui-button-text"
+      class="soui-button-primary soui-button-button soui-button-text"
       dir="ltr"
       type="button"
     >
@@ -18,7 +18,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button cntlqli soui-button-text"
+      class="soui-button-secondary soui-button-button soui-button-text"
       dir="ltr"
       type="button"
     >
@@ -27,7 +27,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button cntlqli soui-button-text"
+      class="soui-button-secondary soui-button-button soui-button-text"
       dir="ltr"
       type="button"
     >
@@ -36,7 +36,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button c-v6n58r soui-button-disabled cntlqli soui-button-text"
+      class="soui-button-secondary soui-button-button soui-button-disabled soui-button-text"
       dir="ltr"
       disabled=""
       type="button"
@@ -47,11 +47,11 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
   </div>
   <div
-    class="crzo5ba soui-button-group"
+    class="soui-button-group"
     dir="ltr"
   >
     <button
-      class="c-vk6maf soui-button-primary cd0yd2j soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -60,7 +60,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+      class="soui-button-secondary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -69,7 +69,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+      class="soui-button-secondary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -78,7 +78,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+      class="soui-button-secondary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -88,11 +88,11 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
   </div>
   <div
-    class="crzo5ba soui-button-group"
+    class="soui-button-group"
     dir="ltr"
   >
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button cqdpa09 soui-button-outline"
+      class="soui-button-secondary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -101,7 +101,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button cqdpa09 soui-button-outline"
+      class="soui-button-secondary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -110,7 +110,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button cqdpa09 soui-button-outline"
+      class="soui-button-secondary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -119,7 +119,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </span>
     </button>
     <button
-      class="chcg5ej soui-button-secondary cd0yd2j soui-button-button cqdpa09 soui-button-outline"
+      class="soui-button-secondary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -132,11 +132,11 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     style="display: flex; gap: 24px;"
   >
     <div
-      class="crzo5ba soui-button-group"
+      class="soui-button-group"
       dir="ltr"
     >
       <button
-        class="c-vk6maf soui-button-primary cd0yd2j soui-button-button"
+        class="soui-button-primary soui-button-button"
         dir="ltr"
         type="button"
       >
@@ -145,7 +145,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
         </span>
       </button>
       <button
-        class="c-vk6maf soui-button-primary cd0yd2j soui-button-button"
+        class="soui-button-primary soui-button-button"
         dir="ltr"
         type="button"
       >
@@ -168,11 +168,11 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </button>
     </div>
     <div
-      class="crzo5ba soui-button-group"
+      class="soui-button-group"
       dir="ltr"
     >
       <button
-        class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+        class="soui-button-secondary soui-button-button"
         dir="ltr"
         type="button"
       >
@@ -181,7 +181,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
         </span>
       </button>
       <button
-        class="chcg5ej soui-button-secondary cd0yd2j soui-button-button"
+        class="soui-button-secondary soui-button-button"
         dir="ltr"
         type="button"
       >
