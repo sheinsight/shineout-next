@@ -6,6 +6,7 @@ import { CardTokens } from './type';
 const cardTokens: CardTokens = {
   cardBackgroundColor: 'Neutral-fill-1',
   cardShadow: 'Shadow-2',
+  cardBorderWidth: 'Border-1',
   cardBorderColor: 'Neutral-border-1',
   cardBorderRadius: 'Radius-4',
   cardFontColor: 'Neutral-text-5',

@@ -12,7 +12,7 @@ const cardTokenDescription = {
   header: '头部',
   extra: '额外内容的',
   gap: '间距',
-  shadow:'阴影',
+  shadow: '阴影',
 };
 
 /**
@@ -30,6 +30,7 @@ const cardTokenExtraValue = {
   },
   shadow: 'Shadow-2',
   border: {
+    width: 'Border-1',
     color: 'Neutral-border-1',
     radius: 'Radius-4',
   },

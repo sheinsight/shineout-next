@@ -16,6 +16,12 @@ export interface DividerTokens {
   dividerFontColor: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 分割线字体字重
+   */
+  dividerFontWeight: string;
+  /**
+   * @type {string}
    * @token Neutral-border-1
    * @description 分割线边框颜色
    */

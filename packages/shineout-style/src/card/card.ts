@@ -9,7 +9,7 @@ const headerCommon = {
   lineHeight: token.lineHeightDynamic,
   fontWeight: 'bold',
   minWidth: 0,
-}
+};
 
 const cardStyle: JsStyles<CardClassType> = {
   wrapper: {
@@ -69,7 +69,7 @@ const cardStyle: JsStyles<CardClassType> = {
   },
   simpleHeader: {
     ...headerCommon,
-    display: 'block'
+    display: 'block',
   },
   center: {
     textAlign: 'center',
@@ -102,7 +102,7 @@ const cardStyle: JsStyles<CardClassType> = {
     },
   },
   body: {
-    '$wrapperSplit $header+&, $wrapperSplit $header+$bodyCollapse>&': {
+    '$wrapperSplit>$header+&, $wrapperSplit>$header+$bodyCollapse>&': {
       borderTop: `1px solid ${token.cardBorderColor}`,
     },
     padding: `${token.cardPaddingY} ${token.cardPaddingX}`,
@@ -113,7 +113,7 @@ const cardStyle: JsStyles<CardClassType> = {
   },
   bodyCollapse: {},
   footer: {
-    '$wrapperSplit $body+&, $wrapperSplit $bodyCollapse+&': {
+    '$wrapperSplit>$body+&, $wrapperSplit>$bodyCollapse+&': {
       borderTop: `1px solid ${token.cardBorderColor}`,
     },
     padding: `${token.cardPaddingY} ${token.cardPaddingX}`,

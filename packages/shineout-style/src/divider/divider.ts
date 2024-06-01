@@ -82,6 +82,7 @@ const dividerStyle: JsStyles<DividerClassesKeys> = {
     display: 'inline-block',
     padding: `0  ${token.dividerTextPaddingX}`,
     fontSize: token.dividerFontSize,
+    fontWeight: token.dividerFontWeight,
     color: token.dividerFontColor,
   },
 };

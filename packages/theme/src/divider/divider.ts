@@ -6,6 +6,7 @@ import { DividerTokens } from './type';
 const dividerTokens: DividerTokens = {
   dividerFontSize: 'Font-12',
   dividerFontColor: 'Neutral-text-5',
+  dividerFontWeight: 'Weight-regular',
   dividerBorderColor: 'Neutral-border-1',
   dividerBorderWidth: 'Border-1',
   dividerHorizontalMarginY: 'Spacing-24',

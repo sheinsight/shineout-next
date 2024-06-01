@@ -16,6 +16,12 @@ export interface CardTokens {
   cardShadow: string;
   /**
    * @type {string}
+   * @token Border-1
+   * @description 卡片边框宽度
+   */
+  cardBorderWidth: string;
+  /**
+   * @type {string}
    * @token Neutral-border-1
    * @description 卡片边框颜色
    */
