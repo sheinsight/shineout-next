@@ -1,4 +1,3 @@
-import AlitaWebpackPlugin from '@alita/webpack-plugin';
 const path = require('path');
 const Webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
@@ -11,7 +10,6 @@ module.exports = {
   mode: 'production',
   entry: {
     app: path.join(__dirname, '../docs/index.tsx'),
-    css: path.join(__dirname, '../public/index.css'),
   },
   output: {
     path: path.join(__dirname, `../dist`),
@@ -58,9 +56,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new AlitaWebpackPlugin({
-      name: 'shineout',
-    }),
     new Webpack.ProvidePlugin({
       React: 'react',
     }),
