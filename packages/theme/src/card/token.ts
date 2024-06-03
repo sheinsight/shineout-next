@@ -32,7 +32,7 @@ const cardTokenExtraValue = {
   border: {
     width: 'Border-1',
     color: 'Neutral-border-1',
-    radius: 'Radius-4',
+    radius: 'Radius-default',
   },
   font: {
     color: 'Neutral-text-5',

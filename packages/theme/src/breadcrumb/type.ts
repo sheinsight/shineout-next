@@ -40,7 +40,7 @@ export interface BreadcrumbTokens {
   breadcrumbListPaddingY: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 面包屑下拉列表的选项边框圆角
    */
   breadcrumbListItemBorderRadius: string;

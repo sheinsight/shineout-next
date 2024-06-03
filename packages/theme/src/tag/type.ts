@@ -1468,7 +1468,7 @@ export interface TagTokens {
   tagLargeFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 标签大尺寸边框圆角
    */
   tagLargeBorderRadius: string;

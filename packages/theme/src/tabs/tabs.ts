@@ -19,7 +19,7 @@ const tabsTokens: TabsTokens = {
   tabsTabPaddingX: 'Spacing-15',
   tabsTabPaddingY: 'Spacing-9',
   tabsTabFontSize: 'Font-14',
-  tabsTabBorderRadius: 'Radius-4',
+  tabsTabBorderRadius: 'Radius-default',
   tabsNearlyMargin: 'Spacing-4',
   tabsLinePaddingX: 'Spacing-8',
   tabsLinePaddingY: 'Spacing-6',

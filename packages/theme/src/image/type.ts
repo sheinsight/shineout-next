@@ -22,7 +22,7 @@ export interface ImageTokens {
   imageCircleBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 图片圆角模式边框圆角
    */
   imageRoundedBorderRadius: string;
@@ -34,7 +34,7 @@ export interface ImageTokens {
   imageRoundedBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 图片图框模式边框圆角
    */
   imageThumbnailBorderRadius: string;

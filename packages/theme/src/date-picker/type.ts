@@ -16,7 +16,7 @@ export interface DatePickerTokens {
   datePickerFontColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 日期选择器边框圆角
    */
   datePickerBorderRadius: string;
@@ -154,7 +154,7 @@ export interface DatePickerTokens {
   datePickerDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 日期选择器结果文本边框圆角
    */
   datePickerResultTextBorderRadius: string;
@@ -226,7 +226,7 @@ export interface DatePickerTokens {
   datePickerPanelShadow: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 日期选择器面板圆角
    */
   datePickerPanelRadius: string;
@@ -448,7 +448,7 @@ export interface DatePickerTokens {
   datePickerTimeItemHeight: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 日期选择器时间项边框圆角
    */
   datePickerTimeItemBorderRadius: string;

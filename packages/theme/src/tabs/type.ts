@@ -94,7 +94,7 @@ export interface TabsTokens {
   tabsTabFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 标签页页签边框圆角
    */
   tabsTabBorderRadius: string;

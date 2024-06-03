@@ -36,7 +36,7 @@ const breadcrumbTokenExtraValue = {
     padding: { y: 'Spacing-4' },
     item: {
       border: {
-        radius: 'Radius-4',
+        radius: 'Radius-default',
       },
       wrapper: {
         padding: { x: 'Spacing-4' },

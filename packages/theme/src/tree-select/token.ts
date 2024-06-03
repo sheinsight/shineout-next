@@ -35,7 +35,7 @@ const treeSelectTokenValue = { font: { size: 'Font-14' } };
 
 const treeSelectTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
-  border: { radius: 'Radius-4', color: 'Neutral-border-2' },
+  border: { radius: 'Radius-default', color: 'Neutral-border-2' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
@@ -76,7 +76,7 @@ const treeSelectTokenExtraValue = {
   },
   result: {
     text: {
-      border: { radius: 'Radius-4' },
+      border: { radius: 'Radius-default' },
       padding: { x: 'Spacing-4' },
       small: { padding: { x: 'Spacing-4' } },
       large: { padding: { x: 'Spacing-10' } },
@@ -88,7 +88,7 @@ const treeSelectTokenExtraValue = {
     color: 'Neutral-text-5',
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
-    radius: 'Radius-4',
+    radius: 'Radius-default',
     border: 'Neutral-border-1',
   },
   option: {

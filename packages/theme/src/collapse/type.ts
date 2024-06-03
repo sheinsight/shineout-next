@@ -28,7 +28,7 @@ export interface CollapseTokens {
   collapseWrapperBorderSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 折叠面板整体容器（包含头部内容）边框圆角
    */
   collapseWrapperBorderRadius: string;

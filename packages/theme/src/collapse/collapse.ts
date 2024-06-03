@@ -8,7 +8,7 @@ const collapseTokens: CollapseTokens = {
   collapseIconHoverBackgroundColor: 'Neutral-fill-3',
   collapseExtraMargin: 'Spacing-24',
   collapseWrapperBorderSize: 'Border-1',
-  collapseWrapperBorderRadius: 'Radius-4',
+  collapseWrapperBorderRadius: 'Radius-default',
   collapseWrapperGap: 'Size-12',
   collapseWrapperPaddingX: 'Spacing-16',
   collapseWrapperPaddingY: 'Spacing-12',

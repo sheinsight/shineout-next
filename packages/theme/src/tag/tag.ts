@@ -248,7 +248,7 @@ const tagTokens: TagTokens = {
   tagSmallPaddingX: 'Spacing-4',
   tagSmallHeight: 'Size-10',
   tagLargeFontSize: 'Font-14',
-  tagLargeBorderRadius: 'Radius-4',
+  tagLargeBorderRadius: 'Radius-default',
   tagLargePaddingX: 'Spacing-12',
   tagLargePaddingY: 'Spacing-2',
   tagLargeHeight: 'Size-14',

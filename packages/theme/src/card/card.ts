@@ -8,7 +8,7 @@ const cardTokens: CardTokens = {
   cardShadow: 'Shadow-2',
   cardBorderWidth: 'Border-1',
   cardBorderColor: 'Neutral-border-1',
-  cardBorderRadius: 'Radius-4',
+  cardBorderRadius: 'Radius-default',
   cardFontColor: 'Neutral-text-5',
   cardFontSize: 'Font-14',
   cardPaddingX: 'Spacing-16',

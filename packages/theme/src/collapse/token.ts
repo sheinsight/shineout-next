@@ -27,7 +27,7 @@ const collapseTokenDescription = {
  */
 const collapseTokenValue = {
   wrapper: {
-    border: { size: 'Border-1', radius: 'Radius-4', color: 'Neutral-border-1' },
+    border: { size: 'Border-1', radius: 'Radius-default', color: 'Neutral-border-1' },
     line: { height: '' },
     gap: 'Size-12',
     padding: { x: 'Spacing-16', y: 'Spacing-12', left: '', right: '' },

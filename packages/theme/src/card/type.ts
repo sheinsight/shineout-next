@@ -28,7 +28,7 @@ export interface CardTokens {
   cardBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 卡片边框圆角
    */
   cardBorderRadius: string;

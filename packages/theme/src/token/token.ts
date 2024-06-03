@@ -181,7 +181,7 @@ const Token: Tokens = {
   'Radius-0': '0px',
   'Radius-2': '2px',
   'Radius-3': '3px',
-  'Radius-4': '4px',
+  'Radius-default': '4px',
   'Radius-8': '8px',
   'Radius-12': '12px',
   'Radius-1000': '1000px',

@@ -49,7 +49,7 @@ const tabsTokenValue = {
   tab: {
     padding: { x: 'Spacing-15', y: 'Spacing-9' },
     font: { size: 'Font-14' },
-    border: { radius: 'Radius-4' },
+    border: { radius: 'Radius-default' },
   },
   nearly: { margin: 'Spacing-4' },
   line: {

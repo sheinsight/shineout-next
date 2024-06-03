@@ -16,7 +16,7 @@ export interface TreeSelectTokens {
   treeSelectFontColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 树选择器边框圆角
    */
   treeSelectBorderRadius: string;
@@ -208,7 +208,7 @@ export interface TreeSelectTokens {
   treeSelectDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 树选择器选中结果框文本区域的边框圆角
    */
   treeSelectResultTextBorderRadius: string;
@@ -268,7 +268,7 @@ export interface TreeSelectTokens {
   treeSelectPanelShadow: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 树选择器下拉面板的圆角
    */
   treeSelectPanelRadius: string;

@@ -28,8 +28,8 @@ const imageTokenDescription = {
  */
 const imageTokenValue = {
   circle: { border: { radius: 'Radius-50%', color: 'Neutral-border-1' } },
-  rounded: { border: { radius: 'Radius-4', color: 'Neutral-border-1' } },
-  thumbnail: { border: { radius: 'Radius-4', color: 'Neutral-border-1' } },
+  rounded: { border: { radius: 'Radius-default', color: 'Neutral-border-1' } },
+  thumbnail: { border: { radius: 'Radius-default', color: 'Neutral-border-1' } },
   placeholder: { background: { color: 'Neutral-fill-2' }, font: { color: '', size: '' } },
   error: {
     background: { color: 'Neutral-fill-2' },
