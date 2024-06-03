@@ -41,7 +41,7 @@ const collapseTokenValue = {
   header: {
     border: { size: '', radius: '', color: '' },
     line: { height: 'Size-11' },
-    gap: 'Size-4',
+    gap: 'Spacing-8',
     padding: { x: '', y: '', left: '', right: '' },
     font: { size: 'Font-14' },
     weight: '400',
@@ -53,8 +53,8 @@ const collapseTokenValue = {
   content: {
     border: { size: '', radius: '', color: '' },
     line: { height: 'Size-11' },
-    gap: 'Size-12',
-    padding: { x: '', y: 'Spacing-12', left: 'Size-19', right: 'Spacing-16' },
+    gap: 'Spacing-24',
+    padding: { x: '', y: 'Spacing-12', left: 'Spacing-38', right: 'Spacing-16' },
     font: { size: 'Font-14' },
     weight: '400',
     icon: { width: '' },
