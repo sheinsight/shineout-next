@@ -17,15 +17,14 @@ function createTesterConfig(namespace: string): Config.InitialOptions {
     // modulePathIgnorePatterns: [
     //   '<rootDir>/packages-infra/compiled-utils/compiled/',
     // ],
-    transformIgnorePatterns: [
-      `<rootDir>/*/dist/`,
-      'node_modules',
-    ],
+    transformIgnorePatterns: [`<rootDir>/*/dist/`, 'node_modules'],
     moduleNameMapper: {
       '@sheinx/base': '<rootDir>/packages/base/src',
       '@sheinx/theme': '<rootDir>/packages/theme/src',
       '@sheinx/hooks': '<rootDir>/packages/hooks/src',
       '@sheinx/mock': '<rootDir>/packages/mock/src',
+      '@sheinx/shineout-style': '<rootDir>/packages/shineout-style/src',
+      shineout: '<rootDir>/packages/shineout/src',
     },
   };
 }

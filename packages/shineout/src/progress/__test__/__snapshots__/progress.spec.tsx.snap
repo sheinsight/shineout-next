@@ -91,81 +91,6 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
 </div>
 `;
 
-exports[`Progress[Base] should render correctly about animation 2`] = `
-<div>
-  <div>
-    <div
-      class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
-      style="width: 400px;"
-    >
-      <div
-        class="soui-progress-line-bg"
-      >
-        <div
-          class="soui-progress-line-front"
-          style="width: 2.9143004159305255%;"
-        />
-      </div>
-      <div
-        class="soui-progress-content"
-      >
-        <div
-          style="width: 50px;"
-        >
-          3%
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    style="margin-top: 24px;"
-  >
-    <div
-      class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-success"
-      style="width: 64px; height: 64px;"
-    >
-      <svg
-        viewBox="0 0 64 64"
-      >
-        <circle
-          class="soui-progress-circle-bg"
-          cx="32"
-          cy="32"
-          fill="transparent"
-          r="30"
-          stroke-width="4"
-        />
-        <circle
-          class="soui-progress-circle-front"
-          cx="32"
-          cy="32"
-          fill="transparent"
-          r="30"
-          stroke-dasharray="5.49332686622461,183.00223234916297"
-          stroke-linecap="round"
-          stroke-width="4"
-        />
-      </svg>
-      <div
-        class="soui-progress-content"
-      >
-        3%
-      </div>
-    </div>
-  </div>
-  <button
-    class="soui-button-secondary soui-button-button"
-    dir="ltr"
-    style="margin-top: 24px;"
-    type="button"
-  >
-    <span>
-      Start
-    </span>
-  </button>
-</div>
-`;
-
 exports[`Progress[Base] should render correctly about circle 1`] = `
 <div
   style="display: flex; gap: 32px;"
@@ -660,48 +585,6 @@ exports[`Progress[Base] should render correctly about linePop 1`] = `
         class="soui-progress-line-pop-value"
       >
         0%
-      </span>
-      <span
-        class="soui-progress-line-pop-arrow"
-      />
-    </div>
-  </div>
-  <br />
-  <button
-    class="soui-button-secondary soui-button-button"
-    dir="ltr"
-    type="button"
-  >
-    <span>
-      Start
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Progress[Base] should render correctly about linepop 1`] = `
-<div
-  style="width: 400px;"
->
-  <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default soui-progress-line-pop"
-  >
-    <div
-      class="soui-progress-line-bg"
-    >
-      <div
-        class="soui-progress-line-front"
-        style="width: 6.02853896688822%;"
-      />
-    </div>
-    <div
-      class="soui-progress-line-pop-wrapper"
-      style="left: 6.02853896688822%; transform: translateX(-50%) rotate(1.507134741722055deg);"
-    >
-      <span
-        class="soui-progress-line-pop-value"
-      >
-        6%
       </span>
       <span
         class="soui-progress-line-pop-arrow"
