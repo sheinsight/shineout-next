@@ -24,6 +24,7 @@ const emptyStyle: JsStyles<keyof EmptyClasses> = {
   description: {
     fontSize: Token.emptyFontSize,
     color: Token.emptyFontColor,
+    fontWeight: Token.emptyFontWeight,
     lineHeight: Token.lineHeightDynamic,
   },
 };
