@@ -105,7 +105,14 @@ const method =
       id,
     };
 
-    const ok = <LoadingOk {...btnOptions} type={type} autoFocus={options.autoFocusButton === 'ok'} key='ok' />;
+    const ok = (
+      <LoadingOk
+        {...btnOptions}
+        type={type}
+        autoFocus={options.autoFocusButton === 'ok'}
+        key='ok'
+      />
+    );
     const cancel = (
       <BtnCancel {...btnOptions} autoFocus={options.autoFocusButton === 'cancel'} key='cancel' />
     );
@@ -126,6 +133,7 @@ const method =
       </ModalContent>
     );
     util.ReactRender(Content, root);
+    return destroyModal;
   };
 
 export default {
