@@ -179,7 +179,7 @@ const Token: Tokens = {
   'Margin-24': '24px',
   'Margin-32': '32px',
   'Radius-0': '0px',
-  'Radius-lesser': '2px',
+  'Radius-2': '2px',
   'Radius-3': '3px',
   'Radius-4': '4px',
   'Radius-8': '8px',
