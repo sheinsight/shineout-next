@@ -1,3 +1,10 @@
+## 3.1.25
+未发布
+
+### 🐞 BugFix
+
+- 修复 `ModalMethod` 没有返回关闭方法的问题 ([#501](https://github.com/sheinsight/shineout-next/pull/501))
+
 ## 3.1.18
 2024-05-27
 
