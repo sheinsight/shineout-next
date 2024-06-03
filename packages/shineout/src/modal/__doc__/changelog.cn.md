@@ -10,7 +10,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Modal.Submit` 加载中样式问题 ([#478](https://github.com/sheinsight/shineout-next/pull/478))
+- 修复 `Modal.Submit` 加载中样式问题 ([#501](https://github.com/sheinsight/shineout-next/pull/501))
 
 ## 3.1.11
 2024-05-16
