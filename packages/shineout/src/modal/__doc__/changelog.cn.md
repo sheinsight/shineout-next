@@ -1,9 +1,16 @@
+## 3.1.25
+2024-06-03
+
+### 🐞 BugFix
+
+- 修复 `ModalMethod` 没有返回关闭方法的问题 ([#501](https://github.com/sheinsight/shineout-next/pull/501))
+
 ## 3.1.18
 2024-05-27
 
 ### 🐞 BugFix
 
-- 修复 `Modal.Submit` 加载中样式问题 ([#478](https://github.com/sheinsight/shineout-next/pull/478))
+- 修复 `Modal.Submit` 加载中样式问题 ([#501](https://github.com/sheinsight/shineout-next/pull/501))
 
 ## 3.1.11
 2024-05-16
