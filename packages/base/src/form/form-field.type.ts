@@ -32,7 +32,7 @@ export interface FormFieldProps<T> extends Partial<BaseFormControlProps<T>> {
    * @cn 校验规则 详见 [Rule](/components/rule)
    * @override RuleItem[]
    */
-  rules?: FormItemRule<T>;
+  rules?: FormItemRule<any>;
   /**
    * @en React components that support value and onChange or function. The function object attribute is as follows:
    * value: The value obtained from the parent Form or Form.Block by name.

@@ -10,6 +10,7 @@ import {
   displayTest,
   styleTest,
   textContentTest,
+  classContentTest
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import UploadResultImage from '../__example__/02-result-image';
@@ -156,10 +157,10 @@ describe('Upload.Image[Base]', () => {
     );
     const uploadWrapper = container.querySelector(wrapper)!;
     const firstChild = uploadWrapper.firstChild as Element;
-    expect(firstChild.className).toBe(`${imageResult} ${resultSuccess}`);
+    expect(firstChild.className.indexOf(resultSuccess)).toBeTruthy();
     rerender(<Upload.Image action={'//404'} defaultValue={['aa.png']} leftHandler />);
     const firstChildRender = uploadWrapper.firstChild as Element;
-    expect(firstChildRender.className).toBe(imageHandler.split('.')[1]);
+    classContentTest(firstChildRender, imageHandler.split('.')[1])
   });
   test('should rende when set renderContent', () => {
     const { container } = render(

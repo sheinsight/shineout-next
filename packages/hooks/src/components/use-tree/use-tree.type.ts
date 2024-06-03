@@ -13,7 +13,6 @@ export interface TreeContext<DataItem> {
   unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
   forceUpdateMap: Map<KeygenResult, () => void>;
-  disabled: boolean | ((item: DataItem) => boolean);
   value?: KeygenResult[];
   cachedValue: KeygenResult[];
   data?: DataItem[];
@@ -109,6 +108,9 @@ export interface BaseTreeProps<DataItem> {
    * @private 保持数据缓存
    */
   keepCache?: boolean;
+  /**
+   * @private 内部数据处理
+   */
   datum?: TreeDatum<DataItem>;
 }
 

@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import Upload from '..';
 import mountTest from '../../tests/mountTest';
 import { mockXhr, uploadFile } from './util';
-import { createClassName, delay, displayTest, styleTest, textContentTest } from '../../tests/utils';
+import { createClassName, delay, displayTest, styleContentTest, styleTest, textContentTest } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 
 const SO_PREFIX = 'upload';
@@ -50,7 +50,7 @@ describe('Upload.Button[Base]', () => {
       await delay(200);
     });
     const uploadButtonBg = container.querySelector(buttonBg)!;
-    styleTest(uploadButtonBg, `right: ${uploadProgressPercent}%;`);
+    styleContentTest(uploadButtonBg, `right: ${uploadProgressPercent}%;`);
     textContentTest(uploadButtonBg, '正在上传...');
   });
   test('should render when onError', async () => {

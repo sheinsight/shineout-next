@@ -1,4 +1,4 @@
-import { render, fireEvent, cleanup, screen } from '@testing-library/react';
+import { render, fireEvent, cleanup, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import Textarea from '..';
 import { Form } from 'shineout';
@@ -12,6 +12,7 @@ import {
   textContentTest,
   displayTest,
   createClassName,
+  delay,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import TextareaBase from '../__example__/01-01-base';
@@ -32,7 +33,11 @@ const {
   footer: textareaFooterClassName,
   wrapperUnderline: textareaUnderlineClassName,
   wrapperNoBorder: textareaNoBorderClassName,
-} = createClassName(SO_PREFIX, ['wrapper', 'info', 'footer'], ['wrapperFocus', 'wrapperSmall', 'shadow', 'infoError', 'wrapperUnderline', 'wrapperNoBorder'])
+} = createClassName(
+  SO_PREFIX,
+  ['wrapper', 'info', 'footer'],
+  ['wrapperFocus', 'wrapperSmall', 'shadow', 'infoError', 'wrapperUnderline', 'wrapperNoBorder'],
+);
 
 afterEach(cleanup);
 describe('Textarea[Base]', () => {
@@ -107,7 +112,7 @@ describe('Textarea[Autosize]', () => {
     const textareas = container.querySelectorAll('textarea');
     expect(textareas.length).toBe(2);
     classTest(textareas[1], textareaShadowClassName);
-    styleTest(textareas[0], 'overflow: auto; max-height: 150px; height: 0px;');
+    styleTest(textareas[0], 'overflow: auto; max-height: 150px;');
     fireEvent.change(textareas[0] as HTMLTextAreaElement, {
       target: { value: 'test' },
     });
@@ -137,20 +142,27 @@ describe('Textarea[Info:function]', () => {
   afterAll(() => {
     jest.runAllTimers();
   });
-  test('should render tip', () => {
+  test('should render tip', async () => {
     const { container } = render(<TextareaInfoFunction />);
-    fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
+    const textareaWrapper = container.querySelector('textarea')!;
+    fireEvent.click(textareaWrapper);
+    fireEvent.change(textareaWrapper, {
       target: { value: 'test' },
+    });
+    await waitFor(async () => {
+      await delay(200);
     });
     classLengthTest(container, textareaInfoClassName, 1);
   });
   test('should render tip we want', () => {
     const { container } = render(<TextareaInfoFunction />);
-    fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
+    const textareaWrapper = container.querySelector('textarea')!;
+    fireEvent.click(textareaWrapper);
+    fireEvent.change(textareaWrapper, {
       target: { value: 'test' },
     });
     textContentTest(container.querySelector(textareaInfoClassName)!, 'total is  4');
-    fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
+    fireEvent.change(textareaWrapper, {
       target: { value: 'testtesttesttesttesttest' },
     });
     classTest(container.querySelector(textareaInfoClassName)!, textareaInfoErrorClassName);
@@ -172,7 +184,9 @@ describe('Textarea[Info:number]', () => {
   });
   test('should render tip', () => {
     const { container } = render(<Textarea info={20} />);
-    fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
+    const textareaWrapper = container.querySelector('textarea')!;
+    fireEvent.click(textareaWrapper);
+    fireEvent.change(textareaWrapper, {
       target: { value: 'test' },
     });
     textContentTest(container.querySelector(textareaInfoClassName)!, '4 / 20');

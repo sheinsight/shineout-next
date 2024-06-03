@@ -1,3 +1,25 @@
+## 3.1.19
+2024-05-29
+
+### 🐞 BugFix
+
+- 修复 `Cascader` 当 `value` 变为 `undefined` 时下拉选择状态没有更新的问题 ([#483](https://github.com/sheinsight/shineout-next/pull/483))
+
+
+## 3.1.18
+2024-05-27
+
+### 💅 Style
+
+- 优化 `Cascader` 合并选项的样式 ([#482](https://github.com/sheinsight/shineout-next/pull/482))
+
+## 3.1.17
+2024-05-24
+
+### 🐞 BugFix
+
+- 修复 `Cascader` 属性 `compressed` 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
+
 ## 3.0.11
 2024-05-08
 
@@ -10,13 +32,6 @@
 ### 🐞 BugFix
 
 - 修复 `Cascader` 合并选项功能当数据动态变化或者宽度变化时没有动态更新的问题  ([#402](https://github.com/sheinsight/shineout-next/pull/402))
-
-## 3.0.8
-2024-04-26
-
-### 🐞 BugFix
-
-- 修复 `Cascader` 首次渲染 `compressed` 属性无效的问题 ([#399](https://github.com/sheinsight/shineout-next/pull/399))
 
 ## 3.0.7
 2024-04-25

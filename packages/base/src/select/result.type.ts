@@ -55,6 +55,7 @@ export interface ResultProps<DataItem, Value>
   convertBr?: string | ((text: string) => string);
   classes: {
     tag: string;
+    tagOnly: string;
     resultTextWrapper: string;
     compressedWrapper: string;
     multipleResultWrapper: string;

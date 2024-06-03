@@ -5,16 +5,16 @@ exports[`Image[Base] should render correctly  1`] = `
   style="gap: 8px; display: flex;"
 >
   <a
-    class="cvenksd soui-image-image c-v2d7sn soui-image-href c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded cs7vjsa soui-image-preview"
+    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="cveohdk soui-image-inner"
+      class="soui-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="c-rrcl56 soui-image-preview-mask"
+      class="soui-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -36,415 +36,75 @@ exports[`Image[Group] should render correctly about group 1`] = `
   style="gap: 8px; display: flex;"
 >
   <div
-    class="cvdnh9d soui-image-group"
+    class="soui-image-group"
   >
     <a
-      class="cvenksd soui-image-image c-v2d7sn soui-image-href c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="cw3ape8 soui-image-default-placeholder"
+        class="soui-image-default-placeholder"
       >
         <div
-          class="cov97ia soui-spin-default c4y2eox soui-spin-spin"
-          style="width: 16px; height: 16px;"
-        >
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-        </div>
+          class="soui-spin-ring soui-spin-spin"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+        />
       </div>
     </a>
     <a
-      class="cvenksd soui-image-image c-v2d7sn soui-image-href c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="cw3ape8 soui-image-default-placeholder"
+        class="soui-image-default-placeholder"
       >
         <div
-          class="cov97ia soui-spin-default c4y2eox soui-spin-spin"
-          style="width: 16px; height: 16px;"
-        >
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-        </div>
+          class="soui-spin-ring soui-spin-spin"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+        />
       </div>
     </a>
     <a
-      class="cvenksd soui-image-image c-v2d7sn soui-image-href c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="cw3ape8 soui-image-default-placeholder"
+        class="soui-image-default-placeholder"
       >
         <div
-          class="cov97ia soui-spin-default c4y2eox soui-spin-spin"
-          style="width: 16px; height: 16px;"
-        >
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-        </div>
+          class="soui-spin-ring soui-spin-spin"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+        />
       </div>
     </a>
     <a
-      class="cvenksd soui-image-image c-v2d7sn soui-image-href c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="cw3ape8 soui-image-default-placeholder"
+        class="soui-image-default-placeholder"
       >
         <div
-          class="cov97ia soui-spin-default c4y2eox soui-spin-spin"
-          style="width: 16px; height: 16px;"
-        >
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-          <div
-            class="c4xw3oy soui-spin-item"
-          >
-            <div
-              style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
-            />
-          </div>
-        </div>
+          class="soui-spin-ring soui-spin-spin"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+        />
       </div>
     </a>
     <a
-      class="cvenksd soui-image-image c-v2d7sn soui-image-href c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded cs7vjsa soui-image-preview"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="cveohdk soui-image-inner"
+        class="soui-image-inner"
         style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png);"
       />
       <span
-        class="c-rrcl56 soui-image-preview-mask"
+        class="soui-image-preview-mask"
       >
         <svg
           aria-hidden="true"
@@ -464,19 +124,19 @@ exports[`Image[Group] should render correctly about group 1`] = `
 
 exports[`Image[Pile] should render correctly about pile 1`] = `
 <div
-  class="cvdnh9d soui-image-group c-qb3rwt soui-image-group-pile"
+  class="soui-image-group soui-image-group-pile"
 >
   <a
-    class="cvenksd soui-image-image c-v2d7sn soui-image-href c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded cs7vjsa soui-image-preview"
+    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="cveohdk soui-image-inner"
+      class="soui-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="c-rrcl56 soui-image-preview-mask"
+      class="soui-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -491,15 +151,15 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
     </span>
   </a>
   <div
-    class="c-hhraze soui-image-group-pile-item"
+    class="soui-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="c-hhraze soui-image-group-pile-item"
+    class="soui-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="c-yf1qc2 soui-image-group-count"
+    class="soui-image-group-count"
   >
     <svg
       aria-hidden="true"
@@ -520,19 +180,19 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
 
 exports[`Image[Pile] should render correctly about pile without showCount 1`] = `
 <div
-  class="cvdnh9d soui-image-group c-qb3rwt soui-image-group-pile"
+  class="soui-image-group soui-image-group-pile"
 >
   <a
-    class="cvenksd soui-image-image c-v2d7sn soui-image-href c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded cs7vjsa soui-image-preview"
+    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="cveohdk soui-image-inner"
+      class="soui-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="c-rrcl56 soui-image-preview-mask"
+      class="soui-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -547,11 +207,11 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
     </span>
   </a>
   <div
-    class="c-hhraze soui-image-group-pile-item"
+    class="soui-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="c-hhraze soui-image-group-pile-item"
+    class="soui-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
 </div>
@@ -559,11 +219,11 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
 
 exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 <div
-  class="cvenksd soui-image-image c-v2eo9r soui-image-fill c-npfzwy soui-image-circle"
+  class="soui-image-image soui-image-fill soui-image-circle"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="cveohdk soui-image-inner"
+    class="soui-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>
@@ -571,11 +231,11 @@ exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 <div
-  class="cvenksd soui-image-image c-v2eo9r soui-image-fill c-emxb1t soui-image-rounded"
+  class="soui-image-image soui-image-fill soui-image-rounded"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="cveohdk soui-image-inner"
+    class="soui-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>
@@ -583,11 +243,11 @@ exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is thumbnail 1`] = `
 <div
-  class="cvenksd soui-image-image c-v2eo9r soui-image-fill ck82aha soui-image-thumbnail"
+  class="soui-image-image soui-image-fill soui-image-thumbnail"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="cveohdk soui-image-inner"
+    class="soui-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>

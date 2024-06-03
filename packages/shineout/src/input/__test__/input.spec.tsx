@@ -1,26 +1,105 @@
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import React, { ReactElement, useState } from 'react';
+import { render, fireEvent, screen, waitFor, cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import Input from '..';
 import { Form } from 'shineout';
+import { attributesTest, classTest, createClassName, delay, styleTest, textContentTest, displayTest, snapshotTest } from '../../tests/utils';
+import { classLengthTest } from '../../tests/structureTest';
+import InputBase from '../__example__/01-base'
+import InputSize from '../__example__/02-size'
+import InputNumber from '../__example__/03-number-0'
+import InputNumberOther from '../__example__/03-number-1'
+import InputGroup from '../__example__/04-01-group'
+import InputTip from '../__example__/05-tip'
+import InputValidate from '../__example__/06-validate'
+import InputDisabled from '../__example__/07-disabled'
+import InputPassword from '../__example__/08-password'
+import InputInnerTitle from '../__example__/09-inner-title'
+import InputUnderline from '../__example__/10-underline'
+import InputAutoSelect from '../__example__/11-autoselect'
+import InputTrim from '../__example__/12-trim'
+import InputEnter from '../__example__/13-enter'
+import InputLimit from '../__example__/14-limit'
+
+
 const SO_PREFIX = 'input';
+const originClasses = ['wrapper', 'content', 'input', 'clearWrapper', 'clear', 'group', 'info', 'numberStep', 'passwordToggle']
+const originItemClasses = ['wrapperInnerTitleTop', 'wrapperInnerTitleBottom', 'wrapperPaddingBox', 'wrapperSmall', 'wrapperLarge', 'groupSmall', 'groupLarge', 'wrapperDisabled', 'infoError', 'wrapperUnderline', 'wrapperNoBorder', 'wrapperFocus']
+const { wrapper, content, input, wrapperInnerTitleTop, wrapperInnerTitleBottom, wrapperPaddingBox, clearWrapper, clear, wrapperSmall, wrapperLarge, group, groupSmall, groupLarge, wrapperDisabled, info: infoWrapper, infoError, wrapperUnderline, numberStep, wrapperNoBorder, wrapperFocus, passwordToggle } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const itemError = '.soui-form-item-error'
+
+const {
+  wrapper: popoverWrapper,
+  content: popoverContent
+} = createClassName('popover', ['wrapper', 'content'], [''])
+
+const titleWrapper = '.soui-inner-title-wrapper'
+const titleTitle = '.soui-inner-title-title'
+const titlePlace = '.soui-inner-title-place'
+const titleContent = '.soui-inner-title-content'
+const titleTop = 'soui-inner-title-top'
+const titleWrapperOpen = 'soui-inner-title-wrapper-open'
+const titleAnimation = 'soui-inner-title-animation'
+
+
+beforeAll(() => {
+  jest.useFakeTimers();
+});
+afterAll(() => {
+  jest.runAllTimers();
+});
+afterEach(cleanup);
+
 describe('Input[Base]', () => {
-  test('should render correct dom structure', () => {
-    const { container } = render(<Input />);;
-    expect(container.innerHTML).toBe(
-      `<div data-soui-type="input" class="${SO_PREFIX}-wrapper-0-2-1"><input class="${SO_PREFIX}-input-0-2-12 ${SO_PREFIX}-paddingBox-0-2-2" value=""></div>`,
-    );
+  displayTest(Input, 'ShineoutInput');
+  displayTest(Input.Group, 'ShineoutInputGroup');
+  displayTest(Input.Password, 'ShineoutInputPassword');
+  displayTest(Input.Number, 'ShineoutInputNumber');
+  snapshotTest(<InputBase />)
+  snapshotTest(<InputSize />, 'about size')
+  snapshotTest(<InputNumber />, 'about number')
+  snapshotTest(<InputNumberOther />, 'about number')
+  snapshotTest(<InputGroup />, 'about group')
+  snapshotTest(<InputTip />, 'about tip')
+  snapshotTest(<InputValidate />, 'about validate')
+  snapshotTest(<InputDisabled />, 'about disabled')
+  snapshotTest(<InputPassword />, 'about password')
+  snapshotTest(<InputInnerTitle />, 'about innerTitle')
+  snapshotTest(<InputUnderline />, 'about underline')
+  snapshotTest(<InputAutoSelect />, 'about autoSelect')
+  snapshotTest(<InputTrim />, 'about trim')
+  snapshotTest(<InputEnter />, 'about enter')
+  snapshotTest(<InputLimit />, 'about limit')
+
+  test('should render default', () => {
+    const inputValue = 'hello'
+    const { container } = render(<Input />);
+    const inputWrapper = container.querySelector(wrapper)!
+    attributesTest(inputWrapper, 'data-soui-input-border', 'true')
+    const inputContent = inputWrapper.querySelector(content)!
+    classTest(inputContent, wrapperInnerTitleTop)
+    classTest(inputContent, wrapperInnerTitleBottom)
+    classTest(inputContent, wrapperPaddingBox)
+    const inputMain = inputContent.querySelector('input')!
+    expect(inputMain).toBeInTheDocument()
+    attributesTest(inputMain, 'value', '')
+    fireEvent.change(inputMain, { target: { value: inputValue } })
+    attributesTest(inputMain, 'value', inputValue)
   });
+
   test('should clear the value', async () => {
     const { container } = render(<Input clearable />);
     const input = container.querySelector('input');
     fireEvent.change(input as HTMLInputElement, { target: { value: 'value' } });
     await waitFor(() => expect(input?.getAttribute('value')).toBe('value'));
-    const clear = container.querySelector(`.${SO_PREFIX}-clear-0-2-14`);
-    fireEvent.mouseDown(clear as HTMLInputElement);
+    const inputClear = container.querySelector(clearWrapper);
+    fireEvent.mouseDown(inputClear?.querySelector(clear)!);
     await waitFor(() => {
       expect(input?.getAttribute('value')).toBe('');
     });
   });
+
   test('should set size', () => {
     const style: React.CSSProperties = { width: 12, marginInlineEnd: 12 };
     const InputSize: React.FC<any> = () => (
@@ -31,19 +110,22 @@ describe('Input[Base]', () => {
       </div>
     );
     const { container } = render(<InputSize />);
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`).forEach((input: Element) => {
-      const size = (input?.firstChild as HTMLElement)?.getAttribute('placeholder')?.split(' ')[0];
+
+    container.querySelectorAll(wrapper).forEach((input: Element) => {
+      const size = (input?.querySelector('input') as HTMLElement)?.getAttribute('placeholder')?.split(' ')[0];
       if (size === 'default') return;
-      expect(
-        input.classList.contains(
-          `${SO_PREFIX}-wrapper${size?.charAt(0).toUpperCase()}${size?.slice(1)}-0-2-${
-            size === 'small' ? 3 : 4
-          }`,
-        ),
-      ).toBeTruthy();
+      if (size === 'small') {
+        classTest(input, wrapperSmall)
+        return
+      }
+      if (size === 'large') {
+        classTest(input, wrapperLarge)
+        return
+      }
     });
   });
 });
+
 describe('input number', () => {
   const testInputValue = (expectedValue: string, inputMain: HTMLInputElement | null) => {
     expect(inputMain?.getAttribute('value')).toBe(expectedValue);
@@ -51,7 +133,7 @@ describe('input number', () => {
   const getFromRender = (component: ReactElement) => {
     const { container } = render(component);
     const preDigits = (
-      container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)?.firstChild as HTMLElement
+      container.querySelector(wrapper)?.querySelector('input') as HTMLElement
     )
       ?.getAttribute('placeholder')
       ?.split(' ')[1];
@@ -170,30 +252,26 @@ describe('input number', () => {
     const style = { color: 'blue' };
     const className = 'class-name-test';
     const { container } = render(<Input style={style} className={className} />);
-    expect(
-      container.querySelector('input')?.classList.contains(`${SO_PREFIX}-input-0-2-12`),
-    ).toBeTruthy();
-    expect(
-      container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)?.classList.contains('class-name-test'),
-    ).toBeTruthy();
-    expect(container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)?.getAttribute('style')).toBe(
-      'color: blue;',
-    );
+    const inputWrapper = container.querySelector(wrapper)!;
+    classTest(inputWrapper, className);
+    styleTest(inputWrapper, 'color: blue;');
   });
 });
 describe('Input.Number', () => {
   test('should have up/down button', () => {
-    const { container } = render(<Input.Number width={120} min={23} max={100} digits={0} />);
-    const inputMain = container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`);
-    expect(inputMain?.getAttribute('style')).toBe('width: 120px;');
+    const width = 120
+    const { container } = render(<Input.Number width={width} min={23} max={100} digits={0} />);
+    const inputMain = container.querySelector(wrapper)!;
+    styleTest(inputMain, `width: ${width}px;`)
     expect(inputMain?.querySelectorAll('svg').length).toBe(2);
   });
+
   test('should change value while up/down value click', () => {
     const { container } = render(<Input.Number width={120} min={23} max={100} digits={0} />);
     function getValue() {
       return container.querySelector('input')?.getAttribute('value');
     }
-    const inputMain = container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`);
+    const inputMain = container.querySelector(wrapper);
     // origin is a empty string
     expect(getValue()).toBe('');
     if (inputMain?.querySelectorAll('svg').length === 2) {
@@ -259,31 +337,49 @@ describe('Input.Number', () => {
 describe('Input[Group]', () => {
   test('should render correct dom structure', () => {
     const { container } = render(
-      <Input.Group size='small'>
+      <Input.Group>
         <Input placeholder='email' />
         .com
       </Input.Group>,
     );
-    const selector = [
-      `.${SO_PREFIX}-group-0-2-15`,
-      `.${SO_PREFIX}-wrapper-0-2-1`,
-      `.${SO_PREFIX}-input-0-2-12`,
-    ];
-    selector.forEach((value) => {
-      expect(container.querySelectorAll(value).length).toBe(1);
-    });
+    const inputGroup = container.querySelector(group)!;
+    attributesTest(inputGroup, 'data-soui-role', 'input-group')
+    classLengthTest(inputGroup, wrapper, 1)
+    textContentTest(inputGroup.querySelector('span')!, '.com')
   });
+  test('should render when set different size', () => {
+    const { container } = render(
+      <>
+        <Input.Group size='small'></Input.Group>
+        <Input.Group size='large'></Input.Group>
+      </>
+    )
+    
+    const inputGroups = container.querySelectorAll(group)
+    classTest(inputGroups[0], groupSmall)
+    classTest(inputGroups[1], groupLarge)
+  })
+  test('should render when set child size and group size', () => {
+    const { container } = render(
+      <Input.Group size='small'>
+        <Input size='large' />
+      </Input.Group>
+    )
+    classTest(container.querySelector(wrapper)!, wrapperLarge)
+  })
 });
 describe('Input[Rule]', () => {
   jest.useRealTimers();
+  const errorText = '必填';
   test('should render error when get error & set popover in Form', async () => {
     const { container } = render(
       <Form.Item label={'哈哈哈'}>
         <Input
           rules={[
+            // @ts-ignore
             (value, formValue, callback) => {
               if (!value) {
-                callback(new Error('必填'));
+                callback(new Error(errorText));
               }
               callback(true);
             },
@@ -294,18 +390,20 @@ describe('Input[Rule]', () => {
     const input = container.querySelector('input') as HTMLElement;
     fireEvent.change(input, { target: { value: '123' } });
     fireEvent.change(input, { target: { value: '' } });
-    await waitFor(() =>
-      expect(container.querySelector('.form-item-error-0-2-12')?.textContent).toBe('必填'),
+    await waitFor(async () =>
+      await delay(200)
     );
+    textContentTest(container.querySelector(itemError)!, errorText)
   });
-  test('should render error when get error & set popover', async () => {
+  test('should render error when get error & set popover without Form', async () => {
     const { container } = render(
       <Input
         popover
         rules={[
+          // @ts-ignore
           (value, formValue, callback) => {
             if (!value) {
-              callback(new Error('必填'));
+              callback(new Error(errorText));
             }
             callback(true);
           },
@@ -315,7 +413,10 @@ describe('Input[Rule]', () => {
     const input = container.querySelector('input') as HTMLElement;
     fireEvent.change(input, { target: { value: '11' } });
     fireEvent.change(input, { target: { value: '' } });
-    await waitFor(() => expect(container.querySelector('span')?.textContent).toBe('必填'));
+    await waitFor(async () => {
+      await delay(200)
+    })
+    textContentTest(container.querySelector(popoverWrapper)?.querySelector(popoverContent)!, errorText)
   });
 });
 describe('Input[Disabled]', () => {
@@ -325,7 +426,7 @@ describe('Input[Disabled]', () => {
   });
   test('should have disabled class', () => {
     const { container } = render(<Input disabled placeholder='disabled input' />);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperDisabled-0-2-7`).length).toBe(1);
+    classTest(container.querySelector(wrapper)!, wrapperDisabled)
   });
   test('should through disabled while on group', () => {
     const { container } = render(
@@ -348,27 +449,55 @@ describe('Input[Password]', () => {
     const { container } = render(<Input.Password placeholder='input password' />);
     const input = container.querySelector('input');
     await fireEvent.change(input as HTMLElement, { target: { value: 'hello' } });
-    expect(input?.getAttribute('value')).toBe('*****');
+    expect(input?.getAttribute('value')).toBe('•••••');
   });
+  test('should render when set visibilityToggle', async () => {
+    const text = 'hello';
+    const { container } = render(<Input.Password visibilityToggle />);
+    const input = container.querySelector('input')!;
+    await fireEvent.change(input as HTMLElement, { target: { value: text } });
+    attributesTest(input, 'value', '•••••')
+    const passwordToggleWrapper = container.querySelector(passwordToggle)!;
+    fireEvent.click(passwordToggleWrapper);
+    attributesTest(input, 'value', text)
+    fireEvent.click(passwordToggleWrapper);
+    attributesTest(input, 'value', '•••••')
+    fireEvent.mouseDown(passwordToggleWrapper);
+  })
 });
 describe('Input[innerTitle]', () => {
   test('content will show when focus', () => {
-    const { container } = render(<Input.Password innerTitle='please input something' />);
-    const input = container.querySelector('input');
-    expect(container.querySelectorAll('.inner-title-wrapperOpen-0-2-30').length).toBe(0);
+    const text = 'please input something';
+    const { container } = render(<Input.Password innerTitle={text} />);
+    const inputInnerTitle = container.querySelector(titleWrapper)!;
+    
+    const childInnerTitle = inputInnerTitle.querySelector(titleTitle)!;
+    
+    classTest(childInnerTitle, titleTop)
+    textContentTest(childInnerTitle, text)
+    const innerTitlePlace = inputInnerTitle.querySelector(titlePlace)!;
+    textContentTest(innerTitlePlace.querySelector(titleTitle)!, text)
+    const innerTitleContent = inputInnerTitle.querySelector(titleContent)!;
+    const input = innerTitleContent.querySelector('input');
+    
+    classTest(inputInnerTitle, titleWrapperOpen, false)
     fireEvent.focus(input as HTMLElement);
-    expect(container.querySelectorAll('.inner-title-wrapperOpen-0-2-30').length).toBe(1);
+
+    classTest(inputInnerTitle, titleWrapperOpen)
+    classTest(inputInnerTitle, titleAnimation)
     fireEvent.blur(input as HTMLElement);
-    expect(container.querySelectorAll('.inner-title-wrapperOpen-0-2-30').length).toBe(0);
+    
+    classTest(inputInnerTitle, titleWrapperOpen, false)
   });
   test('content will show when there is value', async () => {
     const { container } = render(<Input.Password innerTitle='please input something' />);
+    const inputInnerTitle = container.querySelector(titleWrapper)!;
     const input = container.querySelector('input');
-    expect(container.querySelectorAll('.inner-title-wrapperOpen-0-2-30').length).toBe(0);
+    classTest(inputInnerTitle, titleWrapperOpen, false)
     await fireEvent.change(input as HTMLElement, { target: { value: 'value' } });
-    expect(container.querySelectorAll('.inner-title-wrapperOpen-0-2-30').length).toBe(1);
+    classTest(inputInnerTitle, titleWrapperOpen)
     await fireEvent.blur(input as HTMLElement);
-    expect(container.querySelectorAll('.inner-title-wrapperOpen-0-2-30').length).toBe(1);
+    classTest(inputInnerTitle, titleWrapperOpen)
   });
 });
 describe('Input[clearToUndefined]', () => {
@@ -413,32 +542,41 @@ describe('Input[htmlName]', () => {
   });
 });
 describe('Input[info]', () => {
-  test('should set default info', () => {
+  test('should set default info', async () => {
     const infoText = '1234567890';
     const info = infoText.length;
-    const { container } = render(<Input info={info} defaultValue={infoText} />);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-info-0-2-25`).length).toBe(1);
-    expect(container.querySelector(`.${SO_PREFIX}-info-0-2-25`)?.textContent).toBe(
-      `${infoText.length} / ${info}`,
-    );
+    const { container } = render(<Input info={info} />);
+    const input = container.querySelector('input')!
+    fireEvent.click(input)
+    fireEvent.change(input, { target: { value: infoText } })
+    await waitFor(async () => {
+      await delay(200)
+    })
+
+    textContentTest(container.querySelector(infoWrapper)!, `${infoText.length} / ${info}`)
   });
   test('should set default info error', () => {
     const infoText = '1234567890';
     const info = infoText.length - 1;
     const { container } = render(<Input info={info} defaultValue={infoText} />);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-infoError-0-2-26`).length).toBe(1);
-    expect(container.querySelector(`.${SO_PREFIX}-infoError-0-2-26`)?.textContent).toBe(
-      `${infoText.length} / ${info}`,
-    );
+    const inputInfoWrapper = container.querySelector(infoWrapper)!
+    textContentTest(inputInfoWrapper, `${infoText.length} / ${info}`)
+    classTest(inputInfoWrapper, infoError)
   });
 
-  // test('should set custom info', () => {
-  //   const infoText = 'shineout'
-  //   const info = () => <div>{infoText}</div>
-  //   const { container } = render(<Input info={info} />)
-  //   expect(container.querySelectorAll(`.${SO_PREFIX}-input-tip`).length).toBe(1)
-  //   expect(container.querySelector(`.${SO_PREFIX}-input-tip > div`).textContent).toBe(infoText)
-  // })
+  test('should set custom info', async () => {
+    const infoText = 'error'
+    const info = () => infoText
+    const { container } = render(<Input info={info} />)
+    const input = container.querySelector('input')!
+    fireEvent.click(input)
+    fireEvent.change(input, { target: { value: 'shineout' } })
+    await waitFor(async () => {
+      await delay(200)
+    })
+
+    textContentTest(container.querySelector(infoWrapper)!, infoText)
+  })
 });
 describe('Input[onBlur]', () => {
   test('should trigger onBlur', () => {
@@ -529,11 +667,7 @@ describe('Input[type]', () => {
 describe('Input[underline]', () => {
   test('should set underline', () => {
     const { container } = render(<Input underline />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperUnderline-0-2-8`),
-    ).toBeTruthy();
+    classTest(container.querySelector(wrapper)!, wrapperUnderline)
   });
 });
 describe('Input.Number[allowNull]', () => {
@@ -545,22 +679,14 @@ describe('Input.Number[allowNull]', () => {
     await waitFor(() => expect(container.querySelector('input')?.value).toBe(''));
   });
 });
-// describe('Input.Number[coin]', () => {
-//   test('should set coin', () => {
-//     const { container } = render(<Input.Number />)
-//     const input = container.querySelector('input') as HTMLElement
-//     fireEvent.change(input, { target: { value: 1000 } })
-//     fireEvent.blur(input as HTMLElement);
-//     expect(container.querySelector('input')?.value).toBe('1,000')
-//   })
-// })
-// describe('Input.Number[hideArrow]', () => {
-//   test('should set hideArrow', () => {
-//     const { container } = render(<Input.Number hideArrow />)
-//     expect(container.querySelectorAll(`.${SO_PREFIX}-input-number-up`).length).toBe(0)
-//     expect(container.querySelectorAll(`.${SO_PREFIX}-input-number-down`).length).toBe(0)
-//   })
-// })
+describe('Input.Number[hideArrow]', () => {
+  test('should set hideArrow', async () => {
+    const { container, rerender } = render(<Input.Number />)
+    classLengthTest(container.querySelector(numberStep)!, 'svg', 2)
+    rerender(<Input.Number hideArrow />)
+    await waitFor(() => expect(container.querySelector(numberStep)).not.toBeInTheDocument())
+  })
+})
 describe('Input.Number[max/min]', () => {
   test('should set max/min', () => {
     const min = 100;
@@ -697,20 +823,17 @@ describe('Input.Number[step]', () => {
   test('should set step', async () => {
     const step = 10;
     const { container } = render(<Input.Number step={step} />);
-    fireEvent.click(container.querySelectorAll('svg')[1]);
-    setTimeout(() => {
-      expect(container.querySelector('input')?.value).toBe(String(step));
-    });
+    fireEvent.mouseDown(container.querySelectorAll('svg')[0]);
+    await waitFor(async () => {
+      await delay(200)
+    })
+    expect(container.querySelector('input')?.value).toBe(String(step));
   });
 });
 describe('Input[no border]', () => {
   test('no border style', () => {
     const { container } = render(<Input placeholder='input something' border={false} />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperNoBorder-0-2-9`),
-    ).toBeTruthy();
+    classTest(container.querySelector(wrapper)!, wrapperNoBorder)
   });
 });
 describe('Input[autoselect]', () => {
@@ -718,16 +841,9 @@ describe('Input[autoselect]', () => {
     const { container } = render(
       <Input defaultValue={'hello world'} placeholder='input something' autoSelect />,
     );
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperFocus-0-2-5`),
-    ).toBeFalsy();
+    
+    classTest(container.querySelector(wrapper)!, wrapperFocus, false)
     fireEvent.focus(container.querySelector('input') as HTMLInputElement);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperFocus-0-2-5`),
-    ).toBeTruthy();
+    classTest(container.querySelector(wrapper)!, wrapperFocus)
   });
 });

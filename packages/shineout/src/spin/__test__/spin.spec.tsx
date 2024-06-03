@@ -12,6 +12,7 @@ import {
   baseTest,
   childrenTest,
   createClassName,
+  styleContentTest,
 } from '../../tests/utils';
 import mountTest from '../../tests/mountTest';
 import { classLengthTest } from '../../tests/structureTest';
@@ -96,7 +97,12 @@ afterEach(cleanup);
 mountTest(Spin);
 describe('Spin[Base]', () => {
   displayTest(Spin, 'ShineoutSpin');
-  baseTest(Spin, spinDefaultClassName, { backgroundColor: 'red' }, style + ' background-color: red;');
+  test('should render when set style and className', () => {
+    const { container } = render(<Spin style={{ backgroundColor: 'red' }} className='demo' />);
+    const spin = container.querySelector(spinClassName)!;
+    classTest(spin, 'demo');
+    styleContentTest(spin, 'background-color: red;');
+  })
   childrenTest(Spin, spinContainerClassName);
   snapshotTest(<SpinBase />);
   snapshotTest(<SpinBaseAll />);
@@ -197,7 +203,7 @@ describe('Spin[inexistence]', () => {
   });
   test('should render when set name is undefined', () => {
     const { container } = render(<Spin name={undefined} />);
-    expect(container.querySelector(spinDefaultClassName)!).toBeInTheDocument();
+    expect(container.querySelector(spinClassName)!).toBeInTheDocument();
   });
 });
 describe('Spin[Loading]', () => {

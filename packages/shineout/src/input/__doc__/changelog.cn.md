@@ -1,3 +1,23 @@
+## 3.1.24
+2024-06-03
+### 🐞 BugFix
+
+- 修复  `Input.Number`  属性 `hideArrow` 被透传到 input 元素的问题 ([#497](https://github.com/sheinsight/shineout-next/pull/497))
+
+## 3.1.18
+2024-05-27
+
+### 🐞 BugFix
+
+- `Input` 兼容 `value = 0` 的场景 ([#480](https://github.com/sheinsight/shineout-next/pull/480))
+
+## 3.1.16
+2024-05-24
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 缺失 `status` 属性  ([#475](https://github.com/sheinsight/shineout-next/pull/475))
+
 ## 3.1.11
 2024-05-16
 

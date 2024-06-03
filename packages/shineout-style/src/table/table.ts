@@ -423,7 +423,7 @@ const tableStyle: JsStyles<TableClassType> = {
   iconWrapper: {
     display: 'inline-block',
     verticalAlign: 'top',
-    lineHeight: '1.85',
+    lineHeight: '1.9',
     height: '14px',
   },
   rowStriped: {

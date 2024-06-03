@@ -4,7 +4,8 @@ exports[`Tooltip[Base] should render correctly  1`] = `
 <div>
   <noscript />
   <button
-    class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+    class="soui-button-primary soui-button-button"
+    dir="ltr"
     type="button"
   >
     <span>
@@ -14,11 +15,12 @@ exports[`Tooltip[Base] should render correctly  1`] = `
 </div>
 `;
 
-exports[`Tooltip[Base] should render correctly  2`] = `
+exports[`Tooltip[Base] should render correctly about click 1`] = `
 <div>
   <noscript />
   <button
-    class="cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+    class="soui-button-primary soui-button-button"
+    dir="ltr"
     type="button"
   >
     <span>
@@ -28,15 +30,16 @@ exports[`Tooltip[Base] should render correctly  2`] = `
 </div>
 `;
 
-exports[`Tooltip[Base] should render correctly  3`] = `
+exports[`Tooltip[Base] should render correctly about disabled 1`] = `
 <div>
   <noscript />
   <span
-    class="c-un50q1 soui-tooltip-target"
+    class="soui-tooltip-target"
     style="cursor: not-allowed;"
   >
     <button
-      class="cg2l11h soui-button-secondary c3ct0ht soui-button-button c-jronn9 soui-button-disabled"
+      class="soui-button-secondary soui-button-button soui-button-disabled"
+      dir="ltr"
       disabled=""
       style="pointer-events: none;"
       type="button"

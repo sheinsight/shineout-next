@@ -19,6 +19,8 @@ const Confirm = (props: PopoverConfirmProps) => {
       (callback as Promise<any>).then(() => {
         close();
         setOk(false);
+      }).catch(() => {
+        setOk(false);
       });
     } else {
       close();
@@ -33,6 +35,8 @@ const Confirm = (props: PopoverConfirmProps) => {
       setCancel(true);
       (callback as Promise<any>).then(() => {
         close();
+        setCancel(false);
+      }).catch(() => {
         setCancel(false);
       });
     } else {

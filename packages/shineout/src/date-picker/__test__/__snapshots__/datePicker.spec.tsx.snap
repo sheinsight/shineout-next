@@ -2,37 +2,40 @@
 
 exports[`Alert[Base] should render correctly  1`] = `
 <div
-  class="c-yisk5i soui-datePicker-wrapper"
+  class="soui-datePicker-wrapper"
   data-soui-input-border="true"
   data-soui-type="date"
 >
   <div
-    class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+    class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     tabindex="1"
   >
     <div
-      class="clj7ys6 soui-datePicker-result"
+      class="soui-datePicker-result"
     >
       <div
-        class="c-bsufio soui-datePicker-result-text-wrapper"
+        class="soui-datePicker-result-text-wrapper"
       >
         <div
-          class="cbfi7fn soui-datePicker-result-text"
+          class="soui-datePicker-result-text"
         >
-          <div
-            class="cji9p4e soui-datePicker-result-text-padding"
+          <span
+            class="soui-datePicker-result-text-padding"
           >
             <span
-              class="ci5d4re soui-datePicker-placeholder"
+              class="soui-datePicker-placeholder"
             >
               Please select date
             </span>
-          </div>
+          </span>
+          <div
+            class="soui-datePicker-result-text-bg"
+          />
         </div>
       </div>
     </div>
     <div
-      class="c-8xbkpa soui-datePicker-icon"
+      class="soui-datePicker-icon"
     >
       <svg
         aria-hidden="true"
@@ -56,33 +59,36 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
   style="padding: 10px; overflow: hidden; display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              2024-04-11 14:34:03
-            </div>
+              2024-06-03 14:20:09
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -101,7 +107,7 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -119,54 +125,60 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <input
                 autocomplete="off"
                 placeholder="Start date"
                 value="2018-05-25"
               />
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <input
                 autocomplete="off"
                 placeholder="End date"
                 value="2018-06-05"
               />
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -185,7 +197,7 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -203,33 +215,36 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="time"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              14:34:03
-            </div>
+              14:20:08
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -248,7 +263,7 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -268,55 +283,61 @@ exports[`Alert[Base] should render correctly about absolute 1`] = `
 
 exports[`Alert[Base] should render correctly about allowSingle 1`] = `
 <div
-  class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+  class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
   data-soui-input-border="true"
   data-soui-type="datetime"
 >
   <div
-    class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+    class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     tabindex="1"
   >
     <div
-      class="clj7ys6 soui-datePicker-result"
+      class="soui-datePicker-result"
     >
       <div
-        class="c-bsufio soui-datePicker-result-text-wrapper"
+        class="soui-datePicker-result-text-wrapper"
       >
         <div
-          class="cbfi7fn soui-datePicker-result-text"
+          class="soui-datePicker-result-text"
         >
-          <div
-            class="cji9p4e soui-datePicker-result-text-padding"
+          <span
+            class="soui-datePicker-result-text-padding"
           >
             <span
-              class="ci5d4re soui-datePicker-placeholder"
+              class="soui-datePicker-placeholder"
             >
               Start date
             </span>
-          </div>
+          </span>
+          <div
+            class="soui-datePicker-result-text-bg"
+          />
         </div>
         <div
-          class="czi8fxr soui-datePicker-result-separator"
+          class="soui-datePicker-result-separator"
         >
           ~
         </div>
         <div
-          class="cbfi7fn soui-datePicker-result-text"
+          class="soui-datePicker-result-text"
         >
-          <div
-            class="cji9p4e soui-datePicker-result-text-padding"
+          <span
+            class="soui-datePicker-result-text-padding"
           >
             <span
-              class="ci5d4re soui-datePicker-placeholder"
+              class="soui-datePicker-placeholder"
             >
               End date
             </span>
-          </div>
+          </span>
+          <div
+            class="soui-datePicker-result-text-bg"
+          />
         </div>
       </div>
     </div>
     <div
-      class="c-8xbkpa soui-datePicker-icon"
+      class="soui-datePicker-icon"
     >
       <svg
         aria-hidden="true"
@@ -337,37 +358,40 @@ exports[`Alert[Base] should render correctly about allowSingle 1`] = `
 
 exports[`Alert[Base] should render correctly about dateTime 1`] = `
 <div
-  class="c-yisk5i soui-datePicker-wrapper"
+  class="soui-datePicker-wrapper"
   data-soui-input-border="true"
   data-soui-type="datetime"
 >
   <div
-    class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+    class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     tabindex="1"
   >
     <div
-      class="clj7ys6 soui-datePicker-result"
+      class="soui-datePicker-result"
     >
       <div
-        class="c-bsufio soui-datePicker-result-text-wrapper"
+        class="soui-datePicker-result-text-wrapper"
       >
         <div
-          class="cbfi7fn soui-datePicker-result-text"
+          class="soui-datePicker-result-text"
         >
-          <div
-            class="cji9p4e soui-datePicker-result-text-padding"
+          <span
+            class="soui-datePicker-result-text-padding"
           >
             <span
-              class="ci5d4re soui-datePicker-placeholder"
+              class="soui-datePicker-placeholder"
             >
               Please select date
             </span>
-          </div>
+          </span>
+          <div
+            class="soui-datePicker-result-text-bg"
+          />
         </div>
       </div>
     </div>
     <div
-      class="c-8xbkpa soui-datePicker-icon"
+      class="soui-datePicker-icon"
     >
       <svg
         aria-hidden="true"
@@ -391,37 +415,40 @@ exports[`Alert[Base] should render correctly about defaultPicker 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Please select date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -439,55 +466,61 @@ exports[`Alert[Base] should render correctly about defaultPicker 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Start date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 End date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -512,32 +545,35 @@ exports[`Alert[Base] should render correctly about disable 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper c3kcrdi soui-datePicker-wrapper-disabled"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-disabled"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              2024-04-11
-            </div>
+              2024-06-03
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -555,46 +591,52 @@ exports[`Alert[Base] should render correctly about disable 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper c3kcrdi soui-datePicker-wrapper-disabled ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-disabled soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               2017-05-10
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               2017-05-20
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -612,47 +654,53 @@ exports[`Alert[Base] should render correctly about disable 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               2017-05-10
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text cs6ddq7 soui-datePicker-result-text-disabled"
+            class="soui-datePicker-result-text soui-datePicker-result-text-disabled"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               2017-05-20
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -671,7 +719,7 @@ exports[`Alert[Base] should render correctly about disable 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -689,47 +737,53 @@ exports[`Alert[Base] should render correctly about disable 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text cs6ddq7 soui-datePicker-result-text-disabled"
+            class="soui-datePicker-result-text soui-datePicker-result-text-disabled"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               2017-05-10
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               2017-05-20
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -748,7 +802,7 @@ exports[`Alert[Base] should render correctly about disable 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -773,36 +827,39 @@ exports[`Alert[Base] should render correctly about disable one 1`] = `
   style="display: flex; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <input
                 autocomplete="off"
                 placeholder="Please select date"
-                value="2024-04-11 14:34:03"
+                value="2024-06-03 14:20:08"
               />
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -821,7 +878,7 @@ exports[`Alert[Base] should render correctly about disable one 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -839,33 +896,36 @@ exports[`Alert[Base] should render correctly about disable one 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="time"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               14:30:30
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -884,7 +944,7 @@ exports[`Alert[Base] should render correctly about disable one 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -905,37 +965,40 @@ exports[`Alert[Base] should render correctly about disable one 1`] = `
 exports[`Alert[Base] should render correctly about disable three 1`] = `
 <div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
     style="margin-inline-end: 12px;"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <input
                 autocomplete="off"
                 placeholder="Please select date"
                 value="2023-10-12 12:00:00"
               />
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -954,7 +1017,7 @@ exports[`Alert[Base] should render correctly about disable three 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -977,33 +1040,36 @@ exports[`Alert[Base] should render correctly about disable three 1`] = `
 exports[`Alert[Base] should render correctly about disable two 1`] = `
 <div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              2024-04-11 14:34:03
-            </div>
+              2024-06-03 14:20:08
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1022,7 +1088,7 @@ exports[`Alert[Base] should render correctly about disable two 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1045,34 +1111,37 @@ exports[`Alert[Base] should render correctly about disable two 1`] = `
 exports[`Alert[Base] should render correctly about format 1`] = `
 <div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              2024-4-11 14:34
-            </div>
+              2024-6-3 14:20
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1091,7 +1160,7 @@ exports[`Alert[Base] should render correctly about format 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1109,35 +1178,36 @@ exports[`Alert[Base] should render correctly about format 1`] = `
     </div>
   </div>
   <div
-    class="c-x8e4a6 soui-input-group"
+    class="soui-input-group"
     data-soui-role="input-group"
+    dir="ltr"
     style="width: 240px; margin-bottom: 32px;"
   >
     <div
-      class="c-mm3jkq soui-input-wrapper cievc1u soui-input-wrapper-disabled"
+      class="soui-input-wrapper soui-input-wrapper-disabled"
       data-soui-input-border="true"
       style="flex: 1;"
     >
       <div
-        class="cdk4afh soui-input-wrapper-inner-title-top c-t4daa5 soui-input-wrapper-inner-title-bottom c-yi6xxc soui-input-wrapper-padding-box c-x9i7lg soui-input-content"
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
       >
         <input
-          class="c-x7d2ar soui-input-input"
+          class="soui-input-input"
           disabled=""
           value="format"
         />
       </div>
     </div>
     <div
-      class="c-mm3jkq soui-input-wrapper"
+      class="soui-input-wrapper"
       data-soui-input-border="true"
       style="flex: 3;"
     >
       <div
-        class="cdk4afh soui-input-wrapper-inner-title-top c-t4daa5 soui-input-wrapper-inner-title-bottom c-yi6xxc soui-input-wrapper-padding-box c-x9i7lg soui-input-content"
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
       >
         <input
-          class="c-x7d2ar soui-input-input"
+          class="soui-input-input"
           placeholder="格式化"
           value="YYYY-M-D HH:mm"
         />
@@ -1145,34 +1215,37 @@ exports[`Alert[Base] should render correctly about format 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
     style="margin-bottom: 24px;"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              24/04/11
-            </div>
+              24/06/03
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1191,7 +1264,7 @@ exports[`Alert[Base] should render correctly about format 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1209,72 +1282,74 @@ exports[`Alert[Base] should render correctly about format 1`] = `
     </div>
   </div>
   <div
-    class="c-x8e4a6 soui-input-group c-8jhitu soui-input-group-disabled"
+    class="soui-input-group soui-input-group-disabled"
     data-soui-role="input-group"
+    dir="ltr"
     style="width: 240px; margin-bottom: 24px;"
   >
     <div
-      class="c-mm3jkq soui-input-wrapper cievc1u soui-input-wrapper-disabled"
+      class="soui-input-wrapper soui-input-wrapper-disabled"
       data-soui-input-border="true"
       style="flex: 1;"
     >
       <div
-        class="cdk4afh soui-input-wrapper-inner-title-top c-t4daa5 soui-input-wrapper-inner-title-bottom c-yi6xxc soui-input-wrapper-padding-box c-x9i7lg soui-input-content"
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
       >
         <input
-          class="c-x7d2ar soui-input-input"
+          class="soui-input-input"
           disabled=""
           value="value"
         />
       </div>
     </div>
     <div
-      class="c-mm3jkq soui-input-wrapper cievc1u soui-input-wrapper-disabled"
+      class="soui-input-wrapper soui-input-wrapper-disabled"
       data-soui-input-border="true"
       style="flex: 3;"
     >
       <div
-        class="cdk4afh soui-input-wrapper-inner-title-top c-t4daa5 soui-input-wrapper-inner-title-bottom c-yi6xxc soui-input-wrapper-padding-box c-x9i7lg soui-input-content"
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
       >
         <input
-          class="c-x7d2ar soui-input-input"
+          class="soui-input-input"
           disabled=""
           placeholder="值"
-          value="2024-04-11 14:34:03"
+          value="2024-06-03 14:20:09"
         />
       </div>
     </div>
   </div>
   <div
-    class="c-x8e4a6 soui-input-group"
+    class="soui-input-group"
     data-soui-role="input-group"
+    dir="ltr"
     style="width: 240px;"
   >
     <div
-      class="c-mm3jkq soui-input-wrapper cievc1u soui-input-wrapper-disabled"
+      class="soui-input-wrapper soui-input-wrapper-disabled"
       data-soui-input-border="true"
       style="flex: 3;"
     >
       <div
-        class="cdk4afh soui-input-wrapper-inner-title-top c-t4daa5 soui-input-wrapper-inner-title-bottom c-yi6xxc soui-input-wrapper-padding-box c-x9i7lg soui-input-content"
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
       >
         <input
-          class="c-x7d2ar soui-input-input"
+          class="soui-input-input"
           disabled=""
           value="formatResult"
         />
       </div>
     </div>
     <div
-      class="c-mm3jkq soui-input-wrapper"
+      class="soui-input-wrapper"
       data-soui-input-border="true"
       style="flex: 4;"
     >
       <div
-        class="cdk4afh soui-input-wrapper-inner-title-top c-t4daa5 soui-input-wrapper-inner-title-bottom c-yi6xxc soui-input-wrapper-padding-box c-x9i7lg soui-input-content"
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
       >
         <input
-          class="c-x7d2ar soui-input-input"
+          class="soui-input-input"
           placeholder="展示格式化"
           value="YY/MM/DD"
         />
@@ -1289,59 +1364,62 @@ exports[`Alert[Base] should render correctly about innerTitle 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper c-dxx1ac soui-datePicker-wrapper-inner-title"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-inner-title"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="c-b64ljl soui-inner-title-wrapper"
+        class="soui-inner-title-wrapper"
       >
         <div
-          class="c-ze4cp8 soui-inner-title-title c-2zrej3 soui-inner-title-top"
+          class="soui-inner-title-title soui-inner-title-top"
         >
           Select date
         </div>
         <div
-          class="c-zga0f1 soui-inner-title-place"
+          class="soui-inner-title-place"
         >
           <div
-            class="c-ze4cp8 soui-inner-title-title"
+            class="soui-inner-title-title"
           >
             Select date
           </div>
         </div>
         <div
-          class="c-ltj9kb soui-inner-title-content"
+          class="soui-inner-title-content"
         >
           <div
-            class="clj7ys6 soui-datePicker-result"
+            class="soui-datePicker-result"
           >
             <div
-              class="c-bsufio soui-datePicker-result-text-wrapper"
+              class="soui-datePicker-result-text-wrapper"
             >
               <div
-                class="cbfi7fn soui-datePicker-result-text"
+                class="soui-datePicker-result-text"
               >
-                <div
-                  class="cji9p4e soui-datePicker-result-text-padding"
+                <span
+                  class="soui-datePicker-result-text-padding"
                 >
                   <span
-                    class="ci5d4re soui-datePicker-placeholder"
+                    class="soui-datePicker-placeholder"
                   >
                     Please select date
                   </span>
-                </div>
+                </span>
+                <div
+                  class="soui-datePicker-result-text-bg"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1359,77 +1437,83 @@ exports[`Alert[Base] should render correctly about innerTitle 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper c-dxx1ac soui-datePicker-wrapper-inner-title ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-inner-title soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="c-b64ljl soui-inner-title-wrapper"
+        class="soui-inner-title-wrapper"
       >
         <div
-          class="c-ze4cp8 soui-inner-title-title c-2zrej3 soui-inner-title-top"
+          class="soui-inner-title-title soui-inner-title-top"
         >
           Select date
         </div>
         <div
-          class="c-zga0f1 soui-inner-title-place"
+          class="soui-inner-title-place"
         >
           <div
-            class="c-ze4cp8 soui-inner-title-title"
+            class="soui-inner-title-title"
           >
             Select date
           </div>
         </div>
         <div
-          class="c-ltj9kb soui-inner-title-content"
+          class="soui-inner-title-content"
         >
           <div
-            class="clj7ys6 soui-datePicker-result"
+            class="soui-datePicker-result"
           >
             <div
-              class="c-bsufio soui-datePicker-result-text-wrapper"
+              class="soui-datePicker-result-text-wrapper"
             >
               <div
-                class="cbfi7fn soui-datePicker-result-text"
+                class="soui-datePicker-result-text"
               >
-                <div
-                  class="cji9p4e soui-datePicker-result-text-padding"
+                <span
+                  class="soui-datePicker-result-text-padding"
                 >
                   <span
-                    class="ci5d4re soui-datePicker-placeholder"
+                    class="soui-datePicker-placeholder"
                   >
                     Start date
                   </span>
-                </div>
+                </span>
+                <div
+                  class="soui-datePicker-result-text-bg"
+                />
               </div>
               <div
-                class="czi8fxr soui-datePicker-result-separator"
+                class="soui-datePicker-result-separator"
               >
                 ~
               </div>
               <div
-                class="cbfi7fn soui-datePicker-result-text"
+                class="soui-datePicker-result-text"
               >
-                <div
-                  class="cji9p4e soui-datePicker-result-text-padding"
+                <span
+                  class="soui-datePicker-result-text-padding"
                 >
                   <span
-                    class="ci5d4re soui-datePicker-placeholder"
+                    class="soui-datePicker-placeholder"
                   >
                     End date
                   </span>
-                </div>
+                </span>
+                <div
+                  class="soui-datePicker-result-text-bg"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1447,58 +1531,61 @@ exports[`Alert[Base] should render correctly about innerTitle 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper c-dxx1ac soui-datePicker-wrapper-inner-title"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-inner-title"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     >
       <div
-        class="c-b64ljl soui-inner-title-wrapper"
+        class="soui-inner-title-wrapper"
       >
         <div
-          class="c-ze4cp8 soui-inner-title-title c-2zrej3 soui-inner-title-top"
+          class="soui-inner-title-title soui-inner-title-top"
         >
           Select datetime
         </div>
         <div
-          class="c-zga0f1 soui-inner-title-place"
+          class="soui-inner-title-place"
         >
           <div
-            class="c-ze4cp8 soui-inner-title-title"
+            class="soui-inner-title-title"
           >
             Select datetime
           </div>
         </div>
         <div
-          class="c-ltj9kb soui-inner-title-content"
+          class="soui-inner-title-content"
         >
           <div
-            class="clj7ys6 soui-datePicker-result"
+            class="soui-datePicker-result"
           >
             <div
-              class="c-bsufio soui-datePicker-result-text-wrapper"
+              class="soui-datePicker-result-text-wrapper"
             >
               <div
-                class="cbfi7fn soui-datePicker-result-text"
+                class="soui-datePicker-result-text"
               >
-                <div
-                  class="cji9p4e soui-datePicker-result-text-padding"
+                <span
+                  class="soui-datePicker-result-text-padding"
                 >
                   <input
                     autocomplete="off"
                     placeholder="Please select date"
                     value=""
                   />
-                </div>
+                </span>
+                <div
+                  class="soui-datePicker-result-text-bg"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1523,36 +1610,39 @@ exports[`Alert[Base] should render correctly about inputable 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <input
                 autocomplete="off"
                 placeholder="Please select date"
                 value=""
               />
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1570,54 +1660,60 @@ exports[`Alert[Base] should render correctly about inputable 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <input
                 autocomplete="off"
                 placeholder="Start date"
                 value=""
               />
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <input
                 autocomplete="off"
                 placeholder="End date"
                 value=""
               />
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1642,37 +1738,40 @@ exports[`Alert[Base] should render correctly about minmax 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Select min datetime
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1690,37 +1789,40 @@ exports[`Alert[Base] should render correctly about minmax 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Select min/max datetime
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1742,37 +1844,40 @@ exports[`Alert[Base] should render correctly about minmax 1`] = `
 
 exports[`Alert[Base] should render correctly about month 1`] = `
 <div
-  class="c-yisk5i soui-datePicker-wrapper"
+  class="soui-datePicker-wrapper"
   data-soui-input-border="true"
   data-soui-type="month"
 >
   <div
-    class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+    class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     tabindex="1"
   >
     <div
-      class="clj7ys6 soui-datePicker-result"
+      class="soui-datePicker-result"
     >
       <div
-        class="c-bsufio soui-datePicker-result-text-wrapper"
+        class="soui-datePicker-result-text-wrapper"
       >
         <div
-          class="cbfi7fn soui-datePicker-result-text"
+          class="soui-datePicker-result-text"
         >
-          <div
-            class="cji9p4e soui-datePicker-result-text-padding"
+          <span
+            class="soui-datePicker-result-text-padding"
           >
             <span
-              class="ci5d4re soui-datePicker-placeholder"
+              class="soui-datePicker-placeholder"
             >
               Please select month
             </span>
-          </div>
+          </span>
+          <div
+            class="soui-datePicker-result-text-bg"
+          />
         </div>
       </div>
     </div>
     <div
-      class="c-8xbkpa soui-datePicker-icon"
+      class="soui-datePicker-icon"
     >
       <svg
         aria-hidden="true"
@@ -1796,37 +1901,40 @@ exports[`Alert[Base] should render correctly about other time 1`] = `
   style="display: flex; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="time"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Hour Step
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1842,37 +1950,40 @@ exports[`Alert[Base] should render correctly about other time 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="time"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Minute Step
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1888,37 +1999,40 @@ exports[`Alert[Base] should render correctly about other time 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="time"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Second Step
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1941,38 +2055,41 @@ exports[`Alert[Base] should render correctly about position 1`] = `
   style="display: flex; gap: 24px; flex-flow: row wrap;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="date"
     style="width: 180px;"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 top-left
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -1990,38 +2107,41 @@ exports[`Alert[Base] should render correctly about position 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="date"
     style="width: 180px;"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 top-right
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2039,38 +2159,41 @@ exports[`Alert[Base] should render correctly about position 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="date"
     style="width: 180px;"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 bottom-left
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2088,38 +2211,41 @@ exports[`Alert[Base] should render correctly about position 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="date"
     style="width: 180px;"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 bottom-right
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2141,37 +2267,40 @@ exports[`Alert[Base] should render correctly about position 1`] = `
 
 exports[`Alert[Base] should render correctly about quarter 1`] = `
 <div
-  class="c-yisk5i soui-datePicker-wrapper"
+  class="soui-datePicker-wrapper"
   data-soui-input-border="true"
   data-soui-type="quarter"
 >
   <div
-    class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+    class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     tabindex="1"
   >
     <div
-      class="clj7ys6 soui-datePicker-result"
+      class="soui-datePicker-result"
     >
       <div
-        class="c-bsufio soui-datePicker-result-text-wrapper"
+        class="soui-datePicker-result-text-wrapper"
       >
         <div
-          class="cbfi7fn soui-datePicker-result-text"
+          class="soui-datePicker-result-text"
         >
-          <div
-            class="cji9p4e soui-datePicker-result-text-padding"
+          <span
+            class="soui-datePicker-result-text-padding"
           >
             <span
-              class="ci5d4re soui-datePicker-placeholder"
+              class="soui-datePicker-placeholder"
             >
               Please select quarter
             </span>
-          </div>
+          </span>
+          <div
+            class="soui-datePicker-result-text-bg"
+          />
         </div>
       </div>
     </div>
     <div
-      class="c-8xbkpa soui-datePicker-icon"
+      class="soui-datePicker-icon"
     >
       <svg
         aria-hidden="true"
@@ -2195,56 +2324,62 @@ exports[`Alert[Base] should render correctly about quick 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="datetime"
     style="display: block;"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Start datetime
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 End datetime
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2262,37 +2397,40 @@ exports[`Alert[Base] should render correctly about quick 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Quick Date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2315,11 +2453,13 @@ exports[`Alert[Base] should render correctly about quick 1`] = `
 exports[`Alert[Base] should render correctly about range 1`] = `
 <div>
   <div
-    class="c-ddd5kv soui-radio-group cja407n soui-radio-group-button c-p0rt2o soui-button-group"
+    class="soui-radio-group soui-radio-group-button soui-button-group"
+    dir="ltr"
     style="margin-bottom: 24px;"
   >
     <button
-      class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked cnsrtqr soui-button-primary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-radio-wrapper-checked soui-button-primary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2333,7 +2473,8 @@ exports[`Alert[Base] should render correctly about range 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2346,7 +2487,8 @@ exports[`Alert[Base] should render correctly about range 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2359,7 +2501,8 @@ exports[`Alert[Base] should render correctly about range 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2372,7 +2515,8 @@ exports[`Alert[Base] should render correctly about range 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2385,7 +2529,8 @@ exports[`Alert[Base] should render correctly about range 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2398,7 +2543,8 @@ exports[`Alert[Base] should render correctly about range 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2413,55 +2559,61 @@ exports[`Alert[Base] should render correctly about range 1`] = `
   </div>
   <br />
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Start date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 End date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2486,10 +2638,12 @@ exports[`Alert[Base] should render correctly about size 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-ddd5kv soui-radio-group cja407n soui-radio-group-button c-p0rt2o soui-button-group"
+    class="soui-radio-group soui-radio-group-button soui-button-group"
+    dir="ltr"
   >
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2502,7 +2656,8 @@ exports[`Alert[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked cnsrtqr soui-button-primary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-radio-wrapper-checked soui-button-primary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2516,7 +2671,8 @@ exports[`Alert[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
       type="button"
     >
       <input
@@ -2530,37 +2686,40 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     </button>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Please select date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2578,37 +2737,40 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Please select date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2626,55 +2788,61 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="date"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Start date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 End date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2692,55 +2860,61 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper ckouhv soui-datePicker-wrapper-range"
+    class="soui-datePicker-wrapper soui-datePicker-wrapper-range"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 Start date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
           <div
-            class="czi8fxr soui-datePicker-result-separator"
+            class="soui-datePicker-result-separator"
           >
             ~
           </div>
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
               <span
-                class="ci5d4re soui-datePicker-placeholder"
+                class="soui-datePicker-placeholder"
               >
                 End date
               </span>
-            </div>
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2765,33 +2939,36 @@ exports[`Alert[Base] should render correctly about time 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="time"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              14:34:03
-            </div>
+              14:20:08
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2810,7 +2987,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2826,33 +3003,36 @@ exports[`Alert[Base] should render correctly about time 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="time"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              14:34
-            </div>
+              14:20
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2871,7 +3051,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2887,33 +3067,36 @@ exports[`Alert[Base] should render correctly about time 1`] = `
     </div>
   </div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="time"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              02:34 PM
-            </div>
+              02:20 PM
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2932,7 +3115,7 @@ exports[`Alert[Base] should render correctly about time 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2953,33 +3136,36 @@ exports[`Alert[Base] should render correctly about time 1`] = `
 exports[`Alert[Base] should render correctly about timezone 1`] = `
 <div>
   <div
-    class="c-yisk5i soui-datePicker-wrapper"
+    class="soui-datePicker-wrapper"
     data-soui-input-border="true"
     data-soui-type="datetime"
   >
     <div
-      class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+      class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
       tabindex="1"
     >
       <div
-        class="clj7ys6 soui-datePicker-result"
+        class="soui-datePicker-result"
       >
         <div
-          class="c-bsufio soui-datePicker-result-text-wrapper"
+          class="soui-datePicker-result-text-wrapper"
         >
           <div
-            class="cbfi7fn soui-datePicker-result-text"
+            class="soui-datePicker-result-text"
           >
-            <div
-              class="cji9p4e soui-datePicker-result-text-padding"
+            <span
+              class="soui-datePicker-result-text-padding"
             >
-              2024-04-11 14:34:03
-            </div>
+              2024-06-03 14:20:09
+            </span>
+            <div
+              class="soui-datePicker-result-text-bg"
+            />
           </div>
         </div>
       </div>
       <div
-        class="c7cc5tg soui-datePicker-clear c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-clear soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -2998,7 +3184,7 @@ exports[`Alert[Base] should render correctly about timezone 1`] = `
         </svg>
       </div>
       <div
-        class="c-8xbkpa soui-datePicker-icon"
+        class="soui-datePicker-icon"
       >
         <svg
           aria-hidden="true"
@@ -3016,32 +3202,32 @@ exports[`Alert[Base] should render correctly about timezone 1`] = `
     </div>
   </div>
   <div
-    class="cxj1wt6 soui-select-wrapper"
+    class="soui-select-wrapper"
     data-soui-input-border="true"
     style="width: 90px; margin-inline-start: 12px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="soui-select-result-wrapper soui-select-wrapper-padding-box soui-select-wrapper-inner-title-top soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="soui-select-result-text-wrapper"
         >
           <span
-            class="cbg099m soui-select-ellipsis"
+            class="soui-select-ellipsis"
           >
             +08
           </span>
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -3062,37 +3248,40 @@ exports[`Alert[Base] should render correctly about timezone 1`] = `
 
 exports[`Alert[Base] should render correctly about week 1`] = `
 <div
-  class="c-yisk5i soui-datePicker-wrapper"
+  class="soui-datePicker-wrapper"
   data-soui-input-border="true"
   data-soui-type="week"
 >
   <div
-    class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+    class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     tabindex="1"
   >
     <div
-      class="clj7ys6 soui-datePicker-result"
+      class="soui-datePicker-result"
     >
       <div
-        class="c-bsufio soui-datePicker-result-text-wrapper"
+        class="soui-datePicker-result-text-wrapper"
       >
         <div
-          class="cbfi7fn soui-datePicker-result-text"
+          class="soui-datePicker-result-text"
         >
-          <div
-            class="cji9p4e soui-datePicker-result-text-padding"
+          <span
+            class="soui-datePicker-result-text-padding"
           >
             <span
-              class="ci5d4re soui-datePicker-placeholder"
+              class="soui-datePicker-placeholder"
             >
               Please select week
             </span>
-          </div>
+          </span>
+          <div
+            class="soui-datePicker-result-text-bg"
+          />
         </div>
       </div>
     </div>
     <div
-      class="c-8xbkpa soui-datePicker-icon"
+      class="soui-datePicker-icon"
     >
       <svg
         aria-hidden="true"
@@ -3113,37 +3302,40 @@ exports[`Alert[Base] should render correctly about week 1`] = `
 
 exports[`Alert[Base] should render correctly about year 1`] = `
 <div
-  class="c-yisk5i soui-datePicker-wrapper"
+  class="soui-datePicker-wrapper"
   data-soui-input-border="true"
   data-soui-type="year"
 >
   <div
-    class="c-axkf8j soui-datePicker-result-wrapper c-pwdugc soui-datePicker-wrapper-padding-box c-x3dfgn soui-datePicker-wrapper-inner-title-top c66f0qv soui-datePicker-wrapper-inner-title-bottom"
+    class="soui-datePicker-result-wrapper soui-datePicker-wrapper-padding-box soui-datePicker-wrapper-inner-title-top soui-datePicker-wrapper-inner-title-bottom"
     tabindex="1"
   >
     <div
-      class="clj7ys6 soui-datePicker-result"
+      class="soui-datePicker-result"
     >
       <div
-        class="c-bsufio soui-datePicker-result-text-wrapper"
+        class="soui-datePicker-result-text-wrapper"
       >
         <div
-          class="cbfi7fn soui-datePicker-result-text"
+          class="soui-datePicker-result-text"
         >
-          <div
-            class="cji9p4e soui-datePicker-result-text-padding"
+          <span
+            class="soui-datePicker-result-text-padding"
           >
             <span
-              class="ci5d4re soui-datePicker-placeholder"
+              class="soui-datePicker-placeholder"
             >
               Please select year
             </span>
-          </div>
+          </span>
+          <div
+            class="soui-datePicker-result-text-bg"
+          />
         </div>
       </div>
     </div>
     <div
-      class="c-8xbkpa soui-datePicker-icon"
+      class="soui-datePicker-icon"
     >
       <svg
         aria-hidden="true"
