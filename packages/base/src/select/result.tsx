@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
+import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
 import Input from './result-input';
 import { getResetMore } from './result-more';
@@ -53,6 +53,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const [more, setMore] = useState(-1);
   const [shouldResetMore, setShouldResetMore] = useState(false);
+  const render = useRender();
 
   const resultRef = useRef<HTMLDivElement>(null);
   const prevMore = useRef(more);
@@ -332,6 +333,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   useLayoutEffect(() => {
     handleResetMore();
   }, [valueProp, data]);
+
+  useLayoutEffect(() => {
+    // datum.getDataByValues(value); 需要等待 useTree useEffect  执行完毕 才能获取到
+    render();
+  }, [data]);
 
   useLayoutEffect(() => {
     if (
