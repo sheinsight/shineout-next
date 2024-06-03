@@ -78,7 +78,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     marginLeft: 3,
     '& svg': {
       width: 14,
-      color: Token.transferIconColor,
+      color: Token.transferRemoveIconColor,
     },
     '&:hover': {
       background: Token.transferIconBackgroundColor,
@@ -137,6 +137,8 @@ const TransferStyle: JsStyles<TransferClass> = {
     boxSizing: 'border-box',
     justifyContent: 'space-between',
     background: Token.transferHeaderBackgroundColor,
+    borderRadius: `${Token.transferBorderRadius} ${Token.transferBorderRadius} 0 0`,
+    borderBottom: `1px solid ${Token.transferHeaderBorderColor}`,
   },
   spinContainer: {},
   title: {
@@ -146,11 +148,14 @@ const TransferStyle: JsStyles<TransferClass> = {
   count: {
     fontSize: Token.transferFontSize,
   },
-  list: {},
+  list: {
+    background: Token.transferBackgroundColor,
+  },
   footer: {
     height: 48,
     boxSizing: 'border-box',
-    borderTop: `1px solid ${Token.transferBorderColor}`,
+    borderTop: `1px solid ${Token.transferFooterBorderColor}`,
+    background: Token.transferFooterBackgroundColor,
   },
   item: {
     padding: '1px 4px',
@@ -172,7 +177,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
   },
   itemWrapper: {
-    borderRadius: Token.transferBorderRadius,
+    borderRadius: Token.transferItemBorderRadius,
     cursor: 'pointer',
     '& $checkbox': {
       width: '100%',
