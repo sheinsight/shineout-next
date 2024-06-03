@@ -17,15 +17,12 @@ const GridFullClassName = `${config.prefix}-grid-full`;
 const defaultResponsive = 'md';
 
 function createStyle(text: string, id: string) {
-  if (!util.isBrowser()) {return;}
-  let style = document.head.querySelector(`#${id}`) as Element & { type: string };
-  if (style) {
+  if (!util.isBrowser()) {
     return;
   }
-
-  style = document.createElement('style');
+  const style = document.createElement('style');
   style.type = 'text/css';
-  style.id = id;
+  style.setAttribute('data-id', id);
   style.innerHTML = text;
   document.head.appendChild(style);
 }

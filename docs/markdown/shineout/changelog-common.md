@@ -19,10 +19,20 @@
 - `Dropdown` 新增 adjust 属性，支持取消自动调整展开，强制指定方向
 - `TreeSelect` 新增 adjust 属性，支持取消自动调整展开，强制指定方向
 
+## 3.1.21
+2024-05-31
+### 🐞 BugFix
+- `setConfig` 设置 `delay: 0` 无效的问题  ([#491](https://github.com/sheinsight/shineout-next/pull/491))
+
+## 3.1.20
+2024-05-30
+### 🐞 BugFix
+- `delay` 默认值设为 `200` 和 2.x 版本保持一致 ([#490](https://github.com/sheinsight/shineout-next/pull/490))
+
 ## 3.1.13
 2024-05-20
 ### 🐞 BugFix
-- 修复 SSR 场景下的一些报错报错 ([#459](https://github.com/sheinsight/shineout-next/pull/459))
+- 修复 SSR 场景下的一些报错 ([#459](https://github.com/sheinsight/shineout-next/pull/459))
 
 ## 3.1.2
 2024-05-10

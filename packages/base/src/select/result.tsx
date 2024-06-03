@@ -1,6 +1,6 @@
-import React, { useState, useRef,useEffect, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
+import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
 import Input from './result-input';
 import { getResetMore } from './result-more';
@@ -53,6 +53,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const [more, setMore] = useState(-1);
   const [shouldResetMore, setShouldResetMore] = useState(false);
+  const render = useRender();
 
   const resultRef = useRef<HTMLDivElement>(null);
   const prevMore = useRef(more);
@@ -197,8 +198,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         key={index}
         disabled={isDisabled}
         size={size}
-        style={{ opacity: more === index ? 0 : 1 }}
-        className={classNames(styles.tag, resultClassName)}
+        className={classNames(styles.tag, more === 1 && styles.tagOnly, resultClassName)}
         closable={closeable && 'only'}
         onClose={closeable && handleClose}
         onClick={handleClick}
@@ -316,8 +316,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const handleResetMore = () => {
     if (!compressed) return;
     if (isCompressedBound()) return;
-    setShouldResetMore(true);
     setMore(-1);
+    setShouldResetMore(true);
   };
 
   useEffect(() => {
@@ -331,8 +331,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   }, [focus]);
 
   useLayoutEffect(() => {
-    setTimeout(handleResetMore)
+    handleResetMore();
   }, [valueProp, data]);
+
+  useLayoutEffect(() => {
+    // datum.getDataByValues(value); 需要等待 useTree useEffect  执行完毕 才能获取到
+    render();
+  }, [data]);
 
   useLayoutEffect(() => {
     if (
@@ -340,7 +345,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       more === -1 &&
       compressed &&
       resultRef.current &&
-      ((props.value as any || []).length)
+      ((props.value as any) || []).length
     ) {
       const tagClassName = `.${styles.tag.split(' ')[0]}`;
       if (shouldResetMore && isArray(value) && (value || []).length) {
@@ -355,7 +360,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       } else {
         setShouldResetMore(false);
       }
-    } else {
+    } else if (shouldResetMore) {
       setShouldResetMore(false);
     }
   }, [shouldResetMore]);

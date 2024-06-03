@@ -104,7 +104,7 @@ const cardStyle: JsStyles<CardClassType> = {
   },
   body: {
     '$wrapperSplit>$header+&, $wrapperSplit>$header+$bodyCollapse>&': {
-      borderTop: `1px solid ${token.cardBodyBorderColor}`,
+      borderTop: `1px solid ${token.cardBorderColor}`,
     },
     padding: `${token.cardBodyPaddingY} ${token.cardBodyPaddingX}`,
     flex: 1,
@@ -118,7 +118,7 @@ const cardStyle: JsStyles<CardClassType> = {
   bodyCollapse: {},
   footer: {
     '$wrapperSplit>$body+&, $wrapperSplit>$bodyCollapse+&': {
-      borderTop: `1px solid ${token.cardFooterBorderColor}`,
+      borderTop: `1px solid ${token.cardBorderColor}`,
     },
     padding: `${token.cardFooterPaddingY} ${token.cardFooterPaddingX}`,
     boxSizing: 'border-box',

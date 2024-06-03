@@ -57,6 +57,7 @@ export interface CascaderClasses {
   listContent: string;
   list: string;
   tag: string;
+  tagOnly: string;
   space: string;
   inputMirror: string;
   moreWrapper: string;

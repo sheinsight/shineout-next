@@ -33,7 +33,7 @@ const Input = (props: InputProps) => {
     <SimpleInputInput
       {...forwardProps}
       {...inputFormatProps}
-      value={inputFormatProps.value || ''}
+      value={inputFormatProps.value ?? ''}
       hasSuffix={!!props.suffix}
     />
   );

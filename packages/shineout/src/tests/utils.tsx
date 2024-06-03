@@ -98,6 +98,7 @@ export function baseTest(
     }
     const { container } = render(renderedComponent);
     const component = container.querySelector(selector)!;
+
     classTest(component, className);
     styleTest(component, styleRender);
   });
@@ -136,7 +137,7 @@ type classNamesMapType = {
   [key: string]: string;
 };
 
-function _convertCamelToDash(str: string): string {
+export function _convertCamelToDash(str: string): string {
   return str
     .replace(/([A-Z])/g, '-$1')
     .replace(/^-/, '')
@@ -154,12 +155,12 @@ export const createClassName = (
   originClasses: string[],
   originItemClasses: string[],
 ): classNamesMapType => {
-  // const prefix = `so-${componentsName}-`;
+  const prefix = `soui-${componentsName}-`;
   const classNamesMap: classNamesMapType = {};
   const classes = [...originClasses, ...originItemClasses];
   classes.forEach((item) => {
-    // classNamesMap[item] = `${prefix}${convertCamelToDash(item)}`;
-    classNamesMap[item] = convertHashClassName(componentsName, item);
+    classNamesMap[item] = `${prefix}${_convertCamelToDash(item)}`;
+    // classNamesMap[item] = convertHashClassName(componentsName, item);
     if (!originItemClasses.includes(item)) classNamesMap[item] = `.${classNamesMap[item]}`;
   });
   return classNamesMap;
