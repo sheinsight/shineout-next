@@ -27,7 +27,7 @@ const imageTokenDescription = {
  * 注意，该映射表的内容不与 imageRules 强关联，非 imageRules 规则内的 token 需手动增加或删减。
  */
 const imageTokenValue = {
-  circle: { border: { radius: 'Radius-50%', color: 'Neutral-border-1' } },
+  circle: { border: { radius: 'Radius-circle', color: 'Neutral-border-1' } },
   rounded: { border: { radius: 'Radius-default', color: 'Neutral-border-1' } },
   thumbnail: { border: { radius: 'Radius-default', color: 'Neutral-border-1' } },
   placeholder: { background: { color: 'Neutral-fill-2' }, font: { color: '', size: '' } },

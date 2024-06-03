@@ -10,7 +10,7 @@ export interface ImageTokens {
   imageSpinColor: string;
   /**
    * @type {string}
-   * @token Radius-50%
+   * @token Radius-circle
    * @description 图片圆形边框圆角
    */
   imageCircleBorderRadius: string;
