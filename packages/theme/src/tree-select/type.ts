@@ -328,7 +328,7 @@ export interface TreeSelectTokens {
   treeSelectOptionInnerPaddingRight: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 树选择器选项容器的边框圆角
    */
   treeSelectOptionInnerBorderRadius: string;

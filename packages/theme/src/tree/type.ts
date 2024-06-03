@@ -154,7 +154,7 @@ export interface TreeTokens {
   treeDragBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 树组件节点容器边框圆角
    */
   treeContentBorderRadius: string;

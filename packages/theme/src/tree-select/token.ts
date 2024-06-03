@@ -100,7 +100,7 @@ const treeSelectTokenExtraValue = {
     },
     inner: {
       padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },
-      border: { radius: 'Radius-2' },
+      border: { radius: 'Radius-lesser' },
     },
     hover: { background: { color: 'Neutral-fill-2' } },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },

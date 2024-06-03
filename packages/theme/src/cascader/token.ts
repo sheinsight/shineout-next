@@ -127,7 +127,7 @@ const cascaderTokenExtraValue = {
     },
     inner: {
       padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },
-      border: { radius: 'Radius-2' },
+      border: { radius: 'Radius-lesser' },
     },
     icon: {
       color: 'Neutral-text-4',

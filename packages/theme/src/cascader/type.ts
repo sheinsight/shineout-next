@@ -364,7 +364,7 @@ export interface CascaderTokens {
   cascaderOptionInnerPaddingRight: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 级联选择器选项内部容器的边框圆角
    */
   cascaderOptionInnerBorderRadius: string;

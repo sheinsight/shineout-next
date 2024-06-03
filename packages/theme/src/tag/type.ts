@@ -1414,7 +1414,7 @@ export interface TagTokens {
   tagFontSize: string;
   /**
    * @type {string}
-   * @token Radius-3
+   * @token Radius-small
    * @description 标签边框圆角
    */
   tagBorderRadius: string;
@@ -1444,7 +1444,7 @@ export interface TagTokens {
   tagSmallFontSize: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 标签小尺寸边框圆角
    */
   tagSmallBorderRadius: string;

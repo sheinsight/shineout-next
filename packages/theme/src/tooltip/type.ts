@@ -22,7 +22,7 @@ export interface TooltipTokens {
   tooltipPaddingY: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 文字提示边框圆角
    */
   tooltipBorderRadius: string;

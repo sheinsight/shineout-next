@@ -58,7 +58,7 @@ const treeSelectTokens: TreeSelectTokens = {
   treeSelectOptionInnerPaddingX: 'Spacing-8',
   treeSelectOptionInnerPaddingY: 'Spacing-5',
   treeSelectOptionInnerPaddingRight: 'Size-15',
-  treeSelectOptionInnerBorderRadius: 'Radius-2',
+  treeSelectOptionInnerBorderRadius: 'Radius-lesser',
   treeSelectOptionHoverBackgroundColor: 'Neutral-fill-2',
   treeSelectOptionDisabledColor: 'Neutral-text-2',
   treeSelectOptionDisabledBackgroundColor: 'Neutral-fill-1',
