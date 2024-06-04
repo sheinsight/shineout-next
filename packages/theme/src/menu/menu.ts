@@ -8,6 +8,8 @@ const menuTokens: MenuTokens = {
   menuFontSize: 'Font-14',
   menuFontColor: 'Neutral-text-5',
   menuIconColor: 'Neutral-text-4',
+  menuIconMarginX: 'Spacing-8',
+  menuPopoverPaddingY: 'Spacing-4',
   menuItemBackgroundColor: 'Neutral-fill-1',
   menuItemFontColor: 'Neutral-text-5',
   menuItemHoverBackgroundColor: 'Neutral-fill-2',

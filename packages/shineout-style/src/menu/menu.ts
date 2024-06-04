@@ -7,7 +7,6 @@ const animationDuration = '.25s';
 const collpaseWidth = token.menuCollpaseWidth;
 const transitionFunc = 'ease-out';
 
-
 const menuStyle: JsStyles<MenuClassType> = {
   wrapper: {
     height: '100%',
@@ -63,14 +62,15 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
     '& $children': {
       borderRadius: '4px',
-      '& > :first-child > $itemContent': {
-        borderTopRightRadius: '4px',
-        borderTopLeftRadius: '4px',
-      },
-      '& > :last-child > $itemContent': {
-        borderBottomRightRadius: '4px',
-        borderBottomLeftRadius: '4px',
-      },
+      padding: `${token.menuPopoverPaddingY} 0`,
+      // '& > :first-child > $itemContent': {
+      //   borderTopRightRadius: '4px',
+      //   borderTopLeftRadius: '4px',
+      // },
+      // '& > :last-child > $itemContent': {
+      //   borderBottomRightRadius: '4px',
+      //   borderBottomLeftRadius: '4px',
+      // },
     },
   },
   popArrow: {
@@ -185,20 +185,20 @@ const menuStyle: JsStyles<MenuClassType> = {
           width: '3px',
           backgroundColor: token.menuDarkItemActiveBackgroundColor,
         },
-      '[data-soui-theme=light][data-soui-mode=vertical]:not($wrapperCollpase) &': {
-        '&::before': {
-          display: 'block',
-          content: '""',
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: '4px',
-          borderTopLeftRadius: '4px',
-          borderBottomLeftRadius: '4px',
-          backgroundColor: token.menuItemActiveFontColor,
-        },
-      },
+      // '[data-soui-theme=light][data-soui-mode=vertical]:not($wrapperCollpase) &': {
+      //   '&::before': {
+      //     display: 'block',
+      //     content: '""',
+      //     position: 'absolute',
+      //     right: 0,
+      //     top: 0,
+      //     bottom: 0,
+      //     width: '4px',
+      //     borderTopLeftRadius: '4px',
+      //     borderBottomLeftRadius: '4px',
+      //     backgroundColor: token.menuItemActiveFontColor,
+      //   },
+      // },
     },
     '$itemActive > &&': {
       '[data-soui-theme=light] &': {
@@ -234,20 +234,24 @@ const menuStyle: JsStyles<MenuClassType> = {
         },
       },
 
-      '[data-soui-theme=light][data-soui-mode=inline] &,  [data-soui-theme=light][data-soui-mode=horizontal] &':
-        {
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            display: 'block!important',
-            top: 0,
-            right: 0,
-            width: '3px',
-            height: '100%',
-            backgroundColor: token.menuItemActiveFontColor,
-          },
-        },
+      // '[data-soui-theme=light][data-soui-mode=inline] &,  [data-soui-theme=light][data-soui-mode=horizontal] &':
+      //   {
+      //     '&::before': {
+      //       content: '""',
+      //       position: 'absolute',
+      //       display: 'block!important',
+      //       top: 0,
+      //       right: 0,
+      //       width: '3px',
+      //       height: '100%',
+      //       backgroundColor: token.menuItemActiveFontColor,
+      //     },
+      //   },
       '[data-soui-theme=light][data-soui-mode=horizontal] $root > &::before': {
+        content: '""',
+        position: 'absolute',
+        display: 'block!important',
+        backgroundColor: token.menuItemActiveFontColor,
         width: '100%',
         height: '2px',
         top: 'auto',
@@ -284,7 +288,6 @@ const menuStyle: JsStyles<MenuClassType> = {
       color: token.menuDarkFontColor,
     },
     '$wrapperCollpase &': {
-      width: collpaseWidth,
       paddingLeft: '0',
       paddingRight: '0',
       display: 'flex',
@@ -311,14 +314,14 @@ const menuStyle: JsStyles<MenuClassType> = {
     minWidth: 0,
     padding: `${token.menuTitlePaddingY} ${token.menuTitlePaddingX}`,
     '$wrapperInline $childrenHasExpand  $item:not($itemHasChildren)  $itemContentBack > &': {
-      paddingRight: token.menuExpandWidth,
+      paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuExpandSize})`,
     },
     '$wrapperInline $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
     },
 
     '$childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
-      paddingRight: token.menuExpandWidth,
+      paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuExpandSize})`,
     },
     '$childrenHasExpand $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
@@ -330,7 +333,7 @@ const menuStyle: JsStyles<MenuClassType> = {
   },
   titleIcon: {
     '& + $titleContent': {
-      paddingLeft: '8px',
+      paddingLeft: token.menuIconMarginX,
     },
     lineHeight: 1,
     display: 'inline-flex',
@@ -358,8 +361,8 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
   },
   expandVertical: {
-    '&[dir=ltr]': { transform: 'rotate(-90deg)' },
-    '&[dir=rtl]': { transform: 'rotate(90deg)' },
+    '&[dir=ltr] svg': { transform: 'rotate(-90deg)' },
+    '&[dir=rtl] svg': { transform: 'rotate(90deg)' },
   },
   icon: {},
   expandHover: {
@@ -374,13 +377,14 @@ const menuStyle: JsStyles<MenuClassType> = {
     width: 'auto',
     visibility: 'hidden',
     paddingLeft: token.menuTitlePaddingX,
-    paddingRight: '8px',
+    paddingRight: token.menuIconMarginX,
     '$itemHasChildren > $itemContent &': {
       visibility: 'visible',
     },
   },
   expandBack: {
-    width: token.menuExpandWidth,
+    paddingRight: token.menuTitlePaddingX,
+    paddingLeft: token.menuIconMarginX,
   },
   scrollbar: {
     position: 'absolute',

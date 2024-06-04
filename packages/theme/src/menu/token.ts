@@ -33,6 +33,10 @@ const menuTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   icon: {
     color: 'Neutral-text-4',
+    margin: { x: 'Spacing-8' },
+  },
+  popover: {
+    padding: { y: 'Spacing-4' },
   },
   item: {
     background: { color: 'Neutral-fill-1' },

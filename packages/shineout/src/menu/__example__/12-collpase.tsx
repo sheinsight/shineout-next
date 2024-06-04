@@ -185,7 +185,7 @@ const App: React.FC = () => {
         key={theme}
         header={
           <>
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', marginTop: 1 }}>
               <div
                 style={{
                   width: '28px',
@@ -216,11 +216,12 @@ const App: React.FC = () => {
               theme={theme}
               placeholder='请输入关键字'
               clearable
+              style={{marginBottom: '3px'}}
             />
           </>
         }
         theme={theme}
-        style={{ borderRight: '1px solid #ebebeb', width: 200, zIndex: '2000' }}
+        style={{ border: '1px solid #ebebeb', width: 200, zIndex: '2000' }}
         keygen='id'
         collapse={collapse}
         data={data}

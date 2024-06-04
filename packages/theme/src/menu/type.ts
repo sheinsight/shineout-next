@@ -28,6 +28,18 @@ export interface MenuTokens {
   menuIconColor: string;
   /**
    * @type {string}
+   * @token Spacing-8
+   * @description 菜单图标外边距（水平方向）
+   */
+  menuIconMarginX: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 菜单undefined内边距（垂直方向）
+   */
+  menuPopoverPaddingY: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-1
    * @description 菜单选项背景颜色
    */
