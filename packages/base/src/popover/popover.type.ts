@@ -12,6 +12,7 @@ export interface PopoverClasses {
   wrapperOpen: string;
   content: string;
   arrow: string;
+  hideArrow: string;
   text: string;
 
   //...

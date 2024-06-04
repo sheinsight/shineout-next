@@ -131,7 +131,12 @@ const Popover = (props: PopoverProps) => {
       zIndex={zIndex}
     >
       <div
-        className={classNames(className, popoverStyle?.wrapper, open && popoverStyle?.wrapperOpen)}
+        className={classNames(
+          className,
+          popoverStyle?.wrapper,
+          open && popoverStyle?.wrapperOpen,
+          !showArrow && popoverStyle?.hideArrow,
+        )}
         style={colorStyle}
         {...util.getDataAttribute({ position, type })}
         ref={popupRef}
