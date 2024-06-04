@@ -8,7 +8,7 @@ exports[`Divider[Base] should render correctly  1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="cg73n9k soui-divider-wrapper c-i4joj5 soui-divider-horizontal"
+    class="soui-divider-wrapper soui-divider-horizontal"
   />
   <p>
     A design is a plan or specification for the construction of an object.
@@ -24,10 +24,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="cg73n9k soui-divider-wrapper c-i4joj5 soui-divider-horizontal cnpysou soui-divider-with-text c-pp3zgt soui-divider-with-text-center"
+    class="soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-center"
   >
     <span
-      class="c1eegrc soui-divider-inner-text"
+      class="soui-divider-inner-text"
     >
       Center
     </span>
@@ -36,10 +36,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="cg73n9k soui-divider-wrapper c-i4joj5 soui-divider-horizontal cnpysou soui-divider-with-text c-pyrvvf soui-divider-with-text-left"
+    class="soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-left"
   >
     <span
-      class="c1eegrc soui-divider-inner-text"
+      class="soui-divider-inner-text"
     >
       Left
     </span>
@@ -48,10 +48,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="cg73n9k soui-divider-wrapper c-i4joj5 soui-divider-horizontal cnpysou soui-divider-with-text c-niei9u soui-divider-with-text-right"
+    class="soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-right"
   >
     <span
-      class="c1eegrc soui-divider-inner-text"
+      class="soui-divider-inner-text"
     >
       Right
     </span>

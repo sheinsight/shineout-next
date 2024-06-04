@@ -312,11 +312,11 @@ describe('Tree[Base]', () => {
     classLengthTest(treeRootNode[1], icon, 0);
     await waitFor(
       async () => {
-        await delay(1000);
+        await delay(1500);
       },
       { timeout: 2000 },
     );
-    classTest(treeRootNode[1], leaf, false);
+    classTest(treeRootNode[1], leaf, false)
   });
 });
 describe('Tree[Disabled]', () => {

@@ -9,7 +9,7 @@ import useInputCommon from './use-input-common';
 
 const InputNumber = (props: InputNumberProps) => {
   const commonProps = useInputCommon<InputNumberProps['value'], InputNumberProps>(props);
-  const { jssStyle, ...restProps } = commonProps;
+  const { jssStyle, hideArrow, ...restProps } = commonProps;
   const inputStyle = jssStyle?.input?.();
 
   const numberFormatParams = {
@@ -35,7 +35,7 @@ const InputNumber = (props: InputNumberProps) => {
     ...numberFormatParams,
   });
 
-  const addEnd = props.hideArrow ? null : (
+  const addEnd = hideArrow ? null : (
     <React.Fragment>
       <div className={inputStyle?.numberStep}>
         <span

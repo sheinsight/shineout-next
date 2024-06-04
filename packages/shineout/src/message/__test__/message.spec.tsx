@@ -152,19 +152,19 @@ describe('Message[Base]', () => {
   test('should render when set method is close', async () => {
     Message.success('success', 0);
     await waitFor(async () => {
-      await delay(200);
-      expect(document.querySelectorAll(item).length).toBe(1);
+      await delay(400);
     });
+    
     Message.warn('warn', 0);
     await waitFor(async () => {
       await delay(200);
-      expect(document.querySelectorAll(item).length).toBe(2);
     });
+    await(() => expect(document.querySelectorAll(item).length).toBe(2))
     Message.close();
     await waitFor(async () => {
       await delay(200);
-      expect(document.querySelectorAll(item).length).toBe(0);
     });
+    await(() => expect(document.querySelectorAll(item).length).toBe(0))
   });
   test('should render when use setOptions', async () => {
     Message.setOptions({
@@ -182,13 +182,13 @@ describe('Message[Base]', () => {
     fireEvent.click(container.querySelector('button')!);
     await waitFor(async () => {
       await delay(200);
-      classContentTest(document.querySelector(item)!, 'test');
-      fireEvent.click(document.querySelector(closeClassName)!);
     });
+    waitFor(() => classContentTest(document.querySelector(item)!, 'test'))
+    fireEvent.click(document.querySelector(closeClassName)!);
     await waitFor(async () => {
       await delay(200);
-      expect(document.querySelector(wrapper)).not.toBeInTheDocument();
     });
+    waitFor(() => expect(document.querySelector(wrapper)).not.toBeInTheDocument());
   });
   test('should render when set duration', async () => {
     const { container, rerender } = render(

@@ -2,17 +2,17 @@
 
 exports[`List[Base] should render correctly  1`] = `
 <div
-  class="cl4bvbb soui-list-wrapper c-xeobf2 soui-list-wrapper-bordered"
+  class="soui-list-wrapper soui-list-wrapper-bordered"
 >
   <div
-    class="c-77txco soui-list-scroll-container"
+    class="soui-list-scroll-container"
   >
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 100%;"
       >
         <div
@@ -50,7 +50,7 @@ exports[`List[Base] should render correctly  1`] = `
           </div>
           <div>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -59,7 +59,7 @@ exports[`List[Base] should render correctly  1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -68,7 +68,7 @@ exports[`List[Base] should render correctly  1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -81,11 +81,11 @@ exports[`List[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 100%;"
       >
         <div
@@ -123,7 +123,7 @@ exports[`List[Base] should render correctly  1`] = `
           </div>
           <div>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -132,7 +132,7 @@ exports[`List[Base] should render correctly  1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -141,7 +141,7 @@ exports[`List[Base] should render correctly  1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -154,11 +154,11 @@ exports[`List[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 100%;"
       >
         <div
@@ -196,7 +196,7 @@ exports[`List[Base] should render correctly  1`] = `
           </div>
           <div>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -205,7 +205,7 @@ exports[`List[Base] should render correctly  1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -214,7 +214,7 @@ exports[`List[Base] should render correctly  1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -227,11 +227,11 @@ exports[`List[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 100%;"
       >
         <div
@@ -269,7 +269,7 @@ exports[`List[Base] should render correctly  1`] = `
           </div>
           <div>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -278,7 +278,7 @@ exports[`List[Base] should render correctly  1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -287,7 +287,7 @@ exports[`List[Base] should render correctly  1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -308,17 +308,17 @@ exports[`List[Base] should render correctly about border 1`] = `
   style="padding: 0px 16px; border: 1px solid #e8ebf0;"
 >
   <div
-    class="cl4bvbb soui-list-wrapper"
+    class="soui-list-wrapper"
   >
     <div
-      class="c-77txco soui-list-scroll-container"
+      class="soui-list-scroll-container"
     >
       <div
-        class="c-qjvb76 soui-list-row"
+        class="soui-list-row"
         style="height: auto;"
       >
         <div
-          class="ct98d0f soui-list-item"
+          class="soui-list-item"
           style="width: 100%; padding-left: 0px; padding-right: 0px;"
         >
           <div>
@@ -327,11 +327,11 @@ exports[`List[Base] should render correctly about border 1`] = `
         </div>
       </div>
       <div
-        class="c-qjvb76 soui-list-row"
+        class="soui-list-row"
         style="height: auto;"
       >
         <div
-          class="ct98d0f soui-list-item"
+          class="soui-list-item"
           style="width: 100%; padding-left: 0px; padding-right: 0px;"
         >
           <div>
@@ -340,11 +340,11 @@ exports[`List[Base] should render correctly about border 1`] = `
         </div>
       </div>
       <div
-        class="c-qjvb76 soui-list-row"
+        class="soui-list-row"
         style="height: auto;"
       >
         <div
-          class="ct98d0f soui-list-item"
+          class="soui-list-item"
           style="width: 100%; padding-left: 0px; padding-right: 0px;"
         >
           <div>
@@ -353,11 +353,11 @@ exports[`List[Base] should render correctly about border 1`] = `
         </div>
       </div>
       <div
-        class="c-qjvb76 soui-list-row"
+        class="soui-list-row"
         style="height: auto;"
       >
         <div
-          class="ct98d0f soui-list-item"
+          class="soui-list-item"
           style="width: 100%; padding-left: 0px; padding-right: 0px;"
         >
           <div>
@@ -372,18 +372,18 @@ exports[`List[Base] should render correctly about border 1`] = `
 
 exports[`List[Base] should render correctly about colNum 1`] = `
 <div
-  class="hello cl4bvbb soui-list-wrapper c-xeobf2 soui-list-wrapper-bordered"
+  class="hello soui-list-wrapper soui-list-wrapper-bordered"
   style="color: blue;"
 >
   <div
-    class="c-77txco soui-list-scroll-container"
+    class="soui-list-scroll-container"
   >
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 50%;"
       >
         <div
@@ -421,7 +421,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
           </div>
           <div>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -430,7 +430,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -439,7 +439,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -451,7 +451,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
         </div>
       </div>
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 50%;"
       >
         <div
@@ -489,7 +489,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
           </div>
           <div>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -498,7 +498,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -507,7 +507,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -520,11 +520,11 @@ exports[`List[Base] should render correctly about colNum 1`] = `
       </div>
     </div>
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 50%;"
       >
         <div
@@ -562,7 +562,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
           </div>
           <div>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -571,7 +571,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -580,7 +580,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -592,7 +592,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
         </div>
       </div>
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 50%;"
       >
         <div
@@ -630,7 +630,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
           </div>
           <div>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -639,7 +639,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -648,7 +648,7 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               </span>
             </button>
             <button
-              class="ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+              class="soui-button-primary soui-button-button soui-button-text"
               dir="ltr"
               type="button"
             >
@@ -666,13 +666,13 @@ exports[`List[Base] should render correctly about colNum 1`] = `
 
 exports[`List[Base] should render correctly about empty 1`] = `
 <div
-  class="cl4bvbb soui-list-wrapper c-xeobf2 soui-list-wrapper-bordered"
+  class="soui-list-wrapper soui-list-wrapper-bordered"
 >
   <div
-    class="c-77txco soui-list-scroll-container"
+    class="soui-list-scroll-container"
   />
   <div
-    class="c-gikx6n soui-list-empty"
+    class="soui-list-empty"
   >
     no data
   </div>
@@ -681,11 +681,11 @@ exports[`List[Base] should render correctly about empty 1`] = `
 
 exports[`List[Base] should render correctly about size 1`] = `
 <div
-  class="c2yfuoi soui-radio-group"
+  class="soui-radio-group"
   style="margin-bottom: 24px;"
 >
   <div
-    class="clnvxwm soui-radio-wrapper"
+    class="soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -693,21 +693,21 @@ exports[`List[Base] should render correctly about size 1`] = `
       type="radio"
     />
     <span
-      class="chxtlw1 soui-radio-indicator-wrapper"
+      class="soui-radio-indicator-wrapper"
     >
       <span
-        class="c-4u63tq soui-radio-indicator"
+        class="soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c6yu2se soui-radio-desc"
+      class="soui-radio-desc"
     >
       small
     </span>
   </div>
   <div
-    class="clnvxwm soui-radio-wrapper c-863kv soui-radio-wrapper-checked"
+    class="soui-radio-wrapper soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -716,21 +716,21 @@ exports[`List[Base] should render correctly about size 1`] = `
       type="radio"
     />
     <span
-      class="chxtlw1 soui-radio-indicator-wrapper"
+      class="soui-radio-indicator-wrapper"
     >
       <span
-        class="c-4u63tq soui-radio-indicator"
+        class="soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c6yu2se soui-radio-desc"
+      class="soui-radio-desc"
     >
       default
     </span>
   </div>
   <div
-    class="clnvxwm soui-radio-wrapper"
+    class="soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -738,15 +738,15 @@ exports[`List[Base] should render correctly about size 1`] = `
       type="radio"
     />
     <span
-      class="chxtlw1 soui-radio-indicator-wrapper"
+      class="soui-radio-indicator-wrapper"
     >
       <span
-        class="c-4u63tq soui-radio-indicator"
+        class="soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c6yu2se soui-radio-desc"
+      class="soui-radio-desc"
     >
       large
     </span>
@@ -756,17 +756,17 @@ exports[`List[Base] should render correctly about size 1`] = `
 
 exports[`List[Base] should render correctly about striped 1`] = `
 <div
-  class="cl4bvbb soui-list-wrapper c-xeobf2 soui-list-wrapper-bordered cnz086o soui-list-wrapper-striped"
+  class="soui-list-wrapper soui-list-wrapper-bordered soui-list-wrapper-striped"
 >
   <div
-    class="c-77txco soui-list-scroll-container"
+    class="soui-list-scroll-container"
   >
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 100%;"
       >
         <div>
@@ -775,11 +775,11 @@ exports[`List[Base] should render correctly about striped 1`] = `
       </div>
     </div>
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 100%;"
       >
         <div>
@@ -788,11 +788,11 @@ exports[`List[Base] should render correctly about striped 1`] = `
       </div>
     </div>
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 100%;"
       >
         <div>
@@ -801,11 +801,11 @@ exports[`List[Base] should render correctly about striped 1`] = `
       </div>
     </div>
     <div
-      class="c-qjvb76 soui-list-row"
+      class="soui-list-row"
       style="height: auto;"
     >
       <div
-        class="ct98d0f soui-list-item"
+        class="soui-list-item"
         style="width: 100%;"
       >
         <div>

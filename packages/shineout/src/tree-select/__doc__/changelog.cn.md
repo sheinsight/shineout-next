@@ -1,3 +1,17 @@
+## 3.1.24
+2024-06-03
+### 🐞 BugFix
+
+- 修复  `TreeSelect`  异步加载数据时，选中结果没有更新的问题 ([#496](https://github.com/sheinsight/shineout-next/pull/496))
+
+
+## 3.1.18
+2024-05-27
+
+### 💅 Style
+
+- 优化 `TreeSelect` 合并选项的样式 ([#482](https://github.com/sheinsight/shineout-next/pull/482))
+
 ## 3.1.17
 2024-05-24
 

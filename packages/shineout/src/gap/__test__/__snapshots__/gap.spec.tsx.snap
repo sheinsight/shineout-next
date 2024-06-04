@@ -2,15 +2,15 @@
 
 exports[`Gap[Base] should render correctly  1`] = `
 <div
-  class="cr08vvv soui-gap-wrapper"
+  class="soui-gap-wrapper"
   style="margin-bottom: -8px; margin-right: -8px; width: 400px;"
 >
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -20,11 +20,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -34,11 +34,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -48,11 +48,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -62,11 +62,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -76,11 +76,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -90,11 +90,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -104,11 +104,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -118,11 +118,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -132,11 +132,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -150,10 +150,10 @@ exports[`Gap[Base] should render correctly  1`] = `
 
 exports[`Gap[Base] should render correctly about align 1`] = `
 <div
-  class="c2yfuoi soui-radio-group"
+  class="soui-radio-group"
 >
   <div
-    class="clnvxwm soui-radio-wrapper c-863kv soui-radio-wrapper-checked"
+    class="soui-radio-wrapper soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -162,21 +162,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="chxtlw1 soui-radio-indicator-wrapper"
+      class="soui-radio-indicator-wrapper"
     >
       <span
-        class="c-4u63tq soui-radio-indicator"
+        class="soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c6yu2se soui-radio-desc"
+      class="soui-radio-desc"
     >
       flex-start
     </span>
   </div>
   <div
-    class="clnvxwm soui-radio-wrapper"
+    class="soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -184,21 +184,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="chxtlw1 soui-radio-indicator-wrapper"
+      class="soui-radio-indicator-wrapper"
     >
       <span
-        class="c-4u63tq soui-radio-indicator"
+        class="soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c6yu2se soui-radio-desc"
+      class="soui-radio-desc"
     >
       center
     </span>
   </div>
   <div
-    class="clnvxwm soui-radio-wrapper"
+    class="soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -206,21 +206,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="chxtlw1 soui-radio-indicator-wrapper"
+      class="soui-radio-indicator-wrapper"
     >
       <span
-        class="c-4u63tq soui-radio-indicator"
+        class="soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c6yu2se soui-radio-desc"
+      class="soui-radio-desc"
     >
       flex-end
     </span>
   </div>
   <div
-    class="clnvxwm soui-radio-wrapper"
+    class="soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -228,15 +228,15 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="chxtlw1 soui-radio-indicator-wrapper"
+      class="soui-radio-indicator-wrapper"
     >
       <span
-        class="c-4u63tq soui-radio-indicator"
+        class="soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c6yu2se soui-radio-desc"
+      class="soui-radio-desc"
     >
       baseline
     </span>
@@ -254,23 +254,23 @@ exports[`Gap[Base] should render correctly about custom 1`] = `
     column:
   </div>
   <div
-    class="cbgmmzo soui-slider-wrapper"
+    class="soui-slider-wrapper"
     style="flex: 1;"
   >
     <div
-      class="c-yru59g soui-slider-track"
+      class="soui-slider-track"
     >
       <div
-        class="c-piwj6u soui-slider-track-inner"
+        class="soui-slider-track-inner"
         dir="ltr"
         style="left: 0%; right: 92%;"
       >
         <div
-          class="c-6bywo0 soui-slider-indicator c6vcnmj soui-slider-indicator-end"
+          class="soui-slider-indicator soui-slider-indicator-end"
           dir="ltr"
         />
         <div
-          class="c-83ex23 soui-slider-end-value c-yr169q soui-slider-value"
+          class="soui-slider-end-value soui-slider-value"
           dir="ltr"
         >
           8
@@ -283,15 +283,15 @@ exports[`Gap[Base] should render correctly about custom 1`] = `
 
 exports[`Gap[Base] should render correctly about vertical 1`] = `
 <div
-  class="cr08vvv soui-gap-wrapper"
+  class="soui-gap-wrapper"
   style="margin-bottom: -10px; margin-right: -8px; width: 400px; flex-direction: column;"
 >
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -301,11 +301,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -315,11 +315,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >
@@ -329,11 +329,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     </button>
   </div>
   <div
-    class="crsphyz soui-gap-item"
+    class="soui-gap-item"
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="ctqq9eq soui-button-primary c-3br65q soui-button-button"
+      class="soui-button-primary soui-button-button"
       dir="ltr"
       type="button"
     >

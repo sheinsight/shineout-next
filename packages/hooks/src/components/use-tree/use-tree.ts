@@ -13,6 +13,12 @@ import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber, isArray, isUnMatchedData } from '../../utils/is';
 
+function toArray<Value>(value: Value) {
+  if (!value) return [];
+  if (!Array.isArray(value)) return [value];
+  return value;
+}
+
 export const MODE = {
   /**
    * 返回全选数据，包含父节点和子节点
@@ -74,7 +80,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     unmatchedValueMap: new Map<any, any>(),
-    disabled: false,
     value: undefined,
     data: [],
     cachedValue: [],
@@ -163,13 +168,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return context.pathMap.get(id);
   };
 
-  const getDisabled = () => {
+  const getDisabled = usePersistFn(() => {
     if (isFunc(disabledProps)) {
       return disabledProps;
     }
 
-    return () => !!disabledProps;
-  };
+    return () => false;
+  });
 
   const getChecked = (id: KeygenResult) => {
     const value = get(id);
@@ -235,9 +240,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       context.dataMap.set(id, item);
 
       let isDisabled = !!disabled;
-
-      if (isDisabled === false && isFunc(context.disabled)) {
-        isDisabled = context.disabled(item);
+      if (isDisabled === false) {
+        isDisabled = getDisabled()(item);
       }
 
       const indexPath = [...index, i];
@@ -327,17 +331,20 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const setValue = (value?: KeygenResult[]) => {
-    context.value = value;
-    if (value && value !== context.cachedValue) {
+    context.value = toArray(value) as KeygenResult[];
+    if (value !== context.cachedValue) {
       initValue();
     }
     setUnmatedValue();
   };
 
   const isDisabled = (id: KeygenResult) => {
-    const node = context.pathMap.get(id);
-    if (node) return node.isDisabled;
-    return false;
+    if (isFunc(disabledProps)) {
+      const node = context.pathMap.get(id);
+      if (node) return node.isDisabled;
+      return false;
+    }
+    return !!disabledProps;
   };
 
   type CheckedStatus = 0 | 1 | 2;
@@ -359,11 +366,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.dataMap = new Map();
     context.valueMap = new Map();
     context.unmatchedValueMap = new Map();
-    context.disabled = getDisabled();
-    context.data = data;
+    context.data = toArray(data) as DataItem[];
     if (!data) return;
 
-    initData(data, []);
+    initData(context.data, []);
     initValue();
     setValue(prevValue);
   };

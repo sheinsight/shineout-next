@@ -93,6 +93,6 @@ const server = new WebpackDevServer(
   compiler,
 );
 
-server.listen(2333, 'localhost', () => {
+server.listen(3333, 'localhost', () => {
   console.log('Shineout Doc is running on port 2333');
 });
