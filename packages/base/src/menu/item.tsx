@@ -51,7 +51,16 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   });
 
   const renderChildren = () => {
-    if (!children?.length) return null;
+    let items = children;
+    let isTitle = false;
+    if (!items?.length) {
+      if (props.level === 0 && props.collapse && shoudPop) {
+        items = [props.dataItem];
+        isTitle = true;
+      } else {
+        return null;
+      }
+    }
 
     const content = (close?: () => void) => (
       <ul
@@ -65,7 +74,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         onClick={close}
         dir={config.direction}
       >
-        {children.map((item: any, index: number) => {
+        {items.map((item: any, index: number) => {
           const key = util.getKey(props.keygen, item, index);
           return (
             <MenuItem
@@ -77,6 +86,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
               index={index}
               keyResult={key}
               level={props.level + 1}
+              renderIcon={isTitle ? undefined : props.renderIcon}
             />
           );
         })}
@@ -99,6 +109,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             props.theme === 'dark' && classes?.popArrowDark,
           )}
           position={position}
+          lazy={false}
         >
           {(close) => {
             return content(close);
@@ -109,6 +120,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
 
     return content();
   };
+
   const renderItem = () => {
     const icon = util.isFunc(props.renderIcon) ? props.renderIcon(props.dataItem) : null;
     const iconEl = icon ? <div className={classes?.titleIcon}>{icon}</div> : null;

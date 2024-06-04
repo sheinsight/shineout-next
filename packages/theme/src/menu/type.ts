@@ -4,6 +4,12 @@
 export interface MenuTokens {
   /**
    * @type {string}
+   * @token Spacing-40
+   * @description 菜单undefined宽度
+   */
+  menuCollpaseWidth: string;
+  /**
+   * @type {string}
    * @token Font-14
    * @description 菜单字体字号
    */
@@ -112,6 +118,12 @@ export interface MenuTokens {
   menuChildrenBoxShadow: string;
   /**
    * @type {string}
+   * @token Neutral-border-1
+   * @description 菜单undefined边框颜色
+   */
+  menuHeaderBorderColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-1
    * @description 菜单深色模式字体颜色
    */
@@ -176,4 +188,154 @@ export interface MenuTokens {
    * @description 菜单深色模式选项禁用时的字体颜色
    */
   menuDarkItemDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-8
+   * @description 菜单深色模式undefined边框颜色
+   */
+  menuDarkHeaderBorderColor: string;
+  /**
+   * @type {string}
+   * @token Radius-Full
+   * @description 菜单undefined边框圆角
+   */
+  menuSearchBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-2
+   * @description 菜单undefined边框颜色
+   */
+  menuSearchBorderColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 菜单undefined内边距（水平方向）
+   */
+  menuSearchPaddingX: string;
+  /**
+   * @type {string}
+   * @token Size-7
+   * @description 菜单undefined图标字号
+   */
+  menuSearchIconSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 菜单undefined图标颜色
+   */
+  menuSearchIconColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 菜单undefined图标外边距（水平方向）
+   */
+  menuSearchIconMarginX: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 菜单undefined背景颜色
+   */
+  menuSearchBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 菜单undefined清除颜色
+   */
+  menuSearchClearColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 菜单undefined鼠标移入时的清除颜色
+   */
+  menuSearchHoverClearColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 菜单undefined鼠标移入时的边框颜色
+   */
+  menuSearchHoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 菜单undefined鼠标移入时的背景颜色
+   */
+  menuSearchHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 菜单undefined禁用时的背景颜色
+   */
+  menuSearchDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 菜单undefined深色模式字体颜色
+   */
+  menuSearchDarkFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-8
+   * @description 菜单undefined深色模式边框颜色
+   */
+  menuSearchDarkBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-8
+   * @description 菜单undefined深色模式背景颜色
+   */
+  menuSearchDarkBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 菜单undefined深色模式图标颜色
+   */
+  menuSearchDarkIconColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 菜单undefined深色模式清除颜色
+   */
+  menuSearchDarkClearColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 菜单undefined深色模式undefined字体颜色
+   */
+  menuSearchDarkPlaceholderFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 菜单undefined深色模式鼠标移入时的边框颜色
+   */
+  menuSearchDarkHoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-9
+   * @description 菜单undefined深色模式鼠标移入时的背景颜色
+   */
+  menuSearchDarkHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 菜单undefined深色模式鼠标移入时的清除颜色
+   */
+  menuSearchDarkHoverClearColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 菜单undefined深色模式鼠标聚焦时的边框颜色
+   */
+  menuSearchDarkFocusBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-9
+   * @description 菜单undefined深色模式鼠标聚焦时的背景颜色
+   */
+  menuSearchDarkFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-9
+   * @description 菜单undefined深色模式鼠标聚焦时的阴影
+   */
+  menuSearchDarkFocusShadow: string;
 }

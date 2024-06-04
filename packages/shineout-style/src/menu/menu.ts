@@ -3,15 +3,58 @@ import { MenuClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 export type MenuClassType = keyof MenuClasses;
 
+const animationDuration = '.25s';
+const collpaseWidth = token.menuCollpaseWidth;
+const transitionFunc = 'ease-out';
+
+
 const menuStyle: JsStyles<MenuClassType> = {
   wrapper: {
     height: '100%',
+    width: '100%',
     backgroundColor: token.menuItemBackgroundColor,
+    transition: `width ${animationDuration} ${transitionFunc}`,
+    color: token.menuFontColor,
   },
   wrapperLight: {},
   wrapperDark: {
     backgroundColor: token.menuDarkItemBackgroundColor,
   },
+  wrapperCollpase: {
+    width: `${collpaseWidth}!important`,
+    '& $title': {
+      paddingLeft: '0',
+    },
+    '& $expand': {
+      opacity: 0,
+    },
+    '& $titleIcon': {
+      width: `${collpaseWidth}!important`,
+      flexShrink: 0,
+      justifyContent: 'center',
+    },
+    '& $titleContent': {
+      opacity: 0,
+      alignItems: 'center',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+    },
+    '&$wrapperLight': {
+      '$menuRoot > $itemActive > $itemContent': {
+        backgroundColor: token.menuItemBackgroundColor,
+      },
+    },
+  },
+  wrapperInTransition: {
+    '& $titleContent, & $header': {
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+    },
+    '& $expand': {
+      opacity: 0,
+    },
+  },
+
   popover: {
     '&&': {
       border: 'none',
@@ -142,7 +185,7 @@ const menuStyle: JsStyles<MenuClassType> = {
           width: '3px',
           backgroundColor: token.menuDarkItemActiveBackgroundColor,
         },
-      '[data-soui-theme=light][data-soui-mode=vertical] &': {
+      '[data-soui-theme=light][data-soui-mode=vertical]:not($wrapperCollpase) &': {
         '&::before': {
           display: 'block',
           content: '""',
@@ -165,13 +208,32 @@ const menuStyle: JsStyles<MenuClassType> = {
           color: token.menuItemActiveFontColor,
         },
       },
-      '[data-soui-theme=dark] &': {
+      '$wrapperCollpase[data-soui-theme=light] $root > &': {
+        color: token.menuItemActiveFontColor,
+        backgroundColor: token.menuItemBackgroundColor,
+        '& $icon': {
+          color: token.menuItemActiveFontColor,
+        },
+      },
+      '[data-soui-theme=dark]:not($wrapperCollpase) &': {
         color: token.menuDarkItemActiveFontColor,
         backgroundColor: token.menuDarkItemActiveBackgroundColor,
         '& $icon': {
           color: token.menuDarkItemActiveFontColor,
         },
       },
+      '[data-soui-theme=dark]$wrapperCollpase &': {
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: '3px',
+          backgroundColor: token.menuDarkItemActiveBackgroundColor,
+        },
+      },
+
       '[data-soui-theme=light][data-soui-mode=inline] &,  [data-soui-theme=light][data-soui-mode=horizontal] &':
         {
           '&::before': {
@@ -213,7 +275,31 @@ const menuStyle: JsStyles<MenuClassType> = {
   },
   itemContentFront: {},
   itemContentBack: {},
+  header: {
+    padding: `${token.menuTitlePaddingY} ${token.menuTitlePaddingX}`,
+    width: '100%',
+    transition: `width ${animationDuration} ${transitionFunc}`,
+    color: token.menuFontColor,
+    '$wrapperDark &': {
+      color: token.menuDarkFontColor,
+    },
+    '$wrapperCollpase &': {
+      width: collpaseWidth,
+      paddingLeft: '0',
+      paddingRight: '0',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    '& + div': {
+      borderTop: `1px solid ${token.menuHeaderBorderColor}`,
+      '$wrapperDark &': {
+        borderTop: `1px solid ${token.menuDarkHeaderBorderColor}`,
+      },
+    },
+  },
   title: {
+    cursor: 'inherit',
     '&:hover': {
       color: 'inherit',
     },
@@ -243,11 +329,16 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
   },
   titleIcon: {
-    paddingRight: '8px',
+    '& + $titleContent': {
+      paddingLeft: '8px',
+    },
     lineHeight: 1,
+    display: 'inline-flex',
   },
   titleContent: {
     whiteSpace: 'pre-wrap',
+    transition: `opacity ${animationDuration} ${transitionFunc}`,
+    opacity: 1,
   },
   expand: {
     alignSelf: 'stretch',

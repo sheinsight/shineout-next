@@ -11,7 +11,10 @@
       ],
       "@sheinx/base": [
         "../base/src/index"
-      ]
+      ],
+      "@sheinx/theme": [
+        "../theme/src/index"
+      ],  
     }
   }
 }

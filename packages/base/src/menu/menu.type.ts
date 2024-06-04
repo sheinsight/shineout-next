@@ -13,6 +13,9 @@ export interface MenuClasses {
   wrapperHasOpen: string;
   wrapperLight: string;
   wrapperDark: string;
+  wrapperCollpase: string;
+  wrapperInTransition: string;
+  header: string;
   root: string;
   children: string;
   childrenShow: string;
@@ -184,6 +187,16 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @en Render Icon
    */
   renderIcon?: (data: DataItem) => React.ReactNode;
+  /**
+   * @cn 是否折叠
+   * @en Whether to collapse
+   * @default false
+   */
+  collapse?: boolean;
+  /**
+   * @cn 头部内容， 仅在 mode为 'inline' 时生效
+   */
+  header?: React.ReactNode;
 }
 
 export interface MenuItemProps
@@ -204,4 +217,5 @@ export interface MenuItemProps
   index: number;
   level: number;
   scrollRef: React.MutableRefObject<HTMLDivElement | null>;
+  collapse?: boolean;
 }

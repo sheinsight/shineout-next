@@ -27,6 +27,9 @@ const menuTokenDescription = {
 const menuTokenValue = {};
 
 const menuTokenExtraValue = {
+  collpase: {
+    width: 'Spacing-40',
+  },
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   icon: {
     color: 'Neutral-text-4',
@@ -63,6 +66,9 @@ const menuTokenExtraValue = {
       shadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
     },
   },
+  header: {
+    border: { color: 'Neutral-border-1' },
+  },
   dark: {
     font: { color: 'Neutral-text-1' },
     item: {
@@ -83,6 +89,45 @@ const menuTokenExtraValue = {
       disabled: {
         background: { color: 'Neutral-fill-10' },
         font: { color: 'Neutral-text-4' },
+      },
+    },
+    header: {
+      border: { color: 'Neutral-fill-8' },
+    },
+  },
+
+  search: {
+    border: { radius: 'Radius-Full', color: 'Neutral-border-2' },
+    padding: { x: 'Spacing-8' },
+    icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { x: 'Spacing-8' } },
+    background: { color: 'Neutral-fill-2' },
+    clear: { color: 'Neutral-text-2' },
+    hover: {
+      clear: { color: 'Neutral-text-4' },
+      border: { color: 'Brand-5' },
+      background: { color: 'Neutral-fill-1' },
+    },
+    disabled: {
+      background: { color: 'Neutral-fill-3' },
+    },
+    dark: {
+      font: { color: 'Neutral-text-1' },
+      border: { color: 'Neutral-fill-8' },
+      background: { color: 'Neutral-fill-8' },
+      icon: { color: 'Neutral-text-1' },
+      clear: { color: 'Neutral-text-3' },
+      placeholder: {
+        font: { color: 'Neutral-text-2' },
+      },
+      hover: {
+        border: { color: 'Brand-5' },
+        background: { color: 'Neutral-fill-9' },
+        clear: { color: 'Neutral-text-2' },
+      },
+      focus: {
+        border: { color: 'Brand-5' },
+        background: { color: 'Neutral-fill-9' },
+        shadow: 'Brand-9',
       },
     },
   },

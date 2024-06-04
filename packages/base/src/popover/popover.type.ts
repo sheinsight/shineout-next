@@ -163,4 +163,8 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @private 属性
    */
   attributes?: React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * @private 是否开启懒加载
+   */
+  lazy?: boolean;
 }

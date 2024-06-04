@@ -94,7 +94,7 @@ const Popover = (props: PopoverProps) => {
     };
   });
 
-  const noRender = !open && !context.rendered;
+  const noRender = props.lazy && !open && !context.rendered;
 
   if (!targetRef.current || !children || noRender) {
     return (
@@ -130,6 +130,7 @@ const Popover = (props: PopoverProps) => {
       destroy={destroy}
       zIndex={zIndex}
       adjust={props.adjust}
+      lazy={props.lazy}
     >
       <div
         className={classNames(className, popoverStyle?.wrapper, open && popoverStyle?.wrapperOpen)}
