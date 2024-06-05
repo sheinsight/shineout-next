@@ -60,7 +60,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     removeArr: new Set<string>(),
     names: new Set<string>(),
     submitLock: false,
-    value: props.value || emptyObj,
+    value: deepClone(props.value) || emptyObj,
     errors: {},
     serverErrors: {},
     lastValue: props.value || emptyObj,

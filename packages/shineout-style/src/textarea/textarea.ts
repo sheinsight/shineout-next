@@ -95,6 +95,7 @@ const input: JsStyles<keyof TextareaClasses> = {
   },
   info: {
     position: 'absolute',
+    zIndex: 1000,
     '&[dir=ltr]': { right: '0' },
     '&[dir=rtl]': { left: '0' },
     top: '100%',

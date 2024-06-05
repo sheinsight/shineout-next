@@ -4,6 +4,13 @@ import { CardClasses } from '@sheinx/base';
 
 export type CardClassType = keyof CardClasses;
 
+const headerCommon = {
+  fontSize: token.cardTitleFontSize,
+  lineHeight: token.lineHeightDynamic,
+  fontWeight: 'bold',
+  minWidth: 0,
+}
+
 const cardStyle: JsStyles<CardClassType> = {
   wrapper: {
     display: 'flex',
@@ -57,11 +64,12 @@ const cardStyle: JsStyles<CardClassType> = {
     },
   },
   headerContent: {
-    fontSize: token.cardTitleFontSize,
-    lineHeight: token.lineHeightDynamic,
-    fontWeight: 'bold',
+    ...headerCommon,
     flex: 1,
-    minWidth: 0,
+  },
+  simpleHeader: {
+    ...headerCommon,
+    display: 'block'
   },
   center: {
     textAlign: 'center',
@@ -94,7 +102,7 @@ const cardStyle: JsStyles<CardClassType> = {
     },
   },
   body: {
-    '$wrapperSplit $header+&, $wrapperSplit $header+$bodyCollapse>&': {
+    '$wrapperSplit>$header+&, $wrapperSplit>$header+$bodyCollapse>&': {
       borderTop: `1px solid ${token.cardBorderColor}`,
     },
     padding: `${token.cardPaddingY} ${token.cardPaddingX}`,
@@ -105,7 +113,7 @@ const cardStyle: JsStyles<CardClassType> = {
   },
   bodyCollapse: {},
   footer: {
-    '$wrapperSplit $body+&, $wrapperSplit $bodyCollapse+&': {
+    '$wrapperSplit>$body+&, $wrapperSplit>$bodyCollapse+&': {
       borderTop: `1px solid ${token.cardBorderColor}`,
     },
     padding: `${token.cardPaddingY} ${token.cardPaddingX}`,

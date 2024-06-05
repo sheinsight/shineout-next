@@ -506,7 +506,7 @@ describe('Menu[ScrollY]', () => {
     const scrollBoxWrapper = container.querySelector(scrollbox)!;
     styleContentTest(scrollbarHandlerWrapper, `top: ${0}px;`);
     fireEvent.wheel(scrollBoxWrapper, { deltaY: 20 });
-    styleContentTest(scrollbarHandlerWrapper, `top: ${6.666666666666666}px;`);
+    styleContentTest(scrollbarHandlerWrapper, `top: ${13.333333333333332}px;`);
   });
   test('should render when click scrollbar', async () => {
     const { container } = render(<MenuTest data={moreData} mode='vertical' />);
@@ -548,6 +548,6 @@ describe('Menu[ScrollX]', () => {
     const scrollBoxWrapper = container.querySelector(scrollbox)!;
     styleContentTest(scrollbarHandlerWrapper, `left: ${0}px;`);
     fireEvent.wheel(scrollBoxWrapper, { deltaX: 10 });
-    styleContentTest(scrollbarHandlerWrapper, `left: ${3.333333333333333}px;`);
+    styleContentTest(scrollbarHandlerWrapper, `left: ${6.666666666666666}px;`);
   });
 });

@@ -169,9 +169,9 @@ const Modal = (props: ModalContentProps) => {
     // unmount
     return () => {
       props.shouldDestroy?.(true);
-      if (props.autoShow) {
-        props.onClose?.();
-      }
+      // if (props.autoShow) {
+      //   props.onClose?.();
+      // }
       if (context.isMask) {
         context.isMask = false;
         hasMask = false;
@@ -193,9 +193,10 @@ const Modal = (props: ModalContentProps) => {
   };
   const renderHeader = () => {
     const showCloseIcon = maskCloseAble === null || !!maskCloseAble;
+    const isEmptyTitle = !props.title && props.title !== 0;
     return (
       <div
-        className={modalClasses?.header}
+        className={classNames(modalClasses?.header, isEmptyTitle && modalClasses?.headerEmptyTitle)}
         onMouseDown={props.moveable ? moveInfo.handleMouseDown : undefined}
       >
         {renderIcon()}

@@ -33,13 +33,13 @@ const useTreeSelect = <DataItem, Value>(props: BaseTreeSelectProps<DataItem, Val
   const handleChange = usePersistFn((v: KeygenResult[], ...reset) => {
     if (!multiple && isArray(v)) {
       onChange?.(v[0] as Value, ...reset);
-    }
-    if (multiple && !isArray(v)) {
+    } else if (multiple && !isArray(v)) {
       if (v === undefined || v === null) {
         onChange?.([] as Value, ...reset);
       } else onChange?.([v] as Value, ...reset);
+    } else {
+      onChange?.(v as Value, ...reset);
     }
-    onChange?.(v as Value, ...reset);
   });
 
   return {

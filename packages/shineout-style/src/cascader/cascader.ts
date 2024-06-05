@@ -281,7 +281,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   compressedWrapper: {
     width: 0,
-    overflow: 'hidden',
+    overflow: 'auto',
   },
   controlMouse: {
     '& $optionInner:hover': {
@@ -391,9 +391,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     paddingTop: 3,
     paddingBottom: 3,
     display: 'inline-block',
-    overflow: 'auto'
+    overflow: 'auto',
   },
   tag: {
+    flexShrink: 0,
     '&$tag + &$tag': {
       marginLeft: 0,
     },
@@ -405,6 +406,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     '&$hideTag': {
       marginRight: 0,
     },
+  },
+  tagOnly: {
+    flexShrink: 1,
+    minWidth: 42,
   },
   space: {
     marginTop: token.cascaderPlaceholderMarginY,
@@ -440,6 +445,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     // hover
     '&:not($optionDisabled):hover': {
       '& $optionInner': {
+        color: token.cascaderOptionHoverFontColor,
         backgroundColor: token.cascaderOptionHoverBackgroundColor,
       },
     },
@@ -464,7 +470,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     whiteSpace: 'nowrap',
     minWidth: 44,
     display: 'flex',
+    color: token.cascaderOptionFontColor,
     fontSize: token.cascaderFontSize,
+    background: token.cascaderOptionBackgroundColor,
     lineHeight: token.lineHeightDynamic,
     padding: `${token.cascaderOptionInnerPaddingY} ${token.cascaderOptionInnerPaddingX}`,
     paddingRight: 30,

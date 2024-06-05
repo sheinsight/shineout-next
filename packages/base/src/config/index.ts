@@ -15,15 +15,14 @@ export interface ConfigOption {
 
 const processEnv: Record<string, any> = typeof process !== 'undefined' ? process?.env : {};
 export let config: ConfigOption = {
-  prefix: 'so',
+  prefix: 'soui',
   locale: (processEnv.LOCALE as LanType) || 'en-US',
-  delay: 0,
+  delay: 400,
   trim: undefined,
   spin: 'ring',
   direction: 'ltr',
   popupContainer: null,
 };
-
 
 const state = create<ConfigOption>(config);
 
@@ -50,7 +49,7 @@ export const useConfig = () => {
 
 export const setConfig = (option: Partial<ConfigOption>) => {
   for (const [key, value] of Object.entries(option)) {
-    if (value && key in config) {
+    if (key in config) {
       const k = key as keyof ConfigOption;
       // @ts-ignore
       state.mutate[k] = value;

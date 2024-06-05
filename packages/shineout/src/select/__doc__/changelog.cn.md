@@ -1,3 +1,40 @@
+## 3.1.26
+2024-06-05
+
+### 🐞 BugFix
+
+- 修复 `Select` 渲染的 `result` 为空可能会导致页面报错的问题 ([#503](https://github.com/sheinsight/shineout-next/pull/503))
+
+## 3.1.18
+2024-05-27
+
+### 💅 Style
+
+- 优化 `Select` 合并选项的样式 ([#481](https://github.com/sheinsight/shineout-next/pull/481))
+
+## 3.1.17
+2024-05-24
+
+### 🐞 BugFix
+
+- 修复 `Select` 属性 `compressed` 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
+
+## 3.1.15
+2024-05-23
+
+### 🐞 BugFix
+
+- 修复 `Select` 在某些场景下弹出层会被遮挡的问题 ([#467](https://github.com/sheinsight/shineout-next/pull/467))
+
+
+
+## 3.1.10
+2024-05-15
+
+### 🐞 BugFix
+
+- 修复 `Select` 选项文字过长没有截断并且出现滚动条的问题 ([#445](https://github.com/sheinsight/shineout-next/pull/445))
+
 ## 3.0.11
 2024-05-08
 
@@ -29,7 +66,6 @@
 ### 🐞 BugFix
 
 - 修复 `Select` noCache 属性无效的问题 ([#398](https://github.com/sheinsight/shineout-next/pull/398))
-- 修复 `Select` 首次渲染 `compressed` 属性无效的问题 ([#399](https://github.com/sheinsight/shineout-next/pull/399))
 
 ## 3.0.5
 2024-04-24

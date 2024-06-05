@@ -1,9 +1,40 @@
+## 3.1.24
+2024-06-03
+### 🐞 BugFix
+
+- 修复  `TreeSelect`  异步加载数据时，选中结果没有更新的问题 ([#496](https://github.com/sheinsight/shineout-next/pull/496))
+
+
+## 3.1.18
+2024-05-27
+
+### 💅 Style
+
+- 优化 `TreeSelect` 合并选项的样式 ([#482](https://github.com/sheinsight/shineout-next/pull/482))
+
+## 3.1.17
+2024-05-24
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` 属性  `compressed` 无效的问题 ([#477](https://github.com/sheinsight/shineout-next/pull/477))
+
+## 3.1.9
+2024-05-14
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` 在单选的情况下会返回数组的问题 ([#440](https://github.com/sheinsight/shineout-next/pull/440))
+
+- 修复 `TreeSelect` 单选后节点没有高亮的问题  ([#439](https://github.com/sheinsight/shineout-next/pull/439))
+
+
 ## 3.1.7
 2024-05-11
 
 ### 🐞 BugFix
 
-- 修复 `TreeSelect` 属性 `childrenKey` 没有生效的问题 ([#432](https://github.com/sheinsight/shineout-next/pull/432))
+- 修复 `TreeSelect` 单选后节点没有高亮的问题 ([#439](https://github.com/sheinsight/shineout-next/pull/439))
 
 ## 3.1.6
 2024-05-11
@@ -18,9 +49,6 @@
 ### 🆕 Feature
 - `TreeSelect` 属性 `loader` 支持返回 Promise 来关闭加载状态 ([#417](https://github.com/sheinsight/shineout-next/pull/417))
 
-### 🐞 BugFix
-
-- 修复 `TreeSelect` 初次渲染时 `compressed` 没有生效的问题 ([#411](https://github.com/sheinsight/shineout-next/pull/411))
 
 ## 3.0.11
 2024-05-08
@@ -45,7 +73,6 @@
 ### 🐞 BugFix
 
 - 修复 `TreeSelect` noCache 属性无效的问题 ([#398](https://github.com/sheinsight/shineout-next/pull/398))
-- 修复 `TreeSelect` 首次渲染 `compressed` 属性无效的问题 ([#399](https://github.com/sheinsight/shineout-next/pull/399))
 
 ## 3.0.5
 2024-04-24

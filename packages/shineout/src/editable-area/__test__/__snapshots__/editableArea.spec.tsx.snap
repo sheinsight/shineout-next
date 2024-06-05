@@ -2,18 +2,18 @@
 
 exports[`EditableArea[Base] should render correctly  1`] = `
 <div
-  class="c-f2oa57 soui-editableArea-wrapper"
+  class="soui-editableArea-wrapper"
   style="width: 300px;"
 >
   <div
-    class="cfblsbd soui-editableArea-place cp2c5tr soui-editableArea-wrapper-padding-box c-yxshg2 soui-editableArea-wrapper-inner-title-top cl72ucy soui-editableArea-wrapper-inner-title-bottom"
+    class="soui-editableArea-place soui-editableArea-wrapper-padding-box soui-editableArea-wrapper-inner-title-top soui-editableArea-wrapper-inner-title-bottom"
     tabindex="0"
   >
     <div
-      class="c-pq2y5x soui-editableArea-content"
+      class="soui-editableArea-content"
     >
       <span
-        class="c-tfhjej soui-editableArea-placeholder"
+        class="soui-editableArea-placeholder"
       >
         input something
       </span>
@@ -24,15 +24,15 @@ exports[`EditableArea[Base] should render correctly  1`] = `
 
 exports[`EditableArea[Base] should render correctly  2`] = `
 <div
-  class="c-f2oa57 soui-editableArea-wrapper"
+  class="soui-editableArea-wrapper"
   style="width: 300px;"
 >
   <div
-    class="cfblsbd soui-editableArea-place cp2c5tr soui-editableArea-wrapper-padding-box c-yxshg2 soui-editableArea-wrapper-inner-title-top cl72ucy soui-editableArea-wrapper-inner-title-bottom"
+    class="soui-editableArea-place soui-editableArea-wrapper-padding-box soui-editableArea-wrapper-inner-title-top soui-editableArea-wrapper-inner-title-bottom"
     tabindex="0"
   >
     <div
-      class="c-pq2y5x soui-editableArea-content"
+      class="soui-editableArea-content"
     >
       i am a long text, i am a long text, i am a long text
     </div>
@@ -49,18 +49,18 @@ exports[`EditableArea[Base] should render correctly  3`] = `
     style="height: 50px;"
   />
   <div
-    class="c-f2oa57 soui-editableArea-wrapper"
+    class="soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div
-      class="cfblsbd soui-editableArea-place cp2c5tr soui-editableArea-wrapper-padding-box c-yxshg2 soui-editableArea-wrapper-inner-title-top cl72ucy soui-editableArea-wrapper-inner-title-bottom"
+      class="soui-editableArea-place soui-editableArea-wrapper-padding-box soui-editableArea-wrapper-inner-title-top soui-editableArea-wrapper-inner-title-bottom"
       tabindex="0"
     >
       <div
-        class="c-pq2y5x soui-editableArea-content"
+        class="soui-editableArea-content"
       >
         <span
-          class="c-tfhjej soui-editableArea-placeholder"
+          class="soui-editableArea-placeholder"
         >
           scroll in container
         </span>
@@ -76,18 +76,18 @@ exports[`EditableArea[Base] should render correctly  3`] = `
 exports[`EditableArea[Base] should render correctly  4`] = `
 <div>
   <div
-    class="c-f2oa57 soui-editableArea-wrapper"
+    class="soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div
-      class="cfblsbd soui-editableArea-place cp2c5tr soui-editableArea-wrapper-padding-box c-yxshg2 soui-editableArea-wrapper-inner-title-top cl72ucy soui-editableArea-wrapper-inner-title-bottom"
+      class="soui-editableArea-place soui-editableArea-wrapper-padding-box soui-editableArea-wrapper-inner-title-top soui-editableArea-wrapper-inner-title-bottom"
       tabindex="0"
     >
       <div
-        class="c-pq2y5x soui-editableArea-content"
+        class="soui-editableArea-content"
       >
         <span
-          class="c-tfhjej soui-editableArea-placeholder"
+          class="soui-editableArea-placeholder"
         >
           input something
         </span>
@@ -100,15 +100,15 @@ exports[`EditableArea[Base] should render correctly  4`] = `
 exports[`EditableArea[Base] should render correctly  5`] = `
 <div>
   <div
-    class="c-f2oa57 soui-editableArea-wrapper"
+    class="soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div
-      class="cfblsbd soui-editableArea-place cp2c5tr soui-editableArea-wrapper-padding-box c-yxshg2 soui-editableArea-wrapper-inner-title-top cl72ucy soui-editableArea-wrapper-inner-title-bottom"
+      class="soui-editableArea-place soui-editableArea-wrapper-padding-box soui-editableArea-wrapper-inner-title-top soui-editableArea-wrapper-inner-title-bottom"
       tabindex="0"
     >
       <div
-        class="c-pq2y5x soui-editableArea-content"
+        class="soui-editableArea-content"
       >
         <div>
           Guessing what I inputed ?

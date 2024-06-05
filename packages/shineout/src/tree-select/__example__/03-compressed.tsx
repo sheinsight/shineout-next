@@ -43,7 +43,7 @@ const data: DataItem[] = [
 ];
 
 export default () => {
-  const [value, setValue] = useState<TreeSelectProps['value']>([]);
+  const [value, setValue] = useState<TreeSelectProps['value']>(["1-1-1","1-1-2","1-1","1-2","1","2-1","2-2","2","3-1","3"]);
 
   const handleChange: TreeSelectProps['onChange'] = (v) => {
     setValue(v);

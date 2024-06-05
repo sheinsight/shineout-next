@@ -14,6 +14,7 @@ const inputTokenDescription = {
   toggle: '反转',
   shadow: '阴影',
   info: '基础',
+  group: '组合模式',
 };
 
 /**
@@ -42,7 +43,7 @@ const inputTokenExtraValue = {
     padding: { x: 'Spacing-12', y: 'Spacing-7' },
     icon: { size: '' },
   },
-  placeholder: { color: 'Neutral-text-2' },
+  placeholder: { color: 'Neutral-text-2', font: { weight: 'Weight-regular' } },
   background: { color: 'Neutral-fill-1' },
   shadow: '',
   clear: { color: 'Neutral-text-3' },
@@ -55,7 +56,7 @@ const inputTokenExtraValue = {
     shadow: '',
     clear: { color: 'Neutral-text-4' },
     toggle: { color: 'Neutral-text-5' },
-    icon: { color: '' },
+    icon: { color: 'Brand-6' },
   },
   focus: {
     font: { color: '' },
@@ -127,6 +128,7 @@ const inputTokenExtraValue = {
       icon: { color: '' },
     },
   },
+  group: { font: { color: 'Neutral-text-5', background: { color: 'Neutral-fill-2' } } },
   info: {
     font: { color: 'Brand-6' },
     background: { color: 'Neutral-fill-1' },

@@ -6,6 +6,7 @@ interface scrollProps {
   scrollHeight: number;
   scrollWidth: number;
   children: React.ReactNode;
+  childrenStyle?: React.CSSProperties;
   wrapperRef?: React.RefObject<HTMLDivElement>;
   onScroll?: (info: {
     scrollLeft: number;
@@ -48,7 +49,7 @@ const Scroll = (props: scrollProps) => {
   } as React.CSSProperties;
 
   const placeStyle = {
-    marginTop: Math.max(0, scrollHeight - height),
+    marginTop: (height > 0 && scrollHeight > 0) ? Math.max(0, Math.floor(scrollHeight - height)) : 0,
     [`margin${isRtl ? 'Left' : 'Right'}`]: scrollWidth,
     height: 0,
     width: 0,
@@ -106,7 +107,7 @@ const Scroll = (props: scrollProps) => {
           style={containerStyle}
           ref={containerRef}
         >
-          <div style={{ flexGrow: 1 }}>{props.children}</div>
+          <div style={{ flexGrow: 1, ...props.childrenStyle }}>{props.children}</div>
         </div>
         <div style={placeStyle}>&nbsp;</div>
       </div>

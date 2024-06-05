@@ -1,3 +1,32 @@
+## 3.1.24
+2024-06-03
+### 🐞 BugFix
+
+- 修复 `Table` 右侧固定列在某些场景会出现偏移的问题 ([#499](https://github.com/sheinsight/shineout-next/pull/499))
+
+
+## 3.1.20
+2024-05-30
+### 💅 Style
+
+- 修复 `Table` 选择行场景下复选框和文本不对齐问题([#486](https://github.com/sheinsight/shineout-next/pull/486)) 
+
+
+## 3.1.15
+2024-05-23
+### 🐞 BugFix
+
+- 修复 `Table` 异步加载数据可能导致滚动条闪烁的问题 ([#466](https://github.com/sheinsight/shineout-next/pull/466)) 
+- 修复 `Table` 只使用样式的用法单元格下边框样式问题 ([#469](https://github.com/sheinsight/shineout-next/pull/469)) 
+
+## 3.1.9
+2024-05-14
+### 🐞 BugFix
+
+- 修复 `Table` 在缩放场景下可能导致 Table 高度一直变化的问题 ([#442](https://github.com/sheinsight/shineout-next/pull/442))
+- 修复 `Table` 没有设置高度并且数据为空的场景下滚动条渲染异常的问题 ([#438](https://github.com/sheinsight/shineout-next/pull/438))
+
+
 ## 3.1.7
 2024-05-11
 

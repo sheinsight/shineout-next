@@ -28,6 +28,8 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       boxSizing: 'content-box',
       background: 'inherit',
       borderBottom: 'none',
+      '&[dir=ltr]': { borderLeftColor: 'transparent' },
+      '&[dir=rtl]': { borderRight: 'transparent' },
     },
     '&[data-soui-position^="bottom"]': {
       marginTop: arrowGap - 2,

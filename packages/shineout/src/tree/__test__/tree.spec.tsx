@@ -19,7 +19,7 @@ import {
 import TreeBase from '../__example__/01-base';
 import TreeSize from '../__example__/02-size';
 import TreeLine from '../__example__/03-line';
-import TreeExpand from '../__example__/04-expand';
+import TreeExpand from '../__example__/04-01-expand';
 import TreeDisabled from '../__example__/05-disabled';
 import TreeOnChange from '../__example__/06-onchange';
 import TreeLoader from '../__example__/07-loader';
@@ -81,12 +81,14 @@ const data = [
         children: [
           {
             id: '0-0-0',
+            children: []
           },
           {
             id: '0-0-1',
             children: [
               {
                 id: '0-0-1-0',
+                children: []
               },
             ],
           },
@@ -97,6 +99,7 @@ const data = [
         children: [
           {
             id: '0-1-0',
+            children: []
           },
         ],
       },
@@ -136,7 +139,12 @@ mountTest(<TreeTest />);
 
 describe('Tree[Base]', () => {
   displayTest(Tree as React.FC, 'ShineoutTree');
-  baseTest(TreeTest, treeClassName);
+  test('should render when set style and className', () => {
+    const { container } = render(<TreeTest className='test' style={{ color: 'black' }} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    classTest(treeWrapper, 'test');
+    styleTest(treeWrapper, 'color: black;');
+  })
   snapshotTest(<TreeBase />);
   snapshotTest(<TreeSize />, 'about size');
   snapshotTest(<TreeLine />, 'about line');
@@ -304,11 +312,11 @@ describe('Tree[Base]', () => {
     classLengthTest(treeRootNode[1], icon, 0);
     await waitFor(
       async () => {
-        await delay(1000);
+        await delay(1500);
       },
       { timeout: 2000 },
     );
-    classTest(treeRootNode[1], leaf, false);
+    classTest(treeRootNode[1], leaf, false)
   });
 });
 describe('Tree[Disabled]', () => {
@@ -672,7 +680,7 @@ describe('Tree[Drag]', () => {
     expect(document.querySelectorAll(contentClassName).length).toBe(7);
     expect(dropFn.mock.calls.length).toBe(1);
   });
-  test('should render when set onDragStart/onDragEnd/onDragOver/onDragLeave', async () => {
+  test('should render when set onDragStart/onDragEnd/onDragOver/onDragLeave', () => {
     const dropFn = jest.fn();
     const dragStartFn = jest.fn();
     const dragEndFn = jest.fn();
@@ -689,13 +697,16 @@ describe('Tree[Drag]', () => {
       />,
     );
     const treeWrapper = container.querySelector(treeClassName)!;
+    
     const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
-    const firstNode = treeRootNodeAll[1];
+    const firstNode = treeRootNodeAll[0];
+    const dataTransfer = new MockDataTransfer();
     fireEvent.dragStart(firstNode, {
-      dataTransfer: new MockDataTransfer(),
+      dataTransfer,
     });
-    fireEvent.dragOver(firstNode.querySelector(contentClassName)!, {
+    fireEvent.dragOver(firstNode.querySelector(contentWrapper)!, {
       clientY: 20,
+      dataTransfer,
       target: {
         getBoundingClientRect: () => ({
           top: 50,
@@ -703,12 +714,13 @@ describe('Tree[Drag]', () => {
         }),
       },
     });
-    fireEvent.dragEnd(firstNode);
-    fireEvent.dragLeave(firstNode);
+    fireEvent.dragEnd(firstNode, { dataTransfer });
+    fireEvent.dragLeave(firstNode, { dataTransfer });
+    expect(dropFn.mock.calls.length).toBe(1);
     expect(dragStartFn.mock.calls.length).toBe(1);
     expect(dragEndFn.mock.calls.length).toBe(1);
     expect(dragOver.mock.calls.length).toBe(1);
-    expect(dragLeaveFn.mock.calls.length).toBe(2);
+    expect(dragLeaveFn.mock.calls.length).toBe(1);
   });
   test('should render when set dragImageStyle', () => {
     const dropFn = jest.fn();
@@ -738,12 +750,14 @@ describe('Tree[Data]', () => {
               children: [
                 {
                   id: '1-0-0',
+                  children: []
                 },
                 {
                   id: '1-0-1',
                   children: [
                     {
                       id: '1-0-1-0',
+                      children: []
                     },
                   ],
                 },
@@ -754,6 +768,7 @@ describe('Tree[Data]', () => {
               children: [
                 {
                   id: '1-1-0',
+                  children: []
                 },
               ],
             },

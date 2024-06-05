@@ -7,6 +7,7 @@ import type { Config } from '@jest/types';
 
 function createTesterConfig(namespace: string): Config.InitialOptions {
   return {
+    setupFiles: ['<rootDir>/packages/shineout/src/tests/setupTest.ts'],
     displayName: namespace,
     maxWorkers: '50%',
     testMatch: [`<rootDir>/packages/${namespace}/src/**/*.spec.ts?(x)`],
@@ -16,14 +17,15 @@ function createTesterConfig(namespace: string): Config.InitialOptions {
     // modulePathIgnorePatterns: [
     //   '<rootDir>/packages-infra/compiled-utils/compiled/',
     // ],
-    transformIgnorePatterns: [
-      `<rootDir>/*/dist/`,
-      'node_modules/core-js',
-      'node_modules/.pnpm/*/core-js',
-    ],
-    // moduleNameMapper: {
-    //   'core-js': '<rootDir>/node_modules/.pnpm/core-js@3.33.3/node_modules/core-js',
-    // },
+    transformIgnorePatterns: [`<rootDir>/*/dist/`, 'node_modules'],
+    moduleNameMapper: {
+      '@sheinx/base': '<rootDir>/packages/base/src',
+      '@sheinx/theme': '<rootDir>/packages/theme/src',
+      '@sheinx/hooks': '<rootDir>/packages/hooks/src',
+      '@sheinx/mock': '<rootDir>/packages/mock/src',
+      '@sheinx/shineout-style': '<rootDir>/packages/shineout-style/src',
+      shineout: '<rootDir>/packages/shineout/src',
+    },
   };
 }
 

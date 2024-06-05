@@ -23,18 +23,44 @@ const CardHeader = (props: CardHeaderProps) => {
     );
   };
 
-  const headerContentClassName = classNames(
-    cardClasses?.headerContent,
+  const alignClass = classNames(
     align === 'center' && cardClasses?.center,
     align === 'right' && cardClasses?.right,
   );
 
+  const headerContentClassName = classNames(
+    cardClasses?.headerContent,
+    alignClass
+  );
+
+  const commonHeaderProps = {
+    onMouseDown: handleDragMouseDown,
+    onClick: onCollapse,
+    style: props.style
+  }
+
+  if (!props.extra && !collapsible) {
+    const simpleHeaderClassName = classNames(
+      cardClasses?.header,
+      cardClasses?.simpleHeader, 
+      alignClass, 
+      props.className
+    );
+    
+    return (
+      <div
+        className={simpleHeaderClassName}
+        {...commonHeaderProps}
+      >
+        {props.children}
+      </div>
+    );
+  }
+
   return (
     <div
-      onMouseDown={handleDragMouseDown}
-      onClick={onCollapse}
       className={classNames(props.className, cardClasses?.header)}
-      style={props.style}
+      {...commonHeaderProps}
     >
       {renderIndicator()}
       <div className={headerContentClassName}>{props.children}</div>

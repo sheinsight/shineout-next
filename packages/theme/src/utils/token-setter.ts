@@ -97,6 +97,7 @@ const setToken = (options?: Options) => {
   } = options || {};
 
   const { prefix } = getConfig();
+  if (typeof window === 'undefined') return;
 
   const id = `__shineoutThemeStyleContainer__${hash(selector)}`;
   const cacheTag = document.querySelector(`[data-token-id="${id}"]`) as HTMLElement;

@@ -72,8 +72,9 @@ const groupSpace = (gap: string) => ({
     alignItems: 'center',
     border: `1px solid ${token.inputBorderColor}`,
     borderWidth: '0 1px',
-    background: token.inputDisabledBackgroundColor,
+    background: token.inputGroupFontBackgroundColor,
     fontWeight: 'normal',
+    color: token.inputGroupFontColor,
     '&:first-child': {
       borderLeftColor: 'inherit',
       marginLeft: '-1px',
@@ -135,7 +136,9 @@ const input: JsStyles<keyof InputClasses> = {
     outline: 'none',
     backgroundColor: 'transparent',
     boxSizing: 'border-box',
+    fontWeight: 'inherit',
     '&::placeholder': {
+      fontWeight: token.inputPlaceholderFontWeight,
       color: token.inputPlaceholderColor,
       fontSize: 'inherit',
     },
@@ -226,7 +229,7 @@ const input: JsStyles<keyof InputClasses> = {
       color: token.inputIconColor,
       '&:hover': {
         '$wrapper:not($wrapperDisabled) &': {
-          color: token.inputHoverBorderColor,
+          color: token.inputHoverIconColor,
         },
       },
       '&:first-child': {
@@ -265,6 +268,7 @@ const input: JsStyles<keyof InputClasses> = {
       left: '0',
     },
     top: '100%',
+    zIndex: 1000,
     transformOrigin: '100% 0',
     marginTop: '10px',
     animation: 'so-input-fade .16s ease-in',

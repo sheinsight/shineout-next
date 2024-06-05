@@ -228,7 +228,7 @@ describe('Upload[Base]', () => {
       await delay(200);
     });
     classTest(container.querySelector(result)!, resultError);
-    textContentTest(container.querySelector(resultTextBody)!, `${fileTextName}(文件格式不正确) `);
+    textContentTest(container.querySelector(resultTextBody)!, `${fileTextName}(Invalid file format) `);
   });
   test('should render when set forceAcceptErrorMsg', async () => {
     const ErrorMsg = 'error';

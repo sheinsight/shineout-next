@@ -162,7 +162,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     zIndex: modalIndex,
     top: 0,
     left: 0,
-    // overflow: 'auto',
+    overflow: 'auto',
     wordWrap: 'break-word',
     width: '100%',
     boxSizing: 'border-box',
@@ -326,6 +326,10 @@ const modalStyle: JsStyles<ModalClassType> = {
   header: {
     display: 'flex',
     marginBottom: token.modalPanelGap,
+  },
+  headerEmptyTitle: {
+    marginBottom: 0,
+    height: 0,
   },
   headerIcon: {
     '$wrapper &': {

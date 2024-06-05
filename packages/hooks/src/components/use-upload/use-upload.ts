@@ -103,9 +103,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
     );
   };
 
-  const getCurrent = usePersistFn(() => {
-    return { filesState };
-  });
+  const latestState = useLatestObj({ filesState, value });
 
   const uploadFile = (id: string, file: File, data?: string) => {
     const request = props.request || xhrUpload;
@@ -127,7 +125,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
         }, 16);
 
         const percent = typeof e.percent === 'number' ? e.percent : (e.loaded / e.total) * 100;
-        const { filesState } = getCurrent();
+        const { filesState } = latestState;
         const newFiles = { ...filesState };
         if (!newFiles[id]) return;
         newFiles[id].process = percent;
@@ -166,7 +164,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
             });
           });
           // add value
-          const values = produce(value, (draft) => {
+          const values = produce(latestState.value, (draft) => {
             draft.push(result);
           });
           props.onChange(values);
@@ -217,7 +215,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
     });
   };
 
-  const addFiles = async (files: File[]) => {
+  const addFiles = usePersistFn(async (files: File[]) => {
     if (props.disabled) return;
     let fileList = files;
     let newFiles = { ...filesState };
@@ -284,9 +282,9 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
         setFiles({ ...newFiles });
       }
     }
-  };
+  });
 
-  const removeFile = (id: string) => {
+  const removeFile = usePersistFn((id: string) => {
     const { beforeCancel, onErrorRemove } = props;
     const file = filesState[id];
 
@@ -305,9 +303,9 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
         onErrorRemove(file.xhr!, file.blob, file);
       }
     }
-  };
+  });
 
-  const removeValue = (index: number) => {
+  const removeValue = usePersistFn((index: number) => {
     if (props.disabled) return;
     const { recoverAble, beforeRemove } = props;
     const current = props.value[index];
@@ -320,18 +318,18 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
           newRecycle.push(value[index]);
         }
         setRecycleValues(newRecycle);
-        const newValue = produce(props.value, (draft) => {
+        const newValue = produce(latestState.value, (draft) => {
           draft.splice(index, 1);
         });
         props.onChange(newValue);
       })
       .catch(() => {});
-  };
+  });
 
-  const recoverValue = (index: number) => {
+  const recoverValue = usePersistFn((index: number) => {
     if (props.disabled) return;
     props.onChange(
-      produce(props.value, (draft: T[]) => {
+      produce(latestState.value, (draft: T[]) => {
         draft.push(recycleValues[index]);
       }),
     );
@@ -340,7 +338,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
       newRecycle.splice(index, 1);
       return newRecycle;
     });
-  };
+  });
 
   const func = useLatestObj({
     addFiles,

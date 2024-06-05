@@ -3,10 +3,11 @@
 exports[`Table[Base] should render correctly  1`] = `
 <div>
   <div
-    class="clqa00y soui-table-wrapper c-ij6nwp soui-table-vertical-align-top ckw38ls soui-table-default"
+    class="soui-table-wrapper soui-table-vertical-align-top soui-table-default"
+    dir="ltr"
   >
     <div
-      class="c-6o2z8g soui-table-body-wrapper"
+      class="soui-table-body-wrapper"
     >
       <table>
         <colgroup>
@@ -26,7 +27,8 @@ exports[`Table[Base] should render correctly  1`] = `
         <thead>
           <tr>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -38,7 +40,8 @@ exports[`Table[Base] should render correctly  1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -50,7 +53,8 @@ exports[`Table[Base] should render correctly  1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -62,7 +66,8 @@ exports[`Table[Base] should render correctly  1`] = `
               </div>
             </th>
             <th
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-align-left soui-table-cell-ignore-border"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -82,24 +87,28 @@ exports[`Table[Base] should render correctly  1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Ephraim Wisozk
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Reunion
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Marketing Designer
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Miami
             </td>
@@ -110,24 +119,28 @@ exports[`Table[Base] should render correctly  1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Osvaldo Beer
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Syrian Arab Republic
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Financial Controller
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               San Paulo
             </td>
@@ -138,24 +151,28 @@ exports[`Table[Base] should render correctly  1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Dylan Ratke
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Development Lead
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Boston
             </td>
@@ -166,24 +183,28 @@ exports[`Table[Base] should render correctly  1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Shaniya Jacobs
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Developer
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Chengdu
             </td>
@@ -201,10 +222,11 @@ exports[`Table[Base] should render correctly  1`] = `
 exports[`Table[Base] should render correctly about border 1`] = `
 <div>
   <div
-    class="clqa00y soui-table-wrapper cw6ahzw soui-table-bordered c-ij6nwp soui-table-vertical-align-top ckw38ls soui-table-default"
+    class="soui-table-wrapper soui-table-bordered soui-table-vertical-align-top soui-table-default"
+    dir="ltr"
   >
     <div
-      class="c-6o2z8g soui-table-body-wrapper"
+      class="soui-table-body-wrapper"
     >
       <table>
         <colgroup>
@@ -224,7 +246,8 @@ exports[`Table[Base] should render correctly about border 1`] = `
         <thead>
           <tr>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -236,7 +259,8 @@ exports[`Table[Base] should render correctly about border 1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -248,7 +272,8 @@ exports[`Table[Base] should render correctly about border 1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -260,7 +285,8 @@ exports[`Table[Base] should render correctly about border 1`] = `
               </div>
             </th>
             <th
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-align-left soui-table-cell-ignore-border"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -280,52 +306,60 @@ exports[`Table[Base] should render correctly about border 1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Ephraim Wisozk
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Reunion
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Marketing Designer
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Miami
             </td>
           </tr>
           <tr
-            class="cd9nxu6 soui-table-row-striped"
+            class="soui-table-row-striped"
           >
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Osvaldo Beer
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Syrian Arab Republic
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Financial Controller
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               San Paulo
             </td>
@@ -336,52 +370,60 @@ exports[`Table[Base] should render correctly about border 1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Dylan Ratke
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Development Lead
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Boston
             </td>
           </tr>
           <tr
-            class="cd9nxu6 soui-table-row-striped"
+            class="soui-table-row-striped"
           >
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Shaniya Jacobs
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Developer
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Chengdu
             </td>
@@ -398,10 +440,11 @@ exports[`Table[Base] should render correctly about border 1`] = `
 
 exports[`Table[Base] should render correctly about group 1`] = `
 <div
-  class="clqa00y soui-table-wrapper cw6ahzw soui-table-bordered c-ij6nwp soui-table-vertical-align-top ckw38ls soui-table-default"
+  class="soui-table-wrapper soui-table-bordered soui-table-vertical-align-top soui-table-default"
+  dir="ltr"
 >
   <div
-    class="c-6o2z8g soui-table-body-wrapper"
+    class="soui-table-body-wrapper"
   >
     <table>
       <colgroup>
@@ -427,8 +470,9 @@ exports[`Table[Base] should render correctly about group 1`] = `
       <thead>
         <tr>
           <th
-            class="cqb9ymk soui-table-cell-group"
+            class="soui-table-cell-align-left soui-table-cell-group"
             colspan="3"
+            dir="ltr"
             style="padding: 0px;"
           >
             <div>
@@ -440,7 +484,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class=""
+            class="soui-table-cell-align-left"
+            dir="ltr"
             rowspan="3"
           >
             <div
@@ -452,8 +497,9 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class="c-4ixgjz soui-table-cell-ignore-border cqb9ymk soui-table-cell-group"
+            class="soui-table-cell-align-left soui-table-cell-ignore-border soui-table-cell-group"
             colspan="2"
+            dir="ltr"
             style="padding: 0px;"
           >
             <div>
@@ -465,15 +511,17 @@ exports[`Table[Base] should render correctly about group 1`] = `
         </tr>
         <tr>
           <th
-            class="cqb9ymk soui-table-cell-group"
+            class="soui-table-cell-align-left soui-table-cell-group"
             colspan="2"
+            dir="ltr"
           >
             <div>
               True Name
             </div>
           </th>
           <th
-            class=""
+            class="soui-table-cell-align-left"
+            dir="ltr"
             rowspan="2"
           >
             <div
@@ -485,7 +533,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class=""
+            class="soui-table-cell-align-left"
+            dir="ltr"
             rowspan="2"
           >
             <div
@@ -497,7 +546,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class="c-4ixgjz soui-table-cell-ignore-border"
+            class="soui-table-cell-align-left soui-table-cell-ignore-border"
+            dir="ltr"
             rowspan="2"
           >
             <div
@@ -511,7 +561,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
         </tr>
         <tr>
           <th
-            class=""
+            class="soui-table-cell-align-left"
+            dir="ltr"
             rowspan="1"
           >
             <div
@@ -523,7 +574,8 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class=""
+            class="soui-table-cell-align-left"
+            dir="ltr"
             rowspan="1"
           >
             <div
@@ -543,36 +595,42 @@ exports[`Table[Base] should render correctly about group 1`] = `
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Ephraim
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Wisozk
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             nickname
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Reunion
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Miami
           </td>
           <td
-            class="c-4ixgjz soui-table-cell-ignore-border"
+            class="soui-table-cell-ignore-border"
             colspan="1"
+            dir="ltr"
           >
             Marketing Designer
           </td>
@@ -583,36 +641,42 @@ exports[`Table[Base] should render correctly about group 1`] = `
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Osvaldo
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Beer
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             nickname
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Syrian Arab Republic
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             San Paulo
           </td>
           <td
-            class="c-4ixgjz soui-table-cell-ignore-border"
+            class="soui-table-cell-ignore-border"
             colspan="1"
+            dir="ltr"
           >
             Financial Controller
           </td>
@@ -623,36 +687,42 @@ exports[`Table[Base] should render correctly about group 1`] = `
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Dylan
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Ratke
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             nickname
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Peru
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Boston
           </td>
           <td
-            class="c-4ixgjz soui-table-cell-ignore-border"
+            class="soui-table-cell-ignore-border"
             colspan="1"
+            dir="ltr"
           >
             Development Lead
           </td>
@@ -663,36 +733,42 @@ exports[`Table[Base] should render correctly about group 1`] = `
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Shaniya
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Jacobs
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             nickname
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Peru
           </td>
           <td
             class=""
             colspan="1"
+            dir="ltr"
           >
             Chengdu
           </td>
           <td
-            class="c-4ixgjz soui-table-cell-ignore-border"
+            class="soui-table-cell-ignore-border"
             colspan="1"
+            dir="ltr"
           >
             Developer
           </td>
@@ -709,11 +785,11 @@ exports[`Table[Base] should render correctly about group 1`] = `
 exports[`Table[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="c-ddd5kv soui-radio-group"
+    class="soui-radio-group"
     style="margin-bottom: 24px;"
   >
     <div
-      class="cscg4k5 soui-radio-wrapper"
+      class="soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -721,21 +797,21 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="c-dmr5xa soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="co0ikgh soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-2q2qi9 soui-radio-desc"
+        class="soui-radio-desc"
       >
         small
       </span>
     </div>
     <div
-      class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked"
+      class="soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -744,21 +820,21 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="c-dmr5xa soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="co0ikgh soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-2q2qi9 soui-radio-desc"
+        class="soui-radio-desc"
       >
         default
       </span>
     </div>
     <div
-      class="cscg4k5 soui-radio-wrapper"
+      class="soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -766,25 +842,26 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="c-dmr5xa soui-radio-indicator-wrapper"
+        class="soui-radio-indicator-wrapper"
       >
         <span
-          class="co0ikgh soui-radio-indicator"
+          class="soui-radio-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="c-2q2qi9 soui-radio-desc"
+        class="soui-radio-desc"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="clqa00y soui-table-wrapper c-ij6nwp soui-table-vertical-align-top ckw38ls soui-table-default"
+    class="soui-table-wrapper soui-table-vertical-align-top soui-table-default"
+    dir="ltr"
   >
     <div
-      class="c-6o2z8g soui-table-body-wrapper"
+      class="soui-table-body-wrapper"
     >
       <table>
         <colgroup>
@@ -804,7 +881,8 @@ exports[`Table[Base] should render correctly about size 1`] = `
         <thead>
           <tr>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -816,7 +894,8 @@ exports[`Table[Base] should render correctly about size 1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -828,7 +907,8 @@ exports[`Table[Base] should render correctly about size 1`] = `
               </div>
             </th>
             <th
-              class=""
+              class="soui-table-cell-align-left"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -840,7 +920,8 @@ exports[`Table[Base] should render correctly about size 1`] = `
               </div>
             </th>
             <th
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-align-left soui-table-cell-ignore-border"
+              dir="ltr"
               rowspan="1"
             >
               <div
@@ -860,24 +941,28 @@ exports[`Table[Base] should render correctly about size 1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Ephraim Wisozk
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Reunion
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Marketing Designer
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Miami
             </td>
@@ -888,24 +973,28 @@ exports[`Table[Base] should render correctly about size 1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Osvaldo Beer
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Syrian Arab Republic
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Financial Controller
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               San Paulo
             </td>
@@ -916,24 +1005,28 @@ exports[`Table[Base] should render correctly about size 1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Dylan Ratke
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Development Lead
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Boston
             </td>
@@ -944,24 +1037,28 @@ exports[`Table[Base] should render correctly about size 1`] = `
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Shaniya Jacobs
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
+              dir="ltr"
             >
               Developer
             </td>
             <td
-              class="c-4ixgjz soui-table-cell-ignore-border"
+              class="soui-table-cell-ignore-border"
               colspan="1"
+              dir="ltr"
             >
               Chengdu
             </td>

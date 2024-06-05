@@ -386,6 +386,12 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         width: '100%',
         alignItems: 'center',
       },
+      '& $next': {
+        marginLeft: Token.tabsNearlyMargin,
+      },
+      '& $prev': {
+        marginRight: Token.tabsNearlyMargin,
+      },
       '& $next,& $prev': {
         lineHeight: 0,
         padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,

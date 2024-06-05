@@ -116,6 +116,10 @@ const cascaderTokenExtraValue = {
   },
   option: {
     height: 'Size-16',
+    font: {
+      color: 'Neutral-text-5',
+    },
+    background: { color: 'Neutral-fill-1' },
     padding: { x: 'Spacing-4', y: 'Spacing-1' },
     active: {
       color: 'Brand-6',
@@ -128,7 +132,12 @@ const cascaderTokenExtraValue = {
     icon: {
       color: 'Neutral-text-4',
     },
-    hover: { background: { color: 'Neutral-fill-2' } },
+    hover: {
+      background: { color: 'Neutral-fill-2' },
+      font: {
+        color: 'Neutral-text-5',
+      },
+    },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },
   more: {

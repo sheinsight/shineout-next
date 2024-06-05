@@ -24,6 +24,8 @@ export interface ModalClasses {
   mask: string;
   panel: string;
   header: string;
+  headerEmptyTitle: string;
+  
   headerIcon: string;
   headerTitle: string;
   headerClose: string;

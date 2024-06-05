@@ -41,21 +41,30 @@ const tableTokenExtraValue = {
       y: 'Spacing-8',
     },
     border: { color: 'Neutral-border-1' },
+    font: { size: 'Font-14', weight: 'Weight-regular' },
   },
   small: {
+    thead: {
+      font: { size: 'Font-14', weight: 'Weight-medium' },
+    },
     cell: {
       padding: {
         x: 'Spacing-8',
         y: 'Spacing-4',
       },
+      font: { size: 'Font-14', weight: 'Weight-regular' },
     },
   },
   large: {
+    thead: {
+      font: { size: 'Font-14', weight: 'Weight-medium' },
+    },
     cell: {
       padding: {
         x: 'Spacing-16',
         y: 'Spacing-16',
       },
+      font: { size: 'Font-14', weight: 'Weight-regular' },
     },
   },
   fixed: {
@@ -63,7 +72,7 @@ const tableTokenExtraValue = {
   },
   thead: {
     background: { color: 'Neutral-fill-2' },
-    font: { color: 'Neutral-text-5' },
+    font: { size: 'Font-14', weight: 'Weight-medium', color: 'Neutral-text-5' },
   },
   tbody: {
     background: { color: 'Neutral-fill-1' },
@@ -74,7 +83,7 @@ const tableTokenExtraValue = {
   },
   tfoot: {
     background: { color: 'Neutral-fill-2' },
-    font: { color: 'Neutral-text-5' },
+    font: { color: 'Neutral-text-5', weight: 'Weight-regular' },
   },
   expand: {
     icon: {
