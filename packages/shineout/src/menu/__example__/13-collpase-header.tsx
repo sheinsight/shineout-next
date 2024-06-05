@@ -107,7 +107,7 @@ const flagIcon = (
 );
 const App: React.FC = () => {
   const [active, setActive] = useState('10');
-  const [collapse, setCollapse] = useState(true);
+  const [collapse, setCollapse] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [dis, setDis] = useState(false);
 
