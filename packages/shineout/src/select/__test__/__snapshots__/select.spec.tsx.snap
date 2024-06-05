@@ -711,7 +711,6 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
                 </span>
               </div>
             </div>
-            <noscript />
           </span>
         </div>
       </div>
@@ -765,7 +764,6 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
                 </span>
               </div>
             </div>
-            <noscript />
           </span>
         </div>
       </div>

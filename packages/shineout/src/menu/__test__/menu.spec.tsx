@@ -36,6 +36,7 @@ const originClasses = [
   'expand',
   'scrollbar',
   'scrolbarHandler',
+  'popover',
 ];
 const originItemClasses = [
   'wrapperInline',
@@ -91,6 +92,8 @@ const {
   scrollbarY,
   scrollbarX,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const popoverClasses = createClassName('popover', [], ['wrapperOpen']);
 
 interface MenuItem {
   id: string;
@@ -205,32 +208,44 @@ describe('Menu[Base]', () => {
       expect(itemTitle.textContent).toBe(testDataWithoutChild[index].title);
     });
   });
-  test('should render default when have children', () => {
+  test('should render default when have children', async() => {
     const { container } = render(<MenuTest />);
+    await waitFor(async () => {
+      await delay(200);
+    });
     const menuWrapper = container.querySelector(wrapper)!;
     classTest(menuWrapper.querySelector(`.${root}`)!, childrenHasExpand);
     const items = container.querySelectorAll(`.${root} > li`);
     expect(items?.length).toBe(testData.length);
     items.forEach((item, index) => {
       if (!testData[index]?.children) return;
-      
+
       classTest(item, itemHasChildren);
       const expandWrapper = item.querySelector(expand)!;
       classTest(expandWrapper, expandBack);
       classLengthTest(expandWrapper, 'svg', 1);
       const children = item.querySelector('ul')!;
       classTest(children, childrenClassName);
-      const childItemContent = children.querySelector(itemContent)!;
+      const childItemContent = children.querySelector(`.${title}`)!;
       styleTest(childItemContent.firstElementChild as Element, defaultChildStyle);
       textContentTest(childItemContent, testData[index].children![0].title);
     });
     fireEvent.click(items[0].querySelector(expand)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classTest(items[0], itemOpen);
     classTest(menuWrapper, wrapperHasOpen);
     const child = items[0].querySelector('ul')!;
     fireEvent.click(child.querySelector(itemContent)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classTest(child.querySelector('li')!, itemActive);
     fireEvent.click(items[0].querySelector(expand)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classTest(items[0], itemOpen, false);
   });
   test('should render when set link is href', () => {
@@ -253,7 +268,7 @@ describe('Menu[Base]', () => {
       attributesTest(title, 'href', link);
     });
   });
-  test('should render when set parentSelectable', () => {
+  test('should render when set parentSelectable', async() => {
     const { container } = render(<MenuTest parentSelectable />);
     const items = container.querySelectorAll(`.${root} > li`);
     items.forEach((item, index) => {
@@ -263,8 +278,14 @@ describe('Menu[Base]', () => {
     const firstItemTitle = items[0].querySelector('a')!;
     const firstItemExpand = items[0].querySelector(expand)!;
     fireEvent.click(firstItemTitle);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classTest(items[0], itemActive);
     fireEvent.click(firstItemExpand);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classTest(items[0], itemOpen);
   });
   test('should render when set frontCaret', () => {
@@ -278,7 +299,7 @@ describe('Menu[Base]', () => {
     });
     rerender(<MenuTest frontCaret frontCaretType='hollow' />);
   });
-  test('should render when set active and onClick', () => {
+  test('should render when set active and onClick', async () => {
     const App = () => {
       const [activeId, setActiveId] = React.useState<string>('1');
       const checkActive = (d: MenuItem) => d.id === activeId;
@@ -292,8 +313,14 @@ describe('Menu[Base]', () => {
     };
     const { container } = render(<App />);
     const items = container.querySelectorAll('li');
+    await waitFor(async () => {
+      await delay(200);
+    });
     classTest(items[0], itemActive);
     fireEvent.click(items[1].querySelector(itemContent)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classTest(items[0], itemActive, false);
     classTest(items[1], itemActive);
   });
@@ -310,7 +337,7 @@ describe('Menu[Base]', () => {
     fireEvent.click(items[2].querySelector(itemContent)!);
     classTest(items[2], itemActive, false);
   });
-  test('should render when set disable is function', () => {
+  test('should render when set disable is function', async () => {
     const { container } = render(
       <MenuTest data={testDataDisabled} disabled={(d: MenuDisabledItem) => !!d.disabled} />,
     );
@@ -324,9 +351,12 @@ describe('Menu[Base]', () => {
     classTest(items[0], itemOpen);
     const itemChild = items[0].querySelector('ul')!;
     fireEvent.click(itemChild.querySelector(itemContent)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classTest(itemChild.querySelector('li')!, itemActive);
   });
-  test('should render when set multiple choice by active is array', () => {
+  test('should render when set multiple choice by active is array', async () => {
     const App = () => {
       const [activeId, setActiveId] = React.useState<string[]>(['1']);
       const checkActive = (d: MenuItem) => activeId.includes(d.id);
@@ -339,9 +369,15 @@ describe('Menu[Base]', () => {
       );
     };
     const { container } = render(<App />);
+    await waitFor(async () => {
+      await delay(50);
+    });
     const items = container.querySelectorAll('li');
     classTest(items[0], itemActive);
     fireEvent.click(items[1].querySelector(itemContent)!);
+    await waitFor(async () => {
+      await delay(50);
+    });
     classTest(items[0], itemActive);
     classTest(items[1], itemActive);
   });
@@ -352,7 +388,7 @@ describe('Menu[Base]', () => {
     items.forEach((item, index) => {
       if (!testData[index]?.children) return;
       const itemChild = item.querySelector('ul')!;
-      const itemChildContent = itemChild.querySelector(itemContent)!;
+      const itemChildContent = itemChild.querySelector(`.${title}`)!;
       styleContentTest(itemChildContent.firstElementChild as Element, `width: ${inlineIndent}px;`);
     });
   });
@@ -440,12 +476,15 @@ describe('Menu[Mode]', () => {
     classTest(menuWrapper, wrapperHorizontal);
     const items = container.querySelectorAll(`.${root} > li`);
     fireEvent.mouseEnter(items[0]);
-    classTest(items[0], itemOpen);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classLengthTest(document, `.${popoverClasses.wrapperOpen}`, 1);
     fireEvent.mouseLeave(items[0]);
     await waitFor(async () => {
       await delay(200);
     });
-    classTest(items[0], itemOpen, false);
+    classLengthTest(document, `.${popoverClasses.wrapperOpen}`, 0);
   });
   test('should render when set mode is vertical', async () => {
     const { container } = render(<MenuTest mode='vertical' />);
@@ -453,20 +492,31 @@ describe('Menu[Mode]', () => {
     classTest(menuWrapper, wrapperVertical);
     const items = container.querySelectorAll(`.${root} > li`);
     fireEvent.mouseEnter(items[0]);
-    classTest(items[0], itemOpen);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classLengthTest(document, `.${popoverClasses.wrapperOpen}`, 1);
     fireEvent.mouseLeave(items[0]);
     await waitFor(async () => {
       await delay(200);
     });
-    classTest(items[0], itemOpen, false);
+    classLengthTest(document, `.${popoverClasses.wrapperOpen}`, 0);
   });
-  test('should render when set mode is vertical-auto', () => {
+  test('should render when set mode is vertical-auto', async () => {
     const { container } = render(<MenuTest mode='vertical-auto' />);
     const menuWrapper = container.querySelector(wrapper)!;
     classTest(menuWrapper, wrapperVertical);
     const items = container.querySelectorAll(`.${root} > li`);
     fireEvent.mouseEnter(items[0]);
-    classTest(items[0], itemOpen);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classLengthTest(document, `.${popoverClasses.wrapperOpen}`, 1);
+    fireEvent.mouseLeave(items[0]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classLengthTest(document, `.${popoverClasses.wrapperOpen}`, 0);
   });
 });
 describe('Menu[ScrollY]', () => {

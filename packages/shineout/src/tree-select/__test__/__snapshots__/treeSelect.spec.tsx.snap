@@ -243,7 +243,6 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                 </span>
               </div>
             </div>
-            <noscript />
           </span>
         </div>
       </div>
