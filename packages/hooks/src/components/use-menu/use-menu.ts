@@ -11,6 +11,7 @@ const useMenu = (props: UseMenuProps) => {
     updateMap: new Map<string, UpdateFunc>(),
     activeId: '',
     cachedOpenKeys: props.openKeys || [],
+    updateTimer: 0,
   });
 
   const render = useRender();
@@ -71,15 +72,26 @@ const useMenu = (props: UseMenuProps) => {
     });
   });
 
+  const updateWithThreshold = usePersistFn(() => {
+    if (context.updateTimer) clearTimeout(context.updateTimer);
+    context.updateTimer = window.setTimeout(() => {
+      update();
+      // 需要更新两次 否则 inPath 状态错误
+      update();
+    }, 50);
+  });
+
   const bindUpdate = (id: string, updateItem: UpdateFunc) => {
     context.updateMap.set(id, updateItem);
+    updateWithThreshold();
   };
 
   const unbindUpdate = (id: string) => {
     context.updateMap.delete(id);
   };
+
   useEffect(() => {
-    update();
+    updateWithThreshold();
   });
 
   return {

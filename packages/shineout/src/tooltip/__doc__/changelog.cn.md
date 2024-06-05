@@ -1,3 +1,10 @@
+## 3.1.26
+2024-06-05
+
+### 🐞 BugFix
+
+- 修复 `Tooltip` 在边界情况下高频触发 hover 的问题 ([#503](https://github.com/sheinsight/shineout-next/pull/503))
+
 ## 3.1.14
 2024-05-21
 

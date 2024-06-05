@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useMenu, util } from '@sheinx/hooks';
+import { useMenu, util, useRender } from '@sheinx/hooks';
 import Item from './item';
 import classNames from 'classnames';
 import Scroll from './scroll';
@@ -9,24 +9,31 @@ import type { KeygenResult } from '@sheinx/hooks';
 
 const emptyArray: any[] = [];
 const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key>) => {
-  const {
-    data = emptyArray,
-    mode: modeProps = 'inline',
-    theme = 'light',
-    collapse,
-  } = props;
-  const mode = collapse ? 'vertical' : modeProps;
+  const { data = emptyArray, mode: modeProps = 'inline', theme = 'light', collapse } = props;
+  const  render = useRender();
+ 
+  // const [inTransition, setInTransition] = useState(false);
+  const mode = collapse ? 'vertical-auto' : modeProps;
+
+  const {current: context} = useRef({
+    inTransition: false,
+    lastCollapse: !!props.collapse,
+  });
+  if (props.mode !== 'horizontal' && !!context.lastCollapse !== !!collapse) {
+    context.inTransition = true;
+    context.lastCollapse = !!props.collapse;
+  }
+
   const classes = props.jssStyle?.menu?.();
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
   const isHorizontal = mode === 'horizontal';
   const [hasOpen, setHasOpen] = useState(false);
-  const [collapseOpenKeys, setCollapseOpenKeys] = useState([]);
   const { openKeys, onOpenChange, bindUpdate, unbindUpdate, changeActiveId } = useMenu({
     data,
     active: props.active,
     defaultOpenKeys: props.defaultOpenKeys,
-    openKeys: props.collapse ? collapseOpenKeys : props.openKeys,
-    onOpenChange: props.collapse ? setCollapseOpenKeys : (props.onOpenChange as any),
+    openKeys: props.openKeys,
+    onOpenChange: props.onOpenChange as any,
   });
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -37,11 +44,13 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
 
   const showScrollBar = isHorizontal || isVertical;
 
-  const style = { ...props.style };
-
-  if (collapse) delete style.width;
-
-  const listStyle = isVertical && !collapse ? { width: props.style?.width } : undefined;
+  const renderHeader = () => {
+    if (modeProps === 'horizontal') return;
+    if (props.header) {
+      return <div className={classes?.header}>{props.header}</div>;
+    }
+    return null;
+  };
 
   useEffect(() => {
     const newOpen =
@@ -51,6 +60,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
       setHasOpen(newOpen);
     }
   }, [data, openKeys]);
+
 
   return (
     <div
@@ -62,18 +72,27 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         mode === 'horizontal' && classes?.wrapperHorizontal,
         hasOpen && classes?.wrapperHasOpen,
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
-        collapse && classes?.collapse,
+        collapse && classes?.wrapperCollpase,
+        context.inTransition && classes?.wrapperInTransition,
       )}
+      {...util.getDataAttribute({
+        theme,
+        mode: isVertical ? 'vertical' : mode,
+      })}
       style={{
         height: props.height,
-        ...style,
+        ...props.style,
+      }}
+      onTransitionEnd={(e) => {
+        if (e.target === e.currentTarget) {
+          context.inTransition = false;
+          render();
+        }
       }}
     >
+      {renderHeader()}
       <div className={classes?.scrollbox} ref={scrollRef}>
-        <ul
-          className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}
-          style={listStyle}
-        >
+        <ul className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}>
           {data.map((item, index) => {
             const key = util.getKey(props.keygen, item, index);
             return (
@@ -81,7 +100,6 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 level={0}
                 index={index}
                 parentId=''
-                collapse={collapse}
                 dataItem={item}
                 key={key}
                 keyResult={key}
@@ -97,7 +115,6 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 toggleDuration={props.toggleDuration}
                 disabled={props.disabled}
                 renderItem={props.renderItem}
-                renderCollapse={props.renderCollapse}
                 keygen={props.keygen}
                 jssStyle={props.jssStyle}
                 linkKey={props.linkKey}
@@ -106,6 +123,9 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 caretColor={props.caretColor}
                 inlineIndent={props.inlineIndent}
                 scrollRef={scrollRef}
+                theme={theme}
+                renderIcon={props.renderIcon}
+                collapse={collapse}
               />
             );
           })}

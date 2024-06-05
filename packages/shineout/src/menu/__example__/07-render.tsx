@@ -116,16 +116,14 @@ const App: React.FC = () => {
   const [active, setActive] = useState(['1']);
 
   const renderItem: MenuRenderItem = (da) => {
-    if (da.title.startsWith('Navigation')) {
-      return (
-        <>
-          {Icons[Number(da.id)]}
-          &nbsp;
-          {` ${da.title}`}
-        </>
-      );
-    }
     return da.title;
+  };
+
+  const renderIcon: MenuProps['renderIcon'] = (da) => {
+    if (da.title.startsWith('Navigation')) {
+      return Icons[Number(da.id)];
+    }
+    return null;
   };
 
   const handleClick: MenuOnClick = (d: MenuItem) => setActive([d.id]);
@@ -135,6 +133,7 @@ const App: React.FC = () => {
   return (
     <Menu
       data={data}
+      renderIcon={renderIcon}
       keygen='id'
       mode='inline'
       inlineIndent={24}
