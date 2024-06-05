@@ -59,6 +59,10 @@ const menuStyle: JsStyles<MenuClassType> = {
       border: 'none',
       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
       borderRadius: '4px',
+      backgroundColor: token.menuItemBackgroundColor,
+    },
+    '&[data-soui-theme=dark]': {
+      backgroundColor: token.menuDarkItemBackgroundColor,
     },
     '& $children': {
       borderRadius: '4px',
