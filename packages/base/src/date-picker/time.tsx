@@ -15,6 +15,7 @@ const TimeScroll = (props: {
     disabled: boolean;
   }[];
   currentIndex: number;
+  isEmpty?: boolean;
   onChange: (date: Date) => void;
 }) => {
   const { mode, jssStyle, times, currentIndex, onChange } = props;
@@ -23,9 +24,11 @@ const TimeScroll = (props: {
   const { current: context } = useRef<{
     changeTimer: NodeJS.Timer | null;
     timer: NodeJS.Timer | null;
+    controlScroll: boolean;
   }>({
     timer: null,
     changeTimer: null,
+    controlScroll: false,
   });
   const { height } = useResize({ targetRef: elRef });
 
@@ -36,6 +39,7 @@ const TimeScroll = (props: {
         const el = elRef.current;
         if (!el) return;
         const lineHeight = (el.childNodes[0] as HTMLDivElement).clientHeight;
+        context.controlScroll = true;
         el.scrollTop = lineHeight * index;
       },
       immudiate ? 0 : 30,
@@ -43,7 +47,7 @@ const TimeScroll = (props: {
   };
 
   const changeToIndex = (index: number) => {
-    if (!times[index] || times[index].disabled || index === currentIndex) {
+    if (!times[index] || times[index].disabled || (index === currentIndex && !props.isEmpty)) {
       return;
     }
     onChange(times[index].date);
@@ -52,6 +56,10 @@ const TimeScroll = (props: {
   const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
     if (context.changeTimer) clearTimeout(context.changeTimer);
     const el = e.currentTarget as HTMLDivElement;
+    if (context.controlScroll) {
+      context.controlScroll = false;
+      return;
+    }
     context.changeTimer = setTimeout(() => {
       if (!el) return;
       const lineHeight = (el.childNodes[0] as HTMLDivElement).clientHeight;
@@ -168,6 +176,7 @@ const Time = (props: TimeProps) => {
               jssStyle={props.jssStyle}
               times={item.times}
               currentIndex={item.currentIndex}
+              isEmpty={props.value === null || props.value === undefined}
               onChange={func.handleChange}
             />
           );
