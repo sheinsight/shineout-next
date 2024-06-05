@@ -10,6 +10,18 @@ export interface ImageTokens {
   imageSpinColor: string;
   /**
    * @type {string}
+   * @token Radius-default
+   * @description 图片边框圆角
+   */
+  imageBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 图片边框颜色
+   */
+  imageBorderColor: string;
+  /**
+   * @type {string}
    * @token Radius-circle
    * @description 图片圆形边框圆角
    */
