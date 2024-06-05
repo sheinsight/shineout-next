@@ -87,7 +87,7 @@ exports[`Menu[Base] should render correctly  1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -110,7 +110,7 @@ exports[`Menu[Base] should render correctly  1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -177,7 +177,7 @@ exports[`Menu[Base] should render correctly  1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -200,7 +200,7 @@ exports[`Menu[Base] should render correctly  1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -245,7 +245,7 @@ exports[`Menu[Base] should render correctly  1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 48px; flex-shrink: 0;"
+                        style="width: 28px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-title-content"
@@ -268,7 +268,7 @@ exports[`Menu[Base] should render correctly  1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 48px; flex-shrink: 0;"
+                        style="width: 28px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-title-content"
@@ -416,7 +416,7 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -439,7 +439,7 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -506,7 +506,7 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -529,7 +529,7 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -574,7 +574,7 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                     class="soui-menu-title"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
+                      style="width: 28px; flex-shrink: 0;"
                     />
                     <div
                       class="soui-menu-title-content"
@@ -597,7 +597,7 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                     class="soui-menu-title"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
+                      style="width: 28px; flex-shrink: 0;"
                     />
                     <div
                       class="soui-menu-title-content"
@@ -704,7 +704,7 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -727,7 +727,7 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -794,7 +794,7 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -817,7 +817,7 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -942,7 +942,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -965,7 +965,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -1032,7 +1032,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -1055,7 +1055,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -1100,7 +1100,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                     class="soui-menu-title"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
+                      style="width: 28px; flex-shrink: 0;"
                     />
                     <div
                       class="soui-menu-title-content"
@@ -1123,7 +1123,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                     class="soui-menu-title"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
+                      style="width: 28px; flex-shrink: 0;"
                     />
                     <div
                       class="soui-menu-title-content"
@@ -1251,7 +1251,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -1274,7 +1274,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -1341,7 +1341,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -1364,7 +1364,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -1409,7 +1409,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 48px; flex-shrink: 0;"
+                        style="width: 28px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-title-content"
@@ -1432,7 +1432,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 48px; flex-shrink: 0;"
+                        style="width: 28px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-title-content"
@@ -1560,7 +1560,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -1583,7 +1583,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -1650,7 +1650,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -1673,7 +1673,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 14px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -1718,7 +1718,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                     class="soui-menu-title"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
+                      style="width: 28px; flex-shrink: 0;"
                     />
                     <div
                       class="soui-menu-title-content"
@@ -1741,7 +1741,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                     class="soui-menu-title"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
+                      style="width: 28px; flex-shrink: 0;"
                     />
                     <div
                       class="soui-menu-title-content"
@@ -1909,7 +1909,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -1951,7 +1951,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -2037,7 +2037,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -2079,7 +2079,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -2124,7 +2124,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 48px; flex-shrink: 0;"
+                        style="width: 28px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-title-content"
@@ -2166,7 +2166,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 48px; flex-shrink: 0;"
+                        style="width: 28px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-title-content"
@@ -2347,7 +2347,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -2389,7 +2389,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -2475,7 +2475,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -2517,7 +2517,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 24px; flex-shrink: 0;"
+                    style="width: 14px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-title-content"
@@ -2562,7 +2562,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 48px; flex-shrink: 0;"
+                        style="width: 28px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-title-content"
@@ -2604,7 +2604,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 48px; flex-shrink: 0;"
+                        style="width: 28px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-title-content"
@@ -2999,7 +2999,7 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 22px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -3022,7 +3022,7 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 22px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -3105,7 +3105,7 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 22px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -3128,7 +3128,7 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                 class="soui-menu-title"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
+                  style="width: 22px; flex-shrink: 0;"
                 />
                 <div
                   class="soui-menu-title-content"
@@ -3173,7 +3173,7 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                     class="soui-menu-title"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
+                      style="width: 44px; flex-shrink: 0;"
                     />
                     <div
                       class="soui-menu-title-content"
@@ -3196,7 +3196,7 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                     class="soui-menu-title"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
+                      style="width: 44px; flex-shrink: 0;"
                     />
                     <div
                       class="soui-menu-title-content"

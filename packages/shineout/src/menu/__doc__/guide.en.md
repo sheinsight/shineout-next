@@ -15,7 +15,7 @@
 
 ## Usage Principles
 
-### Keep the menu flat: A flat hierarchy can expose more functions to users at first glance, thereby improving the efficiency of information access and reducing operation steps;\n Control the number of menu items: According to Miller's Law, the average person can keep 5-9 items in their working memory. Too many options can increase the user's selection time, and an excessive number of menu items can overwhelm and intimidate users.
+### Keep the menu flat: A flat hierarchy can expose more functions to users at first glance, thereby improving the efficiency of information access and reducing operation steps\n Control the number of menu items: According to Miller's Law, the average person can keep 5-9 items in their working memory. Too many options can increase the user's selection time, and an excessive number of menu items can overwhelm and intimidate users.
 
 ## Copywriting Guide
 

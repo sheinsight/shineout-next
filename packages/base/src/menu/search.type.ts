@@ -16,8 +16,20 @@ export interface MenuSearchStyle extends InputStyle {
 }
 export interface MenuSearchProps
   extends Omit<InputProps, 'tip' | 'status' | 'innerTitle' | 'placeTitle' | 'error'> {
+  /**
+   * @cn 是否折叠
+   * @en Whether to collapse
+   */
   collpase?: boolean;
+  /**
+   * @cn 主题
+   * @en Theme
+   */
   theme?: 'dark' | 'light';
   jssStyle?: MenuSearchStyle;
+  /**
+   *  @cn 点击事件
+   *  @en Click event
+   */
   onSearchClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }

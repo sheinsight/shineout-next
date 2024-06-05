@@ -49,7 +49,7 @@ const App: React.FC = () => {
 
   const renderFooter = () => (
     <div>
-      <Button onClick={handleClose}>Cancel</Button>
+      <Button onClick={handleClose} mode='outline'>Cancel</Button>
       <Drawer.Submit>Submit</Drawer.Submit>
     </div>
   );

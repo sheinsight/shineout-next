@@ -32,7 +32,7 @@ const App: React.FC = () => {
         title='Drawer Title'
         onClose={handleDismiss}
         footer={[
-          <Button key='cancel' onClick={handleDismiss}>
+          <Button key='cancel' onClick={handleDismiss} mode='outline'>
             Cancel
           </Button>,
           <Button key='ok' type='primary' onClick={handleDismiss}>

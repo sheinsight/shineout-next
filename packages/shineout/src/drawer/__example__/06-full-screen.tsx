@@ -109,9 +109,7 @@ const App: React.FC = () => {
       <Drawer title='Profile' fullScreen visible={visible} onClose={cancel} footer={footer()}>
         <Content></Content>
       </Drawer>
-      <Button mode='outline' onClick={() => setVisible(true)}>
-        Full Screen
-      </Button>
+      <Button onClick={() => setVisible(true)}>Full Screen</Button>
     </div>
   );
 };

@@ -154,6 +154,10 @@ export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'cla
    * @override string
    */
   defaultValue?: V;
+   /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
   beforeChange?: (value: V) => void | V;
   /**
    * @en Remove content of the input when clicking the clear icon, clear event function
