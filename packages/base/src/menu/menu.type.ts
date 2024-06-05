@@ -1,6 +1,7 @@
 import type { UseMenuItemProps } from '@sheinx/hooks';
 import { KeygenResult, KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
+import { PopoverJssStyle } from '../popover/popover.type';
 
 export type MenuMode = 'inline' | 'vertical' | 'horizontal' | 'vertical-auto';
 
@@ -12,28 +13,30 @@ export interface MenuClasses {
   wrapperHasOpen: string;
   wrapperLight: string;
   wrapperDark: string;
-  collapse: string;
+  wrapperCollpase: string;
+  wrapperInTransition: string;
+  header: string;
   root: string;
   children: string;
+  childrenShow: string;
   childrenUp: string;
   item: string;
-  collapseItem: string;
-  collapseItemInPath: string;
-  collapseItemHide: string;
   itemActive: string;
   itemDisabled: string;
   itemOpen: string;
   itemInPath: string;
   itemHasChildren: string;
   itemContent: string;
-  itemContentHide: string;
   itemContentFront: string;
   itemContentBack: string;
   title: string;
+  titleIcon: string;
+  titleContent: string;
   expand: string;
   expandFront: string;
   expandBack: string;
   expandHover: string;
+  expandVertical: string;
   scrollbar: string;
   scrollbarX: string;
   scrollbarY: string;
@@ -42,11 +45,14 @@ export interface MenuClasses {
   scrollbox: string;
   icon: string;
   childrenHasExpand: string;
+  popover?: string;
+  popArrow?: string;
+  popArrowDark?: string;
 }
 
-export type MenuJssStyle = {
+export interface MenuJssStyle extends PopoverJssStyle {
   menu?: () => MenuClasses;
-};
+}
 /**
  * @title Menu
  */
@@ -72,7 +78,7 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @en theme of menu
    * @cn 主题
    */
-  theme?: 'dark';
+  theme?: 'dark' | 'light';
   /**
    * @en menu height
    * @cn 菜单高度
@@ -176,21 +182,21 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @default 'title'
    */
   renderItem?: ((data: DataItem, index: number) => React.ReactNode) | ObjectKey<DataItem>;
-
   /**
-   * @en Whether to collapse the menu horizontally
-   * @cn 是否水平折叠收起菜单
+   * @cn 渲染Icon
+   * @en Render Icon
+   */
+  renderIcon?: (data: DataItem) => React.ReactNode;
+  /**
+   * @cn 是否折叠
+   * @en Whether to collapse
    * @default false
    */
   collapse?: boolean;
-
   /**
-   *
-   * @cn 折叠时的渲染方式,如果为字符串,则会以对应的值作为显示内容;如果为函数,则以函数返回的结果作为显示内容,函数参数为对应的数据对象
-   * @en Element render mode when collapsed. If it is a string, the corresponding value is taken as the display content; If it is a function, the result returned by the function is taken as the display content.
-   * @default null
+   * @cn 头部内容， 仅在 mode为 'inline' 时生效
    */
-  renderCollapse?: (data: DataItem, index: number) => React.ReactNode;
+  header?: React.ReactNode;
 }
 
 export interface MenuItemProps
@@ -205,10 +211,11 @@ export interface MenuItemProps
       | 'caretColor'
       | 'jssStyle'
       | 'inlineIndent'
-      | 'collapse'
-      | 'renderCollapse'
+      | 'theme'
+      | 'renderIcon'
     > {
   index: number;
   level: number;
   scrollRef: React.MutableRefObject<HTMLDivElement | null>;
+  collapse?: boolean;
 }

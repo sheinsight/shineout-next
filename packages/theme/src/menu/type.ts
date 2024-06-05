@@ -4,6 +4,12 @@
 export interface MenuTokens {
   /**
    * @type {string}
+   * @token Spacing-40
+   * @description 菜单undefined宽度
+   */
+  menuCollpaseWidth: string;
+  /**
+   * @type {string}
    * @token Font-14
    * @description 菜单字体字号
    */
@@ -22,34 +28,16 @@ export interface MenuTokens {
   menuIconColor: string;
   /**
    * @type {string}
-   * @token Size-20
-   * @description 菜单折叠模式下的宽度
+   * @token Spacing-8
+   * @description 菜单图标外边距（水平方向）
    */
-  menuCollapseWidth: string;
+  menuIconMarginX: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
-   * @description 菜单折叠模式下的选项禁用时的字体颜色
+   * @token Spacing-4
+   * @description 菜单undefined内边距（垂直方向）
    */
-  menuCollapseItemDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 菜单折叠模式下的选项禁用时的背景颜色
-   */
-  menuCollapseItemDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-6
-   * @description 菜单折叠模式下的选项鼠标点击时的字体颜色
-   */
-  menuCollapseItemActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 菜单折叠模式下的选项鼠标点击时的背景颜色
-   */
-  menuCollapseItemActiveBackgroundColor: string;
+  menuPopoverPaddingY: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
@@ -106,25 +94,25 @@ export interface MenuTokens {
   menuItemDisabledFontColor: string;
   /**
    * @type {string}
-   * @token 13px
+   * @token Spacing-16
    * @description 菜单标题模式内边距（水平方向）
    */
   menuTitlePaddingX: string;
   /**
    * @type {string}
-   * @token 9px
+   * @token Spacing-9
    * @description 菜单标题模式内边距（垂直方向）
    */
   menuTitlePaddingY: string;
   /**
    * @type {string}
-   * @token 46px
+   * @token Spacing-46
    * @description 菜单展开icon的宽度
    */
   menuExpandWidth: string;
   /**
    * @type {string}
-   * @token 14px
+   * @token Spacing-14
    * @description 菜单展开icon的字号
    */
   menuExpandSize: string;
@@ -140,6 +128,12 @@ export interface MenuTokens {
    * @description 菜单子菜单阴影
    */
   menuChildrenBoxShadow: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 菜单undefined边框颜色
+   */
+  menuHeaderBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-text-1
@@ -208,50 +202,152 @@ export interface MenuTokens {
   menuDarkItemDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Brand-1
-   * @description 菜单深色模式折叠模式下的选项字体颜色
+   * @token Neutral-fill-8
+   * @description 菜单深色模式undefined边框颜色
    */
-  menuDarkCollapseItemFontColor: string;
+  menuDarkHeaderBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-9
-   * @description 菜单深色模式折叠模式下的选项背景颜色
+   * @token Radius-Full
+   * @description 菜单undefined边框圆角
    */
-  menuDarkCollapseItemBackgroundColor: string;
+  menuSearchBorderRadius: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
-   * @description 菜单深色模式折叠模式下的选项鼠标点击时的字体颜色
+   * @token Neutral-border-2
+   * @description 菜单undefined边框颜色
    */
-  menuDarkCollapseItemActiveFontColor: string;
+  menuSearchBorderColor: string;
   /**
    * @type {string}
-   * @token Brand-6
-   * @description 菜单深色模式折叠模式下的选项鼠标点击时的背景颜色
+   * @token Spacing-8
+   * @description 菜单undefined内边距（水平方向）
    */
-  menuDarkCollapseItemActiveBackgroundColor: string;
+  menuSearchPaddingX: string;
+  /**
+   * @type {string}
+   * @token Size-7
+   * @description 菜单undefined图标字号
+   */
+  menuSearchIconSize: string;
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 菜单深色模式折叠模式下的选项禁用时的字体颜色
+   * @description 菜单undefined图标颜色
    */
-  menuDarkCollapseItemDisabledFontColor: string;
+  menuSearchIconColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-9
-   * @description 菜单深色模式折叠模式下的选项禁用时的背景颜色
+   * @token Spacing-8
+   * @description 菜单undefined图标外边距（水平方向）
    */
-  menuDarkCollapseItemDisabledBackgroundColor: string;
+  menuSearchIconMarginX: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 菜单undefined背景颜色
+   */
+  menuSearchBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 菜单undefined清除颜色
+   */
+  menuSearchClearColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 菜单undefined鼠标移入时的清除颜色
+   */
+  menuSearchHoverClearColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 菜单undefined鼠标移入时的边框颜色
+   */
+  menuSearchHoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 菜单undefined鼠标移入时的背景颜色
+   */
+  menuSearchHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 菜单undefined禁用时的背景颜色
+   */
+  menuSearchDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-1
-   * @description 菜单深色模式折叠模式下的选项鼠标移入时的字体颜色
+   * @description 菜单undefined深色模式字体颜色
    */
-  menuDarkCollapseItemHoverFontColor: string;
+  menuSearchDarkFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-8
+   * @description 菜单undefined深色模式边框颜色
+   */
+  menuSearchDarkBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-8
+   * @description 菜单undefined深色模式背景颜色
+   */
+  menuSearchDarkBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 菜单undefined深色模式图标颜色
+   */
+  menuSearchDarkIconColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 菜单undefined深色模式清除颜色
+   */
+  menuSearchDarkClearColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 菜单undefined深色模式undefined字体颜色
+   */
+  menuSearchDarkPlaceholderFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 菜单undefined深色模式鼠标移入时的边框颜色
+   */
+  menuSearchDarkHoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-9
+   * @description 菜单undefined深色模式鼠标移入时的背景颜色
+   */
+  menuSearchDarkHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 菜单undefined深色模式鼠标移入时的清除颜色
+   */
+  menuSearchDarkHoverClearColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 菜单undefined深色模式鼠标聚焦时的边框颜色
+   */
+  menuSearchDarkFocusBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-9
+   * @description 菜单undefined深色模式鼠标聚焦时的背景颜色
+   */
+  menuSearchDarkFocusBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-9
-   * @description 菜单深色模式折叠模式下的选项鼠标移入时的背景颜色
+   * @description 菜单undefined深色模式鼠标聚焦时的阴影
    */
-  menuDarkCollapseItemHoverBackgroundColor: string;
+  menuSearchDarkFocusShadow: string;
 }

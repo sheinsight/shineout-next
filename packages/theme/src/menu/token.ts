@@ -14,7 +14,6 @@ const menuTokenDescription = {
   dark: '深色模式',
   expand: '展开icon的',
   open: '打开状态的',
-  collapse: '折叠模式下的',
   box: '',
 };
 
@@ -28,30 +27,16 @@ const menuTokenDescription = {
 const menuTokenValue = {};
 
 const menuTokenExtraValue = {
+  collpase: {
+    width: 'Spacing-40',
+  },
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   icon: {
     color: 'Neutral-text-4',
+    margin: { x: 'Spacing-8' },
   },
-  collapse: {
-    width: 'Size-20',
-    item: {
-      disabled: {
-        font: {
-          color: 'Neutral-text-2',
-        },
-        background: {
-          color: 'Neutral-fill-1',
-        },
-      },
-      active: {
-        font: {
-          color: 'Brand-6',
-        },
-        background: {
-          color: 'Neutral-fill-1',
-        },
-      },
-    },
+  popover: {
+    padding: { y: 'Spacing-4' },
   },
   item: {
     background: { color: 'Neutral-fill-1' },
@@ -71,11 +56,11 @@ const menuTokenExtraValue = {
     },
   },
   title: {
-    padding: { x: '13px', y: '9px' },
+    padding: { x: 'Spacing-16', y: 'Spacing-9' },
   },
   expand: {
-    width: '46px',
-    size: '14px',
+    width: 'Spacing-46',
+    size: 'Spacing-14',
     hover: {
       background: { color: 'Neutral-fill-3' },
     },
@@ -84,6 +69,9 @@ const menuTokenExtraValue = {
     box: {
       shadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
     },
+  },
+  header: {
+    border: { color: 'Neutral-border-1' },
   },
   dark: {
     font: { color: 'Neutral-text-1' },
@@ -107,38 +95,43 @@ const menuTokenExtraValue = {
         font: { color: 'Neutral-text-4' },
       },
     },
-    collapse: {
-      item: {
-        font: {
-          color: 'Brand-1',
-        },
-        background: {
-          color: 'Neutral-fill-9',
-        },
-        active: {
-          font: {
-            color: 'Neutral-text-1',
-          },
-          background: {
-            color: 'Brand-6',
-          },
-        },
-        disabled: {
-          font: {
-            color: 'Neutral-text-4',
-          },
-          background: {
-            color: 'Neutral-fill-9',
-          },
-        },
-        hover: {
-          font: {
-            color: 'Neutral-text-1',
-          },
-          background: {
-            color: 'Brand-9',
-          },
-        },
+    header: {
+      border: { color: 'Neutral-fill-8' },
+    },
+  },
+
+  search: {
+    border: { radius: 'Radius-Full', color: 'Neutral-border-2' },
+    padding: { x: 'Spacing-8' },
+    icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { x: 'Spacing-8' } },
+    background: { color: 'Neutral-fill-2' },
+    clear: { color: 'Neutral-text-2' },
+    hover: {
+      clear: { color: 'Neutral-text-4' },
+      border: { color: 'Brand-5' },
+      background: { color: 'Neutral-fill-1' },
+    },
+    disabled: {
+      background: { color: 'Neutral-fill-3' },
+    },
+    dark: {
+      font: { color: 'Neutral-text-1' },
+      border: { color: 'Neutral-fill-8' },
+      background: { color: 'Neutral-fill-8' },
+      icon: { color: 'Neutral-text-1' },
+      clear: { color: 'Neutral-text-3' },
+      placeholder: {
+        font: { color: 'Neutral-text-2' },
+      },
+      hover: {
+        border: { color: 'Brand-5' },
+        background: { color: 'Neutral-fill-9' },
+        clear: { color: 'Neutral-text-2' },
+      },
+      focus: {
+        border: { color: 'Brand-5' },
+        background: { color: 'Neutral-fill-9' },
+        shadow: 'Brand-9',
       },
     },
   },

@@ -989,6 +989,13 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#333E59'
+   * @description
+   */
+  'Neutral-fill-8': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#CCCFD7'
    * @description 点击
    */

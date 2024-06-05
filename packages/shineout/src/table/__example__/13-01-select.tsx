@@ -31,7 +31,7 @@ const data: TableRowData[] = user.fetchSync(20);
 const columns: TableColumnItem[] = [
   {
     type: 'checkbox',
-    width: 10,
+    width: 40,
   },
   {
     title: 'id',
@@ -53,6 +53,7 @@ const App: React.FC = () => {
     <div>
       <Table
         data={data}
+        width={3000}
         keygen='id'
         columns={columns}
         value={selectedValue}

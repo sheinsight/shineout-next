@@ -277,6 +277,7 @@ const ComponentTokenMap: ThemeTokens = {
 
 export type { TokenType };
 export * from './hooks';
+export { getTokenName } from './utils/css-var';
 export { CommonToken, CommonTokenMap, ComponentTokenMap, setToken, setConfig };
 
 export default Tokens;
