@@ -94,7 +94,7 @@ const App: React.FC = () => {
         frontCaret
         frontCaretType='hollow'
         data={data}
-        inlineIndent={24}
+        inlineIndent={14}
         active={checkActive}
         onClick={handleClick}
         style={{ width: 256, border: '1px solid #e8ebf0' }}

@@ -136,7 +136,7 @@ const App: React.FC = () => {
       renderIcon={renderIcon}
       keygen='id'
       mode='inline'
-      inlineIndent={14}
+      inlineIndent={22}
       active={checkActive}
       onClick={handleClick}
       style={{ width: 256, border: '1px solid #e8ebf0' }}

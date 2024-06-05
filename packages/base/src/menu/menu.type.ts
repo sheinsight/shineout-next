@@ -106,7 +106,7 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
   /**
    * @en indent of each level
    * @cn 每一层缩进宽度
-   * @default 14
+   * @default 24
    */
   inlineIndent?: number;
   /**
