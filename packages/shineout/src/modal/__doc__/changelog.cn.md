@@ -1,3 +1,10 @@
+## 3.1.26
+2024-06-05
+
+### 🐞 BugFix
+
+- 修复 `Modal.Confirm` 点击取消和确认时不应该触发 `onClose` 的问题 ([#503](https://github.com/sheinsight/shineout-next/pull/503))
+
 ## 3.1.25
 2024-06-03
 

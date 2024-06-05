@@ -103,18 +103,6 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
     itemsLength = after.length;
   }
 
-  if (after && after.length > 0) {
-    after =
-      Children.map(after, (item) => {
-        return React.cloneElement(item, {
-          ...item.props,
-          style: {
-            opcacity: 1,
-          },
-        });
-      }) || after;
-  }
-
   return (
     <React.Fragment>
       {shouldShowMore ? data : before}
