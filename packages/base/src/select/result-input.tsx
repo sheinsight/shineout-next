@@ -94,6 +94,7 @@ const ResultInput = (props: ResultInputProps) => {
         onChange={onChange}
         onBlur={handleBlur}
         open={focus}
+        disabled={props.disabled}
         onPaste={handlePaste}
       ></Input>
       <span className={styles.inputMirror} ref={mirrorRef}>

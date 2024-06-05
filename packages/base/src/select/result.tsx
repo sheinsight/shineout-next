@@ -145,6 +145,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           onInputBlur={onInputBlur}
           onClearCreatedData={onClearCreatedData!}
           placeholder={placeholder2}
+          disabled={util.isFunc(disabled) ? false : !!disabled}
         ></Input>
       </React.Fragment>
     );
