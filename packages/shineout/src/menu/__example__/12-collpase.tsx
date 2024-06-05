@@ -187,7 +187,7 @@ const App: React.FC = () => {
         collapse={collapse}
         data={data}
         disabled={(d) => d.id === '1'}
-        inlineIndent={24}
+        inlineIndent={14}
         active={checkActive}
         onClick={handleClick}
         renderItem={renderItem}

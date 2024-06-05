@@ -122,6 +122,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   };
 
   const renderItem = () => {
+    console.log('!!!!', inlineIndent)
     const icon = util.isFunc(props.renderIcon) ? props.renderIcon(props.dataItem) : null;
     const iconEl = icon ? <div className={classes?.titleIcon}>{icon}</div> : null;
     const indent =
