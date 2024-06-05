@@ -11,7 +11,7 @@ import type { MenuItemProps } from './menu.type';
 const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
-  const { inlineIndent = 24, frontCaretType = 'solid', mode, toggleDuration = 200 } = props;
+  const { inlineIndent = 14, frontCaretType = 'solid', mode, toggleDuration = 200 } = props;
   const config = useConfig();
   const shoudPop = mode === 'vertical' || mode === 'vertical-auto' || mode === 'horizontal';
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
