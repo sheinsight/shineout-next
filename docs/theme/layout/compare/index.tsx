@@ -2,16 +2,18 @@ import React from 'react';
 import { Button } from 'shineout2';
 import { Button as NewButton } from 'shineout';
 import useStyles from './style';
+import Shineout2 from './shineout2';
+import Shineout3 from './shineout3';
 
 const Compare = () => {
   const classes = useStyles();
   return (
     <div className={classes.wrapper}>
       <div className={classes.left}>
-        <Button type='primary'>shineout2</Button>
+        <Shineout2></Shineout2>
       </div>
       <div className={classes.right}>
-        <NewButton type='primary'>shineout3</NewButton>
+        <Shineout3></Shineout3>
       </div>
     </div>
   );
