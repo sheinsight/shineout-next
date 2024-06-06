@@ -172,6 +172,12 @@ export interface ProgressTokens {
   progressLineInnerDangerFrontBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-1
+   * @description 进度条行undefined字体颜色
+   */
+  progressLinePopFontColor: string;
+  /**
+   * @type {string}
    * @token Size-7
    * @description 进度条行图标字号
    */

@@ -32,6 +32,7 @@ const progressTokens: ProgressTokens = {
   progressLineInnerWarningFrontBackgroundColor: 'Warning-6',
   progressLineInnerSuccessFrontBackgroundColor: 'Success-6',
   progressLineInnerDangerFrontBackgroundColor: 'Danger-6',
+  progressLinePopFontColor: 'Neutral-text-1',
   progressLineIconSize: 'Size-7',
   progressLineBackgroundColor: 'Neutral-fill-9',
   progressLineFontWeight: 'Weight-regular',
