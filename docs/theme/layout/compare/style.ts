@@ -28,9 +28,9 @@ export default createUseStyles(
     },
     button: {
       flex: 1,
-      padding: 100,
+      padding: `100px 0px`,
       display: 'flex',
-      gap: 100,
+      gap: 80,
       flexDirection: 'column',
       alignItems: 'center',
       '& button': {

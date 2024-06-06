@@ -5,8 +5,11 @@ const ButtonExample = () => {
   const classes = useStyles();
   return (
     <div className={classes.button}>
-      <Button type='primary'>SHEIN</Button>
-      <Button type='primary'>SHEIN</Button>
+      <Button type='primary'>SHINEOUT 2.0</Button>
+      <Button type='secondary'>SHINEOUT 2.0</Button>
+      <Button type='secondary' outline>
+        SHINEOUT 2.0
+      </Button>
     </div>
   );
 };

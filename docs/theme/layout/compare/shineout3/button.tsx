@@ -87,11 +87,33 @@ const ButtonExample = () => {
         'Brand-9': '#790E70',
       },
     });
+    setToken({
+      selector: '#button5',
+      token: {
+        'Brand-1': '#FFFCE8',
+        'Brand-2': '#FFF6C2',
+        'Brand-10': '#4D2D00',
+        'Brand-3': '#FFED9C',
+        'Brand-4': '#FFE175',
+        'Brand-5': '#FFD34F',
+        'Brand-6': '#FFC329',
+        'Brand-7': '#D29819',
+        'Brand-8': '#A6700D',
+        'Brand-9': '#794D05',
+        'Neutral-text-10': '#000000',
+        buttonPrimaryFontColor: 'var(--soui-neutral-text-10)',
+        buttonPrimaryHoverFontColor: 'var(--soui-neutral-text-10)',
+        buttonPrimaryActiveFontColor: 'var(--soui-neutral-text-10)',
+        buttonBorderRadius: 'var(--soui-radius-full)',
+        buttonLargePaddingX: 'var(--soui-spacing-32)',
+        buttonLargePaddingY: 'var(--soui-spacing-16)',
+      },
+    });
   }, []);
 
   return (
     <div className={classes.button}>
-      <Button id='button1' type='primary'>
+      <Button id='button1' type='primary' style={{ borderWidth: 2 }}>
         SHINEOUT 3.0
       </Button>
       <Button id='button2' type='primary'>
@@ -102,6 +124,14 @@ const ButtonExample = () => {
       </Button>
       <Button id='button4' type='primary' mode='outline'>
         SHINEOUT 3.0
+      </Button>
+      <Button
+        id='button5'
+        size='large'
+        type='primary'
+        style={{ boxShadow: '0px 10px 30px rgba(0, 0, 0, .4)' }}
+      >
+        <span style={{ fontWeight: 700 }}>SHINEOUT 3.0</span>
       </Button>
     </div>
   );
