@@ -52,10 +52,34 @@ export interface FormTokens {
   formItemLabelTopPaddingY: string;
   /**
    * @type {string}
-   * @token Danger-6
-   * @description 表单项危险色颜色
+   * @token Weight-regular
+   * @description 表单项标签字体字重
    */
-  formItemDangerColor: string;
+  formItemLabelFontWeight: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 表单项标签字体颜色
+   */
+  formItemLabelFontColor: string;
+  /**
+   * @type {string}
+   * @token Font-12
+   * @description 表单项危险色字体字号
+   */
+  formItemDangerFontSize: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 表单项危险色字体颜色
+   */
+  formItemDangerFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 表单项危险色字体字重
+   */
+  formItemDangerFontWeight: string;
   /**
    * @type {string}
    * @token Size-10
@@ -74,4 +98,16 @@ export interface FormTokens {
    * @description 表单项提示信息字体颜色
    */
   formItemTipFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 表单项提示信息字体字重
+   */
+  formItemTipFontWeight: string;
+  /**
+   * @type {string}
+   * @token Spacing-0
+   * @description 表单项提示信息外边距undefined
+   */
+  formItemTipMarginTop: string;
 }
