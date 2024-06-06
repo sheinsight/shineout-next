@@ -298,6 +298,7 @@ describe('Tree[Base]', () => {
     attributesTest(container.querySelector(contentClassName)!, 'data-active', 'true');
   });
   test('should render when set loader', async () => {
+    // todo 发现这个地方会随机报错
     const { container } = render(<TreeLoader />);
     const treeWrapper = container.querySelector(treeClassName)!;
     const treeRootNode = treeWrapper.querySelectorAll(nodeClassName);

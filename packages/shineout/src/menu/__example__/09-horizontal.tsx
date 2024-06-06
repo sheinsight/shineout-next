@@ -80,7 +80,7 @@ const App: React.FC = () => {
       data={data}
       keygen='id'
       mode='horizontal'
-      inlineIndent={24}
+      inlineIndent={14}
       active={checkActive}
       onClick={handleClick}
       renderItem={renderItem}

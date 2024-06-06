@@ -233,7 +233,6 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           >
             <div
               class="soui-treeSelect-tag soui-tag-tag soui-tag-default soui-tag-bright"
-              style=""
             >
               <div
                 class="soui-tag-wrapper"
@@ -243,7 +242,6 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                 </span>
               </div>
             </div>
-            <noscript />
           </span>
         </div>
       </div>

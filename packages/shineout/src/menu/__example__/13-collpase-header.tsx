@@ -1,8 +1,8 @@
 /**
- * cn - 折叠菜单
- *    -- 通过设置 `collapse` 来控制菜单折叠
- * en - Collapse
- *    -- Set `collapse` to control the menu collapse
+ * cn - 自定义顶部
+ *    -- 通过设置 `header` 来自定义顶部内容
+ * en - Header
+ *    -- Set `header` to customize the header content.
  */
 
 import React, { useState } from 'react';
@@ -109,6 +109,7 @@ const App: React.FC = () => {
   const [active, setActive] = useState('10');
   const [collapse, setCollapse] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [dis, setDis] = useState(false);
 
   const handleClick = (d: MenuItem) => setActive(d.id);
 
@@ -145,6 +146,7 @@ const App: React.FC = () => {
         content={['Dark', 'Light']}
         style={{ marginInlineEnd: '8px' }}
       />
+      <Switch value={dis} onChange={setDis} content={['disabled', 'effect']} />
       <div>
         <Button
           type='primary'
@@ -181,6 +183,43 @@ const App: React.FC = () => {
 
       <Menu
         key={theme}
+        header={
+          <>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', marginTop: 1 }}>
+              <div
+                style={{
+                  width: '28px',
+                  height: '28px',
+                  background: '#197afa',
+                  borderRadius: '4px',
+                  textAlign: 'center',
+                  color: '#fff',
+                  lineHeight: '28px',
+                  fontWeight: '500',
+                  fontSize: '14',
+                  fontFamily: 'PingFang SC',
+                  flexShrink: 0,
+                }}
+              >
+                S
+              </div>
+              {collapse ? null : (
+                <div style={{ marginInlineStart: '12px', fontSize: '16px', fontWeight: 500 }}>System Name</div>
+              )}
+            </div>
+            <Menu.Search
+              onSearchClick={() => {
+                if (collapse) setCollapse(false);
+              }}
+              disabled={dis}
+              collpase={collapse}
+              theme={theme}
+              placeholder='请输入关键字'
+              clearable
+              style={{marginBottom: '3px'}}
+            />
+          </>
+        }
         theme={theme}
         style={{ border: '1px solid #ebebeb', width: 200, zIndex: '2000' }}
         keygen='id'

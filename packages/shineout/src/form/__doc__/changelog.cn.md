@@ -1,9 +1,16 @@
-## 3.2.0-rc.3
-2025-05-xx
+## 3.2.0-rc.5
+2025-06-05
 
 ### 💅 Style
 
 - 修改 `Form.Item` 标签在顶部时的内边距 ([#436](https://github.com/sheinsight/shineout-next/pull/436))
+
+## 3.1.27
+2024-06-06
+
+### 🐞 BugFix
+
+- 修复 `Form` 在某些场景下 value 更新存在延迟的问题   ([#506](https://github.com/sheinsight/shineout-next/pull/506))
 
 ## 3.1.12
 2024-05-16

@@ -50,9 +50,7 @@ const App: React.FC = () => {
         />
       </div>
 
-      <Button mode='outline' onClick={() => setVisible(true)}>
-        Open
-      </Button>
+      <Button onClick={() => setVisible(true)}>Open</Button>
 
       <Drawer
         width={400}

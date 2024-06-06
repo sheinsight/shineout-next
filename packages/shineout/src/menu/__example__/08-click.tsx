@@ -83,7 +83,7 @@ const App: React.FC = () => {
       keygen='id'
       data={data}
       mode='inline'
-      inlineIndent={24}
+      inlineIndent={14}
       active={checkActive}
       onClick={handleClick}
       style={{ width: 256, border: '1px solid #e8ebf0' }}

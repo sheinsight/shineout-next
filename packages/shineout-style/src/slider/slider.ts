@@ -153,7 +153,7 @@ const sliderStyle: JsStyles<SliderClassType> = {
       bottom: '100%',
       '&[dir=ltr]': {
         left: 0,
-        transform: 'translate(-50%, 10px)',
+        transform: 'translate(-50%, -10px)',
       },
       '&[dir=rtl]': {
         right: 0,

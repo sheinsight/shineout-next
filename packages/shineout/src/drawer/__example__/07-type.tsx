@@ -48,7 +48,7 @@ const App: React.FC = () => {
         onChange={setType}
       />
 
-      <Button mode='outline' onClick={show}>
+      <Button onClick={show} mode='outline' >
         click me
       </Button>
 
