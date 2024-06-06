@@ -71,7 +71,6 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
           >
             <div
               class="soui-cascader-tag soui-tag-tag soui-tag-default soui-tag-bright"
-              style=""
             >
               <div
                 class="soui-tag-wrapper"

@@ -21,4 +21,5 @@ export interface ResultInputProps extends Pick<CommonType, 'style' | 'className'
   placeholder?: string;
   isEmpty?: boolean;
   classes: { inputMirror: string };
+  disabled?: boolean;
 }
