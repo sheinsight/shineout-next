@@ -380,6 +380,15 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size],
   );
 
+  const updateValue = () => {
+    if (props.value !== context.lastValue && props.value !== context.value) {
+      context.value = (deepClone(props.value) || emptyObj) as T;
+      context.lastValue = props.value;
+    }
+  };
+
+  updateValue();
+
   React.useEffect(() => {
     // 服务端错误更新
     if (!props.error) context.serverErrors = {};
@@ -400,8 +409,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   // 默认值更新
   React.useEffect(() => {
     context.removeLock = false;
-    if (props.value === context.lastValue) return;
-    context.value = (deepClone(props.value) || emptyObj) as T;
+    // 内部 onChange 改的 value, 不需要更新
+    if (props.value === context.value) return;
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
         const oldValue = deepGet(context.lastValue || emptyObj, key);
