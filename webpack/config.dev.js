@@ -34,6 +34,10 @@ const webpackConfig = {
         include: [/prismjs/],
       },
       {
+        test: /\.(less)$/,
+        use: ['style-loader', 'css-loader', 'less-loader'],
+      },
+      {
         test: /\.html$/i,
         loader: 'html-loader',
       },
@@ -93,6 +97,6 @@ const server = new WebpackDevServer(
   compiler,
 );
 
-server.listen(3333, 'localhost', () => {
+server.listen(2333, 'localhost', () => {
   console.log('Shineout Doc is running on port 2333');
 });
