@@ -91,8 +91,10 @@ const Alert = (props: AlertProps) => {
     if (React.isValidElement(closeItem))
       return React.cloneElement(closeItem, { onClick: handleClose } as React.Attributes);
     return (
-      <div className={alertStyle.close} onClick={handleClose}>
-        {closeItem || Icons.alert.Close}
+      <div className={alertStyle.closeWrapper}>
+        <div className={alertStyle.close} onClick={handleClose}>
+          {closeItem || Icons.alert.Close}
+        </div>
       </div>
     );
   };

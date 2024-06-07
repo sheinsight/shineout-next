@@ -88,7 +88,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     width: Token.alertFontSize,
     color: Token.alertCloseFontColor,
     fontSize: Token.alertFontSize,
-    height: Token.lineHeightDynamic,
+    height: Token.alertFontSize,
     flex: '0 0 auto',
     display: 'flex',
     alignItems: 'center',
@@ -97,6 +97,12 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     '&:hover': {
       color: Token.alertCloseHoverColor,
     },
+  },
+  closeWrapper: {
+    width: Token.alertFontSize,
+    height: Token.lineHeightDynamic,
+    display: 'flex',
+    alignItems: 'center',
   },
   content: {
     flex: '1 1 0',
