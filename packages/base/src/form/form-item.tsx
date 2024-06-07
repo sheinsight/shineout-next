@@ -40,7 +40,7 @@ export default (props: FormItemProps) => {
             formItemClasses?.label,
             labelAlign === 'left' && formItemClasses?.labelLeft,
           )}
-          style={{ width: labelWidth }}
+          style={labelAlign !== 'top' || inline ? { width: labelWidth } : undefined}
         >
           {label}
         </div>
