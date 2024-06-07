@@ -21,6 +21,7 @@ export interface AlertClasses {
   confirmIcon: string;
   pending: string;
   noBordered: string;
+  closeWrapper: string
 }
 
 export interface AlertJssStyle {
