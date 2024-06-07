@@ -1,6 +1,4 @@
 import React from 'react';
-import { Button } from 'shineout2';
-import { Button as NewButton } from 'shineout';
 import useStyles from './style';
 import Shineout2 from './shineout2';
 import Shineout3 from './shineout3';

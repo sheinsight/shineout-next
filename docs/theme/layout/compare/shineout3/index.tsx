@@ -1,5 +1,6 @@
 import useStyles from '../style';
 import Button from './button';
+// import Card from './card'
 
 const Shineout3 = () => {
   const classes = useStyles();
@@ -10,6 +11,7 @@ const Shineout3 = () => {
         Shineout 3
       </h1>
       <Button></Button>
+      {/* <Card></Card> */}
     </div>
   );
 };

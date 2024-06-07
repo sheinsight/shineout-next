@@ -1,6 +1,6 @@
 import { usePersistFn, util, useResize, useRender } from '@sheinx/hooks';
 import { createPortal } from 'react-dom';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { StickyProps } from './sticky.type';
 
 const { cssSupport } = util;

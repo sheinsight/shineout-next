@@ -38,6 +38,10 @@ export default createUseStyles(
         transform: 'scale(2)',
       },
     },
+    card: {
+      display: 'flex',
+      gap: 40,
+    },
     title: {
       position: 'absoulte',
       textAlign: 'right',
