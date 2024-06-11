@@ -1,7 +1,6 @@
 const path = require('path');
 const Webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { docBuild } = require('../scripts/doc-build');
 
 docBuild();
@@ -13,6 +12,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, `../dist`),
+    filename: '[name].[hash:8].js',
     publicPath: process.env.LEGO_FRONTEND_PUBLIC_PATH ?? '/',
     libraryTarget: 'umd',
     library: 'ShineoutDoc',
@@ -36,7 +36,7 @@ module.exports = {
     rules: [
       {
         test: /\.(css)$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.html$/i,
@@ -63,7 +63,6 @@ module.exports = {
       title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
     }),
-    new MiniCssExtractPlugin(),
     new Webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),

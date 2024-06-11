@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
@@ -169,12 +170,9 @@ const Nav = () => {
     );
   };
 
-  return (
-    <div className={classes.nav}>
-      <div className='left-nav'>{renderLeftNav()}</div>
-      <div className='logo'>{renderLogo()}</div>
-      <ul className='entry'>
-        {/* <li>
+  const renderEntry = () => (
+    <>
+      {/* <li>
           <Input
             placeholder={`${getLocale(locale, 'search')}...`}
             prefix={renderPrefix()}
@@ -182,12 +180,14 @@ const Nav = () => {
             style={{ backgroundColor: '#F4F5F8', width: 280 }}
           ></Input>
         </li> */}
-        <li style={{ padding: '0 12px' }}>
-          <Button size='small' mode="text" onClick={changeDirection}>
+        <li style={{ padding: '0 12px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Button size='small' mode="text" onClick={changeDirection}
+            // @ts-ignore
+            style={window.__ALITA__ && {border: '1px solid transparent', cursor: 'pointer', height: '24px', display: 'inline-flex', outline: 'none', padding: '2px 8px', fontSize: '12px', transition: 'all .1s linear', alignItems: 'center', fontFamily: 'inherit', fontWeight: 400, lineHeight: 'calc(1em + 8px)', userSelect: 'none', whiteSpace: 'nowrap',verticalAlign: 'middle', justifyContent: 'center', color: '#141737', borderColor: 'transparent', backgroundColor: 'transparent'}}>
             {direction === 'rtl' ? 'LTR' : 'RTL'}
           </Button>
         </li>
-        <li style={{ paddingInlineEnd: 24 }} onClick={handleChangeLocales}>
+        <li style={{ paddingInlineEnd: 24, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'  }} onClick={handleChangeLocales}>
           <svg
             width='20'
             height='20'
@@ -250,6 +250,28 @@ const Nav = () => {
           </li>
         ))} */}
         {/* <li onClick={handleChangeEnv}>{state.env}</li> */}
+    </>
+  )
+  // @ts-ignore
+  if (window.__ALITA__) {
+    const extraHeader = document.querySelector('#extra-header')
+    const entry = (
+      <ul style={{ width: '100%', display: 'flex', padding: '0 16px', listStyle: 'none', alignItems: 'center', fontWeight: 700, justifyContent: 'flex-end' }}>
+        {renderEntry()}
+      </ul>
+    )
+    if (extraHeader && entry) {
+      return createPortal(entry, extraHeader)
+    }
+    return null
+  }
+
+  return (
+    <div className={classes.nav}>
+      <div className='left-nav'>{renderLeftNav()}</div>
+      <div className='logo'>{renderLogo()}</div>
+      <ul className='entry'>
+        {renderEntry()}
       </ul>
     </div>
   );

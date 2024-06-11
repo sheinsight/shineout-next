@@ -102,7 +102,9 @@ const MenuComponent = () => {
   }, [location.pathname]);
 
   return (
-    <ul className={classes.menu}>
+    <ul className={classes.menu}
+      // @ts-ignore
+      style={window.__ALITA__ ? {height: 'calc(100vh - 64px)'}: {}}>
       <li>
         <div className={classnames('group', 'first')}>
           {docsLocale['shineout.menu.group.guide']}
