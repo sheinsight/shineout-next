@@ -127,23 +127,31 @@ const MessagePure = (props: {
 class Message extends React.PureComponent<MessageProps, MessageState> {
   cachedHeight: Record<string, number>;
   timeoutMap: Record<string, NodeJS.Timeout>;
+  messages: Array<MessageItemType>;
   constructor(props: MessageProps) {
     super(props);
     this.state = {
       messages: [],
     };
+    this.messages = []
+
     this.cachedHeight = {};
     this.timeoutMap = {};
     this.removeMessage = this.removeMessage.bind(this);
     this.closeMessageForAnimation = this.closeMessageForAnimation.bind(this);
   }
+  
+  setMessages(messages: Array<MessageItemType>) {
+    this.messages = messages;
+    this.setState({ messages });
+  }
 
   addMessage(msg: Omit<MessageItemType, 'id'>) {
     const id = getUidStr();
-    const newState = produce(this.state, (state) => {
-      state.messages.push(Object.assign({ id }, msg));
+    const newMessages = produce(this.messages, (messages) => {
+      messages.push(Object.assign({ id }, msg));
     });
-    this.setState(newState);
+    this.setMessages(newMessages);
 
     if (msg.duration > 0) {
       const closeTimeDelay = setTimeout(() => {
@@ -156,7 +164,7 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
 
   removeMessage(id: string) {
     let callback;
-    const messages = this.state.messages.filter((m) => {
+    const messages = this.messages.filter((m) => {
       if (m.id !== id) return true;
       if (m.onClose) {
         callback = m.onClose;
@@ -167,7 +175,7 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
     if (messages.length === 0) {
       this.props.onDestroy?.();
     } else {
-      this.setState({ messages });
+      this.setMessages(messages);
     }
 
     if (callback) (callback as () => void)();
@@ -175,16 +183,15 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
 
   closeMessageForAnimation(id: string, duration?: number, msgHeight?: number) {
     // duration animation duration time
-    this.setState((preState) =>
-      produce(preState, (state) => {
-        state.messages.forEach((m: MessageItemType) => {
-          if (m.id === id) {
-            m.dismiss = true;
-            m.h = msgHeight || 0;
-          }
-        });
-      }),
-    );
+    const newMessages = produce(this.messages, (messages) => {
+      messages.forEach((m: MessageItemType) => {
+        if (m.id === id) {
+          m.dismiss = true;
+          m.h = msgHeight || 0;
+        }
+      });
+    });
+    this.setMessages(newMessages);
     setTimeout(() => {
       this.removeMessage(id);
     }, duration);

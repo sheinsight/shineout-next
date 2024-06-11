@@ -43,16 +43,17 @@ const Scroll = (props: scrollProps) => {
     height: '100%',
     width: '100%',
     display: 'inline-flex',
+    overflow: 'hidden',
     position: 'sticky',
     [isRtl ? 'right' : 'left']: 0,
     top: 0,
   } as React.CSSProperties;
 
   const placeStyle = {
-    marginTop: (height > 0 && scrollHeight > 0) ? Math.max(0, Math.floor(scrollHeight - height)) : 0,
-    [`margin${isRtl ? 'Left' : 'Right'}`]: scrollWidth,
-    height: 0,
-    width: 0,
+    marginTop:
+      (height > 0 && scrollHeight > 0 ? Math.max(0, Math.floor(scrollHeight - height)) : 0) - 1,
+    width: scrollWidth,
+    height: 1,
     overflow: 'hidden',
   };
 

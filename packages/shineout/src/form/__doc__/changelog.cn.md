@@ -5,6 +5,13 @@
 
 - 修改 `Form.Item` 标签在顶部时的内边距 ([#436](https://github.com/sheinsight/shineout-next/pull/436))
 
+## 3.1.28
+2024-06-07
+
+### 🐞 BugFix
+
+- 修复 `Form.Item` 标签在顶部时标签宽度没有撑开的问题   ([#515](https://github.com/sheinsight/shineout-next/pull/515))
+
 ## 3.1.27
 2024-06-06
 
