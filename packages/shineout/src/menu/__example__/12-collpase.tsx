@@ -6,7 +6,7 @@
  */
 
 import React, { useState } from 'react';
-import { Menu, Button, TYPE, Switch } from 'shineout';
+import { Menu, Button, TYPE } from 'shineout';
 
 interface MenuItem {
   id: string;
@@ -105,10 +105,10 @@ const flagIcon = (
     />
   </svg>
 );
-const App: React.FC = () => {
+
+const IMenu = ({ theme }: { theme: MenuProps['theme'] }) => {
   const [active, setActive] = useState('10');
   const [collapse, setCollapse] = useState(false);
-  const [isDark, setIsDark] = useState(false);
 
   const handleClick = (d: MenuItem) => setActive(d.id);
 
@@ -135,22 +135,11 @@ const App: React.FC = () => {
   };
 
   const checkActive: MenuActive = (d: MenuItem) => active === d.id;
-  const theme = isDark ? 'dark' : 'light';
 
   return (
     <div>
-      <Switch
-        value={isDark}
-        onChange={setIsDark}
-        content={['Dark', 'Light']}
-        style={{ marginInlineEnd: '8px' }}
-      />
-      <div>
-        <Button
-          type='primary'
-          style={{ marginBottom: 12, marginTop: 12 }}
-          onClick={() => setCollapse(!collapse)}
-        >
+      <div style={{ marginBottom: 12 }}>
+        <Button type='primary' onClick={() => setCollapse(!collapse)}>
           {collapse ? (
             <svg
               viewBox='64 64 896 896'
@@ -179,20 +168,30 @@ const App: React.FC = () => {
         </Button>
       </div>
 
-      <Menu
-        key={theme}
-        theme={theme}
-        style={{ border: '1px solid #ebebeb', width: 200, zIndex: '2000' }}
-        keygen='id'
-        collapse={collapse}
-        data={data}
-        disabled={(d) => d.id === '1'}
-        inlineIndent={22}
-        active={checkActive}
-        onClick={handleClick}
-        renderItem={renderItem}
-        renderIcon={renderIcon}
-      />
+      <div style={{ border: '1px solid #ebebeb', float: 'left' }}>
+        <Menu
+          style={{ width: 200 }}
+          key={theme}
+          theme={theme}
+          keygen='id'
+          collapse={collapse}
+          data={data}
+          disabled={(d) => d.id === '1'}
+          inlineIndent={22}
+          active={checkActive}
+          onClick={handleClick}
+          renderItem={renderItem}
+          renderIcon={renderIcon}
+        />
+      </div>
+    </div>
+  );
+};
+const App: React.FC = () => {
+  return (
+    <div style={{ display: 'flex', gap: 32 }}>
+      <IMenu theme='light' />
+      <IMenu theme='dark' />
     </div>
   );
 };

@@ -64,6 +64,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     position: 'relative',
     // width: token.datePickerDateWidth,
     width: 240,
+    cursor: 'pointer',
     '&[data-soui-type="datetime"]': {
       // width: token.datePickerDatetimeWidth,
       width: 240,
