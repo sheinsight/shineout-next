@@ -101,7 +101,7 @@ const menuTokenExtraValue = {
   },
 
   search: {
-    border: { radius: 'Radius-Full', color: 'Neutral-border-2' },
+    border: { radius: 'Radius-full', color: 'Neutral-border-2' },
     padding: { x: 'Spacing-8' },
     icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { x: 'Spacing-8' } },
     background: { color: 'Neutral-fill-2' },

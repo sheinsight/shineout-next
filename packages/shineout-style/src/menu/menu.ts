@@ -14,6 +14,8 @@ const menuStyle: JsStyles<MenuClassType> = {
     backgroundColor: token.menuItemBackgroundColor,
     transition: `width ${animationDuration} ${transitionFunc}`,
     color: token.menuFontColor,
+    display: 'flex',
+    flexDirection: 'column',
   },
   wrapperLight: {},
   wrapperDark: {
@@ -91,12 +93,46 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
   },
   scrollbox: {
+    flex: 1,
+    minWidth: 0,
+    minHeight: 0,
+    overflow: 'auto',
+    // scrollbarWidth: 'thin',
+    // '$wrapperLight &': {
+    //   scrollbarColor: 'rgba(0, 0, 0, 0.1) transparent',
+    //   '&::-moz-scrollbar-thumb:hover': {
+    //     backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    //   },
+    // },
+    // '$wrapperDark &': {
+    //   scrollbarColor: 'rgba(255, 255, 255, 0.4) transparent',
+    // },
     '$wrapperVertical &': {
-      overflow: 'hidden',
-      height: '100%',
+      overflowX: 'hidden',
     },
     '$wrapperHorizontal &': {
-      overflow: 'hidden',
+      overflowY: 'hidden',
+    },
+    '&::-webkit-scrollbar': {
+      width: '6px',
+      height: '6px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      border: '0px solid transparent',
+      backgroundClip: 'content-box',
+      borderRadius: '11px',
+      '$wrapperLight &': {
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        '&:hover': {
+          backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        },
+      },
+      '$wrapperDark &': {
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        },
+      },
     },
   },
   root: {
@@ -111,11 +147,9 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
   },
   wrapperInline: {},
-  wrapperVertical: {
-    position: 'relative',
-  },
+  wrapperVertical: {},
   wrapperHorizontal: {
-    position: 'relative',
+    flexDirection: 'row',
   },
   wrapperHasOpen: {},
   children: {

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useMenu, util, useRender } from '@sheinx/hooks';
 import Item from './item';
 import classNames from 'classnames';
-import Scroll from './scroll';
+// import Scroll from './scroll';
 
 import type { MenuProps } from './menu.type';
 import type { KeygenResult } from '@sheinx/hooks';
@@ -26,7 +26,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
 
   const classes = props.jssStyle?.menu?.();
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
-  const isHorizontal = mode === 'horizontal';
+  // const isHorizontal = mode === 'horizontal';
   const [hasOpen, setHasOpen] = useState(false);
   const { openKeys, onOpenChange, bindUpdate, unbindUpdate, changeActiveId } = useMenu({
     data,
@@ -42,7 +42,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     (item) => item && item.children && (props.looseChildren || item.children.length),
   );
 
-  const showScrollBar = isHorizontal || isVertical;
+  // const showScrollBar = isHorizontal || isVertical;
 
   const renderHeader = () => {
     if (modeProps === 'horizontal') return;
@@ -131,14 +131,14 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
           })}
         </ul>
       </div>
-      {showScrollBar && (
+      {/* {showScrollBar && (
         <Scroll
           targetRef={scrollRef}
           direction={mode === 'vertical' || mode === 'vertical-auto' ? 'y' : 'x'}
           data={data}
           jssStyle={props.jssStyle}
         />
-      )}
+      )} */}
     </div>
   );
 };

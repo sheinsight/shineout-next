@@ -38,7 +38,7 @@ const menuTokens: MenuTokens = {
   menuDarkItemDisabledBackgroundColor: 'Neutral-fill-10',
   menuDarkItemDisabledFontColor: 'Neutral-text-4',
   menuDarkHeaderBorderColor: 'Neutral-fill-8',
-  menuSearchBorderRadius: 'Radius-Full',
+  menuSearchBorderRadius: 'Radius-full',
   menuSearchBorderColor: 'Neutral-border-2',
   menuSearchPaddingX: 'Spacing-8',
   menuSearchIconSize: 'Size-7',

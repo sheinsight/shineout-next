@@ -105,10 +105,10 @@ const flagIcon = (
     />
   </svg>
 );
-const App: React.FC = () => {
+const IMenu = (props: { theme: MenuProps['theme'] }) => {
+  const { theme } = props;
   const [active, setActive] = useState('10');
-  const [collapse, setCollapse] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [collapse, setCollapse] = useState(true);
   const [dis, setDis] = useState(false);
 
   const handleClick = (d: MenuItem) => setActive(d.id);
@@ -136,21 +136,13 @@ const App: React.FC = () => {
   };
 
   const checkActive: MenuActive = (d: MenuItem) => active === d.id;
-  const theme = isDark ? 'dark' : 'light';
 
   return (
     <div>
-      <Switch
-        value={isDark}
-        onChange={setIsDark}
-        content={['Dark', 'Light']}
-        style={{ marginInlineEnd: '8px' }}
-      />
-      <Switch value={dis} onChange={setDis} content={['disabled', 'effect']} />
       <div>
         <Button
           type='primary'
-          style={{ marginBottom: 12, marginTop: 12 }}
+          style={{ marginBottom: 12, marginInlineEnd: 12 }}
           onClick={() => setCollapse(!collapse)}
         >
           {collapse ? (
@@ -179,59 +171,79 @@ const App: React.FC = () => {
             </svg>
           )}
         </Button>
+        <Switch value={dis} onChange={setDis} content={['disabled', 'effect']} />
       </div>
-
-      <Menu
-        key={theme}
-        header={
-          <>
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', marginTop: 1 }}>
+      <div style={{ border: '1px solid #ebebeb', float: 'left' }}>
+        <Menu
+          key={theme}
+          header={
+            <>
               <div
                 style={{
-                  width: '28px',
-                  height: '28px',
-                  background: '#197afa',
-                  borderRadius: '4px',
-                  textAlign: 'center',
-                  color: '#fff',
-                  lineHeight: '28px',
-                  fontWeight: '500',
-                  fontSize: '14',
-                  fontFamily: 'PingFang SC',
-                  flexShrink: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '20px',
+                  marginTop: 1,
                 }}
               >
-                S
+                <div
+                  style={{
+                    width: '28px',
+                    height: '28px',
+                    background: '#197afa',
+                    borderRadius: '4px',
+                    textAlign: 'center',
+                    color: '#fff',
+                    lineHeight: '28px',
+                    fontWeight: '500',
+                    fontSize: '14',
+                    fontFamily: 'PingFang SC',
+                    flexShrink: 0,
+                  }}
+                >
+                  S
+                </div>
+                {collapse ? null : (
+                  <div style={{ marginInlineStart: '12px', fontSize: '16px', fontWeight: 500 }}>
+                    System Name
+                  </div>
+                )}
               </div>
-              {collapse ? null : (
-                <div style={{ marginInlineStart: '12px', fontSize: '16px', fontWeight: 500 }}>System Name</div>
-              )}
-            </div>
-            <Menu.Search
-              onSearchClick={() => {
-                if (collapse) setCollapse(false);
-              }}
-              disabled={dis}
-              collpase={collapse}
-              theme={theme}
-              placeholder='请输入关键字'
-              clearable
-              style={{marginBottom: '3px'}}
-            />
-          </>
-        }
-        theme={theme}
-        style={{ border: '1px solid #ebebeb', width: 200, zIndex: '2000' }}
-        keygen='id'
-        collapse={collapse}
-        data={data}
-        disabled={(d) => d.id === '1'}
-        inlineIndent={22}
-        active={checkActive}
-        onClick={handleClick}
-        renderItem={renderItem}
-        renderIcon={renderIcon}
-      />
+              <Menu.Search
+                onSearchClick={() => {
+                  if (collapse) setCollapse(false);
+                }}
+                disabled={dis}
+                collpase={collapse}
+                theme={theme}
+                placeholder='请输入关键字'
+                clearable
+                style={{ marginBottom: '3px' }}
+              />
+            </>
+          }
+          theme={theme}
+          style={{ width: 200 }}
+          keygen='id'
+          collapse={collapse}
+          data={data}
+          disabled={(d) => d.id === '1'}
+          inlineIndent={22}
+          active={checkActive}
+          onClick={handleClick}
+          renderItem={renderItem}
+          renderIcon={renderIcon}
+        />
+      </div>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div style={{ display: 'flex', gap: 24 }}>
+      <IMenu theme='light' />
+      <IMenu theme='dark' />
     </div>
   );
 };
