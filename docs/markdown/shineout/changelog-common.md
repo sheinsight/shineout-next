@@ -1,3 +1,8 @@
+## 3.1.29
+2024-06-11
+### 🐞 BugFix
+- 修复主题 token 变量名错误的问题  ([#517](https://github.com/sheinsight/shineout-next/pull/517))
+
 ## 3.1.21
 2024-05-31
 ### 🐞 BugFix
