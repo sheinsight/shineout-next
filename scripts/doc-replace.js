@@ -58,17 +58,15 @@ const installDeps = async () => {
   execCommand('corepack pnpm install @alita/webpack-plugin@1.3.2 -D -w');
 }
 
-try {
-  updateDocsIndexFile('./docs/index.tsx', "import { createApp } from '@alita/react'", "export const { bootstrap, mount, unmount } = createApp(<App />)");
-
-  updateWebpackFile('./webpack/config.doc.js')
-
-  installDeps()
-} catch (error) {
-  console.error(error);
-  process.exit(1);
-}
-
-// if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
+  try {
+    updateDocsIndexFile('./docs/index.tsx', "import { createApp } from '@alita/react'", "export const { bootstrap, mount, unmount } = createApp(<App />)");
   
-// }
+    updateWebpackFile('./webpack/config.doc.js')
+  
+    installDeps()
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+}
