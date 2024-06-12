@@ -11,6 +11,11 @@ export default createUseStyles(
           direction: 'rtl',
         },
       },
+      section: {
+        '&.rtl': {
+          direction: 'rtl',
+        },
+      }
     },
     desktop: {
       position: 'absolute',

@@ -19,6 +19,13 @@ const Nav = () => {
     searchParams.set('direction', nextDirection);
     navigate(location.pathname + '?' + searchParams.toString());
     document.body.className = nextDirection;
+    // @ts-ignore
+    if (window.__ALITA__) {
+      const section = document.querySelector('body section[alita-name="shineout"] section');
+      if (section) {
+        section.className = nextDirection;
+      }
+    }
     setConfig({ direction: nextDirection });
   };
   
