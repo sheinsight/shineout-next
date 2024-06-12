@@ -49,6 +49,9 @@ const menuTokenExtraValue = {
       background: { color: 'Brand-1' },
       hover: { background: { color: 'Brand-2' } },
       font: { color: 'Brand-6' },
+      disabled: {
+        font: { color: 'Brand-3' },
+      },
     },
     disabled: {
       background: { color: 'Neutral-fill-1' },

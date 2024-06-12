@@ -17,6 +17,7 @@ const menuTokens: MenuTokens = {
   menuItemActiveBackgroundColor: 'Brand-1',
   menuItemActiveHoverBackgroundColor: 'Brand-2',
   menuItemActiveFontColor: 'Brand-6',
+  menuItemActiveDisabledFontColor: 'Brand-3',
   menuItemDisabledBackgroundColor: 'Neutral-fill-1',
   menuItemDisabledFontColor: 'Neutral-text-2',
   menuTitlePaddingX: 'Spacing-16',

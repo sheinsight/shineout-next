@@ -213,6 +213,13 @@ const menuStyle: JsStyles<MenuClassType> = {
         },
       },
 
+      '[data-soui-theme=light] $itemDisabled&': {
+        color: token.menuItemActiveDisabledFontColor,
+        '& $icon': {
+          color: token.menuItemActiveDisabledFontColor,
+        },
+      },
+
       '[data-soui-theme=dark][data-soui-mode=inline] &::before, [data-soui-theme=dark][data-soui-mode=vertical] &::before':
         {
           content: '""',
@@ -244,6 +251,12 @@ const menuStyle: JsStyles<MenuClassType> = {
         backgroundColor: token.menuItemActiveBackgroundColor,
         '& $icon': {
           color: token.menuItemActiveFontColor,
+        },
+      },
+      '[data-soui-theme=light] $itemDisabled&': {
+        color: token.menuItemActiveDisabledFontColor,
+        '& $icon': {
+          color: token.menuItemActiveDisabledFontColor,
         },
       },
       '$wrapperCollpase[data-soui-theme=light] $root > &': {

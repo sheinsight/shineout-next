@@ -82,6 +82,12 @@ export interface MenuTokens {
   menuItemActiveFontColor: string;
   /**
    * @type {string}
+   * @token Brand-3
+   * @description 菜单选项鼠标点击时的禁用时的字体颜色
+   */
+  menuItemActiveDisabledFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-1
    * @description 菜单选项禁用时的背景颜色
    */
