@@ -1,11 +1,11 @@
-
 const path = require('path');
+const axios = require('axios')
 const package = require('../package.json');
 const { compileContent, formatApi, formatExamples, formatGuides, capitalizeFirstLetter } = require('./doc-markdown')
 
-const targetPath = ''
+const targetPath = `${process.env.EMBEDDING_URL}/api/public/saveEmbeddings`
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
-const urlBase = 'http://localhost:2333/#/cn/component/shineout/'
+const urlBase = `${process.env.EMBEDDING_URL}/shineout/cn/component/shineout/`
 
 const url = (key, tabType) => `${urlBase}/${key}?tab=${tabType}`
 
@@ -54,15 +54,16 @@ const requestToServer = async () => {
   // send data to server
   const res = formatData()
   try {
-    await fetch(targetPath, {
-      method: 'POST',
+    await axios.post(targetPath, res, {
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(res)
-    })
+      }
+    });
   } catch (error) {
     console.error(error)
   }
 }
-console.log(requestToServer())
+
+module.exports = {
+  requestToServer
+}

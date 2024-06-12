@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
+const { requestToServer } = require('./doc-embedding');
 
 function readFile(filePath) {
   return fs.readFileSync(filePath, 'utf8');
@@ -53,7 +54,7 @@ function updateWebpackFile(filePath) {
 }
 
 const installDeps = async () => {
-  await updateNpmrc('./', 'registry=https://npmjs.sheincorp.cn');
+  await updateNpmrc('./', `registry=${process.env.NPM_URL}`);
   execCommand('corepack pnpm install @alita/react@1.3.2 -w');
   execCommand('corepack pnpm install @alita/webpack-plugin@1.3.2 -D -w');
 }
@@ -65,6 +66,10 @@ if (process.env.NODE_ENV === 'development') {
     updateWebpackFile('./webpack/config.doc.js')
   
     installDeps()
+
+    if (process.env.EMBEDDING_URL) {
+      requestToServer();
+    }
   } catch (error) {
     console.error(error);
     process.exit(1);
