@@ -5,7 +5,7 @@ const { compileContent, formatApi, formatExamples, formatGuides, capitalizeFirst
 
 const targetPath = `${process.env.EMBEDDING_URL}/api/public/saveEmbeddings`
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
-const urlBase = `${process.env.EMBEDDING_URL}/shineout/cn/component/shineout/`
+const urlBase = `/shineout/cn/component/shineout`
 
 const url = (key, tabType) => `${urlBase}/${key}?tab=${tabType}`
 
