@@ -108,7 +108,7 @@ const flagIcon = (
 const IMenu = (props: { theme: MenuProps['theme'] }) => {
   const { theme } = props;
   const [active, setActive] = useState('10');
-  const [collapse, setCollapse] = useState(true);
+  const [collapse, setCollapse] = useState(false);
   const [dis, setDis] = useState(false);
 
   const handleClick = (d: MenuItem) => setActive(d.id);
