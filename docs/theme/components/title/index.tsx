@@ -17,7 +17,9 @@ const Header = (props: HeaderProps) => {
   const showGuide = guides && guides[state.locales] && guides[state.locales].length > 0;
   return (
     <>
-      <div className={headerClasses}>
+      <div className={headerClasses} 
+        // @ts-ignore
+        style={window.__ALITA__ ? {top: '64px'} : {}}>
         <h1 className={classnames('title')}>{title[state.locales]}</h1>
         <p className='subtitle'>{describe[state.locales]}</p>
         <Tabs showGuide={showGuide}></Tabs>
