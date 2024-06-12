@@ -67,9 +67,9 @@ if (process.env.NODE_ENV === 'development') {
   
     installDeps()
 
-    if (process.env.EMBEDDING_URL) {
-      requestToServer();
-    }
+    // if (process.env.EMBEDDING_URL) {
+    //   requestToServer();
+    // }
   } catch (error) {
     console.error(error);
     process.exit(1);

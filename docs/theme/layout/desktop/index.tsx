@@ -97,7 +97,9 @@ const Desktop = () => {
   }, []);
 
   return (
-    <section ref={ref} id='layout' className={classes.desktop}>
+    <section ref={ref} id='layout' className={classes.desktop}
+      //  @ts-ignore
+      style={window.__ALITA__ ? {height: 'calc(-64px + 100vh)', top: 0} : {}}>
       <Routes></Routes>
     </section>
   );
