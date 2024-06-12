@@ -3,7 +3,7 @@ const path = require('path');
 const package = require('../package.json');
 const { compileContent, formatApi, formatExamples, formatGuides, capitalizeFirstLetter } = require('./doc-markdown')
 
-const targetPath = 'https://sodoc.sheincorp.cn/api/public/saveEmbeddings'
+const targetPath = ''
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const urlBase = 'http://localhost:2333/#/cn/component/shineout/'
 
@@ -40,13 +40,13 @@ const formatData = () => {
   })
 
   return {
-    columnId: '',
+    columnId: 381,
     version: {
       version: package.version,
       description: ''
     },
     data: result,
-    token: ''
+    token: '!mW^b1J1QPTDxvc7#nP1W$+QWS$uyD2mOpe2tvqS5i)A@aHKQXXr@I(nmaQCQ%IW'
   }
 }
 
