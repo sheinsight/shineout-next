@@ -52,15 +52,14 @@ function updateWebpackFile(filePath) {
   writeFile(filePath, updatedContent);
 }
 
-const installDeps = () => {
-  execCommand('pnpm install @alita/react@1.3.2 -w');
-  execCommand('pnpm install @alita/webpack-plugin@1.3.2 -D -w');
+const installDeps = async () => {
+  await updateNpmrc('./', 'registry=https://npmjs.sheincorp.cn');
+  execCommand('corepack pnpm install @alita/react@1.3.2 -w');
+  execCommand('corepack pnpm install @alita/webpack-plugin@1.3.2 -D -w');
 }
 
 if (process.env.NODE_ENV === 'development') {
   try {
-    updateNpmrc('./', 'registry=https://npmjs.sheincorp.cn');
-  
     updateDocsIndexFile('./docs/index.tsx', "import { createApp } from '@alita/react'", "export const { bootstrap, mount, unmount } = createApp(<App />)");
   
     updateWebpackFile('./webpack/config.doc.js')
