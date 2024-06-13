@@ -1,3 +1,9 @@
+## 3.1.30
+2024-06-13
+### 💅 Style
+
+- 调整 `Button` 文本按钮的加载样式 ([#520](https://github.com/sheinsight/shineout-next/pull/520))
+
 ## 3.1.2
 2024-05-10
 ### 🐞 BugFix
