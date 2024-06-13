@@ -57,6 +57,12 @@ const menuTokenExtraValue = {
       background: { color: 'Neutral-fill-1' },
       font: { color: 'Neutral-text-2' },
     },
+    collpase: {
+      active: {
+        background: { color: 'Brand-6' },
+        font: { color: 'Neutral-text-1' },
+      },
+    },
   },
   title: {
     padding: { x: 'Spacing-16', y: 'Spacing-9' },
@@ -75,6 +81,7 @@ const menuTokenExtraValue = {
   },
   header: {
     border: { color: 'Neutral-border-1' },
+    padding: { x: 'Spacing-12', y: 'Spacing-12' },
   },
   dark: {
     font: { color: 'Neutral-text-1' },
@@ -97,6 +104,12 @@ const menuTokenExtraValue = {
         background: { color: 'Neutral-fill-10' },
         font: { color: 'Neutral-text-4' },
       },
+      collpase: {
+        active: {
+          background: { color: 'Brand-6' },
+          font: { color: 'Neutral-text-1' },
+        },
+      },
     },
     header: {
       border: { color: 'Neutral-fill-8' },
@@ -105,7 +118,9 @@ const menuTokenExtraValue = {
 
   search: {
     border: { radius: 'Radius-full', color: 'Neutral-border-2' },
-    padding: { x: 'Spacing-8' },
+    collpase: {
+      size: 'Size-16',
+    },
     icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { x: 'Spacing-8' } },
     background: { color: 'Neutral-fill-2' },
     clear: { color: 'Neutral-text-2' },

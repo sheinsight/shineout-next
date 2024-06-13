@@ -6,9 +6,14 @@ import Icons from '../icons';
 
 const Search = (props: MenuSearchProps) => {
   const {
-    // Omit the following props
     // @ts-ignore
-    tip: _tip, status: _status, innerTitle: _innerTitle, placeTitle: _placeTitle,
+    tip: _tip,
+    // @ts-ignore
+    status: _status,
+    // @ts-ignore
+    innerTitle: _innerTitle,
+    // @ts-ignore
+    placeTitle: _placeTitle,
     onSearchClick,
     collpase,
     theme = 'light',
@@ -19,6 +24,7 @@ const Search = (props: MenuSearchProps) => {
   } = props;
   const classes = jssStyle?.menuSearch?.();
   const Search = <div className={classes?.search}>{Icons.menu.Search}</div>;
+
   return (
     <div
       className={classNames(
@@ -30,13 +36,9 @@ const Search = (props: MenuSearchProps) => {
         className,
       )}
       style={style}
-      onClick={onSearchClick}
+      onClick={!props.disabled ? onSearchClick : undefined}
     >
-      {collpase ? (
-        Search
-      ) : (
-        <Input prefix={Search} className={classes?.input} {...rest} jssStyle={jssStyle}></Input>
-      )}
+      <Input prefix={Search} className={classes?.input} {...rest} jssStyle={jssStyle}></Input>
     </div>
   );
 };
