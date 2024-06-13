@@ -50,10 +50,9 @@ const Scroll = (props: scrollProps) => {
   } as React.CSSProperties;
 
   const placeStyle = {
-    marginTop:
-      (height > 0 && scrollHeight > 0 ? Math.max(0, Math.floor(scrollHeight - height)) : 0) - 1,
+    paddingTop:
+      (height > 0 && scrollHeight > 0 ? Math.max(0, Math.floor(scrollHeight - height)) : 0),
     width: scrollWidth,
-    height: 1,
     overflow: 'hidden',
   };
 

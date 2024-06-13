@@ -1,3 +1,9 @@
+## 3.1.30
+2024-06-13
+### 🐞 BugFix
+
+- 修复 `Table` 在某些场景下无法滚动的问题 ([#519](https://github.com/sheinsight/shineout-next/pull/519))
+
 ## 3.1.28
 2024-06-07
 ### 🐞 BugFix
