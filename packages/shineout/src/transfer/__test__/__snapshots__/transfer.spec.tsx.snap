@@ -378,7 +378,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
             </div>
           </div>
           <div
-            style="padding-top: 0px; width: 0px; overflow: hidden;"
+            style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
           >
              
           </div>
@@ -1376,7 +1376,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
             </div>
           </div>
           <div
-            style="padding-top: 0px; width: 0px; overflow: hidden;"
+            style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
           >
              
           </div>
@@ -2065,7 +2065,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
               </div>
             </div>
             <div
-              style="padding-top: 0px; width: 0px; overflow: hidden;"
+              style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
             >
                
             </div>
@@ -2762,7 +2762,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                 </div>
               </div>
               <div
-                style="padding-top: 0px; width: 0px; overflow: hidden;"
+                style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
               >
                  
               </div>
@@ -3496,7 +3496,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
             </div>
           </div>
           <div
-            style="padding-top: 0px; width: 0px; overflow: hidden;"
+            style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
           >
              
           </div>
@@ -4234,7 +4234,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
             </div>
           </div>
           <div
-            style="padding-top: 0px; width: 0px; overflow: hidden;"
+            style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
           >
              
           </div>
@@ -4951,7 +4951,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
             </div>
           </div>
           <div
-            style="padding-top: 0px; width: 0px; overflow: hidden;"
+            style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
           >
              
           </div>
@@ -5657,7 +5657,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
             </div>
           </div>
           <div
-            style="padding-top: 0px; width: 0px; overflow: hidden;"
+            style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
           >
              
           </div>
@@ -6354,7 +6354,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
               </div>
             </div>
             <div
-              style="padding-top: 0px; width: 0px; overflow: hidden;"
+              style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
             >
                
             </div>
@@ -6948,7 +6948,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
             </div>
           </div>
           <div
-            style="padding-top: 0px; width: 0px; overflow: hidden;"
+            style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
           >
              
           </div>
@@ -7095,7 +7095,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
             </div>
           </div>
           <div
-            style="padding-top: 0px; width: 0px; overflow: hidden;"
+            style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
           >
              
           </div>
@@ -7557,7 +7557,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
               </div>
             </div>
             <div
-              style="padding-top: 0px; width: 0px; overflow: hidden;"
+              style="padding-top: 0px; width: 0px; overflow: hidden; line-height: 0;"
             >
                
             </div>
