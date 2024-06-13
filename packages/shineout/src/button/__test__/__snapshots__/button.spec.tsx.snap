@@ -540,7 +540,7 @@ exports[`Button[Base] should render correctly about loading 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="soui-button-primary soui-button-button soui-button-loading"
+    class="soui-button-primary soui-button-button soui-button-disabled soui-button-loading"
     dir="ltr"
     disabled=""
     style="margin: 0px;"
@@ -559,7 +559,7 @@ exports[`Button[Base] should render correctly about loading 1`] = `
     </span>
   </button>
   <button
-    class="soui-button-primary soui-button-button soui-button-loading soui-button-square"
+    class="soui-button-primary soui-button-button soui-button-disabled soui-button-loading soui-button-square"
     dir="ltr"
     disabled=""
     style="margin: 0px;"
