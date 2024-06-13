@@ -29,7 +29,6 @@ export interface TagClasses {
 
   inline: string;
   wrapper: string;
-  container: string;
   closeIcon: string;
   closeIconWrapper: string;
 
