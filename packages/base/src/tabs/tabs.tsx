@@ -1,6 +1,6 @@
 import React, { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import { useTabs, util } from '@sheinx/hooks';
+import { useTabs, util, BaseTabPanelProps } from '@sheinx/hooks';
 import { TabsClasses, TabsProps } from './tabs.type';
 import { TabData } from './tab.type';
 import { TabsPanelProps } from './tabs-panel.type';
@@ -47,6 +47,7 @@ const Tabs = (props: TabsProps) => {
   });
 
   const [panelStyle, setPanelStyle] = useState<React.CSSProperties | undefined>();
+  const [tabs, setTabs] = useState<BaseTabPanelProps[]>([]);
   const [collapse, setCollapse] = useState(defaultCollapsed);
 
   const isVertical =
@@ -67,16 +68,30 @@ const Tabs = (props: TabsProps) => {
     [tabsStyle.collapsed]: collapse,
   });
 
+  const getSplitColor = () => {
+    return splitColor || border;
+  };
+
+  const bindTab = (tabProps: BaseTabPanelProps) => {
+    let border = getSplitColor();
+    const nextTabs = [...tabs];
+
+    const childBorder = tabProps.splitColor || tabProps.border;
+    // const { id = index } = tabProps;
+    // if (active === id && childBorder) {
+    //   border = childBorder;
+    // }
+    nextTabs.push(tabProps);
+
+    setTabs(nextTabs);
+  };
+
   const getRootProps = () => {
     return rest;
   };
 
   const getExtra = () => {
     return tabBarExtraContent || extra;
-  };
-
-  const getSplitColor = () => {
-    return splitColor || border;
   };
 
   const getActiveBackground = () => {
@@ -248,6 +263,7 @@ const Tabs = (props: TabsProps) => {
         onChange,
         isVertical,
         inactiveBackground,
+        bindTab,
         onCollapsible: handleCollapsible,
         activeBackground: getActiveBackground(),
       }}

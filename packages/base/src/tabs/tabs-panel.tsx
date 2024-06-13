@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import classNames from 'classnames';
 import { useRef } from 'react';
 import { TabsClasses } from './tabs.type';
@@ -8,9 +9,13 @@ const TabsPanel = (props: TabsPanelProps) => {
   const { children, id, className, style, color, jssStyle } = props;
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
-  const { active, lazy } = useTabsContext();
+  const { active, lazy, bindTab } = useTabsContext();
   const isActive = active === id;
   const keekAlive = useRef(false);
+
+  useEffect(() => {
+    bindTab?.(props);
+  }, []);
 
   if (!isActive && lazy && !keekAlive.current) {
     return null;
