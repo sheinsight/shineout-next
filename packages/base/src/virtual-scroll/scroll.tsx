@@ -54,6 +54,7 @@ const Scroll = (props: scrollProps) => {
       (height > 0 && scrollHeight > 0 ? Math.max(0, Math.floor(scrollHeight - height)) : 0),
     width: scrollWidth,
     overflow: 'hidden',
+    lineHeight: 0,
   };
 
   const handleScroll = usePersistFn((e: React.UIEvent) => {
