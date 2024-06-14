@@ -61,6 +61,7 @@ const config = {
   menu: {
     CollapseArrow: Icons.ArrowDown,
     FrontSolidArrowDown: Icons.PcArrowFillDown,
+    Search: Icons.Search,
   },
   modal: {
     Close: Icons?.Close,

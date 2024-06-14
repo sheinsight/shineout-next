@@ -987,6 +987,13 @@ const figma = [
     locked: true,
   },
   {
+    name: '填充色',
+    token: 'Neutral-fill-8',
+    value: '#333E59',
+    describe: '',
+    locked: true,
+  },
+  {
     name: 'colorFillActive',
     token: 'Neutral-fill-4',
     value: '#CCCFD7',

@@ -54,7 +54,7 @@ const listStyle: JsStyles<ListClassType> = {
     alignItems: 'center',
     boxSizing: 'border-box',
     '&:not(:last-child)': {
-      borderBottom: `1px solid ${token.listBorderColor}`,
+      borderBottom: `${token.listBorderWidth} solid ${token.listBorderColor}`,
     },
   },
   item: {
@@ -63,13 +63,16 @@ const listStyle: JsStyles<ListClassType> = {
     color: token.listFontColor,
     display: 'flex',
     flexWrap: 'nowrap',
+    background: token.listItemBackgroundColor,
     boxSizing: 'border-box',
     padding: `${token.listItemPaddingY} ${token.listItemPaddingX}`,
     '$wrapperSmall &': {
       padding: `${token.listSmallItemPaddingY} ${token.listSmallItemPaddingX}`,
+      fontSize: token.listSmallFontSize,
     },
     '$wrapperLarge &': {
       padding: `${token.listLargeItemPaddingY} ${token.listLargeItemPaddingY}`,
+      fontSize: token.listLargeFontSize,
     },
   },
   checkContent: {

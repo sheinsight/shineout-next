@@ -65,6 +65,7 @@ const App: React.FC = () => {
   return (
     <Menu
       keygen='id'
+      inlineIndent={14}
       data={data}
       parentSelectable
       active={checkActive}

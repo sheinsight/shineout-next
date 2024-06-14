@@ -9,6 +9,7 @@ const inputBorderToken = {
   borderRadius: token.inputBorderRadius,
 
   fontSize: token.inputFontSize,
+  fontWeight: token.inputFontWeight,
   smallFontSize: token.inputSmallFontSize,
   largeFontSize: token.inputLargeFontSize,
 
@@ -21,16 +22,24 @@ const inputBorderToken = {
   largePaddingX: token.inputLargePaddingX,
 
   borderColor: token.inputBorderColor,
+  borderWidth: token.inputBorderWidth,
   focusBorderColor: token.inputFocusBorderColor,
   hoverBorderColor: token.inputHoverBorderColor,
   disabledBorderColor: token.inputDisabledBorderColor,
   errorBorderColor: token.inputErrorBorderColor,
+  errorHoverBorderColor: token.inputErrorHoverBorderColor,
+  errorFocusBorderColor: token.inputErrorFocusBorderColor,
 
   fontColor: token.inputFontColor,
   disabledFontColor: token.inputDisabledFontColor,
 
   backgroundColor: token.inputBackgroundColor,
+  hoverBackgroundColor: token.inputHoverBackgroundColor,
+  focusBackgroundColor: token.inputFocusBackgroundColor,
   disabledBackgroundColor: token.inputDisabledBackgroundColor,
+  errorBackgroundColor: token.inputErrorBackgroundColor,
+  errorFocusBackgroundColor: token.inputErrorFocusBackgroundColor,
+  errorHoverBackgroundColor: token.inputErrorHoverBackgroundColor,
 
   focusShadow: token.inputFocusShadow,
   errorFocusShadow: token.inputErrorFocusShadow,
@@ -63,8 +72,9 @@ const groupSpace = (gap: string) => ({
     alignItems: 'center',
     border: `1px solid ${token.inputBorderColor}`,
     borderWidth: '0 1px',
-    background: token.inputDisabledBackgroundColor,
+    background: token.inputGroupFontBackgroundColor,
     fontWeight: 'normal',
+    color: token.inputGroupFontColor,
     '&:first-child': {
       borderLeftColor: 'inherit',
       marginLeft: '-1px',
@@ -126,7 +136,9 @@ const input: JsStyles<keyof InputClasses> = {
     outline: 'none',
     backgroundColor: 'transparent',
     boxSizing: 'border-box',
+    fontWeight: 'inherit',
     '&::placeholder': {
+      fontWeight: token.inputPlaceholderFontWeight,
       color: token.inputPlaceholderColor,
       fontSize: 'inherit',
     },
@@ -217,7 +229,7 @@ const input: JsStyles<keyof InputClasses> = {
       color: token.inputIconColor,
       '&:hover': {
         '$wrapper:not($wrapperDisabled) &': {
-          color: token.inputHoverBorderColor,
+          color: token.inputHoverIconColor,
         },
       },
       '&:first-child': {
@@ -270,7 +282,7 @@ const input: JsStyles<keyof InputClasses> = {
     '&::before': {
       display: 'block',
       position: 'absolute',
-      
+
       bottom: '100%',
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',

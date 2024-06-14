@@ -4,36 +4,45 @@ import token from '@sheinx/theme';
 import { EditableAreaClasses } from '@sheinx/base';
 
 export type EditableAreaClassType = keyof EditableAreaClasses;
-const inputBorder = border('wrapper', {
+const inputBorderToken = {
   lineHeight: token.lineHeightDynamic,
-  borderRadius: token.textareaBorderRadius,
+  borderRadius: token.inputBorderRadius,
 
-  fontSize: token.textareaFontSize,
-  smallFontSize: token.textareaSmallFontSize,
-  largeFontSize: token.textareaLargeFontSize,
+  fontSize: token.inputFontSize,
+  fontWeight: token.inputFontWeight,
+  smallFontSize: token.inputSmallFontSize,
+  largeFontSize: token.inputLargeFontSize,
 
-  paddingY: token.textareaPaddingY,
-  smallPaddingY: token.textareaSmallPaddingY,
-  largePaddingY: token.textareaLargePaddingY,
+  paddingY: token.inputPaddingY,
+  smallPaddingY: token.inputSmallPaddingY,
+  largePaddingY: token.inputLargePaddingY,
 
-  paddingX: token.textareaPaddingX,
-  smallPaddingX: token.textareaSmallPaddingX,
-  largePaddingX: token.textareaLargePaddingX,
+  paddingX: token.inputPaddingX,
+  smallPaddingX: token.inputSmallPaddingX,
+  largePaddingX: token.inputLargePaddingX,
 
-  borderColor: token.textareaBorderColor,
-  focusBorderColor: token.textareaFocusBorderColor,
-  hoverBorderColor: token.textareaHoverBorderColor,
-  disabledBorderColor: token.textareaDisabledBorderColor,
-  errorBorderColor: token.textareaErrorBorderColor,
+  borderColor: token.inputBorderColor,
+  borderWidth: token.inputBorderWidth,
+  focusBorderColor: token.inputFocusBorderColor,
+  hoverBorderColor: token.inputHoverBorderColor,
+  disabledBorderColor: token.inputDisabledBorderColor,
+  errorBorderColor: token.inputErrorBorderColor,
+  errorHoverBorderColor: token.inputErrorHoverBorderColor,
+  errorFocusBorderColor: token.inputErrorFocusBorderColor,
 
-  fontColor: token.textareaFontColor,
-  disabledFontColor: token.textareaDisabledFontColor,
+  fontColor: token.inputFontColor,
+  disabledFontColor: token.inputDisabledFontColor,
 
-  backgroundColor: token.textareaBackgroundColor,
-  disabledBackgroundColor: token.textareaDisabledBackgroundColor,
+  backgroundColor: token.inputBackgroundColor,
+  hoverBackgroundColor: token.inputHoverBackgroundColor,
+  focusBackgroundColor: token.inputFocusBackgroundColor,
+  disabledBackgroundColor: token.inputDisabledBackgroundColor,
+  errorBackgroundColor: token.inputErrorBackgroundColor,
+  errorFocusBackgroundColor: token.inputErrorFocusBackgroundColor,
+  errorHoverBackgroundColor: token.inputErrorHoverBackgroundColor,
 
-  focusShadow: token.textareaFocusShadow,
-  errorFocusShadow: token.textareaErrorFocusShadow,
+  focusShadow: token.inputFocusShadow,
+  errorFocusShadow: token.inputErrorFocusShadow,
 
   innerTitlePaddingY: token.inputInnerPaddingY,
   innerTitlePaddingX: token.inputInnerPaddingX,
@@ -43,7 +52,9 @@ const inputBorder = border('wrapper', {
 
   largeInnerTitlePaddingY: token.inputInnerLargePaddingY,
   largeInnerTitlePaddingX: token.inputInnerLargePaddingX,
-});
+};
+
+const inputBorder = border('wrapper', inputBorderToken);
 
 const { wrapper, wrapperNoBorder, wrapperFocus: _noFocus, ...resetWrapper } = inputBorder;
 

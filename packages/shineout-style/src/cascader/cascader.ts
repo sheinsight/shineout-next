@@ -7,34 +7,43 @@ export type CascaderClassType = keyof CascaderClasses;
 
 const inputBorderToken = {
   lineHeight: token.lineHeightDynamic,
-  borderRadius: token.cascaderBorderRadius,
+  borderRadius: token.inputBorderRadius,
 
-  fontSize: token.cascaderFontSize,
-  smallFontSize: token.cascaderSmallFontSize,
-  largeFontSize: token.cascaderLargeFontSize,
+  fontSize: token.inputFontSize,
+  fontWeight: token.inputFontWeight,
+  smallFontSize: token.inputSmallFontSize,
+  largeFontSize: token.inputLargeFontSize,
 
-  paddingY: token.cascaderPaddingY,
-  smallPaddingY: token.cascaderSmallPaddingY,
-  largePaddingY: token.cascaderLargePaddingY,
+  paddingY: token.selectPaddingY,
+  smallPaddingY: token.selectSmallPaddingY,
+  largePaddingY: token.selectLargePaddingY,
 
-  paddingX: token.cascaderPaddingX,
-  smallPaddingX: token.cascaderSmallPaddingX,
-  largePaddingX: token.cascaderLargePaddingX,
+  paddingX: token.selectPaddingX,
+  smallPaddingX: token.selectSmallPaddingX,
+  largePaddingX: token.selectLargePaddingX,
 
-  borderColor: token.cascaderBorderColor,
-  focusBorderColor: token.cascaderFocusBorderColor,
-  hoverBorderColor: token.cascaderHoverBorderColor,
-  disabledBorderColor: token.cascaderDisabledBorderColor,
-  errorBorderColor: token.cascaderErrorBorderColor,
+  borderColor: token.inputBorderColor,
+  borderWidth: token.inputBorderWidth,
+  focusBorderColor: token.inputFocusBorderColor,
+  hoverBorderColor: token.inputHoverBorderColor,
+  disabledBorderColor: token.inputDisabledBorderColor,
+  errorBorderColor: token.inputErrorBorderColor,
+  errorHoverBorderColor: token.inputErrorHoverBorderColor,
+  errorFocusBorderColor: token.inputErrorFocusBorderColor,
 
-  fontColor: token.cascaderFontColor,
-  disabledFontColor: token.cascaderDisabledFontColor,
+  fontColor: token.inputFontColor,
+  disabledFontColor: token.inputDisabledFontColor,
 
-  backgroundColor: token.cascaderBackgroundColor,
-  disabledBackgroundColor: token.cascaderDisabledBackgroundColor,
+  backgroundColor: token.inputBackgroundColor,
+  hoverBackgroundColor: token.inputHoverBackgroundColor,
+  focusBackgroundColor: token.inputFocusBackgroundColor,
+  disabledBackgroundColor: token.inputDisabledBackgroundColor,
+  errorBackgroundColor: token.inputErrorBackgroundColor,
+  errorFocusBackgroundColor: token.inputErrorFocusBackgroundColor,
+  errorHoverBackgroundColor: token.inputErrorHoverBackgroundColor,
 
-  focusShadow: token.cascaderFocusShadow,
-  errorFocusShadow: token.cascaderErrorFocusShadow,
+  focusShadow: token.inputFocusShadow,
+  errorFocusShadow: token.inputErrorFocusShadow,
 
   innerTitlePaddingY: token.inputInnerPaddingY,
   innerTitlePaddingX: token.inputInnerPaddingX,
@@ -382,7 +391,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     paddingTop: 3,
     paddingBottom: 3,
     display: 'inline-block',
-    overflow: 'auto'
+    overflow: 'auto',
   },
   tag: {
     flexShrink: 0,
@@ -436,6 +445,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     // hover
     '&:not($optionDisabled):hover': {
       '& $optionInner': {
+        color: token.cascaderOptionHoverFontColor,
         backgroundColor: token.cascaderOptionHoverBackgroundColor,
       },
     },
@@ -460,7 +470,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     whiteSpace: 'nowrap',
     minWidth: 44,
     display: 'flex',
+    color: token.cascaderOptionFontColor,
     fontSize: token.cascaderFontSize,
+    background: token.cascaderOptionBackgroundColor,
     lineHeight: token.lineHeightDynamic,
     padding: `${token.cascaderOptionInnerPaddingY} ${token.cascaderOptionInnerPaddingX}`,
     paddingRight: 30,

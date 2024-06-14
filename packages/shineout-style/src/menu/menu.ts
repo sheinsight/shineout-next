@@ -1,42 +1,137 @@
 import token from '@sheinx/theme';
 import { MenuClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
-const menuIndex = 1000;
-
 export type MenuClassType = keyof MenuClasses;
 
-const arrow = {
-  content: '""',
-  position: 'absolute',
-  left: 0,
-  transform: 'translateY(-50%)',
-  border: '6px solid transparent',
-  borderRightColor: token.menuItemBackgroundColor,
-  marginLeft: '-10px',
-};
+const animationDuration = '.25s';
+const collpaseWidth = token.menuCollpaseWidth;
+const transitionFunc = 'ease-out';
 
 const menuStyle: JsStyles<MenuClassType> = {
   wrapper: {
     height: '100%',
+    width: '100%',
     backgroundColor: token.menuItemBackgroundColor,
+    transition: `width ${animationDuration} ${transitionFunc}`,
+    color: token.menuFontColor,
+    display: 'flex',
+    flexDirection: 'column',
   },
   wrapperLight: {},
   wrapperDark: {
     backgroundColor: token.menuDarkItemBackgroundColor,
   },
-  scrollbox: {
-    '$wrapperVertical &': {
+  wrapperCollpase: {
+    width: `${collpaseWidth}!important`,
+    '& $title': {
+      paddingLeft: '0',
+    },
+    '& $expand': {
+      opacity: 0,
+    },
+    '& $titleIcon': {
+      width: `${collpaseWidth}!important`,
+      flexShrink: 0,
+      justifyContent: 'center',
+    },
+    '& $titleContent': {
+      alignItems: 'center',
+      whiteSpace: 'nowrap',
       overflow: 'hidden',
-      height: '100%',
+    },
+    '&$wrapperLight': {
+      '$menuRoot > $itemActive > $itemContent': {
+        backgroundColor: token.menuItemBackgroundColor,
+      },
+    },
+  },
+  wrapperInTransition: {
+    '& $titleContent, & $header': {
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+    },
+    '& $expand': {
+      opacity: 0,
+    },
+  },
+
+  popover: {
+    '&&': {
+      border: 'none',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+      borderRadius: '4px',
+      backgroundColor: token.menuItemBackgroundColor,
+    },
+    '&[data-soui-theme=dark]': {
+      backgroundColor: token.menuDarkItemBackgroundColor,
+    },
+    '& $children': {
+      borderRadius: '4px',
+      padding: `${token.menuPopoverPaddingY} 0`,
+      // '& > :first-child > $itemContent': {
+      //   borderTopRightRadius: '4px',
+      //   borderTopLeftRadius: '4px',
+      // },
+      // '& > :last-child > $itemContent': {
+      //   borderBottomRightRadius: '4px',
+      //   borderBottomLeftRadius: '4px',
+      // },
+    },
+  },
+  popArrow: {
+    '&&&': {
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+      width: '6px',
+      height: '6px',
+    },
+  },
+  popArrowDark: {
+    '&&&': {
+      backgroundColor: token.menuDarkItemBackgroundColor,
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+    },
+  },
+  scrollbox: {
+    flex: 1,
+    minWidth: 0,
+    minHeight: 0,
+    overflow: 'auto',
+    // scrollbarWidth: 'thin',
+    // '$wrapperLight &': {
+    //   scrollbarColor: 'rgba(0, 0, 0, 0.1) transparent',
+    //   '&::-moz-scrollbar-thumb:hover': {
+    //     backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    //   },
+    // },
+    // '$wrapperDark &': {
+    //   scrollbarColor: 'rgba(255, 255, 255, 0.4) transparent',
+    // },
+    '$wrapperVertical &': {
+      overflowX: 'hidden',
     },
     '$wrapperHorizontal &': {
-      overflow: 'hidden',
+      overflowY: 'hidden',
     },
-    '$wrapperHasOpen$wrapperVertical &': {
-      width: '100vw',
+    '&::-webkit-scrollbar': {
+      width: '6px',
+      height: '6px',
     },
-    '$wrapperHasOpen$wrapperHorizontal &': {
-      height: '100vh',
+    '&::-webkit-scrollbar-thumb': {
+      border: '0px solid transparent',
+      backgroundClip: 'content-box',
+      borderRadius: '11px',
+      '$wrapperLight &': {
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        '&:hover': {
+          backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        },
+      },
+      '$wrapperDark &': {
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        },
+      },
     },
   },
   root: {
@@ -51,92 +146,26 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
   },
   wrapperInline: {},
-  wrapperVertical: {
-    position: 'relative',
-    zIndex: menuIndex,
-  },
+  wrapperVertical: {},
   wrapperHorizontal: {
-    height: '42px',
-    position: 'relative',
-    zIndex: menuIndex,
+    flexDirection: 'row',
   },
   wrapperHasOpen: {},
   children: {
     padding: '0',
+    margin: '0',
     display: 'none',
     minWidth: '100%',
     whiteSpace: 'nowrap',
-    '$itemOpen > &': {
+    '$itemOpen > &, $childrenShow&': {
       display: 'block',
     },
-    '$wrapper:not($wrapperInline) &': {
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-    },
-
-    '$wrapperHorizontal &': {
-      position: 'absolute',
-      bottom: '-2px',
-      left: 0,
-      transform: 'translateY(100%)',
-    },
-    '$wrapperHorizontal & &': {
-      position: 'absolute',
-      left: 'auto',
-      bottom: 'auto',
-      top: 0,
-      right: '-2px',
-      transform: 'translateX(100%)',
-    },
-    '$wrapperVertical &': {
-      position: 'absolute',
-      top: 0,
-      '&[dir=ltr]': {
-        right: '-6px',
-        transform: 'translateX(100%)',
-      },
-      '&[dir=rtl]': {
-        left: '-6px',
-        transform: 'translateX(-100%)',
-      },
-
-      minWidth: 'auto',
-      borderRadius: '4px',
-      '& > :first-child > $itemContent': {
-        borderTopRightRadius: '4px',
-        borderTopLeftRadius: '4px',
-      },
-      '& > :last-child > $itemContent': {
-        borderBottomRightRadius: '4px',
-        borderBottomLeftRadius: '4px',
-      },
-      '&$childrenUp': {
-        top: 'auto',
-        bottom: 0,
-      },
-      '&$childrenUp::before': {
-        top: 'auto',
-        bottom: '20%',
-        ...arrow,
-        '$wrapperDark&': {
-          borderRightColor: token.menuDarkItemBackgroundColor,
-        },
-      },
-      '&::before': {
-        top: '20%',
-        ...arrow,
-        '$wrapperDark&': {
-          borderRightColor: token.menuDarkItemBackgroundColor,
-        },
-      },
-    },
   },
+  childrenShow: {},
   childrenUp: {},
   item: {
     listStyle: 'none',
     flexShrink: 0,
-    '$wrapperVertical &, $wrapperHorizontal &': {
-      position: 'relative',
-    },
   },
   itemActive: {},
   itemDisabled: {},
@@ -150,7 +179,10 @@ const menuStyle: JsStyles<MenuClassType> = {
     alignItems: 'center',
     cursor: 'pointer',
     position: 'relative',
-    '$wrapperLight &': {
+    '&  a': {
+      transition: 'none',
+    },
+    '[data-soui-theme=light] &': {
       color: token.menuItemFontColor,
       backgroundColor: token.menuItemBackgroundColor,
       '&:hover': {
@@ -159,7 +191,7 @@ const menuStyle: JsStyles<MenuClassType> = {
       },
     },
 
-    '$wrapperDark &': {
+    '[data-soui-theme=dark] &': {
       color: token.menuDarkFontColor,
       backgroundColor: token.menuDarkItemBackgroundColor,
       '&:hover': {
@@ -167,7 +199,7 @@ const menuStyle: JsStyles<MenuClassType> = {
         backgroundColor: token.menuDarkItemHoverBackgroundColor,
       },
     },
-    '$wrapperDark $itemOpen > &': {
+    '[data-soui-theme=dark] $itemOpen > &': {
       color: token.menuDarkItemOpenFontColor,
       backgroundColor: token.menuDarkItemOpenBackgroundColor,
       '& $icon': {
@@ -176,65 +208,132 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
 
     '$itemInPath > &&': {
-      '$wrapperLight &': {
+      '[data-soui-theme=light] &': {
         color: token.menuItemActiveFontColor,
         '& $icon': {
           color: token.menuItemActiveFontColor,
         },
       },
 
-      '$wrapperDark$wrapperInline &::before, $wrapperDark$wrapperVertical &::before': {
-        content: '""',
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        bottom: 0,
-        width: '3px',
-        backgroundColor: token.menuDarkItemActiveBackgroundColor,
-      },
-      '$wrapperLight$wrapperVertical &': {
-        '&::before': {
-          display: 'block',
-          content: '""',
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: '4px',
-          borderTopLeftRadius: '4px',
-          borderBottomLeftRadius: '4px',
-          backgroundColor: token.menuItemActiveFontColor,
+      '[data-soui-theme=light] $itemDisabled&': {
+        color: token.menuItemActiveDisabledFontColor,
+        '& $icon': {
+          color: token.menuItemActiveDisabledFontColor,
         },
       },
+
+      '[data-soui-theme=dark][data-soui-mode=inline] &::before, [data-soui-theme=dark][data-soui-mode=vertical] &::before':
+        {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: '3px',
+          backgroundColor: token.menuDarkItemActiveBackgroundColor,
+        },
+
+      '$wrapperCollpase[data-soui-theme=light] $root > &': {
+        color: token.menuItemCollpaseActiveFontColor,
+        backgroundColor: token.menuItemCollpaseActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuItemCollpaseActiveFontColor,
+        },
+      },
+      '$wrapperCollpase[data-soui-theme=dark] $root > &': {
+        color: token.menuDarkItemCollpaseActiveFontColor,
+        backgroundColor: token.menuDarkItemCollpaseActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuDarkItemCollpaseActiveFontColor,
+        },
+      },
+      '$wrapperCollpase $root > &::before': {
+        display: 'none',
+      },
+
+      // '[data-soui-theme=light][data-soui-mode=vertical]:not($wrapperCollpase) &': {
+      //   '&::before': {
+      //     display: 'block',
+      //     content: '""',
+      //     position: 'absolute',
+      //     right: 0,
+      //     top: 0,
+      //     bottom: 0,
+      //     width: '4px',
+      //     borderTopLeftRadius: '4px',
+      //     borderBottomLeftRadius: '4px',
+      //     backgroundColor: token.menuItemActiveFontColor,
+      //   },
+      // },
     },
     '$itemActive > &&': {
-      '$wrapperLight &': {
+      '[data-soui-theme=light] &': {
         color: token.menuItemActiveFontColor,
         backgroundColor: token.menuItemActiveBackgroundColor,
         '& $icon': {
           color: token.menuItemActiveFontColor,
         },
       },
-      '$wrapperDark &': {
+      '[data-soui-theme=light] $itemDisabled&': {
+        color: token.menuItemActiveDisabledFontColor,
+        '& $icon': {
+          color: token.menuItemActiveDisabledFontColor,
+        },
+      },
+      '$wrapperCollpase[data-soui-theme=light] $root > &': {
+        color: token.menuItemCollpaseActiveFontColor,
+        backgroundColor: token.menuItemCollpaseActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuItemCollpaseActiveFontColor,
+        },
+      },
+      '$wrapperCollpase[data-soui-theme=dark] $root > &': {
+        color: token.menuDarkItemCollpaseActiveFontColor,
+        backgroundColor: token.menuDarkItemCollpaseActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuDarkItemCollpaseActiveFontColor,
+        },
+      },
+      '$wrapperCollpase $root > &::before': {
+        display: 'none',
+      },
+      '[data-soui-theme=dark]:not($wrapperCollpase) &': {
         color: token.menuDarkItemActiveFontColor,
         backgroundColor: token.menuDarkItemActiveBackgroundColor,
         '& $icon': {
           color: token.menuDarkItemActiveFontColor,
         },
       },
-      '$wrapperLight$wrapperInline &,  $wrapperLight$wrapperHorizontal &': {
+      '[data-soui-theme=dark]$wrapperCollpase &': {
         '&::before': {
           content: '""',
           position: 'absolute',
-          display: 'block',
+          left: 0,
           top: 0,
-          right: 0,
+          bottom: 0,
           width: '3px',
-          height: '100%',
-          backgroundColor: token.menuItemActiveFontColor,
+          backgroundColor: token.menuDarkItemActiveBackgroundColor,
         },
       },
-      '$wrapperLight$wrapperHorizontal $root > &::before': {
+
+      // '[data-soui-theme=light][data-soui-mode=inline] &,  [data-soui-theme=light][data-soui-mode=horizontal] &':
+      //   {
+      //     '&::before': {
+      //       content: '""',
+      //       position: 'absolute',
+      //       display: 'block!important',
+      //       top: 0,
+      //       right: 0,
+      //       width: '3px',
+      //       height: '100%',
+      //       backgroundColor: token.menuItemActiveFontColor,
+      //     },
+      //   },
+      '[data-soui-theme=light][data-soui-mode=horizontal] $root > &::before': {
+        content: '""',
+        position: 'absolute',
+        display: 'block!important',
+        backgroundColor: token.menuItemActiveFontColor,
         width: '100%',
         height: '2px',
         top: 'auto',
@@ -243,7 +342,7 @@ const menuStyle: JsStyles<MenuClassType> = {
         right: 'auto',
       },
     },
-    '$wrapperLight $itemDisabled > &&': {
+    '[data-soui-theme=light] $itemDisabled > &&': {
       cursor: 'not-allowed',
       color: token.menuItemDisabledFontColor,
       backgroundColor: token.menuItemDisabledBackgroundColor,
@@ -251,7 +350,7 @@ const menuStyle: JsStyles<MenuClassType> = {
         color: token.menuItemDisabledFontColor,
       },
     },
-    '$wrapperDark $itemDisabled > &&': {
+    '[data-soui-theme=dark] $itemDisabled > &&': {
       cursor: 'not-allowed',
       color: token.menuDarkItemDisabledFontColor,
       backgroundColor: token.menuDarkItemDisabledBackgroundColor,
@@ -262,7 +361,30 @@ const menuStyle: JsStyles<MenuClassType> = {
   },
   itemContentFront: {},
   itemContentBack: {},
+  header: {
+    padding: `${token.menuHeaderPaddingX} ${token.menuHeaderPaddingY}`,
+    width: '100%',
+    transition: `width ${animationDuration} ${transitionFunc}`,
+    color: token.menuFontColor,
+    '$wrapperDark &': {
+      color: token.menuDarkFontColor,
+    },
+    '$wrapperCollpase &': {
+      paddingLeft: '0',
+      paddingRight: '0',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    '& + div': {
+      borderTop: `1px solid ${token.menuHeaderBorderColor}`,
+      '$wrapperDark &': {
+        borderTop: `1px solid ${token.menuDarkHeaderBorderColor}`,
+      },
+    },
+  },
   title: {
+    cursor: 'inherit',
     '&:hover': {
       color: 'inherit',
     },
@@ -274,14 +396,14 @@ const menuStyle: JsStyles<MenuClassType> = {
     minWidth: 0,
     padding: `${token.menuTitlePaddingY} ${token.menuTitlePaddingX}`,
     '$wrapperInline $childrenHasExpand  $item:not($itemHasChildren)  $itemContentBack > &': {
-      paddingRight: token.menuExpandWidth,
+      paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuExpandSize})`,
     },
     '$wrapperInline $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
     },
 
     '$childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
-      paddingRight: token.menuExpandWidth,
+      paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuExpandSize})`,
     },
     '$childrenHasExpand $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
@@ -291,12 +413,26 @@ const menuStyle: JsStyles<MenuClassType> = {
       paddingLeft: 0,
     },
   },
+  titleIcon: {
+    '& + $titleContent': {
+      paddingLeft: token.menuIconMarginX,
+    },
+    lineHeight: 1,
+    display: 'inline-flex',
+  },
+  titleContent: {
+    whiteSpace: 'pre-wrap',
+    // '$wrapperCollpase &': {
+    //   transition: `opacity ${animationDuration} ${transitionFunc}`,
+    // },
+    // opacity: 1,
+  },
   expand: {
     alignSelf: 'stretch',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    '$wrapperLight &': {
+    '[data-soui-theme=light] &': {
       color: token.menuIconColor,
     },
     '& > $icon': {
@@ -307,10 +443,10 @@ const menuStyle: JsStyles<MenuClassType> = {
         transform: 'rotate(180deg)',
       },
     },
-    '$wrapperVertical &': {
-      '&[dir=ltr]': { transform: 'rotate(-90deg)' },
-      '&[dir=rtl]': { transform: 'rotate(90deg)' },
-    },
+  },
+  expandVertical: {
+    '&[dir=ltr] svg': { transform: 'rotate(-90deg)' },
+    '&[dir=rtl] svg': { transform: 'rotate(90deg)' },
   },
   icon: {},
   expandHover: {
@@ -325,13 +461,14 @@ const menuStyle: JsStyles<MenuClassType> = {
     width: 'auto',
     visibility: 'hidden',
     paddingLeft: token.menuTitlePaddingX,
-    paddingRight: '8px',
+    paddingRight: token.menuIconMarginX,
     '$itemHasChildren > $itemContent &': {
       visibility: 'visible',
     },
   },
   expandBack: {
-    width: token.menuExpandWidth,
+    paddingRight: token.menuTitlePaddingX,
+    paddingLeft: token.menuIconMarginX,
   },
   scrollbar: {
     position: 'absolute',

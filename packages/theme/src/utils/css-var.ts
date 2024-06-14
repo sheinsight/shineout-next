@@ -26,3 +26,8 @@ export const cssvar = (str: string, value: string, key: string, _size?: string) 
     str,
   )},${value}))`;
 };
+
+export const getTokenName = (key: string) => {
+  const { prefix } = getConfig();
+  return `--${prefix}-${camelCaseToDash(key)}`;
+};

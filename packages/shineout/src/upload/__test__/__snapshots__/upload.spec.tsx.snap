@@ -176,7 +176,6 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       <div
         class="soui-upload-result-close soui-upload-icon soui-upload-icon-hover"
       >
-        <noscript />
         <svg
           aria-hidden="true"
           fill="currentColor"
@@ -259,7 +258,6 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
           <div
             class="soui-upload-icon"
           >
-            <noscript />
             <svg
               aria-hidden="true"
               fill="currentColor"

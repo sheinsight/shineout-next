@@ -37,7 +37,7 @@ const App: React.FC = () => {
         title='Drawer Title'
         onClose={handleCancel}
         footer={[
-          <Button key='cancel' onClick={handleCancel}>
+          <Button key='cancel' onClick={handleCancel} mode='outline' >
             Cancel
           </Button>,
           <Button key='ok' type='primary' onClick={handleOk}>

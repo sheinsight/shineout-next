@@ -1,3 +1,20 @@
+## 3.2.0
+2024-06-14
+### 🎨 Theme
+- `Table` 新增不同尺寸下的文字、字重 token
+- `Input` 新增 error 状态下的边框、背景 token
+- `Datepicker` 组件触发器 token 同步 `Input`
+- `Cascader` 组件触发器 token 同步 `Input`
+- `TreeSelect` 组件触发器 token 同步 `Input`
+- `Select` 组件触发器 token 同步 `Input`
+
+### 🆕 Feature
+
+- `Cascader` 新增 adjust 属性，支持取消自动调整展开，强制指定方向
+- `Datepicker` 新增 adjust 属性，支持取消自动调整展开，强制指定方向
+- `Dropdown` 新增 adjust 属性，支持取消自动调整展开，强制指定方向
+- `TreeSelect` 新增 adjust 属性，支持取消自动调整展开，强制指定方向
+
 ## 3.1.29
 2024-06-11
 ### 🐞 BugFix

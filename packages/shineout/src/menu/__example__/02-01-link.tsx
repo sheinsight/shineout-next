@@ -43,7 +43,7 @@ const App: React.FC = () => {
       data={data}
       renderItem={renderItem}
       style={{ width: 256, border: '1px solid #e8ebf0' }}
-      inlineIndent={24}
+      inlineIndent={14}
     />
   );
 };

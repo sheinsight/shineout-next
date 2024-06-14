@@ -6,29 +6,7 @@
  * 用于生成 token 的规则，修改保存后将自动更新 token。
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const inputRules = {
-  size: [
-    ['', 'small', 'large'],
-    ['font-size', 'border-radius', 'padding-x', 'padding-y', 'icon-size'],
-  ],
-  color: [
-    ['', 'disabled', 'error'],
-    ['', 'hover', 'focus'],
-    [
-      'font-color',
-      'placeholder-color',
-      'border-color',
-      'background-color',
-      'shadow',
-      'clear-color',
-      'toggle-color',
-      'icon-color',
-    ],
-  ],
-  infoColor: [['info'], ['', 'error'], ['font-color', 'background-color', 'border-color']],
-  innerSize: [['inner'], ['', 'small', 'large'], ['padding-x', 'padding-y', 'font-size']],
-  innerColor: [['inner'], ['font-color']],
-};
+const inputRules = {};
 
 module.exports = {
   inputRules,

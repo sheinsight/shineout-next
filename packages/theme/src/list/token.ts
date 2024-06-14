@@ -24,15 +24,18 @@ const listTokenValue = {};
 
 const listTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
-  border: { color: 'Neutral-border-1', radius: 'Radius-2' },
+  border: { color: 'Neutral-border-1', radius: 'Radius-lesser', width: 'Border-1' },
   item: {
     padding: { y: 'Spacing-12', x: 'Spacing-16' },
+    background: { color: 'Transparent' },
   },
   small: {
     item: { padding: { y: 'Spacing-8', x: 'Spacing-12' } },
+    font: { size: 'Font-14' },
   },
   large: {
     item: { padding: { y: 'Spacing-16', x: 'Spacing-20' } },
+    font: { size: 'Font-14' },
   },
   pagination: {
     margin: { y: 'Spacing-12' },

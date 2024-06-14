@@ -49,6 +49,7 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
       textAlign: 'start',
       width: 'auto',
       paddingTop: '0',
+      paddingBottom: token.formItemLabelTopPaddingY,
       margin: '0',
     },
   },

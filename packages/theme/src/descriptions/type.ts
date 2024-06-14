@@ -46,7 +46,7 @@ export interface DescriptionsTokens {
   descriptionsTitleLargeSize: string;
   /**
    * @type {string}
-   * @token 1px
+   * @token Border-1
    * @description 描述列表边框默认尺寸字号
    */
   descriptionsBorderDefaultSize: string;
@@ -100,7 +100,7 @@ export interface DescriptionsTokens {
   descriptionsBorderColor: string;
   /**
    * @type {string}
-   * @token 500
+   * @token Weight-medium
    * @description 描述列表标题模式字体字重
    */
   descriptionsTitleFontWeight: string;
@@ -112,7 +112,13 @@ export interface DescriptionsTokens {
   descriptionsTitleGap: string;
   /**
    * @type {string}
-   * @token Size-2
+   * @token Spacing-0
+   * @description 描述列表undefined间距
+   */
+  descriptionsCellGap: string;
+  /**
+   * @type {string}
+   * @token Radius-lesser
    * @description 描述列表边框圆角
    */
   descriptionsBorderRadius: string;
@@ -152,4 +158,10 @@ export interface DescriptionsTokens {
    * @description 描述列表内联边框内边距（垂直方向）
    */
   descriptionsInlineBorderPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-2
+   * @description 描述列表undefined内边距底部
+   */
+  descriptionsVerticalPaddingBottom: string;
 }

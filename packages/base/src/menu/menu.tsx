@@ -1,18 +1,32 @@
 import { useEffect, useRef, useState } from 'react';
-import { useMenu, util } from '@sheinx/hooks';
+import { useMenu, util, useRender } from '@sheinx/hooks';
 import Item from './item';
 import classNames from 'classnames';
-import Scroll from './scroll';
+// import Scroll from './scroll';
 
 import type { MenuProps } from './menu.type';
 import type { KeygenResult } from '@sheinx/hooks';
 
 const emptyArray: any[] = [];
 const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key>) => {
-  const { data = emptyArray, mode = 'inline', theme = 'light' } = props;
+  const { data = emptyArray, mode: modeProps = 'inline', theme = 'light', collapse } = props;
+  const  render = useRender();
+ 
+  // const [inTransition, setInTransition] = useState(false);
+  const mode = collapse ? 'vertical-auto' : modeProps;
+
+  const {current: context} = useRef({
+    inTransition: false,
+    lastCollapse: !!props.collapse,
+  });
+  if (props.mode !== 'horizontal' && !!context.lastCollapse !== !!collapse) {
+    context.inTransition = true;
+    context.lastCollapse = !!props.collapse;
+  }
+
   const classes = props.jssStyle?.menu?.();
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
-  const isHorizontal = mode === 'horizontal';
+  // const isHorizontal = mode === 'horizontal';
   const [hasOpen, setHasOpen] = useState(false);
   const { openKeys, onOpenChange, bindUpdate, unbindUpdate, changeActiveId } = useMenu({
     data,
@@ -28,9 +42,15 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     (item) => item && item.children && (props.looseChildren || item.children.length),
   );
 
-  const showScrollBar = isHorizontal || isVertical;
+  // const showScrollBar = isHorizontal || isVertical;
 
-  const listStyle = isVertical ? { width: props.style?.width } : undefined;
+  const renderHeader = () => {
+    if (modeProps === 'horizontal') return;
+    if (props.header) {
+      return <div className={classes?.header}>{props.header}</div>;
+    }
+    return null;
+  };
 
   useEffect(() => {
     const newOpen =
@@ -40,6 +60,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
       setHasOpen(newOpen);
     }
   }, [data, openKeys]);
+
 
   return (
     <div
@@ -51,17 +72,27 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         mode === 'horizontal' && classes?.wrapperHorizontal,
         hasOpen && classes?.wrapperHasOpen,
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
+        collapse && classes?.wrapperCollpase,
+        context.inTransition && classes?.wrapperInTransition,
       )}
+      {...util.getDataAttribute({
+        theme,
+        mode: isVertical ? 'vertical' : mode,
+      })}
       style={{
         height: props.height,
         ...props.style,
       }}
+      onTransitionEnd={(e) => {
+        if (e.target === e.currentTarget) {
+          context.inTransition = false;
+          render();
+        }
+      }}
     >
+      {renderHeader()}
       <div className={classes?.scrollbox} ref={scrollRef}>
-        <ul
-          className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}
-          style={listStyle}
-        >
+        <ul className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}>
           {data.map((item, index) => {
             const key = util.getKey(props.keygen, item, index);
             return (
@@ -92,19 +123,22 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 caretColor={props.caretColor}
                 inlineIndent={props.inlineIndent}
                 scrollRef={scrollRef}
+                theme={theme}
+                renderIcon={props.renderIcon}
+                collapse={collapse}
               />
             );
           })}
         </ul>
       </div>
-      {showScrollBar && (
+      {/* {showScrollBar && (
         <Scroll
           targetRef={scrollRef}
           direction={mode === 'vertical' || mode === 'vertical-auto' ? 'y' : 'x'}
           data={data}
           jssStyle={props.jssStyle}
         />
-      )}
+      )} */}
     </div>
   );
 };

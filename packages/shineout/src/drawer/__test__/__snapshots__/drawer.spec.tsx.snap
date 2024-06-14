@@ -43,7 +43,7 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button"
+          class="soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -156,7 +156,7 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button"
+          class="soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -286,7 +286,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
       >
         <div>
           <button
-            class="soui-button-secondary soui-button-button"
+            class="soui-button-secondary soui-button-button soui-button-outline"
             dir="ltr"
             type="button"
           >
@@ -1061,7 +1061,7 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button"
+          class="soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -1412,7 +1412,7 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button"
+          class="soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >

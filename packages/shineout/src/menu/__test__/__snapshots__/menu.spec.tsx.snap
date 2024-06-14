@@ -4,6 +4,8 @@ exports[`Menu[Base] should render correctly  1`] = `
 <div>
   <div
     class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-light"
+    data-soui-mode="inline"
+    data-soui-theme="light"
     style="width: 256px; border: 1px solid #e8ebf0;"
   >
     <div
@@ -13,7 +15,7 @@ exports[`Menu[Base] should render correctly  1`] = `
         class="soui-menu-root soui-menu-children-has-expand"
       >
         <li
-          class="soui-menu-item soui-menu-item-active"
+          class="soui-menu-item"
           dir="ltr"
         >
           <div
@@ -22,9 +24,13 @@ exports[`Menu[Base] should render correctly  1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation One
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation One
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -38,9 +44,13 @@ exports[`Menu[Base] should render correctly  1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Two
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Two
+                </span>
+              </div>
             </a>
             <div
               class="soui-menu-expand soui-menu-expand-back"
@@ -73,15 +83,19 @@ exports[`Menu[Base] should render correctly  1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-back"
               >
-                <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 1
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 1
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -92,15 +106,19 @@ exports[`Menu[Base] should render correctly  1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-back"
               >
-                <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 2
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 2
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -116,9 +134,13 @@ exports[`Menu[Base] should render correctly  1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Three
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Three
+                </span>
+              </div>
             </a>
             <div
               class="soui-menu-expand soui-menu-expand-back"
@@ -151,15 +173,19 @@ exports[`Menu[Base] should render correctly  1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-back"
               >
-                <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 3
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 3
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -170,15 +196,19 @@ exports[`Menu[Base] should render correctly  1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-back"
               >
-                <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 4
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 4
+                    </span>
+                  </div>
                 </a>
                 <div
                   class="soui-menu-expand soui-menu-expand-back"
@@ -211,15 +241,19 @@ exports[`Menu[Base] should render correctly  1`] = `
                   <div
                     class="soui-menu-item-content soui-menu-item-content-back"
                   >
-                    <div
-                      style="width: 48px; flex-shrink: 0;"
-                    />
                     <a
                       class="soui-menu-title"
                     >
-                      <span>
-                        Optic 1
-                      </span>
+                      <div
+                        style="width: 28px; flex-shrink: 0;"
+                      />
+                      <div
+                        class="soui-menu-title-content"
+                      >
+                        <span>
+                          Optic 1
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -230,15 +264,19 @@ exports[`Menu[Base] should render correctly  1`] = `
                   <div
                     class="soui-menu-item-content soui-menu-item-content-back"
                   >
-                    <div
-                      style="width: 48px; flex-shrink: 0;"
-                    />
                     <a
                       class="soui-menu-title"
                     >
-                      <span>
-                        Optic 2
-                      </span>
+                      <div
+                        style="width: 28px; flex-shrink: 0;"
+                      />
+                      <div
+                        class="soui-menu-title-content"
+                      >
+                        <span>
+                          Optic 2
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -256,9 +294,13 @@ exports[`Menu[Base] should render correctly  1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Four
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Four
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -272,9 +314,13 @@ exports[`Menu[Base] should render correctly  1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                This is a very very very very long menu title
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  This is a very very very very long menu title
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -287,6 +333,8 @@ exports[`Menu[Base] should render correctly  1`] = `
 exports[`Menu[Base] should render correctly about click 1`] = `
 <div
   class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-has-open soui-menu-wrapper-light"
+  data-soui-mode="inline"
+  data-soui-theme="light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
@@ -296,7 +344,7 @@ exports[`Menu[Base] should render correctly about click 1`] = `
       class="soui-menu-root soui-menu-children-has-expand"
     >
       <li
-        class="soui-menu-item soui-menu-item-active"
+        class="soui-menu-item"
         dir="ltr"
       >
         <div
@@ -305,9 +353,13 @@ exports[`Menu[Base] should render correctly about click 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation One
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation One
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -321,9 +373,13 @@ exports[`Menu[Base] should render correctly about click 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Two
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Two
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -356,15 +412,19 @@ exports[`Menu[Base] should render correctly about click 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 1
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 1
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -375,15 +435,19 @@ exports[`Menu[Base] should render correctly about click 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 2
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 2
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -399,9 +463,13 @@ exports[`Menu[Base] should render correctly about click 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Three
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Three
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -434,15 +502,19 @@ exports[`Menu[Base] should render correctly about click 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 3
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 3
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -453,15 +525,19 @@ exports[`Menu[Base] should render correctly about click 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 4
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 4
+                  </span>
+                </div>
               </a>
               <div
                 class="soui-menu-expand soui-menu-expand-back"
@@ -494,15 +570,19 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                 <div
                   class="soui-menu-item-content soui-menu-item-content-back"
                 >
-                  <div
-                    style="width: 48px; flex-shrink: 0;"
-                  />
                   <a
                     class="soui-menu-title"
                   >
-                    <span>
-                      Optic 1
-                    </span>
+                    <div
+                      style="width: 28px; flex-shrink: 0;"
+                    />
+                    <div
+                      class="soui-menu-title-content"
+                    >
+                      <span>
+                        Optic 1
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -513,15 +593,19 @@ exports[`Menu[Base] should render correctly about click 1`] = `
                 <div
                   class="soui-menu-item-content soui-menu-item-content-back"
                 >
-                  <div
-                    style="width: 48px; flex-shrink: 0;"
-                  />
                   <a
                     class="soui-menu-title"
                   >
-                    <span>
-                      Optic 2
-                    </span>
+                    <div
+                      style="width: 28px; flex-shrink: 0;"
+                    />
+                    <div
+                      class="soui-menu-title-content"
+                    >
+                      <span>
+                        Optic 2
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -539,9 +623,13 @@ exports[`Menu[Base] should render correctly about click 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Four
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Four
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -553,6 +641,8 @@ exports[`Menu[Base] should render correctly about click 1`] = `
 exports[`Menu[Base] should render correctly about click father 1`] = `
 <div
   class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-light"
+  data-soui-mode="inline"
+  data-soui-theme="light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
@@ -562,7 +652,7 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
       class="soui-menu-root soui-menu-children-has-expand"
     >
       <li
-        class="soui-menu-item soui-menu-item-active soui-menu-item-has-children"
+        class="soui-menu-item soui-menu-item-has-children"
         dir="ltr"
       >
         <div
@@ -571,9 +661,13 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Parent 1
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Parent 1
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back soui-menu-expand-hover"
@@ -606,15 +700,19 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 2
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 2
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -625,15 +723,19 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 3
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 3
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -649,9 +751,13 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Parent 4
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Parent 4
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back soui-menu-expand-hover"
@@ -684,15 +790,19 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 5
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 5
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -703,15 +813,19 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 6
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 6
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -727,9 +841,13 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Option 7
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Option 7
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -741,6 +859,8 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
 exports[`Menu[Base] should render correctly about control 1`] = `
 <div
   class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-has-open soui-menu-wrapper-light"
+  data-soui-mode="inline"
+  data-soui-theme="light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
@@ -750,7 +870,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
       class="soui-menu-root soui-menu-children-has-expand"
     >
       <li
-        class="soui-menu-item soui-menu-item-active"
+        class="soui-menu-item"
         dir="ltr"
       >
         <div
@@ -759,9 +879,13 @@ exports[`Menu[Base] should render correctly about control 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation One
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation One
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -775,9 +899,13 @@ exports[`Menu[Base] should render correctly about control 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Two
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Two
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -810,15 +938,19 @@ exports[`Menu[Base] should render correctly about control 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 1
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 1
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -829,15 +961,19 @@ exports[`Menu[Base] should render correctly about control 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 2
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 2
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -853,9 +989,13 @@ exports[`Menu[Base] should render correctly about control 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Three
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Three
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -888,15 +1028,19 @@ exports[`Menu[Base] should render correctly about control 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 3
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 3
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -907,15 +1051,19 @@ exports[`Menu[Base] should render correctly about control 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 4
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 4
+                  </span>
+                </div>
               </a>
               <div
                 class="soui-menu-expand soui-menu-expand-back"
@@ -948,15 +1096,19 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                 <div
                   class="soui-menu-item-content soui-menu-item-content-back"
                 >
-                  <div
-                    style="width: 48px; flex-shrink: 0;"
-                  />
                   <a
                     class="soui-menu-title"
                   >
-                    <span>
-                      Optic 1
-                    </span>
+                    <div
+                      style="width: 28px; flex-shrink: 0;"
+                    />
+                    <div
+                      class="soui-menu-title-content"
+                    >
+                      <span>
+                        Optic 1
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -967,15 +1119,19 @@ exports[`Menu[Base] should render correctly about control 1`] = `
                 <div
                   class="soui-menu-item-content soui-menu-item-content-back"
                 >
-                  <div
-                    style="width: 48px; flex-shrink: 0;"
-                  />
                   <a
                     class="soui-menu-title"
                   >
-                    <span>
-                      Optic 2
-                    </span>
+                    <div
+                      style="width: 28px; flex-shrink: 0;"
+                    />
+                    <div
+                      class="soui-menu-title-content"
+                    >
+                      <span>
+                        Optic 2
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -993,9 +1149,13 @@ exports[`Menu[Base] should render correctly about control 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Four
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Four
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -1007,7 +1167,9 @@ exports[`Menu[Base] should render correctly about control 1`] = `
 exports[`Menu[Base] should render correctly about dark 1`] = `
 <div>
   <div
-    class="soui-menu-wrapper soui-menu-wrapper-vertical soui-menu-wrapper-dark"
+    class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-dark"
+    data-soui-mode="inline"
+    data-soui-theme="dark"
     style="width: 256px;"
   >
     <div
@@ -1015,10 +1177,9 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
     >
       <ul
         class="soui-menu-root soui-menu-children-has-expand"
-        style="width: 256px;"
       >
         <li
-          class="soui-menu-item soui-menu-item-active"
+          class="soui-menu-item"
           dir="ltr"
         >
           <div
@@ -1027,9 +1188,13 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation One
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation One
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -1043,9 +1208,13 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Two
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Two
+                </span>
+              </div>
             </a>
             <div
               class="soui-menu-expand soui-menu-expand-back"
@@ -1081,9 +1250,16 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 1
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 1
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -1097,9 +1273,16 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 2
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 2
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -1115,9 +1298,13 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Three
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Three
+                </span>
+              </div>
             </a>
             <div
               class="soui-menu-expand soui-menu-expand-back"
@@ -1153,9 +1340,16 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 3
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 3
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -1169,9 +1363,16 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 4
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 4
+                    </span>
+                  </div>
                 </a>
                 <div
                   class="soui-menu-expand soui-menu-expand-back"
@@ -1207,9 +1408,16 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                     <a
                       class="soui-menu-title"
                     >
-                      <span>
-                        Optic 1
-                      </span>
+                      <div
+                        style="width: 28px; flex-shrink: 0;"
+                      />
+                      <div
+                        class="soui-menu-title-content"
+                      >
+                        <span>
+                          Optic 1
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -1223,9 +1431,16 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                     <a
                       class="soui-menu-title"
                     >
-                      <span>
-                        Optic 2
-                      </span>
+                      <div
+                        style="width: 28px; flex-shrink: 0;"
+                      />
+                      <div
+                        class="soui-menu-title-content"
+                      >
+                        <span>
+                          Optic 2
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -1243,9 +1458,13 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Four
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Four
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -1258,6 +1477,8 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
 exports[`Menu[Base] should render correctly about disabled 1`] = `
 <div
   class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-light"
+  data-soui-mode="inline"
+  data-soui-theme="light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
@@ -1267,7 +1488,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
       class="soui-menu-root soui-menu-children-has-expand"
     >
       <li
-        class="soui-menu-item soui-menu-item-active"
+        class="soui-menu-item"
         dir="ltr"
       >
         <div
@@ -1276,14 +1497,18 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation One
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation One
+              </span>
+            </div>
           </a>
         </div>
       </li>
       <li
-        class="soui-menu-item soui-menu-item-disabled soui-menu-item-has-children"
+        class="soui-menu-item soui-menu-item-has-children"
         dir="ltr"
       >
         <div
@@ -1292,9 +1517,13 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Two
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Two
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -1321,21 +1550,25 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           dir="ltr"
         >
           <li
-            class="soui-menu-item"
+            class="soui-menu-item soui-menu-item-disabled"
             dir="ltr"
           >
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 1
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 1
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -1346,15 +1579,19 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 2
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 2
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -1370,9 +1607,13 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Three
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Three
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -1405,15 +1646,19 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 3
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 3
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -1424,15 +1669,19 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 4
-                </span>
+                <div
+                  style="width: 14px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 4
+                  </span>
+                </div>
               </a>
               <div
                 class="soui-menu-expand soui-menu-expand-back"
@@ -1465,15 +1714,19 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                 <div
                   class="soui-menu-item-content soui-menu-item-content-back"
                 >
-                  <div
-                    style="width: 48px; flex-shrink: 0;"
-                  />
                   <a
                     class="soui-menu-title"
                   >
-                    <span>
-                      Optic 1
-                    </span>
+                    <div
+                      style="width: 28px; flex-shrink: 0;"
+                    />
+                    <div
+                      class="soui-menu-title-content"
+                    >
+                      <span>
+                        Optic 1
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -1484,15 +1737,19 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
                 <div
                   class="soui-menu-item-content soui-menu-item-content-back"
                 >
-                  <div
-                    style="width: 48px; flex-shrink: 0;"
-                  />
                   <a
                     class="soui-menu-title"
                   >
-                    <span>
-                      Optic 2
-                    </span>
+                    <div
+                      style="width: 28px; flex-shrink: 0;"
+                    />
+                    <div
+                      class="soui-menu-title-content"
+                    >
+                      <span>
+                        Optic 2
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -1510,9 +1767,13 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Four
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Four
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -1527,6 +1788,8 @@ exports[`Menu[Base] should render correctly about front 1`] = `
 >
   <div
     class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-light"
+    data-soui-mode="inline"
+    data-soui-theme="light"
     style="width: 256px; border: 1px solid #e8ebf0;"
   >
     <div
@@ -1536,7 +1799,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
         class="soui-menu-root soui-menu-children-has-expand"
       >
         <li
-          class="soui-menu-item soui-menu-item-active"
+          class="soui-menu-item"
           dir="ltr"
         >
           <div
@@ -1564,9 +1827,13 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation One
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation One
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -1599,9 +1866,13 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Two
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Two
+                </span>
+              </div>
             </a>
           </div>
           <ul
@@ -1616,9 +1887,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
-                <div
                   class="soui-menu-expand soui-menu-expand-front"
                   dir="ltr"
                 >
@@ -1640,9 +1908,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 1
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 1
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -1654,9 +1929,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
-                <div
                   class="soui-menu-expand soui-menu-expand-front"
                   dir="ltr"
                 >
@@ -1678,9 +1950,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 2
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 2
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -1715,9 +1994,13 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Three
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Three
+                </span>
+              </div>
             </a>
           </div>
           <ul
@@ -1732,9 +2015,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
-                <div
                   class="soui-menu-expand soui-menu-expand-front"
                   dir="ltr"
                 >
@@ -1756,9 +2036,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 3
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 3
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -1770,9 +2057,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
-                <div
                   class="soui-menu-expand soui-menu-expand-front"
                   dir="ltr"
                 >
@@ -1794,9 +2078,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 4
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 4
+                    </span>
+                  </div>
                 </a>
               </div>
               <ul
@@ -1811,9 +2102,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     class="soui-menu-item-content soui-menu-item-content-front"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
-                    />
-                    <div
                       class="soui-menu-expand soui-menu-expand-front"
                       dir="ltr"
                     >
@@ -1835,9 +2123,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     <a
                       class="soui-menu-title"
                     >
-                      <span>
-                        Optic 1
-                      </span>
+                      <div
+                        style="width: 28px; flex-shrink: 0;"
+                      />
+                      <div
+                        class="soui-menu-title-content"
+                      >
+                        <span>
+                          Optic 1
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -1849,9 +2144,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     class="soui-menu-item-content soui-menu-item-content-front"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
-                    />
-                    <div
                       class="soui-menu-expand soui-menu-expand-front"
                       dir="ltr"
                     >
@@ -1873,9 +2165,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     <a
                       class="soui-menu-title"
                     >
-                      <span>
-                        Optic 2
-                      </span>
+                      <div
+                        style="width: 28px; flex-shrink: 0;"
+                      />
+                      <div
+                        class="soui-menu-title-content"
+                      >
+                        <span>
+                          Optic 2
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -1912,9 +2211,13 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Four
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Four
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -1923,6 +2226,8 @@ exports[`Menu[Base] should render correctly about front 1`] = `
   </div>
   <div
     class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-light"
+    data-soui-mode="inline"
+    data-soui-theme="light"
     style="width: 256px; border: 1px solid #e8ebf0;"
   >
     <div
@@ -1932,7 +2237,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
         class="soui-menu-root soui-menu-children-has-expand"
       >
         <li
-          class="soui-menu-item soui-menu-item-active"
+          class="soui-menu-item"
           dir="ltr"
         >
           <div
@@ -1960,9 +2265,13 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation One
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation One
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -1995,9 +2304,13 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Two
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Two
+                </span>
+              </div>
             </a>
           </div>
           <ul
@@ -2012,9 +2325,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
-                <div
                   class="soui-menu-expand soui-menu-expand-front"
                   dir="ltr"
                 >
@@ -2036,9 +2346,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 1
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 1
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -2050,9 +2367,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
-                <div
                   class="soui-menu-expand soui-menu-expand-front"
                   dir="ltr"
                 >
@@ -2074,9 +2388,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 2
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 2
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -2111,9 +2432,13 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Three
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Three
+                </span>
+              </div>
             </a>
           </div>
           <ul
@@ -2128,9 +2453,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
-                <div
                   class="soui-menu-expand soui-menu-expand-front"
                   dir="ltr"
                 >
@@ -2152,9 +2474,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 3
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 3
+                    </span>
+                  </div>
                 </a>
               </div>
             </li>
@@ -2166,9 +2495,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
                 <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
-                <div
                   class="soui-menu-expand soui-menu-expand-front"
                   dir="ltr"
                 >
@@ -2190,9 +2516,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <a
                   class="soui-menu-title"
                 >
-                  <span>
-                    Option 4
-                  </span>
+                  <div
+                    style="width: 14px; flex-shrink: 0;"
+                  />
+                  <div
+                    class="soui-menu-title-content"
+                  >
+                    <span>
+                      Option 4
+                    </span>
+                  </div>
                 </a>
               </div>
               <ul
@@ -2207,9 +2540,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     class="soui-menu-item-content soui-menu-item-content-front"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
-                    />
-                    <div
                       class="soui-menu-expand soui-menu-expand-front"
                       dir="ltr"
                     >
@@ -2231,9 +2561,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     <a
                       class="soui-menu-title"
                     >
-                      <span>
-                        Optic 1
-                      </span>
+                      <div
+                        style="width: 28px; flex-shrink: 0;"
+                      />
+                      <div
+                        class="soui-menu-title-content"
+                      >
+                        <span>
+                          Optic 1
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -2245,9 +2582,6 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     class="soui-menu-item-content soui-menu-item-content-front"
                   >
                     <div
-                      style="width: 48px; flex-shrink: 0;"
-                    />
-                    <div
                       class="soui-menu-expand soui-menu-expand-front"
                       dir="ltr"
                     >
@@ -2269,9 +2603,16 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     <a
                       class="soui-menu-title"
                     >
-                      <span>
-                        Optic 2
-                      </span>
+                      <div
+                        style="width: 28px; flex-shrink: 0;"
+                      />
+                      <div
+                        class="soui-menu-title-content"
+                      >
+                        <span>
+                          Optic 2
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -2308,9 +2649,13 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <a
               class="soui-menu-title"
             >
-              <span>
-                Navigation Four
-              </span>
+              <div
+                class="soui-menu-title-content"
+              >
+                <span>
+                  Navigation Four
+                </span>
+              </div>
             </a>
           </div>
         </li>
@@ -2323,6 +2668,8 @@ exports[`Menu[Base] should render correctly about front 1`] = `
 exports[`Menu[Base] should render correctly about horizontal 1`] = `
 <div
   class="soui-menu-wrapper soui-menu-wrapper-horizontal soui-menu-wrapper-light"
+  data-soui-mode="horizontal"
+  data-soui-theme="light"
 >
   <div
     class="soui-menu-scrollbox"
@@ -2331,7 +2678,7 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
       class="soui-menu-root soui-menu-children-has-expand"
     >
       <li
-        class="soui-menu-item soui-menu-item-active"
+        class="soui-menu-item"
         dir="ltr"
       >
         <div
@@ -2340,9 +2687,13 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation One
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation One
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -2356,9 +2707,13 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Two
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Two
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -2380,99 +2735,6 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
             </div>
           </div>
         </div>
-        <ul
-          class="soui-menu-children soui-menu-children-has-expand"
-          dir="ltr"
-        >
-          <li
-            class="soui-menu-item soui-menu-item-has-children"
-            dir="ltr"
-          >
-            <div
-              class="soui-menu-item-content soui-menu-item-content-back"
-            >
-              <a
-                class="soui-menu-title"
-              >
-                <span>
-                  Option 1
-                </span>
-              </a>
-              <div
-                class="soui-menu-expand soui-menu-expand-back"
-                dir="ltr"
-              >
-                <div
-                  class="soui-menu-icon"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <ul
-              class="soui-menu-children"
-              dir="ltr"
-            >
-              <li
-                class="soui-menu-item"
-                dir="ltr"
-              >
-                <div
-                  class="soui-menu-item-content soui-menu-item-content-back"
-                >
-                  <a
-                    class="soui-menu-title"
-                  >
-                    <span>
-                      Optic 1
-                    </span>
-                  </a>
-                </div>
-              </li>
-              <li
-                class="soui-menu-item"
-                dir="ltr"
-              >
-                <div
-                  class="soui-menu-item-content soui-menu-item-content-back"
-                >
-                  <a
-                    class="soui-menu-title"
-                  >
-                    <span>
-                      Optic 2
-                    </span>
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li
-            class="soui-menu-item"
-            dir="ltr"
-          >
-            <div
-              class="soui-menu-item-content soui-menu-item-content-back"
-            >
-              <a
-                class="soui-menu-title"
-              >
-                <span>
-                  Option 2
-                </span>
-              </a>
-            </div>
-          </li>
-        </ul>
       </li>
       <li
         class="soui-menu-item soui-menu-item-has-children"
@@ -2484,9 +2746,13 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Three
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Three
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -2508,43 +2774,6 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
             </div>
           </div>
         </div>
-        <ul
-          class="soui-menu-children"
-          dir="ltr"
-        >
-          <li
-            class="soui-menu-item"
-            dir="ltr"
-          >
-            <div
-              class="soui-menu-item-content soui-menu-item-content-back"
-            >
-              <a
-                class="soui-menu-title"
-              >
-                <span>
-                  Option 3
-                </span>
-              </a>
-            </div>
-          </li>
-          <li
-            class="soui-menu-item"
-            dir="ltr"
-          >
-            <div
-              class="soui-menu-item-content soui-menu-item-content-back"
-            >
-              <a
-                class="soui-menu-title"
-              >
-                <span>
-                  Option 4
-                </span>
-              </a>
-            </div>
-          </li>
-        </ul>
       </li>
       <li
         class="soui-menu-item"
@@ -2556,9 +2785,13 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Four
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Four
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -2570,6 +2803,8 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
 exports[`Menu[Base] should render correctly about link 1`] = `
 <div
   class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-light"
+  data-soui-mode="inline"
+  data-soui-theme="light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
@@ -2589,9 +2824,13 @@ exports[`Menu[Base] should render correctly about link 1`] = `
             class="soui-menu-title"
             href="https://www.google.com"
           >
-            <span>
-              Google
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Google
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -2606,9 +2845,13 @@ exports[`Menu[Base] should render correctly about link 1`] = `
             class="soui-menu-title"
             href="https://www.strackoverflow.com"
           >
-            <span>
-              strackoverflow
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                strackoverflow
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -2623,9 +2866,13 @@ exports[`Menu[Base] should render correctly about link 1`] = `
             class="soui-menu-title"
             href="https://www.github.com"
           >
-            <span>
-              github
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                github
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -2637,6 +2884,8 @@ exports[`Menu[Base] should render correctly about link 1`] = `
 exports[`Menu[Base] should render correctly about render 1`] = `
 <div
   class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-has-open soui-menu-wrapper-light"
+  data-soui-mode="inline"
+  data-soui-theme="light"
   style="width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
@@ -2646,7 +2895,7 @@ exports[`Menu[Base] should render correctly about render 1`] = `
       class="soui-menu-root soui-menu-children-has-expand"
     >
       <li
-        class="soui-menu-item soui-menu-item-active"
+        class="soui-menu-item"
         dir="ltr"
       >
         <div
@@ -2655,20 +2904,29 @@ exports[`Menu[Base] should render correctly about render 1`] = `
           <a
             class="soui-menu-title"
           >
-            <svg
-              fill="none"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="soui-menu-title-icon"
             >
-              <path
-                d="M12.0218 2.00024L12.0602 2.00181C12.0752 2.00272 12.0902 2.00396 12.1052 2.00555C12.1245 2.00759 12.1439 2.01021 12.1632 2.0134C12.1834 2.01674 12.2037 2.02076 12.224 2.02541C12.2448 2.0302 12.2653 2.03563 12.2858 2.04174C12.3283 2.05443 12.3704 2.07012 12.4115 2.08874L12.5207 2.14669L12.6238 2.21913L22.6089 10.2191C23.617 11.0268 22.4745 12.5198 21.4564 11.8501L21.3614 11.7809L20.8121 11.3406C20.7259 11.2715 20.6001 11.2854 20.531 11.3716C20.5025 11.4071 20.487 11.4512 20.487 11.4967L20.4874 20C20.4874 21.4529 19.5572 22.0052 18.6068 21.9933L18.4903 22H5.50965C4.47075 22 3.51262 21 3.51262 20L3.51228 11.4968C3.51228 11.3864 3.42273 11.2968 3.31227 11.2968C3.26677 11.2968 3.22262 11.3124 3.18713 11.3408L2.63862 11.7809C1.63051 12.5886 0.426888 11.1445 1.3028 10.2968L1.39108 10.2191L11.3762 2.21913L11.4793 2.14669C11.4818 2.14511 11.4844 2.14354 11.487 2.14199L11.3762 2.21913C11.4218 2.18266 11.4697 2.15074 11.5194 2.12338C11.5462 2.10862 11.5735 2.09517 11.6013 2.08305C11.6177 2.0759 11.6343 2.06919 11.651 2.06295C11.6756 2.05379 11.7003 2.04564 11.7253 2.03849C11.7402 2.03424 11.7551 2.03033 11.7702 2.02678C11.7978 2.02024 11.8258 2.01488 11.8539 2.01072C11.8674 2.00874 11.8807 2.00705 11.894 2.00563C11.9258 2.00224 11.9579 2.00037 11.99 2C12.0004 2 12.0111 2 12.0218 2.00024ZM11.6874 4.53046L5.69668 9.32987C5.57823 9.42477 5.5093 9.56833 5.5093 9.72011L5.50964 19.5C5.50966 19.7761 5.73352 20 6.00965 20H8.00484C8.28097 20 8.50482 19.7761 8.50487 19.5L8.5052 14C8.5052 13.4872 8.89066 13.0645 9.38726 13.0067L9.4893 13.0008C9.49891 13.0003 9.50852 13 9.51814 13H14.4963C15.0478 13 15.4948 13.4477 15.4948 14L15.4945 19.5C15.4944 19.7761 15.7183 20 15.9944 20C15.9944 20.0001 15.9944 20 15.9944 20L17.9903 20C18.2665 20 18.4903 19.7761 18.4903 19.5V9.72009C18.4903 9.56833 18.4214 9.42478 18.303 9.32988L12.3126 4.53047C12.1299 4.38408 11.8701 4.38408 11.6874 4.53046ZM12.4978 15H11.5022C10.9499 15 10.5022 15.4477 10.5022 16V19.5C10.5022 19.7761 10.7261 20 11.0022 20H12.9978C13.2739 20 13.4978 19.7761 13.4978 19.5V16C13.4978 15.4477 13.0501 15 12.4978 15Z"
-                fill="currentColor"
-              />
-            </svg>
-             
-             Navigation One
+              <svg
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.0218 2.00024L12.0602 2.00181C12.0752 2.00272 12.0902 2.00396 12.1052 2.00555C12.1245 2.00759 12.1439 2.01021 12.1632 2.0134C12.1834 2.01674 12.2037 2.02076 12.224 2.02541C12.2448 2.0302 12.2653 2.03563 12.2858 2.04174C12.3283 2.05443 12.3704 2.07012 12.4115 2.08874L12.5207 2.14669L12.6238 2.21913L22.6089 10.2191C23.617 11.0268 22.4745 12.5198 21.4564 11.8501L21.3614 11.7809L20.8121 11.3406C20.7259 11.2715 20.6001 11.2854 20.531 11.3716C20.5025 11.4071 20.487 11.4512 20.487 11.4967L20.4874 20C20.4874 21.4529 19.5572 22.0052 18.6068 21.9933L18.4903 22H5.50965C4.47075 22 3.51262 21 3.51262 20L3.51228 11.4968C3.51228 11.3864 3.42273 11.2968 3.31227 11.2968C3.26677 11.2968 3.22262 11.3124 3.18713 11.3408L2.63862 11.7809C1.63051 12.5886 0.426888 11.1445 1.3028 10.2968L1.39108 10.2191L11.3762 2.21913L11.4793 2.14669C11.4818 2.14511 11.4844 2.14354 11.487 2.14199L11.3762 2.21913C11.4218 2.18266 11.4697 2.15074 11.5194 2.12338C11.5462 2.10862 11.5735 2.09517 11.6013 2.08305C11.6177 2.0759 11.6343 2.06919 11.651 2.06295C11.6756 2.05379 11.7003 2.04564 11.7253 2.03849C11.7402 2.03424 11.7551 2.03033 11.7702 2.02678C11.7978 2.02024 11.8258 2.01488 11.8539 2.01072C11.8674 2.00874 11.8807 2.00705 11.894 2.00563C11.9258 2.00224 11.9579 2.00037 11.99 2C12.0004 2 12.0111 2 12.0218 2.00024ZM11.6874 4.53046L5.69668 9.32987C5.57823 9.42477 5.5093 9.56833 5.5093 9.72011L5.50964 19.5C5.50966 19.7761 5.73352 20 6.00965 20H8.00484C8.28097 20 8.50482 19.7761 8.50487 19.5L8.5052 14C8.5052 13.4872 8.89066 13.0645 9.38726 13.0067L9.4893 13.0008C9.49891 13.0003 9.50852 13 9.51814 13H14.4963C15.0478 13 15.4948 13.4477 15.4948 14L15.4945 19.5C15.4944 19.7761 15.7183 20 15.9944 20C15.9944 20.0001 15.9944 20 15.9944 20L17.9903 20C18.2665 20 18.4903 19.7761 18.4903 19.5V9.72009C18.4903 9.56833 18.4214 9.42478 18.303 9.32988L12.3126 4.53047C12.1299 4.38408 11.8701 4.38408 11.6874 4.53046ZM12.4978 15H11.5022C10.9499 15 10.5022 15.4477 10.5022 16V19.5C10.5022 19.7761 10.7261 20 11.0022 20H12.9978C13.2739 20 13.4978 19.7761 13.4978 19.5V16C13.4978 15.4477 13.0501 15 12.4978 15Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation One
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -2682,20 +2940,29 @@ exports[`Menu[Base] should render correctly about render 1`] = `
           <a
             class="soui-menu-title"
           >
-            <svg
-              fill="none"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="soui-menu-title-icon"
             >
-              <path
-                d="M20.8307 1.01559C21.0306 0.979794 21.224 1.00728 21.3942 1.08123C21.4003 1.08519 21.4073 1.08828 21.4143 1.09145C21.5175 1.13795 21.611 1.20233 21.6919 1.2799C21.697 1.28477 21.7021 1.28976 21.7072 1.29482L21.7221 1.31005C21.7996 1.39091 21.864 1.48449 21.9114 1.58697C21.9137 1.59469 21.9168 1.60169 21.9198 1.60872C22.0144 1.8233 22.0335 2.07618 21.9439 2.33228L21.9631 2.27191C21.9593 2.2857 21.9551 2.29942 21.9507 2.31306L21.9439 2.33228L15.2939 21.3323C14.9947 22.1871 13.8041 22.2357 13.4362 21.4081L9.79203 13.2089L1.59389 9.56574C0.805676 9.21542 0.812201 8.11879 1.55305 7.75669L1.66968 7.70807L20.6697 1.05807C20.6764 1.05573 20.683 1.05347 20.6897 1.05128C20.7026 1.04688 20.7163 1.04273 20.7301 1.03888C20.7588 1.03075 20.7868 1.02405 20.8147 1.01859C20.8176 1.01863 20.8206 1.01807 20.8236 1.01753L20.8307 1.01559ZM18.608 5.808L11.742 12.674L14.239 18.2909L18.608 5.808ZM17.195 4.391L4.71003 8.76193L10.327 11.259L17.195 4.391Z"
-                fill="currentColor"
-              />
-            </svg>
-             
-             Navigation Two
+              <svg
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.8307 1.01559C21.0306 0.979794 21.224 1.00728 21.3942 1.08123C21.4003 1.08519 21.4073 1.08828 21.4143 1.09145C21.5175 1.13795 21.611 1.20233 21.6919 1.2799C21.697 1.28477 21.7021 1.28976 21.7072 1.29482L21.7221 1.31005C21.7996 1.39091 21.864 1.48449 21.9114 1.58697C21.9137 1.59469 21.9168 1.60169 21.9198 1.60872C22.0144 1.8233 22.0335 2.07618 21.9439 2.33228L21.9631 2.27191C21.9593 2.2857 21.9551 2.29942 21.9507 2.31306L21.9439 2.33228L15.2939 21.3323C14.9947 22.1871 13.8041 22.2357 13.4362 21.4081L9.79203 13.2089L1.59389 9.56574C0.805676 9.21542 0.812201 8.11879 1.55305 7.75669L1.66968 7.70807L20.6697 1.05807C20.6764 1.05573 20.683 1.05347 20.6897 1.05128C20.7026 1.04688 20.7163 1.04273 20.7301 1.03888C20.7588 1.03075 20.7868 1.02405 20.8147 1.01859C20.8176 1.01863 20.8206 1.01807 20.8236 1.01753L20.8307 1.01559ZM18.608 5.808L11.742 12.674L14.239 18.2909L18.608 5.808ZM17.195 4.391L4.71003 8.76193L10.327 11.259L17.195 4.391Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Two
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -2728,15 +2995,19 @@ exports[`Menu[Base] should render correctly about render 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 1
-                </span>
+                <div
+                  style="width: 22px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 1
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -2747,15 +3018,19 @@ exports[`Menu[Base] should render correctly about render 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 2
-                </span>
+                <div
+                  style="width: 22px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 2
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -2771,20 +3046,29 @@ exports[`Menu[Base] should render correctly about render 1`] = `
           <a
             class="soui-menu-title"
           >
-            <svg
-              fill="none"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="soui-menu-title-icon"
             >
-              <path
-                d="M13.9994 2.00219L19.7686 2.24C20.7799 2.28169 21.6007 3.07247 21.68 4.08162L22.1572 10.1534C22.203 10.7366 21.9912 11.3106 21.5775 11.7243L11.6922 21.6097C10.9111 22.3907 9.64478 22.3907 8.86373 21.6097L2.58579 15.3317C1.80474 14.5507 1.80474 13.2844 2.58579 12.5033L12.5028 2.58628C12.8981 2.19097 13.4408 1.97916 13.9994 2.00219ZM13.917 4.00049L4.70711 13.2104C4.31658 13.6009 4.31658 14.2341 4.70711 14.6246L9.57084 19.4884C9.96136 19.8789 10.5945 19.8789 10.9851 19.4884L20.1633 10.3101L19.7209 4.68044C19.7011 4.42816 19.4959 4.23046 19.2431 4.22004L13.917 4.00049ZM15.3854 5.83727C16.7661 5.83727 17.8854 6.95655 17.8854 8.33727C17.8854 9.71798 16.7661 10.8373 15.3854 10.8373C14.0047 10.8373 12.8854 9.71798 12.8854 8.33727C12.8854 6.95655 14.0047 5.83727 15.3854 5.83727ZM15.3854 7.83727C15.1093 7.83727 14.8854 8.06112 14.8854 8.33727C14.8854 8.61341 15.1093 8.83727 15.3854 8.83727C15.6615 8.83727 15.8854 8.61341 15.8854 8.33727C15.8854 8.06112 15.6615 7.83727 15.3854 7.83727Z"
-                fill="currentColor"
-              />
-            </svg>
-             
-             Navigation Three
+              <svg
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.9994 2.00219L19.7686 2.24C20.7799 2.28169 21.6007 3.07247 21.68 4.08162L22.1572 10.1534C22.203 10.7366 21.9912 11.3106 21.5775 11.7243L11.6922 21.6097C10.9111 22.3907 9.64478 22.3907 8.86373 21.6097L2.58579 15.3317C1.80474 14.5507 1.80474 13.2844 2.58579 12.5033L12.5028 2.58628C12.8981 2.19097 13.4408 1.97916 13.9994 2.00219ZM13.917 4.00049L4.70711 13.2104C4.31658 13.6009 4.31658 14.2341 4.70711 14.6246L9.57084 19.4884C9.96136 19.8789 10.5945 19.8789 10.9851 19.4884L20.1633 10.3101L19.7209 4.68044C19.7011 4.42816 19.4959 4.23046 19.2431 4.22004L13.917 4.00049ZM15.3854 5.83727C16.7661 5.83727 17.8854 6.95655 17.8854 8.33727C17.8854 9.71798 16.7661 10.8373 15.3854 10.8373C14.0047 10.8373 12.8854 9.71798 12.8854 8.33727C12.8854 6.95655 14.0047 5.83727 15.3854 5.83727ZM15.3854 7.83727C15.1093 7.83727 14.8854 8.06112 14.8854 8.33727C14.8854 8.61341 15.1093 8.83727 15.3854 8.83727C15.6615 8.83727 15.8854 8.61341 15.8854 8.33727C15.8854 8.06112 15.6615 7.83727 15.3854 7.83727Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Three
+              </span>
+            </div>
           </a>
           <div
             class="soui-menu-expand soui-menu-expand-back"
@@ -2817,15 +3101,19 @@ exports[`Menu[Base] should render correctly about render 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 3
-                </span>
+                <div
+                  style="width: 22px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 3
+                  </span>
+                </div>
               </a>
             </div>
           </li>
@@ -2836,15 +3124,19 @@ exports[`Menu[Base] should render correctly about render 1`] = `
             <div
               class="soui-menu-item-content soui-menu-item-content-back"
             >
-              <div
-                style="width: 24px; flex-shrink: 0;"
-              />
               <a
                 class="soui-menu-title"
               >
-                <span>
-                  Option 4
-                </span>
+                <div
+                  style="width: 22px; flex-shrink: 0;"
+                />
+                <div
+                  class="soui-menu-title-content"
+                >
+                  <span>
+                    Option 4
+                  </span>
+                </div>
               </a>
               <div
                 class="soui-menu-expand soui-menu-expand-back"
@@ -2877,15 +3169,19 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                 <div
                   class="soui-menu-item-content soui-menu-item-content-back"
                 >
-                  <div
-                    style="width: 48px; flex-shrink: 0;"
-                  />
                   <a
                     class="soui-menu-title"
                   >
-                    <span>
-                      Optic 1
-                    </span>
+                    <div
+                      style="width: 44px; flex-shrink: 0;"
+                    />
+                    <div
+                      class="soui-menu-title-content"
+                    >
+                      <span>
+                        Optic 1
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -2896,15 +3192,19 @@ exports[`Menu[Base] should render correctly about render 1`] = `
                 <div
                   class="soui-menu-item-content soui-menu-item-content-back"
                 >
-                  <div
-                    style="width: 48px; flex-shrink: 0;"
-                  />
                   <a
                     class="soui-menu-title"
                   >
-                    <span>
-                      Optic 2
-                    </span>
+                    <div
+                      style="width: 44px; flex-shrink: 0;"
+                    />
+                    <div
+                      class="soui-menu-title-content"
+                    >
+                      <span>
+                        Optic 2
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -2922,20 +3222,29 @@ exports[`Menu[Base] should render correctly about render 1`] = `
           <a
             class="soui-menu-title"
           >
-            <svg
-              fill="none"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="soui-menu-title-icon"
             >
-              <path
-                d="M12.0011 2.00049C6.47548 1.9982 2 6.5931 2 12.2644C2 16.7492 4.79969 20.5614 8.69869 21.9615C9.22377 22.0969 9.14334 21.7136 9.14334 21.452V19.6732C6.11127 20.0381 5.98838 17.9771 5.78505 17.6328C5.37392 16.9121 4.40197 16.7285 4.69244 16.3842C5.38286 16.0193 6.08669 16.4761 6.90225 17.7131C7.49212 18.6106 8.64283 18.4591 9.22601 18.3099C9.35337 17.7705 9.62596 17.2885 10.0013 16.9144C6.85979 16.3361 5.55044 14.3668 5.55044 12.0257C5.55044 10.8896 5.91465 9.84534 6.62965 9.00302C6.17384 7.61445 6.6721 6.42555 6.73914 6.24883C8.03731 6.12948 9.38688 7.20361 9.4919 7.28853C10.2292 7.08426 11.0716 6.97639 12.0145 6.97639C12.9619 6.97639 13.8065 7.08885 14.5506 7.29542C14.803 7.09803 16.0543 6.17538 17.2609 6.28784C17.3257 6.46457 17.8128 7.62592 17.3838 8.99613C18.1077 9.84075 18.4764 10.8942 18.4764 12.0326C18.4764 14.3783 17.1581 16.3498 14.0076 16.919C14.5327 17.4515 14.8589 18.1905 14.8589 19.0076V21.5897C14.8768 21.7962 14.8589 22.0005 15.1941 22.0005C19.1512 20.6303 22 16.7905 22 12.2667C22 6.5931 17.5223 2.00049 12.0011 2.00049Z"
-                fill="currentColor"
-              />
-            </svg>
-             
-             Navigation Four
+              <svg
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.0011 2.00049C6.47548 1.9982 2 6.5931 2 12.2644C2 16.7492 4.79969 20.5614 8.69869 21.9615C9.22377 22.0969 9.14334 21.7136 9.14334 21.452V19.6732C6.11127 20.0381 5.98838 17.9771 5.78505 17.6328C5.37392 16.9121 4.40197 16.7285 4.69244 16.3842C5.38286 16.0193 6.08669 16.4761 6.90225 17.7131C7.49212 18.6106 8.64283 18.4591 9.22601 18.3099C9.35337 17.7705 9.62596 17.2885 10.0013 16.9144C6.85979 16.3361 5.55044 14.3668 5.55044 12.0257C5.55044 10.8896 5.91465 9.84534 6.62965 9.00302C6.17384 7.61445 6.6721 6.42555 6.73914 6.24883C8.03731 6.12948 9.38688 7.20361 9.4919 7.28853C10.2292 7.08426 11.0716 6.97639 12.0145 6.97639C12.9619 6.97639 13.8065 7.08885 14.5506 7.29542C14.803 7.09803 16.0543 6.17538 17.2609 6.28784C17.3257 6.46457 17.8128 7.62592 17.3838 8.99613C18.1077 9.84075 18.4764 10.8942 18.4764 12.0326C18.4764 14.3783 17.1581 16.3498 14.0076 16.919C14.5327 17.4515 14.8589 18.1905 14.8589 19.0076V21.5897C14.8768 21.7962 14.8589 22.0005 15.1941 22.0005C19.1512 20.6303 22 16.7905 22 12.2667C22 6.5931 17.5223 2.00049 12.0011 2.00049Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Four
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -2947,6 +3256,8 @@ exports[`Menu[Base] should render correctly about render 1`] = `
 exports[`Menu[Base] should render correctly about vertical 1`] = `
 <div
   class="soui-menu-wrapper soui-menu-wrapper-vertical soui-menu-wrapper-light"
+  data-soui-mode="vertical"
+  data-soui-theme="light"
   style="height: 300px; width: 256px; border: 1px solid #e8ebf0;"
 >
   <div
@@ -2954,10 +3265,9 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
   >
     <ul
       class="soui-menu-root soui-menu-children-has-expand"
-      style="width: 256px;"
     >
       <li
-        class="soui-menu-item soui-menu-item-active"
+        class="soui-menu-item"
         dir="ltr"
       >
         <div
@@ -2966,9 +3276,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation One
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation One
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -2982,12 +3296,16 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation Two
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation Two
+              </span>
+            </div>
           </a>
           <div
-            class="soui-menu-expand soui-menu-expand-back"
+            class="soui-menu-expand soui-menu-expand-back soui-menu-expand-vertical"
             dir="ltr"
           >
             <div
@@ -3006,57 +3324,44 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
             </div>
           </div>
         </div>
-        <ul
-          class="soui-menu-children"
-          dir="ltr"
+      </li>
+      <li
+        class="soui-menu-item"
+        dir="ltr"
+      >
+        <div
+          class="soui-menu-item-content soui-menu-item-content-back"
         >
-          <li
-            class="soui-menu-item"
-            dir="ltr"
+          <a
+            class="soui-menu-title"
           >
             <div
-              class="soui-menu-item-content soui-menu-item-content-back"
+              class="soui-menu-title-content"
             >
-              <a
-                class="soui-menu-title"
-              >
-                <span>
-                  Option 1
-                </span>
-              </a>
+              <span>
+                Navigation 21
+              </span>
             </div>
-          </li>
-          <li
-            class="soui-menu-item"
-            dir="ltr"
+          </a>
+        </div>
+      </li>
+      <li
+        class="soui-menu-item"
+        dir="ltr"
+      >
+        <div
+          class="soui-menu-item-content soui-menu-item-content-back"
+        >
+          <a
+            class="soui-menu-title"
           >
             <div
-              class="soui-menu-item-content soui-menu-item-content-back"
+              class="soui-menu-title-content"
             >
-              <a
-                class="soui-menu-title"
-              >
-                <span>
-                  Option 2
-                </span>
-              </a>
+              <span>
+                Navigation 22
+              </span>
             </div>
-          </li>
-        </ul>
-      </li>
-      <li
-        class="soui-menu-item"
-        dir="ltr"
-      >
-        <div
-          class="soui-menu-item-content soui-menu-item-content-back"
-        >
-          <a
-            class="soui-menu-title"
-          >
-            <span>
-              Navigation 21
-            </span>
           </a>
         </div>
       </li>
@@ -3070,9 +3375,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 22
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 23
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3086,9 +3395,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 23
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 24
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3102,9 +3415,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 24
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 25
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3118,9 +3435,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 25
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 26
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3134,9 +3455,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 26
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 27
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3150,9 +3475,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 27
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 28
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3166,25 +3495,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 28
-            </span>
-          </a>
-        </div>
-      </li>
-      <li
-        class="soui-menu-item"
-        dir="ltr"
-      >
-        <div
-          class="soui-menu-item-content soui-menu-item-content-back"
-        >
-          <a
-            class="soui-menu-title"
-          >
-            <span>
-              Navigation 29
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 29
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3198,12 +3515,16 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 30
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 30
+              </span>
+            </div>
           </a>
           <div
-            class="soui-menu-expand soui-menu-expand-back"
+            class="soui-menu-expand soui-menu-expand-back soui-menu-expand-vertical"
             dir="ltr"
           >
             <div
@@ -3222,99 +3543,6 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
             </div>
           </div>
         </div>
-        <ul
-          class="soui-menu-children soui-menu-children-has-expand"
-          dir="ltr"
-        >
-          <li
-            class="soui-menu-item"
-            dir="ltr"
-          >
-            <div
-              class="soui-menu-item-content soui-menu-item-content-back"
-            >
-              <a
-                class="soui-menu-title"
-              >
-                <span>
-                  Option 3
-                </span>
-              </a>
-            </div>
-          </li>
-          <li
-            class="soui-menu-item soui-menu-item-has-children"
-            dir="ltr"
-          >
-            <div
-              class="soui-menu-item-content soui-menu-item-content-back"
-            >
-              <a
-                class="soui-menu-title"
-              >
-                <span>
-                  Option 4
-                </span>
-              </a>
-              <div
-                class="soui-menu-expand soui-menu-expand-back"
-                dir="ltr"
-              >
-                <div
-                  class="soui-menu-icon"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <ul
-              class="soui-menu-children"
-              dir="ltr"
-            >
-              <li
-                class="soui-menu-item"
-                dir="ltr"
-              >
-                <div
-                  class="soui-menu-item-content soui-menu-item-content-back"
-                >
-                  <a
-                    class="soui-menu-title"
-                  >
-                    <span>
-                      Optic 1
-                    </span>
-                  </a>
-                </div>
-              </li>
-              <li
-                class="soui-menu-item"
-                dir="ltr"
-              >
-                <div
-                  class="soui-menu-item-content soui-menu-item-content-back"
-                >
-                  <a
-                    class="soui-menu-title"
-                  >
-                    <span>
-                      Optic 2
-                    </span>
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
       </li>
       <li
         class="soui-menu-item"
@@ -3326,9 +3554,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 31
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 31
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3342,9 +3574,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 32
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 32
+              </span>
+            </div>
           </a>
         </div>
       </li>
@@ -3358,9 +3594,13 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <a
             class="soui-menu-title"
           >
-            <span>
-              Navigation 33
-            </span>
+            <div
+              class="soui-menu-title-content"
+            >
+              <span>
+                Navigation 33
+              </span>
+            </div>
           </a>
         </div>
       </li>

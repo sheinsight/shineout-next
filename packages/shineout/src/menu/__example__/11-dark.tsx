@@ -80,12 +80,12 @@ const App: React.FC = () => {
       <Menu
         data={data}
         keygen='id'
+        inlineIndent={14}
         theme='dark'
         active={checkActive}
         onClick={handleClick}
         style={{ width: 256 }}
         renderItem={renderItem}
-        mode='vertical-auto'
       />
     </div>
   );

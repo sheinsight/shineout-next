@@ -68,6 +68,8 @@ const tableStyle: JsStyles<TableClassType> = {
       '& td': {
         background: token.tableTbodyBackgroundColor,
         color: token.tableTbodyFontColor,
+        fontSize: token.tableCellFontSize,
+        fontWeight: token.tableCellFontWeight,
         '&[data-soui-table-selection]::before': {
           content: '""',
           position: 'absolute',
@@ -83,12 +85,14 @@ const tableStyle: JsStyles<TableClassType> = {
         verticalAlign: 'middle',
         background: token.tableTheadBackgroundColor,
         color: token.tableTheadFontColor,
-        fontWeight: 'bold',
         boxSizing: 'border-box',
+        fontWeight: token.tableTheadFontWeight,
+        fontSize: token.tableTheadFontSize,
       },
       '& tfoot td': {
         background: token.tableTfootBackgroundColor,
         color: token.tableTfootFontColor,
+        fontWeight: token.tableTfootFontWeight,
       },
       '&bordered tr:last-child td': {
         borderBottom: 'none',
@@ -117,10 +121,26 @@ const tableStyle: JsStyles<TableClassType> = {
     '& th, & td': {
       padding: `${token.tableSmallCellPaddingY} ${token.tableSmallCellPaddingX}`,
     },
+    '& table th': {
+      fontSize: token.tableSmallTheadFontSize,
+      fontWeight: token.tableSmallTheadFontWeight,
+    },
+    '& table td': {
+      fontSize: token.tableSmallCellFontSize,
+      fontWeight: token.tableSmallCellFontWeight,
+    },
   },
   large: {
     '& th, & td': {
       padding: `${token.tableLargeCellPaddingY} ${token.tableLargeCellPaddingX}`,
+    },
+    '& table th': {
+      fontSize: token.tableLargeTheadFontSize,
+      fontWeight: token.tableLargeTheadFontWeight,
+    },
+    '& table td': {
+      fontSize: token.tableLargeCellFontSize,
+      fontWeight: token.tableLargeCellFontWeight,
     },
   },
   bordered: {

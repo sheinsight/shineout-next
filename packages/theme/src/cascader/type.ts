@@ -310,6 +310,18 @@ export interface CascaderTokens {
   cascaderOptionHeight: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 级联选择器选项字体颜色
+   */
+  cascaderOptionFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 级联选择器选项背景颜色
+   */
+  cascaderOptionBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Spacing-4
    * @description 级联选择器选项内边距（水平方向）
    */
@@ -368,6 +380,12 @@ export interface CascaderTokens {
    * @description 级联选择器选项鼠标移入时的背景颜色
    */
   cascaderOptionHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 级联选择器选项鼠标移入时的字体颜色
+   */
+  cascaderOptionHoverFontColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2

@@ -27,11 +27,11 @@ const data: MenuItem[] = [
   {
     id: '3',
     title: 'Navigation Two',
-    disabled: true,
     children: [
       {
         id: '4',
         title: 'Option 1',
+        disabled: true,
       },
       {
         id: '5',
@@ -86,7 +86,7 @@ const App: React.FC = () => {
       data={data}
       keygen='id'
       mode='inline'
-      inlineIndent={24}
+      inlineIndent={14}
       active={checkActive}
       onClick={handleClick}
       style={{ width: 256, border: '1px solid #e8ebf0' }}

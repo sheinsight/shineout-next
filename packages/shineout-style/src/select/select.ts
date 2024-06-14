@@ -7,11 +7,12 @@ export type SelectClassType = keyof SelectClasses;
 
 const inputBorderToken = {
   lineHeight: token.lineHeightDynamic,
-  borderRadius: token.selectBorderRadius,
+  borderRadius: token.inputBorderRadius,
 
-  fontSize: token.selectFontSize,
-  smallFontSize: token.selectSmallFontSize,
-  largeFontSize: token.selectLargeFontSize,
+  fontSize: token.inputFontSize,
+  fontWeight: token.inputFontWeight,
+  smallFontSize: token.inputSmallFontSize,
+  largeFontSize: token.inputLargeFontSize,
 
   paddingY: token.selectPaddingY,
   smallPaddingY: token.selectSmallPaddingY,
@@ -21,20 +22,28 @@ const inputBorderToken = {
   smallPaddingX: token.selectSmallPaddingX,
   largePaddingX: token.selectLargePaddingX,
 
-  borderColor: token.selectBorderColor,
-  focusBorderColor: token.selectFocusBorderColor,
-  hoverBorderColor: token.selectHoverBorderColor,
-  disabledBorderColor: token.selectDisabledBorderColor,
-  errorBorderColor: token.selectErrorBorderColor,
+  borderColor: token.inputBorderColor,
+  borderWidth: token.inputBorderWidth,
+  focusBorderColor: token.inputFocusBorderColor,
+  hoverBorderColor: token.inputHoverBorderColor,
+  disabledBorderColor: token.inputDisabledBorderColor,
+  errorBorderColor: token.inputErrorBorderColor,
+  errorHoverBorderColor: token.inputErrorHoverBorderColor,
+  errorFocusBorderColor: token.inputErrorFocusBorderColor,
 
-  fontColor: token.selectFontColor,
-  disabledFontColor: token.selectDisabledFontColor,
+  fontColor: token.inputFontColor,
+  disabledFontColor: token.inputDisabledFontColor,
 
-  backgroundColor: token.selectBackgroundColor,
-  disabledBackgroundColor: token.selectDisabledBackgroundColor,
+  backgroundColor: token.inputBackgroundColor,
+  hoverBackgroundColor: token.inputHoverBackgroundColor,
+  focusBackgroundColor: token.inputFocusBackgroundColor,
+  disabledBackgroundColor: token.inputDisabledBackgroundColor,
+  errorBackgroundColor: token.inputErrorBackgroundColor,
+  errorFocusBackgroundColor: token.inputErrorFocusBackgroundColor,
+  errorHoverBackgroundColor: token.inputErrorHoverBackgroundColor,
 
-  focusShadow: token.selectFocusShadow,
-  errorFocusShadow: token.selectErrorFocusShadow,
+  focusShadow: token.inputFocusShadow,
+  errorFocusShadow: token.inputErrorFocusShadow,
 
   innerTitlePaddingY: token.inputInnerPaddingY,
   innerTitlePaddingX: token.inputInnerPaddingX,
@@ -99,6 +108,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       },
     },
     '&:hover': {
+      ...wrapper['&:hover'],
       cursor: 'pointer',
       '&$clearable:not($wrapperEmpty)': {
         '& $clearIcon': {
@@ -121,6 +131,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     ...wrapperDisabled,
     '& $arrowIcon': {
       color: token.selectDisabledIconColor,
+    },
+    '& $placeholder': {
+      color: token.selectDisabledPlaceholderColor,
     },
   },
   popover: {},
@@ -336,7 +349,12 @@ const selectStyle: JsStyles<SelectClassType> = {
     padding: 10,
     display: 'flex',
     justifyContent: 'center',
+    '& > $loadingSpin': {
+      borderColor: token.selectLoadingSpinColor,
+      borderTopColor: 'transparent',
+    },
   },
+  loadingSpin: {},
   checkedIcon: {
     '&[dir=ltr]': { right: 8 },
     '&[dir=rtl]': { left: 8 },
@@ -428,10 +446,16 @@ const selectStyle: JsStyles<SelectClassType> = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    color: token.selectOptionFontColor,
     fontSize: token.selectFontSize,
     lineHeight: token.lineHeightDynamic,
+    background: token.selectOptionBackgroundColor,
     padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
     borderRadius: token.selectOptionInnerBorderRadius,
+    // hover
+    '&:not($optionDisabled):not($optionActive):hover': {
+      color: token.selectOptionHoverFontColor,
+    },
   },
   optionHover: {
     // backgroundColor: token.selectOptionHoverBackgroundColor,
@@ -462,13 +486,14 @@ const selectStyle: JsStyles<SelectClassType> = {
     lineHeight: token.lineHeightDynamic,
     padding: `${token.selectGroupTitlePaddingTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
     color: token.selectGroupTitleFontColor,
+    fontWeight: token.selectGroupTitleFontWeight,
   },
   header: {
     display: 'flex',
     alignItems: 'center',
     boxSizing: 'border-box',
     height: 32,
-    padding: token.selectHeaderPadding,
+    padding: `${token.selectHeaderPaddingY} ${token.selectHeaderPaddingX}`,
     borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
     marginBottom: 4,
     '& $columnsCheckbox': {
@@ -485,7 +510,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     alignItems: 'center',
     padding: `0 ${token.selectOptionPaddingX}`,
     '& $optionGroupTitle': {
-      padding: `0 ${token.selectHeaderPadding}`,
+      padding: `0 ${token.selectHeaderPaddingX}`,
       marginLeft: token.selectColumnOptionMargin,
     },
   },
@@ -502,8 +527,8 @@ const selectStyle: JsStyles<SelectClassType> = {
       marginRight: 0,
     },
     '&:not($optionDisabled):hover': {
-      background: token.selectColumnBackgroundColor,
-      borderRadius: token.selectColumnBorderRadius,
+      background: token.selectOptionHoverBackgroundColor,
+      borderRadius: token.selectPanelRadius,
     },
   },
   columnsRadio: {
@@ -528,7 +553,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
   },
   empty: {
-    color: token.selectPlaceholderColor,
+    color: token.selectEmptyFontColor,
   },
 };
 
