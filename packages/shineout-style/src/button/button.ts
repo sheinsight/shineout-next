@@ -169,15 +169,15 @@ const textBeforeLine = () => ({
   },
 });
 
-const loading = (type: ButtonTypeWithoutLink, styles: ButtonStyleType) => {
-  const buttonStyle = button(type, styles);
+// const loading = (type: ButtonTypeWithoutLink, styles: ButtonStyleType) => {
+//   const buttonStyle = button(type, styles);
 
-  return {
-    '&$loading': {
-      ...buttonStyle['&$disabled'],
-    },
-  };
-};
+//   return {
+//     '&$loading': {
+//       ...buttonStyle['&$disabled'],
+//     },
+//   };
+// };
 
 const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   button: {
@@ -357,24 +357,24 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   loading: {
     cursor: 'not-allowed',
 
-    '&$default': {
-      ...loading('Secondary', ''),
-    },
-    '&$primary': {
-      ...loading('Primary', ''),
-    },
-    '&$success': {
-      ...loading('Success', ''),
-    },
-    '&$danger': {
-      ...loading('Danger', ''),
-    },
-    '&$warning': {
-      ...loading('Warning', ''),
-    },
-    '&$secondary': {
-      ...loading('Secondary', ''),
-    },
+    // '&$default': {
+    //   ...loading('Secondary', ''),
+    // },
+    // '&$primary': {
+    //   ...loading('Primary', ''),
+    // },
+    // '&$success': {
+    //   ...loading('Success', ''),
+    // },
+    // '&$danger': {
+    //   ...loading('Danger', ''),
+    // },
+    // '&$warning': {
+    //   ...loading('Warning', ''),
+    // },
+    // '&$secondary': {
+    //   ...loading('Secondary', ''),
+    // },
   },
 
   groupItem: {},

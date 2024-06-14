@@ -720,13 +720,9 @@ exports[`Tag[Base] should render correctly about size 1`] = `
       <div
         class="soui-tag-wrapper"
       >
-        <div
-          class="soui-tag-container"
-        >
-          <span>
-            Small
-          </span>
-        </div>
+        <span>
+          Small
+        </span>
       </div>
       <div
         class="soui-tag-close-icon"
@@ -753,13 +749,9 @@ exports[`Tag[Base] should render correctly about size 1`] = `
       <div
         class="soui-tag-wrapper"
       >
-        <div
-          class="soui-tag-container"
-        >
-          <span>
-            Default
-          </span>
-        </div>
+        <span>
+          Default
+        </span>
       </div>
       <div
         class="soui-tag-close-icon"
@@ -786,13 +778,9 @@ exports[`Tag[Base] should render correctly about size 1`] = `
       <div
         class="soui-tag-wrapper"
       >
-        <div
-          class="soui-tag-container"
-        >
-          <span>
-            Large
-          </span>
-        </div>
+        <span>
+          Large
+        </span>
       </div>
       <div
         class="soui-tag-close-icon"
@@ -828,13 +816,9 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       <div
         class="soui-tag-wrapper"
       >
-        <div
-          class="soui-tag-container"
-        >
-          <span>
-            Tag 1
-          </span>
-        </div>
+        <span>
+          Tag 1
+        </span>
       </div>
       <div
         class="soui-tag-close-icon"
@@ -861,13 +845,9 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       <div
         class="soui-tag-wrapper"
       >
-        <div
-          class="soui-tag-container"
-        >
-          <span>
-            Tag 2
-          </span>
-        </div>
+        <span>
+          Tag 2
+        </span>
       </div>
       <div
         class="soui-tag-close-icon"
@@ -894,13 +874,9 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       <div
         class="soui-tag-wrapper"
       >
-        <div
-          class="soui-tag-container"
-        >
-          <span>
-            Tag 3
-          </span>
-        </div>
+        <span>
+          Tag 3
+        </span>
       </div>
       <div
         class="soui-tag-close-icon"
@@ -954,13 +930,9 @@ exports[`Tag[Input] should render correctly about input 1`] = `
     <div
       class="soui-tag-wrapper"
     >
-      <div
-        class="soui-tag-container"
-      >
-        <span>
-          Abc
-        </span>
-      </div>
+      <span>
+        Abc
+      </span>
     </div>
     <div
       class="soui-tag-close-icon"
