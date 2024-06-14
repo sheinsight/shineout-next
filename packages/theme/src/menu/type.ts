@@ -82,6 +82,12 @@ export interface MenuTokens {
   menuItemActiveFontColor: string;
   /**
    * @type {string}
+   * @token Brand-3
+   * @description 菜单选项鼠标点击时的禁用时的字体颜色
+   */
+  menuItemActiveDisabledFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-1
    * @description 菜单选项禁用时的背景颜色
    */
@@ -92,6 +98,18 @@ export interface MenuTokens {
    * @description 菜单选项禁用时的字体颜色
    */
   menuItemDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 菜单选项undefined鼠标点击时的背景颜色
+   */
+  menuItemCollpaseActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 菜单选项undefined鼠标点击时的字体颜色
+   */
+  menuItemCollpaseActiveFontColor: string;
   /**
    * @type {string}
    * @token Spacing-16
@@ -134,6 +152,18 @@ export interface MenuTokens {
    * @description 菜单undefined边框颜色
    */
   menuHeaderBorderColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 菜单undefined内边距（水平方向）
+   */
+  menuHeaderPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 菜单undefined内边距（垂直方向）
+   */
+  menuHeaderPaddingY: string;
   /**
    * @type {string}
    * @token Neutral-text-1
@@ -202,6 +232,18 @@ export interface MenuTokens {
   menuDarkItemDisabledFontColor: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 菜单深色模式选项undefined鼠标点击时的背景颜色
+   */
+  menuDarkItemCollpaseActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 菜单深色模式选项undefined鼠标点击时的字体颜色
+   */
+  menuDarkItemCollpaseActiveFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-8
    * @description 菜单深色模式undefined边框颜色
    */
@@ -220,10 +262,10 @@ export interface MenuTokens {
   menuSearchBorderColor: string;
   /**
    * @type {string}
-   * @token Spacing-8
-   * @description 菜单undefined内边距（水平方向）
+   * @token Size-16
+   * @description 菜单undefinedundefined字号
    */
-  menuSearchPaddingX: string;
+  menuSearchCollpaseSize: string;
   /**
    * @type {string}
    * @token Size-7

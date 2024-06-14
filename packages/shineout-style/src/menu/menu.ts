@@ -35,7 +35,6 @@ const menuStyle: JsStyles<MenuClassType> = {
       justifyContent: 'center',
     },
     '& $titleContent': {
-      opacity: 0,
       alignItems: 'center',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
@@ -180,6 +179,9 @@ const menuStyle: JsStyles<MenuClassType> = {
     alignItems: 'center',
     cursor: 'pointer',
     position: 'relative',
+    '&  a': {
+      transition: 'none',
+    },
     '[data-soui-theme=light] &': {
       color: token.menuItemFontColor,
       backgroundColor: token.menuItemBackgroundColor,
@@ -213,6 +215,13 @@ const menuStyle: JsStyles<MenuClassType> = {
         },
       },
 
+      '[data-soui-theme=light] $itemDisabled&': {
+        color: token.menuItemActiveDisabledFontColor,
+        '& $icon': {
+          color: token.menuItemActiveDisabledFontColor,
+        },
+      },
+
       '[data-soui-theme=dark][data-soui-mode=inline] &::before, [data-soui-theme=dark][data-soui-mode=vertical] &::before':
         {
           content: '""',
@@ -223,6 +232,25 @@ const menuStyle: JsStyles<MenuClassType> = {
           width: '3px',
           backgroundColor: token.menuDarkItemActiveBackgroundColor,
         },
+
+      '$wrapperCollpase[data-soui-theme=light] $root > &': {
+        color: token.menuItemCollpaseActiveFontColor,
+        backgroundColor: token.menuItemCollpaseActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuItemCollpaseActiveFontColor,
+        },
+      },
+      '$wrapperCollpase[data-soui-theme=dark] $root > &': {
+        color: token.menuDarkItemCollpaseActiveFontColor,
+        backgroundColor: token.menuDarkItemCollpaseActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuDarkItemCollpaseActiveFontColor,
+        },
+      },
+      '$wrapperCollpase $root > &::before': {
+        display: 'none',
+      },
+
       // '[data-soui-theme=light][data-soui-mode=vertical]:not($wrapperCollpase) &': {
       //   '&::before': {
       //     display: 'block',
@@ -246,12 +274,28 @@ const menuStyle: JsStyles<MenuClassType> = {
           color: token.menuItemActiveFontColor,
         },
       },
-      '$wrapperCollpase[data-soui-theme=light] $root > &': {
-        color: token.menuItemActiveFontColor,
-        backgroundColor: token.menuItemBackgroundColor,
+      '[data-soui-theme=light] $itemDisabled&': {
+        color: token.menuItemActiveDisabledFontColor,
         '& $icon': {
-          color: token.menuItemActiveFontColor,
+          color: token.menuItemActiveDisabledFontColor,
         },
+      },
+      '$wrapperCollpase[data-soui-theme=light] $root > &': {
+        color: token.menuItemCollpaseActiveFontColor,
+        backgroundColor: token.menuItemCollpaseActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuItemCollpaseActiveFontColor,
+        },
+      },
+      '$wrapperCollpase[data-soui-theme=dark] $root > &': {
+        color: token.menuDarkItemCollpaseActiveFontColor,
+        backgroundColor: token.menuDarkItemCollpaseActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuDarkItemCollpaseActiveFontColor,
+        },
+      },
+      '$wrapperCollpase $root > &::before': {
+        display: 'none',
       },
       '[data-soui-theme=dark]:not($wrapperCollpase) &': {
         color: token.menuDarkItemActiveFontColor,
@@ -318,7 +362,7 @@ const menuStyle: JsStyles<MenuClassType> = {
   itemContentFront: {},
   itemContentBack: {},
   header: {
-    padding: `${token.menuTitlePaddingY} ${token.menuTitlePaddingX}`,
+    padding: `${token.menuHeaderPaddingX} ${token.menuHeaderPaddingY}`,
     width: '100%',
     transition: `width ${animationDuration} ${transitionFunc}`,
     color: token.menuFontColor,
@@ -378,8 +422,10 @@ const menuStyle: JsStyles<MenuClassType> = {
   },
   titleContent: {
     whiteSpace: 'pre-wrap',
-    transition: `opacity ${animationDuration} ${transitionFunc}`,
-    opacity: 1,
+    // '$wrapperCollpase &': {
+    //   transition: `opacity ${animationDuration} ${transitionFunc}`,
+    // },
+    // opacity: 1,
   },
   expand: {
     alignSelf: 'stretch',

@@ -182,8 +182,6 @@ const IMenu = (props: { theme: MenuProps['theme'] }) => {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  marginBottom: '20px',
-                  marginTop: 1,
                 }}
               >
                 <div
@@ -209,17 +207,19 @@ const IMenu = (props: { theme: MenuProps['theme'] }) => {
                   </div>
                 )}
               </div>
-              <Menu.Search
-                onSearchClick={() => {
-                  if (collapse) setCollapse(false);
-                }}
-                disabled={dis}
-                collpase={collapse}
-                theme={theme}
-                placeholder='请输入关键字'
-                clearable
-                style={{ marginBottom: '3px' }}
-              />
+              <div style={{marginTop: 12}}>
+                <Menu.Search
+                  onSearchClick={() => {
+                    if (collapse) setCollapse(false);
+                  }}
+                  disabled={dis}
+                  collpase={collapse}
+                  theme={theme}
+                  placeholder='请输入关键字'
+                  clearable
+                  style={{ marginBottom: '3px' }}
+                />
+              </div>
             </>
           }
           theme={theme}

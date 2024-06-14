@@ -35,38 +35,13 @@ const menuSearchStyle: JsStyles<MenuSearchClassType> = {
     [getTokenName('inputHoverClearColor')]: token.menuSearchHoverClearColor,
   },
   wrapperCollapsed: {
-    borderRadius: '50%',
-    padding: token.menuSearchPaddingX,
     cursor: 'pointer',
+    width: token.menuSearchCollpaseSize,
+    height: token.menuSearchCollpaseSize,
     lineHeight: 1,
-    '$wrapperLight&': {
-      background: token.menuSearchBackgroundColor,
-      border: `1px solid ${token.menuSearchBackgroundColor}`,
-      '&:hover': {
-        background: token.menuSearchHoverBackgroundColor,
-        borderColor: token.menuSearchHoverBorderColor,
-      },
-      '$wrapperDisabled&': {
-        background: token.menuSearchDisabledBackgroundColor,
-        borderColor: token.menuSearchDisabledBackgroundColor,
-      },
-    },
-    '$wrapperDark&': {
-      background: token.menuSearchDarkBackgroundColor,
-      border: `1px solid ${token.menuSearchDarkBackgroundColor}`,
-      '&:hover': {
-        background: token.menuSearchDarkHoverBackgroundColor,
-        borderColor: token.menuSearchDarkHoverBorderColor,
-      },
-      '$wrapperDisabled&': {
-        background: token.menuSearchDarkBackgroundColor,
-        borderColor: token.menuSearchDarkBackgroundColor,
-        '&$search': {
-          color: token.menuSearchDarkIconColor,
-        },
-      },
-    },
-    
+    '& input': {
+      opacity: 0,
+    }
   },
   wrapperDisabled: {
     cursor: 'not-allowed',
