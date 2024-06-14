@@ -74,7 +74,7 @@ const Tag = (props: TagProps) => {
     if (onClose) {
       return (
         <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
-          <div className={tagStyle.container}>{util.wrapSpan(children)}</div>
+          {util.wrapSpan(children)}
         </div>
       );
     }

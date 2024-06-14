@@ -60,7 +60,7 @@ const useButton = (props: BaseButtonProps = {}) => {
   };
 
   return {
-    disabled,
+    disabled: disabled || loading,
     getAnchorProps,
     getButtonProps,
     getSpaceChildren,

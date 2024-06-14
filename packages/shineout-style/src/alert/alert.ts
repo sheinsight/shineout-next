@@ -106,6 +106,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   content: {
     flex: '1 1 0',
+    minWidth: 0,
     wordBreak: 'break-all',
   },
   pending: {

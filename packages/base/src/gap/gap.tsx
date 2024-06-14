@@ -26,7 +26,7 @@ const Gap = (props: GapProps) => {
   ) as React.CSSProperties;
 
   const itemStyle = supportFlexGap
-    ? undefined
+    ? itemStyleProps
     : {
         ...itemStyleProps,
         marginBottom: row,
