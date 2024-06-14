@@ -44,7 +44,10 @@ export function useClickAway<T extends Event = Event>(params: {
     }
     return () => {
       // @ts-ignore
-      document.removeEventListener(event, handleClickAway);
+      document.removeEventListener(event, handleClickAway, {
+        // 解决 点击后立刻删除dom导致获取不到元素; contains(target) 为 false 的问题
+        capture: true,
+      });
     };
   }, [effect]);
 }

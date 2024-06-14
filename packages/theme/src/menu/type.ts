@@ -208,7 +208,7 @@ export interface MenuTokens {
   menuDarkHeaderBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-Full
+   * @token Radius-full
    * @description 菜单undefined边框圆角
    */
   menuSearchBorderRadius: string;

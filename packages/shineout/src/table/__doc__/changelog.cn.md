@@ -1,3 +1,9 @@
+## 3.1.28
+2024-06-07
+### 🐞 BugFix
+
+- 修复 `Table` 虚拟列表在 Firefox 浏览器滚动条长度超长问题 ([#512](https://github.com/sheinsight/shineout-next/pull/512))
+
 ## 3.1.24
 2024-06-03
 ### 🐞 BugFix

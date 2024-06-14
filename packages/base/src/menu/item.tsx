@@ -1,6 +1,6 @@
-import { cloneElement } from 'react';
+import React, { cloneElement, useState } from 'react';
 import classNames from 'classnames';
-import { useMenuItem, util } from '@sheinx/hooks';
+import { useMenuItem, usePersistFn, util } from '@sheinx/hooks';
 import Icons from '../icons';
 import { useConfig } from '../config';
 import Popover from '../popover';
@@ -11,15 +11,23 @@ import type { MenuItemProps } from './menu.type';
 const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
-  const { inlineIndent = 24, frontCaretType = 'solid', mode, toggleDuration = 200 } = props;
+  const { inlineIndent = 24, frontCaretType = 'solid', mode, toggleDuration = 50 } = props;
   const config = useConfig();
   const shoudPop = mode === 'vertical' || mode === 'vertical-auto' || mode === 'horizontal';
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
   const isSubHorizontal = mode === 'horizontal' && props.level > 0;
+  const isRootHorizontal = mode === 'horizontal' && props.level === 0;
+  const [popOpen, setOpen] = useState(false);
 
   const hasExpandAbleChildren = children.some(
     (item: any) => item && item.children && (props.looseChildren || item.children.length),
   );
+
+  const handleVisibleChange = usePersistFn((visible: boolean) => {
+    if (isRootHorizontal) {
+      setOpen(visible);
+    }
+  });
 
   const {
     id,
@@ -103,11 +111,13 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             theme: props.theme || 'light',
             mode: isVertical ? 'vertical' : mode,
           })}
+          onVisibleChange={handleVisibleChange}
           jssStyle={props.jssStyle}
           arrowClass={classNames(
             classes?.popArrow,
             props.theme === 'dark' && classes?.popArrowDark,
           )}
+          showArrow={!isRootHorizontal}
           position={position}
           lazy={false}
         >
@@ -219,7 +229,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         classes?.item,
         isDisabled && classes?.itemDisabled,
         isInPath && classes?.itemInPath,
-        isOpen && classes?.itemOpen,
+        (isOpen || popOpen) && classes?.itemOpen,
         isChecked && classes?.itemActive,
         expandAble && classes?.itemHasChildren,
       )}
