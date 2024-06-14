@@ -1508,7 +1508,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
         </div>
       </li>
       <li
-        class="soui-menu-item soui-menu-item-disabled soui-menu-item-has-children"
+        class="soui-menu-item soui-menu-item-has-children"
         dir="ltr"
       >
         <div
@@ -1550,7 +1550,7 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           dir="ltr"
         >
           <li
-            class="soui-menu-item"
+            class="soui-menu-item soui-menu-item-disabled"
             dir="ltr"
           >
             <div
