@@ -33,7 +33,7 @@ const dividerTokenExtraValue = {
     margin: { x: 'Spacing-12' },
   },
   text: {
-    padding: { x: '1em' },
+    padding: { x: 'Spacing-12' },
   },
 };
 

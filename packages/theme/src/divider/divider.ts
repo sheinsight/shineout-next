@@ -12,7 +12,7 @@ const dividerTokens: DividerTokens = {
   dividerHorizontalMarginY: 'Spacing-24',
   dividerHorizontalTextMarginY: 'Spacing-16',
   dividerVerticalMarginX: 'Spacing-12',
-  dividerTextPaddingX: '1em',
+  dividerTextPaddingX: 'Spacing-12',
 };
 
 export default dividerTokens;

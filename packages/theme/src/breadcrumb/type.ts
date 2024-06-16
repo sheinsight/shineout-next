@@ -76,6 +76,12 @@ export interface BreadcrumbTokens {
   breadcrumbListItemHoverFontColor: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 面包屑上级字体字重
+   */
+  breadcrumbPrevFontWeight: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 面包屑分隔符外边距（水平方向）
    */

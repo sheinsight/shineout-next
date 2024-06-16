@@ -13,6 +13,7 @@ const breadcrumbTokenDescription = {
   item: '选项',
   wrapper: '外部容器',
   separator: '分隔符',
+  prev: '上级',
 };
 
 /**
@@ -46,6 +47,11 @@ const breadcrumbTokenExtraValue = {
         background: { color: 'Neutral-fill-2' },
         font: { color: 'Neutral-text-3' },
       },
+    },
+  },
+  prev: {
+    font: {
+      weight: 'Weight-regular',
     },
   },
   separator: {

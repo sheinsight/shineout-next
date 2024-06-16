@@ -52,7 +52,7 @@ export interface DividerTokens {
   dividerVerticalMarginX: string;
   /**
    * @type {string}
-   * @token 1em
+   * @token Spacing-12
    * @description 分割线带文字内边距（水平方向）
    */
   dividerTextPaddingX: string;
