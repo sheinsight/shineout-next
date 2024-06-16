@@ -1658,9 +1658,10 @@ describe('DatePicker[AllowSingle]', () => {
 });
 describe('DatePicker[Max/Min]', () => {
   test('should render when set max and min', async () => {
+    const now = new Date(2024, 5, 17).getTime();
     const getCell = (table: Element) =>
       table.querySelector('tbody')?.querySelectorAll('tr')[3].querySelectorAll('td')[0] as Element;
-    const { container } = render(<DatePicker min={Now} type='datetime' max={Now + 4 * 86400000} />);
+    const { container } = render(<DatePicker min={now} type='datetime' max={now + 4 * 86400000} />);
     const datePickerWrapper = container.querySelector(wrapper)!;
     const datePickerResultWrapper = datePickerWrapper.querySelector(resultWrapper)!;
     const resultTexts = datePickerResultWrapper.querySelector(resultText)!;
