@@ -9,6 +9,8 @@ const breadcrumbTokens: BreadcrumbTokens = {
   breadcrumbFontWieght: 'Weight-regular',
   breadcrumbLinkColor: 'Neutral-text-3',
   breadcrumbLinkHoverColor: 'Brand-5',
+  breadcrumbDefaultLinkColor: 'Brand-6',
+  breadcrumbDefaultLinkHoverColor: 'Brand-5',
   breadcrumbListPaddingY: 'Spacing-4',
   breadcrumbListItemBorderRadius: 'Radius-default',
   breadcrumbListItemWrapperPaddingX: 'Spacing-4',

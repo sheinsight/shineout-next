@@ -33,6 +33,14 @@ const breadcrumbTokenExtraValue = {
       color: 'Brand-5',
     },
   },
+  default: {
+    link: {
+      color: 'Brand-6',
+      hover: {
+        color: 'Brand-5',
+      },
+    },
+  },
   list: {
     padding: { y: 'Spacing-4' },
     item: {

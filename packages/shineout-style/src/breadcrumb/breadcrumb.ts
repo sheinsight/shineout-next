@@ -38,8 +38,11 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
   item: {
     display: 'flex',
     alignItems: 'center',
-    '& a': {
-      // color: 'red',
+    '& a:not(a[class])': {
+      color: token.breadcrumbDefaultLinkColor,
+      '&:hover': {
+        color: token.breadcrumbDefaultLinkHoverColor,
+      },
     },
     // '&:not(a) svg': {
     //   color: token.breadcrumbIconBackgroundColor,

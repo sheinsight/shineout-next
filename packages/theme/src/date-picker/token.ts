@@ -83,13 +83,16 @@ const datePickerTokenExtraValue = {
   panel: {
     title: { padding: { top: 'Spacing-10' }, font: { size: 'Font-14' } },
     color: 'Neutral-text-5',
+    font: {
+      weight: 'Weight-regular',
+    },
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
     radius: 'Radius-default',
     margin: 'Spacing-24',
     border: 'Neutral-border-1',
     header: {
-      font: { size: 'Font-14' },
+      font: { size: 'Font-14', color: 'Neutral-text-5', weight: 'Weight-regular' },
       padding: { x: 'Spacing-12', y: 'Spacing-8' },
       border: { color: 'Neutral-border-1' },
       icon: {
