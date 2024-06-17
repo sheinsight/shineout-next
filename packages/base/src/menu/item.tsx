@@ -117,7 +117,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             classes?.popArrow,
             props.theme === 'dark' && classes?.popArrowDark,
           )}
-          showArrow={!isRootHorizontal}
+          showArrow={mode !== 'horizontal'}
           position={position}
           lazy={false}
         >

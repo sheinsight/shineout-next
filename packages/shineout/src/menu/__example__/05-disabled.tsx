@@ -27,11 +27,11 @@ const data: MenuItem[] = [
   {
     id: '3',
     title: 'Navigation Two',
-    disabled: true,
     children: [
       {
         id: '4',
         title: 'Option 1',
+        disabled: true,
       },
       {
         id: '5',
