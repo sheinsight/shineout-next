@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useMenuItem, usePersistFn, util } from '@sheinx/hooks';
 import Icons from '../icons';
 import { useConfig } from '../config';
-import Popover from '../../src/popover';
+import Popover from '../popover';
 
 import type { OptionalToRequired } from '@sheinx/hooks';
 import type { MenuItemProps } from './menu.type';
