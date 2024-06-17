@@ -706,12 +706,12 @@ const buttonTokenValue = {
   },
   font: { size: 'Font-14', weight: 'Weight-regular' },
   border: { radius: 'Radius-default' },
-  padding: { x: 'Spacing-12', y: 'Spacing-5' },
+  padding: { x: 'Spacing-12', y: 'Spacing-4' },
   height: 'Size-16',
   small: {
     font: { size: 'Font-12', weight: 'Weight-regular' },
     border: { radius: 'Radius-default' },
-    padding: { x: 'Spacing-8', y: 'Spacing-2' },
+    padding: { x: 'Spacing-8', y: 'Spacing-1' },
     height: 'Size-12',
     round: { border: { radius: 'Radius-full' } },
     circle: { border: { radius: 'Radius-circle' } },
@@ -720,7 +720,7 @@ const buttonTokenValue = {
   large: {
     font: { size: 'Font-16', weight: 'Weight-regular' },
     border: { radius: 'Radius-default' },
-    padding: { x: 'Spacing-16', y: 'Spacing-8' },
+    padding: { x: 'Spacing-16', y: 'Spacing-7' },
     height: 'Size-20',
     round: { border: { radius: 'Radius-full' } },
     circle: { border: { radius: 'Radius-circle' } },
