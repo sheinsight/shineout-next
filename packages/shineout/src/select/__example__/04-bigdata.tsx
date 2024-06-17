@@ -31,7 +31,6 @@ export default () => {
       <Select
         width={300}
         data={data}
-        lineHeight={50}
         keygen='id'
         placeholder='Select Tag'
         renderItem={renderItem}

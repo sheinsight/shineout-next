@@ -13,7 +13,6 @@ export default () => {
     <div>
       <Select
         width={300}
-        lineHeight={50}
         clearable
         data={primitiveData}
         keygen
