@@ -446,6 +446,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    height: '100%',
     color: token.selectOptionFontColor,
     fontSize: token.selectFontSize,
     lineHeight: token.lineHeightDynamic,

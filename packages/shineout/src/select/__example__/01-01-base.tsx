@@ -11,7 +11,14 @@ import { primitiveData } from './static/mock';
 export default () => {
   return (
     <div>
-      <Select width={300} clearable data={primitiveData} keygen placeholder='Select Color' />
+      <Select
+        width={300}
+        lineHeight={50}
+        clearable
+        data={primitiveData}
+        keygen
+        placeholder='Select Color'
+      />
     </div>
   );
 };

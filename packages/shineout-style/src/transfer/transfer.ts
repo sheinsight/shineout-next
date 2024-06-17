@@ -179,8 +179,10 @@ const TransferStyle: JsStyles<TransferClass> = {
   itemWrapper: {
     borderRadius: Token.transferItemBorderRadius,
     cursor: 'pointer',
+    height: '100%',
     '& $checkbox': {
       width: '100%',
+      height: '100%',
       padding: '5px 8px',
       marginRight: 0,
     },

@@ -64,7 +64,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     optionWidth,
     height = 250,
     open: openProp,
-    lineHeight,
+    lineHeight = 34,
     itemsInView,
     showArrow = true,
     disabled,
@@ -607,6 +607,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       optionListRef,
       onOptionClick: handleOptionClick,
     };
+    console.log('lineHeight2333', lineHeight)
     // 自定义列
     if (('columns' in props && typeof columns === 'number' && columns! >= 1) || columns === -1) {
       return <ColumnsList columns={columns} {...listProps}></ColumnsList>;
