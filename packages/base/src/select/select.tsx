@@ -64,7 +64,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     optionWidth,
     height = 250,
     open: openProp,
-    lineHeight = 34,
+    lineHeight,
     itemsInView,
     showArrow = true,
     disabled,
