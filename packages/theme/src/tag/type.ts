@@ -148,7 +148,7 @@ export interface TagTokens {
   tagDefaultDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 标签默认尺寸线框风格字体颜色
    */
   tagDefaultOutlineFontColor: string;
@@ -1414,7 +1414,7 @@ export interface TagTokens {
   tagFontSize: string;
   /**
    * @type {string}
-   * @token Radius-3
+   * @token Radius-small
    * @description 标签边框圆角
    */
   tagBorderRadius: string;
@@ -1438,13 +1438,19 @@ export interface TagTokens {
   tagHeight: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 标签字体字重
+   */
+  tagFontWeight: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 标签小尺寸字体字号
    */
   tagSmallFontSize: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 标签小尺寸边框圆角
    */
   tagSmallBorderRadius: string;
@@ -1462,13 +1468,19 @@ export interface TagTokens {
   tagSmallHeight: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 标签小尺寸字体字重
+   */
+  tagSmallFontWeight: string;
+  /**
+   * @type {string}
    * @token Font-14
    * @description 标签大尺寸字体字号
    */
   tagLargeFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 标签大尺寸边框圆角
    */
   tagLargeBorderRadius: string;
@@ -1490,6 +1502,12 @@ export interface TagTokens {
    * @description 标签大尺寸高度
    */
   tagLargeHeight: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 标签大尺寸字体字重
+   */
+  tagLargeFontWeight: string;
   /**
    * @type {string}
    * @token Spacing-4

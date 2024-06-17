@@ -12,7 +12,7 @@ const modalTokens: ModalTokens = {
   modalPanelShadow: 'Shadow-3',
   modalPanelBorder: 'Neutral-border-1',
   modalPanelGap: 'Spacing-16',
-  modalPanelRadius: 'Radius-4',
+  modalPanelRadius: 'Radius-default',
   modalPanelFontSize: 'Font-14',
   modalHeaderIconMarginEnd: 'Spacing-8',
   modalHeaderIconMarginTop: 'Size-2',

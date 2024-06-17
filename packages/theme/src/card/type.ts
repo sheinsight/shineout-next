@@ -16,13 +16,19 @@ export interface CardTokens {
   cardShadow: string;
   /**
    * @type {string}
+   * @token Border-1
+   * @description 卡片边框宽度
+   */
+  cardBorderWidth: string;
+  /**
+   * @type {string}
    * @token Neutral-border-1
    * @description 卡片边框颜色
    */
   cardBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 卡片边框圆角
    */
   cardBorderRadius: string;
@@ -52,10 +58,22 @@ export interface CardTokens {
   cardPaddingY: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 卡片标题模式字体颜色
+   */
+  cardTitleFontColor: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 卡片标题模式字体字号
    */
   cardTitleFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-medium
+   * @description 卡片标题模式字体字重
+   */
+  cardTitleFontWeight: string;
   /**
    * @type {string}
    * @token 8px
@@ -70,6 +88,18 @@ export interface CardTokens {
   cardHeaderExtraMarginX: string;
   /**
    * @type {string}
+   * @token Spacing-16
+   * @description 卡片头部内边距（水平方向）
+   */
+  cardHeaderPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 卡片头部内边距（垂直方向）
+   */
+  cardHeaderPaddingY: string;
+  /**
+   * @type {string}
    * @token Size-7
    * @description 卡片指示器字号
    */
@@ -80,4 +110,58 @@ export interface CardTokens {
    * @description 卡片指示器颜色
    */
   cardIndicatorColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-16
+   * @description 卡片undefined内边距（水平方向）
+   */
+  cardBodyPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 卡片undefined内边距（垂直方向）
+   */
+  cardBodyPaddingY: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 卡片undefined字体字号
+   */
+  cardBodyFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 卡片undefined字体颜色
+   */
+  cardBodyFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 卡片undefined字体字重
+   */
+  cardBodyFontWeight: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 卡片undefined边框颜色
+   */
+  cardBodyBorderColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-16
+   * @description 卡片undefined内边距（水平方向）
+   */
+  cardFooterPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 卡片undefined内边距（垂直方向）
+   */
+  cardFooterPaddingY: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 卡片undefined边框颜色
+   */
+  cardFooterBorderColor: string;
 }

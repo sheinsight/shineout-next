@@ -28,7 +28,7 @@ export interface CollapseTokens {
   collapseWrapperBorderSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 折叠面板整体容器（包含头部内容）边框圆角
    */
   collapseWrapperBorderRadius: string;
@@ -58,7 +58,7 @@ export interface CollapseTokens {
   collapseHeaderLineHeight: string;
   /**
    * @type {string}
-   * @token Size-4
+   * @token Spacing-8
    * @description 折叠面板头部区域间距
    */
   collapseHeaderGap: string;
@@ -94,7 +94,7 @@ export interface CollapseTokens {
   collapseContentLineHeight: string;
   /**
    * @type {string}
-   * @token Size-12
+   * @token Spacing-24
    * @description 折叠面板内部容器间距
    */
   collapseContentGap: string;
@@ -118,7 +118,7 @@ export interface CollapseTokens {
   collapseContentWeight: string;
   /**
    * @type {string}
-   * @token Size-19
+   * @token Spacing-38
    * @description 折叠面板内部容器内边距（左侧）
    */
   collapseContentPaddingLeft: string;

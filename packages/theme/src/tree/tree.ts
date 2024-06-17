@@ -29,7 +29,7 @@ const treeTokens: TreeTokens = {
   treeContentDisabledFontColor: 'Neutral-text-2',
   treeDragBorderColor: 'Brand-6',
   treeDragBackgroundColor: 'Brand-1',
-  treeContentBorderRadius: 'Radius-2',
+  treeContentBorderRadius: 'Radius-lesser',
 };
 
 export default treeTokens;

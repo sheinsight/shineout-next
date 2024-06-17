@@ -7,9 +7,10 @@ export type CardClassType = keyof CardClasses;
 const headerCommon = {
   fontSize: token.cardTitleFontSize,
   lineHeight: token.lineHeightDynamic,
-  fontWeight: 'bold',
+  color: token.cardTitleFontColor,
+  fontWeight: token.cardTitleFontWeight,
   minWidth: 0,
-}
+};
 
 const cardStyle: JsStyles<CardClassType> = {
   wrapper: {
@@ -52,7 +53,7 @@ const cardStyle: JsStyles<CardClassType> = {
     borderRadius: token.cardBorderRadius,
   },
   header: {
-    padding: `${token.cardPaddingY} ${token.cardPaddingX}`,
+    padding: `${token.cardHeaderPaddingY} ${token.cardHeaderPaddingX}`,
     '$wrapperMoveable &': {
       cursor: 'move',
     },
@@ -69,7 +70,7 @@ const cardStyle: JsStyles<CardClassType> = {
   },
   simpleHeader: {
     ...headerCommon,
-    display: 'block'
+    display: 'block',
   },
   center: {
     textAlign: 'center',
@@ -105,10 +106,13 @@ const cardStyle: JsStyles<CardClassType> = {
     '$wrapperSplit>$header+&, $wrapperSplit>$header+$bodyCollapse>&': {
       borderTop: `1px solid ${token.cardBorderColor}`,
     },
-    padding: `${token.cardPaddingY} ${token.cardPaddingX}`,
+    padding: `${token.cardBodyPaddingY} ${token.cardBodyPaddingX}`,
     flex: 1,
     minHeight: 0,
     minWidth: 0,
+    color: token.cardBodyFontColor,
+    fontWeight: token.cardBodyFontWeight,
+    fontSize: token.cardBodyFontSize,
     boxSizing: 'border-box',
   },
   bodyCollapse: {},
@@ -116,7 +120,7 @@ const cardStyle: JsStyles<CardClassType> = {
     '$wrapperSplit>$body+&, $wrapperSplit>$bodyCollapse+&': {
       borderTop: `1px solid ${token.cardBorderColor}`,
     },
-    padding: `${token.cardPaddingY} ${token.cardPaddingX}`,
+    padding: `${token.cardFooterPaddingY} ${token.cardFooterPaddingX}`,
     boxSizing: 'border-box',
   },
   resizeX: {

@@ -1474,7 +1474,7 @@ export interface ButtonTokens {
   buttonPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-5
+   * @token Spacing-4
    * @description 按钮内边距（垂直方向）
    */
   buttonPaddingY: string;
@@ -1510,7 +1510,7 @@ export interface ButtonTokens {
   buttonSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-2
+   * @token Spacing-1
    * @description 按钮小尺寸内边距（垂直方向）
    */
   buttonSmallPaddingY: string;
@@ -1546,7 +1546,7 @@ export interface ButtonTokens {
   buttonLargePaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-8
+   * @token Spacing-7
    * @description 按钮大尺寸内边距（垂直方向）
    */
   buttonLargePaddingY: string;

@@ -71,7 +71,12 @@ const Dropdown = (props: SimpleDropdownProps) => {
 
   const renderButton = () => {
     const caret = (
-      <span key={'caret'} className={dropdownClasses?.caret} dir={config.direction}>
+      <span
+        data-role='caret'
+        key={'caret'}
+        className={dropdownClasses?.caret}
+        dir={config.direction}
+      >
         {Icons.dropdown.DropdownArrow}
       </span>
     );
@@ -193,6 +198,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       )}
       style={style}
       data-position={position}
+      data-role='dropdown'
       ref={targetRef}
       {...targetProps}
       onClick={isSub ? openPop : targetProps.onClick}

@@ -27,10 +27,39 @@ const progressTokenValue = {};
 const progressTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-4' },
   background: 'Neutral-fill-3',
-  info: { front: { background: { color: 'Brand-6' } } },
-  warning: { front: { background: { color: 'Warning-6' } } },
-  success: { front: { background: { color: 'Success-6' } } },
-  danger: { front: { background: { color: 'Danger-6' } } },
+  info: {
+    front: { background: { color: 'Brand-6' } },
+    inner: { font: { color: 'Neutral-text-1' } },
+  },
+  warning: {
+    front: { background: { color: 'Warning-6' } },
+    inner: { font: { color: 'Neutral-text-1' } },
+  },
+  success: {
+    front: { background: { color: 'Success-6' } },
+    inner: { font: { color: 'Neutral-text-1' } },
+  },
+  danger: {
+    front: { background: { color: 'Danger-6' } },
+    inner: { font: { color: 'Neutral-text-1' } },
+  },
+  circle: {
+    info: {
+      font: { color: 'Neutral-text-4' },
+    },
+    warning: {
+      font: { color: 'Warning-6' },
+    },
+    success: {
+      font: { color: 'success-6' },
+    },
+    danger: {
+      font: { color: 'danger-6' },
+    },
+    font: {
+      weight: 'Weight-regular',
+    },
+  },
   line: {
     height: 'Size-3',
     gap: 'Spacing-8',
@@ -40,10 +69,30 @@ const progressTokenExtraValue = {
       padding: { x: 'Spacing-8' },
       font: { color: 'Neutral-text-1', size: 'Font-12' },
       right: { font: { color: 'Neutral-text-5' } },
+
+      info: {
+        front: { background: { color: 'Brand-6' } },
+      },
+      warning: {
+        front: { background: { color: 'Warning-6' } },
+      },
+      success: {
+        front: { background: { color: 'Success-6' } },
+      },
+      danger: {
+        front: { background: { color: 'Danger-6' } },
+      },
+    },
+    pop: {
+      font: {
+        color: 'Neutral-text-1',
+      },
     },
     icon: { size: 'Size-7' },
     background: { color: 'Neutral-fill-9' },
-    color: 'Neutral-text-1',
+    font: {
+      weight: 'Weight-regular',
+    },
   },
 };
 

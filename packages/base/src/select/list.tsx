@@ -144,6 +144,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   };
 
   const renderItem = (item: DataItem, index: number, key: KeygenResult) => {
+    console.log('lineHeight',lineHeight)
     return (
       <React.Fragment key={key}>
         <ListOption
@@ -152,6 +153,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           index={index}
           data={item}
+          lineHeight={lineHeight}
           isHover={hoverIndex === index}
           multiple={multiple}
           renderItem={renderItemProp}

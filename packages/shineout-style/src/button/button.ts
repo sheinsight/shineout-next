@@ -198,7 +198,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all .1s linear',
     fontFamily: 'inherit',
-    height: Token.buttonHeight,
+    // height: Token.buttonHeight,
 
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
@@ -213,7 +213,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     },
   },
   small: {
-    height: Token.buttonSmallHeight,
+    // height: Token.buttonSmallHeight,
     fontWeight: Token.buttonSmallFontWeight,
     fontSize: Token.buttonSmallFontSize,
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
@@ -225,7 +225,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   },
 
   large: {
-    height: Token.buttonLargeHeight,
+    // height: Token.buttonLargeHeight,
     fontWeight: Token.buttonLargeFontWeight,
     fontSize: Token.buttonLargeFontSize,
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
@@ -381,7 +381,16 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
 
   group: {
     // 2.x 之前非 inline-block
-    display: 'inline-block',
+    display: 'inline-flex',
+    // 处理 dropdown 下的 button
+    '& [data-role="dropdown"]': {
+      '& $button': {
+        height: '100%',
+      },
+      '& [data-role="caret"]': {
+        margin: 0,
+      },
+    },
 
     '& > :first-child$button,& > :first-child $button': {
       '&::before': {

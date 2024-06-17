@@ -7,18 +7,23 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const tabsRules = {
-  status: [
-    ['', 'active', 'hover', 'disabled', 'click'],
-    ['font-color', 'background-color', 'border-color'],
-  ],
-  size: [['tab'], ['padding-x', 'padding-y', 'font-size', 'border-radius']],
-  extra_nearly: [['nearly'], ['margin']],
-  extra_line: [
-    ['line', 'line-inner', 'fill', 'fill-inner'],
-    ['padding-x', 'padding-y'],
-  ],
-  extra_split: [['split'], ['border-color']],
-  extra_prev_next: [['action'], ['vertical', 'horizontal'], ['padding-x', 'padding-y']],
+  // status: [
+  //   ['', 'active', 'hover', 'disabled', 'click'],
+  //   ['font-color', 'background-color', 'border-color'],
+  // ],
+  // size: [['tab'], ['padding-x', 'padding-y', 'font-size', 'border-radius']],
+  // extra_nearly: [['nearly'], ['margin']],
+  // extra_line: [
+  //   ['line', 'line-inner', 'fill', 'fill-inner'],
+  //   ['padding-x', 'padding-y'],
+  // ],
+  // type: [
+  //   ['line', 'fill', 'dash', 'card'],
+  //   ['', 'active', 'hover', 'disabled'],
+  //   ['font-color', 'background-color', 'font-weight'],
+  // ],
+  // extra_split: [['split'], ['border-color']],
+  // extra_prev_next: [['action'], ['vertical', 'horizontal'], ['padding-x', 'padding-y']],
 };
 
 module.exports = {

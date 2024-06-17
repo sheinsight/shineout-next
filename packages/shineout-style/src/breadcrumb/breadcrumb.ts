@@ -8,6 +8,7 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
   wrapper: {
     lineHeight: token.lineHeightDynamic,
     fontSize: token.breadcrumbFontSize,
+    fontWeight: token.breadcrumbFontWieght,
     display: 'flex',
     alignItems: 'center',
     color: token.breadcrumbFontColor,
@@ -37,6 +38,12 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
   item: {
     display: 'flex',
     alignItems: 'center',
+    '& a:not(a[class])': {
+      color: token.breadcrumbDefaultLinkColor,
+      '&:hover': {
+        color: token.breadcrumbDefaultLinkHoverColor,
+      },
+    },
     // '&:not(a) svg': {
     //   color: token.breadcrumbIconBackgroundColor,
     // },

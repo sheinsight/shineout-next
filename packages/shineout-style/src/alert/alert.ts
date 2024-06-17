@@ -60,11 +60,11 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   widthTitle: {
     '& $icon': {
       // marginBottom: Token.alertNearlyMargin,
-      width: 20,
-      height: 24,
+      width: Token.alertTitleIconWidth,
+      height: Token.alertTitleIconHeight,
     },
     '& $title': {
-      lineHeight: '24px',
+      lineHeight: Token.lineHeightDynamic,
     },
     '& $close': {
       marginBottom: Token.alertNearlyMargin,
@@ -145,7 +145,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     borderColor: 'transparent',
   },
   icon: {
-    width: 16,
+    width: Token.alertIconSize,
     display: 'inline-flex',
     fontSize: Token.alertFontSize,
     height: Token.lineHeightDynamic,

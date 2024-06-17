@@ -9,13 +9,6 @@ import { Button } from 'shineout';
 import { Icon02, Icon03 } from './static/icon';
 
 export default () => {
-  const iconWarpperStyle = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    // lineHeight: '22px',
-    height: '100%',
-  };
-
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', flexDirection: 'column' }}>
       <Button.Group mode='text'>
@@ -45,18 +38,14 @@ export default () => {
         <Button.Group type='primary'>
           <Button>Publish</Button>
           <Button>
-            <span style={iconWarpperStyle}>
-              <Icon02></Icon02>
-            </span>
+            <Icon02></Icon02>
           </Button>
         </Button.Group>
 
         <Button.Group type='secondary'>
           <Button>Publish</Button>
           <Button>
-            <span style={iconWarpperStyle}>
-              <Icon03 color='#666C7C'></Icon03>
-            </span>
+            <Icon03 color='#666C7C'></Icon03>
           </Button>
         </Button.Group>
       </div>

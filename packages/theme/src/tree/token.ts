@@ -43,7 +43,7 @@ const treeTokenValue = {
     hover: { background: { color: 'Neutral-fill-2' }, font: { color: '' } },
     active: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
     disabled: { background: { color: '' }, font: { color: 'Neutral-text-2' } },
-    border: { radius: 'Radius-2' },
+    border: { radius: 'Radius-lesser' },
   },
   drag: { border: { color: 'Brand-6' }, background: { color: 'Brand-1' } },
   nearly: { margin: '', small: { margin: '' }, large: { margin: '' } },

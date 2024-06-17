@@ -1,6 +1,6 @@
 const imageRules = {
   shape: [
-    ['circle', 'rounded', 'thumbnail'],
+    ['', 'circle', 'rounded', 'thumbnail'],
     ['border-radius', 'border-color'],
   ],
   status: [

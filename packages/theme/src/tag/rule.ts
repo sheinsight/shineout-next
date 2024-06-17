@@ -21,7 +21,7 @@ const tagRules = {
   ],
   size: [
     ['', 'small', 'large'],
-    ['font-size', 'border-radius', 'padding-x', 'padding-y', 'height'],
+    ['font-size', 'border-radius', 'padding-x', 'padding-y', 'height', 'font-weight'],
   ],
   input: [['', 'small', 'large'], ['input'], ['padding-x', 'padding-y', 'font-size']],
   icon: [

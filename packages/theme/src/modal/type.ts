@@ -52,7 +52,7 @@ export interface ModalTokens {
   modalPanelGap: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 对话框面板圆角
    */
   modalPanelRadius: string;

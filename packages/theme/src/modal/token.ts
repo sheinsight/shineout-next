@@ -46,7 +46,7 @@ const modalTokenExtraValue = {
     shadow: 'Shadow-3',
     border: 'Neutral-border-1',
     gap: 'Spacing-16',
-    radius: 'Radius-4',
+    radius: 'Radius-default',
     font: { size: 'Font-14' },
   },
   header: {
