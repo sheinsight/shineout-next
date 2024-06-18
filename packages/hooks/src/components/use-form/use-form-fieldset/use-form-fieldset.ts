@@ -29,6 +29,7 @@ export const useFormFieldSet = <T>(props: BaseFormFieldSetProps<T>) => {
     error,
     value,
     onChange,
+    name,
   };
 };
 
