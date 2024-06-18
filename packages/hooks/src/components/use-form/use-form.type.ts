@@ -101,6 +101,9 @@ export interface FormFunc {
   getErrors: () => ObjectType<Error | undefined>;
   clearValidate: (names?: string[]) => void;
   validateFields: (fields?: string | string[], config?: { ignoreBind?: boolean }) => Promise<true>;
+  validateFieldset: (name: string) => void;
+  insertError: (name: string, index: number, error?: Error) => void;
+  spliceError: (name: string, index: number) => void;
 }
 
 interface FormRuleObject<T> {
