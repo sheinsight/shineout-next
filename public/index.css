@@ -46,7 +46,7 @@ pre[class*='language-'] {
   color: black;
   background: none;
   text-shadow: 0 1px white;
-  font-family: 'PingFang SC', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 14px;
   text-align: left;
   white-space: pre;
@@ -54,7 +54,6 @@ pre[class*='language-'] {
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
-  letter-spacing: 0.5px;
   tab-size: 4;
   outline: none;
   hyphens: none;

@@ -87,7 +87,7 @@ const tag = (type: TagType) => ({
 
   // outline 边框风格
   '&$outline': {
-    background: '#fff',
+    background: Token[`tag${type}OutlineBackgroundColor`],
     color: Token[`tag${type}OutlineFontColor`],
     border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
 

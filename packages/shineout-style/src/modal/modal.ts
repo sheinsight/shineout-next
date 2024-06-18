@@ -315,7 +315,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     flexDirection: 'column',
     textAlign: 'left',
     minWidth: 0,
-    background: '#fff',
+    background: token.modalPanelBackground,
     borderRadius: token.modalPanelRadius,
     padding: `${token.modalPanelPaddingY} ${token.modalPanelPaddingX}`,
     fontSize: token.modalPanelFontSize,

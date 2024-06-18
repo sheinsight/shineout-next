@@ -608,7 +608,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     return (
-      <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
+      <div className={classNames(styles.tree, styles.treeWrapper)} style={{ maxHeight: height }}>
         <Tree
           jssStyle={jssStyle}
           renderItem={renderItem}
