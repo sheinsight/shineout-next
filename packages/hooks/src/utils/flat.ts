@@ -1,6 +1,6 @@
 import { isEmpty } from './is';
 export type insertObject = {
-  [x: string]: unknown;
+  [x: string]: any;
 };
 
 export function insertPoint(name: string) {
@@ -9,13 +9,13 @@ export function insertPoint(name: string) {
 }
 
 export type Result = {
-  [x: string]: unknown;
+  [x: string]: any;
 };
 
 export function flatten(data: Result, skipArray?: boolean) {
   if (isEmpty(data)) return data;
   const result: Result = {};
-  function recurse(cur: unknown, prop: keyof Result) {
+  function recurse(cur: any, prop: keyof Result) {
     if (
       Object(cur) !== cur ||
       typeof cur === 'function' ||
@@ -74,7 +74,7 @@ export function insertValue(obj: insertObject, name: string, index: number, valu
 }
 
 export type SpliceValue = {
-  [x: string]: unknown;
+  [x: string]: any;
 };
 
 export function spliceValue(obj: SpliceValue, name: keyof SpliceValue & string, index: number) {
