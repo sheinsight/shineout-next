@@ -150,6 +150,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     [getTokenName('treeContentHoverBackgroundColor')]: token.treeSelectContentHoverBackgroundColor,
     [getTokenName('treeContentActiveBackgroundColor')]: token.treeSelectContentActiveBackgroundColor,
     [getTokenName('treeContentActiveFontColor')]: token.treeSelectContentActiveFontColor,
+    [getTokenName('treeContentDisabledFontColor')]: token.treeSelectContentActiveFontColor,
   },
   wrapperEmpty: {},
   wrapperOpen: {},
