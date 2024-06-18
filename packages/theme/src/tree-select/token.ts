@@ -100,6 +100,10 @@ const treeSelectTokenExtraValue = {
       font: { color: 'Brand-6' },
       background: { color: 'Brand-1' },
     },
+    disabled: {
+      font: { color: 'Neutral-text-2' },
+      background: { color: 'Transprent' },
+    },
   },
   option: {
     height: 'Size-16',

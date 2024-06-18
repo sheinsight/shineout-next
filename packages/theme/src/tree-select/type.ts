@@ -304,6 +304,18 @@ export interface TreeSelectTokens {
   treeSelectContentActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-2
+   * @description 树选择器undefined禁用时的字体颜色
+   */
+  treeSelectContentDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Transprent
+   * @description 树选择器undefined禁用时的背景颜色
+   */
+  treeSelectContentDisabledBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Size-16
    * @description 树选择器选项高度
    */

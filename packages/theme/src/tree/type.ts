@@ -142,6 +142,12 @@ export interface TreeTokens {
   treeContentActiveFontColor: string;
   /**
    * @type {string}
+   * @token Transprent
+   * @description 树组件节点容器禁用时的背景颜色
+   */
+  treeContentDisabledBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-5
    * @description 树组件节点容器禁用时的字体颜色
    */
