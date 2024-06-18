@@ -280,6 +280,30 @@ export interface TreeSelectTokens {
   treeSelectPanelBorder: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 树选择器undefined鼠标移入时的字体颜色
+   */
+  treeSelectContentHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 树选择器undefined鼠标移入时的背景颜色
+   */
+  treeSelectContentHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 树选择器undefined鼠标点击时的字体颜色
+   */
+  treeSelectContentActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description 树选择器undefined鼠标点击时的背景颜色
+   */
+  treeSelectContentActiveBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Size-16
    * @description 树选择器选项高度
    */
@@ -308,6 +332,12 @@ export interface TreeSelectTokens {
    * @description 树选择器选项鼠标点击时的背景颜色
    */
   treeSelectOptionActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 树选择器选项字体颜色
+   */
+  treeSelectOptionFontColor: string;
   /**
    * @type {string}
    * @token Spacing-8

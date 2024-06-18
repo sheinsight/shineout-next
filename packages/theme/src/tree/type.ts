@@ -124,6 +124,12 @@ export interface TreeTokens {
   treeContentHoverBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 树组件节点容器鼠标移入时的字体颜色
+   */
+  treeContentHoverFontColor: string;
+  /**
+   * @type {string}
    * @token Brand-1
    * @description 树组件节点容器鼠标点击时的背景颜色
    */
@@ -136,7 +142,7 @@ export interface TreeTokens {
   treeContentActiveFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
+   * @token Neutral-text-5
    * @description 树组件节点容器禁用时的字体颜色
    */
   treeContentDisabledFontColor: string;

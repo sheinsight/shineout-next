@@ -91,12 +91,25 @@ const treeSelectTokenExtraValue = {
     radius: 'Radius-default',
     border: 'Neutral-border-1',
   },
+  content: {
+    hover: {
+      font: { color: 'Neutral-text-5' },
+      background: { color: 'Neutral-fill-2' },
+    },
+    active: {
+      font: { color: 'Brand-6' },
+      background: { color: 'Brand-1' },
+    },
+  },
   option: {
     height: 'Size-16',
     padding: { x: 'Spacing-4', y: 'Spacing-1' },
     active: {
       color: 'Brand-6',
       background: { color: 'Brand-1' },
+    },
+    font: {
+      color: 'Neutral-text-5',
     },
     inner: {
       padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },

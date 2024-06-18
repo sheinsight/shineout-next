@@ -1,4 +1,4 @@
-import token from '@sheinx/theme';
+import token, { getTokenName } from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
 import { TreeSelectClasses } from '@sheinx/base';
@@ -144,6 +144,12 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
         display: 'none',
       },
     },
+  },
+  treeWrapper: {
+    [getTokenName('treeFontColor')]: token.treeSelectOptionFontColor,
+    [getTokenName('treeContentHoverBackgroundColor')]: token.treeSelectContentHoverBackgroundColor,
+    [getTokenName('treeContentActiveBackgroundColor')]: token.treeSelectContentActiveBackgroundColor,
+    [getTokenName('treeContentActiveFontColor')]: token.treeSelectContentActiveFontColor,
   },
   wrapperEmpty: {},
   wrapperOpen: {},
