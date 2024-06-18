@@ -45,7 +45,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
     context.ids = valueArr.map(() => util.generateUUID());
   }
   const ids = context.ids || [];
-  valueArr.forEach((v, i: number) => {
+  valueArr.forEach((v: any, i: number) => {
     result.push(
       <Provider key={ids[i]} value={{ path: `${ProviderValue.path}[${i}]` }}>
         {children({
