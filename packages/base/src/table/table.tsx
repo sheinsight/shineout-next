@@ -57,6 +57,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const tableRef = useRef<HTMLDivElement | null>(null);
 
+  const { current: context } = useRef({
+    emptyHeight: 0,
+  });
+
   const virtual =
     props.data?.length &&
     props.rowsInView !== 0 &&
@@ -239,7 +243,12 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const renderEmpty = () => {
     if (props.data?.length) return null;
     return (
-      <div className={tableClasses?.emptyWrapper}>
+      <div
+        className={tableClasses?.emptyWrapper}
+        ref={(el) => {
+          context.emptyHeight = el?.clientHeight || 0;
+        }}
+      >
         {props.empty || <Empty jssStyle={props.jssStyle} />}
       </div>
     );
@@ -365,6 +374,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           scrollWidth={width || 1}
           scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
           onScroll={handleVirtualScroll}
+          defaultHeight={context.emptyHeight}
         >
           <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
             {Group}
