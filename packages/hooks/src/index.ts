@@ -26,6 +26,7 @@ export * from './common/use-transform';
 export * from './common/use-drag-mock';
 export * from './common/use-pagination-list';
 export * from './common/use-filter';
+export * from './common/use-auto-focus'
 
 //components
 export * from './components/use-input';

@@ -102,3 +102,27 @@ export function isDomElement(element: any): element is HTMLElement {
         element.nodeType === 1 &&
         typeof element.nodeName === 'string';
 }
+
+export function isElementVisible(ref: React.RefObject<HTMLElement>): Promise<boolean> {
+  return new Promise((resolve) => {
+    window.requestAnimationFrame(() => {
+      const element = ref.current;
+
+      if (!element || element.nodeType !== 1) {
+        resolve(false);
+        return;
+      }
+      // add other conditions about visibility
+      if (element.style.opacity === '0') {
+        resolve(false);
+        return;
+      }
+
+      if (element.parentElement) {
+        isElementVisible({current: element.parentElement}).then(resolve);
+      } else {
+        resolve(true);
+      }
+    });
+  });
+}
