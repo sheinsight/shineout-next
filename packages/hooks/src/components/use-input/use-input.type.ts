@@ -44,7 +44,7 @@ export interface InputPropsOwn {
   /**
    * focus后自动全选数据
    * @en Automatically select all data after mouse click
-   * @cn 是否自动获得焦点
+   * @cn 鼠标点击后自动全选数据
    * @default false
    */
   autoSelect?: boolean;
