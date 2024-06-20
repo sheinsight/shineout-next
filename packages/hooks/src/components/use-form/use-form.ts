@@ -3,6 +3,7 @@ import { Provider } from './Provider';
 import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
 import { getDataAttributeName } from '../../utils/attribute';
+import { insertValue, spliceValue } from '../../utils/flat';
 
 const globalKey = '__global__&&@@';
 import { current, produce } from '../../utils/immer';
@@ -93,6 +94,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       update();
     });
   };
+
+  const updateFieldsets = usePersistFn((name: string) => {
+    const na = `${name}[`;
+    const no = `${name}.`;
+    context.names.forEach((key) => {
+      if (key.startsWith(na) || key.startsWith(no)) {
+        update(key);
+      }
+    });
+  });
 
   const handleSubmitError = (err: Error) => {
     onError?.(err);
@@ -213,6 +224,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     update(name);
   });
 
+  const insertError = usePersistFn((name: string, index: number, error?: Error) => {
+    insertValue(context.errors, name, index, error);
+    updateFieldsets(name);
+  });
+
+  const spliceError = usePersistFn((name: string, index: number) => {
+    spliceValue(context.errors, name, index);
+    updateFieldsets(name);
+  });
+
   const submit = usePersistFn((withValidate: boolean = true) => {
     if (disabled) return;
     if (context.submitLock) {
@@ -242,6 +263,18 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     e.preventDefault();
     submit();
     other?.onSubmit?.(e);
+  };
+
+  const validateFieldset = (name: string) => {
+    const na = `${name}[`;
+    const no = `${name}.`;
+    const fields: string[] = [];
+    context.names.forEach((key) => {
+      if (key.startsWith(na) || key.startsWith(no)) {
+        fields.push(key);
+      }
+    });
+    validateFields(fields).catch(() => {});
   };
 
   const getDefaultValue = () => {
@@ -365,6 +398,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     getErrors,
     clearValidate,
     validateFields,
+    validateFieldset,
+    insertError,
+    spliceError,
   });
 
   const formConfig: ProviderProps['formConfig'] = React.useMemo(

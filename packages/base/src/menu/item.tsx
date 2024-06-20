@@ -140,7 +140,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       ) : null;
     const item = util.render(props.renderItem, props.dataItem, props.index);
     const link = props.linkKey
-      ? (util.getKey(props.linkKey, props.dataItem, props.index) as string)
+      ? (util.getKey(props.linkKey, props.dataItem, props.index, true) as string)
       : undefined;
     let title: React.ReactNode = null;
     if (util.isLink(item)) {
