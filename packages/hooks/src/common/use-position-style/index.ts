@@ -71,7 +71,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
-  console.log('style', style)
+
   const { current: context } = React.useRef({
     element: null as HTMLDivElement | null,
     containerRect: { left: 0, width: 0 } as DOMRect,
