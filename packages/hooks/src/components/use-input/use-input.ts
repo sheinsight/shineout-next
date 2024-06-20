@@ -1,5 +1,6 @@
 import useForkRef from '../../common/use-fork-ref';
 import * as React from 'react';
+import { useAutoFocusByVisible } from '../../common/use-auto-focus';
 import { extractEventHandlers } from '../../utils';
 import {
   BaseInputProps,
@@ -34,6 +35,7 @@ const useInput = (params: BaseInputProps) => {
     onClear,
     onClick,
     showClear,
+    autoFocus,
     onFocusedChange,
     ...propsToForward
   } = params;
@@ -93,7 +95,10 @@ const useInput = (params: BaseInputProps) => {
       onChange?.(event.target.value);
     };
 
-  const handleInputRef = useForkRef(inputRef, inputRefPo);
+  const { focusRef } = useAutoFocusByVisible({
+    autoFocus
+  })
+  const handleInputRef = useForkRef(inputRef, inputRefPo, focusRef);
 
   const getInputProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,

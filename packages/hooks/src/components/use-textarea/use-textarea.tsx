@@ -4,6 +4,7 @@ import {
   UseTextareaRootSlotProps,
   UseTextareaSlotProps,
 } from './use-textarea.type';
+import { useAutoFocusByVisible } from '../../common/use-auto-focus';
 import { HandlerType, ObjectType } from '../../common/type';
 import { extractEventHandlers } from '../../utils';
 import useForkRef from '../../common/use-fork-ref';
@@ -22,6 +23,7 @@ const useTextarea = (props: BaseTextareaProps) => {
     onFocus,
     textareaRef,
     rootRef,
+    autoFocus,
     ...propsToForward
   } = props;
   const [focused, setFocused] = React.useState(false);
@@ -65,7 +67,11 @@ const useTextarea = (props: BaseTextareaProps) => {
       onChange?.(event.target.value);
     };
 
-  const handleInputRef = useForkRef(textRef, textareaRef);
+  const { focusRef } = useAutoFocusByVisible({
+    autoFocus
+  })
+
+  const handleInputRef = useForkRef(textRef, textareaRef, focusRef);
 
   const getTextAreaProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,

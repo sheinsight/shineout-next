@@ -1,4 +1,4 @@
-import { useKeyEvent, usePersistFn, useTextarea, useAutoFocusByVisible, util } from '@sheinx/hooks';
+import { useKeyEvent, usePersistFn, useTextarea, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent, useEffect } from 'react';
 import { SimpleTextareaProps } from './textarea.type';
@@ -24,6 +24,7 @@ const Textarea = (props: SimpleTextareaProps) => {
   const textareaClasses = jssStyle?.textarea?.();
   const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
     ...rest,
+    autoFocus
   });
 
   const rootClass = classNames(
@@ -65,11 +66,7 @@ const Textarea = (props: SimpleTextareaProps) => {
     }
   }, [focused]);
 
-  const { focusRef } = useAutoFocusByVisible({
-    autoFocus
-  })
-
-  let textareaEl = <textarea {...textareaProps} ref={focusRef as React.MutableRefObject<HTMLTextAreaElement>} />;
+  let textareaEl = <textarea {...textareaProps} />;
 
   if (typeof renderTextarea === 'function') {
     textareaEl = renderTextarea(textareaEl);

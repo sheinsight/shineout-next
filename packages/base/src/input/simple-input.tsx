@@ -1,6 +1,6 @@
-import { useInput, useKeyEvent, usePersistFn, useAutoFocusByVisible, util } from '@sheinx/hooks';
+import { useInput, useKeyEvent, usePersistFn, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { KeyboardEvent, useEffect } from 'react';
+import React, { KeyboardEvent } from 'react';
 import { SimpleInputProps } from './input.type';
 import Icons from '../icons';
 import { useConfig } from '../config';
@@ -30,6 +30,7 @@ const Input = (props: SimpleInputProps) => {
   const config = useConfig();
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
+    autoFocus,
     onFocusedChange,
   });
 
@@ -62,11 +63,7 @@ const Input = (props: SimpleInputProps) => {
     onKeyUp,
   });
 
-  const { focusRef } = useAutoFocusByVisible({
-    autoFocus
-  })
-
-  let inputEl = <input type='text' {...inputProps} ref={focusRef as React.MutableRefObject<HTMLInputElement>} />;
+  let inputEl = <input type='text' {...inputProps} />;
 
   if (typeof renderInput === 'function') {
     inputEl = renderInput(inputEl);
