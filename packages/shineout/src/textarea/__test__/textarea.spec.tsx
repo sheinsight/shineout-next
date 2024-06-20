@@ -49,8 +49,11 @@ describe('Textarea[Base]', () => {
   snapshotTest(<TextareaInfo />, 'about info');
   snapshotTest(<TextareaInfoFunction />, 'about info by function');
   snapshotTest(<TextareaFooter />, 'about footer');
-  test('should render textarea element', () => {
+  test('should render textarea element', async () => {
     const { container } = render(<TextareaBase />);
+    await waitFor(async () => {
+      await delay(200);
+    })
     classTest(container.querySelector(textareaClassName)!, textareaFocusClassName);
     classLengthTest(container, 'textarea', 1);
   });

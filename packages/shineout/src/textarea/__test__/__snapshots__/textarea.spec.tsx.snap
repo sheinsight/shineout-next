@@ -2,7 +2,7 @@
 
 exports[`Textarea[Base] should render correctly  1`] = `
 <div
-  class="soui-textarea-wrapper soui-textarea-wrapper-focus"
+  class="soui-textarea-wrapper"
   data-soui-input-border="true"
 >
   <textarea
