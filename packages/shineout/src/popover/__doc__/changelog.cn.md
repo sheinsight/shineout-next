@@ -1,5 +1,7 @@
 ## 3.2.2
-未发布
+2024-06-21
+
+### 🐞 BugFix
 - 修复 `Popover` 中元素 `autoFocus` 会导致页面滚动的问题 ([#535](https://github.com/sheinsight/shineout-next/pull/535))
 
 

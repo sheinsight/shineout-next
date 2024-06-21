@@ -21,6 +21,7 @@ interface scrollProps {
   style?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
   onMouseMove?: () => void;
+  defaultHeight?: number;
 }
 
 const Scroll = (props: scrollProps) => {
@@ -29,10 +30,11 @@ const Scroll = (props: scrollProps) => {
     timer: null as any,
     isMouseDown: false,
   });
-  const { width, height } = useResize({ targetRef: containerRef });
+  const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
+  const { width, height: h } = useResize({ targetRef: containerRef });
+  const height = h || defaultHeight;
   const config = useConfig();
   const isRtl = config.direction === 'rtl';
-  const { scrollHeight = 0, scrollWidth = 0 } = props;
 
   const scrollerStyle = props.scrollerStyle || {
     height: '100%',
@@ -50,8 +52,7 @@ const Scroll = (props: scrollProps) => {
   } as React.CSSProperties;
 
   const placeStyle = {
-    paddingTop:
-      (height > 0 && scrollHeight > 0 ? Math.max(0, Math.floor(scrollHeight - height)) : 0),
+    paddingTop: height > 0 && scrollHeight > 0 ? Math.max(0, Math.floor(scrollHeight - height)) : 0,
     width: scrollWidth,
     overflow: 'hidden',
     lineHeight: 0,

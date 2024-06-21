@@ -1,8 +1,11 @@
 ## 3.2.2
-未发布
+2024-06-21
 
 ### 🐞 BugFix
 - 修复 `Table` 虚拟列表在缩放场景下可能导致滚动条跳动的问题 ([#539](https://github.com/sheinsight/shineout-next/pull/539))
+
+### 💎 Enhancement
+- 优化 `Table` 虚拟列表高度计算逻辑 ([#530](https://github.com/sheinsight/shineout-next/pull/530))
 
 
 ## 3.1.31
