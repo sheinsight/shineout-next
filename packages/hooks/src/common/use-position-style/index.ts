@@ -50,7 +50,7 @@ export interface PositionStyleConfig {
 
 const hideStyle: React.CSSProperties = {
   pointerEvents: 'none',
-  position: 'absolute',
+  position: 'fixed',
   zIndex: -1000,
   opacity: 0,
 };

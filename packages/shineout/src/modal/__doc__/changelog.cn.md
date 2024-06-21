@@ -1,3 +1,10 @@
+## 3.2.2
+2024-06-21
+
+### 🐞 BugFix
+
+- 修复`Modal`组件在React `StrictMode`模式下不显示遮罩层的问题 ([#536](https://github.com/sheinsight/shineout-next/pull/536))
+
 ## 3.1.26
 2024-06-05
 

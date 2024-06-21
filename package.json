@@ -18,6 +18,7 @@
     "build:bundless": "pnpm --filter=./packages/* run build",
     "build:bundle": "pnpm --filter=./packages/shineout run build:bundle ",
     "build:watch": "pnpm --filter=./packages/* run build:watch",
+    "clean": "pnpm --filter=./packages/* run clean",
     "release": "node ./scripts/publish.js",
     "prepare": "husky install",
     "doctor": "father doctor",

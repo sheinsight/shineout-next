@@ -1,4 +1,10 @@
 ## 3.2.2
+2024-06-21
+
+### 🐞 BugFix
+- 修复 `Menu` content 缺少了 `flex` 样式  ([#537](https://github.com/sheinsight/shineout-next/pull/537))
+
+## 3.2.2
 2024-06-18
 
 ### 🐞 BugFix

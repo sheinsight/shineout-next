@@ -66,7 +66,7 @@ const Modal = (props: ModalContentProps) => {
     }
   };
 
-  handleMaskVisible();
+  useEffect(handleMaskVisible, [visible]);
 
   const updateOrigin = () => {
     // 更新transform-origin

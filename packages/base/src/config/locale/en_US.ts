@@ -50,8 +50,6 @@ export default {
     ],
   },
 
-  pickerTitle: ['Start Time', 'End Time'],
-
   timeOfDayValues: ['a.m.', 'p.m.'],
 
   ok: 'Ok',
