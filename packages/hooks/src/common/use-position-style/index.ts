@@ -128,7 +128,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     el.style.opacity = '0';
     el.style.pointerEvents = 'none';
     el.style.display = '';
-    el.style.overflow = 'hidden';
     if (absolute && fixedWidth) {
       const widthKey = fixedWidth === 'min' ? 'minWidth' : 'width';
       el.style[widthKey] = parentRect.width + 'px';
@@ -280,7 +279,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     if (newStyle && !shallowEqual(style, newStyle)) {
       setStyle(newStyle);
     }
-    console.log('updateStyle', newStyle);
   });
 
   useEffect(updateStyle, [show, position, absolute, updateKey]);
