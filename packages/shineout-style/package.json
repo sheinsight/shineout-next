@@ -12,6 +12,7 @@
   "scripts": {
     "build": "node ./scripts/clean && father build && node ./scripts/handle-rsc",
     "build:watch": "father dev",
+    "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
