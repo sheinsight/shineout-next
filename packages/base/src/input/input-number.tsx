@@ -9,19 +9,30 @@ import useInputCommon from './use-input-common';
 
 const InputNumber = (props: InputNumberProps) => {
   const commonProps = useInputCommon<InputNumberProps['value'], InputNumberProps>(props);
-  const { jssStyle, hideArrow, ...restProps } = commonProps;
+  const {
+    jssStyle,
+    hideArrow,
+    numType,
+    integerLimit,
+    digits,
+    min,
+    max,
+    step,
+    allowNull,
+    ...restProps
+  } = commonProps;
   const inputStyle = jssStyle?.input?.();
 
   const numberFormatParams = {
     onBlur: restProps.onBlur,
     onFocus: restProps.onFocus,
-    digits: restProps.digits,
-    integerLimit: restProps.integerLimit,
-    numType: restProps.numType,
-    min: restProps.min,
-    max: restProps.max,
-    step: restProps.step,
-    allowNull: restProps.allowNull,
+    digits: digits,
+    integerLimit: integerLimit,
+    numType: numType,
+    min: min,
+    max: max,
+    step: step,
+    allowNull: allowNull,
   };
 
   const { onMinus, onPlus, ...numberFormatProps } = useInputNumber({
@@ -33,6 +44,7 @@ const InputNumber = (props: InputNumberProps) => {
 
   const forwardProps = util.removeProps(commonProps, {
     ...numberFormatParams,
+    hideArrow,
   });
 
   const addEnd = hideArrow ? null : (
