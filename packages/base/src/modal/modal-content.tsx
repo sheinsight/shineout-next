@@ -39,9 +39,9 @@ const Modal = (props: ModalContentProps) => {
   const width = style.width || props.width || defaultWidth;
   const height = style.height || props.height;
   const [origin, setOrigin] = useState('');
+  const [isMask, setIsMask] = useState(false);
   const { current: context } = useRef({
     renderEd: false,
-    isMask: false,
     mouseDownTarget: null as HTMLElement | null,
     mouseUpTarget: null as HTMLElement | null,
   });
@@ -61,11 +61,12 @@ const Modal = (props: ModalContentProps) => {
     // 多个moal 只有第一个显示的时候才显示遮罩
     // context.isMask 用来判断是否是第一个显示的modal
     if (visible && !hasMask) {
-      context.isMask = true;
+      setIsMask(true);
       hasMask = true;
     }
   };
 
+  // handleMaskVisible()
   useEffect(handleMaskVisible, [visible]);
 
   const updateOrigin = () => {
@@ -89,9 +90,9 @@ const Modal = (props: ModalContentProps) => {
     if (props.zoom && !visible) {
       setOrigin('');
     }
-    if (!visible && context.isMask) {
+    if (!visible && isMask) {
       hasMask = false;
-      context.isMask = false;
+      setIsMask(false);
     }
   });
 
@@ -172,8 +173,8 @@ const Modal = (props: ModalContentProps) => {
       // if (props.autoShow) {
       //   props.onClose?.();
       // }
-      if (context.isMask) {
-        context.isMask = false;
+      if (isMask) {
+        setIsMask(false);
         hasMask = false;
       }
       {
@@ -294,7 +295,7 @@ const Modal = (props: ModalContentProps) => {
           modalClasses?.wrapper,
           animation && modalClasses?.wrapperAnimation,
           visible ? modalClasses?.wrapperShow : modalClasses?.wrapperHide,
-          (context.isMask || props.forceMask) && modalClasses?.wrapperIsMask,
+          (isMask || props.forceMask) && modalClasses?.wrapperIsMask,
           props.fullScreen && modalClasses?.wrapperFullScreen,
           props.moveable && modalClasses?.wrapperMoveable,
           props.hideMask && modalClasses?.wrapperHideMask,
