@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
 import { util } from '@sheinx/hooks';
-import { useDragMove, useDragResize, usePersistFn } from '@sheinx/hooks';
+import { useDragMove, useDragResize, usePersistFn, useRender } from '@sheinx/hooks';
 import { FormFooterProvider } from '../form/form-footer-context';
 
 import type { ModalContentProps } from './modal-content.type';
@@ -39,9 +39,9 @@ const Modal = (props: ModalContentProps) => {
   const width = style.width || props.width || defaultWidth;
   const height = style.height || props.height;
   const [origin, setOrigin] = useState('');
-  const [isMask, setIsMask] = useState(false);
   const { current: context } = useRef({
     renderEd: false,
+    isMask: false,
     mouseDownTarget: null as HTMLElement | null,
     mouseUpTarget: null as HTMLElement | null,
   });
@@ -57,17 +57,19 @@ const Modal = (props: ModalContentProps) => {
     panelRef,
   });
 
+  const rerender = useRender();
   const handleMaskVisible = () => {
     // 多个moal 只有第一个显示的时候才显示遮罩
     // context.isMask 用来判断是否是第一个显示的modal
     if (visible && !hasMask) {
-      setIsMask(true);
+      context.isMask = true;
       hasMask = true;
+
+      rerender();
     }
   };
 
-  // handleMaskVisible()
-  useEffect(handleMaskVisible, [visible]);
+  useEffect(handleMaskVisible, [visible, context.isMask]);
 
   const updateOrigin = () => {
     // 更新transform-origin
@@ -90,9 +92,9 @@ const Modal = (props: ModalContentProps) => {
     if (props.zoom && !visible) {
       setOrigin('');
     }
-    if (!visible && isMask) {
+    if (!visible && context.isMask) {
       hasMask = false;
-      setIsMask(false);
+      context.isMask = false;
     }
   });
 
@@ -173,8 +175,8 @@ const Modal = (props: ModalContentProps) => {
       // if (props.autoShow) {
       //   props.onClose?.();
       // }
-      if (isMask) {
-        setIsMask(false);
+      if (context.isMask) {
+        context.isMask = false;
         hasMask = false;
       }
       {
@@ -295,7 +297,7 @@ const Modal = (props: ModalContentProps) => {
           modalClasses?.wrapper,
           animation && modalClasses?.wrapperAnimation,
           visible ? modalClasses?.wrapperShow : modalClasses?.wrapperHide,
-          (isMask || props.forceMask) && modalClasses?.wrapperIsMask,
+          (context.isMask || props.forceMask) && modalClasses?.wrapperIsMask,
           props.fullScreen && modalClasses?.wrapperFullScreen,
           props.moveable && modalClasses?.wrapperMoveable,
           props.hideMask && modalClasses?.wrapperHideMask,
