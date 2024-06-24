@@ -16,6 +16,12 @@ export interface CardTokens {
   cardShadow: string;
   /**
    * @type {string}
+   * @token Shadow-2
+   * @description 卡片鼠标移入时的阴影
+   */
+  cardHoverShadow: string;
+  /**
+   * @type {string}
    * @token Border-1
    * @description 卡片边框宽度
    */

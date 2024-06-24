@@ -16,7 +16,7 @@ const cardStyle: JsStyles<CardClassType> = {
   wrapper: {
     display: 'flex',
     flexDirection: 'column',
-    border: `1px solid ${token.cardBorderColor}`,
+    border: `${token.cardBorderWidth} solid ${token.cardBorderColor}`,
     borderRadius: token.cardBorderRadius,
     fontSize: token.cardFontSize,
     lineHeight: token.lineHeightDynamic,
@@ -30,7 +30,7 @@ const cardStyle: JsStyles<CardClassType> = {
   wrapperInAccordion: {
     border: 'none',
     '& + &': {
-      borderTop: `1px solid ${token.cardBorderColor}`,
+      borderTop: `${token.cardBorderWidth} solid ${token.cardBorderColor}`,
       borderTopLeftRadius: 0,
       borderTopRightRadius: 0,
     },
@@ -41,7 +41,7 @@ const cardStyle: JsStyles<CardClassType> = {
   wrapperHover: {
     transition: 'box-shadow .2s linear',
     '&:hover': {
-      boxShadow: token.cardShadow,
+      boxShadow: token.cardHoverShadow,
     },
   },
   wrapperResizable: {
@@ -49,7 +49,7 @@ const cardStyle: JsStyles<CardClassType> = {
   },
   wrapperMoveable: {},
   accordion: {
-    border: `1px solid ${token.cardBorderColor}`,
+    border: `${token.cardBorderWidth} solid ${token.cardBorderColor}`,
     borderRadius: token.cardBorderRadius,
   },
   header: {
@@ -104,7 +104,7 @@ const cardStyle: JsStyles<CardClassType> = {
   },
   body: {
     '$wrapperSplit>$header+&, $wrapperSplit>$header+$bodyCollapse>&': {
-      borderTop: `1px solid ${token.cardBorderColor}`,
+      borderTop: `${token.cardBorderWidth} solid ${token.cardBodyBorderColor}`,
     },
     padding: `${token.cardBodyPaddingY} ${token.cardBodyPaddingX}`,
     flex: 1,
@@ -118,7 +118,7 @@ const cardStyle: JsStyles<CardClassType> = {
   bodyCollapse: {},
   footer: {
     '$wrapperSplit>$body+&, $wrapperSplit>$bodyCollapse+&': {
-      borderTop: `1px solid ${token.cardBorderColor}`,
+      borderTop: `${token.cardBorderWidth} solid ${token.cardFooterBorderColor}`,
     },
     padding: `${token.cardFooterPaddingY} ${token.cardFooterPaddingX}`,
     boxSizing: 'border-box',

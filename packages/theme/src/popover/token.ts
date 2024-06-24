@@ -31,9 +31,9 @@ const popoverTokenValue = {
   shadow: 'Shadow-2',
   success: {
     font: { color: '' },
-    background: { color: '#edf9e8' },
+    background: { color: 'Success-1' },
     shadow: '',
-    border: { color: 'rgba(82, 196, 26, 0.1)' },
+    border: { color: 'Success-2' },
   },
   warning: {
     font: { color: '' },
