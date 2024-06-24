@@ -29,6 +29,9 @@ const cardTokenExtraValue = {
     color: 'Neutral-fill-1',
   },
   shadow: 'Shadow-2',
+  hover: {
+    shadow: 'Shadow-2',
+  },
   border: {
     width: 'Border-1',
     color: 'Neutral-border-1',

@@ -25,7 +25,11 @@ const collapseTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 collapseRules 强关联，非 collapseRules 规则内的 token 需手动增加或删减。
  */
-const collapseTokenValue = {
+const collapseTokenValue = {};
+
+const collapseTokenExtraValue = {
+  icon: { color: 'Neutral-text-4', hover: { background: { color: 'Neutral-fill-3' } } },
+  extra: { margin: 'Spacing-24' },
   wrapper: {
     border: { size: 'Border-1', radius: 'Radius-default', color: 'Neutral-border-1' },
     line: { height: '' },
@@ -39,12 +43,11 @@ const collapseTokenValue = {
     background: { color: 'Neutral-fill-1' },
   },
   header: {
-    border: { size: '', radius: '', color: '' },
+    border: { size: '', radius: '', color: 'Neutral-border-1' },
     line: { height: 'Size-11' },
     gap: 'Spacing-8',
     padding: { x: '', y: '', left: '', right: '' },
-    font: { size: 'Font-14' },
-    weight: '400',
+    font: { size: 'Font-14', weight: 'Weight-regular' },
     icon: { width: 'Size-7' },
     extra: { gap: 'Size-5' },
     color: 'Neutral-text-5',
@@ -55,8 +58,7 @@ const collapseTokenValue = {
     line: { height: 'Size-11' },
     gap: 'Spacing-24',
     padding: { x: '', y: 'Spacing-12', left: 'Spacing-38', right: 'Spacing-16' },
-    font: { size: 'Font-14' },
-    weight: '400',
+    font: { size: 'Font-14', weight: 'Weight-regular' },
     icon: { width: '' },
     extra: { gap: '' },
     color: 'Neutral-text-4',
@@ -64,11 +66,6 @@ const collapseTokenValue = {
   },
   active: { border: { color: '' }, color: '', background: { color: '' } },
   disabled: { border: { color: '' }, color: 'Neutral-text-2', background: { color: '' } },
-};
-
-const collapseTokenExtraValue = {
-  icon: { color: 'Neutral-text-4', hover: { background: { color: 'Neutral-fill-3' } } },
-  extra: { margin: 'Spacing-24' },
 };
 
 module.exports = {

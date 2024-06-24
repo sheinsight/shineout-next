@@ -219,8 +219,8 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
 
     '&$circle,&$square': {
-      width: 24,
-      height: 24,
+      width: Token.buttonSmallCircleSize,
+      height: Token.buttonSmallCircleSize,
     },
   },
 
@@ -231,8 +231,8 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
 
     '&$circle,&$square': {
-      width: 40,
-      height: 40,
+      width: Token.buttonLargeCircleSize,
+      height: Token.buttonLargeCircleSize,
     },
   },
 
@@ -337,14 +337,14 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     borderRadius: Token.buttonRoundBorderRadius,
   },
   circle: {
-    width: `32px`,
-    height: `32px`,
+    width: Token.buttonCircleSize,
+    height: Token.buttonCircleSize,
     padding: 0,
     borderRadius: Token.buttonCircleBorderRadius,
   },
   square: {
-    width: `32px`,
-    height: `32px`,
+    width: Token.buttonCircleSize,
+    height: Token.buttonCircleSize,
     padding: 0,
     borderRadius: Token.buttonSquareBorderRadius,
     '& $spin': {

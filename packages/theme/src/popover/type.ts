@@ -64,13 +64,13 @@ export interface PopoverTokens {
   popoverBorderColor: string;
   /**
    * @type {string}
-   * @token #edf9e8
+   * @token Success-1
    * @description 气泡成功色背景颜色
    */
   popoverSuccessBackgroundColor: string;
   /**
    * @type {string}
-   * @token rgba(82, 196, 26, 0.1)
+   * @token Success-2
    * @description 气泡成功色边框颜色
    */
   popoverSuccessBorderColor: string;

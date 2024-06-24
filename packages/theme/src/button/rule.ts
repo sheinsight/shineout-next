@@ -16,7 +16,11 @@ const buttonRules = {
     ['', 'disabled', 'hover', 'active', 'focus'],
     ['background-color'],
   ],
-  shape: [['', 'small', 'large'], ['round', 'circle', 'square'], ['border-radius']],
+  shape: [
+    ['', 'small', 'large'],
+    ['round', 'circle', 'square'],
+    ['border-radius', 'size'],
+  ],
   extra_nearly_margin: [['nearly-margin']],
   extra_nearly_spin_margin: [['spin-margin']],
 };

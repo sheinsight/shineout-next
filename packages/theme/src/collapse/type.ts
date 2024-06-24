@@ -34,6 +34,12 @@ export interface CollapseTokens {
   collapseWrapperBorderRadius: string;
   /**
    * @type {string}
+   * @token Neutral-border-1
+   * @description 折叠面板整体容器（包含头部内容）边框颜色
+   */
+  collapseWrapperBorderColor: string;
+  /**
+   * @type {string}
    * @token Size-12
    * @description 折叠面板整体容器（包含头部内容）间距
    */
@@ -50,6 +56,24 @@ export interface CollapseTokens {
    * @description 折叠面板整体容器（包含头部内容）内边距（垂直方向）
    */
   collapseWrapperPaddingY: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 折叠面板整体容器（包含头部内容）颜色
+   */
+  collapseWrapperColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 折叠面板整体容器（包含头部内容）背景颜色
+   */
+  collapseWrapperBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 折叠面板头部区域边框颜色
+   */
+  collapseHeaderBorderColor: string;
   /**
    * @type {string}
    * @token Size-11
@@ -70,10 +94,10 @@ export interface CollapseTokens {
   collapseHeaderFontSize: string;
   /**
    * @type {string}
-   * @token 400
-   * @description 折叠面板头部区域字重
+   * @token Weight-regular
+   * @description 折叠面板头部区域字体字重
    */
-  collapseHeaderWeight: string;
+  collapseHeaderFontWeight: string;
   /**
    * @type {string}
    * @token Size-7
@@ -86,6 +110,12 @@ export interface CollapseTokens {
    * @description 折叠面板头部区域右侧附加内容间距
    */
   collapseHeaderExtraGap: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 折叠面板头部区域颜色
+   */
+  collapseHeaderColor: string;
   /**
    * @type {string}
    * @token Size-11
@@ -106,18 +136,6 @@ export interface CollapseTokens {
   collapseContentPaddingY: string;
   /**
    * @type {string}
-   * @token Font-14
-   * @description 折叠面板内部容器字体字号
-   */
-  collapseContentFontSize: string;
-  /**
-   * @type {string}
-   * @token 400
-   * @description 折叠面板内部容器字重
-   */
-  collapseContentWeight: string;
-  /**
-   * @type {string}
    * @token Spacing-38
    * @description 折叠面板内部容器内边距（左侧）
    */
@@ -130,28 +148,16 @@ export interface CollapseTokens {
   collapseContentPaddingRight: string;
   /**
    * @type {string}
-   * @token Neutral-border-1
-   * @description 折叠面板整体容器（包含头部内容）边框颜色
+   * @token Font-14
+   * @description 折叠面板内部容器字体字号
    */
-  collapseWrapperBorderColor: string;
+  collapseContentFontSize: string;
   /**
    * @type {string}
-   * @token Neutral-border-1
-   * @description 折叠面板整体容器（包含头部内容）颜色
+   * @token Weight-regular
+   * @description 折叠面板内部容器字体字重
    */
-  collapseWrapperColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 折叠面板整体容器（包含头部内容）背景颜色
-   */
-  collapseWrapperBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-5
-   * @description 折叠面板头部区域颜色
-   */
-  collapseHeaderColor: string;
+  collapseContentFontWeight: string;
   /**
    * @type {string}
    * @token Neutral-text-4

@@ -16,9 +16,9 @@ const paginationTokenDescription = { pagination: '分页器', nearly: '相邻构
  * 注意，该映射表的内容不与 paginationRules 强关联，非 paginationRules 规则内的 token 需手动增加或删减。
  */
 const paginationTokenValue = {
-  font: { size: 'Font-14', color: 'Neutral-text-5' },
-  small: { font: { size: 'Font-12' } },
-  large: { font: { size: 'Font-16' } },
+  font: { size: 'Font-14', weight: 'Weight-regular', color: 'Neutral-text-5' },
+  small: { font: { size: 'Font-12', weight: 'Weight-regular' } },
+  large: { font: { size: 'Font-16', weight: 'Weight-regular' } },
   nearly: { margin: 'Spacing-8' },
 };
 

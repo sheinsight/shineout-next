@@ -10,16 +10,34 @@ export interface PaginationTokens {
   paginationFontSize: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 分页器字体字重
+   */
+  paginationFontWeight: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 分页器小尺寸字体字号
    */
   paginationSmallFontSize: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 分页器小尺寸字体字重
+   */
+  paginationSmallFontWeight: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 分页器大尺寸字体字号
    */
   paginationLargeFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 分页器大尺寸字体字重
+   */
+  paginationLargeFontWeight: string;
   /**
    * @type {string}
    * @token Neutral-text-5

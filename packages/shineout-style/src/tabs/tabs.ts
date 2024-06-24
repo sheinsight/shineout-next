@@ -607,14 +607,14 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
             right: 0,
             left: 'auto',
             height: '100%',
-            background: Token.tabsBorderColor,
+            background: Token.tabsLineHrBackgroundColor,
           },
         },
         '[data-soui-position^="right-"] &': {
           '&:after': {
             width: 1,
             height: '100%',
-            background: Token.tabsBorderColor,
+            background: Token.tabsLineHrBackgroundColor,
           },
         },
         '&:not([data-soui-state="active"])': {
@@ -625,7 +625,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
             left: 0,
             width: '100%',
             height: 1,
-            background: Token.tabsBorderColor,
+            background: Token.tabsLineHrBackgroundColor,
           },
         },
 
@@ -674,10 +674,10 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         fontWeight: Token.tabsFillFontWeight,
         background: Token.tabsFillBackgroundColor,
         '&[data-soui-state="active"]': {
-          color: Token.tabsFillCheckedFontColor,
           // fontSize: Token.tabsFillCheckedFontSize,
-          fontWeight: Token.tabsFillCheckedFontWeight,
           '& $fillInner': {
+            color: Token.tabsFillCheckedFontColor,
+            fontWeight: Token.tabsFillCheckedFontWeight,
             background: Token.tabsFillCheckedBackgroundColor,
           },
         },
