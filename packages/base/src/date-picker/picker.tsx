@@ -94,12 +94,10 @@ const Picker = (props: PickerProps) => {
           onDoubleClick={(item, type) => {
             // 双击同时设置开始和结束日期
             if (props.range && props.type === 'datetime') {
-              if (position === 'start' && !isDisabledDate(item, 'end')) {
-                func.setCurrentEnd(item, type);
-                func.setDateEnd(item, true);
-              } else if (!isDisabledDate(item, 'start')) {
-                func.setCurrentStart(item, type);
-                func.setDateStart(item, true);
+              if (position === 'start') {
+                func.setStartDobule(item);
+              } else if (position === 'end') {
+                func.setEndDobule(item);
               }
             }
           }}
