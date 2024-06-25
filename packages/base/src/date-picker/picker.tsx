@@ -95,9 +95,17 @@ const Picker = (props: PickerProps) => {
             // 双击同时设置开始和结束日期
             if (props.range && props.type === 'datetime') {
               if (position === 'start') {
-                func.setStartDobule(item);
+                const end = func.getStartDobule(item);
+                if (!isDisabledDate(end, 'end')) {
+                  func.setCurrentEnd(end, type);
+                  func.setDateEnd(end, true);
+                }
               } else if (position === 'end') {
-                func.setEndDobule(item);
+                const start = func.getEndDobule(item);
+                if (!isDisabledDate(start, 'start')) {
+                  func.setCurrentStart(start, type);
+                  func.setDateStart(start, true);
+                }
               }
             }
           }}

@@ -139,14 +139,20 @@ const Day = (props: DayProps) => {
     return (
       <div className={styles?.pickerFooter} dir={direction}>
         {props.type === 'datetime' && (
-          <div className={classNames(styles?.pickerFooterLeft, styles?.datetime)}>
-            {timeStr && (
+          <div
+            className={classNames(
+              styles?.pickerFooterLeft,
+              styles?.datetime,
+              !timeStr && styles?.datetimeHide,
+            )}
+          >
+            {
               <>
                 <span>{Icons.datepicker.Time}</span>
                 <TimePicker {...props} showSelNow={false} showTitle={false} format={format} />
-                <span>{func.getTimeStr()}</span>
+                <span>{timeStr}</span>
               </>
-            )}
+            }
           </div>
         )}
         {showRight && (

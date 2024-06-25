@@ -109,7 +109,7 @@ const useRangePick = (props: useRangeProps) => {
     setTargetArr([date, undefined]);
   });
 
-  const setStartDobule = usePersistFn((date: Date, ...args: any) => {
+  const getStartDobule = usePersistFn((date: Date) => {
     const end = utils.getDateWithTime(
       date,
       props.dateArr[1],
@@ -118,10 +118,10 @@ const useRangePick = (props: useRangeProps) => {
       endMax,
       options,
     );
-    setDateEnd(end, true);
+    return end
   });
 
-  const setEndDobule = usePersistFn((date: Date, ...args: any) => {
+  const getEndDobule = usePersistFn((date: Date) => {
     const start = utils.getDateWithTime(
       date,
       props.dateArr[1],
@@ -130,7 +130,7 @@ const useRangePick = (props: useRangeProps) => {
       startMax,
       options,
     );
-    setDateStart(start, true);
+    return start;
   });
 
   const setTargetEnd = usePersistFn((date?: Date) => {
@@ -194,8 +194,8 @@ const useRangePick = (props: useRangeProps) => {
     setTargetEnd,
     startDisabled,
     endDisabled,
-    setStartDobule,
-    setEndDobule,
+    getStartDobule,
+    getEndDobule,
   });
   const minDate = min ? utils.toDate(min, options) : undefined;
   const maxDate = max ? utils.toDate(max, options) : undefined;
