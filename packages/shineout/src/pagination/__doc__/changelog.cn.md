@@ -3,7 +3,7 @@
 
 ### 💎 Enhancement
 
-- 优化 `Pagination` 数字按钮点击逻辑，当分页数不变的时候不触发onChange ([#536](https://github.com/sheinsight/shineout-next/pull/536))
+- 优化 `Pagination` 数字按钮点击逻辑，当分页数不变的时候不触发onChange ([#546](https://github.com/sheinsight/shineout-next/pull/546))
 
 ## 3.1.26
 2024-06-05
