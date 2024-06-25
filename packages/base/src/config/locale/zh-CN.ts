@@ -51,8 +51,6 @@ export default {
     ],
   },
 
-  pickerTitle: ['开始时间', '结束时间'],
-
   timeOfDayValues: ['上午', '下午'],
 
   ok: '确定',

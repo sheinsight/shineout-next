@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
 import { util } from '@sheinx/hooks';
-import { useDragMove, useDragResize, usePersistFn } from '@sheinx/hooks';
+import { useDragMove, useDragResize, usePersistFn, useRender } from '@sheinx/hooks';
 import { FormFooterProvider } from '../form/form-footer-context';
 
 import type { ModalContentProps } from './modal-content.type';
@@ -57,16 +57,19 @@ const Modal = (props: ModalContentProps) => {
     panelRef,
   });
 
+  const rerender = useRender();
   const handleMaskVisible = () => {
     // 多个moal 只有第一个显示的时候才显示遮罩
     // context.isMask 用来判断是否是第一个显示的modal
     if (visible && !hasMask) {
       context.isMask = true;
       hasMask = true;
+
+      rerender();
     }
   };
 
-  handleMaskVisible();
+  useEffect(handleMaskVisible, [visible]);
 
   const updateOrigin = () => {
     // 更新transform-origin

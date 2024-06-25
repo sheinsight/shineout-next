@@ -1,10 +1,17 @@
+## 3.2.2
+2024-06-21
+
+### 🐞 BugFix
+- 修复 `Popover` 中元素 `autoFocus` 会导致页面滚动的问题 ([#535](https://github.com/sheinsight/shineout-next/pull/535))
+
+
 ## 3.2.0
 2024-06-14
 
 
 ### 💅 Style
 
-- `popover` 优化隐藏箭头后弹层距离触发器的高度 ([#502](https://github.com/sheinsight/shineout-next/pull/502))
+- `Popover` 优化隐藏箭头后弹层距离触发器的高度 ([#502](https://github.com/sheinsight/shineout-next/pull/502))
 
 ## 3.1.28
 2024-06-07

@@ -36,7 +36,12 @@ const useRangePick = (props: useRangeProps) => {
             newArr[1] = rangeMax;
           }
         } else if (date.getTime() > newArr[1]!.getTime()) {
-          const a = utils.cloneTime(new Date(date), defaultTimeArr[1], 'HH:mm:ss', options);
+          const a = utils.cloneTime(
+            new Date(date),
+            arr[1] || defaultTimeArr[1],
+            'HH:mm:ss',
+            options,
+          );
           newArr[1] = a.getTime() > date.getTime() ? a : new Date(date);
         }
       }
@@ -104,6 +109,30 @@ const useRangePick = (props: useRangeProps) => {
     setTargetArr([date, undefined]);
   });
 
+  const getStartDobule = usePersistFn((date: Date) => {
+    const end = utils.getDateWithTime(
+      date,
+      props.dateArr[1],
+      defaultTimeArr[1],
+      endMin,
+      endMax,
+      options,
+    );
+    return end
+  });
+
+  const getEndDobule = usePersistFn((date: Date) => {
+    const start = utils.getDateWithTime(
+      date,
+      props.dateArr[1],
+      defaultTimeArr[1],
+      startMin,
+      startMax,
+      options,
+    );
+    return start;
+  });
+
   const setTargetEnd = usePersistFn((date?: Date) => {
     setTargetArr([undefined, date]);
   });
@@ -165,6 +194,8 @@ const useRangePick = (props: useRangeProps) => {
     setTargetEnd,
     startDisabled,
     endDisabled,
+    getStartDobule,
+    getEndDobule,
   });
   const minDate = min ? utils.toDate(min, options) : undefined;
   const maxDate = max ? utils.toDate(max, options) : undefined;

@@ -422,6 +422,9 @@ const menuStyle: JsStyles<MenuClassType> = {
   },
   titleContent: {
     whiteSpace: 'pre-wrap',
+    display: 'flex',
+    minWidth: 0,
+    alignItems: 'center',
     fontWeight: token.menuItemFontWeight,
     // '$wrapperCollpase &': {
     //   transition: `opacity ${animationDuration} ${transitionFunc}`,

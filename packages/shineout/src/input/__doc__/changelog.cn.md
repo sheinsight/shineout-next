@@ -1,8 +1,14 @@
-## 3.1.24
-2024-06-03
+## 3.2.3
+2024-06-25
+### 💅 Style
+
+- 优化  `Input.Group`  聚焦状态的样式 ([#544](https://github.com/sheinsight/shineout-next/pull/544))
+
+## 3.2.2
+2024-06-21
 ### 🐞 BugFix
 
-- 修复  `Input.Number`  属性 `hideArrow` 被透传到 input 元素的问题 ([#497](https://github.com/sheinsight/shineout-next/pull/497))
+- 修复  `Input.Number`  属性 `hideArrow` 被透传到 input 元素的问题 ([#540](https://github.com/sheinsight/shineout-next/pull/540))
 
 ## 3.1.18
 2024-05-27

@@ -1,3 +1,17 @@
+## 3.2.3
+2024-06-25
+
+### 🐞 BugFix
+
+- 修复 `Modal` 组件在method使用方式下mask有延迟出现的问题 ([#541](https://github.com/sheinsight/shineout-next/pull/541))
+
+## 3.2.2
+2024-06-21
+
+### 🐞 BugFix
+
+- 修复 `Modal` 组件在React `StrictMode` 模式下不显示遮罩层的问题 ([#536](https://github.com/sheinsight/shineout-next/pull/536))
+
 ## 3.1.26
 2024-06-05
 

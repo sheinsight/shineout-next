@@ -107,18 +107,14 @@ const useDate = (props: UseDateProps) => {
   };
 
   const getDateWithTime = (date: Date) => {
-    const { min, max } = props;
-    const timeDate =
-      props.value ||
-      (props.defaultTime && utils.cloneTime(date, props.defaultTime, utils.TIME_FORMAT, options));
-    let newDate = utils.toDate(date);
-    if (timeDate) {
-      newDate = utils.setTime(newDate, timeDate, options);
-    }
-    // only can select day with the same day of min/max
-    if (min && utils.compareAsc(newDate, min) < 0) newDate = utils.setTime(newDate, min, options);
-    if (max && utils.compareAsc(newDate, max) > 0) newDate = utils.setTime(newDate, max, options);
-    return newDate;
+    return utils.getDateWithTime(
+      date,
+      props.value,
+      props.defaultTime,
+      props.min,
+      props.max,
+      options,
+    );
   };
 
   const handleDayClick = (date: Date) => {
