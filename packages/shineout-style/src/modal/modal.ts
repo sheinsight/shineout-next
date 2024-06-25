@@ -346,7 +346,8 @@ const modalStyle: JsStyles<ModalClassType> = {
     flex: '1',
     minWidth: 0,
     textAlign: 'left',
-    fontWeight: 'bold',
+    color: token.modalHeaderFontColor,
+    fontWeight: token.modalHeaderFontWeight,
     fontSize: token.modalHeaderFontSize,
   },
   headerClose: {
@@ -380,6 +381,10 @@ const modalStyle: JsStyles<ModalClassType> = {
     flex: '1 1 auto',
     minHeight: '1px',
     // overflow: 'auto',
+    color: token.modalBodyFontColor,
+    fontSize: token.modalBodyFontSize,
+    fontWeight: token.modalBodyFontWeight,
+    lineHeight: token.lineHeightDynamic,
   },
   bodyWithIcon: {
     paddingLeft: `calc(${token.modalHeaderIconMarginEnd} + ${token.modalHeaderIconSize})`,

@@ -40,7 +40,7 @@ const menuTokenExtraValue = {
   },
   item: {
     background: { color: 'Neutral-fill-1' },
-    font: { color: 'Neutral-text-5' },
+    font: { color: 'Neutral-text-5', weight: 'Weight-regular' },
     hover: {
       background: { color: 'Neutral-fill-2' },
       font: { color: 'Neutral-text-5' },
