@@ -26,7 +26,7 @@ const usePagination = (props: BasePaginationProps) => {
     setCurrent(c);
     setPageSize(size || pageSizeProp);
     if (onChange) {
-      const sizeChange = pageSize !== size;
+      const sizeChange = size !== undefined && pageSize !== size;
       onChange(c, size || pageSize, sizeChange);
     }
   });
