@@ -101,8 +101,8 @@ const Tr = (props: TrProps) => {
 
   useEffect(() => {
     if (props.setRowHeight && trRef.current) {
-      const expandHeight = expandRef.current ? expandRef.current.offsetHeight : 0;
-      props.setRowHeight(props.rowIndex, trRef.current.offsetHeight + expandHeight);
+      const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
+      props.setRowHeight(props.rowIndex, trRef.current.getBoundingClientRect().height + expandHeight);
     }
   }, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
 

@@ -10,6 +10,7 @@
   "typings": "./dist/cjs/index.d.ts",
   "scripts": {
     "build": "father build",
+    "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

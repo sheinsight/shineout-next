@@ -23,7 +23,7 @@ const App: React.FC = () => {
         style={{ marginBottom: 24 }}
       />
       <br />
-      <DatePicker type={type} range />
+      <DatePicker type={type} range defaultTime={['00:00:00', '23:59:59']} />
     </div>
   );
 };

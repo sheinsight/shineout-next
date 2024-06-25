@@ -620,7 +620,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           keygen={keygen}
           unmatch={unmatch}
           value={value}
-          highlight
+          highlight={!multiple}
           loader={loader}
           onExpand={onExpandTree}
           expanded={controlExpanded}
