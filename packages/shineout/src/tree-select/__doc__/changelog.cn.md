@@ -1,5 +1,5 @@
 ## 3.2.3
-未发布
+2024-06-25
 ### 🐞 BugFix
 
 - 修复  `TreeSelect`  点击高亮逻辑问题 ([#545](https://github.com/sheinsight/shineout-next/pull/545))
