@@ -67,7 +67,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
           backgroundColor: token.hoverBackgroundColor,
         },
       },
-      '[data-soui-role="input-group"] &': {
+      '[data-soui-role="input-group"] &&&, [data-soui-role="input-group"] &&&:hover': {
         borderWidth: 0,
         borderRadius: 0,
         boxShadow: 'none',

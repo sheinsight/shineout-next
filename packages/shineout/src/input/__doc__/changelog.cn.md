@@ -1,3 +1,9 @@
+## 3.2.3
+未发布
+### 💅 Style
+
+- 优化  `Input.Group`  聚焦状态的样式 ([#544](https://github.com/sheinsight/shineout-next/pull/544))
+
 ## 3.2.2
 2024-06-21
 ### 🐞 BugFix
