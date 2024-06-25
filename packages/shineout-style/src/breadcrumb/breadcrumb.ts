@@ -8,7 +8,7 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
   wrapper: {
     lineHeight: token.lineHeightDynamic,
     fontSize: token.breadcrumbFontSize,
-    fontWeight: token.breadcrumbFontWieght,
+    fontWeight: token.breadcrumbFontWeight,
     display: 'flex',
     alignItems: 'center',
     color: token.breadcrumbFontColor,
@@ -83,7 +83,7 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
   dropdownItem: {
     lineHeight: token.lineHeightDynamic,
     fontSize: token.dropdownListFontSize,
-    fontWeight: token.breadcrumbFontWieght,
+    fontWeight: token.breadcrumbFontWeight,
     cursor: 'pointer',
     color: token.dropdownOptionFontColor,
     borderRadius: token.dropdownOptionBorderRadius,

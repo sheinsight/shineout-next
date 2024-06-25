@@ -17,9 +17,9 @@ export interface BreadcrumbTokens {
   /**
    * @type {string}
    * @token Weight-regular
-   * @description 面包屑字体undefined
+   * @description 面包屑字体字重
    */
-  breadcrumbFontWieght: string;
+  breadcrumbFontWeight: string;
   /**
    * @type {string}
    * @token Neutral-text-3

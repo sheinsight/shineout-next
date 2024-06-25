@@ -12,6 +12,7 @@ const menuTokens: MenuTokens = {
   menuPopoverPaddingY: 'Spacing-4',
   menuItemBackgroundColor: 'Neutral-fill-1',
   menuItemFontColor: 'Neutral-text-5',
+  menuItemFontWeight: 'Weight-regular',
   menuItemHoverBackgroundColor: 'Neutral-fill-2',
   menuItemHoverFontColor: 'Neutral-text-5',
   menuItemActiveBackgroundColor: 'Brand-1',

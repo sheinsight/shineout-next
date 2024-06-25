@@ -6,7 +6,7 @@ import { BreadcrumbTokens } from './type';
 const breadcrumbTokens: BreadcrumbTokens = {
   breadcrumbFontSize: 'Font-14',
   breadcrumbFontColor: 'Neutral-text-5',
-  breadcrumbFontWieght: 'Weight-regular',
+  breadcrumbFontWeight: 'Weight-regular',
   breadcrumbLinkColor: 'Neutral-text-3',
   breadcrumbLinkHoverColor: 'Brand-5',
   breadcrumbDefaultLinkColor: 'Brand-6',
