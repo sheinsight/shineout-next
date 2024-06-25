@@ -446,6 +446,26 @@ function getStartYear(date: Date, options: DateOptions) {
   return Math.floor(getDateInfo(date, 'year', options) / 10) * 10;
 }
 
+// 如果有 value  取 value 的 time 否则取 defaultTime
+const getDateWithTime = (
+  date: Date,
+  value: Date | undefined,
+  defaultTime: Date | undefined | string | number,
+  min: Date | undefined,
+  max: Date | undefined,
+  options: DateOptions,
+) => {
+  const timeDate = value || (defaultTime && cloneTime(date, defaultTime, TIME_FORMAT, options));
+  let newDate = toDate(date);
+  if (timeDate) {
+    newDate = setTime(newDate, timeDate, options);
+  }
+  // only can select day with the same day of min/max
+  if (min && compareAsc(newDate, min) < 0) newDate = setTime(newDate, min, options);
+  if (max && compareAsc(newDate, max) > 0) newDate = setTime(newDate, max, options);
+  return newDate;
+};
+
 export default {
   clearHMS,
   addDays,
@@ -483,4 +503,5 @@ export default {
   transDateWithZone,
   getStartYear,
   isValidString,
+  getDateWithTime,
 };
