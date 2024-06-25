@@ -1,3 +1,10 @@
+## 3.2.3
+2024-06-24
+
+### 🐞 BugFix
+
+- 修复 `Modal` 组件在method使用方式下mask有延迟出现的问题 ([#541](https://github.com/sheinsight/shineout-next/pull/541))
+
 ## 3.2.2
 2024-06-21
 
