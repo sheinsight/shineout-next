@@ -146,7 +146,7 @@ const tag = (type: TagType) => ({
 const TagStyle: JsStyles<keyof TagClasses> = {
   tag: {
     display: 'inline-flex',
-    padding: `0 ${Token.tagPaddingX}`,
+    padding: `${Token.tagPaddingY} ${Token.tagPaddingX}`,
     fontSize: Token.tagFontSize,
     fontWeight: Token.tagFontWeight,
     borderRadius: Token.tagBorderRadius,
@@ -178,6 +178,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     fontSize: Token.tagLargeFontSize,
     lineHeight: `calc(${Token.tagLargeFontSize} + 8px)`,
     fontWeight: Token.tagLargeFontWeight,
+    borderRadius: Token.tagLargeBorderRadius,
     padding: `${Token.tagLargePaddingY} ${Token.tagLargePaddingX}`,
     '& $closeIconWrapper': {
       '& svg': {
@@ -187,9 +188,11 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     },
   },
   small: {
+    fontSize: Token.tagSmallFontSize,
     lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
     padding: `0 ${Token.tagSmallPaddingX}`,
     fontWeight: Token.tagSmallFontWeight,
+    borderRadius: Token.tagSmallBorderRadius,
     '& $container': {
       lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
     },

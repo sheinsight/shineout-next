@@ -23,6 +23,7 @@ const selectTokenDescription = {
   shadow: '阴影',
   panel: '下拉面板的',
   top: '（顶部）',
+  tag: '标签的',
   bottom: '（底部）',
   loading: '加载状态下的',
   spin: '加载组件',
@@ -42,6 +43,12 @@ const selectTokenExtraValue = {
   border: { radius: 'Radius-default', color: 'Neutral-border-2', width: 'Border-1' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
+  tag: {
+    margin: {
+      y: 'Spacing-2',
+      right: 'Spacing-4',
+    },
+  },
   small: {
     font: { size: 'Font-12' },
     border: { radius: '' },

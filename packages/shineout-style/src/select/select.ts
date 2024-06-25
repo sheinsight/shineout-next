@@ -388,9 +388,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       marginLeft: 0,
     },
     maxWidth: '80%',
-    marginRight: 4,
-    marginTop: token.selectPlaceholderMarginY,
-    marginBottom: token.selectPlaceholderMarginY,
+    marginRight: token.selectTagMarginRight,
+    marginTop: token.selectTagMarginY,
+    marginBottom: token.selectTagMarginY,
     textWrap: 'nowrap',
     '&$hideTag': {
       marginRight: 0,
