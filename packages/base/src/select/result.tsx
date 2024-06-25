@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
+import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
 import Input from './result-input';
 import { getResetMore } from './result-more';
@@ -53,6 +53,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const [more, setMore] = useState(-1);
   const [shouldResetMore, setShouldResetMore] = useState(false);
+  const render = useRender();
 
   const resultRef = useRef<HTMLDivElement>(null);
   const prevMore = useRef(more);
@@ -144,6 +145,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           onInputBlur={onInputBlur}
           onClearCreatedData={onClearCreatedData!}
           placeholder={placeholder2}
+          disabled={util.isFunc(disabled) ? false : !!disabled}
         ></Input>
       </React.Fragment>
     );
@@ -197,8 +199,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         key={index}
         disabled={isDisabled}
         size={size}
-        style={{ opacity: more === index ? 0 : 1 }}
-        className={classNames(styles.tag, resultClassName)}
+        className={classNames(styles.tag, more === 1 && styles.tagOnly, resultClassName)}
         closable={closeable && 'only'}
         onClose={closeable && handleClose}
         onClick={handleClick}
@@ -333,6 +334,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   useLayoutEffect(() => {
     handleResetMore();
   }, [valueProp, data]);
+
+  useLayoutEffect(() => {
+    // datum.getDataByValues(value); 需要等待 useTree useEffect  执行完毕 才能获取到
+    render();
+  }, [data]);
 
   useLayoutEffect(() => {
     if (

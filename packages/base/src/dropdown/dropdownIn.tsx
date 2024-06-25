@@ -18,6 +18,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     data = [],
     jssStyle,
     isSub,
+    adjust = true,
     columns,
     width,
     disabled,
@@ -205,7 +206,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         fixedWidth={'min'}
         popupGap={4}
         popupElRef={popupRef}
-        adjust={!isSub}
+        adjust={!isSub && adjust}
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}

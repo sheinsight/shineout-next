@@ -1,3 +1,31 @@
+## 3.2.2
+2024-06-21
+
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 修改值在某些场景下无法更新的问题 ([#528](https://github.com/sheinsight/shineout-next/pull/528))
+
+## 3.2.0
+2024-06-14
+
+### 💅 Style
+
+- 修改 `Form.Item` 标签在顶部时的内边距 ([#436](https://github.com/sheinsight/shineout-next/pull/436))
+
+## 3.1.28
+2024-06-07
+
+### 🐞 BugFix
+
+- 修复 `Form.Item` 标签在顶部时标签宽度没有撑开的问题   ([#515](https://github.com/sheinsight/shineout-next/pull/515))
+
+## 3.1.27
+2024-06-06
+
+### 🐞 BugFix
+
+- 修复 `Form` 在某些场景下 value 更新存在延迟的问题   ([#506](https://github.com/sheinsight/shineout-next/pull/506))
+
 ## 3.1.12
 2024-05-16
 

@@ -27,9 +27,16 @@ const menuTokenDescription = {
 const menuTokenValue = {};
 
 const menuTokenExtraValue = {
+  collpase: {
+    width: 'Spacing-40',
+  },
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   icon: {
     color: 'Neutral-text-4',
+    margin: { x: 'Spacing-8' },
+  },
+  popover: {
+    padding: { y: 'Spacing-4' },
   },
   item: {
     background: { color: 'Neutral-fill-1' },
@@ -42,18 +49,27 @@ const menuTokenExtraValue = {
       background: { color: 'Brand-1' },
       hover: { background: { color: 'Brand-2' } },
       font: { color: 'Brand-6' },
+      disabled: {
+        font: { color: 'Brand-3' },
+      },
     },
     disabled: {
       background: { color: 'Neutral-fill-1' },
       font: { color: 'Neutral-text-2' },
     },
+    collpase: {
+      active: {
+        background: { color: 'Brand-6' },
+        font: { color: 'Neutral-text-1' },
+      },
+    },
   },
   title: {
-    padding: { x: '16px', y: '9px' },
+    padding: { x: 'Spacing-16', y: 'Spacing-9' },
   },
   expand: {
-    width: '46px',
-    size: '14px',
+    width: 'Spacing-46',
+    size: 'Spacing-14',
     hover: {
       background: { color: 'Neutral-fill-3' },
     },
@@ -62,6 +78,10 @@ const menuTokenExtraValue = {
     box: {
       shadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
     },
+  },
+  header: {
+    border: { color: 'Neutral-border-1' },
+    padding: { x: 'Spacing-12', y: 'Spacing-12' },
   },
   dark: {
     font: { color: 'Neutral-text-1' },
@@ -83,6 +103,53 @@ const menuTokenExtraValue = {
       disabled: {
         background: { color: 'Neutral-fill-10' },
         font: { color: 'Neutral-text-4' },
+      },
+      collpase: {
+        active: {
+          background: { color: 'Brand-6' },
+          font: { color: 'Neutral-text-1' },
+        },
+      },
+    },
+    header: {
+      border: { color: 'Neutral-fill-8' },
+    },
+  },
+
+  search: {
+    border: { radius: 'Radius-full', color: 'Neutral-border-2' },
+    collpase: {
+      size: 'Size-16',
+    },
+    icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { x: 'Spacing-8' } },
+    background: { color: 'Neutral-fill-2' },
+    clear: { color: 'Neutral-text-2' },
+    hover: {
+      clear: { color: 'Neutral-text-4' },
+      border: { color: 'Brand-5' },
+      background: { color: 'Neutral-fill-1' },
+    },
+    disabled: {
+      background: { color: 'Neutral-fill-3' },
+    },
+    dark: {
+      font: { color: 'Neutral-text-1' },
+      border: { color: 'Neutral-fill-8' },
+      background: { color: 'Neutral-fill-8' },
+      icon: { color: 'Neutral-text-1' },
+      clear: { color: 'Neutral-text-3' },
+      placeholder: {
+        font: { color: 'Neutral-text-2' },
+      },
+      hover: {
+        border: { color: 'Brand-5' },
+        background: { color: 'Neutral-fill-9' },
+        clear: { color: 'Neutral-text-2' },
+      },
+      focus: {
+        border: { color: 'Brand-5' },
+        background: { color: 'Neutral-fill-9' },
+        shadow: 'Brand-9',
       },
     },
   },

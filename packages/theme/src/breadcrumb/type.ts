@@ -16,6 +16,12 @@ export interface BreadcrumbTokens {
   breadcrumbFontColor: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 面包屑字体undefined
+   */
+  breadcrumbFontWieght: string;
+  /**
+   * @type {string}
    * @token Neutral-text-3
    * @description 面包屑链接色颜色
    */
@@ -26,24 +32,6 @@ export interface BreadcrumbTokens {
    * @description 面包屑链接色鼠标移入时的颜色
    */
   breadcrumbLinkHoverColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 面包屑下拉列表的背景颜色
-   */
-  breadcrumbListBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Shadow-1
-   * @description 面包屑下拉列表的阴影
-   */
-  breadcrumbListShadow: string;
-  /**
-   * @type {string}
-   * @token #f4f5f8
-   * @description 面包屑下拉列表的边框颜色
-   */
-  breadcrumbListBorderColor: string;
   /**
    * @type {string}
    * @token Spacing-4

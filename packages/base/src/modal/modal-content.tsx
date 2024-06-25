@@ -66,7 +66,7 @@ const Modal = (props: ModalContentProps) => {
     }
   };
 
-  handleMaskVisible();
+  useEffect(handleMaskVisible, [visible]);
 
   const updateOrigin = () => {
     // 更新transform-origin
@@ -169,9 +169,9 @@ const Modal = (props: ModalContentProps) => {
     // unmount
     return () => {
       props.shouldDestroy?.(true);
-      if (props.autoShow) {
-        props.onClose?.();
-      }
+      // if (props.autoShow) {
+      //   props.onClose?.();
+      // }
       if (context.isMask) {
         context.isMask = false;
         hasMask = false;

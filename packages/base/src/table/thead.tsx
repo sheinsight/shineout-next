@@ -194,7 +194,7 @@ export default (props: TheadProps) => {
           dir={config.direction}
         >
           {showSelectAll && (
-            <div style={{ lineHeight: 1, verticalAlign: 'middle' }}>
+            <div className={tableClasses?.iconWrapper}>
               {props.radio ? null : (
                 <Checkbox
                   disabled={props.disabled === true}

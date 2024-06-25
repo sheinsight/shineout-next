@@ -14,6 +14,7 @@ const inputTokenDescription = {
   toggle: '反转',
   shadow: '阴影',
   info: '基础',
+  group: '组合模式',
 };
 
 /**
@@ -23,9 +24,11 @@ const inputTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 inputRules 强关联，非 inputRules 规则内的 token 需手动增加或删减。
  */
-const inputTokenValue = {
-  font: { size: 'Font-14', color: 'Neutral-text-5' },
-  border: { radius: 'Radius-4', color: 'Neutral-border-2' },
+const inputTokenValue = {};
+
+const inputTokenExtraValue = {
+  font: { size: 'Font-14', color: 'Neutral-text-5', weight: 'Weight-regular' },
+  border: { radius: 'Radius-default', color: 'Neutral-border-2', width: 'Border-1' },
   padding: { x: 'Spacing-8', y: 'Spacing-4' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
@@ -40,7 +43,7 @@ const inputTokenValue = {
     padding: { x: 'Spacing-12', y: 'Spacing-7' },
     icon: { size: '' },
   },
-  placeholder: { color: 'Neutral-text-2' },
+  placeholder: { color: 'Neutral-text-2', font: { weight: 'Weight-regular' } },
   background: { color: 'Neutral-fill-1' },
   shadow: '',
   clear: { color: 'Neutral-text-3' },
@@ -49,17 +52,17 @@ const inputTokenValue = {
     font: { color: '' },
     placeholder: { color: '' },
     border: { color: 'Brand-6' },
-    background: { color: '' },
+    background: { color: 'Neutral-fill-1' },
     shadow: '',
     clear: { color: 'Neutral-text-4' },
     toggle: { color: 'Neutral-text-5' },
-    icon: { color: '' },
+    icon: { color: 'Brand-6' },
   },
   focus: {
     font: { color: '' },
     placeholder: { color: '' },
     border: { color: 'Brand-7' },
-    background: { color: '' },
+    background: { color: 'Neutral-fill-1' },
     shadow: 'Brand-2',
     clear: { color: '' },
     toggle: { color: '' },
@@ -99,7 +102,7 @@ const inputTokenValue = {
     font: { color: '' },
     placeholder: { color: '' },
     border: { color: 'Danger-6' },
-    background: { color: '' },
+    background: { color: 'Neutral-fill-1' },
     shadow: '',
     clear: { color: '' },
     toggle: { color: '' },
@@ -107,8 +110,8 @@ const inputTokenValue = {
     hover: {
       font: { color: '' },
       placeholder: { color: '' },
-      border: { color: '' },
-      background: { color: '' },
+      border: { color: 'Danger-6' },
+      background: { color: 'Neutral-fill-1' },
       shadow: '',
       clear: { color: '' },
       toggle: { color: '' },
@@ -117,14 +120,15 @@ const inputTokenValue = {
     focus: {
       font: { color: '' },
       placeholder: { color: '' },
-      border: { color: '' },
-      background: { color: '' },
+      border: { color: 'Danger-6' },
+      background: { color: 'Neutral-fill-1' },
       shadow: 'Danger-1',
       clear: { color: '' },
       toggle: { color: '' },
       icon: { color: '' },
     },
   },
+  group: { font: { color: 'Neutral-text-5', background: { color: 'Neutral-fill-2' } } },
   info: {
     font: { color: 'Brand-6' },
     background: { color: 'Neutral-fill-1' },
@@ -140,10 +144,13 @@ const inputTokenValue = {
     font: { size: 'Font-12', color: 'Neutral-text-4' },
     small: { padding: { x: 'Spacing-8', y: 'Spacing-1' }, font: { size: 'Font-12' } },
     large: { padding: { x: 'Spacing-12', y: 'Spacing-3' }, font: { size: 'Font-14' } },
+    top: {
+      font: { size: 'Font-12' },
+      small: { font: { size: 'Font-12' } },
+      large: { font: { size: 'Font-12' } },
+    },
   },
 };
-
-const inputTokenExtraValue = {};
 
 module.exports = {
   inputTokenValue,

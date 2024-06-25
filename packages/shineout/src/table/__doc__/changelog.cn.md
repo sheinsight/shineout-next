@@ -1,3 +1,45 @@
+## 3.2.2
+2024-06-21
+
+### 🐞 BugFix
+- 修复 `Table` 虚拟列表在缩放场景下可能导致滚动条跳动的问题 ([#539](https://github.com/sheinsight/shineout-next/pull/539))
+
+### 💎 Enhancement
+- 优化 `Table` 虚拟列表高度计算逻辑 ([#530](https://github.com/sheinsight/shineout-next/pull/530))
+
+
+## 3.1.31
+2024-06-14
+
+### 🐞 BugFix
+- 修复 `Table` 虚拟列表高度被撑高的问题 ([#523](https://github.com/sheinsight/shineout-next/pull/523))
+
+## 3.1.30
+2024-06-13
+### 🐞 BugFix
+
+- 修复 `Table` 在某些场景下无法滚动的问题 ([#519](https://github.com/sheinsight/shineout-next/pull/519))
+
+## 3.1.28
+2024-06-07
+### 🐞 BugFix
+
+- 修复 `Table` 虚拟列表在 Firefox 浏览器滚动条长度超长问题 ([#512](https://github.com/sheinsight/shineout-next/pull/512))
+
+## 3.1.24
+2024-06-03
+### 🐞 BugFix
+
+- 修复 `Table` 右侧固定列在某些场景会出现偏移的问题 ([#499](https://github.com/sheinsight/shineout-next/pull/499))
+
+
+## 3.1.20
+2024-05-30
+### 💅 Style
+
+- 修复 `Table` 选择行场景下复选框和文本不对齐问题([#486](https://github.com/sheinsight/shineout-next/pull/486)) 
+
+
 ## 3.1.15
 2024-05-23
 ### 🐞 BugFix

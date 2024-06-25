@@ -11,9 +11,9 @@ const alertRules = {
     ['info', 'success', 'warning', 'danger'],
     ['background-color', 'border-color', 'font-color'],
   ],
-  size: [['font-size', 'font-color', 'padding-x', 'padding-y', 'border-radius']],
+  size: [['font-size', 'font-weight', 'font-color', 'padding-x', 'padding-y', 'border-radius']],
   extra_margin: [['nearly'], ['margin']],
-  extra_title: [['title'], ['font-size']],
+  extra_title: [['title'], ['font-size', 'font-weight', 'margin-y']],
   extra_close: [
     ['close', 'message'],
     ['font-color', 'hover-color'],

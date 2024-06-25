@@ -23,7 +23,7 @@ export interface TreeTokens {
   /**
    * @type {string}
    * @token Size-18
-   * @description 树组件行高度
+   * @description 树组件连接线高度
    */
   treeLineHeight: string;
   /**
@@ -35,7 +35,7 @@ export interface TreeTokens {
   /**
    * @type {string}
    * @token Size-14
-   * @description 树组件小尺寸行高度
+   * @description 树组件小尺寸连接线高度
    */
   treeSmallLineHeight: string;
   /**
@@ -47,15 +47,27 @@ export interface TreeTokens {
   /**
    * @type {string}
    * @token Size-22
-   * @description 树组件大尺寸行高度
+   * @description 树组件大尺寸连接线高度
    */
   treeLargeLineHeight: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 树组件字体字重
+   */
+  treeFontWeight: string;
   /**
    * @type {string}
    * @token Neutral-text-5
    * @description 树组件字体颜色
    */
   treeFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 树组件连接线背景颜色
+   */
+  treeLineBackgroundColor: string;
   /**
    * @type {string}
    * @token Spacing-8

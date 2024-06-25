@@ -94,7 +94,7 @@ const Popover = (props: PopoverProps) => {
     };
   });
 
-  const noRender = !open && !context.rendered;
+  const noRender = props.lazy && !open && !context.rendered;
 
   if (!targetRef.current || !children || noRender) {
     return (
@@ -129,16 +129,30 @@ const Popover = (props: PopoverProps) => {
       popupGap={0}
       destroy={destroy}
       zIndex={zIndex}
+      adjust={props.adjust}
+      lazy={props.lazy}
     >
       <div
-        className={classNames(className, popoverStyle?.wrapper, open && popoverStyle?.wrapperOpen)}
+        className={classNames(
+          className,
+          popoverStyle?.wrapper,
+          open && popoverStyle?.wrapperOpen,
+          !showArrow && popoverStyle?.hideArrow,
+        )}
         style={colorStyle}
         {...util.getDataAttribute({ position, type })}
+        {...props.attributes}
         ref={popupRef}
         onMouseLeave={events.onMouseLeave}
+        onMouseEnter={events.onMouseEnter}
         dir={config.direction}
       >
-        {showArrow && <div className={popoverStyle?.arrow} dir={config.direction} />}
+        {showArrow && (
+          <div
+            className={classNames(popoverStyle?.arrow, props.arrowClass)}
+            dir={config.direction}
+          />
+        )}
         <div
           style={style}
           className={classNames(

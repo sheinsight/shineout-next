@@ -20,3 +20,4 @@ export * from './accept';
 export * from './array';
 export * from './tree';
 export * from './immer';
+export * as flat from './flat';

@@ -2,21 +2,21 @@
 
 exports[`Dropdown[Base] should render correctly  1`] = `
 <div
-  class="c4uq9f8 soui-dropdown-wrapper"
+  class="soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
     <span
-      class="c-5soeli soui-dropdown-content"
+      class="soui-dropdown-content"
     >
       Click me
     </span>
     <span
-      class="ccrvbl0 soui-dropdown-caret"
+      class="soui-dropdown-caret"
       dir="ltr"
     >
       <svg
@@ -39,21 +39,21 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
   style="background: rgb(238, 238, 238); padding: 20px; border-radius: 4px; overflow: hidden;"
 >
   <div
-    class="c4uq9f8 soui-dropdown-wrapper"
+    class="soui-dropdown-wrapper"
     data-position="bottom-left"
   >
     <button
-      class="c-ucpi8f soui-dropdown-button ctqq9eq soui-button-primary c-3br65q soui-button-button cgni3qa soui-button-outline"
+      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
       <span
-        class="c-5soeli soui-dropdown-content"
+        class="soui-dropdown-content"
       >
         Absolute
       </span>
       <span
-        class="ccrvbl0 soui-dropdown-caret"
+        class="soui-dropdown-caret"
         dir="ltr"
       >
         <svg
@@ -70,22 +70,22 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
     </button>
   </div>
   <div
-    class="c4uq9f8 soui-dropdown-wrapper"
+    class="soui-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-start: 24px;"
   >
     <button
-      class="c-ucpi8f soui-dropdown-button ctqq9eq soui-button-primary c-3br65q soui-button-button cgni3qa soui-button-outline"
+      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
       <span
-        class="c-5soeli soui-dropdown-content"
+        class="soui-dropdown-content"
       >
         Default
       </span>
       <span
-        class="ccrvbl0 soui-dropdown-caret"
+        class="soui-dropdown-caret"
         dir="ltr"
       >
         <svg
@@ -112,21 +112,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button ctqq9eq soui-button-primary c-3br65q soui-button-button"
+        class="soui-dropdown-button soui-button-primary soui-button-button"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -143,21 +143,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button"
+        class="soui-dropdown-button soui-button-secondary soui-button-button"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -174,21 +174,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-2orx19 soui-button-danger c-3br65q soui-button-button"
+        class="soui-dropdown-button soui-button-danger soui-button-button"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -205,21 +205,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-hhihj8 soui-button-warning c-3br65q soui-button-button"
+        class="soui-dropdown-button soui-button-warning soui-button-button"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -236,21 +236,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c42guub soui-button-success c-3br65q soui-button-button"
+        class="soui-dropdown-button soui-button-success soui-button-button"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -271,21 +271,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button ctqq9eq soui-button-primary c-3br65q soui-button-button cgni3qa soui-button-outline"
+        class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -302,21 +302,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button cgni3qa soui-button-outline"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -333,21 +333,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-2orx19 soui-button-danger c-3br65q soui-button-button cgni3qa soui-button-outline"
+        class="soui-dropdown-button soui-button-danger soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -364,21 +364,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-hhihj8 soui-button-warning c-3br65q soui-button-button cgni3qa soui-button-outline"
+        class="soui-dropdown-button soui-button-warning soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -395,21 +395,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c42guub soui-button-success c-3br65q soui-button-button cgni3qa soui-button-outline"
+        class="soui-dropdown-button soui-button-success soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -430,21 +430,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button ctqq9eq soui-button-primary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-primary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -461,21 +461,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -492,21 +492,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-2orx19 soui-button-danger c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-danger soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -523,21 +523,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-hhihj8 soui-button-warning c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-warning soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -554,21 +554,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c42guub soui-button-success c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-success soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -590,21 +590,21 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
 
 exports[`Dropdown[Base] should render correctly about children 1`] = `
 <div
-  class="c4uq9f8 soui-dropdown-wrapper"
+  class="soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
     <span
-      class="c-5soeli soui-dropdown-content"
+      class="soui-dropdown-content"
     >
       Click me
     </span>
     <span
-      class="ccrvbl0 soui-dropdown-caret"
+      class="soui-dropdown-caret"
       dir="ltr"
     >
       <svg
@@ -624,21 +624,21 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
 
 exports[`Dropdown[Base] should render correctly about columns 1`] = `
 <div
-  class="c4uq9f8 soui-dropdown-wrapper"
+  class="soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
     <span
-      class="c-5soeli soui-dropdown-content"
+      class="soui-dropdown-content"
     >
       Tiling Menu
     </span>
     <span
-      class="ccrvbl0 soui-dropdown-caret"
+      class="soui-dropdown-caret"
       dir="ltr"
     >
       <svg
@@ -658,21 +658,21 @@ exports[`Dropdown[Base] should render correctly about columns 1`] = `
 
 exports[`Dropdown[Base] should render correctly about divider 1`] = `
 <div
-  class="c4uq9f8 soui-dropdown-wrapper"
+  class="soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
     <span
-      class="c-5soeli soui-dropdown-content"
+      class="soui-dropdown-content"
     >
       Dividing Line
     </span>
     <span
-      class="ccrvbl0 soui-dropdown-caret"
+      class="soui-dropdown-caret"
       dir="ltr"
     >
       <svg
@@ -692,21 +692,21 @@ exports[`Dropdown[Base] should render correctly about divider 1`] = `
 
 exports[`Dropdown[Base] should render correctly about group 1`] = `
 <div
-  class="c4uq9f8 soui-dropdown-wrapper"
+  class="soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
     <span
-      class="c-5soeli soui-dropdown-content"
+      class="soui-dropdown-content"
     >
       Group Menu
     </span>
     <span
-      class="ccrvbl0 soui-dropdown-caret"
+      class="soui-dropdown-caret"
       dir="ltr"
     >
       <svg
@@ -726,21 +726,21 @@ exports[`Dropdown[Base] should render correctly about group 1`] = `
 
 exports[`Dropdown[Base] should render correctly about hover 1`] = `
 <div
-  class="c4uq9f8 soui-dropdown-wrapper"
+  class="soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
     <span
-      class="c-5soeli soui-dropdown-content"
+      class="soui-dropdown-content"
     >
       Click me
     </span>
     <span
-      class="ccrvbl0 soui-dropdown-caret"
+      class="soui-dropdown-caret"
       dir="ltr"
     >
       <svg
@@ -760,21 +760,21 @@ exports[`Dropdown[Base] should render correctly about hover 1`] = `
 
 exports[`Dropdown[Base] should render correctly about icon 1`] = `
 <div
-  class="c4uq9f8 soui-dropdown-wrapper"
+  class="soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
     <span
-      class="c-5soeli soui-dropdown-content"
+      class="soui-dropdown-content"
     >
       Icon Menu
     </span>
     <span
-      class="ccrvbl0 soui-dropdown-caret"
+      class="soui-dropdown-caret"
       dir="ltr"
     >
       <svg
@@ -800,21 +800,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: center; gap: 12px; padding: 0px 120px;"
   >
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Bottom left
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -831,21 +831,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Bottom
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -862,21 +862,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="bottom-right"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Bottom right
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -897,21 +897,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="right-top"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Right Top
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -928,16 +928,16 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="left-top"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -952,7 +952,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Left Top
         </span>
@@ -963,21 +963,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="right"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Right
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -994,16 +994,16 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -1018,7 +1018,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Left
         </span>
@@ -1029,21 +1029,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="right-bottom"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Right Bottom
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -1060,16 +1060,16 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="left-bottom"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -1084,7 +1084,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Left Bottom
         </span>
@@ -1095,21 +1095,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: center; gap: 12px;"
   >
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="top-left"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Top Left
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -1126,21 +1126,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="top"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Top
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -1157,21 +1157,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="c4uq9f8 soui-dropdown-wrapper"
+      class="soui-dropdown-wrapper"
       data-position="top-right"
     >
       <button
-        class="c-ucpi8f soui-dropdown-button c-pzb818 soui-button-secondary c-3br65q soui-button-button chtgjd9 soui-button-text"
+        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
         <span
-          class="c-5soeli soui-dropdown-content"
+          class="soui-dropdown-content"
         >
           Top right
         </span>
         <span
-          class="ccrvbl0 soui-dropdown-caret"
+          class="soui-dropdown-caret"
           dir="ltr"
         >
           <svg
@@ -1194,22 +1194,22 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
 exports[`Dropdown[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="c4uq9f8 soui-dropdown-wrapper"
+    class="soui-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="c-ucpi8f soui-dropdown-button ctqq9eq soui-button-primary c-3br65q soui-button-button cgni3qa soui-button-outline c-fw2x95 soui-button-small"
+      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline soui-button-small"
       dir="ltr"
       type="button"
     >
       <span
-        class="c-5soeli soui-dropdown-content"
+        class="soui-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="ccrvbl0 soui-dropdown-caret"
+        class="soui-dropdown-caret"
         dir="ltr"
       >
         <svg
@@ -1226,22 +1226,22 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
     </button>
   </div>
   <div
-    class="c4uq9f8 soui-dropdown-wrapper"
+    class="soui-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="c-ucpi8f soui-dropdown-button ctqq9eq soui-button-primary c-3br65q soui-button-button cgni3qa soui-button-outline"
+      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
       <span
-        class="c-5soeli soui-dropdown-content"
+        class="soui-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="ccrvbl0 soui-dropdown-caret"
+        class="soui-dropdown-caret"
         dir="ltr"
       >
         <svg
@@ -1258,22 +1258,22 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
     </button>
   </div>
   <div
-    class="c4uq9f8 soui-dropdown-wrapper"
+    class="soui-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="c-ucpi8f soui-dropdown-button ctqq9eq soui-button-primary c-3br65q soui-button-button cgni3qa soui-button-outline c-g04srp soui-button-large"
+      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline soui-button-large"
       dir="ltr"
       type="button"
     >
       <span
-        class="c-5soeli soui-dropdown-content"
+        class="soui-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="ccrvbl0 soui-dropdown-caret"
+        class="soui-dropdown-caret"
         dir="ltr"
       >
         <svg
@@ -1294,12 +1294,12 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
 
 exports[`Dropdown[Base] should render correctly about split 1`] = `
 <div
-  class="c-g2kyu9 soui-button-group"
+  class="soui-button-group"
   dir="ltr"
   style="display: inline-block; margin-inline-end: 24px;"
 >
   <button
-    class="c-pzb818 soui-button-secondary c-3br65q soui-button-button cgni3qa soui-button-outline"
+    class="soui-button-secondary soui-button-button soui-button-outline"
     dir="ltr"
     type="button"
   >
@@ -1308,7 +1308,7 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
     </span>
   </button>
   <button
-    class="c-pzb818 soui-button-secondary c-3br65q soui-button-button cgni3qa soui-button-outline"
+    class="soui-button-secondary soui-button-button soui-button-outline"
     dir="ltr"
     type="button"
   >
@@ -1317,19 +1317,19 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
     </span>
   </button>
   <div
-    class="c4uq9f8 soui-dropdown-wrapper"
+    class="soui-dropdown-wrapper"
     data-position="bottom-right"
   >
     <button
-      class="c-ucpi8f soui-dropdown-button c-edmi2b soui-dropdown-split-button c-pzb818 soui-button-secondary c-3br65q soui-button-button cgni3qa soui-button-outline"
+      class="soui-dropdown-button soui-dropdown-split-button soui-button-secondary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
       <span
-        class="c-5soeli soui-dropdown-content"
+        class="soui-dropdown-content"
       />
       <span
-        class="ccrvbl0 soui-dropdown-caret"
+        class="soui-dropdown-caret"
         dir="ltr"
       >
         <svg

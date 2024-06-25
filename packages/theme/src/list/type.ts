@@ -22,10 +22,16 @@ export interface ListTokens {
   listBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 列表边框圆角
    */
   listBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 列表边框宽度
+   */
+  listBorderWidth: string;
   /**
    * @type {string}
    * @token Spacing-12
@@ -40,6 +46,12 @@ export interface ListTokens {
   listItemPaddingX: string;
   /**
    * @type {string}
+   * @token Transparent
+   * @description 列表选项背景颜色
+   */
+  listItemBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 列表小尺寸选项内边距（垂直方向）
    */
@@ -52,6 +64,12 @@ export interface ListTokens {
   listSmallItemPaddingX: string;
   /**
    * @type {string}
+   * @token Font-14
+   * @description 列表小尺寸字体字号
+   */
+  listSmallFontSize: string;
+  /**
+   * @type {string}
    * @token Spacing-16
    * @description 列表大尺寸选项内边距（垂直方向）
    */
@@ -62,6 +80,12 @@ export interface ListTokens {
    * @description 列表大尺寸选项内边距（水平方向）
    */
   listLargeItemPaddingX: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 列表大尺寸字体字号
+   */
+  listLargeFontSize: string;
   /**
    * @type {string}
    * @token Spacing-12

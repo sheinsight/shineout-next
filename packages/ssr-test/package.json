@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "echo build",
     "start": "next start",
+    "clean": "rimraf dist",
     "lint": "next lint"
   },
   "dependencies": {

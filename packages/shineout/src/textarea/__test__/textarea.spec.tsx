@@ -33,7 +33,11 @@ const {
   footer: textareaFooterClassName,
   wrapperUnderline: textareaUnderlineClassName,
   wrapperNoBorder: textareaNoBorderClassName,
-} = createClassName(SO_PREFIX, ['wrapper', 'info', 'footer'], ['wrapperFocus', 'wrapperSmall', 'shadow', 'infoError', 'wrapperUnderline', 'wrapperNoBorder'])
+} = createClassName(
+  SO_PREFIX,
+  ['wrapper', 'info', 'footer'],
+  ['wrapperFocus', 'wrapperSmall', 'shadow', 'infoError', 'wrapperUnderline', 'wrapperNoBorder'],
+);
 
 afterEach(cleanup);
 describe('Textarea[Base]', () => {
@@ -140,20 +144,20 @@ describe('Textarea[Info:function]', () => {
   });
   test('should render tip', async () => {
     const { container } = render(<TextareaInfoFunction />);
-    const textareaWrapper = container.querySelector('textarea')!
-    fireEvent.click(textareaWrapper)
+    const textareaWrapper = container.querySelector('textarea')!;
+    fireEvent.click(textareaWrapper);
     fireEvent.change(textareaWrapper, {
       target: { value: 'test' },
     });
     await waitFor(async () => {
-      await delay(200)
-    })
+      await delay(200);
+    });
     classLengthTest(container, textareaInfoClassName, 1);
   });
   test('should render tip we want', () => {
     const { container } = render(<TextareaInfoFunction />);
-    const textareaWrapper = container.querySelector('textarea')!
-    fireEvent.click(textareaWrapper)
+    const textareaWrapper = container.querySelector('textarea')!;
+    fireEvent.click(textareaWrapper);
     fireEvent.change(textareaWrapper, {
       target: { value: 'test' },
     });
@@ -180,8 +184,8 @@ describe('Textarea[Info:number]', () => {
   });
   test('should render tip', () => {
     const { container } = render(<Textarea info={20} />);
-    const textareaWrapper = container.querySelector('textarea')!
-    fireEvent.click(textareaWrapper)
+    const textareaWrapper = container.querySelector('textarea')!;
+    fireEvent.click(textareaWrapper);
     fireEvent.change(textareaWrapper, {
       target: { value: 'test' },
     });

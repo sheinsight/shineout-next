@@ -5,16 +5,16 @@ exports[`Image[Base] should render correctly  1`] = `
   style="gap: 8px; display: flex;"
 >
   <a
-    class="c-nangxe soui-image-image c-ldgei0 soui-image-href c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded cljbd4r soui-image-preview"
+    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="c-namkc7 soui-image-inner"
+      class="soui-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="ci70n2f soui-image-preview-mask"
+      class="soui-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -36,75 +36,75 @@ exports[`Image[Group] should render correctly about group 1`] = `
   style="gap: 8px; display: flex;"
 >
   <div
-    class="c-nbnkge soui-image-group"
+    class="soui-image-group"
   >
     <a
-      class="c-nangxe soui-image-image c-ldgei0 soui-image-href c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="c-sueaqp soui-image-default-placeholder"
+        class="soui-image-default-placeholder"
       >
         <div
-          class="c-as419c soui-spin-ring c-as3972 soui-spin-spin"
+          class="soui-spin-ring soui-spin-spin"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="c-nangxe soui-image-image c-ldgei0 soui-image-href c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="c-sueaqp soui-image-default-placeholder"
+        class="soui-image-default-placeholder"
       >
         <div
-          class="c-as419c soui-spin-ring c-as3972 soui-spin-spin"
+          class="soui-spin-ring soui-spin-spin"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="c-nangxe soui-image-image c-ldgei0 soui-image-href c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="c-sueaqp soui-image-default-placeholder"
+        class="soui-image-default-placeholder"
       >
         <div
-          class="c-as419c soui-spin-ring c-as3972 soui-spin-spin"
+          class="soui-spin-ring soui-spin-spin"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="c-nangxe soui-image-image c-ldgei0 soui-image-href c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="c-sueaqp soui-image-default-placeholder"
+        class="soui-image-default-placeholder"
       >
         <div
-          class="c-as419c soui-spin-ring c-as3972 soui-spin-spin"
+          class="soui-spin-ring soui-spin-spin"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="c-nangxe soui-image-image c-ldgei0 soui-image-href c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded cljbd4r soui-image-preview"
+      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="c-namkc7 soui-image-inner"
+        class="soui-image-inner"
         style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png);"
       />
       <span
-        class="ci70n2f soui-image-preview-mask"
+        class="soui-image-preview-mask"
       >
         <svg
           aria-hidden="true"
@@ -124,19 +124,19 @@ exports[`Image[Group] should render correctly about group 1`] = `
 
 exports[`Image[Pile] should render correctly about pile 1`] = `
 <div
-  class="c-nbnkge soui-image-group cfvbls4 soui-image-group-pile"
+  class="soui-image-group soui-image-group-pile"
 >
   <a
-    class="c-nangxe soui-image-image c-ldgei0 soui-image-href c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded cljbd4r soui-image-preview"
+    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="c-namkc7 soui-image-inner"
+      class="soui-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="ci70n2f soui-image-preview-mask"
+      class="soui-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -151,15 +151,15 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
     </span>
   </a>
   <div
-    class="cyqess7 soui-image-group-pile-item"
+    class="soui-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="cyqess7 soui-image-group-pile-item"
+    class="soui-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="c-5ftxfn soui-image-group-count"
+    class="soui-image-group-count"
   >
     <svg
       aria-hidden="true"
@@ -180,19 +180,19 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
 
 exports[`Image[Pile] should render correctly about pile without showCount 1`] = `
 <div
-  class="c-nbnkge soui-image-group cfvbls4 soui-image-group-pile"
+  class="soui-image-group soui-image-group-pile"
 >
   <a
-    class="c-nangxe soui-image-image c-ldgei0 soui-image-href c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded cljbd4r soui-image-preview"
+    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="c-namkc7 soui-image-inner"
+      class="soui-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="ci70n2f soui-image-preview-mask"
+      class="soui-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -207,11 +207,11 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
     </span>
   </a>
   <div
-    class="cyqess7 soui-image-group-pile-item"
+    class="soui-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="cyqess7 soui-image-group-pile-item"
+    class="soui-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
 </div>
@@ -219,11 +219,11 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
 
 exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 <div
-  class="c-nangxe soui-image-image c-ldhuz4 soui-image-fill c-er95oj soui-image-circle"
+  class="soui-image-image soui-image-fill soui-image-circle"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="c-namkc7 soui-image-inner"
+    class="soui-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>
@@ -231,11 +231,11 @@ exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 <div
-  class="c-nangxe soui-image-image c-ldhuz4 soui-image-fill c-lbhhpc soui-image-rounded"
+  class="soui-image-image soui-image-fill soui-image-rounded"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="c-namkc7 soui-image-inner"
+    class="soui-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>
@@ -243,11 +243,11 @@ exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is thumbnail 1`] = `
 <div
-  class="c-nangxe soui-image-image c-ldhuz4 soui-image-fill c-8mmdsx soui-image-thumbnail"
+  class="soui-image-image soui-image-fill soui-image-thumbnail"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="c-namkc7 soui-image-inner"
+    class="soui-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>

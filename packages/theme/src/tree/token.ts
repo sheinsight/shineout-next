@@ -13,7 +13,8 @@ const treeTokenDescription = {
   text: '文字',
   checkbox: '复选框',
   item: '节点',
-  content:'节点容器'
+  content: '节点容器',
+  line: '连接线',
 };
 
 /**
@@ -24,8 +25,8 @@ const treeTokenDescription = {
  * 注意，该映射表的内容不与 treeRules 强关联，非 treeRules 规则内的 token 需手动增加或删减。
  */
 const treeTokenValue = {
-  font: { size: 'Font-14', color: 'Neutral-text-5' },
-  line: { height: 'Size-18' },
+  font: { size: 'Font-14', weight: 'Weight-regular', color: 'Neutral-text-5' },
+  line: { height: 'Size-18', background: { color: 'Neutral-fill-2' } },
   small: { font: { size: 'Font-12' }, line: { height: 'Size-14' } },
   large: { font: { size: 'Font-16' }, line: { height: 'Size-22' } },
   padding: { x: 'Spacing-8', y: 'Spacing-1' },
@@ -49,16 +50,8 @@ const treeTokenValue = {
 };
 
 const treeTokenExtraValue = {
-  text: {
-    padding: {
-      y: 'Spacing-2',
-    },
-  },
-  checkbox: {
-    margin: {
-      x: 'Spacing-8',
-    },
-  },
+  text: { padding: { y: 'Spacing-2' } },
+  checkbox: { margin: { x: 'Spacing-8' } },
 };
 
 module.exports = {

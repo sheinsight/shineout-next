@@ -82,6 +82,12 @@ export interface AlertTokens {
   alertFontSize: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 提示框字体字重
+   */
+  alertFontWeight: string;
+  /**
+   * @type {string}
    * @token Neutral-text-5
    * @description 提示框字体颜色
    */
@@ -100,7 +106,7 @@ export interface AlertTokens {
   alertPaddingY: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 提示框边框圆角
    */
   alertBorderRadius: string;
@@ -116,6 +122,18 @@ export interface AlertTokens {
    * @description 提示框标题模式字体字号
    */
   alertTitleFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-medium
+   * @description 提示框标题模式字体字重
+   */
+  alertTitleFontWeight: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 提示框标题模式外边距（垂直方向）
+   */
+  alertTitleMarginY: string;
   /**
    * @type {string}
    * @token Neutral-text-4

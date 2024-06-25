@@ -29,7 +29,7 @@ const App: React.FC = () => {
   const show = () => setVisible(true);
 
   const footer = () => [
-    <Button key='cancel' onClick={handleCancel}>
+    <Button key='cancel' onClick={handleCancel} mode="outline">
       Cancel
     </Button>,
 
@@ -48,7 +48,7 @@ const App: React.FC = () => {
         onChange={setType}
       />
 
-      <Button mode='outline' onClick={show}>
+      <Button onClick={show} mode='outline' >
         click me
       </Button>
 

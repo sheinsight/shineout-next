@@ -2,7 +2,7 @@
 
 exports[`Switch[Base] should render correctly  1`] = `
 <button
-  class="c-pg3j0v soui-switch-wrapper"
+  class="soui-switch-wrapper"
   role="switch"
   type="button"
 >
@@ -12,14 +12,14 @@ exports[`Switch[Base] should render correctly  1`] = `
     type="checkbox"
   />
   <div
-    class="c-vja32r soui-switch-indicator"
+    class="soui-switch-indicator"
     dir="ltr"
   />
   <div
-    class="cyxluxj soui-switch-content"
+    class="soui-switch-content"
   >
     <div
-      class="cjbv98i soui-switch-text-padding"
+      class="soui-switch-text-padding"
     />
   </div>
 </button>
@@ -30,7 +30,7 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
   style="display: flex; flex-direction: row; gap: 24px; align-items: center;"
 >
   <button
-    class="c-pg3j0v soui-switch-wrapper cyh9i7q soui-switch-wrapper-checked c-hj7wxf soui-switch-wrapper-disabled"
+    class="soui-switch-wrapper soui-switch-wrapper-checked soui-switch-wrapper-disabled"
     role="switch"
     type="button"
   >
@@ -42,23 +42,23 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
       type="checkbox"
     />
     <div
-      class="c-vja32r soui-switch-indicator"
+      class="soui-switch-indicator"
       dir="ltr"
     >
       <div
-        class="coriufu soui-switch-loading"
+        class="soui-switch-loading"
       />
     </div>
     <div
-      class="cyxluxj soui-switch-content"
+      class="soui-switch-content"
     >
       <div
-        class="cjbv98i soui-switch-text-padding"
+        class="soui-switch-text-padding"
       />
     </div>
   </button>
   <button
-    class="c-pg3j0v soui-switch-wrapper c-hj7wxf soui-switch-wrapper-disabled"
+    class="soui-switch-wrapper soui-switch-wrapper-disabled"
     role="switch"
     type="button"
   >
@@ -69,18 +69,18 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
       type="checkbox"
     />
     <div
-      class="c-vja32r soui-switch-indicator"
+      class="soui-switch-indicator"
       dir="ltr"
     >
       <div
-        class="coriufu soui-switch-loading"
+        class="soui-switch-loading"
       />
     </div>
     <div
-      class="cyxluxj soui-switch-content"
+      class="soui-switch-content"
     >
       <div
-        class="cjbv98i soui-switch-text-padding"
+        class="soui-switch-text-padding"
       />
     </div>
   </button>
@@ -92,7 +92,7 @@ exports[`Switch[Base] should render correctly about size 1`] = `
   style="display: flex; flex-direction: row; gap: 24px; align-items: center;"
 >
   <button
-    class="c-pg3j0v soui-switch-wrapper c-jllpii soui-switch-wrapper-small"
+    class="soui-switch-wrapper soui-switch-wrapper-small"
     role="switch"
     type="button"
   >
@@ -102,19 +102,19 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="c-vja32r soui-switch-indicator"
+      class="soui-switch-indicator"
       dir="ltr"
     />
     <div
-      class="cyxluxj soui-switch-content"
+      class="soui-switch-content"
     >
       <div
-        class="cjbv98i soui-switch-text-padding"
+        class="soui-switch-text-padding"
       />
     </div>
   </button>
   <button
-    class="c-pg3j0v soui-switch-wrapper"
+    class="soui-switch-wrapper"
     role="switch"
     type="button"
   >
@@ -124,19 +124,19 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="c-vja32r soui-switch-indicator"
+      class="soui-switch-indicator"
       dir="ltr"
     />
     <div
-      class="cyxluxj soui-switch-content"
+      class="soui-switch-content"
     >
       <div
-        class="cjbv98i soui-switch-text-padding"
+        class="soui-switch-text-padding"
       />
     </div>
   </button>
   <button
-    class="c-pg3j0v soui-switch-wrapper c-jpnl12 soui-switch-wrapper-large"
+    class="soui-switch-wrapper soui-switch-wrapper-large"
     role="switch"
     type="button"
   >
@@ -146,14 +146,14 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="c-vja32r soui-switch-indicator"
+      class="soui-switch-indicator"
       dir="ltr"
     />
     <div
-      class="cyxluxj soui-switch-content"
+      class="soui-switch-content"
     >
       <div
-        class="cjbv98i soui-switch-text-padding"
+        class="soui-switch-text-padding"
       />
     </div>
   </button>
@@ -165,7 +165,7 @@ exports[`Switch[Base] should render correctly about status 1`] = `
   style="display: flex; flex-direction: row; gap: 24px;"
 >
   <button
-    class="c-pg3j0v soui-switch-wrapper cyh9i7q soui-switch-wrapper-checked c-hj7wxf soui-switch-wrapper-disabled"
+    class="soui-switch-wrapper soui-switch-wrapper-checked soui-switch-wrapper-disabled"
     role="switch"
     type="button"
   >
@@ -177,19 +177,19 @@ exports[`Switch[Base] should render correctly about status 1`] = `
       type="checkbox"
     />
     <div
-      class="c-vja32r soui-switch-indicator"
+      class="soui-switch-indicator"
       dir="ltr"
     />
     <div
-      class="cyxluxj soui-switch-content"
+      class="soui-switch-content"
     >
       <div
-        class="cjbv98i soui-switch-text-padding"
+        class="soui-switch-text-padding"
       />
     </div>
   </button>
   <button
-    class="c-pg3j0v soui-switch-wrapper c-hj7wxf soui-switch-wrapper-disabled"
+    class="soui-switch-wrapper soui-switch-wrapper-disabled"
     role="switch"
     type="button"
   >
@@ -200,14 +200,14 @@ exports[`Switch[Base] should render correctly about status 1`] = `
       type="checkbox"
     />
     <div
-      class="c-vja32r soui-switch-indicator"
+      class="soui-switch-indicator"
       dir="ltr"
     />
     <div
-      class="cyxluxj soui-switch-content"
+      class="soui-switch-content"
     >
       <div
-        class="cjbv98i soui-switch-text-padding"
+        class="soui-switch-text-padding"
       />
     </div>
   </button>

@@ -28,6 +28,30 @@ export interface TableTokens {
   tableCellBorderColor: string;
   /**
    * @type {string}
+   * @token Font-14
+   * @description 表格单元格字体字号
+   */
+  tableCellFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 表格单元格字体字重
+   */
+  tableCellFontWeight: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 表格小尺寸表头字体字号
+   */
+  tableSmallTheadFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-medium
+   * @description 表格小尺寸表头字体字重
+   */
+  tableSmallTheadFontWeight: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 表格小尺寸单元格内边距（水平方向）
    */
@@ -38,6 +62,30 @@ export interface TableTokens {
    * @description 表格小尺寸单元格内边距（垂直方向）
    */
   tableSmallCellPaddingY: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 表格小尺寸单元格字体字号
+   */
+  tableSmallCellFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 表格小尺寸单元格字体字重
+   */
+  tableSmallCellFontWeight: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 表格大尺寸表头字体字号
+   */
+  tableLargeTheadFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-medium
+   * @description 表格大尺寸表头字体字重
+   */
+  tableLargeTheadFontWeight: string;
   /**
    * @type {string}
    * @token Spacing-16
@@ -52,6 +100,18 @@ export interface TableTokens {
   tableLargeCellPaddingY: string;
   /**
    * @type {string}
+   * @token Font-14
+   * @description 表格大尺寸单元格字体字号
+   */
+  tableLargeCellFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 表格大尺寸单元格字体字重
+   */
+  tableLargeCellFontWeight: string;
+  /**
+   * @type {string}
    * @token rgba(2,11,24,.1)
    * @description 表格固定列阴影
    */
@@ -62,6 +122,18 @@ export interface TableTokens {
    * @description 表格表头背景颜色
    */
   tableTheadBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 表格表头字体字号
+   */
+  tableTheadFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-medium
+   * @description 表格表头字体字重
+   */
+  tableTheadFontWeight: string;
   /**
    * @type {string}
    * @token Neutral-text-5
@@ -110,6 +182,12 @@ export interface TableTokens {
    * @description 表格表格底部的字体颜色
    */
   tableTfootFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 表格表格底部的字体字重
+   */
+  tableTfootFontWeight: string;
   /**
    * @type {string}
    * @token Size-7

@@ -11,7 +11,7 @@ export function replaceNonAlphanumeric(str: string) {
 }
 
 export function camelCaseToDash(str: string) {
-  return str.replace(/(?<=.)([A-Z])/g, '-$1').toLowerCase();
+  return str.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '');
 }
 
 export const cssvar = (str: string, value: string, key: string, _size?: string) => {
@@ -25,4 +25,9 @@ export const cssvar = (str: string, value: string, key: string, _size?: string) 
   return `var(--${prefix}-${camelCaseToDash(key)},var(--${prefix}-${replaceNonAlphanumeric(
     str,
   )},${value}))`;
+};
+
+export const getTokenName = (key: string) => {
+  const { prefix } = getConfig();
+  return `--${prefix}-${camelCaseToDash(key)}`;
 };

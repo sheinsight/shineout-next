@@ -5,6 +5,7 @@ interface Token {
   borderRadius: string;
 
   fontSize: string;
+  fontWeight: string;
   smallFontSize: string;
   largeFontSize: string;
 
@@ -17,16 +18,24 @@ interface Token {
   largePaddingX: string;
 
   borderColor: string;
+  borderWidth: string;
   focusBorderColor: string;
   hoverBorderColor: string;
   disabledBorderColor: string;
   errorBorderColor: string;
+  errorHoverBorderColor: string;
+  errorFocusBorderColor: string;
 
   fontColor: string;
   disabledFontColor: string;
 
   backgroundColor: string;
+  hoverBackgroundColor: string;
+  focusBackgroundColor: string;
   disabledBackgroundColor: string;
+  errorBackgroundColor: string;
+  errorFocusBackgroundColor: string;
+  errorHoverBackgroundColor: string;
 
   focusShadow: string;
   errorFocusShadow: string;
@@ -44,14 +53,19 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       boxSizing: 'border-box',
       borderRadius: token.borderRadius,
       background: token.backgroundColor,
-      border: `1px solid ${token.borderColor}`,
+      border: `${token.borderWidth} solid ${token.borderColor}`,
       color: token.fontColor,
       lineHeight: token.lineHeight,
       fontSize: token.fontSize,
       // verticalAlign: 'top',
+      fontWeight: token.fontWeight,
+      verticalAlign: 'top',
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
         borderColor: token.hoverBorderColor,
+        [`&:not($${name}Disabled):not($${name}Error)`]: {
+          backgroundColor: token.hoverBackgroundColor,
+        },
       },
       '[data-soui-role="input-group"] &': {
         borderWidth: 0,
@@ -122,17 +136,22 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
     [`${name}Focus`]: {
       borderColor: token.focusBorderColor,
       boxShadow: `0 0 0 2px ${token.focusShadow}`,
+      background: token.focusBackgroundColor,
       '&:hover': {
         borderColor: token.focusBorderColor,
       },
     } as CSSProperties,
     [`${name}Error`]: {
       borderColor: token.errorBorderColor,
+      background: token.errorBackgroundColor,
       '&:hover': {
-        borderColor: token.errorBorderColor,
+        backgroundColor: token.errorHoverBackgroundColor,
+        borderColor: token.errorHoverBorderColor,
       },
       [`&$${name}Focus`]: {
         boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
+        borderColor: token.errorFocusBorderColor,
+        background: token.errorFocusBackgroundColor,
       },
     } as CSSProperties,
     [`${name}Disabled`]: {

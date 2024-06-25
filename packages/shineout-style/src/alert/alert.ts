@@ -15,7 +15,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     borderRadius: Token.alertBorderRadius,
     borderWidth: 1,
     borderStyle: 'solid',
-
+    fontWeight: Token.alertFontWeight,
     opacity: 1,
     transformOrigin: '0 0',
     transform: 'scaleY(1) translateZ(0)',
@@ -73,8 +73,8 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   title: {
     fontSize: Token.alertTitleFontSize,
-    fontWeight: 500,
-    marginBottom: 4,
+    fontWeight: Token.alertTitleFontWeight,
+    marginBottom: Token.alertTitleMarginY,
     overflowWrap: 'anywhere',
     lineHeight: Token.alertTitleFontSize,
   },
@@ -88,7 +88,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     width: Token.alertFontSize,
     color: Token.alertCloseFontColor,
     fontSize: Token.alertFontSize,
-    height: Token.lineHeightDynamic,
+    height: Token.alertFontSize,
     flex: '0 0 auto',
     display: 'flex',
     alignItems: 'center',
@@ -98,8 +98,15 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
       color: Token.alertCloseHoverColor,
     },
   },
+  closeWrapper: {
+    width: Token.alertFontSize,
+    height: Token.lineHeightDynamic,
+    display: 'flex',
+    alignItems: 'center',
+  },
   content: {
     flex: '1 1 0',
+    minWidth: 0,
     wordBreak: 'break-all',
   },
   pending: {

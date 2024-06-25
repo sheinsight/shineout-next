@@ -81,7 +81,7 @@ const Descriptions = (props: DescriptionsProps) => {
     <tr key={i} className={jssStyle?.row}>
       {d.map((_d, _i) => {
         return (
-          <td key={_d.key || _i} {...getColSpan(_d)} className={jssStyle?.inlineTable}>
+          <td key={_d.key || _i} {...getColSpan(_d)} className={jssStyle?.cell}>
             <div className={jssStyle?.item}>
               <div className={jssStyle?.labelInline} style={_d.itemLabelStyle}>
                 {_d?.label}
@@ -102,15 +102,19 @@ const Descriptions = (props: DescriptionsProps) => {
     return layout === 'horizontal' ? renderHorizontal(d, i) : renderVertical(d, i);
   };
 
-  const rootClassName = classNames(className, jssStyle?.wrapper);
+  const rootClassName = classNames(
+    className,
+    jssStyle?.wrapper,
+    size === 'small' && jssStyle?.small,
+    size === 'large' && jssStyle?.large,
+  );
   const bodyClassName = classNames(
     jssStyle?.body,
     border && jssStyle?.border,
     tableLayout === 'fixed' && jssStyle?.tableLayoutFixed,
     layout === 'inlineHorizontal' && jssStyle?.inlineHorizontal,
     layout === 'horizontal' && jssStyle?.horizontal,
-    size === 'small' && jssStyle?.small,
-    size === 'large' && jssStyle?.large,
+    layout === 'vertical' && jssStyle?.vertical,
   );
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState, Children, memo } from 'react';
+import React, { useState, memo } from 'react';
 import { ReultMoreProps } from './result-more.type';
 import { parsePxToNumber } from '@sheinx/hooks';
 import Tag from '../tag';
@@ -103,16 +103,30 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
     itemsLength = after.length;
   }
 
-  if (after && after.length > 0) {
-    after =
-      Children.map(after, (item) => {
-        return React.cloneElement(item, {
-          ...item.props,
-          style: {
-            opcacity: 1,
-          },
-        });
-      }) || after;
+  if (showNum! < 0 || showNum! >= data.length) {
+    return (
+      <React.Fragment>
+        {data}
+        {/* { for compute width} */}
+        <Tag
+          className={styles.tag}
+          jssStyle={jssStyle as any}
+          key='hidden'
+          size={size}
+          style={{
+            position: 'absolute',
+            zIndex: -100,
+            userSelect: 'none',
+            msUserSelect: 'none',
+            contain: 'layout',
+          }}
+          mode={visible ? 'fill' : 'bright'}
+          color={visible ? 'info' : 'default'}
+        >
+          <span>+</span>
+        </Tag>
+      </React.Fragment>
+    );
   }
 
   return (

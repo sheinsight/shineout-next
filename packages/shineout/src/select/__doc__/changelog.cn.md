@@ -1,3 +1,26 @@
+## 3.1.27
+2024-06-06
+
+### 🐞 BugFix
+
+- 修复 `Select` 禁用后筛选框仍然可以输入的问题 ([#509](https://github.com/sheinsight/shineout-next/pull/509))
+
+- 修复 `Select` 合并选项个数计显示错误的问题  ([#508](https://github.com/sheinsight/shineout-next/pull/508))
+
+## 3.1.26
+2024-06-05
+
+### 🐞 BugFix
+
+- 修复 `Select` 渲染的 `result` 为空可能会导致页面报错的问题 ([#503](https://github.com/sheinsight/shineout-next/pull/503))
+
+## 3.1.18
+2024-05-27
+
+### 💅 Style
+
+- 优化 `Select` 合并选项的样式 ([#481](https://github.com/sheinsight/shineout-next/pull/481))
+
 ## 3.1.17
 2024-05-24
 

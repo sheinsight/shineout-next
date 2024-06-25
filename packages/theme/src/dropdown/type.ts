@@ -4,13 +4,13 @@
 export interface DropdownTokens {
   /**
    * @type {string}
-   * @token Spacing-4
+   * @token Spacing-8
    * @description 下拉菜单箭头icon的外边距（左侧）
    */
   dropdownCaretMarginLeft: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 下拉菜单列表边框圆角
    */
   dropdownListBorderRadius: string;
@@ -34,7 +34,7 @@ export interface DropdownTokens {
   dropdownListFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 下拉菜单列表小尺寸边框圆角
    */
   dropdownListSmallBorderRadius: string;
@@ -58,7 +58,7 @@ export interface DropdownTokens {
   dropdownListSmallFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 下拉菜单列表大尺寸边框圆角
    */
   dropdownListLargeBorderRadius: string;
@@ -206,6 +206,18 @@ export interface DropdownTokens {
    * @description 下拉菜单选项禁用时的字体颜色
    */
   dropdownOptionDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Radius-default
+   * @description 下拉菜单选项边框圆角
+   */
+  dropdownOptionBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 下拉菜单选项字体字重
+   */
+  dropdownOptionFontWeight: string;
   /**
    * @type {string}
    * @token Spacing-4

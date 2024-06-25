@@ -4,7 +4,8 @@ import { PopoverClasses } from '@sheinx/base';
 
 export type PopoverClassType = keyof PopoverClasses;
 
-const arrowGap = 10;
+const cssvar = '--popover-arrow-gap';
+const hideArrowGap = `var(${cssvar}, 10px)`;
 const arrowMargin = '8px';
 
 const popoverStyle: JsStyles<PopoverClassType> = {
@@ -31,8 +32,11 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       '&[dir=ltr]': { borderLeftColor: 'transparent' },
       '&[dir=rtl]': { borderRight: 'transparent' },
     },
+    '&$hideArrow': {
+      [cssvar]: '4px',
+    },
     '&[data-soui-position^="bottom"]': {
-      marginTop: arrowGap - 2,
+      marginTop: `calc(${hideArrowGap} - 2px)`,
       '& $arrow': {
         top: '0',
         transform: 'translate(0, -50%) rotate(-45deg)',
@@ -41,17 +45,19 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         margin: 'auto',
       },
       '&::after': {
-        top: arrowGap * -1,
+        top: `calc(${hideArrowGap} * -1)`,
         left: '0',
         right: '0',
         content: '" "',
         display: 'block',
-        height: arrowGap,
+        height: hideArrowGap,
         position: 'absolute',
       },
     },
     '&[data-soui-position^="top"]': {
-      marginTop: (arrowGap - 2) * -1,
+      // marginTop: (arrowGap - 2) * -1,
+      marginTop: `calc((${hideArrowGap} - 2px) * -1)`,
+
       '& $arrow': {
         bottom: '0',
         transform: 'translate(0, 50%) rotate(135deg)',
@@ -60,18 +66,22 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         margin: 'auto',
       },
       '&::after': {
-        bottom: arrowGap * -1,
+        // bottom: arrowGap * -1,
+        bottom: `calc(${hideArrowGap} * -1)`,
         left: '0',
         right: '0',
         content: '" "',
         display: 'block',
-        height: arrowGap,
+        // height: arrowGap,
+        height: hideArrowGap,
         position: 'absolute',
       },
     },
     '&[data-soui-position^="left"]': {
-      '&[dir=ltr]': { marginLeft: (arrowGap - 2) * -1 },
-      '&[dir=rtl]': { marginRight: (arrowGap - 2) * -1 },
+      // '&[dir=ltr]': { marginLeft: (arrowGap - 2) * -1 },
+      '&[dir=ltr]': { marginLeft: `calc((${hideArrowGap} - 2px) * -1)` },
+      // '&[dir=rtl]': { marginRight: (arrowGap - 2) * -1 },
+      '&[dir=rtl]': { marginRight: `calc((${hideArrowGap} - 2px) * -1)` },
       '& $arrow': {
         right: token.popoverBorderWidth,
         transform: 'translate(50%, 0) rotate(45deg)',
@@ -80,18 +90,21 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         margin: 'auto',
       },
       '&::after': {
-        left: arrowGap * -1,
+        // left: arrowGap * -1,
+        left: `calc(${hideArrowGap} * -1)`,
         top: '0',
         bottom: '0',
         content: '" "',
         display: 'block',
-        width: arrowGap,
+        width: hideArrowGap,
         position: 'absolute',
       },
     },
     '&[data-soui-position^="right"]': {
-      '&[dir=ltr]': { marginLeft: arrowGap - 2 },
-      '&[dir=rtl]': { marginRight: arrowGap - 2 },
+      // '&[dir=ltr]': { marginLeft: arrowGap - 2 },
+      '&[dir=ltr]': { marginLeft: `calc(${hideArrowGap} - 2px)` },
+      // '&[dir=rtl]': { marginRight: arrowGap - 2 },
+      '&[dir=rtl]': { marginRight: `calc(${hideArrowGap} - 2px)` },
       '& $arrow': {
         left: '0',
         transform: 'translate(-50%, 0) rotate(-135deg)',
@@ -100,12 +113,14 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         margin: 'auto',
       },
       '&::after': {
-        left: arrowGap * -1,
+        // left: arrowGap * -1,
+        left: `calc(${hideArrowGap} * -1)`,
         top: '0',
         bottom: '0',
         content: '" "',
         display: 'block',
-        width: arrowGap,
+        // width: arrowGap,
+        width: hideArrowGap,
         position: 'absolute',
       },
     },
@@ -140,10 +155,12 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     display: 'block',
   },
   arrow: {},
+  hideArrow: {},
   content: {
     position: 'relative',
     zIndex: 2,
     fontSize: token.popoverFontSize,
+    fontWeight: token.popoverFontWeight,
     color: token.popoverFontColor,
     background: 'inherit',
     borderRadius: 'inherit',
@@ -162,7 +179,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       backgroundColor: 'transparent',
       border: 0,
       padding: 0,
-      marginBottom: token.popoverConfirmPaddingY,
+      marginBottom: token.popoverConfirmMarginY,
     },
   },
   footer: {

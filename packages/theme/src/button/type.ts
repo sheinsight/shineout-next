@@ -2032,7 +2032,7 @@ export interface ButtonTokens {
   buttonSquareBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-1000
+   * @token Radius-full
    * @description 按钮小尺寸药丸形边框圆角
    */
   buttonSmallRoundBorderRadius: string;
@@ -2050,7 +2050,7 @@ export interface ButtonTokens {
   buttonSmallSquareBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-1000
+   * @token Radius-full
    * @description 按钮大尺寸药丸形边框圆角
    */
   buttonLargeRoundBorderRadius: string;
