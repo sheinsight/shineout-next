@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { extractEventHandlers } from '../../utils';
 import { ObjectType } from '../../common/type';
 import { BasePaginationProps } from './use-pagination.type';
+import { usePersistFn } from '../../common/use-persist-fn';
 
 const usePagination = (props: BasePaginationProps) => {
   const {
@@ -17,18 +18,18 @@ const usePagination = (props: BasePaginationProps) => {
   const [pageSize, setPageSize] = useState(pageSizeProp);
 
   useEffect(() => {
-    if (pageSizeProp !== pageSize) setPageSize(pageSizeProp)
-  }, [pageSizeProp])
+    if (pageSizeProp !== pageSize) setPageSize(pageSizeProp);
+  }, [pageSizeProp]);
 
-  const handleChange = (current: number, size?: number) => {
-    setCurrent(current);
+  const handleChange = usePersistFn((c: number, size?: number) => {
+    if (c === current && size === undefined) return;
+    setCurrent(c);
     setPageSize(size || pageSizeProp);
-
     if (onChange) {
       const sizeChange = pageSize !== size;
-      onChange(current, size || pageSize, sizeChange);
+      onChange(c, size || pageSize, sizeChange);
     }
-  };
+  });
 
   const getRootProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
