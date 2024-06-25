@@ -332,7 +332,6 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                 </span>
                 <div
                   class="soui-tree-content soui-treeSelect-option-active"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
@@ -407,7 +406,6 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                 </span>
                 <div
                   class="soui-tree-content soui-treeSelect-option-active"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
@@ -482,7 +480,6 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
                 </span>
                 <div
                   class="soui-tree-content soui-treeSelect-option-active"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
@@ -1044,7 +1041,6 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                 </span>
                 <div
                   class="soui-tree-content"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
@@ -1107,7 +1103,6 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                 </span>
                 <div
                   class="soui-tree-content"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
@@ -1170,7 +1165,6 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
                 </span>
                 <div
                   class="soui-tree-content"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
@@ -1698,7 +1692,6 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
               </span>
               <div
                 class="soui-tree-content"
-                data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
@@ -1761,7 +1754,6 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
               </span>
               <div
                 class="soui-tree-content"
-                data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
@@ -1824,7 +1816,6 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
               </span>
               <div
                 class="soui-tree-content"
-                data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
@@ -1887,7 +1878,6 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
               </span>
               <div
                 class="soui-tree-content"
-                data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
@@ -1950,7 +1940,6 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
               </span>
               <div
                 class="soui-tree-content"
-                data-active="false"
                 data-expanded="false"
                 dir="ltr"
               >
@@ -2082,7 +2071,6 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                 </span>
                 <div
                   class="soui-tree-content"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
@@ -2145,7 +2133,6 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                 </span>
                 <div
                   class="soui-tree-content"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
@@ -2208,7 +2195,6 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
                 </span>
                 <div
                   class="soui-tree-content"
-                  data-active="false"
                   data-expanded="false"
                   dir="ltr"
                 >
