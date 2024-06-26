@@ -279,10 +279,10 @@ export interface TableColumnItem<DataItem> {
   style?: React.CSSProperties;
 
   /**
-   * @cn 列点击事件
-   * @en Click event of column
+   * @cn 可展开元素点击事件仅当（仅该列为行展开列，并且传入 expandKeys 的时候生效）
+   * @en Click event of expandable element only when (only this column is row-expand column and expandKeys is passed in)
    */
-  onClick?: (d: DataItem) => void;
+  onClick?: (d: DataItem, isExpand: boolean) => void;
 
   /**
    * @cn 单独设置某一列不可拖动
