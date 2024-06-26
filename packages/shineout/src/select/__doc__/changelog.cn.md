@@ -1,3 +1,10 @@
+## 3.2.4
+未发布
+
+### 🐞 Style
+
+- 优化 `Select` 单选结果的样式 ([#549](https://github.com/sheinsight/shineout-next/pull/549))
+
 ## 3.1.27
 2024-06-06
 
