@@ -1,5 +1,5 @@
 ## 3.2.4
-未发布
+2024-06-26
 ### 🐞 BugFix
 
 - 修复 `Form` 受控状态 `value` 传入  `null` 会导致数据无法更新的问题 ([#548](https://github.com/sheinsight/shineout-next/pull/548))
