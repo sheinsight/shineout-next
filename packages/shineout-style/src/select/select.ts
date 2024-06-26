@@ -326,6 +326,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     display: 'block',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    flex: 1,
     whiteSpace: 'nowrap',
     marginTop: token.selectPlaceholderMarginY,
     marginBottom: token.selectPlaceholderMarginY,
