@@ -4,6 +4,7 @@ import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
 import { getDataAttributeName } from '../../utils/attribute';
 import { insertValue, spliceValue } from '../../utils/flat';
+import { usePrevious } from '../../common/use-default-value';
 
 const globalKey = '__global__&&@@';
 import { current, produce } from '../../utils/immer';
@@ -50,6 +51,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     removeUndefined,
     forceSet: true,
   };
+
+
+  const preValue = usePrevious(props.value);
 
   const formRef = React.useRef<HTMLFormElement>();
 
@@ -419,8 +423,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const updateValue = () => {
     if (props.value !== context.lastValue && props.value !== context.value) {
       context.value = (deepClone(props.value) || emptyObj) as T;
-      context.lastValue = props.value;
     }
+    context.lastValue = props.value;
   };
 
   updateValue();
@@ -449,14 +453,13 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     if (props.value === context.value) return;
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
-        const oldValue = deepGet(context.lastValue || emptyObj, key);
+        const oldValue = deepGet(preValue || emptyObj, key);
         const newValue = deepGet(context.value || emptyObj, key);
         return !shallowEqual(oldValue, newValue);
       });
       validateFields(keys).catch(() => {});
     }
     update();
-    context.lastValue = props.value;
     context.resetTime = 0;
   }, [props.value]);
 
