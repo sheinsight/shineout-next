@@ -1,3 +1,9 @@
+## 3.2.4
+未发布
+### 🐞 Style
+
+- 优化 `TreeSelect` 单选结果的样式 ([#549](https://github.com/sheinsight/shineout-next/pull/549))
+
 ## 3.2.3
 2024-06-25
 ### 🐞 BugFix
