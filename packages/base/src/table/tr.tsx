@@ -102,7 +102,10 @@ const Tr = (props: TrProps) => {
   useEffect(() => {
     if (props.setRowHeight && trRef.current) {
       const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
-      props.setRowHeight(props.rowIndex, trRef.current.getBoundingClientRect().height + expandHeight);
+      props.setRowHeight(
+        props.rowIndex,
+        trRef.current.getBoundingClientRect().height + expandHeight,
+      );
     }
   }, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
 
@@ -256,6 +259,9 @@ const Tr = (props: TrProps) => {
             )}
             style={getTdStyle(col, data[i].colSpan)}
             dir={config.direction}
+            onClick={() => {
+              col.onClick ? col.onClick(data[i].data) : null;
+            }}
           >
             {renderContent(col, data[i].data)}
           </td>

@@ -282,7 +282,7 @@ export interface TableColumnItem<DataItem> {
    * @cn 列点击事件
    * @en Click event of column
    */
-  onClick?: (d: DataItem, isExpand: boolean) => void;
+  onClick?: (d: DataItem) => void;
 
   /**
    * @cn 单独设置某一列不可拖动
