@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.16.0]
+        node-version: [18.19.1]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
