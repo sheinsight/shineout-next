@@ -20,4 +20,10 @@ export interface SpinTokens {
    * @description 加载动画水平模式下与提示文字的外边距
    */
   spinHorizontalMargin: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 加载动画背景颜色
+   */
+  spinBackgroundColor: string;
 }

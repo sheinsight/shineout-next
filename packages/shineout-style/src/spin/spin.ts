@@ -38,7 +38,7 @@ const spinStyle: JsStyles<keyof SpinClasses> = {
   fade: {},
 
   spin: {
-    margin: 'auto'
+    margin: 'auto',
   },
   content: {
     margin: 'auto',
@@ -87,7 +87,7 @@ const spinStyle: JsStyles<keyof SpinClasses> = {
       bottom: 0,
       height: '100%',
       width: '100%',
-      background: '#FFFFFF',
+      background: Token.spinBackgroundColor,
       opacity: 0.5,
     },
   },

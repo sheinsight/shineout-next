@@ -349,6 +349,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     color: token.modalHeaderFontColor,
     fontWeight: token.modalHeaderFontWeight,
     fontSize: token.modalHeaderFontSize,
+    lineHeight: token.lineHeightDynamic,
   },
   headerClose: {
     marginLeft: token.modalHeaderCloseMarginXStart,
