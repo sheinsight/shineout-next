@@ -136,13 +136,13 @@ export interface DescriptionsTokens {
   descriptionsBorderBottomSize: string;
   /**
    * @type {string}
-   * @token Spacing-8
+   * @token Spacing-12
    * @description 描述列表边框内边距（水平方向）
    */
   descriptionsBorderPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-12
+   * @token Spacing-8
    * @description 描述列表边框内边距（垂直方向）
    */
   descriptionsBorderPaddingY: string;

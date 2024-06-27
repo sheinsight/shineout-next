@@ -137,12 +137,12 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
       borderBottom: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $label': {
-      padding: `${token.descriptionsBorderPaddingX} ${token.descriptionsBorderPaddingY}`,
+      padding: `${token.descriptionsBorderPaddingY} ${token.descriptionsBorderPaddingX}`,
       backgroundColor: token.descriptionsBackgroundColor,
       borderRight: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $value': {
-      padding: `${token.descriptionsBorderPaddingX} ${token.descriptionsBorderPaddingY}`,
+      padding: `${token.descriptionsBorderPaddingY} ${token.descriptionsBorderPaddingX}`,
       borderRight: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $cell': {
