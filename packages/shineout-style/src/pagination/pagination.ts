@@ -38,7 +38,10 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     display: 'inline-block',
     width: Token.paginationFontSize,
   },
-  buttons: {},
+  buttons: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   jumper: {
     display: 'flex',
     alignItems: 'center',
@@ -48,7 +51,10 @@ const PaginationStyle: JsStyles<PaginationClass> = {
       textAlign: 'center',
     },
   },
-  sizeList: {},
+  sizeList: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   simple: {},
   small: {
     fontSize: Token.paginationSmallFontSize,
