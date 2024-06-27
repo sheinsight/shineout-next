@@ -1,3 +1,10 @@
+## 3.3.0-beta.7
+2024-06-26
+
+### 🆕 Feature
+- `Table` 新增属性 `onCellClick` 支持单元格点击后的回调 ([#550](https://github.com/sheinsight/shineout-next/pull/550))
+
+
 ## 3.2.2
 2024-06-21
 

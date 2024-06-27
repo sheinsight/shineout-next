@@ -22,6 +22,7 @@ export interface TbodyProps
     | 'disabled'
     | 'hover'
     | 'treeCheckAll'
+    | 'onCellClick'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];

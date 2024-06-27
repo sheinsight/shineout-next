@@ -52,7 +52,7 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -290,7 +290,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -581,7 +581,7 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -596,7 +596,7 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
               dir="ltr"
             >
               <div
-                class="soui-tree-content-wrapper soui-tree-childnode"
+                class="soui-tree-content-wrapper soui-tree-childnode soui-tree-content-disabled"
                 dir="ltr"
               >
                 <span
@@ -643,7 +643,7 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
               dir="ltr"
             >
               <div
-                class="soui-tree-content-wrapper soui-tree-childnode"
+                class="soui-tree-content-wrapper soui-tree-childnode soui-tree-content-disabled"
                 dir="ltr"
               >
                 <span
@@ -690,7 +690,7 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
               dir="ltr"
             >
               <div
-                class="soui-tree-content-wrapper soui-tree-childnode"
+                class="soui-tree-content-wrapper soui-tree-childnode soui-tree-content-disabled"
                 dir="ltr"
               >
                 <span
@@ -787,7 +787,7 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -999,7 +999,7 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -1256,7 +1256,7 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -1440,7 +1440,7 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -1650,7 +1650,7 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
     style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
   >
     <div
-      class="soui-treeSelect-tree"
+      class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
       style="max-height: 250px;"
     >
       <div
@@ -2029,7 +2029,7 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -2287,7 +2287,7 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -2493,7 +2493,7 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -2699,7 +2699,7 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div
@@ -2927,7 +2927,7 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
       style="pointer-events: none; position: fixed; z-index: -1000; opacity: 0; display: none; transform: scaleY(1);"
     >
       <div
-        class="soui-treeSelect-tree"
+        class="soui-treeSelect-tree soui-treeSelect-tree-wrapper"
         style="max-height: 250px;"
       >
         <div

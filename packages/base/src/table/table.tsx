@@ -285,6 +285,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       bodyScrollWidth: scrollWidth,
       resizeFlag: resizeFlag,
       treeCheckAll: props.treeCheckAll,
+      onCellClick: props.onCellClick,
     };
 
     const headCommonProps = {

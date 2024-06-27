@@ -118,6 +118,18 @@ export interface TableProps<DataItem, Value>
     input?: () => InputClasses;
     empty?: () => EmptyClasses;
   };
+   /**
+   * 
+   * @cn 单元格点击事件 
+   * @en Cell click event 
+   */
+   onCellClick?: (
+    data: DataItem,
+    info:{
+    rowIndex: number,
+    columnIndex: number,
+    columnKey: string | number,
+  }) => void;
   /**
    * @en which takes effect when the virtual list is enabled
    * @cn 当开启虚拟列表时生效
