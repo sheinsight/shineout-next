@@ -71,7 +71,7 @@ const listStyle: JsStyles<ListClassType> = {
       fontSize: token.listSmallFontSize,
     },
     '$wrapperLarge &': {
-      padding: `${token.listLargeItemPaddingX} ${token.listLargeItemPaddingY}`,
+      padding: `${token.listLargeItemPaddingY} ${token.listLargeItemPaddingX}`,
       fontSize: token.listLargeFontSize,
     },
   },

@@ -6,10 +6,7 @@
  * 用于生成 token 的规则，修改保存后将自动更新 token。
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const spinRules = {
-  color: [['tip'], ['font-color']],
-  space: [['vertical', 'horizontal'], ['margin']],
-};
+const spinRules = {};
 
 module.exports = {
   spinRules,
