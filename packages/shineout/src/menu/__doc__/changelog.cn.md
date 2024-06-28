@@ -1,3 +1,9 @@
+## 3.3.0
+未发布
+
+### 🆕 Feature
+- `Menu` 支持水平模式的暗系主题 ([#505](https://github.com/sheinsight/shineout-next/pull/505))
+
 ## 3.2.2
 2024-06-21
 
