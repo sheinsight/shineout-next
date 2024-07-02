@@ -32,12 +32,13 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
 ) => {
   const props = useWithFormConfig(props0);
+  const defaultHeight = 232;
   const {
     jssStyle,
     style,
     adjust = true,
     width,
-    height,
+    height = defaultHeight,
     className,
     hideTag = false,
     defaultValue,
@@ -119,6 +120,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   });
 
   const isDataEmpty = !filterData || filterData.length === 0;
+  const isMultiple = multiple === true || mode !== undefined;
 
   const { datum, value, onChange } = useCascader({
     data,
@@ -512,7 +514,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
   const renderList = () => {
     let tempData: any = filterData;
-    const isMultiple = multiple === true || mode !== undefined;
     let cascaderList: React.ReactNode[] = [
       <CascaderList
         jssStyle={jssStyle}
@@ -573,9 +574,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
 
     const listStyle =
-      data && data.length === 0
-        ? { height: 'auto', minHeight: 232, width: '100%' }
-        : { height, minHeight: height || 232 };
+      data && data.length === 0 ? { height: 'auto', minHeight: height, width: '100%' } : { height };
     return (
       <div className={classNames(styles.listContent)} style={listStyle}>
         {cascaderList}
@@ -593,9 +592,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderFilterList = () => {
-    const listStyle = data && data.length === 0 ? { height: 'auto', width: '100%' } : { height };
+    const listStyle = data && data.length === 0 ? { maxHeight: height } : { maxHeight: height };
     return (
-      <div className={classNames(styles.listContent)} style={listStyle}>
+      <div className={classNames(styles.listContent, styles.filterList)} style={listStyle}>
         <CascaderFilterList
           jssStyle={jssStyle}
           data={filterData!}
@@ -708,7 +707,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       <AbsoluteList
         adjust={adjust}
         focus={open}
-        fixedWidth={false}
+        fixedWidth={filterText && !isMultiple ? 'min' : false}
         absolute={absolute}
         zIndex={zIndex}
         position={position}
