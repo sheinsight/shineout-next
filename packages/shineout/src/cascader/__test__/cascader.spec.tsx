@@ -133,7 +133,7 @@ describe('Cascader[Base]', () => {
     attributesTest(cascaderPicker, 'data-sheinx-animation-type', 'scale-y')
     styleTest(cascaderPicker, defaultOpenStyle)
     const cascaderListContent = cascaderPicker.querySelector(listContent)!
-    styleTest(cascaderListContent, `min-height: 232px;`)
+    styleTest(cascaderListContent, `height: 232px;`)
     const cascaderOptions = cascaderListContent.querySelectorAll(option)
     expect(cascaderOptions.length).toBe(data.length)
     cascaderOptions.forEach((item, index) => {
