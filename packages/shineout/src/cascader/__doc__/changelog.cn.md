@@ -3,6 +3,14 @@
 
 ### 🐞 BugFix
 
+- 修复 `Cascader` 当开启 absolute 属性且数据为空时下拉列表宽度超长的问题([#555](https://github.com/sheinsight/shineout-next/pull/555))
+- 修复 `Cascader` height 属性失效导致无法滚动的问题([#555](https://github.com/sheinsight/shineout-next/pull/555))
+
+## 3.1.19
+2024-05-29
+
+### 🐞 BugFix
+
 - 修复 `Cascader` 当 `value` 变为 `undefined` 时下拉选择状态没有更新的问题 ([#483](https://github.com/sheinsight/shineout-next/pull/483))
 
 
