@@ -684,7 +684,19 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   }, []);
 
   const shouldFullWidth = props.loading || isDataEmpty;
-  const pickerWrapperStyle = shouldFullWidth ? { minWidth: '100%' } : {};
+  const pickerWrapperStyle = shouldFullWidth
+    ? { minWidth: absolute && isDataEmpty ? '' : '100%' }
+    : {};
+
+  const getFixedWidth = () => {
+    if (absolute && isDataEmpty) {
+      return true;
+    }
+    if (filterText && !isMultiple) {
+      return 'min';
+    }
+    return false;
+  };
 
   return (
     <div
@@ -707,7 +719,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       <AbsoluteList
         adjust={adjust}
         focus={open}
-        fixedWidth={filterText && !isMultiple ? 'min' : false}
+        fixedWidth={getFixedWidth()}
         absolute={absolute}
         zIndex={zIndex}
         position={position}
