@@ -346,6 +346,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
     display: 'inline-block',
     textAlign: 'center',
     borderRadius: '50%',
+    '& svg': {
+      width: `calc(100% - 12px)`,
+    },
   },
   dot: {
     '&$vertical': {
