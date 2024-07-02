@@ -63,7 +63,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <div className='iconbox'>
       <Tooltip tip='在 Shineout-Playground 打开' trigger='hover' position='top'>
         <Link to={`http://shineout-playground.sheincorp.cn/#/playground?code=${codeUrl}`} target="_blank" rel="noopener noreferrer" >
-          <div className='icon'>
+          <div className='icon' style={{ color: '#000' }}>
             <svg
               fill='none'
               stroke='currentColor'
