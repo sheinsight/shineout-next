@@ -1,6 +1,6 @@
 import { Tooltip } from 'shineout';
 import { Link } from 'react-router-dom';
-import { strFromU8, strToU8, zlibSync, unzlibSync } from 'fflate'
+import { strFromU8, strToU8, zlibSync } from 'fflate'
 import { useMemo } from 'react';
 
 export const utoa = (data: string) => {
@@ -17,14 +17,19 @@ interface CodesandboxProps {
 const Codesandbox = (props: CodesandboxProps) => {
   const { code } = props
 
-  const importMap = `
-{
-  "react": "18.3.1",
-  "react-dom/client": "react-dom@18.3.1",
-  "shineout": "laster",
-  "@sheinx/mock": "laster"
-}  
-`
+  const isMock = useMemo(() => code.includes('@sheinx/mock'), [code])
+
+  const importMapOrigin = {
+    "react": "18.3.1",
+    "react-dom/client": "react-dom@18.3.1",
+    "shineout": "laster"
+  }  
+
+  const importMap = JSON.stringify(isMock ? {
+    ...importMapOrigin,
+    "dayjs": "laster"
+  } : importMapOrigin)
+
   const main = `import React from 'react'
 import ReactDOM from 'react-dom/client'
 
@@ -37,9 +42,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 )
 `
 
+
   const codeUrl = useMemo(() => {
     
-    const files = {
+    const filesOrigin = {
       'import-map.json': {
         language: 'json',
         name: 'import-map.json',
@@ -47,7 +53,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       },
       'index.tsx': {
         name: 'index.tsx',
-        value: code,
+        value: isMock ? code.replace('@sheinx/mock', './mock') : code,
         language: 'typescript'
       },
       'main.tsx': {
@@ -56,13 +62,33 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         value: main
       }
     }
+
+    const files = isMock ? {
+      ...filesOrigin,
+      'mock.ts': {
+        name: "mock.ts",
+        language: 'typescript',
+        value: require(`!!raw-loader!./mock.ts`).default
+      },
+      'faker.ts': {
+        name: "faker.ts",
+        language: 'typescript',
+        value: require(`!!raw-loader!./faker.ts`).default
+      },
+      'faker-data.ts': {
+        name: "faker-data.ts",
+        language: 'typescript',
+        value: require(`!!raw-loader!./faker-data.ts`).default
+      }
+    } : filesOrigin
+
     return encodeURIComponent(utoa(JSON.stringify(files)))
   }, [code])
 
   return (
     <div className='iconbox'>
       <Tooltip tip='在 Shineout-Playground 打开' trigger='hover' position='top'>
-        <Link to={`http://shineout-playground.sheincorp.cn/#/playground?code=${codeUrl}`} target="_blank" rel="noopener noreferrer" >
+        <Link to={`https://shineout-playground.sheincorp.cn/#/playground?code=${codeUrl}`} target="_blank" rel="noopener noreferrer" >
           <div className='icon' style={{ color: '#000' }}>
             <svg
               fill='none'
