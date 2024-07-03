@@ -55,6 +55,7 @@ export interface CascaderClasses {
   loading: string;
   checkedIcon: string;
   listContent: string;
+  filterList: string;
   list: string;
   tag: string;
   tagOnly: string;

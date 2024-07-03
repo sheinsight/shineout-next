@@ -386,6 +386,12 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       borderRight: `1px solid ${token.cascaderListBorderColor}`,
     },
   },
+  filterList: {
+    display: 'block',
+    '& $list': {
+      width: '100%',
+    },
+  },
   hideTag: {},
   list: {
     paddingTop: 3,

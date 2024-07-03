@@ -94,6 +94,7 @@ export interface DatePickerClasses {
   // timeBaseItem: string;
 
   datetime: string;
+  datetimeHide: string;
 
   // 快速选择
   quickPicker: string;

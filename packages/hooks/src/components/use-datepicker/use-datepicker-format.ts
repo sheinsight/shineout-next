@@ -131,6 +131,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       quick: { name: React.ReactNode; value: any } | undefined,
     ) => {
       setCurrentArr(arg);
+      if (!type && !quick) return;
       setParams({ type, quick });
     },
   );

@@ -8,7 +8,7 @@ import Copy from './copy';
 import Open from './open';
 import Debug from './debug';
 import Tip from './tip';
-// import Codesandbox from './codesandbox';
+import Codesandbox from './codesandbox';
 import { Message } from 'shineout';
 
 import { Example as ExampleProps } from 'docs/types';
@@ -90,7 +90,7 @@ const Example = (props: ExampleProps) => {
           })}
         </div>
         <div className={classes.exampleActionButton}>
-          {/* <Codesandbox></Codesandbox> */}
+          <Codesandbox code={code} />
           <Open open={open} onClick={handleOpen}></Open>
           <Copy onCopy={handleCopy}></Copy>
           <Debug example={Example} name={propName[state.locales] || defaultName}></Debug>

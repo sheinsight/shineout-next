@@ -1,7 +1,7 @@
 {
   "name": "sheinx",
   "private": true,
-  "version": "3.2.2",
+  "version": "3.2.5",
   "description": "A react library developed with sheinx",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
     "dev:create": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-create.js",
     "build:doc": "cross-env NODE_ENV=production webpack --config ./webpack/config.doc.js",
     "build:api": "node ./scripts/api-build.js",
-    "build": "node ./scripts/doc-replace.js && pnpm run build:doc",
+    "build": "pnpm run build:doc && cp .gateway-publish dist",
     "build:pkg": "node ./scripts/build-index && pnpm run build:bundless && pnpm run build:bundle",
     "build:bundless": "pnpm --filter=./packages/* run build",
     "build:bundle": "pnpm --filter=./packages/shineout run build:bundle ",
@@ -75,6 +75,7 @@
     "@babel/runtime": "^7.23.5",
     "classnames": "2.3.2",
     "core-js": "3.33.3",
+    "fflate": "^0.8.2",
     "immer": "10.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"

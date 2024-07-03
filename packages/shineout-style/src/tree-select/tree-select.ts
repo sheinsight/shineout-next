@@ -313,6 +313,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     display: 'block',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    flex: 1,
     whiteSpace: 'nowrap',
     marginTop: token.treeSelectPlaceholderMarginY,
     marginBottom: token.treeSelectPlaceholderMarginY,
