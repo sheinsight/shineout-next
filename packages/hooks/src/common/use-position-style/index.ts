@@ -281,7 +281,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
   });
 
-  useEffect(updateStyle, [show, position, absolute, updateKey]);
+  useEffect(updateStyle, [show, position, absolute, updateKey, fixedWidth]);
   return style;
 };
 

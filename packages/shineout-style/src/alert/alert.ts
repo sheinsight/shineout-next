@@ -97,6 +97,9 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     '&:hover': {
       color: Token.alertCloseHoverColor,
     },
+    '& svg': {
+      width: '100%',
+    },
   },
   closeWrapper: {
     width: Token.alertFontSize,
@@ -152,6 +155,9 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     flex: '0 0 auto',
     alignItems: 'center',
     marginRight: Token.alertNearlyMargin,
+    '& svg': {
+      width: '100%',
+    },
   },
 };
 
