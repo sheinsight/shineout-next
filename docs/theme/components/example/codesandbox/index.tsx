@@ -10,6 +10,17 @@ export const utoa = (data: string) => {
   return btoa(binary);
 };
 
+const useIncludes = (code: string, includes: string[]) => {
+  const result = useMemo(() => {
+    return includes.reduce((acc, include) => {
+      acc[include] = code.includes(include);
+      return acc;
+    }, {} as Record<string, boolean>);
+  }, [code, includes]);
+
+  return result;
+}
+
 interface CodesandboxProps {
   code: string
 }
@@ -17,12 +28,18 @@ interface CodesandboxProps {
 const Codesandbox = (props: CodesandboxProps) => {
   const { code } = props
 
-  const isMock = useMemo(() => code.includes('@sheinx/mock'), [code])
+  const includes = useIncludes(code, ['@sheinx/mock', './static/icon', './utils', './static/mock', './static/code']);
+
+  const { '@sheinx/mock': isMock, './static/icon': isIcon, './utils': isUtils, './static/mock': isSelectMock, './static/code': isCode } = includes;
 
   const importMapOrigin = {
     "react": "18.3.1",
     "react-dom/client": "react-dom@18.3.1",
-    "shineout": "laster"
+    "react-router-dom": "6.11.2",
+    "react-jss": "10.9.2",
+    "shineout": "laster",
+    "classnames": "2.3.2",
+    "immer": "10.0.2"
   }  
 
   const importMap = JSON.stringify(isMock ? {
@@ -32,19 +49,21 @@ const Codesandbox = (props: CodesandboxProps) => {
 
   const main = `import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './index'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 )
 `
 
 
   const codeUrl = useMemo(() => {
-    
     const filesOrigin = {
       'import-map.json': {
         language: 'json',
@@ -63,27 +82,65 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       }
     }
 
-    const files = isMock ? {
+    const files = {
       ...filesOrigin,
-      'mock.ts': {
-        name: "mock.ts",
-        language: 'typescript',
-        value: require(`!!raw-loader!./mock.ts`).default
-      },
-      'faker.ts': {
-        name: "faker.ts",
-        language: 'typescript',
-        value: require(`!!raw-loader!./faker.ts`).default
-      },
-      'faker-data.ts': {
-        name: "faker-data.ts",
-        language: 'typescript',
-        value: require(`!!raw-loader!./faker-data.ts`).default
-      }
-    } : filesOrigin
+      ...(isMock ? {
+        'mock.ts': {
+          name: "mock.ts",
+          language: 'typescript',
+          value: require(`!!raw-loader!./mock.ts`).default
+        },
+        'faker.ts': {
+          name: "faker.ts",
+          language: 'typescript',
+          value: require(`!!raw-loader!./faker.ts`).default
+        },
+        'faker-data.ts': {
+          name: "faker-data.ts",
+          language: 'typescript',
+          value: require(`!!raw-loader!./faker-data.ts`).default
+        }
+      } : {}),
+      ...(
+        isIcon ? {
+          'static/icon.tsx': {
+            name: "static/icon.tsx",
+            language: 'typescript',
+            value: require(`!!raw-loader!./icon.tsx`).default
+          }
+        } : {}
+      ),
+      ...(
+        isUtils ? {
+          'utils.ts': {
+            name: "utils.ts",
+            language: 'typescript',
+            value: require(`!!raw-loader!./utils.ts`).default
+          }
+        } : {}
+      ),
+      ...(
+        isSelectMock ? {
+          'static/mock.ts': {
+            name: "static/mock.ts",
+            language: 'typescript',
+            value: require(`!!raw-loader!./select-mock.ts`).default
+          }
+        } : {}
+      ),
+      ...(
+        isCode ? {
+          'static/code.tsx': {
+            name: "static/code.tsx",
+            language: 'typescript',
+            value: require(`!!raw-loader!./code.tsx`).default
+          }
+        } : {}
+      )
+    }
 
     return encodeURIComponent(utoa(JSON.stringify(files)))
-  }, [code])
+  }, [code, isMock, isIcon, isUtils, isSelectMock, isCode])
 
   return (
     <div className='iconbox'>
