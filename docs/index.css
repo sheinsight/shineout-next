@@ -46,8 +46,8 @@ pre[class*='language-'] {
   color: black;
   background: none;
   text-shadow: 0 1px white;
-  font-family: 'PingFang SC', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 14px;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Courier New", monospace !important;
+  font-size: 1em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
