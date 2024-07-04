@@ -1,3 +1,9 @@
+## 3.2.6-beta.1
+2024-07-04
+
+### 🐞 BugFix
+- 修复`Table`在bordered模式下, 浏览器缩放引起的滚动条计算偏差问题 ([#566](https://github.com/sheinsight/shineout-next/pull/566))
+
 ## 3.2.6-beta.0
 2024-07-03
 
