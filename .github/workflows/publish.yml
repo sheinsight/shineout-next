@@ -18,19 +18,16 @@ jobs:
           fetch-depth: 1
           ref: ${{ github.event.release.tag_name}}
 
-      # - name: Use Pnpm
-      #   uses: pnpm/action-setup@v2
-      #   with:
-      #     version: 8.2.0
-
-      - name: Clean pnpm cache
-        run: pnpm store prune
+      - name: Use Pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.4.0
 
       - name: Configure npm to use a different registry
         run: npm config set registry https://registry.npmjs.org
 
-      - name: Install pnpm
-        run: npm install -g pnpm@9.4.0
+      - name: Clean pnpm cache
+        run: pnpm store prune
 
       - name: dependencies
         run: pnpm install --frozen-lockfile
