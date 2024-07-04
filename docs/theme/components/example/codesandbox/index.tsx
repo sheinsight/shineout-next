@@ -32,20 +32,16 @@ const Codesandbox = (props: CodesandboxProps) => {
 
   const { '@sheinx/mock': isMock, './static/icon': isIcon, './utils': isUtils, './static/mock': isSelectMock, './static/code': isCode } = includes;
 
-  const importMapOrigin = {
-    "react": "18.3.1",
-    "react-dom/client": "react-dom@18.3.1",
-    "react-router-dom": "6.11.2",
-    "react-jss": "10.9.2",
-    "shineout": "laster",
-    "classnames": "2.3.2",
-    "immer": "10.0.2"
-  }  
-
-  const importMap = JSON.stringify(isMock ? {
-    ...importMapOrigin,
-    "dayjs": "laster"
-  } : importMapOrigin)
+  const importMap = `{
+  "react": "18.3.1",
+  "react-dom/client": "react-dom@18.3.1",
+  "react-router-dom": "6.11.2",
+  "react-jss": "10.9.2",
+  "shineout": "laster",
+  "classnames": "2.3.2",
+  "immer": "10.0.2",
+  "dayjs": "laster"
+} ` 
 
   const main = `import React from 'react'
 import ReactDOM from 'react-dom/client'
