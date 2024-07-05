@@ -52,7 +52,7 @@ const usePagination = (props: BasePaginationProps) => {
   };
 
   return {
-    current: currentProp !== undefined ? currentProp : current,
+    current,
     pageSize,
     total,
     onChange: handleChange,
