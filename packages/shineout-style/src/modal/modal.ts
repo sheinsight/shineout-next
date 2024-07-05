@@ -328,8 +328,9 @@ const modalStyle: JsStyles<ModalClassType> = {
     marginBottom: token.modalPanelGap,
   },
   headerEmptyTitle: {
-    marginBottom: 0,
-    height: 0,
+    marginBottom: '0 !important',
+    height: '0 !important',
+    backgroundColor: 'inherit !important'
   },
   headerIcon: {
     '$wrapper &': {
