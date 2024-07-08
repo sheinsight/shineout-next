@@ -327,11 +327,6 @@ const modalStyle: JsStyles<ModalClassType> = {
     display: 'flex',
     marginBottom: token.modalPanelGap,
   },
-  headerEmptyTitle: {
-    marginBottom: '0 !important',
-    height: '0 !important',
-    backgroundColor: 'inherit !important'
-  },
   headerIcon: {
     '$wrapper &': {
       marginRight: token.modalHeaderIconMarginEnd,
@@ -342,6 +337,9 @@ const modalStyle: JsStyles<ModalClassType> = {
       display: 'block',
       alignItems: 'center',
     },
+  },
+  emptyIcon: {
+    position: 'absolute',
   },
   headerTitle: {
     flex: '1',
@@ -376,6 +374,16 @@ const modalStyle: JsStyles<ModalClassType> = {
         background: token.modalDrawerCloseBackgroundColor,
       },
     },
+  },
+  emptyClose: {
+    position: 'absolute',
+    top: 12,
+    right: 12,
+    marginTop: 0,
+    '$wrapperDrawer &': {
+      top: 4,
+      right: 4,
+    }
   },
   body: {
     flex: '1 1 auto',
