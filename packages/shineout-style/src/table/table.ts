@@ -94,9 +94,6 @@ const tableStyle: JsStyles<TableClassType> = {
         color: token.tableTfootFontColor,
         fontWeight: token.tableTfootFontWeight,
       },
-      '&bordered tr:last-child td': {
-        borderBottom: 'none',
-      },
     },
   },
   loading: {
@@ -146,6 +143,17 @@ const tableStyle: JsStyles<TableClassType> = {
   bordered: {
     border: `1px solid ${token.tableCellBorderColor}`,
     borderBottom: 'none',
+    borderTop: 'none',
+    '&::before': {
+      position: 'absolute',
+      zIndex: 7,
+      content: '""',
+      display: 'block',
+      top: 0,
+      left: 0,
+      right: 0,
+      borderTop: `1px solid ${token.tableCellBorderColor}`,
+    },
     '&::after': {
       position: 'absolute',
       content: '""',

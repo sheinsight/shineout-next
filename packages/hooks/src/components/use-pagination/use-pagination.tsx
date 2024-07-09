@@ -21,6 +21,10 @@ const usePagination = (props: BasePaginationProps) => {
     if (pageSizeProp !== pageSize) setPageSize(pageSizeProp);
   }, [pageSizeProp]);
 
+  useEffect(() => {
+    if (currentProp !== undefined && currentProp !== current) setCurrent(currentProp);
+  }, [currentProp]);
+
   const handleChange = usePersistFn((c: number, size?: number) => {
     if (c === current && size === undefined) return;
     setCurrent(c);
@@ -48,7 +52,7 @@ const usePagination = (props: BasePaginationProps) => {
   };
 
   return {
-    current: currentProp !== undefined ? currentProp : current,
+    current,
     pageSize,
     total,
     onChange: handleChange,

@@ -30,9 +30,11 @@ const data: TableRowData[] = user.fetchSync(1000);
 
 const App: React.FC = () => {
   const [current, setCurrent] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<number>(10);
 
-  const handlePageChange = (c: number) => {
-    setCurrent(c);
+  const handlePageChange = (_current: number, size?: number) => {
+    if(size !== undefined) setPageSize(size);
+    setCurrent(_current);
   };
 
   const columns: TableColumnItem[] = [
@@ -86,10 +88,12 @@ const App: React.FC = () => {
       keygen='id'
       data={data}
       width={1500}
+      style={{maxHeight: '80vh'}}
       columns={columns}
       // bordered
       pagination={{
         current,
+        pageSize,
         layout: ['links', 'list'],
         onChange: handlePageChange,
         pageSizeList: [10, 15, 20],
