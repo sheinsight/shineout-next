@@ -196,7 +196,7 @@ const Modal = (props: ModalContentProps) => {
     );
   };
   const renderHeader = () => {
-    const showCloseIcon = maskCloseAble === null || !!maskCloseAble;
+    const showCloseIcon = (maskCloseAble === null || !!maskCloseAble) && !props.hideClose;
     const isEmptyTitle = !props.title && props.title !== 0;
 
     if (isEmptyTitle) {
@@ -206,7 +206,7 @@ const Modal = (props: ModalContentProps) => {
         <>
           {renderIcon(isEmptyTitle)}
           {
-            showCloseIcon && !props.hideClose && (
+            showCloseIcon && (
               <div className={closeRoot} onClick={handleClose}>
                 {Icons.modal.Close}
               </div>
@@ -223,7 +223,7 @@ const Modal = (props: ModalContentProps) => {
       >
         {renderIcon()}
         <div className={modalClasses?.headerTitle}>{props.title}</div>
-        {showCloseIcon && !props.hideClose && (
+        {showCloseIcon && (
           <div className={modalClasses?.headerClose} onClick={handleClose}>
             {Icons.modal.Close}
           </div>
