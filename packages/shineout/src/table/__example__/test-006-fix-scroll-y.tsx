@@ -61,7 +61,7 @@ const App: React.FC = () => {
       <h1>基础数据</h1>
     </Tabs.Panel>
     <Tabs.Panel id="table" tab="表格">
-      <Table bordered keygen='id' width={1500} style={{ height: '88vh' }} columns={columns} data={data} />
+      <Table bordered keygen='id' width={1500} style={{ height: '88vh' }} columns={columns} data={data} onScroll={() => {}} />
     </Tabs.Panel>
   </Tabs>
   </>
