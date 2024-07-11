@@ -33,7 +33,7 @@ const virtualScrollerStyle = {
   flex: 1,
   minWidth: 0,
   minHeight: 0,
-  overflow: 'auto',
+  overflow: 'auto scroll',
   width: '100%',
 };
 
@@ -316,15 +316,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       jssStyle: props.jssStyle,
       colgroup: colgroup,
     };
-    const headWrapperClass = classNames(
-      tableClasses?.headWrapper,
-      isScrollY && scrollBarWidth && tableClasses?.scrollY,
-    );
-
-    const footWrapperClass = classNames(
-      tableClasses?.footWrapper,
-      isScrollY && scrollBarWidth && tableClasses?.scrollY,
-    );
 
     const fixRightNum = (isRtl ? -1 * maxScrollLeft : maxScrollLeft) - virtualInfo.innerLeft;
     const Wrapper = props.sticky ? Sticky : React.Fragment;
@@ -336,7 +327,20 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       css: sticky?.css,
       parent: tableRef?.current,
     };
-    if (!virtual && !isScrollY && !props.sticky && props.data?.length) {
+
+    const isRenderBaseTable = !virtual && !isScrollY && !props.sticky && props.data?.length
+
+    const headWrapperClass = classNames(
+      tableClasses?.headWrapper,
+      ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
+    );
+
+    const footWrapperClass = classNames(
+      tableClasses?.footWrapper,
+      ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
+    );
+
+    if (typeof isRenderBaseTable === 'boolean' && isRenderBaseTable) {
       return (
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
           <table style={{ width }} ref={tbodyRef}>
