@@ -33,7 +33,7 @@ const virtualScrollerStyle = {
   flex: 1,
   minWidth: 0,
   minHeight: 0,
-  overflow: 'auto scroll',
+  overflow: 'auto',
   width: '100%',
 };
 
@@ -340,7 +340,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
     );
 
-    if (typeof isRenderBaseTable === 'boolean' && isRenderBaseTable) {
+    if (isRenderBaseTable) {
       return (
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
           <table style={{ width }} ref={tbodyRef}>
