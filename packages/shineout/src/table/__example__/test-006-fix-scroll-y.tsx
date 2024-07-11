@@ -1,8 +1,8 @@
 /**
- * cn - scroll-y-debug
- *    -- 设置 column 的 fixed 属性，可以固定列。只在设置了表格的 width 属性，并且 width 大于外部容器情况下才会生效
- * en - scroll-y-debug
- *    -- Set the fixed property of the column can fix the column; Only take effect if the table's width property is set and width is greater than the external container
+ * cn - fix-table-scroll
+ *    -- 修复表格滚动
+ * en - fix-table-scroll
+ *    -- fix table scroll
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';
@@ -53,8 +53,8 @@ const columns: TableColumnItem[] = [
   },
 ];
 
-const App: React.FC = () => (
-  <Table bordered keygen='id' width={1500} style={{ height: '80vh' }} columns={columns} data={data} />
-);
+const App: React.FC = () => {
+  return <Table bordered keygen='id' width={1500} style={{ height: '88vh' }} columns={columns} data={data} />
+}
 
 export default App;
