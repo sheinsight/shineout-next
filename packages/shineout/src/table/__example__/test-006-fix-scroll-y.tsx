@@ -5,8 +5,9 @@
  *    -- fix table scroll
  */
 import React from 'react';
-import { Table, TYPE } from 'shineout';
+import { Table, Tabs, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
+import Tab from '@sheinx/base/src/tabs/tab';
 
 interface TableRowData {
   id: number;
@@ -54,7 +55,16 @@ const columns: TableColumnItem[] = [
 ];
 
 const App: React.FC = () => {
-  return <Table bordered keygen='id' width={1500} style={{ height: '88vh' }} columns={columns} data={data} />
+  return <>
+  <Tabs>
+    <Tabs.Panel id="basic" tab="基础">
+      <h1>基础数据</h1>
+    </Tabs.Panel>
+    <Tabs.Panel id="table" tab="表格">
+      <Table bordered keygen='id' width={1500} style={{ height: '88vh' }} columns={columns} data={data} />
+    </Tabs.Panel>
+  </Tabs>
+  </>
 }
 
 export default App;
