@@ -5,6 +5,8 @@ import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
 
+const defaultDelay = 0;
+
 const Tooltip = (props: TooltipProps) => {
   const {
     trigger = 'hover',
@@ -27,11 +29,14 @@ const Tooltip = (props: TooltipProps) => {
     ? (children?.props as { [name: string]: any })
     : {};
 
+  const delay = props.delay || props.mouseEnterDelay || defaultDelay;
+
   const { open, position, getTargetProps, targetRef, popupRef } = usePopup({
     position: popsitionProps,
     trigger: trigger,
     autoMode: 'popover',
     priorityDirection,
+    mouseEnterDelay: delay,
     targetEvents: disabledChild ? {} : childrenProps,
   });
 
