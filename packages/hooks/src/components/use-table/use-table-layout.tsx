@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
 import usePrevious from '../../common/use-previous';
@@ -272,7 +272,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     };
   }, [scrollRef.current]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (adjust) {
       getColgroup(adjust === 'drag');
       setAdjust(false);

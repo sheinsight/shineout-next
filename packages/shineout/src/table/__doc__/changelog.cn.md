@@ -5,6 +5,19 @@
 - `Table` 新增属性 `onCellClick` 支持单元格点击后的回调 ([#550](https://github.com/sheinsight/shineout-next/pull/550))
 
 
+## 3.2.6
+2024-07-05
+
+### 🐞 BugFix
+- 修复`Table`分页的current被重置后，不能点击上一个相同页码的问题 ([#569](https://github.com/sheinsight/shineout-next/pull/569))
+- 修复`Table`在bordered模式下, 浏览器缩放引起的滚动条计算偏差问题 ([#562](https://github.com/sheinsight/shineout-next/pull/562))
+- 修复`Table` 在屏幕某些缩放比例下闪烁的问题 ([#562](https://github.com/sheinsight/shineout-next/pull/562))
+
+
+
+### 🐞 BugFix
+
+
 ## 3.2.2
 2024-06-21
 
