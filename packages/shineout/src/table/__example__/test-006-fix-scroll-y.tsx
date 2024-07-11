@@ -7,7 +7,6 @@
 import React from 'react';
 import { Table, Tabs, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
-import Tab from '@sheinx/base/src/tabs/tab';
 
 interface TableRowData {
   id: number;
@@ -55,8 +54,9 @@ const columns: TableColumnItem[] = [
 ];
 
 const App: React.FC = () => {
+  const [activeTab, setActiveTab] = React.useState<string>('basic');
   return <>
-  <Tabs>
+  <Tabs active={activeTab} onChange={v => setActiveTab(v)}>
     <Tabs.Panel id="basic" tab="基础">
       <h1>基础数据</h1>
     </Tabs.Panel>

@@ -174,7 +174,7 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   bodyWrapper: {
-    overflow: 'auto hidden',
+    overflow: 'auto',
     boxSizing: 'border-box',
     flexGrow: 1,
     minHeight: '0',
