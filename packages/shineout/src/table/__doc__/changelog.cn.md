@@ -1,3 +1,10 @@
+## 3.3.0-beta.12
+2024-07-11
+
+### 🐞 BugFix
+- 修复 `Table` 在数据不断变化的场景下可能导致滚动偏移的位置计算错误 ([#553](https://github.com/sheinsight/shineout-next/pull/553))
+
+
 ## 3.3.0-beta.7
 2024-06-26
 
@@ -12,10 +19,6 @@
 - 修复`Table`分页的current被重置后，不能点击上一个相同页码的问题 ([#569](https://github.com/sheinsight/shineout-next/pull/569))
 - 修复`Table`在bordered模式下, 浏览器缩放引起的滚动条计算偏差问题 ([#562](https://github.com/sheinsight/shineout-next/pull/562))
 - 修复`Table` 在屏幕某些缩放比例下闪烁的问题 ([#562](https://github.com/sheinsight/shineout-next/pull/562))
-
-
-
-### 🐞 BugFix
 
 
 ## 3.2.2
