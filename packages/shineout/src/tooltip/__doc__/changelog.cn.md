@@ -1,3 +1,10 @@
+## 3.3.0-beta.12
+2024-07-22
+
+### 🐞 BugFix
+
+- 修复 `Tooltip` delay 属性失效的问题 ([#575](https://github.com/sheinsight/shineout-next/pull/575))
+
 ## 3.1.26
 2024-06-05
 
