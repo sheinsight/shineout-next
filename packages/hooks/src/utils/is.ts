@@ -93,6 +93,12 @@ export const isFirefox = (): boolean => {
   return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 };
 
+export const isChromeLowerThan = (version:number):boolean => {
+  const ua = navigator.userAgent;
+  const chrome = ua.match(/chrome\/(\d+)/i);
+  return Boolean(chrome && chrome[1] && parseInt(chrome[1], 10) < version);
+}
+
 export function isDomElement(element: any): element is HTMLElement {
   return typeof HTMLElement === 'object'
     ? element instanceof HTMLElement // DOM2

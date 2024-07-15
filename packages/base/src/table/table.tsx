@@ -19,6 +19,7 @@ import {
   usePaginationList,
   useLatestObj,
   useResize,
+  util,
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -27,6 +28,8 @@ import Colgroup from './colgroup';
 import Thead from './thead';
 import Tbody from './tbody';
 import Tfoot from './tfoot';
+
+const { isChromeLowerThan } = util;
 
 const emptyArr: any[] = [];
 const virtualScrollerStyle = {
@@ -375,6 +378,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
           onScroll={handleVirtualScroll}
           defaultHeight={context.emptyHeight}
+          containerOverflow={isChromeLowerThan(99) ? 'visible' : 'hidden'}
         >
           <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
             {Group}
