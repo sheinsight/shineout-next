@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { usePersistFn, useResize, util } from '@sheinx/hooks';
+const { isFirefox } = util;
 import { useConfig } from '../config';
 
 interface scrollProps {
@@ -29,6 +30,7 @@ const Scroll = (props: scrollProps) => {
   const { current: context } = useRef({
     timer: null as any,
     isMouseDown: false,
+    isFirefox: isFirefox(),
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef });
@@ -45,7 +47,7 @@ const Scroll = (props: scrollProps) => {
     height: '100%',
     width: '100%',
     display: 'inline-flex',
-    overflow: 'hidden',
+    overflow: context.isFirefox ? 'hidden' : 'visible',
     position: 'sticky',
     [isRtl ? 'right' : 'left']: 0,
     top: 0,
