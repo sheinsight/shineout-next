@@ -28,7 +28,7 @@ export interface CarouselTokens {
   carouselArrowBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 轮播图箭头边框圆角
    */
   carouselArrowBorderRadius: string;

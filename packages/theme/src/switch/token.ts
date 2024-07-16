@@ -47,7 +47,7 @@ const switchTokenExtraValue = {
   background: { color: 'Neutral-fill-4' },
   disabled: {
     background: { color: 'Neutral-fill-2' },
-    circle: { fill: 'Neutral-text-2', shadow: '' },
+    circle: { fill: 'Neutral-fill-1', shadow: '' },
     font: { color: 'Neutral-text-2' },
   },
   loading: {
@@ -57,11 +57,11 @@ const switchTokenExtraValue = {
   },
   checked: {
     background: { color: 'Brand-6' },
-    circle: { fill: '', shadow: '' },
+    circle: { fill: 'Neutral-fill-1', shadow: '' },
     font: { color: 'Neutral-text-1' },
     disabled: {
       background: { color: 'Brand-3' },
-      circle: { fill: '', shadow: '' },
+      circle: { fill: 'Neutral-fill-1', shadow: '' },
       font: { color: 'Neutral-text-1' },
     },
     loading: {

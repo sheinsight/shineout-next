@@ -1,4 +1,3 @@
-import { usePrevious } from '../.../../../common/use-previous';
 import { usePersistFn } from '../../common/use-persist-fn';
 import { useState, useRef, useEffect } from 'react';
 
@@ -17,7 +16,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerTop, setTop] = useState(0);
   const [scrollHeight, setHeight] = useState(props.data.length * props.rowHeight);
   const [startIndex, setStartIndex] = useState(0);
-  const preIndex = usePrevious(startIndex);
   const [offsetY, setOffsetY] = useState(0);
 
   const rowsInView = props.rowsInView === 0 ? props.data.length : props.rowsInView;
@@ -31,6 +29,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     topTimer: null as any,
     controlScrollRate: null as number | null,
     heightCallback: null as null | (() => void),
+    preIndex: null as number | null,
   });
 
   const getTranslate = usePersistFn((left?: number, top?: number) => {
@@ -67,6 +66,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     if (context.shouldUpdateHeight) {
       setHeight(getContentHeight(props.data.length - 1));
     }
+    const { preIndex } = context;
+    // 解决: 从下往上滚 由于高度变化会导致滚动条跳动
     if (preIndex && preIndex > startIndex && startIndex === index) {
       // 发生在顶部
       if (context.heightCallback) return;
@@ -178,6 +179,18 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   });
 
   useEffect(() => {
+    // 记录preIndex
+    context.preIndex = startIndex;
+  }, [startIndex]);
+
+  useEffect(() => {
+    // 数据变化的时候清空掉 preIndex, 如果之前有缓存的index, setRowHeight 会有问题
+    return () => {
+      context.preIndex = null;
+    };
+  }, [props.data]);
+
+  useEffect(() => {
     if (props.disabled) return;
     if (offsetY) {
       if (props.scrollRef.current && props.innerRef.current) {
@@ -205,7 +218,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const renderData = props.disabled
     ? props.data
     : [...props.data].slice(startIndex, startIndex + rowsInView);
-
   return {
     scrollHeight,
     startIndex,

@@ -14,4 +14,10 @@ export interface EmptyTokens {
    * @description 空状态字体颜色
    */
   emptyFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 空状态字体字重
+   */
+  emptyFontWeight: string;
 }

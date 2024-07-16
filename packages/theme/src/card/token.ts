@@ -12,7 +12,7 @@ const cardTokenDescription = {
   header: '头部',
   extra: '额外内容的',
   gap: '间距',
-  shadow:'阴影',
+  shadow: '阴影',
 };
 
 /**
@@ -29,9 +29,13 @@ const cardTokenExtraValue = {
     color: 'Neutral-fill-1',
   },
   shadow: 'Shadow-2',
+  hover: {
+    shadow: 'Shadow-2',
+  },
   border: {
+    width: 'Border-1',
     color: 'Neutral-border-1',
-    radius: 'Radius-4',
+    radius: 'Radius-default',
   },
   font: {
     color: 'Neutral-text-5',
@@ -40,7 +44,9 @@ const cardTokenExtraValue = {
   padding: { x: 'Spacing-16', y: 'Spacing-12' },
   title: {
     font: {
+      color: 'Neutral-text-5',
       size: 'Font-16',
+      weight: 'Weight-medium',
     },
   },
   header: {
@@ -48,12 +54,29 @@ const cardTokenExtraValue = {
     extra: {
       margin: { x: 'Spacing-16' },
     },
+    padding: { x: 'Spacing-16', y: 'Spacing-12' },
   },
   indicator: {
     size: 'Size-7',
     color: 'Neutral-text-4',
   },
-  body: {},
+  body: {
+    padding: { x: 'Spacing-16', y: 'Spacing-12' },
+    font: {
+      size: 'Font-14',
+      color: 'Neutral-text-5',
+      weight: 'Weight-regular',
+    },
+    border: {
+      color: 'Neutral-border-1',
+    },
+  },
+  footer: {
+    padding: { x: 'Spacing-16', y: 'Spacing-12' },
+    border: {
+      color: 'Neutral-border-1',
+    },
+  },
 };
 
 module.exports = {

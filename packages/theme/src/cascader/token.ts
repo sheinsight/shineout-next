@@ -38,7 +38,7 @@ const cascaderTokenValue = { font: { size: 'Font-14' } };
 
 const cascaderTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
-  border: { radius: 'Radius-4', color: 'Neutral-border-2' },
+  border: { radius: 'Radius-default', color: 'Neutral-border-2' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: {
     size: 'Size-7',
@@ -88,7 +88,7 @@ const cascaderTokenExtraValue = {
   },
   result: {
     text: {
-      border: { radius: 'Radius-4' },
+      border: { radius: 'Radius-default' },
       padding: { x: 'Spacing-4' },
       small: { padding: { x: 'Spacing-4' } },
       large: { padding: { x: 'Spacing-10' } },
@@ -111,7 +111,7 @@ const cascaderTokenExtraValue = {
     color: 'Neutral-text-5',
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
-    radius: 'Radius-4',
+    radius: 'Radius-default',
     border: 'Neutral-border-1',
   },
   option: {
@@ -127,7 +127,7 @@ const cascaderTokenExtraValue = {
     },
     inner: {
       padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },
-      border: { radius: 'Radius-2' },
+      border: { radius: 'Radius-lesser' },
     },
     icon: {
       color: 'Neutral-text-4',

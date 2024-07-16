@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import {
   util,
@@ -121,6 +121,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const isDataEmpty = !filterData || filterData.length === 0;
   const isMultiple = multiple === true || mode !== undefined;
+
+  const updateKey = useMemo(() => {
+    return path.join('-');
+  }, [path]);
 
   const { datum, value, onChange } = useCascader({
     data,
@@ -723,6 +727,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         absolute={absolute}
         zIndex={zIndex}
         position={position}
+        updateKey={updateKey}
         popupGap={4}
         popupElRef={popupRef}
         parentElRef={targetRef}

@@ -13,7 +13,7 @@ const listStyle: JsStyles<ListClassType> = {
     flexDirection: 'column',
   },
   wrapperBordered: {
-    border: `1px solid ${token.listBorderColor}`,
+    border: `${token.listBorderWidth} solid ${token.listBorderColor}`,
     borderRadius: token.listBorderRadius,
   },
   wrapperSmall: {},
@@ -71,7 +71,7 @@ const listStyle: JsStyles<ListClassType> = {
       fontSize: token.listSmallFontSize,
     },
     '$wrapperLarge &': {
-      padding: `${token.listLargeItemPaddingY} ${token.listLargeItemPaddingY}`,
+      padding: `${token.listLargeItemPaddingY} ${token.listLargeItemPaddingX}`,
       fontSize: token.listLargeFontSize,
     },
   },

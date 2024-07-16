@@ -56,6 +56,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
 
   const getLineHeight = () => {
     if (lineHeightProp) {
+      console.log('lineHeightProp', lineHeightProp);
       return lineHeightProp;
     }
     if (size === 'small') {
@@ -160,11 +161,12 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         value,
         onSelected: onSelectChange,
       });
-      if (custom) return (
-        <div className={listClass} style={{ ...listStyle, height: listHeight }}>
-          {custom}
-        </div>
-      );
+      if (custom)
+        return (
+          <div className={listClass} style={{ ...listStyle, height: listHeight }}>
+            {custom}
+          </div>
+        );
     }
 
     if (data && data.length === 0) {

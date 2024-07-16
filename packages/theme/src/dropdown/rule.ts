@@ -17,7 +17,7 @@ const dropdownRules = {
   listSize: [
     ['list'],
     ['', 'small', 'large'],
-    ['border-radius', 'padding-x', 'padding-y', 'font-size'],
+    ['border-radius', 'padding-x', 'padding-y', 'font-size', 'font-weight'],
   ],
   listColor: [['list'], ['background-color', 'border-color', 'font-color', 'box-shadow']],
   listOption: [['list'], ['border-width']],
@@ -39,6 +39,7 @@ const dropdownRules = {
       'padding-bottom',
       'font-size',
       'font-color',
+      'font-weight',
       'small-x',
       'small-top',
       'small-bottom',

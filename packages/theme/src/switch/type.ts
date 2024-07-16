@@ -130,7 +130,7 @@ export interface SwitchTokens {
   switchDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
+   * @token Neutral-fill-1
    * @description 开关禁用时的圆形填充色
    */
   switchDisabledCircleFill: string;
@@ -166,6 +166,12 @@ export interface SwitchTokens {
   switchCheckedBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-1
+   * @description 开关打开状态下的圆形填充色
+   */
+  switchCheckedCircleFill: string;
+  /**
+   * @type {string}
    * @token Neutral-text-1
    * @description 开关打开状态下的字体颜色
    */
@@ -176,6 +182,12 @@ export interface SwitchTokens {
    * @description 开关打开状态下的禁用时的背景颜色
    */
   switchCheckedDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 开关打开状态下的禁用时的圆形填充色
+   */
+  switchCheckedDisabledCircleFill: string;
   /**
    * @type {string}
    * @token Neutral-text-1

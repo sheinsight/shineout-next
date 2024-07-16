@@ -11,6 +11,7 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     alignItems: 'center',
     fontSize: Token.paginationFontSize,
     color: Token.paginationFontColor,
+    fontWeight: Token.paginationFontWeight,
     height: 'fit-content',
   },
   left: {
@@ -37,7 +38,10 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     display: 'inline-block',
     width: Token.paginationFontSize,
   },
-  buttons: {},
+  buttons: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   jumper: {
     display: 'flex',
     alignItems: 'center',
@@ -47,14 +51,21 @@ const PaginationStyle: JsStyles<PaginationClass> = {
       textAlign: 'center',
     },
   },
-  sizeList: {},
+  sizeList: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   simple: {},
   small: {
+    fontSize: Token.paginationSmallFontSize,
+    fontWeight: Token.paginationSmallFontWeight,
     '& $icon': {
       width: Token.paginationSmallFontSize,
     },
   },
   large: {
+    fontSize: Token.paginationLargeFontSize,
+    fontWeight: Token.paginationLargeFontWeight,
     '& $icon': {
       width: Token.paginationLargeFontSize,
     },

@@ -50,7 +50,7 @@ const descriptionsTokenValue = {
     radius: 'Radius-lesser',
     right: { size: '1px', x: '', y: '' },
     bottom: { size: '1px', x: '', y: '' },
-    padding: { size: '', x: 'Spacing-8', y: 'Spacing-12' },
+    padding: { size: '', x: 'Spacing-12', y: 'Spacing-8' },
   },
   font: { small: { size: 'Font-12' }, default: { size: 'Font-14' }, large: { size: 'Font-16' } },
   extra: { color: '' },

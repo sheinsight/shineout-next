@@ -52,6 +52,12 @@ export interface MenuTokens {
   menuItemFontColor: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 菜单选项字体字重
+   */
+  menuItemFontWeight: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description 菜单选项鼠标移入时的背景颜色
    */

@@ -315,7 +315,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     flexDirection: 'column',
     textAlign: 'left',
     minWidth: 0,
-    background: '#fff',
+    background: token.modalPanelBackground,
     borderRadius: token.modalPanelRadius,
     padding: `${token.modalPanelPaddingY} ${token.modalPanelPaddingX}`,
     fontSize: token.modalPanelFontSize,
@@ -326,10 +326,6 @@ const modalStyle: JsStyles<ModalClassType> = {
   header: {
     display: 'flex',
     marginBottom: token.modalPanelGap,
-  },
-  headerEmptyTitle: {
-    marginBottom: 0,
-    height: 0,
   },
   headerIcon: {
     '$wrapper &': {
@@ -342,12 +338,17 @@ const modalStyle: JsStyles<ModalClassType> = {
       alignItems: 'center',
     },
   },
+  emptyIcon: {
+    position: 'absolute',
+  },
   headerTitle: {
     flex: '1',
     minWidth: 0,
     textAlign: 'left',
-    fontWeight: 'bold',
+    color: token.modalHeaderFontColor,
+    fontWeight: token.modalHeaderFontWeight,
     fontSize: token.modalHeaderFontSize,
+    lineHeight: token.lineHeightDynamic,
   },
   headerClose: {
     marginLeft: token.modalHeaderCloseMarginXStart,
@@ -376,10 +377,24 @@ const modalStyle: JsStyles<ModalClassType> = {
       },
     },
   },
+  emptyClose: {
+    position: 'absolute',
+    top: 12,
+    right: 12,
+    marginTop: 0,
+    '$wrapperDrawer &': {
+      top: 4,
+      right: 4,
+    }
+  },
   body: {
     flex: '1 1 auto',
     minHeight: '1px',
     // overflow: 'auto',
+    color: token.modalBodyFontColor,
+    fontSize: token.modalBodyFontSize,
+    fontWeight: token.modalBodyFontWeight,
+    lineHeight: token.lineHeightDynamic,
   },
   bodyWithIcon: {
     paddingLeft: `calc(${token.modalHeaderIconMarginEnd} + ${token.modalHeaderIconSize})`,

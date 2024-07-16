@@ -6,8 +6,10 @@ import { RateTokens } from './type';
 const rateTokens: RateTokens = {
   rateFontColor: 'Neutral-text-5',
   rateFontSize: 'Font-14',
-  rateGap: 'Size-3',
+  rateFontWeight: 'Weight-regular',
+  rateGap: 'Spacing-6',
   rateSize: 'Size-12',
+  rateTextGap: 'Spacing-10',
   rateBackgroundColor: 'Neutral-fill-3',
   rateFrontBackgroundColor: 'Warning-5',
 };

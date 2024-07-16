@@ -5,8 +5,18 @@ import Icons from '../icons';
 import { useConfig } from '../config';
 
 const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) => {
-  const { jssStyle, datum, index, data, multiple, isHover, renderItem, onHover, onOptionClick } =
-    props;
+  const {
+    jssStyle,
+    datum,
+    index,
+    data,
+    lineHeight,
+    multiple,
+    isHover,
+    renderItem,
+    onHover,
+    onOptionClick,
+  } = props;
   const config = useConfig();
   const styles = jssStyle?.select?.() as SelectClasses;
   const isChecked = datum.check(data);
@@ -50,6 +60,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
       tabIndex={-1}
       className={rootClass}
       title={title}
+      style={{ height: lineHeight }}
       onClick={handleClick}
       onMouseEnter={handleEnter}
     >

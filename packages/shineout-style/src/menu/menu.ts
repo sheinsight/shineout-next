@@ -425,6 +425,7 @@ const menuStyle: JsStyles<MenuClassType> = {
     display: 'flex',
     minWidth: 0,
     alignItems: 'center',
+    fontWeight: token.menuItemFontWeight,
     // '$wrapperCollpase &': {
     //   transition: `opacity ${animationDuration} ${transitionFunc}`,
     // },

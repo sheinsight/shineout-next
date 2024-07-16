@@ -288,6 +288,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       bodyScrollWidth: scrollWidth,
       resizeFlag: resizeFlag,
       treeCheckAll: props.treeCheckAll,
+      onCellClick: props.onCellClick,
     };
 
     const headCommonProps = {
@@ -318,15 +319,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       jssStyle: props.jssStyle,
       colgroup: colgroup,
     };
-    const headWrapperClass = classNames(
-      tableClasses?.headWrapper,
-      isScrollY && scrollBarWidth && tableClasses?.scrollY,
-    );
-
-    const footWrapperClass = classNames(
-      tableClasses?.footWrapper,
-      isScrollY && scrollBarWidth && tableClasses?.scrollY,
-    );
 
     const fixRightNum = (isRtl ? -1 * maxScrollLeft : maxScrollLeft) - virtualInfo.innerLeft;
     const Wrapper = props.sticky ? Sticky : React.Fragment;
@@ -338,7 +330,20 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       css: sticky?.css,
       parent: tableRef?.current,
     };
-    if (!virtual && !isScrollY && !props.sticky && props.data?.length) {
+
+    const isRenderBaseTable = !virtual && !isScrollY && !props.sticky && props.data?.length
+
+    const headWrapperClass = classNames(
+      tableClasses?.headWrapper,
+      ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
+    );
+
+    const footWrapperClass = classNames(
+      tableClasses?.footWrapper,
+      ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
+    );
+
+    if (isRenderBaseTable) {
       return (
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
           <table style={{ width }} ref={tbodyRef}>

@@ -5,7 +5,7 @@ import { TextareaTokens } from './type';
 
 const textareaTokens: TextareaTokens = {
   textareaFontSize: 'Font-14',
-  textareaBorderRadius: 'Radius-4',
+  textareaBorderRadius: 'Radius-default',
   textareaPaddingX: 'Spacing-8',
   textareaPaddingY: 'Spacing-4',
   textareaSmallFontSize: 'Font-12',
