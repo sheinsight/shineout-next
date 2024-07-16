@@ -94,6 +94,11 @@ export const isFirefox = (): boolean => {
 };
 
 export const isChromeLowerThan = (version:number):boolean => {
+  // 服务器端渲染时，不执行版本检查
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+    return false;
+  }
+
   const ua = navigator.userAgent;
   const chrome = ua.match(/chrome\/(\d+)/i);
   return Boolean(chrome && chrome[1] && parseInt(chrome[1], 10) < version);
