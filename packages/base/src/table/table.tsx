@@ -383,7 +383,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
           onScroll={handleVirtualScroll}
           defaultHeight={context.emptyHeight}
-          containerOverflow={isChromeLowerThan(99) ? 'visible' : 'hidden'}
+          isScrollY={isScrollY}
         >
           <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
             {Group}

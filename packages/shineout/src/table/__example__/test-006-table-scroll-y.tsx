@@ -23,7 +23,7 @@ interface TableRowData {
 }
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
 
-const data: TableRowData[] = user.fetchSync(20);
+const data: TableRowData[] = user.fetchSync(10);
 
 const columns: TableColumnItem[] = [
   { title: 'id', render: 'id', width: 50 },
@@ -54,7 +54,30 @@ const columns: TableColumnItem[] = [
 ];
 
 const App: React.FC = () => (
-  <Table bordered keygen='id' width={1500} style={{ height: '80vh' }} columns={columns} data={data} />
+  <>
+    <div style={{ height: 300, background: 'yellow', overflow: 'auto' }}>
+      <Table
+        bordered
+        keygen='id'
+        width={1500}
+        columns={columns}
+        data={data}
+        sticky={{ top: 0, css: true }}
+      />
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+      <p>占位内容……</p>
+    </div>
+  </>
 );
 
 export default App;

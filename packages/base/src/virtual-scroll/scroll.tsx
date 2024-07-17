@@ -22,7 +22,7 @@ interface scrollProps {
   scrollerStyle?: React.CSSProperties;
   onMouseMove?: () => void;
   defaultHeight?: number;
-  containerOverflow?: 'hidden' | 'visible';
+  isScrollY?: boolean;
 }
 
 const Scroll = (props: scrollProps) => {
@@ -47,7 +47,7 @@ const Scroll = (props: scrollProps) => {
     height: '100%',
     width: '100%',
     display: 'inline-flex',
-    overflow: props.containerOverflow || 'hidden',
+    overflow: 'hidden',
     position: 'sticky',
     [isRtl ? 'right' : 'left']: 0,
     top: 0,
@@ -61,7 +61,9 @@ const Scroll = (props: scrollProps) => {
   const placeStyle = {
     paddingTop: pd,
     width: scrollWidth,
-    overflow: 'hidden',
+    overflow: props.isScrollY ? 'hidden' :'auto hidden',
+    height: props.isScrollY ? 0 : 1,
+    marginTop: props.isScrollY ? 0 : -1,
     lineHeight: 0,
   };
 
