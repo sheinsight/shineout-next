@@ -55,12 +55,25 @@ const columns: TableColumnItem[] = [
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState<string | number>('tab1');
-  return <Tabs active={activeTab} onChange={setActiveTab}>
+  const [tableData, setTableData] = React.useState<any[]>([]);
+
+  React.useEffect(()=>{
+    if(activeTab === 'tab2') {
+        setTableData(data)
+    }else{
+      setTableData([])
+    }
+  }, [activeTab])
+
+  return <Tabs active={activeTab} onChange={v => {
+    setActiveTab(v)
+  }}>
     <Tabs.Panel id="tab1" tab="Tab1">
       <h1>Tab1</h1>
     </Tabs.Panel>
     <Tabs.Panel id="tab2" tab="Tab2">
-    <Table bordered keygen='id' width={1500} style={{ height: '80vh' }} columns={columns} data={data} />
+    <Table bordered loading={!tableData.length} keygen='id' width={1500} style={{ height: '80vh' }} columns={columns} data={tableData} />
+    {/* <Table bordered loading keygen='id' width={1500} style={{ height: '80vh' }} columns={columns} data={[]} /> */}
     </Tabs.Panel>
   </Tabs>
 }

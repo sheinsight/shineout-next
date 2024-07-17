@@ -335,12 +335,12 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
-      ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
+      isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
     const footWrapperClass = classNames(
       tableClasses?.footWrapper,
-      ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
+      isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
     if (isRenderBaseTable) {

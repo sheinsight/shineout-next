@@ -104,6 +104,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   };
 
   const changeColGroup = (cols: Array<number | undefined>, adjust: boolean | 'drag') => {
+    // 修改`Table`被display:none时，表格头样式错乱的问题
+    if(cols && cols.every((v) => v === 0)) return
+
     setColgroup(cols);
     setAdjust(adjust);
     if (!adjust) {
@@ -284,7 +287,6 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     }
     checkScroll();
   }, [colgroup]);
-
   return {
     isScrollX: !!isScrollX,
     isScrollY: !!isScrollY,
