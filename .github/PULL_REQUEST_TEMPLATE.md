@@ -1,17 +1,46 @@
-### 🤔 这个变动的性质是？
+<!-- Put an `x` in "[ ]" to check a box) -->
 
-- [ ] 新特性提交
-- [ ] 日常 bug 修复
-- [ ] 站点、文档改进
-- [ ] 演示代码改进
-- [ ] 组件样式/交互改进
-- [ ] TypeScript 定义更新
-- [ ] 包体积优化
-- [ ] 性能优化
-- [ ] 功能增强
-- [ ] 国际化改进
-- [ ] 重构
-- [ ] 代码风格优化
-- [ ] 测试用例
-- [ ] 分支合并
-- [ ] 其他改动（是关于什么的改动？）
+### Types of changes
+
+- [ ] New feature
+- [ ] Bug fix
+- [ ] Site / documentation update
+- [ ] Demo update
+- [ ] Component style update
+- [ ] TypeScript definition update
+- [ ] Bundle size optimization
+- [ ] Performance optimization
+- [ ] Enhancement feature
+- [ ] Internationalization
+- [ ] Refactoring
+- [ ] Code style optimization
+- [ ] Test Case
+- [ ] Branch merge
+- [ ] Workflow
+- [ ] Others
+
+### Background and solution
+
+| Information       | Descriptions|
+| -------------- | -------------------- |
+| Browser   | Chrome / Safari / |
+| Version   | Chrome 49 ... |
+| OS       | MacOS / Windows ... |
+
+<!--
+1. Describe the problem and the scenario.
+2. GIF or snapshot should be provided if includes UI/interactive modification.
+3. How to fix the problem, and list the final API implementation and usage sample if that is a new feature.
+-->
+
+### Changelog
+
+<!--
+Describe changes from the user side, and list all potential break changes or other risks.
+--->
+
+| Component | Changelog(CN) | Changelog(EN) | Related issues |
+| --------- | ------------- | ------------- | -------------- |
+|           |               |               |                |
+
+### Other information
