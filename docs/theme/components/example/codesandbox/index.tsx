@@ -45,7 +45,7 @@ const Codesandbox = (props: CodesandboxProps) => {
   const importMap = JSON.stringify(isMock ? {
     ...importMapOrigin,
     "dayjs": "laster"
-  } : importMapOrigin)
+  } : importMapOrigin, null, 2)
 
   const main = `import React from 'react'
 import ReactDOM from 'react-dom/client'

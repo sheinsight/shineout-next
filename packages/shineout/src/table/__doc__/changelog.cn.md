@@ -1,3 +1,11 @@
+## 3.3.0-beta.13
+2024-07-16
+
+### 🐞 BugFix
+- 修复`Table`在低于Chrome99版本下的横向滚动条不可见的问题 ([#580](https://github.com/sheinsight/shineout-next/pull/580))
+- 修复`Table`虚拟滚动在`Tabs`切换会导致滚动的问题 ([#580](https://github.com/sheinsight/shineout-next/pull/580))
+
+
 ## 3.3.0-beta.12
 2024-07-11
 
@@ -10,6 +18,7 @@
 
 ### 🆕 Feature
 - `Table` 新增属性 `onCellClick` 支持单元格点击后的回调 ([#550](https://github.com/sheinsight/shineout-next/pull/550))
+
 
 
 ## 3.2.6

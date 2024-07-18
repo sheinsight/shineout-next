@@ -332,12 +332,12 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
-      ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
+      isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
     const footWrapperClass = classNames(
       tableClasses?.footWrapper,
-      ((isScrollY && scrollBarWidth) || isRenderBaseTable) && tableClasses?.scrollY,
+      isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
     if (isRenderBaseTable) {
@@ -380,6 +380,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
           onScroll={handleVirtualScroll}
           defaultHeight={context.emptyHeight}
+          isScrollY={isScrollY}
         >
           <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
             {Group}
