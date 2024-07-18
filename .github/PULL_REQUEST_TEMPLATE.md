@@ -19,7 +19,7 @@
 - [ ] Workflow
 - [ ] Others
 
-### Background and solution
+### Background
 
 | Information       | Descriptions|
 | -------------- | -------------------- |
@@ -35,12 +35,6 @@
 
 ### Changelog
 
-<!--
-Describe changes from the user side, and list all potential break changes or other risks.
---->
-
-| Component | Changelog(CN) | Changelog(EN) | Related issues |
-| --------- | ------------- | ------------- | -------------- |
-|           |               |               |                |
+<!-- - Fix `Component` ... -->
 
 ### Other information
