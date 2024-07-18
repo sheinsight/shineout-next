@@ -80,7 +80,7 @@ const {
   cellIgnoreBorder,
   emptyWrapper,
   headWrapper,
-  footWrapper,
+  // footWrapper,
   bordered,
   rowStriped,
   small: tableSmall,
@@ -300,8 +300,9 @@ describe('Table[Base]', () => {
     render(<Table keygen={'id'}>{testTrContent}</Table>);
     expect(errorSpyTr).not.toHaveBeenCalledWith();
   });
-  test('should render default', () => {
+  test('should render default', async () => {
     const { container } = render(<Table keygen={'id'} columns={columns} data={renderData} />);
+
     const tableWrapper = container.querySelector(wrapper)!;
     classTest(tableWrapper, verticalAlignTop);
     classTest(tableWrapper, tableDefault);
@@ -309,8 +310,14 @@ describe('Table[Base]', () => {
     classLengthTest(tableBody, 'table', 1);
     const colGroup = tableBody.querySelector('colgroup')!;
     classLengthTest(colGroup, 'col', 2);
-    colGroup.querySelectorAll('col').forEach((item) => {
-      styleTest(item, 'width: 0px;');
+
+    await waitFor(async () => {
+      await delay(200)
+    })
+
+    colGroup.querySelectorAll('col').forEach((item, index) => {
+      styleTest(item, `width: ${columns[index].width}px;`);
+      // styleTest(item, 'width: 0px;');
     });
     const thead = tableBody.querySelector('thead')!;
     const theadTr = thead.querySelector('tr')!;
@@ -1246,12 +1253,12 @@ describe('Table[Virtual]', () => {
       <Table keygen={'id'} columns={columns} data={tempData} virtual onScroll={onScrollfn} />,
     );
     const tableHead = container.querySelector(headWrapper)!;
-    const tableFoot = container.querySelector(footWrapper)!;
+    // const tableFoot = container.querySelector(footWrapper)!;
     styleTest(tableHead.querySelector('table')!, 'transform: translate3d(0px, 0, 0);');
     const tableBody = tableHead.nextElementSibling;
     const tableSroll = tableBody?.firstElementChild as Element;
     // attributesTest(tableSroll, 'data-soui-type', 'scroll');
-    const tableBodyWrapper = tableBody?.querySelector('table') as Element;
+    // const tableBodyWrapper = tableBody?.querySelector('table') as Element;
     // styleTest(tableBodyWrapper, 'transform: translate3d(0px, 0px, 0);');
     fireEvent.mouseDown(tableSroll);
     fireEvent.scroll(tableSroll, { target: { scrollY: 100 } });
@@ -1439,7 +1446,7 @@ describe('Table[Fixed]', () => {
       const tableSroll = tableBody?.firstElementChild as Element;
       // attributesTest(tableSroll, 'data-soui-type', 'scroll');
       fireEvent.scroll(tableSroll, { target: { scrollTop: 50 } });
-      const tableBodyWrapper = tableBody?.querySelector('table') as Element;
+      // const tableBodyWrapper = tableBody?.querySelector('table') as Element;
       // styleTest(tableBodyWrapper, 'transform: translate3d(-0px, -10px, 0);');
     });
   });
@@ -1464,7 +1471,7 @@ describe('Table[Fixed]', () => {
       }
     });
     const trs = tbody.querySelectorAll('tr');
-    
+
     trs.forEach((item) => {
       const tds = item.querySelectorAll('td');
       tds.forEach((td, index) => {
@@ -1488,26 +1495,26 @@ describe('Table[Fixed]', () => {
     const { container, rerender } = render(
       <Table keygen={'id'} columns={fixedColumns} data={fixedData} />,
     );
-    
+
     const tableBodyWrapper = container.querySelector(bodyWrapper)!;
     const headerThs = tableBodyWrapper.querySelector('thead')?.querySelectorAll('th')!
-    
+
 
     styleContentTest(headerThs[0], trsDefaultStyleByLeft)
     styleContentTest(headerThs[1], trsDefaultStyleByLeft)
-    
+
     rerender(<Table keygen={'id'} columns={fixedColumnsByRight} data={fixedData} />);
     const headerThsRight = tableBodyWrapper.querySelector('thead')?.querySelectorAll('th')!
-    
+
     styleContentTest(headerThsRight[2], trsDefaultStyleByRight)
     rerender(
       <Table keygen={'id'} columns={fixedColumns} data={fixedData} virtual scrollLeft={20} />,
     );
-    
+
     const tableHead = container.querySelector(headWrapper)!;
     styleTest(tableHead.querySelector('table')!, trsVirtualStyleByLeft)
     const headerThsV = tableHead.querySelector('thead')?.querySelectorAll('th')!
-    
+
     styleContentTest(headerThsV[0], trsVirtualStyleByLeftHead)
     styleContentTest(headerThsV[1], trsVirtualStyleByLeftHead)
     rerender(
