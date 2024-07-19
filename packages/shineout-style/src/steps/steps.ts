@@ -14,12 +14,27 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
   },
   click: {
-    '& $icon': {
+    '& $icon:not($process)': {
       cursor: 'pointer',
     },
     '&$arrow': {
       '& $step': {
         cursor: 'pointer',
+      },
+    },
+    '&$default': {
+      '& $step:not($process)': {
+        cursor: 'pointer',
+      },
+      '& $step$wait:hover': {
+        '& $title,$description': {
+          color: Token.stepsWaitHoverFontColor,
+        },
+      },
+      '& $step$finish:hover': {
+        '& $title,$description': {
+          color: Token.stepsFinishHoverFontColor,
+        },
       },
     },
   },
