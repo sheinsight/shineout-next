@@ -1,3 +1,10 @@
+## 3.3.0-beta.14
+未发布
+2024-07-22
+
+### 🐞 BugFix
+- 修复 `Table` 组件 `height` 类型错误，支持 string 类型 ([#580](https://github.com/sheinsight/shineout-next/pull/580))
+
 ## 3.3.0-beta.13
 2024-07-16
 
