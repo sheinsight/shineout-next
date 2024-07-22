@@ -17,7 +17,7 @@ const Card = (props: CardProps) => {
     id: undefined as number | undefined,
   });
 
-  const [collpased, setCollpased] = useState(props.defaultCollapsed);
+  const [collapsed, setCollapsed] = useState(props.defaultCollapsed);
   const moveInfo = useDragMove();
   const resizeInfo = useDragResize({
     defaultWidth: style?.width,
@@ -38,32 +38,32 @@ const Card = (props: CardProps) => {
 
   const collapsible = props.collapsible || inAccordion;
 
-  const getCollpased = () => {
+  const getCollapsed = () => {
     if (inAccordion) return activeId !== id;
     if (!collapsible) return false;
     if (props.collapsed !== undefined) return !!props.collapsed;
-    return collpased;
+    return collapsed;
   };
 
-  const handleCollpased = usePersistFn(() => {
+  const handleCollapsed = usePersistFn(() => {
     if (inAccordion) {
       onActiveChange(id);
       return;
     }
     if (!collapsible) return;
     props.onCollapse?.(!props.collapsed);
-    setCollpased(!collpased);
+    setCollapsed(!collapsed);
   });
 
-  const realCollpased = getCollpased();
+  const realCollapsed = getCollapsed();
   const contextValue: CardContextValue = useMemo(() => {
     return {
-      collapsed: realCollpased,
+      collapsed: realCollapsed,
       collapsible: collapsible,
-      onCollapse: handleCollpased,
+      onCollapse: handleCollapsed,
       handleDragMouseDown: moveInfo.handleMouseDown,
     };
-  }, [realCollpased, collapsible]);
+  }, [realCollapsed, collapsible]);
 
   const alwaysShowShadow = props.shadow && props.shadow !== 'hover';
 
@@ -99,7 +99,7 @@ const Card = (props: CardProps) => {
         props.shadow === 'hover' && cardClasses?.wrapperHover,
         alwaysShowShadow && cardClasses?.wrapperShadow,
         collapsible && cardClasses?.wrapperCollapsible,
-        realCollpased && cardClasses?.wrapperCollapsed,
+        realCollapsed && cardClasses?.wrapperCollapsed,
         props.resizable && cardClasses?.wrapperResizable,
         props.moveable && cardClasses?.wrapperMoveable,
         props.split && cardClasses?.wrapperSplit,
