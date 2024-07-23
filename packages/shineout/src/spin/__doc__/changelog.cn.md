@@ -1,5 +1,5 @@
-## 3.3.0-beta.14
-2024-07-19
+## 3.3.0
+2024-07-23
 ### 🐞 BugFix
 
 - 修复 `Spin` 样式穿透生效的问题 ([#583](https://github.com/sheinsight/shineout-next/pull/583))
