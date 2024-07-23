@@ -159,11 +159,11 @@ const getLineStyle = () => {
       },
     },
     '&[data-soui-position^="top-"][data-soui-shape="line"]': {
-      '& $hr': { bottom: 0, height: 1, width: '100%' },
+      '& $hr': { bottom: 0, left: 0, height: 1, width: '100%' },
       ...active({ bottom: 0, left: 0, right: 0, height: 2 }),
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="line"]': {
-      '& $hr': { top: 0, height: 1, width: '100%' },
+      '& $hr': { top: 0, left: 0, height: 1, width: '100%' },
       ...active({ top: 0, left: 0, right: 0, height: 2 }),
       '& :not([data-soui-state="active"])$tab': {
         '&:after': {
