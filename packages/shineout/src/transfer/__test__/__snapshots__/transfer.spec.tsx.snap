@@ -5041,7 +5041,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin-ring soui-spin-spin"
+          class="soui-spin-ring soui-spin-spin"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
@@ -5349,7 +5349,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin-ring soui-spin-spin"
+          class="soui-spin-ring soui-spin-spin"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
@@ -5757,7 +5757,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin-ring soui-spin-spin"
+          class="soui-spin-ring soui-spin-spin"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
