@@ -15,7 +15,7 @@ const Search = (props: MenuSearchProps) => {
     // @ts-ignore
     placeTitle: _placeTitle,
     onSearchClick,
-    collpase,
+    collapse,
     theme = 'light',
     jssStyle,
     className,
@@ -32,7 +32,7 @@ const Search = (props: MenuSearchProps) => {
         theme === 'light' && classes?.wrapperLight,
         theme === 'dark' && classes?.wrapperDark,
         !!rest.disabled && classes?.wrapperDisabled,
-        collpase && classes?.wrapperCollapsed,
+        collapse && classes?.wrapperCollapsed,
         className,
       )}
       style={style}

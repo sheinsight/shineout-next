@@ -213,7 +213,7 @@ const IMenu = (props: { theme: MenuProps['theme'] }) => {
                     if (collapse) setCollapse(false);
                   }}
                   disabled={dis}
-                  collpase={collapse}
+                  collapse={collapse}
                   theme={theme}
                   placeholder='请输入关键字'
                   clearable

@@ -4,7 +4,7 @@ import { JsStyles } from '../jss-style';
 export type MenuClassType = keyof MenuClasses;
 
 const animationDuration = '.25s';
-const collpaseWidth = token.menuCollpaseWidth;
+const collapseWidth = token.menuCollapseWidth;
 const transitionFunc = 'ease-out';
 
 const menuStyle: JsStyles<MenuClassType> = {
@@ -21,8 +21,8 @@ const menuStyle: JsStyles<MenuClassType> = {
   wrapperDark: {
     backgroundColor: token.menuDarkItemBackgroundColor,
   },
-  wrapperCollpase: {
-    width: `${collpaseWidth}!important`,
+  wrapperCollapse: {
+    width: `${collapseWidth}!important`,
     '& $title': {
       paddingLeft: '0',
     },
@@ -30,7 +30,7 @@ const menuStyle: JsStyles<MenuClassType> = {
       opacity: 0,
     },
     '& $titleIcon': {
-      width: `${collpaseWidth}!important`,
+      width: `${collapseWidth}!important`,
       flexShrink: 0,
       justifyContent: 'center',
     },
@@ -233,25 +233,25 @@ const menuStyle: JsStyles<MenuClassType> = {
           backgroundColor: token.menuDarkItemActiveBackgroundColor,
         },
 
-      '$wrapperCollpase[data-soui-theme=light] $root > &': {
-        color: token.menuItemCollpaseActiveFontColor,
-        backgroundColor: token.menuItemCollpaseActiveBackgroundColor,
+      '$wrapperCollapse[data-soui-theme=light] $root > &': {
+        color: token.menuItemCollapseActiveFontColor,
+        backgroundColor: token.menuItemCollapseActiveBackgroundColor,
         '& $icon': {
-          color: token.menuItemCollpaseActiveFontColor,
+          color: token.menuItemCollapseActiveFontColor,
         },
       },
-      '$wrapperCollpase[data-soui-theme=dark] $root > &': {
-        color: token.menuDarkItemCollpaseActiveFontColor,
-        backgroundColor: token.menuDarkItemCollpaseActiveBackgroundColor,
+      '$wrapperCollapse[data-soui-theme=dark] $root > &': {
+        color: token.menuDarkItemCollapseActiveFontColor,
+        backgroundColor: token.menuDarkItemCollapseActiveBackgroundColor,
         '& $icon': {
-          color: token.menuDarkItemCollpaseActiveFontColor,
+          color: token.menuDarkItemCollapseActiveFontColor,
         },
       },
-      '$wrapperCollpase $root > &::before': {
+      '$wrapperCollapse $root > &::before': {
         display: 'none',
       },
 
-      // '[data-soui-theme=light][data-soui-mode=vertical]:not($wrapperCollpase) &': {
+      // '[data-soui-theme=light][data-soui-mode=vertical]:not($wrapperCollapse) &': {
       //   '&::before': {
       //     display: 'block',
       //     content: '""',
@@ -280,31 +280,31 @@ const menuStyle: JsStyles<MenuClassType> = {
           color: token.menuItemActiveDisabledFontColor,
         },
       },
-      '$wrapperCollpase[data-soui-theme=light] $root > &': {
-        color: token.menuItemCollpaseActiveFontColor,
-        backgroundColor: token.menuItemCollpaseActiveBackgroundColor,
+      '$wrapperCollapse[data-soui-theme=light] $root > &': {
+        color: token.menuItemCollapseActiveFontColor,
+        backgroundColor: token.menuItemCollapseActiveBackgroundColor,
         '& $icon': {
-          color: token.menuItemCollpaseActiveFontColor,
+          color: token.menuItemCollapseActiveFontColor,
         },
       },
-      '$wrapperCollpase[data-soui-theme=dark] $root > &': {
-        color: token.menuDarkItemCollpaseActiveFontColor,
-        backgroundColor: token.menuDarkItemCollpaseActiveBackgroundColor,
+      '$wrapperCollapse[data-soui-theme=dark] $root > &': {
+        color: token.menuDarkItemCollapseActiveFontColor,
+        backgroundColor: token.menuDarkItemCollapseActiveBackgroundColor,
         '& $icon': {
-          color: token.menuDarkItemCollpaseActiveFontColor,
+          color: token.menuDarkItemCollapseActiveFontColor,
         },
       },
-      '$wrapperCollpase $root > &::before': {
+      '$wrapperCollapse $root > &::before': {
         display: 'none',
       },
-      '[data-soui-theme=dark]:not($wrapperCollpase) &': {
+      '[data-soui-theme=dark]:not($wrapperCollapse) &': {
         color: token.menuDarkItemActiveFontColor,
         backgroundColor: token.menuDarkItemActiveBackgroundColor,
         '& $icon': {
           color: token.menuDarkItemActiveFontColor,
         },
       },
-      '[data-soui-theme=dark]$wrapperCollpase &': {
+      '[data-soui-theme=dark]$wrapperCollapse &': {
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -369,7 +369,7 @@ const menuStyle: JsStyles<MenuClassType> = {
     '$wrapperDark &': {
       color: token.menuDarkFontColor,
     },
-    '$wrapperCollpase &': {
+    '$wrapperCollapse &': {
       paddingLeft: '0',
       paddingRight: '0',
       display: 'flex',
@@ -426,7 +426,7 @@ const menuStyle: JsStyles<MenuClassType> = {
     minWidth: 0,
     alignItems: 'center',
     fontWeight: token.menuItemFontWeight,
-    // '$wrapperCollpase &': {
+    // '$wrapperCollapse &': {
     //   transition: `opacity ${animationDuration} ${transitionFunc}`,
     // },
     // opacity: 1,
