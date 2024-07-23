@@ -12,6 +12,7 @@ const Spin = (props: SpinProps = {}) => {
     loading,
     name: nameProps,
     tip,
+    tipClassName,
     color,
     mode = 'vertical',
   } = props;
@@ -28,7 +29,7 @@ const Spin = (props: SpinProps = {}) => {
   });
 
   const renderSpin = () => {
-    const n = name as keyof typeof Spins
+    const n = name as keyof typeof Spins;
     if (Spins[n]) {
       const Comp = Spins[n];
       return <Comp {...props} style={style} />;
@@ -39,7 +40,7 @@ const Spin = (props: SpinProps = {}) => {
 
   const renderTip = () => {
     return (
-      <div className={classNames(className, spinStyle.tip)} style={{ color }}>
+      <div className={classNames(tipClassName, spinStyle.tip)} style={{ color }}>
         {typeof tip === 'string' ? <span>{tip}</span> : tip}
       </div>
     );
