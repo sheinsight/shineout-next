@@ -7,7 +7,7 @@ export type CollapseItemClassType = keyof CollapseItemClasses;
 const collapseItemStyle: JsStyles<CollapseItemClassType> = {
   wrapper: {
     boxSizing: 'border-box',
-    borderBottom: `${Token.collapseWrapperBorderSize} solid ${Token.collapseWrapperBorderColor}`,
+    borderBottom: `${Token.collapseWrapperBorderSize} solid ${Token.collapseHeaderBorderColor}`,
     '&:last-child': {
       borderBottom: 0,
     },
@@ -29,7 +29,7 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
     overflow: 'hidden',
     gap: Token.collapseHeaderGap,
     fontSize: Token.collapseHeaderFontSize,
-    fontWeight: Token.collapseHeaderWeight,
+    fontWeight: Token.collapseHeaderFontWeight,
     color: Token.collapseHeaderColor,
     padding: `${Token.collapseWrapperPaddingY} ${Token.collapseWrapperPaddingX}`,
   },
@@ -106,7 +106,7 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
   },
   contentMain: {
     color: Token.collapseContentColor,
-    fontWeight: Token.collapseContentWeight,
+    fontWeight: Token.collapseContentFontWeight,
     lineHeight: Token.lineHeightDynamic,
     padding: `${Token.collapseContentPaddingY} ${Token.collapseContentPaddingRight} ${Token.collapseContentPaddingY} ${Token.collapseContentPaddingLeft}`,
     backgroundColor: Token.collapseContentBackgroundColor,

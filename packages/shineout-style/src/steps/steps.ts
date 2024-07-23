@@ -14,12 +14,30 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
   },
   click: {
-    '& $icon': {
+    '& $icon:not($process)': {
       cursor: 'pointer',
+    },
+    '& $title': {
+      transition: 'color ease 0.3s',
     },
     '&$arrow': {
       '& $step': {
         cursor: 'pointer',
+      },
+    },
+    '&$default': {
+      '& $step:not($process)': {
+        cursor: 'pointer',
+      },
+      '& $step$wait:hover': {
+        '& $title,$description': {
+          color: Token.stepsWaitHoverFontColor,
+        },
+      },
+      '& $step$finish:hover': {
+        '& $title,$description': {
+          color: Token.stepsFinishHoverFontColor,
+        },
       },
     },
   },
@@ -354,6 +372,20 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&$vertical': {
       '& $step': {
         overflow: 'visible',
+        '& $dot': {
+          display: 'flex',
+          '& $content': {
+            flex: 1,
+            lineHeight: 1,
+            overflow: 'hidden',
+            '& $title': {
+              width: '100%',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            },
+          },
+        },
       },
 
       '& $title': {

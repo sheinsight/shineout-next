@@ -10,10 +10,28 @@ export interface TransferTokens {
   transferFontSize: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 穿梭框字体颜色
+   */
+  transferFontColor: string;
+  /**
+   * @type {string}
    * @token Size-23
    * @description 穿梭框头部区域的高度
    */
   transferHeaderHeight: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 穿梭框头部区域的背景颜色
+   */
+  transferHeaderBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Transparent
+   * @description 穿梭框头部区域的边框颜色
+   */
+  transferHeaderBorderColor: string;
   /**
    * @type {string}
    * @token Font-12
@@ -46,40 +64,16 @@ export interface TransferTokens {
   transferBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-5
-   * @description 穿梭框字体颜色
+   * @token Radius-default
+   * @description 穿梭框边框圆角
    */
-  transferFontColor: string;
+  transferBorderRadius: string;
   /**
    * @type {string}
    * @token Neutral-text-4
    * @description 穿梭框图标颜色
    */
   transferIconColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-2
-   * @description 穿梭框禁用时的字体颜色
-   */
-  transferDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-3
-   * @description 穿梭框空状态的字体颜色
-   */
-  transferEmptyFontColor: string;
-  /**
-   * @type {string}
-   * @token Radius-4
-   * @description 穿梭框边框圆角
-   */
-  transferBorderRadius: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-2
-   * @description 穿梭框头部区域的背景颜色
-   */
-  transferHeaderBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-3
@@ -94,10 +88,52 @@ export interface TransferTokens {
   transferIconNearlyMargin: string;
   /**
    * @type {string}
+   * @token Neutral-text-2
+   * @description 穿梭框禁用时的字体颜色
+   */
+  transferDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 穿梭框空状态的字体颜色
+   */
+  transferEmptyFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 穿梭框背景颜色
+   */
+  transferBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 穿梭框undefined背景颜色
+   */
+  transferFooterBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 穿梭框undefined边框颜色
+   */
+  transferFooterBorderColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description 穿梭框选项鼠标移入时的背景颜色
    */
   transferItemHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Radius-default
+   * @description 穿梭框选项边框圆角
+   */
+  transferItemBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 穿梭框undefined图标颜色
+   */
+  transferRemoveIconColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-3

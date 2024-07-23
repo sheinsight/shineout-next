@@ -76,7 +76,7 @@ const tag = (type: TagType) => ({
       border: `1px solid ${Token[`tag${type}FillDisabledBorderColor`]}`,
 
       '& $closeIconWrapper': {
-        fill: Token[`tag${type}FillFontColor`],
+        fill: Token[`tag${type}FillDisabledFontColor`],
         '&:hover': {
           fill: Token[`tag${type}FillFontColor`],
           backgroundColor: 'transparent',
@@ -87,8 +87,8 @@ const tag = (type: TagType) => ({
 
   // outline 边框风格
   '&$outline': {
-    background: '#fff',
-    color: Token[`tag${type}FontColor`],
+    background: Token[`tag${type}OutlineBackgroundColor`],
+    color: Token[`tag${type}OutlineFontColor`],
     border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
 
     '& $closeIconWrapper': {
@@ -146,8 +146,9 @@ const tag = (type: TagType) => ({
 const TagStyle: JsStyles<keyof TagClasses> = {
   tag: {
     display: 'inline-flex',
-    padding: `0 ${Token.tagPaddingX}`,
+    padding: `${Token.tagPaddingY} ${Token.tagPaddingX}`,
     fontSize: Token.tagFontSize,
+    fontWeight: Token.tagFontWeight,
     borderRadius: Token.tagBorderRadius,
     boxSizing: 'border-box',
     lineHeight: `calc(${Token.tagFontSize} + 4px)`,
@@ -176,6 +177,8 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   large: {
     fontSize: Token.tagLargeFontSize,
     lineHeight: `calc(${Token.tagLargeFontSize} + 8px)`,
+    fontWeight: Token.tagLargeFontWeight,
+    borderRadius: Token.tagLargeBorderRadius,
     padding: `${Token.tagLargePaddingY} ${Token.tagLargePaddingX}`,
     '& $closeIconWrapper': {
       '& svg': {
@@ -185,8 +188,14 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     },
   },
   small: {
+    fontSize: Token.tagSmallFontSize,
     lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
     padding: `0 ${Token.tagSmallPaddingX}`,
+    fontWeight: Token.tagSmallFontWeight,
+    borderRadius: Token.tagSmallBorderRadius,
+    '& $container': {
+      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
+    },
     '& $wrapper': {
       lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
     },

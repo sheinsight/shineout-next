@@ -64,7 +64,7 @@ export interface UploadTokens {
   uploadResultFontColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 上传结果边框圆角
    */
   uploadResultBorderRadius: string;
@@ -100,7 +100,7 @@ export interface UploadTokens {
   uploadResultUploadingIconColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 上传图片边框圆角
    */
   uploadImageBorderRadius: string;

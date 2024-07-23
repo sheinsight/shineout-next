@@ -1167,6 +1167,55 @@ exports[`Menu[Base] should render correctly about control 1`] = `
 exports[`Menu[Base] should render correctly about dark 1`] = `
 <div>
   <div
+    class="soui-radio-group soui-radio-group-button soui-button-group"
+    dir="ltr"
+    style="margin-block: 12px;"
+  >
+    <button
+      class="soui-radio-wrapper soui-radio-wrapper-checked soui-button-primary soui-button-button soui-button-outline soui-button-small"
+      dir="ltr"
+      type="button"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        inline
+      </span>
+    </button>
+    <button
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline soui-button-small"
+      dir="ltr"
+      type="button"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        vertical
+      </span>
+    </button>
+    <button
+      class="soui-radio-wrapper soui-button-secondary soui-button-button soui-button-outline soui-button-small"
+      dir="ltr"
+      type="button"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        horizontal
+      </span>
+    </button>
+  </div>
+  <div
     class="soui-menu-wrapper soui-menu-wrapper-inline soui-menu-wrapper-dark"
     data-soui-mode="inline"
     data-soui-theme="dark"
@@ -1449,7 +1498,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
           </ul>
         </li>
         <li
-          class="soui-menu-item"
+          class="soui-menu-item soui-menu-item-disabled"
           dir="ltr"
         >
           <div

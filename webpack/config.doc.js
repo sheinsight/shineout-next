@@ -1,5 +1,6 @@
 const path = require('path');
 const Webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { docBuild } = require('../scripts/doc-build');
 
@@ -67,6 +68,14 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../public/static'),
+          to: path.resolve(__dirname, '../dist/static')
+        },
+      ],
     }),
   ],
 };

@@ -64,6 +64,18 @@ export interface SelectTokens {
   selectIconColor: string;
   /**
    * @type {string}
+   * @token Spacing-2
+   * @description 选择器标签的外边距（垂直方向）
+   */
+  selectTagMarginY: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 选择器标签的外边距(右侧)
+   */
+  selectTagMarginRight: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 选择器小尺寸字体字号
    */

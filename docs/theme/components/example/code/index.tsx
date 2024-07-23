@@ -14,7 +14,7 @@ const Code = (props) => {
 
   return (
     <div className={classes.code}>
-      <div className={classes.codeFile}></div>
+      {/* <div className={classes.codeFile}></div> */}
       <pre className={classes.codeWrapper}>
         <code ref={target} className={classNames('language-jsx')}>
           {props.children}

@@ -1,6 +1,6 @@
 /**
  * cn - 附带图标
- *    -- 使用 type 属性来指定标题附带的图标
+ *    -- 使用 type 属性来指定标题附带的图标，需配合title使用
  * en - Icon
  *    -- use type display type icon
  */

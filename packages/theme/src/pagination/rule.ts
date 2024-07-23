@@ -1,5 +1,8 @@
 const paginationRules = {
-  size: [['', 'small', 'large'], ['font-size']],
+  size: [
+    ['', 'small', 'large'],
+    ['font-size', 'font-weight'],
+  ],
   color: [['font-color']],
   extra: [['nearly'], ['margin']],
 };

@@ -11,6 +11,7 @@ const stepsRules = {
   size: [['', 'small', 'large'], ['title', 'description'], ['font-size']],
   status: [
     ['wait', 'process', 'finish', 'error'],
+    ['', 'hover'],
     ['font-color', 'background-color'],
   ],
   arrow: [['', 'small', 'large'], ['arrow'], ['padding-x', 'padding-y', 'height']],

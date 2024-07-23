@@ -10,7 +10,19 @@ export interface ImageTokens {
   imageSpinColor: string;
   /**
    * @type {string}
-   * @token Radius-50%
+   * @token Radius-default
+   * @description 图片边框圆角
+   */
+  imageBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 图片边框颜色
+   */
+  imageBorderColor: string;
+  /**
+   * @type {string}
+   * @token Radius-circle
    * @description 图片圆形边框圆角
    */
   imageCircleBorderRadius: string;
@@ -22,7 +34,7 @@ export interface ImageTokens {
   imageCircleBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 图片圆角模式边框圆角
    */
   imageRoundedBorderRadius: string;
@@ -34,7 +46,7 @@ export interface ImageTokens {
   imageRoundedBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 图片图框模式边框圆角
    */
   imageThumbnailBorderRadius: string;

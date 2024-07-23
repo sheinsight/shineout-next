@@ -10,7 +10,7 @@ export interface TextareaTokens {
   textareaFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 多行文本框边框圆角
    */
   textareaBorderRadius: string;

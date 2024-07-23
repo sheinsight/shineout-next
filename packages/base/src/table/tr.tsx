@@ -29,6 +29,7 @@ interface TrProps
     | 'bodyScrollWidth'
     | 'resizeFlag'
     | 'treeCheckAll'
+    | 'onCellClick'
   > {
   row: {
     data: any[];
@@ -99,10 +100,22 @@ const Tr = (props: TrProps) => {
     } as React.CSSProperties;
   };
 
+  const handleCellClick = usePersistFn((data: any, colIndex: number) => {
+    if (!props.onCellClick) return;
+    props.onCellClick(data, {
+      rowIndex: props.rowIndex,
+      columnIndex: colIndex,
+      columnKey: props.columns[colIndex].key,
+    });
+  });
+
   useEffect(() => {
     if (props.setRowHeight && trRef.current) {
       const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
-      props.setRowHeight(props.rowIndex, trRef.current.getBoundingClientRect().height + expandHeight);
+      props.setRowHeight(
+        props.rowIndex,
+        trRef.current.getBoundingClientRect().height + expandHeight,
+      );
     }
   }, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
 
@@ -256,6 +269,7 @@ const Tr = (props: TrProps) => {
             )}
             style={getTdStyle(col, data[i].colSpan)}
             dir={config.direction}
+            onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
           >
             {renderContent(col, data[i].data)}
           </td>

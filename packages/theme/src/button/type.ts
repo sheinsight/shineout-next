@@ -1474,7 +1474,7 @@ export interface ButtonTokens {
   buttonPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-5
+   * @token Spacing-4
    * @description 按钮内边距（垂直方向）
    */
   buttonPaddingY: string;
@@ -1510,7 +1510,7 @@ export interface ButtonTokens {
   buttonSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-2
+   * @token Spacing-1
    * @description 按钮小尺寸内边距（垂直方向）
    */
   buttonSmallPaddingY: string;
@@ -1546,7 +1546,7 @@ export interface ButtonTokens {
   buttonLargePaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-8
+   * @token Spacing-7
    * @description 按钮大尺寸内边距（垂直方向）
    */
   buttonLargePaddingY: string;
@@ -2026,6 +2026,12 @@ export interface ButtonTokens {
   buttonCircleBorderRadius: string;
   /**
    * @type {string}
+   * @token Size-16
+   * @description 按钮圆形字号
+   */
+  buttonCircleSize: string;
+  /**
+   * @type {string}
    * @token Radius-default
    * @description 按钮方形边框圆角
    */
@@ -2044,6 +2050,12 @@ export interface ButtonTokens {
   buttonSmallCircleBorderRadius: string;
   /**
    * @type {string}
+   * @token Size-12
+   * @description 按钮小尺寸圆形字号
+   */
+  buttonSmallCircleSize: string;
+  /**
+   * @type {string}
    * @token Radius-default
    * @description 按钮小尺寸方形边框圆角
    */
@@ -2060,6 +2072,12 @@ export interface ButtonTokens {
    * @description 按钮大尺寸圆形边框圆角
    */
   buttonLargeCircleBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Size-20
+   * @description 按钮大尺寸圆形字号
+   */
+  buttonLargeCircleSize: string;
   /**
    * @type {string}
    * @token Radius-default

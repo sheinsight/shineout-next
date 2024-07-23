@@ -16,7 +16,13 @@ export interface RateTokens {
   rateFontSize: string;
   /**
    * @type {string}
-   * @token Size-3
+   * @token Weight-regular
+   * @description 评分字体字重
+   */
+  rateFontWeight: string;
+  /**
+   * @type {string}
+   * @token Spacing-6
    * @description 评分间距
    */
   rateGap: string;
@@ -26,6 +32,12 @@ export interface RateTokens {
    * @description 评分字号
    */
   rateSize: string;
+  /**
+   * @type {string}
+   * @token Spacing-10
+   * @description 评分undefined间距
+   */
+  rateTextGap: string;
   /**
    * @type {string}
    * @token Neutral-fill-3

@@ -42,15 +42,24 @@ const formTokenExtraValue = {
       top: {
         padding: { y: 'Spacing-4' },
       },
+      font: { weight: 'Weight-regular', color: 'Neutral-text-5' },
     },
     danger: {
-      color: 'Danger-6',
+      font: {
+        size: 'Font-12',
+        color: 'Danger-6',
+        weight: 'Weight-regular',
+      },
     },
     tip: {
       min: { height: 'Size-10' },
       font: {
         size: 'Font-12',
         color: 'Neutral-text-3',
+        weight: 'Weight-regular',
+      },
+      margin: {
+        top: 'Spacing-0',
       },
     },
   },

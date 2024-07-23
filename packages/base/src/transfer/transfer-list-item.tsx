@@ -13,7 +13,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     data,
     datum,
     listDatum,
-    // lineHeight,
+    lineHeight,
     renderItem: renderItemProp,
     simple,
     itemClass,
@@ -91,7 +91,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
   // }, []);
 
   return (
-    <div ref={listItem} className={rootClass}>
+    <div ref={listItem} className={rootClass} style={{ height: lineHeight }}>
       <div className={styles.itemWrapper}>{renderCheckbox()}</div>
     </div>
   );

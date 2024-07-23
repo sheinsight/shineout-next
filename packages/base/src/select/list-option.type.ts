@@ -7,6 +7,7 @@ export interface ListOptionProps<DataItem, Value>
   data: DataItem;
   datum: DatumType<DataItem, Value>;
   isHover: boolean;
+  lineHeight: number;
   closePop: () => void;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   onHover: (index: number, force?: boolean) => void;

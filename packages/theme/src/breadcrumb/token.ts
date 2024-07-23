@@ -13,6 +13,7 @@ const breadcrumbTokenDescription = {
   item: '选项',
   wrapper: '外部容器',
   separator: '分隔符',
+  prev: '上级',
 };
 
 /**
@@ -25,18 +26,26 @@ const breadcrumbTokenDescription = {
 const breadcrumbTokenValue = {};
 
 const breadcrumbTokenExtraValue = {
-  font: { size: 'Font-14', color: 'Neutral-text-5', wieght: 'Weight-regular' },
+  font: { size: 'Font-14', color: 'Neutral-text-5', weight: 'Weight-regular' },
   link: {
     color: 'Neutral-text-3',
     hover: {
       color: 'Brand-5',
     },
   },
+  default: {
+    link: {
+      color: 'Brand-6',
+      hover: {
+        color: 'Brand-5',
+      },
+    },
+  },
   list: {
     padding: { y: 'Spacing-4' },
     item: {
       border: {
-        radius: 'Radius-4',
+        radius: 'Radius-default',
       },
       wrapper: {
         padding: { x: 'Spacing-4' },
@@ -46,6 +55,11 @@ const breadcrumbTokenExtraValue = {
         background: { color: 'Neutral-fill-2' },
         font: { color: 'Neutral-text-3' },
       },
+    },
+  },
+  prev: {
+    font: {
+      weight: 'Weight-regular',
     },
   },
   separator: {

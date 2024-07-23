@@ -78,6 +78,11 @@ export interface BaseSpinProps {
 export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: SpinStyle;
   /**
+   * @en Tip className
+   * @cn tip 文案上的 className
+   */
+  tipClassName?: string;
+  /**
    * @en Spin has children
    * @cn 作为包裹元素使用
    */

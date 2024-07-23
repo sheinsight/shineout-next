@@ -22,7 +22,7 @@ const textareaTokenDescription = {
  */
 const textareaTokenValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
-  border: { radius: 'Radius-4', color: 'Neutral-border-2' },
+  border: { radius: 'Radius-default', color: 'Neutral-border-2' },
   padding: { x: 'Spacing-8', y: 'Spacing-4' },
   small: {
     font: { size: 'Font-12' },

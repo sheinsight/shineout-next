@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useLayoutEffect } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
 import usePrevious from '../../common/use-previous';
@@ -104,6 +104,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   };
 
   const changeColGroup = (cols: Array<number | undefined>, adjust: boolean | 'drag') => {
+    // 修改`Table`被display:none时，表格头样式错乱的问题
+    if(cols && cols.every((v) => v === 0)) return
+
     setColgroup(cols);
     setAdjust(adjust);
     if (!adjust) {
@@ -272,18 +275,18 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     };
   }, [scrollRef.current]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (adjust) {
       getColgroup(adjust === 'drag');
       setAdjust(false);
     } else {
       checkFloat();
-      checkScroll();
+      // checkScroll();
       // 拖拽列会导致 scrollWidth 变化
       syncScrollWidth();
     }
+    checkScroll();
   }, [colgroup]);
-
   return {
     isScrollX: !!isScrollX,
     isScrollY: !!isScrollY,

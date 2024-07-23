@@ -1,3 +1,10 @@
+## 3.3.0
+2024-07-23
+
+### 🐞 BugFix
+
+- 修复 `DatePicker` 在range为number的情况下，开始时间可以大于结束时间的问题 ([#579](https://github.com/sheinsight/shineout-next/pull/579))
+
 ## 3.2.3
 2024-06-25
 

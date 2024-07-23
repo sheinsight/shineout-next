@@ -139,10 +139,10 @@ const IMenu = (props: { theme: MenuProps['theme'] }) => {
 
   return (
     <div>
-      <div>
+      <div style={{ marginBottom: 12 }}>
         <Button
           type='primary'
-          style={{ marginBottom: 12, marginInlineEnd: 12 }}
+          style={{ marginInlineEnd: 12, height: 32 }}
           onClick={() => setCollapse(!collapse)}
         >
           {collapse ? (
@@ -207,13 +207,13 @@ const IMenu = (props: { theme: MenuProps['theme'] }) => {
                   </div>
                 )}
               </div>
-              <div style={{marginTop: 12}}>
+              <div style={{ marginTop: 12 }}>
                 <Menu.Search
                   onSearchClick={() => {
                     if (collapse) setCollapse(false);
                   }}
                   disabled={dis}
-                  collpase={collapse}
+                  collapse={collapse}
                   theme={theme}
                   placeholder='请输入关键字'
                   clearable

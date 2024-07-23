@@ -22,6 +22,8 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
     },
     wordWrap: 'break-word',
     width: token.formItemLabelWidth,
+    fontWeight: token.formItemLabelFontWeight,
+    color: token.formItemLabelFontColor,
     padding: `${token.formItemLabelPaddingY} 0`,
     lineHeight: token.lineHeightDynamic,
     marginRight: token.formItemLabelMarginXEnd,
@@ -67,7 +69,7 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
   wrapperRequired: {
     '& $label::before': {
       marginRight: '4px',
-      color: token.formItemDangerColor,
+      color: token.formItemDangerFontColor,
       content: '"*"',
       fontFamily: 'SimSun',
       position: 'relative',
@@ -90,18 +92,21 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
     },
   },
   error: {
-    color: token.formItemDangerColor,
+    color: token.formItemDangerFontColor,
     lineHeight: token.lineHeightDynamic,
     minHeight: token.formItemTipMinHeight,
-    fontSize: token.formItemTipFontSize,
+    fontSize: token.formItemDangerFontSize,
+    fontWeight: token.formItemDangerFontWeight,
     // flexBasis: '100%',
     // width: 0,
   },
   tip: {
     color: token.formItemTipFontColor,
     fontSize: token.formItemTipFontSize,
+    fontWeight: token.formItemTipFontWeight,
     lineHeight: token.lineHeightDynamic,
     minHeight: token.formItemTipMinHeight,
+    marginTop: token.formItemTipMarginTop,
     width: '100%',
   },
 };

@@ -1,11 +1,11 @@
 /**
- * cn - scroll-y-debug
- *    -- 设置 column 的 fixed 属性，可以固定列。只在设置了表格的 width 属性，并且 width 大于外部容器情况下才会生效
+ * cn - table-tabs
+ *    -- table-tabs debug
  * en - scroll-y-debug
- *    -- Set the fixed property of the column can fix the column; Only take effect if the table's width property is set and width is greater than the external container
+ *    -- table-tabs debug
  */
 import React from 'react';
-import { Table, TYPE } from 'shineout';
+import { Table, TYPE, Tabs } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface TableRowData {
@@ -53,8 +53,29 @@ const columns: TableColumnItem[] = [
   },
 ];
 
-const App: React.FC = () => (
-  <Table bordered keygen='id' width={1500} style={{ height: '80vh' }} columns={columns} data={data} />
-);
+const App: React.FC = () => {
+  const [activeTab, setActiveTab] = React.useState<string | number>('tab1');
+  const [tableData, setTableData] = React.useState<any[]>([]);
+
+  React.useEffect(()=>{
+    if(activeTab === 'tab2') {
+        setTableData(data)
+    }else{
+      setTableData([])
+    }
+  }, [activeTab])
+
+  return <Tabs active={activeTab} onChange={v => {
+    setActiveTab(v)
+  }}>
+    <Tabs.Panel id="tab1" tab="Tab1">
+      <h1>Tab1</h1>
+    </Tabs.Panel>
+    <Tabs.Panel id="tab2" tab="Tab2">
+    <Table bordered loading={!tableData.length} keygen='id' width={1500} style={{ height: '80vh' }} columns={columns} data={tableData} />
+    {/* <Table bordered loading keygen='id' width={1500} style={{ height: '80vh' }} columns={columns} data={[]} /> */}
+    </Tabs.Panel>
+  </Tabs>
+}
 
 export default App;

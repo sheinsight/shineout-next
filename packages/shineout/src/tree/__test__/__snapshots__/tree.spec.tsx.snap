@@ -141,7 +141,7 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
             dir="ltr"
           >
             <div
-              class="soui-tree-content-wrapper soui-tree-childnode"
+              class="soui-tree-content-wrapper soui-tree-childnode soui-tree-content-disabled"
               dir="ltr"
             >
               <span

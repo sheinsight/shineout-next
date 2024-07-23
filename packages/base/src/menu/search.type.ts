@@ -20,7 +20,7 @@ export interface MenuSearchProps
    * @cn 是否折叠
    * @en Whether to collapse
    */
-  collpase?: boolean;
+  collapse?: boolean;
   /**
    * @cn 主题
    * @en Theme

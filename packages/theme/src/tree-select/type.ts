@@ -16,7 +16,7 @@ export interface TreeSelectTokens {
   treeSelectFontColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 树选择器边框圆角
    */
   treeSelectBorderRadius: string;
@@ -208,7 +208,7 @@ export interface TreeSelectTokens {
   treeSelectDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 树选择器选中结果框文本区域的边框圆角
    */
   treeSelectResultTextBorderRadius: string;
@@ -268,7 +268,7 @@ export interface TreeSelectTokens {
   treeSelectPanelShadow: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 树选择器下拉面板的圆角
    */
   treeSelectPanelRadius: string;
@@ -278,6 +278,42 @@ export interface TreeSelectTokens {
    * @description 树选择器下拉面板的边框
    */
   treeSelectPanelBorder: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 树选择器undefined鼠标移入时的字体颜色
+   */
+  treeSelectContentHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 树选择器undefined鼠标移入时的背景颜色
+   */
+  treeSelectContentHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 树选择器undefined鼠标点击时的字体颜色
+   */
+  treeSelectContentActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description 树选择器undefined鼠标点击时的背景颜色
+   */
+  treeSelectContentActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 树选择器undefined禁用时的字体颜色
+   */
+  treeSelectContentDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Transprent
+   * @description 树选择器undefined禁用时的背景颜色
+   */
+  treeSelectContentDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Size-16
@@ -310,6 +346,12 @@ export interface TreeSelectTokens {
   treeSelectOptionActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 树选择器选项字体颜色
+   */
+  treeSelectOptionFontColor: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 树选择器选项容器的内边距（水平方向）
    */
@@ -328,7 +370,7 @@ export interface TreeSelectTokens {
   treeSelectOptionInnerPaddingRight: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 树选择器选项容器的边框圆角
    */
   treeSelectOptionInnerBorderRadius: string;

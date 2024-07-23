@@ -290,7 +290,7 @@ exports[`Card[Base] should render correctly about border 1`] = `
 </div>
 `;
 
-exports[`Card[Base] should render correctly about collpase 1`] = `
+exports[`Card[Base] should render correctly about collapse 1`] = `
 <div
   class="soui-card-wrapper soui-card-wrapper-collapsible"
 >

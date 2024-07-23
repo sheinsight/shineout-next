@@ -21,7 +21,7 @@ const tooltipTokenValue = {};
 const tooltipTokenExtraValue = {
   font: { size: 'Font-12' },
   padding: { x: 'Spacing-8', y: 'Spacing-5' },
-  border: { radius: 'Radius-2' },
+  border: { radius: 'Radius-lesser' },
   color: 'Neutral-text-1',
   shadow: 'Shadow-2',
   background: { color: 'Neutral-fill-9' },

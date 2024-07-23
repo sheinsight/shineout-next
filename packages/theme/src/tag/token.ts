@@ -89,7 +89,7 @@ const tagTokenValue = {
       border: { color: 'Neutral-fill-2' },
     },
     outline: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-1' },
       border: { color: 'Neutral-border-2' },
       disabled: {
@@ -137,9 +137,9 @@ const tagTokenValue = {
       border: { color: 'Success-1' },
     },
     outline: {
-      font: { color: 'Success-5' },
+      font: { color: 'Success-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Success-5' },
+      border: { color: 'Success-6' },
       disabled: {
         font: { color: 'Success-3' },
         background: { color: 'Neutral-fill-1' },
@@ -185,9 +185,9 @@ const tagTokenValue = {
       border: { color: 'Warning-1' },
     },
     outline: {
-      font: { color: 'Warning-5' },
+      font: { color: 'Warning-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Warning-5' },
+      border: { color: 'Warning-6' },
       disabled: {
         font: { color: 'Warning-3' },
         background: { color: 'Neutral-fill-1' },
@@ -233,9 +233,9 @@ const tagTokenValue = {
       border: { color: 'Danger-1' },
     },
     outline: {
-      font: { color: 'Danger-5' },
+      font: { color: 'Danger-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Danger-5' },
+      border: { color: 'Danger-6' },
       disabled: {
         font: { color: 'Danger-3' },
         background: { color: 'Neutral-fill-1' },
@@ -281,9 +281,9 @@ const tagTokenValue = {
       border: { color: 'Magenta-1' },
     },
     outline: {
-      font: { color: 'Magenta-5' },
+      font: { color: 'Magenta-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Magenta-5' },
+      border: { color: 'Magenta-6' },
       disabled: {
         font: { color: 'Magenta-3' },
         background: { color: 'Neutral-fill-1' },
@@ -318,7 +318,7 @@ const tagTokenValue = {
       disabled: { background: { color: '' }, font: { color: 'Magenta-3' } },
       hover: { background: { color: 'Magenta-2' }, font: { color: '' } },
     },
-  },  
+  },
   brown: {
     font: { color: 'Orange-6' },
     background: { color: 'Orange-1' },
@@ -329,9 +329,9 @@ const tagTokenValue = {
       border: { color: 'Orange-1' },
     },
     outline: {
-      font: { color: 'Orange-5' },
+      font: { color: 'Orange-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Orange-5' },
+      border: { color: 'Orange-6' },
       disabled: {
         font: { color: 'Orange-3' },
         background: { color: 'Neutral-fill-1' },
@@ -340,9 +340,8 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        height: { undefined: '' },
-        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
-        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        disabled: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: '' }, font: { color: '' } },
       },
     },
     fill: {
@@ -357,21 +356,15 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        height: { undefined: '' },
-        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
-        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        disabled: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: '' }, font: { color: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: 'Orange-6' },
-      height: { undefined: '' },
-      disabled: {
-        background: { color: '' },
-        font: { color: 'Orange-3' },
-        height: { undefined: '' },
-      },
-      hover: { background: { color: 'Orange-2' }, font: { color: '' }, height: { undefined: '' } },
+      disabled: { background: { color: '' }, font: { color: 'Orange-3' } },
+      hover: { background: { color: 'Orange-2' }, font: { color: '' } },
     },
   },
   purple: {
@@ -384,9 +377,9 @@ const tagTokenValue = {
       border: { color: 'Purple-1' },
     },
     outline: {
-      font: { color: 'Purple-5' },
+      font: { color: 'Purple-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Purple-5' },
+      border: { color: 'Purple-6' },
       disabled: {
         font: { color: 'Purple-3' },
         background: { color: 'Neutral-fill-1' },
@@ -432,9 +425,9 @@ const tagTokenValue = {
       border: { color: 'Indigo-1' },
     },
     outline: {
-      font: { color: 'Indigo-5' },
+      font: { color: 'Indigo-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Indigo-5' },
+      border: { color: 'Indigo-6' },
       disabled: {
         font: { color: 'Indigo-3' },
         background: { color: 'Neutral-fill-1' },
@@ -480,9 +473,9 @@ const tagTokenValue = {
       border: { color: 'Cyan-1' },
     },
     outline: {
-      font: { color: 'Cyan-5' },
+      font: { color: 'Cyan-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Cyan-5' },
+      border: { color: 'Cyan-6' },
       disabled: {
         font: { color: 'Cyan-3' },
         background: { color: 'Neutral-fill-1' },
@@ -528,9 +521,9 @@ const tagTokenValue = {
       border: { color: 'Neon-1' },
     },
     outline: {
-      font: { color: 'Neon-5' },
+      font: { color: 'Neon-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Neon-5' },
+      border: { color: 'Neon-6' },
       disabled: {
         font: { color: 'Neon-3' },
         background: { color: 'Neutral-fill-1' },
@@ -576,9 +569,9 @@ const tagTokenValue = {
       border: { color: 'Lemon-1' },
     },
     outline: {
-      font: { color: 'Lemon-5' },
+      font: { color: 'Lemon-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Lemon-5' },
+      border: { color: 'Lemon-6' },
       disabled: {
         font: { color: 'Lemon-3' },
         background: { color: 'Neutral-fill-1' },
@@ -624,9 +617,9 @@ const tagTokenValue = {
       border: { color: 'Tangerine-1' },
     },
     outline: {
-      font: { color: 'Tangerine-5' },
+      font: { color: 'Tangerine-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Tangerine-5' },
+      border: { color: 'Tangerine-6' },
       disabled: {
         font: { color: 'Tangerine-3' },
         background: { color: 'Neutral-fill-1' },
@@ -662,20 +655,20 @@ const tagTokenValue = {
       hover: { background: { color: 'Tangerine-2' }, font: { color: '' } },
     },
   },
-  font: { size: 'Font-12' },
-  border: { radius: 'Radius-3' },
-  padding: { x: 'Spacing-6', y: 'Spacing-2' },
+  font: { size: 'Font-12', weight: 'Weight-regular' },
+  border: { radius: 'Radius-small' },
+  padding: { x: 'Spacing-6', y: 'Spacing-0' },
   height: 'Size-11',
   small: {
-    font: { size: 'Font-12' },
-    border: { radius: 'Radius-2' },
+    font: { size: 'Font-12', weight: 'Weight-regular' },
+    border: { radius: 'Radius-small' },
     padding: { x: 'Spacing-4', y: '' },
     height: 'Size-10',
     input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-12' } },
   },
   large: {
-    font: { size: 'Font-14' },
-    border: { radius: 'Radius-4' },
+    font: { size: 'Font-14', weight: 'Weight-regular' },
+    border: { radius: 'Radius-default' },
     padding: { x: 'Spacing-12', y: 'Spacing-2' },
     height: 'Size-14',
     input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-14' } },

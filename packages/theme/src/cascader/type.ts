@@ -16,7 +16,7 @@ export interface CascaderTokens {
   cascaderFontColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 级联选择器边框圆角
    */
   cascaderBorderRadius: string;
@@ -214,7 +214,7 @@ export interface CascaderTokens {
   cascaderDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 级联选择器展示框文本边框圆角
    */
   cascaderResultTextBorderRadius: string;
@@ -292,7 +292,7 @@ export interface CascaderTokens {
   cascaderPanelShadow: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 级联选择器下拉面板圆角
    */
   cascaderPanelRadius: string;
@@ -364,7 +364,7 @@ export interface CascaderTokens {
   cascaderOptionInnerPaddingRight: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 级联选择器选项内部容器的边框圆角
    */
   cascaderOptionInnerBorderRadius: string;

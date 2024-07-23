@@ -17,6 +17,7 @@ import normalizeWheel from './dom/normalizeWheel';
 import * as position from './dom/popover';
 import ready from './dom/ready';
 import isJson from './validate/isJson';
+import * as type from './type';
 // import validate from './validate';
 
 import accept from './accept';
@@ -48,5 +49,6 @@ export {
   validate,
   cssAccessors,
   cssInject,
+  type,
   accept,
 };

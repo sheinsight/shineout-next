@@ -27,7 +27,7 @@ const menuTokenDescription = {
 const menuTokenValue = {};
 
 const menuTokenExtraValue = {
-  collpase: {
+  collapse: {
     width: 'Spacing-40',
   },
   font: { size: 'Font-14', color: 'Neutral-text-5' },
@@ -40,7 +40,7 @@ const menuTokenExtraValue = {
   },
   item: {
     background: { color: 'Neutral-fill-1' },
-    font: { color: 'Neutral-text-5' },
+    font: { color: 'Neutral-text-5', weight: 'Weight-regular' },
     hover: {
       background: { color: 'Neutral-fill-2' },
       font: { color: 'Neutral-text-5' },
@@ -57,7 +57,7 @@ const menuTokenExtraValue = {
       background: { color: 'Neutral-fill-1' },
       font: { color: 'Neutral-text-2' },
     },
-    collpase: {
+    collapse: {
       active: {
         background: { color: 'Brand-6' },
         font: { color: 'Neutral-text-1' },
@@ -104,7 +104,7 @@ const menuTokenExtraValue = {
         background: { color: 'Neutral-fill-10' },
         font: { color: 'Neutral-text-4' },
       },
-      collpase: {
+      collapse: {
         active: {
           background: { color: 'Brand-6' },
           font: { color: 'Neutral-text-1' },
@@ -118,7 +118,7 @@ const menuTokenExtraValue = {
 
   search: {
     border: { radius: 'Radius-full', color: 'Neutral-border-2' },
-    collpase: {
+    collapse: {
       size: 'Size-16',
     },
     icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { x: 'Spacing-8' } },

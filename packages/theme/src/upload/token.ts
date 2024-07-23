@@ -42,7 +42,7 @@ const uploadTokenExtraValue = {
       hover: { background: { color: 'Neutral-fill-2' } },
     },
     font: { size: 'Font-14', color: 'Neutral-text-5' },
-    border: { radius: 'Radius-4' },
+    border: { radius: 'Radius-default' },
     error: {
       font: { color: 'Danger-6' },
       icon: { color: 'Danger-6' },
@@ -62,7 +62,7 @@ const uploadTokenExtraValue = {
     },
   },
   image: {
-    border: { radius: 'Radius-4' },
+    border: { radius: 'Radius-default' },
     handler: {
       border: { color: 'Neutral-border-1' },
       background: { color: 'Neutral-fill-1' },
