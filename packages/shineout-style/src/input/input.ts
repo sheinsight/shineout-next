@@ -137,9 +137,14 @@ const input: JsStyles<keyof InputClasses> = {
     backgroundColor: 'transparent',
     boxSizing: 'border-box',
     fontWeight: 'inherit',
+    '$wrapper:not($wrapperDisabled) &::placeholder': {
+      color: token.inputPlaceholderColor,
+    },
+    '$wrapperDisabled &::placeholder': {
+      color: token.inputDisabledPlaceholderColor,
+    },
     '&::placeholder': {
       fontWeight: token.inputPlaceholderFontWeight,
-      color: token.inputPlaceholderColor,
       fontSize: 'inherit',
     },
   },

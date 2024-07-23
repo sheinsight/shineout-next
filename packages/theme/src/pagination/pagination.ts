@@ -5,8 +5,11 @@ import { PaginationTokens } from './type';
 
 const paginationTokens: PaginationTokens = {
   paginationFontSize: 'Font-14',
+  paginationFontWeight: 'Weight-regular',
   paginationSmallFontSize: 'Font-12',
+  paginationSmallFontWeight: 'Weight-regular',
   paginationLargeFontSize: 'Font-16',
+  paginationLargeFontWeight: 'Weight-regular',
   paginationFontColor: 'Neutral-text-5',
   paginationNearlyMargin: 'Spacing-8',
 };

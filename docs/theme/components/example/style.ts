@@ -89,7 +89,7 @@ export default createUseStyles(
     },
     exampleDemo: {
       '#examples-carousel &': {
-        overflow: 'auto'
+        overflow: 'auto',
       },
       marginTop: 24,
       padding: 32,
@@ -152,6 +152,7 @@ export default createUseStyles(
     },
     codeWrapper: {
       flex: 1,
+      fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
     },
     debug: {
       position: 'fixed',

@@ -98,8 +98,9 @@ const rateStyle: JsStyles<RateClassType> = {
   },
   text: {
     fontSize: token.rateFontSize,
+    fontWeight: token.rateFontWeight,
     color: token.rateFontColor,
-    paddingLeft: 10,
+    paddingLeft: token.rateTextGap,
   },
   itemDisabled: {},
   itemAnimation: {

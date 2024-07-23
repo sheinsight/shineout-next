@@ -7,6 +7,7 @@ const spinTokens: SpinTokens = {
   spinTipFontColor: 'Brand-6',
   spinVerticalMargin: 'Spacing-4',
   spinHorizontalMargin: 'Spacing-4',
+  spinBackgroundColor: 'Neutral-fill-1',
 };
 
 export default spinTokens;

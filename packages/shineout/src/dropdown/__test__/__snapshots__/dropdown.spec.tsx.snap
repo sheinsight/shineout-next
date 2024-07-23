@@ -4,6 +4,7 @@ exports[`Dropdown[Base] should render correctly  1`] = `
 <div
   class="soui-dropdown-wrapper"
   data-position="bottom-left"
+  data-role="dropdown"
 >
   <button
     class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -17,6 +18,7 @@ exports[`Dropdown[Base] should render correctly  1`] = `
     </span>
     <span
       class="soui-dropdown-caret"
+      data-role="caret"
       dir="ltr"
     >
       <svg
@@ -41,6 +43,7 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
   <div
     class="soui-dropdown-wrapper"
     data-position="bottom-left"
+    data-role="dropdown"
   >
     <button
       class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
@@ -54,6 +57,7 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
       </span>
       <span
         class="soui-dropdown-caret"
+        data-role="caret"
         dir="ltr"
       >
         <svg
@@ -72,6 +76,7 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
   <div
     class="soui-dropdown-wrapper"
     data-position="bottom-left"
+    data-role="dropdown"
     style="margin-inline-start: 24px;"
   >
     <button
@@ -86,6 +91,7 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
       </span>
       <span
         class="soui-dropdown-caret"
+        data-role="caret"
         dir="ltr"
       >
         <svg
@@ -114,6 +120,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-primary soui-button-button"
@@ -127,6 +134,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -145,6 +153,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button"
@@ -158,6 +167,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -176,6 +186,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-danger soui-button-button"
@@ -189,6 +200,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -207,6 +219,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-warning soui-button-button"
@@ -220,6 +233,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -238,6 +252,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-success soui-button-button"
@@ -251,6 +266,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -273,6 +289,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
@@ -286,6 +303,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -304,6 +322,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-outline"
@@ -317,6 +336,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -335,6 +355,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-danger soui-button-button soui-button-outline"
@@ -348,6 +369,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -366,6 +388,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-warning soui-button-button soui-button-outline"
@@ -379,6 +402,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -397,6 +421,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-success soui-button-button soui-button-outline"
@@ -410,6 +435,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -432,6 +458,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-primary soui-button-button soui-button-text"
@@ -445,6 +472,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -463,6 +491,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -476,6 +505,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -494,6 +524,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-danger soui-button-button soui-button-text"
@@ -507,6 +538,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -525,6 +557,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-warning soui-button-button soui-button-text"
@@ -538,6 +571,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -556,6 +590,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-success soui-button-button soui-button-text"
@@ -569,6 +604,7 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -592,6 +628,7 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
 <div
   class="soui-dropdown-wrapper"
   data-position="bottom-left"
+  data-role="dropdown"
 >
   <button
     class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -605,6 +642,7 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
     </span>
     <span
       class="soui-dropdown-caret"
+      data-role="caret"
       dir="ltr"
     >
       <svg
@@ -626,6 +664,7 @@ exports[`Dropdown[Base] should render correctly about columns 1`] = `
 <div
   class="soui-dropdown-wrapper"
   data-position="bottom-left"
+  data-role="dropdown"
 >
   <button
     class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -639,6 +678,7 @@ exports[`Dropdown[Base] should render correctly about columns 1`] = `
     </span>
     <span
       class="soui-dropdown-caret"
+      data-role="caret"
       dir="ltr"
     >
       <svg
@@ -660,6 +700,7 @@ exports[`Dropdown[Base] should render correctly about divider 1`] = `
 <div
   class="soui-dropdown-wrapper"
   data-position="bottom-left"
+  data-role="dropdown"
 >
   <button
     class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -673,6 +714,7 @@ exports[`Dropdown[Base] should render correctly about divider 1`] = `
     </span>
     <span
       class="soui-dropdown-caret"
+      data-role="caret"
       dir="ltr"
     >
       <svg
@@ -694,6 +736,7 @@ exports[`Dropdown[Base] should render correctly about group 1`] = `
 <div
   class="soui-dropdown-wrapper"
   data-position="bottom-left"
+  data-role="dropdown"
 >
   <button
     class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -707,6 +750,7 @@ exports[`Dropdown[Base] should render correctly about group 1`] = `
     </span>
     <span
       class="soui-dropdown-caret"
+      data-role="caret"
       dir="ltr"
     >
       <svg
@@ -728,6 +772,7 @@ exports[`Dropdown[Base] should render correctly about hover 1`] = `
 <div
   class="soui-dropdown-wrapper"
   data-position="bottom-left"
+  data-role="dropdown"
 >
   <button
     class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -741,6 +786,7 @@ exports[`Dropdown[Base] should render correctly about hover 1`] = `
     </span>
     <span
       class="soui-dropdown-caret"
+      data-role="caret"
       dir="ltr"
     >
       <svg
@@ -762,6 +808,7 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
 <div
   class="soui-dropdown-wrapper"
   data-position="bottom-left"
+  data-role="dropdown"
 >
   <button
     class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -775,6 +822,7 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
     </span>
     <span
       class="soui-dropdown-caret"
+      data-role="caret"
       dir="ltr"
     >
       <svg
@@ -802,6 +850,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -815,6 +864,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -833,6 +883,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -846,6 +897,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -864,6 +916,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="bottom-right"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -877,6 +930,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -899,6 +953,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="right-top"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -912,6 +967,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -930,6 +986,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="left-top"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -938,6 +995,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       >
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -965,6 +1023,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="right"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -978,6 +1037,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -996,6 +1056,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -1004,6 +1065,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       >
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -1031,6 +1093,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="right-bottom"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -1044,6 +1107,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -1062,6 +1126,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="left-bottom"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -1070,6 +1135,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       >
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -1097,6 +1163,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="top-left"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -1110,6 +1177,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -1128,6 +1196,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="top"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -1141,6 +1210,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -1159,6 +1229,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     <div
       class="soui-dropdown-wrapper"
       data-position="top-right"
+      data-role="dropdown"
     >
       <button
         class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
@@ -1172,6 +1243,7 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
         <span
           class="soui-dropdown-caret"
+          data-role="caret"
           dir="ltr"
         >
           <svg
@@ -1196,6 +1268,7 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
   <div
     class="soui-dropdown-wrapper"
     data-position="bottom-left"
+    data-role="dropdown"
     style="margin-inline-end: 24px;"
   >
     <button
@@ -1210,6 +1283,7 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
       <span
         class="soui-dropdown-caret"
+        data-role="caret"
         dir="ltr"
       >
         <svg
@@ -1228,6 +1302,7 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
   <div
     class="soui-dropdown-wrapper"
     data-position="bottom-left"
+    data-role="dropdown"
     style="margin-inline-end: 24px;"
   >
     <button
@@ -1242,6 +1317,7 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
       <span
         class="soui-dropdown-caret"
+        data-role="caret"
         dir="ltr"
       >
         <svg
@@ -1260,6 +1336,7 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
   <div
     class="soui-dropdown-wrapper"
     data-position="bottom-left"
+    data-role="dropdown"
     style="margin-inline-end: 24px;"
   >
     <button
@@ -1274,6 +1351,7 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
       <span
         class="soui-dropdown-caret"
+        data-role="caret"
         dir="ltr"
       >
         <svg
@@ -1296,7 +1374,7 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
 <div
   class="soui-button-group"
   dir="ltr"
-  style="display: inline-block; margin-inline-end: 24px;"
+  style="margin-inline-end: 24px;"
 >
   <button
     class="soui-button-secondary soui-button-button soui-button-outline"
@@ -1319,6 +1397,7 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
   <div
     class="soui-dropdown-wrapper"
     data-position="bottom-right"
+    data-role="dropdown"
   >
     <button
       class="soui-dropdown-button soui-dropdown-split-button soui-button-secondary soui-button-button soui-button-outline"
@@ -1330,6 +1409,7 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
       />
       <span
         class="soui-dropdown-caret"
+        data-role="caret"
         dir="ltr"
       >
         <svg

@@ -14,6 +14,8 @@ const selectTokens: SelectTokens = {
   selectPaddingY: 'Spacing-2',
   selectIconSize: 'Size-7',
   selectIconColor: 'Neutral-text-4',
+  selectTagMarginY: 'Spacing-2',
+  selectTagMarginRight: 'Spacing-4',
   selectSmallFontSize: 'Font-12',
   selectSmallPaddingX: 'Spacing-8',
   selectSmallPaddingY: 'Spacing-1',

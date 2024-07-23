@@ -121,15 +121,10 @@ describe('Modal[Base]', () => {
     const modalMask = modalWrapper.querySelector(mask)!;
     const modalPanel = modalMask.querySelector(panel)!;
     styleTest(modalPanel, defaultStyle);
-    const modalHeader = modalPanel.querySelector(header)!;
-    const modalHeaderTitle = modalHeader.querySelector(headerTitle)!;
-    expect(modalHeaderTitle).toBeInTheDocument();
-    const modalHeaderClose = modalHeader.querySelector(headerClose)!;
+    const modalHeaderClose = modalPanel.querySelector(headerClose)!;
     classLengthTest(modalHeaderClose, 'svg', 1);
     const modalBody = modalPanel.querySelector(body)!;
     expect(modalBody).toBeInTheDocument();
-    // const modalFooter = modalPanel.querySelector(footer)!;
-    // expect(modalFooter).toBeInTheDocument();
   });
   test('should render when set visible is control', () => {
     const App = () => {

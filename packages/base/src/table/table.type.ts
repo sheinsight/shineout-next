@@ -118,6 +118,18 @@ export interface TableProps<DataItem, Value>
     input?: () => InputClasses;
     empty?: () => EmptyClasses;
   };
+   /**
+   * 
+   * @cn 单元格点击事件 
+   * @en Cell click event 
+   */
+   onCellClick?: (
+    data: DataItem,
+    info:{
+    rowIndex: number,
+    columnIndex: number,
+    columnKey: string | number,
+  }) => void;
   /**
    * @en which takes effect when the virtual list is enabled
    * @cn 当开启虚拟列表时生效
@@ -151,7 +163,7 @@ export interface TableProps<DataItem, Value>
    * @en height of table, same with style.height
    * @cn 表格高度，与 style.height 作用相同
    */
-  height?: number;
+  height?: number | string;
   /**
    * @en The callback function after scrolling.\nx: Horizontal rolling ratio(0 <= x <= 1)\ny: Vertical scroll ratio(0 <= y <= 1)
    * @cn 滚动条滚动后回调函数；\nx: 横向滚动比(0 <= x <= 1)\ny: 纵向滚动比(0 <= y <= 1)

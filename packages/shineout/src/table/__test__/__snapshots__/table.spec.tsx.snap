@@ -11,18 +11,10 @@ exports[`Table[Base] should render correctly  1`] = `
     >
       <table>
         <colgroup>
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
@@ -230,18 +222,10 @@ exports[`Table[Base] should render correctly about border 1`] = `
     >
       <table>
         <colgroup>
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
@@ -448,24 +432,12 @@ exports[`Table[Base] should render correctly about group 1`] = `
   >
     <table>
       <colgroup>
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
       </colgroup>
       <thead>
         <tr>
@@ -865,18 +837,10 @@ exports[`Table[Base] should render correctly about size 1`] = `
     >
       <table>
         <colgroup>
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead>
           <tr>

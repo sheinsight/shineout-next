@@ -85,6 +85,7 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
     justifyContent: 'center',
     color: 'red',
     '$wrapperChecked &': {
+      backgroundColor: token.switchCheckedCircleFill,
       '&[dir=ltr]': {
         right: token.switchPaddingX,
         left: `calc(100% - ${token.switchCircleSize} - ${token.switchPaddingX})`,
@@ -127,6 +128,13 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       top: token.switchLargePaddingY,
     },
 
+    '$wrapperDisabled:not($wrapperChecked) &': {
+      backgroundColor: token.switchDisabledCircleFill,
+    },
+    '$wrapperDisabled &': {
+      backgroundColor: token.switchCheckedDisabledCircleFill,
+    },
+
     borderRadius: '50%',
     position: 'absolute',
 
@@ -156,7 +164,6 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
         paddingLeft: 0,
         paddingRight: token.switchLargeCircleSize,
       },
-
     },
   },
   wrapperDisabled: {

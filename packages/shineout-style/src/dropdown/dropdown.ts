@@ -17,7 +17,7 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
   },
   list: {
     position: 'absolute',
-    fontWeight: 400,
+    fontWeight: token.dropdownListFontWeight,
     minWidth: '100%',
     zIndex: 1000,
     textAlign: 'left',
@@ -36,12 +36,12 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
   },
   listSmall: {
     fontSize: token.dropdownListSmallFontSize,
-    borderRadius: token.dropdownListSmallBorderRadius,
+    borderRadius: token.dropdownListBorderRadius,
     padding: `${token.dropdownListSmallPaddingY} ${token.dropdownListSmallPaddingX}`,
   },
   listLarge: {
     fontSize: token.dropdownListLargeFontSize,
-    borderRadius: token.dropdownListLargeBorderRadius,
+    borderRadius: token.dropdownListBorderRadius,
     padding: `${token.dropdownListLargePaddingY} ${token.dropdownListLargePaddingX}`,
   },
   listHasChildren: {
@@ -165,6 +165,7 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
   optionGroup: {
     padding: `${token.dropdownOptionGroupPaddingTop} ${token.dropdownOptionGroupPaddingX} ${token.dropdownOptionGroupPaddingBottom} ${token.dropdownOptionGroupPaddingX}`,
     fontSize: token.dropdownOptionGroupFontSize,
+    fontWeight: token.dropdownOptionGroupFontWeight,
     color: token.dropdownOptionGroupFontColor,
     '$listSmall &': {
       padding: `${token.dropdownOptionGroupSmallTop} ${token.dropdownOptionGroupSmallX} 0 ${token.dropdownOptionGroupSmallX}`,

@@ -1,3 +1,8 @@
+## 3.3.0
+2024-07-23
+### 🆕 Feature
+- `Cascader` 支持下拉弹窗溢出自动调整位置([#564](https://github.com/sheinsight/shineout-next/pull/564))
+
 ## 3.2.5
 2024-07-02
 

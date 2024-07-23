@@ -13,7 +13,7 @@ export interface MenuClasses {
   wrapperHasOpen: string;
   wrapperLight: string;
   wrapperDark: string;
-  wrapperCollpase: string;
+  wrapperCollapse: string;
   wrapperInTransition: string;
   header: string;
   root: string;

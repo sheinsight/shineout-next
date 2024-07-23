@@ -34,6 +34,12 @@ export interface DropdownTokens {
   dropdownListFontSize: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 下拉菜单列表字体字重
+   */
+  dropdownListFontWeight: string;
+  /**
+   * @type {string}
    * @token Radius-default
    * @description 下拉菜单列表小尺寸边框圆角
    */
@@ -260,6 +266,12 @@ export interface DropdownTokens {
    * @description 下拉菜单选项分组字体颜色
    */
   dropdownOptionGroupFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 下拉菜单选项分组字体字重
+   */
+  dropdownOptionGroupFontWeight: string;
   /**
    * @type {string}
    * @token Spacing-8

@@ -36,7 +36,7 @@ const renderSimpleItem = (props: renderItemProps) => {
 };
 
 const Default = (props: SpinProps) => {
-  const { jssStyle, size = 'default', className } = props;
+  const { jssStyle, size = 'default' } = props;
   const { value, unit } = formatSize(size);
   const sizeSet = Math.ceil(value / 12.5) + unit;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
@@ -44,7 +44,7 @@ const Default = (props: SpinProps) => {
   return (
     <BaseSpin
       {...props}
-      className={classNames(className, spinStyles.default)}
+      className={spinStyles.default}
       count={12}
       itemStyle={{ width: sizeSet, borderRadius: sizeSet }}
       render={renderItem}
@@ -53,49 +53,39 @@ const Default = (props: SpinProps) => {
 };
 
 const ChasingDots = (props: SpinProps) => {
-  const { jssStyle, className } = props;
+  const { jssStyle } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   return (
     <BaseSpin
       {...props}
       count={2}
-      className={classNames(className, spinStyles.chasingDots)}
+      className={spinStyles.chasingDots}
       render={renderSvgItem}
     ></BaseSpin>
   );
 };
 
 const CubeGrid = (props: SpinProps) => {
-  const { jssStyle, className } = props;
+  const { jssStyle } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   return (
-    <BaseSpin
-      {...props}
-      count={9}
-      className={classNames(className, spinStyles.cubeGrid)}
-      render={renderSimpleItem}
-    />
+    <BaseSpin {...props} count={9} className={spinStyles.cubeGrid} render={renderSimpleItem} />
   );
 };
 
 const DoubleBounce = (props: SpinProps) => {
-  const { jssStyle, className } = props;
+  const { jssStyle } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   return (
-    <BaseSpin
-      {...props}
-      count={2}
-      className={classNames(className, spinStyles.doubleBounce)}
-      render={renderSimpleItem}
-    />
+    <BaseSpin {...props} count={2} className={spinStyles.doubleBounce} render={renderSimpleItem} />
   );
 };
 
 const FadingCircle = (props: SpinProps) => {
-  const { size = 40, jssStyle, className } = props;
+  const { size = 40, jssStyle } = props;
   const { value, unit } = formatSize(size);
   const itemSize = (value / 7).toFixed(3) + unit;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
@@ -104,7 +94,7 @@ const FadingCircle = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={12}
-      className={classNames(className, spinStyles.fadingCircle)}
+      className={spinStyles.fadingCircle}
       itemSize={itemSize}
       itemClass={classNames(spinStyles.fade)}
       render={renderSvgItem}
@@ -113,7 +103,7 @@ const FadingCircle = (props: SpinProps) => {
 };
 
 const ScaleCircle = (props: SpinProps) => {
-  const { size = 40, jssStyle, className } = props;
+  const { size = 40, jssStyle } = props;
   const { value, unit } = formatSize(size);
   const itemSize = (value / 7).toFixed(3) + unit;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
@@ -122,7 +112,7 @@ const ScaleCircle = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={12}
-      className={classNames(className, spinStyles.fadingCircle)}
+      className={spinStyles.fadingCircle}
       itemSize={itemSize}
       itemClass={classNames(spinStyles.scaleCircle)}
       render={renderSvgItem}
@@ -131,55 +121,34 @@ const ScaleCircle = (props: SpinProps) => {
 };
 
 const FourDots = (props: SpinProps) => {
-  const { jssStyle, className } = props;
+  const { jssStyle } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  return (
-    <BaseSpin
-      {...props}
-      count={4}
-      className={classNames(className, spinStyles.fourDots)}
-      render={renderSvgItem}
-    />
-  );
+  return <BaseSpin {...props} count={4} className={spinStyles.fourDots} render={renderSvgItem} />;
 };
 
 const Plane = (props: SpinProps) => {
-  const { color, jssStyle, className } = props;
+  const { color, jssStyle } = props;
   const style = {
     backgroundColor: color,
   };
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  return (
-    <BaseSpin
-      {...props}
-      count={0}
-      style={style}
-      className={classNames(className, spinStyles.plane)}
-    />
-  );
+  return <BaseSpin {...props} count={0} style={style} className={spinStyles.plane} />;
 };
 
 const Pulse = (props: SpinProps) => {
-  const { color, jssStyle, className } = props;
+  const { color, jssStyle } = props;
   const style = {
     backgroundColor: color,
   };
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  return (
-    <BaseSpin
-      {...props}
-      count={0}
-      style={style}
-      className={classNames(className, spinStyles.pulse)}
-    />
-  );
+  return <BaseSpin {...props} count={0} style={style} className={spinStyles.pulse} />;
 };
 
 const Ring = (props: SpinProps) => {
-  const { size = 40, color, jssStyle, className, style: styleProp = {} } = props;
+  const { size = 40, color, jssStyle, style: styleProp = {} } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   const { value, unit } = formatSize(size);
@@ -192,18 +161,11 @@ const Ring = (props: SpinProps) => {
     fontSize: value / 10 + unit,
   };
 
-  return (
-    <BaseSpin
-      {...props}
-      count={0}
-      style={style}
-      className={classNames(className, spinStyles.ring)}
-    />
-  );
+  return <BaseSpin {...props} count={0} style={style} className={spinStyles.ring} />;
 };
 
 const ThreeBounce = (props: SpinProps) => {
-  const { size = 40, jssStyle, className } = props;
+  const { size = 40, jssStyle } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   const { value, unit } = formatSize(size);
@@ -213,14 +175,14 @@ const ThreeBounce = (props: SpinProps) => {
       count={3}
       itemSize={value / 2 + unit}
       style={{ width: value * 2 + unit, height: 'auto' }}
-      className={classNames(className, spinStyles.threeBounce)}
+      className={spinStyles.threeBounce}
       render={renderSvgItem}
     />
   );
 };
 
 const Wave = (props: SpinProps) => {
-  const { size = 40, jssStyle, className } = props;
+  const { size = 40, jssStyle } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   const { value, unit } = formatSize(size);
@@ -239,14 +201,14 @@ const Wave = (props: SpinProps) => {
       {...props}
       itemStyle={{ width: width + unit, marginRight: margin }}
       count={5}
-      className={classNames(className, spinStyles.wave)}
+      className={spinStyles.wave}
       render={renderSimpleItem}
     />
   );
 };
 
 const ChasingRing = (props: SpinProps) => {
-  const { size = 40, color, className, jssStyle } = props;
+  const { size = 40, color, jssStyle } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   const { value, unit } = formatSize(size);
@@ -258,7 +220,7 @@ const ChasingRing = (props: SpinProps) => {
       {...props}
       count={4}
       itemStyle={style}
-      className={classNames(className, spinStyles.chasingRing)}
+      className={spinStyles.chasingRing}
       render={renderSimpleItem}
     />
   );

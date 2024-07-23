@@ -54,6 +54,7 @@ export type TreeSelectClasses = {
   moreIcon: string;
   list: string;
   tree: string;
+  treeWrapper: string;
   treeOption: string;
   tag: string;
   tagOnly: string;

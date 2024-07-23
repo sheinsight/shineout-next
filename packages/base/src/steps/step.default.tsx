@@ -52,7 +52,7 @@ const DefaultStep = (props: StepStyleProps) => {
   const renderIcon = () => {
     if (renderIconProp)
       return (
-        <div className={iconClass} onClick={onChange} dir={config.direction}>
+        <div className={iconClass} dir={config.direction}>
           <span className={styles.iconWrapper}>{renderIconProp(index, status)}</span>
         </div>
       );
@@ -66,7 +66,7 @@ const DefaultStep = (props: StepStyleProps) => {
       iconComponent = index + 1;
     }
     return (
-      <div className={iconClass} onClick={onChange}>
+      <div className={iconClass}>
         <span className={styles.iconWrapper}>{iconComponent}</span>
       </div>
     );
@@ -82,7 +82,7 @@ const DefaultStep = (props: StepStyleProps) => {
   };
 
   return (
-    <div className={rootClass}>
+    <div className={rootClass} onClick={onChange}>
       {showTail && renderTail()}
       {renderIcon()}
       {renderContent()}

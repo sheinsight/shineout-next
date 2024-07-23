@@ -66,6 +66,7 @@ export default (props: TbodyProps) => {
         bodyScrollWidth={props.bodyScrollWidth}
         resizeFlag={props.resizeFlag}
         treeCheckAll={props.treeCheckAll}
+        onCellClick={props.onCellClick}
       />
     );
   };

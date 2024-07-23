@@ -56,7 +56,7 @@ const config = {
     ArrowLeft: Icons.ArrowLeft,
     Hide: Icons.Hide,
     Show: Icons.Display,
-    Close: Icons.CloseOpaqueMultic1,
+    Close: Icons.PcCloseCircleFill,
   },
   menu: {
     CollapseArrow: Icons.ArrowDown,

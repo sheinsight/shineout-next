@@ -245,7 +245,7 @@ const sliderStyle: JsStyles<SliderClassType> = {
     '&::before': {
       content: '""',
       display: 'block',
-      backgroundColor: '#ccc',
+      backgroundColor: token.sliderScaleLineBackgroundColor,
     },
     '$wrapper:not($vertical) &': {
       marginTop: token.sliderScaleMarginY,

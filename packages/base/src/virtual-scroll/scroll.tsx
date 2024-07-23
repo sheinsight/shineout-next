@@ -22,6 +22,7 @@ interface scrollProps {
   scrollerStyle?: React.CSSProperties;
   onMouseMove?: () => void;
   defaultHeight?: number;
+  isScrollY?: boolean;
 }
 
 const Scroll = (props: scrollProps) => {
@@ -29,6 +30,7 @@ const Scroll = (props: scrollProps) => {
   const { current: context } = useRef({
     timer: null as any,
     isMouseDown: false,
+    lastPaddingTop: 0,
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef });
@@ -51,10 +53,17 @@ const Scroll = (props: scrollProps) => {
     top: 0,
   } as React.CSSProperties;
 
+  let pd = context.lastPaddingTop;
+  if (height > 0 && scrollHeight > 0) {
+    pd = Math.max(0, Math.floor(scrollHeight - height));
+    context.lastPaddingTop = pd;
+  }
   const placeStyle = {
-    paddingTop: height > 0 && scrollHeight > 0 ? Math.max(0, Math.floor(scrollHeight - height)) : 0,
+    paddingTop: pd,
     width: scrollWidth,
-    overflow: 'hidden',
+    overflow: props.isScrollY ? 'hidden' :'auto hidden',
+    height: props.isScrollY ? 0 : 1,
+    marginTop: props.isScrollY ? 0 : -1,
     lineHeight: 0,
   };
 

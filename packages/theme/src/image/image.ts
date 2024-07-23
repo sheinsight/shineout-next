@@ -5,11 +5,13 @@ import { ImageTokens } from './type';
 
 const imageTokens: ImageTokens = {
   imageSpinColor: 'Neutral-text-2',
-  imageCircleBorderRadius: 'Radius-50%',
+  imageBorderRadius: 'Radius-default',
+  imageBorderColor: 'Neutral-border-1',
+  imageCircleBorderRadius: 'Radius-circle',
   imageCircleBorderColor: 'Neutral-border-1',
-  imageRoundedBorderRadius: 'Radius-4',
+  imageRoundedBorderRadius: 'Radius-default',
   imageRoundedBorderColor: 'Neutral-border-1',
-  imageThumbnailBorderRadius: 'Radius-4',
+  imageThumbnailBorderRadius: 'Radius-default',
   imageThumbnailBorderColor: 'Neutral-border-1',
   imagePlaceholderBackgroundColor: 'Neutral-fill-2',
   imageErrorBackgroundColor: 'Neutral-fill-2',

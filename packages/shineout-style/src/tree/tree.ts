@@ -101,6 +101,17 @@ const treeStyle: JsStyles<TreeClassType> = {
   inlineContent: {
     display: 'inline-flex',
   },
+  contentDisabled: {
+    '& $content[data-active="true"]': {
+      background: Token.treeContentDisabledBackgroundColor,
+    },
+    '& $content:hover:not([data-active="true"])': {
+      background: 'none',
+      '& $text': {
+        color: Token.treeContentDisabledFontColor,
+      },
+    },
+  },
   content: {
     flex: 1,
     display: 'flex',
@@ -125,6 +136,12 @@ const treeStyle: JsStyles<TreeClassType> = {
       right: -12,
     },
 
+    '$contentDisabled &': {
+      '& $text': {
+        color: Token.treeContentDisabledFontColor,
+      },
+    },
+
     '&[data-active="true"]': {
       background: Token.treeContentActiveBackgroundColor,
 
@@ -132,14 +149,11 @@ const treeStyle: JsStyles<TreeClassType> = {
         color: Token.treeContentActiveFontColor,
       },
     },
-    // '&[data-disabled="true"]': {
-    //   cursor: 'not-allowed',
-    // },
-    // '&:hover:not([data-active="true"]):not([data-disabled="true"])': {
-    //   background: Token.treeContentHoverBackgroundColor,
-    // },
     '&:hover:not([data-active="true"])': {
       background: Token.treeContentHoverBackgroundColor,
+      '& $text': {
+        color: Token.treeContentHoverFontColor,
+      },
     },
   },
   checkbox: {

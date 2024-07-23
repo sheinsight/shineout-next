@@ -12,6 +12,7 @@ export type TreeClasses = {
   root: string;
   line: string;
   noline: string;
+  contentDisabled: string;
   content: string;
   small: string;
   large: string;

@@ -40,10 +40,10 @@ const treeTokenValue = {
   content: {
     background: { color: '' },
     font: { color: '' },
-    hover: { background: { color: 'Neutral-fill-2' }, font: { color: '' } },
+    hover: { background: { color: 'Neutral-fill-2' }, font: { color: 'Neutral-text-5' } },
     active: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
-    disabled: { background: { color: '' }, font: { color: 'Neutral-text-2' } },
-    border: { radius: 'Radius-2' },
+    disabled: { background: { color: 'Transprent' }, font: { color: 'Neutral-text-5' } },
+    border: { radius: 'Radius-lesser' },
   },
   drag: { border: { color: 'Brand-6' }, background: { color: 'Brand-1' } },
   nearly: { margin: '', small: { margin: '' }, large: { margin: '' } },

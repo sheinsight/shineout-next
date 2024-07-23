@@ -11,10 +11,11 @@ const Colgroup = (props: ColgroupProps) => {
       <colgroup>
         {colgroup?.map((item, index) => {
           const isLast = index === colgroup.length - 1;
+          const width = isLast && props.shouldLastColAuto ? undefined : item
           return (
             <col
               key={columns[index].key}
-              style={{ width: isLast && props.shouldLastColAuto ? undefined : item }}
+              style={{ width }}
             />
           );
         })}

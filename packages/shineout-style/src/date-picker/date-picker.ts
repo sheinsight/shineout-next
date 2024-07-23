@@ -293,6 +293,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     cursor: 'pointer',
     width: token.datePickerPanelHeaderIconHotWidth,
     height: token.datePickerPanelHeaderIconHotWidth,
+    color: token.datePickerPanelHeaderIconColor,
     borderRadius: '50%',
     '&[dir=rtl]': {
       transform: 'rotate(180deg)',
@@ -316,6 +317,8 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   pickerHeaderInfo: {
     cursor: 'pointer',
     borderRadius: '2px',
+    color: token.datePickerPanelHeaderFontColor,
+    fontWeight: token.datePickerPanelHeaderFontWeight,
     '&:hover': {
       backgroundColor: token.datePickerPanelHeaderIconHoverBackgroundColor,
     },
@@ -333,7 +336,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     '& th, & td': {
       boxSizing: 'border-box',
       padding: '0',
-      fontWeight: 'normal',
+      fontWeight: token.datePickerPanelFontWeight,
     },
     '& th': {
       color: token.datePickerCellHeaderColor,

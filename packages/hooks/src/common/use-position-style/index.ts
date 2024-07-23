@@ -189,17 +189,18 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
           overLeft = bodyRect.left - (rect.left + rect.width / 2 - context.popUpWidth / 2);
         }
       }
-
       if (adjust) {
         // 调节左右溢出
         if (overRight > 0) {
+          const toRightDistance = bodyRect.right - rect.right;
           (style.left as number) -= overRight;
+          // 扣除触发器距离页面右侧的距离，以保证从右侧弹出的窗口最右边对齐触发器最右边
+          (style.left as number) -= toRightDistance;
         }
         if (overLeft > 0) {
           (style.left as number) += overLeft;
         }
       }
-
       if (v === 'bottom') {
         style.top = rect.bottom - containerRect.top + containerScroll.top + popupGap;
       } else {
