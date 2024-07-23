@@ -1,31 +1,14 @@
-## 3.3.0-beta.14
-未发布
-2024-07-22
+## 3.3.0
+2024-07-23
 
 ### 🐞 BugFix
-- 修复 `Table` 组件 `height` 类型错误，支持 string 类型 ([#580](https://github.com/sheinsight/shineout-next/pull/580))
-
-## 3.3.0-beta.13
-2024-07-16
-
-### 🐞 BugFix
+- 修复 `Table` 组件 `height` 类型错误，支持 string 类型 ([#584](https://github.com/sheinsight/shineout-next/pull/584))
 - 修复`Table`在低于Chrome99版本下的横向滚动条不可见的问题 ([#580](https://github.com/sheinsight/shineout-next/pull/580))
 - 修复`Table`虚拟滚动在`Tabs`切换会导致滚动的问题 ([#580](https://github.com/sheinsight/shineout-next/pull/580))
-
-
-## 3.3.0-beta.12
-2024-07-11
-
-### 🐞 BugFix
 - 修复 `Table` 在数据不断变化的场景下可能导致滚动偏移的位置计算错误 ([#553](https://github.com/sheinsight/shineout-next/pull/553))
-
-
-## 3.3.0-beta.7
-2024-06-26
 
 ### 🆕 Feature
 - `Table` 新增属性 `onCellClick` 支持单元格点击后的回调 ([#550](https://github.com/sheinsight/shineout-next/pull/550))
-
 
 
 ## 3.2.6
