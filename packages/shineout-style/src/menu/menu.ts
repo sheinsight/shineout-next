@@ -222,15 +222,23 @@ const menuStyle: JsStyles<MenuClassType> = {
         },
       },
 
-      '[data-soui-theme=dark][data-soui-mode=inline] &::before, [data-soui-theme=dark][data-soui-mode=vertical] &::before':
+      '[data-soui-theme=dark] &::before': {
+        content: '""',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        bottom: 0,
+        width: '3px',
+        backgroundColor: token.menuDarkItemActiveBackgroundColor,
+      },
+      '[data-soui-theme=dark][data-soui-mode=horizontal] $root &::before':
         {
-          content: '""',
-          position: 'absolute',
           left: 0,
-          top: 0,
+          right: 0,
           bottom: 0,
-          width: '3px',
-          backgroundColor: token.menuDarkItemActiveBackgroundColor,
+          top: 'auto',
+          width: 'auto',
+          height: '3px',
         },
 
       '$wrapperCollapse[data-soui-theme=light] $root > &': {

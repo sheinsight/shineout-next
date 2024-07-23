@@ -5,7 +5,7 @@
  *    -- The dark theme
  */
 import React, { useState } from 'react';
-import { Menu, TYPE } from 'shineout';
+import { Menu, Radio, TYPE } from 'shineout';
 
 interface MenuItem {
   id: string;
@@ -65,9 +65,11 @@ const data: MenuItem[] = [
     title: 'Navigation Four',
   },
 ];
+const modeArr = ['inline', 'vertical', 'horizontal'];
 
 const App: React.FC = () => {
   const [active, setActive] = useState(['1']);
+  const [mode, seMode] = useState<MenuProps['mode']>('inline');
 
   const renderItem: MenuRenderItem = (d: MenuItem) => d.title;
 
@@ -77,14 +79,18 @@ const App: React.FC = () => {
 
   return (
     <div>
+      <Radio.Group button={'outline'} size='small' style={{marginBlock: 12}} data={modeArr} keygen value={mode} onChange={seMode} />
       <Menu
+        mode={mode}
+        key={mode}
         data={data}
+        disabled={(d) => d.id === '2'}
         keygen='id'
         inlineIndent={14}
         theme='dark'
         active={checkActive}
         onClick={handleClick}
-        style={{ width: 256 }}
+        style={mode === 'horizontal' ? {} : { width: 256 }}
         renderItem={renderItem}
       />
     </div>
