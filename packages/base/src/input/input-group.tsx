@@ -63,6 +63,7 @@ export default (props: InputGroupProps) => {
           return cloneElement(child, {
             ...getProps(child),
             disabled: child.props.disabled || disabled,
+            size: child.props.size || size,
           });
         }
         return <span key={i}>{child}</span>;
