@@ -5,7 +5,7 @@
  *    -- Button is divided into five types: primary, secondary, outline, dash, and text. The primary button can only appear once in the same operation area
  */
 
-import { Button } from 'shineout';
+import { Button, EditableArea } from 'shineout';
 export default () => {
   const buttonStyle = {
     margin: 0,
@@ -16,6 +16,8 @@ export default () => {
       <Button type='primary' style={buttonStyle}>
         Primary
       </Button>
+
+      <EditableArea style={{width: 500}} />
 
       <Button type='secondary' style={buttonStyle}>
         Secondary
