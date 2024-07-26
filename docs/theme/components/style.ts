@@ -14,6 +14,7 @@ export default createUseStyles(
       padding: '0 40px',
       background: '#fff',
       borderBottom: '1px solid rgba(232, 235, 240, 1)',
+      overflow: 'hidden',
       transition: 'all 0.15s ease',
       'body.rtl &': {
         right: 260,
@@ -39,6 +40,32 @@ export default createUseStyles(
         color: '#141737',
         transition: 'all 0.3s ease',
       },
+    },
+    headerLogo: {
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      zIndex: -1,
+    },
+
+    headerLogoBg: {
+      position: 'absolute',
+      right: 0,
+    },
+    headerLogoTop: {
+      top: 11,
+      right: 37,
+      position: 'absolute',
+    },
+    headerLogoBottom: {
+      top: 110,
+      right: 84,
+      position: 'absolute',
+    },
+    headerLogoCircle: {
+      top: 83,
+      right: 267,
+      position: 'absolute',
     },
     stickyHeader: {
       '& .title': {
@@ -136,7 +163,7 @@ export default createUseStyles(
       fontSize: 24,
       lineHeight: '40px',
       fontWeight: 600,
-      marginBottom: 8
+      marginBottom: 8,
     },
     changelogTime: {
       fontSize: 16,
