@@ -317,9 +317,9 @@ const Modal = (props: ModalContentProps) => {
   return (
     <FormFooterProvider>
       <div
-        // onClick={e => {
-        //   e.stopPropagation();
-        // }}
+        onClick={e => {
+          e.stopPropagation();
+        }}
         className={classNames(
           props.rootClassName,
           modalClasses?.wrapper,
