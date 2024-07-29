@@ -257,6 +257,36 @@ exports[`Input[Base] should render correctly about group 1`] = `
       .com
     </b>
   </div>
+  <h3>
+    Small Size
+  </h3>
+  <div
+    class="soui-input-group soui-input-group-small"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <b>
+      http://
+    </b>
+    <div
+      class="soui-input-wrapper soui-input-wrapper-small"
+      data-soui-input-border="true"
+    >
+      <div
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
+      >
+        <input
+          class="soui-input-input"
+          placeholder="email"
+          value=""
+        />
+      </div>
+    </div>
+    <b>
+      .com
+    </b>
+  </div>
 </div>
 `;
 

@@ -1,3 +1,11 @@
+## 3.3.2
+2024-07-29
+
+### 🐞 BugFix
+
+- 修复 `Modal` 组件的onClick事件冒泡至父节点的问题 ([#591](https://github.com/sheinsight/shineout-next/pull/591))
+- 修复 `Modal` 组件的maskCloseAble和hideClose同时设置时, hideClose不生效的问题 ([#591](https://github.com/sheinsight/shineout-next/pull/591))
+
 ## 3.2.3
 2024-06-25
 

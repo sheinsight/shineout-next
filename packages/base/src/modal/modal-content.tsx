@@ -196,7 +196,11 @@ const Modal = (props: ModalContentProps) => {
     );
   };
   const renderHeader = () => {
-    const showCloseIcon = (maskCloseAble === null || !!maskCloseAble) && !props.hideClose;
+    let showCloseIcon = maskCloseAble === null || !!maskCloseAble
+    if(props.hideClose !== undefined){
+      showCloseIcon = !props.hideClose
+    }
+
     const isEmptyTitle = !props.title && props.title !== 0;
 
     if (isEmptyTitle) {
@@ -311,6 +315,9 @@ const Modal = (props: ModalContentProps) => {
   return (
     <FormFooterProvider>
       <div
+        onClick={e => {
+          e.stopPropagation();
+        }}
         className={classNames(
           props.rootClassName,
           modalClasses?.wrapper,

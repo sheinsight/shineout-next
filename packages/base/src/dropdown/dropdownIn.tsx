@@ -80,11 +80,11 @@ const Dropdown = (props: SimpleDropdownProps) => {
         {Icons.dropdown.DropdownArrow}
       </span>
     );
-    const child = [
+    const child = placeholder ? [
       <span key='text' className={dropdownClasses?.content}>
         {placeholder}
       </span>,
-    ];
+    ] : [];
     if (!hideArrow) {
       child.push(caret);
     }

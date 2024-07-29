@@ -1,3 +1,10 @@
+## 3.3.2
+2024-07-29
+
+### 🐞 BugFix
+
+- 修复`Input.Group` size不往下传递的问题 ([#591](https://github.com/sheinsight/shineout-next/pull/591))
+
 ## 3.2.3
 2024-06-25
 ### 💅 Style
