@@ -119,9 +119,9 @@ export interface TableProps<DataItem, Value>
     empty?: () => EmptyClasses;
   };
    /**
-   *
-   * @cn 单元格点击事件
-   * @en Cell click event
+   * 
+   * @cn 单元格点击事件 
+   * @en Cell click event 
    */
    onCellClick?: (
     data: DataItem,

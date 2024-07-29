@@ -3,7 +3,7 @@
 
 ### 主要更新
 - 使用全新的设计语言，更注重细节交互，更加符合现代审美
-- 新增了 Description、Step、Collpase、Empty 四个组件
+- 新增了 Description、Step、Collapse、Empty 四个组件
 - 支持 React 18
 - 支持 SSR 场景
 - 使用 css-in-jss 对于微前端更友好

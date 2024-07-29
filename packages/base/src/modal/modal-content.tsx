@@ -203,6 +203,7 @@ const Modal = (props: ModalContentProps) => {
     if(props.hideClose !== undefined){
       showCloseIcon = !props.hideClose
     }
+
     const isEmptyTitle = !props.title && props.title !== 0;
 
     if (isEmptyTitle) {

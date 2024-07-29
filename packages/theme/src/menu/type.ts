@@ -7,7 +7,7 @@ export interface MenuTokens {
    * @token Spacing-40
    * @description 菜单undefined宽度
    */
-  menuCollpaseWidth: string;
+  menuCollapseWidth: string;
   /**
    * @type {string}
    * @token Font-14
@@ -109,13 +109,13 @@ export interface MenuTokens {
    * @token Brand-6
    * @description 菜单选项undefined鼠标点击时的背景颜色
    */
-  menuItemCollpaseActiveBackgroundColor: string;
+  menuItemCollapseActiveBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-1
    * @description 菜单选项undefined鼠标点击时的字体颜色
    */
-  menuItemCollpaseActiveFontColor: string;
+  menuItemCollapseActiveFontColor: string;
   /**
    * @type {string}
    * @token Spacing-16
@@ -241,13 +241,13 @@ export interface MenuTokens {
    * @token Brand-6
    * @description 菜单深色模式选项undefined鼠标点击时的背景颜色
    */
-  menuDarkItemCollpaseActiveBackgroundColor: string;
+  menuDarkItemCollapseActiveBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-1
    * @description 菜单深色模式选项undefined鼠标点击时的字体颜色
    */
-  menuDarkItemCollpaseActiveFontColor: string;
+  menuDarkItemCollapseActiveFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-8
@@ -271,7 +271,7 @@ export interface MenuTokens {
    * @token Size-16
    * @description 菜单undefinedundefined字号
    */
-  menuSearchCollpaseSize: string;
+  menuSearchCollapseSize: string;
   /**
    * @type {string}
    * @token Size-7
