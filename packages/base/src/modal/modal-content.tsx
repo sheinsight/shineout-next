@@ -196,10 +196,7 @@ const Modal = (props: ModalContentProps) => {
     );
   };
   const renderHeader = () => {
-    let showCloseIcon = true
-    if(maskCloseAble === null || !!maskCloseAble){
-      showCloseIcon = false
-    }
+    let showCloseIcon = maskCloseAble === null || !!maskCloseAble
     if(props.hideClose !== undefined){
       showCloseIcon = !props.hideClose
     }
