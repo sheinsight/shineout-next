@@ -14,6 +14,23 @@ exports[`Button[Base] should render correctly  1`] = `
       Primary
     </span>
   </button>
+  <div
+    class="soui-editableArea-wrapper soui-editableArea-wrapper-no-border"
+    style="width: 500px;"
+  >
+    <div
+      class="soui-editableArea-place soui-editableArea-wrapper-padding-box soui-editableArea-wrapper-inner-title-top soui-editableArea-wrapper-inner-title-bottom"
+      tabindex="0"
+    >
+      <div
+        class="soui-editableArea-content"
+      >
+        <span
+          class="soui-editableArea-placeholder"
+        />
+      </div>
+    </div>
+  </div>
   <button
     class="soui-button-secondary soui-button-button"
     dir="ltr"
