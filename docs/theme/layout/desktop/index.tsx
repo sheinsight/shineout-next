@@ -1,4 +1,5 @@
 import { useRoutes, Navigate } from 'react-router-dom';
+import classnames from 'classnames';
 import { dispatch } from '../../store';
 import useStyles from './style';
 import { useEffect, useRef } from 'react';
@@ -97,7 +98,7 @@ const Desktop = () => {
   }, []);
 
   return (
-    <section ref={ref} id='layout' className={classes.desktop}>
+    <section ref={ref} id='layout' className={classnames(classes.desktop, classes.customScrollbar)}>
       <Routes></Routes>
     </section>
   );
