@@ -17,3 +17,5 @@ CardGroupComp.displayName = 'ShineoutCardGroup';
 CardGroupComp.Item = Item;
 
 export default CardGroupComp;
+
+export { LazyLoad } from '@sheinx/base';
