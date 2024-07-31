@@ -2,7 +2,7 @@
 2024-07-31
 
 ### 🐞 BugFix
-- 修复`Table`有合并行数据时多次动态切换data时,表格重复渲染出多余的行的问题
+- 修复`Table`有合并行数据时多次动态切换data时,表格重复渲染出多余的行的问题 ([#592](https://github.com/sheinsight/shineout-next/pull/592))
 
 
 ## 3.3.0
