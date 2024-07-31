@@ -89,7 +89,7 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
     height: '1em',
     display: 'inline-block',
     lineHeight: '1',
-    marginLeft: token.dropdownCaretMarginLeft,
+    // marginLeft: token.dropdownCaretMarginLeft,
     '$wrapper[data-position^="right"] > $button & > svg': {
       transform: 'rotate(-90deg)',
     },
@@ -117,6 +117,9 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
   content: {
     flex: '1',
     minWidth: '0',
+    '& + $caret': {
+      marginLeft: token.dropdownCaretMarginLeft,
+    },
   },
   button: {
     '$wrapper &': {

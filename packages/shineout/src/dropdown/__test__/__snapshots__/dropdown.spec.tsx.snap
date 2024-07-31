@@ -1405,9 +1405,6 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
       type="button"
     >
       <span
-        class="soui-dropdown-content"
-      />
-      <span
         class="soui-dropdown-caret"
         data-role="caret"
         dir="ltr"

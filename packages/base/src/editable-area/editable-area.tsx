@@ -174,7 +174,7 @@ const EditableArea = (props: EditableAreaProps) => {
         !bordered && editableAreaStyle?.wrapperNoBorder,
         !!props.innerTitle && editableAreaStyle?.wrapperInnerTitle,
       )}
-      style={{ ...style, width }}
+      style={{ width, ...style  }}
       ref={wrapperRef}
     >
       {renderPlaceholder()}
