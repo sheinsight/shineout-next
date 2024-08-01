@@ -27,9 +27,10 @@ export default (props: TbodyProps) => {
   const renderRow = (item: any, index: number) => {
     const rowIndex = index + currentIndex;
     const originKey = util.getKey(props.keygen, item, rowIndex);
+    const trRenderKey = `${originKey}-${rowIndex}`;
     return (
       <Tr
-        key={originKey}
+        key={trRenderKey}
         originKey={originKey}
         row={rowData[index]}
         columns={columns}
