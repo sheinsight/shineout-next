@@ -58,9 +58,7 @@ const tabsTokenValue = {
   },
   fill: {
     padding: { x: 'Spacing-4', y: 'Spacing-4' },
-    inner: {
-      padding: { x: 'Spacing-16', y: 'Spacing-5' },
-    },
+    inner: { padding: { x: 'Spacing-16', y: 'Spacing-5' } },
   },
   split: { border: { color: 'Neutral-border-2' } },
   action: {
@@ -70,23 +68,9 @@ const tabsTokenValue = {
 };
 
 const tabsTokenExtraValue = {
-  extra: {
-    fill: {
-      hover: {
-        background: { color: 'Neutral-fill-3' },
-      },
-    },
-  },
-  card: {
-    disabled: {
-      background: { color: 'Neutral-fill-2' },
-    },
-  },
-  arrow: {
-    font: {
-      color: 'Neutral-text-4',
-    },
-  },
+  extra: { fill: { hover: { background: { color: 'Neutral-fill-3' } } } },
+  card: { disabled: { background: { color: 'Neutral-fill-2' } } },
+  arrow: { font: { color: 'Neutral-text-4' } },
 };
 
 module.exports = {

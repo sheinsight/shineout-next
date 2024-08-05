@@ -1,4 +1,4 @@
-import Token from '@sheinx/theme';
+import Token, {CommonToken} from '@sheinx/theme';
 import { TabsClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 
@@ -133,76 +133,42 @@ const getCardStyle = () => {
 
 const getLineStyle = () => {
   return {
+    '$tab':  {
+      '&:after': {
+        display: 'none',
+      },
+    },
     '&[data-soui-position^="left-"][data-soui-shape="line"]': {
       '&[dir=ltr]': {
         '& $hr': { right: 0, width: 1, height: '100%' },
-        ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
       },
       '&[dir=rtl]': {
         '& $hr': { left: 0, width: 1, height: '100%' },
-        ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
-      },
-      '& :not([data-soui-state="active"])$tab': {
-        '&:after': {
-          display: 'none',
-        },
       },
     },
     '&[data-soui-position^="right-"][data-soui-shape="line"]': {
       '&[dir=ltr]': {
         '& $hr': { left: 0, width: 1, height: '100%' },
-        ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
       },
       '&[dir=rtl]': {
         '& $hr': { right: 0, width: 1, height: '100%' },
-        ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
-      },
-
-      '& :not([data-soui-state="active"])$tab': {
-        '&:after': {
-          display: 'none',
-        },
       },
     },
     '&[data-soui-position^="top-"][data-soui-shape="line"]': {
       '& $hr': { bottom: 0, height: 1, width: '100%' },
-      ...active({ bottom: 0, left: 0, right: 0, height: 2 }),
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="line"]': {
       '& $hr': { top: 0, height: 1, width: '100%' },
-      ...active({ top: 0, left: 0, right: 0, height: 2 }),
-      '& :not([data-soui-state="active"])$tab': {
-        '&:after': {
-          display: 'none',
-        },
-      },
     },
   };
 };
 
 const getDashStyle = () => {
   return {
-    '&[data-soui-position^="left-"][data-soui-shape="dash"]': {
-      '&[dir=ltr]': {
-        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, right: 0 }),
+    '$tab':  {
+      '&:after': {
+        display: 'none',
       },
-      '&[dir=rtl]': {
-        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, left: 0 }),
-      },
-    },
-    '&[data-soui-position^="right-"][data-soui-shape="dash"]': {
-      '&[dir=ltr]': {
-        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, left: 0 }),
-      },
-      '&[dir=rtl]': {
-        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, right: 0 }),
-      },
-    },
-    '&[data-soui-position^="top-"][data-soui-shape="dash"]': {
-      ...active({ bottom: 0, left: `calc(50% - 12px)`, width: 24, height: 2 }),
-    },
-    '&[data-soui-position^="bottom-"][data-soui-shape="dash"]': {
-      ...active({ top: 0, left: `calc(50% - 12px)`, width: 24, height: 2 }),
     },
   };
 };
@@ -545,6 +511,11 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
   headerScroll: {
     transition: 'all .15s ease-out',
   },
+  headerScrollBar: {
+    position: 'absolute',
+    background: Token.tabsActiveFontColor,
+    transition: `left ${CommonToken['Animation-duration-2']} ease-in-out, top ${CommonToken['Animation-duration-2']} ease-in-out, width ${CommonToken['Animation-duration-2']} ease-in-out, height ${CommonToken['Animation-duration-2']} ease-in-out`,
+  },
   header: {
     flex: 1,
     display: 'flex',
@@ -594,17 +565,17 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
           color: Token.tabsDisabledFontColor,
           cursor: 'not-allowed',
         },
-        '&:not([data-soui-state="active"])': {
-          '&:after': {
-            position: 'absolute',
-            content: '""',
-            bottom: 0,
-            left: 0,
-            width: '100%',
-            height: 1,
-            background: Token.tabsBorderColor,
-          },
-        },
+        // '&:not([data-soui-state="active"])': {
+        //   '&:after': {
+        //     position: 'absolute',
+        //     content: '""',
+        //     bottom: 0,
+        //     left: 0,
+        //     width: '100%',
+        //     height: 1,
+        //     background: Token.tabsBorderColor,
+        //   },
+        // },
 
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $lineInner': {
           background: Token.tabsHoverBackgroundColor,
