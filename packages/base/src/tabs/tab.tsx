@@ -35,6 +35,13 @@ const Tab = (props: TabProps, ref: any) => {
 
   const handleClick = () => {
     if (disabled) return;
+
+    if (util.isLink(tab)) {
+      if (tab.props.onClick && typeof tab.props.onClick === 'function') {
+        tab.props.onClick()
+      }
+    }
+
     onChange?.(id);
   };
 

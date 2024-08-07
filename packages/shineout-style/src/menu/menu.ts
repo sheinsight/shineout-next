@@ -9,13 +9,16 @@ const transitionFunc = 'ease-out';
 
 const menuStyle: JsStyles<MenuClassType> = {
   wrapper: {
-    height: '100%',
     width: '100%',
     backgroundColor: token.menuItemBackgroundColor,
     transition: `width ${animationDuration} ${transitionFunc}`,
     color: token.menuFontColor,
     display: 'flex',
     flexDirection: 'column',
+
+    '&:not([data-soui-mode=horizontal])': {
+      height: '100%',
+    }
   },
   wrapperLight: {},
   wrapperDark: {
