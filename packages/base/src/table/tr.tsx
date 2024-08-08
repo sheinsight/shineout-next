@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
+import { addResizeObserver } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
@@ -109,7 +110,7 @@ const Tr = (props: TrProps) => {
     });
   });
 
-  useEffect(() => {
+  const setVirtualRowHeight = usePersistFn(() => {
     if (props.setRowHeight && trRef.current) {
       const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
       props.setRowHeight(
@@ -117,7 +118,20 @@ const Tr = (props: TrProps) => {
         trRef.current.getBoundingClientRect().height + expandHeight,
       );
     }
-  }, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
+  });
+
+  useEffect(setVirtualRowHeight, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
+
+  useEffect(() => {
+    if (!trRef.current) return;
+    const cancelObserver = addResizeObserver(trRef.current, setVirtualRowHeight, {
+      direction: 'y',
+    });
+
+    return () => {
+      cancelObserver();
+    };
+  }, []);
 
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
