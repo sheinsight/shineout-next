@@ -9,7 +9,7 @@ import { useConfig } from '../config';
 import { useTabsContext, util } from '@sheinx/hooks';
 
 const Tab = (props: TabProps, ref: any) => {
-  const { jssStyle, tab, disabled, id, color } = props;
+  const { jssStyle, tab: propTab, disabled, id, color } = props;
   const {
     active,
     shape = 'card',
@@ -36,14 +36,13 @@ const Tab = (props: TabProps, ref: any) => {
   const handleClick = () => {
     if (disabled) return;
 
-    if (util.isLink(tab)) {
-      if (tab.props.onClick && typeof tab.props.onClick === 'function') {
-        tab.props.onClick()
-      }
-    }
-
     onChange?.(id);
   };
+
+  const tab = util.isLink(propTab) ? (
+    // 直接返回a标签的内容，不要a标签
+    propTab.props.children
+  ) : propTab
 
   const renderCardTab = () => {
     return tab;
@@ -75,35 +74,49 @@ const Tab = (props: TabProps, ref: any) => {
     style.color = color;
   }
 
-  if (shape === 'button')
+  const containerProps = {
+    className: tabClass,
+    ...getStateProps(),
+    style: style,
+    onClick: handleClick,
+    ref: ref,
+    dir: config.direction,
+  }
+
+  if (shape === 'button') {
     return (
       <Button
-        className={tabClass}
         jssStyle={{ button: buttonStyle }}
-        {...getStateProps()}
-        style={style}
         disabled={disabled}
         type={isActive ? 'primary' : 'secondary'}
-        onClick={handleClick}
-        dir={config.direction}
+
+        {...containerProps}
       >
         {tab}
       </Button>
     );
+  }
 
-  return (
-    <div
-      dir={config.direction}
-      className={tabClass}
-      {...getStateProps()}
-      style={style}
-      onClick={handleClick}
-      ref={ref}
-    >
+  const $children = (
+    <>
       {shape === 'card' && renderCardTab()}
       {shape === 'line' && renderLineTab()}
       {shape === 'dash' && renderDashTab()}
       {shape === 'fill' && renderFillTab()}
+    </>
+  );
+
+  if (util.isLink(propTab)) {
+    return React.cloneElement(propTab, {
+      children: $children,
+
+      ...containerProps,
+    });
+  }
+
+  return (
+    <div {...containerProps}>
+      {$children}
     </div>
   );
 };
