@@ -131,8 +131,8 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    */
   open?: boolean;
   /**
-   * @en Selected key (controlled)
-   * @cn 选中的 key （受控)
+   * @en Selected key (controlled). Note: Do not use undefined and null as meaningful option values. When the value type is undefined and null, the component will not process data and rendering
+   * @cn 选中的 key （受控)。注意，请勿将 undefined 和 null 作为有意义的选项值，当 value 类型为 undefined 和 null 时，组件将不处理数据和渲染
    */
   value?: Value;
   /**
