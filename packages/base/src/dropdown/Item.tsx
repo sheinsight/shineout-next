@@ -67,7 +67,7 @@ class Item extends React.PureComponent<ItemProps> {
 
     if (isValidElement(content)) {
       const { className: propsClassName = '', ...otherProps } = props as Props;
-      const { className: contentPropsClassName = '', ...otherContentProps } =
+      const { className: contentPropsClassName = '', onClick: contentPropsOnClick, ...otherContentProps } =
         content.props as Props;
 
       const className = classNames(propsClassName, contentPropsClassName);
@@ -76,6 +76,10 @@ class Item extends React.PureComponent<ItemProps> {
         content,
         Object.assign(otherProps, otherContentProps, {
           className,
+          onClick: (e: React.MouseEvent) => {
+            if (contentPropsOnClick) contentPropsOnClick(e);
+            if (props.onClick) props.onClick(e);
+          }
         }),
       );
     }
