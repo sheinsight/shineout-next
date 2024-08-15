@@ -37,14 +37,14 @@ const Codesandbox = (props: CodesandboxProps) => {
     "react-dom/client": "react-dom@18.3.1",
     "react-router-dom": "6.11.2",
     "react-jss": "10.9.2",
-    "shineout": "laster",
+    "shineout": "latest",
     "classnames": "2.3.2",
     "immer": "10.0.2"
-  }  
+  }
 
   const importMap = JSON.stringify(isMock ? {
     ...importMapOrigin,
-    "dayjs": "laster"
+    "dayjs": "latest"
   } : importMapOrigin, null, 2)
 
   const main = `import React from 'react'
@@ -68,7 +68,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       'import-map.json': {
         language: 'json',
         name: 'import-map.json',
-        value: importMap, 
+        value: importMap,
       },
       'index.tsx': {
         name: 'index.tsx',
