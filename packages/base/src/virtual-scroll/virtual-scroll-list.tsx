@@ -39,6 +39,10 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     return top;
   });
 
+  const onScrollToBottom = usePersistFn(() => {
+    console.log('onScrollToBottom');
+  });
+
   const handleScrollByStep = usePersistFn((step: number, top?: number) => {
     const next = currentIndex + step;
     wrapperRef.current?.scrollTo({ top: next * lineHeight + (top || 0) });
@@ -66,6 +70,9 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
 
   const scrollHeight = getScrollHeight();
 
+  // 列表触底回调
+  const handleScrollToBottom = () => {};
+
   const renderList = () => {
     const start = currentIndex;
     const end = currentIndex + rowsInView;
@@ -86,6 +93,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         wrapperRef={wrapperRef}
         childrenStyle={{ width: '100%' }}
         onScroll={handleScroll}
+        onScrollToBottom={handleScrollToBottom}
         onMouseMove={handleMouseMove}
       >
         <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>

@@ -17,6 +17,7 @@ interface scrollProps {
     height: number;
     width: number;
   }) => void;
+  onScrollToBottom: (options: any) => void;
   className?: string;
   style?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
@@ -61,7 +62,7 @@ const Scroll = (props: scrollProps) => {
   const placeStyle = {
     paddingTop: pd,
     width: scrollWidth,
-    overflow: props.isScrollY ? 'hidden' :'auto hidden',
+    overflow: props.isScrollY ? 'hidden' : 'auto hidden',
     height: props.isScrollY ? 0 : 1,
     marginTop: props.isScrollY ? 0 : -1,
     lineHeight: 0,
@@ -70,6 +71,7 @@ const Scroll = (props: scrollProps) => {
   const handleScroll = usePersistFn((e: React.UIEvent) => {
     const target = e.currentTarget as HTMLDivElement;
     let { scrollLeft, scrollTop } = target;
+    console.log(target.scrollHeight === scrollTop + 250);
     const maxY = target.scrollHeight - target.clientHeight;
     const maxX = target.scrollWidth - target.clientWidth;
 
