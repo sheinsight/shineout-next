@@ -43,7 +43,14 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onResultItemClick,
     data,
   } = props;
-  const value = (isArray(valueProp) ? valueProp : [valueProp]) as Value;
+
+  const value = (
+    [null, undefined].includes(valueProp as any)
+      ? []
+      : Array.isArray(valueProp)
+      ? valueProp
+      : [valueProp]
+  ) as Value;
 
   const [more, setMore] = useState(-1);
   const [shouldResetMore, setShouldResetMore] = useState(false);
@@ -241,7 +248,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const getValueArr = (v: any) => {
-    return isArray(v) ? v : [v];
+    return (isArray(v) ? v : [v]).filter((v) => v !== undefined && v !== null);
   };
 
   const renderMultipleResult = () => {

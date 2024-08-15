@@ -16,7 +16,7 @@ export default () => {
       <Tabs shape='line' defaultActive={0}>
         {tabs.map((tab, index) => {
           return (
-            <Tabs.Panel key={index} tab={<a onClick={() => {console.log('a element clicked')}}>{tab.title}</a>}>
+            <Tabs.Panel key={index} tab={<a href="http://www.baidu.com/" target="_blank" onClick={() => {console.log('a element clicked')}} rel="noreferrer">{tab.title}</a>}>
               <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>
             </Tabs.Panel>
           );
