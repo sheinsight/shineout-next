@@ -102,7 +102,7 @@ const MenuComponent = () => {
   }, [location.pathname]);
 
   return (
-    <ul className={classes.menu}>
+    <ul className={classnames(classes.menu, classes.customScrollbar)}>
       <li>
         <div className={classnames('group', 'first')}>
           {docsLocale['shineout.menu.group.guide']}

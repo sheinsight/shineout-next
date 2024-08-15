@@ -95,7 +95,7 @@ export default createUseStyles(
 
     menu: {
       position: 'sticky',
-      overflow: 'hidden',
+      overflow: 'auto',
       float: 'left',
       top: 60,
       width: 259,
@@ -171,21 +171,6 @@ export default createUseStyles(
         '& li:last-child': {
           marginBottom: 16,
         },
-      },
-
-      '&:hover': {
-        overflow: 'auto',
-      },
-
-      '&::-webkit-scrollbar': {
-        width: 12,
-        height: 4,
-      },
-      '&::-webkit-scrollbar-thumb':  {
-        border: '4px solid transparent',
-        backgroundClip: 'padding-box',
-        borderRadius: 7,
-        backgroundColor: 'rgba(232, 235, 240, 1)',
       },
     },
 
@@ -281,6 +266,19 @@ export default createUseStyles(
       marginTop: 100,
       background: '#f7f8fa',
     },
+
+    customScrollbar: {
+      '&::-webkit-scrollbar': {
+        width: 12,
+        height: 4,
+      },
+      '&::-webkit-scrollbar-thumb':  {
+        border: '4px solid transparent',
+        backgroundClip: 'padding-box',
+        borderRadius: 7,
+        backgroundColor: 'rgba(232, 235, 240, 1)',
+      },
+    }
   },
   { name: 'doc-layout' },
 );
