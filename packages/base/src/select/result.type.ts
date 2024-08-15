@@ -66,5 +66,6 @@ export interface ResultProps<DataItem, Value>
     ellipsis: string;
     moreWrapper: string;
     inputMirror: string;
+    inputPlaceholder: string;
   };
 }
