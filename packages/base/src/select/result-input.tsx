@@ -98,7 +98,7 @@ const ResultInput = (props: ResultInputProps) => {
       <Input
         onRef={bindInputRef}
         style={style}
-        placeholder={typeof props.placeholder === 'string' ? props.placeholder : ''}
+        placeholder={typeof props.placeholder === 'string' ? props.placeholder : undefined}
         value={inputText as string}
         maxLength={maxLength}
         onChange={onChange}
