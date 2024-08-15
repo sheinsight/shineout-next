@@ -280,12 +280,13 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       getColgroup(adjust === 'drag');
       setAdjust(false);
     } else {
-      checkFloat();
+      // checkFloat();
       // checkScroll();
       // 拖拽列会导致 scrollWidth 变化
       syncScrollWidth();
     }
     checkScroll();
+    checkFloat()
   }, [colgroup]);
   return {
     isScrollX: !!isScrollX,

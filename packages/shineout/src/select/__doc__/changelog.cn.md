@@ -1,3 +1,13 @@
+## 3.3.3
+2024-08-15
+
+### 🆕 Feature
+- 支持 `Select` 单选搜索时，展示非string类型的值(renderItem返回的结果) ([#605](https://github.com/sheinsight/shineout-next/pull/605))
+
+### 🐞 BugFix
+
+- 修复 `Select` 选中项最终为假值时渲染异常的问题 ([#594](https://github.com/sheinsight/shineout-next/pull/594))
+
 ## 3.2.4
 2024-06-26
 

@@ -37,7 +37,7 @@ export const isBuffer = (val: unknown): boolean => {
   return false;
 };
 export const isUnMatchedData = (val: unknown): val is UnMatchedData => {
-  return isObject(val) && val.IS_NOT_MATCHED_VALUE;
+  return isObject(val) && val.IS_NOT_MATCHED_VALUE === true;
 };
 export const isMergeable = (val: unknown): boolean => {
   if (!isObject(val)) return false;
@@ -93,7 +93,7 @@ export const isFirefox = (): boolean => {
   return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 };
 
-export const isChromeLowerThan = (version:number):boolean => {
+export const isChromeLowerThan = (version: number): boolean => {
   // 服务器端渲染时，不执行版本检查
   if (typeof window === 'undefined' || typeof navigator === 'undefined') {
     return false;
@@ -102,7 +102,7 @@ export const isChromeLowerThan = (version:number):boolean => {
   const ua = navigator.userAgent;
   const chrome = ua.match(/chrome\/(\d+)/i);
   return Boolean(chrome && chrome[1] && parseInt(chrome[1], 10) < version);
-}
+};
 
 export function isDomElement(element: any): element is HTMLElement {
   return typeof HTMLElement === 'object'

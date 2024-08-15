@@ -61,6 +61,7 @@ export type SelectClasses = {
   tagOnly: string;
   space: string;
   inputMirror: string;
+  inputPlaceholder: string;
   moreWrapper: string;
   virtualList: string;
   option: string;
@@ -179,8 +180,8 @@ export interface SelectPropsBase<DataItem, Value>
   keygen: KeygenType<DataItem>;
 
   /**
-   * @en In the Form, the value will be taken over by the form and the value will be invalid
-   * @cn 在 Form 中，value 会被表单接管，value 无效
+   * @en In the Form, the value will be taken over by the form, and the value is invalid. Note: Do not use undefined and null as meaningful option values. When the value type is undefined and null, the component will not process data and rendering
+   * @cn 在 Form 中，value 会被表单接管，value 无效。注意，请勿将 undefined 和 null 作为有意义的选项值，当 value 类型为 undefined 和 null 时，组件将不处理数据和渲染
    * @override any
    */
   value?: Value;

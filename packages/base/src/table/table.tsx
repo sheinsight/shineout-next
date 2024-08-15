@@ -188,6 +188,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const virtualInfo = useTableVirtual({
     disabled: !virtual,
     data: treeData,
+    columns,
     rowsInView: props.rowsInView || 20,
     rowHeight: props.rowHeight || 40,
     scrollRef: scrollRef,

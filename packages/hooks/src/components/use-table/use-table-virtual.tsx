@@ -1,5 +1,6 @@
 import { usePersistFn } from '../../common/use-persist-fn';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
+import { TableFormatColumn } from './use-table.type';
 
 interface UseTableVirtualProps {
   data: any[];
@@ -10,6 +11,7 @@ interface UseTableVirtualProps {
   scrollLeft?: number;
   disabled?: boolean;
   isRtl?: boolean;
+  columns: TableFormatColumn<any>[];
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -21,6 +23,59 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const rowsInView = props.rowsInView === 0 ? props.data.length : props.rowsInView;
 
   const sleft = props.scrollLeft !== undefined ? props.scrollLeft : innerLeft;
+
+  const rowSpanInfos = useMemo(() => {
+    const rowSpanColumns = props.columns.filter((col) => typeof col.rowSpan === 'function');
+    if(rowSpanColumns.length === 0) return;
+
+
+    const _rowSpanInfos = [];
+    const totalLength = props.data.length;
+    for (let i = 0; i < totalLength; i++) {
+      let startIndex = i;
+      const rowSpanInfo = rowSpanColumns.map((col) => {
+        const { rowSpan } = col;
+
+        function getRowSpanCount(index: number, _count: number) {
+          let count = _count;
+          if(index === totalLength - 1) return count;
+          let prevRowData = props.data[index];
+          let nextRowData = props.data[index + 1];
+          if(rowSpan!(prevRowData, nextRowData)){
+            count = count + 1;
+            getRowSpanCount(index + 1, count);
+          }
+          return count;
+        }
+
+        const count = getRowSpanCount(i, 1);
+
+        return [startIndex, startIndex + count - 1];
+
+      });
+      _rowSpanInfos.push(rowSpanInfo);
+    }
+
+    for(let i = 0; i < _rowSpanInfos.length; i++) {
+      if(i === _rowSpanInfos.length - 1) break;
+      const spans1 = _rowSpanInfos[i]
+      const spans2 = _rowSpanInfos[i+1]
+      for(let j=0; j < spans1.length; j++) {
+        const [startIndex1, endIndex1] = spans1[j]
+        const [startIndex2] = spans2[j]
+        if(endIndex1 === startIndex2){
+          spans2[j][0] = startIndex1;
+        }
+      }
+    }
+
+
+    return _rowSpanInfos.map(_rowSpanInfo => {
+      const startIndexs = _rowSpanInfo.map(arr => arr[0]);
+      return Math.min(...startIndexs)
+    });
+
+  }, [props.data, props.columns]);
 
   const { current: context } = useRef({
     cachedHeight: [] as Array<number>,
@@ -84,7 +139,20 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     const maxIndex = Math.max(props.data.length - rowsInView, 0);
     for (let i = 0; i <= maxIndex; i++) {
       sum += context.cachedHeight[i] || props.rowHeight;
-      if (scrollTop < sum || i === maxIndex) {
+      let rowSpanHeight = 0
+      if(rowSpanInfos){
+        const siblingsIndexs = []
+        for(let k=0; k<rowSpanInfos.length; k++){
+          if(rowSpanInfos[k] <= i && k > i){
+            siblingsIndexs.push(k)
+          }
+        }
+        for(let j=0; j<siblingsIndexs.length; j++){
+          const index = siblingsIndexs[j]
+          rowSpanHeight += context.cachedHeight[index] || props.rowHeight;
+        }
+      }
+      if (scrollTop < sum + rowSpanHeight || i === maxIndex) {
         currentIndex = i;
         const beforeHeight = i === 0 ? 0 : sum - (context.cachedHeight[i] || props.rowHeight);
         top = scrollTop - beforeHeight;
