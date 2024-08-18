@@ -5,6 +5,7 @@ import { useConfig } from '../config';
 interface scrollProps {
   scrollHeight: number;
   scrollWidth: number;
+  height?: number | string;
   children: React.ReactNode;
   childrenStyle?: React.CSSProperties;
   wrapperRef?: React.RefObject<HTMLDivElement>;
@@ -17,7 +18,7 @@ interface scrollProps {
     height: number;
     width: number;
   }) => void;
-  onScrollToBottom: (options: any) => void;
+  onScrollToBottom?: (options?: any) => void;
   className?: string;
   style?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
@@ -69,9 +70,16 @@ const Scroll = (props: scrollProps) => {
   };
 
   const handleScroll = usePersistFn((e: React.UIEvent) => {
+    const { onScrollToBottom } = props;
+
     const target = e.currentTarget as HTMLDivElement;
     let { scrollLeft, scrollTop } = target;
-    console.log(target.scrollHeight === scrollTop + 250);
+
+    if (props.height && onScrollToBottom) {
+      const touchBottom = target.scrollHeight === scrollTop + props.height;
+      if (touchBottom) onScrollToBottom();
+    }
+
     const maxY = target.scrollHeight - target.clientHeight;
     const maxX = target.scrollWidth - target.clientWidth;
 

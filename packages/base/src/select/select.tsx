@@ -89,6 +89,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     defaultExpanded,
     defaultExpandAll,
     showHitDescendants,
+    onLoadMore,
+    threshold = 1,
     renderOptionList,
     // onAdvancedFilter,
     onExpand,
@@ -102,6 +104,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     // onFilterWidthCreate,
     filterSameChange,
     noCache,
+    trigger = 'click',
   } = props;
 
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
@@ -178,13 +181,14 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     popupRef,
     openPop,
     closePop,
+    getTargetProps,
     Provider: PopupProvider,
     providerValue: popupProviderValue,
   } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
-    trigger: 'click',
+    trigger: trigger,
     position: positionProp,
   });
 
@@ -278,6 +282,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     isEmpty && styles.wrapperEmpty,
     styles?.wrapper,
     open && styles?.wrapperOpen,
+    open && trigger === 'hover' && styles?.triggerHover,
     disabled === true && styles?.wrapperDisabled,
     disabled !== true && focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
@@ -602,6 +607,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       emptyAfterSelect,
       renderItem,
       controlType,
+      onLoadMore,
+      threshold,
       onControlTypeChange: setControlType,
       closePop,
       optionListRef,
@@ -695,6 +702,9 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     return style;
   };
+
+  const targetProps = getTargetProps();
+
   return (
     <div
       ref={targetRef}
@@ -711,6 +721,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           e.preventDefault();
         }
       }}
+      {...targetProps}
     >
       {tipNode}
       {renderResult()}

@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, usePersistFn } from '@sheinx/hooks';
-import { SelectClasses } from './select.type';
-import { BaseListProps } from './select.type';
+import { SelectClasses, BaseListProps } from './select.type';
 import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';
+import Spin from '../spin';
 import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
 
 const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
@@ -20,6 +20,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     itemsInView = 10,
     lineHeight: lineHeightProp,
     loading,
+    threshold,
     controlType,
     hideCreateOption,
     optionListRef,
@@ -35,6 +36,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     [styles.controlKeyboard]: controlType === 'keyboard',
   });
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
+  const [scrollLoading, setscrollLoading] = useState(false);
   const virtualRef = useRef<VirtualListType>({
     scrollByStep: undefined,
     getCurrentIndex: undefined,
@@ -135,6 +137,17 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     }
   });
 
+  const handleVirtualScroll = usePersistFn(async (info: { y: number }) => {
+    const { onLoadMore } = props;
+    if (typeof onLoadMore !== 'function') return;
+    if (!onLoadMore) return;
+    if (info.y >= threshold) {
+      setscrollLoading(true);
+      await onLoadMore();
+      setscrollLoading(false);
+    }
+  });
+
   const renderLoading = () => {
     return <div>loading</div>;
   };
@@ -176,20 +189,23 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     if (loading) return renderLoading();
 
     return (
-      <VirtualScrollList
-        virtualRef={virtualRef}
-        data={data}
-        keygen={keygen}
-        tag={'ul'}
-        groupKey={groupKey}
-        tagClassName={styles.virtualList}
-        height={height}
-        lineHeight={lineHeight}
-        rowsInView={itemsInView}
-        renderItem={renderItem}
-        customRenderItem={renderGroupTitle}
-        onControlTypeChange={onControlTypeChange}
-      ></VirtualScrollList>
+      <Spin jssStyle={jssStyle} loading={scrollLoading}>
+        <VirtualScrollList
+          virtualRef={virtualRef}
+          data={data}
+          keygen={keygen}
+          tag={'ul'}
+          groupKey={groupKey}
+          tagClassName={styles.virtualList}
+          height={height}
+          onScroll={handleVirtualScroll}
+          lineHeight={lineHeight}
+          rowsInView={itemsInView}
+          renderItem={renderItem}
+          customRenderItem={renderGroupTitle}
+          onControlTypeChange={onControlTypeChange}
+        ></VirtualScrollList>
+      </Spin>
     );
   };
 
