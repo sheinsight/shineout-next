@@ -2,6 +2,7 @@
 // This file was generated automatically by a script. Please do not modify it directly.
 
 export { default as Alert } from './alert';
+export { default as Badge } from './badge';
 export { default as Breadcrumb } from './breadcrumb';
 export { default as Button } from './button';
 export { default as Card } from './card';
@@ -57,4 +58,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.3.0-beta.7' };
+export default { version: '3.3.3' };
