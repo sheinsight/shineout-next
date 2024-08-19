@@ -704,6 +704,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   };
 
   const targetProps = getTargetProps();
+  const { onMouseEnter, onMouseLeave } = targetProps;
 
   return (
     <div
@@ -721,7 +722,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           e.preventDefault();
         }
       }}
-      {...targetProps}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {tipNode}
       {renderResult()}
