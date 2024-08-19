@@ -4,7 +4,6 @@ import { KeygenResult, usePersistFn } from '@sheinx/hooks';
 import { SelectClasses, BaseListProps } from './select.type';
 import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';
-import Spin from '../spin';
 import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
 
 const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
@@ -36,7 +35,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     [styles.controlKeyboard]: controlType === 'keyboard',
   });
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
-  const [scrollLoading, setscrollLoading] = useState(false);
   const virtualRef = useRef<VirtualListType>({
     scrollByStep: undefined,
     getCurrentIndex: undefined,
@@ -142,9 +140,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     if (typeof onLoadMore !== 'function') return;
     if (!onLoadMore) return;
     if (info.y >= threshold) {
-      setscrollLoading(true);
       await onLoadMore();
-      setscrollLoading(false);
     }
   });
 
@@ -189,23 +185,21 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     if (loading) return renderLoading();
 
     return (
-      <Spin jssStyle={jssStyle} loading={scrollLoading}>
-        <VirtualScrollList
-          virtualRef={virtualRef}
-          data={data}
-          keygen={keygen}
-          tag={'ul'}
-          groupKey={groupKey}
-          tagClassName={styles.virtualList}
-          height={height}
-          onScroll={handleVirtualScroll}
-          lineHeight={lineHeight}
-          rowsInView={itemsInView}
-          renderItem={renderItem}
-          customRenderItem={renderGroupTitle}
-          onControlTypeChange={onControlTypeChange}
-        ></VirtualScrollList>
-      </Spin>
+      <VirtualScrollList
+        virtualRef={virtualRef}
+        data={data}
+        keygen={keygen}
+        tag={'ul'}
+        groupKey={groupKey}
+        tagClassName={styles.virtualList}
+        height={height}
+        onScroll={handleVirtualScroll}
+        lineHeight={lineHeight}
+        rowsInView={itemsInView}
+        renderItem={renderItem}
+        customRenderItem={renderGroupTitle}
+        onControlTypeChange={onControlTypeChange}
+      ></VirtualScrollList>
     );
   };
 
