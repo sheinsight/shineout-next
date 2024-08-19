@@ -69,6 +69,15 @@ const Scroll = (props: scrollProps) => {
     lineHeight: 0,
   };
 
+  const extractHeightValue = (num: number | string) => {
+    if (util.isNumber(num)) return num;
+    const match = num.match(/(\d+)/);
+    if (match) {
+      return parseInt(match[0], 10);
+    }
+    return undefined;
+  };
+
   const handleScroll = usePersistFn((e: React.UIEvent) => {
     const { onScrollToBottom } = props;
 
@@ -76,8 +85,11 @@ const Scroll = (props: scrollProps) => {
     let { scrollLeft, scrollTop } = target;
 
     if (props.height && onScrollToBottom) {
-      const touchBottom = target.scrollHeight === scrollTop + props.height;
-      if (touchBottom) onScrollToBottom();
+      const realHeight = extractHeightValue(props.height);
+      if (realHeight !== undefined) {
+        const touchBottom = target.scrollHeight === scrollTop + realHeight;
+        if (touchBottom) onScrollToBottom();
+      }
     }
 
     const maxY = target.scrollHeight - target.clientHeight;
