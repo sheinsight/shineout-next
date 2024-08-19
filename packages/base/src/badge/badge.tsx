@@ -1,13 +1,20 @@
 // import { } from '@sheinx/hooks';
-// import classNames from 'classnames';
 import React from 'react';
-import { BadgeProps } from './badge.type';
+import classNames from 'classnames';
+import { BadgeProps, BadgeClasses } from './badge.type';
 
 const Badge = (props: BadgeProps) => {
-    const { } = props
-    // ...
+  const { jssStyle, children, className, count } = props;
+  const badgeStyle = jssStyle?.badge?.() || ({} as BadgeClasses);
 
-    return <>Badge.tsx</>;
-}
+  const rootClass = classNames(badgeStyle.badge, className);
+
+  return (
+    <span className={rootClass}>
+      {children}
+      <sup>{count}</sup>
+    </span>
+  );
+};
 
 export default Badge;
