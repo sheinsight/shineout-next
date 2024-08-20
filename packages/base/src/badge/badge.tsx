@@ -12,7 +12,7 @@ const Badge = (props: BadgeProps) => {
   return (
     <span className={rootClass}>
       {children}
-      <sup>{count}</sup>
+      <sup className={badgeStyle.count}>{count}</sup>
     </span>
   );
 };

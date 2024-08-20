@@ -5,13 +5,13 @@
  *    --
  */
 import React from 'react';
-import { Badge, Tag } from 'shineout';
+import { Badge } from 'shineout';
 
 export default () => {
   return (
     <div>
       <Badge count={10}>
-        <Tag color='info'>消息通知</Tag>
+        <div style={{ height: 32, width: 32, borderRadius: 4, background: '#ebebeb' }}></div>
       </Badge>
     </div>
   );

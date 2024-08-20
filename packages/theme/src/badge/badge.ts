@@ -4,7 +4,9 @@
 import { BadgeTokens } from './type';
 
 const badgeTokens: BadgeTokens = {
-    badgeFontSize: '14/regular',
+  badgeCountPaddingX: 'spacing-6',
+  badgeCountHeight: 'Size-10',
+  badgeFontSize: '14/regular',
 };
 
 export default badgeTokens;

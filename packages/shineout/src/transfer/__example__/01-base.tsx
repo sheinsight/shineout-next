@@ -16,5 +16,9 @@ for (let i = 0; i < 10; i++) {
 }
 
 export default () => {
-  return <Transfer data={data} keygen='id' listHeight={232} renderItem='name'></Transfer>;
+  return (
+    <div style={{ width: 600 }}>
+      <Transfer data={data} keygen='id' listHeight={232} renderItem='name'></Transfer>
+    </div>
+  );
 };

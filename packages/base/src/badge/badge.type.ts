@@ -4,6 +4,7 @@ import { CommonType } from '../common/type';
 
 export interface BadgeClasses {
   badge: string;
+  count: string;
 }
 
 export interface BadgeProps extends Pick<CommonType, 'className' | 'style'> {
