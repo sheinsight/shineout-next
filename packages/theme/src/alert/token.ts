@@ -52,10 +52,7 @@ const alertTokenExtraValue = {
   title: {
     font: { size: 'Font-16', weight: 'Weight-medium' },
     margin: { y: 'Spacing-4' },
-    icon: {
-      width: 'Size-10',
-      height: 'Size-12',
-    },
+    icon: { width: 'Size-10', height: 'Size-12' },
   },
   close: { font: { color: 'Neutral-text-4' }, hover: { color: 'Neutral-text-5' } },
   message: { font: { color: '' }, hover: { color: 'Neutral-fill-2' } },

@@ -20,6 +20,7 @@ export * as Grid from './grid/interface';
 export * as Icon from './icon/interface';
 export * as Image from './image/interface';
 export * as Input from './input/interface';
+export * as Link from './link/interface';
 export * as List from './list/interface';
 export * as Menu from './menu/interface';
 export * as Message from './message/interface';

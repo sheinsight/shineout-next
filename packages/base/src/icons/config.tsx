@@ -58,6 +58,9 @@ const config = {
     Show: Icons.Display,
     Close: Icons.PcCloseCircleFill,
   },
+  link: {
+    prefixIcon: Icons.Link,
+  },
   menu: {
     CollapseArrow: Icons.ArrowDown,
     FrontSolidArrowDown: Icons.PcArrowFillDown,
