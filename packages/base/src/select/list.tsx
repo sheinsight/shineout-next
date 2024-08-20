@@ -12,14 +12,12 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     jssStyle,
     data,
     size,
-    header,
     keygen,
     datum,
     multiple,
     groupKey,
     itemsInView = 10,
     lineHeight: lineHeightProp,
-    loading,
     controlType,
     hideCreateOption,
     optionListRef,
@@ -135,14 +133,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     }
   });
 
-  const renderLoading = () => {
-    return <div>loading</div>;
-  };
-
-  const renderHeader = () => {
-    return <div>header</div>;
-  };
-
   const renderItem = (item: DataItem, index: number, key: KeygenResult) => {
     return (
       <React.Fragment key={key}>
@@ -173,8 +163,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   };
 
   const renderList = () => {
-    if (loading) return renderLoading();
-
     return (
       <VirtualScrollList
         virtualRef={virtualRef}
@@ -205,7 +193,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
 
   return (
     <div className={rootClass}>
-      {header && renderHeader()}
       {renderList()}
     </div>
   );
