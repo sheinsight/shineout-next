@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
-import Input from './result-input';
+import ResultInput from './result-input';
 import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
@@ -43,7 +43,14 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onResultItemClick,
     data,
   } = props;
-  const value = (isArray(valueProp) ? valueProp : [valueProp]) as Value;
+
+  const value = (
+    [null, undefined].includes(valueProp as any)
+      ? []
+      : Array.isArray(valueProp)
+      ? valueProp
+      : [valueProp]
+  ) as Value;
 
   const [more, setMore] = useState(-1);
   const [shouldResetMore, setShouldResetMore] = useState(false);
@@ -113,18 +120,14 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderInput = () => {
-    let placeholder2 = empty ? placeholder : '';
+    let _placeholder = empty ? placeholder : '';
     if (!multiple && valueProp && valueProp !== 0) {
       const result = getDataByValues(value);
-      // 获取合法的 content
-      const content = renderResultContent(result[0]);
-      if (typeof content === 'string') {
-        placeholder2 = content;
-      }
+      _placeholder = renderResultContent(result[0]);
     }
     return (
       <React.Fragment key='input'>
-        <Input
+        <ResultInput
           isEmpty={empty}
           classes={props.classes}
           value={filterText}
@@ -139,9 +142,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           convertBr={convertBr}
           onInputBlur={onInputBlur}
           onClearCreatedData={onClearCreatedData!}
-          placeholder={placeholder2}
+          placeholder={_placeholder}
           disabled={util.isFunc(disabled) ? false : !!disabled}
-        ></Input>
+        ></ResultInput>
       </React.Fragment>
     );
   };
@@ -241,7 +244,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const getValueArr = (v: any) => {
-    return isArray(v) ? v : [v];
+    return (isArray(v) ? v : [v]).filter((v) => v !== undefined && v !== null);
   };
 
   const renderMultipleResult = () => {

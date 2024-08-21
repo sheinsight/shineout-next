@@ -1,7 +1,7 @@
 import { useDatePickerFormat, useInputAble, usePersistFn, usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { AbsoluteList } from '../absolute-list';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { DatePickerProps, DatePickerValueType } from './date-picker.type';
 import AnimationList from '../animation-list';
 import Picker from './picker';
@@ -33,6 +33,11 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     adjust = true,
   } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
+  const inputRef = useRef<{
+    inputRef: HTMLInputElement | null;
+  }>({
+    inputRef: null,
+  });
 
   const styles = jssStyle?.datePicker?.();
   const isRTL = direction === 'rtl';
@@ -135,6 +140,11 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     props.onBlur?.(e);
   });
 
+  const handleClose = () => {
+    closePop();
+    inputRef.current.inputRef?.blur();
+  };
+
   const handleResultClick = usePersistFn(() => {
     if (disabledStatus === 'all') return;
     openPop();
@@ -155,6 +165,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
           activeIndex={activeIndex}
           type={type}
           range={range}
+          onRef={inputRef}
           inputable={props.inputable && !props.formatResult}
           disabledLeft={disabledStatus === 'left'}
           disabledRight={disabledStatus === 'right'}
@@ -194,7 +205,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             if (open) {
-              closePop();
+              handleClose();
             } else {
               openPop();
             }
@@ -273,7 +284,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
             options={options}
             disabled={disabled}
             jssStyle={jssStyle}
-            closePop={closePop}
+            closePop={handleClose}
             defaultTime={props.defaultTime}
             min={props.min}
             max={props.max}

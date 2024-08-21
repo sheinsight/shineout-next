@@ -19,6 +19,7 @@ export * from './icon';
 export * from './image';
 export * from './inner-title';
 export * from './input';
+export * from './link';
 export * from './list';
 export * from './menu';
 export * from './message';

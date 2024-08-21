@@ -20,6 +20,6 @@ export interface ResultInputProps extends Pick<CommonType, 'style' | 'className'
   convertBr?: string | ((text: string) => string);
   placeholder?: string;
   isEmpty?: boolean;
-  classes: { inputMirror: string };
+  classes: { inputMirror: string, inputPlaceholder: string; };
   disabled?: boolean;
 }

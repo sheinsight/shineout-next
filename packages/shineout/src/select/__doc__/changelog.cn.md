@@ -1,5 +1,5 @@
 ## 3.4.0-beta.1
-2024-08-01
+2024-08-20
 
 ### 🆕 Feature
 
@@ -7,8 +7,11 @@
 - 新增 `threshold` 属性，支持设置滚动加载阈值 ([#610](https://github.com/sheinsight/shineout-next/pull/594))
 - 新增 `trigger` 属性，支持更改展开下拉面板的触发方式 ([#610](https://github.com/sheinsight/shineout-next/pull/594))
 
-## 3.3.3-beta.2
-2024-08-01
+## 3.3.3
+2024-08-15
+
+### 🆕 Feature
+- 支持 `Select` 单选搜索时，展示非string类型的值(renderItem返回的结果) ([#605](https://github.com/sheinsight/shineout-next/pull/605))
 
 ### 🐞 BugFix
 

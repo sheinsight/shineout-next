@@ -415,6 +415,13 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginTop: token.selectPlaceholderMarginY,
     marginBottom: token.selectPlaceholderMarginY,
   },
+  inputPlaceholder: {
+    pointerEvents: 'none',
+    opacity: 0.5,
+    inset: 0,
+    position: 'absolute',
+    padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
+  },
   inputMirror: {
     position: 'absolute',
     left: 0,
