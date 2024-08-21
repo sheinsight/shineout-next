@@ -136,6 +136,16 @@ const selectStyle: JsStyles<SelectClassType> = {
       color: token.selectDisabledPlaceholderColor,
     },
   },
+  triggerHover: {
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      right: 0,
+      left: 0,
+      height: 4,
+      bottom: -4,
+    },
+  },
   popover: {},
   ...resetWrapper,
   resultWrapper: {

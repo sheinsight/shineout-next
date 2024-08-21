@@ -11,6 +11,11 @@ const TransferStyle: JsStyles<TransferClass> = {
     color: Token.transferFontColor,
     fontSize: Token.transferFontSize,
   },
+  equalPanelWidth: {
+    '& $view': {
+      flex: 1,
+    },
+  },
   small: {
     '& $operations': { '& svg': { width: 12 } },
     '& $header': {
@@ -187,7 +192,14 @@ const TransferStyle: JsStyles<TransferClass> = {
       marginRight: 0,
     },
   },
-  checkbox: {},
+  checkbox: {
+    '&>[data-soui-role="desc"]': {
+      flex: 1,
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
+    },
+  },
   empty: {
     height: '100%',
     display: 'flex',
