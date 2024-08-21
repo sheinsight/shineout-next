@@ -2,10 +2,10 @@
 2024-08-21
 
 ### 🆕 Feature
-- 支持 `Select` 的树形数据展开时，弹出层的位置自适应
+- 支持 `Select` 的树形数据展开时，弹出层的位置自适应([#614](https://github.com/sheinsight/shineout-next/pull/614))
 
 ### 🐞 BugFix
-- 修复 `Select` 的树形数据展开时，设置的autoAdapt(下拉列表宽度根据内容自由展开)不生效的问题
+- 修复 `Select` 的树形数据展开时，设置的autoAdapt(下拉列表宽度根据内容自由展开)不生效的问题([#614](https://github.com/sheinsight/shineout-next/pull/614))
 
 
 ## 3.3.3
