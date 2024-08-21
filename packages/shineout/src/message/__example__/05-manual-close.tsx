@@ -5,14 +5,14 @@
  *    -- Message return close func async
  */
 import React from 'react';
-import { Button, Message } from 'shineout';
+import { Button, Link, Message } from 'shineout';
 
 const App: React.FC = () => {
   const msg = async () => {
     const close = await Message.success(
       <div>
         I will always show until &nbsp;
-        <a onClick={() => close()}>manually closed</a>
+        <Link onClick={() => close()}>manually closed</Link>
       </div>,
       0,
       {
