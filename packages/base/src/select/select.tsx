@@ -33,7 +33,7 @@ const preventDefault = (e: React.MouseEvent) => {
 
 function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const props = useWithFormConfig(props0);
-  const { locale } = useConfig();
+  const { locale, direction } = useConfig();
   const {
     jssStyle,
     className,
@@ -108,7 +108,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
   const showInput = hasFilter || util.isFunc(onCreateProp) || onCreateProp === true;
 
-  const positionProp = props.position || 'auto';
+  const positionProp = props.position || (direction === 'rtl' ? 'bottom-right' : 'bottom-left');
 
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
