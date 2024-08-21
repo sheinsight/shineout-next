@@ -4,7 +4,6 @@ import useClickAway from '../../common/use-click-away';
 import { getPosition } from '../../utils/position';
 import usePersistFn from '../../common/use-persist-fn';
 import popupContext from './popup-context';
-import {addResizeObserver} from '../../utils/dom/element';
 
 const usePopup = (props: BasePopupProps) => {
   const {
@@ -69,19 +68,6 @@ const usePopup = (props: BasePopupProps) => {
     }
     setOpenState(!!props.open);
   }, [props.open]);
-
-  useEffect(() => {
-    if(!props.open) return
-    if(!popupRef.current) return
-
-    const cancelObserver = addResizeObserver(popupRef.current, updatePosition, {
-      direction: true,
-    });
-
-    return () => {
-      cancelObserver();
-    };
-  }, [props.open, popupRef.current]);
 
   // const getPopUpHeight = () => {
   //   let height = 0;

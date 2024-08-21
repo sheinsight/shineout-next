@@ -82,7 +82,7 @@ export default () => {
                     },
                   ],
                 },
-              ]
+              ],
             },
             { id: '1-1-2', title: 'node 1-1-2' },
           ],
@@ -102,10 +102,16 @@ export default () => {
 
   const renderItem: SelectProps['renderItem'] = (d) => d.title;
 
-  const [value, setValue] = React.useState<string | undefined>('1-1-1');
+  const [value, setValue] = React.useState<string | undefined>('1');
 
   return (
-    <div style={{position: 'absolute', bottom: 0, right: 0,}}>
+    <div
+      style={{
+        position: 'absolute',
+        bottom: 100,
+        right: 50,
+      }}
+    >
       <Select
         width={260}
         childrenKey='children'
@@ -117,11 +123,9 @@ export default () => {
         renderItem={renderItem}
         clearable
         autoAdapt
-        expanded={['1', '1-1', '1-1-1', '1-1-1-1', '1-1-1-1-1']}
+        // expanded={['1', '1-1', '1-1-1', '1-1-1-1', '1-1-1-1-1']}
         value={value}
         onChange={setValue}
-        style={{float: 'right'}}
-        // position="auto"
       />
     </div>
   );
