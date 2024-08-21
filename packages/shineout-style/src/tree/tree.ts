@@ -153,6 +153,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     fontWeight: Token.treeFontWeight,
     paddingTop: Token.treeTextPaddingY,
     paddingBottom: Token.treeTextPaddingY,
+    whiteSpace: 'nowrap',
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,
