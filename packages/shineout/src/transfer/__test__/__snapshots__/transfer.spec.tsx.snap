@@ -29,6 +29,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -90,6 +91,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-1
                       </span>
@@ -122,6 +124,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-2
                       </span>
@@ -154,6 +157,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-3
                       </span>
@@ -186,6 +190,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-4
                       </span>
@@ -218,6 +223,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-5
                       </span>
@@ -250,6 +256,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-6
                       </span>
@@ -282,6 +289,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-7
                       </span>
@@ -314,6 +322,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-8
                       </span>
@@ -346,6 +355,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-9
                       </span>
@@ -378,6 +388,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-10
                       </span>
@@ -465,6 +476,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -727,6 +739,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -788,6 +801,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-1
                       </span>
@@ -820,6 +834,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-2
                       </span>
@@ -852,6 +867,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-3
                       </span>
@@ -884,6 +900,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-4
                       </span>
@@ -916,6 +933,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-5
                       </span>
@@ -948,6 +966,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-6
                       </span>
@@ -980,6 +999,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-7
                       </span>
@@ -1012,6 +1032,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-8
                       </span>
@@ -1044,6 +1065,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-9
                       </span>
@@ -1076,6 +1098,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-10
                       </span>
@@ -1108,6 +1131,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-11
                       </span>
@@ -1140,6 +1164,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-12
                       </span>
@@ -1172,6 +1197,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-13
                       </span>
@@ -1204,6 +1230,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-14
                       </span>
@@ -1236,6 +1263,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-15
                       </span>
@@ -1268,6 +1296,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-16
                       </span>
@@ -1300,6 +1329,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-17
                       </span>
@@ -1332,6 +1362,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-18
                       </span>
@@ -1364,6 +1395,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-19
                       </span>
@@ -1396,6 +1428,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-20
                       </span>
@@ -1483,6 +1516,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -1746,6 +1780,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
           </span>
           <span
             class="soui-checkbox-desc"
+            data-soui-role="desc"
           >
             <span
               class="soui-transfer-count"
@@ -1807,6 +1842,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-1
                         </span>
@@ -1839,6 +1875,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-2
                         </span>
@@ -1871,6 +1908,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-3
                         </span>
@@ -1903,6 +1941,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-4
                         </span>
@@ -1935,6 +1974,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-5
                         </span>
@@ -1967,6 +2007,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-6
                         </span>
@@ -1999,6 +2040,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-7
                         </span>
@@ -2031,6 +2073,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-8
                         </span>
@@ -2063,6 +2106,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-9
                         </span>
@@ -2095,6 +2139,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-10
                         </span>
@@ -2182,6 +2227,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
           </span>
           <span
             class="soui-checkbox-desc"
+            data-soui-role="desc"
           >
             <span
               class="soui-transfer-count"
@@ -2451,6 +2497,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
             </span>
             <span
               class="soui-checkbox-desc"
+              data-soui-role="desc"
             >
               <span
                 class="soui-transfer-count"
@@ -2514,6 +2561,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-1
                           </span>
@@ -2546,6 +2594,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-2
                           </span>
@@ -2578,6 +2627,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-3
                           </span>
@@ -2610,6 +2660,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-4
                           </span>
@@ -2642,6 +2693,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-5
                           </span>
@@ -2674,6 +2726,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-6
                           </span>
@@ -2706,6 +2759,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-7
                           </span>
@@ -2738,6 +2792,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-8
                           </span>
@@ -2770,6 +2825,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-9
                           </span>
@@ -2802,6 +2858,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                           </span>
                           <span
                             class="soui-checkbox-desc"
+                            data-soui-role="desc"
                           >
                             name-10
                           </span>
@@ -2892,6 +2949,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
             </span>
             <span
               class="soui-checkbox-desc"
+              data-soui-role="desc"
             >
               <span
                 class="soui-transfer-count"
@@ -3175,6 +3233,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -3258,6 +3317,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-1
                       </span>
@@ -3290,6 +3350,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-2
                       </span>
@@ -3322,6 +3383,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-3
                       </span>
@@ -3354,6 +3416,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-4
                       </span>
@@ -3386,6 +3449,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-5
                       </span>
@@ -3418,6 +3482,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-6
                       </span>
@@ -3450,6 +3515,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-7
                       </span>
@@ -3482,6 +3548,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-8
                       </span>
@@ -3514,6 +3581,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-9
                       </span>
@@ -3546,6 +3614,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-10
                       </span>
@@ -3633,6 +3702,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -3917,6 +3987,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -4006,6 +4077,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-1
                       </span>
@@ -4038,6 +4110,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-2
                       </span>
@@ -4070,6 +4143,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-3
                       </span>
@@ -4102,6 +4176,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-4
                       </span>
@@ -4134,6 +4209,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-5
                       </span>
@@ -4166,6 +4242,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-6
                       </span>
@@ -4198,6 +4275,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-7
                       </span>
@@ -4230,6 +4308,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-8
                       </span>
@@ -4262,6 +4341,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-9
                       </span>
@@ -4294,6 +4374,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-10
                       </span>
@@ -4381,6 +4462,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -4672,6 +4754,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -4733,6 +4816,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-1
                       </span>
@@ -4765,6 +4849,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-2
                       </span>
@@ -4797,6 +4882,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-3
                       </span>
@@ -4829,6 +4915,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-4
                       </span>
@@ -4861,6 +4948,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-5
                       </span>
@@ -4893,6 +4981,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-6
                       </span>
@@ -4925,6 +5014,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-7
                       </span>
@@ -4957,6 +5047,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-8
                       </span>
@@ -4989,6 +5080,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-9
                       </span>
@@ -5021,6 +5113,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-10
                       </span>
@@ -5117,6 +5210,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -5388,6 +5482,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -5449,6 +5544,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-1
                       </span>
@@ -5481,6 +5577,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-2
                       </span>
@@ -5513,6 +5610,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-3
                       </span>
@@ -5545,6 +5643,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-4
                       </span>
@@ -5577,6 +5676,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-5
                       </span>
@@ -5609,6 +5709,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-6
                       </span>
@@ -5641,6 +5742,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-7
                       </span>
@@ -5673,6 +5775,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-8
                       </span>
@@ -5705,6 +5808,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-9
                       </span>
@@ -5737,6 +5841,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-10
                       </span>
@@ -5832,6 +5937,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -6095,6 +6201,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
           </span>
           <span
             class="soui-checkbox-desc"
+            data-soui-role="desc"
           >
             <span
               class="soui-transfer-count"
@@ -6156,6 +6263,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-1
                         </span>
@@ -6188,6 +6296,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-2
                         </span>
@@ -6220,6 +6329,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-3
                         </span>
@@ -6252,6 +6362,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-4
                         </span>
@@ -6284,6 +6395,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-5
                         </span>
@@ -6316,6 +6428,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-6
                         </span>
@@ -6348,6 +6461,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-7
                         </span>
@@ -6380,6 +6494,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-8
                         </span>
@@ -6412,6 +6527,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-9
                         </span>
@@ -6444,6 +6560,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-10
                         </span>
@@ -6531,6 +6648,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
           </span>
           <span
             class="soui-checkbox-desc"
+            data-soui-role="desc"
           >
             <span
               class="soui-transfer-count"
@@ -6794,6 +6912,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
         </span>
         <span
           class="soui-checkbox-desc"
+          data-soui-role="desc"
         >
           <span
             class="soui-transfer-count"
@@ -6853,6 +6972,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-1
                       </span>
@@ -6885,6 +7005,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-2
                       </span>
@@ -6917,6 +7038,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-3
                       </span>
@@ -6949,6 +7071,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-4
                       </span>
@@ -6981,6 +7104,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-5
                       </span>
@@ -7013,6 +7137,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-6
                       </span>
@@ -7045,6 +7170,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                       </span>
                       <span
                         class="soui-checkbox-desc"
+                        data-soui-role="desc"
                       >
                         name-7
                       </span>
@@ -7318,6 +7444,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
           </span>
           <span
             class="soui-checkbox-desc"
+            data-soui-role="desc"
           >
             <span
               class="soui-transfer-count"
@@ -7379,6 +7506,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-1
                         </span>
@@ -7411,6 +7539,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-2
                         </span>
@@ -7443,6 +7572,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-3
                         </span>
@@ -7475,6 +7605,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-4
                         </span>
@@ -7507,6 +7638,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-5
                         </span>
@@ -7539,6 +7671,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-6
                         </span>
@@ -7571,6 +7704,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-7
                         </span>
@@ -7603,6 +7737,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-8
                         </span>
@@ -7635,6 +7770,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-9
                         </span>
@@ -7667,6 +7803,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                         </span>
                         <span
                           class="soui-checkbox-desc"
+                          data-soui-role="desc"
                         >
                           name-10
                         </span>
@@ -7754,6 +7891,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
           </span>
           <span
             class="soui-checkbox-desc"
+            data-soui-role="desc"
           >
             <span
               class="soui-transfer-count"
