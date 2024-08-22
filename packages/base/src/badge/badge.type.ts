@@ -4,7 +4,23 @@ import { CommonType } from '../common/type';
 
 export interface BadgeClasses {
   badge: string;
+  textBadge: string;
   count: string;
+  custom: string;
+  number: string;
+  small: string;
+  dot: string;
+  textDot: string;
+  zoom: string;
+  status: string;
+  text: string;
+  singleWord: string;
+  multipleWords: string;
+  warning: string;
+  success: string;
+  error: string;
+  default: string;
+  processing: string;
 }
 
 export interface BadgeProps extends Pick<CommonType, 'className' | 'style'> {
@@ -47,11 +63,21 @@ export interface BadgeProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn 当数值为 0 时，是否展示 Badge
    * * @default false
    */
-  showZero?: number;
+  showZero?: boolean;
   /**
    * @en Whether to show Badge when the number is 0
    * @cn 徽标状态
    * * @default false
    */
   status?: 'success' | 'processing' | 'default' | 'error' | 'warning';
+  /**
+   * @en Status point text, only valid after configuring the status property
+   * @cn 状态点文本，仅在配置了 status 属性后生效
+   */
+  text?: React.ReactNode;
+  /**
+   * @en Size, only valid in non-dot mode, supports two sizes: small and default
+   * @cn 尺寸，仅在非 dot 模式下生效，支持 small 和 default 两种尺寸
+   */
+  size?: 'small' | 'default';
 }
