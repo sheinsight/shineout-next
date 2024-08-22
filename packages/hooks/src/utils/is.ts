@@ -85,6 +85,10 @@ export const isLink = (el: unknown): el is React.ReactElement => {
   return false;
 };
 
+export function isNamedComponent(type: any): type is React.ForwardRefExoticComponent<unknown> {
+  return (isObject(type) || isFunc(type)) && type.hasOwnProperty('displayName');
+}
+
 export const isMacOS = (): boolean =>
   isBrowser() && /macintosh|mac os x/i.test(navigator.userAgent);
 
