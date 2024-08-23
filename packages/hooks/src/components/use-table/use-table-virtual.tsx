@@ -20,7 +20,13 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const [startIndex, setStartIndex] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
 
-  const rowsInView = props.rowsInView === 0 ? props.data.length : props.rowsInView;
+  let rowsInView = props.rowsInView === 0 ? props.data.length : props.rowsInView;
+
+  const withoutVerticalScroll = props.scrollRef.current && props.scrollRef.current?.scrollWidth === props.scrollRef.current?.clientWidth;
+
+  if(withoutVerticalScroll){
+    rowsInView = props.data.length;
+  }
 
   const sleft = props.scrollLeft !== undefined ? props.scrollLeft : innerLeft;
 
