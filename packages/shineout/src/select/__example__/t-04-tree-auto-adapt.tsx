@@ -1,7 +1,7 @@
 /**
- * cn - 树形数据
+ * cn - 树形数据自动撑宽下拉框容器
  *    --
- * en - Tree Data
+ * en - Tree data auto adapt dropdown width
  *    --
  */
 import React from 'react';
@@ -82,7 +82,7 @@ export default () => {
                     },
                   ],
                 },
-              ]
+              ],
             },
             { id: '1-1-2', title: 'node 1-1-2' },
           ],
@@ -102,8 +102,16 @@ export default () => {
 
   const renderItem: SelectProps['renderItem'] = (d) => d.title;
 
+  const [value, setValue] = React.useState<string | undefined>('1');
+
   return (
-    <div>
+    <div
+      style={{
+        position: 'absolute',
+        bottom: 100,
+        right: 50,
+      }}
+    >
       <Select
         width={260}
         childrenKey='children'
@@ -114,6 +122,10 @@ export default () => {
         prediction={prediction}
         renderItem={renderItem}
         clearable
+        autoAdapt
+        // expanded={['1', '1-1', '1-1-1', '1-1-1-1', '1-1-1-1-1']}
+        value={value}
+        onChange={setValue}
       />
     </div>
   );

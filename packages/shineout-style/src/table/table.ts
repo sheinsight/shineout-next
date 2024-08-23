@@ -237,7 +237,7 @@ const tableStyle: JsStyles<TableClassType> = {
         content: '""',
         position: 'absolute',
         top: 0,
-        bottom: 0,
+        bottom: -1,
         width: '5px',
       },
       '&[dir=ltr]::after': {
@@ -257,6 +257,7 @@ const tableStyle: JsStyles<TableClassType> = {
       },
     },
   },
+
   floatRight: {
     '& $cellFixedLast$cellFixedRight': {
       '&::before': {

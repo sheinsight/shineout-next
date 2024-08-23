@@ -119,22 +119,6 @@ const treeStyle: JsStyles<TreeClassType> = {
     cursor: 'pointer',
     padding: `0 ${Token.treePaddingX}`,
     borderRadius: Token.treeContentBorderRadius,
-    position: 'relative',
-    '&[data-expanded="true"]::before': {
-      content: '""',
-      position: 'absolute',
-      top: 24,
-      bottom: 0,
-      left: -12,
-      width: 1,
-      background: '#ebebeb',
-    },
-    '&[dir=ltr][data-expanded="true"]::before': {
-      left: -12,
-    },
-    '&[dir=rtl][data-expanded="true"]::before': {
-      right: -12,
-    },
 
     '$contentDisabled &': {
       '& $text': {
@@ -169,6 +153,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     fontWeight: Token.treeFontWeight,
     paddingTop: Token.treeTextPaddingY,
     paddingBottom: Token.treeTextPaddingY,
+    whiteSpace: 'nowrap',
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,
