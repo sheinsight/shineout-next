@@ -5,8 +5,7 @@
  *    -- scroll-y-debug
  */
 import React from 'react';
-import { Table, TYPE } from 'shineout';
-import { user } from '@sheinx/mock';
+import { Table } from 'shineout';
 
 interface TableRowData {
   id: number;
@@ -3933,6 +3932,7 @@ const App: React.FC = () => (
         sticky={{ top: 0, css: true }}
         defaultTreeExpandKeys={flattenArray(data).map((d) => d.uuid)}
       />
+      {/* <p>占位内容……</p>
       <p>占位内容……</p>
       <p>占位内容……</p>
       <p>占位内容……</p>
@@ -3943,8 +3943,7 @@ const App: React.FC = () => (
       <p>占位内容……</p>
       <p>占位内容……</p>
       <p>占位内容……</p>
-      <p>占位内容……</p>
-      <p>占位内容……</p>
+      <p>占位内容……</p> */}
     </div>
   </>
 );
