@@ -341,7 +341,7 @@ describe('Tabs[Collapsible/defaultCollapsed]', () => {
   // TODO: test collapsed time
 });
 describe('Tabs[Children]', () => {
-  test('should render when set children is not panel', () => {
+  test('should not render when set children is not panel', () => {
     const { container } = render(
       <Tabs>
         <div className='demo'>demoA</div>
