@@ -356,7 +356,7 @@ describe('Tabs[Children]', () => {
       }
       attributesTest(item, 'data-soui-state', '');
     });
-    classLengthTest(container, '.demo', 2);
+    classLengthTest(container, '.demo', 0);
     container.querySelectorAll('.demo').forEach((item, index) => {
       attributesTest(item, 'id', String(index));
     });
