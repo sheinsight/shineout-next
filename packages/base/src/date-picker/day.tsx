@@ -160,6 +160,8 @@ const Day = (props: DayProps) => {
             {props.showSelNow && props.type === 'date' && (
               <Button
                 size={'small'}
+                mode='text'
+                type="primary"
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
                 onClick={selNow}
@@ -170,6 +172,8 @@ const Day = (props: DayProps) => {
             {props.showSelNow && props.type === 'datetime' && (
               <Button
                 size={'small'}
+                mode='text'
+                type="primary"
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
                 onClick={selNow}
