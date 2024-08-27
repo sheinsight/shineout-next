@@ -287,9 +287,9 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Set Position can control the different position of DatePicker
    * @cn 弹出框位置
+   * @default auto
    */
-  // position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-  position?: 'auto' | 'bottom-left' | 'top-left';
+  position?: 'auto' | 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
 
   /**
    * @en Option columns.

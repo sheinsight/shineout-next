@@ -10,6 +10,7 @@ import {
   UnMatchedData,
   ObjectKey,
   useTiled,
+  KeygenResult,
 } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { SelectPropsBase, OptionListRefType } from './select.type';
@@ -623,6 +624,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return <List {...listProps}></List>;
   };
 
+  const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState('');
+  // 当树形数据展开时，需要更新 AbsoluteList 的位置
+  const onExpandWrap = usePersistFn((value: KeygenResult[]) => {
+    onExpand?.(value);
+    setAbsoluteListUpdateKey(value?.join(','));
+  })
+
   const renderTreeList = () => {
     return (
       <TreeList<DataItem, Value>
@@ -635,7 +643,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         height={height as number}
         defaultExpandAll={defaultExpandAll}
         defaultExpanded={defaultExpanded}
-        onExpand={onExpand}
+        onExpand={onExpandWrap}
         childrenKey={childrenKey}
         closePop={closePop}
         renderItem={renderItem}
@@ -737,6 +745,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         popupGap={4}
         popupElRef={popupRef}
         parentElRef={targetRef}
+        updateKey={absoluteListUpdateKey}
       >
         <AnimationList
           onRef={popupRef}

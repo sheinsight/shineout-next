@@ -1,3 +1,18 @@
+## 3.3.4
+2024-08-21
+
+### 🆕 Feature
+- 支持 `Select` 的树形数据展开时，弹出层的位置自适应([#614](https://github.com/sheinsight/shineout-next/pull/614))
+
+### 🐞 BugFix
+- 修复 `Select` 的树形数据展开时，设置的autoAdapt(下拉列表宽度根据内容自由展开)不生效的问题([#614](https://github.com/sheinsight/shineout-next/pull/614))
+
+
+## 3.3.3
+2024-08-15
+
+### 🆕 Feature
+- 支持 `Select` 单选搜索时，展示非string类型的值(renderItem返回的结果) ([#605](https://github.com/sheinsight/shineout-next/pull/605))
 ## 3.4.0-beta.1
 2024-08-20
 

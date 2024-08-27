@@ -11,7 +11,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     jssStyle,
     data,
     size,
-    header,
     keygen,
     datum,
     multiple,
@@ -182,8 +181,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   };
 
   const renderList = () => {
-    if (loading) return renderLoading();
-
     return (
       <VirtualScrollList
         virtualRef={virtualRef}
@@ -215,7 +212,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
 
   return (
     <div className={rootClass}>
-      {header && renderHeader()}
       {renderList()}
     </div>
   );
