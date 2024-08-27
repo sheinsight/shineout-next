@@ -231,6 +231,14 @@ const tableStyle: JsStyles<TableClassType> = {
       background: `${token.tableTbodyHoverBackgroundColor}`,
     },
   },
+  rowHover: {
+    '& td': {
+      transition: 'background-color 0.2s',
+    },
+    '&&:hover td': {
+      background: `${token.tableTbodyHoverBackgroundColor}`,
+    },
+  },
   floatLeft: {
     '& $cellFixedLast$cellFixedLeft': {
       '&::after': {

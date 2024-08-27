@@ -49,6 +49,7 @@ interface TrProps
   treeColumnsName?: string;
   originKey: string | number;
   isCellHover: UseTableRowResult['isCellHover'];
+  hover?: boolean;
   handleCellHover: UseTableRowResult['handleCellHover'];
   hoverIndex: UseTableRowResult['hoverIndex'];
   isSelect: boolean;
@@ -250,6 +251,7 @@ const Tr = (props: TrProps) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
     const lastRowIndex = data.length - 1;
+    const isSomeTdHasRowSpan = data?.some((item) => item && item.rowSpan > 1);
     for (let i = 0; i < cols.length; i++) {
       if (skip > 0) {
         skip--;
@@ -264,12 +266,8 @@ const Tr = (props: TrProps) => {
             key={col.key}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
-            onMouseEnter={() => {
-              props.handleCellHover(props.rowIndex, data[i].rowSpan);
-            }}
-            onMouseLeave={() => {
-              props.handleCellHover(-1, 0);
-            }}
+            onMouseEnter={props.hover && isSomeTdHasRowSpan ? () => { props.handleCellHover(props.rowIndex, data[i].rowSpan) } : undefined}
+            onMouseLeave={props.hover && isSomeTdHasRowSpan ? () => { props.handleCellHover(-1, 0); } : undefined}
             className={classNames(
               col.className,
               col.type === 'checkbox' && tableClasses?.cellCheckbox,
@@ -279,7 +277,7 @@ const Tr = (props: TrProps) => {
               col.align === 'right' && tableClasses?.cellAlignRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
-              props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,
+              (data[i].rowSpan > 1) && props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
             dir={config.direction}
@@ -352,6 +350,7 @@ const Tr = (props: TrProps) => {
           props?.rowClassName?.(props.rawData, props.rowIndex),
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
           props.isSelect && tableClasses?.rowChecked,
+          props.hover && tableClasses?.rowHover
         )}
         {...props.rowEvents}
         onClick={handleRowClick}
