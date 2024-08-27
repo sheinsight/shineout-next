@@ -251,7 +251,7 @@ const Tr = (props: TrProps) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
     const lastRowIndex = data.length - 1;
-    const isSomeTdHasRowSpan = data?.some((item) => item === null);
+    const hasSiblingRowSpan = data?.some((item) => item === null);
     for (let i = 0; i < cols.length; i++) {
       if (skip > 0) {
         skip--;
@@ -266,8 +266,8 @@ const Tr = (props: TrProps) => {
             key={col.key}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
-            onMouseEnter={props.hover && isSomeTdHasRowSpan ? () => { props.handleCellHover(props.rowIndex, data[i].rowSpan) } : undefined}
-            onMouseLeave={props.hover && isSomeTdHasRowSpan ? () => { props.handleCellHover(-1, 0); } : undefined}
+            onMouseEnter={props.hover && hasSiblingRowSpan ? () => { props.handleCellHover(props.rowIndex, data[i].rowSpan) } : undefined}
+            onMouseLeave={props.hover && hasSiblingRowSpan ? () => { props.handleCellHover(-1, 0); } : undefined}
             className={classNames(
               col.className,
               col.type === 'checkbox' && tableClasses?.cellCheckbox,
