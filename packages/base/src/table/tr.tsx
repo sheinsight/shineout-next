@@ -251,7 +251,7 @@ const Tr = (props: TrProps) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
     const lastRowIndex = data.length - 1;
-    const isSomeTdHasRowSpan = data?.some((item) => item && item.rowSpan > 1);
+    const isSomeTdHasRowSpan = data?.some((item) => item === null);
     for (let i = 0; i < cols.length; i++) {
       if (skip > 0) {
         skip--;
