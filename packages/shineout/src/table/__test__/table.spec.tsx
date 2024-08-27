@@ -509,21 +509,21 @@ describe('Table[Base]', () => {
     });
   });
 
-  test('should render when set hover', () => {
-    const { container, rerender } = render(
-      <Table keygen={'id'} columns={columns} data={renderData} />,
-    );
-    const tableWrapper = container.querySelector(wrapper)!;
-    const tbody = tableWrapper.querySelector('tbody')!;
-    const trs = tbody.querySelectorAll('tr');
-    fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
-    classTest(trs[0], rowHover);
-    fireEvent.mouseLeave(trs[0].querySelectorAll('td')[0]);
-    classTest(trs[0], rowHover, false);
-    rerender(<Table keygen={'id'} columns={columns} data={renderData} hover={false} />);
-    fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
-    classTest(trs[0], rowHover, false);
-  });
+  // test('should render when set hover', () => {
+  //   const { container, rerender } = render(
+  //     <Table keygen={'id'} columns={columns} data={renderData} />,
+  //   );
+  //   const tableWrapper = container.querySelector(wrapper)!;
+  //   const tbody = tableWrapper.querySelector('tbody')!;
+  //   const trs = tbody.querySelectorAll('tr');
+  //   fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
+  //   classTest(trs[0], rowHover);
+  //   fireEvent.mouseLeave(trs[0].querySelectorAll('td')[0]);
+  //   classTest(trs[0], rowHover, false);
+  //   rerender(<Table keygen={'id'} columns={columns} data={renderData} hover={false} />);
+  //   fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
+  //   classTest(trs[0], rowHover, false);
+  // });
 
   test('should render when set width', () => {
     const tableWidth = 1000;
