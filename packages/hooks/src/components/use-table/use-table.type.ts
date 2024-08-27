@@ -264,7 +264,7 @@ export interface TableColumnItem<DataItem> {
    * @en width
    * @cn 列宽
    */
-  width?: number | string;
+  width?: number;
 
   /**
    * @cn 列对应的类名
