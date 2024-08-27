@@ -61,13 +61,13 @@ export interface BadgeProps extends Pick<CommonType, 'className' | 'style'> {
   /**
    * @en Whether to show Badge when the number is 0
    * @cn 当数值为 0 时，是否展示 Badge
-   * * @default false
+   *
    */
   showZero?: boolean;
   /**
    * @en Whether to show Badge when the number is 0
    * @cn 徽标状态
-   * * @default false
+   *
    */
   status?: 'success' | 'processing' | 'default' | 'error' | 'warning';
   /**
