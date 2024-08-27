@@ -10,6 +10,7 @@ import {
   UnMatchedData,
   ObjectKey,
   useTiled,
+  KeygenResult,
 } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { SelectPropsBase, OptionListRefType } from './select.type';
@@ -89,6 +90,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     defaultExpanded,
     defaultExpandAll,
     showHitDescendants,
+    onLoadMore,
+    threshold = 1,
     renderOptionList,
     // onAdvancedFilter,
     onExpand,
@@ -102,6 +105,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     // onFilterWidthCreate,
     filterSameChange,
     noCache,
+    trigger = 'click',
   } = props;
 
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
@@ -178,13 +182,14 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     popupRef,
     openPop,
     closePop,
+    getTargetProps,
     Provider: PopupProvider,
     providerValue: popupProviderValue,
   } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
-    trigger: 'click',
+    trigger: trigger,
     position: positionProp,
   });
 
@@ -278,6 +283,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     isEmpty && styles.wrapperEmpty,
     styles?.wrapper,
     open && styles?.wrapperOpen,
+    open && trigger === 'hover' && styles?.triggerHover,
     disabled === true && styles?.wrapperDisabled,
     disabled !== true && focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
@@ -602,6 +608,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       emptyAfterSelect,
       renderItem,
       controlType,
+      onLoadMore,
+      threshold,
       onControlTypeChange: setControlType,
       closePop,
       optionListRef,
@@ -616,6 +624,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return <List {...listProps}></List>;
   };
 
+  const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState('');
+  // 当树形数据展开时，需要更新 AbsoluteList 的位置
+  const onExpandWrap = usePersistFn((value: KeygenResult[]) => {
+    onExpand?.(value);
+    setAbsoluteListUpdateKey(value?.join(','));
+  })
+
   const renderTreeList = () => {
     return (
       <TreeList<DataItem, Value>
@@ -628,7 +643,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         height={height as number}
         defaultExpandAll={defaultExpandAll}
         defaultExpanded={defaultExpanded}
-        onExpand={onExpand}
+        onExpand={onExpandWrap}
         childrenKey={childrenKey}
         closePop={closePop}
         renderItem={renderItem}
@@ -695,6 +710,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     return style;
   };
+
+  const targetProps = getTargetProps();
+  const { onMouseEnter, onMouseLeave } = targetProps;
+
   return (
     <div
       ref={targetRef}
@@ -711,6 +730,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           e.preventDefault();
         }
       }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {tipNode}
       {renderResult()}
@@ -724,6 +745,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         popupGap={4}
         popupElRef={popupRef}
         parentElRef={targetRef}
+        updateKey={absoluteListUpdateKey}
       >
         <AnimationList
           onRef={popupRef}

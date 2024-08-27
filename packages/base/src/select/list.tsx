@@ -1,8 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, usePersistFn } from '@sheinx/hooks';
-import { SelectClasses } from './select.type';
-import { BaseListProps } from './select.type';
+import { SelectClasses, BaseListProps } from './select.type';
 import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';
 import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
@@ -12,7 +11,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     jssStyle,
     data,
     size,
-    header,
     keygen,
     datum,
     multiple,
@@ -20,6 +18,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     itemsInView = 10,
     lineHeight: lineHeightProp,
     loading,
+    threshold,
     controlType,
     hideCreateOption,
     optionListRef,
@@ -135,6 +134,15 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     }
   });
 
+  const handleVirtualScroll = usePersistFn(async (info: { y: number }) => {
+    const { onLoadMore } = props;
+    if (typeof onLoadMore !== 'function') return;
+    if (!onLoadMore) return;
+    if (info.y >= threshold) {
+      await onLoadMore();
+    }
+  });
+
   const renderLoading = () => {
     return <div>loading</div>;
   };
@@ -173,8 +181,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   };
 
   const renderList = () => {
-    if (loading) return renderLoading();
-
     return (
       <VirtualScrollList
         virtualRef={virtualRef}
@@ -184,6 +190,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         groupKey={groupKey}
         tagClassName={styles.virtualList}
         height={height}
+        onScroll={handleVirtualScroll}
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
@@ -205,7 +212,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
 
   return (
     <div className={rootClass}>
-      {header && renderHeader()}
       {renderList()}
     </div>
   );

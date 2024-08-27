@@ -20,6 +20,7 @@ exports[`Checkbox[Base] should render correctly  1`] = `
   </span>
   <span
     class="soui-checkbox-desc"
+    data-soui-role="desc"
   >
     Checkbox
   </span>
@@ -50,6 +51,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         not checked
       </span>
@@ -86,6 +88,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         checked
       </span>
@@ -119,6 +122,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         indeterminate
       </span>
@@ -147,6 +151,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         not checked
       </span>
@@ -184,6 +189,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         checked
       </span>
@@ -218,6 +224,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         indeterminate
       </span>
@@ -247,6 +254,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       CheckAll
     </span>
@@ -274,6 +282,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         Option1
       </span>
@@ -297,6 +306,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         Option2
       </span>
@@ -320,6 +330,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         Option3
       </span>
@@ -349,6 +360,7 @@ exports[`Checkbox[Click] should render correctly about click 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       Click Me
        0 Times!
@@ -377,6 +389,7 @@ exports[`Checkbox[HtmlValue] should render correctly about htmlValue 1`] = `
   </span>
   <span
     class="soui-checkbox-desc"
+    data-soui-role="desc"
   >
     value is "ok"
   </span>

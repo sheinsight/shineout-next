@@ -24,6 +24,7 @@ export { default as Grid } from './grid';
 export { default as Icon } from './icon';
 export { default as Image } from './image';
 export { default as Input } from './input';
+export { default as Link } from './link';
 export { default as List } from './list';
 export { default as Menu } from './menu';
 export { default as Message } from './message';
@@ -58,4 +59,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.3.3' };
+export default { version: '3.3.3-beta.4' };

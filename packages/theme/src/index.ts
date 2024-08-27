@@ -66,6 +66,9 @@ import { ImageTokens } from './image/type';
 import Input, { Input as defaultInput } from './input';
 import { InputTokens } from './input/type';
 
+import Link, { Link as defaultLink } from './link';
+import { LinkTokens } from './link/type';
+
 import List, { List as defaultList } from './list';
 import { ListTokens } from './list/type';
 
@@ -159,6 +162,7 @@ export type ThemeTokens = AlertTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
+  LinkTokens &
   ListTokens &
   MenuTokens &
   MessageTokens &
@@ -207,6 +211,7 @@ const Tokens: ThemeTokens = {
   ...Icon,
   ...Image,
   ...Input,
+  ...Link,
   ...List,
   ...Menu,
   ...Message,
@@ -255,6 +260,7 @@ const ComponentTokenMap: ThemeTokens = {
   ...defaultIcon,
   ...defaultImage,
   ...defaultInput,
+  ...defaultLink,
   ...defaultList,
   ...defaultMenu,
   ...defaultMessage,

@@ -81,6 +81,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       <Scroll
         className={className}
         style={nextStyle}
+        height={height}
         scrollWidth={0}
         scrollHeight={scrollHeight}
         wrapperRef={wrapperRef}

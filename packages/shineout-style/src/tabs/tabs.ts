@@ -539,7 +539,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     ...getHeaderStyle(),
   },
   headerScroll: {
-    transition: 'all .15s ease-out',
+    transition: 'all .2s cubic-bezier(.34,.69,.1,1)',
   },
   header: {
     flex: 1,

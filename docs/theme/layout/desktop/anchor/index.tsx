@@ -17,9 +17,11 @@ const Anchor = (props: AnchorProps) => {
   const navigate = useNavigate();
   const state = useSnapshot(store);
 
-  const anchorClasses = classnames(classes.anchor, {
-    [classes.stickyAnchor]: state.scroll,
-  });
+  const anchorClasses = classnames(
+    classes.anchor,
+    classes.customScrollbar,
+    { [classes.stickyAnchor]: state.scroll }
+  );
 
   const handleClick = (e: any) => {
     const hashes = e.target.hash.split('#');
