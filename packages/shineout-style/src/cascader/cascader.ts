@@ -421,6 +421,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     marginTop: token.cascaderPlaceholderMarginY,
     marginBottom: token.cascaderPlaceholderMarginY,
   },
+  inputPlaceholder: {
+    pointerEvents: 'none',
+    opacity: 0.5,
+    inset: 0,
+    position: 'absolute',
+    padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
+  },
   inputMirror: {
     position: 'absolute',
     left: 0,

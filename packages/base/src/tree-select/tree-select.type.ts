@@ -60,6 +60,7 @@ export type TreeSelectClasses = {
   tagOnly: string;
   space: string;
   inputMirror: string;
+  inputPlaceholder: string;
   moreWrapper: string;
   virtualList: string;
   option: string;
@@ -270,8 +271,8 @@ export interface TreeSelectProps<DataItem, Value>
     data?: ResultItem<DataItem>[] | ResultItem<DataItem> | null;
   }) => void;
   /**
-   * @en In the Form, the value will be taken over by the form and the value will be invalid.
-   * @cn 选中的 key （受控），多选时必须为array
+   * @cn 选中的 key （受控），多选时必须为array。注意，请勿将 undefined 和 null 作为有意义的选项值，当 value 类型为 undefined 和 null 时，组件将不处理数据和渲染
+   * @en Selected key (controlled), must be an array in multiple selection. Note: Do not use undefined and null as meaningful option values. When the value type is undefined and null, the component will not process data and rendering
    */
   value?: Value;
   /**

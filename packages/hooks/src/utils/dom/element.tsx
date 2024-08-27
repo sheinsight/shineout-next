@@ -58,7 +58,7 @@ export const addResizeObserver = (
           if (height && lastHeight !== height) {
             debounceHandler(entry);
           }
-        } else if (width && height) {
+        } else if (lastWidth !== width || lastHeight !== height) {
           debounceHandler(entry, { x: lastWidth !== width, y: lastHeight !== height });
         }
         lastWidth = width;

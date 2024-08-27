@@ -73,6 +73,16 @@ const ResultInput = (props: ResultInputProps) => {
     onBindInput?.(inputRef.current);
   }, []);
 
+  const renderResultPlaceholder = () => {
+    if (inputText || !focus || typeof props.placeholder === 'string') return null;
+
+    return (
+      <div className={styles.inputPlaceholder}>
+        {props.placeholder}
+      </div>
+    )
+  }
+
   const style: React.CSSProperties = {};
   if (!multiple) {
     style.width = '100%';
@@ -88,7 +98,7 @@ const ResultInput = (props: ResultInputProps) => {
       <Input
         onRef={bindInputRef}
         style={style}
-        placeholder={props.placeholder}
+        placeholder={typeof props.placeholder === 'string' ? props.placeholder : undefined}
         value={inputText as string}
         maxLength={maxLength}
         onChange={onChange}
@@ -100,6 +110,8 @@ const ResultInput = (props: ResultInputProps) => {
       <span className={styles.inputMirror} ref={mirrorRef}>
         {inputText || value}
       </span>
+
+      {renderResultPlaceholder()}
     </React.Fragment>
   );
 };

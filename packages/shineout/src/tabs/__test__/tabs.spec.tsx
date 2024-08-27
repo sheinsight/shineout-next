@@ -341,7 +341,7 @@ describe('Tabs[Collapsible/defaultCollapsed]', () => {
   // TODO: test collapsed time
 });
 describe('Tabs[Children]', () => {
-  test('should render when set children is not panel', () => {
+  test('should not render when set children is not panel', () => {
     const { container } = render(
       <Tabs>
         <div className='demo'>demoA</div>
@@ -356,7 +356,7 @@ describe('Tabs[Children]', () => {
       }
       attributesTest(item, 'data-soui-state', '');
     });
-    classLengthTest(container, '.demo', 2);
+    classLengthTest(container, '.demo', 0);
     container.querySelectorAll('.demo').forEach((item, index) => {
       attributesTest(item, 'id', String(index));
     });

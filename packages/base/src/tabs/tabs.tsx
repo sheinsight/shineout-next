@@ -8,7 +8,7 @@ import TabsPanel from './tabs-panel';
 import TabsHeader from './tabs-header';
 import Sticky, { type StickyProps } from '../sticky';
 
-const { isEmpty, isObject, isNumber } = util;
+const { isEmpty, isObject, isNumber, isNamedComponent } = util;
 
 const Tabs = (props: TabsProps) => {
   const {
@@ -146,10 +146,14 @@ const Tabs = (props: TabsProps) => {
         {Children.toArray(children).map((child, index) => {
           const Chlid = child as React.ReactElement<TabsPanelProps>;
 
-          return cloneElement<TabsPanelProps>(Chlid, {
-            id: Chlid.props.id !== undefined ? Chlid.props.id : index,
-            active,
-          });
+          if(isNamedComponent(Chlid.type) && Chlid.type.displayName === 'ShineoutTabsPanel'){
+            return cloneElement<TabsPanelProps>(Chlid, {
+              id: Chlid.props.id !== undefined ? Chlid.props.id : index,
+              active,
+            });
+          }
+
+          return null
         })}
       </div>
     );
@@ -160,6 +164,8 @@ const Tabs = (props: TabsProps) => {
     let border = getSplitColor();
     Children.toArray(children).forEach((child, index) => {
       const Chlid = child as React.ReactElement<TabsPanelProps>;
+      if(!Chlid || !Chlid.type) return
+
       const childBorder = Chlid.props.splitColor || Chlid.props.border;
       const { id = index } = Chlid.props;
       if (active === id && childBorder) {

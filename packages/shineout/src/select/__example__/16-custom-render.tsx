@@ -53,6 +53,7 @@ export default () => {
       />
       <Select
         keygen
+        onCollapse={(v) => console.log(v)}
         width={300}
         clearable
         data={data}

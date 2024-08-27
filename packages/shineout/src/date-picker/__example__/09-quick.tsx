@@ -20,7 +20,11 @@ const QuickSelectData = [
     name: 'A month later',
     value: () => {
       const now = Date.now();
-      return now + 30 * 24 * 60 * 60 * 1000;
+      const date = new Date(now);
+      const year = date.getFullYear();
+      const nextMonth = date.getMonth() + 1;
+      const day = date.getDate();
+      return new Date(year, nextMonth, day).getTime();
     },
   },
 ];

@@ -1,3 +1,37 @@
+## 3.3.4
+2024-08-21
+
+### 🆕 Feature
+- 支持 `Select` 的树形数据展开时，弹出层的位置自适应([#614](https://github.com/sheinsight/shineout-next/pull/614))
+
+### 🐞 BugFix
+- 修复 `Select` 的树形数据展开时，设置的autoAdapt(下拉列表宽度根据内容自由展开)不生效的问题([#614](https://github.com/sheinsight/shineout-next/pull/614))
+
+
+## 3.3.3
+2024-08-15
+
+### 🆕 Feature
+- 支持 `Select` 单选搜索时，展示非string类型的值(renderItem返回的结果) ([#605](https://github.com/sheinsight/shineout-next/pull/605))
+## 3.4.0-beta.1
+2024-08-20
+
+### 🆕 Feature
+
+- 新增 `onLoadMore` 属性，支持滚动加载 ([#610](https://github.com/sheinsight/shineout-next/pull/594))
+- 新增 `threshold` 属性，支持设置滚动加载阈值 ([#610](https://github.com/sheinsight/shineout-next/pull/594))
+- 新增 `trigger` 属性，支持更改展开下拉面板的触发方式 ([#610](https://github.com/sheinsight/shineout-next/pull/594))
+
+## 3.3.3
+2024-08-15
+
+### 🆕 Feature
+- 支持 `Select` 单选搜索时，展示非string类型的值(renderItem返回的结果) ([#605](https://github.com/sheinsight/shineout-next/pull/605))
+
+### 🐞 BugFix
+
+- 修复 `Select` 选中项最终为假值时渲染异常的问题 ([#594](https://github.com/sheinsight/shineout-next/pull/594))
+
 ## 3.2.4
 2024-06-26
 

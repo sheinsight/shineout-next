@@ -147,6 +147,8 @@ const Time = (props: TimeProps) => {
           <div className={styles?.pickerFooterRight}>
             <Button
               size={'small'}
+              mode='text'
+              type="primary"
               jssStyle={props.jssStyle}
               className={styles?.pickerFooterBtn}
               onClick={selNow}
