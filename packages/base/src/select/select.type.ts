@@ -151,7 +151,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en custom empty copy
    * @cn 自定义 empty 文案
    */
-  emptyText?: string;
+  emptyText?: React.ReactNode;
 
   /**
    * @en Options data
