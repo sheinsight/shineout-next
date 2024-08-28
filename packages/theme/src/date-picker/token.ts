@@ -147,6 +147,7 @@ const datePickerTokenExtraValue = {
       item: {
         font: { size: 'Font-12' },
         padding: { x: 'Spacing-12', y: 'Spacing-2' },
+        active: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
         hover: { background: { color: 'Neutral-fill-2' } },
       },
     },

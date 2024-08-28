@@ -1,9 +1,16 @@
+## 3.3.6-beta.1
+2024-08-28
+
+### 🐞 BugFix
+
+- 修复 `Datepicker` 快速选择固定值无法高亮的问题 ([#620](https://github.com/sheinsight/shineout-next/pull/620))
+
 ## 3.3.3
 2024-08-15
 
 ### 🐞 BugFix
 
-- 修复 `datepicker` 聚焦但不打开面板场景下无法回填原值的问题 ([#604](https://github.com/sheinsight/shineout-next/pull/604))
+- 修复 `Datepicker` 聚焦但不打开面板场景下无法回填原值的问题 ([#604](https://github.com/sheinsight/shineout-next/pull/604))
 
 ## 3.3.0
 2024-07-23

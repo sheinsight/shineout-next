@@ -99,6 +99,7 @@ export interface DatePickerClasses {
   // 快速选择
   quickPicker: string;
   quickPickerItem: string;
+  quickPickerActiveItem: string;
 }
 
 export type DisabledType = 'start' | 'end';
