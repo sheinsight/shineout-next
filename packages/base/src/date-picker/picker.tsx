@@ -9,7 +9,7 @@ import Quick from './quick';
 import { useDatePickerRange, usePersistFn } from '@sheinx/hooks';
 
 const Picker = (props: PickerProps) => {
-  const { range, currentArr, dateArr, options, jssStyle, isDisabledDate } = props;
+  const { range, currentArr, dateArr, options, jssStyle, isDisabledDate, type } = props;
   const styles = jssStyle?.datePicker?.();
   const { func, defaultTimeArr, endMax, endMin, startMin, startMax } = useDatePickerRange({
     type: props.type,
@@ -126,6 +126,7 @@ const Picker = (props: PickerProps) => {
           range={props.range}
           jssStyle={jssStyle}
           dateArr={dateArr}
+          type={type}
           setDateArr={props.setDateArr}
           setCurrentArr={props.setCurrentArr}
           format={props.format}

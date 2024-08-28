@@ -550,6 +550,18 @@ export interface DatePickerTokens {
   datePickerQuickPanelItemPaddingY: string;
   /**
    * @type {string}
+   * @token Brand-1
+   * @description 日期选择器快捷选择面板项鼠标点击时的背景颜色
+   */
+  datePickerQuickPanelItemActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 日期选择器快捷选择面板项鼠标点击时的字体颜色
+   */
+  datePickerQuickPanelItemActiveFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description 日期选择器快捷选择面板项鼠标移入时的背景颜色
    */

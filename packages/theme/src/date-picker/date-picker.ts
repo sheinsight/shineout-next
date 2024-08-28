@@ -95,6 +95,8 @@ const datePickerTokens: DatePickerTokens = {
   datePickerQuickPanelItemFontSize: 'Font-12',
   datePickerQuickPanelItemPaddingX: 'Spacing-12',
   datePickerQuickPanelItemPaddingY: 'Spacing-2',
+  datePickerQuickPanelItemActiveBackgroundColor: 'Brand-1',
+  datePickerQuickPanelItemActiveFontColor: 'Brand-6',
   datePickerQuickPanelItemHoverBackgroundColor: 'Neutral-fill-2',
 };
 
