@@ -81,7 +81,8 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       backgroundColor: token.tooltipDangerBackgroundColor,
       color: token.tooltipDangerColor,
     },
-    '&::before': {
+    // '&::before': {
+    '& $arrow': {
       'z-index': 1,
       position: 'absolute',
       content: '" "',
@@ -96,20 +97,13 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
     },
     '&[data-soui-position^="bottom"]': {
       marginTop: arrowGap - 2,
-      '&::before': {
-        top: '0',
-
-        left: '0',
-        right: '0',
-        margin: 'auto',
-      },
-      '&[dir=ltr]::before': {
+      '&[dir=ltr] $arrow': {
         transform: 'translate(0, -50%) rotate(-45deg)',
       },
-      '&[dir=rtl]::before': {
+      '&[dir=rtl] $arrow': {
         transform: 'translate(0, -50%) rotate(45deg)',
       },
-      '&::after': {
+      '& $arrow::after': {
         top: arrowGap * -1,
         left: '0',
         right: '0',
@@ -121,85 +115,105 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
     },
     '&[data-soui-position^="top"]': {
       marginTop: (arrowGap - 2) * -1,
-      '&::before': {
-        bottom: '0',
-        transform: 'translate(0, 50%) rotate(135deg)',
-        left: '0',
-        right: '0',
-        margin: 'auto',
-      },
-      '&[dir=ltr]::before': {
+      '&[dir=ltr] $arrow': {
         transform: 'translate(0, 50%) rotate(135deg)',
       },
-      '&[dir=rtl]::before': {
+      '&[dir=rtl] $arrow': {
         transform: 'translate(0, 50%) rotate(-135deg)',
       },
-      '&::after': {
-        bottom: arrowGap * -1,
-        left: '0',
-        right: '0',
-        content: '" "',
-        display: 'block',
-        height: arrowGap,
-        position: 'absolute',
-      },
+      // '&::before': {
+      //   bottom: '0',
+      //   transform: 'translate(0, 50%) rotate(135deg)',
+      //   left: '0',
+      //   right: '0',
+      //   margin: 'auto',
+      // },
+      // '&[dir=ltr]::before': {
+      //   transform: 'translate(0, 50%) rotate(135deg)',
+      // },
+      // '&[dir=rtl]::before': {
+      //   transform: 'translate(0, 50%) rotate(-135deg)',
+      // },
+      // '&::after': {
+      //   bottom: arrowGap * -1,
+      //   left: '0',
+      //   right: '0',
+      //   content: '" "',
+      //   display: 'block',
+      //   height: arrowGap,
+      //   position: 'absolute',
+      // },
     },
     '&[data-soui-position^="left"]': {
       marginLeft: (arrowGap - 2) * -1,
-      '&[dir=ltr]': { marginLeft: (arrowGap - 2) * -1 },
-      '&[dir=rtl]': { marginRight: (arrowGap - 2) * -1 },
-      '&::before': {
-        right: 0,
-        top: '0',
-        bottom: '0',
-        margin: 'auto',
-      },
-      '&[dir=ltr]::before': {
+      '&[dir=ltr] $arrow': {
         transform: 'translate(50%, 0) rotate(45deg)',
       },
-      '&[dir=rtl]::before': {
+      '&[dir=rtl] $arrow': {
         transform: 'translate(50%, 0) rotate(135deg)',
       },
-      '&::after': {
-        left: arrowGap * -1,
-        top: '0',
-        bottom: '0',
-        content: '" "',
-        display: 'block',
-        width: arrowGap,
-        position: 'absolute',
-      },
+
+      // '&[dir=ltr]': { marginLeft: (arrowGap - 2) * -1 },
+      // '&[dir=rtl]': { marginRight: (arrowGap - 2) * -1 },
+      // '&::before': {
+      //   right: 0,
+      //   top: '0',
+      //   bottom: '0',
+      //   margin: 'auto',
+      // },
+      // '&[dir=ltr]::before': {
+      //   transform: 'translate(50%, 0) rotate(45deg)',
+      // },
+      // '&[dir=rtl]::before': {
+      //   transform: 'translate(50%, 0) rotate(135deg)',
+      // },
+      // '&::after': {
+      //   left: arrowGap * -1,
+      //   top: '0',
+      //   bottom: '0',
+      //   content: '" "',
+      //   display: 'block',
+      //   width: arrowGap,
+      //   position: 'absolute',
+      // },
     },
     '&[data-soui-position^="right"]': {
       marginLeft: arrowGap - 2,
-      '&[dir=ltr]': { marginLeft: arrowGap - 2 },
-      '&[dir=rtl]': { marginRight: arrowGap - 2 },
-      '&::before': {
-        left: '0',
-        top: '0',
-        bottom: '0',
-        margin: 'auto',
-      },
-      '&[dir=ltr]::before': {
+      '&[dir=ltr] $arrow': {
         transform: 'translate(-50%, 0) rotate(-135deg)',
       },
-      '&[dir=rtl]::before': {
+      '&[dir=rtl] $arrow': {
         transform: 'translate(-50%, 0) rotate(-45deg)',
       },
-      '&::after': {
-        left: arrowGap * -1,
-        top: '0',
-        bottom: '0',
-        content: '" "',
-        display: 'block',
-        width: arrowGap,
-        position: 'absolute',
-      },
+
+      // '&[dir=ltr]': { marginLeft: arrowGap - 2 },
+      // '&[dir=rtl]': { marginRight: arrowGap - 2 },
+      // '&::before': {
+      //   left: '0',
+      //   top: '0',
+      //   bottom: '0',
+      //   margin: 'auto',
+      // },
+      // '&[dir=ltr]::before': {
+      //   transform: 'translate(-50%, 0) rotate(-135deg)',
+      // },
+      // '&[dir=rtl]::before': {
+      //   transform: 'translate(-50%, 0) rotate(-45deg)',
+      // },
+      // '&::after': {
+      //   left: arrowGap * -1,
+      //   top: '0',
+      //   bottom: '0',
+      //   content: '" "',
+      //   display: 'block',
+      //   width: arrowGap,
+      //   position: 'absolute',
+      // },
     },
-    '&&[data-soui-position$="-left"]::before': { left: arrowMargin, right: 'auto' },
-    '&&[data-soui-position$="-right"]::before': { right: arrowMargin, left: 'auto' },
-    '&&[data-soui-position$="-top"]::before': { top: arrowMargin, bottom: 'auto' },
-    '&&[data-soui-position$="-bottom"]::before': { bottom: arrowMargin, top: 'auto' },
+    // '&&[data-soui-position$="-left"]::before': { left: arrowMargin, right: 'auto' },
+    // '&&[data-soui-position$="-right"]::before': { right: arrowMargin, left: 'auto' },
+    // '&&[data-soui-position$="-top"]::before': { top: arrowMargin, bottom: 'auto' },
+    // '&&[data-soui-position$="-bottom"]::before': { bottom: arrowMargin, top: 'auto' },
   },
   wrapperOpen: {
     display: 'block',
@@ -218,6 +232,12 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
   },
   target: {
     display: 'inline-block',
+  },
+  arrow: {
+    // before
+    '&::before': {
+      content: "''",
+    },
   },
   content: {
     padding: `${token.tooltipPaddingY} ${token.tooltipPaddingX}`,
