@@ -1,3 +1,11 @@
+## 3.3.6-beta.2
+2024-08-29
+
+### 🐞 BugFix
+
+- 修复 `Tooltip` 在Chrome 128版本下，document.body设置了zoom时的定位问题 ([#622](https://github.com/sheinsight/shineout-next/pull/622))
+
+
 ## 3.3.0
 2024-07-22
 

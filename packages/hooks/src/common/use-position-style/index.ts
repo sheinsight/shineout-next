@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
-import { docSize } from '../../utils';
+import { docSize, isChromeLowerThan } from '../../utils';
 
 export type HorizontalPosition =
   | 'left-bottom'
@@ -236,6 +236,9 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getAbsoluteStyle = (position: string) => {
     if (!parentElRef.current) return hideStyle;
     const rect = context.parentRect;
+    console.log('======================')
+    console.log('rect: >>', rect)
+    console.log('======================')
     if (scrollElRef?.current) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
@@ -248,6 +251,25 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       }
     }
     const style = getAbsolutePositionStyle(rect, position);
+
+    // TODO: 如果是版本大于chrome128，需要根据currentCSSZoom处理chrome的bug
+    if(!isChromeLowerThan(128)){
+      // @ts-ignore currentCSSZoom
+      const currentCSSZoom = document.body.currentCSSZoom
+      if(currentCSSZoom === 1 || !currentCSSZoom) return style
+      if(style.left && typeof style.left === 'number'){
+        style.left = style.left * (1/currentCSSZoom)
+      }
+      if(style.top && typeof style.top === 'number'){
+        style.top = style.top * (1/currentCSSZoom)
+      }
+      if(style.right && typeof style.right === 'number'){
+        style.right = style.right * (1/currentCSSZoom)
+      }
+      if(style.bottom && typeof style.bottom === 'number'){
+        style.bottom = style.bottom * (1/currentCSSZoom)
+      }
+    }
     return style;
   };
 
