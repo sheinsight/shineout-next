@@ -15,10 +15,13 @@ export const FormFooterContext = createContext<FormFooterContextValue | null>(nu
 
 export const FormFooterProvider = (props: { children: React.ReactNode }) => {
   const [formStats, setFormS] = useState<FormFooterContextValue['formStats']>(undefined);
-  const { current: context } = useRef({ submit: () => {} });
+  const { current: context } = useRef({ submit: () => {}, hasSubmit: false });
 
   const setFormInfo = usePersistFn((info: { submit: () => void }) => {
-    context.submit = info.submit;
+    if(!context.hasSubmit){
+      context.submit = info.submit;
+      context.hasSubmit = true;
+    }
   });
   const setFormStats = usePersistFn((disabled?: 'disabled' | 'pending') => {
     if (disabled !== formStats) {
