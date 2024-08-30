@@ -2,8 +2,8 @@
 2024-08-30
 
 ### 🐞 BugFix
-- 修复`Table` 虚拟滚动时，默认的rowsInView渲染结果不够撑满一屏导致的滚动空白问题
-- 修复`Table` 虚拟滚动的内部元素被执行scrollIntoView导致的页面偏移的问题([#624](https://github.com/sheinsight/shineout-next/pull/624))
+- 修复`Table` 虚拟滚动时，默认的rowsInView渲染结果不够撑满一屏导致的滚动空白问题 ([#628](https://github.com/sheinsight/shineout-next/pull/628))
+- 修复`Table` 虚拟滚动的内部元素被执行scrollIntoView导致的页面偏移的问题 ([#624](https://github.com/sheinsight/shineout-next/pull/624))
 
 ## 3.3.3
 2024-08-15
