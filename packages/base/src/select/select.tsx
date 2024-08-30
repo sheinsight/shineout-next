@@ -629,7 +629,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const onExpandWrap = usePersistFn((value: KeygenResult[]) => {
     onExpand?.(value);
     setAbsoluteListUpdateKey(value?.join(','));
-  })
+  });
 
   const renderTreeList = () => {
     return (
@@ -678,7 +678,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (loading) return renderLoading();
 
     const isEmpty = !filterData?.length;
-    if (isEmpty) return renderEmpty();
+    if (isEmpty && props.emptyText !== false) return renderEmpty();
 
     const options = 'treeData' in props ? renderTreeList() : renderList();
     if (renderOptionList) {
