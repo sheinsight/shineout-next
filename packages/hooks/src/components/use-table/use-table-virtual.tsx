@@ -85,6 +85,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     controlScrollRate: null as number | null,
     heightCallback: null as null | (() => void),
     preIndex: null as number | null,
+    externalRows: 0,
   });
 
   const getTranslate = usePersistFn((left?: number, top?: number) => {
@@ -138,6 +139,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     let top = 0;
     const maxIndex = Math.max(props.data.length - rowsInView, 0);
     for (let i = 0; i <= maxIndex; i++) {
+      context.externalRows = 0
       sum += context.cachedHeight[i] || props.rowHeight;
       let rowSpanHeight = 0
       if(rowSpanInfos){
@@ -149,6 +151,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
         }
         for(let j=0; j<siblingsIndexs.length; j++){
           const index = siblingsIndexs[j]
+          context.externalRows += 1
           rowSpanHeight += context.cachedHeight[index] || props.rowHeight;
         }
       }
@@ -283,9 +286,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   }, [scrollHeight]);
 
+  const finalRowsInView = context.externalRows + rowsInView;
   const renderData = props.disabled
     ? props.data
-    : [...props.data].slice(startIndex, startIndex + rowsInView);
+    : [...props.data].slice(startIndex, startIndex + finalRowsInView);
   return {
     scrollHeight,
     startIndex,
