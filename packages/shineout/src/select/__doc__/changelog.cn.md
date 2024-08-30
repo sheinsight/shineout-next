@@ -1,3 +1,9 @@
+## 3.4.0-beta.4
+2024-08-30
+
+### 💎 Enhancement
+- 优化 `Select` 组件在同时使用 `emptyText` 和 `renderOptionList` 时的渲染顺序([#627](https://github.com/sheinsight/shineout-next/pull/627))
+
 ## 3.3.4
 2024-08-21
 

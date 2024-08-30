@@ -149,7 +149,7 @@ export interface SelectPropsBase<DataItem, Value>
   jssStyle?: JssStyleType;
   /**
    * @en custom empty copy
-   * @cn 自定义 empty 文案
+   * @cn 自定义 empty 文案。与 renderOptionList 搭配使用时，emptyText 设置为 false 后将忽略该功能，如需渲染空内容可在 renderOptionList 中处理
    */
   emptyText?: React.ReactNode;
 
