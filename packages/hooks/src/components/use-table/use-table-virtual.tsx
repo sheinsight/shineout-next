@@ -85,7 +85,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     controlScrollRate: null as number | null,
     heightCallback: null as null | (() => void),
     preIndex: null as number | null,
-    externalRows: 0,
+    rowSpanRows: 0,
+    autoAddRows: 0,
   });
 
   const getTranslate = usePersistFn((left?: number, top?: number) => {
@@ -139,7 +140,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     let top = 0;
     const maxIndex = Math.max(props.data.length - rowsInView, 0);
     for (let i = 0; i <= maxIndex; i++) {
-      context.externalRows = 0
+      context.rowSpanRows = 0
       sum += context.cachedHeight[i] || props.rowHeight;
       let rowSpanHeight = 0
       if(rowSpanInfos){
@@ -151,7 +152,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
         }
         for(let j=0; j<siblingsIndexs.length; j++){
           const index = siblingsIndexs[j]
-          context.externalRows += 1
+          context.rowSpanRows += 1
           rowSpanHeight += context.cachedHeight[index] || props.rowHeight;
         }
       }
@@ -249,6 +250,26 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   });
 
+
+  useEffect(() => {
+    const scrollRefHeight = props.scrollRef.current ? props.scrollRef.current.clientHeight : 0;
+    const tableRefHeight = props.innerRef.current ? props.innerRef.current.clientHeight : 0;
+    const remainHeight = scrollRefHeight - tableRefHeight
+    if(remainHeight > 0){
+      let addonHeight = 0
+      let addonCount = 0
+      for(let i=startIndex+rowsInView; i<props.data.length; i++){
+        const height = context.cachedHeight[i] || props.rowHeight
+        addonHeight += height
+        addonCount += 1
+        if(addonHeight >= remainHeight + context.cachedHeight[0]) break;
+      }
+      if(addonCount > 0){
+        context.autoAddRows = addonCount
+      }
+    }
+  }, [])
+
   useEffect(() => {
     // 记录preIndex
     context.preIndex = startIndex;
@@ -286,7 +307,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   }, [scrollHeight]);
 
-  const finalRowsInView = context.externalRows + rowsInView;
+  const finalRowsInView = rowsInView + context.rowSpanRows + context.autoAddRows;
   const renderData = props.disabled
     ? props.data
     : [...props.data].slice(startIndex, startIndex + finalRowsInView);
