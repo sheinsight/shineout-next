@@ -2,6 +2,7 @@ import { usePersistFn } from '../../common/use-persist-fn';
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { TableFormatColumn } from './use-table.type';
 
+const MAX_ROW_SPAN = 200
 interface UseTableVirtualProps {
   data: any[];
   rowsInView: number;
@@ -144,8 +145,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       sum += context.cachedHeight[i] || props.rowHeight;
       let rowSpanHeight = 0
       if(rowSpanInfos){
+        const maxRowSpanLenth = Math.min(rowSpanInfos.length, props.rowsInView > MAX_ROW_SPAN ? props.rowsInView : props.rowsInView || MAX_ROW_SPAN)
         const siblingsIndexs = []
-        for(let k=0; k<rowSpanInfos.length; k++){
+        for(let k=0; k<maxRowSpanLenth; k++){
           if(rowSpanInfos[k] <= i && k > i){
             siblingsIndexs.push(k)
           }
