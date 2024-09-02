@@ -336,8 +336,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   };
 
-  const handleChange = (item: Value) => {
-    onChange?.(item);
+  const handleChange = (item: Value, selectId?: DataItem) => {
+    onChange?.(item, selectId);
   };
 
   const handleClear = (e: React.MouseEvent) => {
