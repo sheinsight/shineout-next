@@ -2,7 +2,7 @@
 2024-09-02
 
 ### 🐞 BugFix
-- 修复 `Cascader` 组件 `onChange` 第二参数缺失的问题
+- 修复 `Cascader` 组件 `onChange` 第二参数缺失的问题([#632](https://github.com/sheinsight/shineout-next/pull/632))
 
 ## 3.3.3
 2024-08-15
