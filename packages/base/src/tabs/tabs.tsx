@@ -144,12 +144,11 @@ const Tabs = (props: TabsProps) => {
     return (
       <div ref={panelRef} className={tabsStyle.panelWrapper} style={panelStyle}>
         {Children.toArray(children).map((child, index) => {
-          const Chlid = child as React.ReactElement<TabsPanelProps>;
+          const Child = child as React.ReactElement<TabsPanelProps>;
 
-          if(isNamedComponent(Chlid.type) && Chlid.type.displayName === 'ShineoutTabsPanel'){
-            return cloneElement<TabsPanelProps>(Chlid, {
-              id: Chlid.props.id !== undefined ? Chlid.props.id : index,
-              active,
+          if(isNamedComponent(Child.type) && Child.type.displayName === 'ShineoutTabsPanel'){
+            return cloneElement<TabsPanelProps>(Child, {
+              id: Child.props.id !== undefined ? Child.props.id : index,
             });
           }
 
@@ -163,20 +162,20 @@ const Tabs = (props: TabsProps) => {
     const tabs: TabData[] = [];
     let border = getSplitColor();
     Children.toArray(children).forEach((child, index) => {
-      const Chlid = child as React.ReactElement<TabsPanelProps>;
-      if(!Chlid || !Chlid.type) return
+      const Child = child as React.ReactElement<TabsPanelProps>;
+      if(!Child || !Child.type) return
 
-      const childBorder = Chlid.props.splitColor || Chlid.props.border;
-      const { id = index } = Chlid.props;
+      const childBorder = Child.props.splitColor || Child.props.border;
+      const { id = index } = Child.props;
       if (active === id && childBorder) {
         border = childBorder;
       }
       tabs.push({
-        id: Chlid.props.id !== undefined ? Chlid.props.id : index,
-        tab: Chlid.props.tab,
-        disabled: Chlid.props.disabled,
+        id: Child.props.id !== undefined ? Child.props.id : index,
+        tab: Child.props.tab,
+        disabled: Child.props.disabled,
         jssStyle,
-        color: Chlid.props.color || (active === id ? color : undefined),
+        color: Child.props.color || (active === id ? color : undefined),
       });
     });
     const header = (
