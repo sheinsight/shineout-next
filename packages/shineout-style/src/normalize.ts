@@ -344,7 +344,7 @@ h2,
 h3,
 .h3 {
   margin-top: ${lineHeightComputed};
-  margin-bottom: ${lineHeightComputed};
+  margin-bottom: ${lineHeightComputed2};
 }
 
 hi small, h1 .small, .h1 small, .h1 .small,
