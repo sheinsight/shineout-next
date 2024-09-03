@@ -1,5 +1,5 @@
 import React, { useState, memo } from 'react';
-import { ReultMoreProps } from './result-more.type';
+import { ResultMoreProps } from './result-more.type';
 import { parsePxToNumber } from '@sheinx/hooks';
 import Tag from '../tag';
 import Popover from '../popover';
@@ -70,7 +70,7 @@ export function getResetMore(
   return num;
 }
 
-const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
+const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
   const { jssStyle, data, showNum, size, compressed, compressedClassName, classes } = props;
   const [visible, setVisible] = useState(false);
 
