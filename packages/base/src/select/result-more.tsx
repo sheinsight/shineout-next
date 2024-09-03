@@ -80,7 +80,7 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
   let before: React.ReactElement[] = [];
   let after: React.ReactElement[] = [];
   let itemsLength = 0;
-  let tagStlye: React.CSSProperties = shouldShowMore
+  let tagStyle: React.CSSProperties = shouldShowMore
     ? {
         position: 'absolute',
         zIndex: -100,
@@ -138,7 +138,7 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
           jssStyle={jssStyle as any}
           key='more'
           size={size}
-          style={tagStlye}
+          style={tagStyle}
           mode={visible ? 'fill' : 'bright'}
           color={visible ? 'info' : 'default'}
         >
