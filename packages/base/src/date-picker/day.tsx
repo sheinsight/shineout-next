@@ -17,8 +17,8 @@ const Day = (props: DayProps) => {
 
   const areaType = props.type === 'week' ? 'week' : 'day';
 
-  const onChange = usePersistFn((date) => {
-    props.onChange(date, props.type === 'datetime');
+  const onChange = usePersistFn((date, noClose?: boolean) => {
+    props.onChange(date, noClose || props.type === 'datetime');
     props.setTarget(undefined);
   });
 
@@ -75,7 +75,14 @@ const Day = (props: DayProps) => {
             styles?.pickerCellInRangeEnd,
         )}
         key={index}
-        onClick={() => func.handleDayClick(item)}
+        onClick={() => {
+          if(props.range){
+            func.handleDayClick(item, props.clickTimes < 1)
+            props.setClickTimes(props.clickTimes + 1)
+          }else{
+            func.handleDayClick(item)
+          }
+        }}
         onDoubleClick={() => {
           props.onDoubleClick?.(item, areaType);
         }}
