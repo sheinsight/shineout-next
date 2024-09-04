@@ -18,17 +18,18 @@ interface Value {
 
 
 const ArrayDisplayComponent = ({ value }: {value: {name: string}[]}) => {
-  return value.map((d, index) => <p key={index}>{d.name}</p>);
+  return value ? value.map((d, index) => <p key={index}>{d.name}</p>) : null;
 }
 
 const ArrayHandleComponent = ({ value, onChange }: any) => {
   console.log('ArrayHandleComponent value: >>', value)
 
   const addItem = () => {
-    onChange([...value, { name: `new item${value.length}` }])
+    onChange([...(value || []), { name: `new item${value?.length || 0}` }])
   }
 
   const  removeItem = () => {
+    if(!value) return
     onChange(value.slice(0, value.length - 1))
   }
 
