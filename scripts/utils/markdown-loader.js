@@ -109,6 +109,7 @@ const headerLoader = (tokens) => {
   const header = {
     name: '',
     group: '',
+    version: '',
   };
 
   const titleToken = tokens.find((token, index) => {
@@ -122,6 +123,7 @@ const headerLoader = (tokens) => {
   if (titleToken && children) {
     const titleStr = children.find((i) => i.content.indexOf('name') > -1);
     const groupStr = children.find((i) => i.content.indexOf('group') > -1);
+    const versionStr = children.find((i) => i.content.indexOf('version') > -1);
 
     if (titleStr) {
       header.name = titleStr.content.split(':')[1].trim();
@@ -129,6 +131,10 @@ const headerLoader = (tokens) => {
 
     if (groupStr) {
       header.group = groupStr.content.split(':')[1].trim();
+    }
+
+    if (versionStr) {
+      header.version = versionStr.content.split(':')[1].trim();
     }
   }
   return header;

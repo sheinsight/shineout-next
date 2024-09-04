@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import store, { Menu, dispatch } from '../../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Locale from '../../../locales';
-import { setConfig } from 'shineout';
+import { Tag, setConfig } from 'shineout';
 
 import useStyles from '../style';
 
@@ -142,6 +142,9 @@ const MenuComponent = () => {
                       className={active === component.name ? 'active' : ''}
                     >
                       {component.title[state.locales]}
+
+                      {/* <Tag color="cyan">1.1.1</Tag> */}
+                      {component.version && <Tag color="success">{component.version}</Tag>}
                     </li>
                   )
                 );
