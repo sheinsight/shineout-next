@@ -681,6 +681,10 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       cursor: 'pointer',
     },
   },
+  quickPickerActiveItem: {
+    color: token.datePickerQuickPanelItemActiveFontColor,
+    background: token.datePickerQuickPanelItemActiveBackgroundColor,
+  },
   pickerFooterBtn: {},
 };
 

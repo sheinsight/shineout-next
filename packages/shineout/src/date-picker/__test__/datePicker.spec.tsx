@@ -1435,7 +1435,7 @@ describe('DatePicker[Inputable]', () => {
     const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
     const resultInput = datePickerResultWrapper.querySelector('input')!;
     expect(resultInput).toBeInTheDocument();
-    const tempTime = `${year}-${month}-12`;
+    const tempTime = `${year}-${month}-25`;
     fireEvent.change(resultInput, {
       target: {
         value: tempTime,
@@ -1451,7 +1451,7 @@ describe('DatePicker[Inputable]', () => {
       ?.querySelectorAll('tr')
       .forEach((tr) => {
         tr.querySelectorAll('td').forEach((td) => {
-          if (td.textContent !== '12') return;
+          if (td.textContent !== '25') return;
           classTest(td, pickerCellActive);
         });
       });

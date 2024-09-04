@@ -85,6 +85,7 @@ const {
   rowStriped,
   small: tableSmall,
   cellHover,
+  rowHover,
   verticalAlignMiddle,
   iconWrapper,
   rowExpand,
@@ -463,24 +464,53 @@ describe('Table[Base]', () => {
     );
     expect(container.querySelector('thead')).not.toBeInTheDocument();
   });
-  test('should render when set hover', () => {
+
+  test('should render when set hover in col span', () => {
+    const data = [
+      {
+        id: 1,
+        name: 'name1',
+      },
+      {
+        id: 2,
+        name: 'name1',
+      },
+      {
+        id: 3,
+        name: 'name2',
+      },
+    ]
+    const columns: TableColumnItem[] = [
+      {
+        title: 'ID',
+        render: 'id',
+      },
+      {
+        title: 'Name',
+        render: 'name',
+        rowSpan: (a, b) => a.name === b.name,
+      },
+    ]
     const { container, rerender } = render(
-      <Table keygen={'id'} columns={columns} data={renderData} />,
+      <Table keygen={'id'} columns={columns} data={data} />,
     );
     const tableWrapper = container.querySelector(wrapper)!;
     const tbody = tableWrapper.querySelector('tbody')!;
     const trs = tbody.querySelectorAll('tr');
-    fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
-    trs[0].querySelectorAll('td').forEach((item) => {
-      classTest(item, cellHover);
+    fireEvent.mouseEnter(trs[1].querySelectorAll('td')[0]);
+    trs[1].querySelectorAll('td').forEach((item, index) => {
+      if(index === 1){
+        classTest(item, cellHover, false);
+      }
     });
-    fireEvent.mouseLeave(trs[0].querySelectorAll('td')[0]);
+    fireEvent.mouseLeave(trs[1].querySelectorAll('td')[0]);
     rerender(<Table keygen={'id'} columns={columns} data={renderData} hover={false} />);
-    fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
-    trs[0].querySelectorAll('td').forEach((item) => {
+    fireEvent.mouseEnter(trs[1].querySelectorAll('td')[0]);
+    trs[1].querySelectorAll('td').forEach((item) => {
       classTest(item, cellHover, false);
     });
   });
+
   test('should render when set width', () => {
     const tableWidth = 1000;
     const { container } = render(

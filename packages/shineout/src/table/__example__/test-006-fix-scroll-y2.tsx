@@ -189,6 +189,7 @@ return (
         columns={columns}
         width={columns.reduce((a, b) => a + (b.width as number), 50)}
         virtual
+        rowsInView={10}
       />
     </div>
   </div>

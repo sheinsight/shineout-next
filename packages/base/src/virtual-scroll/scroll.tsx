@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { usePersistFn, useResize, util } from '@sheinx/hooks';
+import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
 interface scrollProps {
@@ -29,6 +29,9 @@ interface scrollProps {
 
 const Scroll = (props: scrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const wrapperRef = useForkRef(scrollRef, props.wrapperRef);
   const { current: context } = useRef({
     timer: null as any,
     isMouseDown: false,
@@ -121,13 +124,21 @@ const Scroll = (props: scrollProps) => {
       });
   });
 
+  const handleInnerScroll = usePersistFn((e: React.UIEvent) => {
+    const scrollTop = (e.currentTarget as HTMLDivElement).scrollTop;
+    if (scrollRef.current) {
+      e.currentTarget.scrollTop = 0;
+      scrollRef.current.scrollTop += scrollTop;
+    }
+  });
+
   return (
     <div className={props.className} style={props.style} onMouseMove={props.onMouseMove}>
       <div
         {...util.getDataAttribute({ role: 'scroll' })}
         style={scrollerStyle}
         onScroll={handleScroll}
-        ref={props.wrapperRef}
+        ref={wrapperRef}
         onMouseDown={() => {
           context.isMouseDown = true;
         }}
@@ -139,6 +150,7 @@ const Scroll = (props: scrollProps) => {
           {...util.getDataAttribute({ role: 'scroll-container' })}
           style={containerStyle}
           ref={containerRef}
+          onScroll={handleInnerScroll}
         >
           <div style={{ flexGrow: 1, ...props.childrenStyle }}>{props.children}</div>
         </div>

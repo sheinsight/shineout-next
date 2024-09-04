@@ -2,6 +2,7 @@ import { usePersistFn } from '../../common/use-persist-fn';
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { TableFormatColumn } from './use-table.type';
 
+const MAX_ROW_SPAN = 200
 interface UseTableVirtualProps {
   data: any[];
   rowsInView: number;
@@ -85,6 +86,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     controlScrollRate: null as number | null,
     heightCallback: null as null | (() => void),
     preIndex: null as number | null,
+    rowSpanRows: 0,
+    autoAddRows: 0,
   });
 
   const getTranslate = usePersistFn((left?: number, top?: number) => {
@@ -138,17 +141,20 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     let top = 0;
     const maxIndex = Math.max(props.data.length - rowsInView, 0);
     for (let i = 0; i <= maxIndex; i++) {
+      context.rowSpanRows = 0
       sum += context.cachedHeight[i] || props.rowHeight;
       let rowSpanHeight = 0
       if(rowSpanInfos){
+        const maxRowSpanLenth = Math.min(rowSpanInfos.length, props.rowsInView > MAX_ROW_SPAN ? props.rowsInView : props.rowsInView || MAX_ROW_SPAN)
         const siblingsIndexs = []
-        for(let k=0; k<rowSpanInfos.length; k++){
+        for(let k=0; k<maxRowSpanLenth; k++){
           if(rowSpanInfos[k] <= i && k > i){
             siblingsIndexs.push(k)
           }
         }
         for(let j=0; j<siblingsIndexs.length; j++){
           const index = siblingsIndexs[j]
+          context.rowSpanRows += 1
           rowSpanHeight += context.cachedHeight[index] || props.rowHeight;
         }
       }
@@ -246,6 +252,26 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   });
 
+
+  useEffect(() => {
+    const scrollRefHeight = props.scrollRef.current ? props.scrollRef.current.clientHeight : 0;
+    const tableRefHeight = props.innerRef.current ? props.innerRef.current.clientHeight : 0;
+    const remainHeight = scrollRefHeight - tableRefHeight
+    if(remainHeight > 0){
+      let addonHeight = 0
+      let addonCount = 0
+      for(let i=startIndex+rowsInView; i<props.data.length; i++){
+        const height = context.cachedHeight[i] || props.rowHeight
+        addonHeight += height
+        addonCount += 1
+        if(addonHeight >= remainHeight + context.cachedHeight[0]) break;
+      }
+      if(addonCount > 0){
+        context.autoAddRows = addonCount
+      }
+    }
+  }, [])
+
   useEffect(() => {
     // 记录preIndex
     context.preIndex = startIndex;
@@ -283,9 +309,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   }, [scrollHeight]);
 
+  const finalRowsInView = rowsInView + context.rowSpanRows + context.autoAddRows;
   const renderData = props.disabled
     ? props.data
-    : [...props.data].slice(startIndex, startIndex + rowsInView);
+    : [...props.data].slice(startIndex, startIndex + finalRowsInView);
   return {
     scrollHeight,
     startIndex,

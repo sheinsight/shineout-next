@@ -44,7 +44,11 @@ const getMenuPosition = (
   return position as MenuPosition;
 };
 
-const getPopoverPosition = (target: HTMLElement | null, priorityDirection = 'vertical') => {
+const getPopoverPosition = (
+  target: HTMLElement | null,
+  priorityDirection = 'vertical',
+  popup?: HTMLElement,
+) => {
   let position = 'bottom-left' as PopoverPosition;
   if (!target) return position;
   const rect = target.getBoundingClientRect();
@@ -67,12 +71,25 @@ const getPopoverPosition = (target: HTMLElement | null, priorityDirection = 'ver
       position += '-top';
     }
   } else {
+    const popupRect = popup?.getBoundingClientRect();
     if (verticalPoint > windowHeight / 2) position = 'top';
     else position = 'bottom';
-    if (horizontalPoint > windowWidth * 0.6) {
-      position += '-right';
-    } else if (horizontalPoint < windowWidth * 0.4) {
-      position += '-left';
+
+    // 如果渲染了弹出内容，则根据弹出内容宽度计算是否自动调整位置
+    if (popupRect) {
+      if (popupRect?.width / 2 > rect.left) {
+        position += '-left';
+      }
+      if (popupRect?.width / 2 > windowWidth - rect.right) {
+        position += '-right';
+      }
+    } else {
+      // 兜底计算
+      if (horizontalPoint > windowWidth * 0.6) {
+        position += '-right';
+      } else if (horizontalPoint < windowWidth * 0.4) {
+        position += '-left';
+      }
     }
   }
   return position as PopoverPosition;
@@ -82,8 +99,9 @@ export const getPosition = (
   target: HTMLElement | null,
   priorityDirection: 'vertical' | 'horizontal' | 'auto' = 'vertical',
   mode: 'popover' | 'menu' | 'list',
+  popup?: HTMLElement,
 ) => {
-  if (mode === 'popover') return getPopoverPosition(target, priorityDirection);
+  if (mode === 'popover') return getPopoverPosition(target, priorityDirection, popup);
   if (mode === 'menu') return getMenuPosition(target, priorityDirection);
   return 'bottom-left' as MenuPosition;
 };
