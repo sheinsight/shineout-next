@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { AddNoProps, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule/rule.type';
+import { FormError } from '../../utils';
 
 export interface FormContextValueType {
   func?: {
@@ -13,14 +14,14 @@ export interface FormContextValueType {
         name: string,
         value: any,
         formData: ObjectType,
-        config: {
+        config?: {
           ignoreBind?: boolean;
         },
-      ) => void,
+      ) => Promise<boolean | FormError>,
       update: (
         formValue: ObjectType,
-        errors: ObjectType<Error>,
-        serverErrors: ObjectType<Error>,
+        errors: ObjectType<Error | undefined>,
+        serverErrors: ObjectType<Error | undefined>,
       ) => void,
     ) => void;
     combineRules: <ValueItem>(
@@ -174,7 +175,7 @@ export type UseFormProps<T> = BaseFormProps<T>;
 
 export type FormContext = {
   defaultValues: ObjectType;
-  validateMap: ObjectType;
+  validateMap: ObjectType<Set<(name: string, v: any, formValue: ObjectType, config?: { ignoreBind?: boolean }) => Promise<boolean | FormError>>>;
   // 删除字段队列
   removeArr: Set<string>;
   // 防抖间隔
@@ -186,7 +187,7 @@ export type FormContext = {
   resetTime: number;
   mounted: boolean;
   // 更新队列
-  updateMap: ObjectType;
+  updateMap: ObjectType<Set<(formValue: ObjectType, errors: ObjectType<Error | undefined>, serverErrors: ObjectType<Error | undefined>) => void>>;
   // flow 队列
   flowMap: ObjectType<Set<() => void>>;
   value: ObjectType;
