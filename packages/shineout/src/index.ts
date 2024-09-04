@@ -57,4 +57,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.3.0-beta.7' };
+export default { version: '3.3.6' };
