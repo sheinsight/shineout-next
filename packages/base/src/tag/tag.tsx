@@ -5,7 +5,7 @@ import { util } from '@sheinx/hooks';
 import TagInput from './tag-input';
 
 const Done = 2;
-const Pendding = 1;
+const Pending = 1;
 
 const Tag = (props: TagProps) => {
   const {
@@ -105,7 +105,7 @@ const Tag = (props: TagProps) => {
       return null;
     }
 
-    if (dismiss === Pendding) {
+    if (dismiss === Pending) {
       // 后面用 Spin 替换
       return <span></span>;
     }
