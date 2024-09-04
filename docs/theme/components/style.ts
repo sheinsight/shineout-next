@@ -44,8 +44,13 @@ export default createUseStyles(
     headerLogo: {
       position: 'absolute',
       right: 0,
+      left: 0,
       top: 0,
       zIndex: -1,
+      'body.rtl &': {
+        transition: 'transform 0.3s ease',
+        transform: 'scaleX(-1)',
+      },
     },
 
     headerLogoBg: {

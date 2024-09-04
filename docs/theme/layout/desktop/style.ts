@@ -152,6 +152,9 @@ export default createUseStyles(
         fontSize: 14,
         color: '#141737',
         '& li': {
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
           height: 40,
           lineHeight: '40px',
           padding: '0 16px',
@@ -162,7 +165,10 @@ export default createUseStyles(
           '&.active': {
             color: '#197AFA',
             fontWeight: 500,
-            backgroundColor: '#E9F5FE',
+            backgroundColor: 'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
+            '&:hover': {
+              backgroundColor: 'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
+            },
           },
           '&:hover': {
             backgroundColor: '#F4F5F8',
