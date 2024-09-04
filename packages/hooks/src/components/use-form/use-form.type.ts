@@ -4,25 +4,29 @@ import { AddNoProps, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule/rule.type';
 import { FormError } from '../../utils';
 
+export type ValidateFn = (
+  name: string,
+  value: any,
+  formData: ObjectType,
+  config?: {
+    ignoreBind?: boolean;
+  },
+) => Promise<boolean | FormError>
+
+export type UpdateFn = (
+  formValue: ObjectType,
+  errors: ObjectType<Error | undefined>,
+  serverErrors: ObjectType<Error | undefined>,
+) => void
+
 export interface FormContextValueType {
   func?: {
-    unbind: (n: string, reserveAble?: boolean) => void;
+    unbind: (n: string, reserveAble?: boolean, validate?:ValidateFn, update?:UpdateFn ) => void;
     bind: (
       n: string,
       df: any,
-      validate: (
-        name: string,
-        value: any,
-        formData: ObjectType,
-        config?: {
-          ignoreBind?: boolean;
-        },
-      ) => Promise<boolean | FormError>,
-      update: (
-        formValue: ObjectType,
-        errors: ObjectType<Error | undefined>,
-        serverErrors: ObjectType<Error | undefined>,
-      ) => void,
+      validate: ValidateFn,
+      update: UpdateFn,
     ) => void;
     combineRules: <ValueItem>(
       name: string,
