@@ -182,11 +182,11 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       if (inForm && controlFunc) {
         if (isArray(name)) {
           name.forEach((n) => {
-            controlFunc.unbind(n, reserveAble);
+            controlFunc.unbind(n, reserveAble, validateFiled, update);
             updateError(n, undefined);
           });
         } else {
-          controlFunc.unbind(name, reserveAble);
+          controlFunc.unbind(name, reserveAble, validateFiled, update);
           updateError(name, undefined);
         }
       }

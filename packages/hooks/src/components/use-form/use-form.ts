@@ -19,12 +19,11 @@ import {
   shallowEqual,
   wrapFormError,
   deepClone,
-  FormError,
 } from '../../utils';
 
 const emptyObj = {};
 
-import { FormContext, ProviderProps, UseFormProps, UseFormSlotProps } from './use-form.type';
+import { FormContext, ProviderProps, UseFormProps, UseFormSlotProps, ValidateFn, UpdateFn } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule';
 
@@ -328,17 +327,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     bind: (
       n: string,
       df: any,
-      validate: (
-        name: string,
-        v: any,
-        formValue: ObjectType,
-        config?: { ignoreBind?: boolean },
-      ) => Promise<boolean | FormError>,
-      updateFn: (
-        formValue: ObjectType,
-        errors: ObjectType<Error | undefined>,
-        serverErrors: ObjectType<Error | undefined>,
-      ) => void,
+      validate: ValidateFn,
+      updateFn: UpdateFn,
     ) => {
       if (context.names.has(n)) {
         console.warn(`name "${n}" already exist`);
@@ -363,11 +353,21 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       }
       update(n);
     },
-    unbind: (n: string, reserveAble?: boolean) => {
-      delete context.validateMap[n];
-      delete context.defaultValues[n];
-      delete context.updateMap[n];
-      context.names.delete(n);
+    unbind: (n: string, reserveAble?: boolean, validateFiled?: ValidateFn, update?: UpdateFn) => {
+      const validateFieldSet = context.validateMap[n];
+      if(validateFiled && validateFieldSet.has(validateFiled)){
+        validateFieldSet.delete(validateFiled);
+      }
+
+      const updateFieldSet = context.updateMap[n];
+      if(update && updateFieldSet.has(update)){
+        updateFieldSet.delete(update);
+      }
+
+      if(validateFieldSet.size === 0 && updateFieldSet.size === 0){
+        context.names.delete(n);
+        delete context.defaultValues[n];
+      }
       if (!reserveAble && !context.removeLock) {
         addRemove(n);
       }
