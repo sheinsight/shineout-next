@@ -8,19 +8,21 @@ import React from 'react';
 import { Checkbox } from 'shineout';
 
 const App: React.FC = () => {
-  const [checked, setChecked] = React.useState();
+  const [myState, setMyState] = React.useState();
 
-  console.log('useState checked: >>', checked);
-  const handleChange = (v) => {
-    setChecked(v)
+  console.log('myState: >>', myState);
+  const handleChange = (value, checked, raw) => {
+    console.log('value, checked, raw: >>', value, checked, raw)
+    setMyState(value)
   }
   return (
     <Checkbox.Group keygen>
       <Checkbox
-        value={checked}
+        value={myState}
         onChange={handleChange}
+        htmlValue="htmlValue"
       >
-        {checked ? 'Checked' : 'Unchecked'}
+        {myState ? 'Checked' : 'Unchecked'}
       </Checkbox>
     </Checkbox.Group>
   );
