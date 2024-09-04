@@ -9,7 +9,7 @@ import Anchor from 'docs/theme/layout/desktop/anchor';
 const SingleAPi = (props: MarkdownProps['api'][0]) => {
   const { title, properties, cn, en, subTitle, isLast } = props;
   // const hasVersion = properties.find((item: any) => !!item.version);
-  
+
 
   const state = useSnapshot(store);
   const locate = (cn: string, en: string) => {
@@ -35,6 +35,11 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
     {
       title: locate('说明', 'Description'),
       render: (d: any) => locate(d.tag.cn, d.tag.en),
+    },
+    {
+      title: locate('版本', 'Version'),
+      width: 80,
+      render: (d: any) => d.tag.version,
     },
   ];
 
