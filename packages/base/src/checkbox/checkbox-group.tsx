@@ -41,7 +41,7 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
       }
 
       if (children && React.isValidElement(children)) {
-        children.props.onChange?.(checked ? children.props.htmlValue : undefined, checked, children.props.htmlValue);
+        children.props.onChange?.(_, checked, children.props.htmlValue);
       }
     },
   );
