@@ -2,7 +2,7 @@
 2024-09-04
 ### 🐞 BugFix
 
-- 修复 `Checkbox.Group` 的children中的 `Checkbox` 的onChange不触发的问题
+- 修复 `Checkbox.Group` 的children中的 `Checkbox` 的onChange不触发的问题 ([#637](https://github.com/sheinsight/shineout-next/pull/637))
 
 
 ## 3.3.0
