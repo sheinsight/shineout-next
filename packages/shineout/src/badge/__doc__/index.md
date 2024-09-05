@@ -1,6 +1,7 @@
 ---
 name: Badge
 group: Feedback
+version: 3.4.0
 ---
 
 # Title

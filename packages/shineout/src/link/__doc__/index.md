@@ -1,6 +1,7 @@
 ---
 name: Link
 group: Navigation
+version: 3.4.0
 ---
 
 # Title
