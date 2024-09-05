@@ -157,7 +157,7 @@ export default createUseStyles(
           alignItems: 'center',
           height: 40,
           lineHeight: '40px',
-          padding: '0 16px',
+          padding: '0 8px 0 16px',
           cursor: 'pointer',
           borderRadius: 4,
           marginTop: 4,
