@@ -444,6 +444,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     padding: 0,
     width: '100%',
   },
+  dynamicList: {
+    '& $optionInner': {
+      textWrap: 'wrap',
+    },
+  },
   option: {
     listStyle: 'none',
     lineHeight: token.lineHeightDynamic,
