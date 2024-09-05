@@ -91,9 +91,9 @@ const Example = (props: ExampleProps) => {
         </div>
         <div className={classes.exampleActionButton}>
           <Codesandbox code={code} />
-          <Open open={open} onClick={handleOpen}></Open>
-          <Copy onCopy={handleCopy}></Copy>
           <Debug example={Example} name={propName[state.locales] || defaultName}></Debug>
+          <Copy onCopy={handleCopy}></Copy>
+          <Open open={open} onClick={handleOpen}></Open>
         </div>
       </div>
       {open && (
