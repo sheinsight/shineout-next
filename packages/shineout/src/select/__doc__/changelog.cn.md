@@ -1,3 +1,9 @@
+## 3.4.0-beta.5
+2024-09-05
+
+### 🆕 Feature
+- `Select` 组件支持动态虚拟列表行高([#646](https://github.com/sheinsight/shineout-next/pull/646))
+
 ## 3.4.0-beta.4
 2024-08-30
 

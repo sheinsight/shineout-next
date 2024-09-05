@@ -283,6 +283,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en The height of each option. For performance reasons, Select uses a virtual list to render the options. If the option is a fixed height content, such as a fixed size ReactNode, you can adjust the lineHeight to redistribute the height of each item. When lineHeight is set to auto, dynamic virtual list will be enabled, and the actual height will be adaptive according to the content, and each item will be given a minimum height, which will follow the option height corresponding to the size property. This mode will have a certain performance overhead, please choose different modes according to the actual situation.
    * @cn 每一条选项的高度。出于默认性能考虑，Select 采用了虚拟列表的方式渲染列表项，如果选项为高度固定内容，比如一个固定尺寸的 ReactNode，可以通过调整 lineHeight 来重新分配每一项的高度。当 lineHeight 设置为 auto 时，将开启动态虚拟列表，实际高度将根据内容自适应，并赋予每一项最小高度，最小高度跟随 size 属性对应的选项高度，该模式将有一定的性能开销，请根据实际情况选择不同的模式。
    * @default 32
+   * @version 3.4.0 新增 auto 模式
    */
   lineHeight?: number | 'auto';
 
