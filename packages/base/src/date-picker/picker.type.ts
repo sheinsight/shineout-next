@@ -45,6 +45,8 @@ export interface PickerProps {
     disabled: (d: Date) => boolean,
   ) => void;
   isDisabledDate: (date: Date, position: 'start' | 'end' | undefined) => boolean;
+  clickTimes: number;
+  setClickTimes: Dispatch<SetStateAction<number>>;
 }
 
 export interface CommonPickerProps

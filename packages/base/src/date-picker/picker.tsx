@@ -64,6 +64,9 @@ const Picker = (props: PickerProps) => {
       registerModeDisabled: props.registerModeDisabled,
       onMouseEnter: () => {},
       onMouseLeave: () => {},
+      range,
+      setClickTimes: props.setClickTimes,
+      clickTimes: props.clickTimes,
     };
     if (range) {
       commonProps['onMouseEnter'] = position === 'end' ? handleEnterEnd : handleEnterStart;

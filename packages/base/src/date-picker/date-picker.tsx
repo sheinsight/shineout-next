@@ -33,6 +33,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     adjust = true,
   } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
+  const [clickTimes, setClickTimes] = React.useState(0);
   const inputRef = useRef<{
     inputRef: HTMLInputElement | null;
   }>({
@@ -142,6 +143,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
 
   const handleClose = () => {
     closePop();
+    setClickTimes(0)
     inputRef.current.inputRef?.blur();
   };
 
@@ -292,6 +294,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
             disabledTime={props.disabledTime}
             quickSelect={props.quickSelect}
             showSelNow={props.showSelNow}
+            clickTimes={clickTimes}
+            setClickTimes={setClickTimes}
             setActiveIndex={setActiveIndex}
             hourStep={props.hourStep}
             minuteStep={props.minuteStep}
