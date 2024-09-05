@@ -6,7 +6,7 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import { Form, Input, Checkbox, Rule, Button, TYPE } from 'shineout';
+import { Form, Input, Checkbox, Rule, Button, TYPE, DatePicker, Select } from 'shineout';
 
 interface Value {
   age?: string;
@@ -63,6 +63,7 @@ const App: React.FC = () => {
     }
   }, [ref]);
 
+  console.log('form value: >>', value)
   return (
     <Form
       value={value}
@@ -103,6 +104,27 @@ const App: React.FC = () => {
           type='integer'
           clearable
           rules={[rules.required, rules.integer, rules.range(18, 60)]}
+        />
+      </Form.Item>
+
+      <Form.Item required label='Birthday'>
+        <DatePicker
+          name='birthday'
+          range
+          rules={[rules.required]}
+          clearable
+          clearToUndefined
+        />
+      </Form.Item>
+
+      <Form.Item required label='Hobby'>
+        <Select
+          keygen
+          multiple
+          clearable
+          name='hobby'
+          rules={[rules.required]}
+          data={['football', 'basketball', 'tennis', 'swimming', 'running']}
         />
       </Form.Item>
 
