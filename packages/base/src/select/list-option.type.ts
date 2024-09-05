@@ -1,7 +1,7 @@
 import { JssStyleType, SelectProps, DatumType } from './select.type';
 
 export interface ListOptionProps<DataItem, Value>
-  extends Pick<SelectProps<DataItem, Value>, 'multiple'> {
+  extends Pick<SelectProps<DataItem, Value>, 'multiple' | 'dynamicVirtual'> {
   jssStyle?: JssStyleType;
   index: number;
   data: DataItem;
@@ -12,4 +12,5 @@ export interface ListOptionProps<DataItem, Value>
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   onHover: (index: number, force?: boolean) => void;
   onOptionClick: (data: DataItem, index: number) => void;
+  setRowHeight?: (index: number, height: number) => void;
 }
