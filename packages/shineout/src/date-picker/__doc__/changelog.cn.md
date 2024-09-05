@@ -1,3 +1,11 @@
+## 3.4.0
+2024-09-05
+
+### 🆕 Feature
+
+- `Datepicker` 新增clearToUndefined，点击清除后返回undefined ([#640](https://github.com/sheinsight/shineout-next/pull/640))
+
+
 ## 3.3.6
 2024-08-28
 

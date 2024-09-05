@@ -143,7 +143,6 @@ const MenuComponent = () => {
                     >
                       {component.title[state.locales]}
 
-                      {/* <Tag color="cyan">1.1.1</Tag> */}
                       {component.version && <Tag color="success">{component.version}</Tag>}
                     </li>
                   )

@@ -84,6 +84,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     clearable,
     disabled: disabled!,
     clearWithUndefined: props.clearWithUndefined,
+    clearToUndefined: props.clearToUndefined,
     onClear: undefined,
     allowSingle: props.allowSingle,
     defaultCurrent: props.defaultPickerValue || props.defaultRangeMonth,
