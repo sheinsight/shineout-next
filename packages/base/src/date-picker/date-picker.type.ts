@@ -222,6 +222,14 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @default false
    */
   clearWithUndefined?: boolean;
+
+  /**
+   * @en After clicking the clear button, the data becomes undefined
+   * @cn 点击清除按钮后数据变为 undefined
+   * @default false
+   * @version 3.4.0
+   */
+  clearToUndefined?: boolean;
   /**
    * @en allow single select, only in range can set
    * @cn 是否允许单选, 仅在 range 模式下有效
