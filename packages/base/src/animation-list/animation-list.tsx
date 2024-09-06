@@ -25,6 +25,7 @@ const AnimationList = (props: AnimationListProps) => {
     type: typePo,
     className: classNamePo,
     animation = true,
+    onAnimationAfterEnter,
     ...forwardProps
   } = props;
 
@@ -131,6 +132,7 @@ const AnimationList = (props: AnimationListProps) => {
     }
     setStyle((s) => ({ ...s, ...newStyle }));
     setStatus('afterEnter');
+    onAnimationAfterEnter?.();
   };
 
   const beforeLeave = () => {
@@ -179,6 +181,10 @@ const AnimationList = (props: AnimationListProps) => {
 
   const cleanTimer = () => {
     clearTimeout(context.timer);
+  };
+
+  const onAnimationEnd = () => {
+    console.log('2333');
   };
 
   // 展开

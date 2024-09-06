@@ -118,6 +118,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
+  const [isAnimationFinish, setIsAnimationFinish] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>();
   const optionListRef = useRef<OptionListRefType>();
@@ -476,6 +477,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return datum.remove(item);
   };
 
+  const onAnimationAfterEnter = () => {
+    setIsAnimationFinish(true);
+  };
+
   // innerTitle 模式
   const renderInnerTitle = useInnerTitle({
     open: open || !isEmpty,
@@ -609,6 +614,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       renderItem,
       controlType,
       onLoadMore,
+      isAnimationFinish,
       threshold,
       onControlTypeChange: setControlType,
       closePop,
@@ -755,9 +761,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
             size === 'small' && styles?.pickerSmall,
             size === 'large' && styles?.pickerLarge,
           )}
+          onAnimationAfterEnter={onAnimationAfterEnter}
           onMouseDown={preventDefault}
           display={'block'}
           type='scale-y'
+          // type='fade'
           duration={'fast'}
           style={getListStyle()}
         >

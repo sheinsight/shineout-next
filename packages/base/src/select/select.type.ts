@@ -139,6 +139,7 @@ export interface BaseListProps<DataItem, Value>
   dynamicVirtual?: boolean;
   controlType?: 'mouse' | 'keyboard';
   optionListRef: React.MutableRefObject<OptionListRefType | undefined>;
+  isAnimationFinish: boolean;
   onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
   onOptionClick: (data: DataItem, index: number) => void;
 }

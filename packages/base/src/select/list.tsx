@@ -22,6 +22,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     controlType,
     hideCreateOption,
     optionListRef,
+    isAnimationFinish,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     closePop,
     onControlTypeChange,
@@ -159,6 +160,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           index={index}
           data={item}
+          isAnimationFinish={isAnimationFinish}
           setRowHeight={setRowHeight}
           lineHeight={lineHeight}
           isHover={hoverIndex === index}
