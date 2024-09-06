@@ -60,7 +60,7 @@ const originClasses = [
   'pickerHeaderRight',
   'pickerHeaderMid',
   'clear',
-  'pickerFooterLeft',
+  'pickerFooterTime',
   'timePicker',
   'timeList',
   'timeItem',
@@ -109,7 +109,7 @@ const {
   wrapperNoBorder,
   wrapperUnderline,
   clear,
-  pickerFooterLeft,
+  pickerFooterTime,
   timePicker,
   timeList,
   timeItem,
@@ -630,9 +630,9 @@ describe('DatePicker[Type]', () => {
       textContentTest(datePickerResult, `${year}-${month}-${cell.textContent} 00:00:00`);
       expect(datePickerWrapper.querySelector(pickerFooter)).toBeInTheDocument();
     });
-    const datePickerFooterLeft = datePickerWrapper.querySelector(pickerFooterLeft)!;
-    const datePickerTimePicker = datePickerFooterLeft.querySelector(timePicker)!;
-    fireEvent.mouseDown(datePickerFooterLeft);
+    const datepickerFooterTime = datePickerWrapper.querySelector(pickerFooterTime)!;
+    const datePickerTimePicker = datepickerFooterTime.querySelector(timePicker)!;
+    fireEvent.mouseDown(datepickerFooterTime);
     await waitFor(async () => [await delay(300)]);
     classLengthTest(datePickerTimePicker, timeList, 3);
     classLengthTest(datePickerTimePicker.querySelectorAll(timeList)[0], timeItem, 24);
