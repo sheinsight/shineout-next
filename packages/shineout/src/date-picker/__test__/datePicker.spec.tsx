@@ -342,21 +342,21 @@ describe('Alert[Base]', () => {
     const datePickerPickerWrapper = container.querySelector(pickerWrapper)!;
     const datePickerPickerFooter = datePickerPickerWrapper.querySelector(pickerFooter)!;
     expect(datePickerPickerFooter).toBeInTheDocument();
-    classLengthTest(datePickerPickerFooter, 'button', 1);
+    classLengthTest(datePickerPickerFooter, 'a', 1);
     textContentTest(datePickerPickerFooter, 'Today');
     fireEvent.focus(datePickerResultWrapper);
     fireEvent.click(datePickerResultWrapper);
     await waitFor(async () => {
       await delay(300);
     });
-    fireEvent.click(datePickerPickerFooter.querySelector('button')!);
+    fireEvent.click(datePickerPickerFooter.querySelector('a')!);
     await waitFor(async () => {
       await delay(300);
       expect(datePickerResultWrapper.querySelector(result)?.textContent).not.toBe('Please select date');
     });
     rerender(<DatePicker type='datetime' showSelNow />);
     textContentTest(
-      container.querySelector(pickerFooter)?.querySelector('button') as Element,
+      container.querySelector(pickerFooter)?.querySelector('a') as Element,
       'Current',
     );
   });
