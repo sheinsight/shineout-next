@@ -210,9 +210,9 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     }
   };
 
-  const handleClear = usePersistFn((e: React.MouseEvent) => {
+  const handleClear = usePersistFn((e?: React.MouseEvent) => {
     if (!clearable) return;
-    e.stopPropagation();
+    e?.stopPropagation();
     if (disabledStatus === 'all') return;
     if (edit) {
       if (range) {

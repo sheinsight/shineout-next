@@ -348,15 +348,29 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     display: 'flex',
     justifyContent: 'space-between',
   },
-  pickerFooterLeft: {
+  pickerFooterTime: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
   },
-  pickerFooterRight: {
+  pickerFooterNow: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
     '&:only-child': {
       width: '100%',
       textAlign: 'center',
     },
+  },
+  pickerFooterConfirm: {
+    textAlign: 'right',
+    padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
+  },
+  pickerRange: {
+  },
+  pickerRangeBody: {
+    display: 'flex',
+  },
+  pickerRangeFooter: {
+    borderTop: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   pickerRow: {},
   pickerRowWeek: {

@@ -23,7 +23,7 @@ const Link = (props: LinkProps) => {
       ...restProps
      } = props
 
-    const linkClasses = jssStyle?.link() || ({} as LinkClasses);
+    const linkClasses = jssStyle?.link?.() || ({} as LinkClasses);
 
     const rootClass = classNames(className, linkClasses.wrapper, {
       [linkClasses.underline]: underline === true,
