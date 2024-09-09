@@ -159,6 +159,17 @@ const getLineStyle = () => {
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="line"]': {
       '& $hr': { top: 0, height: 1, width: '100%' },
+      '& $tab': {
+        '&:after': {
+          position: 'absolute',
+          content: '""',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: 1,
+          background: Token.tabsBorderColor,
+        },
+      },
     },
   };
 };
@@ -562,9 +573,6 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
           fontSize: Token.tabsLineCheckedFontSize,
           background: Token.tabsLineCheckedBackgroundColor,
           fontWeight: Token.tabsLineCheckedFontWeight,
-          '&:after': {
-            background: Token.tabsLineAfterBackgroundColor,
-          },
         },
 
         '&[data-soui-state="disabled"]': {
@@ -572,6 +580,32 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
           cursor: 'not-allowed',
         },
 
+        '&:after': {
+          position: 'absolute',
+          content: '""',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: 1,
+          background: Token.tabsLineHrBackgroundColor,
+        },
+
+        '[data-soui-position^="left-"] &': {
+          '&:after': {
+            width: 1,
+            right: 0,
+            left: 'auto',
+            height: '100%',
+            background: Token.tabsLineHrBackgroundColor,
+          },
+        },
+        '[data-soui-position^="right-"] &': {
+          '&:after': {
+            width: 1,
+            height: '100%',
+            background: Token.tabsLineHrBackgroundColor,
+          },
+        },
 
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $lineInner': {
           background: Token.tabsLineHoverBackgroundColor,

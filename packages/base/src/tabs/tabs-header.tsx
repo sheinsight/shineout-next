@@ -157,18 +157,20 @@ const TabsHeader = (props: TabsHeaderProps) => {
     const currentTab = tabRef.current[active!];
     if(!currentTab) return;
 
+    const currentTabRect = currentTab.getBoundingClientRect();
+
     const scrollBarStyle = isVertical ? {
       right: getPosition?.startsWith('left') ? 0 : 'auto',
       left: getPosition?.startsWith('right') ? 0 : 'auto',
-      top: currentTab.offsetTop + (currentTab.clientHeight / 2),
-      height: shape === 'line' ? currentTab.clientHeight : 24,
+      top: currentTab.offsetTop + (currentTabRect.height / 2),
+      height: shape === 'line' ? currentTabRect.height : 24,
       width: 2,
       transform: 'translateY(-50%)',
     } : {
       bottom: getPosition?.startsWith('top') ? 0 : 'auto',
       top: getPosition?.startsWith('bottom') ? 0 : 'auto',
-      left: currentTab.offsetLeft + (currentTab.clientWidth / 2),
-      width: shape === 'line' ? currentTab.clientWidth : 24,
+      left: currentTab.offsetLeft + (currentTabRect.width / 2),
+      width: shape === 'line' ? currentTabRect.width : 24,
       height: 2,
       transform: 'translateX(-50%)',
     }
