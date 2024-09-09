@@ -19,6 +19,7 @@ import {
   usePaginationList,
   useLatestObj,
   useResize,
+  util
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -219,7 +220,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       const maxHeight = target.scrollHeight - target.clientHeight;
       const x = Math.min(target.scrollLeft / maxWidth, 1);
       const y = Math.min(target.scrollTop / maxHeight, 1);
-      props.onScroll(x, y, target.scrollLeft);
+      props.onScroll(x, y, target.scrollLeft, target.scrollTop);
     }
   });
 
@@ -236,7 +237,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       virtualInfo.handleScroll(info);
       layoutFunc.checkFloat();
       if (props.onScroll && typeof props.onScroll === 'function') {
-        props.onScroll(info.x, info.y, info.scrollLeft);
+        props.onScroll(info.x, info.y, info.scrollLeft, info.scrollTop);
       }
     },
   );
@@ -329,7 +330,13 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       parent: tableRef?.current,
     };
 
-    const isRenderBaseTable = !virtual && !isScrollY && !props.sticky && props.data?.length && !props.style?.height && !props.height
+    const isRenderBaseTable =
+      !virtual &&
+      !isScrollY &&
+      !props.sticky &&
+      props.data?.length &&
+      !props.style?.height &&
+      !props.height;
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
@@ -460,8 +467,15 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
   }, [theadRef.current, isScrollY]);
 
+  const getRenderIndexByData = (data: Item | string) => {
+    const originKey = typeof data === 'string' ? data : util.getKey(props.keygen, data);
+    const index = treeData.findIndex((item) => util.getKey(props.keygen, item) === originKey);
+    return index
+  };
+
   const tableFunc = useLatestObj({
     scrollToIndex: virtualInfo.scrollToIndex,
+    getRenderIndexByData: getRenderIndexByData
   });
 
   useEffect(() => {

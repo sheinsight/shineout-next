@@ -9,7 +9,9 @@ export interface ListOptionProps<DataItem, Value>
   isHover: boolean;
   lineHeight: number;
   closePop: () => void;
+  dynamicVirtual?: boolean;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   onHover: (index: number, force?: boolean) => void;
   onOptionClick: (data: DataItem, index: number) => void;
+  setRowHeight?: (index: number, height: number) => void;
 }
