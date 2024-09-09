@@ -35,7 +35,7 @@ export interface PickerProps {
     timeZone?: string;
     weekStartsOn: number;
   };
-  closePop: () => void;
+  closePop: (isFromConfirm?: boolean) => void;
   min?: DateTimeType;
   max?: DateTimeType;
   setActiveIndex: (index: number) => void;
@@ -47,12 +47,13 @@ export interface PickerProps {
   isDisabledDate: (date: Date, position: 'start' | 'end' | undefined) => boolean;
   clickTimes: number;
   setClickTimes: Dispatch<SetStateAction<number>>;
+  needConfirm?: boolean;
 }
 
 export interface CommonPickerProps
   extends Pick<
     PickerProps,
-    'jssStyle' | 'options' | 'format' | 'type' | 'showSelNow' | 'registerModeDisabled' | 'children'
+    'jssStyle' | 'options' | 'format' | 'type' | 'showSelNow' | 'range' | 'setClickTimes' | 'clickTimes' | 'needConfirm' | 'registerModeDisabled' | 'children'
   > {
   rangeDate: Array<Date | undefined>;
   current: Date;
@@ -67,6 +68,7 @@ export interface CommonPickerProps
   position?: 'start' | 'end';
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  closeByConfirm?: () => void;
 }
 
 export interface CommonTimeProps

@@ -4,10 +4,11 @@ import classNames from 'classnames';
 import Icons from '../icons';
 import { getLocale, useConfig } from '../config';
 import TimePicker from './time';
-import Button from '../button';
+import Link from '../link';
 
 import type { DayProps } from './day.type';
 import PickerTitle from './pickerTitle';
+import Confirm from './confirm';
 
 const Day = (props: DayProps) => {
   const { jssStyle } = props;
@@ -48,7 +49,10 @@ const Day = (props: DayProps) => {
     let now = new Date();
     if (func.isDisabled(now)) return;
     props.setCurrent(new Date(), areaType);
-    props.onChange(new Date(), props.type === 'datetime');
+    props.onChange(new Date(), props.needConfirm || props.type === 'datetime');
+    setTimeout(() => {
+      if(props.closeByConfirm && !props.range) props.closeByConfirm();
+    }, 0);
   };
 
   const renderDay = (item: Date, index: number) => {
@@ -77,10 +81,10 @@ const Day = (props: DayProps) => {
         key={index}
         onClick={() => {
           if(props.range){
-            func.handleDayClick(item, props.clickTimes < 1)
+            func.handleDayClick(item, props.needConfirm || props.clickTimes < 1)
             props.setClickTimes(props.clickTimes + 1)
           }else{
-            func.handleDayClick(item)
+            func.handleDayClick(item, props.needConfirm)
           }
         }}
         onDoubleClick={() => {
@@ -131,7 +135,6 @@ const Day = (props: DayProps) => {
 
   const renderFooter = () => {
     const showLeft = props.type === 'datetime' && (props.rangeDate?.[0] || props.rangeDate?.[1]);
-    const showRight = props.showSelNow;
 
     const timeStr = func.getTimeStr();
     if (!showLeft && !props.showSelNow) return null;
@@ -143,15 +146,18 @@ const Day = (props: DayProps) => {
       // eslint-disable-next-line
       if (match) format = match[0];
     }
+
+    const showNeedConfirm = props.needConfirm && !props.range;
     return (
-      <div className={styles?.pickerFooter} dir={direction}>
+      <div className={styles?.pickerFooter} dir={direction} style={{borderTop: props.needConfirm && props.range ? 'none': ''}}>
         {props.type === 'datetime' && (
           <div
             className={classNames(
-              styles?.pickerFooterLeft,
+              styles?.pickerFooterTime,
               styles?.datetime,
               !timeStr && styles?.datetimeHide,
             )}
+            style={{paddingRight: showNeedConfirm ? 0 : undefined}}
           >
             {
               <>
@@ -162,33 +168,41 @@ const Day = (props: DayProps) => {
             }
           </div>
         )}
-        {showRight && (
-          <div className={styles?.pickerFooterRight}>
+        {props.showSelNow && (
+          <div
+            className={styles?.pickerFooterNow}
+            style={{
+              marginRight: showNeedConfirm ? 'auto' : undefined,
+              paddingLeft: showNeedConfirm ? 6 : undefined
+            }}
+          >
             {props.showSelNow && props.type === 'date' && (
-              <Button
-                size={'small'}
-                mode='text'
+              <Link
+                size="small"
                 type="primary"
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
                 onClick={selNow}
               >
                 {getLocale(locale, 'now')}
-              </Button>
+              </Link>
             )}
             {props.showSelNow && props.type === 'datetime' && (
-              <Button
-                size={'small'}
-                mode='text'
+              <Link
+                size="small"
                 type="primary"
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
                 onClick={selNow}
               >
                 {getLocale(locale, 'current')}
-              </Button>
+              </Link>
             )}
           </div>
+        )}
+
+        {showNeedConfirm && (
+          <Confirm closeByConfirm={props.closeByConfirm} jssStyle={jssStyle} />
         )}
       </div>
     );

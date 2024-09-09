@@ -1,8 +1,7 @@
-## 3.4.0
-2024-09-05
-
+## 3.4.0-beta.6
+2024-09-06
 ### 🆕 Feature
-
+- `Datepicker` 新增needConfirm属性: 是否开启手动确认按钮，开启后只有点击确认按钮才会提交选择的值。 ([#650](https://github.com/sheinsight/shineout-next/pull/650))
 - `Datepicker` 新增clearToUndefined，点击清除后返回undefined ([#644](https://github.com/sheinsight/shineout-next/pull/644))
 
 
