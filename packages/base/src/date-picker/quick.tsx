@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import type { QuickProps } from './quick.type';
-import type { QuickSelectType } from './date-picker.type';
+import type { QuickSelectType, DatePickerValueType } from './date-picker.type';
 import { dateUtil, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 
 const Quick = (props: QuickProps) => {
-  const { jssStyle, quickSelect, format, options, children } = props;
+  const { jssStyle, quickSelect, format, options, children, type } = props;
   const styles = jssStyle?.datePicker?.();
+  const quickDateCache = useRef<DatePickerValueType>();
+  const quickActiveKey = useRef<number>();
 
-  const handleClick = (item: QuickSelectType) => {
+  const handleClick = (item: QuickSelectType, index: number) => {
     let itemV = util.isFunc(item.value) ? item.value() : item.value;
+    quickDateCache.current = itemV;
+    quickActiveKey.current = index;
     if (!util.isArray(itemV)) {
       itemV = [itemV];
     }
@@ -25,15 +29,36 @@ const Quick = (props: QuickProps) => {
   if (!quickSelect?.length) {
     return (children || null) as React.ReactElement;
   }
+
+  const compareDate = (index: number) => {
+    if (!quickDateCache.current) return false;
+    if (index !== quickActiveKey.current) return false;
+    let currentArr = quickDateCache.current;
+    if (!util.isArray(currentArr)) {
+      currentArr = [currentArr];
+    }
+    return dateUtil.compareDateArray(
+      currentArr as Date[],
+      props.dateArr as Date[],
+      type,
+      options,
+      format,
+    );
+  };
+
   return (
     <div className={classNames(styles?.quickPicker, styles?.picker)}>
       {quickSelect?.map((item, index) => {
+        const isActive = compareDate(index);
         return (
           <div
             key={index}
-            className={styles?.quickPickerItem}
+            className={classNames(
+              styles?.quickPickerItem,
+              isActive && styles?.quickPickerActiveItem,
+            )}
             onClick={() => {
-              handleClick(item);
+              handleClick(item, index);
             }}
           >
             {item.name}

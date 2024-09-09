@@ -12,10 +12,16 @@ const formTokens: FormTokens = {
   formItemLabelPaddingY: 'Spacing-5',
   formItemLabelMarginXEnd: 'Spacing-8',
   formItemLabelTopPaddingY: 'Spacing-4',
-  formItemDangerColor: 'Danger-6',
+  formItemLabelFontWeight: 'Weight-regular',
+  formItemLabelFontColor: 'Neutral-text-5',
+  formItemDangerFontSize: 'Font-12',
+  formItemDangerFontColor: 'Danger-6',
+  formItemDangerFontWeight: 'Weight-regular',
   formItemTipMinHeight: 'Size-10',
   formItemTipFontSize: 'Font-12',
   formItemTipFontColor: 'Neutral-text-3',
+  formItemTipFontWeight: 'Weight-regular',
+  formItemTipMarginTop: 'Spacing-0',
 };
 
 export default formTokens;

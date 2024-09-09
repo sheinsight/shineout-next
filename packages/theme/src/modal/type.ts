@@ -52,7 +52,7 @@ export interface ModalTokens {
   modalPanelGap: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 对话框面板圆角
    */
   modalPanelRadius: string;
@@ -70,7 +70,7 @@ export interface ModalTokens {
   modalHeaderIconMarginEnd: string;
   /**
    * @type {string}
-   * @token Size-2
+   * @token Spacing-2
    * @description 对话框头部区域图标外边距顶部距离
    */
   modalHeaderIconMarginTop: string;
@@ -116,6 +116,36 @@ export interface ModalTokens {
    * @description 对话框头部区域字体字号
    */
   modalHeaderFontSize: string;
+  /**
+   * @type {string}
+   * @token Weight-medium
+   * @description 对话框头部区域字体字重
+   */
+  modalHeaderFontWeight: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 对话框头部区域字体颜色
+   */
+  modalHeaderFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 对话框主区域字体颜色
+   */
+  modalBodyFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 对话框主区域字体字重
+   */
+  modalBodyFontWeight: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 对话框主区域字体字号
+   */
+  modalBodyFontSize: string;
   /**
    * @type {string}
    * @token Spacing-12

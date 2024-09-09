@@ -139,7 +139,7 @@ const IMenu = ({ theme }: { theme: MenuProps['theme'] }) => {
   return (
     <div>
       <div style={{ marginBottom: 12 }}>
-        <Button type='primary' onClick={() => setCollapse(!collapse)}>
+        <Button type='primary' onClick={() => setCollapse(!collapse)} style={{ height: 32 }}>
           {collapse ? (
             <svg
               viewBox='64 64 896 896'

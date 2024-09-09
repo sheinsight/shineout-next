@@ -421,6 +421,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     marginTop: token.cascaderPlaceholderMarginY,
     marginBottom: token.cascaderPlaceholderMarginY,
   },
+  inputPlaceholder: {
+    pointerEvents: 'none',
+    opacity: 0.5,
+    inset: 0,
+    position: 'absolute',
+    padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
+  },
   inputMirror: {
     position: 'absolute',
     left: 0,
@@ -490,11 +497,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   optionIcon: {
     position: 'absolute',
     right: 8,
-    top: 9,
+    top: 0,
+    bottom: 0,
     fontSize: token.cascaderFontSize,
     color: token.cascaderOptionIconColor,
-    lineHeight: 0,
-    verticalAlign: 'middle',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     '& svg': {
       verticalAlign: 'middle',
       width: 14,

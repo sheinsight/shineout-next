@@ -36,8 +36,8 @@ const menuSearchStyle: JsStyles<MenuSearchClassType> = {
   },
   wrapperCollapsed: {
     cursor: 'pointer',
-    width: token.menuSearchCollpaseSize,
-    height: token.menuSearchCollpaseSize,
+    width: token.menuSearchCollapseSize,
+    height: token.menuSearchCollapseSize,
     lineHeight: 1,
     '& input': {
       opacity: 0,

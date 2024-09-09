@@ -47,6 +47,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   const rootClass = classNames(contentStyle.contentWrapper, {
     [contentStyle.childnode]: data[childrenKey] && (data[childrenKey] as DataItem[]).length > 0,
     [contentStyle.inlineContent]: inlineNode,
+    [contentStyle.contentDisabled]: disabled,
   });
   const contentClass = classNames(
     contentStyle.content,

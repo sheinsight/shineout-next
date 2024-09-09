@@ -20,7 +20,7 @@ const sliderTokens: SliderTokens = {
   sliderValueBackgroundColor: 'Neutral-fill-1',
   sliderValueHoverBackgroundColor: 'Neutral-fill-9',
   sliderValueHoverFontColor: 'Neutral-text-1',
-  sliderValueHoverRadius: 'Radius-2',
+  sliderValueHoverRadius: 'Radius-lesser',
   sliderValueHoverPaddingX: 'Spacing-8',
   sliderValueHoverPaddingY: 'Spacing-3',
   sliderScaleLineSize: 'Size-3',

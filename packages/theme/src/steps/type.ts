@@ -112,6 +112,12 @@ export interface StepsTokens {
   stepsWaitBackgroundColor: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 步骤条等待状态中的鼠标移入时的字体颜色
+   */
+  stepsWaitHoverFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-1
    * @description 步骤条进行状态中的字体颜色
    */
@@ -134,6 +140,12 @@ export interface StepsTokens {
    * @description 步骤条已完成状态的背景颜色
    */
   stepsFinishBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 步骤条已完成状态的鼠标移入时的字体颜色
+   */
+  stepsFinishHoverFontColor: string;
   /**
    * @type {string}
    * @token Neutral-text-1

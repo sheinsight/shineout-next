@@ -8,7 +8,7 @@ const carouselTokens: CarouselTokens = {
   carouselArrowSize: 'Size-12',
   carouselArrowIconSize: 'Size-10',
   carouselArrowBackgroundColor: 'rgba(255, 255, 255, 0.2)',
-  carouselArrowBorderRadius: 'Radius-4',
+  carouselArrowBorderRadius: 'Radius-default',
   carouselArrowFontColor: 'Neutral-text-1',
   carouselArrowHoverBackgroundColor: 'rgba(255, 255, 255, 0.4)',
   carouselIndicatorBackgroundColor: 'Neutral-fill-4',

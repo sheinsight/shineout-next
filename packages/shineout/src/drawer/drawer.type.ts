@@ -1,9 +1,10 @@
 import { ModalProps } from '../modal/modal.type';
+import { type } from '../utils';
 
 /**
  * @title Drawer
  */
-export interface DrawerProps extends Omit<ModalProps, 'moveable'> {
+interface DrawerPropsOrgin extends Omit<ModalProps, 'moveable'> {
   /** *
    * @en 弹出位置
    * @cn Pop-up position
@@ -23,3 +24,5 @@ export interface DrawerProps extends Omit<ModalProps, 'moveable'> {
    */
   height?: number | string;
 }
+
+export type DrawerProps = type.RequireAWithB<DrawerPropsOrgin, 'type', 'title'>

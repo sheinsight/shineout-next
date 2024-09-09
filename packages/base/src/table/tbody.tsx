@@ -27,9 +27,10 @@ export default (props: TbodyProps) => {
   const renderRow = (item: any, index: number) => {
     const rowIndex = index + currentIndex;
     const originKey = util.getKey(props.keygen, item, rowIndex);
+    const trRenderKey = `${originKey}-${rowIndex}`;
     return (
       <Tr
-        key={originKey}
+        key={trRenderKey}
         originKey={originKey}
         row={rowData[index]}
         columns={columns}
@@ -55,6 +56,7 @@ export default (props: TbodyProps) => {
         striped={props.striped}
         radio={props.radio}
         isCellHover={isCellHover}
+        hover={hover}
         isSelect={props.datum.check(rowSelectMergeStartData[index])}
         handleCellHover={handleCellHover}
         // to update
@@ -66,6 +68,7 @@ export default (props: TbodyProps) => {
         bodyScrollWidth={props.bodyScrollWidth}
         resizeFlag={props.resizeFlag}
         treeCheckAll={props.treeCheckAll}
+        onCellClick={props.onCellClick}
       />
     );
   };

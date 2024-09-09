@@ -171,18 +171,18 @@ const ImageStyle: JsStyles<ImageClass> = {
 
   circle: {
     borderRadius: Token.imageCircleBorderRadius,
-    border: `1px solid ${Token.imageCircleBorderColor}`,
+    border: `1px solid ${Token.imageBorderColor}`,
   },
 
   rounded: {
-    borderRadius: Token.imageRoundedBorderRadius,
-    border: `1px solid ${Token.imageRoundedBorderColor}`,
+    borderRadius: Token.imageBorderRadius,
+    border: `1px solid ${Token.imageBorderColor}`,
   },
 
   thumbnail: {
-    borderRadius: Token.imageThumbnailBorderRadius,
+    borderRadius: Token.imageBorderRadius,
     backgroundColor: '#FFFFFF',
-    border: `1px solid ${Token.imageThumbnailBorderColor}`,
+    border: `1px solid ${Token.imageBorderColor}`,
 
     '& $inner': {
       top: 4,

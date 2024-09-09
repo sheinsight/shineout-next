@@ -231,13 +231,21 @@ const tableStyle: JsStyles<TableClassType> = {
       background: `${token.tableTbodyHoverBackgroundColor}`,
     },
   },
+  rowHover: {
+    '& td': {
+      transition: 'background-color 0.2s',
+    },
+    '&&:hover td': {
+      background: `${token.tableTbodyHoverBackgroundColor}`,
+    },
+  },
   floatLeft: {
     '& $cellFixedLast$cellFixedLeft': {
       '&::after': {
         content: '""',
         position: 'absolute',
         top: 0,
-        bottom: 0,
+        bottom: -1,
         width: '5px',
       },
       '&[dir=ltr]::after': {
@@ -257,6 +265,7 @@ const tableStyle: JsStyles<TableClassType> = {
       },
     },
   },
+
   floatRight: {
     '& $cellFixedLast$cellFixedRight': {
       '&::before': {

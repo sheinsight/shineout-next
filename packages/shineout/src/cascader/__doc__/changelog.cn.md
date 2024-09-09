@@ -1,3 +1,22 @@
+## 3.3.6
+2024-09-02
+
+### 🐞 BugFix
+- 修复 `Cascader` 组件 `onChange` 第二参数缺失的问题([#632](https://github.com/sheinsight/shineout-next/pull/632))
+
+## 3.3.3
+2024-08-15
+
+### 🆕 Feature
+- 支持 `Cascader` 单选搜索时，展示非string类型的值(renderItem返回的结果) ([#605](https://github.com/sheinsight/shineout-next/pull/605))
+
+
+## 3.3.0
+2024-07-23
+
+### 🆕 Feature
+- `Cascader` 支持下拉弹窗溢出自动调整位置([#564](https://github.com/sheinsight/shineout-next/pull/564))
+
 ## 3.2.5
 2024-07-02
 

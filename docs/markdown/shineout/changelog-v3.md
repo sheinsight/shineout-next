@@ -3,7 +3,7 @@
 
 ### 主要更新
 - 使用全新的设计语言，更注重细节交互，更加符合现代审美
-- 新增了 Description、Step、Collpase、Empty 四个组件
+- 新增了 Description、Step、Collapse、Empty 四个组件
 - 支持 React 18
 - 支持 SSR 场景
 - 使用 css-in-jss 对于微前端更友好
@@ -57,6 +57,8 @@
   - 废弃 `fixed` 属性，使用 `virtual` 代替
 - Tag
   - 废弃 `type` 属性，使用 `color` 代替
+- Popover
+  - 废弃 `Popover.Content` 组件，使用boolean属性 `useTextStyle` 代替
 
 
 ### 功能改进

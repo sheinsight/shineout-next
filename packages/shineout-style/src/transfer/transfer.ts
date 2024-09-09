@@ -11,6 +11,11 @@ const TransferStyle: JsStyles<TransferClass> = {
     color: Token.transferFontColor,
     fontSize: Token.transferFontSize,
   },
+  equalPanelWidth: {
+    '& $view': {
+      flex: 1,
+    },
+  },
   small: {
     '& $operations': { '& svg': { width: 12 } },
     '& $header': {
@@ -78,7 +83,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     marginLeft: 3,
     '& svg': {
       width: 14,
-      color: Token.transferIconColor,
+      color: Token.transferRemoveIconColor,
     },
     '&:hover': {
       background: Token.transferIconBackgroundColor,
@@ -137,6 +142,8 @@ const TransferStyle: JsStyles<TransferClass> = {
     boxSizing: 'border-box',
     justifyContent: 'space-between',
     background: Token.transferHeaderBackgroundColor,
+    borderRadius: `${Token.transferBorderRadius} ${Token.transferBorderRadius} 0 0`,
+    borderBottom: `1px solid ${Token.transferHeaderBorderColor}`,
   },
   spinContainer: {},
   title: {
@@ -146,11 +153,14 @@ const TransferStyle: JsStyles<TransferClass> = {
   count: {
     fontSize: Token.transferFontSize,
   },
-  list: {},
+  list: {
+    background: Token.transferBackgroundColor,
+  },
   footer: {
     height: 48,
     boxSizing: 'border-box',
-    borderTop: `1px solid ${Token.transferBorderColor}`,
+    borderTop: `1px solid ${Token.transferFooterBorderColor}`,
+    background: Token.transferFooterBackgroundColor,
   },
   item: {
     padding: '1px 4px',
@@ -172,15 +182,24 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
   },
   itemWrapper: {
-    borderRadius: Token.transferBorderRadius,
+    borderRadius: Token.transferItemBorderRadius,
     cursor: 'pointer',
+    height: '100%',
     '& $checkbox': {
       width: '100%',
+      height: '100%',
       padding: '5px 8px',
       marginRight: 0,
     },
   },
-  checkbox: {},
+  checkbox: {
+    '&>[data-soui-role="desc"]': {
+      flex: 1,
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
+    },
+  },
   empty: {
     height: '100%',
     display: 'flex',

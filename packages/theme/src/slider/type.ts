@@ -100,7 +100,7 @@ export interface SliderTokens {
   sliderValueHoverFontColor: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 滑块文案鼠标移入时的圆角
    */
   sliderValueHoverRadius: string;

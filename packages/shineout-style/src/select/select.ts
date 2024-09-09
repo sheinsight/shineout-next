@@ -136,6 +136,16 @@ const selectStyle: JsStyles<SelectClassType> = {
       color: token.selectDisabledPlaceholderColor,
     },
   },
+  triggerHover: {
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      right: 0,
+      left: 0,
+      height: 4,
+      bottom: -4,
+    },
+  },
   popover: {},
   ...resetWrapper,
   resultWrapper: {
@@ -389,9 +399,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       marginLeft: 0,
     },
     maxWidth: '80%',
-    marginRight: 4,
-    marginTop: token.selectPlaceholderMarginY,
-    marginBottom: token.selectPlaceholderMarginY,
+    marginRight: token.selectTagMarginRight,
+    marginTop: token.selectTagMarginY,
+    marginBottom: token.selectTagMarginY,
     textWrap: 'nowrap',
     '&$hideTag': {
       marginRight: 0,
@@ -404,6 +414,13 @@ const selectStyle: JsStyles<SelectClassType> = {
   space: {
     marginTop: token.selectPlaceholderMarginY,
     marginBottom: token.selectPlaceholderMarginY,
+  },
+  inputPlaceholder: {
+    pointerEvents: 'none',
+    opacity: 0.5,
+    inset: 0,
+    position: 'absolute',
+    padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
   },
   inputMirror: {
     position: 'absolute',
@@ -427,6 +444,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     padding: 0,
     width: '100%',
   },
+  dynamicList: {
+    '& $optionInner': {
+      textWrap: 'wrap',
+    },
+  },
   option: {
     listStyle: 'none',
     lineHeight: token.lineHeightDynamic,
@@ -447,6 +469,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    height: '100%',
     color: token.selectOptionFontColor,
     fontSize: token.selectFontSize,
     lineHeight: token.lineHeightDynamic,

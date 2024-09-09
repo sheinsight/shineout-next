@@ -183,14 +183,6 @@ const getFillStyle = () => {
             color: Token.tabsActiveFontColor,
           },
         },
-
-        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $fillInner': {
-          background: Token.tabsExtraFillHoverBackgroundColor,
-        },
-        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active $fillInner': {
-          background: Token.tabsClickBackgroundColor,
-        },
-
         '&:before': {
           content: '""',
           position: 'absolute',
@@ -320,6 +312,10 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
   hr: {
     position: 'absolute',
     background: Token.tabsBorderColor,
+
+    '$headerWrapper[data-soui-shape="line"] &': {
+      background: Token.tabsLineHrBackgroundColor,
+    },
   },
   cardHr: {
     // aflter
@@ -509,7 +505,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     ...getHeaderStyle(),
   },
   headerScroll: {
-    transition: 'all .15s ease-out',
+    transition: 'all .2s cubic-bezier(.34,.69,.1,1)',
   },
   headerScrollBar: {
     position: 'absolute',
@@ -526,26 +522,30 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     '$headerWrapper[data-soui-shape="card"] &': {
       '& $tab': {
         position: 'relative',
-        border: `1px solid ${Token.tabsBorderColor}`,
-        padding: `${Token.tabsTabPaddingY} ${Token.tabsTabPaddingX}`,
-        background: Token.tabsBackgroundColor,
+        border: `1px solid ${Token.tabsCardBorderColor}`,
+        padding: `${Token.tabsCardPaddingY} ${Token.tabsCardPaddingX}`,
+        color: Token.tabsCardFontColor,
+        fontSize: Token.tabsCardFontSize,
+        fontWeight: Token.tabsCardFontWeight,
+        background: Token.tabsCardBackgroundColor,
 
         '&[data-soui-state="active"]': {
-          color: Token.tabsActiveFontColor,
-          background: Token.tabsActiveBackgroundColor,
-          fontWeight: 'bold',
+          color: Token.tabsCardCheckedFontColor,
+          fontSize: Token.tabsCardCheckedFontSize,
+          fontWeight: Token.tabsCardCheckedFontWeight,
+          background: Token.tabsCardCheckedBackgroundColor,
         },
 
         '&[data-soui-state="disabled"]': {
-          color: Token.tabsDisabledFontColor,
+          color: Token.tabsCardDisabledFontColor,
           cursor: 'not-allowed',
         },
 
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover': {
-          background: Token.tabsHoverBackgroundColor,
+          background: Token.tabsCardHoverBackgroundColor,
         },
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active': {
-          background: Token.tabsClickBackgroundColor,
+          background: Token.tabsCardActiveBackgroundColor,
         },
       },
     },
@@ -553,69 +553,89 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       '& $tab': {
         position: 'relative',
         padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
-        // background: '#FFF',
-
+        color: Token.tabsLineFontColor,
+        fontSize: Token.tabsLineFontSize,
+        fontWeight: Token.tabsLineFontWeight,
+        background: Token.tabsLineBackgroundColor,
         '&[data-soui-state="active"]': {
-          color: Token.tabsActiveFontColor,
-          background: Token.tabsActiveBackgroundColor,
-          fontWeight: 'bold',
+          color: Token.tabsLineCheckedFontColor,
+          fontSize: Token.tabsLineCheckedFontSize,
+          background: Token.tabsLineCheckedBackgroundColor,
+          fontWeight: Token.tabsLineCheckedFontWeight,
+          '&:after': {
+            background: Token.tabsLineAfterBackgroundColor,
+          },
         },
 
         '&[data-soui-state="disabled"]': {
-          color: Token.tabsDisabledFontColor,
+          color: Token.tabsLineDisabledFontColor,
           cursor: 'not-allowed',
         },
-        // '&:not([data-soui-state="active"])': {
-        //   '&:after': {
-        //     position: 'absolute',
-        //     content: '""',
-        //     bottom: 0,
-        //     left: 0,
-        //     width: '100%',
-        //     height: 1,
-        //     background: Token.tabsBorderColor,
-        //   },
-        // },
+
 
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $lineInner': {
-          background: Token.tabsHoverBackgroundColor,
+          background: Token.tabsLineHoverBackgroundColor,
         },
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active $lineInner': {
-          background: Token.tabsClickBackgroundColor,
+          background: Token.tabsLineActiveBackgroundColor,
         },
       },
     },
     '$headerWrapper[data-soui-shape="dash"] &': {
       '& $tab': {
         padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
+        color: Token.tabsLineFontColor,
+        fontSize: Token.tabsLineFontSize,
+        fontWeight: Token.tabsLineFontWeight,
+        background: Token.tabsLineBackgroundColor,
         '&[data-soui-state="active"]': {
-          color: Token.tabsActiveFontColor,
-          background: Token.tabsActiveBackgroundColor,
-          fontWeight: 'bold',
+          color: Token.tabsLineCheckedFontColor,
+          fontSize: Token.tabsLineCheckedFontSize,
+          background: Token.tabsLineCheckedBackgroundColor,
+          fontWeight: Token.tabsLineCheckedFontWeight,
+          '&:after': {
+            background: Token.tabsLineAfterBackgroundColor,
+          },
         },
 
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $lineInner': {
-          background: Token.tabsHoverBackgroundColor,
+          background: Token.tabsLineHoverBackgroundColor,
         },
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active  $lineInner': {
-          background: Token.tabsClickBackgroundColor,
+          background: Token.tabsLineActiveBackgroundColor,
         },
 
         '&[data-soui-state="disabled"]': {
-          color: Token.tabsDisabledFontColor,
+          color: Token.tabsLineDisabledFontColor,
           cursor: 'not-allowed',
         },
       },
     },
     '$headerWrapper[data-soui-shape="fill"] &': {
       '& $tab': {
+        color: Token.tabsFillFontColor,
+        fontSize: Token.tabsFillFontSize,
+        fontWeight: Token.tabsFillFontWeight,
+        background: Token.tabsFillBackgroundColor,
         '&[data-soui-state="active"]': {
-          fontWeight: 'bold',
+          // fontSize: Token.tabsFillCheckedFontSize,
+          '& $fillInner': {
+            color: Token.tabsFillCheckedFontColor,
+            fontWeight: Token.tabsFillCheckedFontWeight,
+            background: Token.tabsFillCheckedBackgroundColor,
+          },
         },
 
         '&[data-soui-state="disabled"]': {
-          color: Token.tabsDisabledFontColor,
+          color: Token.tabsFillDisabledFontColor,
           cursor: 'not-allowed',
+        },
+
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $fillInner': {
+          background: Token.tabsFillHoverBackgroundColor,
+        },
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active $fillInner': {
+          background: Token.tabsFillActiveBackgroundColor,
         },
       },
     },
@@ -662,7 +682,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     lineHeight: Token.lineHeightDynamic,
     '&[dir=rtl] svg': {
       transform: 'rotate(180deg)',
-    }
+    },
   },
   next: {
     textAlign: 'center',
@@ -670,7 +690,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     lineHeight: Token.lineHeightDynamic,
     '&[dir=rtl] svg': {
       transform: 'rotate(180deg)',
-    }
+    },
   },
   extra: {},
   collapsible: {

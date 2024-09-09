@@ -11,18 +11,10 @@ exports[`Table[Base] should render correctly  1`] = `
     >
       <table>
         <colgroup>
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
@@ -82,7 +74,7 @@ exports[`Table[Base] should render correctly  1`] = `
         </thead>
         <tbody>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -114,7 +106,7 @@ exports[`Table[Base] should render correctly  1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -146,7 +138,7 @@ exports[`Table[Base] should render correctly  1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -178,7 +170,7 @@ exports[`Table[Base] should render correctly  1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -230,18 +222,10 @@ exports[`Table[Base] should render correctly about border 1`] = `
     >
       <table>
         <colgroup>
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
@@ -301,7 +285,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
         </thead>
         <tbody>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -333,7 +317,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
             </td>
           </tr>
           <tr
-            class="soui-table-row-striped"
+            class="soui-table-row-striped soui-table-row-hover"
           >
             <td
               class=""
@@ -365,7 +349,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -397,7 +381,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
             </td>
           </tr>
           <tr
-            class="soui-table-row-striped"
+            class="soui-table-row-striped soui-table-row-hover"
           >
             <td
               class=""
@@ -448,24 +432,12 @@ exports[`Table[Base] should render correctly about group 1`] = `
   >
     <table>
       <colgroup>
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
-        <col
-          style="width: 0px;"
-        />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
       </colgroup>
       <thead>
         <tr>
@@ -590,7 +562,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
       </thead>
       <tbody>
         <tr
-          class=""
+          class="soui-table-row-hover"
         >
           <td
             class=""
@@ -636,7 +608,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
           </td>
         </tr>
         <tr
-          class=""
+          class="soui-table-row-hover"
         >
           <td
             class=""
@@ -682,7 +654,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
           </td>
         </tr>
         <tr
-          class=""
+          class="soui-table-row-hover"
         >
           <td
             class=""
@@ -728,7 +700,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
           </td>
         </tr>
         <tr
-          class=""
+          class="soui-table-row-hover"
         >
           <td
             class=""
@@ -865,18 +837,10 @@ exports[`Table[Base] should render correctly about size 1`] = `
     >
       <table>
         <colgroup>
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
-          <col
-            style="width: 0px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
@@ -936,7 +900,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
         </thead>
         <tbody>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -968,7 +932,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -1000,7 +964,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""
@@ -1032,7 +996,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="soui-table-row-hover"
           >
             <td
               class=""

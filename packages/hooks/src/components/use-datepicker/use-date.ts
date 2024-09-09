@@ -117,11 +117,11 @@ const useDate = (props: UseDateProps) => {
     );
   };
 
-  const handleDayClick = (date: Date) => {
+  const handleDayClick = (date: Date, noClose?: boolean) => {
     if (isDisabled(date)) return;
 
     let newDate = getDateWithTime(date);
-    props.onChange?.(newDate);
+    props.onChange?.(newDate, noClose);
     setCurrent(newDate);
   };
 

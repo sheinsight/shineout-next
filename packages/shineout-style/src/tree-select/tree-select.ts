@@ -1,4 +1,4 @@
-import token from '@sheinx/theme';
+import token, { getTokenName } from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
 import { TreeSelectClasses } from '@sheinx/base';
@@ -144,6 +144,15 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
         display: 'none',
       },
     },
+  },
+  treeWrapper: {
+    [getTokenName('treeFontColor')]: token.treeSelectOptionFontColor,
+    [getTokenName('treeContentHoverFontColor')]: token.treeSelectContentHoverFontColor,
+    [getTokenName('treeContentHoverBackgroundColor')]: token.treeSelectContentHoverBackgroundColor,
+    [getTokenName('treeContentActiveBackgroundColor')]: token.treeSelectContentActiveBackgroundColor,
+    [getTokenName('treeContentActiveFontColor')]: token.treeSelectContentActiveFontColor,
+    [getTokenName('treeContentDisabledFontColor')]: token.treeSelectContentDisabledFontColor,
+    [getTokenName('treeContentDisabledBackgroundColor')]: token.treeSelectContentDisabledBackgroundColor,
   },
   wrapperEmpty: {},
   wrapperOpen: {},
@@ -394,6 +403,13 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   space: {
     marginTop: token.treeSelectPlaceholderMarginY,
     marginBottom: token.treeSelectPlaceholderMarginY,
+  },
+  inputPlaceholder: {
+    pointerEvents: 'none',
+    opacity: 0.5,
+    inset: 0,
+    position: 'absolute',
+    padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
   },
   inputMirror: {
     position: 'absolute',

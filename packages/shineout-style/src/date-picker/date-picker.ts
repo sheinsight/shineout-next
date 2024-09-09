@@ -293,6 +293,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     cursor: 'pointer',
     width: token.datePickerPanelHeaderIconHotWidth,
     height: token.datePickerPanelHeaderIconHotWidth,
+    color: token.datePickerPanelHeaderIconColor,
     borderRadius: '50%',
     '&[dir=rtl]': {
       transform: 'rotate(180deg)',
@@ -316,6 +317,8 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   pickerHeaderInfo: {
     cursor: 'pointer',
     borderRadius: '2px',
+    color: token.datePickerPanelHeaderFontColor,
+    fontWeight: token.datePickerPanelHeaderFontWeight,
     '&:hover': {
       backgroundColor: token.datePickerPanelHeaderIconHoverBackgroundColor,
     },
@@ -333,7 +336,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     '& th, & td': {
       boxSizing: 'border-box',
       padding: '0',
-      fontWeight: 'normal',
+      fontWeight: token.datePickerPanelFontWeight,
     },
     '& th': {
       color: token.datePickerCellHeaderColor,
@@ -345,15 +348,29 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     display: 'flex',
     justifyContent: 'space-between',
   },
-  pickerFooterLeft: {
+  pickerFooterTime: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
   },
-  pickerFooterRight: {
+  pickerFooterNow: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
     '&:only-child': {
       width: '100%',
       textAlign: 'center',
     },
+  },
+  pickerFooterConfirm: {
+    textAlign: 'right',
+    padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
+  },
+  pickerRange: {
+  },
+  pickerRangeBody: {
+    display: 'flex',
+  },
+  pickerRangeFooter: {
+    borderTop: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   pickerRow: {},
   pickerRowWeek: {
@@ -677,6 +694,10 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       backgroundColor: token.datePickerQuickPanelItemHoverBackgroundColor,
       cursor: 'pointer',
     },
+  },
+  quickPickerActiveItem: {
+    color: token.datePickerQuickPanelItemActiveFontColor,
+    background: token.datePickerQuickPanelItemActiveBackgroundColor,
   },
   pickerFooterBtn: {},
 };

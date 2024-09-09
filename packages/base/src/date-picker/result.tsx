@@ -14,12 +14,29 @@ export const Input = (props: {
   onMouseDown?: (e: React.MouseEvent) => void;
   open?: boolean;
   disabled?: boolean;
+  inputRef?: React.MutableRefObject<
+    | {
+        updateValue?: React.Dispatch<React.SetStateAction<string>>;
+      }
+    | undefined
+  >;
   onPaste?: (e: React.ClipboardEvent) => void;
   onFocus?: (e: React.FocusEvent) => void;
   onBlur?: (e: React.FocusEvent) => void;
   onClick?: (e?: React.MouseEvent) => void;
 }) => {
   const [value, setValue] = useState(props.value);
+
+  const updateValue = () => {
+    setValue(props.value);
+  };
+
+  if (props.inputRef) {
+    props.inputRef.current = {
+      updateValue: updateValue,
+    };
+  }
+
   useEffect(() => {
     setValue(props.value);
   }, [props.value, props.open]);
@@ -61,6 +78,9 @@ interface ResultProps
   disabledLeft?: boolean;
   disabledRight?: boolean;
   activeIndex?: number;
+  onRef: React.MutableRefObject<{
+    inputRef: HTMLInputElement | null;
+  }>;
   onFocus?: (e: React.FocusEvent) => void;
   onBlur?: (e: React.FocusEvent) => void;
   onClick?: (e?: React.MouseEvent) => void;
@@ -77,6 +97,7 @@ const Result = (props: ResultProps) => {
     range,
     placeholder,
     onChange,
+    onRef,
     disabledLeft,
     disabledRight,
     activeIndex = -1,
@@ -89,6 +110,9 @@ const Result = (props: ResultProps) => {
     inputRefs: [],
     clickIndex: 0,
   });
+  const inputRef = useRef<{
+    updateValue?: () => void;
+  }>({});
 
   useEffect(() => {
     if (open) {
@@ -150,7 +174,6 @@ const Result = (props: ResultProps) => {
       dis && styles?.resultTextDisabled,
       info.index === activeIndex && styles?.resultTextActive,
     );
-
     return (
       <div className={className}>
         <span className={styles?.resultTextPadding}>
@@ -158,10 +181,12 @@ const Result = (props: ResultProps) => {
             <Input
               key={info.index}
               onRef={(el) => {
+                onRef.current.inputRef = el;
                 context.inputRefs[info.index] = el;
               }}
               disabled={dis}
               open={!!open}
+              inputRef={inputRef}
               value={info.target || info.value || ''}
               placeholder={info.place}
               onChange={(s) => {
@@ -174,6 +199,7 @@ const Result = (props: ResultProps) => {
                 e.stopPropagation();
                 if (e.relatedTarget === context.inputRefs[1 - info.index]) return;
                 props.onBlur?.(e);
+                if (inputRef.current) inputRef.current.updateValue?.();
                 context.clickIndex = 0;
               }}
               onFocus={(e) => {

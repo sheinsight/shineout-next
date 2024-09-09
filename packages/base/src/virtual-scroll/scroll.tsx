@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
-import { usePersistFn, useResize, util } from '@sheinx/hooks';
+import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
 interface scrollProps {
   scrollHeight: number;
   scrollWidth: number;
+  height?: number | string;
   children: React.ReactNode;
   childrenStyle?: React.CSSProperties;
   wrapperRef?: React.RefObject<HTMLDivElement>;
@@ -17,18 +18,24 @@ interface scrollProps {
     height: number;
     width: number;
   }) => void;
+  onScrollToBottom?: (options?: any) => void;
   className?: string;
   style?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
   onMouseMove?: () => void;
   defaultHeight?: number;
+  isScrollY?: boolean;
 }
 
 const Scroll = (props: scrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const wrapperRef = useForkRef(scrollRef, props.wrapperRef);
   const { current: context } = useRef({
     timer: null as any,
     isMouseDown: false,
+    lastPaddingTop: 0,
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef });
@@ -51,16 +58,43 @@ const Scroll = (props: scrollProps) => {
     top: 0,
   } as React.CSSProperties;
 
+  let pd = context.lastPaddingTop;
+  if (height > 0 && scrollHeight > 0) {
+    pd = Math.max(0, Math.floor(scrollHeight - height));
+    context.lastPaddingTop = pd;
+  }
   const placeStyle = {
-    paddingTop: height > 0 && scrollHeight > 0 ? Math.max(0, Math.floor(scrollHeight - height)) : 0,
+    paddingTop: pd,
     width: scrollWidth,
-    overflow: 'hidden',
+    overflow: props.isScrollY ? 'hidden' : 'auto hidden',
+    height: props.isScrollY ? 0 : 1,
+    marginTop: props.isScrollY ? 0 : -1,
     lineHeight: 0,
   };
 
+  const extractHeightValue = (num: number | string) => {
+    if (util.isNumber(num)) return num;
+    const match = num.match(/(\d+)/);
+    if (match) {
+      return parseInt(match[0], 10);
+    }
+    return undefined;
+  };
+
   const handleScroll = usePersistFn((e: React.UIEvent) => {
+    const { onScrollToBottom } = props;
+
     const target = e.currentTarget as HTMLDivElement;
     let { scrollLeft, scrollTop } = target;
+
+    if (props.height && onScrollToBottom) {
+      const realHeight = extractHeightValue(props.height);
+      if (realHeight !== undefined) {
+        const touchBottom = target.scrollHeight === scrollTop + realHeight;
+        if (touchBottom) onScrollToBottom();
+      }
+    }
+
     const maxY = target.scrollHeight - target.clientHeight;
     const maxX = target.scrollWidth - target.clientWidth;
 
@@ -90,13 +124,21 @@ const Scroll = (props: scrollProps) => {
       });
   });
 
+  const handleInnerScroll = usePersistFn((e: React.UIEvent) => {
+    const scrollTop = (e.currentTarget as HTMLDivElement).scrollTop;
+    if (scrollRef.current) {
+      e.currentTarget.scrollTop = 0;
+      scrollRef.current.scrollTop += scrollTop;
+    }
+  });
+
   return (
     <div className={props.className} style={props.style} onMouseMove={props.onMouseMove}>
       <div
         {...util.getDataAttribute({ role: 'scroll' })}
         style={scrollerStyle}
         onScroll={handleScroll}
-        ref={props.wrapperRef}
+        ref={wrapperRef}
         onMouseDown={() => {
           context.isMouseDown = true;
         }}
@@ -108,6 +150,7 @@ const Scroll = (props: scrollProps) => {
           {...util.getDataAttribute({ role: 'scroll-container' })}
           style={containerStyle}
           ref={containerRef}
+          onScroll={handleInnerScroll}
         >
           <div style={{ flexGrow: 1, ...props.childrenStyle }}>{props.children}</div>
         </div>

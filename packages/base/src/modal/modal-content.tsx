@@ -188,23 +188,46 @@ const Modal = (props: ModalContentProps) => {
   }, []);
 
   // render
+  const renderIcon = (isEmptyTitle?: boolean) => {
+    const iconRoot = classNames(modalClasses?.headerIcon, isEmptyTitle && modalClasses?.emptyIcon);
 
-  const renderIcon = () => {
     return (
-      <AlertIcon jssStyle={props.jssStyle} type={props.type} className={modalClasses?.headerIcon} />
+      <AlertIcon jssStyle={props.jssStyle} type={props.type} className={iconRoot} />
     );
   };
   const renderHeader = () => {
-    const showCloseIcon = maskCloseAble === null || !!maskCloseAble;
+    let showCloseIcon = maskCloseAble === null || !!maskCloseAble
+    if(props.hideClose !== undefined){
+      showCloseIcon = !props.hideClose
+    }
+
     const isEmptyTitle = !props.title && props.title !== 0;
+
+    if (isEmptyTitle) {
+      const closeRoot = classNames(modalClasses?.headerClose, modalClasses?.emptyClose);
+
+      return (
+        <>
+          {renderIcon(isEmptyTitle)}
+          {
+            showCloseIcon && (
+              <div className={closeRoot} onClick={handleClose}>
+                {Icons.modal.Close}
+              </div>
+            )
+          }
+        </>
+      )
+    }
+
     return (
       <div
-        className={classNames(modalClasses?.header, isEmptyTitle && modalClasses?.headerEmptyTitle)}
+        className={modalClasses?.header}
         onMouseDown={props.moveable ? moveInfo.handleMouseDown : undefined}
       >
         {renderIcon()}
         <div className={modalClasses?.headerTitle}>{props.title}</div>
-        {showCloseIcon && !props.hideClose && (
+        {showCloseIcon && (
           <div className={modalClasses?.headerClose} onClick={handleClose}>
             {Icons.modal.Close}
           </div>
@@ -292,6 +315,9 @@ const Modal = (props: ModalContentProps) => {
   return (
     <FormFooterProvider>
       <div
+        onClick={e => {
+          e.stopPropagation();
+        }}
         className={classNames(
           props.rootClassName,
           modalClasses?.wrapper,

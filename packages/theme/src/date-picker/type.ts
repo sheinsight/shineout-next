@@ -16,7 +16,7 @@ export interface DatePickerTokens {
   datePickerFontColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 日期选择器边框圆角
    */
   datePickerBorderRadius: string;
@@ -154,7 +154,7 @@ export interface DatePickerTokens {
   datePickerDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 日期选择器结果文本边框圆角
    */
   datePickerResultTextBorderRadius: string;
@@ -214,6 +214,12 @@ export interface DatePickerTokens {
   datePickerPanelColor: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 日期选择器面板字体字重
+   */
+  datePickerPanelFontWeight: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-1
    * @description 日期选择器面板背景颜色
    */
@@ -226,7 +232,7 @@ export interface DatePickerTokens {
   datePickerPanelShadow: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 日期选择器面板圆角
    */
   datePickerPanelRadius: string;
@@ -248,6 +254,18 @@ export interface DatePickerTokens {
    * @description 日期选择器面板头部字体字号
    */
   datePickerPanelHeaderFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 日期选择器面板头部字体颜色
+   */
+  datePickerPanelHeaderFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 日期选择器面板头部字体字重
+   */
+  datePickerPanelHeaderFontWeight: string;
   /**
    * @type {string}
    * @token Spacing-12
@@ -448,7 +466,7 @@ export interface DatePickerTokens {
   datePickerTimeItemHeight: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 日期选择器时间项边框圆角
    */
   datePickerTimeItemBorderRadius: string;
@@ -530,6 +548,18 @@ export interface DatePickerTokens {
    * @description 日期选择器快捷选择面板项内边距（垂直方向）
    */
   datePickerQuickPanelItemPaddingY: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description 日期选择器快捷选择面板项鼠标点击时的背景颜色
+   */
+  datePickerQuickPanelItemActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 日期选择器快捷选择面板项鼠标点击时的字体颜色
+   */
+  datePickerQuickPanelItemActiveFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-2

@@ -22,7 +22,7 @@ import CardHover from '../__example__/03-hover';
 import CardBorder from '../__example__/04-border';
 import CardSplit from '../__example__/05-split';
 import CardForm from '../__example__/06-form';
-import CardCollpase from '../__example__/07-collpase';
+import CardCollapse from '../__example__/07-collapse';
 import CardAccordion from '../__example__/08-accordion';
 
 const SO_PREFIX = 'card';
@@ -130,7 +130,7 @@ describe('Card[Base]', () => {
   snapshotTest(<CardBorder />, 'about border');
   snapshotTest(<CardSplit />, 'about split');
   snapshotTest(<CardForm />, 'about form');
-  snapshotTest(<CardCollpase />, 'about collpase');
+  snapshotTest(<CardCollapse />, 'about collapse');
   snapshotTest(<CardAccordion />, 'about accordion');
   test('should render default', () => {
     const extraContent = 'test'

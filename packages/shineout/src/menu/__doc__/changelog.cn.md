@@ -1,3 +1,18 @@
+## 3.3.3
+2024-08-07
+
+### 🐞 BugFix
+- 修复 `Menu` 组件水平模式下高度100%的问题
+
+## 3.3.0
+2024-07-23
+
+### 🐞 BugFix
+- 修复 `Menu.Search` 组件 `collapse` 属性拼写错误的问题 ([#585](https://github.com/sheinsight/shineout-next/pull/585))
+
+### 🆕 Feature
+- `Menu` 支持水平模式的暗系主题 ([#505](https://github.com/sheinsight/shineout-next/pull/505))
+
 ## 3.2.2
 2024-06-21
 
@@ -18,7 +33,7 @@
 
 ### 🆕 Feature
 
-- `Menu` 新增 `Collpase` 属性支持折叠功能 ([#505](https://github.com/sheinsight/shineout-next/pull/505))
+- `Menu` 新增 `Collapse` 属性支持折叠功能 ([#505](https://github.com/sheinsight/shineout-next/pull/505))
 - `Menu` 支持 `renderIcon` 属性支持渲染图标  ([#505](https://github.com/sheinsight/shineout-next/pull/505))
 - `Menu` 支持 `header` 属性渲染顶部内容  ([#505](https://github.com/sheinsight/shineout-next/pull/505))
 

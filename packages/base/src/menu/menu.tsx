@@ -72,7 +72,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         mode === 'horizontal' && classes?.wrapperHorizontal,
         hasOpen && classes?.wrapperHasOpen,
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
-        collapse && classes?.wrapperCollpase,
+        collapse && classes?.wrapperCollapse,
         context.inTransition && classes?.wrapperInTransition,
       )}
       {...util.getDataAttribute({

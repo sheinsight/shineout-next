@@ -101,6 +101,17 @@ const treeStyle: JsStyles<TreeClassType> = {
   inlineContent: {
     display: 'inline-flex',
   },
+  contentDisabled: {
+    '& $content[data-active="true"]': {
+      background: Token.treeContentDisabledBackgroundColor,
+    },
+    '& $content:hover:not([data-active="true"])': {
+      background: 'none',
+      '& $text': {
+        color: Token.treeContentDisabledFontColor,
+      },
+    },
+  },
   content: {
     flex: 1,
     display: 'flex',
@@ -108,21 +119,11 @@ const treeStyle: JsStyles<TreeClassType> = {
     cursor: 'pointer',
     padding: `0 ${Token.treePaddingX}`,
     borderRadius: Token.treeContentBorderRadius,
-    position: 'relative',
-    '&[data-expanded="true"]::before': {
-      content: '""',
-      position: 'absolute',
-      top: 24,
-      bottom: 0,
-      left: -12,
-      width: 1,
-      background: '#ebebeb',
-    },
-    '&[dir=ltr][data-expanded="true"]::before': {
-      left: -12,
-    },
-    '&[dir=rtl][data-expanded="true"]::before': {
-      right: -12,
+
+    '$contentDisabled &': {
+      '& $text': {
+        color: Token.treeContentDisabledFontColor,
+      },
     },
 
     '&[data-active="true"]': {
@@ -132,14 +133,11 @@ const treeStyle: JsStyles<TreeClassType> = {
         color: Token.treeContentActiveFontColor,
       },
     },
-    // '&[data-disabled="true"]': {
-    //   cursor: 'not-allowed',
-    // },
-    // '&:hover:not([data-active="true"]):not([data-disabled="true"])': {
-    //   background: Token.treeContentHoverBackgroundColor,
-    // },
     '&:hover:not([data-active="true"])': {
       background: Token.treeContentHoverBackgroundColor,
+      '& $text': {
+        color: Token.treeContentHoverFontColor,
+      },
     },
   },
   checkbox: {
@@ -155,6 +153,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     fontWeight: Token.treeFontWeight,
     paddingTop: Token.treeTextPaddingY,
     paddingBottom: Token.treeTextPaddingY,
+    whiteSpace: 'nowrap',
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,

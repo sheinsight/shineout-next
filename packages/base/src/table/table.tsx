@@ -19,6 +19,7 @@ import {
   usePaginationList,
   useLatestObj,
   useResize,
+  util
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -188,6 +189,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const virtualInfo = useTableVirtual({
     disabled: !virtual,
     data: treeData,
+    columns,
     rowsInView: props.rowsInView || 20,
     rowHeight: props.rowHeight || 40,
     scrollRef: scrollRef,
@@ -218,7 +220,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       const maxHeight = target.scrollHeight - target.clientHeight;
       const x = Math.min(target.scrollLeft / maxWidth, 1);
       const y = Math.min(target.scrollTop / maxHeight, 1);
-      props.onScroll(x, y, target.scrollLeft);
+      props.onScroll(x, y, target.scrollLeft, target.scrollTop);
     }
   });
 
@@ -235,7 +237,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       virtualInfo.handleScroll(info);
       layoutFunc.checkFloat();
       if (props.onScroll && typeof props.onScroll === 'function') {
-        props.onScroll(info.x, info.y, info.scrollLeft);
+        props.onScroll(info.x, info.y, info.scrollLeft, info.scrollTop);
       }
     },
   );
@@ -285,6 +287,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       bodyScrollWidth: scrollWidth,
       resizeFlag: resizeFlag,
       treeCheckAll: props.treeCheckAll,
+      onCellClick: props.onCellClick,
     };
 
     const headCommonProps = {
@@ -315,15 +318,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       jssStyle: props.jssStyle,
       colgroup: colgroup,
     };
-    const headWrapperClass = classNames(
-      tableClasses?.headWrapper,
-      isScrollY && scrollBarWidth && tableClasses?.scrollY,
-    );
-
-    const footWrapperClass = classNames(
-      tableClasses?.footWrapper,
-      isScrollY && scrollBarWidth && tableClasses?.scrollY,
-    );
 
     const fixRightNum = (isRtl ? -1 * maxScrollLeft : maxScrollLeft) - virtualInfo.innerLeft;
     const Wrapper = props.sticky ? Sticky : React.Fragment;
@@ -335,7 +329,26 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       css: sticky?.css,
       parent: tableRef?.current,
     };
-    if (!virtual && !isScrollY && !props.sticky && props.data?.length) {
+
+    const isRenderBaseTable =
+      !virtual &&
+      !isScrollY &&
+      !props.sticky &&
+      props.data?.length &&
+      !props.style?.height &&
+      !props.height;
+
+    const headWrapperClass = classNames(
+      tableClasses?.headWrapper,
+      isScrollY && scrollBarWidth && tableClasses?.scrollY,
+    );
+
+    const footWrapperClass = classNames(
+      tableClasses?.footWrapper,
+      isScrollY && scrollBarWidth && tableClasses?.scrollY,
+    );
+
+    if (isRenderBaseTable) {
       return (
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
           <table style={{ width }} ref={tbodyRef}>
@@ -375,6 +388,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
           onScroll={handleVirtualScroll}
           defaultHeight={context.emptyHeight}
+          isScrollY={isScrollY}
         >
           <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
             {Group}
@@ -453,8 +467,15 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
   }, [theadRef.current, isScrollY]);
 
+  const getRenderIndexByData = (data: Item | string) => {
+    const originKey = typeof data === 'string' ? data : util.getKey(props.keygen, data);
+    const index = treeData.findIndex((item) => util.getKey(props.keygen, item) === originKey);
+    return index
+  };
+
   const tableFunc = useLatestObj({
     scrollToIndex: virtualInfo.scrollToIndex,
+    getRenderIndexByData: getRenderIndexByData
   });
 
   useEffect(() => {

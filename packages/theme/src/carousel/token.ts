@@ -32,7 +32,7 @@ const carouselTokenExtraValue = {
     size: 'Size-12',
     icon: { size: 'Size-10' },
     background: { color: 'rgba(255, 255, 255, 0.2)' },
-    border: { radius: 'Radius-4' },
+    border: { radius: 'Radius-default' },
     font: { color: 'Neutral-text-1' },
     hover: { background: { color: 'rgba(255, 255, 255, 0.4)' } },
   },

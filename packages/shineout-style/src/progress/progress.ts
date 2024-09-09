@@ -52,14 +52,19 @@ const progressStyle: JsStyles<ProgressClassType> = {
     height: '100%',
     boxSizing: 'border-box',
     borderRadius: 'inherit',
-    '$lineInner &': {
-      display: 'flex',
-      alignItems: 'center',
-    },
     '$wrapperSuccess &': { backgroundColor: token.progressSuccessFrontBackgroundColor },
     '$wrapperWarning &': { backgroundColor: token.progressWarningFrontBackgroundColor },
     '$wrapperInfo &': { backgroundColor: token.progressInfoFrontBackgroundColor },
     '$wrapperDanger &': { backgroundColor: token.progressDangerFrontBackgroundColor },
+
+    '$lineInner &': {
+      display: 'flex',
+      alignItems: 'center',
+      '$wrapperSuccess&': { backgroundColor: token.progressLineInnerSuccessFrontBackgroundColor },
+      '$wrapperWarning&': { backgroundColor: token.progressLineInnerWarningFrontBackgroundColor },
+      '$wrapperInfo&': { backgroundColor: token.progressLineInnerInfoFrontBackgroundColor },
+      '$wrapperDanger&': { backgroundColor: token.progressLineInnerDangerFrontBackgroundColor },
+    },
   },
 
   content: {
@@ -69,8 +74,13 @@ const progressStyle: JsStyles<ProgressClassType> = {
     '$lineInner &': {
       marginLeft: 'auto',
       padding: `0 ${token.progressLineInnerPaddingX}`,
-      color: token.progressLineInnerFontColor,
+      fontWeight: token.progressLineFontWeight,
     },
+    '$wrapperSuccess &': { color: token.progressSuccessInnerFontColor },
+    '$wrapperWarning &': { color: token.progressWarningInnerFontColor },
+    '$wrapperInfo &': { color: token.progressInfoInnerFontColor },
+    '$wrapperDanger &': { color: token.progressDangerInnerFontColor },
+
     '$lineInnerRight &&': {
       // marginLeft: token.progressLineInnerPaddingX,
       position: 'absolute',
@@ -86,7 +96,7 @@ const progressStyle: JsStyles<ProgressClassType> = {
     background: token.progressLineBackgroundColor,
     padding: '3px 8px',
     borderRadius: '2px',
-    color: token.progressLineColor,
+    color: token.progressLinePopFontColor,
     boxShadow:
       '0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05)',
   },
@@ -122,6 +132,11 @@ const progressStyle: JsStyles<ProgressClassType> = {
       width: '31.25%',
       height: '31.25%',
     },
+    fontWeight: token.progressCircleFontWeight,
+    '&$wrapperSuccess $content': { color: token.progressCircleSuccessFontColor },
+    '&$wrapperWarning $content': { color: token.progressCircleWarningFontColor },
+    '&$wrapperInfo $content': { color: token.progressCircleInfoFontColor },
+    '&$wrapperDanger $content': { color: token.progressCircleDangerFontColor },
   },
   circleBg: {
     stroke: token.progressBackground,

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
+import { addResizeObserver } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
@@ -29,6 +30,7 @@ interface TrProps
     | 'bodyScrollWidth'
     | 'resizeFlag'
     | 'treeCheckAll'
+    | 'onCellClick'
   > {
   row: {
     data: any[];
@@ -47,6 +49,7 @@ interface TrProps
   treeColumnsName?: string;
   originKey: string | number;
   isCellHover: UseTableRowResult['isCellHover'];
+  hover?: boolean;
   handleCellHover: UseTableRowResult['handleCellHover'];
   hoverIndex: UseTableRowResult['hoverIndex'];
   isSelect: boolean;
@@ -99,12 +102,37 @@ const Tr = (props: TrProps) => {
     } as React.CSSProperties;
   };
 
-  useEffect(() => {
+  const handleCellClick = usePersistFn((data: any, colIndex: number) => {
+    if (!props.onCellClick) return;
+    props.onCellClick(data, {
+      rowIndex: props.rowIndex,
+      columnIndex: colIndex,
+      columnKey: props.columns[colIndex].key,
+    });
+  });
+
+  const setVirtualRowHeight = usePersistFn(() => {
     if (props.setRowHeight && trRef.current) {
       const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
-      props.setRowHeight(props.rowIndex, trRef.current.getBoundingClientRect().height + expandHeight);
+      props.setRowHeight(
+        props.rowIndex,
+        trRef.current.getBoundingClientRect().height + expandHeight,
+      );
     }
-  }, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
+  });
+
+  useEffect(setVirtualRowHeight, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
+
+  useEffect(() => {
+    if (!trRef.current) return;
+    const cancelObserver = addResizeObserver(trRef.current, setVirtualRowHeight, {
+      direction: 'y',
+    });
+
+    return () => {
+      cancelObserver();
+    };
+  }, []);
 
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
@@ -223,6 +251,7 @@ const Tr = (props: TrProps) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
     const lastRowIndex = data.length - 1;
+    const hasSiblingRowSpan = data?.some((item) => item === null);
     for (let i = 0; i < cols.length; i++) {
       if (skip > 0) {
         skip--;
@@ -237,12 +266,8 @@ const Tr = (props: TrProps) => {
             key={col.key}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
-            onMouseEnter={() => {
-              props.handleCellHover(props.rowIndex, data[i].rowSpan);
-            }}
-            onMouseLeave={() => {
-              props.handleCellHover(-1, 0);
-            }}
+            onMouseEnter={props.hover && hasSiblingRowSpan ? () => { props.handleCellHover(props.rowIndex, data[i].rowSpan) } : undefined}
+            onMouseLeave={props.hover && hasSiblingRowSpan ? () => { props.handleCellHover(-1, 0); } : undefined}
             className={classNames(
               col.className,
               col.type === 'checkbox' && tableClasses?.cellCheckbox,
@@ -252,10 +277,11 @@ const Tr = (props: TrProps) => {
               col.align === 'right' && tableClasses?.cellAlignRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
-              props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,
+              (data[i].rowSpan > 1) && props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
             dir={config.direction}
+            onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
           >
             {renderContent(col, data[i].data)}
           </td>
@@ -324,6 +350,7 @@ const Tr = (props: TrProps) => {
           props?.rowClassName?.(props.rawData, props.rowIndex),
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
           props.isSelect && tableClasses?.rowChecked,
+          props.hover && tableClasses?.rowHover
         )}
         {...props.rowEvents}
         onClick={handleRowClick}

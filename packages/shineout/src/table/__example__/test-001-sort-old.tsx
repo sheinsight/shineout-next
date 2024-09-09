@@ -34,7 +34,7 @@ const columns: TableColumnItem[] = [
   {
     title: 'id',
     render: 'id',
-    width: 80,
+    width: '50%',
     sorter: (order) => (a, b) => {
       if (order === 'asc') return a.id - b.id;
       return b.id - a.id;

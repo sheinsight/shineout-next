@@ -3,6 +3,7 @@ import Locale from '../locales';
 
 export interface Menu {
   group?: string;
+  version?: string
   name: string;
   title: {
     en: string;
@@ -78,6 +79,7 @@ export const dispatch = {
         menu.group = component.header.group;
         menu.name = component.header.name;
         menu.title = component.title;
+        menu.version = component.header.version;
         menus.find((item) => item.group === component.header.group)?.components.push(menu);
       });
     const groupByLocalMenu = Object.keys(groupLocale).map((key) => {

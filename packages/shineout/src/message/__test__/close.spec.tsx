@@ -1,14 +1,13 @@
-import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MessageTest } from './message.spec'
-import { delay, createClassName, textContentTest, styleTest, attributesTest } from '../../tests/utils';
-import MessageClose from '../__example__/04-close';
+import { delay, createClassName, textContentTest } from '../../tests/utils';
 import MessageManualClose from '../__example__/05-manual-close';
 
 const SO_PREFIX = 'message';
 const originClasses = ['wrapper', 'message'];
 const originItemClasses = [''];
-const { wrapper, message } = createClassName(
+const { wrapper } = createClassName(
   SO_PREFIX,
   originClasses,
   originItemClasses,

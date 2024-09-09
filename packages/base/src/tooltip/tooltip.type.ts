@@ -19,6 +19,10 @@ export interface TooltipClasses {
    * 弹出层内容
    */
   content: string;
+  /**
+   * 箭头
+   */
+  arrow: string;
 }
 
 export interface TooltipProps
@@ -37,9 +41,13 @@ export interface TooltipProps
   // onVisibleChange?: BasePopupProps['onCollapse'];
   // getPopupContainer?: () => HTMLElement | null;
   /**
-   * @en Popup delay
-   * @cn 弹出延迟
+   * @en Pop-up delay, default is 0 no delay, unit is milliseconds.
+   * @cn 弹出延迟，默认为 0 不延迟，单位为毫秒。
    * @default 0
+   */
+  mouseEnterDelay?: number;
+  /**
+   * @deprecated 弹出延迟（即将废弃），请使用 mouseEnterDelay
    */
   delay?: number;
   /**
@@ -75,5 +83,5 @@ export interface TooltipProps
    * @cn tooltip 层级
    * @default 1051
    */
-  zIndex?: number
+  zIndex?: number;
 }

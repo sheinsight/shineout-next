@@ -6,6 +6,7 @@ import { EmptyTokens } from './type';
 const emptyTokens: EmptyTokens = {
   emptyFontSize: 'Font-14',
   emptyFontColor: 'Neutral-text-3',
+  emptyFontWeight: 'Weight-regular',
 };
 
 export default emptyTokens;

@@ -24,11 +24,12 @@ export interface ModalClasses {
   mask: string;
   panel: string;
   header: string;
-  headerEmptyTitle: string;
   
   headerIcon: string;
+  emptyIcon: string;
   headerTitle: string;
   headerClose: string;
+  emptyClose: string;
   body: string;
   bodyWithIcon: string;
   footer: string;
@@ -186,7 +187,7 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
 
   /**
    * @en pop-up Title show status icon
-   * @cn 弹出层 title 显示状态 icon
+   * @cn 弹出层 title 显示状态 icon，drawer模式下需配合title使用
    */
   type?: 'success' | 'info' | 'warning' | 'error';
 

@@ -1,6 +1,6 @@
 import { SelectProps } from './select.type';
 
-export interface ReultMoreProps<DataItem, Value>
+export interface ResultMoreProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
     | 'jssStyle'

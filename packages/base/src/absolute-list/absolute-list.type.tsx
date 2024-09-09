@@ -46,10 +46,12 @@ export interface AbsoluteListProps {
   scrollElRef?: React.RefObject<HTMLElement>;
   scrollLeft?: number;
   scrollTop?: number;
+  arrowRef?: React.RefObject<HTMLElement>;
   popupElRef: React.RefObject<HTMLElement>;
   // 隐藏后是否卸载
   destroy?: boolean;
   // 自动调整位置来适应容器大小
   adjust?: boolean;
   lazy?: boolean;
+  arrowStyleRef?: React.RefObject<{ style: React.CSSProperties }>;
 }
