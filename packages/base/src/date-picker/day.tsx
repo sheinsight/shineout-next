@@ -146,6 +146,8 @@ const Day = (props: DayProps) => {
       // eslint-disable-next-line
       if (match) format = match[0];
     }
+
+    const showNeedConfirm = props.needConfirm && !props.range;
     return (
       <div className={styles?.pickerFooter} dir={direction} style={{borderTop: props.needConfirm && props.range ? 'none': ''}}>
         {props.type === 'datetime' && (
@@ -155,6 +157,7 @@ const Day = (props: DayProps) => {
               styles?.datetime,
               !timeStr && styles?.datetimeHide,
             )}
+            style={{paddingRight: showNeedConfirm ? 0 : undefined}}
           >
             {
               <>
@@ -166,7 +169,13 @@ const Day = (props: DayProps) => {
           </div>
         )}
         {props.showSelNow && (
-          <div className={styles?.pickerFooterNow}>
+          <div
+            className={styles?.pickerFooterNow}
+            style={{
+              marginRight: showNeedConfirm ? 'auto' : undefined,
+              paddingLeft: showNeedConfirm ? 6 : undefined
+            }}
+          >
             {props.showSelNow && props.type === 'date' && (
               <Link
                 size="small"
@@ -192,7 +201,7 @@ const Day = (props: DayProps) => {
           </div>
         )}
 
-        {props.needConfirm && !props.range && (
+        {showNeedConfirm && (
           <Confirm closeByConfirm={props.closeByConfirm} jssStyle={jssStyle} />
         )}
       </div>

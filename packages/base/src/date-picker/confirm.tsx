@@ -14,7 +14,6 @@ const Confirm = (props: ConfirmProps) => {
     <div className={styles?.pickerFooterConfirm}>
       <Button
         size={'small'}
-        mode='text'
         type="primary"
         jssStyle={jssStyle}
         className={styles?.pickerFooterBtn}
