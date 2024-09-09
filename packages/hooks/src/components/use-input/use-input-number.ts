@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 import { InputNumberProps } from './use-input-number.type';
 import useInputFormat from './use-input-format';
@@ -30,6 +30,14 @@ const useNumberFormat = (props: InputNumberProps) => {
     return value || '';
   };
 
+  const [inernalInputValue, setInternalInputValue] = React.useState<string | undefined>(getStringValue(props.value));
+
+  useEffect(() => {
+    if(props.value !== inernalInputValue){
+      setInternalInputValue(getStringValue(props.value))
+    }
+  }, [props.value])
+
   const getNumberValue = (value: string | number | null | undefined) => {
     if (isNaN(value as unknown as number)) return 0;
     if (typeof value === 'number') {
@@ -49,6 +57,17 @@ const useNumberFormat = (props: InputNumberProps) => {
     return num;
   };
 
+  const onInnerChange = usePersistFn((val?: string | number | null) => {
+    setInternalInputValue(getStringValue(val));
+    if(typeof val === 'string'){
+      const num = parseFloat(val);
+      if(isNaN(num)) return
+      onChange?.(num);
+    }else{
+      onChange?.(val);
+    };
+  })
+
   const onNumberBlur = usePersistFn((e: React.FocusEvent) => {
     const target = e.target as HTMLInputElement;
     const newValue = target.value;
@@ -60,7 +79,7 @@ const useNumberFormat = (props: InputNumberProps) => {
     }
 
     if (newValue === '' && allowNull) {
-      onChange?.(null);
+      onInnerChange(null);
       onBlur?.(e);
       return;
     }
@@ -78,16 +97,18 @@ const useNumberFormat = (props: InputNumberProps) => {
 
     num = commonFormat(num);
 
+    // 失焦时，将非法值转换为合法值
+    setInternalInputValue(getStringValue(num));
     if (num !== value) {
       target.value = typeof num === 'number' ? String(num) : '';
-      if (!cancelBlurChange) onChange?.(num);
+      if (!cancelBlurChange) onInnerChange(num);
     }
     onBlur?.(e);
   });
 
   const onNumberChange = usePersistFn((value: string | undefined) => {
     const result = value;
-    onChange?.(result);
+    onInnerChange(result);
   });
 
   const changeValue = (mod: number) => {
@@ -117,7 +138,7 @@ const useNumberFormat = (props: InputNumberProps) => {
 
   return {
     ...useInputFormat({
-      value: getStringValue(props.value),
+      value: inernalInputValue,
       type: 'number',
       numType,
       integerLimit,
