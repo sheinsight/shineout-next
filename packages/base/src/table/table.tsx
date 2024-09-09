@@ -19,6 +19,7 @@ import {
   usePaginationList,
   useLatestObj,
   useResize,
+  util
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -466,8 +467,15 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
   }, [theadRef.current, isScrollY]);
 
+  const getRenderIndexByData = (data: Item | string) => {
+    const originKey = typeof data === 'string' ? data : util.getKey(props.keygen, data);
+    const index = treeData.findIndex((item) => util.getKey(props.keygen, item) === originKey);
+    return index
+  };
+
   const tableFunc = useLatestObj({
     scrollToIndex: virtualInfo.scrollToIndex,
+    getRenderIndexByData: getRenderIndexByData
   });
 
   useEffect(() => {
