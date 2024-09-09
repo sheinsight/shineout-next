@@ -53,7 +53,6 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     if (!props.setRowHeight || !optionRef.current) return;
     const optionHeight = optionRef.current.getBoundingClientRect().height;
     if (optionHeight !== 0) {
-      console.log('optionHeight', optionHeight);
       props.setRowHeight(index, optionHeight);
     }
   });
@@ -71,7 +70,6 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
 
   useEffect(() => {
     if (!isAnimationFinish) return;
-    console.log('isAnimationFinish', isAnimationFinish);
     setVirtualRowHeight();
   }, [isAnimationFinish]);
 

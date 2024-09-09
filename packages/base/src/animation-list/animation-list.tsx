@@ -183,10 +183,6 @@ const AnimationList = (props: AnimationListProps) => {
     clearTimeout(context.timer);
   };
 
-  const onAnimationEnd = () => {
-    console.log('2333');
-  };
-
   // 展开
   const showList = () => {
     if (!ref.current) return;
@@ -220,7 +216,7 @@ const AnimationList = (props: AnimationListProps) => {
       cleanTimer();
       context.timer = setTimeout(() => {
         afterEnter();
-      }, durationNum);
+      }, durationNum + mm);
     }
     if (status === 'beforeLeave') {
       cleanTimer();
