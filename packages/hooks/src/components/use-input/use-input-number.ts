@@ -108,9 +108,6 @@ const useNumberFormat = (props: InputNumberProps) => {
 
   const onNumberChange = usePersistFn((value: string | undefined) => {
     const result = value;
-    console.log('======================')
-    console.log('result: >>', typeof result, result)
-    console.log('======================')
     onInnerChange(result);
   });
 

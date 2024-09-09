@@ -9,9 +9,16 @@ import { Button, Input } from 'shineout';
 
 export default () => {
   const [value, setValue] = React.useState();
-
   const onIncrease = () => {
     setValue((v) => {
+      const next = Number(v || 0) + 1;
+      return next;
+    });
+  }
+
+  const [defaultValue, setDefaultValue] = React.useState(1);
+  const onDefaultChange = () => {
+    setDefaultValue((v) => {
       const next = Number(v || 0) + 1;
       return next;
     });
@@ -21,16 +28,18 @@ export default () => {
       <Input.Number
         width={300}
         placeholder='input something'
-        value={value}
+        defaultValue={defaultValue}
         type="number"
-        onChange={v => {
-          console.log('======================')
-          console.log('outter onChange: >>', typeof v, v)
-          console.log('======================')
-          setValue(v);
-        }}
+        // value={value}
+        // onChange={v => {
+        //   console.log('======================')
+        //   console.log('outter onChange: >>', typeof v, v)
+        //   console.log('======================')
+        //   setValue(v);
+        // }}
       />
       <Button onClick={onIncrease}>increase value</Button>
+      <Button onClick={onDefaultChange}>change default value</Button>
     </div>
   );
 };
