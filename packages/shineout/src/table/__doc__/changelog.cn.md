@@ -1,3 +1,10 @@
+## 3.4.0-beta.7
+2024-09-09
+
+### 🐞 BugFix
+
+- 修复TableRef的`scrollToIndex`的回调方法不生效问题 ([#651](https://github.com/sheinsight/shineout-next/pull/651))
+
 ## 3.4.0-beta.6
 2024-09-06
 
