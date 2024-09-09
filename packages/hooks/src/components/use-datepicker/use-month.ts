@@ -87,10 +87,10 @@ const useMonth = (props: UseMonthProps) => {
     return utils.getDateInfo(date, 'month', options) + 1;
   };
 
-  const handleMonthClick = (date: Date) => {
+  const handleMonthClick = (date: Date, onClose?:boolean) => {
     if (isDisabled(date)) return;
     let newDate = utils.toDate(date);
-    props.onChange?.(newDate);
+    props.onChange?.(newDate, onClose);
     setCurrent(newDate);
   };
 

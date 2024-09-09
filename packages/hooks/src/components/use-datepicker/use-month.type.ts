@@ -4,7 +4,7 @@ export interface UseMonthProps {
   defaultCurrent?: Date;
   onCurrentChange?: (date: Date) => void;
   value?: Date;
-  onChange?: (date: Date) => void;
+  onChange?: (date: Date, onClose?: boolean) => void;
   min?: Date;
   max?: Date;
   disabled?: boolean | ((date: Date) => boolean);

@@ -28,7 +28,7 @@ export interface LinkProps
   extends Pick<CommonType, 'className' | 'style'>,
   React.AnchorHTMLAttributes<HTMLAnchorElement> {
     jssStyle?: {
-        link: () => LinkClasses;
+        link?: () => LinkClasses;
     };
 
     /**

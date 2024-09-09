@@ -34,6 +34,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
   const [clickTimes, setClickTimes] = React.useState(0);
+  const [isCloseFromConfirm, setIsCloseFromConfirm] = React.useState(false);
+  const [oldDateArr, setOldDateArr] = React.useState<(Date | undefined)[]>([]);
   const inputRef = useRef<{
     inputRef: HTMLInputElement | null;
   }>({
@@ -95,9 +97,23 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
     if (isOpen) {
+      setOldDateArr(dateArr)
       func.startEdit();
     } else {
-      func.finishEdit();
+      setClickTimes(0)
+
+
+      if(props.needConfirm){
+        if(!isCloseFromConfirm){
+          func.handleClear();
+          // 点击空白处关闭面板时，还原到上次的值
+          func.setDateArr(oldDateArr);
+        }
+      }else{
+        func.finishEdit();
+      }
+
+      setIsCloseFromConfirm(false);
     }
     props.onCollapse?.(isOpen);
   });
@@ -142,9 +158,13 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     props.onBlur?.(e);
   });
 
-  const handleClose = () => {
+  const handleClose = (isFromConfirm?: boolean) => {
+    setIsCloseFromConfirm(isFromConfirm || false);
     closePop();
-    setClickTimes(0)
+
+    if(isFromConfirm){
+      func.finishEdit();
+    }
     inputRef.current.inputRef?.blur();
   };
 
@@ -303,6 +323,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
             secondStep={props.secondStep}
             registerModeDisabled={func.registerModeDisabled}
             isDisabledDate={func.isDisabledDate}
+            needConfirm={props.needConfirm}
           >
             {props.children}
           </Picker>
