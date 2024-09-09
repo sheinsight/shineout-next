@@ -1,3 +1,11 @@
+## 3.3.7-beta.3
+2024-09-09
+
+### 🐞 BugFix
+
+- 修复 `Transfer` 组件 `onSelectChange` 第二参数丢失的问题 ([#652](https://github.com/sheinsight/shineout-next/pull/652))
+
+
 ## 3.1.19
 2024-05-29
 
