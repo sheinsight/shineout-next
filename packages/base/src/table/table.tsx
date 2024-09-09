@@ -467,8 +467,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
   }, [theadRef.current, isScrollY]);
 
-  const getRenderIndexByData = (data: Item) => {
-    const originKey = util.getKey(props.keygen, data);
+  const getRenderIndexByData = (data: Item | string) => {
+    const originKey = typeof data === 'string' ? data : util.getKey(props.keygen, data);
     const index = treeData.findIndex((item) => util.getKey(props.keygen, item) === originKey);
     return index
   };
