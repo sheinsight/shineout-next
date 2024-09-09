@@ -14,4 +14,5 @@ export interface ListOptionProps<DataItem, Value>
   onHover: (index: number, force?: boolean) => void;
   onOptionClick: (data: DataItem, index: number) => void;
   setRowHeight?: (index: number, height: number) => void;
+  isAnimationFinish: boolean;
 }

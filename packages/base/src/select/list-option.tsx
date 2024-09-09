@@ -17,6 +17,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     isHover,
     renderItem,
     dynamicVirtual,
+    isAnimationFinish,
     onHover,
     onOptionClick,
   } = props;
@@ -67,7 +68,10 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   const result = renderItem(data);
   const title = typeof result === 'string' ? result : '';
 
-  useEffect(setVirtualRowHeight, []);
+  useEffect(() => {
+    if (!isAnimationFinish) return;
+    setVirtualRowHeight();
+  }, [isAnimationFinish]);
 
   useEffect(() => {
     if (!optionRef.current) return;
