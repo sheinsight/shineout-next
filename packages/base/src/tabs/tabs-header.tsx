@@ -166,15 +166,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
           {shape === 'button' && (
             <Button.Group jssStyle={{ button: buttonStyle }}>
               {tabs.map((tab, index) => {
-                return (
-                  <Tab
-                    key={index}
-                    {...tab}
-                    ref={(node: any) => {
-                      tabRef.current[tab.id] = node;
-                    }}
-                  ></Tab>
-                );
+                return <Tab key={index} {...tab}></Tab>;
               })}
             </Button.Group>
           )}
