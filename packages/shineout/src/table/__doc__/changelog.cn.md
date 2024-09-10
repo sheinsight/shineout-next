@@ -3,7 +3,7 @@
 
 ### 🆕 Feature
 
-- `Table` 组件 `onScroll` 事件新增 top 参数
+- `Table` 组件 `onScroll` 事件新增 top 参数 ([#658](https://github.com/sheinsight/shineout-next/pull/658))
 
 ## 3.4.0-beta.6
 2024-09-06
