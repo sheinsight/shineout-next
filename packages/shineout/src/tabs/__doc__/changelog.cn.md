@@ -1,3 +1,10 @@
+## 3.3.7-beta.4
+2024-09-10
+
+### 🐞 BugFix
+
+- 修复 `Tabs` 组件在 `shape='button'` 风格下 ref 属性透传警告的问题 ([#657](https://github.com/sheinsight/shineout-next/pull/657))
+
 ## 3.3.5
 2024-08-22
 
