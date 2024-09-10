@@ -1,3 +1,11 @@
+## 3.3.7-beta.3
+2024-09-09
+
+### 🐞 BugFix
+
+- 修复`Input.Number` 输入过程中的字符串格式(例如1.)触发onChange的问题 ([#655](https://github.com/sheinsight/shineout-next/pull/655))
+
+
 ## 3.3.2
 2024-07-29
 

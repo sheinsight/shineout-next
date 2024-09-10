@@ -39,10 +39,10 @@ const Tab = (props: TabProps, ref: any) => {
     onChange?.(id);
   };
 
-  const tab = util.isLink(propTab) ? (
-    // 直接返回a标签的内容，不要a标签
-    propTab.props.children
-  ) : propTab
+  const tab = util.isLink(propTab)
+    ? // 直接返回a标签的内容，不要a标签
+      propTab.props.children
+    : propTab;
 
   const renderCardTab = () => {
     return tab;
@@ -81,7 +81,7 @@ const Tab = (props: TabProps, ref: any) => {
     onClick: handleClick,
     ref: ref,
     dir: config.direction,
-  }
+  };
 
   if (shape === 'button') {
     return (
@@ -89,7 +89,6 @@ const Tab = (props: TabProps, ref: any) => {
         jssStyle={{ button: buttonStyle }}
         disabled={disabled}
         type={isActive ? 'primary' : 'secondary'}
-
         {...containerProps}
       >
         {tab}
@@ -114,11 +113,7 @@ const Tab = (props: TabProps, ref: any) => {
     });
   }
 
-  return (
-    <div {...containerProps}>
-      {$children}
-    </div>
-  );
+  return <div {...containerProps}>{$children}</div>;
 };
 
 export default React.forwardRef(Tab);

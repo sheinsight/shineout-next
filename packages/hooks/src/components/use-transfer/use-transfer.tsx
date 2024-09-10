@@ -30,12 +30,20 @@ const useTransfer = <DataItem, Value extends KeygenResult[]>(
   const [filterSourceText, setFilterSourceText] = useState('');
   const [filterTargetText, setFilterTargetText] = useState('');
 
+  const handleSelectedChange = (
+    _value: KeygenResult[],
+    source: KeygenResult[],
+    target: KeygenResult[],
+  ) => {
+    onSelectChangeProp?.(source, target);
+  };
+
   const { value: selectedKeys, onChange: onSelectChange } = useInputAble({
     value: selectValue,
     defaultValue: defaultSelectValue,
     control: selectControl,
     beforeChange: undefined,
-    onChange: onSelectChangeProp,
+    onChange: handleSelectedChange,
   });
 
   const { value, onChange } = useInputAble({
@@ -85,25 +93,13 @@ const useTransfer = <DataItem, Value extends KeygenResult[]>(
   };
 
   const handleSourceSelectedChange = (value: KeygenResult[]) => {
-    if (selectControl) {
-      // 受控情况下整合工作交给用户处理
-      onSelectChange?.(value, targetSelectedKeys);
-    } else {
-      // 非受控内部直接整合 source target
-      const next = [...value, ...targetSelectedKeys];
-      onSelectChange?.(next);
-    }
+    const next = [...value, ...targetSelectedKeys];
+    onSelectChange?.(next, value, targetSelectedKeys);
   };
 
   const handleTargetSelectedChange = (value: KeygenResult[]) => {
-    if (selectControl) {
-      // 受控情况下整合工作交给用户处理
-      onSelectChange?.(sourceSelectedKeys, value);
-    } else {
-      // 非受控内部直接整合 source target
-      const next = [...sourceSelectedKeys, ...value];
-      onSelectChange?.(next);
-    }
+    const next = [...sourceSelectedKeys, ...value];
+    onSelectChange?.(next, sourceSelectedKeys, value);
   };
 
   const sourceDatum = useListSelectMultiple({
