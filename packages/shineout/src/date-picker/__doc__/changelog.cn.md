@@ -1,3 +1,11 @@
+## 3.3.7-beta.5
+2024-09-11
+
+### 🐞 BugFix
+
+- 修复 `Datepicker` 的defaultPickerValue的第二位不生效的问题 ([#660](https://github.com/sheinsight/shineout-next/pull/660))
+
+
 ## 3.3.6
 2024-08-28
 

@@ -88,6 +88,11 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
   const getCurrentArr = () => {
     const arr = convertValueToDateArr(value, format, options);
     const currentArr = convertValueToDateArr(props.defaultCurrent, 'YYYY-MM-DD', options);
+
+    const validArr = arr.filter((item) => item);
+    const validCurrentArr = currentArr.filter((item) => item);
+    if(!validArr.length && currentArr.length) return validCurrentArr;
+
     if (!arr[0]) arr[0] = arr[1] || currentArr[0] || new Date();
     if (range && !arr[1]) arr[1] = arr[0] || currentArr[1] || new Date();
     return arr as Date[];
