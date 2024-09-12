@@ -91,7 +91,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
 
     const validArr = arr.filter((item) => item);
     const validCurrentArr = currentArr.filter((item) => item);
-    if(!validArr.length && currentArr.length) return validCurrentArr;
+    if(!validArr.length && currentArr.length) return validCurrentArr as Date[];
 
     if (!arr[0]) arr[0] = arr[1] || currentArr[0] || new Date();
     if (range && !arr[1]) arr[1] = arr[0] || currentArr[1] || new Date();
