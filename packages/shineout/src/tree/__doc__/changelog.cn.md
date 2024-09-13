@@ -1,3 +1,11 @@
+## 3.4.0-beta.10
+2024-09-13
+
+### 🆕 Feature
+
+- `Tree` 组件新增`setActive`，与`active`组成高亮的受控功能  ([#665](https://github.com/sheinsight/shineout-next/pull/665))
+
+
 ## 3.1.22
 2024-05-31
 
