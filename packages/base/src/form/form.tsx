@@ -1,4 +1,4 @@
-import { useForm, useInputAble, useLatestObj, usePersistFn } from '@sheinx/hooks';
+import { FormContext, useForm, useInputAble, useLatestObj, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { useFormFooter } from './form-footer-context';
 import React, { useEffect } from 'react';
@@ -50,6 +50,11 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
         formRef.current = formRefObj;
       }
     }
+
+    if(props.setForm){
+      props.setForm(formRefObj);
+    }
+
   }, [formRefObj]);
 
   const handleFormModalInfo = () => {
@@ -84,7 +89,11 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
         style,
       })}
     >
-      <Provider {...ProviderProps}>{children}</Provider>
+      <Provider {...ProviderProps}>
+        <FormContext.Provider value={formRefObj}>
+          {children}
+        </FormContext.Provider>
+      </Provider>
     </form>
   );
 };
