@@ -3921,7 +3921,6 @@ const App: React.FC = () => (
         bordered
         keygen='uuid'
         width={1500}
-        // height={500}
         columns={columns}
         data={data}
         bordered
