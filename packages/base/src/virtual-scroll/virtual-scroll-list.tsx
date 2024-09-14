@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { usePersistFn } from '@sheinx/hooks';
 import Scroll from './scroll';
 import { VirtualListProps } from './virtual-scroll-list.type';
@@ -26,8 +26,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const [top, setTop] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
   const [scrollHeight, setHeight] = useState(props.data.length * lineHeight);
-  const [startIndex, setCurrentIndex] = useState(0);
-
+  const [startIndex, setStartIndex] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const { current: context } = useRef<{
@@ -69,7 +68,6 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     if (beforeHeight && beforeHeight === height) return;
 
     context.cachedHeight[index] = height;
-
     if (context.shouldUpdateHeight) {
       setHeight(getContentHeight(props.data.length - 1));
     }
@@ -111,7 +109,6 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     let top = 0;
 
     const maxIndex = Math.max(props.data.length - rowsInView, 0);
-
     for (let i = 0; i <= maxIndex; i++) {
       sum += context.cachedHeight[i] || lineHeight;
       if (scrollTop < sum || i === maxIndex) {
@@ -122,7 +119,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       }
     }
     if (nextCurrentIndex !== startIndex) {
-      setCurrentIndex(nextCurrentIndex);
+      setStartIndex(nextCurrentIndex);
     }
     setTop(top);
   };
@@ -145,7 +142,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     height: number;
     width: number;
   }) => {
-    const { scrollLeft, height, y, fromDrag } = info;
+    const { height, y, fromDrag } = info;
     let { scrollTop } = info;
     context.shouldUpdateHeight = !fromDrag;
     const sumHeight = getContentHeight(props.data.length - 1);
@@ -169,12 +166,13 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const renderList = () => {
     let items = data.slice(startIndex, startIndex + rowsInView);
     const Tag = tag;
-    const shouldScroll = data.length * lineHeight > (height as number);
+    const shouldScroll = getContentHeight(data.length - 1) > (height as number);
     const nextStyle = {
       ...style,
     };
     if (shouldScroll) nextStyle.height = height;
     const scrollHeight = getContentHeight(data.length - 1);
+
     return (
       <Scroll
         className={className}
@@ -206,12 +204,21 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   };
 
   useEffect(() => {
-    setHeight(getContentHeight(props.data.length - 1));
+    // 记录preIndex
+    context.preIndex = startIndex;
+  }, [startIndex]);
+
+  useLayoutEffect(() => {
+    // 数据变化的时候清空掉 preIndex, 如果之前有缓存的index, setRowHeight 会有问题
+    setTop(0);
+    setStartIndex(0);
+    return () => {
+      context.preIndex = null;
+    };
   }, [data.length]);
 
   useEffect(() => {
     if (offsetY) {
-      // if (wrapperRef.current && props.innerRef.current) {
       if (wrapperRef.current) {
         setOffsetY(0);
         setTop((s) => s + offsetY);
@@ -221,11 +228,8 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   }, [offsetY, startIndex]);
 
   useEffect(() => {
-    // 数据变化的时候清空掉 preIndex, 如果之前有缓存的index, setRowHeight 会有问题
-    return () => {
-      context.preIndex = null;
-    };
-  }, [props.data]);
+    setHeight(getContentHeight(props.data.length - 1));
+  }, [data.length]);
 
   useEffect(() => {
     if (context.heightCallback) {
@@ -236,18 +240,12 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   }, [scrollHeight]);
 
   useEffect(() => {
-    // 记录preIndex
-    context.preIndex = startIndex;
-  }, [startIndex]);
-
-  useEffect(() => {
     if (virtualRef?.current) {
       virtualRef.current.scrollByStep = handleScrollByStep;
       virtualRef.current.getCurrentIndex = getCurrentIndex;
       virtualRef.current.getTop = getTop;
     }
   }, []);
-
   return renderList();
 };
 
