@@ -235,7 +235,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   };
 
-  const scrollToIndex = usePersistFn((index: number) => {
+  const scrollToIndex = usePersistFn((index: number, callback?: () => void) => {
     if (props.disabled) return;
     if (props.scrollRef.current) {
       context.shouldUpdateHeight = true;
@@ -245,6 +245,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
         const beforeHeight2 = getContentHeight(i - 1);
         if (beforeHeight2 !== beforeHeight) {
           scrollToIndex(index);
+        }
+
+        if(callback && typeof callback === 'function'){
+          callback()
         }
       };
       props.scrollRef.current.scrollTop = beforeHeight;

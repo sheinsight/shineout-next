@@ -212,9 +212,9 @@ const menuStyle: JsStyles<MenuClassType> = {
 
     '$itemInPath > &&': {
       '[data-soui-theme=light] &': {
-        color: token.menuItemActiveFontColor,
+        color: token.menuItemInpathActiveFontColor,
         '& $icon': {
-          color: token.menuItemActiveFontColor,
+          color: token.menuItemInpathActiveFontColor,
         },
       },
 

@@ -38,6 +38,7 @@ const menuTokenExtraValue = {
   popover: {
     padding: { y: 'Spacing-4' },
   },
+
   item: {
     background: { color: 'Neutral-fill-1' },
     font: { color: 'Neutral-text-5', weight: 'Weight-regular' },
@@ -61,6 +62,11 @@ const menuTokenExtraValue = {
       active: {
         background: { color: 'Brand-6' },
         font: { color: 'Neutral-text-1' },
+      },
+    },
+    inpath: {
+      active: {
+        font: { color: 'Brand-6' },
       },
     },
   },
