@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, useTree, util, ObjectKey } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
@@ -36,10 +36,11 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     dragSibling,
     unmatch,
     dragHoverExpand,
-    active,
+    active: propActive,
+    setActive: propSetActive,
     disabled,
     inlineNode,
-    highlight,
+    highlight: propHighlight,
     className,
     onClick,
     loader,
@@ -54,6 +55,16 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     datum: propsDatum,
     ...rest
   } = props;
+
+  const [active, setActive] = useState(propActive);
+  const isActiveControlled = 'active' in props;
+  const highlight = propHighlight ?? isActiveControlled;
+
+  useEffect(() => {
+    if (isActiveControlled && propActive !== active) {
+      setActive(propActive);
+    }
+  }, [active, propActive]);
 
   const { current: context } = useRef({ mounted: false });
 
@@ -95,15 +106,16 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   };
 
   const handleUpdateActive = (active?: KeygenResult) => {
+    setActive(active);
+    propSetActive?.(active);
+
     datum.updateMap.forEach((update, id) => {
       update('active', id === active);
     });
   };
 
   const handleNodeClick = (node: DataItem, id: KeygenResult) => {
-    if (active === undefined) {
-      handleUpdateActive(id);
-    }
+    handleUpdateActive(id);
 
     if (onClick) {
       onClick(node, id, datum.getPath(id));
