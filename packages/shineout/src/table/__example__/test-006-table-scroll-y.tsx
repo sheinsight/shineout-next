@@ -3929,7 +3929,7 @@ const App: React.FC = () => (
         verticalAlign="middle"
         virtual
         // rowsInView={0}
-        sticky={{ top: 0, css: true }}
+        // sticky={{ top: 0, css: true }}
         defaultTreeExpandKeys={flattenArray(data).map((d) => d.uuid)}
       />
       {/* <p>占位内容……</p>
