@@ -17,7 +17,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     groupKey,
     itemsInView = 10,
     lineHeight: lineHeightProp,
-    loading,
     threshold,
     controlType,
     hideCreateOption,
