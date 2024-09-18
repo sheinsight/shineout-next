@@ -32,6 +32,7 @@ export interface TableClasses {
 
   loading: string;
 
+  headMirrorScroller: string;
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
@@ -319,6 +320,14 @@ export interface TableProps<DataItem, Value>
    *
    */
   sticky?: boolean | { top?: number; css?: boolean };
+
+  /**
+   * @en Whether to show the top scroller
+   * @cn 是否开启顶部滚动条
+   * @default false
+   * @version 3.4.0
+   */
+  showTopScrollbar?: boolean;
   /**
    * @en Table instance (please use with caution: only fixed Table)
    * @cn Table 实例（请谨慎使用：仅虚拟列表支持）

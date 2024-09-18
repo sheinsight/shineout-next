@@ -1,8 +1,9 @@
-## 3.3.7
-2024-09-14
+## 3.4.0-beta.13
+2024-09-06
 
-### 🐞 BugFix
-- 修复`Table` 在`Tabs`组件中切换时的滚动条抖动一下的问题 ([#667](https://github.com/sheinsight/shineout-next/pull/667))
+### 🆕 Feature
+
+- `Table` 新增属性 `showTopScrollbar`，开启顶部滚动条  ([#671](https://github.com/sheinsight/shineout-next/pull/671))
 
 ## 3.4.0-beta.7
 2024-09-09
@@ -18,8 +19,11 @@
 
 - Table Ref 支持 `getRenderIndexByData` 方法，用于获取指定数据在渲染列表中的索引
 
-2024-08-30
+## 3.3.7
+2024-09-14
 
+### 🐞 BugFix
+- 修复`Table` 在`Tabs`组件中切换时的滚动条抖动一下的问题 ([#667](https://github.com/sheinsight/shineout-next/pull/667))
 ### 🐞 BugFix
 - 修复`Table` 虚拟滚动时，默认的rowsInView渲染结果不够撑满一屏导致的滚动空白问题 ([#628](https://github.com/sheinsight/shineout-next/pull/628))
 - 修复`Table` 虚拟滚动的内部元素被执行scrollIntoView导致的页面偏移的问题 ([#624](https://github.com/sheinsight/shineout-next/pull/624))
