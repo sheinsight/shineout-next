@@ -330,13 +330,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       parent: tableRef?.current,
     };
 
-    const isRenderBaseTable =
-      !virtual &&
-      !isScrollY &&
-      !props.sticky &&
-      props.data?.length &&
-      !props.style?.height &&
-      !props.height;
+    const isRenderBaseTable = !isScrollY && !props.sticky && props.data?.length && !props.style?.height && !props.height
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
