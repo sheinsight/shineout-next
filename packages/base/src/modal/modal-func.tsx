@@ -90,10 +90,14 @@ const BtnCancel = (option: FooterBtnOptions) => {
 const method =
   (type: MethodType, jssStyle: ModalJssStyle) => (options: Omit<ModalOptions, 'jssStyle'>) => {
     const id = util.getUidStr();
+    let innerClose: () => void;
     const root = getRoot({ container: options.container });
     if (!root) return;
     const destroyModal = () => {
-      destroy(root);
+      innerClose();
+      setTimeout(() => {
+        destroy(root);
+      }, 300);
     };
     modals.add(root);
     const btnOptions = {
@@ -127,6 +131,9 @@ const method =
         footer={footer}
         shouldDestroy={(can) => {
           if (can) destroyModal();
+        }}
+        setInnerClose={(close) => {
+          innerClose = close;
         }}
       >
         {options.content || options.children}
