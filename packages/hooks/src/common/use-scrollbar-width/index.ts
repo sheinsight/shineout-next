@@ -39,9 +39,6 @@ export function useScrollbarWidth() {
     }
   }, []);
 
-  console.log('======================')
-  console.log('useScrollbarWidth: >>', scrollbarWidth)
-  console.log('======================')
   return scrollbarWidth;
 }
 
