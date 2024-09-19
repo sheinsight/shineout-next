@@ -215,9 +215,9 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     }
   };
 
-  const handleClear = usePersistFn((e: React.MouseEvent) => {
+  const handleClear = usePersistFn((e?: React.MouseEvent) => {
     if (!clearable) return;
-    e.stopPropagation();
+    e?.stopPropagation();
     if (disabledStatus === 'all') return;
     if (edit) {
       if (range) {
@@ -228,7 +228,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
         setStateDate([undefined]);
       }
     } else {
-      const emptyValue = props.clearWithUndefined ? undefined : '';
+      const emptyValue = (props.clearWithUndefined || props.clearToUndefined) ? undefined : '';
       let v: string | undefined | Array<string | undefined> = emptyValue;
       if (range) {
         v = [emptyValue, emptyValue];
@@ -237,6 +237,8 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
             v = [props.value[0] as string, emptyValue];
           } else if (props.value[1] && disabledStatus === 'right') {
             v = [emptyValue, props.value[1] as string];
+          } else if(props.clearToUndefined) {
+            v = undefined;
           }
         }
       }

@@ -1,15 +1,25 @@
+## 3.4.0
+2024-09-19
+
+### 🐞 BugFix
+
+- 修复TableRef的`scrollToIndex`的回调方法不生效问题 ([#651](https://github.com/sheinsight/shineout-next/pull/651))
+
+### 🆕 Feature
+
+- `Table` 组件新增属性 `showTopScrollbar`，开启顶部滚动条  ([#671](https://github.com/sheinsight/shineout-next/pull/671))
+- `Table` 组件 `onScroll` 事件新增 top 参数 ([#658](https://github.com/sheinsight/shineout-next/pull/658))
+- `Table` 组件 `Ref` 支持 `getRenderIndexByData` 方法，用于获取指定数据在渲染列表中的索引
+
 ## 3.3.7
 2024-09-14
 
 ### 🐞 BugFix
 - 修复`Table` 在`Tabs`组件中切换时的滚动条抖动一下的问题 ([#667](https://github.com/sheinsight/shineout-next/pull/667))
-
-## 3.3.6
-2024-08-30
-
 ### 🐞 BugFix
 - 修复`Table` 虚拟滚动时，默认的rowsInView渲染结果不够撑满一屏导致的滚动空白问题 ([#628](https://github.com/sheinsight/shineout-next/pull/628))
 - 修复`Table` 虚拟滚动的内部元素被执行scrollIntoView导致的页面偏移的问题 ([#624](https://github.com/sheinsight/shineout-next/pull/624))
+
 
 ## 3.3.3
 2024-08-15
@@ -34,7 +44,6 @@
 
 ### 🆕 Feature
 - `Table` 新增属性 `onCellClick` 支持单元格点击后的回调 ([#550](https://github.com/sheinsight/shineout-next/pull/550))
-
 
 
 ## 3.2.6

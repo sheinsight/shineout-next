@@ -23,6 +23,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       red
     </span>
@@ -46,6 +47,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       orange
     </span>
@@ -69,6 +71,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       yellow
     </span>
@@ -92,6 +95,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       green
     </span>
@@ -128,6 +132,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       cyan
     </span>
@@ -164,6 +169,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       blue
     </span>
@@ -187,6 +193,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       violet
     </span>
@@ -217,6 +224,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       <span
         style="border-bottom: 1px solid red;"
@@ -244,6 +252,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       <span
         style="border-bottom: 1px solid orange;"
@@ -271,6 +280,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       <span
         style="border-bottom: 1px solid yellow;"
@@ -298,6 +308,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       <span
         style="border-bottom: 1px solid green;"
@@ -338,6 +349,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       <span
         style="border-bottom: 1px solid cyan;"
@@ -378,6 +390,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       <span
         style="border-bottom: 1px solid blue;"
@@ -405,6 +418,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       <span
         style="border-bottom: 1px solid violet;"
@@ -439,6 +453,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       red
     </span>
@@ -462,6 +477,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       cyan
     </span>
@@ -498,6 +514,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       blue
     </span>
@@ -521,6 +538,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       green
     </span>
@@ -557,6 +575,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       yellow
     </span>
@@ -580,6 +599,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       orange
     </span>
@@ -603,6 +623,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       violet
     </span>
@@ -634,6 +655,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       red
     </span>
@@ -658,6 +680,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       orange
     </span>
@@ -682,6 +705,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       yellow
     </span>
@@ -706,6 +730,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       green
     </span>
@@ -743,6 +768,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       cyan
     </span>
@@ -780,6 +806,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       blue
     </span>
@@ -804,6 +831,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       violet
     </span>
@@ -834,6 +862,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       red
     </span>
@@ -857,6 +886,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       orange
     </span>
@@ -881,6 +911,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       yellow
     </span>
@@ -904,6 +935,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       green
     </span>
@@ -940,6 +972,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       cyan
     </span>
@@ -976,6 +1009,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       blue
     </span>
@@ -999,6 +1033,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
     <span
       class="soui-checkbox-desc"
+      data-soui-role="desc"
     >
       violet
     </span>

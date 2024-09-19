@@ -23,7 +23,7 @@ interface TableRowData {
 }
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
 
-const data: TableRowData[] = user.fetchSync(20);
+const data: TableRowData[] = user.fetchSync(1000);
 
 const columns: TableColumnItem[] = [
   { title: 'id', render: 'id', width: 50 },
@@ -46,7 +46,7 @@ const columns: TableColumnItem[] = [
   { title: 'Start Date', render: 'start' },
   {
     title: 'Salary($)',
-    fixed: 'right',
+    // fixed: 'right',
     align: 'right',
     width: 100,
     render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
@@ -77,15 +77,30 @@ const App: React.FC = () => {
       <h1>Tab1</h1>
     </Tabs.Panel>
     <Tabs.Panel id="tab2" tab="Tab2">
-    <Table
-      bordered
-      keygen='id'
-      width={1500}
-      style={{ height: '60vh' }}
-      // height="auto"
-      columns={columns}
-      data={tableData}
-    />
+      <Table
+        bordered
+        keygen='id'
+        width={1500}
+        style={{ height: '50vh' }}
+        // height="auto"
+        columns={columns}
+        data={tableData}
+        // rowsInView={30}
+        fixed="y"
+      />
+    </Tabs.Panel>
+    <Tabs.Panel id="tab3" tab="Tab3">
+      <Table
+        bordered
+        keygen='id'
+        width={1500}
+        style={{ height: '60vh' }}
+        // height="auto"
+        columns={columns}
+        data={tableData}
+        // rowsInView={30}
+        fixed="y"
+      />
     </Tabs.Panel>
   </Tabs>
   <Button onClick={() => {

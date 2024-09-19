@@ -37,6 +37,7 @@ export type SelectClasses = {
   resultTextDisabled: string;
   resultTextWrapper: string;
   multipleResultWrapper: string;
+  triggerHover: string;
   resultTextPadding: string;
   compressedWrapper: string;
   multipleCompressedWrapper: string;
@@ -52,6 +53,7 @@ export type SelectClasses = {
   arrowIcon: string;
   ellipsis: string;
   multiple: string;
+  dynamicList: string;
   loading: string;
   checkedIcon: string;
   list: string;
@@ -123,6 +125,7 @@ export interface BaseListProps<DataItem, Value>
     | 'columnWidth'
     | 'columnsTitle'
     | 'hideCreateOption'
+    | 'onLoadMore'
   > {
   customHeader?: React.ReactNode;
   height?: number | string;
@@ -130,10 +133,13 @@ export interface BaseListProps<DataItem, Value>
   datum: any;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   closePop: () => void;
+  threshold: number;
   originalData: any;
   groupKey?: string;
+  dynamicVirtual?: boolean;
   controlType?: 'mouse' | 'keyboard';
   optionListRef: React.MutableRefObject<OptionListRefType | undefined>;
+  isAnimationFinish: boolean;
   onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
   onOptionClick: (data: DataItem, index: number) => void;
 }
@@ -146,9 +152,9 @@ export interface SelectPropsBase<DataItem, Value>
   jssStyle?: JssStyleType;
   /**
    * @en custom empty copy
-   * @cn 自定义 empty 文案
+   * @cn 自定义 empty 文案。与 renderOptionList 搭配使用时，emptyText 设置为 false 后将忽略该功能，如需渲染空内容可在 renderOptionList 中处理
    */
-  emptyText?: string;
+  emptyText?: React.ReactNode;
 
   /**
    * @en Options data
@@ -275,11 +281,12 @@ export interface SelectPropsBase<DataItem, Value>
   itemsInView?: number;
 
   /**
-   * @en Option height. List items are rendered using virtual lists, and when the option height changes, the correct height should be specified via lineHeight
-   * @cn 选项高度。列表项使用虚拟列表渲染，当选项高度改变时，应该通过 lineHeight 来指定正确高度
+   * @en The height of each option. For performance reasons, Select uses a virtual list to render the options. If the option is a fixed height content, such as a fixed size ReactNode, you can adjust the lineHeight to redistribute the height of each item. When lineHeight is set to auto, dynamic virtual list will be enabled, and the actual height will be adaptive according to the content, and each item will be given a minimum height, which will follow the option height corresponding to the size property. This mode will have a certain performance overhead, please choose different modes according to the actual situation.
+   * @cn 每一条选项的高度。出于默认性能考虑，Select 采用了虚拟列表的方式渲染列表项，如果选项为高度固定内容，比如一个固定尺寸的 ReactNode，可以通过调整 lineHeight 来重新分配每一项的高度。当 lineHeight 设置为 auto 时，将开启动态虚拟列表，实际高度将根据内容自适应，并赋予每一项最小高度，最小高度跟随 size 属性对应的选项高度，该模式将有一定的性能开销，请根据实际情况选择不同的模式。
    * @default 32
+   * @version 3.4.0 新增 auto 模式
    */
-  lineHeight?: number;
+  lineHeight?: number | 'auto';
 
   /**
    * @en Set Position can control the different position of DatePicker
@@ -533,6 +540,26 @@ export interface SelectPropsBase<DataItem, Value>
    * @default true
    */
   adjust?: boolean;
+
+  /**
+   * @en Whether to adjust the position of the panel automatically. When the panel is blocked by the window, the position is adjusted automatically
+   * @cn 滚动加载回的调函数。当配置该属性后，下拉列表滚动到底部时触发该函数
+   */
+  onLoadMore?: () => void | Promise<any>;
+
+  /**
+   * @en The threshold for triggering the callback function of the scroll load. When the current scroll progress reaches this value, the callback is triggered, and the maximum value is 1, that is, the scroll progress is 100%
+   * @cn 触发滚动加载回的调函数的阈值。当前滚动进度达到该值时触发，最大值为 1，即滚动进度 100%
+   * @default 1
+   */
+  threshold?: number;
+
+  /**
+   * @cn 触发打开选择面板的方式，默认为点击打开
+   * @en Trigger the way to open the selection panel, default is click to open
+   * @default 'click'
+   */
+  trigger?: 'click' | 'hover';
 }
 
 export interface SelectPropsA<DataItem, Value>

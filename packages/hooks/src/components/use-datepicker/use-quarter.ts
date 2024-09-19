@@ -86,10 +86,10 @@ const useQuarter = (props: UseMonthProps) => {
     return utils.getDateInfo(date, 'quarter', options);
   };
 
-  const handleQuarterClick = (date: Date) => {
+  const handleQuarterClick = (date: Date, noClose?: boolean) => {
     if (isDisabled(date)) return;
     let newDate = utils.toDate(date);
-    props.onChange?.(newDate);
+    props.onChange?.(newDate, noClose);
     setCurrent(newDate);
   };
 

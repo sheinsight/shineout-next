@@ -98,6 +98,8 @@ const input: JsStyles<keyof TextareaClasses> = {
     zIndex: 1000,
     '&[dir=ltr]': { right: '0' },
     '&[dir=rtl]': { left: '0' },
+    '&$bottomLeft': { right: 'auto' },
+    '&$bottomRight': { left: 'auto' },
     top: '100%',
     transformOrigin: '100% 0',
     marginTop: '10px',
@@ -128,6 +130,20 @@ const input: JsStyles<keyof TextareaClasses> = {
     '&[dir=rtl]::before': {
       left: '8px',
     },
+    '&$bottomLeft::before': {
+      left: '8px',
+      right: 'auto',
+    },
+    '&$bottomRight::before': {
+      right: '4px',
+      left: 'auto',
+    },
+  },
+  bottomLeft: {
+    left: 0,
+  },
+  bottomRight: {
+    right: 0,
   },
   infoError: {
     boxShadow: `0 0 0 1px ${token.textareaInfoErrorBorderColor}`,

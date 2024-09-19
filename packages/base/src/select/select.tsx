@@ -90,6 +90,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     defaultExpanded,
     defaultExpandAll,
     showHitDescendants,
+    onLoadMore,
+    threshold = 1,
     renderOptionList,
     // onAdvancedFilter,
     onExpand,
@@ -103,6 +105,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     // onFilterWidthCreate,
     filterSameChange,
     noCache,
+    trigger = 'click',
   } = props;
 
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
@@ -115,6 +118,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
+  const [isAnimationFinish, setIsAnimationFinish] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>();
   const optionListRef = useRef<OptionListRefType>();
@@ -179,13 +183,14 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     popupRef,
     openPop,
     closePop,
+    getTargetProps,
     Provider: PopupProvider,
     providerValue: popupProviderValue,
   } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
-    trigger: 'click',
+    trigger: trigger,
     position: positionProp,
   });
 
@@ -279,6 +284,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     isEmpty && styles.wrapperEmpty,
     styles?.wrapper,
     open && styles?.wrapperOpen,
+    open && trigger === 'hover' && styles?.triggerHover,
     disabled === true && styles?.wrapperDisabled,
     disabled !== true && focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
@@ -471,6 +477,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return datum.remove(item);
   };
 
+  const onAnimationAfterEnter = () => {
+    setIsAnimationFinish(true);
+  };
+
   // innerTitle 模式
   const renderInnerTitle = useInnerTitle({
     open: open || !isEmpty,
@@ -603,6 +613,9 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       emptyAfterSelect,
       renderItem,
       controlType,
+      onLoadMore,
+      isAnimationFinish,
+      threshold,
       onControlTypeChange: setControlType,
       closePop,
       optionListRef,
@@ -622,7 +635,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const onExpandWrap = usePersistFn((value: KeygenResult[]) => {
     onExpand?.(value);
     setAbsoluteListUpdateKey(value?.join(','));
-  })
+  });
 
   const renderTreeList = () => {
     return (
@@ -671,7 +684,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (loading) return renderLoading();
 
     const isEmpty = !filterData?.length;
-    if (isEmpty) return renderEmpty();
+    if (isEmpty && props.emptyText !== false) return renderEmpty();
 
     const options = 'treeData' in props ? renderTreeList() : renderList();
     if (renderOptionList) {
@@ -703,6 +716,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     return style;
   };
+
+  const targetProps = getTargetProps();
+  const { onMouseEnter, onMouseLeave } = targetProps;
+
   return (
     <div
       ref={targetRef}
@@ -719,6 +736,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           e.preventDefault();
         }
       }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {tipNode}
       {renderResult()}
@@ -742,9 +761,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
             size === 'small' && styles?.pickerSmall,
             size === 'large' && styles?.pickerLarge,
           )}
+          onAnimationAfterEnter={onAnimationAfterEnter}
           onMouseDown={preventDefault}
           display={'block'}
           type='scale-y'
+          // type='fade'
           duration={'fast'}
           style={getListStyle()}
         >
