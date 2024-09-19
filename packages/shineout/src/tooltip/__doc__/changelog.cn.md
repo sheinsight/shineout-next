@@ -1,3 +1,12 @@
+## 3.3.6
+2024-08-29
+
+### 🐞 BugFix
+
+- 修复 `Tooltip` 默认 `auto` 不生效、边界场景被遮挡的问题 ([#623](https://github.com/sheinsight/shineout-next/pull/623))
+- 修复 `Tooltip` 在Chrome 128版本下，document.body设置了zoom时的定位问题 ([#622](https://github.com/sheinsight/shineout-next/pull/622))
+
+
 ## 3.3.0
 2024-07-22
 

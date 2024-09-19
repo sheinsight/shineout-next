@@ -151,6 +151,33 @@ const TabsHeader = (props: TabsHeaderProps) => {
     setTransform(delta + headerRef.current.clientWidth * single);
   };
 
+  const renderHeaderScrollBar = () => {
+    if(shape !=='line' && shape !== 'dash') return;
+
+    const currentTab = tabRef.current[active!];
+    if(!currentTab) return;
+
+    const currentTabRect = currentTab.getBoundingClientRect();
+
+    const scrollBarStyle = isVertical ? {
+      right: getPosition?.startsWith('left') ? 0 : 'auto',
+      left: getPosition?.startsWith('right') ? 0 : 'auto',
+      top: currentTab.offsetTop + (currentTabRect.height / 2),
+      height: shape === 'line' ? currentTabRect.height : 24,
+      width: 2,
+      transform: 'translateY(-50%)',
+    } : {
+      bottom: getPosition?.startsWith('top') ? 0 : 'auto',
+      top: getPosition?.startsWith('bottom') ? 0 : 'auto',
+      left: currentTab.offsetLeft + (currentTabRect.width / 2),
+      width: shape === 'line' ? currentTabRect.width : 24,
+      height: 2,
+      transform: 'translateX(-50%)',
+    }
+
+    return <div className={headerStyle.headerScrollBar} style={scrollBarStyle}></div>
+  }
+
   const renderTab = () => {
     return (
       <div ref={headerRef} className={headerClass}>
@@ -166,15 +193,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
           {shape === 'button' && (
             <Button.Group jssStyle={{ button: buttonStyle }}>
               {tabs.map((tab, index) => {
-                return (
-                  <Tab
-                    key={index}
-                    {...tab}
-                    ref={(node: any) => {
-                      tabRef.current[tab.id] = node;
-                    }}
-                  ></Tab>
-                );
+                return <Tab key={index} {...tab}></Tab>;
               })}
             </Button.Group>
           )}
@@ -191,6 +210,8 @@ const TabsHeader = (props: TabsHeaderProps) => {
                 ></Tab>
               );
             })}
+
+          {renderHeaderScrollBar()}
         </div>
       </div>
     );

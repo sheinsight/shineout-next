@@ -25,6 +25,7 @@ const AnimationList = (props: AnimationListProps) => {
     type: typePo,
     className: classNamePo,
     animation = true,
+    onAnimationAfterEnter,
     ...forwardProps
   } = props;
 
@@ -131,6 +132,7 @@ const AnimationList = (props: AnimationListProps) => {
     }
     setStyle((s) => ({ ...s, ...newStyle }));
     setStatus('afterEnter');
+    onAnimationAfterEnter?.();
   };
 
   const beforeLeave = () => {
@@ -214,7 +216,7 @@ const AnimationList = (props: AnimationListProps) => {
       cleanTimer();
       context.timer = setTimeout(() => {
         afterEnter();
-      }, durationNum);
+      }, durationNum + mm);
     }
     if (status === 'beforeLeave') {
       cleanTimer();

@@ -5,6 +5,7 @@ import Icons from '../icons';
 import React from 'react';
 import PickerTitle from './pickerTitle';
 import { useConfig } from '../config';
+import Confirm from './confirm';
 
 const Year = (props: YearProps) => {
   const { jssStyle } = props;
@@ -58,7 +59,7 @@ const Year = (props: YearProps) => {
         )}
         key={index}
         onClick={() => {
-          func.handleYearClick(item);
+          func.handleYearClick(item, props.needConfirm);
         }}
         onMouseEnter={
           isDisabled
@@ -129,6 +130,10 @@ const Year = (props: YearProps) => {
           </tbody>
         </table>
       </div>
+
+      {props.needConfirm && !props.range && (
+          <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
+        )}
     </div>
   );
 };

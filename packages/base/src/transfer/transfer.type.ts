@@ -60,7 +60,7 @@ export interface FilterProps {
 }
 
 export interface CustomRenderProps<Value extends KeygenResult[]> {
-  onSelected: (data: KeygenResult[]) => void;
+  onSelected: (value: KeygenResult[], source: KeygenResult[], target: KeygenResult[]) => void;
   /**
    * @deprecated 请使用 listType 属性判断是否为源或目标列表
    */

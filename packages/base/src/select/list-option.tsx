@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
+import { addResizeObserver, usePersistFn } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { ListOptionProps } from './list-option.type';
 import Icons from '../icons';
@@ -14,9 +16,12 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     multiple,
     isHover,
     renderItem,
+    dynamicVirtual,
+    isAnimationFinish,
     onHover,
     onOptionClick,
   } = props;
+  const optionRef = useRef<HTMLLIElement>(null);
   const config = useConfig();
   const styles = jssStyle?.select?.() as SelectClasses;
   const isChecked = datum.check(data);
@@ -44,6 +49,14 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     onOptionClick(data, index);
   };
 
+  const setVirtualRowHeight = usePersistFn(() => {
+    if (!props.setRowHeight || !optionRef.current) return;
+    const optionHeight = optionRef.current.getBoundingClientRect().height;
+    if (optionHeight !== 0) {
+      props.setRowHeight(index, optionHeight);
+    }
+  });
+
   const renderCheckedIcon = () => {
     return (
       <span className={styles.checkedIcon} dir={config.direction}>
@@ -55,12 +68,28 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   const result = renderItem(data);
   const title = typeof result === 'string' ? result : '';
 
+  useEffect(() => {
+    if (!isAnimationFinish) return;
+    setVirtualRowHeight();
+  }, [isAnimationFinish]);
+
+  useEffect(() => {
+    if (!optionRef.current) return;
+    const cancelObserver = addResizeObserver(optionRef.current, setVirtualRowHeight, {
+      direction: 'y',
+    });
+
+    return () => {
+      cancelObserver();
+    };
+  }, []);
   return (
     <li
+      ref={optionRef}
       tabIndex={-1}
       className={rootClass}
       title={title}
-      style={{ height: lineHeight }}
+      style={{ [dynamicVirtual ? 'minHeight' : 'height']: lineHeight }}
       onClick={handleClick}
       onMouseEnter={handleEnter}
     >

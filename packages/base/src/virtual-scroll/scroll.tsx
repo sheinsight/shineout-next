@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { usePersistFn, useResize, util } from '@sheinx/hooks';
+import React, { useMemo, useRef } from 'react';
+import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
 interface scrollProps {
@@ -29,10 +29,12 @@ interface scrollProps {
 
 const Scroll = (props: scrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const wrapperRef = useForkRef(scrollRef, props.wrapperRef);
   const { current: context } = useRef({
     timer: null as any,
     isMouseDown: false,
-    lastPaddingTop: 0,
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef });
@@ -55,13 +57,9 @@ const Scroll = (props: scrollProps) => {
     top: 0,
   } as React.CSSProperties;
 
-  let pd = context.lastPaddingTop;
-  if (height > 0 && scrollHeight > 0) {
-    pd = Math.max(0, Math.floor(scrollHeight - height));
-    context.lastPaddingTop = pd;
-  }
+  const paddingTop = useMemo(() => Math.max(0, Math.floor(scrollHeight - height)), [scrollHeight, height]);
   const placeStyle = {
-    paddingTop: pd,
+    paddingTop,
     width: scrollWidth,
     overflow: props.isScrollY ? 'hidden' : 'auto hidden',
     height: props.isScrollY ? 0 : 1,
@@ -121,13 +119,21 @@ const Scroll = (props: scrollProps) => {
       });
   });
 
+  const handleInnerScroll = usePersistFn((e: React.UIEvent) => {
+    const scrollTop = (e.currentTarget as HTMLDivElement).scrollTop;
+    if (scrollRef.current) {
+      e.currentTarget.scrollTop = 0;
+      scrollRef.current.scrollTop += scrollTop;
+    }
+  });
+
   return (
     <div className={props.className} style={props.style} onMouseMove={props.onMouseMove}>
       <div
         {...util.getDataAttribute({ role: 'scroll' })}
         style={scrollerStyle}
         onScroll={handleScroll}
-        ref={props.wrapperRef}
+        ref={wrapperRef}
         onMouseDown={() => {
           context.isMouseDown = true;
         }}
@@ -139,6 +145,7 @@ const Scroll = (props: scrollProps) => {
           {...util.getDataAttribute({ role: 'scroll-container' })}
           style={containerStyle}
           ref={containerRef}
+          onScroll={handleInnerScroll}
         >
           <div style={{ flexGrow: 1, ...props.childrenStyle }}>{props.children}</div>
         </div>

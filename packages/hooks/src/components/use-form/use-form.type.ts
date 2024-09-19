@@ -2,26 +2,31 @@ import { ReactNode } from 'react';
 
 import { AddNoProps, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule/rule.type';
+import { FormError } from '../../utils';
+
+export type ValidateFn = (
+  name: string,
+  value: any,
+  formData: ObjectType,
+  config?: {
+    ignoreBind?: boolean;
+  },
+) => Promise<boolean | FormError>
+
+export type UpdateFn = (
+  formValue: ObjectType,
+  errors: ObjectType<Error | undefined>,
+  serverErrors: ObjectType<Error | undefined>,
+) => void
 
 export interface FormContextValueType {
   func?: {
-    unbind: (n: string, reserveAble?: boolean) => void;
+    unbind: (n: string, reserveAble?: boolean, validate?:ValidateFn, update?:UpdateFn ) => void;
     bind: (
       n: string,
       df: any,
-      validate: (
-        name: string,
-        value: any,
-        formData: ObjectType,
-        config: {
-          ignoreBind?: boolean;
-        },
-      ) => void,
-      update: (
-        formValue: ObjectType,
-        errors: ObjectType<Error>,
-        serverErrors: ObjectType<Error>,
-      ) => void,
+      validate: ValidateFn,
+      update: UpdateFn,
     ) => void;
     combineRules: <ValueItem>(
       name: string,
@@ -174,7 +179,7 @@ export type UseFormProps<T> = BaseFormProps<T>;
 
 export type FormContext = {
   defaultValues: ObjectType;
-  validateMap: ObjectType;
+  validateMap: ObjectType<Set<(name: string, v: any, formValue: ObjectType, config?: { ignoreBind?: boolean }) => Promise<boolean | FormError>>>;
   // 删除字段队列
   removeArr: Set<string>;
   // 防抖间隔
@@ -186,7 +191,7 @@ export type FormContext = {
   resetTime: number;
   mounted: boolean;
   // 更新队列
-  updateMap: ObjectType;
+  updateMap: ObjectType<Set<(formValue: ObjectType, errors: ObjectType<Error | undefined>, serverErrors: ObjectType<Error | undefined>) => void>>;
   // flow 队列
   flowMap: ObjectType<Set<() => void>>;
   value: ObjectType;

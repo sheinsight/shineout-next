@@ -1,6 +1,6 @@
 import { CheckboxGroupProps } from './checkbox-group.type';
 import { useInputAble, useListSelectMultiple, usePersistFn, util } from '@sheinx/hooks';
-import groupContext from './group-context';
+import GroupContext from './group-context';
 import Checkbox from './checkbox';
 import React from 'react';
 import classNames from 'classnames';
@@ -39,6 +39,10 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
       } else {
         datum.remove(raw);
       }
+
+      if (children && React.isValidElement(children)) {
+        children.props.onChange?.(_, checked, children.props.htmlValue);
+      }
     },
   );
 
@@ -72,7 +76,9 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
   if (props.data === undefined) {
     return (
       <div className={groupClass} style={style}>
-        <groupContext.Provider value={providerValue}>{children}</groupContext.Provider>
+        <GroupContext.Provider value={providerValue}>
+          {children}
+        </GroupContext.Provider>
       </div>
     );
   } else {

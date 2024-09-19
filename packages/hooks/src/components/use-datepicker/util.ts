@@ -404,13 +404,19 @@ function clearHMS(date: Date, options: DateOptions) {
   return ud;
 }
 
-function compareDateArray(arr1: Date[], arr2: Date[], type = 'date', options: DateOptions) {
+function compareDateArray(
+  arr1: Date[],
+  arr2: Date[],
+  type = 'date',
+  options: DateOptions,
+  fmt?: string,
+) {
   if (!arr1 || !arr2 || arr1.length !== arr2.length) return false;
   return arr1.every((v, i) => {
     if (!v || !arr2[i]) return false;
     if (type === 'week')
       return format(v, 'gggg ww', options) === format(arr2[i], 'gggg ww', options);
-    return v.getTime() === arr2[i].getTime();
+    return toDateWithFormat(v, fmt).getTime() === toDateWithFormat(arr2[i], fmt).getTime();
   });
 }
 

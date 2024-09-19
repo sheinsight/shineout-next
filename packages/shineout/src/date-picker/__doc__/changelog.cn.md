@@ -1,9 +1,32 @@
+## 3.4.0
+2024-09-19
+
+### 🆕 Feature
+- `Datepicker` 新增needConfirm属性: 是否开启手动确认按钮，开启后只有点击确认按钮才会提交选择的值。 ([#650](https://github.com/sheinsight/shineout-next/pull/650))
+- `Datepicker` 新增clearToUndefined，点击清除后返回undefined ([#644](https://github.com/sheinsight/shineout-next/pull/644))
+
+
+## 3.3.7
+2024-09-11
+
+### 🐞 BugFix
+
+- 修复 `Datepicker` 的defaultPickerValue的第二位不生效的问题 ([#660](https://github.com/sheinsight/shineout-next/pull/660))
+
+
+## 3.3.6
+2024-08-28
+
+### 🐞 BugFix
+
+- 修复 `Datepicker` 快速选择固定值无法高亮的问题 ([#620](https://github.com/sheinsight/shineout-next/pull/620))
+
 ## 3.3.3
 2024-08-15
 
 ### 🐞 BugFix
 
-- 修复 `datepicker` 聚焦但不打开面板场景下无法回填原值的问题 ([#604](https://github.com/sheinsight/shineout-next/pull/604))
+- 修复 `Datepicker` 聚焦但不打开面板场景下无法回填原值的问题 ([#604](https://github.com/sheinsight/shineout-next/pull/604))
 
 ## 3.3.0
 2024-07-23

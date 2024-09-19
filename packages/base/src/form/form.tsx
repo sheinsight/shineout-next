@@ -63,7 +63,9 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     if (status !== modalFormContext?.formStats) {
       modalFormContext?.setFormStats(status);
     }
-    modalFormContext?.setFormInfo(formRefObj);
+    if(props.onSubmit){
+      modalFormContext?.setFormInfo(formRefObj);
+    }
   };
   useEffect(() => {
     handleFormModalInfo();

@@ -5,6 +5,8 @@ import { PopoverProps } from './popover.type';
 import { useConfig } from '../config';
 import classNames from 'classnames';
 
+const emptyEvent = <U extends { stopPropagation: () => void }>(e: U) => e.stopPropagation();
+
 const Popover = (props: PopoverProps) => {
   const {
     children,
@@ -155,6 +157,7 @@ const Popover = (props: PopoverProps) => {
         )}
         <div
           style={style}
+          onClick={emptyEvent}
           className={classNames(
             popoverStyle?.content,
             (typeof childrened === 'string' || props.useTextStyle) && popoverStyle?.text,

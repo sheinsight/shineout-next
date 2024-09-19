@@ -1,6 +1,6 @@
 import { usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { cloneElement, isValidElement } from 'react';
+import React, { cloneElement, isValidElement, useState, useRef } from 'react';
 import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
@@ -19,8 +19,10 @@ const Tooltip = (props: TooltipProps) => {
     style,
     zIndex,
     type = 'default',
-    position: popsitionProps = 'bottom',
+    position: popsitionProps = 'auto',
   } = props;
+
+  const arrowStyleRef = useRef<React.CSSProperties>({});
 
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
@@ -30,8 +32,7 @@ const Tooltip = (props: TooltipProps) => {
     : {};
 
   const delay = props.delay || props.mouseEnterDelay || defaultDelay;
-
-  const { open, position, getTargetProps, targetRef, popupRef } = usePopup({
+  const { open, position, getTargetProps, targetRef, popupRef, arrowRef } = usePopup({
     position: popsitionProps,
     trigger: trigger,
     autoMode: 'popover',
@@ -56,7 +57,6 @@ const Tooltip = (props: TooltipProps) => {
   ) : (
     children
   );
-
   const events = getTargetProps();
 
   return (
@@ -76,10 +76,13 @@ const Tooltip = (props: TooltipProps) => {
         focus={open}
         parentElRef={targetRef}
         popupElRef={popupRef}
+        arrowRef={arrowRef}
         absolute
+        adjust={popsitionProps === 'auto'}
         position={position}
         fixedWidth={false}
         popupGap={0}
+        // arrowStyleRef={arrowStyleRef}
         zIndex={zIndex}
       >
         <div
@@ -93,6 +96,12 @@ const Tooltip = (props: TooltipProps) => {
           onMouseLeave={events.onMouseLeave}
           dir={config.direction}
         >
+          <span
+            ref={arrowRef}
+            style={arrowStyleRef.current}
+            className={tooltipClasses?.arrow}
+            {...util.getDataAttribute({ role: 'arrow' })}
+          ></span>
           <div style={style} className={classNames(tooltipClasses?.content)}>
             {tip}
           </div>

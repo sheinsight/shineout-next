@@ -7,9 +7,10 @@ import Quarter from './quarter';
 import Time from './time';
 import Quick from './quick';
 import { useDatePickerRange, usePersistFn } from '@sheinx/hooks';
+import Confirm from './confirm';
 
 const Picker = (props: PickerProps) => {
-  const { range, currentArr, dateArr, options, jssStyle, isDisabledDate } = props;
+  const { range, currentArr, dateArr, options, jssStyle, isDisabledDate, type } = props;
   const styles = jssStyle?.datePicker?.();
   const { func, defaultTimeArr, endMax, endMin, startMin, startMax } = useDatePickerRange({
     type: props.type,
@@ -39,6 +40,8 @@ const Picker = (props: PickerProps) => {
     props.setActiveIndex(-1);
   });
 
+  const closeByConfirm = () => props.closePop(true);
+
   const renderPicker = (position?: 'start' | 'end') => {
     const index = position === 'end' ? 1 : 0;
     const mode = props.mode[index];
@@ -64,6 +67,11 @@ const Picker = (props: PickerProps) => {
       registerModeDisabled: props.registerModeDisabled,
       onMouseEnter: () => {},
       onMouseLeave: () => {},
+      range,
+      setClickTimes: props.setClickTimes,
+      clickTimes: props.clickTimes,
+      needConfirm: props.needConfirm,
+      closeByConfirm,
     };
     if (range) {
       commonProps['onMouseEnter'] = position === 'end' ? handleEnterEnd : handleEnterStart;
@@ -126,6 +134,7 @@ const Picker = (props: PickerProps) => {
           range={props.range}
           jssStyle={jssStyle}
           dateArr={dateArr}
+          type={type}
           setDateArr={props.setDateArr}
           setCurrentArr={props.setCurrentArr}
           format={props.format}
@@ -134,11 +143,22 @@ const Picker = (props: PickerProps) => {
           {props.children}
         </Quick>
       }
-      {range
-        ? ['start', 'end'].map((item) => {
-            return renderPicker(item as 'start' | 'end');
-          })
-        : renderPicker()}
+      {range ? (
+        <div className={styles?.pickerRange}>
+          <div className={styles?.pickerRangeBody}>
+            {
+              ['start', 'end'].map((item) => renderPicker(item as 'start' | 'end'))
+            }
+          </div>
+          {
+            props.needConfirm && (
+              <div className={styles?.pickerRangeFooter}>
+                <Confirm closeByConfirm={closeByConfirm} jssStyle={jssStyle} />
+              </div>
+            )
+          }
+        </div>
+      ) : renderPicker()}
     </div>
   );
 };
