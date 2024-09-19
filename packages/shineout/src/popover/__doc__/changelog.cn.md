@@ -1,5 +1,5 @@
 ## 3.3.7
-2024-09-09
+2024-09-14
 
 ### 🐞 BugFix
 - 修复 `Popover` 组件 children 点击事件冒泡外层的问题 ([#654](https://github.com/sheinsight/shineout-next/pull/654))

@@ -1,15 +1,9 @@
-## 3.3.7-beta.7
+## 3.3.7
 2024-09-14
 
 ### 🐞 BugFix
 
 - 修复 `Tabs` 组件的Tabs.Panel是异常动态长度时，需要resize页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
-
-## 3.3.7
-2024-09-10
-
-### 🐞 BugFix
-
 - 修复 `Tabs` 组件在 `shape='button'` 风格下 ref 属性透传警告的问题 ([#657](https://github.com/sheinsight/shineout-next/pull/657))
 
 ## 3.3.5
