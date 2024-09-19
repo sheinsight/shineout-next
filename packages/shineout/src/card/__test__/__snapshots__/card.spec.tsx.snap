@@ -353,11 +353,12 @@ exports[`Card[Base] should render correctly about collapse 1`] = `
                   <span
                     class="soui-datePicker-result-text-padding"
                   >
-                    <span
-                      class="soui-datePicker-placeholder"
-                    >
-                      Please select date
-                    </span>
+                    <input
+                      autocomplete="off"
+                      placeholder="Please select date"
+                      readonly=""
+                      value=""
+                    />
                   </span>
                   <div
                     class="soui-datePicker-result-text-bg"
