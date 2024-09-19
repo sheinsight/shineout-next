@@ -1,5 +1,5 @@
-## 3.4.0-beta.8
-2024-09-11
+## 3.4.0
+2024-09-19
 
 ### 🆕 Feature
 - `Menu` 组件新增父节点激活状态下的文字颜色 token ([#659](https://github.com/sheinsight/shineout-next/pull/659))
