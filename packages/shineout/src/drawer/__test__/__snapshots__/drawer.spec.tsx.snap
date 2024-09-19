@@ -687,11 +687,12 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                           <span
                             class="soui-datePicker-result-text-padding"
                           >
-                            <span
-                              class="soui-datePicker-placeholder"
-                            >
-                              please select date
-                            </span>
+                            <input
+                              autocomplete="off"
+                              placeholder="please select date"
+                              readonly=""
+                              value=""
+                            />
                           </span>
                           <div
                             class="soui-datePicker-result-text-bg"
