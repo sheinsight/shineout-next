@@ -129,20 +129,37 @@ const Textarea = (props0: TextareaProps) => {
 
   const getInfo = () => {
     const notNumber = typeof info !== 'number';
-    if (typeof info !== 'function' && notNumber) return null;
-    const textInfo = notNumber ? info : defaultInfo.bind(null, info);
-    const res = textInfo(inputAbleProps.value);
+    if (typeof info !== 'function' && typeof info !== 'object' && notNumber) return null;
+    let infoContent: number | ((value: string) => React.ReactNode | Error);
+    let infoPosition;
+    if (typeof info === 'object') {
+      infoContent = info.content;
+      infoPosition = info.position;
+    } else {
+      infoContent = info;
+    }
+    const notContentNumber = typeof infoContent !== 'number';
+    const textInfo = notContentNumber
+      ? (infoContent as (value: string) => React.ReactNode | Error)
+      : defaultInfo.bind(null, infoContent as number);
+    const res = textInfo(inputAbleProps.value!);
     // empty
     if (!res) return null;
     const isError = res instanceof Error;
     const text = isError ? res.message : res;
     if (!isError && !focused) return null;
+    console.log('infoPosition', infoPosition);
     return (
       <div
         key='info'
         style={{ minWidth: 'auto' }}
         dir={config.direction}
-        className={classNames(textareaClasses?.info, !!isError && textareaClasses?.infoError)}
+        className={classNames(
+          textareaClasses?.info,
+          !!isError && textareaClasses?.infoError,
+          infoPosition === 'bottom-left' && textareaClasses?.bottomLeft,
+          infoPosition === 'bottom-right' && textareaClasses?.bottomRight,
+        )}
       >
         {text}
       </div>
