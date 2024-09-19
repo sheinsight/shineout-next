@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
@@ -35,7 +35,6 @@ const Scroll = (props: scrollProps) => {
   const { current: context } = useRef({
     timer: null as any,
     isMouseDown: false,
-    lastPaddingTop: 0,
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef });
@@ -58,13 +57,9 @@ const Scroll = (props: scrollProps) => {
     top: 0,
   } as React.CSSProperties;
 
-  let pd = context.lastPaddingTop;
-  if (height > 0 && scrollHeight > 0) {
-    pd = Math.max(0, Math.floor(scrollHeight - height));
-    context.lastPaddingTop = pd;
-  }
+  const paddingTop = useMemo(() => Math.max(0, Math.floor(scrollHeight - height)), [scrollHeight, height]);
   const placeStyle = {
-    paddingTop: pd,
+    paddingTop,
     width: scrollWidth,
     overflow: props.isScrollY ? 'hidden' : 'auto hidden',
     height: props.isScrollY ? 0 : 1,

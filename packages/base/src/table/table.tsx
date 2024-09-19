@@ -340,7 +340,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       parent: tableRef?.current,
     };
 
-    const isRenderBaseTable = !isScrollY && !props.sticky && props.data?.length && !props.style?.height && !props.height
+    const isRenderVirtualTable = virtual || props.sticky || props.style?.height || props.height
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
@@ -388,80 +388,82 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       )
     }
 
-    if (isRenderBaseTable) {
+    if(isRenderVirtualTable){
       return (
         <>
           {renderHeadMirrorScroller()}
-          <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-            <table style={{ width }} ref={tbodyRef}>
+          {!props.hideHeader && (
+            <StickyWrapper {...(props.sticky ? stickyProps : {})}>
+              <div className={headWrapperClass}>
+                <table
+                  style={{ width, transform: `translate3d(${0 - virtualInfo.innerLeft}px, 0, 0)` }}
+                  ref={theadRef}
+                >
+                  {Group}
+                  <Thead
+                    {...headCommonProps}
+                    fixLeftNum={virtualInfo.innerLeft}
+                    fixRightNum={fixRightNum}
+                  />
+                </table>
+              </div>
+            </StickyWrapper>
+          )}
+
+          <Scroll
+            style={scrollWrapperStyle}
+            scrollerStyle={props.data?.length ? virtualScrollerStyle : emptyStyle}
+            wrapperRef={scrollRef}
+            scrollWidth={width || 1}
+            scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
+            onScroll={handleVirtualScroll}
+            defaultHeight={context.emptyHeight}
+            isScrollY={isScrollY}
+          >
+            <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
               {Group}
-              {!props.hideHeader && <Thead {...headCommonProps} />}
-              {<Tbody {...bodyCommonProps} />}
-              {<Tfoot {...footCommonProps} />}
+              <Tbody
+                {...bodyCommonProps}
+                currentIndex={virtualInfo.startIndex}
+                data={virtualInfo.data}
+                setRowHeight={virtualInfo.setRowHeight}
+                fixLeftNum={virtualInfo.innerLeft}
+                fixRightNum={fixRightNum}
+              />
             </table>
-          </div>
-        </>
-      );
-    }
-    return (
-      <>
-        {renderHeadMirrorScroller()}
-        {!props.hideHeader && (
-          <StickyWrapper {...(props.sticky ? stickyProps : {})}>
-            <div className={headWrapperClass}>
+          </Scroll>
+          {renderEmpty()}
+          {showFoot ? (
+            <div className={footWrapperClass}>
               <table
-                style={{ width, transform: `translate3d(${0 - virtualInfo.innerLeft}px, 0, 0)` }}
-                ref={theadRef}
+                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+                ref={tfootRef}
               >
                 {Group}
-                <Thead
-                  {...headCommonProps}
+                <Tfoot
+                  {...footCommonProps}
                   fixLeftNum={virtualInfo.innerLeft}
                   fixRightNum={fixRightNum}
                 />
               </table>
             </div>
-          </StickyWrapper>
-        )}
+          ) : null}
+        </>
+      );
+    }
 
-        <Scroll
-          style={scrollWrapperStyle}
-          scrollerStyle={props.data?.length ? virtualScrollerStyle : emptyStyle}
-          wrapperRef={scrollRef}
-          scrollWidth={width || 1}
-          scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
-          onScroll={handleVirtualScroll}
-          defaultHeight={context.emptyHeight}
-          isScrollY={isScrollY}
-        >
-          <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
+    return (
+      <>
+        {renderHeadMirrorScroller()}
+        <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
+          <table style={{ width }} ref={tbodyRef}>
             {Group}
-            <Tbody
-              {...bodyCommonProps}
-              currentIndex={virtualInfo.startIndex}
-              data={virtualInfo.data}
-              setRowHeight={virtualInfo.setRowHeight}
-              fixLeftNum={virtualInfo.innerLeft}
-              fixRightNum={fixRightNum}
-            />
+            {!props.hideHeader && <Thead {...headCommonProps} />}
+            {<Tbody {...bodyCommonProps} />}
+            {<Tfoot {...footCommonProps} />}
           </table>
-        </Scroll>
-        {renderEmpty()}
-        {showFoot ? (
-          <div className={footWrapperClass}>
-            <table
-              style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
-              ref={tfootRef}
-            >
-              {Group}
-              <Tfoot
-                {...footCommonProps}
-                fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={fixRightNum}
-              />
-            </table>
-          </div>
-        ) : null}
+          {renderEmpty()}
+        </div>
       </>
     );
   };
