@@ -44,6 +44,22 @@ const Carousel = (props: CarouselProps) => {
   };
   const renderArrow = () => {
     if (!props.showArrow) return null;
+    const handlePrev = () => {
+      if(config.direction === 'ltr') {
+        func.backward()
+      }else {
+        func.forward()
+      }
+      func.stop()
+    }
+    const handleNext = () => {
+      if(config.direction === 'ltr') {
+        func.forward()
+      }else {
+        func.backward()
+      }
+      func.stop()
+    }
     return (
       <div
         className={classNames(
@@ -55,14 +71,14 @@ const Carousel = (props: CarouselProps) => {
         <div
           className={classNames(carouselClasses?.arrowLeft, carouselClasses?.arrowItem)}
           key={'left'}
-          onClick={config.direction === 'ltr' ? func.backward : func.forward}
+          onClick={handlePrev}
         >
           {Icons.carousel.Backward}
         </div>
         <div
           className={classNames(carouselClasses?.arrowRight, carouselClasses?.arrowItem)}
           key={'right'}
-          onClick={config.direction === 'ltr' ? func.forward : func.backward}
+          onClick={handleNext}
         >
           {Icons.carousel.Forward}
         </div>
