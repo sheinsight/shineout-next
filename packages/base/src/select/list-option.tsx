@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
-import { addResizeObserver, usePersistFn, util } from '@sheinx/hooks';
+import { addResizeObserver, usePersistFn } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { ListOptionProps } from './list-option.type';
 import Icons from '../icons';

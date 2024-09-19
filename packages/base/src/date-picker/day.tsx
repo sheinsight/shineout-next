@@ -149,7 +149,14 @@ const Day = (props: DayProps) => {
 
     const showNeedConfirm = props.needConfirm && !props.range;
     return (
-      <div className={styles?.pickerFooter} dir={direction} style={{borderTop: props.needConfirm && props.range ? 'none': ''}}>
+      <div
+        className={styles?.pickerFooter}
+        dir={direction}
+        style={{
+          borderTop: props.needConfirm && props.range ? 'none': undefined,
+          marginTop: props.needConfirm && props.range ? -16 : undefined,
+        }}
+      >
         {props.type === 'datetime' && (
           <div
             className={classNames(

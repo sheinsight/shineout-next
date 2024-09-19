@@ -6,6 +6,7 @@ export type VirtualListType = {
   getCurrentIndex?: () => number;
   getTop?: () => number;
   getHoverIndex?: () => number;
+  setStartIndex?: (index: number) => void;
 };
 
 export interface VirtualListProps<DataItem> extends Pick<CommonType, 'className' | 'style'> {

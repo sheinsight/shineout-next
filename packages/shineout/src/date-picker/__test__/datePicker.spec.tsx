@@ -1610,7 +1610,7 @@ describe('DatePicker[DefaultPickerValue]', () => {
     const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
     const pickerHeaders = datePickerPickerWrapper.querySelectorAll(pickerHeader);
     textContentTest(pickerHeaders[0], `${year}-${Number(month) - 1}`);
-    textContentTest(pickerHeaders[1], `${year}-${Number(month) - 1}`);
+    textContentTest(pickerHeaders[1], `${year}-${Number(month) - 2}`);
   });
 });
 describe('DatePicker[AllowSingle]', () => {

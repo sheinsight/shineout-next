@@ -5,6 +5,14 @@
 - `Datepicker` 新增clearToUndefined，点击清除后返回undefined ([#644](https://github.com/sheinsight/shineout-next/pull/644))
 
 
+## 3.3.7
+2024-09-11
+
+### 🐞 BugFix
+
+- 修复 `Datepicker` 的defaultPickerValue的第二位不生效的问题 ([#660](https://github.com/sheinsight/shineout-next/pull/660))
+
+
 ## 3.3.6
 2024-08-28
 

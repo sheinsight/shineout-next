@@ -5,7 +5,7 @@ import Spin from '../spin';
 import Pagination, { PaginationProps } from '../pagination';
 import AbsoluteContext from '../absolute-list/absolute-context';
 import Empty from '../empty';
-import Sticky from '../sticky';
+import Sticky, {defaultZIndex} from '../sticky';
 import { useConfig } from '../config';
 import {
   useTableLayout,
@@ -19,6 +19,7 @@ import {
   usePaginationList,
   useLatestObj,
   useResize,
+  useScrollbarWidth,
   util
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
@@ -56,7 +57,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const theadRef = useRef<HTMLTableElement | null>(null);
   const tfootRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const mirrorScrollRef = useRef<HTMLDivElement | null>(null);
   const tableRef = useRef<HTMLDivElement | null>(null);
+
+  const browserScrollbarWidth = useScrollbarWidth();
 
   const { current: context } = useRef({
     emptyHeight: 0,
@@ -215,6 +219,9 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     const target = e.currentTarget;
     if (!target) return;
     layoutFunc.checkFloat();
+    if(mirrorScrollRef.current){
+      mirrorScrollRef.current.scrollLeft = target.scrollLeft
+    }
     if (props.onScroll && typeof props.onScroll === 'function') {
       const maxWidth = target.scrollWidth - target.clientWidth;
       const maxHeight = target.scrollHeight - target.clientHeight;
@@ -236,6 +243,9 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     }) => {
       virtualInfo.handleScroll(info);
       layoutFunc.checkFloat();
+      if(mirrorScrollRef.current){
+        mirrorScrollRef.current.scrollLeft = info.scrollLeft
+      }
       if (props.onScroll && typeof props.onScroll === 'function') {
         props.onScroll(info.x, info.y, info.scrollLeft, info.scrollTop);
       }
@@ -320,7 +330,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
 
     const fixRightNum = (isRtl ? -1 * maxScrollLeft : maxScrollLeft) - virtualInfo.innerLeft;
-    const Wrapper = props.sticky ? Sticky : React.Fragment;
+    const StickyWrapper = props.sticky ? Sticky : React.Fragment;
     const sticky = typeof props.sticky === 'object' ? props.sticky : { top: 0 };
     const stickyProps = {
       // @ts-ignore
@@ -330,13 +340,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       parent: tableRef?.current,
     };
 
-    const isRenderBaseTable =
-      !virtual &&
-      !isScrollY &&
-      !props.sticky &&
-      props.data?.length &&
-      !props.style?.height &&
-      !props.height;
+    const isRenderBaseTable = !isScrollY && !props.sticky && props.data?.length && !props.style?.height && !props.height
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
@@ -348,22 +352,62 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
+    const renderHeadMirrorScroller = () => {
+      if(!props.showTopScrollbar) return null
+
+      const scrollRefWidth = scrollRef?.current?.clientWidth || 0
+      const scrollRefScrollWidth = scrollRef?.current?.scrollWidth || 0
+      const mirrorScrollRefWidth = scrollRefWidth + scrollBarWidth
+      const showScroll = scrollRefScrollWidth > scrollRefWidth
+      // 开启了双滚，但是没有滚动条，不显示
+      if(!scrollRefWidth || !mirrorScrollRefWidth || !showScroll) return null
+
+      const scrollerStickyProps = {
+        ...stickyProps,
+        top: ((sticky?.top || browserScrollbarWidth) - browserScrollbarWidth),
+      }
+      return (
+        <StickyWrapper {...(props.sticky ? scrollerStickyProps : {})} style={{zIndex: defaultZIndex + 1}}>
+          <div
+            className={tableClasses?.headMirrorScroller}
+            style={{
+              height: browserScrollbarWidth,
+              width: mirrorScrollRefWidth,
+            }}
+            onScroll={(e) => {
+              const target = e.currentTarget;
+              if(scrollRef?.current && scrollRef.current.scrollLeft !== target.scrollLeft){
+                scrollRef.current.scrollLeft = target.scrollLeft
+              }
+            }}
+            ref={mirrorScrollRef}
+          >
+            <div style={{width: scrollRef?.current?.scrollWidth, height: 1}}></div>
+          </div>
+        </StickyWrapper>
+      )
+    }
+
     if (isRenderBaseTable) {
       return (
-        <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-          <table style={{ width }} ref={tbodyRef}>
-            {Group}
-            {!props.hideHeader && <Thead {...headCommonProps} />}
-            {<Tbody {...bodyCommonProps} />}
-            {<Tfoot {...footCommonProps} />}
-          </table>
-        </div>
+        <>
+          {renderHeadMirrorScroller()}
+          <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
+            <table style={{ width }} ref={tbodyRef}>
+              {Group}
+              {!props.hideHeader && <Thead {...headCommonProps} />}
+              {<Tbody {...bodyCommonProps} />}
+              {<Tfoot {...footCommonProps} />}
+            </table>
+          </div>
+        </>
       );
     }
     return (
       <>
+        {renderHeadMirrorScroller()}
         {!props.hideHeader && (
-          <Wrapper {...(props.sticky ? stickyProps : {})}>
+          <StickyWrapper {...(props.sticky ? stickyProps : {})}>
             <div className={headWrapperClass}>
               <table
                 style={{ width, transform: `translate3d(${0 - virtualInfo.innerLeft}px, 0, 0)` }}
@@ -377,7 +421,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 />
               </table>
             </div>
-          </Wrapper>
+          </StickyWrapper>
         )}
 
         <Scroll
