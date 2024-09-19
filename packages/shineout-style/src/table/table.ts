@@ -141,7 +141,8 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   bordered: {
-    border: `1px solid ${token.tableCellBorderColor}`,
+    borderLeft: `1px solid ${token.tableCellBorderColor}`,
+    borderRight: `1px solid ${token.tableCellBorderColor}`,
     borderBottom: 'none',
     borderTop: 'none',
     '&::before': {
