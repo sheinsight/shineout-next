@@ -137,6 +137,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     childrenKey,
     expanded: expandedProp,
     showHitDescendants,
+    filterDelay: props.filterDelay,
     onAdvancedFilter: 'onAdvancedFilter' in props,
     onFilter: onAdvancedFilter || onFilterProp,
   });
