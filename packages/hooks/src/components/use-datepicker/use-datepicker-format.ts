@@ -91,7 +91,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
 
     const validArr = arr.filter((item) => item);
     const validCurrentArr = currentArr.filter((item) => item);
-    if(!validArr.length && currentArr.length) return validCurrentArr as Date[];
+    if (!validArr.length && currentArr.length) return validCurrentArr as Date[];
 
     if (!arr[0]) arr[0] = arr[1] || currentArr[0] || new Date();
     if (range && !arr[1]) arr[1] = arr[0] || currentArr[1] || new Date();
@@ -228,7 +228,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
         setStateDate([undefined]);
       }
     } else {
-      const emptyValue = (props.clearWithUndefined || props.clearToUndefined) ? undefined : '';
+      const emptyValue = props.clearWithUndefined || props.clearToUndefined ? undefined : '';
       let v: string | undefined | Array<string | undefined> = emptyValue;
       if (range) {
         v = [emptyValue, emptyValue];
@@ -237,7 +237,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
             v = [props.value[0] as string, emptyValue];
           } else if (props.value[1] && disabledStatus === 'right') {
             v = [emptyValue, props.value[1] as string];
-          } else if(props.clearToUndefined) {
+          } else if (props.clearToUndefined) {
             v = undefined;
           }
         }

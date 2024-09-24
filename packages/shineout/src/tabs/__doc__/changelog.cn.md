@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Tabs` 组件的Tabs.Panel是异常动态长度时，需要resize页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
+- 修复 `Tabs` 组件的 Tabs.Panel 是异步动态长度时，需要 resize 页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
 
 ## 3.3.7
 2024-09-10
