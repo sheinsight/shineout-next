@@ -120,6 +120,10 @@ export function inputValueTest(element: Element, value: string) {
   attributesTest(element, 'value', value);
 }
 
+export function inputPlaceholderTest(element: Element, value: string) {
+  attributesTest(element, 'placeholder', value);
+}
+
 export function displayTest(Component: React.FC, displayName: string) {
   test('should start with Shineout display', () => {
     expect(Component.displayName).toBe(displayName);

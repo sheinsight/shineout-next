@@ -70,7 +70,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   });
 
   const headerStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
-  const headerClass = classNames(headerStyle.header, {});
+
   const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
@@ -179,14 +179,12 @@ const TabsHeader = (props: TabsHeaderProps) => {
   }
 
   const renderTab = () => {
+    const headerClass = classNames(headerStyle.header, shape === 'card' ? headerStyle.cardHr : '');
     return (
       <div ref={headerRef} className={headerClass}>
         <div
           ref={scrollRef}
-          className={classNames(
-            headerStyle.headerScroll,
-            shape === 'card' ? headerStyle.cardHr : '',
-          )}
+          className={headerStyle.headerScroll}
           onWheel={handleTransform}
           style={transformStyle}
         >
