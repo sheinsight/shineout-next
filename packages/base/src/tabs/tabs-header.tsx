@@ -157,7 +157,8 @@ const TabsHeader = (props: TabsHeaderProps) => {
     const currentTab = tabRef.current[active!];
     if(!currentTab) return;
 
-    const currentTabRect = currentTab.getBoundingClientRect();
+    const currentTabRect = currentTab?.getBoundingClientRect?.();
+    if(!currentTabRect) return;
 
     const scrollBarStyle = isVertical ? {
       right: getPosition?.startsWith('left') ? 0 : 'auto',
