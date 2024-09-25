@@ -106,11 +106,7 @@ const Tab = (props: TabProps, ref: any) => {
   );
 
   if (util.isLink(propTab)) {
-    return React.cloneElement(propTab, {
-      children: $children,
-
-      ...containerProps,
-    });
+    return <a {...containerProps}>{$children}</a>
   }
 
   return <div {...containerProps}>{$children}</div>;
