@@ -1,3 +1,10 @@
+## 3.4.2-beta.1
+2024-09-19
+
+### 🐞 BugFix
+
+- 修复 `Table` 在 `data` 动态变化后滚动状态异常的问题 ([#687](https://github.com/sheinsight/shineout-next/pull/687))
+
 ## 3.4.0
 2024-09-19
 
