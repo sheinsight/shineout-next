@@ -1,7 +1,7 @@
 import { JssStyleType, SelectProps, DatumType } from './select.type';
 
 export interface ListColumnsOptionProps<DataItem, Value>
-  extends Pick<SelectProps<DataItem, Value>, 'multiple' | 'columnWidth' | 'size'> {
+  extends Pick<SelectProps<DataItem, Value>, 'multiple' | 'columnWidth' | 'size' | 'columns'> {
   jssStyle?: JssStyleType;
   data: DataItem;
   datum: DatumType<DataItem, Value>;
