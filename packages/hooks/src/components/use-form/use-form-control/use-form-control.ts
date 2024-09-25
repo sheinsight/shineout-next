@@ -191,7 +191,8 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         }
       }
     };
-  }, [name]);
+  }, [name?.toString()]);
+
   useEffect(() => {
     updateError(isArray(name) ? name.join('|') : name, error);
   }, [error]);
