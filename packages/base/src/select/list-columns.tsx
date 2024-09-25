@@ -126,6 +126,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
               data={item}
               size={size}
               datum={datum}
+              columns={columns}
               multiple={multiple}
               columnWidth={columnWidth}
               renderItem={renderItemProp}
