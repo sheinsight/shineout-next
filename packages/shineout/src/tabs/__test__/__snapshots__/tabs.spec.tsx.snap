@@ -58,6 +58,10 @@ exports[`Tabs[Base] should render correctly  1`] = `
               Tab 3
             </div>
           </div>
+          <div
+            class="soui-tabs-header-scroll-bar"
+            style="bottom: 0px; left: 0px; width: 0px; height: 2px; transform: translateX(-50%);"
+          />
         </div>
       </div>
     </div>
@@ -136,6 +140,10 @@ exports[`Tabs[Base] should render correctly about autofill 1`] = `
               Tab 3
             </div>
           </div>
+          <div
+            class="soui-tabs-header-scroll-bar"
+            style="bottom: 0px; left: 0px; width: 0px; height: 2px; transform: translateX(-50%);"
+          />
         </div>
       </div>
     </div>
@@ -266,6 +274,10 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
               </span>
             </div>
           </div>
+          <div
+            class="soui-tabs-header-scroll-bar"
+            style="bottom: 0px; left: 0px; width: 0px; height: 2px; transform: translateX(-50%);"
+          />
         </div>
       </div>
     </div>
@@ -418,6 +430,10 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
                 Tab 3
               </div>
             </div>
+            <div
+              class="soui-tabs-header-scroll-bar"
+              style="bottom: 0px; left: 0px; width: 0px; height: 2px; transform: translateX(-50%);"
+            />
           </div>
         </div>
       </div>
@@ -497,6 +513,10 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
               Tab 3
             </div>
           </div>
+          <div
+            class="soui-tabs-header-scroll-bar"
+            style="bottom: 0px; left: 0px; width: 0px; height: 2px; transform: translateX(-50%);"
+          />
         </div>
       </div>
       <div
@@ -879,6 +899,10 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
                 Tab 3
               </div>
             </div>
+            <div
+              class="soui-tabs-header-scroll-bar"
+              style="bottom: 0px; left: 0px; width: 0px; height: 2px; transform: translateX(-50%);"
+            />
           </div>
         </div>
       </div>
@@ -2025,6 +2049,10 @@ exports[`Tabs[Base] should render correctly about scroll 1`] = `
               Tab 100
             </div>
           </div>
+          <div
+            class="soui-tabs-header-scroll-bar"
+            style="bottom: 0px; left: 0px; width: 0px; height: 2px; transform: translateX(-50%);"
+          />
         </div>
       </div>
     </div>
@@ -2103,6 +2131,10 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
               Tab 3
             </div>
           </div>
+          <div
+            class="soui-tabs-header-scroll-bar"
+            style="bottom: 0px; left: 0px; width: 0px; height: 2px; transform: translateX(-50%);"
+          />
         </div>
       </div>
     </div>

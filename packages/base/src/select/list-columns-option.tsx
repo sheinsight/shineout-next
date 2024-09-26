@@ -10,12 +10,12 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
     datum,
     size,
     multiple,
+    columns,
     columnWidth = 160,
     renderItem: renderItemProp,
-    closePop,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
-  const style = { width: columnWidth };
+  const style = { width: columns && columns <= 1 ? '100%' : columnWidth };
 
   const isChecked = datum.check(data);
   const isDisabled = datum.disabledCheck(data);

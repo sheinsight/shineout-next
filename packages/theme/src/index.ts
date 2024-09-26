@@ -6,6 +6,9 @@ import { setConfig } from './config';
 import Alert, { Alert as defaultAlert } from './alert';
 import { AlertTokens } from './alert/type';
 
+import Badge, { Badge as defaultBadge } from './badge';
+import { BadgeTokens } from './badge/type';
+
 import Breadcrumb, { Breadcrumb as defaultBreadcrumb } from './breadcrumb';
 import { BreadcrumbTokens } from './breadcrumb/type';
 
@@ -62,6 +65,9 @@ import { ImageTokens } from './image/type';
 
 import Input, { Input as defaultInput } from './input';
 import { InputTokens } from './input/type';
+
+import Link, { Link as defaultLink } from './link';
+import { LinkTokens } from './link/type';
 
 import List, { List as defaultList } from './list';
 import { ListTokens } from './list/type';
@@ -136,6 +142,7 @@ import Upload, { Upload as defaultUpload } from './upload';
 import { UploadTokens } from './upload/type';
 
 export type ThemeTokens = AlertTokens &
+  BadgeTokens &
   BreadcrumbTokens &
   ButtonTokens &
   CardTokens &
@@ -155,6 +162,7 @@ export type ThemeTokens = AlertTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
+  LinkTokens &
   ListTokens &
   MenuTokens &
   MessageTokens &
@@ -183,6 +191,7 @@ export type ThemeTokens = AlertTokens &
 const Tokens: ThemeTokens = {
   ...CommonTokenMap,
   ...Alert,
+  ...Badge,
   ...Breadcrumb,
   ...Button,
   ...Card,
@@ -202,6 +211,7 @@ const Tokens: ThemeTokens = {
   ...Icon,
   ...Image,
   ...Input,
+  ...Link,
   ...List,
   ...Menu,
   ...Message,
@@ -230,6 +240,7 @@ const Tokens: ThemeTokens = {
 
 const ComponentTokenMap: ThemeTokens = {
   ...defaultAlert,
+  ...defaultBadge,
   ...defaultBreadcrumb,
   ...defaultButton,
   ...defaultCard,
@@ -249,6 +260,7 @@ const ComponentTokenMap: ThemeTokens = {
   ...defaultIcon,
   ...defaultImage,
   ...defaultInput,
+  ...defaultLink,
   ...defaultList,
   ...defaultMenu,
   ...defaultMessage,

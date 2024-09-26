@@ -1,8 +1,16 @@
 ## 3.5.0-beta.1
-2024-09-14
+2024-10-14
 ### 🆕 Feature
 
 - 新增 `Form.useForm` 用法，获取的form实例方法与formRef相同，但是可以在任何地方使用，不受组件渲染影响
+
+
+## 3.4.2-beta.1
+2024-09-24
+### 🐞 BugFix
+
+- 修复 `Form` 校验 name 为数组字段时依赖前后 draft 情况下校验可能不准确的问题 ([#684](https://github.com/sheinsight/shineout-next/pull/684))
+- 修复表单组件 `name` 为数组类型且拥有 `defaultValue` 情况下重置多次触发 onChange 的问题 ([#684](https://github.com/sheinsight/shineout-next/pull/684))
 
 ## 3.3.7
 2024-09-04

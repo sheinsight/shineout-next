@@ -1,3 +1,9 @@
+## 3.4.0
+2024-09-19
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 组件 `filterDelay` 属性失效的问题 ([#672](https://github.com/sheinsight/shineout-next/pull/672))
+
 ## 3.3.3
 2024-08-15
 

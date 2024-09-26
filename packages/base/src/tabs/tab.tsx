@@ -8,6 +8,13 @@ import { useConfig } from '../config';
 
 import { useTabsContext, util } from '@sheinx/hooks';
 
+const placeholderRefStyle: React.CSSProperties = {
+  position: 'absolute',
+  inset: 0,
+  pointerEvents: 'none',
+  visibility: 'hidden',
+}
+
 const Tab = (props: TabProps, ref: any) => {
   const { jssStyle, tab: propTab, disabled, id, color } = props;
   const {
@@ -106,11 +113,15 @@ const Tab = (props: TabProps, ref: any) => {
   );
 
   if (util.isLink(propTab)) {
+    // 修正ref能够稳定的指向正确的dom节点
     return React.cloneElement(propTab, {
-      children: $children,
-
       ...containerProps,
-    });
+      style: { ...style, position: 'relative' },
+      ref: null,
+    }, <>
+      {$children}
+      <div ref={node => ref(node?.parentNode)} style={placeholderRefStyle} />
+    </>)
   }
 
   return <div {...containerProps}>{$children}</div>;

@@ -7,7 +7,6 @@ import mountTest from '../../tests/mountTest';
 import { classLengthTest } from '../../tests/structureTest';
 import {
   attributesTest,
-  baseTest,
   classTest,
   createClassName,
   delay,
@@ -26,6 +25,7 @@ import TreeLoader from '../__example__/07-loader';
 import TreeDrag from '../__example__/08-drag';
 import TreeDragStyle from '../__example__/09-drag-style';
 import TreeHighlight from '../__example__/10-highlight';
+import TreeHighlightControl from '../__example__/11-highlight-control';
 
 const SO_PREFIX = 'tree';
 const originClasses = [
@@ -155,6 +155,8 @@ describe('Tree[Base]', () => {
   snapshotTest(<TreeDrag />, 'about drag');
   snapshotTest(<TreeDragStyle />, 'about drag style');
   snapshotTest(<TreeHighlight />, 'about highlight');
+  snapshotTest(<TreeHighlightControl />, 'about highlight control');
+
   test('should render default', () => {
     const { container } = render(<TreeTest />);
     const treeWrapper = container.querySelector(treeClassName)!;
@@ -698,7 +700,7 @@ describe('Tree[Drag]', () => {
       />,
     );
     const treeWrapper = container.querySelector(treeClassName)!;
-    
+
     const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
     const firstNode = treeRootNodeAll[0];
     const dataTransfer = new MockDataTransfer();

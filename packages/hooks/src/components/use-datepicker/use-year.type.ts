@@ -4,7 +4,7 @@ export interface UseYearProps {
   defaultCurrent?: Date;
   onCurrentChange?: (date: Date) => void;
   value?: Date;
-  onChange?: (date: Date) => void;
+  onChange?: (date: Date, noClose?: boolean) => void;
   min?: Date;
   max?: Date;
   // type?: string;

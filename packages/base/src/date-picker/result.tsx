@@ -24,6 +24,7 @@ export const Input = (props: {
   onFocus?: (e: React.FocusEvent) => void;
   onBlur?: (e: React.FocusEvent) => void;
   onClick?: (e?: React.MouseEvent) => void;
+  readOnly?: boolean;
 }) => {
   const [value, setValue] = useState(props.value);
 
@@ -48,6 +49,7 @@ export const Input = (props: {
       placeholder={props.placeholder}
       autoComplete={'off'}
       value={value}
+      readOnly={props.readOnly}
       maxLength={props.maxLength}
       disabled={props.disabled}
       onBlur={props.onBlur}
@@ -177,14 +179,14 @@ const Result = (props: ResultProps) => {
     return (
       <div className={className}>
         <span className={styles?.resultTextPadding}>
-          {info.inputable ? (
             <Input
               key={info.index}
               onRef={(el) => {
                 onRef.current.inputRef = el;
                 context.inputRefs[info.index] = el;
               }}
-              disabled={dis}
+              disabled={dis && info.inputable}
+              readOnly={!info.inputable}
               open={!!open}
               inputRef={inputRef}
               value={info.target || info.value || ''}
@@ -210,9 +212,6 @@ const Result = (props: ResultProps) => {
               }}
               onClick={onClickProps}
             />
-          ) : (
-            info.target || info.value || <span className={styles?.placeholder}>{info.place}</span>
-          )}
         </span>
         <div className={styles?.resultTextBg}></div>
       </div>

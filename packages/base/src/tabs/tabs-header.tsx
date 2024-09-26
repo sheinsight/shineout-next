@@ -70,7 +70,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   });
 
   const headerStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
-  const headerClass = classNames(headerStyle.header, {});
+
   const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
@@ -151,15 +151,41 @@ const TabsHeader = (props: TabsHeaderProps) => {
     setTransform(delta + headerRef.current.clientWidth * single);
   };
 
+  const renderHeaderScrollBar = () => {
+    if(shape !=='line' && shape !== 'dash') return;
+
+    const currentTab = tabRef.current[active!];
+    if(!currentTab) return;
+
+    const currentTabRect = currentTab?.getBoundingClientRect?.();
+    if(!currentTabRect) return;
+
+    const scrollBarStyle = isVertical ? {
+      right: getPosition?.startsWith('left') ? 0 : 'auto',
+      left: getPosition?.startsWith('right') ? 0 : 'auto',
+      top: currentTab.offsetTop + (currentTabRect.height / 2),
+      height: shape === 'line' ? currentTabRect.height : 24,
+      width: 2,
+      transform: 'translateY(-50%)',
+    } : {
+      bottom: getPosition?.startsWith('top') ? 0 : 'auto',
+      top: getPosition?.startsWith('bottom') ? 0 : 'auto',
+      left: currentTab.offsetLeft + (currentTabRect.width / 2),
+      width: shape === 'line' ? currentTabRect.width : 24,
+      height: 2,
+      transform: 'translateX(-50%)',
+    }
+
+    return <div className={headerStyle.headerScrollBar} style={scrollBarStyle}></div>
+  }
+
   const renderTab = () => {
+    const headerClass = classNames(headerStyle.header, shape === 'card' ? headerStyle.cardHr : '');
     return (
       <div ref={headerRef} className={headerClass}>
         <div
           ref={scrollRef}
-          className={classNames(
-            headerStyle.headerScroll,
-            shape === 'card' ? headerStyle.cardHr : '',
-          )}
+          className={headerStyle.headerScroll}
           onWheel={handleTransform}
           style={transformStyle}
         >
@@ -183,6 +209,8 @@ const TabsHeader = (props: TabsHeaderProps) => {
                 ></Tab>
               );
             })}
+
+          {renderHeaderScrollBar()}
         </div>
       </div>
     );

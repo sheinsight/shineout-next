@@ -2,6 +2,7 @@
 // This file was generated automatically by a script. Please do not modify it directly.
 
 export { default as Alert } from './alert';
+export { default as Badge } from './badge';
 export { default as Breadcrumb } from './breadcrumb';
 export { default as Button } from './button';
 export { default as Card } from './card';
@@ -23,6 +24,7 @@ export { default as Grid } from './grid';
 export { default as Icon } from './icon';
 export { default as Image } from './image';
 export { default as Input } from './input';
+export { default as Link } from './link';
 export { default as List } from './list';
 export { default as Menu } from './menu';
 export { default as Message } from './message';
@@ -57,4 +59,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.3.7' };
+export default { version: '3.4.0' };

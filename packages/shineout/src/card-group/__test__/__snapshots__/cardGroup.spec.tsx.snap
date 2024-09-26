@@ -401,6 +401,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
       </span>
       <span
         class="soui-checkbox-desc"
+        data-soui-role="desc"
       >
         全选
       </span>

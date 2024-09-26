@@ -1,3 +1,10 @@
+## 3.4.0
+2024-09-19
+
+### 🆕 Feature
+
+- `Dropdown` 组件新增 `zIndex` 属性 ([#660](https://github.com/sheinsight/shineout-next/pull/660))
+
 ## 3.3.3
 2024-08-15
 

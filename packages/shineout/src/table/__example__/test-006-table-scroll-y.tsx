@@ -3913,7 +3913,7 @@ const columns  = [{
 const App: React.FC = () => (
   <>
     <div style={{
-        // height: 300,
+        height: 500,
         background: 'yellow',
         overflow: 'auto',
     }}>
@@ -3921,13 +3921,13 @@ const App: React.FC = () => (
         bordered
         keygen='uuid'
         width={1500}
-        // height={500}
         columns={columns}
         data={data}
         bordered
         columnResizable
         verticalAlign="middle"
-        virtual
+        // showTopScrollbar
+        // virtual
         // rowsInView={0}
         sticky={{ top: 0, css: true }}
         defaultTreeExpandKeys={flattenArray(data).map((d) => d.uuid)}

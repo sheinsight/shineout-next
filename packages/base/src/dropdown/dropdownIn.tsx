@@ -28,6 +28,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     size,
     animation,
     hideArrow,
+    zIndex,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
   const config = useConfig();
@@ -80,11 +81,13 @@ const Dropdown = (props: SimpleDropdownProps) => {
         {Icons.dropdown.DropdownArrow}
       </span>
     );
-    const child = placeholder ? [
-      <span key='text' className={dropdownClasses?.content}>
-        {placeholder}
-      </span>,
-    ] : [];
+    const child = placeholder
+      ? [
+          <span key='text' className={dropdownClasses?.content}>
+            {placeholder}
+          </span>,
+        ]
+      : [];
     if (!hideArrow) {
       child.push(caret);
     }
@@ -209,6 +212,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         focus={open}
         parentElRef={targetRef}
         absolute={absolute}
+        zIndex={zIndex}
         fixedWidth={'min'}
         popupGap={4}
         popupElRef={popupRef}

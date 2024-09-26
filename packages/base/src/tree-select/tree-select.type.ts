@@ -405,4 +405,11 @@ export interface TreeSelectProps<DataItem, Value>
    * @default true
    */
   adjust?: boolean;
+
+  /**
+   * @en ms. The delay of user input triggering filter events
+   * @cn 毫秒。用户输入触发 fitler 事件的延时
+   * @default 400
+   */
+  filterDelay?: number;
 }

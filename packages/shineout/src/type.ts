@@ -1,4 +1,5 @@
 export * as Alert from './alert/interface';
+export * as Badge from './badge/interface';
 export * as Breadcrumb from './breadcrumb/interface';
 export * as Button from './button/interface';
 export * as Card from './card/interface';
@@ -20,6 +21,7 @@ export * as Grid from './grid/interface';
 export * as Icon from './icon/interface';
 export * as Image from './image/interface';
 export * as Input from './input/interface';
+export * as Link from './link/interface';
 export * as List from './list/interface';
 export * as Menu from './menu/interface';
 export * as Message from './message/interface';

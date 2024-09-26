@@ -209,6 +209,13 @@ export interface SimpleDropdownProps
    * @cn 隐藏箭头
    */
   hideArrow?: boolean;
+
+  /**
+   * @en The z-index value of the panel, the default value is 1051
+   * @cn 面板的 zIndex 值，默认为 1051
+   * @version 3.4.0
+   */
+  zIndex?: number;
 }
 
 /**

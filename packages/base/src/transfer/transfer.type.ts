@@ -39,6 +39,7 @@ export interface TransferClasses {
   itemWrapper: string;
   checkbox: string;
   empty: string;
+  equalPanelWidth: string;
 }
 
 export type JssStyleType = {
@@ -176,4 +177,9 @@ export interface TransferProps<DataItem, Value extends KeygenResult[]>
    * @override ((props: { onSelected: ((string | number)[]) => void; direction: "left" | "right"; selectedKeys: (string | number)[]; value: Value; filterText: string; }) => ReactNode)
    */
   children?: (props: CustomRenderProps<Value>) => React.ReactNode;
+  /**
+   * @en Panel equal distribution container width
+   * @cn 面板均等分配容器宽度
+   */
+  equalPanelWidth?: boolean;
 }

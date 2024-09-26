@@ -1,4 +1,11 @@
-## 3.3.3
+## 3.4.0
+2024-09-19
+
+### 🐞 BugFix
+
+- 修复 `Modal` 方法调用方式时，点击确定或取消按钮没有关闭动画 ([#675](https://github.com/sheinsight/shineout-next/pull/675))
+
+
 2024-08-29
 
 ### 🐞 BugFix

@@ -93,12 +93,16 @@ const useTransform = <T>(props: UseTransformProps) => {
       setAtStart(true);
     }
     let removeWheelListener: () => void;
+    let removeScrollerListener: () => void;
     if (autoScroll) {
       const removeMouse = shouldScroll ? banOverScrollx(container) : null;
       removeWheelListener = addResizeObserver(container, handleResize);
+      // 同时需要监听tabs-header-scroll的resize事件，防止tabs-header-scroll的宽度变化后不出现左右箭头的问题
+      removeScrollerListener = addResizeObserver(target, handleResize);
       return () => {
         removeMouse?.();
         removeWheelListener?.();
+        removeScrollerListener?.();
       };
     }
   }, [containerRef.current, targetRef.current, shouldScroll]);

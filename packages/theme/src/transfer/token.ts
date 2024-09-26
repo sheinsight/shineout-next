@@ -48,9 +48,7 @@ const transferTokenExtraValue = {
     hover: { background: { color: 'Neutral-fill-2' } },
     border: { radius: 'Radius-default' },
   },
-  remove: {
-    icon: { color: 'Neutral-text-4' },
-  },
+  remove: { icon: { color: 'Neutral-text-4' } },
   checkbox: { hover: { background: { color: 'Neutral-fill-3' } } },
 };
 

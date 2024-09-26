@@ -35,6 +35,8 @@ export interface TextareaClasses {
   shadow: string;
   info: string;
   infoError: string;
+  bottomLeft:string;
+  bottomRight:string;
   footer: string;
 }
 
@@ -89,6 +91,21 @@ export interface SimpleTextareaProps
 
 type TextareaValueType = string;
 
+export type TextareaInfo = number | ((value: string) => React.ReactNode | Error);
+
+export interface TextareaInfoOption {
+  /**
+   * @en The content of the prompt information, the same function and type as the original info attribute
+   * @cn 提示信息内容，同原 info 属性的功能和类型
+   */
+  content: TextareaInfo;
+  /**
+   * @en The position where the validation info pop up
+   * @cn 提示信息的弹出位置
+   */
+  position?: 'bottom-left' | 'bottom-right';
+}
+
 export interface TextareaProps
   extends BaseTipProps,
     Omit<
@@ -127,8 +144,9 @@ export interface TextareaProps
   /**
    * @en Information
    * @cn 提示信息
+   * @version 3.4.0 支持 TextareaInfoOption 配置更多内容
    */
-  info?: number | ((value: string | undefined) => React.ReactNode | Error);
+  info?: TextareaInfo | TextareaInfoOption;
   /**
    * @en DefaultValue and value can be set at the same time and defaultValue will be overridden by value.
    * @cn defaultValue 和 value 可以同时设置，defaultValue 会被value覆盖

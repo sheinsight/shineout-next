@@ -33,6 +33,9 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     adjust = true,
   } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
+  const [clickTimes, setClickTimes] = React.useState(0);
+  const [isCloseFromConfirm, setIsCloseFromConfirm] = React.useState(false);
+  const [oldDateArr, setOldDateArr] = React.useState<(Date | undefined)[]>([]);
   const inputRef = useRef<{
     inputRef: HTMLInputElement | null;
   }>({
@@ -84,6 +87,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     clearable,
     disabled: disabled!,
     clearWithUndefined: props.clearWithUndefined,
+    clearToUndefined: props.clearToUndefined,
     onClear: undefined,
     allowSingle: props.allowSingle,
     defaultCurrent: props.defaultPickerValue || props.defaultRangeMonth,
@@ -93,9 +97,23 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
     if (isOpen) {
+      setOldDateArr(dateArr)
       func.startEdit();
     } else {
-      func.finishEdit();
+      setClickTimes(0)
+
+
+      if(props.needConfirm){
+        if(!isCloseFromConfirm){
+          func.handleClear();
+          // 点击空白处关闭面板时，还原到上次的值
+          func.setDateArr(oldDateArr);
+        }
+      }else{
+        func.finishEdit();
+      }
+
+      setIsCloseFromConfirm(false);
     }
     props.onCollapse?.(isOpen);
   });
@@ -140,8 +158,13 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     props.onBlur?.(e);
   });
 
-  const handleClose = () => {
+  const handleClose = (isFromConfirm?: boolean) => {
+    setIsCloseFromConfirm(isFromConfirm || false);
     closePop();
+
+    if(isFromConfirm){
+      func.finishEdit();
+    }
     inputRef.current.inputRef?.blur();
   };
 
@@ -292,12 +315,15 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
             disabledTime={props.disabledTime}
             quickSelect={props.quickSelect}
             showSelNow={props.showSelNow}
+            clickTimes={clickTimes}
+            setClickTimes={setClickTimes}
             setActiveIndex={setActiveIndex}
             hourStep={props.hourStep}
             minuteStep={props.minuteStep}
             secondStep={props.secondStep}
             registerModeDisabled={func.registerModeDisabled}
             isDisabledDate={func.isDisabledDate}
+            needConfirm={props.needConfirm}
           >
             {props.children}
           </Picker>

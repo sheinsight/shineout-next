@@ -187,6 +187,12 @@ const Modal = (props: ModalContentProps) => {
     };
   }, []);
 
+  useEffect(() => {
+    if(props.setInnerClose){
+      props.setInnerClose(handleClose)
+    }
+  }, [props.setInnerClose])
+
   // render
   const renderIcon = (isEmptyTitle?: boolean) => {
     const iconRoot = classNames(modalClasses?.headerIcon, isEmptyTitle && modalClasses?.emptyIcon);

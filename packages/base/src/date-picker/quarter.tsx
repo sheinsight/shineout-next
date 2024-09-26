@@ -5,6 +5,7 @@ import Icons from '../icons';
 import React from 'react';
 import PickerTitle from './pickerTitle';
 import { useConfig } from '../config';
+import Confirm from './confirm';
 
 const Quarter = (props: QuarterProps) => {
   const { jssStyle } = props;
@@ -54,7 +55,7 @@ const Quarter = (props: QuarterProps) => {
         )}
         key={index}
         onClick={() => {
-          func.handleQuarterClick(item);
+          func.handleQuarterClick(item, props.needConfirm);
         }}
         onMouseEnter={
           isDisabled
@@ -130,6 +131,10 @@ const Quarter = (props: QuarterProps) => {
           </tbody>
         </table>
       </div>
+
+      {props.needConfirm && !props.range && (
+        <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
+      )}
     </div>
   );
 };

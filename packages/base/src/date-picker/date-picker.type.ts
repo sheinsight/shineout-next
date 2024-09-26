@@ -5,6 +5,7 @@ import { ButtonClasses } from '../button/button.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
 import { BaseTipProps } from '../common/use-tip';
 import { PopoverClasses } from '../popover/popover.type';
+import { LinkClasses } from '../link/link.type';
 
 import type { DatePickerValueType, DateTimeType } from '@sheinx/hooks';
 
@@ -69,10 +70,15 @@ export interface DatePickerClasses {
   pickerCellInRangeStart: string;
   pickerCellInRangeEnd: string;
 
+  pickerRange: string;
+  pickerRangeBody: string;
+  pickerRangeFooter: string;
+
   pickerFooter: string;
   pickerFooterBtn: string;
-  pickerFooterLeft: string;
-  pickerFooterRight: string;
+  pickerFooterTime: string;
+  pickerFooterNow: string;
+  pickerFooterConfirm: string;
 
   // 日
   dayPicker: string;
@@ -107,6 +113,7 @@ export type DisabledType = 'start' | 'end';
 interface DatePickerJssStyle {
   datePicker?: () => DatePickerClasses;
   button?: () => ButtonClasses;
+  link?: () => LinkClasses;
   innerTitle?: () => InnerTitleClasses;
   popover?: () => PopoverClasses;
 }
@@ -222,6 +229,14 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @default false
    */
   clearWithUndefined?: boolean;
+
+  /**
+   * @en After clicking the clear button, the data becomes undefined
+   * @cn 点击清除按钮后数据变为 undefined
+   * @default false
+   * @version 3.4.0
+   */
+  clearToUndefined?: boolean;
   /**
    * @en allow single select, only in range can set
    * @cn 是否允许单选, 仅在 range 模式下有效
@@ -339,6 +354,14 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @default true
    */
   adjust?: boolean;
+
+  /**
+   * @en Whether to open the manual confirmation button. After opening, only clicking the confirmation button will submit the selected value.
+   * @cn 是否开启手动确认按钮，开启后只有点击确认按钮才会提交选择的值。
+   * @default false
+   * @version 3.4.0
+   */
+  needConfirm?: boolean;
 }
 export interface QuickSelectType {
   name: React.ReactNode;

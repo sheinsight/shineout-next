@@ -32,7 +32,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
 
   // columns 模式无上下边距，故而 lineHeight 需要调整
   const getLineHeight = () => {
-    if (lineHeightProp) return lineHeightProp;
+    if (lineHeightProp && lineHeightProp !== 'auto') return lineHeightProp;
     if (size === 'small') return 24;
     if (size === 'default') return 32;
     if (size === 'large') return 40;
@@ -126,6 +126,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
               data={item}
               size={size}
               datum={datum}
+              columns={columns}
               multiple={multiple}
               columnWidth={columnWidth}
               renderItem={renderItemProp}

@@ -61,6 +61,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       return;
     }
     context.clientWidth = scrollEl.clientWidth;
+    if(scrollEl.clientHeight === 0) return
     const overHeight = scrollEl.scrollHeight > scrollEl.clientHeight;
     const overWidth = scrollEl.scrollWidth > context.clientWidth;
     const newScrollBarWidth = overHeight ? scrollEl.offsetWidth - scrollEl.clientWidth : 0;

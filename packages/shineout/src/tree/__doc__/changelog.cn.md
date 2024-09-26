@@ -1,3 +1,20 @@
+## 3.4.1
+2024-09-20
+
+### 🐞 BugFix
+
+- 修复 `Tree` 一级节点的缩进过大的问题  ([#682](https://github.com/sheinsight/shineout-next/pull/682))
+
+
+
+## 3.4.0
+2024-09-19
+
+### 🆕 Feature
+
+- `Tree` 组件新增`setActive`，与`active`组成高亮的受控功能  ([#665](https://github.com/sheinsight/shineout-next/pull/665))
+
+
 ## 3.1.22
 2024-05-31
 

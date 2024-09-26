@@ -58,7 +58,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
         </i>
       </span>
       {children !== undefined && children !== null && (
-        <span className={checkboxStyle?.desc}>{children}</span>
+        <span data-soui-role='desc' className={checkboxStyle?.desc}>{children}</span>
       )}
       {typeof renderFooter === 'function' ? renderFooter(checked) : null}
     </div>

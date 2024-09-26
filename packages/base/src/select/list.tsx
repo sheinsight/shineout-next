@@ -1,8 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, usePersistFn } from '@sheinx/hooks';
-import { SelectClasses } from './select.type';
-import { BaseListProps } from './select.type';
+import { SelectClasses, BaseListProps } from './select.type';
 import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';
 import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
@@ -18,19 +17,23 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     groupKey,
     itemsInView = 10,
     lineHeight: lineHeightProp,
+    threshold,
     controlType,
     hideCreateOption,
     optionListRef,
+    isAnimationFinish,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     closePop,
     onControlTypeChange,
     onOptionClick,
   } = props;
 
+  const dynamicVirtual = lineHeightProp === 'auto';
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(styles.list, {
     [styles.controlMouse]: controlType === 'mouse',
     [styles.controlKeyboard]: controlType === 'keyboard',
+    [styles.dynamicList]: dynamicVirtual,
   });
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
   const virtualRef = useRef<VirtualListType>({
@@ -44,7 +47,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   });
 
   const getLineHeight = () => {
-    if (lineHeightProp) return lineHeightProp;
+    if (lineHeightProp && lineHeightProp !== 'auto') return lineHeightProp;
     if (size === 'small') return 26;
     if (size === 'default') return 34;
     if (size === 'large') return 42;
@@ -133,7 +136,21 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     }
   });
 
-  const renderItem = (item: DataItem, index: number, key: KeygenResult) => {
+  const handleVirtualScroll = usePersistFn(async (info: { y: number }) => {
+    const { onLoadMore } = props;
+    if (typeof onLoadMore !== 'function') return;
+    if (!onLoadMore) return;
+    if (info.y >= threshold) {
+      await onLoadMore();
+    }
+  });
+
+  const renderItem = (
+    item: DataItem,
+    index: number,
+    key: KeygenResult,
+    setRowHeight: (index: number, height: number) => void,
+  ) => {
     return (
       <React.Fragment key={key}>
         <ListOption
@@ -142,9 +159,12 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           index={index}
           data={item}
+          isAnimationFinish={isAnimationFinish}
+          setRowHeight={setRowHeight}
           lineHeight={lineHeight}
           isHover={hoverIndex === index}
           multiple={multiple}
+          dynamicVirtual={dynamicVirtual}
           renderItem={renderItemProp}
           onHover={handleHover}
           onOptionClick={onOptionClick}
@@ -170,8 +190,10 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         keygen={keygen}
         tag={'ul'}
         groupKey={groupKey}
+        dynamicVirtual={dynamicVirtual}
         tagClassName={styles.virtualList}
         height={height}
+        onScroll={handleVirtualScroll}
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
@@ -191,11 +213,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     }
   }, []);
 
-  return (
-    <div className={rootClass}>
-      {renderList()}
-    </div>
-  );
+  return <div className={rootClass}>{renderList()}</div>;
 };
 
 export default List;

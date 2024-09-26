@@ -17,6 +17,7 @@ export interface UseDatePickerFormatProps<Value extends DatePickerValueType> {
     | undefined;
   clearable: boolean | undefined;
   clearWithUndefined: boolean | undefined;
+  clearToUndefined?: boolean;
   onClear: (() => void) | undefined;
   allowSingle: boolean | undefined;
   defaultCurrent: DatePickerValueType;

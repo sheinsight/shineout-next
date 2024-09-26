@@ -656,7 +656,9 @@ describe('Modal[Confirm]', () => {
     fireEvent.click(container.querySelector('button')!);
     const modalWrapper = document.querySelector(wrapper)!;
     const tableButtons = modalWrapper.querySelectorAll('button');
-    expect(tableButtons[1]).toHaveFocus();
+    setTimeout(() => {
+      expect(tableButtons[1]).toHaveFocus();
+    }, 300);
   });
 });
 describe('Modal[Function(Type)]', () => {

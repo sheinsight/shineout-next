@@ -1,3 +1,19 @@
+## 3.4.1
+2024-09-20
+
+### 🐞 BugFix
+
+- 优化 `Datepicker` 的结果展示区域，改为不换行展示 ([#680](https://github.com/sheinsight/shineout-next/pull/680))
+
+## 3.4.0
+2024-09-19
+
+### 🆕 Feature
+- `Datepicker` 新增needConfirm属性: 是否开启手动确认按钮，开启后只有点击确认按钮才会提交选择的值。 ([#650](https://github.com/sheinsight/shineout-next/pull/650))
+- `Datepicker` 新增clearToUndefined，点击清除后返回undefined ([#644](https://github.com/sheinsight/shineout-next/pull/644))
+
+
+
 ## 3.3.7
 2024-09-11
 

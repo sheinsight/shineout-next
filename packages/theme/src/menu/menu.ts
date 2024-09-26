@@ -23,6 +23,7 @@ const menuTokens: MenuTokens = {
   menuItemDisabledFontColor: 'Neutral-text-2',
   menuItemCollapseActiveBackgroundColor: 'Brand-6',
   menuItemCollapseActiveFontColor: 'Neutral-text-1',
+  menuItemInpathActiveFontColor: 'Brand-6',
   menuTitlePaddingX: 'Spacing-16',
   menuTitlePaddingY: 'Spacing-9',
   menuExpandWidth: 'Spacing-46',

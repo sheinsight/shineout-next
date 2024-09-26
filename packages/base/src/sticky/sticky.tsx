@@ -5,7 +5,7 @@ import { StickyProps } from './sticky.type';
 
 const { cssSupport } = util;
 const supportSticky = cssSupport('position', 'sticky');
-const defaultZIndex = 900;
+export const defaultZIndex = 900;
 const events = ['scroll', 'pageshow', 'load', 'resize'];
 
 // const getFirstScrollParent = (el: HTMLElement) => {

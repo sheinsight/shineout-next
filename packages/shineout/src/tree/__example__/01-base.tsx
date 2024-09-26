@@ -44,6 +44,35 @@ export default () => {
         },
       ],
     },
+    {
+      id: '1',
+      children: [
+        {
+          id: '1-0',
+          children: [
+            {
+              id: '1-0-0',
+            },
+            {
+              id: '1-0-1',
+              children: [
+                {
+                  id: '1-0-1-0',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: '1-1',
+          children: [
+            {
+              id: '1-1-0',
+            },
+          ],
+        },
+      ],
+    },
   ];
 
   const renderItem: TreeProps['renderItem'] = (node) => {

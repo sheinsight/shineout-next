@@ -32,6 +32,7 @@ export interface TableClasses {
 
   loading: string;
 
+  headMirrorScroller: string;
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
@@ -76,6 +77,7 @@ export interface TableClasses {
 
 export interface TableRef {
   scrollToIndex: (index: number, cb?: () => void) => void;
+  getRenderIndexByData: (data: any) => number;
   [key: string]: any;
 }
 
@@ -120,18 +122,19 @@ export interface TableProps<DataItem, Value>
     input?: () => InputClasses;
     empty?: () => EmptyClasses;
   };
-   /**
+  /**
    *
    * @cn 单元格点击事件
    * @en Cell click event
    */
-   onCellClick?: (
+  onCellClick?: (
     data: DataItem,
-    info:{
-    rowIndex: number,
-    columnIndex: number,
-    columnKey: string | number,
-  }) => void;
+    info: {
+      rowIndex: number;
+      columnIndex: number;
+      columnKey: string | number;
+    },
+  ) => void;
   /**
    * @en which takes effect when the virtual list is enabled
    * @cn 当开启虚拟列表时生效
@@ -170,7 +173,7 @@ export interface TableProps<DataItem, Value>
    * @en The callback function after scrolling.\nx: Horizontal rolling ratio(0 <= x <= 1)\ny: Vertical scroll ratio(0 <= y <= 1)
    * @cn 滚动条滚动后回调函数；\nx: 横向滚动比(0 <= x <= 1)\ny: 纵向滚动比(0 <= y <= 1)
    */
-  onScroll?: (x: number, y: number, left: number) => void;
+  onScroll?: (x: number, y: number, left: number, top: number) => void;
   /**
    * @en Show pagination See [Pagination](/components/Pagination) for details
    * @cn 展示分页 详见 [Pagination](/components/Pagination)
@@ -317,6 +320,14 @@ export interface TableProps<DataItem, Value>
    *
    */
   sticky?: boolean | { top?: number; css?: boolean };
+
+  /**
+   * @en Whether to show the top scroller
+   * @cn 是否开启顶部滚动条
+   * @default false
+   * @version 3.4.0
+   */
+  showTopScrollbar?: boolean;
   /**
    * @en Table instance (please use with caution: only fixed Table)
    * @cn Table 实例（请谨慎使用：仅虚拟列表支持）

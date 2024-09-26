@@ -58,6 +58,10 @@ const rateStyle: JsStyles<RateClassType> = {
     height: '100%',
     transition: 'none',
     color: token.rateBackgroundColor,
+    '& > svg': {
+      width: '1em',
+      height: '1em',
+    },
   },
   itemFront: {
     position: 'absolute',
@@ -67,6 +71,10 @@ const rateStyle: JsStyles<RateClassType> = {
     bottom: 0,
     opacity: 0,
     color: token.rateFrontBackgroundColor,
+    '& > svg': {
+      width: '1em',
+      height: '1em',
+    },
   },
   itemHalf: {
     position: 'absolute',
