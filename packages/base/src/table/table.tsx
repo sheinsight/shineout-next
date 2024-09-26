@@ -340,7 +340,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       parent: tableRef?.current,
     };
 
-    const isRenderVirtualTable = virtual || props.sticky || props.style?.height || props.height
+    const isRenderVirtualTable = virtual || props.sticky || props.style?.height || props.height || !props.data?.length
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
@@ -462,7 +462,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {<Tbody {...bodyCommonProps} />}
             {<Tfoot {...footCommonProps} />}
           </table>
-          {renderEmpty()}
         </div>
       </>
     );

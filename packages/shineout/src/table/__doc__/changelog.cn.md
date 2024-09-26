@@ -3,6 +3,7 @@
 
 ### 🐞 BugFix
 
+- 修复 `Table` 空数据状态下可能出现垂直滚动条的问题 ([#690](https://github.com/sheinsight/shineout-next/pull/690))
 - 修复 `Table` 在 `data` 动态变化后滚动状态异常的问题 ([#687](https://github.com/sheinsight/shineout-next/pull/687))
 
 ## 3.4.0
