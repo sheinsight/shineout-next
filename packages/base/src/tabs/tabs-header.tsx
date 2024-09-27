@@ -164,7 +164,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
     const currentTabRect = currentTab?.getBoundingClientRect?.();
     setCurrentTabRect(currentTabRect);
-  }, [active, shape, tabRef.current]);
+  }, [active]);
 
   const renderHeaderScrollBar = () => {
     if(shape !=='line' && shape !== 'dash') return;
