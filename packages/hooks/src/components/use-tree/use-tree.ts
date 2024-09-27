@@ -234,8 +234,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       // 重复 id 警告
       if (context.dataMap.get(id)) {
         console.error(`There is already a key "${id}" exists. The key must be unique.`);
-        return;
+        continue
       }
+      
       // 制作 data mapping
       context.dataMap.set(id, item);
 
