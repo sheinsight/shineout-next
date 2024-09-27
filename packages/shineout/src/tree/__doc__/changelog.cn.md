@@ -1,3 +1,10 @@
+## 3.4.2-beta.6
+2024-09-27
+
+### 🐞 BugFix
+
+- 修复 `useTree` hooks 在重复 key 数据情况下后续节点无法正常注册的问题 ([#694](https://github.com/sheinsight/shineout-next/pull/694))
+
 ## 3.4.1
 2024-09-20
 
