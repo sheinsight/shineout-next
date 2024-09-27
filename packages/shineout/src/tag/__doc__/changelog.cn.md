@@ -1,3 +1,9 @@
+## 3.4.2-beta.5
+2024-09-26
+### 🐞 BugFix
+
+- 修复 `Tag` 内部容器宽度继承异常的问题 ([#691](https://github.com/sheinsight/shineout-next/pull/691)) 
+
 ## 3.1.30
 2024-06-13
 ### 🐞 BugFix
