@@ -104,7 +104,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (defaultExpandAll) {
       const shouldDefaultExpand =
         defaultExpandAll &&
-        isArray(item[childrenKey] && (item[childrenKey] as DataItem[]).length > 0);
+        isArray(item[childrenKey]) &&
+        (item[childrenKey] as DataItem[]).length > 0;
       return { active: isActive, expanded: shouldDefaultExpand };
     }
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
