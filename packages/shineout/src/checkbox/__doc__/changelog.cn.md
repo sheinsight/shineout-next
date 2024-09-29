@@ -1,3 +1,10 @@
+## 3.4.3-beta.1
+2024-09-29
+### 🐞 BugFix
+
+- 修复 `Checkbox.Group` 在未传递 `data` 情况下使用 Checkbox 时 disabled 属性失效的问题 #697
+ ([#697](https://github.com/sheinsight/shineout-next/pull/697))
+
 ## 3.3.7
 2024-09-04
 ### 🐞 BugFix
