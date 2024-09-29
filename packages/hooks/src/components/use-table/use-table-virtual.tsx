@@ -281,8 +281,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
 
   useEffect(() => {
     // 数据变化的时候清空掉 preIndex, 如果之前有缓存的index, setRowHeight 会有问题
-    setTop(0);
-    setStartIndex(0);
     return () => {
       context.preIndex = null;
     };

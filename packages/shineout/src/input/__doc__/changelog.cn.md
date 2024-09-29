@@ -1,3 +1,10 @@
+## 3.4.2
+2024-09-29
+
+### 🐞 BugFix
+
+- 修复`Input.Group`的border在微前端框架下的异常表现  ([#685](https://github.com/sheinsight/shineout-next/pull/685))
+
 ## 3.3.7
 2024-09-09
 

@@ -1,3 +1,11 @@
+## 3.4.2
+2024-09-29
+
+### 🐞 BugFix
+
+- 修复 `Tabs` 在 `shape='line'` 嵌套使用时的高亮下划线在某些情况下不显示的问题 ([#692](https://github.com/sheinsight/shineout-next/pull/692))
+
+
 ## 3.4.1
 2024-09-20
 
@@ -10,7 +18,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Tabs` 的Tabs.Panel是异常动态长度时，需要resize页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
+- 修复 `Tabs` 组件的 Tabs.Panel 是异步动态长度时，需要 resize 页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
 
 ## 3.3.7
 2024-09-10
