@@ -14,6 +14,7 @@ export type TagColorType =
   | 'magenta'
   | 'indigo'
   | 'tangerine'
+  | 'lemon'
   | 'neon';
 
 export type TagType = 'default' | 'info' | 'success' | 'warning' | 'danger';
