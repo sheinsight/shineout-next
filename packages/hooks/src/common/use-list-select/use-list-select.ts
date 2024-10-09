@@ -18,7 +18,7 @@ const useListSelect = <DataItem, Value>(props: UseListProps<DataItem, Value>) =>
   }
 
   const onChange = usePersistFn(
-    (value: MultipleValue, data: DataItem | DataItem[], checked: boolean) => {
+    (value: MultipleValue, data: DataItem, checked: boolean) => {
       if (multiple) {
         props.onChange?.(value as Value, data, checked);
       } else {

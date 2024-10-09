@@ -116,7 +116,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
 
   const add = usePersistFn(
     (
-      data: DataItem[] | DataItem,
+      data: DataItem,
       config: {
         unshift?: boolean;
         overwrite?: boolean;
