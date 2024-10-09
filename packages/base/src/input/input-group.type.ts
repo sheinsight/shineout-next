@@ -17,5 +17,10 @@ export interface InputGroupProps {
    * @private 内部属性
    */
   error?: string | { message?: string };
+  /**
+   * @en The callback of blur
+   * @cn 失去焦点后的回调
+   */
+  onBlur?: React.FocusEventHandler;
   status?: CommonType['status'];
 }
