@@ -13,7 +13,7 @@ export interface UseListProps<DataItem, Value> {
   separator?: string;
   format?: ObjectKey<DataItem> | ((data: DataItem) => Value extends (infer U)[] ? U : Value);
   prediction?: (value: Value extends (infer U)[] ? U : Value, Data: DataItem) => boolean;
-  onChange?: (value: Value, data: DataItem, checked: boolean) => void;
+  onChange?: (value: Value, data: DataItem | DataItem[], checked: boolean) => void;
   // 是否缓存 value 对应 data
   keepCache?: boolean;
 }
@@ -21,7 +21,7 @@ export interface UseListProps<DataItem, Value> {
 export interface UseListMultipleProps<DataItem, Value extends string | any[]>
   extends Omit<UseListProps<DataItem, Value>, 'value' | 'onChange' | 'format' | 'prediction'> {
   value?: Value;
-  onChange: (value: Value, data: DataItem, checked: boolean) => void;
+  onChange: (value: Value, data: DataItem | DataItem[], checked: boolean) => void;
   format?: ObjectKey<DataItem> | ((data: DataItem) => Value[number]);
   prediction?: (value: Value[number], Data: DataItem) => boolean;
 }
