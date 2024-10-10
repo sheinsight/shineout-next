@@ -341,7 +341,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const updateStyle = usePersistFn(() => {
     const { newStyle, newArrayStyle } = getStyle();
     if (newStyle && !shallowEqual(style, newStyle)) {
-      console.log('show, position, absolute, updateKey, fixedWidth: >>', show, position, absolute, updateKey, fixedWidth)
       setStyle(newStyle);
       setArrayStyle(newArrayStyle || {});
     }
