@@ -151,10 +151,10 @@ const TabsHeader = (props: TabsHeaderProps) => {
     setTransform(delta + headerRef.current.clientWidth * single);
   };
 
-  const [currentTabOffset, setCurrentTabOffset] = useState({offsetTop: 0, offsetLeft: 0});
+  const [currentTabOffset, setCurrentTabOffset] = useState({ offsetTop: 0, offsetLeft: 0 });
   const [currentTabRect, setCurrentTabRect] = useState<DOMRect | null>(null);
   useEffect(() => {
-    if(shape !=='line' && shape !== 'dash') return;
+    if (shape !== 'line' && shape !== 'dash') return;
 
     const currentTab = tabRef.current[active!];
     setCurrentTabOffset({
@@ -164,31 +164,33 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
     const currentTabRect = currentTab?.getBoundingClientRect?.();
     setCurrentTabRect(currentTabRect);
-  }, [active]);
+  }, [active, tabs]);
 
   const renderHeaderScrollBar = () => {
-    if(shape !=='line' && shape !== 'dash') return;
+    if (shape !== 'line' && shape !== 'dash') return;
 
-    if(!currentTabRect) return;
+    if (!currentTabRect) return;
 
-    const scrollBarStyle = isVertical ? {
-      right: getPosition?.startsWith('left') ? 0 : 'auto',
-      left: getPosition?.startsWith('right') ? 0 : 'auto',
-      top: currentTabOffset.offsetTop + (currentTabRect.height / 2),
-      height: shape === 'line' ? currentTabRect.height : 24,
-      width: 2,
-      transform: 'translateY(-50%)',
-    } : {
-      bottom: getPosition?.startsWith('top') ? 0 : 'auto',
-      top: getPosition?.startsWith('bottom') ? 0 : 'auto',
-      left: currentTabOffset.offsetLeft + (currentTabRect.width / 2),
-      width: shape === 'line' ? currentTabRect.width : 24,
-      height: 2,
-      transform: 'translateX(-50%)',
-    }
+    const scrollBarStyle = isVertical
+      ? {
+          right: getPosition?.startsWith('left') ? 0 : 'auto',
+          left: getPosition?.startsWith('right') ? 0 : 'auto',
+          top: currentTabOffset.offsetTop + currentTabRect.height / 2,
+          height: shape === 'line' ? currentTabRect.height : 24,
+          width: 2,
+          transform: 'translateY(-50%)',
+        }
+      : {
+          bottom: getPosition?.startsWith('top') ? 0 : 'auto',
+          top: getPosition?.startsWith('bottom') ? 0 : 'auto',
+          left: currentTabOffset.offsetLeft + currentTabRect.width / 2,
+          width: shape === 'line' ? currentTabRect.width : 24,
+          height: 2,
+          transform: 'translateX(-50%)',
+        };
 
-    return <div className={headerStyle.headerScrollBar} style={scrollBarStyle}></div>
-  }
+    return <div className={headerStyle.headerScrollBar} style={scrollBarStyle}></div>;
+  };
 
   const renderTab = () => {
     const headerClass = classNames(headerStyle.header, shape === 'card' ? headerStyle.cardHr : '');

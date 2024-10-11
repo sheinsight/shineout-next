@@ -34,8 +34,10 @@ const messageStyle: JsStyles<MessageClassType> = {
     position: 'fixed',
     zIndex: 1060,
     maxWidth: '50%',
-    '@media screen and (max-width: 992px) &': {
-      'max-width': 'none',
+    '@media screen and (max-width: 992px)': {
+      '&': {
+        maxWidth: 'none',
+      },
     },
     margin: 'auto',
     '&[data-soui-position="top"]': {

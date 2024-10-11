@@ -19,7 +19,6 @@ const Badge = (props: BadgeProps) => {
     text,
   } = props;
   const badgeStyle = jssStyle?.badge?.() || ({} as BadgeClasses);
-  console.log('children', children);
   const isTextBadge = text !== undefined || (dot && children === undefined);
   const rootClass = classNames(className, badgeStyle.badge, isTextBadge && badgeStyle.textBadge);
   const isOverflowCount = overflowCount !== undefined && Number(count) > overflowCount;

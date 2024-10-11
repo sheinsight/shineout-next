@@ -225,6 +225,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       <div
         class="soui-upload-image-bg soui-image-image soui-image-center soui-image-rounded"
         style="width: auto; padding-bottom: 0px;"
+        target="_modal"
       >
         <div
           class="soui-image-default-placeholder"
@@ -641,6 +642,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       <div
         class="soui-upload-image-bg soui-image-image soui-image-center soui-image-rounded"
         style="width: auto; padding-bottom: 0px;"
+        target="_modal"
       >
         <div
           class="soui-image-default-placeholder"
