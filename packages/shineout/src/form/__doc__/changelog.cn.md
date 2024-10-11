@@ -1,3 +1,9 @@
+## 3.5.0-beta.1
+2024-10-11
+### 🆕 Feature
+
+- `Form` 的formRef的set方法支持嵌套对象值 ([#711](https://github.com/sheinsight/shineout-next/pull/711))
+
 ## 3.4.2-beta.1
 2024-09-24
 ### 🐞 BugFix

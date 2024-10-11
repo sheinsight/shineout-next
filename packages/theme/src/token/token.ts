@@ -298,9 +298,6 @@ const Token: Tokens = {
   'Size-26': '52px',
   'Size-27': '54px',
   'Size-28': '56px',
-  'Animation-duration-1': '0.1s',
-  'Animation-duration-2': '0.2s',
-  'Animation-duration-3': '0.3s',
 };
 
 // @ts-ignore
