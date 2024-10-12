@@ -7,5 +7,5 @@ export interface TfootProps
   fixLeftNum?: number;
   fixRightNum?: number;
   columns: TableFormatColumn<any>[];
-  colgroup: (number | undefined)[];
+  colgroup: (number | string | undefined)[];
 }

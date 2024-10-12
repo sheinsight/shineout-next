@@ -22,7 +22,7 @@ export interface TheadProps
   columns: TableFormatColumn<any>[];
   isScrollY?: boolean;
   bordered?: boolean;
-  colgroup: (number | undefined)[];
+  colgroup: (number | string | undefined)[];
   datum: ListDatum;
   fixLeftNum?: number;
   fixRightNum?: number;
