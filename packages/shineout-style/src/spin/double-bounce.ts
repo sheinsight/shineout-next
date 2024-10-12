@@ -1,3 +1,5 @@
+import Token from '@sheinx/theme';
+
 export default {
   position: 'relative',
   // margin: 'auto',
@@ -11,7 +13,7 @@ export default {
     borderRadius: '50%',
     opacity: 0.6,
     animation: '$double-bounce 2s ease-in-out infinite',
-    background: '#197AFA',
+    background: Token.spinColor,
 
     '&:last-child': {
       animationDelay: '-1s',
