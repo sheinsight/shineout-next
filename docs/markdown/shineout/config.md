@@ -71,6 +71,8 @@ setConfig({
   name: string;
   color?: string;
   tip?: React.ReactNode;
+  mode?: 'vertical' | 'horizontal';
+  size?: number;
 }`  
 
 默认值： `ring`
@@ -84,12 +86,14 @@ setConfig({
 ```
 
 ```js
-// 设置全局 Spin 的默认类型、提示内容、颜色
+// 设置全局 Spin 的默认类型、颜色、提示内容、动画尺寸以及布局模式
 setConfig({
   spin: {
     name: 'wave',
     color: '#000000',
-    tip: 'loading...'
+    tip: 'loading...',
+    size: 14,
+    mode: 'horizontal'
   }
 })
 ```
