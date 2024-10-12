@@ -14,7 +14,7 @@ const Spin = (props: SpinProps = {}) => {
     tip: tipProps,
     tipClassName,
     color: colorProps,
-    mode = 'vertical',
+    mode: modeProps,
   } = props;
 
   const config = useConfig();
@@ -49,11 +49,20 @@ const Spin = (props: SpinProps = {}) => {
     return color;
   };
 
+  const getSpinMode = () => {
+    const { spin } = config;
+    if (!spin || typeof spin !== 'object') return;
+    const { mode } = spin;
+    return mode;
+  };
+
   const name = nameProps ?? getSpinName() ?? 'default';
 
   const tip = tipProps ?? getSpinTip();
 
   const color = colorProps ?? getSpinColor();
+
+  const mode = modeProps ?? getSpinMode() ?? 'vertical';
 
   const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 

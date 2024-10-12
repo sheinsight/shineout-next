@@ -9,6 +9,8 @@ export type SpinConfig =
       name: string;
       color?: string;
       tip?: React.ReactNode;
+      mode?: 'vertical' | 'horizontal';
+      size?: number;
     };
 
 export interface ConfigOption {
