@@ -55,8 +55,6 @@ const Spin = (props: SpinProps = {}) => {
 
   const color = colorProps ?? getSpinColor();
 
-  console.log('color', color);
-
   const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 
   const contentClass = classNames(className, spinStyle.content, {
