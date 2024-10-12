@@ -88,10 +88,6 @@ const MenuComponent = () => {
       locale: 'en-US',
       spin: {
         name: 'ring',
-        color: '#000',
-        tip: 'loading...',
-        size: 32,
-        mode: 'horizontal',
       },
       popupContainer: () => document.getElementById('layout'),
     });
