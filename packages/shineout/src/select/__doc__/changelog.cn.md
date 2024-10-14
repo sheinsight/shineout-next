@@ -1,3 +1,9 @@
+## 3.4.3
+2024-10-14
+
+### 🐞 BugFix
+- 修复 `Select` 开启absolute和multiple之后，下拉框较长选项的文字与勾选图标重叠的问题 ([#703](https://github.com/sheinsight/shineout-next/pull/703))
+
 ## 3.4.2
 2024-09-29
 

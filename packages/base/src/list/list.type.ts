@@ -148,7 +148,7 @@ export interface ListSelectProps<DataItem, Value> {
    * @en Select the row ,rowData is the selected data, rowIndex is the selected row number. If the data needs to be formatted, it is recommended to configure format
    * @cn 选择行。rowData 为选中的数据，rowIndex 为选中行号。如果需要数据需要格式化的处理，建议配置 format。
    */
-  onChange?: (value: Value, data: DataItem | DataItem[]) => void;
+  onChange?: (value: Value, data: DataItem, checked: boolean) => void;
   /**
    * @en By default, the result of the format function is used to compare whether it matches. In some cases (for example, whe an object that returns the original data is updated, an different option with the same value  is generated), the prediction function needs to be used to determine whether match
    * @cn 默认使用 format 函数执行的结果来比较是否匹配，在某些情况下（例如返回原始数据的对象，更新数据时，生成了一个值相同，非同一个对象的选项），需要借助 prediction 函数来判断是否匹配

@@ -1,8 +1,6 @@
-// import { } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
 import { LinkProps, LinkClasses } from './link.type';
-// import from icons
 import Icons from '../icons';
 
 
@@ -15,10 +13,8 @@ const Link = (props: LinkProps) => {
       disabled,
       size,
       icon,
-
-
       href,
-      target,
+
       children,
       ...restProps
      } = props
@@ -40,12 +36,34 @@ const Link = (props: LinkProps) => {
       [linkClasses.success]: type === 'success',
     });
 
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (disabled) {
+        e.preventDefault();
+        e.stopPropagation();
+      } else {
+        props.onClick?.(e);
+      }
+    }
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+      if (e.key === 'Enter' && !disabled) {
+        props.onClick?.(e as any);
+      } else if (disabled) {
+        e.preventDefault();
+        e.stopPropagation();
+      } else {
+        props.onKeyDown?.(e);
+      }
+    }
+
     return (
       <a
         href={disabled ? undefined : href}
-        target={target}
         className={rootClass}
+        aria-disabled={disabled}
         {...restProps}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
       >
         {typeof icon === 'boolean' && icon && <span className={linkClasses.icon}>{Icons.link.prefixIcon}</span>}
         {React.isValidElement(icon) && <span className={linkClasses.icon}>{icon}</span>}

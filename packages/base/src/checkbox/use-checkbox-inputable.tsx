@@ -1,22 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CheckboxProps } from './checkbox.type';
 
 const useCheckboxInputable = <T,>(
   props: Pick<CheckboxProps<T>, 'value' | 'checked' | 'inputable' | 'onChange'>,
 ) => {
-  const { inputable } = props;
-  const [checkedState, setCheckedState] = useState(false);
+  const [checkedState, setCheckedState] = useState<boolean | undefined>(undefined);
 
-  const checked = inputable ? checkedState : props.checked;
+  useEffect(() => {
+    setCheckedState(!!props.value);
+  }, [props.value]);
+
   const onInputableCheckboxChange = (c: boolean) => {
     setCheckedState(c);
     props?.onChange?.(undefined, c, undefined as any);
   };
-  const onInputChange = (value?: string) => {
-    props?.onChange?.(value as T, true, undefined as any);
+  const onInputChange = (_value?: string) => {
+    props?.onChange?.(_value as T, true, undefined as any);
   };
   return {
-    checked,
+    checked: props.checked ?? checkedState,
     onInputableCheckboxChange,
     onInputChange,
   };

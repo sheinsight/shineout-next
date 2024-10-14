@@ -24,7 +24,7 @@ const Image = (props: ImageProps) => {
     title,
     style,
     error,
-    target,
+    target = '_modal',
     jssStyle,
     className,
     placeholder,

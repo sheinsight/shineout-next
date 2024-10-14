@@ -58,7 +58,7 @@ export interface BaseSelectProps<DataItem, Value> {
    * @en Change callback
    * @cn 值改变回调
    */
-  onChange?: (value: Value, data?: DataItem | DataItem[], checked?: boolean) => void;
+  onChange?: (value: Value, data?: DataItem, checked?: boolean) => void;
 
   /**
    * @en Group by

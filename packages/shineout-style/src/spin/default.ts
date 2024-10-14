@@ -1,3 +1,5 @@
+import Token from '@sheinx/theme';
+
 const Default = (count = 12) => {
   const animationDelay: any = {};
 
@@ -27,7 +29,7 @@ const Default = (count = 12) => {
       '& div': {
         height: '55%',
         margin: '0 auto',
-        background: '#197AFA',
+        background: Token.spinColor,
         borderRadius: 5,
         animation: '$keyframesFade 1s infinite ease-in-out both',
       },

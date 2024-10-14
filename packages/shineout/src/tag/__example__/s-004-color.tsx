@@ -7,10 +7,14 @@
  *    -- Note that the `type` property will be deprecated, and the `color` property also supports the style of the same property value as type
  */
 
-import { Tag } from 'shineout';
+import { TYPE, Tag } from 'shineout';
+
+type TagColorType = Exclude<TYPE.Tag.Props['color'], undefined>
+type TagModeType = Exclude<TYPE.Tag.Props['mode'], undefined>
+
 export default () => {
-  const TagColor = ['tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown'];
-  const TagMode = ['bright', 'fill', 'outline', 'brightOutline'];
+  const TagColor: TagColorType[] = ['tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown'];
+  const TagMode: TagModeType[] = ['bright', 'fill', 'outline', 'brightOutline'];
 
   const capitalizeFirstLetter = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -22,7 +26,7 @@ export default () => {
         return (
           <div key={midx} style={{ marginBottom: 24 }}>
             {TagColor.map((color, cidx) => (
-              <Tag mode={mode as any} key={cidx} color={color as any}>
+              <Tag mode={mode} key={cidx} color={color}>
                 {capitalizeFirstLetter(color)}
               </Tag>
             ))}

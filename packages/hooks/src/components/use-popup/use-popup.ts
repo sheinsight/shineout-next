@@ -5,6 +5,7 @@ import { getPosition } from '../../utils/position';
 import usePersistFn from '../../common/use-persist-fn';
 import popupContext from './popup-context';
 
+
 const usePopup = (props: BasePopupProps) => {
   const {
     disabled,
@@ -58,15 +59,13 @@ const usePopup = (props: BasePopupProps) => {
   const updatePosition = usePersistFn(() => {
     // if (isPositionControl) return;
     // if (props.position === 'auto' || !props.position) {
-    setTimeout(() => {
-      const newPosition = getPosition(
-        targetRef.current,
-        props.priorityDirection,
-        autoMode,
-        popupRef.current || undefined,
-      );
-      if (newPosition !== position) setPositionState(newPosition);
-    }, 10);
+    const newPosition = getPosition(
+      targetRef.current,
+      props.priorityDirection,
+      autoMode,
+      popupRef.current || undefined,
+    );
+    if (newPosition !== position) setPositionState(newPosition);
   });
 
   useEffect(() => {

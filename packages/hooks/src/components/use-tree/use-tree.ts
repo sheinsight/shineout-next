@@ -96,13 +96,17 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   // 注册节点
-  const bindNode = (id: KeygenResult, update: UpdateFunc) => {
+  const bindNode = (id: KeygenResult, update: UpdateFunc, item: DataItem) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
     const expandeds = expanded;
 
     if (defaultExpandAll) {
-      return { active: isActive, expanded: true };
+      const shouldDefaultExpand =
+        defaultExpandAll &&
+        isArray(item[childrenKey]) &&
+        (item[childrenKey] as DataItem[]).length > 0;
+      return { active: isActive, expanded: shouldDefaultExpand };
     }
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
@@ -234,9 +238,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       // 重复 id 警告
       if (context.dataMap.get(id)) {
         console.error(`There is already a key "${id}" exists. The key must be unique.`);
-        continue
+        continue;
       }
-      
+
       // 制作 data mapping
       context.dataMap.set(id, item);
 
