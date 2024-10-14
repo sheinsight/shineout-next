@@ -60,7 +60,6 @@ const useImage = (props: BaseImageProps = {}) => {
     img.onload = () => setStatus(SRC);
     img.onerror = (e) => handleError(SRC, e as Event);
     img.src = getUrl(src);
-
   };
 
   const fetchImage = () => {
@@ -138,7 +137,7 @@ const useImage = (props: BaseImageProps = {}) => {
         });
       }
     }
-  }, []);
+  }, [src]);
 
   return {
     src,

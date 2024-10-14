@@ -165,6 +165,8 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     },
   },
   wrapper: {
+    flex: 1,
+    minWidth: 0,
     lineHeight: Token.lineHeightDynamic,
   },
   inline: {

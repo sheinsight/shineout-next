@@ -1281,13 +1281,6 @@ const figma = [
     locked: true,
   },
   {
-    name: '50%/radius',
-    value: '50%',
-    describe: '50% 全圆角',
-    token: 'Radius-50%',
-    locked: true,
-  },
-  {
     name: '基础阴影',
     value: '0px 2px 5px rgba(2, 11, 24, 0.1)',
     describe: '表格拖拽、树组件拖拽',

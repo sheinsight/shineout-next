@@ -1,5 +1,5 @@
-## 3.4.2-beta.1
-2024-09-24
+## 3.4.2
+2024-09-29
 ### 🐞 BugFix
 
 - 修复 `Form` 校验 name 为数组字段时依赖前后 draft 情况下校验可能不准确的问题 ([#684](https://github.com/sheinsight/shineout-next/pull/684))

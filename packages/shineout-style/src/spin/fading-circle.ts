@@ -1,3 +1,5 @@
+import Token from '@sheinx/theme';
+
 const circleCount = 12;
 
 const loop = () => {
@@ -32,7 +34,7 @@ export default {
     ...loop(),
   },
   '& svg': {
-    fill: '#197AFA',
+    fill: Token.spinColor,
     animation: '$fading-circle 1.2s infinite ease-in-out both',
   },
 };

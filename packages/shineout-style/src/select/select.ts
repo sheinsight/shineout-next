@@ -342,9 +342,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginBottom: token.selectPlaceholderMarginY,
   },
   multiple: {
-    '& $optionInner': {
-      paddingRight: token.selectOptionInnerPaddingRight,
-    },
     '& $compressedWrapper': {
       flexWrap: 'nowrap',
     },
@@ -355,6 +352,11 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   multipleCompressedWrapper: {
     flexWrap: 'nowrap',
+  },
+  multipleList: {
+    '& $optionInner': {
+      paddingRight: token.selectOptionInnerPaddingRight,
+    },
   },
   loading: {
     padding: 10,

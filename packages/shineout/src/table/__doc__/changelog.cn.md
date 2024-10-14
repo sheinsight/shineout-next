@@ -1,8 +1,17 @@
-## 3.4.2-beta.1
-2024-09-19
+## 3.4.3
+2024-10-14
 
 ### 🐞 BugFix
 
+- 修复 `Table` 的width和ColumnItem的width的类型问题 ([#717](https://github.com/sheinsight/shineout-next/pull/717))
+
+
+## 3.4.2
+2024-09-29
+
+### 🐞 BugFix
+
+- 修复 `Table` 空数据状态下可能出现垂直滚动条的问题 ([#690](https://github.com/sheinsight/shineout-next/pull/690))
 - 修复 `Table` 在 `data` 动态变化后滚动状态异常的问题 ([#687](https://github.com/sheinsight/shineout-next/pull/687))
 
 ## 3.4.0

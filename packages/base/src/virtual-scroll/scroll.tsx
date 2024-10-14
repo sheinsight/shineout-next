@@ -4,7 +4,7 @@ import { useConfig } from '../config';
 
 interface scrollProps {
   scrollHeight: number;
-  scrollWidth: number;
+  scrollWidth: number | string;
   height?: number | string;
   children: React.ReactNode;
   childrenStyle?: React.CSSProperties;

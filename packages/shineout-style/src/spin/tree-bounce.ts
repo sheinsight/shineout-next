@@ -1,3 +1,5 @@
+import Token from '@sheinx/theme';
+
 export default {
   // margin: 'auto',
   textAlign: 'center',
@@ -10,7 +12,7 @@ export default {
     animation: '$three-bounce 1.4s ease-in-out 0s infinite both',
 
     '& svg': {
-      fill: '#197AFA',
+      fill: Token.spinColor,
     },
 
     '&:nth-child(1)': {

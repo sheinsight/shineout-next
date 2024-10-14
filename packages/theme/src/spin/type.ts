@@ -22,6 +22,12 @@ export interface SpinTokens {
   spinHorizontalMargin: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 加载动画颜色
+   */
+  spinColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-1
    * @description 加载动画背景颜色
    */

@@ -221,6 +221,7 @@ exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 <div
   class="soui-image-image soui-image-fill soui-image-circle"
   style="width: 128px; padding-bottom: 128px;"
+  target="_modal"
 >
   <div
     class="soui-image-inner"
@@ -233,6 +234,7 @@ exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 <div
   class="soui-image-image soui-image-fill soui-image-rounded"
   style="width: 128px; padding-bottom: 128px;"
+  target="_modal"
 >
   <div
     class="soui-image-inner"
@@ -245,6 +247,7 @@ exports[`Image[Shape] should render correctly about shape is thumbnail 1`] = `
 <div
   class="soui-image-image soui-image-fill soui-image-thumbnail"
   style="width: 128px; padding-bottom: 128px;"
+  target="_modal"
 >
   <div
     class="soui-image-inner"

@@ -34,6 +34,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     [styles.controlMouse]: controlType === 'mouse',
     [styles.controlKeyboard]: controlType === 'keyboard',
     [styles.dynamicList]: dynamicVirtual,
+    [styles.multipleList]: multiple,
   });
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
   const virtualRef = useRef<VirtualListType>({

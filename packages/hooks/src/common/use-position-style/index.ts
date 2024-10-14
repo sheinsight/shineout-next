@@ -3,6 +3,7 @@ import { getPositionStyle } from './get-position-style';
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { docSize, isChromeLowerThan } from '../../utils';
+import { getClosestScrollContainer } from '../../utils/dom/element';
 
 export type HorizontalPosition =
   | 'left-bottom'
@@ -154,6 +155,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
     let targetPosition = position;
     const rootContainer = getContainer() || document.body;
+    const closestScrollContainer = getClosestScrollContainer(parentElRef.current);
+
     const containerRect = rootContainer.getBoundingClientRect();
     const bodyRect = (document.documentElement || document.body).getBoundingClientRect();
     const containerScrollBarWidth = rootContainer.offsetWidth - rootContainer.clientWidth;
@@ -170,7 +173,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       let overRight = 0;
       let overLeft = 0;
       if (h === 'left') {
-        style.left = rect.left - containerRect.left + containerScroll.left;
+        style.left = rect.left - containerRect.left + containerScroll.left + (closestScrollContainer?.scrollLeft || 0);
         style.transform = '';
         arrayStyle.left = `8px`;
         if (adjust) {

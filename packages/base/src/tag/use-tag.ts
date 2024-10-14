@@ -66,6 +66,7 @@ const useTag = (props: BaseTagProps) => {
   };
 
   const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     if (disabled || dismiss !== Finish) {
       return;
     }

@@ -63,3 +63,20 @@ export function sub(num1: number, num2: number) {
   const maxPrediction = Math.max(getNumberPrecision(num1), getNumberPrecision(num2));
   return Number(number.toFixed(maxPrediction));
 }
+
+export function toNum(v: number | string | undefined): number {
+  if (v === undefined || v === null) {
+    return 0;
+  }
+
+  if (typeof v === 'number') {
+    return isNaN(v) ? 0 : v;
+  }
+
+  if (typeof v === 'string') {
+    const parsedValue = parseFloat(v);
+    return isNaN(parsedValue) ? 0 : parsedValue;
+  }
+
+  return 0;
+}

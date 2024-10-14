@@ -61,8 +61,8 @@ const App: React.FC = () => {
     return 'indeterminate';
   };
 
-  const onChange: ListOnChange = (selectedValue) => {
-    console.log('selectValue: ', selectedValue);
+  const onChange: ListOnChange = (selectedValue, selectedDataItem, checked) => {
+    console.log('selectValue, selectedDataItem, checked: ', selectedValue, selectedDataItem, checked);
     setValue(selectedValue);
   };
 

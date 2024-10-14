@@ -14,7 +14,7 @@ export default () => {
       <Link href="#" type="secondary" disabled>Link</Link>
       <Link href="#" type="danger" disabled>Link</Link>
       <Link href="#" type="warning" disabled>Link</Link>
-      <Link href="#" type="success" disabled>Link</Link>
+      <Link href="#" type="success" disabled onClick={() => {console.log('不触触发的log')}}>Link</Link>
     </Gap>
   );
 };

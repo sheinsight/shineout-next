@@ -38,7 +38,8 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     value,
     multiple,
     disabled,
-    onChange,
+    // TODO: 类型定义需要修改
+    onChange: onChange as any,
     prediction,
     keepCache: !noCache,
   });

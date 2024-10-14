@@ -26,6 +26,7 @@ const spinTokenExtraValue = {
   tip: { font: { color: 'Brand-6' } },
   vertical: { margin: 'Spacing-4' },
   horizontal: { margin: 'Spacing-4' },
+  color: 'Brand-6',
   background: { color: 'Neutral-fill-1' },
 };
 

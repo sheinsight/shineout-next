@@ -1,3 +1,5 @@
+import Token from '@sheinx/theme';
+
 const loop = (count = 5) => {
   const animationDelay: any = {};
   for (let i = 1; i < count; i++) {
@@ -18,7 +20,7 @@ export default {
     display: 'inline-block',
     height: '100%',
     marginRight: '2px',
-    background: '#197AFA',
+    background: Token.spinColor,
     animation: '$wave 1.2s infinite ease-in-out',
 
     ':last-child': {

@@ -24,7 +24,11 @@ export interface TreeNodeProps<DataItem, Value extends KeygenResult[]>
   contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass: (data: DataItem) => string | undefined;
-  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  bindNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { expanded: boolean; active: boolean };
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
   listComponent: (props: TreeListProps<DataItem, Value>) => JSX.Element | null;

@@ -103,6 +103,39 @@ export function getParent(el: HTMLElement | null | Element, target?: string | HT
   return null;
 }
 
+export function getClosestScrollContainer(element: HTMLElement | null) {
+  if (!element) {
+    return null;
+  }
+
+  // 检查元素是否可滚动
+  const isScrollable = (el: HTMLElement) => {
+    const style = window.getComputedStyle(el);
+    const overflowX = style.overflowX;
+    const overflowY = style.overflowY;
+    return (overflowX === 'auto' || overflowX === 'scroll' ||
+            overflowY === 'auto' || overflowY === 'scroll') &&
+           (el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth);
+  };
+
+  // 如果元素本身是可滚动的，直接返回
+  if (isScrollable(element)) {
+    return element;
+  }
+
+  // 遍历父元素
+  let parent = element.parentElement;
+  while (parent) {
+    if (isScrollable(parent)) {
+      return parent;
+    }
+    parent = parent.parentElement;
+  }
+
+  // 如果没有找到可滚动的祖先，返回 body 或 documentElement
+  return document.scrollingElement || document.documentElement;
+}
+
 export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
   if (isBrowser()) {
     const element = document.createElement('div');

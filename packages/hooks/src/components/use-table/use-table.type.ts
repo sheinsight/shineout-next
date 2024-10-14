@@ -87,7 +87,7 @@ export interface BaseTableProps<Item> {
    * @en TThe total width of the table, which defaults to the container width, must not be less than the sum of width set in columns
    * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
    */
-  width?: number;
+  width?: number | string;
   /**
    * @en controlled expand rows
    * @cn 展开行受控
@@ -264,7 +264,7 @@ export interface TableColumnItem<DataItem> {
    * @en width
    * @cn 列宽
    */
-  width?: number;
+  width?: number | string;
 
   /**
    * @cn 列对应的类名

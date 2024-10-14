@@ -1,3 +1,5 @@
+import Token from '@sheinx/theme';
+
 const duration = 2;
 
 export default {
@@ -14,7 +16,7 @@ export default {
     height: '60%',
     borderRadius: '100%',
     animation: `$chasing-dots-2 ${duration}s ease-in-out infinite `,
-    fill: '#197AFA',
+    fill: Token.spinColor,
 
     '&:last-child': {
       top: 'auto',

@@ -53,6 +53,7 @@ export type SelectClasses = {
   arrowIcon: string;
   ellipsis: string;
   multiple: string;
+  multipleList: string;
   dynamicList: string;
   loading: string;
   checkedIcon: string;

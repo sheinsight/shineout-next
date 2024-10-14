@@ -9,6 +9,7 @@ import Radio from '../radio';
 import { TbodyProps, UseTableRowResult } from './tbody.type';
 import { useConfig } from '../config';
 
+const { toNum } = util;
 interface TrProps
   extends Pick<
     TbodyProps,
@@ -40,7 +41,7 @@ interface TrProps
   rowIndex: number;
   columns: TableFormatColumn<any>[];
   isScrollX: boolean;
-  colgroup: (number | undefined)[];
+  colgroup: (number | string |undefined)[];
   rawData: any;
   expanded: boolean;
   expandCol: TbodyProps['expandHideCol'] | undefined;
@@ -72,7 +73,7 @@ const Tr = (props: TrProps) => {
           transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
-      const left = props.colgroup.slice(0, index).reduce((a, b) => (a || 0) + (b || 0), 0);
+      const left = props.colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         position: 'sticky',
         left,
@@ -84,7 +85,7 @@ const Tr = (props: TrProps) => {
           transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
-      const right = props.colgroup.slice(index + colSpan).reduce((a, b) => (a || 0) + (b || 0), 0);
+      const right = props.colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
 
       return {
         position: 'sticky',
