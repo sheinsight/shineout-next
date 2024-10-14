@@ -1,5 +1,5 @@
 ## 3.4.3
-2024-10-12
+2024-10-14
 ### 🐞 BugFix
 
 - 修复`Checkbox`在createPortal中使用时，无法改变勾选状态的问题 ([#710](https://github.com/sheinsight/shineout-next/pull/710))
