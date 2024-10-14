@@ -227,7 +227,7 @@ export interface TableProps<DataItem, Value>
    * @en TThe total width of the table, which defaults to the container width, must not be less than the sum of width set in columns
    * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
    */
-  width?: number;
+  width?: number | string;
   /**
    * @en array，see TableColumn
    * @cn 数组，见 TableColumn
