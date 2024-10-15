@@ -49,4 +49,5 @@ export * from './tree-select';
 export * from './upload';
 
 export type { ObjectType } from '@sheinx/hooks';
+export type { ConfigOption } from './config';
 export { setIcons } from './icons';
