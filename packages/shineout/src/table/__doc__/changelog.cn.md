@@ -1,3 +1,18 @@
+## 3.4.4-beta.2
+2024-10-15
+
+### 💎 Enhancement
+- 优化 `Table` 组件 Spin 支持从全局配置读取相关设置 ([#727](https://github.com/sheinsight/shineout-next/pull/727))
+
+
+## 3.4.3
+2024-10-14
+
+### 🐞 BugFix
+
+- 修复 `Table` 的width和ColumnItem的width的类型问题 ([#717](https://github.com/sheinsight/shineout-next/pull/717))
+
+
 ## 3.4.2
 2024-09-29
 

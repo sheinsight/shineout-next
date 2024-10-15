@@ -1,3 +1,10 @@
+## 3.4.4-beta.2
+2024-10-15
+
+### 🐞 BugFix
+
+- 修复 `Datepicker` 组件 key 值书写问题，解决 React 18.3.0 以上版本 key 字段报错的问题 ([#726](https://github.com/sheinsight/shineout-next/pull/726))
+
 ## 3.4.1
 2024-09-20
 

@@ -1,13 +1,8 @@
-## 3.4.3-beta.10
-2024-09-29
+## 3.4.3
+2024-10-14
 ### 🐞 BugFix
 
 - 修复`Checkbox`在createPortal中使用时，无法改变勾选状态的问题 ([#710](https://github.com/sheinsight/shineout-next/pull/710))
-
-## 3.4.3-beta.1
-2024-09-29
-### 🐞 BugFix
-
 - 修复 `Checkbox.Group` 在未传递 `data` 情况下使用 Checkbox 时 disabled 属性失效的问题
  ([#697](https://github.com/sheinsight/shineout-next/pull/697))
 

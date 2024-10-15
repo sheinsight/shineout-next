@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import { TheadProps } from './thead.type';
-import { useTableGroup, useDragMock, usePersistFn } from '@sheinx/hooks';
+import { useTableGroup, useDragMock, usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn, TableHeadColumn, TableGroupColumn } from '@sheinx/hooks';
 import Icons from '../icons';
 import classNames from 'classnames';
 import Checkbox from '../checkbox';
 import { useConfig } from '../config';
+
+const { toNum } = util;
 
 export default (props: TheadProps) => {
   const { colgroup = [], sortInfo, onSorterChange, showSelectAll = true } = props;
@@ -120,7 +122,7 @@ export default (props: TheadProps) => {
           transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
-      const left = colgroup.slice(0, index).reduce((a, b) => (a || 0) + (b || 0), 0);
+      const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         left: left,
         position: 'sticky',
@@ -132,7 +134,7 @@ export default (props: TheadProps) => {
           transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
-      const right = colgroup.slice(index + colSpan).reduce((a, b) => (a || 0) + (b || 0), 0);
+      const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         right: right,
         position: 'sticky',

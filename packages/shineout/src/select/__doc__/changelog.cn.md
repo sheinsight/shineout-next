@@ -1,5 +1,11 @@
-## 3.4.3-beta.5
-2024-10-09
+## 3.4.4-beta.3
+2024-10-15
+
+### 🐞 BugFix
+- 修复 `Select` 组件无法拖拽选中 dom 内容的问题 ([#729](https://github.com/sheinsight/shineout-next/pull/729))
+
+## 3.4.3
+2024-10-14
 
 ### 🐞 BugFix
 - 修复 `Select` 开启absolute和multiple之后，下拉框较长选项的文字与勾选图标重叠的问题 ([#703](https://github.com/sheinsight/shineout-next/pull/703))
