@@ -1,3 +1,10 @@
+## 3.4.4-beta.5
+2024-10-15
+### 🐞 BugFix
+
+- 修复`Form` 的onSubmit时间可能比onChange早的问题 ([#731](https://github.com/sheinsight/shineout-next/pull/731))
+
+
 ## 3.4.4-beta.1
 2024-10-15
 ### 💎 Enhancement
