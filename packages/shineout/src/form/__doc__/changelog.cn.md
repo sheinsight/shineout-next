@@ -1,8 +1,16 @@
+## 3.4.4-beta.5
+2024-10-15
+### 🐞 BugFix
+
+- 修复`Form` 的onSubmit时间可能比onChange早的问题（例如扫码枪触发的表单提交） ([#731](https://github.com/sheinsight/shineout-next/pull/731))
+
+
 ## 3.4.4-beta.4
 2024-10-15
 ### 🐞 BugFix
 
 - 修复 `Form.Field` 在设置默认值情况下 `value` 改变后可能失效的问题 ([#730](https://github.com/sheinsight/shineout-next/pull/730))
+
 
 ## 3.4.4-beta.1
 2024-10-15

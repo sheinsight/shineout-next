@@ -288,8 +288,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    submit();
-    other?.onSubmit?.(e);
+    setTimeout(() => {
+      submit();
+      other?.onSubmit?.(e);
+    }, 10);
   };
 
   const validateFieldset = (name: string) => {

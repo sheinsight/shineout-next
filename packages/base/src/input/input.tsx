@@ -35,6 +35,15 @@ const Input = (props: InputProps) => {
       {...inputFormatProps}
       value={inputFormatProps.value ?? ''}
       hasSuffix={!!props.suffix}
+      onKeyDown={e => {
+        e.preventDefault()
+        if (e.key === 'Enter' && !e.defaultPrevented) {
+          const value = (e.target as HTMLInputElement).value;
+          props.onChange?.(value);
+        }
+
+        props.onKeyDown?.(e);
+      }}
     />
   );
 };
