@@ -5,7 +5,7 @@
  *    -- You can use formRef to get some methods of the form, including validation, clear validation, submission, etc
  */
 import React, { useEffect, useRef, useState } from 'react';
-import { Form, Input, TYPE, Button } from 'shineout';
+import { Form, Input, TYPE, Button, Select } from 'shineout';
 
 type ValueType = {
   name?: string;
@@ -45,10 +45,21 @@ const App: React.FC = () => {
         </Button>
         <Button onClick={() => form.current?.clearValidate()}>clear validate</Button>
         <Button onClick={() => console.log(form.current?.getValue())}>get value</Button>
+        <Button onClick={() => {
+          form.current?.set({
+            name: 'Tom',
+            password: '123456',
+            holiday: {
+              startDate: '2024-10-01',
+              endDate: '2024-10-07',
+            },
+            hobby: ['Football', 'Movie']
+          })
+        }}>set value</Button>
         <Button onClick={() => form.current?.submit(false)}>submit without validate</Button>
       </div>
 
-      <Form.Item label='name' required>
+      <Form.Item label='Name' required>
         <Input name='name' rules={[{ required: true, message: 'name is required' }]} clearable />
       </Form.Item>
 
@@ -58,6 +69,19 @@ const App: React.FC = () => {
           name='password'
           rules={[{ required: true, message: 'password is required' }]}
         />
+      </Form.Item>
+
+      <Form.Item label='Holiday'>
+        <Form.FieldSet name='holiday'>
+          <Input.Group>
+            <Input name='startDate' />
+            <b>-</b>
+            <Input name='endDate' />
+          </Input.Group>
+        </Form.FieldSet>
+      </Form.Item>
+      <Form.Item label='Hobby'>
+        <Select multiple keygen data={['Football', 'Movie', 'Barbecue']} name='hobby'></Select>
       </Form.Item>
 
       <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
