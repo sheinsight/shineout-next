@@ -85,7 +85,11 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         setErrorState(error);
       }
       if (!shallowEqual(value, latestInfo.valueState)) {
-        setValueState(value);
+        if (value === undefined && defaultValue !== undefined) {
+          setValueState(defaultValue);
+        } else {
+          setValueState(value);
+        }
         latestInfo.valueState = value;
       }
     },
@@ -175,6 +179,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
           controlFunc.bind(n, dv[index], validateFiled, update);
         });
       } else {
+        console.log('bind', name, defaultValue);
         controlFunc.bind(name, defaultValue, validateFiled, update);
       }
     }
