@@ -105,9 +105,12 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     });
   };
 
-  const handleUpdateActive = (active?: KeygenResult) => {
+  const handleUpdateActive = (active?: KeygenResult, item?: DataItem) => {
     setActive(active);
-    propSetActive?.(active);
+
+    if (active !== props.active) {
+      propSetActive?.(active, item);
+    }
 
     datum.updateMap.forEach((update, id) => {
       update('active', id === active);
@@ -115,7 +118,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   };
 
   const handleNodeClick = (node: DataItem, id: KeygenResult) => {
-    handleUpdateActive(id);
+    handleUpdateActive(id, node);
 
     if (onClick) {
       onClick(node, id, datum.getPath(id));
@@ -197,7 +200,9 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   useEffect(() => {
     // 首次渲染不更新
-    if (!context.mounted) {return;}
+    if (!context.mounted) {
+      return;
+    }
     if (!props.expanded) return;
     handleUpdateExpanded(expanded);
   }, [expanded]);
@@ -229,6 +234,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
           contentClass={contentClass}
           expanded={expanded}
           expandIcons={expandIcons}
+          defaultExpandAll={defaultExpandAll}
           childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
           bindNode={datum.bindNode}
           childrenKey={childrenKey}

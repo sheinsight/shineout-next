@@ -11,6 +11,7 @@ export interface TreeListProps<DataItem, Value extends KeygenResult[]>
   expanded: boolean;
   childrenKey: keyof DataItem;
   parentClickExpand?: boolean;
+  defaultExpandAll?: boolean;
   doubleClickExpand?: boolean;
   childrenClassName?: string;
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
@@ -23,7 +24,11 @@ export interface TreeListProps<DataItem, Value extends KeygenResult[]>
   dragSibling?: boolean;
   dragHoverExpand?: boolean;
   childrenClass: (data: DataItem) => string | undefined;
-  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  bindNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { expanded: boolean; active: boolean };
   renderItem: TreeRenderItemType<DataItem>;
   loader?: (key: KeygenResult, data: DataItem) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;

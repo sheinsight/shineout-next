@@ -129,7 +129,11 @@ export interface TreeDatum<DataItem> {
   setValue: (value?: KeygenResult[]) => void;
   setData: (data?: DataItem[]) => void;
   isDisabled: (id: KeygenResult) => boolean;
-  bindNode: (id: KeygenResult, update: UpdateFunc) => { active: boolean; expanded: boolean };
+  bindNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { active: boolean; expanded: boolean };
   getDataById: (
     id: KeygenResult,
   ) => DataItem | { IS_NOT_MATCHED_VALUE: boolean; value: KeygenResult } | null;

@@ -18,7 +18,11 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
   childrenClass?: ((data: DataItem) => string) | string;
-  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  bindNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { expanded: boolean; active: boolean };
   bindContent: React.RefObject<HTMLDivElement>;
   fetching: boolean;
   inlineNode?: boolean;

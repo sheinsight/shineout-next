@@ -1,3 +1,5 @@
+import Token from '@sheinx/theme';
+
 export default {
   position: 'relative',
   // margin: 'auto',
@@ -12,7 +14,7 @@ export default {
     border: '1px solid transparent',
     borderRadius: '100%',
     transformOrigin: '50% 50%',
-    borderTopColor: '#197AFA',
+    borderTopColor: Token.spinColor,
 
     '&:nth-child(1)': {
       animation: '$chasing-ring-1 2s infinite',

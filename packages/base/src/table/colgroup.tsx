@@ -1,6 +1,6 @@
 interface ColgroupProps {
-  colgroup?: (number | undefined)[];
-  columns?: { key: string | number; width?: number }[];
+  colgroup?: (number | string | undefined)[];
+  columns?: { key: string | number; width?: number | string }[];
   shouldLastColAuto: boolean;
 }
 const Colgroup = (props: ColgroupProps) => {

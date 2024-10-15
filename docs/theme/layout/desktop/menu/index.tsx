@@ -86,7 +86,9 @@ const MenuComponent = () => {
   useEffect(() => {
     setConfig({
       locale: 'en-US',
-      spin: 'ring',
+      spin: {
+        name: 'ring',
+      },
       popupContainer: () => document.getElementById('layout'),
     });
   }, []);
@@ -143,7 +145,7 @@ const MenuComponent = () => {
                     >
                       {component.title[state.locales]}
 
-                      {component.version && <Tag color="success">{component.version}</Tag>}
+                      {component.version && <Tag color='success'>{component.version}</Tag>}
                     </li>
                   )
                 );

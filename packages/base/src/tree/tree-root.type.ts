@@ -6,7 +6,11 @@ export interface TreeRootProps<DataItem, Value extends KeygenResult[]>
   jssStyle?: JsstyleType;
   line: boolean;
   childrenClass: (data: DataItem) => string | undefined;
-  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  bindNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { expanded: boolean; active: boolean };
   parentClickExpand?: boolean;
   doubleClickExpand?: boolean;
   childrenKey: ObjectKey<DataItem>;
@@ -27,6 +31,7 @@ export interface TreeRootProps<DataItem, Value extends KeygenResult[]>
   loader?: (key: KeygenResult, data: DataItem) => void;
   inlineNode?: boolean;
   highlight?: boolean;
+  defaultExpandAll?: boolean;
   onDragStart?: (e: React.DragEvent, data: DataItem) => void;
   onDragEnd?: (e: React.DragEvent, data: DataItem) => void;
   onDragOver?: (e: React.DragEvent, data: DataItem) => void;

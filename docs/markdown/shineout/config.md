@@ -67,7 +67,13 @@ setConfig({
 
 用于配置组件默认的 Spin 类型  
 
-类型： `spin: string`  
+类型： `spin: string | {
+  name: string;
+  color?: string;
+  tip?: React.ReactNode;
+  mode?: 'vertical' | 'horizontal';
+  size?: number;
+}`  
 
 默认值： `ring`
 
@@ -76,6 +82,19 @@ setConfig({
 // 设置默认的 Spin 类型为 circle
 setConfig({
   spin: 'circle'
+})
+```
+
+```js
+// 设置全局 Spin 的默认类型、颜色、提示内容、动画尺寸以及布局模式
+setConfig({
+  spin: {
+    name: 'wave',
+    color: '#000000',
+    tip: 'loading...',
+    size: 14,
+    mode: 'horizontal'
+  }
 })
 ```
 
