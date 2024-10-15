@@ -179,7 +179,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
           controlFunc.bind(n, dv[index], validateFiled, update);
         });
       } else {
-        console.log('bind', name, defaultValue);
         controlFunc.bind(name, defaultValue, validateFiled, update);
       }
     }
