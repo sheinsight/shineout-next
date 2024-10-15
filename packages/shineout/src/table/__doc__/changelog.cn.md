@@ -1,3 +1,10 @@
+## 3.2.2
+2024-10-15
+
+### 💎 Enhancement
+- 优化 `Table` 组件 Spin 支持从全局配置读取相关设置 ([#727](https://github.com/sheinsight/shineout-next/pull/727))
+
+
 ## 3.4.3
 2024-10-14
 
