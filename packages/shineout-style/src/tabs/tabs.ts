@@ -1,4 +1,4 @@
-import Token, {CommonToken} from '@sheinx/theme';
+import Token from '@sheinx/theme';
 import { TabsClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 
@@ -521,7 +521,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
   headerScrollBar: {
     position: 'absolute',
     background: Token.tabsActiveFontColor,
-    transition: `left ${CommonToken['Animation-duration-2']} ease-in-out, top ${CommonToken['Animation-duration-2']} ease-in-out, width ${CommonToken['Animation-duration-2']} ease-in-out, height ${CommonToken['Animation-duration-2']} ease-in-out`,
+    transition: `left .2s ease-in-out, top .2s ease-in-out, width .2s ease-in-out, height .2s ease-in-out`,
   },
   header: {
     flex: 1,

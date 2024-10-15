@@ -5,7 +5,7 @@ import Spin from '../spin';
 import Pagination, { PaginationProps } from '../pagination';
 import AbsoluteContext from '../absolute-list/absolute-context';
 import Empty from '../empty';
-import Sticky, {defaultZIndex} from '../sticky';
+import Sticky, { defaultZIndex } from '../sticky';
 import { useConfig } from '../config';
 import {
   useTableLayout,
@@ -20,7 +20,7 @@ import {
   useLatestObj,
   useResize,
   useScrollbarWidth,
-  util
+  util,
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -61,6 +61,16 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableRef = useRef<HTMLDivElement | null>(null);
 
   const browserScrollbarWidth = useScrollbarWidth();
+
+  const getSpinConfig = () => {
+    if (typeof config.spin === 'object') {
+      return { size: 24, ...config.spin };
+    }
+    if (typeof config.spin === 'string') {
+      return { name: config.spin, size: 24 };
+    }
+    return { size: 24 };
+  };
 
   const { current: context } = useRef({
     emptyHeight: 0,
@@ -219,8 +229,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     const target = e.currentTarget;
     if (!target) return;
     layoutFunc.checkFloat();
-    if(mirrorScrollRef.current){
-      mirrorScrollRef.current.scrollLeft = target.scrollLeft
+    if (mirrorScrollRef.current) {
+      mirrorScrollRef.current.scrollLeft = target.scrollLeft;
     }
     if (props.onScroll && typeof props.onScroll === 'function') {
       const maxWidth = target.scrollWidth - target.clientWidth;
@@ -243,8 +253,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     }) => {
       virtualInfo.handleScroll(info);
       layoutFunc.checkFloat();
-      if(mirrorScrollRef.current){
-        mirrorScrollRef.current.scrollLeft = info.scrollLeft
+      if (mirrorScrollRef.current) {
+        mirrorScrollRef.current.scrollLeft = info.scrollLeft;
       }
       if (props.onScroll && typeof props.onScroll === 'function') {
         props.onScroll(info.x, info.y, info.scrollLeft, info.scrollTop);
@@ -340,7 +350,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       parent: tableRef?.current,
     };
 
-    const isRenderVirtualTable = virtual || props.sticky || props.style?.height || props.height || !props.data?.length
+    const isRenderVirtualTable =
+      virtual || props.sticky || props.style?.height || props.height || !props.data?.length;
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
@@ -353,21 +364,24 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     );
 
     const renderHeadMirrorScroller = () => {
-      if(!props.showTopScrollbar) return null
+      if (!props.showTopScrollbar) return null;
 
-      const scrollRefWidth = scrollRef?.current?.clientWidth || 0
-      const scrollRefScrollWidth = scrollRef?.current?.scrollWidth || 0
-      const mirrorScrollRefWidth = scrollRefWidth + scrollBarWidth
-      const showScroll = scrollRefScrollWidth > scrollRefWidth
+      const scrollRefWidth = scrollRef?.current?.clientWidth || 0;
+      const scrollRefScrollWidth = scrollRef?.current?.scrollWidth || 0;
+      const mirrorScrollRefWidth = scrollRefWidth + scrollBarWidth;
+      const showScroll = scrollRefScrollWidth > scrollRefWidth;
       // 开启了双滚，但是没有滚动条，不显示
-      if(!scrollRefWidth || !mirrorScrollRefWidth || !showScroll) return null
+      if (!scrollRefWidth || !mirrorScrollRefWidth || !showScroll) return null;
 
       const scrollerStickyProps = {
         ...stickyProps,
-        top: ((sticky?.top || browserScrollbarWidth) - browserScrollbarWidth),
-      }
+        top: (sticky?.top || browserScrollbarWidth) - browserScrollbarWidth,
+      };
       return (
-        <StickyWrapper {...(props.sticky ? scrollerStickyProps : {})} style={{zIndex: defaultZIndex + 1}}>
+        <StickyWrapper
+          {...(props.sticky ? scrollerStickyProps : {})}
+          style={{ zIndex: defaultZIndex + 1 }}
+        >
           <div
             className={tableClasses?.headMirrorScroller}
             style={{
@@ -376,19 +390,19 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             }}
             onScroll={(e) => {
               const target = e.currentTarget;
-              if(scrollRef?.current && scrollRef.current.scrollLeft !== target.scrollLeft){
-                scrollRef.current.scrollLeft = target.scrollLeft
+              if (scrollRef?.current && scrollRef.current.scrollLeft !== target.scrollLeft) {
+                scrollRef.current.scrollLeft = target.scrollLeft;
               }
             }}
             ref={mirrorScrollRef}
           >
-            <div style={{width: scrollRef?.current?.scrollWidth, height: 1}}></div>
+            <div style={{ width: scrollRef?.current?.scrollWidth, height: 1 }}></div>
           </div>
         </StickyWrapper>
-      )
-    }
+      );
+    };
 
-    if(isRenderVirtualTable){
+    if (isRenderVirtualTable) {
       return (
         <>
           {renderHeadMirrorScroller()}
@@ -471,7 +485,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     if (!props.loading) return null;
     return (
       <div className={classNames(tableClasses?.loading)}>
-        {props.loading === true ? <Spin jssStyle={props.jssStyle} size={24} /> : props.loading}
+        {props.loading === true ? (
+          <Spin jssStyle={props.jssStyle} {...getSpinConfig()} />
+        ) : (
+          props.loading
+        )}
       </div>
     );
   };
@@ -515,12 +533,12 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const getRenderIndexByData = (data: Item | string) => {
     const originKey = typeof data === 'string' ? data : util.getKey(props.keygen, data);
     const index = treeData.findIndex((item) => util.getKey(props.keygen, item) === originKey);
-    return index
+    return index;
   };
 
   const tableFunc = useLatestObj({
     scrollToIndex: virtualInfo.scrollToIndex,
-    getRenderIndexByData: getRenderIndexByData
+    getRenderIndexByData: getRenderIndexByData,
   });
 
   useEffect(() => {
