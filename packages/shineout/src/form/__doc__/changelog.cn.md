@@ -1,3 +1,9 @@
+## 3.4.4-beta.4
+2024-10-15
+### 🐞 BugFix
+
+- 修复 `Form.Field` 在设置默认值情况下 `value` 改变后可能失效的问题 ([#730](https://github.com/sheinsight/shineout-next/pull/730))
+
 ## 3.4.2
 2024-09-29
 ### 🐞 BugFix
