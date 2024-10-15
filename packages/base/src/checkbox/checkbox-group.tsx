@@ -6,7 +6,12 @@ import React from 'react';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 
+const defaultFormat = (d: any) => d;
+const defaultRenderItem = (d: any) => d;
+
+
 const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataItem, Value>) => {
+  const {format = defaultFormat, renderItem = defaultRenderItem} = props0
   const props = useWithFormConfig(props0);
   const { children, className, block, keygen, jssStyle, size, style, disabled } = props;
   const checkboxStyle = jssStyle?.checkbox?.();
@@ -25,7 +30,7 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
     prediction: props.prediction,
     separator: props.separator,
     disabled,
-    format: props.format,
+    format: format,
     keygen: props.keygen,
     data: props.data || ([] as DataItem[]),
   };
@@ -51,7 +56,6 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
   });
 
   const getContent = (d: DataItem, index: number) => {
-    const { renderItem } = props;
     if (typeof renderItem === 'string' && d) {
       return (d as any)[renderItem] as unknown as React.ReactNode;
     }
@@ -109,10 +113,6 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
       </div>
     );
   }
-};
-Group.defaultProps = {
-  format: (d: any) => d,
-  renderItem: (d: any) => d,
 };
 
 export default Group;
