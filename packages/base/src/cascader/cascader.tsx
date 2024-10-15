@@ -25,9 +25,6 @@ import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { useConfig, getLocale } from '../config';
 
-const preventDefault = (e: React.MouseEvent) => {
-  e.preventDefault();
-};
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
 ) => {
@@ -712,11 +709,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       onFocus={handleFocus}
       onKeyDown={handleKeyDown}
       ref={targetRef}
-      onMouseDown={(e) => {
-        if (focused && e.target !== inputRef.current) {
-          e.preventDefault();
-        }
-      }}
     >
       {tipNode}
       {renderResult()}
@@ -740,7 +732,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           type='scale-y'
           duration={'fast'}
           style={pickerWrapperStyle}
-          onMouseDown={preventDefault}
         >
           {renderPanel()}
         </AnimationList>
