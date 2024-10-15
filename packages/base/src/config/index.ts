@@ -2,11 +2,12 @@ import { util } from '@sheinx/hooks';
 import { create } from '@shined/reactive';
 import { getSnapshot } from '@shined/reactive/vanilla';
 import { LanType, Direction } from './locale/Props';
+import { SpinNameType } from '../spin/spin.type';
 
 export type SpinConfig =
-  | string
+  | SpinNameType
   | {
-      name: string;
+      name: SpinNameType;
       color?: string;
       tip?: React.ReactNode;
       mode?: 'vertical' | 'horizontal';
