@@ -38,7 +38,12 @@ const useTip = (
 ) => {
   const { popover, popoverProps, error, tip, focused, rootRef, jssStyle } = props;
   const config = useConfig();
-  const dfp = config.direction === 'rtl' ? 'bottom-right' : 'bottom-left';
+  let dfp: PopoverProps['position'] = config.direction === 'rtl' ? 'bottom-right' : 'bottom-left';
+
+  if(typeof popover === 'string') {
+    dfp = popover
+  }
+
   const styles =
     popoverProps?.style && popoverProps?.style?.width
       ? popoverProps?.style
