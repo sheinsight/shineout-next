@@ -1,8 +1,8 @@
 /**
  * cn - 基本用法
- *    --基础 textarea 用法
+ *    --基础用法
  * en - Base
- *    --Base Textarea
+ *    --Basic usage of `Textarea`
  */
 import { Textarea } from 'shineout';
 

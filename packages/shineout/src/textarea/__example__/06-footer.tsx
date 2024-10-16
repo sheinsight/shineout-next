@@ -1,8 +1,8 @@
 /**
  * cn - 渲染底部信息
- *    -- 渲染 textarea footer
+ *    -- 渲染 textarea `footer`
  * en - RenderFooter
- *    -- render textarea footer
+ *    -- render textarea `footer`
  */
 import React from 'react';
 import { Textarea } from 'shineout';
