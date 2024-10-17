@@ -2,7 +2,8 @@
  * cn - 自定义列表布局
  *    -- 通过设置`header`属性可以自定义列表头部区域内容
  *    -- 通过设置`footer`属性可以自定义列表底部区域内容
- *    -- `renderOptionList`可以自定义列表内容，并将列表实例抛出
+ *    -- 通过设置`renderOptionList`可以自定义列表内容，并将列表实例抛出
+ *    -- 注意，与`emptyText`属性搭配使用时，`emptyText`渲染优先级高于`renderOptionList`，可将`emptyText`设置为 false 忽略空内容渲染，如需渲染空内容，请在`renderOptionList`中自行处理
  * en - Header
  *    -- Set `header` to customize the content of the header area
  */
@@ -53,6 +54,7 @@ export default () => {
       />
       <Select
         keygen
+        onCollapse={(v) => console.log(v)}
         width={300}
         clearable
         data={data}

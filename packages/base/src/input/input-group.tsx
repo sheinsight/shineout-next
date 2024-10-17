@@ -16,12 +16,20 @@ export default (props: InputGroupProps) => {
     eventMap: new WeakMap(),
     propsMap: new WeakMap(),
   });
-  const { size, disabled, status, error } = useWithFormConfig(props);
+  const { size, disabled, status, error, onBlur } = useWithFormConfig(props);
 
   const getProps = (child: React.ReactElement) => {
+    const onChildBlur = (e: React.FocusEvent<HTMLElement>) => {
+      const childBlurEvent = child.props.onBlur;
+      if (childBlurEvent) {
+        childBlurEvent(e);
+      }
+      onBlur?.(e);
+    };
+
     ref.current.propsMap.set(child, {
       onFocus: child.props.onFocus,
-      onBlur: child.props.onBlur,
+      onBlur: onChildBlur,
     });
     if (!ref.current.eventMap.get(child)) {
       ref.current.eventMap.set(child, {

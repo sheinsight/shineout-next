@@ -21,7 +21,10 @@ for (let i = 0; i < 10; i++) {
 export default () => {
   const [value, setValue] = useState([]);
 
-  const handleChange = (v: { id: string; name: string }) => {
+  const handleChange = (v: { id: string; name: string }, dataItem) => {
+    console.log('======================')
+    console.log('dataItem: >>', dataItem)
+    console.log('======================')
     setValue(v);
   };
 

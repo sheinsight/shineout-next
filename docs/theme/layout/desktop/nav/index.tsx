@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
-import { Button, setConfig } from 'shineout';
+import { Button, setConfig, setLocale } from 'shineout';
 
 const Nav = () => {
   const classes = useStyles();
@@ -28,7 +28,7 @@ const Nav = () => {
     }
     setConfig({ direction: nextDirection });
   };
-  
+
   // const { locale } = useConfig();
 
   // const navs = [
@@ -58,6 +58,11 @@ const Nav = () => {
     const nextLocales = state.locales === 'en' ? 'cn' : 'en';
 
     dispatch.setLocales(nextLocales);
+    if(nextLocales === 'en'){
+      setLocale('en-US')
+    }else if(nextLocales === 'cn'){
+      setLocale('zh-CN')
+    }
 
     const nextPath = location.pathname.replace(`/${state.locales}/`, `/${nextLocales}/`);
 

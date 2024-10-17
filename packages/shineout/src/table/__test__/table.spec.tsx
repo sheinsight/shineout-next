@@ -85,6 +85,7 @@ const {
   rowStriped,
   small: tableSmall,
   cellHover,
+  rowHover,
   verticalAlignMiddle,
   iconWrapper,
   rowExpand,
@@ -463,24 +464,53 @@ describe('Table[Base]', () => {
     );
     expect(container.querySelector('thead')).not.toBeInTheDocument();
   });
-  test('should render when set hover', () => {
+
+  test('should render when set hover in col span', () => {
+    const data = [
+      {
+        id: 1,
+        name: 'name1',
+      },
+      {
+        id: 2,
+        name: 'name1',
+      },
+      {
+        id: 3,
+        name: 'name2',
+      },
+    ]
+    const columns: TableColumnItem[] = [
+      {
+        title: 'ID',
+        render: 'id',
+      },
+      {
+        title: 'Name',
+        render: 'name',
+        rowSpan: (a, b) => a.name === b.name,
+      },
+    ]
     const { container, rerender } = render(
-      <Table keygen={'id'} columns={columns} data={renderData} />,
+      <Table keygen={'id'} columns={columns} data={data} />,
     );
     const tableWrapper = container.querySelector(wrapper)!;
     const tbody = tableWrapper.querySelector('tbody')!;
     const trs = tbody.querySelectorAll('tr');
-    fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
-    trs[0].querySelectorAll('td').forEach((item) => {
-      classTest(item, cellHover);
+    fireEvent.mouseEnter(trs[1].querySelectorAll('td')[0]);
+    trs[1].querySelectorAll('td').forEach((item, index) => {
+      if(index === 1){
+        classTest(item, cellHover, false);
+      }
     });
-    fireEvent.mouseLeave(trs[0].querySelectorAll('td')[0]);
+    fireEvent.mouseLeave(trs[1].querySelectorAll('td')[0]);
     rerender(<Table keygen={'id'} columns={columns} data={renderData} hover={false} />);
-    fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
-    trs[0].querySelectorAll('td').forEach((item) => {
+    fireEvent.mouseEnter(trs[1].querySelectorAll('td')[0]);
+    trs[1].querySelectorAll('td').forEach((item) => {
       classTest(item, cellHover, false);
     });
   });
+
   test('should render when set width', () => {
     const tableWidth = 1000;
     const { container } = render(
@@ -1226,19 +1256,19 @@ describe('Table[RowsInView]', () => {
   test('should render when set rowsInView with virtual', () => {
     const tempData = dataGenerate(30);
     const { container, rerender } = render(
-      <Table keygen={'id'} columns={columns} data={tempData} virtual />,
+      <Table keygen={'id'} columns={columns} data={tempData} virtual height={50} />,
     );
     const tableWrapper = container.querySelector(wrapper)!;
     const tbody = tableWrapper.querySelector('tbody')!;
     const trs = tbody.querySelectorAll('tr');
     expect(trs.length).toBe(20);
-    rerender(<Table keygen={'id'} columns={columns} data={tempData} virtual rowsInView={10} />);
+    rerender(<Table keygen={'id'} columns={columns} data={tempData} virtual height={50} rowsInView={10} />);
     expect(tbody.querySelectorAll('tr').length).toBe(10);
   });
   test('should render when set rowsInView is 0', () => {
     const tempData = dataGenerate(30);
     const { container } = render(
-      <Table keygen={'id'} columns={columns} data={tempData} virtual rowsInView={0} />
+      <Table keygen={'id'} columns={columns} data={tempData} virtual height={50} rowsInView={0} />
     );
     const tableWrapper = container.querySelector(wrapper)!;
     const tbody = tableWrapper.querySelector('tbody')!;
@@ -1250,7 +1280,7 @@ describe('Table[Virtual]', () => {
     const onScrollfn = jest.fn();
     const tempData = dataGenerate(30);
     const { container } = render(
-      <Table keygen={'id'} columns={columns} data={tempData} virtual onScroll={onScrollfn} />,
+      <Table keygen={'id'} columns={columns} data={tempData} virtual height={50} onScroll={onScrollfn} />,
     );
     const tableHead = container.querySelector(headWrapper)!;
     // const tableFoot = container.querySelector(footWrapper)!;
@@ -1282,7 +1312,7 @@ describe('Table[Virtual]', () => {
       return (
         <div>
           <Button onClick={() => setValue(newData)}></Button>
-          <Table keygen={'id'} columns={columns} data={value} virtual onScroll={onScrollfn} />
+          <Table keygen={'id'} columns={columns} data={value} virtual height={50} onScroll={onScrollfn} />
         </div>
       );
     };
@@ -1309,7 +1339,7 @@ describe('Table[Virtual]', () => {
     const scrollLeft = 10;
     const tempData = dataGenerate(30);
     const { container } = render(
-      <Table keygen={'id'} columns={columns} data={tempData} virtual scrollLeft={scrollLeft} />,
+      <Table keygen={'id'} columns={columns} data={tempData} virtual height={50} scrollLeft={scrollLeft} />,
     );
     const tableHead = container.querySelector(headWrapper)!;
     const tableBody = tableHead.nextElementSibling;
@@ -1332,6 +1362,7 @@ describe('Table[Virtual]', () => {
             columns={columns}
             data={renderData}
             virtual
+            height={50}
             scrollLeft={scrollLeft}
           />
         </div>
@@ -1416,6 +1447,7 @@ describe('Table[Virtual]', () => {
             bordered
             data={tempData}
             virtual
+            height={50}
             width={1400}
             rowsInView={5}
             columns={columns}
@@ -1439,7 +1471,7 @@ describe('Table[Fixed]', () => {
     const fixedArray: ('x' | 'y' | 'both' | 'auto')[] = ['y', 'auto', 'both'];
     fixedArray.forEach((i: 'x' | 'y' | 'both' | 'auto') => {
       const { container } = render(
-        <Table keygen={'id'} columns={columns} data={tempData} fixed={i} />,
+        <Table keygen={'id'} columns={columns} data={tempData} fixed={i} height={100} />,
       );
       const tableHead = container.querySelector(headWrapper)!;
       const tableBody = tableHead.nextElementSibling;
@@ -1508,7 +1540,7 @@ describe('Table[Fixed]', () => {
 
     styleContentTest(headerThsRight[2], trsDefaultStyleByRight)
     rerender(
-      <Table keygen={'id'} columns={fixedColumns} data={fixedData} virtual scrollLeft={20} />,
+      <Table keygen={'id'} columns={fixedColumns} data={fixedData} virtual scrollLeft={20} height={50}/>,
     );
 
     const tableHead = container.querySelector(headWrapper)!;
@@ -1524,6 +1556,7 @@ describe('Table[Fixed]', () => {
         data={fixedData}
         virtual
         scrollLeft={20}
+        height={50}
       />,
     );
     styleTest(tableHead.querySelector('table')!, trsVirtualStyleByLeft)
@@ -1686,6 +1719,7 @@ describe('Table[Foot]', () => {
         summary={summary}
         virtual
         scrollLeft={20}
+        height={50}
       />,
     );
     const tables = container.querySelectorAll('table');
@@ -1701,6 +1735,7 @@ describe('Table[Foot]', () => {
         summary={summaryByRight}
         virtual
         scrollLeft={20}
+        height={50}
       />,
     );
     tables.forEach((item, index) => {

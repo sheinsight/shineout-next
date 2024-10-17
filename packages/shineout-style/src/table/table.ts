@@ -141,7 +141,8 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   bordered: {
-    border: `1px solid ${token.tableCellBorderColor}`,
+    borderLeft: `1px solid ${token.tableCellBorderColor}`,
+    borderRight: `1px solid ${token.tableCellBorderColor}`,
     borderBottom: 'none',
     borderTop: 'none',
     '&::before': {
@@ -163,6 +164,9 @@ const tableStyle: JsStyles<TableClassType> = {
       right: 0,
       borderTop: `1px solid ${token.tableCellBorderColor}`,
     },
+  },
+  headMirrorScroller: {
+    overflow: 'scroll hidden',
   },
   headWrapper: {
     flex: '0 0 auto',
@@ -231,13 +235,21 @@ const tableStyle: JsStyles<TableClassType> = {
       background: `${token.tableTbodyHoverBackgroundColor}`,
     },
   },
+  rowHover: {
+    '& td': {
+      transition: 'background-color 0.2s',
+    },
+    '&&:hover td': {
+      background: `${token.tableTbodyHoverBackgroundColor}`,
+    },
+  },
   floatLeft: {
     '& $cellFixedLast$cellFixedLeft': {
       '&::after': {
         content: '""',
         position: 'absolute',
         top: 0,
-        bottom: 0,
+        bottom: -1,
         width: '5px',
       },
       '&[dir=ltr]::after': {
@@ -257,6 +269,7 @@ const tableStyle: JsStyles<TableClassType> = {
       },
     },
   },
+
   floatRight: {
     '& $cellFixedLast$cellFixedRight': {
       '&::before': {

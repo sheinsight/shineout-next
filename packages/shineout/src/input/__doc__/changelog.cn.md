@@ -1,3 +1,25 @@
+## 3.4.3
+2024-10-14
+
+### 🐞 BugFix
+
+- `Input.Group` 同步支持 `onBlur` 事件 ([#701](https://github.com/sheinsight/shineout-next/pull/701))
+
+## 3.4.2
+2024-09-29
+
+### 🐞 BugFix
+
+- 修复`Input.Group`的border在微前端框架下的异常表现  ([#685](https://github.com/sheinsight/shineout-next/pull/685))
+
+## 3.3.7
+2024-09-09
+
+### 🐞 BugFix
+
+- 修复`Input.Number` 输入过程中的字符串格式(例如1.)触发onChange的问题 ([#655](https://github.com/sheinsight/shineout-next/pull/655))
+
+
 ## 3.3.2
 2024-07-29
 

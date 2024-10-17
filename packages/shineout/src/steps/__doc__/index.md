@@ -1,6 +1,7 @@
 ---
 name: Steps
 group: Navigation
+version: 3.0.0
 ---
 
 # Title

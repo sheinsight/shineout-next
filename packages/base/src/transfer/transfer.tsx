@@ -40,6 +40,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     listHeight = 186,
     operationIcon = true,
     searchPlaceholder,
+    equalPanelWidth,
     beforeChange,
     renderFilter,
     onSearch,
@@ -89,6 +90,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     [styles.simple]: simple,
     [styles.small]: size === 'small',
     [styles.large]: size === 'large',
+    [styles.equalPanelWidth]: equalPanelWidth,
   });
 
   const renderOperations = () => {

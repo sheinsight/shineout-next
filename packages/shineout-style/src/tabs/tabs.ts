@@ -1,4 +1,4 @@
-import Token from '@sheinx/theme';
+import Token, {CommonToken} from '@sheinx/theme';
 import { TabsClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 
@@ -133,39 +133,33 @@ const getCardStyle = () => {
 
 const getLineStyle = () => {
   return {
+    '$tab':  {
+      '&:after': {
+        display: 'none',
+      },
+    },
     '&[data-soui-position^="left-"][data-soui-shape="line"]': {
       '&[dir=ltr]': {
         '& $hr': { right: 0, width: 1, height: '100%' },
-        ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
       },
       '&[dir=rtl]': {
         '& $hr': { left: 0, width: 1, height: '100%' },
-        ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
       },
-      // '& :not([data-soui-state="active"])$tab': {
-      //   '&:after': {
-      //     display: 'none',
-      //   },
-      // },
     },
     '&[data-soui-position^="right-"][data-soui-shape="line"]': {
       '&[dir=ltr]': {
         '& $hr': { left: 0, width: 1, height: '100%' },
-        ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
       },
       '&[dir=rtl]': {
         '& $hr': { right: 0, width: 1, height: '100%' },
-        ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
       },
     },
     '&[data-soui-position^="top-"][data-soui-shape="line"]': {
-      '& $hr': { bottom: 0, left: 0, height: 1, width: '100%' },
-      ...active({ bottom: 0, left: 0, right: 0, height: 2 }),
+      '& $hr': { bottom: 0, height: 1, width: '100%' },
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="line"]': {
-      '& $hr': { top: 0, left: 0, height: 1, width: '100%' },
-      ...active({ top: 0, left: 0, right: 0, height: 2 }),
-      '& :not([data-soui-state="active"])$tab': {
+      '& $hr': { top: 0, height: 1, width: '100%' },
+      '& $tab': {
         '&:after': {
           position: 'absolute',
           content: '""',
@@ -182,27 +176,10 @@ const getLineStyle = () => {
 
 const getDashStyle = () => {
   return {
-    '&[data-soui-position^="left-"][data-soui-shape="dash"]': {
-      '&[dir=ltr]': {
-        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, right: 0 }),
+    '$tab':  {
+      '&:after': {
+        display: 'none',
       },
-      '&[dir=rtl]': {
-        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, left: 0 }),
-      },
-    },
-    '&[data-soui-position^="right-"][data-soui-shape="dash"]': {
-      '&[dir=ltr]': {
-        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, left: 0 }),
-      },
-      '&[dir=rtl]': {
-        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, right: 0 }),
-      },
-    },
-    '&[data-soui-position^="top-"][data-soui-shape="dash"]': {
-      ...active({ bottom: 0, left: `calc(50% - 12px)`, width: 24, height: 2 }),
-    },
-    '&[data-soui-position^="bottom-"][data-soui-shape="dash"]': {
-      ...active({ top: 0, left: `calc(50% - 12px)`, width: 24, height: 2 }),
     },
   };
 };
@@ -539,7 +516,12 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     ...getHeaderStyle(),
   },
   headerScroll: {
-    transition: 'all .15s ease-out',
+    transition: 'all .2s cubic-bezier(.34,.69,.1,1)',
+  },
+  headerScrollBar: {
+    position: 'absolute',
+    background: Token.tabsActiveFontColor,
+    transition: `left ${CommonToken['Animation-duration-2']} ease-in-out, top ${CommonToken['Animation-duration-2']} ease-in-out, width ${CommonToken['Animation-duration-2']} ease-in-out, height ${CommonToken['Animation-duration-2']} ease-in-out`,
   },
   header: {
     flex: 1,
@@ -591,14 +573,21 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
           fontSize: Token.tabsLineCheckedFontSize,
           background: Token.tabsLineCheckedBackgroundColor,
           fontWeight: Token.tabsLineCheckedFontWeight,
-          '&:after': {
-            background: Token.tabsLineAfterBackgroundColor,
-          },
         },
 
         '&[data-soui-state="disabled"]': {
           color: Token.tabsLineDisabledFontColor,
           cursor: 'not-allowed',
+        },
+
+        '&:after': {
+          position: 'absolute',
+          content: '""',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: 1,
+          background: Token.tabsLineHrBackgroundColor,
         },
 
         '[data-soui-position^="left-"] &': {
@@ -614,17 +603,6 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
           '&:after': {
             width: 1,
             height: '100%',
-            background: Token.tabsLineHrBackgroundColor,
-          },
-        },
-        '&:not([data-soui-state="active"])': {
-          '&:after': {
-            position: 'absolute',
-            content: '""',
-            bottom: 0,
-            left: 0,
-            width: '100%',
-            height: 1,
             background: Token.tabsLineHrBackgroundColor,
           },
         },

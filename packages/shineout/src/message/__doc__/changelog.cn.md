@@ -1,3 +1,10 @@
+## 3.4.3
+2024-10-14
+
+### 🐞 BugFix
+
+- 修复 `Message` 样式生成异常的问题 ([#706](https://github.com/sheinsight/shineout-next/pull/706))
+
 ## 3.1.28
 2024-06-07
 

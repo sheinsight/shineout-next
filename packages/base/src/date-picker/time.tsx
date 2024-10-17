@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { TimeProps } from './time.type';
 import { usePersistFn, useResize, useTimePick } from '@sheinx/hooks';
 import classNames from 'classnames';
-import Button from '../button';
+import Link from '../link';
 import { getLocale, useConfig } from '../config';
 import PickerTitle from './pickerTitle';
+import Confirm from './confirm';
 
 const TimeScroll = (props: {
   mode: string;
@@ -142,18 +143,23 @@ const Time = (props: TimeProps) => {
 
     if (!showRight) return null;
     return (
-      <div className={styles?.pickerFooter} dir={direction}>
+      <div className={styles?.pickerFooter} dir={direction} style={{borderTop: props.needConfirm && props.range ? 'none': ''}}>
         {showRight && (
-          <div className={styles?.pickerFooterRight}>
-            <Button
+          <div className={styles?.pickerFooterNow}>
+            <Link
               size={'small'}
+              type="primary"
               jssStyle={props.jssStyle}
               className={styles?.pickerFooterBtn}
               onClick={selNow}
             >
               {getLocale(locale, 'current')}
-            </Button>
+            </Link>
           </div>
+        )}
+
+        {props.needConfirm && !props.range && (
+          <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
         )}
       </div>
     );

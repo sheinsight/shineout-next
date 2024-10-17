@@ -1283,13 +1283,6 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '50%'
-   * @description 50% 全圆角
-   */
-  'Radius-50%': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default '0px 2px 5px rgba(2, 11, 24, 0.1)'
    * @description 表格拖拽、树组件拖拽
    */
@@ -2064,4 +2057,25 @@ export interface Tokens {
    * @description Size-28 (56px)
    */
   'Size-28': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0.1s'
+   * @description Animation-duration-1 (0.1s)
+   */
+  'Animation-duration-1': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0.2s'
+   * @description Animation-duration-2 (0.2s)
+   */
+  'Animation-duration-2': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0.3s'
+   * @description Animation-duration-3 (0.3s)
+   */
+  'Animation-duration-3': string;
 }

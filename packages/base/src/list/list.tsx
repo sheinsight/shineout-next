@@ -52,7 +52,8 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     format: props.format,
     prediction: props.prediction,
     disabled: props.disabled,
-    onChange: inputAble.onChange,
+    // TODO: 类型定义需要修改
+    onChange: inputAble.onChange as any,
   });
   const columnData = useMemo(() => {
     // 把数组按照colNum分成多个数组

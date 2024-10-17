@@ -24,6 +24,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const isChecked = listDatum.check(data);
+
   const disabled = listDatum.disabledCheck(data);
   const rootClass = classNames(styles.item, itemClass, disabled && styles.disabled);
 

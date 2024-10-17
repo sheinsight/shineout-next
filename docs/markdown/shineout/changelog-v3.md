@@ -25,6 +25,8 @@
   - 重构后结构 dom 有所变化，className和原来不同，会影响到一些自定义样式
 - Button
   - 布局改为 inline-flex 内部的多个空格会被合并为一个
+- Datepicker
+  - 周选择器默认格式化结果不再为 `RRRR II`，调整为 `gggg-ww`，如有需要配合 `format` 属性还原
 
 
 ### 废弃的特性
@@ -57,6 +59,8 @@
   - 废弃 `fixed` 属性，使用 `virtual` 代替
 - Tag
   - 废弃 `type` 属性，使用 `color` 代替
+- Popover
+  - 废弃 `Popover.Content` 组件，使用boolean属性 `useTextStyle` 代替
 
 
 ### 功能改进

@@ -56,6 +56,7 @@ export default (props: TbodyProps) => {
         striped={props.striped}
         radio={props.radio}
         isCellHover={isCellHover}
+        hover={hover}
         isSelect={props.datum.check(rowSelectMergeStartData[index])}
         handleCellHover={handleCellHover}
         // to update

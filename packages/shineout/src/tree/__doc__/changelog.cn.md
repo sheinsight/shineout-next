@@ -1,3 +1,40 @@
+## 3.4.3
+2024-10-14
+
+### 🐞 BugFix
+
+- 修复 `Tree` 组件在开启 `loader` 情况下设置 `defaultExpandAll` 展开状态异常的问题 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
+- 修复 `Tree` 组件 `setActive` 会触发多次的问题 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
+
+### 💎 Enhancement
+
+- `Tree` 组件 `setActive` 新增第二参当前选中节点数据数的返回 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
+- 新增 `Tree` 类型 `KeygenResult` 导出 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
+
+## 3.4.2
+2024-09-29
+
+### 🐞 BugFix
+
+- 修复 `useTree` hooks 在重复 key 数据情况下后续节点无法正常注册的问题 ([#694](https://github.com/sheinsight/shineout-next/pull/694))
+
+## 3.4.1
+2024-09-20
+
+### 🐞 BugFix
+
+- 修复 `Tree` 一级节点的缩进过大的问题  ([#682](https://github.com/sheinsight/shineout-next/pull/682))
+
+
+
+## 3.4.0
+2024-09-19
+
+### 🆕 Feature
+
+- `Tree` 组件新增`setActive`，与`active`组成高亮的受控功能  ([#665](https://github.com/sheinsight/shineout-next/pull/665))
+
+
 ## 3.1.22
 2024-05-31
 

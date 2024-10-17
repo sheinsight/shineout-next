@@ -1,3 +1,17 @@
+## 3.4.0
+2024-09-19
+
+### 🐞 BugFix
+
+- 修复 `Modal` 方法调用方式时，点击确定或取消按钮没有关闭动画 ([#675](https://github.com/sheinsight/shineout-next/pull/675))
+
+
+2024-08-29
+
+### 🐞 BugFix
+
+- 修复 `Modal` 组件下存在多个`Form`组件时，`Modal.Submit`提交无效的问题 ([#625](https://github.com/sheinsight/shineout-next/pull/625))
+
 ## 3.3.2
 2024-07-29
 

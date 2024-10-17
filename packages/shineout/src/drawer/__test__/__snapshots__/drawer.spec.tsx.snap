@@ -573,6 +573,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </span>
                     <span
                       class="soui-checkbox-desc"
+                      data-soui-role="desc"
                     >
                       chinese
                     </span>
@@ -596,6 +597,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </span>
                     <span
                       class="soui-checkbox-desc"
+                      data-soui-role="desc"
                     >
                       maths
                     </span>
@@ -619,6 +621,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </span>
                     <span
                       class="soui-checkbox-desc"
+                      data-soui-role="desc"
                     >
                       english
                     </span>
@@ -642,6 +645,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </span>
                     <span
                       class="soui-checkbox-desc"
+                      data-soui-role="desc"
                     >
                       physics
                     </span>
@@ -683,11 +687,12 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                           <span
                             class="soui-datePicker-result-text-padding"
                           >
-                            <span
-                              class="soui-datePicker-placeholder"
-                            >
-                              please select date
-                            </span>
+                            <input
+                              autocomplete="off"
+                              placeholder="please select date"
+                              readonly=""
+                              value=""
+                            />
                           </span>
                           <div
                             class="soui-datePicker-result-text-bg"

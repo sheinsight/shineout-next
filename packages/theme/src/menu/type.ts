@@ -118,6 +118,12 @@ export interface MenuTokens {
   menuItemCollapseActiveFontColor: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 菜单选项undefined鼠标点击时的字体颜色
+   */
+  menuItemInpathActiveFontColor: string;
+  /**
+   * @type {string}
    * @token Spacing-16
    * @description 菜单标题模式内边距（水平方向）
    */

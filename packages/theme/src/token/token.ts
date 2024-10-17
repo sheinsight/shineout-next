@@ -186,7 +186,6 @@ const Token: Tokens = {
   'Radius-8': '8px',
   'Radius-12': '12px',
   'Radius-1000': '1000px',
-  'Radius-50%': '50%',
   'Shadow-1': '0px 2px 5px rgba(2, 11, 24, 0.1)',
   'Shadow-2': '0px 4px 10px rgba(2, 11, 24, 0.1)',
   'Shadow-3': '0px 8px 20px rgba(2, 11, 24, 0.1)',
@@ -298,6 +297,9 @@ const Token: Tokens = {
   'Size-26': '52px',
   'Size-27': '54px',
   'Size-28': '56px',
+  'Animation-duration-1': '0.1s',
+  'Animation-duration-2': '0.2s',
+  'Animation-duration-3': '0.3s',
 };
 
 // @ts-ignore

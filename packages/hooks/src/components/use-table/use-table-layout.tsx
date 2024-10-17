@@ -6,6 +6,7 @@ import { addResizeObserver } from '../../utils/dom/element';
 import { TableFormatColumn, BaseTableProps } from './use-table.type';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isNumber } from '../../utils/is';
+import { toNum } from '../../utils/number';
 
 const MIN_RESIZABLE_WIDTH = 20;
 
@@ -61,6 +62,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       return;
     }
     context.clientWidth = scrollEl.clientWidth;
+    if(scrollEl.clientHeight === 0) return
     const overHeight = scrollEl.scrollHeight > scrollEl.clientHeight;
     const overWidth = scrollEl.scrollWidth > context.clientWidth;
     const newScrollBarWidth = overHeight ? scrollEl.offsetWidth - scrollEl.clientWidth : 0;
@@ -103,7 +105,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     setResizeFlag((v) => (v + 1) % 10);
   };
 
-  const changeColGroup = (cols: Array<number | undefined>, adjust: boolean | 'drag') => {
+  const changeColGroup = (cols: Array<number | string | undefined>, adjust: boolean | 'drag') => {
     // 修改`Table`被display:none时，表格头样式错乱的问题
     if(cols && cols.every((v) => v === 0)) return
 
@@ -119,7 +121,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     if (!props.columnResizable) return;
     if (!colgroup) return;
 
-    const deltaX = context.dragWidth - colgroup[index]!;
+    const deltaX = context.dragWidth - toNum(colgroup[index]);
 
     const newColgroup = [...colgroup];
     newColgroup[index] = context.dragWidth;
@@ -169,14 +171,14 @@ const useTableLayout = (props: UseTableLayoutProps) => {
         tempcols = [width];
       } else if (emptyNum === 0) {
         // 都有宽度按照比例分
-        const all = dfWidth.reduce((a, b) => a! + b!, 0)!;
-        tempcols = dfWidth.map((v) => (v! / all) * width);
+        const all = dfWidth.reduce((a, b) => toNum(a) + toNum(b), 0)!;
+        tempcols = dfWidth.map((v) => (toNum(v) / toNum(all)) * width);
       } else {
         // 多余的平分
-        const all = dfWidth.reduce((a, b) => (a || 0) + (b || 0), 0)!;
+        const all = dfWidth.reduce((a, b) => toNum(a) + toNum(b), 0) as number;
         const rest = width - all;
         const agv = rest > 0 ? rest / emptyNum : 0;
-        tempcols = dfWidth.map((v) => (v ? v : agv));
+        tempcols = dfWidth.map((v) => (v ? toNum(v) : agv));
       }
       index += colspanNum;
       newCols = [...newCols, ...tempcols];

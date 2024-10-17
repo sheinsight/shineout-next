@@ -31,6 +31,7 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
     childrenKey,
     inlineNode,
     highlight,
+    defaultExpandAll,
     loader,
     onNodeClick,
     onToggle,
@@ -76,7 +77,7 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
         line={line}
         keygen={keygen}
         listComponent={List}
-
+        defaultExpandAll={defaultExpandAll}
         isControlled={isControlled}
         mode={mode}
         active={active}

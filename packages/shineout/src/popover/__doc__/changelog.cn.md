@@ -1,3 +1,16 @@
+## 3.4.3
+2024-10-14
+
+### 🐞 BugFix
+- 修复 `Popover` 在滚动容器中的极限边界场景下不可见的问题 ([#702](https://github.com/sheinsight/shineout-next/pull/702))
+
+
+## 3.3.7
+2024-09-09
+
+### 🐞 BugFix
+- 修复 `Popover` 组件 children 点击事件冒泡外层的问题 ([#654](https://github.com/sheinsight/shineout-next/pull/654))
+
 ## 3.2.2
 2024-06-21
 

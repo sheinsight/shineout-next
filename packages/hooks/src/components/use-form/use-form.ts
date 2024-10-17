@@ -23,7 +23,14 @@ import {
 
 const emptyObj = {};
 
-import { FormContext, ProviderProps, UseFormProps, UseFormSlotProps } from './use-form.type';
+import {
+  FormContext,
+  ProviderProps,
+  UseFormProps,
+  UseFormSlotProps,
+  ValidateFn,
+  UpdateFn,
+} from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule';
 
@@ -52,7 +59,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     forceSet: true,
   };
 
-
   const preValue = usePrevious(props.value);
 
   const formRef = React.useRef<HTMLFormElement>();
@@ -78,7 +84,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const update = (name?: string | string[]) => {
     if (!name) {
       Object.keys(context.updateMap).forEach((key) => {
-        context.updateMap[key]?.(context.value, context.errors, context.serverErrors);
+        context.updateMap[key]?.forEach((update) => {
+          update(context.value, context.errors, context.serverErrors);
+        });
       });
       Object.keys(context.flowMap).forEach((key) => {
         context.flowMap[key].forEach((update) => {
@@ -88,7 +96,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     } else {
       const names = isArray(name) ? name : [name];
       names.forEach((key) => {
-        context.updateMap[key]?.(context.value, context.errors, context.serverErrors);
+        context.updateMap[key]?.forEach((update) => {
+          update(context.value, context.errors, context.serverErrors);
+        });
         context.flowMap[key]?.forEach((update) => {
           update();
         });
@@ -135,7 +145,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
     const newValue = typeof change === 'function' ? produce(context.value as T, change) : change;
-
     context.value = newValue;
     props.onChange?.(context.value as T);
   });
@@ -147,9 +156,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         : Object.keys(context.validateMap);
       const validates = files2.map((key) => {
         const validateField = context.validateMap[key];
-        return validateField(key, deepGet(context.value, key), context.value, config);
+        return Array.from(validateField).map((validate) =>
+          validate(key, deepGet(context.value, key), context.value, config),
+        );
       });
-      Promise.all(validates)
+      Promise.all(validates.flat())
         .then((results) => {
           const error = results.find((n) => n !== true);
           if (error !== undefined) {
@@ -191,15 +202,24 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   });
 
   const setValue = usePersistFn(
-    (vals: { [key: string]: any }, option: { validate?: boolean } = { validate: false }) => {
+    (
+      vals: { [key: string]: any },
+      option: { validate?: boolean; names?: string[] } = { validate: false },
+    ) => {
       onChange((draft) => {
-        Object.keys(vals).forEach((key) => {
+        const values = Object.keys(vals);
+        // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
+        const nextDraft = Object.assign({}, current(draft), vals);
+        values.forEach((key) => {
           deepSet(draft, key, vals[key], deepSetOptions);
           if (option.validate) {
-            context.validateMap[key]?.(key, vals[key], current(draft));
+            context.validateMap[key]?.forEach((validate) => {
+              validate(key, vals[key], nextDraft);
+            });
           }
         });
       });
+
       const keys = Object.keys(vals);
       keys.forEach((key) => {
         delete context.serverErrors[key];
@@ -318,28 +338,21 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const reset = usePersistFn(() => handleReset({})(undefined as any));
 
   const controlFunc: FormContextType['func'] = useLatestObj({
-    bind: (
-      n: string,
-      df: any,
-      validate: (
-        name: string,
-        v: any,
-        formValue: ObjectType,
-        config: { ignoreBind?: boolean },
-      ) => void,
-      updateFn: (
-        formValue: ObjectType,
-        errors: ObjectType<Error>,
-        serverErrors: ObjectType<Error>,
-      ) => void,
-    ) => {
+    bind: (n: string, df: any, validate: ValidateFn, updateFn: UpdateFn) => {
       if (context.names.has(n)) {
-        console.error(`name "${n}" already exist`);
-        return;
+        console.warn(`name "${n}" already exist`);
       }
       context.names.add(n);
-      context.validateMap[n] = validate;
-      context.updateMap[n] = updateFn;
+
+      if (!context.validateMap[n]) {
+        context.validateMap[n] = new Set();
+      }
+      context.validateMap[n].add(validate);
+
+      if (!context.updateMap[n]) {
+        context.updateMap[n] = new Set();
+      }
+      context.updateMap[n].add(updateFn);
       context.removeArr.delete(n);
       if (df !== undefined && deepGet(context.value, n) === undefined) {
         if (!context.mounted) context.defaultValues[n] = df;
@@ -349,11 +362,21 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       }
       update(n);
     },
-    unbind: (n: string, reserveAble?: boolean) => {
-      delete context.validateMap[n];
-      delete context.defaultValues[n];
-      delete context.updateMap[n];
-      context.names.delete(n);
+    unbind: (n: string, reserveAble?: boolean, validateFiled?: ValidateFn, update?: UpdateFn) => {
+      const validateFieldSet = context.validateMap[n];
+      if (validateFiled && validateFieldSet.has(validateFiled)) {
+        validateFieldSet.delete(validateFiled);
+      }
+
+      const updateFieldSet = context.updateMap[n];
+      if (update && updateFieldSet.has(update)) {
+        updateFieldSet.delete(update);
+      }
+
+      if (validateFieldSet.size === 0 && updateFieldSet.size === 0) {
+        context.names.delete(n);
+        delete context.defaultValues[n];
+      }
       if (!reserveAble && !context.removeLock) {
         addRemove(n);
       }

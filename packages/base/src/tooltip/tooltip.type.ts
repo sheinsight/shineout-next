@@ -19,6 +19,10 @@ export interface TooltipClasses {
    * 弹出层内容
    */
   content: string;
+  /**
+   * 箭头
+   */
+  arrow: string;
 }
 
 export interface TooltipProps
@@ -79,5 +83,5 @@ export interface TooltipProps
    * @cn tooltip 层级
    * @default 1051
    */
-  zIndex?: number
+  zIndex?: number;
 }

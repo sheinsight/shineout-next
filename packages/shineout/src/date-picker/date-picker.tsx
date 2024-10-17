@@ -4,6 +4,7 @@ import {
   useDatePickerStyle,
   useInnerTitleStyle,
   usePopoverStyle,
+  useLinkStyle,
 } from '@sheinx/shineout-style';
 
 import type { BaseDatePickerProps, DatePickerProps, DatePickerValueType } from './date-picker.type';
@@ -14,6 +15,7 @@ const jssStyle = {
   button: useButtonStyle,
   innerTitle: useInnerTitleStyle,
   popover: usePopoverStyle,
+  link: useLinkStyle,
 };
 const BaseDatePicker = <Value extends DatePickerValueType>(props: BaseDatePickerProps<Value>) => {
   return <DatePicker jssStyle={jssStyle} {...props} />;

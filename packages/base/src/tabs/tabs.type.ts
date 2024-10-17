@@ -11,6 +11,7 @@ export interface TabsClasses {
   panelWrapper: string;
   headerWrapper: string;
   headerScroll: string;
+  headerScrollBar: string
   header: string;
   hr: string;
   button: string;

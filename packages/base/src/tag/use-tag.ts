@@ -4,7 +4,7 @@ import { BaseTagProps } from './tag.type';
 
 const Done = 2;
 const Finish = 0;
-const Pendding = 1;
+const Pending = 1;
 
 const { isEmpty, isPromise, isString, isFunc } = util;
 
@@ -45,7 +45,7 @@ const useTag = (props: BaseTagProps) => {
     if (typeof onClose === 'function') {
       callback = onClose(e);
       if (isPromise(callback)) {
-        setDismiss(Pendding);
+        setDismiss(Pending);
         (callback as Promise<any>)
           .then(() => {
             setDismiss(Done);
@@ -66,6 +66,7 @@ const useTag = (props: BaseTagProps) => {
   };
 
   const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     if (disabled || dismiss !== Finish) {
       return;
     }

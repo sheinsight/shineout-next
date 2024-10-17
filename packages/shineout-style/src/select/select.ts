@@ -136,6 +136,16 @@ const selectStyle: JsStyles<SelectClassType> = {
       color: token.selectDisabledPlaceholderColor,
     },
   },
+  triggerHover: {
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      right: 0,
+      left: 0,
+      height: 4,
+      bottom: -4,
+    },
+  },
   popover: {},
   ...resetWrapper,
   resultWrapper: {
@@ -332,9 +342,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginBottom: token.selectPlaceholderMarginY,
   },
   multiple: {
-    '& $optionInner': {
-      paddingRight: token.selectOptionInnerPaddingRight,
-    },
     '& $compressedWrapper': {
       flexWrap: 'nowrap',
     },
@@ -345,6 +352,11 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   multipleCompressedWrapper: {
     flexWrap: 'nowrap',
+  },
+  multipleList: {
+    '& $optionInner': {
+      paddingRight: token.selectOptionInnerPaddingRight,
+    },
   },
   loading: {
     padding: 10,
@@ -433,6 +445,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     margin: 0,
     padding: 0,
     width: '100%',
+  },
+  dynamicList: {
+    '& $optionInner': {
+      textWrap: 'wrap',
+    },
   },
   option: {
     listStyle: 'none',

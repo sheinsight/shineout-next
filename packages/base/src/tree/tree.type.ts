@@ -94,6 +94,12 @@ export interface TreeProps<DataItem, Value extends any[]>
    */
   active?: KeygenResult;
   /**
+   * @en Set active node key
+   * @cn 设置激活节点的key
+   * @version 3.4.0
+   */
+  setActive?: (key: KeygenResult | undefined, data?: DataItem) => void;
+  /**
    * @en If need to double-click to expand
    * @cn 双击是否展开节点
    * @default false

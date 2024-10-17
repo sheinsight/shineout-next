@@ -60,7 +60,9 @@ const treeStyle: JsStyles<TreeClassType> = {
   },
   noline: {
     '& $iconWrapper': {
-      // left: 12,
+      '& $icon': {
+        transition: 'transform .2s cubic-bezier(.34,.69,.1,1)',
+      }
     },
 
     '& $iconWrapper[data-expanded="false"][data-icon="false"]': {
@@ -80,16 +82,34 @@ const treeStyle: JsStyles<TreeClassType> = {
         paddingLeft: 24,
       },
     },
+    '& > $root': {
+      '& > $node': {
+        paddingLeft: 24,
+      }
+    }
   },
   root: {
-    '& > :first-child$node': {
-      '&::before': {
-        top: 18,
+    // '& > :first-child$node': {
+    //   '&::before': {
+    //     top: 18,
+    //   },
+    // },
+    // '& > :last-child$node': {
+    //   '&::before': {},
+    // },
+    '& > $node': {
+      paddingLeft: 12,
+      '& > $contentWrapper > $iconWrapper': {
+        '&[dir=ltr]': { left: 0 },
+        '&[dir=rtl]': { right: 0 },
       },
-    },
-    '& > :last-child$node': {
-      '&::before': {},
-    },
+      '&::before': {
+        display: 'none',
+      },
+      '&::after': {
+        display: 'none',
+      },
+    }
   },
   small: {},
   large: {},
@@ -119,22 +139,6 @@ const treeStyle: JsStyles<TreeClassType> = {
     cursor: 'pointer',
     padding: `0 ${Token.treePaddingX}`,
     borderRadius: Token.treeContentBorderRadius,
-    position: 'relative',
-    '&[data-expanded="true"]::before': {
-      content: '""',
-      position: 'absolute',
-      top: 24,
-      bottom: 0,
-      left: -12,
-      width: 1,
-      background: '#ebebeb',
-    },
-    '&[dir=ltr][data-expanded="true"]::before': {
-      left: -12,
-    },
-    '&[dir=rtl][data-expanded="true"]::before': {
-      right: -12,
-    },
 
     '$contentDisabled &': {
       '& $text': {
@@ -169,6 +173,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     fontWeight: Token.treeFontWeight,
     paddingTop: Token.treeTextPaddingY,
     paddingBottom: Token.treeTextPaddingY,
+    whiteSpace: 'nowrap',
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,
@@ -210,6 +215,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     borderRadius: '50%',
     color: Token.treeItemFontColor,
     cursor: 'pointer',
+    transition: 'background .2s ease',
     // transform: 'rotate(-90deg)',
     '&:hover': {
       background: Token.treeItemHoverBackgroundColor,

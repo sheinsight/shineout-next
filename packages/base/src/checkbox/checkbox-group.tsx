@@ -1,6 +1,6 @@
 import { CheckboxGroupProps } from './checkbox-group.type';
 import { useInputAble, useListSelectMultiple, usePersistFn, util } from '@sheinx/hooks';
-import groupContext from './group-context';
+import GroupContext from './group-context';
 import Checkbox from './checkbox';
 import React from 'react';
 import classNames from 'classnames';
@@ -39,6 +39,10 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
       } else {
         datum.remove(raw);
       }
+
+      if (children && React.isValidElement(children)) {
+        children.props.onChange?.(_, checked, children.props.htmlValue);
+      }
     },
   );
 
@@ -58,12 +62,22 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
     return '';
   };
 
-  const providerValue = {
+  const providerValue: {
+    checked: (d: DataItem) => boolean;
+    onChange: (_: DataItem | undefined, checked: boolean, raw: DataItem) => void;
+    size?: 'small' | 'default' | 'large';
+    disabled?: boolean | ((data: DataItem) => boolean) | undefined;
+  } = {
     checked: isChecked,
     onChange: handleItemChange,
-    disabled,
     size,
   };
+
+  // 没有 disabled 无需透传，否则会影响下层 disabled 覆盖优先级
+  if ('disabled' in props0) {
+    providerValue.disabled = disabled;
+  }
+
   const groupClass = classNames(
     className,
     checkboxStyle?.group,
@@ -72,7 +86,7 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
   if (props.data === undefined) {
     return (
       <div className={groupClass} style={style}>
-        <groupContext.Provider value={providerValue}>{children}</groupContext.Provider>
+        <GroupContext.Provider value={providerValue}>{children}</GroupContext.Provider>
       </div>
     );
   } else {

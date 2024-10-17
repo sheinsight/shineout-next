@@ -5,6 +5,7 @@ import { getPosition } from '../../utils/position';
 import usePersistFn from '../../common/use-persist-fn';
 import popupContext from './popup-context';
 
+
 const usePopup = (props: BasePopupProps) => {
   const {
     disabled,
@@ -21,6 +22,7 @@ const usePopup = (props: BasePopupProps) => {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
+  const arrowRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
     bindChild(popupRef);
@@ -55,11 +57,15 @@ const usePopup = (props: BasePopupProps) => {
   const position = (isPositionControl ? props.position : positionState) as PositionType;
 
   const updatePosition = usePersistFn(() => {
-    if (isPositionControl) return;
-    if (props.position === 'auto' || !props.position) {
-      const newPosition = getPosition(targetRef.current, props.priorityDirection, autoMode);
-      if (newPosition !== position) setPositionState(newPosition);
-    }
+    // if (isPositionControl) return;
+    // if (props.position === 'auto' || !props.position) {
+    const newPosition = getPosition(
+      targetRef.current,
+      props.priorityDirection,
+      autoMode,
+      popupRef.current || undefined,
+    );
+    if (newPosition !== position) setPositionState(newPosition);
   });
 
   useEffect(() => {
@@ -194,6 +200,7 @@ const usePopup = (props: BasePopupProps) => {
     position,
     targetRef,
     popupRef,
+    arrowRef,
     getTargetProps,
     openPop,
     closePop,

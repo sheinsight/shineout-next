@@ -165,6 +165,8 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     },
   },
   wrapper: {
+    flex: 1,
+    minWidth: 0,
     lineHeight: Token.lineHeightDynamic,
   },
   inline: {
@@ -193,9 +195,6 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     padding: `0 ${Token.tagSmallPaddingX}`,
     fontWeight: Token.tagSmallFontWeight,
     borderRadius: Token.tagSmallBorderRadius,
-    '& $container': {
-      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
-    },
     '& $wrapper': {
       lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
     },

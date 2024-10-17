@@ -5,6 +5,7 @@ import Icons from '../icons';
 import React from 'react';
 import { useConfig } from '../config';
 import PickerTitle from './pickerTitle';
+import Confirm from './confirm';
 
 const Month = (props: MonthProps) => {
   const { jssStyle } = props;
@@ -71,7 +72,7 @@ const Month = (props: MonthProps) => {
               }
         }
         onClick={() => {
-          func.handleMonthClick(item);
+          func.handleMonthClick(item, props.needConfirm);
         }}
       >
         <div className={styles?.pickerCellContent}>
@@ -125,6 +126,9 @@ const Month = (props: MonthProps) => {
           </tbody>
         </table>
       </div>
+      {props.needConfirm && !props.range && (
+        <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
+      )}
     </div>
   );
 };
