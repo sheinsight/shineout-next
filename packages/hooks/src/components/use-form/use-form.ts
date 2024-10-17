@@ -19,6 +19,7 @@ import {
   shallowEqual,
   wrapFormError,
   deepClone,
+  getAllKeyPaths,
 } from '../../utils';
 
 const emptyObj = {};
@@ -220,11 +221,13 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         });
       });
 
-      const keys = Object.keys(vals);
-      keys.forEach((key) => {
+      // 获取vals的所有key,包括嵌套对象的key
+      const fullKeyPaths = getAllKeyPaths(vals);
+
+      fullKeyPaths.forEach((key) => {
         delete context.serverErrors[key];
       });
-      update(keys);
+      update(fullKeyPaths);
     },
   );
 
@@ -285,8 +288,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    submit();
-    other?.onSubmit?.(e);
+    setTimeout(() => {
+      submit();
+      other?.onSubmit?.(e);
+    }, 10);
   };
 
   const validateFieldset = (name: string) => {

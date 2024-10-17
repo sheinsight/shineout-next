@@ -25,9 +25,7 @@ import useTip from '../common/use-tip';
 import { getLocale, useConfig } from '../config';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
-const preventDefault = (e: React.MouseEvent) => {
-  e.preventDefault();
-};
+
 const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
@@ -656,11 +654,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       onBlur={handleBlur}
       onFocus={handleFocus}
       onKeyDown={handleKeyDown}
-      onMouseDown={(e) => {
-        if (focused && e.target !== inputRef.current) {
-          e.preventDefault();
-        }
-      }}
     >
       {tipNode}
       {renderResult()}
@@ -678,7 +671,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       >
         <AnimationList
           onRef={popupRef}
-          onMouseDown={preventDefault}
           show={open}
           className={classNames(styles?.pickerWrapper)}
           display={'block'}

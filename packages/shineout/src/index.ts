@@ -52,6 +52,7 @@ export { default as TreeSelect } from './tree-select';
 export { default as Upload } from './upload';
 
 export { setConfig, config, setLocale, setIcons } from '@sheinx/base';
+export type { ConfigOption } from '@sheinx/base';
 export { setToken, useToken } from '@sheinx/theme';
 export { JssProvider, SheetsRegistry, setJssConfig } from '@sheinx/shineout-style';
 export * as utls from './utils';
@@ -59,4 +60,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.4.3' };
+export default { version: '3.4.4-beta.1' };
