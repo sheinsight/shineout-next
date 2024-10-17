@@ -34,9 +34,6 @@ export interface TextareaClasses {
   resize: string;
   shadow: string;
   info: string;
-  infoError: string;
-  bottomLeft:string;
-  bottomRight:string;
   footer: string;
 }
 
