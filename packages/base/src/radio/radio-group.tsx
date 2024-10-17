@@ -7,7 +7,11 @@ import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 import Button from '../button/button';
 
+const defaultFormat = (d: any) => d;
+const defaultRenderItem = (d: any) => d;
+
 const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
+  const {format = defaultFormat, renderItem = defaultRenderItem} = props0
   const props = useWithFormConfig(props0);
 
   const { children, className, button, block, keygen, jssStyle, style, size, disabled  } = props;
@@ -26,7 +30,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
     onChange: inputAbleProps.onChange,
     prediction: props.prediction,
     disabled,
-    format: props.format,
+    format: format,
     keygen: props.keygen,
     data: props.data || ([] as DataItem[]),
   };
@@ -46,7 +50,6 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
   });
 
   const getContent = (d: DataItem, index: number) => {
-    const { renderItem } = props;
     if (typeof renderItem === 'string') {
       return d[renderItem] as unknown as React.ReactNode;
     }
@@ -133,10 +136,6 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
       {Radios}
     </div>
   );
-};
-Group.defaultProps = {
-  format: (d: any) => d,
-  renderItem: (d: any) => d,
 };
 
 export default Group;
