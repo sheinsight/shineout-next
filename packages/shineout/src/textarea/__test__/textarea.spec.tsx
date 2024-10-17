@@ -29,7 +29,6 @@ const {
   wrapperSmall: textareaSmallClassName,
   shadow: textareaShadowClassName,
   info: textareaInfoClassName,
-  infoError: textareaInfoErrorClassName,
   footer: textareaFooterClassName,
   wrapperUnderline: textareaUnderlineClassName,
   wrapperNoBorder: textareaNoBorderClassName,
@@ -152,7 +151,7 @@ describe('Textarea[Info:function]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    classLengthTest(container, textareaInfoClassName, 1);
+    expect(document.querySelectorAll(textareaInfoClassName).length).toBe(1);
   });
   test('should render tip we want', () => {
     const { container } = render(<TextareaInfoFunction />);
@@ -161,11 +160,13 @@ describe('Textarea[Info:function]', () => {
     fireEvent.change(textareaWrapper, {
       target: { value: 'test' },
     });
-    textContentTest(container.querySelector(textareaInfoClassName)!, 'total is  4');
+    // 示例中把提示信息render到body上了，所以这里需要document.querySelector
+    textContentTest(document.querySelector(textareaInfoClassName)!, 'total is  4');
     fireEvent.change(textareaWrapper, {
       target: { value: 'testtesttesttesttesttest' },
     });
-    classTest(container.querySelector(textareaInfoClassName)!, textareaInfoErrorClassName);
+    // 错误信息时，期望container下没有textareaInfoClassName的元素
+    expect(document.querySelectorAll(textareaInfoClassName).length).toBe(0);
   });
 });
 describe('Textarea[Info:number]', () => {
@@ -178,8 +179,7 @@ describe('Textarea[Info:number]', () => {
   test('should render when not set value', () => {
     const { container } = render(<Textarea info={20} />);
     expect(
-      container.querySelectorAll(textareaInfoClassName).length ||
-        container.querySelectorAll('.' + textareaInfoErrorClassName).length,
+      container.querySelectorAll(textareaInfoClassName).length
     ).toBe(0);
   });
   test('should render tip', () => {
@@ -196,7 +196,8 @@ describe('Textarea[Info:number]', () => {
     fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: '1234456789012345678901' },
     });
-    textContentTest(container.querySelector('.' + textareaInfoErrorClassName)!, '22 / 20');
+    const selector = `.soui-popover-wrapper[data-soui-type="error"] .soui-popover-text`
+    textContentTest(container.querySelector(selector)!, '22 / 20');
   });
 });
 describe('Textarea[Trim]', () => {
