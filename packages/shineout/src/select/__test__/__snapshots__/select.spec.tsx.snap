@@ -856,6 +856,53 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
 exports[`Select[Base] should render correctly about filter 1`] = `
 <div>
   <div
+    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    data-soui-input-border="true"
+    style="width: 200px;"
+  >
+    <div
+      class="soui-select-result-wrapper soui-select-wrapper-padding-box soui-select-wrapper-inner-title-top soui-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="soui-select-result"
+      >
+        <div
+          class="soui-select-result-text-wrapper"
+        >
+          <input
+            autocomplete="off"
+            placeholder="Select Color"
+            style="width: 100%;"
+            value=""
+          />
+          <span
+            class="soui-select-input-mirror"
+          />
+        </div>
+      </div>
+      <div
+        class="soui-select-icon-wrapper"
+      >
+        <span
+          class="soui-select-arrow-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div
     class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
@@ -871,7 +918,7 @@ exports[`Select[Base] should render correctly about filter 1`] = `
         >
           <input
             autocomplete="off"
-            placeholder="Select Color"
+            placeholder="Select Multiple Color"
             style="width: 100%;"
             value=""
           />

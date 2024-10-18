@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect, RefCallback, useCallback } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -8,6 +8,10 @@ import More from './result-more';
 import Tag from '../tag';
 
 const { isObject, isEmpty, isNumber, isUnMatchedData, isFunc, isArray } = util;
+
+const getValueArr = (v: any) => {
+  return (isArray(v) ? v : [v]).filter((v) => v !== undefined && v !== null);
+};
 
 const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const {
@@ -25,6 +29,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     placeholder,
     filterText,
     inputText,
+    inputRef,
     compressed,
     compressedBound,
     compressedClassName,
@@ -43,7 +48,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onResultItemClick,
     data,
   } = props;
-
   const value = (
     [null, undefined].includes(valueProp as any)
       ? []
@@ -60,7 +64,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const prevMore = useRef(more);
   const showInput = allowOnFilter;
   const mounted = useRef(false);
-
   const styles = props.classes;
   const rootClass = classNames(
     styles.resultTextWrapper,
@@ -243,10 +246,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
-  const getValueArr = (v: any) => {
-    return (isArray(v) ? v : [v]).filter((v) => v !== undefined && v !== null);
-  };
-
   const renderMultipleResult = () => {
     if (isEmptyResult()) return renderNbsp();
     // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
@@ -326,8 +325,18 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         onFilter?.('', 'blur');
       }, 400);
     }
+
+    // 单选场景下，焦点时自动选中input文本
+    if(focus && showInput && mounted.current){
+      const nextValue = getValueArr(value);
+      props.setInputText(nextValue[0]);
+
+      setTimeout(() => {
+        inputRef?.current?.select();
+      }, 10);
+    }
     mounted.current = true;
-  }, [focus]);
+  }, [focus, showInput]);
 
   useLayoutEffect(() => {
     handleResetMore();

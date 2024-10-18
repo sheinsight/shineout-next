@@ -554,6 +554,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           allowOnFilter={showInput}
           focusSelected={focusSelected}
           inputText={inputText}
+          inputRef={inputRef}
           filterText={filterText}
           onFilter={handleFilter}
           onRef={inputRef}
