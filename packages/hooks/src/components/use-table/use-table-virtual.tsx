@@ -9,10 +9,12 @@ interface UseTableVirtualProps {
   rowHeight: number;
   scrollRef: React.RefObject<HTMLDivElement>;
   innerRef: React.RefObject<HTMLDivElement>;
+  tableRef: React.RefObject<HTMLDivElement>;
   scrollLeft?: number;
   disabled?: boolean;
   isRtl?: boolean;
   columns: TableFormatColumn<any>[];
+  bordered?: boolean;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -255,6 +257,40 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   });
 
+  const scrollColumnByLeft = usePersistFn((targetLeft: number) => {
+    const scrollEl = props.scrollRef.current;
+    if (!scrollEl) return;
+    // scrollLeft max
+    const max = scrollEl.scrollWidth - scrollEl.clientWidth;
+    const left = Math.min(targetLeft, max);
+    if(left === scrollEl.scrollLeft) return;
+    setLeft(left);
+    scrollEl.scrollLeft = left;
+  });
+  const scrollColumnIntoView = usePersistFn((colKey: string | number) => {
+    if(!colKey)  return;
+    const tableEl = props.tableRef.current;
+    const scrollEl = props.scrollRef.current;
+    const borderedWidth = props.bordered ? 1 : 0;
+    if(tableEl && scrollEl) {
+      const thDom = tableEl.querySelector(`th[data-col-key="${colKey}"]`);
+      if(thDom) {
+        // target is fixed th
+        if(thDom.classList.contains('soui-table-cell-fixed-left') || thDom.classList.contains('soui-table-cell-fixed-right')) return;
+        // fixed left th
+        const fixedThDom = tableEl.querySelectorAll('th.soui-table-cell-fixed-left');
+        let fixedThTotalWidth = 0;
+        for (let i = 0, len = fixedThDom.length; i < len; i++) {
+          fixedThTotalWidth += fixedThDom[i].getBoundingClientRect().width;
+        }
+        const domRect = thDom.getBoundingClientRect();
+        const contentRect = tableEl.getBoundingClientRect();
+        const targetRectLeft = domRect.left - contentRect.left - fixedThTotalWidth - borderedWidth;
+        scrollColumnByLeft(scrollEl.scrollLeft + targetRectLeft);
+      }
+    }
+  })
+
   useEffect(() => {
     const scrollRefHeight = props.scrollRef.current ? props.scrollRef.current.clientHeight : 0;
     const tableRefHeight = props.innerRef.current ? props.innerRef.current.clientHeight : 0;
@@ -326,6 +362,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     setRowHeight,
     getTranslate,
     scrollToIndex,
+    scrollColumnByLeft,
+    scrollColumnIntoView,
   };
 };
 

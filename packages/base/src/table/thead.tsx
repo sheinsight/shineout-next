@@ -175,6 +175,7 @@ export default (props: TheadProps) => {
           key={col.key}
           style={fixedStyle}
           dir={config.direction}
+          data-col-key={col.key}
         >
           <div className={classNames(sorter && tableClasses?.hasSorter)}>
             {renderTitle(colTemp.title)}

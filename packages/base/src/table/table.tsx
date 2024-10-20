@@ -208,8 +208,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     rowHeight: props.rowHeight || 40,
     scrollRef: scrollRef,
     innerRef: tbodyRef,
+    tableRef,
     scrollLeft: props.scrollLeft,
     isRtl,
+    bordered: props.bordered,
   });
 
   // handle head and  foot scroll
@@ -539,6 +541,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableFunc = useLatestObj({
     scrollToIndex: virtualInfo.scrollToIndex,
     getRenderIndexByData: getRenderIndexByData,
+    scrollColumnIntoView: virtualInfo.scrollColumnIntoView,
+    scrollColumnByLeft: virtualInfo.scrollColumnByLeft,
   });
 
   useEffect(() => {
