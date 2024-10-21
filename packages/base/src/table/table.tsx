@@ -204,15 +204,13 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     disabled: !virtual,
     data: treeData,
     columns,
+    colgroup,
     rowsInView: props.rowsInView || 20,
     rowHeight: props.rowHeight || 40,
     scrollRef: scrollRef,
     innerRef: tbodyRef,
-    tableRef,
     scrollLeft: props.scrollLeft,
     isRtl,
-    bordered: props.bordered,
-    tableClasses,
   });
 
   // handle head and  foot scroll

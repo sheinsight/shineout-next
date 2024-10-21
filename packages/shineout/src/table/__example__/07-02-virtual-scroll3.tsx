@@ -54,7 +54,7 @@ const App: React.FC = () => {
   const [table, setTable] = useState<any>();
 
   const [state, setState] = useState({
-    key: '',
+    key: 0,
   });
 
   const handleScroll = () => {
@@ -62,7 +62,7 @@ const App: React.FC = () => {
       table.scrollColumnIntoView(state.key);
   };
 
-  const handleIndexChange = ({ key }: { key: string }) => {
+  const handleIndexChange = ({ key }: { key: number }) => {
     setState({ key });
   };
 
@@ -73,7 +73,7 @@ const App: React.FC = () => {
   return (
     <div>
       <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
-        <Input width={200} name='key' placeholder='输入列key' />
+        <Input.Number width={200} name='key' min={0} max={columns.length - 1} placeholder='输入列key' />
         <Button type='primary' htmlType='submit'>
           Scroll
         </Button>

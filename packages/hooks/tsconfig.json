@@ -8,7 +8,6 @@
     "baseUrl": "./",
     "paths": {
       "@sheinx/hooks": ["./src/index"],
-      "@sheinx/base": ["../base/src/index"]
     }
   }
 }

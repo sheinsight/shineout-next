@@ -1,7 +1,6 @@
 import { usePersistFn } from '../../common/use-persist-fn';
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { TableFormatColumn } from './use-table.type';
-import type { TableClasses } from '@sheinx/base';
 
 const MAX_ROW_SPAN = 200;
 interface UseTableVirtualProps {
@@ -10,13 +9,11 @@ interface UseTableVirtualProps {
   rowHeight: number;
   scrollRef: React.RefObject<HTMLDivElement>;
   innerRef: React.RefObject<HTMLDivElement>;
-  tableRef: React.RefObject<HTMLDivElement>;
   scrollLeft?: number;
   disabled?: boolean;
   isRtl?: boolean;
   columns: TableFormatColumn<any>[];
-  bordered?: boolean;
-  tableClasses?: TableClasses
+  colgroup: (number | string | undefined)[];
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -271,29 +268,18 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     scrollEl.scrollLeft = left;
   });
   const scrollColumnIntoView = usePersistFn((colKey: string | number) => {
-    if(!colKey)  return;
-    const tableEl = props.tableRef.current;
-    const scrollEl = props.scrollRef.current;
-    const borderWidth = props.bordered ? 1 : 0;
-    if(tableEl && scrollEl) {
-      const thDom = tableEl.querySelector(`th[data-col-key="${colKey}"]`);
-      if(thDom) {
-        const fixedLeftCls = props?.tableClasses?.cellFixedLeft || '';
-        const fixedRightCls = props?.tableClasses?.cellFixedRight || '';
-        // target is fixed th
-        if(thDom.classList.contains(fixedLeftCls) || thDom.classList.contains(fixedRightCls)) return;
-        // fixed left th
-        const fixedThDom = tableEl.querySelectorAll(`th.${fixedLeftCls}`);
-        let fixedThTotalWidth = 0;
-        for (let i = 0, len = fixedThDom.length; i < len; i++) {
-          fixedThTotalWidth += fixedThDom[i].getBoundingClientRect().width;
-        }
-        const domRect = thDom.getBoundingClientRect();
-        const contentRect = tableEl.getBoundingClientRect();
-        const targetRectLeft = domRect.left - contentRect.left - fixedThTotalWidth - borderWidth;
-        scrollColumnByLeft(scrollEl.scrollLeft + targetRectLeft);
+    if(colKey === undefined)  return;
+    const col = props.columns.find((col) => col.key === colKey);
+    if(!col || col.fixed) return;
+    let left = 0;
+    for (let i = 0, len = col.index; i < len; i++) {
+      if(props.columns[i].fixed) {
+        left = 0;
+      } else {
+        left += props.colgroup[i] as number;
       }
     }
+    scrollColumnByLeft(left);
   })
 
   useEffect(() => {
