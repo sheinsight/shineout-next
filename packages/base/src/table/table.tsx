@@ -204,6 +204,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     disabled: !virtual,
     data: treeData,
     columns,
+    colgroup,
     rowsInView: props.rowsInView || 20,
     rowHeight: props.rowHeight || 40,
     scrollRef: scrollRef,
@@ -539,6 +540,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableFunc = useLatestObj({
     scrollToIndex: virtualInfo.scrollToIndex,
     getRenderIndexByData: getRenderIndexByData,
+    scrollColumnIntoView: virtualInfo.scrollColumnIntoView,
+    scrollColumnByLeft: virtualInfo.scrollColumnByLeft,
   });
 
   useEffect(() => {
