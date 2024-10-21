@@ -212,6 +212,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     scrollLeft: props.scrollLeft,
     isRtl,
     bordered: props.bordered,
+    tableClasses,
   });
 
   // handle head and  foot scroll

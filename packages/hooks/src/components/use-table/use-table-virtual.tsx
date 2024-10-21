@@ -1,6 +1,7 @@
 import { usePersistFn } from '../../common/use-persist-fn';
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { TableFormatColumn } from './use-table.type';
+import type { TableClasses } from '@sheinx/base';
 
 const MAX_ROW_SPAN = 200;
 interface UseTableVirtualProps {
@@ -15,6 +16,7 @@ interface UseTableVirtualProps {
   isRtl?: boolean;
   columns: TableFormatColumn<any>[];
   bordered?: boolean;
+  tableClasses?: TableClasses
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -272,21 +274,23 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     if(!colKey)  return;
     const tableEl = props.tableRef.current;
     const scrollEl = props.scrollRef.current;
-    const borderedWidth = props.bordered ? 1 : 0;
+    const borderWidth = props.bordered ? 1 : 0;
     if(tableEl && scrollEl) {
       const thDom = tableEl.querySelector(`th[data-col-key="${colKey}"]`);
       if(thDom) {
+        const fixedLeftCls = props?.tableClasses?.cellFixedLeft || '';
+        const fixedRightCls = props?.tableClasses?.cellFixedRight || '';
         // target is fixed th
-        if(thDom.classList.contains('soui-table-cell-fixed-left') || thDom.classList.contains('soui-table-cell-fixed-right')) return;
+        if(thDom.classList.contains(fixedLeftCls) || thDom.classList.contains(fixedRightCls)) return;
         // fixed left th
-        const fixedThDom = tableEl.querySelectorAll('th.soui-table-cell-fixed-left');
+        const fixedThDom = tableEl.querySelectorAll(`th.${fixedLeftCls}`);
         let fixedThTotalWidth = 0;
         for (let i = 0, len = fixedThDom.length; i < len; i++) {
           fixedThTotalWidth += fixedThDom[i].getBoundingClientRect().width;
         }
         const domRect = thDom.getBoundingClientRect();
         const contentRect = tableEl.getBoundingClientRect();
-        const targetRectLeft = domRect.left - contentRect.left - fixedThTotalWidth - borderedWidth;
+        const targetRectLeft = domRect.left - contentRect.left - fixedThTotalWidth - borderWidth;
         scrollColumnByLeft(scrollEl.scrollLeft + targetRectLeft);
       }
     }
