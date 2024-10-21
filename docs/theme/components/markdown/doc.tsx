@@ -4,17 +4,19 @@ import Example from '../example';
 import store, { dispatch } from '../../store';
 import { useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import { Example as ExampleType } from 'docs/types';
+import { Example as ExampleType, MarkdownProps } from 'docs/types';
 import Anchor from 'docs/theme/layout/desktop/anchor';
 import useStyles from '../style';
+import Collocator from '../collocator';
 
 interface DocProps {
   examples: ExampleType[];
   name: string;
+  api: MarkdownProps['api']
 }
 
 const Doc = (props: DocProps) => {
-  const { examples } = props;
+  const { examples, api } = props;
   const classes = useStyles();
   const [anchor, setAnchor] = useState<string[]>([]);
   const [, setHash] = useState('');
@@ -48,6 +50,7 @@ const Doc = (props: DocProps) => {
   return (
     <div className={classes.doc} id='doc'>
       <div className='examples' id={`examples-${props.name.toLocaleLowerCase()}`}>
+      <Collocator api={api} name={props.name} />
         {examples.map((example, index) => {
           return (
             <Example
