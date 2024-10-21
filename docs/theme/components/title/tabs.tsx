@@ -46,7 +46,7 @@ const DocTabs = (props: { showGuide: boolean }) => {
   }, [location.pathname]);
   return (
     <div className={classes.tabs}>
-      <Tabs shape='fill' autoFill active={activeTab} onChange={handleChangeTab}>
+      <Tabs shape='fill' autoFill active={activeTab} onChange={handleChangeTab as (key: string | number) => void}>
         {tabs.map((tab, index) => {
           if (tab.path === 'guide' && !props.showGuide) return null;
 

@@ -21,7 +21,7 @@ const Markdown = (props: MarkdownProps) => {
     <div className={classes.pages}>
       <Title title={title} describe={describe} guides={guides}></Title>
       <React.Fragment key={header.name}>
-        {activeTab === 'examples' && <Doc examples={examples} name={header.name}></Doc>}
+        {activeTab === 'examples' && <Doc examples={examples} name={header.name} api={api}></Doc>}
         {activeTab === 'api' && <Api api={api}></Api>}
         {activeTab === 'guide' && <Guide guides={guides}></Guide>}
         {activeTab === 'changelog' && <Changelog changelog={changelog}></Changelog>}
