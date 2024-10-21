@@ -83,6 +83,8 @@ export interface TableClasses {
 export interface TableRef {
   scrollToIndex: (index: number, cb?: () => void) => void;
   getRenderIndexByData: (data: any) => number;
+  scrollColumnIntoView: (colKey: string | number) => void;
+  scrollColumnByLeft: (left: number) => void;
   [key: string]: any;
 }
 
