@@ -258,6 +258,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   });
 
   const scrollColumnByLeft = usePersistFn((targetLeft: number) => {
+    if(targetLeft < 0) return;
     const scrollEl = props.scrollRef.current;
     if (!scrollEl) return;
     // scrollLeft max
