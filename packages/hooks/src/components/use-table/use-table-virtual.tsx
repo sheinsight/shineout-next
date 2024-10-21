@@ -13,6 +13,7 @@ interface UseTableVirtualProps {
   disabled?: boolean;
   isRtl?: boolean;
   columns: TableFormatColumn<any>[];
+  colgroup: (number | string | undefined)[];
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -255,6 +256,32 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   });
 
+  const scrollColumnByLeft = usePersistFn((targetLeft: number) => {
+    if(targetLeft < 0) return;
+    const scrollEl = props.scrollRef.current;
+    if (!scrollEl) return;
+    // scrollLeft max
+    const max = scrollEl.scrollWidth - scrollEl.clientWidth;
+    const left = Math.min(targetLeft, max);
+    if(left === scrollEl.scrollLeft) return;
+    setLeft(left);
+    scrollEl.scrollLeft = left;
+  });
+  const scrollColumnIntoView = usePersistFn((colKey: string | number) => {
+    if(colKey === undefined)  return;
+    const col = props.columns.find((col) => col.key === colKey);
+    if(!col || col.fixed) return;
+    let left = 0;
+    for (let i = 0, len = col.index; i < len; i++) {
+      if(props.columns[i].fixed) {
+        left = 0;
+      } else {
+        left += props.colgroup[i] as number;
+      }
+    }
+    scrollColumnByLeft(left);
+  })
+
   useEffect(() => {
     const scrollRefHeight = props.scrollRef.current ? props.scrollRef.current.clientHeight : 0;
     const tableRefHeight = props.innerRef.current ? props.innerRef.current.clientHeight : 0;
@@ -326,6 +353,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     setRowHeight,
     getTranslate,
     scrollToIndex,
+    scrollColumnByLeft,
+    scrollColumnIntoView,
   };
 };
 
