@@ -1,12 +1,14 @@
 import React from 'react';
 import useStyle from '../style';
-import { Collapse, Form, Input, Select, Switch } from 'shineout';
+import { Collapse, Form, Input, Select, Switch, Tooltip } from 'shineout';
 import { ComponentType, IInputType, type IItem } from '../types';
 import TextareaWithClear from './textarea-with-clear';
 import SwitchWithOther from './switch-with-other';
 import InputType from './input-type';
 import InputNumber from './input-number';
 import classNames from 'classnames';
+import { infoIcon } from '../icon';
+import { isObject } from '../utils/is';
 
 export interface ConfigurationBarProps {
   itemList: IItem[] | Record<string, IItem[]>;
@@ -35,15 +37,15 @@ const ConfigurationBar = (props: ConfigurationBarProps) => {
 
   const elementMap: Record<ComponentType, (d: IItem, parent?: string) => React.ReactElement> = {
     [ComponentType.SWITCH]: (d: IItem, parent?: string) => <Switch name={d.name} />,
-    // TODO: select should include customize functions
     [ComponentType.SELECT]: (d: IItem, parent?: string) => (
       <Select
+        multiple={d.multiple}
         absolute 
         clearable 
         keygen
         data={d.value} 
         name={d.name}
-        format={(v) => isFunctionString(v as string) || (v === 'true' ? true : (v === 'false' ? false : v))}
+        format={(v) => isFunctionString(v as string) || (v === 'null' ? null : (v === 'true' ? true : (v === 'false' ? false : v)))}
       />
     ),
     [ComponentType.TEXTAREA]: (d: IItem, parent?: string) => (
@@ -118,11 +120,20 @@ const ConfigurationBar = (props: ConfigurationBarProps) => {
     })
   }
 
-  const renderItem = (d: IItem, type?: string) => (
-    <Form.Item label={d.alias || d.name} className={styles.formItem} key={d.name}>
-      {elementMap?.[d.type]?.(d, type)}
-    </Form.Item>
-  );
+  const renderItem = (d: IItem, type?: string) => {
+    return (
+      <Form.Item label={!d.initValue ? (d.alias || d.name) : (
+        <div className={styles.extraFormItem}>
+          <span className={styles.extraFormItemName}>{d.alias || d.name}</span>
+          <Tooltip className={styles.extraFormItemTip} tip={(Array.isArray(d.initValue) || isObject(d.initValue)) ? JSON.stringify(d.initValue) : `${d.initValue}`}>
+            {infoIcon}
+          </Tooltip>
+        </div>
+      )} className={styles.formItem} key={d.name}>
+        {elementMap?.[d.type]?.(d, type)}
+      </Form.Item>
+    );
+  }
 
   const renderAreaByType = (list: Record<ComponentType, IItem[]>, type?: string) => Object.keys(list).map((key) =>
     list[key as ComponentType].length ? (
@@ -141,7 +152,7 @@ const ConfigurationBar = (props: ConfigurationBarProps) => {
     }, {})
 
     return (
-      <Form labelWidth={80} value={config} onChange={(v) => setConfig(v)} labelAlign='left' className={classNames(styles.form, styles.formCollapse)}>
+      <Form labelVerticalAlign={'middle'} value={config} onChange={(v) => setConfig(v)} labelAlign='left' className={classNames(styles.form, styles.formCollapse)}>
         <Collapse border={false} className={styles.collapse}>
           {Object.keys(itemListFilter).map((type, index) => (
             <Collapse.Item title={type} keygen={`${index}`} key={index}>
@@ -158,7 +169,7 @@ const ConfigurationBar = (props: ConfigurationBarProps) => {
   const itemListFilter = itemListByType(itemList as IItem[]);
 
   return (
-    <Form labelWidth={80} value={config} onChange={(v) => setConfig(v)} labelAlign='left' className={styles.form}>
+    <Form labelVerticalAlign={'middle'} value={config} onChange={(v) => setConfig(v)} labelAlign='left' className={styles.form}>
       {renderAreaByType(itemListFilter)}
     </Form>
   );

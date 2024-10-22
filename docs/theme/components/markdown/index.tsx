@@ -6,6 +6,7 @@ import { MarkdownProps } from 'docs/types';
 
 import Doc from './doc';
 import Api from './api';
+import Playground from './playground';
 import Guide from './guide';
 import Changelog from './changelog';
 
@@ -21,10 +22,11 @@ const Markdown = (props: MarkdownProps) => {
     <div className={classes.pages}>
       <Title title={title} describe={describe} guides={guides}></Title>
       <React.Fragment key={header.name}>
-        {activeTab === 'examples' && <Doc examples={examples} name={header.name} api={api}></Doc>}
+        {activeTab === 'examples' && <Doc examples={examples} name={header.name}></Doc>}
         {activeTab === 'api' && <Api api={api}></Api>}
         {activeTab === 'guide' && <Guide guides={guides}></Guide>}
         {activeTab === 'changelog' && <Changelog changelog={changelog}></Changelog>}
+        {activeTab === 'playground' && <Playground examples={examples[0]} api={api} name={header.name} />}
       </React.Fragment>
     </div>
   );

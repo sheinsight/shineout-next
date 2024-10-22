@@ -21,6 +21,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
+    // marginTop: 248
   },
   header: {
     height: '48px',
@@ -79,6 +80,7 @@ const styles = {
   formItem: {
     '& .soui-form-item-label': {
       color: token.colorTextSecondary,
+      maxWidth: '112px'
     },
     '& .soui-form-item-control': {
       display: 'flex',
@@ -121,6 +123,31 @@ const styles = {
   textarea: {
     height: '60px',
     overflow: 'auto',
+  },
+  codesandBox: {
+    '& .icon': {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    '& svg': {
+      width: 16,
+      color: token.colorTextSecondary,
+    }
+  },
+  extraFormItem: {
+    display: 'flex',
+    alignItems: 'center',
+
+    gap: '8px',
+    '& svg': {
+      flexShrink: 0,
+    }
+  },
+  extraFormItemName: {
+
+  },
+  extraFormItemTip: {
+
   }
 };
 

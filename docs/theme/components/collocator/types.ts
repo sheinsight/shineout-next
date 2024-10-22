@@ -1,3 +1,5 @@
+import { MarkdownProps, Example } from 'docs/types';
+
 export enum ComponentType {
   SWITCH = 'switch',
   SELECT = 'select',
@@ -22,6 +24,7 @@ export interface IItem {
   required?: boolean;
   initValue?: any;
   alias?: string;
+  multiple?: boolean;
   notHideDefaultValue?: boolean
 }
 
@@ -38,3 +41,12 @@ export interface Icomponent {
   setSign: (sign: boolean) => void;
   setConfig: (config: Record<string, any>) => void;
 }
+
+export interface CollocatorProps {
+  api: MarkdownProps['api']
+  name: string
+  examples: Example
+  className?: string
+}
+
+export type UseCollocatorProps = Omit<CollocatorProps, 'className' | 'examples'>

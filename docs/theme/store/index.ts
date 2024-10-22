@@ -21,7 +21,7 @@ export type ScrollType = 'visible' | 'hidden' | 'sticky';
 export type Doc = 'shineout' | 'base';
 export type Locales = 'cn' | 'en';
 export type Env = 'GitHub' | 'SHEIN';
-export type DocType = 'examples' | 'api' | 'guide' | 'changelog' | 'collocator';
+export type DocType = 'examples' | 'api' | 'guide' | 'changelog' | 'playground';
 
 interface State {
   menu: Menus[];
