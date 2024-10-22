@@ -147,7 +147,7 @@ const tableStyle: JsStyles<TableClassType> = {
     borderTop: 'none',
     '&::before': {
       position: 'absolute',
-      zIndex: 7,
+      zIndex: fixedFixedIndex + 3,
       content: '""',
       display: 'block',
       top: 0,
@@ -182,6 +182,24 @@ const tableStyle: JsStyles<TableClassType> = {
     boxSizing: 'border-box',
     flexGrow: 1,
     minHeight: '0',
+    '$wrapper & table': {
+      '& th, & td': {
+        position: 'sticky',
+        top: 0,
+      },
+      '& th': {
+        zIndex: fixedFixedIndex + 1,
+        '&$cellFixedLeft': {
+          zIndex: fixedFixedIndex + 2,
+        },
+      },
+      '& td': {
+        zIndex: fixedIndex,
+        '&$cellFixedLeft': {
+          zIndex: fixedIndex + 1,
+        },
+      }
+    }
   },
   footWrapper: {
     flex: '0 0 auto',
@@ -262,7 +280,12 @@ const tableStyle: JsStyles<TableClassType> = {
       },
     },
     '& table': {
-      '& th, & td': {
+      '& th' :{
+        '&$cellFixedLeft': {
+          zIndex: fixedFixedIndex + 2,
+        },
+      },
+      '& td': {
         '&$cellFixedLeft': {
           zIndex: fixedFixedIndex,
         },
@@ -289,7 +312,12 @@ const tableStyle: JsStyles<TableClassType> = {
       },
     },
     '& table': {
-      '& th, & td': {
+      '& th': {
+        '&$cellFixedRight': {
+          zIndex: fixedFixedIndex + 2,
+        },
+      },
+      '& td': {
         '&$cellFixedRight': {
           zIndex: fixedFixedIndex,
         },
