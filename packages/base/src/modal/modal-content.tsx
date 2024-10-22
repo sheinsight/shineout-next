@@ -188,23 +188,21 @@ const Modal = (props: ModalContentProps) => {
   }, []);
 
   useEffect(() => {
-    if(props.setInnerClose){
-      props.setInnerClose(handleClose)
+    if (props.setInnerClose) {
+      props.setInnerClose(handleClose);
     }
-  }, [props.setInnerClose])
+  }, [props.setInnerClose]);
 
   // render
   const renderIcon = (isEmptyTitle?: boolean) => {
     const iconRoot = classNames(modalClasses?.headerIcon, isEmptyTitle && modalClasses?.emptyIcon);
 
-    return (
-      <AlertIcon jssStyle={props.jssStyle} type={props.type} className={iconRoot} />
-    );
+    return <AlertIcon jssStyle={props.jssStyle} type={props.type} className={iconRoot} />;
   };
   const renderHeader = () => {
-    let showCloseIcon = maskCloseAble === null || !!maskCloseAble
-    if(props.hideClose !== undefined){
-      showCloseIcon = !props.hideClose
+    let showCloseIcon = maskCloseAble === null || !!maskCloseAble;
+    if (props.hideClose !== undefined) {
+      showCloseIcon = !props.hideClose;
     }
 
     const isEmptyTitle = !props.title && props.title !== 0;
@@ -215,21 +213,19 @@ const Modal = (props: ModalContentProps) => {
       return (
         <>
           {renderIcon(isEmptyTitle)}
-          {
-            showCloseIcon && (
-              <div className={closeRoot} onClick={handleClose}>
-                {Icons.modal.Close}
-              </div>
-            )
-          }
+          {showCloseIcon && (
+            <div className={closeRoot} onClick={handleClose}>
+              {Icons.modal.Close}
+            </div>
+          )}
         </>
-      )
+      );
     }
 
     return (
       <div
         className={modalClasses?.header}
-        onMouseDown={props.moveable ? moveInfo.handleMouseDown : undefined}
+        onMouseDown={props.moveable && !props.fullScreen ? moveInfo.handleMouseDown : undefined}
       >
         {renderIcon()}
         <div className={modalClasses?.headerTitle}>{props.title}</div>
@@ -314,14 +310,14 @@ const Modal = (props: ModalContentProps) => {
     panelStyle.top = undefined;
     panelStyle.width = undefined;
   }
-  if (props.moveable) {
+  if (props.moveable && !props.fullScreen) {
     panelStyle.transform = `translate(${moveInfo.pos.x}px, ${moveInfo.pos.y}px)`;
   }
 
   return (
     <FormFooterProvider>
       <div
-        onClick={e => {
+        onClick={(e) => {
           e.stopPropagation();
         }}
         className={classNames(
