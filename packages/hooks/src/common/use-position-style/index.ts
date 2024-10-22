@@ -155,7 +155,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
     let targetPosition = position;
     const rootContainer = getContainer() || document.body;
-    const closestScrollContainer = getClosestScrollContainer(parentElRef.current);
+    const closestScrollContainer = absolute ? null : getClosestScrollContainer(parentElRef.current);
 
     const containerRect = rootContainer.getBoundingClientRect();
     const bodyRect = (document.documentElement || document.body).getBoundingClientRect();
