@@ -21,6 +21,7 @@ const DocTabs = (props: { showGuide: boolean }) => {
   const tabs: { name: string; path: DocType }[] = [
     { name: tabsLocale['exmples'], path: 'examples' },
     { name: tabsLocale['api'], path: 'api' },
+    { name: tabsLocale['playground'], path: 'playground' },
     { name: tabsLocale['guide'], path: 'guide' },
     { name: tabsLocale['updateRecord'], path: 'changelog' },
   ];

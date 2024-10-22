@@ -2,6 +2,7 @@ import { Tooltip } from 'shineout';
 import { Link } from 'react-router-dom';
 import { strFromU8, strToU8, zlibSync } from 'fflate'
 import { useMemo } from 'react';
+import classNames from 'classnames';
 
 export const utoa = (data: string) => {
   const buffer = strToU8(data);
@@ -23,10 +24,12 @@ const useIncludes = (code: string, includes: string[]) => {
 
 interface CodesandboxProps {
   code: string
+  className?: string
+  tip?: string
 }
 
 const Codesandbox = (props: CodesandboxProps) => {
-  const { code } = props
+  const { code, className, tip } = props
 
   const includes = useIncludes(code, ['@sheinx/mock', './static/icon', './utils', './static/mock', './static/code']);
 
@@ -143,8 +146,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   }, [code, isMock, isIcon, isUtils, isSelectMock, isCode])
 
   return (
-    <div className='iconbox'>
-      <Tooltip tip='在 Shineout-Playground 打开' trigger='hover' position='top'>
+    <div className={classNames('iconbox', className)}>
+      <Tooltip tip={tip || '在 Shineout-Playground 打开'} trigger='hover' position='top'>
         <Link to={`https://shineout-playground.sheincorp.cn/#/playground?code=${codeUrl}`} target="_blank" rel="noopener noreferrer" >
           <div className='icon' style={{ color: '#000' }}>
             <svg

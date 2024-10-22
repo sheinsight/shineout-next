@@ -119,17 +119,16 @@ export const apiConvert = (apis: any[], name: string) => {
     return ({
       ...acc,
       [cur.title]: {
-        configurationItemList: !(collocatorPreset?.[name]?.[cur.title]?.merge && collocatorPreset?.[name]?.[cur.title]?.merge.length) ? mergeProperties : collocatorPreset?.[name]?.[cur.title]?.merge.reduce((prev: Record<string, IItem[]>, now: string) => {
+        configurationItemList: !(collocatorPreset?.[name]?.[cur.title]?.merge && collocatorPreset?.[name]?.[cur.title]?.merge.length) ? mergeProperties : collocatorPreset?.[name]?.[cur.title]?.merge.reduce((prev: Record<string, IItem[]>, now: string) => {          
           if (now === cur.title) return ({
             ...prev,
-            [now]: mergeProperties
+            [extractItem(now)]: mergeProperties
           })
 
           const item = deduplication('name', [
             ...collocatorPreset?.[name]?.[now]?.properties || [],
             ...collocatorProperties(apis.find(item => item.title === now)?.properties, name, now),
           ])
-
           return ({
             ...prev,
             [extractItem(now)]: item
