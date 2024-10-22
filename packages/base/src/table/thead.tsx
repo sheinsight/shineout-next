@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { TheadProps } from './thead.type';
 import { useTableGroup, useDragMock, usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn, TableHeadColumn, TableGroupColumn } from '@sheinx/hooks';
@@ -12,14 +12,23 @@ const { toNum } = util;
 export default (props: TheadProps) => {
   const { colgroup = [], sortInfo, onSorterChange, showSelectAll = true } = props;
   const tableClasses = props.jssStyle?.table?.();
+  const trRefs = useRef<(HTMLTableRowElement | null)[]>([]);
   const { groupColumns, columnLevel } = useTableGroup({
     columns: props.columns,
     bordered: props.bordered,
   });
 
+  useLayoutEffect(() => {
+    const heights = trRefs.current.map(tr => tr?.offsetHeight || 0);
+    context.trHeights = heights;
+  }, [groupColumns]); // 当列结构发生变化时重新计算
+
   const config = useConfig();
 
-  const { current: context } = useRef({ dragIndex: -1 });
+  const { current: context } = useRef({
+    dragIndex: -1,
+    trHeights: [] as number[],
+   });
 
   const handleDragMove = usePersistFn((deltaX: number) => {
     props?.dragCol(context.dragIndex, deltaX);
@@ -115,30 +124,43 @@ export default (props: TheadProps) => {
     fixed: 'left' | 'right' | undefined,
     index: number,
     colSpan: number,
+    level: number,
   ): React.CSSProperties | undefined => {
     if (fixed === 'left') {
       if (props.fixLeftNum !== undefined) {
+        // 这是virtual table场景下的th样式
         return {
           transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
-        } as React.CSSProperties;
+        }
       }
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
+      // 这是base table场景下的th样式
       return {
         left: left,
+        top: context.trHeights[level - 1] || 0,
         position: 'sticky',
-      } as React.CSSProperties;
+      }
     }
     if (fixed === 'right') {
       if (props.fixRightNum !== undefined) {
+        // 这是virtual table场景下的th样式
         return {
           transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
-        } as React.CSSProperties;
+        }
       }
       const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
+      // 这是base table场景下的th样式
       return {
         right: right,
+        top: context.trHeights[level - 1] || 0,
         position: 'sticky',
-      } as React.CSSProperties;
+      }
+    }
+
+    // 这是base table场景下的非fixed th样式
+    return {
+      top: context.trHeights[level - 1] || 0,
+      position: 'sticky',
     }
   };
 
@@ -151,7 +173,7 @@ export default (props: TheadProps) => {
     const colTemp = col as TableFormatColumn<any>;
     const colTemp2 = col as TableGroupColumn;
 
-    const fixedStyle = getFixedStyle(col.fixed, col.index, colTemp2.colSpan || 1);
+    const fixedStyle = getFixedStyle(col.fixed, col.index, colTemp2.colSpan || 1, level);
 
     const cellClassName = classNames(
       colTemp.className,
@@ -252,7 +274,7 @@ export default (props: TheadProps) => {
       const isLast = index === groupColumns.length - 1;
       createTh(trs, col, 0, isLast);
     });
-    return trs.map((tr, i) => <tr key={i}>{tr}</tr>);
+    return trs.map((tr, i) => <tr key={i} ref={el => trRefs.current[i] = el}>{tr}</tr>);
   };
   return <thead>{renderTrs()}</thead>;
 };
