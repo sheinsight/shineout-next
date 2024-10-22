@@ -1,3 +1,9 @@
+## 3.4.4-beta.9
+2024-10-22
+### 🐞 BugFix
+
+- 修复 `Form.Field` 设置了 `defaultValue` 后在部分场景下失效的问题 ([#742](https://github.com/sheinsight/shineout-next/pull/742))
+
 ## 3.4.4-beta.6
 2024-10-16
 ### 🐞 BugFix
