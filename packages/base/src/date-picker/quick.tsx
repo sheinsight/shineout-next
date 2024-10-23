@@ -1,16 +1,17 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import type { QuickProps } from './quick.type';
 import type { QuickSelectType, DatePickerValueType } from './date-picker.type';
 import { dateUtil, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 
 const Quick = (props: QuickProps) => {
-  const { jssStyle, quickSelect, format, options, children, type } = props;
+  const { jssStyle, quickSelect, format, options, children, type, closePop } = props;
   const styles = jssStyle?.datePicker?.();
   const quickDateCache = useRef<DatePickerValueType>();
   const quickActiveKey = useRef<number>();
 
   const handleClick = (item: QuickSelectType, index: number) => {
+    const { immediate } = item;
     let itemV = util.isFunc(item.value) ? item.value() : item.value;
     quickDateCache.current = itemV;
     quickActiveKey.current = index;
@@ -25,7 +26,12 @@ const Quick = (props: QuickProps) => {
     });
     props.setDateArr(dateArr);
     props.setCurrentArr(dateArr, 'quick', item);
+
+    if (immediate && closePop) {
+      closePop();
+    }
   };
+
   if (!quickSelect?.length) {
     return (children || null) as React.ReactElement;
   }
