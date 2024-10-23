@@ -290,6 +290,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     checkScroll();
     checkFloat()
   }, [colgroup]);
+
+  const tableWidth = isNaN(Number(props.width)) ? undefined : (typeof props.width === 'number' ? props.width + deltaXSum : props.width);
+
   return {
     isScrollX: !!isScrollX,
     isScrollY: !!isScrollY,
@@ -298,7 +301,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     scrollBarWidth,
     colgroup: colgroup ? colgroup : [],
     func,
-    width: typeof props.width === 'number' ? props.width + deltaXSum : props.width,
+    width: tableWidth,
     shouldLastColAuto: props.columnResizable && !adjust,
     scrollWidth,
     maxScrollLeft: scrollWidth - context.clientWidth,
