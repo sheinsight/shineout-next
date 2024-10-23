@@ -171,18 +171,18 @@ const ImageStyle: JsStyles<ImageClass> = {
 
   circle: {
     borderRadius: Token.imageCircleBorderRadius,
-    border: `1px solid ${Token.imageBorderColor}`,
+    outline: `1px solid ${Token.imageBorderColor}`,
   },
 
   rounded: {
     borderRadius: Token.imageBorderRadius,
-    border: `1px solid ${Token.imageBorderColor}`,
+    outline: `1px solid ${Token.imageBorderColor}`,
   },
 
   thumbnail: {
     borderRadius: Token.imageBorderRadius,
     backgroundColor: '#FFFFFF',
-    border: `1px solid ${Token.imageBorderColor}`,
+    outline: `1px solid ${Token.imageBorderColor}`,
 
     '& $inner': {
       top: 4,
@@ -337,7 +337,7 @@ const ImageStyle: JsStyles<ImageClass> = {
       '&[dir=rtl]': {
         animation: '$keyframe-f2c 0.5s ease-in-out',
       },
-      
+
     },
   },
 
