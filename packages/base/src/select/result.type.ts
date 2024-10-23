@@ -32,6 +32,8 @@ export interface ResultProps<DataItem, Value>
     nodes?: (DataItem | UnMatchedData)[],
   ) => React.ReactNode;
   inputText?: string;
+  // 输入框ref
+  inputRef?: React.MutableRefObject<HTMLInputElement | undefined>;
   filterText?: string;
   onRef: React.MutableRefObject<HTMLInputElement | undefined>;
   allowOnFilter: boolean;
