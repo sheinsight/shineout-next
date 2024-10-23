@@ -378,12 +378,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       const scrollerStickyProps = {
         ...stickyProps,
         top: (sticky?.top || browserScrollbarWidth) - browserScrollbarWidth,
+        zIndex: defaultZIndex + 1,
       };
       return (
-        <StickyWrapper
-          {...(props.sticky ? scrollerStickyProps : {})}
-          style={{ zIndex: defaultZIndex + 1 }}
-        >
+        <StickyWrapper {...(props.sticky ? scrollerStickyProps : {})}>
           <div
             className={tableClasses?.headMirrorScroller}
             style={{
