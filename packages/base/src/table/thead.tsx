@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { TheadProps } from './thead.type';
 import { useTableGroup, useDragMock, usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn, TableHeadColumn, TableGroupColumn } from '@sheinx/hooks';
@@ -18,10 +18,10 @@ export default (props: TheadProps) => {
     bordered: props.bordered,
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const heights = trRefs.current.map(tr => tr?.offsetHeight || 0);
     context.trHeights = heights;
-  }, [groupColumns]); // 当列结构发生变化时重新计算
+  }, [groupColumns]);
 
   const config = useConfig();
 
