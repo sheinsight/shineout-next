@@ -131,6 +131,7 @@ const Picker = (props: PickerProps) => {
       {
         <Quick
           quickSelect={props.quickSelect}
+          closePop={props.closePop}
           range={props.range}
           jssStyle={jssStyle}
           dateArr={dateArr}

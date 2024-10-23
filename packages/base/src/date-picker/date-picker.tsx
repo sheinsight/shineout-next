@@ -97,19 +97,18 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
     if (isOpen) {
-      setOldDateArr(dateArr)
+      setOldDateArr(dateArr);
       func.startEdit();
     } else {
-      setClickTimes(0)
+      setClickTimes(0);
 
-
-      if(props.needConfirm){
-        if(!isCloseFromConfirm){
+      if (props.needConfirm) {
+        if (!isCloseFromConfirm) {
           func.handleClear();
           // 点击空白处关闭面板时，还原到上次的值
           func.setDateArr(oldDateArr);
         }
-      }else{
+      } else {
         func.finishEdit();
       }
 
@@ -162,7 +161,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     setIsCloseFromConfirm(isFromConfirm || false);
     closePop();
 
-    if(isFromConfirm){
+    if (isFromConfirm) {
       func.finishEdit();
     }
     inputRef.current.inputRef?.blur();

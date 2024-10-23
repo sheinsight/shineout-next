@@ -300,9 +300,10 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    */
   secondStep?: number;
   /**
-   * @en quick select, only in range can set, name: tip, value: range date
-   * @cn 快速选择, 仅在 range 模式下有效, name: 文字提示, value: 时间范围
+   * @en quick select, only in range can set, name: tip, value: range date immediate: Whether to trigger onChange immediately after clicking the option and close the panel
+   * @cn 快速选择, 仅在 range 模式下有效, name: 文字提示, value: 时间范围, immediate: 选择后是否立刻关闭面板
    * @override {name: string, value: Value}[]
+   * @version 3.4.4 新增 immediate 配置项
    */
   quickSelect?: Array<QuickSelectType>;
   /**
@@ -364,6 +365,21 @@ export interface DatePickerProps<Value extends DatePickerValueType>
   needConfirm?: boolean;
 }
 export interface QuickSelectType {
+  /**
+   * @en option name
+   * @cn 选项的名称
+   */
   name: React.ReactNode;
+  /**
+   * @en Whether to trigger onChange immediately after clicking the option and close the panel
+   * @cn 点击选项后是否立即触发 onChange 并关闭面板
+   * @default false
+   * @version 3.4.4
+   */
+  immediate?: boolean;
+  /**
+   * @en option value
+   * @cn 选项的值
+   */
   value: DatePickerValueType | (() => DatePickerValueType);
 }
