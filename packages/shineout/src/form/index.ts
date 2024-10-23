@@ -3,6 +3,7 @@ import IFormItem from './form-item';
 import IFormField from './form-field';
 import IFormFieldSet from './form-fieldset';
 import IFormFlow from './form-flow';
+import { useFormRef as useForm, useFromInstance } from '@sheinx/hooks'
 import { Button as IButton, Submit as ISubmit, Reset as IRest } from './form-button';
 
 type RefForm = typeof IForm;
@@ -36,6 +37,8 @@ export interface FormComponent extends RefForm {
   Submit: typeof Submit;
   Reset: typeof Reset;
   Flow: typeof FormFlow;
+  useForm: typeof useForm;
+  useFromInstance: typeof useFromInstance;
 }
 
 const FormComp: FormComponent = IForm as FormComponent;
@@ -47,5 +50,7 @@ FormComp.Button = Button;
 FormComp.Submit = Submit;
 FormComp.Reset = Reset;
 FormComp.Flow = FormFlow;
+FormComp.useForm = useForm;
+FormComp.useFromInstance = useFromInstance;
 
 export default FormComp;
