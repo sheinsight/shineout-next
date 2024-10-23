@@ -16,6 +16,9 @@ const listStyle: JsStyles<ListClassType> = {
     border: `${token.listBorderWidth} solid ${token.listBorderColor}`,
     borderRadius: token.listBorderRadius,
   },
+  wrapperEmpty: {
+    justifyContent: 'center',
+  },
   wrapperSmall: {},
   wrapperLarge: {},
   wrapperStriped: {
