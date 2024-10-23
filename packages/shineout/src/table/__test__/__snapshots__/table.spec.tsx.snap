@@ -22,6 +22,7 @@ exports[`Table[Base] should render correctly  1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -35,6 +36,7 @@ exports[`Table[Base] should render correctly  1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -48,6 +50,7 @@ exports[`Table[Base] should render correctly  1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -61,6 +64,7 @@ exports[`Table[Base] should render correctly  1`] = `
               class="soui-table-cell-align-left soui-table-cell-ignore-border"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -233,6 +237,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -246,6 +251,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -259,6 +265,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -272,6 +279,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
               class="soui-table-cell-align-left soui-table-cell-ignore-border"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -445,7 +453,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left soui-table-cell-group"
             colspan="3"
             dir="ltr"
-            style="padding: 0px;"
+            style="padding: 0px; top: 0px; position: sticky;"
           >
             <div>
               <span
@@ -459,6 +467,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left"
             dir="ltr"
             rowspan="3"
+            style="top: 0px; position: sticky;"
           >
             <div
               class=""
@@ -472,7 +481,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left soui-table-cell-ignore-border soui-table-cell-group"
             colspan="2"
             dir="ltr"
-            style="padding: 0px;"
+            style="padding: 0px; top: 0px; position: sticky;"
           >
             <div>
               <span>
@@ -486,6 +495,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left soui-table-cell-group"
             colspan="2"
             dir="ltr"
+            style="top: 0px; position: sticky;"
           >
             <div>
               True Name
@@ -495,6 +505,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left"
             dir="ltr"
             rowspan="2"
+            style="top: 0px; position: sticky;"
           >
             <div
               class=""
@@ -508,6 +519,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left"
             dir="ltr"
             rowspan="2"
+            style="top: 0px; position: sticky;"
           >
             <div
               class=""
@@ -521,6 +533,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left soui-table-cell-ignore-border"
             dir="ltr"
             rowspan="2"
+            style="top: 0px; position: sticky;"
           >
             <div
               class=""
@@ -536,6 +549,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left"
             dir="ltr"
             rowspan="1"
+            style="top: 0px; position: sticky;"
           >
             <div
               class=""
@@ -549,6 +563,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             class="soui-table-cell-align-left"
             dir="ltr"
             rowspan="1"
+            style="top: 0px; position: sticky;"
           >
             <div
               class=""
@@ -848,6 +863,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -861,6 +877,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -874,6 +891,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               class="soui-table-cell-align-left"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""
@@ -887,6 +905,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               class="soui-table-cell-align-left soui-table-cell-ignore-border"
               dir="ltr"
               rowspan="1"
+              style="top: 0px; position: sticky;"
             >
               <div
                 class=""

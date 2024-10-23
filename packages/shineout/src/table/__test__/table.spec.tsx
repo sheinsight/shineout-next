@@ -1517,8 +1517,8 @@ describe('Table[Fixed]', () => {
     });
   });
   test('should render when isScrollX is true', () => {
-    const trsDefaultStyleByLeft = 'left: 0px; position: sticky;';
-    const trsDefaultStyleByRight = 'right: 0px; position: sticky;';
+    const trsDefaultStyleByLeft = 'left: 0px; top: 0px; position: sticky;';
+    const trsDefaultStyleByRight = 'top: 0px; position: sticky;';
     const trsVirtualStyleByLeft = 'transform: translate3d(-20px, 0, 0);';
     const trsVirtualStyleByLeftHead = 'transform: translate3d(20px, 0, 0);';
     const trsVirtualStyleByRight = 'transform: translate3d(-80px, 0, 0);';

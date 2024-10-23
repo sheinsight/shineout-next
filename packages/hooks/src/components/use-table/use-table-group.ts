@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { TableFormatColumn, TableGroupColumn, TableHeadColumn } from './use-table.type';
 import { getUidStr } from '../../utils/uid';
 
@@ -72,8 +72,10 @@ const useTableGroup = (props: UseTableGroupProps) => {
     return columns;
   };
 
+  const groupColumns = useMemo(formatColumns, [props.columns]);
+
   return {
-    groupColumns: formatColumns(),
+    groupColumns,
     columnLevel: context.columnLevel,
   };
 };
