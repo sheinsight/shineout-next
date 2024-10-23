@@ -1,3 +1,10 @@
+## 3.4.4-beta.11
+2024-10-23
+
+### 💎 Enhancement
+
+- `DatePicker` 快速选择配置项新增 `immediate` 属性支持选择后立刻关闭面板 ([#745](https://github.com/sheinsight/shineout-next/pull/745))
+
 ## 3.4.4-beta.2
 2024-10-15
 
