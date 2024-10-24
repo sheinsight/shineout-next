@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import { usePersistFn, util } from '@sheinx/hooks';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useLatestObj, usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import { addResizeObserver } from '@sheinx/hooks';
 import classNames from 'classnames';
+import Spin from '../spin';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
 import Radio from '../radio';
@@ -19,6 +20,8 @@ interface TrProps
     | 'treeFunc'
     | 'treeExpandLevel'
     | 'treeEmptyExpand'
+    | 'treeExpandIcon'
+    | 'loader'
     | 'isEmptyTree'
     | 'setRowHeight'
     | 'fixLeftNum'
@@ -140,13 +143,34 @@ const Tr = (props: TrProps) => {
     };
   }, []);
 
+  const [isExpandLoading, setIsExpandLoading] = useState(false);
+
+  const innerExpandClick = usePersistFn(async (showLoader?: boolean) => {
+    if (showLoader && props.loader) {
+      setIsExpandLoading(true);
+
+      try {
+        await props.loader(props.rawData, props.rowIndex)
+        treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+      } finally {
+        setIsExpandLoading(false);
+      }
+    } else {
+      treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+    }
+  });
+
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
     const className = tableClasses?.expandWrapper;
     const children = props.rawData[props.treeColumnsName!];
+    const showLoader = children === undefined && typeof props.loader === 'function';
     const isExpanded = props.treeFunc.isTreeExpanded(props.rawData, props.rowIndex);
     const dirName = isRtl ? 'Right' : 'Left';
-    if (!children || (children.length === 0 && !props.treeEmptyExpand)) {
+
+    const shouldRenderPlain = !children && !props.loader || (children?.length === 0 && !props.treeEmptyExpand && !props.loader);
+
+    if (shouldRenderPlain) {
       return (
         <span
           className={className}
@@ -159,19 +183,38 @@ const Tr = (props: TrProps) => {
         </span>
       );
     }
-    return (
-      <span className={className} style={{ marginLeft: level * treeIndent }}>
+
+    let $expandIcon
+    if (typeof props.treeExpandIcon === 'function') {
+      $expandIcon = props.treeExpandIcon(props.rawData, props.rowIndex, isExpanded);
+    } else if(showLoader){
+      $expandIcon = Icons.table.Collapse;
+    } else if(children?.length > 0 || props.treeEmptyExpand) {
+      $expandIcon = isExpanded ? Icons.table.Expand : Icons.table.Collapse;
+    }
+
+    if(isExpandLoading){
+      $expandIcon = <Spin size={12} jssStyle={props.jssStyle}></Spin>
+    }
+
+    let $expandIconWrapper
+    if($expandIcon !== null){
+      $expandIconWrapper = (
         <div className={classNames(tableClasses?.iconWrapper)}>
           <span
             data-role='tree-expand-icon'
             className={tableClasses?.expandIcon}
-            onClick={() => {
-              treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
-            }}
+            onClick={() => innerExpandClick(showLoader)}
           >
-            {isExpanded ? Icons.table.Expand : Icons.table.Collapse}
+            {$expandIcon}
           </span>
         </div>
+      )
+    }
+
+    return (
+      <span className={className} style={{ marginLeft: level * treeIndent }}>
+        {$expandIconWrapper}
         {content}
       </span>
     );
