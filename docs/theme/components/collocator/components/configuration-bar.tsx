@@ -36,7 +36,28 @@ const ConfigurationBar = (props: ConfigurationBarProps) => {
   const styles = useStyle();
 
   const elementMap: Record<ComponentType, (d: IItem, parent?: string) => React.ReactElement> = {
-    [ComponentType.SWITCH]: (d: IItem, parent?: string) => <Switch name={d.name} />,
+    [ComponentType.SWITCH]: (d: IItem, parent?: string) => <Switch name={d.name} onChange={(v) => {
+      if (!d.related) return
+
+      if (v) {
+        if (parent) {
+          const tempConfig = d.mergeRelated && isObject(d.mergeRelated) ? Object.keys(d.mergeRelated).reduce((pre, cur) => (
+            {
+              ...pre,
+              [cur]: {
+                ...config[cur],
+                ...d.mergeRelated?.[cur]
+              }
+            }
+          ), {}) : {}
+
+          setConfig({ ...config, ...tempConfig, [parent]: { ...config[parent], ...d.related, [d.name]: v } });
+        } else {
+          setConfig({ ...config, ...d.related, [d.name]: v });
+        }
+        return
+      }
+    }} />,
     [ComponentType.SELECT]: (d: IItem, parent?: string) => (
       <Select
         multiple={d.multiple}
@@ -138,7 +159,7 @@ const ConfigurationBar = (props: ConfigurationBarProps) => {
   const renderAreaByType = (list: Record<ComponentType, IItem[]>, type?: string) => Object.keys(list).map((key) =>
     list[key as ComponentType].length ? (
       <div key={key} className={styles.formArea}>
-        {list[key as ComponentType].map((item: IItem) => renderItem(item, type))}
+        {list[key as ComponentType].map((item: IItem) => !item.hide ? renderItem(item, type) : null)}
       </div>
     ) : null,
   )

@@ -113,6 +113,15 @@ const styles = {
     minHeight: '120px',
     display: 'flex',
   },
+  console: {
+    height: '120px',
+    background: '#f7f8fa',
+    overflow: 'auto',
+    padding: '1em'
+  },
+  consoleItem: {
+    lineHeight: '24px'
+  },
   codeWrapper: {
     flex: 1,
     fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',

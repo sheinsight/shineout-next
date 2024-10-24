@@ -8,6 +8,7 @@ import useStyle from './style';
 import ConfigurationBar from './components/configuration-bar';
 import { refreshIcon } from './icon';
 import { AttachedType, type CollocatorProps } from './types';
+import Console from './components/console';
 
 // @ts-ignore
 import Prism from 'prismjs';
@@ -34,11 +35,13 @@ const Collocator = (props: CollocatorProps) => {
     codeFile,
     componentInfo,
     initValue,
+    messages,
     setRadioValue,
     setClearSign,
     setConfig,
+    handleConsoleMsg
   } = useCollocator({ api, name });
-
+  console.warn('config', config)
   const renderHeader = (children: String | React.ReactElement, className?: string) => (
     <div className={classNames(styles.header, className)}>{children}</div>
   );
@@ -70,11 +73,16 @@ const Collocator = (props: CollocatorProps) => {
           </pre>
         </div>
       ),
+      [AttachedType.CONSOLE]: (
+        <Console messages={messages} />
+      )
     }),
-    [codeFile],
+    [codeFile, messages],
   );
 
   if (!componentList.length) return null
+
+  const renderElement = useMemo(() => componentInfo.element ? componentInfo.element(config): null, [componentInfo.element, config])
 
   return (
     <div className={classNames(styles.wrapper, className)}>
@@ -90,7 +98,7 @@ const Collocator = (props: CollocatorProps) => {
               onChange={(v) => setRadioValue(v)}
             />,
           )}
-          <div className={styles.show}>{componentInfo.element ? componentInfo.element(config): null}</div>
+          <div className={styles.show}>{renderElement}</div>
           {renderFunctions()}
         </div>
         <div className={styles.bar}>
