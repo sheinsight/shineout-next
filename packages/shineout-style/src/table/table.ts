@@ -406,6 +406,7 @@ const tableStyle: JsStyles<TableClassType> = {
     zIndex: 1,
     '&>svg': {
       cursor: 'pointer',
+      display: 'block',
     },
   },
 
@@ -442,10 +443,10 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   iconWrapper: {
-    display: 'inline-block',
+    display: 'inline-flex',
     verticalAlign: 'top',
-    lineHeight: '1.9',
-    height: '14px',
+    height: token.lineHeightDynamic,
+    alignItems: 'center',
   },
   rowStriped: {
     '&& td': {
