@@ -9,7 +9,7 @@ import type { CardProps } from './card.type';
 import type { CardContextValue } from './card.context';
 
 const Card = (props: CardProps) => {
-  const { style = {} } = props;
+  const { style = {}, defaultCollapsed = true } = props;
   const cardClasses = props.jssStyle?.card?.();
   const panelRef = useRef<HTMLDivElement>(null);
   const forceUpdate = useRender();
@@ -17,7 +17,7 @@ const Card = (props: CardProps) => {
     id: undefined as number | undefined,
   });
 
-  const [collapsed, setCollapsed] = useState(props.defaultCollapsed);
+  const [collapsed, setCollapsed] = useState(defaultCollapsed);
   const moveInfo = useDragMove();
   const resizeInfo = useDragResize({
     defaultWidth: style?.width,
