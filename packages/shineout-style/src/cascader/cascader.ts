@@ -394,8 +394,6 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   hideTag: {},
   list: {
-    paddingTop: 3,
-    paddingBottom: 3,
     display: 'inline-block',
     overflow: 'auto',
   },
@@ -447,6 +445,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   option: {
     listStyle: 'none',
     lineHeight: token.lineHeightDynamic,
+    minWidth: 64,
     padding: `${token.cascaderOptionPaddingY} ${token.cascaderOptionPaddingX}`,
     '&:not($optionDisabled)': {
       cursor: 'pointer',
