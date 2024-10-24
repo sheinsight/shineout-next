@@ -39,9 +39,8 @@ const Collocator = (props: CollocatorProps) => {
     setRadioValue,
     setClearSign,
     setConfig,
-    handleConsoleMsg
   } = useCollocator({ api, name });
-  console.warn('config', config)
+
   const renderHeader = (children: String | React.ReactElement, className?: string) => (
     <div className={classNames(styles.header, className)}>{children}</div>
   );
