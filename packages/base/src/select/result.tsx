@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect, RefCallback, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -89,8 +89,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const isEmptyResult = () => {
     if (!value) return true;
-
     if (isArray(value) && value.length <= 0) return true;
+    return false
     const datas = getDataByValues(value);
 
     const hasValue =
@@ -102,7 +102,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return !hasValue;
   };
 
-  const empty = isEmptyResult();
+  const empty = useMemo(() => {
+    return isEmptyResult();
+  }, [props.value]);
 
   const isCompressedBound = () => {
     return compressedBound && isNumber(compressedBound) && compressedBound >= 1;
@@ -246,7 +248,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
-  const renderMultipleResult = () => {
+  const renderMultipleResult = useMemo(() => {
     if (isEmptyResult()) return renderNbsp();
     // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
     let nextValue = getValueArr(value);
@@ -267,9 +269,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       return renderResultItem(d, i, datas, v);
     });
     return result;
-  };
+  }, [props.value]);
 
-  const result = renderMultipleResult() as React.ReactNode[];
+  const result = renderMultipleResult as React.ReactNode[];
   const moreNumber = getCompressedBound();
   const renderMultipleResultMore = (
     <More
@@ -292,7 +294,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     let result = [];
     if (multiple) {
-      result.push(compressed ? renderMultipleResultMore : renderMultipleResult());
+      result.push(compressed ? renderMultipleResultMore : renderMultipleResult);
       if (showInput) {
         result.push(renderInput());
       } else if (result.length === 0) {
