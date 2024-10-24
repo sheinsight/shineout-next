@@ -3,8 +3,6 @@ import { type Icomponent, IInputType } from "../types";
 import { inputValueConvert, inputValueConvertByArray } from "../utils/convert";
 import useSign from "../hooks/use-sign";
 
-
-
 export interface InputTypeProps extends Icomponent {
   type: IInputType
 }
@@ -18,8 +16,8 @@ const InputType = (props: InputTypeProps) => {
   const { item, config, sign, type, parent, setSign, setConfig } = props;
 
   const [value, setValue] = useSign({
-    initValue: item.defaultValue || '',
-    sign
+    initValue: item.defaultValue ? (Array.isArray(item.defaultValue) ? JSON.stringify(item.defaultValue) : item.defaultValue) : '',
+    sign,
   })
 
   const changeFn = (v?: string) => {

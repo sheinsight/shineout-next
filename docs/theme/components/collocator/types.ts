@@ -26,11 +26,15 @@ export interface IItem {
   alias?: string;
   multiple?: boolean;
   notHideDefaultValue?: boolean
+  related?: Record<string, any>
+  mergeRelated?: Record<string, any>
+  hide?: boolean
 }
 
 export enum AttachedType {
   NONE = 'none',
   CODE = 'code',
+  CONSOLE = 'console',
 }
 
 export interface Icomponent {
@@ -50,3 +54,10 @@ export interface CollocatorProps {
 }
 
 export type UseCollocatorProps = Omit<CollocatorProps, 'className' | 'examples'>
+
+export type IConsoleType = 'console' | 'error'
+
+export interface IConsole {
+  type: IConsoleType,
+  message: string
+}

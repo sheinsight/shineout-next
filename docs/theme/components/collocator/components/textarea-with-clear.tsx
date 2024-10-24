@@ -11,7 +11,7 @@ const TextareaWithClear = (props: Icomponent) => {
 
   const [value, setValue] = useSign({
     initValue: item.defaultValue ? JSON.stringify(item.defaultValue) : '',
-    sign
+    sign,
   })
 
   return (

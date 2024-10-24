@@ -3,9 +3,9 @@ import { Message } from 'shineout';
 import { apiConvert, childConvert } from '../utils/convert';
 import { isBoolean, isObject, isArray } from '../utils/is';
 
-import type { UseCollocatorProps, IItem } from '../types';
+import type { UseCollocatorProps, IItem, IConsole, IConsoleType } from '../types';
 import { AttachedType } from '../types';
-import { codeIcon, copyIcon } from '../icon';
+import { codeIcon, consoleIcon, copyIcon } from '../icon';
 import { placeholder as placeholderStr, placeholderExcludeList } from '../config';
 
 const useCollocator = (props: UseCollocatorProps) => {
@@ -16,6 +16,7 @@ const useCollocator = (props: UseCollocatorProps) => {
 
   const [radioValue, setRadioValue] = useState<string>(componentList?.[0] || '');
   const [clearSign, setClearSign] = useState<boolean>(false);
+  const [messages, setMessages] = React.useState<IConsole[]>([]);
 
   const componentInfo = useMemo(() => radioValue ? structure?.[radioValue] : {}, [structure, radioValue]);
 
@@ -45,6 +46,7 @@ const useCollocator = (props: UseCollocatorProps) => {
 
   useEffect(() => {
     setConfig(initValue);
+    setMessages([])
   }, [initValue]);
 
   const codeFile = useMemo(() => {
@@ -102,6 +104,15 @@ const useCollocator = (props: UseCollocatorProps) => {
   const functions: { name: React.ReactElement; type?: AttachedType; onClick: () => void }[] = useMemo(
     () => [
       {
+        name: consoleIcon,
+        type: AttachedType.CONSOLE,
+        onClick: () => {
+          attachedType === AttachedType.CONSOLE
+            ? setAttachedType(AttachedType.NONE)
+            : setAttachedType(AttachedType.CONSOLE);
+        }
+      },
+      {
         name: copyIcon,
         onClick: handleCopy,
       },
@@ -118,6 +129,21 @@ const useCollocator = (props: UseCollocatorProps) => {
     [attachedType],
   );
 
+  const handleConsoleMsg = (type: IConsoleType, message: string) => setMessages((prev: IConsole[]) => [...prev, { type, message }]);
+
+  useEffect(() => {
+    const originalConsoleLog = console.log;
+
+    console.log = (...args: any[]) => {
+      handleConsoleMsg('console', args.join(' '));
+      originalConsoleLog.apply(console, args);
+    };
+
+    return () => {
+      console.log = originalConsoleLog;
+    };
+  }, []);
+
   return {
     componentList,
     radioValue,
@@ -128,10 +154,12 @@ const useCollocator = (props: UseCollocatorProps) => {
     codeFile,
     componentInfo,
     initValue,
+    messages,
     setRadioValue,
     setClearSign,
     setConfig,
     setAttachedType,
+    handleConsoleMsg
   }
 }
 

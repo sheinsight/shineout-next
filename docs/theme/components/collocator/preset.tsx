@@ -1,9 +1,38 @@
 import { useRef, useState } from "react"
-import { Button, Divider, Gap, Grid, Sticky, Alert, Card, Carousel, Collapse, Descriptions, Empty, Image, List, Popover, Spin, Table, Tabs, Tag, TYPE, Tooltip, Tree, Cascader, Checkbox, DatePicker, Input, Radio, Rate, Select, Slider, Switch, Textarea, Transfer, TreeSelect, Upload, Badge, Drawer, Message, Modal, Progress, Breadcrumb, Dropdown, Link, Menu, Pagination, Steps, Form } from "shineout"
+import { Button, Divider, Gap, Grid, Sticky, Alert, Card, Carousel, Collapse, Descriptions, Empty, Image, List, Popover, Spin, Table, Tabs, Tag, TYPE, Tooltip, Tree, Cascader, Checkbox, DatePicker, Input, Radio, Rate, Select, Slider, Switch, Textarea, Transfer, TreeSelect, Upload, Badge, Drawer, Message, Modal, Progress, Breadcrumb, Dropdown, Link, Menu, Pagination, Steps, Form, Rule } from "shineout"
 // @ts-ignore
 import { user } from "@sheinx/mock"
 
 const Now = Date.now();
+const tableData = [
+  {
+    id: 1,
+    firstName: 'Ephraim',
+    lastName: 'Wisozk',
+    position: 'Marketing Designer',
+    country: 'Reunion',
+    office: 'Miami',
+    children: [
+      {
+        id: 6,
+        firstName: 'Ialu',
+        lastName: 'Opis',
+        position: 'Finalick Designer',
+        country: 'Tokiy',
+        office: 'Miami',
+      }
+    ]
+  },
+  {
+    id: 2,
+    firstName: 'hello',
+    lastName: 'dadd',
+    position: 'BDesigner',
+    country: 'China',
+    office: 'NanJing',
+    children: []
+  }
+]
 
 export const collocatorPreset: Record<string, any> = {
   Button: {
@@ -18,7 +47,10 @@ export const collocatorPreset: Record<string, any> = {
         },{
           name: 'renderLoading',
           type: 'other',
-          initValue: () => 'loading...'
+          initValue: () => 'loading...',
+          related: {
+            loading: true
+          }
         }
       ]
     },
@@ -229,7 +261,10 @@ export const collocatorPreset: Record<string, any> = {
         }, {
           name: 'onCollapse',
           type: 'other',
-          initValue: () => console.log('collapse')
+          initValue: () => console.log('collapse'),
+          related: {
+            collapsible: true
+          }
         }
       ]
     },
@@ -610,6 +645,7 @@ export const collocatorPreset: Record<string, any> = {
           name: 'data',
           type: 'other',
           initValue: user.fetchSync(20),
+          defaultValue: user.fetchSync(20)
         },
         {
           name: 'empty',
@@ -620,6 +656,10 @@ export const collocatorPreset: Record<string, any> = {
           name: 'disabled',
           type: 'switch',
           defaultValue: false,
+          related: {
+            data: user.fetchSync(20),
+            onChange: () => console.log('change')
+          }
         },
         {
           name: 'footer',
@@ -760,7 +800,7 @@ export const collocatorPreset: Record<string, any> = {
           {
             width: 250,
             ...columnsProps,
-            render: (d: any) => <div style={{ height: d.height }}>{`${d.firstName} ${d.lastName}`}</div>,
+            render: 'lastName',
           },
           { title: 'Country', render: 'country', width: 200 },
           { title: 'Position', render: 'position' },
@@ -784,26 +824,28 @@ export const collocatorPreset: Record<string, any> = {
           name: 'data',
           alias: 'treeData',
           type: 'other',
-          initValue: [
-            {
-              id: 1,
-              firstName: 'Ephraim',
-              lastName: 'Wisozk',
-              position: 'Marketing Designer',
-              country: 'Reunion',
-              office: 'Miami',
-              children: [
-                {
-                  id: 6,
-                  firstName: 'Ialu',
-                  lastName: 'Opis',
-                  position: 'Finalick Designer',
-                  country: 'Tokiy',
-                  office: 'Miami',
-                }
-              ]
+          initValue: tableData
+        },
+        {
+          name: 'radio',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            onRowSelect: () => console.log('row select')
+          },
+        },
+        {
+          name: 'treeEmptyExpand',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            data: tableData
+          },
+          mergeRelated: {
+            columns: {
+              treeColumnsName: 'children'
             }
-          ]
+          }
         },
         {
           name: 'style',
@@ -819,7 +861,34 @@ export const collocatorPreset: Record<string, any> = {
         {
           name: 'empty',
           type: 'other',
-          initValue: 'empty...'
+          initValue: 'empty...',
+        },
+        {
+          name: 'sorter',
+          type: 'other',
+          // @ts-ignore
+          initValue: (name: any, order: any) => ({
+            lastName: (order: any) => (a: any, b: any) => order === 'asc' ? a.lastName.localeCompare(b.lastName) : b.lastName.localeCompare(a.lastName),
+          })[name](order),
+          mergeRelated: {
+            columns: {
+              sorter: 'lastName'
+            }
+          }
+        },
+        {
+          name: 'treeCheckAll',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            data: tableData,
+            onRowSelect: () => console.log('row select')
+          },
+          mergeRelated: {
+            columns: {
+              treeColumnsName: 'children'
+            }
+          }
         },
         {
           name: 'loading',
@@ -878,7 +947,18 @@ export const collocatorPreset: Record<string, any> = {
         {
           name: 'renderSorter',
           type: 'other',
-          initValue: () => 'sorter'
+          initValue: () => 'sorter',
+          related: {
+            // @ts-ignore
+            sorter: (name: any, order: any) => ({
+              lastName: (order: any) => (a: any, b: any) => order === 'asc' ? a.lastName.localeCompare(b.lastName) : b.lastName.localeCompare(a.lastName),
+            })[name](order)
+          },
+          mergeRelated: {
+            columns: {
+              sorter: 'lastName'
+            }
+          }
         },
         {
           name: 'sticky',
@@ -898,7 +978,12 @@ export const collocatorPreset: Record<string, any> = {
         {
           name: 'columnResizable',
           type: 'other',
-          initValue: false
+          initValue: false,
+          mergeRelated: {
+            Table: {
+              columnResizable: true
+            }
+          }
         },
         {
           name: 'colSpan',
@@ -931,6 +1016,11 @@ export const collocatorPreset: Record<string, any> = {
           initValue: 'Name',
           defaultValue: 'Name'
         },
+        {
+          name: 'sorter',
+          type: 'other',
+          initValue: 'lastName'
+        }
       ]
     }
   },
@@ -976,7 +1066,15 @@ export const collocatorPreset: Record<string, any> = {
           name: 'onChange',
           type: 'other',
           initValue: () => console.log('change')
-        }
+        },
+        {
+          name: 'defaultCollapsed',
+          hide: true
+        },
+        {
+          name: 'defaultActive',
+          hide: true
+        },
       ]
     },
     'Tabs.Panel': {
@@ -1001,18 +1099,15 @@ export const collocatorPreset: Record<string, any> = {
         },
         {
           name: 'onCompleted',
-          type: 'other',
-          initValue: () => {console.log('completed')}
+          hide: true
         },
         {
           name: 'onEnterPress',
-          type: 'other',
-          initValue: () => console.log('enter press')
+          hide: true
         },
         {
           name: 'onKeyUp',
-          type: 'other',
-          initValue: () => console.log('key up')
+          hide: true
         }
       ]
     },
@@ -1114,9 +1209,16 @@ export const collocatorPreset: Record<string, any> = {
           defaultValue: 'children'
         },
         {
+          name: 'defaultExpandAll',
+          hide: true
+        },
+        {
           name: 'disabled',
           type: 'switch',
-          defaultValue: false
+          defaultValue: false,
+          related: {
+            onChange: () => console.log('change')
+          }
         },
         {
           name: 'expandIcons',
@@ -1128,6 +1230,21 @@ export const collocatorPreset: Record<string, any> = {
           type: 'select',
           value: [0, 1, 2, 3,  4],
           defaultValue: 1
+        },
+        {
+          name: 'dragSibling',
+          type: 'switch',
+          related: {
+            onDrop: () => console.log('drop')
+          }
+        },
+        {
+          name: 'dragHoverExpand',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            onDrop: () => console.log('drop')
+          }
         },
         {
           name: 'onChange',
@@ -1152,22 +1269,34 @@ export const collocatorPreset: Record<string, any> = {
         {
           name: 'onDragEnd',
           type: 'other',
-          initValue: () => console.log('drop end')
+          initValue: () => console.log('drop end'),
+          related: {
+            onDrop: () => console.log('drop')
+          }
         },
         {
           name: 'onDragLeave',
           type: 'other',
-          initValue: () => console.log('drop leave')
+          initValue: () => console.log('drop leave'),
+          related: {
+            onDrop: () => console.log('drop')
+          }
         },
         {
           name: 'onDragOver',
           type: 'other',
-          initValue: () => console.log('drop over')
+          initValue: () => console.log('drop over'),
+          related: {
+            onDrop: () => console.log('drop')
+          }
         },
         {
           name: 'onDragStart',
           type: 'other',
-          initValue: () => console.log('drop start')
+          initValue: () => console.log('drop start'),
+          related: {
+            onDrop: () => console.log('drop')
+          }
         },
       ]
     }
@@ -1223,7 +1352,6 @@ export const collocatorPreset: Record<string, any> = {
         },
         {
           name: 'beforeChange',
-          require: false,
           type: 'other',
           initValue: () => console.log('before change')
         },
@@ -1234,27 +1362,38 @@ export const collocatorPreset: Record<string, any> = {
         },
         {
           name: 'compressed',
-          require: false,
           type: 'select',
           value: ['false', 'true', 'no-repeat'],
-          exclude: ['compressedClassName'],
           defaultValue: false
         },
         {
+          name: 'filterSameChange',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            onChange: () => console.log('change')
+          }
+        },
+        {
+          name: 'focusSelected',
+          type: 'switch',
+          defaultValue: true,
+          related: {
+            onFilter: (text: string) => (d: any) => d.value.indexOf(text) >= 0
+          }
+        },
+        {
           name: 'disabled',
-          require: false,
           type: 'switch',
           defaultValue: false
         },
         {
           name: 'innerTitle',
-          require: false,
           type: 'other',
           initValue: 'inner title'
         },
         {
           name: 'loading',
-          require: false,
           type: 'switch',
         },
         {
@@ -1348,11 +1487,6 @@ export const collocatorPreset: Record<string, any> = {
           value: ['true', 'false', 'indeterminate']
         },
         {
-          name: 'defaultChecked',
-          type: 'select',
-          value: ['true', 'false', 'indeterminate']
-        },
-        {
           name: 'onChange',
           type: 'other',
           initValue: () => console.log('change')
@@ -1362,12 +1496,20 @@ export const collocatorPreset: Record<string, any> = {
           type: 'other',
           initValue: () => console.log('click')
         },
+        {
+          name: 'reserveAble',
+          hide: true
+        },
       ],
       merge: ['Checkbox', 'Checkbox.Group']
     },
     'Checkbox.Group': {
       hide: true,
       properties: [
+        {
+          name: 'reserveAble',
+          hide: true
+        },
         {
           name: 'beforeChange',
           type: 'other',
@@ -1402,6 +1544,14 @@ export const collocatorPreset: Record<string, any> = {
           initValue: () => console.log('before change')
         },
         {
+          name: 'allowSingle',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            range: true
+          }
+        },
+        {
           name: 'disabled',
           type: 'switch',
           defaultValue: false,
@@ -1420,6 +1570,10 @@ export const collocatorPreset: Record<string, any> = {
           name: 'innerTitle',
           type: 'other',
           initValue: 'inner title'
+        },
+        {
+          name: 'reserveAble',
+          hide: true
         },
         {
           name: 'min',
@@ -1545,6 +1699,10 @@ export const collocatorPreset: Record<string, any> = {
           name: 'scrollToError',
           type: 'select',
           value: ['true', 'false', 100],
+        },
+        {
+          name: 'initValidate',
+          hide: true
         }
       ]
     },
@@ -1595,7 +1753,47 @@ export const collocatorPreset: Record<string, any> = {
         {
           name: 'clearIcon',
           type: 'other',
-          initValue: 'icon'
+          initValue: 'icon',
+          related: {
+            clearable: true
+          }
+        },
+        {
+          name: 'reserveAble',
+          hide: true
+        },
+        {
+          name: 'defaultValue',
+          hide: true
+        },
+        {
+          name: 'type',
+          type: 'select',
+          value: ['text', 'password', 'number'],
+          defaultValue: 'text'
+        },
+        {
+          name: 'coin',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            type: 'number'
+          }
+        },
+        {
+          name: 'autoFix',
+          type: 'switch',
+          related: {
+            type: 'number',
+            digits: 2
+          }
+        },
+        {
+          name: 'digits',
+          type: 'number',
+          related: {
+            type: 'number'
+          }
         },
         {
           name: 'info',
@@ -1664,6 +1862,14 @@ export const collocatorPreset: Record<string, any> = {
           initValue: () => console.log('change')
         },
         {
+          name: 'reserveAble',
+          hide: true
+        },
+        {
+          name: 'defaultValue',
+          hide: true
+        },
+        {
           name: 'clearable',
           type: 'select',
           value: ['true', 'false', '() => console.log("clear")'],
@@ -1672,7 +1878,10 @@ export const collocatorPreset: Record<string, any> = {
         {
           name: 'clearIcon',
           type: 'other',
-          initValue: 'icon'
+          initValue: 'icon',
+          related: {
+            clearable: true
+          }
         },
         {
           name: 'info',
@@ -1859,6 +2068,14 @@ const StarRate = Rate(star, star)
           name: 'text',
           type: 'other',
           initValue: ['1', '2', '3', '4', '5']
+        },
+        {
+          name: 'reserveAble',
+          hide: true
+        },
+        {
+          name: 'defaultValue',
+          hide: true
         }
       ]
     },
@@ -1892,7 +2109,8 @@ const StarRate = Rate(star, star)
   Select: {
     Select: {
       element: (props: any) => <Select {...props} keygen={'id'} />,
-      code: `<Select keygen#placeholder />`,
+      code: `<Select keygen={'id'}#placeholder />`,
+      exclude: ['compressedClassName'],
       properties: [
         {
           name: 'data',
@@ -1903,17 +2121,48 @@ const StarRate = Rate(star, star)
               name: 'name1'
             }, {
               id: 2,
-              name: 'name2'
+              name: 'name2name2name2name2name2name2name2name2name2name2name2name2name2name2name2name2name2name2'
             }, {
               id: 3,
               name: 'name3'
             }
-          ]
+          ],
+          defaultValue: [
+            {
+              id: 1,
+              name: 'name1'
+            }, {
+              id: 2,
+              name: 'name2name2name2name2name2name2name2name2name2name2name2name2name2name2name2name2name2name2'
+            }, {
+              id: 3,
+              name: 'name3'
+            }
+          ],
+          notHideDefaultValue: true
+        },
+        {
+          name: 'autoAdapt',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            width: 200,
+            optionWidth: ''
+          }
         },
         {
           name: 'renderItem',
           type: 'input',
-          defaultValue: 'name'
+          defaultValue: 'name',
+          notHideDefaultValue: true
+        },
+        {
+          name: 'noCache',
+          hide: true
+        },
+        {
+          name: 'reserveAble',
+          hide: true
         },
         {
           name: 'absolute',
@@ -1983,6 +2232,11 @@ const StarRate = Rate(star, star)
           initValue: () => console.log('change')
         },
         {
+          name: 'onCreate',
+          type: 'other',
+          initValue: true
+        },
+        {
           name: 'onCollapse',
           type: 'other',
           initValue: () => console.log('collapse')
@@ -2003,9 +2257,17 @@ const StarRate = Rate(star, star)
           initValue: () => console.log('expand')
         },
         {
+          name: 'filterSingleSelect',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            onFilter: (v: any) => (d: any) => d?.name?.indexOf(v) >= 0
+          }
+        },
+        {
           name: 'onFilter',
           type: 'other',
-          initValue: () => console.log('filter')
+          initValue: (v: any) => (d: any) => d?.name?.indexOf(v) >= 0
         },
         {
           name: 'onFocus',
@@ -2015,7 +2277,41 @@ const StarRate = Rate(star, star)
         {
           name: 'renderOptionList',
           type: 'other',
-          initValue: 'option list'
+          initValue: () => 'option list'
+        },
+        {
+          name: 'showHitDescendants',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            treeData: [
+              {
+                id: 1,
+                name: 'name1',
+                children: [
+                  {
+                    id: 2,
+                    name: 'name2'
+                  }
+                ]
+              },
+              {
+                id: 3,
+                name: 'name3',
+                children: [
+                  {
+                    id: 4,
+                    name: 'name4'
+                  }
+                ]
+              }
+            ],
+            onFilter: (v: any) => (d: any) => d?.name?.indexOf(v) >= 0
+          }
+        },
+        {
+          name: 'defaultExpandAll',
+          hide: true
         },
         {
           name: 'renderResult',
@@ -2026,6 +2322,14 @@ const StarRate = Rate(star, star)
           name: 'renderUnmatched',
           type: 'other',
           initValue: 'unmatched'
+        },
+        {
+          name: 'hideCreateOption',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            onCreate: true
+          }
         },
         {
           name: 'treeData',
@@ -2070,6 +2374,10 @@ const StarRate = Rate(star, star)
           name: 'beforeChange',
           type: 'other',
           initValue: () => console.log('before change')
+        },
+        {
+          name: 'reserveAble',
+          hide: true
         },
         {
           name: 'formatScale',
@@ -2124,6 +2432,14 @@ const StarRate = Rate(star, star)
           type: 'other',
           initValue: () => console.log('click')
         },
+        {
+          name: 'defaultValue',
+          hide: true
+        },
+        {
+          name: 'reserveAble',
+          hide: true
+        },
       ]
     }
   },
@@ -2171,6 +2487,14 @@ const StarRate = Rate(star, star)
           type: 'other',
           initValue: () => 'footer'
         },
+        {
+          name: 'reserveAble',
+          hide: true
+        },
+        {
+          name: 'defaultValue',
+          hide: true
+        },
       ]
     }
   },
@@ -2195,6 +2519,10 @@ const StarRate = Rate(star, star)
           name: 'renderItem',
           type: 'input',
           defaultValue: 'name'
+        },
+        {
+          name: 'reserveAble',
+          hide: true
         },
         {
           name: 'beforeChange',
@@ -2248,7 +2576,10 @@ const StarRate = Rate(star, star)
         {
           name: 'searchPlaceholder',
           type: 'other',
-          initValue: ['left placeholder', 'right placeholder']
+          initValue: ['left placeholder', 'right placeholder'],
+          related: {
+            onFilter: () => console.log('filter')
+          }
         },
         {
           name: 'titles',
@@ -2382,6 +2713,22 @@ const StarRate = Rate(star, star)
           name: 'renderUnmatched',
           type: 'other',
           initValue: (d: any) => `${d.id} render unmatched`
+        },
+        {
+          name: 'showHitDescendants',
+          type: 'switch',
+          defaultValue: false,
+          related: {
+            onFilter: (text: string) => (d: any) => d.id.indexOf(text) >= 0
+          }
+        },
+        {
+          name: 'defaultExpandAll',
+          hide: true
+        },
+        {
+          name: 'reserveAble',
+          hide: true
         }
       ]
     },
@@ -2403,6 +2750,10 @@ const StarRate = Rate(star, star)
         {
           name: 'action',
           type: 'input',
+        },
+        {
+          name: 'reserveAble',
+          hide: true
         },
         {
           name: 'beforeCancel',
@@ -2568,16 +2919,20 @@ const StarRate = Rate(star, star)
   Drawer: {
     Drawer: {
       element: (props: any) => {
-        const [visible, setVisible] = useState(false)
+        const DrawerElement = (drawerProps: any) => {
+          const [visible, setVisible] = useState(false)
 
-        return (
-          <>
-            <Button onClick={() => setVisible(true)}>Open</Button>
-            <Drawer {...props} visible={visible} onClose={() => setVisible(false)}>
-              {'Drawer content'}
-            </Drawer>
-          </>
-        )
+          return (
+            <>
+              <Button onClick={() => setVisible(true)}>Open</Button>
+              <Drawer {...drawerProps} visible={visible} onClose={() => setVisible(false)}>
+                {'Drawer content'}
+              </Drawer>
+            </>
+          )
+        }
+
+        return <DrawerElement {...props} />
       },
       code: `<Drawer visible={visible} onClose={() => setVisible(false)}#placeholder>
   {'Drawer content'}
@@ -2652,16 +3007,20 @@ const StarRate = Rate(star, star)
   Modal: {
     Modal: {
       element: (props: any) => {
-        const [visible, setVisible] = useState(false)
+        const ModalElement = (modalProps: any) => {
+          const [visible, setVisible] = useState(false)
 
-        return (
-          <>
-            <Button onClick={() => setVisible(true)}>Modal</Button>
-            <Modal {...props} visible={visible} onClose={() => setVisible(false)}>
-              {'Modal content'}
-            </Modal>
-          </>
-        )
+          return (
+            <>
+              <Button onClick={() => setVisible(true)}>Modal</Button>
+              <Modal {...modalProps} visible={visible} onClose={() => setVisible(false)}>
+                {'Modal content'}
+              </Modal>
+            </>
+          )
+        }
+
+        return <ModalElement {...props} />
       },
       code: `<Modal visible={visible} onClose={() => setVisible(false)}#placeholder>`,
       exclude: ['rootClassName'],
