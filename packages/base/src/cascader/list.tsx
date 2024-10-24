@@ -26,6 +26,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
     path,
     mode,
     size,
+    virtual,
   } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
@@ -95,7 +96,11 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
-  const renderList = () => {
+  const renderSimpleList = () => {
+    return data.map(renderItem);
+  };
+
+  const renderVritualList = () => {
     return (
       <VirtualScrollList
         virtualRef={virtualRef}
@@ -113,8 +118,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
 
   return (
     <div className={classNames(styles.list)}>
-      {/* {data.map(renderItem)} */}
-      {renderList()}
+      {virtual ? renderVritualList() : renderSimpleList()}
     </div>
   );
 };

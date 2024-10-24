@@ -81,6 +81,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     onFilter: onFilterProp,
     onCollapse: onCollapseProp,
     size,
+    virtual,
     filterSameChange,
   } = props;
 
@@ -530,6 +531,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         data={tempData}
         id={path[0]}
         parentId=''
+        virtual={virtual}
         path={[] as unknown as Value}
         mode={mode}
       />,
@@ -562,6 +564,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             key={p}
             data={tempData}
             id={path[i + 1]}
+            virtual={virtual}
             parentId={path[i]}
             path={path.slice(0, i + 1) as Value}
           />
