@@ -33,6 +33,21 @@ export interface BaseTableProps<Item> {
    * @cn 树形数据展开行，受控
    */
   treeExpandKeys?: KeygenResult[];
+
+  /**
+   * @en Tree Table expand icon
+   * @cn 树形数据展开图标，函数返回null时隐藏展开图标
+   * @version 3.5.0
+   */
+  treeExpandIcon?: (data: Item, index: number, isExpanded: boolean) => React.ReactNode;
+
+  /**
+   * @en Tree Table data loader
+   * @cn 树形数据加载函数
+   * @version 3.5.0
+   */
+  loader?: (data: Item, index: number) => Promise<void>;
+
   /**
    * @en data
    * @cn 数据
