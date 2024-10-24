@@ -27,7 +27,7 @@ export default (props: TbodyProps) => {
   const renderRow = (item: any, index: number) => {
     const rowIndex = index + currentIndex;
     const originKey = util.getKey(props.keygen, item, rowIndex);
-    const trRenderKey = `${originKey}-${rowIndex}`;
+    const trRenderKey = props.loader ? originKey : `${originKey}-${rowIndex}`;
     return (
       <Tr
         key={trRenderKey}
@@ -48,6 +48,8 @@ export default (props: TbodyProps) => {
         treeFunc={props.treeFunc}
         treeExpandLevel={props.treeExpandLevel}
         treeEmptyExpand={props.treeEmptyExpand}
+        treeExpandIcon={props.treeExpandIcon}
+        loader={props.loader}
         isEmptyTree={props.isEmptyTree}
         treeColumnsName={props.treeColumnsName}
         setRowHeight={props.setRowHeight}

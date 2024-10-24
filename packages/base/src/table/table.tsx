@@ -299,6 +299,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       expandKeys: props.expandKeys,
       datum: datum,
       treeEmptyExpand: props.treeEmptyExpand,
+      treeExpandIcon: props.treeExpandIcon,
+      loader: props.loader,
       isEmptyTree: isEmptyTree,
       treeColumnsName: treeColumnsName,
       striped: props.striped,
