@@ -358,4 +358,11 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @default true
    */
   adjust?: boolean;
+  /**
+   * @en Whether to use virtual list
+   * @cn 是否使用虚拟列表
+   * @default false
+   * @version 3.5.0
+   */
+  virtual?: boolean;
 }
