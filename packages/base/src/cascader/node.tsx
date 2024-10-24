@@ -71,6 +71,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
   const handleChange = (_: any, checked: boolean) => {
     datum.set(id, checked ? 1 : 0);
+    console.log('handleChange', datum.getValue());
     if (onChange) onChange(datum.getValue() as Value, datum.getDataById(id));
   };
 

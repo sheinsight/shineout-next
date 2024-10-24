@@ -23,13 +23,14 @@ import Result from '../select/result';
 import Icons from '../icons';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
+
 import { useConfig, getLocale } from '../config';
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
 ) => {
   const props = useWithFormConfig(props0);
-  const defaultHeight = 232;
+  const defaultHeight = 250;
   const {
     jssStyle,
     style,
@@ -373,12 +374,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const getDataByValues = (values?: Value) => {
-    const nextValues = values
-      ?.filter((v) => !util.isEmpty(v))
-      .reduce((acc, val) => acc.concat(val as any), []);
-
-    if (!nextValues) return [];
-    return datum.getDataByValues(nextValues);
+    if (!values) return [];
+    return datum.getDataByValues(values);
   };
 
   const checkUnMatched = (item: any) => {
@@ -529,6 +526,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         childrenKey={childrenKey}
         shouldFinal={shouldFinal}
         key='root'
+        height={height}
         data={tempData}
         id={path[0]}
         parentId=''
@@ -549,6 +547,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         return (
           <CascaderList<DataItem, Value>
             datum={datum}
+            size={size}
+            height={height}
             jssStyle={jssStyle}
             renderItem={renderItem as any}
             keygen={keygen}
