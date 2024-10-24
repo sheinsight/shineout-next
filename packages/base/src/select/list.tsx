@@ -64,8 +64,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
 
   const height = getHeight();
 
-  console.log('select height', height);
-
   const handleHover = usePersistFn((index: number, force?: boolean) => {
     if ((controlType === 'mouse' || force) && hoverIndex !== index) {
       setHoverIndex(index);
