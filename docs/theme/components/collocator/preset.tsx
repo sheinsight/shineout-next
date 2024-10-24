@@ -38,7 +38,9 @@ export const collocatorPreset: Record<string, any> = {
   Button: {
     Button: {
       element: (props: any) => <Button {...props}>{'确定'}</Button>,
-      code:  `<Button#placeholder>{'确定'}</Button>`,
+      code:  `<Button#placeholder>
+  {'确定'}
+</Button>`,
       properties: [
         {
           name: 'onClick',
@@ -126,7 +128,9 @@ export const collocatorPreset: Record<string, any> = {
           <Grid {...props}>{'gird'}</Grid>
         </div>
       ),
-      code: `<Grid#placeholder>{'grid'}</Grid>`,
+      code: `<Grid#placeholder>
+  {'grid'}
+</Grid>`,
       properties: [
         {
           name: 'style',
@@ -145,32 +149,36 @@ export const collocatorPreset: Record<string, any> = {
   Sticky: {
     Sticky: {
       element: (props: any) => {
-        const elRef = useRef(null)
-        return (
-          <div style={{ position: 'relative', zIndex: 0, width: '100%' }}>
-            <div id='sticky_element' ref={elRef} style={{ width: '100%', height: 400, overflow: 'auto' }}>
-              <div
-                style={{
-                  width: '100%',
-                  height: 1600,
-                  backgroundColor: '#f4f5f8',
-                  backgroundImage:
-                    'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +
-                    'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',
-                  backgroundSize: '20px 20px',
-                  backgroundPosition: '0 0, 10px 10px',
-                }}
-              >
-                <div style={{ height: 600 }}></div>
-                <Sticky {...props}>
-                  <Alert style={{ marginBottom: 0 }} type='info'>
-                    Sticky to element
-                  </Alert>
-                </Sticky>
+        const StickyElement = (stickyProps: any) => {
+          const elRef = useRef(null)
+          return (
+            <div style={{ position: 'relative', zIndex: 0, width: '100%' }}>
+              <div id='sticky_element' ref={elRef} style={{ width: '100%', height: 400, overflow: 'auto' }}>
+                <div
+                  style={{
+                    width: '100%',
+                    height: 1600,
+                    backgroundColor: '#f4f5f8',
+                    backgroundImage:
+                      'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +
+                      'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',
+                    backgroundSize: '20px 20px',
+                    backgroundPosition: '0 0, 10px 10px',
+                  }}
+                >
+                  <div style={{ height: 600 }}></div>
+                  <Sticky {...stickyProps}>
+                    <Alert style={{ marginBottom: 0 }} type='info'>
+                      Sticky to element
+                    </Alert>
+                  </Sticky>
+                </div>
               </div>
             </div>
-          </div>
-        )
+          )
+        }
+
+        return <StickyElement {...props} />
       },
       code: `<Sticky#placeholder>
   <Alert style={{ marginBottom: 0 }} type='info'>
@@ -518,7 +526,7 @@ export const collocatorPreset: Record<string, any> = {
       element: (props: any) => (
         <Empty {...props} />
       ),
-      code: `<Empty#placeholder />`,
+      code: `<Empty#placeholder/>`,
       properties: [
         {
           name: 'description',
@@ -633,7 +641,9 @@ export const collocatorPreset: Record<string, any> = {
           />
         )
       },
-      code: `<List keygen='id' renderItem={renderItem}#placeholder />`,
+      code: `<List 
+  keygen='id' 
+  renderItem={renderItem}#placeholder />`,
       properties: [
         {
           name: 'style',
@@ -645,7 +655,8 @@ export const collocatorPreset: Record<string, any> = {
           name: 'data',
           type: 'other',
           initValue: user.fetchSync(20),
-          defaultValue: user.fetchSync(20)
+          defaultValue: user.fetchSync(20),
+          notHideDefaultValue: true
         },
         {
           name: 'empty',
@@ -687,7 +698,9 @@ export const collocatorPreset: Record<string, any> = {
           <Popover {...props} >some text</Popover>
         </Button>
       ),
-      code: `<Popover#placeholder>some text</Popover>`,
+      code: `<Popover#placeholder>
+  some text
+</Popover>`,
       exclude: ['arrowClass'],
       properties: [
         {
@@ -728,7 +741,9 @@ export const collocatorPreset: Record<string, any> = {
           Delete
         </Button>
       ),
-      code: `<Popover.Confirm#placeholder>some text</Popover.Confirm>`,
+      code: `<Popover.Confirm#placeholder>
+  some text
+</Popover.Confirm>`,
       properties: [
         {
           name: 'icon',
@@ -816,7 +831,10 @@ export const collocatorPreset: Record<string, any> = {
     #placeholder-columns
   }
 ]
-<Table keygen={'id'} data={data} columns={columns}#placeholder-Table />`,
+<Table 
+  keygen={'id'} 
+  data={data} 
+  columns={columns}#placeholder-Table/>`,
       exclude: ['rowClassName'],
       merge: ['Table', 'columns'],
       properties: [
@@ -1085,7 +1103,9 @@ export const collocatorPreset: Record<string, any> = {
   Tag: {
     Tag: {
       element: (props: any) => (<Tag {...props}>tag</Tag>),
-      code: `<Tag#placeholder>tag</Tag>`,
+      code: `<Tag#placeholder>
+  tag
+</Tag>`,
       properties: [
         {
           name: 'onClick',
@@ -1200,7 +1220,10 @@ export const collocatorPreset: Record<string, any> = {
           />
         )
       },
-      code: `<Tree keygen='id' data={data} renderItem={renderItem}#placeholder />`,
+      code: `<Tree 
+  keygen='id' 
+  data={data} 
+  renderItem={renderItem}#placeholder />`,
       exclude: ['iconClass'],
       properties: [
         {
@@ -1336,7 +1359,10 @@ export const collocatorPreset: Record<string, any> = {
           <Cascader {...props} keygen='value' data={data} renderItem={(n: any) => `${n?.value}`} />
         )
       },
-      code: `<Cascader keygen='value' data={data} renderItem={(n) => \`\${n?.value}\`}#placeholder />`,
+      code: `<Cascader 
+  keygen='value' 
+  data={data} 
+  renderItem={(n) => \`\${n?.value}\`}#placeholder />`,
       exclude: ['compressedClassName'],
       properties: [
         {
@@ -1971,7 +1997,7 @@ export const collocatorPreset: Record<string, any> = {
           </Radio.Group>
         )
       },
-      code: ` <Radio.Group keygen defaultValue='yellow'#placeholder-Group>
+      code: `<Radio.Group keygen defaultValue='yellow'#placeholder-Group>
   {data.map((d) => (
     <Radio key={d} htmlValue={d}#placeholder-Radio>
       {d}
@@ -2109,7 +2135,8 @@ const StarRate = Rate(star, star)
   Select: {
     Select: {
       element: (props: any) => <Select {...props} keygen={'id'} />,
-      code: `<Select keygen={'id'}#placeholder />`,
+      code: `<Select 
+  keygen={'id'}#placeholder />`,
       exclude: ['compressedClassName'],
       properties: [
         {
@@ -2512,7 +2539,9 @@ const StarRate = Rate(star, star)
           <Transfer {...props} data={data} keygen='id' />
         )
       },
-      code: `<Transfer data={data} keygen='id'#placeholder />`,
+      code: `<Transfer 
+  data={data} 
+  keygen='id'#placeholder />`,
       exclude: ['itemClass', 'listClassName'],
       properties: [
         {
@@ -2619,7 +2648,10 @@ const StarRate = Rate(star, star)
           <TreeSelect {...props} keygen='id' data={data} renderItem={(d: any) => d.id} />
         )
       },
-      code: `<TreeSelect keygen='id' data={data} renderItem={(d: any) => d.id}#placeholder />`,
+      code: `<TreeSelect 
+  keygen='id' 
+  data={data} 
+  renderItem={(d: any) => d.id}#placeholder />`,
       exclude: ['compressedClassName', 'resultClassName'],
       properties: [
         {
@@ -2743,7 +2775,7 @@ const StarRate = Rate(star, star)
           <Button>Upload</Button>
         </Upload>
       ),
-      code: `<Upload {...props}>
+      code: `<Upload#placeholder>
   <Button>Upload</Button>
 </Upload>`,
       properties: [
@@ -2897,7 +2929,11 @@ const StarRate = Rate(star, star)
           <Button>Badge</Button>
         </Badge>
       ),
-      code: `<Badge#placeholder></Badge>`,
+      code: `<Badge#placeholder>
+  <Button>
+    Badge
+  </Button>
+</Badge>`,
       properties: [
         {
           name: 'count',
@@ -2934,7 +2970,9 @@ const StarRate = Rate(star, star)
 
         return <DrawerElement {...props} />
       },
-      code: `<Drawer visible={visible} onClose={() => setVisible(false)}#placeholder>
+      code: `<Drawer 
+  visible={visible} 
+  onClose={() => setVisible(false)}#placeholder>
   {'Drawer content'}
 </Drawer>`,
       exclude: ['rootClassName'],
@@ -3022,7 +3060,9 @@ const StarRate = Rate(star, star)
 
         return <ModalElement {...props} />
       },
-      code: `<Modal visible={visible} onClose={() => setVisible(false)}#placeholder>`,
+      code: `<Modal 
+  visible={visible} 
+  onClose={() => setVisible(false)}#placeholder>`,
       exclude: ['rootClassName'],
       properties: [
         {
@@ -3093,7 +3133,8 @@ const StarRate = Rate(star, star)
         return <Breadcrumb {...breadcrumbProps} data={data} />
       },
       merge: ['Breadcrumb', 'BreadcrumbData'],
-      code: `<Breadcrumb data={data}#placeholder-Breadcrumb />`,
+      code: `<Breadcrumb 
+  data={data}#placeholder-Breadcrumb />`,
       properties: [
         {
           name: 'separator',
@@ -3151,7 +3192,8 @@ const StarRate = Rate(star, star)
           <Dropdown {...props} data={data} />
         )
       },
-      code: `<Dropdown data={data}#placeholder />`,
+      code: `<Dropdown 
+  data={data}#placeholder />`,
       properties: [
         {
           name: 'placeholder',
@@ -3189,7 +3231,9 @@ const StarRate = Rate(star, star)
       element: (props: any) => (
         <Link {...props}>Link</Link>
       ),
-      code: `<Link#placeholder>Link</Link>`,
+      code: `<Link#placeholder>
+  Link
+</Link>`,
       properties: [
         {
           name: 'icon',
@@ -3230,7 +3274,10 @@ const StarRate = Rate(star, star)
           <Menu {...props} keygen='id' data={data} renderItem={(d: any) => d.title} />
         )
       },
-      code: `<Menu keygen='id' data={data} renderItem={(d: any) => d.title}#placeholder />`,
+      code: `<Menu 
+  keygen='id' 
+  data={data} 
+  renderItem={(d: any) => d.title}#placeholder />`,
       properties: [
         {
           name: 'active',

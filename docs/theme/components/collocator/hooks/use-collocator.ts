@@ -52,7 +52,7 @@ const useCollocator = (props: UseCollocatorProps) => {
   const codeFile = useMemo(() => {
     if (!componentInfo.code) return ''
 
-    const createPlaceholder = (config: Record<string, any>, list: IItem[] = []) => Object.keys(config).reduce((pre, cur) => {
+    const createPlaceholder = (config: Record<string, any>, list: IItem[] = [], parent?: string) => Object.keys(config).reduce((pre, cur) => {
       if (
         config[cur] === undefined ||
         list.find(
@@ -60,10 +60,11 @@ const useCollocator = (props: UseCollocatorProps) => {
         ) || cur === 'children'
       )
         return pre;
-      if (typeof config[cur] === 'string') return pre + ` ${cur}='${config[cur]}'`;
-      if (isObject(config[cur]) || Array.isArray(config[cur])) return pre + ` ${cur}={${JSON.stringify(config[cur])}}`;
+      const newline = (!parent || parent === name) ? '\n' : `\n  `
+      if (typeof config[cur] === 'string') return pre + `  ${cur}='${config[cur]}'${newline}`;
+      if (isObject(config[cur]) || Array.isArray(config[cur])) return pre + `  ${cur}={${JSON.stringify(config[cur])}}${newline}`;
 
-      return pre + ` ${cur}${isBoolean(config[cur]) && config[cur] ? '' : `={${config[cur]}}`}`;
+      return pre + `  ${cur}${isBoolean(config[cur]) && config[cur] ? '' : `={${config[cur]}}`}${newline}`;
     }, '')
 
     const createPlaceholderExcludeList = (config: Record<string, any>) => Object.keys(config).reduce((pre, cur) => {
@@ -80,7 +81,7 @@ const useCollocator = (props: UseCollocatorProps) => {
       return Object.keys(config).reduce((pre, cur) => {
         const tempConfig = config[cur]
         
-        const placeholder = placeholderExcludeList.includes(cur) ? createPlaceholderExcludeList(tempConfig) : createPlaceholder(tempConfig, componentInfo?.configurationItemList?.[cur])
+        const placeholder = placeholderExcludeList.includes(cur) ? createPlaceholderExcludeList(tempConfig) : `${!createPlaceholder(tempConfig, componentInfo?.configurationItemList?.[cur], cur) ? '' : (cur === name ? '\n' : `\n  `)}${createPlaceholder(tempConfig, componentInfo?.configurationItemList?.[cur], cur)}`
         const replaceStr = `#placeholder-${cur}`
 
         return `${pre.replace(replaceStr, placeholder)}`
@@ -91,7 +92,7 @@ const useCollocator = (props: UseCollocatorProps) => {
 
     if (Object.keys(config).includes('children')) codeOrigin = childConvert(config.children, codeOrigin);
 
-    return `${codeOrigin.replace(placeholderStr, placeholder)}`;
+    return `${codeOrigin.replace(placeholderStr, !placeholder ? `${placeholder}` : `\n${placeholder}`)}`;
   }, [radioValue, componentInfo, JSON.stringify(config), config]);
 
   const handleCopy = () => {
@@ -159,7 +160,6 @@ const useCollocator = (props: UseCollocatorProps) => {
     setClearSign,
     setConfig,
     setAttachedType,
-    handleConsoleMsg
   }
 }
 
