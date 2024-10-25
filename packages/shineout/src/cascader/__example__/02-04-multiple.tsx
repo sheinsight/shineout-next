@@ -1,8 +1,10 @@
 /**
  * cn -
- *    -- 基础级联选择器的用法
+ *    -- 通过配置 `renderCompressed` 支持自定义折叠内容渲染，大体量数据可自定义优化渲染
+ *    -- `renderCompressed` 参数为一个对象，包含 `data` 和 `onRemove` 两个属性，`data` 为折叠内容数据，`onRemove` 为删除事件
  * en -
- *    -- Basic usage of cascader
+ *    -- Support custom rendering of compressed content by configuring `renderCompressed`, and customize optimized rendering for large data
+ *    -- The `renderCompressed` parameter is an object containing two properties, `data` and `onRemove`, `data` is the compressed content data, and `onRemove` is the delete event
  */
 import React, { useState } from 'react';
 import { Cascader, Popover, Table, Button, TYPE } from 'shineout';
@@ -89,7 +91,7 @@ export default () => {
         compressed
         virtual
         compressedBound={2}
-        placeholder='Please select city'
+        placeholder='Please select node'
         data={d}
         keygen='id'
         renderResult='id'
