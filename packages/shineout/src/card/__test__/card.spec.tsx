@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Card from '..';
 import {
@@ -82,6 +82,7 @@ const {
 const activeDefaultStyle = 'display: block; height: auto; transition: height 240ms ease-in-out;';
 const noActiveDefaultStyle = 'display: block; height: 0px; overflow: hidden;';
 const closeDefaultStyle = 'display: none; height: auto; transition: height 240ms ease-in-out;'
+const noActiveTrueDefaultStyle = 'display: none; height: 0px; overflow: hidden;'
 
 const testHeaderContent = 'Header';
 const testBodyContent = 'body';
@@ -220,12 +221,7 @@ describe('Card[Collapse]', () => {
     const cardIndicatorWrapper = cardHeaderWrapper.querySelector(indicator)!;
     classLengthTest(cardIndicatorWrapper, indicatorIcon, 1);
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
-    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
-    await waitFor(async () => {
-      await delay(500);
-    });
-    styleContentTest(cardBodyCollapse, activeDefaultStyle);
-    fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
+    styleContentTest(cardBodyCollapse, noActiveTrueDefaultStyle);
     await waitFor(async () => {
       await delay(500);
     });
@@ -235,7 +231,13 @@ describe('Card[Collapse]', () => {
     await waitFor(async () => {
       await delay(500);
     });
+    
     styleContentTest(cardBodyCollapse, activeDefaultStyle);
+    fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    styleContentTest(cardBodyCollapse, closeDefaultStyle);
   });
   test('should render when set defaultCollapsed', async () => {
     const { container } = render(<CardTest collapsible defaultCollapsed />);
