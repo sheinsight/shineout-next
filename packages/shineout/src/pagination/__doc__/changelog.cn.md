@@ -1,3 +1,10 @@
+## 3.4.4-beta.13
+2024-10-25
+
+### 🆕 Feature
+- `Pagination` 新增 `select` 属性支持配置弹窗部分信息 ([#753](https://github.com/sheinsight/shineout-next/pull/753))
+
+
 ## 3.2.3
 2024-06-25
 
