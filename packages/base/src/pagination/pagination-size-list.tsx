@@ -10,11 +10,16 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
     pageSizeList = [10, 20, 30, 50, 100],
     text,
     size,
+    select,
     pageSize,
     onChange,
   } = props;
   const paginationStyle = jssStyle?.pagination?.();
   const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sizeList);
+
+  const { absolute, position, zIndex } = select || {};
+
+  console.log('position', position);
 
   const handleChange = (pageSize: number) => {
     const start = (current - 1) * props.pageSize + 1;
@@ -27,7 +32,9 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
       <Select
         jssStyle={jssStyle}
         disabled={disabled}
-        absolute
+        zIndex={zIndex || undefined}
+        absolute={absolute || true}
+        position={position || undefined}
         autoAdapt
         keygen
         size={size}
