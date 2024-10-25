@@ -22,6 +22,7 @@ export interface ResultProps<DataItem, Value>
     | 'maxLength'
     | 'trim'
     | 'separator'
+    | 'renderCompressed'
   > {
   data: DataItem[];
   focus: boolean;
