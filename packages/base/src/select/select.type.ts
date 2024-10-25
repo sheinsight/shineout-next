@@ -108,6 +108,19 @@ export type OptionListRefType = {
   getHoverIndex: () => number;
 };
 
+export interface RenderCompressedOption<DataItem> {
+  /**
+   * @en The current selected data
+   * @cn 当前选中的数据
+   */
+  data: DataItem[];
+  /**
+   * @en Method to remove the option
+   * @cn 删除选项的方法
+   */
+  onRemove: (item: DataItem) => void;
+}
+
 export interface BaseListProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
@@ -381,6 +394,12 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 多选合并展示弹出框的类名
    */
   compressedClassName?: string;
+
+  /**
+   * @en Custom render compressed content
+   * @cn 自定义渲染折叠内容
+   */
+  renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
 
   /**
    * @en Hide the creat option while set onCreate
