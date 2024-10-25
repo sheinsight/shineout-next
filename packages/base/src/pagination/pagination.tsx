@@ -25,6 +25,7 @@ const Pagination = (props: PaginationProps) => {
     text = {},
     pageSizeList,
     style,
+    select,
   } = props;
 
   const { onChange, current, pageSize } = usePagination({
@@ -111,6 +112,7 @@ const Pagination = (props: PaginationProps) => {
                 total={props.total || 0}
                 text={text}
                 size={size}
+                select={select}
                 current={current || 0}
                 pageSize={pageSize}
                 pageSizeList={pageSizeList}

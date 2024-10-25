@@ -2,6 +2,7 @@ import { ButtonClasses } from '../button/button.type';
 import { SelectClasses } from '../select/select.type';
 import { InputClasses } from '../input/input.type';
 import { CommonType } from '../common/type';
+import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 
 export type AlignType = 'left' | 'center' | 'right';
 
@@ -18,6 +19,15 @@ export interface PaginationJssStyle {
   select?: () => SelectClasses;
   button?: () => ButtonClasses;
   pagination?: () => PaginationClasses;
+}
+
+export interface SelectProps extends Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
+  /**
+   * @en Set Position can control the different position of DatePicker
+   * @cn 弹出框位置
+   * @default auto
+   */
+  position?: 'auto' | 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
 }
 
 export interface PaginationClasses {
@@ -121,4 +131,9 @@ export interface PaginationProps extends Pick<CommonType, 'style' | 'className' 
    */
   simple?: boolean;
   jssStyle?: PaginationJssStyle;
+  /**
+   * @en Configuration of Select component in Pagination, currently supports absolute, position and zIndex, same as Select
+   * @cn 分页器有关 Select 组件的配置，目前支持 absolute、position 和 zIndex，类型同 Select
+   */
+  select?: SelectProps;
 }
