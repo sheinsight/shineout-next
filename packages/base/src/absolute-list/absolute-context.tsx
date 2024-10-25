@@ -2,7 +2,16 @@
 
 import { createContext } from 'react';
 
-const AbsoluteContext = createContext<boolean>(false);
+interface AbsoluteContextProps {
+  absolute: boolean;
+  follow?: boolean;
+  scrollContainer?: HTMLElement | null;
+}
+
+
+const AbsoluteContext = createContext<AbsoluteContextProps>({
+  absolute: false
+});
 
 AbsoluteContext.displayName = 'AbsoluteContext';
 

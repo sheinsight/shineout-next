@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
+import { useCheckElementPosition } from './check-position'
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { docSize, isChromeLowerThan } from '../../utils';
@@ -47,6 +48,8 @@ export interface PositionStyleConfig {
   fixedWidth?: boolean | 'min';
   updateKey?: number | string;
   adjust?: boolean;
+  scrollContainer?: HTMLElement | null;
+  follow?: boolean;
 }
 
 const hideStyle: React.CSSProperties = {
@@ -69,10 +72,14 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     scrollElRef,
     updateKey,
     adjust,
+    follow,
+    scrollContainer,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
   const [arrayStyle, setArrayStyle] = useState<React.CSSProperties>({});
+
+  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollContainer, follow});
 
   const { current: context } = React.useRef({
     element: null as HTMLDivElement | null,
@@ -346,7 +353,15 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
   });
 
-  useEffect(updateStyle, [show, position, absolute, updateKey, fixedWidth]);
+  useEffect(updateStyle, [
+    show,
+    position,
+    absolute,
+    updateKey,
+    fixedWidth,
+    parentElNewPosition
+  ]);
+
   return { style, arrayStyle };
 };
 
