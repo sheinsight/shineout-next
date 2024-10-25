@@ -64,6 +64,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     renderResult: renderResultProp,
     placeholder,
     focusSelected = true,
+    renderCompressed,
     compressedClassName,
     resultClassName,
     renderUnmatched,
@@ -469,6 +470,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           keygen={keygen}
           disabled={disabled}
           compressed={compressed}
+          renderCompressed={renderCompressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}
           multiple={true}

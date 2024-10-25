@@ -71,7 +71,18 @@ export function getResetMore(
 }
 
 const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
-  const { jssStyle, data, showNum, size, compressed, compressedClassName, classes } = props;
+  const {
+    jssStyle,
+    data,
+    showNum,
+    size,
+    datas,
+    compressed,
+    compressedClassName,
+    renderCompressed,
+    classes,
+    onRemove,
+  } = props;
   const [visible, setVisible] = useState(false);
 
   const styles = classes;
@@ -129,10 +140,9 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
     );
   }
 
-  return (
-    <React.Fragment>
-      {shouldShowMore ? data : before}
-      <span style={{ display: 'inline-flex' }}>
+  const renderCompressedTag = () => {
+    return (
+      <React.Fragment>
         <Tag
           className={styles.tag}
           jssStyle={jssStyle as any}
@@ -155,6 +165,20 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
             {after}
           </div>
         </Popover>
+      </React.Fragment>
+    );
+  };
+
+  return (
+    <React.Fragment>
+      {shouldShowMore ? data : before}
+      <span style={{ display: 'inline-flex' }}>
+        {renderCompressed
+          ? renderCompressed({
+              data: datas as DataItem[],
+              onRemove: onRemove as (item: DataItem) => void,
+            })
+          : renderCompressedTag()}
       </span>
     </React.Fragment>
   );

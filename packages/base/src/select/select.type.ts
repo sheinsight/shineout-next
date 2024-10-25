@@ -383,6 +383,15 @@ export interface SelectPropsBase<DataItem, Value>
   compressedClassName?: string;
 
   /**
+   * @en Custom render compressed content
+   * @cn 自定义渲染折叠内容
+   */
+  renderCompressed?: (options: {
+    data: DataItem[] | undefined;
+    onRemove: (item: DataItem) => void;
+  }) => React.ReactNode;
+
+  /**
    * @en Hide the creat option while set onCreate
    * @cn 在使用创建选项时，在选项列表中隐藏该选项，回车后直接选中
    * @default false
