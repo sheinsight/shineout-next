@@ -327,16 +327,19 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
 
     // 单选场景下，焦点时自动选中input文本
-    if(focus && showInput && mounted.current){
-      const nextValue = getValueArr(value);
-      props.setInputText(nextValue[0]);
+    if(!multiple && focus && showInput && mounted.current){
+        const result = getDataByValues(value);
+        if(result.length > 0){
+          const inputTmpText = renderResultContent(result[0]);
+          inputTmpText && props.setInputText(inputTmpText);
+        }
 
       setTimeout(() => {
         inputRef?.current?.select();
       }, 10);
     }
     mounted.current = true;
-  }, [focus, showInput]);
+  }, [focus, placeholder, multiple]);
 
   useLayoutEffect(() => {
     handleResetMore();
