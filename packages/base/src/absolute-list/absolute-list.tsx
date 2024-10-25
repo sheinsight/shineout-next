@@ -19,11 +19,12 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     updateKey,
     popupGap,
     adjust,
+    follow,
     destroy = false,
     lazy = true,
   } = props;
 
-  const defaultAbsolute = useContext(AbsoluteContext);
+  const { absolute: defaultAbsolute, scrollContainer } = useContext(AbsoluteContext);
   const absolute = props.absolute === undefined ? defaultAbsolute : props.absolute;
 
   const { getRoot } = useContainer({
@@ -45,6 +46,8 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     updateKey,
     popupGap,
     adjust,
+    follow,
+    scrollContainer,
   });
 
   const childStyle = children.props.style;
