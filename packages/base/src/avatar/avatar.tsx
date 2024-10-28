@@ -15,6 +15,7 @@ const Avatar = (props: AvatarProps) => {
     gap = 4,
     shape: shapeProp,
     srcSet,
+    draggable,
     size: sizeProp,
     crossOrigin,
     onError,
@@ -58,7 +59,7 @@ const Avatar = (props: AvatarProps) => {
   };
 
   const handleImageLoadError = () => {
-    const errorFlag = onError?.();
+    const errorFlag = onError?.() || false;
     if (errorFlag !== false) {
       setIsImgExist(false);
     }
@@ -70,6 +71,7 @@ const Avatar = (props: AvatarProps) => {
         <img
           src={src}
           alt={alt}
+          draggable={draggable}
           srcSet={srcSet}
           crossOrigin={crossOrigin}
           onError={handleImageLoadError}

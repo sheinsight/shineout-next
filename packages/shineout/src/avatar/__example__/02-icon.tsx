@@ -5,7 +5,7 @@
  *    -- The basic usage of Avatar
  */
 import React from 'react';
-import { Avatar } from 'shineout';
+import { Avatar, Badge } from 'shineout';
 
 const userIcon = (
   <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -26,6 +26,11 @@ export default () => {
       <Avatar icon={userIcon}></Avatar>
       <Avatar>J</Avatar>
       <Avatar src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar/001.png'></Avatar>
+      <Badge count={<div style={{ fontSize: 16, transform: 'rotate(45deg)' }}>🌱</div>}>
+        <Avatar style={{ background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', color: '#fff' }}>
+          🍊
+        </Avatar>
+      </Badge>
     </div>
   );
 };

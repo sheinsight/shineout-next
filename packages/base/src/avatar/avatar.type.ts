@@ -58,6 +58,12 @@ export interface AvatarProps extends Pick<CommonType, 'className' | 'style' | 's
    */
   gap?: number;
   /**
+   * @en Whether the image is allowed to be dragged
+   * @cn 图片是否允许拖动
+   * @default true
+   */
+  draggable?: boolean;
+  /**
    * @en CORS attribute setting
    * @cn CORS 属性设置
    */
