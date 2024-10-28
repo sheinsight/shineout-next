@@ -1,11 +1,11 @@
 ---
 name: CardGroup
-group: 废弃组件
+group: Other
 ---
 
 # Title
 
-CardGroup 标题
+CardGroup 卡片组
 CardGroup
 
 # Describe

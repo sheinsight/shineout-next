@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { usePersistFn } from '@sheinx/hooks';
+import React, { useContext, useMemo, } from 'react';
+import { useInView, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CardGroupContext } from './card-group-context';
 import Lazyload from './lazyload';
@@ -10,6 +10,7 @@ import type { CardGroupItemProps } from './item.type';
 const Item = <V,>(props: CardGroupItemProps<V>) => {
   const { container } = useContext(CardGroupContext);
   const classes = props.jssStyle?.cardGroup?.();
+  const { ref: itemRef, isInView } = useInView<HTMLDivElement>();
 
   const handleChange = usePersistFn((_: any, checked: boolean) => {
     if (props.onChange) props.onChange(checked, props.value!);
@@ -43,8 +44,15 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
     </>
   );
 
+  const itemStyle = useMemo(() => {
+    return {
+      ...props.style,
+      visibility: isInView ? 'visible' : 'hidden',
+    } as React.CSSProperties;
+  }, [isInView, props.style]);
+
   return (
-    <div className={cls} style={props.style}>
+    <div ref={itemRef} className={cls} style={itemStyle}>
       {renderChildren(content)}
     </div>
   );
