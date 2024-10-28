@@ -1,5 +1,5 @@
-## 3.4.4-beta.3
-2024-10-15
+## 3.4.4
+2024-10-28
 
 ### 🐞 BugFix
 - 修复 `TreeSelect` 组件无法拖拽选中 dom 内容的问题 ([#729](https://github.com/sheinsight/shineout-next/pull/729))

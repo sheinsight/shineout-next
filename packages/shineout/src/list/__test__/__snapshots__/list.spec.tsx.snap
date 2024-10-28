@@ -666,11 +666,8 @@ exports[`List[Base] should render correctly about colNum 1`] = `
 
 exports[`List[Base] should render correctly about empty 1`] = `
 <div
-  class="soui-list-wrapper soui-list-wrapper-bordered"
+  class="soui-list-wrapper soui-list-wrapper-empty soui-list-wrapper-bordered"
 >
-  <div
-    class="soui-list-scroll-container"
-  />
   <div
     class="soui-list-empty"
   >

@@ -1,7 +1,10 @@
-## 3.4.4-beta.3
-2024-10-15
+## 3.4.4
+2024-10-28
 
 ### 🐞 BugFix
+- 修复 `Select` 选中值之后再次聚焦时的回显值显示不正确的问题 
+ ([#748](https://github.com/sheinsight/shineout-next/pull/748))
+- 修复 `Select` 单选场景下开启搜索后，焦点输入框时没有自动选中文本的问题 ([#737](https://github.com/sheinsight/shineout-next/pull/737))
 - 修复 `Select` 组件无法拖拽选中 dom 内容的问题 ([#729](https://github.com/sheinsight/shineout-next/pull/729))
 
 ## 3.4.3
