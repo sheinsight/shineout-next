@@ -3,15 +3,9 @@ import { Avatar } from '@sheinx/base';
 import { useAvatarStyle } from '@sheinx/shineout-style';
 import { AvatarProps } from './avatar.type';
 
-
 const jssStyle = {
-    avatar: useAvatarStyle
-}
+  avatar: useAvatarStyle,
+};
 export default (props: AvatarProps) => {
-    return (
-        <Avatar
-            jssStyle={jssStyle}
-            {...props}
-        />
-  );
-}
+  return <Avatar jssStyle={jssStyle} {...props} />;
+};

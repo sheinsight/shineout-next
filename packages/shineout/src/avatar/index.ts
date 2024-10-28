@@ -1,14 +1,13 @@
 import Avatar from './avatar';
-
+import Group from './group';
 
 type RefAvatar = typeof Avatar;
-
 export interface AvatarComponent extends RefAvatar {
-    displayName: string;
+  Group: typeof Group;
+  displayName: string;
 }
 
-const AvatarComp: AvatarComponent = Avatar as AvatarComponent;
+(Avatar as AvatarComponent).displayName = 'ShineoutAvatar';
+(Avatar as AvatarComponent).Group = Group;
 
-AvatarComp.displayName = 'ShineoutAvatar';
-
-export default AvatarComp;
+export default Avatar as AvatarComponent;

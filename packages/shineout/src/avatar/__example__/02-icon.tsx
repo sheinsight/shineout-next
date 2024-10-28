@@ -1,6 +1,6 @@
 /**
- * cn - 基本用法
- *    -- 头像的基础使用
+ * cn - 类型
+ *    -- 支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色
  * en - Basic
  *    -- The basic usage of Avatar
  */
@@ -22,8 +22,10 @@ const userIcon = (
 
 export default () => {
   return (
-    <div>
+    <div style={{ display: 'flex', gap: 24 }}>
       <Avatar icon={userIcon}></Avatar>
+      <Avatar>J</Avatar>
+      <Avatar src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar/001.png'></Avatar>
     </div>
   );
 };
