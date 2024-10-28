@@ -133,7 +133,8 @@ export interface PaginationProps extends Pick<CommonType, 'style' | 'className' 
   jssStyle?: PaginationJssStyle;
   /**
    * @en Configuration of Select component in Pagination, currently supports absolute, position and zIndex, same as Select
-   * @cn 分页器有关 Select 组件的配置，目前支持 absolute、position 和 zIndex，类型同 Select
+   * @cn 分页器有关 Select 组件的配置，目前支持 absolute、position 和 zIndex，类型同 Select 组件
+   * @version 3.4.4
    */
   select?: SelectProps;
 }

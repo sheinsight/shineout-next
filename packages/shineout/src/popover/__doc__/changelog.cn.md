@@ -1,5 +1,5 @@
-## 3.4.4-beta.8
-2024-10-17
+## 3.4.4
+2024-10-28
 
 ### 🐞 BugFix
 - 修复 `Popover.Confirm` 的弹出容器的宽度在Table中有可能显示较窄的问题 ([#736](https://github.com/sheinsight/shineout-next/pull/736))
