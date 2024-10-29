@@ -32,6 +32,18 @@ export interface LinkProps
     };
 
     /**
+     * @cn 链接地址
+     * @en Link address
+     */
+    href?: string;
+
+    /**
+     * @cn 链接打开方式
+     * @en Link target
+     */
+    target?: '_blank' | '_self' | '_parent' | '_top';
+
+    /**
      * @cn 是否禁用
      * @en Whether the link is disabled
      */
