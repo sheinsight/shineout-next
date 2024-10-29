@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState, } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useMemo, useState, } from 'react';
 import { useInView, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CardGroupContext } from './card-group-context';
@@ -10,9 +10,9 @@ import type { CardGroupItemProps } from './item.type';
 const Item = <V,>(props: CardGroupItemProps<V>) => {
   const { container } = useContext(CardGroupContext);
   const classes = props.jssStyle?.cardGroup?.();
-  const { ref: itemRef, isInView } = useInView<HTMLDivElement>({
+  const { ref: itemRef, isInView, wasInView } = useInView<HTMLDivElement>({
     root: container,
-    rootMargin: `${container?.clientHeight || 100}px`,
+    rootMargin: `${props.lazyLoadOffset || container?.clientHeight || 100}px`,
   });
   const [itemHeight, setItemHeight] = useState(0);
 
@@ -48,23 +48,23 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
     </>
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if(isInView){
-      setItemHeight(itemRef.current?.clientHeight || 0);
+      setItemHeight(itemRef.current?.offsetHeight || 0);
     }
   }, [isInView])
 
-  const hiddenStyle = useMemo(() => isInView ? {} : ({
+  const hiddenStyle = useMemo(() => !isInView && wasInView && itemHeight ? ({
     height: itemHeight,
     overflow: 'hidden',
     visibility: isInView ? 'visible' : 'hidden',
-  }), [isInView, itemHeight])
+  }) : undefined, [isInView, itemHeight])
 
   const itemStyle = useMemo(() => {
-    return {
+    return hiddenStyle ? {
       ...props.style,
       ...hiddenStyle,
-    } as React.CSSProperties;
+    } as React.CSSProperties : props.style;
   }, [hiddenStyle, props.style]);
 
   return (
