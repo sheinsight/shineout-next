@@ -11,6 +11,12 @@ export interface CardGroupItemProps<Value> extends Pick<CommonType, 'className' 
   placeholder?: ReactNode;
 
   /**
+   * @en lazy load offset
+   * @cn 懒加载偏移量，距离视口的距离即可视为进入视口中
+   */
+  lazyLoadOffset?: number;
+
+  /**
    * @en checked status, hide while not set
    * @cn checked 表示选中状态，不设置则不显示选择框
    */
