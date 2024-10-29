@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
-import { Button, setConfig, setLocale } from 'shineout';
+import { Button, setConfig, setLocale, Badge, Tag } from 'shineout';
 
 const Nav = () => {
   const classes = useStyles();
@@ -50,10 +50,10 @@ const Nav = () => {
     const nextLocales = state.locales === 'en' ? 'cn' : 'en';
 
     dispatch.setLocales(nextLocales);
-    if(nextLocales === 'en'){
-      setLocale('en-US')
-    }else if(nextLocales === 'cn'){
-      setLocale('zh-CN')
+    if (nextLocales === 'en') {
+      setLocale('en-US');
+    } else if (nextLocales === 'cn') {
+      setLocale('zh-CN');
     }
 
     const nextPath = location.pathname.replace(`/${state.locales}/`, `/${nextLocales}/`);
@@ -174,10 +174,23 @@ const Nav = () => {
     );
   };
 
+  const renderEnv = () => {
+    const isBeta = process.env.DOC_ENV === 'BASE';
+    if (!isBeta) return null;
+    return (
+      <Tag style={{ marginLeft: 10 }} size='small' color='success'>
+        Beta
+      </Tag>
+    );
+  };
+
   return (
     <div className={classes.nav}>
       <div className='left-nav'>{renderLeftNav()}</div>
-      <div className='logo'>{renderLogo()}</div>
+      <div className='logo'>
+        {renderLogo()}
+        {renderEnv()}
+      </div>
       <ul className='entry'>
         {/* <li>
           <Input
@@ -188,7 +201,7 @@ const Nav = () => {
           ></Input>
         </li> */}
         <li style={{ padding: '0 12px' }}>
-          <Button size='small' mode="text" onClick={changeDirection}>
+          <Button size='small' mode='text' onClick={changeDirection}>
             {direction === 'rtl' ? 'LTR' : 'RTL'}
           </Button>
         </li>
