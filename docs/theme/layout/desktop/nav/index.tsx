@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
-import { Button, setConfig, setLocale } from 'shineout';
+import { Button, setConfig, setLocale, Badge, Tag } from 'shineout';
 
 const Nav = () => {
   const classes = useStyles();
@@ -58,10 +58,10 @@ const Nav = () => {
     const nextLocales = state.locales === 'en' ? 'cn' : 'en';
 
     dispatch.setLocales(nextLocales);
-    if(nextLocales === 'en'){
-      setLocale('en-US')
-    }else if(nextLocales === 'cn'){
-      setLocale('zh-CN')
+    if (nextLocales === 'en') {
+      setLocale('en-US');
+    } else if (nextLocales === 'cn') {
+      setLocale('zh-CN');
     }
 
     const nextPath = location.pathname.replace(`/${state.locales}/`, `/${nextLocales}/`);
@@ -179,6 +179,16 @@ const Nav = () => {
           fill='#141737'
         />
       </svg>
+    );
+  };
+
+  const renderEnv = () => {
+    const isBeta = process.env.DOC_ENV === 'BASE';
+    if (!isBeta) return null;
+    return (
+      <Tag style={{ marginLeft: 10 }} size='small' color='success'>
+        Beta
+      </Tag>
     );
   };
 
