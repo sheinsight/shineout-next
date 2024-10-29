@@ -18,6 +18,12 @@ const useInView = <T extends ElementType>(options: UseInViewOptions = {}) => {
     const element = elementRef.current;
     if (!element) return;
 
+    if (typeof window === 'undefined' || !window.IntersectionObserver){
+      setIsInView(true);
+      setWasInView(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         const inView = entry.isIntersecting;
