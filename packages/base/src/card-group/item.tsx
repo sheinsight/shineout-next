@@ -10,10 +10,11 @@ import type { CardGroupItemProps } from './item.type';
 const Item = <V,>(props: CardGroupItemProps<V>) => {
   const { container } = useContext(CardGroupContext);
   const classes = props.jssStyle?.cardGroup?.();
-  const { ref: itemRef, isInView, wasInView } = useInView<HTMLDivElement>({
+  const { ref: itemRef, isInView: itemIsInView, wasInView } = useInView<HTMLDivElement>({
     root: container,
     rootMargin: `${props.lazyLoadOffset || container?.clientHeight || 100}px`,
   });
+  const isInView = props.placeholder ? itemIsInView : true;
   const [itemHeight, setItemHeight] = useState(0);
 
   const handleChange = usePersistFn((_: any, checked: boolean) => {
