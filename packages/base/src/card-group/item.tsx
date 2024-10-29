@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, } from 'react';
+import React, { useContext, useMemo, useState, } from 'react';
 import { useInView, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CardGroupContext } from './card-group-context';
@@ -20,7 +20,7 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
     if (!props.placeholder) return content;
     if (!container) return content;
     return (
-      <Lazyload container={container} placeholder={props.placeholder}>
+      <Lazyload container={container} placeholder={props.placeholder} isInView={isInView}>
         {content}
       </Lazyload>
     );
