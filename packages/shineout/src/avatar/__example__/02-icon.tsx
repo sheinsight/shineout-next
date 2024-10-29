@@ -25,7 +25,7 @@ export default () => {
     <div style={{ display: 'flex', gap: 24 }}>
       <Avatar icon={userIcon}></Avatar>
       <Avatar>J</Avatar>
-      <Avatar src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar/001.png'></Avatar>
+      <Avatar src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar/01.png'></Avatar>
       <Badge count={<div style={{ fontSize: 16, transform: 'rotate(45deg)' }}>🌱</div>}>
         <Avatar style={{ background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', color: '#fff' }}>
           🍊
