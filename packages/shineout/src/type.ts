@@ -1,4 +1,5 @@
 export * as Alert from './alert/interface';
+export * as Avatar from './avatar/interface';
 export * as Badge from './badge/interface';
 export * as Breadcrumb from './breadcrumb/interface';
 export * as Button from './button/interface';
