@@ -2,14 +2,19 @@ import React from 'react';
 import { CommonType } from '../common/type';
 import type { ObjectType, TableColumnItem, BaseTableProps, ObjectKey } from '@sheinx/hooks';
 import { useListSelect, useTableTree } from '@sheinx/hooks';
-import { CheckboxClasses } from '../checkbox/checkbox.type';
-import { RadioClasses } from '../radio/radio.type';
 import { SpinClasses } from '../spin/spin.type';
 import { PaginationProps } from '../pagination/pagination.type';
 import { PaginationClasses } from '../pagination/pagination.type';
 import { ButtonClasses } from '../button/button.type';
-import { InputClasses } from '../input/input.type';
 import { EmptyClasses } from '../empty/empty.type';
+import { InputClasses } from '../input/input.type';
+import { CascaderClasses } from '../cascader/cascader.type';
+import { SelectClasses } from '../select/select.type';
+import { TreeSelectClasses } from '../tree-select/tree-select.type';
+import { DatePickerClasses } from '../date-picker/date-picker.type';
+import { SwitchClasses } from '../switch/switch.type';
+import { CheckboxClasses } from '../checkbox/checkbox.type';
+import { RadioClasses } from '../radio/radio.type';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -123,6 +128,11 @@ export interface TableProps<DataItem, Value>
     button?: () => ButtonClasses;
     input?: () => InputClasses;
     empty?: () => EmptyClasses;
+    select?: () => SelectClasses;
+    cascader?: () => CascaderClasses;
+    treeSelect?: () => TreeSelectClasses;
+    datePicker?: () => DatePickerClasses;
+    switch?: () => SwitchClasses;
   };
   /**
    *

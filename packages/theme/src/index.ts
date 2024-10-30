@@ -6,6 +6,9 @@ import { setConfig } from './config';
 import Alert, { Alert as defaultAlert } from './alert';
 import { AlertTokens } from './alert/type';
 
+import Avatar, { Avatar as defaultAvatar } from './avatar';
+import { AvatarTokens } from './avatar/type';
+
 import Badge, { Badge as defaultBadge } from './badge';
 import { BadgeTokens } from './badge/type';
 
@@ -142,6 +145,7 @@ import Upload, { Upload as defaultUpload } from './upload';
 import { UploadTokens } from './upload/type';
 
 export type ThemeTokens = AlertTokens &
+  AvatarTokens &
   BadgeTokens &
   BreadcrumbTokens &
   ButtonTokens &
@@ -191,6 +195,7 @@ export type ThemeTokens = AlertTokens &
 const Tokens: ThemeTokens = {
   ...CommonTokenMap,
   ...Alert,
+  ...Avatar,
   ...Badge,
   ...Breadcrumb,
   ...Button,
@@ -240,6 +245,7 @@ const Tokens: ThemeTokens = {
 
 const ComponentTokenMap: ThemeTokens = {
   ...defaultAlert,
+  ...defaultAvatar,
   ...defaultBadge,
   ...defaultBreadcrumb,
   ...defaultButton,

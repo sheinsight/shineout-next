@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import { usePersistFn, util } from '@sheinx/hooks';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useLatestObj, usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import { addResizeObserver } from '@sheinx/hooks';
 import classNames from 'classnames';
+import Spin from '../spin';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
 import Radio from '../radio';
@@ -19,6 +20,8 @@ interface TrProps
     | 'treeFunc'
     | 'treeExpandLevel'
     | 'treeEmptyExpand'
+    | 'treeExpandIcon'
+    | 'loader'
     | 'isEmptyTree'
     | 'setRowHeight'
     | 'fixLeftNum'
@@ -41,7 +44,7 @@ interface TrProps
   rowIndex: number;
   columns: TableFormatColumn<any>[];
   isScrollX: boolean;
-  colgroup: (number | string |undefined)[];
+  colgroup: (number | string | undefined)[];
   rawData: any;
   expanded: boolean;
   expandCol: TbodyProps['expandHideCol'] | undefined;
@@ -58,7 +61,7 @@ interface TrProps
 }
 
 const Tr = (props: TrProps) => {
-  const { treeFunc } = props;
+  const { treeFunc, jssStyle } = props;
   const tableClasses = props.jssStyle?.table?.();
   const trRef = useRef<HTMLTableRowElement>(null);
   const expandRef = useRef<HTMLTableRowElement>(null);
@@ -122,7 +125,12 @@ const Tr = (props: TrProps) => {
     }
   });
 
-  useEffect(setVirtualRowHeight, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
+  useEffect(setVirtualRowHeight, [
+    props.expanded,
+    props.rowIndex,
+    props.bodyScrollWidth,
+    props.resizeFlag,
+  ]);
 
   useEffect(() => {
     if (!trRef.current) return;
@@ -135,13 +143,34 @@ const Tr = (props: TrProps) => {
     };
   }, []);
 
+  const [isExpandLoading, setIsExpandLoading] = useState(false);
+
+  const innerExpandClick = usePersistFn(async (showLoader?: boolean) => {
+    if (showLoader && props.loader) {
+      setIsExpandLoading(true);
+
+      try {
+        await props.loader(props.rawData, props.rowIndex)
+        treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+      } finally {
+        setIsExpandLoading(false);
+      }
+    } else {
+      treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+    }
+  });
+
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
     const className = tableClasses?.expandWrapper;
     const children = props.rawData[props.treeColumnsName!];
+    const showLoader = children === undefined && typeof props.loader === 'function';
     const isExpanded = props.treeFunc.isTreeExpanded(props.rawData, props.rowIndex);
     const dirName = isRtl ? 'Right' : 'Left';
-    if (!children || (children.length === 0 && !props.treeEmptyExpand)) {
+
+    const shouldRenderPlain = !children && !props.loader || (children?.length === 0 && !props.treeEmptyExpand && !props.loader);
+
+    if (shouldRenderPlain) {
       return (
         <span
           className={className}
@@ -154,18 +183,38 @@ const Tr = (props: TrProps) => {
         </span>
       );
     }
-    return (
-      <span className={className} style={{ marginLeft: level * treeIndent }}>
+
+    let $expandIcon
+    if (typeof props.treeExpandIcon === 'function') {
+      $expandIcon = props.treeExpandIcon(props.rawData, props.rowIndex, isExpanded);
+    } else if(showLoader){
+      $expandIcon = Icons.table.Collapse;
+    } else if(children?.length > 0 || props.treeEmptyExpand) {
+      $expandIcon = isExpanded ? Icons.table.Expand : Icons.table.Collapse;
+    }
+
+    if(isExpandLoading){
+      $expandIcon = <Spin size={12} jssStyle={props.jssStyle}></Spin>
+    }
+
+    let $expandIconWrapper
+    if($expandIcon !== null){
+      $expandIconWrapper = (
         <div className={classNames(tableClasses?.iconWrapper)}>
           <span
+            data-role='tree-expand-icon'
             className={tableClasses?.expandIcon}
-            onClick={() => {
-              treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
-            }}
+            onClick={() => innerExpandClick(showLoader)}
           >
-            {isExpanded ? Icons.table.Expand : Icons.table.Collapse}
+            {$expandIcon}
           </span>
         </div>
+      )
+    }
+
+    return (
+      <span className={className} style={{ marginLeft: level * treeIndent }}>
+        {$expandIconWrapper}
         {content}
       </span>
     );
@@ -188,7 +237,7 @@ const Tr = (props: TrProps) => {
           className={classNames(tableClasses?.iconWrapper, tableClasses?.expandIconWrapper)}
           onClick={clickEvent}
         >
-          <span className={tableClasses?.expandIcon}>
+          <span data-role='expand-icon' className={tableClasses?.expandIcon}>
             {props.expanded ? Icons.table.Expand : Icons.table.Collapse}
           </span>
         </div>
@@ -267,8 +316,20 @@ const Tr = (props: TrProps) => {
             key={col.key}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
-            onMouseEnter={props.hover && hasSiblingRowSpan ? () => { props.handleCellHover(props.rowIndex, data[i].rowSpan) } : undefined}
-            onMouseLeave={props.hover && hasSiblingRowSpan ? () => { props.handleCellHover(-1, 0); } : undefined}
+            onMouseEnter={
+              props.hover && hasSiblingRowSpan
+                ? () => {
+                    props.handleCellHover(props.rowIndex, data[i].rowSpan);
+                  }
+                : undefined
+            }
+            onMouseLeave={
+              props.hover && hasSiblingRowSpan
+                ? () => {
+                    props.handleCellHover(-1, 0);
+                  }
+                : undefined
+            }
             className={classNames(
               col.className,
               col.type === 'checkbox' && tableClasses?.cellCheckbox,
@@ -278,10 +339,13 @@ const Tr = (props: TrProps) => {
               col.align === 'right' && tableClasses?.cellAlignRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
-              (data[i].rowSpan > 1) && props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,
+              data[i].rowSpan > 1 &&
+                props.isCellHover(props.rowIndex, data[i].rowSpan) &&
+                tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
             dir={config.direction}
+            data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
           >
             {renderContent(col, data[i].data)}
@@ -315,6 +379,24 @@ const Tr = (props: TrProps) => {
       }
     }
   };
+  const preventClasses = [
+    jssStyle?.input?.().wrapper,
+    jssStyle?.select?.().wrapper,
+    jssStyle?.datePicker?.().wrapper,
+    jssStyle?.treeSelect?.().wrapper,
+    jssStyle?.switch?.().wrapper,
+    jssStyle?.checkbox?.().wrapper,
+    jssStyle?.radio?.().wrapper,
+    jssStyle?.cascader?.().wrapper,
+  ];
+  const isNotExpandableElement = (el: HTMLElement): boolean => {
+    const { tagName } = el;
+    if (tagName === 'TD' || tagName === 'TR') return false;
+    if (tagName === 'A' || tagName === 'BUTTON' || tagName === 'INPUT') return true;
+    if (preventClasses.find((c) => el.classList.contains(c!))) return true;
+    if (!el.parentElement) return true;
+    return isNotExpandableElement(el.parentElement);
+  };
 
   const handleRowClick = usePersistFn((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
@@ -334,6 +416,9 @@ const Tr = (props: TrProps) => {
         }
       }
     }
+
+    if (isNotExpandableElement(target)) return;
+
     if (props.rowClickExpand) {
       props.handleExpandClick(
         props.expandCol as TableFormatColumn<any>,
@@ -351,7 +436,7 @@ const Tr = (props: TrProps) => {
           props?.rowClassName?.(props.rawData, props.rowIndex),
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
           props.isSelect && tableClasses?.rowChecked,
-          props.hover && tableClasses?.rowHover
+          props.hover && tableClasses?.rowHover,
         )}
         {...props.rowEvents}
         onClick={handleRowClick}
