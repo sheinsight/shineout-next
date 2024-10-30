@@ -52,6 +52,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     rules,
     throttle = 1000,
     size,
+    reserveAble,
     scrollParent,
   } = props;
 
@@ -444,8 +445,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       inline,
       disabled,
       size,
+      reserveAble,
     }),
-    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size],
+    [labelWidth,labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size, reserveAble],
   );
 
   const updateValue = () => {
