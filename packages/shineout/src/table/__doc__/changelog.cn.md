@@ -1,6 +1,11 @@
-## 3.5.0-beta.1
-2024-10-21
+## 3.5.0-beta.3
+2024-10-22
 
+### 💎 Enhancement
+- 优化 `Table` 非虚拟列表场景下，横向纵向的滚动事件修改为原生滚动 ([#740](https://github.com/sheinsight/shineout-next/pull/740))
+
+## 3.5.0-beta.1
+2024-10-22
 ### 🆕 Feature
 - `Table` 新增 `scrollColumnIntoView` 方法，支持根据列 key 跳转至指定列 ([#738](https://github.com/sheinsight/shineout-next/pull/738))
 - `Table` 新增 `scrollColumnByLeft` 方法，支持自定义跳转至指定横向位置 ([#738](https://github.com/sheinsight/shineout-next/pull/738))
