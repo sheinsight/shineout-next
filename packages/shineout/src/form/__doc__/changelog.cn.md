@@ -2,7 +2,8 @@
 2024-10-30
 ### 🆕 Feature
 
-- 新增 `Form.useForm` 用法，获取的form实例方法与formRef相同，但是可以在任何地方使用，不受组件渲染影响
+- `Form` 新增 `useForm` 用法，获取的form实例方法与formRef相同，但是可以在任何地方使用，不受组件渲染影响 ([#711](https://github.com/sheinsight/shineout-next/pull/711))
+- `Form` 新增 `reserveAble` 属性，用于控制表单项是否保留值 ([#772](https://github.com/sheinsight/shineout-next/pull/772))
 
 
 

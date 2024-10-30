@@ -74,6 +74,10 @@ export interface FormProps<V extends ObjectType>
    */
   formRef?: ((form: FormRef<V>) => void) | { current?: FormRef<V> };
 
+  /**
+   * @en When using hooks, set the form ref
+   * @cn hooks用法下，设置 form 的引用
+   */
   setForm?: (form: FormRef<V>) => void;
   /**
    * @deprecated 废弃属性
