@@ -10,6 +10,7 @@ export * from './common/type';
 
 export * from './common/use-fork-ref';
 export * from './common/use-input-able';
+export * from './common/use-in-view';
 export * from './common/use-latest-obj';
 export * from './common/use-persist-fn';
 export * from './common/use-key-event';
