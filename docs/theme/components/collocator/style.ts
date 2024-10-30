@@ -21,7 +21,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
-    // marginTop: 248
   },
   header: {
     height: '48px',
@@ -32,8 +31,7 @@ const styles = {
   main: {
     display: 'flex',
     alignItems: 'center',
-    // flex: 1,
-    height: '522px',
+    height: '642px',
   },
   content: {
     flex: 1,
@@ -44,7 +42,7 @@ const styles = {
   },
   show: {
     width: '100%',
-    height: 'calc(100% - 96px)',
+    flex: 1,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -109,8 +107,7 @@ const styles = {
     },
   },
   code: {
-    maxHeight: '240px',
-    minHeight: '120px',
+    height: '120px',
     display: 'flex',
   },
   console: {

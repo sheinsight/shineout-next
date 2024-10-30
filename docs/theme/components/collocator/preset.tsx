@@ -46,7 +46,8 @@ export const collocatorPreset: Record<string, any> = {
           name: 'onClick',
           type: 'other',
           initValue: () => console.log('click'),
-        },{
+        },
+        {
           name: 'renderLoading',
           type: 'other',
           initValue: () => 'loading...',
