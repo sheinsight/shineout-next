@@ -1,5 +1,9 @@
-## 3.5.0-beta.3
-2024-10-22
+## 3.5.0-beta.6
+2024-10-30
+
+### 🆕 Feature
+- `Table` 树形数据用法下，新增 `loader` 开启动态加载子节点数据 ([#747](https://github.com/sheinsight/shineout-next/pull/747))
+- `Table` 树形数据用法下，新增 `treeExpandIcon` 自定义展开/折叠图标 ([#747](https://github.com/sheinsight/shineout-next/pull/747))
 
 ### 💎 Enhancement
 - 优化 `Table` 非虚拟列表场景下，横向纵向的滚动事件修改为原生滚动 ([#740](https://github.com/sheinsight/shineout-next/pull/740))
