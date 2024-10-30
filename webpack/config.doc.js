@@ -68,14 +68,15 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new Webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production'),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
+        DOC_ENV: JSON.stringify(process.env.DOC_ENV || 'production'),
       },
     }),
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, '../public/static'),
-          to: path.resolve(__dirname, '../dist/static')
+          to: path.resolve(__dirname, '../dist/static'),
         },
       ],
     }),

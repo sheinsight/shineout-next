@@ -2,14 +2,18 @@ import React from 'react';
 import { Table } from '@sheinx/base';
 import {
   useTableStyle,
-  useCheckboxStyle,
-  useRadioStyle,
   useSpinStyle,
   usePaginationStyle,
-  useInputStyle,
   useButtonStyle,
   useEmptyStyle,
+  useInputStyle,
+  useCheckboxStyle,
+  useRadioStyle,
   useSelectStyle,
+  useCascaderStyle,
+  useTreeSelectStyle,
+  useDatePickerStyle,
+  useSwitchStyle,
 } from '@sheinx/shineout-style';
 import { TableProps } from './table.type';
 
@@ -23,6 +27,10 @@ const jssStyle = {
   button: useButtonStyle,
   empty: useEmptyStyle,
   select: useSelectStyle,
+  cascader: useCascaderStyle,
+  treeSelect: useTreeSelectStyle,
+  datePicker: useDatePickerStyle,
+  switch: useSwitchStyle,
 };
 export default <DataItem, Value>(props: TableProps<DataItem, Value>) => {
   return <Table jssStyle={jssStyle} {...props} />;

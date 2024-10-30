@@ -34,6 +34,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     compressedBound,
     compressedClassName,
     renderUnmatched,
+    renderCompressed,
     renderResult: renderResultProp,
     renderResultContent: renderResultContentProp,
     allowOnFilter,
@@ -90,7 +91,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const isEmptyResult = () => {
     if (!value) return true;
     if (isArray(value) && value.length <= 0) return true;
-    return false
     const datas = getDataByValues(value);
 
     const hasValue =
@@ -249,13 +249,14 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderMultipleResult = useMemo(() => {
-    if (isEmptyResult()) return renderNbsp();
+    if (isEmptyResult()) return { results: renderNbsp(), datas: undefined };
     // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
     let nextValue = getValueArr(value);
     if (separator && util.isString(valueProp)) {
       nextValue = valueProp.split(separator);
     }
     const datas = getDataByValues(nextValue as Value);
+
     const result = datas.map((d, i) => {
       const v = nextValue[i];
       if (renderResultContentProp && i !== datas.length - 1) {
@@ -268,21 +269,24 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       }
       return renderResultItem(d, i, datas, v);
     });
-    return result;
+    return { results: result, datas };
   }, [props.value]);
 
-  const result = renderMultipleResult as React.ReactNode[];
+  const result = renderMultipleResult.results as React.ReactNode[];
   const moreNumber = getCompressedBound();
   const renderMultipleResultMore = (
     <More
       keygen={keygen}
       key='more'
+      onRemove={onRemove}
       classes={props.classes}
       jssStyle={props.jssStyle}
       data={result}
+      datas={renderMultipleResult.datas}
       size={size}
       more={moreNumber}
       compressed={compressed}
+      renderCompressed={renderCompressed}
       compressedClassName={compressedClassName}
       showNum={moreNumber}
     ></More>
@@ -294,7 +298,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     let result = [];
     if (multiple) {
-      result.push(compressed ? renderMultipleResultMore : renderMultipleResult);
+      result.push(compressed ? renderMultipleResultMore : renderMultipleResult.results);
       if (showInput) {
         result.push(renderInput());
       } else if (result.length === 0) {
@@ -329,16 +333,19 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
 
     // 单选场景下，焦点时自动选中input文本
-    if (focus && showInput && mounted.current) {
-      const nextValue = getValueArr(value);
-      props.setInputText(nextValue[0]);
+    if(!multiple && focus && showInput && mounted.current){
+        const result = getDataByValues(value);
+        if(result.length > 0){
+          const inputTmpText = renderResultContent(result[0]);
+          inputTmpText && props.setInputText(inputTmpText);
+        }
 
       setTimeout(() => {
         inputRef?.current?.select();
       }, 10);
     }
     mounted.current = true;
-  }, [focus, showInput]);
+  }, [focus, placeholder, multiple]);
 
   useLayoutEffect(() => {
     handleResetMore();
