@@ -7,7 +7,7 @@
  *    -- placehoder's height should beyond zero
  */
 import React, { useEffect, useRef, useState } from 'react';
-import { CardGroup, Spin, TYPE } from 'shineout';
+import { CardGroup, Spin, TYPE, Image } from 'shineout';
 
 const Icon = (_props: any) => <span>i</span>;
 
@@ -112,6 +112,7 @@ function Item({ title, icon, color }: ItemData) {
       </div>
       <p style={{ margin: '20px 0', fontSize: 14, color: 'rgba(153,157,168,1)' }}>
         Add or delete tag for your customer. You can sort your customer...
+        <ImageDemo />
       </p>
       <div style={{ color: 'rgba(102,108,124,1)' }}>
         <Icon name='plus' style={{ marginInlineEnd: 6 }} />
@@ -136,5 +137,37 @@ const App: React.FC = () => (
     ))}
   </CardGroup>
 );
+
+function ImageDemo(){
+    const images = [
+      'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',
+      'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png',
+      'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png',
+      'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png',
+      'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png',
+    ];
+    return (
+      <div
+        style={{
+          gap: 16,
+          width: '100%',
+          display: 'flex',
+        }}
+      >
+        <Image.Group fit='fill' target='_modal' pile lazy>
+          {images.map((item, index) => {
+            return <Image inViewOnly key={index} width={128} height={128} src={item} href={item}></Image>;
+          })}
+        </Image.Group>
+
+        <Image.Group fit='fill' target='_modal' pile showCount lazy>
+          {images.map((item, index) => {
+            return <Image inViewOnly key={index} width={128} height={128} src={item} href={item}></Image>;
+          })}
+        </Image.Group>
+      </div>
+    );
+
+}
 
 export default App;

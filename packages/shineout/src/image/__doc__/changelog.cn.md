@@ -1,3 +1,11 @@
+## 3.4.5-beta.5
+2024-10-30
+
+### 🆕 Feature
+
+- `Image` 新增`inViewOnly`: 仅当图片在视口内时才加载图片，需配合 `lazy` 使用 ([#767](https://github.com/sheinsight/shineout-next/pull/767))
+
+
 ## 3.4.4
 2024-10-23
 
