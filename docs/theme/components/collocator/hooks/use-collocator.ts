@@ -42,7 +42,7 @@ const useCollocator = (props: UseCollocatorProps) => {
   );
 
   const [config, setConfig] = useState<Record<string, any>>(initValue);
-  const [attachedType, setAttachedType] = useState<AttachedType>(AttachedType.NONE);
+  const [attachedType, setAttachedType] = useState<AttachedType>(AttachedType.CONSOLE);
 
   useEffect(() => {
     setConfig(initValue);

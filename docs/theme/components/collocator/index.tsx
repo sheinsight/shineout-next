@@ -99,6 +99,7 @@ const Collocator = (props: CollocatorProps) => {
           )}
           <div className={styles.show}>{renderElement}</div>
           {renderFunctions()}
+          <div className={styles.attached}>{attachedMap[attachedType]}</div>
         </div>
         <div className={styles.bar}>
           {renderHeader(
@@ -121,7 +122,6 @@ const Collocator = (props: CollocatorProps) => {
           />
         </div>
       </div>
-      <div className={styles.attached}>{attachedMap[attachedType]}</div>
     </div>
   );
 };

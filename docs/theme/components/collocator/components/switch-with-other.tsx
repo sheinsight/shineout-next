@@ -39,7 +39,7 @@ const SwitchWithOther = (props: Icomponent) => {
   }
 
   useEffect(() => {
-    if (parent && !!config[parent][item.name] !== value) {
+    if (parent && !!config?.[parent]?.[item.name] !== value) {
       if (typeof config[parent][item.name] === 'boolean') return
       setValue(!!config[parent][item.name]);
       setSign(false);
