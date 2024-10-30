@@ -4,6 +4,12 @@
 ### 🆕 Feature
 - `Cascader` 新增 `virtual` 属性，支持虚拟列表([#746](https://github.com/sheinsight/shineout-next/pull/746))
 
+## 3.5.0-beta.3
+2024-10-24
+
+### 🆕 Feature
+- `Cascader` 新增 `virtual` 属性，支持虚拟列表([#746](https://github.com/sheinsight/shineout-next/pull/746))
+
 ## 3.4.4
 2024-10-28
 
