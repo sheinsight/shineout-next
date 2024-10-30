@@ -75,7 +75,7 @@ const Spin = (props: SpinProps = {}) => {
     const n = name as keyof typeof Spins;
     if (Spins[n]) {
       const Comp = Spins[n];
-      return <Comp {...props} color={color} style={style} />;
+      return <Comp {...props} color={color} style={style} className={!tip ? className : undefined} />;
     }
 
     return null;
