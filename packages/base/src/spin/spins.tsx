@@ -44,7 +44,7 @@ const Default = (props: SpinProps) => {
   return (
     <BaseSpin
       {...props}
-      className={spinStyles.default}
+      uniqueClassName={spinStyles.default}
       count={12}
       itemStyle={{ width: sizeSet, borderRadius: sizeSet }}
       render={renderItem}
@@ -60,7 +60,7 @@ const ChasingDots = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={2}
-      className={spinStyles.chasingDots}
+      uniqueClassName={spinStyles.chasingDots}
       render={renderSvgItem}
     ></BaseSpin>
   );
@@ -71,7 +71,7 @@ const CubeGrid = (props: SpinProps) => {
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   return (
-    <BaseSpin {...props} count={9} className={spinStyles.cubeGrid} render={renderSimpleItem} />
+    <BaseSpin {...props} count={9} uniqueClassName={spinStyles.cubeGrid} render={renderSimpleItem} />
   );
 };
 
@@ -80,7 +80,7 @@ const DoubleBounce = (props: SpinProps) => {
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   return (
-    <BaseSpin {...props} count={2} className={spinStyles.doubleBounce} render={renderSimpleItem} />
+    <BaseSpin {...props} count={2} uniqueClassName={spinStyles.doubleBounce} render={renderSimpleItem} />
   );
 };
 
@@ -94,7 +94,7 @@ const FadingCircle = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={12}
-      className={spinStyles.fadingCircle}
+      uniqueClassName={spinStyles.fadingCircle}
       itemSize={itemSize}
       itemClass={classNames(spinStyles.fade)}
       render={renderSvgItem}
@@ -112,7 +112,7 @@ const ScaleCircle = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={12}
-      className={spinStyles.fadingCircle}
+      uniqueClassName={spinStyles.fadingCircle}
       itemSize={itemSize}
       itemClass={classNames(spinStyles.scaleCircle)}
       render={renderSvgItem}
@@ -124,7 +124,7 @@ const FourDots = (props: SpinProps) => {
   const { jssStyle } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  return <BaseSpin {...props} count={4} className={spinStyles.fourDots} render={renderSvgItem} />;
+  return <BaseSpin {...props} count={4} uniqueClassName={spinStyles.fourDots} render={renderSvgItem} />;
 };
 
 const Plane = (props: SpinProps) => {
@@ -134,7 +134,7 @@ const Plane = (props: SpinProps) => {
   };
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  return <BaseSpin {...props} count={0} style={style} className={spinStyles.plane} />;
+  return <BaseSpin {...props} count={0} style={style} uniqueClassName={spinStyles.plane} />;
 };
 
 const Pulse = (props: SpinProps) => {
@@ -144,7 +144,7 @@ const Pulse = (props: SpinProps) => {
   };
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  return <BaseSpin {...props} count={0} style={style} className={spinStyles.pulse} />;
+  return <BaseSpin {...props} count={0} style={style} uniqueClassName={spinStyles.pulse} />;
 };
 
 const Ring = (props: SpinProps) => {
@@ -161,7 +161,7 @@ const Ring = (props: SpinProps) => {
     fontSize: value / 10 + unit,
   };
 
-  return <BaseSpin {...props} count={0} style={style} className={spinStyles.ring} />;
+  return <BaseSpin {...props} count={0} style={style} uniqueClassName={spinStyles.ring} />;
 };
 
 const ThreeBounce = (props: SpinProps) => {
@@ -175,7 +175,7 @@ const ThreeBounce = (props: SpinProps) => {
       count={3}
       itemSize={value / 2 + unit}
       style={{ width: value * 2 + unit, height: 'auto' }}
-      className={spinStyles.threeBounce}
+      uniqueClassName={spinStyles.threeBounce}
       render={renderSvgItem}
     />
   );
@@ -201,7 +201,7 @@ const Wave = (props: SpinProps) => {
       {...props}
       itemStyle={{ width: width + unit, marginRight: margin }}
       count={5}
-      className={spinStyles.wave}
+      uniqueClassName={spinStyles.wave}
       render={renderSimpleItem}
     />
   );
@@ -220,7 +220,7 @@ const ChasingRing = (props: SpinProps) => {
       {...props}
       count={4}
       itemStyle={style}
-      className={spinStyles.chasingRing}
+      uniqueClassName={spinStyles.chasingRing}
       render={renderSimpleItem}
     />
   );

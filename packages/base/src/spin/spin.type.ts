@@ -73,6 +73,7 @@ export interface BaseSpinProps {
   itemClass?: string;
   itemSize?: number | string;
   className?: string;
+  uniqueClassName?: string
 }
 
 export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {

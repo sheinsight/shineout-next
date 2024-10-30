@@ -7,7 +7,7 @@ import { BaseSpinProps } from './spin.type';
 const { range } = util;
 
 const Spin = (props: BaseSpinProps) => {
-  const { count = 0, render, size: sizeProps, className, jssStyle } = props;
+  const { count = 0, render, size: sizeProps, className, uniqueClassName, jssStyle } = props;
   const styles = jssStyle?.spin?.();
   const config = useConfig();
 
@@ -28,7 +28,7 @@ const Spin = (props: BaseSpinProps) => {
     props.style,
   );
 
-  const classname = classNames(className, styles?.spin);
+  const classname = classNames(className, styles?.spin, uniqueClassName);
 
   if (count < 1 || !render) {
     return <div style={style} className={classname} />;
