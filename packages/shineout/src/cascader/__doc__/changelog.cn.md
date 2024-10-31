@@ -1,5 +1,5 @@
-## 3.4.5-beta.7
-2024-10-30
+## 3.4.5
+2024-10-31
 
 ### 🐞 BugFix
 - 修复 `Cascader` 开启 `expandTrigger` 为 hover 或 hover-only 时点击 checkbox 勾选失效的问题 ([#770](https://github.com/sheinsight/shineout-next/pull/770))

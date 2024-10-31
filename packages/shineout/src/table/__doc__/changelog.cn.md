@@ -1,15 +1,9 @@
-## 3.4.5-beta.9
+## 3.4.5
 2024-10-31
 
 ### 🐞 BugFix
 
-- 修复 `Table` 中点击部分组件会触发行展开的问题 ([#774](https://github.com/sheinsight/shineout-next/pull/774))
-
-## 3.4.5-beta.5
-2024-10-30
-
-### 🐞 BugFix
-
+- 修复 `Table` 的 `minWidth` 设置失效的问题 ([#774](https://github.com/sheinsight/shineout-next/pull/774))
 - 修复 `Table` 中点击部分组件会触发行展开的问题 ([#761](https://github.com/sheinsight/shineout-next/pull/761))
 
 ## 3.4.4
