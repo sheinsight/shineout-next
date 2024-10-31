@@ -64,7 +64,7 @@ export interface BaseImageProps {
    * @en Whether to load only when in view
    * @cn 是否仅在视图内加载
    * @default false
-   * @version 3.4.5 3.4.4-beta.83.5.0
+   * @version 3.4.5
    */
   inViewOnly?: boolean;
   /**
