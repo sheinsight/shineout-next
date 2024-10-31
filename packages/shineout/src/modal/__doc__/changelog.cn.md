@@ -5,6 +5,13 @@
 
 - 修复 `Modal` 开启全屏和可拖拽时的交互异常问题 ([#739](https://github.com/sheinsight/shineout-next/pull/739))
 
+## 3.4.5-beta.9
+2024-10-31
+
+### 🐞 BugFix
+
+- 修复 `Modal` 组件 confirm 模式下确认按钮 loading 交互失效的问题 ([#774](https://github.com/sheinsight/shineout-next/pull/774))
+
 ## 3.4.0
 2024-09-19
 

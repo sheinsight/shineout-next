@@ -17,7 +17,7 @@ export type SpinNameType =
   | 'wave'
   | 'chasing-ring';
 
-interface SpinStyle {
+export interface SpinStyle {
   spin?: () => SpinClasses;
 }
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Modal, ModalMethods } from '@sheinx/base';
-import { useModalStyle, useButtonStyle, useAlertStyle } from '@sheinx/shineout-style';
+import { useModalStyle, useButtonStyle, useAlertStyle, useSpinStyle } from '@sheinx/shineout-style';
 import { ModalProps } from './modal.type';
 
 const jssStyle = {
   modal: useModalStyle,
   button: useButtonStyle,
   alert: useAlertStyle,
+  spin: useSpinStyle,
 };
 
 export const methods = {
