@@ -274,14 +274,14 @@ const Tr = (props: TrProps) => {
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
             onMouseEnter={
-              props.hover && hasSiblingRowSpan
+              props.hover && hasSiblingRowSpan || data[i].rowSpan > 1
                 ? () => {
                     props.handleCellHover(props.rowIndex, data[i].rowSpan);
                   }
                 : undefined
             }
             onMouseLeave={
-              props.hover && hasSiblingRowSpan
+              props.hover && hasSiblingRowSpan || data[i].rowSpan > 1
                 ? () => {
                     props.handleCellHover(-1, 0);
                   }
@@ -296,6 +296,7 @@ const Tr = (props: TrProps) => {
               col.align === 'right' && tableClasses?.cellAlignRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
+              props.hoverIndex.has(props.rowIndex) && tableClasses?.cellHover,
               data[i].rowSpan > 1 &&
                 props.isCellHover(props.rowIndex, data[i].rowSpan) &&
                 tableClasses?.cellHover,
