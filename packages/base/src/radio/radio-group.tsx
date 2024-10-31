@@ -90,12 +90,11 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
   const providerValue: any = {
     checked: isChecked,
     onChange: handleItemChange,
-    disabled,
     renderRadio,
+    ...(size !== undefined && { size }),
+    ...(disabled !== undefined && { disabled })
   };
-  if (size !== undefined) {
-    providerValue.size = size;
-  }
+
   const groupClass = classNames(
     className,
     radioClasses?.group,
