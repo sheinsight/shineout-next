@@ -11,41 +11,6 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const QuickSelectDataTime = [
-  {
-    name: 'Next Week',
-    value: () => {
-      const now = Date.now();
-      return [now, now + 7 * 24 * 60 * 60 * 1000];
-    },
-  },
-  {
-    name: 'Last Week',
-    value: () => {
-      const now = Date.now();
-      return [now - 7 * 24 * 60 * 60 * 1000, now];
-    },
-  },
-  {
-    name: 'Next Month',
-    value: () => {
-      const now = Date.now();
-      return [now, now + 30 * 24 * 60 * 60 * 1000];
-    },
-  },
-  {
-    name: 'Last Month',
-    value: () => {
-      const now = Date.now();
-      return [now - 30 * 24 * 60 * 60 * 1000, now];
-    },
-  },
-  {
-    name: 'regular date',
-    value: ['2019-01-01 00:00:00', '2019-12-31 23:59:59'],
-  },
-];
-
 const QuickSelectData = [
   { name: 'Today', value: () => Date.now() },
   {
@@ -59,33 +24,17 @@ const QuickSelectData = [
     name: 'A month later',
     value: () => {
       const now = Date.now();
-      const date = new Date(now);
+      const date = new Date(now) ;
       const year = date.getFullYear();
       const nextMonth = date.getMonth() + 1;
       const day = date.getDate();
       return new Date(year, nextMonth, day).getTime();
     },
   },
-  {
-    name: 'A regular date',
-    value: () => {
-      return '2024-02-22';
-    },
-  },
 ];
 
 const App: React.FC = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-    <DatePicker
-      range
-      absolute
-      type='datetime'
-      onChange={(d) => console.log(d)}
-      quickSelect={QuickSelectDataTime}
-      placeholder={['Start datetime', 'End datetime']}
-      style={{ display: 'block' }}
-    />
-
     <DatePicker placeholder='Quick Date' quickSelect={QuickSelectData} />
   </div>
 );

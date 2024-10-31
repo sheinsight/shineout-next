@@ -1206,8 +1206,8 @@ describe('DatePicker[QuickSelect]', () => {
           const date = new Date(now);
           const year = date.getFullYear();
           const nextMonth = date.getMonth() + 1;
-          const day = date.getDate();
-          return new Date(year, nextMonth, day).getTime();
+          // const day = date.getDate();
+          return new Date(year, nextMonth, 15).getTime();
         },
       },
     ];
