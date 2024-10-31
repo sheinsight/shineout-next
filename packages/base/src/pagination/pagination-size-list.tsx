@@ -19,8 +19,6 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
 
   const { absolute, position, zIndex } = select || {};
 
-  console.log('position', position);
-
   const handleChange = (pageSize: number) => {
     const start = (current - 1) * props.pageSize + 1;
 

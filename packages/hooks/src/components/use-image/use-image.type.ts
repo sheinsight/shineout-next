@@ -59,6 +59,14 @@ export interface BaseImageProps {
    * @default false
    */
   lazy?: boolean | number;
+
+  /**
+   * @en Whether to load only when in view
+   * @cn 是否仅在视图内加载
+   * @default false
+   * @version 3.4.5
+   */
+  inViewOnly?: boolean;
   /**
    * @en The original property of html
    * @cn 是否禁止 img 元素原生 draggable 属性
@@ -120,7 +128,7 @@ export interface BaseImageProps {
    * @cn 原生 title 属性
    */
   title?: string;
-  
+
   imageRef?: React.RefObject<HTMLImageElement>;
   /**
    * @en The callback of click

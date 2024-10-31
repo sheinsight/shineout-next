@@ -6,6 +6,7 @@ type LazyConfig = {
   container?: Element | null;
   element: Element;
   render: () => void;
+  offscreen?: () => void;
   offset: number;
   noRemove?: boolean;
   observer?: IntersectionObserver;
@@ -69,13 +70,15 @@ export function removeStack(id?: string | null, removeListener?: boolean) {
 }
 
 function getObserver(obj: LazyConfig, id: string) {
-  const { container = null, offset, render, noRemove } = obj;
+  const { container = null, offset, render, offscreen, noRemove } = obj;
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((en) => {
         if (en.isIntersecting || en.intersectionRatio > 0) {
           render();
           if (!noRemove) removeStack(id);
+        } else {
+          offscreen && offscreen();
         }
       });
     },

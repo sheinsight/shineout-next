@@ -80,6 +80,8 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     handleChange(null, !checked);
   };
 
+  const isHoverAble = expandTrigger === 'hover' || expandTrigger === 'hover-only';
+
   const getEvents = () => {
     const events: any = {};
 
@@ -87,7 +89,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
       if (!isDisabled || props.mode === 4) events.onClick = handleClick;
     }
 
-    if (expandTrigger === 'hover' || expandTrigger === 'hover-only') {
+    if (isHoverAble) {
       events.onMouseEnter = handlePathChange;
       if (multiple) events.onClick = handleSelect;
     }
@@ -124,7 +126,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
             className={styles.optionCheckbox}
             checked={datum.getChecked(id)}
             disabled={isDisabled}
-            onChange={handleChange}
+            onChange={isHoverAble && multiple ? undefined : handleChange}
           />
         )}
         {renderContent()}
