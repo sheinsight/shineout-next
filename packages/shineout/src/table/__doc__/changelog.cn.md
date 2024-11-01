@@ -1,3 +1,10 @@
+## 3.4.6-beta.1
+2024-11-01
+
+### 🐞 BugFix
+
+- 修复 `Table` 点击 checkbox 触发行展开的问题 ([#777](https://github.com/sheinsight/shineout-next/pull/777))
+
 ## 3.4.5
 2024-10-31
 
