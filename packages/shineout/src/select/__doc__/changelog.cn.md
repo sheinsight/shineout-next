@@ -1,3 +1,10 @@
+## 3.4.6-beta.2
+2024-11-01
+
+### 🐞 BugFix
+
+- 修复 `Select` 禁用模式下 icon 样式异常的问题 ([#778](https://github.com/sheinsight/shineout-next/pull/778))
+
 ## 3.4.5
 2024-10-30
 

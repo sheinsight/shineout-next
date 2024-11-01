@@ -262,7 +262,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
         props.innerTitle && styles?.wrapperInnerTitle,
         size === 'small' && styles?.wrapperSmall,
         size === 'large' && styles?.wrapperLarge,
-        focused && styles?.wrapperFocus,
+        focused && disabled !== true && styles?.wrapperFocus,
         disabledStatus === 'all' && styles?.wrapperDisabled,
         (!!props.error || props.status === 'error') && styles?.wrapperError,
         range && styles?.wrapperRange,
