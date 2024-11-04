@@ -183,19 +183,19 @@ const tableStyle: JsStyles<TableClassType> = {
     flexGrow: 1,
     minHeight: '0',
     '$wrapper & table': {
-      '& th, & td': {
-        position: 'sticky',
-        top: 0,
-      },
       '& th': {
         zIndex: fixedFixedIndex + 1,
         '&$cellFixedLeft': {
+          position: 'sticky',
+          top: 'auto',
           zIndex: fixedFixedIndex + 2,
         },
       },
       '& td': {
         zIndex: fixedIndex,
         '&$cellFixedLeft': {
+          position: 'sticky',
+          top: 'auto',
           zIndex: fixedIndex + 1,
         },
       }
@@ -288,6 +288,7 @@ const tableStyle: JsStyles<TableClassType> = {
       '& td': {
         '&$cellFixedLeft': {
           zIndex: fixedFixedIndex,
+          top: 'auto',
         },
       },
     },
@@ -320,6 +321,7 @@ const tableStyle: JsStyles<TableClassType> = {
       '& td': {
         '&$cellFixedRight': {
           zIndex: fixedFixedIndex,
+          top: 'auto',
         },
       },
     },
