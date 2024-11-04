@@ -9,16 +9,18 @@ export interface ConsoleProps {
 const Console = (props: ConsoleProps) => {
   const { messages } = props;
 
-  const endRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const styles = useStyle();
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
   }, [messages])
 
   return (
-    <div className={styles.console}>
+    <div ref={containerRef} className={styles.console}>
       <div className={styles.consoleItem}>
         {
           `> Console.log...`
@@ -31,7 +33,6 @@ const Console = (props: ConsoleProps) => {
           </div>
         ))
       }
-      <div ref={endRef}></div>
     </div>
   )
 }

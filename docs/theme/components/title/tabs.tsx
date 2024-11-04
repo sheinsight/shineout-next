@@ -7,7 +7,7 @@ import { Tabs } from 'shineout';
 import useStyles from '../style';
 import Locale from '../../locales';
 
-const DocTabs = (props: { showGuide: boolean }) => {
+const DocTabs = (props: { showGuide: boolean, showPlayground: boolean }) => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
@@ -50,6 +50,7 @@ const DocTabs = (props: { showGuide: boolean }) => {
       <Tabs shape='fill' autoFill active={activeTab} onChange={handleChangeTab as (key: string | number) => void}>
         {tabs.map((tab, index) => {
           if (tab.path === 'guide' && !props.showGuide) return null;
+          if (tab.path === 'playground' && !props.showPlayground) return null;
 
           return <Tabs.Panel key={index} tab={renderTab(tab.name)} id={tab.path}></Tabs.Panel>;
         })}

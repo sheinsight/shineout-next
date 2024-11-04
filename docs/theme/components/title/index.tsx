@@ -6,6 +6,7 @@ import store from '../../store';
 import { Header as HeaderProps } from 'docs/types';
 import Tabs from './tabs';
 import HeaderLogo from './logo';
+import { collocatorPreset } from '../collocator/preset';
 
 const Header = (props: HeaderProps) => {
   const classes = useStyles();
@@ -20,6 +21,7 @@ const Header = (props: HeaderProps) => {
     // [classes.stickyHeader]: true,
   });
   const showGuide = guides && guides[state.locales] && guides[state.locales].length > 0;
+  const showPlayground = !!Object.keys(collocatorPreset?.[props.title?.en] || {}).find(item => !collocatorPreset?.[props.title?.en]?.[item]?.hide)
 
   const onMouseMove = (e: React.MouseEvent) => {
     if (!e) return;
@@ -47,7 +49,7 @@ const Header = (props: HeaderProps) => {
         <h1 className={classnames('title')}>{title[state.locales]}</h1>
         <p className='subtitle'>{describe[state.locales]}</p>
         <HeaderLogo moveRatio={moveRatio}></HeaderLogo>
-        <Tabs showGuide={showGuide}></Tabs>
+        <Tabs showGuide={showGuide} showPlayground={showPlayground}></Tabs>
       </div>
     </>
   );

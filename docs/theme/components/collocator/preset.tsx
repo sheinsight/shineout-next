@@ -274,6 +274,15 @@ export const collocatorPreset: Record<string, any> = {
           related: {
             collapsible: true
           }
+        }, {
+          name: 'collapsed',
+          type: 'switch',
+          related: {
+            collapsible: true
+          }
+        }, {
+          name: 'defaultCollapsed',
+          hide: true
         }
       ]
     },
@@ -431,6 +440,15 @@ export const collocatorPreset: Record<string, any> = {
           type: 'other',
           initValue: 'icon'
         },
+        {
+          name: 'defaultActive',
+          hide: true
+        },
+        {
+          name: 'onChange',
+          type: 'other',
+          initValue: () => console.log('change')
+        }
       ]
     },
     'Collapse.Item': {
@@ -515,6 +533,10 @@ export const collocatorPreset: Record<string, any> = {
           name: 'title',
           type: 'other',
           initValue: 'title'
+        },
+        {
+          name: 'column',
+          type: 'number',
         }
       ]
     },
@@ -688,6 +710,11 @@ export const collocatorPreset: Record<string, any> = {
           type: 'other',
           initValue: () => console.log('change'),
         },
+        {
+          name: 'scrollLoading',
+          type: 'other',
+          initValue: () => console.log('scroll loading'),
+        }
       ]
     }
   },
@@ -728,6 +755,10 @@ export const collocatorPreset: Record<string, any> = {
           name: 'scrollDismiss',
           type: 'switch',
           defaultValue: false
+        },
+        {
+          name: 'defaultVisible',
+          hide: true
         }
       ]
     },
@@ -875,7 +906,8 @@ export const collocatorPreset: Record<string, any> = {
         {
           name: 'width',
           type: 'number',
-          defaultValue: 1400
+          defaultValue: 1400,
+
         },
         {
           name: 'empty',
@@ -1178,7 +1210,8 @@ export const collocatorPreset: Record<string, any> = {
         {
           name: 'tip',
           type: 'other',
-          initValue: 'tip...'
+          initValue: 'tip...',
+          defaultValue: 'tip...'
         }
       ]
     }
@@ -1231,6 +1264,10 @@ export const collocatorPreset: Record<string, any> = {
           name: 'childrenKey',
           type: 'input',
           defaultValue: 'children'
+        },
+        {
+          name: 'dataUpdate',
+          hide: true
         },
         {
           name: 'defaultExpandAll',
@@ -1378,6 +1415,10 @@ export const collocatorPreset: Record<string, any> = {
           defaultValue: true
         },
         {
+          name: 'reserveAble',
+          hide: true
+        },
+        {
           name: 'beforeChange',
           type: 'other',
           initValue: () => console.log('before change')
@@ -1473,35 +1514,12 @@ export const collocatorPreset: Record<string, any> = {
   Checkbox: {
     Checkbox: {
       element: (props: any) => {
-        const { Checkbox: checkboxProps, Group: groupProps } = props
-
-        const data = [
-          { id: 1, color: 'red' },
-          { id: 2, color: 'cyan' },
-          { id: 3, color: 'blue' },
-          { id: 4, color: 'green' },
-          { id: 5, color: 'yellow' },
-          { id: 6, color: 'orange' },
-          { id: 7, color: 'violet' },
-        ]
 
         return (
-          <Checkbox.Group {...groupProps} keygen='id'>
-            {data.map((d) => (
-              <Checkbox {...checkboxProps} key={d.id} htmlValue={d.id}>
-                {d.color}
-              </Checkbox>
-            ))}
-          </Checkbox.Group>
+          <Checkbox {...props}>Checkbox</Checkbox>
         )
       },
-      code: `<Checkbox.Group keygen='id'#placeholder-Group>
-  {data.map((d) => (
-    <Checkbox key={d.id} htmlValue={d.id}#placeholder-Checkbox>
-      {d.color}
-    </Checkbox>
-  ))}
-</Checkbox.Group>`,
+      code: `<Checkbox#placeholder>Checkbox</Checkbox>`,
       properties: [
         {
           name: 'beforeChange',
@@ -1527,11 +1545,41 @@ export const collocatorPreset: Record<string, any> = {
           name: 'reserveAble',
           hide: true
         },
-      ],
-      merge: ['Checkbox', 'Checkbox.Group']
+      ]
     },
     'Checkbox.Group': {
-      hide: true,
+      element: (props: any) => {
+        const { Checkbox: checkboxProps, Group: groupProps } = props
+
+        const data = [
+          { id: 1, color: 'red' },
+          { id: 2, color: 'cyan' },
+          { id: 3, color: 'blue' },
+          { id: 4, color: 'green' },
+          { id: 5, color: 'yellow' },
+          { id: 6, color: 'orange' },
+          { id: 7, color: 'violet' },
+        ]
+
+        return (
+          <Checkbox.Group {...groupProps} keygen='id'>
+            {data.map((d) => (
+              <Checkbox {...checkboxProps} key={d.id} htmlValue={d.id}>
+                {d.color}
+              </Checkbox>
+            ))}
+          </Checkbox.Group>
+        )
+      },
+      code: `<Checkbox.Group 
+  keygen='id'#placeholder-Group>
+  {data.map((d) => (
+    <Checkbox key={d.id} htmlValue={d.id}#placeholder-Checkbox>
+      {d.color}
+    </Checkbox>
+  ))}
+</Checkbox.Group>`,
+      merge: ['Checkbox.Group', 'Checkbox'],
       properties: [
         {
           name: 'reserveAble',
@@ -2047,6 +2095,10 @@ export const collocatorPreset: Record<string, any> = {
           type: 'other',
           initValue: () => console.log('group change')
         },
+        {
+          name: 'reserveAble',
+          hide: true
+        }
       ]
     }
   },
@@ -2482,6 +2534,10 @@ const StarRate = Rate(star, star)
           initValue: () => console.log('before change')
         },
         {
+          name: 'name',
+          hide: true
+        },
+        {
           name: 'info',
           type: 'number',
         },
@@ -2903,7 +2959,10 @@ const StarRate = Rate(star, star)
         {
           name: 'closeItem',
           type: 'other',
-          initValue: 'close'
+          initValue: 'close',
+          related: {
+            onClose: () => console.log('close')
+          }
         },
         {
           name: 'icon',
@@ -3105,7 +3164,10 @@ const StarRate = Rate(star, star)
         {
           name: 'children',
           type: 'other',
-          initValue: 'progress'
+          initValue: 'progress',
+          related: {
+            shape: 'circle'
+          }
         },
         {
           name: 'color',
@@ -3320,6 +3382,12 @@ const StarRate = Rate(star, star)
           name: 'renderItem',
           type: 'other',
           initValue: (d: any) => `render ${d.title}`
+        },
+        {
+          name: 'mode',
+          type: 'select',
+          value: ['horizontal', 'vertical', 'inline', 'vertical-auto'],
+          defaultValue: 'inline'
         }
       ]
     }
