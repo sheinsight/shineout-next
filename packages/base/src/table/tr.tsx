@@ -274,14 +274,14 @@ const Tr = (props: TrProps) => {
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
             onMouseEnter={
-              props.hover && hasSiblingRowSpan || data[i].rowSpan > 1
+              (props.hover && hasSiblingRowSpan) || data[i].rowSpan > 1
                 ? () => {
                     props.handleCellHover(props.rowIndex, data[i].rowSpan);
                   }
                 : undefined
             }
             onMouseLeave={
-              props.hover && hasSiblingRowSpan || data[i].rowSpan > 1
+              (props.hover && hasSiblingRowSpan) || data[i].rowSpan > 1
                 ? () => {
                     props.handleCellHover(-1, 0);
                   }
@@ -337,6 +337,7 @@ const Tr = (props: TrProps) => {
       }
     }
   };
+
   const preventClasses = [
     jssStyle?.input?.().wrapper,
     jssStyle?.select?.().wrapper,
@@ -347,11 +348,16 @@ const Tr = (props: TrProps) => {
     jssStyle?.radio?.().wrapper,
     jssStyle?.cascader?.().wrapper,
   ];
+
   const isNotExpandableElement = (el: HTMLElement): boolean => {
     const { tagName } = el;
     if (tagName === 'TD' || tagName === 'TR') return false;
     if (tagName === 'A' || tagName === 'BUTTON' || tagName === 'INPUT') return true;
-    if (preventClasses.find((c) => el.classList.contains(c!))) return true;
+    const isPreventElement = preventClasses.find((cl) => {
+      const classes = cl?.split(' ') as string[];
+      return classes.some((c) => el.classList.contains(c));
+    });
+    if (isPreventElement) return true;
     if (!el.parentElement) return true;
     return isNotExpandableElement(el.parentElement);
   };
@@ -375,9 +381,8 @@ const Tr = (props: TrProps) => {
       }
     }
 
-    if (isNotExpandableElement(target)) return;
-
     if (props.rowClickExpand) {
+      if (isNotExpandableElement(target)) return;
       props.handleExpandClick(
         props.expandCol as TableFormatColumn<any>,
         props.rawData,
