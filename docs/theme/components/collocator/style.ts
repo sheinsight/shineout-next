@@ -38,7 +38,7 @@ const styles = {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    overflowY: 'auto',
+    overflowX: 'hidden',
   },
   show: {
     width: '100%',
@@ -46,6 +46,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'auto',
   },
   bar: {
     width: '20%',
