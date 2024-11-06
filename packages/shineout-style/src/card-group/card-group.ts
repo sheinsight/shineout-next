@@ -9,6 +9,7 @@ const cardGroupPadding = 0;
 const cardGroupItemBorderRadius = 8;
 
 const cardGroupStyle: JsStyles<CardGroupClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'block',
   },

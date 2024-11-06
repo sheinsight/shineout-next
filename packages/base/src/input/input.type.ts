@@ -6,6 +6,7 @@ import { BaseInputProps, InputFormatProps } from '@sheinx/hooks';
 import { PopoverClasses } from '../popover/popover.type';
 
 export interface InputClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

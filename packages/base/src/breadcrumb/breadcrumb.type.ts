@@ -8,6 +8,7 @@ import type { PopoverJssStyle } from '../popover/popover.type';
 export type StructureArray<T> = Array<T | T[]>;
 
 export interface BreadcrumbClasses {
+  rootClass: string;
   wrapper: string;
   down: string;
   downOpen: string;

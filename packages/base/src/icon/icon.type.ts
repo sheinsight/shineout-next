@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CommonType } from '../common/type';
 
 export interface IconClasses {
+  rootClass: string;
   wrapper: string;
   small: string;
   large: string;

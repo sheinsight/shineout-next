@@ -344,8 +344,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const controlFunc: FormContextType['func'] = useLatestObj({
     bind: (n: string, df: any, validate: ValidateFn, updateFn: UpdateFn) => {
-      if (context.names.has(n)) {
-        console.warn(`name "${n}" already exist`);
+      if (process.env.NODE_ENV !== 'production' && context.names.has(n)) {
+        console.warn(`[shineout] name "${n}" already exist in Form component`);
       }
       context.names.add(n);
 

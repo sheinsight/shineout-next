@@ -3,6 +3,7 @@ import { JsStyles } from '../jss-style';
 import { AlertClasses } from '@sheinx/base';
 
 const alertStyle: JsStyles<keyof AlertClasses> = {
+  rootClass: {},
   alert: {
     display: 'flex',
     width: '100%',

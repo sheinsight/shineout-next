@@ -2,15 +2,21 @@ import React, { Children, cloneElement } from 'react';
 import classNames from 'classnames';
 import { useConfig } from '../config';
 import { ButtonClasses, ButtonGroupProps, ButtonProps } from './button.type';
+import { util } from '@sheinx/hooks';
+
+const { devUseWarning } = util;
 
 const Group = (props: ButtonGroupProps) => {
   const { children, className, style, jssStyle, size, mode, outline, text, shape, type } = props;
   const config = useConfig();
 
-  if (outline || text) {
-    console.warn(
-      '[Button / Button.Group] The properties outline, and text are being deprecated and you should use the mode property to specify the style of the button instead.',
-    );
+  if (process.env.NODE_ENV !== 'production') {
+    if (outline) {
+      devUseWarning.deprecated('outline', 'mode="outline"', 'Button.Group');
+    }
+    if (text) {
+      devUseWarning.deprecated('text', 'mode="text"', 'Button.Group');
+    }
   }
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);

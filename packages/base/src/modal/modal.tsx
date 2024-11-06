@@ -3,8 +3,16 @@ import { useEffect, useState, useRef } from 'react';
 import ModalContent from './modal-content';
 import { ModalProps } from './modal.type';
 import useContainer from '../absolute-list/use-container';
+import { util } from '@sheinx/hooks';
+
+const { devUseWarning } = util;
 
 const Modal = (props: ModalProps) => {
+  if (process.env.NODE_ENV !== 'production') {
+    if (props.maskOpacity) {
+      devUseWarning.deprecated('maskOpacity', 'maskBackground', 'Modal');
+    }
+  }
   const { getRoot, unMount } = useContainer({
     container: props.container,
   });

@@ -6,6 +6,7 @@ import { CommonType } from '../common/type';
 export type MagnifyPositionType = 'left' | 'right' | 'center';
 
 export interface ImageClasses {
+  rootClass: string;
   image: string;
   img: string;
   inner: string;

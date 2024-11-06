@@ -2,8 +2,9 @@ import React from 'react';
 import { CommonType } from '../common/type';
 
 export interface GapClasses {
+  rootClass: string;
   wrapper: string;
-  item: string
+  item: string;
 }
 
 /**

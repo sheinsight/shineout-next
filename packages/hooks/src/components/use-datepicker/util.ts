@@ -67,7 +67,7 @@ export const compatibleFmt = (fmt?: string) => {
     result = result.replace(new RegExp(key, 'g'), trans[key as keyof typeof trans]);
   });
   if (result !== fmt) {
-    console.warn(`invalid datepicker format: ${fmt} please use ${result}`);
+    console.warn(`[shineout] invalid datepicker format: ${fmt} please use ${result}`);
   }
   return result;
 };

@@ -1,4 +1,4 @@
-import IPopover from './popover';
+import IPopover, { IPopoverContent} from './popover';
 import IConfirm from './confirm';
 
 // confirm
@@ -13,9 +13,11 @@ type RefPopover = typeof IPopover;
 export interface PopoverComponent extends RefPopover {
   displayName: string;
   Confirm: ConfirmComponent;
+  Content: typeof IPopoverContent;
 }
 const PopoverComp: PopoverComponent = IPopover as PopoverComponent;
 PopoverComp.displayName = 'ShineoutPopover';
 PopoverComp.Confirm = ConfirmComp;
+PopoverComp.Content = IPopoverContent;
 
 export default PopoverComp;

@@ -4,6 +4,7 @@ import { FormItemClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 
 const formItemStyle: JsStyles<keyof FormItemClasses> = {
+  rootClass: {},
   wrapper: {
     display: 'flex',
     alignItems: 'flex-start',

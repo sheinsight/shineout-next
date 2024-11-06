@@ -13,6 +13,7 @@ const headerCommon = {
 };
 
 const cardStyle: JsStyles<CardClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'flex',
     flexDirection: 'column',

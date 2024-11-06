@@ -5,6 +5,9 @@ import { useConfig } from '../config';
 import { ButtonClasses, ButtonProps } from './button.type';
 import ButtonGroup from './button-group';
 import Spin from '../spin';
+import { util } from '@sheinx/hooks';
+
+const { devUseWarning } = util;
 
 const Button = (props: ButtonProps) => {
   const {
@@ -27,6 +30,16 @@ const Button = (props: ButtonProps) => {
     renderLoading,
     ...rest
   } = props;
+
+  if (process.env.NODE_ENV !== 'production') {
+    if (outline) {
+      devUseWarning.deprecated('outline', 'mode="outline"', 'Button');
+    }
+    if (text) {
+      devUseWarning.deprecated('text', 'mode="text"', 'Button');
+    }
+  }
+
   const config = useConfig();
   const { getButtonProps, getSpaceChildren, getAnchorProps, disabled } = useButton({
     loading,

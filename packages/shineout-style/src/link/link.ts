@@ -6,6 +6,7 @@ import { LinkClasses } from '@sheinx/base'
 export type LinkClassType = keyof LinkClasses;
 
 const linkStyle: JsStyles<LinkClassType> = {
+  rootClass: {},
   wrapper: {
     fontSize: token.linkDefaultFontSize,
   },

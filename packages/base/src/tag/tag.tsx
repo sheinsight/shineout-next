@@ -4,6 +4,7 @@ import useTag from './use-tag';
 import { util } from '@sheinx/hooks';
 import TagInput from './tag-input';
 
+const { devUseWarning } = util;
 const Done = 2;
 const Pending = 1;
 
@@ -29,6 +30,12 @@ const Tag = (props: TagProps) => {
     closable,
     ...rest
   } = props;
+
+  if (process.env.NODE_ENV !== 'production') {
+    if (props.type) {
+      devUseWarning.deprecated('type', 'color', 'Tag');
+    }
+  }
 
   const showClose = closable || onClose;
 

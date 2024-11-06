@@ -30,6 +30,8 @@ import Thead from './thead';
 import Tbody from './tbody';
 import Tfoot from './tfoot';
 
+const { devUseWarning } = util;
+
 const emptyArr: any[] = [];
 const virtualScrollerStyle = {
   flex: 1,
@@ -61,6 +63,12 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableRef = useRef<HTMLDivElement | null>(null);
 
   const browserScrollbarWidth = useScrollbarWidth();
+
+  if (process.env.NODE_ENV !== 'production') {
+    if (props.fixed) {
+      devUseWarning.deprecated('fixed', 'virtual', 'Table');
+    }
+  }
 
   const getSpinConfig = () => {
     if (typeof config.spin === 'object') {

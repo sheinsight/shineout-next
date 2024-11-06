@@ -13,26 +13,26 @@ export const color: any = {
   primary: 'rgb(44, 95, 193)',
   secondary: 'rgb(51, 62, 89)',
   setColor: (_e: any) => {
-    console.warn('shineout: color.setColor is deprecated');
+    console.warn('[shineout] color.setColor is deprecated');
   },
   success: 'rgb(82, 196, 26)',
   warning: 'rgb(255, 140, 0)',
 };
 export const style: any = {
   getClassName: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    console.warn('[shineout] style.getClassName is deprecated');
   },
   setStyle: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    console.warn('[shineout] style.getClassName is deprecated');
     return () => {};
   },
   cleanCache: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    console.warn('[shineout] style.getClassName is deprecated');
   },
   setInjectType: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    console.warn('[shineout] style.getClassName is deprecated');
   },
   getInjectType: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    console.warn('[shineout] style.getClassName is deprecated');
   },
 };

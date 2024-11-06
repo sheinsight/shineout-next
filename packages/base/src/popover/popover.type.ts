@@ -5,6 +5,7 @@ import { AlertClasses } from '../alert/alert.type';
 import { ButtonClasses } from '../button/button.type';
 
 export interface PopoverClasses {
+  rootClass: string;
   /**
    * 最外层class
    */
@@ -139,7 +140,7 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    */
   defaultVisible?: boolean;
   /**
-   * 
+   *
    * @en Cancel the popup after clicking the element in mouseEnterDelay
    * @cn MouseEnterDelay 内点击元素后取消弹出
    * @default false

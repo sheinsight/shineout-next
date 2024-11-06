@@ -3,6 +3,7 @@ import { CommonType } from '../common/type';
 import { ReactNode } from 'react';
 
 export interface CardGroupClasses {
+  rootClass: string;
   wrapper: string;
   item: string;
   checkbox: string;

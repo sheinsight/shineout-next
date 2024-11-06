@@ -4,6 +4,7 @@ import { SpinClasses } from '../spin/spin.type';
 import React from 'react';
 
 export interface ButtonClasses {
+  rootClass: string;
   button: string;
   group: string;
   groupItem: string;

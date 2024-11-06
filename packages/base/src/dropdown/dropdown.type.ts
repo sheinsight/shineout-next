@@ -4,6 +4,7 @@ import { ButtonClasses, ButtonProps } from '../button/button.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 
 export interface DropdownClasses {
+  rootClass: string;
   wrapper: string;
   open: string;
   boxList: string;

@@ -4,6 +4,7 @@ import { BaseFormProps, ObjectType } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 
 export interface FormClasses {
+  rootClass: string;
   wrapper: string;
   wrapperInline: string;
 }

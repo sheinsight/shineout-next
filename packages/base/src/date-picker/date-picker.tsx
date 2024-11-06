@@ -13,6 +13,8 @@ import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { useConfig } from '../config';
 
+const { devUseWarning } = util;
+
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
 const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-bottom'];
 
@@ -20,6 +22,11 @@ const preventDefault = (e: React.MouseEvent) => {
   e.preventDefault();
 };
 const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<Value>) => {
+  if (process.env.NODE_ENV !== 'production') {
+    if (props0.defaultRangeMonth) {
+      devUseWarning.deprecated('defaultRangeMonth', 'defaultPickerValue', 'DatePicker');
+    }
+  }
   const props = useWithFormConfig(props0);
   const { locale, direction } = useConfig();
   const {
@@ -248,8 +255,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   };
 
   useEffect(() => {
-    if (props.formatResult && props.inputable) {
-      console.warn('formatResult and inputable cannot be used at the same time');
+    if (process.env.NODE_ENV !== 'production' &&  props.formatResult && props.inputable) {
+      console.warn('[shineout] `formatResult` and `inputable` cannot be used at the same time.');
     }
   }, []);
 
