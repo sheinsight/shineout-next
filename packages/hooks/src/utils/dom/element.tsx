@@ -103,7 +103,7 @@ export function getParent(el: HTMLElement | null | Element, target?: string | HT
   return null;
 }
 
-export function getClosestScrollContainer(element: HTMLElement | null) {
+export function getClosestScrollContainer(element: HTMLElement | null): HTMLElement | null {
   if (!element) {
     return null;
   }

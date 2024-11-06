@@ -4,8 +4,7 @@ import { createContext } from 'react';
 
 interface AbsoluteContextProps {
   absolute: boolean;
-  follow?: boolean;
-  scrollContainer?: HTMLElement | null;
+  scrollElRef?: React.RefObject<HTMLElement>;
 }
 
 
