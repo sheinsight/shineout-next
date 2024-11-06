@@ -82,6 +82,14 @@ export interface BaseTableProps<Item> {
   ) => void;
 
   /**
+   * @en sort directions
+   * @cn 排序方向
+   * @default ['asc', 'desc']
+   * @version 3.5.0
+   */
+  sortDirections?: ('asc' | 'desc')[];
+
+  /**
    * @en Set columnResizable to true to make all columns scalable
    * @cn 设置 columnResizable 为 true，使所有列可伸缩
    */
@@ -242,6 +250,14 @@ export interface TableColumnItem<DataItem> {
       ) => ((prevRowData: DataItem, nextRowData: DataItem) => number) | void)
     | string
     | TableColumnSorter;
+
+  /**
+   * @en sort directions
+   * @cn 排序方向
+   * @default ['asc', 'desc']
+   * @version 3.5.0
+   */
+  sortDirections?: ('asc' | 'desc')[];
 
   /**
    * @en The content of the header
