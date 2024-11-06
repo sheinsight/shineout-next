@@ -320,6 +320,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       data: treeData,
       colgroup: colgroup,
       sortInfo: sortInfo,
+      sortDirections: props.sortDirections,
       onSorterChange: onSorterChange,
       dragCol: layoutFunc.dragCol,
       resizeCol: layoutFunc.resizeCol,
