@@ -101,7 +101,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     // onFilterWidthCreate,
     filterSameChange,
     noCache,
-    follow,
     trigger = 'click',
   } = props;
 
@@ -736,7 +735,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       {renderResult()}
       <AbsoluteList
         adjust={adjust}
-        follow={follow}
         focus={open}
         fixedWidth={(!props.columns || props.columns <= 1) && (autoAdapt ? 'min' : true)}
         absolute={props.absolute}

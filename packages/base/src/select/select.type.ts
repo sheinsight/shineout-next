@@ -583,14 +583,6 @@ export interface SelectPropsBase<DataItem, Value>
    * @version 3.4.0
    */
   trigger?: 'click' | 'hover';
-
-  /**
-   * @en Whether to follow the scroll container
-   * @cn 下拉框弹出层是否跟随滚动容器
-   * @default false
-   * @version 3.5.0
-   */
-  follow?: boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>

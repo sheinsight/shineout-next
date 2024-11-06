@@ -5,25 +5,19 @@ interface Position {
   left: number;
 }
 
-
 interface UseCheckElementPositionOptions {
   // 是否需要检查元素位置
-  follow?: boolean;
+  enable?: boolean;
   scrollContainer?: HTMLElement | null;
 }
 
 export const useCheckElementPosition = (
   elementRef: React.RefObject<HTMLElement>,
   options: UseCheckElementPositionOptions = {},
-): Position => {
-  const { follow, scrollContainer } = options;
+): Position | null => {
+  const { enable, scrollContainer } = options;
 
   const [position, setPosition] = useState<Position>({ top: 0, left: 0 });
-
-  if(!follow || !elementRef){
-    return position;
-  }
-
   const lastPosition = useRef<Position>({ top: 0, left: 0 });
 
   const checkPosition = useCallback(() => {
@@ -50,7 +44,7 @@ export const useCheckElementPosition = (
   }, [elementRef, scrollContainer]);
 
   useEffect(() => {
-    if(!follow) return;
+    if(!enable) return;
     const element = elementRef.current;
     const container = scrollContainer || window;
 
@@ -65,11 +59,6 @@ export const useCheckElementPosition = (
     if (container instanceof Element) {
       resizeObserver.observe(container);
     }
-
-    // IntersectionObserver
-    const intersectionObserver = new IntersectionObserver(checkPosition);
-    intersectionObserver.observe(element);
-
     // 滚动事件监听
     container.addEventListener('scroll', checkPosition);
 
@@ -81,13 +70,16 @@ export const useCheckElementPosition = (
     // 清理函数
     return () => {
       resizeObserver.disconnect();
-      intersectionObserver.disconnect();
       container.removeEventListener('scroll', checkPosition);
       if (container !== window) {
         window.removeEventListener('resize', checkPosition);
       }
     };
-  }, [follow, elementRef, scrollContainer, checkPosition]);
+  }, [enable, elementRef, scrollContainer, checkPosition]);
+
+  if(!enable || !elementRef){
+    return null;
+  }
 
   return position;
 };
