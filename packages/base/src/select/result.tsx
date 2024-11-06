@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -122,13 +122,24 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onResultItemClick?.(e, item);
   };
 
+  const renderPlaceholderBase = useMemo(() => {
+    return (
+      <span className={classNames(styles.placeholder, styles.ellipsis)}>
+        <span>{placeholder}</span>
+      </span>
+    );
+  }, [placeholder]);
+
   const renderInput = () => {
     let _placeholder = empty ? placeholder : '';
     if (!multiple && valueProp && valueProp !== 0) {
       const result = getDataByValues(value);
       _placeholder = renderResultContent(result[0]);
-      if (_placeholder === undefined) _placeholder = placeholder;
+      if (_placeholder === undefined) {
+        return renderPlaceholderBase;
+      }
     }
+
     return (
       <React.Fragment key='input'>
         <ResultInput
@@ -228,11 +239,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     if (!placeholder) return renderNbsp();
 
-    return (
-      <span className={classNames(styles.placeholder, styles.ellipsis)}>
-        <span>{placeholder}</span>
-      </span>
-    );
+    return renderPlaceholderBase;
   };
 
   const renderSingleResult = () => {
