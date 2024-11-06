@@ -18,17 +18,17 @@ export default (props: TheadProps) => {
     bordered: props.bordered,
   });
 
-  useEffect(() => {
-    const heights = trRefs.current.map(tr => tr?.offsetHeight || 0);
-    context.trHeights = heights;
-  }, [groupColumns]);
-
   const config = useConfig();
 
   const { current: context } = useRef({
     dragIndex: -1,
     trHeights: [] as number[],
    });
+
+   useEffect(() => {
+    const heights = trRefs.current.map(tr => tr?.offsetHeight || 0);
+    context.trHeights = heights;
+  }, [groupColumns]);
 
   const handleDragMove = usePersistFn((deltaX: number) => {
     props?.dragCol(context.dragIndex, deltaX);
@@ -64,6 +64,8 @@ export default (props: TheadProps) => {
 
     const isCustomRender = props.renderSorter && typeof props.renderSorter === 'function';
 
+    const renderedSortDirections = column.sortDirections ?? props.sortDirections ?? ['asc', 'desc'];
+
     return (
       <div className={tableClasses?.sorterContainer} dir={config.direction}>
         {isCustomRender ? (
@@ -74,6 +76,7 @@ export default (props: TheadProps) => {
           })
         ) : (
           <>
+          {renderedSortDirections.includes('asc') && (
             <div
               className={classNames(
                 tableClasses?.sorterAsc,
@@ -84,8 +87,8 @@ export default (props: TheadProps) => {
               }}
             >
               {Icons.table.SortUp}
-            </div>
-            <div
+            </div>)}
+            {renderedSortDirections.includes('desc') && (<div
               className={classNames(
                 tableClasses?.sorterDesc,
                 currentOrder === 'desc' && tableClasses?.sorterActive,
@@ -95,7 +98,7 @@ export default (props: TheadProps) => {
               }}
             >
               {Icons.table.SortDown}
-            </div>
+            </div>)}
           </>
         )}
       </div>
