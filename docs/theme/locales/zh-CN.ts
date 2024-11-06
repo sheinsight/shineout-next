@@ -31,7 +31,7 @@ export default {
     api: 'API',
     guide: '指南',
     updateRecord: '更新记录',
-    playground: 'Playground',
+    playground: '沙盒',
   },
   'shineout.playground': {
     configuration: '配置',
