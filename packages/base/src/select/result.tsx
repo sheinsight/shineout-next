@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect, RefCallback, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -127,6 +127,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!multiple && valueProp && valueProp !== 0) {
       const result = getDataByValues(value);
       _placeholder = renderResultContent(result[0]);
+      if (_placeholder === undefined) _placeholder = placeholder;
     }
     return (
       <React.Fragment key='input'>
@@ -327,12 +328,12 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
 
     // 单选场景下，焦点时自动选中input文本
-    if(!multiple && focus && showInput && mounted.current){
-        const result = getDataByValues(value);
-        if(result.length > 0){
-          const inputTmpText = renderResultContent(result[0]);
-          inputTmpText && props.setInputText(inputTmpText);
-        }
+    if (!multiple && focus && showInput && mounted.current) {
+      const result = getDataByValues(value);
+      if (result.length > 0) {
+        const inputTmpText = renderResultContent(result[0]);
+        inputTmpText && props.setInputText(inputTmpText);
+      }
 
       setTimeout(() => {
         inputRef?.current?.select();

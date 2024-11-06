@@ -1,3 +1,10 @@
+## 3.4.7-beta.1
+2024-11-06
+
+### 🐞 BugFix
+
+- 修复 `Select` 在 value 为空对象时 placeholder 失效的问题 ([#783](https://github.com/sheinsight/shineout-next/pull/783))
+
 ## 3.4.6
 2024-11-05
 
