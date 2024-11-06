@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { Radio } from 'shineout';
+import { Radio, Tooltip } from 'shineout';
 import classNames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
@@ -9,6 +9,7 @@ import ConfigurationBar from './components/configuration-bar';
 import { refreshIcon } from './icon';
 import { AttachedType, type CollocatorProps } from './types';
 import Console from './components/console';
+import Resizable from './components/resizable';
 
 // @ts-ignore
 import Prism from 'prismjs';
@@ -49,11 +50,13 @@ const Collocator = (props: CollocatorProps) => {
     <div className={styles.functions}>
       <Codesandbox code={examples.code} className={classNames(styles.icon, styles.codesandBox)} tip='更多组合用法, 可前往Playground...' />
       {functions.map((item, index) => (
-        <div
-          key={index}
-          className={classNames(styles.icon, [item.type === attachedType && styles.active])}
-          onClick={item.onClick}
-        >{item.name}</div>
+        <Tooltip tip={item.tip} trigger='hover' position='top'>
+          <div
+            key={index}
+            className={classNames(styles.icon, [item.type === attachedType && styles.active])}
+            onClick={item.onClick}
+          >{item.name}</div>
+        </Tooltip>
       ))}
     </div>
   );
@@ -97,9 +100,13 @@ const Collocator = (props: CollocatorProps) => {
               onChange={(v) => setRadioValue(v)}
             />,
           )}
-          <div className={styles.show}>{renderElement}</div>
-          {renderFunctions()}
-          <div className={styles.attached}>{attachedMap[attachedType]}</div>
+          <Resizable>
+            <div className={styles.show}>{renderElement}</div>
+            <>
+              {renderFunctions()}
+              <div className={styles.attached}>{attachedMap[attachedType]}</div>
+            </>
+          </Resizable>
         </div>
         <div className={styles.bar}>
           {renderHeader(

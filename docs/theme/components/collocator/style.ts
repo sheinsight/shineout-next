@@ -38,11 +38,11 @@ const styles = {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    overflowX: 'hidden',
+    overflow: 'hidden',
   },
   show: {
     width: '100%',
-    flex: 1,
+    height: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -98,7 +98,9 @@ const styles = {
     alignItme: 'center',
     borderTop: border,
   },
-  attached: {},
+  attached: {
+    flex: 1
+  },
   icon: {
     ...commonIcon,
     padding: '8px',
@@ -112,7 +114,8 @@ const styles = {
     display: 'flex',
   },
   console: {
-    height: '120px',
+    minHeight: '120px',
+    height: '100%',
     background: '#f7f8fa',
     overflow: 'auto',
     padding: '1em'
@@ -151,11 +154,37 @@ const styles = {
     }
   },
   extraFormItemName: {
-
+    
   },
   extraFormItemTip: {
 
-  }
+  },
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: '100%',
+  },
+  resizableTopBox: {
+  },
+  divider: {
+    cursor: 'row-resize',
+    height: '2px',
+    '&:hover': {
+      '&::before': {
+        content: '" "',
+        display: 'block',
+        width: '100%',
+        height: '4px',
+        background: token.colorFillHover,
+      }
+    }
+  },
+  box: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+  },
 };
 
 export default createUseStyles(styles);

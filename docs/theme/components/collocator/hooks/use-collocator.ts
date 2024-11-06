@@ -102,10 +102,11 @@ const useCollocator = (props: UseCollocatorProps) => {
     });
   }
 
-  const functions: { name: React.ReactElement; type?: AttachedType; onClick: () => void }[] = useMemo(
+  const functions: { name: React.ReactElement; tip?: string; type?: AttachedType; onClick: () => void }[] = useMemo(
     () => [
       {
         name: consoleIcon,
+        tip: 'Console',
         type: AttachedType.CONSOLE,
         onClick: () => {
           attachedType === AttachedType.CONSOLE
@@ -115,10 +116,12 @@ const useCollocator = (props: UseCollocatorProps) => {
       },
       {
         name: copyIcon,
+        tip: 'Copy',
         onClick: handleCopy,
       },
       {
         name: codeIcon,
+        tip: 'Code',
         type: AttachedType.CODE,
         onClick: () => {
           attachedType === AttachedType.CODE
