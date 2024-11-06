@@ -4,7 +4,6 @@ import { useCheckElementPosition } from './check-position'
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { docSize, isChromeLowerThan } from '../../utils';
-import { getClosestScrollContainer } from '../../utils/dom/element';
 
 export type HorizontalPosition =
   | 'left-bottom'
@@ -36,7 +35,7 @@ export interface PositionStyleConfig {
   position: PositionType | undefined;
   absolute: boolean;
   show: boolean;
-  // 弹出层的目标元素
+  // 弹出层的目标元素scrollElRef
   parentElRef: React.RefObject<HTMLElement>;
   // 弹出层
   popupElRef: React.RefObject<HTMLElement>;
@@ -48,15 +47,12 @@ export interface PositionStyleConfig {
   fixedWidth?: boolean | 'min';
   updateKey?: number | string;
   adjust?: boolean;
-  scrollContainer?: HTMLElement | null;
-  follow?: boolean;
 }
 
 const hideStyle: React.CSSProperties = {
   pointerEvents: 'none',
   position: 'fixed',
-  zIndex: -1000,
-  opacity: 0,
+  visibility: 'hidden',
 };
 export const usePositionStyle = (config: PositionStyleConfig) => {
   const {
@@ -72,24 +68,20 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     scrollElRef,
     updateKey,
     adjust,
-    follow,
-    scrollContainer,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
   const [arrayStyle, setArrayStyle] = useState<React.CSSProperties>({});
 
-  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollContainer, follow});
-
   const { current: context } = React.useRef({
-    element: null as HTMLDivElement | null,
     containerRect: { left: 0, width: 0 } as DOMRect,
     containerScroll: { left: 0, width: 0 } as DOMRect,
     parentRect: { left: 0, width: 0 } as DOMRect,
     popUpHeight: 0,
     popUpWidth: 0,
-    opsStyle: {} as React.CSSProperties,
   });
+
+  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show});
 
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
@@ -162,7 +154,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
     let targetPosition = position;
     const rootContainer = getContainer() || document.body;
-    const closestScrollContainer = absolute ? null : getClosestScrollContainer(parentElRef.current);
 
     const containerRect = rootContainer.getBoundingClientRect();
     const bodyRect = (document.documentElement || document.body).getBoundingClientRect();
@@ -180,7 +171,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       let overRight = 0;
       let overLeft = 0;
       if (h === 'left') {
-        style.left = rect.left - containerRect.left + containerScroll.left + (closestScrollContainer?.scrollLeft || 0);
+        style.left = rect.left - containerRect.left + containerScroll.left;
         style.transform = '';
         arrayStyle.left = `8px`;
         if (adjust) {
