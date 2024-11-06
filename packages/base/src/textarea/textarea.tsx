@@ -127,14 +127,12 @@ const Textarea = (props0: TextareaProps) => {
     ...innerTitleProps,
   });
 
-  const getInfo = () => {
+  const getInfoState = () => {
     const notNumber = typeof info !== 'number';
     if (typeof info !== 'function' && typeof info !== 'object' && notNumber) return null;
     let infoContent: number | ((value: string) => React.ReactNode | Error);
-    let infoPosition;
     if (typeof info === 'object') {
       infoContent = info.content;
-      infoPosition = info.position;
     } else {
       infoContent = info;
     }
@@ -142,35 +140,39 @@ const Textarea = (props0: TextareaProps) => {
     const textInfo = notContentNumber
       ? (infoContent as (value: string) => React.ReactNode | Error)
       : defaultInfo.bind(null, infoContent as number);
-    const res = textInfo(inputAbleProps.value!);
-    // empty
-    if (!res) return null;
-    const isError = res instanceof Error;
-    const text = isError ? res.message : res;
+    const error = textInfo(inputAbleProps.value!);
+    if (!error) return null;
+    const isError = error instanceof Error;
+    const text = isError ? error.message : error;
     if (!isError && !focused) return null;
+    return { text, error }
+  }
 
-    return (
-      <div
-        key='info'
-        style={{ minWidth: 'auto' }}
-        dir={config.direction}
-        className={classNames(
-          textareaClasses?.info,
-          !!isError && textareaClasses?.infoError,
-          infoPosition === 'bottom-left' && textareaClasses?.bottomLeft,
-          infoPosition === 'bottom-right' && textareaClasses?.bottomRight,
-        )}
-      >
-        {text}
-      </div>
-    );
+  const infoState = useMemo(getInfoState, [info, inputAbleProps.value, focused])
+  const infoPopoverProps = {
+    popover: resetProps.popover || (typeof info === 'object' ? info.position : 'bottom-right'),
+    popoverProps: Object.assign(
+      {
+        style: { width: 'auto' },
+       },
+      resetProps.popoverProps,
+    ),
+    error: infoState?.error && infoState?.error instanceof Error ? infoState?.error?.message : undefined,
+    tip: <div className={textareaClasses?.info}>{infoState?.text}</div>,
   };
+
+  const infoPopoverNode = useTip({
+    ...infoPopoverProps,
+    focused,
+    rootRef,
+    jssStyle,
+  });
 
   const mergeSuffix = (
     <React.Fragment>
       {suffix}
-      {getInfo()}
       {tipNode}
+      {infoState?.text && infoPopoverNode}
       {util.isFunc(renderFooter) && (
         <div
           onMouseDown={(e) => {

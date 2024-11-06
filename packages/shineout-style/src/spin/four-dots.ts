@@ -1,3 +1,5 @@
+import Token from '@sheinx/theme';
+
 export default {
   // margin: 'auto',
   position: 'relative',
@@ -16,7 +18,7 @@ export default {
     },
 
     '& svg': {
-      fill: '#197AFA',
+      fill: Token.spinColor,
     },
 
     '&:nth-child(1)': {

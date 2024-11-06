@@ -2,14 +2,19 @@ import React from 'react';
 import { CommonType } from '../common/type';
 import type { ObjectType, TableColumnItem, BaseTableProps, ObjectKey } from '@sheinx/hooks';
 import { useListSelect, useTableTree } from '@sheinx/hooks';
-import { CheckboxClasses } from '../checkbox/checkbox.type';
-import { RadioClasses } from '../radio/radio.type';
 import { SpinClasses } from '../spin/spin.type';
 import { PaginationProps } from '../pagination/pagination.type';
 import { PaginationClasses } from '../pagination/pagination.type';
 import { ButtonClasses } from '../button/button.type';
-import { InputClasses } from '../input/input.type';
 import { EmptyClasses } from '../empty/empty.type';
+import { InputClasses } from '../input/input.type';
+import { CascaderClasses } from '../cascader/cascader.type';
+import { SelectClasses } from '../select/select.type';
+import { TreeSelectClasses } from '../tree-select/tree-select.type';
+import { DatePickerClasses } from '../date-picker/date-picker.type';
+import { SwitchClasses } from '../switch/switch.type';
+import { CheckboxClasses } from '../checkbox/checkbox.type';
+import { RadioClasses } from '../radio/radio.type';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -121,6 +126,11 @@ export interface TableProps<DataItem, Value>
     button?: () => ButtonClasses;
     input?: () => InputClasses;
     empty?: () => EmptyClasses;
+    select?: () => SelectClasses;
+    cascader?: () => CascaderClasses;
+    treeSelect?: () => TreeSelectClasses;
+    datePicker?: () => DatePickerClasses;
+    switch?: () => SwitchClasses;
   };
   /**
    *
@@ -227,7 +237,7 @@ export interface TableProps<DataItem, Value>
    * @en TThe total width of the table, which defaults to the container width, must not be less than the sum of width set in columns
    * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
    */
-  width?: number;
+  width?: number | string;
   /**
    * @en array，see TableColumn
    * @cn 数组，见 TableColumn

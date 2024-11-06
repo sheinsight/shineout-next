@@ -1,3 +1,10 @@
+## 3.4.4
+2024-10-28
+
+### 💎 Enhancement
+
+- `Textarea` 的 `info` 重构为Popover实现，支持`popoverProps`设置 ([#735](https://github.com/sheinsight/shineout-next/pull/735))
+
 ## 3.4.0
 2024-09-19
 

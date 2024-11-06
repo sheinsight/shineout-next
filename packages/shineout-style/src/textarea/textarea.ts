@@ -94,64 +94,8 @@ const input: JsStyles<keyof TextareaClasses> = {
     resize: 'vertical',
   },
   info: {
-    position: 'absolute',
-    zIndex: 1000,
-    '&[dir=ltr]': { right: '0' },
-    '&[dir=rtl]': { left: '0' },
-    '&$bottomLeft': { right: 'auto' },
-    '&$bottomRight': { left: 'auto' },
-    top: '100%',
-    transformOrigin: '100% 0',
-    marginTop: '10px',
-    animation: 'so-input-fade .16s ease-in',
-    maxWidth: '400px',
-    padding: '5px 8px',
     background: token.textareaInfoBackgroundColor,
-    borderRadius: token.textareaBorderRadius,
-    boxShadow: `0 0 0 1px ${token.textareaBorderColor}`,
-    fontSize: '12px',
     color: token.textareaInfoFontColor,
-    '&::before': {
-      display: 'block',
-      position: 'absolute',
-
-      bottom: '100%',
-      transform: 'rotate(45deg) translateY(3px)',
-      width: '6px',
-      height: '6px',
-      borderTop: `1px solid ${token.textareaBorderColor}`,
-      borderLeft: `1px solid ${token.textareaBorderColor}`,
-      background: 'inherit',
-      content: "'  '",
-    },
-    '&[dir=ltr]::before': {
-      right: '4px',
-    },
-    '&[dir=rtl]::before': {
-      left: '8px',
-    },
-    '&$bottomLeft::before': {
-      left: '8px',
-      right: 'auto',
-    },
-    '&$bottomRight::before': {
-      right: '4px',
-      left: 'auto',
-    },
-  },
-  bottomLeft: {
-    left: 0,
-  },
-  bottomRight: {
-    right: 0,
-  },
-  infoError: {
-    boxShadow: `0 0 0 1px ${token.textareaInfoErrorBorderColor}`,
-    color: token.textareaInfoErrorFontColor,
-    background: token.textareaInfoErrorBackgroundColor,
-    '&::before': {
-      borderColor: token.textareaInfoErrorBorderColor,
-    },
   },
   shadow: {
     position: 'absolute',

@@ -26,6 +26,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     pagination = {},
   } = props;
   const listClasses = props.jssStyle?.list?.();
+  const isEmpty = !util.isArray(data) || data.length <= 0;
 
   const inputAble = useInputAble({
     value: props.value,
@@ -163,6 +164,8 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
   });
 
   const renderList = () => {
+    if (isEmpty) return null;
+
     if (props.fixed)
       return (
         <>
@@ -193,6 +196,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
   const wrapperClass = classNames(
     props.className,
     listClasses?.wrapper,
+    isEmpty && listClasses?.wrapperEmpty,
     props.bordered && listClasses?.wrapperBordered,
     props.size === 'small' && listClasses?.wrapperSmall,
     props.size === 'large' && listClasses?.wrapperLarge,

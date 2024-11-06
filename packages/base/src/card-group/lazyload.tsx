@@ -8,6 +8,7 @@ export interface LazyloadProps {
   placeholder?: React.ReactNode;
   container?: HTMLElement;
   offset?: number;
+  isInView?: boolean;
 }
 
 const Lazyload = (props: LazyloadProps) => {
@@ -29,7 +30,7 @@ const Lazyload = (props: LazyloadProps) => {
     };
   }, []);
 
-  if (ready) return <>{props.children}</>;
+  if (ready && props.isInView) return <>{props.children}</>;
   return (
     <span ref={placeholderRef} style={{ border: '1px solid transparent' }}>
       {props.placeholder}

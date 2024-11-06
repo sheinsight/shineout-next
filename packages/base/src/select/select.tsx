@@ -27,10 +27,6 @@ import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { getLocale, useConfig } from '../config';
 
-const preventDefault = (e: React.MouseEvent) => {
-  e.preventDefault();
-};
-
 function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const props = useWithFormConfig(props0);
   const { locale, direction } = useConfig();
@@ -558,6 +554,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           allowOnFilter={showInput}
           focusSelected={focusSelected}
           inputText={inputText}
+          inputRef={inputRef}
           filterText={filterText}
           onFilter={handleFilter}
           onRef={inputRef}
@@ -731,11 +728,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       onKeyUp={handleKeyUp}
       onBlur={handleBlur}
       onFocus={handleFocus}
-      onMouseDown={(e) => {
-        if (focused && e.target !== inputRef.current) {
-          e.preventDefault();
-        }
-      }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -762,7 +754,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
             size === 'large' && styles?.pickerLarge,
           )}
           onAnimationAfterEnter={onAnimationAfterEnter}
-          onMouseDown={preventDefault}
           display={'block'}
           type='scale-y'
           // type='fade'

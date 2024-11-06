@@ -1,5 +1,12 @@
-## 3.4.3-beta.4
-2024-10-09
+## 3.4.6
+2024-11-05
+
+### 🐞 BugFix
+
+- `Input.Number` 输入框删完最后一个数字时不触发onChange的问题（此时返回null或undefined） ([#780](https://github.com/sheinsight/shineout-next/pull/780))
+
+## 3.4.3
+2024-10-14
 
 ### 🐞 BugFix
 

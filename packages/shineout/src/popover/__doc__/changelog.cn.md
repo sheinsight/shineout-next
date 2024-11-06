@@ -1,5 +1,14 @@
-## 3.4.3-beta.4
-2024-10-09
+## 3.4.4
+2024-10-28
+
+### 🐞 BugFix
+- 修复 `Popover.Confirm` 的弹出容器的宽度在Table中有可能显示较窄的问题 ([#736](https://github.com/sheinsight/shineout-next/pull/736))
+### 🐞 BugFix
+- 修复 `Popover` 在横滚的Table中有可能弹出位置不准确的问题 ([#741](https://github.com/sheinsight/shineout-next/pull/741))
+
+
+## 3.4.3
+2024-10-14
 
 ### 🐞 BugFix
 - 修复 `Popover` 在滚动容器中的极限边界场景下不可见的问题 ([#702](https://github.com/sheinsight/shineout-next/pull/702))

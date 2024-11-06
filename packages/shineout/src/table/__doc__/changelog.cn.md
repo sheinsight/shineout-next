@@ -1,3 +1,33 @@
+## 3.4.6
+2024-11-05
+
+### 🐞 BugFix
+
+- 修复 `Table` 点击 checkbox 触发行展开的问题 ([#777](https://github.com/sheinsight/shineout-next/pull/777))
+
+## 3.4.5
+2024-10-31
+
+### 🐞 BugFix
+
+- 修复 `Table` 的 `minWidth` 设置失效的问题 ([#774](https://github.com/sheinsight/shineout-next/pull/774))
+- 修复 `Table` 中点击部分组件会触发行展开的问题 ([#761](https://github.com/sheinsight/shineout-next/pull/761))
+
+## 3.4.4
+2024-10-28
+
+### 💎 Enhancement
+- 优化 `Table` 组件 Spin 支持从全局配置读取相关设置 ([#727](https://github.com/sheinsight/shineout-next/pull/727))
+
+
+## 3.4.3
+2024-10-14
+
+### 🐞 BugFix
+
+- 修复 `Table` 的width和ColumnItem的width的类型问题 ([#717](https://github.com/sheinsight/shineout-next/pull/717))
+
+
 ## 3.4.2
 2024-09-29
 

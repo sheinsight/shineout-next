@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { usePersistFn } from '@sheinx/hooks';
+import { useInView, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CardGroupContext } from './card-group-context';
 import Lazyload from './lazyload';
@@ -11,6 +11,12 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
   const { container } = useContext(CardGroupContext);
   const classes = props.jssStyle?.cardGroup?.();
 
+  const { ref: itemRef, isInView  } = useInView<HTMLDivElement>({
+    rootMargin: `${container?.offsetHeight || 500}px`,
+    root: container,
+    threshold:[0, 1]
+  })
+
   const handleChange = usePersistFn((_: any, checked: boolean) => {
     if (props.onChange) props.onChange(checked, props.value!);
   });
@@ -19,7 +25,7 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
     if (!props.placeholder) return content;
     if (!container) return content;
     return (
-      <Lazyload container={container} placeholder={props.placeholder}>
+      <Lazyload container={container} placeholder={props.placeholder} isInView={isInView}>
         {content}
       </Lazyload>
     );
@@ -43,8 +49,11 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
     </>
   );
 
+  const hiddenStyle = isInView ? undefined : { visibility: 'hidden' };
+  const itemStyle = { ...props.style, ...hiddenStyle } as React.CSSProperties;
+
   return (
-    <div className={cls} style={props.style}>
+    <div ref={itemRef} className={cls} style={itemStyle}>
       {renderChildren(content)}
     </div>
   );

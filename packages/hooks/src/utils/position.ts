@@ -75,22 +75,23 @@ const getPopoverPosition = (
     if (verticalPoint > windowHeight / 2) position = 'top';
     else position = 'bottom';
 
+    // TODO: 暂时移除，另考虑方案
     // 如果渲染了弹出内容，则根据弹出内容宽度计算是否自动调整位置
-    if (popupRect) {
-      if (popupRect?.width / 2 > rect.left) {
-        position += '-left';
-      }
-      if (popupRect?.width / 2 > windowWidth - rect.right) {
-        position += '-right';
-      }
-    } else {
-      // 兜底计算
-      if (horizontalPoint > windowWidth * 0.6) {
-        position += '-right';
-      } else if (horizontalPoint < windowWidth * 0.4) {
-        position += '-left';
-      }
+    // if (popupRect && popupRect?.width) {
+    //   if (popupRect?.width / 2 > rect.left) {
+    //     position += '-left';
+    //   }
+    //   if (popupRect?.width / 2 > windowWidth - rect.right) {
+    //     position += '-right';
+    //   }
+    // } else {
+    // 兜底计算
+    if (horizontalPoint > windowWidth * 0.6) {
+      position += '-right';
+    } else if (horizontalPoint < windowWidth * 0.4) {
+      position += '-left';
     }
+    // }
   }
   return position as PopoverPosition;
 };

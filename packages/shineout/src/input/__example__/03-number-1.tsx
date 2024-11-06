@@ -10,6 +10,11 @@
 import React from 'react';
 import { Input } from 'shineout';
 
-const App: React.FC = () => <Input.Number width={300} />;
+const App: React.FC = () => {
+
+  return <Input.Number width={300} onChange={v => {
+    console.log('Input.Number', v);
+  }} />
+};
 
 export default App;

@@ -10,6 +10,7 @@ import {
   useEmptyStyle,
   useSpinStyle,
   useImageStyle,
+  useSelectStyle,
 } from '@sheinx/shineout-style';
 
 import { ListProps } from './list.type';
@@ -23,6 +24,7 @@ const jssStyle = {
   empty: useEmptyStyle,
   spin: useSpinStyle,
   image: useImageStyle,
+  select: useSelectStyle,
 };
 export default <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) => {
   return <List jssStyle={jssStyle} {...props} />;

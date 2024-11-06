@@ -2,13 +2,24 @@ import { util } from '@sheinx/hooks';
 import { create } from '@shined/reactive';
 import { getSnapshot } from '@shined/reactive/vanilla';
 import { LanType, Direction } from './locale/Props';
+import { SpinNameType } from '../spin/spin.type';
+
+export type SpinConfig =
+  | SpinNameType
+  | {
+      name: SpinNameType;
+      color?: string;
+      tip?: React.ReactNode;
+      mode?: 'vertical' | 'horizontal';
+      size?: number;
+    };
 
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
   delay?: number;
   trim?: boolean;
-  spin?: string;
+  spin?: SpinConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }

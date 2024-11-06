@@ -4,12 +4,14 @@ import { CommonType } from '../common/type';
 import { PaginationProps, PaginationJssStyle } from '../pagination/pagination.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { SpinClasses } from '../spin/spin.type';
+import { SelectClasses } from '../select/select.type';
 import { EmptyClasses } from '../empty/empty.type';
 import { ImageJssStyleType } from '../image/image.type';
 import { BaseItemClasses } from './base-item.type';
 
 export interface ListClasses extends BaseItemClasses {
   wrapper: string;
+  wrapperEmpty: string;
   wrapperBordered: string;
   wrapperStriped: string;
   wrapperSmall: string;
@@ -27,6 +29,7 @@ export interface ListClasses extends BaseItemClasses {
 export interface listJssStyle extends PaginationJssStyle, ImageJssStyleType {
   list?: () => ListClasses;
   checkbox?: () => CheckboxClasses;
+  select?: () => SelectClasses;
   spin?: () => SpinClasses;
   empty?: () => EmptyClasses;
 }

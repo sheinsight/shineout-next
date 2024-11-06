@@ -79,14 +79,38 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const update = usePersistFn(
     (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
       if (!name) return;
-      const value = getValue(name, formValue) as T;
-      const error = getError(name, errors, severErrors);
-      if (error !== errorState) {
-        setErrorState(error);
-      }
-      if (!shallowEqual(value, latestInfo.valueState)) {
-        setValueState(value);
-        latestInfo.valueState = value;
+
+      if (isArray(name)) {
+        const value = getValue(name, formValue) as T[];
+        const error = getError(name, errors, severErrors);
+        if (error !== errorState) {
+          setErrorState(error);
+        }
+        // format defaultValue
+        const dv = isArray(defaultValue) ? defaultValue : [];
+        const nextValue = [] as T[];
+        name.forEach((n, index) => {
+          if (value[index] === undefined && dv[index] !== undefined) {
+            nextValue[index] = dv[index];
+          } else {
+            nextValue[index] = value[index];
+          }
+        });
+        setValueState(nextValue as T);
+      } else {
+        const value = getValue(name, formValue) as T;
+        const error = getError(name, errors, severErrors);
+        if (error !== errorState) {
+          setErrorState(error);
+        }
+        if (!shallowEqual(value, latestInfo.valueState)) {
+          if (value === undefined && defaultValue !== undefined) {
+            setValueState(defaultValue);
+          } else {
+            setValueState(value);
+          }
+          latestInfo.valueState = value;
+        }
       }
     },
   );

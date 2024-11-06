@@ -4,7 +4,7 @@ import { TfootProps, SummaryItem } from './tfoot.type';
 import { util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 import type { ObjectType } from '@sheinx/hooks';
-const { isArray } = util;
+const { isArray, toNum } = util;
 
 export default (props: TfootProps) => {
   const tableClasses = props.jssStyle?.table?.();
@@ -22,7 +22,7 @@ export default (props: TfootProps) => {
           transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
-      const left = colgroup.slice(0, index).reduce((a, b) => (a || 0) + (b || 0), 0);
+      const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         left: left,
         position: 'sticky',
@@ -34,7 +34,7 @@ export default (props: TfootProps) => {
           transform: `translate3d(-${props.fixRightNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
-      const right = colgroup.slice(index + colSpan).reduce((a, b) => (a || 0) + (b || 0), 0);
+      const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         right: right,
         position: 'sticky',

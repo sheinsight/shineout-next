@@ -16,10 +16,20 @@ export default () => {
   return (
     <div>
       <Select
-        width={300}
+        width={200}
         data={data}
         keygen
         placeholder='Select Color'
+        onFilter={handleFilter}
+        clearable
+      />
+      <br />
+      <br />
+      <Select
+        width={300}
+        data={data}
+        keygen
+        placeholder='Select Multiple Color'
         onFilter={handleFilter}
         clearable
         multiple

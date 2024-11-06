@@ -110,7 +110,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     '&:hover': {
       ...wrapper['&:hover'],
       cursor: 'pointer',
-      '&$clearable:not($wrapperEmpty)': {
+      '&$clearable:not($wrapperEmpty):not($wrapperDisabled)': {
         '& $clearIcon': {
           display: 'block',
         },
@@ -182,7 +182,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       minWidth: 12,
       maxWidth: '100%',
       // flex: 1,
-      width: 12,
+      // width: 12,
       overflow: 'hidden',
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',

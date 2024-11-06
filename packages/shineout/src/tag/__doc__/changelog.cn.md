@@ -1,3 +1,9 @@
+## 3.4.3
+2024-10-14
+### 🐞 BugFix
+
+- 修复 `Tag` 组件在 `onClose` 时触发 onClick 的问题 ([#712](https://github.com/sheinsight/shineout-next/pull/712)) 
+
 ## 3.4.2
 2024-09-29
 ### 🐞 BugFix

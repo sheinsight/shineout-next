@@ -231,7 +231,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
           class="soui-image-default-placeholder"
         >
           <div
-            class="soui-spin-ring soui-spin-spin"
+            class="soui-spin-spin soui-spin-ring"
             style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
           />
         </div>
@@ -648,7 +648,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
           class="soui-image-default-placeholder"
         >
           <div
-            class="soui-spin-ring soui-spin-spin"
+            class="soui-spin-spin soui-spin-ring"
             style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
           />
         </div>

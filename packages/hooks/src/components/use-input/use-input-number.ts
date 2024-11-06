@@ -61,6 +61,11 @@ const useNumberFormat = (props: InputNumberProps) => {
     setInternalInputValue(getStringValue(val));
     if(typeof val === 'string'){
       const num = parseFloat(val);
+      if(val === '') {
+        // 如果允许空值，则返回 null，否则返回 undefined
+        onChange?.(allowNull ? null : undefined);
+        return;
+      }
       if(isNaN(num)) return
       onChange?.(num);
     }else{

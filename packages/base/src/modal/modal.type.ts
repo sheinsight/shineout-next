@@ -2,6 +2,7 @@ import React from 'react';
 import { CommonType } from '../common/type';
 import { ButtonJssStyle } from '../button/button.type';
 import { AlertJssStyle } from '../alert/alert.type';
+import { SpinStyle } from '../spin/spin.type';
 
 export type Methods = 'success' | 'info' | 'warning' | 'error' | 'confirm' | 'normal';
 
@@ -24,7 +25,7 @@ export interface ModalClasses {
   mask: string;
   panel: string;
   header: string;
-  
+
   headerIcon: string;
   emptyIcon: string;
   headerTitle: string;
@@ -38,7 +39,7 @@ export interface ModalClasses {
   resizeXY: string;
 }
 
-export interface ModalJssStyle extends ButtonJssStyle, AlertJssStyle {
+export interface ModalJssStyle extends ButtonJssStyle, AlertJssStyle, SpinStyle {
   modal?: () => ModalClasses;
 }
 

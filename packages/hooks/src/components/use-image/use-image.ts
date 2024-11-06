@@ -133,10 +133,18 @@ const useImage = (props: BaseImageProps = {}) => {
           offset: typeof lazy === 'number' ? lazy : 0,
           element: elementRef.current!,
           render: markToRender,
+          offscreen: () => {
+            setStatus(PLACEHOLDER)
+          },
+          noRemove: props.inViewOnly,
           container: typeof container === 'string' ? document.querySelector(container) : container,
         });
       }
     }
+
+    return () => {
+      if (lazyId) removeStack(lazyId);
+    };
   }, [src]);
 
   return {

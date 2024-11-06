@@ -26,7 +26,7 @@ export interface TbodyProps
   > {
   columns: TableFormatColumn<any>[];
   data: any[];
-  colgroup: (number | undefined)[];
+  colgroup: (number | string | undefined)[];
   isScrollX: boolean;
   currentIndex?: number;
   expandHideCol: UseColumnsResult['expandHideCol'];

@@ -9,6 +9,7 @@ import Radio from '../radio';
 import { TbodyProps, UseTableRowResult } from './tbody.type';
 import { useConfig } from '../config';
 
+const { toNum } = util;
 interface TrProps
   extends Pick<
     TbodyProps,
@@ -40,7 +41,7 @@ interface TrProps
   rowIndex: number;
   columns: TableFormatColumn<any>[];
   isScrollX: boolean;
-  colgroup: (number | undefined)[];
+  colgroup: (number | string | undefined)[];
   rawData: any;
   expanded: boolean;
   expandCol: TbodyProps['expandHideCol'] | undefined;
@@ -57,7 +58,7 @@ interface TrProps
 }
 
 const Tr = (props: TrProps) => {
-  const { treeFunc } = props;
+  const { treeFunc, jssStyle } = props;
   const tableClasses = props.jssStyle?.table?.();
   const trRef = useRef<HTMLTableRowElement>(null);
   const expandRef = useRef<HTMLTableRowElement>(null);
@@ -72,7 +73,7 @@ const Tr = (props: TrProps) => {
           transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
-      const left = props.colgroup.slice(0, index).reduce((a, b) => (a || 0) + (b || 0), 0);
+      const left = props.colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         position: 'sticky',
         left,
@@ -84,7 +85,7 @@ const Tr = (props: TrProps) => {
           transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
         } as React.CSSProperties;
       }
-      const right = props.colgroup.slice(index + colSpan).reduce((a, b) => (a || 0) + (b || 0), 0);
+      const right = props.colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
 
       return {
         position: 'sticky',
@@ -121,7 +122,12 @@ const Tr = (props: TrProps) => {
     }
   });
 
-  useEffect(setVirtualRowHeight, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
+  useEffect(setVirtualRowHeight, [
+    props.expanded,
+    props.rowIndex,
+    props.bodyScrollWidth,
+    props.resizeFlag,
+  ]);
 
   useEffect(() => {
     if (!trRef.current) return;
@@ -157,6 +163,7 @@ const Tr = (props: TrProps) => {
       <span className={className} style={{ marginLeft: level * treeIndent }}>
         <div className={classNames(tableClasses?.iconWrapper)}>
           <span
+            data-role='tree-expand-icon'
             className={tableClasses?.expandIcon}
             onClick={() => {
               treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
@@ -187,7 +194,7 @@ const Tr = (props: TrProps) => {
           className={classNames(tableClasses?.iconWrapper, tableClasses?.expandIconWrapper)}
           onClick={clickEvent}
         >
-          <span className={tableClasses?.expandIcon}>
+          <span data-role='expand-icon' className={tableClasses?.expandIcon}>
             {props.expanded ? Icons.table.Expand : Icons.table.Collapse}
           </span>
         </div>
@@ -266,8 +273,20 @@ const Tr = (props: TrProps) => {
             key={col.key}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
-            onMouseEnter={props.hover && hasSiblingRowSpan ? () => { props.handleCellHover(props.rowIndex, data[i].rowSpan) } : undefined}
-            onMouseLeave={props.hover && hasSiblingRowSpan ? () => { props.handleCellHover(-1, 0); } : undefined}
+            onMouseEnter={
+              (props.hover && hasSiblingRowSpan) || data[i].rowSpan > 1
+                ? () => {
+                    props.handleCellHover(props.rowIndex, data[i].rowSpan);
+                  }
+                : undefined
+            }
+            onMouseLeave={
+              (props.hover && hasSiblingRowSpan) || data[i].rowSpan > 1
+                ? () => {
+                    props.handleCellHover(-1, 0);
+                  }
+                : undefined
+            }
             className={classNames(
               col.className,
               col.type === 'checkbox' && tableClasses?.cellCheckbox,
@@ -277,10 +296,14 @@ const Tr = (props: TrProps) => {
               col.align === 'right' && tableClasses?.cellAlignRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
-              (data[i].rowSpan > 1) && props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,
+              props.hoverIndex.has(props.rowIndex) && tableClasses?.cellHover,
+              data[i].rowSpan > 1 &&
+                props.isCellHover(props.rowIndex, data[i].rowSpan) &&
+                tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
             dir={config.direction}
+            data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
           >
             {renderContent(col, data[i].data)}
@@ -315,6 +338,30 @@ const Tr = (props: TrProps) => {
     }
   };
 
+  const preventClasses = [
+    jssStyle?.input?.().wrapper,
+    jssStyle?.select?.().wrapper,
+    jssStyle?.datePicker?.().wrapper,
+    jssStyle?.treeSelect?.().wrapper,
+    jssStyle?.switch?.().wrapper,
+    jssStyle?.checkbox?.().wrapper,
+    jssStyle?.radio?.().wrapper,
+    jssStyle?.cascader?.().wrapper,
+  ];
+
+  const isNotExpandableElement = (el: HTMLElement): boolean => {
+    const { tagName } = el;
+    if (tagName === 'TD' || tagName === 'TR') return false;
+    if (tagName === 'A' || tagName === 'BUTTON' || tagName === 'INPUT') return true;
+    const isPreventElement = preventClasses.find((cl) => {
+      const classes = cl?.split(' ') as string[];
+      return classes.some((c) => el.classList.contains(c));
+    });
+    if (isPreventElement) return true;
+    if (!el.parentElement) return true;
+    return isNotExpandableElement(el.parentElement);
+  };
+
   const handleRowClick = usePersistFn((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
     const { rowClickAttr = '*', onRowClick } = props;
@@ -333,7 +380,9 @@ const Tr = (props: TrProps) => {
         }
       }
     }
+
     if (props.rowClickExpand) {
+      if (isNotExpandableElement(target)) return;
       props.handleExpandClick(
         props.expandCol as TableFormatColumn<any>,
         props.rawData,
@@ -350,7 +399,7 @@ const Tr = (props: TrProps) => {
           props?.rowClassName?.(props.rawData, props.rowIndex),
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
           props.isSelect && tableClasses?.rowChecked,
-          props.hover && tableClasses?.rowHover
+          props.hover && tableClasses?.rowHover,
         )}
         {...props.rowEvents}
         onClick={handleRowClick}

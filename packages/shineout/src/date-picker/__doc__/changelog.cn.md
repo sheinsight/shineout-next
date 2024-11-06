@@ -1,3 +1,21 @@
+## 3.4.6
+2024-11-05
+
+### 🐞 BugFix
+
+- 修复 `DatePicker` 禁用后可聚焦的问题 ([#778](https://github.com/sheinsight/shineout-next/pull/778))
+
+## 3.4.4
+2024-10-28
+
+### 💎 Enhancement
+
+- `DatePicker` 快速选择配置项新增 `immediate` 属性支持选择后立刻关闭面板 ([#745](https://github.com/sheinsight/shineout-next/pull/745))
+
+### 🐞 BugFix
+
+- 修复 `Datepicker` 组件 key 值书写问题，解决 React 18.3.0 以上版本 key 字段报错的问题 ([#726](https://github.com/sheinsight/shineout-next/pull/726))
+
 ## 3.4.1
 2024-09-20
 

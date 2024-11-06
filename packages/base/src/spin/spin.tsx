@@ -11,15 +11,58 @@ const Spin = (props: SpinProps = {}) => {
     style,
     loading,
     name: nameProps,
-    tip,
+    tip: tipProps,
     tipClassName,
-    color,
-    mode = 'vertical',
+    color: colorProps,
+    mode: modeProps,
   } = props;
 
   const config = useConfig();
 
-  const name = nameProps ?? config.spin ?? 'default';
+  const getSpinName = () => {
+    const { spin } = config;
+    if (!spin) return;
+
+    if (typeof spin === 'string') {
+      return spin;
+    }
+
+    if (typeof spin === 'object') {
+      const { name } = spin;
+      return name;
+    }
+
+    return;
+  };
+
+  const getSpinTip = () => {
+    const { spin } = config;
+    if (!spin || typeof spin !== 'object') return;
+    const { tip } = spin;
+    return tip;
+  };
+
+  const getSpinColor = () => {
+    const { spin } = config;
+    if (!spin || typeof spin !== 'object') return;
+    const { color } = spin;
+    return color;
+  };
+
+  const getSpinMode = () => {
+    const { spin } = config;
+    if (!spin || typeof spin !== 'object') return;
+    const { mode } = spin;
+    return mode;
+  };
+
+  const name = nameProps ?? getSpinName() ?? 'default';
+
+  const tip = tipProps ?? getSpinTip();
+
+  const color = colorProps ?? getSpinColor();
+
+  const mode = modeProps ?? getSpinMode() ?? 'vertical';
 
   const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 
@@ -32,7 +75,7 @@ const Spin = (props: SpinProps = {}) => {
     const n = name as keyof typeof Spins;
     if (Spins[n]) {
       const Comp = Spins[n];
-      return <Comp {...props} style={style} />;
+      return <Comp {...props} color={color} style={style} className={!tip ? className : undefined} />;
     }
 
     return null;
@@ -47,7 +90,7 @@ const Spin = (props: SpinProps = {}) => {
   };
 
   const renderContent = () => {
-    if ('tip' in props) {
+    if (tip) {
       return (
         <div className={contentClass}>
           {renderSpin()}

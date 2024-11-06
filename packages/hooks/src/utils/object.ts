@@ -234,3 +234,15 @@ export const removeProps = <T extends ObjectType, K extends ObjectType>(target: 
   }
   return a as Omit<T, keyof K>;
 };
+
+export const getAllKeyPaths = (obj: ObjectType, parentKey: string = ''): string[] => {
+  return Object.keys(obj).reduce((keys: string[], key: string) => {
+    const newKey = parentKey ? `${parentKey}.${key}` : key;
+
+    if(Array.isArray(obj[key])) {
+      return keys.concat(newKey);
+    }
+
+    return keys.concat(obj[key] !== null && typeof obj[key] === 'object' ? getAllKeyPaths(obj[key], newKey) : newKey);
+  }, []);
+};

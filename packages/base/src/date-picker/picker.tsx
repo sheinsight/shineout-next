@@ -47,7 +47,6 @@ const Picker = (props: PickerProps) => {
     const mode = props.mode[index];
 
     const commonProps = {
-      key: position,
       options,
       value: dateArr[index],
       current: currentArr[index],
@@ -85,18 +84,19 @@ const Picker = (props: PickerProps) => {
       secondStep: props.secondStep,
     };
     if (mode === 'quarter') {
-      return <Quarter {...commonProps} />;
+      return <Quarter key={position} {...commonProps} />;
     }
 
     if (mode === 'year') {
-      return <Year {...commonProps} />;
+      return <Year key={position} {...commonProps} />;
     }
     if (mode === 'month') {
-      return <Month {...commonProps} />;
+      return <Month key={position} {...commonProps} />;
     }
     if (mode === 'day') {
       return (
         <Day
+          key={position}
           {...commonProps}
           {...timeProps}
           onDoubleClick={(item, type) => {
@@ -121,9 +121,9 @@ const Picker = (props: PickerProps) => {
       );
     }
     if (mode === 'time') {
-      return <Time {...commonProps} {...timeProps} />;
+      return <Time key={position} {...commonProps} {...timeProps} />;
     }
-    return <Day {...commonProps} {...timeProps} />;
+    return <Day key={position} {...commonProps} {...timeProps} />;
   };
 
   return (
@@ -131,6 +131,7 @@ const Picker = (props: PickerProps) => {
       {
         <Quick
           quickSelect={props.quickSelect}
+          closePop={props.closePop}
           range={props.range}
           jssStyle={jssStyle}
           dateArr={dateArr}
@@ -146,19 +147,17 @@ const Picker = (props: PickerProps) => {
       {range ? (
         <div className={styles?.pickerRange}>
           <div className={styles?.pickerRangeBody}>
-            {
-              ['start', 'end'].map((item) => renderPicker(item as 'start' | 'end'))
-            }
+            {['start', 'end'].map((item) => renderPicker(item as 'start' | 'end'))}
           </div>
-          {
-            props.needConfirm && (
-              <div className={styles?.pickerRangeFooter}>
-                <Confirm closeByConfirm={closeByConfirm} jssStyle={jssStyle} />
-              </div>
-            )
-          }
+          {props.needConfirm && (
+            <div className={styles?.pickerRangeFooter}>
+              <Confirm closeByConfirm={closeByConfirm} jssStyle={jssStyle} />
+            </div>
+          )}
         </div>
-      ) : renderPicker()}
+      ) : (
+        renderPicker()
+      )}
     </div>
   );
 };
