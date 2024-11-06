@@ -1,3 +1,9 @@
+## 3.5.0-beta.8
+2024-11-07
+
+### 🆕 Feature
+- `Table` 新增 `sortDirections` 属性，支持对全部列设置排序方向，同时`column` 新增 `sortDirections` 属性，支持对单列设置排序方向 ([#784](https://github.com/sheinsight/shineout-next/pull/784))
+
 ## 3.5.0-beta.6
 2024-10-30
 
