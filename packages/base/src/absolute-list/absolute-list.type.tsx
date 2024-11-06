@@ -53,7 +53,5 @@ export interface AbsoluteListProps {
   // 自动调整位置来适应容器大小
   adjust?: boolean;
   lazy?: boolean;
-  // 弹出层是否跟随父节点滚动
-  follow?: boolean;
   arrowStyleRef?: React.RefObject<{ style: React.CSSProperties }>;
 }
