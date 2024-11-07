@@ -88,6 +88,7 @@ const MenuComponent = () => {
       locale: 'en-US',
       spin: {
         name: 'ring',
+        tip:'啊哈哈哈'
       },
       popupContainer: () => document.getElementById('layout'),
     });
