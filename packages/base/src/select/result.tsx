@@ -332,7 +332,26 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       const result = getDataByValues(value);
       if (result.length > 0) {
         const inputTmpText = renderResultContent(result[0]);
-        inputTmpText && props.setInputText(inputTmpText);
+        if (inputTmpText) {
+          // 提取result文本
+          const getTextFromReactElement = (element: React.ReactElement): string => {
+            if (!element) return '';
+            // 如果是字符串或数字，直接返回
+            if (typeof element === 'string' || typeof element === 'number') return String(element);
+            // 如果是 React Element，处理的是renderResult返回的是React Element的场景
+            if (React.isValidElement(element)) {
+              const children = (element.props as { children?: React.ReactNode })?.children;
+              if (Array.isArray(children)) {
+                return children.map((child) => getTextFromReactElement(child)).join('');
+              }
+              return React.isValidElement(children) ? getTextFromReactElement(children) : String(children || '');
+            }
+            return '';
+          };
+
+          const textContent = getTextFromReactElement(inputTmpText);
+          props.setInputText(textContent);
+        }
       }
 
       setTimeout(() => {
