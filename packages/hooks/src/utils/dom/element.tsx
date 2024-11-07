@@ -133,7 +133,7 @@ export function getClosestScrollContainer(element: HTMLElement | null): HTMLElem
   }
 
   // 如果没有找到可滚动的祖先，返回 body 或 documentElement
-  return document.scrollingElement || document.documentElement;
+  return (document.scrollingElement || document.documentElement) as HTMLElement;
 }
 
 export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
