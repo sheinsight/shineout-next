@@ -589,7 +589,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         ref={tableRef}
         dir={config.direction}
       >
-        <AbsoluteContext.Provider value={true}>
+        <AbsoluteContext.Provider value={{absolute: true, scrollElRef: scrollRef }}>
           {renderTable()}
           {renderLoading()}
           {props.children}

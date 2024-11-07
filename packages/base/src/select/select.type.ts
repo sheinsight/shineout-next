@@ -564,6 +564,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Whether to adjust the position of the panel automatically. When the panel is blocked by the window, the position is adjusted automatically
    * @cn 滚动加载回的调函数。当配置该属性后，下拉列表滚动到底部时触发该函数
+   * @version 3.4.0
    */
   onLoadMore?: () => void | Promise<any>;
 
@@ -571,6 +572,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en The threshold for triggering the callback function of the scroll load. When the current scroll progress reaches this value, the callback is triggered, and the maximum value is 1, that is, the scroll progress is 100%
    * @cn 触发滚动加载回的调函数的阈值。当前滚动进度达到该值时触发，最大值为 1，即滚动进度 100%
    * @default 1
+   * @version 3.4.0
    */
   threshold?: number;
 
@@ -578,6 +580,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 触发打开选择面板的方式，默认为点击打开
    * @en Trigger the way to open the selection panel, default is click to open
    * @default 'click'
+   * @version 3.4.0
    */
   trigger?: 'click' | 'hover';
 }
