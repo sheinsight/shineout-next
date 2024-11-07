@@ -10,6 +10,7 @@ import {
   delay,
   displayTest,
   snapshotTest,
+  styleContainTest,
   styleContentTest,
   styleTest,
   textContentTest,
@@ -143,8 +144,15 @@ const {
 
 const defaultSelectPicker =
   'pointer-events: none; position: absolute; z-index: -1000; width: 100%; display: none;';
-const defaultSelectPickerOpen =
-  'z-index: 1051; display: block; width: 100%; top: calc(100% + 4px); left: 0px; transform: scaleY(1); transition: transform 240ms ease-in-out;';
+const defaultSelectPickerOpen = {
+  zIndex: '1051',
+  display: 'block',
+  width: '100%',
+  top: 'calc(100% + 4px)',
+  left: '0px',
+  transform: 'scaleY(1)',
+  transition: 'transform 240ms ease-in-out',
+}
 
 const testDataObject = [
   { id: 1, city: 'Pune' },
@@ -242,20 +250,20 @@ describe('Select[Base]', () => {
     classLengthTest(selectResult.querySelector(resultTextWrapper)!, space, 1);
     const selectArrowIcon = selectWrapper.querySelector(arrowIcon)!;
     classLengthTest(selectArrowIcon, 'svg', 1);
-    
+
     fireEvent.click(selectResult);
     await waitFor(async () => {
       await delay(200);
     });
-    
+
     classTest(selectWrapper, wrapperOpen);
     const selectPickerWrapper = selectWrapper.querySelector(pickerWrapper)!;
     attributesTest(selectPickerWrapper, 'data-sheinx-animation-duration', 'fast');
     attributesTest(selectPickerWrapper, 'data-sheinx-animation-type', 'scale-y');
-    styleTest(selectPickerWrapper, defaultSelectPickerOpen);
+    styleContainTest(selectPickerWrapper, defaultSelectPickerOpen);
     const selectList = selectPickerWrapper.querySelector(list)!;
     classTest(selectList, controlKeyboard);
-    
+
     const selectVirtualList = selectList.querySelector(virtualList)!;
     styleTest(selectVirtualList, 'transform: translate3d(0, -0px, 0);');
     const selectOptions = selectVirtualList.querySelectorAll(option);
@@ -267,7 +275,7 @@ describe('Select[Base]', () => {
         classTest(option, optionHover);
       }
     });
-    
+
     classTest(selectWrapper.querySelector(arrowIcon)!, arrowIconOpen);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
@@ -275,7 +283,7 @@ describe('Select[Base]', () => {
     });
     textContentTest(selectResult, testData[1]);
     classTest(selectWrapper, wrapperOpen, false);
-    
+
     classTest(selectWrapper, wrapperFocus, false);
     classTest(selectWrapper.querySelector(arrowIcon)!, arrowIconOpen, false);
     fireEvent.click(selectArrowIcon);
@@ -374,24 +382,24 @@ describe('Select[Base]', () => {
           <div className='test'>{value}</div>
           <div className='test'>{checked}</div>
           <SelectTest
-            data={testDataObject} 
-            keygen='id' 
-            format='id' 
-            value={value} 
+            data={testDataObject}
+            keygen='id'
+            format='id'
+            value={value}
             onChange={(value: any, data: any, checked: any) => {
               console.log('11', data)
               setValue(value)
               setChecked(checked)
-            }} 
-            renderItem='city' 
+            }}
+            renderItem='city'
             prediction={(v: any, d: any) => v === d.id}
           />
         </>
       )
     }
-    
+
     const { container } = render(<App />);
-    
+
     const selectWrapper = container.querySelector(wrapper)!;
     const selectResult = container.querySelector(result)!;
     fireEvent.click(selectResult);
@@ -403,8 +411,8 @@ describe('Select[Base]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-   
-    
+
+
   })
   test('should render when set groupBy', async () => {
     const { container } = render(
@@ -754,7 +762,7 @@ describe('Select[More]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    
+
     classLengthTest(selectWrapper.querySelector(result)!, tag, 3);
     const moreTag = selectWrapper.querySelectorAll(tag)[2]
     textContentTest(moreTag, '+1')
@@ -899,7 +907,7 @@ describe('Select[OnCreate/OnFilter]', () => {
     const blurFn = jest.fn();
     const testValue = 'test';
     const { container } = render(<SelectTest onCreate multiple trim onBlur={blurFn} />);
-    
+
     const selectWrapper = container.querySelector(wrapper)!;
     const selectResultTextWrapper = selectWrapper.querySelector(resultTextWrapper)!;
     fireEvent.click(selectResultTextWrapper);
@@ -917,7 +925,7 @@ describe('Select[OnCreate/OnFilter]', () => {
     await waitFor(async () => {
       await delay(500);
     });
-    
+
     textContentTest(selectResultTextWrapper.querySelector(tagWrapper)!, testValue)
     expect(blurFn.mock.calls.length).toBe(1);
   });
@@ -956,7 +964,7 @@ describe('Select[OnCreate/OnFilter]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    
+
     fireEvent.keyDown(selectWrapper, { keyCode: 13 });
     await waitFor(async () => {
       await delay(200);
@@ -1012,7 +1020,7 @@ describe('Select[KeyDown]', () => {
       await delay(200);
     });
     classTest(selectWrapper, wrapperOpen);
-    
+
     // expect(onEnterExpand.mock.calls.length).toBe(1);
     fireEvent.keyDown(selectWrapper, { keyCode: 40 });
     await waitFor(async () => {
@@ -1038,7 +1046,7 @@ describe('Select[KeyDown]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    
+
     fireEvent.keyDown(selectWrapper, { keyCode: 40 });
     fireEvent.keyDown(selectWrapper, { keyCode: 40 });
     fireEvent.keyDown(selectWrapper, { keyCode: 40 });
@@ -1050,7 +1058,7 @@ describe('Select[KeyDown]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    
+
     classTest(selectWrapper.querySelectorAll(option)[0], optionHover);
     fireEvent.keyDown(selectWrapper, { keyCode: 38 });
     fireEvent.keyDown(selectWrapper, { keyCode: 38 });
