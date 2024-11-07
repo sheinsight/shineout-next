@@ -23,10 +23,10 @@ export default (props: TheadProps) => {
   const { current: context } = useRef({
     dragIndex: -1,
     trHeights: [] as number[],
-   });
+  });
 
-   useEffect(() => {
-    const heights = trRefs.current.map(tr => tr?.offsetHeight || 0);
+  useEffect(() => {
+    const heights = trRefs.current.map((tr) => tr?.offsetHeight || 0);
     context.trHeights = heights;
   }, [groupColumns]);
 
@@ -65,6 +65,7 @@ export default (props: TheadProps) => {
     const isCustomRender = props.renderSorter && typeof props.renderSorter === 'function';
 
     const renderedSortDirections = column.sortDirections ?? props.sortDirections ?? ['asc', 'desc'];
+    const onlyOneDirection = renderedSortDirections.length === 1;
 
     return (
       <div className={tableClasses?.sorterContainer} dir={config.direction}>
@@ -76,29 +77,34 @@ export default (props: TheadProps) => {
           })
         ) : (
           <>
-          {renderedSortDirections.includes('asc') && (
-            <div
-              className={classNames(
-                tableClasses?.sorterAsc,
-                currentOrder === 'asc' && tableClasses?.sorterActive,
-              )}
-              onClick={() => {
-                handleChange(currentOrder === 'asc' ? null : 'asc');
-              }}
-            >
-              {Icons.table.SortUp}
-            </div>)}
-            {renderedSortDirections.includes('desc') && (<div
-              className={classNames(
-                tableClasses?.sorterDesc,
-                currentOrder === 'desc' && tableClasses?.sorterActive,
-              )}
-              onClick={() => {
-                handleChange(currentOrder === 'desc' ? null : 'desc');
-              }}
-            >
-              {Icons.table.SortDown}
-            </div>)}
+            {renderedSortDirections.includes('asc') && (
+              <div
+                className={classNames(
+                  tableClasses?.sorterAsc,
+                  currentOrder === 'asc' && tableClasses?.sorterActive,
+                )}
+                onClick={() => {
+                  handleChange(currentOrder === 'asc' ? null : 'asc');
+                }}
+                style={onlyOneDirection ? { marginBottom: 0 } : {}}
+              >
+                {Icons.table.SortUp}
+              </div>
+            )}
+            {renderedSortDirections.includes('desc') && (
+              <div
+                className={classNames(
+                  tableClasses?.sorterDesc,
+                  currentOrder === 'desc' && tableClasses?.sorterActive,
+                )}
+                onClick={() => {
+                  handleChange(currentOrder === 'desc' ? null : 'desc');
+                }}
+                style={onlyOneDirection ? { marginTop: 0 } : {}}
+              >
+                {Icons.table.SortDown}
+              </div>
+            )}
           </>
         )}
       </div>
@@ -134,7 +140,7 @@ export default (props: TheadProps) => {
         // 这是virtual table场景下的th样式
         return {
           transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
-        }
+        };
       }
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       // 这是base table场景下的th样式
@@ -142,14 +148,14 @@ export default (props: TheadProps) => {
         left: left,
         top: context.trHeights[level - 1] || 0,
         position: 'sticky',
-      }
+      };
     }
     if (fixed === 'right') {
       if (props.fixRightNum !== undefined) {
         // 这是virtual table场景下的th样式
         return {
           transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
-        }
+        };
       }
       const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
       // 这是base table场景下的th样式
@@ -157,14 +163,14 @@ export default (props: TheadProps) => {
         right: right,
         top: context.trHeights[level - 1] || 0,
         position: 'sticky',
-      }
+      };
     }
 
     // 这是base table场景下的非fixed th样式
     return {
       top: context.trHeights[level - 1] || 0,
       position: 'sticky',
-    }
+    };
   };
 
   const createTh = (
@@ -277,7 +283,11 @@ export default (props: TheadProps) => {
       const isLast = index === groupColumns.length - 1;
       createTh(trs, col, 0, isLast);
     });
-    return trs.map((tr, i) => <tr key={i} ref={el => trRefs.current[i] = el}>{tr}</tr>);
+    return trs.map((tr, i) => (
+      <tr key={i} ref={(el) => (trRefs.current[i] = el)}>
+        {tr}
+      </tr>
+    ));
   };
   return <thead>{renderTrs()}</thead>;
 };
