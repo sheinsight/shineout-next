@@ -24,7 +24,9 @@ function generateMockTreeData(depth: number, count: number, parentId?: string): 
   for (let i = 0; i < count; i++) {
     const currentId = parentId ? `${parentId}__${depth}_${i}` : `${depth}_${i}`
     const children = depth > 1 ? generateMockTreeData(depth - 1, count, currentId) : undefined;
-    defaultTreeExpandKeys.push(currentId)
+    if(children?.length) {
+      defaultTreeExpandKeys.push(currentId)
+    }
     data.push({
       id: currentId,
       position: `position_${i}`,
