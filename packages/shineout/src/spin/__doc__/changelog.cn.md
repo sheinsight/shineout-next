@@ -1,3 +1,9 @@
+## 3.4.7-beta.3
+2024-11-07
+### 🐞 BugFix
+
+- 修复 `setConfig` 干涉部分组件内部 spin 固有样式的问题 ([#786](https://github.com/sheinsight/shineout-next/pull/786))
+
 ## 3.3.0
 2024-07-23
 ### 🐞 BugFix

@@ -44,7 +44,7 @@ const Result = (props: ResultProps) => {
           </div>
           <div className={uploadClasses?.resultTextFooter}>
             <div className={classNames(uploadClasses?.icon, uploadClasses?.resultStatusIcon)}>
-              {status === 1 && <Spin jssStyle={props.jssStyle} size={10} name={'ring'} />}
+              {status === 1 && <Spin jssStyle={props.jssStyle} size={10} name={'ring'} ignoreConfig />}
               {status === 2 && icons.upload.Success}
               {status === 3 && icons.upload.Warning}
             </div>
@@ -130,6 +130,7 @@ const Result = (props: ResultProps) => {
                 size={'null'}
                 jssStyle={props.jssStyle}
                 name={'ring'}
+                ignoreConfig
                 className={uploadClasses?.imageResultLoading}
               />
             )}
