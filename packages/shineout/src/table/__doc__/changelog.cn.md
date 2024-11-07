@@ -1,3 +1,10 @@
+## 3.5.0-beta.8
+2024-11-07
+
+### 💎 Enhancement
+- 优化 `Table` 内的弹出层类元素跟随滚动的行为逻辑 ([#754](https://github.com/sheinsight/shineout-next/pull/754))
+
+
 ## 3.5.0-beta.6
 2024-10-30
 
