@@ -60,6 +60,10 @@ export function styleTest(element: Element, style: string) {
   attributesTest(element, 'style', style);
 }
 
+export function styleContainTest(element: Element, styleObject: object) {
+  expect((element as HTMLElement).style).toEqual(expect.objectContaining(styleObject));
+}
+
 export function styleContentTest(element: Element, name: string, bool: boolean = true) {
   expect(element.getAttribute('style')?.includes(name)).toBe(bool);
 }
