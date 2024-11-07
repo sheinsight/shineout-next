@@ -30,13 +30,16 @@ export const useCheckElementPosition = (
       if (scrollContainerRect) {
         newPosition = {
           top: rect.top - scrollContainerRect.top,
-          left: rect.left - scrollContainerRect.left
+          left: rect.left - scrollContainerRect.left,
         };
       } else {
         newPosition = { top: rect.top, left: rect.left };
       }
 
-      if (newPosition.top !== lastPosition.current.top || newPosition.left !== lastPosition.current.left) {
+      if (
+        newPosition.top !== lastPosition.current.top ||
+        newPosition.left !== lastPosition.current.left
+      ) {
         setPosition(newPosition);
         lastPosition.current = newPosition;
       }
@@ -44,7 +47,7 @@ export const useCheckElementPosition = (
   }, [elementRef, scrollContainer]);
 
   useEffect(() => {
-    if(!enable) return;
+    if (!enable) return;
     const element = elementRef.current;
     const container = scrollContainer || window;
 
@@ -53,11 +56,13 @@ export const useCheckElementPosition = (
     // 初始检查
     checkPosition();
 
-    // ResizeObserver
-    const resizeObserver = new ResizeObserver(checkPosition);
-    resizeObserver.observe(element);
-    if (container instanceof Element) {
-      resizeObserver.observe(container);
+    let resizeObserver: ResizeObserver | null = null;
+    if (window?.ResizeObserver) {
+      resizeObserver = new ResizeObserver(checkPosition);
+      resizeObserver.observe(element);
+      if (container instanceof Element) {
+        resizeObserver.observe(container);
+      }
     }
     // 滚动事件监听
     container.addEventListener('scroll', checkPosition);
@@ -69,7 +74,7 @@ export const useCheckElementPosition = (
 
     // 清理函数
     return () => {
-      resizeObserver.disconnect();
+      resizeObserver?.disconnect();
       container.removeEventListener('scroll', checkPosition);
       if (container !== window) {
         window.removeEventListener('resize', checkPosition);
@@ -77,7 +82,7 @@ export const useCheckElementPosition = (
     };
   }, [enable, elementRef, scrollContainer, checkPosition]);
 
-  if(!enable || !elementRef){
+  if (!enable || !elementRef) {
     return null;
   }
 
