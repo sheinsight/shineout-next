@@ -5,7 +5,7 @@
  * en -
  *    -- Set loader, support dynamic loading of child nodes
  */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, TYPE } from 'shineout';
 interface TableRowData {
   id: string;
@@ -34,6 +34,12 @@ const initialData: TableRowData[] = [
     title: 'Can\'t Expand to load more4, cause children is null',
     children: null,
   },
+  // mock 至 20
+  ...new Array(16).fill(0).map((_, index) => ({
+    id: `${index + 5}`,
+    title: `Can't Expand to load more${index + 5}, cause children is null`,
+    children: null,
+  })),
 ];
 
 const updateTreeData = (list: TableRowData[], key: React.Key, children: TableRowData[]): TableRowData[] =>
@@ -69,7 +75,13 @@ const columns: TableColumnItem[] = [
 ];
 
 const App: React.FC = () => {
-  const [treeData, setTreeData] = useState(initialData);
+  const [treeData, setTreeData] = useState<TableRowData[]>([]);
+  const [current, setCurrent] = useState(1);
+
+  useEffect(() => {
+    //根据current计算分页后的treeData
+    setTreeData(initialData.slice((current - 1) * 10, current * 10));
+  }, [current]);
 
   const onLoadData = (dataItem: TableRowData) => {
     return new Promise<void>((resolve) => {
@@ -97,6 +109,13 @@ const App: React.FC = () => {
       columns={columns}
       data={treeData}
       loader={onLoadData}
+      pagination={{
+        pageSize: 10,
+        current,
+        onChange: setCurrent,
+        total: initialData.length,
+        pageSizeList: [10, 20, 30],
+      }}
     />
   );
 };

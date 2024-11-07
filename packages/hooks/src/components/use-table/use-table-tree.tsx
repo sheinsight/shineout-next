@@ -6,37 +6,47 @@ import { isObject } from '../../utils/is';
 import { OptionalToRequired } from '../../common/type';
 import { useLatestObj } from '../../common/use-latest-obj';
 
+interface GetExpandDataResult {
+  treeData: any[];
+  treeExpandLevel: Map<any, number>;
+  unmatchExpandKeys: (string | number)[];
+}
 const getExpandData = (
-  data: any[],
+  _treeData: any[],
   keys: (string | number)[],
   keygen: any,
   treeColumnsName?: string,
-): [any[], Map<any, number>] => {
+): GetExpandDataResult => {
   const expandKeys = keys;
   const expandSet = new Set(expandKeys);
-  const expandLevel = new Map();
+  const unmatchExpandKeys: (string | number)[] = [];
+  const treeExpandLevel = new Map();
 
   if (expandSet.size === 0 || !treeColumnsName) {
-    return [data, expandLevel];
+    return {treeData: _treeData, treeExpandLevel, unmatchExpandKeys};
   }
 
-  const newData = [...(data || [])];
+  const treeData = [...(_treeData || [])];
 
-  for (let i = 0; i < newData.length; i++) {
+  for (let i = 0; i < treeData.length; i++) {
     if (expandSet.size === 0) break;
-    const item = newData[i];
+    const item = treeData[i];
     const key = getKey(keygen, item, i);
-    const parentLevel = expandLevel.get(key) || 0;
+    const parentLevel = treeExpandLevel.get(key) || 0;
     const children = isObject(item) && (item[treeColumnsName] as any[] | undefined);
-    if (expandSet.has(key) && children) {
-      children.forEach((child) => {
-        expandLevel.set(getKey(keygen, child), parentLevel + 1);
-      });
-      newData.splice(i + 1, 0, ...children);
-      expandSet.delete(key);
+    if (expandSet.has(key)) {
+      if (children && children.length > 0) {
+        children.forEach((child) => {
+          treeExpandLevel.set(getKey(keygen, child), parentLevel + 1);
+        });
+        treeData.splice(i + 1, 0, ...children);
+        expandSet.delete(key);
+      } else {
+        unmatchExpandKeys.push(key);
+      }
     }
   }
-  return [newData, expandLevel];
+  return {treeData, treeExpandLevel, unmatchExpandKeys};
 };
 
 export interface UseTableTreeProps
@@ -88,13 +98,25 @@ export const useTableTree = (props: UseTableTreeProps) => {
     handleTreeExpand,
   });
 
-  const [treeData, treeExpandLevel] = useMemo(
+  const { treeData, treeExpandLevel, unmatchExpandKeys } = useMemo(
     () => getExpandData(props.data, expandKeys, props.keygen, props.treeColumnsName),
     [props.data, expandKeys, props.treeColumnsName],
   );
 
-  const isEmptyTree =
-    props.data.filter((item) => item[props.treeColumnsName!]?.length)?.length === 0;
+  const isEmptyTree = useMemo(
+    () => props.data.filter((item) => item[props.treeColumnsName!]?.length)?.length === 0,
+    [props.data, props.treeColumnsName],
+  );
+
+  useEffect(() => {
+    if (!unmatchExpandKeys.length || !expandKeysState.length) {
+      return;
+    }
+
+    // 检查treeData中的每一项，对比expandKeysState，如果expandKeysState有但是children是空的，则需要修正expandKeysState
+    const newExpandKeys = expandKeysState.filter((key) => !unmatchExpandKeys.includes(key));
+    setExpandKeysState(newExpandKeys);
+  }, [unmatchExpandKeys, expandKeysState]);
 
   return {
     data: treeData,

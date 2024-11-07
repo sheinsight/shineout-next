@@ -146,7 +146,7 @@ const Tr = (props: TrProps) => {
   const [isExpandLoading, setIsExpandLoading] = useState(false);
 
   const innerExpandClick = usePersistFn(async (showLoader?: boolean) => {
-    if (showLoader && props.loader) {
+    if (showLoader && props.loader && typeof props.loader === 'function') {
       setIsExpandLoading(true);
 
       try {
