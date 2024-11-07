@@ -75,6 +75,16 @@ const columns: TableColumnItem[] = [
     render: (d) => `${d.firstName} ${d.lastName}`,
   },
   {
+    title: '年龄',
+    render: 'age',
+    sorter: {
+      rule: 'age',
+      weight: 2,
+    },
+    align: 'right',
+    defaultOrder: 'asc',
+  },
+  {
     title: 'Age',
     render: 'age',
     sorter: {
@@ -83,6 +93,7 @@ const columns: TableColumnItem[] = [
     },
     align: 'right',
     defaultOrder: 'asc',
+    sortDirections: ['asc'],
   },
   { title: 'Position', render: 'position' },
   {
@@ -118,7 +129,7 @@ const App: React.FC = () => {
       keygen='id'
       columns={columns}
       sorter={handleSorter}
-      sortDirections={['asc']}
+      sortDirections={['desc']}
       onSortCancel={handleCancel}
     />
   );
