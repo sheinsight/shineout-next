@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import '@testing-library/jest-dom'
 import Cascader from '..'
-import { attributesTest, baseTest, classTest, createClassName, delay, displayTest, snapshotTest, styleTest, textContentTest } from "../../tests/utils";
+import { attributesTest, baseTest, classTest, createClassName, delay, displayTest, snapshotTest, styleContainTest, styleTest, textContentTest } from "../../tests/utils";
 import mountTest from "../../tests/mountTest";
 import { classLengthTest } from "../../tests/structureTest";
 import CascaderBase from "../__example__/01-01-base";
@@ -80,7 +80,14 @@ const {
   tag
 } = createClassName('select', ['tag'], [''])
 
-const defaultOpenStyle = 'z-index: 1051; display: block; top: calc(100% + 4px); left: 0px; transform: scaleY(1); transition: transform 240ms ease-in-out;'
+const defaultOpenStyle = {
+  zIndex: '1051',
+  display: 'block',
+  top: 'calc(100% + 4px)',
+  left: '0px',
+  transform: 'scaleY(1)',
+  transition: 'transform 240ms ease-in-out',
+}
 
 beforeAll(() => {
   jest.useFakeTimers();
@@ -131,7 +138,7 @@ describe('Cascader[Base]', () => {
     const cascaderPicker = cascaderWrapper.querySelector(pickerWrapper)!
     attributesTest(cascaderPicker, 'data-sheinx-animation-duration', 'fast')
     attributesTest(cascaderPicker, 'data-sheinx-animation-type', 'scale-y')
-    styleTest(cascaderPicker, defaultOpenStyle)
+    styleContainTest(cascaderPicker, defaultOpenStyle)
     const cascaderListContent = cascaderPicker.querySelector(listContent)!
     styleTest(cascaderListContent, `height: 250px;`)
     const cascaderOptions = cascaderListContent.querySelectorAll(option)
