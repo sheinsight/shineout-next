@@ -3,7 +3,8 @@ import { getPositionStyle } from './get-position-style';
 import { useCheckElementPosition } from './check-position'
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
-import { docSize, isChromeLowerThan } from '../../utils';
+import { getCurrentCSSZoom } from '../../utils';
+import { docSize } from '../../utils';
 
 export type HorizontalPosition =
   | 'left-bottom'
@@ -275,7 +276,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getAbsoluteStyle = (position: string) => {
     if (!parentElRef.current) return { style: hideStyle };
     const rect = context.parentRect;
-    if (scrollElRef?.current) {
+    if (scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
         rect.bottom < visibleRect.top ||
@@ -288,11 +289,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
     const { style, arrayStyle } = getAbsolutePositionStyle(rect, position);
 
-    // TODO: 如果是版本大于chrome128，需要根据currentCSSZoom处理chrome的bug
-    if (!isChromeLowerThan(128)) {
-      // @ts-ignore currentCSSZoom
-      const currentCSSZoom = document.body.currentCSSZoom;
-      if (currentCSSZoom === 1 || !currentCSSZoom) return { style, arrayStyle };
+    const currentCSSZoom = getCurrentCSSZoom()
+    if (currentCSSZoom && currentCSSZoom !== 1) {
       if (style.left && typeof style.left === 'number') {
         style.left = style.left * (1 / currentCSSZoom);
       }
