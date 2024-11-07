@@ -110,7 +110,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         data-icon={hasExpandIcons}
         dir={config.direction}
       >
-        <Spin size={12} jssStyle={jssStyle}></Spin>
+        <Spin size={12} jssStyle={jssStyle} ignoreConfig name='ring'></Spin>
       </span>
     );
   };
