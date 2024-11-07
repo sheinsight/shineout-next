@@ -81,7 +81,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     popUpWidth: 0,
   });
 
-  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show});
+  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
 
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
