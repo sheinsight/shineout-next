@@ -202,7 +202,14 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   return (
     <div className={rootClass}>
       {renderHeader()}
-      <Spin className={styles.spinContainer} jssStyle={jssStyle} loading={loading} size={24}>
+      <Spin
+        className={styles.spinContainer}
+        jssStyle={jssStyle}
+        loading={loading}
+        size={24}
+        name='ring'
+        ignoreConfig
+      >
         {onFilter && renderFilter()}
         {renderList()}
         {renderFooter()}

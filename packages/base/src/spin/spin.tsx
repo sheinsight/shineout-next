@@ -15,11 +15,13 @@ const Spin = (props: SpinProps = {}) => {
     tipClassName,
     color: colorProps,
     mode: modeProps,
+    ignoreConfig = false,
   } = props;
 
   const config = useConfig();
 
   const getSpinName = () => {
+    if (ignoreConfig) return props.name;
     const { spin } = config;
     if (!spin) return;
 
@@ -36,6 +38,7 @@ const Spin = (props: SpinProps = {}) => {
   };
 
   const getSpinTip = () => {
+    if (ignoreConfig) return props.tip;
     const { spin } = config;
     if (!spin || typeof spin !== 'object') return;
     const { tip } = spin;
@@ -43,6 +46,7 @@ const Spin = (props: SpinProps = {}) => {
   };
 
   const getSpinColor = () => {
+    if (ignoreConfig) return props.color;
     const { spin } = config;
     if (!spin || typeof spin !== 'object') return;
     const { color } = spin;
@@ -50,6 +54,7 @@ const Spin = (props: SpinProps = {}) => {
   };
 
   const getSpinMode = () => {
+    if (ignoreConfig) return props.mode;
     const { spin } = config;
     if (!spin || typeof spin !== 'object') return;
     const { mode } = spin;
@@ -75,7 +80,9 @@ const Spin = (props: SpinProps = {}) => {
     const n = name as keyof typeof Spins;
     if (Spins[n]) {
       const Comp = Spins[n];
-      return <Comp {...props} color={color} style={style} className={!tip ? className : undefined} />;
+      return (
+        <Comp {...props} color={color} style={style} className={!tip ? className : undefined} />
+      );
     }
 
     return null;
