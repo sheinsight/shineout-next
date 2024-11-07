@@ -194,7 +194,7 @@ const Tr = (props: TrProps) => {
     }
 
     if(isExpandLoading){
-      $expandIcon = <Spin size={12} jssStyle={props.jssStyle}></Spin>
+      $expandIcon = <Spin size={12} jssStyle={props.jssStyle} name='ring' ignoreConfig></Spin>
     }
 
     let $expandIconWrapper
