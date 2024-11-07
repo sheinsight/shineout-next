@@ -19,8 +19,6 @@ exports[`Popover[Base] should render default 1`] = `
 </div>
 `;
 
-exports[`Popover[Base] should render when set trigger is click 1`] = `null`;
-
 exports[`Popover[Snapshot] render snapshot default 1`] = `
 <div
   class="soui-popover-wrapper soui-popover-wrapper-open"
