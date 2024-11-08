@@ -1,7 +1,10 @@
 import React from 'react';
 import { useFormItem, util } from '@sheinx/hooks';
+import { useTooltipStyle } from '@sheinx/shineout-style';
 import classNames from 'classnames';
 import ErrorTrans from './error-trans';
+import Tooltip, { TooltipProps } from '../tooltip';
+import Icons from '../icons';
 
 import type { FormItemProps } from './form-item.type';
 
@@ -13,6 +16,40 @@ export default (props: FormItemProps) => {
     ...labelConfig,
     ...rest,
   };
+
+  const renderLabel = () => {
+    if(label === undefined || label === null) return null
+
+    let $tooltip
+    if (typeof label === 'object' && 'tooltip' in label && label.tooltip) {
+      const tooltipProps = {
+        jssStyle: { tooltip: useTooltipStyle },
+        ...(typeof label.tooltip === 'object' && 'tip' in label.tooltip
+          ? {
+              ...label.tooltip,
+              tip: label.tooltip.tip,
+              position: label.tooltip?.position || 'top'
+            }
+          : { tip: label.tooltip, position: 'top', })
+      };
+
+      $tooltip = (
+        <Tooltip {...tooltipProps as TooltipProps}>
+          <span className={formItemClasses?.labelTooltip}>
+            {(tooltipProps as any).icon || Icons.form.Tooltip}
+          </span>
+        </Tooltip>
+      );
+    }
+
+    if (typeof label === 'object' && 'tooltip' in label) {
+      return <>
+        {label.content}
+        {$tooltip}
+      </>
+    }
+    return label as React.ReactNode
+  }
 
   return (
     <div
@@ -42,7 +79,7 @@ export default (props: FormItemProps) => {
           )}
           style={labelAlign !== 'top' || inline ? { width: labelWidth } : undefined}
         >
-          {label}
+          {renderLabel()}
         </div>
       ) : null}
       <div
