@@ -106,6 +106,14 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return isEmptyResult();
   }, [props.value]);
 
+  const basePlaceholder = useMemo(() => {
+    return (
+      <span className={classNames(styles.placeholder, styles.ellipsis)}>
+        <span>{placeholder}</span>
+      </span>
+    );
+  }, [placeholder]);
+
   const isCompressedBound = () => {
     return compressedBound && isNumber(compressedBound) && compressedBound >= 1;
   };
@@ -129,7 +137,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!multiple && valueProp && valueProp !== 0) {
       const result = getDataByValues(value);
       _placeholder = renderResultContent(result[0]);
-      if (_placeholder === undefined) _placeholder = placeholder;
+      if (_placeholder === undefined) {
+        return basePlaceholder;
+      }
     }
     return (
       <React.Fragment key='input'>
@@ -230,11 +240,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     if (!placeholder) return renderNbsp();
 
-    return (
-      <span className={classNames(styles.placeholder, styles.ellipsis)}>
-        <span>{placeholder}</span>
-      </span>
-    );
+    return basePlaceholder;
   };
 
   const renderSingleResult = () => {
@@ -350,7 +356,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
               if (Array.isArray(children)) {
                 return children.map((child) => getTextFromReactElement(child)).join('');
               }
-              return React.isValidElement(children) ? getTextFromReactElement(children) : String(children || '');
+              return React.isValidElement(children)
+                ? getTextFromReactElement(children)
+                : String(children || '');
             }
             return '';
           };
