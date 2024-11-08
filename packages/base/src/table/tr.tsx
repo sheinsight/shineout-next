@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useLatestObj, usePersistFn, util } from '@sheinx/hooks';
+import React, { useEffect, useRef, useState } from 'react';
+import { usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import { addResizeObserver } from '@sheinx/hooks';
 import classNames from 'classnames';
