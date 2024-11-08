@@ -1,3 +1,10 @@
+## 3.4.7-beta.4
+2024-11-08
+
+### 🐞 BugFix
+
+- `Select` 组件 `placeholder` 属性同步老版本表现 ([#787](https://github.com/sheinsight/shineout-next/pull/787))
+
 ## 3.4.7-beta.1
 2024-11-06
 
