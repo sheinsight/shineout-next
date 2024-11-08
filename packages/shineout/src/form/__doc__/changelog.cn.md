@@ -1,3 +1,10 @@
+## 3.5.0-beta.12
+2024-11-08
+### 💎 Enhancement
+
+- `Form.Item` 的 `label` 支持对象配置用法，可设置文案旁增加tooltip提示信息 ([#788](https://github.com/sheinsight/shineout-next/pull/788))
+
+
 ## 3.5.0-beta.6
 2024-10-30
 ### 🆕 Feature
