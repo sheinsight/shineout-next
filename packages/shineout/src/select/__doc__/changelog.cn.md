@@ -1,3 +1,11 @@
+
+## 3.5.0
+2024-11-11
+
+### 💎 Enhancement
+
+- 优化 `Select` 组件默认 `placeholder` 占位形式 ([#788](https://github.com/sheinsight/shineout-next/pull/788))
+
 ## 3.4.7
 2024-11-08
 
