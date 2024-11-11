@@ -80,12 +80,6 @@ const App: React.FC = () => {
         console.log(data);
       }}
     >
-      <Form.Item label='Name'>
-        <Input name='name' defaultValue='Harry Potter' clearable />
-      </Form.Item>
-      <Form.Item label='age'>
-        <Input type='number' name='age' defaultValue='20' clearable />
-      </Form.Item>
       <Form.Item label='Friends'>
         <Form.FieldSet
           name='friends'

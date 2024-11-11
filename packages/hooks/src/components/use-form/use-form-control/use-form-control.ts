@@ -174,6 +174,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   );
 
   const onChange = usePersistFn((v: T, ...other: any[]) => {
+    console.log(props.name)
     if (inForm && formFunc) {
       if (isArray(name)) {
         const arrV = isArray(v) ? v : [];
@@ -218,7 +219,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   }, [name?.toString()]);
 
   useEffect(() => {
-    console.log('name', name);
     updateError(isArray(name) ? name.join('|') : name, error);
   }, [error]);
 
