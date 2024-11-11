@@ -15,7 +15,7 @@ export default createUseStyles(
         '&.rtl': {
           direction: 'rtl',
         },
-      }
+      },
     },
     desktop: {
       position: 'absolute',
@@ -28,7 +28,7 @@ export default createUseStyles(
       'body.rtl &': {
         left: 0,
         right: 260,
-      }
+      },
     },
     nav: {
       position: 'sticky',
@@ -89,12 +89,13 @@ export default createUseStyles(
         width: '100%',
         height: '100%',
         paddingLeft: 260,
+        marginBottom: 60,
         boxSizing: 'border-box',
         'body.rtl &': {
           float: 'right',
           paddingLeft: 0,
           paddingRight: 260,
-        }
+        },
       },
     },
 
@@ -170,9 +171,11 @@ export default createUseStyles(
           '&.active': {
             color: '#197AFA',
             fontWeight: 500,
-            backgroundColor: 'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
+            backgroundColor:
+              'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
             '&:hover': {
-              backgroundColor: 'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
+              backgroundColor:
+                'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
             },
           },
           '&:hover': {
@@ -192,6 +195,7 @@ export default createUseStyles(
     },
 
     anchor: {
+      paddingTop: 60,
       position: 'fixed',
       right: 16,
       top: 305,
@@ -235,7 +239,7 @@ export default createUseStyles(
             'body.rtl &': {
               left: 'auto',
               right: 0,
-            }
+            },
           },
         },
         '&:hover': {
@@ -252,7 +256,7 @@ export default createUseStyles(
           'body.rtl &': {
             left: 'auto',
             right: 0,
-          }
+          },
         },
       },
     },
@@ -283,13 +287,13 @@ export default createUseStyles(
         width: 12,
         height: 4,
       },
-      '&::-webkit-scrollbar-thumb':  {
+      '&::-webkit-scrollbar-thumb': {
         border: '4px solid transparent',
         backgroundClip: 'padding-box',
         borderRadius: 7,
         backgroundColor: 'rgba(232, 235, 240, 1)',
       },
-    }
+    },
   },
   { name: 'doc-layout' },
 );
