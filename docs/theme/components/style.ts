@@ -157,6 +157,14 @@ export default createUseStyles(
       display: 'flex',
       marginTop: top,
     },
+    playground: {
+      display: 'flex',
+      marginTop: top,
+    },
+    collocator: {
+      flex: 1,
+      minWidth: 0
+    },
     changelog: {
       padding: 40,
       marginTop: top,

@@ -6,6 +6,7 @@ import { MarkdownProps } from 'docs/types';
 
 import Doc from './doc';
 import Api from './api';
+import Playground from './playground';
 import Guide from './guide';
 import Changelog from './changelog';
 
@@ -25,6 +26,7 @@ const Markdown = (props: MarkdownProps) => {
         {activeTab === 'api' && <Api api={api}></Api>}
         {activeTab === 'guide' && <Guide guides={guides}></Guide>}
         {activeTab === 'changelog' && <Changelog changelog={changelog}></Changelog>}
+        {activeTab === 'playground' && <Playground examples={examples[0]} api={api} name={header.name} />}
       </React.Fragment>
     </div>
   );

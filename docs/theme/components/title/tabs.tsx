@@ -7,7 +7,7 @@ import { Tabs } from 'shineout';
 import useStyles from '../style';
 import Locale from '../../locales';
 
-const DocTabs = (props: { showGuide: boolean }) => {
+const DocTabs = (props: { showGuide: boolean, showPlayground: boolean }) => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,6 +21,7 @@ const DocTabs = (props: { showGuide: boolean }) => {
   const tabs: { name: string; path: DocType }[] = [
     { name: tabsLocale['exmples'], path: 'examples' },
     { name: tabsLocale['api'], path: 'api' },
+    { name: tabsLocale['playground'], path: 'playground' },
     { name: tabsLocale['guide'], path: 'guide' },
     { name: tabsLocale['updateRecord'], path: 'changelog' },
   ];
@@ -46,9 +47,10 @@ const DocTabs = (props: { showGuide: boolean }) => {
   }, [location.pathname]);
   return (
     <div className={classes.tabs}>
-      <Tabs shape='fill' autoFill active={activeTab} onChange={handleChangeTab}>
+      <Tabs shape='fill' autoFill active={activeTab} onChange={handleChangeTab as (key: string | number) => void}>
         {tabs.map((tab, index) => {
           if (tab.path === 'guide' && !props.showGuide) return null;
+          if (tab.path === 'playground' && !props.showPlayground) return null;
 
           return <Tabs.Panel key={index} tab={renderTab(tab.name)} id={tab.path}></Tabs.Panel>;
         })}

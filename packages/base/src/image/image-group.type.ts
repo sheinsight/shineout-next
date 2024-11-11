@@ -41,13 +41,13 @@ export interface ImageGroupProps extends Pick<CommonType, 'style' | 'className'>
   /**
    * @en The width of the image
    * @cn 图片宽度
-   * @default '100%'
+   * @default 100%
    */
   width?: number | string;
   /**
    * @en The height of the image
    * @cn 图片高度
-   * @default '100%'
+   * @default 100%
    */
   height?: number | string;
   /**
