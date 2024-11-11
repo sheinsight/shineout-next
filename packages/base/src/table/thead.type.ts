@@ -16,6 +16,7 @@ export interface TheadProps
       | 'radio'
       | 'disabled'
       | 'treeCheckAll'
+      | 'sortDirections'
     >,
     Pick<ReturnType<typeof useTableSort<any>>, 'sortInfo' | 'onSorterChange'>,
     Pick<UseTableLayoutResultFunc, 'dragCol' | 'resizeCol'> {

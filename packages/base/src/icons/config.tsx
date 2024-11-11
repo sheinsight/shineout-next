@@ -10,6 +10,9 @@ const config = {
     Error: Icons.PcWarningCircleFill,
     Confirm: Icons.PcHelpCircleFill,
   },
+  form: {
+    Tooltip: Icons.PcHelpCircleOutline,
+  },
   breadcrumb: {
     DropdownArrow: Icons.ArrowDown,
   },

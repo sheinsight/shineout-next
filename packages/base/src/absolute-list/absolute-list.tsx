@@ -1,5 +1,5 @@
-import React, { useRef, useContext } from 'react';
-import { usePositionStyle, util } from '@sheinx/hooks';
+import React, { useRef, useContext, useEffect } from 'react';
+import { getClosestScrollContainer, usePositionStyle, util } from '@sheinx/hooks';
 import ReactDOM from 'react-dom';
 import { AbsoluteListProps } from './absolute-list.type';
 import useContainer from './use-container';
@@ -10,7 +10,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     position,
     children,
     parentElRef,
-    scrollElRef,
+    scrollElRef: scrollElRefProp,
     fixedWidth,
     zIndex = 1051,
     focus,
@@ -23,7 +23,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     lazy = true,
   } = props;
 
-  const defaultAbsolute = useContext(AbsoluteContext);
+  const { absolute: defaultAbsolute, scrollElRef: scrollElRefContext } = useContext(AbsoluteContext);
   const absolute = props.absolute === undefined ? defaultAbsolute : props.absolute;
 
   const { getRoot } = useContainer({
@@ -31,6 +31,20 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   });
 
   const { current: context } = useRef({ rendered: false });
+  const closestScrollContainerRef = React.useRef<HTMLElement | null>(null);
+
+  // scrollElRef的3个来源：1. 外部传入 2. 上下文传入 3. 最接近的滚动容器
+  const finalScrollElRef = React.useMemo(() => {
+    return scrollElRefProp || scrollElRefContext || closestScrollContainerRef;
+  }, [scrollElRefProp, scrollElRefContext]);
+
+  useEffect(() => {
+    if (scrollElRefProp || scrollElRefContext) return;
+    const closestScrollContainer = getClosestScrollContainer(parentElRef.current);
+    if (closestScrollContainer) {
+      closestScrollContainerRef.current = closestScrollContainer;
+    }
+  }, [parentElRef, scrollElRefProp, scrollElRefContext]);
 
   const { style, arrayStyle } = usePositionStyle({
     getContainer: getRoot,
@@ -40,7 +54,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     show: focus,
     fixedWidth,
     zIndex,
-    scrollElRef,
+    scrollElRef: finalScrollElRef,
     popupElRef,
     updateKey,
     popupGap,
@@ -63,6 +77,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
       }
     });
   }
+
 
   const styledChild = React.cloneElement(children as any, { style: newStyle });
   if (!util.isBrowser()) return null;

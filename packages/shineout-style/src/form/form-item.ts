@@ -35,6 +35,18 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
       display: 'inline-block',
     },
   },
+  labelTooltip: {
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    cursor: 'help',
+    color: token.formItemTooltipIconColor,
+    width: token.formItemTooltipIconFontSize,
+    fontSize: token.formItemTooltipIconFontSize,
+    marginLeft: token.formItemTooltipIconMarginXStart,
+    '& svg': {
+      width: '100%',
+    },
+  },
   labelLeft: {
     textAlign: 'start',
   },

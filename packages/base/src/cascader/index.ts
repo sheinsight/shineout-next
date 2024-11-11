@@ -1,2 +1,7 @@
 export { default, default as Cascader } from './cascader';
-export type { CascaderProps, CascaderClasses, CascaderRef } from './cascader.type';
+export type {
+  CascaderProps,
+  CascaderClasses,
+  CascaderRef,
+  RenderCompressedOption,
+} from './cascader.type';

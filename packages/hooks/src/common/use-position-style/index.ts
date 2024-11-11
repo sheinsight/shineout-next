@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
+import { useCheckElementPosition } from './check-position'
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
-import { docSize, isChromeLowerThan } from '../../utils';
-import { getClosestScrollContainer } from '../../utils/dom/element';
+import { getCurrentCSSZoom } from '../../utils';
+import { docSize } from '../../utils';
 
 export type HorizontalPosition =
   | 'left-bottom'
@@ -35,7 +36,7 @@ export interface PositionStyleConfig {
   position: PositionType | undefined;
   absolute: boolean;
   show: boolean;
-  // 弹出层的目标元素
+  // 弹出层的目标元素scrollElRef
   parentElRef: React.RefObject<HTMLElement>;
   // 弹出层
   popupElRef: React.RefObject<HTMLElement>;
@@ -52,8 +53,7 @@ export interface PositionStyleConfig {
 const hideStyle: React.CSSProperties = {
   pointerEvents: 'none',
   position: 'fixed',
-  zIndex: -1000,
-  opacity: 0,
+  visibility: 'hidden',
 };
 export const usePositionStyle = (config: PositionStyleConfig) => {
   const {
@@ -75,14 +75,14 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const [arrayStyle, setArrayStyle] = useState<React.CSSProperties>({});
 
   const { current: context } = React.useRef({
-    element: null as HTMLDivElement | null,
     containerRect: { left: 0, width: 0 } as DOMRect,
     containerScroll: { left: 0, width: 0 } as DOMRect,
     parentRect: { left: 0, width: 0 } as DOMRect,
     popUpHeight: 0,
     popUpWidth: 0,
-    opsStyle: {} as React.CSSProperties,
   });
+
+  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
 
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
@@ -155,7 +155,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
     let targetPosition = position;
     const rootContainer = getContainer() || document.body;
-    const closestScrollContainer = absolute ? null : getClosestScrollContainer(parentElRef.current);
 
     const containerRect = rootContainer.getBoundingClientRect();
     const bodyRect = (document.documentElement || document.body).getBoundingClientRect();
@@ -173,7 +172,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       let overRight = 0;
       let overLeft = 0;
       if (h === 'left') {
-        style.left = rect.left - containerRect.left + containerScroll.left + (closestScrollContainer?.scrollLeft || 0);
+        style.left = rect.left - containerRect.left + containerScroll.left;
         style.transform = '';
         arrayStyle.left = `8px`;
         if (adjust) {
@@ -277,7 +276,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getAbsoluteStyle = (position: string) => {
     if (!parentElRef.current) return { style: hideStyle };
     const rect = context.parentRect;
-    if (scrollElRef?.current) {
+    if (scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
         rect.bottom < visibleRect.top ||
@@ -290,11 +289,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
     const { style, arrayStyle } = getAbsolutePositionStyle(rect, position);
 
-    // TODO: 如果是版本大于chrome128，需要根据currentCSSZoom处理chrome的bug
-    if (!isChromeLowerThan(128)) {
-      // @ts-ignore currentCSSZoom
-      const currentCSSZoom = document.body.currentCSSZoom;
-      if (currentCSSZoom === 1 || !currentCSSZoom) return { style, arrayStyle };
+    const currentCSSZoom = getCurrentCSSZoom()
+    if (currentCSSZoom && currentCSSZoom !== 1) {
       if (style.left && typeof style.left === 'number') {
         style.left = style.left * (1 / currentCSSZoom);
       }
@@ -346,7 +342,15 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
   });
 
-  useEffect(updateStyle, [show, position, absolute, updateKey, fixedWidth]);
+  useEffect(updateStyle, [
+    show,
+    position,
+    absolute,
+    updateKey,
+    fixedWidth,
+    parentElNewPosition
+  ]);
+
   return { style, arrayStyle };
 };
 

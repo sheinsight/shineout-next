@@ -108,6 +108,19 @@ export type OptionListRefType = {
   getHoverIndex: () => number;
 };
 
+export interface RenderCompressedOption<DataItem> {
+  /**
+   * @en The current selected data
+   * @cn 当前选中的数据
+   */
+  data: DataItem[];
+  /**
+   * @en Method to remove the option
+   * @cn 删除选项的方法
+   */
+  onRemove: (item: DataItem) => void;
+}
+
 export interface BaseListProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
@@ -383,6 +396,13 @@ export interface SelectPropsBase<DataItem, Value>
   compressedClassName?: string;
 
   /**
+   * @en Custom render compressed content
+   * @cn 自定义渲染折叠内容
+   * @version 3.5.0
+   */
+  renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
+
+  /**
    * @en Hide the creat option while set onCreate
    * @cn 在使用创建选项时，在选项列表中隐藏该选项，回车后直接选中
    * @default false
@@ -545,6 +565,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Whether to adjust the position of the panel automatically. When the panel is blocked by the window, the position is adjusted automatically
    * @cn 滚动加载回的调函数。当配置该属性后，下拉列表滚动到底部时触发该函数
+   * @version 3.4.0
    */
   onLoadMore?: () => void | Promise<any>;
 
@@ -552,6 +573,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en The threshold for triggering the callback function of the scroll load. When the current scroll progress reaches this value, the callback is triggered, and the maximum value is 1, that is, the scroll progress is 100%
    * @cn 触发滚动加载回的调函数的阈值。当前滚动进度达到该值时触发，最大值为 1，即滚动进度 100%
    * @default 1
+   * @version 3.4.0
    */
   threshold?: number;
 
@@ -559,6 +581,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 触发打开选择面板的方式，默认为点击打开
    * @en Trigger the way to open the selection panel, default is click to open
    * @default 'click'
+   * @version 3.4.0
    */
   trigger?: 'click' | 'hover';
 }

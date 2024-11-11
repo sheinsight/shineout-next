@@ -13,6 +13,7 @@ import {
   inputPlaceholderTest,
   styleContentTest,
   styleTest,
+  styleContainTest,
   textContentTest,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
@@ -165,15 +166,40 @@ const styleWithShowTopRight =
   'z-index: 1051; display: block; right: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 240ms ease-in-out;'
 const styleWithShowOther =
   'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
-const pickerWrapperStyle =
-  'z-index: 1051; opacity: 1; display: block; top: calc(100% + 4px); left: 0px; transition: opacity 240ms ease-in-out;'
-const pickerWrapperStyleTopLeft =
-  'z-index: 1051; opacity: 1; display: block; bottom: calc(100% + 4px); left: 0px; transform-origin: center bottom; transition: opacity 240ms ease-in-out;'
-const pickerWrapperStyleTopRight =
-  'z-index: 1051; opacity: 1; display: block; bottom: calc(100% + 4px); right: 0px; transform-origin: center bottom; transition: opacity 240ms ease-in-out;'
-const piCKerWrapperStyleRight =
-  'z-index: 1051; opacity: 1; display: block; top: calc(100% + 4px); right: 0px; transition: opacity 240ms ease-in-out;'
-
+const pickerWrapperStyle = {
+  zIndex: '1051',
+  opacity: '1',
+  display: 'block',
+  top: 'calc(100% + 4px)',
+  left: '0px',
+  transition: 'opacity 240ms ease-in-out'
+}
+const pickerWrapperStyleTopLeft = {
+  zIndex: '1051',
+  opacity: '1',
+  display: 'block',
+  bottom: 'calc(100% + 4px)',
+  left: '0px',
+  transformOrigin: 'center bottom',
+  transition: 'opacity 240ms ease-in-out'
+}
+const pickerWrapperStyleTopRight = {
+  zIndex: '1051',
+  opacity: '1',
+  display: 'block',
+  bottom: 'calc(100% + 4px)',
+  right: '0px',
+  transformOrigin: 'center bottom',
+  transition: 'opacity 240ms ease-in-out'
+}
+const piCKerWrapperStyleRight = {
+  zIndex: '1051',
+  opacity: '1',
+  display: 'block',
+  top: 'calc(100% + 4px)',
+  right: '0px',
+  transition: 'opacity 240ms ease-in-out'
+}
 beforeAll(() => {
   jest.useFakeTimers();
 });
@@ -229,7 +255,7 @@ describe('Alert[Base]', () => {
     })
 
     const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
-    styleTest(datePickerPickerWrapper, pickerWrapperStyle)
+    styleContainTest(datePickerPickerWrapper, pickerWrapperStyle)
     const datePickerPickerHeader = datePickerPickerWrapper.querySelector(pickerHeader)!;
     const datePickerHeaderLeft = datePickerPickerHeader.querySelector(pickerHeaderLeft)!;
     const datePickerHeaderRight = datePickerPickerHeader.querySelector(pickerHeaderRight)!;
@@ -279,7 +305,7 @@ describe('Alert[Base]', () => {
     await waitFor(async () => {
       await delay(300);
       classContentTest(datePickerWrapper, wrapperFocus);
-      styleTest(datePickerPickerWrapper, pickerWrapperStyle);
+      styleContainTest(datePickerPickerWrapper, pickerWrapperStyle);
     });
     const cell = table
       .querySelector('tbody')
@@ -1277,7 +1303,7 @@ describe('DatePicker[Disable]', () => {
     });
     const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
       classContentTest(datePickerWrapper, wrapperFocus);
-      styleTest(datePickerPickerWrapper, pickerWrapperStyle);
+      styleContainTest(datePickerPickerWrapper, pickerWrapperStyle);
     const pickers = datePickerPickerWrapper.querySelectorAll(picker);
     pickers[1]
       .querySelector(pickerBody)
@@ -1515,7 +1541,7 @@ describe('DatePicker[InnerTitle]', () => {
 });
 describe('DatePicker[Position]', () => {
   type positionType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | undefined;
-  const positionStyleMap: { [key: string]: string } = {
+  const positionStyleMap: { [key: string]: object } = {
     'top-left': pickerWrapperStyleTopLeft,
     'top-right': pickerWrapperStyleTopRight,
     'bottom-left': pickerWrapperStyle,
@@ -1535,7 +1561,7 @@ describe('DatePicker[Position]', () => {
         await delay(300);
       });
       const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
-      styleTest(datePickerPickerWrapper, positionStyleMap[type]);
+      styleContainTest(datePickerPickerWrapper, positionStyleMap[type]);
     },
   );
   test.each(['left-top', 'left-bottom', 'right-top', 'right-bottom'])(
@@ -1552,7 +1578,7 @@ describe('DatePicker[Position]', () => {
         await delay(300);
       });
       const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
-      styleTest(datePickerPickerWrapper, positionStyleMap[revertPosition(type)]);
+      styleContainTest(datePickerPickerWrapper, positionStyleMap[revertPosition(type)]);
     },
   );
   test('should render when set position is other', async () => {
@@ -1567,7 +1593,7 @@ describe('DatePicker[Position]', () => {
       await delay(300);
     });
     const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
-    styleTest(datePickerPickerWrapper, positionStyleMap['bottom-left']);
+    styleContainTest(datePickerPickerWrapper, positionStyleMap['bottom-left']);
   });
 });
 describe('DatePicker[DefaultPickerValue]', () => {
@@ -1707,7 +1733,7 @@ describe('DatePicker[Open]', () => {
     await waitFor(async () => {
       await delay(300);
     });
-    styleTest(container.querySelector(pickerWrapper)!, pickerWrapperStyle);
+    styleContainTest(container.querySelector(pickerWrapper)!, pickerWrapperStyle);
   });
   test('should render when use key down event', async () => {
     const { container } = render(<DatePicker />);
@@ -1720,7 +1746,7 @@ describe('DatePicker[Open]', () => {
       await delay(300);
     });
     const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
-    styleTest(datePickerPickerWrapper, pickerWrapperStyle);
+    styleContainTest(datePickerPickerWrapper, pickerWrapperStyle);
   });
 });
 describe('DatePicker[Align]', () => {
