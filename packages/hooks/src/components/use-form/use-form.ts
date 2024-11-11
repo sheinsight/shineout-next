@@ -210,6 +210,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     ) => {
       onChange((draft) => {
         const values = Object.keys(vals);
+        console.log('values', values);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
         const nextDraft = Object.assign({}, current(draft), vals);
         values.forEach((key) => {
@@ -447,7 +448,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       size,
       reserveAble,
     }),
-    [labelWidth,labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size, reserveAble],
+    [
+      labelWidth,
+      labelAlign,
+      labelVerticalAlign,
+      keepErrorHeight,
+      inline,
+      disabled,
+      size,
+      reserveAble,
+    ],
   );
 
   const updateValue = () => {

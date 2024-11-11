@@ -3,10 +3,15 @@ import { util } from '@sheinx/hooks';
 import { useConfig, getLocale } from '../config';
 const ErrorTrans = (props: { error: Error }) => {
   const { error } = props;
-  const msg = error.message;
+  let e = error
+  if (util.isArray(error)) {
+    error.forEach((err) => {
+      e = Object.values(err)[0];
+    });
+  }
+  const msg = e.message;
   //@ts-ignore
-  const po = error.props || {};
-
+  const po = e.props || {};
   const { locale } = useConfig();
   if (msg.startsWith('$rules.')) {
     const rulelocale = msg.replace('$', '');

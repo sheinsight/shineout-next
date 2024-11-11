@@ -16,8 +16,21 @@ interface Value {
   age?: string;
   friends?: FriendsItem[];
 }
+const isExist = (values, _, callback: any) => {
+  const result: any[] = [];
+  const valueMap = {};
+  console.log('values', values);
+  values.forEach(({ name }: Value, i: number) => {
+    if (!name) return;
+    if (valueMap[name]) result[i] = { name: new Error(`Name "${name}" is existed.`) };
+    else valueMap[name] = true;
+  });
+  callback(result.length > 0 ? result : true);
+};
 
-const rules = Rule();
+const rules = Rule({
+  isExist,
+});
 
 const add = (
   <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -83,7 +96,8 @@ const App: React.FC = () => {
               </button>
             );
           }}
-          defaultValue={[{ name: 'Hermione Granger', age: '16' }, {}]}
+          rules={[rules.isExist]}
+          defaultValue={[{ name: 'a', age: '16' }, {}]}
         >
           {({ onAppend, onRemove }) => (
             <Form.Item style={{ marginBottom: 12 }}>
@@ -100,7 +114,6 @@ const App: React.FC = () => {
                   name='age'
                   type='number'
                   placeholder='Age'
-                  rules={[rules.required('Age is required')]}
                   title='Friend age'
                   style={{ width: 60 }}
                   clearable

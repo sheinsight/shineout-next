@@ -24,9 +24,7 @@ const UseFormItem = () => {
   });
 
   const msg = Object.values(errors).filter(Boolean);
-
   const showError = msg && msg.length > 0;
-
   const attributes = getDataAttribute({ status: showError ? 'error' : 'default' });
   const ProviderValue = useMemo<FormItemContextValueType>(() => {
     return {
