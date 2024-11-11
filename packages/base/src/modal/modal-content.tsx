@@ -322,6 +322,7 @@ const Modal = (props: ModalContentProps) => {
         }}
         className={classNames(
           props.rootClassName,
+          modalClasses?.rootClass,
           modalClasses?.wrapper,
           animation && modalClasses?.wrapperAnimation,
           visible ? modalClasses?.wrapperShow : modalClasses?.wrapperHide,

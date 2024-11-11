@@ -95,6 +95,7 @@ const Card = (props: CardProps) => {
     <div
       className={classNames(
         props.className,
+        cardClasses?.rootClass,
         cardClasses?.wrapper,
         props.shadow === 'hover' && cardClasses?.wrapperHover,
         alwaysShowShadow && cardClasses?.wrapperShadow,

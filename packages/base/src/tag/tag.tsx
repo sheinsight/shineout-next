@@ -54,7 +54,7 @@ const Tag = (props: TagProps) => {
   const colorSet = type || color || 'default';
   const tagStyle = jssStyle?.tag?.() || ({} as TagClasses);
 
-  const tagClass = classNames(className, tagStyle.tag, {
+  const tagClass = classNames(className, tagStyle.rootClass, tagStyle.tag, {
     [tagStyle.small]: size === 'small',
     [tagStyle.large]: size === 'large',
     [tagStyle.rounded]: shape === 'rounded',

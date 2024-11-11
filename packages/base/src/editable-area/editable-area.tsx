@@ -168,6 +168,7 @@ const EditableArea = (props: EditableAreaProps) => {
     <div
       className={classNames(
         className,
+        editableAreaStyle?.rootClass,
         editableAreaStyle?.wrapper,
         status === 'error' && editableAreaStyle?.wrapperError,
         disabled && editableAreaStyle?.wrapperDisabled,

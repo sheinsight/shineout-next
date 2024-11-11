@@ -86,7 +86,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
   });
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
-  const rootClass = classNames(styles.transfer, className, {
+  const rootClass = classNames(styles.rootClass, styles.transfer, className, {
     [styles.simple]: simple,
     [styles.small]: size === 'small',
     [styles.large]: size === 'large',

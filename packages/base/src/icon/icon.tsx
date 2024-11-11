@@ -18,6 +18,7 @@ function Icon(
   }
   const iconClasses = jssStyle?.icon?.();
   const className = classnames(
+    iconClasses?.rootClass,
     iconClasses?.wrapper,
     iconClasses?.[type!],
     props.className,

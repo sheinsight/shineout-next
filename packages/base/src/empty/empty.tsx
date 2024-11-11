@@ -9,7 +9,7 @@ const Empty = (props: EmptyProps) => {
   const { locale } = useConfig();
 
   const styles = jssStyle?.empty?.();
-  const rootClass = classNames(styles?.empty, className);
+  const rootClass = classNames(styles?.rootClass, styles?.empty, className);
   const wrapperClass = classNames(styles?.wrapper);
   const alt = typeof description === 'string' ? description : 'empty';
 

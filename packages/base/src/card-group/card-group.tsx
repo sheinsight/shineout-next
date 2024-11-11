@@ -57,7 +57,7 @@ const CardGroup = (props: CardGroupProps) => {
 
   return (
     <div
-      className={classNames(props.className, classes?.wrapper)}
+      className={classNames(props.className, classes?.rootClass, classes?.wrapper)}
       style={{
         height: props.height,
         ...props.style,

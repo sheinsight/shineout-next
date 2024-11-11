@@ -14,6 +14,7 @@ const animation = {
 };
 const transition = '.2s cubic-bezier(.34,.69,.1,1)';
 const switchStyle: JsStyles<keyof SwitchClasses> = {
+  rootClass: {},
   ...animation,
   wrapper: {
     '[data-soui-role="form-control"] >  &': {

@@ -1,6 +1,7 @@
 import { CommonType } from '../common/type';
 
 export interface StickyClasses {
+  rootClass: string;
   wrapper: string;
 }
 

@@ -227,6 +227,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     <div
       style={props.style}
       className={classNames(
+        uploadClasses?.rootClass,
         uploadClasses?.wrapper,
         isImage && uploadClasses?.wrapperImage,
         drop && uploadClasses?.wrapperDrop,

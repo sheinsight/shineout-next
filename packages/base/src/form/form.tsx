@@ -75,6 +75,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   }, [props.disabled, props.pending]);
 
   const rootClass = classNames([
+    formClasses?.rootClass,
     formClasses?.wrapper,
     className,
     props.inline && formClasses?.wrapperInline,

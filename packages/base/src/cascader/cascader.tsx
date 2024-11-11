@@ -196,8 +196,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const rootClass = classNames(
     className,
-    isEmpty && styles.wrapperEmpty,
+    styles?.rootClass,
     styles?.wrapper,
+    isEmpty && styles.wrapperEmpty,
     disabled === true && styles?.wrapperDisabled,
     focused && disabled !== true && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,

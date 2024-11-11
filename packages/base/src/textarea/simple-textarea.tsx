@@ -27,6 +27,7 @@ const Textarea = (props: SimpleTextareaProps) => {
 
   const rootClass = classNames(
     className,
+    textareaClasses?.rootClass,
     textareaClasses?.wrapper,
     !!focused && textareaClasses?.wrapperFocus,
     !!disabled && textareaClasses?.wrapperDisabled,

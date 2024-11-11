@@ -65,6 +65,7 @@ const Button = (props: ButtonProps) => {
 
   const rootClass = classNames(
     className,
+    buttonStyle?.rootClass,
     buttonStyle[type || 'default'],
     buttonStyle.button,
     !!disabled && buttonStyle.disabled,

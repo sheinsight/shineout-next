@@ -5,6 +5,7 @@ import { UploadClasses } from '@sheinx/base';
 export type UploadClassType = keyof UploadClasses;
 
 const uploadStyle: JsStyles<UploadClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'block',
   },

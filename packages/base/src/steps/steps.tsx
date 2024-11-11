@@ -39,7 +39,7 @@ const Steps = (props: StepsProps) => {
   const labelPlacement = getLabelPlacement();
 
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
-  const rootClass = classNames(styles.steps, className, {
+  const rootClass = classNames(styles.rootClass, styles.steps, className, {
     [styles[type]]: type,
     [styles.small]: size === 'small',
     [styles.large]: size === 'large',

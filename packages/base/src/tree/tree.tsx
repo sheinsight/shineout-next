@@ -88,7 +88,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
-  const rootClass = classNames(treeStyle.tree, className, {
+  const rootClass = classNames(treeStyle.rootClass, treeStyle.tree, className, {
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
   });

@@ -59,7 +59,7 @@ const MessagePure = (props: {
   };
 
   return (
-    <div className={styles?.wrapper} {...getDataAttribute({ position })}>
+    <div className={classNames(styles?.rootClass, styles?.wrapper)} {...getDataAttribute({ position })}>
       {[
         messages.map(
           ({
@@ -140,7 +140,7 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
     this.removeMessage = this.removeMessage.bind(this);
     this.closeMessageForAnimation = this.closeMessageForAnimation.bind(this);
   }
-  
+
   setMessages(messages: Array<MessageItemType>) {
     this.messages = messages;
     this.setState({ messages });

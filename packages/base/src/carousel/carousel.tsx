@@ -18,6 +18,7 @@ const Carousel = (props: CarouselProps) => {
   });
 
   const wrapperClasses = classNames(
+    carouselClasses?.rootClass,
     carouselClasses?.wrapper,
     props.className,
     animation === 'slide' && carouselClasses?.animationSlide,

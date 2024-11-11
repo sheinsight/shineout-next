@@ -11,6 +11,7 @@ import { PopoverClasses } from '../popover/popover.type';
 import { SpinClasses } from '../spin/spin.type';
 
 export type TreeSelectClasses = {
+  rootClass: string;
   wrapper: string;
   wrapperEmpty: string;
   wrapperOpen: string;

@@ -11,7 +11,7 @@ const emptyArray: any[] = [];
 const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key>) => {
   const { data = emptyArray, mode: modeProps = 'inline', theme = 'light', collapse } = props;
   const  render = useRender();
- 
+
   // const [inTransition, setInTransition] = useState(false);
   const mode = collapse ? 'vertical-auto' : modeProps;
 
@@ -66,6 +66,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     <div
       className={classNames(
         props.className,
+        classes?.rootClass,
         classes?.wrapper,
         mode === 'inline' && classes?.wrapperInline,
         (mode === 'vertical' || mode === 'vertical-auto') && classes?.wrapperVertical,

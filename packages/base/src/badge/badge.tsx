@@ -20,7 +20,7 @@ const Badge = (props: BadgeProps) => {
   } = props;
   const badgeStyle = jssStyle?.badge?.() || ({} as BadgeClasses);
   const isTextBadge = text !== undefined || (dot && children === undefined);
-  const rootClass = classNames(className, badgeStyle.badge, isTextBadge && badgeStyle.textBadge);
+  const rootClass = classNames(className, badgeStyle.rootClass, badgeStyle.badge, isTextBadge && badgeStyle.textBadge);
   const isOverflowCount = overflowCount !== undefined && Number(count) > overflowCount;
 
   const renderCount = () => {

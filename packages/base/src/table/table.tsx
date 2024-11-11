@@ -560,6 +560,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const tableWrapperClass = classNames(
     props.className,
+    tableClasses?.rootClass,
     tableClasses?.wrapper,
     props.bordered && tableClasses?.bordered,
     verticalAlign === 'top' && tableClasses?.verticalAlignTop,

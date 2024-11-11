@@ -21,6 +21,7 @@ const globalStyle = {
 };
 
 const tableStyle: JsStyles<TableClassType> = {
+  rootClass: {},
   ...globalStyle,
   wrapper: {
     display: 'flex',

@@ -64,7 +64,7 @@ export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
       let value = ''
       // 给每个组件的root类名添加命名空间
       if(k === 'rootClass') {
-        value = `${prefix}-${ns}${value}`
+        value = `${prefix}-${camelToDash(ns)}${value}`
       }else{
         const oldClass = classes[k];
         const constClass = `${prefix}-${ns}-${camelToDash(k)}`;

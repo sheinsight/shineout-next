@@ -59,6 +59,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const treeSelectStyle: JsStyles<TreeSelectClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'inline-block',
     position: 'relative',

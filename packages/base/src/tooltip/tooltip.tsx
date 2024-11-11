@@ -1,6 +1,6 @@
 import { usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { cloneElement, isValidElement, useState, useRef } from 'react';
+import React, { cloneElement, isValidElement, useRef } from 'react';
 import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
@@ -88,6 +88,7 @@ const Tooltip = (props: TooltipProps) => {
         <div
           className={classNames(
             className,
+            tooltipClasses?.rootClass,
             tooltipClasses?.wrapper,
             open && tooltipClasses?.wrapperOpen,
           )}

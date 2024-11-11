@@ -265,6 +265,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
       {...util.getDataAttribute({ ['input-border']: 'true', type })}
       className={classNames(
         props.className,
+        styles?.rootClass,
         styles?.wrapper,
         props.innerTitle && styles?.wrapperInnerTitle,
         size === 'small' && styles?.wrapperSmall,

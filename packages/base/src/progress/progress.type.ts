@@ -2,6 +2,7 @@ import React from 'react';
 import { CommonType } from '../common/type';
 
 export interface ProgressClasses {
+  rootClass: string;
   wrapper: string;
   wrapperSuccess: string;
   wrapperInfo: string;
