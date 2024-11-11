@@ -24,8 +24,8 @@ English | [简体中文](./README-zh_CN.md)
 ## 🛠️ Requirements
 
 ```
-react >= 16.8.0
-react-dom >= 16.8.0
+react >= 16.14.0
+react-dom >= 16.14.0
 ```
 
 ## 🖥 Browsers support
