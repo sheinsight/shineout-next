@@ -249,6 +249,7 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
   /**
    * @en Custom render compressed content
    * @cn 自定义渲染折叠内容，其中 data 为选中的数据，onRemove 为删除事件
+   * @version 3.5.0
    */
   renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
   /**

@@ -398,6 +398,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Custom render compressed content
    * @cn 自定义渲染折叠内容
+   * @version 3.5.0
    */
   renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
 
