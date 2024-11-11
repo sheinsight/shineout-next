@@ -277,7 +277,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       return renderResultItem(d, i, datas, v);
     });
     return { results: result, datas };
-  }, [props.value]);
+  }, [props.value, props.data]);
 
   const result = renderMultipleResult.results as React.ReactNode[];
   const moreNumber = getCompressedBound();
