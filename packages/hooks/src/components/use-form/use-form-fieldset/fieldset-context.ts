@@ -1,7 +1,7 @@
 'use client';
 import React, { createContext } from 'react';
 
-const FieldsetContext = createContext({ path: '' });
+const FieldsetContext = createContext({ path: '', validateFieldSet: () => {} });
 
 interface BaseFieldProps {
   bind?: string[];
@@ -24,7 +24,7 @@ function extendName(
   return `${path}${path.length > 0 ? '.' : ''}${name}`;
 }
 export const useFieldSetConsumer = <T extends BaseFieldProps>(props: T) => {
-  const { path } = React.useContext(FieldsetContext);
+  const { path, validateFieldSet } = React.useContext(FieldsetContext);
   const bind = React.useMemo(() => {
     return path ? (props.bind || []).concat(path) : props.bind;
   }, [path, props.bind]);
@@ -36,6 +36,7 @@ export const useFieldSetConsumer = <T extends BaseFieldProps>(props: T) => {
     ...props,
     name,
     bind,
+    validateFieldSet,
   };
 };
 

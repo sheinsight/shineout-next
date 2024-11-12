@@ -18,9 +18,9 @@ export default (props: FormItemProps) => {
   };
 
   const renderLabel = () => {
-    if(label === undefined || label === null) return null
+    if (label === undefined || label === null) return null;
 
-    let $tooltip
+    let $tooltip;
     if (typeof label === 'object' && 'tooltip' in label && label.tooltip) {
       const tooltipProps = {
         jssStyle: { tooltip: useTooltipStyle },
@@ -28,13 +28,13 @@ export default (props: FormItemProps) => {
           ? {
               ...label.tooltip,
               tip: label.tooltip.tip,
-              position: label.tooltip?.position || 'top'
+              position: label.tooltip?.position || 'top',
             }
-          : { tip: label.tooltip, position: 'top', })
+          : { tip: label.tooltip, position: 'top' }),
       };
 
       $tooltip = (
-        <Tooltip {...tooltipProps as TooltipProps}>
+        <Tooltip {...(tooltipProps as TooltipProps)}>
           <span className={formItemClasses?.labelTooltip}>
             {(tooltipProps as any).icon || Icons.form.Tooltip}
           </span>
@@ -43,13 +43,15 @@ export default (props: FormItemProps) => {
     }
 
     if (typeof label === 'object' && 'tooltip' in label) {
-      return <>
-        {label.content}
-        {$tooltip}
-      </>
+      return (
+        <>
+          {label.content}
+          {$tooltip}
+        </>
+      );
     }
-    return label as React.ReactNode
-  }
+    return label as React.ReactNode;
+  };
 
   return (
     <div
