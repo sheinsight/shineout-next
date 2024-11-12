@@ -72,7 +72,6 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
             }) as T;
             onChange(newValue);
             context.ids.splice(i, 0, util.generateUUID());
-            console.log('name', i);
             formFunc?.insertError(name, i);
           },
           onAppend: (val: T extends (infer U)[] ? U : never) => {
