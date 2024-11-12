@@ -277,7 +277,15 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       return renderResultItem(d, i, datas, v);
     });
     return { results: result, datas };
-  }, [props.value, props.data]);
+  }, [
+    props.value,             // 必需：控制选中的值
+    props.data,        // 必需：数据源
+    separator,         // 必需：影响值的分割
+    valueProp,         // 必需：影响值的处理
+    renderResultContentProp,  // 必需：影响渲染方式
+    renderResultItem,  // 必需：渲染每个选项的方法
+    getDataByValues   // 必需：根据值获取数据的方法
+]);
 
   const result = renderMultipleResult.results as React.ReactNode[];
   const moreNumber = getCompressedBound();
