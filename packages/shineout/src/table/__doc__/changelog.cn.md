@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Table` 的列设置为百分比宽度时，单元格内的自定义的css ellipsis效果不生效的问题 ([#795](https://github.com/sheinsight/shineout-next/pull/795))
+- 修复 `Table` 的列设置为百分比宽度时，单元格内的自定义的css ellipsis效果不生效的问题(Regression: since v3.5.0) ([#795](https://github.com/sheinsight/shineout-next/pull/795))
 
 
 ## 3.5.0
