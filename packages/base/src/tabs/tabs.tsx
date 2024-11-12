@@ -128,11 +128,11 @@ const Tabs = (props: TabsProps) => {
         panelHeight.current = panelRef.current.clientHeight;
         setPanelStyle({ height: panelRef.current.clientHeight });
         setTimeout(() => {
-          setPanelStyle({ height: 0, flex: autoFill ? 0 : 'none' });
+          setPanelStyle({ height: 0, flex: autoFill ? 0 : 'none', overflow: 'hidden' });
         }, 10);
       } else {
         if (panelHeight.current === 0) return;
-        setPanelStyle({ height: panelHeight.current });
+        setPanelStyle({ height: panelHeight.current, overflow: 'hidden' });
         setTimeout(() => {
           setPanelStyle({ height: 'auto' });
         }, 200);
