@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Tabs` 折叠后Tabs.Panel内容溢出展示的问题 ([#794](https://github.com/sheinsight/shineout-next/pull/794))
+- 修复 `Tabs` 折叠用法下，折叠面板后Tabs.Panel内容溢出展示的问题 ([#794](https://github.com/sheinsight/shineout-next/pull/794))
 
 
 ## 3.4.3
