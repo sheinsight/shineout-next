@@ -2,9 +2,7 @@ import FieldsetContext from './fieldset-context';
 import { BaseFormFieldSetProps } from './use-form-fieldset.type';
 import { useFormControl } from '../use-form-control';
 
-const emptyFunc = () => {
-  console.log('啊？');
-};
+const emptyFunc = () => {};
 const emptyArr: string[] = [];
 export const useFormFieldSet = <T>(props: BaseFormFieldSetProps<T>) => {
   const { inForm, error, value, onChange, name } = useFormControl({

@@ -3,10 +3,10 @@ import { util } from '@sheinx/hooks';
 import { useConfig, getLocale } from '../config';
 const ErrorTrans = (props: { error: Error }) => {
   const { error } = props;
-  let e = error
+  let e = error;
   if (util.isArray(error)) {
-    error.forEach((err) => {
-      e = Object.values(err)[0];
+    error.forEach((err: Error) => {
+      if (Object.values(err)[0]) e = Object.values(err)[0];
     });
   }
   const msg = e.message;

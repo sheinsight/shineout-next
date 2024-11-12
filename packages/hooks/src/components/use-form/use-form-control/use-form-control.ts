@@ -43,7 +43,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     onError,
     getValidateProps,
   } = props;
-  const { name, bind } = useFieldSetConsumer({
+  const { name, bind, validateFieldSet } = useFieldSetConsumer({
     name: props.name,
     bind: props.bind,
   });
@@ -174,7 +174,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   );
 
   const onChange = usePersistFn((v: T, ...other: any[]) => {
-    console.log(props.name)
     if (inForm && formFunc) {
       if (isArray(name)) {
         const arrV = isArray(v) ? v : [];
@@ -190,6 +189,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       validateFiled('', v, undefined);
     }
     if (onChangePo) onChangePo(v, ...other);
+    if (validateFieldSet) validateFieldSet();
   });
 
   useEffect(() => {
