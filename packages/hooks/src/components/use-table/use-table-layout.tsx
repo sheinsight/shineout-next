@@ -291,7 +291,16 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     checkFloat()
   }, [colgroup]);
 
-  const tableWidth = isNaN(Number(props.width)) ? undefined : (typeof props.width === 'number' ? props.width + deltaXSum : props.width);
+  let tableWidth = props.width;
+  if (typeof props.width === 'string' && props.width.endsWith('%')) {
+    tableWidth = props.width;
+  } else if (typeof props.width === 'number') {
+    tableWidth = props.width + deltaXSum;
+  } else if (!isNaN(Number(props.width))) {
+    tableWidth = props.width;
+  } else {
+    tableWidth = undefined;
+  }
 
   return {
     isScrollX: !!isScrollX,
