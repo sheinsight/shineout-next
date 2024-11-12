@@ -88,6 +88,14 @@ export interface FormCommonConfig extends FormLabelConfig {
    * @default 'default'
    */
   size?: 'small' | 'default' | 'large';
+
+  /**
+   * @en When set to true, the form items in Form will not automatically delete data after unmounting
+   * @cn 设置为 true 时，表单内所有组件的reserveAble都为 true : 卸载后不自动删除数据
+   * @default false
+   * @version 3.5.0
+   */
+  reserveAble?: boolean;
 }
 
 export interface FormFunc {

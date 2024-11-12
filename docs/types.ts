@@ -57,6 +57,26 @@ export interface Changelog {
 // },
 // required: !optional,
 //   type: convertQuotes(typeText),
+export type Api = Array<{
+  isLast: boolean;
+  title: string;
+  cn: string;
+  en: string;
+  subTitle: string;
+  isDetail: boolean;
+  properties: Array<{
+    name: string;
+    type: string;
+    required?: boolean;
+    tag: {
+      cn: string;
+      en: string;
+      default: string;
+      version: string;
+    };
+  }>;
+}>
+
 export interface MarkdownProps {
   header: {
     name: string;
@@ -70,23 +90,10 @@ export interface MarkdownProps {
     cn: Changelog[];
     en: Changelog[];
   };
-  api: Array<{
-    isLast: boolean;
-    title: string;
-    cn: string;
-    en: string;
-    subTitle: string;
-    isDetail: boolean;
-    properties: Array<{
-      name: string;
-      type: string;
-      required?: boolean;
-      tag: {
-        cn: string;
-        en: string;
-        default: string;
-        version: string;
-      };
-    }>;
-  }>;
+  api: Api;
+  playground: {
+    api: Api;
+    name: string
+    examples: Example;
+  }
 }

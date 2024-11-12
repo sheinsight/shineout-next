@@ -102,6 +102,19 @@ export interface CascaderRef {
   close: (e?: MouseEvent) => void;
 }
 
+export interface RenderCompressedOption<DataItem> {
+  /**
+   * @en The current selected data
+   * @cn 当前选中的数据
+   */
+  data: DataItem[];
+  /**
+   * @en Method to remove the option
+   * @cn 删除选项的方法
+   */
+  onRemove: (item: DataItem) => void;
+}
+
 export interface CascaderProps<DataItem, Value extends KeygenResult[]>
   extends Pick<
       CommonType,
@@ -234,6 +247,12 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    */
   compressed?: boolean | 'no-repeat';
   /**
+   * @en Custom render compressed content
+   * @cn 自定义渲染折叠内容，其中 data 为选中的数据，onRemove 为删除事件
+   * @version 3.5.0
+   */
+  renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
+  /**
    * @en options collapse callback
    * @cn 下拉列表展开/收起回调
    */
@@ -358,4 +377,11 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @default true
    */
   adjust?: boolean;
+  /**
+   * @en Whether to use virtual list
+   * @cn 是否使用虚拟列表
+   * @default false
+   * @version 3.5.0
+   */
+  virtual?: boolean;
 }

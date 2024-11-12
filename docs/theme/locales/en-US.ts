@@ -31,5 +31,9 @@ export default {
     api: 'API',
     guide: 'guide',
     updateRecord: 'update record',
+    playground: 'Playground',
   },
+  'shineout.playground': {
+    configuration: 'Configuration',
+  }
 };

@@ -56,7 +56,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
 
   const getLineHeight = () => {
     if (lineHeightProp) {
-      console.log('lineHeightProp', lineHeightProp);
+      // console.log('lineHeightProp', lineHeightProp);
       return lineHeightProp;
     }
     if (size === 'small') {
@@ -202,7 +202,14 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   return (
     <div className={rootClass}>
       {renderHeader()}
-      <Spin className={styles.spinContainer} jssStyle={jssStyle} loading={loading} size={24}>
+      <Spin
+        className={styles.spinContainer}
+        jssStyle={jssStyle}
+        loading={loading}
+        size={24}
+        name='ring'
+        ignoreConfig
+      >
         {onFilter && renderFilter()}
         {renderList()}
         {renderFooter()}

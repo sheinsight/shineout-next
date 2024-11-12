@@ -1,3 +1,16 @@
+## 3.5.0
+2024-11-11
+### 💎 Enhancement
+
+- `Form.Item` 的 `label` 属性新增对象配置模式，支持在标签文本旁添加 tooltip 提示说明 ([#788](https://github.com/sheinsight/shineout-next/pull/788))
+
+### 🆕 Feature
+
+- `Form` 新增 `useForm` 用法，获取的form实例方法与formRef相同，但是可以在任何地方使用，不受组件渲染影响 ([#711](https://github.com/sheinsight/shineout-next/pull/711))
+- `Form` 新增 `reserveAble` 属性，用于控制表单项是否保留值 ([#772](https://github.com/sheinsight/shineout-next/pull/772))
+
+
+
 ## 3.4.4
 2024-10-28
 ### 🐞 BugFix

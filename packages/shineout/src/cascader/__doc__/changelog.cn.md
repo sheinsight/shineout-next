@@ -1,3 +1,11 @@
+## 3.5.0
+2024-11-11
+
+### 🆕 Feature
+- `Cascader` 新增 `renderCompressed` 属性，自定义渲染折叠展示内容([#751](https://github.com/sheinsight/shineout-next/pull/751))
+- `Cascader` 新增 `virtual` 属性，支持虚拟列表([#746](https://github.com/sheinsight/shineout-next/pull/746))
+
+
 ## 3.4.5
 2024-10-31
 

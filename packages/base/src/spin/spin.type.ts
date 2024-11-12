@@ -73,7 +73,7 @@ export interface BaseSpinProps {
   itemClass?: string;
   itemSize?: number | string;
   className?: string;
-  uniqueClassName?: string
+  uniqueClassName?: string;
 }
 
 export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {
@@ -121,4 +121,10 @@ export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {
    * @default false
    */
   loading?: boolean;
+  /**
+   * @en
+   * @cn 内部属性，是否忽略全局配置
+   * @default false
+   */
+  ignoreConfig?: boolean;
 }

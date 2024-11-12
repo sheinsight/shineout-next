@@ -103,7 +103,7 @@ export function getParent(el: HTMLElement | null | Element, target?: string | HT
   return null;
 }
 
-export function getClosestScrollContainer(element: HTMLElement | null) {
+export function getClosestScrollContainer(element: HTMLElement | null): HTMLElement | null {
   if (!element) {
     return null;
   }
@@ -133,7 +133,7 @@ export function getClosestScrollContainer(element: HTMLElement | null) {
   }
 
   // 如果没有找到可滚动的祖先，返回 body 或 documentElement
-  return document.scrollingElement || document.documentElement;
+  return (document.scrollingElement || document.documentElement) as HTMLElement;
 }
 
 export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {

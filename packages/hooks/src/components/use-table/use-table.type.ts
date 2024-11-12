@@ -33,6 +33,21 @@ export interface BaseTableProps<Item> {
    * @cn 树形数据展开行，受控
    */
   treeExpandKeys?: KeygenResult[];
+
+  /**
+   * @en Tree Table expand icon
+   * @cn 树形数据展开图标，函数返回null时隐藏展开图标
+   * @version 3.5.0
+   */
+  treeExpandIcon?: (data: Item, index: number, isExpanded: boolean) => React.ReactNode;
+
+  /**
+   * @en Tree Table data loader
+   * @cn 树形数据加载函数
+   * @version 3.5.0
+   */
+  loader?: (data: Item, index: number) => Promise<void>;
+
   /**
    * @en data
    * @cn 数据
@@ -65,6 +80,14 @@ export interface BaseTableProps<Item> {
     orders: SortItem[],
     sorter: string,
   ) => void;
+
+  /**
+   * @en sort directions
+   * @cn 排序方向
+   * @default ['asc', 'desc']
+   * @version 3.5.0
+   */
+  sortDirections?: ('asc' | 'desc')[];
 
   /**
    * @en Set columnResizable to true to make all columns scalable
@@ -227,6 +250,14 @@ export interface TableColumnItem<DataItem> {
       ) => ((prevRowData: DataItem, nextRowData: DataItem) => number) | void)
     | string
     | TableColumnSorter;
+
+  /**
+   * @en sort directions
+   * @cn 排序方向
+   * @default ['asc', 'desc']
+   * @version 3.5.0
+   */
+  sortDirections?: ('asc' | 'desc')[];
 
   /**
    * @en The content of the header

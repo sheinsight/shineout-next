@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect, RefCallback, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -34,6 +34,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     compressedBound,
     compressedClassName,
     renderUnmatched,
+    renderCompressed,
     renderResult: renderResultProp,
     renderResultContent: renderResultContentProp,
     allowOnFilter,
@@ -89,7 +90,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const isEmptyResult = () => {
     if (!value) return true;
-
     if (isArray(value) && value.length <= 0) return true;
     const datas = getDataByValues(value);
 
@@ -102,7 +102,17 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return !hasValue;
   };
 
-  const empty = isEmptyResult();
+  const empty = useMemo(() => {
+    return isEmptyResult();
+  }, [props.value]);
+
+  const basePlaceholder = useMemo(() => {
+    return (
+      <span className={classNames(styles.placeholder, styles.ellipsis)}>
+        <span>{placeholder}</span>
+      </span>
+    );
+  }, [placeholder]);
 
   const isCompressedBound = () => {
     return compressedBound && isNumber(compressedBound) && compressedBound >= 1;
@@ -127,6 +137,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!multiple && valueProp && valueProp !== 0) {
       const result = getDataByValues(value);
       _placeholder = renderResultContent(result[0]);
+      if (_placeholder === undefined) {
+        return basePlaceholder;
+      }
     }
     return (
       <React.Fragment key='input'>
@@ -227,11 +240,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     if (!placeholder) return renderNbsp();
 
-    return (
-      <span className={classNames(styles.placeholder, styles.ellipsis)}>
-        <span>{placeholder}</span>
-      </span>
-    );
+    return basePlaceholder;
   };
 
   const renderSingleResult = () => {
@@ -246,14 +255,15 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
-  const renderMultipleResult = () => {
-    if (isEmptyResult()) return renderNbsp();
+  const renderMultipleResult = useMemo(() => {
+    if (isEmptyResult()) return { results: renderNbsp(), datas: undefined };
     // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
     let nextValue = getValueArr(value);
     if (separator && util.isString(valueProp)) {
       nextValue = valueProp.split(separator);
     }
     const datas = getDataByValues(nextValue as Value);
+
     const result = datas.map((d, i) => {
       const v = nextValue[i];
       if (renderResultContentProp && i !== datas.length - 1) {
@@ -266,21 +276,24 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       }
       return renderResultItem(d, i, datas, v);
     });
-    return result;
-  };
+    return { results: result, datas };
+  }, [props.value, props.data]);
 
-  const result = renderMultipleResult() as React.ReactNode[];
+  const result = renderMultipleResult.results as React.ReactNode[];
   const moreNumber = getCompressedBound();
   const renderMultipleResultMore = (
     <More
       keygen={keygen}
       key='more'
+      onRemove={onRemove}
       classes={props.classes}
       jssStyle={props.jssStyle}
       data={result}
+      datas={renderMultipleResult.datas}
       size={size}
       more={moreNumber}
       compressed={compressed}
+      renderCompressed={renderCompressed}
       compressedClassName={compressedClassName}
       showNum={moreNumber}
     ></More>
@@ -292,7 +305,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     let result = [];
     if (multiple) {
-      result.push(compressed ? renderMultipleResultMore : renderMultipleResult());
+      result.push(compressed ? renderMultipleResultMore : renderMultipleResult.results);
       if (showInput) {
         result.push(renderInput());
       } else if (result.length === 0) {
@@ -327,12 +340,33 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
 
     // 单选场景下，焦点时自动选中input文本
-    if(!multiple && focus && showInput && mounted.current){
-        const result = getDataByValues(value);
-        if(result.length > 0){
-          const inputTmpText = renderResultContent(result[0]);
-          inputTmpText && props.setInputText(inputTmpText);
+    if (!multiple && focus && showInput && mounted.current) {
+      const result = getDataByValues(value);
+      if (result.length > 0) {
+        const inputTmpText = renderResultContent(result[0]);
+        if (inputTmpText) {
+          // 提取result文本
+          const getTextFromReactElement = (element: React.ReactElement): string => {
+            if (!element) return '';
+            // 如果是字符串或数字，直接返回
+            if (typeof element === 'string' || typeof element === 'number') return String(element);
+            // 如果是 React Element，处理的是renderResult返回的是React Element的场景
+            if (React.isValidElement(element)) {
+              const children = (element.props as { children?: React.ReactNode })?.children;
+              if (Array.isArray(children)) {
+                return children.map((child) => getTextFromReactElement(child)).join('');
+              }
+              return React.isValidElement(children)
+                ? getTextFromReactElement(children)
+                : String(children || '');
+            }
+            return '';
+          };
+
+          const textContent = getTextFromReactElement(inputTmpText);
+          props.setInputText(textContent);
         }
+      }
 
       setTimeout(() => {
         inputRef?.current?.select();
