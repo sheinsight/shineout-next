@@ -447,7 +447,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       size,
       reserveAble,
     }),
-    [labelWidth,labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size, reserveAble],
+    [
+      labelWidth,
+      labelAlign,
+      labelVerticalAlign,
+      keepErrorHeight,
+      inline,
+      disabled,
+      size,
+      reserveAble,
+    ],
   );
 
   const updateValue = () => {
