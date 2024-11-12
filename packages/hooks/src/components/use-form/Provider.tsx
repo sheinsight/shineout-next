@@ -5,7 +5,7 @@ import FieldSetContext from './use-form-fieldset/fieldset-context';
 import * as React from 'react';
 import { ProviderProps } from './use-form.type';
 
-const topPath = { path: '' };
+const topPath = { path: '', validateFieldSet: () => {} };
 export const Provider = (props: ProviderProps) => {
   const { children, formConfig, formValue, formFunc } = props;
   return (
