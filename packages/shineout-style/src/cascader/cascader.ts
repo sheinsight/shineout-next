@@ -150,6 +150,11 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       },
     },
   },
+  virtual: {
+    '& $filterList': {
+      overflow: 'hidden',
+    },
+  },
   wrapperDisabled: {
     ...wrapperDisabled,
     '& $icon': {
@@ -388,6 +393,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   filterList: {
     display: 'block',
+    overflow: 'auto',
     '& $list': {
       width: '100%',
     },

@@ -63,6 +63,7 @@ export interface CascaderClasses {
   inputMirror: string;
   inputPlaceholder: string;
   moreWrapper: string;
+  virtual: string;
   virtualList: string;
   option: string;
   filterOption: string;
