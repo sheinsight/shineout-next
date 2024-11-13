@@ -162,6 +162,8 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
                   }
                 }
               });
+            } else {
+              formFunc?.setError(name, e);
             }
             onError?.(e);
             bindValidate();
