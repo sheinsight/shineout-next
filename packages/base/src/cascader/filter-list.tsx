@@ -1,6 +1,9 @@
 import classNames from 'classnames';
+import { useRef } from 'react';
 import { KeygenResult, util } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
+import { VirtualScrollList } from '../virtual-scroll';
+import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
 import { FilterListProps } from './filter-list.type';
 import FilterNode from './filter-node';
 import Spin from '../spin';
@@ -14,10 +17,14 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     datum,
     loading,
     childrenKey,
+    keygen,
     wideMatch,
+    virtual,
+    height,
+    size,
     shouldFinal,
     filterFunc,
-    renderItem,
+    renderItem: renderItemProp,
     renderOptionList,
     setInputText,
     setFilterText,
@@ -25,6 +32,22 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     onPathChange,
   } = props;
   const styles = jssStyle?.cascader?.() as CascaderClasses;
+
+  const virtualRef = useRef<VirtualListType>({
+    scrollByStep: undefined,
+    getCurrentIndex: undefined,
+    getHoverIndex: undefined,
+  });
+
+  const getLineHeight = () => {
+    // if (lineHeightProp && lineHeightProp !== 'auto') return lineHeightProp;
+    if (size === 'small') return 26;
+    if (size === 'default') return 34;
+    if (size === 'large') return 42;
+    return 34;
+  };
+
+  const lineHeight = getLineHeight();
 
   const getKey = (path: DataItem[]) => {
     return path.map((d) => datum.getKey(d)).join('-');
@@ -34,35 +57,74 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     return list.filter((arr) => arr.some((item) => filterFunc?.(item)));
   };
 
+  const renderItem = (item: DataItem[]) => {
+    return (
+      <FilterNode
+        jssStyle={jssStyle}
+        key={getKey(item)}
+        data={item}
+        datum={datum}
+        shouldFinal={shouldFinal}
+        renderItem={renderItemProp}
+        setInputText={setInputText}
+        setFilterText={setFilterText}
+        onChange={onChange}
+        onPathChange={onPathChange}
+      />
+    );
+  };
+
   const renderLoading = () => {
     return <Spin jssStyle={jssStyle}></Spin>;
   };
 
-  const renderList = () => {
+  const renderVirtualList = () => {
     let list = util.getFlattenTree(data, childrenKey, wideMatch);
     if (wideMatch) {
       list = getWideMatch(list);
     }
+    return (
+      <VirtualScrollList
+        virtualRef={virtualRef}
+        data={list as DataItem[]}
+        keygen={keygen}
+        rowsInView={20}
+        height={height}
+        lineHeight={lineHeight}
+        renderItem={renderItem}
+      ></VirtualScrollList>
+    );
+  };
+
+  const renderSimpleList = () => {
+    let list = util.getFlattenTree(data, childrenKey, wideMatch);
+    if (wideMatch) {
+      list = getWideMatch(list);
+    }
+    return list.map((item) => {
+      return (
+        <FilterNode
+          jssStyle={jssStyle}
+          key={getKey(item)}
+          data={item}
+          datum={datum}
+          shouldFinal={shouldFinal}
+          renderItem={renderItemProp}
+          setInputText={setInputText}
+          setFilterText={setFilterText}
+          onChange={onChange}
+          onPathChange={onPathChange}
+        />
+      );
+    });
+  };
+
+  const renderList = () => {
     if (loading) return renderLoading();
 
     return (
       <div className={classNames(styles.list)}>
-        {list.map((item) => {
-          return (
-            <FilterNode
-              jssStyle={jssStyle}
-              key={getKey(item)}
-              data={item}
-              datum={datum}
-              shouldFinal={shouldFinal}
-              renderItem={renderItem}
-              setInputText={setInputText}
-              setFilterText={setFilterText}
-              onChange={onChange}
-              onPathChange={onPathChange}
-            />
-          );
-        })}
+        {virtual ? renderVirtualList() : renderSimpleList()}
       </div>
     );
   };
