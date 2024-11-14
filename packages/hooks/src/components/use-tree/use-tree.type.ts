@@ -125,7 +125,7 @@ export interface TreeDatum<DataItem> {
   getValue: () => KeygenResult[];
   getChecked: (id: KeygenResult) => boolean | 'indeterminate';
   getKey: (item: DataItem, id?: KeygenResult, index?: number) => KeygenResult;
-  getDataByValues: (values: KeygenResult[] | KeygenResult) => DataItem | DataItem[] | null;
+  getDataByValues: (values: KeygenResult[] | KeygenResult) => DataItem | (DataItem | null)[] | null;
   setValue: (value?: KeygenResult[]) => void;
   setData: (data?: DataItem[]) => void;
   isDisabled: (id: KeygenResult) => boolean;
@@ -136,7 +136,7 @@ export interface TreeDatum<DataItem> {
   ) => { active: boolean; expanded: boolean };
   getDataById: (
     id: KeygenResult,
-  ) => DataItem | { IS_NOT_MATCHED_VALUE: boolean; value: KeygenResult } | null;
+  ) => DataItem | { IS_NOT_MATCHED_VALUE: boolean; value: KeygenResult | null } | null;
   bindUpdate: (id: KeygenResult, update: () => void) => void;
   unBindUpdate: (id: KeygenResult) => void;
   isUnMatched: (data: any) => boolean;
