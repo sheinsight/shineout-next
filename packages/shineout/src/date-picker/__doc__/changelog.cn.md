@@ -1,9 +1,9 @@
-## 3.5.1-beta.5
-2024-11-13
+## 3.5.1
+2024-11-14
 
 ### 🐞 BugFix
 
-- 修复 `DatePicker` 组件 `align` 属性失效的问题 ([#799](https://github.com/sheinsight/shineout-next/pull/799))
+- 修复 `DatePicker` 组件 `align` 属性失效的问题(Regression: since v3.4.1) ([#799](https://github.com/sheinsight/shineout-next/pull/799))
 
 ## 3.4.6
 2024-11-05
