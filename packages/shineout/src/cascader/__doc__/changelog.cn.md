@@ -1,3 +1,9 @@
+## 3.5.1-beta.6
+2024-11-14
+
+### 🐞 BugFix
+- 修复 `Cascader` 在开启 `unmatch` 情况下指定 renderItem 为 string 类型时渲染异常的问题 ([#800](https://github.com/sheinsight/shineout-next/pull/800))
+
 ## 3.5.1-beta.4
 2024-11-13
 
