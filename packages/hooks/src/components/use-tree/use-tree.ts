@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
 import { useInputAble } from '../../common/use-input-able';
 import {
@@ -64,6 +64,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     isControlled,
     onExpand: onExpandProp,
   } = props;
+
+  const [inited, setInited] = useState(false);
 
   const { value: expanded, onChange: onExpand } = useInputAble({
     value: expandedProp,
@@ -192,13 +194,17 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (oroginData) {
       return oroginData;
     }
-    if (!unmatch) return null;
-    return { IS_NOT_MATCHED_VALUE: true, value: id };
+    // if (!unmatch) return null;
+    // if (!unmatch) return { IS_NOT_MATCHED_VALUE: true, value: null};
+    // return { IS_NOT_MATCHED_VALUE: true, value: !unmatch ? null : id };
+    return { IS_NOT_MATCHED_VALUE: true, value: !unmatch ? null : id };
   };
 
-  const getDataByValues = (values: KeygenResult[] | KeygenResult): DataItem | DataItem[] | null => {
+  const getDataByValues = (
+    values: KeygenResult[] | KeygenResult,
+  ): DataItem | (DataItem | null)[] | null => {
     if (isArray(values)) {
-      return values.map(getDataById) as DataItem[] | null;
+      return values.map(getDataById) as (DataItem | null)[];
     }
 
     return getDataById(values) as DataItem | null;
@@ -240,7 +246,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         console.error(`There is already a key "${id}" exists. The key must be unique.`);
         continue;
       }
-
       // 制作 data mapping
       context.dataMap.set(id, item);
 
@@ -451,6 +456,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     setValue(value);
   }, [value]);
 
+  useEffect(() => {
+    setInited(true);
+  }, []);
+
   const datum: TreeDatum<DataItem> = useLatestObj({
     get,
     set,
@@ -476,6 +485,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   return {
+    inited,
     datum: props.datum || datum,
     expanded,
     onExpand,
