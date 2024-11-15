@@ -1,8 +1,8 @@
 /**
  * cn - 尺寸
- *    -- 有 small, default, large 三种尺寸，默认为 small
+ *    -- 有 small, default, large 三种尺寸，默认为 default
  * en - Size
- *    -- There are three sizes: small, default, and large. The default value is small
+ *    -- There are three sizes: small, default, and large. The default value is default
  */
 import React, { useState } from 'react';
 import { TreeSelect, TYPE } from 'shineout';
