@@ -14,7 +14,7 @@ import {
 } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { SelectPropsBase, OptionListRefType } from './select.type';
-import { AbsoluteList } from '../absolute-list';
+import absoluteList, { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
 import Spin from '../spin';
@@ -145,6 +145,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     filterDelay: props.filterDelay,
   });
 
+  const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState<string | Value>('');
+
   const onCollapse = usePersistFn((collapse: boolean) => {
     onCollapseProp?.(collapse);
 
@@ -202,6 +204,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       inputRef?.current?.select();
     }
     onChange?.(value, dataItem, checked);
+
+    if (props.absolute === undefined) return;
+
+    setAbsoluteListUpdateKey(value);
   });
 
   const { datum, value } = useSelect<DataItem, Value>({
@@ -627,7 +633,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return <List {...listProps}></List>;
   };
 
-  const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState('');
   // 当树形数据展开时，需要更新 AbsoluteList 的位置
   const onExpandWrap = usePersistFn((value: KeygenResult[]) => {
     onExpand?.(value);
