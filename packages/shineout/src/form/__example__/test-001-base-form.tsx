@@ -4,9 +4,10 @@
  * en - Test Form
  *    -- Test Form
  */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, Input } from 'shineout';
 import { proxy, useSnapshot } from 'valtio';
+import { usePersistFn } from '@sheinx/hooks';
 
 const state = {
   form: {
@@ -34,11 +35,16 @@ const dispatch = {
   },
 };
 
-const ComponentB1 = () => {
+const ComponentB1 = (props) => {
+  const { onAppend } = props;
   useEffect(() => {
-    dispatch.append({
-      'b-1': 3,
-      'b-2': 4,
+    // dispatch.append({
+    //   'b-1': 3,
+    //   'b-2': 4,
+    // });
+    onAppend({
+      'b-1': 1,
+      'b-2': 2,
     });
     console.log('B1 mounted');
   }, []);
@@ -80,26 +86,31 @@ const ComponentB2 = () => {
   );
 };
 
-const ComponentB = () => {
+const ComponentB = (props) => {
   return (
     <div>
-      <ComponentB1></ComponentB1>
-      <ComponentB2></ComponentB2>
+      <ComponentB1 {...props}></ComponentB1>
+      <ComponentB2 {...props}></ComponentB2>
     </div>
   );
 };
 
-const ComponentA = () => {
+const ComponentA = (props) => {
   return (
     <Form.Item label='Component A'>
       <Form.Field name='a'>
-        <ComponentB></ComponentB>
+        <ComponentB {...props}></ComponentB>
       </Form.Field>
     </Form.Item>
   );
 };
 
 export default () => {
+  const [value, setValue] = useState({
+    a: {
+      product_name_attribute_list: [],
+    },
+  });
   const state = useSnapshot(proxyState);
 
   const handleSubmit = (v) => {
@@ -107,19 +118,26 @@ export default () => {
   };
 
   const handleChange = (v) => {
-    dispatch.setForm(v);
+    setValue(v);
   };
 
   const handleReset = () => {};
+
+  const handleAppend = usePersistFn((item: any) => {
+    const nextForm = {
+      a: {
+        ...value.a,
+        product_name_attribute_list: [...value.a.product_name_attribute_list],
+      },
+    };
+    nextForm.a.product_name_attribute_list.push(item);
+    setValue(nextForm);
+  });
+
   return (
     <div>
-      <Form
-        value={state.form}
-        onChange={handleChange}
-        onReset={handleReset}
-        onSubmit={handleSubmit}
-      >
-        <ComponentA></ComponentA>
+      <Form value={value} onChange={handleChange} onReset={handleReset} onSubmit={handleSubmit}>
+        <ComponentA onAppend={handleAppend}></ComponentA>
 
         <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
           <Form.Submit>Submit</Form.Submit>
