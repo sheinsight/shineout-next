@@ -110,6 +110,7 @@ export default createUseStyles(
       margin: 0,
       fontSize: 14,
       padding: '0 16px',
+      paddingBottom: 76,
       boxSizing: 'border-box',
       'body.rtl &': {
         float: 'right',
