@@ -54,8 +54,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     size,
     reserveAble,
     scrollParent,
+    value,
   } = props;
-
   const deepSetOptions = {
     removeUndefined,
     forceSet: true,
@@ -365,6 +365,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         onChange((v) => {
           deepSet(v, n, df, deepSetOptions);
         });
+        // setTimeout(() => {
+        //   onChange((v) => {
+        //     deepSet(v, n, df, deepSetOptions);
+        //   });
+        // });
       }
       update(n);
     },

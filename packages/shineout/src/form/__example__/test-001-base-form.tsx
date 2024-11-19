@@ -6,8 +6,7 @@
  */
 import { useEffect } from 'react';
 import { Form, Input } from 'shineout';
-import { proxy } from 'valtio';
-import { useSnapshot } from 'valtio';
+import { proxy, useSnapshot } from 'valtio';
 
 const state = {
   form: {
@@ -31,30 +30,62 @@ const dispatch = {
     };
     nextForm.a.product_name_attribute_list.push(item);
     proxyState.form = nextForm;
-    console.log('nextForm', nextForm);
+    console.log('append');
   },
 };
 
-const ComponentB = () => {
+const ComponentB1 = () => {
   useEffect(() => {
-    console.log('B mounted');
     dispatch.append({
-      'b-1': 1,
-      'b-2': 2,
+      'b-1': 3,
+      'b-2': 4,
     });
+    console.log('B1 mounted');
   }, []);
 
   return (
-    <Form.FieldSet name='a.product_name_attribute_list'>
-      {({}) => {
-        return (
-          <div>
-            <Input name='b-1'></Input>
-            <Input name='b-2'></Input>
-          </div>
-        );
-      }}
-    </Form.FieldSet>
+    <Form.Item label='B1'>
+      <Form.FieldSet name='a.product_name_attribute_list'>
+        {({}) => {
+          return (
+            <div>
+              <Input name='b-1'></Input>
+              <Input name='b-2'></Input>
+            </div>
+          );
+        }}
+      </Form.FieldSet>
+    </Form.Item>
+  );
+};
+
+const ComponentB2 = () => {
+  useEffect(() => {
+    console.log('B2 mounted');
+  }, []);
+
+  return (
+    <Form.Item label='B2'>
+      <Form.FieldSet name='a.spec_info_list' defaultValue={[{ 'b-1': 3, 'b-2': 4 }]}>
+        {({}) => {
+          return (
+            <div>
+              <Input name='b-1'></Input>
+              <Input name='b-2'></Input>
+            </div>
+          );
+        }}
+      </Form.FieldSet>
+    </Form.Item>
+  );
+};
+
+const ComponentB = () => {
+  return (
+    <div>
+      <ComponentB1></ComponentB1>
+      <ComponentB2></ComponentB2>
+    </div>
   );
 };
 
@@ -80,14 +111,6 @@ export default () => {
   };
 
   const handleReset = () => {};
-
-  useEffect(() => {
-    // dispatch.append({
-    //   'b-1': 1,
-    //   'b-2': 2,
-    // });
-  }, []);
-
   return (
     <div>
       <Form
@@ -97,9 +120,6 @@ export default () => {
         onSubmit={handleSubmit}
       >
         <ComponentA></ComponentA>
-        <Form.Item label='C'>
-          <Input name='c'></Input>
-        </Form.Item>
 
         <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
           <Form.Submit>Submit</Form.Submit>
