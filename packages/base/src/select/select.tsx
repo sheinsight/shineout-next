@@ -14,7 +14,7 @@ import {
 } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { SelectPropsBase, OptionListRefType } from './select.type';
-import absoluteList, { AbsoluteList } from '../absolute-list';
+import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
 import Spin from '../spin';
@@ -145,7 +145,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     filterDelay: props.filterDelay,
   });
 
-  const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState<string | Value>('');
+  const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState('');
 
   const onCollapse = usePersistFn((collapse: boolean) => {
     onCollapseProp?.(collapse);
@@ -206,8 +206,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onChange?.(value, dataItem, checked);
 
     if (props.absolute === undefined) return;
-
-    setAbsoluteListUpdateKey(value);
+    
+    setAbsoluteListUpdateKey(value as string);
   });
 
   const { datum, value } = useSelect<DataItem, Value>({
