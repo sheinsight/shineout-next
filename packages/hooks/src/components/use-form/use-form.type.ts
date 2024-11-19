@@ -4,14 +4,40 @@ import { AddNoProps, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule/rule.type';
 import { FormError } from '../../utils';
 
+export type KeyType = string | number | symbol;
+
+export interface ValidationError<T> {
+  message: string;
+  values: T;
+  errorFields: {
+    name: string;
+    errors: string[];
+  }[];
+}
+
+export interface ValidateFieldsFn<
+FormValue = any,
+FieldKey extends KeyType = keyof FormValue,
+FieldsType = FieldKey | FieldKey[]
+> {
+/**
+ * 验证所有表单的值，并且返回报错和表单数据
+ * @param fields 需要校验的表单字段
+ */
+(fields?: FieldsType, config?: ValidateFnConfig): Promise<Partial<FormValue>>;
+}
+
+export type ValidateFnConfig = {
+  type?: 'forcePass',
+  ignoreBind?: boolean,
+}
+
 export type ValidateFn = (
   name: string,
   value: any,
   formData: ObjectType,
-  config?: {
-    ignoreBind?: boolean;
-  },
-) => Promise<boolean | FormError>
+  config?: ValidateFnConfig,
+) => Promise<true | FormError>
 
 export type UpdateFn = (
   formValue: ObjectType,
@@ -113,7 +139,7 @@ export interface FormFunc {
   setError: (name: string, e: Error | undefined) => void;
   getErrors: () => ObjectType<Error | undefined>;
   clearValidate: (names?: string[]) => void;
-  validateFields: (fields?: string | string[], config?: { ignoreBind?: boolean }) => Promise<true>;
+  validateFields: ValidateFieldsFn;
   validateFieldset: (name: string) => void;
   insertError: (name: string, index: number, error?: Error) => void;
   spliceError: (name: string, index: number) => void;
@@ -187,7 +213,7 @@ export type UseFormProps<T> = BaseFormProps<T>;
 
 export type FormContext = {
   defaultValues: ObjectType;
-  validateMap: ObjectType<Set<(name: string, v: any, formValue: ObjectType, config?: { ignoreBind?: boolean }) => Promise<boolean | FormError>>>;
+  validateMap: ObjectType<Set<(name: string, v: any, formValue: ObjectType, config?: { ignoreBind?: boolean }) => Promise<true | FormError>>>;
   // 删除字段队列
   removeArr: Set<string>;
   // 防抖间隔

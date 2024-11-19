@@ -3,22 +3,36 @@ import React from 'react';
 import { BaseFormProps, ObjectType } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 
+export type KeyType = string | number | symbol;
 export interface FormClasses {
   wrapper: string;
   wrapperInline: string;
 }
 
-export interface FormRef<Value> {
+export interface FormValidateFn<
+  FormValue,
+  FieldKey extends KeyType = keyof FormValue,
+  FieldsType = FieldKey | FieldKey[]
+> {
+  /**
+   * 验证所有表单的值，并且返回报错和表单数据
+   * @param fields 需要校验的表单字段
+   */
+  (fields?: FieldsType): Promise<Partial<FormValue>>;
+}
+
+
+export interface FormRef<FormValue> {
   /**
    * @en return form value
    * @cn 返回表单的值
    */
-  getValue: (name?: string) => any | Value;
+  getValue: (name?: string) => any | FormValue;
   /**
    * @en Validate form
    * @cn 校验表单
    */
-  validate: () => Promise<any>;
+  validate: FormValidateFn<FormValue>;
   /**
    * @en Validation form fields
    * @cn 校验表单指定字段

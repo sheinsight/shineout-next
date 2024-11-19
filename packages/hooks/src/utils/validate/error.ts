@@ -1,8 +1,12 @@
 export class FormError extends Error {
+  fieldName: string = '';
   constructor(message: string, props?: any) {
     super(message);
     this.name = 'FormError';
     this.props = props;
+    if (props.name) {
+      this.fieldName = props.name;
+    }
   }
   props: any;
 }

@@ -36,8 +36,12 @@ const App: React.FC = () => {
         <Button onClick={() => form.current?.submit()}>submit</Button>
         <Button
           onClick={() =>
-            form.current?.validate().catch((e) => {
-              console.error(e);
+            form.current?.validate()
+            .then((values) => {
+              console.log('validate success', values);
+            })
+            .catch((errorInfo) => {
+              console.log('validate failed errorInfo: >>', errorInfo)
             })
           }
         >

@@ -31,6 +31,8 @@ import {
   UseFormSlotProps,
   ValidateFn,
   UpdateFn,
+  ValidateFnConfig,
+  ValidationError,
 } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule';
@@ -62,7 +64,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const preValue = usePrevious(props.value);
 
-  const formRef = React.useRef<HTMLFormElement>();
+  const formDomRef = React.useRef<HTMLFormElement>();
 
   const { current: context } = React.useRef<FormContext>({
     defaultValues: {},
@@ -126,7 +128,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       const selector = `[${getDataAttributeName('status')}="error"]`;
 
-      const el = formRef.current?.querySelector(selector);
+      const el = formDomRef.current?.querySelector(selector);
       if (el) {
         el.scrollIntoView();
         const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
@@ -150,31 +152,62 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     props.onChange?.(context.value as T);
   });
 
-  const validateFields = usePersistFn((fields?: string | string[], config = {}): Promise<true> => {
-    return new Promise((resolve, reject) => {
-      const files2 = fields
-        ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
-        : Object.keys(context.validateMap);
-      const validates = files2.map((key) => {
-        const validateField = context.validateMap[key];
-        return Array.from(validateField).map((validate) =>
-          validate(key, deepGet(context.value, key), context.value, config),
-        );
-      });
-      Promise.all(validates.flat())
-        .then((results) => {
-          const error = results.find((n) => n !== true);
-          if (error !== undefined) {
-            reject(error);
-          } else {
-            resolve(true);
-          }
-        })
-        .catch((e: Error) => {
-          reject(wrapFormError(e));
-        });
-    });
+  const getValue = usePersistFn((name?: string) => {
+    if (name) {
+      return deepGet(context.value, name);
+    }
+    return context.value;
   });
+
+  const validateFields = usePersistFn(
+    (fields?: string | string[], config: ValidateFnConfig = {}): Promise<T> => {
+      return new Promise((resolve, reject: (reason: ValidationError<T>) => void) => {
+        const files2 = fields
+          ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
+          : Object.keys(context.validateMap);
+        const validates = files2.map((key) => {
+          const validateField = context.validateMap[key];
+          return Array.from(validateField).map((validate) =>
+            validate(key, deepGet(context.value, key), context.value, config),
+          );
+        });
+
+        let validatorValue = context.value;
+        if (fields) {
+          const fieldArray = isArray(fields) ? fields : [fields];
+          validatorValue = fieldArray.reduce(
+            (prev, cur) => ({
+              ...prev,
+              [cur]: getValue(cur),
+            }),
+            {},
+          );
+        }
+
+        Promise.all(validates.flat())
+          .then((results) => {
+            const errors = results.filter((n) => n !== true);
+            if (errors.length > 0) {
+              const errorFields = errors.map((error) => ({
+                name: error.fieldName,
+                errors: [error.message],
+              }));
+              const firstError = errors[0];
+              reject({
+                message: firstError.message,
+                values: validatorValue as T,
+                errorFields,
+              });
+            } else {
+              resolve(validatorValue as T);
+            }
+          })
+          .catch((e: Error) => {
+            reject(wrapFormError(e) as unknown as ValidationError<T>);
+          });
+      });
+    },
+  );
 
   const remove = () => {
     if (!context.removeArr.size) return;
@@ -194,13 +227,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }
     context.removeTimer = setTimeout(remove);
   };
-
-  const getValue = usePersistFn((name?: string) => {
-    if (name) {
-      return deepGet(context.value, name);
-    }
-    return context.value;
-  });
 
   const setValue = usePersistFn(
     (
@@ -333,7 +359,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     return {
       ...externalProps,
       ...externalEventHandlers,
-      ref: formRef,
+      ref: formDomRef,
       disabled: !!disabled,
       onSubmit: handleSubmit(externalEventHandlers),
       onReset: handleReset(externalEventHandlers),
@@ -389,6 +415,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       }
     },
     combineRules<ItemValue>(name: string, propRules: FormItemRule<ItemValue>) {
+      // console.log('======================')
+      // console.log('combineRules name, propRules: >>', name, propRules)
+      // console.log('======================')
       let newRules: FormItemRule<ItemValue> = [];
       if (isObject(rules) && name) {
         newRules = (deepGet(rules, name) || []) as FormItemRule<ItemValue>;
