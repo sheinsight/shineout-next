@@ -110,7 +110,7 @@ export default createUseStyles(
       margin: 0,
       fontSize: 14,
       padding: '0 16px',
-      paddingBottom: 76,
+      paddingBottom: 16,
       boxSizing: 'border-box',
       'body.rtl &': {
         float: 'right',
@@ -195,7 +195,6 @@ export default createUseStyles(
     },
 
     anchor: {
-      paddingTop: 60,
       position: 'fixed',
       right: 16,
       top: 305,

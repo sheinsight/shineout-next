@@ -16,7 +16,6 @@ export default createUseStyles(
       borderBottom: '1px solid rgba(232, 235, 240, 1)',
       overflow: 'hidden',
       transition: 'all 0.15s ease',
-      marginTop: 60,
       'body.rtl &': {
         right: 260,
         left: 0,
