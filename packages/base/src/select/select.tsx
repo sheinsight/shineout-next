@@ -192,6 +192,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     position: positionProp,
   });
 
+  const preventDefault = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!createdData) return;
+    if (focused && e.target !== inputRef.current) {
+      e.preventDefault();
+    }
+  };
+
   const handleSelectChange = usePersistFn((value: Value, dataItem: any, checked?: boolean) => {
     if (createdData || props.emptyAfterSelect) {
       onFilter?.('');
@@ -206,7 +213,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onChange?.(value, dataItem, checked);
 
     if (props.absolute === undefined) return;
-    
+
     setAbsoluteListUpdateKey(value as string);
   });
 
@@ -735,6 +742,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       onFocus={handleFocus}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onMouseDown={preventDefault}
     >
       {tipNode}
       {renderResult()}
