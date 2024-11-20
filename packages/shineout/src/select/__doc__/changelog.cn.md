@@ -1,3 +1,10 @@
+## 3.5.2-beta.2
+2024-11-19
+
+### 🐞 BugFix
+
+- 修复 `Select` 开启创建选项后无法选中创建内容的问题(Regression: since v3.4.4) ([#807](https://github.com/sheinsight/shineout-next/pull/807))
+
 ## 3.5.2-beta.1
 2024-11-19
 
