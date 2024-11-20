@@ -8,7 +8,7 @@ export interface FormRef<Value> {
    * @en Validate form
    * @cn 校验表单
    */
-  validate: () => Promise<any>;
+  validate: (fields?: string | string[]) => Promise<Value>;
   /**
    * @en Validation form fields
    * @cn 校验表单指定字段

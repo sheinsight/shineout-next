@@ -162,10 +162,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const validateFields = usePersistFn(
     (fields?: string | string[], config: ValidateFnConfig = {}): Promise<T> => {
       return new Promise((resolve, reject: (reason: ValidationError<T>) => void) => {
-        const files2 = fields
+        const finalFields = fields
           ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
           : Object.keys(context.validateMap);
-        const validates = files2.map((key) => {
+        const validates = finalFields.map((key) => {
           const validateField = context.validateMap[key];
           return Array.from(validateField).map((validate) =>
             validate(key, deepGet(context.value, key), context.value, config),
@@ -188,10 +188,15 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           .then((results) => {
             const errors = results.filter((n) => n !== true);
             if (errors.length > 0) {
-              const errorFields = errors.map((error) => ({
-                name: error.fieldName,
-                errors: [error.message],
-              }));
+              const errorFields = []
+              for (const key in context.errors) {
+                if (context.errors[key]) {
+                  errorFields.push({
+                    name: key,
+                    errors: [context.errors[key].message],
+                  });
+                }
+              }
               const firstError = errors[0];
               reject({
                 message: firstError.message,
