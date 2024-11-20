@@ -145,6 +145,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     filterDelay: props.filterDelay,
   });
 
+  const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState('');
+
   const onCollapse = usePersistFn((collapse: boolean) => {
     onCollapseProp?.(collapse);
 
@@ -190,6 +192,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     position: positionProp,
   });
 
+  const preventDefault = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!createdData) return;
+    if (focused && e.target !== inputRef.current) {
+      e.preventDefault();
+    }
+  };
+
   const handleSelectChange = usePersistFn((value: Value, dataItem: any, checked?: boolean) => {
     if (createdData || props.emptyAfterSelect) {
       onFilter?.('');
@@ -202,6 +211,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       inputRef?.current?.select();
     }
     onChange?.(value, dataItem, checked);
+
+    if (props.absolute === undefined) return;
+
+    setAbsoluteListUpdateKey(value as string);
   });
 
   const { datum, value } = useSelect<DataItem, Value>({
@@ -627,7 +640,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return <List {...listProps}></List>;
   };
 
-  const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState('');
   // 当树形数据展开时，需要更新 AbsoluteList 的位置
   const onExpandWrap = usePersistFn((value: KeygenResult[]) => {
     onExpand?.(value);
@@ -730,6 +742,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       onFocus={handleFocus}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onMouseDown={preventDefault}
     >
       {tipNode}
       {renderResult()}
