@@ -1,3 +1,10 @@
+## 3.5.2-beta.4
+2024-11-19
+
+### 🐞 BugFix
+
+- 修复 `Select` 默认事件引起的点击异常问题(Regression: since v3.4.4) ([#810](https://github.com/sheinsight/shineout-next/pull/810))
+
 ## 3.5.2-beta.2
 2024-11-19
 
