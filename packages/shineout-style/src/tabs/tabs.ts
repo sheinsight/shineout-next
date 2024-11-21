@@ -59,6 +59,7 @@ const getCardStyle = () => {
         '& $cardHr': {
           '&:after': {
             right: 0,
+            left: 'auto',
             width: '1px',
             height: '100%',
           },
