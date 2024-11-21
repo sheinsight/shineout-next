@@ -193,7 +193,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   });
 
   const preventDefault = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!createdData) return;
     if (focused && e.target !== inputRef.current) {
       e.preventDefault();
     }
