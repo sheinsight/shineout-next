@@ -55,7 +55,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     reserveAble,
     scrollParent,
   } = props;
-
   const deepSetOptions = {
     removeUndefined,
     forceSet: true,
@@ -362,8 +361,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       context.removeArr.delete(n);
       if (df !== undefined && deepGet(context.value, n) === undefined) {
         if (!context.mounted) context.defaultValues[n] = df;
-        onChange((v) => {
-          deepSet(v, n, df, deepSetOptions);
+        setTimeout(() => {
+          onChange((v) => {
+            deepSet(v, n, df, deepSetOptions);
+          });
         });
       }
       update(n);

@@ -428,7 +428,7 @@ exports[`Card[Base] should render correctly about form 1`] = `
             >
               <input
                 class="soui-input-input"
-                value="user"
+                value=""
               />
             </div>
           </div>
@@ -456,7 +456,7 @@ exports[`Card[Base] should render correctly about form 1`] = `
             >
               <input
                 class="soui-input-input"
-                value="test@example.com"
+                value=""
               />
             </div>
           </div>

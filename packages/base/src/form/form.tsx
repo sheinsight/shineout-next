@@ -9,7 +9,6 @@ import type { ObjectType } from '@sheinx/hooks';
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, formRef, ...rest } = props;
   const formClasses = jssStyle?.form?.();
-
   const modalFormContext = useFormFooter();
 
   const inputAbleParams = {
@@ -39,7 +38,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     validate,
     validateFields,
     validateFieldsWithError: formFunc.validateFields,
-    set:formFunc.setValue
+    set: formFunc.setValue,
   });
 
   React.useEffect(() => {
@@ -51,10 +50,9 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
       }
     }
 
-    if(props.setForm){
+    if (props.setForm) {
       props.setForm(formRefObj);
     }
-
   }, [formRefObj]);
 
   const handleFormModalInfo = () => {
@@ -68,7 +66,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     if (status !== modalFormContext?.formStats) {
       modalFormContext?.setFormStats(status);
     }
-    if(props.onSubmit){
+    if (props.onSubmit) {
       modalFormContext?.setFormInfo(formRefObj);
     }
   };
@@ -81,7 +79,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     className,
     props.inline && formClasses?.wrapperInline,
   ]);
-
+  
   return (
     <form
       {...getFormProps({
@@ -90,9 +88,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
       })}
     >
       <Provider {...ProviderProps}>
-        <FormContext.Provider value={formRefObj}>
-          {children}
-        </FormContext.Provider>
+        <FormContext.Provider value={formRefObj}>{children}</FormContext.Provider>
       </Provider>
     </form>
   );

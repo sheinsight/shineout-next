@@ -79,7 +79,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const update = usePersistFn(
     (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
       if (!name) return;
-
       if (isArray(name)) {
         const value = getValue(name, formValue) as T[];
         const error = getError(name, errors, severErrors);
@@ -114,7 +113,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       }
     },
   );
-
+  
   const validateFiled = usePersistFn(
     (
       name,
