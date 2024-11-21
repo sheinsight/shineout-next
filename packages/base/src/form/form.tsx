@@ -41,8 +41,8 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
       throw error;
     });;
   });
-  const validateFields = usePersistFn((fileds: keyof V | Array<keyof V>) => {
-    return formFunc.validateFields(fileds as string | string[]).catch(() => {});
+  const validateFields = usePersistFn((fields: keyof V | Array<keyof V>) => {
+    return formFunc.validateFields(fields as string | string[]).catch(() => {});
   });
   const formRefObj = useLatestObj({
     clearValidate: formFunc.clearValidate,
@@ -53,6 +53,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     validateFields,
     validateFieldsWithError: formFunc.validateFields,
     set: formFunc.setValue,
+    scrollToField: formFunc.scrollToField
   });
 
   React.useEffect(() => {
@@ -93,7 +94,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     className,
     props.inline && formClasses?.wrapperInline,
   ]);
-  
+
   return (
     <form
       {...getFormProps({

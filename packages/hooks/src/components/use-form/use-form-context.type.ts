@@ -39,4 +39,9 @@ export interface FormRef<Value> {
    * @cn 设置字段值, key为字段路径,示例：{ 'name': 'sanmao', 'account.name': 'sanmao', 'friends[0].name': 'sanmao' }
    */
   set: (value: { [key: string]: any }) => void;
+  /**
+   * @en scroll to field
+   * @cn 滚动到指定字段
+   */
+  scrollToField: (name: string) => void;
 }

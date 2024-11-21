@@ -41,6 +41,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     onChange: handleChange,
     status,
     error,
+    id: childrenProps.id || util.getFieldId(formControl.name, props.formName),
   };
 
   if (formControl.inForm) {

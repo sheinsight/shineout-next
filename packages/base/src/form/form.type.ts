@@ -63,6 +63,11 @@ export interface FormRef<FormValue> {
    * @cn 设置字段值, key为字段路径,示例：{ 'name': 'sanmao', 'account.name': 'sanmao', 'friends[0].name': 'sanmao' }
    */
   set: (value: { [key: string]: any }) => void;
+  /**
+   * @en Scroll to the position of the specified field
+   * @cn 滚动到指定字段的位置
+   */
+  scrollToField: (name: string) => void;
 }
 export interface FormProps<V extends ObjectType>
   extends Partial<BaseFormProps<V>>,

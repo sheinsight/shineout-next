@@ -151,3 +151,5 @@ export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
 }
 
 export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, ''));
+
+export const getFieldId = (name: string, formName?: string) => `${formName ? `${formName}_` : ''}${name}`;

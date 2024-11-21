@@ -122,6 +122,13 @@ export interface FormCommonConfig extends FormLabelConfig {
    * @version 3.5.0
    */
   reserveAble?: boolean;
+
+  /**
+   * @en The name of the form, will be used as the prefix of the form field id, and can enable the <label for="id" /> function after setting
+   * @cn 表单名称，会作为表单字段 id 的前缀，设置后可开启 <label for="id" /> 功能
+   * @version 3.5.2
+   */
+  formName?: string;
 }
 
 export interface FormFunc {
@@ -207,6 +214,11 @@ export interface BaseFormProps<T> extends FormCommonConfig {
    * @private 内部属性
    */
   error?: ObjectType<string | Error>;
+  /**
+   * @en The name of the form, will be used as the prefix of the form field id, and can enable the <label for="id" /> function after setting
+   * @cn 表单名称，会作为表单字段 id 的前缀，设置后可开启 <label for="id" /> 功能
+   */
+  name?: string;
 }
 
 export type UseFormProps<T> = BaseFormProps<T>;

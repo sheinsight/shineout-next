@@ -115,8 +115,8 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       }
     },
   );
-  
-  const validateFiled = usePersistFn(
+
+  const validateField = usePersistFn(
     (
       name,
       v,
@@ -200,7 +200,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         formFunc.setValue({ [name]: v }, { validate: true });
       }
     } else {
-      validateFiled('', v, undefined);
+      validateField('', v, undefined);
     }
     if (onChangePo) onChangePo(v, ...other);
     if (validateFieldSet) validateFieldSet();
@@ -211,21 +211,21 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       if (isArray(name)) {
         const dv = isArray(defaultValue) ? defaultValue : [];
         name.forEach((n, index) => {
-          controlFunc.bind(n, dv[index], validateFiled, update);
+          controlFunc.bind(n, dv[index], validateField, update);
         });
       } else {
-        controlFunc.bind(name, defaultValue, validateFiled, update);
+        controlFunc.bind(name, defaultValue, validateField, update);
       }
     }
     return () => {
       if (inForm && controlFunc) {
         if (isArray(name)) {
           name.forEach((n) => {
-            controlFunc.unbind(n, reserveAble, validateFiled, update);
+            controlFunc.unbind(n, reserveAble, validateField, update);
             updateError(n, undefined);
           });
         } else {
-          controlFunc.unbind(name, reserveAble, validateFiled, update);
+          controlFunc.unbind(name, reserveAble, validateField, update);
           updateError(name, undefined);
         }
       }

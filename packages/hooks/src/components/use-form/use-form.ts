@@ -20,6 +20,7 @@ import {
   wrapFormError,
   deepClone,
   getAllKeyPaths,
+  getFieldId,
 } from '../../utils';
 
 const emptyObj = {};
@@ -54,6 +55,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     rules,
     throttle = 1000,
     size,
+    name: formName,
     reserveAble,
     scrollParent,
   } = props;
@@ -188,7 +190,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           .then((results) => {
             const errors = results.filter((n) => n !== true);
             if (errors.length > 0) {
-              const errorFields = []
+              const errorFields = [];
               for (const key in context.errors) {
                 if (context.errors[key]) {
                   errorFields.push({
@@ -213,6 +215,17 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       });
     },
   );
+
+  const scrollToField = usePersistFn((name: string) => {
+    if (!name) return;
+    const fieldId = getFieldId(name, formName);
+    const fieldEl = document?.getElementById(fieldId);
+    if (fieldEl) {
+      fieldEl.scrollIntoView();
+    } else {
+      console.warn(`fieldId: ${fieldId} not found`);
+    }
+  });
 
   const remove = () => {
     if (!context.removeArr.size) return;
@@ -400,10 +413,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         });
       }
     },
-    unbind: (n: string, reserveAble?: boolean, validateFiled?: ValidateFn, update?: UpdateFn) => {
+    unbind: (n: string, reserveAble?: boolean, validateField?: ValidateFn, update?: UpdateFn) => {
       const validateFieldSet = context.validateMap[n];
-      if (validateFiled && validateFieldSet.has(validateFiled)) {
-        validateFieldSet.delete(validateFiled);
+      if (validateField && validateFieldSet.has(validateField)) {
+        validateFieldSet.delete(validateField);
       }
 
       const updateFieldSet = context.updateMap[n];
@@ -420,9 +433,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       }
     },
     combineRules<ItemValue>(name: string, propRules: FormItemRule<ItemValue>) {
-      // console.log('======================')
-      // console.log('combineRules name, propRules: >>', name, propRules)
-      // console.log('======================')
       let newRules: FormItemRule<ItemValue> = [];
       if (isObject(rules) && name) {
         newRules = (deepGet(rules, name) || []) as FormItemRule<ItemValue>;
@@ -469,6 +479,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     validateFieldset,
     insertError,
     spliceError,
+    scrollToField,
   });
 
   const formConfig: ProviderProps['formConfig'] = React.useMemo(
@@ -481,6 +492,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       disabled,
       size,
       reserveAble,
+      formName,
     }),
     [
       labelWidth,
@@ -491,6 +503,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       disabled,
       size,
       reserveAble,
+      formName,
     ],
   );
 

@@ -60,7 +60,7 @@ export interface InputStyle {
 
 export interface SimpleInputProps
   extends BaseInputProps,
-    Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
+    Pick<CommonType, 'status' | 'style' | 'className' | 'size' | 'name'> {
   jssStyle?: InputStyle;
   /**
    * @en Custom clear icon
@@ -102,9 +102,10 @@ export interface SimpleInputProps
   showClear?: boolean;
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
   hasSuffix?: boolean;
+  name?: string;
 }
 
-export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'className' | 'style'> {
+export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'className' | 'style' | 'name'> {
   suffix?: SimpleInputProps['suffix'];
   /**
    * @en Prompt information
