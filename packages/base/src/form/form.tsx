@@ -9,7 +9,6 @@ import type { ObjectType } from '@sheinx/hooks';
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, formRef, ...rest } = props;
   const formClasses = jssStyle?.form?.();
-  console.log('form value', props.value.a);
   const modalFormContext = useFormFooter();
 
   const inputAbleParams = {

@@ -6,52 +6,29 @@
  */
 import { useEffect, useState } from 'react';
 import { Form, Input } from 'shineout';
-import { proxy, useSnapshot } from 'valtio';
 import { usePersistFn } from '@sheinx/hooks';
-
-const state = {
-  form: {
-    a: {
-      product_name_attribute_list: [],
-    },
-  },
-};
-
-const proxyState = proxy(state);
-
-const dispatch = {
-  setForm: (form: any) => {
-    proxyState.form = form;
-  },
-  append: (item: any) => {
-    const nextForm = {
-      a: {
-        product_name_attribute_list: [...proxyState.form.a.product_name_attribute_list],
-      },
-    };
-    nextForm.a.product_name_attribute_list.push(item);
-    proxyState.form = nextForm;
-    console.log('append');
-  },
-};
 
 const ComponentB1 = (props) => {
   const { onAppend } = props;
   useEffect(() => {
-    // dispatch.append({
-    //   'b-1': 3,
-    //   'b-2': 4,
+    setTimeout(() => {
+      onAppend({
+        'b-1': 1,
+        'b-2': 2,
+      });
+    }, 10);
+
+    // onAppend({
+    //   'b-1': 1,
+    //   'b-2': 2,
     // });
-    onAppend({
-      'b-1': 1,
-      'b-2': 2,
-    });
+
     console.log('B1 mounted');
   }, []);
 
   return (
     <Form.Item label='B1'>
-      <Form.FieldSet name='a.product_name_attribute_list'>
+      <Form.FieldSet name='a.b1'>
         {({}) => {
           return (
             <div>
@@ -86,11 +63,55 @@ const ComponentB2 = () => {
   );
 };
 
+const ComponentB3 = () => {
+  useEffect(() => {
+    console.log('B3 mounted');
+  }, []);
+
+  return (
+    <Form.Item label='B3'>
+      <Form.FieldSet name='a.ccc' defaultValue={[{ 'b-1': 3, 'b-2': 4 }]}>
+        {({}) => {
+          return (
+            <div>
+              <Input name='b-1'></Input>
+              <Input name='b-2'></Input>
+            </div>
+          );
+        }}
+      </Form.FieldSet>
+    </Form.Item>
+  );
+};
+
+const ComponentB4 = () => {
+  useEffect(() => {
+    console.log('B4 mounted');
+  }, []);
+
+  return (
+    <Form.Item label='B4'>
+      <Form.FieldSet name='a.ddd' defaultValue={[{ 'b-1': 3, 'b-2': 4 }]}>
+        {({}) => {
+          return (
+            <div>
+              <Input name='b-1'></Input>
+              <Input name='b-2'></Input>
+            </div>
+          );
+        }}
+      </Form.FieldSet>
+    </Form.Item>
+  );
+};
+
 const ComponentB = (props) => {
   return (
     <div>
       <ComponentB1 {...props}></ComponentB1>
       <ComponentB2 {...props}></ComponentB2>
+      <ComponentB3 {...props}></ComponentB3>
+      <ComponentB4 {...props}></ComponentB4>
     </div>
   );
 };
@@ -108,16 +129,16 @@ const ComponentA = (props) => {
 export default () => {
   const [value, setValue] = useState({
     a: {
-      product_name_attribute_list: [],
+      b1: [],
     },
   });
-  const state = useSnapshot(proxyState);
 
   const handleSubmit = (v) => {
     console.log('submit', v);
   };
 
   const handleChange = (v) => {
+    console.log('onChange');
     setValue(v);
   };
 
@@ -127,10 +148,10 @@ export default () => {
     const nextForm = {
       a: {
         ...value.a,
-        product_name_attribute_list: [...value.a.product_name_attribute_list],
+        b1: [...value.a.b1],
       },
     };
-    nextForm.a.product_name_attribute_list.push(item);
+    nextForm.a.b1.push(item);
     setValue(nextForm);
   });
 
