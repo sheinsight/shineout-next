@@ -2,7 +2,7 @@
 2024-11-20
 
 ### 💎 Enhancement
-- `Tabs` 支持渲染非 `Tabs.Panel` 子组件，例如 `Form.FieldSet` ([#808](https://github.com/sheinsight/shineout-next/pull/808))
+- `Tabs` 支持渲染非 `Tabs.Panel` 子组件，例如 `Form.FieldSet` ([#812](https://github.com/sheinsight/shineout-next/pull/812))
 
 
 ## 3.5.1
