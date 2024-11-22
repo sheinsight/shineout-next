@@ -84,4 +84,11 @@ export interface TooltipProps
    * @default 1051
    */
   zIndex?: number;
+
+  /**
+   * @en Whether to stay on hover
+   * @cn 是否在 hover 时停留
+   * @default false
+   */
+  stayOnHover?: boolean;
 }

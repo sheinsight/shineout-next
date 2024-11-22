@@ -37,15 +37,17 @@ const TooltipDemo = ({
   animation,
   priorityDirection,
   disabled,
+  stayOnHover,
 }: {
   className?: string;
   style?: StyleProps;
-  trigger?: 'click' | 'hover' | 'none' | undefined;
+  trigger?: 'click' | 'hover' | 'focus';
   position?: any;
   delay?: number;
   animation?: boolean;
   priorityDirection?: 'auto' | 'vertical' | 'horizontal' | undefined;
   disabled?: boolean;
+  stayOnHover?: boolean;
 }) => (
   <Tooltip
     tip='hello'
@@ -56,7 +58,8 @@ const TooltipDemo = ({
     delay={delay}
     animation={animation}
     priorityDirection={priorityDirection}
-    disabled={disabled}
+    disabledChild={disabled}
+    stayOnHover={stayOnHover}
   >
     <span>demo</span>
   </Tooltip>
@@ -104,7 +107,7 @@ describe('Tooltip[Base]', () => {
   });
   test('should render when mouse', async () => {
     render(<TooltipDemo />);
-    
+
     fireEvent.mouseEnter(screen.getByText('demo'));
     await waitFor(async () => {
       await delay(200);
@@ -116,7 +119,7 @@ describe('Tooltip[Base]', () => {
       defaultStyle,
     );
     fireEvent.mouseLeave(screen.getByText('demo'));
-    
+
     await waitFor(async () => {
       await delay(200);
       classContentTest(wrapper, tooltipWrapperOpenClassName, false);
@@ -298,5 +301,14 @@ describe('Tooltip[Base]', () => {
     expect(spyError).toHaveBeenCalled();
     classLengthTest(document, tooltipClassName, 0);
     spyError.mockRestore();
+  });
+  test('should render when set stayOnHover', async () => {
+    render(<TooltipDemo stayOnHover />);
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName)! as HTMLDivElement;
+    expect(wrapper.style.pointerEvents).toBe('initial');
   });
 });
