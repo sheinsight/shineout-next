@@ -28,7 +28,7 @@ export interface BadgeTokens {
   badgeBadgeBorderRadius: string;
   /**
    * @type {string}
-   * @token spacing-6
+   * @token Spacing-6
    * @description 徽标数值内边距（水平方向）
    */
   badgeCountPaddingX: string;
@@ -52,7 +52,7 @@ export interface BadgeTokens {
   badgeDotWidth: string;
   /**
    * @type {string}
-   * @token spacing-8
+   * @token Spacing-8
    * @description 徽标undefined外边距undefined
    */
   badgeTextMarginLeft: string;

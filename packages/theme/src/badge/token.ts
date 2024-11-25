@@ -31,7 +31,7 @@ const badgeTokenExtraValue = {
     },
   },
   count: {
-    padding: { x: 'spacing-6' },
+    padding: { x: 'Spacing-6' },
     height: 'Size-10',
   },
   small: {
@@ -43,7 +43,7 @@ const badgeTokenExtraValue = {
     width: 'Size-3',
   },
   text: {
-    margin: { left: 'spacing-8' },
+    margin: { left: 'Spacing-8' },
     font: { color: 'Neutral-text-5' },
   },
   default: {
