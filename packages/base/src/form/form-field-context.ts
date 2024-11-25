@@ -1,12 +1,11 @@
-// 把id放到context中
 import React from 'react';
 
 interface FormFieldContextProps {
-  fieldId: string;
+  fieldId?: string;
   separator: string;
 }
 
 export const FormFieldContext = React.createContext<FormFieldContextProps>({
-  fieldId: '',
+  fieldId: undefined,
   separator: '__separator__',
 });

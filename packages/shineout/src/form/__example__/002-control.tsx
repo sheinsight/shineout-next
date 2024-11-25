@@ -5,7 +5,7 @@
  *    -- You can use formRef to get some methods of the form, including validation, clear validation, submission, etc
  */
 import React, { useEffect, useRef, useState } from 'react';
-import { Form, Input, TYPE, Button, Select, Rate } from 'shineout';
+import { Form, Input, TYPE, Button, Select, Rate, DatePicker } from 'shineout';
 
 const star = (
   <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
@@ -95,11 +95,7 @@ const App: React.FC = () => {
 
       <Form.Item label='Holiday'>
         <Form.FieldSet name='holiday'>
-          <Input.Group>
-            <Input name='startDate' />
-            <b>-</b>
-            <Input name='endDate' />
-          </Input.Group>
+          <DatePicker range name={['startDate', 'endDate']} />
         </Form.FieldSet>
       </Form.Item>
       <Form.Item label='Hobby'>

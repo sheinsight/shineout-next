@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import { FormFieldContext } from '../form/form-field-context';
 
 export const Input = (props: {
-  id?: string;
   className?: string;
   value: string;
   placeholder?: string;
@@ -45,7 +44,6 @@ export const Input = (props: {
   }, [props.value, props.open]);
   return (
     <input
-      id={props.id}
       ref={props.onRef}
       style={props.style}
       className={props.className}
@@ -110,7 +108,7 @@ const Result = (props: ResultProps) => {
   } = props;
   const { locale } = useConfig();
 
-  const { fieldId } = useContext(FormFieldContext);
+  const { fieldId, separator } = useContext(FormFieldContext);
 
   const styles = jssStyle?.datePicker?.();
   const { current: context } = useRef<{ inputRefs: Array<HTMLDivElement>; clickIndex: number }>({
@@ -167,7 +165,6 @@ const Result = (props: ResultProps) => {
 
   const placeholderArr = getPlaceHolderArr();
 
-  const formFieldId = fieldId.split('__separator__');
   const renderItem = (info: {
     inputable?: boolean;
     target: string | undefined;
@@ -182,8 +179,9 @@ const Result = (props: ResultProps) => {
       dis && styles?.resultTextDisabled,
       info.index === activeIndex && styles?.resultTextActive,
     );
+    const formFieldId = fieldId?.split(separator) || [];
     return (
-      <div className={className}>
+      <div className={className} id={formFieldId[info.index]}>
         <span className={styles?.resultTextPadding}>
             <Input
               key={info.index}
@@ -217,7 +215,6 @@ const Result = (props: ResultProps) => {
                 props.onFocus?.(e);
               }}
               onClick={onClickProps}
-              id={formFieldId[info.index]}
             />
         </span>
         <div className={styles?.resultTextBg}></div>

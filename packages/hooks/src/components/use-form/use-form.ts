@@ -221,6 +221,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     (name: string, scrollIntoViewOptions: ScrollIntoViewOptions = {}) => {
       if (!name) return;
       const fieldId = getFieldId(name, formName);
+      if (!fieldId) return;
       const element = document?.getElementById(fieldId);
       if (element) {
         // 查找可滚动的父元素
