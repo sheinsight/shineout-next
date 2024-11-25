@@ -7,7 +7,6 @@ export interface FieldControlProps<T> {
   status?: 'error';
   disabled?: boolean;
   error?: { message?: string } | string;
-  id?: string;
 }
 
 export type FormFieldChildrenFunc<T> = (props: FieldControlProps<T>) => React.ReactElement;

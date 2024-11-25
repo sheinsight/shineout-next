@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import classNames from 'classnames';
 import { TransferProps } from './transfer.type';
 import { TransferClasses } from './transfer.type';
@@ -7,6 +7,7 @@ import TransferList from './transfer-list';
 import TransferOperate from './transfer-operate';
 import Icon from '../icons';
 import { useConfig } from '../config';
+import { FormFieldContext } from '../form/form-field-context';
 
 const Transfer = <DataItem, Value extends KeygenResult[]>(
   props: TransferProps<DataItem, Value>,
@@ -186,8 +187,10 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     return renderList('target');
   }, [target, size, filterTargetText, targetSelectedKeys]);
 
+  const { fieldId } = useContext(FormFieldContext);
+
   return (
-    <div className={rootClass} style={style}>
+    <div className={rootClass} style={style} id={fieldId}>
       {renderSourceList}
       {!simple && renderOperations()}
       {renderTargetList}

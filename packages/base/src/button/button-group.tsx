@@ -26,7 +26,7 @@ const Group = (props: ButtonGroupProps) => {
   const shapeSetted = shape === 'round' ? 'round' : undefined;
 
   return (
-    <div className={groupClass} style={style} dir={config.direction}>
+    <div className={groupClass} style={style} dir={config.direction} id={props.id}>
       {Children.toArray(children).map((child) => {
         const Child = child as React.ReactElement<ButtonProps>;
         return cloneElement<ButtonProps>(Child, {

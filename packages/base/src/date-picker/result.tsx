@@ -1,9 +1,11 @@
 import { getLocale, useConfig } from '../config';
 import { DatePickerProps } from './date-picker.type';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
+import { FormFieldContext } from '../form/form-field-context';
 
 export const Input = (props: {
+  id?: string;
   className?: string;
   value: string;
   placeholder?: string;
@@ -43,6 +45,7 @@ export const Input = (props: {
   }, [props.value, props.open]);
   return (
     <input
+      id={props.id}
       ref={props.onRef}
       style={props.style}
       className={props.className}
@@ -107,6 +110,8 @@ const Result = (props: ResultProps) => {
   } = props;
   const { locale } = useConfig();
 
+  const { fieldId } = useContext(FormFieldContext);
+
   const styles = jssStyle?.datePicker?.();
   const { current: context } = useRef<{ inputRefs: Array<HTMLDivElement>; clickIndex: number }>({
     inputRefs: [],
@@ -162,6 +167,7 @@ const Result = (props: ResultProps) => {
 
   const placeholderArr = getPlaceHolderArr();
 
+  const formFieldId = fieldId.split('__separator__');
   const renderItem = (info: {
     inputable?: boolean;
     target: string | undefined;
@@ -211,6 +217,7 @@ const Result = (props: ResultProps) => {
                 props.onFocus?.(e);
               }}
               onClick={onClickProps}
+              id={formFieldId[info.index]}
             />
         </span>
         <div className={styles?.resultTextBg}></div>

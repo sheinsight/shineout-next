@@ -21,6 +21,7 @@ import {
   deepClone,
   getAllKeyPaths,
   getFieldId,
+  getClosestScrollContainer,
 } from '../../utils';
 
 const emptyObj = {};
@@ -216,16 +217,42 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     },
   );
 
-  const scrollToField = usePersistFn((name: string) => {
-    if (!name) return;
-    const fieldId = getFieldId(name, formName);
-    const fieldEl = document?.getElementById(fieldId);
-    if (fieldEl) {
-      fieldEl.scrollIntoView();
-    } else {
-      console.warn(`fieldId: ${fieldId} not found`);
-    }
-  });
+  const scrollToField = usePersistFn(
+    (name: string, scrollIntoViewOptions: ScrollIntoViewOptions = {}) => {
+      if (!name) return;
+      const fieldId = getFieldId(name, formName);
+      const element = document?.getElementById(fieldId);
+      if (element) {
+        // 查找可滚动的父元素
+        const parentEl = getClosestScrollContainer(element)
+
+        if (parentEl) {
+          const parentRect = parentEl.getBoundingClientRect();
+          const elementRect = element.getBoundingClientRect();
+
+          // 判断父元素是否在可见范围内
+          const isVisibleY =
+            elementRect.top >= parentRect.top && elementRect.bottom <= parentRect.bottom;
+          const isVisibleX =
+            elementRect.left >= parentRect.left && elementRect.right <= parentRect.right;
+
+          if (!isVisibleY || !isVisibleX) {
+            // 计算元素相对于父元素的偏移量
+            const offsetTop = element.offsetTop - parentEl.offsetTop;
+            const offsetLeft = element.offsetLeft - parentEl.offsetLeft;
+            parentEl.scrollTop = offsetTop;
+            parentEl.scrollLeft = offsetLeft;
+          }
+        } else {
+          // 如果没有找到可滚动的父元素，使用默认行为
+          element.scrollIntoView({ behavior: "smooth", ...scrollIntoViewOptions });
+        }
+      } else {
+        // todo: 统一警告|错误信息(by Tom)
+        console.warn(`[shineout] fieldId: ${fieldId} not found`);
+      }
+    },
+  );
 
   const remove = () => {
     if (!context.removeArr.size) return;

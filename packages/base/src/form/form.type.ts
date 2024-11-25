@@ -11,14 +11,14 @@ export interface FormClasses {
 
 export interface FormValidateFn<
   FormValue,
-  FieldKey extends KeyType = keyof FormValue,
-  FieldsType = FieldKey | FieldKey[]
+  // FieldKey extends KeyType = keyof FormValue,
+  // FieldsType = FieldKey | FieldKey[]
 > {
   /**
    * 验证所有表单的值，并且返回报错和表单数据
    * @param fields 需要校验的表单字段
    */
-  (fields?: FieldsType): Promise<Partial<FormValue>>;
+  (fields?: string | string[]): Promise<FormValue>;
 }
 
 
@@ -67,7 +67,7 @@ export interface FormRef<FormValue> {
    * @en Scroll to the position of the specified field
    * @cn 滚动到指定字段的位置
    */
-  scrollToField: (name: string) => void;
+  scrollToField: (name: string, scrollIntoViewOptions?: ScrollIntoViewOptions) => void;
 }
 export interface FormProps<V extends ObjectType>
   extends Partial<BaseFormProps<V>>,

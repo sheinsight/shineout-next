@@ -43,5 +43,5 @@ export interface FormRef<Value> {
    * @en scroll to field
    * @cn 滚动到指定字段
    */
-  scrollToField: (name: string) => void;
+  scrollToField: (name: string, scrollIntoViewOptions?: ScrollIntoViewOptions) => void;
 }
