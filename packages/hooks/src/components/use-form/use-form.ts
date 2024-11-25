@@ -365,9 +365,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           onChange((v) => {
             deepSet(v, n, df, deepSetOptions);
           });
+          update(n);
         });
       }
-      update(n);
     },
     unbind: (n: string, reserveAble?: boolean, validateFiled?: ValidateFn, update?: UpdateFn) => {
       const validateFieldSet = context.validateMap[n];

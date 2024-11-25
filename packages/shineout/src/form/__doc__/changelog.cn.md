@@ -1,3 +1,9 @@
+## 3.5.2-beta.7
+2024-11-25
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 初始化默认值后更新内部值异常的问题 ([#816](https://github.com/sheinsight/shineout-next/pull/816))
+
 ## 3.5.2-beta.3
 2024-11-21
 ### 🐞 BugFix
