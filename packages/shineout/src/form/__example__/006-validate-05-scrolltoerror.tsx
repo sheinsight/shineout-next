@@ -151,6 +151,7 @@ const App: React.FC = () => {
               position='left-top'
               shape='card'
               lazy={false}
+              allowNonPanel
             >
               <Form.FieldSet name='child'>
                 {({ index }) => {

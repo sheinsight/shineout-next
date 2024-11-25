@@ -34,6 +34,7 @@ const Tabs = (props: TabsProps) => {
     tabBarStyle,
     color,
     sticky,
+    allowNonPanel,
     className: tabsClassName,
     ...rest
   } = props;
@@ -152,7 +153,11 @@ const Tabs = (props: TabsProps) => {
             });
           }
 
-          return Child
+          if(allowNonPanel) {
+            return Child
+          }
+
+          return null;
         })}
       </div>
     );
