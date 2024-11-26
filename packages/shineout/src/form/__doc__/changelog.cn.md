@@ -1,3 +1,9 @@
+## 3.5.2-beta.8
+2024-11-26
+### 🐞 BugFix
+
+- 修复 · 初始化表单后 value 异步更新导致 defaultValue 无法再次同步的问题 ([#817](https://github.com/sheinsight/shineout-next/pull/817))
+
 ## 3.5.2-beta.7
 2024-11-25
 ### 🐞 BugFix
