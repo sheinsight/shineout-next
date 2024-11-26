@@ -18,7 +18,7 @@ const Tooltip = (props: TooltipProps) => {
     className,
     style,
     zIndex,
-    stayOnHover,
+    persistent,
     type = 'default',
     position: popsitionProps = 'auto',
   } = props;
@@ -43,7 +43,7 @@ const Tooltip = (props: TooltipProps) => {
   const events = getTargetProps();
 
   const bindEvents = () => {
-    if(!stayOnHover) return
+    if(!persistent) return
 
     const targetEl = targetRef.current;
     if (!targetEl) return;
@@ -53,7 +53,7 @@ const Tooltip = (props: TooltipProps) => {
   };
 
   const unbindEvents = () => {
-    if(!stayOnHover) return
+    if(!persistent) return
     const targetEl = targetRef.current;
     if (!targetEl) return;
     const events = getTargetProps();
@@ -119,7 +119,7 @@ const Tooltip = (props: TooltipProps) => {
             tooltipClasses?.wrapper,
             open && tooltipClasses?.wrapperOpen,
           )}
-          style={{ pointerEvents: stayOnHover ? 'initial' : undefined }}
+          style={{ pointerEvents: persistent ? 'initial' : undefined }}
           {...util.getDataAttribute({ type, position })}
           ref={popupRef}
           onMouseLeave={events.onMouseLeave}

@@ -37,7 +37,7 @@ const TooltipDemo = ({
   animation,
   priorityDirection,
   disabled,
-  stayOnHover,
+  persistent,
 }: {
   className?: string;
   style?: StyleProps;
@@ -47,7 +47,7 @@ const TooltipDemo = ({
   animation?: boolean;
   priorityDirection?: 'auto' | 'vertical' | 'horizontal' | undefined;
   disabled?: boolean;
-  stayOnHover?: boolean;
+  persistent?: boolean;
 }) => (
   <Tooltip
     tip='hello'
@@ -59,7 +59,7 @@ const TooltipDemo = ({
     animation={animation}
     priorityDirection={priorityDirection}
     disabledChild={disabled}
-    stayOnHover={stayOnHover}
+    persistent={persistent}
   >
     <span>demo</span>
   </Tooltip>
@@ -302,8 +302,8 @@ describe('Tooltip[Base]', () => {
     classLengthTest(document, tooltipClassName, 0);
     spyError.mockRestore();
   });
-  test('should render when set stayOnHover', async () => {
-    render(<TooltipDemo stayOnHover />);
+  test('should render when set persistent', async () => {
+    render(<TooltipDemo persistent />);
     fireEvent.mouseEnter(screen.getByText('demo'));
     await waitFor(async () => {
       await delay(200);

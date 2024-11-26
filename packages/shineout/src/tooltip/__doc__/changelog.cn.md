@@ -3,7 +3,7 @@
 
 ### 🆕 Feature
 
-- `Tooltip` 新增 `stayOnHover` 属性，鼠标悬停提示信息时将不会关闭 ([#813](https://github.com/sheinsight/shineout-next/pull/813))
+- `Tooltip` 新增 `persistent` 属性，鼠标悬停提示信息时将不会关闭 ([#813](https://github.com/sheinsight/shineout-next/pull/813))
 
 ## 3.3.6
 2024-08-29

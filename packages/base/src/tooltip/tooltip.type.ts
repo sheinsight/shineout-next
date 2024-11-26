@@ -90,5 +90,5 @@ export interface TooltipProps
    * @cn 是否在 hover 时停留
    * @default false
    */
-  stayOnHover?: boolean;
+  persistent?: boolean;
 }
