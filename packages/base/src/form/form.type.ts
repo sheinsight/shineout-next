@@ -38,6 +38,12 @@ export interface FormRef<FormValue> {
    * @cn 校验表单指定字段
    */
   validateFields: (fields: string | string[]) => Promise<any>;
+
+  /**
+   * @en Validation form fields and return the value
+   * @cn 校验表单指定字段并返回值, 也可以通过 catch 获取报错信息
+   */
+  validateFieldsWithValue: (fields?: (string | keyof FormValue) | (string | keyof FormValue)[]) => Promise<any>;
   /**
    * @en The verification can get the error message through Promise.catch
    * @cn 校验可以通过 catch 获取报错信息

@@ -7,7 +7,6 @@ import { FormError } from '../../utils';
 export type KeyType = string | number | symbol;
 
 export interface ValidationError<T> {
-  message: string;
   values: T;
   errorFields: {
     name: string;
@@ -28,7 +27,7 @@ FieldsType = FieldKey | FieldKey[]
 }
 
 export type ValidateFnConfig = {
-  type?: 'forcePass',
+  type?: 'forcePass' | 'withValue',
   ignoreBind?: boolean,
 }
 

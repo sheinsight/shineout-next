@@ -6,15 +6,6 @@ import React, { useEffect } from 'react';
 import type { FormProps } from './form.type';
 import type { ObjectType } from '@sheinx/hooks';
 
-interface ValidationError<T> {
-  message: string;
-  values: T;
-  errorFields: {
-    name: string;
-    errors: string[];
-  }[];
-}
-
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, formRef, ...rest } = props;
@@ -34,15 +25,14 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
 
   const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange });
 
-  const validate = usePersistFn((fields?: keyof V | Array<keyof V>) => {
-    return formFunc.validateFields(fields as string | string[])
-    .catch((error: ValidationError<V>) => {
-      // 这里可以选择处理错误，或者直接抛出
-      throw error;
-    });;
+  const validate = usePersistFn(() => {
+    return formFunc.validateFields();
   });
   const validateFields = usePersistFn((fields: keyof V | Array<keyof V>) => {
     return formFunc.validateFields(fields as string | string[]).catch(() => {});
+  });
+  const validateFieldsWithValue = usePersistFn((fields?: keyof V | Array<keyof V>) => {
+    return formFunc.validateFields(fields as string | string[], { type: 'withValue' });
   });
   const formRefObj = useLatestObj({
     clearValidate: formFunc.clearValidate,
@@ -51,6 +41,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     submit: formFunc.submit,
     validate,
     validateFields,
+    validateFieldsWithValue,
     validateFieldsWithError: formFunc.validateFields,
     set: formFunc.setValue,
     scrollToField: formFunc.scrollToField

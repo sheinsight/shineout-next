@@ -22,6 +22,7 @@ import {
   getAllKeyPaths,
   getFieldId,
   getClosestScrollContainer,
+  type FormError,
 } from '../../utils';
 
 const emptyObj = {};
@@ -164,7 +165,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const validateFields = usePersistFn(
     (fields?: string | string[], config: ValidateFnConfig = {}): Promise<T> => {
-      return new Promise((resolve, reject: (reason: ValidationError<T>) => void) => {
+      return new Promise((resolve, reject: (reason: ValidationError<T> | FormError) => void) => {
         const finalFields = fields
           ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
           : Object.keys(context.validateMap);
@@ -175,20 +176,20 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           );
         });
 
-        let validatorValue = context.value;
-        if (fields) {
-          const fieldArray = isArray(fields) ? fields : [fields];
-          validatorValue = fieldArray.reduce(
-            (prev, cur) => ({
-              ...prev,
-              [cur]: getValue(cur),
-            }),
-            {},
-          );
-        }
+        if (config.type === 'withValue') {
+          let validatorValue = context.value;
+          if (fields) {
+            const fieldArray = isArray(fields) ? fields : [fields];
+            validatorValue = fieldArray.reduce(
+              (prev, cur) => ({
+                ...prev,
+                [cur]: getValue(cur),
+              }),
+              {},
+            );
+          }
 
-        Promise.all(validates.flat())
-          .then((results) => {
+          Promise.all(validates.flat()).then((results) => {
             const errors = results.filter((n) => n !== true);
             if (errors.length > 0) {
               const errorFields = [];
@@ -200,22 +201,32 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
                   });
                 }
               }
-              const firstError = errors[0];
               reject({
-                message: firstError.message,
                 values: validatorValue as T,
                 errorFields,
               });
             } else {
               resolve(validatorValue as T);
             }
-          })
-          .catch((e: Error) => {
-            reject(wrapFormError(e) as unknown as ValidationError<T>);
           });
+        } else {
+          Promise.all(validates.flat())
+            .then((results) => {
+              const error = results.find((n) => n !== true);
+              if (error !== undefined) {
+                reject(error);
+              } else {
+                resolve(true as any);
+              }
+            })
+            .catch((e: Error) => {
+              reject(wrapFormError(e));
+            });
+        }
       });
     },
   );
+
 
   const scrollToField = usePersistFn(
     (name: string, scrollIntoViewOptions: ScrollIntoViewOptions = {}) => {
@@ -225,7 +236,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       const element = document?.getElementById(fieldId);
       if (element) {
         // 查找可滚动的父元素
-        const parentEl = getClosestScrollContainer(element)
+        const parentEl = getClosestScrollContainer(element);
 
         if (parentEl) {
           const parentRect = parentEl.getBoundingClientRect();
@@ -246,7 +257,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           }
         } else {
           // 如果没有找到可滚动的父元素，使用默认行为
-          element.scrollIntoView({ behavior: "smooth", ...scrollIntoViewOptions });
+          element.scrollIntoView({ behavior: 'smooth', ...scrollIntoViewOptions });
         }
       } else {
         // todo: 统一警告|错误信息(by Tom)
@@ -345,12 +356,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }, throttle);
     (async () => {
       if (!withValidate) {
-        props.onSubmit?.((context.value as T) ?? ({} as T));
+        props.onSubmit?.((context.value ?? {}) as T);
         return;
       }
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
       if (result === true) {
-        props.onSubmit?.((context.value as T) ?? ({} as T));
+        props.onSubmit?.((context.value ?? {}) as T);
       } else {
         handleSubmitError(result);
         return;
