@@ -236,6 +236,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataI
       isControlled,
       contentClass,
       parentClickExpand,
+      doubleClickExpand,
       expanded,
       line,
       data: children,

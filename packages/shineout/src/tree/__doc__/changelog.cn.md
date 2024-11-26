@@ -1,3 +1,9 @@
+## 3.5.2-beta.8
+2024-11-26
+
+### 🐞 BugFix
+
+- 修复 `Tree` 组件开启 `doubleClickExpand` 后，双击节点（非根节点）无法展开的问题 ([#818](https://github.com/sheinsight/shineout-next/pull/818))
 ## 3.4.3
 2024-10-14
 
