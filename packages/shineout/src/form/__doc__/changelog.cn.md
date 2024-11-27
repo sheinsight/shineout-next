@@ -1,3 +1,10 @@
+## 3.5.3-beta.1
+2024-11-26
+### 💎 Enhancement
+
+- 增强 `Form` 的 `formRef`，增加 `validateFieldsWithValue` 方法，返回校验值 ([#812](https://github.com/sheinsight/shineout-next/pull/812))
+- 增强 `Form` 的 `formRef`，增加 `scrollToField` 方法，支持根据 name 滚动至指定表单项 ([#812](https://github.com/sheinsight/shineout-next/pull/812))
+
 ## 3.5.2-beta.8
 2024-11-26
 ### 🐞 BugFix
