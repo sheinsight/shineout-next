@@ -9,10 +9,8 @@ const { devUseWarning } = util;
 const Progress = (props: ProgressProps) => {
   const { shape = 'line' } = props;
 
-  if (process.env.NODE_ENV !== 'production') {
-    if (props.popup) {
-      devUseWarning.deprecated('popup', 'shape="line-pop"', 'Progress');
-    }
+  if (props.popup) {
+    devUseWarning.deprecated('popup', 'shape="line-pop"', 'Progress');
   }
 
   if (shape.indexOf('circle') > -1) {

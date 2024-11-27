@@ -31,13 +31,11 @@ const Button = (props: ButtonProps) => {
     ...rest
   } = props;
 
-  if (process.env.NODE_ENV !== 'production') {
-    if (outline) {
-      devUseWarning.deprecated('outline', 'mode="outline"', 'Button');
-    }
-    if (text) {
-      devUseWarning.deprecated('text', 'mode="text"', 'Button');
-    }
+  if (outline) {
+    devUseWarning.deprecated('outline', 'mode="outline"', 'Button');
+  }
+  if (text) {
+    devUseWarning.deprecated('text', 'mode="text"', 'Button');
   }
 
   const config = useConfig();

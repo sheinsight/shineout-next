@@ -27,10 +27,8 @@ const Alert = (props: AlertProps) => {
     onClose,
     ...rest
   } = props;
-  if (process.env.NODE_ENV !== 'production') {
-    if (props.hideClose) {
-      devUseWarning.deprecated('hideClose', 'closable', 'Alert');
-    }
+  if (props.hideClose) {
+    devUseWarning.deprecated('hideClose', 'closable', 'Alert');
   }
 
   const [dismiss, setDismiss] = useState(SHOW);

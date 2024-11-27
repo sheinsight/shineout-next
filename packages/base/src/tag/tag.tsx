@@ -31,10 +31,8 @@ const Tag = (props: TagProps) => {
     ...rest
   } = props;
 
-  if (process.env.NODE_ENV !== 'production') {
-    if (props.type) {
-      devUseWarning.deprecated('type', 'color', 'Tag');
-    }
+  if (props.type) {
+    devUseWarning.deprecated('type', 'color', 'Tag');
   }
 
   const showClose = closable || onClose;

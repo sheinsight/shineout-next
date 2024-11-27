@@ -25,10 +25,8 @@ const events = ['scroll', 'pageshow', 'load', 'resize'];
 // };
 
 const Sticky = (props: StickyProps) => {
-  if (process.env.NODE_ENV !== 'production') {
-    if (props.target) {
-      devUseWarning.deprecated('target', 'scrollContainer', 'Sticky');
-    }
+  if (props.target) {
+    devUseWarning.deprecated('target', 'scrollContainer', 'Sticky');
   }
   const { children, top, bottom } = props;
   // 是否使用css sticky

@@ -10,13 +10,11 @@ const Group = (props: ButtonGroupProps) => {
   const { children, className, style, jssStyle, size, mode, outline, text, shape, type } = props;
   const config = useConfig();
 
-  if (process.env.NODE_ENV !== 'production') {
-    if (outline) {
-      devUseWarning.deprecated('outline', 'mode="outline"', 'Button.Group');
-    }
-    if (text) {
-      devUseWarning.deprecated('text', 'mode="text"', 'Button.Group');
-    }
+  if (outline) {
+    devUseWarning.deprecated('outline', 'mode="outline"', 'Button.Group');
+  }
+  if (text) {
+    devUseWarning.deprecated('text', 'mode="text"', 'Button.Group');
   }
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);

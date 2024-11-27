@@ -22,10 +22,8 @@ const preventDefault = (e: React.MouseEvent) => {
   e.preventDefault();
 };
 const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<Value>) => {
-  if (process.env.NODE_ENV !== 'production') {
-    if (props0.defaultRangeMonth) {
-      devUseWarning.deprecated('defaultRangeMonth', 'defaultPickerValue', 'DatePicker');
-    }
+  if (props0.defaultRangeMonth) {
+    devUseWarning.deprecated('defaultRangeMonth', 'defaultPickerValue', 'DatePicker');
   }
   const props = useWithFormConfig(props0);
   const { locale, direction } = useConfig();
@@ -255,8 +253,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   };
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'production' &&  props.formatResult && props.inputable) {
-      console.warn('[shineout] `formatResult` and `inputable` cannot be used at the same time.');
+    if (props.formatResult && props.inputable) {
+      devUseWarning.conflict('DatePicker', 'formatResult', 'inputable');
     }
   }, []);
 

@@ -20,10 +20,8 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     inputable,
     ...rest
   } = props;
-  if (process.env.NODE_ENV !== 'production') {
-    if (props.inputable) {
-      devUseWarning.deprecated('inputable', 'Checkbox + Input', 'Checkbox');
-    }
+  if (props.inputable) {
+    devUseWarning.deprecated('inputable', 'Checkbox + Input', 'Checkbox');
   }
 
   const checkboxStyle = jssStyle?.checkbox?.();

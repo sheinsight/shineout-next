@@ -14,9 +14,7 @@ const IPopover = (props: PopoverProps) => {
 };
 
 export const IPopoverContent = (props: PopoverProps) => {
-  if (process.env.NODE_ENV !== 'production') {
-    devUseWarning.deprecated('Popover.Content', 'useTextStyle', 'Popover');
-  }
+  devUseWarning.deprecated('Popover.Content', 'useTextStyle', 'Popover');
 
   return <Popover jssStyle={jssStyle} {...props} useTextStyle />;
 };

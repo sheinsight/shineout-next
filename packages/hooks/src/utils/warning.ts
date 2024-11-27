@@ -5,7 +5,7 @@ const deprecated = (
   extraMessage?: string
 ) => {
   if (process.env.NODE_ENV !== 'production') {
-    console.warn(
+    console.error(
       `[shineout] '${prop}' in ${component} component is deprecated, please use '${newProp}' instead. ${extraMessage}`
     );
   }
@@ -13,7 +13,7 @@ const deprecated = (
 
 const breakingChange = (message: string) => {
   if (process.env.NODE_ENV !== 'production') {
-    console.warn(`[shineout] ${message}`);
+    console.error(`[shineout] ${message}`);
   }
 };
 
@@ -23,8 +23,15 @@ const devWarn = (message: string) => {
   }
 };
 
+const conflictWarning = (component: string, prop1: string, prop2: string) => {
+  if (process.env.NODE_ENV !== 'production') {
+    console.error(`[shineout] ${prop1} and ${prop2} cannot be used at the same time in ${component}.`);
+  }
+};
+
 export const devUseWarning = {
   deprecated,
   warning: devWarn,
   breaking: breakingChange,
+  conflict: conflictWarning,
 };

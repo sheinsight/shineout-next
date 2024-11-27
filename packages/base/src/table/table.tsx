@@ -64,10 +64,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const browserScrollbarWidth = useScrollbarWidth();
 
-  if (process.env.NODE_ENV !== 'production') {
-    if (props.fixed) {
-      devUseWarning.deprecated('fixed', 'virtual', 'Table');
-    }
+  if (props.fixed) {
+    devUseWarning.deprecated('fixed', 'virtual', 'Table');
   }
 
   const getSpinConfig = () => {
