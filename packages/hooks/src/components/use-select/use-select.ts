@@ -1,9 +1,11 @@
 import { useInputAble } from '../../common/use-input-able';
 import { useListSelect } from '../../common/use-list-select';
-import { BaseSelectProps } from './use-select.type';
+import { BaseSelectProps, UseSelectProps } from './use-select.type';
 
 const emptyArray: any[] = [];
-const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => {
+const useSelect = <DataItem, Value>(
+  props: BaseSelectProps<DataItem, Value> & UseSelectProps<Value>,
+) => {
   const {
     data,
     treeData,
@@ -18,8 +20,9 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     prediction,
     value: valueProp,
     onChange: onChangeProp,
+    onSameChange,
     filterSameChange,
-    noCache
+    noCache,
   } = props;
 
   const { value, onChange } = useInputAble({
@@ -28,6 +31,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     defaultValue,
     beforeChange,
     onChange: onChangeProp,
+    onSameChange,
     filterSameChange,
   });
 

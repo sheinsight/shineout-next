@@ -8,7 +8,7 @@ import { useRender } from '../use-render';
 import { ChangeType, InputAbleProps } from './use-Input-able.type';
 
 export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbleProps<T, V>) {
-  const { value: valuePo, onChange, control, beforeChange, delay } = props;
+  const { value: valuePo, onChange, onSameChange, control, beforeChange, delay } = props;
 
   const [stateValue, changeStateValue] = useState<T | undefined>(props.value ?? props.defaultValue);
 
@@ -52,7 +52,10 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
   const handleChange = usePersistFn((v: T, ...other: any[]) => {
     let vv = v;
     if (other.length === 0 || props.filterSameChange) {
-      if (shallowEqual(v, value)) return;
+      if (shallowEqual(v, value)) {
+        if (onSameChange) onSameChange(v);
+        return;
+      }
     }
     if (isFunc(beforeChange)) {
       const temp = beforeChange(v);
