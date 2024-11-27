@@ -1,3 +1,10 @@
+## 3.5.2-beta.9
+2024-11-27
+
+### 🐞 BugFix
+
+- 修复 `Select` 开启 `filterSameChange` 后单选模式下选择重复项无法关闭面板的问题 ([#819](https://github.com/sheinsight/shineout-next/pull/819))
+
 ## 3.5.2-beta.4
 2024-11-19
 

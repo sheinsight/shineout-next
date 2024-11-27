@@ -216,6 +216,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     setAbsoluteListUpdateKey(value as string);
   });
 
+  const handleSameChange = () => {
+    const shouldFocus = showInput && props.reFocus;
+    if (!multiple && !shouldFocus) {
+      closePop();
+    }
+  };
+
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
     data,
@@ -231,6 +238,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     prediction,
     beforeChange,
     onChange: handleSelectChange,
+    onSameChange: handleSameChange,
     filterSameChange,
     noCache,
   });

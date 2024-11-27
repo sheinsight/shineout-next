@@ -67,3 +67,7 @@ export interface BaseSelectProps<DataItem, Value> {
   groupBy?: (item: DataItem, index?: number, data?: DataItem[]) => string;
   filterSameChange?: boolean;
 }
+
+export interface UseSelectProps<Value> {
+  onSameChange: (value: Value) => void;
+}
