@@ -5,6 +5,8 @@ import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
 
+const { devUseWarning } = util;
+
 const defaultDelay = 0;
 
 const Tooltip = (props: TooltipProps) => {
@@ -42,7 +44,7 @@ const Tooltip = (props: TooltipProps) => {
   });
 
   if (!isValidElement(children)) {
-    console.error(new Error('Tooltip children expect a single ReactElement.'));
+    devUseWarning.error('Tooltip children expect a single ReactElement.');
     return null;
   }
 

@@ -29,9 +29,14 @@ const conflictWarning = (component: string, prop1: string, prop2: string) => {
   }
 };
 
+const error = (message: string) => {
+  console.error(new Error(`[shineout] ${message}`));
+};
+
 export const devUseWarning = {
+  error,
   deprecated,
-  warning: devWarn,
+  warn: devWarn,
   breaking: breakingChange,
   conflict: conflictWarning,
 };

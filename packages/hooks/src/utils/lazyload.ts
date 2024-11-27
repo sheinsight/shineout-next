@@ -1,4 +1,4 @@
-import { generateUUID, docSize } from '../utils';
+import { generateUUID, docSize, devUseWarning } from '../utils';
 
 type Timer = NodeJS.Timeout | null;
 
@@ -23,7 +23,9 @@ const winHeight = docSize.height;
 const getRect = (el: Element) => {
   // document or invalid element
   if (!el || !el.getBoundingClientRect) {
-    if (el) console.error(`the ${el} is not a element`);
+    if (el){
+      devUseWarning.error(`the ${el} is not a element`)
+    };
     return { top: 0, bottom: winHeight };
   }
 

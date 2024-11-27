@@ -248,7 +248,7 @@ const Tabs = (props: TabsProps) => {
       );
     }
 
-    console.warn('[shineout] Tabs position is invalid, please check it.');
+    devUseWarning.warn('Tabs position is invalid, please check it.');
 
     return (
       <>

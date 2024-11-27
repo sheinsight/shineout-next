@@ -1,6 +1,7 @@
 import FieldsetContext from './fieldset-context';
 import { BaseFormFieldSetProps } from './use-form-fieldset.type';
 import { useFormControl } from '../use-form-control';
+import { devUseWarning } from '../../../utils';
 
 const emptyFunc = () => {};
 const emptyArr: string[] = [];
@@ -16,7 +17,7 @@ export const useFormFieldSet = <T>(props: BaseFormFieldSetProps<T>) => {
     getValidateProps: props.getValidateProps,
   });
   if (!inForm) {
-    console.error('[FieldSet] should render in Form');
+    devUseWarning.error('[FieldSet] should render in Form');
   }
 
   const ProviderValue = {

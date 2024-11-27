@@ -3,6 +3,8 @@ import classnames from 'classnames';
 import { IconCompProps } from './icon.type';
 import { util } from '@sheinx/hooks';
 
+const { devUseWarning } = util;
+
 function Icon(
   props: IconCompProps = {
     prefix: 'icon',
@@ -64,7 +66,7 @@ function makeIcon(
   prefix = 'icon',
 ): React.ComponentType<IconCompProps> {
   if (typeof url !== 'string') {
-    console.error(`Shineout Icon url must be a string, but get ${url}`);
+    devUseWarning.error(`Shineout Icon url must be a string, but get ${url}`);
     return null as unknown as React.ComponentType<IconCompProps>;
   }
   const ext = url.substr(url.lastIndexOf('.') + 1);

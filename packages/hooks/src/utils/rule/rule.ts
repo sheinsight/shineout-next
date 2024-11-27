@@ -14,6 +14,7 @@ import {
   ValidFunc,
 } from './rule.type';
 import { ObjectType } from '../../common/type';
+import { devUseWarning } from '../warning';
 
 export const RULE_TYPE = 'RULE_OBJECT';
 const innerType: RuleTypeEnum[] = [
@@ -29,7 +30,7 @@ const innerType: RuleTypeEnum[] = [
 
 const mergeOptions = (opts: ObjectType = {}, ...args: RuleParams[]): ObjectType => {
   if (!isObject(opts)) {
-    console.error(new Error(`rules expect an object, got ${typeof opts}`));
+    devUseWarning.error(`rules expect an object, got ${typeof opts}`);
     return {};
   }
 
@@ -95,7 +96,7 @@ export default function Rule(...opts: RuleParams[]) {
       if (isObject(options[k])) {
         rules[k] = (args: ValidFunc) => Object.assign({}, options[k], { args });
       } else {
-        console.error(new Error(`Rule ${k} is invalid, expect a function or an object.`));
+        devUseWarning.error(`Rule ${k} is invalid, expect a function or an object.`);
       }
     }
   });

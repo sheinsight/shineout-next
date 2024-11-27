@@ -1,3 +1,4 @@
+import { devUseWarning } from '../../utils';
 import { UploadOptions } from './use-upload.type';
 
 declare class XDomainRequest extends XMLHttpRequest {}
@@ -34,7 +35,7 @@ export default function (args: UploadOptions<any>) {
   } = args;
 
   if (!url) {
-    console.error(new Error(`action is required, but its value is ${url}`));
+    devUseWarning.error(`action is required, but its value is ${url}`);
     return undefined;
   }
 

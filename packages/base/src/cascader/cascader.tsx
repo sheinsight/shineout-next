@@ -26,6 +26,8 @@ import useTip from '../common/use-tip';
 
 import { useConfig, getLocale } from '../config';
 
+const { devUseWarning} = util
+
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
 ) => {
@@ -689,9 +691,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
 
     if (mode !== undefined && loader && [0, 1, 2].includes(mode)) {
-      console.error(
-        new Error(`The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`),
-      );
+      devUseWarning.error(`The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`);
     }
   }, []);
 
