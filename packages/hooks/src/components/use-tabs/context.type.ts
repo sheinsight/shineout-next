@@ -1,6 +1,6 @@
 import { TabsShapeType } from './use-tabs.type';
 
-export interface TabsContextProps<TabData> {
+export interface TabsContextProps<TabData = any> {
   /**
    * @private 内部属性
    */
