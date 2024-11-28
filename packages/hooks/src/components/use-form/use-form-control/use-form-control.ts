@@ -43,7 +43,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     onError,
     getValidateProps,
   } = props;
-  const { name, bind } = useFieldSetConsumer({
+  const { name, bind, validateFieldSet } = useFieldSetConsumer({
     name: props.name,
     bind: props.bind,
   });
@@ -151,7 +151,20 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
             return res;
           })
           .catch((e) => {
-            formFunc?.setError(name, e);
+            if (isArray(e)) {
+              e.forEach((error, index) => {
+                if (error) {
+                  const fieldSetName = Object.keys(error)?.[0];
+                  const fieldSetError = Object.values(error)?.[0] as Error;
+                  const na = `${name}[${index}].${fieldSetName}`;
+                  if (fieldSetName && fieldSetError) {
+                    formFunc?.setError(na, fieldSetError);
+                  }
+                }
+              });
+            } else {
+              formFunc?.setError(name, e);
+            }
             onError?.(e);
             bindValidate();
             return e;
@@ -189,6 +202,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       validateFiled('', v, undefined);
     }
     if (onChangePo) onChangePo(v, ...other);
+    if (validateFieldSet) validateFieldSet();
   });
 
   useEffect(() => {

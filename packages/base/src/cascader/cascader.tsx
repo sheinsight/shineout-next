@@ -201,6 +201,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     disabled === true && styles?.wrapperDisabled,
     focused && disabled !== true && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
+    virtual && styles.virtual,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
     (!!props.error || props.status === 'error') && styles?.wrapperError,
@@ -605,6 +606,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           jssStyle={jssStyle}
           data={filterData!}
           datum={datum}
+          keygen={keygen}
+          height={height}
+          size={size}
+          virtual={virtual}
           wideMatch={wideMatch}
           filterFunc={filterFunc}
           renderItem={renderItem}

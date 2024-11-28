@@ -1,3 +1,9 @@
+## 3.5.1
+2024-11-14
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 校验返参为 Error 数组时校验异常的问题 ([#796](https://github.com/sheinsight/shineout-next/pull/796))
+
 ## 3.5.0
 2024-11-11
 ### 💎 Enhancement

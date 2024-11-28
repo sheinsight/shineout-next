@@ -111,17 +111,17 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     textAlign: 'left',
   },
   resultAlignLeft: {
-    '& $resultTextWrapper': {
+    '& $resultTextWrapper input': {
       textAlign: 'left',
     },
   },
   resultAlignRight: {
-    '& $resultTextWrapper': {
+    '& $resultTextWrapper input': {
       textAlign: 'right',
     },
   },
   resultAlignCenter: {
-    '& $resultTextWrapper': {
+    '& $resultTextWrapper input': {
       textAlign: 'center',
     },
   },
@@ -362,8 +362,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     textAlign: 'right',
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
   },
-  pickerRange: {
-  },
+  pickerRange: {},
   pickerRangeBody: {
     display: 'flex',
   },

@@ -1,3 +1,13 @@
+## 3.5.1
+2024-11-14
+
+### 🐞 BugFix
+- 修复 `Cascader` 在开启 `unmatch` 情况下指定 renderItem 为 string 类型时渲染异常的问题(Regression: since v3.5.0) ([#800](https://github.com/sheinsight/shineout-next/pull/800))
+- 修复 `Cascader` 非虚拟列表情况下搜索内容溢出列表的问题 ([#798](https://github.com/sheinsight/shineout-next/pull/798))
+
+### 🆕 Feature
+- `Cascader` 单选模式下搜索结果列表支持虚拟列表 ([#798](https://github.com/sheinsight/shineout-next/pull/798))
+
 ## 3.5.0
 2024-11-11
 

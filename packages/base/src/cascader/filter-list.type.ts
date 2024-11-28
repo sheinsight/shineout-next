@@ -5,11 +5,12 @@ import { JssStyleType, CascaderProps } from './cascader.type';
 export interface FilterListProps<DataItem, Value extends KeygenResult[]>
   extends Pick<
     CascaderProps<DataItem, Value>,
-    'renderOptionList' | 'loading' | 'wideMatch' | 'childrenKey'
+    'renderOptionList' | 'loading' | 'wideMatch' | 'childrenKey' | 'virtual' | 'keygen' | 'size'
   > {
   jssStyle?: JssStyleType;
   data: DataItem[];
   datum: DatumType<DataItem>['datum'];
+  height: number;
   filterFunc?: (data: DataItem) => boolean;
   shouldFinal: boolean;
   renderItem: (data: DataItem, active?: boolean, id?: Value[0] | undefined) => React.ReactNode;

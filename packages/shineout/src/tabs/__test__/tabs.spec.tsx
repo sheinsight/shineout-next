@@ -331,7 +331,7 @@ describe('Tabs[Collapsible/defaultCollapsed]', () => {
       await delay(200);
     });
 
-    styleTest(panel, 'height: 0px; flex: 0 0 auto;');
+    styleTest(panel, 'height: 0px; flex: 0 0 auto; overflow: hidden;');
     fireEvent.click(header.querySelector(tabsCollapsibleClassName)!);
     await waitFor(async () => {
       await delay(500);

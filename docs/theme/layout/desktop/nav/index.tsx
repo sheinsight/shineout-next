@@ -182,6 +182,16 @@ const Nav = () => {
     );
   };
 
+  const renderEnv = () => {
+    const isBeta = process.env.DOC_ENV === 'BASE';
+    if (!isBeta) return null;
+    return (
+      <Tag style={{ marginLeft: 10 }} size='small' color='success'>
+        Beta
+      </Tag>
+    );
+  };
+
   const renderEntry = () => (
     <>
       {/* <li>

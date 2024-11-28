@@ -466,7 +466,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return datum.getDataByValues(values as Value[], { childrenKey });
   };
 
-  const checkUnMatched = (item: DataItem | UnMatchedData): item is UnMatchedData => {
+  const checkUnMatched = (item: DataItem | UnMatchedData | null): item is UnMatchedData => {
     return datum.isUnMatchedData(item);
   };
   const handleRemove = (item: DataItem | UnMatchedData) => {
