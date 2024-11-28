@@ -198,7 +198,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
                 if (context.errors[key]) {
                   errorFields.push({
                     name: key,
-                    errors: [context.errors[key].message],
+                    errors: [context.errors[key]?.message as string || ''],
                   });
                 }
               }
@@ -215,7 +215,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
             .then((results) => {
               const error = results.find((n) => n !== true);
               if (error !== undefined) {
-                reject(error);
+                reject(error as FormError);
               } else {
                 resolve(true as any);
               }
