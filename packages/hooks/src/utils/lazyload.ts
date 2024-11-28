@@ -1,4 +1,5 @@
 import { generateUUID, docSize } from '../utils';
+import { getClosestFixedContainer } from './dom/element';
 
 type Timer = NodeJS.Timeout | null;
 
@@ -70,7 +71,8 @@ export function removeStack(id?: string | null, removeListener?: boolean) {
 }
 
 function getObserver(obj: LazyConfig, id: string) {
-  const { container = null, offset, render, offscreen, noRemove } = obj;
+  const { container = null, element, offset, render, offscreen, noRemove } = obj;
+  const fixedContainer = getClosestFixedContainer(element);
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((en) => {
@@ -83,7 +85,7 @@ function getObserver(obj: LazyConfig, id: string) {
       });
     },
     {
-      root: container,
+      root: fixedContainer || container,
       rootMargin: `${offset}px`,
     },
   );
