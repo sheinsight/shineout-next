@@ -31,8 +31,9 @@ const Collapse = (props: CollapseProps) => {
 
   const collapseRootClassName = classNames(
     className,
-    jssStyle?.collapse.wrapper,
-    !border && jssStyle?.collapse.borderLess,
+    jssStyle?.collapse?.rootClass,
+    jssStyle?.collapse?.wrapper,
+    !border && jssStyle?.collapse?.borderLess,
   );
 
   const providerValue = {

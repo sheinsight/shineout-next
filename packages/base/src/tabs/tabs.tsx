@@ -8,9 +8,23 @@ import TabsPanel from './tabs-panel';
 import TabsHeader from './tabs-header';
 import Sticky, { type StickyProps } from '../sticky';
 
-const { isEmpty, isObject, isNumber, isNamedComponent } = util;
+const { isEmpty, isObject, isNumber, isNamedComponent, devUseWarning } = util;
 
 const Tabs = (props: TabsProps) => {
+  if (props.border) {
+    devUseWarning.deprecated('border', 'splitColor', 'Tabs');
+  }
+  if(props.tabBarExtraContent){
+    devUseWarning.deprecated('tabBarExtraContent', 'extra', 'Tabs');
+  }
+  if(props.align){
+    devUseWarning.deprecated('align', 'position', 'Tabs');
+  }
+  // todo: activeBackground 的作用需要再确认（by Tom）
+  // if(props.background){
+  //   devUseWarning.deprecated('background', 'activeBackground', 'Tabs');
+  // }
+
   const {
     jssStyle,
     align,
@@ -63,7 +77,7 @@ const Tabs = (props: TabsProps) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const panelHeight = useRef<number>(0);
   const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
-  const rootClass = classNames(tabsStyle.tabs, tabsClassName, {
+  const rootClass = classNames(tabsStyle.rootClass, tabsStyle.tabs, tabsClassName, {
     [tabsStyle.autoFill]: isVertical || autoFill,
     [tabsStyle.collapsed]: collapse,
   });
@@ -232,7 +246,7 @@ const Tabs = (props: TabsProps) => {
       );
     }
 
-    console.warn('Tabs position is invalid, please check it.');
+    devUseWarning.warn('Tabs position is invalid, please check it.');
 
     return (
       <>

@@ -3,6 +3,9 @@ import classNames from 'classnames';
 import { AlertClasses, AlertProps } from './alert.type';
 import Icons from '../icons';
 import AlertIcon from './alert-icon';
+import { util } from '@sheinx/hooks';
+
+const { devUseWarning } = util;
 
 const HIDE = 0;
 const SHOW = 1;
@@ -24,6 +27,10 @@ const Alert = (props: AlertProps) => {
     onClose,
     ...rest
   } = props;
+  if (props.hideClose) {
+    devUseWarning.deprecated('hideClose', 'closable', 'Alert');
+  }
+
   const [dismiss, setDismiss] = useState(SHOW);
   const getType = () => {
     if (typeProp === 'error') {
@@ -35,7 +42,7 @@ const Alert = (props: AlertProps) => {
   const type = getType();
 
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
-  const rootClass = classNames(className, alertStyle.alert, {
+  const rootClass = classNames(className, alertStyle.rootClass, alertStyle.alert, {
     [alertStyle[type]]: true,
     [alertStyle.widthTitle]: title,
     [alertStyle.pending]: dismiss === PENDING,

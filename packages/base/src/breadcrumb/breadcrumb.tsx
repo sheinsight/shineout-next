@@ -41,7 +41,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
   const renderArray = (data: StructureArray<Item>) => {
     return <List data={data} renderItem={renderItem} jssStyle={props.jssStyle} maxHeight={maxHeight} />;
   };
-  const className = classNames(breadcrumbClasses?.wrapper, props.className);
+  const className = classNames(breadcrumbClasses?.rootClass, breadcrumbClasses?.wrapper, props.className);
 
   const getRenderData = () => {
     if (!props.max) return data;

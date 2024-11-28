@@ -1,6 +1,7 @@
 import { deepMerge } from '../object';
 import { ObjectType } from '../../common/type';
 import { MessageType } from './rule.type';
+import { devUseWarning } from '../warning';
 
 const createMessage = (key: 'min' | 'max') => (props: ObjectType) => {
   let lt = '';
@@ -29,7 +30,7 @@ export const lengthMessage = {
 export default (key: 'min' | 'max', { message }: { message?: MessageType } = {}) =>
   (len: number, msg?: MessageType) => {
     if (typeof len !== 'number') {
-      console.error(new Error(`Rule "${key}" param expect a number, get ${typeof len}`));
+      devUseWarning.error(`Rule "${key}" param expect a number, get ${typeof len}`);
       return null;
     }
     return deepMerge(

@@ -172,6 +172,7 @@ const EditableArea = (props: EditableAreaProps) => {
       id={fieldId}
       className={classNames(
         className,
+        editableAreaStyle?.rootClass,
         editableAreaStyle?.wrapper,
         status === 'error' && editableAreaStyle?.wrapperError,
         disabled && editableAreaStyle?.wrapperDisabled,

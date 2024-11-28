@@ -3,6 +3,7 @@ import { CommonType } from '../common/type';
 import { BasePopupProps } from '@sheinx/hooks';
 
 export interface TooltipClasses {
+  rootClass: string;
   /**
    * 包裹容器当需要 disabledChild 的时候传入
    */

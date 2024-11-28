@@ -60,9 +60,16 @@ export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
     const classes = hoc();
     return Object.keys(classes).reduce((acc, key) => {
       const k = key as keyof typeof classes;
-      const oldClass = classes[k];
-      const constClass = `${prefix}-${ns}-${camelToDash(k)}`;
-      const value = constClass === oldClass ? oldClass : `${oldClass} ${constClass}`;
+
+      let value = ''
+      // 给每个组件的root类名添加命名空间
+      if(k === 'rootClass') {
+        value = `${prefix}-${camelToDash(ns)}${value}`
+      }else{
+        const oldClass = classes[k];
+        const constClass = `${prefix}-${ns}-${camelToDash(k)}`;
+        value = constClass === oldClass ? oldClass : `${oldClass} ${constClass}`;
+      }
       acc[k] = value;
       return acc;
     }, {} as Classes<C>);

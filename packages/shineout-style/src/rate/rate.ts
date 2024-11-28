@@ -20,6 +20,7 @@ const animation = {
 
 const rateStyle: JsStyles<RateClassType> = {
   ...animation,
+  rootClass: {},
   wrapper: {
     display: 'inline-block',
     '[data-soui-role="form-control"] >  &': {

@@ -90,6 +90,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
     <div
       id={fieldId}
       className={classNames(
+        sliderClasses?.rootClass,
         sliderClasses?.wrapper,
         props.autoHide && sliderClasses?.autoHide,
         props.disabled && sliderClasses?.disabled,

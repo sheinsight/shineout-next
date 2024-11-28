@@ -13,6 +13,7 @@ export type { DateTimeType, DatePickerValueType, DatePickerModeType } from '@she
 export type AreaType = 'year' | 'month' | 'week' | 'day' | 'time' | 'quick' | 'quarter';
 
 export interface DatePickerClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

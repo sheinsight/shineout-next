@@ -195,6 +195,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
 
   const wrapperClass = classNames(
     props.className,
+    listClasses?.rootClass,
     listClasses?.wrapper,
     isEmpty && listClasses?.wrapperEmpty,
     props.bordered && listClasses?.wrapperBordered,

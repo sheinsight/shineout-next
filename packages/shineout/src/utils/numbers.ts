@@ -1,14 +1,18 @@
+import { util } from "@sheinx/hooks";
+
+const { devUseWarning } = util;
+
 export function range(end: number, start = 0) {
   const delta = end - start
   if (typeof delta !== 'number' || Number.isNaN(delta)) {
-    console.error(new Error('end can not computed with start'))
+    devUseWarning.error('end can not computed with start');
   }
   return Array.from({ length: end - start }, (_v, k) => k + start)
 }
 
 export function split(total: number, nums: number[]) {
   if (typeof total !== 'number' || total === 0) {
-    console.error(new Error('total mast be a number(not equal 0)'))
+    devUseWarning.error('total mast be a number(not equal 0)');
   }
   let remain = 1
   let nilCount = 0

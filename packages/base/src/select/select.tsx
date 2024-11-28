@@ -298,8 +298,9 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const rootClass = classNames(
     className,
-    isEmpty && styles.wrapperEmpty,
+    styles?.rootClass,
     styles?.wrapper,
+    isEmpty && styles.wrapperEmpty,
     open && styles?.wrapperOpen,
     open && trigger === 'hover' && styles?.triggerHover,
     disabled === true && styles?.wrapperDisabled,

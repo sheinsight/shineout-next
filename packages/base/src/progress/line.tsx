@@ -19,6 +19,7 @@ const Line = (props: ProgressProps) => {
 
   const mc = classNames(
     props.className,
+    progressClasses?.rootClass,
     progressClasses?.line,
     progressClasses?.wrapper,
     type === 'success' && progressClasses?.wrapperSuccess,

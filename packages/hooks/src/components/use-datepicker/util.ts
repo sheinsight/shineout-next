@@ -10,6 +10,9 @@ import weekOfYear from 'dayjs/plugin/weekOfYear';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import enLocale from 'dayjs/locale/en';
+import { util } from '@sheinx/hooks';
+
+const { devUseWarning } = util;
 
 export type DateTimeType = Date | number | string | undefined;
 export type Mode =
@@ -67,7 +70,7 @@ export const compatibleFmt = (fmt?: string) => {
     result = result.replace(new RegExp(key, 'g'), trans[key as keyof typeof trans]);
   });
   if (result !== fmt) {
-    console.warn(`invalid datepicker format: ${fmt} please use ${result}`);
+    devUseWarning.warn(`invalid datepicker format: ${fmt} please use ${result}`);
   }
   return result;
 };
@@ -87,7 +90,7 @@ function transDateWithZone(dd: Date, options: DateOptions = {}, back = false) {
         return back ? zonedTimeToUtc(dd, options.timeZone) : utcToZonedTime(dd, options.timeZone);
       }
     }
-    console.error(new Error(`timeZone is not supported: ${options.timeZone}`));
+    devUseWarning.error(`timeZone is not supported: ${options.timeZone}`);
   }
   return new Date(dd);
 }

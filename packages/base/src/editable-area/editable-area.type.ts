@@ -4,6 +4,7 @@ import { CommonType } from '../common/type';
 import { InnerTitleClasses } from '../common/use-inner-title';
 
 export interface EditableAreaClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

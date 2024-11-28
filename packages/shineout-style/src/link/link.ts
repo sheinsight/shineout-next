@@ -6,7 +6,10 @@ import { LinkClasses } from '@sheinx/base'
 export type LinkClassType = keyof LinkClasses;
 
 const linkStyle: JsStyles<LinkClassType> = {
+  rootClass: {},
   wrapper: {
+    display: 'inline-flex',
+    alignItems: 'center',
     fontSize: token.linkDefaultFontSize,
   },
   sizeSmall: {
@@ -95,12 +98,12 @@ const linkStyle: JsStyles<LinkClassType> = {
     }
   },
   icon: {
-    display: 'inline-block',
-    width: '1em',
-    verticalAlign: 'middle',
-    marginRight: 6,
+    marginRight: 4,
     '& > svg': {
       fill: 'currentcolor',
+      width: '1em',
+      height: '1em',
+      verticalAlign: '-2px',
     }
   }
 };

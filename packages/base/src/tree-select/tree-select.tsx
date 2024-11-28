@@ -217,8 +217,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const rootClass = classNames(
     className,
-    isEmpty && styles.wrapperEmpty,
+    styles?.rootClass,
     styles?.wrapper,
+    isEmpty && styles.wrapperEmpty,
     open && styles?.wrapperOpen,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,

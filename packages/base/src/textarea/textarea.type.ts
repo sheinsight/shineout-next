@@ -6,6 +6,7 @@ import { PopoverClasses } from '../popover/popover.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
 
 export interface TextareaClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

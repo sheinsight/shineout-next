@@ -144,6 +144,7 @@ const tag = (type: TagType) => ({
 });
 
 const TagStyle: JsStyles<keyof TagClasses> = {
+  rootClass: {},
   tag: {
     display: 'inline-flex',
     padding: `${Token.tagPaddingY} ${Token.tagPaddingX}`,

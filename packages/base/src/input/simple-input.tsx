@@ -35,6 +35,7 @@ const Input = (props: SimpleInputProps) => {
 
   const rootClass = classNames(
     className,
+    inputStyle?.rootClass,
     inputStyle?.wrapper,
     !!focused && inputStyle?.wrapperFocus,
     !!disabled && inputStyle?.wrapperDisabled,

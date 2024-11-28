@@ -24,6 +24,7 @@ export type TagShape = 'rounded';
 export type TagModeType = 'bright' | 'outline' | 'fill' | 'brightOutline';
 
 export interface TagClasses {
+  rootClass: string;
   disabled: string;
   tag: string;
   input: string;

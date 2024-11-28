@@ -59,6 +59,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperNoBorder, wrapperFocus: _noFocus, ...resetWrapper } = inputBorder;
 
 const editableAreaStyle: JsStyles<EditableAreaClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'block',
     position: 'relative',

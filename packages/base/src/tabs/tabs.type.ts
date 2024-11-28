@@ -5,6 +5,7 @@ import { BaseTabsProps, TabsShapeType } from '@sheinx/hooks';
 import type { StickyProps } from '../sticky';
 
 export interface TabsClasses {
+  rootClass: string;
   tabs: string;
   tab: string;
   panel: string;

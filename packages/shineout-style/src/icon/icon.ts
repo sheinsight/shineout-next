@@ -3,6 +3,7 @@ import token from '@sheinx/theme';
 import { IconClasses } from '@sheinx/base';
 
 const form: JsStyles<keyof IconClasses> = {
+  rootClass: {},
   wrapper: {
     display: 'inline-block',
     fontSize: 'inherit',

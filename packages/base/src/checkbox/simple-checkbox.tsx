@@ -18,6 +18,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
 
   const rootClass = classNames(
     className,
+    checkboxStyle?.rootClass,
     checkboxStyle?.wrapper,
     size === 'small' && checkboxStyle?.wrapperSmall,
     size === 'large' && checkboxStyle?.wrapperLarge,

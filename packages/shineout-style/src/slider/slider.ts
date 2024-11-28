@@ -5,6 +5,7 @@ import { JsStyles } from '../jss-style';
 export type SliderClassType = keyof SliderClasses;
 
 const sliderStyle: JsStyles<SliderClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'block',
     padding: `20px 10px`,

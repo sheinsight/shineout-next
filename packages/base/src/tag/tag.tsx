@@ -4,6 +4,7 @@ import useTag from './use-tag';
 import { util } from '@sheinx/hooks';
 import TagInput from './tag-input';
 
+const { devUseWarning } = util;
 const Done = 2;
 const Pending = 1;
 
@@ -30,6 +31,10 @@ const Tag = (props: TagProps) => {
     ...rest
   } = props;
 
+  if (props.type) {
+    devUseWarning.deprecated('type', 'color', 'Tag');
+  }
+
   const showClose = closable || onClose;
 
   const { dismiss, showInput, value, handleClose, handleClick, handleBlur, handleInputChange } =
@@ -47,7 +52,7 @@ const Tag = (props: TagProps) => {
   const colorSet = type || color || 'default';
   const tagStyle = jssStyle?.tag?.() || ({} as TagClasses);
 
-  const tagClass = classNames(className, tagStyle.tag, {
+  const tagClass = classNames(className, tagStyle.rootClass, tagStyle.tag, {
     [tagStyle.small]: size === 'small',
     [tagStyle.large]: size === 'large',
     [tagStyle.rounded]: shape === 'rounded',

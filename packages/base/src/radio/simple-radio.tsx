@@ -12,6 +12,7 @@ const Radio = (props: SimpleRadioProps) => {
     ...rest,
   });
   const rootClass = classNames([
+    radioClasses?.rootClass,
     radioClasses?.wrapper,
     className,
     !!disabled && radioClasses?.wrapperDisabled,

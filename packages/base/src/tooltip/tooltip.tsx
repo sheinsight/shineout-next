@@ -1,9 +1,11 @@
 import { usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { cloneElement, isValidElement, useState, useRef } from 'react';
+import React, { cloneElement, isValidElement, useRef } from 'react';
 import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
+
+const { devUseWarning } = util;
 
 const defaultDelay = 0;
 
@@ -42,7 +44,7 @@ const Tooltip = (props: TooltipProps) => {
   });
 
   if (!isValidElement(children)) {
-    console.error(new Error('Tooltip children expect a single ReactElement.'));
+    devUseWarning.error('Tooltip children expect a single ReactElement.');
     return null;
   }
 
@@ -88,6 +90,7 @@ const Tooltip = (props: TooltipProps) => {
         <div
           className={classNames(
             className,
+            tooltipClasses?.rootClass,
             tooltipClasses?.wrapper,
             open && tooltipClasses?.wrapperOpen,
           )}

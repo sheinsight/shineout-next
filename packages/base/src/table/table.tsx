@@ -30,6 +30,8 @@ import Thead from './thead';
 import Tbody from './tbody';
 import Tfoot from './tfoot';
 
+const { devUseWarning } = util;
+
 const emptyArr: any[] = [];
 const virtualScrollerStyle = {
   flex: 1,
@@ -61,6 +63,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableRef = useRef<HTMLDivElement | null>(null);
 
   const browserScrollbarWidth = useScrollbarWidth();
+
+  if (props.fixed) {
+    devUseWarning.deprecated('fixed', 'virtual', 'Table');
+  }
 
   const getSpinConfig = () => {
     if (typeof config.spin === 'object') {
@@ -552,6 +558,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const tableWrapperClass = classNames(
     props.className,
+    tableClasses?.rootClass,
     tableClasses?.wrapper,
     props.bordered && tableClasses?.bordered,
     verticalAlign === 'top' && tableClasses?.verticalAlignTop,

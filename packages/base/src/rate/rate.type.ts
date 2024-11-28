@@ -2,6 +2,7 @@ import React from 'react';
 import { CommonChangeType, CommonType } from '../common/type';
 
 export interface RateClasses {
+  rootClass: string;
   wrapper: string;
   inner: string;
   item: string;

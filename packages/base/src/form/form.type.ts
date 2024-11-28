@@ -5,6 +5,7 @@ import { CommonType } from '../common/type';
 
 export type KeyType = string | number | symbol;
 export interface FormClasses {
+  rootClass: string;
   wrapper: string;
   wrapperInline: string;
 }

@@ -4,6 +4,7 @@ import { InputClasses } from '../input/input.type';
 import React from 'react';
 
 export interface CheckboxClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

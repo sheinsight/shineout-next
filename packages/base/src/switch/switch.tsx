@@ -41,6 +41,7 @@ const Switch = (props0: SwitchProps) => {
 
   const rootClassName = classNames(
     className,
+    switchClasses?.rootClass,
     switchClasses?.wrapper,
     !!checked && switchClasses?.wrapperChecked,
     disabled && switchClasses?.wrapperDisabled,

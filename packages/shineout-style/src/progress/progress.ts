@@ -5,6 +5,7 @@ import { ProgressClasses } from '@sheinx/base';
 export type ProgressClassType = keyof ProgressClasses;
 
 const progressStyle: JsStyles<ProgressClassType> = {
+  rootClass: {},
   wrapper: {
     fontSize: token.progressFontSize,
     color: token.progressFontColor,

@@ -13,6 +13,7 @@ import { InputClasses } from '../input/input.type';
 import { BaseTipProps } from '../common/use-tip';
 
 export interface CascaderClasses {
+  rootClass: string;
   empty: string;
   wrapper: string;
   wrapperEmpty: string;
