@@ -169,6 +169,7 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
   /**
    * @en Allow non-Tabs.Panel children
    * @cn 允许非Tabs.Panel的子元素
+   * @version 3.5.3
    */
   allowNonPanel?: boolean;
 }
