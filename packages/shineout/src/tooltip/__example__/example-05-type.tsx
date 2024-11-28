@@ -3,8 +3,6 @@
  *    -- 通过 `type` 设置主题色
  * en - Type
  *    -- Set the type property to change the theme color
- * 
- * 
  */
 import React from 'react';
 import { Tooltip, Button } from 'shineout';
