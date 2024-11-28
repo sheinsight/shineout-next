@@ -43,8 +43,6 @@ const Tooltip = (props: TooltipProps) => {
   const events = getTargetProps();
 
   const bindEvents = () => {
-    if(!persistent) return
-
     const targetEl = targetRef.current;
     if (!targetEl) return;
     if (events.onMouseEnter) targetEl.addEventListener('mouseenter', events.onMouseEnter);
@@ -53,7 +51,6 @@ const Tooltip = (props: TooltipProps) => {
   };
 
   const unbindEvents = () => {
-    if(!persistent) return
     const targetEl = targetRef.current;
     if (!targetEl) return;
     const events = getTargetProps();
@@ -64,11 +61,12 @@ const Tooltip = (props: TooltipProps) => {
   };
 
   useEffect(() => {
+    if(!persistent) return
     bindEvents();
     return () => {
       unbindEvents();
     };
-  }, []);
+  }, [persistent]);
 
   if (!isValidElement(children)) {
     console.error(new Error('Tooltip children expect a single ReactElement.'));
