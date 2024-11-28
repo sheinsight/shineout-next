@@ -777,6 +777,7 @@ exports[`Input[Base] should render correctly about password 1`] = `
   <div
     class="soui-input-wrapper soui-input-password"
     data-soui-input-border="true"
+    id="password"
     style="width: 300px;"
   >
     <div

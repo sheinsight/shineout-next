@@ -1,5 +1,5 @@
 import { useInputAble, usePersistFn, useUpload, util } from '@sheinx/hooks';
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { UploadProps } from './upload.type';
 import Drop from './drop';
 import classNames from 'classnames';
@@ -9,6 +9,7 @@ import { getLocale, useConfig } from '../config';
 import icons from '../icons';
 import { produce } from 'immer';
 import useWithFormConfig from '../common/use-with-form-config';
+import { FormFieldContext } from '../form/form-field-context';
 
 const Upload = <T,>(props0: UploadProps<T>) => {
   const props = useWithFormConfig(props0);
@@ -223,8 +224,10 @@ const Upload = <T,>(props0: UploadProps<T>) => {
   };
   const CustomResult = props.customResult;
   const shouldRenderLeft = listType !== 'image' || leftHandler;
+  const { fieldId } = useContext(FormFieldContext);
   return (
     <div
+      id={fieldId}
       style={props.style}
       className={classNames(
         uploadClasses?.rootClass,

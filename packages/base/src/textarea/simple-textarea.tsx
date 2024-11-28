@@ -1,7 +1,8 @@
 import { useKeyEvent, usePersistFn, useTextarea, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { KeyboardEvent, useEffect } from 'react';
+import React, { KeyboardEvent, useContext, useEffect } from 'react';
 import { SimpleTextareaProps } from './textarea.type';
+import { FormFieldContext } from '../form/form-field-context';
 
 const Textarea = (props: SimpleTextareaProps) => {
   const {
@@ -24,6 +25,7 @@ const Textarea = (props: SimpleTextareaProps) => {
   const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
     ...rest,
   });
+  const { fieldId } = useContext(FormFieldContext);
 
   const rootClass = classNames(
     className,
@@ -73,6 +75,7 @@ const Textarea = (props: SimpleTextareaProps) => {
 
   return (
     <div
+      id={fieldId}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       {...getRootProps({
         className: rootClass,

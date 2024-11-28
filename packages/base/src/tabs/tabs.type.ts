@@ -165,4 +165,10 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    * @cn 标签页文字颜色，仅当 shape 为 "card" 时生效
    */
   color?: string
+
+  /**
+   * @en Allow non-Tabs.Panel children
+   * @cn 允许非Tabs.Panel的子元素
+   */
+  allowNonPanel?: boolean;
 }

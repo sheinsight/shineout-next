@@ -1,20 +1,20 @@
-## 3.5.2-beta.8
-2024-11-26
+## 3.5.3-beta.1
+2024-11-28
+### 💎 Enhancement
+
+- 增强 `Form` 的 `formRef`，增加 `validateFieldsWithValue` 方法，返回校验值 ([#812](https://github.com/sheinsight/shineout-next/pull/812))
+- 增强 `Form` 的 `formRef`，增加 `scrollToField` 方法，支持根据 name 滚动至指定表单项 ([#812](https://github.com/sheinsight/shineout-next/pull/812))
+
+
+## 3.5.2
+2024-11-28
+
 ### 🐞 BugFix
 
-- 修复 · 初始化表单后 value 异步更新导致 defaultValue 无法再次同步的问题 ([#817](https://github.com/sheinsight/shineout-next/pull/817))
-
-## 3.5.2-beta.7
-2024-11-25
-### 🐞 BugFix
-
+- 修复初始化表单后 value 异步更新导致 defaultValue 无法再次同步的问题 ([#817](https://github.com/sheinsight/shineout-next/pull/817))
 - 修复 `Form.FieldSet` 初始化默认值后更新内部值异常的问题 ([#816](https://github.com/sheinsight/shineout-next/pull/816))
-
-## 3.5.2-beta.3
-2024-11-21
-### 🐞 BugFix
-
 - 修复 `Form.FieldSet` 设置默认值覆盖前者初始化值的问题 ([#808](https://github.com/sheinsight/shineout-next/pull/808))
+
 
 ## 3.5.1
 2024-11-14

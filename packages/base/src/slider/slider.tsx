@@ -1,15 +1,17 @@
 import { useSlider, useInputAble } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useConfig } from '../config';
 import { SliderProps } from './slider.type';
 import useWithFormConfig from '../common/use-with-form-config';
+import { FormFieldContext } from '../form/form-field-context';
 
 const defaultScale = [0, 100];
 const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => {
   const props = useWithFormConfig(props0);
   const sliderClasses = props.jssStyle?.slider?.();
   const config = useConfig()
+  const { fieldId } = useContext(FormFieldContext);
 
   const { scale = defaultScale, step = 1, height = 200, valueTipType: tipType = 'always' } = props;
 
@@ -86,6 +88,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
 
   return (
     <div
+      id={fieldId}
       className={classNames(
         sliderClasses?.rootClass,
         sliderClasses?.wrapper,

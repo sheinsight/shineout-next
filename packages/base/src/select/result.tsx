@@ -60,7 +60,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const [more, setMore] = useState(-1);
   const [shouldResetMore, setShouldResetMore] = useState(false);
   const render = useRender();
-
   const resultRef = useRef<HTMLDivElement>(null);
   const prevMore = useRef(more);
   const showInput = allowOnFilter;

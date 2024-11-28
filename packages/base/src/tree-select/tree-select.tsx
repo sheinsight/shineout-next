@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
 import {
   util,
   usePersistFn,
@@ -23,6 +23,7 @@ import Tree from '../tree';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { getLocale, useConfig } from '../config';
+import { FormFieldContext } from '../form/form-field-context';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
@@ -645,8 +646,10 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
   }, []);
 
+  const { fieldId } = useContext(FormFieldContext);
   return (
     <div
+      id={fieldId}
       ref={targetRef}
       tabIndex={disabled === true || showInput ? undefined : 0}
       {...util.getDataAttribute({ ['input-border']: 'true' })}

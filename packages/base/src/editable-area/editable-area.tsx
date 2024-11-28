@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Textarea } from '../textarea';
 import { EditableAreaProps } from './editable-area.type';
 import AbsoluteList from '../absolute-list';
@@ -6,6 +6,7 @@ import { useInputAble, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import useInnerTitle from '../common/use-inner-title';
+import { FormFieldContext } from '../form/form-field-context';
 
 function formatShowValue(value: unknown) {
   if (!value && value !== 0) return '';
@@ -36,6 +37,8 @@ const EditableArea = (props: EditableAreaProps) => {
     placeTitle,
     bordered = false,
   } = props;
+
+  const { fieldId } = useContext(FormFieldContext);
 
   const editableAreaStyle = jssStyle?.editableArea?.();
 
@@ -166,6 +169,7 @@ const EditableArea = (props: EditableAreaProps) => {
 
   return (
     <div
+      id={fieldId}
       className={classNames(
         className,
         editableAreaStyle?.rootClass,

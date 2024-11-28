@@ -237,6 +237,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
               <div
                 class="soui-input-wrapper"
                 data-soui-input-border="true"
+                id="email"
               >
                 <div
                   class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -266,6 +267,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
               <div
                 class="soui-input-wrapper"
                 data-soui-input-border="true"
+                id="password"
               >
                 <div
                   class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -366,6 +368,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 <div
                   class="soui-input-wrapper"
                   data-soui-input-border="true"
+                  id="name"
                 >
                   <div
                     class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -414,6 +417,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 <div
                   class="soui-input-wrapper"
                   data-soui-input-border="true"
+                  id="password"
                 >
                   <div
                     class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -443,6 +447,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 <div
                   class="soui-input-wrapper"
                   data-soui-input-border="true"
+                  id="email"
                 >
                   <div
                     class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -490,9 +495,11 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               >
                 <div
                   class="soui-radio-group"
+                  id="gendar"
                 >
                   <div
                     class="soui-radio-wrapper"
+                    id="gendar"
                   >
                     <input
                       style="display: none;"
@@ -515,6 +522,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                   </div>
                   <div
                     class="soui-radio-wrapper"
+                    id="gendar"
                   >
                     <input
                       style="display: none;"
@@ -553,9 +561,11 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               >
                 <div
                   class="soui-checkbox-group"
+                  id="course"
                 >
                   <div
                     class="soui-checkbox-wrapper"
+                    id="course"
                   >
                     <input
                       style="display: none;"
@@ -580,6 +590,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                   </div>
                   <div
                     class="soui-checkbox-wrapper"
+                    id="course"
                   >
                     <input
                       style="display: none;"
@@ -604,6 +615,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                   </div>
                   <div
                     class="soui-checkbox-wrapper"
+                    id="course"
                   >
                     <input
                       style="display: none;"
@@ -628,6 +640,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                   </div>
                   <div
                     class="soui-checkbox-wrapper"
+                    id="course"
                   >
                     <input
                       style="display: none;"
@@ -683,6 +696,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       >
                         <div
                           class="soui-datePicker-result-text"
+                          id="date"
                         >
                           <span
                             class="soui-datePicker-result-text-padding"
@@ -735,6 +749,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               >
                 <div
                   class="soui-rate-wrapper"
+                  id="score"
                 >
                   <div
                     class="soui-rate-inner"
@@ -908,6 +923,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               >
                 <div
                   class="soui-upload-wrapper soui-upload-wrapper-image"
+                  id="file"
                 >
                   <span
                     class="soui-upload-image-handler"
@@ -952,6 +968,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 <div
                   class="soui-textarea-wrapper"
                   data-soui-input-border="true"
+                  id="address"
                 >
                   <textarea
                     class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea"
@@ -1137,6 +1154,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
               <div
                 class="soui-input-wrapper"
                 data-soui-input-border="true"
+                id="email"
               >
                 <div
                   class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -1166,6 +1184,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
               <div
                 class="soui-input-wrapper"
                 data-soui-input-border="true"
+                id="password"
               >
                 <div
                   class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -1268,6 +1287,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
               <div
                 class="soui-input-wrapper"
                 data-soui-input-border="true"
+                id="email"
               >
                 <div
                   class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -1297,6 +1317,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
               <div
                 class="soui-input-wrapper"
                 data-soui-input-border="true"
+                id="password"
               >
                 <div
                   class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
