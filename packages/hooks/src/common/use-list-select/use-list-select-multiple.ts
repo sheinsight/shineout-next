@@ -1,4 +1,4 @@
-import { devUseWarning, isArray, isObject } from '../../utils';
+import { isArray, isObject } from '../../utils';
 import React, { useMemo } from 'react';
 import usePersistFn from '../use-persist-fn';
 
@@ -18,7 +18,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     if (typeof props.value === 'string') {
       valueArr = (props.value || '').split(props.separator);
     } else {
-      devUseWarning.error('use-list-select: separator is string, but value is not string');
+      console.error('[shineout] use-list-select: separator is string, but value is not string');
       valueArr = props.value;
     }
   } else {

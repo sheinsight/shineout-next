@@ -1,8 +1,10 @@
 /**
  * cn - 滚动到字段
- *    -- 可以通过 formRef 去获得表单的一些方法集, 包含校验, 清空校验, 提交等
+ *    -- 设置 `Form` 的 `name` 属性后，可以通过 `formRef` 的 `scrollToField` 方法滚动到指定字段
+ *    -- `formRef` 的 `validateFieldsWithValue` 方法可以获取所有字段的校验信息
  * en - Form Methods
- *    -- You can use formRef to get some methods of the form, including validation, clear validation, submission, etc
+ *    -- Set the `name` property of `Form` to use the `scrollToField` method of `formRef` to scroll to the specified field
+ *    -- The `validateFieldsWithValue` method of `formRef` can get the validation information of all fields
  */
 import React, { useState } from 'react';
 import { Form, Input, Button, Tabs, Grid, Select, Message } from 'shineout';

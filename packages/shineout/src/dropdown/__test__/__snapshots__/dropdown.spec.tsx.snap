@@ -2,12 +2,12 @@
 
 exports[`Dropdown[Base] should render correctly  1`] = `
 <div
-  class="soui-dropdown-wrapper"
+  class="soui-dropdown soui-dropdown-wrapper"
   data-position="bottom-left"
   data-role="dropdown"
 >
   <button
-    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+    class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
@@ -41,12 +41,12 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
   style="background: rgb(238, 238, 238); padding: 20px; border-radius: 4px; overflow: hidden;"
 >
   <div
-    class="soui-dropdown-wrapper"
+    class="soui-dropdown soui-dropdown-wrapper"
     data-position="bottom-left"
     data-role="dropdown"
   >
     <button
-      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
+      class="soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -74,13 +74,13 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
     </button>
   </div>
   <div
-    class="soui-dropdown-wrapper"
+    class="soui-dropdown soui-dropdown-wrapper"
     data-position="bottom-left"
     data-role="dropdown"
     style="margin-inline-start: 24px;"
   >
     <button
-      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
+      class="soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -118,12 +118,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-primary soui-button-button"
+        class="soui-dropdown-button soui-button soui-button-primary soui-button-button"
         dir="ltr"
         type="button"
       >
@@ -151,12 +151,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button"
         dir="ltr"
         type="button"
       >
@@ -184,12 +184,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-danger soui-button-button"
+        class="soui-dropdown-button soui-button soui-button-danger soui-button-button"
         dir="ltr"
         type="button"
       >
@@ -217,12 +217,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-warning soui-button-button"
+        class="soui-dropdown-button soui-button soui-button-warning soui-button-button"
         dir="ltr"
         type="button"
       >
@@ -250,12 +250,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-success soui-button-button"
+        class="soui-dropdown-button soui-button soui-button-success soui-button-button"
         dir="ltr"
         type="button"
       >
@@ -287,12 +287,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
+        class="soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -320,12 +320,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-outline"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -353,12 +353,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-danger soui-button-button soui-button-outline"
+        class="soui-dropdown-button soui-button soui-button-danger soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -386,12 +386,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-warning soui-button-button soui-button-outline"
+        class="soui-dropdown-button soui-button soui-button-warning soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -419,12 +419,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-success soui-button-button soui-button-outline"
+        class="soui-dropdown-button soui-button soui-button-success soui-button-button soui-button-outline"
         dir="ltr"
         type="button"
       >
@@ -456,12 +456,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-primary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -489,12 +489,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -522,12 +522,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-danger soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-danger soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -555,12 +555,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-warning soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-warning soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -588,12 +588,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-success soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-success soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -626,12 +626,12 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
 
 exports[`Dropdown[Base] should render correctly about children 1`] = `
 <div
-  class="soui-dropdown-wrapper"
+  class="soui-dropdown soui-dropdown-wrapper"
   data-position="bottom-left"
   data-role="dropdown"
 >
   <button
-    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+    class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
@@ -662,12 +662,12 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
 
 exports[`Dropdown[Base] should render correctly about columns 1`] = `
 <div
-  class="soui-dropdown-wrapper"
+  class="soui-dropdown soui-dropdown-wrapper"
   data-position="bottom-left"
   data-role="dropdown"
 >
   <button
-    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+    class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
@@ -698,12 +698,12 @@ exports[`Dropdown[Base] should render correctly about columns 1`] = `
 
 exports[`Dropdown[Base] should render correctly about divider 1`] = `
 <div
-  class="soui-dropdown-wrapper"
+  class="soui-dropdown soui-dropdown-wrapper"
   data-position="bottom-left"
   data-role="dropdown"
 >
   <button
-    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+    class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
@@ -734,12 +734,12 @@ exports[`Dropdown[Base] should render correctly about divider 1`] = `
 
 exports[`Dropdown[Base] should render correctly about group 1`] = `
 <div
-  class="soui-dropdown-wrapper"
+  class="soui-dropdown soui-dropdown-wrapper"
   data-position="bottom-left"
   data-role="dropdown"
 >
   <button
-    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+    class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
@@ -770,12 +770,12 @@ exports[`Dropdown[Base] should render correctly about group 1`] = `
 
 exports[`Dropdown[Base] should render correctly about hover 1`] = `
 <div
-  class="soui-dropdown-wrapper"
+  class="soui-dropdown soui-dropdown-wrapper"
   data-position="bottom-left"
   data-role="dropdown"
 >
   <button
-    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+    class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
@@ -806,12 +806,12 @@ exports[`Dropdown[Base] should render correctly about hover 1`] = `
 
 exports[`Dropdown[Base] should render correctly about icon 1`] = `
 <div
-  class="soui-dropdown-wrapper"
+  class="soui-dropdown soui-dropdown-wrapper"
   data-position="bottom-left"
   data-role="dropdown"
 >
   <button
-    class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+    class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
     dir="ltr"
     type="button"
   >
@@ -848,12 +848,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: center; gap: 12px; padding: 0px 120px;"
   >
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -881,12 +881,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -914,12 +914,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="bottom-right"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -951,12 +951,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="right-top"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -984,12 +984,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="left-top"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -1021,12 +1021,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="right"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -1054,12 +1054,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -1091,12 +1091,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="right-bottom"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -1124,12 +1124,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="left-bottom"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -1161,12 +1161,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: center; gap: 12px;"
   >
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="top-left"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -1194,12 +1194,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="top"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -1227,12 +1227,12 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </button>
     </div>
     <div
-      class="soui-dropdown-wrapper"
+      class="soui-dropdown soui-dropdown-wrapper"
       data-position="top-right"
       data-role="dropdown"
     >
       <button
-        class="soui-dropdown-button soui-button-secondary soui-button-button soui-button-text"
+        class="soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text"
         dir="ltr"
         type="button"
       >
@@ -1266,13 +1266,13 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
 exports[`Dropdown[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="soui-dropdown-wrapper"
+    class="soui-dropdown soui-dropdown-wrapper"
     data-position="bottom-left"
     data-role="dropdown"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline soui-button-small"
+      class="soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-outline soui-button-small"
       dir="ltr"
       type="button"
     >
@@ -1300,13 +1300,13 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
     </button>
   </div>
   <div
-    class="soui-dropdown-wrapper"
+    class="soui-dropdown soui-dropdown-wrapper"
     data-position="bottom-left"
     data-role="dropdown"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline"
+      class="soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >
@@ -1334,13 +1334,13 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
     </button>
   </div>
   <div
-    class="soui-dropdown-wrapper"
+    class="soui-dropdown soui-dropdown-wrapper"
     data-position="bottom-left"
     data-role="dropdown"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="soui-dropdown-button soui-button-primary soui-button-button soui-button-outline soui-button-large"
+      class="soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-outline soui-button-large"
       dir="ltr"
       type="button"
     >
@@ -1377,7 +1377,7 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
   style="margin-inline-end: 24px;"
 >
   <button
-    class="soui-button-secondary soui-button-button soui-button-outline"
+    class="soui-button soui-button-secondary soui-button-button soui-button-outline"
     dir="ltr"
     type="button"
   >
@@ -1386,7 +1386,7 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
     </span>
   </button>
   <button
-    class="soui-button-secondary soui-button-button soui-button-outline"
+    class="soui-button soui-button-secondary soui-button-button soui-button-outline"
     dir="ltr"
     type="button"
   >
@@ -1395,12 +1395,12 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
     </span>
   </button>
   <div
-    class="soui-dropdown-wrapper"
+    class="soui-dropdown soui-dropdown-wrapper"
     data-position="bottom-right"
     data-role="dropdown"
   >
     <button
-      class="soui-dropdown-button soui-dropdown-split-button soui-button-secondary soui-button-button soui-button-outline"
+      class="soui-dropdown-button soui-dropdown-split-button soui-button soui-button-secondary soui-button-button soui-button-outline"
       dir="ltr"
       type="button"
     >

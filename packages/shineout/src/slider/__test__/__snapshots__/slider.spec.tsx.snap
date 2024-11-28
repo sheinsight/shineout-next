@@ -2,7 +2,7 @@
 
 exports[`Slider[Base] should render correctly  1`] = `
 <div
-  class="soui-slider-wrapper"
+  class="soui-slider soui-slider-wrapper"
 >
   <div
     class="soui-slider-track"
@@ -53,7 +53,7 @@ exports[`Slider[Base] should render correctly  1`] = `
 
 exports[`Slider[Base] should render correctly about disabled 1`] = `
 <div
-  class="soui-slider-wrapper soui-slider-disabled"
+  class="soui-slider soui-slider-wrapper soui-slider-disabled"
 >
   <div
     class="soui-slider-track"
@@ -114,7 +114,7 @@ exports[`Slider[Base] should render correctly about disabled 1`] = `
 
 exports[`Slider[Base] should render correctly about format 1`] = `
 <div
-  class="soui-slider-wrapper"
+  class="soui-slider soui-slider-wrapper"
 >
   <div
     class="soui-slider-track"
@@ -255,7 +255,7 @@ exports[`Slider[Base] should render correctly about format 1`] = `
 
 exports[`Slider[Base] should render correctly about hider all 1`] = `
 <div
-  class="soui-slider-wrapper"
+  class="soui-slider soui-slider-wrapper"
 >
   <div
     class="soui-slider-track"
@@ -276,7 +276,7 @@ exports[`Slider[Base] should render correctly about hider all 1`] = `
 
 exports[`Slider[Base] should render correctly about hider auto 1`] = `
 <div
-  class="soui-slider-wrapper soui-slider-auto-hide"
+  class="soui-slider soui-slider-wrapper soui-slider-auto-hide"
 >
   <div
     class="soui-slider-track"
@@ -418,7 +418,7 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
 exports[`Slider[Base] should render correctly about increase 1`] = `
 <div>
   <div
-    class="soui-slider-wrapper"
+    class="soui-slider soui-slider-wrapper"
     style="margin-bottom: 24px;"
   >
     <div
@@ -467,7 +467,7 @@ exports[`Slider[Base] should render correctly about increase 1`] = `
     </div>
   </div>
   <div
-    class="soui-slider-wrapper"
+    class="soui-slider soui-slider-wrapper"
   >
     <div
       class="soui-slider-track"
@@ -532,7 +532,7 @@ exports[`Slider[Base] should render correctly about input 1`] = `
   style="display: flex; align-items: center;"
 >
   <div
-    class="soui-slider-wrapper"
+    class="soui-slider soui-slider-wrapper"
     style="flex: 1; margin-inline-end: 28px;"
   >
     <div
@@ -581,7 +581,7 @@ exports[`Slider[Base] should render correctly about input 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper-number soui-input-wrapper"
+    class="soui-input-wrapper-number soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="width: 100px;"
   >
@@ -628,7 +628,7 @@ exports[`Slider[Base] should render correctly about input 1`] = `
 
 exports[`Slider[Base] should render correctly about range 1`] = `
 <div
-  class="soui-slider-wrapper"
+  class="soui-slider soui-slider-wrapper"
 >
   <div
     class="soui-slider-track"
@@ -689,7 +689,7 @@ exports[`Slider[Base] should render correctly about range 1`] = `
 
 exports[`Slider[Base] should render correctly about scale 1`] = `
 <div
-  class="soui-slider-wrapper"
+  class="soui-slider soui-slider-wrapper"
 >
   <div
     class="soui-slider-track"
@@ -780,7 +780,7 @@ exports[`Slider[Base] should render correctly about scale 1`] = `
 
 exports[`Slider[Base] should render correctly about step 1`] = `
 <div
-  class="soui-slider-wrapper"
+  class="soui-slider soui-slider-wrapper"
 >
   <div
     class="soui-slider-track"
@@ -841,7 +841,7 @@ exports[`Slider[Base] should render correctly about step 1`] = `
 
 exports[`Slider[Base] should render correctly about step zero 1`] = `
 <div
-  class="soui-slider-wrapper"
+  class="soui-slider soui-slider-wrapper"
 >
   <div
     class="soui-slider-track"
@@ -1052,7 +1052,7 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
 
 exports[`Slider[Base] should render correctly about value hover 1`] = `
 <div
-  class="soui-slider-wrapper"
+  class="soui-slider soui-slider-wrapper"
 >
   <div
     class="soui-slider-track"
@@ -1104,7 +1104,7 @@ exports[`Slider[Base] should render correctly about value hover 1`] = `
 exports[`Slider[Base] should render correctly about virtual 1`] = `
 <div>
   <div
-    class="soui-slider-wrapper soui-slider-vertical"
+    class="soui-slider soui-slider-wrapper soui-slider-vertical"
     style="height: 200px;"
   >
     <div
@@ -1153,7 +1153,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     </div>
   </div>
   <div
-    class="soui-slider-wrapper soui-slider-vertical"
+    class="soui-slider soui-slider-wrapper soui-slider-vertical"
     style="height: 200px;"
   >
     <div
@@ -1212,7 +1212,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     </div>
   </div>
   <div
-    class="soui-slider-wrapper soui-slider-vertical"
+    class="soui-slider soui-slider-wrapper soui-slider-vertical"
     style="height: 200px;"
   >
     <div
@@ -1285,7 +1285,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     </div>
   </div>
   <div
-    class="soui-slider-wrapper soui-slider-auto-hide soui-slider-vertical"
+    class="soui-slider soui-slider-wrapper soui-slider-auto-hide soui-slider-vertical"
     style="height: 200px;"
   >
     <div
@@ -1344,7 +1344,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     </div>
   </div>
   <div
-    class="soui-slider-wrapper soui-slider-disabled soui-slider-vertical"
+    class="soui-slider soui-slider-wrapper soui-slider-disabled soui-slider-vertical"
     style="height: 200px;"
   >
     <div

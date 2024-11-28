@@ -2,7 +2,7 @@
 
 exports[`Progress[Base] should render correctly  1`] = `
 <div
-  class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
+  class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
   style="width: 400px;"
 >
   <div
@@ -20,7 +20,7 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
 <div>
   <div>
     <div
-      class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
+      class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
       style="width: 400px;"
     >
       <div
@@ -46,7 +46,7 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
     style="margin-top: 24px;"
   >
     <div
-      class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-success"
+      class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-success"
       style="width: 64px; height: 64px;"
     >
       <svg
@@ -79,7 +79,7 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
     </div>
   </div>
   <button
-    class="soui-button-secondary soui-button-button"
+    class="soui-button soui-button-secondary soui-button-button"
     dir="ltr"
     style="margin-top: 24px;"
     type="button"
@@ -96,7 +96,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
   style="display: flex; gap: 32px;"
 >
   <div
-    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 64px; height: 64px;"
   >
     <svg
@@ -139,7 +139,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-warning"
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-warning"
     style="width: 64px; height: 64px;"
   >
     <svg
@@ -182,7 +182,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-success"
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-success"
     style="width: 64px; height: 64px;"
   >
     <svg
@@ -225,7 +225,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-danger"
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-danger"
     style="width: 64px; height: 64px;"
   >
     <svg
@@ -273,7 +273,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
   style="width: 400px;"
 >
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
   >
     <div
       class="soui-progress-line-bg"
@@ -291,7 +291,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
   </div>
   <br />
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
   >
     <div
       class="soui-progress-line-bg"
@@ -310,7 +310,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
   </div>
   <br />
   <div
-    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 64px; height: 64px;"
   >
     <svg
@@ -368,7 +368,7 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
   style="display: flex; flex-direction: column; gap: 32px; width: 400px;"
 >
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner soui-progress-line-inner-right"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner soui-progress-line-inner-right"
   >
     <div
       class="soui-progress-line-bg"
@@ -400,7 +400,7 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner soui-progress-line-inner-right"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner soui-progress-line-inner-right"
   >
     <div
       class="soui-progress-line-bg"
@@ -432,7 +432,7 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
   >
     <div
       class="soui-progress-line-bg"
@@ -464,7 +464,7 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-warning soui-progress-line-inner"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-warning soui-progress-line-inner"
   >
     <div
       class="soui-progress-line-bg"
@@ -496,7 +496,7 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-inner"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-inner"
   >
     <div
       class="soui-progress-line-bg"
@@ -528,7 +528,7 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-danger soui-progress-line-inner"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-danger soui-progress-line-inner"
   >
     <div
       class="soui-progress-line-bg"
@@ -567,7 +567,7 @@ exports[`Progress[Base] should render correctly about linePop 1`] = `
   style="width: 400px;"
 >
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default soui-progress-line-pop"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default soui-progress-line-pop"
   >
     <div
       class="soui-progress-line-bg"
@@ -593,7 +593,7 @@ exports[`Progress[Base] should render correctly about linePop 1`] = `
   </div>
   <br />
   <button
-    class="soui-button-secondary soui-button-button"
+    class="soui-button soui-button-secondary soui-button-button"
     dir="ltr"
     type="button"
   >
@@ -611,7 +611,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -633,7 +633,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -656,7 +656,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -679,7 +679,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
     style="width: 400px;"
   >
     <div
@@ -699,7 +699,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
     style="width: 400px; margin-top: 24px;"
   >
     <div
@@ -720,7 +720,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 64px; height: 64px; margin-top: 24px;"
   >
     <svg
@@ -763,7 +763,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         style="display: none;"
@@ -785,7 +785,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         checked=""
@@ -808,7 +808,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -831,7 +831,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
     style="width: 400px;"
   >
     <div
@@ -854,7 +854,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
     style="width: 400px; margin-top: 24px;"
   >
     <div
@@ -878,7 +878,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
     </div>
   </div>
   <div
-    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 48px; height: 48px; margin-top: 24px;"
   >
     <svg
@@ -923,7 +923,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -945,7 +945,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         checked=""
@@ -968,7 +968,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         style="display: none;"
@@ -991,7 +991,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
     style="width: 400px;"
   >
     <div
@@ -1014,7 +1014,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
     </div>
   </div>
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
     style="width: 400px; margin-top: 24px;"
   >
     <div
@@ -1036,7 +1036,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
     </div>
   </div>
   <div
-    class="soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
     style="width: 80px; height: 80px; margin-top: 24px;"
   >
     <svg
@@ -1079,7 +1079,7 @@ exports[`Progress[Base] should render correctly about type 1`] = `
   style="width: 400px;"
 >
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-default"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-default"
   >
     <div
       class="soui-progress-line-bg"
@@ -1092,7 +1092,7 @@ exports[`Progress[Base] should render correctly about type 1`] = `
   </div>
   <br />
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
   >
     <div
       class="soui-progress-line-bg"
@@ -1105,7 +1105,7 @@ exports[`Progress[Base] should render correctly about type 1`] = `
   </div>
   <br />
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-warning soui-progress-line-default"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-warning soui-progress-line-default"
   >
     <div
       class="soui-progress-line-bg"
@@ -1118,7 +1118,7 @@ exports[`Progress[Base] should render correctly about type 1`] = `
   </div>
   <br />
   <div
-    class="soui-progress-line soui-progress-wrapper soui-progress-wrapper-danger soui-progress-line-default"
+    class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-danger soui-progress-line-default"
   >
     <div
       class="soui-progress-line-bg"

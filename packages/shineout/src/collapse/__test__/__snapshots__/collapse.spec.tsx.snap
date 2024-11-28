@@ -3,7 +3,7 @@
 exports[`Collapse[Base] should render correctly  1`] = `
 <div>
   <div
-    class="soui-collapse-wrapper"
+    class="soui-collapse soui-collapse-wrapper"
     style="max-width: 1180px;"
   >
     <div
@@ -181,7 +181,7 @@ exports[`Collapse[Base] should render correctly  1`] = `
 exports[`Collapse[Base] should render correctly about accordion 1`] = `
 <div>
   <div
-    class="soui-collapse-wrapper"
+    class="soui-collapse soui-collapse-wrapper"
     style="max-width: 1180px;"
   >
     <div
@@ -359,7 +359,7 @@ exports[`Collapse[Base] should render correctly about accordion 1`] = `
 exports[`Collapse[Base] should render correctly about customize 1`] = `
 <div>
   <div
-    class="soui-collapse-wrapper"
+    class="soui-collapse soui-collapse-wrapper"
     style="max-width: 1180px;"
   >
     <div
@@ -510,7 +510,7 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
 exports[`Collapse[Base] should render correctly about extra 1`] = `
 <div>
   <div
-    class="soui-collapse-wrapper"
+    class="soui-collapse soui-collapse-wrapper"
     style="max-width: 1180px;"
   >
     <div
@@ -603,7 +603,7 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
           class="soui-collapseItem-extra"
         >
           <div
-            class="soui-checkbox-wrapper"
+            class="soui-checkbox soui-checkbox-wrapper"
             style="margin: 0px;"
           >
             <input
@@ -674,7 +674,7 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
           class="soui-collapseItem-extra"
         >
           <button
-            class="soui-button-primary soui-button-button"
+            class="soui-button soui-button-primary soui-button-button"
             dir="ltr"
             type="button"
           >
@@ -715,7 +715,7 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
       class="soui-radio-group"
     >
       <div
-        class="soui-radio-wrapper soui-radio-wrapper-checked"
+        class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -738,7 +738,7 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -760,7 +760,7 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -795,7 +795,7 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
       class="soui-radio-group"
     >
       <div
-        class="soui-radio-wrapper soui-radio-wrapper-checked"
+        class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -818,7 +818,7 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -840,7 +840,7 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -864,7 +864,7 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
     </div>
   </div>
   <div
-    class="soui-collapse-wrapper"
+    class="soui-collapse soui-collapse-wrapper"
     style="max-width: 1180px;"
   >
     <div
@@ -1000,7 +1000,7 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
 exports[`Collapse[Base] should render correctly about nested panels 1`] = `
 <div>
   <div
-    class="soui-collapse-wrapper"
+    class="soui-collapse soui-collapse-wrapper"
     style="max-width: 1180px;"
   >
     <div
@@ -1042,7 +1042,7 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
           class="soui-collapseItem-content-main"
         >
           <div
-            class="soui-collapse-wrapper"
+            class="soui-collapse soui-collapse-wrapper"
           >
             <div
               class="soui-collapseItem-wrapper soui-collapseItem-active"
@@ -1265,7 +1265,7 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
 exports[`Collapse[Base] should render correctly about simple panel 1`] = `
 <div>
   <div
-    class="soui-collapse-wrapper soui-collapse-border-less"
+    class="soui-collapse soui-collapse-wrapper soui-collapse-border-less"
     style="max-width: 1180px;"
   >
     <div

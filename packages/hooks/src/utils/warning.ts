@@ -25,7 +25,7 @@ const devWarn = (message: string) => {
 
 const conflictWarning = (component: string, prop1: string, prop2: string) => {
   if (process.env.NODE_ENV !== 'production') {
-    console.error(`[shineout] ${prop1} and ${prop2} cannot be used at the same time in ${component}.`);
+    console.warn(`[shineout] ${prop1} and ${prop2} cannot be used at the same time in ${component}.`);
   }
 };
 

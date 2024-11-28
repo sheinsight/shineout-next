@@ -2,7 +2,7 @@
 
 exports[`Checkbox[Base] should render correctly  1`] = `
 <div
-  class="soui-checkbox-wrapper"
+  class="soui-checkbox soui-checkbox-wrapper"
 >
   <input
     style="display: none;"
@@ -33,7 +33,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
     style="margin-bottom: 12px; line-height: 0;"
   >
     <div
-      class="soui-checkbox-wrapper"
+      class="soui-checkbox soui-checkbox-wrapper"
     >
       <input
         style="display: none;"
@@ -57,7 +57,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
     </div>
     <div
-      class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+      class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
     >
       <input
         checked=""
@@ -94,7 +94,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
     </div>
     <div
-      class="soui-checkbox-wrapper soui-checkbox-wrapper-checked soui-checkbox-wrapper-indeterminate"
+      class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked soui-checkbox-wrapper-indeterminate"
     >
       <input
         checked=""
@@ -132,7 +132,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
     style="line-height: 0;"
   >
     <div
-      class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+      class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
     >
       <input
         disabled=""
@@ -157,7 +157,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
     </div>
     <div
-      class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled soui-checkbox-wrapper-checked"
+      class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled soui-checkbox-wrapper-checked"
     >
       <input
         checked=""
@@ -195,7 +195,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
       </span>
     </div>
     <div
-      class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled soui-checkbox-wrapper-checked soui-checkbox-wrapper-indeterminate"
+      class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled soui-checkbox-wrapper-checked soui-checkbox-wrapper-indeterminate"
     >
       <input
         checked=""
@@ -236,7 +236,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
 exports[`Checkbox[Checked, disabled] should render correctly about checked is indeterminate 1`] = `
 <div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -264,7 +264,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
     style="margin-top: 12px;"
   >
     <div
-      class="soui-checkbox-wrapper"
+      class="soui-checkbox soui-checkbox-wrapper"
     >
       <input
         style="display: none;"
@@ -288,7 +288,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
       </span>
     </div>
     <div
-      class="soui-checkbox-wrapper"
+      class="soui-checkbox soui-checkbox-wrapper"
     >
       <input
         style="display: none;"
@@ -312,7 +312,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
       </span>
     </div>
     <div
-      class="soui-checkbox-wrapper"
+      class="soui-checkbox soui-checkbox-wrapper"
     >
       <input
         style="display: none;"
@@ -342,7 +342,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
 exports[`Checkbox[Click] should render correctly about click 1`] = `
 <div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -371,7 +371,7 @@ exports[`Checkbox[Click] should render correctly about click 1`] = `
 
 exports[`Checkbox[HtmlValue] should render correctly about htmlValue 1`] = `
 <div
-  class="soui-checkbox-wrapper"
+  class="soui-checkbox soui-checkbox-wrapper"
 >
   <input
     style="display: none;"

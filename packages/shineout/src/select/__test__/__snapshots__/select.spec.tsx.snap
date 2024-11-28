@@ -3,7 +3,7 @@
 exports[`Select[Base] should render correctly  1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -54,7 +54,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
   style="padding: 10px; height: 100px; width: 100%; overflow: hidden;"
 >
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 120px;"
     tabindex="0"
@@ -98,7 +98,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable soui-select-multiple"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px; margin-inline-start: 16px;"
     tabindex="0"
@@ -147,7 +147,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
 exports[`Select[Base] should render correctly about autoAdapt 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -198,7 +198,7 @@ exports[`Select[Base] should render correctly about big data 1`] = `
   style="display: flex; gap: 24px;"
 >
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -242,7 +242,7 @@ exports[`Select[Base] should render correctly about big data 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -291,7 +291,7 @@ exports[`Select[Base] should render correctly about big data 1`] = `
 exports[`Select[Base] should render correctly about create 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
   >
@@ -336,7 +336,7 @@ exports[`Select[Base] should render correctly about create 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable soui-select-multiple"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px; margin-inline-start: 16px;"
   >
@@ -388,7 +388,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -432,7 +432,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -476,7 +476,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -525,7 +525,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
 exports[`Select[Base] should render correctly about custom result 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -574,7 +574,7 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
 exports[`Select[Base] should render correctly about custom unmatch 1`] = `
 <div>
   <div
-    class="soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -642,7 +642,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
   style="display: flex; flex-wrap: wrap; gap: 24px; width: 624px;"
 >
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-wrapper-disabled soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-disabled soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
   >
@@ -685,7 +685,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -729,7 +729,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper soui-select-wrapper-disabled soui-select-clearable soui-select-multiple"
+    class="soui-select soui-select-wrapper soui-select-wrapper-disabled soui-select-clearable soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
   >
@@ -746,7 +746,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
             style="display: inline-flex;"
           >
             <div
-              class="soui-select-tag soui-tag-tag soui-tag-default soui-tag-bright"
+              class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
             >
               <div
                 class="soui-tag-wrapper"
@@ -780,7 +780,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper soui-select-clearable soui-select-multiple"
+    class="soui-select soui-select-wrapper soui-select-clearable soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -798,7 +798,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
             style="display: inline-flex;"
           >
             <div
-              class="soui-select-tag soui-tag-tag soui-tag-default soui-tag-bright"
+              class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
             >
               <div
                 class="soui-tag-wrapper"
@@ -856,7 +856,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
 exports[`Select[Base] should render correctly about filter 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 200px;"
   >
@@ -903,7 +903,7 @@ exports[`Select[Base] should render correctly about filter 1`] = `
   <br />
   <br />
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable soui-select-multiple"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
   >
@@ -953,7 +953,7 @@ exports[`Select[Base] should render correctly about filter 1`] = `
 exports[`Select[Base] should render correctly about format 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -1001,7 +1001,7 @@ exports[`Select[Base] should render correctly about format 1`] = `
 
 exports[`Select[Base] should render correctly about group 1`] = `
 <div
-  class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+  class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
   data-soui-input-border="true"
   style="width: 240px;"
   tabindex="0"
@@ -1049,7 +1049,7 @@ exports[`Select[Base] should render correctly about group 1`] = `
 exports[`Select[Base] should render correctly about inner title 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-wrapper-inner-title soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-inner-title soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -1118,7 +1118,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
 exports[`Select[Base] should render correctly about loading 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -1167,7 +1167,7 @@ exports[`Select[Base] should render correctly about loading 1`] = `
 exports[`Select[Base] should render correctly about multiple 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable soui-select-multiple"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -1218,7 +1218,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
   style="display: flex; gap: 24px; align-items: center;"
 >
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-wrapper-small soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-small soui-select-clearable"
     data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
@@ -1262,7 +1262,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
@@ -1306,7 +1306,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-wrapper-large soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-large soui-select-clearable"
     data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
@@ -1355,7 +1355,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
 exports[`Select[Base] should render correctly about tree 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 260px;"
     tabindex="0"
@@ -1404,7 +1404,7 @@ exports[`Select[Base] should render correctly about tree 1`] = `
 exports[`Select[Base] should render correctly about tree more 1`] = `
 <div>
   <div
-    class="soui-select-wrapper-empty soui-select-wrapper soui-select-clearable"
+    class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 260px;"
   >

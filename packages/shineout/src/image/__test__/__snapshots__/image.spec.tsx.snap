@@ -5,7 +5,7 @@ exports[`Image[Base] should render correctly  1`] = `
   style="gap: 8px; display: flex;"
 >
   <a
-    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
+    class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
@@ -39,7 +39,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
     class="soui-image-group"
   >
     <a
-      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
+      class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
@@ -47,13 +47,13 @@ exports[`Image[Group] should render correctly about group 1`] = `
         class="soui-image-default-placeholder"
       >
         <div
-          class="soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
+      class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
@@ -61,13 +61,13 @@ exports[`Image[Group] should render correctly about group 1`] = `
         class="soui-image-default-placeholder"
       >
         <div
-          class="soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
+      class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
@@ -75,13 +75,13 @@ exports[`Image[Group] should render correctly about group 1`] = `
         class="soui-image-default-placeholder"
       >
         <div
-          class="soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded"
+      class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
@@ -89,13 +89,13 @@ exports[`Image[Group] should render correctly about group 1`] = `
         class="soui-image-default-placeholder"
       >
         <div
-          class="soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
+      class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
@@ -127,7 +127,7 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
   class="soui-image-group soui-image-group-pile"
 >
   <a
-    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
+    class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
@@ -183,7 +183,7 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
   class="soui-image-group soui-image-group-pile"
 >
   <a
-    class="soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
+    class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
@@ -219,7 +219,7 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
 
 exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 <div
-  class="soui-image-image soui-image-fill soui-image-circle"
+  class="soui-image soui-image-image soui-image-fill soui-image-circle"
   style="width: 128px; padding-bottom: 128px;"
   target="_modal"
 >
@@ -232,7 +232,7 @@ exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 <div
-  class="soui-image-image soui-image-fill soui-image-rounded"
+  class="soui-image soui-image-image soui-image-fill soui-image-rounded"
   style="width: 128px; padding-bottom: 128px;"
   target="_modal"
 >
@@ -245,7 +245,7 @@ exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is thumbnail 1`] = `
 <div
-  class="soui-image-image soui-image-fill soui-image-thumbnail"
+  class="soui-image soui-image-image soui-image-fill soui-image-thumbnail"
   style="width: 128px; padding-bottom: 128px;"
   target="_modal"
 >
