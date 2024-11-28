@@ -135,6 +135,12 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
    */
   children: React.ReactNode;
 
+  /**
+   * @en The id of the button group
+   * @cn 按钮组id
+   */
+  id?: string;
+
   jssStyle?: ButtonJssStyle;
 }
 

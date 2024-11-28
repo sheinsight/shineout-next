@@ -348,7 +348,7 @@ describe('Tabs[Children]', () => {
         <div className='demo'>demoB</div>
       </Tabs>,
     );
-    classLengthTest(container, tabsTabClassName, 2);
+    classLengthTest(container, tabsTabClassName, 0);
     container.querySelectorAll(tabsTabClassName).forEach((item, index) => {
       if (index === 0) {
         attributesTest(item, 'data-soui-state', 'active');

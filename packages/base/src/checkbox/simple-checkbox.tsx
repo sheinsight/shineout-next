@@ -1,12 +1,14 @@
 import { useCheck, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React from 'react';
+import React, { useContext } from 'react';
 import { SimpleCheckboxProps } from './checkbox.type';
+import { FormFieldContext } from '../form/form-field-context';
 
 const { getDataAttribute } = util;
 
 const Checkbox = (props: SimpleCheckboxProps) => {
   const { jssStyle, className, style, children, renderFooter, size, theme, ...rest } = props;
+  const { fieldId } = useContext(FormFieldContext);
   const checkboxStyle = jssStyle?.checkbox?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
@@ -33,6 +35,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
 
   return (
     <div
+      id={fieldId}
       {...getRootProps({
         className: rootClass,
         style,

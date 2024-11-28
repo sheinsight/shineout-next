@@ -41,6 +41,7 @@ exports[`Upload[Base] should render correctly  1`] = `
 exports[`Upload[Base] should render correctly about base button 1`] = `
 <div
   class="soui-upload-wrapper"
+  id="file"
 >
   <span
     class="soui-upload-handler"
@@ -283,6 +284,7 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
 <div>
   <div
     class="soui-upload-wrapper"
+    id="file"
     style="width: 300px; margin-bottom: 30px;"
   >
     <span
@@ -386,6 +388,7 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
 <div>
   <div
     class="soui-upload-wrapper soui-upload-wrapper-drop"
+    id="file"
     style="width: 400px;"
   >
     <span
@@ -430,6 +433,7 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
   />
   <div
     class="soui-upload-wrapper soui-upload-wrapper-image soui-upload-wrapper-drop"
+    id="file"
   >
     <span
       class="soui-upload-drop-item"
@@ -475,6 +479,7 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
 <div>
   <div
     class="soui-upload-wrapper"
+    id="file"
   >
     <span
       class="soui-upload-handler"
@@ -851,6 +856,7 @@ exports[`Upload[Base] should render correctly about result 1`] = `
 exports[`Upload[Base] should render correctly about result image 1`] = `
 <div
   class="soui-upload-wrapper soui-upload-wrapper-image"
+  id="file"
 >
   <span
     class="soui-upload-image-handler"
@@ -882,6 +888,7 @@ exports[`Upload[Base] should render correctly about result image 1`] = `
 exports[`Upload[Base] should render correctly about validate image 1`] = `
 <div
   class="soui-upload-wrapper soui-upload-wrapper-image"
+  id="file"
 >
   <span
     class="soui-upload-image-handler"
@@ -930,6 +937,7 @@ exports[`Upload[Base] should render correctly about validate size 1`] = `
 <div>
   <div
     class="soui-upload-wrapper"
+    id="file"
   >
     <span
       class="soui-upload-handler"

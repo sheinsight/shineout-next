@@ -34,13 +34,14 @@ const Tabs = (props: TabsProps) => {
     tabBarStyle,
     color,
     sticky,
+    allowNonPanel,
     className: tabsClassName,
     ...rest
   } = props;
 
   const shape = shapeProps && shapeProps !== 'bordered' ? shapeProps : 'card';
 
-  const { Provider, active, onChange } = useTabs({
+  const { Provider, active, onChange, tabs, setTabs } = useTabs<TabData>({
     ...rest,
     defaultActive,
     onChange: onChangeProps,
@@ -152,14 +153,17 @@ const Tabs = (props: TabsProps) => {
             });
           }
 
-          return null
+          if(allowNonPanel) {
+            return Child
+          }
+
+          return null;
         })}
       </div>
     );
   };
 
   const renderHeader = () => {
-    const tabs: TabData[] = [];
     let border = getSplitColor();
     Children.toArray(children).forEach((child, index) => {
       const Child = child as React.ReactElement<TabsPanelProps>;
@@ -170,14 +174,8 @@ const Tabs = (props: TabsProps) => {
       if (active === id && childBorder) {
         border = childBorder;
       }
-      tabs.push({
-        id: Child.props.id !== undefined ? Child.props.id : index,
-        tab: Child.props.tab,
-        disabled: Child.props.disabled,
-        jssStyle,
-        color: Child.props.color || (active === id ? color : undefined),
-      });
     });
+
     const header = (
       <TabsHeader
         tabs={tabs}
@@ -245,12 +243,15 @@ const Tabs = (props: TabsProps) => {
   };
 
   return (
-    <Provider
+    <Provider<TabData>
       value={{
         lazy,
         active,
         shape,
         onChange,
+        color,
+        tabs,
+        setTabs,
         isVertical,
         inactiveBackground,
         onCollapsible: handleCollapsible,

@@ -8,7 +8,7 @@ import Icons from '../icons';
 
 import type { FormItemProps } from './form-item.type';
 
-export default (props: FormItemProps) => {
+const FormItem = (props: FormItemProps) => {
   const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
   const formItemClasses = jssStyle?.formItem?.();
   const { Provider, ProviderValue, labelConfig, errors, showError, attributes } = useFormItem();
@@ -101,3 +101,5 @@ export default (props: FormItemProps) => {
     </div>
   );
 };
+
+export default FormItem;

@@ -2,9 +2,10 @@ import { CheckboxGroupProps } from './checkbox-group.type';
 import { useInputAble, useListSelectMultiple, usePersistFn, util } from '@sheinx/hooks';
 import GroupContext from './group-context';
 import Checkbox from './checkbox';
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
+import { FormFieldContext } from '../form/form-field-context';
 
 const defaultFormat = (d: any) => d;
 const defaultRenderItem = (d: any) => d;
@@ -13,6 +14,7 @@ const defaultRenderItem = (d: any) => d;
 const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataItem, Value>) => {
   const {format = defaultFormat, renderItem = defaultRenderItem} = props0
   const props = useWithFormConfig(props0);
+  const { fieldId } = useContext(FormFieldContext);
   const { children, className, block, keygen, jssStyle, size, style, disabled } = props;
   const checkboxStyle = jssStyle?.checkbox?.();
 
@@ -89,13 +91,13 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
   );
   if (props.data === undefined) {
     return (
-      <div className={groupClass} style={style}>
+      <div className={groupClass} style={style} id={fieldId}>
         <GroupContext.Provider value={providerValue}>{children}</GroupContext.Provider>
       </div>
     );
   } else {
     return (
-      <div className={groupClass} style={style}>
+      <div className={groupClass} style={style} id={fieldId}>
         {props.data.map((d, i) => (
           <Checkbox
             jssStyle={jssStyle}

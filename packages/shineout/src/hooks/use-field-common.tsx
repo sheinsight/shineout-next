@@ -24,7 +24,7 @@ export interface ExtendsFieldProps<T, Name = string>
    */
   title?: string;
 }
-export interface FiledItemCommonProps {
+export interface FieldItemCommonProps {
   defaultValue?: any;
   onChange?: (...args: any) => void;
   beforeChange?: (value: any) => any;
@@ -33,7 +33,7 @@ export interface FiledItemCommonProps {
 export type GetWithFieldProps<Props, Value, Name = string> = Omit<Props, 'beforeChange'> &
   ExtendsFieldProps<Value, Name>
 const useFieldCommon = <
-  Props extends FiledItemCommonProps,
+  Props extends FieldItemCommonProps,
   Value,
   Name extends string | string[] = string,
 >(
@@ -52,6 +52,7 @@ const useFieldCommon = <
     name: props.name!,
     defaultValue: props.defaultValue,
     reserveAble: props.reserveAble ?? formConfig.reserveAble,
+    formName: formConfig.formName,
     rules: props.rules,
     onError: props.onError,
     bind: props.bind,

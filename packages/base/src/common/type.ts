@@ -7,6 +7,11 @@ export interface CommonType {
    */
   status?: 'error';
   /**
+   * @en The name of the form control, used to control the value of the form control by Form
+   * @cn 表单控件的字段名称，用于Form控制表单控件的值
+   */
+  name?: string;
+  /**
    * @en Custom class name
    * @cn 自定义类名
    */

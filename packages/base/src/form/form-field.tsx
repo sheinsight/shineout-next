@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext, useMemo } from 'react';
 import { useFormControl, usePersistFn, util } from '@sheinx/hooks';
 import { FieldControlProps, FormFieldProps } from './form-field.type';
+import { FormFieldContext } from './form-field-context';
 
 const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   const { children } = props;
@@ -37,6 +38,17 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
 
   const status = childrenProps.status ?? (formControl.error ? 'error' : undefined);
 
+  const { separator } = useContext(FormFieldContext);
+  const formFieldId = useMemo(() => {
+    if(childrenProps.id) return childrenProps.id
+
+    if(Array.isArray(formControl.name)) {
+      return formControl.name.map(name => util.getFieldId(name, props.formName)).join(separator)
+    }
+
+    return util.getFieldId(formControl.name, props.formName)
+  }, [formControl.name, props.formName, childrenProps.id])
+
   const cloneProps: FieldControlProps<T> = {
     onChange: handleChange,
     status,
@@ -50,12 +62,21 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   if (formControl.disabled) {
     cloneProps.disabled = true;
   }
-  if (util.isFunc(children)) {
-    return children(cloneProps);
-  }
-  if (React.isValidElement(children)) return React.cloneElement(children, cloneProps);
 
-  return children;
+  let finalChildren
+  if (util.isFunc(children)) {
+    finalChildren = children(cloneProps)
+  } else if (React.isValidElement(children)) {
+    finalChildren = React.cloneElement(children, cloneProps)
+  } else {
+    finalChildren = children
+  }
+
+  return (
+    <FormFieldContext.Provider value={{ fieldId: formFieldId, separator }}>
+      {finalChildren}
+    </FormFieldContext.Provider>
+  );
 };
 
 export default FormField;

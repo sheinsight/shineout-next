@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useContext } from 'react';
 import classNames from 'classnames';
 import {
   util,
@@ -23,6 +23,7 @@ import Result from '../select/result';
 import Icons from '../icons';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
+import { FormFieldContext } from '../form/form-field-context';
 
 import { useConfig, getLocale } from '../config';
 
@@ -30,6 +31,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
 ) => {
   const props = useWithFormConfig(props0);
+  const { fieldId } = useContext(FormFieldContext);
   const defaultHeight = 250;
   const {
     jssStyle,
@@ -711,6 +713,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   return (
     <div
+      id={fieldId}
       tabIndex={disabled === true || showInput ? undefined : 0}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
