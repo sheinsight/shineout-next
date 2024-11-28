@@ -4,7 +4,17 @@ import dateUtil from './util';
 
 type TimeType = 'H' | 'h' | 'm' | 's' | 'ampm';
 const useTime = (props: UseTimeProps) => {
-  const { options, min: mi, max: ma, format, hourStep = 1, minuteStep = 1, secondStep = 1 } = props;
+  const {
+    options,
+    min: mi,
+    max: ma,
+    format,
+    hourStep = 1,
+    minuteStep = 1,
+    secondStep = 1,
+    staticMin,
+    staticMax,
+  } = props;
 
   const min = dateUtil.resetTimeByFormat(mi, format, options);
   const max = dateUtil.resetTimeByFormat(ma, format, options);
@@ -29,16 +39,33 @@ const useTime = (props: UseTimeProps) => {
     }
   }
 
-  const isDisabled = (date: Date) => {
+  const isDisabled = (date: Date, triggerType?: string) => {
     const { disabled, disabledTime } = props;
+
     if (disabledTime) {
       const time = dateUtil.format(date, dateUtil.TIME_FORMAT, options);
       if (typeof disabledTime === 'function') return disabledTime(time);
       return disabledTime === time;
     }
     let isDis = disabled && typeof disabled === 'function' ? disabled(date) : false;
-    if (min && dateUtil.compareAsc(date, min) < 0) isDis = true;
-    if (max && dateUtil.compareAsc(date, max) > 0) isDis = true;
+
+    if (min && dateUtil.compareAsc(date, min) < 0) {
+      isDis = true;
+    }
+    if (max && dateUtil.compareAsc(date, max) > 0) {
+      isDis = true;
+    }
+
+    // 此次校验是由输入触发的
+    if (triggerType === 'input' && !min && !max) {
+      if (staticMin && dateUtil.compareAsc(date, staticMin) < 0) {
+        isDis = true;
+      }
+      if (staticMax && dateUtil.compareAsc(date, staticMax) > 0) {
+        isDis = true;
+      }
+    }
+
     return isDis;
   };
 

@@ -64,6 +64,8 @@ export interface CommonPickerProps
   onChange: (date: Date, noClose?: boolean) => void;
   min?: Date;
   max?: Date;
+  staticMin?: Date;
+  staticMax?: Date;
   setTarget: (date?: Date) => void;
   position?: 'start' | 'end';
   onMouseEnter?: () => void;
