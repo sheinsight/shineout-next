@@ -12,7 +12,16 @@ import Confirm from './confirm';
 const Picker = (props: PickerProps) => {
   const { range, currentArr, dateArr, options, jssStyle, isDisabledDate, type } = props;
   const styles = jssStyle?.datePicker?.();
-  const { func, defaultTimeArr, endMax, endMin, startMin, startMax } = useDatePickerRange({
+  const {
+    func,
+    defaultTimeArr,
+    endMax,
+    endMin,
+    startMin,
+    startMax,
+    staticStartMin,
+    staticStartMax,
+  } = useDatePickerRange({
     type: props.type,
     defaultTime: props.defaultTime,
     range: props.range,
@@ -57,8 +66,12 @@ const Picker = (props: PickerProps) => {
       format: props.format,
       disabled: position === 'end' ? func.endDisabled : func.startDisabled,
       rangeDate: dateArr,
+
       min: position === 'end' ? endMin : startMin,
+      staticMin: position === 'end' ? endMin : staticStartMin,
       max: position === 'end' ? endMax : startMax,
+      staticMax: position === 'end' ? endMax : staticStartMax,
+
       jssStyle,
       position,
       showSelNow: props.showSelNow,

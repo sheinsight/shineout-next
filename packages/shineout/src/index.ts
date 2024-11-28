@@ -61,4 +61,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.5.0' };
+export default { version: '3.5.3-beta.1' };

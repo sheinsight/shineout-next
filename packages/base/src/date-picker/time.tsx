@@ -116,7 +116,6 @@ const Time = (props: TimeProps) => {
     props.setCurrent(date, 'time');
     props.onChange(date, true);
   });
-
   const { func, times } = useTimePick({
     format: props.format,
     options: props.options,
@@ -124,6 +123,8 @@ const Time = (props: TimeProps) => {
     onChange,
     min: props.min,
     max: props.max,
+    staticMin: props.staticMin,
+    staticMax: props.staticMax,
     disabled: props.disabled,
     disabledTime: props.disabledTime,
     hourStep: props.hourStep,
@@ -143,12 +144,16 @@ const Time = (props: TimeProps) => {
 
     if (!showRight) return null;
     return (
-      <div className={styles?.pickerFooter} dir={direction} style={{borderTop: props.needConfirm && props.range ? 'none': ''}}>
+      <div
+        className={styles?.pickerFooter}
+        dir={direction}
+        style={{ borderTop: props.needConfirm && props.range ? 'none' : '' }}
+      >
         {showRight && (
           <div className={styles?.pickerFooterNow}>
             <Link
               size={'small'}
-              type="primary"
+              type='primary'
               jssStyle={props.jssStyle}
               className={styles?.pickerFooterBtn}
               onClick={selNow}

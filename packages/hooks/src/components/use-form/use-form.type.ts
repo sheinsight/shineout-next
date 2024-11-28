@@ -14,18 +14,6 @@ export interface ValidationError<T> {
   }[];
 }
 
-export interface ValidateFieldsFn<
-FormValue = any,
-FieldKey extends KeyType = keyof FormValue,
-FieldsType = FieldKey | FieldKey[]
-> {
-/**
- * 验证所有表单的值，并且返回报错和表单数据
- * @param fields 需要校验的表单字段
- */
-(fields?: FieldsType, config?: ValidateFnConfig): Promise<Partial<FormValue>>;
-}
-
 export type ValidateFnConfig = {
   type?: 'forcePass' | 'withValue',
   ignoreBind?: boolean,
@@ -130,7 +118,7 @@ export interface FormCommonConfig extends FormLabelConfig {
   formName?: string;
 }
 
-export interface FormFunc {
+export interface FormFunc<T = any> {
   setValue: (
     vals: {
       [key: string]: any;
@@ -145,7 +133,7 @@ export interface FormFunc {
   setError: (name: string, e: Error | undefined) => void;
   getErrors: () => ObjectType<Error | undefined>;
   clearValidate: (names?: string[]) => void;
-  validateFields: ValidateFieldsFn;
+  validateFields: (fields?: string | string[], config?: ValidateFnConfig) => Promise<Partial<T>>;
   validateFieldset: (name: string) => void;
   insertError: (name: string, index: number, error?: Error) => void;
   spliceError: (name: string, index: number) => void;

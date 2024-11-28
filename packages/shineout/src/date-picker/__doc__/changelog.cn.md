@@ -1,3 +1,10 @@
+## 3.5.3-beta.1
+2024-11-28
+
+### 🐞 BugFix
+
+- 修复 `DatePicker` 在设置 `inputable` 和 `range` 后开始时间可以输入非法值的问题 ([#826](https://github.com/sheinsight/shineout-next/pull/826))
+
 ## 3.5.1
 2024-11-14
 
