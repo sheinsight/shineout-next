@@ -529,57 +529,191 @@ exports[`Button[Base] should render correctly about icon 1`] = `
 
 exports[`Button[Base] should render correctly about loading 1`] = `
 <div
-  style="display: flex; gap: 24px; flex-wrap: wrap;"
+  class="soui-gap-wrapper"
+  style="margin-bottom: -8px; margin-right: -8px; width: 400px;"
 >
-  <button
-    class="soui-button-primary soui-button-button soui-button-disabled soui-button-loading"
-    dir="ltr"
-    disabled=""
-    style="margin: 0px;"
-    type="button"
+  <div
+    class="soui-gap-item"
+    style="margin-bottom: 8px; margin-right: 8px;"
   >
     <div
-      class="soui-button-spin"
+      class="soui-gap-wrapper"
+      style="margin-bottom: -8px; margin-right: -8px;"
     >
       <div
-        class="soui-spin-spin soui-spin-ring"
-        style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
-      />
+        class="soui-gap-item"
+        style="margin-bottom: 8px; margin-right: 8px;"
+      >
+        <button
+          class="soui-button-primary soui-button-button soui-button-disabled soui-button-loading"
+          dir="ltr"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="soui-button-spin"
+          >
+            <div
+              class="soui-spin-spin soui-spin-ring"
+              style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
+            />
+          </div>
+          <span>
+            Loading
+          </span>
+        </button>
+      </div>
+      <div
+        class="soui-gap-item"
+        style="margin-bottom: 8px; margin-right: 8px;"
+      >
+        <button
+          class="soui-button-primary soui-button-button soui-button-disabled soui-button-loading soui-button-square"
+          dir="ltr"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="soui-button-spin"
+          >
+            <div
+              class="soui-spin-spin soui-spin-ring"
+              style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="soui-gap-item"
+        style="margin-bottom: 8px; margin-right: 8px;"
+      >
+        <button
+          class="soui-button-primary soui-button-button soui-button-disabled soui-button-loading"
+          dir="ltr"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="soui-button-spin"
+          >
+            <div
+              class="soui-spin-spin soui-spin-ring"
+              style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
+            />
+          </div>
+          <span>
+            Delete
+          </span>
+        </button>
+      </div>
+      <div
+        class="soui-gap-item"
+        style="margin-bottom: 8px; margin-right: 8px;"
+      >
+        <button
+          class="soui-button-primary soui-button-button soui-button-disabled soui-button-loading"
+          dir="ltr"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="soui-button-spin"
+          >
+            <div
+              class="soui-spin-spin soui-spin-ring"
+              style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
+            />
+          </div>
+          <span>
+            Delete
+          </span>
+          <i
+            class="soui-icon-wrapper fa-info"
+            style="font-family: FontAwesome; font-size: 12px; margin-left: 4px;"
+          />
+        </button>
+      </div>
     </div>
-    <span>
-      Primary
-    </span>
-  </button>
-  <button
-    class="soui-button-primary soui-button-button soui-button-disabled soui-button-loading soui-button-square"
-    dir="ltr"
-    disabled=""
-    style="margin: 0px;"
-    type="button"
+  </div>
+  <div
+    class="soui-gap-item"
+    style="margin-bottom: 8px; margin-right: 8px;"
   >
     <div
-      class="soui-button-spin"
+      class="soui-gap-wrapper"
+      style="margin-bottom: -8px; margin-right: -8px;"
     >
       <div
-        class="soui-spin-spin soui-spin-ring"
-        style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
-      />
+        class="soui-gap-item"
+        style="margin-bottom: 8px; margin-right: 8px;"
+      >
+        <button
+          class="soui-button-primary soui-button-button"
+          dir="ltr"
+          type="button"
+        >
+          <span>
+            Loading
+          </span>
+        </button>
+      </div>
+      <div
+        class="soui-gap-item"
+        style="margin-bottom: 8px; margin-right: 8px;"
+      >
+        <button
+          class="soui-button-primary soui-button-button soui-button-square"
+          dir="ltr"
+          type="button"
+        >
+          <i
+            class="soui-icon-wrapper fa-trash-o"
+            style="font-family: FontAwesome; font-size: 12px; margin-right: 0px; width: 12px; height: 12px;"
+          />
+        </button>
+      </div>
+      <div
+        class="soui-gap-item"
+        style="margin-bottom: 8px; margin-right: 8px;"
+      >
+        <button
+          class="soui-button-primary soui-button-button"
+          dir="ltr"
+          type="button"
+        >
+          <i
+            class="soui-icon-wrapper fa-trash-o"
+            style="font-family: FontAwesome; font-size: 12px; margin-right: 4px; width: 12px; height: 12px;"
+          />
+          <span>
+            Delete
+          </span>
+        </button>
+      </div>
+      <div
+        class="soui-gap-item"
+        style="margin-bottom: 8px; margin-right: 8px;"
+      >
+        <button
+          class="soui-button-primary soui-button-button"
+          dir="ltr"
+          type="button"
+        >
+          <i
+            class="soui-icon-wrapper fa-trash-o"
+            style="font-family: FontAwesome; font-size: 12px; margin-right: 4px; width: 12px; height: 12px;"
+          />
+          <span>
+            Delete
+          </span>
+          <i
+            class="soui-icon-wrapper fa-info"
+            style="font-family: FontAwesome; font-size: 12px; margin-left: 4px;"
+          />
+        </button>
+      </div>
     </div>
-  </button>
-  <button
-    class="soui-button-primary soui-button-button"
-    dir="ltr"
-    style="margin: 0px;"
-    type="button"
-  >
-    <i
-      class="soui-icon-wrapper fa-upload"
-      style="font-family: FontAwesome; font-size: 12px; margin-right: 4px; width: 12px; height: 12px;"
-    />
-    <span>
-      Upload
-    </span>
-  </button>
+  </div>
 </div>
 `;
 
