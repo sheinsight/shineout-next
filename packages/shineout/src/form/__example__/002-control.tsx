@@ -47,9 +47,11 @@ const App: React.FC = () => {
             form.current?.validate()
             .then((values) => {
               console.log('validate success', values);
+              // TODO: 校验成功处理逻辑
             })
             .catch((errorInfo) => {
               console.log('validate failed errorInfo: >>', errorInfo)
+              // TODO: 校验失败处理逻辑
             })
           }
         >
@@ -76,14 +78,8 @@ const App: React.FC = () => {
       </Form.Item>
 
       <Form.Item label='Name' required>
-        <StarRate name="rate" allowHalf defaultValue={3.5} onChange={v => {
-          console.log('======================')
-          console.log('StarRate onChange: >>', v)
-          console.log('======================')
-        }} />
+        <StarRate name="rate" allowHalf defaultValue={3.5} />
       </Form.Item>
-
-
 
       <Form.Item label='Password' required>
         <Input.Password
