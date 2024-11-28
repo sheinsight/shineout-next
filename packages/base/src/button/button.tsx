@@ -91,8 +91,9 @@ const Button = (props: ButtonProps) => {
     return 12;
   };
 
-  const childrenEl = React.Children.map(getSpaceChildren(children, space), (item) => {
-    if (loading && isValidElement(item) && (item.type as any).isShineoutIcon) return null;
+  const childrenEl = React.Children.map(getSpaceChildren(children, space), (item, index) => {
+    // 仅隐藏前置的icon
+    if (loading && index ===0 && isValidElement(item) && (item.type as any).isShineoutIcon) return null;
     return item;
   })?.filter(item => item !== null);
 
