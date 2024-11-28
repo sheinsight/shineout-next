@@ -5,7 +5,7 @@ exports[`Steps[Base] should render correctly  1`] = `
   style="width: 500px;"
 >
   <div
-    class="soui-steps-steps soui-steps-default soui-steps-horizontal"
+    class="soui-steps soui-steps-steps soui-steps-default soui-steps-horizontal"
   >
     <div
       class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label"
@@ -129,7 +129,7 @@ exports[`Steps[Base] should render correctly about description 1`] = `
   style="width: 500px;"
 >
   <div
-    class="soui-steps-steps soui-steps-default soui-steps-horizontal"
+    class="soui-steps soui-steps-steps soui-steps-default soui-steps-horizontal"
   >
     <div
       class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label soui-steps-width-description"
@@ -271,7 +271,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
     style="width: 500px; display: flex; gap: 32px; margin-bottom: 24px; align-items: flex-start;"
   >
     <div
-      class="soui-steps-steps soui-steps-default soui-steps-vertical"
+      class="soui-steps soui-steps-steps soui-steps-default soui-steps-vertical"
     >
       <div
         class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label"
@@ -388,7 +388,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
       </div>
     </div>
     <div
-      class="soui-steps-steps soui-steps-default soui-steps-vertical"
+      class="soui-steps soui-steps-steps soui-steps-default soui-steps-vertical"
     >
       <div
         class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-width-description"
@@ -524,7 +524,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
     style="width: 500px; display: flex; gap: 32px; align-items: flex-start;"
   >
     <div
-      class="soui-steps-steps soui-steps-dot soui-steps-vertical"
+      class="soui-steps soui-steps-steps soui-steps-dot soui-steps-vertical"
     >
       <div
         class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label"
@@ -627,7 +627,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
       </div>
     </div>
     <div
-      class="soui-steps-steps soui-steps-dot soui-steps-vertical"
+      class="soui-steps soui-steps-steps soui-steps-dot soui-steps-vertical"
     >
       <div
         class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-width-description"
@@ -753,7 +753,7 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
   style="width: 100%; overflow: auto;"
 >
   <div
-    class="soui-steps-steps soui-steps-default soui-steps-horizontal"
+    class="soui-steps soui-steps-steps soui-steps-default soui-steps-horizontal"
   >
     <div
       class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label"
@@ -992,7 +992,7 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
   style="width: 500px;"
 >
   <div
-    class="soui-steps-steps soui-steps-default soui-steps-horizontal"
+    class="soui-steps soui-steps-steps soui-steps-default soui-steps-horizontal"
   >
     <div
       class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-width-description"
@@ -1113,7 +1113,7 @@ exports[`Steps[Base] should render correctly about size 1`] = `
   style="width: 500px;"
 >
   <div
-    class="soui-steps-steps soui-steps-default soui-steps-small soui-steps-horizontal"
+    class="soui-steps soui-steps-steps soui-steps-default soui-steps-small soui-steps-horizontal"
     style="margin-bottom: 32px;"
   >
     <div
@@ -1231,7 +1231,7 @@ exports[`Steps[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-steps-steps soui-steps-default soui-steps-horizontal"
+    class="soui-steps soui-steps-steps soui-steps-default soui-steps-horizontal"
     style="margin-bottom: 32px;"
   >
     <div
@@ -1349,7 +1349,7 @@ exports[`Steps[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-steps-steps soui-steps-default soui-steps-large soui-steps-horizontal"
+    class="soui-steps soui-steps-steps soui-steps-default soui-steps-large soui-steps-horizontal"
   >
     <div
       class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label"
@@ -1473,7 +1473,7 @@ exports[`Steps[Base] should render correctly about status 1`] = `
   style="width: 500px;"
 >
   <div
-    class="soui-steps-steps soui-steps-default soui-steps-horizontal"
+    class="soui-steps soui-steps-steps soui-steps-default soui-steps-horizontal"
   >
     <div
       class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label"
@@ -1609,7 +1609,7 @@ exports[`Steps[Base] should render correctly about type 1`] = `
     style="width: 500px;"
   >
     <div
-      class="soui-steps-steps soui-steps-dot soui-steps-horizontal"
+      class="soui-steps soui-steps-steps soui-steps-dot soui-steps-horizontal"
       style="margin-bottom: 32px;"
     >
       <div
@@ -1713,7 +1713,7 @@ exports[`Steps[Base] should render correctly about type 1`] = `
       </div>
     </div>
     <div
-      class="soui-steps-steps soui-steps-dot soui-steps-horizontal"
+      class="soui-steps soui-steps-steps soui-steps-dot soui-steps-horizontal"
       style="margin-bottom: 32px;"
     >
       <div
@@ -1836,7 +1836,7 @@ exports[`Steps[Base] should render correctly about type 1`] = `
     style="min-width: 700px;"
   >
     <div
-      class="soui-steps-steps soui-steps-arrow soui-steps-horizontal"
+      class="soui-steps soui-steps-steps soui-steps-arrow soui-steps-horizontal"
       style="margin-bottom: 32px;"
     >
       <div
@@ -1901,7 +1901,7 @@ exports[`Steps[Base] should render correctly about type 1`] = `
       </div>
     </div>
     <div
-      class="soui-steps-steps soui-steps-arrow soui-steps-horizontal"
+      class="soui-steps soui-steps-steps soui-steps-arrow soui-steps-horizontal"
     >
       <div
         class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label soui-steps-width-description"

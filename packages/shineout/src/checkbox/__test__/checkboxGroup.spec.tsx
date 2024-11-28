@@ -322,7 +322,7 @@ describe('Checkbox[separator]', () => {
     textContentTest(container.querySelector('.render')!, '1-3');
     // error capture
     expect(errorSpy).toHaveBeenCalledWith(
-      'use-list-select: separator is string, but value is not string',
+      '[shineout] use-list-select: separator is string, but value is not string',
     );
   });
 });

@@ -2,7 +2,7 @@
 
 exports[`Rate[Base] should render correctly  1`] = `
 <div
-  class="soui-rate-wrapper"
+  class="soui-rate soui-rate-wrapper"
 >
   <div
     class="soui-rate-inner"
@@ -163,7 +163,7 @@ exports[`Rate[Base] should render correctly  1`] = `
 
 exports[`Rate[Base] should render correctly about color 1`] = `
 <div
-  class="soui-rate-wrapper"
+  class="soui-rate soui-rate-wrapper"
 >
   <div
     class="soui-rate-inner"
@@ -324,7 +324,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
 
 exports[`Rate[Base] should render correctly about disable 1`] = `
 <div
-  class="soui-rate-wrapper"
+  class="soui-rate soui-rate-wrapper"
 >
   <div
     class="soui-rate-inner"
@@ -485,7 +485,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
 
 exports[`Rate[Base] should render correctly about half 1`] = `
 <div
-  class="soui-rate-wrapper"
+  class="soui-rate soui-rate-wrapper"
 >
   <div
     class="soui-rate-inner"
@@ -719,7 +719,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
   style="display: flex; flex-direction: column; gap: 12px;"
 >
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -912,7 +912,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -1105,7 +1105,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -1298,7 +1298,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -1491,7 +1491,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -1684,7 +1684,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -1816,7 +1816,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
 
 exports[`Rate[Base] should render correctly about max 1`] = `
 <div
-  class="soui-rate-wrapper"
+  class="soui-rate soui-rate-wrapper"
 >
   <div
     class="soui-rate-inner"
@@ -2130,7 +2130,7 @@ exports[`Rate[Base] should render correctly about repeat 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -2208,7 +2208,7 @@ exports[`Rate[Base] should render correctly about repeat 1`] = `
     </div>
   </div>
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -2296,7 +2296,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
     16px
   </div>
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
     style="margin-bottom: 32px;"
   >
     <div
@@ -2465,7 +2465,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
     24px
   </div>
   <div
-    class="soui-rate-wrapper"
+    class="soui-rate soui-rate-wrapper"
   >
     <div
       class="soui-rate-inner"
@@ -2632,7 +2632,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
 
 exports[`Rate[Base] should render correctly about text 1`] = `
 <div
-  class="soui-rate-wrapper"
+  class="soui-rate soui-rate-wrapper"
 >
   <div
     class="soui-rate-inner"
@@ -2868,7 +2868,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
 
 exports[`Rate[Base] should render correctly bout clear 1`] = `
 <div
-  class="soui-rate-wrapper"
+  class="soui-rate soui-rate-wrapper"
 >
   <div
     class="soui-rate-inner"

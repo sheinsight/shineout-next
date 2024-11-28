@@ -2,7 +2,7 @@
 
 exports[`EditableArea[Base] should render correctly  1`] = `
 <div
-  class="soui-editableArea-wrapper"
+  class="soui-editable-area soui-editableArea-wrapper"
   style="width: 300px;"
 >
   <div
@@ -24,7 +24,7 @@ exports[`EditableArea[Base] should render correctly  1`] = `
 
 exports[`EditableArea[Base] should render correctly  2`] = `
 <div
-  class="soui-editableArea-wrapper"
+  class="soui-editable-area soui-editableArea-wrapper"
   style="width: 300px;"
 >
   <div
@@ -49,7 +49,7 @@ exports[`EditableArea[Base] should render correctly  3`] = `
     style="height: 50px;"
   />
   <div
-    class="soui-editableArea-wrapper"
+    class="soui-editable-area soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div
@@ -76,7 +76,7 @@ exports[`EditableArea[Base] should render correctly  3`] = `
 exports[`EditableArea[Base] should render correctly  4`] = `
 <div>
   <div
-    class="soui-editableArea-wrapper"
+    class="soui-editable-area soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div
@@ -100,7 +100,7 @@ exports[`EditableArea[Base] should render correctly  4`] = `
 exports[`EditableArea[Base] should render correctly  5`] = `
 <div>
   <div
-    class="soui-editableArea-wrapper"
+    class="soui-editable-area soui-editableArea-wrapper"
     style="width: 300px;"
   >
     <div

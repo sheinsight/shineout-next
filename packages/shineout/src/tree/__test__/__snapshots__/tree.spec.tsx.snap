@@ -3,7 +3,7 @@
 exports[`Tree[Base] should render correctly  1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-line"
+    class="soui-tree soui-tree-tree soui-tree-line"
   >
     <div
       class="soui-tree-root"
@@ -105,7 +105,7 @@ exports[`Tree[Base] should render correctly  1`] = `
 exports[`Tree[Base] should render correctly about disabled 1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-noline"
+    class="soui-tree soui-tree-tree soui-tree-noline"
   >
     <div
       class="soui-tree-root"
@@ -147,7 +147,7 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
             dir="ltr"
           >
             <div
-              class="soui-tree-checkbox soui-checkbox-wrapper"
+              class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -216,7 +216,7 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 dir="ltr"
               >
                 <div
-                  class="soui-tree-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
                 >
                   <input
                     disabled=""
@@ -283,7 +283,7 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 dir="ltr"
               >
                 <div
-                  class="soui-tree-checkbox soui-checkbox-wrapper"
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -349,7 +349,7 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 dir="ltr"
               >
                 <div
-                  class="soui-tree-checkbox soui-checkbox-wrapper"
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -389,7 +389,7 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
 exports[`Tree[Base] should render correctly about drag 1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-noline"
+    class="soui-tree soui-tree-tree soui-tree-noline"
   >
     <div
       class="soui-tree-root"
@@ -599,7 +599,7 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
 exports[`Tree[Base] should render correctly about drag style 1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-noline"
+    class="soui-tree soui-tree-tree soui-tree-noline"
   >
     <div
       class="soui-tree-root"
@@ -861,7 +861,7 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
     style="margin-bottom: 24px;"
   >
     <button
-      class="soui-button-secondary soui-button-button soui-button-outline soui-button-small"
+      class="soui-button soui-button-secondary soui-button-button soui-button-outline soui-button-small"
       dir="ltr"
       type="button"
     >
@@ -870,7 +870,7 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
       </span>
     </button>
     <button
-      class="soui-button-secondary soui-button-button soui-button-outline soui-button-small"
+      class="soui-button soui-button-secondary soui-button-button soui-button-outline soui-button-small"
       dir="ltr"
       type="button"
     >
@@ -880,7 +880,7 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
     </button>
   </div>
   <div
-    class="soui-tree-tree soui-tree-noline"
+    class="soui-tree soui-tree-tree soui-tree-noline"
   >
     <div
       class="soui-tree-root"
@@ -990,7 +990,7 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
 exports[`Tree[Base] should render correctly about highlight 1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-noline"
+    class="soui-tree soui-tree-tree soui-tree-noline"
   >
     <div
       class="soui-tree-root"
@@ -1249,7 +1249,7 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
 exports[`Tree[Base] should render correctly about highlight control 1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-noline"
+    class="soui-tree soui-tree-tree soui-tree-noline"
   >
     <div
       class="soui-tree-root"
@@ -1504,7 +1504,7 @@ exports[`Tree[Base] should render correctly about highlight control 1`] = `
   </div>
   <br />
   <button
-    class="soui-button-secondary soui-button-button"
+    class="soui-button soui-button-secondary soui-button-button"
     dir="ltr"
     type="button"
   >
@@ -1518,7 +1518,7 @@ exports[`Tree[Base] should render correctly about highlight control 1`] = `
 exports[`Tree[Base] should render correctly about line 1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-noline"
+    class="soui-tree soui-tree-tree soui-tree-noline"
   >
     <div
       class="soui-tree-root"
@@ -1734,7 +1734,7 @@ exports[`Tree[Base] should render correctly about line 1`] = `
 exports[`Tree[Base] should render correctly about loader 1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-noline"
+    class="soui-tree soui-tree-tree soui-tree-noline"
   >
     <div
       class="soui-tree-root"
@@ -1776,7 +1776,7 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             dir="ltr"
           >
             <div
-              class="soui-tree-checkbox soui-checkbox-wrapper"
+              class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -1842,7 +1842,7 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             dir="ltr"
           >
             <div
-              class="soui-tree-checkbox soui-checkbox-wrapper"
+              class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -1908,7 +1908,7 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             dir="ltr"
           >
             <div
-              class="soui-tree-checkbox soui-checkbox-wrapper"
+              class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -1974,7 +1974,7 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             dir="ltr"
           >
             <div
-              class="soui-tree-checkbox soui-checkbox-wrapper"
+              class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -2040,7 +2040,7 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             dir="ltr"
           >
             <div
-              class="soui-tree-checkbox soui-checkbox-wrapper"
+              class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
             >
               <input
                 style="display: none;"
@@ -2082,7 +2082,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -2105,7 +2105,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -2127,7 +2127,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -2149,7 +2149,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -2171,7 +2171,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -2200,7 +2200,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       style="flex: 1;"
     >
       <div
-        class="soui-tree-tree soui-tree-noline"
+        class="soui-tree soui-tree-tree soui-tree-noline"
       >
         <div
           class="soui-tree-root"
@@ -2242,7 +2242,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 dir="ltr"
               >
                 <div
-                  class="soui-tree-checkbox soui-checkbox-wrapper"
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2308,7 +2308,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 dir="ltr"
               >
                 <div
-                  class="soui-tree-checkbox soui-checkbox-wrapper"
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2374,7 +2374,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 dir="ltr"
               >
                 <div
-                  class="soui-tree-checkbox soui-checkbox-wrapper"
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2440,7 +2440,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 dir="ltr"
               >
                 <div
-                  class="soui-tree-checkbox soui-checkbox-wrapper"
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2506,7 +2506,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 dir="ltr"
               >
                 <div
-                  class="soui-tree-checkbox soui-checkbox-wrapper"
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper"
                 >
                   <input
                     style="display: none;"
@@ -2570,7 +2570,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
 exports[`Tree[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="soui-tree-tree soui-tree-line"
+    class="soui-tree soui-tree-tree soui-tree-line"
   >
     <div
       class="soui-tree-root"

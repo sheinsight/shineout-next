@@ -5,7 +5,7 @@ exports[`Tabs[Base] should render correctly  1`] = `
   style="height: 100px;"
 >
   <div
-    class="soui-tabs-tabs"
+    class="soui-tabs soui-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
@@ -87,7 +87,7 @@ exports[`Tabs[Base] should render correctly about autofill 1`] = `
   style="height: 150px;"
 >
   <div
-    class="soui-tabs-tabs soui-tabs-auto-fill"
+    class="soui-tabs soui-tabs-tabs soui-tabs-auto-fill"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
@@ -167,7 +167,7 @@ exports[`Tabs[Base] should render correctly about autofill 1`] = `
 exports[`Tabs[Base] should render correctly about collapsible 1`] = `
 <div>
   <div
-    class="soui-tabs-tabs"
+    class="soui-tabs soui-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
@@ -305,7 +305,7 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -327,7 +327,7 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -350,7 +350,7 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -377,7 +377,7 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
   >
     <div
       active="1"
-      class="soui-tabs-tabs"
+      class="soui-tabs soui-tabs-tabs"
       data-soui-position="top-left"
       data-soui-shape="line"
     >
@@ -460,7 +460,7 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
   style="height: 100px;"
 >
   <div
-    class="soui-tabs-tabs"
+    class="soui-tabs soui-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
@@ -523,7 +523,7 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
         class="soui-tabs-extra"
       >
         <button
-          class="soui-button-primary soui-button-button soui-button-text"
+          class="soui-button soui-button-primary soui-button-button soui-button-text"
           dir="ltr"
           type="button"
         >
@@ -553,7 +553,7 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
 exports[`Tabs[Base] should render correctly about position 1`] = `
 <div>
   <form
-    class="soui-form-wrapper"
+    class="soui-form soui-form-wrapper"
   >
     <div
       class="soui-form-item-wrapper"
@@ -574,7 +574,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
           class="soui-radio-group"
         >
           <div
-            class="soui-radio-wrapper soui-radio-wrapper-checked"
+            class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
           >
             <input
               checked=""
@@ -597,7 +597,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -619,7 +619,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -641,7 +641,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -663,7 +663,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -685,7 +685,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -728,7 +728,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
           class="soui-radio-group"
         >
           <div
-            class="soui-radio-wrapper soui-radio-wrapper-checked"
+            class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
           >
             <input
               checked=""
@@ -751,7 +751,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -773,7 +773,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -795,7 +795,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -817,7 +817,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
             </span>
           </div>
           <div
-            class="soui-radio-wrapper"
+            class="soui-radio soui-radio-wrapper"
           >
             <input
               style="display: none;"
@@ -846,7 +846,7 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
     style="height: 150px;"
   >
     <div
-      class="soui-tabs-tabs soui-tabs-auto-fill"
+      class="soui-tabs soui-tabs-tabs soui-tabs-auto-fill"
       data-soui-position="top-left"
       data-soui-shape="line"
     >
@@ -929,7 +929,7 @@ exports[`Tabs[Base] should render correctly about scroll 1`] = `
   style="height: 100px;"
 >
   <div
-    class="soui-tabs-tabs"
+    class="soui-tabs soui-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
@@ -2078,7 +2078,7 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
   style="height: 100px;"
 >
   <div
-    class="soui-tabs-tabs"
+    class="soui-tabs soui-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >

@@ -2,7 +2,7 @@
 
 exports[`Carousel[Base] should render correctly  1`] = `
 <div
-  class="soui-carousel-wrapper soui-carousel-animation-slide soui-carousel-direction-stop"
+  class="soui-carousel soui-carousel-wrapper soui-carousel-animation-slide soui-carousel-direction-stop"
   style="width: 600px; height: auto;"
 >
   <div
@@ -103,7 +103,7 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
       class="soui-radio-group"
     >
       <div
-        class="soui-radio-wrapper soui-radio-wrapper-checked"
+        class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -126,7 +126,7 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -148,7 +148,7 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -172,7 +172,7 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
     </div>
   </div>
   <div
-    class="soui-carousel-wrapper soui-carousel-animation-slide soui-carousel-direction-stop"
+    class="soui-carousel soui-carousel-wrapper soui-carousel-animation-slide soui-carousel-direction-stop"
     style="width: 600px; height: auto;"
   >
     <div
@@ -242,7 +242,7 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
       class="soui-radio-group"
     >
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -264,7 +264,7 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper soui-radio-wrapper-checked"
+        class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -287,7 +287,7 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -309,7 +309,7 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -344,7 +344,7 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
       class="soui-radio-group"
     >
       <div
-        class="soui-radio-wrapper soui-radio-wrapper-checked"
+        class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -367,7 +367,7 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -389,7 +389,7 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
         </span>
       </div>
       <div
-        class="soui-radio-wrapper"
+        class="soui-radio soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -413,7 +413,7 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
     </div>
   </div>
   <div
-    class="soui-carousel-wrapper soui-carousel-animation-slide soui-carousel-direction-stop"
+    class="soui-carousel soui-carousel-wrapper soui-carousel-animation-slide soui-carousel-direction-stop"
     style="width: 600px; height: auto;"
   >
     <div

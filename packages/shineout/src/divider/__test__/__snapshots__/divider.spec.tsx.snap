@@ -8,7 +8,7 @@ exports[`Divider[Base] should render correctly  1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="soui-divider-wrapper soui-divider-horizontal"
+    class="soui-divider soui-divider-wrapper soui-divider-horizontal"
   />
   <p>
     A design is a plan or specification for the construction of an object.
@@ -24,7 +24,7 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-center"
+    class="soui-divider soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-center"
   >
     <span
       class="soui-divider-inner-text"
@@ -36,7 +36,7 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-left"
+    class="soui-divider soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-left"
   >
     <span
       class="soui-divider-inner-text"
@@ -48,7 +48,7 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-right"
+    class="soui-divider soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-right"
   >
     <span
       class="soui-divider-inner-text"

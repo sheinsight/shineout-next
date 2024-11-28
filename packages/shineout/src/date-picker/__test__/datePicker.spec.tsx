@@ -974,7 +974,7 @@ describe('DatePicker[Format]', () => {
       await delay(300);
       inputValueTest(datePickerResult, '03:00 AM');
     });
-    expect(errorSpy).toHaveBeenCalledWith('invalid datepicker format: hh:mm a please use hh:mm A');
+    expect(errorSpy).toHaveBeenCalledWith('[shineout] invalid datepicker format: hh:mm a please use hh:mm A');
   });
   test('should render when set format and formatResult', async () => {
     const { container, rerender } = render(
@@ -1766,7 +1766,7 @@ describe('DatePicker[Error/Warn]', () => {
     const errorSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
     render(<DatePicker formatResult={'YYYY-MM-DD HH:mm:ss'} inputable />);
     expect(errorSpy).toHaveBeenCalledWith(
-      'formatResult and inputable cannot be used at the same time',
+      '[shineout] formatResult and inputable cannot be used at the same time in DatePicker.',
     );
   });
 });
