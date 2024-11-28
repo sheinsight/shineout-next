@@ -22,6 +22,7 @@ export interface SpinStyle {
 }
 
 export interface SpinClasses {
+  rootClass: string;
   spin: string;
   default: string;
   chasingDots: string;

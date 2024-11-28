@@ -58,6 +58,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, ...resetWrapper } = inputBorder;
 
 const input: JsStyles<keyof TextareaClasses> = {
+  rootClass: {},
   ...inputBorder,
   wrapper: {
     display: 'inline-flex',

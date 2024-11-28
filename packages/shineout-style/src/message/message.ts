@@ -29,6 +29,7 @@ const animations = {
   },
 };
 const messageStyle: JsStyles<MessageClassType> = {
+  rootClass: {},
   ...animations,
   wrapper: {
     position: 'fixed',

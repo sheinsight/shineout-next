@@ -18,6 +18,9 @@ const Input = (props: InputProps) => {
     integerLimit: commonProps.integerLimit,
     numType: commonProps.numType,
     trim: commonProps.trim ?? config.trim ?? false,
+    // 移除 reserveAble 和 formName，避免渲染到原生 input 上
+    reserveAble: undefined,
+    formName: undefined
   };
   const inputFormatProps = useInputFormat({
     value: commonProps.value,

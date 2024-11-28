@@ -2,7 +2,7 @@
 
 exports[`Drawer[Base] should render correctly about base 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -43,7 +43,7 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -52,7 +52,7 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -68,7 +68,7 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
 
 exports[`Drawer[Base] should render correctly about close 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -99,7 +99,7 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -115,7 +115,7 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
 
 exports[`Drawer[Base] should render correctly about container 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -156,7 +156,7 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -165,7 +165,7 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -181,7 +181,7 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
 
 exports[`Drawer[Base] should render correctly about form 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -217,7 +217,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
         class="soui-modal-body"
       >
         <form
-          class="soui-form-wrapper"
+          class="soui-form soui-form-wrapper"
           style="max-width: 400px;"
         >
           <div
@@ -235,7 +235,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
               data-soui-role="form-control"
             >
               <div
-                class="soui-input-wrapper"
+                class="soui-input soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
@@ -264,7 +264,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
               data-soui-role="form-control"
             >
               <div
-                class="soui-input-wrapper"
+                class="soui-input soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
@@ -286,7 +286,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
       >
         <div>
           <button
-            class="soui-button-secondary soui-button-button soui-button-outline"
+            class="soui-button soui-button-secondary soui-button-button soui-button-outline"
             dir="ltr"
             type="button"
           >
@@ -295,7 +295,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
             </span>
           </button>
           <button
-            class="soui-button-primary soui-button-button"
+            class="soui-button soui-button-primary soui-button-button"
             dir="ltr"
             type="button"
           >
@@ -312,7 +312,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
 
 exports[`Drawer[Base] should render correctly about full screen 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-full-screen soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-full-screen soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -348,7 +348,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
       >
         <div>
           <form
-            class="soui-form-wrapper"
+            class="soui-form soui-form-wrapper"
           >
             <div
               class="soui-form-item-wrapper"
@@ -364,7 +364,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 data-soui-role="form-control"
               >
                 <div
-                  class="soui-input-wrapper"
+                  class="soui-input soui-input-wrapper"
                   data-soui-input-border="true"
                 >
                   <div
@@ -412,7 +412,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 data-soui-role="form-control"
               >
                 <div
-                  class="soui-input-wrapper"
+                  class="soui-input soui-input-wrapper"
                   data-soui-input-border="true"
                 >
                   <div
@@ -441,7 +441,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 data-soui-role="form-control"
               >
                 <div
-                  class="soui-input-wrapper"
+                  class="soui-input soui-input-wrapper"
                   data-soui-input-border="true"
                 >
                   <div
@@ -492,7 +492,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                   class="soui-radio-group"
                 >
                   <div
-                    class="soui-radio-wrapper"
+                    class="soui-radio soui-radio-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -514,7 +514,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </span>
                   </div>
                   <div
-                    class="soui-radio-wrapper"
+                    class="soui-radio soui-radio-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -555,7 +555,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                   class="soui-checkbox-group"
                 >
                   <div
-                    class="soui-checkbox-wrapper"
+                    class="soui-checkbox soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -579,7 +579,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </span>
                   </div>
                   <div
-                    class="soui-checkbox-wrapper"
+                    class="soui-checkbox soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -603,7 +603,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </span>
                   </div>
                   <div
-                    class="soui-checkbox-wrapper"
+                    class="soui-checkbox soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -627,7 +627,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </span>
                   </div>
                   <div
-                    class="soui-checkbox-wrapper"
+                    class="soui-checkbox soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -667,7 +667,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 data-soui-role="form-control"
               >
                 <div
-                  class="soui-datePicker-wrapper"
+                  class="soui-date-picker soui-datePicker-wrapper"
                   data-soui-input-border="true"
                   data-soui-type="date"
                 >
@@ -734,7 +734,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 data-soui-role="form-control"
               >
                 <div
-                  class="soui-rate-wrapper"
+                  class="soui-rate soui-rate-wrapper"
                 >
                   <div
                     class="soui-rate-inner"
@@ -907,7 +907,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 data-soui-role="form-control"
               >
                 <div
-                  class="soui-upload-wrapper soui-upload-wrapper-image"
+                  class="soui-upload soui-upload-wrapper soui-upload-wrapper-image"
                 >
                   <span
                     class="soui-upload-image-handler"
@@ -950,7 +950,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 data-soui-role="form-control"
               >
                 <div
-                  class="soui-textarea-wrapper"
+                  class="soui-textarea soui-textarea-wrapper"
                   data-soui-input-border="true"
                 >
                   <textarea
@@ -973,7 +973,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 data-soui-role="form-control"
               >
                 <button
-                  class="soui-button-primary soui-button-button"
+                  class="soui-button soui-button-primary soui-button-button"
                   dir="ltr"
                   type="submit"
                 >
@@ -982,7 +982,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                   </span>
                 </button>
                 <button
-                  class="soui-button-secondary soui-button-button"
+                  class="soui-button soui-button-secondary soui-button-button"
                   dir="ltr"
                   type="reset"
                 >
@@ -999,7 +999,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -1015,7 +1015,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
 
 exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-hide-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-hide-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -1056,7 +1056,7 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -1065,7 +1065,7 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -1081,7 +1081,7 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 
 exports[`Drawer[Base] should render correctly about position 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -1117,7 +1117,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
         class="soui-modal-body"
       >
         <form
-          class="soui-form-wrapper"
+          class="soui-form soui-form-wrapper"
           style="width: 500px;"
         >
           <div
@@ -1135,7 +1135,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
               data-soui-role="form-control"
             >
               <div
-                class="soui-input-wrapper"
+                class="soui-input soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
@@ -1164,7 +1164,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
               data-soui-role="form-control"
             >
               <div
-                class="soui-input-wrapper"
+                class="soui-input soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
@@ -1186,7 +1186,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
       >
         <div>
           <button
-            class="soui-button-secondary soui-button-button soui-button-outline"
+            class="soui-button soui-button-secondary soui-button-button soui-button-outline"
             dir="ltr"
             type="button"
           >
@@ -1195,7 +1195,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
             </span>
           </button>
           <button
-            class="soui-button-primary soui-button-button"
+            class="soui-button soui-button-primary soui-button-button"
             dir="ltr"
             type="button"
           >
@@ -1212,7 +1212,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
 
 exports[`Drawer[Base] should render correctly about resizable 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -1248,7 +1248,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         class="soui-modal-body"
       >
         <form
-          class="soui-form-wrapper"
+          class="soui-form soui-form-wrapper"
           style="width: 500px;"
         >
           <div
@@ -1266,7 +1266,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
               data-soui-role="form-control"
             >
               <div
-                class="soui-input-wrapper"
+                class="soui-input soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
@@ -1295,7 +1295,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
               data-soui-role="form-control"
             >
               <div
-                class="soui-input-wrapper"
+                class="soui-input soui-input-wrapper"
                 data-soui-input-border="true"
               >
                 <div
@@ -1317,7 +1317,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
       >
         <div>
           <button
-            class="soui-button-secondary soui-button-button soui-button-outline"
+            class="soui-button soui-button-secondary soui-button-button soui-button-outline"
             dir="ltr"
             type="button"
           >
@@ -1326,7 +1326,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
             </span>
           </button>
           <button
-            class="soui-button-primary soui-button-button"
+            class="soui-button soui-button-primary soui-button-button"
             dir="ltr"
             type="button"
           >
@@ -1347,7 +1347,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
 
 exports[`Drawer[Base] should render correctly about type 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -1407,7 +1407,7 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -1416,7 +1416,7 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >

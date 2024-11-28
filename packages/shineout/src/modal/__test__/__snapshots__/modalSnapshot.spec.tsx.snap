@@ -2,7 +2,7 @@
 
 exports[`Modal[SnapShot] should render correctly  1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -57,7 +57,7 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -66,7 +66,7 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -82,7 +82,7 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
 
 exports[`Modal[SnapShot] should render correctly about close 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -137,7 +137,7 @@ exports[`Modal[SnapShot] should render correctly about close 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -146,7 +146,7 @@ exports[`Modal[SnapShot] should render correctly about close 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -162,7 +162,7 @@ exports[`Modal[SnapShot] should render correctly about close 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -217,7 +217,7 @@ exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -226,7 +226,7 @@ exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -242,7 +242,7 @@ exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about container 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -297,7 +297,7 @@ exports[`Modal[SnapShot] should render correctly about container 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -306,7 +306,7 @@ exports[`Modal[SnapShot] should render correctly about container 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -322,7 +322,7 @@ exports[`Modal[SnapShot] should render correctly about container 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about focus 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -377,7 +377,7 @@ exports[`Modal[SnapShot] should render correctly about focus 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -386,7 +386,7 @@ exports[`Modal[SnapShot] should render correctly about focus 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -402,7 +402,7 @@ exports[`Modal[SnapShot] should render correctly about focus 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about form 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -457,7 +457,7 @@ exports[`Modal[SnapShot] should render correctly about form 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -466,7 +466,7 @@ exports[`Modal[SnapShot] should render correctly about form 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -482,7 +482,7 @@ exports[`Modal[SnapShot] should render correctly about form 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about icon 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -537,7 +537,7 @@ exports[`Modal[SnapShot] should render correctly about icon 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -546,7 +546,7 @@ exports[`Modal[SnapShot] should render correctly about icon 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -562,7 +562,7 @@ exports[`Modal[SnapShot] should render correctly about icon 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about move 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -617,7 +617,7 @@ exports[`Modal[SnapShot] should render correctly about move 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -626,7 +626,7 @@ exports[`Modal[SnapShot] should render correctly about move 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -642,7 +642,7 @@ exports[`Modal[SnapShot] should render correctly about move 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -697,7 +697,7 @@ exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -706,7 +706,7 @@ exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -722,7 +722,7 @@ exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about position 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -777,7 +777,7 @@ exports[`Modal[SnapShot] should render correctly about position 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -786,7 +786,7 @@ exports[`Modal[SnapShot] should render correctly about position 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -802,7 +802,7 @@ exports[`Modal[SnapShot] should render correctly about position 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about type 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -857,7 +857,7 @@ exports[`Modal[SnapShot] should render correctly about type 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -866,7 +866,7 @@ exports[`Modal[SnapShot] should render correctly about type 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >
@@ -882,7 +882,7 @@ exports[`Modal[SnapShot] should render correctly about type 1`] = `
 
 exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
 <div
-  class="soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
 >
   <div
     class="soui-modal-mask"
@@ -937,7 +937,7 @@ exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
         class="soui-modal-footer"
       >
         <button
-          class="soui-button-secondary soui-button-button soui-button-outline"
+          class="soui-button soui-button-secondary soui-button-button soui-button-outline"
           dir="ltr"
           type="button"
         >
@@ -946,7 +946,7 @@ exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
           </span>
         </button>
         <button
-          class="soui-button-primary soui-button-button"
+          class="soui-button soui-button-primary soui-button-button"
           dir="ltr"
           type="button"
         >

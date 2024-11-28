@@ -1,3 +1,10 @@
+## 3.5.3-beta.1
+2024-11-25
+
+### 🆕 Feature
+- `Tabs` 新增 `allowNonPanel` 属性，开启后支持渲染非 `Tabs.Panel` 子组件，例如 `Form.FieldSet` ([#812](https://github.com/sheinsight/shineout-next/pull/812))
+
+
 ## 3.5.1
 2024-11-14
 

@@ -3,7 +3,7 @@
 exports[`Grid[Base] should render correctly  1`] = `
 <div>
   <div
-    class="soui-slider-wrapper"
+    class="soui-slider soui-slider-wrapper"
   >
     <div
       class="soui-slider-track"

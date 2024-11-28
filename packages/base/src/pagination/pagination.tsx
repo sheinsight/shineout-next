@@ -40,6 +40,7 @@ const Pagination = (props: PaginationProps) => {
   const paginationStyle = jssStyle?.pagination?.();
   const rootClasses = classNames(
     className,
+    paginationStyle?.rootClass,
     paginationStyle?.pagination,
     align === 'left' && paginationStyle?.left,
     align === 'center' && paginationStyle?.center,

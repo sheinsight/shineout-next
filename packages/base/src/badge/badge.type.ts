@@ -3,6 +3,7 @@ import React from 'react';
 import { CommonType } from '../common/type';
 
 export interface BadgeClasses {
+  rootClass: string;
   badge: string;
   textBadge: string;
   count: string;

@@ -107,7 +107,7 @@ export default function getRule<Value>(
   } else if (type) {
     cb = typeOf(type, po.message);
   } else {
-    const err = new FormError(`Rule ${JSON.stringify(rule)} is not valid.`, po);
+    const err = new FormError(`[shineout] Rule ${JSON.stringify(rule)} is not valid.`, po);
     console.error(err);
     throw err;
   }

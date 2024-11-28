@@ -20,6 +20,10 @@ import {
   wrapFormError,
   deepClone,
   getAllKeyPaths,
+  devUseWarning,
+  getFieldId,
+  getClosestScrollContainer,
+  type FormError,
 } from '../../utils';
 
 const emptyObj = {};
@@ -31,6 +35,8 @@ import {
   UseFormSlotProps,
   ValidateFn,
   UpdateFn,
+  ValidateFnConfig,
+  ValidationError,
 } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule';
@@ -52,6 +58,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     rules,
     throttle = 1000,
     size,
+    name: formName,
     reserveAble,
     scrollParent,
   } = props;
@@ -62,7 +69,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const preValue = usePrevious(props.value);
 
-  const formRef = React.useRef<HTMLFormElement>();
+  const formDomRef = React.useRef<HTMLFormElement>();
 
   const { current: context } = React.useRef<FormContext>({
     defaultValues: {},
@@ -126,7 +133,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       const selector = `[${getDataAttributeName('status')}="error"]`;
 
-      const el = formRef.current?.querySelector(selector);
+      const el = formDomRef.current?.querySelector(selector);
       if (el) {
         el.scrollIntoView();
         const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
@@ -150,31 +157,115 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     props.onChange?.(context.value as T);
   });
 
-  const validateFields = usePersistFn((fields?: string | string[], config = {}): Promise<true> => {
-    return new Promise((resolve, reject) => {
-      const files2 = fields
-        ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
-        : Object.keys(context.validateMap);
-      const validates = files2.map((key) => {
-        const validateField = context.validateMap[key];
-        return Array.from(validateField).map((validate) =>
-          validate(key, deepGet(context.value, key), context.value, config),
-        );
-      });
-      Promise.all(validates.flat())
-        .then((results) => {
-          const error = results.find((n) => n !== true);
-          if (error !== undefined) {
-            reject(error);
-          } else {
-            resolve(true);
-          }
-        })
-        .catch((e: Error) => {
-          reject(wrapFormError(e));
-        });
-    });
+  const getValue = usePersistFn((name?: string) => {
+    if (name) {
+      return deepGet(context.value, name);
+    }
+    return context.value;
   });
+
+  const validateFields = usePersistFn(
+    (fields?: string | string[], config: ValidateFnConfig = {}): Promise<T> => {
+      return new Promise((resolve, reject: (reason: ValidationError<T> | FormError) => void) => {
+        const finalFields = fields
+          ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
+          : Object.keys(context.validateMap);
+        const validates = finalFields.map((key) => {
+          const validateField = context.validateMap[key];
+          return Array.from(validateField).map((validate) =>
+            validate(key, deepGet(context.value, key), context.value, config),
+          );
+        });
+
+        if (config.type === 'withValue') {
+          let validatorValue = context.value;
+          if (fields) {
+            const fieldArray = isArray(fields) ? fields : [fields];
+            validatorValue = fieldArray.reduce(
+              (prev, cur) => ({
+                ...prev,
+                [cur]: getValue(cur),
+              }),
+              {},
+            );
+          }
+
+          Promise.all(validates.flat()).then((results) => {
+            const errors = results.filter((n) => n !== true);
+            if (errors.length > 0) {
+              const errorFields = [];
+              for (const key in context.errors) {
+                if (context.errors[key]) {
+                  errorFields.push({
+                    name: key,
+                    errors: [context.errors[key].message],
+                  });
+                }
+              }
+              reject({
+                values: validatorValue as T,
+                errorFields,
+              });
+            } else {
+              resolve(validatorValue as T);
+            }
+          });
+        } else {
+          Promise.all(validates.flat())
+            .then((results) => {
+              const error = results.find((n) => n !== true);
+              if (error !== undefined) {
+                reject(error);
+              } else {
+                resolve(true as any);
+              }
+            })
+            .catch((e: Error) => {
+              reject(wrapFormError(e));
+            });
+        }
+      });
+    },
+  );
+
+
+  const scrollToField = usePersistFn(
+    (name: string, scrollIntoViewOptions: ScrollIntoViewOptions = {}) => {
+      if (!name) return;
+      const fieldId = getFieldId(name, formName);
+      if (!fieldId) return;
+      const element = document?.getElementById(fieldId);
+      if (element) {
+        // 查找可滚动的父元素
+        const parentEl = getClosestScrollContainer(element);
+
+        if (parentEl) {
+          const parentRect = parentEl.getBoundingClientRect();
+          const elementRect = element.getBoundingClientRect();
+
+          // 判断父元素是否在可见范围内
+          const isVisibleY =
+            elementRect.top >= parentRect.top && elementRect.bottom <= parentRect.bottom;
+          const isVisibleX =
+            elementRect.left >= parentRect.left && elementRect.right <= parentRect.right;
+
+          if (!isVisibleY || !isVisibleX) {
+            // 计算元素相对于父元素的偏移量
+            const offsetTop = element.offsetTop - parentEl.offsetTop;
+            const offsetLeft = element.offsetLeft - parentEl.offsetLeft;
+            parentEl.scrollTop = offsetTop;
+            parentEl.scrollLeft = offsetLeft;
+          }
+        } else {
+          // 如果没有找到可滚动的父元素，使用默认行为
+          element.scrollIntoView({ behavior: 'smooth', ...scrollIntoViewOptions });
+        }
+      } else {
+        // todo: 统一警告|错误信息(by Tom)
+        console.warn(`[shineout] fieldId: ${fieldId} not found`);
+      }
+    },
+  );
 
   const remove = () => {
     if (!context.removeArr.size) return;
@@ -194,13 +285,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }
     context.removeTimer = setTimeout(remove);
   };
-
-  const getValue = usePersistFn((name?: string) => {
-    if (name) {
-      return deepGet(context.value, name);
-    }
-    return context.value;
-  });
 
   const setValue = usePersistFn(
     (
@@ -273,12 +357,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }, throttle);
     (async () => {
       if (!withValidate) {
-        props.onSubmit?.((context.value as T) ?? ({} as T));
+        props.onSubmit?.((context.value ?? {}) as T);
         return;
       }
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
       if (result === true) {
-        props.onSubmit?.((context.value as T) ?? ({} as T));
+        props.onSubmit?.((context.value ?? {}) as T);
       } else {
         handleSubmitError(result);
         return;
@@ -333,7 +417,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     return {
       ...externalProps,
       ...externalEventHandlers,
-      ref: formRef,
+      ref: formDomRef,
       disabled: !!disabled,
       onSubmit: handleSubmit(externalEventHandlers),
       onReset: handleReset(externalEventHandlers),
@@ -344,8 +428,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const controlFunc: FormContextType['func'] = useLatestObj({
     bind: (n: string, df: any, validate: ValidateFn, updateFn: UpdateFn) => {
-      if (context.names.has(n)) {
-        console.warn(`name "${n}" already exist`);
+      if (process.env.NODE_ENV !== 'production' && context.names.has(n)) {
+        devUseWarning.warn(`name "${n}" already exist in Form component`)
       }
       context.names.add(n);
 
@@ -369,10 +453,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         });
       }
     },
-    unbind: (n: string, reserveAble?: boolean, validateFiled?: ValidateFn, update?: UpdateFn) => {
+    unbind: (n: string, reserveAble?: boolean, validateField?: ValidateFn, update?: UpdateFn) => {
       const validateFieldSet = context.validateMap[n];
-      if (validateFiled && validateFieldSet.has(validateFiled)) {
-        validateFieldSet.delete(validateFiled);
+      if (validateField && validateFieldSet.has(validateField)) {
+        validateFieldSet.delete(validateField);
       }
 
       const updateFieldSet = context.updateMap[n];
@@ -435,6 +519,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     validateFieldset,
     insertError,
     spliceError,
+    scrollToField,
   });
 
   const formConfig: ProviderProps['formConfig'] = React.useMemo(
@@ -447,6 +532,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       disabled,
       size,
       reserveAble,
+      formName,
     }),
     [
       labelWidth,
@@ -457,6 +543,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       disabled,
       size,
       reserveAble,
+      formName,
     ],
   );
 

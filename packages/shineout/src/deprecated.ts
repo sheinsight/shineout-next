@@ -1,3 +1,7 @@
+import { util } from "@sheinx/hooks";
+
+const { devUseWarning } = util;
+
 export const color: any = {
   danger: 'rgb(255, 77, 80)',
   gray100: 'rgb(244, 245, 248)',
@@ -13,26 +17,26 @@ export const color: any = {
   primary: 'rgb(44, 95, 193)',
   secondary: 'rgb(51, 62, 89)',
   setColor: (_e: any) => {
-    console.warn('shineout: color.setColor is deprecated');
+    devUseWarning.warn('color.setColor is deprecated');
   },
   success: 'rgb(82, 196, 26)',
   warning: 'rgb(255, 140, 0)',
 };
 export const style: any = {
   getClassName: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    devUseWarning.warn('style.getClassName is deprecated');
   },
   setStyle: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    devUseWarning.warn('style.setStyle is deprecated');
     return () => {};
   },
   cleanCache: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    devUseWarning.warn('style.cleanCache is deprecated');
   },
   setInjectType: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    devUseWarning.warn('style.setInjectType is deprecated');
   },
   getInjectType: () => {
-    console.warn('shineout: style.getClassName is deprecated');
+    devUseWarning.warn('style.getInjectType is deprecated');
   },
 };

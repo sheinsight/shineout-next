@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, useTree, util, ObjectKey } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeProps } from './tree.type';
 import RootTree from './tree-root';
 import { Provider } from './tree-context';
+import { FormFieldContext } from '../form/form-field-context';
 
 const { produce } = util;
 
@@ -88,7 +89,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
-  const rootClass = classNames(treeStyle.tree, className, {
+  const rootClass = classNames(treeStyle.rootClass, treeStyle.tree, className, {
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
   });
@@ -217,8 +218,9 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     context.mounted = true;
   }, []);
 
+  const { fieldId } = useContext(FormFieldContext);
   return (
-    <div className={rootClass} {...rest}>
+    <div className={rootClass} id={fieldId} {...rest}>
       <Provider value={datum as any}>
         <RootTree
           isControlled={'expanded' in props}

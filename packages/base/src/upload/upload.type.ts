@@ -9,6 +9,7 @@ import { ImageJssStyleType } from '../image/image.type';
 export type { UploadOptions } from '@sheinx/hooks';
 
 export interface UploadClasses {
+  rootClass: string;
   wrapper: string;
   wrapperImage: string;
   wrapperDisabled: string;

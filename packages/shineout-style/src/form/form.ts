@@ -3,6 +3,7 @@ import token from '@sheinx/theme';
 import { FormClasses } from '@sheinx/base';
 
 const form: JsStyles<keyof FormClasses> = {
+  rootClass: {},
   wrapper: {
     // display: 'block',
   },

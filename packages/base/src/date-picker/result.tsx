@@ -1,7 +1,8 @@
 import { getLocale, useConfig } from '../config';
 import { DatePickerProps } from './date-picker.type';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
+import { FormFieldContext } from '../form/form-field-context';
 
 export const Input = (props: {
   className?: string;
@@ -107,6 +108,8 @@ const Result = (props: ResultProps) => {
   } = props;
   const { locale } = useConfig();
 
+  const { fieldId, separator } = useContext(FormFieldContext);
+
   const styles = jssStyle?.datePicker?.();
   const { current: context } = useRef<{ inputRefs: Array<HTMLDivElement>; clickIndex: number }>({
     inputRefs: [],
@@ -176,8 +179,9 @@ const Result = (props: ResultProps) => {
       dis && styles?.resultTextDisabled,
       info.index === activeIndex && styles?.resultTextActive,
     );
+    const formFieldId = fieldId?.split(separator) || [];
     return (
-      <div className={className}>
+      <div className={className} id={formFieldId[info.index]}>
         <span className={styles?.resultTextPadding}>
             <Input
               key={info.index}

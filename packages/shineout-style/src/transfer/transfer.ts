@@ -5,6 +5,7 @@ import { TransferClasses } from '@sheinx/base';
 export type TransferClass = keyof TransferClasses;
 
 const TransferStyle: JsStyles<TransferClass> = {
+  rootClass: {},
   transfer: {
     display: 'flex',
     alignItems: 'stretch',

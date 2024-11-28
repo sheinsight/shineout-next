@@ -1,9 +1,9 @@
 import { usePersistFn, util, useResize, useRender } from '@sheinx/hooks';
 import { createPortal } from 'react-dom';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { StickyProps } from './sticky.type';
 
-const { cssSupport } = util;
+const { cssSupport, devUseWarning } = util;
 const supportSticky = cssSupport('position', 'sticky');
 export const defaultZIndex = 900;
 const events = ['scroll', 'pageshow', 'load', 'resize'];
@@ -25,6 +25,9 @@ const events = ['scroll', 'pageshow', 'load', 'resize'];
 // };
 
 const Sticky = (props: StickyProps) => {
+  if (props.target) {
+    devUseWarning.deprecated('target', 'scrollContainer', 'Sticky');
+  }
   const { children, top, bottom } = props;
   // 是否使用css sticky
   const css = (props.css || props.target) && supportSticky;

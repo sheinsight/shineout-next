@@ -3,6 +3,7 @@ import type { CommonType } from '../common/type';
 import type { BaseDescriptionsProps, DescriptionsItemProps } from '@sheinx/hooks';
 
 export interface DescriptionsClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

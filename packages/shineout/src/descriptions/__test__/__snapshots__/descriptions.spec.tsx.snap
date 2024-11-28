@@ -5,7 +5,7 @@ exports[`Alert[Base] should render correctly  1`] = `
   style="margin-bottom: -12px;"
 >
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
   >
     <div
       class="soui-descriptions-header"
@@ -161,7 +161,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
   style="margin-bottom: -12px;"
 >
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
     style="margin-bottom: 12px;"
   >
     <div
@@ -271,7 +271,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
     </div>
   </div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
     style="margin-bottom: 12px;"
   >
     <div
@@ -386,7 +386,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
     </div>
   </div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
   >
     <div
       class="soui-descriptions-header"
@@ -515,7 +515,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -538,7 +538,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -560,7 +560,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -582,7 +582,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -609,7 +609,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -632,7 +632,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -659,7 +659,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -682,7 +682,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -705,7 +705,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
     </div>
   </div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
   >
     <div
       class="soui-descriptions-header"
@@ -819,7 +819,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
 exports[`Alert[Base] should render correctly about border 1`] = `
 <div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
     style="margin-bottom: 20px;"
   >
     <div
@@ -904,7 +904,7 @@ exports[`Alert[Base] should render correctly about border 1`] = `
     </div>
   </div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
     style="margin-bottom: 20px;"
   >
     <div
@@ -994,7 +994,7 @@ exports[`Alert[Base] should render correctly about border 1`] = `
     </div>
   </div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
   >
     <div
       class="soui-descriptions-header"
@@ -1094,7 +1094,7 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
   style="margin-bottom: -12px;"
 >
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
     style="margin-bottom: 12px;"
   >
     <div
@@ -1162,7 +1162,7 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
     </div>
   </div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
   >
     <div
       class="soui-descriptions-header"
@@ -1237,7 +1237,7 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
 exports[`Alert[Base] should render correctly about responsive 1`] = `
 <div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
   >
     <div
       class="soui-descriptions-header"
@@ -1335,7 +1335,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1357,7 +1357,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -1380,7 +1380,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -1403,7 +1403,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
     style="margin-bottom: 12px;"
   >
     <div
@@ -1553,7 +1553,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-descriptions-wrapper"
+    class="soui-descriptions soui-descriptions-wrapper"
   >
     <div
       class="soui-descriptions-header"

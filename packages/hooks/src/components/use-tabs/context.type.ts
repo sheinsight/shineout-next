@@ -1,6 +1,6 @@
 import { TabsShapeType } from './use-tabs.type';
 
-export interface TabsContextProps {
+export interface TabsContextProps<TabData> {
   /**
    * @private 内部属性
    */
@@ -34,9 +34,21 @@ export interface TabsContextProps {
    * @private 内部属性
    */
   onCollapsible?: () => void;
+  /**
+   * @private 内部属性
+   */
+  tabs: TabData[];
+  /**
+   * @private 内部属性
+   */
+  setTabs: React.Dispatch<React.SetStateAction<TabData[]>>
+  /**
+   * @private 内部属性
+   */
+  color?: string;
 }
 
-export interface TabsProviderProps {
-  value: TabsContextProps;
+export interface TabsProviderProps<TabData> {
+  value: TabsContextProps<TabData>;
   children?: React.ReactNode;
 }

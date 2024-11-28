@@ -8,6 +8,7 @@ export type TreeRenderItemType<DataItem> =
   | ObjectKey<DataItem>;
 
 export type TreeClasses = {
+  rootClass: string;
   tree: string;
   root: string;
   line: string;

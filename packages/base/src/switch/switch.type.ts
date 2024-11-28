@@ -3,6 +3,7 @@ import { BaseCheckProps } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 
 export interface SwitchClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

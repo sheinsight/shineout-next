@@ -1,6 +1,7 @@
 import nullable from './nullable';
 import isJson from './isJson';
 import { MessageType } from '../rule/rule.type';
+import { devUseWarning } from '../warning';
 
 export type RuleType = keyof typeof regs | 'json';
 /* eslint-disable */
@@ -94,7 +95,7 @@ export default (type: RuleType, message: MessageType = '') =>
 
     const reg = regs[type];
     if (!reg) {
-      console.error(new Error(`Type '${type}' not existed.`));
+      devUseWarning.error(`Type '${type}' not existed.`);
       callback(new Error(`Validate failured. Type '${type}' not existed.`));
     }
 

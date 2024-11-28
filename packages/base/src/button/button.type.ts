@@ -4,6 +4,7 @@ import { SpinClasses } from '../spin/spin.type';
 import React from 'react';
 
 export interface ButtonClasses {
+  rootClass: string;
   button: string;
   group: string;
   groupItem: string;
@@ -134,6 +135,12 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
    * @default index
    */
   children: React.ReactNode;
+
+  /**
+   * @en The id of the button group
+   * @cn 按钮组id
+   */
+  id?: string;
 
   jssStyle?: ButtonJssStyle;
 }

@@ -5,7 +5,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
   class="soui-checkbox-group"
 >
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -29,7 +29,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -53,7 +53,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -77,7 +77,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -101,7 +101,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -138,7 +138,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -175,7 +175,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -206,7 +206,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
   class="soui-checkbox-group"
 >
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -234,7 +234,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -262,7 +262,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -290,7 +290,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -318,7 +318,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -359,7 +359,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -400,7 +400,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -435,7 +435,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
   class="soui-checkbox-group"
 >
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -459,7 +459,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -483,7 +483,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -520,7 +520,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -544,7 +544,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -581,7 +581,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -605,7 +605,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -636,7 +636,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
   class="soui-checkbox-group"
 >
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
   >
     <input
       disabled=""
@@ -661,7 +661,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
   >
     <input
       disabled=""
@@ -686,7 +686,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
   >
     <input
       disabled=""
@@ -711,7 +711,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
   >
     <input
       disabled=""
@@ -736,7 +736,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -774,7 +774,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -812,7 +812,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
   >
     <input
       disabled=""
@@ -844,7 +844,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
   class="soui-checkbox-group"
 >
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -868,7 +868,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -892,7 +892,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
   >
     <input
       disabled=""
@@ -917,7 +917,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"
@@ -941,7 +941,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -978,7 +978,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+    class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
   >
     <input
       checked=""
@@ -1015,7 +1015,7 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
     </span>
   </div>
   <div
-    class="soui-checkbox-wrapper"
+    class="soui-checkbox soui-checkbox-wrapper"
   >
     <input
       style="display: none;"

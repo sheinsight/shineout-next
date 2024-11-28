@@ -1,14 +1,16 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { RateProps } from './rate.type';
 import Icons from '../icons';
 import { useInputAble } from '@sheinx/hooks';
 import useWithFormConfig from '../common/use-with-form-config';
 import { useConfig } from '../config';
+import { FormFieldContext } from '../form/form-field-context';
 
 const Rate = (props0: RateProps) => {
   const props = useWithFormConfig(props0);
   const config = useConfig();
+  const { fieldId } = useContext(FormFieldContext);
   const { size } = props0;
   const { max = 5, repeat = true, clearable = false } = props;
   const [hoverValue, setHoverValue] = useState<null | number>(null);
@@ -117,7 +119,8 @@ const Rate = (props0: RateProps) => {
   const text = Array.isArray(props.text) && props.text[Math.ceil(value - 1)];
   return (
     <div
-      className={classNames(props.className, rateClasses?.wrapper)}
+      className={classNames(props.className, rateClasses?.rootClass, rateClasses?.wrapper)}
+      id={fieldId}
       style={props.style}
       onMouseLeave={() => {
         setHoverValue(null);

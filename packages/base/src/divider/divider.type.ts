@@ -2,6 +2,7 @@ import React from 'react';
 import { CommonType } from '../common/type';
 
 export interface DividerClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

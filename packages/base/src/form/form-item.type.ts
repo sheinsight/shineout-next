@@ -5,6 +5,7 @@ import { CommonType } from '../common/type';
 import { TooltipProps } from '../tooltip/tooltip.type';
 
 export interface FormItemClasses {
+  rootClass: string;
   wrapper: string;
   wrapperLabelTop: string;
   wrapperInline: string;

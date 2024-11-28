@@ -6,6 +6,9 @@ import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
 import { CascaderClasses } from './cascader.type';
 import { CascaderListProps } from './list.type';
 import Node from './node';
+import { util } from '@sheinx/hooks';
+
+const { devUseWarning } = util;
 
 const CascaderList = <DataItem, Value extends KeygenResult[]>(
   props: CascaderListProps<DataItem, Value>,
@@ -61,7 +64,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
       if (typeof key === 'string' || typeof key === 'number') {
         return key;
       }
-      console.error('key must be number or string but get', key);
+      devUseWarning.error(`key must be number or string but get ${key}`);
     }
     return parentId + (parentId ? ',' : '') + index;
   };

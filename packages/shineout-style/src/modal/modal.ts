@@ -156,6 +156,7 @@ const hoverAfterStyles = {
 };
 
 const modalStyle: JsStyles<ModalClassType> = {
+  rootClass: {},
   ...animationStyle,
   wrapper: {
     position: 'fixed',
