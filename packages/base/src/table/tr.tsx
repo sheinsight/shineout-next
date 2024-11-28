@@ -244,48 +244,48 @@ const Tr = (props: TrProps) => {
       );
     }
     if (col.type === 'checkbox') {
-      if (props.radio) {
-        return (
-          <div className={tableClasses?.iconWrapper}>
-            <Radio
-              jssStyle={props.jssStyle}
-              style={{ margin: 0 }}
-              checked={props.isSelect}
-              disabled={props.disabled}
-              onChange={(value: boolean) => {
-                if (value) {
-                  props.datum.add(data);
-                } else {
-                  props.datum.remove(data);
-                }
-              }}
-            />
-          </div>
-        );
-      }
-      return (
+      const instance = (
         <div className={tableClasses?.iconWrapper}>
-          <Checkbox
-            jssStyle={props.jssStyle}
-            disabled={props.disabled}
-            style={{ margin: 0 }}
-            checked={props.isSelect}
-            onChange={(_value, check) => {
-              if (check) {
-                props.datum.add(
-                  data,
-                  props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
-                );
-              } else {
-                props.datum.remove(
-                  data,
-                  props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
-                );
-              }
-            }}
-          />
+          {
+            props.radio ? (
+              <Radio
+                jssStyle={props.jssStyle}
+                style={{ margin: 0 }}
+                checked={props.isSelect}
+                disabled={props.disabled}
+                onChange={(value: boolean) => {
+                  if (value) {
+                    props.datum.add(data);
+                  } else {
+                    props.datum.remove(data);
+                  }
+                }}
+              />
+            ) : (
+              <Checkbox
+                jssStyle={props.jssStyle}
+                disabled={props.disabled}
+                style={{ margin: 0 }}
+                checked={props.isSelect}
+                onChange={(_value, check) => {
+                  if (check) {
+                    props.datum.add(
+                      data,
+                      props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
+                    );
+                  } else {
+                    props.datum.remove(
+                      data,
+                      props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
+                    );
+                  }
+                }}
+              />
+            )
+          }
         </div>
       );
+      return typeof col.render === 'function' ? col.render(props.rawData, props.rowIndex, instance) : instance;
     }
 
     const content = util.render(col.render as any, data, props.rowIndex);
