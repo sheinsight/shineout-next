@@ -566,6 +566,20 @@ exports[`Button[Base] should render correctly about loading 1`] = `
       />
     </div>
   </button>
+  <button
+    class="soui-button-primary soui-button-button"
+    dir="ltr"
+    style="margin: 0px;"
+    type="button"
+  >
+    <i
+      class="soui-icon-wrapper fa-upload"
+      style="font-family: FontAwesome; font-size: 12px; margin-right: 4px; width: 12px; height: 12px;"
+    />
+    <span>
+      Upload
+    </span>
+  </button>
 </div>
 `;
 

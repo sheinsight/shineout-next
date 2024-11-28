@@ -163,7 +163,9 @@ describe('Button[Disabled]', () => {
 describe('Button[Loading]', () => {
   test('should render when set loading', () => {
     const { container } = render(<ButtonLoading />);
-    container.querySelectorAll('button').forEach((button) => {
+    const buttons = container.querySelectorAll('button');
+    buttons.forEach((button, index) => {
+      if(index > 3) return;
       expect(button.classList.contains(buttonLoading)).toBeTruthy();
     });
   });
