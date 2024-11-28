@@ -228,7 +228,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     },
   );
 
-
   const scrollToField = usePersistFn(
     (name: string, scrollIntoViewOptions: ScrollIntoViewOptions = {}) => {
       if (!name) return;
@@ -294,9 +293,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       onChange((draft) => {
         const values = Object.keys(vals);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
-        const nextDraft = Object.assign({}, current(draft), vals);
+        const nextDraft = current(draft);
         values.forEach((key) => {
-          deepSet(draft, key, vals[key], deepSetOptions);
+          deepSet(nextDraft, key, vals[key], deepSetOptions);
+        });
+        values.forEach((key) => {
           if (option.validate) {
             context.validateMap[key]?.forEach((validate) => {
               validate(key, vals[key], nextDraft);
@@ -429,7 +430,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const controlFunc: FormContextType['func'] = useLatestObj({
     bind: (n: string, df: any, validate: ValidateFn, updateFn: UpdateFn) => {
       if (process.env.NODE_ENV !== 'production' && context.names.has(n)) {
-        devUseWarning.warn(`name "${n}" already exist in Form component`)
+        devUseWarning.warn(`name "${n}" already exist in Form component`);
       }
       context.names.add(n);
 
