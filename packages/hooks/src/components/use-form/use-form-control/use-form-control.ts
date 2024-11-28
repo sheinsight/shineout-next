@@ -123,7 +123,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       formV,
       config: {
         ignoreBind?: boolean;
-        type?: 'forcePass';
+        type?: 'forcePass' | 'withValue';
       } = {},
     ) => {
       const validateProps = getValidateProps?.() || {};
