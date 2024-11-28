@@ -124,7 +124,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       formV,
       config: ValidateFnConfig = {},
     ) => {
-      console.log('formV', formV);
       const validateProps = getValidateProps?.() || {};
       if (config.type === 'forcePass') {
         if (inForm) {
