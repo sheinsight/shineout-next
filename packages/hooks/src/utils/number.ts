@@ -1,7 +1,9 @@
+import { devUseWarning } from "./warning";
+
 export function range(end: number, start = 0) {
   const delta = end - start;
   if (typeof delta !== 'number' || Number.isNaN(delta)) {
-    console.error(new Error('end can not computed with start'));
+    devUseWarning.error('end can not computed with start');
   }
   return Array.from({ length: end - start }, (_v, k) => k + start);
 }

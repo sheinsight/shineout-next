@@ -1,10 +1,13 @@
 import React from 'react';
+import { util } from '@sheinx/hooks';
 import SimpleCheckbox from './simple-checkbox';
 import { useInputAble, usePersistFn } from '@sheinx/hooks';
 import { CheckboxProps } from './checkbox.type';
 import GroupContext from './group-context';
 import useCheckboxInputable from './use-checkbox-inputable';
 import Input from '../input';
+
+const {devUseWarning} = util
 
 const Checkbox = <T,>(props: CheckboxProps<T>) => {
   const {
@@ -17,6 +20,10 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     inputable,
     ...rest
   } = props;
+  if (props.inputable) {
+    devUseWarning.deprecated('inputable', 'Checkbox + Input', 'Checkbox');
+  }
+
   const checkboxStyle = jssStyle?.checkbox?.();
 
   let disabled = props.disabled;

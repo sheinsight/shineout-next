@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { CommonType } from './type';
 
 export interface InnerTitleClasses {
+  rootClass: string;
   wrapper: string;
   wrapperOpen: string;
   wrapperSmall: string;

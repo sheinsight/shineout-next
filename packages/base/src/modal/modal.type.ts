@@ -7,6 +7,7 @@ import { SpinStyle } from '../spin/spin.type';
 export type Methods = 'success' | 'info' | 'warning' | 'error' | 'confirm' | 'normal';
 
 export interface ModalClasses {
+  rootClass: string;
   wrapper: string;
   wrapperShow: string;
   wrapperHide: string;

@@ -1,10 +1,10 @@
 import { useInput, useKeyEvent, usePersistFn, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { KeyboardEvent } from 'react';
+import React, { KeyboardEvent, useContext } from 'react';
 import { SimpleInputProps } from './input.type';
 import Icons from '../icons';
 import { useConfig } from '../config';
-
+import { FormFieldContext } from '../form/form-field-context';
 const Input = (props: SimpleInputProps) => {
   const {
     jssStyle,
@@ -27,6 +27,7 @@ const Input = (props: SimpleInputProps) => {
 
   const inputStyle = jssStyle?.input?.();
   const config = useConfig();
+  const { fieldId } = useContext(FormFieldContext);
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
     onFocusedChange,
@@ -34,6 +35,7 @@ const Input = (props: SimpleInputProps) => {
 
   const rootClass = classNames(
     className,
+    inputStyle?.rootClass,
     inputStyle?.wrapper,
     !!focused && inputStyle?.wrapperFocus,
     !!disabled && inputStyle?.wrapperDisabled,
@@ -69,6 +71,7 @@ const Input = (props: SimpleInputProps) => {
 
   return (
     <div
+      id={fieldId}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       {...getRootProps({
         className: rootClass,

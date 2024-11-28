@@ -4,6 +4,10 @@ import { FormItemRule } from '../../../utils/rule/rule.type';
 export interface BaseFormControlProps<T> {
   name: string | string[];
   /**
+   * @private 内部属性 for validate
+   */
+  formName?: string;
+  /**
    * @en default Value
    * @cn 默认值
    */

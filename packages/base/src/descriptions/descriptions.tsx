@@ -104,6 +104,7 @@ const Descriptions = (props: DescriptionsProps) => {
 
   const rootClassName = classNames(
     className,
+    jssStyle?.rootClass,
     jssStyle?.wrapper,
     size === 'small' && jssStyle?.small,
     size === 'large' && jssStyle?.large,

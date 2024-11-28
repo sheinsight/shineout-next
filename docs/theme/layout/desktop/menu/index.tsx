@@ -51,6 +51,13 @@ const devGuide = [
     },
     name: 'changelog',
   },
+  {
+    title: {
+      cn: '迁移指南',
+      en: 'Migration',
+    },
+    name: 'migration',
+  },
 ];
 
 const MenuComponent = () => {

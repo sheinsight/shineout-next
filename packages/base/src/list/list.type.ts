@@ -10,6 +10,7 @@ import { ImageJssStyleType } from '../image/image.type';
 import { BaseItemClasses } from './base-item.type';
 
 export interface ListClasses extends BaseItemClasses {
+  rootClass: string;
   wrapper: string;
   wrapperEmpty: string;
   wrapperBordered: string;

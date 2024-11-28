@@ -25,6 +25,7 @@ const animation = {
 };
 
 const innerTitle: JsStyles<keyof InnerTitleClasses> = {
+  rootClass: {},
   ...animation,
   wrapper: {
     width: '100%',

@@ -5,6 +5,7 @@ import { CollapseItemClasses } from '@sheinx/base';
 export type CollapseItemClassType = keyof CollapseItemClasses;
 
 const collapseItemStyle: JsStyles<CollapseItemClassType> = {
+  rootClass: {},
   wrapper: {
     boxSizing: 'border-box',
     borderBottom: `${Token.collapseWrapperBorderSize} solid ${Token.collapseHeaderBorderColor}`,
@@ -54,7 +55,7 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
     }
   },
   activeTransformRight: {
-    
+
   },
   noIcon: {
     '& > $icon': {

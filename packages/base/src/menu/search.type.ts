@@ -2,6 +2,7 @@ import React from 'react';
 import { InputProps, InputStyle } from '../input/input.type';
 
 export interface MenuSearchClasses {
+  rootClass?: string;
   wrapper?: string;
   wrapperDark?: string;
   wrapperLight?: string;

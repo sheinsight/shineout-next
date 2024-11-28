@@ -3,6 +3,7 @@ import token from '@sheinx/theme';
 import { RadioClasses } from '@sheinx/base';
 
 const radioStyle: JsStyles<keyof RadioClasses> = {
+  rootClass: {},
   // '@keyframes so-checkinput-focus': {
   //   '0%': {
   //     boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,

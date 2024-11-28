@@ -3,6 +3,7 @@ import { JsStyles } from '../jss-style';
 import { CheckboxClasses } from '@sheinx/base';
 
 const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
+  rootClass: {},
   wrapper: {
     display: 'inline-flex',
     position: 'relative',

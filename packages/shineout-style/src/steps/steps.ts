@@ -5,6 +5,7 @@ import { JsStyles } from '../jss-style';
 export type StepsClassType = keyof StepsClasses;
 
 const stepsStyle: JsStyles<StepsClassType> = {
+  rootClass: {},
   steps: {
     display: 'flex',
     '& $step:last-child ': {

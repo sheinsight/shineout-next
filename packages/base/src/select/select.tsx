@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useState } from 'react';
+import React, { ReactNode, useContext, useRef, useState } from 'react';
 import classNames from 'classnames';
 import {
   util,
@@ -26,6 +26,7 @@ import ColumnsList from './list-columns';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { getLocale, useConfig } from '../config';
+import { FormFieldContext } from '../form/form-field-context';
 
 function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const props = useWithFormConfig(props0);
@@ -216,6 +217,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     setAbsoluteListUpdateKey(value as string);
   });
 
+  const handleSameChange = () => {
+    const shouldFocus = showInput && props.reFocus;
+    if (!multiple && !shouldFocus) {
+      closePop();
+    }
+  };
+
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
     data,
@@ -231,6 +239,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     prediction,
     beforeChange,
     onChange: handleSelectChange,
+    onSameChange: handleSameChange,
     filterSameChange,
     noCache,
   });
@@ -289,8 +298,9 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const rootClass = classNames(
     className,
-    isEmpty && styles.wrapperEmpty,
+    styles?.rootClass,
     styles?.wrapper,
+    isEmpty && styles.wrapperEmpty,
     open && styles?.wrapperOpen,
     open && trigger === 'hover' && styles?.triggerHover,
     disabled === true && styles?.wrapperDisabled,
@@ -538,6 +548,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     );
   };
 
+  const { fieldId } = useContext(FormFieldContext);
   const renderResult = () => {
     const result = (
       <div className={classNames(styles?.result)}>
@@ -585,6 +596,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return (
       <PopupProvider value={popupProviderValue}>
         <div
+          id={fieldId}
           className={classNames(
             styles?.resultWrapper,
             styles?.wrapperPaddingBox,

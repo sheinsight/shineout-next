@@ -1,14 +1,16 @@
 import { useCheck, useInputAble } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React from 'react';
+import React, { useContext } from 'react';
 import { SwitchProps } from './switch.type';
 import { useConfig } from '../config';
 import useWithFormConfig from '../common/use-with-form-config';
+import { FormFieldContext } from '../form/form-field-context';
 
 const Switch = (props0: SwitchProps) => {
   const props = useWithFormConfig(props0);
   const { jssStyle, content, size, loading, className, style } = props;
   const config = useConfig();
+  const { fieldId } = useContext(FormFieldContext);
   const switchClasses = jssStyle?.switch?.();
   const disabled = props.disabled || props.loading;
 
@@ -39,6 +41,7 @@ const Switch = (props0: SwitchProps) => {
 
   const rootClassName = classNames(
     className,
+    switchClasses?.rootClass,
     switchClasses?.wrapper,
     !!checked && switchClasses?.wrapperChecked,
     disabled && switchClasses?.wrapperDisabled,
@@ -50,7 +53,7 @@ const Switch = (props0: SwitchProps) => {
   const inputProps = getInputProps();
 
   return (
-    <button type={'button'} role={'switch'} {...rootProps}>
+    <button type={'button'} role={'switch'} id={fieldId} {...rootProps}>
       <input {...inputProps} type={'checkbox'} />
       <div className={switchClasses?.indicator} dir={config.direction}>
         {loading ? <div className={switchClasses?.loading} /> : null}

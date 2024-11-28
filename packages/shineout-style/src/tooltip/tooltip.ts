@@ -48,6 +48,7 @@ const animation = {
   },
 };
 const tooltipStyle: JsStyles<keyof TooltipClasses> = {
+  rootClass: {},
   ...animation,
   wrapper: {
     display: 'none',

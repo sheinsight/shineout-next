@@ -5,6 +5,7 @@ import { CommonType } from '../common/type';
 export type StepsStatusType = 'wait' | 'process' | 'finish' | 'error';
 
 export type StepsClasses = {
+  rootClass: string;
   steps: string;
   step: string;
   small: string;

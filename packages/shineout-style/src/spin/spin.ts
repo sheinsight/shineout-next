@@ -19,6 +19,7 @@ import chasingRing from './chasing-ring';
 import Animation from './animation';
 
 const spinStyle: JsStyles<keyof SpinClasses> = {
+  rootClass: {},
   ...Animation,
   default: Default(12),
   chasingDots,

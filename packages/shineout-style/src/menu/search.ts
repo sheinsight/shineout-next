@@ -4,6 +4,7 @@ import { JsStyles } from '../jss-style';
 export type MenuSearchClassType = keyof MenuSearchClasses;
 
 const menuSearchStyle: JsStyles<MenuSearchClassType> = {
+  rootClass: {},
   wrapper: {
     [getTokenName('inputBorderRadius')]: token.menuSearchBorderRadius,
   },

@@ -3,6 +3,7 @@ import type { CommonType } from '../common/type';
 import type { BaseCollapseItemProps } from '@sheinx/hooks';
 
 export interface CollapseItemClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

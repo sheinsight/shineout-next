@@ -1,16 +1,27 @@
 import classNames from 'classnames';
-import { useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { TabsClasses } from './tabs.type';
 import { useTabsContext } from '@sheinx/hooks';
 import { TabsPanelProps } from './tabs-panel.type';
+import { TabData } from './tab.type';
 
 const TabsPanel = (props: TabsPanelProps) => {
-  const { children, id, className, style, color, jssStyle } = props;
+  const { children, id, tab, className, style, jssStyle } = props;
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
-  const { active, lazy } = useTabsContext();
+  const { active, lazy, setTabs, color } = useTabsContext<TabData>();
   const isActive = active === id;
   const keekAlive = useRef(false);
+
+  useLayoutEffect(() => {
+    setTabs(prev => {
+      const prevTab = prev.find(item => item.id === id)
+      if(prevTab){
+        return prev.map(item => item.id === id ? { ...item, tab } : item)
+      }
+      return [...prev, { id, tab, disabled: props.disabled, jssStyle, color: props.color || (active === id ? color : undefined) } as TabData]
+    })
+  }, [id, tab, color, ...(color ? [active] : []), props.disabled, props.jssStyle])
 
   if (!isActive && lazy && !keekAlive.current) {
     return null;

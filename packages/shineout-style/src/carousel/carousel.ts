@@ -49,6 +49,7 @@ const animations = {
   },
 };
 const carouselStyle: JsStyles<CarouselClassType> = {
+  rootClass: {},
   ...animations,
   wrapper: {
     position: 'relative',

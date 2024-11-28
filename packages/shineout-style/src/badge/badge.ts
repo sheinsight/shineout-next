@@ -2,6 +2,7 @@ import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 
 export type BadgeClasses = {
+  rootClass: string;
   badge: string;
   count: string;
   dot: string;
@@ -29,6 +30,7 @@ export type BadgeClasses = {
 export type BadgeClassType = keyof BadgeClasses;
 
 const badgeStyle: JsStyles<BadgeClassType> = {
+  rootClass: {},
   badge: {
     boxSizing: 'border-box',
     width: 'fit-content',

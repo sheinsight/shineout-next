@@ -37,7 +37,7 @@ const Scroll = (props: scrollProps) => {
     isMouseDown: false,
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
-  const { width, height: h } = useResize({ targetRef: containerRef });
+  const { width, height: h } = useResize({ targetRef: containerRef, timer: 0 });
   const height = h || defaultHeight;
   const config = useConfig();
   const isRtl = config.direction === 'rtl';

@@ -137,6 +137,7 @@ const Popover = (props: PopoverProps) => {
       <div
         className={classNames(
           className,
+          popoverStyle?.rootClass,
           popoverStyle?.wrapper,
           open && popoverStyle?.wrapperOpen,
           !showArrow && popoverStyle?.hideArrow,

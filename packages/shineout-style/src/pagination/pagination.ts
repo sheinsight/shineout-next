@@ -5,6 +5,7 @@ import { PaginationClasses } from '@sheinx/base';
 type PaginationClass = keyof PaginationClasses;
 
 const PaginationStyle: JsStyles<PaginationClass> = {
+  rootClass: {},
   pagination: {
     display: 'flex',
     flexWrap: 'wrap',

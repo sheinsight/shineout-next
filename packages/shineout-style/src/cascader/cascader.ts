@@ -59,6 +59,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const cascaderStyle: JsStyles<CascaderClassType> = {
+  rootClass: {},
   wrapperEmpty: {},
   wrapper: {
     display: 'inline-block',

@@ -113,9 +113,13 @@ export function getClosestScrollContainer(element: HTMLElement | null): HTMLElem
     const style = window.getComputedStyle(el);
     const overflowX = style.overflowX;
     const overflowY = style.overflowY;
-    return (overflowX === 'auto' || overflowX === 'scroll' ||
-            overflowY === 'auto' || overflowY === 'scroll') &&
-           (el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth);
+    return (
+      (overflowX === 'auto' ||
+        overflowX === 'scroll' ||
+        overflowY === 'auto' ||
+        overflowY === 'scroll') &&
+      (el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth)
+    );
   };
 
   // 如果元素本身是可滚动的，直接返回
@@ -136,6 +140,29 @@ export function getClosestScrollContainer(element: HTMLElement | null): HTMLElem
   return (document.scrollingElement || document.documentElement) as HTMLElement;
 }
 
+export function getClosestFixedContainer(element: Element | HTMLElement | null) {
+  if (!element) {
+    return null;
+  }
+
+  const isFixable = (el: HTMLElement) => {
+    const style = window.getComputedStyle(el);
+    return style.position === 'fixed';
+  };
+
+  // 遍历父元素
+  let parent = element.parentElement;
+
+  while (parent) {
+    if (isFixable(parent)) {
+      return parent;
+    }
+    parent = parent.parentElement;
+  }
+
+  return null;
+}
+
 export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
   if (isBrowser()) {
     const element = document.createElement('div');
@@ -151,3 +178,8 @@ export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
 }
 
 export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, ''));
+
+export const getFieldId = (name?: string, formName?: string) => {
+  if (!name) return undefined;
+  return `${formName ? `${formName}_` : ''}${name}`
+};

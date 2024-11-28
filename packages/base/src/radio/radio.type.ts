@@ -3,6 +3,7 @@ import { BaseCheckProps } from '@sheinx/hooks';
 import React from 'react';
 
 export interface RadioClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

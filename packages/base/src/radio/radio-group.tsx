@@ -2,10 +2,11 @@ import { RadioGroupProps } from './radio-group.type';
 import { useInputAble, useListSelectSingle, usePersistFn, util } from '@sheinx/hooks';
 import groupContext from './group-context';
 import Radio from './radio';
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 import Button from '../button/button';
+import { FormFieldContext } from '../form/form-field-context';
 
 const defaultFormat = (d: any) => d;
 const defaultRenderItem = (d: any) => d;
@@ -13,6 +14,7 @@ const defaultRenderItem = (d: any) => d;
 const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
   const {format = defaultFormat, renderItem = defaultRenderItem} = props0
   const props = useWithFormConfig(props0);
+  const { fieldId } = useContext(FormFieldContext);
 
   const { children, className, button, block, keygen, jssStyle, style, size, disabled  } = props;
   const radioClasses = jssStyle?.radio?.();
@@ -125,13 +127,13 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
     );
   if (button)
     return (
-      <Button.Group jssStyle={jssStyle} className={groupClass} style={style}>
+      <Button.Group jssStyle={jssStyle} className={groupClass} style={style} id={fieldId}>
         {Radios}
       </Button.Group>
     );
 
   return (
-    <div className={groupClass} style={style}>
+    <div className={groupClass} style={style} id={fieldId}>
       {Radios}
     </div>
   );

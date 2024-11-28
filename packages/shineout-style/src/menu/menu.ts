@@ -8,6 +8,7 @@ const collapseWidth = token.menuCollapseWidth;
 const transitionFunc = 'ease-out';
 
 const menuStyle: JsStyles<MenuClassType> = {
+  rootClass: {},
   wrapper: {
     width: '100%',
     backgroundColor: token.menuItemBackgroundColor,

@@ -3,6 +3,7 @@ import { CommonType } from '../common/type';
 // import { BaseEmptyProps } from '@sheinx/hooks';
 
 export interface EmptyClasses {
+  rootClass: string;
   empty: string;
   wrapper: string;
   image: string;

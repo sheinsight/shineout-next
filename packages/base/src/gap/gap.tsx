@@ -34,7 +34,7 @@ const Gap = (props: GapProps) => {
       };
 
   return (
-    <div className={classNames(className, styles?.wrapper)} style={{ ...extendStyle, ...style }}>
+    <div className={classNames(className, styles?.rootClass, styles?.wrapper)} style={{ ...extendStyle, ...style }}>
       {React.Children.map(children, (child) => child && <div className={styles?.item} style={itemStyle}>{child}</div>)}
     </div>
   );

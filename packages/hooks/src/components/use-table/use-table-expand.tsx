@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { TableFormatColumn, BaseTableProps } from './use-table.type';
 import usePersistFn from '../../common/use-persist-fn';
-import { getKey } from '../..//utils/render';
+import { getKey } from '../../utils/render';
+import { devUseWarning } from '../../utils';
 
 export interface UseTableExpandProps extends Pick<BaseTableProps<any>, 'expandKeys' | 'keygen'> {
   columns: TableFormatColumn<any>[];
@@ -46,7 +47,7 @@ export const useTableExpand = (props: UseTableExpandProps) => {
       (col) => col.type === 'expand' || col.type === 'row-expand',
     ).length;
     if (expandNum > 1) {
-      console.error('columns should not have more than one expand column');
+      devUseWarning.error('columns should not have more than one expand column');
     }
   });
 

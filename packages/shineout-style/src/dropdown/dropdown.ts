@@ -3,6 +3,7 @@ import token from '@sheinx/theme';
 import { DropdownClasses } from '@sheinx/base';
 
 const dropdown: JsStyles<keyof DropdownClasses> = {
+  rootClass: {},
   wrapper: {
     display: 'inline-block',
     position: 'relative',

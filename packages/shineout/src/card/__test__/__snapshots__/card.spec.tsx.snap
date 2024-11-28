@@ -422,6 +422,7 @@ exports[`Card[Base] should render correctly about form 1`] = `
           <div
             class="soui-input-wrapper"
             data-soui-input-border="true"
+            id="name"
           >
             <div
               class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
@@ -450,6 +451,7 @@ exports[`Card[Base] should render correctly about form 1`] = `
           <div
             class="soui-input-wrapper"
             data-soui-input-border="true"
+            id="email"
           >
             <div
               class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"

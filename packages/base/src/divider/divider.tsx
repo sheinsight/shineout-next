@@ -15,6 +15,7 @@ const Divider = (props: DividerProps) => {
   const showText = mode === 'horizontal' && children;
   const mc = classNames(
     className,
+    styles?.rootClass,
     styles?.wrapper,
     mode === 'vertical' && styles?.vertical,
     mode === 'horizontal' && styles?.horizontal,

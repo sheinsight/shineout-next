@@ -14,7 +14,7 @@ const cloneObject = (source: { [x: string]: any }, specialKeys: string[] = []) =
       target[key] = target[key]
     }
   } catch (e) {
-    console.error('should not pass non-serializable data', source)
+    console.error('[shineout] should not pass non-serializable data', source)
     console.error(e)
     target = {}
   }

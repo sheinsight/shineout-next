@@ -1,5 +1,6 @@
 import React from 'react';
 import { KeygenType } from '../common/type';
+import { devUseWarning } from './warning';
 
 export type renderFunc<T extends any[]> = (...args: T) => React.ReactNode;
 
@@ -18,7 +19,7 @@ function $getKey<T>(gen: KeygenType<T> | undefined, d: T, index?: number) {
 export function getKey<T>(gen: KeygenType<T> | undefined, d: T, index?: number, ignoreError?: boolean) {
   const key = $getKey(gen, d, index) as string | number;
   if (typeof key !== 'string' && typeof key !== 'number' && !ignoreError) {
-    console.error(new Error(`keygen result expect a string or a number, get '${typeof key}'`));
+    devUseWarning.error(`keygen result expect a string or a number, get '${typeof key}'`);
   }
   return key;
 }

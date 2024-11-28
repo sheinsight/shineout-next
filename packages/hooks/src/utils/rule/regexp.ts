@@ -1,14 +1,15 @@
 import { deepMerge } from '../object';
 import { MessageType } from './rule.type';
+import { devUseWarning } from '../warning';
 
 const options = { skipUndefined: true };
 
 export default ({ message }: { message?: MessageType } = {}) =>
   (regExp: string | RegExp, msg?: MessageType) => {
     if (typeof regExp !== 'string' && !(regExp instanceof RegExp)) {
-      console.error(
-        new Error(`Rule "reg" param expect a RegExp object or a string, get ${typeof regExp}`),
-      );
+
+      devUseWarning.error(`Rule "reg" param expect a RegExp object or a string, get ${typeof regExp}`)
+
       return null;
     }
     return deepMerge(

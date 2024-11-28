@@ -13,6 +13,7 @@ import { InputClasses } from '../input/input.type';
 import { BaseTipProps } from '../common/use-tip';
 
 export type SelectClasses = {
+  rootClass: string;
   wrapper: string;
   wrapperEmpty: string;
   wrapperOpen: string;

@@ -5,6 +5,7 @@ import { TreeClasses } from '@sheinx/base';
 export type TreeClassType = keyof TreeClasses;
 
 const treeStyle: JsStyles<TreeClassType> = {
+  rootClass: {},
   tree: {},
   line: {
     '& $node': {

@@ -13,6 +13,7 @@ export type ListDatum<DataItem, Value extends KeygenResult[]> = ReturnType<
 >;
 
 export interface TransferClasses {
+  rootClass: string;
   transfer: string;
   small: string;
   large: string;
