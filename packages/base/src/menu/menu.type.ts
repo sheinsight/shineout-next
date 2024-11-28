@@ -6,6 +6,7 @@ import { PopoverJssStyle } from '../popover/popover.type';
 export type MenuMode = 'inline' | 'vertical' | 'horizontal' | 'vertical-auto';
 
 export interface MenuClasses {
+  rootClass: string;
   wrapper: string;
   wrapperInline: string;
   wrapperVertical: string;

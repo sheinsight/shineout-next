@@ -1,15 +1,18 @@
 import { useCheck } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React from 'react';
+import React, { useContext } from 'react';
 import { SimpleRadioProps } from './radio.type';
+import { FormFieldContext } from '../form/form-field-context';
 
 const Radio = (props: SimpleRadioProps) => {
   const { jssStyle, className, style, children, renderRadio, size, theme, ...rest } = props;
+  const { fieldId } = useContext(FormFieldContext);
   const radioClasses = jssStyle?.radio?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
   });
   const rootClass = classNames([
+    radioClasses?.rootClass,
     radioClasses?.wrapper,
     className,
     !!disabled && radioClasses?.wrapperDisabled,
@@ -31,7 +34,7 @@ const Radio = (props: SimpleRadioProps) => {
   const indicatorProps = getIndicatorProps();
 
   const simpleRadio = (
-    <div {...rootProps}>
+    <div id={fieldId} {...rootProps}>
       <input {...inputProps} type='radio' />
       <span className={indicatorClass}>
         <span {...indicatorProps} className={radioClasses?.indicator} />

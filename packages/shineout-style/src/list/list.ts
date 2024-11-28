@@ -5,6 +5,7 @@ import { ListClasses } from '@sheinx/base';
 export type ListClassType = keyof ListClasses;
 
 const listStyle: JsStyles<ListClassType> = {
+  rootClass: {},
   wrapper: {
     position: 'relative',
     boxSizing: 'border-box',

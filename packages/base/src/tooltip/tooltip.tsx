@@ -1,9 +1,11 @@
 import { usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { cloneElement, isValidElement, useState, useRef } from 'react';
+import React, { cloneElement, isValidElement, useEffect } from 'react';
 import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
+
+const { devUseWarning } = util;
 
 const defaultDelay = 0;
 
@@ -18,11 +20,10 @@ const Tooltip = (props: TooltipProps) => {
     className,
     style,
     zIndex,
+    persistent,
     type = 'default',
     position: popsitionProps = 'auto',
   } = props;
-
-  const arrowStyleRef = useRef<React.CSSProperties>({});
 
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
@@ -32,7 +33,7 @@ const Tooltip = (props: TooltipProps) => {
     : {};
 
   const delay = props.delay || props.mouseEnterDelay || defaultDelay;
-  const { open, position, getTargetProps, targetRef, popupRef, arrowRef } = usePopup({
+  const { open, position, getTargetProps, targetRef, popupRef, arrowRef, closePop } = usePopup({
     position: popsitionProps,
     trigger: trigger,
     autoMode: 'popover',
@@ -41,8 +42,36 @@ const Tooltip = (props: TooltipProps) => {
     targetEvents: disabledChild ? {} : childrenProps,
   });
 
+  const events = getTargetProps();
+
+  const bindEvents = () => {
+    const targetEl = targetRef.current;
+    if (!targetEl) return;
+    if (events.onMouseEnter) targetEl.addEventListener('mouseenter', events.onMouseEnter);
+    if (events.onMouseLeave) targetEl.addEventListener('mouseleave', events.onMouseLeave);
+    if (events.onClick) targetEl.addEventListener('click', events.onClick);
+  };
+
+  const unbindEvents = () => {
+    const targetEl = targetRef.current;
+    if (!targetEl) return;
+    const events = getTargetProps();
+    if (events.onMouseEnter) targetEl.removeEventListener('mouseenter', events.onMouseEnter);
+    if (events.onMouseLeave) targetEl.removeEventListener('mouseleave', events.onMouseLeave);
+    if (events.onClick) targetEl.removeEventListener('click', events.onClick);
+    targetEl.removeEventListener('click', closePop);
+  };
+
+  useEffect(() => {
+    if(!persistent) return
+    bindEvents();
+    return () => {
+      unbindEvents();
+    };
+  }, [persistent]);
+
   if (!isValidElement(children)) {
-    console.error(new Error('Tooltip children expect a single ReactElement.'));
+    devUseWarning.error('Tooltip children expect a single ReactElement.');
     return null;
   }
 
@@ -57,7 +86,6 @@ const Tooltip = (props: TooltipProps) => {
   ) : (
     children
   );
-  const events = getTargetProps();
 
   return (
     <>
@@ -76,21 +104,23 @@ const Tooltip = (props: TooltipProps) => {
         focus={open}
         parentElRef={targetRef}
         popupElRef={popupRef}
-        arrowRef={arrowRef}
         absolute
-        adjust={popsitionProps === 'auto'}
         position={position}
         fixedWidth={false}
         popupGap={0}
-        // arrowStyleRef={arrowStyleRef}
         zIndex={zIndex}
+        adjust={popsitionProps === 'auto'}
+
+        arrowRef={arrowRef}
       >
         <div
           className={classNames(
             className,
+            tooltipClasses?.rootClass,
             tooltipClasses?.wrapper,
             open && tooltipClasses?.wrapperOpen,
           )}
+          style={{ pointerEvents: persistent ? 'initial' : undefined }}
           {...util.getDataAttribute({ type, position })}
           ref={popupRef}
           onMouseLeave={events.onMouseLeave}
@@ -98,7 +128,6 @@ const Tooltip = (props: TooltipProps) => {
         >
           <span
             ref={arrowRef}
-            style={arrowStyleRef.current}
             className={tooltipClasses?.arrow}
             {...util.getDataAttribute({ role: 'arrow' })}
           ></span>

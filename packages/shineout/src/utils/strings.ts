@@ -1,6 +1,10 @@
+import { util } from "@sheinx/hooks";
+
+const { devUseWarning } = util;
+
 export function capitalize(str: string) {
   if (typeof str !== 'string') {
-    console.error(new Error('str should be a string'));
+    devUseWarning.error('str should be a string');
   }
   return str && str[0].toUpperCase() + str.slice(1);
 }

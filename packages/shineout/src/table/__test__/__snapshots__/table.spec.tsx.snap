@@ -3,7 +3,7 @@
 exports[`Table[Base] should render correctly  1`] = `
 <div>
   <div
-    class="soui-table-wrapper soui-table-vertical-align-top soui-table-default"
+    class="soui-table soui-table-wrapper soui-table-vertical-align-top soui-table-default"
     dir="ltr"
   >
     <div
@@ -218,7 +218,7 @@ exports[`Table[Base] should render correctly  1`] = `
 exports[`Table[Base] should render correctly about border 1`] = `
 <div>
   <div
-    class="soui-table-wrapper soui-table-bordered soui-table-vertical-align-top soui-table-default"
+    class="soui-table soui-table-wrapper soui-table-bordered soui-table-vertical-align-top soui-table-default"
     dir="ltr"
   >
     <div
@@ -432,7 +432,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
 
 exports[`Table[Base] should render correctly about group 1`] = `
 <div
-  class="soui-table-wrapper soui-table-bordered soui-table-vertical-align-top soui-table-default"
+  class="soui-table soui-table-wrapper soui-table-bordered soui-table-vertical-align-top soui-table-default"
   dir="ltr"
 >
   <div
@@ -776,7 +776,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -798,7 +798,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -821,7 +821,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper"
     >
       <input
         style="display: none;"
@@ -844,7 +844,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-table-wrapper soui-table-vertical-align-top soui-table-default"
+    class="soui-table soui-table-wrapper soui-table-vertical-align-top soui-table-default"
     dir="ltr"
   >
     <div

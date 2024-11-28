@@ -2,7 +2,7 @@
 
 exports[`Input[Base] should render correctly  1`] = `
 <div
-  class="soui-input-wrapper"
+  class="soui-input soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
@@ -20,7 +20,7 @@ exports[`Input[Base] should render correctly  1`] = `
 
 exports[`Input[Base] should render correctly about autoSelect 1`] = `
 <div
-  class="soui-input-wrapper"
+  class="soui-input soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
@@ -45,7 +45,7 @@ exports[`Input[Base] should render correctly about disabled 1`] = `
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="soui-input-wrapper soui-input-wrapper-disabled"
+      class="soui-input soui-input-wrapper soui-input-wrapper-disabled"
       data-soui-input-border="true"
     >
       <div
@@ -63,7 +63,7 @@ exports[`Input[Base] should render correctly about disabled 1`] = `
       -
     </span>
     <div
-      class="soui-input-wrapper soui-input-wrapper-disabled"
+      class="soui-input soui-input-wrapper soui-input-wrapper-disabled"
       data-soui-input-border="true"
     >
       <div
@@ -79,7 +79,7 @@ exports[`Input[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper soui-input-wrapper-disabled"
+    class="soui-input soui-input-wrapper soui-input-wrapper-disabled"
     data-soui-input-border="true"
     style="width: 300px;"
   >
@@ -106,7 +106,7 @@ exports[`Input[Base] should render correctly about enter 1`] = `
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="soui-input-wrapper"
+      class="soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -132,7 +132,7 @@ exports[`Input[Base] should render correctly about enter 1`] = `
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="soui-input-wrapper"
+      class="soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -158,7 +158,7 @@ exports[`Input[Base] should render correctly about enter 1`] = `
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="soui-input-wrapper"
+      class="soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -192,7 +192,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
       http://
     </b>
     <div
-      class="soui-input-wrapper"
+      class="soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -213,7 +213,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
     style="width: 300px; margin-bottom: 24px;"
   >
     <div
-      class="soui-input-wrapper"
+      class="soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -240,7 +240,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
       http://
     </b>
     <div
-      class="soui-input-wrapper"
+      class="soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -270,7 +270,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
       http://
     </b>
     <div
-      class="soui-input-wrapper soui-input-wrapper-small"
+      class="soui-input soui-input-wrapper soui-input-wrapper-small"
       data-soui-input-border="true"
     >
       <div
@@ -295,7 +295,7 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
   style="width: 300px; display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="soui-input-wrapper-inner-title soui-input-wrapper soui-input-wrapper-small"
+    class="soui-input-wrapper-inner-title soui-input soui-input-wrapper soui-input-wrapper-small"
     data-soui-input-border="true"
   >
     <div
@@ -330,7 +330,7 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper-inner-title soui-input-wrapper"
+    class="soui-input-wrapper-inner-title soui-input soui-input-wrapper"
     data-soui-input-border="true"
   >
     <div
@@ -365,7 +365,7 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper-inner-title soui-input-wrapper soui-input-wrapper-large"
+    class="soui-input-wrapper-inner-title soui-input soui-input-wrapper soui-input-wrapper-large"
     data-soui-input-border="true"
   >
     <div
@@ -418,7 +418,7 @@ exports[`Input[Base] should render correctly about limit 1`] = `
       min
     </b>
     <div
-      class="soui-input-wrapper-number soui-input-wrapper"
+      class="soui-input-wrapper-number soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -473,7 +473,7 @@ exports[`Input[Base] should render correctly about limit 1`] = `
       max
     </b>
     <div
-      class="soui-input-wrapper-number soui-input-wrapper"
+      class="soui-input-wrapper-number soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -528,7 +528,7 @@ exports[`Input[Base] should render correctly about limit 1`] = `
       maxLength
     </b>
     <div
-      class="soui-input-wrapper"
+      class="soui-input soui-input-wrapper"
       data-soui-input-border="true"
     >
       <div
@@ -551,7 +551,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
   style="width: 300px;"
 >
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
@@ -567,7 +567,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
@@ -583,7 +583,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
@@ -599,7 +599,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
@@ -615,7 +615,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
@@ -631,7 +631,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
@@ -647,7 +647,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
@@ -663,7 +663,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="margin-bottom: 24px;"
   >
@@ -679,7 +679,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper-number soui-input-wrapper"
+    class="soui-input-wrapper-number soui-input soui-input-wrapper"
     data-soui-input-border="true"
   >
     <div
@@ -726,7 +726,7 @@ exports[`Input[Base] should render correctly about number 1`] = `
 
 exports[`Input[Base] should render correctly about number 2`] = `
 <div
-  class="soui-input-wrapper-number soui-input-wrapper"
+  class="soui-input-wrapper-number soui-input soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
@@ -772,10 +772,10 @@ exports[`Input[Base] should render correctly about number 2`] = `
 
 exports[`Input[Base] should render correctly about password 1`] = `
 <form
-  class="soui-form-wrapper"
+  class="soui-form soui-form-wrapper"
 >
   <div
-    class="soui-input-wrapper soui-input-password"
+    class="soui-input soui-input-wrapper soui-input-password"
     data-soui-input-border="true"
     style="width: 300px;"
   >
@@ -812,7 +812,7 @@ exports[`Input[Base] should render correctly about size 1`] = `
   style="width: 100%; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;"
 >
   <div
-    class="soui-input-wrapper soui-input-wrapper-small"
+    class="soui-input soui-input-wrapper soui-input-wrapper-small"
     data-soui-input-border="true"
     style="width: 240px;"
   >
@@ -827,7 +827,7 @@ exports[`Input[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper"
+    class="soui-input soui-input-wrapper"
     data-soui-input-border="true"
     style="width: 240px;"
   >
@@ -842,7 +842,7 @@ exports[`Input[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-wrapper soui-input-wrapper-large"
+    class="soui-input soui-input-wrapper soui-input-wrapper-large"
     data-soui-input-border="true"
     style="width: 240px;"
   >
@@ -861,7 +861,7 @@ exports[`Input[Base] should render correctly about size 1`] = `
 
 exports[`Input[Base] should render correctly about tip 1`] = `
 <div
-  class="soui-input-wrapper"
+  class="soui-input soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
@@ -879,7 +879,7 @@ exports[`Input[Base] should render correctly about tip 1`] = `
 
 exports[`Input[Base] should render correctly about trim 1`] = `
 <div
-  class="soui-input-wrapper"
+  class="soui-input soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >
@@ -897,7 +897,7 @@ exports[`Input[Base] should render correctly about trim 1`] = `
 
 exports[`Input[Base] should render correctly about underline 1`] = `
 <div
-  class="soui-input-wrapper soui-input-wrapper-underline"
+  class="soui-input soui-input-wrapper soui-input-wrapper-underline"
   data-soui-input-border="true"
   style="width: 300px;"
 >
@@ -915,7 +915,7 @@ exports[`Input[Base] should render correctly about underline 1`] = `
 
 exports[`Input[Base] should render correctly about validate 1`] = `
 <div
-  class="soui-input-wrapper"
+  class="soui-input soui-input-wrapper"
   data-soui-input-border="true"
   style="width: 300px;"
 >

@@ -2,7 +2,7 @@
 
 exports[`CardGroup[Base] should render correctly  1`] = `
 <div
-  class="soui-cardGroup-wrapper"
+  class="soui-card-group soui-cardGroup-wrapper"
   style="height: 300px;"
 >
   <div
@@ -383,7 +383,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
     style="margin: 8px; padding: 8px 16px; background: rgba(130, 130, 130, 0.1); border-radius: 10px;"
   >
     <div
-      class="soui-checkbox-wrapper soui-checkbox-wrapper-checked soui-checkbox-wrapper-indeterminate"
+      class="soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked soui-checkbox-wrapper-indeterminate"
     >
       <input
         checked=""
@@ -418,7 +418,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
     </div>
   </div>
   <div
-    class="soui-cardGroup-wrapper"
+    class="soui-card-group soui-cardGroup-wrapper"
     style="height: 300px;"
   >
     <div
@@ -464,7 +464,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-checked"
           >
             <input
               checked=""
@@ -531,7 +531,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -585,7 +585,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -639,7 +639,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -693,7 +693,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -747,7 +747,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -801,7 +801,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -855,7 +855,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -909,7 +909,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -963,7 +963,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -990,7 +990,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
 exports[`CardGroup[Base] should render correctly about disabled 1`] = `
 <div>
   <div
-    class="soui-cardGroup-wrapper"
+    class="soui-card-group soui-cardGroup-wrapper"
     style="height: 300px;"
   >
     <div
@@ -1036,7 +1036,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
           >
             <input
               disabled=""
@@ -1091,7 +1091,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -1145,7 +1145,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
           >
             <input
               disabled=""
@@ -1200,7 +1200,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -1254,7 +1254,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
           >
             <input
               disabled=""
@@ -1309,7 +1309,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -1363,7 +1363,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
           >
             <input
               disabled=""
@@ -1418,7 +1418,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -1472,7 +1472,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled"
           >
             <input
               disabled=""
@@ -1527,7 +1527,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="soui-cardGroup-checkbox soui-checkbox-wrapper"
+            class="soui-cardGroup-checkbox soui-checkbox soui-checkbox-wrapper"
           >
             <input
               style="display: none;"
@@ -1553,7 +1553,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
 
 exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
 <div
-  class="soui-cardGroup-wrapper"
+  class="soui-card-group soui-cardGroup-wrapper"
   style="height: 400px;"
 >
   <div
@@ -1930,7 +1930,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
 
 exports[`CardGroup[Base] should render correctly about width 1`] = `
 <div
-  class="soui-cardGroup-wrapper"
+  class="soui-card-group soui-cardGroup-wrapper"
   style="height: 300px;"
 >
   <div

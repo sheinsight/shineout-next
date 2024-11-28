@@ -5,6 +5,7 @@ import { BreadcrumbClasses } from '@sheinx/base';
 export type BreadcrumbClassType = keyof BreadcrumbClasses;
 
 const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
+  rootClass: {},
   wrapper: {
     lineHeight: token.lineHeightDynamic,
     fontSize: token.breadcrumbFontSize,

@@ -3,6 +3,7 @@ import { CommonType } from '../common/type';
 import { BasePopupProps } from '@sheinx/hooks';
 
 export interface TooltipClasses {
+  rootClass: string;
   /**
    * 包裹容器当需要 disabledChild 的时候传入
    */
@@ -84,4 +85,12 @@ export interface TooltipProps
    * @default 1051
    */
   zIndex?: number;
+
+  /**
+   * @en Whether to keep the tooltip content displayed when hovering over the tooltip content
+   * @cn 鼠标悬停提示信息内容时，是否保持显示
+   * @default false
+   * @version 3.5.3
+   */
+  persistent?: boolean;
 }

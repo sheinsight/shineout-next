@@ -12,6 +12,7 @@ import {
 import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber, isArray, isUnMatchedData } from '../../utils/is';
+import { devUseWarning } from '../../utils';
 
 function toArray<Value>(value: Value) {
   if (!value) return [];
@@ -243,7 +244,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       const id = getKey(item, path[path.length - 1], i) as KeygenResult;
       // 重复 id 警告
       if (context.dataMap.get(id)) {
-        console.error(`There is already a key "${id}" exists. The key must be unique.`);
+        devUseWarning.error(`There is already a key "${id}" exists. The key must be unique.`);
         continue;
       }
       // 制作 data mapping

@@ -5,6 +5,7 @@ import { CollapseClasses } from '@sheinx/base';
 export type CollapseClass = keyof CollapseClasses;
 
 const collapseStyle: JsStyles<CollapseClass> = {
+  rootClass: {},
   wrapper: {
     overflow: 'hidden',
     borderRadius: Token.collapseWrapperBorderRadius,

@@ -71,7 +71,7 @@ const Spin = (props: SpinProps = {}) => {
 
   const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  const contentClass = classNames(className, spinStyle.content, {
+  const contentClass = classNames(className, spinStyle.rootClass, spinStyle.content, {
     [spinStyle.vertical]: mode === 'vertical',
     [spinStyle.horizontal]: mode === 'horizontal',
   });

@@ -3,6 +3,7 @@ import { JsStyles } from '../jss-style';
 import { EmptyClasses } from '@sheinx/base';
 
 const emptyStyle: JsStyles<keyof EmptyClasses> = {
+  rootClass: {},
   empty: {
     width: '100%',
     boxSizing: 'border-box',

@@ -677,7 +677,7 @@ describe('Upload[Error]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    expect(errorSpy).toHaveBeenCalledWith(new Error('action is required, but its value is '));
+    expect(errorSpy).toHaveBeenCalledWith(new Error('[shineout] action is required, but its value is '));
   });
   test('should render when load error status', async () => {
     const xhr = mockXhr();

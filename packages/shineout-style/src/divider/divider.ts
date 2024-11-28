@@ -5,6 +5,7 @@ import { DividerClasses } from '@sheinx/base';
 export type DividerClassesKeys = keyof DividerClasses;
 
 const dividerStyle: JsStyles<DividerClassesKeys> = {
+  rootClass: {},
   wrapper: {
     margin: 0,
     padding: 0,

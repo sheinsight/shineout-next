@@ -62,7 +62,7 @@ const Image = (props: ImageProps) => {
     ...rest,
   });
 
-  const rootClass = classNames(className, imageStyle.image, {
+  const rootClass = classNames(className, imageStyle.rootClass, imageStyle.image, {
     [imageStyle.href]: !!href,
     [imageStyle.fit]: fit === 'fit',
     [imageStyle.fill]: fit === 'fill',

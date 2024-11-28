@@ -2,6 +2,7 @@ import React from 'react';
 import { CommonType } from '../common/type';
 
 export interface CarouselClasses {
+  rootClass: string;
   wrapper?: string;
   animationSlide?: string;
   animationFade?: string;

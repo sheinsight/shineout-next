@@ -6,6 +6,7 @@ import React, { useEffect } from 'react';
 import type { FormProps } from './form.type';
 import type { ObjectType } from '@sheinx/hooks';
 
+
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, formRef, ...rest } = props;
   const formClasses = jssStyle?.form?.();
@@ -27,8 +28,11 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const validate = usePersistFn(() => {
     return formFunc.validateFields();
   });
-  const validateFields = usePersistFn((fileds: string | string[]) => {
-    return formFunc.validateFields(fileds).catch(() => {});
+  const validateFields = usePersistFn((fields: keyof V | Array<keyof V>) => {
+    return formFunc.validateFields(fields as string | string[]).catch(() => {});
+  });
+  const validateFieldsWithValue = usePersistFn((fields?: keyof V | Array<keyof V>) => {
+    return formFunc.validateFields(fields as string | string[], { type: 'withValue' });
   });
   const formRefObj = useLatestObj({
     clearValidate: formFunc.clearValidate,
@@ -37,8 +41,10 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     submit: formFunc.submit,
     validate,
     validateFields,
+    validateFieldsWithValue,
     validateFieldsWithError: formFunc.validateFields,
     set: formFunc.setValue,
+    scrollToField: formFunc.scrollToField
   });
 
   React.useEffect(() => {
@@ -75,11 +81,12 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   }, [props.disabled, props.pending]);
 
   const rootClass = classNames([
+    formClasses?.rootClass,
     formClasses?.wrapper,
     className,
     props.inline && formClasses?.wrapperInline,
   ]);
-  
+
   return (
     <form
       {...getFormProps({

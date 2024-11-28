@@ -6,6 +6,7 @@ import { CommonType } from '../common/type';
 export type LinkType =  'primary' | 'secondary' | 'danger' | 'warning' | 'success'
 
 export interface LinkClasses {
+  rootClass: string;
   wrapper: string;
   underline: string;
   underlineHover: string;

@@ -2,6 +2,7 @@ import React from 'react';
 import { CommonType } from '../common/type';
 
 export interface CardClasses {
+  rootClass: string;
   wrapper: string;
   wrapperShadow: string;
   wrapperHover: string;

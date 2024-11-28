@@ -13,7 +13,7 @@ export default () => {
 
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-      <Button type='primary' style={buttonStyle}>
+      <Button type='primary' style={buttonStyle} text>
         Primary
       </Button>
 

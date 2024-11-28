@@ -62,6 +62,7 @@ const animation = {
 };
 
 const ImageStyle: JsStyles<ImageClass> = {
+  rootClass: {},
   ...animation,
   // image
   href: {

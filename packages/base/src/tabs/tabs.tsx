@@ -8,9 +8,23 @@ import TabsPanel from './tabs-panel';
 import TabsHeader from './tabs-header';
 import Sticky, { type StickyProps } from '../sticky';
 
-const { isEmpty, isObject, isNumber, isNamedComponent } = util;
+const { isEmpty, isObject, isNumber, isNamedComponent, devUseWarning } = util;
 
 const Tabs = (props: TabsProps) => {
+  if (props.border) {
+    devUseWarning.deprecated('border', 'splitColor', 'Tabs');
+  }
+  if(props.tabBarExtraContent){
+    devUseWarning.deprecated('tabBarExtraContent', 'extra', 'Tabs');
+  }
+  if(props.align){
+    devUseWarning.deprecated('align', 'position', 'Tabs');
+  }
+  // todo: activeBackground 的作用需要再确认（by Tom）
+  // if(props.background){
+  //   devUseWarning.deprecated('background', 'activeBackground', 'Tabs');
+  // }
+
   const {
     jssStyle,
     align,
@@ -34,13 +48,14 @@ const Tabs = (props: TabsProps) => {
     tabBarStyle,
     color,
     sticky,
+    allowNonPanel,
     className: tabsClassName,
     ...rest
   } = props;
 
   const shape = shapeProps && shapeProps !== 'bordered' ? shapeProps : 'card';
 
-  const { Provider, active, onChange } = useTabs({
+  const { Provider, active, onChange, tabs, setTabs } = useTabs<TabData>({
     ...rest,
     defaultActive,
     onChange: onChangeProps,
@@ -62,7 +77,7 @@ const Tabs = (props: TabsProps) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const panelHeight = useRef<number>(0);
   const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
-  const rootClass = classNames(tabsStyle.tabs, tabsClassName, {
+  const rootClass = classNames(tabsStyle.rootClass, tabsStyle.tabs, tabsClassName, {
     [tabsStyle.autoFill]: isVertical || autoFill,
     [tabsStyle.collapsed]: collapse,
   });
@@ -152,14 +167,17 @@ const Tabs = (props: TabsProps) => {
             });
           }
 
-          return null
+          if(allowNonPanel) {
+            return Child
+          }
+
+          return null;
         })}
       </div>
     );
   };
 
   const renderHeader = () => {
-    const tabs: TabData[] = [];
     let border = getSplitColor();
     Children.toArray(children).forEach((child, index) => {
       const Child = child as React.ReactElement<TabsPanelProps>;
@@ -170,14 +188,8 @@ const Tabs = (props: TabsProps) => {
       if (active === id && childBorder) {
         border = childBorder;
       }
-      tabs.push({
-        id: Child.props.id !== undefined ? Child.props.id : index,
-        tab: Child.props.tab,
-        disabled: Child.props.disabled,
-        jssStyle,
-        color: Child.props.color || (active === id ? color : undefined),
-      });
     });
+
     const header = (
       <TabsHeader
         tabs={tabs}
@@ -234,7 +246,7 @@ const Tabs = (props: TabsProps) => {
       );
     }
 
-    console.warn('Tabs position is invalid, please check it.');
+    devUseWarning.warn('Tabs position is invalid, please check it.');
 
     return (
       <>
@@ -245,12 +257,15 @@ const Tabs = (props: TabsProps) => {
   };
 
   return (
-    <Provider
+    <Provider<TabData>
       value={{
         lazy,
         active,
         shape,
         onChange,
+        color,
+        tabs,
+        setTabs,
         isVertical,
         inactiveBackground,
         onCollapsible: handleCollapsible,

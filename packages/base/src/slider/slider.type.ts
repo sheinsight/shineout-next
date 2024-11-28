@@ -1,6 +1,7 @@
 import { CommonType, CommonChangeType } from '../common/type';
 
 export interface SliderClasses {
+  rootClass: string;
   wrapper: string;
   track: string;
   trackInner: string;

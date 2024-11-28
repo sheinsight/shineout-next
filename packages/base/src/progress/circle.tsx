@@ -33,6 +33,7 @@ const Circle = (props: ProgressProps) => {
 
   const mc = classNames(
     props.className,
+    progressClasses?.rootClass,
     progressClasses?.circle,
     progressClasses?.wrapper,
     type === 'success' && progressClasses?.wrapperSuccess,

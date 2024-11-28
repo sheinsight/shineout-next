@@ -9,6 +9,7 @@ const hideArrowGap = `var(${cssvar}, 10px)`;
 const arrowMargin = '8px';
 
 const popoverStyle: JsStyles<PopoverClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'none',
     cursor: 'pointer',

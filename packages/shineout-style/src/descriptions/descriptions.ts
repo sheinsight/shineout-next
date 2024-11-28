@@ -5,6 +5,7 @@ import { DescriptionsClasses } from '@sheinx/base';
 export type DescriptionsClassType = keyof DescriptionsClasses;
 
 const descriptionsStyle: JsStyles<DescriptionsClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'block',
   },

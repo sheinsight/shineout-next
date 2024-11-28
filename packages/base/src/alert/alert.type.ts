@@ -1,6 +1,7 @@
 import { CommonType } from '../common/type';
 
 export interface AlertClasses {
+  rootClass: string;
   alert: string;
   title: string;
   close: string;

@@ -1,4 +1,7 @@
+import { util } from '@sheinx/hooks';
 import { isOne, isPercent } from './is';
+
+const { devUseWarning } = util;
 
 type RGB = string | number;
 type HSL = string | number;
@@ -92,12 +95,12 @@ const toRGB = (input: string) => {
 
 const isString = (string: string) => {
   if (!string) {
-    console.error(new Error('the color is empty'));
+    devUseWarning.error('the color is empty');
     return false;
   }
 
   if (typeof string !== 'string') {
-    console.error(new Error(`the color is get a ${typeof string}, expect string`));
+    devUseWarning.error(`the color is get a ${typeof string}, expect string`);
     return false;
   }
   return true;
@@ -213,7 +216,7 @@ const isDarkRgb = (color: string) => {
     return Number(r) * 0.299 + Number(g) * 0.578 + Number(b) * 0.114 < 192;
   }
 
-  console.error(new Error(`the string '${color}' is not a legal color`));
+  devUseWarning.error(`the string '${color}' is not a legal color`);
   return undefined;
 };
 
@@ -296,7 +299,7 @@ const rgbTranlate =
       return target(matchs, noAlpha, Number(matchs[4]));
     }
 
-    console.error(new Error(`the string '${rgb}' is not a rgb color`));
+    devUseWarning.error(`the string '${rgb}' is not a rgb color`);
     return '';
   };
 
@@ -325,7 +328,7 @@ export function hexToRgb(hex: string) {
     return getRgba(matchs, 8);
   }
 
-  console.error(new Error(`the string '${hex}' is not a hex color`));
+  devUseWarning.error(`the string '${hex}' is not a hex color`);
   return '';
 }
 
@@ -344,7 +347,7 @@ export function hslToRgb(hsl: string) {
     return translateHsl(matchs, matchs[4]);
   }
 
-  console.error(new Error(`the string '${hsl}' is not a hsl color`));
+  devUseWarning.error(`the string '${hsl}' is not a hsl color`);
   return '';
 }
 // @ts-ignore

@@ -5,6 +5,7 @@ import { StickyClasses } from '@sheinx/base';
 export type StickyClassType = keyof StickyClasses;
 
 const stickyStyle: JsStyles<StickyClassType> = {
+  rootClass: {},
   wrapper: {
     display: 'block',
   },

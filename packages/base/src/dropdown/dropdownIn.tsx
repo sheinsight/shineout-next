@@ -196,6 +196,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     <div
       className={classNames(
         className,
+        dropdownClasses?.rootClass,
         dropdownClasses?.wrapper,
         !isSub && open && dropdownClasses?.open,
       )}

@@ -16,6 +16,7 @@ export interface MessageItemType {
   h?: number;
 }
 export interface MessageClasses {
+  rootClass: string;
   /**
    * 最外层class
    */

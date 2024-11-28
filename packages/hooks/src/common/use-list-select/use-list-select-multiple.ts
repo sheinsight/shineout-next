@@ -18,7 +18,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     if (typeof props.value === 'string') {
       valueArr = (props.value || '').split(props.separator);
     } else {
-      console.error('use-list-select: separator is string, but value is not string');
+      console.error('[shineout] use-list-select: separator is string, but value is not string');
       valueArr = props.value;
     }
   } else {

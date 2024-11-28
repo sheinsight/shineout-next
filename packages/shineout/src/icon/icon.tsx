@@ -12,5 +12,6 @@ export default function icon(...args: args) {
     return <Comp {...props} jssStyle={jssStyle} />;
   };
   ShineoutIcon.displayName = 'ShineoutIcon';
+  ShineoutIcon.isShineoutIcon = true;
   return ShineoutIcon;
 }

@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { Provider } from './context';
 import { BaseTabsProps } from './use-tabs.type';
 
-const useTabs = (props: BaseTabsProps) => {
+const useTabs = <TabData = any>(props: BaseTabsProps) => {
   const { defaultActive, active = defaultActive, onChange } = props;
   const [activeTabs, setActiveTabs] = useState(active);
+  const [tabs, setTabs] = useState<TabData[]>([]);
 
   const getActive = () => {
     if (props.active === undefined) {
@@ -21,6 +22,8 @@ const useTabs = (props: BaseTabsProps) => {
   return {
     active: getActive(),
     onChange: handleChange,
+    tabs,
+    setTabs,
     Provider,
   };
 };

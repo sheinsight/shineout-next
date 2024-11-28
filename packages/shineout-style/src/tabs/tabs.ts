@@ -59,6 +59,7 @@ const getCardStyle = () => {
         '& $cardHr': {
           '&:after': {
             right: 0,
+            left: 'auto',
             width: '1px',
             height: '100%',
           },
@@ -264,6 +265,7 @@ const getHeaderStyle = () => {
 };
 
 const tabsStyle: JsStyles<keyof TabsClasses> = {
+  rootClass: {},
   tabs: {
     // 水平模式
     '&[data-soui-position^="top-"],&[data-soui-position^="bottom-"]': {

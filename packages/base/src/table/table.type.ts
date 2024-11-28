@@ -20,6 +20,7 @@ export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
 
 export interface TableClasses {
+  rootClass: string;
   wrapper: string;
   small: string;
   large: string;

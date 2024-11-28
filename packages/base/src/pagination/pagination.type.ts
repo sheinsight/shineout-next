@@ -31,6 +31,7 @@ export interface SelectProps extends Pick<AbsoluteListProps, 'absolute' | 'zInde
 }
 
 export interface PaginationClasses {
+  rootClass: string;
   pagination: string;
   section: string;
   buttons: string;

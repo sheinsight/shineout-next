@@ -2,7 +2,7 @@
 
 exports[`Alert[Base] should render correctly  1`] = `
 <div
-  class="soui-alert-alert soui-alert-info"
+  class="soui-alert soui-alert-alert soui-alert-info"
 >
   <span
     class="soui-alert-icon soui-alert-info-icon"
@@ -33,7 +33,7 @@ exports[`Alert[Base] should render correctly  1`] = `
 exports[`Alert[Base] should render correctly about closeable 1`] = `
 <div>
   <div
-    class="soui-alert-alert soui-alert-info"
+    class="soui-alert soui-alert-alert soui-alert-info"
   >
     <span
       class="soui-alert-icon soui-alert-info-icon"
@@ -82,7 +82,7 @@ exports[`Alert[Base] should render correctly about closeable 1`] = `
 
 exports[`Alert[Base] should render correctly about title 1`] = `
 <div
-  class="soui-alert-alert soui-alert-info soui-alert-width-title"
+  class="soui-alert soui-alert-alert soui-alert-info soui-alert-width-title"
 >
   <span
     class="soui-alert-icon soui-alert-info-icon"
@@ -138,7 +138,7 @@ exports[`Alert[Base] should render correctly about type 1`] = `
   style="display: flex; flex-wrap: wrap; gap: 24px;"
 >
   <div
-    class="soui-alert-alert soui-alert-info"
+    class="soui-alert soui-alert-alert soui-alert-info"
     style="width: calc(50% - 16px);"
   >
     <span
@@ -166,7 +166,7 @@ exports[`Alert[Base] should render correctly about type 1`] = `
     </div>
   </div>
   <div
-    class="soui-alert-alert soui-alert-success"
+    class="soui-alert soui-alert-alert soui-alert-success"
     style="width: calc(50% - 16px);"
   >
     <span
@@ -194,7 +194,7 @@ exports[`Alert[Base] should render correctly about type 1`] = `
     </div>
   </div>
   <div
-    class="soui-alert-alert soui-alert-warning"
+    class="soui-alert soui-alert-alert soui-alert-warning"
     style="width: calc(50% - 16px);"
   >
     <span
@@ -222,7 +222,7 @@ exports[`Alert[Base] should render correctly about type 1`] = `
     </div>
   </div>
   <div
-    class="soui-alert-alert soui-alert-danger"
+    class="soui-alert soui-alert-alert soui-alert-danger"
     style="width: calc(50% - 16px);"
   >
     <span

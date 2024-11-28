@@ -180,6 +180,7 @@ const textBeforeLine = () => ({
 // };
 
 const ButtonStyle: JsStyles<keyof ButtonClasses> = {
+  rootClass: {},
   button: {
     outline: 'none',
     fontWeight: Token.buttonFontWeight,

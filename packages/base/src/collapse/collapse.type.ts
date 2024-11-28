@@ -4,6 +4,7 @@ import type { BaseCollapseProps, BaseCollapseItemContext } from '@sheinx/hooks';
 import { CollapseItemProps } from './collapse-item.type';
 
 export interface CollapseClasses {
+  rootClass: string;
   /**
    * 最外层class
    */
