@@ -40,6 +40,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
 
   const { separator } = useContext(FormFieldContext);
   const formFieldId = useMemo(() => {
+    if(!props.formName) return
     if(childrenProps.id) return childrenProps.id
 
     if(Array.isArray(formControl.name)) {
