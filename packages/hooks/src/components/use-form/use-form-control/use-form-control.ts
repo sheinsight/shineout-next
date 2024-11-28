@@ -79,7 +79,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const update = usePersistFn(
     (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
       if (!name) return;
-
       if (isArray(name)) {
         const value = getValue(name, formValue) as T[];
         const error = getError(name, errors, severErrors);
@@ -97,6 +96,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
           }
         });
         setValueState(nextValue as T);
+        formFunc?.setValue({ [name]: nextValue }, { validate: false });
       } else {
         const value = getValue(name, formValue) as T;
         const error = getError(name, errors, severErrors);
@@ -106,6 +106,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         if (!shallowEqual(value, latestInfo.valueState)) {
           if (value === undefined && defaultValue !== undefined) {
             setValueState(defaultValue);
+            formFunc?.setValue({ [name]: defaultValue }, { validate: false });
           } else {
             setValueState(value);
           }
@@ -114,7 +115,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       }
     },
   );
-
+  
   const validateFiled = usePersistFn(
     (
       name,

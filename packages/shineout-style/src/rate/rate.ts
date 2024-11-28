@@ -4,26 +4,22 @@ import { RateClasses } from '@sheinx/base';
 
 export type RateClassType = keyof RateClasses;
 
-// const animation = {
-//   '@keyframes scale': {
-//     '0%': {
-//       transform: 'scale(1)',
-//     },
-//     '80%': {
-//       transform: 'scale(1.4)',
-//       opacity: 0.8,
-//     },
-//     '81%': {
-//       transform: 'scale(1.2)',
-//     },
-//     '100%': {
-//       transform: 'scale3d(1.2)',
-//     },
-//   },
-// }
+const animation = {
+  '@keyframes scale': {
+    '0%': {
+      transform: 'scale(1)',
+    },
+    '50%': {
+      transform: 'scale(1.2)',
+    },
+    '100%': {
+      transform: 'scale(1)',
+    },
+  },
+}
 
 const rateStyle: JsStyles<RateClassType> = {
-  // ...animation,
+  ...animation,
   wrapper: {
     display: 'inline-block',
     '[data-soui-role="form-control"] >  &': {
@@ -112,8 +108,7 @@ const rateStyle: JsStyles<RateClassType> = {
   },
   itemDisabled: {},
   itemAnimation: {
-    // animation: '$scale 0.2s ease-out',
+    animation: '$scale 0.4s cubic-bezier(0.34, 0.69, 0.1, 1)',
   },
 };
-
 export default rateStyle;

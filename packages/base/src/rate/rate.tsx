@@ -37,10 +37,6 @@ const Rate = (props0: RateProps) => {
     const isHalfChecked = props.allowHalf && showValue % 1 > 0 && index === currentIndex;
     const isChecked = !isHalfChecked && index <= currentIndex;
 
-    const itemStyle = {
-      fontSize: size,
-      width: size,
-    };
     const handleChange = (val: number) => {
       if (clearable && value === val) {
         onChange(0);
@@ -51,6 +47,8 @@ const Rate = (props0: RateProps) => {
       }
     };
 
+    const showAnimation = animationIndex && index < currentIndex;
+
     return (
       <div
         key={index}
@@ -59,12 +57,16 @@ const Rate = (props0: RateProps) => {
           isHalfChecked && rateClasses?.itemCheckedHalf,
           isChecked && rateClasses?.itemChecked,
           props.disabled && rateClasses?.itemDisabled,
-          animationIndex === index && rateClasses?.itemAnimation,
+          showAnimation && rateClasses?.itemAnimation,
         )}
+        style={{
+          fontSize: size,
+          width: size,
+          animationDelay: showAnimation ? `${50 * index}ms` : undefined,
+        }}
         onAnimationEnd={() => {
           setAnimationIndex(null);
         }}
-        style={itemStyle}
       >
         <span className={rateClasses?.itemBg}>{backItem}</span>
         <span

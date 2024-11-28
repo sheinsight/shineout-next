@@ -262,7 +262,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       nextValue = valueProp.split(separator);
     }
     const datas = getDataByValues(nextValue as Value);
-
     const result = datas.map((d, i) => {
       const v = nextValue[i];
       if (renderResultContentProp && i !== datas.length - 1) {

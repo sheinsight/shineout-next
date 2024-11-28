@@ -138,7 +138,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
   );
 
   const removeAll = usePersistFn(() => {
-    props.onChange([] as unknown as Value, undefined as DataItem, false);
+    props.onChange((props.separator ? '' : []) as unknown as Value, undefined as DataItem, false);
   });
 
   // 删除数据
