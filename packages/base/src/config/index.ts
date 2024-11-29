@@ -14,12 +14,17 @@ export type SpinConfig =
       size?: number;
     };
 
+type TooltipConfig = {
+  persistent?: boolean;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
   delay?: number;
   trim?: boolean;
   spin?: SpinConfig;
+  tooltip?: TooltipConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -31,6 +36,7 @@ export let config: ConfigOption = {
   delay: 400,
   trim: undefined,
   spin: 'ring',
+  tooltip: undefined,
   direction: 'ltr',
   popupContainer: null,
 };

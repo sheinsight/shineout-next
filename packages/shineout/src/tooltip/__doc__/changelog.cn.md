@@ -1,3 +1,11 @@
+## 3.5.3-beta.4
+2024-11-29
+
+### 💎 Enhancement
+
+- `Tooltip` 的 `persistent` 属性支持 `setConfig` 全局配置 ([#832](https://github.com/sheinsight/shineout-next/pull/832))
+
+
 ## 3.5.3-beta.1
 2024-11-28
 
