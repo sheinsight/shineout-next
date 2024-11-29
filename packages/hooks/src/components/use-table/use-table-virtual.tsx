@@ -2,6 +2,15 @@ import { usePersistFn } from '../../common/use-persist-fn';
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { TableFormatColumn } from './use-table.type';
 
+// 找出最大的连续数字的个数
+function getMaxRowSpanLength(input: number[]) {
+  const map = new Map();
+  for (const num of input) {
+    map.set(num, (map.get(num) || 0) + 1);
+  }
+  return Math.max(...Array.from(map.values()));
+}
+
 const MAX_ROW_SPAN = 200;
 interface UseTableVirtualProps {
   data: any[];
@@ -26,9 +35,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
 
   const sleft = props.scrollLeft !== undefined ? props.scrollLeft : innerLeft;
 
-  const rowSpanInfos = useMemo(() => {
+  const rowSpanInfo = useMemo(() => {
     const rowSpanColumns = props.columns.filter((col) => typeof col.rowSpan === 'function');
-    if (rowSpanColumns.length === 0) return;
+    if (rowSpanColumns.length === 0) return null;
 
     const _rowSpanInfos = [];
     const totalLength = props.data.length;
@@ -69,10 +78,17 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       }
     }
 
-    return _rowSpanInfos.map((_rowSpanInfo) => {
+    const resultArr = _rowSpanInfos.map((_rowSpanInfo) => {
       const startIndexs = _rowSpanInfo.map((arr) => arr[0]);
       return Math.min(...startIndexs);
     });
+
+    const maxRowSpan = getMaxRowSpanLength(resultArr)
+
+    return maxRowSpan > 1 ? {
+      rowSpanIndexArray: resultArr,
+      maxRowSpan,
+    } : null;
   }, [props.data, props.columns]);
 
   const { current: context } = useRef({
@@ -137,18 +153,24 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     let currentIndex = 0;
     let top = 0;
     const maxIndex = Math.max(props.data.length - rowsInView, 0);
+
+    let maxRowSpanLenth = 0;
+    if(rowSpanInfo){
+      maxRowSpanLenth = Math.min(
+        rowSpanInfo.rowSpanIndexArray.length,
+        // 根据data计算出实际需要的最大合并行数（rowSpanInfo.maxRowSpan），当rowSpanInfo.maxRowSpan大于外部传的rowsInView时，使用rowSpanInfo.maxRowSpan
+        Math.max(rowSpanInfo.maxRowSpan, props.rowsInView > MAX_ROW_SPAN ? props.rowsInView : props.rowsInView || MAX_ROW_SPAN),
+      )
+    }
+
     for (let i = 0; i <= maxIndex; i++) {
       context.rowSpanRows = 0;
       sum += context.cachedHeight[i] || props.rowHeight;
       let rowSpanHeight = 0;
-      if (rowSpanInfos) {
-        const maxRowSpanLenth = Math.min(
-          rowSpanInfos.length,
-          props.rowsInView > MAX_ROW_SPAN ? props.rowsInView : props.rowsInView || MAX_ROW_SPAN,
-        );
+      if (rowSpanInfo) {
         const siblingsIndexs = [];
         for (let k = 0; k < maxRowSpanLenth; k++) {
-          if (rowSpanInfos[k] <= i && k > i) {
+          if (rowSpanInfo.rowSpanIndexArray[k] <= i && k > i) {
             siblingsIndexs.push(k);
           }
         }
