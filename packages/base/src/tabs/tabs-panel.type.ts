@@ -3,7 +3,9 @@ import { ButtonClasses } from '../button/button.type';
 import { TabsContextProps } from '@sheinx/hooks';
 import { TabsClasses } from './tabs.type';
 
-export interface TabsPanelProps extends TabsContextProps, Pick<CommonType, 'className' | 'style'> {
+export interface TabsPanelProps
+  extends Omit<TabsContextProps, 'tabs' | 'setTabs'>,
+    Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
     tabs: () => TabsClasses;
     button: () => ButtonClasses;
