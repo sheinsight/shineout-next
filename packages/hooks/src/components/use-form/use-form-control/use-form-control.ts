@@ -12,6 +12,7 @@ import usePersistFn from '../../../common/use-persist-fn';
 import { BaseFormControlProps } from './use-form-control.type';
 import { ObjectType } from '../../../common/type';
 import useLatestObj from '../../../common/use-latest-obj';
+import { ValidateFnConfig } from '../use-form.type';
 
 const getValue = (name: string | string[], formValue: ObjectType) => {
   if (!name) return undefined;
@@ -121,10 +122,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       name,
       v,
       formV,
-      config: {
-        ignoreBind?: boolean;
-        type?: 'forcePass';
-      } = {},
+      config: ValidateFnConfig = {},
     ) => {
       const validateProps = getValidateProps?.() || {};
       if (config.type === 'forcePass') {

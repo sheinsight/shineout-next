@@ -8,6 +8,8 @@ export interface UseTimeProps {
   onChange?: (date: Date) => void;
   min?: Date;
   max?: Date;
+  staticMin?: Date;
+  staticMax?: Date;
   disabled?: boolean | ((date: Date) => boolean);
   disabledTime?: string | ((time: string) => boolean);
   minuteStep?: number;

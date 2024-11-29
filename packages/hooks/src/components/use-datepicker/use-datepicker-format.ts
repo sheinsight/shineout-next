@@ -108,8 +108,8 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
 
   const { current: context } = useRef({
     cachedDateArr: convertValueToDateArr(value, format, options),
-    modeDisabledStart: {} as Record<string, (d: Date) => boolean>,
-    modeDisabledEnd: {} as Record<string, (d: Date) => boolean>,
+    modeDisabledStart: {} as Record<string, (d: Date, triggerType?: string) => boolean>,
+    modeDisabledEnd: {} as Record<string, (d: Date, triggerType?: string) => boolean>,
   });
 
   type FormatValueType = Value extends any[] ? string[] : string;
@@ -141,18 +141,20 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     },
   );
 
-  const isDisabledDate = usePersistFn((date: Date, position: 'start' | 'end' | undefined) => {
-    const mode = getTypeMode(type);
-    const disabled =
-      position === 'end' ? context.modeDisabledEnd[mode] : context.modeDisabledStart[mode];
-    let isDisabled = disabled ? disabled(date) : false;
-    if (type === 'datetime' && !isDisabled) {
-      const disabledTime =
-        position === 'end' ? context.modeDisabledEnd['time'] : context.modeDisabledStart['time'];
-      isDisabled = disabledTime ? disabledTime(date) : false;
-    }
-    return isDisabled;
-  });
+  const isDisabledDate = usePersistFn(
+    (date: Date, position: 'start' | 'end' | undefined, triggerType?: string) => {
+      const mode = getTypeMode(type);
+      const disabled =
+        position === 'end' ? context.modeDisabledEnd[mode] : context.modeDisabledStart[mode];
+      let isDisabled = disabled ? disabled(date) : false;
+      if (type === 'datetime' && !isDisabled) {
+        const disabledTime =
+          position === 'end' ? context.modeDisabledEnd['time'] : context.modeDisabledStart['time'];
+        isDisabled = disabledTime ? disabledTime(date, triggerType) : false;
+      }
+      return isDisabled;
+    },
+  );
 
   const getFormatValueArr = (dateArr: (Date | undefined)[], fmt?: string) => {
     return dateArr.map((item) => {
@@ -252,7 +254,11 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     const isValid = dateUtil.isValidString(str, format);
     if (!isValid) return;
     const date = dateUtil.toDateWithFormat(str, format, undefined, options);
-    if (date && isDisabledDate(date, index === 1 ? 'end' : 'start')) return;
+    // 此次校验是由输入触发的
+    if (date && isDisabledDate(date, index === 1 ? 'end' : 'start', 'input')) {
+      return;
+    }
+
     setStateDate((prev) => {
       const arr = [...prev];
       arr[index] = date;

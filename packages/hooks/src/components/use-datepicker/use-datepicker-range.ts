@@ -119,7 +119,7 @@ const useRangePick = (props: useRangeProps) => {
       endMax,
       options,
     );
-    return end
+    return end;
   });
 
   const getEndDobule = usePersistFn((date: Date) => {
@@ -220,6 +220,10 @@ const useRangePick = (props: useRangeProps) => {
 
   let startMin = minDate;
   let startMax = maxDate;
+
+  let staticStartMin = minDate;
+  let staticStartMax = maxDate;
+
   if (disabledEnd && props.dateArr[1]) {
     if (!startMax || utils.compareAsc(startMax, props.dateArr[1]) > 0) {
       startMax = props.dateArr[1];
@@ -233,12 +237,28 @@ const useRangePick = (props: useRangeProps) => {
     }
   }
 
+  if (!disabledEnd && props.dateArr[1]) {
+    if (!staticStartMax || utils.compareAsc(staticStartMax, props.dateArr[1]) > 0) {
+      staticStartMax = props.dateArr[1];
+    }
+
+    if (typeof range === 'number') {
+      const rangeDate = utils.addSeconds(props.dateArr[1], -range, options);
+      if (!staticStartMin || utils.compareAsc(staticStartMin, rangeDate) < 0) {
+        staticStartMin = rangeDate;
+      }
+    }
+  }
+
   return {
     defaultTimeArr,
     endMin,
     endMax,
     startMin,
     startMax,
+
+    staticStartMin,
+    staticStartMax,
     func,
   };
 };
