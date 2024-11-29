@@ -1,3 +1,10 @@
+## 3.5.3-beta.3
+2024-11-29
+
+### 🐞 BugFix
+
+- 修复 `Table` 合并行数据的最大行数超过rowsInView时，导致垂直滚动时，这个合并单元格的内容闪烁的问题 ([#830](https://github.com/sheinsight/shineout-next/pull/830))
+
 ## 3.5.2
 2024-11-28
 
