@@ -20,13 +20,15 @@ const Tooltip = (props: TooltipProps) => {
     className,
     style,
     zIndex,
-    persistent,
+    persistent: persistentProp,
     type = 'default',
     position: popsitionProps = 'auto',
   } = props;
 
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
+
+  const persistent = config.tooltip?.persistent ?? persistentProp;
 
   const childrenProps = isValidElement(children)
     ? (children?.props as { [name: string]: any })
