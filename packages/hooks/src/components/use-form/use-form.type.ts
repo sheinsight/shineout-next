@@ -112,8 +112,9 @@ export interface FormCommonConfig extends FormLabelConfig {
 
   /**
    * @en The name of the form, will be used as the prefix of the form field id, and can enable the <label for="id" /> function after setting
-   * @cn 表单名称，会作为表单字段 id 的前缀，设置后可开启 <label for="id" /> 功能
+   * @cn 表单名称，会作为表单字段 id 的前缀，设置后可使用 formRef 的 scrollToField 方法
    * @version 3.5.2
+   * @private
    */
   formName?: string;
 }
@@ -143,7 +144,7 @@ interface FormRuleObject<T> {
   [key: string]: FormRuleObject<T> | FormItemRule<T>;
 }
 
-export interface BaseFormProps<T> extends FormCommonConfig {
+export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
   value?: T;
   onChange?: (value: T) => void;
   /**

@@ -59,7 +59,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     throttle = 1000,
     size,
     name: formName,
-    reserveAble,
     scrollParent,
   } = props;
   const deepSetOptions = {
@@ -480,7 +479,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.names.delete(n);
         delete context.defaultValues[n];
       }
-      if (!reserveAble && !context.removeLock) {
+      const finalReserveAble = props.reserveAble ?? reserveAble;
+      if (!finalReserveAble && !context.removeLock) {
         addRemove(n);
       }
     },
@@ -543,7 +543,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       inline,
       disabled,
       size,
-      reserveAble,
       formName,
     }),
     [
@@ -554,7 +553,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       inline,
       disabled,
       size,
-      reserveAble,
       formName,
     ],
   );
