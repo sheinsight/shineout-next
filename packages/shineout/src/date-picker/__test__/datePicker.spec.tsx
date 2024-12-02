@@ -286,7 +286,7 @@ describe('Alert[Base]', () => {
     fireEvent.click(rightHeaderIcons[0]);
     await waitFor(async () => {
       await delay(300);
-      textContentTest(headerInfos[1], `${Number(month) + 1}`);
+      textContentTest(headerInfos[1], `${Number(month === '12' ? 0 : month) + 1}`);
     });
     fireEvent.click(leftHeaderIcons[1]);
     await waitFor(async () => {
@@ -1260,7 +1260,7 @@ describe('DatePicker[QuickSelect]', () => {
       await delay(300);
       textContentTest(
         datePickerPickers[1].querySelectorAll(pickerHeaderInfo)[1],
-        `${Number(month) + 1}`,
+        `${Number(month === '12' ? 0 : month) + 1}`,
       );
     });
   });

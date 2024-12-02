@@ -3,7 +3,7 @@
 ### 🐞 BugFix
 
 - 修复 `Form` 的 `reserveAble` 属性在处理嵌套字段时，无法保留值的问题 ([#834](https://github.com/sheinsight/shineout-next/pull/834))
-
+- 修复 `Form` 的 `formRef` 上的set方法，为某个字段手动设置相同长度的数组值时，无法更新值的问题 ([#835](https://github.com/sheinsight/shineout-next/pull/835))
 
 ## 3.5.3-beta.2
 2024-11-28

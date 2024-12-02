@@ -5,7 +5,7 @@ const { produce } = util;
 
 const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   const { children, empty } = props;
-  const { current: context } = React.useRef<{ ids: string[] }>({ ids: [] });
+  const { current: context } = React.useRef<{ ids: string[], lastValues: any }>({ ids: [], lastValues: [] });
 
   const formFunc = useFormFunc();
 
@@ -48,10 +48,13 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   if (context.ids.length !== valueArr.length) {
     context.ids = valueArr.map(() => util.generateUUID());
   }
-  const ids = context.ids || [];
+
   valueArr.forEach((v: any, i: number) => {
+    if(context.lastValues[i] !== v) {
+      context.ids[i] = util.generateUUID()
+    }
     result.push(
-      <Provider key={ids[i]} value={{ path: `${ProviderValue.path}[${i}]`, validateFieldSet }}>
+      <Provider key={context.ids[i] ?? i} value={{ path: `${ProviderValue.path}[${i}]`, validateFieldSet }}>
         {children({
           list: valueArr,
           value: v,
@@ -96,7 +99,11 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
       </Provider>,
     );
   });
-  return <>{result}</>;
+
+  // 更新 lastValues
+  context.lastValues = valueArr
+
+  return result;
 };
 
 export default FormFieldSet;
