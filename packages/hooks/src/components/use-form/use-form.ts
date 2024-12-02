@@ -198,7 +198,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
                 if (context.errors[key]) {
                   errorFields.push({
                     name: key,
-                    errors: [context.errors[key]?.message as string || ''],
+                    errors: [(context.errors[key]?.message as string) || ''],
                   });
                 }
               }
@@ -293,11 +293,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       onChange((draft) => {
         const values = Object.keys(vals);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
-        const nextDraft = current(draft);
+        const nextDraft = deepClone(current(draft));
         values.forEach((key) => {
           deepSet(nextDraft, key, vals[key], deepSetOptions);
         });
         values.forEach((key) => {
+          deepSet(draft, key, vals[key], deepSetOptions);
           if (option.validate) {
             context.validateMap[key]?.forEach((validate) => {
               validate(key, vals[key], nextDraft);
@@ -315,6 +316,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       update(fullKeyPaths);
     },
   );
+
+  const updateDefaultValue = () => {
+    if (!context.mounted) return;
+    Object.keys(context.defaultValues).forEach((df) => {
+      const latestDefaultValue = getValue(df);
+      if (latestDefaultValue === undefined) {
+        setValue({ [df]: context.defaultValues[df] }, { validate: false });
+      }
+    });
+  };
 
   const getErrors = usePersistFn(() => context.errors);
   const clearValidate = usePersistFn((names?: string[]) => {
@@ -588,6 +599,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       validateFields(keys).catch(() => {});
     }
     update();
+    updateDefaultValue();
     context.resetTime = 0;
   }, [props.value]);
 
