@@ -7,6 +7,7 @@ import { TabData } from './tab.type';
 
 const TabsPanel = (props: TabsPanelProps) => {
   const { children, id, tab, className, style, jssStyle } = props;
+
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
   const { active, lazy, setTabs, color } = useTabsContext<TabData>();
@@ -14,12 +15,23 @@ const TabsPanel = (props: TabsPanelProps) => {
   const keekAlive = useRef(false);
 
   useLayoutEffect(() => {
+    const tabData = {
+      id,
+      tab,
+      disabled: props.disabled,
+      jssStyle,
+      color: props.color || (active === id ? color : undefined),
+    } as TabData;
+
     setTabs(prev => {
       const prevTab = prev.find(item => item.id === id)
       if(prevTab){
-        return prev.map(item => item.id === id ? { ...item, tab } : item)
+        return prev.map(item => {
+          if(item.id !== id) return item
+          return { ...item, ...tabData }
+        })
       }
-      return [...prev, { id, tab, disabled: props.disabled, jssStyle, color: props.color || (active === id ? color : undefined) } as TabData]
+      return [...prev, tabData]
     })
   }, [id, tab, color, ...(color ? [active] : []), props.disabled, props.jssStyle])
 
