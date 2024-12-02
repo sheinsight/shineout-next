@@ -1,5 +1,5 @@
 import React from 'react';
-import { util, usePersistFn, useFormDatum, useFormConfig } from '@sheinx/hooks';
+import { util, usePersistFn, useFormDatum } from '@sheinx/hooks';
 import { FormField } from '@sheinx/base';
 import type { FormFieldProps } from '@sheinx/base';
 
@@ -41,7 +41,6 @@ const useFieldCommon = <
   Origin: React.ComponentType<Props>,
   type?: 'number' | 'string' | 'array',
 ) => {
-  const formConfig = useFormConfig();
   const getValidateProps = usePersistFn(() => ({ type, ...props }));
   const datum = useFormDatum();
   const beforeChange = usePersistFn((value: any) => {
@@ -51,8 +50,7 @@ const useFieldCommon = <
   const FieldParams = {
     name: props.name!,
     defaultValue: props.defaultValue,
-    reserveAble: props.reserveAble ?? formConfig.reserveAble,
-    formName: formConfig.formName,
+    reserveAble: props.reserveAble,
     rules: props.rules,
     onError: props.onError,
     bind: props.bind,

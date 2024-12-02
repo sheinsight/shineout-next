@@ -1,3 +1,10 @@
+## 3.5.3-beta.4
+2024-11-28
+### 🐞 BugFix
+
+- 修复 `Form` 的 `reserveAble` 属性在处理嵌套字段时，无法保留值的问题 ([#834](https://github.com/sheinsight/shineout-next/pull/834))
+
+
 ## 3.5.3-beta.2
 2024-11-28
 ### 🐞 BugFix
