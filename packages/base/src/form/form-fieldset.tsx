@@ -103,7 +103,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   // 更新 lastValues
   context.lastValues = valueArr
 
-  return result;
+  return <>result</>;
 };
 
 export default FormFieldSet;
