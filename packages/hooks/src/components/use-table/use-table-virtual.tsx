@@ -169,7 +169,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       let rowSpanHeight = 0;
       if (rowSpanInfo) {
         const siblingsIndexs = [];
-        for (let k = 0; k < maxRowSpanLenth; k++) {
+        for (let k = i; k < maxRowSpanLenth + i; k++) {
           if (rowSpanInfo.rowSpanIndexArray[k] <= i && k > i) {
             siblingsIndexs.push(k);
           }
