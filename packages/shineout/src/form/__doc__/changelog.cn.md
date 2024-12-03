@@ -1,3 +1,9 @@
+## 3.5.3-beta.6
+2024-11-28
+### 🐞 BugFix
+
+- 修复 `Form` 组件 `onChange` 执行多次且数组嵌套字段模式下死循环的问题(Regression: since v3.4.4,v3.5.2) ([#841](https://github.com/sheinsight/shineout-next/pull/841))
+
 ## 3.5.3-beta.5
 2024-11-28
 ### 🐞 BugFix
