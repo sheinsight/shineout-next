@@ -293,15 +293,14 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       onChange((draft) => {
         const values = Object.keys(vals);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
-        const nextDraft = deepClone(current(draft));
-        values.forEach((key) => {
-          deepSet(nextDraft, key, vals[key], deepSetOptions);
-        });
         values.forEach((key) => {
           deepSet(draft, key, vals[key], deepSetOptions);
+        });
+        values.forEach((key) => {
+          // deepSet(draft, key, vals[key], deepSetOptions);
           if (option.validate) {
             context.validateMap[key]?.forEach((validate) => {
-              validate(key, vals[key], nextDraft);
+              validate(key, vals[key], current(draft));
             });
           }
         });
@@ -313,6 +312,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       fullKeyPaths.forEach((key) => {
         delete context.serverErrors[key];
       });
+
       update(fullKeyPaths);
     },
   );
