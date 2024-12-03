@@ -114,7 +114,7 @@ const Day = (props: DayProps) => {
   const weeks = getLocale(locale, 'weekdayValues.narrow');
   const weekDays = Array.from({ length: 7 }).map((_, index) => {
     // weekStartsOn可能是字符串，需要转换为数字，否则得到星期顺序不正确
-    const num = (props.options.weekStartsOn + index) % 7;
+    const num = (Number(props.options.weekStartsOn) + index) % 7;
     return weeks[num];
   });
 
