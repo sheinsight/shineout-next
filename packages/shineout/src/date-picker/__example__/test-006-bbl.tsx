@@ -1,8 +1,8 @@
 /**
- * cn - 基本用法
- *    -- 最基本的用法
- * en - Base
- *    -- The basic usage
+ * cn - 远程多语言
+ *    -- 测试从远程获取多语言数据
+ * en - Remote Multi-language
+ *    -- Test getting multi-language data from remote
  */
 import React, { useEffect } from 'react';
 import { DatePicker, setLocale } from 'shineout';
