@@ -4,132 +4,83 @@
  * en - Test Form
  *    -- Test Form
  */
-import { useEffect, useState } from 'react';
-import { Form, Input } from 'shineout';
-import { usePersistFn } from '@sheinx/hooks';
+import { useState, useEffect } from 'react';
+import { Form, Input, Rule, DatePicker, Divider } from 'shineout';
 
-const ComponentB1 = (props) => {
-  const { onAppend } = props;
-  useEffect(() => {
+const NameInput = (props) => {
+  const { value, onChange } = props;
+
+  const handleChange = (v, index) => {
+    const nextValue = [...value];
+    nextValue[index] = v;
+    // console.log('nextValue', nextValue);
+    onChange(nextValue);
+  };
+
+  return (
+    <Input.Group>
+      <Input value={value![0]} width={120} onChange={(v) => handleChange(v, 0)} clearable />
+      <Input value={value![1]} width={120} onChange={(v) => handleChange(v, 1)} clearable />
+    </Input.Group>
+  );
+};
+
+const A = () => {
+  const [value, setValue] = useState({});
+
+  const handleSubmit = (v) => {
+    console.log('submit', v);
+  };
+
+  const handleChange = (v) => {
+    console.log('onChange', v);
+    setValue(v);
+  };
+
+  const handleReset = () => {};
+
+  // 模拟调用接口后，把 Form.FieldSed 的 defaultValue 字段值干掉，换句话说让首次初始化白干了
+  const initValue = () => {
     setTimeout(() => {
-      onAppend({
-        'b-1': 1,
-        'b-2': 2,
-      });
-    }, 10);
+      setValue({ b: '233' });
+      console.log('init complated');
+    }, 3000);
+  };
 
-    // onAppend({
-    //   'b-1': 1,
-    //   'b-2': 2,
-    // });
-
-    console.log('B1 mounted');
-  }, []);
-
-  return (
-    <Form.Item label='B1'>
-      <Form.FieldSet name='a.b1'>
-        {({}) => {
-          return (
-            <div>
-              <Input name='b-1'></Input>
-              <Input name='b-2'></Input>
-            </div>
-          );
-        }}
-      </Form.FieldSet>
-    </Form.Item>
-  );
-};
-
-const ComponentB2 = () => {
   useEffect(() => {
-    console.log('B2 mounted');
+    initValue();
   }, []);
 
-  return (
-    <Form.Item label='B2'>
-      <Form.FieldSet name='a.spec_info_list' defaultValue={[{ 'b-1': 3, 'b-2': 4 }]}>
-        {({}) => {
-          return (
-            <div>
-              <Input name='b-1'></Input>
-              <Input name='b-2'></Input>
-            </div>
-          );
-        }}
-      </Form.FieldSet>
-    </Form.Item>
-  );
-};
-
-const ComponentB3 = () => {
-  useEffect(() => {
-    console.log('B3 mounted');
-  }, []);
-
-  return (
-    <Form.Item label='B3'>
-      <Form.FieldSet name='a.ccc' defaultValue={[{ 'b-1': 3, 'b-2': 4 }]}>
-        {({}) => {
-          return (
-            <div>
-              <Input name='b-1'></Input>
-              <Input name='b-2'></Input>
-            </div>
-          );
-        }}
-      </Form.FieldSet>
-    </Form.Item>
-  );
-};
-
-const ComponentB4 = () => {
-  useEffect(() => {
-    console.log('B4 mounted');
-  }, []);
-
-  return (
-    <Form.Item label='B4'>
-      <Form.FieldSet name='a.ddd' defaultValue={[{ 'b-1': 3, 'b-2': 4 }]}>
-        {({}) => {
-          return (
-            <div>
-              <Input name='b-1'></Input>
-              <Input name='b-2'></Input>
-            </div>
-          );
-        }}
-      </Form.FieldSet>
-    </Form.Item>
-  );
-};
-
-const ComponentB = (props) => {
   return (
     <div>
-      <ComponentB1 {...props}></ComponentB1>
-      <ComponentB2 {...props}></ComponentB2>
-      <ComponentB3 {...props}></ComponentB3>
-      <ComponentB4 {...props}></ComponentB4>
+      <Form value={value} onChange={handleChange} onReset={handleReset} onSubmit={handleSubmit}>
+        <Form.Item label='a'>
+          <Form.FieldSet name='a' defaultValue={[{}]}>
+            {() => {
+              return (
+                <div>
+                  <Input name='a1'></Input>
+                  <Input name='a2'></Input>
+                </div>
+              );
+            }}
+          </Form.FieldSet>
+        </Form.Item>
+
+        <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
+          <Form.Submit>Submit</Form.Submit>
+          <Form.Reset>Reset</Form.Reset>
+        </Form.Item>
+      </Form>
     </div>
   );
 };
 
-const ComponentA = (props) => {
-  return (
-    <Form.Item label='Component A'>
-      <Form.Field name='a'>
-        <ComponentB {...props}></ComponentB>
-      </Form.Field>
-    </Form.Item>
-  );
-};
-
-export default () => {
+const B = () => {
   const [value, setValue] = useState({
-    a: {
-      b1: [],
+    nameObj: {
+      firstName: 'Harry1',
+      lastName: 'Potter2',
     },
   });
 
@@ -138,27 +89,18 @@ export default () => {
   };
 
   const handleChange = (v) => {
-    console.log('onChange');
+    console.log(v);
     setValue(v);
   };
 
   const handleReset = () => {};
 
-  const handleAppend = usePersistFn((item: any) => {
-    const nextForm = {
-      a: {
-        ...value.a,
-        b1: [...value.a.b1],
-      },
-    };
-    nextForm.a.b1.push(item);
-    setValue(nextForm);
-  });
-
   return (
     <div>
       <Form value={value} onChange={handleChange} onReset={handleReset} onSubmit={handleSubmit}>
-        <ComponentA onAppend={handleAppend}></ComponentA>
+        <Form.Field name={['nameObj.firstName', 'nameObj.lastName']}>
+          <NameInput />
+        </Form.Field>
 
         <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
           <Form.Submit>Submit</Form.Submit>
@@ -166,5 +108,65 @@ export default () => {
         </Form.Item>
       </Form>
     </div>
+  );
+};
+
+const C = () => {
+  const [value, setValue] = useState({
+    formValue: {
+      email: '',
+      password: '',
+    },
+  });
+
+  const rules = Rule({
+    isDisabled: (v, formV, callback, p) => {
+      console.log('rule', formV);
+      callback(true);
+    },
+  });
+
+  return (
+    <Form
+      labelWidth={65}
+      value={value}
+      onChange={(v) => {
+        setValue(v);
+      }}
+    >
+      <Form.Item label='Email'>
+        <Input
+          name='formValue.email'
+          clearable
+          rules={[
+            rules.required,
+            (_, formData, cb) => {
+              console.log('formData', formData);
+              cb(true);
+            },
+          ]}
+        />
+      </Form.Item>
+
+      <Form.Item label='Password'>
+        <Input name='formValue.password' type='password' clearable />
+      </Form.Item>
+
+      <Form.Item>
+        <DatePicker rules={[rules.isDisabled]} range name={['start', 'end']}></DatePicker>
+      </Form.Item>
+    </Form>
+  );
+};
+
+export default () => {
+  return (
+    <>
+      <A></A>
+      <Divider></Divider>
+      <B></B>
+      <Divider></Divider>
+      <C></C>
+    </>
   );
 };
