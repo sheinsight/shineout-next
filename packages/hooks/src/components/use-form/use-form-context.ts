@@ -13,7 +13,7 @@ export function useFormRef<V>(): [FormRef<V>, ((formRef: FormRef<V>) => void)] {
   return [ref.current as FormRef<V>, setFormRef]
 }
 
-export function useFromInstance<V>(): FormRef<V> {
+export function useFormInstance<V>(): FormRef<V> {
   const formCtx = React.useContext(FormContext);
   return formCtx;
 }

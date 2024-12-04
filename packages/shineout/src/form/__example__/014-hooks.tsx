@@ -53,7 +53,7 @@ const rules = Rule(
 );
 
 const Sub: React.FC = () => {
-  const form = Form.useFromInstance();
+  const form = Form.useFormInstance();
 
   const validateForm = () => {
     console.log('form in child: >>', form)

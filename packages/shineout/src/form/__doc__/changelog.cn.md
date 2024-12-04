@@ -1,3 +1,9 @@
+## 3.5.4-beta.3
+2024-12-04
+
+### 🐞 BugFix
+- 修复 `Form` 嵌套 `Form` 的提交和重置行为 ([#849](https://github.com/sheinsight/shineout-next/pull/849))
+
 ## 3.5.3
 2024-12-04
 
