@@ -115,7 +115,7 @@ const Image = (props: ImageProps) => {
   };
 
   const renderDivInnerEl = (src?: string) => {
-    const imageDivProps = getImageDivProps({ style: { backgroundImage: `url(${src})` } });
+    const imageDivProps = getImageDivProps({ style: { backgroundImage: `url("${src}")` } });
     return <div className={imgInnerClass} {...imageDivProps}></div>;
   };
 
