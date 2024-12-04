@@ -125,7 +125,7 @@ const App: React.FC = () => {
     })
   }, [])
 
-  if(!ready) return null
+  // if(!ready) return null
 
   return <DatePicker showSelNow onChange={(v) => console.log(v)} />
 };

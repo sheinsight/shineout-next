@@ -276,9 +276,6 @@ const Day = (props: DayProps) => {
           <tbody>
             {Array.from({ length: len }).map((_, index) => {
               const start = index * 7;
-              // console.log('======================')
-              // console.log('days, start, days[start + 3]: >>', days, start, days[start + 3])
-              // console.log('======================')
               return (
                 <tr
                   key={index}
