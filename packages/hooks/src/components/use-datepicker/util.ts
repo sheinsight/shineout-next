@@ -257,15 +257,8 @@ function getDaysOfMonth(dirtyDate: DateTimeType, options: DateOptions) {
   const temp = dayjs(transDateWithZone(date, options));
   let current = dayjs(transDateWithZone(date, options))
     .locale(getDayJsLocate(options))
-    .startOf('month');
-
-  if (options.weekStartsOn === 1) {
-    current = current.startOf('isoWeek'); // ISO week starts on Monday
-  } else {
-    current = current.startOf('week'); // Default week starts on Sunday
-  }
-
-  current = current
+    .startOf('month')
+    .startOf('week')
     .hour(temp.hour())
     .minute(temp.minute())
     .second(temp.second())

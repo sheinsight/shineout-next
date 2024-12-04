@@ -120,7 +120,7 @@ const App: React.FC = () => {
       console.log('======================')
       console.log('res: >>', res)
       console.log('======================')
-      setLocale(res)
+      // setLocale(res)
       setReady(true)
     })
   }, [])
