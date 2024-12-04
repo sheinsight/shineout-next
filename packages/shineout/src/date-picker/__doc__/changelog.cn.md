@@ -1,9 +1,9 @@
-## 3.5.3-beta.7
-2024-11-28
+## 3.5.3-beta.9
+2024-12-04
 
 ### 🐞 BugFix
 
-- 修复 `DatePicker` 从 setLocale获取到的 `startOfWeek` 是字符串时，得到星期顺序不正确的问题 ([#826](https://github.com/sheinsight/shineout-next/pull/826))
+- 修复 `DatePicker` 从 setLocale获取到的 `startOfWeek` 不是0时，展示的星期顺序不正确的问题 ([#845](https://github.com/sheinsight/shineout-next/pull/845))
 
 
 
