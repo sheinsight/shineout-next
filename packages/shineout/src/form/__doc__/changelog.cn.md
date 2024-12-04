@@ -1,27 +1,13 @@
-## 3.5.3-beta.6
-2024-12-03
-### 🐞 BugFix
+## 3.5.3
+2024-12-04
 
+### 🐞 BugFix
 - 修复 `Form` 组件 `onChange` 执行多次且数组嵌套字段模式下死循环的问题(Regression: since v3.4.4,v3.5.2) ([#842](https://github.com/sheinsight/shineout-next/pull/842))
-
-
-## 3.5.3-beta.5
-2024-11-28
-### 🐞 BugFix
-
 - 修复 `Form` 的 `reserveAble` 属性在处理嵌套字段时，无法保留值的问题 ([#834](https://github.com/sheinsight/shineout-next/pull/834))
 - 修复 `Form` 的 `formRef` 上的set方法，为某个字段手动设置相同长度的数组值时，无法更新值的问题 ([#835](https://github.com/sheinsight/shineout-next/pull/835))
-
-## 3.5.3-beta.2
-2024-11-28
-### 🐞 BugFix
-
 - 修复 `Form` 校验字段为嵌套字段时，自定义校验方法第二参数结构错误的问题 ([#829](https://github.com/sheinsight/shineout-next/pull/829))
 
-## 3.5.3-beta.1
-2024-11-28
 ### 💎 Enhancement
-
 - 增强 `Form` 的 `formRef`，增加 `validateFieldsWithValue` 方法，返回校验值 ([#812](https://github.com/sheinsight/shineout-next/pull/812))
 - 增强 `Form` 的 `formRef`，增加 `scrollToField` 方法，支持根据 name 滚动至指定表单项 ([#812](https://github.com/sheinsight/shineout-next/pull/812))
 
