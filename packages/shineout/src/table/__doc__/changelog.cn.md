@@ -1,3 +1,11 @@
+
+## 3.5.3
+2024-12-04
+
+### 🐞 BugFix
+- 修复 `Table` 合并行数据的最大行数超过rowsInView时，导致垂直滚动时，这个合并单元格的内容闪烁的问题 ([#836](https://github.com/sheinsight/shineout-next/pull/836))
+- 修复 `Table` 的column type为'checkbox'，且column的render为函数时，render不生效的问题 ([#825](https://github.com/sheinsight/shineout-next/pull/825))
+
 ## 3.5.2
 2024-11-28
 

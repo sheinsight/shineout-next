@@ -1,9 +1,12 @@
-## 3.5.3-beta.1
-2024-11-28
+## 3.5.3
+2024-12-04
 
 ### 🐞 BugFix
 
+- 修复 `DatePicker` 在打开过日期选择面板后，然后切换多语言后显示的星期顺序不正确的问题 ([#846](https://github.com/sheinsight/shineout-next/pull/846))
+- 修复 `DatePicker` 从 setLocale获取到的 `startOfWeek` 不是0时，展示的星期顺序不正确的问题 ([#845](https://github.com/sheinsight/shineout-next/pull/845))
 - 修复 `DatePicker` 在设置 `inputable` 和 `range` 后开始时间可以输入非法值的问题 ([#826](https://github.com/sheinsight/shineout-next/pull/826))
+
 
 ## 3.5.1
 2024-11-14

@@ -59,7 +59,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     throttle = 1000,
     size,
     name: formName,
-    reserveAble,
     scrollParent,
   } = props;
   const deepSetOptions = {
@@ -198,7 +197,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
                 if (context.errors[key]) {
                   errorFields.push({
                     name: key,
-                    errors: [context.errors[key]?.message as string || ''],
+                    errors: [(context.errors[key]?.message as string) || ''],
                   });
                 }
               }
@@ -227,7 +226,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       });
     },
   );
-
 
   const scrollToField = usePersistFn(
     (name: string, scrollIntoViewOptions: ScrollIntoViewOptions = {}) => {
@@ -294,12 +292,13 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       onChange((draft) => {
         const values = Object.keys(vals);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
-        const nextDraft = Object.assign({}, current(draft), vals);
         values.forEach((key) => {
           deepSet(draft, key, vals[key], deepSetOptions);
+        });
+        values.forEach((key) => {
           if (option.validate) {
             context.validateMap[key]?.forEach((validate) => {
-              validate(key, vals[key], nextDraft);
+              validate(key, vals[key], current(draft));
             });
           }
         });
@@ -314,6 +313,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       update(fullKeyPaths);
     },
   );
+
+  const updateDefaultValue = () => {
+    if (!context.mounted) return;
+    Object.keys(context.defaultValues).forEach((df) => {
+      const latestDefaultValue = getValue(df);
+      if (latestDefaultValue === undefined) {
+        setValue({ [df]: context.defaultValues[df] }, { validate: false });
+      }
+    });
+  };
 
   const getErrors = usePersistFn(() => context.errors);
   const clearValidate = usePersistFn((names?: string[]) => {
@@ -429,7 +438,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const controlFunc: FormContextType['func'] = useLatestObj({
     bind: (n: string, df: any, validate: ValidateFn, updateFn: UpdateFn) => {
       if (process.env.NODE_ENV !== 'production' && context.names.has(n)) {
-        devUseWarning.warn(`name "${n}" already exist in Form component`)
+        devUseWarning.warn(`name "${n}" already exist in Form component`);
       }
       context.names.add(n);
 
@@ -468,7 +477,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.names.delete(n);
         delete context.defaultValues[n];
       }
-      if (!reserveAble && !context.removeLock) {
+      const finalReserveAble = props.reserveAble ?? reserveAble;
+      if (!finalReserveAble && !context.removeLock) {
         addRemove(n);
       }
     },
@@ -531,20 +541,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       inline,
       disabled,
       size,
-      reserveAble,
       formName,
     }),
-    [
-      labelWidth,
-      labelAlign,
-      labelVerticalAlign,
-      keepErrorHeight,
-      inline,
-      disabled,
-      size,
-      reserveAble,
-      formName,
-    ],
+    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size, formName],
   );
 
   const updateValue = () => {
@@ -587,6 +586,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       validateFields(keys).catch(() => {});
     }
     update();
+    updateDefaultValue();
     context.resetTime = 0;
   }, [props.value]);
 

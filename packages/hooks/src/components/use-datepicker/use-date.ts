@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { UseDateProps } from './use-date.type';
 import utils from './util';
@@ -49,6 +49,11 @@ const useDate = (props: UseDateProps) => {
 
     return context.cachedDays;
   };
+
+  useEffect(()=>{
+    // 当weekStartsOn从0变为1时，需要清空context.cachedDays, 否则会显示不正确的星期顺序
+    context.cachedDays =  []
+  }, [options.weekStartsOn])
 
   const handleNextYear = usePersistFn(() => {
     const date = utils.addYears(current, 1, options);

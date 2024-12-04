@@ -1,10 +1,12 @@
 import React, { useContext, useMemo } from 'react';
-import { useFormControl, usePersistFn, util } from '@sheinx/hooks';
+import { useFormConfig, useFormControl, usePersistFn, util } from '@sheinx/hooks';
 import { FieldControlProps, FormFieldProps } from './form-field.type';
 import { FormFieldContext } from './form-field-context';
 
 const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   const { children } = props;
+
+  const formConfig = useFormConfig()
 
   const getValidateProps = usePersistFn(() => {
     if (props.getValidateProps) return props.getValidateProps();
@@ -40,15 +42,15 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
 
   const { separator } = useContext(FormFieldContext);
   const formFieldId = useMemo(() => {
-    if(!props.formName) return
+    if(!formConfig.formName) return
     if(childrenProps.id) return childrenProps.id
 
     if(Array.isArray(formControl.name)) {
-      return formControl.name.map(name => util.getFieldId(name, props.formName)).join(separator)
+      return formControl.name.map(name => util.getFieldId(name, formConfig.formName)).join(separator)
     }
 
-    return util.getFieldId(formControl.name, props.formName)
-  }, [formControl.name, props.formName, childrenProps.id])
+    return util.getFieldId(formControl.name, formConfig.formName)
+  }, [formControl.name, formConfig.formName, childrenProps.id])
 
   const cloneProps: FieldControlProps<T> = {
     onChange: handleChange,
