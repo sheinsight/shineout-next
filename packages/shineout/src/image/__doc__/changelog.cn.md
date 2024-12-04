@@ -1,3 +1,10 @@
+## 3.5.4-beta.1
+2024-12-04
+
+### 🐞 BugFix
+
+- 修复 `Image` 在 `fit` 属性为 fill 或 fit 时，图片可能无法加载的问题 ([#847](https://github.com/sheinsight/shineout-next/pull/847))
+
 ## 3.5.2
 2024-10-28
 
