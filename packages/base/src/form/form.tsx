@@ -1,7 +1,7 @@
 import { FormContext, useForm, useInputAble, useLatestObj, usePersistFn, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { useFormFooter } from './form-footer-context';
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import type { FormProps } from './form.type';
 import type { ObjectType } from '@sheinx/hooks';
@@ -34,6 +34,13 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const validateFieldsWithValue = usePersistFn((fields?: keyof V | Array<keyof V>) => {
     return formFunc.validateFields(fields as string | string[], { type: 'withValue' });
   });
+
+  const [renderKey, setRenderKey] = useState(0)
+  const handleOuterSet = useCallback((vals: { [key: string]: any }) => {
+    formFunc.setValue(vals)
+    setRenderKey(prev => prev + 1)
+  }, [formFunc])
+
   const formRefObj = useLatestObj({
     clearValidate: formFunc.clearValidate,
     getValue: formFunc.getValue,
@@ -43,7 +50,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     validateFields,
     validateFieldsWithValue,
     validateFieldsWithError: formFunc.validateFields,
-    set: formFunc.setValue,
+    set: handleOuterSet,
     scrollToField: formFunc.scrollToField
   });
 
@@ -111,6 +118,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
       // 从formProps中剔除onSubmit, 改为addEventListener方式添加监听，这样做之后，嵌套的子form也可以触发onSubmit
       {...util.removeProps(formProps, { onSubmit: true })}
       ref={formElRef}
+      key={renderKey}
     >
       <Provider {...ProviderProps}>
         <FormContext.Provider value={formRefObj}>{children}</FormContext.Provider>

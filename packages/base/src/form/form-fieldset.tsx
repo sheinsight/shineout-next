@@ -50,11 +50,11 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   }
 
   valueArr.forEach((v: any, i: number) => {
-    if(context.lastValues[i] !== v) {
+    if(context.lastValues.length !== valueArr.length) {
       context.ids[i] = util.generateUUID()
     }
     result.push(
-      <Provider key={context.ids[i] ?? i} value={{ path: `${ProviderValue.path}[${i}]`, validateFieldSet }}>
+      <Provider key={context.ids[i]} value={{ path: `${ProviderValue.path}[${i}]`, validateFieldSet }}>
         {children({
           list: valueArr,
           value: v,
