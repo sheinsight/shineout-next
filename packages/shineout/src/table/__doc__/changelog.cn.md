@@ -1,3 +1,9 @@
+## 3.5.4-beta.4
+2024-12-05
+
+### 🚀 Performance
+- 优化 `Table` 在大合并行数据下的性能 ([#850](https://github.com/sheinsight/shineout-next/pull/850))
+
 
 ## 3.5.3
 2024-12-04
