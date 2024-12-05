@@ -311,20 +311,22 @@ const Tr = (props: TrProps) => {
       if (data[i]) {
         const last = cols[i + (data[i].colSpan || 1) - 1] || {};
 
+        const isRowSpanTd = data[i].rowSpan > 1
+        const $tdContent = renderContent(col, data[i].data)
         const td = (
           <td
             key={col.key}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
             onMouseEnter={
-              (props.hover && hasSiblingRowSpan) || data[i].rowSpan > 1
+              (props.hover && hasSiblingRowSpan) || isRowSpanTd
                 ? () => {
                     props.handleCellHover(props.rowIndex, data[i].rowSpan);
                   }
                 : undefined
             }
             onMouseLeave={
-              (props.hover && hasSiblingRowSpan) || data[i].rowSpan > 1
+              (props.hover && hasSiblingRowSpan) || isRowSpanTd
                 ? () => {
                     props.handleCellHover(-1, 0);
                   }
@@ -340,7 +342,7 @@ const Tr = (props: TrProps) => {
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
               props.hoverIndex.has(props.rowIndex) && tableClasses?.cellHover,
-              data[i].rowSpan > 1 &&
+              isRowSpanTd &&
                 props.isCellHover(props.rowIndex, data[i].rowSpan) &&
                 tableClasses?.cellHover,
             )}
@@ -349,7 +351,9 @@ const Tr = (props: TrProps) => {
             data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
           >
-            {renderContent(col, data[i].data)}
+            {
+              isRowSpanTd ? <div style={{ height: 0 }}>{$tdContent}</div> : $tdContent
+            }
           </td>
         );
         tds.push(td);
