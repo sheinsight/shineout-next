@@ -83,6 +83,7 @@ interface ResultProps
   activeIndex?: number;
   onRef: React.MutableRefObject<{
     inputRef: HTMLInputElement | null;
+    inputRefs: (HTMLInputElement | null)[];
   }>;
   onFocus?: (e: React.FocusEvent) => void;
   onBlur?: (e: React.FocusEvent) => void;
@@ -183,39 +184,40 @@ const Result = (props: ResultProps) => {
     return (
       <div className={className} id={formFieldId[info.index]}>
         <span className={styles?.resultTextPadding}>
-            <Input
-              key={info.index}
-              onRef={(el) => {
-                onRef.current.inputRef = el;
-                context.inputRefs[info.index] = el;
-              }}
-              disabled={dis && info.inputable}
-              readOnly={!info.inputable}
-              open={!!open}
-              inputRef={inputRef}
-              value={info.target || info.value || ''}
-              placeholder={info.place}
-              onChange={(s) => {
-                onChange(s, info.index);
-              }}
-              onMouseDown={() => {
-                context.clickIndex = info.index;
-              }}
-              onBlur={(e) => {
-                e.stopPropagation();
-                if (e.relatedTarget === context.inputRefs[1 - info.index]) return;
-                props.onBlur?.(e);
-                if (inputRef.current) inputRef.current.updateValue?.();
-                context.clickIndex = 0;
-              }}
-              onFocus={(e) => {
-                context.clickIndex = info.index;
-                e.stopPropagation();
-                if (focused) return;
-                props.onFocus?.(e);
-              }}
-              onClick={onClickProps}
-            />
+          <Input
+            key={info.index}
+            onRef={(el) => {
+              onRef.current.inputRef = el;
+              onRef.current.inputRefs[info.index] = el;
+              context.inputRefs[info.index] = el;
+            }}
+            disabled={dis && info.inputable}
+            readOnly={!info.inputable}
+            open={!!open}
+            inputRef={inputRef}
+            value={info.target || info.value || ''}
+            placeholder={info.place}
+            onChange={(s) => {
+              onChange(s, info.index);
+            }}
+            onMouseDown={() => {
+              context.clickIndex = info.index;
+            }}
+            onBlur={(e) => {
+              e.stopPropagation();
+              if (e.relatedTarget === context.inputRefs[1 - info.index]) return;
+              props.onBlur?.(e);
+              if (inputRef.current) inputRef.current.updateValue?.();
+              context.clickIndex = 0;
+            }}
+            onFocus={(e) => {
+              context.clickIndex = info.index;
+              e.stopPropagation();
+              if (focused) return;
+              props.onFocus?.(e);
+            }}
+            onClick={onClickProps}
+          />
         </span>
         <div className={styles?.resultTextBg}></div>
       </div>
