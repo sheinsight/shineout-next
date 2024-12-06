@@ -5,6 +5,7 @@ import type { BaseTableProps } from './use-table.type';
 import { isObject } from '../../utils/is';
 import { OptionalToRequired } from '../../common/type';
 import { useLatestObj } from '../../common/use-latest-obj';
+import { util } from '@sheinx/hooks'
 
 interface GetExpandDataResult {
   treeData: any[];
@@ -115,6 +116,11 @@ export const useTableTree = (props: UseTableTreeProps) => {
 
     // 检查treeData中的每一项，对比expandKeysState，如果expandKeysState有但是children是空的，则需要修正expandKeysState
     const newExpandKeys = expandKeysState.filter((key) => !unmatchExpandKeys.includes(key));
+
+    if(util.shallowEqual(newExpandKeys, expandKeysState)) {
+      return;
+    }
+
     setExpandKeysState(newExpandKeys);
   }, [unmatchExpandKeys, expandKeysState]);
 

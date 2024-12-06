@@ -1,3 +1,9 @@
+## 3.5.4-beta.5
+2024-12-06
+
+### 🐞 BugFix
+- 修复 `Table` 同时设置了`defaultTreeExpandKeys`, `treeExpandKeys`, `onTreeExpand`后导致的组件渲染卡死问题 ([#852](https://github.com/sheinsight/shineout-next/pull/852))
+
 ## 3.5.4-beta.4
 2024-12-05
 

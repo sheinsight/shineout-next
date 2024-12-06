@@ -360,10 +360,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     ? props.data
     : [...props.data].slice(startIndex, startIndex + finalRowsInView);
 
-    console.log('======================')
-    console.log('startIndex: >>', startIndex)
-    console.log('finalRowsInView: >>', finalRowsInView)
-    console.log('======================')
   return {
     scrollHeight,
     startIndex,
