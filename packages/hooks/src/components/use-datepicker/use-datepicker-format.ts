@@ -158,7 +158,6 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
         return isDis;
       }
     }
-
     if (range && typeof range === 'number') {
       if (start) {
         if (!end) return isDis;
@@ -245,11 +244,13 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
   const finishEdit = () => {
     setEdit(false);
     let formatValue = getFormatValueArr(stateDate);
+
     if (inputArr.length && inputArr.some((i) => i)) {
-      const inputValue = inputArr.map((item, index) => {
-        if (item) return item;
-        return stateDate[index];
+      const inputValue = stateDate.map((item, index) => {
+        if (inputArr[index]) return inputArr[index];
+        return item;
       });
+
       const isDis = isDisabledInputDate(inputValue);
       if (!isDis) {
         formatValue = getFormatValueArr(inputValue);

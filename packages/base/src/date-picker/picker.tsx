@@ -151,6 +151,7 @@ const Picker = (props: PickerProps) => {
           jssStyle={jssStyle}
           dateArr={dateArr}
           type={type}
+          onClearInputArr={props.onClearInputArr}
           setDateArr={props.setDateArr}
           setCurrentArr={props.setCurrentArr}
           format={props.format}
