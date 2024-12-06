@@ -1,3 +1,10 @@
+## 3.5.4-beta.5
+2024-12-05
+
+### 🐞 BugFix
+- 修复 `Form.FieldSet` 使用set方法设置后，输入文本后光标失焦的问题(Regression: since v3.5.3) ([#851](https://github.com/sheinsight/shineout-next/pull/851))
+
+
 ## 3.5.4-beta.3
 2024-12-04
 
