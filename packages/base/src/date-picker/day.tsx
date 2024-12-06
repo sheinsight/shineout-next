@@ -30,7 +30,10 @@ const Day = (props: DayProps) => {
     current: props.current,
     onCurrentChange: setCurrent,
     value: props.value,
+    range: props.range,
     onChange,
+    onClearInputArr: props.onClearInputArr,
+    position: props.position,
     min: props.min,
     max: props.max,
     type: props.type as any,
@@ -51,7 +54,7 @@ const Day = (props: DayProps) => {
     props.setCurrent(new Date(), areaType);
     props.onChange(new Date(), props.needConfirm || props.type === 'datetime');
     setTimeout(() => {
-      if(props.closeByConfirm && !props.range) props.closeByConfirm();
+      if (props.closeByConfirm && !props.range) props.closeByConfirm();
     }, 0);
   };
 
@@ -80,11 +83,11 @@ const Day = (props: DayProps) => {
         )}
         key={index}
         onClick={() => {
-          if(props.range){
-            func.handleDayClick(item, props.needConfirm || props.clickTimes < 1)
-            props.setClickTimes(props.clickTimes + 1)
-          }else{
-            func.handleDayClick(item, props.needConfirm)
+          if (props.range) {
+            func.handleDayClick(item, props.needConfirm || props.clickTimes < 1);
+            props.setClickTimes(props.clickTimes + 1);
+          } else {
+            func.handleDayClick(item, props.needConfirm);
           }
         }}
         onDoubleClick={() => {
@@ -154,7 +157,7 @@ const Day = (props: DayProps) => {
         className={styles?.pickerFooter}
         dir={direction}
         style={{
-          borderTop: props.needConfirm && props.range ? 'none': undefined,
+          borderTop: props.needConfirm && props.range ? 'none' : undefined,
           marginTop: props.needConfirm && props.range ? -16 : undefined,
         }}
       >
@@ -165,7 +168,7 @@ const Day = (props: DayProps) => {
               styles?.datetime,
               !timeStr && styles?.datetimeHide,
             )}
-            style={{paddingRight: showNeedConfirm ? 0 : undefined}}
+            style={{ paddingRight: showNeedConfirm ? 0 : undefined }}
           >
             {
               <>
@@ -181,13 +184,13 @@ const Day = (props: DayProps) => {
             className={styles?.pickerFooterNow}
             style={{
               marginRight: showNeedConfirm ? 'auto' : undefined,
-              paddingLeft: showNeedConfirm ? 6 : undefined
+              paddingLeft: showNeedConfirm ? 6 : undefined,
             }}
           >
             {props.showSelNow && props.type === 'date' && (
               <Link
-                size="small"
-                type="primary"
+                size='small'
+                type='primary'
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
                 onClick={selNow}
@@ -197,8 +200,8 @@ const Day = (props: DayProps) => {
             )}
             {props.showSelNow && props.type === 'datetime' && (
               <Link
-                size="small"
-                type="primary"
+                size='small'
+                type='primary'
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
                 onClick={selNow}
@@ -209,9 +212,7 @@ const Day = (props: DayProps) => {
           </div>
         )}
 
-        {showNeedConfirm && (
-          <Confirm closeByConfirm={props.closeByConfirm} jssStyle={jssStyle} />
-        )}
+        {showNeedConfirm && <Confirm closeByConfirm={props.closeByConfirm} jssStyle={jssStyle} />}
       </div>
     );
   };

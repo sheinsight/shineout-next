@@ -74,6 +74,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   });
 
   const {
+    inputArr,
     resultArr,
     targetResultArr,
     dateArr,
@@ -303,7 +304,9 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
           <Picker
             setTargetArr={func.setTargetArr}
             dateArr={dateArr}
+            inputArr={inputArr}
             setDateArr={func.setDateArr}
+            onClearInputArr={func.handleClearInputArr}
             currentArr={currentArr}
             range={range}
             setCurrentArr={func.setCurrentArrWithParams}

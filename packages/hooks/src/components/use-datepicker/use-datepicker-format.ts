@@ -101,6 +101,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
   const [mode, setMode] = useState(getDefaultMode(type));
   const [currentArr, setCurrentArr] = useState(getCurrentArr());
   const [targetArr, setTargetArr] = useState<Array<Date | undefined>>([]);
+  const [inputArr, setInputArr] = useState<Array<Date | undefined>>([]);
   const [params, setParams] = useState<{ type: any; quick: any }>({
     type: undefined,
     quick: undefined,
@@ -141,11 +142,48 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     },
   );
 
+  const isDisabledInputDate = (rangeData: (Date | undefined)[]) => {
+    const start = rangeData[0];
+    const end = rangeData[1];
+
+    let isDis = false;
+    if (disabled && typeof disabled === 'function') {
+      if (start && disabled(start)) isDis = true;
+      if (end && disabled(end)) isDis = true;
+      if (isDis) return isDis;
+    }
+    if (start && end) {
+      if (dateUtil.compareAsc(start, end) > 0) {
+        isDis = true;
+        return isDis;
+      }
+    }
+
+    if (range && typeof range === 'number') {
+      if (start) {
+        if (!end) return isDis;
+        const rangeDate = dateUtil.addSeconds(start, range, options);
+        if (dateUtil.compareAsc(end, rangeDate) > 0) {
+          isDis = true;
+        }
+      }
+      if (end) {
+        if (!start) return isDis;
+        const rangeDate = dateUtil.addSeconds(end, -range, options);
+        if (dateUtil.compareAsc(start, rangeDate) < 0) {
+          isDis = true;
+        }
+      }
+    }
+    return isDis;
+  };
+
   const isDisabledDate = usePersistFn(
     (date: Date, position: 'start' | 'end' | undefined, triggerType?: string) => {
       const mode = getTypeMode(type);
       const disabled =
         position === 'end' ? context.modeDisabledEnd[mode] : context.modeDisabledStart[mode];
+
       let isDisabled = disabled ? disabled(date) : false;
       if (type === 'datetime' && !isDisabled) {
         const disabledTime =
@@ -206,7 +244,18 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
 
   const finishEdit = () => {
     setEdit(false);
-    const formatValue = getFormatValueArr(stateDate);
+    let formatValue = getFormatValueArr(stateDate);
+    if (inputArr.length && inputArr.some((i) => i)) {
+      const inputValue = inputArr.map((item, index) => {
+        if (item) return item;
+        return stateDate[index];
+      });
+      const isDis = isDisabledInputDate(inputValue);
+      if (!isDis) {
+        formatValue = getFormatValueArr(inputValue);
+      }
+    }
+    // const formatValue = getFormatValueArr(stateDate);
     const v = range ? formatValue : formatValue[0];
     if (range && (!stateDate[0] || !stateDate[1]) && !props.allowSingle) {
       return;
@@ -221,6 +270,9 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     if (!clearable) return;
     e?.stopPropagation();
     if (disabledStatus === 'all') return;
+
+    setInputArr([]);
+
     if (edit) {
       if (range) {
         if (disabledStatus === 'left') setStateDate((arr) => [arr[0], undefined]);
@@ -246,6 +298,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       }
       props.onChange?.(v as FormatValueType);
     }
+
     props.onClear?.();
   });
 
@@ -254,6 +307,13 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     const isValid = dateUtil.isValidString(str, format);
     if (!isValid) return;
     const date = dateUtil.toDateWithFormat(str, format, undefined, options);
+
+    setInputArr((prev) => {
+      const arr = [...prev];
+      arr[index] = date;
+      return arr;
+    });
+
     // 此次校验是由输入触发的
     if (date && isDisabledDate(date, index === 1 ? 'end' : 'start', 'input')) {
       return;
@@ -269,6 +329,18 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       arr[index] = date;
       return arr;
     });
+  });
+
+  const handleClearInputArr = usePersistFn((index?: number) => {
+    if (index !== undefined) {
+      setInputArr((prev) => {
+        const arr = [...prev];
+        arr[index] = undefined;
+        return arr;
+      });
+      return;
+    }
+    setInputArr([]);
   });
 
   useEffect(() => {
@@ -300,6 +372,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     setCurrentArr,
     setTargetArr,
     handleClear,
+    handleClearInputArr,
     handleInputChange,
     registerModeDisabled,
     setCurrentArrWithParams,
@@ -307,6 +380,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
   });
 
   return {
+    inputArr,
     resultArr,
     targetResultArr,
     dateArr: dateArr,
