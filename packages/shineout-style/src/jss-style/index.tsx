@@ -14,15 +14,22 @@ export const setJssConfig = (newConfig: { generateId?: GenerateId }) => {
   Object.assign(config, newConfig);
 };
 
+const hashCache: Record<string, string> = {};
 const stringToHash = (str: string) => {
-  let hash = 0;
+  if (hashCache[str]) {
+    return hashCache[str];
+  }
+
+  let hash = BigInt(0);
   if (str.length === 0) return '';
   for (let i = 0; i < str.length; i += 1) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash |= 0;
+    const char = BigInt(str.charCodeAt(i));
+    hash = (hash << BigInt(5)) - hash + char;
+    hash &= BigInt('0xFFFFFFFFFFFFFFFF'); // 限制在64位整数范围内
   }
-  return 'c' + hash.toString(36);
+  const result = 'c' + hash.toString(36);
+  hashCache[str] = result;
+  return result;
 };
 
 const camelToDash = (str: string) => str.replace(/([A-Z])/g, '-$1').toLowerCase();
