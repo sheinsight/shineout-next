@@ -22,20 +22,20 @@ const stepsStyle: JsStyles<StepsClassType> = {
       transition: 'color ease 0.3s',
     },
     '&$arrow': {
-      '& $step': {
+      '& $step:not($disabled)': {
         cursor: 'pointer',
       },
     },
     '&$default': {
-      '& $step:not($process)': {
+      '& $step:not($process):not($disabled)': {
         cursor: 'pointer',
       },
-      '& $step$wait:hover': {
+      '& $step$wait:not($disabled):hover': {
         '& $title,$description': {
           color: Token.stepsWaitHoverFontColor,
         },
       },
-      '& $step$finish:hover': {
+      '& $step$finish:not($disabled):hover': {
         '& $title,$description': {
           color: Token.stepsFinishHoverFontColor,
         },
@@ -257,7 +257,14 @@ const stepsStyle: JsStyles<StepsClassType> = {
       marginRight: 0,
     },
   },
-  disabled: {},
+  disabled: {
+    '&$step': {
+      cursor: 'not-allowed',
+    },
+    '& $icon:not($process)': {
+      cursor: 'not-allowed',
+    },
+  },
   horizontalLabel: {
     '&$step': {
       overflow: 'hidden',

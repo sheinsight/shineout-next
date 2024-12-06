@@ -1,3 +1,9 @@
+## 3.5.4-beta.7
+2024-12-06
+### 🐞 BugFix
+
+- 修复 `Step` 组件设置 `disabled` 属性后功能失效的问题 ([#854](https://github.com/sheinsight/shineout-next/pull/854))
+
 ## 3.3.0
 2024-07-23
 ### 🐞 BugFix

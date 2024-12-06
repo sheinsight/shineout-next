@@ -29,6 +29,7 @@ const Step = (props: StepProps) => {
     onClick,
     onChange,
   } = props;
+
   const config = useConfig();
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const getLabelPlacement = () => {
@@ -63,6 +64,7 @@ const Step = (props: StepProps) => {
   });
 
   const handleChange = (e: React.MouseEvent<HTMLElement>) => {
+    if (disabled) return;
     onClick?.(e, index, id);
     onChange?.(index);
   };
@@ -101,7 +103,11 @@ const Step = (props: StepProps) => {
     );
   };
 
-  return <div className={rootClass} dir={config.direction}>{renderStep()}</div>;
+  return (
+    <div className={rootClass} dir={config.direction}>
+      {renderStep()}
+    </div>
+  );
 };
 
 const StepWidthContext = (props: BaseStepProps) => {
