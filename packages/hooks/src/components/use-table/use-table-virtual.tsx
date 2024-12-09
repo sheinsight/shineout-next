@@ -1,5 +1,5 @@
 import { usePersistFn } from '../../common/use-persist-fn';
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect, useMemo, useLayoutEffect } from 'react';
 import { TableFormatColumn } from './use-table.type';
 
 // 找出最大的连续数字的个数
@@ -157,8 +157,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     const scrollContainerHeight = Math.max(props.scrollRef.current?.clientHeight || 0, 200);
     for (let i = 0; i <= maxIndex; i++) {
       context.rowSpanRows = 0;
-      sum += context.cachedHeight[i] || props.rowHeight;
-      let rowSpanHeight = 0;
+      const currentRowHeight = context.cachedHeight[i] || props.rowHeight;
+      sum += currentRowHeight;
+      let rowSpanHeight = currentRowHeight;
       if (rowSpanInfo) {
         const siblingsIndexs = [];
         for (let k = i; k < rowSpanInfo.maxRowSpan + i; k++) {
