@@ -25,7 +25,7 @@ const token = {
 
 const lineHeightComputed = '20px';
 const lineHeightComputed2 = '10px';
-const css = `*,
+const normalizeStyle = `*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -373,10 +373,49 @@ p {
   margin: 0 0 ${lineHeightComputed2};
 }`;
 
-if (typeof window !== 'undefined') {
-  const link = document.createElement('style');
-  link.innerHTML = css;
-  document.head.appendChild(link);
+function appendNormalizeStyle(styleString: string, id: string){
+  const style = document.createElement('style');
+  style.id = id;
+  style.innerHTML = styleString;
+  document.head.appendChild(style);
 }
+
+const uniqueStyleId = 'shineout-next-normalize__' + Math.random().toString(36).substring(2, 15);
+
+if (typeof window !== 'undefined') {
+  appendNormalizeStyle(normalizeStyle, uniqueStyleId);
+}
+
+export const scopeNormalizeStyle = (csScopePrefix = '#app') => {
+  const styleElement = document.getElementById(uniqueStyleId) as HTMLStyleElement;
+  // 移除styleElement
+
+  const styleSheet = styleElement?.sheet;
+  const cssRules = styleSheet?.cssRules;
+  // 遍历cssRules，给每一个selectorText添加前缀
+  if(cssRules){
+    for(let i = 0; i < cssRules.length; i++){
+      const rule = cssRules[i];
+      if (rule instanceof CSSStyleRule) {
+        // 如果选择器包含了body或html，则替换，不是加前缀
+        if(rule.selectorText.includes('body')){
+          rule.selectorText = rule.selectorText.replace('body', csScopePrefix);
+        }else if(rule.selectorText.includes('html')){
+          rule.selectorText = rule.selectorText.replace('html', csScopePrefix);
+        }else{
+          const selectors = rule.selectorText.split(',');
+          const newSelectors = selectors.map(selector => `${csScopePrefix} ${selector}`);
+          rule.selectorText = newSelectors.join(',');
+        }
+      }
+    }
+  }
+
+  const scopedStyleString = cssRules ? Array.from(cssRules).map(rule => rule.cssText).join('') : '';
+
+  document.head.removeChild(styleElement);
+
+  appendNormalizeStyle(scopedStyleString, uniqueStyleId);
+};
 
 setToken({ onlyExtra: true, tokenName: 'shineout-extra', selector: 'html' });
