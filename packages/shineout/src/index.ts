@@ -55,7 +55,7 @@ export { default as Upload } from './upload';
 export { setConfig, config, setLocale, setIcons } from '@sheinx/base';
 export type { ConfigOption } from '@sheinx/base';
 export { setToken, useToken } from '@sheinx/theme';
-export { JssProvider, SheetsRegistry, setJssConfig } from '@sheinx/shineout-style';
+export { JssProvider, SheetsRegistry, setJssConfig, scopeNormalizeStyle } from '@sheinx/shineout-style';
 export * as utls from './utils';
 export * from './deprecated';
 
