@@ -103,7 +103,7 @@ const columns: TableColumnItem[] = [
           bordered
           keygen='id'
           width={1500}
-          // style={{ height: 300 }}
+          style={{ height: 300 }}
           columns={columns}
           data={data}
           virtual
