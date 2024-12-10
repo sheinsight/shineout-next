@@ -34,9 +34,9 @@ export interface BaseStepProps extends Pick<CommonType, 'className' | 'style' | 
   className?: string;
   /**
    * @en Whether the current step node is disabled
-   * @cn 当前步骤节点是否被禁用
+   * @cn 当前步骤节点是否被禁用，优先级高于 Steps 的 disabled
    */
-  disabled?: boolean | ((index: number) => boolean);
+  disabled?: boolean;
   /**
    * @en The description of the current step node
    * @cn 节点描述
@@ -49,7 +49,7 @@ export interface BaseStepProps extends Pick<CommonType, 'className' | 'style' | 
   onClick?: (e: React.MouseEvent<HTMLElement>, index: number, id: any) => void;
 }
 
-export interface StepProps extends Omit<StepsContextProps, 'current'>, BaseStepProps {
+export interface StepProps extends Omit<StepsContextProps, 'current' | 'disabled'>, BaseStepProps {
   /**
    * @en The index of the current step node
    * @cn 当前节点索引
@@ -60,4 +60,12 @@ export interface StepProps extends Omit<StepsContextProps, 'current'>, BaseStepP
    * @cn 当前步数
    */
   current?: number;
+}
+
+export interface StepPropsWidthContext extends Omit<StepProps, 'disabled'> {
+  /**
+   * @en Whether the current step node is disabled
+   * @cn 当前步骤节点是否被禁用
+   */
+  disabled?: boolean | ((index: number, id?: any) => boolean);
 }
