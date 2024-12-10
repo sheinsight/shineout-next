@@ -82,6 +82,11 @@ export interface StepsProps extends Pick<CommonType, 'className' | 'style' | 'si
    * @cn 步骤切换的回调,配置该属性可让步骤条可点击
    */
   onChange?: (index: number) => void;
+  /**
+   * @en Whether the current step node is disabled
+   * @cn 当前步骤节点是否被禁用，支持传入函数进行判断。优先级低于 Step 上的 disabled
+   */
+  disabled?: boolean | ((index: number, id: any) => boolean);
 }
 
 export interface StepStyleProps
