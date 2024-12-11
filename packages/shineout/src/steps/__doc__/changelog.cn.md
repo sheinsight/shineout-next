@@ -1,3 +1,9 @@
+## 3.5.4-beta.12
+2024-12-10
+### 💎 Enhancement
+
+- 优化 `Steps` 组件 `disabled` 用法，`Steps` 支持传入 boolean 或 function 类型，`Step` 支持传入 boolean 类型且优先级大于 `Steps` ([#860](https://github.com/sheinsight/shineout-next/pull/860))
+
 ## 3.5.4-beta.7
 2024-12-06
 ### 🐞 BugFix
