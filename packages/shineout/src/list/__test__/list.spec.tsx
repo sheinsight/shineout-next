@@ -238,7 +238,7 @@ describe('List[Fixed]', () => {
       styleContentTest(item, `height: ${defaultLineHeight}px;`);
     });
 
-    styleTest(listScrollMain.firstElementChild as Element, 'transform: translate3d(0, -0px, 0);');
+    styleTest(listScrollMain.firstElementChild as Element, 'height: 32px;');
     fireEvent.scroll(listScroll, { target: { scrollTop } });
     // await waitFor(async () => {
     //   await delay(200);
