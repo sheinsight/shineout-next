@@ -7,7 +7,6 @@ interface scrollProps {
   scrollWidth: number | string;
   height?: number | string;
   children: React.ReactNode;
-  childrenStyle?: React.CSSProperties;
   wrapperRef?: React.RefObject<HTMLDivElement>;
   onScroll?: (info: {
     scrollLeft: number;
@@ -50,7 +49,7 @@ const Scroll = (props: scrollProps) => {
   const containerStyle = {
     height: '100%',
     width: '100%',
-    display: 'inline-flex',
+    display: 'inline-block',
     overflow: 'hidden',
     position: 'sticky',
     [isRtl ? 'right' : 'left']: 0,
@@ -147,7 +146,7 @@ const Scroll = (props: scrollProps) => {
           ref={containerRef}
           onScroll={handleInnerScroll}
         >
-          <div style={{ flexGrow: 1, ...props.childrenStyle }}>{props.children}</div>
+          {props.children}
         </div>
         <div style={placeStyle}>&nbsp;</div>
       </div>
