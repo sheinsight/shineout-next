@@ -1,15 +1,9 @@
-## 3.5.4-beta.8
-2024-12-06
+## 3.5.4
+2024-12-12
 
 ### 🐞 BugFix
 
 - 修复 `DatePicker` 开启 `quickSelect` 模式下选择快速选项后清空值的问题 ([#855](https://github.com/sheinsight/shineout-next/pull/855))
-
-## 3.5.4-beta.6
-2024-12-06
-
-### 🐞 BugFix
-
 - 修复 `DatePicker` 开启 `inputable` 和 `range` 后无法输入合法日期的问题 ([#853](https://github.com/sheinsight/shineout-next/pull/853))
 
 
