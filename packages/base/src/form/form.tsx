@@ -35,11 +35,6 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     return formFunc.validateFields(fields as string | string[], { type: 'withValue' });
   });
 
-  const [renderKey, setRenderKey] = useState(0)
-  const handleOuterSet = useCallback((vals: { [key: string]: any }) => {
-    formFunc.setValue(vals)
-    setRenderKey(prev => prev + 1)
-  }, [formFunc])
 
   const formRefObj = useLatestObj({
     clearValidate: formFunc.clearValidate,
@@ -50,7 +45,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     validateFields,
     validateFieldsWithValue,
     validateFieldsWithError: formFunc.validateFields,
-    set: handleOuterSet,
+    set: formFunc.setValue,
     scrollToField: formFunc.scrollToField
   });
 
@@ -118,7 +113,6 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
       // 从formProps中剔除onSubmit, 改为addEventListener方式添加监听，这样做之后，嵌套的子form也可以触发onSubmit
       {...util.removeProps(formProps, { onSubmit: true })}
       ref={formElRef}
-      key={renderKey}
     >
       <Provider {...ProviderProps}>
         <FormContext.Provider value={formRefObj}>{children}</FormContext.Provider>
