@@ -178,6 +178,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         height={height}
         scrollWidth={0}
         scrollHeight={scrollHeight}
+        childrenStyle={{ width: '100%' }}
         wrapperRef={wrapperRef}
         onScroll={handleScroll}
         onMouseMove={handleMouseMove}

@@ -371,7 +371,7 @@ const Tr = (props: TrProps) => {
             data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
           >
-            {isRowSpanTd ? <div style={{ height: 0 }}>{$tdContent}</div> : $tdContent}
+            {$tdContent}
           </td>
         );
         tds.push(td);

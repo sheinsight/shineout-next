@@ -1,96 +1,72 @@
 /**
- * cn - 虚拟滚动内测
- *    -- 虚拟列表提供了一个 scrollToIndex 方法滚动到指定行
+ * cn - 动态增减行
+ *    -- 测试动态添加或删除行之后表格是否闪烁
  * en - scrollToIndex
  *    -- The virtual list table provides a scrollToIndex method to scroll to the specified row
  */
-import React, { useState, useEffect } from 'react';
-import { Input, Table, Form, TYPE, Button } from 'shineout';
-import { user } from '@sheinx/mock';
+import { useState } from 'react';
+import { Table } from 'shineout';
 
-interface TableRowData {
-  id: number;
-  time: string;
-  start: string;
-  height: number;
-  salary: number;
-  office: string;
-  country: string;
-  office5: string;
-  position: string;
-  lastName: string;
-  firstName: string;
-}
+const AA = () => {
+  const [list, setList] = useState([
+    { a: 1, id: 1 },
+    { a: 2, id: 2 },
+    { a: 3, id: 4 },
+  ]);
 
-type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
-
-const data: TableRowData[] = user.fetchSync(10000);
-
-const columns: TableColumnItem[] = [
-  { title: 'id', render: 'id', width: 80 },
-  {
-    title: 'Name',
-    fixed: 'left',
-    render: (d) => (
-      <div id={`name_${d.id}`} style={{ height: d.height }}>
-        {`${d.firstName} ${d.lastName}`}
-      </div>
-    ),
-    width: 160,
-  },
-  { title: 'Country', render: 'country' },
-  { title: 'Position', render: 'position' },
-  { title: 'Office', render: 'office' },
-  { title: 'Start Date', render: 'start', width: 140 },
-];
-
-const App: React.FC = () => {
-  const [table, setTable] = useState<any>();
-
-  const [state, setState] = useState({
-    index: 25,
-  });
-
-  const handleScroll = () => {
-    if (table)
-      table.scrollToIndex(state.index - 1, () => {
-        const el: HTMLElement = document.querySelector(`#name_${state.index}`)!;
-        if (el) {
-          el.style.color = 'red';
-        }
-      });
-  };
-
-  const handleIndexChange = ({ index }: { index: number }) => {
-    setState({ index });
-  };
-
-  useEffect(() => {
-    setTimeout(handleScroll);
-  }, [state]);
+  const columns = [
+    { title: 'col1', render: 'a' },
+    {
+      title: 'operate',
+      render: (_d, i) => (
+        <div style={{ height: 100 }}>
+          <button
+            onClick={() =>
+              setList((pre) => {
+                const temp = [...pre];
+                temp.splice(i, 1);
+                return temp;
+              })
+            }
+          >
+            remove
+          </button>
+          <button onClick={() => {
+            setList((pre) => {
+              const temp = [...pre];
+              temp.splice(i, 0, { a: Math.random().toString(32), id: Math.random() * 100000 });
+              return temp;
+            })
+          }}>
+            add row
+          </button>
+        </div>
+      ),
+    },
+  ];
 
   return (
-    <div>
-      <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
-        <Input.Number min={1} max={10000} width={100} name='index' />
-        <Button type='primary' htmlType='submit'>
-          Scroll
-        </Button>
-      </Form>
-
-      <Table
-        keygen='id'
-        bordered
-        data={data}
-        virtual
-        width={1400}
-        rowsInView={4}
-        columns={columns}
-        style={{ height: 500 }}
-        tableRef={(t) => setTable(t)}
-      />
+    <div
+      style={{
+        height: 1000,
+        background: '#ccc',
+        padding: 20,
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <div style={{ height: 100 }}></div>
+      <div style={{ padding: 20, background: 'red' }}>
+        <Table
+          style={{ flex: 1 }}
+          data={list}
+          columns={columns}
+          keygen='id'
+          sticky={{ css: true, top: 0 }}
+        />
+      </div>
     </div>
   );
 };
 
-export default App;
+export default AA;
