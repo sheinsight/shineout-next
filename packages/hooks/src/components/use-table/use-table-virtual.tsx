@@ -159,7 +159,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       context.rowSpanRows = 0;
       const currentRowHeight = context.cachedHeight[i] || props.rowHeight;
       sum += currentRowHeight;
-      let rowSpanHeight = currentRowHeight;
+      let rowSpanHeight = 0;
       if (rowSpanInfo) {
         const siblingsIndexs = [];
         for (let k = i; k < rowSpanInfo.maxRowSpan + i; k++) {
@@ -185,6 +185,14 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
     if (currentIndex !== startIndex) {
       setStartIndex(currentIndex);
+
+      // startIndex处于上方某个合并行的中间一行时，可能引起translate闪烁
+      if(startIndex < currentIndex){
+        context.autoAddRows = currentIndex - startIndex
+        setTimeout(() => {
+          context.autoAddRows = 0
+        }, 300);
+      }
     }
     setTop(top);
   };
