@@ -96,8 +96,29 @@ const columns: TableColumnItem[] = [
   {
     title: t('订单标签'),
     rowSpan: orderRow,
-    width: 120,
-    render: (row) => '订单标签',
+    width: 200,
+    render: (row) => (
+      <div style={{ display: 'grid', gap: '2px 12px', gridTemplateColumns: 'repeat(1, 1fr)' }}>
+        <div className="items-start" style={{ gridColumn: 'span 1' }}>
+          <span className="text-neutral-6">
+            平台收货仓库<span className="px-1">:</span>
+          </span>
+          <span className="flex-1 break-all inline-block">佛山仓</span>
+        </div>
+        <div className="items-start" style={{ gridColumn: 'span 1' }}>
+          <span className="text-neutral-6">
+            下单时间<span className="px-1">:</span>
+          </span>
+          <span className="flex-1 break-all inline-block">2024-11-06 06:29:21</span>
+        </div>
+        <div className="items-start" style={{ gridColumn: 'span 1' }}>
+          <span className="text-neutral-6">
+            当前耗时<span className="px-1">:</span>
+          </span>
+          <span className="flex-1 break-all inline-block">726</span>
+        </div>
+      </div>
+    ),
     // hidden: isPartiallyStockToShein,
     group: t('履约信息'),
   },
@@ -359,7 +380,7 @@ const App: React.FC = () => {
           data={data}
           keygen={(item, index: number) => `${item.orderId}-${index}`}
           columns={columns}
-          width={2000}
+          width={3480}
           rowHeight={120}
           hover={false}
           virtual
