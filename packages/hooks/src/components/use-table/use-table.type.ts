@@ -36,10 +36,23 @@ export interface BaseTableProps<Item> {
 
   /**
    * @en Tree Table expand icon
-   * @cn 树形数据展开图标，函数返回null时隐藏展开图标
+   * @cn 树形数据展开图标，函数返回 null 时隐藏展开图标
    * @version 3.5.0
    */
   treeExpandIcon?: (data: Item, index: number, isExpanded: boolean) => React.ReactNode;
+
+  /**
+   * @en Table expand icon
+   * @cn 自定义渲染可展开行的图标内容，其中 data 为当前行的数据，index 为数据下标，isExpanded 为当前行的展开状态，expandInstance 为原始展开行图标实例，clickEvent 为展开事件。展开事件 clickEvent 仅在列类型为 `expand` 时返回
+   * @version 3.5.4
+   */
+  expandIcon?: (
+    data: Item,
+    index: number,
+    isExpanded: boolean,
+    expandInstance: React.ReactNode,
+    clickEvent?: () => void,
+  ) => React.ReactNode;
 
   /**
    * @en Tree Table data loader

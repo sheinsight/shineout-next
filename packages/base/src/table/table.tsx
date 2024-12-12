@@ -305,6 +305,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       expandKeys: props.expandKeys,
       datum: datum,
       treeEmptyExpand: props.treeEmptyExpand,
+      expandIcon: props.expandIcon,
       treeExpandIcon: props.treeExpandIcon,
       loader: props.loader,
       isEmptyTree: isEmptyTree,

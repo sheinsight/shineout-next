@@ -14,6 +14,7 @@ export interface TbodyProps
     | 'expandKeys'
     | 'keygen'
     | 'treeEmptyExpand'
+    | 'expandIcon'
     | 'treeExpandIcon'
     | 'loader'
     | 'striped'
