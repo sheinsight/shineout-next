@@ -56,15 +56,26 @@ const App: React.FC = () => {
   const [form, setForm] = Form.useForm();
 
   const handleChange = (v: Value) => {
+    console.log('======================')
+    console.log('handleFormChange: >>', v)
+    console.log('======================')
     setValue(v);
   };
 
   const setFriends = () => {
     form.set({
-      friends: [{ name: 'Hermione Granger', age: '16' }, {}]
+      friends: [{name: '123', age: '456'}]
     })
   }
 
+  const getValues = () => {
+    console.log('getvalues friends: >>', JSON.stringify(form.getValue('friends'), null, 2))
+    console.log('getvalues all: >>', JSON.stringify(form.getValue(), null, 2))
+  }
+
+  // console.log('======================')
+  // console.log('formValue: >>', value)
+  // console.log('======================')
   return (
     <Form
       value={value}
@@ -76,12 +87,14 @@ const App: React.FC = () => {
       }}
     >
       <Button onClick={setFriends}>set friends</Button>
+      <Button onClick={getValues}>get values</Button>
       <Form.Item label='Name'>
         <Input name='name' defaultValue='Harry Potter' clearable />
       </Form.Item>
       <Form.Item label='age'>
         <Input type='number' name='age' defaultValue='20' clearable />
       </Form.Item>
+      {/* <Form.FieldSet name='abc'> */}
       <Form.Item label='Friends'>
         <Form.FieldSet
           name='friends'
@@ -92,7 +105,7 @@ const App: React.FC = () => {
               </button>
             );
           }}
-          defaultValue={[{ name: 'Hermione Granger', age: '16' }, {}]}
+          defaultValue={[{ name: 'Hermione Granger', age: '16' }]}
         >
           {({ onAppend, onRemove }) => (
             <Form.Item style={{ marginBottom: 12 }}>
@@ -128,6 +141,7 @@ const App: React.FC = () => {
           )}
         </Form.FieldSet>
       </Form.Item>
+      {/* </Form.FieldSet> */}
       <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
         <Form.Submit>Submit</Form.Submit>
         <Form.Reset>Reset</Form.Reset>
