@@ -22,9 +22,26 @@ function orderRow(a: OrderRowItem, b: OrderRowItem, mergeSummary = false) {
 
 type TableColumnItem = TYPE.Table.ColumnItem<any>;
 
-// 取第10条到第23条
-const data = testData;
-const specIndex = data.findIndex((item) => item.sellerOrderNo === 'PB2411200000029');
+
+const App: React.FC = () => {
+  const [table, setTable] = useState<any>();
+  const [data, setData] = useState(testData);
+  const [state, setState] = useState({
+    index: 25,
+  });
+
+  const specIndex = data.findIndex((item) => item.sellerOrderNo === 'PB2411200000029');
+
+  const handleDeleteRow = (index) => {
+    setData(data.filter((item, idx) => idx !== index));
+  }
+
+  const handleAddRow = (index) => {
+    const source = data[index]
+    const newData = {...source, orderId: source.orderId+Math.random().toString(32)};
+    setData([...data.slice(0, index), newData, ...data.slice(index)]);
+  }
+
 const columns: TableColumnItem[] = [
   {
     type: 'checkbox',
@@ -327,20 +344,17 @@ const columns: TableColumnItem[] = [
   },
   {
     title: t('备注'),
+    fixed: 'right',
     rowSpan: orderRow,
-    render: 'remark',
+    render: (row, index) => <div>
+      <Button onClick={() => {handleDeleteRow(index)}}>delete row</Button>
+      <Button onClick={() => {handleAddRow(index)}}>add row</Button>
+      </div>,
     group: t('其他信息'),
     // ellipsis: { rows: 3 },
     width: 150,
   },
 ];
-
-const App: React.FC = () => {
-  const [table, setTable] = useState<any>();
-
-  const [state, setState] = useState({
-    index: 25,
-  });
 
   const handleScroll = () => {
     if (table)
@@ -382,7 +396,7 @@ const App: React.FC = () => {
           columns={columns}
           width={3480}
           rowHeight={120}
-          hover={false}
+          hover
           virtual
           bordered
           rowsInView={20}

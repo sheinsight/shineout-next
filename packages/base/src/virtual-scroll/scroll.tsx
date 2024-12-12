@@ -20,6 +20,7 @@ interface scrollProps {
   onScrollToBottom?: (options?: any) => void;
   className?: string;
   style?: React.CSSProperties;
+  childrenStyle?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
   onMouseMove?: () => void;
   defaultHeight?: number;
@@ -36,7 +37,7 @@ const Scroll = (props: scrollProps) => {
     isMouseDown: false,
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
-  const { width, height: h } = useResize({ targetRef: containerRef, timer: 0 });
+  const { width, height: h } = useResize({ targetRef: containerRef, timer: 100 });
   const height = h || defaultHeight;
   const config = useConfig();
   const isRtl = config.direction === 'rtl';
@@ -49,7 +50,7 @@ const Scroll = (props: scrollProps) => {
   const containerStyle = {
     height: '100%',
     width: '100%',
-    display: 'inline-block',
+    display: 'inline-flex',
     overflow: 'hidden',
     position: 'sticky',
     [isRtl ? 'right' : 'left']: 0,
@@ -146,7 +147,9 @@ const Scroll = (props: scrollProps) => {
           ref={containerRef}
           onScroll={handleInnerScroll}
         >
-          {props.children}
+          <div style={{ flexGrow: 1, ...props.childrenStyle }}>
+            {props.children}
+          </div>
         </div>
         <div style={placeStyle}>&nbsp;</div>
       </div>
