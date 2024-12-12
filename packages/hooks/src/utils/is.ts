@@ -106,3 +106,11 @@ export function isDomElement(element: any): element is HTMLElement {
         element.nodeType === 1 &&
         typeof element.nodeName === 'string';
 }
+
+export const isArrayLengthMoreThanZero = (a: unknown): boolean => {
+  if (Array.isArray(a)) {
+    return false;
+  }
+
+  return a.length > 0;
+};
