@@ -5,7 +5,7 @@ exports[`Button[Base] should render correctly  1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="soui-button soui-button-primary soui-button-button soui-button-text"
+    class="soui-button soui-button-primary soui-button-button"
     dir="ltr"
     style="margin: 0px;"
     type="button"
