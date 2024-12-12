@@ -1,3 +1,9 @@
+## 3.5.4-beta.15
+2024-12-12
+
+### 🆕 Feature
+- `Table` 新增 `expandIcon` 属性，支持自定义渲染可展开行的 icon 区域内容 ([#864](https://github.com/sheinsight/shineout-next/pull/864))
+
 ## 3.5.4-beta.14
 2024-12-12
 
