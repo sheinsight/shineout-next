@@ -8,11 +8,11 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form, Input, Table, TYPE } from 'shineout';
 import testData from './test-data-online';
 
-function t(v){
-  return v
+function t(v) {
+  return v;
 }
 
-type OrderRowItem = any
+type OrderRowItem = any;
 
 function orderRow(a: OrderRowItem, b: OrderRowItem, mergeSummary = false) {
   return mergeSummary
@@ -22,9 +22,26 @@ function orderRow(a: OrderRowItem, b: OrderRowItem, mergeSummary = false) {
 
 type TableColumnItem = TYPE.Table.ColumnItem<any>;
 
-// 取第10条到第23条
-const data = testData
-const specIndex = data.findIndex(item => item.sellerOrderNo === 'PB2411200000029')
+
+const App: React.FC = () => {
+  const [table, setTable] = useState<any>();
+  const [data, setData] = useState(testData);
+  const [state, setState] = useState({
+    index: 25,
+  });
+
+  const specIndex = data.findIndex((item) => item.sellerOrderNo === 'PB2411200000029');
+
+  const handleDeleteRow = (index) => {
+    setData(data.filter((item, idx) => idx !== index));
+  }
+
+  const handleAddRow = (index) => {
+    const source = data[index]
+    const newData = {...source, orderId: source.orderId+Math.random().toString(32)};
+    setData([...data.slice(0, index), newData, ...data.slice(index)]);
+  }
+
 const columns: TableColumnItem[] = [
   {
     type: 'checkbox',
@@ -47,7 +64,9 @@ const columns: TableColumnItem[] = [
     width: 230,
     fixed: 'left',
     rowSpan: (a, b) => orderRow(a, b, true),
-    render: (row) => <div style={{background:'#ccc', borderRadius: 8, height: 300}}>{row.sellerOrderNo}</div>,
+    render: (row) => (
+      <div style={{ background: '#ccc', borderRadius: 8, height: 300 }}>{row.sellerOrderNo}</div>
+    ),
     keygen: t('订单基本信息'),
     group: `${t('基本信息')} (${t('订单数')}:${testData.length ?? 0})`,
     groupKeygen: t('基本信息'),
@@ -55,7 +74,7 @@ const columns: TableColumnItem[] = [
   {
     title: 'SKU',
     width: 180,
-    render: () => 'ORDER_LIST_SKU',
+    render: 'sellerOrderNo',
     group: t('商品信息'),
     colSpan: (row) => (row.isSummary ? 2 : 1),
   },
@@ -73,7 +92,7 @@ const columns: TableColumnItem[] = [
       //   return '';
       // }
       // return [row.currencyCode, row.supplyPrice].filter(Boolean).join(' ');
-      return '单价'
+      return '单价';
     },
     // hidden: isPartiallyStockToShein,
     keygen: t('单价'),
@@ -94,8 +113,29 @@ const columns: TableColumnItem[] = [
   {
     title: t('订单标签'),
     rowSpan: orderRow,
-    width: 120,
-    render: (row) => '订单标签',
+    width: 200,
+    render: (row) => (
+      <div style={{ display: 'grid', gap: '2px 12px', gridTemplateColumns: 'repeat(1, 1fr)' }}>
+        <div className="items-start" style={{ gridColumn: 'span 1' }}>
+          <span className="text-neutral-6">
+            平台收货仓库<span className="px-1">:</span>
+          </span>
+          <span className="flex-1 break-all inline-block">佛山仓</span>
+        </div>
+        <div className="items-start" style={{ gridColumn: 'span 1' }}>
+          <span className="text-neutral-6">
+            下单时间<span className="px-1">:</span>
+          </span>
+          <span className="flex-1 break-all inline-block">2024-11-06 06:29:21</span>
+        </div>
+        <div className="items-start" style={{ gridColumn: 'span 1' }}>
+          <span className="text-neutral-6">
+            当前耗时<span className="px-1">:</span>
+          </span>
+          <span className="flex-1 break-all inline-block">726</span>
+        </div>
+      </div>
+    ),
     // hidden: isPartiallyStockToShein,
     group: t('履约信息'),
   },
@@ -270,7 +310,7 @@ const columns: TableColumnItem[] = [
       // ) {
       //   return row?.skuExt?.inventoryAbleSaleDays;
       // }
-      return '可售天数'
+      return '可售天数';
     },
     width: 120,
     group: t('其他信息'),
@@ -304,69 +344,66 @@ const columns: TableColumnItem[] = [
   },
   {
     title: t('备注'),
+    fixed: 'right',
     rowSpan: orderRow,
-    render: 'remark',
+    render: (row, index) => <div>
+      <Button onClick={() => {handleDeleteRow(index)}}>delete row</Button>
+      <Button onClick={() => {handleAddRow(index)}}>add row</Button>
+      </div>,
     group: t('其他信息'),
     // ellipsis: { rows: 3 },
     width: 150,
   },
-]
+];
 
+  const handleScroll = () => {
+    if (table)
+      table.scrollToIndex(state.index - 1, () => {
+        const el: HTMLElement = document.querySelector(`#name_${state.index}`)!;
+        if (el) {
+          el.style.color = 'red';
+        }
+      });
+  };
 
-const App: React.FC = () => {
-const [table, setTable] = useState<any>();
+  const handleIndexChange = ({ index }: { index: number }) => {
+    setState({ index });
+  };
 
-const [state, setState] = useState({
-  index: 25,
-});
+  useEffect(() => {
+    setTimeout(handleScroll);
+  }, [state]);
 
-const handleScroll = () => {
-  if (table)
-    table.scrollToIndex(state.index - 1, () => {
-      const el: HTMLElement = document.querySelector(`#name_${state.index}`)!;
-      if (el) {
-        el.style.color = 'red';
-      }
-    });
-};
+  return (
+    <div>
+      <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
+        <Input.Number min={1} max={10000} width={100} name='index' />
+        <Button type='primary' htmlType='submit'>
+          Scroll
+        </Button>
+        <strong>表格数据总条数：{data.length}</strong>
 
-const handleIndexChange = ({ index }: { index: number }) => {
-  setState({ index });
-};
+        <strong>specIndex: {specIndex}</strong>
+      </Form>
 
-useEffect(() => {
-  setTimeout(handleScroll);
-}, [state]);
-
-
-return (
-  <div>
-    <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
-      <Input.Number min={1} max={10000} width={100} name='index' />
-      <Button type='primary' htmlType='submit'>
-        Scroll
-      </Button>
-      <strong>表格数据总条数：{data.length}</strong>
-
-      <strong>specIndex: {specIndex}</strong>
-    </Form>
-
-    <div style={{height: 500}}>
-      <Table
-        tableRef={(t) => setTable(t)}
-        bordered
-        height="100%"
-        style={{width: '100%'}}
-        data={data}
-        keygen={(item, index:number) => `${item.orderId}-${index}`}
-        columns={columns}
-        width={2000}
-        virtual
-        rowsInView={10}
-      />
+      <div style={{ height: 500 }}>
+        <Table
+          tableRef={(t) => setTable(t)}
+          height='100%'
+          style={{ width: '100%' }}
+          data={data}
+          keygen={(item, index: number) => `${item.orderId}-${index}`}
+          columns={columns}
+          width={3480}
+          rowHeight={120}
+          hover
+          virtual
+          bordered
+          rowsInView={20}
+        />
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default App;

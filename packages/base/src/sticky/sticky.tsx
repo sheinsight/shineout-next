@@ -219,7 +219,7 @@ const Sticky = (props: StickyProps) => {
     cancelFixedObserver();
     context.fixedObserver = new IntersectionObserver(handleFixedInter, {
       root: null,
-      rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
+      rootMargin: `${-(top || 0)}px 0px ${-(bottom || 0)}px 0px`,
       threshold: 1.0,
     });
   };
@@ -257,7 +257,7 @@ const Sticky = (props: StickyProps) => {
       if (window.IntersectionObserver) {
         const observer = new IntersectionObserver(handleTargetPosition, {
           root: context.target,
-          rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
+          rootMargin: `${-(top || 0)}px 0px ${-(bottom || 0)}px 0px`,
           threshold: 1.0,
         });
         context.targetObserver = observer;
@@ -277,7 +277,7 @@ const Sticky = (props: StickyProps) => {
     cancelParentObserver();
     context.parentObserver = new IntersectionObserver(handleParentVisible, {
       root: context.target,
-      rootMargin: `-${top || 0}px 0px -${bottom || 0}px 0px`,
+      rootMargin: `${-(top || 0)}px 0px ${-(bottom || 0)}px 0px`,
       threshold: 0,
     });
     context.parentObserver.observe(props.parent);

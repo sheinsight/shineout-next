@@ -1,7 +1,7 @@
-import { FormContext, useForm, useInputAble, useLatestObj, usePersistFn } from '@sheinx/hooks';
+import { FormContext, useForm, useInputAble, useLatestObj, usePersistFn, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { useFormFooter } from './form-footer-context';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import type { FormProps } from './form.type';
 import type { ObjectType } from '@sheinx/hooks';
@@ -34,6 +34,8 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const validateFieldsWithValue = usePersistFn((fields?: keyof V | Array<keyof V>) => {
     return formFunc.validateFields(fields as string | string[], { type: 'withValue' });
   });
+
+
   const formRefObj = useLatestObj({
     clearValidate: formFunc.clearValidate,
     getValue: formFunc.getValue,
@@ -87,12 +89,30 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     props.inline && formClasses?.wrapperInline,
   ]);
 
+  const formProps = getFormProps({
+    className: rootClass,
+    style,
+  })
+
+  const formElRef = useRef<HTMLFormElement>(null)
+  useEffect(() => {
+    if (formElRef.current instanceof HTMLFormElement) {
+      formElRef.current.addEventListener('submit', formProps.onSubmit)
+    }
+
+    return () => {
+      if (formElRef.current instanceof HTMLFormElement) {
+        formElRef.current.removeEventListener('submit', formProps.onSubmit)
+      }
+    }
+
+  }, [formProps.onSubmit])
+
   return (
     <form
-      {...getFormProps({
-        className: rootClass,
-        style,
-      })}
+      // 从formProps中剔除onSubmit, 改为addEventListener方式添加监听，这样做之后，嵌套的子form也可以触发onSubmit
+      {...util.removeProps(formProps, { onSubmit: true })}
+      ref={formElRef}
     >
       <Provider {...ProviderProps}>
         <FormContext.Provider value={formRefObj}>{children}</FormContext.Provider>

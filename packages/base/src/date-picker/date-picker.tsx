@@ -43,8 +43,10 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   const [oldDateArr, setOldDateArr] = React.useState<(Date | undefined)[]>([]);
   const inputRef = useRef<{
     inputRef: HTMLInputElement | null;
+    inputRefs: (HTMLInputElement | null)[];
   }>({
     inputRef: null,
+    inputRefs: [],
   });
 
   const styles = jssStyle?.datePicker?.();
@@ -74,6 +76,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   });
 
   const {
+    inputArr,
     resultArr,
     targetResultArr,
     dateArr,
@@ -170,7 +173,9 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     if (isFromConfirm) {
       func.finishEdit();
     }
-    inputRef.current.inputRef?.blur();
+    inputRef.current.inputRefs.forEach((el) => {
+      el?.blur();
+    });
   };
 
   const handleResultClick = usePersistFn(() => {
@@ -303,7 +308,9 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
           <Picker
             setTargetArr={func.setTargetArr}
             dateArr={dateArr}
+            inputArr={inputArr}
             setDateArr={func.setDateArr}
+            onClearInputArr={func.handleClearInputArr}
             currentArr={currentArr}
             range={range}
             setCurrentArr={func.setCurrentArrWithParams}

@@ -1,3 +1,9 @@
+## 3.5.4
+2024-12-12
+
+### 🆕 Feature
+- 新增 `scopeNormalizeStyle` 方法，用于在组件外部重置初始化样式的作用域 ([#857](https://github.com/sheinsight/shineout-next/pull/857))
+
 ## 3.5.3
 2024-12-04
 

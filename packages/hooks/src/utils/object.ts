@@ -235,14 +235,34 @@ export const removeProps = <T extends ObjectType, K extends ObjectType>(target: 
   return a as Omit<T, keyof K>;
 };
 
+/**
+ * 获取数据对象的全量key路径
+ * @param obj 数据对象
+ * @param parentKey 父级key
+ * @returns 全量key路径
+ * @example
+ * const obj = { a: { b: { c: 1 } } };
+ * const keys = getAllKeyPaths(obj);
+ * console.log(keys); // ['a.b.c', 'a.b', 'a']
+ */
 export const getAllKeyPaths = (obj: ObjectType, parentKey: string = ''): string[] => {
   return Object.keys(obj).reduce((keys: string[], key: string) => {
     const newKey = parentKey ? `${parentKey}.${key}` : key;
 
-    if(Array.isArray(obj[key])) {
-      return keys.concat(newKey);
+    if (Array.isArray(obj[key])) {
+      const childrenKeys = obj[key]
+        .map((item: any, index: number) => {
+          if (item !== null && typeof item === 'object') {
+            return getAllKeyPaths(item, `${newKey}[${index}]`);
+          }
+          return null;
+        })
+        .filter((item: string | null) => item !== null);
+      return keys.concat(...childrenKeys).concat(newKey);
     }
 
-    return keys.concat(obj[key] !== null && typeof obj[key] === 'object' ? getAllKeyPaths(obj[key], newKey) : newKey);
+    return keys.concat(
+      obj[key] !== null && typeof obj[key] === 'object' ? getAllKeyPaths(obj[key], newKey) : newKey,
+    );
   }, []);
 };

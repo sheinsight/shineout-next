@@ -14,6 +14,7 @@ const Steps = (props: StepsProps) => {
     className,
     type = 'default',
     size,
+    disabled,
     status,
     direction: directionProp = 'horizontal',
     labelPlacement: labelPlacementProp = 'vertical',
@@ -70,6 +71,7 @@ const Steps = (props: StepsProps) => {
           labelPlacement,
           size,
           type,
+          disabled,
           onChange,
         }}
       >

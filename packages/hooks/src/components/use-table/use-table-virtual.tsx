@@ -1,5 +1,5 @@
 import { usePersistFn } from '../../common/use-persist-fn';
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect, useMemo, useLayoutEffect } from 'react';
 import { TableFormatColumn } from './use-table.type';
 
 // 找出最大的连续数字的个数
@@ -11,7 +11,6 @@ function getMaxRowSpanLength(input: number[]) {
   return Math.max(...Array.from(map.values()));
 }
 
-const MAX_ROW_SPAN = 200;
 interface UseTableVirtualProps {
   data: any[];
   rowsInView: number;
@@ -43,7 +42,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     const totalLength = props.data.length;
     for (let i = 0; i < totalLength; i++) {
       let startIndex = i;
-      const rowSpanInfo = rowSpanColumns.map((col) => {
+      const _rowSpanInfo = rowSpanColumns.map((col) => {
         const { rowSpan } = col;
 
         function getRowSpanCount(index: number, _count: number) {
@@ -62,7 +61,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
 
         return [startIndex, startIndex + count - 1];
       });
-      _rowSpanInfos.push(rowSpanInfo);
+      _rowSpanInfos.push(_rowSpanInfo);
     }
 
     for (let i = 0; i < _rowSpanInfos.length; i++) {
@@ -83,11 +82,12 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       return Math.min(...startIndexs);
     });
 
-    const maxRowSpan = getMaxRowSpanLength(resultArr)
+    // 根据data计算出实际需要的最大合并行数
+    const _maxRowSpan = getMaxRowSpanLength(resultArr)
 
-    return maxRowSpan > 1 ? {
+    return _maxRowSpan > 1 ? {
       rowSpanIndexArray: resultArr,
-      maxRowSpan,
+      maxRowSpan: _maxRowSpan,
     } : null;
   }, [props.data, props.columns]);
 
@@ -154,30 +154,26 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     let top = 0;
     const maxIndex = Math.max(props.data.length - rowsInView, 0);
 
-    let maxRowSpanLenth = 0;
-    if(rowSpanInfo){
-      maxRowSpanLenth = Math.min(
-        rowSpanInfo.rowSpanIndexArray.length,
-        // 根据data计算出实际需要的最大合并行数（rowSpanInfo.maxRowSpan），当rowSpanInfo.maxRowSpan大于外部传的rowsInView时，使用rowSpanInfo.maxRowSpan
-        Math.max(rowSpanInfo.maxRowSpan, props.rowsInView > MAX_ROW_SPAN ? props.rowsInView : props.rowsInView || MAX_ROW_SPAN),
-      )
-    }
-
+    const scrollContainerHeight = Math.max(props.scrollRef.current?.clientHeight || 0, 200);
     for (let i = 0; i <= maxIndex; i++) {
       context.rowSpanRows = 0;
-      sum += context.cachedHeight[i] || props.rowHeight;
+      const currentRowHeight = context.cachedHeight[i] || props.rowHeight;
+      sum += currentRowHeight;
       let rowSpanHeight = 0;
       if (rowSpanInfo) {
         const siblingsIndexs = [];
-        for (let k = i; k < maxRowSpanLenth + i; k++) {
+        for (let k = i; k < rowSpanInfo.maxRowSpan + i; k++) {
           if (rowSpanInfo.rowSpanIndexArray[k] <= i && k > i) {
             siblingsIndexs.push(k);
           }
         }
         for (let j = 0; j < siblingsIndexs.length; j++) {
+          // 在当前滚动容器滚动一屏上方销毁tr，不在可见区域内销毁重建，避免引起可见的单元格（合并的）内容闪烁
+          if(rowSpanHeight < scrollContainerHeight) {
           const index = siblingsIndexs[j];
           context.rowSpanRows += 1;
           rowSpanHeight += context.cachedHeight[index] || props.rowHeight;
+        }
         }
       }
       if (scrollTop < sum + rowSpanHeight || i === maxIndex) {
@@ -189,6 +185,14 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
     if (currentIndex !== startIndex) {
       setStartIndex(currentIndex);
+
+      // startIndex处于上方某个合并行的中间一行时，可能引起translate闪烁
+      if(startIndex < currentIndex){
+        context.autoAddRows = currentIndex - startIndex
+        setTimeout(() => {
+          context.autoAddRows = 0
+        }, 300);
+      }
     }
     setTop(top);
   };

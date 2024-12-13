@@ -13,9 +13,11 @@ export interface PickerProps {
   minuteStep?: DatePickerProps<any>['minuteStep'];
   secondStep?: DatePickerProps<any>['secondStep'];
   children?: DatePickerProps<any>['children'];
+  onClearInputArr: (index?: number | undefined) => void;
   format: string;
   type: string;
   dateArr: Array<Date | undefined>;
+  inputArr: (Date | undefined)[];
   setTargetArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   setDateArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   currentArr: Date[];
@@ -53,7 +55,17 @@ export interface PickerProps {
 export interface CommonPickerProps
   extends Pick<
     PickerProps,
-    'jssStyle' | 'options' | 'format' | 'type' | 'showSelNow' | 'range' | 'setClickTimes' | 'clickTimes' | 'needConfirm' | 'registerModeDisabled' | 'children'
+    | 'jssStyle'
+    | 'options'
+    | 'format'
+    | 'type'
+    | 'showSelNow'
+    | 'range'
+    | 'setClickTimes'
+    | 'clickTimes'
+    | 'needConfirm'
+    | 'registerModeDisabled'
+    | 'children'
   > {
   rangeDate: Array<Date | undefined>;
   current: Date;
@@ -71,6 +83,7 @@ export interface CommonPickerProps
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   closeByConfirm?: () => void;
+  onClearInputArr: (index?: number | undefined) => void;
 }
 
 export interface CommonTimeProps

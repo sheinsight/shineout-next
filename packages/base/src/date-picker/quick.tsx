@@ -5,7 +5,8 @@ import { dateUtil, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 
 const Quick = (props: QuickProps) => {
-  const { jssStyle, quickSelect, format, options, children, type, closePop } = props;
+  const { jssStyle, quickSelect, format, onClearInputArr, options, children, type, closePop } =
+    props;
   const styles = jssStyle?.datePicker?.();
   const quickDateCache = useRef<DatePickerValueType>();
   const quickActiveKey = useRef<number>();
@@ -26,7 +27,7 @@ const Quick = (props: QuickProps) => {
     });
     props.setDateArr(dateArr);
     props.setCurrentArr(dateArr, 'quick', item);
-
+    onClearInputArr()
     if (immediate && closePop) {
       closePop();
     }

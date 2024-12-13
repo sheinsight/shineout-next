@@ -20,6 +20,7 @@ interface TrProps
     | 'treeFunc'
     | 'treeExpandLevel'
     | 'treeEmptyExpand'
+    | 'expandIcon'
     | 'treeExpandIcon'
     | 'loader'
     | 'isEmptyTree'
@@ -150,7 +151,7 @@ const Tr = (props: TrProps) => {
       setIsExpandLoading(true);
 
       try {
-        await props.loader(props.rawData, props.rowIndex)
+        await props.loader(props.rawData, props.rowIndex);
         treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
       } finally {
         setIsExpandLoading(false);
@@ -168,7 +169,9 @@ const Tr = (props: TrProps) => {
     const isExpanded = props.treeFunc.isTreeExpanded(props.rawData, props.rowIndex);
     const dirName = isRtl ? 'Right' : 'Left';
 
-    const shouldRenderPlain = !children && !props.loader || (children?.length === 0 && !props.treeEmptyExpand && !props.loader);
+    const shouldRenderPlain =
+      (!children && !props.loader) ||
+      (children?.length === 0 && !props.treeEmptyExpand && !props.loader);
 
     if (shouldRenderPlain) {
       return (
@@ -184,21 +187,21 @@ const Tr = (props: TrProps) => {
       );
     }
 
-    let $expandIcon
+    let $expandIcon;
     if (typeof props.treeExpandIcon === 'function') {
       $expandIcon = props.treeExpandIcon(props.rawData, props.rowIndex, isExpanded);
-    } else if(showLoader){
+    } else if (showLoader) {
       $expandIcon = Icons.table.Collapse;
-    } else if(children?.length > 0 || props.treeEmptyExpand) {
+    } else if (children?.length > 0 || props.treeEmptyExpand) {
       $expandIcon = isExpanded ? Icons.table.Expand : Icons.table.Collapse;
     }
 
-    if(isExpandLoading){
-      $expandIcon = <Spin size={12} jssStyle={props.jssStyle} name='ring' ignoreConfig></Spin>
+    if (isExpandLoading) {
+      $expandIcon = <Spin size={12} jssStyle={props.jssStyle} name='ring' ignoreConfig></Spin>;
     }
 
-    let $expandIconWrapper
-    if($expandIcon !== null){
+    let $expandIconWrapper;
+    if ($expandIcon !== null) {
       $expandIconWrapper = (
         <div className={classNames(tableClasses?.iconWrapper)}>
           <span
@@ -209,7 +212,7 @@ const Tr = (props: TrProps) => {
             {$expandIcon}
           </span>
         </div>
-      )
+      );
     }
 
     return (
@@ -226,13 +229,15 @@ const Tr = (props: TrProps) => {
         typeof col.render === 'function' ? col.render(props.rawData, props.rowIndex) : undefined;
 
       if (typeof renderResult !== 'function') return null;
+
       const clickEvent =
         col.type === 'expand'
           ? () => {
               props.handleExpandClick(col, props.rawData, props.rowIndex);
             }
           : undefined;
-      return (
+
+      const expandInstance = (
         <div
           className={classNames(tableClasses?.iconWrapper, tableClasses?.expandIconWrapper)}
           onClick={clickEvent}
@@ -242,50 +247,65 @@ const Tr = (props: TrProps) => {
           </span>
         </div>
       );
+
+      if (props.expandIcon && typeof props.expandIcon === 'function') {
+        const result = props.expandIcon(
+          props.rawData,
+          props.rowIndex,
+          props.expanded,
+          expandInstance,
+          clickEvent,
+        );
+
+        return result;
+      }
+
+      return expandInstance;
     }
+
     if (col.type === 'checkbox') {
       const instance = (
         <div className={tableClasses?.iconWrapper}>
-          {
-            props.radio ? (
-              <Radio
-                jssStyle={props.jssStyle}
-                style={{ margin: 0 }}
-                checked={props.isSelect}
-                disabled={props.disabled}
-                onChange={(value: boolean) => {
-                  if (value) {
-                    props.datum.add(data);
-                  } else {
-                    props.datum.remove(data);
-                  }
-                }}
-              />
-            ) : (
-              <Checkbox
-                jssStyle={props.jssStyle}
-                disabled={props.disabled}
-                style={{ margin: 0 }}
-                checked={props.isSelect}
-                onChange={(_value, check) => {
-                  if (check) {
-                    props.datum.add(
-                      data,
-                      props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
-                    );
-                  } else {
-                    props.datum.remove(
-                      data,
-                      props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
-                    );
-                  }
-                }}
-              />
-            )
-          }
+          {props.radio ? (
+            <Radio
+              jssStyle={props.jssStyle}
+              style={{ margin: 0 }}
+              checked={props.isSelect}
+              disabled={props.disabled}
+              onChange={(value: boolean) => {
+                if (value) {
+                  props.datum.add(data);
+                } else {
+                  props.datum.remove(data);
+                }
+              }}
+            />
+          ) : (
+            <Checkbox
+              jssStyle={props.jssStyle}
+              disabled={props.disabled}
+              style={{ margin: 0 }}
+              checked={props.isSelect}
+              onChange={(_value, check) => {
+                if (check) {
+                  props.datum.add(
+                    data,
+                    props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
+                  );
+                } else {
+                  props.datum.remove(
+                    data,
+                    props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
+                  );
+                }
+              }}
+            />
+          )}
         </div>
       );
-      return typeof col.render === 'function' ? col.render(props.rawData, props.rowIndex, instance) : instance;
+      return typeof col.render === 'function'
+        ? col.render(props.rawData, props.rowIndex, instance)
+        : instance;
     }
 
     const content = util.render(col.render as any, data, props.rowIndex);
@@ -311,20 +331,22 @@ const Tr = (props: TrProps) => {
       if (data[i]) {
         const last = cols[i + (data[i].colSpan || 1) - 1] || {};
 
+        const isRowSpanTd = data[i].rowSpan > 1;
+        const $tdContent = renderContent(col, data[i].data);
         const td = (
           <td
             key={col.key}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
             onMouseEnter={
-              (props.hover && hasSiblingRowSpan) || data[i].rowSpan > 1
+              (props.hover && hasSiblingRowSpan) || isRowSpanTd
                 ? () => {
                     props.handleCellHover(props.rowIndex, data[i].rowSpan);
                   }
                 : undefined
             }
             onMouseLeave={
-              (props.hover && hasSiblingRowSpan) || data[i].rowSpan > 1
+              (props.hover && hasSiblingRowSpan) || isRowSpanTd
                 ? () => {
                     props.handleCellHover(-1, 0);
                   }
@@ -340,7 +362,7 @@ const Tr = (props: TrProps) => {
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
               props.hoverIndex.has(props.rowIndex) && tableClasses?.cellHover,
-              data[i].rowSpan > 1 &&
+              isRowSpanTd &&
                 props.isCellHover(props.rowIndex, data[i].rowSpan) &&
                 tableClasses?.cellHover,
             )}
@@ -349,7 +371,7 @@ const Tr = (props: TrProps) => {
             data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
           >
-            {renderContent(col, data[i].data)}
+            {$tdContent}
           </td>
         );
         tds.push(td);

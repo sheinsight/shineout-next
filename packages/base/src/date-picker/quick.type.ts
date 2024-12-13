@@ -11,5 +11,6 @@ export interface QuickProps {
   range: PickerProps['range'];
   options: PickerProps['options'];
   children?: PickerProps['children'];
+  onClearInputArr: (index?: number | undefined) => void;
   closePop?: (isFromConfirm?: boolean | undefined) => void;
 }

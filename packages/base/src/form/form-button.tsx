@@ -12,6 +12,12 @@ const FormButton = (props: ButtonProps) => {
     if (formFunc && props.htmlType === 'button') {
       formFunc.submit();
     }
+
+    if (formFunc && props.htmlType === 'reset') {
+      // 阻止默认的form reset，改用formFunc.reset。处理嵌套form的reset问题。
+      e.preventDefault();
+      formFunc.reset();
+    }
     if (props.onClick) {
       props.onClick(e);
     }

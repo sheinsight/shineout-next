@@ -25,6 +25,7 @@ const Picker = (props: PickerProps) => {
     type: props.type,
     defaultTime: props.defaultTime,
     range: props.range,
+    inputArr: props.inputArr,
     dateArr: props.dateArr,
     setDateArr: props.setDateArr,
     currentArr: props.currentArr,
@@ -62,6 +63,7 @@ const Picker = (props: PickerProps) => {
       setMode: position === 'end' ? func.setModeEnd : func.setModeStart,
       onChange: position === 'end' ? func.setDateEnd : func.setDateStart,
       setCurrent: position === 'end' ? func.setCurrentEnd : func.setCurrentStart,
+      onClearInputArr: props.onClearInputArr,
       type: props.type as any,
       format: props.format,
       disabled: position === 'end' ? func.endDisabled : func.startDisabled,
@@ -149,6 +151,7 @@ const Picker = (props: PickerProps) => {
           jssStyle={jssStyle}
           dateArr={dateArr}
           type={type}
+          onClearInputArr={props.onClearInputArr}
           setDateArr={props.setDateArr}
           setCurrentArr={props.setCurrentArr}
           format={props.format}

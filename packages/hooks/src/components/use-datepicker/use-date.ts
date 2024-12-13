@@ -11,7 +11,7 @@ interface Context {
   cachedDays: Date[];
 }
 const useDate = (props: UseDateProps) => {
-  const { options, type } = props;
+  const { options, position, type } = props;
   const [currentState, setCurrentState] = useState(props.defaultCurrent || new Date());
   const { current: context } = useRef<Context>({
     cachedMonth: undefined,
@@ -50,10 +50,10 @@ const useDate = (props: UseDateProps) => {
     return context.cachedDays;
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     // 当weekStartsOn从0变为1时，需要清空context.cachedDays, 否则会显示不正确的星期顺序
-    context.cachedDays =  []
-  }, [options.weekStartsOn])
+    context.cachedDays = [];
+  }, [options.weekStartsOn]);
 
   const handleNextYear = usePersistFn(() => {
     const date = utils.addYears(current, 1, options);
@@ -82,6 +82,7 @@ const useDate = (props: UseDateProps) => {
   const isDisabled = (date: Date) => {
     const { min, max, disabled } = props;
     let isDis = disabled && typeof disabled === 'function' ? disabled(date) : false;
+
     if (type === 'week') {
       // 选择周
       if (min && utils.compareWeek(date, min, 0, options) < 0) isDis = true;
@@ -92,6 +93,7 @@ const useDate = (props: UseDateProps) => {
     ) {
       isDis = true;
     }
+
     return isDis;
   };
 
@@ -126,6 +128,7 @@ const useDate = (props: UseDateProps) => {
     if (isDisabled(date)) return;
 
     let newDate = getDateWithTime(date);
+    props?.onClearInputArr(position === 'start' ? 0 : 1);
     props.onChange?.(newDate, noClose);
     setCurrent(newDate);
   };

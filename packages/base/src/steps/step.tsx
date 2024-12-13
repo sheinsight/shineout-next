@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { StepsClasses } from './steps.type';
 import { util } from '@sheinx/hooks';
-import { StepProps, BaseStepProps } from './step.type';
+import { StepPropsWidthContext, BaseStepProps } from './step.type';
 import { StepsStatusType } from './steps.type';
 import StepsContext from './steps-context';
 import DefaultStep from './step.default';
@@ -9,7 +9,7 @@ import DotStep from './step.dot';
 import ArrowStep from './step.arrow';
 import { useConfig } from '../config';
 
-const Step = (props: StepProps) => {
+const Step = (props: StepPropsWidthContext) => {
   const {
     id,
     jssStyle,
@@ -29,8 +29,12 @@ const Step = (props: StepProps) => {
     onClick,
     onChange,
   } = props;
+
   const config = useConfig();
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
+
+  const isDisabled = typeof disabled === 'function' ? disabled(index, id) : disabled;
+
   const getLabelPlacement = () => {
     // dot 类型只支持 vertical labelPlacement
     if (type === 'dot') {
@@ -54,7 +58,7 @@ const Step = (props: StepProps) => {
   const labelPlacement = getLabelPlacement();
 
   const rootClass = classNames(styles.step, className, styles[status], {
-    [styles.disabled]: disabled,
+    [styles.disabled]: isDisabled,
     // 即便是指定 status 也需要考虑是否为 finish 状态
     [styles.finish]: current > index,
     [styles.horizontalLabel]: labelPlacement === 'horizontal',
@@ -63,6 +67,7 @@ const Step = (props: StepProps) => {
   });
 
   const handleChange = (e: React.MouseEvent<HTMLElement>) => {
+    if (isDisabled) return;
     onClick?.(e, index, id);
     onChange?.(index);
   };
@@ -101,11 +106,22 @@ const Step = (props: StepProps) => {
     );
   };
 
-  return <div className={rootClass} dir={config.direction}>{renderStep()}</div>;
+  return (
+    <div className={rootClass} dir={config.direction}>
+      {renderStep()}
+    </div>
+  );
 };
 
 const StepWidthContext = (props: BaseStepProps) => {
-  return <StepsContext.Consumer>{(value) => <Step {...props} {...value} />}</StepsContext.Consumer>;
+  return (
+    <StepsContext.Consumer>
+      {(value) => {
+        const disabled = 'disabled' in props ? props.disabled : value.disabled;
+        return <Step {...props} {...value} disabled={disabled} />;
+      }}
+    </StepsContext.Consumer>
+  );
 };
 
 export default StepWidthContext;

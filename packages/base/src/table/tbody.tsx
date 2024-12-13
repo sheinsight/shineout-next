@@ -48,6 +48,7 @@ export default (props: TbodyProps) => {
         treeFunc={props.treeFunc}
         treeExpandLevel={props.treeExpandLevel}
         treeEmptyExpand={props.treeEmptyExpand}
+        expandIcon={props.expandIcon}
         treeExpandIcon={props.treeExpandIcon}
         loader={props.loader}
         isEmptyTree={props.isEmptyTree}

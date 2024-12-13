@@ -18,8 +18,6 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     tagClassName,
     dynamicVirtual,
     virtualRef,
-    // childrenStyle,
-    // wrapperRef,
     onControlTypeChange,
   } = props;
 
@@ -180,8 +178,8 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         height={height}
         scrollWidth={0}
         scrollHeight={scrollHeight}
-        wrapperRef={wrapperRef}
         childrenStyle={{ width: '100%' }}
+        wrapperRef={wrapperRef}
         onScroll={handleScroll}
         onMouseMove={handleMouseMove}
       >

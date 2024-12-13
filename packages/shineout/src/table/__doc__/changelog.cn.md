@@ -1,3 +1,17 @@
+## 3.5.4
+2024-12-12
+
+### 🆕 Feature
+- `Table` 新增 `expandIcon` 属性，支持自定义渲染可展开行的 icon 区域内容 ([#864](https://github.com/sheinsight/shineout-next/pull/864))
+
+
+### 🐞 BugFix
+- 修复 `Table` 合并行数据在虚拟列表下偶现的抖动问题 ([#861](https://github.com/sheinsight/shineout-next/pull/861))
+- 修复 `Table` 同时设置了`defaultTreeExpandKeys`, `treeExpandKeys`, `onTreeExpand`后导致的组件渲染卡死问题 ([#852](https://github.com/sheinsight/shineout-next/pull/852))
+
+### 🚀 Performance
+- 优化 `Table` 在大合并行数据下的性能 ([#850](https://github.com/sheinsight/shineout-next/pull/850))
+
 
 ## 3.5.3
 2024-12-04
