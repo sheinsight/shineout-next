@@ -108,7 +108,7 @@ export function isDomElement(element: any): element is HTMLElement {
 }
 
 export const isArrayLengthGreaterThanZero = (a: unknown): boolean => {
-  if (Array.isArray(a)) {
+  if (!Array.isArray(a)) {
     return false;
   }
 
