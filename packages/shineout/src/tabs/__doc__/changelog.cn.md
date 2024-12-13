@@ -1,3 +1,10 @@
+## 3.5.5-beta.1
+2024-12-13
+
+### 🐞 BugFix
+- 修复 `Tabs` 动态删除末尾的Tab时，TabsHeader没有正确的删除(Regression: since 3.5.3) ([#870](https://github.com/sheinsight/shineout-next/pull/870))
+
+
 ## 3.5.3
 2024-12-04
 
