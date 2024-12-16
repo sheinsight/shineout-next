@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { TabsClasses } from './tabs.type';
 import { useTabsContext } from '@sheinx/hooks';
 import { TabsPanelProps } from './tabs-panel.type';
@@ -10,7 +10,7 @@ const TabsPanel = (props: TabsPanelProps) => {
 
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
-  const { active, lazy, setTabs, color } = useTabsContext<TabData>();
+  const { active, lazy, setTabs, tabs, color } = useTabsContext<TabData>();
   const isActive = active === id;
   const keekAlive = useRef(false);
 
@@ -33,6 +33,14 @@ const TabsPanel = (props: TabsPanelProps) => {
       }
       return [...prev, tabData]
     })
+
+    return () => {
+      // Panel卸载了通知父组件，去销毁相应的TabsHeader
+      setTabs(prev => {
+        const index = prev.findIndex(item => item.id === id)
+        return prev.filter(item => item.id !== id)
+      })
+    }
   }, [id, tab, color, ...(color ? [active] : []), props.disabled, props.jssStyle])
 
   if (!isActive && lazy && !keekAlive.current) {
