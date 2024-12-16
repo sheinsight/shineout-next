@@ -1,3 +1,12 @@
+## 3.5.5-beta.3
+2024-12-16
+
+### 🐞 BugFix
+- `Table` 空数据状态下，右侧有固定列时，横向滚动时右侧可能有内容露底显示问题 ([#872](https://github.com/sheinsight/shineout-next/pull/872))
+
+### 💎 Enhancement
+- `Table` 空数据状态下，tbody区域可展示横向滚动条 ([#872](https://github.com/sheinsight/shineout-next/pull/872))
+
 ## 3.5.4
 2024-12-12
 
