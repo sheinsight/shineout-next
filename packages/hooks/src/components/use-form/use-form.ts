@@ -360,6 +360,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       return;
     }
     context.submitLock = true;
+    const activeEl = document.activeElement as HTMLElement;
+    if (activeEl) activeEl.blur();
+
     setTimeout(() => {
       // 防止连续点击
       context.submitLock = false;
@@ -372,6 +375,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
       if (result === true) {
         props.onSubmit?.((context.value ?? {}) as T);
+        if (activeEl) activeEl.focus();
       } else {
         handleSubmitError(result);
         return;
