@@ -41,10 +41,6 @@ const virtualScrollerStyle = {
   width: '100%',
 };
 
-const emptyStyle = {
-  ...virtualScrollerStyle,
-  height: 0,
-};
 const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex' };
 
 const emptyRef = { current: null };
@@ -63,6 +59,17 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableRef = useRef<HTMLDivElement | null>(null);
 
   const browserScrollbarWidth = useScrollbarWidth();
+
+  const emptyStyle = {
+    ...virtualScrollerStyle,
+    overflow: 'auto hidden',
+    position: 'absolute',
+    zIndex: 1,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: browserScrollbarWidth,
+  };
 
   if (props.fixed) {
     devUseWarning.deprecated('fixed', 'virtual', 'Table');
