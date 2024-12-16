@@ -57,7 +57,8 @@ const Scroll = (props: scrollProps) => {
     top: 0,
   } as React.CSSProperties;
 
-  const paddingTop = useMemo(() => Math.max(0, Math.floor(scrollHeight - height)), [scrollHeight, height]);
+  // 当滚动容器的高度为 0 时，paddingTop 为 0，避免滚动条抖动现象
+  const paddingTop = height === 0 ? 0 : Math.max(0, Math.floor(scrollHeight - height));
   const placeStyle = {
     paddingTop,
     width: scrollWidth,
