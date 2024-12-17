@@ -1,3 +1,10 @@
+## 3.6.0-beta.1
+2024-12-17
+
+### 🆕 Feature
+
+- `Form` 新增 `colon` 属性，用于控制 label 是否显示冒号 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
+
 ## 3.5.5-beta.2
 2024-12-16
 
