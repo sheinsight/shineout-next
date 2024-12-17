@@ -5,36 +5,9 @@ exports[`Spin[Base] should render correctly  1`] = `
   style="width: 20px;"
 >
   <div
-    class="soui-spin soui-spin-spin soui-spin-chasing-dots"
-    style="width: 40px; height: 40px;"
-  >
-    <div
-      class="soui-spin-item"
-    >
-      <svg
-        viewBox="0 0 100 100"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="50"
-        />
-      </svg>
-    </div>
-    <div
-      class="soui-spin-item"
-    >
-      <svg
-        viewBox="0 0 100 100"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="50"
-        />
-      </svg>
-    </div>
-  </div>
+    class="soui-spin soui-spin-spin soui-spin-ring"
+    style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
+  />
 </div>
 `;
 
