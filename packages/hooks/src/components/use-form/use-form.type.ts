@@ -88,6 +88,14 @@ export interface FormLabelConfig {
    * @default false
    */
   inline?: boolean;
+
+  /**
+   * @en Whether to append a colon after the label, the priority is less than the colon setting of Form.Item
+   * @cn 标签后是否追加显示一个冒号，优先级小于Form.Item的colon设置
+   * @default false
+   * @version 3.6.0
+   */
+  colon?: boolean | React.ReactNode
 }
 export interface FormCommonConfig extends FormLabelConfig {
   /**
