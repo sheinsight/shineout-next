@@ -6,7 +6,7 @@ import { mergeFilteredTree } from '../../utils/tree';
 
 const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
   const {
-    data,
+    data: filterData,
     keygen,
     childrenKey = 'children' as ObjectKey<DataItem>,
     expanded = [],
@@ -19,8 +19,14 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
   } = props;
 
   const [tileds, setTileds] = useState<KeygenResult[]>([]);
-  const { datum } = useTree({ data, childrenKey, keygen, isControlled: false });
-  const { datum: rawDatum } = useTree({ data: rawData, childrenKey, keygen, isControlled: false });
+  const { datum: rawDatum } = useTree({ data: rawData, datum: props.rawDatum, childrenKey, keygen, isControlled: false });
+
+  if (!filterText || !onAdvancedFilter) {
+    return {
+      data: filterData,
+      onFilter,
+    };
+  }
 
   const handleToggle = (e: React.MouseEvent, key: KeygenResult) => {
     e.stopPropagation();
@@ -66,13 +72,8 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
     );
   };
 
-  if (!filterText || !onAdvancedFilter) {
-    return {
-      data,
-      onFilter,
-    };
-  }
-  const nextData = mergeFilteredTree(datum, rawDatum, tileds);
+  const nextData = mergeFilteredTree(filterData, rawDatum, tileds);
+
   return {
     data: nextData,
     onFilter: handleFilter,
