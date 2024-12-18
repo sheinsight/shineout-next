@@ -1,3 +1,9 @@
+## 3.6.0-beta.2
+2024-12-18
+
+### 💎 Performance
+- 优化 `Select` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
+
 ## 3.5.2
 2024-11-28
 
