@@ -177,6 +177,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     expanded,
     rawData: rawData!,
     onFilter,
+    rawDatum: datum,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {
