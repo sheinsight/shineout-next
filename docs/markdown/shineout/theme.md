@@ -269,8 +269,20 @@ setToken({
 默认值： `-`
 
 ```js
-// 将全局的主色修改为 #9419fa（紫色），警告按钮的背景色设置为 #dc5c0（深橘黄色）
+// 将 body 上的的主色更新为 #9419fa（紫色），警告按钮的背景色更新为 #dc5c0（深橘黄色）
 setToken({
+  selector: 'body',
+  update: true,
+  token: {
+    'Brand-6': '#9419fa',
+    'buttonWarningBackgroundColor': '#dc5c00',
+  }
+})
+
+
+// 将 token 设置到 body 上，并覆盖原有的 token
+setToken({
+  selector: 'body',
   token: {
     'Brand-6': '#9419fa',
     'buttonWarningBackgroundColor': '#dc5c00',
