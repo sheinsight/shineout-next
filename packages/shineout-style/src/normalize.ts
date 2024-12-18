@@ -418,4 +418,4 @@ export const scopeNormalizeStyle = (csScopePrefix = '#app') => {
   appendNormalizeStyle(scopedStyleString, uniqueStyleId);
 };
 
-setToken({ onlyExtra: true, tokenName: 'shineout-extra', selector: 'html' });
+setToken({ selector: 'html' });

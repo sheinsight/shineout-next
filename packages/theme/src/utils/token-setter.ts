@@ -32,7 +32,7 @@ export interface Options {
   /**
    * @cn token 的名称，将作为自定义属性插入标签，默认为 data-token
    * @en The name of the token, which will be inserted as a custom attribute into the tag, default is data-token
-   * @default 'data-token'
+   * @default 'shineout-token'
    */
   tokenName?: string;
   /**
@@ -46,7 +46,7 @@ export interface Options {
    * @en Custom token parameters
    * @default undefined
    */
-  token?: Partial<Tokens>;
+  token?: Partial<Tokens> & { [customTokenKey: string]: string };
   /**
    * @cn 是否只生效关键 token，默认为 false
    * @en Whether only the key token is effective, default is false
@@ -88,7 +88,7 @@ const setToken = (options?: Options) => {
     tagName = 'style',
     selector = 'body',
     target,
-    tokenName,
+    tokenName = 'shineout-token',
     token,
     attributes,
     onlyExtra,
@@ -99,7 +99,7 @@ const setToken = (options?: Options) => {
   const { prefix } = getConfig();
   if (typeof window === 'undefined') return;
 
-  const id = `__shineoutThemeStyleContainer__${hash(selector)}`;
+  const id = `shineout-next-token-${hash(selector)}`;
   const cacheTag = document.querySelector(`[data-token-id="${id}"]`) as HTMLElement;
 
   const tag: HTMLElement = cacheTag || document.createElement(tagName);

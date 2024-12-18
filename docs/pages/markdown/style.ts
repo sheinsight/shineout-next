@@ -36,10 +36,19 @@ const commonStyle = {
     borderRadius: '4px',
     borderSpacing: 0,
 
+    '& th,td': {
+      borderRight: '1px solid #e5e6e8',
+      borderBottom: '1px solid #e5e6e8',
+    },
+    '& th:last-child,td:last-child': {
+      borderRight: '0px',
+    },
+    '& tbody :last-child td':{
+      borderBottom: '0px',
+    },
     '& th': {
       backgroundColor: 'rgb( 242,243,245 )',
       padding: '8px',
-      borderRight: '1px solid #e5e6e8',
     },
     '& th, & td': { padding: 10 },
   },
