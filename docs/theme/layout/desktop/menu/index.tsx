@@ -46,6 +46,13 @@ const devGuide = [
   },
   {
     title: {
+      cn: '主题配置',
+      en: 'Theme',
+    },
+    name: 'theme',
+  },
+  {
+    title: {
       cn: '更新日志',
       en: 'Changelog',
     },

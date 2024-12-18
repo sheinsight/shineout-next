@@ -5,8 +5,10 @@ import { setToken } from 'shineout';
 const App = () => {
   useEffect(() => {
     setToken({
-      selector: 'body',
-      tokenName: 'doc',
+      selector: '.custom-header',
+      token: {
+        'Brand-6': 'Success-5',
+      },
     });
   }, []);
 
