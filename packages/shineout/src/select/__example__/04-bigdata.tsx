@@ -43,6 +43,7 @@ export default () => {
         placeholder='Static lineHeight'
         renderItem={renderItem}
         clearable
+        onFilter={(v) => (d) => d.name.indexOf(v) >= 0}
       />
       <Select
         width={300}
