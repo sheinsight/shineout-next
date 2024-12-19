@@ -8,7 +8,7 @@ import React from 'react';
 import { Card } from 'shineout';
 
 const bodyStyle = {
-  background: '#f4f5f8',
+  background: 'var(--soui-neutral-fill-2)',
 };
 const App: React.FC = () => (
   <Card.Accordion defaultActive={1}>

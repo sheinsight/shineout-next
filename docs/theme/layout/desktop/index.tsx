@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { dispatch } from '../../store';
 import useStyles from './style';
 import { useEffect, useRef } from 'react';
+import FloatButton from './float';
 
 import Content from './content';
 
@@ -100,6 +101,7 @@ const Desktop = () => {
   return (
     <section ref={ref} id='layout' className={classnames(classes.desktop, classes.customScrollbar)}>
       <Routes></Routes>
+      <FloatButton></FloatButton>
     </section>
   );
 };

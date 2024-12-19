@@ -14,16 +14,17 @@ export default createUseStyles(
     },
     desktop: {
       position: 'absolute',
-      left: 260,
+      left: 259,
       right: 0,
       top: navHeight,
       height: `calc(100% - ${navHeight}px)`,
       overflowY: 'auto',
       overflowX: 'hidden',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
       'body.rtl &': {
         left: 0,
-        right: 260,
-      }
+        right: 259,
+      },
     },
     nav: {
       position: 'sticky',
@@ -31,8 +32,8 @@ export default createUseStyles(
       height: navHeight,
       width: '100%',
       display: 'flex',
-      backgroundColor: '#ffffff',
-      borderBottom: '1px solid rgb(229,230,235)',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      borderBottom: '1px solid var(--soui-neutral-border-1)',
       zIndex: 2,
       '& .left-nav': {
         display: 'flex',
@@ -46,7 +47,7 @@ export default createUseStyles(
           width: 1,
           height: 24,
           top: 18,
-          backgroundColor: '#E8EBF0',
+          backgroundColor: 'var(--soui-neutral-border-1)',
         },
       },
       '& .logo': {
@@ -89,7 +90,7 @@ export default createUseStyles(
           float: 'right',
           paddingLeft: 0,
           paddingRight: 260,
-        }
+        },
       },
     },
 
@@ -97,10 +98,11 @@ export default createUseStyles(
       position: 'sticky',
       overflow: 'auto',
       float: 'left',
-      top: 60,
+      top: 59,
       width: 259,
       height: 'calc(100% - 60px)',
-      borderRight: '1px solid rgba(232, 235, 240, 1)',
+      borderRight: '1px solid var(--soui-neutral-border-1)',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
       listStyle: 'none',
       margin: 0,
       fontSize: 14,
@@ -109,7 +111,7 @@ export default createUseStyles(
       'body.rtl &': {
         float: 'right',
         borderRight: 'none',
-        borderLeft: '1px solid rgba(232, 235, 240, 1)',
+        borderLeft: '1px solid var(--soui-neutral-border-1)',
       },
       '& .group': {
         height: 40,
@@ -117,7 +119,7 @@ export default createUseStyles(
         fontSize: 12,
         lineHeight: '40px',
         marginTop: 24,
-        color: '#666C7C',
+        color: 'var(--soui-neutral-text-4)',
         '&.first': {
           marginTop: 12,
         },
@@ -129,7 +131,7 @@ export default createUseStyles(
         display: 'flex',
         alignItems: 'center',
         fontSize: 12,
-        color: '#666C7C',
+        color: 'var(--soui-neutral-text-4)',
         marginTop: 12,
         justifyContent: 'space-between',
         '& span': {
@@ -150,7 +152,7 @@ export default createUseStyles(
         margin: 0,
         padding: 0,
         fontSize: 14,
-        color: '#141737',
+        color: 'var(--soui-neutral-text-5)',
         '& li': {
           display: 'flex',
           justifyContent: 'space-between',
@@ -163,15 +165,17 @@ export default createUseStyles(
           marginTop: 4,
           marginBottom: 4,
           '&.active': {
-            color: '#197AFA',
+            color: 'var(--soui-brand-6)',
             fontWeight: 500,
-            backgroundColor: 'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
+            backgroundColor:
+              'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
             '&:hover': {
-              backgroundColor: 'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
+              backgroundColor:
+                'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
             },
           },
           '&:hover': {
-            backgroundColor: '#F4F5F8',
+            backgroundColor: 'var(--soui-neutral-fill-2)',
           },
         },
         '& li:last-child': {
@@ -205,7 +209,7 @@ export default createUseStyles(
       '& a': {
         position: 'relative',
         display: 'block',
-        color: 'rgba(20, 23, 55, 1)',
+        color: 'var(--soui-neutral-text-5)',
         textDecoration: 'none',
         minHeight: 28,
         lineHeight: '20px',
@@ -217,7 +221,7 @@ export default createUseStyles(
         whiteSpace: 'wrap',
         // overflow: 'hidden',
         '&.active': {
-          color: '#197AFA',
+          color: 'var(--soui-brand-6)',
           '&::before': {
             content: '" "',
             position: 'absolute',
@@ -226,15 +230,15 @@ export default createUseStyles(
             top: 0,
             width: 1,
             height: '100%',
-            backgroundColor: '#197AFA',
+            backgroundColor: 'var(--soui-brand-6)',
             'body.rtl &': {
               left: 'auto',
               right: 0,
-            }
+            },
           },
         },
         '&:hover': {
-          color: '#197AFA',
+          color: 'var(--soui-brand-6)',
         },
         '&::after': {
           content: '" "',
@@ -243,11 +247,11 @@ export default createUseStyles(
           top: 0,
           width: 1,
           height: '100%',
-          backgroundColor: '#E8EBF0',
+          backgroundColor: 'var(--soui-neutral-border-1)',
           'body.rtl &': {
             left: 'auto',
             right: 0,
-          }
+          },
         },
       },
     },
@@ -270,7 +274,7 @@ export default createUseStyles(
       width: '100%',
       height: 500,
       marginTop: 100,
-      background: '#f7f8fa',
+      background: 'var(--soui-neutral-fill-2)',
     },
 
     customScrollbar: {
@@ -278,13 +282,73 @@ export default createUseStyles(
         width: 12,
         height: 4,
       },
-      '&::-webkit-scrollbar-thumb':  {
+      '&::-webkit-scrollbar-thumb': {
         border: '4px solid transparent',
         backgroundClip: 'padding-box',
         borderRadius: 7,
-        backgroundColor: 'rgba(232, 235, 240, 1)',
+        backgroundColor: 'var(--soui-neutral-fill-3)',
       },
-    }
+    },
+
+    floatButton: {
+      position: 'fixed',
+      right: 16,
+      bottom: 40,
+      '& svg': {
+        fill: 'var(--soui-neutral-text-5)',
+      },
+    },
+    floatButtonTarget: {
+      width: 40,
+      height: 40,
+      borderRadius: '50%',
+      boxShadow: 'var(--soui-shadow-2)',
+      bottom: 40,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      cursor: 'pointer',
+      transition: 'all 0.3s',
+      '& svg': {
+        cursor: 'pointer',
+        fill: 'var(--soui-neutral-text-5)',
+      },
+      '&:hover': {
+        boxShadow: 'var(--soui-shadow-3)',
+      },
+    },
+    floatButtonMenu: {
+      opacity: 0,
+      position: 'absolute',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 20,
+      transition: 'all 0.3s',
+    },
+    floatButtonMenuItem: {
+      width: 40,
+      height: 40,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      boxShadow: 'var(--soui-shadow-2)',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      cursor: 'pointer',
+    },
+    floatButtonMenuItemActive: {
+      backgroundColor: 'var(--soui-brand-6)',
+      '& svg': {
+        fill: '#fff',
+      },
+    },
+    floatButtonMenuOpen: {
+      opacity: 1,
+    },
+    floatButtonOpen: {},
   },
   { name: 'doc-layout' },
 );

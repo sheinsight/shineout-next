@@ -20,7 +20,7 @@ const HeaderLogo = (props: { moveRatio: [number, number] }) => {
         xmlns='http://www.w3.org/2000/svg'
       >
         <g clipPath='url(#clip0_4800_10557)'>
-          <rect width='737' height='206' fill='url(#paint0_linear_4800_10557)' />
+          <rect width='737' height='206' fill='var(--soui-neutral-fill-1)' />
           <g opacity='0.13' filter='url(#filter0_f_4800_10557)'>
             <circle cx='665' cy='256' r='195' fill='#6BB5FF' />
           </g>
