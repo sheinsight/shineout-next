@@ -32,7 +32,7 @@ const commonStyle = {
   '& table': {
     width: '100%',
     border: '1px solid #e5e6e8',
-    textAlign: 'center',
+    textAlign: 'left',
     borderRadius: '4px',
     borderSpacing: 0,
 
