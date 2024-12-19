@@ -52,5 +52,5 @@ export interface TabsPanelProps
    * @cn 面板的索引
    * @private
    */
-  index: number;
+  index?: number;
 }

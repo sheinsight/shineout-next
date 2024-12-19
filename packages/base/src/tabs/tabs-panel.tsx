@@ -24,16 +24,25 @@ const TabsPanel = (props: TabsPanelProps) => {
     } as TabData;
 
     setTabs(prev => {
-      const prevTab = prev.find(item => item.id === id)
-      if(prevTab){
+      const oldTab = prev.find(item => item.id === id)
+      if(oldTab){
         return prev.map(item => {
           if(item.id !== id) return item
           return { ...item, ...tabData }
         })
       }
+
+      if(indexInTabs === undefined){
+        return [...prev, tabData]
+      }
+
       // 向indexInTabs位置插入tabData
-      prev.splice(indexInTabs, 0, tabData)
-      return prev
+      const newTabs = [
+        ...prev.slice(0, indexInTabs),
+        tabData,
+        ...prev.slice(indexInTabs)
+      ];
+      return newTabs;
     })
 
     return () => {
