@@ -60,12 +60,12 @@ const treeData = [
   },
 ];
 
-const filterTreeIconStyle =
-  'display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%;';
+const TreeSelectTest = (props: any) =>{
+  return (
+    <TreeSelect keygen={'id'} renderItem={(d: any) => d.title} data={treeData} {...props} open absolute={false} />
+  )
+}
 
-const TreeSelectTest = (props: any) => (
-  <TreeSelect keygen={'id'} renderItem={(d: any) => d.title} data={treeData} {...props} />
-);
 
 beforeAll(() => {
   jest.useFakeTimers();
@@ -213,6 +213,7 @@ describe('TreeSelect[Base]', () => {
     await waitFor(async () => {
       await delay(200);
     });
+    // console.log('selectWrapper classList: >>', selectWrapper?.classList?.toString())
     classTest(selectWrapper, wrapperFocus, false);
   });
   test('should render when keyDown and tab', async () => {
@@ -229,7 +230,9 @@ describe('TreeSelect[Base]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    classTest(selectWrapper.querySelector(arrowIcon)!, arrowIconOpen, false);
+    const iconElement =   selectWrapper.querySelector(arrowIcon)!;
+    // console.log('iconElement classList >>', iconElement.classList.toString())
+    classTest(iconElement, arrowIconOpen, false);
     expect(onEnterExpand.mock.calls.length).toBe(1);
   });
 });
