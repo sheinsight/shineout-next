@@ -116,7 +116,7 @@ const styles = {
   console: {
     minHeight: '120px',
     height: '100%',
-    background: '#f7f8fa',
+    background: 'var(--soui-neutral-fill-2)',
     overflow: 'auto',
     padding: '1em'
   },
