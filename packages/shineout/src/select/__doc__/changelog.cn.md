@@ -1,8 +1,9 @@
 ## 3.6.0-beta.2
-2024-12-18
+2024-12-19
 
 ### 💎 Performance
 - 优化 `Select` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
+- 优化 `Select` 在大数据量下同时被渲染很多个时的页面初始化性能问题 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
 
 ## 3.5.7
 2025-01-14
