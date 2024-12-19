@@ -39,19 +39,13 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState(false);
+
   const tabRef = useRef<Record<string | number, HTMLDivElement>>({});
   const { shape, isVertical, onCollapsible, active } = useTabsContext();
 
   const config = useConfig();
 
   const isRtl = config.direction === 'rtl';
-
-  useEffect(() => {
-    if (sticky && headerRef.current && scrollRef.current && !loaded) {
-      setLoaded(true);
-    }
-  }, [loaded, sticky]);
 
   const {
     delta,
