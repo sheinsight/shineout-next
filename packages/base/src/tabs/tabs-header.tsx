@@ -34,7 +34,6 @@ const TabsHeader = (props: TabsHeaderProps) => {
     splitColor,
     tabBarStyle,
     getPosition,
-    sticky,
   } = props;
 
   const headerRef = useRef<HTMLDivElement>(null);

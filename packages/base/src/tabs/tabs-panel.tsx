@@ -6,7 +6,7 @@ import { TabsPanelProps } from './tabs-panel.type';
 import { TabData } from './tab.type';
 
 const TabsPanel = (props: TabsPanelProps) => {
-  const { children, id, tab, className, style, jssStyle } = props;
+  const { children, id, index: indexInTabs , tab, className, style, jssStyle } = props;
 
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
@@ -31,7 +31,9 @@ const TabsPanel = (props: TabsPanelProps) => {
           return { ...item, ...tabData }
         })
       }
-      return [...prev, tabData]
+      // 向indexInTabs位置插入tabData
+      prev.splice(indexInTabs, 0, tabData)
+      return prev
     })
 
     return () => {
@@ -40,7 +42,7 @@ const TabsPanel = (props: TabsPanelProps) => {
         return prev.filter(item => item.id !== id)
       })
     }
-  }, [id, tab, color, ...(color ? [active] : []), props.disabled, props.jssStyle])
+  }, [id, tab, color, active, props.disabled, props.jssStyle])
 
   if (!isActive && lazy && !keekAlive.current) {
     return null;
