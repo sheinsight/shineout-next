@@ -214,6 +214,14 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     position: positionProp,
   });
 
+  const [hadOpened, setHadOpened] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setHadOpened(true);
+    }
+  }, [open]);
+
   const tipNode = useTip({
     popover: props.popover,
     popoverProps: props.popoverProps,
@@ -550,6 +558,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           filterText={filterText}
           onFilter={handleFilter}
           onRef={inputRef}
+          inputRef={inputRef}
           checkUnMatched={checkUnMatched}
           onClearCreatedData={onClearCreatedData}
           getDataByValues={getResultByValue}
@@ -683,7 +692,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     >
       {tipNode}
       {renderResult()}
-      <AbsoluteList
+      {hadOpened && <AbsoluteList
         adjust={adjust}
         focus={open}
         fixedWidth='min'
@@ -705,7 +714,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
         >
           {renderList()}
         </AnimationList>
-      </AbsoluteList>
+      </AbsoluteList>}
     </div>
   );
 };
