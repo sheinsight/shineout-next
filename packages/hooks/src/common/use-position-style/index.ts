@@ -276,7 +276,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getAbsoluteStyle = (position: string) => {
     if (!parentElRef.current) return { style: hideStyle };
     const rect = context.parentRect;
-    if (scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
+    if (!show && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
         rect.bottom < visibleRect.top ||
