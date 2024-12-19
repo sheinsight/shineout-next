@@ -1,16 +1,9 @@
 ## 3.6.0-beta.2
-<<<<<<< HEAD
 2024-12-19
 
 ### 💎 Performance
 - 优化 `TreeSelect` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
 - 优化 `TreeSelect` 在大数据量下同时被渲染很多个时的页面初始化性能问题 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
-=======
-2024-12-18
-
-### 💎 Performance
-- 优化 `TreeSelect` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
->>>>>>> 3f77e607 (perf: 优化TreeSelect和Select树形数据的搜索性能)
 
 
 ## 3.4.4

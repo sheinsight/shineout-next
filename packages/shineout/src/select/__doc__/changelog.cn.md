@@ -1,5 +1,4 @@
 ## 3.6.0-beta.2
-<<<<<<< HEAD
 2024-12-19
 
 ### 💎 Performance
@@ -9,16 +8,6 @@
 
 ## 3.5.7
 2025-01-14
-=======
-2024-12-18
-
-### 💎 Performance
-- 优化 `Select` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
-
-
-## 3.5.7-beta.1
-2025-01-06
->>>>>>> 3f77e607 (perf: 优化TreeSelect和Select树形数据的搜索性能)
 
 ### 🐞 BugFix
 - 修复 `Select` 单选模式下设置了value为数组类型，此时开启 `onFilter` 后组件渲染报错的问题 ([#910](https://github.com/sheinsight/shineout-next/pull/910))
