@@ -46,4 +46,11 @@ export interface TabsPanelProps
    * @cn 标签页文字颜色，仅当 shape 为 "card" 时生效
    */
   color?: string;
+
+  /**
+   * @en The index of the panel
+   * @cn 面板的索引
+   * @private
+   */
+  index: number;
 }

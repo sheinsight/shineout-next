@@ -164,6 +164,7 @@ const Tabs = (props: TabsProps) => {
           if(isNamedComponent(Child.type) && Child.type.displayName === 'ShineoutTabsPanel'){
             return cloneElement<TabsPanelProps>(Child, {
               id: Child.props.id !== undefined ? Child.props.id : index,
+              index,
             });
           }
 
