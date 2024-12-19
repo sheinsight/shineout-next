@@ -62,7 +62,7 @@ const treeData = [
 
 const TreeSelectTest = (props: any) =>{
   return (
-    <TreeSelect keygen={'id'} renderItem={(d: any) => d.title} data={treeData} {...props} open absolute={false} />
+    <TreeSelect keygen={'id'} renderItem={(d: any) => d.title} data={treeData} {...props} absolute={false} />
   )
 }
 
