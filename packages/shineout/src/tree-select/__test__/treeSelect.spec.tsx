@@ -62,7 +62,7 @@ const treeData = [
 
 const TreeSelectTest = (props: any) =>{
   return (
-    <TreeSelect keygen={'id'} renderItem={(d: any) => d.title} data={treeData} {...props} open absolute={false} />
+    <TreeSelect keygen={'id'} renderItem={(d: any) => d.title} data={treeData} {...props} absolute={false} />
   )
 }
 
@@ -98,8 +98,14 @@ describe('TreeSelect[Base]', () => {
     styleTest(selectWrapper, styleStr);
   });
   // refer to select test
-  test('should render default', () => {
+  test('should render default', async () => {
     const { container } = render(<TreeSelectTest />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
+
     classLengthTest(container.querySelector(wrapper)!, tree, 1);
   });
   test('should render when advanced filtering', async () => {
@@ -131,8 +137,13 @@ describe('TreeSelect[Base]', () => {
     });
     classLengthTest(container, treeContent, 5);
   });
-  test('should render when set expand', () => {
+  test('should render when set expand', async () => {
     const { container } = render(<TreeSelectTest expanded={['1']} />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const treeRoot = container.querySelector(root)!;
     const treeNodes = treeRoot.querySelectorAll(`:scope > ${node}`);
     expect(treeNodes.length).toBe(2);
@@ -147,6 +158,10 @@ describe('TreeSelect[Base]', () => {
     const onChangeAddition = jest.fn();
     const { container } = render(<TreeSelectTest onChangeAddition={onChangeAddition} />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const treeRoot = selectWrapper.querySelector(root)!;
     const treeNodes = treeRoot.querySelectorAll(`:scope > ${node}`);
     const treeResult = selectWrapper.querySelector(result)!;
@@ -178,6 +193,10 @@ describe('TreeSelect[Base]', () => {
   test('should render when click multiple', async () => {
     const { container } = render(<TreeSelectTest multiple />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const treeRoot = selectWrapper.querySelector(root)!;
     const treeNodes = treeRoot.querySelectorAll(`:scope > ${node}`);
     const treeResult = selectWrapper.querySelector(result)!;
@@ -218,7 +237,7 @@ describe('TreeSelect[Base]', () => {
   });
   test('should render when keyDown and tab', async () => {
     const onEnterExpand = jest.fn();
-    const { container } = render(<TreeSelectTest onEnterExpand={onEnterExpand} />);
+    const { container } = render(<TreeSelectTest onEnterExpand={onEnterExpand} open={undefined} />);
     const selectWrapper = container.querySelector(wrapper)!;
     fireEvent.keyDown(selectWrapper, { keyCode: 13 });
     fireEvent.click(selectWrapper.querySelector(result)!)
