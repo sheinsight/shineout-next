@@ -82,7 +82,7 @@ setToken({
 
 ### 设置主题名称
 
-用于自定义设置承载 token 标签的名称标识，将作为自定义属性插入标签
+用于自定义设置承载 token 标签的名称标识，将作为自定义属性插入标签，一般用作对当前设置的主题命名，便于查看识别
 
 属性： `tokenName`
 
@@ -91,9 +91,9 @@ setToken({
 默认值： `'shineout-token'`
 
 ```js
-// 为当前设置的主题作用域命名 system-oa
+// 为当前设置的主题命名为 system-dark
 setToken({
-  tokenName: 'system-oa',
+  tokenName: 'system-dark',
   selector: '#app',
   token: {
     'Brand-6': '#9419fa'
@@ -106,42 +106,7 @@ setToken({
 </div>
 
 // style
-<style data-token='system-oa' data-token-selector="#app">
-  #app {
-    --soui-brand-6: #9419fa;
-  }
-</style>
-
-```
-
-
-### 设置主题参数
-
-用于自定义设置承载 token 标签的名称标识，将作为自定义属性插入标签
-
-属性： `token`
-
-类型： `string`
-
-默认值： `'shineout-token'`
-
-```js
-// 为当前设置的主题作用域命名 system-oa
-setToken({
-  tokenName: 'system-oa',
-  selector: '#app',
-  token: {
-    'Brand-6': '#9419fa'
-  }
-})
-
-// html
-<div id='app'>
-  App
-</div>
-
-// style
-<style data-token='system-oa' data-token-selector="#app">
+<style data-token='system-dark' data-token-selector="#app">
   #app {
     --soui-brand-6: #9419fa;
   }
