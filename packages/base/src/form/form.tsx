@@ -80,6 +80,9 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   };
   useEffect(() => {
     handleFormModalInfo();
+    return () => {
+      modalFormContext?.deleteFormInfo();
+    }
   }, [props.disabled, props.pending]);
 
   const rootClass = classNames([
