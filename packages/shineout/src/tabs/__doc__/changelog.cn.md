@@ -1,13 +1,8 @@
-## 3.5.5-beta.6
-2024-12-19
+## 3.5.5
+2024-12-24
 
 ### 🐞 BugFix
 - 修复 `Tabs.Panel` 设置动态属性后可能导致的 `Tabs.Header` 渲染顺序不正确的问题(Regression: since 3.5.3) ([#882](https://github.com/sheinsight/shineout-next/pull/882))
-
-## 3.5.5-beta.1
-2024-12-13
-
-### 🐞 BugFix
 - 修复 `Tabs` 动态删除末尾的Tab时，TabsHeader没有正确的删除(Regression: since 3.5.3) ([#870](https://github.com/sheinsight/shineout-next/pull/870))
 
 
