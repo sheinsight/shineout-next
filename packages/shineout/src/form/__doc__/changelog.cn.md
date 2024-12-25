@@ -1,3 +1,10 @@
+## 3.5.6-beta.1
+2024-12-25
+
+### 🐞 BugFix
+- 修复 `Form.FieldSet` 在非结尾位置插入数据时，数组的渲染显示异常的问题(Regression: since v3.5.4) ([#889](https://github.com/sheinsight/shineout-next/pull/889))
+
+
 ## 3.5.5
 2024-12-24
 
