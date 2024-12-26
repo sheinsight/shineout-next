@@ -5,7 +5,7 @@
  *    -- Test getting multi-language data from remote
  */
 import React, { useEffect } from 'react';
-import { DatePicker, setLocale } from 'shineout';
+import { Radio, DatePicker, setLocale } from 'shineout';
 
 function  transData(data) {
   // 拍平数据
@@ -113,21 +113,22 @@ getLocale = function (lan: string, {version = 'latest', timeout= 5000, project =
 
 
 const App: React.FC = () => {
-  const [ready, setReady] = React.useState(false)
+  const [lang, setLang] = React.useState('CN')
 
   useEffect(()=>{
-    getLocale('CN', {project: 'shineout-next'}).then((res)=>{
-      console.log('======================')
-      console.log('res: >>', res)
-      console.log('======================')
-      // setLocale(res)
-      setReady(true)
+    getLocale(lang, {project: 'shineout-next'}).then((res)=>{
+      console.log('remote locale: >>', res)
+      setLocale(res)
     })
-  }, [])
+  }, [lang])
 
-  // if(!ready) return null
 
-  return <DatePicker showSelNow onChange={(v) => console.log(v)} />
+  return <div>
+    <Radio.Group keygen data={['CN', 'US']} value={lang} onChange={(v) => setLang(v)}>
+
+    </Radio.Group>
+    <DatePicker showSelNow range onChange={(v) => console.log(v)} />
+  </div>
 };
 
 export default App;

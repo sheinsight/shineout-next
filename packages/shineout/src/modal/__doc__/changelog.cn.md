@@ -1,3 +1,11 @@
+## 3.5.5
+2024-12-24
+
+### 🐞 BugFix
+
+- 修复 `Modal.Submit` 在存在多个Form组件切换时，点击触发的onSubmit的value不正确的问题 ([#885](https://github.com/sheinsight/shineout-next/pull/885))
+
+
 ## 3.5.0
 2024-11-11
 
