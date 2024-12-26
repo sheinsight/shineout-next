@@ -1,3 +1,9 @@
+## 3.5.6-beta.2
+2024-12-26
+### 🐞 BugFix
+
+- 修复 `Checkbox.Group` 在嵌套情况下影响内部选中状态的问题 ([#890](https://github.com/sheinsight/shineout-next/pull/890))
+
 ## 3.4.4
 2024-10-28
 ### 🐞 BugFix
