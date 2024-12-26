@@ -1,6 +1,6 @@
 import { RadioGroupProps } from './radio-group.type';
 import { useInputAble, useListSelectSingle, usePersistFn, util } from '@sheinx/hooks';
-import groupContext from './group-context';
+import GroupContext from './group-context';
 import Radio from './radio';
 import React, { useContext } from 'react';
 import classNames from 'classnames';
@@ -106,7 +106,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
 
   const Radios =
     props.data === undefined ? (
-      <groupContext.Provider value={providerValue}>{children}</groupContext.Provider>
+      <GroupContext.Provider value={providerValue}>{children}</GroupContext.Provider>
     ) : (
       <>
         {props.data.map((d, i) => (
@@ -116,6 +116,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
             disabled={datum.disabledCheck(d)}
             key={util.getKey(keygen, d, i)}
             htmlValue={i}
+            size={size}
             onChange={handleIndexChange}
             renderRadio={renderRadio}
           >
