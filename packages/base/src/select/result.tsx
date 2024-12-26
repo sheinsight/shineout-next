@@ -380,6 +380,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     mounted.current = true;
   }, [focus, placeholder, multiple]);
 
+  // Select多选模式下，且开启了onFilter，自动聚焦
+  useLayoutEffect(() => {
+    if (multiple && focus && inputRef?.current) {
+      inputRef.current.focus();
+    }
+  }, [focus, multiple]);
+
   useLayoutEffect(() => {
     handleResetMore();
   }, [valueProp, data]);
