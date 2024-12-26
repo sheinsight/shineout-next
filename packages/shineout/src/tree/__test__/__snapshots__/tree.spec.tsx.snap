@@ -2082,7 +2082,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-radio-wrapper-small"
     >
       <input
         checked=""
@@ -2105,7 +2105,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small"
     >
       <input
         style="display: none;"
@@ -2127,7 +2127,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small"
     >
       <input
         style="display: none;"
@@ -2149,7 +2149,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small"
     >
       <input
         style="display: none;"
@@ -2171,7 +2171,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small"
     >
       <input
         style="display: none;"
