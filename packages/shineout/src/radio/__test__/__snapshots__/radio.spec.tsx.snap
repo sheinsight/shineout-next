@@ -1226,7 +1226,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
     dir="ltr"
   >
     <button
-      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-button soui-button-primary soui-button-button soui-button-small"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-radio-wrapper-small soui-button soui-button-primary soui-button-button soui-button-small"
       dir="ltr"
       type="button"
     >
@@ -1241,7 +1241,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-small"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small soui-button soui-button-secondary soui-button-button soui-button-small"
       dir="ltr"
       type="button"
     >
@@ -1255,7 +1255,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-small"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small soui-button soui-button-secondary soui-button-button soui-button-small"
       dir="ltr"
       type="button"
     >
@@ -1326,7 +1326,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
     style="margin-top: 24px;"
   >
     <button
-      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-button soui-button-primary soui-button-button soui-button-large"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-radio-wrapper-large soui-button soui-button-primary soui-button-button soui-button-large"
       dir="ltr"
       type="button"
     >
@@ -1341,7 +1341,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-large"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-large soui-button soui-button-secondary soui-button-button soui-button-large"
       dir="ltr"
       type="button"
     >
@@ -1355,7 +1355,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-large"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-large soui-button soui-button-secondary soui-button-button soui-button-large"
       dir="ltr"
       type="button"
     >
