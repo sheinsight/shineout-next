@@ -119,12 +119,24 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
         }
       } else {
         func.finishEdit();
+
+        // 如果是通过 props.open 控制的，那么需要在关闭时，将组件再次进入编辑状态
+        if (props.open === true) {
+          func.startEdit();
+        }
       }
 
       setIsCloseFromConfirm(false);
     }
     props.onCollapse?.(isOpen);
   });
+
+  // 如果一开始就打开了板子，那么需要初始化让组件进入编辑状态
+  useEffect(() => {
+    if (props.open) {
+      func.startEdit();
+    }
+  }, []);
 
   const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
     open: props.open,
@@ -169,7 +181,6 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   const handleClose = (isFromConfirm?: boolean) => {
     setIsCloseFromConfirm(isFromConfirm || false);
     closePop();
-
     if (isFromConfirm) {
       func.finishEdit();
     }
