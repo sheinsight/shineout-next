@@ -46,15 +46,52 @@ const stepsStyle: JsStyles<StepsClassType> = {
     fontSize: Token.stepsIconFontSize,
     '&$arrow': {
       '& $step:not(:last-child)': {
+        '&$widthDescription': {
+          '&:after': {
+            borderLeftWidth: 22,
+            borderTopWidth: 28,
+            borderBottomWidth: 28,
+          },
+          '&:before': {
+            borderLeftWidth: 22,
+            borderTopWidth: 28,
+            borderBottomWidth: 28,
+          },
+          '&[dir=ltr]:after': { right: -32 },
+          '&[dir=rtl]:after': { left: -32 },
+        },
+
         '&:after': {
-          top: `calc(100% - 28px)`,
-          width: 56,
-          height: 56,
+          top: 0,
+          width: 32,
+          height: 32,
+          borderLeftWidth: 12,
+          borderTopWidth: 16,
+          borderBottomWidth: 16,
+          right: -32,
         },
         '&:before': {
-          top: `calc(100% - 28px)`,
-          width: 56,
-          height: 56,
+          top: 0,
+          width: 32,
+          height: 32,
+          borderLeftWidth: 12,
+          borderTopWidth: 16,
+          borderBottomWidth: 16,
+          right: -32,
+        },
+      },
+      '& $step:last-child': {
+        '&$widthDescription': {
+          '&:before': {
+            borderLeftWidth: 22,
+            borderTopWidth: 28,
+            borderBottomWidth: 28,
+          },
+        },
+        '&:before': {
+          borderLeftWidth: 12,
+          borderTopWidth: 16,
+          borderBottomWidth: 16,
         },
       },
       '& $content': {
@@ -62,6 +99,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
         boxSizing: 'border-box',
       },
     },
+
     '&$dot': {
       '&$vertical': {
         '& $tail': {},
