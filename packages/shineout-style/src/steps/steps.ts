@@ -60,33 +60,27 @@ const stepsStyle: JsStyles<StepsClassType> = {
             borderTopWidth: 28,
             borderBottomWidth: 28,
           },
-          '&[dir=ltr]:after': { right: -22 },
-          '&[dir=rtl]:after': { left: -22 },
+          '&[dir=ltr]:after': { right: -32 },
+          '&[dir=rtl]:after': { left: -32 },
         },
-        '&[dir=rtl]:after': {
-          left: -12,
-          right: 'auto',
-        },
+
         '&:after': {
           top: 0,
-          right: -12,
-          width: 12,
+          width: 32,
           height: 32,
           borderLeftWidth: 12,
           borderTopWidth: 16,
           borderBottomWidth: 16,
+          right: -32,
         },
         '&:before': {
           top: 0,
-          width: 12,
+          width: 32,
           height: 32,
           borderLeftWidth: 12,
           borderTopWidth: 16,
           borderBottomWidth: 16,
-          right: -12,
-        },
-        '&[dir=rtl]:before': {
-          right: 0,
+          right: -32,
         },
       },
       '& $step:last-child': {
@@ -101,6 +95,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
           borderLeftWidth: 12,
           borderTopWidth: 16,
           borderBottomWidth: 16,
+          borderLeftWidth: 12,
+          borderTopWidth: 16,
+          borderBottomWidth: 16,
         },
       },
       '& $content': {
@@ -108,6 +105,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
         boxSizing: 'border-box',
       },
     },
+
 
     '&$dot': {
       '&$vertical': {
