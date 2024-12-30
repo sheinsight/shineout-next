@@ -92,7 +92,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
       '&::after': {
         // left: arrowGap * -1,
-        left: `calc(${hideArrowGap} * -1)`,
+        right: `calc(${hideArrowGap} * -1)`,
         top: '0',
         bottom: '0',
         content: '" "',
