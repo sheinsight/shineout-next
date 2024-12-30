@@ -1,3 +1,10 @@
+## 3.5.6-beta.5
+2024-12-30
+### 🐞 BugFix
+
+- 修复 `Spin` 的ring样式在微前端框架下颜色不继承的问题 ([#898](https://github.com/sheinsight/shineout-next/pull/898))
+
+
 ## 3.4.7
 2024-11-08
 ### 🐞 BugFix
