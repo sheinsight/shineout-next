@@ -1,3 +1,11 @@
+## 3.5.6-beta.8
+2024-12-31
+
+### 🐞 BugFix
+- 修复 `Form.Field` 下的Input使用onChange设置对象格式的值时，光标跳到末尾的问题(Regression: since v3.4.4) ([#901](https://github.com/sheinsight/shineout-next/pull/901))
+
+
+
 ## 3.5.6-beta.1
 2024-12-25
 
