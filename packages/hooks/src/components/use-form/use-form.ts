@@ -103,9 +103,18 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     } else {
       const names = isArray(name) ? name : [name];
       names.forEach((key) => {
-        context.updateMap[key]?.forEach((update) => {
-          update(context.value, context.errors, context.serverErrors);
-        });
+        // 外部直接设置user.name这种格式的，但是又没有显性的声明user.name绑定的表单元素；
+        // 这里需要手动触发，否则会导致Input输入过程中光标跳到末尾的异常
+        if (!context.updateMap[key]) {
+          const parentKey = key.split('.')[0];
+          context.updateMap[parentKey]?.forEach((update) => {
+            update(context.value, context.errors, context.serverErrors);
+          });
+        } else {
+          context.updateMap[key]?.forEach((update) => {
+            update(context.value, context.errors, context.serverErrors);
+          });
+        }
         context.flowMap[key]?.forEach((update) => {
           update();
         });
