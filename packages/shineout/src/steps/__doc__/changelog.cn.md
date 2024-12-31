@@ -1,3 +1,9 @@
+## 3.5.6-beta.7
+2024-12-31
+### 🐞 BugFix
+
+- 修复 `Steps` 在 `size='large'` 情况下样式异常的问题 ([#900](https://github.com/sheinsight/shineout-next/pull/900))
+
 ## 3.5.6-beta.6
 2024-12-30
 ### 🐞 BugFix
