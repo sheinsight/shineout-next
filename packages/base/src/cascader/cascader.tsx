@@ -27,7 +27,7 @@ import { FormFieldContext } from '../form/form-field-context';
 
 import { useConfig, getLocale } from '../config';
 
-const { devUseWarning} = util
+const { devUseWarning } = util;
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
@@ -423,12 +423,16 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         {defaultIcon}
       </span>
     );
+    const close = (
+      <span className={styles.clearIcon} onClick={handleClear}>
+        {Icons.cascader.Close}
+      </span>
+    );
+
     return (
       <>
-        <span className={styles.clearIcon} onClick={handleClear}>
-          {Icons.cascader.Close}
-        </span>
-        {!open && !isEmpty && arrow}
+        {close}
+        {!open && !isEmpty && !focused && arrow}
       </>
     );
   };
@@ -693,7 +697,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
 
     if (mode !== undefined && loader && [0, 1, 2].includes(mode)) {
-      devUseWarning.error(`The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`);
+      devUseWarning.error(
+        `The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`,
+      );
     }
   }, []);
 

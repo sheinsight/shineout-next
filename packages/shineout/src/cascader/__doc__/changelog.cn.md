@@ -1,3 +1,10 @@
+## 3.5.6-beta.9
+2025-01-02
+
+### 🐞 BugFix
+- 修复 `Cascader` 选择结果后箭头和关闭 icon 展示异常的问题 ([#903](https://github.com/sheinsight/shineout-next/pull/903))
+
+
 ## 3.5.1
 2024-11-14
 
