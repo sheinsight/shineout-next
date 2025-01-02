@@ -100,7 +100,7 @@ export default createUseStyles(
       float: 'left',
       top: 59,
       width: 259,
-      height: 'calc(100% - 60px)',
+      height: 'calc(100% - 59px)',
       borderRight: '1px solid var(--soui-neutral-border-1)',
       backgroundColor: 'var(--soui-neutral-fill-1)',
       listStyle: 'none',
