@@ -72,6 +72,11 @@ export interface CheckboxProps<T>
    */
   onChange?: (value: T | undefined, checked: boolean, raw: T) => void;
   /**
+   * @en Value chane callback
+   * @cn 值改变回调函数
+   */
+  onRawChange?: (value: T | undefined, checked: boolean, raw: T) => void;
+  /**
    * @en If not set, use (value === htmlValue)
    * @cn checked 传入时为受控组件
    */

@@ -7,7 +7,7 @@ import GroupContext from './group-context';
 import useCheckboxInputable from './use-checkbox-inputable';
 import Input from '../input';
 
-const {devUseWarning} = util
+const { devUseWarning } = util;
 
 const Checkbox = <T,>(props: CheckboxProps<T>) => {
   const {
@@ -55,8 +55,12 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     }
 
     // 兼容Checkbox在createPortal中使用时，无法改变勾选状态的问题
-    if ('value' in props &&  props.checked === undefined) {
+    if ('value' in props && props.checked === undefined) {
       onInputableCheckboxChange(checked);
+    }
+
+    if (props.onRawChange) {
+      props.onRawChange(checked ? htmlValue : undefined, checked, htmlValue);
     }
     onChange?.(checked ? htmlValue : undefined, checked, htmlValue);
   });
@@ -106,7 +110,16 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
 
 const CheckboxWithContext = <T,>(props: CheckboxProps<T>) => {
   return (
-    <GroupContext.Consumer>{(value) => <Checkbox {...props} {...value} />}</GroupContext.Consumer>
+    <GroupContext.Consumer>
+      {(value) => (
+        <Checkbox
+          {...props}
+          {...value}
+          onRawChange={props.onChange}
+          checked={'checked' in props ? props.checked : value.checked}
+        />
+      )}
+    </GroupContext.Consumer>
   );
 };
 
