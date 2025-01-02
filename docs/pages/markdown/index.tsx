@@ -31,6 +31,7 @@ const Md = (props: { children: string; className: string }) => {
               //@ts-ignore
               <SyntaxHighlighter
                 {...rest}
+                style={{}}
                 PreTag='div'
                 language={match[1]}
                 className={classes.code}
@@ -72,7 +73,8 @@ export const MarkdownWrapper = (props: { children: string }) => {
 
 const Doc = () => {
   const params = useParams();
-  const markdown = require(`!!raw-loader!../../markdown/${params.project}/${params.comp}.md`).default;
+  const markdown =
+    require(`!!raw-loader!../../markdown/${params.project}/${params.comp}.md`).default;
   const classes = useStyles();
   return (
     <div className={classnames(classes.wrapper)}>
