@@ -10,7 +10,7 @@ export interface FilterNodeProps<DataItem, Value extends KeygenResult[]> {
   renderItem: (data: DataItem, active?: boolean, id?: Value[0] | undefined) => React.ReactNode;
   setInputText: (text: string) => void;
   setFilterText: (text: string) => void;
-  onChange: (item: Value) => void;
+  onChange: (item: Value, selected?: DataItem) => void;
   onPathChange: (
     id: KeygenResult,
     item: DataItem | null,
