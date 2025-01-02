@@ -152,7 +152,6 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     >
       <div
         class="soui-card-body"
-        style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
       </div>
@@ -197,7 +196,6 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     >
       <div
         class="soui-card-body"
-        style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
       </div>
@@ -242,7 +240,6 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     >
       <div
         class="soui-card-body"
-        style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
       </div>
