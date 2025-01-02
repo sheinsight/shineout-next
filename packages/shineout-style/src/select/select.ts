@@ -569,7 +569,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
   },
   columnsCheckbox: {
-    width: '100%',
+    width: 'auto',
     // marginLeft: token.selectColumnOptionMargin,
     marginLeft: 0,
     '& :last-child': {
