@@ -48,6 +48,7 @@ const FloatButton = () => {
         });
         localStorage.setItem('shineout-theme-dark', 'true');
         setDarkActive('true');
+        document.documentElement.style.setProperty('color-scheme', 'dark');
         return;
       }
 
@@ -58,6 +59,7 @@ const FloatButton = () => {
       });
       localStorage.setItem('shineout-theme-dark', 'true');
       setDarkActive('true');
+      document.documentElement.style.setProperty('color-scheme', 'dark');
     } else {
       if (compactThemeCache) {
         setToken({
@@ -66,6 +68,7 @@ const FloatButton = () => {
         });
         localStorage.removeItem('shineout-theme-dark');
         setDarkActive('');
+        document.documentElement.style.removeProperty('color-scheme');
         return;
       }
       setToken({
@@ -74,6 +77,8 @@ const FloatButton = () => {
       });
       localStorage.removeItem('shineout-theme-dark');
       setDarkActive('');
+      // 设置 html 的 style color-scheme 属性
+      document.documentElement.style.removeProperty('color-scheme');
     }
   };
 
@@ -213,6 +218,8 @@ const FloatButton = () => {
 
     if (darkThemeCache === 'true') {
       token = { ...token, ...dark };
+      // 设置 html 的 color-scheme 属性
+      document.documentElement.style.setProperty('color-scheme', 'dark');
     }
     setToken({
       selector: 'html',
