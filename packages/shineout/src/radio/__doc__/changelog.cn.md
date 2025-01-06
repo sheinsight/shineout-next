@@ -1,5 +1,5 @@
-## 3.5.6-beta.3
-2024-12-26
+## 3.5.6
+2025-01-06
 ### 🐞 BugFix
 
 - 修复`Radio.Group` 传data属性用法下，设置 `size` 属性不生效的问题 ([#893](https://github.com/sheinsight/shineout-next/pull/893))

@@ -1,15 +1,8 @@
-## 3.5.6-beta.8
-2024-12-31
+## 3.5.6
+2025-01-06
 
 ### 🐞 BugFix
 - 修复 `Form.Field` 下的Input使用onChange设置对象格式的值时，光标跳到末尾的问题(Regression: since v3.4.4) ([#901](https://github.com/sheinsight/shineout-next/pull/901))
-
-
-
-## 3.5.6-beta.1
-2024-12-25
-
-### 🐞 BugFix
 - 修复 `Form.FieldSet` 在非结尾位置插入数据时，数组的渲染显示异常的问题(Regression: since v3.5.4) ([#889](https://github.com/sheinsight/shineout-next/pull/889))
 
 
