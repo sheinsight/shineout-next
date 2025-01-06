@@ -1,4 +1,4 @@
-import { isMergeable, isObject } from './is';
+import { isMergeable, isObject, isArray } from './is';
 import { ObjectType } from '../common/type';
 
 export function insertPoint(name: string) {
@@ -266,3 +266,32 @@ export const getAllKeyPaths = (obj: ObjectType, parentKey: string = ''): string[
     );
   }, []);
 };
+
+
+/**
+ * 获取完整的字段key
+ * @param fields 字段key
+ * @param allFields 所有字段key
+ * @returns 完整的字段key
+ * @example
+ * const fields = ['user']
+ * const allFields = ['user', 'user.name', 'user.age', 'user[0].name', 'user[0].age', 'user[1].name', 'user[1].age']
+ * const completeFields = getCompleteFieldKeys(fields, allFields)
+ * console.log(completeFields) // ['user', 'user.name', 'user.age', 'user[0].name', 'user[0].age', 'user[1].name', 'user[1].age']
+ */
+export const getCompleteFieldKeys = (fields: string | string[], allFields: string[]): string[] => {
+  const fieldsArray = isArray(fields) ? fields : [fields];
+  let completeFields: string[] = [];
+
+  fieldsArray.forEach(field => {
+    const na = `${field}[`;
+    const no = `${field}.`;
+    completeFields.push(field);
+    const childFields = allFields.filter(f => f.startsWith(na) || f.startsWith(no));
+    if (childFields.length) {
+      completeFields.push(...childFields);
+    }
+  });
+
+  return completeFields;
+}
