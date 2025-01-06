@@ -1,13 +1,8 @@
-## 3.5.6-beta.10
-2025-01-02
+## 3.5.6
+2025-01-06
 
 ### 🐞 BugFix
 - 修复 `Cascader` 在输入搜索过程中点击选项后 `onChange` 第二参数未返回的问题 ([#904](https://github.com/sheinsight/shineout-next/pull/904))
-
-## 3.5.6-beta.9
-2025-01-02
-
-### 🐞 BugFix
 - 修复 `Cascader` 选择结果后箭头和关闭 icon 展示异常的问题 ([#903](https://github.com/sheinsight/shineout-next/pull/903))
 
 
