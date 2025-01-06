@@ -317,10 +317,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     },
   );
 
-  const getRenderItem = (data: DataItem, index?: number) => {
+  const getRenderItem = (data: DataItem, index?: number): ReactNode => {
     return typeof renderItemProp === 'function'
       ? renderItemProp(data, index)
-      : (data[renderItemProp] as ReactNode);
+      : (data?.[renderItemProp] || '') as ReactNode;
   };
 
   const renderItem = getRenderItem;
@@ -477,11 +477,12 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (open) closePop();
   };
 
-  const getRenderResult = (data: DataItem, index?: number) => {
+  const getRenderResult = (data: DataItem, index?: number): ReactNode => {
     if (!renderResultProp) return renderItem(data, index);
-    return typeof renderResultProp === 'function'
+    const result = typeof renderResultProp === 'function'
       ? renderResultProp(data, index)
       : data[renderResultProp];
+    return result ?? null
   };
 
   const getDataByValues = (values: Value) => {
