@@ -4,6 +4,9 @@
 ### 🐞 BugFix
 - 修复 `Form` 的FormRef.validateFields方法校验数组类型字段不生效的问题 ([#909](https://github.com/sheinsight/shineout-next/pull/909))
 
+### 💎 Enhancement
+- `Form.FieldSet` children 的 `onChange` 方法增加第二个参数 `options`，设置options.validate为false时，不立即校验该字段 ([#911](https://github.com/sheinsight/shineout-next/pull/911))
+
 ## 3.5.6
 2025-01-06
 

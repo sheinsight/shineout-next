@@ -58,13 +58,15 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
         value: v,
         index: i,
         error: errorList,
-        onChange: (val: T extends (infer U)[] ? U : never) => {
+        onChange: (val: T extends (infer U)[] ? U : never, options) => {
           const oldValue = formFunc?.getValue(name);
           const newValue = produce(oldValue, (draft) => {
             draft[i] = val;
           }) as T;
           onChange(newValue);
-          formFunc?.validateFieldset(`${name}[${i}]`);
+          if(options === undefined || options?.validate){
+            formFunc?.validateFieldset(`${name}[${i}]`);
+          }
         },
         onInsert: (val: T extends (infer U)[] ? U : never) => {
           const oldValue = formFunc?.getValue(name);
