@@ -1,3 +1,9 @@
+## 3.5.7-beta.1
+2025-01-06
+
+### 🐞 BugFix
+- 修复 `Form` 的FormRef.validateFields方法校验数组类型字段不生效的问题 ([#909](https://github.com/sheinsight/shineout-next/pull/909))
+
 ## 3.5.6
 2025-01-06
 

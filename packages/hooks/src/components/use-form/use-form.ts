@@ -20,6 +20,7 @@ import {
   wrapFormError,
   deepClone,
   getAllKeyPaths,
+  getCompleteFieldKeys,
   devUseWarning,
   getFieldId,
   getClosestScrollContainer,
@@ -175,9 +176,13 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const validateFields = usePersistFn(
     (fields?: string | string[], config: ValidateFnConfig = {}): Promise<T> => {
       return new Promise((resolve, reject: (reason: ValidationError<T> | FormError) => void) => {
-        const finalFields = fields
-          ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
-          : Object.keys(context.validateMap);
+        let finalFields = Object.keys(context.validateMap);
+        if(fields){
+          // 假设进去的是['user']，那么最终的finalFields是['user', 'user.name', 'user.age']
+          // 假设进去的是['users']，那么最终的finalFields是['users', 'users[0].name', 'users[0].age', 'users[1].name', 'users[1].age']
+          finalFields = getCompleteFieldKeys(fields, finalFields);
+        }
+
         const validates = finalFields.map((key) => {
           const validateField = context.validateMap[key];
           return Array.from(validateField).map((validate) =>
