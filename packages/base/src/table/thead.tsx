@@ -11,6 +11,7 @@ const { toNum } = util;
 
 export default (props: TheadProps) => {
   const { colgroup = [], sortInfo, onSorterChange, showSelectAll = true } = props;
+  console.log('sortInfo', sortInfo);
   const tableClasses = props.jssStyle?.table?.();
   const trRefs = useRef<(HTMLTableRowElement | null)[]>([]);
   const { groupColumns, columnLevel } = useTableGroup({
@@ -74,6 +75,7 @@ export default (props: TheadProps) => {
             status: currentOrder,
             triggerAsc: () => handleChange('asc'),
             triggerDesc: () => handleChange('desc'),
+            column
           })
         ) : (
           <>

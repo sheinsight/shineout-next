@@ -237,6 +237,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     path: KeygenResult[],
     disabled?: boolean,
     index: number[] = [],
+    level: number = 1,
   ): KeygenResult[] | undefined => {
     const ids: KeygenResult[] = [];
     for (let i = 0; i < data.length; i++) {
@@ -267,6 +268,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
           [...path, id],
           mode === MODE.MODE_4 ? disabled : isDisabled,
           indexPath,
+          level + 1,
         );
         if (_children) children = _children;
       }
@@ -277,6 +279,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         isDisabled,
         indexPath,
         index: i,
+        level,
       });
     }
     return ids;

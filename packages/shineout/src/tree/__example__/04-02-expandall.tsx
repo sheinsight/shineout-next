@@ -23,7 +23,14 @@ export default () => {
 
   return (
     <div>
-      <Tree defaultExpandAll line={false} data={data} keygen='id' renderItem={renderItem}></Tree>
+      <Tree
+        virtual
+        defaultExpandAll
+        line={false}
+        data={data}
+        keygen='id'
+        renderItem={renderItem}
+      ></Tree>
     </div>
   );
 };

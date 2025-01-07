@@ -4,8 +4,8 @@
  * en - Sorter
  *    -- Set the renderSorter property of the Table to customize the icon
  */
-import React from 'react';
-import { Table, TYPE } from 'shineout';
+import React, { useRef } from 'react';
+import { Table, Button, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface TableRowData {
@@ -53,6 +53,7 @@ const commonStyle: React.CSSProperties = {
 };
 
 const App: React.FC = () => {
+  const sorterFn = useRef<TableSorter>({});
   const sorter: {
     [x: string]: any;
   } = {
@@ -68,45 +69,59 @@ const App: React.FC = () => {
     status,
     triggerAsc,
     triggerDesc,
-  }: TableSorterParam) => (
-    <>
-      <div
-        style={{
-          ...commonStyle,
-          color: status === 'asc' ? '#197afa' : '#999da8',
-        }}
-        onClick={triggerAsc}
-      >
-        <svg
-          fill='currentColor'
-          width='8'
-          height='5'
-          viewBox='0 0 8 5'
-          xmlns='http://www.w3.org/2000/svg'
+    column,
+  }: TableSorterParam) => {
+    if (column.key === 0) {
+      sorterFn.current[column.key] = {
+        asc: triggerAsc,
+        desc: triggerDesc,
+      };
+    }
+    return (
+      <>
+      <Button onClick={()=>{
+        if(sorterFn.current[0]){
+          sorterFn.current[0].desc()
+        }
+      }}>sort</Button>
+        <div
+          style={{
+            ...commonStyle,
+            color: status === 'asc' ? '#197afa' : '#999da8',
+          }}
+          onClick={triggerAsc}
         >
-          <path d='M3.59594 0.183058C3.80193 -0.0422441 4.12606 -0.0595753 4.35023 0.131065L4.40406 0.183058L7.83263 3.93306C8.05579 4.17714 8.05579 4.57286 7.83263 4.81694C7.62664 5.04224 7.30251 5.05958 7.07834 4.86893L7.02451 4.81694L4.40409 1.95128C4.18088 1.70732 3.81912 1.70732 3.59591 1.95128L0.975489 4.81694C0.769499 5.04224 0.445367 5.05958 0.2212 4.86893L0.167368 4.81694C-0.0386232 4.59164 -0.0544688 4.23712 0.119831 3.99194L0.167368 3.93306L3.59594 0.183058Z' />
-        </svg>
-      </div>
-      <div
-        style={{
-          ...commonStyle,
-          color: status === 'desc' ? '#197afa' : '#999da8',
-          marginTop: 4,
-        }}
-        onClick={triggerDesc}
-      >
-        <svg
-          width='8'
-          height='5'
-          viewBox='0 0 8 5'
-          fill='currentColor'
-          xmlns='http://www.w3.org/2000/svg'
+          <svg
+            fill='currentColor'
+            width='8'
+            height='5'
+            viewBox='0 0 8 5'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path d='M3.59594 0.183058C3.80193 -0.0422441 4.12606 -0.0595753 4.35023 0.131065L4.40406 0.183058L7.83263 3.93306C8.05579 4.17714 8.05579 4.57286 7.83263 4.81694C7.62664 5.04224 7.30251 5.05958 7.07834 4.86893L7.02451 4.81694L4.40409 1.95128C4.18088 1.70732 3.81912 1.70732 3.59591 1.95128L0.975489 4.81694C0.769499 5.04224 0.445367 5.05958 0.2212 4.86893L0.167368 4.81694C-0.0386232 4.59164 -0.0544688 4.23712 0.119831 3.99194L0.167368 3.93306L3.59594 0.183058Z' />
+          </svg>
+        </div>
+        <div
+          style={{
+            ...commonStyle,
+            color: status === 'desc' ? '#197afa' : '#999da8',
+            marginTop: 4,
+          }}
+          onClick={triggerDesc}
         >
-          <path d='M3.59594 4.81694C3.80193 5.04224 4.12606 5.05958 4.35023 4.86893L4.40406 4.81694L7.83263 1.06694C8.05579 0.822864 8.05579 0.427136 7.83263 0.183058C7.62664 -0.042244 7.30251 -0.0595751 7.07834 0.131065L7.02451 0.183058L4.40409 3.04872C4.18088 3.29268 3.81912 3.29268 3.59591 3.04872L0.975489 0.183058C0.769499 -0.042244 0.445367 -0.0595751 0.2212 0.131065L0.167368 0.183058C-0.0386232 0.408361 -0.0544688 0.76288 0.119831 1.00806L0.167368 1.06694L3.59594 4.81694Z' />
-        </svg>
-      </div>
-    </>
-  );
+          <svg
+            width='8'
+            height='5'
+            viewBox='0 0 8 5'
+            fill='currentColor'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path d='M3.59594 4.81694C3.80193 5.04224 4.12606 5.05958 4.35023 4.86893L4.40406 4.81694L7.83263 1.06694C8.05579 0.822864 8.05579 0.427136 7.83263 0.183058C7.62664 -0.042244 7.30251 -0.0595751 7.07834 0.131065L7.02451 0.183058L4.40409 3.04872C4.18088 3.29268 3.81912 3.29268 3.59591 3.04872L0.975489 0.183058C0.769499 -0.042244 0.445367 -0.0595751 0.2212 0.131065L0.167368 0.183058C-0.0386232 0.408361 -0.0544688 0.76288 0.119831 1.00806L0.167368 1.06694L3.59594 4.81694Z' />
+          </svg>
+        </div>
+      </>
+    );
+  };
 
   const handleSorter: TableSorter = (name, order) => sorter[name](order);
 

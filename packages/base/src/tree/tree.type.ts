@@ -10,6 +10,7 @@ export type TreeRenderItemType<DataItem> =
 export type TreeClasses = {
   rootClass: string;
   tree: string;
+  virtual: string;
   root: string;
   line: string;
   noline: string;
@@ -197,4 +198,9 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @cn 拖拽离开事件
    */
   onDragLeave?: (e: React.DragEvent, data: DataItem) => void;
+  /**
+   * @en Virtual list
+   * @cn 虚拟列表
+   */
+  virtual?: boolean;
 }

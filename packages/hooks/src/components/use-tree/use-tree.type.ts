@@ -25,6 +25,7 @@ export interface TreePathType {
   isDisabled: boolean;
   indexPath: number[];
   index: number;
+  level: number;
 }
 
 export interface BaseTreeProps<DataItem> {
