@@ -6,6 +6,13 @@
 - `Form` 新增 `colon` 属性，用于控制 label 是否显示冒号 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
 
 
+## 3.5.7-beta.2
+2025-01-08
+
+### 💎 Enhancement
+- `Form.FieldSet` children 的 `onChange` 方法增加第二个参数 `options`，设置options.validate为false时，不立即校验该字段 ([#912](https://github.com/sheinsight/shineout-next/pull/912))
+
+
 ## 3.5.7-beta.1
 2025-01-06
 
