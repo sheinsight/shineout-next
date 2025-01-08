@@ -10,7 +10,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   const formFunc = useFormFunc();
 
   const validateFieldSet = () => {
-    formFunc?.validateFields(props.name).catch((e) => e);
+    formFunc?.validateFields(props.name, { ignoreChildren: true}).catch((e) => e);
   };
 
   const getValidateProps = usePersistFn(() => props);
@@ -64,9 +64,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
             draft[i] = val;
           }) as T;
           onChange(newValue);
-          if(options === undefined || options?.validate){
-            formFunc?.validateFieldset(`${name}[${i}]`);
-          }
+          formFunc?.validateFieldset(`${name}[${i}]`, { ignoreChildren: options?.validate === false });
         },
         onInsert: (val: T extends (infer U)[] ? U : never) => {
           const oldValue = formFunc?.getValue(name);
