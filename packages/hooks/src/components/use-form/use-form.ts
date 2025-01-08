@@ -74,6 +74,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const { current: context } = React.useRef<FormContext>({
     defaultValues: {},
     validateMap: {},
+    ignoreValidateFields: [],
     updateMap: {},
     flowMap: {},
     removeArr: new Set<string>(),
@@ -178,9 +179,19 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       return new Promise((resolve, reject: (reason: ValidationError<T> | FormError) => void) => {
         let finalFields = Object.keys(context.validateMap);
         if(fields){
-          // 假设进去的是['user']，那么最终的finalFields是['user', 'user.name', 'user.age']
-          // 假设进去的是['users']，那么最终的finalFields是['users', 'users[0].name', 'users[0].age', 'users[1].name', 'users[1].age']
-          finalFields = getCompleteFieldKeys(fields, finalFields);
+          if(config.ignoreChildren){
+            // 旧行为：仅校验当前字段
+            finalFields = (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
+          }else{
+            // 新行为：校验当前字段及其所有子字段
+            // 假设进去的是['user']，那么最终的finalFields是['user', 'user.name', 'user.age']
+            // 假设进去的是['users']，那么最终的finalFields是['users', 'users[0].name', 'users[0].age', 'users[1].name', 'users[1].age']
+            finalFields = getCompleteFieldKeys(fields, finalFields);
+          }
+        }
+
+        if(context.ignoreValidateFields.length > 0){
+          finalFields = finalFields.filter((key) => !context.ignoreValidateFields.includes(key));
         }
 
         const validates = finalFields.map((key) => {
@@ -405,7 +416,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }, 10);
   };
 
-  const validateFieldset = (name: string) => {
+  const validateFieldset = (name: string, config?: ValidateFnConfig) => {
     const na = `${name}[`;
     const no = `${name}.`;
     const fields: string[] = [];
@@ -414,6 +425,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         fields.push(key);
       }
     });
+
+      // 用户声明了跳过校验子字段
+    if(config?.ignoreChildren){
+      const parentName = name.split('[')[0]
+      context.ignoreValidateFields = getCompleteFieldKeys(parentName, Array.from(context.names))
+      setTimeout(() => {
+        context.ignoreValidateFields = [];
+      });
+    }
+
     validateFields(fields).catch(() => {});
   };
 

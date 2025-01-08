@@ -17,6 +17,7 @@ export interface ValidationError<T> {
 export type ValidateFnConfig = {
   type?: 'forcePass' | 'withValue',
   ignoreBind?: boolean,
+  ignoreChildren?: boolean,
 }
 
 export type ValidateFn = (
@@ -135,7 +136,7 @@ export interface FormFunc<T = any> {
   getErrors: () => ObjectType<Error | undefined>;
   clearValidate: (names?: string[]) => void;
   validateFields: (fields?: string | string[], config?: ValidateFnConfig) => Promise<Partial<T>>;
-  validateFieldset: (name: string) => void;
+  validateFieldset: (name: string, config?: ValidateFnConfig) => void;
   insertError: (name: string, index: number, error?: Error) => void;
   spliceError: (name: string, index: number) => void;
 }
@@ -234,6 +235,7 @@ export type FormContext = {
   serverErrors: ObjectType<Error | undefined>;
   unmounted: boolean;
   removeLock: boolean;
+  ignoreValidateFields: string[];
 };
 
 export type UseFormSlotOwnProps = {
