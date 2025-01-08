@@ -1,3 +1,10 @@
+## 3.5.7-beta.3
+2025-01-08
+
+### 🐞 BugFix
+- `Form` 在 `Modal` 组件中嵌套使用时，子Form卸载后父Form无法提交的问题 ([#914](https://github.com/sheinsight/shineout-next/pull/914))
+
+
 ## 3.5.7-beta.2
 2025-01-08
 
