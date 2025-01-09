@@ -63,6 +63,10 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     }
   }, [formRefObj]);
 
+  const {current: context} = React.useRef({
+    bindindModalFormContextSuccess: false
+  })
+
   const handleFormModalInfo = () => {
     let status: 'disabled' | 'pending' | undefined = undefined;
     if (props.disabled) {
@@ -75,13 +79,16 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
       modalFormContext?.setFormStats(status);
     }
     if (props.onSubmit) {
-      modalFormContext?.setFormInfo(formRefObj);
+      const ok = modalFormContext?.setFormInfo(formRefObj);
+      context.bindindModalFormContextSuccess = !!ok
     }
   };
   useEffect(() => {
     handleFormModalInfo();
     return () => {
-      modalFormContext?.deleteFormInfo();
+      if(context.bindindModalFormContextSuccess){
+        modalFormContext?.deleteFormInfo();
+      }
     }
   }, [props.disabled, props.pending]);
 
