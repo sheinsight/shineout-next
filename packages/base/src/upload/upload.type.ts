@@ -173,6 +173,8 @@ export interface UploadProps<T>
     files: any;
     onValueRemove: (index: number) => void;
     onFileRemove: (id: string) => void;
+    recoverValue: any;
+    onValueRecover: (index: number) => void;
   }>;
   /**
    * @en Custom error prompt after forceAccept type verification fails
