@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import { Button, Gap, Icon, Message } from 'shineout';
+import { Icon04 } from './static/icon';
 
 const url = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 
@@ -28,16 +29,16 @@ export default () => {
   const [loadings, setLoadings] = useState([false, false, false, false]);
 
   const handleMockLoading = (index: number) => {
-    setLoadings(prev => prev.map((loading, i) => i === index ? true : loading));
+    setLoadings((prev) => prev.map((loading, i) => (i === index ? true : loading)));
     Message.info('Deleting...', 2);
     setTimeout(() => {
-      setLoadings(prev => prev.map((loading, i) => i === index ? false : loading));
+      setLoadings((prev) => prev.map((loading, i) => (i === index ? false : loading)));
       Message.success('Delete success');
     }, 2000);
   };
 
   return (
-    <Gap style={{width: 400}}>
+    <Gap style={{ width: 400 }}>
       <Gap>
         <Button type='primary' loading>
           Loading
@@ -55,7 +56,7 @@ export default () => {
         <Button type='primary' loading>
           <ShineoutIcon name='trash-o' style={prefixIconStyle} />
           Delete
-          <ShineoutIcon name='info' style={suffixIconStyle} />
+          <Icon04 style={suffixIconStyle}></Icon04>
         </Button>
       </Gap>
 
@@ -64,8 +65,13 @@ export default () => {
           Loading
         </Button>
 
-        <Button type='primary' loading={loadings[1]} shape='square' onClick={() => handleMockLoading(1)}>
-          <ShineoutIcon name='trash-o' style={{ ...prefixIconStyle, marginRight: 0 }}/>
+        <Button
+          type='primary'
+          loading={loadings[1]}
+          shape='square'
+          onClick={() => handleMockLoading(1)}
+        >
+          <ShineoutIcon name='trash-o' style={{ ...prefixIconStyle, marginRight: 0 }} />
         </Button>
 
         <Button type='primary' loading={loadings[2]} onClick={() => handleMockLoading(2)}>
@@ -76,7 +82,7 @@ export default () => {
         <Button type='primary' loading={loadings[3]} onClick={() => handleMockLoading(3)}>
           <ShineoutIcon name='trash-o' style={prefixIconStyle} />
           Delete
-          <ShineoutIcon name='info' style={suffixIconStyle} />
+          <Icon04 style={suffixIconStyle}></Icon04>
         </Button>
       </Gap>
     </Gap>

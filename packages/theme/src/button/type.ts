@@ -1468,7 +1468,7 @@ export interface ButtonTokens {
   buttonBorderRadius: string;
   /**
    * @type {string}
-   * @token Spacing-12
+   * @token Spacing-11
    * @description 按钮内边距（水平方向）
    */
   buttonPaddingX: string;

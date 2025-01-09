@@ -14,13 +14,13 @@ export default () => {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
       <Button type='primary' size='small' style={buttonStyle}>
-        Primary
+        Small
       </Button>
       <Button type='primary' style={buttonStyle}>
-        Primary
+        Default
       </Button>
       <Button type='primary' size='large' style={buttonStyle}>
-        Primary
+        Large
       </Button>
     </div>
   );

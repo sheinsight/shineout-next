@@ -5,8 +5,19 @@
  *    -- Can be used in the same level of multiple operations, in the form of button group
  */
 
-import { Button } from 'shineout';
-import { Icon02, Icon03 } from './static/icon';
+import { Button, Dropdown, TYPE } from 'shineout';
+import { Icon02 } from './static/icon';
+
+type DropdownItem = TYPE.Dropdown.Item;
+
+const menu: DropdownItem[] = [
+  {
+    content: 'First',
+  },
+  {
+    content: 'Second',
+  },
+];
 
 export default () => {
   return (
@@ -37,16 +48,20 @@ export default () => {
       <div style={{ display: 'flex', gap: 24 }}>
         <Button.Group type='primary'>
           <Button>Publish</Button>
-          <Button>
-            <Icon02></Icon02>
-          </Button>
+          <Dropdown
+            data={menu}
+            position='bottom-right'
+            onClick={(data: any) => console.info(`The Dropdown clicked ${data.content}.`)}
+          />
         </Button.Group>
 
         <Button.Group type='secondary'>
           <Button>Publish</Button>
-          <Button>
-            <Icon03 color='#666C7C'></Icon03>
-          </Button>
+          <Dropdown
+            data={menu}
+            position='bottom-right'
+            onClick={(data: any) => console.info(`The Dropdown clicked ${data.content}.`)}
+          />
         </Button.Group>
       </div>
     </div>

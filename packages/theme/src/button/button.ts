@@ -248,7 +248,7 @@ const buttonTokens: ButtonTokens = {
   buttonLinkFocusBorderColor: 'transparent',
   buttonFontSize: 'Font-14',
   buttonBorderRadius: 'Radius-default',
-  buttonPaddingX: 'Spacing-12',
+  buttonPaddingX: 'Spacing-11',
   buttonPaddingY: 'Spacing-4',
   buttonHeight: 'Size-16',
   buttonFontWeight: 'Weight-regular',
