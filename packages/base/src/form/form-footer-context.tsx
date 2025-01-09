@@ -4,7 +4,7 @@ import React, { createContext, useMemo, useRef, useState, useContext } from 'rea
 
 export interface FormFooterContextValue {
   setFormStats: (disabled?: 'disabled' | 'pending') => void;
-  setFormInfo: (info: { submit: () => void }) => void;
+  setFormInfo: (info: { submit: () => void }) => boolean;
   deleteFormInfo: () => void;
   formStats: 'disabled' | 'pending' | undefined;
   func: {
@@ -22,7 +22,9 @@ export const FormFooterProvider = (props: { children: React.ReactNode }) => {
     if(!context.hasSubmit){
       context.submit = info.submit;
       context.hasSubmit = true;
+      return true
     }
+    return false
   });
 
   const deleteFormInfo = usePersistFn(() => {
