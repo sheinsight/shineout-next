@@ -1,10 +1,8 @@
 /**
  * cn - 外部排序
- *    -- 设置 Table 的 `sortDirections`，可对全部列设置排序方向
- *    -- 设置 column 的 `sortDirections` 优先级高于 Table 的 `sortDirections`
+ *    -- 调用 TableRef 的 `sortByColumn` 方法，从外部对 列进行排序
  * en - Configure sorter
- *    -- Set the `sortDirections` of Table to configure the sort direction of all columns
- *    -- The `sortDirections` of column takes precedence over the `sortDirections` of Table
+ *    -- Call the `sortByColumn` method of TableRef from the outside to sort the column
  */
 
 import React, { useState } from 'react';
