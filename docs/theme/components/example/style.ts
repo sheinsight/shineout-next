@@ -165,14 +165,14 @@ export default createUseStyles(
       right: 0,
       bottom: 0,
       left: 0,
-      background: '#ffffff',
+      background: 'var(--soui-neutral-fill-1)',
       zIndex: 1,
       '& .toolbar': {
         padding: 5,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderBottom: '1px dashed #e8ebee',
+        borderBottom: '1px dashed var(--soui-neutral-border-1)',
       },
 
       '& .container': {
