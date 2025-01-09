@@ -20,7 +20,7 @@ const useInputFormat = (props: InputFormatProps) => {
     coin,
     cancelBlurChange,
   } = props;
-  const [showCoin, setShowCoin] = React.useState(false);
+  const [showCoin, setShowCoin] = React.useState(coin);
   function isValidNumber(val: string) {
     const { numType } = props;
     const noNeg = numType === 'non-negative' || numType === 'positive';
