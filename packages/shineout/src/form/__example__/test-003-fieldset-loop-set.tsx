@@ -71,6 +71,13 @@ const App: React.FC = () => {
   const getValues = () => {
     console.log('getvalues friends: >>', JSON.stringify(form.getValue('friends'), null, 2))
     console.log('getvalues all: >>', JSON.stringify(form.getValue(), null, 2))
+    }
+
+  const handleValidate = () => {
+    console.log('======================')
+    console.log('form.validate: >>', form.validate)
+    console.log('======================')
+    form.validateFields(['friends[1].name'])
   }
 
   // console.log('======================')
@@ -88,6 +95,7 @@ const App: React.FC = () => {
     >
       <Button onClick={setFriends}>set friends</Button>
       <Button onClick={getValues}>get values</Button>
+      <Button onClick={handleValidate}>validate friends</Button>
       <Form.Item label='Name'>
         <Input name='name' defaultValue='Harry Potter' clearable />
       </Form.Item>
