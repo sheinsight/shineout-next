@@ -22,6 +22,12 @@ export interface AvatarTokens {
   avatarBackgroundColor: string;
   /**
    * @type {string}
+   * @token Size-8
+   * @description 头像图标字号
+   */
+  avatarIconSize: string;
+  /**
+   * @type {string}
    * @token font-14
    * @description 头像字体字号
    */
@@ -58,6 +64,12 @@ export interface AvatarTokens {
   avatarSmallFontSize: string;
   /**
    * @type {string}
+   * @token Size-6
+   * @description 头像小尺寸图标字号
+   */
+  avatarSmallIconSize: string;
+  /**
+   * @type {string}
    * @token Size-20
    * @description 头像大尺寸宽度
    */
@@ -76,6 +88,12 @@ export interface AvatarTokens {
   avatarLargeFontSize: string;
   /**
    * @type {string}
+   * @token Size-10
+   * @description 头像大尺寸图标字号
+   */
+  avatarLargeIconSize: string;
+  /**
+   * @type {string}
    * @token Radius-circle
    * @description 头像圆形边框圆角
    */
@@ -92,6 +110,18 @@ export interface AvatarTokens {
    * @description 头像undefined字体字重
    */
   avatarMaxFontWeight: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 头像undefined鼠标移入时的字体颜色
+   */
+  avatarMaxHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 头像undefined鼠标移入时的背景颜色
+   */
+  avatarMaxHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Spacing-16

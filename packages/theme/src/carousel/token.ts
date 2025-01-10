@@ -37,7 +37,7 @@ const carouselTokenExtraValue = {
     hover: { background: { color: 'rgba(255, 255, 255, 0.4)' } },
   },
   indicator: {
-    background: { color: 'Neutral-fill-4' },
+    background: { color: 'rgba(255, 255, 255, 0.5)' },
     active: { background: { color: 'Neutral-fill-1' } },
     wrapper: { height: 'Size-20' },
     circle: { width: 'Size-3', gap: 'Spacing-8' },

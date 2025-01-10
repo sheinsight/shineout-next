@@ -21,11 +21,34 @@ const avatarTokenExtraValue = {
   width: 'Size-16',
   height: 'Size-16',
   background: { color: 'Neutral-fill-3' },
+  icon: {
+    size: 'Size-8',
+  },
   font: { size: 'font-14', color: 'Neutral-text-4', weight: 'Weight-medium' },
-  small: { width: 'Size-12', height: 'Size-12', font: { size: 'font-12' } },
-  large: { width: 'Size-20', height: 'Size-20', font: { size: 'font-16' } },
+  small: {
+    width: 'Size-12',
+    height: 'Size-12',
+    font: { size: 'font-12' },
+    icon: { size: 'Size-6' },
+  },
+  large: {
+    width: 'Size-20',
+    height: 'Size-20',
+    font: { size: 'font-16' },
+    icon: { size: 'Size-10' },
+  },
   circle: { border: { radius: 'Radius-circle' } },
-  max: { font: { color: 'Neutral-text-5', weight: 'Weight-regular' } },
+  max: {
+    font: { color: 'Neutral-text-5', weight: 'Weight-regular' },
+    hover: {
+      font: {
+        color: 'Neutral-text-1',
+      },
+      background: {
+        color: 'Brand-6',
+      },
+    },
+  },
   popover: { padding: 'Spacing-16' },
   square: { border: { radius: 'Radius-default' } },
   group: {

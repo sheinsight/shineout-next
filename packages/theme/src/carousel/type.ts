@@ -46,7 +46,7 @@ export interface CarouselTokens {
   carouselArrowHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-4
+   * @token rgba(255, 255, 255, 0.5)
    * @description 轮播图指示器背景颜色
    */
   carouselIndicatorBackgroundColor: string;

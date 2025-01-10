@@ -706,7 +706,7 @@ const buttonTokenValue = {
   },
   font: { size: 'Font-14', weight: 'Weight-regular' },
   border: { radius: 'Radius-default' },
-  padding: { x: 'Spacing-12', y: 'Spacing-4' },
+  padding: { x: 'Spacing-11', y: 'Spacing-4' },
   height: 'Size-16',
   small: {
     font: { size: 'Font-12', weight: 'Weight-regular' },

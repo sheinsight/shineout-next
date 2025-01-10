@@ -11,7 +11,7 @@ const carouselTokens: CarouselTokens = {
   carouselArrowBorderRadius: 'Radius-default',
   carouselArrowFontColor: 'Neutral-text-1',
   carouselArrowHoverBackgroundColor: 'rgba(255, 255, 255, 0.4)',
-  carouselIndicatorBackgroundColor: 'Neutral-fill-4',
+  carouselIndicatorBackgroundColor: 'rgba(255, 255, 255, 0.5)',
   carouselIndicatorActiveBackgroundColor: 'Neutral-fill-1',
   carouselIndicatorWrapperHeight: 'Size-20',
   carouselIndicatorCircleWidth: 'Size-3',
