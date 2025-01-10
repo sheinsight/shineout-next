@@ -5,7 +5,7 @@ import { CollapseTokens } from './type';
 
 const collapseTokens: CollapseTokens = {
   collapseIconColor: 'Neutral-text-4',
-  collapseIconHoverBackgroundColor: 'Neutral-fill-3',
+  collapseIconHoverBackgroundColor: 'Neutral-fill-2',
   collapseExtraMargin: 'Spacing-24',
   collapseWrapperBorderSize: 'Border-1',
   collapseWrapperBorderRadius: 'Radius-default',
