@@ -2,8 +2,7 @@
 2025-01-10
 
 ### 🐞 BugFix
-- 修复 `Form` 的 FormRef.validateFields('friends[1]')这种用法不生效的问题 ([#920](https://github.com/sheinsight/shineout-next/pull/920))
-
+- 修复 `Form` 的 `FormRef.validateFields("friends[1]")` 这种用法不生效的问题 ([#920](https://github.com/sheinsight/shineout-next/pull/920))
 
 ## 3.5.7-beta.3
 2025-01-08
