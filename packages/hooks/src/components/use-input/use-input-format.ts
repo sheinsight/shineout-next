@@ -113,10 +113,11 @@ const useInputFormat = (props: InputFormatProps) => {
 
   function getValue(str?: string) {
     if (type === 'number' && coin) {
-      if (showCoin && str) {
-        return `${str}`.replace(/\d+/, (n) => n.replace(/(\d)(?=(\d{3})+$)/g, ($1) => `${$1},`));
+      let _str = str as unknown as number;
+      if (showCoin && _str) {
+        return `${_str}`.replace(/\d+/, (n) => n.replace(/(\d)(?=(\d{3})+$)/g, ($1) => `${$1},`));
       }
-      return `${str || ''}`.replace(/,/g, '');
+      return `${_str === 0 ? _str : _str || ''}`.replace(/,/g, '');
     }
     return str;
   }

@@ -1,3 +1,10 @@
+## 3.5.7-beta.5
+2025-01-09
+
+### 🐞 BugFix
+
+- 修复 `Input` 设置 `type='number'` 且开启 `coin` 属性后值为数字 0 时展示异常的问题 ([#916](https://github.com/sheinsight/shineout-next/pull/916))
+
 ## 3.4.6
 2024-11-05
 
