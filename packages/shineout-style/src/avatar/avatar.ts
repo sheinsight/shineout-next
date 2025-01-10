@@ -88,8 +88,13 @@ const avatarStyle: JsStyles<AvatarClassType> = {
     },
   },
   max: {
+    cursor: 'pointer',
     color: token.avatarMaxFontColor,
     fontWeight: token.avatarMaxFontWeight,
+    '&:hover': {
+      color: token.avatarMaxHoverFontColor,
+      backgroundColor: token.avatarMaxHoverBackgroundColor,
+    },
   },
   popover: {
     padding: token.avatarPopoverPadding,
@@ -99,6 +104,7 @@ const avatarStyle: JsStyles<AvatarClassType> = {
     display: 'flex',
     flexWrap: 'wrap',
     gap: '8px',
+    cursor: 'auto',
   },
 };
 
