@@ -31,16 +31,19 @@ export default () => {
   };
 
   const handleLoader: TreeProps['loader'] = (key) => {
-    const nextData = produce(data, (draft) => {
-      const path: string[] = key.toString().split(',');
-      let target: any = draft;
-      path.forEach((pid, i) => {
-        target = target.find((d: any) => d.id === pid);
-        if (i < path.length - 1) target = target.children;
+    setTimeout(() => setData(currentData => {
+      const nextData = produce(currentData, (draft) => {
+        const path: string[] = key.toString().split(',');
+        let target: any = draft;
+        path.forEach((pid, i) => {
+          target = target.find((d: any) => d.id === pid);
+          if (i < path.length - 1) target = target.children;
+        });
+        target.children = [...createRange().map((i) => ({ id: `${target.id}-${i}` }))];
       });
-      target.children = [...createRange().map((i) => ({ id: `${target.id}-${i}` }))];
-    });
-    setTimeout(() => setData(nextData), 1000);
+
+      return nextData
+    }), 1000);
   };
 
   return (
