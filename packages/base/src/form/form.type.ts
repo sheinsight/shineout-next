@@ -33,7 +33,7 @@ export interface FormRef<FormValue> {
    * @en Validate form
    * @cn 校验表单
    */
-  validate: FormValidateFn<FormValue>;
+  validate: () => Promise<any>;
   /**
    * @en Validation form fields
    * @cn 校验表单指定字段
