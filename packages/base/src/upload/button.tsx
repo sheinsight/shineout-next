@@ -87,6 +87,7 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
         className={classNames(uploadClasses?.button, uploading && uploadClasses?.buttonUploading)}
         type={props.type || 'primary'}
         size={props.size}
+        mode={props.mode}
         onClick={onClick}
         onKeyDown={handleKeyDown}
       >
