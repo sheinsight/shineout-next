@@ -44,6 +44,7 @@ const useInputFormat = (props: InputFormatProps) => {
       }
 
       const noNeg = numType === 'non-negative' || numType === 'positive';
+
       const regExp = new RegExp(
         `^(${noNeg ? '' : '-'})?(\\d${regLength(integerLimit)})(${
           digits !== 0 ? `\\.\\d${regLength(digits)}` : ''
@@ -52,6 +53,13 @@ const useInputFormat = (props: InputFormatProps) => {
       );
 
       value = value.replace(regExp, '$1$2$3');
+
+      // 修正小数位数
+      const _value = v.split('.');
+      const __value = value.split('.');
+      if (_value[1] !== undefined && __value[1] === undefined) {
+        value = `${value}.${_value[1]}`;
+      }
     }
     onChange(value);
   });
