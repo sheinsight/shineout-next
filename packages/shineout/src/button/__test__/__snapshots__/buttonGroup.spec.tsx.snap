@@ -144,24 +144,34 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
           Publish
         </span>
       </button>
-      <button
-        class="soui-button soui-button-primary soui-button-button"
-        dir="ltr"
-        type="button"
+      <div
+        class="soui-dropdown soui-dropdown-wrapper"
+        data-position="bottom-right"
+        data-role="dropdown"
       >
-        <svg
-          fill="none"
-          height="14"
-          viewBox="0 0 24 24"
-          width="14"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="soui-dropdown-button soui-dropdown-split-button soui-button soui-button-primary soui-button-button"
+          dir="ltr"
+          type="button"
         >
-          <path
-            d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-            fill="#ffffff"
-          />
-        </svg>
-      </button>
+          <span
+            class="soui-dropdown-caret"
+            data-role="caret"
+            dir="ltr"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <div
       class="soui-button-group"
@@ -176,24 +186,34 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
           Publish
         </span>
       </button>
-      <button
-        class="soui-button soui-button-secondary soui-button-button"
-        dir="ltr"
-        type="button"
+      <div
+        class="soui-dropdown soui-dropdown-wrapper"
+        data-position="bottom-right"
+        data-role="dropdown"
       >
-        <svg
-          fill="none"
-          height="14"
-          viewBox="0 0 24 24"
-          width="14"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="soui-dropdown-button soui-dropdown-split-button soui-button soui-button-secondary soui-button-button"
+          dir="ltr"
+          type="button"
         >
-          <path
-            d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
-            fill="#666C7C"
-          />
-        </svg>
-      </button>
+          <span
+            class="soui-dropdown-caret"
+            data-role="caret"
+            dir="ltr"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
