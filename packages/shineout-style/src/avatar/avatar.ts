@@ -42,6 +42,10 @@ const avatarStyle: JsStyles<AvatarClassType> = {
       height: '100%',
       objectFit: 'cover',
     },
+    '& >svg': {
+      width: token.avatarIconSize,
+      height: token.avatarIconSize,
+    },
   },
   image: {
     backgroundColor: 'transparent',
@@ -69,11 +73,19 @@ const avatarStyle: JsStyles<AvatarClassType> = {
     width: token.avatarSmallWidth,
     height: token.avatarSmallHeight,
     fontSize: token.avatarSmallFontSize,
+    '& svg': {
+      width: token.avatarSmallIconSize,
+      height: token.avatarSmallIconSize,
+    },
   },
   large: {
     width: token.avatarLargeWidth,
     height: token.avatarLargeHeight,
     fontSize: token.avatarLargeFontSize,
+    '& svg': {
+      width: token.avatarLargeIconSize,
+      height: token.avatarLargeIconSize,
+    },
   },
   max: {
     color: token.avatarMaxFontColor,
