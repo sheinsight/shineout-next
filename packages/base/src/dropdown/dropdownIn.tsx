@@ -29,6 +29,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     animation,
     hideArrow,
     zIndex,
+    buttonShape,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
   const config = useConfig();
@@ -128,6 +129,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         )}
         mode={mode}
         type={type}
+        shape={buttonShape}
         size={size}
         text={text}
         key='button'
