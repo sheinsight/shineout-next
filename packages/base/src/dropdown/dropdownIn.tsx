@@ -29,7 +29,6 @@ const Dropdown = (props: SimpleDropdownProps) => {
     animation,
     hideArrow,
     zIndex,
-    buttonShape,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
   const config = useConfig();
@@ -63,7 +62,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     mouseLeaveDelay: 200,
   });
   // buttonProps
-  let { type, text, outline, mode } = props;
+  let { type, text, outline, mode, shape } = props;
 
   // 默认使用 secondary text 样式
   if (type === undefined && text === undefined && outline === undefined && mode === undefined) {
@@ -129,7 +128,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         )}
         mode={mode}
         type={type}
-        shape={buttonShape}
+        shape={shape}
         size={size}
         text={text}
         key='button'

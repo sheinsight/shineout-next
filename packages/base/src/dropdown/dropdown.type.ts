@@ -2,7 +2,6 @@ import React from 'react';
 import { CommonType } from '../common/type';
 import { ButtonClasses, ButtonProps } from '../button/button.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
-import { ButtonShape } from '@sheinx/hooks';
 
 export interface DropdownClasses {
   rootClass: string;
@@ -109,7 +108,7 @@ export interface ItemProps {
 export interface SimpleDropdownProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteListProps, 'absolute'>,
-    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
+    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode' | 'shape'> {
   jssStyle?: {
     dropdown?: () => DropdownClasses;
     button?: () => ButtonClasses;
@@ -168,13 +167,6 @@ export interface SimpleDropdownProps
    * @cn 按钮显示内容
    */
   placeholder?: React.ReactNode;
-
-  /**
-   * @en The shape of placeholder button
-   * @cn 占位按钮的shape
-   * @version 3.6.0
-   */
-  buttonShape?: ButtonShape
 
   /**
    * @en The click event. The parameter is the rendered data. <br /> Note: if the onClick is set in the data, this method will be ignored and data.onclick will be called.
