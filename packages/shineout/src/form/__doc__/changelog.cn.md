@@ -3,15 +3,12 @@
 
 ### 🐞 BugFix
 - 修复 `Form` 的 `FormRef.validateFields("friends[1]")` 这种用法不生效的问题 ([#920](https://github.com/sheinsight/shineout-next/pull/920))
-- `Form` 在 `Modal` 组件中嵌套使用时，子Form卸载后父Form无法提交的问题 ([#914](https://github.com/sheinsight/shineout-next/pull/914))
+- 修复 `Form` 在 `Modal` 组件中嵌套使用时，子Form卸载后父Form无法提交的问题 ([#914](https://github.com/sheinsight/shineout-next/pull/914))
 - 修复 `Form` 的FormRef.validateFields方法校验数组类型字段不生效的问题 ([#909](https://github.com/sheinsight/shineout-next/pull/909))
 
 ### 💎 Enhancement
 - `Form.FieldSet` children 的 `onChange` 方法增加第二个参数 `options`，设置options.validate为false时，不立即校验该字段 ([#912](https://github.com/sheinsight/shineout-next/pull/912))
 
-
-### 💎 Enhancement
-- `Form.FieldSet` children 的 `onChange` 方法增加第二个参数 `options`，设置options.validate为false时，不立即校验该字段 ([#911](https://github.com/sheinsight/shineout-next/pull/911))
 
 ## 3.5.6
 2025-01-06

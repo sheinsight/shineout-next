@@ -78,8 +78,6 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   }, []);
 
   const [nextData, nextExpanded] = useMemo(() => {
-    
-
     if (treeData) {
       const getTreeData = () => {
         const getFirstMatchNode = (node: DataItem) => {
