@@ -296,5 +296,6 @@ export const getCompleteFieldKeys = (fields: string | string[], allFields: strin
     }
   });
 
-  return completeFields;
+  // 返回之前去重
+  return Array.from(new Set(completeFields));
 }
