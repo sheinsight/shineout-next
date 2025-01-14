@@ -181,7 +181,7 @@ describe('input number', () => {
       }
       const result =
         v.indexOf('.') >= 0
-          ? `${v.split('.')[0].substring(0, integerLimit)}`
+          ? `${v.split('.')[0].substring(0, integerLimit)}.${v.split('.')[1]}`
           : v.substring(0, integerLimit);
       expect(input?.getAttribute('value')).toBe(result);
     });

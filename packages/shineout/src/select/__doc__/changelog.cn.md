@@ -1,5 +1,12 @@
-## 3.5.6-beta.2
-2024-12-26
+## 3.5.7-beta.1
+2025-01-06
+
+### 🐞 BugFix
+- 修复 `Select` 单选模式下设置了value为数组类型，此时开启 `onFilter` 后组件渲染报错的问题 ([#910](https://github.com/sheinsight/shineout-next/pull/910))
+
+
+## 3.5.6
+2025-01-06
 
 ### 🐞 BugFix
 - 修复 `Select` 多选模式下，开启 `onFilter` 后且使用 `open` 做面板受控打开时，自动聚焦失效的问题 ([#891](https://github.com/sheinsight/shineout-next/pull/891))

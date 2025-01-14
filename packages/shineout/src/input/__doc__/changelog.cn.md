@@ -1,3 +1,21 @@
+## 3.5.7-beta.7
+2025-01-10
+
+### 🐞 BugFix
+
+- 修复 `Input` 开启 `coin` 情况下初始化数据不展示千分号的问题 ([#919](https://github.com/sheinsight/shineout-next/pull/919))
+
+### 💎 Enhancement
+
+- 优化 `Input` 在 `type='number'` 开启 `coin` 下输入溢出内容时的交互逻辑 ([#919](https://github.com/sheinsight/shineout-next/pull/919))
+
+## 3.5.7-beta.5
+2025-01-09
+
+### 🐞 BugFix
+
+- 修复 `Input` 设置 `type='number'` 且开启 `coin` 属性后值为数字 0 时展示异常的问题 ([#916](https://github.com/sheinsight/shineout-next/pull/916))
+
 ## 3.4.6
 2024-11-05
 

@@ -19,7 +19,7 @@ export type ButtonUploadInnerPropsType = Pick<
 
 export interface UploadButtonProps<T>
   extends Omit<UploadProps<T>, keyof ButtonUploadInnerPropsType>,
-    Pick<ButtonProps, 'size' | 'type'> {
+    Pick<ButtonProps, 'size' | 'type' | 'mode'> {
   /**
    * @cn 上传中按钮的内容，如果是字符串默认会有spin loading
    * @en  content of uploading, will have spin if a string
