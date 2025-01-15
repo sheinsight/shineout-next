@@ -1,5 +1,12 @@
 import { CommonType } from '../common/type';
-import { BaseTreeProps, ObjectKey, KeygenResult, TreePathType, useTree } from '@sheinx/hooks';
+import {
+  BaseTreeProps,
+  ObjectKey,
+  KeygenResult,
+  TreePathType,
+  useTree,
+  UpdateFunc,
+} from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 
@@ -203,4 +210,49 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @cn 虚拟列表
    */
   virtual?: boolean;
+  /**
+   * @en The height of the list item
+   * @cn 列表项高度
+   */
+  lineHeight?: number;
+  /**
+   * @en The height of the list
+   * @cn 列表高度
+   */
+  height?: number | string;
+  /**
+   * @en Number of list items displayed at the same time
+   * @cn 同时展示的列表项数量
+   * @default 20
+   */
+  rowsInView?: number;
+}
+
+export interface VirtualTreeProps<DataItem, Value extends any[]>
+  extends Omit<
+    TreeProps<DataItem, Value>,
+    | 'height'
+    | 'line'
+    | 'dragImageSelector'
+    | 'expanded'
+    | 'onDrop'
+    | 'childrenKey'
+    | 'childrenClass'
+  > {
+  height: number | string;
+  line: boolean;
+  expanded?: boolean;
+  contentClass: string | ((data: DataItem) => string);
+  isControlled: boolean;
+  bindNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { expanded: boolean; active: boolean };
+  dragImageSelector: (data?: DataItem) => string | undefined;
+  onToggle?: (id: KeygenResult, expanded?: boolean) => void;
+  onNodeClick: (data: DataItem, id: KeygenResult) => void;
+  onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
+  childrenKey: keyof DataItem;
+  childrenClass: (data: DataItem) => string | undefined;
 }

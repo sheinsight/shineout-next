@@ -55,6 +55,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     childrenKey = 'children' as keyof DataItem & string,
     keygen,
     mode,
+    virtual,
     active: activeProp,
     expanded: expandedProp,
     dataUpdate = true,
@@ -79,6 +80,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const { current: context } = useRef<TreeContext<DataItem>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
+    dataFlat: [],
     forceUpdateMap: new Map<KeygenResult, () => void>(),
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
@@ -250,6 +252,12 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       }
       // 制作 data mapping
       context.dataMap.set(id, item);
+      if (virtual)
+        context.dataFlat.push({
+          id,
+          level,
+          data: item,
+        });
 
       let isDisabled = !!disabled;
       if (isDisabled === false) {
@@ -279,7 +287,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         isDisabled,
         indexPath,
         index: i,
-        level,
       });
     }
     return ids;
@@ -378,6 +385,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.cachedValue = [];
     context.pathMap = new Map();
     context.dataMap = new Map();
+    context.dataFlat = [];
     context.valueMap = new Map();
     context.unmatchedValueMap = new Map();
     context.data = toArray(data) as DataItem[];
@@ -482,6 +490,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     isUnMatched,
     childrenKey,
     data,
+    dataFlat: context.dataFlat,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,

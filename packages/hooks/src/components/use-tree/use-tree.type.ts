@@ -6,9 +6,16 @@ export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 
 export type UpdateFunc = (name: string, active: boolean) => void;
 
+export type FlatNodeType<DataItem> = {
+  id: KeygenResult;
+  data: DataItem;
+  level: number;
+};
+
 export interface TreeContext<DataItem> {
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
+  dataFlat: FlatNodeType<DataItem>[];
   valueMap: Map<KeygenResult, CheckedStatusType>;
   unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
@@ -25,7 +32,6 @@ export interface TreePathType {
   isDisabled: boolean;
   indexPath: number[];
   index: number;
-  level: number;
 }
 
 export interface BaseTreeProps<DataItem> {
@@ -113,6 +119,10 @@ export interface BaseTreeProps<DataItem> {
    * @private 内部数据处理
    */
   datum?: TreeDatum<DataItem>;
+  /**
+   * @private 是否虚拟化
+   */
+  virtual?: boolean;
 }
 
 export interface TreeDatum<DataItem> {
@@ -144,6 +154,7 @@ export interface TreeDatum<DataItem> {
   updateMap: Map<KeygenResult, UpdateFunc>;
   childrenKey: string;
   data: DataItem[];
+  dataFlat: FlatNodeType<DataItem>[];
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
   valueMap: Map<KeygenResult, CheckedStatusType>;

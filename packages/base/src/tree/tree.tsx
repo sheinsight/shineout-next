@@ -69,6 +69,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     }
   }, [active, propActive]);
 
+  const treeRef = useRef<HTMLDivElement>(null);
   const { current: context } = useRef({ mounted: false });
 
   const { datum, expanded, onExpand } = useTree({
@@ -86,6 +87,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     defaultExpanded,
     childrenKey: childrenKey,
     keygen,
+    virtual,
     onExpand: onExpandProp,
     datum: propsDatum,
   });
@@ -100,6 +102,16 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   const getDragImageSelector = (data?: DataItem) => {
     if (util.isFunc(dragImageSelector)) return dragImageSelector(data);
     return dragImageSelector;
+  };
+
+  const getHeight = () => {
+    const { height: styleHeight } = props.style || {};
+    if (!styleHeight && !props.height) {
+      const containerHeight = treeRef.current?.parentElement?.clientHeight;
+      return containerHeight;
+    }
+
+    return props.height || styleHeight;
   };
 
   const handleUpdateExpanded = (expanded?: KeygenResult[]) => {
@@ -204,7 +216,19 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   const renderList = () => {
     if (virtual) {
-      return <VirtualTree {...props} />;
+      const realHeight = getHeight();
+      if (!realHeight) return null;
+      return (
+        <VirtualTree
+          {...props}
+          line={line}
+          expanded={expanded}
+          height={realHeight}
+          isControlled={'expanded' in props}
+          bindNode={datum.bindNode}
+          onNodeClick={handleNodeClick}
+        />
+      );
     }
 
     return (
@@ -267,10 +291,9 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   }, []);
 
   const { fieldId } = useContext(FormFieldContext);
-  console.log('datum', datum);
 
   return (
-    <div className={rootClass} id={fieldId} {...rest}>
+    <div ref={treeRef} className={rootClass} id={fieldId} {...rest}>
       <Provider value={datum as any}>{renderList()}</Provider>
     </div>
   );
