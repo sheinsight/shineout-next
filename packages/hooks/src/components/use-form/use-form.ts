@@ -196,6 +196,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
         const validates = finalFields.map((key) => {
           const validateField = context.validateMap[key];
+          if(!validateField) return []
           return Array.from(validateField).map((validate) =>
             validate(key, deepGet(context.value, key), context.value, config),
           );

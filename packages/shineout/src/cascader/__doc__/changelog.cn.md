@@ -1,3 +1,12 @@
+## 3.5.8-beta.1
+2025-01-14
+
+### 💎 Enhancement
+- `Cascader` 非hover的多选模式下，末级节点支持整个节点区域点击选中checkbox ([#927](https://github.com/sheinsight/shineout-next/pull/927))
+
+### 🐞 BugFix
+- 修复 `Cascader` 多选模式下搜索时没有自动展开命中结果的问题（Regression: since v3.1.6） ([#926](https://github.com/sheinsight/shineout-next/pull/926))
+
 ## 3.5.6
 2025-01-06
 

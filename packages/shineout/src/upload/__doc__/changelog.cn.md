@@ -1,12 +1,9 @@
-## 3.5.7-beta.6
-2025-01-10
+## 3.5.7
+2025-01-14
 
 ### 🐞 BugFix
 
 - 修复 `Upload.Button` 不支持mode=outline的问题 ([#918](https://github.com/sheinsight/shineout-next/pull/918))
-
-## 3.5.7-beta.4
-2025-01-10
 
 ### 💎 Enhancement
 
