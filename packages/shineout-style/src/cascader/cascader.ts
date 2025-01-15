@@ -158,7 +158,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   wrapperDisabled: {
     ...wrapperDisabled,
-    '& $icon': {
+    '& $icon, & $arrowIcon': {
       color: token.cascaderDisabledFontColor,
     },
   },
@@ -534,6 +534,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       cursor: 'not-allowed',
       color: token.cascaderOptionDisabledColor,
       backgroundColor: token.cascaderOptionDisabledBackgroundColor,
+    },
+    '& $optionIcon': {
+      color: token.cascaderOptionDisabledColor,
     },
   },
 };
