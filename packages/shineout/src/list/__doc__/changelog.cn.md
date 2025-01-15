@@ -1,3 +1,10 @@
+## 3.5.8-beta.3
+2025-01-15
+
+### 🐞 BugFix
+
+-  修复 `List` 组件设置 `size` 属性后选择行的 Checkbox 组件不跟随尺寸的问题 ([#929](https://github.com/sheinsight/shineout-next/pull/929))
+
 ## 3.4.4
 2024-10-28
 
