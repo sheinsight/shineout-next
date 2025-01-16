@@ -57,7 +57,7 @@ export interface FilterProps {
   disabled: boolean;
   onFilter?: (text: string) => void;
   placeholder?: string;
-  isSrouce?: boolean;
+  isSource?: boolean;
 }
 
 export interface CustomRenderProps<Value extends KeygenResult[]> {

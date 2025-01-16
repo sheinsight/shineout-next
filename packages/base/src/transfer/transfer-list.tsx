@@ -101,7 +101,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
             disabled: disabled === true,
             onFilter: handleFilter,
             placeholder: getLocale(locale, 'search'),
-            isSrouce: listType === 'source',
+            isSource: listType === 'source',
           })}
         </div>
       );
