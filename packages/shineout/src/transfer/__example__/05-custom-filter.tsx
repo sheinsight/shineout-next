@@ -13,7 +13,7 @@ interface FilterProps {
   disabled: boolean;
   onFilter?: (text: string) => void;
   placeholder?: string;
-  isSrouce?: boolean;
+  isSource?: boolean;
 }
 
 for (let i = 0; i < 10; i++) {
