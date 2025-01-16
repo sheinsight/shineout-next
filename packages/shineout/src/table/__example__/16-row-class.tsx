@@ -13,12 +13,12 @@ const useStyle = createUseStyles(
   {
     danger: {
       'table & td': {
-        backgroundColor: '#fff1f0',
+        backgroundColor: '#FCE6E6',
       },
     },
     success: {
       'table & td': {
-        backgroundColor: '#f6ffed',
+        backgroundColor: '#E4FCED',
       },
     },
   },

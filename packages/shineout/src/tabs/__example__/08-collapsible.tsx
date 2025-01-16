@@ -53,7 +53,7 @@ export default () => {
         </Tabs.Panel>
         <Tabs.Panel
           tab={
-            <span style={{ marginInlineStart: 4, display: 'flex', alignItems: 'center' }}>
+            <span style={{ display: 'flex', alignItems: 'center' }}>
               {renderIcon()}
               <span style={{ marginInlineStart: 4 }}>Tab3</span>
             </span>

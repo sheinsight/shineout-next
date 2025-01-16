@@ -39,7 +39,9 @@ const App: React.FC = () => {
                 top: 0,
               }}
               style={{ backgroundColor: '#fff' }}
-              inactiveBackground='#fff'
+              inactiveBackground='transparent'
+              activeBackground='transparent'
+              tabBarStyle={{ backgroundColor: '#fff' }}
             >
               {tabs.map((tab, index) => {
                 return (

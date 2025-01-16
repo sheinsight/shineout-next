@@ -94,7 +94,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: Token.alertNearlyMargin,
+    // marginLeft: Token.alertNearlyMargin,
     '&:hover': {
       color: Token.alertCloseHoverColor,
     },
@@ -107,6 +107,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     height: Token.lineHeightDynamic,
     display: 'flex',
     alignItems: 'center',
+    marginLeft: Token.alertNearlyMargin,
   },
   content: {
     flex: '1 1 0',
