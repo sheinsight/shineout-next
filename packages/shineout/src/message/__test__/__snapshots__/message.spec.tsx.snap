@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Message[Base] should render correctly  1`] = `
-<div>
+<div
+  style="display: flex; flex-wrap: wrap; gap: 24px;"
+>
   <button
     class="soui-button soui-button-secondary soui-button-button"
     dir="ltr"
@@ -14,7 +16,7 @@ exports[`Message[Base] should render correctly  1`] = `
   <button
     class="soui-button soui-button-primary soui-button-button"
     dir="ltr"
-    style="margin-inline-start: 24px;"
+    style="margin: 0px;"
     type="button"
   >
     <span>
@@ -24,7 +26,7 @@ exports[`Message[Base] should render correctly  1`] = `
   <button
     class="soui-button soui-button-success soui-button-button"
     dir="ltr"
-    style="margin-inline-start: 24px;"
+    style="margin: 0px;"
     type="button"
   >
     <span>
@@ -34,7 +36,7 @@ exports[`Message[Base] should render correctly  1`] = `
   <button
     class="soui-button soui-button-warning soui-button-button"
     dir="ltr"
-    style="margin-inline-start: 24px;"
+    style="margin: 0px;"
     type="button"
   >
     <span>
@@ -44,7 +46,7 @@ exports[`Message[Base] should render correctly  1`] = `
   <button
     class="soui-button soui-button-danger soui-button-button"
     dir="ltr"
-    style="margin-inline-start: 24px;"
+    style="margin: 0px;"
     type="button"
   >
     <span>
@@ -54,7 +56,7 @@ exports[`Message[Base] should render correctly  1`] = `
   <button
     class="soui-button soui-button-secondary soui-button-button"
     dir="ltr"
-    style="margin-inline-start: 24px;"
+    style="margin: 0px;"
     type="button"
   >
     <span>

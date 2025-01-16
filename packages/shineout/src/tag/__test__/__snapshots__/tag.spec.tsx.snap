@@ -898,7 +898,7 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       </div>
     </div>
     <div
-      class="soui-tag soui-tag-tag soui-tag-default soui-tag-outline"
+      class="custom-tag-addTag-0-2-1 soui-tag soui-tag-tag soui-tag-default soui-tag-outline"
       style="cursor: pointer; border-style: dashed;"
     >
       <div
@@ -908,7 +908,7 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
           style="display: flex; align-items: center;"
         >
           <div
-            style="color: rgb(102, 108, 124); margin-inline-end: 4px;"
+            style="margin-inline-end: 4px;"
           >
             + 
           </div>
