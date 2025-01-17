@@ -4,7 +4,7 @@
 export interface DropdownTokens {
   /**
    * @type {string}
-   * @token Spacing-8
+   * @token Spacing-4
    * @description 下拉菜单箭头icon的外边距（左侧）
    */
   dropdownCaretMarginLeft: string;
@@ -214,7 +214,7 @@ export interface DropdownTokens {
   dropdownOptionDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Radius-default
+   * @token Radius-2
    * @description 下拉菜单选项边框圆角
    */
   dropdownOptionBorderRadius: string;

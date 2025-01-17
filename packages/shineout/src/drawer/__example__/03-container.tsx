@@ -24,7 +24,7 @@ const App: React.FC = () => {
 
   return (
     <div ref={(ref) => setWrapper(ref!)}>
-      <Button onClick={show}>click me</Button>
+      <Button onClick={show} mode="outline">click me</Button>
       <Drawer
         width={400}
         visible={visible}

@@ -100,19 +100,19 @@ export interface LinkTokens {
   linkWarningFontColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-3
    * @description 链接组件的警告色禁用时的字体颜色
    */
   linkWarningDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Warning-7
+   * @token Warning-5
    * @description 链接组件的警告色鼠标移入时的字体颜色
    */
   linkWarningHoverFontColor: string;
   /**
    * @type {string}
-   * @token Warning-3
+   * @token Warning-7
    * @description 链接组件的警告色鼠标点击时的字体颜色
    */
   linkWarningActiveFontColor: string;
@@ -124,19 +124,19 @@ export interface LinkTokens {
   linkSuccessFontColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-3
    * @description 链接组件的成功色禁用时的字体颜色
    */
   linkSuccessDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Success-7
+   * @token Success-5
    * @description 链接组件的成功色鼠标移入时的字体颜色
    */
   linkSuccessHoverFontColor: string;
   /**
    * @type {string}
-   * @token Success-3
+   * @token Success-7
    * @description 链接组件的成功色鼠标点击时的字体颜色
    */
   linkSuccessActiveFontColor: string;
