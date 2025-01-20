@@ -59,13 +59,13 @@ export function getDirectionIconName(mode = 'left', double = false) {
   const rtl = true;
   if (mode === 'left') {
     if (rtl) {
-      return double ? 'AngleDoubleRight' : 'AngleRight';
+      return double ? 'ArrowRightDouble' : 'AngleRight';
     }
-    return double ? 'AngleDoubleLeft' : 'AngleLeft';
+    return double ? 'ArrowLeftDouble' : 'AngleLeft';
   }
 
   if (rtl) {
-    return double ? 'AngleDoubleLeft' : 'AngleLeft';
+    return double ? 'ArrowLeftDouble' : 'AngleLeft';
   }
-  return double ? 'AngleDoubleRight' : 'AngleRight';
+  return double ? 'ArrowRightDouble' : 'AngleRight';
 }
