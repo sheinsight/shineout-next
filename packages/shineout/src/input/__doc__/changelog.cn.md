@@ -1,3 +1,10 @@
+## 3.5.8-beta.5
+2025-01-20
+
+### 🐞 BugFix
+
+- 修复 `Input` 开启 `digits` 是值为 0 的情况下依然可以输入小数的问题（Regression: since v3.5.7） ([#935](https://github.com/sheinsight/shineout-next/pull/935))
+
 ## 3.5.7
 2025-01-14
 
