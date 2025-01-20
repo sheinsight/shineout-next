@@ -26,7 +26,7 @@ const App: React.FC = () => (
       <b>.com</b>
     </Input.Group>
 
-    <h3>Small Size</h3>
+    <h3 style={{ marginBottom: 12, fontSize: 16 }}>Small Size</h3>
     <Input.Group style={style} size="small">
       <b>http://</b>
       <Input placeholder='email' />

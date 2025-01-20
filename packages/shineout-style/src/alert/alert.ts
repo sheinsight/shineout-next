@@ -68,8 +68,8 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
       lineHeight: Token.lineHeightDynamic,
     },
     '& $close': {
-      marginBottom: Token.alertNearlyMargin,
-      marginTop: 2,
+      // marginBottom: Token.alertNearlyMargin,
+      // marginTop: 2,
     },
   },
   title: {
@@ -104,7 +104,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   closeWrapper: {
     width: Token.alertFontSize,
-    height: Token.lineHeightDynamic,
+    height: `calc(${Token.lineHeightDynamic} + 2px)`,
     display: 'flex',
     alignItems: 'center',
     marginLeft: Token.alertNearlyMargin,
