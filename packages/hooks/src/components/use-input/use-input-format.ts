@@ -57,7 +57,7 @@ const useInputFormat = (props: InputFormatProps) => {
       // 修正小数位数
       const _value = v.split('.');
       const __value = value.split('.');
-      if (_value[1] !== undefined && __value[1] === undefined) {
+      if (_value[1] !== undefined && __value[1] === undefined && digits !== 0) {
         value = `${value}.${_value[1]}`;
       }
     }
