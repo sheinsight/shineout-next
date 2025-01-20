@@ -1,3 +1,10 @@
+## 3.5.8-beta.5
+2025-01-14
+
+### 🐞 BugFix
+- 修复 `Form` 的 `FieldSet`嵌套使用后，子级的insert value触发了父级的校验的问题 ([#934](https://github.com/sheinsight/shineout-next/pull/934))
+
+
 ## 3.5.8-beta.2
 2025-01-14
 

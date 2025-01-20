@@ -179,7 +179,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       return new Promise((resolve, reject: (reason: ValidationError<T> | FormError) => void) => {
         let finalFields = Object.keys(context.validateMap);
         if(fields){
-          if(config.ignoreChildren){
+          if(config.ignoreChildren || config.ignoreBind){
             // 旧行为：仅校验当前字段
             finalFields = (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
           }else{
