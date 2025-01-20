@@ -257,7 +257,9 @@ exports[`Input[Base] should render correctly about group 1`] = `
       .com
     </b>
   </div>
-  <h3>
+  <h3
+    style="margin-bottom: 12px; font-size: 16px;"
+  >
     Small Size
   </h3>
   <div
