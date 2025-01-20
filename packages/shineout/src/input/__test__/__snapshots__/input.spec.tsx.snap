@@ -200,7 +200,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
       >
         <input
           class="soui-input-input"
-          placeholder="email"
+          placeholder="please enter"
           value=""
         />
       </div>
@@ -221,7 +221,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
       >
         <input
           class="soui-input-input"
-          placeholder="email"
+          placeholder="please enter"
           value=""
         />
       </div>
@@ -248,7 +248,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
       >
         <input
           class="soui-input-input"
-          placeholder="email"
+          placeholder="please enter"
           value=""
         />
       </div>
@@ -257,7 +257,47 @@ exports[`Input[Base] should render correctly about group 1`] = `
       .com
     </b>
   </div>
-  <h3>
+  <div
+    class="soui-input-group"
+    data-soui-role="input-group"
+    dir="ltr"
+    style="width: 300px; margin-bottom: 24px;"
+  >
+    <div
+      class="soui-input soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
+      >
+        <input
+          class="soui-input-input"
+          placeholder="please enter"
+          value=""
+        />
+      </div>
+    </div>
+    <b>
+      -
+    </b>
+    <div
+      class="soui-input soui-input-wrapper"
+      data-soui-input-border="true"
+    >
+      <div
+        class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
+      >
+        <input
+          class="soui-input-input"
+          placeholder="please enter"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <h3
+    style="margin-bottom: 12px; font-size: 16px;"
+  >
     Small Size
   </h3>
   <div

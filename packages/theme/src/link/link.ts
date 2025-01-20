@@ -20,13 +20,13 @@ const linkTokens: LinkTokens = {
   linkDangerHoverFontColor: 'Danger-5',
   linkDangerActiveFontColor: 'Danger-7',
   linkWarningFontColor: 'Warning-6',
-  linkWarningDisabledFontColor: 'Warning-5',
-  linkWarningHoverFontColor: 'Warning-7',
-  linkWarningActiveFontColor: 'Warning-3',
+  linkWarningDisabledFontColor: 'Warning-3',
+  linkWarningHoverFontColor: 'Warning-5',
+  linkWarningActiveFontColor: 'Warning-7',
   linkSuccessFontColor: 'Success-6',
-  linkSuccessDisabledFontColor: 'Success-5',
-  linkSuccessHoverFontColor: 'Success-7',
-  linkSuccessActiveFontColor: 'Success-3',
+  linkSuccessDisabledFontColor: 'Success-3',
+  linkSuccessHoverFontColor: 'Success-5',
+  linkSuccessActiveFontColor: 'Success-7',
 };
 
 export default linkTokens;

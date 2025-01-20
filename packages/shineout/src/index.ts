@@ -52,7 +52,7 @@ export { default as Tree } from './tree';
 export { default as TreeSelect } from './tree-select';
 export { default as Upload } from './upload';
 
-export { setConfig, config, setLocale, setIcons } from '@sheinx/base';
+export { setConfig, config, setLocale, setIcons, icons } from '@sheinx/base';
 export type { ConfigOption } from '@sheinx/base';
 export { setToken, useToken } from '@sheinx/theme';
 export {

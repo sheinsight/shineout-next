@@ -18,11 +18,11 @@ const style: React.CSSProperties = { marginBottom: 24 };
 
 const App: React.FC = () => (
   <div style={{ width: 300 }}>
-    <Input style={style} type='number' placeholder='digits undefined' />
+    <Input style={style} type='number' placeholder='digits undefined' clearable />
     <Input style={style} digits={0} type='number' placeholder='digits 0' clearable />
     <Input style={style} digits={1} type='number' placeholder='digits 1' clearable />
     <Input style={style} digits={2} type='number' placeholder='digits 2' clearable />
-    <Input style={style} numType='non-negative' type='number' placeholder='non-negative' />
+    <Input style={style} numType='non-negative' type='number' placeholder='non-negative' clearable />
     <Input style={style} type='number' integerLimit={3} placeholder='integerLimit 3' clearable />
     <Input
       style={style}
@@ -38,8 +38,9 @@ const App: React.FC = () => (
       integerLimit={3}
       type='number'
       placeholder='positive;integerLimit 3'
+      clearable
     />
-    <Input.Number numType='positive' integerLimit={3} placeholder='positive; integerLimit 3' />
+    <Input.Number numType='positive' integerLimit={3} placeholder='positive; integerLimit 3' clearable />
   </div>
 );
 

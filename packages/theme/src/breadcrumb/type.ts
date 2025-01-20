@@ -46,6 +46,12 @@ export interface BreadcrumbTokens {
   breadcrumbDefaultLinkHoverColor: string;
   /**
    * @type {string}
+   * @token Brand-7
+   * @description 面包屑默认尺寸链接色鼠标点击时的颜色
+   */
+  breadcrumbDefaultLinkActiveColor: string;
+  /**
+   * @type {string}
    * @token Spacing-4
    * @description 面包屑下拉列表的内边距（垂直方向）
    */

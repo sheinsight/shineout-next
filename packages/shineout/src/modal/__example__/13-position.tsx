@@ -38,7 +38,7 @@ const App: React.FC = () => {
         style={{ marginBottom: 24 }}
       />
 
-      <Button onClick={() => toggle(true)}>click me</Button>
+      <Button mode='outline' onClick={() => toggle(true)}>click me</Button>
 
       <Modal
         title='Form'

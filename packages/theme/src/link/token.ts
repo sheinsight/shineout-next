@@ -40,15 +40,15 @@ const linkTokenValue = {
   },
   warning: {
     font: { color: 'Warning-6' },
-    disabled: { font: { color: 'Warning-5' } },
-    hover: { font: { color: 'Warning-7' } },
-    active: { font: { color: 'Warning-3' } },
+    disabled: { font: { color: 'Warning-3' } },
+    hover: { font: { color: 'Warning-5' } },
+    active: { font: { color: 'Warning-7' } },
   },
   success: {
     font: { color: 'Success-6' },
-    disabled: { font: { color: 'Success-5' } },
-    hover: { font: { color: 'Success-7' } },
-    active: { font: { color: 'Success-3' } },
+    disabled: { font: { color: 'Success-3' } },
+    hover: { font: { color: 'Success-5' } },
+    active: { font: { color: 'Success-7' } },
   },
 };
 

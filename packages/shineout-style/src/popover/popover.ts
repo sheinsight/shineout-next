@@ -12,7 +12,6 @@ const popoverStyle: JsStyles<PopoverClassType> = {
   rootClass: {},
   wrapper: {
     display: 'none',
-    cursor: 'pointer',
     position: 'absolute',
     boxShadow: token.popoverShadow,
     backgroundColor: token.popoverBackgroundColor,

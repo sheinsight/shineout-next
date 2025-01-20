@@ -14,19 +14,25 @@ const App: React.FC = () => (
   <div>
     <Input.Group style={style}>
       <b>http://</b>
-      <Input placeholder='email' />
+      <Input placeholder='please enter' />
     </Input.Group>
     <Input.Group style={style}>
-      <Input placeholder='email' />
+      <Input placeholder='please enter' />
       <b>.com</b>
     </Input.Group>
     <Input.Group style={style}>
       <b>http://</b>
-      <Input placeholder='email' />
+      <Input placeholder='please enter' />
       <b>.com</b>
     </Input.Group>
 
-    <h3>Small Size</h3>
+    <Input.Group style={style}>
+      <Input placeholder='please enter' />
+      <b>-</b>
+      <Input placeholder='please enter' />
+    </Input.Group>
+
+    <h3 style={{ marginBottom: 12, fontSize: 16 }}>Small Size</h3>
     <Input.Group style={style} size="small">
       <b>http://</b>
       <Input placeholder='email' />

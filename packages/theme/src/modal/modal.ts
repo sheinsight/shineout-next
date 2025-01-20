@@ -16,7 +16,7 @@ const modalTokens: ModalTokens = {
   modalPanelFontSize: 'Font-14',
   modalHeaderIconMarginEnd: 'Spacing-8',
   modalHeaderIconMarginTop: 'Spacing-2',
-  modalHeaderIconSize: 'Size-8',
+  modalHeaderIconSize: 'Size-10',
   modalHeaderCloseMarginXStart: 'Spacing-16',
   modalHeaderCloseSize: 'Size-8',
   modalHeaderCloseTop: 'Size-2',

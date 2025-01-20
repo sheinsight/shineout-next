@@ -23,7 +23,7 @@ const customIcon2 = (
 
 export default () => {
   return (
-    <Gap column={36}>
+    <Gap column={24}>
       <Link href="#" icon>Link</Link>
 
       <Link href="#" icon={customIcon}>Link{customIcon2}</Link>

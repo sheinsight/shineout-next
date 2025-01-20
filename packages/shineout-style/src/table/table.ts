@@ -270,6 +270,7 @@ const tableStyle: JsStyles<TableClassType> = {
         top: 0,
         bottom: -1,
         width: '5px',
+        pointerEvents: 'none',
       },
       '&[dir=ltr]::after': {
         right: '-5px',
@@ -303,6 +304,7 @@ const tableStyle: JsStyles<TableClassType> = {
         top: 0,
         bottom: 0,
         width: '5px',
+        pointerEvents: 'none',
       },
       '&[dir=rtl]::before': {
         right: '-5px',

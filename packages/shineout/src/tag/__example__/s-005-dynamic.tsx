@@ -7,9 +7,25 @@
 
 import { useState } from 'react';
 import { Tag } from 'shineout';
+import { createUseStyles } from 'react-jss';
+
+const useStyle = createUseStyles(
+  {
+    addTag: {
+      '&:hover': {
+        borderColor: 'var(--soui-tag-info-outline-border-color,var(--soui-brand-6,#197AFA))',
+        color: 'var(--soui-tag-info-outline-font-color,var(--soui-brand-6,#197AFA))',
+      },
+    },
+  },
+  { name: 'custom-tag' },
+);
+
 export default () => {
   const [tags, setTags] = useState(['Tag 1', 'Tag 2', 'Tag 3']);
   const [inputVisible, setInputVisible] = useState(false);
+
+  const classes = useStyle();
 
   const remove = (removedTag: string) => {
     const t = tags.filter((tag: string) => tag !== removedTag);
@@ -45,9 +61,10 @@ export default () => {
             style={{ cursor: 'pointer', borderStyle: 'dashed' }}
             onClick={showInput}
             mode='outline'
+            className={classes.addTag}
           >
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <div style={{ color: '#666C7C', marginInlineEnd: 4 }}>+ </div>
+              <div style={{ marginInlineEnd: 4 }}>+ </div>
               <div>Add Tag</div>
             </div>
           </Tag>

@@ -68,8 +68,8 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
       lineHeight: Token.lineHeightDynamic,
     },
     '& $close': {
-      marginBottom: Token.alertNearlyMargin,
-      marginTop: 2,
+      // marginBottom: Token.alertNearlyMargin,
+      // marginTop: 2,
     },
   },
   title: {
@@ -94,7 +94,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: Token.alertNearlyMargin,
+    // marginLeft: Token.alertNearlyMargin,
     '&:hover': {
       color: Token.alertCloseHoverColor,
     },
@@ -104,9 +104,10 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   closeWrapper: {
     width: Token.alertFontSize,
-    height: Token.lineHeightDynamic,
+    height: `calc(${Token.lineHeightDynamic} + 2px)`,
     display: 'flex',
     alignItems: 'center',
+    marginLeft: Token.alertNearlyMargin,
   },
   content: {
     flex: '1 1 0',

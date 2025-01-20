@@ -44,6 +44,9 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
       '&:hover': {
         color: token.breadcrumbDefaultLinkHoverColor,
       },
+      '&:active': {
+        color: token.breadcrumbDefaultLinkActiveColor,
+      },
     },
     // '&:not(a) svg': {
     //   color: token.breadcrumbIconBackgroundColor,

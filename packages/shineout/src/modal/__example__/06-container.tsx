@@ -31,7 +31,7 @@ const App: React.FC = () => {
         title='Modal Title'
         onClose={handleDismiss}
         footer={[
-          <Button key='cancel' onClick={handleDismiss}>
+          <Button key='cancel' mode='outline' onClick={handleDismiss}>
             Cancel
           </Button>,
           <Button key='ok' type='primary' onClick={handleDismiss}>

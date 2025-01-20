@@ -56,7 +56,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={show}>Drawer Form</Button>
+      <Button onClick={show} mode="outline">Drawer Form</Button>
 
       <Drawer
         visible={visible}
@@ -66,10 +66,9 @@ const App: React.FC = () => {
         footer={renderFooter()}
       >
         <Form
-          labelWidth={100}
+          labelWidth={85}
           rules={rules}
           labelAlign='right'
-          style={{ maxWidth: 400 }}
           onSubmit={handleSubmit}
         >
           <Form.Item required label='Email'>

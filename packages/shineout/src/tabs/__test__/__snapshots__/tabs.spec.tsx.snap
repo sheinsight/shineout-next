@@ -252,7 +252,7 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
               class="soui-tabs-line-inner"
             >
               <span
-                style="margin-inline-start: 4px; display: flex; align-items: center;"
+                style="display: flex; align-items: center;"
               >
                 <svg
                   fill="none"

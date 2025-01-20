@@ -1,9 +1,9 @@
 /**
  * cn - 配置排序
- *    -- 设置 Table 的 `sortDirections`，可对全部列设置排序方向
+ *    -- 设置 Table 的 `sortDirections`，可对全部列设置可用的排序方向。支持仅开启升序或降序。
  *    -- 设置 column 的 `sortDirections` 优先级高于 Table 的 `sortDirections`
  * en - Configure sorter
- *    -- Set the `sortDirections` of Table to configure the sort direction of all columns
+ *    -- Set the `sortDirections` of Table to set the available sorting directions for all columns. Support only ascending or descending.
  *    -- The `sortDirections` of column takes precedence over the `sortDirections` of Table
  */
 import React from 'react';
@@ -35,7 +35,7 @@ const data: TableRowData[] = [
     salary: 115777,
     country: 'Reunion',
     office: 'Miami',
-    age: 20,
+    age: 21,
   },
   {
     id: 2,
@@ -75,16 +75,6 @@ const columns: TableColumnItem[] = [
     render: (d) => `${d.firstName} ${d.lastName}`,
   },
   {
-    title: '年龄',
-    render: 'age',
-    sorter: {
-      rule: 'age',
-      weight: 2,
-    },
-    align: 'right',
-    defaultOrder: 'asc',
-  },
-  {
     title: 'Age',
     render: 'age',
     sorter: {
@@ -101,7 +91,6 @@ const columns: TableColumnItem[] = [
     align: 'right',
     render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
     sorter: { rule: 'salary', weight: 1 },
-    defaultOrder: 'desc',
     sortDirections: ['asc', 'desc'],
   },
 ];
