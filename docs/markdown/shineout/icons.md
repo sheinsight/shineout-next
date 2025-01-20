@@ -25,138 +25,170 @@ setIcons({
 ```js
 const config = {
   alert: {
-    Close: Icons.Close,
-    Info: Icons.PcInfoCircleFill,
-    Success: Icons.PcCheckCircleFill,
-    Warning: Icons.PcWarningCircleFill,
-    Danger: Icons.PcWarningCircleFill,
-    ConfirmWarning: Icons.PcWarningCircleFill,
-    Error: Icons.PcWarningCircleFill,
-    Confirm: Icons.PcHelpCircleFill,
+    Close: icons.Close,
+    Info: icons.PcInfoCircleFill,
+    Success: icons.PcCheckCircleFill,
+    Warning: icons.PcWarningCircleFill,
+    Danger: icons.PcWarningCircleFill,
+    ConfirmWarning: icons.PcWarningCircleFill,
+    Error: icons.PcWarningCircleFill,
+    Confirm: icons.PcHelpCircleFill,
   },
   breadcrumb: {
-    DropdownArrow: Icons.ArrowDown,
+    DropdownArrow: icons.ArrowDown,
   },
   card: {
-    CollapseArrow: Icons.ArrowRight,
+    CollapseArrow: icons.ArrowRight,
   },
   carousel: {
-    Backward: Icons.ArrowLeft,
-    Forward: Icons.ArrowRight,
+    Backward: icons.ArrowLeft,
+    Forward: icons.ArrowRight,
   },
   cascader: {
-    More: Icons.ArrowDown,
-    DropdownArrow: Icons.ArrowDown,
-    Close: Icons.PcCloseCircleFill,
-    CollapseArrow: Icons.ArrowRight,
+    More: icons.ArrowDown,
+    DropdownArrow: icons.ArrowDown,
+    Close: icons.PcCloseCircleFill,
+    CollapseArrow: icons.ArrowRight,
   },
   collapse: {
-    collapseArrow: Icons.ArrowRight,
+    collapseArrow: icons.ArrowRight,
   },
   datepicker: {
-    Close: Icons.CloseOpaqueMultic1,
-    Time: Icons.Time,
-    Calendar: Icons.Calendar1,
-    ArrowDoubleLeft: Icons.AngleDoubleLeft,
-    ArrowLeft: Icons.ArrowLeft,
-    ArrowDoubleRight: Icons.AngleDoubleRight,
-    ArrowRight: Icons.ArrowRight,
+    Close: icons.CloseOpaqueMultic1,
+    Time: icons.Time,
+    Calendar: icons.Calendar,
+    ArrowDoubleLeft: icons.AngleDoubleLeft,
+    ArrowLeft: icons.ArrowLeft,
+    ArrowDoubleRight: icons.AngleDoubleRight,
+    ArrowRight: icons.ArrowRight,
   },
   dropdown: {
-    DropdownArrow: Icons.ArrowDown,
+    DropdownArrow: icons.ArrowDown,
   },
   editableArea: {
-    Close: Icons.CloseOpaqueMultic1,
+    Close: icons.CloseOpaqueMultic1,
   },
   image: {
-    Close: Icons.CloseOpaqueMultic1,
-    Pics: Icons.Pics2,
-    Download: Icons.Download,
-    Preview: Icons.Preview,
-    LoadFail: Icons.LoadingError2,
+    Close: icons.CloseOpaqueMultic1,
+    Pics: icons.Pics2,
+    Download: icons.Download,
+    Preview: icons.Preview,
+    LoadFail: icons.LoadingError2,
   },
   input: {
-    ArrowRight: Icons.ArrowRight,
-    ArrowLeft: Icons.ArrowLeft,
-    Hide: Icons.Hide,
-    Show: Icons.Display,
-    Close: Icons.CloseOpaqueMultic1,
+    ArrowRight: icons.ArrowRight,
+    ArrowLeft: icons.ArrowLeft,
+    Hide: icons.Hide,
+    Show: icons.Display,
+    Close: icons.CloseOpaqueMultic1,
   },
   menu: {
-    CollapseArrow: Icons.ArrowDown,
-    FrontSolidArrowDown: Icons.PcArrowFillDown,
+    CollapseArrow: icons.ArrowDown,
+    FrontSolidArrowDown: icons.PcArrowFillDown,
   },
   modal: {
     Close: Icons?.Close,
   },
   pagination: {
-    PrePage: Icons.ArrowLeftDouble,
-    NetPage: Icons.ArrowRightDouble,
-    More: Icons.More,
-    NextInButton: Icons.ArrowRight,
-    PreInButton: Icons.ArrowLeft,
+    PrePage: icons.ArrowLeftDouble,
+    NetPage: icons.ArrowRightDouble,
+    More: icons.More,
+    NextInButton: icons.ArrowRight,
+    PreInButton: icons.ArrowLeft,
   },
   progress: {
-    InfoCircle: Icons.Info,
-    WarningCircle: Icons.Warning,
-    SuccessCircle: Icons.Check,
-    DangerCircle: Icons.Close,
-    InfoLine: Icons.PcInfoCircleFill,
-    WarningLine: Icons.PcWarningCircleFill,
-    SuccessLine: Icons.PcCheckCircleFill,
-    DangerLine: Icons.PcCloseCircleFill,
+    InfoCircle: icons.Info,
+    WarningCircle: icons.Warning,
+    SuccessCircle: icons.Check,
+    DangerCircle: icons.Close,
+    InfoLine: icons.PcInfoCircleFill,
+    WarningLine: icons.PcWarningCircleFill,
+    SuccessLine: icons.PcCheckCircleFill,
+    DangerLine: icons.PcCloseCircleFill,
   },
   rate: {
-    Star: Icons.PcStarFill,
+    Star: icons.PcStarFill,
   },
   select: {
-    Check: Icons.Check,
-    More: Icons.More,
-    DropdownArrow: Icons.ArrowDown,
-    Close: Icons.CloseOpaqueMultic1,
+    Check: icons.Check,
+    More: icons.More,
+    DropdownArrow: icons.ArrowDown,
+    Close: icons.CloseOpaqueMultic1,
   },
   steps: {
-    Finish: Icons.Check,
-    Error: Icons.Close,
+    Finish: icons.Check,
+    Error: icons.Close,
   },
   table: {
-    SortUp: Icons.TableSortIconUp,
-    SortDown: Icons.TableSortIconDown,
-    Expand: Icons.Expand,
-    Collapse: Icons.OdecShrink,
+    SortUp: icons.TableSortIconUp,
+    SortDown: icons.TableSortIconDown,
+    Expand: icons.Expand,
+    Collapse: icons.OdecShrink,
   },
   tabs: {
-    Pre: Icons.ArrowLeft,
-    Next: Icons.ArrowRight,
-    CollapseArrow: Icons.ArrowLeft,
+    Pre: icons.ArrowLeft,
+    Next: icons.ArrowRight,
+    CollapseArrow: icons.ArrowLeft,
   },
   transfer: {
-    DeleteAll: Icons.Delete,
-    DeleteItem: Icons.Close,
-    Search: Icons.Search,
-    Add: Icons.ArrowRight,
-    Remove: Icons.ArrowLeft,
+    DeleteAll: icons.Delete,
+    DeleteItem: icons.Close,
+    Search: icons.Search,
+    Add: icons.ArrowRight,
+    Remove: icons.ArrowLeft,
   },
   tree: {
-    LineExpand: Icons.TreeMinus,
-    LineCollapse: Icons.TreePlus,
-    Expand: Icons.TreeArrow,
+    LineExpand: icons.TreeMinus,
+    LineCollapse: icons.TreePlus,
+    Expand: icons.TreeArrow,
   },
   treeSelect: {
-    More: Icons.More,
-    DropdownArrow: Icons.ArrowDown,
-    Close: Icons.CloseOpaqueMultic1,
+    More: icons.More,
+    DropdownArrow: icons.ArrowDown,
+    Close: icons.CloseOpaqueMultic1,
   },
   upload: {
-    File: Icons.File,
-    Success: Icons.PcCheckCircleFill,
-    Warning: Icons.PcWarningCircleFill,
-    Recover: Icons.Return,
-    Delete: Icons.Delete,
-    DeleteImage: Icons.CloseOpaqueMultic1,
-    RecoverImage: Icons.UndeleteOpaque,
-    PreviewImage: Icons.Preview,
-    AddImage: Icons.Add,
+    File: icons.File,
+    Success: icons.PcCheckCircleFill,
+    Warning: icons.PcWarningCircleFill,
+    Recover: icons.Return,
+    Delete: icons.Delete,
+    DeleteImage: icons.CloseOpaqueMultic1,
+    RecoverImage: icons.UndeleteOpaque,
+    PreviewImage: icons.Preview,
+    AddImage: icons.Add,
   },
 }
 ```
+
+<!--
+```react
+import React from 'react';
+import { icons } from 'shineout';
+function MyIcon(props: any){
+  const style={
+    width: 20,
+    height: 20,
+    display: 'flex',
+    alignItems: 'center',
+    margin: '0 auto',
+    color: 'var(--soui-input-icon-color,var(--soui-neutral-text-4,#666C7C))',
+    ...props.style
+  }
+    return <div style={style}>{props.children}</div>;
+}
+
+type IconType = keyof typeof icons;
+
+const App: React.FC = () => (
+  <div>
+    <h4>展示全部icons图标</h4>
+    {
+        Object.keys(icons).map((key) => {
+            return <div key={key} style={{display: 'inline-block', width: 160, height: 100, textAlign: 'center'}}><MyIcon>{icons[key as IconType]}</MyIcon><div>{key}</div></div>
+        })
+    }
+    </div>
+);
+export default App;
+``` -->
