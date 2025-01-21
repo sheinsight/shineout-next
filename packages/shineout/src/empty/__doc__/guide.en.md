@@ -1,6 +1,6 @@
 ## When to Use
 
-Use this to explicitly prompt users when there is no data present.
+### Use this to explicitly prompt users when there is no data present.
 
 ## Combination with Other Components
 

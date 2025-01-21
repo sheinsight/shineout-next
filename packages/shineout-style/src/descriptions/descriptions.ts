@@ -168,6 +168,11 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     '& $item': {
       paddingBottom: 0,
     },
+    '& $row': {
+      '& td:last-child': {
+        borderRight: 'none',
+      }
+    },
   },
 };
 

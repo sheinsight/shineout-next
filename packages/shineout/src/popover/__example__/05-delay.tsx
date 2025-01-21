@@ -8,7 +8,7 @@ import React from 'react';
 import { Button, Popover } from 'shineout';
 
 const App: React.FC = () => (
-  <Button>
+  <Button mode="outline">
     <Popover mouseEnterDelay={200} mouseLeaveDelay={1000}>
       Some text
     </Popover>

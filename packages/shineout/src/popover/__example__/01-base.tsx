@@ -8,13 +8,10 @@ import React from 'react';
 import { Button, Popover } from 'shineout';
 
 export default () => {
-  console.log('======================')
-  console.log('Popover.Content: >>', Popover.Content)
-  console.log('======================')
   return (
-    <Button>
+    <Button mode='outline'>
       Hover
-      <Popover.Content>some Text</Popover.Content>
+      <Popover>some Text</Popover>
     </Button>
   );
 };

@@ -12,7 +12,7 @@ const targetStyle: React.CSSProperties = { height: 200, overflowY: 'auto', posit
 
 const App: React.FC = () => (
   <div id='popup-target' style={targetStyle}>
-    <Button style={buttonStyle}>
+    <Button style={buttonStyle} mode="outline">
       Scrollable
       <Popover trigger='click' getPopupContainer={() => document.querySelector('#popup-target')}>
         render in parent element

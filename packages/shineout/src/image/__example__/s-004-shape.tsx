@@ -1,7 +1,7 @@
 /**
  * cn - 图片形状
  *    -- Image 可以设置不同的形状
- *    -- 内置三种不同的形状：圆形模式 circle、圆角模式 rounded、带边框模式 thumbnail
+ *    -- 内置三种不同的形状：圆角模式 rounded、圆形模式 circle、带边框模式 thumbnail
  * en - Shape
  *    -- Image can be set to different shapes
  */

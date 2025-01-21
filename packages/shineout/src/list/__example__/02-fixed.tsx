@@ -11,7 +11,7 @@
  *    -- rowsinview is used to set the number of list items displayed on a page. The default is 10
  */
 import React from 'react';
-import { List, TYPE } from 'shineout';
+import { List, TYPE, Avatar} from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface ListItem {
@@ -32,21 +32,10 @@ type ListRenderItem = ListProps['renderItem'];
 
 const names: ListItem[] = user.fetchSync(10000);
 
-const style: React.CSSProperties = {
-  width: 30,
-  height: 30,
-  background: '#eee',
-  borderRadius: '50%',
-  marginInlineEnd: 12,
-  alignItems: 'center',
-  display: 'inline-flex',
-  justifyContent: 'center',
-};
-
 // eslint-disable-next-line react/prop-types
 const renderItem: ListRenderItem = ({ id, firstName }) => (
   <div style={{ height: 30, display: 'flex', alignItems: 'center' }}>
-    <span style={style}>{firstName.slice(0, 1)}</span>
+    <Avatar shape="circle" icon={firstName.slice(0, 1)} style={{ marginRight: 8 }} />
     <span style={{ flex: 1 }}>{firstName}</span>
     <span>-{id}</span>
   </div>

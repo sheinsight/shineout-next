@@ -67,6 +67,7 @@ const Confirm = (props: PopoverConfirmProps) => {
             jssStyle={jssStyle}
             type={type as any}
             title={title}
+            titleStyle={{ fontSize: 14 }}
             icon={icon}
           >
             {children}

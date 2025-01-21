@@ -23,9 +23,9 @@ export default () => {
         display: 'flex',
       }}
     >
-      <Image.Group fit='fill' target='_modal'>
+      <Image.Group fit='fill' target='_modal' style={{ fontSize: 0 }}>
         {images.map((item, index) => {
-          return <Image key={index} width={128} height={128} src={item} href={item}></Image>;
+          return <Image key={index} width={128} height={128} src={item} href={item} style={{ marginBottom: 8 }}></Image>;
         })}
       </Image.Group>
     </div>
