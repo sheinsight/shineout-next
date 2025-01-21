@@ -820,7 +820,7 @@ exports[`Alert[Base] should render correctly about border 1`] = `
 <div>
   <div
     class="soui-descriptions soui-descriptions-wrapper"
-    style="margin-bottom: 20px;"
+    style="margin-bottom: 24px;"
   >
     <div
       class="soui-descriptions-header"
@@ -905,7 +905,7 @@ exports[`Alert[Base] should render correctly about border 1`] = `
   </div>
   <div
     class="soui-descriptions soui-descriptions-wrapper"
-    style="margin-bottom: 20px;"
+    style="margin-bottom: 24px;"
   >
     <div
       class="soui-descriptions-header"
@@ -1091,145 +1091,71 @@ exports[`Alert[Base] should render correctly about border 1`] = `
 
 exports[`Alert[Base] should render correctly about colums 1`] = `
 <div
-  style="margin-bottom: -12px;"
+  class="soui-descriptions soui-descriptions-wrapper"
+  style="margin-bottom: 12px;"
 >
   <div
-    class="soui-descriptions soui-descriptions-wrapper"
-    style="margin-bottom: 12px;"
+    class="soui-descriptions-header"
   >
     <div
-      class="soui-descriptions-header"
+      class="soui-descriptions-title"
     >
-      <div
-        class="soui-descriptions-title"
-      >
-        User Info
-      </div>
-    </div>
-    <div
-      class="soui-descriptions-body soui-descriptions-horizontal"
-    >
-      <table
-        cellpadding="0"
-        cellspacing="0"
-        class="soui-descriptions-table"
-      >
-        <tbody>
-          <tr
-            class="soui-descriptions-row"
-          >
-            <td
-              class="soui-descriptions-label"
-            >
-              Name
-            </td>
-            <td
-              class="soui-descriptions-value"
-            >
-              Mai Mai
-            </td>
-          </tr>
-          <tr
-            class="soui-descriptions-row"
-          >
-            <td
-              class="soui-descriptions-label"
-            >
-              Mobile
-            </td>
-            <td
-              class="soui-descriptions-value"
-            >
-              187-2323-9834
-            </td>
-          </tr>
-          <tr
-            class="soui-descriptions-row"
-          >
-            <td
-              class="soui-descriptions-label"
-            >
-              Residence
-            </td>
-            <td
-              class="soui-descriptions-value"
-            >
-              Beijing
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      User Info
     </div>
   </div>
   <div
-    class="soui-descriptions soui-descriptions-wrapper"
+    class="soui-descriptions-body soui-descriptions-horizontal"
   >
-    <div
-      class="soui-descriptions-header"
+    <table
+      cellpadding="0"
+      cellspacing="0"
+      class="soui-descriptions-table"
     >
-      <div
-        class="soui-descriptions-title"
-      >
-        User Info
-      </div>
-    </div>
-    <div
-      class="soui-descriptions-body soui-descriptions-horizontal"
-    >
-      <table
-        cellpadding="0"
-        cellspacing="0"
-        class="soui-descriptions-table"
-      >
-        <tbody>
-          <tr
-            class="soui-descriptions-row"
+      <tbody>
+        <tr
+          class="soui-descriptions-row"
+        >
+          <td
+            class="soui-descriptions-label"
           >
-            <td
-              class="soui-descriptions-label"
-              style="text-align: end;"
-            >
-              Name
-            </td>
-            <td
-              class="soui-descriptions-value"
-            >
-              Mai Mai
-            </td>
-          </tr>
-          <tr
-            class="soui-descriptions-row"
+            Name
+          </td>
+          <td
+            class="soui-descriptions-value"
           >
-            <td
-              class="soui-descriptions-label"
-              style="text-align: end;"
-            >
-              Mobile
-            </td>
-            <td
-              class="soui-descriptions-value"
-            >
-              187-2323-9834
-            </td>
-          </tr>
-          <tr
-            class="soui-descriptions-row"
+            Mai Mai
+          </td>
+        </tr>
+        <tr
+          class="soui-descriptions-row"
+        >
+          <td
+            class="soui-descriptions-label"
           >
-            <td
-              class="soui-descriptions-label"
-              style="text-align: end;"
-            >
-              Residence
-            </td>
-            <td
-              class="soui-descriptions-value"
-            >
-              Beijing
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+            Mobile
+          </td>
+          <td
+            class="soui-descriptions-value"
+          >
+            187-2323-9834
+          </td>
+        </tr>
+        <tr
+          class="soui-descriptions-row"
+        >
+          <td
+            class="soui-descriptions-label"
+          >
+            Residence
+          </td>
+          <td
+            class="soui-descriptions-value"
+          >
+            Beijing
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
