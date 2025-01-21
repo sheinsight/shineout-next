@@ -10,12 +10,20 @@ export type FlatNodeType<DataItem> = {
   id: KeygenResult;
   data: DataItem;
   level: number;
+  pid?: KeygenResult | null;
+};
+
+export type FlatMapType = {
+  active: boolean;
+  expanded: boolean;
+  fetching: boolean;
 };
 
 export interface TreeContext<DataItem> {
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
   dataFlat: FlatNodeType<DataItem>[];
+  dataFlatStatusMap: Map<KeygenResult, FlatMapType>;
   valueMap: Map<KeygenResult, CheckedStatusType>;
   unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
@@ -132,6 +140,8 @@ export interface TreeDatum<DataItem> {
     checked: CheckedStatusType,
     direction?: 'asc' | 'desc',
   ) => CheckedStatusType | null;
+  insertFlat: (id: KeygenResult) => void;
+  removeFlat: (id: KeygenResult) => void;
   getPath: (id: KeygenResult) => TreePathType | undefined;
   getValue: () => KeygenResult[];
   getChecked: (id: KeygenResult) => boolean | 'indeterminate';
@@ -141,6 +151,11 @@ export interface TreeDatum<DataItem> {
   setData: (data?: DataItem[]) => void;
   isDisabled: (id: KeygenResult) => boolean;
   bindNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { active: boolean; expanded: boolean };
+  bindVirtualNode: (
     id: KeygenResult,
     update: UpdateFunc,
     data: DataItem,
@@ -158,4 +173,5 @@ export interface TreeDatum<DataItem> {
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
   valueMap: Map<KeygenResult, CheckedStatusType>;
+  dataFlatStatusMap: Map<KeygenResult, FlatMapType>;
 }

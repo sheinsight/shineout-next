@@ -83,8 +83,8 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     expanded: expandedProp,
     disabled,
     defaultValue,
-    defaultExpandAll,
-    defaultExpanded,
+    defaultExpandAll: expandedProp ? undefined : defaultExpandAll,
+    defaultExpanded: expandedProp ? undefined : defaultExpanded,
     childrenKey: childrenKey,
     keygen,
     virtual,
@@ -152,8 +152,10 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
     if (expandedArr.indexOf(id) >= 0) {
       newExpanded = expandedArr.filter((e) => e !== id);
+      if (virtual) datum.removeFlat(id);
     } else {
       newExpanded = [...expandedArr, id];
+      if (virtual) datum.insertFlat(id);
     }
     if (onExpand) onExpand(newExpanded);
   };
@@ -224,9 +226,11 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
           line={line}
           expanded={expanded}
           height={realHeight}
+          childrenKey={props.childrenKey || ('children' as ObjectKey<DataItem>)}
           isControlled={'expanded' in props}
           bindNode={datum.bindNode}
           onNodeClick={handleNodeClick}
+          onToggle={handleToggle}
         />
       );
     }

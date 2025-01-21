@@ -231,17 +231,10 @@ export interface TreeProps<DataItem, Value extends any[]>
 export interface VirtualTreeProps<DataItem, Value extends any[]>
   extends Omit<
     TreeProps<DataItem, Value>,
-    | 'height'
-    | 'line'
-    | 'dragImageSelector'
-    | 'expanded'
-    | 'onDrop'
-    | 'childrenKey'
-    | 'childrenClass'
+    'height' | 'line' | 'dragImageSelector' | 'onDrop' | 'childrenKey' | 'childrenClass'
   > {
   height: number | string;
   line: boolean;
-  expanded?: boolean;
   contentClass: string | ((data: DataItem) => string);
   isControlled: boolean;
   bindNode: (

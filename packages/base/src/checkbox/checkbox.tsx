@@ -115,7 +115,7 @@ const CheckboxWithContext = <T,>(props: CheckboxProps<T>) => {
         <Checkbox
           {...props}
           {...value}
-          onRawChange={value.onChange && props.onChange ? props.onChange : undefined}
+          onRawChange={props.onChange}
           checked={'checked' in props ? props.checked : value.checked}
         />
       )}

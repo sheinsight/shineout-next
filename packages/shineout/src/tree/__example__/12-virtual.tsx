@@ -15,20 +15,23 @@ interface DataItem {
   children?: DataItem[];
 }
 
-const data: DataItem[] = createNestedArray([100, 100, 10]);
+const data: DataItem[] = createNestedArray([100, 5, 10, 2]);
 export default () => {
   const renderItem: TreeProps['renderItem'] = (node) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
   return (
-    <div style={{ height: 200 }}>
+    <div style={{ height: 300 }}>
       <Tree
         virtual
-        defaultExpandAll
         line={false}
         data={data}
+        defaultExpandAll
         keygen='id'
+        parentClickExpand
+        mode={2}
+        onChange={(v) => console.log(v)}
         renderItem={renderItem}
       ></Tree>
     </div>

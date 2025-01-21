@@ -12,6 +12,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     className,
     lineHeight,
     height,
+    keepScrollHeight,
     renderItem,
     customRenderItem,
     tag = 'div',
@@ -208,6 +209,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
 
   useLayoutEffect(() => {
     // 数据变化的时候清空掉 preIndex, 如果之前有缓存的index, setRowHeight 会有问题
+    if (keepScrollHeight) return;
     setTop(0);
     setStartIndex(0);
     return () => {

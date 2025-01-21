@@ -31,6 +31,10 @@ const TreeCheckbox = <Value extends KeygenResult[]>(props: TreeCheckboxProps<Val
       jssStyle={jssStyle}
       checked={checked}
       disabled={disabled}
+      onClick={(e) => {
+        e.stopPropagation();
+        console.log('checkbox click');
+      }}
       onChange={handleChange}
     ></Checkbox>
   );

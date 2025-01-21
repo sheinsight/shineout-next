@@ -1,20 +1,22 @@
+import { useTreeContext } from './tree-context';
 import { useRef } from 'react';
 import classNames from 'classnames';
 import { TreeClasses } from './tree.type';
 import { TreeVirtualNodeProps } from './tree-node.type';
-import TreeContent from './tree-content';
-import { useTreeNode, util, KeygenResult } from '@sheinx/hooks';
+import TreeVirtualContent from './tree-virtual-content';
+import { useTreeVirtualNode, util, KeygenResult } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
 let placeElement: HTMLDivElement | null = null;
 
-const Node = <DataItem, Value extends KeygenResult[]>(
+const VirtualNode = <DataItem, Value extends KeygenResult[]>(
   props: TreeVirtualNodeProps<DataItem, Value>,
 ) => {
   const {
     jssStyle,
     id,
     data,
+    level,
     line,
     isControlled,
     renderItem,
@@ -30,9 +32,6 @@ const Node = <DataItem, Value extends KeygenResult[]>(
     childrenKey,
     inlineNode,
     highlight,
-    dragImageSelector,
-    dragImageStyle,
-    bindNode,
     loader,
     onChange,
     onNodeClick,
@@ -40,21 +39,21 @@ const Node = <DataItem, Value extends KeygenResult[]>(
   } = props;
 
   const config = useConfig();
+  const datum = useTreeContext();
 
   const element = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
 
-  const { active, isLeaf, fetching, setFetching, expanded, setExpanded } = useTreeNode({
+  const { active, isLeaf, fetching, setFetching, expanded, setExpanded } = useTreeVirtualNode({
     id,
     data,
-    bindNode,
+    datum,
+    bindNode: datum.bindVirtualNode,
     loader,
     onToggle,
     childrenKey,
     element,
     content: content.current,
-    dragImageSelector,
-    dragImageStyle,
   });
 
   const children = data[childrenKey] as DataItem[];
@@ -81,15 +80,29 @@ const Node = <DataItem, Value extends KeygenResult[]>(
   const handleToggle = () => {
     const nextExpanded = !expanded;
     setExpanded(nextExpanded);
+
+    const status = datum.dataFlatStatusMap.get(id);
+
+    datum.dataFlatStatusMap.set(id, {
+      active: status?.active || false,
+      fetching: status?.fetching || false,
+      expanded: nextExpanded,
+    });
     if (onToggle) onToggle(id, nextExpanded);
   };
 
   return (
-    <div ref={element} className={rootClass} dir={config.direction}>
-      <TreeContent
+    <div
+      ref={element}
+      className={rootClass}
+      dir={config.direction}
+      style={{ paddingLeft: level * 24 }}
+    >
+      <TreeVirtualContent
         jssStyle={jssStyle}
         isControlled={isControlled}
         id={id}
+        level={level}
         line={line}
         data={data}
         mode={mode}
@@ -98,7 +111,6 @@ const Node = <DataItem, Value extends KeygenResult[]>(
         fetching={fetching}
         expanded={expanded}
         keygen={keygen}
-        bindNode={bindNode}
         bindContent={content}
         childrenKey={childrenKey}
         renderItem={renderItem}
@@ -115,9 +127,9 @@ const Node = <DataItem, Value extends KeygenResult[]>(
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
         onToggle={handleToggle}
-      ></TreeContent>
+      ></TreeVirtualContent>
     </div>
   );
 };
 
-export default Node;
+export default VirtualNode;

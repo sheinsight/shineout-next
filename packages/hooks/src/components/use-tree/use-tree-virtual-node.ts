@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { BaseTreeNodeProps } from './use-tree-node.type';
+import { useState } from 'react';
+import { BaseTreeVirtualNodeProps } from './use-tree-node.type';
 import usePersistFn from '../../common/use-persist-fn';
 
-const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>) => {
-  const { id, data, bindNode, childrenKey, loader } = props;
-  const [active, setActive] = useState(false);
-  const [expanded, setExpanded] = useState(false);
-  const [fetching, setFetching] = useState(false);
+const useTreeVirtualNode = <DataItem, Value>(props: BaseTreeVirtualNodeProps<DataItem, Value>) => {
+  const { id, data, childrenKey, loader, datum } = props;
+  const [active, setActive] = useState(datum?.dataFlatStatusMap.get(id)?.active || false);
+  const [expanded, setExpanded] = useState(datum?.dataFlatStatusMap.get(id)?.expanded || false);
+  const [fetching, setFetching] = useState(datum?.dataFlatStatusMap.get(id)?.fetching || false);
 
   const update = usePersistFn((key: string, value: boolean) => {
     switch (key) {
@@ -39,12 +39,6 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
     return true;
   };
 
-  useEffect(() => {
-    const { active, expanded: nextExpanded } = bindNode(id, update, data);
-    setActive(active);
-    setExpanded(nextExpanded);
-  }, []);
-
   return {
     update,
     active,
@@ -56,4 +50,4 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
     onToggle: handleToggle,
   };
 };
-export default useTreeNode;
+export default useTreeVirtualNode;

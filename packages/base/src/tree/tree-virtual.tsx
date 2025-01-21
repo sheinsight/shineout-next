@@ -1,4 +1,3 @@
-import { useContext, useEffect, useRef, useState } from 'react';
 import { useTreeContext } from './tree-context';
 import VirtualTreeNode from './tree-virtual-node';
 import { VirtualScrollList } from '../virtual-scroll';
@@ -16,7 +15,6 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
     mode,
     contentClass,
     expandIcons,
-    bindNode,
     loader,
     inlineNode,
     highlight,
@@ -40,12 +38,13 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
   const datum = useTreeContext();
 
   const renderItem = (item: FlatNodeType<DataItem>, index: number) => {
-    const { id, data } = item;
+    const { id, data, level } = item;
 
     return (
       <VirtualTreeNode<DataItem, Value>
         jssStyle={jssStyle}
         id={id}
+        level={level}
         data={data}
         index={index}
         key={id}
@@ -63,13 +62,12 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
         nodeClass={nodeClass}
         contentClass={contentClass}
         expandIcons={expandIcons}
-        bindNode={bindNode}
         loader={loader}
         inlineNode={inlineNode}
         highlight={highlight}
         parentClickExpand={parentClickExpand}
         doubleClickExpand={doubleClickExpand}
-        expanded={expanded!}
+        expanded={expanded}
         onNodeClick={onNodeClick}
         onToggle={onToggle}
         onChange={onChange}
@@ -82,6 +80,8 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
       data={datum.dataFlat}
       height={height}
       rowsInView={10}
+      keepScrollHeight
+      dynamicVirtual
       lineHeight={lineHeight}
       renderItem={renderItem}
     ></VirtualScrollList>

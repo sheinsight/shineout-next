@@ -46,14 +46,13 @@ export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
 }
 
 export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
-  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
+  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey'>,
     Pick<CommonType, 'className'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
   data: DataItem;
   index: number;
   line: boolean;
-  expanded: boolean;
   doubleClickExpand?: boolean;
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
@@ -66,16 +65,12 @@ export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
   contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass: (data: DataItem) => string | undefined;
-  bindNode: (
-    id: KeygenResult,
-    update: UpdateFunc,
-    data: DataItem,
-  ) => { expanded: boolean; active: boolean };
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
   loader?: (key: KeygenResult, data: DataItem) => void;
   inlineNode?: boolean;
   highlight?: boolean;
+  level: number;
 }
 
 export type TreeNodeProps<DataItem, Value extends KeygenResult[]> =
