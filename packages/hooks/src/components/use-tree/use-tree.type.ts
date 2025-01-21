@@ -27,6 +27,11 @@ export interface TreePathType {
   index: number;
 }
 
+export interface DisabledOption<DataItem> {
+  disabled: (data: DataItem) => boolean;
+  isRealtime: boolean;
+}
+
 export interface BaseTreeProps<DataItem> {
   /**
    * @private 内部属性
@@ -69,7 +74,7 @@ export interface BaseTreeProps<DataItem> {
    * @cn 显示选择框时有效，为 true 时，所有节点禁用选择，为函数时，根据函数返回结果确定是否禁用
    * @default false
    */
-  disabled?: boolean | ((item: DataItem) => boolean);
+  disabled?: boolean | ((item: DataItem) => boolean) | DisabledOption<DataItem>;
   /**
    * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, "id" is the same thing as (d) => d.id
    * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 "id"，相当于 (d) => d.id
