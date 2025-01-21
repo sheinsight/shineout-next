@@ -73,7 +73,7 @@ const App: React.FC = () => {
   return (
     <div>
       <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
-        <Input.Number min={0} max={1000} width={100} name='left' />
+        <Input.Number min={0} max={1000} width={100} name='left' style={{marginRight: 12}} />
         <Button type='primary' htmlType='submit'>
           Scroll
         </Button>

@@ -83,7 +83,7 @@ export default () => {
         border={border}
         labelStyle={{
           marginBottom: layout === 'inlineVertical' ? '2px' : '',
-          paddingBottom: layout === 'vertical' ? '2px' : '',
+          paddingBottom: layout === 'vertical' && !border ? '2px' : '',
         }}
       />
     </div>

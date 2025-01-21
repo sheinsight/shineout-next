@@ -73,7 +73,7 @@ const App: React.FC = () => {
   return (
     <div>
       <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
-        <Input.Number width={200} name='key' min={0} max={columns.length - 1} placeholder='输入列key' />
+        <Input.Number width={200} name='key' min={0} max={columns.length - 1} placeholder='输入列key' style={{marginRight: 12}} />
         <Button type='primary' htmlType='submit'>
           Scroll
         </Button>

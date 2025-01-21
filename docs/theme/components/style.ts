@@ -109,12 +109,17 @@ export default createUseStyles(
       display: 'flex',
       marginTop: top,
       position: 'relative',
+      overflow: 'auto',
       '& .examples': {
         flex: 1,
-        minWidth: 0,
+        minWidth: 800,
       },
       '& .anchor': {
         width: 192,
+
+        '@media (max-width: 1200px)': {
+          display: 'none',
+        },
       },
     },
     guide: {

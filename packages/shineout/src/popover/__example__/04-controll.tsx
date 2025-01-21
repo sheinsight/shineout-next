@@ -5,7 +5,7 @@
  *    -- can be controlled by visible
  */
 import React, { useState } from 'react';
-import { Button, Popover, Switch, config } from 'shineout';
+import { Button, Popover, Switch } from 'shineout';
 
 const App: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -18,7 +18,7 @@ const App: React.FC = () => {
           {!visible ? 'Turn on switch to display popover' : 'Turn off switch to hide popover'}{' '}
         </span>
       </div>
-      <Button>
+      <Button mode="outline">
         <Popover
           priorityDirection='horizontal'
           visible={visible}

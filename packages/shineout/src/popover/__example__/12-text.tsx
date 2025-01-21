@@ -9,15 +9,15 @@ import { Button, Popover } from 'shineout';
 
 const App: React.FC = () => {
   return (
-    <div style={{ display: 'flex', gap: 8 }}>
-      <Button>
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Button mode="outline">
         <Popover useTextStyle={false}>
           <div>hello</div>
         </Popover>
         defaultStyle
       </Button>
 
-      <Button style={{ marginInlineStart: 24 }}>
+      <Button mode="outline">
         <Popover useTextStyle>
           <div>hello</div>
         </Popover>

@@ -39,7 +39,7 @@ export default () => {
         layout='horizontal'
         border
         tableLayout='fixed'
-        style={{ marginBottom: '20px' }}
+        style={{ marginBottom: 24 }}
       />
       <Descriptions
         items={data}
@@ -48,7 +48,7 @@ export default () => {
         border
         tableLayout='fixed'
         labelStyle={{ textAlign: 'end' }}
-        style={{ marginBottom: '20px' }}
+        style={{ marginBottom: 24 }}
       />
       <Descriptions
         items={data}

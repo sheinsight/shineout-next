@@ -60,16 +60,16 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   widthTitle: {
     '& $icon': {
+      fontSize: Token.alertTitleFontSize,
       // marginBottom: Token.alertNearlyMargin,
       width: Token.alertTitleIconWidth,
-      height: Token.alertTitleIconHeight,
+      height: Token.lineHeightDynamic,
     },
     '& $title': {
       lineHeight: Token.lineHeightDynamic,
     },
-    '& $close': {
-      // marginBottom: Token.alertNearlyMargin,
-      // marginTop: 2,
+    '& $closeWrapper': {
+      fontSize: Token.alertTitleFontSize,
     },
   },
   title: {
@@ -103,8 +103,9 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     },
   },
   closeWrapper: {
+    fontSize: Token.alertFontSize,
     width: Token.alertFontSize,
-    height: `calc(${Token.lineHeightDynamic} + 2px)`,
+    height: Token.lineHeightDynamic,
     display: 'flex',
     alignItems: 'center',
     marginLeft: Token.alertNearlyMargin,

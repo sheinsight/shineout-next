@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const close: PopoverOnClose = () => console.log('popover close');
 
   return (
-    <Button>
+    <Button mode="outline">
       <Popover onOpen={open} onClose={close} trigger='click'>
         Some text
       </Popover>

@@ -56,8 +56,7 @@ export default () => {
           display: 'flex',
           gap: 32,
           justifyContent: 'space-between',
-          flexWrap: 'nowrap',
-          overflow: 'auto',
+          flexWrap: 'wrap',
         }}
       >
         {renderIcon(noData, 'noData', 'No data')}
@@ -72,8 +71,7 @@ export default () => {
           display: 'flex',
           gap: 32,
           justifyContent: 'space-between',
-          flexWrap: 'nowrap',
-          overflow: 'auto',
+          flexWrap: 'wrap',
         }}
       >
         {renderIcon(noDataColorful, 'noDataColorful', 'No data')}

@@ -66,8 +66,11 @@ export default () => {
             }}
           />
         </Form.Item>
+        <Form.Item label='Name'>
+          <Input placeholder='please input name' clearable />
+        </Form.Item>
         <Form.Item label='Address'>
-          <Textarea name='address' />
+          <Textarea name='address' placeholder='please enter' />
         </Form.Item>
 
         <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>

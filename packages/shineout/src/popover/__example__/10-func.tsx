@@ -17,6 +17,7 @@ const App: React.FC = () => {
       <div style={{ marginTop: 16, textAlign: 'right' }}>
         <Button
           size='small'
+          mode="outline"
           onClick={() => {
             close();
             Message.success('Popover panel closed.');
@@ -29,7 +30,7 @@ const App: React.FC = () => {
   );
 
   return (
-    <Button>
+    <Button mode="outline">
       <Popover priorityDirection='horizontal' trigger='click'>
         {content}
       </Popover>
