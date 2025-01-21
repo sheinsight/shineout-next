@@ -29,6 +29,7 @@ const useCascader = <DataItem, Value extends KeygenResult[]>(
     onChange: onChangeProp,
     filterSameChange,
   });
+
   const { datum } = useTree({
     value,
     data,

@@ -1,4 +1,5 @@
 import { KeygenResult, TreeKeygenType, ObjectKey } from '../../common/type';
+import { DisabledOption } from '../use-tree';
 import { TreeModeType } from '../use-tree/use-tree.type';
 
 export interface BaseCascaderProps<DataItem, Value extends KeygenResult[]> {
@@ -12,6 +13,6 @@ export interface BaseCascaderProps<DataItem, Value extends KeygenResult[]> {
   beforeChange?: (value: Value) => any;
   mode?: TreeModeType;
   keygen: TreeKeygenType<DataItem>;
-  disabled?: ((data: DataItem) => boolean) | boolean;
+  disabled?: DisabledOption<DataItem> | boolean | ((item: DataItem) => boolean);
   filterSameChange?: boolean;
 }

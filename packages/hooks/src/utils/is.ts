@@ -1,4 +1,5 @@
 import { ObjectType } from '../common/type';
+import { DisabledOption } from '../components/use-tree/use-tree.type';
 import { UnMatchedData } from '../common/use-list-select/use-list.type';
 import React from 'react';
 
@@ -106,3 +107,9 @@ export function isDomElement(element: any): element is HTMLElement {
         element.nodeType === 1 &&
         typeof element.nodeName === 'string';
 }
+
+export const isOptionalDisabled = <DataItem>(
+  disabled: unknown,
+): disabled is DisabledOption<DataItem> => {
+  return isObject(disabled) && disabled.hasOwnProperty('isRealtime');
+};
