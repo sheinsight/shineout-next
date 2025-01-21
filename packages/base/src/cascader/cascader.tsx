@@ -55,7 +55,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     mode,
     innerTitle,
     multiple,
-    disabled,
+    disabled: disabledProp,
     clearable,
     underline,
     loading,
@@ -91,6 +91,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
+
+  const disabled = util.isOptionalDisabled<DataItem>(disabledProp)
+    ? disabledProp.disabled
+    : disabledProp;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -135,7 +139,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     control: 'value' in props,
     keygen,
     unmatch,
-    disabled,
+    disabled: disabledProp,
     mode,
     defaultValue,
     childrenKey,

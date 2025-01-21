@@ -1,3 +1,9 @@
+## 3.5.8-beta.8
+2025-01-21
+
+### 💎 Enhancement
+- `Cascader` 新增 `disabled` 配置模式，支持实时计算 disabled 状态 ([#936](https://github.com/sheinsight/shineout-next/pull/936))
+
 ## 3.5.8-beta.3
 2025-01-15
 

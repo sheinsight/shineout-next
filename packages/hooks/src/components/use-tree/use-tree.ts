@@ -11,7 +11,14 @@ import {
 } from './use-tree.type';
 import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
-import { isFunc, isString, isNumber, isArray, isUnMatchedData } from '../../utils/is';
+import {
+  isFunc,
+  isString,
+  isNumber,
+  isArray,
+  isUnMatchedData,
+  isOptionalDisabled,
+} from '../../utils/is';
 import { devUseWarning } from '../../utils';
 
 function toArray<Value>(value: Value) {
@@ -60,11 +67,18 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     dataUpdate = true,
     defaultExpanded = [],
     defaultExpandAll,
-    disabled: disabledProps,
     unmatch,
     isControlled,
     onExpand: onExpandProp,
   } = props;
+  
+  const disabledProps = isOptionalDisabled<DataItem>(props.disabled)
+    ? props.disabled.disabled
+    : props.disabled;
+
+  const isRealtime = isOptionalDisabled<DataItem>(props.disabled)
+    ? props.disabled.isRealtime
+    : false;
 
   const [inited, setInited] = useState(false);
 
@@ -352,7 +366,15 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const isDisabled = (id: KeygenResult) => {
     if (isFunc(disabledProps)) {
       const node = context.pathMap.get(id);
-      if (node) return node.isDisabled;
+      if (node) {
+        if (isRealtime) {
+          const item = context.dataMap.get(id);
+          if (!item) return false;
+          return getDisabled()(item);
+        } else {
+          return node.isDisabled;
+        }
+      }
       return false;
     }
     return !!disabledProps;
