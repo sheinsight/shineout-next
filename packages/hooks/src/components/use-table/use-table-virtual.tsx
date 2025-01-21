@@ -187,7 +187,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       setStartIndex(currentIndex);
 
       // startIndex处于上方某个合并行的中间一行时，可能引起translate闪烁
-      if(!fromDrag && startIndex < currentIndex){
+      if(rowSpanInfo && !fromDrag && startIndex < currentIndex){
         context.autoAddRows = currentIndex - startIndex
         setTimeout(() => {
           context.autoAddRows = 0
