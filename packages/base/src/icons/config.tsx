@@ -26,14 +26,14 @@ const config = {
   cascader: {
     More: icons.ArrowDown,
     DropdownArrow: icons.ArrowDown,
-    Close: icons.Close,
+    Close: icons.CloseFill,
     CollapseArrow: icons.ArrowRight,
   },
   collapse: {
     collapseArrow: icons.ArrowRight,
   },
   datepicker: {
-    Close: icons.Close,
+    Close: icons.CloseFill,
     Time: icons.Time,
     Calendar: icons.Calendar,
     ArrowDoubleLeft: icons.ArrowLeftDouble,
@@ -45,10 +45,10 @@ const config = {
     DropdownArrow: icons.ArrowDown,
   },
   editableArea: {
-    Close: icons.Close,
+    Close: icons.CloseFill,
   },
   image: {
-    Close: icons.Close,
+    Close: icons.CloseFill,
     Pics: icons.ImageCount,
     Download: icons.Download,
     Preview: icons.Preview,
@@ -59,7 +59,7 @@ const config = {
     ArrowLeft: icons.ArrowLeft,
     Hide: icons.Hide,
     Show: icons.Display,
-    Close: icons.Close,
+    Close: icons.CloseFill,
   },
   link: {
     prefixIcon: icons.Link,
@@ -96,7 +96,7 @@ const config = {
     Check: icons.Check,
     More: icons.More,
     DropdownArrow: icons.ArrowDown,
-    Close: icons.Close,
+    Close: icons.CloseFill,
   },
   steps: {
     Finish: icons.Check,
@@ -128,7 +128,7 @@ const config = {
   treeSelect: {
     More: icons.More,
     DropdownArrow: icons.ArrowDown,
-    Close: icons.Close,
+    Close: icons.CloseFill,
   },
   upload: {
     File: icons.File,
@@ -136,7 +136,7 @@ const config = {
     Warning: icons.WarningCircleFill,
     Recover: icons.Return,
     Delete: icons.Delete,
-    DeleteImage: icons.Close,
+    DeleteImage: icons.CloseFill,
     RecoverImage: icons.RecoverCircle,
     PreviewImage: icons.Preview,
     AddImage: icons.Add,

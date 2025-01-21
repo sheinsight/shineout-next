@@ -255,6 +255,9 @@ const ImageStyle: JsStyles<ImageClass> = {
       borderStyle: 'none',
     },
   },
+  magnifyZoomOut: {
+    cursor: 'zoom-out',
+  },
 
   close: {
     position: 'absolute',

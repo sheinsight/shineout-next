@@ -28,6 +28,7 @@ export interface ImageClasses {
 
   overlay: string;
   magnify: string;
+  magnifyZoomOut: string;
   close: string;
 
   gallery: string;
@@ -70,6 +71,7 @@ export interface ImageMagnifyProps {
   maxHeight: number;
   lockScroll: (isLock: boolean) => void;
   className?: string;
+  jssStyle?: ImageJssStyleType;
 }
 export interface ImageBaseProps
   extends BaseImageProps,
