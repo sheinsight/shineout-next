@@ -10,10 +10,22 @@ export interface TextareaTokens {
   textareaFontSize: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 多行文本框字体颜色
+   */
+  textareaFontColor: string;
+  /**
+   * @type {string}
    * @token Radius-default
    * @description 多行文本框边框圆角
    */
   textareaBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-2
+   * @description 多行文本框边框颜色
+   */
+  textareaBorderColor: string;
   /**
    * @type {string}
    * @token Spacing-8
@@ -64,22 +76,10 @@ export interface TextareaTokens {
   textareaLargePaddingY: string;
   /**
    * @type {string}
-   * @token Neutral-text-5
-   * @description 多行文本框字体颜色
-   */
-  textareaFontColor: string;
-  /**
-   * @type {string}
    * @token Neutral-text-2
    * @description 多行文本框占位符颜色
    */
   textareaPlaceholderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-border-2
-   * @description 多行文本框边框颜色
-   */
-  textareaBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1

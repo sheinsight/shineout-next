@@ -28,7 +28,7 @@ const App: React.FC = () => (
 
     <Input.Group style={style}>
       <Input placeholder='please enter' />
-      <b>-</b>
+      <div style={{ lineHeight: '30px' }}>-</div>
       <Input placeholder='please enter' />
     </Input.Group>
 

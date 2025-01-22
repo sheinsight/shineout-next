@@ -153,8 +153,8 @@ const Textarea = (props0: TextareaProps) => {
     popover: resetProps.popover || (typeof info === 'object' ? info.position : 'bottom-right'),
     popoverProps: Object.assign(
       {
-        style: { width: 'auto' },
-       },
+        style: { width: 'auto', fontSize: 12 },
+      },
       resetProps.popoverProps,
     ),
     error: infoState?.error && infoState?.error instanceof Error ? infoState?.error?.message : undefined,
