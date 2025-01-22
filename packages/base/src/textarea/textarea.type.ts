@@ -75,6 +75,13 @@ export interface SimpleTextareaProps
    * @default false
    */
   resize?: boolean;
+
+  /**
+   * @en Whether the height changes automatically with the content
+   * @cn 高度是否随内容自动变化
+   * @default false
+   */
+  autosize?: boolean;
   /**
    * @en The callback function for enter key
    * @cn 回车键的回调函数
@@ -116,6 +123,7 @@ export interface TextareaProps
       | 'rootRef'
       | 'renderTextarea'
       | 'prefix'
+      | 'autosize'
     > {
   /**
    * @private 内部属性

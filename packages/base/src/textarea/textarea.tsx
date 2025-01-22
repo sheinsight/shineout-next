@@ -207,6 +207,7 @@ const Textarea = (props0: TextareaProps) => {
       style={mergeStyle}
       getStatus={onStatusChange}
       rootRef={rootRef}
+      autosize={props.autosize}
     />
   );
 };
