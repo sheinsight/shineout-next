@@ -8,13 +8,44 @@
  */
 
 import React from 'react';
-import { Input } from 'shineout';
+import { Input, Gap, Link, icons } from 'shineout';
+
+const btnStyle: React.CSSProperties = {
+  cursor: 'pointer',
+}
+const iconStyle: React.CSSProperties = {
+  width: 16,
+  height: 16,
+}
 
 const App: React.FC = () => {
+  const [number, setNumber] = React.useState<string | undefined>();
 
-  return <Input.Number width={300} onChange={v => {
-    console.log('Input.Number', v);
-  }} />
+  const onMinus = () => {
+    setNumber((Number(number || 0) - 1).toString());
+  }
+
+  const onPlus = () => {
+    setNumber((Number(number || 0) + 1).toString());
+  }
+
+  return (
+    <Gap style={{flexDirection: 'column', gap: 24}}>
+      <Input.Group width={300}>
+        <b onClick={onMinus} style={btnStyle}><Link style={iconStyle} type="secondary">{icons.Minus}</Link></b>
+        <Input type="number" value={number} onChange={(v) => setNumber(v)} placeholder='please enter' />
+        <b onClick={onPlus} style={btnStyle}><Link style={iconStyle} type="secondary">{icons.Add}</Link></b>
+      </Input.Group>
+
+      <Input.Number
+        width={300}
+        onChange={(v) => {
+          console.log('Input.Number', v);
+        }}
+        placeholder='please enter'
+      />
+    </Gap>
+  );
 };
 
 export default App;
