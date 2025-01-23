@@ -19,13 +19,13 @@ exports[`Textarea[Base] should render correctly about autosize 1`] = `
   data-soui-input-border="true"
 >
   <textarea
-    class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea"
+    class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea soui-textarea-resize"
     placeholder="Please enter content, the height can be automatically adjusted"
     rows="2"
     style="overflow: auto; max-height: 150px;"
   />
   <textarea
-    class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea soui-textarea-shadow"
+    class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea soui-textarea-resize soui-textarea-shadow"
     placeholder="Please enter content, the height can be automatically adjusted"
     rows="2"
   />
