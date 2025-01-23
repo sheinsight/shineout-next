@@ -26,7 +26,7 @@ const treeTokenDescription = {
  */
 const treeTokenValue = {
   font: { size: 'Font-14', weight: 'Weight-regular', color: 'Neutral-text-5' },
-  line: { height: 'Size-18', background: { color: 'Neutral-fill-2' } },
+  line: { height: 'Size-18', background: { color: 'Neutral-fill-3' } },
   small: { font: { size: 'Font-12' }, line: { height: 'Size-14' } },
   large: { font: { size: 'Font-16' }, line: { height: 'Size-22' } },
   padding: { x: 'Spacing-8', y: 'Spacing-1' },
