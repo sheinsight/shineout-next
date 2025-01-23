@@ -100,6 +100,9 @@ const treeStyle: JsStyles<TreeClassType> = {
     // },
     '& > $node': {
       paddingLeft: 12,
+      '&$leaf': {
+        paddingLeft: 24,
+      },
       '& > $contentWrapper > $iconWrapper': {
         '&[dir=ltr]': { left: 0 },
         '&[dir=rtl]': { right: 0 },
