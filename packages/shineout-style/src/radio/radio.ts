@@ -142,6 +142,7 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     '& $wrapper': {
       display: 'flex',
       marginBottom: token.radioBlockGap,
+      marginRight: 0,
     },
   },
   groupButton: {

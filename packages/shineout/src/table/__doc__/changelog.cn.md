@@ -2,7 +2,8 @@
 2025-01-21
 
 ### 🐞 BugFix
-- 修复 `Table` 在虚拟列表大数据下拖拽滚动条时和调用scrollToIndex的性能问题（Regression: since: v3.5.4） ([#937](https://github.com/sheinsight/shineout-next/pull/937))
+
+- 修复 `Table` 在虚拟列表大数据下拖拽滚动条时和调用 `scrollToIndex` 的性能问题（Regression: since: v3.5.4） ([#937](https://github.com/sheinsight/shineout-next/pull/937))
 
 ## 3.5.5
 2024-12-24

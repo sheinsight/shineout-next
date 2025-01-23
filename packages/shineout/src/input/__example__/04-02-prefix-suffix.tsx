@@ -24,7 +24,7 @@ function MyIcon(props: any){
 
 const App: React.FC = () => (
   <Input
-    placeholder='Please Enter'
+    placeholder='please enter'
     width={300}
     prefix={<MyIcon style={{ marginRight: 8 }}>{icons.Calendar}</MyIcon>}
     suffix={<MyIcon style={{ marginLeft: 8 }}>{icons.Search}</MyIcon>}
