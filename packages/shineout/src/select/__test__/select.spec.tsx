@@ -265,7 +265,7 @@ describe('Select[Base]', () => {
     classTest(selectList, controlKeyboard);
 
     const selectVirtualList = selectList.querySelector(virtualList)!;
-    styleTest(selectVirtualList, 'transform: translate3d(0, -0px, 0);');
+    styleTest(selectVirtualList, 'transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;');
     const selectOptions = selectVirtualList.querySelectorAll(option);
     selectOptions.forEach((option, index) => {
       classTest(option, `option-${index}`);
