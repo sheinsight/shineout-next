@@ -125,6 +125,13 @@ const cascaderTokenExtraValue = {
       color: 'Brand-6',
       background: { color: 'Brand-1' },
     },
+    item: {
+      hover: {
+        font: {
+          color: 'Brand-6',
+        },
+      },
+    },
     inner: {
       padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },
       border: { radius: 'Radius-lesser' },

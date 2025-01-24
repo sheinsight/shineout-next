@@ -27,7 +27,7 @@ import { FormFieldContext } from '../form/form-field-context';
 
 import { useConfig, getLocale } from '../config';
 
-const { devUseWarning } = util;
+const { devUseWarning, isOptionalDisabled } = util;
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
@@ -91,6 +91,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
+  const isRealtime = isOptionalDisabled<DataItem>(props.disabled)
+    ? props.disabled.isRealtime
+    : false;
 
   const disabled = util.isOptionalDisabled<DataItem>(disabledProp)
     ? disabledProp.disabled
@@ -620,8 +623,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           data={filterData!}
           datum={datum}
           keygen={keygen}
+          mode={mode}
           height={height}
           size={size}
+          isRealtime={isRealtime}
           virtual={virtual}
           wideMatch={wideMatch}
           filterFunc={filterFunc}
