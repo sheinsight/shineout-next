@@ -5,7 +5,7 @@ import { useTreeContext } from './tree-context';
 import { KeygenResult } from '@sheinx/hooks';
 
 const TreeCheckbox = <Value extends KeygenResult[]>(props: TreeCheckboxProps<Value>) => {
-  const { jssStyle, className, id, onChange, disabled } = props;
+  const { jssStyle, className, id, onChange, disabled, onClick } = props;
   const { getValue, set, getChecked, unBindUpdate } = useTreeContext();
 
   const handleChange = (_: any, checked: boolean) => {
@@ -13,6 +13,10 @@ const TreeCheckbox = <Value extends KeygenResult[]>(props: TreeCheckboxProps<Val
     if (onChange) {
       onChange(getValue() as Value, id);
     }
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    onClick?.(e);
   };
 
   const checked = getChecked(id);
@@ -31,11 +35,8 @@ const TreeCheckbox = <Value extends KeygenResult[]>(props: TreeCheckboxProps<Val
       jssStyle={jssStyle}
       checked={checked}
       disabled={disabled}
-      onClick={(e) => {
-        e.stopPropagation();
-        console.log('checkbox click');
-      }}
       onChange={handleChange}
+      onClick={handleClick}
     ></Checkbox>
   );
 };

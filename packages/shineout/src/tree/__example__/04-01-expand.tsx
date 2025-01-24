@@ -48,6 +48,8 @@ export default () => {
         </Button>
       </div>
       <Tree
+        virtual
+        height={200}
         line={false}
         data={data}
         expanded={expanded}

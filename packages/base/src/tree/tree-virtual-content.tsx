@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, util, useRender } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
@@ -39,6 +40,7 @@ const NodeVirtualContent = <DataItem, Value extends KeygenResult[]>(
   } = props;
   const forceUpdate = useRender();
   const { isDisabled, bindUpdate } = useTreeContext();
+  const clickLock = useRef(false);
   const config = useConfig();
   const disabled = isDisabled(id);
 
@@ -84,19 +86,27 @@ const NodeVirtualContent = <DataItem, Value extends KeygenResult[]>(
       setFetching(true);
       const result = loader(id, data) as any;
       if (util.isPromise(result)) {
-        result.then(() => setFetching(false));
+        result.then(() => {
+          setFetching(false);
+        });
       }
     }
   };
 
-  const handleNodeClick = (e) => {
-    // if (disabled) return;
-    console.log('node click');
+  const handleNodeClick = () => {
     if (parentClickExpand && hasChildren) {
+      if (clickLock.current) {
+        clickLock.current = false;
+        return;
+      }
       handleIndicatorClick();
     } else {
       onNodeClick(data, id);
     }
+  };
+
+  const handleClick = () => {
+    clickLock.current = true;
   };
 
   const handleNodeExpand = () => {
@@ -106,6 +116,7 @@ const NodeVirtualContent = <DataItem, Value extends KeygenResult[]>(
   const renderLoading = () => {
     return (
       <span
+        style={{ left: (level - 1) * 24 }}
         className={contentStyle.iconWrapper}
         data-expanded={expanded}
         data-icon={hasExpandIcons}
@@ -163,9 +174,8 @@ const NodeVirtualContent = <DataItem, Value extends KeygenResult[]>(
         </span>
       );
     }
-
     if (children && children.length > 0) return indicator;
-    if (!hasChildren || children === null) return null;
+    if (Array.isArray(children) || children === null) return null;
     if (fetching && !children) return renderLoading();
     if (loader && children === undefined) return indicator;
 
@@ -180,6 +190,7 @@ const NodeVirtualContent = <DataItem, Value extends KeygenResult[]>(
         disabled={disabled}
         className={contentStyle.checkbox}
         onChange={onChange}
+        onClick={handleClick}
       ></Checkbox>
     );
   };

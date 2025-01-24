@@ -77,7 +77,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
 
   return (
     <VirtualScrollList
-      data={datum.dataFlat}
+      data={datum.getFlatData()}
       height={height}
       rowsInView={10}
       keepScrollHeight

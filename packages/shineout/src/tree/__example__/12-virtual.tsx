@@ -15,7 +15,7 @@ interface DataItem {
   children?: DataItem[];
 }
 
-const data: DataItem[] = createNestedArray([100, 5, 10, 2]);
+const data: DataItem[] = createNestedArray([1, 5, 10, 2]);
 export default () => {
   const renderItem: TreeProps['renderItem'] = (node) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;

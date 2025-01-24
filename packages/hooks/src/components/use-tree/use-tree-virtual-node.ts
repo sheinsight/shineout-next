@@ -28,6 +28,24 @@ const useTreeVirtualNode = <DataItem, Value>(props: BaseTreeVirtualNodeProps<Dat
 
   const handleToggle = () => {};
 
+  const handleSetFetchind = (v: boolean) => {
+    datum?.dataFlatStatusMap.set(id, {
+      active,
+      expanded,
+      fetching: v,
+    });
+    setFetching(v);
+  };
+
+  const handleSetExpanded = (v: boolean) => {
+    datum?.dataFlatStatusMap.set(id, {
+      active,
+      expanded: v,
+      fetching,
+    });
+    setExpanded(v);
+  };
+
   const isLeaf = () => {
     const children = data[childrenKey] as DataItem[];
     if (children && children.length > 0) return false;
@@ -45,8 +63,8 @@ const useTreeVirtualNode = <DataItem, Value>(props: BaseTreeVirtualNodeProps<Dat
     expanded,
     fetching,
     isLeaf,
-    setFetching,
-    setExpanded,
+    setFetching: handleSetFetchind,
+    setExpanded: handleSetExpanded,
     onToggle: handleToggle,
   };
 };

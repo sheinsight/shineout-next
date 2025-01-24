@@ -37,10 +37,11 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
 }
 
 export interface TreeVirtualContextProps<DataItem, Value extends KeygenResult[]>
-  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey'  | 'active'> {
+  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'active' | 'expanded'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
   level: number;
+  expanded: boolean;
   parentClickExpand?: boolean;
   doubleClickExpand?: boolean;
   data: DataItem;
