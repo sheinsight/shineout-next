@@ -61,6 +61,7 @@ const cascaderTokens: CascaderTokens = {
   cascaderOptionPaddingY: 'Spacing-1',
   cascaderOptionActiveColor: 'Brand-6',
   cascaderOptionActiveBackgroundColor: 'Brand-1',
+  cascaderOptionItemHoverFontColor: 'Brand-6',
   cascaderOptionInnerPaddingX: 'Spacing-8',
   cascaderOptionInnerPaddingY: 'Spacing-5',
   cascaderOptionInnerPaddingRight: 'Size-15',

@@ -1,4 +1,4 @@
-export { default, default as useTree } from './use-tree';
+export { default, default as useTree, MODE } from './use-tree';
 export type {
   BaseTreeProps,
   UpdateFunc,

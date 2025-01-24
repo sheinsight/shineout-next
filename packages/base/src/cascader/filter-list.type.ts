@@ -5,7 +5,14 @@ import { JssStyleType, CascaderProps } from './cascader.type';
 export interface FilterListProps<DataItem, Value extends KeygenResult[]>
   extends Pick<
     CascaderProps<DataItem, Value>,
-    'renderOptionList' | 'loading' | 'wideMatch' | 'childrenKey' | 'virtual' | 'keygen' | 'size'
+    | 'renderOptionList'
+    | 'loading'
+    | 'wideMatch'
+    | 'childrenKey'
+    | 'virtual'
+    | 'keygen'
+    | 'size'
+    | 'mode'
   > {
   jssStyle?: JssStyleType;
   data: DataItem[];
@@ -21,6 +28,7 @@ export interface FilterListProps<DataItem, Value extends KeygenResult[]>
     nextPath: Value,
     fromClick?: boolean,
   ) => void;
+  isRealtime?: boolean;
   setInputText: (text: string) => void;
   setFilterText: (text: string) => void;
 }

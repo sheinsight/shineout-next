@@ -346,6 +346,12 @@ export interface CascaderTokens {
   cascaderOptionActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 级联选择器选项选项鼠标移入时的字体颜色
+   */
+  cascaderOptionItemHoverFontColor: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 级联选择器选项内部容器的内边距（水平方向）
    */

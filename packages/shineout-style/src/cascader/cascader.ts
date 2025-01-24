@@ -475,7 +475,15 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       width: '100%',
     },
   },
-  filterDisabledOption: {},
+  filterOptionItem: {
+    // not disabled
+    '&:not($filterDisabledOption):hover': {
+      color: token.cascaderOptionItemHoverFontColor,
+    },
+  },
+  filterDisabledOption: {
+    color: token.cascaderOptionDisabledColor,
+  },
   filterOptionSeparator: {},
   activeOption: {
     '& $optionInner': {

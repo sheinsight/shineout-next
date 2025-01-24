@@ -68,6 +68,7 @@ export interface CascaderClasses {
   virtualList: string;
   option: string;
   filterOption: string;
+  filterOptionItem: string;
   filterDisabledOption: string;
   filterOptionSeparator: string;
   optionCheckbox: string;

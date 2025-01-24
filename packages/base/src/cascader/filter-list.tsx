@@ -22,6 +22,7 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     virtual,
     height,
     size,
+    isRealtime,
     shouldFinal,
     filterFunc,
     renderItem: renderItemProp,
@@ -106,6 +107,7 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
         <FilterNode
           jssStyle={jssStyle}
           key={getKey(item)}
+          isRealtime={isRealtime}
           data={item}
           datum={datum}
           shouldFinal={shouldFinal}
