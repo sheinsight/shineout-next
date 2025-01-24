@@ -12,6 +12,7 @@ export type VirtualListType = {
 export interface VirtualListProps<DataItem> extends Pick<CommonType, 'className' | 'style'> {
   data: DataItem[];
   keygen?: KeygenType<DataItem>;
+  paddingY?: number
   // 容器高度
   height: number | string;
   lineHeight: number;

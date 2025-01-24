@@ -402,7 +402,11 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   hideTag: {},
   list: {
     display: 'inline-block',
+  },
+  listSimple: {
     overflow: 'auto',
+    paddingTop: token.cascaderListPaddingY,
+    paddingBottom: token.cascaderListPaddingY,
   },
   tag: {
     flexShrink: 0,

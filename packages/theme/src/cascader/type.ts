@@ -464,4 +464,10 @@ export interface CascaderTokens {
    * @description 级联选择器下拉列表的边框颜色
    */
   cascaderListBorderColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-3
+   * @description 级联选择器下拉列表的内边距（垂直方向）
+   */
+  cascaderListPaddingY: string;
 }

@@ -58,6 +58,7 @@ export interface CascaderClasses {
   listContent: string;
   filterList: string;
   list: string;
+  listSimple: string;
   tag: string;
   tagOnly: string;
   space: string;
