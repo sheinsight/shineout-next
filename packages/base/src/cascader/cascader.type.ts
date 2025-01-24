@@ -45,6 +45,7 @@ export interface CascaderClasses {
   controlKeyboard: string;
   placeholder: string;
   pickerWrapper: string;
+  pickerWrapperShow: string;
   clearable: string;
   iconWrapper: string;
   clearIcon: string;

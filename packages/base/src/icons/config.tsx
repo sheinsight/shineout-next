@@ -24,7 +24,7 @@ const config = {
     Forward: icons.ArrowRight,
   },
   cascader: {
-    More: icons.ArrowDown,
+    More: icons.More,
     DropdownArrow: icons.ArrowDown,
     Close: icons.CloseFill,
     CollapseArrow: icons.ArrowRight,

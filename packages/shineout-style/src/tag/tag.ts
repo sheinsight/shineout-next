@@ -36,6 +36,7 @@ const tag = (type: TagType) => ({
     '&[data-soui-type="dark"]': {
       '&$disabled': {
         backgroundColor: Token.tagDefaultFillBackgroundColor,
+        borderColor: Token.tagDefaultFillBorderColor,
       },
     },
 

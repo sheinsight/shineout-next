@@ -125,7 +125,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
   return (
     <div className={rootClass} {...events}>
-      <div className={classNames(styles.optionInner)}>
+      <div className={classNames(styles.optionInner)} role="button">
         {multiple && !(shouldFinal && hasChildren) && (
           <Checkbox
             // @ts-ignore

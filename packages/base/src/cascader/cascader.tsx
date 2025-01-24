@@ -446,11 +446,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       return renderClearable();
     }
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = (compressed || multiple) ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     return (
       <span
         className={classNames(
-          compressed && styles.compressedIcon,
+          (compressed || multiple) && styles.compressedIcon,
           styles.arrowIcon,
           open && !compressed && styles.arrowIconOpen,
         )}
@@ -751,7 +751,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         <AnimationList
           onRef={popupRef}
           show={open}
-          className={classNames(styles?.pickerWrapper)}
+          className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow)}
           display={'block'}
           type='scale-y'
           duration={'fast'}

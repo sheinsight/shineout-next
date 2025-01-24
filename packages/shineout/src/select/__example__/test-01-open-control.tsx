@@ -9,7 +9,7 @@ import { Select } from 'shineout';
 const defaultData = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
 
 export default () => {
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState(['red'])
   const [data, setData] = useState(defaultData);
 
