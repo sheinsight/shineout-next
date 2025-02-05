@@ -25,9 +25,10 @@ const App: React.FC = () => (
       type='datetime'
       defaultValue={new Date()}
       formatResult='YYYY-MM-DD HH:mm:ss'
+      width={240}
     />
-    <DatePicker absolute inputable range defaultValue={['2018-05-25', '2018-06-05']} />
-    <DatePicker absolute type='time' defaultValue={Now} />
+    <DatePicker absolute inputable range defaultValue={['2018-05-25', '2018-06-05']} width={240} />
+    <DatePicker absolute type='time' defaultValue={Now} width={240} />
   </div>
 );
 
