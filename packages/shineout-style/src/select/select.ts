@@ -380,10 +380,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   moreIcon: {},
   hideTag: {},
-  list: {
-    paddingTop: 3,
-    paddingBottom: 3,
-  },
+  list: {},
   tree: {
     padding: 4,
     overflow: 'auto',

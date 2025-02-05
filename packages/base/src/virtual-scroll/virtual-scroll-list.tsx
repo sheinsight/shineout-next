@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useMemo } from 'react';
 import { usePersistFn } from '@sheinx/hooks';
 import Scroll from './scroll';
 import { VirtualListProps } from './virtual-scroll-list.type';
@@ -18,6 +18,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     tagClassName,
     dynamicVirtual,
     virtualRef,
+    paddingY,
     onControlTypeChange,
   } = props;
 
@@ -101,6 +102,11 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     setHeight(sumHeight);
   });
 
+  // 设置了容器的paddingY, translateY时需要加上，否则会出现底部滚不到底的问题
+  const addonTop = useMemo(() => {
+    return paddingY ? paddingY * 2 : 0;
+  }, [paddingY]);
+
   const updateIndexAndTopFromTop = (scrollTop: number) => {
     let sum = 0;
     let nextCurrentIndex = 0;
@@ -112,7 +118,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       if (scrollTop < sum || i === maxIndex) {
         nextCurrentIndex = i;
         const beforeHeight = i === 0 ? 0 : sum - (context.cachedHeight[i] || lineHeight);
-        top = scrollTop - beforeHeight;
+        top = scrollTop - beforeHeight + (addonTop && i > 0 ? addonTop : 0);
         break;
       }
     }
@@ -171,6 +177,11 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     if (shouldScroll) nextStyle.height = height;
     const scrollHeight = getContentHeight(data.length - 1);
 
+    const innerStyle = {
+      transform: `translate3d(0, -${top}px, 0)`,
+      paddingTop: paddingY,
+      paddingBottom: paddingY,
+    }
     return (
       <Scroll
         className={className}
@@ -183,7 +194,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         onScroll={handleScroll}
         onMouseMove={handleMouseMove}
       >
-        <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>
+        <Tag className={tagClassName} style={innerStyle}>
           {items.map((d: DataItem, i: number) => {
             if (d[groupKey as keyof DataItem]) {
               return (

@@ -14,7 +14,7 @@ const treeTokens: TreeTokens = {
   treeLargeLineHeight: 'Size-22',
   treeFontWeight: 'Weight-regular',
   treeFontColor: 'Neutral-text-5',
-  treeLineBackgroundColor: 'Neutral-fill-2',
+  treeLineBackgroundColor: 'Neutral-fill-3',
   treePaddingX: 'Spacing-8',
   treePaddingY: 'Spacing-1',
   treeItemFontColor: 'Neutral-text-4',

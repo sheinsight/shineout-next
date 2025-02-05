@@ -7,7 +7,7 @@
  *    -- The `renderCompressed` parameter is an object containing two properties, `data` and `onRemove`, `data` is the compressed content data, and `onRemove` is the delete event
  */
 import React, { useState } from 'react';
-import { Cascader, Popover, Table, Button, TYPE } from 'shineout';
+import { Cascader, Popover, Table, Link, TYPE } from 'shineout';
 import { createNestedArray } from '../../tree/__example__/utils';
 
 const d = createNestedArray([100, 100, 20]);
@@ -36,11 +36,12 @@ export default () => {
       },
       {
         align: 'center',
+        width: 60,
         render: (item) => {
           return (
-            <Button size='small' type='primary' mode='text' onClick={() => onRemove(item)}>
+            <Link type='primary' onClick={() => onRemove(item)}>
               删除
-            </Button>
+            </Link>
           );
         },
       },
@@ -49,7 +50,7 @@ export default () => {
     return (
       <span
         style={{
-          fontSize: 10,
+          fontSize: 12,
           color: '#fff',
           margin: '2px 0',
           borderRadius: 4,
@@ -59,16 +60,15 @@ export default () => {
       >
         +{value ? value.length : ''}
         <Popover position='right-top'>
-          <div style={{ width: 200 }}>
-            <Table
-              data={data}
-              keygen='id'
-              virtual
-              columns={columns}
-              hideHeader
-              height={200}
-            ></Table>
-          </div>
+          <Table
+            data={data}
+            keygen='id'
+            virtual
+            columns={columns}
+            hideHeader
+            width={200}
+            style={{maxHeight: 200}}
+          />
         </Popover>
       </span>
     );
@@ -90,7 +90,6 @@ export default () => {
         clearable
         compressed
         virtual
-        compressedBound={2}
         placeholder='Please select node'
         data={d}
         keygen='id'

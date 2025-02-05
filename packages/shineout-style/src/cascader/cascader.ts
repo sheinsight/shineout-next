@@ -132,6 +132,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     },
     // hover
     '&:hover': {
+      ...wrapper['&:hover'],
       '& $clearIcon': {
         display: 'inline-block',
       },
@@ -143,6 +144,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
           display: 'none',
         },
       },
+    },
+    '&:has($pickerWrapperShow)': {
+      borderColor: token.cascaderFocusBorderColor,
     },
     // not wrapperFocus
     '&:not($wrapperFocus)': {
@@ -315,6 +319,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     borderRadius: token.cascaderPanelRadius,
     transformOrigin: '0 0',
   },
+  pickerWrapperShow: {},
   iconWrapper: {
     display: 'flex',
     alignItems: 'center',
@@ -341,8 +346,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     transition: 'transform 0.3s',
   },
   arrowIconOpen: {
-    transform: 'rotate(180deg)',
     color: token.cascaderHoverBorderColor,
+    '&:not($compressedIcon)': {
+      transform: 'rotate(180deg)',
+    }
   },
   ellipsis: {
     display: 'block',
@@ -402,7 +409,11 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   hideTag: {},
   list: {
     display: 'inline-block',
+  },
+  listSimple: {
     overflow: 'auto',
+    paddingTop: token.cascaderListPaddingY,
+    paddingBottom: token.cascaderListPaddingY,
   },
   tag: {
     flexShrink: 0,
@@ -440,8 +451,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
-    width: 248,
-    height: 72,
+    // width: 248,
+    // height: 72,
+    maxWidth: 400,
+    maxHeight: 160,
     overflow: 'auto',
     padding: `${token.cascaderMorePaddingY} ${token.cascaderMorePaddingX}`,
   },
@@ -454,19 +467,22 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     lineHeight: token.lineHeightDynamic,
     minWidth: 64,
     padding: `${token.cascaderOptionPaddingY} ${token.cascaderOptionPaddingX}`,
-    '&:not($optionDisabled)': {
+    '&:not($optionDisabled):not($activeOption)': {
       cursor: 'pointer',
+      '&:hover': {
+        '& $optionInner': {
+          color: token.cascaderOptionHoverFontColor,
+          backgroundColor: token.cascaderOptionHoverBackgroundColor,
+        },
+      },
+      '&:hover $optionInner:active, & $optionInner:active': {
+        color: token.cascaderOptionHoverFontColor,
+        backgroundColor: `${token.cascaderOptionFocusBackgroundColor}`,
+      },
     },
 
     '& $optionCheckbox': {
       marginRight: 8,
-    },
-    // hover
-    '&:not($optionDisabled):hover': {
-      '& $optionInner': {
-        color: token.cascaderOptionHoverFontColor,
-        backgroundColor: token.cascaderOptionHoverBackgroundColor,
-      },
     },
   },
   filterOption: {
@@ -489,6 +505,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     '& $optionInner': {
       color: token.cascaderOptionActiveColor,
       backgroundColor: token.cascaderOptionActiveBackgroundColor,
+      '& $optionIcon': {
+        color: token.cascaderOptionActiveColor,
+      }
     },
   },
   optionCheckbox: {},
