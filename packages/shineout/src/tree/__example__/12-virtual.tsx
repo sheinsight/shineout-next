@@ -1,6 +1,7 @@
 /**
  * cn - 虚拟列表
- *    -- 设置 `defaultExpandAll` 属性，可以默认展开所有节点
+ *    -- 设置 `virtual` 属性，开启虚拟列表功能，本例为 100000 条数据
+ *    -- 设置虚拟列表后需要指定 `height` 属性或者将其设置在固定高度容器中
  * en - Default Expand all
  *    -- Set the `defaultExpandAll` property to expand all nodes by default
  *
@@ -15,7 +16,8 @@ interface DataItem {
   children?: DataItem[];
 }
 
-const data: DataItem[] = createNestedArray([1, 5, 10, 2]);
+const data: DataItem[] = createNestedArray([100, 10, 10, 10]);
+
 export default () => {
   const renderItem: TreeProps['renderItem'] = (node) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;

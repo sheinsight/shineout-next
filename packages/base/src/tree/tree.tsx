@@ -118,11 +118,11 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     const tempExpandMap = new Set(expanded);
     if (virtual) {
       datum.expandedFlat(expanded);
-    } else {
-      datum.updateMap.forEach((update, id) => {
-        update('expanded', tempExpandMap.has(id));
-      });
     }
+
+    datum.updateMap.forEach((update, id) => {
+      update('expanded', tempExpandMap.has(id));
+    });
   };
 
   const handleUpdateActive = (active?: KeygenResult, item?: DataItem) => {

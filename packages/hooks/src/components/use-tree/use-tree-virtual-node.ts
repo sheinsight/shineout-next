@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BaseTreeVirtualNodeProps } from './use-tree-node.type';
 import usePersistFn from '../../common/use-persist-fn';
 
 const useTreeVirtualNode = <DataItem, Value>(props: BaseTreeVirtualNodeProps<DataItem, Value>) => {
-  const { id, data, childrenKey, loader, datum } = props;
+  const { id, data, childrenKey, bindNode, loader, datum } = props;
   const [active, setActive] = useState(datum?.dataFlatStatusMap.get(id)?.active || false);
   const [expanded, setExpanded] = useState(datum?.dataFlatStatusMap.get(id)?.expanded || false);
   const [fetching, setFetching] = useState(datum?.dataFlatStatusMap.get(id)?.fetching || false);
@@ -56,6 +56,10 @@ const useTreeVirtualNode = <DataItem, Value>(props: BaseTreeVirtualNodeProps<Dat
 
     return true;
   };
+
+  useEffect(() => {
+    bindNode(id, update, data);
+  }, []);
 
   return {
     update,

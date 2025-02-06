@@ -24,7 +24,15 @@ export const getExpandData = (
   const treeExpandLevel = new Map();
 
   if (expandSet.size === 0 || !treeColumnsName) {
-    return { treeData: _treeData, treeExpandLevel, unmatchExpandKeys };
+    const treeDataInfo = _treeData.map((item, index) => {
+      return {
+        id: getKey(keygen, item, index),
+        level: 1,
+        data: item,
+        pid: null,
+      };
+    });
+    return { treeData: _treeData, treeExpandLevel, unmatchExpandKeys, treeDataInfo };
   }
 
   const treeData = [...(_treeData || [])];

@@ -16,7 +16,7 @@ interface DataItem {
   children?: DataItem[];
 }
 
-const data: DataItem[] = createNestedArray([2, 2, 2]);
+const data: DataItem[] = createNestedArray([5, 2, 1]);
 
 export default () => {
   const [expanded, setExpanded] = useState<TreeProps['expanded']>([]);
@@ -34,7 +34,7 @@ export default () => {
   };
 
   const handleExpand: TreeProps['onExpand'] = (ids) => {
-    setExpanded([...ids]);
+    setExpanded(ids);
   };
 
   return (

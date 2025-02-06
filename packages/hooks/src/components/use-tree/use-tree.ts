@@ -15,7 +15,7 @@ import { getExpandData } from '../use-table/use-table-tree';
 import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber, isArray, isUnMatchedData } from '../../utils/is';
-import { devUseWarning } from '../../utils';
+import { devUseWarning, produce } from '../../utils';
 
 function toArray<Value>(value: Value) {
   if (!value) return [];
@@ -71,6 +71,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   } = props;
 
   const [inited, setInited] = useState(false);
+  const [dataFlat, setDataFlat] = useState<FlatNodeType<DataItem>[]>([]);
 
   const { value: expanded, onChange: onExpand } = useInputAble({
     value: expandedProp,
@@ -257,7 +258,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     pid: KeygenResult | null = null,
   ): KeygenResult[] | undefined => {
     const ids: KeygenResult[] = [];
-
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
       const id = getKey(item, path[path.length - 1], i) as KeygenResult;
@@ -423,8 +423,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.valueMap = new Map();
     context.unmatchedValueMap = new Map();
     context.data = toArray(data) as DataItem[];
+    setDataFlat([]);
     if (!data) return;
     initData(context.data, []);
+    setDataFlat(context.dataFlat);
     initValue();
     setValue(prevValue);
   };
@@ -508,7 +510,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     const status = context.dataFlatStatusMap.get(id);
     if (!status) return;
     const childrenData = item[childrenKey] as DataItem[];
-    const insertStartNode = context.dataFlat.find((item) => item.id === id);
+    const insertStartNode = dataFlat.find((item) => item.id === id);
     context.dataFlatStatusMap.set(id, {
       ...status,
       expanded: true,
@@ -521,8 +523,11 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     appendChildrenExpanded(childrenData, insertStartNode.level + 1, id, insertData);
 
-    const insertIndex = context.dataFlat.indexOf(insertStartNode);
-    context.dataFlat.splice(insertIndex + 1, 0, ...insertData);
+    const insertIndex = dataFlat.indexOf(insertStartNode);
+    const nextDataFlat = produce(dataFlat, (draft) => {
+      draft.splice(insertIndex + 1, 0, ...insertData);
+    });
+    setDataFlat(nextDataFlat);
   };
 
   const removeFlat = (id: KeygenResult) => {
@@ -530,7 +535,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (isUnMatchedData(item)) return;
     if (!item) return;
 
-    const removeNode = context.dataFlat.find((item) => item.id === id);
+    const removeNode = dataFlat.find((item) => item.id === id);
     if (!removeNode) return;
 
     const status = context.dataFlatStatusMap.get(id);
@@ -540,24 +545,34 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       fetching: false,
       expanded: false,
     });
-    const removeStartIndex = context.dataFlat.indexOf(removeNode);
+    const removeStartIndex = dataFlat.indexOf(removeNode);
     let removeEndIndex = 0;
 
-    for (let i = removeStartIndex + 1; i < context.dataFlat.length; i++) {
-      if (context.dataFlat[i].level <= removeNode.level) {
+    for (let i = removeStartIndex + 1; i < dataFlat.length; i++) {
+      if (dataFlat[i].level <= removeNode.level) {
         removeEndIndex = i;
         break;
       }
-      if (i === context.dataFlat.length - 1) {
+      if (i === dataFlat.length - 1) {
         removeEndIndex = i + 1;
         break;
       }
     }
-    context.dataFlat.splice(removeStartIndex + 1, removeEndIndex - removeStartIndex - 1);
+    const nextDataFlat = produce(dataFlat, (draft) => {
+      draft.splice(removeStartIndex + 1, removeEndIndex - removeStartIndex - 1);
+    });
+    setDataFlat(nextDataFlat);
   };
 
   const expandedFlat = (expanded: KeygenResult[]) => {
     if (!context.data) return;
+    context.dataFlatStatusMap.forEach((status, id) => {
+      context.dataFlatStatusMap.set(id, {
+        ...status,
+        expanded: false,
+      });
+    });
+
     expanded.forEach((id) => {
       const status = context.dataFlatStatusMap.get(id);
       if (!status) return;
@@ -567,8 +582,11 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       });
     });
 
-    const { treeData, treeDataInfo } = getExpandData(context.data, expanded, getKey, childrenKey);
-    console.log(treeDataInfo);
+    const { treeDataInfo } = getExpandData(context.data, expanded, getKey, childrenKey);
+    if (!treeDataInfo) {
+      return;
+    }
+    setDataFlat(treeDataInfo);
   };
 
   const getFlatData = () => {
@@ -625,7 +643,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     isUnMatched,
     childrenKey,
     data,
-    dataFlat: context.dataFlat,
+    dataFlat,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,

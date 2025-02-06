@@ -24,7 +24,6 @@ export default () => {
   return (
     <div>
       <Tree
-        virtual
         defaultExpandAll
         line={false}
         data={data}
