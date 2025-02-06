@@ -233,7 +233,6 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
           styles?.wrapperInnerTitleTop,
           styles?.wrapperInnerTitleBottom,
         )}
-        ref={targetRef}
         tabIndex={canFocus ? 1 : undefined}
         onClick={handleResultClick}
         onFocus={canFocus ? handleFocus : undefined}
@@ -292,6 +291,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
         !border && styles?.wrapperNoBorder,
         !!props.underline && styles?.wrapperUnderline,
       )}
+      ref={targetRef}
       style={{ width: props.width, ...props.style }}
     >
       {tipNode}
