@@ -14,7 +14,7 @@ const container: React.CSSProperties = {
 
 const slider: React.CSSProperties = {
   flex: 1,
-  marginInlineEnd: 28,
+  marginInlineEnd: 16,
 };
 
 const App: React.FC = () => {

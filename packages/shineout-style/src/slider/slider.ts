@@ -36,6 +36,9 @@ const sliderStyle: JsStyles<SliderClassType> = {
       width: token.sliderTrackSize,
       height: '100%',
     },
+    '$disabled &': {
+      cursor: 'not-allowed',
+    }
   },
   trackInner: {
     position: 'absolute',
@@ -154,11 +157,11 @@ const sliderStyle: JsStyles<SliderClassType> = {
       bottom: '100%',
       '&[dir=ltr]': {
         left: 0,
-        transform: 'translate(-50%, -10px)',
+        transform: 'translate(-50%, -14px)',
       },
       '&[dir=rtl]': {
         right: 0,
-        transform: 'translate(50%, -10px)',
+        transform: 'translate(50%, -14px)',
       },
     },
     '$vertical &': {
@@ -166,11 +169,11 @@ const sliderStyle: JsStyles<SliderClassType> = {
       padding: '1px 4px',
       '&[dir=ltr]': {
         left: '100%',
-        transform: 'translate(10px, 50%)',
+        transform: 'translate(14px, 50%)',
       },
       '&[dir=rtl]': {
         right: '100%',
-        transform: 'translate(-10px, 50%)',
+        transform: 'translate(-14px, 50%)',
       },
     },
   },
@@ -179,11 +182,11 @@ const sliderStyle: JsStyles<SliderClassType> = {
       bottom: '100%',
       '&[dir=ltr]': {
         right: 0,
-        transform: 'translate(50%, -10px)',
+        transform: 'translate(50%, -14px)',
       },
       '&[dir=rtl]': {
         left: 0,
-        transform: 'translate(-50%, -10px)',
+        transform: 'translate(-50%, -14px)',
       },
     },
     '$vertical &': {
@@ -191,11 +194,11 @@ const sliderStyle: JsStyles<SliderClassType> = {
       padding: '1px 4px',
       '&[dir=ltr]': {
         left: '100%',
-        transform: 'translate(10px, -50%)',
+        transform: 'translate(14px, -50%)',
       },
       '&[dir=rtl]': {
         right: '100%',
-        transform: 'translate(-10px, -50%)',
+        transform: 'translate(-14px, -50%)',
       },
     },
   },
