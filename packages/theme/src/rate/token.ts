@@ -21,9 +21,9 @@ const rateTokenExtraValue = {
   font: { color: 'Neutral-text-5', size: 'Font-14', weight: 'Weight-regular' },
   gap: 'Spacing-6',
   size: 'Size-12',
-  text: { gap: 'Spacing-10' },
+  text: { gap: 'Spacing-16' },
   background: { color: 'Neutral-fill-3' },
-  front: { background: { color: 'Warning-5' } },
+  front: { background: { color: 'Lemon-6' } },
 };
 
 module.exports = {

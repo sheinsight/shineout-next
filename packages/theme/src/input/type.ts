@@ -340,7 +340,7 @@ export interface InputTokens {
   inputInnerLargePaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-4
+   * @token Spacing-3
    * @description 输入框内嵌大尺寸内边距（垂直方向）
    */
   inputInnerLargePaddingY: string;

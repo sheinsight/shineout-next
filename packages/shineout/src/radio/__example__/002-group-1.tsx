@@ -6,24 +6,41 @@
  */
 import React from 'react';
 import { Radio } from 'shineout';
+import { createUseStyles } from 'react-jss';
+
+const useStyles = createUseStyles(
+  {
+    myRadioGroup: {
+      '& .soui-radio': {
+        marginBottom: 12
+      },
+    },
+  },
+  { name: 'example-radio-group-1' },
+);
 
 const data: string[] = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
 
-const App: React.FC = () => (
-  <>
-    <Radio.Group
-      keygen
-      defaultValue='yellow'
-      onChange={(...args) => {
-        console.log(args);
-      }}
-    >
-      {data.map((d) => (
-        <Radio key={d} htmlValue={d}>
-          {d}
-        </Radio>
-      ))}
-    </Radio.Group>
-  </>
-);
+const App: React.FC = () => {
+  const classes = useStyles();
+
+  return (
+    <>
+      <Radio.Group
+        keygen
+        defaultValue='yellow'
+        onChange={(...args) => {
+          console.log(args);
+        }}
+        className={classes.myRadioGroup}
+      >
+        {data.map((d) => (
+          <Radio key={d} htmlValue={d}>
+            {d}
+          </Radio>
+        ))}
+      </Radio.Group>
+    </>
+  )
+};
 export default App;

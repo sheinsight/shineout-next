@@ -302,41 +302,52 @@ const App: React.FC = () => {
 
       <Grid style={{ marginTop: 12 }}>
         <Grid width={2 / 3} style={{ display: 'inline-flex', gap: 12 }}>
-          <Input.Group>
-            <Input placeholder='input field name' value={field1} onChange={setField1} />
-            <Button
-              onClick={() => {
-                form
-                  .validateFieldsWithValue(field1)
-                  .then((values) => {
-                    Message.success(`${field1} validate success`);
-                    console.log('validate success values: >>', values);
-                  })
-                  .catch((errorInfo) => {
-                    Message.error('validate failed');
-                    console.log('validate failed errorInfo: >>', errorInfo);
-                  });
-              }}
-            >
-              form.validateFieldsWithValue
-            </Button>
-          </Input.Group>
+          <div>
+            <p style={{ marginBottom: 8 }}>方法1: form.validateFieldsWithValue</p>
+            <Input.Group style={{ overflow: 'hidden' }}>
+              <Input placeholder='Field Name' value={field1} onChange={setField1} />
+              <Button
+                type="primary"
+                style={{ borderRadius: 0 }}
+                onClick={() => {
+                  form
+                    .validateFieldsWithValue(field1)
+                    .then((values) => {
+                      Message.success(`${field1} validate success`);
+                      console.log('validate success values: >>', values);
+                    })
+                    .catch((errorInfo) => {
+                      Message.error('validate failed');
+                      console.log('validate failed errorInfo: >>', errorInfo);
+                    });
+                }}
+              >
+                Validate
+              </Button>
+            </Input.Group>
+          </div>
 
-          <Input.Group>
-            <Input placeholder='input field name' value={field2} onChange={setField2} />
-            <Button
-              onClick={() => {
-                if (field2) {
-                  myCustomScrollToField(field2);
-                }
-              }}
-            >
-              form.scrollToField
-            </Button>
-          </Input.Group>
+          <div>
+            <p style={{ marginBottom: 8 }}>方法2: form.scrollToField</p>
+            <Input.Group style={{ overflow: 'hidden' }}>
+              <Input placeholder='Field Name' value={field2} onChange={setField2} />
+              <Button
+                type="primary"
+                style={{ borderRadius: 0 }}
+                onClick={() => {
+                  if (field2) {
+                    myCustomScrollToField(field2);
+                  }
+                }}
+              >
+                Scroll
+              </Button>
+            </Input.Group>
+          </div>
         </Grid>
 
         <Grid width={1 / 3} style={{ textAlign: 'right' }}>
+          <p style={{ marginBottom: 8 }}>&nbsp;</p>
           <Form.Reset>Reset</Form.Reset>
           <Button type='primary' onClick={handleMySubmit}>
             My Submit

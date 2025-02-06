@@ -39,10 +39,10 @@ const App: React.FC = () => {
         console.log(data);
       }}
     >
-      <div style={{ margin: '0 0 24px 0' }}>
-        <Button onClick={() => form.current?.reset()}>reset</Button>
-        <Button onClick={() => form.current?.submit()}>submit</Button>
-        <Button
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 12px', marginBottom: 12 }}>
+        <div><Button mode="outline" onClick={() => form.current?.reset()}>Reset</Button></div>
+        <div><Button mode="outline" onClick={() => form.current?.submit()}>Submit</Button></div>
+        <div><Button mode="outline"
           onClick={() =>
             form.current?.validate()
             .then((values) => {
@@ -55,11 +55,11 @@ const App: React.FC = () => {
             })
           }
         >
-          validate
-        </Button>
-        <Button onClick={() => form.current?.clearValidate()}>clear validate</Button>
-        <Button onClick={() => console.log(form.current?.getValue())}>get value</Button>
-        <Button onClick={() => {
+          Validate
+        </Button></div>
+        <div><Button mode="outline" onClick={() => form.current?.clearValidate()}>Clear validate</Button></div>
+        <div><Button mode="outline" onClick={() => console.log(form.current?.getValue())}>Get value</Button></div>
+        <div><Button mode="outline" onClick={() => {
           form.current?.set({
             name: 'Tom',
             password: '123456',
@@ -69,15 +69,15 @@ const App: React.FC = () => {
             },
             hobby: ['Football', 'Movie']
           })
-        }}>set value</Button>
-        <Button onClick={() => form.current?.submit(false)}>submit without validate</Button>
+        }}>Set value</Button></div>
+        <div><Button mode="outline" onClick={() => form.current?.submit(false)}>Submit without validate</Button></div>
       </div>
 
       <Form.Item label='Name' required>
         <Input name='name' rules={[{ required: true, message: 'name is required' }]} clearable />
       </Form.Item>
 
-      <Form.Item label='Name' required>
+      <Form.Item label='Rate' required>
         <StarRate name="rate" allowHalf defaultValue={3.5} />
       </Form.Item>
 

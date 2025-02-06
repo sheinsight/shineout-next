@@ -65,10 +65,7 @@ const App: React.FC = () => {
           </Form.Item>
         </Form.FieldSet>
       </Form.Item>
-      {/* <Form.Item label='333'>
-        <Input name="333"></Input>
-      </Form.Item> */}
-      <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
+      <Form.Item label='' style={{ marginTop: 20, marginBottom: 0 }}>
         <Form.Submit>Submit</Form.Submit>
         <Form.Reset>Reset</Form.Reset>
       </Form.Item>

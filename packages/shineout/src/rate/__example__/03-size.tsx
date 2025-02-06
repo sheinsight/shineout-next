@@ -14,13 +14,14 @@ const star = (
   </svg>
 );
 
+const titleStyle = { marginBottom: 8, fontSize: 16, fontWeight: '500' };
 const StarRate = Rate(star, star);
 
 const App: React.FC = () => (
   <div>
-    <div style={{ marginBottom: 8 }}>16px</div>
+    <div style={titleStyle}>16px</div>
     <StarRate size={16} style={{ marginBottom: 32 }} />
-    <div style={{ marginBottom: 8 }}>24px</div>
+    <div style={titleStyle}>24px</div>
     <StarRate size={24} />
   </div>
 );
