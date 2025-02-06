@@ -49,7 +49,7 @@ export default () => {
       <Select
         multiple
         compressed
-        compressedBound={2}
+        // compressedBound={2}
         width={300}
         data={data}
         keygen='id'

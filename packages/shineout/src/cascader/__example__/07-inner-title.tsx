@@ -6,7 +6,7 @@
  *    -- use innerTitle to display the inner title
  */
 import React from 'react';
-import { Cascader } from 'shineout';
+import { Cascader, Gap } from 'shineout';
 
 interface DataItem {
   value: string;
@@ -44,7 +44,17 @@ const data: DataItem[] = [
 
 export default () => {
   return (
-    <div>
+    <Gap style={{ flexDirection: 'column', gap: 24 }}>
+      <Cascader
+        innerTitle='Inner Title'
+        width={300}
+        placeholder='Please select city'
+        clearable
+        data={data}
+        keygen='value'
+        renderItem={(n) => `${n?.value}`}
+        size="small"
+      />
       <Cascader
         innerTitle='Inner Title'
         width={300}
@@ -54,6 +64,16 @@ export default () => {
         keygen='value'
         renderItem={(n) => `${n?.value}`}
       />
-    </div>
+      <Cascader
+        innerTitle='Inner Title'
+        width={300}
+        placeholder='Please select city'
+        clearable
+        data={data}
+        keygen='value'
+        renderItem={(n) => `${n?.value}`}
+        size="large"
+      />
+    </Gap>
   );
 };

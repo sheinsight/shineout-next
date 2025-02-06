@@ -5,7 +5,7 @@
  *    -- Set `innerTitle` to render inner title
  */
 import React from 'react';
-import { TreeSelect } from 'shineout';
+import { TreeSelect, Gap } from 'shineout';
 
 interface DataItem {
   id: string;
@@ -42,7 +42,7 @@ const data: DataItem[] = [
 
 export default () => {
   return (
-    <div>
+    <Gap style={{ flexDirection: 'column', gap: 24 }}>
       <TreeSelect
         innerTitle='Please select content'
         width={300}
@@ -50,7 +50,25 @@ export default () => {
         keygen='id'
         renderItem={(node) => `node ${node.title}`}
         data={data}
-      ></TreeSelect>
-    </div>
+        size="small"
+      />
+      <TreeSelect
+        innerTitle='Please select content'
+        width={300}
+        clearable
+        keygen='id'
+        renderItem={(node) => `node ${node.title}`}
+        data={data}
+      />
+      <TreeSelect
+        innerTitle='Please select content'
+        width={300}
+        clearable
+        keygen='id'
+        renderItem={(node) => `node ${node.title}`}
+        data={data}
+        size="large"
+      />
+    </Gap>
   );
 };

@@ -64,6 +64,12 @@ export interface SelectTokens {
   selectIconColor: string;
   /**
    * @type {string}
+   * @token Spacing-8
+   * @description 选择器图标外边距undefined
+   */
+  selectIconMarginLeft: string;
+  /**
+   * @type {string}
    * @token Spacing-2
    * @description 选择器标签的外边距（垂直方向）
    */
@@ -443,9 +449,15 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Spacing-8
-   * @description 选择器折叠内容的内边距
+   * @description 选择器折叠内容的内边距（水平方向）
    */
-  selectMorePadding: string;
+  selectMorePaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-6
+   * @description 选择器折叠内容的内边距（垂直方向）
+   */
+  selectMorePaddingY: string;
   /**
    * @type {string}
    * @token Spacing-8
