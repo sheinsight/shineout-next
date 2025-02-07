@@ -37,6 +37,9 @@ const switchTokenExtraValue = {
     padding: { x: 'Spacing-2', y: 'Spacing-2' },
     circle: { size: 'Size-6' },
     width: 'Size-14',
+    text: {
+      padding: { left: 'Spacing-4', right: 'Spacing-2' },
+    }
   },
   large: {
     font: { size: 'Font-16' },
@@ -44,7 +47,7 @@ const switchTokenExtraValue = {
     circle: { size: 'Size-12' },
     width: 'Size-27',
   },
-  background: { color: 'Neutral-fill-3' },
+  background: { color: 'Neutral-fill-4' },
   disabled: {
     background: { color: 'Neutral-fill-3' },
     circle: { checked: {fill: 'Brand-1', shadow: ''}, unchecked: {fill: 'Neutral-fill-2', shadow: ''} },

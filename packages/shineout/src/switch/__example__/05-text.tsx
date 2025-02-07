@@ -12,10 +12,6 @@ const App: React.FC = () => (
     <Switch size='small' defaultValue content={['ON', 'OFF']} />
     <Switch defaultValue content={['ON', 'OFF']} />
     <Switch size='large' defaultValue content={['ON', 'OFF']} />
-
-    <Switch size='small' defaultValue content={['开', '关']} />
-    <Switch defaultValue content={['开', '关']} />
-    <Switch size='large' defaultValue content={['开', '关']} />
   </div>
 );
 

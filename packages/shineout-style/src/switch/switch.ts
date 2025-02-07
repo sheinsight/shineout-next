@@ -71,6 +71,14 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       paddingLeft: token.switchTextPaddingLeft,
       paddingRight: token.switchTextPaddingRight,
     },
+    '$wrapperSmall &': {
+      paddingLeft: token.switchSmallTextPaddingRight,
+      paddingRight: token.switchSmallTextPaddingLeft,
+    },
+    '$wrapperSmall$wrapperChecked &': {
+      paddingLeft: token.switchSmallTextPaddingLeft,
+      paddingRight: token.switchSmallTextPaddingRight,
+    }
   },
   wrapperSmall: {
   },
@@ -143,7 +151,7 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
     position: 'absolute',
 
     backgroundColor: token.switchCircleFill,
-    boxShadow: token.switchCircleShadow,
+    // boxShadow: token.switchCircleShadow,
     transition: `left ${transition}, right ${transition}`,
   },
   content: {

@@ -87,6 +87,9 @@ const input: JsStyles<keyof TextareaClasses> = {
     backgroundColor: 'transparent',
     resize: 'none',
     boxSizing: 'border-box',
+    minHeight: `calc(${token.lineHeightDynamic} + ${token.inputPaddingY} * 2)`,
+    // why: 为了让滚动条的轨道不遮盖右上角和右下角的圆角; 注: chrome >= 121才支持scrollbar-color
+    scrollbarColor: `${token.inputBorderColor} transparent`,
     '&$resize': {
       resize: 'vertical',
     },

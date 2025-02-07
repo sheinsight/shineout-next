@@ -94,6 +94,18 @@ export interface SwitchTokens {
   switchSmallWidth: string;
   /**
    * @type {string}
+   * @token Spacing-4
+   * @description 开关小尺寸文案内边距undefined
+   */
+  switchSmallTextPaddingLeft: string;
+  /**
+   * @type {string}
+   * @token Spacing-2
+   * @description 开关小尺寸文案内边距undefined
+   */
+  switchSmallTextPaddingRight: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 开关大尺寸字体字号
    */
@@ -124,7 +136,7 @@ export interface SwitchTokens {
   switchLargeWidth: string;
   /**
    * @type {string}
-   * @token Neutral-fill-3
+   * @token Neutral-fill-4
    * @description 开关背景颜色
    */
   switchBackgroundColor: string;
