@@ -25,12 +25,12 @@ const switchTokenDescription = {
 const switchTokenValue = {};
 
 const switchTokenExtraValue = {
-  font: { size: 'Font-14', color: 'Neutral-text-1' },
+  font: { size: 'Font-14', color: 'Neutral-text-4' },
   padding: { x: 'Spacing-2', y: 'Spacing-2' },
-  circle: { size: 'Size-9', fill: 'Neutral-text-1', shadow: 'Shadow-3' },
+  circle: { size: 'Size-9', fill: 'Neutral-text-1', shadow: 'Shadow-5' },
   width: 'Size-21',
   text: {
-    padding: { x: 'Spacing-4' },
+    padding: { left: 'Spacing-8', right: 'Spacing-4' },
   },
   small: {
     font: { size: 'Font-12' },
@@ -44,10 +44,10 @@ const switchTokenExtraValue = {
     circle: { size: 'Size-12' },
     width: 'Size-27',
   },
-  background: { color: 'Neutral-fill-4' },
+  background: { color: 'Neutral-fill-3' },
   disabled: {
-    background: { color: 'Neutral-fill-2' },
-    circle: { fill: 'Neutral-fill-1', shadow: '' },
+    background: { color: 'Neutral-fill-3' },
+    circle: { checked: {fill: 'Brand-1', shadow: ''}, unchecked: {fill: 'Neutral-fill-2', shadow: ''} },
     font: { color: 'Neutral-text-2' },
   },
   loading: {
@@ -66,7 +66,7 @@ const switchTokenExtraValue = {
     },
     loading: {
       background: { color: 'Brand-3' },
-      circle: { fill: '', shadow: '' },
+      circle: { fill: 'Brand-3', shadow: '' },
       font: { color: 'Neutral-text-1' },
     },
   },

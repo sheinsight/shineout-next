@@ -10,6 +10,8 @@ import { Switch } from 'shineout';
 const App: React.FC = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>
+      <Switch loading value size="small" />
+      <Switch loading value size="large" />
       <Switch loading value />
       <Switch loading />
     </div>

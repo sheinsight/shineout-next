@@ -10,7 +10,7 @@ export interface SwitchTokens {
   switchFontSize: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 开关字体颜色
    */
   switchFontColor: string;
@@ -40,7 +40,7 @@ export interface SwitchTokens {
   switchCircleFill: string;
   /**
    * @type {string}
-   * @token Shadow-3
+   * @token Shadow-5
    * @description 开关圆形阴影
    */
   switchCircleShadow: string;
@@ -52,10 +52,16 @@ export interface SwitchTokens {
   switchWidth: string;
   /**
    * @type {string}
-   * @token Spacing-4
-   * @description 开关文案内边距（水平方向）
+   * @token Spacing-8
+   * @description 开关文案内边距undefined
    */
-  switchTextPaddingX: string;
+  switchTextPaddingLeft: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 开关文案内边距undefined
+   */
+  switchTextPaddingRight: string;
   /**
    * @type {string}
    * @token Font-12
@@ -118,22 +124,28 @@ export interface SwitchTokens {
   switchLargeWidth: string;
   /**
    * @type {string}
-   * @token Neutral-fill-4
+   * @token Neutral-fill-3
    * @description 开关背景颜色
    */
   switchBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-2
+   * @token Neutral-fill-3
    * @description 开关禁用时的背景颜色
    */
   switchDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
-   * @description 开关禁用时的圆形填充色
+   * @token Brand-1
+   * @description 开关禁用时的圆形打开状态下的填充色
    */
-  switchDisabledCircleFill: string;
+  switchDisabledCircleCheckedFill: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 开关禁用时的圆形undefined填充色
+   */
+  switchDisabledCircleUncheckedFill: string;
   /**
    * @type {string}
    * @token Neutral-text-2
@@ -200,6 +212,12 @@ export interface SwitchTokens {
    * @description 开关打开状态下的加载模式下的背景颜色
    */
   switchCheckedLoadingBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 开关打开状态下的加载模式下的圆形填充色
+   */
+  switchCheckedLoadingCircleFill: string;
   /**
    * @type {string}
    * @token Neutral-text-1
