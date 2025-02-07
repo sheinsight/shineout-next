@@ -4,6 +4,8 @@ import { JsStyles } from '../jss-style';
 
 export type SliderClassType = keyof SliderClasses;
 
+const verticalLabelMargin = 4;
+
 const sliderStyle: JsStyles<SliderClassType> = {
   rootClass: {},
   wrapper: {
@@ -259,6 +261,11 @@ const sliderStyle: JsStyles<SliderClassType> = {
         height: token.sliderScaleLineSize,
         transform: 'translateX(-50%)',
       },
+      // 为了让首尾刻度不超出轨道
+      // '&:first-child $label[dir=ltr]': { transform: 'translate(0%)' },
+      // '&:first-child $label[dir=rtl]': { transform: 'translate(0%)' },
+      // '&:last-child $label[dir=ltr]': { transform: 'translate(-100%)' },
+      // '&:last-child $label[dir=rtl]': { transform: 'translate(100%)' },
     },
     '$vertical &': {
       marginLeft: token.sliderScaleMarginY,
@@ -268,6 +275,11 @@ const sliderStyle: JsStyles<SliderClassType> = {
         width: token.sliderScaleLineSize,
         transform: 'translateY(-50%)',
       },
+      // 为了让首尾刻度不超出轨道
+      // '&:first-child $label[dir=ltr]': { transform: `translate(${verticalLabelMargin}px, -100%)` },
+      // '&:first-child $label[dir=rtl]': { transform: `translate(-${verticalLabelMargin}px, -100%)` },
+      // '&:last-child $label[dir=ltr]': { transform: `translate(${verticalLabelMargin}px, 0)` },
+      // '&:last-child $label[dir=rtl]': { transform: `translate(-${verticalLabelMargin}px, 0)` },
     },
   },
   label: {
@@ -284,8 +296,8 @@ const sliderStyle: JsStyles<SliderClassType> = {
       top: 0,
       lineHeight: 1,
 
-      '&[dir=ltr]': { left: '100%', transform: 'translate(4px, -50%)' },
-      '&[dir=rtl]': { right: '100%', transform: 'translate(-4px, -50%)' },
+      '&[dir=ltr]': { left: '100%', transform: `translate(${verticalLabelMargin}px, -50%)` },
+      '&[dir=rtl]': { right: '100%', transform: `translate(-${verticalLabelMargin}px, -50%)` },
     },
   },
 };

@@ -27,6 +27,7 @@ const App: React.FC = () => {
         digits={0}
         width={100}
         max={100}
+        min={0}
         value={value}
         onChange={(n) => {
           if (n === '') {
