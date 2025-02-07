@@ -897,7 +897,7 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
 
 exports[`Radio[Base] should render correctly about group 1`] = `
 <div
-  class="soui-radio-group"
+  class="example-radio-group-0-myRadioGroup-0-2-1 soui-radio-group"
 >
   <div
     class="soui-radio soui-radio-wrapper"
@@ -1059,7 +1059,7 @@ exports[`Radio[Base] should render correctly about group 1`] = `
 
 exports[`Radio[Base] should render correctly about group children 1`] = `
 <div
-  class="soui-radio-group"
+  class="example-radio-group-1-myRadioGroup-0-2-2 soui-radio-group"
 >
   <div
     class="soui-radio soui-radio-wrapper"
