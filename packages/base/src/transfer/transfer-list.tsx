@@ -188,6 +188,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         height={listHeight}
         rowsInView={rowsInView}
         renderItem={renderItem}
+        paddingY={3}
       ></VirtualList>
     );
   };

@@ -137,9 +137,6 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       top: token.switchLargePaddingY,
     },
 
-    '$wrapperDisabled:not($wrapperChecked) &': {
-      backgroundColor: token.switchDisabledCircleUncheckedFill,
-    },
     '$wrapperDisabled$wrapperChecked &': {
       backgroundColor: token.switchDisabledCircleCheckedFill,
     },

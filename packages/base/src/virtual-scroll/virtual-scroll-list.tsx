@@ -134,7 +134,8 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
 
   // 设置了容器的paddingY, translateY时需要加上，否则会出现底部滚不到底的问题
   const addonScrollHeight = useMemo(() => {
-    return paddingY ? paddingY * 2 : 0;
+    // paddingY是奇数则加1
+    return paddingY ? paddingY * 2 + (paddingY % 2 === 1 ? 1 : 0) : 0;
   }, [paddingY]);
 
   const handleScroll = (info: {
