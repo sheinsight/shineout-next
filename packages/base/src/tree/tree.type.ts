@@ -226,6 +226,7 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @default 20
    */
   rowsInView?: number;
+  rootStyle?: React.CSSProperties;
 }
 
 export interface VirtualTreeProps<DataItem, Value extends any[]>

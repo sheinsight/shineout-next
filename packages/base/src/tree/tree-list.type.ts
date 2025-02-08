@@ -16,6 +16,7 @@ export interface TreeListProps<DataItem, Value extends KeygenResult[]>
   childrenClassName?: string;
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   iconClass?: string;
+  rootStyle?: React.CSSProperties;
   leafClass?: string | ((data: DataItem) => string);
   nodeClass?: string | ((data: DataItem) => string);
   contentClass?: string | ((data: DataItem) => string);

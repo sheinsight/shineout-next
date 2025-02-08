@@ -80,6 +80,12 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
       data={datum.dataFlat}
       height={height}
       rowsInView={10}
+      scrollerStyle={{
+        height: '100%',
+        width: '100%',
+        overflow: 'auto',
+        padding: '0 4px',
+      }}
       keepScrollHeight
       dynamicVirtual
       lineHeight={lineHeight}

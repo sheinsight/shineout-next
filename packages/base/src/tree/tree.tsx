@@ -26,6 +26,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     leafClass,
     nodeClass,
     contentClass,
+    rootStyle,
     renderItem,
     defaultValue,
     dataUpdate = true,
@@ -116,6 +117,8 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   const handleUpdateExpanded = (expanded?: KeygenResult[]) => {
     const tempExpandMap = new Set(expanded);
+    if (!expanded) return;
+
     if (virtual) {
       datum.expandedFlat(expanded);
     }
@@ -242,6 +245,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
     return (
       <RootTree
+        rootStyle={rootStyle}
         isControlled={'expanded' in props}
         jssStyle={jssStyle}
         data={data}

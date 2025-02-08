@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
@@ -148,9 +148,7 @@ const Scroll = (props: scrollProps) => {
           ref={containerRef}
           onScroll={handleInnerScroll}
         >
-          <div style={{ flexGrow: 1, ...props.childrenStyle }}>
-            {props.children}
-          </div>
+          <div style={{ flexGrow: 1, ...props.childrenStyle }}>{props.children}</div>
         </div>
         <div style={placeStyle}>&nbsp;</div>
       </div>

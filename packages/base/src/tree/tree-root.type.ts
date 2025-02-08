@@ -16,6 +16,7 @@ export interface TreeRootProps<DataItem, Value extends KeygenResult[]>
   childrenKey: ObjectKey<DataItem>;
   renderItem: TreeRenderItemType<DataItem>;
   iconClass?: string;
+  rootStyle?: React.CSSProperties;
   leafClass?: string | ((data: DataItem) => string);
   nodeClass?: string | ((data: DataItem) => string);
   contentClass?: string | ((data: DataItem) => string);

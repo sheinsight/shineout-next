@@ -372,7 +372,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     paddingBottom: 3,
   },
   tree: {
-    padding: 4,
+    // padding: 4,
     overflow: 'auto',
   },
   treeOption: {

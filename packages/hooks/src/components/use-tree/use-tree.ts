@@ -126,7 +126,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   // 注册节点
-  const bindVirtualNode = (id: KeygenResult, update: UpdateFunc, item: DataItem) => {
+  const bindVirtualNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
     return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };

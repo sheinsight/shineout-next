@@ -142,6 +142,7 @@ export interface TreeDatum<DataItem> {
   ) => CheckedStatusType | null;
   insertFlat: (id: KeygenResult) => void;
   removeFlat: (id: KeygenResult) => void;
+  expandedFlat: (id: KeygenResult[]) => void;
   getPath: (id: KeygenResult) => TreePathType | undefined;
   getValue: () => KeygenResult[];
   getChecked: (id: KeygenResult) => boolean | 'indeterminate';

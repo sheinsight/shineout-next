@@ -19,6 +19,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     tagClassName,
     dynamicVirtual,
     virtualRef,
+    scrollerStyle,
     onControlTypeChange,
   } = props;
 
@@ -178,6 +179,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         style={nextStyle}
         height={height}
         scrollWidth={0}
+        scrollerStyle={scrollerStyle}
         scrollHeight={scrollHeight}
         childrenStyle={{ width: '100%' }}
         wrapperRef={wrapperRef}

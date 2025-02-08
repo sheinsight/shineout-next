@@ -9,52 +9,14 @@
 
 import React from 'react';
 import { TreeSelect } from 'shineout';
+import { createNestedArray } from '../../tree/__example__/utils';
 
 interface DataItem {
-  value: string;
+  id: string;
   children?: DataItem[];
 }
 
-const data: DataItem[] = [
-  {
-    value: 'jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        children: [
-          {
-            value: 'jiangning',
-          },
-          {
-            value: 'gulou',
-          },
-        ],
-      },
-      {
-        value: 'suzhou',
-      },
-    ],
-  },
-  {
-    value: 'anhui',
-    children: [
-      {
-        value: 'hefei',
-        children: [
-          {
-            value: 'feidong',
-          },
-          {
-            value: 'feixi',
-          },
-        ],
-      },
-      {
-        value: 'maanshan',
-      },
-    ],
-  },
-];
+const data: DataItem[] = createNestedArray([100, 10, 10]);
 
 export default () => {
   return (
@@ -63,10 +25,10 @@ export default () => {
         width={300}
         showHitDescendants
         placeholder='Please select content'
-        onAdvancedFilter={(text) => (d) => d.value.indexOf(text) > -1}
+        onAdvancedFilter={(text) => (d) => d.id.indexOf(text) > -1}
         clearable
-        keygen='value'
-        renderItem='value'
+        keygen='id'
+        renderItem='id'
         data={data}
       />
     </div>
