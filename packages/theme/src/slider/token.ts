@@ -36,7 +36,7 @@ const sliderTokenExtraValue = {
       background: { color: 'Brand-6' },
     },
     disabled: {
-      background: { color: 'Neutral-fill-4' },
+      background: { color: 'Brand-3' },
     },
   },
   indicator: {
@@ -48,7 +48,7 @@ const sliderTokenExtraValue = {
       shadow: 'Shadow-1',
     },
     disabled: {
-      border: { color: 'Neutral-border-2' },
+      border: { color: 'Brand-3' },
       background: { color: 'Neutral-fill-1' },
     },
   },

@@ -125,6 +125,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
         paddingLeft: token.treeSelectLargeOptionInnerPaddingX,
         fontSize: token.treeSelectLargeFontSize,
       },
+      '& $arrowIcon': {
+        width: token.treeSelectLargeFontSize,
+      },
       '& $clearIcon': {
         right: token.treeSelectLargePaddingX,
       },

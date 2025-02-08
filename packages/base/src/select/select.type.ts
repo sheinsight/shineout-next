@@ -498,8 +498,8 @@ export interface SelectPropsBase<DataItem, Value>
   onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
 
   /**
-   * @en If the onCreate event is set, the component is inputable. When onCreate is a function, the return value of this function is diaplay at the top as a new option. When onCreate is true, use the built-in functuon text => text
-   * @cn 如果设置了 onCreate 事件，组件为可输入状态。onCreate 为函数时，将此函数返回值作为新的选项拆入最上方。onCreate 为 true 时，使用默认函数 text => text
+   * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering
+   * @cn 设置 `onCreate` 属性，即可创建选项中不存在的条目；当 `onCreate` 为 true 时，使用默认函数 text => text；当 `onCreate` 为函数时，将此函数返回值作为新的选项插入最上方。
    */
   onCreate?: ((input: string | DataItem) => DataItem | string) | boolean;
 

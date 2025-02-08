@@ -5,13 +5,15 @@
  *    -- Set `innerTitle` to render inner title
  */
 import React from 'react';
-import { Select } from 'shineout';
+import { Select, Gap } from 'shineout';
 
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
-    <div>
+    <Gap style={{ flexDirection: 'column', gap: 24 }}>
+      <Select size="small" innerTitle='Select Color' width={300} data={data} keygen clearable />
       <Select innerTitle='Select Color' width={300} data={data} keygen clearable />
-    </div>
+      <Select size="large" innerTitle='Select Color' width={300} data={data} keygen clearable />
+    </Gap>
   );
 };

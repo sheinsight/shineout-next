@@ -1,6 +1,8 @@
 import React from 'react';
 
-const ReverseDir: Record<string, string> = {
+type CSSDirection = 'left' | 'right' | 'top' | 'bottom';
+
+const ReverseDir: Record<string, CSSDirection> = {
   left: 'right',
   right: 'left',
   top: 'bottom',
@@ -8,7 +10,7 @@ const ReverseDir: Record<string, string> = {
 };
 export const getPositionStyle = (
   position: string,
-  config?: { popupGap?: number; zIndex?: number; fixedWidth?: boolean | 'min' },
+  config?: { popupGap?: number; zIndex?: number; fixedWidth?: boolean | 'min', parentBorderWidth?: number },
 ) => {
   const { popupGap = 0 } = config || {};
   const mainMargin = `calc(100% + ${popupGap}px)`;
@@ -19,6 +21,10 @@ export const getPositionStyle = (
   if (config?.fixedWidth) {
     const key = config.fixedWidth === 'min' ? 'minWidth' : 'width';
     newStyle[key] = '100%';
+
+    if(config.parentBorderWidth){
+      newStyle[key] = `calc(100% + ${config.parentBorderWidth}px)`;
+    }
   }
   if (position === 'drop-down') {
     newStyle.top = mainMargin;
@@ -27,20 +33,23 @@ export const getPositionStyle = (
     newStyle.bottom = mainMargin;
     newStyle.left = 0;
   } else {
-    const positionArr = (position || '').split('-');
+    const positionArr = (position || '').split('-') as CSSDirection[];
     if (positionArr.length === 2) {
-      let [m, n] = positionArr;
+      const [vDirection, hDirection] = positionArr;
 
-      newStyle[ReverseDir[m] as 'margin'] = mainMargin;
-      newStyle[n as 'top'] = 0;
+      newStyle[ReverseDir[vDirection]] = mainMargin;
+      newStyle[hDirection] = 0;
+      if(config?.parentBorderWidth){
+        newStyle[hDirection] = - config.parentBorderWidth / 2;
+      }
     } else {
-      const [m] = positionArr;
-      newStyle[ReverseDir[m] as 'margin'] = mainMargin;
-      if (m === 'left' || m === 'right') {
+      const [vDirection] = positionArr;
+      newStyle[ReverseDir[vDirection]] = mainMargin;
+      if (vDirection === 'left' || vDirection === 'right') {
         newStyle.top = halfMargin;
         newStyle.transform = 'translateY(-50%)';
       }
-      if (m === 'top' || m === 'bottom') {
+      if (vDirection === 'top' || vDirection === 'bottom') {
         newStyle.left = halfMargin;
         newStyle.transform = 'translateX(-50%)';
       }

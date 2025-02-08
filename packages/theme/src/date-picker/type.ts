@@ -262,7 +262,7 @@ export interface DatePickerTokens {
   datePickerPanelHeaderFontColor: string;
   /**
    * @type {string}
-   * @token Weight-regular
+   * @token Weight-medium
    * @description 日期选择器面板头部字体字重
    */
   datePickerPanelHeaderFontWeight: string;
@@ -286,7 +286,7 @@ export interface DatePickerTokens {
   datePickerPanelHeaderBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-5
+   * @token Neutral-text-4
    * @description 日期选择器面板头部图标颜色
    */
   datePickerPanelHeaderIconColor: string;

@@ -14,6 +14,9 @@ const form: JsStyles<keyof FormClasses> = {
     '& > [data-soui-input-border]': {
       marginRight: token.formItemMarginXEnd,
     },
+    '& > button[type="submit"], & > button[type="reset"]': {
+      verticalAlign: 'top',
+    }
   },
 };
 

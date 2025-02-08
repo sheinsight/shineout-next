@@ -1,8 +1,10 @@
 /**
- * cn - 尺寸
- *    -- 头像支持三种尺寸：大、中、小，默认为中
+ * cn - 尺寸和形状
+ *    -- 头像尺寸支持三种：小、中、大，默认为中
+ *    -- 头像形状支持两种：`circle` | `square`，默认为`circle`
  * en - Size
  *    -- Avatar supports three sizes: large, medium, and small
+ *    -- Avatar supports two shapes: `circle` | `square`, default is `circle`
  */
 import React from 'react';
 import { Avatar } from 'shineout';
@@ -24,14 +26,14 @@ export default () => {
   return (
     <div style={{ display: 'flex', gap: 24, flexDirection: 'column' }}>
       <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-        <Avatar icon={userIcon} size='large'></Avatar>
-        <Avatar icon={userIcon}></Avatar>
         <Avatar icon={userIcon} size='small'></Avatar>
+        <Avatar icon={userIcon}></Avatar>
+        <Avatar icon={userIcon} size='large'></Avatar>
       </div>
       <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-        <Avatar icon={userIcon} size='large' shape='square'></Avatar>
-        <Avatar icon={userIcon} shape='square'></Avatar>
         <Avatar icon={userIcon} size='small' shape='square'></Avatar>
+        <Avatar icon={userIcon} shape='square'></Avatar>
+        <Avatar icon={userIcon} size='large' shape='square'></Avatar>
       </div>
     </div>
   );

@@ -102,6 +102,9 @@ const config = {
     Finish: icons.Check,
     Error: icons.Close,
   },
+  switch: {
+    Loading: icons.Loading,
+  },
   table: {
     SortUp: icons.SortAsc,
     SortDown: icons.SortDesc,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
 import { useCheckElementPosition } from './check-position'
+import { useCheckElementBorderWidth } from './check-border';
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { getCurrentCSSZoom } from '../../utils';
@@ -83,6 +84,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   });
 
   const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
+
+  const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal'});
 
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
@@ -313,15 +316,17 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     const { position, absolute } = config || {};
     if (!position || !show || !parentElRef.current) return { newStyle: style };
     context.parentRect = parentElRef.current.getBoundingClientRect();
+
+    let realPosition = position
     if (adjust) {
       const popupInfo = getPopUpInfo(context.parentRect);
       context.popUpHeight = popupInfo.height;
       context.popUpWidth = popupInfo.width;
+      realPosition = adjustPosition(position);
     }
 
-    const realPosition = adjust ? adjustPosition(position) : position;
     if (!absolute) {
-      newStyle = getPositionStyle(realPosition, { popupGap, zIndex, fixedWidth });
+      newStyle = getPositionStyle(realPosition, { popupGap, zIndex, fixedWidth, parentBorderWidth: parentElBorderWidth });
     } else {
       const { style: nextStyle, arrayStyle: nextArrayStyle } = getAbsoluteStyle(realPosition)!;
       newStyle = nextStyle;

@@ -124,8 +124,8 @@ const treeSelectTokenExtraValue = {
   },
   more: {
     padding: {
-      x: 'Spacing-16',
-      y: 'Spacing-14',
+      x: 'Spacing-8',
+      y: 'Spacing-6',
     },
   },
   header: {

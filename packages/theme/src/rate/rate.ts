@@ -9,9 +9,9 @@ const rateTokens: RateTokens = {
   rateFontWeight: 'Weight-regular',
   rateGap: 'Spacing-6',
   rateSize: 'Size-12',
-  rateTextGap: 'Spacing-10',
+  rateTextGap: 'Spacing-16',
   rateBackgroundColor: 'Neutral-fill-3',
-  rateFrontBackgroundColor: 'Warning-5',
+  rateFrontBackgroundColor: 'Lemon-6',
 };
 
 export default rateTokens;

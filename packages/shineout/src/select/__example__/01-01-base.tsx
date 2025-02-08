@@ -6,7 +6,6 @@
  */
 import React from 'react';
 import { Select } from 'shineout';
-import { primitiveData } from './static/mock';
 
 const data: number[] = [];
 

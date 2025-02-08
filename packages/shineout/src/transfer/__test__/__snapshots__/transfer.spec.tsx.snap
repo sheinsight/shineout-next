@@ -66,7 +66,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
                 style="flex-grow: 1; width: 100%;"
               >
                 <div
-                  style="transform: translate3d(0, -0px, 0);"
+                  style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
                 >
                   <div
                     class="soui-transfer-item"
@@ -777,7 +777,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
               style="flex-grow: 1; width: 100%;"
             >
               <div
-                style="transform: translate3d(0, -0px, 0);"
+                style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
               >
                 <div
                   class="soui-transfer-item"
@@ -1818,7 +1818,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
                 style="flex-grow: 1; width: 100%;"
               >
                 <div
-                  style="transform: translate3d(0, -0px, 0);"
+                  style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
                 >
                   <div
                     class="soui-transfer-item"
@@ -2537,7 +2537,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
                   style="flex-grow: 1; width: 100%;"
                 >
                   <div
-                    style="transform: translate3d(0, -0px, 0);"
+                    style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
                   >
                     <div
                       class="soui-transfer-item"
@@ -3293,7 +3293,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
               style="flex-grow: 1; width: 100%;"
             >
               <div
-                style="transform: translate3d(0, -0px, 0);"
+                style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
               >
                 <div
                   class="soui-transfer-item"
@@ -4053,7 +4053,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
               style="flex-grow: 1; width: 100%;"
             >
               <div
-                style="transform: translate3d(0, -0px, 0);"
+                style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
               >
                 <div
                   class="soui-transfer-item"
@@ -4792,7 +4792,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
               style="flex-grow: 1; width: 100%;"
             >
               <div
-                style="transform: translate3d(0, -0px, 0);"
+                style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
               >
                 <div
                   class="soui-transfer-item"
@@ -5520,7 +5520,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
               style="flex-grow: 1; width: 100%;"
             >
               <div
-                style="transform: translate3d(0, -0px, 0);"
+                style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
               >
                 <div
                   class="soui-transfer-item"
@@ -6239,7 +6239,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
                 style="flex-grow: 1; width: 100%;"
               >
                 <div
-                  style="transform: translate3d(0, -0px, 0);"
+                  style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
                 >
                   <div
                     class="soui-transfer-item"
@@ -6948,7 +6948,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
               style="flex-grow: 1; width: 100%;"
             >
               <div
-                style="transform: translate3d(0, -0px, 0);"
+                style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
               >
                 <div
                   class="soui-transfer-item"
@@ -7245,7 +7245,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
               style="flex-grow: 1; width: 100%;"
             >
               <div
-                style="transform: translate3d(0, -0px, 0);"
+                style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
               >
                 <div
                   class="soui-transfer-item"
@@ -7485,7 +7485,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
                 style="flex-grow: 1; width: 100%;"
               >
                 <div
-                  style="transform: translate3d(0, -0px, 0);"
+                  style="transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;"
                 >
                   <div
                     class="soui-transfer-item"

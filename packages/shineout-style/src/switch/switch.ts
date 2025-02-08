@@ -43,10 +43,6 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       backgroundColor: token.switchCheckedDisabledBackgroundColor,
       color: token.switchCheckedDisabledFontColor,
     },
-    // '$wrapperChecked$wrapperLoading&': {
-    //   backgroundColor: token.switchCheckedLoadingBackgroundColor,
-    //   color: token.switchCheckedLoadingFontColor,
-    // },
     height: `calc( ${token.switchCircleSize} + ${token.switchPaddingY} * 2 )`,
     padding: `${token.switchPaddingY} ${token.switchPaddingX}`,
     minWidth: token.switchWidth,
@@ -57,23 +53,36 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       padding: `${token.switchSmallPaddingY} ${token.switchSmallPaddingX}`,
       minWidth: token.switchSmallWidth,
       borderRadius: `calc( ${token.switchSmallCircleSize} / 2 + ${token.switchSmallPaddingY} )`,
-      fonSize: token.switchSmallFontSize,
+      fontSize: token.switchSmallFontSize,
     },
     '$wrapperLarge&': {
       height: `calc( ${token.switchLargeCircleSize} + ${token.switchLargePaddingY} * 2 )`,
       padding: `${token.switchLargePaddingY} ${token.switchLargePaddingX}`,
       minWidth: token.switchLargeWidth,
       borderRadius: `calc( ${token.switchLargeCircleSize} / 2 + ${token.switchLargePaddingY} )`,
-      fonSize: token.switchLargeFontSize,
+      fontSize: token.switchLargeFontSize,
     },
   },
   wrapperChecked: {},
-  textPadding: { display: 'inline-block', padding: `0 ${token.switchTextPaddingX}` },
+  textPadding: {
+    paddingLeft: token.switchTextPaddingRight,
+    paddingRight: token.switchTextPaddingLeft,
+    '$wrapperChecked &': {
+      paddingLeft: token.switchTextPaddingLeft,
+      paddingRight: token.switchTextPaddingRight,
+    },
+    '$wrapperSmall &': {
+      paddingLeft: token.switchSmallTextPaddingRight,
+      paddingRight: token.switchSmallTextPaddingLeft,
+    },
+    '$wrapperSmall$wrapperChecked &': {
+      paddingLeft: token.switchSmallTextPaddingLeft,
+      paddingRight: token.switchSmallTextPaddingRight,
+    }
+  },
   wrapperSmall: {
-    fontSize: token.switchSmallFontSize,
   },
   wrapperLarge: {
-    fontSize: token.switchLargeFontSize,
   },
   indicator: {
     width: token.switchCircleSize,
@@ -84,7 +93,6 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'red',
     '$wrapperChecked &': {
       backgroundColor: token.switchCheckedCircleFill,
       '&[dir=ltr]': {
@@ -129,8 +137,8 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       top: token.switchLargePaddingY,
     },
 
-    '$wrapperDisabled:not($wrapperChecked) &': {
-      backgroundColor: token.switchDisabledCircleFill,
+    '$wrapperDisabled$wrapperChecked &': {
+      backgroundColor: token.switchDisabledCircleCheckedFill,
     },
     '$wrapperDisabled &': {
       backgroundColor: token.switchCheckedDisabledCircleFill,
@@ -140,12 +148,10 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
     position: 'absolute',
 
     backgroundColor: token.switchCircleFill,
-    boxShadow: token.switchCircleShadow,
+    // boxShadow: token.switchCircleShadow,
     transition: `left ${transition}, right ${transition}`,
   },
   content: {
-    display: 'inline',
-    lineHeight: 1,
     paddingLeft: token.switchCircleSize,
     transition: `padding ${transition}`,
     '$wrapperSmall &': {
@@ -172,19 +178,23 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
   },
   loading: {
     position: 'absolute',
-    top: '12%',
-    left: '12%',
-    right: '12%',
-    bottom: '12%',
-    borderRadius: '50%',
-    border: '1px solid',
-    borderColor: token.switchDisabledBackgroundColor,
-    borderTopColor: 'transparent',
+    color: token.switchLoadingCircleFill,
+    inset: '2px',
     animation: `$ring 1s ease-in-out infinite`,
+    '$wrapperLarge &': {
+      inset: '3px',
+    },
+
+    '$wrapperSmall &': {
+      inset: '1px',
+    },
+
+    '& > svg': {
+      display: 'block',
+    },
 
     '$wrapperChecked &': {
-      borderColor: token.switchCheckedDisabledBackgroundColor,
-      borderTopColor: 'transparent',
+      color: token.switchCheckedLoadingCircleFill,
     },
   },
 };

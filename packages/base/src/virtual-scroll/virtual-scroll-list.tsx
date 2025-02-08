@@ -102,11 +102,6 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     setHeight(sumHeight);
   });
 
-  // 设置了容器的paddingY, translateY时需要加上，否则会出现底部滚不到底的问题
-  const addonTop = useMemo(() => {
-    return paddingY ? paddingY * 2 : 0;
-  }, [paddingY]);
-
   const updateIndexAndTopFromTop = (scrollTop: number) => {
     let sum = 0;
     let nextCurrentIndex = 0;
@@ -118,7 +113,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       if (scrollTop < sum || i === maxIndex) {
         nextCurrentIndex = i;
         const beforeHeight = i === 0 ? 0 : sum - (context.cachedHeight[i] || lineHeight);
-        top = scrollTop - beforeHeight + (addonTop && i > 0 ? addonTop : 0);
+        top = scrollTop - beforeHeight
         break;
       }
     }
@@ -137,6 +132,12 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     onControlTypeChange?.('mouse');
   };
 
+  // 设置了容器的paddingY, translateY时需要加上，否则会出现底部滚不到底的问题
+  const addonScrollHeight = useMemo(() => {
+    // paddingY是奇数则加1
+    return paddingY ? paddingY * 2 + (paddingY % 2 === 1 ? 1 : 0) : 0;
+  }, [paddingY]);
+
   const handleScroll = (info: {
     scrollLeft: number;
     scrollTop: number;
@@ -150,7 +151,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     let { scrollTop } = info;
     context.shouldUpdateHeight = !fromDrag;
     const sumHeight = getContentHeight(props.data.length - 1);
-    const max = sumHeight - height;
+    const max = sumHeight - height + addonScrollHeight;
     if (scrollTop > max) {
       scrollTop = max;
     }
@@ -175,7 +176,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       ...style,
     };
     if (shouldScroll) nextStyle.height = height;
-    const scrollHeight = getContentHeight(data.length - 1);
+    const scrollHeight = getContentHeight(data.length - 1) + addonScrollHeight;
 
     const innerStyle = {
       transform: `translate3d(0, -${top}px, 0)`,

@@ -125,6 +125,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     padding: '6px 12px',
   },
   input: {
+    padding: '8px 12px 4px 12px',
     '& > div > svg': {
       width: 14,
       minWidth: 14,
@@ -155,7 +156,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     fontSize: Token.transferFontSize,
   },
   list: {
+    borderRadius: Token.transferBorderRadius,
     background: Token.transferBackgroundColor,
+    // scrollbarColor: `${Token.transferBorderColor} transparent`,
   },
   footer: {
     height: 48,

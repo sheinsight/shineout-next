@@ -1,0 +1,34 @@
+import { useCallback, useEffect, useState } from 'react';
+
+interface UseCheckElementBorderWidthOptions {
+  // horizontal: border-left + border-right
+  // vertical: border-top + border-bottom
+  direction?: 'horizontal' | 'vertical';
+}
+
+
+export const useCheckElementBorderWidth = (
+  elementRef: React.RefObject<HTMLElement>,
+  options: UseCheckElementBorderWidthOptions = {},
+): number => {
+  const [borderWidth, setBorderWidth] = useState(0);
+
+  // 获取指定方向上的border宽度之和
+  const getBorderWidth = useCallback(() => {
+    if (elementRef.current) {
+      const { direction = 'horizontal' } = options;
+      const style = window.getComputedStyle(elementRef.current);
+      const borderWidth = direction === 'horizontal'
+        ? parseFloat(style.borderLeftWidth) + parseFloat(style.borderRightWidth)
+        : parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
+
+      setBorderWidth(borderWidth);
+    }
+  }, [elementRef]);
+
+  useEffect(() => {
+    getBorderWidth();
+  }, [getBorderWidth]);
+
+  return borderWidth;
+};

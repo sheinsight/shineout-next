@@ -8,7 +8,7 @@ import React from 'react';
 import { Slider } from 'shineout';
 
 const App: React.FC = () => (
-  <Slider autoHide defaultValue={4} scale={[1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]} step={1} />
+  <Slider autoHide defaultValue={4} scale={[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]} step={1} />
 );
 
 export default App;

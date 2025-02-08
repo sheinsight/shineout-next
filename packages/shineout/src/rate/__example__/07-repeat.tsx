@@ -13,8 +13,8 @@ const NumberRate = Rate(['1', '2', '3', '4', '5'], ['1', '2', '3', '4', '5']);
 
 const App: React.FC = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-    <LetterRate repeat={false} defaultValue={3} />
-    <NumberRate repeat={false} defaultValue={3} />
+    <LetterRate size={16} repeat={false} defaultValue={3} />
+    <NumberRate size={16} repeat={false} defaultValue={3} />
   </div>
 );
 

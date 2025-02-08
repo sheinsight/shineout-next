@@ -119,6 +119,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
         marginTop: token.cascaderLargePlaceholderMarginY,
         marginBottom: token.cascaderLargePlaceholderMarginY,
       },
+      '& $arrowIcon': {
+        width: token.cascaderLargeFontSize,
+      },
       '& $optionInner': {
         // padding: `${token.cascaderLargeOptionInnerPaddingY} ${token.cascaderLargeOptionInnerPaddingX}`,
         paddingTop: token.cascaderLargeOptionInnerPaddingY,

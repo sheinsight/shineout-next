@@ -394,13 +394,13 @@ export interface TreeSelectTokens {
   treeSelectOptionDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Spacing-16
+   * @token Spacing-8
    * @description 树选择器合并弹层的内边距（水平方向）
    */
   treeSelectMorePaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-14
+   * @token Spacing-6
    * @description 树选择器合并弹层的内边距（垂直方向）
    */
   treeSelectMorePaddingY: string;

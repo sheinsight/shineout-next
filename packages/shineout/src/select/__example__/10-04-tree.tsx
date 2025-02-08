@@ -51,7 +51,7 @@ export default () => {
   return (
     <div>
       <Select
-        width={260}
+        width={300}
         childrenKey='children'
         treeData={treeData}
         keygen='id'

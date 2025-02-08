@@ -1,6 +1,6 @@
 /**
  * cn - 禁用状态
- *    -- 设置 disabled 属性 可以设置禁用状态
+ *    -- 设置 `disabled` 属性, 可以设置禁用状态
  * en - Disabled
  *    -- Set disabled property to disable the Switch
  */

@@ -57,7 +57,7 @@ const getCardStyle = () => {
 
       '&[dir=ltr]': {
         '& $cardHr': {
-          '&:after': {
+          '&:before': {
             right: 0,
             left: 'auto',
             width: '1px',
@@ -70,7 +70,7 @@ const getCardStyle = () => {
         ...active({ top: 0, bottom: 0, left: -1, width: 1, background: '#FFFFFF' }),
 
         '& $cardHr': {
-          '&:after': {
+          '&:before': {
             left: 0,
             width: 1,
             height: '100%',
@@ -89,7 +89,7 @@ const getCardStyle = () => {
       },
       '&[dir=ltr]': {
         '& $cardHr': {
-          '&:after': {
+          '&:before': {
             left: 0,
             width: 1,
             height: '100%',
@@ -100,7 +100,7 @@ const getCardStyle = () => {
 
       '&[dir=rtl]': {
         '& $cardHr': {
-          '&:after': {
+          '&:before': {
             right: 0,
             width: 1,
             height: '100%',
@@ -122,7 +122,7 @@ const getCardStyle = () => {
       },
       '& $hr': { top: 0, height: 1, width: '100%' },
       '& $cardHr': {
-        '&:after': {
+        '&:before': {
           top: 0,
           bottom: 'auto',
         },
@@ -331,15 +331,13 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     },
   },
   cardHr: {
-    // aflter
-    '&:after': {
+    '&:before': {
       position: 'absolute',
       content: '""',
       bottom: 0,
       left: 0,
       width: '100%',
       height: 1,
-      zIndex: -1,
       background: Token.tabsBorderColor,
     },
   },
