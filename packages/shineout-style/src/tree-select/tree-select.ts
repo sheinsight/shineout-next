@@ -309,6 +309,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     lineHeight: 0,
     color: token.treeSelectClearColor,
     verticalAlign: 'middle',
+    '&:hover svg': {
+      color: token.treeSelectClearHoverColor,
+    },
   },
   arrowIcon: {
     display: 'inline-block',
@@ -317,6 +320,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     lineHeight: 0,
     color: token.treeSelectIconColor,
     transition: 'transform 0.3s',
+    '$wrapperDisabled &': {
+      color: token.treeSelectIconDisabledColor,
+    },
   },
   arrowIconOpen: {
     transform: 'rotate(180deg)',

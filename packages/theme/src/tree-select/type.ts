@@ -52,6 +52,12 @@ export interface TreeSelectTokens {
   treeSelectIconColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-2
+   * @description 树选择器图标禁用时的颜色
+   */
+  treeSelectIconDisabledColor: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 树选择器小尺寸字体字号
    */
@@ -158,6 +164,12 @@ export interface TreeSelectTokens {
    * @description 树选择器清除内边距
    */
   treeSelectClearPadding: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 树选择器清除鼠标移入时的颜色
+   */
+  treeSelectClearHoverColor: string;
   /**
    * @type {string}
    * @token Brand-6
