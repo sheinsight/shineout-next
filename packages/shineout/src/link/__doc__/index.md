@@ -1,6 +1,6 @@
 ---
 name: Link
-group: Navigation
+group: General
 version: 3.4.0
 ---
 

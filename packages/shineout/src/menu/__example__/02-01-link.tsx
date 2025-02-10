@@ -23,18 +23,18 @@ const data: MenuItem[] = [
   },
   {
     id: '2',
-    title: 'strackoverflow',
-    link: 'https://www.strackoverflow.com',
+    title: 'Strackoverflow',
+    link: 'https://stackoverflow.com/',
   },
   {
     id: '3',
-    title: 'github',
-    link: 'https://www.github.com',
+    title: 'Github',
+    link: 'https://github.com/',
   },
 ];
 
 const App: React.FC = () => {
-  const renderItem: MenuRenderItem = (d: MenuItem) => d.title;
+  const renderItem: MenuRenderItem = (d: MenuItem) => <a href={d.link} target="_blank" rel="noreferrer">{d.title}</a>;
 
   return (
     <Menu

@@ -11,8 +11,8 @@ import FontAwesome from './Icon';
 const menu = new Array(5).fill(null).map((_, index) => ({
   id: `${index}`,
   content: (
-    <div>
-      <FontAwesome name={'user-o'} /> <span style={{ marginInlineStart: 4 }}>{`item${index}`}</span>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <FontAwesome name={'user-o'} style={{color: '#666C7C', width: 14}} /> <span style={{ marginInlineStart: 8 }}>{`item${index}`}</span>
     </div>
   ),
 }));

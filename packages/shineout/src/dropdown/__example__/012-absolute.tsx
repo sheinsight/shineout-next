@@ -12,7 +12,7 @@ type DropdownItem = TYPE.Dropdown.Item;
 const data: DropdownItem[] = [
   {
     content:
-      'subMenu',
+      'SubMenu',
     children: [
       {
         content: 'Link to Google',
@@ -20,7 +20,7 @@ const data: DropdownItem[] = [
         url: 'https://google.com',
       },
       {
-        content: 'Disabled',
+        content: <div style={{cursor: 'not-allowed'}}>Disabled</div>,
         disabled: true,
       },
     ],

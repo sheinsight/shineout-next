@@ -1,6 +1,6 @@
 ---
 name: Badge
-group: Feedback
+group: Data
 version: 3.4.0
 ---
 

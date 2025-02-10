@@ -230,6 +230,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           )}
           style={{
             width: width,
+            minWidth: 90,
             gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
           }}
           type={'fade'}

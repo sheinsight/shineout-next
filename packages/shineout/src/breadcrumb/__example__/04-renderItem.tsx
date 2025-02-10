@@ -21,8 +21,6 @@ const renderItem: BreadcrumbProps['renderItem'] = (value) => {
   if (value.link) BreadcrumbItem = <a href={value.link}>{value.name}</a>;
 
   return BreadcrumbItem;
-
-  return <b>{BreadcrumbItem}</b>;
 };
 export default function () {
   return <Breadcrumb renderItem={renderItem} data={data} />;
