@@ -8,7 +8,10 @@ import {
   TreeContext,
   UpdateFunc,
   TreeDatum,
+  FlatMapType,
+  FlatNodeType,
 } from './use-tree.type';
+import { getExpandVirtualData } from '../use-table/use-table-tree';
 import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
 import {
@@ -19,15 +22,13 @@ import {
   isUnMatchedData,
   isOptionalDisabled,
 } from '../../utils/is';
-import { devUseWarning } from '../../utils';
+import { devUseWarning, produce } from '../../utils';
 
 function toArray<Value>(value: Value) {
   if (!value) return [];
   if (!Array.isArray(value)) return [value];
   return value;
 }
-
-const global_tree_map = new Map<object, TreeContext<any>>()
 
 export const MODE = {
   /**
@@ -64,6 +65,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     childrenKey = 'children' as keyof DataItem & string,
     keygen,
     mode,
+    virtual,
     active: activeProp,
     expanded: expandedProp,
     dataUpdate = true,
@@ -73,7 +75,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     isControlled,
     onExpand: onExpandProp,
   } = props;
-  
+
   const disabledProps = isOptionalDisabled<DataItem>(props.disabled)
     ? props.disabled.disabled
     : props.disabled;
@@ -83,6 +85,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     : false;
 
   const [inited, setInited] = useState(false);
+  const [dataFlat, setDataFlat] = useState<FlatNodeType<DataItem>[]>([]);
 
   const { value: expanded, onChange: onExpand } = useInputAble({
     value: expandedProp,
@@ -95,6 +98,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const { current: context } = useRef<TreeContext<DataItem>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
+    dataFlatStatusMap: new Map<KeygenResult, FlatMapType>(),
+    dataFlat: [],
     forceUpdateMap: new Map<KeygenResult, () => void>(),
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
@@ -125,9 +130,20 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         defaultExpandAll &&
         isArray(item[childrenKey]) &&
         (item[childrenKey] as DataItem[]).length > 0;
+
       return { active: isActive, expanded: shouldDefaultExpand };
     }
+    if (virtual) {
+      return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };
+    }
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
+  };
+
+  // 注册节点
+  const bindVirtualNode = (id: KeygenResult, update: UpdateFunc) => {
+    context.updateMap.set(id, update);
+    const isActive = activeProp === id;
+    return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };
   };
 
   const get = (id: KeygenResult) => {
@@ -142,7 +158,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (keygen && (isString(keygen) || isNumber(keygen))) {
       return item[keygen] as KeygenResult;
     }
-
     // 降级处理
     return (id + (id ? ',' : '') + index) as KeygenResult;
   };
@@ -253,6 +268,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     path: KeygenResult[],
     disabled?: boolean,
     index: number[] = [],
+    level: number = 1,
+    pid: KeygenResult | null = null,
   ): KeygenResult[] | undefined => {
     const ids: KeygenResult[] = [];
     for (let i = 0; i < data.length; i++) {
@@ -265,6 +282,29 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       }
       // 制作 data mapping
       context.dataMap.set(id, item);
+
+      if (virtual) {
+        context.dataFlatStatusMap.set(id, {
+          active: false,
+          expanded: defaultExpandAll ? true : expanded?.includes(id) || false,
+          fetching: false,
+        });
+        const node = {
+          id,
+          level,
+          data: item,
+          pid,
+        };
+        if (defaultExpandAll) {
+          context.dataFlat.push(node);
+        } else {
+          if (level === 1) {
+            context.dataFlat.push(node);
+          } else if (expanded && pid !== null && expanded.indexOf(pid) >= 0) {
+            context.dataFlat.push(node);
+          }
+        }
+      }
 
       let isDisabled = !!disabled;
       if (isDisabled === false) {
@@ -283,6 +323,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
           [...path, id],
           mode === MODE.MODE_4 ? disabled : isDisabled,
           indexPath,
+          level + 1,
+          id,
         );
         if (_children) children = _children;
       }
@@ -297,7 +339,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     }
     return ids;
   };
-
   const initValue = (ids_outer?: KeygenResult[], forceCheck?: boolean) => {
     let ids = ids_outer;
     if (!context.data || !context.value) {
@@ -408,12 +449,15 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.cachedValue = [];
     context.pathMap = new Map();
     context.dataMap = new Map();
+    context.dataFlat = [];
+    context.dataFlatStatusMap = new Map();
     context.valueMap = new Map();
     context.unmatchedValueMap = new Map();
     context.data = toArray(data) as DataItem[];
+    setDataFlat([]);
     if (!data) return;
-
     initData(context.data, []);
+    setDataFlat(context.dataFlat);
     initValue();
     setValue(prevValue);
 
@@ -469,6 +513,119 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return current;
   };
 
+  const appendChildrenExpanded = (
+    child: DataItem[],
+    level: number,
+    pid: KeygenResult,
+    insertData: FlatNodeType<DataItem>[],
+  ) => {
+    if (!child) return;
+    child.forEach((item, i) => {
+      const childId = getKey(item, pid, i) as KeygenResult;
+      const node = {
+        id: childId,
+        level,
+        data: item,
+        pid,
+      };
+      insertData.push(node);
+      if (context.dataFlatStatusMap.get(childId)?.expanded && item[childrenKey]) {
+        appendChildrenExpanded(item[childrenKey] as DataItem[], level + 1, childId, insertData);
+      }
+    });
+  };
+
+  const insertFlat = (id: KeygenResult) => {
+    const item = getDataById(id);
+    if (isUnMatchedData(item)) return;
+    if (!item) return;
+
+    const status = context.dataFlatStatusMap.get(id);
+    if (!status) return;
+    const childrenData = item[childrenKey] as DataItem[];
+    const insertStartNode = dataFlat.find((item) => item.id === id);
+    context.dataFlatStatusMap.set(id, {
+      ...status,
+      expanded: true,
+      fetching: false,
+    });
+
+    if (!insertStartNode) return;
+
+    const insertData: FlatNodeType<DataItem>[] = [];
+
+    appendChildrenExpanded(childrenData, insertStartNode.level + 1, id, insertData);
+
+    const insertIndex = dataFlat.indexOf(insertStartNode);
+    const nextDataFlat = produce(dataFlat, (draft) => {
+      draft.splice(insertIndex + 1, 0, ...(insertData as any));
+    });
+    setDataFlat(nextDataFlat);
+  };
+
+  const removeFlat = (id: KeygenResult) => {
+    const item = getDataById(id);
+    if (isUnMatchedData(item)) return;
+    if (!item) return;
+
+    const removeNode = dataFlat.find((item) => item.id === id);
+    if (!removeNode) return;
+
+    const status = context.dataFlatStatusMap.get(id);
+    if (!status) return;
+    context.dataFlatStatusMap.set(id, {
+      ...status,
+      fetching: false,
+      expanded: false,
+    });
+    const removeStartIndex = dataFlat.indexOf(removeNode);
+    let removeEndIndex = 0;
+
+    for (let i = removeStartIndex + 1; i < dataFlat.length; i++) {
+      if (dataFlat[i].level <= removeNode.level) {
+        removeEndIndex = i;
+        break;
+      }
+      if (i === dataFlat.length - 1) {
+        removeEndIndex = i + 1;
+        break;
+      }
+    }
+    const nextDataFlat = produce(dataFlat, (draft) => {
+      draft.splice(removeStartIndex + 1, removeEndIndex - removeStartIndex - 1);
+    });
+    setDataFlat(nextDataFlat);
+  };
+
+  const expandedFlat = (expanded: KeygenResult[]) => {
+    if (!context.data) return;
+    context.dataFlatStatusMap.forEach((status, id) => {
+      context.dataFlatStatusMap.set(id, {
+        ...status,
+        expanded: false,
+      });
+    });
+
+    expanded.forEach((id) => {
+      const status = context.dataFlatStatusMap.get(id);
+      if (!status) return;
+      context.dataFlatStatusMap.set(id, {
+        ...status,
+        expanded: true,
+      });
+    });
+
+    const { treeDataInfo } = getExpandVirtualData(context.data, expanded, getKey, childrenKey);
+    if (!treeDataInfo) {
+      return;
+    }
+    setDataFlat(treeDataInfo);
+  };
+
+  const getFlatData = () => {
+    return context.dataFlat;
+  };
+
   useEffect(() => {
     if (defaultExpandAll) {
       const nextExpanded = [] as KeygenResult[];
@@ -479,7 +636,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       });
       onExpand(nextExpanded);
     }
-  }, []);
+  }, [context.dataMap]);
 
   useEffect(() => {
     if (props.datum) return;
@@ -499,25 +656,32 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const datum: TreeDatum<DataItem> = useLatestObj({
     get,
     set,
+    insertFlat,
+    removeFlat,
+    expandedFlat,
     getPath,
     getValue,
     getChecked,
     getKey,
+    getFlatData,
     getDataByValues,
     setValue,
     setData,
     isDisabled,
     bindNode,
+    bindVirtualNode,
     getDataById,
     bindUpdate,
     unBindUpdate,
     isUnMatched,
     childrenKey,
     data,
+    dataFlat,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,
     updateMap: context.updateMap,
+    dataFlatStatusMap: context.dataFlatStatusMap,
   });
 
   return {

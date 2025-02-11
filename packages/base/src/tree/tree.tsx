@@ -4,6 +4,7 @@ import { KeygenResult, useTree, util, ObjectKey } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeProps } from './tree.type';
 import RootTree from './tree-root';
+import VirtualTree from './tree-virtual';
 import { Provider } from './tree-context';
 import { FormFieldContext } from '../form/form-field-context';
 
@@ -18,12 +19,14 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     value,
     mode = 1,
     keygen,
+    virtual,
     expanded: expandedProp,
     expandIcons,
     iconClass,
     leafClass,
     nodeClass,
     contentClass,
+    rootStyle,
     renderItem,
     defaultValue,
     dataUpdate = true,
@@ -67,6 +70,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     }
   }, [active, propActive]);
 
+  const treeRef = useRef<HTMLDivElement>(null);
   const { current: context } = useRef({ mounted: false });
 
   const { datum, expanded, onExpand } = useTree({
@@ -80,10 +84,11 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     expanded: expandedProp,
     disabled,
     defaultValue,
-    defaultExpandAll,
-    defaultExpanded,
+    defaultExpandAll: expandedProp ? undefined : defaultExpandAll,
+    defaultExpanded: expandedProp ? undefined : defaultExpanded,
     childrenKey: childrenKey,
     keygen,
+    virtual,
     onExpand: onExpandProp,
     datum: propsDatum,
   });
@@ -92,6 +97,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   const rootClass = classNames(treeStyle.rootClass, treeStyle.tree, className, {
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
+    [treeStyle.virtual]: virtual,
   });
 
   const getDragImageSelector = (data?: DataItem) => {
@@ -99,8 +105,24 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     return dragImageSelector;
   };
 
+  const getHeight = () => {
+    const { height: styleHeight } = props.style || {};
+    if (!styleHeight && !props.height) {
+      const containerHeight = treeRef.current?.parentElement?.clientHeight;
+      return containerHeight;
+    }
+
+    return props.height || styleHeight;
+  };
+
   const handleUpdateExpanded = (expanded?: KeygenResult[]) => {
     const tempExpandMap = new Set(expanded);
+    if (!expanded) return;
+
+    if (virtual) {
+      datum.expandedFlat(expanded);
+    }
+
     datum.updateMap.forEach((update, id) => {
       update('expanded', tempExpandMap.has(id));
     });
@@ -137,8 +159,10 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
     if (expandedArr.indexOf(id) >= 0) {
       newExpanded = expandedArr.filter((e) => e !== id);
+      if (virtual) datum.removeFlat(id);
     } else {
       newExpanded = [...expandedArr, id];
+      if (virtual) datum.insertFlat(id);
     }
     if (onExpand) onExpand(newExpanded);
   };
@@ -199,6 +223,67 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     }
   };
 
+  const renderList = () => {
+    if (virtual) {
+      const realHeight = getHeight();
+      if (!realHeight) return null;
+      return (
+        <VirtualTree
+          {...props}
+          data={data}
+          line={line}
+          expanded={expanded}
+          height={realHeight}
+          childrenKey={props.childrenKey || ('children' as ObjectKey<DataItem>)}
+          isControlled={'expanded' in props}
+          bindNode={datum.bindNode}
+          onNodeClick={handleNodeClick}
+          onToggle={handleToggle}
+        />
+      );
+    }
+
+    return (
+      <RootTree
+        rootStyle={rootStyle}
+        isControlled={'expanded' in props}
+        jssStyle={jssStyle}
+        data={data}
+        mode={mode}
+        line={line}
+        keygen={keygen}
+        onChange={onChange}
+        iconClass={iconClass}
+        leafClass={leafClass}
+        nodeClass={nodeClass}
+        contentClass={contentClass}
+        expanded={expanded}
+        expandIcons={expandIcons}
+        defaultExpandAll={defaultExpandAll}
+        childrenClass={childrenClass}
+        bindNode={datum.bindNode}
+        childrenKey={childrenKey}
+        onNodeClick={handleNodeClick}
+        renderItem={renderItem}
+        loader={loader}
+        inlineNode={inlineNode}
+        highlight={highlight}
+        onToggle={handleToggle}
+        onDrop={onDrop && handleDrop}
+        onDragOver={onDragOver}
+        onDragStart={onDragStart}
+        onDragEnd={onDragEnd}
+        onDragLeave={onDragLeave}
+        dragSibling={dragSibling}
+        dragHoverExpand={dragHoverExpand}
+        parentClickExpand={parentClickExpand}
+        doubleClickExpand={doubleClickExpand}
+        dragImageSelector={getDragImageSelector}
+        dragImageStyle={dragImageStyle}
+      ></RootTree>
+    );
+  };
+
   useEffect(() => {
     // 首次渲染不更新
     if (!context.mounted) {
@@ -219,46 +304,10 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   }, []);
 
   const { fieldId } = useContext(FormFieldContext);
+
   return (
-    <div className={rootClass} id={fieldId} {...rest}>
-      <Provider value={datum as any}>
-        <RootTree
-          isControlled={'expanded' in props}
-          jssStyle={jssStyle}
-          data={data}
-          mode={mode}
-          line={line}
-          keygen={keygen}
-          onChange={onChange}
-          iconClass={iconClass}
-          leafClass={leafClass}
-          nodeClass={nodeClass}
-          contentClass={contentClass}
-          expanded={expanded}
-          expandIcons={expandIcons}
-          defaultExpandAll={defaultExpandAll}
-          childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
-          bindNode={datum.bindNode}
-          childrenKey={childrenKey}
-          onNodeClick={handleNodeClick}
-          renderItem={renderItem}
-          loader={loader}
-          inlineNode={inlineNode}
-          highlight={highlight}
-          onToggle={handleToggle}
-          onDrop={onDrop && handleDrop}
-          onDragOver={onDragOver}
-          onDragStart={onDragStart}
-          onDragEnd={onDragEnd}
-          onDragLeave={onDragLeave}
-          dragSibling={dragSibling}
-          dragHoverExpand={dragHoverExpand}
-          parentClickExpand={parentClickExpand}
-          doubleClickExpand={doubleClickExpand}
-          dragImageSelector={getDragImageSelector}
-          dragImageStyle={dragImageStyle}
-        ></RootTree>
-      </Provider>
+    <div ref={treeRef} className={rootClass} id={fieldId} {...rest}>
+      <Provider value={datum as any}>{renderList()}</Provider>
     </div>
   );
 };
