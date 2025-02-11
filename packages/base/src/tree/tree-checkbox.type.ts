@@ -6,5 +6,6 @@ export interface TreeCheckboxProps<Value extends KeygenResult[]> extends Pick<Co
   jssStyle?: JsstyleType;
   id: KeygenResult;
   disabled?: boolean;
+  onClick?: (e: React.MouseEvent) => void;
   onChange?: (value: Value, id: KeygenResult) => void;
 }

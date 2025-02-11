@@ -26,11 +26,7 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
     }
   });
 
-  const handleToggle = () => {
-    // const newExpand = !expanded;
-    // setExpanded(newExpand);
-    // if (onToggle) onToggle(id, newExpand);
-  };
+  const handleToggle = () => {};
 
   const isLeaf = () => {
     const children = data[childrenKey] as DataItem[];

@@ -6,9 +6,24 @@ export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 
 export type UpdateFunc = (name: string, active: boolean) => void;
 
+export type FlatNodeType<DataItem> = {
+  id: KeygenResult;
+  data: DataItem;
+  level: number;
+  pid?: KeygenResult | null;
+};
+
+export type FlatMapType = {
+  active: boolean;
+  expanded: boolean;
+  fetching: boolean;
+};
+
 export interface TreeContext<DataItem> {
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
+  dataFlat: FlatNodeType<DataItem>[];
+  dataFlatStatusMap: Map<KeygenResult, FlatMapType>;
   valueMap: Map<KeygenResult, CheckedStatusType>;
   unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
@@ -117,6 +132,10 @@ export interface BaseTreeProps<DataItem> {
    * @private 内部数据处理
    */
   datum?: TreeDatum<DataItem>;
+  /**
+   * @private 是否虚拟化
+   */
+  virtual?: boolean;
 }
 
 export interface TreeDatum<DataItem> {
@@ -126,6 +145,9 @@ export interface TreeDatum<DataItem> {
     checked: CheckedStatusType,
     direction?: 'asc' | 'desc',
   ) => CheckedStatusType | null;
+  insertFlat: (id: KeygenResult) => void;
+  removeFlat: (id: KeygenResult) => void;
+  expandedFlat: (id: KeygenResult[]) => void;
   getPath: (id: KeygenResult) => TreePathType | undefined;
   getValue: () => KeygenResult[];
   getChecked: (id: KeygenResult) => boolean | 'indeterminate';
@@ -139,6 +161,11 @@ export interface TreeDatum<DataItem> {
     update: UpdateFunc,
     data: DataItem,
   ) => { active: boolean; expanded: boolean };
+  bindVirtualNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { active: boolean; expanded: boolean };
   getDataById: (
     id: KeygenResult,
   ) => DataItem | { IS_NOT_MATCHED_VALUE: boolean; value: KeygenResult | null } | null;
@@ -148,7 +175,9 @@ export interface TreeDatum<DataItem> {
   updateMap: Map<KeygenResult, UpdateFunc>;
   childrenKey: string;
   data: DataItem[];
+  dataFlat: FlatNodeType<DataItem>[];
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
   valueMap: Map<KeygenResult, CheckedStatusType>;
+  dataFlatStatusMap: Map<KeygenResult, FlatMapType>;
 }
