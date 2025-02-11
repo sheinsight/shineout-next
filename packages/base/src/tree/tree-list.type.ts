@@ -24,7 +24,7 @@ export interface TreeListProps<DataItem, Value extends KeygenResult[]>
   dragImageStyle?: React.CSSProperties;
   dragSibling?: boolean;
   dragHoverExpand?: boolean;
-  childrenClass: (data: DataItem) => string | undefined;
+  childrenClass?: ((data: DataItem) => string) | string;
   bindNode: (
     id: KeygenResult,
     update: UpdateFunc,

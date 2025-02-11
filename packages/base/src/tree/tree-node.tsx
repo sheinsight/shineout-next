@@ -10,7 +10,7 @@ const TreeNode = <DataItem, Value extends KeygenResult[]>(
   const { virtual } = props;
 
   if (virtual) {
-    return <TreeVirtualNode {...props} />;
+    return <TreeVirtualNode {...props} level={1} />;
   }
 
   return <TreeSimpleNode {...props} />;

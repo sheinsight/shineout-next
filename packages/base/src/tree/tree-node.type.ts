@@ -23,7 +23,7 @@ export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
   nodeClass?: string | ((data: DataItem) => string);
   contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
-  childrenClass?: (data: DataItem) => string | undefined;
+  childrenClass?: ((data: DataItem) => string) | string;
   bindNode: (
     id: KeygenResult,
     update: UpdateFunc,
@@ -74,5 +74,5 @@ export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
 }
 
 export type TreeNodeProps<DataItem, Value extends KeygenResult[]> =
-  | TreeSimpleNodeProps<DataItem, Value>
-  | TreeVirtualNodeProps<DataItem, Value>;
+  | ({ virtual: true } & TreeVirtualNodeProps<DataItem, Value>)
+  | ({ virtual?: false | undefined } & TreeSimpleNodeProps<DataItem, Value>);

@@ -5,7 +5,7 @@ export interface TreeRootProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'chilrdrenKey'> {
   jssStyle?: JsstyleType;
   line: boolean;
-  childrenClass: (data: DataItem) => string | undefined;
+  childrenClass?: ((data: DataItem) => string) | string;
   bindNode: (
     id: KeygenResult,
     update: UpdateFunc,

@@ -260,7 +260,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
         expanded={expanded}
         expandIcons={expandIcons}
         defaultExpandAll={defaultExpandAll}
-        childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
+        childrenClass={childrenClass}
         bindNode={datum.bindNode}
         childrenKey={childrenKey}
         onNodeClick={handleNodeClick}

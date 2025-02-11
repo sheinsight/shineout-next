@@ -257,7 +257,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
       onDragEnd,
 
       bindNode,
-      childrenClassName: childrenClass?.(data),
+      childrenClassName: util.isFunc(childrenClass) ? childrenClass?.(data) : childrenClass,
       childrenKey,
       childrenClass,
       dragSibling,
