@@ -14,10 +14,10 @@ export default () => {
       <Badge count={99}>
         <Avatar></Avatar>
       </Badge>
-      <Badge count={100} overflowCount={99}>
+      <Badge count={100} overflowCount={9}>
         <Avatar></Avatar>
       </Badge>
-      <Badge count={100} overflowCount={0} showZero>
+      <Badge count={100} overflowCount={99}>
         <Avatar></Avatar>
       </Badge>
       <Badge count={1000} overflowCount={999}>

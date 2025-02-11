@@ -27,6 +27,9 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
       display: 'flex',
       alignItems: 'center',
     },
+    '&[role=button]:active': {
+      color: token.breadcrumbDefaultLinkActiveColor,
+    }
   },
   ellipsis: {
     color: token.breadcrumbLinkColor,
@@ -95,7 +98,7 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
       color: token.dropdownOptionHoverFontColor,
       backgroundColor: token.dropdownOptionHoverBackgroundColor,
     },
-    '& $content, &  a': {
+    '& $content, & a': {
       padding: `${token.dropdownOptionPaddingY} ${token.dropdownOptionPaddingX}`,
       display: 'inline-block',
       textDecoration: 'none',

@@ -3259,7 +3259,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
         class="soui-transfer-input"
       >
         <div
-          style="display: flex;"
+          style="display: flex; padding: 8px 12px 4px 12px;"
         >
           <div
             class="soui-input soui-input-wrapper"
@@ -3728,7 +3728,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
         class="soui-transfer-input"
       >
         <div
-          style="display: flex;"
+          style="display: flex; padding: 8px 12px 4px 12px;"
         >
           <div
             class="soui-input soui-input-wrapper"

@@ -6,7 +6,6 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Breadcrumb, Message, TYPE } from 'shineout';
 
 type BreadcrumbData = TYPE.Breadcrumb.Data;
@@ -15,7 +14,7 @@ type BreadcrumbProps<data> = TYPE.Breadcrumb.Props<data>;
 
 const data: BreadcrumbProps<BreadcrumbData>['data'] = [
   { title: 'Home', url: '/' },
-  { title: <Link to='/cn/components/shineout/button'>Button</Link> },
+  { title: 'Button', url: '/#/cn/component/shineout/Button?tab=examples' },
   { title: 'Handler', onClick: () => Message.info('clicked') },
   { title: 'Self' },
 ];

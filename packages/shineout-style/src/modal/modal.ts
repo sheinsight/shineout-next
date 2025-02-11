@@ -421,6 +421,9 @@ const modalStyle: JsStyles<ModalClassType> = {
       right: 'auto',
       cursor: 'col-resize',
     },
+    '$wrapperDrawerLeft &': {
+      cursor: 'col-resize',
+    },
   },
   resizeY: {
     cursor: 'row-resize',
@@ -435,7 +438,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     '$wrapperDrawerBottom &': {
       top: '-4px',
       bottom: 'auto',
-      cursor: 'n-resize',
+      cursor: 'row-resize',
     },
   },
   resizeXY: {

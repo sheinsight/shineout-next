@@ -24,7 +24,7 @@ export default () => {
 
   const renderFilter = (filterProps: FilterProps) => {
     return (
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', padding: '8px 12px 4px 12px' }}>
         <Input
           placeholder='Custom filter'
           onChange={filterProps.onFilter as (text?: string) => void}

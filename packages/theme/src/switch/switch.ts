@@ -29,7 +29,7 @@ const switchTokens: SwitchTokens = {
   switchBackgroundColor: 'Neutral-fill-4',
   switchDisabledBackgroundColor: 'Neutral-fill-3',
   switchDisabledCircleCheckedFill: 'Brand-1',
-  switchDisabledCircleUncheckedFill: 'Neutral-fill-1',
+  switchDisabledCircleUncheckedFill: 'Neutral-fill-2',
   switchDisabledFontColor: 'Neutral-text-2',
   switchLoadingBackgroundColor: 'Neutral-fill-2',
   switchLoadingCircleFill: 'Neutral-text-2',

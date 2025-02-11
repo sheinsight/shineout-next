@@ -417,6 +417,9 @@ const menuStyle: JsStyles<MenuClassType> = {
     '$childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
       paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuExpandSize})`,
     },
+    '$wrapperHorizontal $childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
+      paddingRight: token.menuTitlePaddingX,
+    },
     '$childrenHasExpand $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
     },

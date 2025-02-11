@@ -19,7 +19,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
         };
         if (d.url) props.href = d.url;
         item = (
-          <a {...props} className={breadcrumbClasses?.content}>
+          <a {...props} className={breadcrumbClasses?.content} role="button">
             {d.icon}
             {d.icon && d.title && <>&nbsp;</>}
             {d.title}

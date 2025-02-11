@@ -2872,13 +2872,13 @@ exports[`Menu[Base] should render correctly about link 1`] = `
           <a
             class="soui-menu-title"
             href="https://www.google.com"
+            rel="noreferrer"
+            target="_blank"
           >
             <div
               class="soui-menu-title-content"
             >
-              <span>
-                Google
-              </span>
+              Google
             </div>
           </a>
         </div>
@@ -2892,14 +2892,14 @@ exports[`Menu[Base] should render correctly about link 1`] = `
         >
           <a
             class="soui-menu-title"
-            href="https://www.strackoverflow.com"
+            href="https://stackoverflow.com/"
+            rel="noreferrer"
+            target="_blank"
           >
             <div
               class="soui-menu-title-content"
             >
-              <span>
-                strackoverflow
-              </span>
+              Strackoverflow
             </div>
           </a>
         </div>
@@ -2913,14 +2913,14 @@ exports[`Menu[Base] should render correctly about link 1`] = `
         >
           <a
             class="soui-menu-title"
-            href="https://www.github.com"
+            href="https://github.com/"
+            rel="noreferrer"
+            target="_blank"
           >
             <div
               class="soui-menu-title-content"
             >
-              <span>
-                github
-              </span>
+              Github
             </div>
           </a>
         </div>

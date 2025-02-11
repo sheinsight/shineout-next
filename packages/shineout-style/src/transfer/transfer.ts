@@ -122,10 +122,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
   },
   inputWrapper: {
-    padding: '6px 12px',
+    padding: '8px 12px 4px 12px',
   },
   input: {
-    padding: '8px 12px 4px 12px',
     '& > div > svg': {
       width: 14,
       minWidth: 14,
