@@ -11,7 +11,6 @@ import {
   attributesTest,
   classTest,
   textContentTest,
-  styleTest,
   hasAttributesTest,
   classContentTest,
   styleContentTest,
@@ -99,7 +98,7 @@ const openStyle = {
   zIndex: '1051',
   opacity: '1',
   display: 'block',
-  minWidth: '100%',
+  minWidth: '90px',
   top: 'calc(100% + 4px)',
   left: '0px',
   transition: 'opacity 240ms ease-in-out',
@@ -107,7 +106,7 @@ const openStyle = {
 // const openStyleWithoutAnimation = 'z-index: 1051; min-width: 0; top: 4px; left: 0px; display: block; position: absolute; opacity: 0;'
 const openStyleWithoutAnimation = {
   zIndex: '1051',
-  minWidth: '0',
+  minWidth: '90px',
   top: '4px',
   left: '0px',
   display: 'block',
@@ -117,7 +116,7 @@ const openStyleWithoutAnimation = {
 // const closeStyleWithAnimation = 'z-index: 1051; min-width: 0; top: 4px; left: 0px; display: none; position: absolute; opacity: 0; transition: opacity 240ms ease-in-out;'
 const closeStyleWithAnimation = {
   zIndex: '1051',
-  minWidth: '0',
+  minWidth: '90px',
   top: '4px',
   left: '0px',
   display: 'none',
@@ -373,8 +372,12 @@ describe('Dropdown[Columns]', () => {
     await waitFor(async () => {
       await delay(200);
     });
+    const columnStyle = {
+      width: `${width}px`,
+      gridTemplateColumns: `repeat(${columns}, 1fr)`,
+    }
     const list = container.querySelector(dropdownListClassName)!;
-    styleContentTest(list, `width: ${width}px; grid-template-columns: repeat(${columns}, 1fr);`);
+    styleContainTest(list, columnStyle);
   });
   test('should render when set columns without width', async () => {
     const { container } = render(<DropdownColumsDemo c={columns} />);
@@ -533,7 +536,7 @@ describe('Dropdown[Open]', () => {
       zIndex: '1051',
       opacity: '0',
       display: 'block',
-      minWidth: '100%',
+      minWidth: '90px',
       top: 'calc(100% + 4px)',
       left: '0px',
     }

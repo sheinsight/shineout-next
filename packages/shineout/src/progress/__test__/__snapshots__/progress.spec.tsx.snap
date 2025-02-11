@@ -79,7 +79,7 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
     </div>
   </div>
   <button
-    class="soui-button soui-button-secondary soui-button-button"
+    class="soui-button soui-button-secondary soui-button-button soui-button-outline"
     dir="ltr"
     style="margin-top: 24px;"
     type="button"

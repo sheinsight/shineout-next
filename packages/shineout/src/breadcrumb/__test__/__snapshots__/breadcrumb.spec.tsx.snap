@@ -10,6 +10,7 @@ exports[`Breadcrumb[Base] should render correctly 1`] = `
     <a
       class="soui-breadcrumb-content"
       href="/"
+      role="button"
     >
       Home
     </a>
@@ -23,7 +24,9 @@ exports[`Breadcrumb[Base] should render correctly 1`] = `
     class="soui-breadcrumb-item"
   >
     <a
-      href="/cn/components/shineout/button"
+      class="soui-breadcrumb-content"
+      href="/#/cn/component/shineout/Button?tab=examples"
+      role="button"
     >
       Button
     </a>
@@ -38,6 +41,7 @@ exports[`Breadcrumb[Base] should render correctly 1`] = `
   >
     <a
       class="soui-breadcrumb-content"
+      role="button"
     >
       Handler
     </a>
@@ -69,6 +73,7 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
     <a
       class="soui-breadcrumb-content"
       href="/"
+      role="button"
     >
       Home
     </a>
@@ -82,7 +87,9 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
     class="soui-breadcrumb-item"
   >
     <a
-      href="/cn/components/shineout/button"
+      class="soui-breadcrumb-content"
+      href="/#/cn/component/shineout/Button?tab=examples"
+      role="button"
     >
       Button
     </a>
@@ -100,6 +107,7 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
     >
       <a
         class="soui-breadcrumb-content"
+        role="button"
       >
         Dropdown
       </a>
@@ -148,6 +156,7 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
       <a
         class="soui-breadcrumb-content"
         href="#home"
+        role="button"
       >
         <svg
           fill="none"
@@ -174,6 +183,7 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
       <a
         class="soui-breadcrumb-content"
         href="https://www.google.com"
+        role="button"
       >
         <svg
           fill="none"
@@ -312,6 +322,7 @@ exports[`Breadcrumb[Base] should render correctly about max 1`] = `
     <a
       class="soui-breadcrumb-content"
       href="/"
+      role="button"
     >
       Home
     </a>
@@ -340,6 +351,7 @@ exports[`Breadcrumb[Base] should render correctly about max 1`] = `
   >
     <a
       class="soui-breadcrumb-content"
+      role="button"
     >
       Table
     </a>
@@ -413,6 +425,7 @@ exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
       <a
         class="soui-breadcrumb-content"
         href="/"
+        role="button"
       >
         Home
       </a>
@@ -441,6 +454,7 @@ exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
       <a
         class="soui-breadcrumb-content"
         href="/"
+        role="button"
       >
         Home
       </a>
@@ -477,6 +491,7 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
       <a
         class="soui-breadcrumb-content"
         href="/"
+        role="button"
       >
         Home
       </a>
@@ -490,7 +505,9 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
       class="soui-breadcrumb-item"
     >
       <a
-        href="/cn/components/shineout/button"
+        class="soui-breadcrumb-content"
+        href="/#/cn/component/shineout/Button?tab=examples"
+        role="button"
       >
         Button
       </a>
@@ -505,6 +522,7 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
     >
       <a
         class="soui-breadcrumb-content"
+        role="button"
       >
         Handler
       </a>
@@ -534,6 +552,7 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
       <a
         class="soui-breadcrumb-content"
         href="/"
+        role="button"
       >
         Home
       </a>
@@ -547,7 +566,9 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
       class="soui-breadcrumb-item"
     >
       <a
-        href="/cn/components/shineout/button"
+        class="soui-breadcrumb-content"
+        href="/#/cn/component/shineout/Button?tab=examples"
+        role="button"
       >
         Button
       </a>
@@ -562,6 +583,7 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
     >
       <a
         class="soui-breadcrumb-content"
+        role="button"
       >
         Handler
       </a>
@@ -591,6 +613,7 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
       <a
         class="soui-breadcrumb-content"
         href="/"
+        role="button"
       >
         Home
       </a>
@@ -604,7 +627,9 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
       class="soui-breadcrumb-item"
     >
       <a
-        href="/cn/components/shineout/button"
+        class="soui-breadcrumb-content"
+        href="/#/cn/component/shineout/Button?tab=examples"
+        role="button"
       >
         Button
       </a>
@@ -619,6 +644,7 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
     >
       <a
         class="soui-breadcrumb-content"
+        role="button"
       >
         Handler
       </a>
