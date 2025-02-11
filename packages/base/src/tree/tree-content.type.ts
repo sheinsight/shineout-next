@@ -54,11 +54,6 @@ export interface TreeVirtualContextProps<DataItem, Value extends KeygenResult[]>
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
   childrenClass?: ((data: DataItem) => string) | string;
-  bindNode: (
-    id: KeygenResult,
-    update: UpdateFunc,
-    data: DataItem,
-  ) => { expanded: boolean; active: boolean };
   bindContent: React.RefObject<HTMLDivElement>;
   fetching: boolean;
   inlineNode?: boolean;
@@ -67,7 +62,6 @@ export interface TreeVirtualContextProps<DataItem, Value extends KeygenResult[]>
   setFetching: (value: boolean) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   onFetch: () => void;
-  onDragOver: (e: React.DragEvent) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   onChange?: (value: Value) => void;
 }

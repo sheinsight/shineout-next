@@ -1,7 +1,7 @@
 import { useRef, createElement } from 'react';
 import classNames from 'classnames';
 import { TreeClasses } from './tree.type';
-import { TreeNodeProps } from './tree-node.type';
+import { TreeSimpleNodeProps } from './tree-node.type';
 import TreeContent from './tree-content';
 import { useTreeContext } from './tree-context';
 import { useTreeNode, ObjectType, util, KeygenResult } from '@sheinx/hooks';
@@ -22,7 +22,9 @@ const initPlaceElement = () => {
 
 initPlaceElement();
 
-const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataItem, Value>) => {
+const Node = <DataItem, Value extends KeygenResult[]>(
+  props: TreeSimpleNodeProps<DataItem, Value>,
+) => {
   const {
     jssStyle,
     id,
@@ -255,7 +257,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataI
       onDragEnd,
 
       bindNode,
-      childrenClassName: childrenClass(data),
+      childrenClassName: childrenClass?.(data),
       childrenKey,
       childrenClass,
       dragSibling,

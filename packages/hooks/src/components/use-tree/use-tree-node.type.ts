@@ -17,6 +17,7 @@ export interface BaseTreeNodeProps<DataItem, Value> {
   childrenKey: keyof DataItem;
   element: React.RefObject<HTMLDivElement>;
   dragImageStyle?: React.CSSProperties;
+  dragImageSelector: (data?: DataItem) => string | undefined;
   bindNode: (
     id: KeygenResult,
     update: UpdateFunc,

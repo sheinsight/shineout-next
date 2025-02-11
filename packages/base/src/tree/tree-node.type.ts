@@ -23,7 +23,7 @@ export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
   nodeClass?: string | ((data: DataItem) => string);
   contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
-  childrenClass: (data: DataItem) => string | undefined;
+  childrenClass?: (data: DataItem) => string | undefined;
   bindNode: (
     id: KeygenResult,
     update: UpdateFunc,
@@ -57,6 +57,7 @@ export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
   onChange?: (value: Value) => void;
+  childrenClass?: ((data: DataItem) => string) | string;
   onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   iconClass?: string;
@@ -64,7 +65,6 @@ export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
   nodeClass?: string | ((data: DataItem) => string);
   contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
-  childrenClass: (data: DataItem) => string | undefined;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
   loader?: (key: KeygenResult, data: DataItem) => void;

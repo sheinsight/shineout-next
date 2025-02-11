@@ -232,21 +232,18 @@ export interface TreeProps<DataItem, Value extends any[]>
 export interface VirtualTreeProps<DataItem, Value extends any[]>
   extends Omit<
     TreeProps<DataItem, Value>,
-    'height' | 'line' | 'dragImageSelector' | 'onDrop' | 'childrenKey' | 'childrenClass'
+    'height' | 'line' | 'dragImageSelector' | 'onDrop' | 'childrenKey'
   > {
   height: number | string;
   line: boolean;
-  contentClass: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
   isControlled: boolean;
   bindNode: (
     id: KeygenResult,
     update: UpdateFunc,
     data: DataItem,
   ) => { expanded: boolean; active: boolean };
-  dragImageSelector: (data?: DataItem) => string | undefined;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
-  onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   childrenKey: keyof DataItem;
-  childrenClass: (data: DataItem) => string | undefined;
 }

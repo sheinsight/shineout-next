@@ -35,7 +35,6 @@ const NodeVirtualContent = <DataItem, Value extends KeygenResult[]>(
     loader,
     onChange,
     onToggle,
-    onDragOver,
     onNodeClick,
   } = props;
   const forceUpdate = useRender();
@@ -209,7 +208,7 @@ const NodeVirtualContent = <DataItem, Value extends KeygenResult[]>(
   };
 
   return (
-    <div className={rootClass} onDragOver={onDragOver} dir={config.direction}>
+    <div className={rootClass} dir={config.direction}>
       {renderIndicator()}
       <div
         dir={config.direction}
