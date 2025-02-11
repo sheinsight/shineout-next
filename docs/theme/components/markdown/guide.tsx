@@ -4,6 +4,7 @@ import store from '../../store';
 import useStyles from '../style';
 import { useSnapshot } from 'valtio';
 import { Guides } from 'docs/types';
+import { icons } from 'shineout';
 import Anchor from 'docs/theme/layout/desktop/anchor';
 
 export interface GuideProps {
@@ -72,27 +73,7 @@ const Guide = (props: GuideProps) => {
     }
 
     if (icon === 'warning') {
-      return (
-        <svg
-          width='14'
-          height='14'
-          viewBox='0 0 14 14'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <g clipPath='url(#clip0_1810_1619)'>
-            <path
-              d='M7 0.583374C3.45617 0.583374 0.583336 3.45621 0.583336 7.00004C0.583336 10.5439 3.45617 13.4167 7 13.4167C10.5438 13.4167 13.4167 10.5439 13.4167 7.00004C13.4167 3.45621 10.5438 0.583374 7 0.583374ZM7 9.33337C7.32217 9.33337 7.58334 9.59454 7.58334 9.91671C7.58334 10.2389 7.32217 10.5 7 10.5C6.67784 10.5 6.41667 10.2389 6.41667 9.91671C6.41667 9.59454 6.67784 9.33337 7 9.33337ZM7 2.91671C7.32217 2.91671 7.58334 3.17787 7.58334 3.50004V8.16671C7.58334 8.48887 7.32217 8.75004 7 8.75004C6.67784 8.75004 6.41667 8.48887 6.41667 8.16671V3.50004C6.41667 3.17787 6.67784 2.91671 7 2.91671Z'
-              fill='#F56C0A'
-            />
-          </g>
-          <defs>
-            <clipPath id='clip0_1810_1619'>
-              <rect width='14' height='14' fill='white' />
-            </clipPath>
-          </defs>
-        </svg>
-      );
+      return <div style={{ width: 14, height: 14 ,fill:'var(--soui-warning-6)'}}>{icons.WarningCircleFill}</div>;
     }
   };
 
@@ -103,11 +84,7 @@ const Guide = (props: GuideProps) => {
           return (
             <div className='guide' key={index}>
               <h2
-                className={classNames(
-                  'title',
-                  'anchor-title',
-                  index === 0 ? 'first' : '',
-                )}
+                className={classNames('title', 'anchor-title', index === 0 ? 'first' : '')}
                 id={`guide-${guide.title}`}
               >
                 {guide.title}

@@ -225,7 +225,7 @@ export default createUseStyles(
       marginTop: 16,
       display: 'flex',
       flexWrap: 'wrap',
-      padding: '0 40px',
+      padding: '0 0 0 40px',
       maxWidth: 909,
       boxSizing: 'content-box',
       gap: 24,
@@ -238,7 +238,7 @@ export default createUseStyles(
     },
     image: {
       width: '100%',
-      maxWidth: 412,
+      maxWidth: 442,
     },
     imageContent: {
       display: 'flex',
