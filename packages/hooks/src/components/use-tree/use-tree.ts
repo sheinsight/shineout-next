@@ -454,10 +454,15 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.valueMap = new Map();
     context.unmatchedValueMap = new Map();
     context.data = toArray(data) as DataItem[];
-    setDataFlat([]);
+    if (virtual) {
+      context.dataFlat = [];
+      setDataFlat([]);
+    }
     if (!data) return;
     initData(context.data, []);
-    setDataFlat(context.dataFlat);
+    if (virtual) {
+      setDataFlat(context.dataFlat);
+    }
     initValue();
     setValue(prevValue);
 
