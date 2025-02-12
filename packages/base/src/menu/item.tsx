@@ -82,7 +82,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         onClick={close}
         dir={config.direction}
       >
-        {items.map((item: any, index: number) => {
+        {items.map((item: any, index: number, arr: any[]) => {
           const key = util.getKey(props.keygen, item, index);
           return (
             <MenuItem
@@ -95,6 +95,8 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
               keyResult={key}
               level={props.level + 1}
               renderIcon={isTitle ? undefined : props.renderIcon}
+              // 顶部或底部的menuItem的popover边缘与menu的边缘对齐
+              isEdgeItem={index === 0 || index === arr.length - 1}
             />
           );
         })}
@@ -120,6 +122,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           showArrow={mode !== 'horizontal'}
           position={position}
           lazy={false}
+          offset={isVertical && props.isEdgeItem ? [0, 4] : undefined}
         >
           {(close) => {
             return content(close);

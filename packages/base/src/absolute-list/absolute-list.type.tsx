@@ -53,5 +53,7 @@ export interface AbsoluteListProps {
   // 自动调整位置来适应容器大小
   adjust?: boolean;
   lazy?: boolean;
+  // 偏移量, [x, y]
+  offset?: [number, number];
   arrowStyleRef?: React.RefObject<{ style: React.CSSProperties }>;
 }

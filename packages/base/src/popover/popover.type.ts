@@ -169,4 +169,11 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @private 是否开启懒加载
    */
   lazy?: boolean;
+
+  /**
+   * @en The offset of the pop-up layer
+   * @cn 弹出层偏移量, [x, y]
+   * @example [0, 4]
+   */
+  offset?: [number, number];
 }
