@@ -1,3 +1,9 @@
+## 3.5.8-beta.17
+2025-02-12
+
+### 🐞 BugFix
+- 修复 `Form` 在异步设置 value 后，带有 defaultValue 的表单项视图更新异常的问题  ([#950](https://github.com/sheinsight/shineout-next/pull/950))
+
 ## 3.5.8-beta.5
 2025-01-14
 
