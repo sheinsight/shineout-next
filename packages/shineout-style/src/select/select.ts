@@ -284,6 +284,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     borderRadius: token.selectPanelRadius,
     transformOrigin: '0 0',
     border: `1px solid ${token.selectPanelBorder}`,
+    cursor: 'initial',
   },
   pickerSmall: {
     '& $optionInner': {

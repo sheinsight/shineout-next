@@ -321,6 +321,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     border: `1px solid ${token.cascaderPanelBorder}`,
     borderRadius: token.cascaderPanelRadius,
     transformOrigin: '0 0',
+    cursor: 'initial',
   },
   pickerWrapperShow: {},
   iconWrapper: {
