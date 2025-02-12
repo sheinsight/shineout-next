@@ -296,6 +296,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     transformOrigin: '0 0',
     width: 'max-content',
     maxWidth: '640px',
+    cursor: 'initial',
   },
   iconWrapper: {
     display: 'flex',

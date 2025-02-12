@@ -226,6 +226,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     boxShadow: token.datePickerPanelShadow,
     borderRadius: token.datePickerPanelRadius,
     border: `1px solid ${token.datePickerPanelBorder}`,
+    cursor: 'initial',
   },
   pickerBox: {
     display: 'flex',
