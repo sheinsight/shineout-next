@@ -219,4 +219,5 @@ export interface MenuItemProps
   level: number;
   scrollRef: React.MutableRefObject<HTMLDivElement | null>;
   collapse?: boolean;
+  isEdgeItem?: boolean;
 }

@@ -184,7 +184,7 @@ export interface MenuTokens {
   menuDarkFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-10
+   * @token Neutral-fill-9
    * @description 菜单深色模式选项背景颜色
    */
   menuDarkItemBackgroundColor: string;
@@ -220,7 +220,7 @@ export interface MenuTokens {
   menuDarkItemActiveFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-9
+   * @token Neutral-fill-10
    * @description 菜单深色模式选项打开状态的背景颜色
    */
   menuDarkItemOpenBackgroundColor: string;
@@ -232,7 +232,7 @@ export interface MenuTokens {
   menuDarkItemOpenFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-10
+   * @token Neutral-fill-9
    * @description 菜单深色模式选项禁用时的背景颜色
    */
   menuDarkItemDisabledBackgroundColor: string;
