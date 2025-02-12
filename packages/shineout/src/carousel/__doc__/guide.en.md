@@ -1,22 +1,13 @@
 ## When to Use
 
-### To convey critical and important information, it's typically placed at the top of the relevant module within the page. It is statically displayed and does not automatically disappear, nor does it interrupt the user's current activities.
+### For looping playback of multiple images, videos, or embedded frames, supporting system autoplay or user manual switching.
 
-## Related to Layout
+## Common Uses
 
-### It is generally placed at the top of the relevant module within the page for static display.
+### Generally placed at the top of the relevant module on the page for static display.
 
-![Illustration: Content Top](001)
-![Illustration: Site Top](002)
+![{maxWidth:100%}](001)
 
-## Recommended/Cautionary Examples
+### Also commonly used in fixed areas to place multiple marketing activities or to serve as entry points for timely content such as platform advertisements.
 
-### 1. When multiple alerts are needed on one page, it is recommended to use a combined alert box with a title.
-
-![success](003)
-![warning](004)
-
-### 2. When using color themes, the copy should match the intended meaning.
-
-![success](005)
-![warning](006)
+![{maxWidth:100%}](002)
