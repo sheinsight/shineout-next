@@ -158,6 +158,25 @@ export default createUseStyles(
         boxSizing: 'border-box',
       },
     },
+    guideIcon: {
+      width: 14,
+      height: 14,
+      marginRight: 4,
+      '& svg': {
+        width: '100%',
+        height: '100%',
+      },
+    },
+    guideIconSuccess: {
+      '& svg': {
+        fill: 'var(--soui-success-6)',
+      },
+    },
+    guideIconWarning: {
+      '& svg': {
+        fill: 'var(--soui-warning-6)',
+      },
+    },
     api: {
       padding: 24,
       display: 'flex',
