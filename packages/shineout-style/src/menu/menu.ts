@@ -432,8 +432,10 @@ const menuStyle: JsStyles<MenuClassType> = {
     '& + $titleContent': {
       paddingLeft: token.menuIconMarginX,
     },
-    lineHeight: 1,
     display: 'inline-flex',
+    alignSelf: 'flex-start',
+    height: token.lineHeightDynamic,
+    alignItems: 'center',
   },
   titleContent: {
     whiteSpace: 'pre-wrap',
@@ -458,6 +460,10 @@ const menuStyle: JsStyles<MenuClassType> = {
       lineHeight: 1,
       width: token.menuExpandSize,
       height: token.menuExpandSize,
+      alignSelf: 'flex-start',
+      alignItems: 'center',
+      display: 'flex',
+      minHeight: `calc(${token.lineHeightDynamic} + ${token.menuTitlePaddingY}*2)`,
       '$wrapper:not($wrapperVertical) $itemOpen > $itemContent &': {
         transform: 'rotate(180deg)',
       },

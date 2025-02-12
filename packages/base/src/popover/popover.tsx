@@ -133,6 +133,7 @@ const Popover = (props: PopoverProps) => {
       zIndex={zIndex}
       adjust={props.adjust}
       lazy={props.lazy}
+      offset={props.offset}
     >
       <div
         className={classNames(
