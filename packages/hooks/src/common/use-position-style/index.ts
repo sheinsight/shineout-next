@@ -49,6 +49,7 @@ export interface PositionStyleConfig {
   fixedWidth?: boolean | 'min';
   updateKey?: number | string;
   adjust?: boolean;
+  offset?: [number, number];
 }
 
 const hideStyle: React.CSSProperties = {
@@ -70,6 +71,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     scrollElRef,
     updateKey,
     adjust,
+    offset,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
@@ -170,6 +172,9 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
     context.containerRect = containerRect;
     context.containerScroll = containerScroll;
+    console.log('======================')
+    console.log('targetPosition: >>', targetPosition)
+    console.log('======================')
     if (verticalPosition.includes(targetPosition)) {
       const [v, h] = targetPosition.split('-');
       let overRight = 0;
@@ -247,11 +252,11 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     } else if (horizontalPosition.includes(targetPosition)) {
       const [h, v] = targetPosition.split('-');
       if (v === 'top') {
-        style.top = rect.top - containerRect.top + containerScroll.top;
+        style.top = rect.top - containerRect.top + containerScroll.top - (offset ? offset[1] : 0);
         style.transform = '';
         arrayStyle.top = `8px`;
       } else if (v === 'bottom') {
-        style.top = rect.bottom - containerRect.top + containerScroll.top;
+        style.top = rect.bottom - containerRect.top + containerScroll.top + (offset ? offset[1] : 0);
         arrayStyle.bottom = `8px`;
         style.transform = 'translateY(-100%)';
       } else {
