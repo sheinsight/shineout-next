@@ -1,5 +1,5 @@
-## 3.5.8-beta.3
-2025-01-15
+## 3.5.8
+2025-02-13
 ### 🐞 BugFix
 
 - 修复 `Checkbox` 触发两次 `onChange` 的问题（Regression: since v3.5.6） ([#929](https://github.com/sheinsight/shineout-next/pull/929))
