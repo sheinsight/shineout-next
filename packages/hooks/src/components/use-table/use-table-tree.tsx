@@ -5,13 +5,27 @@ import type { BaseTableProps } from './use-table.type';
 import { isObject } from '../../utils/is';
 import { OptionalToRequired } from '../../common/type';
 import { useLatestObj } from '../../common/use-latest-obj';
-import { util } from '@sheinx/hooks'
+import { util } from '@sheinx/hooks';
+
+type treeDataInfoType = {
+  id: string | number;
+  level: number;
+  data: any;
+  pid: null | string | number;
+};
 
 interface GetExpandDataResult {
   treeData: any[];
   treeExpandLevel: Map<any, number>;
   unmatchExpandKeys: (string | number)[];
 }
+interface GetExpandDataVirtualResult {
+  treeData: any[];
+  treeExpandLevel: Map<any, number>;
+  unmatchExpandKeys: (string | number)[];
+  treeDataInfo: treeDataInfoType[];
+}
+
 const getExpandData = (
   _treeData: any[],
   keys: (string | number)[],
@@ -24,7 +38,7 @@ const getExpandData = (
   const treeExpandLevel = new Map();
 
   if (expandSet.size === 0 || !treeColumnsName) {
-    return {treeData: _treeData, treeExpandLevel, unmatchExpandKeys};
+    return { treeData: _treeData, treeExpandLevel, unmatchExpandKeys };
   }
 
   const treeData = [...(_treeData || [])];
@@ -47,7 +61,71 @@ const getExpandData = (
       }
     }
   }
-  return {treeData, treeExpandLevel, unmatchExpandKeys};
+  return { treeData, treeExpandLevel, unmatchExpandKeys };
+};
+
+export const getExpandVirtualData = (
+  _treeData: any[],
+  keys: (string | number)[],
+  keygen: any,
+  treeColumnsName?: string,
+): GetExpandDataVirtualResult => {
+  const expandKeys = keys;
+  const expandSet = new Set(expandKeys);
+  const unmatchExpandKeys: (string | number)[] = [];
+  const treeExpandLevel = new Map();
+
+  if (expandSet.size === 0 || !treeColumnsName) {
+    const treeDataInfo = _treeData.map((item, index) => {
+      return {
+        id: getKey(keygen, item, index),
+        level: 1,
+        data: item,
+        pid: null,
+      };
+    });
+    return { treeData: _treeData, treeExpandLevel, unmatchExpandKeys, treeDataInfo };
+  }
+
+  const treeData = [...(_treeData || [])];
+
+  const treeDataInfo: treeDataInfoType[] = treeData.map((item) => {
+    return {
+      id: getKey(keygen, item),
+      level: 1,
+      data: item,
+      pid: null,
+    };
+  });
+
+  for (let i = 0; i < treeData.length; i++) {
+    if (expandSet.size === 0) break;
+    const item = treeData[i];
+    const key = getKey(keygen, item, i);
+    const parentLevel = treeExpandLevel.get(key) || 0;
+    const children = isObject(item) && (item[treeColumnsName] as any[] | undefined);
+    if (expandSet.has(key)) {
+      if (children && children.length > 0) {
+        const nodes: treeDataInfoType[] = [];
+        children.forEach((child) => {
+          const node = {
+            id: getKey(keygen, child),
+            level: parentLevel + 2,
+            data: child,
+            pid: key,
+          };
+          nodes.push(node);
+          treeExpandLevel.set(getKey(keygen, child), parentLevel + 1);
+        });
+        treeData.splice(i + 1, 0, ...children);
+        treeDataInfo.splice(i + 1, 0, ...nodes);
+        expandSet.delete(key);
+      } else {
+        unmatchExpandKeys.push(key);
+      }
+    }
+  }
+  return { treeData, treeExpandLevel, unmatchExpandKeys, treeDataInfo };
 };
 
 export interface UseTableTreeProps
@@ -117,7 +195,7 @@ export const useTableTree = (props: UseTableTreeProps) => {
     // 检查treeData中的每一项，对比expandKeysState，如果expandKeysState有但是children是空的，则需要修正expandKeysState
     const newExpandKeys = expandKeysState.filter((key) => !unmatchExpandKeys.includes(key));
 
-    if(util.shallowEqual(newExpandKeys, expandKeysState)) {
+    if (util.shallowEqual(newExpandKeys, expandKeysState)) {
       return;
     }
 

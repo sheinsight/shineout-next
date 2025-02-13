@@ -70,22 +70,16 @@ type FilterDatum<DataItem> = {
 };
 
 export const mergeFilteredTree = (
-  filterDatum: FilterDatum<any>,
+  filterData: any,
   rawDatum: FilterDatum<any>,
   tiledId: KeygenResult[],
 ) => {
-  const filterData = filterDatum.data;
-  const { childrenKey } = filterDatum;
+  const { childrenKey } = rawDatum;
   if (tiledId.length === 0) return filterData;
   const recursion = (node: { [x: string]: any }) => {
-    const nodeKey = filterDatum.getKey(node);
+    const nodeKey = rawDatum.getKey(node);
     if (tiledId.indexOf(nodeKey) >= 0) {
       node[childrenKey] = deepClone(rawDatum.getDataById(nodeKey)[childrenKey] || []);
-    } else {
-      const item = filterDatum.getDataById(nodeKey);
-      if (item && item[childrenKey]) {
-        node[childrenKey] = deepClone(item[childrenKey] || []);
-      }
     }
     const children = node[childrenKey] || [];
     children.map(recursion);

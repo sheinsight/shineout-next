@@ -12,14 +12,16 @@ const FormItem = (props: FormItemProps) => {
   const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
   const formItemClasses = jssStyle?.formItem?.();
   const { Provider, ProviderValue, labelConfig, errors, showError, attributes } = useFormItem();
-  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight } = {
+  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight, colon } = {
     ...labelConfig,
     ...rest,
   };
 
-  const renderLabel = () => {
-    if (label === undefined || label === null) return null;
 
+  const renderLabel = () => {
+    if (label === undefined || label === null || label === '') return null;
+
+    const $colon = colon === true ? ':' : colon;
     let $tooltip;
     if (typeof label === 'object' && 'tooltip' in label && label.tooltip) {
       const tooltipProps = {
@@ -46,11 +48,17 @@ const FormItem = (props: FormItemProps) => {
       return (
         <>
           {label.content}
+          {$colon}
           {$tooltip}
         </>
       );
     }
-    return label as React.ReactNode;
+    return (
+      <>
+        {label}
+        {$colon}
+      </>
+    );
   };
 
   return (

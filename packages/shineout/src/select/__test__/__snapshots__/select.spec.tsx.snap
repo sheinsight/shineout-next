@@ -201,7 +201,6 @@ exports[`Select[Base] should render correctly about big data 1`] = `
     class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
-    tabindex="0"
   >
     <div
       class="soui-select-result-wrapper soui-select-wrapper-padding-box soui-select-wrapper-inner-title-top soui-select-wrapper-inner-title-bottom"
@@ -212,13 +211,15 @@ exports[`Select[Base] should render correctly about big data 1`] = `
         <div
           class="soui-select-result-text-wrapper"
         >
+          <input
+            autocomplete="off"
+            placeholder="Static lineHeight"
+            style="width: 100%;"
+            value=""
+          />
           <span
-            class="soui-select-placeholder soui-select-ellipsis"
-          >
-            <span>
-              Static lineHeight
-            </span>
-          </span>
+            class="soui-select-input-mirror"
+          />
         </div>
       </div>
       <div
