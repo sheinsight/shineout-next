@@ -43,4 +43,10 @@ export interface CollapseProps
    * @cn 折叠面板内的内容
    */
   children?: ReactNode;
+  /**
+   * @en Whether to enable collapse animation
+   * @cn 是否开启折叠动画
+   * @default true
+   */
+  animation?: boolean;
 }
