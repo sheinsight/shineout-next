@@ -5,10 +5,18 @@ import { TreeClasses } from './tree.type';
 import TreeList from './tree-list';
 
 const Root = <DataItem, Value extends KeygenResult[]>(props: TreeRootProps<DataItem, Value>) => {
-  const { jssStyle, ...rest } = props;
+  const { jssStyle, rootStyle = {}, ...rest } = props;
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
   const rootClass = classNames(treeStyle.root);
-  return <TreeList {...rest} expanded className={rootClass} jssStyle={jssStyle}></TreeList>;
+  return (
+    <TreeList
+      {...rest}
+      expanded
+      className={rootClass}
+      jssStyle={jssStyle}
+      style={rootStyle}
+    ></TreeList>
+  );
 };
 
 export default Root;

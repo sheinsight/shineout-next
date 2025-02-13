@@ -1,3 +1,9 @@
+## 3.6.0-beta.3
+2025-01-08
+
+### 🆕 Feature
+- `Table` 的 `TableRef` 新增 `sortByColumn` 方法，支持根据列 key 进行排序 ([#914](https://github.com/sheinsight/shineout-next/pull/914))
+
 ## 3.5.8
 2025-02-13
 
