@@ -121,8 +121,8 @@ export const useStyles = createUseStyles(
       borderRadius: '2px',
       margin: '0 4px',
       color: 'var(--soui-neutral-text-4)',
-      border: `1px solid ${codeBg}!important`,
-      backgroundColor: 'var(--soui-neutral-fill-1)',
+      border: `1px solid var(--soui-neutral-fill-3) !important`,
+      backgroundColor: 'var(--soui-neutral-fill-2)',
     },
     code: {
       padding: 14,

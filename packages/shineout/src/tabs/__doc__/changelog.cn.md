@@ -1,5 +1,5 @@
-## 3.5.8-beta.14
-2025-02-11
+## 3.5.8
+2025-02-13
 
 ### 🐞 BugFix
 - 调整 `Tabs` 首次挂载布局更新方式 ([#945](https://github.com/sheinsight/shineout-next/pull/945))
