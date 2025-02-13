@@ -4,7 +4,7 @@
 export interface UploadTokens {
   /**
    * @type {string}
-   * @token Spacing-16
+   * @token Spacing-12
    * @description 上传结果内边距（水平方向）
    */
   uploadResultPaddingX: string;
@@ -40,16 +40,22 @@ export interface UploadTokens {
   uploadResultIconSize: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 上传结果图标颜色
    */
   uploadResultIconColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-2
+   * @token Neutral-fill-3
    * @description 上传结果图标鼠标移入时的背景颜色
    */
   uploadResultIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 上传结果图标鼠标移入时的颜色
+   */
+  uploadResultIconHoverColor: string;
   /**
    * @type {string}
    * @token Font-14
@@ -106,7 +112,7 @@ export interface UploadTokens {
   uploadImageBorderRadius: string;
   /**
    * @type {string}
-   * @token Neutral-border-1
+   * @token Neutral-border-2
    * @description 上传图片操作区边框颜色
    */
   uploadImageHandlerBorderColor: string;
@@ -134,6 +140,18 @@ export interface UploadTokens {
    * @description 上传图片操作区鼠标移入时的字体颜色
    */
   uploadImageHandlerHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-7
+   * @description 上传图片操作区鼠标点击时的边框颜色
+   */
+  uploadImageHandlerActiveBorderColor: string;
+  /**
+   * @type {string}
+   * @token Brand-7
+   * @description 上传图片操作区鼠标点击时的字体颜色
+   */
+  uploadImageHandlerActiveFontColor: string;
   /**
    * @type {string}
    * @token Danger-6
@@ -164,6 +182,12 @@ export interface UploadTokens {
    * @description 上传图片操作区禁用时的字体颜色
    */
   uploadImageHandlerDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 上传图片操作区图标颜色
+   */
+  uploadImageHandlerIconColor: string;
   /**
    * @type {string}
    * @token Neutral-border-1

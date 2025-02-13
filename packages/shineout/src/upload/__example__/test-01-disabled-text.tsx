@@ -1,8 +1,8 @@
 /**
  * cn - 禁用
- *    --
+ *    -- 设置 `disabled` 禁用上传
  * en - Disabled
- *    --
+ *    -- Set `disabled` to disable upload
 
  */
 import React from 'react';
