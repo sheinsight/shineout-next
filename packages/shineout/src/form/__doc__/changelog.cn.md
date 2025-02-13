@@ -1,21 +1,10 @@
-## 3.5.8-beta.17
-2025-02-12
+## 3.5.8
+2025-02-13
 
 ### 🐞 BugFix
 - 修复 `Form` 在异步设置 value 后，带有 defaultValue 的表单项视图更新异常的问题  ([#950](https://github.com/sheinsight/shineout-next/pull/950))
-
-## 3.5.8-beta.5
-2025-01-14
-
-### 🐞 BugFix
 - 修复 `Form` 的 `FieldSet`嵌套使用后，子级的insert value触发了父级的校验的问题 ([#934](https://github.com/sheinsight/shineout-next/pull/934))
-
-
-## 3.5.8-beta.2
-2025-01-14
-
-### 🐞 BugFix
-- 修复 `Form` 的 `FormRef.validateFields("friends[1]")` 这种用法不生效和`FormRef.clearValidate(["friends[1]"])`报错的问题 ([#928](https://github.com/sheinsight/shineout-next/pull/928))
+- 修复 `Form` 的 `FormRef.validateFields("friends[1]")` 这种用法不生效和 `FormRef.clearValidate(["friends[1]"])` 报错的问题 ([#928](https://github.com/sheinsight/shineout-next/pull/928))
 
 
 ## 3.5.7
