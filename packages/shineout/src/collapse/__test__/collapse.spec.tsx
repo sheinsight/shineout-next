@@ -59,7 +59,7 @@ const {
 } = createClassName(SO_PREFIX_ITEM, originClassesByItem, originItemClassesByItem);
 
 // style without delay
-const defaultContentStyle = 'display: none; height: 0px; overflow: hidden;';
+const defaultContentStyle = 'display: none;';
 const defaultContentStyleActive = 'display: block; height: 0px; overflow: hidden;';
 
 // simple style
@@ -266,7 +266,7 @@ describe('Collapse[Base]', () => {
     );
     const collapseWrapper = container.querySelector(collapseClassName)!;
     const collapseItemWrappers = collapseWrapper.querySelectorAll(collapseItemClassName);
-    styleTest(collapseItemWrappers[0].querySelector(content)!, defaultContentStyleActive);
+    styleTest(collapseItemWrappers[0].querySelector(content)!, simpleDefaultContentStyleActive);
   });
   test('should render when set active and defaultActive at the same time', () => {
     const { container } = render(
@@ -277,7 +277,7 @@ describe('Collapse[Base]', () => {
     );
     const collapseWrapper = container.querySelector(collapseClassName)!;
     const collapseItemWrappers = collapseWrapper.querySelectorAll(collapseItemClassName);
-    styleTest(collapseItemWrappers[0].querySelector(content)!, defaultContentStyleActive);
+    styleTest(collapseItemWrappers[0].querySelector(content)!, simpleDefaultContentStyleActive);
     styleTest(collapseItemWrappers[1].querySelector(content)!, defaultContentStyle);
   });
   test('should render when set active and onChange', async () => {
@@ -296,7 +296,7 @@ describe('Collapse[Base]', () => {
     const { container } = render(<App />);
     const collapseWrapper = container.querySelector(collapseClassName)!;
     const collapseItemWrappers = collapseWrapper.querySelectorAll(collapseItemClassName);
-    styleTest(collapseItemWrappers[0].querySelector(content)!, defaultContentStyleActive);
+    styleTest(collapseItemWrappers[0].querySelector(content)!, simpleDefaultContentStyleActive);
     fireEvent.click(collapseItemWrappers[1].querySelector(icon)!);
     styleContentTest(
       collapseItemWrappers[1].querySelector(content)!,
