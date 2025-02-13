@@ -3,7 +3,7 @@ import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
 import { JsstyleType, TreeRenderItemType } from './tree.type';
 import { TreeListProps } from './tree-list.type';
 
-export interface TreeNodeProps<DataItem, Value extends KeygenResult[]>
+export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className'> {
   jssStyle?: JsstyleType;
@@ -23,7 +23,7 @@ export interface TreeNodeProps<DataItem, Value extends KeygenResult[]>
   nodeClass?: string | ((data: DataItem) => string);
   contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
-  childrenClass: (data: DataItem) => string | undefined;
+  childrenClass?: ((data: DataItem) => string) | string;
   bindNode: (
     id: KeygenResult,
     update: UpdateFunc,
@@ -44,3 +44,35 @@ export interface TreeNodeProps<DataItem, Value extends KeygenResult[]>
   onDragOver?: (e: React.DragEvent, data: DataItem) => void;
   onDragLeave?: (e: React.DragEvent, data: DataItem) => void;
 }
+
+export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
+  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey'>,
+    Pick<CommonType, 'className'> {
+  jssStyle?: JsstyleType;
+  id: KeygenResult;
+  data: DataItem;
+  index: number;
+  line: boolean;
+  doubleClickExpand?: boolean;
+  parentClickExpand?: boolean;
+  childrenKey: keyof DataItem;
+  onChange?: (value: Value) => void;
+  childrenClass?: ((data: DataItem) => string) | string;
+  onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
+  onToggle?: (id: KeygenResult, expanded?: boolean) => void;
+  iconClass?: string;
+  leafClass?: string | ((data: DataItem) => string);
+  nodeClass?: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
+  expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
+  onNodeClick: (data: DataItem, id: KeygenResult) => void;
+  renderItem: TreeRenderItemType<DataItem>;
+  loader?: (key: KeygenResult, data: DataItem) => void;
+  inlineNode?: boolean;
+  highlight?: boolean;
+  level: number;
+}
+
+export type TreeNodeProps<DataItem, Value extends KeygenResult[]> =
+  | ({ virtual: true } & TreeVirtualNodeProps<DataItem, Value>)
+  | ({ virtual?: false | undefined } & TreeSimpleNodeProps<DataItem, Value>);

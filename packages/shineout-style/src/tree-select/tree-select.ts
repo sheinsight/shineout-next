@@ -153,10 +153,12 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     [getTokenName('treeFontColor')]: token.treeSelectOptionFontColor,
     [getTokenName('treeContentHoverFontColor')]: token.treeSelectContentHoverFontColor,
     [getTokenName('treeContentHoverBackgroundColor')]: token.treeSelectContentHoverBackgroundColor,
-    [getTokenName('treeContentActiveBackgroundColor')]: token.treeSelectContentActiveBackgroundColor,
+    [getTokenName('treeContentActiveBackgroundColor')]:
+      token.treeSelectContentActiveBackgroundColor,
     [getTokenName('treeContentActiveFontColor')]: token.treeSelectContentActiveFontColor,
     [getTokenName('treeContentDisabledFontColor')]: token.treeSelectContentDisabledFontColor,
-    [getTokenName('treeContentDisabledBackgroundColor')]: token.treeSelectContentDisabledBackgroundColor,
+    [getTokenName('treeContentDisabledBackgroundColor')]:
+      token.treeSelectContentDisabledBackgroundColor,
   },
   wrapperEmpty: {},
   wrapperOpen: {},
@@ -382,7 +384,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     paddingBottom: 3,
   },
   tree: {
-    padding: 4,
+    // padding: 4,
     overflow: 'auto',
   },
   treeOption: {

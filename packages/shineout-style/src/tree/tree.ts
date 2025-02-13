@@ -7,6 +7,7 @@ export type TreeClassType = keyof TreeClasses;
 const treeStyle: JsStyles<TreeClassType> = {
   rootClass: {},
   tree: {},
+  virtual: {},
   line: {
     '& $node': {
       '&[dir=ltr]::before': { left: 0 },
@@ -63,7 +64,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     '& $iconWrapper': {
       '& $icon': {
         transition: 'transform .2s cubic-bezier(.34,.69,.1,1)',
-      }
+      },
     },
 
     '& $iconWrapper[data-expanded="false"][data-icon="false"]': {
@@ -86,8 +87,8 @@ const treeStyle: JsStyles<TreeClassType> = {
     '& > $root': {
       '& > $node': {
         paddingLeft: 24,
-      }
-    }
+      },
+    },
   },
   root: {
     // '& > :first-child$node': {
@@ -113,7 +114,7 @@ const treeStyle: JsStyles<TreeClassType> = {
       '&::after': {
         display: 'none',
       },
-    }
+    },
   },
   small: {},
   large: {},
