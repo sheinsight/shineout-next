@@ -1,3 +1,18 @@
+## 3.6.0-beta.4
+2025-02-11
+
+### 💎 Enhancement
+
+- `TreeSelect` 组件新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
+
+## 3.6.0-beta.2
+2024-12-19
+
+### 💎 Performance
+- 优化 `TreeSelect` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
+- 优化 `TreeSelect` 在大数据量下同时被渲染很多个时的页面初始化性能问题 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
+
+
 ## 3.4.4
 2024-10-28
 

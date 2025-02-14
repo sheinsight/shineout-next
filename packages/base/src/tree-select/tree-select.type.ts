@@ -413,4 +413,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @default 400
    */
   filterDelay?: number;
+  /**
+   * @en Virtual list
+   * @cn 虚拟列表
+   */
+  virtual?: boolean;
 }

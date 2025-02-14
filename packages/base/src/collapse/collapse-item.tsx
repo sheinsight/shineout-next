@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import type { CollapseItemProps } from './collapse-item.type';
 import groupContext from './group-context';
@@ -15,6 +15,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     expandIconPosition,
     extraPosition,
     border,
+    animation: animationProp,
   } = useContext(groupContext);
   const {
     children,
@@ -29,6 +30,8 @@ const CollapseItem = (props: CollapseItemProps) => {
     extra,
     contentStyle,
   } = props;
+
+  const [animation, setAnimation] = useState(false);
 
   const config = useConfig();
 
@@ -89,6 +92,7 @@ const CollapseItem = (props: CollapseItemProps) => {
       <AnimationList
         show={judgeExpanded}
         type={'collapse'}
+        animation={animation}
         duration='fast'
         className={collapseItemContentClassName}
       >
@@ -99,12 +103,27 @@ const CollapseItem = (props: CollapseItemProps) => {
     );
   };
 
+  useEffect(() => {
+    if (animationProp) {
+      setAnimation(true);
+    }
+  }, []);
+
   return (
     <div className={collapseItemClassName} style={style}>
       <div {...getItemContentProps({ className: collapseItemHeaderClassName })}>
         {expandIconPosition === 'left' && headerIconItem()}
         {extraPosition === 'left' && extraItem()}
-        <div {...getTitleProps({ className: classNames(jssStyle?.collapseItem.title, triggerRegion === 'header' && jssStyle?.collapseItem.region) })}>{title}</div>
+        <div
+          {...getTitleProps({
+            className: classNames(
+              jssStyle?.collapseItem.title,
+              triggerRegion === 'header' && jssStyle?.collapseItem.region,
+            ),
+          })}
+        >
+          {title}
+        </div>
         {extraPosition === 'right' && extraItem()}
         {expandIconPosition === 'right' && headerIconItem()}
       </div>

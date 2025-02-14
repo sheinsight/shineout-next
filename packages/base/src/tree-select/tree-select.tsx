@@ -59,6 +59,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     style,
     width,
     height = 250,
+    virtual,
     childrenKey,
     keygen,
     loader,
@@ -98,6 +99,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     cachedMap: new Map(),
   });
   const [focused, setFocused] = useState(false);
+  const [virtualExpanded, setVirtualExpanded] = useState<KeygenResult[]>([]);
 
   const { value, onChange } = useTreeSelect({
     value: valueProp,
@@ -142,21 +144,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   });
 
   const controlExpanded = 'expanded' in props || expanded?.length ? expanded : undefined;
-  const { datum, onExpand: onExpandTree } = useTree({
-    mode,
-    value,
-    data,
-    unmatch,
-    disabled,
-    active: multiple ? undefined : value[0],
-    childrenKey: childrenKey,
-    keygen,
-    onExpand,
-    expanded: controlExpanded,
-    defaultExpanded: defaultExpanded,
-    defaultExpandAll: defaultExpandAll,
-    isControlled: controlExpanded !== undefined,
-  });
 
   const renderMoreIcon = () => {
     return Icons.treeSelect.More;
@@ -177,6 +164,28 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     expanded,
     rawData: rawData!,
     onFilter,
+    // rawDatum: datum,
+  });
+
+  const {
+    datum,
+    onExpand: onExpandTree,
+    expanded: unControlExpanded,
+  } = useTree({
+    mode,
+    value,
+    data: tiledData,
+    unmatch,
+    virtual,
+    disabled,
+    active: multiple ? undefined : value[0],
+    childrenKey: childrenKey,
+    keygen,
+    onExpand,
+    expanded: controlExpanded,
+    defaultExpanded: defaultExpanded,
+    defaultExpandAll: defaultExpandAll,
+    isControlled: controlExpanded !== undefined,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {
@@ -204,6 +213,14 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     trigger: 'click',
     position: positionProp,
   });
+
+  const [hadOpened, setHadOpened] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setHadOpened(true);
+    }
+  }, [open]);
 
   const tipNode = useTip({
     popover: props.popover,
@@ -269,6 +286,11 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       openPop();
     }
   });
+
+  const handleExpanded = (id: KeygenResult[]) => {
+    setVirtualExpanded(id);
+    onExpandTree(id);
+  };
 
   const focusAndOpen = () => {
     if (!focused) {
@@ -434,6 +456,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     if (from !== 'blur') {
       focusAndOpen();
     }
+    setVirtualExpanded([]);
     onTiledFilter?.(trim ? text.trim() : text);
   };
 
@@ -535,6 +558,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           filterText={filterText}
           onFilter={handleFilter}
           onRef={inputRef}
+          inputRef={inputRef}
           checkUnMatched={checkUnMatched}
           onClearCreatedData={onClearCreatedData}
           getDataByValues={getResultByValue}
@@ -608,23 +632,30 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       treeProps.expanded = expanded;
     }
 
+    const style = { maxHeight: height };
+
     return (
-      <div className={classNames(styles.tree, styles.treeWrapper)} style={{ maxHeight: height }}>
+      <div className={classNames(styles.tree, styles.treeWrapper)} style={style}>
         <Tree
+          rootStyle={{ padding: '0 4px' }}
           jssStyle={jssStyle}
           renderItem={renderItem}
           {...treeProps}
+          virtual={virtual}
           childrenKey={props.childrenKey}
           line={line}
           mode={mode}
+          height={height}
           data={tiledData}
           keygen={keygen}
           unmatch={unmatch}
           value={value}
           highlight={!multiple}
           loader={loader}
-          onExpand={onExpandTree}
-          expanded={controlExpanded}
+          onExpand={handleExpanded}
+          expanded={
+            virtualExpanded.length > 0 ? virtualExpanded : controlExpanded || unControlExpanded
+          }
           defaultExpandAll={defaultExpandAll}
           expandIcons={tiledExpandIcons}
           disabled={disabled}
@@ -661,7 +692,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     >
       {tipNode}
       {renderResult()}
-      <AbsoluteList
+      {hadOpened && <AbsoluteList
         adjust={adjust}
         focus={open}
         fixedWidth='min'
@@ -683,7 +714,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
         >
           {renderList()}
         </AnimationList>
-      </AbsoluteList>
+      </AbsoluteList>}
     </div>
   );
 };

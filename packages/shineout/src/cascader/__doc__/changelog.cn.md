@@ -1,30 +1,15 @@
-## 3.5.8-beta.12
-2025-01-24
-
-### 🐞 BugFix
-- 修复 `Cascader` 开启动态搜索后部分场景下父禁用子而可选的问题 ([#942](https://github.com/sheinsight/shineout-next/pull/942))
-
-## 3.5.8-beta.7
-2025-01-21
+## 3.5.8
+2025-02-13
 
 ### 💎 Enhancement
 - `Cascader` 新增 `disabled` 配置模式，支持实时计算 disabled 状态 ([#936](https://github.com/sheinsight/shineout-next/pull/936))
-
-## 3.5.8-beta.3
-2025-01-15
+- `Cascader` 支持非 hover 的多选模式下，末级节点整个节点区域点击选中 Checkbox ([#927](https://github.com/sheinsight/shineout-next/pull/927))
 
 ### 🐞 BugFix
+- 修复 `Cascader` 开启动态搜索后部分场景下父禁用子而可选的问题 ([#942](https://github.com/sheinsight/shineout-next/pull/942))
 - 修复 `Cascader` 禁用状态下的箭头图标颜色不正确的问题 ([#930](https://github.com/sheinsight/shineout-next/pull/930))
-
-
-## 3.5.8-beta.1
-2025-01-14
-
-### 💎 Enhancement
-- `Cascader` 非hover的多选模式下，末级节点支持整个节点区域点击选中checkbox ([#927](https://github.com/sheinsight/shineout-next/pull/927))
-
-### 🐞 BugFix
 - 修复 `Cascader` 多选模式下搜索时没有自动展开命中结果的问题（Regression: since v3.1.6） ([#926](https://github.com/sheinsight/shineout-next/pull/926))
+
 
 ## 3.5.6
 2025-01-06

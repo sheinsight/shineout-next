@@ -143,7 +143,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     isRtl,
   });
 
-  const { sortedData, sortInfo, onSorterChange } = useTableSort({
+  const { sortedData, sortInfo, onSorterChange, sortByColumn } = useTableSort({
     data: props.data,
     sorter: props.sorter,
     onSortCancel: props.onSortCancel,
@@ -552,6 +552,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   };
 
   const tableFunc = useLatestObj({
+    sortByColumn,
     scrollToIndex: virtualInfo.scrollToIndex,
     getRenderIndexByData: getRenderIndexByData,
     scrollColumnIntoView: virtualInfo.scrollColumnIntoView,
