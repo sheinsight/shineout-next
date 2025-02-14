@@ -27,6 +27,7 @@ const App: React.FC = () => {
           if (xhr.status === 404) return 'Url not found.';
           return 'Upload Fail.';
         }}
+        style={{ width: 400 }}
       >
         <Button mode={'outline'}>
           <UploadIcon style={{ marginInlineEnd: 4 }} />

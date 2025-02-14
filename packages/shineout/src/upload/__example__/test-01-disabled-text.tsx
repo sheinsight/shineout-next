@@ -18,6 +18,7 @@ const App: React.FC = () => {
       htmlName='file'
       disabled
       onSuccess={(_res, file) => file.name}
+      style={{ width: 400 }}
     >
       <Button mode={'outline'} disabled>
         <UploadIcon style={{ marginInlineEnd: 4 }} />

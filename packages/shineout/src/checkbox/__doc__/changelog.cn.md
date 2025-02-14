@@ -1,3 +1,9 @@
+## 3.6.0-beta.5
+2025-02-13
+### 🐞 BugFix
+
+- 修复 `Checkbox` 在Form中使用且传了name时, Checkbox的onChange会触发两次的问题（Regression: since v3.4.3）([#955](https://github.com/sheinsight/shineout-next/pull/955))
+
 ## 3.5.8-beta.3
 2025-01-15
 ### 🐞 BugFix

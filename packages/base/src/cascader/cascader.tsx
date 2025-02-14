@@ -417,7 +417,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderClearable = () => {
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = (compressed || multiple) ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     const arrow = (
       <span
         className={classNames(

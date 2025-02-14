@@ -94,6 +94,7 @@ const Tag = (props: TagProps) => {
   const renderInput = () => {
     return (
       <TagInput
+        size={size}
         value={value}
         className={classNames(tagStyle.input)}
         jssStyle={jssStyle}

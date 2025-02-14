@@ -30,6 +30,7 @@ const App: React.FC = () => {
           data: data,
         };
       }}
+      style={{ width: 400 }}
     />
   );
 };

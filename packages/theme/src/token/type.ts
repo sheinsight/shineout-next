@@ -562,6 +562,13 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#020B18'
+   * @description -10
+   */
+  'Neutral-10': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#FAF4E3'
    * @description 浅色背景
    */
@@ -961,8 +968,43 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#020B18'
+   * @description
+   */
+  'Neutral-fill-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#141737'
+   * @description
+   */
+  'Neutral-fill-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#333E59'
+   * @description
+   */
+  'Neutral-fill-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#666C7C'
+   * @description
+   */
+  'Neutral-fill-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#999DA8'
+   * @description
+   */
+  'Neutral-fill-6': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#B3B7C1'
-   * @description 点击
+   * @description
    */
   'Neutral-fill-5': string;
   /**

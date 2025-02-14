@@ -57,7 +57,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
   result: {
     display: 'flex',
     alignItems: 'center',
-    gap: '12px',
+    gap: '8px',
     borderRadius: token.uploadResultBorderRadius,
     padding: `${token.uploadResultPaddingY} ${token.uploadResultPaddingX}`,
     '&:hover': {

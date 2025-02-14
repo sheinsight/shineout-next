@@ -43,7 +43,7 @@ export default createUseStyles(
         cursor: 'pointer',
         '& svg': {
           width: 16,
-          color: 'var(--soui-neutral-text-5)',
+          color: 'var(--soui-neutral-fill-8)',
         },
         '&:hover:after': {
           display: 'none',
@@ -139,6 +139,9 @@ export default createUseStyles(
       alignItems: 'center',
       justifyContent: 'flex-end',
       gap: 24,
+      '& $icon svg': {
+        color: 'var(--soui-neutral-text-8)',
+      }
     },
     tip: {
       margin: '0 5px',
