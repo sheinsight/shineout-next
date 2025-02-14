@@ -23,6 +23,7 @@ const App: React.FC = () => (
         console.log(error, file);
         return true;
       }}
+      style={{ width: 400 }}
     >
       <Button mode={'outline'}>
         <UploadIcon style={{ marginInlineEnd: 4 }} />

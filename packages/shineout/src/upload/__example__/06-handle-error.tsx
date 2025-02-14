@@ -21,6 +21,7 @@ const App: React.FC = () => (
         return 'Upload Fail.';
       }}
       limit={3}
+      style={{ width: 400 }}
     >
       <Button mode={'outline'}>
         <UploadIcon style={{ marginInlineEnd: 4 }} />

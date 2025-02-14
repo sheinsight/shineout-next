@@ -172,9 +172,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
     context.containerRect = containerRect;
     context.containerScroll = containerScroll;
-    console.log('======================')
-    console.log('targetPosition: >>', targetPosition)
-    console.log('======================')
     if (verticalPosition.includes(targetPosition)) {
       const [v, h] = targetPosition.split('-');
       let overRight = 0;

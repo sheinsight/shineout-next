@@ -3,9 +3,11 @@
 exports[`Upload[Base] should render correctly  1`] = `
 <div
   class="soui-upload soui-upload-wrapper"
+  style="width: 400px;"
 >
   <span
     class="soui-upload-handler"
+    role="button"
   >
     <button
       class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -44,6 +46,7 @@ exports[`Upload[Base] should render correctly about base button 1`] = `
 >
   <span
     class="soui-upload-handler"
+    role="button"
   >
     <button
       class="soui-upload-button soui-button soui-button-primary soui-button-button"
@@ -69,6 +72,7 @@ exports[`Upload[Base] should render correctly about base image 1`] = `
 >
   <span
     class="soui-upload-image-handler"
+    role="button"
     style="width: 80px; height: 80px;"
   >
     <div
@@ -98,9 +102,11 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
 <div>
   <div
     class="soui-upload soui-upload-wrapper"
+    style="width: 400px;"
   >
     <span
       class="soui-upload-handler"
+      role="button"
     >
       <button
         class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -197,6 +203,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
   >
     <span
       class="soui-upload-image-handler"
+      role="button"
       style="width: 80px; height: 80px;"
     >
       <div
@@ -223,7 +230,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       style="width: 80px; height: 80px;"
     >
       <div
-        class="soui-upload-image-bg soui-image soui-image-image soui-image-center soui-image-rounded"
+        class="soui-upload-image-bg soui-image soui-image-image soui-image-fill soui-image-rounded"
         style="width: auto; padding-bottom: 0px;"
         target="_modal"
       >
@@ -283,10 +290,11 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
 <div>
   <div
     class="soui-upload soui-upload-wrapper"
-    style="width: 300px; margin-bottom: 30px;"
+    style="width: 400px;"
   >
     <span
       class="soui-upload-handler"
+      role="button"
     >
       <button
         class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -394,6 +402,7 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
     >
       <span
         class="soui-upload-handler"
+        role="button"
       >
         <div
           style="height: 200px; box-sizing: border-box; padding: 50px 16px; font-size: 12px; line-height: 16px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;"
@@ -437,6 +446,7 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
     >
       <span
         class="soui-upload-image-handler"
+        role="button"
         style="width: 200px; height: 156px;"
       >
         <div
@@ -475,9 +485,11 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
 <div>
   <div
     class="soui-upload soui-upload-wrapper"
+    style="width: 400px;"
   >
     <span
       class="soui-upload-handler"
+      role="button"
     >
       <button
         class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -515,9 +527,11 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
 <div>
   <div
     class="soui-upload soui-upload-wrapper"
+    style="width: 400px;"
   >
     <span
       class="soui-upload-handler"
+      role="button"
     >
       <button
         class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -614,6 +628,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
   >
     <span
       class="soui-upload-image-handler"
+      role="button"
       style="width: 80px; height: 80px;"
     >
       <div
@@ -640,7 +655,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       style="width: 80px; height: 80px;"
     >
       <div
-        class="soui-upload-image-bg soui-image soui-image-image soui-image-center soui-image-rounded"
+        class="soui-upload-image-bg soui-image soui-image-image soui-image-fill soui-image-rounded"
         style="width: auto; padding-bottom: 0px;"
         target="_modal"
       >
@@ -699,9 +714,11 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
 exports[`Upload[Base] should render correctly about request 1`] = `
 <div
   class="soui-upload soui-upload-wrapper"
+  style="width: 400px;"
 >
   <span
     class="soui-upload-handler"
+    role="button"
   >
     <button
       class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -737,9 +754,11 @@ exports[`Upload[Base] should render correctly about request 1`] = `
 exports[`Upload[Base] should render correctly about request ignore 1`] = `
 <div
   class="soui-upload soui-upload-wrapper"
+  style="width: 400px;"
 >
   <span
     class="soui-upload-handler"
+    role="button"
   >
     <button
       class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -775,10 +794,11 @@ exports[`Upload[Base] should render correctly about request ignore 1`] = `
 exports[`Upload[Base] should render correctly about request zip 1`] = `
 <div
   class="soui-upload soui-upload-wrapper"
-  style="width: 300px;"
+  style="width: 400px;"
 >
   <span
     class="soui-upload-handler"
+    role="button"
   >
     <button
       class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -813,9 +833,11 @@ exports[`Upload[Base] should render correctly about request zip 1`] = `
 exports[`Upload[Base] should render correctly about result 1`] = `
 <div
   class="soui-upload soui-upload-wrapper"
+  style="width: 400px;"
 >
   <span
     class="soui-upload-handler"
+    role="button"
   >
     <button
       class="soui-button soui-button-secondary soui-button-button soui-button-outline"
@@ -854,6 +876,7 @@ exports[`Upload[Base] should render correctly about result image 1`] = `
 >
   <span
     class="soui-upload-image-handler"
+    role="button"
     style="width: 80px; height: 80px;"
   >
     <div
@@ -885,6 +908,7 @@ exports[`Upload[Base] should render correctly about validate image 1`] = `
 >
   <span
     class="soui-upload-image-handler"
+    role="button"
     style="width: 400px; height: 200px;"
   >
     <div
@@ -930,9 +954,11 @@ exports[`Upload[Base] should render correctly about validate size 1`] = `
 <div>
   <div
     class="soui-upload soui-upload-wrapper"
+    style="width: 400px;"
   >
     <span
       class="soui-upload-handler"
+      role="button"
     >
       <button
         class="soui-button soui-button-secondary soui-button-button soui-button-outline"

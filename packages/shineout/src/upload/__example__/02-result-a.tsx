@@ -26,6 +26,7 @@ const App: React.FC = () => {
         setValue(v);
       }}
       limit={3}
+      style={{ width: 400 }}
     >
       <Button mode={'outline'}>
         <UploadIcon style={{ marginInlineEnd: 4 }} />

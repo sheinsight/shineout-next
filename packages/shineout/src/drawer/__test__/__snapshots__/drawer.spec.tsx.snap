@@ -931,6 +931,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 >
                   <span
                     class="soui-upload-image-handler"
+                    role="button"
                     style="width: 80px; height: 80px;"
                   >
                     <div

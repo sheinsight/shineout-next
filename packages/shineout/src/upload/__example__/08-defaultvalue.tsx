@@ -23,7 +23,7 @@ const App: React.FC = () => (
       limit={2}
       name='file'
       onSuccess={(_res, file) => ({ name: file.name })}
-      style={{ width: 300, marginBottom: 30 }}
+      style={{ width: 400 }}
       defaultValue={defaultValue}
       renderResult={(f) => f.name}
     >

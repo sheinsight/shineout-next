@@ -106,6 +106,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
           )}
           style={listType === 'image' ? imageStyle : undefined}
           {...wrapperProps}
+          role="button"
         >
           {listType === 'image' &&
             (props.children || (

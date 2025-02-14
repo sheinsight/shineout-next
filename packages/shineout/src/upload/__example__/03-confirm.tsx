@@ -23,6 +23,7 @@ const App: React.FC = () => (
       renderResult={(d) => d.name}
       onSuccess={(_res, file) => ({ name: file.name })}
       removeConfirm='Are you sure to delete it ?'
+      style={{ width: 400 }}
     >
       <Button mode={'outline'}>
         <UploadIcon style={{ marginInlineEnd: 4 }} />
