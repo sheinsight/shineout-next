@@ -16,7 +16,7 @@ export interface DescriptionsTokens {
   descriptionsLabelPaddingBottom: string;
   /**
    * @type {string}
-   * @token Spacing-24
+   * @token Spacing-8
    * @description 描述列表标签的内边距右部
    */
   descriptionsLabelPaddingRight: string;

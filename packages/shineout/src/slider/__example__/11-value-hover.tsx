@@ -7,6 +7,10 @@
 import React from 'react';
 import { Slider } from 'shineout';
 
-const App: React.FC = () => <Slider defaultValue={50} valueTipType='hover' />;
+const App: React.FC = () => <div>
+  <Slider defaultValue={50} valueTipType='hover' />
+
+  <Slider defaultValue={50} valueTipType='hover' disabled />
+</div>;
 
 export default App;

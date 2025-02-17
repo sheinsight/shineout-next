@@ -472,11 +472,11 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     // },
   },
   optionActive: {
-    color: token.treeSelectOptionActiveColor,
-    backgroundColor: token.treeSelectOptionActiveBackgroundColor,
-    '&>div': {
-      color: token.treeSelectOptionActiveColor,
-    },
+    // color: token.treeSelectOptionActiveColor,
+    // backgroundColor: token.treeSelectOptionActiveBackgroundColor,
+    // '&>div': {
+    //   color: token.treeSelectOptionActiveColor,
+    // },
   },
   optionDisabled: {
     cursor: 'not-allowed',
