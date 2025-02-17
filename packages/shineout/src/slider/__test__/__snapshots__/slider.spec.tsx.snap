@@ -1021,50 +1021,100 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
 `;
 
 exports[`Slider[Base] should render correctly about value hover 1`] = `
-<div
-  class="soui-slider soui-slider-wrapper"
->
+<div>
   <div
-    class="soui-slider-track"
+    class="soui-slider soui-slider-wrapper"
   >
     <div
-      class="soui-slider-track-inner"
-      dir="ltr"
-      style="left: 0%; right: 50%;"
+      class="soui-slider-track"
     >
       <div
-        class="soui-slider-indicator soui-slider-indicator-end soui-slider-indicator-hover"
+        class="soui-slider-track-inner"
         dir="ltr"
-      />
-      <div
-        class="soui-slider-end-value soui-slider-value soui-slider-value-hover"
-        dir="ltr"
+        style="left: 0%; right: 50%;"
       >
-        50
+        <div
+          class="soui-slider-indicator soui-slider-indicator-end soui-slider-indicator-hover"
+          dir="ltr"
+        />
+        <div
+          class="soui-slider-end-value soui-slider-value soui-slider-value-hover"
+          dir="ltr"
+        >
+          50
+        </div>
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale-wrapper"
+    >
+      <div
+        class="soui-slider-scale"
+      >
+        <div
+          class="soui-slider-label"
+          dir="ltr"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="soui-slider-scale"
+      >
+        <div
+          class="soui-slider-label"
+          dir="ltr"
+        >
+          100
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="soui-slider-scale-wrapper"
+    class="soui-slider soui-slider-wrapper soui-slider-disabled"
   >
     <div
-      class="soui-slider-scale"
+      class="soui-slider-track"
     >
       <div
-        class="soui-slider-label"
+        class="soui-slider-track-inner"
         dir="ltr"
+        style="left: 0%; right: 50%;"
       >
-        0
+        <div
+          class="soui-slider-indicator soui-slider-indicator-end soui-slider-indicator-hover"
+          dir="ltr"
+        />
+        <div
+          class="soui-slider-end-value soui-slider-value soui-slider-value-hover"
+          dir="ltr"
+        >
+          50
+        </div>
       </div>
     </div>
     <div
-      class="soui-slider-scale"
+      class="soui-slider-scale-wrapper"
     >
       <div
-        class="soui-slider-label"
-        dir="ltr"
+        class="soui-slider-scale"
       >
-        100
+        <div
+          class="soui-slider-label"
+          dir="ltr"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="soui-slider-scale"
+      >
+        <div
+          class="soui-slider-label"
+          dir="ltr"
+        >
+          100
+        </div>
       </div>
     </div>
   </div>
