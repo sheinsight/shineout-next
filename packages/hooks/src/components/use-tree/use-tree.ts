@@ -30,6 +30,8 @@ function toArray<Value>(value: Value) {
   return value;
 }
 
+const global_tree_map = new Map<object, TreeContext<any>>()
+
 export const MODE = {
   /**
    * 返回全选数据，包含父节点和子节点

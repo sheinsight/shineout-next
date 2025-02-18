@@ -6,6 +6,7 @@
 - `Form` 新增 `colon` 属性，用于控制 label 是否显示冒号 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
 
 
+
 ## 3.5.8
 2025-02-13
 
