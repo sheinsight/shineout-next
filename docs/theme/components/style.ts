@@ -158,6 +158,25 @@ export default createUseStyles(
         boxSizing: 'border-box',
       },
     },
+    guideIcon: {
+      width: 14,
+      height: 14,
+      marginRight: 4,
+      '& svg': {
+        width: '100%',
+        height: '100%',
+      },
+    },
+    guideIconSuccess: {
+      '& svg': {
+        fill: 'var(--soui-success-6)',
+      },
+    },
+    guideIconWarning: {
+      '& svg': {
+        fill: 'var(--soui-warning-6)',
+      },
+    },
     api: {
       padding: 24,
       display: 'flex',
@@ -225,7 +244,7 @@ export default createUseStyles(
       marginTop: 16,
       display: 'flex',
       flexWrap: 'wrap',
-      padding: '0 40px',
+      padding: '0 0 0 40px',
       maxWidth: 909,
       boxSizing: 'content-box',
       gap: 24,
@@ -238,7 +257,7 @@ export default createUseStyles(
     },
     image: {
       width: '100%',
-      maxWidth: 412,
+      maxWidth: 442,
     },
     imageContent: {
       display: 'flex',
