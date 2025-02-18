@@ -13,7 +13,7 @@ const App: React.FC = () => (
   <div style={style}>
     <Popover>Disabled parent</Popover>
 
-    <Button disabled>Disabled</Button>
+    <Button disabled mode="outline">Disabled</Button>
   </div>
 );
 

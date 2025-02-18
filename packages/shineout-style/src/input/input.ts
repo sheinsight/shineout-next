@@ -246,6 +246,14 @@ const input: JsStyles<keyof InputClasses> = {
         transform: 'rotate(-90deg)',
       },
     },
+
+    '$wrapperDisabled & > span': {
+      color: token.inputDisabledFontColor,
+      borderColor: token.inputDisabledBorderColor,
+      '&:first-child': {
+        borderColor: token.inputDisabledBorderColor,
+      },
+    },
   },
   passwordToggle: {
     display: 'flex',

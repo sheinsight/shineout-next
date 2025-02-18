@@ -37,10 +37,11 @@ exports[`Image[Group] should render correctly about group 1`] = `
 >
   <div
     class="soui-image-group"
+    style="font-size: 0px;"
   >
     <a
       class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded"
-      style="width: 128px; padding-bottom: 128px;"
+      style="margin-bottom: 8px; width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
@@ -54,7 +55,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
     </a>
     <a
       class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded"
-      style="width: 128px; padding-bottom: 128px;"
+      style="margin-bottom: 8px; width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
@@ -68,7 +69,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
     </a>
     <a
       class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded"
-      style="width: 128px; padding-bottom: 128px;"
+      style="margin-bottom: 8px; width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
@@ -82,7 +83,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
     </a>
     <a
       class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded"
-      style="width: 128px; padding-bottom: 128px;"
+      style="margin-bottom: 8px; width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
@@ -96,7 +97,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
     </a>
     <a
       class="soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview"
-      style="width: 128px; padding-bottom: 128px;"
+      style="margin-bottom: 8px; width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div

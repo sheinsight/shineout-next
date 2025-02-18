@@ -82,6 +82,8 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
   const isHoverAble = expandTrigger === 'hover' || expandTrigger === 'hover-only';
 
+  const isRealLeafNode = !hasChildren && !uncertainChildren
+
   const getEvents = () => {
     const events: any = {};
 
@@ -92,6 +94,9 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     if (isHoverAble) {
       events.onMouseEnter = handlePathChange;
       if (multiple) events.onClick = handleSelect;
+    }else if(isRealLeafNode && multiple){
+      // 非hover模式下: 末级节点支持整个节点区域点击选中checkbox
+      events.onClick = handleSelect;
     }
     return events;
   };
@@ -115,9 +120,12 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
     return null;
   };
+
+  const events = getEvents();
+
   return (
-    <div className={rootClass} {...getEvents()}>
-      <div className={classNames(styles.optionInner)}>
+    <div className={rootClass} {...events}>
+      <div className={classNames(styles.optionInner)} role="button">
         {multiple && !(shouldFinal && hasChildren) && (
           <Checkbox
             // @ts-ignore
@@ -126,7 +134,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
             className={styles.optionCheckbox}
             checked={datum.getChecked(id)}
             disabled={isDisabled}
-            onChange={isHoverAble && multiple ? undefined : handleChange}
+            onChange={events.onClick === handleSelect ? undefined : handleChange}
           />
         )}
         {renderContent()}

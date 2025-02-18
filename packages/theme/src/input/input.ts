@@ -54,17 +54,17 @@ const inputTokens: InputTokens = {
   inputInfoErrorBorderColor: 'Danger-6',
   inputInnerPaddingX: 'Spacing-8',
   inputInnerPaddingY: 'Spacing-1',
-  inputInnerFontSize: 'Font-12',
+  inputInnerFontSize: 'Font-14',
   inputInnerFontColor: 'Neutral-text-4',
   inputInnerSmallPaddingX: 'Spacing-8',
   inputInnerSmallPaddingY: 'Spacing-1',
   inputInnerSmallFontSize: 'Font-12',
   inputInnerLargePaddingX: 'Spacing-12',
   inputInnerLargePaddingY: 'Spacing-3',
-  inputInnerLargeFontSize: 'Font-14',
+  inputInnerLargeFontSize: 'Font-16',
   inputInnerTopFontSize: 'Font-12',
   inputInnerTopSmallFontSize: 'Font-12',
-  inputInnerTopLargeFontSize: 'Font-12',
+  inputInnerTopLargeFontSize: 'Font-14',
 };
 
 export default inputTokens;

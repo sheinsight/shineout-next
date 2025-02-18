@@ -29,12 +29,15 @@ const Descriptions = (props: DescriptionsProps) => {
 
   const jssStyle = jssStyleProps?.descriptions?.() || ({} as DescriptionsClasses);
 
-  const Header = () => (
-    <div className={jssStyle?.header}>
-      {title && <div className={jssStyle?.title}>{title}</div>}
-      {extra && <div className={jssStyle?.extra}>{extra}</div>}
-    </div>
-  );
+  const Header = () => {
+    if(!title && !extra) return null;
+    return (
+      <div className={jssStyle?.header}>
+        {title && <div className={jssStyle?.title}>{title}</div>}
+        {extra && <div className={jssStyle?.extra}>{extra}</div>}
+      </div>
+    )
+  };
 
   const getColSpan = usePersistFn((d: DescriptionsItemProps, isHorizontal?: boolean) =>
     d.span && d.span > 1 ? (isHorizontal ? { colSpan: d.span * 2 - 1 } : { colSpan: d.span }) : {},

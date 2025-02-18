@@ -113,6 +113,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
         rowsInView={20}
         height={height}
         lineHeight={lineHeight}
+        paddingY={3}
       ></VirtualScrollList>
     );
   };
@@ -120,7 +121,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
   if (!data || data.length === 0) return renderEmpety();
 
   return (
-    <div className={classNames(styles.list)}>
+    <div className={classNames(styles.list, !virtual && styles.listSimple )}>
       {virtual ? renderVritualList() : renderSimpleList()}
     </div>
   );

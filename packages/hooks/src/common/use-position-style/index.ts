@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
 import { useCheckElementPosition } from './check-position'
+import { useCheckElementBorderWidth } from './check-border';
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { getCurrentCSSZoom } from '../../utils';
@@ -48,6 +49,7 @@ export interface PositionStyleConfig {
   fixedWidth?: boolean | 'min';
   updateKey?: number | string;
   adjust?: boolean;
+  offset?: [number, number];
 }
 
 const hideStyle: React.CSSProperties = {
@@ -69,6 +71,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     scrollElRef,
     updateKey,
     adjust,
+    offset,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
@@ -83,6 +86,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   });
 
   const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
+
+  const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal'});
 
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
@@ -244,11 +249,11 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     } else if (horizontalPosition.includes(targetPosition)) {
       const [h, v] = targetPosition.split('-');
       if (v === 'top') {
-        style.top = rect.top - containerRect.top + containerScroll.top;
+        style.top = rect.top - containerRect.top + containerScroll.top - (offset ? offset[1] : 0);
         style.transform = '';
         arrayStyle.top = `8px`;
       } else if (v === 'bottom') {
-        style.top = rect.bottom - containerRect.top + containerScroll.top;
+        style.top = rect.bottom - containerRect.top + containerScroll.top + (offset ? offset[1] : 0);
         arrayStyle.bottom = `8px`;
         style.transform = 'translateY(-100%)';
       } else {
@@ -313,15 +318,17 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     const { position, absolute } = config || {};
     if (!position || !show || !parentElRef.current) return { newStyle: style };
     context.parentRect = parentElRef.current.getBoundingClientRect();
+
+    let realPosition = position
     if (adjust) {
       const popupInfo = getPopUpInfo(context.parentRect);
       context.popUpHeight = popupInfo.height;
       context.popUpWidth = popupInfo.width;
+      realPosition = adjustPosition(position);
     }
 
-    const realPosition = adjust ? adjustPosition(position) : position;
     if (!absolute) {
-      newStyle = getPositionStyle(realPosition, { popupGap, zIndex, fixedWidth });
+      newStyle = getPositionStyle(realPosition, { popupGap, zIndex, fixedWidth, parentBorderWidth: parentElBorderWidth });
     } else {
       const { style: nextStyle, arrayStyle: nextArrayStyle } = getAbsoluteStyle(realPosition)!;
       newStyle = nextStyle;

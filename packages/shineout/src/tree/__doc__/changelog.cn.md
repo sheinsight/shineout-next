@@ -1,3 +1,18 @@
+## 3.6.0-beta.4
+2025-02-11
+
+### 💎 Enhancement
+
+- `Tree` 组件新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
+
+## 3.5.8
+2025-02-13
+
+### 🐞 BugFix
+
+- 修复 `Tree` 组件一级的叶子结点缩进不正确的问题 ([#941](https://github.com/sheinsight/shineout-next/pull/941))
+
+
 ## 3.5.2
 2024-11-28
 

@@ -14,6 +14,7 @@ const Textarea = (props: SimpleTextareaProps) => {
     prefix,
     suffix,
     underline,
+    autosize,
     border = true,
     resize = false,
     onEnterPress,
@@ -56,7 +57,7 @@ const Textarea = (props: SimpleTextareaProps) => {
       textareaClasses?.wrapperPaddingBox,
       textareaClasses?.wrapperInnerTitleBottom,
       textareaClasses?.textarea,
-      !!resize && textareaClasses?.resize,
+      (!!resize || autosize) && textareaClasses?.resize,
     ),
     onKeyUp,
   });

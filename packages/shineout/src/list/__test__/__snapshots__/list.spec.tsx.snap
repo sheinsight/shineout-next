@@ -15,69 +15,7 @@ exports[`List[Base] should render correctly  1`] = `
         class="soui-list-item"
         style="width: 100%;"
       >
-        <div
-          style="display: flex; align-items: center; width: 100%; font-size: 14px;"
-        >
-          <svg
-            fill="none"
-            height="40"
-            viewBox="0 0 40 40"
-            width="40"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
-              fill="#E8EBF0"
-            />
-            <path
-              clip-rule="evenodd"
-              d="M19.8301 21.0204C22.46 21.0204 24.592 18.8884 24.592 16.2585C24.592 13.6286 22.46 11.4966 19.8301 11.4966C17.2002 11.4966 15.0682 13.6286 15.0682 16.2585C15.0682 18.8884 17.2002 21.0204 19.8301 21.0204ZM16.7628 22.7211C13.9482 22.7211 11.6665 25.0028 11.6665 27.8174C11.6665 28.1963 11.9737 28.5034 12.3525 28.5034H27.6471C28.026 28.5034 28.3332 28.1963 28.3332 27.8174C28.3332 25.0028 26.0515 22.7211 23.2369 22.7211H16.7628Z"
-              fill="#B3B7C1"
-              fill-rule="evenodd"
-            />
-          </svg>
-          <div
-            style="flex: 1; min-width: 0; margin: 0px 12px;"
-          >
-            <div
-              style="font-weight: bold;"
-            >
-              List Title
-            </div>
-            <div>
-              Marketing Designer
-            </div>
-          </div>
-          <div>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Preview
-              </span>
-            </button>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Edit
-              </span>
-            </button>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Delete
-              </span>
-            </button>
-          </div>
-        </div>
+        This is a long list of contents
       </div>
     </div>
     <div
@@ -88,69 +26,7 @@ exports[`List[Base] should render correctly  1`] = `
         class="soui-list-item"
         style="width: 100%;"
       >
-        <div
-          style="display: flex; align-items: center; width: 100%; font-size: 14px;"
-        >
-          <svg
-            fill="none"
-            height="40"
-            viewBox="0 0 40 40"
-            width="40"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
-              fill="#E8EBF0"
-            />
-            <path
-              clip-rule="evenodd"
-              d="M19.8301 21.0204C22.46 21.0204 24.592 18.8884 24.592 16.2585C24.592 13.6286 22.46 11.4966 19.8301 11.4966C17.2002 11.4966 15.0682 13.6286 15.0682 16.2585C15.0682 18.8884 17.2002 21.0204 19.8301 21.0204ZM16.7628 22.7211C13.9482 22.7211 11.6665 25.0028 11.6665 27.8174C11.6665 28.1963 11.9737 28.5034 12.3525 28.5034H27.6471C28.026 28.5034 28.3332 28.1963 28.3332 27.8174C28.3332 25.0028 26.0515 22.7211 23.2369 22.7211H16.7628Z"
-              fill="#B3B7C1"
-              fill-rule="evenodd"
-            />
-          </svg>
-          <div
-            style="flex: 1; min-width: 0; margin: 0px 12px;"
-          >
-            <div
-              style="font-weight: bold;"
-            >
-              List Title
-            </div>
-            <div>
-              Financial Controller
-            </div>
-          </div>
-          <div>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Preview
-              </span>
-            </button>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Edit
-              </span>
-            </button>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Delete
-              </span>
-            </button>
-          </div>
-        </div>
+        This is a long list of contents
       </div>
     </div>
     <div
@@ -161,69 +37,7 @@ exports[`List[Base] should render correctly  1`] = `
         class="soui-list-item"
         style="width: 100%;"
       >
-        <div
-          style="display: flex; align-items: center; width: 100%; font-size: 14px;"
-        >
-          <svg
-            fill="none"
-            height="40"
-            viewBox="0 0 40 40"
-            width="40"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
-              fill="#E8EBF0"
-            />
-            <path
-              clip-rule="evenodd"
-              d="M19.8301 21.0204C22.46 21.0204 24.592 18.8884 24.592 16.2585C24.592 13.6286 22.46 11.4966 19.8301 11.4966C17.2002 11.4966 15.0682 13.6286 15.0682 16.2585C15.0682 18.8884 17.2002 21.0204 19.8301 21.0204ZM16.7628 22.7211C13.9482 22.7211 11.6665 25.0028 11.6665 27.8174C11.6665 28.1963 11.9737 28.5034 12.3525 28.5034H27.6471C28.026 28.5034 28.3332 28.1963 28.3332 27.8174C28.3332 25.0028 26.0515 22.7211 23.2369 22.7211H16.7628Z"
-              fill="#B3B7C1"
-              fill-rule="evenodd"
-            />
-          </svg>
-          <div
-            style="flex: 1; min-width: 0; margin: 0px 12px;"
-          >
-            <div
-              style="font-weight: bold;"
-            >
-              List Title
-            </div>
-            <div>
-              Development Lead
-            </div>
-          </div>
-          <div>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Preview
-              </span>
-            </button>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Edit
-              </span>
-            </button>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Delete
-              </span>
-            </button>
-          </div>
-        </div>
+        This is a long list of contents
       </div>
     </div>
     <div
@@ -234,69 +48,7 @@ exports[`List[Base] should render correctly  1`] = `
         class="soui-list-item"
         style="width: 100%;"
       >
-        <div
-          style="display: flex; align-items: center; width: 100%; font-size: 14px;"
-        >
-          <svg
-            fill="none"
-            height="40"
-            viewBox="0 0 40 40"
-            width="40"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
-              fill="#E8EBF0"
-            />
-            <path
-              clip-rule="evenodd"
-              d="M19.8301 21.0204C22.46 21.0204 24.592 18.8884 24.592 16.2585C24.592 13.6286 22.46 11.4966 19.8301 11.4966C17.2002 11.4966 15.0682 13.6286 15.0682 16.2585C15.0682 18.8884 17.2002 21.0204 19.8301 21.0204ZM16.7628 22.7211C13.9482 22.7211 11.6665 25.0028 11.6665 27.8174C11.6665 28.1963 11.9737 28.5034 12.3525 28.5034H27.6471C28.026 28.5034 28.3332 28.1963 28.3332 27.8174C28.3332 25.0028 26.0515 22.7211 23.2369 22.7211H16.7628Z"
-              fill="#B3B7C1"
-              fill-rule="evenodd"
-            />
-          </svg>
-          <div
-            style="flex: 1; min-width: 0; margin: 0px 12px;"
-          >
-            <div
-              style="font-weight: bold;"
-            >
-              List Title
-            </div>
-            <div>
-              Developer
-            </div>
-          </div>
-          <div>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Preview
-              </span>
-            </button>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Edit
-              </span>
-            </button>
-            <button
-              class="soui-button soui-button-primary soui-button-button soui-button-text"
-              dir="ltr"
-              type="button"
-            >
-              <span>
-                Delete
-              </span>
-            </button>
-          </div>
-        </div>
+        This is a long list of contents
       </div>
     </div>
   </div>

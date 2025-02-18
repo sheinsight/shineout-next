@@ -20,7 +20,7 @@ const useInputFormat = (props: InputFormatProps) => {
     coin,
     cancelBlurChange,
   } = props;
-  const [showCoin, setShowCoin] = React.useState(false);
+  const [showCoin, setShowCoin] = React.useState(coin);
   function isValidNumber(val: string) {
     const { numType } = props;
     const noNeg = numType === 'non-negative' || numType === 'positive';
@@ -44,6 +44,7 @@ const useInputFormat = (props: InputFormatProps) => {
       }
 
       const noNeg = numType === 'non-negative' || numType === 'positive';
+
       const regExp = new RegExp(
         `^(${noNeg ? '' : '-'})?(\\d${regLength(integerLimit)})(${
           digits !== 0 ? `\\.\\d${regLength(digits)}` : ''
@@ -52,6 +53,13 @@ const useInputFormat = (props: InputFormatProps) => {
       );
 
       value = value.replace(regExp, '$1$2$3');
+
+      // 修正小数位数
+      const _value = v.split('.');
+      const __value = value.split('.');
+      if (_value[1] !== undefined && __value[1] === undefined && digits !== 0) {
+        value = `${value}.${_value[1]}`;
+      }
     }
     onChange(value);
   });
@@ -113,10 +121,11 @@ const useInputFormat = (props: InputFormatProps) => {
 
   function getValue(str?: string) {
     if (type === 'number' && coin) {
-      if (showCoin && str) {
-        return `${str}`.replace(/\d+/, (n) => n.replace(/(\d)(?=(\d{3})+$)/g, ($1) => `${$1},`));
+      let _str = str as unknown as number;
+      if (showCoin && _str) {
+        return `${_str}`.replace(/\d+/, (n) => n.replace(/(\d)(?=(\d{3})+$)/g, ($1) => `${$1},`));
       }
-      return `${str || ''}`.replace(/,/g, '');
+      return `${_str === 0 ? _str : _str || ''}`.replace(/,/g, '');
     }
     return str;
   }

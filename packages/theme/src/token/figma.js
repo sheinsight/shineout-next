@@ -560,6 +560,13 @@ const figma = [
     locked: true,
   },
   {
+    name: '中性色-10',
+    value: '#020B18',
+    describe: '-10',
+    token: 'Neutral-10',
+    locked: true,
+  },
+  {
     name: '橘黄色-1',
     value: '#FAF4E3',
     describe: '浅色背景',
@@ -960,9 +967,44 @@ const figma = [
   },
   {
     name: '填充色',
+    token: 'Neutral-fill-10',
+    value: '#020B18',
+    describe: '',
+    locked: true,
+  },
+  {
+    name: '填充色',
+    token: 'Neutral-fill-9',
+    value: '#141737',
+    describe: '',
+    locked: true,
+  },
+  {
+    name: '填充色',
+    token: 'Neutral-fill-8',
+    value: '#333E59',
+    describe: '',
+    locked: true,
+  },
+  {
+    name: '填充色',
+    token: 'Neutral-fill-7',
+    value: '#666C7C',
+    describe: '',
+    locked: true,
+  },
+  {
+    name: '填充色',
+    token: 'Neutral-fill-6',
+    value: '#999DA8',
+    describe: '',
+    locked: true,
+  },
+  {
+    name: '填充色',
     token: 'Neutral-fill-5',
     value: '#B3B7C1',
-    describe: '点击',
+    describe: '',
     locked: true,
   },
   {
@@ -1306,6 +1348,13 @@ const figma = [
     value: '0px -2px 10px rgba(232, 235, 240, 0.8)',
     describe: '详情页底部按钮模块阴影',
     token: 'Shadow-4',
+    locked: true,
+  },
+  {
+    name: 'Shadow-5',
+    value: 'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
+    describe: 'Switch圆圈阴影',
+    token: 'Shadow-5',
     locked: true,
   },
   {

@@ -4,17 +4,11 @@
  * en - Custom render filter
  *    -- Use `renderFilter` to get the filter parameters to achieve custom rendering of the filter area
  */
-import { Transfer, Input } from 'shineout';
+import { Transfer, Input, TYPE } from 'shineout';
 
 const data: { id: string; name: string }[] = [];
 
-interface FilterProps {
-  text?: string;
-  disabled: boolean;
-  onFilter?: (text: string) => void;
-  placeholder?: string;
-  isSrouce?: boolean;
-}
+type FilterProps = TYPE.Transfer.TransferFilterProps;
 
 for (let i = 0; i < 10; i++) {
   data.push({
@@ -30,7 +24,7 @@ export default () => {
 
   const renderFilter = (filterProps: FilterProps) => {
     return (
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', padding: '8px 12px 4px 12px' }}>
         <Input
           placeholder='Custom filter'
           onChange={filterProps.onFilter as (text?: string) => void}

@@ -64,7 +64,7 @@ export interface TreeTokens {
   treeFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-2
+   * @token Neutral-fill-3
    * @description 树组件连接线背景颜色
    */
   treeLineBackgroundColor: string;

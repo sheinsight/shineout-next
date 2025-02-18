@@ -43,7 +43,7 @@ export default createUseStyles(
         cursor: 'pointer',
         '& svg': {
           width: 16,
-          color: 'var(--soui-neutral-text-5)',
+          color: 'var(--soui-neutral-fill-8)',
         },
         '&:hover:after': {
           display: 'none',
@@ -139,6 +139,9 @@ export default createUseStyles(
       alignItems: 'center',
       justifyContent: 'flex-end',
       gap: 24,
+      '& $icon svg': {
+        color: 'var(--soui-neutral-text-8)',
+      }
     },
     tip: {
       margin: '0 5px',
@@ -165,14 +168,14 @@ export default createUseStyles(
       right: 0,
       bottom: 0,
       left: 0,
-      background: '#ffffff',
+      background: 'var(--soui-neutral-fill-1)',
       zIndex: 1,
       '& .toolbar': {
         padding: 5,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderBottom: '1px dashed #e8ebee',
+        borderBottom: '1px dashed var(--soui-neutral-border-1)',
       },
 
       '& .container': {

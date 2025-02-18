@@ -113,7 +113,7 @@ const Result = (props: ResultProps) => {
             className={uploadClasses?.imageBg}
             src={src}
             jssStyle={props.jssStyle}
-            fit='center'
+            fit='fill'
             width='auto'
             height={0}
           />

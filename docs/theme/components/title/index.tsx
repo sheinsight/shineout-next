@@ -7,6 +7,7 @@ import { Header as HeaderProps } from 'docs/types';
 import Tabs from './tabs';
 import HeaderLogo from './logo';
 import { collocatorPreset } from '../collocator/preset';
+import DesignDocLink from './design'
 
 const Header = (props: HeaderProps) => {
   const classes = useStyles();
@@ -36,6 +37,10 @@ const Header = (props: HeaderProps) => {
     setMoveRatio([0, 0]);
   };
 
+  const componentTitle = title[state.locales];
+  // 'Button 按钮', 从其中解析出组件英文名'Button'
+  const componentName = componentTitle?.split(' ')[0];
+
   return (
     <>
       <div
@@ -45,7 +50,10 @@ const Header = (props: HeaderProps) => {
         onMouseLeave={onMouseLeave}
       >
         <h1 className={classnames('title')}>{title[state.locales]}</h1>
-        <p className='subtitle'>{describe[state.locales]}</p>
+        <p className='subtitle'>
+          {describe[state.locales]}
+          <DesignDocLink componentName={componentName} />
+        </p>
         <HeaderLogo moveRatio={moveRatio}></HeaderLogo>
         <Tabs showGuide={showGuide} showPlayground={showPlayground}></Tabs>
       </div>

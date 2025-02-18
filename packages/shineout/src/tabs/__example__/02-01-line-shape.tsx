@@ -1,6 +1,6 @@
 /**
  * cn - 不同样式
- *    -- 选项卡有三种样式，可通过 `shape` 属性设置，card 卡片，line 线条，button 按钮, fill 填充, dash 短线
+ *    -- 选项卡有五种样式，可通过 `shape` 属性设置，card 卡片，line 线条，button 按钮, fill 填充, dash 短线
  *    -- 设置 `shape = "line"` 标签页显示为线条
  * en - Shape
  *    -- There are three shapes for tabs, you can set the `shape` property to change it

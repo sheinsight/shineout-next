@@ -32,7 +32,7 @@ const App: React.FC = () => (
         {row.map((p, j) =>
           p ? (
             <Button key={j} mode={'outline'} style={style}>
-              <Popover trigger='click' position={p} useTextStyle>
+              <Popover trigger='hover' position={p} useTextStyle>
                 <div>i am popover content</div>
                 <div>{p}</div>
               </Popover>

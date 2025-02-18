@@ -35,7 +35,7 @@ const descriptionsTokenValue = {
     gap: 'Size-2',
   },
   label: {
-    padding: { top: '', bottom: 'Spacing-12', left: '', right: 'Spacing-8' },
+    padding: { top: '', bottom: 'Spacing-12', left: '', right: 'Spacing-24' },
     color: 'Neutral-text-4',
   },
   value: {

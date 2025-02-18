@@ -6,15 +6,10 @@
  */
 import React from 'react';
 import { Select } from 'shineout';
-import { primitiveData } from './static/mock';
 
-const data: number[] = [];
-
-for (let i = 0; i < 20; i++) {
-  data.push(i);
-}
 
 export default () => {
+  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
     <div>
       <Select width={300} clearable data={data} keygen placeholder='Select Color' />

@@ -284,7 +284,7 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
     <div
       class="soui-slider-track-inner"
       dir="ltr"
-      style="left: 0%; right: 75%;"
+      style="left: 0%; right: 87.5%;"
     >
       <div
         class="soui-slider-indicator soui-slider-indicator-end"
@@ -318,16 +318,6 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        2
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
         3
       </div>
     </div>
@@ -348,7 +338,27 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        8
+        7
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        9
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        11
       </div>
     </div>
     <div
@@ -368,6 +378,36 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
+        15
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        17
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        19
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
         21
       </div>
     </div>
@@ -378,7 +418,7 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        34
+        23
       </div>
     </div>
     <div
@@ -388,27 +428,7 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        55
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        89
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        144
+        25
       </div>
     </div>
   </div>
@@ -533,7 +553,7 @@ exports[`Slider[Base] should render correctly about input 1`] = `
 >
   <div
     class="soui-slider soui-slider-wrapper"
-    style="flex: 1; margin-inline-end: 28px;"
+    style="flex: 1; margin-inline-end: 16px;"
   >
     <div
       class="soui-slider-track"
@@ -859,23 +879,13 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
         class="soui-slider-end-value soui-slider-value"
         dir="ltr"
       >
-        0.8
+        1
       </div>
     </div>
   </div>
   <div
     class="soui-slider-scale-wrapper"
   >
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        0.8
-      </div>
-    </div>
     <div
       class="soui-slider-scale"
     >
@@ -893,7 +903,7 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        1.2
+        3
       </div>
     </div>
     <div
@@ -903,7 +913,7 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        1.4
+        5
       </div>
     </div>
     <div
@@ -913,7 +923,7 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        1.7
+        7
       </div>
     </div>
     <div
@@ -923,97 +933,7 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        2
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        2.4
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        2.8
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        3.3
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        4
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        4.8
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        5.6
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        6.7
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        8
-      </div>
-    </div>
-    <div
-      class="soui-slider-scale"
-    >
-      <div
-        class="soui-slider-label"
-        dir="ltr"
-      >
-        9.5
+        9
       </div>
     </div>
     <div
@@ -1043,7 +963,57 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
         class="soui-slider-label"
         dir="ltr"
       >
-        16
+        15
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        17
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        19
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        21
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        23
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        25
       </div>
     </div>
   </div>

@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import React, { useContext } from 'react';
 import { SwitchProps } from './switch.type';
 import { useConfig } from '../config';
+import Icons from '../icons';
 import useWithFormConfig from '../common/use-with-form-config';
 import { FormFieldContext } from '../form/form-field-context';
 
@@ -56,7 +57,7 @@ const Switch = (props0: SwitchProps) => {
     <button type={'button'} role={'switch'} id={fieldId} {...rootProps}>
       <input {...inputProps} type={'checkbox'} />
       <div className={switchClasses?.indicator} dir={config.direction}>
-        {loading ? <div className={switchClasses?.loading} /> : null}
+        {loading ? <div className={switchClasses?.loading}>{Icons.switch.Loading}</div> : null}
       </div>
       <div className={switchClasses?.content}>
         <div className={switchClasses?.textPadding}>

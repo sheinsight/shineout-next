@@ -22,6 +22,9 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     cursor: 'pointer',
     boxSizing: 'border-box',
     marginRight: token.radioGap,
+    '&:last-child': {
+      marginRight: 0,
+    },
   },
   wrapperSmall: {},
   wrapperLarge: {},
@@ -142,6 +145,10 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     '& $wrapper': {
       display: 'flex',
       marginBottom: token.radioBlockGap,
+      marginRight: 0,
+      '&:last-child': {
+        marginBottom: 0,
+      }
     },
   },
   groupButton: {

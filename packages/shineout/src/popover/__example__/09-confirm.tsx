@@ -18,7 +18,7 @@ const App: React.FC = () => {
     });
 
   return (
-    <Button>
+    <Button mode="outline">
       <Popover.Confirm
         priorityDirection='horizontal'
         title='Tips'

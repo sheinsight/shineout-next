@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, useEffect, useRef, useState } from 'react';
+import React, { Children, cloneElement, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { useTabs, util } from '@sheinx/hooks';
 import { TabsClasses, TabsProps } from './tabs.type';
@@ -136,7 +136,7 @@ const Tabs = (props: TabsProps) => {
     setCollapse(nextCollapse);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!panelRef.current) return;
     if (collapsible) {
       if (collapse) {

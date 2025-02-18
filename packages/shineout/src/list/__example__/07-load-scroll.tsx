@@ -68,7 +68,7 @@ const App: React.FC = () => {
         />
       </svg>
       <div style={{ flex: 1, minWidth: 0, margin: '0 12px' }}>
-        <div style={{ fontWeight: 'bold' }}>List Title</div>
+        <div style={{ fontWeight: '500' }}>List Title</div>
         <div>{rowData.position}</div>
       </div>
       <div>

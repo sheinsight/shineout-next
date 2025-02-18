@@ -7,9 +7,9 @@
 import React from 'react';
 import { Button, Message } from 'shineout';
 
-const commonStyle = { marginInlineStart: '24px' };
+const commonStyle = { margin: 0 };
 const App: React.FC = () => (
-  <div>
+  <div style={{display: 'flex', flexWrap: 'wrap', gap: 24}}>
     <Button
       onClick={() => {
         Message.show('Some message.');

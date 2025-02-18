@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useMemo } from 'react';
 import { usePersistFn } from '@sheinx/hooks';
 import Scroll from './scroll';
 import { VirtualListProps } from './virtual-scroll-list.type';
@@ -12,12 +12,15 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     className,
     lineHeight,
     height,
+    keepScrollHeight,
     renderItem,
     customRenderItem,
     tag = 'div',
     tagClassName,
     dynamicVirtual,
     virtualRef,
+    scrollerStyle,
+    paddingY,
     onControlTypeChange,
   } = props;
 
@@ -112,7 +115,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       if (scrollTop < sum || i === maxIndex) {
         nextCurrentIndex = i;
         const beforeHeight = i === 0 ? 0 : sum - (context.cachedHeight[i] || lineHeight);
-        top = scrollTop - beforeHeight;
+        top = scrollTop - beforeHeight
         break;
       }
     }
@@ -131,6 +134,12 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     onControlTypeChange?.('mouse');
   };
 
+  // 设置了容器的paddingY, translateY时需要加上，否则会出现底部滚不到底的问题
+  const addonScrollHeight = useMemo(() => {
+    // paddingY是奇数则加1
+    return paddingY ? paddingY * 2 + (paddingY % 2 === 1 ? 1 : 0) : 0;
+  }, [paddingY]);
+
   const handleScroll = (info: {
     scrollLeft: number;
     scrollTop: number;
@@ -144,7 +153,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     let { scrollTop } = info;
     context.shouldUpdateHeight = !fromDrag;
     const sumHeight = getContentHeight(props.data.length - 1);
-    const max = sumHeight - height;
+    const max = sumHeight - height + addonScrollHeight;
     if (scrollTop > max) {
       scrollTop = max;
     }
@@ -169,21 +178,27 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       ...style,
     };
     if (shouldScroll) nextStyle.height = height;
-    const scrollHeight = getContentHeight(data.length - 1);
+    const scrollHeight = getContentHeight(data.length - 1) + addonScrollHeight;
 
+    const innerStyle = {
+      transform: `translate3d(0, -${top}px, 0)`,
+      paddingTop: paddingY,
+      paddingBottom: paddingY,
+    }
     return (
       <Scroll
         className={className}
         style={nextStyle}
         height={height}
         scrollWidth={0}
+        scrollerStyle={scrollerStyle}
         scrollHeight={scrollHeight}
         childrenStyle={{ width: '100%' }}
         wrapperRef={wrapperRef}
         onScroll={handleScroll}
         onMouseMove={handleMouseMove}
       >
-        <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>
+        <Tag className={tagClassName} style={innerStyle}>
           {items.map((d: DataItem, i: number) => {
             if (d[groupKey as keyof DataItem]) {
               return (
@@ -208,6 +223,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
 
   useLayoutEffect(() => {
     // 数据变化的时候清空掉 preIndex, 如果之前有缓存的index, setRowHeight 会有问题
+    if (keepScrollHeight) return;
     setTop(0);
     setStartIndex(0);
     return () => {

@@ -27,7 +27,7 @@ import { FormFieldContext } from '../form/form-field-context';
 
 import { useConfig, getLocale } from '../config';
 
-const { devUseWarning } = util;
+const { devUseWarning, isOptionalDisabled } = util;
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
@@ -55,7 +55,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     mode,
     innerTitle,
     multiple,
-    disabled,
+    disabled: disabledProp,
     clearable,
     underline,
     loading,
@@ -91,6 +91,13 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
+  const isRealtime = isOptionalDisabled<DataItem>(props.disabled)
+    ? props.disabled.isRealtime
+    : false;
+
+  const disabled = util.isOptionalDisabled<DataItem>(disabledProp)
+    ? disabledProp.disabled
+    : disabledProp;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -135,7 +142,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     control: 'value' in props,
     keygen,
     unmatch,
-    disabled,
+    disabled: disabledProp,
     mode,
     defaultValue,
     childrenKey,
@@ -410,7 +417,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderClearable = () => {
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = (compressed || multiple) ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     const arrow = (
       <span
         className={classNames(
@@ -442,11 +449,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       return renderClearable();
     }
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = (compressed || multiple) ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     return (
       <span
         className={classNames(
-          compressed && styles.compressedIcon,
+          (compressed || multiple) && styles.compressedIcon,
           styles.arrowIcon,
           open && !compressed && styles.arrowIconOpen,
         )}
@@ -616,8 +623,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           data={filterData!}
           datum={datum}
           keygen={keygen}
+          mode={mode}
           height={height}
           size={size}
+          isRealtime={isRealtime}
           virtual={virtual}
           wideMatch={wideMatch}
           filterFunc={filterFunc}
@@ -679,7 +688,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if (filterText !== undefined) {
       updatePath();
     }
-  }, [filterText]);
+  }, [filterText, firstMatchNode]);
 
   useEffect(() => {
     updatePathByValue();
@@ -747,7 +756,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         <AnimationList
           onRef={popupRef}
           show={open}
-          className={classNames(styles?.pickerWrapper)}
+          className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow)}
           display={'block'}
           type='scale-y'
           duration={'fast'}

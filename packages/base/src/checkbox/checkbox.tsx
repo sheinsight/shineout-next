@@ -56,7 +56,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
 
     // 兼容Checkbox在createPortal中使用时，无法改变勾选状态的问题
     if ('value' in props && props.checked === undefined) {
-      onInputableCheckboxChange(checked);
+      onInputableCheckboxChange(checked, true);
     }
 
     if (props.onRawChange) {
@@ -115,7 +115,7 @@ const CheckboxWithContext = <T,>(props: CheckboxProps<T>) => {
         <Checkbox
           {...props}
           {...value}
-          onRawChange={props.onChange}
+          onRawChange={value.onChange && props.onChange ? props.onChange : undefined}
           checked={'checked' in props ? props.checked : value.checked}
         />
       )}

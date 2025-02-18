@@ -17,8 +17,8 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={() => setVisible(!visible)}>{visible ? 'Close' : 'Open'}</Button>
-      <Button>
+      <Button onClick={() => setVisible(!visible)} mode="outline">{visible ? 'Close' : 'Open'}</Button>
+      <Button mode="outline">
         <Popover visible={visible} onVisibleChange={onVisibleChange} style={style}>
           Some text
         </Popover>

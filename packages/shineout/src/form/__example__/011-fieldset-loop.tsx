@@ -5,7 +5,7 @@
  *    -- When FieldSet's children is a function, takes the value (type is array) from the form by the name property, and generate a set of subcomponents
  */
 import React, { useState } from 'react';
-import { Form, Input, Rule } from 'shineout';
+import { Form, Input, Rule, Button } from 'shineout';
 
 interface FriendsItem {
   name?: string;
@@ -78,9 +78,10 @@ const App: React.FC = () => {
           name='friends'
           empty={(insert) => {
             return (
-              <button type={'button'} onClick={() => insert({ name: '' })}>
+              <Button type="primary" mode="outline" onClick={() => insert({ name: '' })}>
+                +
                 Add new friends
-              </button>
+              </Button>
             );
           }}
           defaultValue={[{ name: 'Hermione Granger', age: '16' }, {}]}
@@ -119,7 +120,7 @@ const App: React.FC = () => {
           )}
         </Form.FieldSet>
       </Form.Item>
-      <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
+      <Form.Item label='' style={{ marginTop: 20, marginBottom: 0 }}>
         <Form.Submit>Submit</Form.Submit>
         <Form.Reset>Reset</Form.Reset>
       </Form.Item>

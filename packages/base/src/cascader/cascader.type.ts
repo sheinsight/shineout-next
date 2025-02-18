@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeygenResult, ObjectKey, TreeModeType } from '@sheinx/hooks';
+import { KeygenResult, ObjectKey, TreeModeType, DisabledOption } from '@sheinx/hooks';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
 import { TagClasses } from '../tag/tag.type';
@@ -45,6 +45,7 @@ export interface CascaderClasses {
   controlKeyboard: string;
   placeholder: string;
   pickerWrapper: string;
+  pickerWrapperShow: string;
   clearable: string;
   iconWrapper: string;
   clearIcon: string;
@@ -58,6 +59,7 @@ export interface CascaderClasses {
   listContent: string;
   filterList: string;
   list: string;
+  listSimple: string;
   tag: string;
   tagOnly: string;
   space: string;
@@ -68,6 +70,7 @@ export interface CascaderClasses {
   virtualList: string;
   option: string;
   filterOption: string;
+  filterOptionItem: string;
   filterDisabledOption: string;
   filterOptionSeparator: string;
   optionCheckbox: string;
@@ -265,11 +268,11 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    */
   loader?: (key: KeygenResult, data: DataItem) => void;
   /**
-   * @en When it is true, all nodes disable the selection; when it is a function, it determines whether it is disabled according to the return result of the function.
-   * @cn 当 disabled 为 true 时，禁用整个选择框。如果 disabled 为函数，根据函数反回结果禁用选项
+   * @en When disabled is true, the entire selection box is disabled. If disabled is a function, the option is disabled according to the return result of the function. For performance reasons, by default, disabled
+   * @cn 当 disabled 为 true 时，禁用整个选择框。如果 disabled 为函数，根据函数反回结果禁用选项。出于性能考虑，默认情况下 disabled 只会在初始化时调用一次，如果 disabled 为函数且内部依赖外部状态，可以使用配置模式，将 disabled 设置为对象，对象中包含 disabled 函数 和 isRealtime 属性，当 isRealtime 为 true 时，每次状态更新都会调用 disabled 函数重新计算禁用状态
    * @default false
    */
-  disabled?: ((data: DataItem) => boolean) | boolean;
+  disabled?: ((data: DataItem) => boolean) | boolean | DisabledOption<DataItem>;
   /**
    * @en Expand mode
    * @cn 节点展开触发方式

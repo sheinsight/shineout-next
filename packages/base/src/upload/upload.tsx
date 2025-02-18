@@ -106,6 +106,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
           )}
           style={listType === 'image' ? imageStyle : undefined}
           {...wrapperProps}
+          role="button"
         >
           {listType === 'image' &&
             (props.children || (
@@ -246,6 +247,8 @@ const Upload = <T,>(props0: UploadProps<T>) => {
             files={files}
             onFileRemove={func.removeFile}
             onValueRemove={func.removeValue}
+            recoverValue={recycleValues}
+            onValueRecover={func.recoverValue}
           />
           {!shouldRenderLeft && renderHandler()}
         </>

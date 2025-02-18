@@ -15,33 +15,29 @@ export interface ValidationError<T> {
 }
 
 export type ValidateFnConfig = {
-  type?: 'forcePass' | 'withValue',
-  ignoreBind?: boolean,
-  ignoreChildren?: boolean,
-}
+  type?: 'forcePass' | 'withValue';
+  ignoreBind?: boolean;
+  ignoreChildren?: boolean;
+};
 
 export type ValidateFn = (
   name: string,
   value: any,
   formData: ObjectType,
   config?: ValidateFnConfig,
-) => Promise<true | FormError>
+) => Promise<true | FormError>;
 
 export type UpdateFn = (
   formValue: ObjectType,
   errors: ObjectType<Error | undefined>,
   serverErrors: ObjectType<Error | undefined>,
-) => void
+  names: Set<string>,
+) => void;
 
 export interface FormContextValueType {
   func?: {
-    unbind: (n: string, reserveAble?: boolean, validate?:ValidateFn, update?:UpdateFn ) => void;
-    bind: (
-      n: string,
-      df: any,
-      validate: ValidateFn,
-      update: UpdateFn,
-    ) => void;
+    unbind: (n: string, reserveAble?: boolean, validate?: ValidateFn, update?: UpdateFn) => void;
+    bind: (n: string, df: any, validate: ValidateFn, update: UpdateFn) => void;
     combineRules: <ValueItem>(
       name: string,
       propRules: FormItemRule<ValueItem>,
@@ -223,7 +219,16 @@ export type UseFormProps<T> = BaseFormProps<T>;
 
 export type FormContext = {
   defaultValues: ObjectType;
-  validateMap: ObjectType<Set<(name: string, v: any, formValue: ObjectType, config?: { ignoreBind?: boolean }) => Promise<true | FormError>>>;
+  validateMap: ObjectType<
+    Set<
+      (
+        name: string,
+        v: any,
+        formValue: ObjectType,
+        config?: { ignoreBind?: boolean },
+      ) => Promise<true | FormError>
+    >
+  >;
   // 删除字段队列
   removeArr: Set<string>;
   // 防抖间隔
@@ -235,7 +240,16 @@ export type FormContext = {
   resetTime: number;
   mounted: boolean;
   // 更新队列
-  updateMap: ObjectType<Set<(formValue: ObjectType, errors: ObjectType<Error | undefined>, serverErrors: ObjectType<Error | undefined>) => void>>;
+  updateMap: ObjectType<
+    Set<
+      (
+        formValue: ObjectType,
+        errors: ObjectType<Error | undefined>,
+        serverErrors: ObjectType<Error | undefined>,
+        names: Set<string>,
+      ) => void
+    >
+  >;
   // flow 队列
   flowMap: ObjectType<Set<() => void>>;
   value: ObjectType;

@@ -20,7 +20,7 @@ const textareaTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 textareaRules 强关联，非 textareaRules 规则内的 token 需手动增加或删减。
  */
-const textareaTokenValue = {
+const textareaTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-default', color: 'Neutral-border-2' },
   padding: { x: 'Spacing-8', y: 'Spacing-4' },
@@ -105,7 +105,7 @@ const textareaTokenValue = {
   },
 };
 
-const textareaTokenExtraValue = {};
+const textareaTokenValue = {};
 
 module.exports = {
   textareaTokenValue,

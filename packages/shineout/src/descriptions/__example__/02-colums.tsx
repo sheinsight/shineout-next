@@ -24,7 +24,7 @@ const data = [
 
 export default () => {
   return (
-    <div style={{ marginBottom: '-12px' }}>
+    <>
       <Descriptions
         items={data}
         title='User Info'
@@ -39,6 +39,6 @@ export default () => {
         column={1}
         labelStyle={{ textAlign: 'end' }}
       />
-    </div>
+    </>
   );
 };

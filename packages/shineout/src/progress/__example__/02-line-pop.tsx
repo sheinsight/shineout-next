@@ -35,9 +35,7 @@ const App: React.FC = () => {
     <div style={{ width: 400 }}>
       <Progress value={value} shape='line-pop'>{`${parseInt(value.toString(), 10)}%`}</Progress>
 
-      <br />
-
-      <Button onClick={() => handleClick(0)}>Start</Button>
+      <Button mode="outline" onClick={() => handleClick(0)} style={{ marginTop: 24 }}>Start</Button>
     </div>
   );
 };

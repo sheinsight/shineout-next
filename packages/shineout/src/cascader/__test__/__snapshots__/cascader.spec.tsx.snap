@@ -96,7 +96,12 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+              d="M12 23C5.924 23 1 18.076 1 12C1 5.924 5.924 1 12 1C18.076 1 23 5.924 23 12C23 18.076 18.076 23 12 23Z"
+              fill="currentColor"
+            />
+            <path
+              d="M9.6129 8.2097C9.22061 7.90468 8.65338 7.93241 8.29289 8.29289C7.90237 8.68342 7.90237 9.31658 8.29289 9.70711L10.413 11.828L8.29289 13.9497L8.2097 14.044C7.90468 14.4362 7.93241 15.0035 8.29289 15.364C8.68342 15.7545 9.31658 15.7545 9.70711 15.364L11.828 13.242L13.9497 15.364L14.044 15.4471C14.4362 15.7522 15.0035 15.7244 15.364 15.364C15.7545 14.9734 15.7545 14.3403 15.364 13.9497L13.242 11.828L15.364 9.70711L15.4471 9.6129C15.7522 9.22061 15.7244 8.65338 15.364 8.29289C14.9734 7.90237 14.3403 7.90237 13.9497 8.29289L11.828 10.413L9.70711 8.29289L9.6129 8.2097Z"
+              fill="white"
             />
           </svg>
         </span>
@@ -110,7 +115,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
             />
           </svg>
         </span>
@@ -635,70 +640,220 @@ exports[`Cascader[Base] should render correctly about hideTag 1`] = `
 `;
 
 exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
-<div>
+<div
+  class="soui-gap soui-gap-wrapper"
+  style="margin-bottom: -8px; margin-right: -8px; flex-direction: column; gap: 24px;"
+>
   <div
-    class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
+    class="soui-gap-item"
+    style="margin-bottom: 8px; margin-right: 8px;"
   >
     <div
-      class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
+      class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-wrapper-small soui-cascader-clearable"
+      data-soui-input-border="true"
+      style="width: 300px;"
+      tabindex="0"
     >
       <div
-        class="soui-inner-title-wrapper"
+        class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
       >
         <div
-          class="soui-inner-title-title soui-inner-title-top"
-        >
-          Inner Title
-        </div>
-        <div
-          class="soui-inner-title-place"
+          class="soui-inner-title-wrapper soui-inner-title-wrapper-small"
         >
           <div
-            class="soui-inner-title-title"
+            class="soui-inner-title-title soui-inner-title-top"
           >
             Inner Title
           </div>
-        </div>
-        <div
-          class="soui-inner-title-content"
-        >
           <div
-            class="soui-cascader-result"
+            class="soui-inner-title-place"
           >
             <div
-              class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
+              class="soui-inner-title-title"
             >
-              <span
-                class="soui-cascader-placeholder soui-cascader-ellipsis"
+              Inner Title
+            </div>
+          </div>
+          <div
+            class="soui-inner-title-content"
+          >
+            <div
+              class="soui-cascader-result"
+            >
+              <div
+                class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
               >
-                <span>
-                  Please select city
+                <span
+                  class="soui-cascader-placeholder soui-cascader-ellipsis"
+                >
+                  <span>
+                    Please select city
+                  </span>
                 </span>
-              </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="soui-cascader-icon-wrapper"
-      >
-        <span
-          class="soui-cascader-arrow-icon"
+        <div
+          class="soui-cascader-icon-wrapper"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <span
+            class="soui-cascader-arrow-icon"
           >
-            <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-            />
-          </svg>
-        </span>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="soui-gap-item"
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <div
+      class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-clearable"
+      data-soui-input-border="true"
+      style="width: 300px;"
+      tabindex="0"
+    >
+      <div
+        class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
+      >
+        <div
+          class="soui-inner-title-wrapper"
+        >
+          <div
+            class="soui-inner-title-title soui-inner-title-top"
+          >
+            Inner Title
+          </div>
+          <div
+            class="soui-inner-title-place"
+          >
+            <div
+              class="soui-inner-title-title"
+            >
+              Inner Title
+            </div>
+          </div>
+          <div
+            class="soui-inner-title-content"
+          >
+            <div
+              class="soui-cascader-result"
+            >
+              <div
+                class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
+              >
+                <span
+                  class="soui-cascader-placeholder soui-cascader-ellipsis"
+                >
+                  <span>
+                    Please select city
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="soui-cascader-icon-wrapper"
+        >
+          <span
+            class="soui-cascader-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="soui-gap-item"
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <div
+      class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-wrapper-large soui-cascader-clearable"
+      data-soui-input-border="true"
+      style="width: 300px;"
+      tabindex="0"
+    >
+      <div
+        class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
+      >
+        <div
+          class="soui-inner-title-wrapper soui-inner-title-wrapper-large"
+        >
+          <div
+            class="soui-inner-title-title soui-inner-title-top"
+          >
+            Inner Title
+          </div>
+          <div
+            class="soui-inner-title-place"
+          >
+            <div
+              class="soui-inner-title-title"
+            >
+              Inner Title
+            </div>
+          </div>
+          <div
+            class="soui-inner-title-content"
+          >
+            <div
+              class="soui-cascader-result"
+            >
+              <div
+                class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
+              >
+                <span
+                  class="soui-cascader-placeholder soui-cascader-ellipsis"
+                >
+                  <span>
+                    Please select city
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="soui-cascader-icon-wrapper"
+        >
+          <span
+            class="soui-cascader-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -906,7 +1061,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
             class="soui-cascader-icon-wrapper"
           >
             <span
-              class="soui-cascader-arrow-icon"
+              class="soui-cascader-compressed-icon soui-cascader-arrow-icon"
             >
               <svg
                 aria-hidden="true"
@@ -915,7 +1070,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                  d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
                 />
               </svg>
             </span>
@@ -990,7 +1145,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
             />
           </svg>
         </span>

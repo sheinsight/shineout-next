@@ -1,8 +1,8 @@
 /**
  * cn - 树形数据
- *    --
+ *    -- 设置 `treeData` 属性，即可创建树形数据；效果同 `TreeSelect`组件。
  * en - Tree Data
- *    --
+ *    -- Set the `treeData` property to create tree data; the effect is the same as the `TreeSelect` component.
  */
 import React from 'react';
 import { Select, TYPE } from 'shineout';
@@ -105,7 +105,7 @@ export default () => {
   return (
     <div>
       <Select
-        width={260}
+        width={300}
         childrenKey='children'
         treeData={treeData}
         keygen='id'

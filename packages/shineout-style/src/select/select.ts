@@ -107,6 +107,9 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginTop: token.selectLargePlaceholderMarginY,
         marginBottom: token.selectLargePlaceholderMarginY,
       },
+      '& $arrowIcon': {
+        width: token.selectLargeFontSize,
+      },
     },
     '&:hover': {
       ...wrapper['&:hover'],
@@ -281,6 +284,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     borderRadius: token.selectPanelRadius,
     transformOrigin: '0 0',
     border: `1px solid ${token.selectPanelBorder}`,
+    cursor: 'initial',
   },
   pickerSmall: {
     '& $optionInner': {
@@ -309,6 +313,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft: token.selectIconMarginLeft,
   },
   clearable: {},
   clearIcon: {
@@ -380,10 +385,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   moreIcon: {},
   hideTag: {},
-  list: {
-    paddingTop: 3,
-    paddingBottom: 3,
-  },
+  list: {},
   tree: {
     padding: 4,
     overflow: 'auto',
@@ -435,7 +437,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     maxWidth: 400,
     maxHeight: 160,
     overflow: 'auto',
-    padding: token.selectMorePadding,
+    padding: `${token.selectMorePaddingY} ${token.selectMorePaddingX}`,
     '&:hover': {
       '& $clearIcon': {
         display: 'inline-block',

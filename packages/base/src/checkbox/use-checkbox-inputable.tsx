@@ -10,8 +10,9 @@ const useCheckboxInputable = <T,>(
     setCheckedState(!!props.value);
   }, [props.value]);
 
-  const onInputableCheckboxChange = (c: boolean) => {
+  const onInputableCheckboxChange = (c: boolean, ignoreOnChange?: boolean) => {
     setCheckedState(c);
+    if(ignoreOnChange) return;
     props?.onChange?.(undefined, c, undefined as any);
   };
   const onInputChange = (_value?: string) => {

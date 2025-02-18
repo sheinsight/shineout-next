@@ -189,7 +189,6 @@ const Day = (props: DayProps) => {
           >
             {props.showSelNow && props.type === 'date' && (
               <Link
-                size='small'
                 type='primary'
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
@@ -200,7 +199,6 @@ const Day = (props: DayProps) => {
             )}
             {props.showSelNow && props.type === 'datetime' && (
               <Link
-                size='small'
                 type='primary'
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
@@ -245,7 +243,7 @@ const Day = (props: DayProps) => {
           >
             {currentYear}
           </span>
-          <i>-</i>
+          <strong>-</strong>
           <span
             className={styles?.pickerHeaderInfo}
             onClick={() => {

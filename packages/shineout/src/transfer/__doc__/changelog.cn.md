@@ -1,3 +1,11 @@
+## 3.5.8
+2025-02-13
+
+### 🐞 BugFix
+
+- 修复 `Transfer` 组件 `renderFilter` 内部获取不到外部数据的问题 ([#932](https://github.com/sheinsight/shineout-next/pull/932))
+- 修复 `Transfer` 组件 `filterProps` 中 `isSrouce` 错别字为 `isSource` 的问题 ([#932](https://github.com/sheinsight/shineout-next/pull/932))
+
 ## 3.3.7
 2024-09-09
 

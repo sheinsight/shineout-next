@@ -12,6 +12,7 @@ export type VirtualListType = {
 export interface VirtualListProps<DataItem> extends Pick<CommonType, 'className' | 'style'> {
   data: DataItem[];
   keygen?: KeygenType<DataItem>;
+  paddingY?: number
   // 容器高度
   height: number | string;
   lineHeight: number;
@@ -25,6 +26,7 @@ export interface VirtualListProps<DataItem> extends Pick<CommonType, 'className'
   virtualRef?: React.MutableRefObject<VirtualListType>;
   scrollerStyle?: React.CSSProperties;
   dynamicVirtual?: boolean;
+  keepScrollHeight?: boolean;
   onControlTypeChange?: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
   onScroll?: (info: {
     scrollLeft: number;

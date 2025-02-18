@@ -39,6 +39,9 @@ const breadcrumbTokenExtraValue = {
       hover: {
         color: 'Brand-5',
       },
+      active: {
+        color: 'Brand-7',
+      }
     },
   },
   list: {

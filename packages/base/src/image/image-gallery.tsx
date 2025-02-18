@@ -28,7 +28,6 @@ const ImageModal = (props: ImageGalleryProps) => {
 
 
   const overlayClass = classNames(galleryStyle?.overlay);
-  const magnifyClass = classNames(galleryStyle?.magnify);
   const closeClass = classNames(galleryStyle?.close);
 
   const closeIconProps = getCloseIconProps();
@@ -59,7 +58,7 @@ const ImageModal = (props: ImageGalleryProps) => {
     });
 
     const magnifyProps = getMaginfyProps(position, {
-      className: magnifyClass,
+      jssStyle,
       src: image.src,
     });
 

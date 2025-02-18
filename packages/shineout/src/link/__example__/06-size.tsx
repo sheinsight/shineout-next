@@ -10,7 +10,7 @@ import { Gap, Link } from 'shineout';
 export default () => {
   return (
     <div>
-      <Gap column={36}>
+      <Gap column={24}>
         <Link size="small" href="#" type="primary">Link</Link>
         <Link size="small" href="#" type="secondary">Link</Link>
         <Link size="small" href="#" type="danger">Link</Link>
@@ -20,7 +20,7 @@ export default () => {
 
       <br />
 
-      <Gap column={36}>
+      <Gap column={24}>
         <Link href="#" type="primary">Link</Link>
         <Link href="#" type="secondary">Link</Link>
         <Link href="#" type="danger">Link</Link>
@@ -30,7 +30,7 @@ export default () => {
 
       <br />
 
-      <Gap column={36}>
+      <Gap column={24}>
         <Link size="large" href="#" type="primary">Link</Link>
         <Link size="large" href="#" type="secondary">Link</Link>
         <Link size="large" href="#" type="danger">Link</Link>

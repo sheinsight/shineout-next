@@ -284,7 +284,10 @@ export const getCompleteFieldKeys = (fields: string | string[], allFields: strin
   let completeFields: string[] = [];
 
   fieldsArray.forEach(field => {
-    const na = `${field}[`;
+    let na = `${field}[`;
+    if(field.endsWith(']')) {
+      na = field
+    }
     const no = `${field}.`;
     completeFields.push(field);
     const childFields = allFields.filter(f => f.startsWith(na) || f.startsWith(no));
@@ -293,5 +296,6 @@ export const getCompleteFieldKeys = (fields: string | string[], allFields: strin
     }
   });
 
-  return completeFields;
+  // 返回之前去重
+  return Array.from(new Set(completeFields));
 }

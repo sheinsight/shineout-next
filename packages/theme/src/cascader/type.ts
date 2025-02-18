@@ -346,6 +346,12 @@ export interface CascaderTokens {
   cascaderOptionActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 级联选择器选项选项鼠标移入时的字体颜色
+   */
+  cascaderOptionItemHoverFontColor: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 级联选择器选项内部容器的内边距（水平方向）
    */
@@ -388,6 +394,12 @@ export interface CascaderTokens {
   cascaderOptionHoverFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-3
+   * @description 级联选择器选项鼠标聚焦时的背景颜色
+   */
+  cascaderOptionFocusBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-2
    * @description 级联选择器选项禁用时的颜色
    */
@@ -400,13 +412,13 @@ export interface CascaderTokens {
   cascaderOptionDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Spacing-16
+   * @token Spacing-8
    * @description 级联选择器折叠内容的内边距（水平方向）
    */
   cascaderMorePaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-14
+   * @token Spacing-6
    * @description 级联选择器折叠内容的内边距（垂直方向）
    */
   cascaderMorePaddingY: string;
@@ -464,4 +476,10 @@ export interface CascaderTokens {
    * @description 级联选择器下拉列表的边框颜色
    */
   cascaderListBorderColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-3
+   * @description 级联选择器下拉列表的内边距（垂直方向）
+   */
+  cascaderListPaddingY: string;
 }

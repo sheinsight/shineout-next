@@ -85,6 +85,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
             <Checkbox
               jssStyle={props.jssStyle}
               checked={datum.check(item)}
+              size={props.size}
               disabled={datum.disabledCheck(item)}
               onChange={(_value, checked) => {
                 if (checked) {

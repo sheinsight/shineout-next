@@ -101,7 +101,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
             disabled: disabled === true,
             onFilter: handleFilter,
             placeholder: getLocale(locale, 'search'),
-            isSrouce: listType === 'source',
+            isSource: listType === 'source',
           })}
         </div>
       );
@@ -188,6 +188,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         height={listHeight}
         rowsInView={rowsInView}
         renderItem={renderItem}
+        paddingY={3}
       ></VirtualList>
     );
   };

@@ -77,10 +77,10 @@ const progressStyle: JsStyles<ProgressClassType> = {
       padding: `0 ${token.progressLineInnerPaddingX}`,
       fontWeight: token.progressLineFontWeight,
     },
-    '$wrapperSuccess &': { color: token.progressSuccessInnerFontColor },
-    '$wrapperWarning &': { color: token.progressWarningInnerFontColor },
-    '$wrapperInfo &': { color: token.progressInfoInnerFontColor },
-    '$wrapperDanger &': { color: token.progressDangerInnerFontColor },
+    '$lineInner$wrapperSuccess &': { color: token.progressSuccessInnerFontColor },
+    '$lineInner$wrapperWarning &': { color: token.progressWarningInnerFontColor },
+    '$lineInner$wrapperInfo &': { color: token.progressInfoInnerFontColor },
+    '$lineInner$wrapperDanger &': { color: token.progressDangerInnerFontColor },
 
     '$lineInnerRight &&': {
       // marginLeft: token.progressLineInnerPaddingX,
@@ -143,6 +143,8 @@ const progressStyle: JsStyles<ProgressClassType> = {
     stroke: token.progressBackground,
   },
   circleFront: {
+    transform: 'rotate(-90deg)',
+    transformOrigin: '50% 50%',
     transition:
       'stroke-dashoffset .32s ease 0s,stroke-dasharray .32s ease 0s,stroke .32s,stroke-width .06s ease .32s',
     '$wrapperSuccess &': { stroke: token.progressSuccessFrontBackgroundColor },

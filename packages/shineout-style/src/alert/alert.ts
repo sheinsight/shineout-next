@@ -60,16 +60,16 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   widthTitle: {
     '& $icon': {
+      fontSize: Token.alertTitleFontSize,
       // marginBottom: Token.alertNearlyMargin,
       width: Token.alertTitleIconWidth,
-      height: Token.alertTitleIconHeight,
+      height: Token.lineHeightDynamic,
     },
     '& $title': {
       lineHeight: Token.lineHeightDynamic,
     },
-    '& $close': {
-      marginBottom: Token.alertNearlyMargin,
-      marginTop: 2,
+    '& $closeWrapper': {
+      fontSize: Token.alertTitleFontSize,
     },
   },
   title: {
@@ -94,7 +94,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: Token.alertNearlyMargin,
+    // marginLeft: Token.alertNearlyMargin,
     '&:hover': {
       color: Token.alertCloseHoverColor,
     },
@@ -103,10 +103,12 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     },
   },
   closeWrapper: {
+    fontSize: Token.alertFontSize,
     width: Token.alertFontSize,
     height: Token.lineHeightDynamic,
     display: 'flex',
     alignItems: 'center',
+    marginLeft: Token.alertNearlyMargin,
   },
   content: {
     flex: '1 1 0',

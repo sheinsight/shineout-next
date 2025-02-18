@@ -36,7 +36,7 @@ const tableTokens: TableTokens = {
   tableTfootFontColor: 'Neutral-text-5',
   tableTfootFontWeight: 'Weight-regular',
   tableExpandIconSize: 'Size-7',
-  tableExpandIconColor: 'Neutral-text-2',
+  tableExpandIconColor: 'Neutral-text-3',
   tableExpandIconHoverBackgroundColor: 'Neutral-fill-3',
   tableExpandBackgroundColor: 'Neutral-fill-2',
   tableSorterColor: 'Neutral-text-3',

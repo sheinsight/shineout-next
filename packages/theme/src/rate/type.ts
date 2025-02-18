@@ -34,7 +34,7 @@ export interface RateTokens {
   rateSize: string;
   /**
    * @type {string}
-   * @token Spacing-10
+   * @token Spacing-16
    * @description 评分undefined间距
    */
   rateTextGap: string;
@@ -46,7 +46,7 @@ export interface RateTokens {
   rateBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Lemon-6
    * @description 评分已完成评分的背景颜色
    */
   rateFrontBackgroundColor: string;

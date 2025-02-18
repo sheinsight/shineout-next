@@ -4,6 +4,13 @@
 ### 🆕 Feature
 - `Table` 的 `TableRef` 新增 `sortByColumn` 方法，支持根据列 key 进行排序 ([#914](https://github.com/sheinsight/shineout-next/pull/914))
 
+## 3.5.8
+2025-02-13
+
+### 🐞 BugFix
+
+- 修复 `Table` 在虚拟列表大数据下拖拽滚动条时和调用 `scrollToIndex` 的性能问题（Regression: since: v3.5.4） ([#937](https://github.com/sheinsight/shineout-next/pull/937))
+
 ## 3.5.5
 2024-12-24
 

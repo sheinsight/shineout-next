@@ -15,7 +15,6 @@ export default () => {
       <Select
         width={300}
         multiple
-        onChange={(v) => console.log(v)}
         data={data}
         keygen
         value={value}

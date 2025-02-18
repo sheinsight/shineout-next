@@ -9,7 +9,7 @@ import { Dropdown } from 'shineout';
 
 const menu = new Array(30).fill(null).map((_, index) => ({
   id: `${index}`,
-  content: `item${index}`,
+  content: <div style={{textAlign: 'left'}}>{`item${index}`}</div>,
 }));
 
 const App: React.FC = () => (

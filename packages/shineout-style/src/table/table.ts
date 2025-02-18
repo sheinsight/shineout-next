@@ -209,7 +209,7 @@ const tableStyle: JsStyles<TableClassType> = {
     background: token.tableTfootBackgroundColor,
   },
   emptyWrapper: {
-    minHeight: '150px',
+    minHeight: '170px',
     width: '100%',
     height: '100%',
     position: 'sticky',
@@ -219,6 +219,7 @@ const tableStyle: JsStyles<TableClassType> = {
     justifyContent: 'center',
     display: 'flex',
     alignItems: 'center',
+    borderBottom: `1px solid ${token.tableCellBorderColor}`,
   },
   scrollY: {
     '&$headWrapper, &$footWrapper': {
@@ -270,6 +271,7 @@ const tableStyle: JsStyles<TableClassType> = {
         top: 0,
         bottom: -1,
         width: '5px',
+        pointerEvents: 'none',
       },
       '&[dir=ltr]::after': {
         right: '-5px',
@@ -303,6 +305,7 @@ const tableStyle: JsStyles<TableClassType> = {
         top: 0,
         bottom: 0,
         width: '5px',
+        pointerEvents: 'none',
       },
       '&[dir=rtl]::before': {
         right: '-5px',

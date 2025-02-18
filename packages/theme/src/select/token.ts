@@ -42,7 +42,7 @@ const selectTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5', weight: 'Weight-regular' },
   border: { radius: 'Radius-default', color: 'Neutral-border-2', width: 'Border-1' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
-  icon: { size: 'Size-7', color: 'Neutral-text-4' },
+  icon: { size: 'Size-7', color: 'Neutral-text-4', margin: {left: 'Spacing-8'} },
   tag: {
     margin: {
       y: 'Spacing-2',
@@ -144,7 +144,10 @@ const selectTokenExtraValue = {
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },
   more: {
-    padding: 'Spacing-8',
+    padding: {
+      x: 'Spacing-8',
+      y: 'Spacing-6',
+    }
   },
   header: {
     padding: { x: 'Spacing-8', y: 'Spacing-8' },

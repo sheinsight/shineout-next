@@ -5,7 +5,9 @@ import { TextareaTokens } from './type';
 
 const textareaTokens: TextareaTokens = {
   textareaFontSize: 'Font-14',
+  textareaFontColor: 'Neutral-text-5',
   textareaBorderRadius: 'Radius-default',
+  textareaBorderColor: 'Neutral-border-2',
   textareaPaddingX: 'Spacing-8',
   textareaPaddingY: 'Spacing-4',
   textareaSmallFontSize: 'Font-12',
@@ -14,9 +16,7 @@ const textareaTokens: TextareaTokens = {
   textareaLargeFontSize: 'Font-16',
   textareaLargePaddingX: 'Spacing-12',
   textareaLargePaddingY: 'Spacing-7',
-  textareaFontColor: 'Neutral-text-5',
   textareaPlaceholderColor: 'Neutral-text-2',
-  textareaBorderColor: 'Neutral-border-2',
   textareaBackgroundColor: 'Neutral-fill-1',
   textareaHoverBorderColor: 'Brand-6',
   textareaFocusBorderColor: 'Brand-7',

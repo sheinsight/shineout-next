@@ -103,7 +103,7 @@ describe('Alert[Base]', () => {
   test('should render default', () => {
     const { container } = render(<Descriptions />);
     const descriptionsWrapper = container.querySelector(wrapper)!;
-    classLengthTest(descriptionsWrapper, header, 1);
+    classLengthTest(descriptionsWrapper, header, 0);
     const descriptionsBody = descriptionsWrapper.querySelector(body)!;
     classTest(descriptionsBody, inlineHorizontal);
     const descriptionsTable = descriptionsBody.querySelector('table')!;
