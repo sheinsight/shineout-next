@@ -36,7 +36,7 @@ export default () => {
       <Descriptions
         items={data}
         title='User Info'
-        colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}
+        colon={' :'}
       />
     </div>
   );

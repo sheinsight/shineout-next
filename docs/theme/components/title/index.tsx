@@ -7,7 +7,7 @@ import { Header as HeaderProps } from 'docs/types';
 import Tabs from './tabs';
 import HeaderLogo from './logo';
 import { collocatorPreset } from '../collocator/preset';
-import DesignDocLink from './design'
+import DesignDocLink from './design';
 
 const Header = (props: HeaderProps) => {
   const classes = useStyles();
@@ -22,7 +22,9 @@ const Header = (props: HeaderProps) => {
     // [classes.stickyHeader]: true,
   });
   const showGuide = guides && guides[state.locales] && guides[state.locales].length > 0;
-  const showPlayground = !!Object.keys(collocatorPreset?.[props.title?.en] || {}).find(item => !collocatorPreset?.[props.title?.en]?.[item]?.hide)
+  const showPlayground = !!Object.keys(collocatorPreset?.[props.title?.en] || {}).find(
+    (item) => !collocatorPreset?.[props.title?.en]?.[item]?.hide,
+  );
 
   const onMouseMove = (e: React.MouseEvent) => {
     if (!e) return;
@@ -49,12 +51,12 @@ const Header = (props: HeaderProps) => {
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
       >
+        <HeaderLogo moveRatio={moveRatio}></HeaderLogo>
         <h1 className={classnames('title')}>{title[state.locales]}</h1>
         <p className='subtitle'>
           {describe[state.locales]}
           <DesignDocLink componentName={componentName} />
         </p>
-        <HeaderLogo moveRatio={moveRatio}></HeaderLogo>
         <Tabs showGuide={showGuide} showPlayground={showPlayground}></Tabs>
       </div>
     </>
