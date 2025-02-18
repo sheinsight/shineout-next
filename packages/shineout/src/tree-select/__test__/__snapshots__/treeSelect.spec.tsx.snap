@@ -528,8 +528,6 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
         </div>
       </div>
     </div>
-
-
   </div>
 </div>
 `;
