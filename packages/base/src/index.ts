@@ -51,4 +51,4 @@ export * from './upload';
 
 export type { ObjectType } from '@sheinx/hooks';
 export type { ConfigOption } from './config';
-export { setIcons, icons } from './icons';
+export { setIcons } from './icons';
