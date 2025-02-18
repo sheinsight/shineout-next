@@ -359,8 +359,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     if (props.disabled) return;
     if (context.heightCallback) {
       const cb = context.heightCallback;
-      context.heightCallback = null;
       cb();
+      setTimeout(() => {
+        context.heightCallback = null;
+      }, 300);
     }
   }, [scrollHeight]);
 
