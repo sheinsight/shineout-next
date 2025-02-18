@@ -22,7 +22,7 @@ export default () => {
   const renderMax = (dom: React.ReactNode[]) => {
     return (
       <div>
-        <Avatar>...</Avatar>
+        <Avatar><div style={{marginTop: -7}}>...</div></Avatar>
         <Popover style={{ padding: 16, display: 'flex', gap: 8 }}>{dom}</Popover>
       </div>
     );

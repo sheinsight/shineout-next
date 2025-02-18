@@ -82,10 +82,10 @@ const Desktop = () => {
       if (newActive) {
         dispatch.setActiveAnchor(newActive);
       }
-      if (!scroll && top > 267) {
+      if (!scroll && top >= 230) {
         dispatch.setScroll(true);
         scroll = true;
-      } else if (scroll && top < 267) {
+      } else if (scroll && top <= 108) {
         dispatch.setScroll(false);
         scroll = false;
       }

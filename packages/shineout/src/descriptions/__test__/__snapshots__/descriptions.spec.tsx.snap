@@ -38,11 +38,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Name
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -61,11 +57,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Residence
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -84,11 +76,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Address
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -111,11 +99,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Mobile
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -135,11 +119,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Hometown
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"

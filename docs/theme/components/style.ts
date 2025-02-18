@@ -1,26 +1,28 @@
 import { createUseStyles } from 'react-jss';
 
-const top = 208;
+// const top = 208;
 export default createUseStyles(
   {
     pages: {},
     header: {
-      position: 'fixed',
-      top: 59,
+      position: 'relative',
+      top: 0,
+      left: 0,
       right: 0,
-      left: 259,
       zIndex: 1,
       color: 'var(--soui-neutral-text-5)',
       padding: '0 40px',
       backgroundColor: 'var(--soui-neutral-fill-1)',
       borderBottom: '1px solid var(--soui-neutral-border-1)',
       overflow: 'hidden',
-      transition: 'all 0.15s ease',
+      marginBottom: 0,
+      // transition: 'all 0.3s ease',
       'body.rtl &': {
-        right: 259,
+        right: 0,
         left: 0,
       },
       '& .title': {
+        position: 'relative',
         fontSize: 36,
         fontWeight: 500,
         color: 'var(--soui-neutral-text-5)',
@@ -33,6 +35,7 @@ export default createUseStyles(
       },
 
       '& .subtitle': {
+        position: 'relative',
         fontSize: 14,
         lineHeight: '22px',
         opacity: 1,
@@ -47,7 +50,6 @@ export default createUseStyles(
       right: 0,
       left: 0,
       top: 0,
-      zIndex: -1,
       'body.rtl &': {
         transition: 'transform 0.3s ease',
         transform: 'scaleX(-1)',
@@ -74,20 +76,26 @@ export default createUseStyles(
       position: 'absolute',
     },
     stickyHeader: {
+      position: 'sticky',
+      top: 0,
+      marginBottom: 32,
       '& .title': {
         paddingTop: 0,
         fontSize: 24,
         opacity: 0,
         height: 0,
+        transition: 'none',
       },
       '& .subtitle': {
         height: 0,
         opacity: 0,
         marginTop: 0,
+        transition: 'none',
       },
       '& $tabs': {
         marginTop: 12,
         marginBottom: 12,
+        transition: 'none',
       },
     },
     hiddenHeader: {},
@@ -107,7 +115,7 @@ export default createUseStyles(
     },
     doc: {
       display: 'flex',
-      marginTop: top,
+      marginTop: 0,
       position: 'relative',
       overflow: 'auto',
       '& .examples': {
@@ -117,14 +125,14 @@ export default createUseStyles(
       '& .anchor': {
         width: 192,
 
-        '@media (max-width: 1200px)': {
+        '@media (max-width: 960px)': {
           display: 'none',
         },
       },
     },
     guide: {
       display: 'flex',
-      marginTop: top,
+      marginTop: 0,
       '& .guides': {
         flex: 1,
         // '&:last-child': {
@@ -180,11 +188,11 @@ export default createUseStyles(
     api: {
       padding: 24,
       display: 'flex',
-      marginTop: top,
+      marginTop: 0,
     },
     playground: {
       display: 'flex',
-      marginTop: top,
+      marginTop: 0,
     },
     collocator: {
       flex: 1,
@@ -192,7 +200,7 @@ export default createUseStyles(
     },
     changelog: {
       padding: 40,
-      marginTop: top,
+      marginTop: 0,
     },
     changelogWrapper: {
       marginBottom: 64,
