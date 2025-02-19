@@ -5,7 +5,7 @@ export interface AlertClasses {
   alert: string;
   title: string;
   close: string;
-  widthTitle: string;
+  withTitle: string;
   content: string;
   icon: string;
   text: string;

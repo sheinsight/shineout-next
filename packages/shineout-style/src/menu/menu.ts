@@ -195,9 +195,14 @@ const menuStyle: JsStyles<MenuClassType> = {
       },
     },
 
+    // 一级菜单展不展开都是fill-9，一级展开后的子级都是fill-10
+    '[data-soui-theme=dark] $root > $item > &': {
+      backgroundColor: token.menuDarkItemBackgroundColor,
+    },
+
     '[data-soui-theme=dark] &': {
       color: token.menuDarkFontColor,
-      backgroundColor: token.menuDarkItemBackgroundColor,
+      backgroundColor: token.menuDarkItemOpenBackgroundColor,
       '&:hover': {
         color: token.menuDarkItemHoverFontColor,
         backgroundColor: token.menuDarkItemHoverBackgroundColor,

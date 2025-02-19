@@ -45,7 +45,7 @@ const Alert = (props: AlertProps) => {
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.rootClass, alertStyle.alert, {
     [alertStyle[type]]: true,
-    [alertStyle.widthTitle]: title,
+    [alertStyle.withTitle]: title,
     [alertStyle.pending]: dismiss === PENDING,
     [alertStyle.noBordered]: bordered === false,
   });

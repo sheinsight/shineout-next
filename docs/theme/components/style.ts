@@ -1,11 +1,11 @@
 import { createUseStyles } from 'react-jss';
 
-// const top = 208;
+const top = 208;
 export default createUseStyles(
   {
     pages: {},
     header: {
-      position: 'relative',
+      position: 'absolute',
       top: 0,
       left: 0,
       right: 0,
@@ -78,7 +78,8 @@ export default createUseStyles(
     stickyHeader: {
       position: 'sticky',
       top: 0,
-      marginBottom: 32,
+      marginTop: -65,
+      // marginBottom: 32,
       '& .title': {
         paddingTop: 0,
         fontSize: 24,
@@ -115,7 +116,7 @@ export default createUseStyles(
     },
     doc: {
       display: 'flex',
-      marginTop: 0,
+      marginTop: top,
       position: 'relative',
       overflow: 'auto',
       '& .examples': {
@@ -132,7 +133,7 @@ export default createUseStyles(
     },
     guide: {
       display: 'flex',
-      marginTop: 0,
+      marginTop: top,
       '& .guides': {
         flex: 1,
         // '&:last-child': {
@@ -188,11 +189,11 @@ export default createUseStyles(
     api: {
       padding: 24,
       display: 'flex',
-      marginTop: 0,
+      marginTop: top,
     },
     playground: {
       display: 'flex',
-      marginTop: 0,
+      marginTop: top,
     },
     collocator: {
       flex: 1,
@@ -200,7 +201,7 @@ export default createUseStyles(
     },
     changelog: {
       padding: 40,
-      marginTop: 0,
+      marginTop: top,
     },
     changelogWrapper: {
       marginBottom: 64,
