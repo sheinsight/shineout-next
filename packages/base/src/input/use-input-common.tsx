@@ -57,7 +57,11 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
 
   const tipNode = useTip({
     popover,
-    popoverProps,
+    popoverProps: {
+      popupGap: 4,
+      offset: [1,0],
+      ...popoverProps,
+    },
     error,
     tip,
     focused,

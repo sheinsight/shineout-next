@@ -17,6 +17,7 @@ const Popover = (props: PopoverProps) => {
     trigger = 'hover',
     type,
     destroy,
+    popupGap = 0,
     showArrow = true,
     zIndex = 1060,
   } = props;
@@ -128,7 +129,7 @@ const Popover = (props: PopoverProps) => {
       absolute={typeof props.getPopupContainer === 'function' ? props.getPopupContainer : true}
       position={position}
       fixedWidth={false}
-      popupGap={0}
+      popupGap={popupGap}
       destroy={destroy}
       zIndex={zIndex}
       adjust={props.adjust}

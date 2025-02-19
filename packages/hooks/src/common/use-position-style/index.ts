@@ -177,7 +177,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       let overRight = 0;
       let overLeft = 0;
       if (h === 'left') {
-        style.left = rect.left - containerRect.left + containerScroll.left;
+        style.left = rect.left - containerRect.left + containerScroll.left - (offset ? offset[0] : 0);
         style.transform = '';
         arrayStyle.left = `8px`;
         if (adjust) {
@@ -188,7 +188,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         }
       } else if (h === 'right') {
         style.right =
-          containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left;
+          containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left - (offset ? offset[0] : 0);
 
         style.left = 'auto';
         style.transform = '';
