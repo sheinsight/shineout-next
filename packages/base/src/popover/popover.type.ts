@@ -174,6 +174,16 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @en The offset of the pop-up layer
    * @cn 弹出层偏移量, [x, y]
    * @example [0, 4]
+   * @default [0,0]
+   * @version 3.6.0
    */
   offset?: [number, number];
+
+  /**
+   * @en The gap between the pop-up layer and the trigger element
+   * @cn 弹出层与触发元素的间距
+   * @default 4
+   * @version 3.6.0
+   */
+  popupGap?: number;
 }
