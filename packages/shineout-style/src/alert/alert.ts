@@ -55,14 +55,14 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
         },
       },
     },
-    '&$widthTitle': {},
+    '&$withTitle': {},
     '& $icon': {},
   },
-  widthTitle: {
+  withTitle: {
     '& $icon': {
       fontSize: Token.alertTitleFontSize,
       // marginBottom: Token.alertNearlyMargin,
-      width: Token.alertTitleIconWidth,
+      width: `calc(${Token.alertTitleIconWidth} + 2px)`,
       height: Token.lineHeightDynamic,
     },
     '& $title': {

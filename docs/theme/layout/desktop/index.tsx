@@ -85,7 +85,7 @@ const Desktop = () => {
       if (!scroll && top >= 230) {
         dispatch.setScroll(true);
         scroll = true;
-      } else if (scroll && top <= 108) {
+      } else if (scroll && top <= 180) {
         dispatch.setScroll(false);
         scroll = false;
       }

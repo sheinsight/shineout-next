@@ -29,18 +29,20 @@ const AvatarGroup = (props: AvatarGroupProps) => {
 
     if (renderMax) {
       childrenShow.push(
-        <React.Fragment key='avatar-provider-key'>
+        <span key='avatar-provider-key' className={avatarGroupClasses.max}>
           {renderMax(childrenHidden, childrenHidden.length)}
-        </React.Fragment>,
+        </span>,
       );
     } else {
       childrenShow.push(
-        <Avatar key='avatar-provider-key' jssStyle={jssStyle} className={avatarGroupClasses.max}>
-          +{childrenHidden.length}
+        <span className={avatarGroupClasses.max}>
+          <Avatar key='avatar-provider-key' jssStyle={jssStyle}>
+            +{childrenHidden.length}
+          </Avatar>
           <Popover jssStyle={jssStyle} {...popover}>
             <div className={avatarGroupClasses.popover}>{childrenHidden}</div>
           </Popover>
-        </Avatar>,
+        </span>,
       );
     }
 

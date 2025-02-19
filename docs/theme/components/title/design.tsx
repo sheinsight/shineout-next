@@ -51,7 +51,7 @@ interface Props {
 }
 
 export default function ({ componentName }: Props) {
-  if (!componentName) return null;
+  if (!componentName || !docs[componentName]) return null;
   return (
     <>
       ，<a href={docs[componentName]} target="_blank" rel="noreferrer">查看交互设计规范</a>
