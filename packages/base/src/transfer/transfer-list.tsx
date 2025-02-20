@@ -71,7 +71,6 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
 
   const getLineHeight = () => {
     if (lineHeightProp) {
-      // console.log('lineHeightProp', lineHeightProp);
       return lineHeightProp;
     }
     if (size === 'small') {
