@@ -1,3 +1,10 @@
+## 3.6.0-beta.8
+2025-02-20
+
+### 🐞 BugFix
+
+- 修复 `Transfer` 设置了 `renderFilter` 之后可能导致左右面板高度不一致的问题 ([#967](https://github.com/sheinsight/shineout-next/pull/967))
+
 ## 3.5.8
 2025-02-13
 
