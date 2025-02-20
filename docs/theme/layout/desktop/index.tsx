@@ -15,7 +15,12 @@ import Changelog from '../../../pages/changelog';
 import Debugger from '../../../pages/debug';
 import Markdown from '../../../pages/markdown';
 
-const Desktop = () => {
+export interface DesktopProps {
+  isFullScreen: boolean;
+}
+
+const Desktop = (props: DesktopProps) => {
+  const { isFullScreen } = props;
   const classes = useStyles();
 
   const ref = useRef<HTMLDivElement>(null);
@@ -99,9 +104,9 @@ const Desktop = () => {
   }, []);
 
   return (
-    <section ref={ref} id='layout' className={classnames(classes.desktop, classes.customScrollbar)}>
+    <section ref={ref} id='layout' className={classnames(classes.desktop, !isFullScreen && classes.customScrollbar, isFullScreen && classes.fullScreen)}>
       <Routes></Routes>
-      <FloatButton></FloatButton>
+      {!isFullScreen && <FloatButton></FloatButton>}
     </section>
   );
 };
