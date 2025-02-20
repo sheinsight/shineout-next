@@ -14,6 +14,11 @@ export default createUseStyles(
         },
       },
     },
+    fullScreen: {
+      top: '0 !important',
+      left: '0 !important',
+      height: '100% !important',
+    },
     desktop: {
       position: 'relative',
       flex: 1,
@@ -26,6 +31,7 @@ export default createUseStyles(
         right: 0,
       },
     },
+
     nav: {
       position: 'sticky',
       top: 0,

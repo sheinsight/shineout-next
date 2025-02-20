@@ -1,7 +1,12 @@
+import useStyle from './style';
+import FrontPage from "./components/front-page";
+
 const Home = () => {
+  const styles = useStyle();
+
   return (
-    <div>
-      <h1>Home</h1>
+    <div className={styles.wrapper}>
+      <FrontPage />
     </div>
   );
 };
