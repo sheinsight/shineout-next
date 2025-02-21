@@ -23,7 +23,7 @@ const docs: Record<string, string> = {
   DatePicker: link('6530'),
   Form: link('6527'),
   Input: link('6505'),
-  Raido: link('6503'),
+  Radio: link('6503'),
   Rate: link('9985'),
   Select: link('6531'),
   Slider: link('9993'),

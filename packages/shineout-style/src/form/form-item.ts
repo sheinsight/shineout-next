@@ -39,7 +39,7 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
   labelTooltip: {
     display: 'inline-block',
     verticalAlign: 'middle',
-    cursor: 'help',
+    cursor: 'pointer',
     color: token.formItemTooltipIconColor,
     width: token.formItemTooltipIconFontSize,
     fontSize: token.formItemTooltipIconFontSize,
