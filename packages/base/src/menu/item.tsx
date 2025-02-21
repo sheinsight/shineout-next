@@ -105,7 +105,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     );
     if (shoudPop) {
       const position =
-        isVertical || isSubHorizontal ? (isUp ? 'right-bottom' : 'right-top') : 'bottom';
+        isVertical || isSubHorizontal ? (isUp ? 'right-bottom' : 'right-top') : 'bottom-left';
       const offset = isVertical && props.isEdgeItem ? [0, 4] as [number, number] : undefined;
       const popoverContentStyle = props.level === 0 && liRef.current ? { minWidth: liRef.current.clientWidth} : undefined;
       return (
