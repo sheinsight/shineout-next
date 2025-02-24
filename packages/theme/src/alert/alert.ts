@@ -31,6 +31,7 @@ const alertTokens: AlertTokens = {
   alertTitleIconHeight: 'Size-12',
   alertCloseFontColor: 'Neutral-text-4',
   alertCloseHoverColor: 'Neutral-text-5',
+  alertCloseSize: 'Size-8',
   alertMessageHoverColor: 'Neutral-fill-2',
 };
 

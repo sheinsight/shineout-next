@@ -1,9 +1,21 @@
 import { createUseStyles } from 'react-jss';
 
+
+const animations = {
+  '@keyframes logoFadeUp': {
+    '0%': { transform: 'translateY(200px)', opacity: 0, },
+    '100%': { transform: 'translateY(0)', opacity: 1 },
+  },
+  '@keyframes logoFadeDown': {
+    '0%': { transform: 'translate(0, -200px)', opacity: 0, },
+    '100%': { transform: 'translate(0, 0)', opacity: 1 },
+  },
+}
 const top = 208;
 export default createUseStyles(
   {
     pages: {},
+    ...animations,
     header: {
       position: 'absolute',
       top: 0,
@@ -50,6 +62,7 @@ export default createUseStyles(
       right: 0,
       left: 0,
       top: 0,
+      animation: '$logoFadeDown .3s ease forwards',
       'body.rtl &': {
         transition: 'transform 0.3s ease',
         transform: 'scaleX(-1)',
@@ -98,6 +111,9 @@ export default createUseStyles(
         marginBottom: 12,
         transition: 'none',
       },
+      '& $headerLogo': {
+        animation: '$logoFadeUp 0.3s ease forwards',
+      }
     },
     hiddenHeader: {},
     tabs: {

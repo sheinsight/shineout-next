@@ -86,10 +86,10 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   close: {
     cursor: 'pointer',
-    width: Token.alertFontSize,
     color: Token.alertCloseFontColor,
     fontSize: Token.alertFontSize,
-    height: Token.alertFontSize,
+    height: Token.alertCloseSize,
+    width: Token.alertCloseSize,
     flex: '0 0 auto',
     display: 'flex',
     alignItems: 'center',
@@ -104,7 +104,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   closeWrapper: {
     fontSize: Token.alertFontSize,
-    width: Token.alertFontSize,
+    width: Token.alertCloseSize,
     height: Token.lineHeightDynamic,
     display: 'flex',
     alignItems: 'center',

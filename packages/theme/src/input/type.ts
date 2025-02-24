@@ -298,7 +298,7 @@ export interface InputTokens {
   inputInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-2
+   * @token Spacing-1
    * @description 输入框内嵌内边距（垂直方向）
    */
   inputInnerPaddingY: string;
@@ -322,7 +322,7 @@ export interface InputTokens {
   inputInnerSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-2
+   * @token Spacing-1
    * @description 输入框内嵌小尺寸内边距（垂直方向）
    */
   inputInnerSmallPaddingY: string;
@@ -340,7 +340,7 @@ export interface InputTokens {
   inputInnerLargePaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-4
+   * @token Spacing-3
    * @description 输入框内嵌大尺寸内边距（垂直方向）
    */
   inputInnerLargePaddingY: string;
