@@ -80,9 +80,7 @@ const Spin = (props: SpinProps = {}) => {
           {...props}
           color={color}
           style={style}
-          className={classNames({
-            [className as string]: isRoot,
-          })}
+          className={isRoot ? className : undefined}
         />
       );
     }
@@ -100,8 +98,8 @@ const Spin = (props: SpinProps = {}) => {
 
   const renderContent = (isRoot: boolean) => {
     const contentClass = classNames(
+      isRoot && className,
       {
-        [className as string]: isRoot,
         [spinStyle.rootClass]: isRoot,
         [spinStyle.vertical]: mode === 'vertical',
         [spinStyle.horizontal]: mode === 'horizontal',
