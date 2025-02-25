@@ -562,7 +562,7 @@ exports[`Button[Base] should render correctly about loading 1`] = `
             class="soui-button-spin"
           >
             <div
-              class="soui-spin soui-spin-spin soui-spin-ring"
+              class="undefined soui-spin soui-spin-spin soui-spin-ring"
               style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
             />
           </div>
@@ -585,7 +585,7 @@ exports[`Button[Base] should render correctly about loading 1`] = `
             class="soui-button-spin"
           >
             <div
-              class="soui-spin soui-spin-spin soui-spin-ring"
+              class="undefined soui-spin soui-spin-spin soui-spin-ring"
               style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
             />
           </div>
@@ -605,7 +605,7 @@ exports[`Button[Base] should render correctly about loading 1`] = `
             class="soui-button-spin"
           >
             <div
-              class="soui-spin soui-spin-spin soui-spin-ring"
+              class="undefined soui-spin soui-spin-spin soui-spin-ring"
               style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
             />
           </div>
@@ -628,7 +628,7 @@ exports[`Button[Base] should render correctly about loading 1`] = `
             class="soui-button-spin"
           >
             <div
-              class="soui-spin soui-spin-spin soui-spin-ring"
+              class="undefined soui-spin soui-spin-spin soui-spin-ring"
               style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
             />
           </div>

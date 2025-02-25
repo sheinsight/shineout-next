@@ -48,7 +48,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -499,7 +499,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -763,7 +763,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -1544,7 +1544,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -1808,7 +1808,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -2259,7 +2259,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -2531,7 +2531,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
           </span>
         </div>
         <div
-          class="soui-transfer-spin-container soui-spin-container"
+          class="soui-transfer-spin-container soui-spin soui-spin-container"
         >
           <div
             class="soui-transfer-list"
@@ -2983,7 +2983,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
           </span>
         </div>
         <div
-          class="soui-transfer-spin-container soui-spin-container"
+          class="soui-transfer-spin-container soui-spin soui-spin-container"
         >
           <div
             class="soui-transfer-list"
@@ -3265,7 +3265,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-input"
@@ -3738,7 +3738,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-input"
@@ -4023,7 +4023,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-input-wrapper"
@@ -4502,7 +4502,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-input-wrapper"
@@ -4794,7 +4794,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -5158,7 +5158,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
@@ -5254,7 +5254,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -5471,7 +5471,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
@@ -5526,7 +5526,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -5890,7 +5890,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
@@ -5985,7 +5985,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -6249,7 +6249,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -6700,7 +6700,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -6962,7 +6962,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -7257,7 +7257,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
       </span>
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -7497,7 +7497,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -7948,7 +7948,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
