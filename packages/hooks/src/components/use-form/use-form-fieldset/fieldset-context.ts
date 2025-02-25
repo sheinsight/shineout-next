@@ -1,7 +1,8 @@
 'use client';
 import React, { createContext } from 'react';
 
-const FieldsetContext = createContext({ path: '', validateFieldSet: () => {} });
+export const FieldsetContext = createContext({ path: '', validateFieldSet: () => {} });
+FieldsetContext.displayName = 'FieldsetContext';
 
 interface BaseFieldProps {
   bind?: string[];
