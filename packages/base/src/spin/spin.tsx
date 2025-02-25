@@ -71,7 +71,7 @@ const Spin = (props: SpinProps = {}) => {
 
   const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  const contentClass = classNames(className, spinStyle.rootClass, spinStyle.content, {
+  const contentClass = classNames(spinStyle.rootClass, spinStyle.content, tip &&!children ? className : undefined, {
     [spinStyle.vertical]: mode === 'vertical',
     [spinStyle.horizontal]: mode === 'horizontal',
   });
@@ -81,7 +81,7 @@ const Spin = (props: SpinProps = {}) => {
     if (Spins[n]) {
       const Comp = Spins[n];
       return (
-        <Comp {...props} color={color} style={style} className={!tip ? className : undefined} />
+        <Comp {...props} color={color} style={style} className={!tip && !children ? className : undefined} />
       );
     }
 
