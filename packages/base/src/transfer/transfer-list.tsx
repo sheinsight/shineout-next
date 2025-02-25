@@ -64,7 +64,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     const containerBottom = listContainerRef.current.getBoundingClientRect().bottom;
     const listBottom = $list?.getBoundingClientRect().bottom || containerBottom;
     if(containerBottom - listBottom > 1) {
-      setAddonHeight(containerBottom - listBottom);
+      setAddonHeight(containerBottom - listBottom - 1);
     }
   },[]);
   const listHeight = listHeightProp + addonHeight;
