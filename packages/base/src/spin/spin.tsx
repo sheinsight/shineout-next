@@ -71,17 +71,19 @@ const Spin = (props: SpinProps = {}) => {
 
   const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 
-  const contentClass = classNames(className, spinStyle.rootClass, spinStyle.content, {
-    [spinStyle.vertical]: mode === 'vertical',
-    [spinStyle.horizontal]: mode === 'horizontal',
-  });
-
-  const renderSpin = () => {
+  const renderSpin = (isRoot: boolean) => {
     const n = name as keyof typeof Spins;
     if (Spins[n]) {
       const Comp = Spins[n];
       return (
-        <Comp {...props} color={color} style={style} className={!tip ? className : undefined} />
+        <Comp
+          {...props}
+          color={color}
+          style={style}
+          className={classNames({
+            [className as string]: isRoot,
+          })}
+        />
       );
     }
 
@@ -96,23 +98,33 @@ const Spin = (props: SpinProps = {}) => {
     );
   };
 
-  const renderContent = () => {
+  const renderContent = (isRoot: boolean) => {
+    const contentClass = classNames(
+      {
+        [className as string]: isRoot,
+        [spinStyle.rootClass]: isRoot,
+        [spinStyle.vertical]: mode === 'vertical',
+        [spinStyle.horizontal]: mode === 'horizontal',
+      },
+      spinStyle.content,
+    );
+
     if (tip) {
       return (
         <div className={contentClass}>
-          {renderSpin()}
+          {renderSpin(false)}
           {tip && renderTip()}
         </div>
       );
     }
 
-    return renderSpin();
+    return renderSpin(isRoot);
   };
   const renderContainer = () => {
     return (
-      <div className={classNames(className, spinStyle.container)}>
+      <div className={classNames(className, spinStyle.rootClass, spinStyle.container)}>
         {children}
-        {loading && <div className={spinStyle.loading}>{renderContent()}</div>}
+        {loading && <div className={spinStyle.loading}>{renderContent(false)}</div>}
       </div>
     );
   };
@@ -121,7 +133,7 @@ const Spin = (props: SpinProps = {}) => {
     return renderContainer();
   }
 
-  return renderContent();
+  return renderContent(true);
 };
 
 export default Spin;
