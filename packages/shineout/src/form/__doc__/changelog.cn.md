@@ -1,3 +1,11 @@
+## 3.6.0-beta.9
+2025-02-25
+
+### 💎 Enhancement
+
+- `Form` 的 `scrollToField` 方法兼容 `Form.Field` 和 `Form.FieldSet` 下的未设置name属性的表单组件 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
+
+
 ## 3.6.0-beta.1
 2024-12-17
 

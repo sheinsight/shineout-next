@@ -102,4 +102,5 @@ const Input = (props: SimpleInputProps) => {
   );
 };
 
+Input.displayName = 'SimpleInput';
 export default Input;

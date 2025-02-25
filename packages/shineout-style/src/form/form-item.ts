@@ -3,8 +3,19 @@ import { FormItemClasses } from '@sheinx/base';
 
 import { JsStyles } from '../jss-style';
 
+const animations = {
+  '@keyframes appear': {
+    '0%': { transform: 1 },
+    '25%': { opacity: 0.5 },
+    '50%': { opacity: 1 },
+    '75%': { opacity: 0.5 },
+    '100%': { transform: 1 },
+  },
+};
+
 const formItemStyle: JsStyles<keyof FormItemClasses> = {
   rootClass: {},
+  ...animations,
   wrapper: {
     display: 'flex',
     alignItems: 'flex-start',
@@ -136,6 +147,7 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
     minHeight: token.formItemTipMinHeight,
     fontSize: token.formItemDangerFontSize,
     fontWeight: token.formItemDangerFontWeight,
+    animation: '$appear 1s ease-in-out forwards',
     // flexBasis: '100%',
     // width: 0,
   },
