@@ -61,11 +61,11 @@ const tabsTokenExtraValue = {
     after: { background: { color: 'Brand-6' } },
     inner: { padding: { x: 'Spacing-8', y: 'Spacing-4' } },
     font: { color: 'Neutral-text-5', weight: 'Weight-regular', size: 'Font-14' },
-    background: { color: 'Neutral-fill-1' },
+    background: { color: 'transparent' },
     active: { font: { color: '', weight: '' }, background: { color: 'Neutral-fill-3' } },
     checked: {
       font: { color: 'Brand-6', size: 'Font-14', weight: 'Weight-medium' },
-      background: { color: 'Neutral-fill-1' },
+      background: { color: 'transparent' },
     },
     hover: {
       font: { color: '', weight: '', size: 'Font-14' },
