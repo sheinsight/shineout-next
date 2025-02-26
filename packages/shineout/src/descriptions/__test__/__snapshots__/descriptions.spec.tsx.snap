@@ -24,6 +24,17 @@ exports[`Alert[Base] should render correctly  1`] = `
         cellspacing="0"
         class="soui-descriptions-table"
       >
+        <colgroup>
+          <col
+            style="width: 33.33333333333333%;"
+          />
+          <col
+            style="width: 33.33333333333333%;"
+          />
+          <col
+            style="width: 33.33333333333333%;"
+          />
+        </colgroup>
         <tbody>
           <tr
             class="soui-descriptions-row"
@@ -1329,6 +1340,17 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         cellspacing="0"
         class="soui-descriptions-table"
       >
+        <colgroup>
+          <col
+            style="width: 33.33333333333333%;"
+          />
+          <col
+            style="width: 33.33333333333333%;"
+          />
+          <col
+            style="width: 33.33333333333333%;"
+          />
+        </colgroup>
         <tbody>
           <tr
             class="soui-descriptions-row"

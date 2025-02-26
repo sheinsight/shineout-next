@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import { Upload } from 'shineout';
-import {mockRquest} from './request';
+import { mockRquest } from './request';
 
 const App: React.FC = () => {
 

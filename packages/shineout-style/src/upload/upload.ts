@@ -56,7 +56,6 @@ const uploadStyle: JsStyles<UploadClassType> = {
   },
   result: {
     display: 'flex',
-    alignItems: 'center',
     gap: '8px',
     borderRadius: token.uploadResultBorderRadius,
     padding: `${token.uploadResultPaddingY} ${token.uploadResultPaddingX}`,
@@ -69,7 +68,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
   },
   icon: {
     width: token.uploadResultIconSize,
-    height: token.uploadResultIconSize,
+    height: token.lineHeightDynamic,
     color: token.uploadResultIconColor,
     display: 'flex',
     alignItems: 'center',
@@ -94,16 +93,14 @@ const uploadStyle: JsStyles<UploadClassType> = {
   },
   resultTextFooter: {
     display: 'flex',
-    alignItems: 'center',
     gap: token.uploadResultGap,
     color: token.uploadResultUploadingIconColor,
   },
   resultText: {
     display: 'flex',
-    alignItems: 'center',
-    minWidth: '0',
-    wordBreak: 'break-all',
     flex: 1,
+    minWidth: 0,
+    wordBreak: 'break-all',
     gap: token.uploadResultGap,
     fontSize: token.uploadResultFontSize,
     color: token.uploadResultFontColor,
