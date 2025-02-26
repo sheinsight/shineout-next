@@ -79,6 +79,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     position: positionProp = 'bottom-left',
     absolute,
     zIndex,
+    emptyText,
     getComponentRef,
     onFocus,
     onBlur,
@@ -417,7 +418,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderClearable = () => {
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = (compressed || multiple) ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = compressed || multiple ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     const arrow = (
       <span
         className={classNames(
@@ -449,7 +450,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       return renderClearable();
     }
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = (compressed || multiple) ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = compressed || multiple ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     return (
       <span
         className={classNames(
@@ -605,11 +606,24 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
+  const renderEmpty = () => {
+    if (emptyText) {
+      return <div className={styles?.empty}>{emptyText}</div>;
+    }
+    return <div className={styles?.empty}>{getLocale(locale, 'noData')}</div>;
+  };
+
   const renderNormalList = () => {
     if (!open && isFirstRender.current) {
       return null;
     }
+
     isFirstRender.current = false;
+
+    const isEmpty = !filterData?.length;
+
+    if (isEmpty && props.emptyText !== false) return renderEmpty();
+
     const list = renderList();
     return renderOptionList ? renderOptionList(list, { loading: !!loading }) : list;
   };
@@ -652,10 +666,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         <Spin jssStyle={jssStyle} size={14}></Spin>
       </div>
     );
-  };
-
-  const renderEmpty = () => {
-    return <div className={styles?.empty}>{getLocale(locale, 'noData')}</div>;
   };
 
   const renderPanel = () => {

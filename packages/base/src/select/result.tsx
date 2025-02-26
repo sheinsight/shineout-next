@@ -18,6 +18,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     jssStyle,
     multiple,
     size,
+    reFocus,
     value: valueProp,
     focus,
     keygen,
@@ -372,10 +373,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           props.setInputText(textContent);
         }
       }
-
-      setTimeout(() => {
-        inputRef?.current?.select();
-      }, 10);
+      if (!reFocus) {
+        setTimeout(() => {
+          inputRef?.current?.select();
+        }, 10);
+      }
     }
     mounted.current = true;
   }, [focus, placeholder, multiple]);
