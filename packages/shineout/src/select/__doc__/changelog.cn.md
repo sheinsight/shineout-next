@@ -1,3 +1,9 @@
+## 3.6.0-beta.9
+2025-02-26
+
+### 🐞 BugFix
+- 修复 `Select` 组件 `reFocus` 属性失效的问题 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
+
 ## 3.6.0-beta.2
 2024-12-19
 
