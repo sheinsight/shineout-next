@@ -54,6 +54,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     trim,
     maxLength,
     style,
+    reFocus,
     multiple,
     loading,
     convertBr,
@@ -564,6 +565,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           keygen={keygen}
           disabled={disabled}
           maxLength={maxLength}
+          reFocus={reFocus}
           convertBr={convertBr}
           compressed={compressed}
           compressedBound={compressedBound}

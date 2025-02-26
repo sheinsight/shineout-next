@@ -418,4 +418,10 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 虚拟列表
    */
   virtual?: boolean;
+  /**
+   * @en There are onFilter and onCreate, select Option, automatically focus Input
+   * @cn 存在 onFilter 和 onCreate，选中 Option，自动 focus Input
+   * @default false
+   */
+  reFocus?: boolean;
 }

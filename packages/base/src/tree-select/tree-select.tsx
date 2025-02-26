@@ -46,6 +46,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     multiple,
     mode = 1,
     line = false,
+    reFocus = false,
     innerTitle,
     clearable = true,
     border = true,
@@ -491,6 +492,12 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const handleTreeChange = (_value: any, id: KeygenResult) => {
     const item = datum.getDataById(id) as DataItem;
     handleChange(item, id);
+
+    const shouldFocus = showInput && reFocus;
+
+    if (multiple && !shouldFocus) {
+      inputRef?.current?.select();
+    }
   };
 
   const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult) => {
@@ -540,6 +547,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           value={getResultValue() as any}
           data={data}
           focus={open}
+          reFocus={reFocus}
           keygen={keygen as any}
           disabled={disabled}
           compressed={compressed}
@@ -692,29 +700,31 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     >
       {tipNode}
       {renderResult()}
-      {hadOpened && <AbsoluteList
-        adjust={adjust}
-        focus={open}
-        fixedWidth='min'
-        lazy={false}
-        absolute={props.absolute}
-        zIndex={props.zIndex}
-        position={position}
-        popupGap={4}
-        popupElRef={popupRef}
-        parentElRef={targetRef}
-      >
-        <AnimationList
-          onRef={popupRef}
-          show={open}
-          className={classNames(styles?.pickerWrapper)}
-          display={'block'}
-          type='scale-y'
-          duration={'fast'}
+      {hadOpened && (
+        <AbsoluteList
+          adjust={adjust}
+          focus={open}
+          fixedWidth='min'
+          lazy={false}
+          absolute={props.absolute}
+          zIndex={props.zIndex}
+          position={position}
+          popupGap={4}
+          popupElRef={popupRef}
+          parentElRef={targetRef}
         >
-          {renderList()}
-        </AnimationList>
-      </AbsoluteList>}
+          <AnimationList
+            onRef={popupRef}
+            show={open}
+            className={classNames(styles?.pickerWrapper)}
+            display={'block'}
+            type='scale-y'
+            duration={'fast'}
+          >
+            {renderList()}
+          </AnimationList>
+        </AbsoluteList>
+      )}
     </div>
   );
 };
