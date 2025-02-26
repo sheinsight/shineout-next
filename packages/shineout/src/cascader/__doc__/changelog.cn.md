@@ -1,5 +1,5 @@
 ## 3.6.0-beta.9
-2025-02-13
+2025-02-26
 
 ### 💎 Enhancement
 - `Cascader` 新增 `emptyText` 属性，支持自定义空数据时的下拉列表内容 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
