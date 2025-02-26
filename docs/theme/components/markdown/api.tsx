@@ -1,3 +1,4 @@
+import React from 'react';
 import classNames from 'classnames';
 import { MarkdownProps } from 'docs/types';
 import { useSnapshot } from 'valtio';
@@ -15,11 +16,58 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
     return state.locales === 'cn' ? cn : en;
   };
 
+  const regex = /^"(?:\\.|[^"\\])*"$/;
+
+  const renderType = (type: any) => {
+    if (!type) return '-';
+    const types = type.split('|');
+    const result = type.split('|').map((item: any, index: number) => {
+      let res: React.ReactNode[] = [];
+      if (regex.test(item.trim())) {
+        res.push(
+          <code
+            key={index}
+            style={{
+              marginRight: 4,
+              color: '#c41d7f',
+              margin: '1px',
+              border: '1px solid rgba(5,5,5,0.06)',
+              borderRadius: 4,
+              background: 'rgba(0,0,0,0.04)',
+              padding: '0.2em 0.4em',
+            }}
+          >
+            {item.replace(/"/g, '').trim()}
+          </code>,
+        );
+      } else {
+        res.push(<React.Fragment key={index}>{item.trim()}</React.Fragment>);
+      }
+
+      if (index !== types.length - 1) {
+        res.push(' | ');
+      }
+
+      return res;
+    });
+
+    return (
+      <code
+        style={{
+          color: '#c41d7f',
+        }}
+      >
+        {result}
+      </code>
+    );
+  };
+
   const columns = [
     {
       title: locate('属性', 'Property'),
       width: 200,
-      render: (d: any) => d.name,
+      fixed: 'left',
+      render: (d: any) => <b>{d.name}</b>,
     },
     {
       title: locate('说明', 'Description'),
@@ -28,12 +76,15 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
     },
     {
       title: locate('类型', 'Type'),
-      width: 200,
-      render: (d: any) => d.type,
+      width: 300,
+      render: (d: any) => {
+        return renderType(d.type);
+      },
     },
     {
       title: locate('默认值', 'Default'),
       width: 100,
+      fixed: 'right',
       render: (d: any) => d.tag.default || '-',
     },
     {
@@ -61,7 +112,7 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
         </>
       ) : null}
       <div style={{ overflow: 'auto', marginBottom: isLast ? 0 : 48 }}>
-        <Table bordered columns={columns} data={data} keygen='name'></Table>
+        <Table bordered width={1000} columns={columns} data={data} keygen='name'></Table>
       </div>
     </>
   );
