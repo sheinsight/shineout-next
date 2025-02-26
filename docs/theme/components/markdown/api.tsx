@@ -10,7 +10,6 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
   const { title, properties, cn, en, subTitle, isLast } = props;
   // const hasVersion = properties.find((item: any) => !!item.version);
 
-
   const state = useSnapshot(store);
   const locate = (cn: string, en: string) => {
     return state.locales === 'cn' ? cn : en;
@@ -23,18 +22,19 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
       render: (d: any) => d.name,
     },
     {
-      title: locate('类型', 'Type'),
+      title: locate('说明', 'Description'),
       width: 400,
+      render: (d: any) => locate(d.tag.cn, d.tag.en),
+    },
+    {
+      title: locate('类型', 'Type'),
+      width: 200,
       render: (d: any) => d.type,
     },
     {
       title: locate('默认值', 'Default'),
       width: 100,
       render: (d: any) => d.tag.default || '-',
-    },
-    {
-      title: locate('说明', 'Description'),
-      render: (d: any) => locate(d.tag.cn, d.tag.en),
     },
     {
       title: locate('版本', 'Version'),
