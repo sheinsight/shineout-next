@@ -56,6 +56,7 @@ const inputTokens: InputTokens = {
   inputInnerPaddingY: 'Spacing-1',
   inputInnerFontSize: 'Font-14',
   inputInnerFontColor: 'Neutral-text-4',
+  inputInnerPlaceFontColor: 'Neutral-text-4',
   inputInnerSmallPaddingX: 'Spacing-8',
   inputInnerSmallPaddingY: 'Spacing-1',
   inputInnerSmallFontSize: 'Font-12',
