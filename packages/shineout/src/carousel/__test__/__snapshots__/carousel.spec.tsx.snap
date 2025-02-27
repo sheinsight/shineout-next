@@ -411,6 +411,28 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
         <span
           class="soui-radio-desc"
         >
+          bar
+        </span>
+      </div>
+      <div
+        class="soui-radio soui-radio-wrapper"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="soui-radio-indicator-wrapper"
+        >
+          <span
+            class="soui-radio-indicator"
+            tabindex="1"
+          />
+        </span>
+        <span
+          class="soui-radio-desc"
+        >
           number
         </span>
       </div>
