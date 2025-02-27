@@ -5,6 +5,8 @@
 
 - 修复 `Form` 中的带校验字段卸载后，执行手动校验方法 `validateFieldsWithValue` 依然能返回该字段校验不通过信息的问题 ([#975](https://github.com/sheinsight/shineout-next/pull/975))
 
+- 修复 `Form` 组件 `scrollToField` 在复杂布局中不生效的问题 ([#973](https://github.com/sheinsight/shineout-next/pull/973))
+
 ## 3.6.0-beta.9
 2025-02-25
 
