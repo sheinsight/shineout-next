@@ -518,6 +518,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
       if (validateFieldSet.size === 0 && updateFieldSet.size === 0) {
         context.names.delete(n);
+        delete context.errors[n];
         delete context.defaultValues[n];
       }
       const finalReserveAble = props.reserveAble ?? reserveAble;
@@ -587,7 +588,17 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       formName,
       colon,
     }),
-    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size, formName, colon],
+    [
+      labelWidth,
+      labelAlign,
+      labelVerticalAlign,
+      keepErrorHeight,
+      inline,
+      disabled,
+      size,
+      formName,
+      colon,
+    ],
   );
 
   const updateValue = () => {
