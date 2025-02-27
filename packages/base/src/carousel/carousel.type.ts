@@ -27,7 +27,7 @@ export interface CarouselClasses {
   indicatorTypeCircle?: string;
   indicatorTypeNumber?: string;
   indicatorTypeLine?: string;
-  indicatorTypeSlider?: string;
+  indicatorTypeBar?: string;
   indicatorArrow?: string;
   indicatorNumber?: string;
   indicator?: string;
@@ -66,7 +66,7 @@ export interface CarouselProps extends Pick<CommonType, 'className' | 'style'> {
     | 'circle'
     | 'number'
     | 'line'
-    | 'slider';
+    | 'bar';
 
   /**
    * @en the interval of animation, When it is not 0, play automatically

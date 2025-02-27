@@ -242,7 +242,48 @@ const carouselStyle: JsStyles<CarouselClassType> = {
       },
     },
   },
-  indicatorTypeSlider: {},
+  indicatorTypeBar: {
+    '& $indicator': {
+      position: 'relative',
+      borderRadius: '100px',
+      '&:first-child': {
+        '&:before': {
+          borderRadius: '100px 0 0 100px'
+        }
+      },
+      '&:last-child': {
+        '&:before': {
+          borderRadius: '0 100px 100px 0',
+        }
+      },
+      width: token.carouselIndicatorBarWidth,
+      height: token.carouselIndicatorBarHeight,
+    },
+    '& $indicator:before': {
+        content: '""',
+        position: 'absolute',
+        zIndex: -1,
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: token.carouselIndicatorBackgroundColor,
+    },
+    '$indicatorLeft& $indicator, $indicatorRight& $indicator': {
+      width: token.carouselIndicatorBarHeight,
+      height: token.carouselIndicatorBarWidth,
+      '&:first-child': {
+        '&:before': {
+          borderRadius: '100px 100px 0 0'
+        }
+      },
+      '&:last-child': {
+        '&:before': {
+          borderRadius: '0 0 100px 100px',
+        }
+      },
+    },
+  },
   indicatorArrow: {
     width: token.carouselIndicatorArrowSize,
     height: token.carouselIndicatorArrowSize,
