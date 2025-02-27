@@ -278,10 +278,20 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
           if (!isVisibleY || !isVisibleX) {
             // 计算元素相对于父元素的偏移量
-            const offsetTop = element.offsetTop - parentEl.offsetTop;
-            const offsetLeft = element.offsetLeft - parentEl.offsetLeft;
-            parentEl.scrollTop = offsetTop;
-            parentEl.scrollLeft = offsetLeft;
+            const offsetTop = elementRect.top - parentRect.top;
+            const offsetLeft = elementRect.left - parentRect.left;
+            // 如果是往上滚动，那么只有当元素的偏移量小于0时才需要滚动
+            if (offsetTop < 0) {
+              parentEl.scrollTop = Math.max(parentEl.scrollTop + offsetTop, 0);
+            } else {
+              parentEl.scrollTop = Math.min(parentEl.scrollTop + offsetTop, parentEl.scrollHeight - parentEl.clientHeight);
+            }
+            // 如果是往左滚动，那么只有当元素的偏移量小于0时才需要滚动
+            if (offsetLeft < 0) {
+              parentEl.scrollLeft = Math.max(parentEl.scrollLeft + offsetLeft, 0);
+            } else {
+              parentEl.scrollLeft = Math.min(parentEl.scrollLeft + offsetLeft, parentEl.scrollWidth - parentEl.clientWidth);
+            }
           }
         } else {
           // 如果没有找到可滚动的父元素，使用默认行为
