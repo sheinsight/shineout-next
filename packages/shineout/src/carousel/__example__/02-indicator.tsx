@@ -38,7 +38,7 @@ const App: React.FC = () => {
         <Radio.Group
           keygen
           value={indicatorType}
-          data={['circle', 'line', 'number']}
+          data={['circle', 'line', 'bar', 'number']}
           onChange={(v) => setIndicatorType(v)}
         />
       </div>
@@ -47,6 +47,7 @@ const App: React.FC = () => {
         style={{ width: 600, height: 280 }}
         indicatorPosition={indicatorPosition}
         indicatorType={indicatorType}
+        interval={3000}
       >
         {images.map((src) => (
           <img key={src} src={src} />

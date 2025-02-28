@@ -142,7 +142,7 @@ export interface TabsTokens {
   tabsLineFontSize: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token transparent
    * @description 标签页长线条模式背景颜色
    */
   tabsLineBackgroundColor: string;
@@ -172,7 +172,7 @@ export interface TabsTokens {
   tabsLineCheckedFontWeight: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token transparent
    * @description 标签页长线条模式选中状态背景颜色
    */
   tabsLineCheckedBackgroundColor: string;

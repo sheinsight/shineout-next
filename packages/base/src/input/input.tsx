@@ -18,8 +18,6 @@ const Input = (props: InputProps) => {
     integerLimit: commonProps.integerLimit,
     numType: commonProps.numType,
     trim: commonProps.trim ?? config.trim ?? false,
-    // 移除 formName，避免渲染到原生 input 上
-    formName: undefined,
   };
   const inputFormatProps = useInputFormat({
     value: commonProps.value,
@@ -30,7 +28,7 @@ const Input = (props: InputProps) => {
   const forwardProps = util.removeProps(commonProps, {
     ...inputFormatParams,
   });
-  
+
   return (
     <SimpleInputInput
       {...forwardProps}

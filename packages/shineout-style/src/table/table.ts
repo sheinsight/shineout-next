@@ -9,6 +9,7 @@ const resizeIndex = 8;
 const fixedFixedIndex = 10;
 const headerIndex = 12;
 const loadingIndex = 16;
+const shadowWidth = 12;
 
 export type TableClassType = keyof TableClasses;
 
@@ -54,7 +55,6 @@ const tableStyle: JsStyles<TableClassType> = {
             zIndex: cellBaseIndex,
             top: 0,
             bottom: 0,
-            background: token.tableCellBorderColor,
             borderLeft: `1px solid ${token.tableCellBorderColor}`,
           },
           '[dir=ltr]&::after': {
@@ -270,16 +270,16 @@ const tableStyle: JsStyles<TableClassType> = {
         position: 'absolute',
         top: 0,
         bottom: -1,
-        width: '5px',
+        width: `${shadowWidth}px`,
         pointerEvents: 'none',
+        boxShadow: 'inset 8px 0 10px -6px rgba(2,11,24,.1)',
+        // border: 'none',
       },
       '&[dir=ltr]::after': {
-        right: '-5px',
-        background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+        right: `-${shadowWidth}px`,
       },
       '&[dir=rtl]::after': {
-        left: '-5px',
-        background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
+        left: `-${shadowWidth}px`,
       },
     },
     '& table': {
@@ -304,16 +304,15 @@ const tableStyle: JsStyles<TableClassType> = {
         position: 'absolute',
         top: 0,
         bottom: 0,
-        width: '5px',
+        width: `${shadowWidth}px`,
         pointerEvents: 'none',
+        boxShadow: 'inset -8px 0 10px -6px rgba(2,11,24,.1)',
       },
       '&[dir=rtl]::before': {
-        right: '-5px',
-        background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+        right: `-${shadowWidth}px`,
       },
       '&[dir=ltr]::before': {
-        left: '-5px',
-        background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
+        left: `-${shadowWidth}px`,
       },
     },
     '& table': {

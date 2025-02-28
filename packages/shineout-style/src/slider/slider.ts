@@ -31,12 +31,17 @@ const sliderStyle: JsStyles<SliderClassType> = {
     cursor: 'pointer',
     borderRadius: '100px',
     height: token.sliderTrackSize,
-    boxSizing: 'border-box',
+    borderTop: `${token.sliderScaleMarginY} solid transparent`,
+    borderBottom: `${token.sliderScaleMarginY} solid transparent`,
+    boxSizing: 'content-box',
     backgroundColor: token.sliderTrackBackgroundColor,
     position: 'relative',
+    backgroundClip: 'content-box',
     '$vertical &': {
       width: token.sliderTrackSize,
       height: '100%',
+      borderLeft: `${token.sliderScaleMarginY} solid transparent`,
+      borderRight: `${token.sliderScaleMarginY} solid transparent`,
     },
     '$disabled &': {
       cursor: 'not-allowed',
@@ -254,7 +259,7 @@ const sliderStyle: JsStyles<SliderClassType> = {
       backgroundColor: token.sliderScaleLineBackgroundColor,
     },
     '$wrapper:not($vertical) &': {
-      marginTop: token.sliderScaleMarginY,
+      // marginTop: token.sliderScaleMarginY,
       width: 0,
       '&::before': {
         width: '1px',
@@ -268,7 +273,7 @@ const sliderStyle: JsStyles<SliderClassType> = {
       // '&:last-child $label[dir=rtl]': { transform: 'translate(100%)' },
     },
     '$vertical &': {
-      marginLeft: token.sliderScaleMarginY,
+      // marginLeft: token.sliderScaleMarginY,
       height: 0,
       '&::before': {
         height: '1px',

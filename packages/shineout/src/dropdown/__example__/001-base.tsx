@@ -20,6 +20,10 @@ const data: DropdownItem[] = [
       {
         content: <div style={{cursor: 'not-allowed'}}>Disabled</div>,
         disabled: true,
+        children: [
+          { content: 'Child 1' },
+          { content: 'Child 2' },
+        ],
       },
     ],
   },
