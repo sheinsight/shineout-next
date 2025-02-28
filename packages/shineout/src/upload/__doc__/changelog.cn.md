@@ -1,3 +1,10 @@
+## 3.6.0-beta.12
+2025-02-28
+
+### 🐞 BugFix
+
+- 修复 `Upload` 组件 `webkitdirectory` 属性失效的问题 ([#978](https://github.com/sheinsight/shineout-next/pull/978))
+
 ## 3.5.7
 2025-01-14
 
