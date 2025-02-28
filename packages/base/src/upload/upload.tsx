@@ -89,7 +89,13 @@ const Upload = <T,>(props0: UploadProps<T>) => {
   const renderHandler = () => {
     if (restLength <= 0) return null;
 
-    const inputOriginProps = { webkitdirectory: props.webkitdirectory };
+    const inputOriginProps: {
+      webkitdirectory?: string;
+    } = {};
+
+    if (props.webkitdirectory) {
+      inputOriginProps.webkitdirectory = 'true';
+    }
 
     return (
       <Drop
@@ -106,7 +112,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
           )}
           style={listType === 'image' ? imageStyle : undefined}
           {...wrapperProps}
-          role="button"
+          role='button'
         >
           {listType === 'image' &&
             (props.children || (
