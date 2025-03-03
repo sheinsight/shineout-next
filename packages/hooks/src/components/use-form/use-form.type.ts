@@ -31,7 +31,6 @@ export type UpdateFn = (
   formValue: ObjectType,
   errors: ObjectType<Error | undefined>,
   serverErrors: ObjectType<Error | undefined>,
-  names: Set<string>,
 ) => void;
 
 export interface FormContextValueType {
@@ -246,7 +245,6 @@ export type FormContext = {
         formValue: ObjectType,
         errors: ObjectType<Error | undefined>,
         serverErrors: ObjectType<Error | undefined>,
-        names: Set<string>,
       ) => void
     >
   >;

@@ -82,7 +82,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       formValue: ObjectType = {},
       errors: ObjectType,
       severErrors: ObjectType,
-      names: Set<string>,
     ) => {
       if (!name) return;
       if (isArray(name)) {
@@ -95,7 +94,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         const dv = isArray(defaultValue) ? defaultValue : [];
         const nextValue = [] as T[];
         name.forEach((n, index) => {
-          if (!names.has(n) && value[index] === undefined && dv[index] !== undefined) {
+          if (value[index] === undefined && dv[index] !== undefined) {
             nextValue[index] = dv[index];
           } else {
             nextValue[index] = value[index];
@@ -109,7 +108,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
           setErrorState(error);
         }
         if (!shallowEqual(value, latestInfo.valueState)) {
-          if (!names.has(name) && value === undefined && defaultValue !== undefined) {
+          if (value === undefined && defaultValue !== undefined) {
             setValueState(defaultValue);
           } else {
             setValueState(value);
