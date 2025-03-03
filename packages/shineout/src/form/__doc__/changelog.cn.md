@@ -1,3 +1,11 @@
+## 3.6.0-beta.14
+2025-03-03
+
+### 🐞 BugFix
+
+- 修复 `Form` 下的组件设置name为json path格式的数组时，组件上的 `defaultValue` 无法生效的问题 ([#980](https://github.com/sheinsight/shineout-next/pull/980))
+
+
 ## 3.6.0-beta.11
 2025-02-27
 

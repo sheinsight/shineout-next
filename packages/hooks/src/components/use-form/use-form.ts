@@ -95,7 +95,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     if (!name) {
       Object.keys(context.updateMap).forEach((key) => {
         context.updateMap[key]?.forEach((update) => {
-          update(context.value, context.errors, context.serverErrors, context.names);
+          update(context.value, context.errors, context.serverErrors);
         });
       });
       Object.keys(context.flowMap).forEach((key) => {
@@ -111,11 +111,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         if (!context.updateMap[key]) {
           const parentKey = key.split('.')[0];
           context.updateMap[parentKey]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors, context.names);
+            update(context.value, context.errors, context.serverErrors);
           });
         } else {
           context.updateMap[key]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors, context.names);
+            update(context.value, context.errors, context.serverErrors);
           });
         }
         context.flowMap[key]?.forEach((update) => {
