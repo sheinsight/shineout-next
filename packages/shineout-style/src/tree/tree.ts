@@ -8,6 +8,11 @@ const treeStyle: JsStyles<TreeClassType> = {
   rootClass: {},
   tree: {},
   virtual: {},
+  notTree: {
+    '&$root > $node$leaf': {
+      paddingLeft: 0,
+    }
+  },
   line: {
     '& $node': {
       '&[dir=ltr]::before': { left: 0 },

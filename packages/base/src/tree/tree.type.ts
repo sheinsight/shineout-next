@@ -17,6 +17,7 @@ export type TreeRenderItemType<DataItem> =
 export type TreeClasses = {
   rootClass: string;
   tree: string;
+  notTree: string;
   virtual: string;
   root: string;
   line: string;
