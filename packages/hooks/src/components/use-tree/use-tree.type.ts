@@ -52,6 +52,10 @@ export interface BaseTreeProps<DataItem> {
    * @private 内部属性
    */
   isControlled: boolean;
+  /**
+   * @private 内部属性
+   */
+  tiledData?: DataItem[];
   active?: KeygenResult;
   /**
    * @en Selected key (controlled)
