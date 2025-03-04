@@ -175,8 +175,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   } = useTree({
     mode,
     value,
-    data: tiledData,
+    data: data,
     unmatch,
+    tiledData,
     virtual,
     disabled,
     active: multiple ? undefined : value[0],
@@ -457,9 +458,15 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     if (from !== 'blur') {
       focusAndOpen();
     }
-    setVirtualExpanded([]);
     onTiledFilter?.(trim ? text.trim() : text);
   };
+
+  useEffect(() => {
+    if (virtual && expanded) {
+      console.log(expanded);
+      setVirtualExpanded(expanded);
+    }
+  }, [expanded]);
 
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
     if (disabled === true || datum?.isDisabled(id)) return;
@@ -652,18 +659,18 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           virtual={virtual}
           childrenKey={props.childrenKey}
           line={line}
+          ignoreSetFlat
           mode={mode}
           height={height}
           data={tiledData}
+          tiledData={tiledData}
           keygen={keygen}
           unmatch={unmatch}
           value={value}
           highlight={!multiple}
           loader={loader}
           onExpand={handleExpanded}
-          expanded={
-            virtualExpanded.length > 0 ? virtualExpanded : controlExpanded || unControlExpanded
-          }
+          expanded={virtual ? virtualExpanded : controlExpanded || unControlExpanded}
           defaultExpandAll={defaultExpandAll}
           expandIcons={tiledExpandIcons}
           disabled={disabled}

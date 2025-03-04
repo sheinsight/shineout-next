@@ -30,7 +30,7 @@ function toArray<Value>(value: Value) {
   return value;
 }
 
-const global_tree_map = new Map<object, TreeContext<any>>()
+const global_tree_map = new Map<object, TreeContext<any>>();
 
 export const MODE = {
   /**
@@ -341,6 +341,41 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     }
     return ids;
   };
+
+  const initFlatData = (
+    data: DataItem[],
+    path: KeygenResult[],
+    level: number = 1,
+    pid: KeygenResult | null = null,
+    result: FlatNodeType<DataItem>[] = [],
+  ) => {
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      const id = getKey(item, path[path.length - 1], i) as KeygenResult;
+
+      const node = {
+        id,
+        level,
+        data: item,
+        pid,
+      };
+      if (defaultExpandAll) {
+        result.push(node);
+      } else {
+        if (level === 1) {
+          result.push(node);
+        } else if (expanded && pid !== null && expanded.indexOf(pid) >= 0) {
+          result.push(node);
+        }
+      }
+
+      if (Array.isArray(item[childrenKey])) {
+        initFlatData(item[childrenKey] as DataItem[], [...path, id], level + 1, id, result);
+      }
+    }
+    return result;
+  };
+
   const initValue = (ids_outer?: KeygenResult[], forceCheck?: boolean) => {
     let ids = ids_outer;
     if (!context.data || !context.value) {
@@ -622,7 +657,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       });
     });
 
-    const { treeDataInfo } = getExpandVirtualData(context.data, expanded, getKey, childrenKey);
+    const { treeDataInfo } = getExpandVirtualData(
+      props.tiledData || context.data,
+      expanded,
+      getKey,
+      childrenKey,
+    );
+
     if (!treeDataInfo) {
       return;
     }
@@ -655,6 +696,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (props.datum) return;
     setValue(value);
   }, [value]);
+
+  useEffect(() => {
+    if (!virtual) return;
+    if (!props.tiledData) return;
+    const tiledFlatData = initFlatData(props.tiledData, [], 1);
+    setDataFlat(tiledFlatData);
+  }, [props.tiledData]);
 
   useEffect(() => {
     setInited(true);
@@ -690,7 +738,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     updateMap: context.updateMap,
     dataFlatStatusMap: context.dataFlatStatusMap,
   });
-
+  
   return {
     inited,
     datum: props.datum || datum,
