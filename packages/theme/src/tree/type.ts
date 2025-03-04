@@ -10,6 +10,12 @@ export interface TreeTokens {
   treeTextPaddingY: string;
   /**
    * @type {string}
+   * @token Spacing-4
+   * @description 树组件文字内边距（水平方向）
+   */
+  treeTextPaddingX: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 树组件复选框外边距（水平方向）
    */

@@ -146,9 +146,14 @@ const treeStyle: JsStyles<TreeClassType> = {
     flex: 1,
     display: 'flex',
     alignItems: 'center',
-    cursor: 'pointer',
-    padding: `0 ${Token.treePaddingX}`,
-    borderRadius: Token.treeContentBorderRadius,
+    // 'label&': {
+    //   cursor: 'pointer',
+    //   userSelect: 'none',
+    // },
+
+    '$iconWrapper + &': {
+      marginLeft: 4,
+    },
 
     '$contentDisabled &': {
       '& $text': {
@@ -163,12 +168,6 @@ const treeStyle: JsStyles<TreeClassType> = {
         color: Token.treeContentActiveFontColor,
       },
     },
-    '&:hover:not([data-active="true"])': {
-      background: Token.treeContentHoverBackgroundColor,
-      '& $text': {
-        color: Token.treeContentHoverFontColor,
-      },
-    },
   },
   checkbox: {
     '&[class*="checkbox-wrapper"]': {
@@ -177,13 +176,19 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
   },
   text: {
+    flex: 1,
+    minWidth: 0,
     fontSize: Token.treeFontSize,
     lineHeight: Token.lineHeightDynamic,
     color: Token.treeFontColor,
     fontWeight: Token.treeFontWeight,
-    paddingTop: Token.treeTextPaddingY,
-    paddingBottom: Token.treeTextPaddingY,
+    padding: `${Token.treeTextPaddingY} ${Token.treeTextPaddingX}`,
     whiteSpace: 'nowrap',
+    borderRadius: Token.treeContentBorderRadius,
+    '$content:not([data-active="true"]) &:hover': {
+      color: Token.treeContentHoverFontColor,
+      background: Token.treeContentHoverBackgroundColor,
+    },
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,
