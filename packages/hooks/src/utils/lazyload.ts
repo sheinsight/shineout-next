@@ -1,5 +1,5 @@
 import { generateUUID, docSize, devUseWarning } from '../utils';
-import { getClosestFixedContainer } from './dom/element';
+import { getClosestPositionedContainer } from './dom/element';
 
 type Timer = NodeJS.Timeout | null;
 
@@ -24,9 +24,9 @@ const winHeight = docSize.height;
 const getRect = (el: Element) => {
   // document or invalid element
   if (!el || !el.getBoundingClientRect) {
-    if (el){
-      devUseWarning.error(`the ${el} is not a element`)
-    };
+    if (el) {
+      devUseWarning.error(`the ${el} is not a element`);
+    }
     return { top: 0, bottom: winHeight };
   }
 
@@ -74,7 +74,7 @@ export function removeStack(id?: string | null, removeListener?: boolean) {
 
 function getObserver(obj: LazyConfig, id: string) {
   const { container = null, element, offset, render, offscreen, noRemove } = obj;
-  const fixedContainer = getClosestFixedContainer(element);
+  const fixedContainer = getClosestPositionedContainer(element, ['fixed', 'absolute']);
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((en) => {
@@ -82,6 +82,7 @@ function getObserver(obj: LazyConfig, id: string) {
           render();
           if (!noRemove) removeStack(id);
         } else {
+          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
           offscreen && offscreen();
         }
       });
