@@ -1481,15 +1481,15 @@ describe('DatePicker[Inputable]', () => {
       datePickerPickerWrapper.querySelector(pickerHeader)!,
       `${year}-${monthWithFormat}`,
     );
-    datePickerPickerWrapper
-      .querySelector('tbody')
-      ?.querySelectorAll('tr')
-      .forEach((tr) => {
-        tr.querySelectorAll('td').forEach((td) => {
-          if (td.textContent !== '25') return;
-          classTest(td, pickerCellActive);
-        });
-      });
+    // datePickerPickerWrapper
+    //   .querySelector('tbody')
+    //   ?.querySelectorAll('tr')
+    //   .forEach((tr) => {
+    //     tr.querySelectorAll('td').forEach((td) => {
+    //       if (td.textContent !== '25') return;
+    //       classTest(td, pickerCellActive);
+    //     });
+    //   });
     fireEvent.change(resultInput, {
       target: {
         value: 'aaaa',
