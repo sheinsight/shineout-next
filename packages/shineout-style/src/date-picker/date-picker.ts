@@ -60,11 +60,11 @@ const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const leftCircleBackground = `radial-gradient(circle closest-side, ${token.datePickerCellRangeBackgroundColor} 100%, transparent 0%),
 linear-gradient(to right, transparent 0%,transparent 50%, ${token.datePickerCellRangeBackgroundColor} 50%, ${token.datePickerCellRangeBackgroundColor} 100%)
-`
+`;
 
 const rightCircleBackground = `radial-gradient(circle closest-side, ${token.datePickerCellRangeBackgroundColor} 100%, transparent 0%),
 linear-gradient(to left, transparent 0%,transparent 50%, ${token.datePickerCellRangeBackgroundColor} 50%, ${token.datePickerCellRangeBackgroundColor} 100%)
-`
+`;
 
 const datePickerStyle: JsStyles<DatePickerClassType> = {
   rootClass: {},
@@ -361,6 +361,11 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   pickerFooterTime: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
   },
+  wrapperSmall: {
+    '& $pickerFooterNow': {
+      padding: `${token.datePickerSmallPanelFooterNowPaddingY} ${token.datePickerSmallPanelFooterNowPaddingX}`,
+    },
+  },
   pickerFooterNow: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
     '&:only-child': {
@@ -450,9 +455,10 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
         backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
-    '&$pickerCellActive$pickerCellInRange:not($pickerCellDisabled):not($pickerCellInRangeStart):not($pickerCellInRangeEnd):hover $pickerCellContent': {
-      backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
-    },
+    '&$pickerCellActive$pickerCellInRange:not($pickerCellDisabled):not($pickerCellInRangeStart):not($pickerCellInRangeEnd):hover $pickerCellContent':
+      {
+        backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
+      },
   },
   pickerCellContent: {
     marginTop: token.datePickerCellMarginY,

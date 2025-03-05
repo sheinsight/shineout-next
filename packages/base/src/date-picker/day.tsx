@@ -181,10 +181,12 @@ const Day = (props: DayProps) => {
         )}
         {props.showSelNow && (
           <div
-            className={styles?.pickerFooterNow}
+            className={classNames(
+              styles?.pickerFooterNow,
+            )}
             style={{
               marginRight: showNeedConfirm ? 'auto' : undefined,
-              paddingLeft: showNeedConfirm ? 6 : undefined,
+              paddingLeft: showNeedConfirm ? (props.type === 'date' ? 22 : 6) : undefined,
             }}
           >
             {props.showSelNow && props.type === 'date' && (
