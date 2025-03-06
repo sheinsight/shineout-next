@@ -1,3 +1,11 @@
+## 3.6.0-beta.17
+2025-03-06
+
+### 🐞 BugFix
+
+- 修复 `Datepicker` 仅开启 `needConfirm` 属性情况下不展示今天按钮的问题 ([#983](https://github.com/sheinsight/shineout-next/pull/983))
+- 修复 `Datepicker` 小尺寸模式下今天按钮不上下剧中的问题 ([#983](https://github.com/sheinsight/shineout-next/pull/983))
+
 ## 3.5.6
 2025-01-06
 
