@@ -139,7 +139,8 @@ const Day = (props: DayProps) => {
 
   const renderFooter = () => {
     const showLeft =
-      (props.type === 'datetime' || props.type === 'date')
+      (props.type === 'datetime' || props.type === 'date') &&
+      (props.rangeDate?.[0] || props.rangeDate?.[1]);
 
     const timeStr = func.getTimeStr();
     if (!showLeft && !props.showSelNow) return null;
