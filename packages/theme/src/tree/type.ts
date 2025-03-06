@@ -124,6 +124,12 @@ export interface TreeTokens {
   treeItemDisabledFontColor: string;
   /**
    * @type {string}
+   * @token Radius-lesser
+   * @description 树组件节点容器边框圆角
+   */
+  treeContentBorderRadius: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description 树组件节点容器鼠标移入时的背景颜色
    */
@@ -142,10 +148,16 @@ export interface TreeTokens {
   treeContentActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-4
    * @description 树组件节点容器鼠标点击时的字体颜色
    */
   treeContentActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Radius-2
+   * @description 树组件节点容器鼠标点击时的边框圆角
+   */
+  treeContentActiveBorderRadius: string;
   /**
    * @type {string}
    * @token Transprent
@@ -170,10 +182,4 @@ export interface TreeTokens {
    * @description 树组件拖拽时的背景颜色
    */
   treeDragBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Radius-lesser
-   * @description 树组件节点容器边框圆角
-   */
-  treeContentBorderRadius: string;
 }

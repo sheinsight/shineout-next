@@ -102,6 +102,29 @@ const tableTokenExtraValue = {
     hover: { color: 'Neutral-text-4' },
     active: { color: 'Brand-6' },
   },
+  filter: {
+    header: {
+      padding: {x: 'Spacing-12', y: 'Spacing-12' },
+    },
+    body: {
+      padding: { x: 'Spacing-12', y: 'Spacing-8' }
+    },
+    footer: {
+      padding: { x: 'Spacing-12', y: 'Spacing-8' },
+      border: { color: 'Neutral-border-1' },
+    },
+    input: {
+      margin: { bottom: 'Spacing-8' },
+      icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { right: 'Spacing-8' } },
+    },
+    icon: {
+      color: 'Neutral-text-3',
+      hover: { color: 'Neutral-text-4', background: { color: 'Neutral-fill-3' } },
+      active: { color: 'Brand-6' },
+      padding: 'Spacing-4',
+      size: 'Size-7',
+    },
+  },
   resize: {
     color: 'Brand-7',
   },

@@ -15,6 +15,8 @@ import { DatePickerClasses } from '../date-picker/date-picker.type';
 import { SwitchClasses } from '../switch/switch.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { RadioClasses } from '../radio/radio.type';
+import { PopoverClasses } from '../popover/popover.type';
+import { TreeClasses } from '../tree/tree.type';
 import { KeygenResult } from '@sheinx/hooks';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
@@ -66,6 +68,19 @@ export interface TableClasses {
   sorterActive: string;
   sorterAsc: string;
   sorterDesc: string;
+
+  hasFilter: string;
+  filterContainer: string;
+  filterActive: string;
+  filterInput: string;
+  filterInputIcon: string;
+  filterIcon: string;
+  filterIconContainer: string;
+  filterRadio: string;
+
+  filterHeader: string;
+  filterBody: string;
+  filterFooter: string;
 
   resizeSpanner: string;
   resizeSpannerActive: string;
@@ -135,6 +150,8 @@ export interface TableProps<DataItem, Value>
     treeSelect?: () => TreeSelectClasses;
     datePicker?: () => DatePickerClasses;
     switch?: () => SwitchClasses;
+    popover?: () => PopoverClasses
+    tree?: () => TreeClasses;
   };
   /**
    *

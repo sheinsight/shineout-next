@@ -165,6 +165,107 @@ export interface ColumnRenderFunc<DataItem> {
     | (() => React.ReactNode);
 }
 
+export interface TableColumnFilterBase<DataItem> {
+  /**
+   * @cn 筛选模式: search 搜索模式, select 选择模式
+   * @en Filter mode: search search mode, select select mode
+   */
+  mode: 'search' | 'select';
+
+  /**
+   * @cn 筛选数据的函数
+   * @en Filter data function
+   * @param value 筛选值
+   * @param row 行数据
+   * @returns 是否通过筛选
+   */
+  onFilter: (value: any, row: DataItem) => boolean;
+
+  /**
+   * @cn 自定义的筛选项图标
+   * @en Custom filter icon
+   */
+  icon?: React.ReactNode;
+}
+
+export type TableFilterData = {
+  label: string;
+  value: any;
+  [key: string]: any;
+  children?: TableFilterData[];
+};
+export interface SelectModeColumnFilter<DataItem> extends TableColumnFilterBase<DataItem> {
+  /**
+   * @cn 筛选模式为 select 时
+   * @en Filter mode is select
+   */
+  mode: 'select';
+
+  /**
+   * 必填的 `config` 字段
+   */
+  config: {
+    /**
+     * @cn 筛选项数据
+     * @en Filter item data
+     */
+    data: Array<TableFilterData>;
+
+    /**
+     * @cn 自定义渲染筛选项
+     * @en Custom rendering filter options
+     * @default (data) => data.label
+     */
+    renderItem?: ((item: TableFilterData) => React.ReactNode) | ObjectKey<TableFilterData>;
+
+    /**
+     * @cn 是否多选
+     * @en Whether to multiple select
+     */
+    multiple?: boolean;
+
+    /**
+     * @cn 是否开启顶部的搜索框
+     * @en Whether to open the top search box
+     */
+    search?: boolean;
+
+    /**
+     * @cn 是否高亮命中的关键词，仅当 search 为 true 时有效
+     * @en Whether to highlight the hit keywords
+     */
+    highlight?: boolean;
+  };
+
+  /**
+   * @cn 筛选数据的函数
+   * @en Filter data function
+   * @param value 筛选值，单选时为单个值，多选时为数组
+   * @param row 行数据
+   * @returns 是否通过筛选
+   */
+  onFilter: (value: any, row: DataItem) => boolean;
+}
+
+export interface SearchModeColumnFilter<DataItem> extends TableColumnFilterBase<DataItem> {
+  /**
+   * 筛选模式为 search 时
+   */
+  mode: 'search';
+
+  /**
+   * 此时不允许传 `config`
+   */
+  config?: never;
+}
+
+/**
+ * 最终的联合类型
+ */
+export type TableColumnFilter<DataItem> =
+  | SelectModeColumnFilter<DataItem>
+  | SearchModeColumnFilter<DataItem>;
+
 /**
  * @title TableColumn
  */
@@ -271,6 +372,13 @@ export interface TableColumnItem<DataItem> {
    * @version 3.5.0
    */
   sortDirections?: ('asc' | 'desc')[];
+
+  /**
+   * @cn 列的筛选配置
+   * @en Column filter configuration
+   * @version 3.6.0
+   */
+  filter?: TableColumnFilter<DataItem>;
 
   /**
    * @en The content of the header

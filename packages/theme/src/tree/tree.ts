@@ -24,15 +24,16 @@ const treeTokens: TreeTokens = {
   treeItemActiveBackgroundColor: 'Neutral-fill-4',
   treeItemActiveFontColor: 'Neutral-text-4',
   treeItemDisabledFontColor: 'Neutral-text-2',
+  treeContentBorderRadius: 'Radius-lesser',
   treeContentHoverBackgroundColor: 'Neutral-fill-2',
   treeContentHoverFontColor: 'Neutral-text-5',
   treeContentActiveBackgroundColor: 'Brand-1',
-  treeContentActiveFontColor: 'Brand-6',
+  treeContentActiveFontColor: 'Brand-4',
+  treeContentActiveBorderRadius: 'Radius-2',
   treeContentDisabledBackgroundColor: 'Transprent',
   treeContentDisabledFontColor: 'Neutral-text-5',
   treeDragBorderColor: 'Brand-6',
   treeDragBackgroundColor: 'Brand-1',
-  treeContentBorderRadius: 'Radius-lesser',
 };
 
 export default treeTokens;

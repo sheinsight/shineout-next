@@ -163,6 +163,7 @@ const treeStyle: JsStyles<TreeClassType> = {
 
     '&[data-active="true"]': {
       background: Token.treeContentActiveBackgroundColor,
+      borderRadius: Token.treeContentActiveBorderRadius,
 
       '& $text': {
         color: Token.treeContentActiveFontColor,
