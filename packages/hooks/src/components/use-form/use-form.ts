@@ -70,8 +70,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const preValue = usePrevious(props.value);
 
-  const formDomRef = React.useRef<HTMLFormElement>();
-
   const { current: context } = React.useRef<FormContext>({
     defaultValues: {},
     validateMap: {},
@@ -144,7 +142,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       const selector = `[${getDataAttributeName('status')}="error"]`;
 
-      const el = formDomRef.current?.querySelector(selector);
+      const el = props.formElRef.current?.querySelector(selector);
       if (el) {
         el.scrollIntoView();
         const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
@@ -479,7 +477,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     return {
       ...externalProps,
       ...externalEventHandlers,
-      ref: formDomRef,
       disabled: !!disabled,
       onSubmit: handleSubmit(externalEventHandlers),
       onReset: handleReset(externalEventHandlers),

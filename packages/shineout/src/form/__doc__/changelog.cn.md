@@ -1,3 +1,10 @@
+## 3.6.0-beta.18
+2025-03-06
+
+### 🐞 BugFix
+
+- 修复 `Form` 的 `scrollToError` 无法生效的问题(Regression: since v3.5.4-beta.3) ([#985](https://github.com/sheinsight/shineout-next/pull/985))
+
 ## 3.6.0-beta.14
 2025-03-03
 
