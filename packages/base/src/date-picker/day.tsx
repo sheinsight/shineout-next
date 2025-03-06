@@ -138,7 +138,8 @@ const Day = (props: DayProps) => {
   };
 
   const renderFooter = () => {
-    const showLeft = props.type === 'datetime' && (props.rangeDate?.[0] || props.rangeDate?.[1]);
+    const showLeft =
+      (props.type === 'datetime' || props.type === 'date')
 
     const timeStr = func.getTimeStr();
     if (!showLeft && !props.showSelNow) return null;
@@ -152,6 +153,7 @@ const Day = (props: DayProps) => {
     }
 
     const showNeedConfirm = props.needConfirm && !props.range;
+
     return (
       <div
         className={styles?.pickerFooter}
@@ -181,9 +183,7 @@ const Day = (props: DayProps) => {
         )}
         {props.showSelNow && (
           <div
-            className={classNames(
-              styles?.pickerFooterNow,
-            )}
+            className={classNames(styles?.pickerFooterNow)}
             style={{
               marginRight: showNeedConfirm ? 'auto' : undefined,
               paddingLeft: showNeedConfirm ? (props.type === 'date' ? 22 : 6) : undefined,

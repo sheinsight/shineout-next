@@ -357,6 +357,12 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     borderTop: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
     display: 'flex',
     justifyContent: 'space-between',
+    '&[dir=rtl] $pickerFooterConfirm': {
+      'margin-right': 'auto',
+    },
+    '&[dir=ltr] $pickerFooterConfirm': {
+      'margin-left': 'auto',
+    },
   },
   pickerFooterTime: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
