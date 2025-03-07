@@ -74,7 +74,7 @@ export const FilterSelect = (props: TheadCommonProps) => {
     setPopoverVisible(visible);
   };
 
-  const treeKeygen = config?.format || ((d) => d.value);
+  const treeKeygen = (d: TableFilterData) => d.value;
 
   const treeProps = config?.multiple
     ? {
@@ -122,7 +122,7 @@ export const FilterSelect = (props: TheadCommonProps) => {
       )}
       style={{ border: 'none' }}
     >
-      <span className={tableClasses.filterIcon}>{Icons.table.Filter}</span>
+      <span className={tableClasses.filterIcon}>{filter.icon || Icons.table.Filter}</span>
       <Popover
         jssStyle={props.jssStyle}
         trigger='click'
@@ -149,9 +149,10 @@ export const FilterSelect = (props: TheadCommonProps) => {
           <section className={tableClasses.filterBody}>
             {displayData && displayData.length > 0 ? (
               <Tree
-                keygen={config?.format || ((d) => d.value)}
+                keygen={((d) => d.value)}
                 jssStyle={props.jssStyle as any}
                 data={displayData}
+                actionOnClick={['check']}
                 {...treeProps}
               />
             ) : (
@@ -172,7 +173,7 @@ export const FilterSelect = (props: TheadCommonProps) => {
 };
 
 export const FilterSearch = (props: TheadCommonProps) => {
-  const { tableClasses } = props;
+  const { tableClasses, filter } = props;
   const [popoverVisible, setPopoverVisible] = useState(false);
   const [tempValue, setTempValue] = useState<any>();
 
@@ -214,7 +215,7 @@ export const FilterSearch = (props: TheadCommonProps) => {
       )}
       style={{ border: 'none' }}
     >
-      <span className={tableClasses.filterIcon}>{Icons.table.Search}</span>
+      <span className={tableClasses.filterIcon}>{filter.icon || Icons.table.Search}</span>
 
       <Popover
         jssStyle={props.jssStyle}

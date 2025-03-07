@@ -1,13 +1,15 @@
 /**
  * cn - 筛选
- *    -- 设置 column 的 `filter` 属性可以显示筛选框
+ *    -- 设置 column 的 `filter` 开启数据筛选功能
+ *    -- 支持搜索框和下拉选择框两种模式，下拉框支持单选和多选
  * en - Filter
  *    -- Set the filter property of column to display the filter box
+ *    -- Support two modes: search and select, select mode supports single and multiple selection
  */
 
 import React from 'react';
 import { Table, TYPE } from 'shineout';
-import {icon1, icon2, icon3, icon4, icon5} from './static/icon'
+import {icon1, icon2, icon3, icon4, icon5, icon6} from './static/icon'
 
 interface TableRowData {
   id: number;
@@ -169,15 +171,11 @@ const columns: TableColumnItem[] = [
       onFilter: (value, row) => {
         return row.address.includes(value);
       },
+      icon: icon6,
     },
   },
 ];
 
 export default () => {
-  return (
-    <div>
-      <Table keygen='id' columns={columns} data={data} />
-      {/* <Table keygen='id' columns={columns} data={[]} /> */}
-    </div>
-  );
+  return <Table keygen='id' columns={columns} data={data} />;
 };

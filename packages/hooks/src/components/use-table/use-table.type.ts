@@ -191,6 +191,7 @@ export interface TableColumnFilterBase<DataItem> {
 export type TableFilterData = {
   label: string;
   value: any;
+  icon?: React.ReactNode;
   [key: string]: any;
   children?: TableFilterData[];
 };
