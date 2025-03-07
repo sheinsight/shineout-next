@@ -50,6 +50,7 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
     childrenClassName,
     parentClickExpand,
     doubleClickExpand,
+    actionOnClick,
   } = props;
 
   const listClass = jssStyle?.tree() || ({} as TreeClasses);
@@ -109,6 +110,7 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
         onDragLeave={onDragLeave}
+        actionOnClick={actionOnClick}
       ></TreeNode>
     );
   };

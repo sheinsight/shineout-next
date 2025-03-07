@@ -1,11 +1,12 @@
 import { CommonType } from '../common/type';
 import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
-import { JsstyleType, TreeRenderItemType } from './tree.type';
+import { JsstyleType, TreeRenderItemType, TreeProps } from './tree.type';
 import { TreeListProps } from './tree-list.type';
 
 export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
-    Pick<CommonType, 'className'> {
+    Pick<CommonType, 'className'>,
+    Pick<TreeProps<DataItem, Value>, 'actionOnClick'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
   data: DataItem;
@@ -47,7 +48,8 @@ export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
 
 export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey'>,
-    Pick<CommonType, 'className'> {
+    Pick<CommonType, 'className'>,
+    Pick<TreeProps<DataItem, Value>, 'actionOnClick'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
   data: DataItem;

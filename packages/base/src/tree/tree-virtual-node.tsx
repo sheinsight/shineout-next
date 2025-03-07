@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import classNames from 'classnames';
 import { TreeClasses } from './tree.type';
 import { TreeVirtualNodeProps } from './tree-node.type';
-import TreeVirtualContent from './tree-virtual-content';
+import TreeVirtualContent from './tree-content';
 import { useTreeVirtualNode, util, KeygenResult } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
@@ -36,6 +36,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     onChange,
     onNodeClick,
     onToggle,
+    actionOnClick,
   } = props;
 
   const config = useConfig();
@@ -72,7 +73,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
   );
 
   if (placeElement) {
-    placeElement.className = contentStyle.placement;
+    (placeElement as HTMLElement).className = contentStyle.placement;
   }
 
   const handleFetch = () => {};
@@ -99,6 +100,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
       style={{ paddingLeft: level * 24 }}
     >
       <TreeVirtualContent
+        virtual
         jssStyle={jssStyle}
         isControlled={isControlled}
         id={id}
@@ -127,6 +129,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
         onToggle={handleToggle}
+        actionOnClick={actionOnClick}
       ></TreeVirtualContent>
     </div>
   );

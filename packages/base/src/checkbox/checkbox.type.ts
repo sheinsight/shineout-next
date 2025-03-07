@@ -54,6 +54,11 @@ export interface SimpleCheckboxProps
    * @private 内部属性
    */
   theme?: 'dark';
+
+  /**
+   * @private 内部属性
+   */
+  needStopPropagation?: boolean;
 }
 
 export interface CheckboxProps<T>

@@ -1,8 +1,9 @@
-import { JsstyleType, TreeRenderItemType } from './tree.type';
+import { JsstyleType, TreeRenderItemType, TreeProps } from './tree.type';
 import { BaseTreeProps, KeygenResult, UpdateFunc, ObjectKey } from '@sheinx/hooks';
 
 export interface TreeRootProps<DataItem, Value extends KeygenResult[]>
-  extends Omit<BaseTreeProps<DataItem>, 'chilrdrenKey'> {
+  extends Omit<BaseTreeProps<DataItem>, 'chilrdrenKey'>,
+  Pick<TreeProps<DataItem, Value>, 'actionOnClick'> {
   jssStyle?: JsstyleType;
   line: boolean;
   childrenClass?: ((data: DataItem) => string) | string;

@@ -61,6 +61,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
     onDragStart,
     onDragEnd,
     listComponent: List,
+    actionOnClick,
   } = props;
 
   initPlaceElement();
@@ -264,6 +265,8 @@ const Node = <DataItem, Value extends KeygenResult[]>(
       dragHoverExpand,
       dragImageStyle,
       dragImageSelector,
+
+      actionOnClick,
     };
   };
 
@@ -284,6 +287,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
   return (
     <div {...getDropProps()} ref={element} className={rootClass} dir={config.direction}>
       <TreeContent
+        virtual={false}
         jssStyle={jssStyle}
         isControlled={isControlled}
         id={id}
@@ -313,6 +317,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
         onNodeClick={onNodeClick}
         onDragOver={handleDragOver}
         onToggle={handleToggle}
+        actionOnClick={actionOnClick}
       ></TreeContent>
       {hasChildren && createElement(List, getChildrenListProps())}
     </div>

@@ -162,10 +162,9 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
 
     '&[data-active="true"]': {
-      background: Token.treeContentActiveBackgroundColor,
-      borderRadius: Token.treeContentActiveBorderRadius,
-
       '& $text': {
+        background: Token.treeContentActiveBackgroundColor,
+        borderRadius: Token.treeContentActiveBorderRadius,
         color: Token.treeContentActiveFontColor,
       },
     },
@@ -190,6 +189,9 @@ const treeStyle: JsStyles<TreeClassType> = {
       color: Token.treeContentHoverFontColor,
       background: Token.treeContentHoverBackgroundColor,
     },
+  },
+  textClickable: {
+    cursor: 'pointer',
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,

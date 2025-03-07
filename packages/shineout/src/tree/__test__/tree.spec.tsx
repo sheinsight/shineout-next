@@ -24,8 +24,8 @@ import TreeOnChange from '../__example__/06-onchange';
 import TreeLoader from '../__example__/07-loader';
 import TreeDrag from '../__example__/08-drag';
 import TreeDragStyle from '../__example__/09-drag-style';
-import TreeHighlight from '../__example__/10-highlight';
-import TreeHighlightControl from '../__example__/11-highlight-control';
+import TreeHighlight from '../__example__/12-highlight';
+import TreeHighlightControl from '../__example__/13-highlight-control';
 
 const SO_PREFIX = 'tree';
 const originClasses = [
