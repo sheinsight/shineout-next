@@ -29,7 +29,7 @@ export default () => {
         virtual
         line={false}
         data={data}
-        defaultExpandAll
+        // defaultExpandAll
         keygen='id'
         parentClickExpand
         mode={2}

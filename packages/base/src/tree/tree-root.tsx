@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import classNames from 'classnames';
 import { KeygenResult } from '@sheinx/hooks';
 import { TreeRootProps } from './tree-root.type';
@@ -7,7 +8,19 @@ import TreeList from './tree-list';
 const Root = <DataItem, Value extends KeygenResult[]>(props: TreeRootProps<DataItem, Value>) => {
   const { jssStyle, rootStyle = {}, ...rest } = props;
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
-  const rootClass = classNames(treeStyle.root);
+
+  const notTree = useMemo(() => {
+    if(!props.data) return true;
+
+    return props.data.every((item) => {
+      if(!item) return true;
+      if(!item[props.childrenKey]) return !props.loader;
+      if(item[props.childrenKey] === null) return true;
+      if(Array.isArray(item[props.childrenKey]) && (item[props.childrenKey] as []).length === 0) return true;
+      return false;
+    });
+  }, [props.data]);
+  const rootClass = classNames(treeStyle.root, notTree && treeStyle.notTree);
   return (
     <TreeList
       {...rest}

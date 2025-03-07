@@ -1,5 +1,5 @@
 import React from 'react';
-import { TreeClasses } from '../tree/tree.type';
+import { TreeClasses, TreeProps } from '../tree/tree.type';
 import { KeygenResult, ObjectKey, UnMatchedData, ValueItem } from '@sheinx/hooks';
 import { SelectClasses } from '../select/select.type';
 import { TagClasses } from '../tag/tag.type';
@@ -113,6 +113,7 @@ export interface TreeSelectProps<DataItem, Value>
       'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'filterSameChange'
     >,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
+    Pick<TreeProps<DataItem, any>, 'actionOnClick'>,
     BaseTipProps {
   /**
    * @en Data cache, if data change asynchronously, better set true

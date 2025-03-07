@@ -8,6 +8,11 @@ const treeStyle: JsStyles<TreeClassType> = {
   rootClass: {},
   tree: {},
   virtual: {},
+  notTree: {
+    '&$root > $node$leaf': {
+      paddingLeft: 0,
+    }
+  },
   line: {
     '& $node': {
       '&[dir=ltr]::before': { left: 0 },
@@ -141,9 +146,14 @@ const treeStyle: JsStyles<TreeClassType> = {
     flex: 1,
     display: 'flex',
     alignItems: 'center',
-    cursor: 'pointer',
-    padding: `0 ${Token.treePaddingX}`,
-    borderRadius: Token.treeContentBorderRadius,
+    // 'label&': {
+    //   cursor: 'pointer',
+    //   userSelect: 'none',
+    // },
+
+    '$iconWrapper + &': {
+      marginLeft: 4,
+    },
 
     '$contentDisabled &': {
       '& $text': {
@@ -152,16 +162,10 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
 
     '&[data-active="true"]': {
-      background: Token.treeContentActiveBackgroundColor,
-
       '& $text': {
+        background: Token.treeContentActiveBackgroundColor,
+        borderRadius: Token.treeContentActiveBorderRadius,
         color: Token.treeContentActiveFontColor,
-      },
-    },
-    '&:hover:not([data-active="true"])': {
-      background: Token.treeContentHoverBackgroundColor,
-      '& $text': {
-        color: Token.treeContentHoverFontColor,
       },
     },
   },
@@ -172,13 +176,22 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
   },
   text: {
+    flex: 1,
+    minWidth: 0,
     fontSize: Token.treeFontSize,
     lineHeight: Token.lineHeightDynamic,
     color: Token.treeFontColor,
     fontWeight: Token.treeFontWeight,
-    paddingTop: Token.treeTextPaddingY,
-    paddingBottom: Token.treeTextPaddingY,
+    padding: `${Token.treeTextPaddingY} ${Token.treeTextPaddingX}`,
     whiteSpace: 'nowrap',
+    borderRadius: Token.treeContentBorderRadius,
+    '$content:not([data-active="true"]) &:hover': {
+      color: Token.treeContentHoverFontColor,
+      background: Token.treeContentHoverBackgroundColor,
+    },
+  },
+  textClickable: {
+    cursor: 'pointer',
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,

@@ -1,3 +1,10 @@
+## 3.6.0-beta.19
+2025-03-06
+
+### 🆕 Feature
+- `Table` 新增筛选功能： 设置 `columns` 配置项的 `filter` 属性 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
+
+
 ## 3.6.0-beta.7
 2025-01-08
 

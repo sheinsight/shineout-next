@@ -35,7 +35,7 @@ const columns: TableColumnItem[] = [
       <div id={`name_${d.id}`} style={{ height: d.height }}>
         {`${d.firstName} ${d.lastName}`}
 
-        <Button text>test</Button>
+        <Button mode="text">test</Button>
       </div>
     ),
     width: 160,

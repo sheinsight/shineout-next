@@ -58,6 +58,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     onDragOver,
     onDragStart,
     datum: propsDatum,
+    actionOnClick,
     ...rest
   } = props;
 
@@ -240,6 +241,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
           bindNode={datum.bindNode}
           onNodeClick={handleNodeClick}
           onToggle={handleToggle}
+          actionOnClick={actionOnClick}
         />
       );
     }
@@ -281,6 +283,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
         doubleClickExpand={doubleClickExpand}
         dragImageSelector={getDragImageSelector}
         dragImageStyle={dragImageStyle}
+        actionOnClick={actionOnClick}
       ></RootTree>
     );
   };

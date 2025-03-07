@@ -110,6 +110,8 @@ const config = {
     SortDown: icons.SortDesc,
     Expand: icons.Expand,
     Collapse: icons.Shrink,
+    Filter: icons.Filter,
+    Search: icons.Search,
   },
   tabs: {
     Pre: icons.ArrowLeft,

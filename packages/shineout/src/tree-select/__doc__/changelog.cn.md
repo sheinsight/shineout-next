@@ -1,3 +1,10 @@
+## 3.6.0-beta.19
+2025-03-07
+
+### 🆕 Feature
+
+- `TreeSelect` 新增 `actionOnClick` 属性，配置点击节点时的行为：`expand` 展开/收起节点，`check` 勾选或取消勾选节点 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
+
 ## 3.6.0-beta.15
 2025-02-26
 

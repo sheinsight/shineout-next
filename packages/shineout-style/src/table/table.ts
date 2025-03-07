@@ -334,6 +334,78 @@ const tableStyle: JsStyles<TableClassType> = {
     display: 'inline-flex',
     alignItems: 'center',
   },
+
+  hasFilter: {
+    display: 'inline-flex',
+    alignItems: 'center',
+  },
+
+  filterIconContainer: {
+    '&:hover $filterIcon': {
+      color: token.tableFilterIconHoverColor,
+    }
+  },
+  filterIcon: {
+    width: token.tableFilterIconSize,
+    height: token.tableFilterIconSize,
+    color: token.tableFilterIconColor,
+
+    '& > svg': {
+      display: 'block',
+    }
+  },
+
+  filterActive: {
+    '& $filterIcon, &:hover $filterIcon': {
+      color: token.tableFilterIconActiveColor,
+    },
+  },
+
+  filterContainer: {
+    minWidth: '120px',
+  },
+  filterHeader:{
+    padding: `${token.tableFilterHeaderPaddingY} ${token.tableFilterHeaderPaddingX}`,
+    '& + $filterBody': {
+      paddingTop: 0,
+    }
+  },
+  filterBody: {
+    padding: `${token.tableFilterBodyPaddingY} ${token.tableFilterBodyPaddingX}`,
+    maxHeight: '300px',
+    overflow: 'auto',
+  },
+  filterFooter: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: `${token.tableFilterFooterPaddingY} ${token.tableFilterFooterPaddingX}`,
+    borderTop: `1px solid ${token.tableFilterFooterBorderColor}`,
+  },
+
+  filterInput: {
+    cursor: 'pointer',
+  },
+  filterInputIcon: {
+    color: token.tableFilterInputIconColor,
+    flexShrink: 0,
+    width: token.tableFilterInputIconSize,
+    height: token.tableFilterInputIconSize,
+    marginRight: token.tableFilterInputIconMarginRight,
+    '& > svg': {
+      display: 'block',
+    }
+  },
+
+  filterRadio: {
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+
+    '& > div': {
+      marginRight: 0,
+    }
+  },
+
   sorterContainer: {
     minWidth: '14px',
     width: '14px',
