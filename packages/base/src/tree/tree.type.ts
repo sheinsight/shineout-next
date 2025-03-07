@@ -126,9 +126,8 @@ export interface TreeProps<DataItem, Value extends any[]>
   parentClickExpand?: boolean;
 
   /**
-   * @cn 点击节点展开是的操作: 'select' 选中节点，'expand' 展开节点，'check' 选中复选框
-   * @en The operation when clicking the node to expand: 'select' select the node, 'expand' expand the node, 'check' select the checkbox
-   * @default 'select'
+   * @cn 点击节点展开是的操作: 'expand' 展开节点，'check' 选中复选框
+   * @en The operation when clicking the node to expand: 'expand' expand the node, 'check' check the checkbox
    * @version 3.6.0
    */
   actionOnClick?: ActionOnClick | ActionOnClick[];
