@@ -1,3 +1,10 @@
+## 3.6.0-beta.16
+2025-03-05
+
+### 🐞 BugFix
+
+- 修复 `Image` 在容器为 'absolute' 定位情况下 `lazy` 属性可能失效的问题 ([#982](https://github.com/sheinsight/shineout-next/pull/982))
+
 ## 3.5.8
 2025-02-13
 

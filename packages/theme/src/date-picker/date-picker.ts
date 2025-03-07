@@ -12,6 +12,8 @@ const datePickerTokens: DatePickerTokens = {
   datePickerPaddingY: 'Spacing-4',
   datePickerIconSize: 'Size-7',
   datePickerIconColor: 'Neutral-text-4',
+  datePickerSmallPanelFooterNowPaddingX: 'Spacing-16',
+  datePickerSmallPanelFooterNowPaddingY: 'Spacing-11',
   datePickerSmallFontSize: 'Font-12',
   datePickerSmallPaddingX: 'Spacing-8',
   datePickerSmallPaddingY: 'Spacing-1',

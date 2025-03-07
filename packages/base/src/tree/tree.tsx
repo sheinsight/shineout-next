@@ -39,6 +39,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     dragImageStyle,
     dragSibling,
     unmatch,
+    ignoreSetFlat = false,
     dragHoverExpand,
     active: propActive,
     setActive: propSetActive,
@@ -160,10 +161,10 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
     if (expandedArr.indexOf(id) >= 0) {
       newExpanded = expandedArr.filter((e) => e !== id);
-      if (virtual) datum.removeFlat(id);
+      if (virtual && !ignoreSetFlat) datum.removeFlat(id);
     } else {
       newExpanded = [...expandedArr, id];
-      if (virtual) datum.insertFlat(id);
+      if (virtual && !ignoreSetFlat) datum.insertFlat(id);
     }
     if (onExpand) onExpand(newExpanded);
   };
@@ -244,7 +245,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
         />
       );
     }
-
+    console.log('data', data);
     return (
       <RootTree
         rootStyle={rootStyle}

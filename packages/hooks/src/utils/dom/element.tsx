@@ -140,14 +140,18 @@ export function getClosestScrollContainer(element: HTMLElement | null): HTMLElem
   return (document.scrollingElement || document.documentElement) as HTMLElement;
 }
 
-export function getClosestFixedContainer(element: Element | HTMLElement | null) {
+export function getClosestPositionedContainer(
+  element: Element | HTMLElement | null,
+  positions: React.CSSProperties['position'][] = ['fixed', 'absolute'],
+) {
   if (!element) {
     return null;
   }
 
   const isFixable = (el: HTMLElement) => {
     const style = window.getComputedStyle(el);
-    return style.position === 'fixed';
+    const position = style.position as React.CSSProperties['position'];
+    return positions.includes(position);
   };
 
   // 遍历父元素
@@ -181,5 +185,5 @@ export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, '
 
 export const getFieldId = (name?: string, formName?: string) => {
   if (!name) return undefined;
-  return `${formName ? `${formName}_` : ''}${name}`
+  return `${formName ? `${formName}_` : ''}${name}`;
 };

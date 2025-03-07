@@ -21,9 +21,11 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     reserveAble: false,
   };
 
+  const formElRef = useRef<HTMLFormElement>(null)
+
   const { value, onChange } = useInputAble(inputAbleParams);
 
-  const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange });
+  const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange, formElRef: formElRef, });
 
   const validate = usePersistFn(() => {
     return formFunc.validateFields();
@@ -104,7 +106,6 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     style,
   })
 
-  const formElRef = useRef<HTMLFormElement>(null)
   useEffect(() => {
     if (formElRef.current instanceof HTMLFormElement) {
       formElRef.current.addEventListener('submit', formProps.onSubmit)

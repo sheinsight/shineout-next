@@ -214,7 +214,9 @@ export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
   name?: string;
 }
 
-export type UseFormProps<T> = BaseFormProps<T>;
+export type UseFormProps<T> = BaseFormProps<T> & {
+  formElRef: React.RefObject<HTMLFormElement>;
+};
 
 export type FormContext = {
   defaultValues: ObjectType;

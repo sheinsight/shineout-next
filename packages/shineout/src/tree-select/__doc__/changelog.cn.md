@@ -5,6 +5,11 @@
 
 - `TreeSelect` 新增 `actionOnClick` 属性，配置点击节点时的行为：`expand` 展开/收起节点，`check` 勾选或取消勾选节点 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
 
+## 3.6.0-beta.15
+2025-02-26
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 过滤筛选情况下选择数据不完整的问题  (Regression: since v3.6.0-beta.4) ([#981](https://github.com/sheinsight/shineout-next/pull/981))
 
 ## 3.6.0-beta.10
 2025-02-26
