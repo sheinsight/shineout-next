@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import { KeygenResult, TableColumnFilter, useFilter, util, TableFilterData } from '@sheinx/hooks';
 import Icons from '../icons';
@@ -149,7 +149,7 @@ export const FilterSelect = (props: TheadCommonProps) => {
           <section className={tableClasses.filterBody}>
             {displayData && displayData.length > 0 ? (
               <Tree
-                keygen={((d) => d.value)}
+                keygen={(d) => d.value}
                 jssStyle={props.jssStyle as any}
                 data={displayData}
                 actionOnClick={['check']}
@@ -176,6 +176,7 @@ export const FilterSearch = (props: TheadCommonProps) => {
   const { tableClasses, filter } = props;
   const [popoverVisible, setPopoverVisible] = useState(false);
   const [tempValue, setTempValue] = useState<any>();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onReset = () => {
     setTempValue(undefined);
@@ -193,6 +194,16 @@ export const FilterSearch = (props: TheadCommonProps) => {
     if (!visible) {
       props.onFilterChange(props.columnKey, tempValue);
     }
+
+    // 打开时自动focus input
+    if (visible) {
+      setTimeout(() => {
+        if (inputRef.current) {
+          inputRef.current.focus();
+        }
+      }, 100);
+    }
+
     setPopoverVisible(visible);
   };
 
@@ -234,6 +245,7 @@ export const FilterSearch = (props: TheadCommonProps) => {
               value={tempValue}
               onChange={setTempValue}
               onEnterPress={onConfirm}
+              forwardRef={inputRef}
             />
           </header>
           <FilterFooter

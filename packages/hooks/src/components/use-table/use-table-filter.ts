@@ -71,8 +71,8 @@ const useTableFilter = <Item = any>(props: UseTableSorterProps<Item>) => {
 
   // 根据columns生成filterInfo
   useEffect(() => {
-    const filterColumns = props?.columns?.filter((column) => column.filter);
-    const _filterInfo = filterColumns?.reduce((acc, column, index) => {
+    const _filterInfo = props?.columns?.reduce((acc, column, index) => {
+      if(!column.filter) return acc;
       const columnKey = typeof column.render === 'string' ? column.render : String(index);
 
       acc.set(columnKey, {
