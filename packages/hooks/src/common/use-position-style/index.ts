@@ -337,6 +337,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     // for animation
     if (realPosition.indexOf('top') === 0) {
       newStyle.transformOrigin = 'center bottom';
+    } else if(realPosition.indexOf('bottom') === 0){
+      newStyle.transformOrigin = 'center top';
     }
     return { newStyle, newArrayStyle };
   };
