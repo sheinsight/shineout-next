@@ -5,7 +5,7 @@ exports[`Popover[Base] should render default 1`] = `
   class="soui-popover soui-popover-wrapper soui-popover-wrapper-open"
   data-soui-position="bottom"
   dir="ltr"
-  style="position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;"
+  style="position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;"
 >
   <div
     class="soui-popover-arrow"
@@ -24,7 +24,7 @@ exports[`Popover[Snapshot] render snapshot default 1`] = `
   class="soui-popover soui-popover-wrapper soui-popover-wrapper-open"
   data-soui-position="bottom"
   dir="ltr"
-  style="position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;"
+  style="position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;"
 >
   <div
     class="soui-popover-arrow"

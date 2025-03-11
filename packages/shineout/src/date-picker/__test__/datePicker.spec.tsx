@@ -166,12 +166,14 @@ const styleWithShowTopRight =
 const styleWithShowOther =
   'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
 const pickerWrapperStyle = {
-  zIndex: '1051',
   opacity: '1',
   display: 'block',
   top: 'calc(100% + 4px)',
   left: '0px',
-  transition: 'opacity 240ms ease-in-out',
+  "transform": "scaleY(1)",
+  "transform-origin": "center top",
+  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
+  "z-index": "1051",
 };
 const pickerWrapperStyleTopLeft = {
   zIndex: '1051',
@@ -180,7 +182,8 @@ const pickerWrapperStyleTopLeft = {
   bottom: 'calc(100% + 4px)',
   left: '0px',
   transformOrigin: 'center bottom',
-  transition: 'opacity 240ms ease-in-out',
+  "transform": "scaleY(1)",
+  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
 };
 const pickerWrapperStyleTopRight = {
   zIndex: '1051',
@@ -189,7 +192,8 @@ const pickerWrapperStyleTopRight = {
   bottom: 'calc(100% + 4px)',
   right: '0px',
   transformOrigin: 'center bottom',
-  transition: 'opacity 240ms ease-in-out',
+  "transform": "scaleY(1)",
+  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
 };
 const piCKerWrapperStyleRight = {
   zIndex: '1051',
@@ -197,7 +201,8 @@ const piCKerWrapperStyleRight = {
   display: 'block',
   top: 'calc(100% + 4px)',
   right: '0px',
-  transition: 'opacity 240ms ease-in-out',
+  "transform": "scaleY(1)",
+  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
 };
 beforeAll(() => {
   jest.useFakeTimers();

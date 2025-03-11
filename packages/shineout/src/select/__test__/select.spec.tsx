@@ -151,7 +151,8 @@ const defaultSelectPickerOpen = {
   top: 'calc(100% + 4px)',
   left: '0px',
   transform: 'scaleY(1)',
-  transition: 'transform 240ms ease-in-out',
+  "transform-origin": "center top",
+  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
 }
 
 const testDataObject = [
