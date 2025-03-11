@@ -212,6 +212,25 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     '&:active': {
       transition: 'none',
     },
+
+    '[data-soui-role="input-group-seperate"] > &': {
+      borderRadius: 0,
+      marginLeft: -1,
+
+      '&:first-child': {
+        marginLeft: 0,
+        borderTopLeftRadius: Token.buttonBorderRadius,
+        borderBottomLeftRadius: Token.buttonBorderRadius,
+      },
+      '&:last-child': {
+        borderTopRightRadius: Token.buttonBorderRadius,
+        borderBottomRightRadius: Token.buttonBorderRadius,
+      },
+
+      '&:hover': {
+        zIndex: 1,
+      }
+    }
   },
   small: {
     // height: Token.buttonSmallHeight,

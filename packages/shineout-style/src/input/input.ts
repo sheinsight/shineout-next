@@ -207,6 +207,9 @@ const input: JsStyles<keyof InputClasses> = {
     },
     ...groupSpace(token.inputPaddingX),
   },
+  groupSeperate: {
+    border: 'none',
+  },
   groupSmall: {
     ...groupSmall,
     ...groupSpace(token.inputSmallPaddingX),
