@@ -56,7 +56,7 @@ const App: React.FC = () => {
       <Input.Number
         width={300}
         onChange={(v) => {
-          console.log('Input.Number', v);
+          console.log('🚀outter Input.Number onChange', v);
         }}
         placeholder='please enter'
       />
