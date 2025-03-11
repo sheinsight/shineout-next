@@ -30,13 +30,32 @@ const useNumberFormat = (props: InputNumberProps) => {
     return value || '';
   };
 
-  const [inernalInputValue, setInternalInputValue] = React.useState<string | undefined>(getStringValue(props.value));
+  const [inernalInputValue, setInternalInputValue] = React.useState<string | undefined>(
+    getStringValue(props.value),
+  );
 
   useEffect(() => {
-    if(props.value !== inernalInputValue){
-      setInternalInputValue(getStringValue(props.value))
+    if (props.value !== inernalInputValue) {
+      let shouldAppendDot = false;
+
+      const legalValue = props.value !== undefined && props.value !== null;
+      const legalInternalValue = inernalInputValue !== undefined && inernalInputValue !== null;
+
+      if (
+        legalValue &&
+        legalInternalValue &&
+        inernalInputValue.toString().endsWith('.') &&
+        !props.value?.toString().endsWith('.')
+      ) {
+        shouldAppendDot = true;
+      }
+      if (shouldAppendDot) {
+        setInternalInputValue(getStringValue(props.value) + '.');
+      } else {
+        setInternalInputValue(getStringValue(props.value));
+      }
     }
-  }, [props.value])
+  }, [props.value]);
 
   const getNumberValue = (value: string | number | null | undefined) => {
     if (isNaN(value as unknown as number)) return 0;
@@ -59,19 +78,19 @@ const useNumberFormat = (props: InputNumberProps) => {
 
   const onInnerChange = usePersistFn((val?: string | number | null) => {
     setInternalInputValue(getStringValue(val));
-    if(typeof val === 'string'){
+    if (typeof val === 'string') {
       const num = parseFloat(val);
-      if(val === '') {
+      if (val === '') {
         // 如果允许空值，则返回 null，否则返回 undefined
         onChange?.(allowNull ? null : undefined);
         return;
       }
-      if(isNaN(num)) return
+      if (isNaN(num)) return;
       onChange?.(num);
-    }else{
+    } else {
       onChange?.(val);
-    };
-  })
+    }
+  });
 
   const onNumberBlur = usePersistFn((e: React.FocusEvent) => {
     const target = e.target as HTMLInputElement;
