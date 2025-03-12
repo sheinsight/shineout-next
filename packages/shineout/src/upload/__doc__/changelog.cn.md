@@ -1,3 +1,11 @@
+## 3.6.0-beta.22
+2025-03-12
+
+### 🆕 Feature
+
+- `Upload` 组件新增 `hideHandler` 属性，支持隐藏默认触发器 ([#993](https://github.com/sheinsight/shineout-next/pull/993))
+- `Upload` 组件增强 `customResult` 返回内容，新增触发器 dom 实例返回 ([#993](https://github.com/sheinsight/shineout-next/pull/993))
+
 ## 3.6.0-beta.12
 2025-02-28
 
