@@ -73,6 +73,11 @@ export interface ImageMagnifyProps {
   className?: string;
   jssStyle?: ImageJssStyleType;
 }
+
+export interface CustomRenderHoverMaskOptions {
+  preview: () => void;
+}
+
 export interface ImageBaseProps
   extends BaseImageProps,
     Pick<CommonType, 'style' | 'className'>,
@@ -84,6 +89,12 @@ export interface ImageBaseProps
   renderPlaceholder?: (placeholderEl: React.ReactNode) => React.ReactElement;
   renderInnerWrapper?: (innerWrapperEl: React.ReactNode) => React.ReactElement;
   componentRef?: (instance: { preview: () => void }) => void;
+  /*
+   * @en Custom rendering of the mask content when hovering
+   * @cn 自定义渲染 hover 时的遮罩层内容
+   * @version 3.6.0
+   */
+  customRenderHoverMask?: (options: CustomRenderHoverMaskOptions) => React.ReactElement;
 }
 
 export type ImageProps = ImageBaseProps;
