@@ -21,6 +21,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     renderResult = (a: any) => a as React.ReactNode,
     listType = 'text',
     leftHandler,
+    hideHandler = false,
   } = props;
 
   const { locale } = useConfig();
@@ -254,16 +255,17 @@ const Upload = <T,>(props0: UploadProps<T>) => {
             onFileRemove={func.removeFile}
             onValueRemove={func.removeValue}
             recoverValue={recycleValues}
+            handler={renderHandler()}
             onValueRecover={func.recoverValue}
           />
-          {!shouldRenderLeft && renderHandler()}
+          {!shouldRenderLeft && !hideHandler && renderHandler()}
         </>
       ) : (
         <>
-          {shouldRenderLeft && renderHandler()}
+          {shouldRenderLeft && !hideHandler && renderHandler()}
           {renderValue()}
           {renderFile()}
-          {!shouldRenderLeft && renderHandler()}
+          {!shouldRenderLeft && !hideHandler && renderHandler()}
           {renderRecover()}
         </>
       )}
