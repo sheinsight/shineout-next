@@ -1,3 +1,10 @@
+## 3.6.0-beta.23
+2025-03-13
+
+### 🆕 Feature
+
+- `Upload` 组件增强 `CustomResult` 返回内容，新增返回原文件组件实例 ([#994](https://github.com/sheinsight/shineout-next/pull/994))
+
 ## 3.6.0-beta.22
 2025-03-12
 

@@ -168,15 +168,16 @@ export interface UploadProps<T>
    * @en custom Result component
    * @cn 自定义Result 组件
    */
-  customResult?: React.ComponentType<{
+  customResult?: (options: {
     value: any;
     files: any;
     onValueRemove: (index: number) => void;
     onFileRemove: (id: string) => void;
+    filesInstances: React.ReactNode;
     recoverValue: any;
     onValueRecover: (index: number) => void;
     handler: React.ReactNode;
-  }>;
+  }) => React.ReactNode;
   /**
    * @en Custom error prompt after forceAccept type verification fails
    * @cn forceAccept 类型校验失败后自定义错误提示

@@ -230,7 +230,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
       );
     });
   };
-  const CustomResult = props.customResult;
+  const renderCustomResult = props.customResult;
   const shouldRenderLeft = listType !== 'image' || leftHandler;
   const { fieldId } = useContext(FormFieldContext);
   return (
@@ -246,18 +246,19 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         props.className,
       )}
     >
-      {CustomResult ? (
+      {renderCustomResult ? (
         <>
           {shouldRenderLeft && renderHandler()}
-          <CustomResult
-            value={value}
-            files={files}
-            onFileRemove={func.removeFile}
-            onValueRemove={func.removeValue}
-            recoverValue={recycleValues}
-            handler={renderHandler()}
-            onValueRecover={func.recoverValue}
-          />
+          {renderCustomResult({
+            value,
+            files,
+            filesInstances: renderFile(),
+            onFileRemove: func.removeFile,
+            onValueRemove: func.removeValue,
+            recoverValue: recycleValues,
+            handler: renderHandler(),
+            onValueRecover: func.recoverValue,
+          })}
           {!shouldRenderLeft && !hideHandler && renderHandler()}
         </>
       ) : (
