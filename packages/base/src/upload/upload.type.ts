@@ -174,6 +174,7 @@ export interface UploadProps<T>
     onValueRemove: (index: number) => void;
     onFileRemove: (id: string) => void;
     filesInstances: React.ReactNode;
+    valueInstances: React.ReactNode;
     recoverValue: any;
     onValueRecover: (index: number) => void;
     handler: React.ReactNode;
