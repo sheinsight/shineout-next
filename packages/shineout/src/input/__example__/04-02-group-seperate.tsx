@@ -6,16 +6,15 @@
  */
 
 import React from 'react';
-import { Input, Select } from 'shineout';
-
-const style: React.CSSProperties = { width: 300, marginBottom: 24 };
+import { Input, Select, DatePicker, Button } from 'shineout';
 
 const App: React.FC = () => (
-  <Input.Group style={style} seperate>
-    <Select keygen data={['http://', 'git://']} width={85} defaultValue="http://" />
-    <Input placeholder='please enter' />
-    {/* <Button type="primary">123</Button> */}
-    <b>.com</b>
+  <Input.Group seperate>
+    <Select keygen data={['Expected Date', 'Actual Date']} width={140} defaultValue="Expected Date" />
+    <DatePicker placeholder='select start date' inputable />
+    <b>~</b>
+    <DatePicker placeholder='select end date' inputable />
+    <Button type="primary">Submit</Button>
   </Input.Group>
 );
 

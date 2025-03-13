@@ -94,6 +94,15 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
           borderTopRightRadius: token.borderRadius,
           borderBottomRightRadius: token.borderRadius,
         },
+      },
+
+      '[dir=rtl][data-soui-role="input-group-seperate"] &&&, [dir=rtl][data-soui-role="input-group-seperate"] &&&:hover': {
+        '&:first-child': {
+          borderRadius: `0 ${token.borderRadius} ${token.borderRadius} 0`,
+        },
+        '&:last-child': {
+          borderRadius: `${token.borderRadius} 0 0 ${token.borderRadius}`,
+        },
       }
     },
     [`${name}PaddingBox`]: {

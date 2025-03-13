@@ -209,6 +209,11 @@ const input: JsStyles<keyof InputClasses> = {
   },
   groupSeperate: {
     border: 'none',
+
+    '& > b': {
+      border: `1px solid ${token.inputBorderColor}`,
+      'margin-left': '-1px',
+    }
   },
   groupSmall: {
     ...groupSmall,

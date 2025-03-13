@@ -1,3 +1,11 @@
+## 3.6.0-beta.22
+2025-03-13
+
+### 🆕 Feature
+
+- `Input.Group` 新增 `seperate`属性：组合到一起的组件有独立的边框 ([#992](https://github.com/sheinsight/shineout-next/pull/992))
+
+
 ## 3.5.8
 2025-02-13
 
