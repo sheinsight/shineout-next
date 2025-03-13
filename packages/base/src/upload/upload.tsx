@@ -253,6 +253,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
             value,
             files,
             filesInstances: renderFile(),
+            valueInstances: renderValue(),
             onFileRemove: func.removeFile,
             onValueRemove: func.removeValue,
             recoverValue: recycleValues,
