@@ -252,6 +252,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
           <CustomResult
             value={value}
             files={files}
+            filesInstances={renderFile()}
             onFileRemove={func.removeFile}
             onValueRemove={func.removeValue}
             recoverValue={recycleValues}
