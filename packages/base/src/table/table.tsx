@@ -145,7 +145,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     isRtl,
   });
 
-  const { filteredData, filterInfo, onFilterChange } = useTableFilter({
+  const { filteredData, filterInfo, onFilterChange } = useTableFilter<Item>({
     data: props.data,
     columns: props.columns,
   });

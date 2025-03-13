@@ -4,7 +4,7 @@ import { TableColumnItem, BaseTableProps } from './use-table.type';
 import { isFunc } from '../../utils/is';
 import { KeygenResult } from '../../common/type';
 
-export interface UseTableSorterProps<Item = any>
+export interface UseTableFilterProps<Item = any>
   extends Pick<BaseTableProps<Item>, 'onSortCancel' | 'sorter' | 'data'> {
   columns?: TableColumnItem<Item>[];
 }
@@ -15,7 +15,7 @@ export interface FilterInfo<T> {
 
 export type FilterMap<T> = Map<KeygenResult, FilterInfo<T>>;
 
-const useTableFilter = <Item = any>(props: UseTableSorterProps<Item>) => {
+const useTableFilter = <Item = any>(props: UseTableFilterProps<Item>) => {
   const [filterInfo, setFilterInfo] = useState<FilterMap<Item>>(new Map());
 
   const activeFilters = useMemo(() => {
@@ -45,6 +45,7 @@ const useTableFilter = <Item = any>(props: UseTableSorterProps<Item>) => {
 
   const onFilterChange = usePersistFn(
     ( columnKey: KeygenResult, value: any) => {
+      // TODO: 暂未开放reset全部筛选条件
       if(columnKey === '__reset__') {
         setFilterInfo((prev) => {
           const next = new Map(prev);
