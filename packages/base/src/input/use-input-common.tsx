@@ -139,7 +139,6 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
   });
   return {
     ...rest,
-    formName: undefined,
     value: inputAbleProps.value,
     className: classNames(props.className, innerTitle && inputStyle?.wrapperInnerTitle),
     onChange: inputAbleProps.onChange,

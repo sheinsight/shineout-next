@@ -168,14 +168,17 @@ export interface UploadProps<T>
    * @en custom Result component
    * @cn 自定义Result 组件
    */
-  customResult?: React.ComponentType<{
+  customResult?: (options: {
     value: any;
     files: any;
     onValueRemove: (index: number) => void;
     onFileRemove: (id: string) => void;
+    filesInstances: React.ReactNode;
+    valueInstances: React.ReactNode;
     recoverValue: any;
     onValueRecover: (index: number) => void;
-  }>;
+    handler: React.ReactNode;
+  }) => React.ReactNode;
   /**
    * @en Custom error prompt after forceAccept type verification fails
    * @cn forceAccept 类型校验失败后自定义错误提示
@@ -198,4 +201,10 @@ export interface UploadProps<T>
    * @default 'text'
    */
   listType?: 'text' | 'image';
+  /**
+   * @en Whether to hide the trigger. Note that turning on this property will not affect the handler returned in customResult, only the default trigger will be hidden
+   * @cn 是否隐藏图片上传触发器。注意，开启该属性后不会影响 customResult 中的 handler 返回，只会隐藏默认的触发器
+   * @default false
+   */
+  hideHandler?: boolean;
 }

@@ -1,9 +1,15 @@
-## 3.6.0-beta.23
+## 3.6.0-beta.25
 2025-03-13
 
 ### 🆕 Feature
 
 - `Input.Group` 新增 `seperate`属性：组合到一起的组件有独立的边框 ([#992](https://github.com/sheinsight/shineout-next/pull/992))
+## 3.6.0-beta.21
+2025-03-11
+
+### 🐞 BugFix
+
+- 修复 `Input.Number` 在输入小数点情况下，退格至小数点前时会将小数点删除的问题（Regression: since v3.4.0） ([#989](https://github.com/sheinsight/shineout-next/pull/989))
 
 
 ## 3.5.8

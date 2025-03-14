@@ -65,7 +65,7 @@ const TooltipDemo = ({
   </Tooltip>
 );
 
-const defaultStyle = 'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px;'
+const defaultStyle = 'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;'
 
 beforeAll(() => {
   jest.useFakeTimers();
@@ -193,7 +193,7 @@ describe('Tooltip[Base]', () => {
       await delay(200);
       styleTest(
         wrappers[2],
-        'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px;',
+        'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;',
       );
     });
     fireEvent.mouseEnter(screen.getByText(positions[3]));
