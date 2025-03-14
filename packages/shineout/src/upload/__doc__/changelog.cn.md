@@ -1,3 +1,10 @@
+## 3.6.0-beta.26
+2025-03-14
+
+### 🐞 BugFix
+
+- 修复 `Upload.Dragger` 子组件缺失的问题  ([#996](https://github.com/sheinsight/shineout-next/pull/996))
+
 ## 3.6.0-beta.24
 2025-03-13
 
