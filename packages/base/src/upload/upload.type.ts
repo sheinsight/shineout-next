@@ -14,6 +14,8 @@ export interface UploadClasses {
   wrapperImage: string;
   wrapperDisabled: string;
   wrapperDrop: string;
+  draggerWrapper: string;
+  draggerArea: string;
   dropItem: string;
   handler: string;
   icon: string;

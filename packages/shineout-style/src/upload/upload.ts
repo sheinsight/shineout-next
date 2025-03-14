@@ -22,6 +22,39 @@ const uploadStyle: JsStyles<UploadClassType> = {
     },
   },
   wrapperDrop: {},
+  draggerWrapper: {
+    display: 'block',
+    width: '100%',
+  },
+  draggerArea: {
+    position: 'relative',
+    padding: 16,
+    width: '100%',
+    height: '100%',
+    textAlign: 'center',
+    backgroundColor: token.uploadImageHandlerBackgroundColor,
+    borderRadius: token.uploadImageBorderRadius,
+    cursor: 'pointer',
+    color: token.uploadImageHandlerFontColor,
+    // after
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      top: -1,
+      right: -1,
+      bottom: -1,
+      left: -1,
+      borderRadius: token.uploadImageBorderRadius,
+      border: `1px dashed ${token.uploadImageHandlerBorderColor}`,
+      transition: 'border-color 0.3s',
+    },
+    // hover
+    '&:hover': {
+      '&:after': {
+        borderColor: token.uploadImageHandlerHoverBorderColor,
+      },
+    },
+  },
   handler: {
     display: 'inline-block',
     cursor: 'pointer',
@@ -62,9 +95,9 @@ const uploadStyle: JsStyles<UploadClassType> = {
     '&:hover': {
       backgroundColor: token.uploadResultBackgroundColor,
     },
-    '$handler+&, $dropItem+&':{
+    '$handler+&, $dropItem+&': {
       marginTop: token.uploadResultMarginY,
-    }
+    },
   },
   icon: {
     width: token.uploadResultIconSize,
@@ -161,7 +194,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     },
     '$wrapperDisabled &': {
       color: token.uploadImageHandlerDisabledFontColor,
-    }
+    },
   },
   imageResult: {
     border: `1px solid ${token.uploadImageHandlerBorderColor}`,
@@ -310,7 +343,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
         pointerEvents: 'none',
         border: `2px dashed ${token.uploadImageHandlerHoverBorderColor}`,
         borderRadius: token.uploadImageBorderRadius,
-      }
+      },
     },
   },
   button: {
