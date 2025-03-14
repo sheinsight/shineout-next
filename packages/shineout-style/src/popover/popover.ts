@@ -78,10 +78,8 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="left"]': {
-      // '&[dir=ltr]': { marginLeft: (arrowGap - 2) * -1 },
-      '&[dir=ltr]': { marginLeft: `calc((${hideArrowGap} - 2px) * -1)` },
-      // '&[dir=rtl]': { marginRight: (arrowGap - 2) * -1 },
-      '&[dir=rtl]': { marginRight: `calc((${hideArrowGap} - 2px) * -1)` },
+      '&[dir=ltr]': { marginRight: `calc((${hideArrowGap} - 2px))` },
+      '&[dir=rtl]': { marginLeft: `calc((${hideArrowGap} - 2px))` },
       '& $arrow': {
         right: token.popoverBorderWidth,
         transform: 'translate(50%, 0) rotate(45deg)',
@@ -90,7 +88,6 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         margin: 'auto',
       },
       '&::after': {
-        // left: arrowGap * -1,
         right: `calc(${hideArrowGap} * -1)`,
         top: '0',
         bottom: '0',
@@ -101,9 +98,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="right"]': {
-      // '&[dir=ltr]': { marginLeft: arrowGap - 2 },
       '&[dir=ltr]': { marginLeft: `calc(${hideArrowGap} - 2px)` },
-      // '&[dir=rtl]': { marginRight: arrowGap - 2 },
       '&[dir=rtl]': { marginRight: `calc(${hideArrowGap} - 2px)` },
       '& $arrow': {
         left: '0',

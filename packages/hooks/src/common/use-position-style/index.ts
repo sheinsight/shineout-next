@@ -266,10 +266,12 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       }
       if (h === 'right') {
         style.left = rect.right - containerRect.left + containerScroll.left + popupGap;
+        arrayStyle.left = '0px';
+        arrayStyle.right = 'auto';
       } else {
-        style.left = rect.left - containerRect.left + containerScroll.left - popupGap;
-        arrayStyle.right = `0px`;
-        style.transform += ' translateX(-100%)';
+        style.right = containerRect.right - rect.left;
+        arrayStyle.right = '0px';
+        arrayStyle.left = 'auto';
       }
     } else if (position === 'cover') {
       style.top = rect.top - containerRect.top + containerScroll.top;
