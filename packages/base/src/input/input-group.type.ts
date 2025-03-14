@@ -23,4 +23,11 @@ export interface InputGroupProps {
    */
   onBlur?: React.FocusEventHandler;
   status?: CommonType['status'];
+
+  /**
+   * @en Whether to seperate the border
+   * @cn 是否分离边框
+   * @default false
+   */
+  seperate?: boolean;
 }
