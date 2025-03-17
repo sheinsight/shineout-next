@@ -1,3 +1,11 @@
+## 3.6.0-beta.27
+2024-10-28
+
+### 🆕 Feature
+
+- `Textarea` 新增 `limit` 属性，支持限制输入字符长度  ([#998](https://github.com/sheinsight/shineout-next/pull/998))
+
+
 ## 3.4.4
 2024-10-28
 

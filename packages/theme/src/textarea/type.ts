@@ -176,4 +176,16 @@ export interface TextareaTokens {
    * @description 多行文本框基础错误状态的边框颜色
    */
   textareaInfoErrorBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 多行文本框undefined字体颜色
+   */
+  textareaLimitFontColor: string;
+  /**
+   * @type {string}
+   * @token Font-12
+   * @description 多行文本框undefined字体字号
+   */
+  textareaLimitFontSize: string;
 }

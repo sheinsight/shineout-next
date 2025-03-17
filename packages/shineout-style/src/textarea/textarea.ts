@@ -114,6 +114,16 @@ const input: JsStyles<keyof TextareaClasses> = {
     width: '100%',
     boxSizing: 'border-box',
   },
+  limit: {
+    position: 'absolute',
+    right: 12,
+    bottom: 6,
+    color: token.textareaLimitFontColor,
+    fontSize: token.textareaLimitFontSize,
+    '$resize + &': {
+      right: 16,
+    }
+  }
 };
 
 export default input;

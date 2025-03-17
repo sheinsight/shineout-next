@@ -103,6 +103,9 @@ const textareaTokenExtraValue = {
       border: { color: 'Danger-6' },
     },
   },
+  limit: {
+    font: { color: 'Neutral-text-3', size: 'Font-12' },
+  }
 };
 
 const textareaTokenValue = {};

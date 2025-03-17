@@ -18,8 +18,9 @@ const Textarea = (props: SimpleTextareaProps) => {
     border = true,
     resize = false,
     onEnterPress,
-    getStatus,
+    onStatusChange,
     renderTextarea,
+    limit,
     ...rest
   } = props;
   const textareaClasses = jssStyle?.textarea?.();
@@ -63,8 +64,8 @@ const Textarea = (props: SimpleTextareaProps) => {
   });
 
   useEffect(() => {
-    if (getStatus) {
-      getStatus({ focused });
+    if (onStatusChange) {
+      onStatusChange({ focused });
     }
   }, [focused]);
 
@@ -72,6 +73,17 @@ const Textarea = (props: SimpleTextareaProps) => {
 
   if (typeof renderTextarea === 'function') {
     textareaEl = renderTextarea(textareaEl);
+  }
+
+  let limitEl = null;
+  if (limit) {
+    limitEl = (
+      <div className={textareaClasses?.limit}>
+        {
+          typeof limit === 'number' ? `${props.value?.length || 0}/${limit}` : limit(props.value)
+        }
+      </div>
+    );
   }
 
   return (
@@ -86,6 +98,7 @@ const Textarea = (props: SimpleTextareaProps) => {
       {prefix}
       {textareaEl}
       {suffix}
+      {limitEl}
     </div>
   );
 };
