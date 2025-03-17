@@ -299,6 +299,10 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     width: 'max-content',
     maxWidth: '640px',
     cursor: 'initial',
+
+    '& $tree': {
+      overscrollBehavior: 'none'
+    },
   },
   iconWrapper: {
     display: 'flex',

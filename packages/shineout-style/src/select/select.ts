@@ -285,6 +285,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     transformOrigin: '0 0',
     border: `1px solid ${token.selectPanelBorder}`,
     cursor: 'initial',
+
+    '& [data-soui-role="scroll"]': {
+      overscrollBehavior: 'none',
+    }
   },
   pickerSmall: {
     '& $optionInner': {
