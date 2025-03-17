@@ -123,6 +123,29 @@ const input: JsStyles<keyof TextareaClasses> = {
     '$resize + &': {
       right: 16,
     }
+  },
+  clear: {
+    position: 'absolute',
+    right: token.textareaPaddingX,
+    top: token.textareaPaddingY,
+    cursor: 'pointer',
+    padding: 4,
+    color: token.textareaClearColor,
+
+    '&:hover': {
+      color: token.textareaClearHoverColor,
+    },
+
+    '& > svg': {
+      display: 'block',
+      width: token.textareaClearSize,
+      height: token.textareaClearSize,
+    }
+  },
+  wrapperWithClear: {
+    '&& $textarea': {
+      paddingRight: `calc(${token.textareaPaddingX} * 4)`
+    },
   }
 };
 

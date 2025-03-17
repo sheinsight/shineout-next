@@ -188,4 +188,22 @@ export interface TextareaTokens {
    * @description 多行文本框undefined字体字号
    */
   textareaLimitFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 多行文本框清除颜色
+   */
+  textareaClearColor: string;
+  /**
+   * @type {string}
+   * @token Size-7
+   * @description 多行文本框清除字号
+   */
+  textareaClearSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 多行文本框清除鼠标移入时的颜色
+   */
+  textareaClearHoverColor: string;
 }

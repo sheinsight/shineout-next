@@ -206,6 +206,7 @@ const Textarea = (props0: TextareaProps) => {
       {...formatProps}
       className={classNames(
         innerTitleProps.innerTitle && textareaClasses?.wrapperInnerTitle,
+        props.clearable && textareaClasses?.wrapperWithClear,
         resetProps.className,
       )}
       renderTextarea={renderTextarea}

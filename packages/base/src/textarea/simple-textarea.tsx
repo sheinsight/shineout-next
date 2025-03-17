@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import React, { KeyboardEvent, useContext, useEffect } from 'react';
 import { SimpleTextareaProps } from './textarea.type';
 import { FormFieldContext } from '../form/form-field-context';
+import Icons from '../icons';
 
 const Textarea = (props: SimpleTextareaProps) => {
   const {
@@ -21,6 +22,7 @@ const Textarea = (props: SimpleTextareaProps) => {
     onStatusChange,
     renderTextarea,
     limit,
+    clearable,
     ...rest
   } = props;
   const textareaClasses = jssStyle?.textarea?.();
@@ -79,9 +81,21 @@ const Textarea = (props: SimpleTextareaProps) => {
   if (limit) {
     limitEl = (
       <div className={textareaClasses?.limit}>
-        {
-          typeof limit === 'number' ? `${props.value?.length || 0}/${limit}` : limit(props.value)
-        }
+        {typeof limit === 'number' ? `${props.value?.length || 0}/${limit}` : limit(props.value)}
+      </div>
+    );
+  }
+
+  let clearEl = null;
+  if (clearable && props.value) {
+    clearEl = (
+      <div
+        className={textareaClasses?.clear}
+        onClick={() => {
+          props.onChange?.('');
+        }}
+      >
+        {Icons.textarea.Close}
       </div>
     );
   }
@@ -99,6 +113,7 @@ const Textarea = (props: SimpleTextareaProps) => {
       {textareaEl}
       {suffix}
       {limitEl}
+      {clearEl}
     </div>
   );
 };

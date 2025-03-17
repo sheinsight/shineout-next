@@ -37,6 +37,8 @@ export interface TextareaClasses {
   info: string;
   footer: string;
   limit: string;
+  clear: string;
+  wrapperWithClear: string;
 }
 
 export interface SimpleTextareaProps
@@ -100,6 +102,14 @@ export interface SimpleTextareaProps
    * @version 3.6.0
    */
   limit?: number | ((text?: string) => React.ReactNode);
+
+  /**
+   * @en Whether to clear the value
+   * @cn 是否可以清空值
+   * @default false
+   * @version 3.6.0
+   */
+  clearable?: boolean;
 }
 
 type TextareaValueType = string;

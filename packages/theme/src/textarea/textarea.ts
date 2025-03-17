@@ -35,6 +35,9 @@ const textareaTokens: TextareaTokens = {
   textareaInfoErrorBorderColor: 'Danger-6',
   textareaLimitFontColor: 'Neutral-text-3',
   textareaLimitFontSize: 'Font-12',
+  textareaClearColor: 'Neutral-text-3',
+  textareaClearSize: 'Size-7',
+  textareaClearHoverColor: 'Neutral-text-4',
 };
 
 export default textareaTokens;
