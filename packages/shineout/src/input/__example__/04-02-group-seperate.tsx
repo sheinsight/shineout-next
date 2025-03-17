@@ -6,15 +6,12 @@
  */
 
 import React from 'react';
-import { Input, Select, DatePicker, Button } from 'shineout';
+import { Input, Select, icons } from 'shineout';
 
 const App: React.FC = () => (
   <Input.Group seperate>
-    <Select keygen data={['Expected Date', 'Actual Date']} width={140} defaultValue="Expected Date" />
-    <DatePicker placeholder='select start date' inputable />
-    <b>~</b>
-    <DatePicker placeholder='select end date' inputable />
-    <Button type="primary">Submit</Button>
+    <Select keygen data={['Option1', 'Option2']} width={100} defaultValue="Option1" />
+    <Input placeholder='please enter' suffix={<div style={{width: 14}}>{icons.Search}</div>} />
   </Input.Group>
 );
 
