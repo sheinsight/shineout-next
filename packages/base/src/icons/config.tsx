@@ -118,6 +118,9 @@ const config = {
     Next: icons.ArrowRight,
     CollapseArrow: icons.ArrowLeft,
   },
+  textarea: {
+    Close: icons.CloseFill,
+  },
   transfer: {
     DeleteAll: icons.Delete,
     DeleteItem: icons.Close,

@@ -1,9 +1,9 @@
 /**
- * cn - 自定义信息
+ * cn -
  *    -- 可以通过设置 `info` 为函数去自定义提示信息;
  *    -- 如果 `info` 返回类型为 Error，不会隐藏；
  *    -- 可以通过设置 `popoverProps` 来自定义弹窗的属性， 参考Popover组件的属性。
- * en - Custom Info
+ * en -
  *    -- can customize the info by setting info as a function;
  *    -- if the functio return an Error , the info doesn't hide;
  *    -- can customize the popover by setting `popoverProps` , reference to Popover component's props.
@@ -26,9 +26,9 @@ const App: React.FC = () => (
     info={renderInfo}
     popoverProps={{
       position: 'bottom-left',
-      getPopupContainer: () => document.body
+      getPopupContainer: () => document.body,
     }}
-    />
+  />
 );
 
 export default App;

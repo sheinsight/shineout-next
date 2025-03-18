@@ -114,6 +114,39 @@ const input: JsStyles<keyof TextareaClasses> = {
     width: '100%',
     boxSizing: 'border-box',
   },
+  limit: {
+    position: 'absolute',
+    right: 12,
+    bottom: 6,
+    color: token.textareaLimitFontColor,
+    fontSize: token.textareaLimitFontSize,
+    '$resize + &': {
+      right: 16,
+    }
+  },
+  clear: {
+    position: 'absolute',
+    right: token.textareaPaddingX,
+    top: token.textareaPaddingY,
+    cursor: 'pointer',
+    padding: 4,
+    color: token.textareaClearColor,
+
+    '&:hover': {
+      color: token.textareaClearHoverColor,
+    },
+
+    '& > svg': {
+      display: 'block',
+      width: token.textareaClearSize,
+      height: token.textareaClearSize,
+    }
+  },
+  wrapperWithClear: {
+    '&& $textarea': {
+      paddingRight: `calc(${token.textareaPaddingX} * 4)`
+    },
+  }
 };
 
 export default input;

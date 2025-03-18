@@ -1,3 +1,9 @@
+## 3.6.0-beta.27
+2025-03-17
+
+### 🆕 Feature
+- `Tooltip` 新增 `showArrow` 属性，用于控制是否显示箭头 ([#998](https://github.com/sheinsight/shineout-next/pull/998))
+
 ## 3.6.0-beta.26
 2025-03-14
 

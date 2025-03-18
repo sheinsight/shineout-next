@@ -41,7 +41,7 @@ const cardTokenExtraValue = {
     color: 'Neutral-text-5',
     size: 'Font-14',
   },
-  padding: { x: 'Spacing-16', y: 'Spacing-12' },
+  padding: { x: 'Spacing-12', y: 'Spacing-12' },
   title: {
     font: {
       color: 'Neutral-text-5',
@@ -52,16 +52,16 @@ const cardTokenExtraValue = {
   header: {
     gap: '8px',
     extra: {
-      margin: { x: 'Spacing-16' },
+      margin: { x: 'Spacing-12' },
     },
-    padding: { x: 'Spacing-16', y: 'Spacing-12' },
+    padding: { x: 'Spacing-12', y: 'Spacing-12' },
   },
   indicator: {
     size: 'Size-7',
     color: 'Neutral-text-4',
   },
   body: {
-    padding: { x: 'Spacing-16', y: 'Spacing-12' },
+    padding: { x: 'Spacing-12', y: 'Spacing-12' },
     font: {
       size: 'Font-14',
       color: 'Neutral-text-5',
@@ -72,7 +72,7 @@ const cardTokenExtraValue = {
     },
   },
   footer: {
-    padding: { x: 'Spacing-16', y: 'Spacing-12' },
+    padding: { x: 'Spacing-12', y: 'Spacing-12' },
     border: {
       color: 'Neutral-border-1',
     },
