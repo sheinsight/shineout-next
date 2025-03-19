@@ -16,4 +16,12 @@ export interface FormFlowProps extends UseFormFlowProps {
    * @cn names 为空时，Form 内任意值变化会触发 Flow 更新；不为空时，只监听指定字段变化
    */
   names?: string[];
+
+  /**
+   * @en Whether to strictly follow the watch rules.
+   * @cn 是否严格遵循 watch 规则
+   * @default false
+   * @version 3.6.0
+   */
+  strict?: boolean;
 }
