@@ -783,8 +783,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           )}
           onAnimationAfterEnter={onAnimationAfterEnter}
           display={'block'}
-          // type='scale-y'
-          type='fade'
+          type='scale-y'
           duration={'fast'}
           style={getListStyle()}
         >
