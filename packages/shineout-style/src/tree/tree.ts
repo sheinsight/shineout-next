@@ -11,7 +11,10 @@ const treeStyle: JsStyles<TreeClassType> = {
   notTree: {
     '&$root > $node$leaf': {
       paddingLeft: 0,
-    }
+    },
+    '& $content': {
+      marginLeft: 0,
+    },
   },
   line: {
     '& $node': {
@@ -146,14 +149,16 @@ const treeStyle: JsStyles<TreeClassType> = {
     flex: 1,
     display: 'flex',
     alignItems: 'center',
+    marginLeft: 4,
+
     // 'label&': {
     //   cursor: 'pointer',
     //   userSelect: 'none',
     // },
 
-    '$iconWrapper + &': {
-      marginLeft: 4,
-    },
+    // '$iconWrapper + &': {
+    //   marginLeft: 4,
+    // },
 
     '$contentDisabled &': {
       '& $text': {
