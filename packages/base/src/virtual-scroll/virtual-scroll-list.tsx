@@ -12,6 +12,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     className,
     lineHeight,
     height,
+    keepScrollTop,
     keepScrollHeight,
     renderItem,
     customRenderItem,
@@ -115,7 +116,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       if (scrollTop < sum || i === maxIndex) {
         nextCurrentIndex = i;
         const beforeHeight = i === 0 ? 0 : sum - (context.cachedHeight[i] || lineHeight);
-        top = scrollTop - beforeHeight
+        top = scrollTop - beforeHeight;
         break;
       }
     }
@@ -184,13 +185,14 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       transform: `translate3d(0, -${top}px, 0)`,
       paddingTop: paddingY,
       paddingBottom: paddingY,
-    }
+    };
     return (
       <Scroll
         className={className}
         style={nextStyle}
         height={height}
         scrollWidth={0}
+        keepScrollTop={keepScrollTop}
         scrollerStyle={scrollerStyle}
         scrollHeight={scrollHeight}
         childrenStyle={{ width: '100%' }}
@@ -223,6 +225,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
 
   useLayoutEffect(() => {
     // 数据变化的时候清空掉 preIndex, 如果之前有缓存的index, setRowHeight 会有问题
+    if (keepScrollTop) return;
     if (keepScrollHeight) return;
     setTop(0);
     setStartIndex(0);
