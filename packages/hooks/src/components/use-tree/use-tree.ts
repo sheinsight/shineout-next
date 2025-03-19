@@ -30,8 +30,6 @@ function toArray<Value>(value: Value) {
   return value;
 }
 
-const global_tree_map = new Map<object, TreeContext<any>>();
-
 export const MODE = {
   /**
    * 返回全选数据，包含父节点和子节点
@@ -473,15 +471,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const setData = (data?: DataItem[]) => {
-    // if(data && global_tree_map.get(data)){
-    //   context.cachedValue = global_tree_map.get(data)?.cachedValue || []
-    //   context.pathMap = global_tree_map.get(data)?.pathMap || new Map()
-    //   context.dataMap = global_tree_map.get(data)?.dataMap || new Map()
-    //   context.valueMap = global_tree_map.get(data)?.valueMap || new Map()
-    //   context.unmatchedValueMap = global_tree_map.get(data)?.unmatchedValueMap || new Map()
-    //   return
-    // }
-
     const prevValue = context.value || [];
     context.cachedValue = [];
     context.pathMap = new Map();
@@ -502,8 +491,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     }
     initValue();
     setValue(prevValue);
-
-    // global_tree_map.set(data, context)
   };
 
   const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
@@ -553,6 +540,24 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       set(parentId, parentChecked, 'asc');
     }
     return current;
+  };
+
+  const updateInnerCheckStatus = () => {
+    if(mode !== MODE.MODE_0) return;
+    context.value?.forEach((id) => {
+      const { children } = context.pathMap.get(id)!;
+      if (children.length) {
+        const noCheckedChildren = children.filter((cid) => !context.value?.includes(cid));
+        if (noCheckedChildren.length > 0) {
+          setTimeout(() => {
+            setValueMap(id, 2)
+            noCheckedChildren.forEach((cid) => {
+              setValueMap(cid, 0)
+            });
+          }, 0);
+        }
+      }
+    });
   };
 
   const appendChildrenExpanded = (
@@ -690,6 +695,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (props.datum) return;
     if (!dataUpdate) return;
     setData(data);
+    updateInnerCheckStatus();
   }, [data]);
 
   useEffect(() => {
@@ -738,7 +744,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     updateMap: context.updateMap,
     dataFlatStatusMap: context.dataFlatStatusMap,
   });
-  
+
   return {
     inited,
     datum: props.datum || datum,
