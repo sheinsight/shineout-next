@@ -181,6 +181,8 @@ const Result = (props: ResultProps) => {
       info.index === activeIndex && styles?.resultTextActive,
     );
     const formFieldId = fieldId?.split(separator) || [];
+    const inputValue = info.target || info.value || ''
+    const displayValue = props.type === 'week' && inputValue ? `${inputValue}${getLocale(locale, 'weekShort')}` : inputValue;
     return (
       <div className={className} id={formFieldId[info.index]}>
         <span className={styles?.resultTextPadding}>
@@ -195,7 +197,7 @@ const Result = (props: ResultProps) => {
             readOnly={!info.inputable}
             open={!!open}
             inputRef={inputRef}
-            value={info.target || info.value || ''}
+            value={displayValue}
             placeholder={info.place}
             onChange={(s) => {
               onChange(s, info.index);
