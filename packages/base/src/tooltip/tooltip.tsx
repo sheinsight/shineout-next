@@ -20,6 +20,7 @@ const Tooltip = (props: TooltipProps) => {
     className,
     style,
     zIndex,
+    showArrow = true,
     persistent: persistentProp,
     type = 'default',
     position: popsitionProps = 'auto',
@@ -65,7 +66,7 @@ const Tooltip = (props: TooltipProps) => {
   };
 
   useEffect(() => {
-    if(!persistent) return
+    if (!persistent) return;
     bindEvents();
     return () => {
       unbindEvents();
@@ -112,7 +113,6 @@ const Tooltip = (props: TooltipProps) => {
         popupGap={0}
         zIndex={zIndex}
         adjust={popsitionProps === 'auto'}
-
         arrowRef={arrowRef}
       >
         <div
@@ -128,11 +128,13 @@ const Tooltip = (props: TooltipProps) => {
           onMouseLeave={events.onMouseLeave}
           dir={config.direction}
         >
-          <span
-            ref={arrowRef}
-            className={tooltipClasses?.arrow}
-            {...util.getDataAttribute({ role: 'arrow' })}
-          ></span>
+          {showArrow && (
+            <span
+              ref={arrowRef}
+              className={tooltipClasses?.arrow}
+              {...util.getDataAttribute({ role: 'arrow' })}
+            />
+          )}
           <div style={style} className={classNames(tooltipClasses?.content)}>
             {tip}
           </div>

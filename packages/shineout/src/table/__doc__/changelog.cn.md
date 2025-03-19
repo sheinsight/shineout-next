@@ -1,3 +1,9 @@
+## 3.6.0-beta.27
+2025-03-17
+
+### 🐞 BugFix
+- 修复 `Table` 的column.width设置为0时不生效的问题（Regression: since v3.4.5） ([#998](https://github.com/sheinsight/shineout-next/pull/998))
+
 ## 3.6.0-beta.19
 2025-03-06
 

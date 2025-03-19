@@ -158,6 +158,7 @@ const tableStyle: JsStyles<TableClassType> = {
     },
     '&::after': {
       position: 'absolute',
+      zIndex: fixedFixedIndex + 3,
       content: '""',
       display: 'block',
       bottom: 0,

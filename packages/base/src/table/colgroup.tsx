@@ -21,9 +21,7 @@ const Colgroup = (props: ColgroupProps) => {
           if (minWidth) {
             style.minWidth = minWidth;
           }
-          if (width) {
-            style.width = width;
-          }
+          style.width = width;
           return <col key={columns[index].key} style={style} />;
         })}
       </colgroup>
