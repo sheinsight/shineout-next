@@ -59,6 +59,8 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     onDragStart,
     datum: propsDatum,
     actionOnClick,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    tiledData,
     ...rest
   } = props;
 
@@ -152,6 +154,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   const handleToggle = (id: KeygenResult) => {
     let newExpanded;
+
     if (!expanded && onExpand) {
       onExpand([id]);
       return;
@@ -245,7 +248,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
         />
       );
     }
-    console.log('data', data);
+
     return (
       <RootTree
         rootStyle={rootStyle}

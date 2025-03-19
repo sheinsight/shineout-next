@@ -543,16 +543,16 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const updateInnerCheckStatus = () => {
-    if(mode !== MODE.MODE_0) return;
+    if (mode !== MODE.MODE_0) return;
     context.value?.forEach((id) => {
       const { children } = context.pathMap.get(id)!;
       if (children.length) {
         const noCheckedChildren = children.filter((cid) => !context.value?.includes(cid));
         if (noCheckedChildren.length > 0) {
           setTimeout(() => {
-            setValueMap(id, 2)
+            setValueMap(id, 2);
             noCheckedChildren.forEach((cid) => {
-              setValueMap(cid, 0)
+              setValueMap(cid, 0);
             });
           }, 0);
         }
@@ -687,6 +687,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
           nextExpanded.push(k);
         }
       });
+
       onExpand(nextExpanded);
     }
   }, [context.dataMap]);

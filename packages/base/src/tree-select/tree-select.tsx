@@ -168,11 +168,12 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     // rawDatum: datum,
   });
 
-  const {
-    datum,
-    onExpand: onExpandTree,
-    expanded: unControlExpanded,
-  } = useTree({
+  const handleExpanded = (id: KeygenResult[]) => {
+    setVirtualExpanded(id);
+    onExpand?.(id);
+  };
+
+  const { datum, expanded: unControlExpanded } = useTree({
     mode,
     value,
     data: data,
@@ -183,7 +184,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     active: multiple ? undefined : value[0],
     childrenKey: childrenKey,
     keygen,
-    onExpand,
+    onExpand: handleExpanded,
     expanded: controlExpanded,
     defaultExpanded: defaultExpanded,
     defaultExpandAll: defaultExpandAll,
@@ -288,11 +289,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       openPop();
     }
   });
-
-  const handleExpanded = (id: KeygenResult[]) => {
-    setVirtualExpanded(id);
-    onExpandTree(id);
-  };
 
   const focusAndOpen = () => {
     if (!focused) {
@@ -463,7 +459,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   useEffect(() => {
     if (virtual && expanded) {
-      console.log(expanded);
       setVirtualExpanded(expanded);
     }
   }, [expanded]);

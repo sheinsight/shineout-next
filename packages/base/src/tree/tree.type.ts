@@ -241,6 +241,7 @@ export interface TreeProps<DataItem, Value extends any[]>
   rowsInView?: number;
   rootStyle?: React.CSSProperties;
   ignoreSetFlat?: boolean;
+  tiledData?: DataItem[];
 }
 
 export interface VirtualTreeProps<DataItem, Value extends any[]>
