@@ -100,7 +100,6 @@ const Pagination = (props: PaginationProps) => {
                 {...props}
                 text={text}
                 total={total}
-                current={current}
                 pageSize={pageSize}
                 onChange={onChange}
               />
