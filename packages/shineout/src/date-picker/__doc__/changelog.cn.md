@@ -1,12 +1,13 @@
-## 3.6.0-beta.29
-2025-03-19
+## 3.6.0-beta.30
+2025-03-20
 
 ### 🐞 BugFix
 
-- 修复 `DatePicker` 的 `formatResult`函数格式的自定义结果展示不生效的问题 ([#1000](https://github.com/sheinsight/shineout-next/pull/1000))
+- 修复 `DatePicker` 的 `formatResult`函数格式的自定义结果展示不生效的问题 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
+- 修复 `DatePicker` 的 `open` 受控用法下，onCollapse回调函数可能不触发而导致无法选择的问题 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
 
 ### 💎 Enhancement
-- `DatePicker` 周选择器的结果末尾追加“周”字 ([#1000](https://github.com/sheinsight/shineout-next/pull/1000))
+- `DatePicker` 周选择器的结果末尾追加“周”字 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
 
 ## 3.6.0-beta.17
 2025-03-06
