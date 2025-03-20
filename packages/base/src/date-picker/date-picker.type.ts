@@ -190,7 +190,7 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @cn 对选中时间进行格式化
    * @default props.format
    */
-  formatResult?: string | ((date: Date) => string);
+  formatResult?: string | ((date?: Date) => string);
   /**
    * @en Range span，unit: second，When it is true, selection scope is not limited
    * @cn 范围跨度，单位 秒，为 true 时表示不限制选择范围

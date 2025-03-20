@@ -702,7 +702,7 @@ describe('DatePicker[Type]', () => {
     await waitFor(async () => {
       let month = `${tbody.querySelectorAll('tr')[2].querySelector('th')?.textContent}`;
       if (month.length === 1) month = `0${month}`;
-      inputValueTest(datePickerResult, `${year}-${month}`);
+      inputValueTest(datePickerResult, `${year}-${month}W`);
       tbody
         .querySelectorAll('tr')[2]
         .querySelectorAll('td')
