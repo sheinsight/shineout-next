@@ -23,11 +23,16 @@ const App: React.FC = () => (
 
     <Form.Item label='Full Name'>
       <Form.Flow names={['firstName', 'lastName']}>
-        {(datum) => (
-          <div style={{ lineHeight: '32px' }}>{`${datum?.get('firstName')}-${datum?.get(
-            'lastName',
-          )}`}</div>
-        )}
+        {(datum) => {
+          console.log('======================')
+          console.log('flow-1 rendered: >>')
+          console.log('======================')
+          return (
+            <div style={{ lineHeight: '32px' }}>{`${datum?.get('firstName')}-${datum?.get(
+              'lastName',
+            )}`}</div>
+          )
+        }}
       </Form.Flow>
     </Form.Item>
 

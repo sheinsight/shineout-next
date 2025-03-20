@@ -1,3 +1,10 @@
+## 3.6.0-beta.30
+2025-03-20
+
+### 💎 Enhancement
+
+- `Form.Flow` 新增 `strict` 属性：严格模式下，只有在配置的names字段值发生变化时才触发Flow的children渲染 ([#1003](https://github.com/sheinsight/shineout-next/pull/1003))
+
 ## 3.6.0-beta.18
 2025-03-06
 

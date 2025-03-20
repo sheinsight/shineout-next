@@ -57,13 +57,13 @@ const FormItem = (props: FormItemProps) => {
     if($colon){
       return (
         <>
-          {label}
+          {label as React.ReactNode}
           <span className={formItemClasses?.labelColon}>{$colon}</span>
         </>
       )
     }
 
-    return <>{label}</>;
+    return <>{label as React.ReactNode}</>;
   };
 
   return (
