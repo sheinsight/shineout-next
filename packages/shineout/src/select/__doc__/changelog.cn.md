@@ -1,3 +1,9 @@
+## 3.6.0-beta.28
+2025-03-19
+
+### 🐞 BugFix
+- 修复 `Select` 组件 `onLoadMore` 在加载第二页的时候重新打开面板滚动位置异常的问题(Regression: since v3.5.5) ([#1000](https://github.com/sheinsight/shineout-next/pull/1000))
+
 ## 3.6.0-beta.10
 2025-02-26
 

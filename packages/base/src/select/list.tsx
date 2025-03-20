@@ -188,6 +188,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
       <VirtualScrollList
         virtualRef={virtualRef}
         data={data}
+        keepScrollTop
         keygen={keygen}
         tag={'ul'}
         groupKey={groupKey}

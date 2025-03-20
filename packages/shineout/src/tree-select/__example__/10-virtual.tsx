@@ -37,7 +37,7 @@ export default () => {
         onChange={handleChange}
         clearable
         onFilter={handleFilter}
-        // virtual
+        virtual
         keygen='id'
         renderItem={(node) => `node ${node.id}`}
         data={data}

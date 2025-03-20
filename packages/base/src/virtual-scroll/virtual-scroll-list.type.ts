@@ -26,6 +26,7 @@ export interface VirtualListProps<DataItem> extends Pick<CommonType, 'className'
   virtualRef?: React.MutableRefObject<VirtualListType>;
   scrollerStyle?: React.CSSProperties;
   dynamicVirtual?: boolean;
+  keepScrollTop?: boolean;
   keepScrollHeight?: boolean;
   onControlTypeChange?: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
   onScroll?: (info: {

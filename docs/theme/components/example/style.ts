@@ -141,8 +141,9 @@ export default createUseStyles(
       gap: 24,
       '& $icon svg': {
         color: 'var(--soui-neutral-text-8)',
-      }
+      },
     },
+    icon: {},
     tip: {
       margin: '0 5px',
       color: '#5d5d5d',
