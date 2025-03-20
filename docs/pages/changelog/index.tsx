@@ -7,6 +7,9 @@ import changelogs from '../../chunk/shineout/changelog';
 const mainChangelog = require(`!!raw-loader!../../markdown/shineout/changelog-v3.md`).default;
 
 const changelogArr = Object.values(changelogs);
+
+const ORDER = ['Featrue', 'Enhancement', 'Performance', 'BugFix']
+
 // todo 英文
 const cn: any = {};
 changelogArr.forEach((item) => {
@@ -58,6 +61,11 @@ const Changelog = () => {
           const title = `### ${key}`;
           const list = changes[key].map((item: string) => `- ${item}`).join('\n');
           return `${title}\n${list}`;
+        })
+        .sort((a, b) => {
+          const aIndex = ORDER.findIndex((i) => a.toLowerCase().includes(i.toLowerCase()));
+          const bIndex = ORDER.findIndex((i) => b.toLowerCase().includes(i.toLowerCase()));
+          return aIndex - bIndex;
         })
         .join('\n');
       return `${title}\n${timestr}\n${content}`;
