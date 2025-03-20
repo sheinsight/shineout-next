@@ -19,7 +19,7 @@ export interface FormFlowProps extends UseFormFlowProps {
 
   /**
    * @en Whether to strictly follow the watch rules.
-   * @cn 是否严格遵循 watch 规则
+   * @cn 严格根据 names 配置监听变化
    * @default false
    * @version 3.6.0
    */
