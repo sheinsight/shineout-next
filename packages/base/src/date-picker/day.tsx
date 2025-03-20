@@ -155,6 +155,8 @@ const Day = (props: DayProps) => {
 
     const showNeedConfirm = props.needConfirm && !props.range;
 
+    if(props.type !== 'datetime' && props.type !== 'date' && !showNeedConfirm) return null;
+
     return (
       <div
         className={styles?.pickerFooter}
@@ -190,7 +192,7 @@ const Day = (props: DayProps) => {
               paddingLeft: showNeedConfirm ? (props.type === 'date' ? 22 : 6) : undefined,
             }}
           >
-            {props.showSelNow && props.type === 'date' && (
+            {props.type === 'date' && (
               <Link
                 type='primary'
                 jssStyle={jssStyle}
@@ -200,7 +202,7 @@ const Day = (props: DayProps) => {
                 {getLocale(locale, 'now')}
               </Link>
             )}
-            {props.showSelNow && props.type === 'datetime' && (
+            {props.type === 'datetime' && (
               <Link
                 type='primary'
                 jssStyle={jssStyle}

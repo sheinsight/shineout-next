@@ -14,17 +14,17 @@ const App: React.FC = () => {
   const [dateValue, setDateValue] = React.useState<Date | Date[]>();
   const [type, setType] = React.useState<DateType>('date');
   const [isRange, setIsRange] = React.useState(true);
+  const [isConfirm, setIsConfirm] = React.useState(true);
   return (
     <div>
-      <div style={{display: 'flex', alignItems: 'center', gap: 24}}>
-        <Radio.Group
-          keygen
-          button={'outline'}
-          data={types}
-          value={type}
-          onChange={setType}
-        />
-        <Checkbox value={isRange} onChange={setIsRange}>范围选择</Checkbox>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+        <Radio.Group keygen button={'outline'} data={types} value={type} onChange={setType} />
+        <Checkbox value={isRange} onChange={(v) => setIsRange(!!v)} style={{ margin: 0 }}>
+          范围选择
+        </Checkbox>
+        <Checkbox value={isConfirm} onChange={(v) => setIsConfirm(!!v)} style={{ margin: 0 }}>
+          启用确认
+        </Checkbox>
       </div>
       <br />
       <DatePicker
@@ -33,12 +33,12 @@ const App: React.FC = () => {
         range={isRange}
         showSelNow
         value={dateValue}
-        onChange={v => {
+        onChange={(v) => {
           console.log('外部的onChange: ', v);
           setDateValue(v);
         }}
         clearable
-        needConfirm
+        needConfirm={isConfirm}
       />
     </div>
   );
