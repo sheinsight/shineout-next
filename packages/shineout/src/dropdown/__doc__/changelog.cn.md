@@ -3,7 +3,7 @@
 
 ### 🆕 Feature
 
-- `Dropdown` 新增 `shape`: 同 `Button` 组件的shape ([#925](https://github.com/sheinsight/shineout-next/pull/925))
+- `Dropdown` 新增 `shape`: 同 `Button` 的shape ([#925](https://github.com/sheinsight/shineout-next/pull/925))
 
 
 ## 3.4.0

@@ -13,13 +13,13 @@
 2025-01-06
 
 ### 🐞 BugFix
-- 修复 `Popover` 组件在 `position='left'` 模式下三角箭头和 trigger 元素之间的垫片元素不生效的问题 ([#906](https://github.com/sheinsight/shineout-next/pull/906))
+- 修复 `Popover` 在 `position='left'` 模式下三角箭头和 trigger 元素之间的垫片元素不生效的问题 ([#906](https://github.com/sheinsight/shineout-next/pull/906))
 
 ## 3.5.5
 2024-12-24
 
 ### 🐞 BugFix
-- 修复 `Popover` 组件受控为 true 但不在视口范围内时无法展示的问题 ([#880](https://github.com/sheinsight/shineout-next/pull/880))
+- 修复 `Popover` 受控为 true 但不在视口范围内时无法展示的问题 ([#880](https://github.com/sheinsight/shineout-next/pull/880))
 
 ## 3.4.4
 2024-10-28

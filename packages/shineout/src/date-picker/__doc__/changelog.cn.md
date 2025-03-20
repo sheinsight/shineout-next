@@ -16,7 +16,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `DatePicker` 组件在开启 `range` 和 `open` 属性后第一次点击无法选择日期的问题 ([#897](https://github.com/sheinsight/shineout-next/pull/897))
+- 修复 `DatePicker` 在开启 `range` 和 `open` 属性后第一次点击无法选择日期的问题 ([#897](https://github.com/sheinsight/shineout-next/pull/897))
 
 ## 3.5.4
 2024-12-12

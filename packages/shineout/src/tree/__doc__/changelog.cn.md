@@ -3,8 +3,8 @@
 
 ### 🐞 BugFix
 
-- 修复 `TreeSelect` 组件开 `virtual` 和 `defaultExpandedAll` 后，过滤数据不展开的问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
-- 修复 `TreeSelect` 组件节点样式不对齐对问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
+- 修复 `TreeSelect` 开 `virtual` 和 `defaultExpandedAll` 后，过滤数据不展开的问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
+- 修复 `TreeSelect` 节点样式不对齐对问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
 
 ## 3.6.0
 2025-03-07

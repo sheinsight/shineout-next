@@ -134,21 +134,21 @@
 2024-09-14
 
 ### 🐞 BugFix
-- 修复`Table` 在`Tabs`组件中切换时的滚动条抖动一下的问题 ([#667](https://github.com/sheinsight/shineout-next/pull/667))
+- 修复 `Table` 在 `Tabs` 中切换时的滚动条抖动一下的问题 ([#667](https://github.com/sheinsight/shineout-next/pull/667))
 ### 🐞 BugFix
-- 修复`Table` 虚拟滚动时，默认的rowsInView渲染结果不够撑满一屏导致的滚动空白问题 ([#628](https://github.com/sheinsight/shineout-next/pull/628))
-- 修复`Table` 虚拟滚动的内部元素被执行scrollIntoView导致的页面偏移的问题 ([#624](https://github.com/sheinsight/shineout-next/pull/624))
+- 修复 `Table` 虚拟滚动时，默认的rowsInView渲染结果不够撑满一屏导致的滚动空白问题 ([#628](https://github.com/sheinsight/shineout-next/pull/628))
+- 修复 `Table` 虚拟滚动的内部元素被执行scrollIntoView导致的页面偏移的问题 ([#624](https://github.com/sheinsight/shineout-next/pull/624))
 
 
 ## 3.3.3
 2024-08-15
 
 ### 🐞 BugFix
-- 修复`Table`空数据时,resize后的固定列位置不对的问题 ([#606](https://github.com/sheinsight/shineout-next/pull/606))
-- 修复`Table`有合并行数据时滚动到数据的底部时，依然能滚动一段距离的问题
-- 修复`Table`有合并行数据时多次动态切换data时,表格重复渲染出多余的行的问题 ([#592](https://github.com/sheinsight/shineout-next/pull/592))
-- 修复`Table`的虚拟列表场景下的合并行中内容闪烁的问题 ([#595](https://github.com/sheinsight/shineout-next/pull/595))
-- 修复`Table`的列中有动态加载的内容导致tbody和thead不对齐的问题 ([#595](https://github.com/sheinsight/shineout-next/pull/595))
+- 修复 `Table` 空数据时,resize后的固定列位置不对的问题 ([#606](https://github.com/sheinsight/shineout-next/pull/606))
+- 修复 `Table` 有合并行数据时滚动到数据的底部时，依然能滚动一段距离的问题
+- 修复 `Table` 有合并行数据时多次动态切换data时,表格重复渲染出多余的行的问题 ([#592](https://github.com/sheinsight/shineout-next/pull/592))
+- 修复 `Table` 的虚拟列表场景下的合并行中内容闪烁的问题 ([#595](https://github.com/sheinsight/shineout-next/pull/595))
+- 修复 `Table` 的列中有动态加载的内容导致tbody和thead不对齐的问题 ([#595](https://github.com/sheinsight/shineout-next/pull/595))
 
 
 ## 3.3.0
@@ -263,7 +263,6 @@
 ## 3.1.0
 2024-05-09
 
-### 🆕 Feature
 
 ### 🐞 BugFix
 
