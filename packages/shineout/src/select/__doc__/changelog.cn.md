@@ -1,19 +1,12 @@
-## 3.6.0-beta.28
+## 3.6.0
 2025-03-19
 
 ### 🐞 BugFix
-- 修复 `Select` 组件 `onLoadMore` 在加载第二页的时候重新打开面板滚动位置异常的问题(Regression: since v3.5.5) ([#1000](https://github.com/sheinsight/shineout-next/pull/1000))
+- 修复 `Select` 的 `onLoadMore` 在加载第二页的时候重新打开面板滚动位置异常的问题(Regression: since v3.5.5) ([#1000](https://github.com/sheinsight/shineout-next/pull/1000))
+- 修复 `Select` 的 `reFocus` 属性失效的问题 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
 
-## 3.6.0-beta.10
-2025-02-26
 
-### 🐞 BugFix
-- 修复 `Select` 组件 `reFocus` 属性失效的问题 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
-
-## 3.6.0-beta.2
-2024-12-19
-
-### 💎 Performance
+### 🚀 Performance
 - 优化 `Select` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
 - 优化 `Select` 在大数据量下同时被渲染很多个时的页面初始化性能问题 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
 
@@ -89,7 +82,7 @@
 2024-09-29
 
 ### 🐞 BugFix
-- 修复 `Select` 组件 `columns` 只有 1 列情况下列表宽度不自动撑满的问题 ([#686](https://github.com/sheinsight/shineout-next/pull/686))
+- 修复 `Select` 的 `columns` 只有 1 列情况下列表宽度不自动撑满的问题 ([#686](https://github.com/sheinsight/shineout-next/pull/686))
 
 ## 3.4.0
 2024-09-19

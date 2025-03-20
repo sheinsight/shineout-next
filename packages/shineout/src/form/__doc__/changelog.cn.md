@@ -1,49 +1,18 @@
-## 3.6.0-beta.30
+## 3.6.0
 2025-03-20
 
-### 💎 Enhancement
-
-- `Form.Flow` 新增 `strict` 属性：严格模式下，只有在配置的names字段值发生变化时才触发Flow的children渲染 ([#1003](https://github.com/sheinsight/shineout-next/pull/1003))
-
-## 3.6.0-beta.18
-2025-03-06
-
-### 🐞 BugFix
-
-- 修复 `Form` 的 `scrollToError` 无法生效的问题(Regression: since v3.5.4-beta.3) ([#985](https://github.com/sheinsight/shineout-next/pull/985))
-
-## 3.6.0-beta.14
-2025-03-03
-
-### 🐞 BugFix
-
-- 修复 `Form` 下的组件设置name为json path格式的数组时，组件上的 `defaultValue` 无法生效的问题 ([#980](https://github.com/sheinsight/shineout-next/pull/980))
-
-
-## 3.6.0-beta.11
-2025-02-27
-
-### 🐞 BugFix
-
-- 修复 `Form` 中的带校验字段卸载后，执行手动校验方法 `validateFieldsWithValue` 依然能返回该字段校验不通过信息的问题 ([#975](https://github.com/sheinsight/shineout-next/pull/975))
-
-- 修复 `Form` 组件 `scrollToField` 在复杂布局中不生效的问题 ([#973](https://github.com/sheinsight/shineout-next/pull/973))
-
-## 3.6.0-beta.9
-2025-02-25
-
-### 💎 Enhancement
-
-- `Form` 的 `scrollToField` 方法兼容 `Form.Field` 和 `Form.FieldSet` 下的未设置name属性的表单组件 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
-
-
-## 3.6.0-beta.1
-2024-12-17
-
 ### 🆕 Feature
-
 - `Form` 新增 `colon` 属性，用于控制 label 是否显示冒号 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
 
+### 💎 Enhancement
+- `Form.Flow` 新增 `strict` 属性：严格模式下，只有在配置的names字段值发生变化时才触发Flow的children渲染 ([#1003](https://github.com/sheinsight/shineout-next/pull/1003))
+- `Form` 的 `scrollToField` 方法兼容 `Form.Field` 和 `Form.FieldSet` 下的未设置name属性的表单组件 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
+
+### 🐞 BugFix
+- 修复 `Form` 的 `scrollToError` 无法生效的问题(Regression: since v3.5.4) ([#985](https://github.com/sheinsight/shineout-next/pull/985))
+- 修复 `Form` 下的组件设置name为json path格式的数组时，组件上的 `defaultValue` 无法生效的问题 ([#980](https://github.com/sheinsight/shineout-next/pull/980))
+- 修复 `Form` 中的带校验字段卸载后，执行手动校验方法 `validateFieldsWithValue` 依然能返回该字段校验不通过信息的问题 ([#975](https://github.com/sheinsight/shineout-next/pull/975))
+- 修复 `Form` 的 `scrollToField` 在复杂布局中不生效的问题 ([#973](https://github.com/sheinsight/shineout-next/pull/973))
 
 
 ## 3.5.8
@@ -79,7 +48,7 @@
 2024-12-24
 
 ### 🐞 BugFix
-- 修复 `Form` 在按回车提交表单时表单中 `Input` 组件 `trim` 功能失效的问题 ([#871](https://github.com/sheinsight/shineout-next/pull/871))
+- 修复 `Form` 在按回车提交表单时表单中 `Input` 的 `trim` 功能失效的问题 ([#871](https://github.com/sheinsight/shineout-next/pull/871))
 
 ## 3.5.4
 2024-12-12
@@ -92,7 +61,7 @@
 2024-12-04
 
 ### 🐞 BugFix
-- 修复 `Form` 组件 `onChange` 执行多次且数组嵌套字段模式下死循环的问题(Regression: since v3.4.4,v3.5.2) ([#842](https://github.com/sheinsight/shineout-next/pull/842))
+- 修复 `Form` 的 `onChange` 执行多次且数组嵌套字段模式下死循环的问题(Regression: since v3.4.4,v3.5.2) ([#842](https://github.com/sheinsight/shineout-next/pull/842))
 - 修复 `Form` 的 `reserveAble` 属性在处理嵌套字段时，无法保留值的问题 ([#834](https://github.com/sheinsight/shineout-next/pull/834))
 - 修复 `Form` 的 `formRef` 上的set方法，为某个字段手动设置相同长度的数组值时，无法更新值的问题 ([#835](https://github.com/sheinsight/shineout-next/pull/835))
 - 修复 `Form` 校验字段为嵌套字段时，自定义校验方法第二参数结构错误的问题 ([#829](https://github.com/sheinsight/shineout-next/pull/829))

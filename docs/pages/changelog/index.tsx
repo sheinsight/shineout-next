@@ -16,6 +16,10 @@ changelogArr.forEach((item) => {
       if (!cn[version]) {
         cn[version] = { time, changes };
       } else {
+        // 如果后续的日期比之前的日期大，就替换
+        if (time > cn[version].time) {
+          cn[version].time = time;
+        }
         Object.keys(changes).forEach((key) => {
           if (!cn[version].changes[key]) {
             cn[version].changes[key] = changes[key];

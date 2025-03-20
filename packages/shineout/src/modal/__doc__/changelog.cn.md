@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Modal.Submit` 在存在多个Form组件切换时，点击触发的onSubmit的value不正确的问题 ([#885](https://github.com/sheinsight/shineout-next/pull/885))
+- 修复 `Modal.Submit` 在存在多个 `Form` 切换时，点击触发的onSubmit的value不正确的问题 ([#885](https://github.com/sheinsight/shineout-next/pull/885))
 
 
 ## 3.5.0
@@ -19,7 +19,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Modal` 组件 confirm 模式下确认按钮 loading 交互失效的问题 ([#774](https://github.com/sheinsight/shineout-next/pull/774))
+- 修复 `Modal` 的 confirm 模式下确认按钮 loading 交互失效的问题 ([#774](https://github.com/sheinsight/shineout-next/pull/774))
 
 ## 3.4.0
 2024-09-19
