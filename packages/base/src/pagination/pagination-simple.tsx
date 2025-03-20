@@ -44,7 +44,6 @@ const PaginationSimple = (props: PaginationSimpleProps) => {
         total={total}
         text={text}
         size={size}
-        current={current}
         pageSize={pageSize}
         onChange={onChange}
       ></Jumper>
