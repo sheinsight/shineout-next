@@ -8,7 +8,7 @@ const mainChangelog = require(`!!raw-loader!../../markdown/shineout/changelog-v3
 
 const changelogArr = Object.values(changelogs);
 
-const ORDER = ['Featrue', 'Enhancement', 'Performance', 'BugFix']
+const ORDER = ['Featrue', 'Enhancement', 'Performance', 'BugFix', 'Style', 'Theme']
 
 // todo 英文
 const cn: any = {};
