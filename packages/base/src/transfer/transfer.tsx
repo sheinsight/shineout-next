@@ -181,11 +181,11 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
 
   const renderSourceList = useMemo(() => {
     return renderList('source');
-  }, [source, size, filterSourceText, sourceSelectedKeys]);
+  }, [source, size, filterSourceText, sourceSelectedKeys, renderFilter, children]);
 
   const renderTargetList = useMemo(() => {
     return renderList('target');
-  }, [target, size, filterTargetText, targetSelectedKeys]);
+  }, [target, size, filterTargetText, targetSelectedKeys, renderFilter, children]);
 
   const { fieldId } = useContext(FormFieldContext);
 

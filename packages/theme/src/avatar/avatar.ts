@@ -19,6 +19,8 @@ const avatarTokens: AvatarTokens = {
   avatarCircleBorderRadius: 'Radius-circle',
   avatarMaxFontColor: 'Neutral-text-5',
   avatarMaxFontWeight: 'Weight-regular',
+  avatarMaxHoverColor: 'Neutral-text-1',
+  avatarMaxHoverBackgroundColor: 'Brand-6',
   avatarPopoverPadding: 'Spacing-16',
   avatarSquareBorderRadius: 'Radius-default',
   avatarGroupBorderWidth: 'Border-2',

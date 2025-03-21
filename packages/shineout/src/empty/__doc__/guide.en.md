@@ -1,12 +1,12 @@
 ## When to Use
 
-Use this to explicitly prompt users when there is no data present.
+### Use this to explicitly prompt users when there is no data present.
 
 ## Combination with Other Components
 
 ### Combine with text buttons to guide users on the next step of action.
 
-![](001)
+![{maxWidth:100%}](001)
 
 ## Recommended/Cautionary Examples
 

@@ -8,7 +8,7 @@ import React from 'react';
 import { Button, Popover } from 'shineout';
 
 const App: React.FC = () => (
-  <Button>
+  <Button mode="outline">
     <Popover trigger='click'>hello shineout</Popover>
     Click me
   </Button>

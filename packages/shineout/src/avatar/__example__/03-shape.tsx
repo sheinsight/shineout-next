@@ -1,14 +1,16 @@
 /**
- * cn - 尺寸
- *    -- 头像支持三种尺寸：大、中、小，默认为中
+ * cn - 尺寸和形状
+ *    -- 头像尺寸支持三种：小、中、大，默认为中
+ *    -- 头像形状支持两种：`circle` | `square`，默认为`circle`
  * en - Size
  *    -- Avatar supports three sizes: large, medium, and small
+ *    -- Avatar supports two shapes: `circle` | `square`, default is `circle`
  */
 import React from 'react';
 import { Avatar } from 'shineout';
 
-const userIcon = (
-  <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+function UserIcon(props:any){
+  return <svg width={props.size || '16'} height={props.size || '16'} viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       d='M7.99992 8.66667C10.2091 8.66667 11.9999 6.87581 11.9999 4.66667C11.9999 2.45753 10.2091 0.666672 7.99992 0.666672C5.79078 0.666672 3.99992 2.45753 3.99992 4.66667C3.99992 6.87581 5.79078 8.66667 7.99992 8.66667Z'
       fill='#B3B7C1'
@@ -18,20 +20,20 @@ const userIcon = (
       fill='#B3B7C1'
     />
   </svg>
-);
+}
 
 export default () => {
   return (
     <div style={{ display: 'flex', gap: 24, flexDirection: 'column' }}>
       <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-        <Avatar icon={userIcon} size='large'></Avatar>
-        <Avatar icon={userIcon}></Avatar>
-        <Avatar icon={userIcon} size='small'></Avatar>
+        <Avatar icon={<UserIcon size={12} />} size='small'></Avatar>
+        <Avatar icon={<UserIcon size={16} />}></Avatar>
+        <Avatar icon={<UserIcon size={20} />} size='large'></Avatar>
       </div>
       <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-        <Avatar icon={userIcon} size='large' shape='square'></Avatar>
-        <Avatar icon={userIcon} shape='square'></Avatar>
-        <Avatar icon={userIcon} size='small' shape='square'></Avatar>
+        <Avatar icon={<UserIcon size={12} />} size='small' shape='square'></Avatar>
+        <Avatar icon={<UserIcon size={16} />} shape='square'></Avatar>
+        <Avatar icon={<UserIcon size={20} />} size='large' shape='square'></Avatar>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { useRoutes, Navigate } from 'react-router-dom';
 import { dispatch } from '../../store';
 import useStyles from './style';
 import { useEffect, useRef } from 'react';
+import FloatButton from './float';
 
 import Content from './content';
 
@@ -80,10 +81,10 @@ const Desktop = () => {
       if (newActive) {
         dispatch.setActiveAnchor(newActive);
       }
-      if (!scroll && top > 267) {
+      if (!scroll && top >= 230) {
         dispatch.setScroll(true);
         scroll = true;
-      } else if (scroll && top < 267) {
+      } else if (scroll && top <= 180) {
         dispatch.setScroll(false);
         scroll = false;
       }
@@ -101,6 +102,7 @@ const Desktop = () => {
       //  @ts-ignore
       style={window.__ALITA__ ? {height: 'calc(-64px + 100vh)', top: 0} : {}}>
       <Routes></Routes>
+      <FloatButton></FloatButton>
     </section>
   );
 };

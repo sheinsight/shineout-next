@@ -5,12 +5,12 @@ const { produce } = util;
 
 const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   const { children, empty } = props;
-  const { current: context } = React.useRef<{ ids: string[] }>({ ids: [] });
+  // const { current: context } = React.useRef<{ ids: string[] }>({ ids: [] });
 
   const formFunc = useFormFunc();
 
   const validateFieldSet = () => {
-    formFunc?.validateFields(props.name).catch((e) => e);
+    formFunc?.validateFields(props.name, { ignoreChildren: true}).catch((e) => e);
   };
 
   const getValidateProps = usePersistFn(() => props);
@@ -36,7 +36,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
             draft.push(val);
           }) as T;
           onChange(newValue);
-          context.ids.push(util.generateUUID());
+          // context.ids.push(util.generateUUID());
           formFunc?.insertError(name, 0);
         })}
       </React.Fragment>
@@ -44,13 +44,13 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   }
 
   const errorList = (Array.isArray(error) ? error : [error]).filter(Boolean);
-  if (context.ids.length !== valueArr.length) {
-    context.ids = valueArr.map(() => util.generateUUID());
-  }
+  // if (context.ids.length !== valueArr.length) {
+  //   context.ids = valueArr.map(() => util.generateUUID());
+  // }
 
   return valueArr.map((v: any, i: number) => (
     <Provider
-      key={context.ids[i] ?? i}
+      key={i}
       value={{ path: `${ProviderValue.path}[${i}]`, validateFieldSet }}
     >
       {children({
@@ -58,13 +58,13 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
         value: v,
         index: i,
         error: errorList,
-        onChange: (val: T extends (infer U)[] ? U : never) => {
+        onChange: (val: T extends (infer U)[] ? U : never, options) => {
           const oldValue = formFunc?.getValue(name);
           const newValue = produce(oldValue, (draft) => {
             draft[i] = val;
           }) as T;
           onChange(newValue);
-          formFunc?.validateFieldset(`${name}[${i}]`);
+          formFunc?.validateFieldset(`${name}[${i}]`, { ignoreChildren: options?.validate === false });
         },
         onInsert: (val: T extends (infer U)[] ? U : never) => {
           const oldValue = formFunc?.getValue(name);
@@ -72,7 +72,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
             draft.splice(i, 0, val);
           }) as T;
           onChange(newValue);
-          context.ids.splice(i, 0, util.generateUUID());
+          // context.ids.splice(i, 0, util.generateUUID());
           formFunc?.insertError(name, i);
         },
         onAppend: (val: T extends (infer U)[] ? U : never) => {
@@ -81,7 +81,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
             draft.splice(i + 1, 0, val);
           }) as T;
           onChange(newValue);
-          context.ids.splice(i + 1, 0, util.generateUUID());
+          // context.ids.splice(i + 1, 0, util.generateUUID());
           formFunc?.insertError(name, i + 1);
         },
         onRemove: () => {
@@ -90,7 +90,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
             draft.splice(i, 1);
           }) as T;
           onChange(newValue);
-          context.ids.splice(i, 1);
+          // context.ids.splice(i, 1);
           formFunc?.spliceError(name, i);
         },
       })}

@@ -15,6 +15,9 @@ import { DatePickerClasses } from '../date-picker/date-picker.type';
 import { SwitchClasses } from '../switch/switch.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { RadioClasses } from '../radio/radio.type';
+import { PopoverClasses } from '../popover/popover.type';
+import { TreeClasses } from '../tree/tree.type';
+import { KeygenResult } from '@sheinx/hooks';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -66,6 +69,19 @@ export interface TableClasses {
   sorterAsc: string;
   sorterDesc: string;
 
+  hasFilter: string;
+  filterContainer: string;
+  filterActive: string;
+  filterInput: string;
+  filterInputIcon: string;
+  filterIcon: string;
+  filterIconContainer: string;
+  filterRadio: string;
+
+  filterHeader: string;
+  filterBody: string;
+  filterFooter: string;
+
   resizeSpanner: string;
   resizeSpannerActive: string;
   resizeSpannerInactive: string;
@@ -80,12 +96,12 @@ export interface TableClasses {
 
   pagination: string;
 }
-
 export interface TableRef {
   scrollToIndex: (index: number, cb?: () => void) => void;
   getRenderIndexByData: (data: any) => number;
   scrollColumnIntoView: (colKey: string | number) => void;
   scrollColumnByLeft: (left: number) => void;
+  sortByColumn: (params: {columnKey: KeygenResult, direction: 'desc' | 'asc' | null, columnSorter: TableColumnItem<any>['sorter']}) => void;
   [key: string]: any;
 }
 
@@ -134,6 +150,8 @@ export interface TableProps<DataItem, Value>
     treeSelect?: () => TreeSelectClasses;
     datePicker?: () => DatePickerClasses;
     switch?: () => SwitchClasses;
+    popover?: () => PopoverClasses
+    tree?: () => TreeClasses;
   };
   /**
    *

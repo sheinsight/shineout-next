@@ -36,6 +36,7 @@ const tag = (type: TagType) => ({
     '&[data-soui-type="dark"]': {
       '&$disabled': {
         backgroundColor: Token.tagDefaultFillBackgroundColor,
+        borderColor: Token.tagDefaultFillBorderColor,
       },
     },
 
@@ -147,6 +148,8 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   rootClass: {},
   tag: {
     display: 'inline-flex',
+    // 消除 inline-flex 看不见的空白高度
+    verticalAlign: 'top',
     padding: `${Token.tagPaddingY} ${Token.tagPaddingX}`,
     fontSize: Token.tagFontSize,
     fontWeight: Token.tagFontWeight,
@@ -158,11 +161,25 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     },
   },
   input: {
-    '&[data-soui-input-border]': {
-      width: 100,
-      '& input': {
-        padding: `0 ${Token.tagInputPaddingX}`,
-      },
+    paddingLeft: '0 !important',
+    paddingRight: '0 !important',
+    width: 100,
+    '& > div': {
+      padding: '0 !important',
+    },
+    '& > div > input': {
+      fontSize: Token.tagFontSize,
+      padding: `0 ${Token.tagPaddingX}`,
+      lineHeight: `calc(${Token.tagFontSize} + 8px)`,
+    },
+    '$small& > div > input': {
+      padding: `0 ${Token.tagSmallPaddingX}`,
+      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
+    },
+    '$large& > div > input': {
+      fontSize: Token.tagLargeFontSize,
+      padding: `0 ${Token.tagLargePaddingX}`,
+      lineHeight: `calc(${Token.tagLargeFontSize} + 8px)`,
     },
   },
   wrapper: {

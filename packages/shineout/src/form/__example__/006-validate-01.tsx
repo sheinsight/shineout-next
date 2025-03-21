@@ -153,7 +153,6 @@ const App: React.FC = () => {
             gap: 12,
             flexWrap: 'wrap',
             justifyContent: 'space-between',
-            marginTop: 4,
           }}
           rules={[rules.required('At least select one favorite color'), rules.min(2), rules.max(3)]}
         />
@@ -162,7 +161,7 @@ const App: React.FC = () => {
       <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
         <Form.Button>Sumbit</Form.Button>
         <Form.Reset>Reset</Form.Reset>
-        <Button onClick={validFields}>Validate Some Field</Button>
+        <Button onClick={validFields} mode="outline">Validate Some Field</Button>
       </Form.Item>
     </Form>
   );

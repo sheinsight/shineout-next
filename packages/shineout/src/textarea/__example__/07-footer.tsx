@@ -1,6 +1,6 @@
 /**
- * cn - 渲染底部信息
- *    -- 渲染 textarea `footer`
+ * cn - 底部信息
+ *    -- 设置 `renderFooter` 可自定义底部信息
  * en - RenderFooter
  *    -- render textarea `footer`
  */

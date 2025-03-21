@@ -5,7 +5,7 @@
  *    -- Set the maximum number of avatars displayed by configuring the `max` property. If it exceeds, it will be hidden. If you need to display the content beyond the personalized display, you can use the `renderMax` property
  */
 import React from 'react';
-import { Avatar, Popover } from 'shineout';
+import { Avatar, Popover, icons } from 'shineout';
 
 const url =
   'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar';
@@ -22,7 +22,7 @@ export default () => {
   const renderMax = (dom: React.ReactNode[]) => {
     return (
       <div>
-        <Avatar>...</Avatar>
+        <Avatar><div style={{ width: 16, height: 16, display: 'flex' }}>{icons.More}</div></Avatar>
         <Popover style={{ padding: 16, display: 'flex', gap: 8 }}>{dom}</Popover>
       </div>
     );

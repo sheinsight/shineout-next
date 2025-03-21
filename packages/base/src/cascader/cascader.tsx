@@ -27,7 +27,7 @@ import { FormFieldContext } from '../form/form-field-context';
 
 import { useConfig, getLocale } from '../config';
 
-const { devUseWarning} = util
+const { devUseWarning, isOptionalDisabled } = util;
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
@@ -55,7 +55,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     mode,
     innerTitle,
     multiple,
-    disabled,
+    disabled: disabledProp,
     clearable,
     underline,
     loading,
@@ -79,6 +79,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     position: positionProp = 'bottom-left',
     absolute,
     zIndex,
+    emptyText,
     getComponentRef,
     onFocus,
     onBlur,
@@ -91,6 +92,13 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
+  const isRealtime = isOptionalDisabled<DataItem>(props.disabled)
+    ? props.disabled.isRealtime
+    : false;
+
+  const disabled = util.isOptionalDisabled<DataItem>(disabledProp)
+    ? disabledProp.disabled
+    : disabledProp;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -135,7 +143,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     control: 'value' in props,
     keygen,
     unmatch,
-    disabled,
+    disabled: disabledProp,
     mode,
     defaultValue,
     childrenKey,
@@ -410,7 +418,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderClearable = () => {
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = compressed || multiple ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     const arrow = (
       <span
         className={classNames(
@@ -423,12 +431,16 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         {defaultIcon}
       </span>
     );
+    const close = (
+      <span className={styles.clearIcon} onClick={handleClear}>
+        {Icons.cascader.Close}
+      </span>
+    );
+
     return (
       <>
-        <span className={styles.clearIcon} onClick={handleClear}>
-          {Icons.cascader.Close}
-        </span>
-        {!open && !isEmpty && arrow}
+        {close}
+        {!open && !isEmpty && !focused && arrow}
       </>
     );
   };
@@ -438,11 +450,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       return renderClearable();
     }
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = compressed || multiple ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     return (
       <span
         className={classNames(
-          compressed && styles.compressedIcon,
+          (compressed || multiple) && styles.compressedIcon,
           styles.arrowIcon,
           open && !compressed && styles.arrowIconOpen,
         )}
@@ -594,11 +606,24 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
+  const renderEmpty = () => {
+    if (emptyText) {
+      return <div className={styles?.empty}>{emptyText}</div>;
+    }
+    return <div className={styles?.empty}>{getLocale(locale, 'noData')}</div>;
+  };
+
   const renderNormalList = () => {
     if (!open && isFirstRender.current) {
       return null;
     }
+
     isFirstRender.current = false;
+
+    const isEmpty = !filterData?.length;
+
+    if (isEmpty && props.emptyText !== false) return renderEmpty();
+
     const list = renderList();
     return renderOptionList ? renderOptionList(list, { loading: !!loading }) : list;
   };
@@ -612,8 +637,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           data={filterData!}
           datum={datum}
           keygen={keygen}
+          mode={mode}
           height={height}
           size={size}
+          isRealtime={isRealtime}
           virtual={virtual}
           wideMatch={wideMatch}
           filterFunc={filterFunc}
@@ -639,10 +666,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         <Spin jssStyle={jssStyle} size={14}></Spin>
       </div>
     );
-  };
-
-  const renderEmpty = () => {
-    return <div className={styles?.empty}>{getLocale(locale, 'noData')}</div>;
   };
 
   const renderPanel = () => {
@@ -675,7 +698,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if (filterText !== undefined) {
       updatePath();
     }
-  }, [filterText]);
+  }, [filterText, firstMatchNode]);
 
   useEffect(() => {
     updatePathByValue();
@@ -693,7 +716,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
 
     if (mode !== undefined && loader && [0, 1, 2].includes(mode)) {
-      devUseWarning.error(`The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`);
+      devUseWarning.error(
+        `The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`,
+      );
     }
   }, []);
 
@@ -741,7 +766,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         <AnimationList
           onRef={popupRef}
           show={open}
-          className={classNames(styles?.pickerWrapper)}
+          className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow)}
           display={'block'}
           type='scale-y'
           duration={'fast'}

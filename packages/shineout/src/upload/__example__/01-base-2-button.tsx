@@ -6,16 +6,23 @@
  */
 import React from 'react';
 import { Upload } from 'shineout';
+import { mockRquest } from './request';
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+
+  return (
   <Upload.Button
     type={'primary'}
-    action='//jsonplaceholder.typicode.com/posts'
+    request={mockRquest({
+      uploadTime: 5000,
+      success: true
+    })}
     name='file'
     onSuccess={(_res, file) => file.name}
     loading='Uploading...'
     placeholder='Click to upload'
   />
-);
+)
+};
 
 export default App;

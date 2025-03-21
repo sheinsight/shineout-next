@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { KeygenResult } from '@sheinx/hooks';
+import { KeygenResult, MODE } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
 import { FilterNodeProps } from './filter-node.type';
 
@@ -11,6 +11,8 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
     data,
     shouldFinal,
     datum,
+    mode,
+    isRealtime,
     renderItem,
     setInputText,
     setFilterText,
@@ -20,22 +22,30 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
 
-  const handleSelectItem = (index: number, e?: any) => {
+  const handleSelectItem = (index: number, d: DataItem, e?: any) => {
     const isFinal = data && index === data.length - 1;
     if (shouldFinal && !isFinal) return;
     if (e) e.stopPropagation();
     const item = data[index];
     const isDisabled = datum.isDisabled(datum.getKey(item));
     if (isDisabled) return;
+
+    if (isRealtime) {
+      if (mode !== MODE.MODE_4) {
+        const path = datum.getPath(datum.getKey(item))?.path;
+        const hasDisabledParent = path?.some((p) => datum.isDisabled(p));
+        if (hasDisabledParent) return;
+      }
+    }
     const keys = data.slice(0, index + 1).map((i: DataItem) => datum.getKey(i)) as Value;
-    if (onChange) onChange(keys);
+    if (onChange) onChange(keys, d);
     onPathChange(datum.getKey(item), item, keys.slice(0, keys.length - 1) as Value, true);
     setInputText('');
     setFilterText('');
   };
 
   const handleSelect = () => {
-    handleSelectItem(data.length - 1);
+    handleSelectItem(data.length - 1, data?.[data.length - 1]);
   };
 
   return (
@@ -43,14 +53,23 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
       <div className={classNames(styles.optionInner)}>
         {data.map((item, index) => {
           const handleClick = (e: any) => {
-            handleSelectItem(index, e);
+            handleSelectItem(index, item, e);
           };
-          const isDisabled = datum.isDisabled(datum.getKey(item));
+          let isDisabled = datum.isDisabled(datum.getKey(item));
+          if (isRealtime) {
+            if (mode !== MODE.MODE_4) {
+              const path = datum.getPath(datum.getKey(item))?.path;
+              isDisabled = path?.some((p) => datum.isDisabled(p)) || isDisabled;
+            }
+          }
           const content = (
             <div
               key='content'
               onClick={handleClick}
-              className={classNames(isDisabled && styles.filterDisabledOption)}
+              className={classNames(
+                styles.filterOptionItem,
+                isDisabled && styles.filterDisabledOption,
+              )}
             >
               {renderItem(item)}
             </div>

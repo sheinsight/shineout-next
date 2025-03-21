@@ -1,6 +1,6 @@
 /**
  * cn - 禁用/禁用选项
- *    -- 通过设置`disabled`属性可以禁用组件。disabled为函数时，支持禁用单个选项
+ *    -- 通过设置`disabled`属性可以禁用组件。`disabled` 为函数时，支持禁用单个选项
  * en - Disabled
  *    -- Set the `disabled` property to disable the component. When `disabled` is a function, support disabling a single option
  */
@@ -51,7 +51,7 @@ export default () => {
   const renderItem: CascaderProps['renderItem'] = (n) => `${n.value}`;
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32, width: 632 }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32, width: 632}}>
       <Cascader
         width={300}
         disabled

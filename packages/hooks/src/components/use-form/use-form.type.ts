@@ -15,32 +15,28 @@ export interface ValidationError<T> {
 }
 
 export type ValidateFnConfig = {
-  type?: 'forcePass' | 'withValue',
-  ignoreBind?: boolean,
-}
+  type?: 'forcePass' | 'withValue';
+  ignoreBind?: boolean;
+  ignoreChildren?: boolean;
+};
 
 export type ValidateFn = (
   name: string,
   value: any,
   formData: ObjectType,
   config?: ValidateFnConfig,
-) => Promise<true | FormError>
+) => Promise<true | FormError>;
 
 export type UpdateFn = (
   formValue: ObjectType,
   errors: ObjectType<Error | undefined>,
   serverErrors: ObjectType<Error | undefined>,
-) => void
+) => void;
 
 export interface FormContextValueType {
   func?: {
-    unbind: (n: string, reserveAble?: boolean, validate?:ValidateFn, update?:UpdateFn ) => void;
-    bind: (
-      n: string,
-      df: any,
-      validate: ValidateFn,
-      update: UpdateFn,
-    ) => void;
+    unbind: (n: string, reserveAble?: boolean, validate?: ValidateFn, update?: UpdateFn) => void;
+    bind: (n: string, df: any, validate: ValidateFn, update: UpdateFn) => void;
     combineRules: <ValueItem>(
       name: string,
       propRules: FormItemRule<ValueItem>,
@@ -87,6 +83,14 @@ export interface FormLabelConfig {
    * @default false
    */
   inline?: boolean;
+
+  /**
+   * @en Whether to append a colon after the label, the priority is less than the colon setting of Form.Item
+   * @cn 标签后是否追加显示一个冒号，优先级小于Form.Item的colon设置
+   * @default false
+   * @version 3.6.0
+   */
+  colon?: boolean | React.ReactNode
 }
 export interface FormCommonConfig extends FormLabelConfig {
   /**
@@ -135,7 +139,7 @@ export interface FormFunc<T = any> {
   getErrors: () => ObjectType<Error | undefined>;
   clearValidate: (names?: string[]) => void;
   validateFields: (fields?: string | string[], config?: ValidateFnConfig) => Promise<Partial<T>>;
-  validateFieldset: (name: string) => void;
+  validateFieldset: (name: string, config?: ValidateFnConfig) => void;
   insertError: (name: string, index: number, error?: Error) => void;
   spliceError: (name: string, index: number) => void;
 }
@@ -210,11 +214,22 @@ export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
   name?: string;
 }
 
-export type UseFormProps<T> = BaseFormProps<T>;
+export type UseFormProps<T> = BaseFormProps<T> & {
+  formElRef: React.RefObject<HTMLFormElement>;
+};
 
 export type FormContext = {
   defaultValues: ObjectType;
-  validateMap: ObjectType<Set<(name: string, v: any, formValue: ObjectType, config?: { ignoreBind?: boolean }) => Promise<true | FormError>>>;
+  validateMap: ObjectType<
+    Set<
+      (
+        name: string,
+        v: any,
+        formValue: ObjectType,
+        config?: { ignoreBind?: boolean },
+      ) => Promise<true | FormError>
+    >
+  >;
   // 删除字段队列
   removeArr: Set<string>;
   // 防抖间隔
@@ -226,7 +241,15 @@ export type FormContext = {
   resetTime: number;
   mounted: boolean;
   // 更新队列
-  updateMap: ObjectType<Set<(formValue: ObjectType, errors: ObjectType<Error | undefined>, serverErrors: ObjectType<Error | undefined>) => void>>;
+  updateMap: ObjectType<
+    Set<
+      (
+        formValue: ObjectType,
+        errors: ObjectType<Error | undefined>,
+        serverErrors: ObjectType<Error | undefined>,
+      ) => void
+    >
+  >;
   // flow 队列
   flowMap: ObjectType<Set<() => void>>;
   value: ObjectType;
@@ -234,6 +257,7 @@ export type FormContext = {
   serverErrors: ObjectType<Error | undefined>;
   unmounted: boolean;
   removeLock: boolean;
+  ignoreValidateFields: string[];
 };
 
 export type UseFormSlotOwnProps = {

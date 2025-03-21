@@ -28,6 +28,7 @@ export interface ImageClasses {
 
   overlay: string;
   magnify: string;
+  magnifyZoomOut: string;
   close: string;
 
   gallery: string;
@@ -70,7 +71,13 @@ export interface ImageMagnifyProps {
   maxHeight: number;
   lockScroll: (isLock: boolean) => void;
   className?: string;
+  jssStyle?: ImageJssStyleType;
 }
+
+export interface RenderHoverMaskOptions {
+  preview: () => void;
+}
+
 export interface ImageBaseProps
   extends BaseImageProps,
     Pick<CommonType, 'style' | 'className'>,
@@ -82,6 +89,12 @@ export interface ImageBaseProps
   renderPlaceholder?: (placeholderEl: React.ReactNode) => React.ReactElement;
   renderInnerWrapper?: (innerWrapperEl: React.ReactNode) => React.ReactElement;
   componentRef?: (instance: { preview: () => void }) => void;
+  /**
+   * @en Custom render hover mask content, options has a preview method, call preview method to preview image
+   * @cn 自定义渲染 hover 时的遮罩层内容，options参数中有一个 preview 方法，调用 preview 方法可以预览图片
+   * @version 3.6.0
+   */
+  renderHoverMask?: (options: RenderHoverMaskOptions) => React.ReactElement;
 }
 
 export type ImageProps = ImageBaseProps;

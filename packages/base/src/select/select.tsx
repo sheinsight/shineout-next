@@ -54,6 +54,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     trim,
     maxLength,
     style,
+    reFocus,
     multiple,
     loading,
     convertBr,
@@ -317,10 +318,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     },
   );
 
-  const getRenderItem = (data: DataItem, index?: number) => {
+  const getRenderItem = (data: DataItem, index?: number): ReactNode => {
     return typeof renderItemProp === 'function'
       ? renderItemProp(data, index)
-      : (data[renderItemProp] as ReactNode);
+      : ((data?.[renderItemProp] || '') as ReactNode);
   };
 
   const renderItem = getRenderItem;
@@ -477,11 +478,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (open) closePop();
   };
 
-  const getRenderResult = (data: DataItem, index?: number) => {
+  const getRenderResult = (data: DataItem, index?: number): ReactNode => {
     if (!renderResultProp) return renderItem(data, index);
-    return typeof renderResultProp === 'function'
-      ? renderResultProp(data, index)
-      : data[renderResultProp];
+    const result =
+      typeof renderResultProp === 'function'
+        ? renderResultProp(data, index)
+        : data[renderResultProp];
+    return result ?? null;
   };
 
   const getDataByValues = (values: Value) => {
@@ -563,6 +566,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           keygen={keygen}
           disabled={disabled}
           maxLength={maxLength}
+          reFocus={reFocus}
           convertBr={convertBr}
           compressed={compressed}
           compressedBound={compressedBound}
@@ -780,7 +784,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           onAnimationAfterEnter={onAnimationAfterEnter}
           display={'block'}
           type='scale-y'
-          // type='fade'
           duration={'fast'}
           style={getListStyle()}
         >

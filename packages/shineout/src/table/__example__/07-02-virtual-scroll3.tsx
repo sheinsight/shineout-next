@@ -5,7 +5,7 @@
  *    -- The virtual list table provides a scrollColumnIntoView method to scroll to the specified column
  */
 import React, { useState, useEffect } from 'react';
-import { Input, Table, Form, TYPE, Button } from 'shineout';
+import { Input, Table, Form, TYPE, Button, Link, Gap } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface TableRowData {
@@ -43,10 +43,10 @@ const columns: TableColumnItem[] = [
   { title: 'Office', render: 'office' },
   { title: 'Start Date', render: 'start', width: 140 },
   { title: 'Operation', render: () => {
-    return <Button.Group mode='text'>
-      <Button type='primary'>Detail</Button>
-      <Button type='primary'>Edit</Button>
-    </Button.Group>
+    return <Gap>
+      <Link type='primary'>Detail</Link>
+      <Link type='primary'>Edit</Link>
+    </Gap>
   }, width: 140, fixed: 'right' },
 ];
 
@@ -73,7 +73,7 @@ const App: React.FC = () => {
   return (
     <div>
       <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
-        <Input.Number width={200} name='key' min={0} max={columns.length - 1} placeholder='输入列key' />
+        <Input.Number width={200} name='key' min={0} max={columns.length - 1} placeholder='输入列key' style={{marginRight: 12}} />
         <Button type='primary' htmlType='submit'>
           Scroll
         </Button>

@@ -10,7 +10,7 @@ import { Gap, Link } from 'shineout';
 export default () => {
   return (
     <div>
-      <Gap column={36}>
+      <Gap column={24}>
         <Link href="#">Link</Link>
         <Link href="#" underline>Link</Link>
         <Link href="#" underline="hover">Link</Link>

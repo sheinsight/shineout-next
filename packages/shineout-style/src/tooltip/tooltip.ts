@@ -108,13 +108,13 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
     },
     '&[data-soui-position^="left"]': {
       '&[dir=ltr]': {
-        marginLeft: -(arrowGap - 2),
+        marginRight: (arrowGap - 2),
         '& $arrow': {
           transform: 'translateX(11px) rotate(90deg)',
         },
       },
       '&[dir=rtl]': {
-        marginRight: -(arrowGap - 2),
+        'margin-right': (arrowGap - 2),
         '& $arrow': {
           left: 0,
           transform: 'translateX(11px) rotate(90deg)',
@@ -178,7 +178,7 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
         width: arrowGap,
         height: '100%',
         top: 0,
-        right: 0,
+        left: 0,
         transform: 'translateX(-100%)',
       },
     },

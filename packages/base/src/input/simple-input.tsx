@@ -63,7 +63,8 @@ const Input = (props: SimpleInputProps) => {
     onKeyUp,
   });
 
-  let inputEl = <input type='text' {...inputProps} />;
+  const inputElProps = util.removeProps(inputProps, { formName: undefined })
+  let inputEl = <input type='text' {...inputElProps} />;
 
   if (typeof renderInput === 'function') {
     inputEl = renderInput(inputEl);
@@ -102,4 +103,5 @@ const Input = (props: SimpleInputProps) => {
   );
 };
 
+Input.displayName = 'SimpleInput';
 export default Input;

@@ -54,6 +54,11 @@ export interface SimpleCheckboxProps
    * @private 内部属性
    */
   theme?: 'dark';
+
+  /**
+   * @private 内部属性
+   */
+  needStopPropagation?: boolean;
 }
 
 export interface CheckboxProps<T>
@@ -71,6 +76,11 @@ export interface CheckboxProps<T>
    * @cn 值改变回调函数
    */
   onChange?: (value: T | undefined, checked: boolean, raw: T) => void;
+  /**
+   * @en Value chane callback
+   * @cn 值改变回调函数
+   */
+  onRawChange?: (value: T | undefined, checked: boolean, raw: T) => void;
   /**
    * @en If not set, use (value === htmlValue)
    * @cn checked 传入时为受控组件

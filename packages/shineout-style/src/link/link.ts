@@ -20,12 +20,14 @@ const linkStyle: JsStyles<LinkClassType> = {
   },
   underline: {
     textDecoration: 'underline',
+    textUnderlineOffset: '2px',
     '&:hover': {
       textDecoration: 'underline',
     },
   },
   underlineHover: {
     textDecoration: 'none',
+    textUnderlineOffset: '2px',
     '&:hover': {
       textDecoration: 'underline',
     },

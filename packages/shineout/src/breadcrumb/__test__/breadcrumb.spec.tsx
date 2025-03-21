@@ -153,7 +153,7 @@ describe('Breadcrumb[Base]', () => {
   test('should render when set Link in data', () => {
     const renderDataLink = [
       {
-        title: <Link to='/cn/components/shineout/button'>Button</Link>,
+        title: <Link to='/cn/component/shineout/Button?tab=examples'>Button</Link>,
       },
       {
         title: 'Self',

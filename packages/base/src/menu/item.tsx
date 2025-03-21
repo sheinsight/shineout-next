@@ -18,6 +18,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const isSubHorizontal = mode === 'horizontal' && props.level > 0;
   const isRootHorizontal = mode === 'horizontal' && props.level === 0;
   const [popOpen, setOpen] = useState(false);
+  const liRef = React.useRef<HTMLLIElement>(null);
 
   const hasExpandAbleChildren = children.some(
     (item: any) => item && item.children && (props.looseChildren || item.children.length),
@@ -82,7 +83,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         onClick={close}
         dir={config.direction}
       >
-        {items.map((item: any, index: number) => {
+        {items.map((item: any, index: number, arr: any[]) => {
           const key = util.getKey(props.keygen, item, index);
           return (
             <MenuItem
@@ -95,6 +96,8 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
               keyResult={key}
               level={props.level + 1}
               renderIcon={isTitle ? undefined : props.renderIcon}
+              // 顶部或底部的menuItem的popover边缘与menu的边缘对齐
+              isEdgeItem={index === 0 || index === arr.length - 1}
             />
           );
         })}
@@ -102,7 +105,9 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     );
     if (shoudPop) {
       const position =
-        isVertical || isSubHorizontal ? (isUp ? 'right-bottom' : 'right-top') : 'bottom';
+        isVertical || isSubHorizontal ? (isUp ? 'right-bottom' : 'right-top') : 'bottom-left';
+      const offset = isVertical && props.isEdgeItem ? [0, 4] as [number, number] : undefined;
+      const popoverContentStyle = props.level === 0 && liRef.current ? { minWidth: liRef.current.clientWidth} : undefined;
       return (
         <Popover
           mouseLeaveDelay={toggleDuration}
@@ -120,6 +125,8 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           showArrow={mode !== 'horizontal'}
           position={position}
           lazy={false}
+          offset={offset}
+          style={popoverContentStyle}
         >
           {(close) => {
             return content(close);
@@ -236,6 +243,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       dir={config.direction}
+      ref={liRef}
     >
       {renderItem()}
       {renderChildren()}

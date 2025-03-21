@@ -133,6 +133,10 @@ const useTableSort = <Item = any>(props: UseTableSorterProps<Item>) => {
     },
   );
 
+  const sortByColumn = usePersistFn((params: {columnKey: KeygenResult, direction: 'desc' | 'asc' | null, columnSorter: TableColumnItem<Item>['sorter']}) => {
+    onSorterChange(params.columnKey, params.direction, true, params.columnSorter)
+  })
+
   useEffect(() => {
     if (context.mounted) return;
     let hasSingleDefaultOrder = false;
@@ -156,6 +160,7 @@ const useTableSort = <Item = any>(props: UseTableSorterProps<Item>) => {
     sortInfo,
     onSorterChange,
     sortedData,
+    sortByColumn,
   };
 };
 

@@ -1,11 +1,15 @@
 import { BaseFormFieldSetProps } from '@sheinx/hooks';
 import React from 'react';
 
+interface FormFieldSetChildrenOnChangeOptions {
+  // 是否立即校验该字段
+  validate?: boolean;
+}
 export interface FormFieldSetChildrenFunc<ValueItem = any> {
   (params: {
     list: ValueItem[];
     value: ValueItem;
-    onChange: (value: ValueItem) => void;
+    onChange: (value: ValueItem, options?: FormFieldSetChildrenOnChangeOptions) => void;
     onRemove: () => void;
     index: number;
     onInsert: (value: ValueItem) => void;

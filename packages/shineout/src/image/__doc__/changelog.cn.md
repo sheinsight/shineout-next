@@ -1,3 +1,21 @@
+## 3.6.0
+2025-03-12
+
+### 🆕 Feature
+
+- `Image` 新增 `renderHoverMask` 属性，支持自定义渲染鼠标移入组件时的遮罩层内容 ([#993](https://github.com/sheinsight/shineout-next/pull/993))
+
+### 🐞 BugFix
+
+- 修复 `Image` 在容器为 'absolute' 定位情况下 `lazy` 属性可能失效的问题 ([#982](https://github.com/sheinsight/shineout-next/pull/982))
+
+## 3.5.8
+2025-02-13
+
+### 🐞 BugFix
+
+- 修复 `Image` 在预览大图时的鼠标手势不正确问题 ([#938](https://github.com/sheinsight/shineout-next/pull/938))
+
 ## 3.5.4
 2024-12-12
 

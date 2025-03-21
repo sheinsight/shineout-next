@@ -61,7 +61,9 @@ const Sub: React.FC = () => {
   }
 
   return (
-    <Button type="warning" onClick={validateForm}>use hook in children</Button>
+    <div>
+      <Button type="warning" onClick={validateForm}>use hook in children</Button>
+    </div>
   );
 }
 
@@ -140,18 +142,17 @@ const FormComp: React.FC = () => {
             gap: 12,
             flexWrap: 'wrap',
             justifyContent: 'space-between',
-            marginTop: 4,
           }}
           rules={[rules.required('At least select one favorite color'), rules.min(2), rules.max(3)]}
         />
       </Form.Item>
 
       <Form.Item label=''>
-        <div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           <Sub></Sub>
           <Button onClick={validateForm} type="danger">use hook in parent</Button>
         </div>
-        <div style={{marginTop: 12}}>
+        <div style={{marginTop: 32}}>
           <Form.Button>Sumbit</Form.Button>
           <Form.Reset>Reset</Form.Reset>
         </div>

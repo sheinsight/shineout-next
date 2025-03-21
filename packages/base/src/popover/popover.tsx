@@ -17,6 +17,7 @@ const Popover = (props: PopoverProps) => {
     trigger = 'hover',
     type,
     destroy,
+    popupGap = 0,
     showArrow = true,
     zIndex = 1060,
   } = props;
@@ -116,10 +117,17 @@ const Popover = (props: PopoverProps) => {
   context.rendered = true;
 
   const childrened = util.isFunc(children) ? children(closePop) : children;
-  const colorStyle = {
+  const containerStyle = {
     borderColor: props.border,
     backgroundColor: props.background,
   };
+
+  if (popupGap) {
+    Object.assign(containerStyle, {
+      '--popover-arrow-gap-extra': `${popupGap}px`,
+    });
+  };
+
   return (
     <AbsoluteList
       focus={open}
@@ -128,11 +136,12 @@ const Popover = (props: PopoverProps) => {
       absolute={typeof props.getPopupContainer === 'function' ? props.getPopupContainer : true}
       position={position}
       fixedWidth={false}
-      popupGap={0}
+      popupGap={popupGap}
       destroy={destroy}
       zIndex={zIndex}
       adjust={props.adjust}
       lazy={props.lazy}
+      offset={props.offset}
     >
       <div
         className={classNames(
@@ -142,7 +151,7 @@ const Popover = (props: PopoverProps) => {
           open && popoverStyle?.wrapperOpen,
           !showArrow && popoverStyle?.hideArrow,
         )}
-        style={colorStyle}
+        style={containerStyle}
         {...util.getDataAttribute({ position, type })}
         {...props.attributes}
         ref={popupRef}

@@ -26,11 +26,12 @@ const alertTokens: AlertTokens = {
   alertNearlyMargin: 'Spacing-8',
   alertTitleFontSize: 'Font-16',
   alertTitleFontWeight: 'Weight-medium',
-  alertTitleMarginY: 'Spacing-4',
-  alertTitleIconWidth: 'Size-10',
+  alertTitleMarginY: 'Spacing-8',
+  alertTitleIconWidth: 'Size-8',
   alertTitleIconHeight: 'Size-12',
   alertCloseFontColor: 'Neutral-text-4',
   alertCloseHoverColor: 'Neutral-text-5',
+  alertCloseSize: 'Size-8',
   alertMessageHoverColor: 'Neutral-fill-2',
 };
 

@@ -14,6 +14,8 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   const {
     jssStyle,
     id,
+    virtual,
+    level = 0,
     active,
     data,
     line,
@@ -35,6 +37,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     onToggle,
     onDragOver,
     onNodeClick,
+    actionOnClick,
   } = props;
   const forceUpdate = useRender();
   const { isDisabled, bindUpdate } = useTreeContext();
@@ -54,8 +57,9 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     util.isString(contentClassProp) && contentClassProp,
     util.isFunc(contentClassProp) && contentClassProp(data),
   );
-  // const textClass = classNames(contentStyle.text, disabled ? contentStyle.textDisabled : '');
-  const textClass = classNames(contentStyle.text);
+  const textClass = classNames(contentStyle.text, {
+    [contentStyle.textClickable]: (actionOnClick && !util.isEmpty(actionOnClick)) || parentClickExpand || doubleClickExpand,
+  });
   const hasExpandIcons = expandIcons !== undefined;
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
@@ -74,7 +78,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     return dataProps;
   };
 
-  const handleIndicatorClick = () => {
+  const handleNodeExpand = () => {
     onToggle?.(id);
 
     if (data[childrenKey] !== undefined) return;
@@ -88,23 +92,42 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     }
   };
 
+  const { getValue, set, getChecked } = useTreeContext();
+  // 选中节点前的复选框
+  const handleNodeCheck = (_: any, checked: boolean) => {
+    set(id, checked ? 1 : 0);
+    if (onChange) {
+      onChange(getValue() as Value);
+    }
+  }
+  const checked = getChecked(id);
+
   const handleNodeClick = () => {
-    // if (disabled) return;
     if (parentClickExpand && hasChildren) {
-      handleIndicatorClick();
+      handleNodeExpand();
     } else {
       onNodeClick(data, id);
     }
+
+    if(!actionOnClick) return;
+    if(actionOnClick.indexOf('expand') > -1) {
+      handleNodeExpand();
+    }
+    if (actionOnClick.indexOf('check') > -1) {
+      handleNodeCheck(null, !checked);
+    }
   };
 
-  const handleNodeExpand = () => {
+  // 双击节点展开子节点
+  const onNodeDoubleClick = () => {
     if (!doubleClickExpand) return;
-    if (hasChildren) handleIndicatorClick();
+    if (hasChildren) handleNodeExpand();
   };
 
   const renderLoading = () => {
     return (
       <span
+        style={ virtual ? { left: (level - 1) * 24 } : undefined}
         className={contentStyle.iconWrapper}
         data-expanded={expanded}
         data-icon={hasExpandIcons}
@@ -136,7 +159,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         >
           <span
             className={classNames(contentStyle.icon, iconClass)}
-            onClick={handleIndicatorClick}
+            onClick={handleNodeExpand}
             dir={config.direction}
           >
             {util.isFunc(icon) ? icon(data) : icon}
@@ -146,6 +169,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     } else {
       indicator = (
         <span
+          style={ virtual ? { left: (level - 1) * 24 } : undefined}
           className={contentStyle.iconWrapper}
           data-expanded={expanded}
           data-icon={hasExpandIcons}
@@ -153,7 +177,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         >
           <span
             className={classNames(contentStyle.icon, iconClass)}
-            onClick={handleIndicatorClick}
+            onClick={handleNodeExpand}
             dir={config.direction}
           >
             {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.tree.Expand}
@@ -177,7 +201,8 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         id={id}
         disabled={disabled}
         className={contentStyle.checkbox}
-        onChange={onChange}
+        checked={checked}
+        onChange={handleNodeCheck}
       ></Checkbox>
     );
   };
@@ -185,14 +210,6 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   const renderNode = () => {
     const render = util.isFunc(renderItem) ? renderItem : (item: DataItem) => item[renderItem];
     return render(data, expanded, active, id) as React.ReactNode;
-  };
-
-  const contentEvent = {
-    onClick: inlineNode ? undefined : handleNodeClick,
-  };
-
-  const textEvent = {
-    onClick: inlineNode ? handleNodeClick : undefined,
   };
 
   return (
@@ -204,14 +221,13 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         ref={bindContent}
         className={contentClass}
         {...contentDataProps()}
-        {...contentEvent}
       >
         {onChange && renderCheckbox()}
         <div
           dir={config.direction}
           className={textClass}
-          onDoubleClick={handleNodeExpand}
-          {...textEvent}
+          onDoubleClick={onNodeDoubleClick}
+          onClick={handleNodeClick}
         >
           {renderNode()}
         </div>

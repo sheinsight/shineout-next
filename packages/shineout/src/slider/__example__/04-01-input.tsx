@@ -14,7 +14,7 @@ const container: React.CSSProperties = {
 
 const slider: React.CSSProperties = {
   flex: 1,
-  marginInlineEnd: 28,
+  marginInlineEnd: 16,
 };
 
 const App: React.FC = () => {
@@ -27,6 +27,7 @@ const App: React.FC = () => {
         digits={0}
         width={100}
         max={100}
+        min={0}
         value={value}
         onChange={(n) => {
           if (n === '') {

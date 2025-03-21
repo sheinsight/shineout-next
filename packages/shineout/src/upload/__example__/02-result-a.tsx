@@ -8,13 +8,18 @@
 import React from 'react';
 import { Button, Upload } from 'shineout';
 import { UploadIcon } from './static/icon';
+import { mockRquest } from './request';
 
 const App: React.FC = () => {
   const [value, setValue] = React.useState<{ name: string }[]>([]);
 
   return (
     <Upload
-      action='//jsonplaceholder.typicode.com/posts'
+      request={mockRquest({
+        uploadTime: 5000,
+        // 随机成功或失败
+        success: Math.random() > 0.5,
+      })}
       accept='image/*'
       value={value}
       htmlName='file'
@@ -26,6 +31,7 @@ const App: React.FC = () => {
         setValue(v);
       }}
       limit={3}
+      style={{ width: 400 }}
     >
       <Button mode={'outline'}>
         <UploadIcon style={{ marginInlineEnd: 4 }} />

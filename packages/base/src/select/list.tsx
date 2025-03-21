@@ -188,6 +188,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
       <VirtualScrollList
         virtualRef={virtualRef}
         data={data}
+        keepScrollTop
         keygen={keygen}
         tag={'ul'}
         groupKey={groupKey}
@@ -200,6 +201,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         renderItem={renderItem}
         customRenderItem={renderGroupTitle}
         onControlTypeChange={onControlTypeChange}
+        paddingY={3}
       ></VirtualScrollList>
     );
   };

@@ -10,10 +10,22 @@ export interface TextareaTokens {
   textareaFontSize: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 多行文本框字体颜色
+   */
+  textareaFontColor: string;
+  /**
+   * @type {string}
    * @token Radius-default
    * @description 多行文本框边框圆角
    */
   textareaBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-2
+   * @description 多行文本框边框颜色
+   */
+  textareaBorderColor: string;
   /**
    * @type {string}
    * @token Spacing-8
@@ -64,22 +76,10 @@ export interface TextareaTokens {
   textareaLargePaddingY: string;
   /**
    * @type {string}
-   * @token Neutral-text-5
-   * @description 多行文本框字体颜色
-   */
-  textareaFontColor: string;
-  /**
-   * @type {string}
    * @token Neutral-text-2
    * @description 多行文本框占位符颜色
    */
   textareaPlaceholderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-border-2
-   * @description 多行文本框边框颜色
-   */
-  textareaBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
@@ -176,4 +176,34 @@ export interface TextareaTokens {
    * @description 多行文本框基础错误状态的边框颜色
    */
   textareaInfoErrorBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 多行文本框undefined字体颜色
+   */
+  textareaLimitFontColor: string;
+  /**
+   * @type {string}
+   * @token Font-12
+   * @description 多行文本框undefined字体字号
+   */
+  textareaLimitFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 多行文本框清除颜色
+   */
+  textareaClearColor: string;
+  /**
+   * @type {string}
+   * @token Size-7
+   * @description 多行文本框清除字号
+   */
+  textareaClearSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 多行文本框清除鼠标移入时的颜色
+   */
+  textareaClearHoverColor: string;
 }

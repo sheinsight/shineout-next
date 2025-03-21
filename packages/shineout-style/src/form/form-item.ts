@@ -3,8 +3,19 @@ import { FormItemClasses } from '@sheinx/base';
 
 import { JsStyles } from '../jss-style';
 
+const animations = {
+  '@keyframes appear': {
+    '0%': { transform: 1 },
+    '25%': { opacity: 0.5 },
+    '50%': { opacity: 1 },
+    '75%': { opacity: 0.5 },
+    '100%': { transform: 1 },
+  },
+};
+
 const formItemStyle: JsStyles<keyof FormItemClasses> = {
   rootClass: {},
+  ...animations,
   wrapper: {
     display: 'flex',
     alignItems: 'flex-start',
@@ -36,12 +47,28 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
       display: 'inline-block',
     },
   },
+  labelWithColon: {
+    display: 'inline-flex',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+  },
+  labelWithTooltip: {
+    display: 'inline-flex',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+  },
+  labelColon: {
+    flexShrink: 0,
+    marginLeft: token.formItemTooltipIconMarginXStart,
+  },
   labelTooltip: {
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    cursor: 'help',
+    flexShrink: 0,
+    display: 'inline-flex',
+    alignItems: 'center',
+    cursor: 'pointer',
     color: token.formItemTooltipIconColor,
     width: token.formItemTooltipIconFontSize,
+    height: token.lineHeightDynamic,
     fontSize: token.formItemTooltipIconFontSize,
     marginLeft: token.formItemTooltipIconMarginXStart,
     '& svg': {
@@ -50,14 +77,15 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
   },
   labelLeft: {
     textAlign: 'start',
+    '&$labelWithColon, &$labelWithTooltip': {
+      justifyContent: 'flex-start',
+    },
   },
   wrapperInline: {
     display: 'inline-flex',
     marginRight: token.formItemMarginXEnd,
   },
   wrapperLabelTop: {
-    // flexFlow: 'column nowrap',
-    // alignItems: 'stretch',
     display: 'block',
     width: '100%',
     '& $label': {
@@ -67,6 +95,9 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
       paddingBottom: token.formItemLabelTopPaddingY,
       margin: '0',
     },
+    '& $label$labelWithColon, & $label$labelWithTooltip': {
+      justifyContent: 'flex-start',
+    },
   },
   wrapperLabelVerticalMiddle: {
     alignItems: 'center',
@@ -75,9 +106,15 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
       padding: 0,
       marginTop: 0,
     },
+    '& $label$labelWithColon, & $label$labelWithTooltip': {
+      alignItems: 'center',
+    }
   },
   wrapperLabelVerticalBottom: {
     alignItems: 'flex-end',
+    '& $label$labelWithColon, & $label$labelWithTooltip': {
+      alignItems: 'flex-end',
+    }
   },
   wrapperRequired: {
     '& $label::before': {
@@ -110,6 +147,7 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
     minHeight: token.formItemTipMinHeight,
     fontSize: token.formItemDangerFontSize,
     fontWeight: token.formItemDangerFontWeight,
+    animation: '$appear 1s ease-in-out forwards',
     // flexBasis: '100%',
     // width: 0,
   },

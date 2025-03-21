@@ -51,10 +51,10 @@ const alertTokenExtraValue = {
   nearly: { margin: 'Spacing-8' },
   title: {
     font: { size: 'Font-16', weight: 'Weight-medium' },
-    margin: { y: 'Spacing-4' },
-    icon: { width: 'Size-10', height: 'Size-12' },
+    margin: { y: 'Spacing-8' },
+    icon: { width: 'Size-8', height: 'Size-12' },
   },
-  close: { font: { color: 'Neutral-text-4' }, hover: { color: 'Neutral-text-5' } },
+  close: { font: { color: 'Neutral-text-4' }, hover: { color: 'Neutral-text-5' }, size: 'Size-8' },
   message: { font: { color: '' }, hover: { color: 'Neutral-fill-2' } },
 };
 

@@ -43,7 +43,7 @@ const App: React.FC = () => {
         </Progress>
       </div>
 
-      <Button onClick={() => handleClick(0)} style={{ marginTop: 24 }}>
+      <Button onClick={() => handleClick(0)} style={{ marginTop: 24 }} mode="outline">
         Start
       </Button>
     </div>

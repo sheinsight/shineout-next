@@ -6,20 +6,22 @@ import ErrorTrans from './error-trans';
 import Tooltip, { TooltipProps } from '../tooltip';
 import Icons from '../icons';
 
-import type { FormItemProps } from './form-item.type';
+import type { FormItemClasses, FormItemProps } from './form-item.type';
 
 const FormItem = (props: FormItemProps) => {
   const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
-  const formItemClasses = jssStyle?.formItem?.();
+  const formItemClasses = jssStyle?.formItem?.() as FormItemClasses;
   const { Provider, ProviderValue, labelConfig, errors, showError, attributes } = useFormItem();
-  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight } = {
+  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight, colon } = {
     ...labelConfig,
     ...rest,
   };
 
-  const renderLabel = () => {
-    if (label === undefined || label === null) return null;
 
+  const renderLabel = () => {
+    if (label === undefined || label === null || label === '') return null;
+
+    const $colon = colon === true ? ':' : colon;
     let $tooltip;
     if (typeof label === 'object' && 'tooltip' in label && label.tooltip) {
       const tooltipProps = {
@@ -42,15 +44,26 @@ const FormItem = (props: FormItemProps) => {
       );
     }
 
-    if (typeof label === 'object' && 'tooltip' in label) {
+    if (typeof label === 'object' && 'tooltip' in label && $tooltip) {
       return (
         <>
-          {label.content}
+          <span>{label.content}</span>
           {$tooltip}
+          <span className={formItemClasses?.labelColon}>{$colon}</span>
         </>
       );
     }
-    return label as React.ReactNode;
+
+    if($colon){
+      return (
+        <>
+          {label as React.ReactNode}
+          <span className={formItemClasses?.labelColon}>{$colon}</span>
+        </>
+      )
+    }
+
+    return <>{label as React.ReactNode}</>;
   };
 
   return (
@@ -58,17 +71,15 @@ const FormItem = (props: FormItemProps) => {
       className={classNames(
         className,
         formItemClasses?.wrapper,
-        labelAlign === 'top' && formItemClasses?.wrapperLabelTop,
-        labelAlign !== 'top' &&
-          labelVerticalAlign === 'middle' &&
-          formItemClasses?.wrapperLabelVerticalMiddle,
-        labelAlign !== 'top' &&
-          labelVerticalAlign === 'bottom' &&
-          formItemClasses?.wrapperLabelVerticalBottom,
-        inline && formItemClasses?.wrapperInline,
-        keepErrorHeight && formItemClasses?.wrapperKeepHeight,
-        required && formItemClasses?.wrapperRequired,
-        (showError || tip) && formItemClasses?.wrapperTip,
+        {
+          [formItemClasses?.wrapperLabelTop]: labelAlign === 'top',
+          [formItemClasses?.wrapperLabelVerticalMiddle]: labelAlign !== 'top' && labelVerticalAlign === 'middle',
+          [formItemClasses?.wrapperLabelVerticalBottom]: labelAlign !== 'top' && labelVerticalAlign === 'bottom',
+          [formItemClasses?.wrapperInline]: inline,
+          [formItemClasses?.wrapperKeepHeight]: keepErrorHeight,
+          [formItemClasses?.wrapperRequired]: required,
+          [formItemClasses?.wrapperTip]: showError || tip,
+        }
       )}
       {...attributes}
       style={style}
@@ -77,7 +88,11 @@ const FormItem = (props: FormItemProps) => {
         <div
           className={classNames(
             formItemClasses?.label,
-            labelAlign === 'left' && formItemClasses?.labelLeft,
+            {
+              [formItemClasses?.labelLeft]: labelAlign === 'left',
+              [formItemClasses?.labelWithColon]: colon,
+              [formItemClasses?.labelWithTooltip]: label && typeof label === 'object' && 'tooltip' in label
+            }
           )}
           style={labelAlign !== 'top' || inline ? { width: labelWidth } : undefined}
         >

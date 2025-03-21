@@ -7,6 +7,9 @@ import changelogs from '../../chunk/shineout/changelog';
 const mainChangelog = require(`!!raw-loader!../../markdown/shineout/changelog-v3.md`).default;
 
 const changelogArr = Object.values(changelogs);
+
+const ORDER = ['Featrue', 'Enhancement', 'Performance', 'BugFix', 'Style', 'Theme']
+
 // todo 英文
 const cn: any = {};
 changelogArr.forEach((item) => {
@@ -16,6 +19,10 @@ changelogArr.forEach((item) => {
       if (!cn[version]) {
         cn[version] = { time, changes };
       } else {
+        // 如果后续的日期比之前的日期大，就替换
+        if (time > cn[version].time) {
+          cn[version].time = time;
+        }
         Object.keys(changes).forEach((key) => {
           if (!cn[version].changes[key]) {
             cn[version].changes[key] = changes[key];
@@ -54,6 +61,11 @@ const Changelog = () => {
           const title = `### ${key}`;
           const list = changes[key].map((item: string) => `- ${item}`).join('\n');
           return `${title}\n${list}`;
+        })
+        .sort((a, b) => {
+          const aIndex = ORDER.findIndex((i) => a.toLowerCase().includes(i.toLowerCase()));
+          const bIndex = ORDER.findIndex((i) => b.toLowerCase().includes(i.toLowerCase()));
+          return aIndex - bIndex;
         })
         .join('\n');
       return `${title}\n${timestr}\n${content}`;

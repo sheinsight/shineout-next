@@ -255,6 +255,9 @@ const ImageStyle: JsStyles<ImageClass> = {
       borderStyle: 'none',
     },
   },
+  magnifyZoomOut: {
+    cursor: 'zoom-out',
+  },
 
   close: {
     position: 'absolute',
@@ -276,6 +279,21 @@ const ImageStyle: JsStyles<ImageClass> = {
     '&[dir=rtl]': {
       left: -15,
     },
+
+    '& > svg': {
+      position: 'relative',
+    },
+    '&:before': {
+      content: '""',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      width: '80%',
+      height: '80%',
+      transform: 'translate(-50%, -50%)',
+      backgroundColor: '#fff',
+      borderRadius: '50%',
+    }
   },
 
   // gallery

@@ -5,7 +5,7 @@
  *    -- The virtual list table provides a scrollColumnByLeft method to scroll to a specified column based on the left value
  */
 import React, { useState, useEffect } from 'react';
-import { Input, Table, Form, TYPE, Button } from 'shineout';
+import { Input, Table, Form, TYPE, Button, Gap, Link } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface TableRowData {
@@ -43,10 +43,10 @@ const columns: TableColumnItem[] = [
   { title: 'Office', render: 'office' },
   { title: 'Start Date', render: 'start', width: 140 },
   { title: 'Operation', render: () => {
-    return <Button.Group mode='text'>
-      <Button type='primary'>Detail</Button>
-      <Button type='primary'>Edit</Button>
-    </Button.Group>
+    return <Gap>
+      <Link type='primary'>Detail</Link>
+      <Link type='primary'>Edit</Link>
+    </Gap>
   }, width: 140, fixed: 'right' },
 ];
 
@@ -73,7 +73,7 @@ const App: React.FC = () => {
   return (
     <div>
       <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
-        <Input.Number min={0} max={1000} width={100} name='left' />
+        <Input.Number min={0} max={1000} width={100} name='left' style={{marginRight: 12}} />
         <Button type='primary' htmlType='submit'>
           Scroll
         </Button>

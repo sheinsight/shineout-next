@@ -151,7 +151,8 @@ const defaultSelectPickerOpen = {
   top: 'calc(100% + 4px)',
   left: '0px',
   transform: 'scaleY(1)',
-  transition: 'transform 240ms ease-in-out',
+  "transform-origin": "center top",
+  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
 }
 
 const testDataObject = [
@@ -265,7 +266,7 @@ describe('Select[Base]', () => {
     classTest(selectList, controlKeyboard);
 
     const selectVirtualList = selectList.querySelector(virtualList)!;
-    styleTest(selectVirtualList, 'transform: translate3d(0, -0px, 0);');
+    styleTest(selectVirtualList, 'transform: translate3d(0, -0px, 0); padding-top: 3px; padding-bottom: 3px;');
     const selectOptions = selectVirtualList.querySelectorAll(option);
     selectOptions.forEach((option, index) => {
       classTest(option, `option-${index}`);

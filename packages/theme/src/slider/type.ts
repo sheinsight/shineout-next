@@ -28,7 +28,7 @@ export interface SliderTokens {
   sliderTrackActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-4
+   * @token Brand-3
    * @description 滑块滚动槽禁用时的背景颜色
    */
   sliderTrackDisabledBackgroundColor: string;
@@ -70,7 +70,7 @@ export interface SliderTokens {
   sliderIndicatorActiveShadow: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token Brand-3
    * @description 滑块拖拽点的禁用时的边框颜色
    */
   sliderIndicatorDisabledBorderColor: string;

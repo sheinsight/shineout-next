@@ -28,7 +28,6 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
     justifyContent: 'space-between',
     boxSizing: 'border-box',
     overflow: 'hidden',
-    gap: Token.collapseHeaderGap,
     fontSize: Token.collapseHeaderFontSize,
     fontWeight: Token.collapseHeaderFontWeight,
     color: Token.collapseHeaderColor,
@@ -70,6 +69,7 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
     color: Token.collapseIconColor,
     lineHeight: Token.lineHeightDynamic,
     zIndex: 0,
+    marginRight: Token.collapseHeaderGap,
     '& svg': {
       zIndex: 1,
       width: Token.collapseHeaderIconWidth,
@@ -88,6 +88,11 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
         background: Token.collapseIconHoverBackgroundColor,
       },
     },
+    '&:active:hover': {
+      '&:after': {
+        background: Token.collapseIconActiveBackgroundColor,
+      },
+    }
   },
   title: {
     flex: 1,

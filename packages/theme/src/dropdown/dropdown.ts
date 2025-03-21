@@ -4,7 +4,7 @@
 import { DropdownTokens } from './type';
 
 const dropdownTokens: DropdownTokens = {
-  dropdownCaretMarginLeft: 'Spacing-8',
+  dropdownCaretMarginLeft: 'Spacing-4',
   dropdownListBorderRadius: 'Radius-default',
   dropdownListPaddingX: 'Spacing-4',
   dropdownListPaddingY: 'Spacing-4',
@@ -39,7 +39,7 @@ const dropdownTokens: DropdownTokens = {
   dropdownOptionSelectFontColor: 'Brand-6',
   dropdownOptionDisabledBackgroundColor: 'Neutral-fill-1',
   dropdownOptionDisabledFontColor: 'Neutral-text-2',
-  dropdownOptionBorderRadius: 'Radius-default',
+  dropdownOptionBorderRadius: 'Radius-2',
   dropdownOptionFontWeight: 'Weight-regular',
   dropdownColumnPaddingX: 'Spacing-4',
   dropdownColumnPaddingY: 'Spacing-4',

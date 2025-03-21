@@ -18,8 +18,6 @@ const Input = (props: InputProps) => {
     integerLimit: commonProps.integerLimit,
     numType: commonProps.numType,
     trim: commonProps.trim ?? config.trim ?? false,
-    // 移除 formName，避免渲染到原生 input 上
-    formName: undefined
   };
   const inputFormatProps = useInputFormat({
     value: commonProps.value,
@@ -37,7 +35,7 @@ const Input = (props: InputProps) => {
       {...inputFormatProps}
       value={inputFormatProps.value ?? ''}
       hasSuffix={!!props.suffix}
-      onKeyDown={e => {
+      onKeyDown={(e) => {
         if (e.key === 'Enter' && !e.defaultPrevented) {
           const value = (e.target as HTMLInputElement).value;
           props.onChange?.(value);

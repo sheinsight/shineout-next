@@ -5,36 +5,9 @@ exports[`Spin[Base] should render correctly  1`] = `
   style="width: 20px;"
 >
   <div
-    class="soui-spin soui-spin-spin soui-spin-chasing-dots"
-    style="width: 40px; height: 40px;"
-  >
-    <div
-      class="soui-spin-item"
-    >
-      <svg
-        viewBox="0 0 100 100"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="50"
-        />
-      </svg>
-    </div>
-    <div
-      class="soui-spin-item"
-    >
-      <svg
-        viewBox="0 0 100 100"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="50"
-        />
-      </svg>
-    </div>
-  </div>
+    class="soui-spin soui-spin-spin soui-spin-ring"
+    style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
+  />
 </div>
 `;
 
@@ -49,7 +22,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-chasing-dots"
@@ -97,7 +70,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-cube-grid"
@@ -146,7 +119,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-double-bounce"
@@ -174,7 +147,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-fading-circle"
@@ -376,7 +349,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-four-dots"
@@ -450,7 +423,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-plane"
@@ -475,7 +448,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-pulse"
@@ -496,7 +469,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
@@ -517,7 +490,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-fading-circle"
@@ -719,7 +692,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-three-bounce"
@@ -786,7 +759,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-wave"
@@ -828,7 +801,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       style="width: 16%;"
     >
       <div
-        class="soui-spin soui-spin-content soui-spin-vertical"
+        class="soui-spin soui-spin-vertical soui-spin-content"
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-chasing-ring"
@@ -874,7 +847,7 @@ exports[`Spin[Mode] should render correctly  1`] = `
     style="width: 100px;"
   >
     <div
-      class="soui-spin soui-spin-content soui-spin-vertical"
+      class="soui-spin soui-spin-vertical soui-spin-content"
     >
       <div
         class="soui-spin soui-spin-spin soui-spin-ring"
@@ -895,7 +868,7 @@ exports[`Spin[Mode] should render correctly  1`] = `
     style="width: 100px;"
   >
     <div
-      class="soui-spin soui-spin-content soui-spin-horizontal"
+      class="soui-spin soui-spin-horizontal soui-spin-content"
     >
       <div
         class="soui-spin soui-spin-spin soui-spin-ring"
@@ -920,7 +893,7 @@ exports[`Spin[Tip] should render correctly  1`] = `
   style="width: 200px;"
 >
   <div
-    class="soui-spin soui-spin-content soui-spin-vertical"
+    class="soui-spin soui-spin-vertical soui-spin-content"
   >
     <div
       class="soui-spin soui-spin-spin soui-spin-ring"

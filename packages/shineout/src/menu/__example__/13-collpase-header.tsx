@@ -23,49 +23,73 @@ const data: MenuItem[] = [
     title: 'Navigation One',
   },
   {
-    id: '3',
+    id: '2',
     title: 'Navigation Two',
     children: [
       {
-        id: '4',
+        id: '2-1',
         title: 'Option 1',
       },
       {
-        id: '5',
+        id: '2-2',
         title: 'Option 2',
       },
     ],
   },
   {
-    id: '6',
+    id: '3',
     title: 'Navigation Three',
     children: [
       {
-        id: '7',
-        title: 'Option 3',
-      },
-      {
-        id: '8',
-        title: 'Option 4',
+        id: '3-1',
+        title: 'Option 1',
         children: [
           {
-            id: '9',
-            title: 'Optic 1',
+            id: '3-1-1',
+            title: 'Option 1-1',
           },
           {
-            id: '10',
-            title: 'Optic 2',
+            id: '3-1-2',
+            title: 'Option 1-2',
+          },
+        ],
+      },
+      {
+        id: '3-2',
+        title: 'Option 2',
+        children: [
+          {
+            id: '3-2-1',
+            title: 'Option 2-1',
+          },
+          {
+            id: '3-2-2',
+            title: 'Option 2-2',
+          },
+        ],
+      },
+      {
+        id: '3-3',
+        title: 'Option 2',
+        children: [
+          {
+            id: '3-3-1',
+            title: 'Option 2-1',
+          },
+          {
+            id: '3-3-2',
+            title: 'Option 2-2',
           },
         ],
       },
     ],
   },
   {
-    id: '2',
+    id: '4',
     title: 'Navigation Four',
   },
   {
-    id: '11',
+    id: '5',
     title: 'Navigation Five',
   },
 ];
@@ -121,11 +145,11 @@ const IMenu = (props: { theme: MenuProps['theme'] }) => {
     [x: number]: React.ReactNode;
   }
   const Icons: IconList = {
-    6: tagIcon,
     1: homeIcon,
-    3: flagIcon,
-    2: githubIcon,
-    11: tagIcon,
+    2: flagIcon,
+    3: tagIcon,
+    4: githubIcon,
+    5: tagIcon,
   };
 
   const renderIcon: MenuProps['renderIcon'] = (da) => {
@@ -188,7 +212,7 @@ const IMenu = (props: { theme: MenuProps['theme'] }) => {
                   style={{
                     width: '28px',
                     height: '28px',
-                    background: '#197afa',
+                    background: 'var(--soui-button-primary-background-color,var(--soui-brand-6,#197AFA))',
                     borderRadius: '4px',
                     textAlign: 'center',
                     color: '#fff',

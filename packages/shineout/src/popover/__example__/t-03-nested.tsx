@@ -32,9 +32,9 @@ const App: React.FC = () => {
   const onVisibleChange: PopoverOnVisibleChange = (v) => setshow(v);
 
   return (
-    <Button>
+    <Button mode="outline">
       <Popover style={style} trigger='hover' onVisibleChange={onVisibleChange}>
-        <Button>
+        <Button mode="outline">
           {show && (
             <Popover.Confirm onCancel={onCancel} onOk={onOk} text={text}>
               Hello Sheinout

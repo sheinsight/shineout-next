@@ -13,6 +13,7 @@ export default () => {
       rows={2}
       placeholder='Please enter content, the height can be automatically adjusted'
       maxHeight={150}
+      resize
     />
   );
 };

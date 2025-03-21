@@ -43,6 +43,7 @@ export default createUseStyles(
         cursor: 'pointer',
         '& svg': {
           width: 16,
+          color: 'var(--soui-neutral-fill-8)',
         },
         '&:hover:after': {
           display: 'none',
@@ -75,6 +76,7 @@ export default createUseStyles(
       lineHeight: '28px',
       marginTop: 48,
       marginBottom: 12,
+      color: 'var(--soui-neutral-text-5)',
       '& a': {
         color: '#000000',
         textDecoration: 'none',
@@ -83,9 +85,9 @@ export default createUseStyles(
     exampleAnchorTitle: {},
     exampleHeader: {},
     exampleFooter: {
-      borderLeft: '1px solid #E8EBF0',
-      borderRight: '1px solid #E8EBF0',
-      borderBottom: '1px solid #E8EBF0',
+      borderLeft: '1px solid var(--soui-neutral-border-1)',
+      borderRight: '1px solid var(--soui-neutral-border-1)',
+      borderBottom: '1px solid var(--soui-neutral-border-1)',
     },
     exampleDemo: {
       '#examples-carousel &': {
@@ -94,7 +96,7 @@ export default createUseStyles(
       marginTop: 24,
       padding: 32,
       lineHeight: 'calc(1em + 8px)',
-      border: '1px solid rgba(232, 235, 240, 1)',
+      border: '1px solid var(--soui-neutral-border-1)',
       '& p': {
         margin: 0,
         lineHeight: 'calc(1em + 8px)',
@@ -107,6 +109,7 @@ export default createUseStyles(
       alignItems: 'center',
       flexWrap: 'wrap',
       marginBottom: 2,
+      color: 'var(--soui-neutral-text-5)',
       '&:last-child': {
         marginBottom: 0,
       },
@@ -120,9 +123,9 @@ export default createUseStyles(
       boxSizing: 'border-box',
       borderTop: 'none',
       padding: '14px 16px',
-      borderLeft: '1px solid rgba(232, 235, 240, 1)',
-      borderRight: '1px solid rgba(232, 235, 240, 1)',
-      borderBottom: '1px solid rgba(232, 235, 240, 1)',
+      borderLeft: '1px solid var(--soui-neutral-border-1)',
+      borderRight: '1px solid var(--soui-neutral-border-1)',
+      borderBottom: '1px solid var(--soui-neutral-border-1)',
       fontSize: 12,
       color: 'rgba(20, 23, 55, 1)',
     },
@@ -136,7 +139,11 @@ export default createUseStyles(
       alignItems: 'center',
       justifyContent: 'flex-end',
       gap: 24,
+      '& $icon svg': {
+        color: 'var(--soui-neutral-text-8)',
+      },
     },
+    icon: {},
     tip: {
       margin: '0 5px',
       color: '#5d5d5d',
@@ -148,9 +155,9 @@ export default createUseStyles(
     },
     codeFile: {
       width: 140,
-      borderRight: '1px solid #E8EBF0',
+      borderRight: '1px solid var(--soui-neutral-border-1)',
       boxSizing: 'border-box',
-      background: '#f7f8fa',
+      background: 'var(--soui-neutral-fill-2)',
     },
     codeWrapper: {
       flex: 1,
@@ -162,14 +169,14 @@ export default createUseStyles(
       right: 0,
       bottom: 0,
       left: 0,
-      background: '#ffffff',
+      background: 'var(--soui-neutral-fill-1)',
       zIndex: 1,
       '& .toolbar': {
         padding: 5,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderBottom: '1px dashed #e8ebee',
+        borderBottom: '1px dashed var(--soui-neutral-border-1)',
       },
 
       '& .container': {

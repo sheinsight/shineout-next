@@ -1,5 +1,5 @@
 import React from 'react';
-import { TreeClasses } from '../tree/tree.type';
+import { TreeClasses, TreeProps } from '../tree/tree.type';
 import { KeygenResult, ObjectKey, UnMatchedData, ValueItem } from '@sheinx/hooks';
 import { SelectClasses } from '../select/select.type';
 import { TagClasses } from '../tag/tag.type';
@@ -113,6 +113,7 @@ export interface TreeSelectProps<DataItem, Value>
       'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'filterSameChange'
     >,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
+    Pick<TreeProps<DataItem, any>, 'actionOnClick'>,
     BaseTipProps {
   /**
    * @en Data cache, if data change asynchronously, better set true
@@ -413,4 +414,15 @@ export interface TreeSelectProps<DataItem, Value>
    * @default 400
    */
   filterDelay?: number;
+  /**
+   * @en Virtual list
+   * @cn 虚拟列表
+   */
+  virtual?: boolean;
+  /**
+   * @en There are onFilter and onCreate, select Option, automatically focus Input
+   * @cn 存在 onFilter 和 onCreate，选中 Option，自动 focus Input
+   * @default false
+   */
+  reFocus?: boolean;
 }

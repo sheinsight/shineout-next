@@ -8,7 +8,7 @@ const badgeTokens: BadgeTokens = {
   badgeBadgeFontColor: 'Neutral-text-1',
   badgeBadgeBackgroundColor: 'Danger-6',
   badgeBadgeBorderRadius: 'Radius-full',
-  badgeCountPaddingX: 'Spacing-6',
+  badgeCountPaddingX: 'Spacing-4',
   badgeCountHeight: 'Size-10',
   badgeSmallCountHeight: 'Size-8',
   badgeDotWidth: 'Size-3',

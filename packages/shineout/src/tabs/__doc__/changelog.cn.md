@@ -1,3 +1,17 @@
+## 3.5.8
+2025-02-13
+
+### 🐞 BugFix
+- 调整 `Tabs` 首次挂载布局更新方式 ([#945](https://github.com/sheinsight/shineout-next/pull/945))
+
+## 3.5.5
+2024-12-24
+
+### 🐞 BugFix
+- 修复 `Tabs.Panel` 设置动态属性后可能导致的 `Tabs.Header` 渲染顺序不正确的问题(Regression: since 3.5.3) ([#882](https://github.com/sheinsight/shineout-next/pull/882))
+- 修复 `Tabs` 动态删除末尾的Tab时，TabsHeader没有正确的删除(Regression: since 3.5.3) ([#870](https://github.com/sheinsight/shineout-next/pull/870))
+
+
 ## 3.5.3
 2024-12-04
 
@@ -40,7 +54,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Tabs` 组件的 Tabs.Panel 是异步动态长度时，需要 resize 页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
+- 修复 `Tabs.Panel` 是异步的动态长度时，需要 resize 页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
 
 ## 3.3.7
 2024-09-10

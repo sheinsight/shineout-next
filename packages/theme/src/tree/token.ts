@@ -26,7 +26,7 @@ const treeTokenDescription = {
  */
 const treeTokenValue = {
   font: { size: 'Font-14', weight: 'Weight-regular', color: 'Neutral-text-5' },
-  line: { height: 'Size-18', background: { color: 'Neutral-fill-2' } },
+  line: { height: 'Size-18', background: { color: 'Neutral-fill-3' } },
   small: { font: { size: 'Font-12' }, line: { height: 'Size-14' } },
   large: { font: { size: 'Font-16' }, line: { height: 'Size-22' } },
   padding: { x: 'Spacing-8', y: 'Spacing-1' },
@@ -41,7 +41,11 @@ const treeTokenValue = {
     background: { color: '' },
     font: { color: '' },
     hover: { background: { color: 'Neutral-fill-2' }, font: { color: 'Neutral-text-5' } },
-    active: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
+    active: {
+      background: { color: 'Brand-1' },
+      font: { color: 'Brand-4' },
+      border: { radius: 'Radius-2' },
+    },
     disabled: { background: { color: 'Transprent' }, font: { color: 'Neutral-text-5' } },
     border: { radius: 'Radius-lesser' },
   },
@@ -50,7 +54,7 @@ const treeTokenValue = {
 };
 
 const treeTokenExtraValue = {
-  text: { padding: { y: 'Spacing-2' } },
+  text: { padding: { y: 'Spacing-2', x: 'Spacing-4' } },
   checkbox: { margin: { x: 'Spacing-8' } },
 };
 

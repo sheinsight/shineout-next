@@ -26,6 +26,7 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
     iconClass,
     leafClass,
     nodeClass,
+    rootStyle = {},
     contentClass,
     expandIcons,
     childrenKey,
@@ -49,6 +50,7 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
     childrenClassName,
     parentClickExpand,
     doubleClickExpand,
+    actionOnClick,
   } = props;
 
   const listClass = jssStyle?.tree() || ({} as TreeClasses);
@@ -108,14 +110,14 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
         onDragLeave={onDragLeave}
+        actionOnClick={actionOnClick}
       ></TreeNode>
     );
   };
 
   if (!expanded && !hasExpanded.current) return null;
   hasExpanded.current = true;
-
-  const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
+  const newStyle = Object.assign(rootStyle, style, { display: expanded ? 'block' : 'none' });
   return (
     <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass}>
       {data.map(renderNode)}

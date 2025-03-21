@@ -7,6 +7,15 @@ export type TreeClassType = keyof TreeClasses;
 const treeStyle: JsStyles<TreeClassType> = {
   rootClass: {},
   tree: {},
+  virtual: {},
+  notTree: {
+    '&$root > $node$leaf': {
+      paddingLeft: 0,
+    },
+    '& $content': {
+      marginLeft: 0,
+    },
+  },
   line: {
     '& $node': {
       '&[dir=ltr]::before': { left: 0 },
@@ -63,7 +72,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     '& $iconWrapper': {
       '& $icon': {
         transition: 'transform .2s cubic-bezier(.34,.69,.1,1)',
-      }
+      },
     },
 
     '& $iconWrapper[data-expanded="false"][data-icon="false"]': {
@@ -86,8 +95,8 @@ const treeStyle: JsStyles<TreeClassType> = {
     '& > $root': {
       '& > $node': {
         paddingLeft: 24,
-      }
-    }
+      },
+    },
   },
   root: {
     // '& > :first-child$node': {
@@ -100,6 +109,9 @@ const treeStyle: JsStyles<TreeClassType> = {
     // },
     '& > $node': {
       paddingLeft: 12,
+      '&$leaf': {
+        paddingLeft: 24,
+      },
       '& > $contentWrapper > $iconWrapper': {
         '&[dir=ltr]': { left: 0 },
         '&[dir=rtl]': { right: 0 },
@@ -110,7 +122,7 @@ const treeStyle: JsStyles<TreeClassType> = {
       '&::after': {
         display: 'none',
       },
-    }
+    },
   },
   small: {},
   large: {},
@@ -137,9 +149,16 @@ const treeStyle: JsStyles<TreeClassType> = {
     flex: 1,
     display: 'flex',
     alignItems: 'center',
-    cursor: 'pointer',
-    padding: `0 ${Token.treePaddingX}`,
-    borderRadius: Token.treeContentBorderRadius,
+    marginLeft: 4,
+
+    // 'label&': {
+    //   cursor: 'pointer',
+    //   userSelect: 'none',
+    // },
+
+    // '$iconWrapper + &': {
+    //   marginLeft: 4,
+    // },
 
     '$contentDisabled &': {
       '& $text': {
@@ -148,16 +167,10 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
 
     '&[data-active="true"]': {
-      background: Token.treeContentActiveBackgroundColor,
-
       '& $text': {
+        background: Token.treeContentActiveBackgroundColor,
+        borderRadius: Token.treeContentActiveBorderRadius,
         color: Token.treeContentActiveFontColor,
-      },
-    },
-    '&:hover:not([data-active="true"])': {
-      background: Token.treeContentHoverBackgroundColor,
-      '& $text': {
-        color: Token.treeContentHoverFontColor,
       },
     },
   },
@@ -168,13 +181,22 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
   },
   text: {
+    flex: 1,
+    minWidth: 0,
     fontSize: Token.treeFontSize,
     lineHeight: Token.lineHeightDynamic,
     color: Token.treeFontColor,
     fontWeight: Token.treeFontWeight,
-    paddingTop: Token.treeTextPaddingY,
-    paddingBottom: Token.treeTextPaddingY,
+    padding: `${Token.treeTextPaddingY} ${Token.treeTextPaddingX}`,
     whiteSpace: 'nowrap',
+    borderRadius: Token.treeContentBorderRadius,
+    '$content:not([data-active="true"]) &:hover': {
+      color: Token.treeContentHoverFontColor,
+      background: Token.treeContentHoverBackgroundColor,
+    },
+  },
+  textClickable: {
+    cursor: 'pointer',
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,

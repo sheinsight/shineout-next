@@ -20,6 +20,7 @@ import {
   wrapFormError,
   deepClone,
   getAllKeyPaths,
+  getCompleteFieldKeys,
   devUseWarning,
   getFieldId,
   getClosestScrollContainer,
@@ -58,6 +59,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     rules,
     throttle = 1000,
     size,
+    colon,
     name: formName,
     scrollParent,
   } = props;
@@ -68,11 +70,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const preValue = usePrevious(props.value);
 
-  const formDomRef = React.useRef<HTMLFormElement>();
-
   const { current: context } = React.useRef<FormContext>({
     defaultValues: {},
     validateMap: {},
+    ignoreValidateFields: [],
     updateMap: {},
     flowMap: {},
     removeArr: new Set<string>(),
@@ -103,9 +104,18 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     } else {
       const names = isArray(name) ? name : [name];
       names.forEach((key) => {
-        context.updateMap[key]?.forEach((update) => {
-          update(context.value, context.errors, context.serverErrors);
-        });
+        // 外部直接设置user.name这种格式的，但是又没有显性的声明user.name绑定的表单元素；
+        // 这里需要手动触发，否则会导致Input输入过程中光标跳到末尾的异常
+        if (!context.updateMap[key]) {
+          const parentKey = key.split('.')[0];
+          context.updateMap[parentKey]?.forEach((update) => {
+            update(context.value, context.errors, context.serverErrors);
+          });
+        } else {
+          context.updateMap[key]?.forEach((update) => {
+            update(context.value, context.errors, context.serverErrors);
+          });
+        }
         context.flowMap[key]?.forEach((update) => {
           update();
         });
@@ -132,7 +142,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       const selector = `[${getDataAttributeName('status')}="error"]`;
 
-      const el = formDomRef.current?.querySelector(selector);
+      const el = props.formElRef.current?.querySelector(selector);
       if (el) {
         el.scrollIntoView();
         const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
@@ -166,11 +176,28 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const validateFields = usePersistFn(
     (fields?: string | string[], config: ValidateFnConfig = {}): Promise<T> => {
       return new Promise((resolve, reject: (reason: ValidationError<T> | FormError) => void) => {
-        const finalFields = fields
-          ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
-          : Object.keys(context.validateMap);
+        let finalFields = Object.keys(context.validateMap);
+        if (fields) {
+          if (config.ignoreChildren || config.ignoreBind) {
+            // 旧行为：仅校验当前字段
+            finalFields = (isArray(fields) ? fields : [fields]).filter(
+              (key) => context.validateMap[key],
+            );
+          } else {
+            // 新行为：校验当前字段及其所有子字段
+            // 假设进去的是['user']，那么最终的finalFields是['user', 'user.name', 'user.age']
+            // 假设进去的是['users']，那么最终的finalFields是['users', 'users[0].name', 'users[0].age', 'users[1].name', 'users[1].age']
+            finalFields = getCompleteFieldKeys(fields, finalFields);
+          }
+        }
+
+        if (context.ignoreValidateFields.length > 0) {
+          finalFields = finalFields.filter((key) => !context.ignoreValidateFields.includes(key));
+        }
+
         const validates = finalFields.map((key) => {
           const validateField = context.validateMap[key];
+          if (!validateField) return [];
           return Array.from(validateField).map((validate) =>
             validate(key, deepGet(context.value, key), context.value, config),
           );
@@ -249,10 +276,20 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
           if (!isVisibleY || !isVisibleX) {
             // 计算元素相对于父元素的偏移量
-            const offsetTop = element.offsetTop - parentEl.offsetTop;
-            const offsetLeft = element.offsetLeft - parentEl.offsetLeft;
-            parentEl.scrollTop = offsetTop;
-            parentEl.scrollLeft = offsetLeft;
+            const offsetTop = elementRect.top - parentRect.top;
+            const offsetLeft = elementRect.left - parentRect.left;
+            // 如果是往上滚动，那么只有当元素的偏移量小于0时才需要滚动
+            if (offsetTop < 0) {
+              parentEl.scrollTop = Math.max(parentEl.scrollTop + offsetTop, 0);
+            } else {
+              parentEl.scrollTop = Math.min(parentEl.scrollTop + offsetTop, parentEl.scrollHeight - parentEl.clientHeight);
+            }
+            // 如果是往左滚动，那么只有当元素的偏移量小于0时才需要滚动
+            if (offsetLeft < 0) {
+              parentEl.scrollLeft = Math.max(parentEl.scrollLeft + offsetLeft, 0);
+            } else {
+              parentEl.scrollLeft = Math.min(parentEl.scrollLeft + offsetLeft, parentEl.scrollWidth - parentEl.clientWidth);
+            }
           }
         } else {
           // 如果没有找到可滚动的父元素，使用默认行为
@@ -360,6 +397,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       return;
     }
     context.submitLock = true;
+    const activeEl = document.activeElement as HTMLElement;
+    if (activeEl) activeEl.blur();
+
     setTimeout(() => {
       // 防止连续点击
       context.submitLock = false;
@@ -372,6 +412,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
       if (result === true) {
         props.onSubmit?.((context.value ?? {}) as T);
+        if (activeEl) activeEl.focus();
       } else {
         handleSubmitError(result);
         return;
@@ -387,7 +428,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }, 10);
   };
 
-  const validateFieldset = (name: string) => {
+  const validateFieldset = (name: string, config?: ValidateFnConfig) => {
     const na = `${name}[`;
     const no = `${name}.`;
     const fields: string[] = [];
@@ -396,6 +437,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         fields.push(key);
       }
     });
+
+    // 用户声明了跳过校验子字段
+    if (config?.ignoreChildren) {
+      const parentName = name.split('[')[0];
+      context.ignoreValidateFields = getCompleteFieldKeys(parentName, Array.from(context.names));
+      setTimeout(() => {
+        context.ignoreValidateFields = [];
+      });
+    }
+
     validateFields(fields).catch(() => {});
   };
 
@@ -426,7 +477,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     return {
       ...externalProps,
       ...externalEventHandlers,
-      ref: formDomRef,
       disabled: !!disabled,
       onSubmit: handleSubmit(externalEventHandlers),
       onReset: handleReset(externalEventHandlers),
@@ -475,6 +525,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
       if (validateFieldSet.size === 0 && updateFieldSet.size === 0) {
         context.names.delete(n);
+        delete context.errors[n];
         delete context.defaultValues[n];
       }
       const finalReserveAble = props.reserveAble ?? reserveAble;
@@ -542,8 +593,19 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       disabled,
       size,
       formName,
+      colon,
     }),
-    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size, formName],
+    [
+      labelWidth,
+      labelAlign,
+      labelVerticalAlign,
+      keepErrorHeight,
+      inline,
+      disabled,
+      size,
+      formName,
+      colon,
+    ],
   );
 
   const updateValue = () => {

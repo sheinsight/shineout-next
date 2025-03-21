@@ -59,10 +59,9 @@ const App: React.FC = () => {
 
       <Modal visible={visible} width={456} title='Form' onClose={handleClose} footer={footer()}>
         <Form
-          labelWidth={100}
+          labelWidth={75}
           rules={rules}
           labelAlign='right'
-          style={{ maxWidth: 400 }}
           onSubmit={handleSubmit}
         >
           <Form.Item required label='Email'>

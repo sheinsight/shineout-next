@@ -140,6 +140,7 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
     '& $wrapper': {
       display: 'flex',
       marginBottom: token.checkboxBlockGap,
+      marginRight: 0,
     },
   },
 };

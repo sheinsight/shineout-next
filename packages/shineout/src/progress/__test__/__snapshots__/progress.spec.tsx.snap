@@ -79,7 +79,7 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
     </div>
   </div>
   <button
-    class="soui-button soui-button-secondary soui-button-button"
+    class="soui-button soui-button-secondary soui-button-button soui-button-outline"
     dir="ltr"
     style="margin-top: 24px;"
     type="button"
@@ -116,26 +116,47 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         cy="32"
         fill="transparent"
         r="30"
+        stroke-dasharray="0,188.49555921538757"
+        stroke-linecap="round"
+        stroke-width="0"
+      />
+    </svg>
+    <div
+      class="soui-progress-content"
+    >
+      0%
+    </div>
+  </div>
+  <div
+    class="soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info"
+    style="width: 64px; height: 64px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <circle
+        class="soui-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="soui-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
         stroke-dasharray="113.09733552923254,75.39822368615503"
         stroke-linecap="round"
         stroke-width="4"
       />
     </svg>
     <div
-      class="soui-progress-icon"
+      class="soui-progress-content"
     >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M12 3.00049C11.4477 3.00049 11 3.4482 11 4.00049C11 4.55277 11.4477 5.00049 12 5.00049C12.5523 5.00049 13 4.55277 13 4.00049C13 3.4482 12.5523 3.00049 12 3.00049ZM12 7.00049C11.4477 7.00049 11 7.4482 11 8.00049V20.0005C11 20.5528 11.4477 21.0005 12 21.0005C12.5523 21.0005 13 20.5528 13 20.0005V8.00049C13 7.4482 12.5523 7.00049 12 7.00049Z"
-          fill-rule="evenodd"
-        />
-      </svg>
+      60%
     </div>
   </div>
   <div
@@ -174,9 +195,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          clip-rule="evenodd"
-          d="M12 3C11.4477 3 11 3.44772 11 4V16C11 16.5523 11.4477 17 12 17C12.5523 17 13 16.5523 13 16V4C13 3.44772 12.5523 3 12 3ZM12 19C11.4477 19 11 19.4477 11 20C11 20.5523 11.4477 21 12 21C12.5523 21 13 20.5523 13 20C13 19.4477 12.5523 19 12 19Z"
-          fill-rule="evenodd"
+          d="M10.4331 4.48155C10.4051 3.91069 10.8604 3.4325 11.4319 3.4325H12.5713C13.1428 3.4325 13.5981 3.91069 13.5701 4.48155L13.0683 14.6976C13.0422 15.2301 12.6027 15.6485 12.0695 15.6485H11.9337C11.4005 15.6485 10.9611 15.2301 10.9349 14.6976L10.4331 4.48155ZM11.9896 16.9445C12.5176 16.9445 12.9736 17.1125 13.3336 17.4485C13.6696 17.7845 13.8616 18.2165 13.8616 18.7445C13.8616 19.2725 13.6696 19.7285 13.3336 20.0645C12.9496 20.4005 12.5176 20.5685 11.9896 20.5685C11.4616 20.5685 11.0296 20.3765 10.6936 20.0405C10.3096 19.7045 10.1416 19.2725 10.1416 18.7445C10.1416 18.2165 10.3096 17.7845 10.6936 17.4485C11.0296 17.1125 11.4616 16.9445 11.9896 16.9445Z"
         />
       </svg>
     </div>
@@ -202,7 +221,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         cy="32"
         fill="transparent"
         r="30"
-        stroke-dasharray="150.79644737231007,37.6991118430775"
+        stroke-dasharray="188.49555921538757,0"
         stroke-linecap="round"
         stroke-width="4"
       />
@@ -218,7 +237,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       >
         <path
           clip-rule="evenodd"
-          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
+          d="M1.2947 13.0708L6.95013 18.7262C7.73219 19.5083 8.99933 19.5083 9.78139 18.7262L21.1217 7.38591C21.512 6.99559 21.512 6.36202 21.1217 5.9717C20.7314 5.58137 20.0978 5.58137 19.7075 5.9717L8.31714 17.0881L2.70891 11.6566C2.31859 11.2663 1.68502 11.2663 1.2947 11.6566C0.904372 12.0469 0.904372 12.6805 1.2947 13.0708Z"
           fill-rule="evenodd"
         />
       </svg>
@@ -260,7 +279,8 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+          d="M5.60994 4.21871L5.70415 4.30189L12.0015 10.5851L18.3584 4.22893C18.749 3.8384 19.3821 3.8384 19.7727 4.22893C20.1331 4.58941 20.1609 5.15664 19.8558 5.54893L19.7727 5.64314L13.4165 12.0001L19.708 18.2923C20.0985 18.6828 20.0985 19.316 19.708 19.7065C19.3475 20.067 18.7803 20.0947 18.388 19.7897L18.2938 19.7065L12.0015 13.4151L5.68269 19.733C5.29217 20.1235 4.659 20.1235 4.26848 19.733C3.908 19.3725 3.88027 18.8053 4.18529 18.413L4.26848 18.3188L10.5865 12.0001L4.28994 5.71611C3.89941 5.32558 3.89941 4.69242 4.28994 4.30189C4.65042 3.94141 5.21765 3.91368 5.60994 4.21871Z"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -365,7 +385,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
 
 exports[`Progress[Base] should render correctly about lineInner 1`] = `
 <div
-  style="display: flex; flex-direction: column; gap: 32px; width: 400px;"
+  style="display: flex; flex-direction: column; gap: 24px; width: 400px;"
 >
   <div
     class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner soui-progress-line-inner-right"
@@ -383,20 +403,6 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
           0%
         </div>
       </div>
-    </div>
-    <div
-      class="soui-progress-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM12 8C12.5523 8 13 7.55228 13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7C11 7.55228 11.4477 8 12 8ZM12 19C12.5523 19 13 18.5523 13 18V10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10V18C11 18.5523 11.4477 19 12 19Z"
-        />
-      </svg>
     </div>
   </div>
   <div
@@ -416,20 +422,6 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="soui-progress-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM12 8C12.5523 8 13 7.55228 13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7C11 7.55228 11.4477 8 12 8ZM12 19C12.5523 19 13 18.5523 13 18V10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10V18C11 18.5523 11.4477 19 12 19Z"
-        />
-      </svg>
-    </div>
   </div>
   <div
     class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner"
@@ -447,20 +439,6 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
           10%
         </div>
       </div>
-    </div>
-    <div
-      class="soui-progress-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM12 8C12.5523 8 13 7.55228 13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7C11 7.55228 11.4477 8 12 8ZM12 19C12.5523 19 13 18.5523 13 18V10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10V18C11 18.5523 11.4477 19 12 19Z"
-        />
-      </svg>
     </div>
   </div>
   <div
@@ -480,20 +458,6 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="soui-progress-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM12 16C12.5523 16 13 16.4477 13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16ZM12 5C12.5523 5 13 5.44772 13 6V14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14V6C11 5.44772 11.4477 5 12 5Z"
-        />
-      </svg>
-    </div>
   </div>
   <div
     class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-inner"
@@ -512,20 +476,6 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="soui-progress-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6.34315 13.8284L8.46305 15.9483C9.24511 16.7304 10.5122 16.7304 11.2943 15.9483L17.6569 9.58579C18.0472 9.19546 18.0472 8.5619 17.6569 8.17157C17.2665 7.78125 16.633 7.78125 16.2426 8.17157L10.5872 13.827C10.1962 14.218 9.56119 14.218 9.17016 13.827L7.75736 12.4142C7.36704 12.0239 6.73347 12.0239 6.34315 12.4142C5.95282 12.8045 5.95282 13.4381 6.34315 13.8284Z"
-        />
-      </svg>
-    </div>
   </div>
   <div
     class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-danger soui-progress-line-inner"
@@ -543,20 +493,6 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
           60%
         </div>
       </div>
-    </div>
-    <div
-      class="soui-progress-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
-        />
-      </svg>
     </div>
   </div>
 </div>
@@ -591,10 +527,10 @@ exports[`Progress[Base] should render correctly about linePop 1`] = `
       />
     </div>
   </div>
-  <br />
   <button
-    class="soui-button soui-button-secondary soui-button-button"
+    class="soui-button soui-button-secondary soui-button-button soui-button-outline"
     dir="ltr"
+    style="margin-top: 24px;"
     type="button"
   >
     <span>
@@ -1076,7 +1012,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
 
 exports[`Progress[Base] should render correctly about type 1`] = `
 <div
-  style="width: 400px;"
+  style="width: 400px; display: flex; flex-direction: column; gap: 24px;"
 >
   <div
     class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-default"
@@ -1089,8 +1025,12 @@ exports[`Progress[Base] should render correctly about type 1`] = `
         style="width: 100%;"
       />
     </div>
+    <div
+      class="soui-progress-content"
+    >
+      100%
+    </div>
   </div>
-  <br />
   <div
     class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default"
   >
@@ -1102,8 +1042,12 @@ exports[`Progress[Base] should render correctly about type 1`] = `
         style="width: 90%;"
       />
     </div>
+    <div
+      class="soui-progress-content"
+    >
+      90%
+    </div>
   </div>
-  <br />
   <div
     class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-warning soui-progress-line-default"
   >
@@ -1115,8 +1059,12 @@ exports[`Progress[Base] should render correctly about type 1`] = `
         style="width: 80%;"
       />
     </div>
+    <div
+      class="soui-progress-content"
+    >
+      80%
+    </div>
   </div>
-  <br />
   <div
     class="soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-danger soui-progress-line-default"
   >
@@ -1127,6 +1075,11 @@ exports[`Progress[Base] should render correctly about type 1`] = `
         class="soui-progress-line-front"
         style="width: 70%;"
       />
+    </div>
+    <div
+      class="soui-progress-content"
+    >
+      70%
     </div>
   </div>
 </div>

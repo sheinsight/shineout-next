@@ -1,3 +1,23 @@
+## 3.6.0
+2025-03-20
+
+### 🐞 BugFix
+
+- 修复 `DatePicker` 的 `formatResult`函数格式的自定义结果展示不生效的问题 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
+- 修复 `DatePicker` 的 `open` 受控用法下，onCollapse回调函数可能不触发而导致无法选择的问题 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
+- 修复 `DatePicker` 仅开启 `needConfirm` 属性情况下不展示今天按钮的问题 ([#983](https://github.com/sheinsight/shineout-next/pull/983))
+- 修复 `DatePicker` 小尺寸模式下“今天按钮”不上下居中的问题 ([#983](https://github.com/sheinsight/shineout-next/pull/983))
+
+### 💎 Enhancement
+- `DatePicker` 周选择器的结果末尾追加“周”字 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
+
+## 3.5.6
+2025-01-06
+
+### 🐞 BugFix
+
+- 修复 `DatePicker` 在开启 `range` 和 `open` 属性后第一次点击无法选择日期的问题 ([#897](https://github.com/sheinsight/shineout-next/pull/897))
+
 ## 3.5.4
 2024-12-12
 
@@ -22,7 +42,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `DatePicker` 组件 `align` 属性失效的问题(Regression: since v3.4.1) ([#799](https://github.com/sheinsight/shineout-next/pull/799))
+- 修复 `DatePicker` 的 `align` 属性失效的问题(Regression: since v3.4.1) ([#799](https://github.com/sheinsight/shineout-next/pull/799))
 
 ## 3.4.6
 2024-11-05
@@ -40,21 +60,21 @@
 
 ### 🐞 BugFix
 
-- 修复 `Datepicker` 组件 key 值书写问题，解决 React 18.3.0 以上版本 key 字段报错的问题 ([#726](https://github.com/sheinsight/shineout-next/pull/726))
+- 修复 `DatePicker` 的 key 值书写问题，解决 React 18.3.0 以上版本 key 字段报错的问题 ([#726](https://github.com/sheinsight/shineout-next/pull/726))
 
 ## 3.4.1
 2024-09-20
 
 ### 🐞 BugFix
 
-- 优化 `Datepicker` 的结果展示区域，改为不换行展示 ([#680](https://github.com/sheinsight/shineout-next/pull/680))
+- 优化 `DatePicker` 的结果展示区域，改为不换行展示 ([#680](https://github.com/sheinsight/shineout-next/pull/680))
 
 ## 3.4.0
 2024-09-19
 
 ### 🆕 Feature
-- `Datepicker` 新增needConfirm属性: 是否开启手动确认按钮，开启后只有点击确认按钮才会提交选择的值。 ([#650](https://github.com/sheinsight/shineout-next/pull/650))
-- `Datepicker` 新增clearToUndefined，点击清除后返回undefined ([#644](https://github.com/sheinsight/shineout-next/pull/644))
+- `DatePicker` 新增needConfirm属性: 是否开启手动确认按钮，开启后只有点击确认按钮才会提交选择的值。 ([#650](https://github.com/sheinsight/shineout-next/pull/650))
+- `DatePicker` 新增clearToUndefined，点击清除后返回undefined ([#644](https://github.com/sheinsight/shineout-next/pull/644))
 
 
 
@@ -63,7 +83,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Datepicker` 的defaultPickerValue的第二位不生效的问题 ([#660](https://github.com/sheinsight/shineout-next/pull/660))
+- 修复 `DatePicker` 的defaultPickerValue的第二位不生效的问题 ([#660](https://github.com/sheinsight/shineout-next/pull/660))
 
 
 ## 3.3.6
@@ -71,14 +91,14 @@
 
 ### 🐞 BugFix
 
-- 修复 `Datepicker` 快速选择固定值无法高亮的问题 ([#620](https://github.com/sheinsight/shineout-next/pull/620))
+- 修复 `DatePicker` 快速选择固定值无法高亮的问题 ([#620](https://github.com/sheinsight/shineout-next/pull/620))
 
 ## 3.3.3
 2024-08-15
 
 ### 🐞 BugFix
 
-- 修复 `Datepicker` 聚焦但不打开面板场景下无法回填原值的问题 ([#604](https://github.com/sheinsight/shineout-next/pull/604))
+- 修复 `DatePicker` 聚焦但不打开面板场景下无法回填原值的问题 ([#604](https://github.com/sheinsight/shineout-next/pull/604))
 
 ## 3.3.0
 2024-07-23

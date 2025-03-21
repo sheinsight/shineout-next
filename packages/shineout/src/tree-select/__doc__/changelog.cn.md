@@ -1,3 +1,20 @@
+## 3.6.0
+2025-03-20
+
+### 🆕 Feature
+
+- `TreeSelect` 新增 `actionOnClick` 属性，配置点击节点时的行为：`expand` 展开/收起节点，`check` 勾选或取消勾选节点 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
+- `TreeSelect` 新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 输入过滤内容并选中选项后，输入内容无法默认全选的问题 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
+
+
+### 🚀 Performance
+- 优化 `TreeSelect` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
+- 优化 `TreeSelect` 在大数据量下同时被渲染很多个时的页面初始化性能问题 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
+
+
 ## 3.4.4
 2024-10-28
 
@@ -8,7 +25,7 @@
 2024-09-19
 
 ### 🐞 BugFix
-- 修复 `TreeSelect` 组件 `filterDelay` 属性失效的问题 ([#672](https://github.com/sheinsight/shineout-next/pull/672))
+- 修复 `TreeSelect` 的 `filterDelay` 属性失效的问题 ([#672](https://github.com/sheinsight/shineout-next/pull/672))
 
 ## 3.3.3
 2024-08-15

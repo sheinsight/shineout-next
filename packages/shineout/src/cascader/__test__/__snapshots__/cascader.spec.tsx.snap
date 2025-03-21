@@ -39,7 +39,9 @@ exports[`Cascader[Base] should render correctly  1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -110,7 +112,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              d="M4.00195 10C5.10652 10 6.00195 10.8954 6.00195 12C6.00195 13.1046 5.10652 14 4.00195 14C2.89738 14 2.00195 13.1046 2.00195 12C2.00195 10.8954 2.89738 10 4.00195 10ZM12.002 10C13.1065 10 14.002 10.8954 14.002 12C14.002 13.1046 13.1065 14 12.002 14C10.8974 14 10.002 13.1046 10.002 12C10.002 10.8954 10.8974 10 12.002 10ZM20.002 10C21.1065 10 22.002 10.8954 22.002 12C22.002 13.1046 21.1065 14 20.002 14C18.8974 14 18.002 13.1046 18.002 12C18.002 10.8954 18.8974 10 20.002 10Z"
             />
           </svg>
         </span>
@@ -160,7 +162,9 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -204,7 +208,9 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -264,7 +270,9 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -308,7 +316,9 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -360,7 +370,9 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -405,7 +417,9 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -466,7 +480,9 @@ exports[`Cascader[Base] should render correctly about final 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                  clip-rule="evenodd"
+                  d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                  fill-rule="evenodd"
                 />
               </svg>
             </span>
@@ -524,7 +540,9 @@ exports[`Cascader[Base] should render correctly about final 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                  clip-rule="evenodd"
+                  d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                  fill-rule="evenodd"
                 />
               </svg>
             </span>
@@ -575,7 +593,9 @@ exports[`Cascader[Base] should render correctly about finalDismiss 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -624,7 +644,9 @@ exports[`Cascader[Base] should render correctly about hideTag 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -635,70 +657,226 @@ exports[`Cascader[Base] should render correctly about hideTag 1`] = `
 `;
 
 exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
-<div>
+<div
+  class="soui-gap soui-gap-wrapper"
+  style="margin-bottom: -8px; margin-right: -8px; flex-direction: column; gap: 24px;"
+>
   <div
-    class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-clearable"
-    data-soui-input-border="true"
-    style="width: 300px;"
-    tabindex="0"
+    class="soui-gap-item"
+    style="margin-bottom: 8px; margin-right: 8px;"
   >
     <div
-      class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
+      class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-wrapper-small soui-cascader-clearable"
+      data-soui-input-border="true"
+      style="width: 300px;"
+      tabindex="0"
     >
       <div
-        class="soui-inner-title-wrapper"
+        class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
       >
         <div
-          class="soui-inner-title-title soui-inner-title-top"
-        >
-          Inner Title
-        </div>
-        <div
-          class="soui-inner-title-place"
+          class="soui-inner-title-wrapper soui-inner-title-wrapper-small"
         >
           <div
-            class="soui-inner-title-title"
+            class="soui-inner-title-title soui-inner-title-top"
           >
             Inner Title
           </div>
-        </div>
-        <div
-          class="soui-inner-title-content"
-        >
           <div
-            class="soui-cascader-result"
+            class="soui-inner-title-place"
           >
             <div
-              class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
+              class="soui-inner-title-title"
             >
-              <span
-                class="soui-cascader-placeholder soui-cascader-ellipsis"
+              Inner Title
+            </div>
+          </div>
+          <div
+            class="soui-inner-title-content"
+          >
+            <div
+              class="soui-cascader-result"
+            >
+              <div
+                class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
               >
-                <span>
-                  Please select city
+                <span
+                  class="soui-cascader-placeholder soui-cascader-ellipsis"
+                >
+                  <span>
+                    Please select city
+                  </span>
                 </span>
-              </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="soui-cascader-icon-wrapper"
-      >
-        <span
-          class="soui-cascader-arrow-icon"
+        <div
+          class="soui-cascader-icon-wrapper"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <span
+            class="soui-cascader-arrow-icon"
           >
-            <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-            />
-          </svg>
-        </span>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="soui-gap-item"
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <div
+      class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-clearable"
+      data-soui-input-border="true"
+      style="width: 300px;"
+      tabindex="0"
+    >
+      <div
+        class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
+      >
+        <div
+          class="soui-inner-title-wrapper"
+        >
+          <div
+            class="soui-inner-title-title soui-inner-title-top"
+          >
+            Inner Title
+          </div>
+          <div
+            class="soui-inner-title-place"
+          >
+            <div
+              class="soui-inner-title-title"
+            >
+              Inner Title
+            </div>
+          </div>
+          <div
+            class="soui-inner-title-content"
+          >
+            <div
+              class="soui-cascader-result"
+            >
+              <div
+                class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
+              >
+                <span
+                  class="soui-cascader-placeholder soui-cascader-ellipsis"
+                >
+                  <span>
+                    Please select city
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="soui-cascader-icon-wrapper"
+        >
+          <span
+            class="soui-cascader-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="soui-gap-item"
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <div
+      class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-wrapper-large soui-cascader-clearable"
+      data-soui-input-border="true"
+      style="width: 300px;"
+      tabindex="0"
+    >
+      <div
+        class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
+      >
+        <div
+          class="soui-inner-title-wrapper soui-inner-title-wrapper-large"
+        >
+          <div
+            class="soui-inner-title-title soui-inner-title-top"
+          >
+            Inner Title
+          </div>
+          <div
+            class="soui-inner-title-place"
+          >
+            <div
+              class="soui-inner-title-title"
+            >
+              Inner Title
+            </div>
+          </div>
+          <div
+            class="soui-inner-title-content"
+          >
+            <div
+              class="soui-cascader-result"
+            >
+              <div
+                class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
+              >
+                <span
+                  class="soui-cascader-placeholder soui-cascader-ellipsis"
+                >
+                  <span>
+                    Please select city
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="soui-cascader-icon-wrapper"
+        >
+          <span
+            class="soui-cascader-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -744,7 +922,9 @@ exports[`Cascader[Base] should render correctly about loader 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -761,7 +941,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-radio-wrapper-small"
     >
       <input
         checked=""
@@ -784,7 +964,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small"
     >
       <input
         style="display: none;"
@@ -806,7 +986,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small"
     >
       <input
         style="display: none;"
@@ -828,7 +1008,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small"
     >
       <input
         style="display: none;"
@@ -850,7 +1030,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
       </span>
     </div>
     <div
-      class="soui-radio soui-radio-wrapper"
+      class="soui-radio soui-radio-wrapper soui-radio-wrapper-small"
     >
       <input
         style="display: none;"
@@ -906,7 +1086,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
             class="soui-cascader-icon-wrapper"
           >
             <span
-              class="soui-cascader-arrow-icon"
+              class="soui-cascader-compressed-icon soui-cascader-arrow-icon"
             >
               <svg
                 aria-hidden="true"
@@ -915,7 +1095,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                  d="M4.00195 10C5.10652 10 6.00195 10.8954 6.00195 12C6.00195 13.1046 5.10652 14 4.00195 14C2.89738 14 2.00195 13.1046 2.00195 12C2.00195 10.8954 2.89738 10 4.00195 10ZM12.002 10C13.1065 10 14.002 10.8954 14.002 12C14.002 13.1046 13.1065 14 12.002 14C10.8974 14 10.002 13.1046 10.002 12C10.002 10.8954 10.8974 10 12.002 10ZM20.002 10C21.1065 10 22.002 10.8954 22.002 12C22.002 13.1046 21.1065 14 20.002 14C18.8974 14 18.002 13.1046 18.002 12C18.002 10.8954 18.8974 10 20.002 10Z"
                 />
               </svg>
             </span>
@@ -990,7 +1170,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              d="M4.00195 10C5.10652 10 6.00195 10.8954 6.00195 12C6.00195 13.1046 5.10652 14 4.00195 14C2.89738 14 2.00195 13.1046 2.00195 12C2.00195 10.8954 2.89738 10 4.00195 10ZM12.002 10C13.1065 10 14.002 10.8954 14.002 12C14.002 13.1046 13.1065 14 12.002 14C10.8974 14 10.002 13.1046 10.002 12C10.002 10.8954 10.8974 10 12.002 10ZM20.002 10C21.1065 10 22.002 10.8954 22.002 12C22.002 13.1046 21.1065 14 20.002 14C18.8974 14 18.002 13.1046 18.002 12C18.002 10.8954 18.8974 10 20.002 10Z"
             />
           </svg>
         </span>
@@ -1039,7 +1219,9 @@ exports[`Cascader[Base] should render correctly about renderResult 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -1088,7 +1270,9 @@ exports[`Cascader[Base] should render correctly about trigger 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -1141,7 +1325,9 @@ exports[`Cascader[Base] should render correctly about unmatch 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -1193,7 +1379,9 @@ exports[`Cascader[Base] should render correctly about wide 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              clip-rule="evenodd"
+              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+              fill-rule="evenodd"
             />
           </svg>
         </span>

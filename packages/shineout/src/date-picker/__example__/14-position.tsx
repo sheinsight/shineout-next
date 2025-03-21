@@ -7,7 +7,7 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const style = { width: 180 };
+const style = { width: 160 };
 
 const App: React.FC = () => (
   <div style={{ display: 'flex', gap: 24, flexFlow: 'row wrap' }}>

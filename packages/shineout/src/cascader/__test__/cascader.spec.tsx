@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import '@testing-library/jest-dom'
 import Cascader from '..'
 import { attributesTest, baseTest, classTest, createClassName, delay, displayTest, snapshotTest, styleContainTest, styleTest, textContentTest } from "../../tests/utils";
@@ -12,7 +12,7 @@ import CascaderCompressed from '../__example__/02-02-multiple'
 import CascaderNoRepeat from '../__example__/02-03-multiple'
 import CascaderTrigger from '../__example__/03-01-trigger'
 import CascaderFinal from '../__example__/03-02-finalDismiss'
-import CascaderDisabled from '../__example__/04-disabled'
+import CascaderDisabled from '../__example__/04-disabled-normal'
 import CascaderLoader from '../__example__/05-loader'
 import CascaderFilter from '../__example__/06-01-filter'
 import CascaderWide from '../__example__/06-02-filter'
@@ -76,9 +76,9 @@ const {
   list
 } = createClassName(SO_PREFIX, originClasses, originItemClasses)
 
-const {
-  tag
-} = createClassName('select', ['tag'], [''])
+// const {
+//   tag
+// } = createClassName('select', ['tag'], [''])
 
 const defaultOpenStyle = {
   zIndex: '1051',
@@ -86,7 +86,8 @@ const defaultOpenStyle = {
   top: 'calc(100% + 4px)',
   left: '0px',
   transform: 'scaleY(1)',
-  transition: 'transform 240ms ease-in-out',
+  "transform-origin": "center top",
+  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
 }
 
 beforeAll(() => {
@@ -175,7 +176,7 @@ describe('Cascader[Base]', () => {
         classLengthTest(item, 'svg', 0)
       }
     })
-    const tags = cascaderResult.querySelectorAll(tag)
+    // const tags = cascaderResult.querySelectorAll(tag)
     // expect(tags.length).toBe(2)
     // textContentTest(tags[0], data[0].value)
     // textContentTest(tags[1], data[0]?.children?.[0].value)

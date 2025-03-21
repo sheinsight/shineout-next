@@ -9,6 +9,7 @@ const resizeIndex = 8;
 const fixedFixedIndex = 10;
 const headerIndex = 12;
 const loadingIndex = 16;
+const shadowWidth = 12;
 
 export type TableClassType = keyof TableClasses;
 
@@ -54,7 +55,6 @@ const tableStyle: JsStyles<TableClassType> = {
             zIndex: cellBaseIndex,
             top: 0,
             bottom: 0,
-            background: token.tableCellBorderColor,
             borderLeft: `1px solid ${token.tableCellBorderColor}`,
           },
           '[dir=ltr]&::after': {
@@ -158,6 +158,7 @@ const tableStyle: JsStyles<TableClassType> = {
     },
     '&::after': {
       position: 'absolute',
+      zIndex: fixedFixedIndex + 3,
       content: '""',
       display: 'block',
       bottom: 0,
@@ -209,7 +210,7 @@ const tableStyle: JsStyles<TableClassType> = {
     background: token.tableTfootBackgroundColor,
   },
   emptyWrapper: {
-    minHeight: '150px',
+    minHeight: '170px',
     width: '100%',
     height: '100%',
     position: 'sticky',
@@ -219,6 +220,7 @@ const tableStyle: JsStyles<TableClassType> = {
     justifyContent: 'center',
     display: 'flex',
     alignItems: 'center',
+    borderBottom: `1px solid ${token.tableCellBorderColor}`,
   },
   scrollY: {
     '&$headWrapper, &$footWrapper': {
@@ -269,15 +271,16 @@ const tableStyle: JsStyles<TableClassType> = {
         position: 'absolute',
         top: 0,
         bottom: -1,
-        width: '5px',
+        width: `${shadowWidth}px`,
+        pointerEvents: 'none',
+        boxShadow: 'inset 8px 0 10px -6px rgba(2,11,24,.1)',
+        // border: 'none',
       },
       '&[dir=ltr]::after': {
-        right: '-5px',
-        background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+        right: `-${shadowWidth}px`,
       },
       '&[dir=rtl]::after': {
-        left: '-5px',
-        background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
+        left: `-${shadowWidth}px`,
       },
     },
     '& table': {
@@ -302,15 +305,15 @@ const tableStyle: JsStyles<TableClassType> = {
         position: 'absolute',
         top: 0,
         bottom: 0,
-        width: '5px',
+        width: `${shadowWidth}px`,
+        pointerEvents: 'none',
+        boxShadow: 'inset -8px 0 10px -6px rgba(2,11,24,.1)',
       },
       '&[dir=rtl]::before': {
-        right: '-5px',
-        background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+        right: `-${shadowWidth}px`,
       },
       '&[dir=ltr]::before': {
-        left: '-5px',
-        background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
+        left: `-${shadowWidth}px`,
       },
     },
     '& table': {
@@ -332,6 +335,78 @@ const tableStyle: JsStyles<TableClassType> = {
     display: 'inline-flex',
     alignItems: 'center',
   },
+
+  hasFilter: {
+    display: 'inline-flex',
+    alignItems: 'center',
+  },
+
+  filterIconContainer: {
+    '&:hover $filterIcon': {
+      color: token.tableFilterIconHoverColor,
+    }
+  },
+  filterIcon: {
+    width: token.tableFilterIconSize,
+    height: token.tableFilterIconSize,
+    color: token.tableFilterIconColor,
+
+    '& > svg': {
+      display: 'block',
+    }
+  },
+
+  filterActive: {
+    '& $filterIcon, &:hover $filterIcon': {
+      color: token.tableFilterIconActiveColor,
+    },
+  },
+
+  filterContainer: {
+    minWidth: '120px',
+  },
+  filterHeader:{
+    padding: `${token.tableFilterHeaderPaddingY} ${token.tableFilterHeaderPaddingX}`,
+    '& + $filterBody': {
+      paddingTop: 0,
+    }
+  },
+  filterBody: {
+    padding: `${token.tableFilterBodyPaddingY} ${token.tableFilterBodyPaddingX}`,
+    maxHeight: '300px',
+    overflow: 'auto',
+  },
+  filterFooter: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: `${token.tableFilterFooterPaddingY} ${token.tableFilterFooterPaddingX}`,
+    borderTop: `1px solid ${token.tableFilterFooterBorderColor}`,
+  },
+
+  filterInput: {
+    cursor: 'pointer',
+  },
+  filterInputIcon: {
+    color: token.tableFilterInputIconColor,
+    flexShrink: 0,
+    width: token.tableFilterInputIconSize,
+    height: token.tableFilterInputIconSize,
+    marginRight: token.tableFilterInputIconMarginRight,
+    '& > svg': {
+      display: 'block',
+    }
+  },
+
+  filterRadio: {
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+
+    '& > div': {
+      marginRight: 0,
+    }
+  },
+
   sorterContainer: {
     minWidth: '14px',
     width: '14px',

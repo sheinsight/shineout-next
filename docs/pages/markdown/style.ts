@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-const codeBg = 'rgb( 242,243,245 )';
+const codeBg = 'var(--soui-neutral-fill-2)';
 
 const commonStyle = {
   '& .time': {
@@ -13,7 +13,7 @@ const commonStyle = {
   '& h1,  & h2, & h3': {
     position: 'relative',
     fontWeight: 500,
-    color: 'rgb( 29,33,41 )',
+    color: 'var(--soui-neutral-text-5)',
   },
   '& h2': {
     margin: '32px 0 16px;',
@@ -23,7 +23,7 @@ const commonStyle = {
     fontWeight: 500,
   },
   '& p': {
-    color: 'rgb(78,89,105)',
+    color: 'var(--soui-neutral-text-4)',
     fontSize: 14,
   },
   '& pre[class^=language-]': {
@@ -31,21 +31,30 @@ const commonStyle = {
   },
   '& table': {
     width: '100%',
-    border: '1px solid #e5e6e8',
-    textAlign: 'center',
+    border: '1px solid var(--soui-neutral-border-1)',
+    textAlign: 'left',
     borderRadius: '4px',
     borderSpacing: 0,
 
+    '& th,td': {
+      borderRight: '1px solid var(--soui-neutral-border-1)',
+      borderBottom: '1px solid var(--soui-neutral-border-1)',
+    },
+    '& th:last-child,td:last-child': {
+      borderRight: '0px',
+    },
+    '& tbody :last-child td': {
+      borderBottom: '0px',
+    },
     '& th': {
-      backgroundColor: 'rgb( 242,243,245 )',
+      backgroundColor: 'var(--soui-neutral-fill-2)',
       padding: '8px',
-      borderRight: '1px solid #e5e6e8',
     },
     '& th, & td': { padding: 10 },
   },
   '& li': {
     lineHeight: 2,
-    color: 'rgb( 78,89,105 )',
+    color: 'var(--soui-neutral-text-4)',
   },
   '& ul': {
     paddingLeft: '24px',
@@ -88,7 +97,7 @@ export const useStyles = createUseStyles(
       padding: 0,
     },
     head: {
-      borderBottom: '1px solid rgb(229, 230, 235)',
+      borderBottom: '1px solid var(--soui-neutral-border-1)',
       paddingBottom: 20,
       ...commonStyle,
     },
@@ -111,11 +120,12 @@ export const useStyles = createUseStyles(
       },
       borderRadius: '2px',
       margin: '0 4px',
-      color: 'rgb( 78,89,105 )',
-      border: `1px solid ${codeBg}!important`,
-      backgroundColor: codeBg,
+      color: 'var(--soui-neutral-text-4)',
+      border: `1px solid var(--soui-neutral-fill-3) !important`,
+      backgroundColor: 'var(--soui-neutral-fill-2)',
     },
     code: {
+      padding: 14,
       borderRadius: '4px!important',
       border: `1px solid ${codeBg}!important`,
       backgroundColor: `${codeBg}!important`,

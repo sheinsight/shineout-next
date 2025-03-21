@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { util, KeygenResult } from '@sheinx/hooks';
 import { getLocale, useConfig } from '../config';
@@ -26,7 +27,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     loading,
     listStyle,
     listClassName,
-    listHeight = 180,
+    listHeight: listHeightProp = 180,
     lineHeight: lineHeightProp,
     listType,
     rowsInView = 20,
@@ -54,9 +55,22 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   });
   const listClass = classNames(styles.list, listClassName);
 
+  const [addonHeight, setAddonHeight] = useState(0);
+  const listContainerRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    if(!listContainerRef.current) return;
+
+    const $list = listContainerRef.current.querySelector(`.${styles.list}`);
+    const containerBottom = listContainerRef.current.getBoundingClientRect().bottom;
+    const listBottom = $list?.getBoundingClientRect().bottom || containerBottom;
+    if(containerBottom - listBottom > 1) {
+      setAddonHeight(containerBottom - listBottom - 1);
+    }
+  },[]);
+  const listHeight = listHeightProp + addonHeight;
+
   const getLineHeight = () => {
     if (lineHeightProp) {
-      // console.log('lineHeightProp', lineHeightProp);
       return lineHeightProp;
     }
     if (size === 'small') {
@@ -101,7 +115,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
             disabled: disabled === true,
             onFilter: handleFilter,
             placeholder: getLocale(locale, 'search'),
-            isSrouce: listType === 'source',
+            isSource: listType === 'source',
           })}
         </div>
       );
@@ -188,6 +202,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         height={listHeight}
         rowsInView={rowsInView}
         renderItem={renderItem}
+        paddingY={3}
       ></VirtualList>
     );
   };
@@ -200,7 +215,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   };
 
   return (
-    <div className={rootClass}>
+    <div className={rootClass} ref={listContainerRef}>
       {renderHeader()}
       <Spin
         className={styles.spinContainer}

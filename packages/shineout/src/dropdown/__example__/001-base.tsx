@@ -18,8 +18,12 @@ const data: DropdownItem[] = [
         url: 'https://google.com',
       },
       {
-        content: 'Disabled',
+        content: <div style={{cursor: 'not-allowed'}}>Disabled</div>,
         disabled: true,
+        children: [
+          { content: 'Child 1' },
+          { content: 'Child 2' },
+        ],
       },
     ],
   },

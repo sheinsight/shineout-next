@@ -18,13 +18,9 @@ interface DataItem {
 export default () => {
   const data: DataItem[] = createNestedArray([5, 1, 1]);
 
-  const renderItem: TreeProps['renderItem'] = (node) => {
-    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
-  };
+  const renderItem: TreeProps['renderItem'] = (node) => `node ${node.id}`;
 
   return (
-    <div>
-      <Tree line={false} highlight data={data} keygen='id' renderItem={renderItem}></Tree>
-    </div>
+    <Tree line={false} highlight data={data} keygen='id' renderItem={renderItem} />
   );
 };

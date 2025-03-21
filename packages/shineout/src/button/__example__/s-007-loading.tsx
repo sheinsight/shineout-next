@@ -6,7 +6,7 @@
  */
 
 import { useState } from 'react';
-import { Button, Gap, Icon, Message } from 'shineout';
+import { Button, Gap, Icon, Message, icons } from 'shineout';
 
 const url = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 
@@ -19,10 +19,6 @@ const prefixIconStyle = {
   height: 12,
 };
 
-const suffixIconStyle = {
-  marginLeft: 4,
-  fontSize: 12,
-};
 
 export default () => {
   const [loadings, setLoadings] = useState([false, false, false, false]);
@@ -55,7 +51,9 @@ export default () => {
         <Button type='primary' loading>
           <ShineoutIcon name='trash-o' style={prefixIconStyle} />
           Delete
-          <ShineoutIcon name='info' style={suffixIconStyle} />
+          <div style={{ width: 14, display: 'flex', marginLeft: 4 }}>
+            {icons.HelpCircleOutline}
+          </div>
         </Button>
       </Gap>
 
@@ -76,7 +74,9 @@ export default () => {
         <Button type='primary' loading={loadings[3]} onClick={() => handleMockLoading(3)}>
           <ShineoutIcon name='trash-o' style={prefixIconStyle} />
           Delete
-          <ShineoutIcon name='info' style={suffixIconStyle} />
+          <div style={{ width: 14, display: 'flex', marginLeft: 4 }}>
+            {icons.HelpCircleOutline}
+          </div>
         </Button>
       </Gap>
     </Gap>

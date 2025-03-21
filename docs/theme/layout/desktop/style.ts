@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 const navHeight = 59;
+const menuWidth = 259;
 
 export default createUseStyles(
   {
@@ -18,16 +19,19 @@ export default createUseStyles(
       },
     },
     desktop: {
-      position: 'absolute',
-      left: 260,
-      right: 0,
-      top: navHeight,
-      height: `calc(100% - ${navHeight}px)`,
+      position: 'relative',
+      flex: 1,
+      height: `calc(100vh - ${navHeight}px)`,
       overflowY: 'auto',
       overflowX: 'hidden',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
       'body.rtl &': {
         left: 0,
+<<<<<<< HEAD
         right: 260,
+=======
+        right: 0,
+>>>>>>> main
       },
     },
     nav: {
@@ -36,8 +40,8 @@ export default createUseStyles(
       height: navHeight,
       width: '100%',
       display: 'flex',
-      backgroundColor: '#ffffff',
-      borderBottom: '1px solid rgb(229,230,235)',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      borderBottom: '1px solid var(--soui-neutral-border-1)',
       zIndex: 2,
       '& .left-nav': {
         display: 'flex',
@@ -51,7 +55,7 @@ export default createUseStyles(
           width: 1,
           height: 24,
           top: 18,
-          backgroundColor: '#E8EBF0',
+          backgroundColor: 'var(--soui-neutral-border-1)',
         },
       },
       '& .logo': {
@@ -98,24 +102,27 @@ export default createUseStyles(
       },
     },
 
-    menu: {
+    menuContainer: {
       position: 'sticky',
-      overflow: 'auto',
-      float: 'left',
-      top: 60,
-      width: 259,
-      height: 'calc(100% - 60px)',
-      borderRight: '1px solid rgba(232, 235, 240, 1)',
+      top: 0,
+      borderRight: '1px solid var(--soui-neutral-border-1)',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      boxSizing: 'border-box',
+      transition: '0.2s',
+    },
+
+    menu: {
       listStyle: 'none',
       margin: 0,
-      fontSize: 14,
       padding: '0 16px',
-      paddingBottom: 16,
-      boxSizing: 'border-box',
+      fontSize: 14,
+      width: menuWidth,
+      height: `calc(100vh - ${navHeight}px)`,
+      overflow: 'auto',
       'body.rtl &': {
         float: 'right',
         borderRight: 'none',
-        borderLeft: '1px solid rgba(232, 235, 240, 1)',
+        borderLeft: '1px solid var(--soui-neutral-border-1)',
       },
       '& .group': {
         height: 40,
@@ -123,7 +130,7 @@ export default createUseStyles(
         fontSize: 12,
         lineHeight: '40px',
         marginTop: 24,
-        color: '#666C7C',
+        color: 'var(--soui-neutral-text-4)',
         '&.first': {
           marginTop: 12,
         },
@@ -135,7 +142,7 @@ export default createUseStyles(
         display: 'flex',
         alignItems: 'center',
         fontSize: 12,
-        color: '#666C7C',
+        color: 'var(--soui-neutral-text-4)',
         marginTop: 12,
         justifyContent: 'space-between',
         '& span': {
@@ -156,7 +163,7 @@ export default createUseStyles(
         margin: 0,
         padding: 0,
         fontSize: 14,
-        color: '#141737',
+        color: 'var(--soui-neutral-text-5)',
         '& li': {
           display: 'flex',
           justifyContent: 'space-between',
@@ -169,7 +176,7 @@ export default createUseStyles(
           marginTop: 4,
           marginBottom: 4,
           '&.active': {
-            color: '#197AFA',
+            color: 'var(--soui-brand-6)',
             fontWeight: 500,
             backgroundColor:
               'var(--soui-menu-item-active-background-color,var(--soui-brand-1,#E9F5FE))',
@@ -179,7 +186,7 @@ export default createUseStyles(
             },
           },
           '&:hover': {
-            backgroundColor: '#F4F5F8',
+            backgroundColor: 'var(--soui-neutral-fill-2)',
           },
         },
         '& li:last-child': {
@@ -213,7 +220,7 @@ export default createUseStyles(
       '& a': {
         position: 'relative',
         display: 'block',
-        color: 'rgba(20, 23, 55, 1)',
+        color: 'var(--soui-neutral-text-5)',
         textDecoration: 'none',
         minHeight: 28,
         lineHeight: '20px',
@@ -225,7 +232,7 @@ export default createUseStyles(
         whiteSpace: 'wrap',
         // overflow: 'hidden',
         '&.active': {
-          color: '#197AFA',
+          color: 'var(--soui-brand-6)',
           '&::before': {
             content: '" "',
             position: 'absolute',
@@ -234,7 +241,7 @@ export default createUseStyles(
             top: 0,
             width: 1,
             height: '100%',
-            backgroundColor: '#197AFA',
+            backgroundColor: 'var(--soui-brand-6)',
             'body.rtl &': {
               left: 'auto',
               right: 0,
@@ -242,7 +249,7 @@ export default createUseStyles(
           },
         },
         '&:hover': {
-          color: '#197AFA',
+          color: 'var(--soui-brand-6)',
         },
         '&::after': {
           content: '" "',
@@ -251,7 +258,7 @@ export default createUseStyles(
           top: 0,
           width: 1,
           height: '100%',
-          backgroundColor: '#E8EBF0',
+          backgroundColor: 'var(--soui-neutral-border-1)',
           'body.rtl &': {
             left: 'auto',
             right: 0,
@@ -278,7 +285,7 @@ export default createUseStyles(
       width: '100%',
       height: 500,
       marginTop: 100,
-      background: '#f7f8fa',
+      background: 'var(--soui-neutral-fill-2)',
     },
 
     customScrollbar: {
@@ -290,9 +297,150 @@ export default createUseStyles(
         border: '4px solid transparent',
         backgroundClip: 'padding-box',
         borderRadius: 7,
-        backgroundColor: 'rgba(232, 235, 240, 1)',
+        backgroundColor: 'var(--soui-neutral-fill-3)',
       },
     },
+<<<<<<< HEAD
+=======
+
+    menuFloat: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      zIndex: 1050 * 2,
+      'body.rtl &': {
+        right: 0,
+        left: 'auto',
+      },
+      '$menuContainer$collapsed&': {
+        width: 0,
+        padding: 0,
+        whiteSpace: 'nowrap',
+        overflow: 'visible',
+        '& $menu': {
+          width: 0,
+          padding: 0,
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+        },
+        '& $floatMenuButtonContainer:after': {
+          display: 'none',
+        }
+      },
+
+      '$menuContainer$collapsed& $menu': {
+        width: 0,
+        whiteSpace: 'nowrap',
+        overflow: 'visible',
+      },
+
+      '& + $desktop': {
+        left: 0,
+      }
+    },
+
+    collapsed: {},
+
+    floatMenuButtonContainer: {
+      position: 'absolute',
+      top: 100,
+      right: -1,
+      transform: 'translateX(100%)',
+      "&:after": {
+        content: '""',
+        position: 'absolute',
+        top: -100,
+        bottom: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: 'var(--soui-modal-mask-background,var(--soui-rgba-2-11-24-0-3-,rgba(2, 11, 24, 0.3)))',
+        display: 'block',
+      },
+      'body.rtl &': {
+        left: 0,
+        right: 'auto',
+        transform: 'translateX(-100%)',
+        '&:after': {
+          left: 'auto',
+          right: 0,
+        }
+      }
+    },
+    floatMenuButton: {
+      position: 'relative',
+      zIndex: 1,
+      padding: 8,
+      cursor: 'pointer',
+      color: 'var(--soui-neutral-text-5)',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      boxShadow: '1px 0 4px 0 rgba(0, 0, 0, 0.1)',
+      '&:hover': {
+        boxShadow: '1px 0 8px 0 rgba(0, 0, 0, 0.2)',
+      },
+      '& > svg': {
+        display: 'block',
+      },
+    },
+
+    floatButton: {
+      position: 'fixed',
+      right: 16,
+      bottom: 40,
+    },
+    floatButtonTarget: {
+      width: 40,
+      height: 40,
+      borderRadius: '50%',
+      boxShadow: 'var(--soui-shadow-2)',
+      bottom: 40,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      cursor: 'pointer',
+      transition: 'all 0.3s',
+      '& svg': {
+        cursor: 'pointer',
+        fill: 'var(--soui-neutral-text-5)',
+      },
+      '&:hover': {
+        boxShadow: 'var(--soui-shadow-3)',
+      },
+    },
+    floatButtonMenu: {
+      opacity: 0,
+      position: 'absolute',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 20,
+      transition: 'all 0.3s',
+    },
+    floatButtonMenuItem: {
+      width: 40,
+      height: 40,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      boxShadow: 'var(--soui-shadow-2)',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      cursor: 'pointer',
+    },
+    floatButtonMenuItemActive: {
+      backgroundColor: 'var(--soui-brand-6)',
+      '& svg': {
+        fill: '#fff',
+      },
+    },
+    floatButtonMenuOpen: {
+      opacity: 1,
+    },
+    floatButtonOpen: {},
+>>>>>>> main
   },
   { name: 'doc-layout' },
 );

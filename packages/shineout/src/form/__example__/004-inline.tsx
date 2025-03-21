@@ -8,12 +8,12 @@ import React from 'react';
 import { Form, Input } from 'shineout';
 
 const App: React.FC = () => (
-  <Form inline labelWidth={65}>
-    <Form.Item label='Email' style={{ marginBottom: 0, marginRight: 24 }}>
-      <Input name='email' clearable />
+  <Form inline>
+    <Form.Item label='Email' labelWidth={65}>
+      <Input name='email' placeholder='Email' clearable />
     </Form.Item>
 
-    <Form.Item label='password' style={{ marginBottom: 0, marginRight: 24 }}>
+    <Form.Item label='Password' labelWidth={65}>
       <Input name='password' placeholder='Password' type='password' clearable />
     </Form.Item>
 

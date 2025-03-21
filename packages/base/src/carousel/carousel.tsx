@@ -145,7 +145,7 @@ const Carousel = (props: CarouselProps) => {
           indicatorType === 'circle' && carouselClasses?.indicatorTypeCircle,
           indicatorType === 'number' && carouselClasses?.indicatorTypeNumber,
           indicatorType === 'line' && carouselClasses?.indicatorTypeLine,
-          indicatorType === 'slider' && carouselClasses?.indicatorTypeSlider,
+          indicatorType === 'bar' && carouselClasses?.indicatorTypeBar,
         )}
       >
         {content}

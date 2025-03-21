@@ -42,6 +42,7 @@ const carouselTokenExtraValue = {
     wrapper: { height: 'Size-20' },
     circle: { width: 'Size-3', gap: 'Spacing-8' },
     line: { width: 'Size-6', height: 'Size-2', gap: 'Spacing-4' },
+    bar: { width: 'Size-12', height: 'Size-2' },
     arrow: { size: 'Size-8', color: 'Neutral-fill-4', hover: { color: 'Neutral-fill-1' } },
     number: { color: 'Neutral-fill-1', font: { size: 'Font-14' } },
     outer: {

@@ -136,13 +136,13 @@ export interface AlertTokens {
   alertTitleFontWeight: string;
   /**
    * @type {string}
-   * @token Spacing-4
+   * @token Spacing-8
    * @description 提示框标题模式外边距（垂直方向）
    */
   alertTitleMarginY: string;
   /**
    * @type {string}
-   * @token Size-10
+   * @token Size-8
    * @description 提示框标题模式图标宽度
    */
   alertTitleIconWidth: string;
@@ -164,6 +164,12 @@ export interface AlertTokens {
    * @description 提示框关闭icon鼠标移入时的颜色
    */
   alertCloseHoverColor: string;
+  /**
+   * @type {string}
+   * @token Size-8
+   * @description 提示框关闭icon字号
+   */
+  alertCloseSize: string;
   /**
    * @type {string}
    * @token Neutral-fill-2

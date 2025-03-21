@@ -121,6 +121,10 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
     '& + $caret': {
       marginLeft: token.dropdownCaretMarginLeft,
     },
+    '& > svg': {
+      display: 'block',
+      margin: '0 auto'
+    }
   },
   button: {
     '$wrapper &': {
@@ -131,7 +135,12 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
       display: 'flex',
     },
   },
-  itemWrapper: {},
+  itemWrapper: {
+    marginBottom: 2,
+    '&:last-child': {
+      marginBottom: 0,
+    },
+  },
   item: {
     display: 'block',
     borderRadius: token.dropdownOptionBorderRadius,

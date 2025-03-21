@@ -62,6 +62,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       verticalAlign: 'top',
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
+        zIndex: 1,
         borderColor: token.hoverBorderColor,
         [`&:not($${name}Disabled):not($${name}Error)`]: {
           backgroundColor: token.hoverBackgroundColor,
@@ -72,12 +73,37 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         borderRadius: 0,
         boxShadow: 'none',
         backgroundColor: 'transparent',
-        flex: 1,
+        // flex: 1,
         minWidth: 0,
       },
       '[data-soui-role="input-group"] [data-soui-input-border] + &': {
         borderLeftWidth: '1px',
       },
+      '[data-soui-role="input-group-seperate"] &&&, [data-soui-role="input-group-seperate"] &&&:hover': {
+        borderRadius: 0,
+        flexShrink: 0,
+        width: 'auto',
+        'margin-left': `-1px`,
+
+        '&:first-child': {
+          marginLeft: 0,
+          borderTopLeftRadius: token.borderRadius,
+          borderBottomLeftRadius: token.borderRadius,
+        },
+        '&:last-child': {
+          borderTopRightRadius: token.borderRadius,
+          borderBottomRightRadius: token.borderRadius,
+        },
+      },
+
+      '[dir=rtl][data-soui-role="input-group-seperate"] &&&, [dir=rtl][data-soui-role="input-group-seperate"] &&&:hover': {
+        '&:first-child': {
+          borderRadius: `0 ${token.borderRadius} ${token.borderRadius} 0`,
+        },
+        '&:last-child': {
+          borderRadius: `${token.borderRadius} 0 0 ${token.borderRadius}`,
+        },
+      }
     },
     [`${name}PaddingBox`]: {
       borderRadius: token.borderRadius,
@@ -137,6 +163,13 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       borderColor: token.focusBorderColor,
       boxShadow: `0 0 0 2px ${token.focusShadow}`,
       background: token.focusBackgroundColor,
+      '&[data-soui-role="input-group-seperate"]': {
+        boxShadow: 'none',
+      },
+
+      '[data-soui-role="input-group-seperate"] &': {
+        zIndex: 1,
+      },
       '&:hover': {
         borderColor: token.focusBorderColor,
       },

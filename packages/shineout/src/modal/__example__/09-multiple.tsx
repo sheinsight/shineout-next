@@ -33,9 +33,16 @@ const App: React.FC = () => {
   const show = (v: number) => setCurrent(v);
 
   const footer = (i: number) => (
-    <Button mode='outline' onClick={() => show(i)}>
-      Close
+    <>
+    <Button mode='outline' onClick={() => show(0)}>
+      Close All
     </Button>
+    {i < 10 && (
+      <Button type='primary' onClick={() => show(i + 1)}>
+        Next Level
+      </Button>
+    )}
+    </>
   );
 
   return (
@@ -48,8 +55,7 @@ const App: React.FC = () => {
         <Modal
           key={i}
           width={size[i][0]}
-          height={size[i][1]}
-          footer={footer(i - 1)}
+          footer={footer(i)}
           visible={current >= i}
           title={`Modal Title ${i}`}
           onClose={() => {
@@ -57,21 +63,7 @@ const App: React.FC = () => {
             show(i - 1);
           }}
         >
-          {`Level ${i}`}
-          .
-          <br />
-          {i < 10 && (
-            <Fragment>
-              <Button mode='text' type='primary' onClick={() => show(i + 1)}>
-                Next level
-              </Button>
-              <br />
-              <br />
-              <Button mode='text' type='primary' onClick={() => show(0)}>
-                Close all
-              </Button>
-            </Fragment>
-          )}
+          <p>{`Level ${i}`}. This is show information.</p>
         </Modal>
       ))}
     </div>

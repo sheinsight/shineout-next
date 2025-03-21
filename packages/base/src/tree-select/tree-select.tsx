@@ -46,6 +46,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     multiple,
     mode = 1,
     line = false,
+    reFocus = false,
     innerTitle,
     clearable = true,
     border = true,
@@ -59,6 +60,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     style,
     width,
     height = 250,
+    virtual,
     childrenKey,
     keygen,
     loader,
@@ -98,6 +100,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     cachedMap: new Map(),
   });
   const [focused, setFocused] = useState(false);
+  const [virtualExpanded, setVirtualExpanded] = useState<KeygenResult[]>([]);
 
   const { value, onChange } = useTreeSelect({
     value: valueProp,
@@ -142,21 +145,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   });
 
   const controlExpanded = 'expanded' in props || expanded?.length ? expanded : undefined;
-  const { datum, onExpand: onExpandTree } = useTree({
-    mode,
-    value,
-    data,
-    unmatch,
-    disabled,
-    active: multiple ? undefined : value[0],
-    childrenKey: childrenKey,
-    keygen,
-    onExpand,
-    expanded: controlExpanded,
-    defaultExpanded: defaultExpanded,
-    defaultExpandAll: defaultExpandAll,
-    isControlled: controlExpanded !== undefined,
-  });
 
   const renderMoreIcon = () => {
     return Icons.treeSelect.More;
@@ -177,6 +165,30 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     expanded,
     rawData: rawData!,
     onFilter,
+    // rawDatum: datum,
+  });
+
+  const handleExpanded = (id: KeygenResult[]) => {
+    setVirtualExpanded(id);
+    onExpand?.(id);
+  };
+
+  const { datum, expanded: unControlExpanded } = useTree({
+    mode,
+    value,
+    data: data,
+    unmatch,
+    tiledData,
+    virtual,
+    disabled,
+    active: multiple ? undefined : value[0],
+    childrenKey: childrenKey,
+    keygen,
+    onExpand: handleExpanded,
+    expanded: controlExpanded,
+    defaultExpanded: defaultExpanded,
+    defaultExpandAll: defaultExpandAll,
+    isControlled: controlExpanded !== undefined,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {
@@ -204,6 +216,14 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     trigger: 'click',
     position: positionProp,
   });
+
+  const [hadOpened, setHadOpened] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setHadOpened(true);
+    }
+  }, [open]);
 
   const tipNode = useTip({
     popover: props.popover,
@@ -437,6 +457,12 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onTiledFilter?.(trim ? text.trim() : text);
   };
 
+  useEffect(() => {
+    if (virtual && expanded) {
+      setVirtualExpanded(expanded);
+    }
+  }, [expanded]);
+
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
     if (disabled === true || datum?.isDisabled(id)) return;
     const currentData = datum.getDataById(id) as DataItem;
@@ -468,6 +494,12 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const handleTreeChange = (_value: any, id: KeygenResult) => {
     const item = datum.getDataById(id) as DataItem;
     handleChange(item, id);
+
+    const shouldFocus = showInput && reFocus;
+
+    if (multiple && !shouldFocus) {
+      inputRef?.current?.select();
+    }
   };
 
   const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult) => {
@@ -517,6 +549,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           value={getResultValue() as any}
           data={data}
           focus={open}
+          reFocus={reFocus}
           keygen={keygen as any}
           disabled={disabled}
           compressed={compressed}
@@ -535,6 +568,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           filterText={filterText}
           onFilter={handleFilter}
           onRef={inputRef}
+          inputRef={inputRef}
           checkUnMatched={checkUnMatched}
           onClearCreatedData={onClearCreatedData}
           getDataByValues={getResultByValue}
@@ -608,29 +642,37 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       treeProps.expanded = expanded;
     }
 
+    const style = { maxHeight: height };
+
     return (
-      <div className={classNames(styles.tree, styles.treeWrapper)} style={{ maxHeight: height }}>
+      <div className={classNames(styles.tree, styles.treeWrapper)} style={style}>
         <Tree
+          rootStyle={{ padding: '0 4px' }}
           jssStyle={jssStyle}
           renderItem={renderItem}
           {...treeProps}
+          virtual={virtual}
           childrenKey={props.childrenKey}
           line={line}
+          ignoreSetFlat
           mode={mode}
+          height={height}
           data={tiledData}
+          tiledData={tiledData}
           keygen={keygen}
           unmatch={unmatch}
           value={value}
           highlight={!multiple}
           loader={loader}
-          onExpand={onExpandTree}
-          expanded={controlExpanded}
+          onExpand={handleExpanded}
+          expanded={virtual ? virtualExpanded : controlExpanded || unControlExpanded}
           defaultExpandAll={defaultExpandAll}
           expandIcons={tiledExpandIcons}
           disabled={disabled}
           parentClickExpand={parentClickExpand}
           contentClass={getContentClass}
           datum={datum}
+          actionOnClick={props.actionOnClick}
         ></Tree>
       </div>
     );
@@ -661,29 +703,31 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     >
       {tipNode}
       {renderResult()}
-      <AbsoluteList
-        adjust={adjust}
-        focus={open}
-        fixedWidth='min'
-        lazy={false}
-        absolute={props.absolute}
-        zIndex={props.zIndex}
-        position={position}
-        popupGap={4}
-        popupElRef={popupRef}
-        parentElRef={targetRef}
-      >
-        <AnimationList
-          onRef={popupRef}
-          show={open}
-          className={classNames(styles?.pickerWrapper)}
-          display={'block'}
-          type='scale-y'
-          duration={'fast'}
+      {hadOpened && (
+        <AbsoluteList
+          adjust={adjust}
+          focus={open}
+          fixedWidth='min'
+          lazy={false}
+          absolute={props.absolute}
+          zIndex={props.zIndex}
+          position={position}
+          popupGap={4}
+          popupElRef={popupRef}
+          parentElRef={targetRef}
         >
-          {renderList()}
-        </AnimationList>
-      </AbsoluteList>
+          <AnimationList
+            onRef={popupRef}
+            show={open}
+            className={classNames(styles?.pickerWrapper)}
+            display={'block'}
+            type='scale-y'
+            duration={'fast'}
+          >
+            {renderList()}
+          </AnimationList>
+        </AbsoluteList>
+      )}
     </div>
   );
 };

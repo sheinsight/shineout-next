@@ -5,7 +5,7 @@
  *    -- Set the rowClickAttr to trigger an onRowClick event for an element
  */
 import React, { useState } from 'react';
-import { Table, Radio, Button, TYPE } from 'shineout';
+import { Table, Radio, Gap, Link, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface TableRowData {
@@ -34,15 +34,15 @@ const columns: TableColumnItem[] = [
   {
     title: 'Operation',
     render: () => (
-      <span>
-        <Button data-info size='small'>
+      <Gap>
+        <Link data-info size='small'>
           <span data-info>info</span>
-        </Button>
+        </Link>
         &nbsp;
-        <Button data-call type='primary' size='small'>
+        <Link data-call type='primary' size='small'>
           <span data-call>call</span>
-        </Button>
-      </span>
+        </Link>
+      </Gap>
     ),
   },
 ];

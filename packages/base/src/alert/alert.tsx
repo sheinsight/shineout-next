@@ -19,6 +19,7 @@ const Alert = (props: AlertProps) => {
     children,
     icon,
     title,
+    titleStyle,
     iconSize,
     closable,
     hideClose,
@@ -44,7 +45,7 @@ const Alert = (props: AlertProps) => {
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.rootClass, alertStyle.alert, {
     [alertStyle[type]]: true,
-    [alertStyle.widthTitle]: title,
+    [alertStyle.withTitle]: title,
     [alertStyle.pending]: dismiss === PENDING,
     [alertStyle.noBordered]: bordered === false,
   });
@@ -75,7 +76,7 @@ const Alert = (props: AlertProps) => {
   };
 
   const renderIcon = () => {
-    const style: { width?: number } = {};
+    const style: React.CSSProperties = titleStyle || {}
     if (iconSize) {
       style.width = iconSize;
     }
@@ -91,7 +92,7 @@ const Alert = (props: AlertProps) => {
   };
 
   const renderTitle = () => {
-    return <div className={alertStyle.title}>{title}</div>;
+    return <div className={alertStyle.title} style={titleStyle}>{title}</div>;
   };
 
   const renderClose = () => {

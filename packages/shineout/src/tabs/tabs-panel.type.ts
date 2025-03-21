@@ -16,4 +16,5 @@ export type TabsPanelProps = Omit<
   | 'onCollapsible'
   | 'setTabs'
   | 'tabs'
+  | 'index'
 >;

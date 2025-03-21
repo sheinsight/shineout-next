@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
 import { useCheckElementPosition } from './check-position'
+import { useCheckElementBorderWidth } from './check-border';
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { getCurrentCSSZoom } from '../../utils';
@@ -48,6 +49,7 @@ export interface PositionStyleConfig {
   fixedWidth?: boolean | 'min';
   updateKey?: number | string;
   adjust?: boolean;
+  offset?: [number, number];
 }
 
 const hideStyle: React.CSSProperties = {
@@ -69,6 +71,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     scrollElRef,
     updateKey,
     adjust,
+    offset,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
@@ -83,6 +86,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   });
 
   const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
+
+  const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal'});
 
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
@@ -172,7 +177,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       let overRight = 0;
       let overLeft = 0;
       if (h === 'left') {
-        style.left = rect.left - containerRect.left + containerScroll.left;
+        style.left = rect.left - containerRect.left + containerScroll.left - (offset ? offset[0] : 0);
         style.transform = '';
         arrayStyle.left = `8px`;
         if (adjust) {
@@ -183,7 +188,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         }
       } else if (h === 'right') {
         style.right =
-          containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left;
+          containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left - (offset ? offset[0] : 0);
 
         style.left = 'auto';
         style.transform = '';
@@ -244,11 +249,11 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     } else if (horizontalPosition.includes(targetPosition)) {
       const [h, v] = targetPosition.split('-');
       if (v === 'top') {
-        style.top = rect.top - containerRect.top + containerScroll.top;
+        style.top = rect.top - containerRect.top + containerScroll.top - (offset ? offset[1] : 0);
         style.transform = '';
         arrayStyle.top = `8px`;
       } else if (v === 'bottom') {
-        style.top = rect.bottom - containerRect.top + containerScroll.top;
+        style.top = rect.bottom - containerRect.top + containerScroll.top + (offset ? offset[1] : 0);
         arrayStyle.bottom = `8px`;
         style.transform = 'translateY(-100%)';
       } else {
@@ -261,10 +266,12 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       }
       if (h === 'right') {
         style.left = rect.right - containerRect.left + containerScroll.left + popupGap;
+        arrayStyle.left = '0px';
+        arrayStyle.right = 'auto';
       } else {
-        style.left = rect.left - containerRect.left + containerScroll.left - popupGap;
-        arrayStyle.right = `0px`;
-        style.transform += ' translateX(-100%)';
+        style.right = containerRect.right - rect.left;
+        arrayStyle.right = '0px';
+        arrayStyle.left = 'auto';
       }
     } else if (position === 'cover') {
       style.top = rect.top - containerRect.top + containerScroll.top;
@@ -276,7 +283,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getAbsoluteStyle = (position: string) => {
     if (!parentElRef.current) return { style: hideStyle };
     const rect = context.parentRect;
-    if (scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
+    if (!show && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
         rect.bottom < visibleRect.top ||
@@ -313,15 +320,17 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     const { position, absolute } = config || {};
     if (!position || !show || !parentElRef.current) return { newStyle: style };
     context.parentRect = parentElRef.current.getBoundingClientRect();
+
+    let realPosition = position
     if (adjust) {
       const popupInfo = getPopUpInfo(context.parentRect);
       context.popUpHeight = popupInfo.height;
       context.popUpWidth = popupInfo.width;
+      realPosition = adjustPosition(position);
     }
 
-    const realPosition = adjust ? adjustPosition(position) : position;
     if (!absolute) {
-      newStyle = getPositionStyle(realPosition, { popupGap, zIndex, fixedWidth });
+      newStyle = getPositionStyle(realPosition, { popupGap, zIndex, fixedWidth, parentBorderWidth: parentElBorderWidth });
     } else {
       const { style: nextStyle, arrayStyle: nextArrayStyle } = getAbsoluteStyle(realPosition)!;
       newStyle = nextStyle;
@@ -330,6 +339,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     // for animation
     if (realPosition.indexOf('top') === 0) {
       newStyle.transformOrigin = 'center bottom';
+    } else if(realPosition.indexOf('bottom') === 0){
+      newStyle.transformOrigin = 'center top';
     }
     return { newStyle, newArrayStyle };
   };

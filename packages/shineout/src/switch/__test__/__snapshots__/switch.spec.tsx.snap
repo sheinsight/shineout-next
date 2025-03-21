@@ -47,7 +47,18 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
     >
       <div
         class="soui-switch-loading"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12.002 1C18.0771 1 23.002 5.92487 23.002 12C23.002 18.0751 18.0771 23 12.002 23C5.92682 23 1.00195 18.0751 1.00195 12C1.00195 11.4477 1.44967 11 2.00195 11C2.55424 11 3.00195 11.4477 3.00195 12C3.00195 16.9706 7.03139 21 12.002 21C16.9725 21 21.002 16.9706 21.002 12C21.002 7.02943 16.9725 3 12.002 3C11.4497 3 11.002 2.55228 11.002 2C11.002 1.44772 11.4497 1 12.002 1Z"
+          />
+        </svg>
+      </div>
     </div>
     <div
       class="soui-switch-content"
@@ -74,7 +85,18 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
     >
       <div
         class="soui-switch-loading"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12.002 1C18.0771 1 23.002 5.92487 23.002 12C23.002 18.0751 18.0771 23 12.002 23C5.92682 23 1.00195 18.0751 1.00195 12C1.00195 11.4477 1.44967 11 2.00195 11C2.55424 11 3.00195 11.4477 3.00195 12C3.00195 16.9706 7.03139 21 12.002 21C16.9725 21 21.002 16.9706 21.002 12C21.002 7.02943 16.9725 3 12.002 3C11.4497 3 11.002 2.55228 11.002 2C11.002 1.44772 11.4497 1 12.002 1Z"
+          />
+        </svg>
+      </div>
     </div>
     <div
       class="soui-switch-content"

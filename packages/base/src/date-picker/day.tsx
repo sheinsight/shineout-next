@@ -138,7 +138,9 @@ const Day = (props: DayProps) => {
   };
 
   const renderFooter = () => {
-    const showLeft = props.type === 'datetime' && (props.rangeDate?.[0] || props.rangeDate?.[1]);
+    const showLeft =
+      (props.type === 'datetime' || props.type === 'date') &&
+      (props.rangeDate?.[0] || props.rangeDate?.[1]);
 
     const timeStr = func.getTimeStr();
     if (!showLeft && !props.showSelNow) return null;
@@ -152,6 +154,9 @@ const Day = (props: DayProps) => {
     }
 
     const showNeedConfirm = props.needConfirm && !props.range;
+
+    if(props.type !== 'datetime' && props.type !== 'date' && !showNeedConfirm) return null;
+
     return (
       <div
         className={styles?.pickerFooter}
@@ -181,15 +186,14 @@ const Day = (props: DayProps) => {
         )}
         {props.showSelNow && (
           <div
-            className={styles?.pickerFooterNow}
+            className={classNames(styles?.pickerFooterNow)}
             style={{
               marginRight: showNeedConfirm ? 'auto' : undefined,
-              paddingLeft: showNeedConfirm ? 6 : undefined,
+              paddingLeft: showNeedConfirm ? (props.type === 'date' ? 22 : 6) : undefined,
             }}
           >
-            {props.showSelNow && props.type === 'date' && (
+            {props.type === 'date' && (
               <Link
-                size='small'
                 type='primary'
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
@@ -198,9 +202,8 @@ const Day = (props: DayProps) => {
                 {getLocale(locale, 'now')}
               </Link>
             )}
-            {props.showSelNow && props.type === 'datetime' && (
+            {props.type === 'datetime' && (
               <Link
-                size='small'
                 type='primary'
                 jssStyle={jssStyle}
                 className={styles?.pickerFooterBtn}
@@ -245,7 +248,7 @@ const Day = (props: DayProps) => {
           >
             {currentYear}
           </span>
-          <i>-</i>
+          <strong>-</strong>
           <span
             className={styles?.pickerHeaderInfo}
             onClick={() => {

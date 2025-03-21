@@ -92,7 +92,7 @@ const menuTokenExtraValue = {
   dark: {
     font: { color: 'Neutral-text-1' },
     item: {
-      background: { color: 'Neutral-fill-10' },
+      background: { color: 'Neutral-fill-9' },
       font: { color: 'Neutral-text-1' },
       hover: {
         background: { color: 'Brand-9' },
@@ -103,11 +103,11 @@ const menuTokenExtraValue = {
         font: { color: 'Neutral-text-1' },
       },
       open: {
-        background: { color: 'Neutral-fill-9' },
+        background: { color: 'Neutral-fill-10' },
         font: { color: 'Neutral-text-1' },
       },
       disabled: {
-        background: { color: 'Neutral-fill-10' },
+        background: { color: 'Neutral-fill-9' },
         font: { color: 'Neutral-text-4' },
       },
       collapse: {

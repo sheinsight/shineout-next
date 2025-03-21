@@ -5,7 +5,7 @@
  *    -- Through use the footer attribute, you can load more functions
  */
 import React, { useState, useEffect } from 'react';
-import { List, Button, TYPE } from 'shineout';
+import { List, Link, Button, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface ListItem {
@@ -75,26 +75,26 @@ const App: React.FC = () => {
         />
       </svg>
       <div style={{ flex: 1, minWidth: 0, margin: '0 12px' }}>
-        <div style={{ fontWeight: 'bold' }}>List Title</div>
+        <div style={{ fontWeight: '500' }}>List Title</div>
         <div>{rowData.position}</div>
       </div>
-      <div>
-        <Button type='primary' mode='text'>
+      <div style={{display: 'flex', gap: 12}}>
+        <Link type='primary'>
           Preview
-        </Button>
-        <Button type='primary' mode='text'>
+        </Link>
+        <Link type='primary'>
           Edit
-        </Button>
-        <Button type='primary' mode='text'>
+        </Link>
+        <Link type='primary'>
           Delete
-        </Button>
+        </Link>
       </div>
     </div>
   );
 
   const renderFooter = () => (
     <div style={style}>
-      <Button loading={loading} onClick={onClick} mode='text' type='primary'>
+      <Button loading={loading} onClick={onClick} type='primary' mode='text'>
         load more
       </Button>
     </div>

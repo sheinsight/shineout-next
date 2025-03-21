@@ -125,6 +125,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
         paddingLeft: token.treeSelectLargeOptionInnerPaddingX,
         fontSize: token.treeSelectLargeFontSize,
       },
+      '& $arrowIcon': {
+        width: token.treeSelectLargeFontSize,
+      },
       '& $clearIcon': {
         right: token.treeSelectLargePaddingX,
       },
@@ -150,10 +153,12 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     [getTokenName('treeFontColor')]: token.treeSelectOptionFontColor,
     [getTokenName('treeContentHoverFontColor')]: token.treeSelectContentHoverFontColor,
     [getTokenName('treeContentHoverBackgroundColor')]: token.treeSelectContentHoverBackgroundColor,
-    [getTokenName('treeContentActiveBackgroundColor')]: token.treeSelectContentActiveBackgroundColor,
+    [getTokenName('treeContentActiveBackgroundColor')]:
+      token.treeSelectContentActiveBackgroundColor,
     [getTokenName('treeContentActiveFontColor')]: token.treeSelectContentActiveFontColor,
     [getTokenName('treeContentDisabledFontColor')]: token.treeSelectContentDisabledFontColor,
-    [getTokenName('treeContentDisabledBackgroundColor')]: token.treeSelectContentDisabledBackgroundColor,
+    [getTokenName('treeContentDisabledBackgroundColor')]:
+      token.treeSelectContentDisabledBackgroundColor,
   },
   wrapperEmpty: {},
   wrapperOpen: {},
@@ -293,6 +298,11 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     transformOrigin: '0 0',
     width: 'max-content',
     maxWidth: '640px',
+    cursor: 'initial',
+
+    '& $tree': {
+      overscrollBehavior: 'none'
+    },
   },
   iconWrapper: {
     display: 'flex',
@@ -306,6 +316,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     lineHeight: 0,
     color: token.treeSelectClearColor,
     verticalAlign: 'middle',
+    '&:hover svg': {
+      color: token.treeSelectClearHoverColor,
+    },
   },
   arrowIcon: {
     display: 'inline-block',
@@ -314,6 +327,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     lineHeight: 0,
     color: token.treeSelectIconColor,
     transition: 'transform 0.3s',
+    '$wrapperDisabled &': {
+      color: token.treeSelectIconDisabledColor,
+    },
   },
   arrowIconOpen: {
     transform: 'rotate(180deg)',
@@ -372,7 +388,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     paddingBottom: 3,
   },
   tree: {
-    padding: 4,
+    // padding: 4,
     overflow: 'auto',
   },
   treeOption: {
@@ -460,11 +476,11 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     // },
   },
   optionActive: {
-    color: token.treeSelectOptionActiveColor,
-    backgroundColor: token.treeSelectOptionActiveBackgroundColor,
-    '&>div': {
-      color: token.treeSelectOptionActiveColor,
-    },
+    // color: token.treeSelectOptionActiveColor,
+    // backgroundColor: token.treeSelectOptionActiveBackgroundColor,
+    // '&>div': {
+    //   color: token.treeSelectOptionActiveColor,
+    // },
   },
   optionDisabled: {
     cursor: 'not-allowed',

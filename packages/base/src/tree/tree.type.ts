@@ -1,5 +1,12 @@
 import { CommonType } from '../common/type';
-import { BaseTreeProps, ObjectKey, KeygenResult, TreePathType, useTree } from '@sheinx/hooks';
+import {
+  BaseTreeProps,
+  ObjectKey,
+  KeygenResult,
+  TreePathType,
+  useTree,
+  UpdateFunc,
+} from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 
@@ -10,6 +17,8 @@ export type TreeRenderItemType<DataItem> =
 export type TreeClasses = {
   rootClass: string;
   tree: string;
+  notTree: string;
+  virtual: string;
   root: string;
   line: string;
   noline: string;
@@ -22,6 +31,7 @@ export type TreeClasses = {
   contentWrapper: string;
   inlineContent: string;
   text: string;
+  textClickable: string;
   list: string;
   iconWrapper: string;
   icon: string;
@@ -38,6 +48,8 @@ export type JsstyleType = {
 };
 
 export type DatumType<DataItem> = ReturnType<typeof useTree<DataItem>>;
+
+type ActionOnClick = 'check' | 'expand';
 
 export interface TreeProps<DataItem, Value extends any[]>
   extends Omit<BaseTreeProps<DataItem>, 'isControlled'>,
@@ -112,6 +124,13 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @default false
    */
   parentClickExpand?: boolean;
+
+  /**
+   * @cn 点击节点展开是的操作: 'expand' 展开节点，'check' 选中复选框
+   * @en The operation when clicking the node to expand: 'expand' expand the node, 'check' check the checkbox
+   * @version 3.6.0
+   */
+  actionOnClick?: ActionOnClick | ActionOnClick[];
   /**
    * @en Selector when dray image
    * @cn 定义拖拽图片的选择器
@@ -197,4 +216,49 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @cn 拖拽离开事件
    */
   onDragLeave?: (e: React.DragEvent, data: DataItem) => void;
+  /**
+   * @en Virtual list
+   * @cn 虚拟列表
+   * @version 3.6.0
+   */
+  virtual?: boolean;
+  /**
+   * @en The height of the list item
+   * @cn 列表项高度
+   */
+  lineHeight?: number;
+  /**
+   * @en The height of the list
+   * @cn 列表高度
+   */
+  height?: number | string;
+  /**
+   * @en Number of list items displayed at the same time
+   * @cn 同时展示的列表项数量
+   * @default 20
+   * @version 3.6.0
+   */
+  rowsInView?: number;
+  rootStyle?: React.CSSProperties;
+  ignoreSetFlat?: boolean;
+  tiledData?: DataItem[];
+}
+
+export interface VirtualTreeProps<DataItem, Value extends any[]>
+  extends Omit<
+    TreeProps<DataItem, Value>,
+    'height' | 'line' | 'dragImageSelector' | 'onDrop' | 'childrenKey'
+  > {
+  height: number | string;
+  line: boolean;
+  contentClass?: string | ((data: DataItem) => string);
+  isControlled: boolean;
+  bindNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { expanded: boolean; active: boolean };
+  onToggle?: (id: KeygenResult, expanded?: boolean) => void;
+  onNodeClick: (data: DataItem, id: KeygenResult) => void;
+  childrenKey: keyof DataItem;
 }

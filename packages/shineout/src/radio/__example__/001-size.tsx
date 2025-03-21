@@ -9,7 +9,7 @@ import { Radio } from 'shineout';
 
 const App: React.FC = () => {
   return (
-    <Radio.Group keygen block>
+    <Radio.Group keygen>
       <Radio size={'small'} htmlValue={'a'}>
         OptionA
       </Radio>

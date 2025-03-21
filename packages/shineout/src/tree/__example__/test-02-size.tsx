@@ -5,6 +5,7 @@
  *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes
  */
 
+// TODO: size feature is not implemented in shineout
 import { Tree, TYPE } from 'shineout';
 type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
 

@@ -195,9 +195,14 @@ const menuStyle: JsStyles<MenuClassType> = {
       },
     },
 
+    // 一级菜单展不展开都是fill-9，一级展开后的子级都是fill-10
+    '[data-soui-theme=dark] $root > $item > &': {
+      backgroundColor: token.menuDarkItemBackgroundColor,
+    },
+
     '[data-soui-theme=dark] &': {
       color: token.menuDarkFontColor,
-      backgroundColor: token.menuDarkItemBackgroundColor,
+      backgroundColor: token.menuDarkItemOpenBackgroundColor,
       '&:hover': {
         color: token.menuDarkItemHoverFontColor,
         backgroundColor: token.menuDarkItemHoverBackgroundColor,
@@ -417,6 +422,9 @@ const menuStyle: JsStyles<MenuClassType> = {
     '$childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
       paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuExpandSize})`,
     },
+    '$wrapperHorizontal $childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
+      paddingRight: token.menuTitlePaddingX,
+    },
     '$childrenHasExpand $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
     },
@@ -429,8 +437,10 @@ const menuStyle: JsStyles<MenuClassType> = {
     '& + $titleContent': {
       paddingLeft: token.menuIconMarginX,
     },
-    lineHeight: 1,
     display: 'inline-flex',
+    alignSelf: 'flex-start',
+    height: token.lineHeightDynamic,
+    alignItems: 'center',
   },
   titleContent: {
     whiteSpace: 'pre-wrap',
@@ -455,6 +465,10 @@ const menuStyle: JsStyles<MenuClassType> = {
       lineHeight: 1,
       width: token.menuExpandSize,
       height: token.menuExpandSize,
+      alignSelf: 'flex-start',
+      alignItems: 'center',
+      display: 'flex',
+      minHeight: `calc(${token.lineHeightDynamic} + ${token.menuTitlePaddingY}*2)`,
       '$wrapper:not($wrapperVertical) $itemOpen > $itemContent &': {
         transform: 'rotate(180deg)',
       },

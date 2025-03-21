@@ -1,18 +1,22 @@
 import classNames from 'classnames';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Input from '../input';
 import { PaginationJumperProps } from './pagination-jumper.type';
 
 const PaginationJumper = (props: PaginationJumperProps) => {
-  const { jssStyle, simple, size, total, pageSize, disabled, current, text, onChange } = props;
+  const { jssStyle, simple, size, total, pageSize, disabled, text, onChange } = props;
   const paginationStyle = jssStyle?.pagination?.();
   const rootClasses = classNames(paginationStyle?.section, paginationStyle?.jumper);
 
   let txt: string[] | React.ReactNode[] = text.jumper ? text.jumper.split('{input}') : [];
-  const [value, setValue] = useState(String(current));
+  const [value, setValue] = useState('');
 
   const getMax = () => {
     return Math.ceil(total / pageSize) || 1;
+  };
+
+  const cleatInternalState = () => {
+    setValue('');
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -24,15 +28,12 @@ const PaginationJumper = (props: PaginationJumperProps) => {
       if (current > max) current = max;
       onChange(current);
       setValue(String(current));
+      setTimeout(cleatInternalState, 20);
     }
   };
 
   const handleChange = (v?: string) => {
     setValue(v || '');
-  };
-
-  const handleBlur = () => {
-    setValue(String(current));
   };
 
   const renderInput = () => {
@@ -48,7 +49,7 @@ const PaginationJumper = (props: PaginationJumperProps) => {
         disabled={disabled}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        onBlur={handleBlur}
+        onBlur={cleatInternalState}
       ></Input>
     );
   };
@@ -60,10 +61,6 @@ const PaginationJumper = (props: PaginationJumperProps) => {
   const renderSuffixText = () => {
     return txt[1] ? <span className={paginationStyle?.section}>{txt[1]}</span> : undefined;
   };
-
-  useEffect(() => {
-    setValue(String(current));
-  }, [current]);
 
   if (simple) {
     return (

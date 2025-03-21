@@ -5,6 +5,7 @@ import { TreeTokens } from './type';
 
 const treeTokens: TreeTokens = {
   treeTextPaddingY: 'Spacing-2',
+  treeTextPaddingX: 'Spacing-4',
   treeCheckboxMarginX: 'Spacing-8',
   treeFontSize: 'Font-14',
   treeLineHeight: 'Size-18',
@@ -14,7 +15,7 @@ const treeTokens: TreeTokens = {
   treeLargeLineHeight: 'Size-22',
   treeFontWeight: 'Weight-regular',
   treeFontColor: 'Neutral-text-5',
-  treeLineBackgroundColor: 'Neutral-fill-2',
+  treeLineBackgroundColor: 'Neutral-fill-3',
   treePaddingX: 'Spacing-8',
   treePaddingY: 'Spacing-1',
   treeItemFontColor: 'Neutral-text-4',
@@ -23,15 +24,16 @@ const treeTokens: TreeTokens = {
   treeItemActiveBackgroundColor: 'Neutral-fill-4',
   treeItemActiveFontColor: 'Neutral-text-4',
   treeItemDisabledFontColor: 'Neutral-text-2',
+  treeContentBorderRadius: 'Radius-lesser',
   treeContentHoverBackgroundColor: 'Neutral-fill-2',
   treeContentHoverFontColor: 'Neutral-text-5',
   treeContentActiveBackgroundColor: 'Brand-1',
-  treeContentActiveFontColor: 'Brand-6',
+  treeContentActiveFontColor: 'Brand-4',
+  treeContentActiveBorderRadius: 'Radius-2',
   treeContentDisabledBackgroundColor: 'Transprent',
   treeContentDisabledFontColor: 'Neutral-text-5',
   treeDragBorderColor: 'Brand-6',
   treeDragBackgroundColor: 'Brand-1',
-  treeContentBorderRadius: 'Radius-lesser',
 };
 
 export default treeTokens;

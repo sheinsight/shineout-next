@@ -58,6 +58,14 @@ const inputBorderToken = {
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
+const leftCircleBackground = `radial-gradient(circle closest-side, ${token.datePickerCellRangeBackgroundColor} 100%, transparent 0%),
+linear-gradient(to right, transparent 0%,transparent 50%, ${token.datePickerCellRangeBackgroundColor} 50%, ${token.datePickerCellRangeBackgroundColor} 100%)
+`;
+
+const rightCircleBackground = `radial-gradient(circle closest-side, ${token.datePickerCellRangeBackgroundColor} 100%, transparent 0%),
+linear-gradient(to left, transparent 0%,transparent 50%, ${token.datePickerCellRangeBackgroundColor} 50%, ${token.datePickerCellRangeBackgroundColor} 100%)
+`;
+
 const datePickerStyle: JsStyles<DatePickerClassType> = {
   rootClass: {},
   wrapper: {
@@ -218,6 +226,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     boxShadow: token.datePickerPanelShadow,
     borderRadius: token.datePickerPanelRadius,
     border: `1px solid ${token.datePickerPanelBorder}`,
+    cursor: 'initial',
   },
   pickerBox: {
     display: 'flex',
@@ -348,9 +357,20 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     borderTop: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
     display: 'flex',
     justifyContent: 'space-between',
+    '&[dir=rtl] $pickerFooterConfirm': {
+      'margin-right': 'auto',
+    },
+    '&[dir=ltr] $pickerFooterConfirm': {
+      'margin-left': 'auto',
+    },
   },
   pickerFooterTime: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
+  },
+  wrapperSmall: {
+    '& $pickerFooterNow': {
+      padding: `${token.datePickerSmallPanelFooterNowPaddingY} ${token.datePickerSmallPanelFooterNowPaddingX}`,
+    },
   },
   pickerFooterNow: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
@@ -441,9 +461,10 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
         backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
-    '&$pickerCellActive$pickerCellInRange:not($pickerCellDisabled):hover $pickerCellContent': {
-      backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
-    },
+    '&$pickerCellActive$pickerCellInRange:not($pickerCellDisabled):not($pickerCellInRangeStart):not($pickerCellInRangeEnd):hover $pickerCellContent':
+      {
+        backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
+      },
   },
   pickerCellContent: {
     marginTop: token.datePickerCellMarginY,
@@ -490,20 +511,24 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     '&[dir=ltr] > $pickerCellContent': {
       borderTopLeftRadius: token.datePickerCellHeight,
       borderBottomLeftRadius: token.datePickerCellHeight,
+      background: leftCircleBackground,
     },
     '&[dir=rtl] > $pickerCellContent': {
       borderTopRightRadius: token.datePickerCellHeight,
       borderBottomRightRadius: token.datePickerCellHeight,
+      background: rightCircleBackground,
     },
   },
   pickerCellInRangeEnd: {
     '&[dir=ltr] > $pickerCellContent': {
       borderTopRightRadius: token.datePickerCellHeight,
       borderBottomRightRadius: token.datePickerCellHeight,
+      background: rightCircleBackground,
     },
     '&[dir=rtl] > $pickerCellContent': {
       borderTopLeftRadius: token.datePickerCellHeight,
       borderBottomLeftRadius: token.datePickerCellHeight,
+      background: leftCircleBackground,
     },
   },
   pickerCellDisabled: {

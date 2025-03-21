@@ -304,7 +304,7 @@ export interface InputTokens {
   inputInnerPaddingY: string;
   /**
    * @type {string}
-   * @token Font-12
+   * @token Font-14
    * @description 输入框内嵌字体字号
    */
   inputInnerFontSize: string;
@@ -314,6 +314,12 @@ export interface InputTokens {
    * @description 输入框内嵌字体颜色
    */
   inputInnerFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 输入框内嵌undefined字体颜色
+   */
+  inputInnerPlaceFontColor: string;
   /**
    * @type {string}
    * @token Spacing-8
@@ -346,7 +352,7 @@ export interface InputTokens {
   inputInnerLargePaddingY: string;
   /**
    * @type {string}
-   * @token Font-14
+   * @token Font-16
    * @description 输入框内嵌大尺寸字体字号
    */
   inputInnerLargeFontSize: string;
@@ -364,7 +370,7 @@ export interface InputTokens {
   inputInnerTopSmallFontSize: string;
   /**
    * @type {string}
-   * @token Font-12
+   * @token Font-14
    * @description 输入框内嵌undefined大尺寸字体字号
    */
   inputInnerTopLargeFontSize: string;

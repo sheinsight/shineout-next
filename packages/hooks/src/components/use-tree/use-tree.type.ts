@@ -6,9 +6,24 @@ export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 
 export type UpdateFunc = (name: string, active: boolean) => void;
 
+export type FlatNodeType<DataItem> = {
+  id: KeygenResult;
+  data: DataItem;
+  level: number;
+  pid?: KeygenResult | null;
+};
+
+export type FlatMapType = {
+  active: boolean;
+  expanded: boolean;
+  fetching: boolean;
+};
+
 export interface TreeContext<DataItem> {
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
+  dataFlat: FlatNodeType<DataItem>[];
+  dataFlatStatusMap: Map<KeygenResult, FlatMapType>;
   valueMap: Map<KeygenResult, CheckedStatusType>;
   unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
@@ -27,11 +42,20 @@ export interface TreePathType {
   index: number;
 }
 
+export interface DisabledOption<DataItem> {
+  disabled: (data: DataItem) => boolean;
+  isRealtime: boolean;
+}
+
 export interface BaseTreeProps<DataItem> {
   /**
    * @private 内部属性
    */
   isControlled: boolean;
+  /**
+   * @private 内部属性
+   */
+  tiledData?: DataItem[];
   active?: KeygenResult;
   /**
    * @en Selected key (controlled)
@@ -69,7 +93,7 @@ export interface BaseTreeProps<DataItem> {
    * @cn 显示选择框时有效，为 true 时，所有节点禁用选择，为函数时，根据函数返回结果确定是否禁用
    * @default false
    */
-  disabled?: boolean | ((item: DataItem) => boolean);
+  disabled?: boolean | ((item: DataItem) => boolean) | DisabledOption<DataItem>;
   /**
    * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, "id" is the same thing as (d) => d.id
    * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 "id"，相当于 (d) => d.id
@@ -112,6 +136,10 @@ export interface BaseTreeProps<DataItem> {
    * @private 内部数据处理
    */
   datum?: TreeDatum<DataItem>;
+  /**
+   * @private 是否虚拟化
+   */
+  virtual?: boolean;
 }
 
 export interface TreeDatum<DataItem> {
@@ -121,6 +149,9 @@ export interface TreeDatum<DataItem> {
     checked: CheckedStatusType,
     direction?: 'asc' | 'desc',
   ) => CheckedStatusType | null;
+  insertFlat: (id: KeygenResult) => void;
+  removeFlat: (id: KeygenResult) => void;
+  expandedFlat: (id: KeygenResult[]) => void;
   getPath: (id: KeygenResult) => TreePathType | undefined;
   getValue: () => KeygenResult[];
   getChecked: (id: KeygenResult) => boolean | 'indeterminate';
@@ -134,6 +165,11 @@ export interface TreeDatum<DataItem> {
     update: UpdateFunc,
     data: DataItem,
   ) => { active: boolean; expanded: boolean };
+  bindVirtualNode: (
+    id: KeygenResult,
+    update: UpdateFunc,
+    data: DataItem,
+  ) => { active: boolean; expanded: boolean };
   getDataById: (
     id: KeygenResult,
   ) => DataItem | { IS_NOT_MATCHED_VALUE: boolean; value: KeygenResult | null } | null;
@@ -143,7 +179,9 @@ export interface TreeDatum<DataItem> {
   updateMap: Map<KeygenResult, UpdateFunc>;
   childrenKey: string;
   data: DataItem[];
+  dataFlat: FlatNodeType<DataItem>[];
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
   valueMap: Map<KeygenResult, CheckedStatusType>;
+  dataFlatStatusMap: Map<KeygenResult, FlatMapType>;
 }

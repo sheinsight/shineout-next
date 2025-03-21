@@ -87,6 +87,9 @@ const input: JsStyles<keyof TextareaClasses> = {
     backgroundColor: 'transparent',
     resize: 'none',
     boxSizing: 'border-box',
+    minHeight: `calc(${token.lineHeightDynamic} + ${token.inputPaddingY} * 2)`,
+    // why: 为了让滚动条的轨道不遮盖右上角和右下角的圆角; 注: chrome >= 121才支持scrollbar-color
+    scrollbarColor: `${token.inputBorderColor} transparent`,
     '&$resize': {
       resize: 'vertical',
     },
@@ -111,6 +114,39 @@ const input: JsStyles<keyof TextareaClasses> = {
     width: '100%',
     boxSizing: 'border-box',
   },
+  limit: {
+    position: 'absolute',
+    right: 12,
+    bottom: 6,
+    color: token.textareaLimitFontColor,
+    fontSize: token.textareaLimitFontSize,
+    '$resize + &': {
+      right: 16,
+    }
+  },
+  clear: {
+    position: 'absolute',
+    right: token.textareaPaddingX,
+    top: token.textareaPaddingY,
+    cursor: 'pointer',
+    padding: 4,
+    color: token.textareaClearColor,
+
+    '&:hover': {
+      color: token.textareaClearHoverColor,
+    },
+
+    '& > svg': {
+      display: 'block',
+      width: token.textareaClearSize,
+      height: token.textareaClearSize,
+    }
+  },
+  wrapperWithClear: {
+    '&& $textarea': {
+      paddingRight: `calc(${token.textareaPaddingX} * 4)`
+    },
+  }
 };
 
 export default input;

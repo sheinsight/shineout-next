@@ -207,6 +207,14 @@ const input: JsStyles<keyof InputClasses> = {
     },
     ...groupSpace(token.inputPaddingX),
   },
+  groupSeperate: {
+    border: 'none',
+
+    '& > b': {
+      border: `1px solid ${token.inputBorderColor}`,
+      'margin-left': '-1px',
+    }
+  },
   groupSmall: {
     ...groupSmall,
     ...groupSpace(token.inputSmallPaddingX),
@@ -244,6 +252,14 @@ const input: JsStyles<keyof InputClasses> = {
       '& svg': {
         width: 14,
         transform: 'rotate(-90deg)',
+      },
+    },
+
+    '$wrapperDisabled & > span': {
+      color: token.inputDisabledFontColor,
+      borderColor: token.inputDisabledBorderColor,
+      '&:first-child': {
+        borderColor: token.inputDisabledBorderColor,
       },
     },
   },

@@ -1,3 +1,36 @@
+## 3.6.0
+2025-03-13
+
+### 🆕 Feature
+
+- `Input.Group` 新增 `seperate`属性：组合到一起的组件有独立的边框 ([#992](https://github.com/sheinsight/shineout-next/pull/992))
+
+
+### 🐞 BugFix
+
+- 修复 `Input.Number` 在输入小数点情况下，退格至小数点前时会将小数点删除的问题（Regression: since v3.4.0） ([#989](https://github.com/sheinsight/shineout-next/pull/989))
+
+
+## 3.5.8
+2025-02-13
+
+### 🐞 BugFix
+
+- 修复 `Input` 开启 `digits` 是值为 0 的情况下依然可以输入小数的问题（Regression: since v3.5.7） ([#935](https://github.com/sheinsight/shineout-next/pull/935))
+
+## 3.5.7
+2025-01-14
+
+### 🐞 BugFix
+
+- 修复 `Input` 开启 `coin` 情况下初始化数据不展示千分号的问题 ([#919](https://github.com/sheinsight/shineout-next/pull/919))
+- 修复 `Input` 设置 `type='number'` 且开启 `coin` 属性后值为数字 0 时展示异常的问题 ([#916](https://github.com/sheinsight/shineout-next/pull/916))
+
+### 💎 Enhancement
+
+- 优化 `Input` 在 `type='number'` 开启 `coin` 下输入溢出内容时的交互逻辑 ([#919](https://github.com/sheinsight/shineout-next/pull/919))
+
+
 ## 3.4.6
 2024-11-05
 
@@ -85,8 +118,8 @@
 
 ### 🐞 BugFix
 
-- 修复 `Input.Nummber` 组件 `min = 0` 不生效的问题 ([#364](https://github.com/sheinsight/shineout-next/pull/364))
-- 修复 `Input.Nummber` 组件缺失 `hideArrow` 属性的问题 ([#362](https://github.com/sheinsight/shineout-next/pull/362))
+- 修复 `Input.Nummber` 的 `min = 0` 不生效的问题 ([#364](https://github.com/sheinsight/shineout-next/pull/364))
+- 修复 `Input.Nummber` 缺失 `hideArrow` 属性的问题 ([#362](https://github.com/sheinsight/shineout-next/pull/362))
 
 
 

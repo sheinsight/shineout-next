@@ -6,7 +6,7 @@
  */
 
 import { useState } from 'react';
-import { Button, Form, Input, Table, TYPE, Rule } from 'shineout';
+import { Button, Form, Input, Table, TYPE, Rule, Link, Modal } from 'shineout';
 
 interface TableRowData {
   id?: number;
@@ -31,7 +31,7 @@ export default () => {
       width: 200,
       render: (d) => {
         return (
-          <Form.Item>
+          <Form.Item style={{marginBottom: 0}}>
             <Input
               rules={[rules.required]}
               value={d.name}
@@ -50,7 +50,7 @@ export default () => {
       width: 200,
       render: (d) => {
         return (
-          <Form.Item>
+          <Form.Item style={{marginBottom: 0}}>
             <Input
               rules={[rules.required]}
               value={d.age}
@@ -69,14 +69,15 @@ export default () => {
       width: 100,
       render: (d) => {
         return (
-          <Button
+          <Link
             type='danger'
             onClick={() => {
               setFormDatas(formDatas.filter((item) => item.id !== d.id));
             }}
+            style={{ lineHeight: '32px' }}
           >
             Delete
-          </Button>
+          </Link>
         );
       },
     },
@@ -101,7 +102,12 @@ export default () => {
           Add
         </Button>
 
-        <Form.Submit onClick={() => alert(JSON.stringify(formDatas, null, 2))}>Submit</Form.Submit>
+        <Form.Submit onClick={() => {
+          Modal.info({
+            title: 'Form Data in Table',
+            content: <pre>{JSON.stringify(formDatas, null, 2)}</pre>,
+          })
+        }}>Submit</Form.Submit>
       </div>
 
       <Table data={formDatas} columns={columns} keygen='id' />

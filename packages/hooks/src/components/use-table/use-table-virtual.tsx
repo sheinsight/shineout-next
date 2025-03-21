@@ -1,5 +1,5 @@
 import { usePersistFn } from '../../common/use-persist-fn';
-import { useState, useRef, useEffect, useMemo, useLayoutEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { TableFormatColumn } from './use-table.type';
 
 // 找出最大的连续数字的个数
@@ -147,7 +147,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   });
 
-  const updateIndexAndTopFromTop = (scrollTop: number) => {
+  const updateIndexAndTopFromTop = (scrollTop: number, fromDrag?: boolean) => {
     if (props.disabled) return;
     let sum = 0;
     let currentIndex = 0;
@@ -187,7 +187,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       setStartIndex(currentIndex);
 
       // startIndex处于上方某个合并行的中间一行时，可能引起translate闪烁
-      if(startIndex < currentIndex){
+      if(rowSpanInfo && !fromDrag && startIndex < currentIndex){
         context.autoAddRows = currentIndex - startIndex
         setTimeout(() => {
           context.autoAddRows = 0
@@ -252,7 +252,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     // 拖动滚动条
     if (fromDrag) {
       const top = y * max;
-      updateIndexAndTopFromTop(top);
+      updateIndexAndTopFromTop(top, fromDrag);
       if (context.rateTimer) clearTimeout(context.rateTimer);
       context.rateTimer = setTimeout(() => {
         updateRateScroll(y);
@@ -359,8 +359,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     if (props.disabled) return;
     if (context.heightCallback) {
       const cb = context.heightCallback;
-      context.heightCallback = null;
       cb();
+      setTimeout(() => {
+        context.heightCallback = null;
+      }, 300);
     }
   }, [scrollHeight]);
 

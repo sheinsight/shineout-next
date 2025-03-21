@@ -1,8 +1,8 @@
 /**
  * cn - 多列选择
- *    -- 基础的使用方法
- * en - Basic
- *    -- Basic usage
+ *    -- 设置 `columns` 属性可以让选择框变成多列显示，`columns` 为每行显示的数量
+ * en - Columns
+ *    -- Set the `columns` property to make the selection box multi-column display, and `columns` is the number of items displayed per row.
  */
 import React, { useState, useEffect } from 'react';
 import { Select, TYPE } from 'shineout';
@@ -49,7 +49,7 @@ export default () => {
       <Select
         multiple
         compressed
-        compressedBound={2}
+        // compressedBound={2}
         width={300}
         data={data}
         keygen='id'

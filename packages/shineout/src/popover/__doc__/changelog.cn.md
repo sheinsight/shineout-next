@@ -1,9 +1,31 @@
+## 3.6.0
+2025-03-21
+
+### 🆕 Feature
+- `Popover` 新增 `offset` 属性，设置弹出层宽度或高度的附加值，增加或减少宽度或高度 ([#965](https://github.com/sheinsight/shineout-next/pull/965))
+- `Popover` 新增 `popupGap` 属性，设置弹出层与触发元素的间距 ([#965](https://github.com/sheinsight/shineout-next/pull/965))
+
+### 🐞 BugFix
+- 修复 `Popover` 在滚动容器中的水平用法下，且不给定宽，在靠近窗口右侧时弹出层的宽度被非预期挤压，导致内容换行的问题 ([#997](https://github.com/sheinsight/shineout-next/pull/997))
+
+
+## 3.5.6
+2025-01-06
+
+### 🐞 BugFix
+- 修复 `Popover` 在 `position='left'` 模式下三角箭头和 trigger 元素之间的垫片元素不生效的问题 ([#906](https://github.com/sheinsight/shineout-next/pull/906))
+
+## 3.5.5
+2024-12-24
+
+### 🐞 BugFix
+- 修复 `Popover` 受控为 true 但不在视口范围内时无法展示的问题 ([#880](https://github.com/sheinsight/shineout-next/pull/880))
+
 ## 3.4.4
 2024-10-28
 
 ### 🐞 BugFix
 - 修复 `Popover.Confirm` 的弹出容器的宽度在Table中有可能显示较窄的问题 ([#736](https://github.com/sheinsight/shineout-next/pull/736))
-### 🐞 BugFix
 - 修复 `Popover` 在横滚的Table中有可能弹出位置不准确的问题 ([#741](https://github.com/sheinsight/shineout-next/pull/741))
 
 
@@ -18,7 +40,7 @@
 2024-09-09
 
 ### 🐞 BugFix
-- 修复 `Popover` 组件 children 点击事件冒泡外层的问题 ([#654](https://github.com/sheinsight/shineout-next/pull/654))
+- 修复 `Popover` 的 children 点击事件冒泡外层的问题 ([#654](https://github.com/sheinsight/shineout-next/pull/654))
 
 ## 3.2.2
 2024-06-21

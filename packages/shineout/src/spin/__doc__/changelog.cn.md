@@ -1,3 +1,17 @@
+## 3.6.0
+2025-02-25
+### 🐞 BugFix
+
+- 修复 `Spin` 的 `className`重复设置到content dom节点上的问题 ([#970](https://github.com/sheinsight/shineout-next/pull/970))
+
+
+## 3.5.6
+2025-01-06
+### 🐞 BugFix
+
+- 修复 `Spin` 的ring样式在微前端框架下颜色不继承的问题 ([#898](https://github.com/sheinsight/shineout-next/pull/898))
+
+
 ## 3.4.7
 2024-11-08
 ### 🐞 BugFix

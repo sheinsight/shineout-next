@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { TabsHeaderProps } from './tabs-header.type';
 import { TabsClasses } from './tabs.type';
@@ -34,24 +34,17 @@ const TabsHeader = (props: TabsHeaderProps) => {
     splitColor,
     tabBarStyle,
     getPosition,
-    sticky,
   } = props;
 
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState(false);
+
   const tabRef = useRef<Record<string | number, HTMLDivElement>>({});
   const { shape, isVertical, onCollapsible, active } = useTabsContext();
 
   const config = useConfig();
 
   const isRtl = config.direction === 'rtl';
-
-  useEffect(() => {
-    if (sticky && headerRef.current && scrollRef.current && !loaded) {
-      setLoaded(true);
-    }
-  }, [loaded, sticky]);
 
   const {
     delta,
@@ -153,7 +146,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const [currentTabOffset, setCurrentTabOffset] = useState({ offsetTop: 0, offsetLeft: 0 });
   const [currentTabRect, setCurrentTabRect] = useState<DOMRect | null>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (shape !== 'line' && shape !== 'dash') return;
 
     const currentTab = tabRef.current[active!];

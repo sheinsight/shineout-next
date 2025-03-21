@@ -28,16 +28,18 @@ export default () => {
   const loader: CascaderProps['loader'] = (key) => {
     const path = key.toString().split(',');
     setTimeout(() => {
-      const producer = produce((draft) => {
-        let { data } = draft;
-        path.forEach((pid, i) => {
-          data = draft.find((d: { id: string }) => d.id === pid);
-          if (i < path.length - 1) draft = data.children;
+      setData(prevState => {
+        const producer = produce((draft) => {
+          let { data } = draft;
+          path.forEach((pid, i) => {
+            data = draft.find((d: { id: string }) => d.id === pid);
+            if (i < path.length - 1) draft = data.children;
+          });
+          data.children = [...createRange().map((i) => ({ id: `${data.id}-${i}` }))];
         });
-        data.children = [...createRange().map((i) => ({ id: `${data.id}-${i}` }))];
+        const nextState = producer(prevState);
+        return nextState;
       });
-      const nextState = producer(_data);
-      setData(nextState);
     }, 500);
   };
 

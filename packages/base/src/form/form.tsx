@@ -1,7 +1,7 @@
 import { FormContext, useForm, useInputAble, useLatestObj, usePersistFn, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { useFormFooter } from './form-footer-context';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import type { FormProps } from './form.type';
 import type { ObjectType } from '@sheinx/hooks';
@@ -21,9 +21,11 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     reserveAble: false,
   };
 
+  const formElRef = useRef<HTMLFormElement>(null)
+
   const { value, onChange } = useInputAble(inputAbleParams);
 
-  const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange });
+  const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange, formElRef: formElRef, });
 
   const validate = usePersistFn(() => {
     return formFunc.validateFields();
@@ -63,6 +65,10 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     }
   }, [formRefObj]);
 
+  const {current: context} = React.useRef({
+    bindindModalFormContextSuccess: false
+  })
+
   const handleFormModalInfo = () => {
     let status: 'disabled' | 'pending' | undefined = undefined;
     if (props.disabled) {
@@ -75,11 +81,17 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
       modalFormContext?.setFormStats(status);
     }
     if (props.onSubmit) {
-      modalFormContext?.setFormInfo(formRefObj);
+      const ok = modalFormContext?.setFormInfo(formRefObj);
+      context.bindindModalFormContextSuccess = !!ok
     }
   };
   useEffect(() => {
     handleFormModalInfo();
+    return () => {
+      if(context.bindindModalFormContextSuccess){
+        modalFormContext?.deleteFormInfo();
+      }
+    }
   }, [props.disabled, props.pending]);
 
   const rootClass = classNames([
@@ -94,7 +106,6 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     style,
   })
 
-  const formElRef = useRef<HTMLFormElement>(null)
   useEffect(() => {
     if (formElRef.current instanceof HTMLFormElement) {
       formElRef.current.addEventListener('submit', formProps.onSubmit)

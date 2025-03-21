@@ -137,7 +137,7 @@ describe('Tag[Base]', () => {
   test('should render when set different more color', () => {
     const { container } = render(<TagColor />);
     const tags = container.querySelectorAll(tagClassName)!;
-    
+
     classLengthTest(container, tagClassName, TagColorMoreArray.length * TagModeArray.length);
     tags.forEach((tag, index) => {
       classContentTest(tag, TgaModeClasses[Math.floor(index / TagColorMoreArray.length)]);
@@ -335,7 +335,7 @@ describe('Tag[Input]', () => {
     const { container } = render(<TagDynamic />);
     classLengthTest(container, tagClassName, 4);
     const tags = container.querySelectorAll(tagClassName)!;
-    textContentTest(tags[3], '+ Add Tag');
+    textContentTest(tags[3], 'Add Tag');
     classLengthTest(container, 'input', 0);
     fireEvent.click(tags[0].querySelector(tagCloseClassName)!);
     classLengthTest(container, tagClassName, 3);

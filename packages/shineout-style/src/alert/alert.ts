@@ -55,21 +55,21 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
         },
       },
     },
-    '&$widthTitle': {},
+    '&$withTitle': {},
     '& $icon': {},
   },
-  widthTitle: {
+  withTitle: {
     '& $icon': {
+      fontSize: Token.alertTitleFontSize,
       // marginBottom: Token.alertNearlyMargin,
-      width: Token.alertTitleIconWidth,
-      height: Token.alertTitleIconHeight,
+      width: `calc(${Token.alertTitleIconWidth} + 2px)`,
+      height: Token.lineHeightDynamic,
     },
     '& $title': {
       lineHeight: Token.lineHeightDynamic,
     },
-    '& $close': {
-      marginBottom: Token.alertNearlyMargin,
-      marginTop: 2,
+    '& $closeWrapper': {
+      fontSize: Token.alertTitleFontSize,
     },
   },
   title: {
@@ -86,15 +86,15 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   close: {
     cursor: 'pointer',
-    width: Token.alertFontSize,
     color: Token.alertCloseFontColor,
     fontSize: Token.alertFontSize,
-    height: Token.alertFontSize,
+    height: Token.alertCloseSize,
+    width: Token.alertCloseSize,
     flex: '0 0 auto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: Token.alertNearlyMargin,
+    // marginLeft: Token.alertNearlyMargin,
     '&:hover': {
       color: Token.alertCloseHoverColor,
     },
@@ -103,10 +103,12 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     },
   },
   closeWrapper: {
-    width: Token.alertFontSize,
+    fontSize: Token.alertFontSize,
+    width: Token.alertCloseSize,
     height: Token.lineHeightDynamic,
     display: 'flex',
     alignItems: 'center',
+    marginLeft: Token.alertNearlyMargin,
   },
   content: {
     flex: '1 1 0',

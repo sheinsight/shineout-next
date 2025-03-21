@@ -17,5 +17,5 @@ export const Submit = (props: ButtonProps) => {
 };
 
 export const Reset = (props: ButtonProps) => {
-  return <FormButton {...props} htmlType='reset' jssStyle={jssStyle} />;
+  return <FormButton mode="outline" {...props} htmlType='reset' jssStyle={jssStyle} />;
 };

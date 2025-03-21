@@ -1,5 +1,5 @@
 import React, { useContext, useMemo } from 'react';
-import { useFormConfig, useFormControl, usePersistFn, util } from '@sheinx/hooks';
+import { useFormConfig, useFormControl, usePersistFn, util, FieldsetContext } from '@sheinx/hooks';
 import { FieldControlProps, FormFieldProps } from './form-field.type';
 import { FormFieldContext } from './form-field-context';
 
@@ -40,7 +40,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
 
   const status = childrenProps.status ?? (formControl.error ? 'error' : undefined);
 
-  const { separator } = useContext(FormFieldContext);
+  const { fieldId, separator } = useContext(FormFieldContext);
   const formFieldId = useMemo(() => {
     if(!formConfig.formName) return
     if(childrenProps.id) return childrenProps.id
@@ -51,6 +51,13 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
 
     return util.getFieldId(formControl.name, formConfig.formName)
   }, [formControl.name, formConfig.formName, childrenProps.id])
+
+  const { path: fieldsetPath } = useContext(FieldsetContext);
+  const fieldsetPathId = useMemo(() => {
+    if(!formConfig.formName) return
+    return util.getFieldId(fieldsetPath, formConfig.formName)
+  }
+  , [fieldsetPath, formConfig.formName])
 
   const cloneProps: FieldControlProps<T> = {
     onChange: handleChange,
@@ -76,7 +83,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   }
 
   return (
-    <FormFieldContext.Provider value={{ fieldId: formFieldId, separator }}>
+    <FormFieldContext.Provider value={{ fieldId: formFieldId || fieldId || fieldsetPathId, separator }}>
       {finalChildren}
     </FormFieldContext.Provider>
   );
