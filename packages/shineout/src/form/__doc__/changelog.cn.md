@@ -3,10 +3,10 @@
 
 ### 🆕 Feature
 - `Form` 新增 `colon` 属性，用于控制 label 是否显示冒号 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
+- `Form.Flow` 新增 `strict` 属性，在此严格模式下，只有在配置的names字段值发生变化时才触发Flow的children渲染 ([#1003](https://github.com/sheinsight/shineout-next/pull/1003))
 
 ### 💎 Enhancement
-- `Form.Flow` 新增 `strict` 属性：严格模式下，只有在配置的names字段值发生变化时才触发Flow的children渲染 ([#1003](https://github.com/sheinsight/shineout-next/pull/1003))
-- `Form` 的 `scrollToField` 方法兼容 `Form.Field` 和 `Form.FieldSet` 下的未设置name属性的表单组件 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
+- `Form` 的 `scrollToField` 方法支持 `Form.Field` 和 `Form.FieldSet` 下的未设置name属性的表单组件 ([#875](https://github.com/sheinsight/shineout-next/pull/875))
 
 ### 🐞 BugFix
 - 修复 `Form` 的 `scrollToError` 无法生效的问题(Regression: since v3.5.4) ([#985](https://github.com/sheinsight/shineout-next/pull/985))

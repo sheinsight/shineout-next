@@ -1,4 +1,4 @@
-import { ImageProps as UnStyledImageProps, CustomRenderHoverMaskOptions } from '@sheinx/base';
+import { ImageProps as UnStyledImageProps, RenderHoverMaskOptions } from '@sheinx/base';
 
 /**
  * @title Image
@@ -16,4 +16,4 @@ export type ImageProps = Omit<
   | 'imageRef'
 >;
 
-export type ImageCustomRenderHoverMaskOptions = CustomRenderHoverMaskOptions;
+export type ImageCustomRenderHoverMaskOptions = RenderHoverMaskOptions;

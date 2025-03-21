@@ -120,6 +120,7 @@ const Popover = (props: PopoverProps) => {
   const colorStyle = {
     borderColor: props.border,
     backgroundColor: props.background,
+    '--popover-arrow-gap-extra': `${popupGap}px`,
   };
   return (
     <AbsoluteList

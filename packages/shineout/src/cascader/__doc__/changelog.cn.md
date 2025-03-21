@@ -1,12 +1,12 @@
 ## 3.6.0
 2025-03-18
 
+### 🆕 Feature
+- `Cascader` 新增 `emptyText` 属性，支持自定义空数据时的下拉列表内容 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
+
 ### 🐞 BugFix
 - 修复 `Cascader` mode=0时，外部动态修改data后导致的选中结果与勾选的显示情况不一致的问题 ([#999](https://github.com/sheinsight/shineout-next/pull/999))
 
-
-### 💎 Enhancement
-- `Cascader` 新增 `emptyText` 属性，支持自定义空数据时的下拉列表内容 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
 
 ## 3.5.8
 2025-02-13

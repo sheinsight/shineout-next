@@ -4,7 +4,7 @@
 ### 🐞 BugFix
 
 - 修复 `TreeSelect` 开 `virtual` 和 `defaultExpandedAll` 后，过滤数据不展开的问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
-- 修复 `TreeSelect` 节点样式不对齐对问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
+- 修复 `TreeSelect` 节点样式可能不对齐对问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
 
 ## 3.6.0
 2025-03-07
@@ -12,6 +12,7 @@
 ### 🆕 Feature
 
 - `Tree` 新增 `actionOnClick` 属性，配置点击节点时的行为：`expand` 展开/收起节点，`check` 勾选或取消勾选节点 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
+- `Tree` 新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
 
 
 ## 3.6.0
@@ -20,14 +21,6 @@
 ### 🐞 BugFix
 
 - 修复 `Tree` 传入的非树形数据时, 一级节点有多余的缩进问题 ([#981](https://github.com/sheinsight/shineout-next/pull/981))
-
-
-## 3.6.0
-2025-02-11
-
-### 💎 Enhancement
-
-- `Tree` 组件新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
 
 ## 3.5.8
 2025-02-13

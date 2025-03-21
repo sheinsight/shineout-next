@@ -4,14 +4,11 @@
 ### 🆕 Feature
 
 - `TreeSelect` 新增 `actionOnClick` 属性，配置点击节点时的行为：`expand` 展开/收起节点，`check` 勾选或取消勾选节点 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
+- `TreeSelect` 新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
 
 ### 🐞 BugFix
-- 修复 `TreeSelect` 过滤筛选情况下选择数据不完整的问题  (Regression: since v3.6.0) ([#981](https://github.com/sheinsight/shineout-next/pull/981))
 - 修复 `TreeSelect` 输入过滤内容并选中选项后，输入内容无法默认全选的问题 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
 
-### 💎 Enhancement
-
-- `TreeSelect` 新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
 
 ### 🚀 Performance
 - 优化 `TreeSelect` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))

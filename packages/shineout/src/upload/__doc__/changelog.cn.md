@@ -8,10 +8,10 @@
 
 ### 🆕 Feature
 
-- `Upload` 增强 `customResult` 返回内容，新增返回原文件组件（成功文件）实例 ([#995](https://github.com/sheinsight/shineout-next/pull/995))
-- `Upload` 增强 `customResult` 返回内容，新增返回原文件组件实例 ([#994](https://github.com/sheinsight/shineout-next/pull/994))
 - `Upload` 新增 `hideHandler` 属性，支持隐藏默认触发器 ([#993](https://github.com/sheinsight/shineout-next/pull/993))
-- `Upload` 增强 `customResult` 返回内容，新增触发器 dom 实例返回 ([#993](https://github.com/sheinsight/shineout-next/pull/993))
+
+### 💎 Enhancement
+- `Upload` 增强 `customResult` 返回内容，新增返回“触发器的dom实例”和“原文件（成功文件）实例” ([#995](https://github.com/sheinsight/shineout-next/pull/995), [#993](https://github.com/sheinsight/shineout-next/pull/993))
 
 ## 3.5.7
 2025-01-14

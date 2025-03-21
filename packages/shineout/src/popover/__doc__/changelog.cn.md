@@ -2,7 +2,7 @@
 2025-02-19
 
 ### 🆕 Feature
-- `Popover` 新增 `offset` 属性，设置弹出层额外的偏移量 ([#965](https://github.com/sheinsight/shineout-next/pull/965))
+- `Popover` 新增 `offset` 属性，设置弹出层宽度或高度的附加值，增加或减少宽度或高度 ([#965](https://github.com/sheinsight/shineout-next/pull/965))
 - `Popover` 新增 `popupGap` 属性，设置弹出层与触发元素的间距 ([#965](https://github.com/sheinsight/shineout-next/pull/965))
 
 ### 🐞 BugFix
