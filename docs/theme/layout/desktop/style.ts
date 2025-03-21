@@ -27,11 +27,7 @@ export default createUseStyles(
       backgroundColor: 'var(--soui-neutral-fill-1)',
       'body.rtl &': {
         left: 0,
-<<<<<<< HEAD
-        right: 260,
-=======
         right: 0,
->>>>>>> main
       },
     },
     nav: {
@@ -300,8 +296,6 @@ export default createUseStyles(
         backgroundColor: 'var(--soui-neutral-fill-3)',
       },
     },
-<<<<<<< HEAD
-=======
 
     menuFloat: {
       position: 'absolute',
@@ -440,7 +434,6 @@ export default createUseStyles(
       opacity: 1,
     },
     floatButtonOpen: {},
->>>>>>> main
   },
   { name: 'doc-layout' },
 );
