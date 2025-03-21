@@ -6,10 +6,11 @@ export type PopoverClassType = keyof PopoverClasses;
 
 const cssvar = '--popover-arrow-gap';
 const hideArrowGap = `var(${cssvar}, 10px)`;
+const extraArrowGap = 'var(--popover-arrow-gap-extra, 0px)';
 const arrowMargin = '8px';
 
-const poyfillPos = `calc((${hideArrowGap} + var(--popover-arrow-gap-extra, 0)) * -1)`;
-const poyfillHeight = `calc((${hideArrowGap} + var(--popover-arrow-gap-extra, 0)))`;
+const poyfillPos = `calc((${hideArrowGap} + ${extraArrowGap}) * -1)`;
+const poyfillHeight = `calc((${hideArrowGap} + ${extraArrowGap}))`;
 
 const popoverStyle: JsStyles<PopoverClassType> = {
   rootClass: {},

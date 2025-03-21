@@ -117,11 +117,17 @@ const Popover = (props: PopoverProps) => {
   context.rendered = true;
 
   const childrened = util.isFunc(children) ? children(closePop) : children;
-  const colorStyle = {
+  const containerStyle = {
     borderColor: props.border,
     backgroundColor: props.background,
-    '--popover-arrow-gap-extra': `${popupGap}px`,
   };
+
+  if (popupGap) {
+    Object.assign(containerStyle, {
+      '--popover-arrow-gap-extra': `${popupGap}px`,
+    });
+  };
+
   return (
     <AbsoluteList
       focus={open}
@@ -145,7 +151,7 @@ const Popover = (props: PopoverProps) => {
           open && popoverStyle?.wrapperOpen,
           !showArrow && popoverStyle?.hideArrow,
         )}
-        style={colorStyle}
+        style={containerStyle}
         {...util.getDataAttribute({ position, type })}
         {...props.attributes}
         ref={popupRef}

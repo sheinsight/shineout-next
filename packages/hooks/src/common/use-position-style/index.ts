@@ -235,17 +235,11 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         }
       }
       if (v === 'bottom') {
-        console.log('======================')
-        console.log('popupGap bottom: >>', popupGap)
-        console.log('======================')
         style.top = rect.bottom - containerRect.top + containerScroll.top + popupGap;
         if (targetRect) {
           arrayStyle.top = `${0}px`;
         }
       } else {
-        console.log('======================')
-        console.log('popupGap top: >>', popupGap)
-        console.log('======================')
         style.top = rect.top - containerRect.top + containerScroll.top - popupGap;
         style.transform += 'translateY(-100%)';
         if (targetRect) {
