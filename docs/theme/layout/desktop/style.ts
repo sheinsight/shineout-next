@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
-const navHeight = 59;
+// @ts-ignore 嵌入的目标系统顶部是64px
+const navHeight = window.__ALITA__ ? 64 : 59;
 const menuWidth = 259;
 
 export default createUseStyles(
