@@ -35,7 +35,7 @@ const Image = (props: ImageProps) => {
     noImgDrag,
     onClick,
     componentRef,
-    customRenderHoverMask,
+    renderHoverMask,
     ...rest
   } = props;
 
@@ -173,8 +173,8 @@ const Image = (props: ImageProps) => {
 
   // 遮罩层
   const renderMask = () => {
-    if (customRenderHoverMask) {
-      return <span className={maskClass}>{customRenderHoverMask({ preview })}</span>;
+    if (renderHoverMask) {
+      return <span className={maskClass}>{renderHoverMask({ preview })}</span>;
     }
     return (
       <span className={maskClass} onClick={handleOpenGallery}>

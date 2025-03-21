@@ -74,7 +74,7 @@ export interface ImageMagnifyProps {
   jssStyle?: ImageJssStyleType;
 }
 
-export interface CustomRenderHoverMaskOptions {
+export interface RenderHoverMaskOptions {
   preview: () => void;
 }
 
@@ -89,12 +89,12 @@ export interface ImageBaseProps
   renderPlaceholder?: (placeholderEl: React.ReactNode) => React.ReactElement;
   renderInnerWrapper?: (innerWrapperEl: React.ReactNode) => React.ReactElement;
   componentRef?: (instance: { preview: () => void }) => void;
-  /*
-   * @en Custom rendering of the mask content when hovering
-   * @cn 自定义渲染 hover 时的遮罩层内容
+  /**
+   * @en Custom render hover mask content, options has a preview method, call preview method to preview image
+   * @cn 自定义渲染 hover 时的遮罩层内容，options参数中有一个 preview 方法，调用 preview 方法可以预览图片
    * @version 3.6.0
    */
-  customRenderHoverMask?: (options: CustomRenderHoverMaskOptions) => React.ReactElement;
+  renderHoverMask?: (options: RenderHoverMaskOptions) => React.ReactElement;
 }
 
 export type ImageProps = ImageBaseProps;

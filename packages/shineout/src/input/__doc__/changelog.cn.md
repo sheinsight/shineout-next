@@ -1,11 +1,10 @@
-## 3.6.0-beta.25
+## 3.6.0
 2025-03-13
 
 ### 🆕 Feature
 
 - `Input.Group` 新增 `seperate`属性：组合到一起的组件有独立的边框 ([#992](https://github.com/sheinsight/shineout-next/pull/992))
-## 3.6.0-beta.21
-2025-03-11
+
 
 ### 🐞 BugFix
 
@@ -119,8 +118,8 @@
 
 ### 🐞 BugFix
 
-- 修复 `Input.Nummber` 组件 `min = 0` 不生效的问题 ([#364](https://github.com/sheinsight/shineout-next/pull/364))
-- 修复 `Input.Nummber` 组件缺失 `hideArrow` 属性的问题 ([#362](https://github.com/sheinsight/shineout-next/pull/362))
+- 修复 `Input.Nummber` 的 `min = 0` 不生效的问题 ([#364](https://github.com/sheinsight/shineout-next/pull/364))
+- 修复 `Input.Nummber` 缺失 `hideArrow` 属性的问题 ([#362](https://github.com/sheinsight/shineout-next/pull/362))
 
 
 

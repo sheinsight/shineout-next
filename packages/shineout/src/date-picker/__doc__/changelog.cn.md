@@ -1,28 +1,22 @@
-## 3.6.0-beta.30
+## 3.6.0
 2025-03-20
 
 ### 🐞 BugFix
 
 - 修复 `DatePicker` 的 `formatResult`函数格式的自定义结果展示不生效的问题 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
 - 修复 `DatePicker` 的 `open` 受控用法下，onCollapse回调函数可能不触发而导致无法选择的问题 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
+- 修复 `DatePicker` 仅开启 `needConfirm` 属性情况下不展示今天按钮的问题 ([#983](https://github.com/sheinsight/shineout-next/pull/983))
+- 修复 `DatePicker` 小尺寸模式下“今天按钮”不上下居中的问题 ([#983](https://github.com/sheinsight/shineout-next/pull/983))
 
 ### 💎 Enhancement
 - `DatePicker` 周选择器的结果末尾追加“周”字 ([#1002](https://github.com/sheinsight/shineout-next/pull/1002))
-
-## 3.6.0-beta.17
-2025-03-06
-
-### 🐞 BugFix
-
-- 修复 `DatePicker` 仅开启 `needConfirm` 属性情况下不展示今天按钮的问题 ([#983](https://github.com/sheinsight/shineout-next/pull/983))
-- 修复 `DatePicker` 小尺寸模式下今天按钮不上下剧中的问题 ([#983](https://github.com/sheinsight/shineout-next/pull/983))
 
 ## 3.5.6
 2025-01-06
 
 ### 🐞 BugFix
 
-- 修复 `DatePicker` 组件在开启 `range` 和 `open` 属性后第一次点击无法选择日期的问题 ([#897](https://github.com/sheinsight/shineout-next/pull/897))
+- 修复 `DatePicker` 在开启 `range` 和 `open` 属性后第一次点击无法选择日期的问题 ([#897](https://github.com/sheinsight/shineout-next/pull/897))
 
 ## 3.5.4
 2024-12-12
@@ -48,7 +42,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `DatePicker` 组件 `align` 属性失效的问题(Regression: since v3.4.1) ([#799](https://github.com/sheinsight/shineout-next/pull/799))
+- 修复 `DatePicker` 的 `align` 属性失效的问题(Regression: since v3.4.1) ([#799](https://github.com/sheinsight/shineout-next/pull/799))
 
 ## 3.4.6
 2024-11-05
@@ -66,7 +60,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `DatePicker` 组件 key 值书写问题，解决 React 18.3.0 以上版本 key 字段报错的问题 ([#726](https://github.com/sheinsight/shineout-next/pull/726))
+- 修复 `DatePicker` 的 key 值书写问题，解决 React 18.3.0 以上版本 key 字段报错的问题 ([#726](https://github.com/sheinsight/shineout-next/pull/726))
 
 ## 3.4.1
 2024-09-20

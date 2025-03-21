@@ -1,14 +1,12 @@
-## 3.6.0-beta.28
+## 3.6.0
 2025-03-18
 
-### 🐞 BugFix
-- 修复`Cascader` mode=0时，外部动态修改data后导致的选中结果与勾选的显示情况不一致的问题 ([#999](https://github.com/sheinsight/shineout-next/pull/999))
-
-## 3.6.0-beta.10
-2025-02-26
-
-### 💎 Enhancement
+### 🆕 Feature
 - `Cascader` 新增 `emptyText` 属性，支持自定义空数据时的下拉列表内容 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
+
+### 🐞 BugFix
+- 修复 `Cascader` mode=0时，外部动态修改data后导致的选中结果与勾选的显示情况不一致的问题 ([#999](https://github.com/sheinsight/shineout-next/pull/999))
+
 
 ## 3.5.8
 2025-02-13
@@ -59,14 +57,14 @@
 2024-10-28
 
 ### 🐞 BugFix
-- 修复 `Cascader` 组件无法拖拽选中 dom 内容的问题 ([#729](https://github.com/sheinsight/shineout-next/pull/729))
+- 修复 `Cascader` 无法拖拽选中 dom 内容的问题 ([#729](https://github.com/sheinsight/shineout-next/pull/729))
 
 
 ## 3.3.6
 2024-09-02
 
 ### 🐞 BugFix
-- 修复 `Cascader` 组件 `onChange` 第二参数缺失的问题([#632](https://github.com/sheinsight/shineout-next/pull/632))
+- 修复 `Cascader` 的 `onChange` 第二参数缺失的问题([#632](https://github.com/sheinsight/shineout-next/pull/632))
 
 ## 3.3.3
 2024-08-15

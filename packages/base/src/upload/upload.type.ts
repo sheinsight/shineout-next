@@ -207,6 +207,7 @@ export interface UploadProps<T>
    * @en Whether to hide the trigger. Note that turning on this property will not affect the handler returned in customResult, only the default trigger will be hidden
    * @cn 是否隐藏图片上传触发器。注意，开启该属性后不会影响 customResult 中的 handler 返回，只会隐藏默认的触发器
    * @default false
+   * @version 3.6.0
    */
   hideHandler?: boolean;
 }

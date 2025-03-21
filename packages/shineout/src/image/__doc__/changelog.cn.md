@@ -1,12 +1,9 @@
-## 3.6.0-beta.22
+## 3.6.0
 2025-03-12
 
 ### 🆕 Feature
 
-- `Image` 组件新增 `customRenderHoverMask` 属性，支持自定义渲染鼠标移入组件时的遮罩层内容 ([#993](https://github.com/sheinsight/shineout-next/pull/993))
-
-## 3.6.0-beta.16
-2025-03-05
+- `Image` 新增 `renderHoverMask` 属性，支持自定义渲染鼠标移入组件时的遮罩层内容 ([#993](https://github.com/sheinsight/shineout-next/pull/993))
 
 ### 🐞 BugFix
 

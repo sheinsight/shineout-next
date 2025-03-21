@@ -1,4 +1,4 @@
-## 3.6.0-beta.27
+## 3.6.0
 2025-03-17
 
 ### 🆕 Feature
@@ -19,7 +19,7 @@
 
 ### 🆕 Feature
 
-- `Textarea` 组件 `info` 属性新增配置模式，支持配置定位 ([#676](https://github.com/sheinsight/shineout-next/pull/676))
+- `Textarea` 的 `info` 属性新增配置模式，支持配置定位 ([#676](https://github.com/sheinsight/shineout-next/pull/676))
 
 ## 3.1.10
 2024-05-15

@@ -1,5 +1,5 @@
-## 3.6.0-beta.11
-202=5-02-27
+## 3.6.0
+2025-02-27
 
 ### 💎 Enhancement
 
@@ -11,4 +11,4 @@
 
 ### 🐞 BugFix
 
-- 修复`Carousel`组件点击箭头切换后，鼠标悬停时没有禁用切换的现象 ([#674](https://github.com/sheinsight/shineout-next/pull/674))
+- 修复 `Carousel` 点击箭头切换后，鼠标悬停时没有禁用切换的现象 ([#674](https://github.com/sheinsight/shineout-next/pull/674))

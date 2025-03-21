@@ -6,7 +6,11 @@ export type PopoverClassType = keyof PopoverClasses;
 
 const cssvar = '--popover-arrow-gap';
 const hideArrowGap = `var(${cssvar}, 10px)`;
+const extraArrowGap = 'var(--popover-arrow-gap-extra, 0px)';
 const arrowMargin = '8px';
+
+const poyfillPos = `calc((${hideArrowGap} + ${extraArrowGap}) * -1)`;
+const poyfillHeight = `calc((${hideArrowGap} + ${extraArrowGap}))`;
 
 const popoverStyle: JsStyles<PopoverClassType> = {
   rootClass: {},
@@ -45,12 +49,12 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         margin: 'auto',
       },
       '&::after': {
-        top: `calc(${hideArrowGap} * -1)`,
+        top: poyfillPos,
         left: '0',
         right: '0',
         content: '" "',
         display: 'block',
-        height: hideArrowGap,
+        height: poyfillHeight,
         position: 'absolute',
       },
     },
@@ -67,13 +71,13 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
       '&::after': {
         // bottom: arrowGap * -1,
-        bottom: `calc(${hideArrowGap} * -1)`,
+        bottom: poyfillPos,
         left: '0',
         right: '0',
         content: '" "',
         display: 'block',
         // height: arrowGap,
-        height: hideArrowGap,
+        height: poyfillHeight,
         position: 'absolute',
       },
     },
@@ -88,12 +92,12 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         margin: 'auto',
       },
       '&::after': {
-        right: `calc(${hideArrowGap} * -1)`,
+        right: poyfillPos,
         top: '0',
         bottom: '0',
         content: '" "',
         display: 'block',
-        width: hideArrowGap,
+        width: poyfillHeight,
         position: 'absolute',
       },
     },
@@ -109,13 +113,13 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
       '&::after': {
         // left: arrowGap * -1,
-        left: `calc(${hideArrowGap} * -1)`,
+        left: poyfillPos,
         top: '0',
         bottom: '0',
         content: '" "',
         display: 'block',
         // width: arrowGap,
-        width: hideArrowGap,
+        width: poyfillHeight,
         position: 'absolute',
       },
     },
