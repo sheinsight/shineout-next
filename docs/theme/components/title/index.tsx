@@ -48,7 +48,6 @@ const Header = (props: HeaderProps) => {
       <div
         ref={headerRef}
         // @ts-ignore
-        style={window.__ALITA__ ? {top: '64px'} : {}}
         className={headerClasses}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
