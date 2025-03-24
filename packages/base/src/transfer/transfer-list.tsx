@@ -58,7 +58,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   const [addonHeight, setAddonHeight] = useState(0);
   const listContainerRef = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
-    if (!listContainerRef.current) return;
+    if (!listContainerRef.current || !window.ResizeObserver) return;
 
     const resizeObserver = new ResizeObserver((entries) => {
       for (let entry of entries) {
