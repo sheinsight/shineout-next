@@ -33,7 +33,7 @@ import SelectAbsolute from '../__example__/11-absolute';
 import SelectInnerTitle from '../__example__/14-inner-title';
 import SelectLoading from '../__example__/15-loading';
 import SelectCustomRender from '../__example__/16-custom-render';
-import SelectCustomResult from '../__example__/17-custom-result';
+import SelectCustomResult from '../__example__/17-custom-result-1';
 import SelectCustomUnmatch from '../__example__/18-custom-unmatch';
 
 const SO_PREFIX = 'select';
