@@ -1,5 +1,5 @@
 /**
- * cn - Group 的校验
+ * cn - Group的校验
  *    -- 配置 `status` 属性可以展示错误状态
  * en - Front and rear tags
  *    -- Use the built-in group component to add tags before and after
