@@ -58,15 +58,29 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   const [addonHeight, setAddonHeight] = useState(0);
   const listContainerRef = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
-    if(!listContainerRef.current) return;
+    if (!listContainerRef.current) return;
 
-    const $list = listContainerRef.current.querySelector(`.${styles.list}`);
-    const containerBottom = listContainerRef.current.getBoundingClientRect().bottom;
-    const listBottom = $list?.getBoundingClientRect().bottom || containerBottom;
-    if(containerBottom - listBottom > 1) {
-      setAddonHeight(containerBottom - listBottom - 1);
-    }
-  },[]);
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        if (entry.target === listContainerRef.current) {
+          const $list = listContainerRef.current.querySelector(`.${styles.list}`);
+          const containerBottom = listContainerRef.current.getBoundingClientRect().bottom;
+          const listBottom = $list?.getBoundingClientRect().bottom || containerBottom;
+          if (containerBottom - listBottom > 1) {
+            setAddonHeight(containerBottom - listBottom - 1);
+          }
+        }
+      }
+    });
+
+    resizeObserver.observe(listContainerRef.current);
+
+    return () => {
+      if (!listContainerRef.current) return;
+      resizeObserver.unobserve(listContainerRef.current);
+      resizeObserver.disconnect();
+    };
+  }, []);
   const listHeight = listHeightProp + addonHeight;
 
   const getLineHeight = () => {
