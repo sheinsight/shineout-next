@@ -624,8 +624,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     context.lastValue = props.value;
   };
 
-  updateValue();
-
   React.useEffect(() => {
     // 服务端错误更新
     if (!props.error) context.serverErrors = {};
@@ -645,6 +643,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   // 默认值更新
   React.useEffect(() => {
+    updateValue();
     context.removeLock = false;
     // 内部 onChange 改的 value, 不需要更新
     if (props.value === context.value) return;
