@@ -72,19 +72,24 @@ const useTableFilter = <Item = any>(props: UseTableFilterProps<Item>) => {
 
   // 根据columns生成filterInfo
   useEffect(() => {
-    const _filterInfo = props?.columns?.reduce((acc, column, index) => {
-      if(!column.filter) return acc;
-      const columnKey = typeof column.render === 'string' ? column.render : String(index);
+    setFilterInfo((prev) => {
+      const _filterInfo = props?.columns?.reduce((acc, column, index) => {
+        if(!column.filter) return acc;
+        const columnKey = typeof column.render === 'string' ? column.render : String(index);
 
-      acc.set(columnKey, {
-        value: undefined,
-        onFilter: column.filter?.onFilter,
-      } as FilterInfo<Item>);
+        const prevValue = prev.get(columnKey)?.value;
 
-      return acc
-    }, new Map() as FilterMap<Item>);
+        acc.set(columnKey, {
+          value: prevValue,
+          onFilter: column.filter?.onFilter,
+        } as FilterInfo<Item>);
 
-    if(_filterInfo) setFilterInfo(_filterInfo);
+        return acc
+      }, new Map());
+
+      return _filterInfo || new Map()
+    })
+
 
 }, [props.columns])
 
