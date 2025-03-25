@@ -842,7 +842,7 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
           class="soui-input-input"
           disabled=""
           type="text"
-          value=""
+          value="1"
         />
       </div>
     </div>
@@ -989,7 +989,7 @@ exports[`Pagination[Base] should render correctly about jumper 1`] = `
         <input
           class="soui-input-input"
           type="text"
-          value=""
+          value="1"
         />
       </div>
     </div>
@@ -1279,7 +1279,7 @@ exports[`Pagination[Base] should render correctly about simple 1`] = `
         <input
           class="soui-input-input"
           type="text"
-          value=""
+          value="1"
         />
       </div>
     </div>

@@ -1,21 +1,22 @@
 import classNames from 'classnames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Input from '../input';
 import { PaginationJumperProps } from './pagination-jumper.type';
 
 const PaginationJumper = (props: PaginationJumperProps) => {
-  const { jssStyle, simple, size, total, pageSize, disabled, text, onChange } = props;
+  const { jssStyle, simple, size, total, pageSize, disabled, text, current, onChange } = props;
   const paginationStyle = jssStyle?.pagination?.();
   const rootClasses = classNames(paginationStyle?.section, paginationStyle?.jumper);
 
   let txt: string[] | React.ReactNode[] = text.jumper ? text.jumper.split('{input}') : [];
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(String(current));
 
   const getMax = () => {
     return Math.ceil(total / pageSize) || 1;
   };
 
   const cleatInternalState = () => {
+    if(simple) return;
     setValue('');
   };
 
@@ -35,6 +36,11 @@ const PaginationJumper = (props: PaginationJumperProps) => {
   const handleChange = (v?: string) => {
     setValue(v || '');
   };
+
+  useEffect(() => {
+    if(!simple) return;
+    setValue(String(current));
+  }, [current, simple]);
 
   const renderInput = () => {
     return (
