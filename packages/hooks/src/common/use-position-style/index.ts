@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
-import { useCheckElementPosition } from './check-position'
+import { useCheckElementPosition, type Position } from './check-position'
 import { useCheckElementBorderWidth } from './check-border';
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
@@ -83,6 +83,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     parentRect: { left: 0, width: 0 } as DOMRect,
     popUpHeight: 0,
     popUpWidth: 0,
+    prevParentPosition: null as (Position | null),
   });
 
   const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
@@ -283,7 +284,10 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getAbsoluteStyle = (position: string) => {
     if (!parentElRef.current) return { style: hideStyle };
     const rect = context.parentRect;
-    if (!show && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
+
+    const needCheck = !show || !shallowEqual(context.prevParentPosition, parentElNewPosition)
+
+    if (needCheck && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
         rect.bottom < visibleRect.top ||
@@ -351,6 +355,9 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       setStyle(newStyle);
       setArrayStyle(newArrayStyle || {});
     }
+
+    // 当父元素的滚动容器滚动时，判断是否需要更新弹出层位置，包括是否隐藏弹出层（通过hideStyle隐藏，不是show状态）
+    context.prevParentPosition = parentElNewPosition;
   });
 
   useEffect(updateStyle, [

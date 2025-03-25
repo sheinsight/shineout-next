@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-interface Position {
+export interface Position {
   top: number;
   left: number;
 }
