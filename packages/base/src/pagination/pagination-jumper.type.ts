@@ -10,6 +10,7 @@ export interface PaginationJumperProps extends Pick<CommonType, 'size'> {
     pagination?: () => PaginationClasses;
   };
   total: number;
+  current?: number;
   simple?: boolean;
   pageSize: number;
   text: TextParams;
