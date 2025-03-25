@@ -1,3 +1,10 @@
+## 3.6.1-beta.4
+2025-03-25
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 下面的 `Input` 的 `onBlur` 和 `onFocus` 回调函数的参数格式不正确的问题 ([#1014](https://github.com/sheinsight/shineout-next/pull/1014))
+
 ## 3.6.0
 2025-03-13
 

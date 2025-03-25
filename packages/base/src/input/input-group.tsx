@@ -35,11 +35,11 @@ export default (props: InputGroupProps) => {
       ref.current.eventMap.set(child, {
         onFocus: (...args: any) => {
           setFocus(true);
-          ref.current.propsMap.get(child)?.onFocus?.(args);
+          ref.current.propsMap.get(child)?.onFocus?.(...args);
         },
         onBlur: (...args: any) => {
           setFocus(false);
-          ref.current.propsMap.get(child)?.onBlur?.(args);
+          ref.current.propsMap.get(child)?.onBlur?.(...args);
         },
       });
     }
