@@ -1,3 +1,9 @@
+## 3.6.1-beta.7
+2025-03-26
+
+### 💎 Enhancement
+- 优化 `Popover` 的 `adjust` 属性，支持弹出层位置实时跟随父元素尺寸变化 ([#1018](https://github.com/sheinsight/shineout-next/pull/1018))
+
 ## 3.6.0
 2025-03-21
 
