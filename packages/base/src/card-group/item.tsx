@@ -23,7 +23,6 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
 
   const renderChildren = (content: React.ReactNode) => {
     if (!props.placeholder) return content;
-    if (!container) return content;
     return (
       <Lazyload container={container} placeholder={props.placeholder} isInView={isInView}>
         {content}

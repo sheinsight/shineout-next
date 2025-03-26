@@ -121,20 +121,6 @@ export function getClosestScrollContainer(element: HTMLElement | null): HTMLElem
     return null;
   }
 
-  // 检查元素是否可滚动
-  const isScrollable = (el: HTMLElement) => {
-    const style = window.getComputedStyle(el);
-    const overflowX = style.overflowX;
-    const overflowY = style.overflowY;
-    return (
-      (overflowX === 'auto' ||
-        overflowX === 'scroll' ||
-        overflowY === 'auto' ||
-        overflowY === 'scroll') &&
-      (el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth)
-    );
-  };
-
   // 如果元素本身是可滚动的，直接返回
   if (isScrollable(element)) {
     return element;
