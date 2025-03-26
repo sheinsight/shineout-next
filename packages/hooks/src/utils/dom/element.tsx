@@ -103,6 +103,19 @@ export function getParent(el: HTMLElement | null | Element, target?: string | HT
   return null;
 }
 
+export function isScrollable(el: HTMLElement) {
+  const style = window.getComputedStyle(el);
+  const overflowX = style.overflowX;
+  const overflowY = style.overflowY;
+  return (
+    (overflowX === 'auto' ||
+      overflowX === 'scroll' ||
+      overflowY === 'auto' ||
+      overflowY === 'scroll') &&
+    (el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth)
+  );
+}
+
 export function getClosestScrollContainer(element: HTMLElement | null): HTMLElement | null {
   if (!element) {
     return null;
