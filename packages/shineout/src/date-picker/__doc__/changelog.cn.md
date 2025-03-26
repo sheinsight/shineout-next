@@ -1,3 +1,10 @@
+## 3.6.1-beta.5
+2025-03-26
+
+### 🐞 BugFix
+
+- 修复 `DatePicker` 弹出层的层级低于其他absolute元素的问题（Regression： since v3.6.0） ([#1015](https://github.com/sheinsight/shineout-next/pull/1015))
+
 ## 3.6.0
 2025-03-20
 

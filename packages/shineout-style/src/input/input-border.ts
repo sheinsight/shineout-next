@@ -62,7 +62,6 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       verticalAlign: 'top',
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
-        zIndex: 1,
         borderColor: token.hoverBorderColor,
         [`&:not($${name}Disabled):not($${name}Error)`]: {
           backgroundColor: token.hoverBackgroundColor,
@@ -84,6 +83,10 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         flexShrink: 0,
         width: 'auto',
         'margin-left': `-1px`,
+
+        '&:hover': {
+          zIndex: 1050,
+        },
 
         '&:first-child': {
           marginLeft: 0,
