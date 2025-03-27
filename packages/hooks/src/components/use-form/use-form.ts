@@ -282,13 +282,19 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
             if (offsetTop < 0) {
               parentEl.scrollTop = Math.max(parentEl.scrollTop + offsetTop, 0);
             } else {
-              parentEl.scrollTop = Math.min(parentEl.scrollTop + offsetTop, parentEl.scrollHeight - parentEl.clientHeight);
+              parentEl.scrollTop = Math.min(
+                parentEl.scrollTop + offsetTop,
+                parentEl.scrollHeight - parentEl.clientHeight,
+              );
             }
             // 如果是往左滚动，那么只有当元素的偏移量小于0时才需要滚动
             if (offsetLeft < 0) {
               parentEl.scrollLeft = Math.max(parentEl.scrollLeft + offsetLeft, 0);
             } else {
-              parentEl.scrollLeft = Math.min(parentEl.scrollLeft + offsetLeft, parentEl.scrollWidth - parentEl.clientWidth);
+              parentEl.scrollLeft = Math.min(
+                parentEl.scrollLeft + offsetLeft,
+                parentEl.scrollWidth - parentEl.clientWidth,
+              );
             }
           }
         } else {
@@ -501,8 +507,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.updateMap[n] = new Set();
       }
       context.updateMap[n].add(updateFn);
+      const shouldTriggerResetChange = context.removeArr.has(n);
       context.removeArr.delete(n);
-      if (df !== undefined && deepGet(context.value, n) === undefined) {
+      const shouldTriggerDefaultChange =
+        df !== undefined && deepGet(context.value, n) === undefined;
+      if (shouldTriggerDefaultChange || shouldTriggerResetChange) {
         if (!context.mounted) context.defaultValues[n] = df;
         setTimeout(() => {
           onChange((v) => {
