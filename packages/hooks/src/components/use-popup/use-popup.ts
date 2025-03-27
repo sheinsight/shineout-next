@@ -22,7 +22,6 @@ const usePopup = (props: BasePopupProps) => {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
-  const arrowRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
     bindChild(popupRef);
@@ -205,7 +204,6 @@ const usePopup = (props: BasePopupProps) => {
     position,
     targetRef,
     popupRef,
-    arrowRef,
     getTargetProps,
     openPop,
     closePop,
