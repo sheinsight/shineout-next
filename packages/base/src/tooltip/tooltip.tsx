@@ -29,7 +29,7 @@ const Tooltip = (props: TooltipProps) => {
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
 
-  const persistent = config.tooltip?.persistent ?? persistentProp;
+  const persistent = persistentProp ?? config.tooltip?.persistent;
 
   const childrenProps = isValidElement(children)
     ? (children?.props as { [name: string]: any })
