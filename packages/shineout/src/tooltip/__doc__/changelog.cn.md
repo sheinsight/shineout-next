@@ -4,6 +4,9 @@
 ### 🐞 BugFix
 - 修复 `Tooltip` 的 `persistent` 配置优先级问题，使其优先于全局配置并符合就近原则 ([#1020](https://github.com/sheinsight/shineout-next/pull/1020))
 
+### 💎 Enhancement
+- 优化 `Tooltip` 的箭头，使其在内容动态修改后位置保持正确 ([#1019](https://github.com/sheinsight/shineout-next/pull/1019))
+
 
 ## 3.6.0
 2025-03-17
