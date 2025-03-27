@@ -1,3 +1,11 @@
+## 3.6.1-beta.7
+2025-03-27
+
+### 🐞 BugFix
+
+- 修复 `Input.Number` 输入“0.0”这种格式时小数点丢失的问题 ([#1014](https://github.com/sheinsight/shineout-next/pull/1014))
+
+
 ## 3.6.1-beta.4
 2025-03-25
 
