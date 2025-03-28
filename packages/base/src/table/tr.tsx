@@ -7,6 +7,7 @@ import Spin from '../spin';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
 import Radio from '../radio';
+import Td from './td';
 import { TbodyProps, UseTableRowResult } from './tbody.type';
 import { useConfig } from '../config';
 
@@ -332,10 +333,10 @@ const Tr = (props: TrProps) => {
         const last = cols[i + (data[i].colSpan || 1) - 1] || {};
 
         const isRowSpanTd = data[i].rowSpan > 1;
-        const $tdContent = renderContent(col, data[i].data);
         const td = (
-          <td
-            key={col.key}
+          <Td
+            col={col}
+            data={data[i].data}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
             onMouseEnter={
@@ -367,12 +368,12 @@ const Tr = (props: TrProps) => {
                 tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
-            dir={config.direction}
+            direction={config.direction}
             data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
-          >
-            {$tdContent}
-          </td>
+            shouldUpdate={col.shouldUpdate}
+            renderContent={renderContent}
+          />
         );
         tds.push(td);
         if (data[i].colSpan) skip = data[i].colSpan - 1;
