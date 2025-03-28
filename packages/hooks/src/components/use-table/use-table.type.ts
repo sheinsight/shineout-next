@@ -442,7 +442,21 @@ export interface TableColumnItem<DataItem> {
    * @en Separately set a column not to be draggable
    */
   columnResizable?: false;
+
+  /**
+   * @cn 是否需要更新单元格，第3参数是外部传入的依赖项
+   * @en Whether the cell needs to be updated, the third parameter is the external dependency
+   * @version 3.6.1
+   */
+  shouldUpdate?: ShouldUpdate<DataItem>;
 }
+
+export type ShouldUpdate<T> =
+  | ((prev: T, next: T) => boolean) // 第一种格式：函数类型
+  | {
+      update: (prev: T, next: T) => boolean; // 第二种格式：对象中的 update 方法
+      dependencies: any[]; // 第二种格式：对象中的 dependencies
+    };
 
 export interface TableFormatColumn<DataItem> extends TableColumnItem<DataItem> {
   index: number;
