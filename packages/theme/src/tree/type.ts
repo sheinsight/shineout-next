@@ -148,7 +148,7 @@ export interface TreeTokens {
   treeContentActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-6
    * @description 树组件节点容器鼠标点击时的字体颜色
    */
   treeContentActiveFontColor: string;
