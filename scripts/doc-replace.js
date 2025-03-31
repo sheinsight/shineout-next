@@ -55,8 +55,8 @@ function updateWebpackFile(filePath) {
 
 const installDeps = async () => {
   await updateNpmrc('./', `registry=${process.env.NPM_URL}`);
-  execCommand('corepack pnpm install @alita/react@1.3.2 -w');
-  execCommand('corepack pnpm install @alita/webpack-plugin@1.3.2 -D -w');
+  execCommand('pnpm install @alita/react@1.3.2 -w');
+  execCommand('pnpm install @alita/webpack-plugin@1.3.2 -D -w');
 }
 
 if (process.env.NODE_ENV === 'development') {
