@@ -48,10 +48,6 @@ const Changelog = () => {
   return cn
 }, [showSubVersion]);
 
-console.log('======================')
-console.log('componentMarkdowns: >>', componentMarkdowns['3.6.1'])
-console.log('======================')
-
   const markdowns = Object.keys(componentMarkdowns)
     .sort(
       // 比较版本号 1.0.10 -> 1.0.9
