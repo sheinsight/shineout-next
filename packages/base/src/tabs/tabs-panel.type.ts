@@ -53,4 +53,10 @@ export interface TabsPanelProps
    * @private
    */
   index?: number;
+
+  /**
+   * @en Background color, will override Tabs background
+   * @cn 背景色，会覆盖 Tabs 的background
+   */
+  background?: string;
 }

@@ -13,10 +13,10 @@ const placeholderRefStyle: React.CSSProperties = {
   inset: 0,
   pointerEvents: 'none',
   visibility: 'hidden',
-}
+};
 
 const Tab = (props: TabProps, ref: any) => {
-  const { jssStyle, tab: propTab, disabled, id, color } = props;
+  const { jssStyle, tab: propTab, background, disabled, id, color } = props;
   const {
     active,
     shape = 'card',
@@ -67,7 +67,9 @@ const Tab = (props: TabProps, ref: any) => {
     return <div className={tabsStyle.fillInner}>{tab}</div>;
   };
 
-  const style: { background?: string; color?: string } = {};
+  const style: { background?: string; color?: string } = {
+    background,
+  };
 
   if (activeBackground && isActive) {
     style.background = activeBackground;
@@ -114,14 +116,18 @@ const Tab = (props: TabProps, ref: any) => {
 
   if (util.isLink(propTab)) {
     // 修正ref能够稳定的指向正确的dom节点
-    return React.cloneElement(propTab, {
-      ...containerProps,
-      style: { ...style, position: 'relative' },
-      ref: null,
-    }, <>
-      {$children}
-      <div ref={node => ref(node?.parentNode)} style={placeholderRefStyle} />
-    </>)
+    return React.cloneElement(
+      propTab,
+      {
+        ...containerProps,
+        style: { ...style, position: 'relative' },
+        ref: null,
+      },
+      <>
+        {$children}
+        <div ref={(node) => ref(node?.parentNode)} style={placeholderRefStyle} />
+      </>,
+    );
   }
 
   return <div {...containerProps}>{$children}</div>;
