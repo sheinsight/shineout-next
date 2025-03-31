@@ -176,6 +176,9 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   const handleBlur = usePersistFn((e: React.FocusEvent) => {
     setFocused(false);
     props.onBlur?.(e);
+
+    if(props.needConfirm) return;
+    func.finishEdit();
   });
 
   const handleClose = (isFromConfirm?: boolean) => {
