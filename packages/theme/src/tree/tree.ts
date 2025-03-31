@@ -28,7 +28,7 @@ const treeTokens: TreeTokens = {
   treeContentHoverBackgroundColor: 'Neutral-fill-2',
   treeContentHoverFontColor: 'Neutral-text-5',
   treeContentActiveBackgroundColor: 'Brand-1',
-  treeContentActiveFontColor: 'Brand-4',
+  treeContentActiveFontColor: 'Brand-6',
   treeContentActiveBorderRadius: 'Radius-2',
   treeContentDisabledBackgroundColor: 'Transprent',
   treeContentDisabledFontColor: 'Neutral-text-5',
