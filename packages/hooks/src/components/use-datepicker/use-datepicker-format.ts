@@ -184,6 +184,11 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
         position === 'end' ? context.modeDisabledEnd[mode] : context.modeDisabledStart[mode];
 
       let isDisabled = disabled ? disabled(date) : false;
+
+      if(triggerType === 'input' && !isDisabled) {
+        isDisabled = isDisabledInputDate(position === 'end' ? [currentArr[0], date] : [date, currentArr[1]]);
+      }
+
       if (type === 'datetime' && !isDisabled) {
         const disabledTime =
           position === 'end' ? context.modeDisabledEnd['time'] : context.modeDisabledStart['time'];
@@ -258,7 +263,6 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
         formatValue = getFormatValueArr(inputValue);
       }
     }
-    // const formatValue = getFormatValueArr(stateDate);
     const v = range ? formatValue : formatValue[0];
     if (range && (!stateDate[0] || !stateDate[1]) && !props.allowSingle) {
       return;
