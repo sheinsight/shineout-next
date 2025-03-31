@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-interface Position {
+export interface Position {
   top: number;
   left: number;
+  width?: number;
+  height?: number;
 }
 
 interface UseCheckElementPositionOptions {
@@ -31,14 +33,23 @@ export const useCheckElementPosition = (
         newPosition = {
           top: rect.top - scrollContainerRect.top,
           left: rect.left - scrollContainerRect.left,
+          width: rect.width,
+          height: rect.height,
         };
       } else {
-        newPosition = { top: rect.top, left: rect.left };
+        newPosition = {
+          top: rect.top,
+          left: rect.left,
+          width: rect.width,
+          height: rect.height,
+        };
       }
 
       if (
         newPosition.top !== lastPosition.current.top ||
-        newPosition.left !== lastPosition.current.left
+        newPosition.left !== lastPosition.current.left ||
+        newPosition.width !== lastPosition.current.width ||
+        newPosition.height !== lastPosition.current.height
       ) {
         setPosition(newPosition);
         lastPosition.current = newPosition;

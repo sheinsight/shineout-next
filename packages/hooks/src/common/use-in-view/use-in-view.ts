@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { isScrollable } from '../../utils/dom';
 
 type ElementType = HTMLElement;
 
@@ -38,7 +39,7 @@ const useInView = <T extends ElementType>(options: UseInViewOptions = {}) => {
         }
       },
       {
-        root: options.root || null,
+        root: options.root && isScrollable(options.root) ? options.root : null,
         rootMargin: options.rootMargin || '0px',
         threshold: options.threshold || 0,
       }

@@ -29,6 +29,7 @@ import TableGroup from '../__example__/04-group';
 // import TableSorter from '../__example__/09-01-sorter'
 // import TableSorterRender from '../__example__/09-02-sorter-render'
 import TableSorterWeight from '../__example__/09-03-sorter-weight';
+import TableColumnFilter from '../__example__/09-001-filter-column';
 // import TablePaginationCopy from '../__example__/10-01-pagination copy'
 // import TablePagination from '../__example__/10-02-pagination'
 // import TableScroll from '../__example__/11-scroll'
@@ -55,6 +56,8 @@ const originClasses = [
   'sorterDesc',
   'resizeSpanner',
   'expandIcon',
+  'filterIconContainer',
+  'filterIcon',
 ];
 const originItemClasses = [
   'default',
@@ -85,7 +88,7 @@ const {
   rowStriped,
   small: tableSmall,
   cellHover,
-  rowHover,
+  // rowHover,
   verticalAlignMiddle,
   iconWrapper,
   rowExpand,
@@ -101,6 +104,7 @@ const {
   cellFixedLast,
   cellFixedRight,
   expandIcon,
+  filterIconContainer,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const {
@@ -1093,6 +1097,16 @@ describe('Table[Checked]', () => {
     trs.forEach((item) => {
       classTest(item, rowChecked);
     });
+  });
+});
+describe('Table[Filter]', () => {
+  test('should render filter icons', () => {
+    const { container } = render(<TableColumnFilter />);
+    const thead = container.querySelector('thead')!;
+    const iconContainer = thead.querySelectorAll(filterIconContainer);
+
+    // 断言iconContainer的数量为5
+    expect(iconContainer.length).toBe(5);
   });
 });
 describe('Table[Sort]', () => {

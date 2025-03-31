@@ -32,8 +32,14 @@ const App: React.FC = () => (
       <Input placeholder='please enter' />
     </Input.Group>
 
-    <h3 style={{ marginBottom: 12, fontSize: 16 }}>Small Size</h3>
+    <h3 style={{ marginBottom: 12, fontSize: 16 }}>Other Size</h3>
     <Input.Group style={style} size="small">
+      <b>http://</b>
+      <Input placeholder='email' />
+      <b>.com</b>
+    </Input.Group>
+
+    <Input.Group style={style} size="large">
       <b>http://</b>
       <Input placeholder='email' />
       <b>.com</b>

@@ -1,3 +1,10 @@
+## 3.6.1-beta.4
+2025-03-25
+
+### 🐞 BugFix
+- 修复 `Form` 同时设置 value 和 names为数组的DatePicker并发渲染时，value未按照预期设置进去的问题  ([#1013](https://github.com/sheinsight/shineout-next/pull/1013))
+
+
 ## 3.6.0
 2025-03-20
 

@@ -1,3 +1,9 @@
+## 3.6.1-beta.3
+2025-03-25
+
+### 🐞 BugFix
+- 修复 `Table` 的columns是动态值时，column.filter的过滤功能意外的被重置的问题 ([#1012](https://github.com/sheinsight/shineout-next/pull/1012))
+
 ## 3.6.0
 2025-03-06
 

@@ -29,14 +29,14 @@ const Tooltip = (props: TooltipProps) => {
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
 
-  const persistent = config.tooltip?.persistent ?? persistentProp;
+  const persistent = persistentProp ?? config.tooltip?.persistent;
 
   const childrenProps = isValidElement(children)
     ? (children?.props as { [name: string]: any })
     : {};
 
   const delay = props.delay || props.mouseEnterDelay || defaultDelay;
-  const { open, position, getTargetProps, targetRef, popupRef, arrowRef, closePop } = usePopup({
+  const { open, position, getTargetProps, targetRef, popupRef, closePop } = usePopup({
     position: popsitionProps,
     trigger: trigger,
     autoMode: 'popover',
@@ -113,7 +113,6 @@ const Tooltip = (props: TooltipProps) => {
         popupGap={0}
         zIndex={zIndex}
         adjust={popsitionProps === 'auto'}
-        arrowRef={arrowRef}
       >
         <div
           className={classNames(
@@ -130,7 +129,6 @@ const Tooltip = (props: TooltipProps) => {
         >
           {showArrow && (
             <span
-              ref={arrowRef}
               className={tooltipClasses?.arrow}
               {...util.getDataAttribute({ role: 'arrow' })}
             />
