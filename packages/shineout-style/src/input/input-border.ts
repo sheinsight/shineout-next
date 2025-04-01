@@ -82,6 +82,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         borderRadius: 0,
         flexShrink: 0,
         width: 'auto',
+        flex: 1,
         'margin-left': `-1px`,
 
         '&:hover': {

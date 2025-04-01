@@ -5,5 +5,6 @@ export type BaseNumberProps = Omit<UnStyledInputNumberProps, 'jssStyle'>;
 
 /**
  * @title Input.Number
+ * @sort 3
  */
 export type InputNumberProps = GetWithFieldProps<BaseNumberProps, BaseNumberProps['value']>;
