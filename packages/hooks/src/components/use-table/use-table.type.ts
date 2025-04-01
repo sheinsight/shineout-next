@@ -446,7 +446,7 @@ export interface TableColumnItem<DataItem> {
   /**
    * @cn 是否需要更新单元格，第3参数是外部传入的依赖项
    * @en Whether the cell needs to be updated, the third parameter is the external dependency
-   * @version 3.6.1
+   * @version 3.7.0
    */
   shouldUpdate?: ShouldUpdate<DataItem>;
 }
