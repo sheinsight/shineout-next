@@ -1,3 +1,10 @@
+## 3.6.2-beta.2
+2025-04-01
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 属性 `seperate` 默认不生效的问题（正确的默认值应该为 true） ([#1029](https://github.com/sheinsight/shineout-next/pull/1029))
+
 ## 3.6.1-beta.7
 2025-03-27
 

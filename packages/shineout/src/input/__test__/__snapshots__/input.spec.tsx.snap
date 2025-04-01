@@ -39,8 +39,8 @@ exports[`Input[Base] should render correctly about autoSelect 1`] = `
 exports[`Input[Base] should render correctly about disabled 1`] = `
 <div>
   <div
-    class="soui-input-group soui-input-group-disabled"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate soui-input-group-disabled"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -100,8 +100,8 @@ exports[`Input[Base] should render correctly about disabled 1`] = `
 exports[`Input[Base] should render correctly about enter 1`] = `
 <div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -126,8 +126,8 @@ exports[`Input[Base] should render correctly about enter 1`] = `
     </b>
   </div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -152,8 +152,8 @@ exports[`Input[Base] should render correctly about enter 1`] = `
     </b>
   </div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -183,8 +183,8 @@ exports[`Input[Base] should render correctly about enter 1`] = `
 exports[`Input[Base] should render correctly about group 1`] = `
 <div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -207,8 +207,8 @@ exports[`Input[Base] should render correctly about group 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -231,8 +231,8 @@ exports[`Input[Base] should render correctly about group 1`] = `
     </b>
   </div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -258,8 +258,8 @@ exports[`Input[Base] should render correctly about group 1`] = `
     </b>
   </div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -303,8 +303,8 @@ exports[`Input[Base] should render correctly about group 1`] = `
     Other Size
   </h3>
   <div
-    class="soui-input-group soui-input-group-small"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate soui-input-group-small"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -330,8 +330,8 @@ exports[`Input[Base] should render correctly about group 1`] = `
     </b>
   </div>
   <div
-    class="soui-input-group soui-input-group-large"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate soui-input-group-large"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="width: 300px; margin-bottom: 24px;"
   >
@@ -476,8 +476,8 @@ exports[`Input[Base] should render correctly about limit 1`] = `
   style="width: 300px;"
 >
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="margin-bottom: 24px;"
   >
@@ -535,8 +535,8 @@ exports[`Input[Base] should render correctly about limit 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="margin-bottom: 24px;"
   >
@@ -594,8 +594,8 @@ exports[`Input[Base] should render correctly about limit 1`] = `
     </div>
   </div>
   <div
-    class="soui-input-group"
-    data-soui-role="input-group"
+    class="soui-input-group soui-input-group-seperate"
+    data-soui-role="input-group-seperate"
     dir="ltr"
     style="margin-bottom: 24px;"
   >
@@ -815,8 +815,8 @@ exports[`Input[Base] should render correctly about number 2`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <div
-      class="soui-input-group"
-      data-soui-role="input-group"
+      class="soui-input-group soui-input-group-seperate"
+      data-soui-role="input-group-seperate"
       dir="ltr"
       style="width: 300px;"
     >

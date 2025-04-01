@@ -343,7 +343,7 @@ describe('Input[Group]', () => {
       </Input.Group>,
     );
     const inputGroup = container.querySelector(group)!;
-    attributesTest(inputGroup, 'data-soui-role', 'input-group')
+    attributesTest(inputGroup, 'data-soui-role', 'input-group-seperate')
     classLengthTest(inputGroup, wrapper, 1)
     textContentTest(inputGroup.querySelector('span')!, '.com')
   });
