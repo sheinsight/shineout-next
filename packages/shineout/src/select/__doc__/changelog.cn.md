@@ -1,3 +1,9 @@
+## 3.6.2-beta.4
+2025-04-01
+
+### 🐞 BugFix
+- 修复 `Select` 最大高度限制失效的问题（默认 max-height 应为 80px） ([#1030](https://github.com/sheinsight/shineout-next/pull/1030))
+
 ## 3.6.0
 2025-03-19
 
