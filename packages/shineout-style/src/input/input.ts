@@ -76,11 +76,9 @@ const groupSpace = (gap: string) => ({
     fontWeight: 'normal',
     color: token.inputGroupFontColor,
     '&:first-child': {
-      borderLeftColor: 'inherit',
       marginLeft: '-1px',
     },
     '&:last-child': {
-      borderRightColor: 'inherit',
       marginRight: '-1px',
     },
   },
