@@ -78,11 +78,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   }
 
   const update = usePersistFn(
-    (
-      formValue: ObjectType = {},
-      errors: ObjectType,
-      severErrors: ObjectType,
-    ) => {
+    (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
       if (!name) return;
       if (isArray(name)) {
         const value = getValue(name, formValue) as T[];
@@ -215,8 +211,8 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         if (isArray(name)) {
           name.forEach((n) => {
             controlFunc.unbind(n, reserveAble, validateField, update);
-            updateError(n, undefined);
           });
+          updateError(isArray(name) ? name.join('|') : name, undefined);
         } else {
           controlFunc.unbind(name, reserveAble, validateField, update);
           updateError(name, undefined);
