@@ -444,7 +444,7 @@ export interface TableColumnItem<DataItem> {
   columnResizable?: false;
 
   /**
-   * @cn 是否需要更新单元格，第3参数是外部传入的依赖项
+   * @cn 是否需要更新单元格，dependencies是外部更新依赖项
    * @en Whether the cell needs to be updated, the third parameter is the external dependency
    * @version 3.7.0
    */

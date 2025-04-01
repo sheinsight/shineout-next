@@ -1,5 +1,5 @@
-## 3.6.1-beta.9
-2025-03-28
+## 3.7.0-beta.1
+2025-04-01
 
 ### 🆕 Feature
 - `Table` 新增缓存单元格功能：设置 `columns` 配置项的 `shouldUpdate` 属性 ([#1023](https://github.com/sheinsight/shineout-next/pull/1023))
