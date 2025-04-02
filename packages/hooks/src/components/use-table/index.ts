@@ -17,4 +17,5 @@ export type {
   BaseTableProps,
   TableColumnFilter,
   TableFilterData,
+  ShouldUpdate,
 } from './use-table.type';
