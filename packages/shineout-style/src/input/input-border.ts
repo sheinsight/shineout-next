@@ -75,14 +75,13 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         flex: 1,
         minWidth: 0,
       },
-      '[data-soui-role="input-group"] [data-soui-input-border] + &': {
+      '[data-soui-role="input-group"] [data-soui-input-border] + &&&': {
         borderLeftWidth: '1px',
       },
       '[data-soui-role="input-group-seperate"] &&&, [data-soui-role="input-group-seperate"] &&&:hover': {
         borderRadius: 0,
         flexShrink: 0,
         width: 'auto',
-        flex: 1,
         'margin-left': `-1px`,
 
         '&:hover': {
@@ -189,6 +188,9 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
         borderColor: token.errorFocusBorderColor,
         background: token.errorFocusBackgroundColor,
+        // '[data-soui-role="input-group-seperate"]&': {
+        //   boxShadow: 'none',
+        // }
       },
     } as CSSProperties,
     [`${name}Disabled`]: {
