@@ -6,13 +6,34 @@
  */
 
 import React from 'react';
-import { Input, Select, icons } from 'shineout';
+import { Input, Select, DatePicker, Button, icons } from 'shineout';
+
+const style: React.CSSProperties = { width: 300, marginBottom: 24 };
 
 const App: React.FC = () => (
-  <Input.Group seperate>
-    <Select keygen data={['Option1', 'Option2']} width={100} defaultValue="Option1" />
-    <Input placeholder='please enter' suffix={<div style={{width: 14}}>{icons.Search}</div>} />
-  </Input.Group>
+  <div>
+    <Input.Group seperate style={style}>
+      <Select keygen data={['Option1', 'Option2']} width={100} defaultValue="Option1" />
+      <Input placeholder='please enter' suffix={<div style={{width: 14}}>{icons.Search}</div>} />
+    </Input.Group>
+
+    <Input.Group seperate style={style}>
+      <Select keygen data={['Option1', 'Option2']} width={100} defaultValue='Option1' />
+      <Input placeholder='please enter' />
+    </Input.Group>
+
+    <Input.Group seperate style={style}>
+      <Select keygen data={['Option1', 'Option2']} width={100} defaultValue='Option1' />
+      <DatePicker placeholder='please select' style={{ flex: 1 }} />
+    </Input.Group>
+
+    <Input.Group seperate style={style}>
+      <Select keygen data={['Option1', 'Option2']} width={100} defaultValue='Option1' />
+      <Input placeholder='please enter' />
+      <Button type='primary'>Search</Button>
+    </Input.Group>
+  </div>
+
 );
 
 export default App;
