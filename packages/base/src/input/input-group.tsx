@@ -46,7 +46,7 @@ export default (props: InputGroupProps) => {
     return ref.current.eventMap.get(child) || {};
   };
 
-  const { children, className, width, style, seperate = true } = props;
+  const { children, className, width, style, seperate } = props;
   const rootClass = classNames(
     className,
     inputStyle?.group,
