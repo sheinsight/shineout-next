@@ -430,8 +430,10 @@ const Tr = (props: TrProps) => {
   const handleRowClick = usePersistFn((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
     const { rowClickAttr = '*', onRowClick } = props;
+    const isExpandable = !isNotExpandableElement(target);
+
     if (onRowClick && rowClickAttr) {
-      if (rowClickAttr === true || rowClickAttr === '*') {
+      if ((rowClickAttr === true || rowClickAttr === '*') && isExpandable) {
         onRowClick(props.rawData, props.rowIndex, rowClickAttr);
       } else {
         const arrts = (
@@ -440,14 +442,13 @@ const Tr = (props: TrProps) => {
             : [rowClickAttr].filter((item) => typeof item === 'string')
         ) as string[];
         const attIndex = arrts.findIndex((attr) => attr === '*' || target.hasAttribute(attr));
-        if (attIndex > -1) {
+        if (attIndex > -1 && isExpandable) {
           onRowClick(props.rawData, props.rowIndex, arrts[attIndex]);
         }
       }
     }
 
-    if (props.rowClickExpand) {
-      if (isNotExpandableElement(target)) return;
+    if (props.rowClickExpand && isExpandable) {
       props.handleExpandClick(
         props.expandCol as TableFormatColumn<any>,
         props.rawData,
