@@ -5,6 +5,12 @@
 - `Table` 新增缓存单元格功能：设置 `columns` 配置项的 `shouldUpdate` 属性 ([#1023](https://github.com/sheinsight/shineout-next/pull/1023))
 
 
+## 3.6.2-beta.6
+2025-04-07
+
+### 🐞 BugFix
+- 修复 `Table` 点击 `Button` 等元素会触发单元格 click 事件的问题  ([#1040](https://github.com/sheinsight/shineout-next/pull/1040))
+
 ## 3.6.1-beta.3
 2025-03-25
 
