@@ -430,7 +430,15 @@ const Tr = (props: TrProps) => {
   const handleRowClick = usePersistFn((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
     const { rowClickAttr = '*', onRowClick } = props;
-    const isExpandable = !isNotExpandableElement(target);
+
+    const attributes = Array.isArray(rowClickAttr) ? rowClickAttr : [];
+
+    if (typeof rowClickAttr === 'string') {
+      attributes.push(rowClickAttr);
+    }
+
+    const isFireElement = attributes.map((v) => (v === '*' ? '' : v)).find(v=>target.hasAttribute(v));
+    const isExpandable = !isNotExpandableElement(target) || isFireElement;
 
     if (onRowClick && rowClickAttr) {
       if ((rowClickAttr === true || rowClickAttr === '*') && isExpandable) {
