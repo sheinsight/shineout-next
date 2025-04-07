@@ -39,7 +39,8 @@ export interface InputGroupProps extends Pick<CommonType, 'status' | 'style' | '
   /**
    * @en Whether to seperate the border
    * @cn 是否分离边框
-   * @default true
+   * @default false
+   * @version 3.6.0
    */
   seperate?: boolean;
 }

@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Input } from 'shineout';
+import { Input, Select, DatePicker, Button } from 'shineout';
 
 const style: React.CSSProperties = { width: 300, marginBottom: 24 };
 
@@ -30,6 +30,22 @@ const App: React.FC = () => (
       <Input placeholder='please enter' />
       <div style={{ lineHeight: '30px' }}>-</div>
       <Input placeholder='please enter' />
+    </Input.Group>
+
+    <Input.Group style={style}>
+      <Select keygen data={['Option1', 'Option2']} style={{width: 100, flex: 'none'}} defaultValue='Option1' />
+      <Input placeholder='please enter' />
+    </Input.Group>
+
+    <Input.Group style={style}>
+      <Select keygen data={['Option1', 'Option2']} style={{width: 100, flex: 'none'}} defaultValue='Option1' />
+      <DatePicker placeholder='please select' />
+    </Input.Group>
+
+    <Input.Group style={style}>
+      <Select keygen data={['Option1', 'Option2']} style={{width: 100, flex: 'none'}} defaultValue='Option1' />
+      <Input placeholder='please enter' />
+      <Button type='primary'>Search</Button>
     </Input.Group>
 
     <h3 style={{ marginBottom: 12, fontSize: 16 }}>Other Size</h3>
