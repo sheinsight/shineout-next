@@ -871,6 +871,94 @@ exports[`Button[Base] should render correctly about status 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
+      class="soui-button soui-button-secondary soui-button-button"
+      dir="ltr"
+      style="margin: 0px; width: 72px;"
+      type="button"
+    >
+      <span>
+        Danger
+      </span>
+    </button>
+    <button
+      class="soui-button soui-button-secondary soui-button-button soui-button-outline"
+      dir="ltr"
+      style="margin: 0px; width: 72px;"
+      type="button"
+    >
+      <span>
+        Danger
+      </span>
+    </button>
+    <button
+      class="soui-button soui-button-secondary soui-button-button soui-button-dashed"
+      dir="ltr"
+      style="margin: 0px; width: 72px;"
+      type="button"
+    >
+      <span>
+        Danger
+      </span>
+    </button>
+    <button
+      class="soui-button soui-button-secondary soui-button-button soui-button-text"
+      dir="ltr"
+      style="margin: 0px; width: 72px;"
+      type="button"
+    >
+      <span>
+        Danger
+      </span>
+    </button>
+  </div>
+  <div
+    style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
+  >
+    <button
+      class="soui-button soui-button-primary soui-button-button"
+      dir="ltr"
+      style="margin: 0px; width: 72px;"
+      type="button"
+    >
+      <span>
+        Danger
+      </span>
+    </button>
+    <button
+      class="soui-button soui-button-primary soui-button-button soui-button-outline"
+      dir="ltr"
+      style="margin: 0px; width: 72px;"
+      type="button"
+    >
+      <span>
+        Danger
+      </span>
+    </button>
+    <button
+      class="soui-button soui-button-primary soui-button-button soui-button-dashed"
+      dir="ltr"
+      style="margin: 0px; width: 72px;"
+      type="button"
+    >
+      <span>
+        Danger
+      </span>
+    </button>
+    <button
+      class="soui-button soui-button-primary soui-button-button soui-button-text"
+      dir="ltr"
+      style="margin: 0px; width: 72px;"
+      type="button"
+    >
+      <span>
+        Danger
+      </span>
+    </button>
+  </div>
+  <div
+    style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
+  >
+    <button
       class="soui-button soui-button-danger soui-button-button"
       dir="ltr"
       style="margin: 0px; width: 72px;"
