@@ -211,6 +211,10 @@ const treeStyle: JsStyles<TreeClassType> = {
         width: 12,
       },
     },
+
+    '&[draggable="true"]': {
+      cursor: 'pointer',
+    }
   },
   leaf: {},
   childnode: {},
