@@ -38,6 +38,12 @@ const treeSelectTokenExtraValue = {
   border: { radius: 'Radius-default', color: 'Neutral-border-2' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4', disabled: { color: 'Neutral-text-2' } },
+  tag: {
+    margin: {
+      y: 'Spacing-2',
+      right: 'Spacing-4',
+    },
+  },
   small: {
     font: { size: 'Font-12' },
     border: { radius: '' },
