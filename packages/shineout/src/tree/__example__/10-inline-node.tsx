@@ -1,8 +1,8 @@
 /**
  * cn - 节点非占满一行
- *    -- 设置 `inlineNode` 属性可以让节点不占满整行（鼠标移动至节点上查看效果）。
+ *    -- 设置 [inlineNode](#inlineNode) 属性可以让节点不占满整行（鼠标移动至节点上查看效果）。
  * en - Inline node
- *    -- Set the `inlineNode` property to make the node not occupy the entire row
+ *    -- Set the [inlineNode](#inlineNode) property to make the node not occupy the entire row
  */
 
 import { useState } from 'react';
