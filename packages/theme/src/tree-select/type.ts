@@ -58,6 +58,18 @@ export interface TreeSelectTokens {
   treeSelectIconDisabledColor: string;
   /**
    * @type {string}
+   * @token Spacing-2
+   * @description 树选择器undefined外边距（垂直方向）
+   */
+  treeSelectTagMarginY: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 树选择器undefined外边距（右侧）
+   */
+  treeSelectTagMarginRight: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 树选择器小尺寸字体字号
    */
