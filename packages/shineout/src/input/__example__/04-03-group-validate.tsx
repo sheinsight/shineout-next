@@ -16,8 +16,8 @@ import { add, cancel } from '../../form/__example__/011-fieldset-loop';
 const rules = Rule();
 
 const App: React.FC = () => (
-  <Form labelWidth='100'>
-    <Form.Item label='Home1' required keepErrorHeight>
+  <Form labelWidth='100' keepErrorHeight>
+    <Form.Item label='Home1' required>
       <Form.Field name='url1' rules={[rules.required, rules.url('url is invalid')]}>
         {({ value, error, onChange }) => (
           <Input.Group style={{ width: 340 }} status={error ? 'error' : undefined}>
@@ -28,7 +28,7 @@ const App: React.FC = () => (
       </Form.Field>
     </Form.Item>
 
-    <Form.Item label='Home2' required keepErrorHeight>
+    <Form.Item label='Home2' required>
       <Input.Group style={{ width: 340 }} seperate>
         <Form.Field name='url2' rules={[rules.required]}>
           <Input placeholder='i am seperate input group' />
@@ -51,7 +51,7 @@ const App: React.FC = () => (
       >
         {({ onAppend, onRemove }) => (
           <div style={{ display: 'flex' }}>
-            <Form.Item keepErrorHeight>
+            <Form.Item>
               <Input
                 name='name'
                 placeholder='Name'
@@ -62,7 +62,7 @@ const App: React.FC = () => (
               />
             </Form.Item>
             <div style={{ height: 32, lineHeight: '30px', padding: '0 4px' }}>-</div>
-            <Form.Item keepErrorHeight>
+            <Form.Item>
               <Input
                 name='age'
                 type='number'

@@ -1,14 +1,20 @@
 /**
  * cn - 可选择树
- *    -- 配置 `onChange` 以及 `value` 属性开启数据选择功能
- *    -- 配置 `mode` 属性返回不同结构的数据：
+ *    -- 配置 [onChange](#onChange) 以及 [value](#value) 属性开启数据选择功能
+ *    -- 配置 [mode](#mode) 属性返回不同结构的数据：
  *    -- 模式为 0 时，返回完全选中的节点，包含父节点
  *    -- 模式为 1 时，返回选中、半选中的节点
  *    -- 模式为 2 时，只返回叶子节点
  *    -- 模式为 3 时，只返回完全选中的父节点
  *    -- 模式为 4 时，所选即所得
- * en - line
- *    -- Set line to false to hide the connection line
+ * en - Selectable tree
+ *    -- Configure the [onChange](#onChange) and [value](#value) properties to enable data selection
+ *    -- Configure the [mode](#mode) property to return different structures of data:
+ *    -- When the mode is 0, it returns the fully selected node, including the parent node
+ *    -- When the mode is 1, it returns the selected and half-selected nodes
+ *    -- When the mode is 2, it only returns leaf nodes
+ *    -- When the mode is 3, it only returns fully selected parent nodes
+ *    -- When the mode is 4, it returns what you see is what you get
  */
 
 import { useState } from 'react';

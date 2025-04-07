@@ -110,6 +110,9 @@ export default createUseStyles(
       flexWrap: 'wrap',
       marginBottom: 2,
       color: 'var(--soui-neutral-text-5)',
+      '& > p': {
+        margin: 0,
+      },
       '&:last-child': {
         marginBottom: 0,
       },
