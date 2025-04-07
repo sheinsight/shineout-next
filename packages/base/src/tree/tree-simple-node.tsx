@@ -180,6 +180,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
     document.body.appendChild(dragImage.current);
 
     dragImage.current.style.position = 'absolute';
+    dragImage.current.style.zIndex = '99999';
     dragImage.current.style.top = '-1000px';
     dragImage.current.style.left = '-1000px';
     dragImage.current.style.width = `${rect.width}px`;
@@ -195,14 +196,10 @@ const Node = <DataItem, Value extends KeygenResult[]>(
 
     e.dataTransfer.setDragImage(dragImage.current, e.clientX - rect.left, e.clientY - rect.top);
 
-    setTimeout(() => {
-      (element.current as HTMLElement).style.display = 'none';
-    }, 0);
     if (onDragStart) onDragStart(e, data);
   };
 
   const handleDragEnd = (e: React.DragEvent) => {
-    (element.current as HTMLDivElement).style.display = '';
     if (!dragLock) return;
 
     dragLock = false;
