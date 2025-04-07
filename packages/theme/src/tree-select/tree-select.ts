@@ -13,6 +13,8 @@ const treeSelectTokens: TreeSelectTokens = {
   treeSelectIconSize: 'Size-7',
   treeSelectIconColor: 'Neutral-text-4',
   treeSelectIconDisabledColor: 'Neutral-text-2',
+  treeSelectTagMarginY: 'Spacing-2',
+  treeSelectTagMarginRight: 'Spacing-4',
   treeSelectSmallFontSize: 'Font-12',
   treeSelectSmallPaddingX: 'Spacing-8',
   treeSelectSmallPaddingY: 'Spacing-1',

@@ -421,9 +421,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       marginLeft: 0,
     },
     maxWidth: '80%',
-    marginRight: 4,
-    marginTop: token.cascaderPlaceholderMarginY,
-    marginBottom: token.cascaderPlaceholderMarginY,
+    marginRight: token.cascaderTagMarginRight,
+    marginTop: token.cascaderTagMarginY,
+    marginBottom: token.cascaderTagMarginY,
     textWrap: 'nowrap',
     '&$hideTag': {
       marginRight: 0,

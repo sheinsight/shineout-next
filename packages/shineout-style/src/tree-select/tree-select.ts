@@ -405,9 +405,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       marginLeft: 0,
     },
     maxWidth: '80%',
-    marginRight: 4,
-    marginTop: token.treeSelectPlaceholderMarginY,
-    marginBottom: token.treeSelectPlaceholderMarginY,
+    marginRight: token.treeSelectTagMarginRight,
+    marginTop: token.treeSelectTagMarginY,
+    marginBottom: token.treeSelectTagMarginY,
     textWrap: 'nowrap',
     '&$hideTag': {
       marginRight: 0,
