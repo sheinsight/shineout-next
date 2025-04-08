@@ -431,7 +431,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     if (isRenderVirtualTable) {
       const virtualCssVar = {
         '--virtual-fixed-left': `${virtualInfo.innerLeft}px`,
-        '--virtual-fixed-right': `-${fixRightNum}px`,
+        '--virtual-fixed-right': fixRightNum > 0 ? `-${fixRightNum}px` : `${fixRightNum}px`,
       };
       return (
         <>
