@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Markdown from 'react-markdown';
 import classNames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
@@ -9,7 +10,7 @@ import Open from './open';
 import Debug from './debug';
 import Tip from './tip';
 import Codesandbox from './codesandbox';
-import { Message } from 'shineout';
+import { Message, Tag } from 'shineout';
 
 import { Example as ExampleProps } from 'docs/types';
 import useStyles from './style';
@@ -17,6 +18,7 @@ import useStyles from './style';
 const Example = (props: ExampleProps) => {
   const classes = useStyles();
   const location = useLocation();
+  const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
   const hasDebug = !!searchParams.get('debug');
 
@@ -31,12 +33,35 @@ const Example = (props: ExampleProps) => {
 
   const describe = propDescribe[state.locales] || [];
 
+  const onApiAnchorClick = (href: any) => {
+    const api = href?.split('#')[1];
+    if(!api || api.startsWith('#')) return;
+    navigate({
+      search: `?tab=api&api=${href.split('#')[1]}`,
+    });
+  }
+
   const renderDescribe = (str: any) => {
     const regex = /(.*?)(<span>.*?<\/span>|$)/g;
     const result = [];
     for (const [, part, span] of str.matchAll(regex)) {
       if (part) {
-        const textNode = <React.Fragment key={result.length}>{part}</React.Fragment>;
+        const textNode = (
+          <Markdown
+            key={result.length}
+            components={{
+              a: ({ children, href }) => (
+                <a data-anchor={href} onClick={() => onApiAnchorClick(href)}>
+                  <Tag size='small' color='info'>
+                    {children}
+                  </Tag>
+                </a>
+              ),
+            }}
+          >
+            {part}
+          </Markdown>
+        );
         result.push(textNode);
       }
       if (span) {
@@ -67,11 +92,7 @@ const Example = (props: ExampleProps) => {
       <div className={classes.exampleHeader}>
         {(propName[state.locales] || defaultName) && (
           <h2
-            className={classNames(
-              classes.exampleTitle,
-              'anchor-title',
-              classes.exampleAnchorTitle,
-            )}
+            className={classNames(classes.exampleTitle, 'anchor-title', classes.exampleAnchorTitle)}
             id={`example-${propName[state.locales] || defaultName}`}
           >
             {propName[state.locales] || defaultName}

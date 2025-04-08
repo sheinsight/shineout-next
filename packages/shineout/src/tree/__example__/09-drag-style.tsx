@@ -1,8 +1,8 @@
 /**
  * cn - 自定义拖拽样式
- *    -- 通过设置 `dragImageStyle` 属性为处于拖拽中跟随鼠标的节点添加样式
+ *    -- 通过设置 [dragImageStyle](#dragImageStyle) 属性为处于拖拽中跟随鼠标的节点添加样式
  * en - Drag Style
- *    -- Set the `dragImageStyle` property to add style to the node that follows the mouse during dragging
+ *    -- Set the [dragImageStyle](#dragImageStyle) property to add style to the node that follows the mouse during dragging
  */
 
 import { useState } from 'react';

@@ -1,8 +1,8 @@
 /**
  * cn -
- *    -- 受控高亮：设置 `active` 和`setActive`
+ *    -- 受控高亮：设置 [active](#active) 和 [setActive](#setActive)
  * en -
- *    -- Highlight control: set `active` and `setActive`
+ *    -- Highlight control: set [active](#active) and [setActive](#setActive)
  */
 
 import { Button, Tree, TYPE } from 'shineout';
