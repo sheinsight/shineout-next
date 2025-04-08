@@ -26,8 +26,7 @@ interface TrProps
     | 'loader'
     | 'isEmptyTree'
     | 'setRowHeight'
-    | 'fixLeftNum'
-    | 'fixRightNum'
+    | 'virtual'
     | 'striped'
     | 'radio'
     | 'onRowClick'
@@ -73,9 +72,10 @@ const Tr = (props: TrProps) => {
   const getFixedStyle = (fixed: 'left' | 'right' | undefined, index: number, colSpan: number) => {
     if (!props.isScrollX) return;
     if (fixed === 'left') {
-      if (props.fixLeftNum !== undefined) {
+      if (props.virtual) {
         return {
-          transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
+          transform: `translate3d(var(--virtual-fixed-left, 0), 0, 0)`,
+
         } as React.CSSProperties;
       }
       const left = props.colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
@@ -85,9 +85,9 @@ const Tr = (props: TrProps) => {
       } as React.CSSProperties;
     }
     if (fixed === 'right') {
-      if (props.fixRightNum !== undefined) {
+      if (props.virtual) {
         return {
-          transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
+          transform: `translate3d(var(--virtual-fixed-right, 0), 0, 0)`
         } as React.CSSProperties;
       }
       const right = props.colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
