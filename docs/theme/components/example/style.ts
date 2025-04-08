@@ -148,10 +148,8 @@ export default createUseStyles(
     },
     icon: {},
     tip: {
-      margin: '0 5px',
-      color: '#5d5d5d',
-      background: '#F4F5F8',
-      borderRadius: 2,
+      margin: '0 4px',
+      cursor: 'pointer',
     },
     code: {
       display: 'flex',

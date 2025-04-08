@@ -1,8 +1,8 @@
 /**
  * cn - 默认展开全部
- *    -- 设置 [defaultExpandAll](#defaultExpandAll) 属性，可以默认展开所有节点
+ *    -- 设置 `defaultExpandAll` 属性，可以默认展开所有节点
  * en - Default Expand all
- *    -- Set the [defaultExpandAll](#defaultExpandAll) property to expand all nodes by default
+ *    -- Set the `defaultExpandAll` property to expand all nodes by default
  *
  */
 import { Tree, TYPE } from 'shineout';
