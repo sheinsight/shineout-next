@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Markdown from 'react-markdown';
 import classNames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
@@ -10,7 +9,7 @@ import Open from './open';
 import Debug from './debug';
 import Tip from './tip';
 import Codesandbox from './codesandbox';
-import { Message, Tag } from 'shineout';
+import { Message } from 'shineout';
 
 import { Example as ExampleProps } from 'docs/types';
 import useStyles from './style';
@@ -34,10 +33,9 @@ const Example = (props: ExampleProps) => {
   const describe = propDescribe[state.locales] || [];
 
   const onApiAnchorClick = (href: any) => {
-    const api = href?.split('#')[1];
-    if(!api || api.startsWith('#')) return;
+    if(!href || href.startsWith('#')) return;
     navigate({
-      search: `?tab=api&api=${href.split('#')[1]}`,
+      search: `?tab=api&api=${href}`,
     });
   }
 
@@ -47,20 +45,11 @@ const Example = (props: ExampleProps) => {
     for (const [, part, span] of str.matchAll(regex)) {
       if (part) {
         const textNode = (
-          <Markdown
+          <React.Fragment
             key={result.length}
-            components={{
-              a: ({ children, href }) => (
-                <a data-anchor={href} onClick={() => onApiAnchorClick(href)}>
-                  <Tag size='small' color='info'>
-                    {children}
-                  </Tag>
-                </a>
-              ),
-            }}
           >
             {part}
-          </Markdown>
+          </React.Fragment>
         );
         result.push(textNode);
       }
@@ -68,7 +57,7 @@ const Example = (props: ExampleProps) => {
         const spanRegex = /<span>(.*?)<\/span>/g;
         const spanMatch = spanRegex.exec(span);
         if (spanMatch) {
-          const tipNode = <Tip key={result.length} text={spanMatch[1]}></Tip>;
+          const tipNode = <Tip key={result.length} text={spanMatch[1]} onClick={() => onApiAnchorClick(spanMatch[1])} />;
           result.push(tipNode);
         }
       }

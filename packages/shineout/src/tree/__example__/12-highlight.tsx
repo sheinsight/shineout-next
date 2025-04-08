@@ -1,8 +1,8 @@
 /**
  * cn - 点击高亮
- *    -- 设置 [highlight](#highlight) 属性后在点击节点时高亮
+ *    -- 设置 `highlight` 属性后在点击节点时高亮
  * en - Highlight
- *    -- Set the [highlight](#highlight) property to highlight the node when clicked
+ *    -- Set the `highlight` property to highlight the node when clicked
  */
 
 import { Tree, TYPE } from 'shineout';
