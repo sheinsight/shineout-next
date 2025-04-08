@@ -1,3 +1,10 @@
+## 3.6.2-beta.6
+2025-04-02
+
+### 🐞 BugFix
+
+- 修复 `Transfer` 动态设置 `loading` 不生效的问题 ([#1035](https://github.com/sheinsight/shineout-next/pull/1035))
+
 ## 3.6.1-beta.1
 2025-03-24
 

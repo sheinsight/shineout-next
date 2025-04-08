@@ -21,7 +21,7 @@ const stepsTokens: StepsTokens = {
   stepsLargeTitleFontSize: 'Font-18',
   stepsLargeDescriptionFontSize: 'Font-12',
   stepsWaitFontColor: 'Neutral-text-4',
-  stepsWaitBackgroundColor: 'Neutral-fill-4',
+  stepsWaitBackgroundColor: 'Neutral-fill-2',
   stepsWaitHoverFontColor: 'Brand-6',
   stepsProcessFontColor: 'Neutral-text-1',
   stepsProcessBackgroundColor: 'Brand-6',

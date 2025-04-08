@@ -1,3 +1,9 @@
+## 3.6.2-beta.4
+2025-04-01
+
+### 🐞 BugFix
+- 修复 `Steps` 等待状态样式错误的问题 ([#1030](https://github.com/sheinsight/shineout-next/pull/1030))
+
 ## 3.5.6
 2025-01-06
 ### 🐞 BugFix

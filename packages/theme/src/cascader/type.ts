@@ -52,6 +52,18 @@ export interface CascaderTokens {
   cascaderIconColor: string;
   /**
    * @type {string}
+   * @token Spacing-2
+   * @description 级联选择器undefined外边距（垂直方向）
+   */
+  cascaderTagMarginY: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 级联选择器undefined外边距(右侧)
+   */
+  cascaderTagMarginRight: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 级联选择器小尺寸字体字号
    */

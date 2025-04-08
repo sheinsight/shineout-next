@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
@@ -17,6 +17,7 @@ import useStyles from './style';
 const Example = (props: ExampleProps) => {
   const classes = useStyles();
   const location = useLocation();
+  const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
   const hasDebug = !!searchParams.get('debug');
 
@@ -31,19 +32,32 @@ const Example = (props: ExampleProps) => {
 
   const describe = propDescribe[state.locales] || [];
 
+  const onApiAnchorClick = (href: any) => {
+    if(!href || href.startsWith('#')) return;
+    navigate({
+      search: `?tab=api&api=${href}`,
+    });
+  }
+
   const renderDescribe = (str: any) => {
     const regex = /(.*?)(<span>.*?<\/span>|$)/g;
     const result = [];
     for (const [, part, span] of str.matchAll(regex)) {
       if (part) {
-        const textNode = <React.Fragment key={result.length}>{part}</React.Fragment>;
+        const textNode = (
+          <React.Fragment
+            key={result.length}
+          >
+            {part}
+          </React.Fragment>
+        );
         result.push(textNode);
       }
       if (span) {
         const spanRegex = /<span>(.*?)<\/span>/g;
         const spanMatch = spanRegex.exec(span);
         if (spanMatch) {
-          const tipNode = <Tip key={result.length} text={spanMatch[1]}></Tip>;
+          const tipNode = <Tip key={result.length} text={spanMatch[1]} onClick={() => onApiAnchorClick(spanMatch[1])} />;
           result.push(tipNode);
         }
       }
@@ -67,11 +81,7 @@ const Example = (props: ExampleProps) => {
       <div className={classes.exampleHeader}>
         {(propName[state.locales] || defaultName) && (
           <h2
-            className={classNames(
-              classes.exampleTitle,
-              'anchor-title',
-              classes.exampleAnchorTitle,
-            )}
+            className={classNames(classes.exampleTitle, 'anchor-title', classes.exampleAnchorTitle)}
             id={`example-${propName[state.locales] || defaultName}`}
           >
             {propName[state.locales] || defaultName}

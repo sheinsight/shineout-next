@@ -165,7 +165,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   wrapperDisabled: {
     ...wrapperDisabled,
-    '& $icon, & $arrowIcon': {
+    '& $arrowIcon': {
       color: token.cascaderDisabledFontColor,
     },
   },
@@ -177,10 +177,6 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     position: 'relative',
     outline: 'none',
     overflow: 'hidden',
-    '&:hover': {
-      '& $clear': { display: 'inline-flex' },
-      '& $clear + $icon': { display: 'none' },
-    },
   },
   result: {
     display: 'flex',
@@ -353,7 +349,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     color: token.cascaderHoverBorderColor,
     '&:not($compressedIcon)': {
       transform: 'rotate(180deg)',
-    }
+    },
   },
   ellipsis: {
     display: 'block',
@@ -425,9 +421,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       marginLeft: 0,
     },
     maxWidth: '80%',
-    marginRight: 4,
-    marginTop: token.cascaderPlaceholderMarginY,
-    marginBottom: token.cascaderPlaceholderMarginY,
+    marginRight: token.cascaderTagMarginRight,
+    marginTop: token.cascaderTagMarginY,
+    marginBottom: token.cascaderTagMarginY,
     textWrap: 'nowrap',
     '&$hideTag': {
       marginRight: 0,
@@ -511,7 +507,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       backgroundColor: token.cascaderOptionActiveBackgroundColor,
       '& $optionIcon': {
         color: token.cascaderOptionActiveColor,
-      }
+      },
     },
   },
   optionCheckbox: {},

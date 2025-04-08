@@ -24,7 +24,7 @@ const Changelog = () => {
         const { version, changes, time } = i;
         const releaseVersion = showSubVersion ? version : version.replace(/-beta\.\d+$/, '');
         if (!cn[releaseVersion]) {
-          cn[releaseVersion] = { time, changes };
+          cn[releaseVersion] = { time, changes: JSON.parse(JSON.stringify(changes)) };
         } else {
           // 如果后续的日期比之前的日期大，就替换
           if (time > cn[releaseVersion].time) {
@@ -57,6 +57,13 @@ const Changelog = () => {
         for (let i = 0; i < 3; i++) {
           if (aArr[i] > bArr[i]) return -1;
           if (aArr[i] < bArr[i]) return 1;
+        }
+
+        // 继续比较beta 1.0.10-beta.2 -> 1.0.10-beta.1
+        if (a.includes('beta') && b.includes('beta')) {
+          const aBeta = a.split('beta.')[1];
+          const bBeta = b.split('beta.')[1];
+          return  parseInt(bBeta, 10) - parseInt(aBeta, 10);
         }
         return 0;
       }

@@ -354,7 +354,7 @@ describe('Input[Group]', () => {
         <Input.Group size='large'></Input.Group>
       </>
     )
-    
+
     const inputGroups = container.querySelectorAll(group)
     classTest(inputGroups[0], groupSmall)
     classTest(inputGroups[1], groupLarge)
@@ -470,23 +470,23 @@ describe('Input[innerTitle]', () => {
     const text = 'please input something';
     const { container } = render(<Input.Password innerTitle={text} />);
     const inputInnerTitle = container.querySelector(titleWrapper)!;
-    
+
     const childInnerTitle = inputInnerTitle.querySelector(titleTitle)!;
-    
+
     classTest(childInnerTitle, titleTop)
     textContentTest(childInnerTitle, text)
     const innerTitlePlace = inputInnerTitle.querySelector(titlePlace)!;
     textContentTest(innerTitlePlace.querySelector(titleTitle)!, text)
     const innerTitleContent = inputInnerTitle.querySelector(titleContent)!;
     const input = innerTitleContent.querySelector('input');
-    
+
     classTest(inputInnerTitle, titleWrapperOpen, false)
     fireEvent.focus(input as HTMLElement);
 
     classTest(inputInnerTitle, titleWrapperOpen)
     classTest(inputInnerTitle, titleAnimation)
     fireEvent.blur(input as HTMLElement);
-    
+
     classTest(inputInnerTitle, titleWrapperOpen, false)
   });
   test('content will show when there is value', async () => {
@@ -841,7 +841,7 @@ describe('Input[autoselect]', () => {
     const { container } = render(
       <Input defaultValue={'hello world'} placeholder='input something' autoSelect />,
     );
-    
+
     classTest(container.querySelector(wrapper)!, wrapperFocus, false)
     fireEvent.focus(container.querySelector('input') as HTMLInputElement);
     classTest(container.querySelector(wrapper)!, wrapperFocus)

@@ -7,8 +7,14 @@
  *    -- 模式为 2 时，只返回叶子节点
  *    -- 模式为 3 时，只返回完全选中的父节点
  *    -- 模式为 4 时，所选即所得
- * en - line
- *    -- Set line to false to hide the connection line
+ * en - Selectable tree
+ *    -- Configure the `onChange` and `value` properties to enable data selection
+ *    -- Configure the `mode` property to return different structures of data:
+ *    -- When the mode is 0, it returns the fully selected node, including the parent node
+ *    -- When the mode is 1, it returns the selected and half-selected nodes
+ *    -- When the mode is 2, it only returns leaf nodes
+ *    -- When the mode is 3, it only returns fully selected parent nodes
+ *    -- When the mode is 4, it returns what you see is what you get
  */
 
 import { useState } from 'react';

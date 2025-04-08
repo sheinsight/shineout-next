@@ -4,7 +4,7 @@ import Example from '../example';
 import store, { dispatch } from '../../store';
 import { useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import { Example as ExampleType, MarkdownProps } from 'docs/types';
+import { Example as ExampleType } from 'docs/types';
 import Anchor from 'docs/theme/layout/desktop/anchor';
 import useStyles from '../style';
 

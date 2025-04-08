@@ -14,10 +14,10 @@ const Tabs = (props: TabsProps) => {
   if (props.border) {
     devUseWarning.deprecated('border', 'splitColor', 'Tabs');
   }
-  if(props.tabBarExtraContent){
+  if (props.tabBarExtraContent) {
     devUseWarning.deprecated('tabBarExtraContent', 'extra', 'Tabs');
   }
-  if(props.align){
+  if (props.align) {
     devUseWarning.deprecated('align', 'position', 'Tabs');
   }
   // todo: activeBackground 的作用需要再确认（by Tom）
@@ -161,15 +161,16 @@ const Tabs = (props: TabsProps) => {
         {Children.toArray(children).map((child, index) => {
           const Child = child as React.ReactElement<TabsPanelProps>;
 
-          if(isNamedComponent(Child.type) && Child.type.displayName === 'ShineoutTabsPanel'){
+          if (isNamedComponent(Child.type) && Child.type.displayName === 'ShineoutTabsPanel') {
             return cloneElement<TabsPanelProps>(Child, {
               id: Child.props.id !== undefined ? Child.props.id : index,
               index,
+              background: Child.props.background,
             });
           }
 
-          if(allowNonPanel) {
-            return Child
+          if (allowNonPanel) {
+            return Child;
           }
 
           return null;
@@ -182,7 +183,7 @@ const Tabs = (props: TabsProps) => {
     let border = getSplitColor();
     Children.toArray(children).forEach((child, index) => {
       const Child = child as React.ReactElement<TabsPanelProps>;
-      if(!Child || !Child.type) return
+      if (!Child || !Child.type) return;
 
       const childBorder = Child.props.splitColor || Child.props.border;
       const { id = index } = Child.props;
