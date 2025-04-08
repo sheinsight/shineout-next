@@ -1,3 +1,9 @@
+## 3.6.3-beta.1
+2025-04-08
+
+### 🐞 BugFix
+- 修复 `Table` 的 tfoot 没有在底部吸附的问题（Regression： since v3.5.0）  ([#1045](https://github.com/sheinsight/shineout-next/pull/1045))
+
 ## 3.6.2-beta.6
 2025-04-07
 
