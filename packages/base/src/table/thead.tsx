@@ -174,10 +174,10 @@ export default (props: TheadProps) => {
     level: number,
   ): React.CSSProperties | undefined => {
     if (fixed === 'left') {
-      if (props.fixLeftNum !== undefined) {
+      if (props.virtual) {
         // 这是virtual table场景下的th样式
         return {
-          transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
+          transform: `translate3d(var(--virtual-fixed-left, 0), 0, 0)`,
         };
       }
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
@@ -189,10 +189,10 @@ export default (props: TheadProps) => {
       };
     }
     if (fixed === 'right') {
-      if (props.fixRightNum !== undefined) {
+      if (props.virtual) {
         // 这是virtual table场景下的th样式
         return {
-          transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
+          transform: `translate3d(var(--virtual-fixed-right, 0), 0, 0)`
         };
       }
       const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);

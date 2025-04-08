@@ -429,6 +429,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
 
     if (isRenderVirtualTable) {
+      const virtualCssVar = {
+        '--virtual-fixed-left': `${virtualInfo.innerLeft}px`,
+        '--virtual-fixed-right': fixRightNum > 0 ? `-${fixRightNum}px` : `${fixRightNum}px`,
+      };
       return (
         <>
           {renderHeadMirrorScroller()}
@@ -436,15 +440,15 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             <StickyWrapper {...(props.sticky ? stickyProps : {})}>
               <div className={headWrapperClass}>
                 <table
-                  style={{ width, transform: `translate3d(${0 - virtualInfo.innerLeft}px, 0, 0)` }}
+                  style={{
+                    width,
+                    transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)`,
+                    ...virtualCssVar,
+                  }}
                   ref={theadRef}
                 >
                   {Group}
-                  <Thead
-                    {...headCommonProps}
-                    fixLeftNum={virtualInfo.innerLeft}
-                    fixRightNum={fixRightNum}
-                  />
+                  <Thead {...headCommonProps} virtual />
                 </table>
               </div>
             </StickyWrapper>
@@ -460,15 +464,21 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             defaultHeight={context.emptyHeight}
             isScrollY={isScrollY}
           >
-            <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
+            <table
+              style={{
+                width,
+                transform: virtualInfo.getTranslate(),
+                ...virtualCssVar,
+              }}
+              ref={tbodyRef}
+            >
               {Group}
               <Tbody
                 {...bodyCommonProps}
                 currentIndex={virtualInfo.startIndex}
                 data={virtualInfo.data}
                 setRowHeight={virtualInfo.setRowHeight}
-                fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={fixRightNum}
+                virtual
               />
             </table>
           </Scroll>
@@ -476,15 +486,15 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           {showFoot ? (
             <div className={footWrapperClass}>
               <table
-                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+                style={{
+                  width,
+                  transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)`,
+                  ...virtualCssVar,
+                }}
                 ref={tfootRef}
               >
                 {Group}
-                <Tfoot
-                  {...footCommonProps}
-                  fixLeftNum={virtualInfo.innerLeft}
-                  fixRightNum={fixRightNum}
-                />
+                <Tfoot {...footCommonProps} virtual />
               </table>
             </div>
           ) : null}
@@ -500,9 +510,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (
-              <TbodyEmpty>
-                {renderEmpty()}
-              </TbodyEmpty>
+              <TbodyEmpty>{renderEmpty()}</TbodyEmpty>
             ) : (
               <Tbody {...bodyCommonProps} />
             )}

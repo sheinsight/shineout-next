@@ -43,7 +43,7 @@ const columns: TableColumnItem[] = [
   { title: 'Country', render: 'country' },
   { title: 'Position', render: 'position' },
   { title: 'Office', render: 'office' },
-  { title: 'Start Date', render: 'start', width: 140 },
+  { title: 'Start Date', render: 'start', fixed: 'right', width: 140 },
 ];
 
 const App: React.FC = () => {

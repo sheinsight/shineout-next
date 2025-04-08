@@ -1298,7 +1298,7 @@ describe('Table[Virtual]', () => {
     );
     const tableHead = container.querySelector(headWrapper)!;
     // const tableFoot = container.querySelector(footWrapper)!;
-    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(0px, 0, 0);');
+    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-0px, 0, 0); --virtual-fixed-left: 0px; --virtual-fixed-right: 0px;');
     const tableBody = tableHead.nextElementSibling;
     const tableSroll = tableBody?.firstElementChild as Element;
     // attributesTest(tableSroll, 'data-soui-type', 'scroll');
@@ -1359,11 +1359,11 @@ describe('Table[Virtual]', () => {
     const tableBody = tableHead.nextElementSibling;
     const tableBodyWrapper = tableBody?.querySelector('table') as Element;
     const tableSroll = tableBody?.firstElementChild as Element;
-    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0);');
+    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0); --virtual-fixed-left: 10px; --virtual-fixed-right: -10px;');
+    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0); --virtual-fixed-left: 10px; --virtual-fixed-right: -10px;');
     fireEvent.scroll(tableSroll, { target: { scrollLeft: 10 } });
-    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0);');
+    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0); --virtual-fixed-left: 10px; --virtual-fixed-right: -10px;');
+    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0); --virtual-fixed-left: 10px; --virtual-fixed-right: -10px;');
   });
   test('should render when set scrollLeft is controlled', () => {
     const App = () => {
@@ -1386,11 +1386,11 @@ describe('Table[Virtual]', () => {
     const tableHead = container.querySelector(headWrapper)!;
     const tableBody = tableHead.nextElementSibling;
     const tableBodyWrapper = tableBody?.querySelector('table') as Element;
-    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(0px, 0, 0);');
-    styleTest(tableBodyWrapper, 'transform: translate3d(0px, 0px, 0);');
+    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-0px, 0, 0); --virtual-fixed-left: 0px; --virtual-fixed-right: 0px;');
+    styleTest(tableBodyWrapper, 'transform: translate3d(0px, 0px, 0); --virtual-fixed-left: 0px; --virtual-fixed-right: 0px;');
     fireEvent.click(container.querySelector('button')!);
-    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
-    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0);');
+    styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0); --virtual-fixed-left: 10px; --virtual-fixed-right: -10px;');
+    styleTest(tableBodyWrapper, 'transform: translate3d(-10px, 0px, 0); --virtual-fixed-left: 10px; --virtual-fixed-right: -10px;');
   });
   // TODO: rowHeight
   test('should render when set rowHeight', () => {
@@ -1533,9 +1533,9 @@ describe('Table[Fixed]', () => {
   test('should render when isScrollX is true', () => {
     const trsDefaultStyleByLeft = 'left: 0px; top: 0px; position: sticky;';
     const trsDefaultStyleByRight = 'top: 0px; position: sticky;';
-    const trsVirtualStyleByLeft = 'transform: translate3d(-20px, 0, 0);';
-    const trsVirtualStyleByLeftHead = 'transform: translate3d(20px, 0, 0);';
-    const trsVirtualStyleByRight = 'transform: translate3d(-80px, 0, 0);';
+    const trsVirtualStyleByLeft = 'transform: translate3d(-20px, 0, 0); --virtual-fixed-left: 20px; --virtual-fixed-right: -80px;';
+    const trsVirtualStyleByLeftHead = 'transform: translate3d(var(--virtual-fixed-left, 0), 0, 0);';
+    const trsVirtualStyleByRight = 'transform: translate3d(var(--virtual-fixed-right, 0), 0, 0);';
     Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 300 });
     Object.defineProperty(HTMLElement.prototype, 'clientWidth', { configurable: true, value: 200 });
     const { container, rerender } = render(
@@ -1738,8 +1738,8 @@ describe('Table[Foot]', () => {
     );
     const tables = container.querySelectorAll('table');
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, 'transform: translate3d(-20px, 0px, 0);');
-      else styleTest(item, 'transform: translate3d(-20px, 0, 0);');
+      if (index === 1) styleTest(item, 'transform: translate3d(-20px, 0px, 0); --virtual-fixed-left: 20px; --virtual-fixed-right: -80px;');
+      else styleTest(item, 'transform: translate3d(-20px, 0, 0); --virtual-fixed-left: 20px; --virtual-fixed-right: -80px;');
     });
     rerender(
       <Table
@@ -1753,8 +1753,8 @@ describe('Table[Foot]', () => {
       />,
     );
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, 'transform: translate3d(-20px, 0px, 0);');
-      else styleTest(item, 'transform: translate3d(-20px, 0, 0);');
+      if (index === 1) styleTest(item, 'transform: translate3d(-20px, 0px, 0); --virtual-fixed-left: 20px; --virtual-fixed-right: -80px;');
+      else styleTest(item, 'transform: translate3d(-20px, 0, 0); --virtual-fixed-left: 20px; --virtual-fixed-right: -80px;');
     });
   });
 });

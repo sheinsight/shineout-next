@@ -1,3 +1,10 @@
+## 3.7.0-beta.2
+2025-04-08
+
+### 💎 Enhancement
+- 优化 `Table` vitural模式下的固定列，提升滚动性能 ([#1046](https://github.com/sheinsight/shineout-next/pull/1046))
+
+
 ## 3.7.0-beta.1
 2025-04-01
 
