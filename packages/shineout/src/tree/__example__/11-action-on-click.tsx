@@ -1,6 +1,6 @@
 /**
  * cn - 点击行为
- *    -- 设置 [actionOnClick](#actionOnClick) 设置点击节点的行为，可以是 'expand', 'check' 或者两者都有。
+ *    -- 设置 `actionOnClick` 设置点击节点的行为，可以是 'expand', 'check' 或者两者都有。
  * en - Action on click
  *    -- Set `actionOnClick` to control the behavior when clicking a node, it can be 'expand', 'check', or both.
  */
