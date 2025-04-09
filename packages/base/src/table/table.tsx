@@ -128,7 +128,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     floatRight,
     width,
     shouldLastColAuto,
-    maxScrollLeft,
     scrollBarWidth,
     scrollWidth,
     resizeFlag,
@@ -231,19 +230,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     innerRef: tbodyRef,
     scrollLeft: props.scrollLeft,
     isRtl,
-  });
-
-  // handle head and  foot scroll
-  const handleHeaderWheel = usePersistFn((e: any) => {
-    const scrollEl = scrollRef.current!;
-    if (!scrollEl) return;
-    const max = scrollEl.scrollWidth - scrollEl.clientWidth;
-    const scrollLeft = scrollEl.scrollLeft + e.deltaX;
-    if (scrollLeft === scrollEl.scrollLeft) {
-      return;
-    }
-    e.preventDefault();
-    scrollEl.scrollLeft = Math.min(Math.max(scrollLeft, 0), max);
   });
 
   const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
@@ -368,7 +354,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       colgroup: colgroup,
     };
 
-    const fixRightNum = (isRtl ? -1 * maxScrollLeft : maxScrollLeft) - virtualInfo.innerLeft;
     const StickyWrapper = props.sticky ? Sticky : React.Fragment;
     const sticky = typeof props.sticky === 'object' ? props.sticky : { top: 0 };
     const stickyProps = {
@@ -383,7 +368,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
-      isScrollY && scrollBarWidth && tableClasses?.scrollY,
+      // isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
     const footWrapperClass = classNames(
@@ -432,23 +417,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       return (
         <>
           {renderHeadMirrorScroller()}
-          {!props.hideHeader && (
-            <StickyWrapper {...(props.sticky ? stickyProps : {})}>
-              <div className={headWrapperClass}>
-                <table
-                  style={{ width, transform: `translate3d(${0 - virtualInfo.innerLeft}px, 0, 0)` }}
-                  ref={theadRef}
-                >
-                  {Group}
-                  <Thead
-                    {...headCommonProps}
-                    fixLeftNum={virtualInfo.innerLeft}
-                    fixRightNum={fixRightNum}
-                  />
-                </table>
-              </div>
-            </StickyWrapper>
-          )}
 
           <Scroll
             style={scrollWrapperStyle}
@@ -460,6 +428,19 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             defaultHeight={context.emptyHeight}
             isScrollY={isScrollY}
           >
+            {/* thead of virtual */}
+            {!props.hideHeader && (
+              <StickyWrapper {...(props.sticky ? stickyProps : {})}>
+                <div className={headWrapperClass}>
+                  <table style={{ width }} ref={theadRef}>
+                    {Group}
+                    <Thead {...headCommonProps} />
+                  </table>
+                </div>
+              </StickyWrapper>
+            )}
+
+            {/* tbody of virtual */}
             <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
               {Group}
               <Tbody
@@ -467,27 +448,23 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 currentIndex={virtualInfo.startIndex}
                 data={virtualInfo.data}
                 setRowHeight={virtualInfo.setRowHeight}
-                fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={fixRightNum}
               />
             </table>
+
+            {/* tfoot of virtual */}
+            {showFoot ? (
+              <div className={footWrapperClass}>
+                <table
+                  style={{ width }}
+                  ref={tfootRef}
+                >
+                  {Group}
+                  <Tfoot {...footCommonProps} />
+                </table>
+              </div>
+            ) : null}
           </Scroll>
           {renderEmpty()}
-          {showFoot ? (
-            <div className={footWrapperClass}>
-              <table
-                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
-                ref={tfootRef}
-              >
-                {Group}
-                <Tfoot
-                  {...footCommonProps}
-                  fixLeftNum={virtualInfo.innerLeft}
-                  fixRightNum={fixRightNum}
-                />
-              </table>
-            </div>
-          ) : null}
         </>
       );
     }
@@ -500,9 +477,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (
-              <TbodyEmpty>
-                {renderEmpty()}
-              </TbodyEmpty>
+              <TbodyEmpty>{renderEmpty()}</TbodyEmpty>
             ) : (
               <Tbody {...bodyCommonProps} />
             )}
@@ -538,29 +513,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       />
     );
   };
-
-  useEffect(() => {
-    // 绑定 wheel 事件
-    if (theadRef.current && theadRef.current.parentElement) {
-      theadRef.current.parentElement.addEventListener('wheel', handleHeaderWheel, {
-        passive: false,
-      });
-    }
-    if (tfootRef.current && tfootRef.current.parentElement) {
-      tfootRef.current.parentElement.addEventListener('wheel', handleHeaderWheel, {
-        passive: false,
-      });
-    }
-
-    return () => {
-      if (theadRef.current && theadRef.current.parentElement) {
-        theadRef.current.parentElement.removeEventListener('wheel', handleHeaderWheel);
-      }
-      if (tfootRef.current && tfootRef.current.parentElement) {
-        tfootRef.current.parentElement.removeEventListener('wheel', handleHeaderWheel);
-      }
-    };
-  }, [theadRef.current, isScrollY]);
 
   const getRenderIndexByData = (data: Item | string) => {
     const originKey = typeof data === 'string' ? data : util.getKey(props.keygen, data);

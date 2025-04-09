@@ -39,8 +39,6 @@ export interface TbodyProps
   isEmptyTree: boolean | undefined;
   treeColumnsName: string | undefined;
   setRowHeight?: (index: number, height: number) => void;
-  fixLeftNum?: number;
-  fixRightNum?: number;
   bodyScrollWidth?: number;
   resizeFlag?: number;
 }

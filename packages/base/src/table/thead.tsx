@@ -174,14 +174,7 @@ export default (props: TheadProps) => {
     level: number,
   ): React.CSSProperties | undefined => {
     if (fixed === 'left') {
-      if (props.fixLeftNum !== undefined) {
-        // 这是virtual table场景下的th样式
-        return {
-          transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
-        };
-      }
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
-      // 这是base table场景下的th样式
       return {
         left: left,
         top: context.trHeights[level - 1] || 0,
@@ -189,14 +182,7 @@ export default (props: TheadProps) => {
       };
     }
     if (fixed === 'right') {
-      if (props.fixRightNum !== undefined) {
-        // 这是virtual table场景下的th样式
-        return {
-          transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
-        };
-      }
       const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
-      // 这是base table场景下的th样式
       return {
         right: right,
         top: context.trHeights[level - 1] || 0,
@@ -204,7 +190,6 @@ export default (props: TheadProps) => {
       };
     }
 
-    // 这是base table场景下的非fixed th样式
     return {
       top: context.trHeights[level - 1] || 0,
       position: 'sticky',

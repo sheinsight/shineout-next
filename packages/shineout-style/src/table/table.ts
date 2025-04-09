@@ -45,6 +45,7 @@ const tableStyle: JsStyles<TableClassType> = {
         borderBottom: `1px solid ${token.tableCellBorderColor}`,
         boxSizing: 'border-box',
         lineHeight: token.lineHeightDynamic,
+        zIndex: fixedIndex - 1,
         '&$cellFixedLeft, &$cellFixedRight': {
           zIndex: fixedIndex,
         },
@@ -172,7 +173,7 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   headWrapper: {
     flex: '0 0 auto',
-    overflow: 'hidden',
+    // overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTheadBackgroundColor,
     '$sticky > &': {
@@ -205,7 +206,7 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   footWrapper: {
     flex: '0 0 auto',
-    overflow: 'hidden',
+    // overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTfootBackgroundColor,
   },
