@@ -26,7 +26,7 @@ export function snapshotTestByClick(
   });
 }
 
-export function attributesTest(element: Element, attr: string, content: string) {
+export function attributesTest(element: Element, attr: string, content: string | null) {
   expect(element.getAttribute(attr)).toBe(content);
 }
 
@@ -56,7 +56,7 @@ export function classContentTest(element: Element, name: string, bool: boolean =
   expect(element.getAttribute('class')?.includes(name)).toBe(bool);
 }
 
-export function styleTest(element: Element, style: string) {
+export function styleTest(element: Element, style: string | null) {
   attributesTest(element, 'style', style);
 }
 

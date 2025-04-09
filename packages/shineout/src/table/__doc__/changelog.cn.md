@@ -1,3 +1,10 @@
+## 3.7.0-beta.3
+2025-04-01
+
+### 💎 Enhancement
+- 优化 `Table` 的 `virtual` 模式在大数据量下的横向滚动性能 ([#1047](https://github.com/sheinsight/shineout-next/pull/1047))
+
+
 ## 3.7.0-beta.1
 2025-04-01
 

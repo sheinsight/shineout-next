@@ -53,9 +53,7 @@ const Scroll = (props: scrollProps) => {
     height: '100%',
     width: '100%',
     display: 'inline-flex',
-    overflow: 'hidden',
     position: 'sticky',
-    [isRtl ? 'right' : 'left']: 0,
     top: 0,
   } as React.CSSProperties;
 
