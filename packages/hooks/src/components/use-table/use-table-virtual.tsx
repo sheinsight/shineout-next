@@ -22,6 +22,7 @@ interface UseTableVirtualProps {
   isRtl?: boolean;
   columns: TableFormatColumn<any>[];
   colgroup: (number | string | undefined)[];
+  theadAndTfootHeight: number;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerTop, setTop] = useState(0);
@@ -114,7 +115,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     for (let i = 0; i <= index; i++) {
       sum += context.cachedHeight[i] || props.rowHeight;
     }
-    return sum;
+    return sum + props.theadAndTfootHeight;
   };
 
   const setRowHeight = usePersistFn((index: number, height: number) => {
@@ -347,7 +348,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   useEffect(() => {
     if (props.disabled) return;
     setHeight(getContentHeight(props.data.length - 1));
-  }, [props.data.length]);
+  }, [props.data.length, props.theadAndTfootHeight]);
 
   useEffect(() => {
     if (props.disabled) return;

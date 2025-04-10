@@ -1,7 +1,6 @@
 import token from '@sheinx/theme';
 import { TableClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
-import { customScrollBar } from '../mixin';
 
 const cellBaseIndex = 4;
 const fixedIndex = 6;
@@ -206,9 +205,14 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   footWrapper: {
     flex: '0 0 auto',
-    // overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTfootBackgroundColor,
+
+    "[data-soui-role='scroll'] &": {
+      position: 'sticky',
+      bottom: 0,
+      zIndex: fixedIndex + 1,
+    }
   },
   emptyWrapper: {
     minHeight: '170px',
@@ -217,17 +221,13 @@ const tableStyle: JsStyles<TableClassType> = {
     position: 'sticky',
     left: 0,
     top: 0,
-    right: 0,
     justifyContent: 'center',
     display: 'flex',
     alignItems: 'center',
     borderBottom: `1px solid ${token.tableCellBorderColor}`,
   },
-  scrollY: {
-    '&$headWrapper, &$footWrapper': {
-      overflowY: 'scroll',
-      ...customScrollBar({ background: 'transparent' }),
-    },
+  emptyNoBorder: {
+    borderBottom: 'none',
   },
   cellFixedLeft: {
     position: 'sticky',

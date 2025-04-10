@@ -355,11 +355,10 @@ describe('Table[Base]', () => {
   test('should render when set data is empty and set height', () => {
     const { container } = render(<Table keygen={'id'} columns={columns} height={300} />);
     const tableWrapper = container.querySelector(wrapper)!;
+    expect(tableWrapper.querySelector(emptyWrapper)).toBeInTheDocument();
     styleTest(tableWrapper, 'height: 300px;');
     const tableHead = tableWrapper.querySelector(headWrapper)!;
-    const tableBody = tableHead.nextElementSibling!;
     classLengthTest(tableHead.querySelector('colgroup')!, 'col', 2);
-    classLengthTest(tableBody.querySelector('colgroup')!, 'col', 2);
   });
   test('should render when set column of data is more than column of columns', () => {
     const { container } = render(<Table keygen={'id'} columns={newColumn} data={renderData} />);
