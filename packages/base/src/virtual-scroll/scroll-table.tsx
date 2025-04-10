@@ -45,6 +45,7 @@ const Scroll = (props: scrollProps) => {
     timer: null as any,
     isMouseDown: false,
   });
+  // TODO: keepScrollTop考虑做成Table的新feat?
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0, keepScrollTop = false } = props;
   const { width, height: h } = useResize({ targetRef: containerRef, timer: 100 });
   const height = h || defaultHeight;
