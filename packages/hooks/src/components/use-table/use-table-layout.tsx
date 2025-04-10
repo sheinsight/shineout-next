@@ -8,7 +8,7 @@ import { KeygenResult } from '../../common/type';
 import { isFunc, isNumber } from '../../utils/is';
 import { toNum } from '../../utils/number';
 
-function getDecimalAndIntergerPart(num?: number | string): number[] {
+function getDecimalAndIntegerPart(num?: number | string): number[] {
   if (!num) return [0, 0];
   const str = num.toString();
   const dotIndex = str.indexOf('.');
