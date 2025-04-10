@@ -23,7 +23,7 @@ function getDecimalAndIntegerPart(num?: number | string): number[] {
 function shiftDecimalToLastColumn(cols: Array<number | string | undefined>) {
   let decimalSum = 0;
   cols.forEach((v, i) => {
-    const [inter, decimal] = getDecimalAndIntergerPart(v);
+    const [inter, decimal] = getDecimalAndIntegerPart(v);
     if (decimal > 0) {
       decimalSum += decimal;
       cols[i] = inter;
