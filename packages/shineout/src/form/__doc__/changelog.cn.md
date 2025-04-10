@@ -1,3 +1,9 @@
+## 3.6.3-beta.2
+2025-04-10
+
+### 🐞 BugFix
+- 修复 `Form` 在设置 `defaultValue` 时，默认值设置时机晚于外部 value 状态的问题 ([#1049](https://github.com/sheinsight/shineout-next/pull/1049))
+
 ## 3.6.2-beta.5
 2025-04-01
 
