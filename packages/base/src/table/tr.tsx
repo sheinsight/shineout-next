@@ -52,7 +52,6 @@ interface TrProps
   handleExpandClick: (col: TableFormatColumn<any>, data: any, index: number) => void;
   treeColumnsName?: string;
   originKey: string | number;
-  isCellHover: UseTableRowResult['isCellHover'];
   hover?: boolean;
   handleCellHover: UseTableRowResult['handleCellHover'];
   hoverIndex: UseTableRowResult['hoverIndex'];
@@ -321,6 +320,17 @@ const Tr = (props: TrProps) => {
         const last = cols[i + (data[i].colSpan || 1) - 1] || {};
 
         const isRowSpanTd = data[i].rowSpan > 1;
+
+        const shouldBindMouseEvent = (props.hover && hasSiblingRowSpan) || isRowSpanTd
+        let showCellHover = props.hoverIndex.has(props.rowIndex);
+        if(!showCellHover && data[i].rowSpan > 1){
+          for(let j = 0; j < data[i].rowSpan; j++){
+            if(props.hoverIndex.has(props.rowIndex + j)){
+              showCellHover = true;
+              break;
+            }
+          }
+        }
         const td = (
           <Td
             col={col}
@@ -328,17 +338,13 @@ const Tr = (props: TrProps) => {
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
             onMouseEnter={
-              (props.hover && hasSiblingRowSpan) || isRowSpanTd
-                ? () => {
-                    props.handleCellHover(props.rowIndex, data[i].rowSpan);
-                  }
+              shouldBindMouseEvent
+                ? () => props.handleCellHover(props.rowIndex, data[i].rowSpan)
                 : undefined
             }
             onMouseLeave={
-              (props.hover && hasSiblingRowSpan) || isRowSpanTd
-                ? () => {
-                    props.handleCellHover(-1, 0);
-                  }
+              shouldBindMouseEvent
+                ? () => props.handleCellHover(-1, 0)
                 : undefined
             }
             className={classNames(
@@ -350,10 +356,7 @@ const Tr = (props: TrProps) => {
               col.align === 'right' && tableClasses?.cellAlignRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
-              props.hoverIndex.has(props.rowIndex) && tableClasses?.cellHover,
-              isRowSpanTd &&
-                props.isCellHover(props.rowIndex, data[i].rowSpan) &&
-                tableClasses?.cellHover,
+              showCellHover && tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
             direction={config.direction}

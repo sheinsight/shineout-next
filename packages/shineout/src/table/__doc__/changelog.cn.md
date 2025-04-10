@@ -1,3 +1,13 @@
+## 3.7.0-beta.4
+2025-04-01
+
+### 🐞 BugFix
+- 修复 `Table` 的colgroup平均分配时产生的小数位像素在浏览器渲染时偶现的单元格垂直边框对不齐问题  ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
+
+### 💎 Enhancement
+- 优化 `Table` 合并行|列的hover渲染性能 ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
+
+
 ## 3.7.0-beta.3
 2025-04-01
 
