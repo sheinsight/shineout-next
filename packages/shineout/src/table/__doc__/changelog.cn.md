@@ -1,5 +1,5 @@
 ## 3.7.0-beta.4
-2025-04-01
+2025-04-11
 
 ### 🐞 BugFix
 - 修复 `Table` 的colgroup平均分配时产生的小数位像素在浏览器渲染时偶现的单元格垂直边框对不齐问题  ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
@@ -9,7 +9,7 @@
 
 
 ## 3.7.0-beta.3
-2025-04-01
+2025-04-09
 
 ### 💎 Enhancement
 - 优化 `Table` 的 `virtual` 模式在大数据量下的横向滚动性能 ([#1047](https://github.com/sheinsight/shineout-next/pull/1047))
@@ -21,6 +21,11 @@
 ### 🆕 Feature
 - `Table` 新增缓存单元格功能：设置 `columns` 配置项的 `shouldUpdate` 属性 ([#1023](https://github.com/sheinsight/shineout-next/pull/1023))
 
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `Table` 的 tfoot 没有在底部吸附的问题（Regression： since v3.5.0）  ([#1045](https://github.com/sheinsight/shineout-next/pull/1045))
 
 ## 3.6.2-beta.6
 2025-04-07
