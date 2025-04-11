@@ -176,7 +176,8 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     minWidth: 0,
     position: 'relative',
     outline: 'none',
-    overflow: 'hidden',
+    maxHeight: 78,
+    overflow: 'auto',
   },
   result: {
     display: 'flex',
@@ -324,6 +325,8 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'sticky',
+    top: 0,
   },
   clearable: {},
   clearIcon: {
