@@ -118,6 +118,9 @@ const config = {
     Next: icons.ArrowRight,
     CollapseArrow: icons.ArrowLeft,
   },
+  tag: {
+    Close: icons.Close,
+  },
   textarea: {
     Close: icons.CloseFill,
   },
