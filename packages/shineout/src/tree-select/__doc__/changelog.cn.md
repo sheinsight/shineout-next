@@ -1,3 +1,9 @@
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 最大高度限制失效的问题（默认 max-height 应为 80px） ([#1051](https://github.com/sheinsight/shineout-next/pull/1051))
+
 ## 3.6.0
 2025-03-20
 

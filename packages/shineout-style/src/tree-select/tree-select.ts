@@ -172,8 +172,8 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     minWidth: 0,
     position: 'relative',
     outline: 'none',
-    overflow: 'hidden',
-    '&:hover': {},
+    maxHeight: 78,
+    overflow: 'auto',
   },
   result: {
     display: 'flex',
@@ -301,13 +301,15 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     cursor: 'initial',
 
     '& $tree': {
-      overscrollBehavior: 'none'
+      overscrollBehavior: 'none',
     },
   },
   iconWrapper: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'sticky',
+    top: 0,
   },
   clearable: {},
   clearIcon: {
