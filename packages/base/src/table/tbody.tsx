@@ -11,7 +11,7 @@ export default (props: TbodyProps) => {
     keygen: props.keygen,
   });
 
-  const { rowData, isCellHover, handleCellHover, hoverIndex, rowSelectMergeStartData } =
+  const { rowData, handleCellHover, hoverIndex, rowSelectMergeStartData } =
     useTableRow({
       columns: props.columns,
       data: props.data,
@@ -56,7 +56,6 @@ export default (props: TbodyProps) => {
         setRowHeight={props.setRowHeight}
         striped={props.striped}
         radio={props.radio}
-        isCellHover={isCellHover}
         hover={hover}
         isSelect={props.datum.check(rowSelectMergeStartData[index])}
         handleCellHover={handleCellHover}

@@ -28,7 +28,6 @@ export interface TableClasses {
   small: string;
   large: string;
   default: string;
-  scrollY: string;
   floatLeft: string;
   floatRight: string;
   bordered: string;
@@ -46,6 +45,7 @@ export interface TableClasses {
   bodyWrapper: string;
   footWrapper: string;
   emptyWrapper: string;
+  emptyNoBorder: string;
 
   cellAlignLeft: string;
   cellAlignRight: string;

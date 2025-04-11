@@ -173,11 +173,13 @@ export default (props: TheadProps) => {
     colSpan: number,
     level: number,
   ): React.CSSProperties | undefined => {
+    // 累加level 至 0 的所有高度
+    const top = context.trHeights.slice(0, level).reduce((a, b) => toNum(a) + toNum(b), 0);
     if (fixed === 'left') {
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         left: left,
-        top: context.trHeights[level - 1] || 0,
+        top: top,
         position: 'sticky',
       };
     }
@@ -185,13 +187,13 @@ export default (props: TheadProps) => {
       const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         right: right,
-        top: context.trHeights[level - 1] || 0,
+        top: top,
         position: 'sticky',
       };
     }
 
     return {
-      top: context.trHeights[level - 1] || 0,
+      top: top,
       position: 'sticky',
     };
   };

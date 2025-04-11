@@ -86,15 +86,6 @@ const useTableRow = (props: TableRowProps) => {
     setHoverIndex(hoverIndex);
   });
 
-  const isCellHover = usePersistFn((rowIndex: number, colSpan = 1) => {
-    if (!props.hover) return false;
-    let isHover = false;
-    for (let i = 0; i < colSpan; i++) {
-      isHover = hoverIndex.has(rowIndex + i);
-      if (isHover) break;
-    }
-    return isHover;
-  });
 
   const rowData = useMemo(() => {
     let rows: Row[][] = [];
@@ -131,7 +122,6 @@ const useTableRow = (props: TableRowProps) => {
   return {
     rowData,
     handleCellHover,
-    isCellHover,
     hoverIndex,
     rowSelectMergeStartData: context.rowSelectMergeStartData,
   };

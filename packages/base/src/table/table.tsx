@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef } from 'react';
-import Scroll from '../virtual-scroll/scroll';
+import Scroll from '../virtual-scroll/scroll-table';
 import classNames from 'classnames';
 import Spin from '../spin';
 import Pagination, { PaginationProps } from '../pagination';
@@ -35,15 +35,6 @@ import TbodyEmpty from './tbody-empty';
 const { devUseWarning } = util;
 
 const emptyArr: any[] = [];
-const virtualScrollerStyle = {
-  flex: 1,
-  minWidth: 0,
-  minHeight: 0,
-  overflow: 'auto',
-  width: '100%',
-};
-
-const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex' };
 
 const emptyRef = { current: null };
 
@@ -62,17 +53,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const browserScrollbarWidth = useScrollbarWidth();
 
-  const emptyStyle = {
-    ...virtualScrollerStyle,
-    overflow: 'auto hidden',
-    position: 'absolute',
-    zIndex: 1,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: browserScrollbarWidth,
-  };
-
   if (props.fixed) {
     devUseWarning.deprecated('fixed', 'virtual', 'Table');
   }
@@ -89,6 +69,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const { current: context } = useRef({
     emptyHeight: 0,
+    theadAndTfootHeight: 0,
   });
 
   const virtual =
@@ -219,6 +200,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     disabled: props.disabled,
   });
 
+  useEffect(() => {
+    context.theadAndTfootHeight = (theadRef?.current?.clientHeight || 0) + (tfootRef.current?.clientHeight || 0);
+  }, [theadRef.current, tfootRef.current]);
+
   const virtualInfo = useTableVirtual({
     disabled: !virtual,
     data: treeData,
@@ -230,8 +215,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     innerRef: tbodyRef,
     scrollLeft: props.scrollLeft,
     isRtl,
+    theadAndTfootHeight: context.theadAndTfootHeight,
   });
 
+  // 简单表格的滚动事件
   const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
     if (!target) return;
@@ -248,6 +235,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     }
   });
 
+  // 虚拟表格的滚动事件
   const handleVirtualScroll = usePersistFn(
     (info: {
       scrollLeft: number;
@@ -273,7 +261,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     if (!props.data?.length || (filteredData !== undefined && filteredData.length === 0)) {
       return (
         <div
-          className={tableClasses?.emptyWrapper}
+          className={classNames(tableClasses?.emptyWrapper, isScrollX && tableClasses?.emptyNoBorder)}
           ref={(el) => {
             context.emptyHeight = el?.clientHeight || 0;
           }}
@@ -368,12 +356,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
-      // isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
     const footWrapperClass = classNames(
       tableClasses?.footWrapper,
-      isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
     const renderHeadMirrorScroller = () => {
@@ -419,14 +405,13 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           {renderHeadMirrorScroller()}
 
           <Scroll
-            style={scrollWrapperStyle}
-            scrollerStyle={props.data?.length ? virtualScrollerStyle : emptyStyle}
             wrapperRef={scrollRef}
             scrollWidth={width || 1}
             scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
             onScroll={handleVirtualScroll}
             defaultHeight={context.emptyHeight}
             isScrollY={isScrollY}
+            isEmptyContent={!props.data?.length}
           >
             {/* thead of virtual */}
             {!props.hideHeader && (
@@ -441,7 +426,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             )}
 
             {/* tbody of virtual */}
-            <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
+            {!!props.data?.length &&<table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
               {Group}
               <Tbody
                 {...bodyCommonProps}
@@ -449,7 +434,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 data={virtualInfo.data}
                 setRowHeight={virtualInfo.setRowHeight}
               />
-            </table>
+            </table>}
 
             {/* tfoot of virtual */}
             {showFoot ? (
@@ -463,8 +448,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 </table>
               </div>
             ) : null}
+
+            {/* empty of virtual */}
+            {renderEmpty()}
           </Scroll>
-          {renderEmpty()}
         </>
       );
     }
