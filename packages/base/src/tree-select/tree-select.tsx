@@ -420,20 +420,31 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     const isDisabled = datum?.isDisabled(key);
     const isCheck = datum?.getChecked(key);
 
+    let contentClass = '';
+    if (props.contentClass) {
+      if (util.isString(props.contentClass)) {
+        contentClass = props.contentClass;
+      }
+
+      if (util.isFunc(props.contentClass)) {
+        contentClass = props.contentClass(data);
+      }
+    }
+
     if (isDisabled) {
-      return classNames(styles.optionDisabled);
+      return classNames(styles.optionDisabled, contentClass);
     }
 
     if (multiple) {
-      return isCheck ? classNames(styles.optionActive) : '';
+      return isCheck ? classNames(styles.optionActive) : classNames(contentClass);
     }
 
     if (!util.isArray(value)) {
       const currentData = getDataByValues(value);
-      return currentData === data ? classNames(styles.optionActive) : '';
+      return currentData === data ? classNames(styles.optionActive) : classNames(contentClass);
     }
 
-    return '';
+    return classNames(contentClass);
   };
 
   const checkUnMatched = (item: unknown) => {
