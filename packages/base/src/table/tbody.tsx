@@ -27,7 +27,7 @@ export default (props: TbodyProps) => {
   const renderRow = (item: any, index: number) => {
     const rowIndex = index + currentIndex;
     const originKey = util.getKey(props.keygen, item, rowIndex);
-    const trRenderKey = props.loader ? originKey : `${originKey}-${rowIndex}`;
+    const trRenderKey = props.loader || props.rowEvents?.draggable ? originKey : `${originKey}-${rowIndex}`;
     return (
       <Tr
         key={trRenderKey}

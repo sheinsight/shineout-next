@@ -1,3 +1,15 @@
+## 3.6.3-beta.5
+2025-04-11
+
+### 🆕 Feature
+- `TreeSelect` 新增 `contentClass` 属性，功能同 `Tree` 组件属性 ([#1055](https://github.com/sheinsight/shineout-next/pull/1055))
+
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 最大高度限制失效的问题（默认 max-height 应为 80px） ([#1051](https://github.com/sheinsight/shineout-next/pull/1051))
+
 ## 3.6.0
 2025-03-20
 
