@@ -69,6 +69,7 @@ export default (props: TbodyProps) => {
         resizeFlag={props.resizeFlag}
         treeCheckAll={props.treeCheckAll}
         onCellClick={props.onCellClick}
+        shouldCellUpdate={props.shouldCellUpdate}
       />
     );
   };

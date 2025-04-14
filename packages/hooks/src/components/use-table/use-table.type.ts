@@ -139,6 +139,12 @@ export interface BaseTableProps<Item> {
    * When it is a string，ues the value of the string.For example, 'id' is the same thing as (d) => d.id .
    */
   keygen: StructKeygenType<Item>;
+  /**
+   * @en The function for controlling to merge rows. The return value is an integer indicating the number of rows that need to be merged.
+   * @cn 合并行控制函数，row为单行数据，返回值一个整数，标明需要合并的行数
+   * @version 3.7.0
+   */
+  shouldCellUpdate?: shouldCellUpdate<Item>;
 }
 export interface TableSorterInfo {
   order: TableColumnOrder;
@@ -448,10 +454,10 @@ export interface TableColumnItem<DataItem> {
    * @en Whether the cell needs to be updated, the third parameter is the external dependency
    * @version 3.7.0
    */
-  shouldUpdate?: ShouldUpdate<DataItem>;
+  shouldCellUpdate?: shouldCellUpdate<DataItem>;
 }
 
-export type ShouldUpdate<T> =
+export type shouldCellUpdate<T> =
   | ((prev: T, next: T) => boolean) // 第一种格式：函数类型
   | {
       update: (prev: T, next: T) => boolean; // 第二种格式：对象中的 update 方法

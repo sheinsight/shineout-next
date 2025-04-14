@@ -26,6 +26,7 @@ export interface TbodyProps
     | 'hover'
     | 'treeCheckAll'
     | 'onCellClick'
+    | 'shouldCellUpdate'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];
