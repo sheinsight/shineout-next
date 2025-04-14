@@ -425,4 +425,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @default false
    */
   reFocus?: boolean;
+  /**
+   * @en Class name of content
+   * @cn 内容样式
+   */
+  contentClass?: string | ((data: DataItem) => string);
 }
