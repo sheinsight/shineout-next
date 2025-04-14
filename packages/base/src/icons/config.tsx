@@ -124,9 +124,6 @@ const config = {
   textarea: {
     Close: icons.CloseFill,
   },
-  tag: {
-    Close: icons.Close,
-  },
   transfer: {
     DeleteAll: icons.Delete,
     DeleteItem: icons.Close,
