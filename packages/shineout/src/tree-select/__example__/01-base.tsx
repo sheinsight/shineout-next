@@ -57,7 +57,6 @@ export default () => {
     <div>
       <TreeSelect
         width={300}
-        multiple
         value={value}
         onChange={handleChange}
         clearable
