@@ -57,9 +57,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     util.isString(contentClassProp) && contentClassProp,
     util.isFunc(contentClassProp) && contentClassProp(data),
   );
-  const textClass = classNames(contentStyle.text, {
-    [contentStyle.textClickable]: (actionOnClick && !util.isEmpty(actionOnClick)) || parentClickExpand || doubleClickExpand,
-  });
+
   const hasExpandIcons = expandIcons !== undefined;
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
@@ -225,7 +223,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         {onChange && renderCheckbox()}
         <div
           dir={config.direction}
-          className={textClass}
+          className={contentStyle.text}
           onDoubleClick={onNodeDoubleClick}
           onClick={handleNodeClick}
         >
