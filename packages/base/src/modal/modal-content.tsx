@@ -156,6 +156,7 @@ const Modal = (props: ModalContentProps) => {
           doc.style.paddingRight = `${window.innerWidth - util.docSize.width}px`;
         }
       } else {
+        if(!context.isMask) return;
         doc.style.paddingRight = '';
         doc.style.overflow = '';
       }
@@ -180,6 +181,7 @@ const Modal = (props: ModalContentProps) => {
         hasMask = false;
       }
       {
+        if(!context.isMask) return;
         const doc = document.body.parentNode! as HTMLElement;
         doc.style.paddingRight = '';
         doc.style.overflow = '';

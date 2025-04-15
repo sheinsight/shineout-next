@@ -1,3 +1,10 @@
+## 3.6.3-beta.7
+2025-04-15
+
+### 💎 Enhancement
+
+- 优化 `Tree` 的节点鼠标手势，节点content区域的鼠标手势修改为pointer ([#1058](https://github.com/sheinsight/shineout-next/pull/1058))
+
 ## 3.6.2-beta.6
 2025-04-07
 

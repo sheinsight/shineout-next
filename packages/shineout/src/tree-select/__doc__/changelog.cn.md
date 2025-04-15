@@ -1,3 +1,9 @@
+## 3.6.3-beta.6
+2025-04-11
+
+### 🆕 Feature
+- `TreeSelect` 新增 `contentClass` 属性，功能同 `Tree` 组件属性 ([#1055](https://github.com/sheinsight/shineout-next/pull/1055))
+
 ## 3.6.3-beta.3
 2025-04-11
 

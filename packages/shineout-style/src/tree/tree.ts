@@ -181,6 +181,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
   },
   text: {
+    cursor: 'pointer',
     flex: 1,
     minWidth: 0,
     fontSize: Token.treeFontSize,
@@ -194,9 +195,6 @@ const treeStyle: JsStyles<TreeClassType> = {
       color: Token.treeContentHoverFontColor,
       background: Token.treeContentHoverBackgroundColor,
     },
-  },
-  textClickable: {
-    cursor: 'pointer',
   },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,

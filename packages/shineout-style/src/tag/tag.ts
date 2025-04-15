@@ -17,58 +17,63 @@ type TagType =
   | 'Lemon'
   | 'Tangerine';
 
-const tag = (type: TagType) => ({
-  // bright 亮色风格
-  '&$bright': {
-    color: Token[`tag${type}FontColor`],
-    backgroundColor: Token[`tag${type}BackgroundColor`],
-    border: `1px solid transparent`,
+type tagType =
+  | 'info'
+  | 'default'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'brown'
+  | 'magenta'
+  | 'purple'
+  | 'indigo'
+  | 'cyan'
+  | 'neon'
+  | 'lemon'
+  | 'tangerine';
 
-    '& $closeIconWrapper': {
-      '&:hover': {
-        backgroundColor: Token[`tag${type}IconHoverBackgroundColor`],
-      },
-    },
+const brightTag = (name: tagType, type: TagType) => ({
+  color: Token[`tag${type}FontColor`],
+  backgroundColor: Token[`tag${type}BackgroundColor`],
+  border: `1px solid ${Token[`tag${type}BorderColor`]}`,
 
-    '& $closeIcon': {
-      // fill: Token[`tag${type}IconFontColor`],
+  '& $closeIconWrapper': {
+    '&:hover': {
+      backgroundColor: Token[`tag${type}IconHoverBackgroundColor`],
     },
-    '&[data-soui-type="dark"]': {
-      '&$disabled': {
-        backgroundColor: Token.tagDefaultFillBackgroundColor,
-        borderColor: Token.tagDefaultFillBorderColor,
-      },
-    },
-
+  },
+  '&[data-soui-type="dark"]': {
     '&$disabled': {
-      color: Token[`tag${type}DisabledFontColor`],
-      backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
-      border: `1px solid ${Token[`tag${type}DisabledBorderColor`]}`,
-
-      '& $closeIconWrapper': {
-        fill: Token[`tag${type}IconDisabledFontColor`],
-        '&:hover': {
-          backgroundColor: 'transparent',
-        },
-      },
+      backgroundColor: Token.tagDefaultFillBackgroundColor,
+      borderColor: Token.tagDefaultFillBorderColor,
     },
   },
 
-  '&$fill': {
+  '&$disabled': {
+    color: Token[`tag${type}DisabledFontColor`],
+    backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
+    border: `1px solid ${Token[`tag${type}DisabledBorderColor`]}`,
+
+    '& $closeIconWrapper': {
+      fill: Token[`tag${type}IconDisabledFontColor`],
+      '&:hover': {
+        backgroundColor: 'transparent',
+      },
+    },
+  },
+});
+
+const fillTag = (name: tagType, type: TagType) => ({
+  [`&$${name}`]: {
     color: Token[`tag${type}FillFontColor`],
     backgroundColor: Token[`tag${type}FillBackgroundColor`],
     border: `1px solid ${Token[`tag${type}FillBorderColor`]}`,
 
     '& $closeIconWrapper': {
-      fill: Token[`tag${type}FillFontColor`],
+      color: Token[`tag${type}FillFontColor`],
       '&:hover': {
-        fill: Token[`tag${type}FontColor`],
-        backgroundColor: Token[`tag${type}IconHoverBackgroundColor`],
+        backgroundColor: Token[`tag${type}FillIconHoverBackgroundColor`],
       },
-    },
-
-    '& $closeIcon': {
-      fill: Token[`tag${type}FillFontColor`],
     },
 
     '&$disabled': {
@@ -77,7 +82,7 @@ const tag = (type: TagType) => ({
       border: `1px solid ${Token[`tag${type}FillDisabledBorderColor`]}`,
 
       '& $closeIconWrapper': {
-        fill: Token[`tag${type}FillDisabledFontColor`],
+        color: Token[`tag${type}FillDisabledFontColor`],
         '&:hover': {
           fill: Token[`tag${type}FillFontColor`],
           backgroundColor: 'transparent',
@@ -85,15 +90,15 @@ const tag = (type: TagType) => ({
       },
     },
   },
+});
 
-  // outline 边框风格
-  '&$outline': {
+const outlineTag = (name: tagType, type: TagType) => ({
+  [`&$${name}`]: {
     background: Token[`tag${type}OutlineBackgroundColor`],
     color: Token[`tag${type}OutlineFontColor`],
     border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
 
     '& $closeIconWrapper': {
-      // hover
       '&:hover': {
         backgroundColor: Token[`tag${type}BackgroundColor`],
       },
@@ -112,9 +117,10 @@ const tag = (type: TagType) => ({
       },
     },
   },
+});
 
-  // brightOutline 亮色边框风格
-  '&$brightOutline': {
+const brightOutlineTag = (name: tagType, type: TagType) => ({
+  [`&$${name}`]: {
     color: Token[`tag${type}FontColor`],
     backgroundColor: Token[`tag${type}BackgroundColor`],
     border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
@@ -137,10 +143,6 @@ const tag = (type: TagType) => ({
         },
       },
     },
-  },
-
-  '& $closeIcon': {
-    fill: Token[`tag${type}FontColor`],
   },
 });
 
@@ -259,49 +261,91 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   },
 
   info: {
-    ...tag('Info'),
+    ...brightTag('info', 'Info'),
   },
   default: {
-    ...tag('Default'),
+    ...brightTag('default', 'Default'),
   },
   success: {
-    ...tag('Success'),
+    ...brightTag('success', 'Success'),
   },
   warning: {
-    ...tag('Warning'),
+    ...brightTag('warning', 'Warning'),
   },
   danger: {
-    ...tag('Danger'),
+    ...brightTag('danger', 'Danger'),
   },
   brown: {
-    ...tag('Brown'),
+    ...brightTag('brown', 'Brown'),
   },
   magenta: {
-    ...tag('Magenta'),
+    ...brightTag('magenta', 'Magenta'),
   },
   purple: {
-    ...tag('Purple'),
+    ...brightTag('purple', 'Purple'),
   },
   indigo: {
-    ...tag('Indigo'),
+    ...brightTag('indigo', 'Indigo'),
   },
   cyan: {
-    ...tag('Cyan'),
+    ...brightTag('cyan', 'Cyan'),
   },
   neon: {
-    ...tag('Neon'),
+    ...brightTag('neon', 'Neon'),
   },
   lemon: {
-    ...tag('Lemon'),
+    ...brightTag('lemon', 'Lemon'),
   },
   tangerine: {
-    ...tag('Tangerine'),
+    ...brightTag('tangerine', 'Tangerine'),
   },
 
-  fill: {},
+  fill: {
+    ...fillTag('default', 'Default'),
+    ...fillTag('success', 'Success'),
+    ...fillTag('warning', 'Warning'),
+    ...fillTag('danger', 'Danger'),
+    ...fillTag('info', 'Info'),
+    ...fillTag('brown', 'Brown'),
+    ...fillTag('magenta', 'Magenta'),
+    ...fillTag('purple', 'Purple'),
+    ...fillTag('indigo', 'Indigo'),
+    ...fillTag('cyan', 'Cyan'),
+    ...fillTag('neon', 'Neon'),
+    ...fillTag('lemon', 'Lemon'),
+    ...fillTag('tangerine', 'Tangerine'),
+  },
   bright: {},
-  outline: {},
-  brightOutline: {},
+  outline: {
+    ...outlineTag('default', 'Default'),
+    ...outlineTag('success', 'Success'),
+    ...outlineTag('warning', 'Warning'),
+    ...outlineTag('danger', 'Danger'),
+    ...outlineTag('info', 'Info'),
+    ...outlineTag('brown', 'Brown'),
+    ...outlineTag('magenta', 'Magenta'),
+    ...outlineTag('purple', 'Purple'),
+    ...outlineTag('indigo', 'Indigo'),
+    ...outlineTag('cyan', 'Cyan'),
+    ...outlineTag('neon', 'Neon'),
+    ...outlineTag('lemon', 'Lemon'),
+    ...outlineTag('tangerine', 'Tangerine'),
+  },
+  brightOutline: {
+    ...brightOutlineTag('default', 'Default'),
+    ...brightOutlineTag('success', 'Success'),
+    ...brightOutlineTag('warning', 'Warning'),
+    ...brightOutlineTag('danger', 'Danger'),
+    ...brightOutlineTag('info', 'Info'),
+    ...brightOutlineTag('brown', 'Brown'),
+    ...brightOutlineTag('magenta', 'Magenta'),
+    ...brightOutlineTag('purple', 'Purple'),
+    ...brightOutlineTag('indigo', 'Indigo'),
+    ...brightOutlineTag('cyan', 'Cyan'),
+    ...brightOutlineTag('neon', 'Neon'),
+    ...brightOutlineTag('lemon', 'Lemon'),
+    ...brightOutlineTag('tangerine', 'Tangerine'),
+  },
   rounded: {
     borderRadius: Token.buttonRoundBorderRadius,
   },

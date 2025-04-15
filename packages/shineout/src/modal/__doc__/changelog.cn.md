@@ -1,9 +1,9 @@
-## 3.5.5
-2024-12-24
+## 3.6.3-beta.4
+2025-04-14
 
 ### 🐞 BugFix
 
-- 修复 `Modal.Submit` 在存在多个 `Form` 切换时，点击触发的onSubmit的value不正确的问题 ([#885](https://github.com/sheinsight/shineout-next/pull/885))
+- 修复 `Modal` 多层嵌套使用时，关闭子Modal但未关闭父Modal时body的滚动条出现的问题 ([#1054](https://github.com/sheinsight/shineout-next/pull/1054))
 
 
 ## 3.5.0
