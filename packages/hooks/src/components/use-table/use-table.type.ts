@@ -139,6 +139,12 @@ export interface BaseTableProps<Item> {
    * When it is a string，ues the value of the string.For example, 'id' is the same thing as (d) => d.id .
    */
   keygen: StructKeygenType<Item>;
+  /**
+   * @en The function to determine whether a cell needs to be updated. The return value should be a boolean indicating whether the cell should re-render.
+   * @cn 控制单元格是否需要更新的函数。返回值应为布尔值，指示单元格是否需要重新渲染
+   * @version 3.7.0
+   */
+  shouldCellUpdate?: shouldCellUpdate<Item>;
 }
 export interface TableSorterInfo {
   order: TableColumnOrder;
@@ -448,10 +454,10 @@ export interface TableColumnItem<DataItem> {
    * @en Whether the cell needs to be updated, the third parameter is the external dependency
    * @version 3.7.0
    */
-  shouldUpdate?: ShouldUpdate<DataItem>;
+  shouldCellUpdate?: shouldCellUpdate<DataItem>;
 }
 
-export type ShouldUpdate<T> =
+export type shouldCellUpdate<T> =
   | ((prev: T, next: T) => boolean) // 第一种格式：函数类型
   | {
       update: (prev: T, next: T) => boolean; // 第二种格式：对象中的 update 方法

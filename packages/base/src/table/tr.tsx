@@ -35,6 +35,7 @@ interface TrProps
     | 'resizeFlag'
     | 'treeCheckAll'
     | 'onCellClick'
+    | 'shouldCellUpdate'
   > {
   row: {
     data: any[];
@@ -84,16 +85,17 @@ const Tr = (props: TrProps) => {
         right,
       } as React.CSSProperties;
     }
-    return {} as React.CSSProperties;
+    return undefined;
   };
-  const getTdStyle = (column: TableFormatColumn<any>, colSpan: number) => {
+  const getTdStyle = usePersistFn((column: TableFormatColumn<any>, colSpan: number) => {
     const index = column.index;
     const fixedStyle = getFixedStyle(column.fixed, index, colSpan);
+    if(!fixedStyle && !column.style) return;
     return {
       ...column.style,
       ...fixedStyle,
     } as React.CSSProperties;
-  };
+  });
 
   const handleCellClick = usePersistFn((data: any, colIndex: number) => {
     if (!props.onCellClick) return;
@@ -149,7 +151,7 @@ const Tr = (props: TrProps) => {
     }
   });
 
-  const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
+  const renderTreeExpand = usePersistFn((content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
     const className = tableClasses?.expandWrapper;
     const children = props.rawData[props.treeColumnsName!];
@@ -209,9 +211,9 @@ const Tr = (props: TrProps) => {
         {content}
       </span>
     );
-  };
+  });
 
-  const renderContent = (col: TrProps['columns'][number], data: any) => {
+  const renderContent = usePersistFn((col: TrProps['columns'][number], data: any) => {
     if (col.type === 'expand' || col.type === 'row-expand') {
       const renderResult =
         typeof col.render === 'function' ? col.render(props.rawData, props.rowIndex) : undefined;
@@ -303,9 +305,9 @@ const Tr = (props: TrProps) => {
     }
 
     return content;
-  };
+  });
 
-  const renderTds = (cols: TrProps['columns'], data: TrProps['row']) => {
+  const renderTds = usePersistFn((cols: TrProps['columns'], data: TrProps['row']) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
     const lastRowIndex = data.length - 1;
@@ -332,7 +334,8 @@ const Tr = (props: TrProps) => {
           }
         }
         const td = (
-          <Td
+          <Td<TrProps['row']>
+            key={`${col.key}-${props.rowIndex}-${i}`}
             col={col}
             data={data[i].data}
             colSpan={data[i].colSpan}
@@ -362,7 +365,7 @@ const Tr = (props: TrProps) => {
             direction={config.direction}
             data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
-            shouldUpdate={col.shouldUpdate}
+            shouldCellUpdate={col.shouldCellUpdate || props.shouldCellUpdate}
             renderContent={renderContent}
           />
         );
@@ -371,7 +374,7 @@ const Tr = (props: TrProps) => {
       }
     }
     return tds;
-  };
+  });
 
   const renderExpand = () => {
     if (!props.expanded) return null;

@@ -1,8 +1,8 @@
-import React from 'react';
-import { ShouldUpdate, useMemo, util } from '@sheinx/hooks';
+import React, { useEffect } from 'react';
+import { shouldCellUpdate, useMemo, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 
-interface TdProps {
+interface TdProps<T> {
   col: TableFormatColumn<any>;
   data: any[];
   colSpan: number;
@@ -14,17 +14,26 @@ interface TdProps {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   onClick?: () => void;
-  shouldUpdate?: ShouldUpdate<any>;
+  shouldCellUpdate?: shouldCellUpdate<T>;
   renderContent: (col: TableFormatColumn<any>, data: any[]) => React.ReactNode;
 }
 
-export default function Td(props: TdProps): JSX.Element {
+export default function Td<T>(props: TdProps<T>): JSX.Element {
+  const [style, setStyle] = React.useState<React.CSSProperties>();
+
+  useEffect(() => {
+    if(!props.style) return
+    if(util.shallowEqual(props.style, style)) {
+      return;
+    }
+    setStyle(props.style);
+  }, [props.style]);
+
   const {
     col,
     colSpan,
     rowSpan,
     className,
-    style,
     direction,
     role,
     onClick,
@@ -34,14 +43,14 @@ export default function Td(props: TdProps): JSX.Element {
   } = props;
 
   const externalDependencies =
-    typeof props.shouldUpdate === 'object' && props.shouldUpdate.dependencies
-      ? props.shouldUpdate.dependencies
+    typeof props.shouldCellUpdate === 'object' && props.shouldCellUpdate.dependencies
+      ? props.shouldCellUpdate.dependencies
       : [];
 
   const updateFn =
-    typeof props.shouldUpdate === 'object' && 'update' in props.shouldUpdate
-      ? props.shouldUpdate.update
-      : props.shouldUpdate;
+    typeof props.shouldCellUpdate === 'object' && 'update' in props.shouldCellUpdate
+      ? props.shouldCellUpdate.update
+      : props.shouldCellUpdate;
 
   const $td = useMemo(
     () => {

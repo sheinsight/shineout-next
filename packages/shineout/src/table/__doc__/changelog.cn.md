@@ -1,3 +1,10 @@
+## 3.7.0-beta.5
+2025-04-14
+
+### 🆕 Feature
+
+- `Table` 新增 `shouldCellUpdate` 属性，手动设置单元格的scu，优先级低于columns上的 `shouldCellUpdate` ([#1057](https://github.com/sheinsight/shineout-next/pull/1057))
+
 ## 3.7.0-beta.4
 2025-04-11
 
@@ -19,7 +26,7 @@
 2025-04-01
 
 ### 🆕 Feature
-- `Table` 新增缓存单元格功能：设置 `columns` 配置项的 `shouldUpdate` 属性 ([#1023](https://github.com/sheinsight/shineout-next/pull/1023))
+- `Table` 新增缓存单元格功能：设置 `columns` 配置项的 `shouldCellUpdate` 属性 ([#1023](https://github.com/sheinsight/shineout-next/pull/1023))
 
 ## 3.6.3-beta.3
 2025-04-11
