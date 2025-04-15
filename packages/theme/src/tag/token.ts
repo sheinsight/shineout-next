@@ -69,7 +69,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Brand-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -117,7 +117,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Neutral-fill-4' }, font: { color: '' } },
       },
     },
     icon: {
@@ -165,7 +165,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Success-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -213,7 +213,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: 'Warning-6' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Warning-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -261,7 +261,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Danger-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -309,7 +309,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Magenta-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -320,22 +320,22 @@ const tagTokenValue = {
     },
   },
   brown: {
-    font: { color: 'Orange-6' },
-    background: { color: 'Orange-1' },
-    border: { color: 'Orange-1' },
+    font: { color: 'Brown-6' },
+    background: { color: 'Brown-1' },
+    border: { color: 'Brown-1' },
     disabled: {
-      font: { color: 'Orange-3' },
-      background: { color: 'Orange-1' },
-      border: { color: 'Orange-1' },
+      font: { color: 'Brown-3' },
+      background: { color: 'Brown-1' },
+      border: { color: 'Brown-1' },
     },
     outline: {
-      font: { color: 'Orange-6' },
+      font: { color: 'Brown-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Orange-6' },
+      border: { color: 'Brown-6' },
       disabled: {
-        font: { color: 'Orange-3' },
+        font: { color: 'Brown-3' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Orange-3' },
+        border: { color: 'Brown-3' },
       },
       icon: {
         background: { color: '' },
@@ -346,25 +346,25 @@ const tagTokenValue = {
     },
     fill: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Orange-6' },
-      border: { color: 'Orange-6' },
+      background: { color: 'Brown-6' },
+      border: { color: 'Brown-6' },
       disabled: {
         font: { color: 'Neutral-text-1' },
-        background: { color: 'Orange-3' },
-        border: { color: 'Orange-3' },
+        background: { color: 'Brown-3' },
+        border: { color: 'Brown-3' },
       },
       icon: {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Brown-5' }, font: { color: '' } },
       },
     },
     icon: {
       background: { color: '' },
-      font: { color: 'Orange-6' },
-      disabled: { background: { color: '' }, font: { color: 'Orange-3' } },
-      hover: { background: { color: 'Orange-2' }, font: { color: '' } },
+      font: { color: 'Brown-6' },
+      disabled: { background: { color: '' }, font: { color: 'Brown-3' } },
+      hover: { background: { color: 'Brown-2' }, font: { color: '' } },
     },
   },
   purple: {
@@ -405,7 +405,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Purple-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -453,7 +453,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Indigo-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -501,7 +501,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Cyan-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -549,7 +549,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Neon-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -597,7 +597,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Lemon-5' }, font: { color: '' } },
       },
     },
     icon: {
@@ -645,7 +645,7 @@ const tagTokenValue = {
         background: { color: '' },
         font: { color: '' },
         disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Tangerine-5' }, font: { color: '' } },
       },
     },
     icon: {
