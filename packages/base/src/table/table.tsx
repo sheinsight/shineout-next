@@ -413,6 +413,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             defaultHeight={context.emptyHeight}
             isScrollY={isScrollY}
             isEmptyContent={!props.data?.length}
+            isHeaderSticky={stickyProps?.css}
           >
             {/* thead of virtual */}
             {!props.hideHeader && (

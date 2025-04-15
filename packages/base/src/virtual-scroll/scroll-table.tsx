@@ -25,6 +25,7 @@ interface scrollProps {
   defaultHeight?: number;
   isScrollY?: boolean;
   isEmptyContent?: boolean;
+  isHeaderSticky?: boolean;
 }
 
 const extractHeightValue = (num: number | string) => {
@@ -57,7 +58,10 @@ const Scroll = (props: scrollProps) => {
     flex: 1,
     minWidth: 0,
     minHeight: 0,
-    overflow: props.isEmptyContent ? 'hidden' : 'auto',
+    // 原生css sticky机制根据最近的父元素的overflow来决定是否sticky
+    // isHeaderSticky: 这种场景非内滚的时候，设置scroll元素的overflow为initial
+    // isEmptyContent: 这种场景，把scroll元素的overflow设置为hidden,把overflow: auto转交给下面的container元素
+    overflow: props.isEmptyContent ? 'hidden' : props.isHeaderSticky && scrollRef?.current?.scrollHeight === scrollRef?.current?.clientHeight ? 'initial' : 'auto',
     width: '100%',
   }
   const containerStyle = {
@@ -67,6 +71,7 @@ const Scroll = (props: scrollProps) => {
     position: 'sticky',
     flexDirection: 'column',
     top: 0,
+    // isEmptyContent: overflow设置为auto是为了让empty元素可以sticky left:0 生效
     overflow: props.isEmptyContent ? 'auto' : undefined,
   } as React.CSSProperties;
 

@@ -24,7 +24,7 @@ export interface StickyProps extends Pick<CommonType, 'className' | 'style'> {
   /**
    * @deprecated use scrollContainer
    */
-  target?: string | HTMLElement | null;
+  target?: string | Element | null;
 
   /**
    * @en Custom attachment target. You can pass in HTMLElement or css selector. The target must be an ancestor node of the Sticky component

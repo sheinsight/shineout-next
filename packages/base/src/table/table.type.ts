@@ -350,7 +350,7 @@ export interface TableProps<DataItem, Value>
    * @cn 表头是否附着顶部，为 true 时距离顶部为0
    *
    */
-  sticky?: boolean | { top?: number; css?: boolean };
+  sticky?: boolean | { top?: number; css?: boolean, target?: Element | null };
 
   /**
    * @en Whether to show the top scroller
