@@ -140,8 +140,8 @@ export interface BaseTableProps<Item> {
    */
   keygen: StructKeygenType<Item>;
   /**
-   * @en The function for controlling to merge rows. The return value is an integer indicating the number of rows that need to be merged.
-   * @cn 合并行控制函数，row为单行数据，返回值一个整数，标明需要合并的行数
+   * @en The function to determine whether a cell needs to be updated. The return value should be a boolean indicating whether the cell should re-render.
+   * @cn 控制单元格是否需要更新的函数。返回值应为布尔值，指示单元格是否需要重新渲染
    * @version 3.7.0
    */
   shouldCellUpdate?: shouldCellUpdate<Item>;
