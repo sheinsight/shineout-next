@@ -435,16 +435,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       return classNames(styles.optionDisabled, contentClass);
     }
 
+    const activeClassName = classNames(styles.optionActive, contentClass);
+    const inactiveClassName = classNames(contentClass);
+
     if (multiple) {
-      return isCheck ? classNames(styles.optionActive) : classNames(contentClass);
+      return isCheck ? activeClassName : inactiveClassName;
     }
 
     if (!util.isArray(value)) {
       const currentData = getDataByValues(value);
-      return currentData === data ? classNames(styles.optionActive) : classNames(contentClass);
+      return currentData === data ? activeClassName : inactiveClassName;
     }
 
-    return classNames(contentClass);
+    return inactiveClassName;
   };
 
   const checkUnMatched = (item: unknown) => {
