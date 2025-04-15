@@ -31,7 +31,6 @@ export type TreeClasses = {
   contentWrapper: string;
   inlineContent: string;
   text: string;
-  textClickable: string;
   list: string;
   iconWrapper: string;
   icon: string;
