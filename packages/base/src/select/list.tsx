@@ -21,6 +21,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     controlType,
     hideCreateOption,
     optionListRef,
+    keepScrollTop,
     isAnimationFinish,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     closePop,
@@ -188,7 +189,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
       <VirtualScrollList
         virtualRef={virtualRef}
         data={data}
-        keepScrollTop
+        keepScrollTop={keepScrollTop}
         keygen={keygen}
         tag={'ul'}
         groupKey={groupKey}
@@ -212,6 +213,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         hoverMove: handleMove,
         hoverHover: handleHoverByStep,
         getHoverIndex: getHoverIndex,
+        setTop: virtualRef.current?.setTop,
       };
     }
   }, []);
