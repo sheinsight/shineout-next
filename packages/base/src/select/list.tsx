@@ -213,7 +213,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         hoverMove: handleMove,
         hoverHover: handleHoverByStep,
         getHoverIndex: getHoverIndex,
-        setTop: virtualRef.current?.setTop,
       };
     }
   }, []);
