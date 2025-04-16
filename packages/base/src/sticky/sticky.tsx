@@ -407,6 +407,7 @@ const Sticky = (props: StickyProps) => {
           ...(show && parentVisible ? hideStyle : {}),
         }}
         ref={handleElementRef}
+        {...util.getDataAttribute({ sticky: show && parentVisible ? 'true' : 'false'})}
       >
         {children}
       </div>

@@ -48,7 +48,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const theadRef = useRef<HTMLTableElement | null>(null);
   const tfootRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const mirrorScrollRef = useRef<HTMLDivElement | null>(null);
+  const headMirrorScrollRef = useRef<HTMLDivElement | null>(null);
+  const bottomMirrorScrollRef = useRef<HTMLDivElement | null>(null);
   const tableRef = useRef<HTMLDivElement | null>(null);
 
   const browserScrollbarWidth = useScrollbarWidth();
@@ -223,8 +224,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     const target = e.currentTarget;
     if (!target) return;
     layoutFunc.checkFloat();
-    if (mirrorScrollRef.current) {
-      mirrorScrollRef.current.scrollLeft = target.scrollLeft;
+    if (headMirrorScrollRef.current) {
+      headMirrorScrollRef.current.scrollLeft = target.scrollLeft;
+    }
+    if(bottomMirrorScrollRef.current) {
+      bottomMirrorScrollRef.current.scrollLeft = target.scrollLeft;
     }
     if (props.onScroll && typeof props.onScroll === 'function') {
       const maxWidth = target.scrollWidth - target.clientWidth;
@@ -248,8 +252,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     }) => {
       virtualInfo.handleScroll(info);
       layoutFunc.checkFloat();
-      if (mirrorScrollRef.current) {
-        mirrorScrollRef.current.scrollLeft = info.scrollLeft;
+      if (headMirrorScrollRef.current) {
+        headMirrorScrollRef.current.scrollLeft = info.scrollLeft;
+      }
+      if (bottomMirrorScrollRef.current) {
+        bottomMirrorScrollRef.current.scrollLeft = info.scrollLeft;
       }
       if (props.onScroll && typeof props.onScroll === 'function') {
         props.onScroll(info.x, info.y, info.scrollLeft, info.scrollTop);
@@ -381,7 +388,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       return (
         <StickyWrapper {...(props.sticky ? scrollerStickyProps : {})}>
           <div
-            className={tableClasses?.headMirrorScroller}
+            className={tableClasses?.mirrorScroller}
             style={{
               height: browserScrollbarWidth,
               width: mirrorScrollRefWidth,
@@ -392,11 +399,51 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 scrollRef.current.scrollLeft = target.scrollLeft;
               }
             }}
-            ref={mirrorScrollRef}
+            ref={headMirrorScrollRef}
           >
             <div style={{ width: scrollRef?.current?.scrollWidth, height: 1 }}></div>
           </div>
         </StickyWrapper>
+      );
+    };
+
+    const renderBottomMirrorScroller = () => {
+      if (!props.showBottomScrollbar) return null;
+
+      const scrollRefWidth = scrollRef?.current?.clientWidth || 0;
+      const scrollRefScrollWidth = scrollRef?.current?.scrollWidth || 0;
+      const mirrorScrollRefWidth = scrollRefWidth + scrollBarWidth;
+      const showScroll = scrollRefScrollWidth > scrollRefWidth;
+      // 开启了双滚，但是没有滚动条，不显示
+      if (!scrollRefWidth || !mirrorScrollRefWidth || !showScroll) return null;
+
+      const options = props.showBottomScrollbar === true ? {} : props.showBottomScrollbar;
+      const scrollerStickyProps = {
+        scrollContainer: (options.scrollContainer || document.body) as HTMLElement,
+        bottom: options.bottom || 0,
+        zIndex: options.zIndex || defaultZIndex + 1,
+        parent: tableRef?.current,
+      };
+      return (
+        <Sticky {...scrollerStickyProps}>
+          <div
+            className={tableClasses?.mirrorScroller}
+            style={{
+              height: browserScrollbarWidth,
+              width: mirrorScrollRefWidth,
+              marginTop: -browserScrollbarWidth,
+            }}
+            onScroll={(e) => {
+              const target = e.currentTarget;
+              if (scrollRef?.current && scrollRef.current.scrollLeft !== target.scrollLeft) {
+                scrollRef.current.scrollLeft = target.scrollLeft;
+              }
+            }}
+            ref={bottomMirrorScrollRef}
+          >
+            <div style={{ width: scrollRef?.current?.scrollWidth, height: 1 }}></div>
+          </div>
+        </Sticky>
       );
     };
 
@@ -454,6 +501,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {/* empty of virtual */}
             {renderEmpty()}
           </Scroll>
+
+          {renderBottomMirrorScroller()}
         </>
       );
     }
@@ -473,6 +522,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {<Tfoot {...footCommonProps} />}
           </table>
         </div>
+        {renderBottomMirrorScroller()}
       </>
     );
   };

@@ -18,6 +18,7 @@ import { RadioClasses } from '../radio/radio.type';
 import { PopoverClasses } from '../popover/popover.type';
 import { TreeClasses } from '../tree/tree.type';
 import { KeygenResult } from '@sheinx/hooks';
+import { StickyProps } from '../sticky';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -40,7 +41,7 @@ export interface TableClasses {
 
   loading: string;
 
-  headMirrorScroller: string;
+  mirrorScroller: string;
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
@@ -359,6 +360,15 @@ export interface TableProps<DataItem, Value>
    * @version 3.4.0
    */
   showTopScrollbar?: boolean;
+
+  /**
+   * @en Whether to show the bottom scroller
+   * @cn 是否开启底部自定吸附的滚动条
+   * @default false
+   * @version 3.7.0
+   */
+  showBottomScrollbar?: boolean | BottomScrollbarOption;
+
   /**
    * @en Table instance (please use with caution: only fixed Table)
    * @cn Table 实例（请谨慎使用：仅虚拟列表支持）
@@ -369,6 +379,10 @@ export interface TableProps<DataItem, Value>
    * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
    */
   onRowSelect?: (rows: Value) => void;
+}
+
+interface BottomScrollbarOption extends Pick<StickyProps, 'scrollContainer' | 'bottom'> {
+  zIndex?: number;
 }
 
 export interface SorterInfo {

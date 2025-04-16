@@ -167,8 +167,12 @@ const tableStyle: JsStyles<TableClassType> = {
       borderTop: `1px solid ${token.tableCellBorderColor}`,
     },
   },
-  headMirrorScroller: {
+  mirrorScroller: {
     overflow: 'scroll hidden',
+
+    '[data-soui-sticky="false"] &': {
+      display: 'none',
+    }
   },
   headWrapper: {
     flex: '0 0 auto',

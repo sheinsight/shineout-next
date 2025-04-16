@@ -1,3 +1,11 @@
+## 3.7.0-beta.6
+2025-04-14
+
+### 🆕 Feature
+
+- `Table` 新增 `showBottomScrollbar` 属性，启用后显示可吸附底部的横向滚动条 ([#1068](https://github.com/sheinsight/shineout-next/pull/1068))
+
+
 ## 3.7.0-beta.5
 2025-04-14
 

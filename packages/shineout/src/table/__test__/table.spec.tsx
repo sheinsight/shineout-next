@@ -22,6 +22,7 @@ import TableBase from '../__example__/01-base';
 import TableBorder from '../__example__/02-border';
 import TableSize from '../__example__/03-size';
 import TableGroup from '../__example__/04-group';
+// import TableBottomScrollbar from '../__example__/06-bottom-scrollbar';
 
 // import TableVirtualList from '../__example__/07-01-virtual-list'
 // import TableVirtualScroll from '../__example__/07-02-virtual-scroll'
@@ -58,6 +59,7 @@ const originClasses = [
   'expandIcon',
   'filterIconContainer',
   'filterIcon',
+  'mirrorScroller',
 ];
 const originItemClasses = [
   'default',
@@ -105,6 +107,7 @@ const {
   cellFixedRight,
   expandIcon,
   filterIconContainer,
+  mirrorScroller,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const {
@@ -1766,6 +1769,9 @@ describe('Table[RowEvents]', () => {
     expect(onMouseEnterFn.mock.calls.length).toBe(1);
   });
 });
+
+// TODO: 有sticky特性的用例跑不起来？
+describe('Table[showBottomScrollbar]', () => {});
 // sticky
 // loading
 
