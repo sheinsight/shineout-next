@@ -157,6 +157,7 @@ export interface BaseListProps<DataItem, Value>
   isAnimationFinish: boolean;
   onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
   onOptionClick: (data: DataItem, index: number) => void;
+  keepScrollTop?: boolean;
 }
 
 export interface SelectPropsBase<DataItem, Value>
