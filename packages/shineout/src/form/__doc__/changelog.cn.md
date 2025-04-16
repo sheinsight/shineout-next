@@ -1,3 +1,10 @@
+## 3.6.4-beta.4
+2025-04-16
+
+### 🐞 BugFix
+- 修复 `Form` 在ReactDOM.render模式下并发设置value后导致某些字段值丢失的问题 ([#1067](https://github.com/sheinsight/shineout-next/pull/1067))
+
+
 ## 3.6.3-beta.2
 2025-04-10
 
