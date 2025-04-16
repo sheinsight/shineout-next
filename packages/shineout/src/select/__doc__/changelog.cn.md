@@ -1,3 +1,9 @@
+## 3.6.4-beta.2
+2025-04-16
+
+### 🐞 BugFix
+- 修复 `Select` 搜索内容后选项被遮挡的问题 ([#1064](https://github.com/sheinsight/shineout-next/pull/1064))
+
 ## 3.6.2-beta.4
 2025-04-01
 
