@@ -1,3 +1,10 @@
+## 3.6.4-beta.6
+2025-04-17
+
+### 🐞 BugFix
+
+- 修复 `Tree` 传入 `rowsInView` 属性失效的问题 ([#1071](https://github.com/sheinsight/shineout-next/pull/1071))
+
 ## 3.6.3-beta.7
 2025-04-15
 
