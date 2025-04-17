@@ -190,13 +190,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
         style.left = 'auto';
         style.transform = '';
-        if (adjust) {
-          overLeft = bodyRect.left - (rect.right - context.popUpWidth);
-          if (style.right < 0 && targetRect) {
-            style.left = bodyRect.width - targetRect.width;
-            style.right = 'auto';
-          }
-        }
       } else {
         // 居中对齐
         style.left = rect.left + rect.width / 2 - containerRect.left + containerScroll.left;

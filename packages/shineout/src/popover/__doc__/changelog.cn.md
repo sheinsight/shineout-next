@@ -4,6 +4,14 @@
 ### 🆕 Feature
 - `Popover` 新增 `disabled` 属性，是否禁用 ([#1032](https://github.com/sheinsight/shineout-next/pull/1032))
 
+
+## 3.6.4-beta.5
+2025-04-17
+
+### 💎 Enhancement
+- 优化 `Popover` 在窗口resize和父容器滚动后依然能跟随目标 ([#1069](https://github.com/sheinsight/shineout-next/pull/1069))
+
+
 ## 3.6.1-beta.7
 2025-03-26
 

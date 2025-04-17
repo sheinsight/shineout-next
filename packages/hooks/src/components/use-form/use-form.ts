@@ -507,8 +507,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.updateMap[n] = new Set();
       }
       context.updateMap[n].add(updateFn);
+      const shouldTriggerResetChange = context.removeArr.has(n);
       context.removeArr.delete(n);
-      if (df !== undefined && deepGet(context.value, n) === undefined) {
+      const shouldTriggerDefaultChange =
+        df !== undefined && deepGet(context.value, n) === undefined;
+      if (shouldTriggerDefaultChange || shouldTriggerResetChange) {
         if (!context.mounted) context.defaultValues[n] = df;
         onChange((v) => {
           deepSet(v, n, df, deepSetOptions);
