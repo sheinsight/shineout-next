@@ -437,8 +437,8 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
-    width: 248,
-    height: 72,
+    maxWidth: 400,
+    maxHeight: 160,
     overflow: 'auto',
     padding: `${token.treeSelectMorePaddingY} ${token.treeSelectMorePaddingX}`,
   },
