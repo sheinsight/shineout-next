@@ -1,3 +1,9 @@
+## 3.6.4-beta.5
+2025-04-17
+
+### 🐞 BugFix
+- 修复 `Form` 在表单组件的 key 变更后 `defaultValue` 无法设置成功的问题 ([#1068](https://github.com/sheinsight/shineout-next/pull/1068))
+
 ## 3.6.4-beta.4
 2025-04-16
 
