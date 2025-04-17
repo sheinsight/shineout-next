@@ -691,8 +691,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   useEffect(() => {
     if (!value) return;
     datum.setValue(value);
+
+    if(!open) return
     updatePathByValue();
-  }, [value]);
+  }, [value, open]);
 
   useEffect(() => {
     if (filterText !== undefined) {
