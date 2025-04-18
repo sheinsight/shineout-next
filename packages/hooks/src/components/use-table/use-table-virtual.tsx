@@ -101,14 +101,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     autoAddRows: 0,
   });
 
-  const getTranslate = usePersistFn((left?: number, top?: number) => {
-    let t = top === undefined ? innerTop + offsetY : top;
-    if (t < 0) {
-      t = 0;
-    }
-    return `translate3d(0, ${0 - t}px, 0)`;
-  });
-
   const getContentHeight = (index: number) => {
     if (props.disabled) return 0;
     let sum = 0;
@@ -212,7 +204,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     setHeight(sumHeight);
   });
 
-  const handleScroll = (info: {
+  const handleScroll = usePersistFn((info: {
     scrollLeft: number;
     scrollTop: number;
     y: number;
@@ -250,7 +242,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     } else {
       updateIndexAndTopFromTop(scrollTop);
     }
-  };
+  });
 
   const scrollToIndex = usePersistFn((index: number, callback?: () => void) => {
     if (props.disabled) return;
@@ -362,18 +354,28 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   }, [scrollHeight]);
 
   const finalRowsInView = rowsInView + context.rowSpanRows + context.autoAddRows;
-  const renderData = props.disabled
-    ? props.data
-    : [...props.data].slice(startIndex, startIndex + finalRowsInView);
+
+  const renderData = useMemo(() => {
+    if (props.disabled) return props.data;
+    return [...props.data].slice(startIndex, startIndex + finalRowsInView);
+  }
+  , [props.data, startIndex, finalRowsInView]);
+
+  const translateStyle = useMemo(() => {
+    let t = innerTop + offsetY;
+    if (t < 0) {
+      t = 0;
+    }
+    return `translate3d(0, ${0 - t}px, 0)`;
+  }, [innerTop]);
 
   return {
     scrollHeight,
     startIndex,
-    innerTop: innerTop + offsetY,
+    translateStyle,
     data: renderData,
     handleScroll,
     setRowHeight,
-    getTranslate,
     scrollToIndex,
     scrollColumnByLeft,
     scrollColumnIntoView,

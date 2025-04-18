@@ -1,6 +1,6 @@
 /**
- * cn - shouldUpdate
- *    -- shouldUpdate 可以用来控制单元格是否更新，可以是一个函数，也可以是一个对象，对象格式为 { update: (record, prevRecord) => boolean, dependencies: any[] }
+ * cn - shouldCellUpdate
+ *    -- shouldCellUpdate 可以用来控制单元格是否更新，可以是一个函数，也可以是一个对象，对象格式为 { update: (record, prevRecord) => boolean, dependencies: any[] }
  * en - scrollToIndex
  *    -- The virtual list table provides a scrollToIndex method to scroll to the specified row
  */
@@ -21,6 +21,7 @@ interface TableRowData {
   position: string;
   lastName: string;
   firstName: string;
+  [k: string]: any;
 }
 
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
@@ -28,7 +29,7 @@ type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
 const data: TableRowData[] = user.fetchSync(1000);
 
 const CacheTable = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState<string | undefined>('');
 
   const columns: TableColumnItem[] = [
     {
@@ -52,8 +53,6 @@ const CacheTable = () => {
         </div>
       ),
       width: 160,
-
-      shouldUpdate: () => false,
     },
     { title: 'Country', render: 'country' },
     { title: 'Position', render: 'position' },
@@ -63,19 +62,17 @@ const CacheTable = () => {
       title: `Office${i}`,
       render: 'office',
       width: 100,
-      shouldUpdate: () => false,
+      shouldCellUpdate: () => false,
     })),
 
     {
       title: 'Office',
-      render: (row) => (
+      render: () => (
         <div>
           <Input
             value={inputValue}
             onChange={(v) => {
-              console.log('======================');
               console.log('input onChange: >>', v);
-              console.log('======================');
               setInputValue(v);
             }}
           />
@@ -85,10 +82,12 @@ const CacheTable = () => {
         </div>
       ),
       // 第一种格式
-      // shouldUpdate: (record, prevRecord) => record.id !== prevRecord.id,
+      // shouldCellUpdate: (record, prevRecord) => record.id !== prevRecord.id,
       // 第二种格式，支持从外部传入dependencies: 怎么把inputValue传给shouldCellUpdate内部去使用
-      shouldUpdate: {
-        update: (record, prevRecord) => record.id !== prevRecord.id,
+      shouldCellUpdate: {
+        update: (record, prevRecord) => {
+          return record.id !== prevRecord.id
+        },
         dependencies: [inputValue],
       },
     },
@@ -103,7 +102,7 @@ const CacheTable = () => {
       ),
       fixed: 'right',
       width: 140,
-      // shouldUpdate: {
+      // shouldCellUpdate: {
       //   update: (record, prevRecord) => record.id !== prevRecord.id,
       //   dependencies: [inputValue],
       // },
@@ -124,7 +123,7 @@ const CacheTable = () => {
 
 const NoCacheTable = () => {
 
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState<string | undefined>('');
 
   const columns: TableColumnItem[] = [
     {
