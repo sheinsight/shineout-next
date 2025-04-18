@@ -475,7 +475,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             )}
 
             {/* tbody of virtual */}
-            {!!props.data?.length &&<table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
+            {!!props.data?.length && <table style={{ width, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
               {Group}
               <Tbody
                 {...bodyCommonProps}

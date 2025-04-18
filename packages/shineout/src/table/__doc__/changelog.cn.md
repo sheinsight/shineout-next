@@ -1,3 +1,10 @@
+## 3.7.0-beta.7
+2025-04-18
+
+### 💎 Enhancement
+- 优化 `Table` 的 `shouldCellUpdate` 缓存性能 ([#1074](https://github.com/sheinsight/shineout-next/pull/1074))
+
+
 ## 3.7.0-beta.6
 2025-04-14
 

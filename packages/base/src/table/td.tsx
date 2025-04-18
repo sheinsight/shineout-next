@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { shouldCellUpdate, useMemo, util } from '@sheinx/hooks';
+import { shouldCellUpdate, useComponentMemo, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 
 interface TdProps<T> {
@@ -36,6 +36,7 @@ export default function Td<T>(props: TdProps<T>): JSX.Element {
     className,
     direction,
     role,
+    data,
     onClick,
     onMouseEnter,
     onMouseLeave,
@@ -52,7 +53,7 @@ export default function Td<T>(props: TdProps<T>): JSX.Element {
       ? props.shouldCellUpdate.update
       : props.shouldCellUpdate;
 
-  const $td = useMemo(
+  const $td = useComponentMemo(
     () => {
       const content = renderContent(props.col, props.data);
       return (
@@ -73,14 +74,12 @@ export default function Td<T>(props: TdProps<T>): JSX.Element {
       );
     },
     [
-      ...externalDependencies,
+      data,
       className,
       style,
       col.type,
       col.treeColumnsName,
-      // onClick,
-      // onMouseEnter,
-      // onMouseLeave,
+      ...externalDependencies,
     ],
     updateFn
       ? (prev, next) => {
@@ -88,7 +87,13 @@ export default function Td<T>(props: TdProps<T>): JSX.Element {
             return true;
           }
 
-          return prev.some((_, index) => !util.shallowEqual(prev[index], next[index]));
+          return prev.some((_, index) => {
+            if(index === 0){
+              return updateFn(prev[index], next[index])
+            }
+
+            return !util.shallowEqual(prev[index], next[index]);
+          });
         }
       : undefined,
   ) as JSX.Element;
