@@ -468,7 +468,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     if (from !== 'blur') {
       focusAndOpen();
     }
-    onTiledFilter?.(trim ? text.trim() : text);
+    onTiledFilter?.(trim ? text.trim() : text, from);
   };
 
   useEffect(() => {
