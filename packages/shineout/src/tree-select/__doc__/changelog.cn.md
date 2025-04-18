@@ -1,3 +1,9 @@
+## 3.6.4-beta.7
+2025-04-18
+
+### 🆕 Feature
+- 修复 `TreeSelect` 的 `onFilter` ts 类型和第二参数丢失的问题 ([#1073](https://github.com/sheinsight/shineout-next/pull/1073))
+
 ## 3.6.3-beta.6
 2025-04-11
 
