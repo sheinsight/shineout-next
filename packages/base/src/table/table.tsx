@@ -23,7 +23,7 @@ import {
   useScrollbarWidth,
   util,
 } from '@sheinx/hooks';
-import { TableProps } from './table.type';
+import { TableClasses, TableProps } from './table.type';
 import useTableSelect from './use-table-select';
 
 import Colgroup from './colgroup';
@@ -43,7 +43,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const config = useConfig();
 
   const isRtl = config.direction === 'rtl';
-  const tableClasses = props?.jssStyle?.table?.();
+  const tableClasses = props?.jssStyle?.table?.() as TableClasses;
   const tbodyRef = useRef<HTMLTableElement | null>(null);
   const theadRef = useRef<HTMLTableElement | null>(null);
   const tfootRef = useRef<HTMLTableElement | null>(null);
@@ -202,7 +202,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   useEffect(() => {
-    context.theadAndTfootHeight = (theadRef?.current?.clientHeight || 0) + (tfootRef.current?.clientHeight || 0);
+    context.theadAndTfootHeight =
+      (theadRef?.current?.clientHeight || 0) + (tfootRef.current?.clientHeight || 0);
   }, [theadRef.current, tfootRef.current]);
 
   const virtualInfo = useTableVirtual({
@@ -219,6 +220,13 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     theadAndTfootHeight: context.theadAndTfootHeight,
   });
 
+  const syncHeaderScroll = usePersistFn((left: number) => {
+    if(props.hideHeader || !props.sticky) return;
+    if (!theadRef?.current?.parentElement) return;
+
+    theadRef.current.parentElement.scrollLeft = left;
+  });
+
   // 简单表格的滚动事件
   const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
@@ -227,7 +235,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     if (headMirrorScrollRef.current) {
       headMirrorScrollRef.current.scrollLeft = target.scrollLeft;
     }
-    if(bottomMirrorScrollRef.current) {
+    if (bottomMirrorScrollRef.current) {
       bottomMirrorScrollRef.current.scrollLeft = target.scrollLeft;
     }
     if (props.onScroll && typeof props.onScroll === 'function') {
@@ -237,6 +245,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       const y = Math.min(target.scrollTop / maxHeight, 1);
       props.onScroll(x, y, target.scrollLeft, target.scrollTop);
     }
+
+    syncHeaderScroll(target.scrollLeft);
   });
 
   // 虚拟表格的滚动事件
@@ -261,6 +271,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       if (props.onScroll && typeof props.onScroll === 'function') {
         props.onScroll(info.x, info.y, info.scrollLeft, info.scrollTop);
       }
+
+      syncHeaderScroll(info.scrollLeft);
     },
   );
 
@@ -268,7 +280,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     if (!props.data?.length || (filteredData !== undefined && filteredData.length === 0)) {
       return (
         <div
-          className={classNames(tableClasses?.emptyWrapper, isScrollX && tableClasses?.emptyNoBorder)}
+          className={classNames(
+            tableClasses?.emptyWrapper,
+            isScrollX && tableClasses?.emptyNoBorder,
+          )}
           ref={(el) => {
             context.emptyHeight = el?.clientHeight || 0;
           }}
@@ -362,13 +377,9 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const isRenderVirtualTable = virtual || props.sticky || !props.data?.length;
 
-    const headWrapperClass = classNames(
-      tableClasses?.headWrapper,
-    );
+    const headWrapperClass = classNames(tableClasses?.headWrapper);
 
-    const footWrapperClass = classNames(
-      tableClasses?.footWrapper,
-    );
+    const footWrapperClass = classNames(tableClasses?.footWrapper);
 
     const renderHeadMirrorScroller = () => {
       if (!props.showTopScrollbar) return null;
@@ -447,51 +458,56 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       );
     };
 
+    const $headTable = (
+      <table style={{ width }} ref={theadRef}>
+        {Group}
+        <Thead {...headCommonProps} />
+      </table>
+    );
     if (isRenderVirtualTable) {
       return (
         <>
           {renderHeadMirrorScroller()}
 
+          {!props.hideHeader && props.sticky && (
+            <StickyWrapper {...stickyProps}>
+              <div className={headWrapperClass} style={{ overflow: 'hidden' }}>
+                {$headTable}
+              </div>
+            </StickyWrapper>
+          )}
+
           <Scroll
+            style={{ display: 'flex', minWidth: 0, minHeight: 0, flex: 1 }}
             wrapperRef={scrollRef}
             scrollWidth={width || 1}
             scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
             onScroll={handleVirtualScroll}
             defaultHeight={context.emptyHeight}
             isScrollY={isScrollY}
-            isEmptyContent={!props.data?.length}
-            isHeaderSticky={stickyProps?.css}
           >
             {/* thead of virtual */}
-            {!props.hideHeader && (
-              <StickyWrapper {...(props.sticky ? stickyProps : {})}>
-                <div className={headWrapperClass}>
-                  <table style={{ width }} ref={theadRef}>
-                    {Group}
-                    <Thead {...headCommonProps} />
-                  </table>
-                </div>
-              </StickyWrapper>
+            {!props.hideHeader && !props.sticky && (
+              <div className={headWrapperClass}>{$headTable}</div>
             )}
 
             {/* tbody of virtual */}
-            {!!props.data?.length && <table style={{ width, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
-              {Group}
-              <Tbody
-                {...bodyCommonProps}
-                currentIndex={virtualInfo.startIndex}
-                data={virtualInfo.data}
-                setRowHeight={virtualInfo.setRowHeight}
-              />
-            </table>}
+            {!!props.data?.length && (
+              <table style={{ width, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
+                {Group}
+                <Tbody
+                  {...bodyCommonProps}
+                  currentIndex={virtualInfo.startIndex}
+                  data={virtualInfo.data}
+                  setRowHeight={virtualInfo.setRowHeight}
+                />
+              </table>
+            )}
 
             {/* tfoot of virtual */}
             {showFoot ? (
               <div className={footWrapperClass}>
-                <table
-                  style={{ width }}
-                  ref={tfootRef}
-                >
+                <table style={{ width }} ref={tfootRef}>
                   {Group}
                   <Tfoot {...footCommonProps} />
                 </table>
@@ -553,6 +569,37 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     );
   };
 
+  // handle head and  foot scroll
+  const handleHeaderWheel = usePersistFn((e: any) => {
+    const scrollEl = scrollRef.current!;
+    if (!scrollEl) return;
+    if (!theadRef?.current?.parentElement) return;
+    const max = scrollEl.scrollWidth - scrollEl.clientWidth;
+    const scrollLeft = scrollEl.scrollLeft + e.deltaX;
+    if (scrollLeft === scrollEl.scrollLeft) {
+      return;
+    }
+    e.preventDefault();
+    const left = Math.min(Math.max(scrollLeft, 0), max);
+    scrollEl.scrollLeft = left;
+    theadRef.current.parentElement.scrollLeft = left;
+  });
+
+  useEffect(() => {
+    // 绑定 wheel 事件
+    if (props.sticky && theadRef.current && theadRef.current.parentElement) {
+      theadRef.current.parentElement.addEventListener('wheel', handleHeaderWheel, {
+        passive: false,
+      });
+    }
+
+    return () => {
+      if (props.sticky && theadRef.current && theadRef.current.parentElement) {
+        theadRef.current.parentElement.removeEventListener('wheel', handleHeaderWheel);
+      }
+    };
+  }, [theadRef.current, props.sticky, isScrollY]);
+
   const getRenderIndexByData = (data: Item | string) => {
     const originKey = typeof data === 'string' ? data : util.getKey(props.keygen, data);
     const index = treeData.findIndex((item) => util.getKey(props.keygen, item) === originKey);
@@ -603,12 +650,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   return (
     <>
       <div
-        className={classNames(
-          tableWrapperClass,
-          floatLeft && tableClasses?.floatLeft,
-          floatRight && tableClasses?.floatRight,
-          props.sticky && tableClasses?.sticky,
-        )}
+        className={classNames(tableWrapperClass, {
+          [tableClasses.sticky]: props.sticky,
+          [tableClasses.floatLeft]: floatLeft,
+          [tableClasses.floatRight]: floatRight,
+        })}
         style={{ height: defaultHeight, ...props.style }}
         {...selection.getTableProps()}
         ref={tableRef}

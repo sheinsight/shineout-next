@@ -3,6 +3,7 @@ import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
 interface scrollProps {
+  style?: React.CSSProperties;
   scrollHeight: number;
   scrollWidth: number | string;
   height?: number | string;
@@ -24,8 +25,6 @@ interface scrollProps {
   childrenStyle?: React.CSSProperties;
   defaultHeight?: number;
   isScrollY?: boolean;
-  isEmptyContent?: boolean;
-  isHeaderSticky?: boolean;
 }
 
 const extractHeightValue = (num: number | string) => {
@@ -58,10 +57,7 @@ const Scroll = (props: scrollProps) => {
     flex: 1,
     minWidth: 0,
     minHeight: 0,
-    // 原生css sticky机制根据最近的父元素的overflow来决定是否sticky
-    // isHeaderSticky: 这种场景非内滚的时候，设置scroll元素的overflow为initial
-    // isEmptyContent: 这种场景，把scroll元素的overflow设置为hidden,把overflow: auto转交给下面的container元素
-    overflow: props.isEmptyContent ? 'hidden' : props.isHeaderSticky && scrollRef?.current?.scrollHeight === scrollRef?.current?.clientHeight ? 'initial' : 'auto',
+    overflow: 'auto',
     width: '100%',
   }
   const containerStyle = {
@@ -71,8 +67,6 @@ const Scroll = (props: scrollProps) => {
     position: 'sticky',
     flexDirection: 'column',
     top: 0,
-    // isEmptyContent: overflow设置为auto是为了让empty元素可以sticky left:0 生效
-    overflow: props.isEmptyContent ? 'auto' : undefined,
   } as React.CSSProperties;
 
   // 当滚动容器的高度为 0 时，paddingTop 为 0，避免滚动条抖动现象
@@ -140,27 +134,29 @@ const Scroll = (props: scrollProps) => {
   });
 
   return (
-    <div
-      {...util.getDataAttribute({ role: 'scroll' })}
-      style={scrollerStyle}
-      onScroll={handleScroll}
-      ref={wrapperRef}
-      onMouseDown={() => {
-        context.isMouseDown = true;
-      }}
-      onMouseUp={() => {
-        context.isMouseDown = false;
-      }}
-    >
+    <div className={props.className} style={props.style}>
       <div
-        {...util.getDataAttribute({ role: 'scroll-container' })}
-        style={containerStyle}
-        ref={containerRef}
-        onScroll={handleInnerScroll}
+        {...util.getDataAttribute({ role: 'scroll' })}
+        style={scrollerStyle}
+        onScroll={handleScroll}
+        ref={wrapperRef}
+        onMouseDown={() => {
+          context.isMouseDown = true;
+        }}
+        onMouseUp={() => {
+          context.isMouseDown = false;
+        }}
       >
-       {props.children}
+        <div
+          {...util.getDataAttribute({ role: 'scroll-container' })}
+          style={containerStyle}
+          ref={containerRef}
+          onScroll={handleInnerScroll}
+        >
+        {props.children}
+        </div>
+        <div style={placeStyle}>&nbsp;</div>
       </div>
-      <div style={placeStyle}>&nbsp;</div>
     </div>
   );
 };
