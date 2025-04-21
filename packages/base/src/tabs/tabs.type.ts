@@ -172,4 +172,14 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    * @version 3.5.3
    */
   allowNonPanel?: boolean;
+
+  /**
+   * @en Custom render header content
+   * @cn 自定义渲染 header 内容
+   * @version 3.7.0
+   */
+  renderTabsHeader?: (
+    header: React.ReactNode,
+    props: Omit<TabsProps, 'renderTabsHeader'>,
+  ) => React.ReactNode;
 }
