@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Scroll from '../virtual-scroll/scroll-table';
 import classNames from 'classnames';
 import Spin from '../spin';
@@ -51,6 +51,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const headMirrorScrollRef = useRef<HTMLDivElement | null>(null);
   const bottomMirrorScrollRef = useRef<HTMLDivElement | null>(null);
   const tableRef = useRef<HTMLDivElement | null>(null);
+  const [scrolling, setScrolling] = useState(false);
 
   const browserScrollbarWidth = useScrollbarWidth();
 
@@ -71,6 +72,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const { current: context } = useRef({
     emptyHeight: 0,
     theadAndTfootHeight: 0,
+    scrollingTimer: null as any,
   });
 
   const virtual =
@@ -221,7 +223,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   const syncHeaderScroll = usePersistFn((left: number) => {
-    if(props.hideHeader || !props.sticky) return;
+    if (props.hideHeader || !props.sticky) return;
     if (!theadRef?.current?.parentElement) return;
 
     theadRef.current.parentElement.scrollLeft = left;
@@ -273,6 +275,15 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       }
 
       syncHeaderScroll(info.scrollLeft);
+
+      if (context.scrollingTimer) {
+        clearTimeout(context.scrollingTimer);
+      }
+
+      setScrolling(true);
+      context.scrollingTimer = setTimeout(() => {
+        setScrolling(false);
+      }, 100);
     },
   );
 
@@ -500,6 +511,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                   currentIndex={virtualInfo.startIndex}
                   data={virtualInfo.data}
                   setRowHeight={virtualInfo.setRowHeight}
+                  scrolling={scrolling}
                 />
               </table>
             )}

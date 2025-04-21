@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTableRow, useTableExpand, util } from '@sheinx/hooks';
+import { useTableRow, useTableExpand, util, useComponentMemo } from '@sheinx/hooks';
 import Tr from './tr';
 import { TbodyProps } from './tbody.type';
 
@@ -73,5 +73,34 @@ export default (props: TbodyProps) => {
       />
     );
   };
-  return <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>;
+
+  const externalDependencies =
+    typeof props.shouldCellUpdate === 'object' && props.shouldCellUpdate.dependencies
+      ? props.shouldCellUpdate.dependencies
+      : [];
+
+  const updateFn =
+    typeof props.shouldCellUpdate === 'object' && 'update' in props.shouldCellUpdate
+      ? props.shouldCellUpdate.update
+      : props.shouldCellUpdate;
+
+  const $tbody = useComponentMemo(
+    () => <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>,
+    [props.data, currentIndex, ...externalDependencies],
+    updateFn
+      ? (prev, next) => {
+          return prev.some((_, index) => {
+            if (index === 0) {
+              return (prev[index] as any[]).some((item, idx) =>
+                updateFn(item, (next[index] as any[])[idx])
+              );
+            }
+
+            return !util.shallowEqual(prev[index], next[index]);
+          }) || !props.scrolling;
+        }
+      : undefined,
+  );
+
+  return $tbody;
 };

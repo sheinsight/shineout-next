@@ -42,4 +42,5 @@ export interface TbodyProps
   setRowHeight?: (index: number, height: number) => void;
   bodyScrollWidth?: number;
   resizeFlag?: number;
+  scrolling?: boolean;
 }
