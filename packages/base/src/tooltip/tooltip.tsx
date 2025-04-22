@@ -1,4 +1,4 @@
-import { getClosestScrollContainer, usePopup, util } from '@sheinx/hooks';
+import { usePersistFn, usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { cloneElement, isValidElement, useEffect } from 'react';
 import { TooltipProps } from './tooltip.type';
@@ -48,9 +48,10 @@ const Tooltip = (props: TooltipProps) => {
   const events = getTargetProps();
 
   const [updateKey, setUpdateKey] = React.useState(0);
-  const handleUpdateKey = () => {
+  const handleUpdateKey = usePersistFn(() => {
     setUpdateKey((prev) => (prev + 1) % 2);
-  };
+  });
+
   const bindEvents = () => {
     const targetEl = targetRef.current;
     if (!targetEl) return;
@@ -59,10 +60,6 @@ const Tooltip = (props: TooltipProps) => {
     if (events.onClick) targetEl.addEventListener('click', events.onClick);
 
     window?.addEventListener('resize', handleUpdateKey);
-    const scrollContainer = getClosestScrollContainer(targetEl);
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleUpdateKey);
-    }
   };
 
   const unbindEvents = () => {
@@ -75,10 +72,6 @@ const Tooltip = (props: TooltipProps) => {
     targetEl.removeEventListener('click', closePop);
 
     window?.removeEventListener('resize', handleUpdateKey);
-    const scrollContainer = getClosestScrollContainer(targetEl);
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleUpdateKey);
-    }
   };
 
   useEffect(() => {
