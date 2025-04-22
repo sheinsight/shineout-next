@@ -1,7 +1,13 @@
+## 3.6.4-beta.8
+2025-04-22
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 在页面边界搜索时，下拉弹出层的位置未实时更新导致偏离父元素的问题 ([#1076](https://github.com/sheinsight/shineout-next/pull/1076))
+
 ## 3.6.4-beta.7
 2025-04-18
 
-### 🆕 Feature
+### 🐞 BugFix
 - 修复 `TreeSelect` 的 `onFilter` ts 类型和第二参数丢失的问题 ([#1073](https://github.com/sheinsight/shineout-next/pull/1073))
 
 ## 3.6.3-beta.6
