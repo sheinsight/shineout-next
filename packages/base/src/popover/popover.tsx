@@ -54,9 +54,10 @@ const Popover = (props: PopoverProps) => {
   const events = getTargetProps();
 
   const [updateKey, setUpdateKey] = React.useState(0);
-  const handleUpdateKey = () => {
+  const handleUpdateKey = usePersistFn(() => {
     setUpdateKey(prev => (prev + 1) % 2);
-  }
+  });
+
   const bindEvents = () => {
     const targetEl = targetRef.current;
     if (!targetEl) return;
@@ -69,9 +70,9 @@ const Popover = (props: PopoverProps) => {
     }
 
     window?.addEventListener('resize', handleUpdateKey);
-    const scrollContainer = getClosestScrollContainer(targetEl);
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleUpdateKey);
+    if (props.adjust) {
+      const scrollContainer = getClosestScrollContainer(targetEl);
+      if(scrollContainer) scrollContainer.addEventListener('scroll', handleUpdateKey);
     }
   };
   const unbindEvents = () => {
@@ -84,9 +85,9 @@ const Popover = (props: PopoverProps) => {
     targetEl.removeEventListener('click', closePop);
 
     window?.removeEventListener('resize', handleUpdateKey);
-    const scrollContainer = getClosestScrollContainer(targetEl);
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleUpdateKey);
+    if (props.adjust) {
+      const scrollContainer = getClosestScrollContainer(targetEl);
+      if(scrollContainer) scrollContainer.removeEventListener('scroll', handleUpdateKey);
     }
   };
 
