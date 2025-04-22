@@ -312,6 +312,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     );
 
     const bodyCommonProps = {
+      virtual: props.virtual,
       hover: props.hover,
       disabled: props.disabled,
       rowClickAttr: props.rowClickAttr,

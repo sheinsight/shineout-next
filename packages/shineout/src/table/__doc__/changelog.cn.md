@@ -1,3 +1,10 @@
+## 3.7.0-beta.11
+2025-04-18
+
+### 💎 Enhancement
+- 优化 `Table` 的 `virtual` 模式下，滚动过程中默认开启tbody的memo缓存 ([#1078](https://github.com/sheinsight/shineout-next/pull/1078))
+
+
 ## 3.7.0-beta.7
 2025-04-18
 

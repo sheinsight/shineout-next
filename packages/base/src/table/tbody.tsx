@@ -87,10 +87,10 @@ export default (props: TbodyProps) => {
   const $tbody = useComponentMemo(
     () => <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>,
     [props.data, currentIndex, ...externalDependencies],
-    updateFn
+    updateFn || props.virtual
       ? (prev, next) => {
           return prev.some((_, index) => {
-            if (index === 0) {
+            if (updateFn && index === 0) {
               return (prev[index] as any[]).some((item, idx) =>
                 updateFn(item, (next[index] as any[])[idx])
               );

@@ -27,6 +27,7 @@ export interface TbodyProps
     | 'treeCheckAll'
     | 'onCellClick'
     | 'shouldCellUpdate'
+    | 'virtual'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];
