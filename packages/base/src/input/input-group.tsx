@@ -46,11 +46,11 @@ export default (props: InputGroupProps) => {
     return ref.current.eventMap.get(child) || {};
   };
 
-  const { children, className, width, style } = props;
+  const { children, className, width, style, seperate } = props;
   const rootClass = classNames(
     className,
     inputStyle?.group,
-    props.seperate && inputStyle?.groupSeperate,
+    seperate && inputStyle?.groupSeperate,
     size === 'small' && inputStyle?.groupSmall,
     size === 'large' && inputStyle?.groupLarge,
     !!disabled && inputStyle?.groupDisabled,
@@ -59,7 +59,7 @@ export default (props: InputGroupProps) => {
   );
   return (
     <div
-      {...util.getDataAttribute({ role: props.seperate ? 'input-group-seperate' : 'input-group' })}
+      {...util.getDataAttribute({ role: seperate ? 'input-group-seperate' : 'input-group' })}
       className={rootClass}
       style={{ width, ...style }}
       dir={config?.direction}

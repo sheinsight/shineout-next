@@ -213,6 +213,19 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
       transition: 'none',
     },
 
+    '[data-soui-role="input-group"] > &': {
+      borderWidth: 0,
+      borderRadius: 0,
+
+      '&:first-child': {
+        borderTopLeftRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
+        borderBottomLeftRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
+      },
+      '&:last-child': {
+        borderTopRightRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
+        borderBottomRightRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
+      },
+    },
     '[data-soui-role="input-group-seperate"] > &': {
       borderRadius: 0,
       marginLeft: -1,

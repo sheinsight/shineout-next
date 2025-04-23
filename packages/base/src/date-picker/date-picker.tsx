@@ -176,6 +176,13 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   const handleBlur = usePersistFn((e: React.FocusEvent) => {
     setFocused(false);
     props.onBlur?.(e);
+
+    if(props.needConfirm) return;
+
+    // 当输入框有值时，失焦时需要立即触发 onChange，否则触控板的轻触模拟出来的click事件就获取不到最新的值
+    if(inputArr.some(d => d !== undefined)) {
+      func.finishEdit();
+    };
   });
 
   const handleClose = (isFromConfirm?: boolean) => {

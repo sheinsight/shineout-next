@@ -58,6 +58,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     onDragOver,
     onDragStart,
     datum: propsDatum,
+    rowsInView = 20,
     actionOnClick,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     tiledData,
@@ -237,6 +238,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
           {...props}
           data={data}
           line={line}
+          rowsInView={rowsInView}
           expanded={expanded}
           height={realHeight}
           childrenKey={props.childrenKey || ('children' as ObjectKey<DataItem>)}

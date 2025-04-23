@@ -60,6 +60,7 @@ export default () => {
               type='datetime'
               range
               name={['effectiveTimeBegin', 'effectiveTimeEnd']}
+              reserveAble
               defaultTime={['00:00:00', '23:59:00']}
               placeholder={['开始时间', '结束时间']}
               format='YYYY-MM-DD HH:mm'

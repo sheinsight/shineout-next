@@ -302,6 +302,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       renderCompressed={renderCompressed}
       compressedClassName={compressedClassName}
       showNum={moreNumber}
+      morePopoverContainer={props.morePopoverContainer}
     ></More>
   );
 
@@ -342,7 +343,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       props.setInputText('');
       setTimeout(() => {
         onFilter?.('', 'blur');
-      }, 400);
+      }, 200);
     }
 
     // 单选场景下，焦点时自动选中input文本

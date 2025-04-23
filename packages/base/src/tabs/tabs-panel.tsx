@@ -6,7 +6,7 @@ import { TabsPanelProps } from './tabs-panel.type';
 import { TabData } from './tab.type';
 
 const TabsPanel = (props: TabsPanelProps) => {
-  const { children, id, index: indexInTabs , tab, className, style, jssStyle } = props;
+  const { children, id, index: indexInTabs, tab, background, className, style, jssStyle } = props;
 
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
@@ -20,38 +20,35 @@ const TabsPanel = (props: TabsPanelProps) => {
       tab,
       disabled: props.disabled,
       jssStyle,
+      background,
       color: props.color || (active === id ? color : undefined),
     } as TabData;
 
-    setTabs(prev => {
-      const oldTab = prev.find(item => item.id === id)
-      if(oldTab){
-        return prev.map(item => {
-          if(item.id !== id) return item
-          return { ...item, ...tabData }
-        })
+    setTabs((prev) => {
+      const oldTab = prev.find((item) => item.id === id);
+      if (oldTab) {
+        return prev.map((item) => {
+          if (item.id !== id) return item;
+          return { ...item, ...tabData };
+        });
       }
 
-      if(indexInTabs === undefined){
-        return [...prev, tabData]
+      if (indexInTabs === undefined) {
+        return [...prev, tabData];
       }
 
       // 向indexInTabs位置插入tabData
-      const newTabs = [
-        ...prev.slice(0, indexInTabs),
-        tabData,
-        ...prev.slice(indexInTabs)
-      ];
+      const newTabs = [...prev.slice(0, indexInTabs), tabData, ...prev.slice(indexInTabs)];
       return newTabs;
-    })
+    });
 
     return () => {
       // Panel卸载了通知父组件，去销毁相应的TabsHeader
-      setTabs(prev => {
-        return prev.filter(item => item.id !== id)
-      })
-    }
-  }, [id, tab, color, active, props.disabled, props.jssStyle])
+      setTabs((prev) => {
+        return prev.filter((item) => item.id !== id);
+      });
+    };
+  }, [id, tab, color, active, props.disabled, props.jssStyle]);
 
   if (!isActive && lazy && !keekAlive.current) {
     return null;
@@ -66,6 +63,7 @@ const TabsPanel = (props: TabsPanelProps) => {
 
   const styles: React.CSSProperties = {
     color,
+    background,
     ...style,
   };
 

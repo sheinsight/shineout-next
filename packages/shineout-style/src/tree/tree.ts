@@ -181,6 +181,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
   },
   text: {
+    cursor: 'pointer',
     flex: 1,
     minWidth: 0,
     fontSize: Token.treeFontSize,
@@ -195,9 +196,6 @@ const treeStyle: JsStyles<TreeClassType> = {
       background: Token.treeContentHoverBackgroundColor,
     },
   },
-  textClickable: {
-    cursor: 'pointer',
-  },
   // textDisabled: {
   //   color: Token.treeItemDisabledFontColor,
   // },
@@ -211,6 +209,10 @@ const treeStyle: JsStyles<TreeClassType> = {
         width: 12,
       },
     },
+
+    '&[draggable="true"]': {
+      cursor: 'pointer',
+    }
   },
   leaf: {},
   childnode: {},

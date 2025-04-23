@@ -172,8 +172,8 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     minWidth: 0,
     position: 'relative',
     outline: 'none',
-    overflow: 'hidden',
-    '&:hover': {},
+    maxHeight: 78,
+    overflow: 'auto',
   },
   result: {
     display: 'flex',
@@ -301,13 +301,15 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     cursor: 'initial',
 
     '& $tree': {
-      overscrollBehavior: 'none'
+      overscrollBehavior: 'none',
     },
   },
   iconWrapper: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'sticky',
+    top: 0,
   },
   clearable: {},
   clearIcon: {
@@ -405,9 +407,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       marginLeft: 0,
     },
     maxWidth: '80%',
-    marginRight: 4,
-    marginTop: token.treeSelectPlaceholderMarginY,
-    marginBottom: token.treeSelectPlaceholderMarginY,
+    marginRight: token.treeSelectTagMarginRight,
+    marginTop: token.treeSelectTagMarginY,
+    marginBottom: token.treeSelectTagMarginY,
     textWrap: 'nowrap',
     '&$hideTag': {
       marginRight: 0,
@@ -435,8 +437,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
-    width: 248,
-    height: 72,
+    width: 'max-content',
+    maxWidth: 400,
+    maxHeight: 160,
     overflow: 'auto',
     padding: `${token.treeSelectMorePaddingY} ${token.treeSelectMorePaddingX}`,
   },

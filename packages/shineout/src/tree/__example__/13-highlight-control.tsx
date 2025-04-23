@@ -1,6 +1,6 @@
 /**
  * cn -
- *    -- 受控高亮：设置 `active` 和`setActive`
+ *    -- 受控高亮：设置 `active` 和 `setActive`
  * en -
  *    -- Highlight control: set `active` and `setActive`
  */

@@ -201,6 +201,11 @@ const tableStyle: JsStyles<TableClassType> = {
           zIndex: fixedIndex + 1,
         },
       }
+    },
+    '$wrapper & table > tfoot': {
+      position: 'sticky',
+      bottom: 0,
+      zIndex: fixedIndex,
     }
   },
   footWrapper: {

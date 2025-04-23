@@ -12,6 +12,8 @@ const cascaderTokens: CascaderTokens = {
   cascaderPaddingY: 'Spacing-2',
   cascaderIconSize: 'Size-7',
   cascaderIconColor: 'Neutral-text-4',
+  cascaderTagMarginY: 'Spacing-2',
+  cascaderTagMarginRight: 'Spacing-4',
   cascaderSmallFontSize: 'Font-12',
   cascaderSmallPaddingX: 'Spacing-8',
   cascaderSmallPaddingY: 'Spacing-1',

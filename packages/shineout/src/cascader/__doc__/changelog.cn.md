@@ -1,3 +1,23 @@
+## 3.6.5-beta.1
+2025-04-23
+
+### 🐞 BugFix
+- 修复 `Cascader` 在 `Popover` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除条目时会引起样式异常的问题 ([#1079](https://github.com/sheinsight/shineout-next/pull/1079))
+
+
+## 3.6.4-beta.6
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `Cascader` 设置了expandTrigger为hover后切换高亮路径后但不选中值，二次打开面板时高亮路径与选中值不匹配的问题 ([#1070](https://github.com/sheinsight/shineout-next/pull/1070))
+
+
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `Cascader` 最大高度限制失效的问题（默认 max-height 应为 80px） ([#1051](https://github.com/sheinsight/shineout-next/pull/1051))
+
 ## 3.6.0
 2025-03-18
 

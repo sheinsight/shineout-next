@@ -186,7 +186,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering
    * @cn onFilter 不为空时，可以输入过滤数据。 onFilter 如果返回一个函数，使用这个函数做前端过滤。 如果不返回，可以自行做后端过滤
    */
-  onFilter?: (text: string) => void;
+  onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
   /**
    * @en Placeholder content when there is no data
    * @cn 无数据时的占位内容
@@ -425,4 +425,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @default false
    */
   reFocus?: boolean;
+  /**
+   * @en Class name of content
+   * @cn 内容样式
+   */
+  contentClass?: string | ((data: DataItem) => string);
 }

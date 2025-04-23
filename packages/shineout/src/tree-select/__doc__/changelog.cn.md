@@ -1,3 +1,33 @@
+## 3.6.5-beta.1
+2025-04-23
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 在 `Popover` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除条目时会引起样式异常的问题 ([#1079](https://github.com/sheinsight/shineout-next/pull/1079))
+
+## 3.6.4-beta.8
+2025-04-22
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 在页面边界搜索时，下拉弹出层的位置未实时更新导致偏离父元素的问题 ([#1076](https://github.com/sheinsight/shineout-next/pull/1076))
+
+## 3.6.4-beta.7
+2025-04-18
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 的 `onFilter` ts 类型和第二参数丢失的问题 ([#1073](https://github.com/sheinsight/shineout-next/pull/1073))
+
+## 3.6.3-beta.6
+2025-04-11
+
+### 🆕 Feature
+- `TreeSelect` 新增 `contentClass` 属性，功能同 `Tree` 组件属性 ([#1055](https://github.com/sheinsight/shineout-next/pull/1055))
+
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 最大高度限制失效的问题（默认 max-height 应为 80px） ([#1051](https://github.com/sheinsight/shineout-next/pull/1051))
+
 ## 3.6.0
 2025-03-20
 

@@ -66,7 +66,7 @@ const { wrapperDisabled, wrapperChecked, wrapperIndeterminate } = createClassNam
 );
 
 const originCopyNodeStyle =
-  'position: absolute; top: -1000px; left: -1000px; width: 0px; background: rgb(255, 255, 255); box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);';
+  'position: absolute; z-index: 99999; top: -1000px; left: -1000px; width: 0px; background: rgb(255, 255, 255); box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);';
 
 const renderItem = (node: any) => {
   return <span>{`node ${node.id}`}</span>;

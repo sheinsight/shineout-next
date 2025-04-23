@@ -1,3 +1,24 @@
+## 3.6.4-beta.6
+2025-04-17
+
+### 🐞 BugFix
+
+- 修复 `Tree` 传入 `rowsInView` 属性失效的问题 ([#1071](https://github.com/sheinsight/shineout-next/pull/1071))
+
+## 3.6.3-beta.7
+2025-04-15
+
+### 💎 Enhancement
+
+- 优化 `Tree` 的节点鼠标手势，节点content区域的鼠标手势修改为pointer ([#1058](https://github.com/sheinsight/shineout-next/pull/1058))
+
+## 3.6.2-beta.6
+2025-04-07
+
+### 💎 Enhancement
+
+- 优化 `Tree` 拖拽时原节点立即隐藏带来的性能问题和交互不友好问题，改为不立即隐藏原节点 ([#1039](https://github.com/sheinsight/shineout-next/pull/1039))
+
 ## 3.6.0
 2025-03-19
 

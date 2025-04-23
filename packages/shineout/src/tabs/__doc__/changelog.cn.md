@@ -1,3 +1,9 @@
+## 3.6.2-beta.1
+2025-03-31
+
+### 🐞 BugFix
+- 修复 `Tabs.Panel` 设置 `background` 属性失效的问题 ([#1028](https://github.com/sheinsight/shineout-next/pull/1028))
+
 ## 3.5.8
 2025-02-13
 

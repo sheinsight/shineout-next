@@ -1,6 +1,6 @@
 import { usePersistFn, util, useResize, useRender } from '@sheinx/hooks';
 import { createPortal } from 'react-dom';
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { StickyProps } from './sticky.type';
 
 const { cssSupport, devUseWarning } = util;
@@ -357,6 +357,12 @@ const Sticky = (props: StickyProps) => {
     }
     return cancelParentObserver;
   }, [props.parent, css, context.target, top, bottom]);
+
+  useEffect(() => {
+    if (props.onChange) {
+      props.onChange(show);
+    };
+  }, [show]);
 
   // 纯css方法 直接使用css
   // js方法

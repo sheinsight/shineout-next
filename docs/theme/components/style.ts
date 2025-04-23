@@ -329,6 +329,20 @@ export default createUseStyles(
         fontSize: 'inherit',
       },
     },
+    apiCode: {
+      marginRight: 4,
+      color: '#c41d7f',
+      margin: '1px',
+      border: '1px solid rgba(5,5,5,0.06)',
+      borderRadius: 4,
+      background: 'rgba(0,0,0,0.04)',
+      padding: '0.2em 0.4em',
+    },
+    activeApi: {
+      '&& td': {
+        background: 'var(--soui-table-tbody-hover-background-color,var(--soui-indigo-1,#EEF2FE))',
+      }
+    }
   },
   { name: 'doc-markdown' },
 );

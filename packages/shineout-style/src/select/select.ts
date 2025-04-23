@@ -156,9 +156,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     display: 'flex',
     flex: 1,
     minWidth: 0,
+    maxHeight: 78,
     position: 'relative',
     outline: 'none',
-    overflow: 'hidden',
+    // overflow: 'hidden',
+    overflow: 'auto',
   },
   result: {
     display: 'flex',
@@ -288,7 +290,7 @@ const selectStyle: JsStyles<SelectClassType> = {
 
     '& [data-soui-role="scroll"]': {
       overscrollBehavior: 'none',
-    }
+    },
   },
   pickerSmall: {
     '& $optionInner': {
@@ -316,6 +318,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   iconWrapper: {
     display: 'flex',
     alignItems: 'center',
+    position: 'sticky',
+    top: 0,
     justifyContent: 'center',
     marginLeft: token.selectIconMarginLeft,
   },
@@ -438,6 +442,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
+    width: 'max-content',
     maxWidth: 400,
     maxHeight: 160,
     overflow: 'auto',

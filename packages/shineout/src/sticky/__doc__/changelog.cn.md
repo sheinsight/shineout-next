@@ -1,3 +1,11 @@
+## 3.6.3-beta.1
+2025-04-09
+
+### 🐞 BugFix
+
+- 修复 `Sticky` 的 `onChange` 不触发的问题 ([#1048](https://github.com/sheinsight/shineout-next/pull/1048))
+
+
 ## 3.5.4
 2024-12-12
 

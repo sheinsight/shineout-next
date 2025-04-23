@@ -282,13 +282,19 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
             if (offsetTop < 0) {
               parentEl.scrollTop = Math.max(parentEl.scrollTop + offsetTop, 0);
             } else {
-              parentEl.scrollTop = Math.min(parentEl.scrollTop + offsetTop, parentEl.scrollHeight - parentEl.clientHeight);
+              parentEl.scrollTop = Math.min(
+                parentEl.scrollTop + offsetTop,
+                parentEl.scrollHeight - parentEl.clientHeight,
+              );
             }
             // 如果是往左滚动，那么只有当元素的偏移量小于0时才需要滚动
             if (offsetLeft < 0) {
               parentEl.scrollLeft = Math.max(parentEl.scrollLeft + offsetLeft, 0);
             } else {
-              parentEl.scrollLeft = Math.min(parentEl.scrollLeft + offsetLeft, parentEl.scrollWidth - parentEl.clientWidth);
+              parentEl.scrollLeft = Math.min(
+                parentEl.scrollLeft + offsetLeft,
+                parentEl.scrollWidth - parentEl.clientWidth,
+              );
             }
           }
         } else {
@@ -501,15 +507,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.updateMap[n] = new Set();
       }
       context.updateMap[n].add(updateFn);
+      const shouldTriggerResetChange = context.removeArr.has(n);
       context.removeArr.delete(n);
-      if (df !== undefined && deepGet(context.value, n) === undefined) {
+      const shouldTriggerDefaultChange =
+        df !== undefined && deepGet(context.value, n) === undefined;
+      if (shouldTriggerDefaultChange || shouldTriggerResetChange) {
         if (!context.mounted) context.defaultValues[n] = df;
-        setTimeout(() => {
-          onChange((v) => {
-            deepSet(v, n, df, deepSetOptions);
-          });
-          update(n);
+        onChange((v) => {
+          deepSet(v, n, df, deepSetOptions);
         });
+        update(n);
       }
     },
     unbind: (n: string, reserveAble?: boolean, validateField?: ValidateFn, update?: UpdateFn) => {
@@ -615,6 +622,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     context.lastValue = props.value;
   };
 
+  updateValue();
+
   React.useEffect(() => {
     // 服务端错误更新
     if (!props.error) context.serverErrors = {};
@@ -634,7 +643,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   // 默认值更新
   React.useEffect(() => {
-    updateValue();
     context.removeLock = false;
     // 内部 onChange 改的 value, 不需要更新
     if (props.value === context.value) return;
@@ -647,7 +655,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       validateFields(keys).catch(() => {});
     }
     update();
-    updateDefaultValue();
+    // 默认值上位时会提前触发外部的onChange, 导致外部的多次setFormValue不能合并后生效的问题(ReactDOM.render方式渲染)
+    setTimeout(updateDefaultValue);
     context.resetTime = 0;
   }, [props.value]);
 

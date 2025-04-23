@@ -45,7 +45,7 @@ const stepsTokenValue = {
   description: { font: { size: 'Font-12' } },
   wait: {
     font: { color: 'Neutral-text-4' },
-    background: { color: 'Neutral-fill-4' },
+    background: { color: 'Neutral-fill-2' },
     hover: { font: { color: 'Brand-6' }, background: { color: '' } },
   },
   process: {

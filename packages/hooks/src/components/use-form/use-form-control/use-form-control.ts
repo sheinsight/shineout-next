@@ -8,11 +8,11 @@ import { validate } from '../../../utils/validate';
 import { deepGet } from '../../../utils/object';
 import { shallowEqual } from '../../../utils/shallow-equal';
 import usePersistFn from '../../../common/use-persist-fn';
-
-import { BaseFormControlProps } from './use-form-control.type';
+import { BaseFormControlProps, FormControlContext } from './use-form-control.type';
 import { ObjectType } from '../../../common/type';
 import useLatestObj from '../../../common/use-latest-obj';
 import { ValidateFnConfig } from '../use-form.type';
+import { devUseWarning } from '../../../utils/warning';
 
 const getValue = (name: string | string[], formValue: ObjectType) => {
   if (!name) return undefined;
@@ -51,6 +51,10 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
 
   const [errorState, setErrorState] = React.useState<Error | undefined>(undefined);
 
+  const { current: context } = React.useRef<FormControlContext>({
+    mounted: false,
+  });
+
   let value: T | undefined;
   let error: Error | undefined = errorState;
   let inForm = false;
@@ -78,11 +82,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   }
 
   const update = usePersistFn(
-    (
-      formValue: ObjectType = {},
-      errors: ObjectType,
-      severErrors: ObjectType,
-    ) => {
+    (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
       if (!name) return;
       if (isArray(name)) {
         const value = getValue(name, formValue) as T[];
@@ -209,14 +209,20 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       } else {
         controlFunc.bind(name, defaultValue, validateField, update);
       }
+      if (context.mounted) {
+        devUseWarning.warn(
+          'Please avoid modifying the name property after the component has mounted, as this may result in unintended behavior or errors.',
+        );
+      }
     }
+    context.mounted = true;
     return () => {
       if (inForm && controlFunc) {
         if (isArray(name)) {
           name.forEach((n) => {
             controlFunc.unbind(n, reserveAble, validateField, update);
-            updateError(n, undefined);
           });
+          updateError(isArray(name) ? name.join('|') : name, undefined);
         } else {
           controlFunc.unbind(name, reserveAble, validateField, update);
           updateError(name, undefined);

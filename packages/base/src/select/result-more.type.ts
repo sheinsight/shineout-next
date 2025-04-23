@@ -22,5 +22,6 @@ export interface ResultMoreProps<DataItem, Value>
   more?: number;
   showNum?: number;
   onRemove?: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
+  morePopoverContainer?: React.MutableRefObject<HTMLDivElement | null>;
   classes: { tag: string; moreWrapper: string };
 }

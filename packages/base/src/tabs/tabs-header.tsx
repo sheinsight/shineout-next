@@ -25,17 +25,8 @@ const getRectDiff = (node: HTMLElement, pNode: HTMLElement) => {
 };
 
 const TabsHeader = (props: TabsHeaderProps) => {
-  const {
-    tabs,
-    jssStyle,
-    hideSplit,
-    collapsible,
-    extra,
-    splitColor,
-    tabBarStyle,
-    getPosition,
-  } = props;
-
+  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition } =
+    props;
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 

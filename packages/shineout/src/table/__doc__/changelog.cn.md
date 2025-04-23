@@ -1,3 +1,21 @@
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `Table` 开启拖拽行之后偶现的拖拽不成功问题  ([#1052](https://github.com/sheinsight/shineout-next/pull/1052))
+
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `Table` 的 tfoot 没有在底部吸附的问题（Regression： since v3.5.0）  ([#1045](https://github.com/sheinsight/shineout-next/pull/1045))
+
+## 3.6.2-beta.6
+2025-04-07
+
+### 🐞 BugFix
+- 修复 `Table` 点击 `Button` 等元素会触发单元格 click 事件的问题  ([#1040](https://github.com/sheinsight/shineout-next/pull/1040))
+
 ## 3.6.1-beta.3
 2025-03-25
 

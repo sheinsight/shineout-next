@@ -12,7 +12,7 @@ export interface TabsClasses {
   panelWrapper: string;
   headerWrapper: string;
   headerScroll: string;
-  headerScrollBar: string
+  headerScrollBar: string;
   header: string;
   hr: string;
   button: string;
@@ -164,7 +164,7 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    * @en The color of tab"s text only when the shape is "card"
    * @cn 标签页文字颜色，仅当 shape 为 "card" 时生效
    */
-  color?: string
+  color?: string;
 
   /**
    * @en Allow non-Tabs.Panel children

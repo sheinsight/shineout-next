@@ -165,7 +165,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   wrapperDisabled: {
     ...wrapperDisabled,
-    '& $icon, & $arrowIcon': {
+    '& $arrowIcon': {
       color: token.cascaderDisabledFontColor,
     },
   },
@@ -176,11 +176,8 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     minWidth: 0,
     position: 'relative',
     outline: 'none',
-    overflow: 'hidden',
-    '&:hover': {
-      '& $clear': { display: 'inline-flex' },
-      '& $clear + $icon': { display: 'none' },
-    },
+    maxHeight: 78,
+    overflow: 'auto',
   },
   result: {
     display: 'flex',
@@ -328,6 +325,8 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'sticky',
+    top: 0,
   },
   clearable: {},
   clearIcon: {
@@ -353,7 +352,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     color: token.cascaderHoverBorderColor,
     '&:not($compressedIcon)': {
       transform: 'rotate(180deg)',
-    }
+    },
   },
   ellipsis: {
     display: 'block',
@@ -425,9 +424,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       marginLeft: 0,
     },
     maxWidth: '80%',
-    marginRight: 4,
-    marginTop: token.cascaderPlaceholderMarginY,
-    marginBottom: token.cascaderPlaceholderMarginY,
+    marginRight: token.cascaderTagMarginRight,
+    marginTop: token.cascaderTagMarginY,
+    marginBottom: token.cascaderTagMarginY,
     textWrap: 'nowrap',
     '&$hideTag': {
       marginRight: 0,
@@ -455,8 +454,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
-    // width: 248,
-    // height: 72,
+    width: 'max-content',
     maxWidth: 400,
     maxHeight: 160,
     overflow: 'auto',
@@ -511,7 +509,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       backgroundColor: token.cascaderOptionActiveBackgroundColor,
       '& $optionIcon': {
         color: token.cascaderOptionActiveColor,
-      }
+      },
     },
   },
   optionCheckbox: {},

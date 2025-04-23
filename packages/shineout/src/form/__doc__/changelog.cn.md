@@ -1,3 +1,28 @@
+## 3.6.4-beta.5
+2025-04-17
+
+### 🐞 BugFix
+- 修复 `Form` 在表单组件的 key 变更后 `defaultValue` 无法设置成功的问题 ([#1068](https://github.com/sheinsight/shineout-next/pull/1068))
+
+## 3.6.4-beta.4
+2025-04-16
+
+### 🐞 BugFix
+- 修复 `Form` 在ReactDOM.render模式下并发设置value后导致某些字段值丢失的问题 ([#1067](https://github.com/sheinsight/shineout-next/pull/1067))
+
+
+## 3.6.3-beta.2
+2025-04-10
+
+### 🐞 BugFix
+- 修复 `Form` 在设置 `defaultValue` 时，默认值设置时机晚于外部 value 状态的问题 ([#1049](https://github.com/sheinsight/shineout-next/pull/1049))
+
+## 3.6.2-beta.5
+2025-04-01
+
+### 🐞 BugFix
+- 修复 `Form.Field` 在 `name` 为数组情况下组件卸载时错误信息无法清空的问题 ([#1033](https://github.com/sheinsight/shineout-next/pull/1033))
+
 ## 3.6.1-beta.4
 2025-03-25
 

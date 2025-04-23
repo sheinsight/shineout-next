@@ -396,7 +396,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (hideCreate) {
       // optionListRef.current?.hoverMove(filterData.length - 1, true);
     }
-
     onFilter?.(trim ? text.trim() : text, from);
   };
 
@@ -593,6 +592,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           onRemove={handleRemove}
           classes={styles}
           setInputText={setInputText}
+          morePopoverContainer={targetRef}
         ></Result>
       </div>
     );
@@ -639,6 +639,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       renderItem,
       controlType,
       onLoadMore,
+      keepScrollTop: !!filterText ? false : true,
       isAnimationFinish,
       threshold,
       onControlTypeChange: setControlType,

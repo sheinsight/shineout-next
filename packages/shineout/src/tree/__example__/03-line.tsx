@@ -1,8 +1,8 @@
 /**
  * cn - 无连接线
- *    -- 设置 line 为 false，不显示连接线
+ *    -- 设置 `line` 为 false，不显示连接线
  * en - line
- *    -- Set line to false to hide the connection line
+ *    -- Set `line` to false to hide the connection line
  */
 
 import { Tree, TYPE } from 'shineout';

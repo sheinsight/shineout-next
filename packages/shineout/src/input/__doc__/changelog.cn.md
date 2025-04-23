@@ -1,3 +1,10 @@
+## 3.6.2-beta.6
+2025-04-03
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 的 `seperate` 在一些组合场景下的样式问题 ([#1038](https://github.com/sheinsight/shineout-next/pull/1038))
+
 ## 3.6.1-beta.7
 2025-03-27
 

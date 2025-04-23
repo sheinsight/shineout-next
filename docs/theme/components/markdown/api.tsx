@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { MarkdownProps } from 'docs/types';
 import { useSnapshot } from 'valtio';
@@ -6,8 +6,15 @@ import store from '../../store';
 import useStyles from '../style';
 import { Table } from 'shineout';
 import Anchor from 'docs/theme/layout/desktop/anchor';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const SingleAPi = (props: MarkdownProps['api'][0]) => {
+type SingleAPiProps = MarkdownProps['api'][0] & {
+  rowClassName?: (d: any) => string;
+  onRowClick: (str: string) => void;
+};
+
+const SingleAPi = (props: SingleAPiProps) => {
+  const classes = useStyles();
   const { title, properties, cn, en, subTitle, isLast } = props;
   // const hasVersion = properties.find((item: any) => !!item.version);
 
@@ -25,18 +32,7 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
       let res: React.ReactNode[] = [];
       if (regex.test(item.trim())) {
         res.push(
-          <code
-            key={index}
-            style={{
-              marginRight: 4,
-              color: '#c41d7f',
-              margin: '1px',
-              border: '1px solid rgba(5,5,5,0.06)',
-              borderRadius: 4,
-              background: 'rgba(0,0,0,0.04)',
-              padding: '0.2em 0.4em',
-            }}
-          >
+          <code key={index} className={classes.apiCode}>
             {item.replace(/"/g, '').trim()}
           </code>,
         );
@@ -67,7 +63,14 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
       title: locate('属性', 'Property'),
       width: 200,
       fixed: 'left',
-      render: (d: any) => <b>{d.name}</b>,
+      render: (d: any) => (
+        <a
+          id={`${d.name}`}
+          style={{ color: 'var(--soui-table-thead-font-color,var(--soui-neutral-text-5,#141737))' }}
+        >
+          <strong>{d.name}</strong>
+        </a>
+      ),
     },
     {
       title: locate('说明', 'Description'),
@@ -112,7 +115,15 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
         </>
       ) : null}
       <div style={{ overflow: 'auto', marginBottom: isLast ? 0 : 48 }}>
-        <Table bordered width={1000} columns={columns} data={data} keygen='name'></Table>
+        <Table
+          keygen='name'
+          bordered
+          width={1000}
+          columns={columns}
+          data={data}
+          rowClassName={props.rowClassName}
+          onRowClick={d=> props.onRowClick(d.name)}
+        />
       </div>
     </>
   );
@@ -122,11 +133,39 @@ const Api = (props: { api: MarkdownProps['api'] }) => {
   const api = props.api || [];
   const titles = api.map((item) => item.title);
   const classes = useStyles();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const searchParams = new URLSearchParams(location.search);
+  const activeApi = searchParams.get('api');
+
+  useEffect(() => {
+    if(!activeApi) return;
+    const activeApiAnchor = document.getElementById(activeApi);
+    if(!activeApiAnchor) return;
+
+    activeApiAnchor.scrollIntoView({
+      behavior: "instant",
+      block: 'center',
+    });
+  }, [activeApi])
+
   return (
     <div className={classes.api} style={{ padding: 24, display: 'flex' }}>
       <div style={{ flex: 1, minWidth: 0 }}>
         {api.map((item, index) => {
-          return <SingleAPi key={index} {...item} isLast={index === api.length - 1}></SingleAPi>;
+          return (
+            <SingleAPi
+              key={index}
+              {...item}
+              isLast={index === api.length - 1}
+              rowClassName={(d) => (d.name === activeApi ? classes.activeApi : '')}
+              onRowClick={(api) => {
+                navigate({
+                  search: `?tab=api&api=${api}`,
+                })
+              }}
+            />
+          );
         })}
       </div>
       <div className='anchor' style={{ width: 192 }}>
