@@ -302,6 +302,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       renderCompressed={renderCompressed}
       compressedClassName={compressedClassName}
       showNum={moreNumber}
+      morePopoverContainer={props.morePopoverContainer}
     ></More>
   );
 
