@@ -1,4 +1,4 @@
-import { usePopup, util } from '@sheinx/hooks';
+import { usePersistFn, usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { cloneElement, isValidElement, useEffect } from 'react';
 import { TooltipProps } from './tooltip.type';
@@ -47,12 +47,19 @@ const Tooltip = (props: TooltipProps) => {
 
   const events = getTargetProps();
 
+  const [updateKey, setUpdateKey] = React.useState(0);
+  const handleUpdateKey = usePersistFn(() => {
+    setUpdateKey((prev) => (prev + 1) % 2);
+  });
+
   const bindEvents = () => {
     const targetEl = targetRef.current;
     if (!targetEl) return;
     if (events.onMouseEnter) targetEl.addEventListener('mouseenter', events.onMouseEnter);
     if (events.onMouseLeave) targetEl.addEventListener('mouseleave', events.onMouseLeave);
     if (events.onClick) targetEl.addEventListener('click', events.onClick);
+
+    window?.addEventListener('resize', handleUpdateKey);
   };
 
   const unbindEvents = () => {
@@ -63,6 +70,8 @@ const Tooltip = (props: TooltipProps) => {
     if (events.onMouseLeave) targetEl.removeEventListener('mouseleave', events.onMouseLeave);
     if (events.onClick) targetEl.removeEventListener('click', events.onClick);
     targetEl.removeEventListener('click', closePop);
+
+    window?.removeEventListener('resize', handleUpdateKey);
   };
 
   useEffect(() => {
@@ -113,6 +122,7 @@ const Tooltip = (props: TooltipProps) => {
         popupGap={0}
         zIndex={zIndex}
         adjust={popsitionProps === 'auto'}
+        updateKey={updateKey}
       >
         <div
           className={classNames(

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
 import { useCheckElementPosition, type Position } from './check-position'
 import { useCheckElementBorderWidth } from './check-border';
+import { useCheckElementSize } from './check-element-size'
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { getCurrentCSSZoom } from '../../utils';
@@ -88,6 +89,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
 
   const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal'});
+
+  const popupElSize = useCheckElementSize(popupElRef, { enable: show });
 
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
@@ -190,13 +193,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
         style.left = 'auto';
         style.transform = '';
-        if (adjust) {
-          overLeft = bodyRect.left - (rect.right - context.popUpWidth);
-          if (style.right < 0 && targetRect) {
-            style.left = bodyRect.width - targetRect.width;
-            style.right = 'auto';
-          }
-        }
       } else {
         // 居中对齐
         style.left = rect.left + rect.width / 2 - containerRect.left + containerScroll.left;
@@ -338,6 +334,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     updateKey,
     fixedWidth,
     parentElNewPosition,
+    popupElSize,
   ]);
 
   return { style };

@@ -11,6 +11,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
     jssStyle,
     height,
     lineHeight = 36,
+    rowsInView,
     line,
     mode,
     contentClass,
@@ -79,7 +80,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
     <VirtualScrollList
       data={datum.dataFlat}
       height={height}
-      rowsInView={10}
+      rowsInView={rowsInView}
       scrollerStyle={{
         height: '100%',
         width: '100%',

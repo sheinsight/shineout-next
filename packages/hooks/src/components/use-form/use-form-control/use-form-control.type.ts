@@ -34,3 +34,7 @@ export interface BaseFormControlProps<T> {
    */
   getValidateProps: (() => ObjectType) | undefined;
 }
+
+export interface FormControlContext {
+  mounted: boolean;
+}

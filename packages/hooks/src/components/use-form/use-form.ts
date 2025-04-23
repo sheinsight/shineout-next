@@ -507,8 +507,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.updateMap[n] = new Set();
       }
       context.updateMap[n].add(updateFn);
+      const shouldTriggerResetChange = context.removeArr.has(n);
       context.removeArr.delete(n);
-      if (df !== undefined && deepGet(context.value, n) === undefined) {
+      const shouldTriggerDefaultChange =
+        df !== undefined && deepGet(context.value, n) === undefined;
+      if (shouldTriggerDefaultChange || shouldTriggerResetChange) {
         if (!context.mounted) context.defaultValues[n] = df;
         onChange((v) => {
           deepSet(v, n, df, deepSetOptions);
@@ -652,7 +655,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       validateFields(keys).catch(() => {});
     }
     update();
-    updateDefaultValue();
+    // 默认值上位时会提前触发外部的onChange, 导致外部的多次setFormValue不能合并后生效的问题(ReactDOM.render方式渲染)
+    setTimeout(updateDefaultValue);
     context.resetTime = 0;
   }, [props.value]);
 

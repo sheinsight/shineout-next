@@ -1,3 +1,21 @@
+## 3.6.5-beta.1
+2025-04-23
+
+### 🐞 BugFix
+- 修复 `Select` 在 `Popover` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除条目时会引起样式异常的问题 ([#1079](https://github.com/sheinsight/shineout-next/pull/1079))
+
+## 3.6.4-beta.3
+2025-04-16
+
+### 🐞 BugFix
+- 修复 `Select` 开启过滤后打开面板快速再次聚焦时可能清空输入框文本内容的问题 ([#1064](https://github.com/sheinsight/shineout-next/pull/1064))
+
+## 3.6.4-beta.2
+2025-04-16
+
+### 🐞 BugFix
+- 修复 `Select` 搜索内容后选项被遮挡的问题 ([#1066](https://github.com/sheinsight/shineout-next/pull/1066))
+
 ## 3.6.2-beta.4
 2025-04-01
 
