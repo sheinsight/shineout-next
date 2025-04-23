@@ -40,13 +40,13 @@ const formatData = () => {
   })
 
   return {
-    columnId: 381,
+    columnId: 159,
     version: {
       version: package.version,
       description: ''
     },
     data: result,
-    token: '!mW^b1J1QPTDxvc7#nP1W$+QWS$uyD2mOpe2tvqS5i)A@aHKQXXr@I(nmaQCQ%IW'
+    token: 'JA0U+_ulmu^oTLHHJR$rJB8tyL5P^P*Vv8Dd@!6vILMd^8anB)1n7ZC2433A8STS'
   }
 }
 
@@ -63,6 +63,8 @@ const requestToServer = async () => {
     console.error(error)
   }
 }
+
+requestToServer()
 
 module.exports = {
   requestToServer
