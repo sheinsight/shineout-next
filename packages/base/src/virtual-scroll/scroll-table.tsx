@@ -25,6 +25,7 @@ interface scrollProps {
   childrenStyle?: React.CSSProperties;
   defaultHeight?: number;
   isScrollY?: boolean;
+  isScrollX?: boolean;
 }
 
 const extractHeightValue = (num: number | string) => {
@@ -66,6 +67,7 @@ const Scroll = (props: scrollProps) => {
     display: 'flex',
     position: 'sticky',
     flexDirection: 'column',
+    overflow: props.isScrollX ? 'initial': 'hidden',
     top: 0,
   } as React.CSSProperties;
 

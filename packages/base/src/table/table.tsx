@@ -497,6 +497,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             onScroll={handleVirtualScroll}
             defaultHeight={context.emptyHeight}
             isScrollY={isScrollY}
+            isScrollX={isScrollX}
           >
             {/* thead of virtual */}
             {!props.hideHeader && !props.sticky && (
