@@ -1,6 +1,7 @@
 import token from '@sheinx/theme';
 import { TableClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
+import { customScrollBar } from '../mixin';
 
 const cellBaseIndex = 4;
 const fixedIndex = 6;
@@ -222,6 +223,12 @@ const tableStyle: JsStyles<TableClassType> = {
       bottom: 0,
       zIndex: fixedIndex + 1,
     }
+  },
+  scrollY: {
+    '&$headWrapper, &$footWrapper': {
+      overflow: 'hidden scroll',
+      ...customScrollBar({ background: 'transparent' }),
+    },
   },
   emptyWrapper: {
     minHeight: '170px',
