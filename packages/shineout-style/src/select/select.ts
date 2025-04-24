@@ -446,6 +446,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     maxHeight: 160,
     overflow: 'auto',
     padding: `${token.selectMorePaddingY} ${token.selectMorePaddingX}`,
+    '& $tag': {
+      maxWidth: 'none',
+    },
     '&:hover': {
       '& $clearIcon': {
         display: 'inline-block',
