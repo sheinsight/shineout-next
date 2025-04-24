@@ -224,9 +224,14 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const syncHeaderScroll = usePersistFn((left: number) => {
     if (props.hideHeader || !props.sticky) return;
-    if (!theadRef?.current?.parentElement) return;
+    const headerScrollers = tableRef.current?.querySelectorAll(`.${tableClasses?.headWrapper}`);
 
-    theadRef.current.parentElement.scrollLeft = left;
+    headerScrollers?.forEach((item) => {
+      if (!item) return;
+      if (item.scrollLeft !== left) {
+        item.scrollLeft = left;
+      }
+    });
   });
 
   // 简单表格的滚动事件
@@ -389,7 +394,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const isRenderVirtualTable = virtual || props.sticky || !props.data?.length;
 
-    const headWrapperClass = classNames(tableClasses?.headWrapper);
+    const headWrapperClass = classNames(tableClasses?.headWrapper, props.sticky && isScrollY && tableClasses.scrollY);
 
     const footWrapperClass = classNames(tableClasses?.footWrapper);
 
@@ -471,11 +476,14 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
 
     const $headTable = (
-      <table style={{ width }} ref={theadRef}>
-        {Group}
-        <Thead {...headCommonProps} />
-      </table>
+      <div className={headWrapperClass}>
+        <table style={{ width }} ref={theadRef} data-role="origin-head">
+          {Group}
+          <Thead {...headCommonProps} />
+        </table>
+      </div>
     );
+
     if (isRenderVirtualTable) {
       return (
         <>
@@ -483,9 +491,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
           {!props.hideHeader && props.sticky && (
             <StickyWrapper {...stickyProps}>
-              <div className={headWrapperClass} style={{ overflow: 'hidden' }}>
-                {$headTable}
-              </div>
+              {$headTable}
             </StickyWrapper>
           )}
 
@@ -500,9 +506,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             isScrollX={isScrollX}
           >
             {/* thead of virtual */}
-            {!props.hideHeader && !props.sticky && (
-              <div className={headWrapperClass}>{$headTable}</div>
-            )}
+            {!props.hideHeader && !props.sticky && $headTable}
 
             {/* tbody of virtual */}
             {!!props.data?.length && (
