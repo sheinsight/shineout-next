@@ -104,9 +104,15 @@ const ImageStyle: JsStyles<ImageClass> = {
 
   fill: {
     '& $inner': {
-      backgroundSize: 'cover',
-      backgroundPosition: '50% 50%',
-      backgroundRepeat: 'no-repeat',
+
+      '& > img': {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        maxWidth: 'none',
+        maxHeight: 'none',
+      }
     },
   },
 
