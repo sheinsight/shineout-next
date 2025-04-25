@@ -216,6 +216,7 @@ export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
 
 export type UseFormProps<T> = BaseFormProps<T> & {
   formElRef: React.RefObject<HTMLFormElement>;
+  isControl: boolean;
 };
 
 export type FormContext = {

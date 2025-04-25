@@ -62,6 +62,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     colon,
     name: formName,
     scrollParent,
+    isControl,
   } = props;
   const deepSetOptions = {
     removeUndefined,
@@ -645,7 +646,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   React.useEffect(() => {
     context.removeLock = false;
     // 内部 onChange 改的 value, 不需要更新
-    if (props.value === context.value) return;
+    if (props.value === context.value) {
+      if (!isControl) update();
+      return;
+    }
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
         const oldValue = deepGet(preValue || emptyObj, key);
