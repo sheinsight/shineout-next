@@ -38,7 +38,6 @@ const Image = (props: ImageProps) => {
     renderHoverMask,
     ...rest
   } = props;
-  const rootRef = React.useRef<HTMLDivElement | HTMLAnchorElement>(null);
 
   const { status, getRootProps, getImageProps, getImageDivProps } = useImage({
     container: getDefaultContainer()!,
@@ -48,7 +47,6 @@ const Image = (props: ImageProps) => {
     lazy,
     autoSSL,
     noImgDrag,
-    rootRef,
     fit,
     ...rest,
   });
@@ -192,7 +190,7 @@ const Image = (props: ImageProps) => {
 
   return (
     // @ts-ignore
-    <Tag {...rootProps} className={rootClass} ref={rootRef}>
+    <Tag {...rootProps} className={rootClass}>
       {renderImage()}
       {(shouldPreview || shouldDownload) && renderMask()}
     </Tag>

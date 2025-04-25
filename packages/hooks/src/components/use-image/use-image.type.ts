@@ -151,6 +151,4 @@ export interface BaseImageProps {
    * @cn src或alt 地址请求出错回调
    */
   onError?: (e: Event, type: number) => void;
-
-  rootRef?: React.RefObject<HTMLDivElement | HTMLAnchorElement>;
 }
