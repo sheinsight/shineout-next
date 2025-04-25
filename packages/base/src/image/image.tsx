@@ -38,6 +38,7 @@ const Image = (props: ImageProps) => {
     renderHoverMask,
     ...rest
   } = props;
+  const rootRef = React.useRef<HTMLDivElement | HTMLAnchorElement>(null);
 
   const { status, getRootProps, getImageProps, getImageDivProps } = useImage({
     container: getDefaultContainer()!,
@@ -47,6 +48,8 @@ const Image = (props: ImageProps) => {
     lazy,
     autoSSL,
     noImgDrag,
+    rootRef,
+    fit,
     ...rest,
   });
 
@@ -122,7 +125,7 @@ const Image = (props: ImageProps) => {
 
   // 渲染 img / div 类型的内部标签
   const renderInner = (src?: string) => {
-    return fit === 'fill' || fit === 'fit' ? renderDivInnerEl(src) : renderImgeInnerEl(src);
+    return fit === 'fit' ? renderDivInnerEl(src) : renderImgeInnerEl(src);
   };
 
   // 默认占位图
@@ -189,7 +192,7 @@ const Image = (props: ImageProps) => {
 
   return (
     // @ts-ignore
-    <Tag {...rootProps} className={rootClass}>
+    <Tag {...rootProps} className={rootClass} ref={rootRef}>
       {renderImage()}
       {(shouldPreview || shouldDownload) && renderMask()}
     </Tag>

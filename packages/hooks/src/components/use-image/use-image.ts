@@ -19,6 +19,7 @@ const useImage = (props: BaseImageProps = {}) => {
   const { container, lazy, src, alt, href, autoSSL, noImgDrag = false, onError } = props;
 
   const [status, setStatus] = React.useState<number>(PLACEHOLDER);
+  const [imgCoverStyle, setImgCoverStyle] = React.useState<React.CSSProperties>({});
 
   const elementRef = React.useRef<HTMLDivElement | HTMLAnchorElement>(null);
 
@@ -51,13 +52,48 @@ const useImage = (props: BaseImageProps = {}) => {
     img.src = getUrl(alt);
   };
 
+  const handleCoverStyle = (img: HTMLImageElement) => {
+    const container = props.rootRef?.current;
+    if (!container) return;
+
+    // 根据容器的宽高获取宽高比
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+    const containerRatio = containerWidth / containerHeight;
+
+    // 根据图片的自然尺寸获取宽高比
+    const imageWidth = img.naturalWidth;
+    const imageHeight = img.naturalHeight;
+    const imageRatio = imageWidth / imageHeight;
+
+    // 判断宽高比，决定图片填充策略
+    if (imageRatio > containerRatio) {
+      // 图片更宽，宽度占满容器，高度自适应
+      setImgCoverStyle({
+        height: '100%',
+        width: 'auto',
+      });
+    } else {
+      // 图片更高，填满容器高度
+      setImgCoverStyle({
+        width: '100%',
+        height: 'auto',
+      });
+    }
+  };
+
   const markToRender = () => {
     if (!src) {
       handleAlt();
       return;
     }
     const img = new window.Image();
-    img.onload = () => setStatus(SRC);
+    img.onload = () => {
+      setStatus(SRC);
+      if (props.fit === 'fill') {
+        handleCoverStyle(img);
+      }
+    };
     img.onerror = (e) => handleError(SRC, e as Event);
     img.src = getUrl(src);
   };
@@ -90,6 +126,7 @@ const useImage = (props: BaseImageProps = {}) => {
     };
 
     return {
+      style: imgCoverStyle,
       ...mergedEventHandlers,
     };
   };
@@ -134,7 +171,7 @@ const useImage = (props: BaseImageProps = {}) => {
           element: elementRef.current!,
           render: markToRender,
           offscreen: () => {
-            setStatus(PLACEHOLDER)
+            setStatus(PLACEHOLDER);
           },
           noRemove: props.inViewOnly,
           container: typeof container === 'string' ? document.querySelector(container) : container,
