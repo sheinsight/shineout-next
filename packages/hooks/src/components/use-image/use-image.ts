@@ -53,7 +53,7 @@ const useImage = (props: BaseImageProps = {}) => {
   };
 
   const handleCoverStyle = (img: HTMLImageElement) => {
-    const container = props.rootRef?.current;
+    const container = elementRef?.current;
     if (!container) return;
 
     // 根据容器的宽高获取宽高比
