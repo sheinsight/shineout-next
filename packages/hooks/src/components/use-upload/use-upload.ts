@@ -32,8 +32,9 @@ const promised = (action: (...args: any) => any, ...args: any) => {
     resolve(true);
   });
 };
+const defaultValue: any[] = []
 const useUpload = <T>(props: UseUploadProps<T>) => {
-  const { limit = 100, value = [] } = props;
+  const { limit = 100, value = defaultValue } = props;
   const accept = props.forceAccept || props.accept;
   const forceAccept = !!props.forceAccept;
   const [filesState, setFiles] = useState<Record<string, FileRecord>>({});
@@ -164,10 +165,12 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
             });
           });
           // add value
-          const values = produce(latestState.value, (draft) => {
-            draft.push(result);
-          });
-          props.onChange(values);
+          props.onChange(((prev: T[]) => {
+            return [
+              ...(prev || []),
+              result
+            ]
+          }) as any);
         }
       },
       onError: (xhr: XhrResult) => handleError(id, xhr, file),
