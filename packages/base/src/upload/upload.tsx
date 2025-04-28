@@ -54,6 +54,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     },
     value: value,
     onChange,
+    functionalOnChange: props.functionalOnChange,
   });
 
   const uploadValidate = usePersistFn(() => {

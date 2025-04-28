@@ -32,7 +32,7 @@ const promised = (action: (...args: any) => any, ...args: any) => {
     resolve(true);
   });
 };
-const defaultValue: any[] = []
+const defaultValue: any[] = [];
 const useUpload = <T>(props: UseUploadProps<T>) => {
   const { limit = 100, value = defaultValue } = props;
   const accept = props.forceAccept || props.accept;
@@ -119,22 +119,24 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
       responseType: props.responseType,
       onStart: props.onStart,
       onProgress: (e: ProgressEvent & { percent?: number }, msg?: string) => {
-        if (throttle) return;
+        const percent = typeof e.percent === 'number' ? e.percent : (e.loaded / e.total) * 100;
+        if (throttle && percent !== 100) return;
         throttle = true;
         setTimeout(() => {
           throttle = false;
         }, 16);
 
-        const percent = typeof e.percent === 'number' ? e.percent : (e.loaded / e.total) * 100;
-        const { filesState } = latestState;
-        const newFiles = { ...filesState };
-        if (!newFiles[id]) return;
-        newFiles[id].process = percent;
-        if (msg) newFiles[id].message = msg;
-        setFiles(newFiles);
-        if (typeof props.onProgress === 'function') {
-          props.onProgress(newFiles[id]);
-        }
+        setFiles((files) => {
+          return produce(files, (draft) => {
+            if (!draft[id]) return draft;
+            draft[id].process = percent;
+            if (msg) draft[id].message = msg;
+
+            if (typeof props.onProgress === 'function') {
+              props.onProgress(draft[id]);
+            }
+          });
+        });
       },
       onLoad: (xhr: XhrResult) => {
         if (!/^2|1223/.test(`${xhr.status}`)) {
@@ -164,13 +166,18 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
               delete draft[id];
             });
           });
-          // add value
-          props.onChange(((prev: T[]) => {
-            return [
-              ...(prev || []),
-              result
-            ]
-          }) as any);
+
+          if (props.functionalOnChange) {
+            // 回调型 setState不会丢值
+            props.onChange(((prev: T[]) => {
+              return [...(prev || []), result];
+            }) as any);
+          } else {
+            const latestValue = latestState.value;
+            const newValue = [...latestValue];
+            newValue.push(result);
+            props.onChange(newValue);
+          }
         }
       },
       onError: (xhr: XhrResult) => handleError(id, xhr, file),

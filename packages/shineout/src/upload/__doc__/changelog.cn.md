@@ -1,9 +1,14 @@
-## 3.6.5-beta.4
-2025-04-27
+## 3.6.5-beta.6
+2025-04-28
 
 ### 🐞 BugFix
 
-- 修复 `Upload` 多选文件并发上传时偶现的结果丢失问题  ([#1082](https://github.com/sheinsight/shineout-next/pull/1082))
+- 修复 `Upload` 同时上传多个文件时偶现的99%进度不消失问题  ([#1084](https://github.com/sheinsight/shineout-next/pull/1084))
+
+### 🆕 Feature
+
+- `Upload` 新增 `functionalOnChange` 属性，开启后onChange的回调值将变为函数  ([#1084](https://github.com/sheinsight/shineout-next/pull/1084))
+
 
 ## 3.6.0
 2025-03-14
