@@ -260,13 +260,19 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
 
       if (error instanceof Error) {
         if (!validatorHandle(error, blob)) {
-          delete newFiles[id];
-          setFiles({ ...newFiles });
+          setFiles(prev => {
+            return produce(prev, (draft) => {
+              delete draft[id];
+            });
+          });
           continue;
         }
         fileRecord.message = error.message;
         fileRecord.status = 3;
-        setFiles({ ...newFiles });
+        setFiles(prev => ({
+          ...prev,
+          [id]: fileRecord,
+        }));
         continue;
       }
       if (props.beforeUpload) {
@@ -278,18 +284,27 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
             .then((args) => {
               if (args.status !== 'error') {
                 newFiles[id].xhr = uploadFile(id, blob, fileRecord.src);
-                setFiles({ ...newFiles });
+                setFiles(prev => ({
+                  ...prev,
+                  [id]: fileRecord,
+                }));
               }
             })
             .catch(() => {
-              delete newFiles[id];
-              setFiles({ ...newFiles });
+              setFiles(prev => {
+                return produce(prev, (draft) => {
+                  delete draft[id];
+                });
+              });
             });
           continue;
         }
       } else {
         fileRecord.xhr = uploadFile(id, blob, fileRecord.src);
-        setFiles({ ...newFiles });
+        setFiles(prev => ({
+          ...prev,
+          [id]: fileRecord,
+        }));
       }
     }
   });
