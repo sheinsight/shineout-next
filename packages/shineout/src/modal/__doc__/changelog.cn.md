@@ -1,3 +1,10 @@
+## 3.6.4-beta.12
+2025-04-29
+
+### 🐞 BugFix
+
+- 修复 `Modal.Submit` 的onClick事件比 `onSubmit` 先执行的问题 ([#1090](https://github.com/sheinsight/shineout-next/pull/1090))
+
 ## 3.6.4-beta.1
 2025-04-15
 

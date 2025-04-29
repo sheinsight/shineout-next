@@ -401,7 +401,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     updateFieldsets(name);
   });
 
-  const submit = usePersistFn((withValidate: boolean = true) => {
+  const submit = usePersistFn((withValidate: boolean = true, callback?: () => void) => {
     if (disabled) return;
     if (context.submitLock) {
       return;
@@ -417,6 +417,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     (async () => {
       if (!withValidate) {
         props.onSubmit?.((context.value ?? {}) as T);
+        callback?.();
         return;
       }
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
@@ -425,8 +426,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         if (activeEl) activeEl.focus();
       } else {
         handleSubmitError(result);
-        return;
       }
+      callback?.();
     })();
   });
 
