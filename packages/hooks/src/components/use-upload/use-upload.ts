@@ -32,8 +32,9 @@ const promised = (action: (...args: any) => any, ...args: any) => {
     resolve(true);
   });
 };
+const defaultValue: any[] = [];
 const useUpload = <T>(props: UseUploadProps<T>) => {
-  const { limit = 100, value = [] } = props;
+  const { limit = 100, value = defaultValue } = props;
   const accept = props.forceAccept || props.accept;
   const forceAccept = !!props.forceAccept;
   const [filesState, setFiles] = useState<Record<string, FileRecord>>({});
@@ -118,22 +119,24 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
       responseType: props.responseType,
       onStart: props.onStart,
       onProgress: (e: ProgressEvent & { percent?: number }, msg?: string) => {
-        if (throttle) return;
+        const percent = typeof e.percent === 'number' ? e.percent : (e.loaded / e.total) * 100;
+        if (throttle && percent !== 100) return;
         throttle = true;
         setTimeout(() => {
           throttle = false;
         }, 16);
 
-        const percent = typeof e.percent === 'number' ? e.percent : (e.loaded / e.total) * 100;
-        const { filesState } = latestState;
-        const newFiles = { ...filesState };
-        if (!newFiles[id]) return;
-        newFiles[id].process = percent;
-        if (msg) newFiles[id].message = msg;
-        setFiles(newFiles);
-        if (typeof props.onProgress === 'function') {
-          props.onProgress(newFiles[id]);
-        }
+        setFiles((files) => {
+          return produce(files, (draft) => {
+            if (!draft[id]) return draft;
+            draft[id].process = percent;
+            if (msg) draft[id].message = msg;
+
+            if (typeof props.onProgress === 'function') {
+              props.onProgress(draft[id]);
+            }
+          });
+        });
       },
       onLoad: (xhr: XhrResult) => {
         if (!/^2|1223/.test(`${xhr.status}`)) {
@@ -163,11 +166,18 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
               delete draft[id];
             });
           });
-          // add value
-          const values = produce(latestState.value, (draft) => {
-            draft.push(result);
-          });
-          props.onChange(values);
+
+          if (props.functionalOnChange) {
+            // 回调型 setState不会丢值
+            props.onChange(((prev: T[]) => {
+              return [...(prev || []), result];
+            }) as any);
+          } else {
+            const latestValue = latestState.value;
+            const newValue = [...latestValue];
+            newValue.push(result);
+            props.onChange(newValue);
+          }
         }
       },
       onError: (xhr: XhrResult) => handleError(id, xhr, file),
@@ -250,13 +260,19 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
 
       if (error instanceof Error) {
         if (!validatorHandle(error, blob)) {
-          delete newFiles[id];
-          setFiles({ ...newFiles });
+          setFiles(prev => {
+            return produce(prev, (draft) => {
+              delete draft[id];
+            });
+          });
           continue;
         }
         fileRecord.message = error.message;
         fileRecord.status = 3;
-        setFiles({ ...newFiles });
+        setFiles(prev => ({
+          ...prev,
+          [id]: fileRecord,
+        }));
         continue;
       }
       if (props.beforeUpload) {
@@ -268,18 +284,27 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
             .then((args) => {
               if (args.status !== 'error') {
                 newFiles[id].xhr = uploadFile(id, blob, fileRecord.src);
-                setFiles({ ...newFiles });
+                setFiles(prev => ({
+                  ...prev,
+                  [id]: fileRecord,
+                }));
               }
             })
             .catch(() => {
-              delete newFiles[id];
-              setFiles({ ...newFiles });
+              setFiles(prev => {
+                return produce(prev, (draft) => {
+                  delete draft[id];
+                });
+              });
             });
           continue;
         }
       } else {
         fileRecord.xhr = uploadFile(id, blob, fileRecord.src);
-        setFiles({ ...newFiles });
+        setFiles(prev => ({
+          ...prev,
+          [id]: fileRecord,
+        }));
       }
     }
   });
