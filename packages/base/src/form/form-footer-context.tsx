@@ -9,6 +9,7 @@ export interface FormFooterContextValue {
   formStats: 'disabled' | 'pending' | undefined;
   func: {
     submit: (withValidate?: boolean, callback?: () => void) => void;
+    hasSubmit: boolean;
   };
 }
 

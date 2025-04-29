@@ -9,7 +9,11 @@ import type { ButtonProps } from '../button/button.type';
 const ModalSubmit = (props: ButtonProps) => {
   const modalFormContext = useFormFooter();
   const handleClick = usePersistFn((e: React.MouseEvent) => {
-    modalFormContext?.func.submit(true, () => props.onClick?.(e));
+    if (modalFormContext?.func?.hasSubmit) {
+      modalFormContext?.func.submit(true, () => props.onClick?.(e));
+    } else {
+      props.onClick?.(e);
+    }
   });
   return (
     <Button
