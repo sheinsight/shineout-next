@@ -62,7 +62,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     colon,
     name: formName,
     scrollParent,
-    isControl,
+    // isControl,
   } = props;
   const deepSetOptions = {
     removeUndefined,
@@ -337,12 +337,15 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         const values = Object.keys(vals);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
         values.forEach((key) => {
-          deepSet(draft, key, vals[key], deepSetOptions);
+          // upload组件返回的可能是函数: (prev) => [...prev, file]
+          const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key]
+          deepSet(draft, key, valueOfKey, deepSetOptions);
         });
         values.forEach((key) => {
           if (option.validate) {
             context.validateMap[key]?.forEach((validate) => {
-              validate(key, vals[key], current(draft));
+              const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key]
+              validate(key, valueOfKey, current(draft));
             });
           }
         });
