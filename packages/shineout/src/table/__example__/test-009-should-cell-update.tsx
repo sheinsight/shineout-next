@@ -1,11 +1,11 @@
 /**
- * cn - shouldCellUpdate
- *    -- shouldCellUpdate 可以用来控制单元格是否更新，可以是一个函数，也可以是一个对象，对象格式为 { update: (record, prevRecord) => boolean, dependencies: any[] }
- * en - scrollToIndex
- *    -- The virtual list table provides a scrollToIndex method to scroll to the specified row
+ * cn - virtual=lazy
+ *    -- virtual=lazy 在Table滚动期间不触发rerender
+ * en - virtual=lazy
+ *    -- virtual=lazy does not trigger rerender during Table scrolling
  */
 import React, { useState } from 'react';
-import { Input, Table, TYPE, Button } from '../../../dist/esm';
+import { Input, Table, TYPE, Button } from 'shineout';
 import { user } from '@sheinx/mock';
 import TreeSelectExample from '../../tree-select/__example__/10-virtual';
 
@@ -43,13 +43,13 @@ const CacheTable = () => {
       render: (d) => (
         <div
           id={`name_${d.id}`}
-          // style={{ height: d.height }}
+          style={{ height: d.height }}
         >
           {`${d.firstName} ${d.lastName}`}
 
-          {/* <Button mode="text">test</Button>
+          <Button type="primary">test</Button>
 
-          <TreeSelectExample /> */}
+          {/* <TreeSelectExample /> */}
         </div>
       ),
       width: 160,
@@ -62,7 +62,6 @@ const CacheTable = () => {
       title: `Office${i}`,
       render: 'office',
       width: 100,
-      shouldCellUpdate: () => false,
     })),
 
     {
@@ -81,15 +80,6 @@ const CacheTable = () => {
           <TreeSelectExample />
         </div>
       ),
-      // 第一种格式
-      // shouldCellUpdate: (record, prevRecord) => record.id !== prevRecord.id,
-      // 第二种格式，支持从外部传入dependencies: 怎么把inputValue传给shouldCellUpdate内部去使用
-      shouldCellUpdate: {
-        update: (record, prevRecord) => {
-          return record.id !== prevRecord.id
-        },
-        dependencies: [inputValue],
-      },
     },
     {
       title: 'Start Date',
@@ -102,10 +92,6 @@ const CacheTable = () => {
       ),
       fixed: 'right',
       width: 140,
-      // shouldCellUpdate: {
-      //   update: (record, prevRecord) => record.id !== prevRecord.id,
-      //   dependencies: [inputValue],
-      // },
     },
   ];
 
@@ -113,7 +99,7 @@ const CacheTable = () => {
       keygen='id'
       bordered
       data={data}
-      virtual
+      virtual="lazy"
       width={columns.reduce((a, b) => a + ((b.width || 100) as number), 0)}
       rowsInView={5}
       columns={columns}
@@ -137,8 +123,10 @@ const NoCacheTable = () => {
       render: (d) => (
         <div
           id={`name_${d.id}`}
+          style={{ height: d.height }}
         >
           {`${d.firstName} ${d.lastName}`}
+          <Button type="warning">test</Button>
         </div>
       ),
       width: 160,

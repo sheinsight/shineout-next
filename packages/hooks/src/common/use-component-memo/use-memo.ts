@@ -6,7 +6,7 @@ interface Cache<Value, Condition> {
 }
 
 
-export default function useMemo<Value, Condition = any[]>(
+export function useComponentMemo<Value, Condition = any[]>(
   getValue: () => Value,
   condition: Condition,
   shouldUpdate?: (prev: Condition, next: Condition) => boolean,

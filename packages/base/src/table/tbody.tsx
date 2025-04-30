@@ -69,34 +69,20 @@ export default (props: TbodyProps) => {
         resizeFlag={props.resizeFlag}
         treeCheckAll={props.treeCheckAll}
         onCellClick={props.onCellClick}
-        shouldCellUpdate={props.shouldCellUpdate}
+        virtual={props.virtual}
+        scrolling={props.scrolling}
       />
     );
   };
 
-  const externalDependencies =
-    typeof props.shouldCellUpdate === 'object' && props.shouldCellUpdate.dependencies
-      ? props.shouldCellUpdate.dependencies
-      : [];
-
-  const updateFn =
-    typeof props.shouldCellUpdate === 'object' && 'update' in props.shouldCellUpdate
-      ? props.shouldCellUpdate.update
-      : props.shouldCellUpdate;
 
   const $tbody = useComponentMemo(
     () => <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>,
-    [props.data, currentIndex, ...externalDependencies],
-    updateFn || props.virtual
-      ? (prev, next) => {
-          return prev.some((_, index) => {
-            if (updateFn && index === 0) {
-              return (prev[index] as any[]).some((item, idx) =>
-                updateFn(item, (next[index] as any[])[idx])
-              );
-            }
-
-            return !util.shallowEqual(prev[index], next[index]);
+    [props.data, currentIndex],
+    props.virtual === 'lazy'
+      ? (prev: any, next: any) => {
+          return prev.some((_:any, index:number) => {
+            return !util.shallowEqual(prev?.[index], next?.[index]);
           }) || !props.scrolling;
         }
       : undefined,

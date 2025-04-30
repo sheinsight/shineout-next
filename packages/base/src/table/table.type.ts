@@ -224,9 +224,9 @@ export interface TableProps<DataItem, Value>
   fixed?: TableFix | 'auto';
   /**
    *  @en Whether to use virtual list
-   *  @cn 是否使用虚拟列表
+   *  @cn 是否使用虚拟列表，设置为 lazy 时，表示在滚动时不触发 rerender
    */
-  virtual?: boolean;
+  virtual?: boolean | 'lazy';
   /**
    * @en The maximum number of rows for a single render. Table uses lazy render to optimize performance under large amounts of data. If your table displays more than 20 rows, you can change the value of rowsInView. Value of 0 render all data.
    * @cn 单次 render的 最大行数。Table 采用了 lazy render 的方式来优化在大量数据下的性能，如果你的表格显示的高度超出了20条，可以调整 rowsInView 的值。为 0 表示单次 render 所有数据。

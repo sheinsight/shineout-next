@@ -1,1 +1,1 @@
-export { default, default as useComponentMemo } from './use-memo';
+export { useComponentMemo } from './use-memo';
