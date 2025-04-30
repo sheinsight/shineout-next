@@ -447,7 +447,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
       const options = props.showBottomScrollbar === true ? {} : props.showBottomScrollbar;
       const scrollerStickyProps = {
-        scrollContainer: (options.scrollContainer || document.body) as HTMLElement,
         bottom: options.bottom || 0,
         zIndex: options.zIndex || defaultZIndex + 1,
         parent: tableRef?.current,
