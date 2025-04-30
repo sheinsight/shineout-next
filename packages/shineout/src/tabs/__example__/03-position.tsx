@@ -50,7 +50,7 @@ export default () => {
         <Tabs shape={shape as any} position={position as any} autoFill defaultActive={0}>
           {tabs.map((tab, index) => {
             return (
-              <Tabs.Panel key={index} tab={tab.title} disabled={index === tabs.length - 1} background='#f00'>
+              <Tabs.Panel key={index} tab={tab.title} disabled={index === tabs.length - 1}>
                 <div style={{ padding: 16, fontSize: 14 }}>{tab.content}</div>
               </Tabs.Panel>
             );
