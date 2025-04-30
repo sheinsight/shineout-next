@@ -35,7 +35,7 @@ interface TrProps
     | 'resizeFlag'
     | 'treeCheckAll'
     | 'onCellClick'
-    | 'shouldCellUpdate'
+    | 'virtual'
   > {
   row: {
     data: any[];
@@ -58,6 +58,7 @@ interface TrProps
   hoverIndex: UseTableRowResult['hoverIndex'];
   isSelect: boolean;
   disabled?: boolean;
+  scrolling?: boolean;
 }
 
 const Tr = (props: TrProps) => {
@@ -334,7 +335,7 @@ const Tr = (props: TrProps) => {
           }
         }
         const td = (
-          <Td<TrProps['row']>
+          <Td
             key={`${col.key}-${props.rowIndex}-${i}`}
             col={col}
             data={data[i].data}
@@ -365,8 +366,9 @@ const Tr = (props: TrProps) => {
             direction={config.direction}
             data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
-            shouldCellUpdate={col.shouldCellUpdate || props.shouldCellUpdate}
             renderContent={renderContent}
+            virtual={props.virtual}
+            scrolling={props.scrolling}
           />
         );
         tds.push(td);

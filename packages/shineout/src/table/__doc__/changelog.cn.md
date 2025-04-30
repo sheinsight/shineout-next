@@ -1,16 +1,8 @@
-## 3.7.0-beta.11
-2025-04-18
+## 3.7.0-beta.14
+2025-04-30
 
 ### 💎 Enhancement
-- 优化 `Table` 的 `virtual` 模式下，滚动过程中默认开启tbody的memo缓存 ([#1078](https://github.com/sheinsight/shineout-next/pull/1078))
-
-
-## 3.7.0-beta.7
-2025-04-18
-
-### 💎 Enhancement
-- 优化 `Table` 的 `shouldCellUpdate` 缓存性能 ([#1074](https://github.com/sheinsight/shineout-next/pull/1074))
-
+- 优化 `Table` 的虚拟列表垂直滚动性能，需设置`virtual`为字符串lazy ([#1093](https://github.com/sheinsight/shineout-next/pull/1093))
 
 ## 3.7.0-beta.6
 2025-04-14
@@ -20,35 +12,21 @@
 - `Table` 新增 `showBottomScrollbar` 属性，启用后显示可吸附底部的横向滚动条 ([#1068](https://github.com/sheinsight/shineout-next/pull/1068))
 
 
-## 3.7.0-beta.5
-2025-04-14
-
-### 🆕 Feature
-
-- `Table` 新增 `shouldCellUpdate` 属性，手动设置单元格的scu，优先级低于columns上的 `shouldCellUpdate` ([#1057](https://github.com/sheinsight/shineout-next/pull/1057))
-
 ## 3.7.0-beta.4
 2025-04-11
 
 ### 🐞 BugFix
 - 修复 `Table` 的colgroup平均分配时产生的小数位像素在浏览器渲染时偶现的单元格垂直边框对不齐问题  ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
 
-### 💎 Enhancement
-- 优化 `Table` 合并行|列的hover渲染性能 ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
+###  🚀 Performance
+- 优化 `Table` 合并行或列的hover渲染性能 ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
 
 
 ## 3.7.0-beta.3
 2025-04-09
 
-### 💎 Enhancement
-- 优化 `Table` 的 `virtual` 模式在大数据量下的横向滚动性能，调整了thead的dom位置 ([#1047](https://github.com/sheinsight/shineout-next/pull/1047))
-
-
-## 3.7.0-beta.1
-2025-04-01
-
-### 🆕 Feature
-- `Table` 新增缓存单元格功能：设置 `columns` 配置项的 `shouldCellUpdate` 属性 ([#1023](https://github.com/sheinsight/shineout-next/pull/1023))
+### 🚀 Performance
+- 优化 `Table` 的虚拟列表横向滚动性能，调整了thead的dom位置 ([#1047](https://github.com/sheinsight/shineout-next/pull/1047))
 
 ## 3.6.3-beta.3
 2025-04-11

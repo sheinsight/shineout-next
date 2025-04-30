@@ -347,7 +347,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       resizeFlag: resizeFlag,
       treeCheckAll: props.treeCheckAll,
       onCellClick: props.onCellClick,
-      shouldCellUpdate: props.shouldCellUpdate,
     };
 
     const headCommonProps = {

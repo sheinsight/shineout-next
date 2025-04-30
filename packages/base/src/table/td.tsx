@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { shouldCellUpdate, useComponentMemo, util } from '@sheinx/hooks';
+import { useComponentMemo, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
+import { TbodyProps } from './tbody.type';
 
-interface TdProps<T> {
+interface TdProps extends Pick<TbodyProps, | 'virtual'>  {
   col: TableFormatColumn<any>;
   data: any[];
   colSpan: number;
@@ -14,11 +15,11 @@ interface TdProps<T> {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   onClick?: () => void;
-  shouldCellUpdate?: shouldCellUpdate<T>;
   renderContent: (col: TableFormatColumn<any>, data: any[]) => React.ReactNode;
+  scrolling?: boolean;
 }
 
-export default function Td<T>(props: TdProps<T>): JSX.Element {
+export default function Td(props: TdProps): JSX.Element {
   const [style, setStyle] = React.useState<React.CSSProperties>();
 
   useEffect(() => {
@@ -42,16 +43,6 @@ export default function Td<T>(props: TdProps<T>): JSX.Element {
     onMouseLeave,
     renderContent,
   } = props;
-
-  const externalDependencies =
-    typeof props.shouldCellUpdate === 'object' && props.shouldCellUpdate.dependencies
-      ? props.shouldCellUpdate.dependencies
-      : [];
-
-  const updateFn =
-    typeof props.shouldCellUpdate === 'object' && 'update' in props.shouldCellUpdate
-      ? props.shouldCellUpdate.update
-      : props.shouldCellUpdate;
 
   const $td = useComponentMemo(
     () => {
@@ -79,21 +70,15 @@ export default function Td<T>(props: TdProps<T>): JSX.Element {
       style,
       col.type,
       col.treeColumnsName,
-      ...externalDependencies,
     ],
-    updateFn
-      ? (prev, next) => {
+    props.virtual === 'lazy'
+      ? (prev:any, next:any) => {
           if (col.type || col.treeColumnsName) {
             return true;
           }
-
-          return prev.some((_, index) => {
-            if(index === 0){
-              return updateFn(prev[index], next[index])
-            }
-
-            return !util.shallowEqual(prev[index], next[index]);
-          });
+          return prev.some((_:any, index:any) => {
+            return !util.shallowEqual(prev?.[index], next?.[index]);
+          }) || !props.scrolling;
         }
       : undefined,
   ) as JSX.Element;
