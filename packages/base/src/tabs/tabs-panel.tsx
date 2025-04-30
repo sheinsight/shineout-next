@@ -10,7 +10,7 @@ const TabsPanel = (props: TabsPanelProps) => {
 
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
-  const { active, lazy, setTabs, color } = useTabsContext<TabData>();
+  const { active, lazy, setTabs, color, shape } = useTabsContext<TabData>();
   const isActive = active === id;
   const keekAlive = useRef(false);
 
@@ -20,7 +20,7 @@ const TabsPanel = (props: TabsPanelProps) => {
       tab,
       disabled: props.disabled,
       jssStyle,
-      background,
+      background: shape !== 'button' && shape !== 'fill' ? background : undefined,
       color: props.color || (active === id ? color : undefined),
     } as TabData;
 
@@ -48,7 +48,7 @@ const TabsPanel = (props: TabsPanelProps) => {
         return prev.filter((item) => item.id !== id);
       });
     };
-  }, [id, tab, color, active, props.disabled, props.jssStyle]);
+  }, [id, tab, color, active, shape, props.disabled, props.jssStyle]);
 
   if (!isActive && lazy && !keekAlive.current) {
     return null;
