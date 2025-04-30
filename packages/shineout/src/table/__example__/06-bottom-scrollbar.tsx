@@ -61,8 +61,8 @@ const App: React.FC = () => (
     columns={columns}
     data={data}
     showBottomScrollbar={{
-      scrollContainer: document.querySelector('[class*=doc-layout-desktop]'),
       bottom: 0,
+      // 可选属性
       zIndex: 10,
     }}
   />

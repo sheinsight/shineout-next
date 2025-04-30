@@ -382,7 +382,7 @@ export interface TableProps<DataItem, Value>
   onRowSelect?: (rows: Value) => void;
 }
 
-interface BottomScrollbarOption extends Pick<StickyProps, 'scrollContainer' | 'bottom'> {
+interface BottomScrollbarOption extends Pick<StickyProps, 'bottom'> {
   zIndex?: number;
 }
 
