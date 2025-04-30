@@ -1,3 +1,11 @@
+## 3.6.5-beta.2
+2025-04-25
+
+### 💎 Enhancement
+
+- 优化 `Image` 的`fill`实现方式，改善大图片在Chrome浏览器下的性能 ([#1080](https://github.com/sheinsight/shineout-next/pull/1080))
+
+
 ## 3.6.0
 2025-03-12
 

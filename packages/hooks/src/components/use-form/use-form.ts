@@ -62,6 +62,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     colon,
     name: formName,
     scrollParent,
+    isControl,
   } = props;
   const deepSetOptions = {
     removeUndefined,
@@ -336,12 +337,15 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         const values = Object.keys(vals);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
         values.forEach((key) => {
-          deepSet(draft, key, vals[key], deepSetOptions);
+          // upload组件返回的可能是函数: (prev) => [...prev, file]
+          const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key]
+          deepSet(draft, key, valueOfKey, deepSetOptions);
         });
         values.forEach((key) => {
           if (option.validate) {
             context.validateMap[key]?.forEach((validate) => {
-              validate(key, vals[key], current(draft));
+              const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key]
+              validate(key, valueOfKey, current(draft));
             });
           }
         });
@@ -397,7 +401,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     updateFieldsets(name);
   });
 
-  const submit = usePersistFn((withValidate: boolean = true) => {
+  const submit = usePersistFn((withValidate: boolean = true, callback?: () => void) => {
     if (disabled) return;
     if (context.submitLock) {
       return;
@@ -413,6 +417,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     (async () => {
       if (!withValidate) {
         props.onSubmit?.((context.value ?? {}) as T);
+        callback?.();
         return;
       }
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
@@ -421,8 +426,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         if (activeEl) activeEl.focus();
       } else {
         handleSubmitError(result);
-        return;
       }
+      callback?.();
     })();
   });
 
@@ -645,7 +650,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   React.useEffect(() => {
     context.removeLock = false;
     // 内部 onChange 改的 value, 不需要更新
-    if (props.value === context.value) return;
+    if (props.value === context.value) {
+      if (!isControl) update();
+      return;
+    }
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
         const oldValue = deepGet(preValue || emptyObj, key);

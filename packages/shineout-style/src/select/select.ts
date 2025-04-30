@@ -442,6 +442,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
+    width: 'max-content',
     maxWidth: 400,
     maxHeight: 160,
     overflow: 'auto',

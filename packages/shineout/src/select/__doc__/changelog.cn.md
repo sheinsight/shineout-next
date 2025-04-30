@@ -1,3 +1,9 @@
+## 3.6.5-beta.1
+2025-04-23
+
+### 🐞 BugFix
+- 修复 `Select` 在 `Popover` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除条目时会引起样式异常的问题 ([#1079](https://github.com/sheinsight/shineout-next/pull/1079))
+
 ## 3.6.4-beta.3
 2025-04-16
 

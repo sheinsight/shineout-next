@@ -1,3 +1,9 @@
+## 3.6.5-beta.3
+2025-04-17
+
+### 🐞 BugFix
+- 修复 `Form.Flow` 内容更新不同步的问题 ([#1081](https://github.com/sheinsight/shineout-next/pull/1081))
+
 ## 3.6.4-beta.5
 2025-04-17
 
