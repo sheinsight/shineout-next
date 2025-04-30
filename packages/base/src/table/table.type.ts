@@ -48,6 +48,7 @@ export interface TableClasses {
   emptyWrapper: string;
   emptyNoBorder: string;
   scrollY: string;
+  scrollX: string;
 
   cellAlignLeft: string;
   cellAlignRight: string;

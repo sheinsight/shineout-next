@@ -204,8 +204,13 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   useEffect(() => {
-    context.theadAndTfootHeight =
-      (theadRef?.current?.clientHeight || 0) + (tfootRef.current?.clientHeight || 0);
+    const theadHeight = theadRef?.current?.clientHeight || 0;
+    const tfootHeight = tfootRef.current?.clientHeight || 0;
+    if (props.sticky) {
+      context.theadAndTfootHeight = tfootHeight;
+    } else {
+      context.theadAndTfootHeight = theadHeight + tfootHeight;
+    }
   }, [theadRef.current, tfootRef.current]);
 
   const virtualInfo = useTableVirtual({
@@ -393,7 +398,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const isRenderVirtualTable = virtual || props.sticky || !props.data?.length;
 
-    const headWrapperClass = classNames(tableClasses?.headWrapper, props.sticky && isScrollY && tableClasses.scrollY);
+    const headWrapperClass = classNames(
+      tableClasses?.headWrapper,
+      props.sticky && isScrollY && tableClasses.scrollY,
+      props.sticky && !isScrollY && tableClasses.scrollX,
+    );
 
     const footWrapperClass = classNames(tableClasses?.footWrapper);
 
@@ -488,9 +497,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           {renderHeadMirrorScroller()}
 
           {!props.hideHeader && props.sticky && (
-            <StickyWrapper {...stickyProps}>
-              {$headTable}
-            </StickyWrapper>
+            <StickyWrapper {...stickyProps}>{$headTable}</StickyWrapper>
           )}
 
           <Scroll

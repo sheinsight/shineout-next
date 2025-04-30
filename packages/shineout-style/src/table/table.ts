@@ -230,6 +230,11 @@ const tableStyle: JsStyles<TableClassType> = {
       ...customScrollBar({ background: 'transparent' }),
     },
   },
+  scrollX: {
+    '&$headWrapper, &$footWrapper': {
+      overflowX: 'hidden',
+    },
+  },
   emptyWrapper: {
     minHeight: '170px',
     width: '100%',
