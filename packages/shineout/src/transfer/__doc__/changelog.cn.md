@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Transfer` 自定义children时左右勾选互斥的问题，并修正children的 `onSelect` ts类型 ([#1089](https://github.com/sheinsight/shineout-next/pull/1089))
+- 修复 `Transfer` 自定义children时左右勾选互斥的问题，并修正children的 `onSelect` TS类型 ([#1089](https://github.com/sheinsight/shineout-next/pull/1089))
 
 
 ## 3.6.2-beta.6
