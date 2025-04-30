@@ -195,9 +195,6 @@ const modalStyle: JsStyles<ModalClassType> = {
       width: '100vw',
       overflow: 'auto',
     },
-    '& $body': {
-      minHeight: 'auto',
-    }
   },
   wrapperZoom: {
     transform: 'none',
