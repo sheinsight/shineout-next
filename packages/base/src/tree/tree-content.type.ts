@@ -3,7 +3,7 @@ import { JsstyleType, TreeRenderItemType, TreeProps } from './tree.type';
 
 export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded' | 'active'>,
-  Pick<TreeProps<DataItem, Value>, 'actionOnClick'> {
+  Pick<TreeProps<DataItem, Value>, 'actionOnClick' | 'onChange'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
   virtual?: boolean;
@@ -37,7 +37,6 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   onFetch: () => void;
   onDragOver?: (e: React.DragEvent) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
-  onChange?: (value: Value) => void;
 }
 
 export interface TreeVirtualContextProps<DataItem, Value extends KeygenResult[]>
