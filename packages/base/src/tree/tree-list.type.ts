@@ -5,7 +5,7 @@ import { JsstyleType, TreeRenderItemType, TreeProps } from './tree.type';
 export interface TreeListProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className' | 'style'>,
-    Pick<TreeProps<DataItem, Value>, 'actionOnClick'> {
+    Pick<TreeProps<DataItem, Value>, 'actionOnClick' | 'onChange'> {
   jssStyle?: JsstyleType;
   id?: KeygenResult;
   line: boolean;
@@ -34,7 +34,6 @@ export interface TreeListProps<DataItem, Value extends KeygenResult[]>
   renderItem: TreeRenderItemType<DataItem>;
   loader?: (key: KeygenResult, data: DataItem) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
-  onChange?: (value: Value) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   inlineNode?: boolean;
