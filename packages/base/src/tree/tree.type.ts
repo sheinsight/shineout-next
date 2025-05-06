@@ -150,7 +150,7 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @en Change event
    * @cn 设置 onChange 属性时，显示 选择框。参数为当前选中值，和 mode 属性相关
    */
-  onChange?: (value: Value) => void;
+  onChange?: (value: Value, id: KeygenResult) => void;
   /**
    * @en Dom style when drop images
    * @cn 拖拽图片的原生 style 样式

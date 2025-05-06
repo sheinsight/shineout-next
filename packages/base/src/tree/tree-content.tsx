@@ -95,7 +95,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   const handleNodeCheck = (_: any, checked: boolean) => {
     set(id, checked ? 1 : 0);
     if (onChange) {
-      onChange(getValue() as Value);
+      onChange(getValue() as Value, id);
     }
   }
   const checked = getChecked(id);

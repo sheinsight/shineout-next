@@ -1,3 +1,10 @@
+## 3.6.6-beta.2
+2025-05-06
+
+### 🐞 BugFix
+
+- 修复 `Tree` 的 `onChange` 第二参数丢失和类型问题 ([#1095](https://github.com/sheinsight/shineout-next/pull/1095))
+
 ## 3.6.4-beta.6
 2025-04-17
 
