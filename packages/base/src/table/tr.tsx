@@ -109,6 +109,7 @@ const Tr = (props: TrProps) => {
 
   const setVirtualRowHeight = usePersistFn(() => {
     if (props.setRowHeight && trRef.current) {
+      if (trRef.current.getBoundingClientRect().height === 0) return;
       const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
       props.setRowHeight(
         props.rowIndex,
