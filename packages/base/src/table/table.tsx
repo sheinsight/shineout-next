@@ -229,14 +229,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const syncHeaderScroll = usePersistFn((left: number) => {
     if (props.hideHeader || !props.sticky) return;
-    const headerScrollers = tableRef.current?.querySelectorAll(`.${tableClasses?.headWrapper}`);
 
-    headerScrollers?.forEach((item) => {
-      if (!item) return;
-      if (item.scrollLeft !== left) {
-        item.scrollLeft = left;
-      }
-    });
+    if(theadRef && theadRef?.current && theadRef?.current?.parentElement){
+      theadRef.current.parentElement.scrollLeft = left;
+    }
   });
 
   // 简单表格的滚动事件
