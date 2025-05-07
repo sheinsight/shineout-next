@@ -9,8 +9,7 @@
  *    -- This example demonstrates using the virtual list feature of the Table component to render large amounts of results
  */
 import React, { useState } from 'react';
-import { Cascader, Popover, Table, Link, TYPE } from 'shineout';
-import { createNestedArray } from '../../tree/__example__/utils';
+import { Select, Popover, Table, Link, TYPE } from 'shineout';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles(
@@ -42,29 +41,37 @@ const useStyles = createUseStyles(
       },
     },
   },
-  { name: 'cascader-multiple-custom' },
 );
 
-const d = createNestedArray([100, 100, 1]);
-
-interface TableRowData {
+interface DataItem {
   id: string;
-  children: never[];
+  name: string;
+  height: number;
+}
+type SelectProps = TYPE.Select.Props<DataItem, string>;
+type TableColumnItem = TYPE.Table.ColumnItem<DataItem>;
+
+const data: DataItem[] = [];
+
+for (let i = 0; i < 10000; i++) {
+  data.push({
+    id: `id-${i}`,
+    name: `标签 ${i}`,
+    height: Math.floor(Math.random() * 100) + 34,
+  });
 }
 
-type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
-type CascaderProps = TYPE.Cascader.Props<TableRowData, string[]>;
-
 export default () => {
-  const [value, setValue] = useState<string[]>();
-
+  const [value, setValue] = useState<DataItem[]>(data);
   const classNames = useStyles();
 
-  const handleChange: CascaderProps['onChange'] = (v) => {
+  const handleChange = (v: DataItem[]) => {
     setValue(v);
   };
 
-  const renderCompressed: CascaderProps['renderCompressed'] = (options) => {
+  const renderItem: SelectProps['renderItem'] = (d) => d.name;
+
+  const renderCompressed: SelectProps['renderCompressed'] = (options) => {
     const { data, onRemove } = options;
 
     const columns: TableColumnItem[] = [
@@ -91,7 +98,7 @@ export default () => {
           background: 'var(--soui-brand-6)',
         }}
       >
-        +{value ? value.length : ''}
+        +{data ? data.length : ''}
         <Popover position='bottom'>
           <Table
             data={data}
@@ -109,28 +116,21 @@ export default () => {
     );
   };
 
-  const renderItem: CascaderProps['renderItem'] = (item) => {
-    return (
-      <div style={{ overflow: 'hidden', width: 90, textOverflow: 'ellipsis' }}>node-{item?.id}</div>
-    );
-  };
-
   return (
     <div>
-      <Cascader
-        mode={2}
+      <Select
+        width={300}
+        data={data}
+        keygen='id'
+        multiple
+        compressed
         value={value}
         onChange={handleChange}
-        width={300}
-        clearable
-        compressed
-        virtual
-        placeholder='Please select node'
-        data={d}
-        keygen='id'
-        renderResult='id'
-        renderItem={renderItem}
+        compressedBound={2}
         renderCompressed={renderCompressed}
+        placeholder='Static lineHeight'
+        renderItem={renderItem}
+        clearable
       />
     </div>
   );

@@ -76,6 +76,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onChange: onChangeProp,
     compressedBound,
     compressedClassName,
+    renderCompressed,
     expanded: expandedProp,
     defaultExpanded,
     defaultExpandAll,
@@ -568,6 +569,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           disabled={disabled}
           compressed={compressed}
           compressedBound={compressedBound}
+          renderCompressed={renderCompressed}
           compressedClassName={compressedClassName}
           multiple={multiple}
           placeholder={placeholder}

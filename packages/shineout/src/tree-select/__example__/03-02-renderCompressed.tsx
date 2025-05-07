@@ -9,7 +9,7 @@
  *    -- This example demonstrates using the virtual list feature of the Table component to render large amounts of results
  */
 import React, { useState } from 'react';
-import { Cascader, Popover, Table, Link, TYPE } from 'shineout';
+import { TreeSelect, Popover, Table, Link, TYPE } from 'shineout';
 import { createNestedArray } from '../../tree/__example__/utils';
 import { createUseStyles } from 'react-jss';
 
@@ -42,29 +42,27 @@ const useStyles = createUseStyles(
       },
     },
   },
-  { name: 'cascader-multiple-custom' },
 );
 
-const d = createNestedArray([100, 100, 1]);
-
-interface TableRowData {
+interface DataItem {
   id: string;
-  children: never[];
+  children?: DataItem[];
 }
 
-type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
-type CascaderProps = TYPE.Cascader.Props<TableRowData, string[]>;
+type TableColumnItem = TYPE.Table.ColumnItem<DataItem>;
+type TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string[]>;
+
+const data: DataItem[] = createNestedArray([10, 10, 10]);
 
 export default () => {
-  const [value, setValue] = useState<string[]>();
-
+  const [value, setValue] = useState<TreeSelectProps['value']>([]);
   const classNames = useStyles();
 
-  const handleChange: CascaderProps['onChange'] = (v) => {
+  const handleChange: TreeSelectProps['onChange'] = (v) => {
     setValue(v);
   };
 
-  const renderCompressed: CascaderProps['renderCompressed'] = (options) => {
+  const renderCompressed: TreeSelectProps['renderCompressed'] = (options) => {
     const { data, onRemove } = options;
 
     const columns: TableColumnItem[] = [
@@ -109,29 +107,22 @@ export default () => {
     );
   };
 
-  const renderItem: CascaderProps['renderItem'] = (item) => {
-    return (
-      <div style={{ overflow: 'hidden', width: 90, textOverflow: 'ellipsis' }}>node-{item?.id}</div>
-    );
-  };
-
   return (
     <div>
-      <Cascader
-        mode={2}
-        value={value}
-        onChange={handleChange}
-        width={300}
+      <TreeSelect
+        multiple
         clearable
-        compressed
-        virtual
-        placeholder='Please select node'
-        data={d}
-        keygen='id'
-        renderResult='id'
-        renderItem={renderItem}
+        width={300}
+        value={value}
+        compressed='hide-popover'
+        compressedBound={2}
         renderCompressed={renderCompressed}
-      />
+        onChange={handleChange}
+        keygen='id'
+        renderItem={(node) => `node ${node.id}`}
+        data={data}
+        placeholder='Please select content'
+      ></TreeSelect>
     </div>
   );
 };

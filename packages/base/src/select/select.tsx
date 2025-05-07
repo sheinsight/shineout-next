@@ -73,6 +73,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     compressed,
     compressedBound,
     compressedClassName,
+    renderCompressed,
     placeholder,
     emptyAfterSelect,
     autoAdapt,
@@ -568,6 +569,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           reFocus={reFocus}
           convertBr={convertBr}
           compressed={compressed}
+          renderCompressed={renderCompressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}
           multiple={multiple}
