@@ -107,6 +107,19 @@ export interface ComponentRef<DataItem, Value> {
   ) => Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
 }
 
+export interface RenderCompressedOption<DataItem> {
+  /**
+   * @en The current selected data
+   * @cn 当前选中的数据
+   */
+  data: DataItem[];
+  /**
+   * @en Method to remove the option
+   * @cn 删除选项的方法
+   */
+  onRemove: (item: DataItem) => void;
+}
+
 export interface TreeSelectProps<DataItem, Value>
   extends Pick<
       CommonType,
@@ -430,4 +443,10 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 内容样式
    */
   contentClass?: string | ((data: DataItem) => string);
+  /**
+   * @en Custom render compressed content
+   * @cn 自定义渲染折叠内容，其中 data 为选中的数据，onRemove 为删除事件
+   * @version 3.7.0
+   */
+  renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
 }
