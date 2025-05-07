@@ -34,6 +34,7 @@ export * as Radio from './radio/interface';
 export * as Rate from './rate/interface';
 export * as Rule from './rule/interface';
 export * as Select from './select/interface';
+export * as Skeleton from './skeleton/interface';
 export * as Slider from './slider/interface';
 export * as Spin from './spin/interface';
 export * as Steps from './steps/interface';

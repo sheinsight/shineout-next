@@ -37,6 +37,7 @@ export { default as Radio } from './radio';
 export { default as Rate } from './rate';
 export { default as Rule } from './rule';
 export { default as Select } from './select';
+export { default as Skeleton } from './skeleton';
 export { default as Slider } from './slider';
 export { default as Spin } from './spin';
 export { default as Steps } from './steps';
@@ -66,4 +67,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.7.0-beta.3' };
+export default { version: '3.7.0-beta.17' };
