@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { MarkdownProps } from 'docs/types';
 import { useSnapshot } from 'valtio';
@@ -137,14 +137,17 @@ const Api = (props: { api: MarkdownProps['api'] }) => {
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
   const activeApi = searchParams.get('api');
+  const {current: context} = useRef({
+    isRowClick: false,
+  })
 
   useEffect(() => {
-    if(!activeApi) return;
+    if(!activeApi || context.isRowClick) return;
     const activeApiAnchor = document.getElementById(activeApi);
     if(!activeApiAnchor) return;
 
     activeApiAnchor.scrollIntoView({
-      behavior: "instant",
+      behavior: "smooth",
       block: 'center',
     });
   }, [activeApi])
@@ -160,6 +163,10 @@ const Api = (props: { api: MarkdownProps['api'] }) => {
               isLast={index === api.length - 1}
               rowClassName={(d) => (d.name === activeApi ? classes.activeApi : '')}
               onRowClick={(api) => {
+                context.isRowClick = true;
+                setTimeout(() => {
+                  context.isRowClick = false;
+                }, 300);
                 navigate({
                   search: `?tab=api&api=${api}`,
                 })
