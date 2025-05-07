@@ -1,3 +1,9 @@
+## 3.7.0-beta.21
+2025-05-07
+
+### 🐞 BugFix
+- 修复 `Table` 的 columns 中 render 字段不传导致组件报错的问题 ([#1102](https://github.com/sheinsight/shineout-next/pull/1102))
+
 ## 3.7.0-beta.14
 2025-04-30
 
