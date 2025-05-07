@@ -1,3 +1,9 @@
+## 3.7.0
+2025-05-07
+
+### 🆕 Feature
+- 新增 `Skeleton` 组件 ([#1100](https://github.com/sheinsight/shineout-next/pull/1100))
+
 ## 3.5.8
 2025-01-20
 
