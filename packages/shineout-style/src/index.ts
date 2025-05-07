@@ -33,6 +33,7 @@ export * from './progress';
 export * from './radio';
 export * from './rate';
 export * from './select';
+export * from './skeleton';
 export * from './slider';
 export * from './spin';
 export * from './steps';
