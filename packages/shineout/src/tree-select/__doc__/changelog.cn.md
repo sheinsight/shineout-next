@@ -1,3 +1,9 @@
+## 3.7.0-beta.18
+2025-05-07
+
+### 🆕 Feature
+- `TreeSelect` 新增 `renderCompressed` 属性，支持自定义渲染合并内容 ([#1099](https://github.com/sheinsight/shineout-next/pull/1099))
+
 ## 3.6.6-beta.3
 2025-05-07
 
