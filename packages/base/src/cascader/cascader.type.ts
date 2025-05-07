@@ -250,7 +250,7 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 将选中值合并。为'no-repeat'时弹出框中不重复展示值
    * @default false
    */
-  compressed?: boolean | 'no-repeat';
+  compressed?: boolean | 'no-repeat' | 'hide-popover';
   /**
    * @en Custom render compressed content
    * @cn 自定义渲染折叠内容，其中 data 为选中的数据，onRemove 为删除事件
