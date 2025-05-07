@@ -1,7 +1,7 @@
 /**
- * cn -
- *    -- 当`compressed`属性值为 'no-repeat' 时，合并的选项中不会出现结果框中的重复内容
- * en -
+ * cn - 合并选项去重
+ *    -- 当`compressed`属性值为 "no-repeat" 时，合并的选项中不会出现结果框中的重复内容
+ * en - Compressed no-repeat
  *    -- When the value of the `compressed` property is 'no-repeat', the repeated content in the merged options will not appear in the result box
  */
 import React from 'react';
@@ -51,6 +51,7 @@ export default () => {
         clearable
         multiple
         mode={0}
+        defaultValue={['jiangning', 'yuhuatai', 'nanjing', 'jiangsu', 'feidong', 'hefei', 'anhui']}
         compressed='no-repeat'
         width={300}
         placeholder='Please select city'

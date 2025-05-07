@@ -1,3 +1,9 @@
+## 3.6.6-beta.3
+2025-05-07
+
+### 💎 Enhancement
+- `Select` 增强 `compressed` 属性，新增 `hide-popover` 模式隐藏合并后的选项，仅展示合并数量 ([#1098](https://github.com/sheinsight/shineout-next/pull/1098))
+
 ## 3.6.5-beta.1
 2025-04-23
 

@@ -1,9 +1,9 @@
 /**
- * cn -
+ * cn - 自定义渲染合并内容
  *    -- 通过配置 `renderCompressed` 支持自定义折叠内容渲染，大体量数据可自定义优化渲染
  *    -- `renderCompressed` 参数为一个对象，包含 `data` 和 `onRemove` 两个属性，`data` 为折叠内容数据，`onRemove` 为删除事件
  *    -- 该示例演示使用Tabel组件的虚拟列表特性渲染大体量的结果
- * en -
+ * en - Custom rendering of compressed content
  *    -- Support custom rendering of compressed content by configuring `renderCompressed`, and customize optimized rendering for large data
  *    -- The `renderCompressed` parameter is an object containing two properties, `data` and `onRemove`, `data` is the compressed content data, and `onRemove` is the delete event
  *    -- This example demonstrates using the virtual list feature of the Table component to render large amounts of results
@@ -46,7 +46,7 @@ const useStyles = createUseStyles(
 );
 
 
-const d = createNestedArray([100, 100, 20]);
+const d = createNestedArray([100, 100, 1]);
 
 interface TableRowData {
   id: string;
