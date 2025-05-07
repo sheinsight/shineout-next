@@ -1134,7 +1134,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
 exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
 <div>
   <div
-    class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-clearable soui-cascader-multiple"
+    class="soui-cascader soui-cascader-wrapper soui-cascader-clearable soui-cascader-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
@@ -1149,17 +1149,39 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
           class="soui-cascader-result-text-wrapper soui-cascader-compressed-wrapper soui-cascader-multiple-result-wrapper soui-cascader-multiple-compressed-wrapper"
         >
           <span
-            class="soui-cascader-placeholder soui-cascader-ellipsis"
+            style="display: inline-flex;"
           >
-            <span>
-              Please select city
-            </span>
+            <div
+              class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            >
+              <div
+                class="soui-tag-wrapper"
+              >
+                <span>
+                  +7
+                </span>
+              </div>
+            </div>
           </span>
         </div>
       </div>
       <div
         class="soui-cascader-icon-wrapper"
       >
+        <span
+          class="soui-cascader-clear-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+            />
+          </svg>
+        </span>
         <span
           class="soui-cascader-compressed-icon soui-cascader-arrow-icon"
         >
