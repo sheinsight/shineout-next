@@ -91,7 +91,7 @@ const Tr = (props: TrProps) => {
   const getTdStyle = usePersistFn((column: TableFormatColumn<any>, colSpan: number) => {
     const index = column.index;
     const fixedStyle = getFixedStyle(column.fixed, index, colSpan);
-    if(!fixedStyle && !column.style) return;
+    if (!fixedStyle && !column.style) return;
     return {
       ...column.style,
       ...fixedStyle,
@@ -307,6 +307,8 @@ const Tr = (props: TrProps) => {
       return renderTreeExpand(content, col.treeIndent);
     }
 
+    if (col.render === undefined) return null;
+
     return content;
   });
 
@@ -326,11 +328,11 @@ const Tr = (props: TrProps) => {
 
         const isRowSpanTd = data[i].rowSpan > 1;
 
-        const shouldBindMouseEvent = (props.hover && hasSiblingRowSpan) || isRowSpanTd
+        const shouldBindMouseEvent = (props.hover && hasSiblingRowSpan) || isRowSpanTd;
         let showCellHover = props.hoverIndex.has(props.rowIndex);
-        if(!showCellHover && data[i].rowSpan > 1){
-          for(let j = 0; j < data[i].rowSpan; j++){
-            if(props.hoverIndex.has(props.rowIndex + j)){
+        if (!showCellHover && data[i].rowSpan > 1) {
+          for (let j = 0; j < data[i].rowSpan; j++) {
+            if (props.hoverIndex.has(props.rowIndex + j)) {
               showCellHover = true;
               break;
             }
@@ -348,11 +350,7 @@ const Tr = (props: TrProps) => {
                 ? () => props.handleCellHover(props.rowIndex, data[i].rowSpan)
                 : undefined
             }
-            onMouseLeave={
-              shouldBindMouseEvent
-                ? () => props.handleCellHover(-1, 0)
-                : undefined
-            }
+            onMouseLeave={shouldBindMouseEvent ? () => props.handleCellHover(-1, 0) : undefined}
             className={classNames(
               col.className,
               col.type === 'checkbox' && tableClasses?.cellCheckbox,
@@ -436,7 +434,9 @@ const Tr = (props: TrProps) => {
       attributes.push(rowClickAttr);
     }
 
-    const isFireElement = attributes.map((v) => (v === '*' ? '' : v)).find(v=>target.hasAttribute(v));
+    const isFireElement = attributes
+      .map((v) => (v === '*' ? '' : v))
+      .find((v) => target.hasAttribute(v));
     const isExpandable = !isNotExpandableElement(target) || isFireElement;
 
     if (onRowClick && rowClickAttr) {
