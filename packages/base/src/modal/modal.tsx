@@ -8,6 +8,9 @@ import { util } from '@sheinx/hooks';
 const { devUseWarning } = util;
 
 const Modal = (props: ModalProps) => {
+  // inject jssStyle
+  props.jssStyle?.modal?.();
+
   if (props.maskOpacity) {
     devUseWarning.deprecated('maskOpacity', 'maskBackground', 'Modal');
   }
