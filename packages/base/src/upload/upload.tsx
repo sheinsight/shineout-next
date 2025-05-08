@@ -105,6 +105,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         accept={accept}
         disabled={props.disabled}
         onDrop={func.addFiles}
+        beforeDrop={props.beforeDrop}
         multiple={!!props.multiple || limit > 1}
         className={classNames(uploadClasses?.dropItem)}
       >
