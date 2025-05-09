@@ -183,6 +183,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     display: 'flex',
     flex: '1',
     minWidth: 0,
+    height: '100%',
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
   },

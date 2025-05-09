@@ -1,3 +1,9 @@
+## 3.6.6-beta.4
+2025-05-09
+
+### 🐞 BugFix
+- 修复 `Cascader`结果框高度不继承的问题  ([#1105](https://github.com/sheinsight/shineout-next/pull/1105))
+
 ## 3.6.6-beta.3
 2025-05-07
 
