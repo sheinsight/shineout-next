@@ -72,11 +72,6 @@ const usePopup = (props: BasePopupProps) => {
       updatePosition();
     }
     setOpenState(!!props.open);
-
-    // 外部传了open时，需要正常的触发onCollapse；触发了onCollapse才能让组件内部的edit状态正确，否则可能会出现弹出层打开了但是用户却无法选择的情况
-    if(props.open !== undefined){
-      changeOpen(!!props.open);
-    }
   }, [props.open]);
 
   // const getPopUpHeight = () => {
