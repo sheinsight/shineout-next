@@ -69,7 +69,7 @@ export interface FormRef<FormValue> {
    * @en set field value, key is field path, Example: { 'name': 'sanmao', 'account.name': 'sanmao', 'friends[0].name': 'sanmao' }
    * @cn 设置字段值, key为字段路径,示例：{ 'name': 'sanmao', 'account.name': 'sanmao', 'friends[0].name': 'sanmao' }
    */
-  set: (value: { [key: string]: any }) => void;
+  set: (value: { [key: string]: any }, options?: {validate?: boolean, forceUpdate?: boolean}) => void;
   /**
    * @en Scroll to the position of the specified field
    * @cn 滚动到指定字段的位置
