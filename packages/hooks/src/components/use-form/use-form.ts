@@ -331,7 +331,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const setValue = usePersistFn(
     (
       vals: { [key: string]: any },
-      option: { validate?: boolean; names?: string[] } = { validate: false },
+      option: { validate?: boolean; forceUpdate?: boolean } = { validate: false },
     ) => {
       onChange((draft) => {
         const values = Object.keys(vals);
@@ -357,7 +357,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       fullKeyPaths.forEach((key) => {
         delete context.serverErrors[key];
       });
-      update(fullKeyPaths);
+      if (option.forceUpdate) {
+        update();
+      } else {
+        update(fullKeyPaths);
+      }
     },
   );
 
