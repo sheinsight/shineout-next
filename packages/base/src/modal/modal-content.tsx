@@ -318,7 +318,7 @@ const Modal = (props: ModalContentProps) => {
   }
 
   const renderContent = () => {
-    if (!props.visible) return context.content;
+    if (!props.visible && context.content !== null) return context.content;
 
     return (
       <React.Fragment>
