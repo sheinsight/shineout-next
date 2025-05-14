@@ -44,6 +44,7 @@ const Modal = (props: ModalContentProps) => {
     isMask: false,
     mouseDownTarget: null as HTMLElement | null,
     mouseUpTarget: null as HTMLElement | null,
+    content: null as React.ReactNode,
   });
 
   const [animation, setAnimation] = useState(props.visible || props.autoShow);
@@ -156,7 +157,7 @@ const Modal = (props: ModalContentProps) => {
           doc.style.paddingRight = `${window.innerWidth - util.docSize.width}px`;
         }
       } else {
-        if(!context.isMask) return;
+        if (!context.isMask) return;
         doc.style.paddingRight = '';
         doc.style.overflow = '';
       }
@@ -181,7 +182,7 @@ const Modal = (props: ModalContentProps) => {
         hasMask = false;
       }
       {
-        if(!context.isMask) return;
+        if (!context.isMask) return;
         const doc = document.body.parentNode! as HTMLElement;
         doc.style.paddingRight = '';
         doc.style.overflow = '';
@@ -316,6 +317,23 @@ const Modal = (props: ModalContentProps) => {
     panelStyle.transform = `translate(${moveInfo.pos.x}px, ${moveInfo.pos.y}px)`;
   }
 
+  const renderContent = () => {
+    if (!props.visible && context.content !== null) return context.content;
+
+    return (
+      <React.Fragment>
+        {renderHeader()}
+        {renderBody()}
+        {renderFooter()}
+        {renderResize()}
+      </React.Fragment>
+    );
+  };
+
+  const content = renderContent();
+
+  context.content = content;
+
   return (
     <FormFooterProvider>
       <div
@@ -355,10 +373,7 @@ const Modal = (props: ModalContentProps) => {
             className={classNames(modalClasses?.panel, props.className)}
             style={panelStyle}
           >
-            {renderHeader()}
-            {renderBody()}
-            {renderFooter()}
-            {renderResize()}
+            {content}
           </div>
         </div>
       </div>
