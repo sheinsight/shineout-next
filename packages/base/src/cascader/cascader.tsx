@@ -695,6 +695,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
     if(!open) return
     updatePathByValue();
+    if (props.renderOptionList) {
+      updatePath();
+    }
   }, [value, open]);
 
   useEffect(() => {
