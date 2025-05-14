@@ -291,10 +291,16 @@ export default (props: TheadProps) => {
       );
       return;
     }
-    const style = typeof colTemp2.name === 'string' ? fixedStyle : { padding: 0, ...fixedStyle };
+    let style = typeof colTemp2.name === 'string' ? fixedStyle : { padding: 0, ...fixedStyle };
+    if(colTemp2?.groupProps?.style){
+      style = {
+        ...style,
+        ...colTemp2.groupProps.style,
+      }
+    }
     trs[level].push(
       <th
-        className={classNames(cellClassName, tableClasses?.cellGroup)}
+        className={classNames(cellClassName, tableClasses?.cellGroup, colTemp2?.groupProps?.className)}
         style={style}
         key={colTemp2.key}
         colSpan={colTemp2.colSpan}
