@@ -57,7 +57,6 @@ export interface ResultProps<DataItem, Value>
     index?: number,
   ) => void;
   convertBr?: string | ((text: string) => string);
-  morePopoverContainer?: React.MutableRefObject<HTMLDivElement | null>;
   classes: {
     tag: string;
     tagOnly: string;

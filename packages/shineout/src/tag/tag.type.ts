@@ -3,7 +3,7 @@ import { TagProps as UnStyledTagProps, TagInputProps as UnStyledTagInputProps } 
 /**
  * @title Tag
  */
-export type TagProps = Omit<UnStyledTagProps, 'jssStyle' | 'inlineStyle'>;
+export type TagProps = Omit<UnStyledTagProps, 'jssStyle' | 'inlineStyle' | 'onMouseDown'>;
 
 /**
  * @title Tag.Input
