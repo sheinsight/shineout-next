@@ -160,7 +160,6 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
             className={compressedClassName}
             visible={visible}
             onVisibleChange={setVisible}
-            getPopupContainer={() => props.morePopoverContainer?.current as HTMLElement}
           >
             <div className={styles.moreWrapper} onClick={(e) => e.stopPropagation()}>
               {compressed === 'no-repeat' ? null : before}

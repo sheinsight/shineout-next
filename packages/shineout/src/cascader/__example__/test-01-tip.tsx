@@ -44,7 +44,7 @@ const data: DataItem[] = [
 export default () => {
   return (
     <div>
-      <Cascader
+      {/* <Cascader
         tip='test tip'
         width={300}
         clearable
@@ -72,7 +72,7 @@ export default () => {
         data={data}
         keygen='value'
         renderItem={(n) => `${n?.value}`}
-      />
+      /> */}
     </div>
   );
 };

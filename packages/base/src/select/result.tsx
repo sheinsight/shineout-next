@@ -63,6 +63,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const render = useRender();
   const resultRef = useRef<HTMLDivElement>(null);
   const prevMore = useRef(more);
+  const removeLock = useRef(false);
   const showInput = allowOnFilter;
   const mounted = useRef(false);
   const styles = props.classes;
@@ -164,6 +165,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
+  const handleCloseMouseDown = () => {
+    removeLock.current = true;
+    setTimeout(() => {
+      removeLock.current = false;
+    }, 0);
+  };
+
   const renderResultItem = (
     item: DataItem | UnMatchedData,
     index: number,
@@ -215,6 +223,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         className={classNames(styles.tag, more === 1 && styles.tagOnly, resultClassName)}
         closable={closeable && 'only'}
         onClose={closeable && handleClose}
+        onMouseDown={closeable ? handleCloseMouseDown : undefined}
         onClick={handleClick}
         jssStyle={jssStyle as any}
         inlineStyle={true}
@@ -302,7 +311,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       renderCompressed={renderCompressed}
       compressedClassName={compressedClassName}
       showNum={moreNumber}
-      morePopoverContainer={props.morePopoverContainer}
     ></More>
   );
 
@@ -334,6 +342,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const handleResetMore = () => {
     if (!compressed) return;
     if (isCompressedBound()) return;
+    if (removeLock.current) return;
+
     setMore(-1);
     setShouldResetMore(true);
   };

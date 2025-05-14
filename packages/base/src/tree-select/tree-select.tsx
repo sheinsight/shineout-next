@@ -589,7 +589,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           onRemove={handleRemove}
           classes={styles}
           setInputText={setInputText}
-          morePopoverContainer={targetRef}
         ></Result>
       </div>
     );

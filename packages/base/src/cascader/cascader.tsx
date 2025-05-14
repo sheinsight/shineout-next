@@ -510,7 +510,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           checkUnMatched={checkUnMatched}
           getDataByValues={getDataByValues as any}
           setInputText={setInputText}
-          morePopoverContainer={targetRef}
         ></Result>
       </div>
     );
