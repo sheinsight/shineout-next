@@ -304,6 +304,16 @@ export interface TableColumnItem<DataItem> {
   group?: string | React.ReactNode | Array<string | React.ReactNode>;
 
   /**
+   * @en The group of header column, the extra props
+   * @cn 表头分组的额外属性
+   * @version 3.7.0
+   */
+  groupProps?: {
+    className?: string;
+    style?: React.CSSProperties;
+  }
+
+  /**
    * @en hide the column, only work on row-expand column
    * @cn 只针对行展开列有效，表示是否隐藏该列
    */
@@ -461,6 +471,10 @@ export interface TableGroupColumn {
   columns: TableHeadColumn[];
   lastFixed?: boolean;
   index: number;
+  groupProps?: {
+    className?: string;
+    style?: React.CSSProperties;
+  };
 }
 
 export type TableHeadColumn = TableGroupColumn | TableFormatColumn<any>;

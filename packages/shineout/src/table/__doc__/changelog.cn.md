@@ -1,3 +1,10 @@
+## 3.7.0-beta.23
+2025-05-14
+
+### 🆕 Feature
+
+- `Table` 的 columns 新增 `groupProps` 属性，支持设置 style 和 className ([#1112](https://github.com/sheinsight/shineout-next/pull/1112))
+
 ## 3.7.0-beta.21
 2025-05-07
 
