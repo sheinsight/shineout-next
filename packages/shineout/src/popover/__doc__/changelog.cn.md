@@ -4,6 +4,11 @@
 ### 🆕 Feature
 - `Popover` 新增 `disabled` 属性，是否禁用 ([#1032](https://github.com/sheinsight/shineout-next/pull/1032))
 
+## 3.6.7-beta.1
+2025-05-14
+
+### 🐞 BugFix
+- 修复 `Popover` 嵌套场景下关闭顺序不正确的问题 ([#1111](https://github.com/sheinsight/shineout-next/pull/1111))
 
 ## 3.6.4-beta.5
 2025-04-17

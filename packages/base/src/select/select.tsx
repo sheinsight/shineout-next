@@ -594,7 +594,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           onRemove={handleRemove}
           classes={styles}
           setInputText={setInputText}
-          morePopoverContainer={targetRef}
         ></Result>
       </div>
     );

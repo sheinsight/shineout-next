@@ -165,6 +165,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   result: {
     display: 'flex',
     flex: '1',
+    height: '100%',
     minWidth: 0,
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,

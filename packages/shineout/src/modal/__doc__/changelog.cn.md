@@ -5,6 +5,13 @@
 
 - 修复 `Modal` 组件初始化时样式延迟注入导致其他组件测绘不准确的问题 ([#1101](https://github.com/sheinsight/shineout-next/pull/1101))
 
+## 3.6.6-beta.7
+2025-05-12
+
+### 🐞 BugFix
+
+- 修复 `Modal` 开启 `destory` 属性关闭后多次执行渲染函数的问题 ([#1109](https://github.com/sheinsight/shineout-next/pull/1109))
+
 ## 3.6.5-beta.12
 2025-04-29
 

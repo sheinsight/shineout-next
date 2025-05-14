@@ -29,6 +29,7 @@ const Tag = (props: TagProps) => {
     onCompleted,
     onEnterPress,
     closable,
+    onMouseDown,
     ...rest
   } = props;
 
@@ -118,10 +119,12 @@ const Tag = (props: TagProps) => {
     }
 
     return (
-      <div className={tagStyle.closeIcon} onClick={handleClose}>
-        <span className={tagStyle.closeIconWrapper}>
-          {Icons.tag.Close}
-        </span>
+      <div
+        className={tagStyle.closeIcon}
+        onClick={handleClose}
+        onMouseDown={onMouseDown}
+      >
+        <span className={tagStyle.closeIconWrapper}>{Icons.tag.Close}</span>
       </div>
     );
   };
