@@ -287,7 +287,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 将选中值合并，只在多选模式下有效；为 'no-repeat' 时弹出框中不重复展示值
    * @default false
    */
-  compressed?: boolean | 'no-repeat';
+  compressed?: boolean | 'no-repeat' | 'hide-popover';
   /**
    * @en Set visible of datepicker popup
    * @cn 控制浮层显隐

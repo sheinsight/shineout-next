@@ -1,7 +1,7 @@
 /**
- * cn -
+ * cn - 合并选项
  *    -- 使用`compressed`属性可以合并选中结果
- * en -
+ * en - Compressed
  *    -- Set `compressed` to true, you can merge the selected results
  */
 import React, { useState } from 'react';

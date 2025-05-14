@@ -1,7 +1,7 @@
 /**
- * cn -
+ * cn - 合并选项
  *    -- 设置`compressed`属性，当选项超长的时候会合并选项
- * en -
+ * en - Compressed
  *    -- Set the `compressed` property, when the option is too long, the option will be merged
  */
 import React from 'react';

@@ -1,3 +1,10 @@
+## 3.6.6-beta.6
+2025-05-09
+
+### 🐞 BugFix
+
+- 修复 `DatePicker` 的 `open` 受控用法下，`onChange` 多了一次调用的问题 ([#1107](https://github.com/sheinsight/shineout-next/pull/1107))
+
 ## 3.6.2-beta.3
 2025-04-01
 

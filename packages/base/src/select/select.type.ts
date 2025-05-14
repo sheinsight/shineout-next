@@ -383,7 +383,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 将选中值合并，只在多选模式下有效; 为 "no-repeat" 时弹出框中不重复展示值
    * @default false
    */
-  compressed?: boolean | 'no-repeat';
+  compressed?: boolean | 'no-repeat' | 'hide-popover';
 
   /**
    * @en When compressed is True,the comptessedBound can limit the numbers of multiple selected item"s label

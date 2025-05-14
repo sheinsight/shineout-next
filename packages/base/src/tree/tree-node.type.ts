@@ -6,7 +6,7 @@ import { TreeListProps } from './tree-list.type';
 export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className'>,
-    Pick<TreeProps<DataItem, Value>, 'actionOnClick'> {
+    Pick<TreeProps<DataItem, Value>, 'actionOnClick' | 'onChange'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
   data: DataItem;
@@ -16,7 +16,6 @@ export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
   doubleClickExpand?: boolean;
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
-  onChange?: (value: Value) => void;
   onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   iconClass?: string;
@@ -49,7 +48,7 @@ export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
 export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey'>,
     Pick<CommonType, 'className'>,
-    Pick<TreeProps<DataItem, Value>, 'actionOnClick'> {
+    Pick<TreeProps<DataItem, Value>, 'actionOnClick' | 'onChange'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
   data: DataItem;
@@ -58,7 +57,6 @@ export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
   doubleClickExpand?: boolean;
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
-  onChange?: (value: Value) => void;
   childrenClass?: ((data: DataItem) => string) | string;
   onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;

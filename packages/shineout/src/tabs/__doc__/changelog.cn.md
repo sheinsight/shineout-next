@@ -1,3 +1,11 @@
+## 3.6.6-beta.1
+2025-04-30
+
+### 🐞 BugFix
+- 修复 `Tabs.Panel` 设置 `background` 非预期的影响到shape为button和fill的样式（Regression: since v3.6.2） ([#1094](https://github.com/sheinsight/shineout-next/pull/1094))
+
+
+
 ## 3.6.2-beta.1
 2025-03-31
 

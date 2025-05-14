@@ -1,3 +1,15 @@
+## 3.6.6-beta.4
+2025-05-09
+
+### 🐞 BugFix
+- 修复 `Cascader`结果框高度不继承的问题  ([#1105](https://github.com/sheinsight/shineout-next/pull/1105))
+
+## 3.6.6-beta.3
+2025-05-07
+
+### 💎 Enhancement
+- `Cascader` 增强 `compressed` 属性，新增 `hide-popover` 模式隐藏合并后的选项，仅展示合并数量 ([#1098](https://github.com/sheinsight/shineout-next/pull/1098))
+
 ## 3.6.5-beta.1
 2025-04-23
 
