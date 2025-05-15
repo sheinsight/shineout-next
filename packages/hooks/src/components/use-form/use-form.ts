@@ -222,7 +222,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
             if (errors.length > 0) {
               const errorFields = [];
               for (const key in context.errors) {
-                if (context.errors[key]) {
+                if (context.errors[key] && context.names.has(key)) {
                   errorFields.push({
                     name: key,
                     errors: [(context.errors[key]?.message as string) || ''],
@@ -338,13 +338,14 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
         values.forEach((key) => {
           // upload组件返回的可能是函数: (prev) => [...prev, file]
-          const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key]
+          const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key];
           deepSet(draft, key, valueOfKey, deepSetOptions);
         });
         values.forEach((key) => {
           if (option.validate) {
             context.validateMap[key]?.forEach((validate) => {
-              const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key]
+              const valueOfKey =
+                typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key];
               validate(key, valueOfKey, current(draft));
             });
           }
@@ -541,7 +542,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
       if (validateFieldSet.size === 0 && updateFieldSet.size === 0) {
         context.names.delete(n);
-        delete context.errors[n];
         delete context.defaultValues[n];
       }
       const finalReserveAble = props.reserveAble ?? reserveAble;
