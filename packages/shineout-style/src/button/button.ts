@@ -197,7 +197,6 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     borderRadius: Token.buttonBorderRadius,
     lineHeight: Token.lineHeightDynamic,
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
-    transition: 'all .1s linear',
     fontFamily: 'inherit',
     // height: Token.buttonHeight,
 
@@ -207,6 +206,10 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
 
     '[class*="button-group"] > & + &': {
       margin: 0,
+    },
+
+    '&:hover': {
+      transition: 'all .1s linear',
     },
 
     '&:active': {
