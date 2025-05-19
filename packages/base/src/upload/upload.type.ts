@@ -215,5 +215,5 @@ export interface UploadProps<T>
    * @cn 拖拽释放前的回调。允许用户自行处理拖拽事件以及读取文件列表，要求返回值必须为 FileList 类型
    * @version 3.7.0
    */
-  beforeDrop?: (e: React.DragEvent) => FileList;
+  beforeDrop?: (e: React.DragEvent) => Promise<FileList>;
 }

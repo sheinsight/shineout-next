@@ -9,15 +9,15 @@ export interface DropProps
   onDrop?: (files: File[], index: number) => void;
   className?: string;
   children?: React.ReactNode;
-  beforeDrop?: (e: React.DragEvent) => FileList;
+  beforeDrop?: (e: React.DragEvent) => Promise<FileList>;
 }
 const useDrop = (props: DropProps) => {
   const [isoOver, setOver] = useState(false);
-  const handleFileDrop = (e: React.DragEvent) => {
+  const handleFileDrop = async (e: React.DragEvent) => {
     const { accept, multiple, beforeDrop, onDrop, dropData } = props;
     let files: FileList;
     if (beforeDrop && util.isFunc(beforeDrop)) {
-      files = beforeDrop(e);
+      files = await beforeDrop(e);
     } else {
       files = e.dataTransfer.files;
     }
