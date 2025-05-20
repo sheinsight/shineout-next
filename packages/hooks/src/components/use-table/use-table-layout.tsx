@@ -340,7 +340,6 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     width: tableWidth,
     shouldLastColAuto: props.columnResizable && !adjust,
     scrollWidth,
-    // maxScrollLeft: scrollWidth - context.clientWidth,
     resizeFlag,
   };
 };

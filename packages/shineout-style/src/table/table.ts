@@ -235,6 +235,11 @@ const tableStyle: JsStyles<TableClassType> = {
       overflowX: 'hidden',
     },
   },
+  emptyHeader: {
+    position: 'sticky',
+    top: 0,
+    zIndex: 1,
+  },
   emptyWrapper: {
     minHeight: '170px',
     width: '100%',

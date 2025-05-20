@@ -46,12 +46,14 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableClasses = props?.jssStyle?.table?.() as TableClasses;
   const tbodyRef = useRef<HTMLTableElement | null>(null);
   const theadRef = useRef<HTMLTableElement | null>(null);
+  const theadIdRef = useRef<string>(`thead-container-${util.generateUUID()}`);
   const tfootRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const headMirrorScrollRef = useRef<HTMLDivElement | null>(null);
   const bottomMirrorScrollRef = useRef<HTMLDivElement | null>(null);
   const tableRef = useRef<HTMLDivElement | null>(null);
   const [scrolling, setScrolling] = useState(false);
+  const [fakeVirtual, setFakeVirtual] = useState(false);
 
   const browserScrollbarWidth = useScrollbarWidth();
 
@@ -76,6 +78,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   const virtual =
+    !fakeVirtual &&
     props.data?.length &&
     props.rowsInView !== 0 &&
     (!!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
@@ -230,9 +233,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const syncHeaderScroll = usePersistFn((left: number) => {
     if (props.hideHeader || !props.sticky) return;
 
-    if(theadRef && theadRef?.current && theadRef?.current?.parentElement){
-      theadRef.current.parentElement.scrollLeft = left;
-    }
+    // why use querySelectorAll: thead经历了Sticky组件的渲染再回来时，theadRef就丢失了
+    const theads = tableRef?.current?.querySelectorAll(`[data-soui-role=${theadIdRef.current}]`);
+    theads?.forEach((item: Element) => {
+      item.scrollLeft = left;
+    })
   });
 
   // 简单表格的滚动事件
@@ -312,6 +317,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     return null;
   };
 
+  const $empty = renderEmpty();
+
   const renderTable = () => {
     const Group = (
       <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
@@ -390,12 +397,19 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       top: sticky?.top ?? 0,
       css: sticky?.css,
       parent: tableRef?.current,
+      onChange: (isSticky: boolean) => {
+        if(isSticky){
+          syncHeaderScroll(scrollRef.current?.scrollLeft || 0);
+        }
+      }
     };
 
     const isRenderVirtualTable = virtual || props.sticky || !props.data?.length;
 
+
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
+      !!$empty && tableClasses.emptyHeader,
       props.sticky && isScrollY && tableClasses.scrollY,
       props.sticky && !isScrollY && tableClasses.scrollX,
     );
@@ -479,7 +493,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
 
     const $headTable = (
-      <div className={headWrapperClass}>
+      <div className={headWrapperClass} {...util.getDataAttribute({ role: theadIdRef.current })}>
         <table style={{ width }} ref={theadRef}>
           {Group}
           <Thead {...headCommonProps} />
@@ -488,11 +502,13 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     );
 
     if (isRenderVirtualTable) {
+
+      const showStickyHeader = !props.hideHeader && props.sticky
       return (
         <>
           {renderHeadMirrorScroller()}
 
-          {!props.hideHeader && props.sticky && (
+          {showStickyHeader && (
             <StickyWrapper {...stickyProps}>{$headTable}</StickyWrapper>
           )}
 
@@ -505,6 +521,9 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             defaultHeight={context.emptyHeight}
             isScrollY={isScrollY}
             isScrollX={isScrollX}
+            isEmpty={!!$empty}
+            tableRef={tableRef}
+            setFakeVirtual={setFakeVirtual}
           >
             {/* thead of virtual */}
             {!props.hideHeader && !props.sticky && $headTable}
@@ -534,7 +553,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             ) : null}
 
             {/* empty of virtual */}
-            {renderEmpty()}
+            {$empty}
           </Scroll>
 
           {renderBottomMirrorScroller()}
@@ -554,7 +573,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             ) : (
               <Tbody {...bodyCommonProps} />
             )}
-            {<Tfoot {...footCommonProps} />}
+            {showFoot && <Tfoot {...footCommonProps} />}
           </table>
         </div>
         {renderBottomMirrorScroller()}
@@ -603,6 +622,12 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     scrollEl.scrollLeft = left;
     theadRef.current.parentElement.scrollLeft = left;
   });
+
+  useEffect(() => {
+    if(!props.sticky || !scrollRef.current || !isScrollX) return;
+    // sticky场景下，从空数据到有数据切换时，同步一次滚动条的位置
+    syncHeaderScroll(scrollRef.current?.scrollLeft || 0);
+  }, [isScrollX, props.sticky, $empty])
 
   useEffect(() => {
     // 绑定 wheel 事件
