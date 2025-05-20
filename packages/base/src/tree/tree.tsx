@@ -120,19 +120,6 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     return props.height || styleHeight;
   };
 
-  const handleUpdateExpanded = (expanded?: KeygenResult[]) => {
-    const tempExpandMap = new Set(expanded);
-    if (!expanded) return;
-
-    if (virtual) {
-      datum.expandedFlat(expanded);
-    }
-
-    datum.updateMap.forEach((update, id) => {
-      update('expanded', tempExpandMap.has(id));
-    });
-  };
-
   const handleUpdateActive = (active?: KeygenResult, item?: DataItem) => {
     setActive(active);
 
@@ -183,7 +170,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     const newData = produce(data, (draft) => {
       let node: any = draft;
       let temp: DataItem[];
-      let removeNode: () => void = () => {};
+      let removeNode: () => void = () => { };
       let offset = 0;
       current.indexPath.forEach((p, i) => {
         if (i < current.indexPath.length - 1) {
@@ -205,7 +192,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
           if (current.index <= target.index) {
             offset = -1;
           }
-          removeNode = () => {};
+          removeNode = () => { };
         }
       });
 
@@ -299,7 +286,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
       return;
     }
     if (!props.expanded) return;
-    handleUpdateExpanded(expanded);
+    datum.updateExpanded(expanded);
   }, [expanded]);
 
   useEffect(() => {

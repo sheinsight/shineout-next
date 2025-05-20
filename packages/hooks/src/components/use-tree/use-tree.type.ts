@@ -184,4 +184,5 @@ export interface TreeDatum<DataItem> {
   dataMap: Map<KeygenResult, DataItem>;
   valueMap: Map<KeygenResult, CheckedStatusType>;
   dataFlatStatusMap: Map<KeygenResult, FlatMapType>;
+  updateExpanded: (expanded?: KeygenResult[]) => void;
 }
