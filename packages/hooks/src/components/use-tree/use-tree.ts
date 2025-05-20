@@ -717,7 +717,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     }
 
     updateInnerCheckStatus();
-  }, [data]);
+  }, [props.data]);
 
   useEffect(() => {
     if (props.datum) return;
