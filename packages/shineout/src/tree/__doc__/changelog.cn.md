@@ -1,3 +1,10 @@
+## 3.6.7-beta.4
+2025-05-20
+
+### 🐞 BugFix
+
+- 修复 `Tree` 在 data 发生变化后 `defaultExpanded` 不生效的问题 ([#1119](https://github.com/sheinsight/shineout-next/pull/1119))
+
 ## 3.6.7-beta.3
 2025-05-20
 
