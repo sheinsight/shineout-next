@@ -211,9 +211,9 @@ export interface UploadProps<T>
    */
   hideHandler?: boolean;
   /**
-   * @en Callback before dropping. Allow users to handle drag events and read file lists by themselves, and require the return value to be of type FileList
-   * @cn 拖拽释放前的回调。允许用户自行处理拖拽事件以及读取文件列表，要求返回值必须为 FileList 类型
+   * @en Callback before dropping. Allow users to handle drag events and read file lists by themselves, and require the return value to be of type Promise<FileList>
+   * @cn 拖拽释放前的回调。允许用户自行处理拖拽事件以及读取文件列表，要求返回值必须为 Promise<FileList> 类型
    * @version 3.7.0
    */
-  beforeDrop?: (e: React.DragEvent) => FileList;
+  beforeDrop?: (e: React.DragEvent) => Promise<FileList>;
 }
