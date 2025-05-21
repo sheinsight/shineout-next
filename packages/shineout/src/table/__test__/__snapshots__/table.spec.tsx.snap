@@ -206,9 +206,6 @@ exports[`Table[Base] should render correctly  1`] = `
             </td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr />
-        </tfoot>
       </table>
     </div>
   </div>
@@ -421,9 +418,6 @@ exports[`Table[Base] should render correctly about border 1`] = `
             </td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr />
-        </tfoot>
       </table>
     </div>
   </div>
@@ -761,9 +755,6 @@ exports[`Table[Base] should render correctly about group 1`] = `
           </td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr />
-      </tfoot>
     </table>
   </div>
 </div>
@@ -1047,9 +1038,6 @@ exports[`Table[Base] should render correctly about size 1`] = `
             </td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr />
-        </tfoot>
       </table>
     </div>
   </div>

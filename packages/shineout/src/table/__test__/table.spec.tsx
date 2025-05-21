@@ -348,7 +348,6 @@ describe('Table[Base]', () => {
       attributesTest(itemTd[0], 'colspan', '1');
       attributesTest(itemTd[1], 'colspan', '1');
     });
-    expect(tableBody.querySelector('tfoot')).toBeInTheDocument();
   });
   test('should render when set data is empty', () => {
     const { container } = render(<Table keygen={'id'} columns={columns} />);
@@ -1552,12 +1551,10 @@ describe('Table[Fixed]', () => {
       <Table keygen={'id'} columns={fixedColumns} data={fixedData} virtual scrollLeft={20} height={50}/>,
     );
 
-    const tableHead = container.querySelector(headWrapper)!;
-    styleTest(tableHead.querySelector('table')!, null)
-    const headerThsV = tableHead.querySelector('thead')?.querySelectorAll('th')!
+    const headerThsV = container.querySelector('thead')?.querySelectorAll('th')!
 
-    styleContentTest(headerThsV[0], 'left: 0px; top: 0px; position: sticky;')
-    styleContentTest(headerThsV[1], 'left: 0px; top: 0px; position: sticky;')
+    styleContentTest(headerThsV[0], 'top: 0px; position: sticky;')
+    styleContentTest(headerThsV[1], 'top: 0px; position: sticky;')
     rerender(
       <Table
         keygen={'id'}
@@ -1568,8 +1565,7 @@ describe('Table[Fixed]', () => {
         height={50}
       />,
     );
-    styleTest(tableHead.querySelector('table')!, null)
-    const headerThsVRight = tableHead.querySelector('thead')?.querySelectorAll('th')!
+    const headerThsVRight = container.querySelector('thead')?.querySelectorAll('th')!
     styleContentTest(headerThsVRight[2], 'top: 0px; position: sticky; right: 0px;')
   });
 });

@@ -359,7 +359,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     if (props.disabled) return props.data;
     return [...props.data].slice(startIndex, startIndex + finalRowsInView);
   }
-  , [props.data, startIndex, finalRowsInView]);
+  , [props.data, props.disabled, startIndex, finalRowsInView]);
 
   const translateStyle = useMemo(() => {
     let t = innerTop + offsetY;
