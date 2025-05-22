@@ -395,4 +395,9 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @version 3.6.0
    */
   emptyText?: React.ReactNode | boolean;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
+  beforeChange?: (value: Value) => any;
 }
