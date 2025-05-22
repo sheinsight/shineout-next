@@ -37,6 +37,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     onNodeClick,
     onToggle,
     actionOnClick,
+    size,
   } = props;
 
   const config = useConfig();
@@ -92,12 +93,14 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     if (onToggle) onToggle(id, nextExpanded);
   };
 
+  const indent = size === "large" ? 32 : 24;
+
   return (
     <div
       ref={element}
       className={rootClass}
       dir={config.direction}
-      style={{ paddingLeft: level * 24 }}
+      style={{ paddingLeft: level * indent }}
     >
       <TreeVirtualContent
         virtual

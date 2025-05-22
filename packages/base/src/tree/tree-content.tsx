@@ -40,7 +40,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     actionOnClick,
   } = props;
   const forceUpdate = useRender();
-  const { isDisabled, bindUpdate } = useTreeContext();
+  const { isDisabled, bindUpdate, size } = useTreeContext();
   const config = useConfig();
   const disabled = isDisabled(id);
 
@@ -195,6 +195,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   const renderCheckbox = () => {
     return (
       <Checkbox
+        size={size}
         jssStyle={jssStyle}
         id={id}
         disabled={disabled}
