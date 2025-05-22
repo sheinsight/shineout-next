@@ -449,4 +449,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @version 3.7.0
    */
   renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
+  beforeChange?: (value: Value) => any;
 }
