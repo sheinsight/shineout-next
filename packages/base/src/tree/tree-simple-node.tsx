@@ -25,9 +25,6 @@ initPlaceElement();
 const Node = <DataItem, Value extends KeygenResult[]>(
   props: TreeSimpleNodeProps<DataItem, Value>,
 ) => {
-  console.log('======================')
-  console.log('props.size: >>', props.size)
-  console.log('======================')
   const {
     jssStyle,
     id,
