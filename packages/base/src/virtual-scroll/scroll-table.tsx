@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
@@ -150,7 +150,7 @@ const Scroll = (props: ScrollProps) => {
   };
 
   // 非定高的Table但依旧采用了virtual渲染方式，需要渲染出全部的data
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!props.tableRef.current) return;
     const rootTableHeight = props.tableRef.current.clientHeight;
     // 判断Table的根节点dom高度是否发生变化，如果变化了，则是因为不定高，被内部元素撑高了导致的
