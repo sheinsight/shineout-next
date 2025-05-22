@@ -2705,7 +2705,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="soui-tree soui-tree-tree soui-tree-line soui-tree-size-small"
+    class="soui-tree soui-tree-tree soui-tree-noline soui-tree-size-small"
   >
     <div
       class="soui-tree-root"
@@ -2737,7 +2737,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
               >
                 <path
                   clip-rule="evenodd"
-                  d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                  d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
                   fill-rule="evenodd"
                 />
               </svg>
@@ -2748,6 +2748,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
             data-expanded="true"
             dir="ltr"
           >
+            <div
+              class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+            >
+              <input
+                style="display: none;"
+                tabindex="0"
+                type="checkbox"
+              />
+              <span
+                class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+              >
+                <i
+                  class="soui-checkbox-indicator"
+                  data-soui-role="checkbox-indicator"
+                  tabindex="1"
+                />
+              </span>
+            </div>
             <div
               class="soui-tree-text"
               dir="ltr"
@@ -2786,7 +2804,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                   >
                     <path
                       clip-rule="evenodd"
-                      d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                      d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
                       fill-rule="evenodd"
                     />
                   </svg>
@@ -2797,6 +2815,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                 data-expanded="true"
                 dir="ltr"
               >
+                <div
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                  >
+                    <i
+                      class="soui-checkbox-indicator"
+                      data-soui-role="checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
                 <div
                   class="soui-tree-text"
                   dir="ltr"
@@ -2835,7 +2871,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                          d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
                           fill-rule="evenodd"
                         />
                       </svg>
@@ -2846,6 +2882,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                     data-expanded="true"
                     dir="ltr"
                   >
+                    <div
+                      class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                    >
+                      <input
+                        style="display: none;"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <span
+                        class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                      >
+                        <i
+                          class="soui-checkbox-indicator"
+                          data-soui-role="checkbox-indicator"
+                          tabindex="1"
+                        />
+                      </span>
+                    </div>
                     <div
                       class="soui-tree-text"
                       dir="ltr"
@@ -2872,6 +2926,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                         dir="ltr"
                       >
                         <div
+                          class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                        >
+                          <input
+                            style="display: none;"
+                            tabindex="0"
+                            type="checkbox"
+                          />
+                          <span
+                            class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                          >
+                            <i
+                              class="soui-checkbox-indicator"
+                              data-soui-role="checkbox-indicator"
+                              tabindex="1"
+                            />
+                          </span>
+                        </div>
+                        <div
                           class="soui-tree-text"
                           dir="ltr"
                         >
@@ -2893,6 +2965,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                         data-expanded="false"
                         dir="ltr"
                       >
+                        <div
+                          class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                        >
+                          <input
+                            style="display: none;"
+                            tabindex="0"
+                            type="checkbox"
+                          />
+                          <span
+                            class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                          >
+                            <i
+                              class="soui-checkbox-indicator"
+                              data-soui-role="checkbox-indicator"
+                              tabindex="1"
+                            />
+                          </span>
+                        </div>
                         <div
                           class="soui-tree-text"
                           dir="ltr"
@@ -2917,6 +3007,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                     data-expanded="false"
                     dir="ltr"
                   >
+                    <div
+                      class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                    >
+                      <input
+                        style="display: none;"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <span
+                        class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                      >
+                        <i
+                          class="soui-checkbox-indicator"
+                          data-soui-role="checkbox-indicator"
+                          tabindex="1"
+                        />
+                      </span>
+                    </div>
                     <div
                       class="soui-tree-text"
                       dir="ltr"
@@ -2954,7 +3062,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                   >
                     <path
                       clip-rule="evenodd"
-                      d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                      d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
                       fill-rule="evenodd"
                     />
                   </svg>
@@ -2965,6 +3073,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                 data-expanded="true"
                 dir="ltr"
               >
+                <div
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                  >
+                    <i
+                      class="soui-checkbox-indicator"
+                      data-soui-role="checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
                 <div
                   class="soui-tree-text"
                   dir="ltr"
@@ -2990,6 +3116,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                     data-expanded="false"
                     dir="ltr"
                   >
+                    <div
+                      class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                    >
+                      <input
+                        style="display: none;"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <span
+                        class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                      >
+                        <i
+                          class="soui-checkbox-indicator"
+                          data-soui-role="checkbox-indicator"
+                          tabindex="1"
+                        />
+                      </span>
+                    </div>
                     <div
                       class="soui-tree-text"
                       dir="ltr"
@@ -3029,7 +3173,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
               >
                 <path
                   clip-rule="evenodd"
-                  d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                  d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
                   fill-rule="evenodd"
                 />
               </svg>
@@ -3040,6 +3184,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
             data-expanded="true"
             dir="ltr"
           >
+            <div
+              class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+            >
+              <input
+                style="display: none;"
+                tabindex="0"
+                type="checkbox"
+              />
+              <span
+                class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+              >
+                <i
+                  class="soui-checkbox-indicator"
+                  data-soui-role="checkbox-indicator"
+                  tabindex="1"
+                />
+              </span>
+            </div>
             <div
               class="soui-tree-text"
               dir="ltr"
@@ -3078,7 +3240,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                   >
                     <path
                       clip-rule="evenodd"
-                      d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                      d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
                       fill-rule="evenodd"
                     />
                   </svg>
@@ -3089,6 +3251,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                 data-expanded="true"
                 dir="ltr"
               >
+                <div
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                  >
+                    <i
+                      class="soui-checkbox-indicator"
+                      data-soui-role="checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
                 <div
                   class="soui-tree-text"
                   dir="ltr"
@@ -3114,6 +3294,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                     data-expanded="false"
                     dir="ltr"
                   >
+                    <div
+                      class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                    >
+                      <input
+                        style="display: none;"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <span
+                        class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                      >
+                        <i
+                          class="soui-checkbox-indicator"
+                          data-soui-role="checkbox-indicator"
+                          tabindex="1"
+                        />
+                      </span>
+                    </div>
                     <div
                       class="soui-tree-text"
                       dir="ltr"
@@ -3151,7 +3349,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                   >
                     <path
                       clip-rule="evenodd"
-                      d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                      d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
                       fill-rule="evenodd"
                     />
                   </svg>
@@ -3162,6 +3360,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                 data-expanded="true"
                 dir="ltr"
               >
+                <div
+                  class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                  >
+                    <i
+                      class="soui-checkbox-indicator"
+                      data-soui-role="checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
                 <div
                   class="soui-tree-text"
                   dir="ltr"
@@ -3187,6 +3403,24 @@ exports[`Tree[Base] should render correctly about size 1`] = `
                     data-expanded="false"
                     dir="ltr"
                   >
+                    <div
+                      class="soui-tree-checkbox soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-small"
+                    >
+                      <input
+                        style="display: none;"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <span
+                        class="soui-checkbox-indicator-wrapper soui-checkbox-dark-indicator-wrapper"
+                      >
+                        <i
+                          class="soui-checkbox-indicator"
+                          data-soui-role="checkbox-indicator"
+                          tabindex="1"
+                        />
+                      </span>
+                    </div>
                     <div
                       class="soui-tree-text"
                       dir="ltr"

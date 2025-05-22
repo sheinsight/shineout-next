@@ -74,7 +74,7 @@ export default () => {
     return `node ${node.id}`;
   };
 
-  const [size, setSize] = React.useState<'small' | 'default' | 'large'>('large');
+  const [size, setSize] = React.useState<'small' | 'default' | 'large'>('small');
 
   return (
     <div>
