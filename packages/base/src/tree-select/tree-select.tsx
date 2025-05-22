@@ -89,6 +89,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onChangeAddition,
     onEnterExpand,
     onExpand,
+    beforeChange,
     filterSameChange,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
@@ -110,6 +111,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     control: 'value' in props,
     filterSameChange: filterSameChange,
     multiple,
+    beforeChange,
   });
 
   const checkEmpty = () => {

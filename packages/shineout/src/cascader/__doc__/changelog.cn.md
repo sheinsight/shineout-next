@@ -1,3 +1,9 @@
+## 3.7.0-beta.27
+2025-05-22
+
+### 🐞 BugFix
+- 修复 `Cascader` 的 `beforeChange` 不生效的问题 ([#1120](https://github.com/sheinsight/shineout-next/pull/1120))
+
 ## 3.6.6-beta.4
 2025-05-09
 

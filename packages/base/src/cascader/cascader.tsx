@@ -89,6 +89,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     size,
     virtual,
     filterSameChange,
+    beforeChange,
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
@@ -148,6 +149,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     defaultValue,
     childrenKey,
     value: valueProp,
+    beforeChange,
     onChange: onChangeProp,
     filterSameChange,
   });
