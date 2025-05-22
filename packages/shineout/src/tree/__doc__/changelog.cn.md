@@ -1,3 +1,11 @@
+## 3.7.0-beta.28
+2025-05-22
+
+### 🆕 Feature
+
+- `Tree` 新增 `size` 属性，可配置紧凑或稀疏的样式 ([#1121](https://github.com/sheinsight/shineout-next/pull/1121))
+
+
 ## 3.6.6-beta.2
 2025-05-06
 

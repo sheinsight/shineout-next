@@ -48,7 +48,7 @@ export interface TreeSimpleNodeProps<DataItem, Value extends KeygenResult[]>
 export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey'>,
     Pick<CommonType, 'className'>,
-    Pick<TreeProps<DataItem, Value>, 'actionOnClick' | 'onChange'> {
+    Pick<TreeProps<DataItem, Value>, 'actionOnClick' | 'onChange' | 'size'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
   data: DataItem;

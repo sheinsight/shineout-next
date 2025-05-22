@@ -4,7 +4,7 @@ import { Checkbox } from '../checkbox';
 import { useTreeContext } from './tree-context';
 
 const TreeCheckbox = (props: TreeCheckboxProps) => {
-  const { jssStyle, className, id, onChange, disabled, checked } = props;
+  const { jssStyle, className, id, onChange, disabled, checked, size } = props;
   const { unBindUpdate } = useTreeContext();
 
   useEffect(() => {
@@ -23,6 +23,7 @@ const TreeCheckbox = (props: TreeCheckboxProps) => {
       disabled={disabled}
       onChange={onChange}
       needStopPropagation={true}
+      size={size}
     ></Checkbox>
   );
 };

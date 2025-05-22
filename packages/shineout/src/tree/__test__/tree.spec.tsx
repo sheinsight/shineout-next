@@ -16,7 +16,7 @@ import {
   textContentTest,
 } from '../../tests/utils';
 import TreeBase from '../__example__/01-base';
-import TreeSize from '../__example__/test-02-size';
+import TreeSize from '../__example__/15-size';
 import TreeLine from '../__example__/03-line';
 import TreeExpand from '../__example__/04-01-expand';
 import TreeDisabled from '../__example__/05-disabled';

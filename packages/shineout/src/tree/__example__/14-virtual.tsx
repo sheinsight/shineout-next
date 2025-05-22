@@ -29,12 +29,13 @@ export default () => {
     <div style={{ height: 300 }}>
       <Tree
         virtual
-        line={false}
+        line={true}
         data={data}
         defaultExpandAll
         keygen='id'
         parentClickExpand
         mode={2}
+        size="small"
         onChange={(v) => console.log(v)}
         renderItem={renderItem}
       ></Tree>

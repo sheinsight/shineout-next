@@ -38,7 +38,8 @@ export type TreeClasses = {
   children: string;
   leaf: string;
   placement: string;
-  // textDisabled: string;
+  sizeSmall: string;
+  sizeLarge: string;
 };
 export type JsstyleType = {
   tree: () => TreeClasses;
@@ -241,6 +242,14 @@ export interface TreeProps<DataItem, Value extends any[]>
   rootStyle?: React.CSSProperties;
   ignoreSetFlat?: boolean;
   tiledData?: DataItem[];
+
+  /**
+   * @en size of Tree
+   * @cn 组件尺寸
+   * @default default
+   * @version 3.7.0
+   */
+  size?: 'small' | 'default' | 'large';
 }
 
 export interface VirtualTreeProps<DataItem, Value extends any[]>
