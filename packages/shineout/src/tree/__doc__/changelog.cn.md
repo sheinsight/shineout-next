@@ -13,6 +13,19 @@
 
 - `Tree` 新增 `size` 属性，可配置紧凑或稀疏的样式 ([#1121](https://github.com/sheinsight/shineout-next/pull/1121))
 
+## 3.6.7-beta.4
+2025-05-20
+
+### 🐞 BugFix
+
+- 修复 `Tree` 在开启虚拟列表后 data 为 undefined 时可能存在死循环的问题 ([#1119](https://github.com/sheinsight/shineout-next/pull/1119))
+
+## 3.6.7-beta.3
+2025-05-20
+
+### 🐞 BugFix
+
+- 修复 `Tree` 在 data 发生变化后 `defaultExpanded` 不生效的问题 ([#1118](https://github.com/sheinsight/shineout-next/pull/1118))
 
 ## 3.6.6-beta.2
 2025-05-06
