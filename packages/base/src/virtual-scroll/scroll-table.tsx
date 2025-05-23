@@ -153,8 +153,11 @@ const Scroll = (props: ScrollProps) => {
   useLayoutEffect(() => {
     if (!props.tableRef.current) return;
     const rootTableHeight = props.tableRef.current.clientHeight;
+    const container = containerRef.current
+    // 判断内容滚动高度是否真的超过了容器高度
+    const isRealScroll = container?.scrollHeight !== undefined && container.scrollHeight > rootTableHeight
     // 判断Table的根节点dom高度是否发生变化，如果变化了，则是因为不定高，被内部元素撑高了导致的
-    if (paddingTop > 0 && context.lastTableHeight > 0 && context.lastTableHeight !== rootTableHeight) {
+    if (paddingTop > 0 && context.lastTableHeight > 0 && context.lastTableHeight !== rootTableHeight && !isRealScroll) {
       props.setFakeVirtual(true);
       context.lastTableHeight = 0;
     } else {
@@ -164,7 +167,7 @@ const Scroll = (props: ScrollProps) => {
 
   if (props.isEmpty) {
     return <div {...scrollRoleProps}>
-      <div style={{width: scrollWidth}} />
+      <div style={{ width: scrollWidth }} />
       {props.children}
     </div>;
   }
