@@ -1,8 +1,8 @@
 /**
  * cn - 尺寸
- *    -- 设置 `size` 属性，设置组件的尺寸
+ *    -- 设置 `size` 属性配置不同的尺寸，有 small、default、large 三种可选值
  * en - Size
- *    -- Set the `size` property to set the size of the component
+ *    -- Set the `size` property to configure different sizes, with three options: `small`, `default`, and `large`
  */
 import React from 'react';
 import { Form, Radio, Switch, Tree, TYPE } from 'shineout';
@@ -75,8 +75,9 @@ export default () => {
   };
 
   const [size, setSize] = React.useState<'small' | 'default' | 'large'>('small');
-  const [line, setLine] = React.useState(false);
+  const [line, setLine] = React.useState(true);
   const [checkbox, setCheckbox] = React.useState(false);
+  const [virtual, setVirtual] = React.useState(false);
 
   return (
     <div>
@@ -95,14 +96,19 @@ export default () => {
         <Form.Item label='Checkbox'>
           <Switch size='small' value={checkbox} onChange={setCheckbox} style={{ marginTop: 8 }} />
         </Form.Item>
+        {/* <Form.Item label='Virtual'>
+          <Switch size='small' value={virtual} onChange={setVirtual} style={{ marginTop: 8 }} />
+        </Form.Item> */}
       </Form>
       <Tree
         data={data}
         keygen='id'
+        height={300}
         renderItem={renderItem}
         size={size}
         defaultExpandAll
         line={line}
+        virtual={virtual}
         value={checkbox ? [] : undefined}
         onChange={checkbox ? (v) => console.log(v) : undefined}
       />

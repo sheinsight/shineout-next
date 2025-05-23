@@ -22,6 +22,7 @@ export type TreeClasses = {
   root: string;
   line: string;
   noline: string;
+  lineIndent: string;
   contentDisabled: string;
   content: string;
   small: string;
@@ -228,8 +229,9 @@ export interface TreeProps<DataItem, Value extends any[]>
    */
   lineHeight?: number;
   /**
-   * @en The height of the list
-   * @cn 列表高度
+   * @en Height of the list, only effective when virtual is opened
+   * @cn 列表高度，仅开启virtual时生效
+   * @version 3.6.0
    */
   height?: number | string;
   /**
