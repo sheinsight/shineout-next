@@ -40,7 +40,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     actionOnClick,
   } = props;
   const forceUpdate = useRender();
-  const { isDisabled, bindUpdate, size } = useTreeContext();
+  const { isDisabled, bindUpdate, size, leafIcon } = useTreeContext();
   const config = useConfig();
   const disabled = isDisabled(id);
 
@@ -188,6 +188,31 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     if (Array.isArray(children) || children === null) return null;
     if (fetching && !children) return renderLoading();
     if (loader && children === undefined) return indicator;
+
+    if (leafIcon) {
+      let $iconContent = null;
+      if (leafIcon === true) {
+        $iconContent = Icons.tree.Leaf;
+      } else if (util.isFunc(leafIcon)) {
+        $iconContent = leafIcon(data);
+      } else {
+        $iconContent = leafIcon
+      }
+
+      return (
+        <span
+          className={contentStyle.iconWrapper}
+          dir={config.direction}
+        >
+          <span
+            className={classNames(contentStyle.icon, iconClass)}
+            dir={config.direction}
+          >
+            {$iconContent}
+          </span>
+        </span>
+      )
+    }
 
     return null;
   };

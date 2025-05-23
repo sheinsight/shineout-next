@@ -319,7 +319,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   return (
     <div ref={treeRef} className={rootClass} id={fieldId} {...rest}>
-      <Provider value={{...datum, size: props.size}}>{renderList()}</Provider>
+      <Provider value={{...datum, size: props.size, leafIcon: props.leafIcon }}>{renderList()}</Provider>
     </div>
   );
 };

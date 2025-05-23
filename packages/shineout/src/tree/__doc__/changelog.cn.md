@@ -1,3 +1,11 @@
+## 3.7.0-beta.30
+2025-05-23
+
+### 🆕 Feature
+
+- `Tree` 新增 `leafIcon` 属性，可配置叶子结点的图标 ([#1124](https://github.com/sheinsight/shineout-next/pull/1124))
+
+
 ## 3.7.0-beta.28
 2025-05-22
 

@@ -52,6 +52,7 @@ export type DatumType<DataItem> = ReturnType<typeof useTree<DataItem>>;
 
 type ActionOnClick = 'check' | 'expand';
 
+export type LeafIcon<T> = boolean | ((d: T) => React.ReactNode) | React.ReactNode
 export interface TreeProps<DataItem, Value extends any[]>
   extends Omit<BaseTreeProps<DataItem>, 'isControlled'>,
     Pick<CommonType, 'className' | 'style'> {
@@ -87,6 +88,14 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @cn 叶子节点的 class, 函数的参数为该条叶子节点数据
    */
   leafClass?: string | ((data: DataItem) => string);
+
+  /**
+   * @en The class of checkbox, the params of function is data
+   * @cn 开启叶子节点前的图标，或者自定义函数渲染
+   * @version 3.7.0
+   */
+  leafIcon?: LeafIcon<DataItem>;
+
   /**
    * @en Custom expand/collapse buttons
    * @cn 自定义展开/收起按钮
