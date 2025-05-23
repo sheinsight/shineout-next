@@ -62,6 +62,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     actionOnClick,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     tiledData,
+    height,
     ...rest
   } = props;
 

@@ -233,7 +233,7 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @cn 列表高度，仅开启virtual时生效
    * @version 3.6.0
    */
-  height?: number | string;
+  height?: number;
   /**
    * @en Number of list items displayed at the same time
    * @cn 同时展示的列表项数量
