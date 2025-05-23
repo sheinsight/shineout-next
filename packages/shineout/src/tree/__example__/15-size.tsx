@@ -5,7 +5,7 @@
  *    -- Set the `size` property to set the size of the component
  */
 import React from 'react';
-import { Radio, Switch, Tree, TYPE } from 'shineout';
+import { Form, Radio, Switch, Tree, TYPE } from 'shineout';
 type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
 
 interface DataItem {
@@ -75,16 +75,36 @@ export default () => {
   };
 
   const [size, setSize] = React.useState<'small' | 'default' | 'large'>('small');
+  const [line, setLine] = React.useState(false);
+  const [checkbox, setCheckbox] = React.useState(false);
 
   return (
     <div>
-      <div style={{ marginBottom: 12 }}>
-        <Radio.Group keygen data={['small', 'default', 'large']} value={size} onChange={setSize} />
-      </div>
-      <Tree data={data} keygen='id' line={false} renderItem={renderItem} size={size} defaultExpandAll
-
-      value={[]}
-      onChange={(v) => console.log(v)}
+      <Form inline style={{ marginBottom: 12 }} colon>
+        <Form.Item label='Size'>
+          <Radio.Group
+            keygen
+            data={['small', 'default', 'large']}
+            value={size}
+            onChange={setSize}
+          />
+        </Form.Item>
+        <Form.Item label='Line'>
+          <Switch size='small' value={line} onChange={setLine} style={{ marginTop: 8 }} />
+        </Form.Item>
+        <Form.Item label='Checkbox'>
+          <Switch size='small' value={checkbox} onChange={setCheckbox} style={{ marginTop: 8 }} />
+        </Form.Item>
+      </Form>
+      <Tree
+        data={data}
+        keygen='id'
+        renderItem={renderItem}
+        size={size}
+        defaultExpandAll
+        line={line}
+        value={checkbox ? [] : undefined}
+        onChange={checkbox ? (v) => console.log(v) : undefined}
       />
     </div>
   );
