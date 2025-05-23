@@ -204,10 +204,14 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       if (isArray(name)) {
         const dv = isArray(defaultValue) ? defaultValue : [];
         name.forEach((n, index) => {
-          controlFunc.bind(n, dv[index], validateField, update);
+          const v = formFunc?.getValue(n);
+          const bindedValue = v === undefined ? dv[index] : v;
+          controlFunc.bind(n, context.mounted ? bindedValue : dv[index], validateField, update);
         });
       } else {
-        controlFunc.bind(name, defaultValue, validateField, update);
+        const v = formFunc?.getValue(name);
+        const bindedValue = v === undefined ? defaultValue : v;
+        controlFunc.bind(name, context.mounted ? bindedValue : defaultValue, validateField, update);
       }
       if (context.mounted) {
         devUseWarning.warn(
