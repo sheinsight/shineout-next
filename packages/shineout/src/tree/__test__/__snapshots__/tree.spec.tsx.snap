@@ -2814,7 +2814,6 @@ exports[`Tree[Base] should render correctly about size 1`] = `
   </form>
   <div
     class="soui-tree soui-tree-tree soui-tree-line soui-tree-size-small"
-    height="300"
   >
     <div
       class="soui-tree-root"
