@@ -34,6 +34,19 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
   },
   line: {
+    '&$virtual $node': {
+      '&::before, &::after': {
+        display: 'none',
+      }
+    },
+    '&$virtual $leaf $contentWrapper': {
+      marginLeft: 12,
+    },
+    '&$virtual $leaf $contentWrapper, &$virtual $childnode$contentWrapper': {
+      '&::after': {
+        display: 'none',
+      }
+    },
     '& $node': {
       '&[dir=ltr]::before': { left: 0 },
       '&[dir=rtl]::before': { right: 0 },
@@ -103,8 +116,10 @@ const treeStyle: JsStyles<TreeClassType> = {
         }
       }
     },
-    '&$sizeSmall $contentWrapper::after': {
-      display: 'none',
+    '&$sizeSmall': {
+      '& $contentWrapper::after': {
+        display: 'none',
+      },
     },
     '&$sizeLarge': {
       '& $node:last-child::before': {
@@ -114,7 +129,10 @@ const treeStyle: JsStyles<TreeClassType> = {
         '&[dir=ltr]': { left: -32 },
         '&[dir=rtl]': { right: -32 },
       },
-      '& $childnode, & $leaf': {
+      '&:not($virtual) $childnode, &:not($virtual) $leaf': {
+        marginLeft: 20,
+      },
+      '': {
         marginLeft: 20,
       },
       '& $node': {
@@ -191,6 +209,17 @@ const treeStyle: JsStyles<TreeClassType> = {
       '& > $root > $node, & $node$leaf': {
         paddingLeft: 32,
       }
+    }
+  },
+
+  lineIndent: {
+    position: 'absolute',
+    top: 0,
+    width: 1,
+    height: '100%',
+    background: Token.treeLineBackgroundColor,
+    '$sizeLarge &': {
+      transform: 'translateX(-4px)',
     }
   },
   root: {

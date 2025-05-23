@@ -22,6 +22,7 @@ export type TreeClasses = {
   root: string;
   line: string;
   noline: string;
+  lineIndent: string;
   contentDisabled: string;
   content: string;
   small: string;
@@ -51,6 +52,7 @@ export type DatumType<DataItem> = ReturnType<typeof useTree<DataItem>>;
 
 type ActionOnClick = 'check' | 'expand';
 
+export type LeafIcon<T> = boolean | ((d: T) => React.ReactNode) | React.ReactNode
 export interface TreeProps<DataItem, Value extends any[]>
   extends Omit<BaseTreeProps<DataItem>, 'isControlled'>,
     Pick<CommonType, 'className' | 'style'> {
@@ -86,6 +88,14 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @cn 叶子节点的 class, 函数的参数为该条叶子节点数据
    */
   leafClass?: string | ((data: DataItem) => string);
+
+  /**
+   * @en The class of checkbox, the params of function is data
+   * @cn 开启叶子节点前的图标，或者自定义函数渲染
+   * @version 3.7.0
+   */
+  leafIcon?: LeafIcon<DataItem>;
+
   /**
    * @en Custom expand/collapse buttons
    * @cn 自定义展开/收起按钮
@@ -228,10 +238,11 @@ export interface TreeProps<DataItem, Value extends any[]>
    */
   lineHeight?: number;
   /**
-   * @en The height of the list
-   * @cn 列表高度
+   * @en Height of the list, only effective when virtual is opened
+   * @cn 列表高度，仅开启virtual时生效
+   * @version 3.6.0
    */
-  height?: number | string;
+  height?: number;
   /**
    * @en Number of list items displayed at the same time
    * @cn 同时展示的列表项数量

@@ -95,6 +95,17 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
 
   const indent = size === "large" ? 32 : 24;
 
+  let $indents
+  if(line){
+    $indents = Array.from({ length: level - 1 }).map((_, index) => (
+      <span
+        key={index}
+        className={contentStyle.lineIndent}
+        style={{left: (index + 1) * indent }}
+      />
+    ))
+  }
+
   return (
     <div
       ref={element}
@@ -102,6 +113,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
       dir={config.direction}
       style={{ paddingLeft: level * indent }}
     >
+      {$indents}
       <TreeVirtualContent
         virtual
         jssStyle={jssStyle}
