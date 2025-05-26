@@ -1,3 +1,10 @@
+## 3.6.7-beta.6
+2025-05-26
+
+### 🐞 BugFix
+
+- 修复 `DatePicker` 在设置了和 `format` 格式不相符的 `defaultValue` 后会触发多次 onChange 的问题 # ([#1125](https://github.com/sheinsight/shineout-next/pull/1125))
+
 ## 3.6.6-beta.6
 2025-05-09
 
