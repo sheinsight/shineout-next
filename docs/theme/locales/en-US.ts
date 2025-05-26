@@ -27,10 +27,10 @@ export default {
     break: 'break',
   },
   'shineout.tabs': {
-    exmples: 'exmples',
+    exmples: 'Examples',
     api: 'API',
-    guide: 'guide',
-    updateRecord: 'update record',
+    guide: 'Guide',
+    updateRecord: 'Update Record',
     playground: 'Playground',
   },
   'shineout.playground': {
