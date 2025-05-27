@@ -62,6 +62,7 @@ export default () => {
         keygen='value'
         onFilter={handleFilter}
         renderItem={renderItem}
+        highlight
       />
     </div>
   );

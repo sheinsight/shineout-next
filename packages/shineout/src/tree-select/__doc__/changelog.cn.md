@@ -1,3 +1,10 @@
+## 3.7.0-beta.31
+2025-05-27
+
+### 🆕 Feature
+- `TreeSelect` 新增 `highlight` 属性，开启搜索关键字高亮功能 ([#1126](https://github.com/sheinsight/shineout-next/pull/1126))
+
+
 ## 3.7.0-beta.27
 2025-05-22
 

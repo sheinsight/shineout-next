@@ -136,6 +136,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onFilter,
     onClearCreatedData,
     setInputText,
+    FilterProvider,
   } = useFilter({
     treeData: data,
     keygen: keygen as any,
@@ -708,45 +709,47 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const { fieldId } = useContext(FormFieldContext);
   return (
-    <div
-      id={fieldId}
-      ref={targetRef}
-      tabIndex={disabled === true || showInput ? undefined : 0}
-      {...util.getDataAttribute({ ['input-border']: 'true' })}
-      className={rootClass}
-      style={rootStyle}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      onKeyDown={handleKeyDown}
-    >
-      {tipNode}
-      {renderResult()}
-      {hadOpened && (
-        <AbsoluteList
-          adjust={adjust}
-          focus={open}
-          fixedWidth='min'
-          lazy={false}
-          absolute={props.absolute}
-          zIndex={props.zIndex}
-          position={position}
-          popupGap={4}
-          popupElRef={popupRef}
-          parentElRef={targetRef}
-        >
-          <AnimationList
-            onRef={popupRef}
-            show={open}
-            className={classNames(styles?.pickerWrapper)}
-            display={'block'}
-            type='scale-y'
-            duration={'fast'}
+    <FilterProvider value={{ filterText, highlight: props.highlight }}>
+      <div
+        id={fieldId}
+        ref={targetRef}
+        tabIndex={disabled === true || showInput ? undefined : 0}
+        {...util.getDataAttribute({ ['input-border']: 'true' })}
+        className={rootClass}
+        style={rootStyle}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onKeyDown={handleKeyDown}
+      >
+        {tipNode}
+        {renderResult()}
+        {hadOpened && (
+          <AbsoluteList
+            adjust={adjust}
+            focus={open}
+            fixedWidth='min'
+            lazy={false}
+            absolute={props.absolute}
+            zIndex={props.zIndex}
+            position={position}
+            popupGap={4}
+            popupElRef={popupRef}
+            parentElRef={targetRef}
           >
-            {renderList()}
-          </AnimationList>
-        </AbsoluteList>
-      )}
-    </div>
+            <AnimationList
+              onRef={popupRef}
+              show={open}
+              className={classNames(styles?.pickerWrapper)}
+              display={'block'}
+              type='scale-y'
+              duration={'fast'}
+            >
+              {renderList()}
+            </AnimationList>
+          </AbsoluteList>
+        )}
+      </div>
+    </FilterProvider>
   );
 };
 

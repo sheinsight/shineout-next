@@ -454,4 +454,11 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
    */
   beforeChange?: (value: Value) => any;
+
+  /**
+   * @cn 开启搜索关键字高亮功能
+   * @en Whether to enable highlight feature
+   * @version 3.7.0
+   */
+  highlight?: boolean;
 }

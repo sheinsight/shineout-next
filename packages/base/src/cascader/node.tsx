@@ -1,11 +1,12 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import classNames from 'classnames';
-import { KeygenResult, util } from '@sheinx/hooks';
+import { KeygenResult, util, FilterContext } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
 import { CascaderNodeProps } from './node.type';
 import Checkbox from '../checkbox';
 import Spin from '../spin';
 import Icons from '../icons';
+import { CommonClasses } from '../common/type';
 
 const { getDataAttributeName } = util;
 
@@ -38,6 +39,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   const uncertainChildren = loader && !loading && children === undefined;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
+  const commonStyles = jssStyle?.common?.() as CommonClasses;
   const rootClass = classNames(
     styles.option,
     active && styles.activeOption,
@@ -101,9 +103,16 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     return events;
   };
 
+  const { filterText, highlight } = useContext(FilterContext);
+
   const renderContent = () => {
     const render = typeof renderItem === 'function' ? renderItem : (d: DataItem) => d[renderItem];
-    return render(data, active, id) as React.ReactNode;
+    return util.getHighlightText({
+      enable: highlight,
+      nodeList: render(data, active, id),
+      searchWords: filterText,
+      highlightClassName: commonStyles.highlight,
+    }) as React.ReactNode;
   };
 
   const renderIcon = () => {
