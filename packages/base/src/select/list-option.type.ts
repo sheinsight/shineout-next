@@ -1,7 +1,7 @@
 import { JssStyleType, SelectProps, DatumType } from './select.type';
 
 export interface ListOptionProps<DataItem, Value>
-  extends Pick<SelectProps<DataItem, Value>, 'multiple' | 'highlight'> {
+  extends Pick<SelectProps<DataItem, Value>, 'multiple'> {
   jssStyle?: JssStyleType;
   index: number;
   data: DataItem;

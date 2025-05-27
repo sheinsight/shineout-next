@@ -43,7 +43,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     actionOnClick,
   } = props;
   const forceUpdate = useRender();
-  const { isDisabled, bindUpdate, size, leafIcon, highlightFilter } = useTreeContext();
+  const { isDisabled, bindUpdate, size, leafIcon } = useTreeContext();
   const config = useConfig();
   const disabled = isDisabled(id);
 
@@ -235,7 +235,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
-  const { filterText } = useContext(FilterContext);
+  const { filterText, highlight: highlightFilter } = useContext(FilterContext);
 
   const renderNode = () => {
     const render = util.isFunc(renderItem) ? renderItem : (item: DataItem) => item[renderItem];

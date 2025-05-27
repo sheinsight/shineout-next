@@ -170,7 +170,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           renderItem={renderItemProp}
           onHover={handleHover}
           onOptionClick={onOptionClick}
-          highlight={props.highlight}
         ></ListOption>
       </React.Fragment>
     );

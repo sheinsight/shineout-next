@@ -649,7 +649,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       closePop,
       optionListRef,
       onOptionClick: handleOptionClick,
-      highlight,
     };
 
     // 自定义列
@@ -750,55 +749,55 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const { onMouseEnter, onMouseLeave } = targetProps;
 
   return (
-    <FilterProvider value={{ filterText }}>
-    <div
-      ref={targetRef}
-      tabIndex={disabled === true || showInput ? undefined : 0}
-      {...util.getDataAttribute({ ['input-border']: 'true' })}
-      className={rootClass}
-      style={rootStyle}
-      onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onMouseDown={preventDefault}
-    >
-      {tipNode}
-      {renderResult()}
-      <AbsoluteList
-        adjust={adjust}
-        focus={open}
-        fixedWidth={(!props.columns || props.columns <= 1) && (autoAdapt ? 'min' : true)}
-        absolute={props.absolute}
-        zIndex={props.zIndex}
-        position={position}
-        popupGap={4}
-        popupElRef={popupRef}
-        parentElRef={targetRef}
-        updateKey={absoluteListUpdateKey}
+    <FilterProvider value={{ filterText, highlight }}>
+      <div
+        ref={targetRef}
+        tabIndex={disabled === true || showInput ? undefined : 0}
+        {...util.getDataAttribute({ ['input-border']: 'true' })}
+        className={rootClass}
+        style={rootStyle}
+        onKeyDown={handleKeyDown}
+        onKeyUp={handleKeyUp}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        onMouseDown={preventDefault}
       >
-        <AnimationList
-          onRef={popupRef}
-          show={open}
-          className={classNames(
-            styles?.pickerWrapper,
-            size === 'small' && styles?.pickerSmall,
-            size === 'large' && styles?.pickerLarge,
-          )}
-          onAnimationAfterEnter={onAnimationAfterEnter}
-          display={'block'}
-          type='scale-y'
-          duration={'fast'}
-          style={getListStyle()}
+        {tipNode}
+        {renderResult()}
+        <AbsoluteList
+          adjust={adjust}
+          focus={open}
+          fixedWidth={(!props.columns || props.columns <= 1) && (autoAdapt ? 'min' : true)}
+          absolute={props.absolute}
+          zIndex={props.zIndex}
+          position={position}
+          popupGap={4}
+          popupElRef={popupRef}
+          parentElRef={targetRef}
+          updateKey={absoluteListUpdateKey}
         >
-          {renderHeader()}
-          {renderOptions()}
-          {renderFooter()}
-        </AnimationList>
-      </AbsoluteList>
-    </div>
+          <AnimationList
+            onRef={popupRef}
+            show={open}
+            className={classNames(
+              styles?.pickerWrapper,
+              size === 'small' && styles?.pickerSmall,
+              size === 'large' && styles?.pickerLarge,
+            )}
+            onAnimationAfterEnter={onAnimationAfterEnter}
+            display={'block'}
+            type='scale-y'
+            duration={'fast'}
+            style={getListStyle()}
+          >
+            {renderHeader()}
+            {renderOptions()}
+            {renderFooter()}
+          </AnimationList>
+        </AbsoluteList>
+      </div>
     </FilterProvider>
   );
 }

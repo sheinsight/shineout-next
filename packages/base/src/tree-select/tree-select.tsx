@@ -692,7 +692,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           contentClass={getContentClass}
           datum={datum}
           actionOnClick={props.actionOnClick}
-          highlightFilter={props.highlight}
         ></Tree>
       </div>
     );
@@ -710,7 +709,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const { fieldId } = useContext(FormFieldContext);
   return (
-    <FilterProvider value={{ filterText }}>
+    <FilterProvider value={{ filterText, highlight: props.highlight }}>
       <div
         id={fieldId}
         ref={targetRef}

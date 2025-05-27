@@ -142,7 +142,6 @@ export interface BaseListProps<DataItem, Value>
     | 'columnsTitle'
     | 'hideCreateOption'
     | 'onLoadMore'
-    | 'highlight'
   > {
   customHeader?: React.ReactNode;
   height?: number | string;

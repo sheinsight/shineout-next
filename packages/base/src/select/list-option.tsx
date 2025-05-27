@@ -67,12 +67,13 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     );
   };
 
-  const { filterText } = useContext(FilterContext);
-  const result = props.highlight ? util.getHighlightText({
+  const { filterText, highlight } = useContext(FilterContext);
+  const result = util.getHighlightText({
+    enable: highlight,
     nodeList: renderItem(data),
     searchWords: filterText,
     highlightClassName: commonStyles.highlight,
-  }) : renderItem(data);
+  });
   const title = typeof result === 'string' ? result : '';
 
   useEffect(() => {
