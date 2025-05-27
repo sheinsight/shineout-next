@@ -1,3 +1,9 @@
+## 3.7.0-beta.32
+2025-05-27
+
+### 💎 Enhancement
+- `TreeSelect` 增强 `size` 属性，下拉面板的列表尺寸跟随size联动 ([#1128](https://github.com/sheinsight/shineout-next/pull/1128))
+
 ## 3.7.0-beta.31
 2025-05-27
 

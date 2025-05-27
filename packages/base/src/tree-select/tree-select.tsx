@@ -692,6 +692,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           contentClass={getContentClass}
           datum={datum}
           actionOnClick={props.actionOnClick}
+          size={size}
         ></Tree>
       </div>
     );
