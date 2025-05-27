@@ -1,4 +1,4 @@
-import { CommonType } from '../common/type';
+import { CommonClasses, CommonType } from '../common/type';
 import {
   BaseTreeProps,
   ObjectKey,
@@ -46,6 +46,7 @@ export type JsstyleType = {
   tree: () => TreeClasses;
   spin: () => SpinClasses;
   checkbox: () => CheckboxClasses;
+  common: () => CommonClasses;
 };
 
 export type DatumType<DataItem> = ReturnType<typeof useTree<DataItem>>;
@@ -190,6 +191,13 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @default true
    */
   highlight?: boolean;
+
+  /**
+   * @cn 开启搜索关键字高亮功能
+   * @en Enable keyword highlighting feature
+   * @version 3.7.0
+   */
+  highlightFilter?: boolean;
   /**
    * @en Dynamically load nodes
    * @cn 设置 loader 属性后，未定义 children 的节点视为动态加载节点，点击展开触发 loader事件，children 为 null 或者长度为 0 视为叶子节点

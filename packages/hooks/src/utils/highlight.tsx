@@ -6,12 +6,14 @@ export function getHighlightText<T>({
   nodeList,
   searchWords,
   highlightClassName,
+  enable,
 }: {
+  enable?: boolean;
   nodeList: T;
   searchWords?: string;
   highlightClassName: string;
 }): T {
-  if (!searchWords) {
+  if (!enable || !searchWords) {
     return nodeList;
   }
 

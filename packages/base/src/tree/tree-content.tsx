@@ -7,6 +7,9 @@ import { useTreeContext } from './tree-context';
 import Icons from '../icons';
 import Spin from '../spin';
 import { useConfig } from '../config';
+import { FilterContext} from '@sheinx/hooks';
+import { useContext } from 'react';
+import { CommonClasses } from '../common/type';
 
 const NodeContent = <DataItem, Value extends KeygenResult[]>(
   props: TreeContextProps<DataItem, Value>,
@@ -40,13 +43,14 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     actionOnClick,
   } = props;
   const forceUpdate = useRender();
-  const { isDisabled, bindUpdate, size, leafIcon } = useTreeContext();
+  const { isDisabled, bindUpdate, size, leafIcon, highlightFilter } = useTreeContext();
   const config = useConfig();
   const disabled = isDisabled(id);
 
   bindUpdate(id, forceUpdate);
 
   const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
+  const commonStyles = jssStyle?.common() || ({} as CommonClasses);
   const rootClass = classNames(contentStyle.contentWrapper, {
     [contentStyle.childnode]: data[childrenKey] && (data[childrenKey] as DataItem[]).length > 0,
     [contentStyle.inlineContent]: inlineNode,
@@ -231,9 +235,17 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
+  const { filterText } = useContext(FilterContext);
+
   const renderNode = () => {
     const render = util.isFunc(renderItem) ? renderItem : (item: DataItem) => item[renderItem];
-    return render(data, expanded, active, id) as React.ReactNode;
+
+    return util.getHighlightText({
+      enable: highlightFilter,
+      nodeList: render(data, expanded, active, id),
+      searchWords: filterText,
+      highlightClassName: commonStyles.highlight,
+    }) as React.ReactNode;
   };
 
   return (
