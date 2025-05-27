@@ -1,3 +1,10 @@
+## 3.7.0-beta.31
+2025-05-27
+
+### 🆕 Feature
+- `Select` 新增 `highlight` 属性，是否开启搜索关键字高亮功能 ([#1126](https://github.com/sheinsight/shineout-next/pull/1126))
+
+
 ## 3.7.0-beta.18
 2025-05-07
 

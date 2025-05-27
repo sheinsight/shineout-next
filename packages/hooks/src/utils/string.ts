@@ -43,3 +43,18 @@ export function removeProtocol(url: string) {
     return url;
   }
 }
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g,
+    reHasRegExpChar = RegExp(reRegExpChar.source);
+
+export function escapeRegExp(str: any = '') {
+  const string = typeof str === 'string' ? str : str.toString();
+  return (string && reHasRegExpChar.test(string))
+    ? string.replace(reRegExpChar, '\\$&')
+    : string;
+}
+

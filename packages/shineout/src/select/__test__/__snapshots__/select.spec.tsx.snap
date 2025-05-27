@@ -872,6 +872,49 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
 
 exports[`Select[Base] should render correctly about filter 1`] = `
 <div>
+  <form
+    class="soui-form soui-form-wrapper"
+  >
+    <div
+      class="soui-form-item-wrapper"
+      data-soui-status="default"
+    >
+      <div
+        class="soui-form-item-label"
+        style="width: 72px;"
+      >
+        高亮关键字
+      </div>
+      <div
+        class="soui-form-item-control"
+        data-soui-role="form-control"
+      >
+        <button
+          class="soui-switch soui-switch-wrapper soui-switch-wrapper-checked"
+          role="switch"
+          type="button"
+        >
+          <input
+            checked=""
+            style="display: none;"
+            tabindex="0"
+            type="checkbox"
+          />
+          <div
+            class="soui-switch-indicator"
+            dir="ltr"
+          />
+          <div
+            class="soui-switch-content"
+          >
+            <div
+              class="soui-switch-text-padding"
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+  </form>
   <div
     class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-clearable"
     data-soui-input-border="true"

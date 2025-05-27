@@ -9,6 +9,7 @@ export * from './carousel';
 export * from './cascader';
 export * from './checkbox';
 export * from './collapse';
+export * from './common';
 export * from './date-picker';
 export * from './descriptions';
 export * from './divider';

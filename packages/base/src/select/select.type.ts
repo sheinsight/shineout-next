@@ -1,6 +1,6 @@
 // import React from 'react';
 import { BaseSelectProps, KeygenResult, KeygenType, ObjectKey, useListSelect } from '@sheinx/hooks';
-import { CommonType } from '../common/type';
+import { CommonType, CommonClasses } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { TagClasses } from '../tag/tag.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
@@ -100,6 +100,7 @@ export type JssStyleType = {
   tree?: () => TreeClasses;
   spin?: () => SpinClasses;
   input?: () => InputClasses;
+  common?: () => CommonClasses;
 };
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
@@ -141,6 +142,7 @@ export interface BaseListProps<DataItem, Value>
     | 'columnsTitle'
     | 'hideCreateOption'
     | 'onLoadMore'
+    | 'highlight'
   > {
   customHeader?: React.ReactNode;
   height?: number | string;
@@ -586,6 +588,13 @@ export interface SelectPropsBase<DataItem, Value>
    * @version 3.4.0
    */
   trigger?: 'click' | 'hover';
+
+  /**
+   * @cn 是否开启高亮功能
+   * @en Whether to enable highlight feature
+   * @version 3.7.0
+   */
+  highlight?: boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>

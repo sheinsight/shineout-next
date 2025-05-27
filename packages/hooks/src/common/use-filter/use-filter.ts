@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { isFunc, getKey, getFilterTree } from '../../utils';
 import { UseFilterProps } from './use-filter.type';
+import { FilterContext } from './use-filter-context';
 import { KeygenResult } from '../type';
 
-const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
+const useFilter = <DataItem>(props: UseFilterProps<DataItem>)  => {
   const {
     data,
     groupKey,
@@ -142,6 +143,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     filterFunc,
     onCreate: onCreate ? handleCreate : undefined,
     onFilter: onFilter || onCreate ? handleFilter : undefined,
+    FilterProvider: FilterContext.Provider as typeof FilterContext.Provider,
     // onResetFilter: handleResetData,
     onClearCreatedData: handleClearCreatedData,
   };

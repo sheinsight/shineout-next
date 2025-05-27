@@ -5,16 +5,23 @@
  *    -- Set the `onFilter` property and return the content as a function, the local data will be filtered according to the returned filter function
  */
 import React from 'react';
-import { Select, TYPE } from 'shineout';
+import { Form, Select, Switch, TYPE } from 'shineout';
 
 type SelectProps = TYPE.Select.Props<string, string>;
 
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   const handleFilter: SelectProps['onFilter'] = (v) => (d) => d.indexOf(v) >= 0;
+  const [highlight, setHighlight] = React.useState(true);
 
   return (
     <div>
+      <Form>
+        <Form.Item label='高亮关键字' labelWidth={72}>
+          <Switch value={highlight} onChange={setHighlight} />
+        </Form.Item>
+      </Form>
+
       <Select
         width={200}
         data={data}
@@ -22,6 +29,7 @@ export default () => {
         placeholder='Select Color'
         onFilter={handleFilter}
         clearable
+        highlight={highlight}
       />
       <br />
       <br />
@@ -33,6 +41,7 @@ export default () => {
         onFilter={handleFilter}
         clearable
         multiple
+        highlight={highlight}
       />
     </div>
   );

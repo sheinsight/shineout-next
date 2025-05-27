@@ -104,6 +104,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     // onFilterWidthCreate,
     filterSameChange,
     noCache,
+    highlight,
     trigger = 'click',
   } = props;
 
@@ -133,6 +134,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onCreate,
     onClearCreatedData,
     rawData,
+    FilterProvider,
   } = useFilter({
     data,
     treeData,
@@ -647,6 +649,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       closePop,
       optionListRef,
       onOptionClick: handleOptionClick,
+      highlight,
     };
 
     // 自定义列
@@ -747,6 +750,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const { onMouseEnter, onMouseLeave } = targetProps;
 
   return (
+    <FilterProvider value={{ filterText }}>
     <div
       ref={targetRef}
       tabIndex={disabled === true || showInput ? undefined : 0}
@@ -795,6 +799,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         </AnimationList>
       </AbsoluteList>
     </div>
+    </FilterProvider>
   );
 }
 
