@@ -244,7 +244,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
       enable: highlightFilter,
       nodeList: render(data, expanded, active, id),
       searchWords: filterText,
-      highlightClassName: commonStyles.highlight,
+      highlightClassName: commonStyles?.highlight,
     }) as React.ReactNode;
   };
 

@@ -111,7 +111,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
       enable: highlight,
       nodeList: render(data, active, id),
       searchWords: filterText,
-      highlightClassName: commonStyles.highlight,
+      highlightClassName: commonStyles?.highlight,
     }) as React.ReactNode;
   };
 
