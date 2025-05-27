@@ -1,5 +1,5 @@
 import Token from '@sheinx/theme';
-import {CommonClasses} from '@sheinx/base';
+import { CommonClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 
 
