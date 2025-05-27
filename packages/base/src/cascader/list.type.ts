@@ -14,7 +14,6 @@ export interface CascaderListProps<DataItem, Value extends KeygenResult[]>
     | 'size'
     | 'height'
     | 'virtual'
-    | 'highlight'
   > {
   jssStyle?: JssStyleType;
   id: KeygenResult;

@@ -557,7 +557,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         virtual={virtual}
         path={[] as unknown as Value}
         mode={mode}
-        highlight={props.highlight}
       />,
     ];
     const childs = path.map((p, i) => {

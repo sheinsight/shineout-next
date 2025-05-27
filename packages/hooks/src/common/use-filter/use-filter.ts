@@ -143,7 +143,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>)  => {
     filterFunc,
     onCreate: onCreate ? handleCreate : undefined,
     onFilter: onFilter || onCreate ? handleFilter : undefined,
-    FilterProvider: FilterContext.Provider as typeof FilterContext.Provider,
+    FilterProvider: FilterContext.Provider,
     // onResetFilter: handleResetData,
     onClearCreatedData: handleClearCreatedData,
   };

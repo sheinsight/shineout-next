@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface FilterContextProps {
+ export interface FilterContextProps {
   filterText?: string;
   highlight?: boolean;
 }
