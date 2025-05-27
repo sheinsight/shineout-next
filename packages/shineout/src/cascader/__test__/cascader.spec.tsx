@@ -8,7 +8,7 @@ import CascaderBase from "../__example__/01-01-base";
 import CascaderRenderResult from '../__example__/01-02-base'
 import CascaderHideTag from '../__example__/01-03-base'
 import CascaderMultiple from '../__example__/02-01-multiple'
-import CascaderCompressed from '../__example__/02-02-multiple'
+import CascaderCompressed from '../__example__/02-03-00-multiple-compressed'
 import CascaderNoRepeat from '../__example__/02-03-01-multiple'
 import CascaderTrigger from '../__example__/03-01-trigger'
 import CascaderFinal from '../__example__/03-02-finalDismiss'

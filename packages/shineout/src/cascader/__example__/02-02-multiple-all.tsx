@@ -1,5 +1,5 @@
 /**
- * cn - 自定义下拉面板
+ * cn - 全选
  *    -- 使用 `renderOptionList` 属性自定义下拉面板，可以自定义实现全选功能
  * en - Custom dropdown panel
  *    -- Use the `renderOptionList` property to customize the dropdown panel, and you can customize the implementation of the select all function
