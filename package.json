@@ -147,7 +147,7 @@
     "ts-deepmerge": "^1.0.0",
     "ts-loader": "^9.4.2",
     "ts-morph": "^19.0.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.7.2",
     "unified": "^10.1.2",
     "valtio": "^1.13.0",
     "webpack": "^5.88.2",
