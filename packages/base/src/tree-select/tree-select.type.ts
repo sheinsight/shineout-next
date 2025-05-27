@@ -456,7 +456,7 @@ export interface TreeSelectProps<DataItem, Value>
   beforeChange?: (value: Value) => any;
 
   /**
-   * @cn 是否开启高亮功能
+   * @cn 开启搜索关键字高亮功能
    * @en Whether to enable highlight feature
    * @version 3.7.0
    */

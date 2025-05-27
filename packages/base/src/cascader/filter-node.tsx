@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import classNames from 'classnames';
-import { KeygenResult, MODE } from '@sheinx/hooks';
+import { KeygenResult, MODE, FilterContext, util } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
 import { FilterNodeProps } from './filter-node.type';
+import { CommonClasses } from '../common/type';
 
 const FilterNode = <DataItem, Value extends KeygenResult[]>(
   props: FilterNodeProps<DataItem, Value>,
@@ -21,6 +23,7 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
   } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
+  const commonStyles = jssStyle?.common?.() as CommonClasses;
 
   const handleSelectItem = (index: number, d: DataItem, e?: any) => {
     const isFinal = data && index === data.length - 1;
@@ -48,6 +51,7 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
     handleSelectItem(data.length - 1, data?.[data.length - 1]);
   };
 
+  const { filterText, highlight } = useContext(FilterContext);
   return (
     <div className={classNames(styles.option, styles.filterOption)} onClick={handleSelect}>
       <div className={classNames(styles.optionInner)}>
@@ -62,18 +66,23 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
               isDisabled = path?.some((p) => datum.isDisabled(p)) || isDisabled;
             }
           }
-          const content = (
-            <div
-              key='content'
-              onClick={handleClick}
-              className={classNames(
-                styles.filterOptionItem,
-                isDisabled && styles.filterDisabledOption,
-              )}
-            >
-              {renderItem(item)}
-            </div>
-          );
+          const content = util.getHighlightText({
+            enable: highlight,
+            nodeList: (
+              <div
+                key='content'
+                onClick={handleClick}
+                className={classNames(
+                  styles.filterOptionItem,
+                  isDisabled && styles.filterDisabledOption,
+                )}
+              >
+                {renderItem(item)}
+              </div>
+            ),
+            searchWords: filterText,
+            highlightClassName: commonStyles.highlight,
+          });
           if (index === 0) return content;
 
           return [

@@ -122,6 +122,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     setFilterText,
     filterFunc,
     onFilter,
+    FilterProvider,
   } = useFilter({
     treeData: data,
     keygen,
@@ -556,6 +557,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         virtual={virtual}
         path={[] as unknown as Value}
         mode={mode}
+        highlight={props.highlight}
       />,
     ];
     const childs = path.map((p, i) => {
@@ -745,44 +747,46 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   return (
-    <div
-      id={fieldId}
-      tabIndex={disabled === true || showInput ? undefined : 0}
-      {...util.getDataAttribute({ ['input-border']: 'true' })}
-      className={rootClass}
-      style={rootStyle}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      onKeyDown={handleKeyDown}
-      ref={targetRef}
-    >
-      {tipNode}
-      {renderResult()}
-      <AbsoluteList
-        adjust={adjust}
-        focus={open}
-        fixedWidth={getFixedWidth()}
-        absolute={absolute}
-        zIndex={zIndex}
-        position={position}
-        updateKey={updateKey}
-        popupGap={4}
-        popupElRef={popupRef}
-        parentElRef={targetRef}
+    <FilterProvider value={{ filterText, highlight: props.highlight }}>
+      <div
+        id={fieldId}
+        tabIndex={disabled === true || showInput ? undefined : 0}
+        {...util.getDataAttribute({ ['input-border']: 'true' })}
+        className={rootClass}
+        style={rootStyle}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onKeyDown={handleKeyDown}
+        ref={targetRef}
       >
-        <AnimationList
-          onRef={popupRef}
-          show={open}
-          className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow)}
-          display={'block'}
-          type='scale-y'
-          duration={'fast'}
-          style={pickerWrapperStyle}
+        {tipNode}
+        {renderResult()}
+        <AbsoluteList
+          adjust={adjust}
+          focus={open}
+          fixedWidth={getFixedWidth()}
+          absolute={absolute}
+          zIndex={zIndex}
+          position={position}
+          updateKey={updateKey}
+          popupGap={4}
+          popupElRef={popupRef}
+          parentElRef={targetRef}
         >
-          {renderPanel()}
-        </AnimationList>
-      </AbsoluteList>
-    </div>
+          <AnimationList
+            onRef={popupRef}
+            show={open}
+            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow)}
+            display={'block'}
+            type='scale-y'
+            duration={'fast'}
+            style={pickerWrapperStyle}
+          >
+            {renderPanel()}
+          </AnimationList>
+        </AbsoluteList>
+      </div>
+    </FilterProvider>
   );
 };
 export default Cascader;

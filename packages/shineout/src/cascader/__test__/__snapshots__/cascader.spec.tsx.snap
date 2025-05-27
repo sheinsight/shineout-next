@@ -329,100 +329,145 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
 `;
 
 exports[`Cascader[Base] should render correctly about filter 1`] = `
-<div
-  style="display: flex; gap: 32px;"
->
-  <div
-    class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
-    data-soui-input-border="true"
-    style="width: 300px;"
+<div>
+  <form
+    class="soui-form soui-form-wrapper"
   >
     <div
-      class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
+      class="soui-form-item-wrapper"
+      data-soui-status="default"
     >
       <div
-        class="soui-cascader-result"
+        class="soui-form-item-label"
+        style="width: 72px;"
       >
-        <div
-          class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Please select city"
-            style="width: 100%;"
-            value=""
-          />
-          <span
-            class="soui-cascader-input-mirror"
-          />
-        </div>
+        高亮关键字
       </div>
       <div
-        class="soui-cascader-icon-wrapper"
+        class="soui-form-item-control"
+        data-soui-role="form-control"
       >
-        <span
-          class="soui-cascader-arrow-icon"
+        <button
+          class="soui-switch soui-switch-wrapper soui-switch-wrapper-checked"
+          role="switch"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <input
+            checked=""
+            style="display: none;"
+            tabindex="0"
+            type="checkbox"
+          />
+          <div
+            class="soui-switch-indicator"
+            dir="ltr"
+          />
+          <div
+            class="soui-switch-content"
           >
-            <path
-              clip-rule="evenodd"
-              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-              fill-rule="evenodd"
+            <div
+              class="soui-switch-text-padding"
             />
-          </svg>
-        </span>
+          </div>
+        </button>
       </div>
     </div>
-  </div>
+  </form>
   <div
-    class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
-    data-soui-input-border="true"
-    style="width: 300px;"
+    style="display: flex; gap: 32px;"
   >
     <div
-      class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
+      class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
+      data-soui-input-border="true"
+      style="width: 300px;"
     >
       <div
-        class="soui-cascader-result"
+        class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
       >
         <div
-          class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
+          class="soui-cascader-result"
         >
-          <input
-            autocomplete="off"
-            placeholder="Please select city"
-            style="width: 100%;"
-            value=""
-          />
+          <div
+            class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
+          >
+            <input
+              autocomplete="off"
+              placeholder="Please select city"
+              style="width: 100%;"
+              value=""
+            />
+            <span
+              class="soui-cascader-input-mirror"
+            />
+          </div>
+        </div>
+        <div
+          class="soui-cascader-icon-wrapper"
+        >
           <span
-            class="soui-cascader-input-mirror"
-          />
+            class="soui-cascader-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
         </div>
       </div>
+    </div>
+    <div
+      class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
+      data-soui-input-border="true"
+      style="width: 300px;"
+    >
       <div
-        class="soui-cascader-icon-wrapper"
+        class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
       >
-        <span
-          class="soui-cascader-arrow-icon"
+        <div
+          class="soui-cascader-result"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <div
+            class="soui-cascader-result-text-wrapper soui-cascader-multiple-result-wrapper"
           >
-            <path
-              clip-rule="evenodd"
-              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-              fill-rule="evenodd"
+            <input
+              autocomplete="off"
+              placeholder="Please select city"
+              style="width: 100%;"
+              value=""
             />
-          </svg>
-        </span>
+            <span
+              class="soui-cascader-input-mirror"
+            />
+          </div>
+        </div>
+        <div
+          class="soui-cascader-icon-wrapper"
+        >
+          <span
+            class="soui-cascader-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>

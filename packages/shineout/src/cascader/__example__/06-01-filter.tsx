@@ -5,7 +5,7 @@
  *    -- Set the `onFilter` property and return the content as a function, the local data will be filtered according to the returned filter function
  */
 import React from 'react';
-import { Cascader, TYPE } from 'shineout';
+import { Cascader, Form, Switch, TYPE } from 'shineout';
 
 type CascaderProps = TYPE.Cascader.Props<DataItem, string[]>;
 
@@ -50,27 +50,37 @@ export default () => {
   const handleFilter: CascaderProps['onFilter'] = (text) => (d) => d.value.indexOf(text) >= 0;
 
   const renderItem: CascaderProps['renderItem'] = (n) => `${n.value}`;
+  const [highlight, setHighlight] = React.useState(true);
 
   return (
-    <div style={{ display: 'flex', gap: 32 }}>
-      <Cascader
-        width={300}
-        placeholder='Please select city'
-        data={data}
-        keygen='value'
-        onFilter={handleFilter}
-        renderItem={renderItem}
-      />
+    <div>
+      <Form>
+        <Form.Item label='高亮关键字' labelWidth={72}>
+          <Switch value={highlight} onChange={setHighlight} />
+        </Form.Item>
+      </Form>
+      <div style={{ display: 'flex', gap: 32 }}>
+        <Cascader
+          width={300}
+          placeholder='Please select city'
+          data={data}
+          keygen='value'
+          onFilter={handleFilter}
+          renderItem={renderItem}
+          highlight={highlight}
+        />
 
-      <Cascader
-        mode={3}
-        width={300}
-        placeholder='Please select city'
-        data={data}
-        keygen='value'
-        onFilter={handleFilter}
-        renderItem={renderItem}
-      />
+        <Cascader
+          mode={3}
+          width={300}
+          placeholder='Please select city'
+          data={data}
+          keygen='value'
+          onFilter={handleFilter}
+          renderItem={renderItem}
+          highlight={highlight}
+        />
+      </div>
     </div>
   );
 };
