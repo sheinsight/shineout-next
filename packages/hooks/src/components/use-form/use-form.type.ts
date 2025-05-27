@@ -90,7 +90,7 @@ export interface FormLabelConfig {
    * @default false
    * @version 3.6.0
    */
-  colon?: boolean | React.ReactNode
+  colon?: boolean | React.ReactNode;
 }
 export interface FormCommonConfig extends FormLabelConfig {
   /**
@@ -259,6 +259,7 @@ export type FormContext = {
   unmounted: boolean;
   removeLock: boolean;
   ignoreValidateFields: string[];
+  settingMap: ObjectType<boolean>;
 };
 
 export type UseFormSlotOwnProps = {
