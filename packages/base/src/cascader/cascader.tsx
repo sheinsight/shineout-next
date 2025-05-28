@@ -691,6 +691,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   }, [data]);
 
+  // 修复外部受控打开的场景下，从外部修改value导致的面板勾选情况没有及时同步
+  if (openProp && !util.shallowEqual(value, datum.getValue())) {
+    datum.setValue(value);
+  };
+
   useEffect(() => {
     if (!value) return;
     datum.setValue(value);
