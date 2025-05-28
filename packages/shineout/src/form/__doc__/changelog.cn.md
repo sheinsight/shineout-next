@@ -1,3 +1,9 @@
+## 3.7.0-beta.33
+2025-05-28
+
+### 🆕 Feature
+- `Form.Item` 新增 `keepErrorBelow` 属性，错误信息独占一行，不再覆盖提示信息 ([#1130](https://github.com/sheinsight/shineout-next/pull/1130))
+
 ## 3.6.7-beta.5
 2025-05-23
 
