@@ -156,15 +156,15 @@ const seconds = getFormatTime(nowDate.getSeconds());
 
 // const styleWithoutShow = 'pointer-events: none; position: absolute; z-index: -1000; display: none;';
 // const styleWithShow =
-//   'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
+//   'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 120ms ease-in-out;';
 // const styleWithShowRight =
-//   'z-index: 1051; display: block; right: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
+//   'z-index: 1051; display: block; right: 0px; opacity: 1; transition: opacity 120ms ease-in-out;';
 // const styleWithShowTopLeft =
-//   'z-index: 1051; display: block; left: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 240ms ease-in-out;';
+//   'z-index: 1051; display: block; left: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 120ms ease-in-out;';
 // const styleWithShowTopRight =
-//   'z-index: 1051; display: block; right: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 240ms ease-in-out;';
+//   'z-index: 1051; display: block; right: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 120ms ease-in-out;';
 // const styleWithShowOther =
-//   'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
+//   'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 120ms ease-in-out;';
 const pickerWrapperStyle = {
   opacity: '1',
   display: 'block',
@@ -172,7 +172,7 @@ const pickerWrapperStyle = {
   left: '0px',
   "transform": "scaleY(1)",
   "transform-origin": "center top",
-  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
   "z-index": "1051",
 };
 const pickerWrapperStyleTopLeft = {
@@ -183,7 +183,7 @@ const pickerWrapperStyleTopLeft = {
   left: '0px',
   transformOrigin: 'center bottom',
   "transform": "scaleY(1)",
-  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 };
 const pickerWrapperStyleTopRight = {
   zIndex: '1051',
@@ -193,7 +193,7 @@ const pickerWrapperStyleTopRight = {
   right: '0px',
   transformOrigin: 'center bottom',
   "transform": "scaleY(1)",
-  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 };
 const piCKerWrapperStyleRight = {
   zIndex: '1051',
@@ -202,7 +202,7 @@ const piCKerWrapperStyleRight = {
   top: 'calc(100% + 4px)',
   right: '0px',
   "transform": "scaleY(1)",
-  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 };
 beforeAll(() => {
   jest.useFakeTimers();
