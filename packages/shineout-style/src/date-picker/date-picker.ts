@@ -695,14 +695,6 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       display: 'block',
     },
   },
-  datetimeHide: {
-    opacity: '0',
-    pointerEvents: 'none',
-
-    '& > span': {
-      display: 'none',
-    },
-  },
   quickPicker: {
     padding: `${token.datePickerQuickPanelPaddingY} ${token.datePickerQuickPanelPaddingX}`,
     display: 'flex',

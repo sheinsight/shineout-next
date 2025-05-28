@@ -609,7 +609,7 @@ describe('DatePicker[Event]', () => {
       await delay(300);
     });
     const datePickerPickerWrapper = container.querySelector(pickerWrapper)!;
-    const pickers = datePickerPickerWrapper.querySelectorAll(picker)!;
+    const pickers = datePickerPickerWrapper.querySelectorAll(`${picker}:not(${timePicker})`)!;
     const cell = pickers[0]
       .querySelector(pickerBody)
       ?.querySelector('table')
