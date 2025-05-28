@@ -87,7 +87,7 @@ const defaultOpenStyle = {
   left: '0px',
   transform: 'scaleY(1)',
   "transform-origin": "center top",
-  "transition": "transform 240ms ease-in-out ,opacity 240ms ease-in-out",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 }
 
 beforeAll(() => {

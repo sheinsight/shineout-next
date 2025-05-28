@@ -1,6 +1,6 @@
 import { styled } from '../jss-style';
-import commonStyle from './common';
+import commonStyle, { animations } from './common';
 
 const useCommonStyle = styled(commonStyle, 'common');
-export { commonStyle, useCommonStyle };
+export { commonStyle, useCommonStyle, animations };
 export default useCommonStyle;
