@@ -62,7 +62,7 @@ const AnimationList = (props: AnimationListProps) => {
     }
     if (type.indexOf('scale-y') >= 0) {
       transition.push(`transform ${durationNum}ms ease-in-out`);
-      transition.push(`opacity ${durationNum}ms ease-in-out`);
+      transition.push(`opacity ${durationNum / 2}ms ease-in-out`);
     }
     if (type.indexOf('collapse') >= 0) {
       transition.push(`height ${durationNum}ms ease-in-out`);
