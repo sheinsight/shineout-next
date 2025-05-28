@@ -72,7 +72,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     enable: highlight,
     nodeList: renderItem(data),
     searchWords: filterText,
-    highlightClassName: commonStyles.highlight,
+    highlightClassName: commonStyles?.highlight,
   });
   const title = typeof result === 'string' ? result : '';
 

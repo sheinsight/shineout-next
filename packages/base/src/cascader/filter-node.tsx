@@ -81,7 +81,7 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
               </div>
             ),
             searchWords: filterText,
-            highlightClassName: commonStyles.highlight,
+            highlightClassName: commonStyles?.highlight,
           });
           if (index === 0) return content;
 
