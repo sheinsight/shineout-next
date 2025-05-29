@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import { Button, Form, Input, Table, TYPE, Rule, Link, Modal } from 'shineout';
+import { ItemWithRequired} from './014-table-2';
 
 interface TableRowData {
   id?: number;
@@ -27,21 +28,23 @@ export default () => {
   const columns: TableColumnItem[] = [
     { title: 'ID', width: 100, render: (d) => <div style={{ lineHeight: '32px' }}>{d.id}</div> },
     {
-      title: 'Name',
+      title: <ItemWithRequired>Name</ItemWithRequired>,
       width: 200,
       render: (d) => {
         return (
-          <Form.Item style={{marginBottom: 0}}>
-            <Input
-              rules={[rules.required]}
-              value={d.name}
-              onChange={(v) => {
-                setFormDatas(
-                  formDatas.map((item) => (item.id === d.id ? { ...item, name: v } : item)),
-                );
-              }}
-            />
-          </Form.Item>
+          <ItemWithRequired>
+            <Form.Item style={{marginBottom: 0}}>
+              <Input
+                rules={[rules.required]}
+                value={d.name}
+                onChange={(v) => {
+                  setFormDatas(
+                    formDatas.map((item) => (item.id === d.id ? { ...item, name: v } : item)),
+                  );
+                }}
+              />
+            </Form.Item>
+          </ItemWithRequired>
         );
       },
     },
