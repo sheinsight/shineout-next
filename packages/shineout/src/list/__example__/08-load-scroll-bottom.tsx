@@ -37,7 +37,7 @@ const App: React.FC = () => {
       .get('List', { current: c, pageSize: 10, sorter: {}, username: '' })
       .then((_data: { data: ListItem[] }) => {
         setTimeout(() => {
-          setData([...data, ..._data.data]);
+          setData(prev => [...prev, ..._data.data])
           setCurrent(c);
           setLoading(false);
         }, 1000);

@@ -132,7 +132,7 @@ export interface ListProps<DataItem, Value>
   loading?: boolean | React.ReactNode;
 
   /**
-   * @en The position of the loading icon
+   * @en loading icon position, if fixed=true is set, the bottom position is invalid
    * @cn loading 图标位置， 如果设置了fixed=true，则bottom位置无效
    * @default 'center'
    * @version 3.7.0
