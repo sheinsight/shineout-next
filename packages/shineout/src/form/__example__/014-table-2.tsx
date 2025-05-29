@@ -10,6 +10,14 @@
 import { useState } from 'react';
 import { Button, Form, Input, Table, TYPE, Rule, Link, Modal } from 'shineout';
 
+export function ItemWithRequired(props: { children: React.ReactNode }) {
+  return (
+    <div style={{position: 'relative'}}>
+      <span style={{ color: '#EB4242', position: 'absolute', top: 0, left: -2, transform: 'translate(-100%, 0)' }}>*</span>
+      {props.children}
+    </div>
+  )
+}
 interface TableRowData {
   id?: number;
   name?: string;
@@ -35,16 +43,18 @@ export default () => {
   const columns: TableColumnItem[] = [
     { title: 'ID', width: 100, render: (d) => <div style={{ lineHeight: '32px' }}>{d.id}</div> },
     {
-      title: 'Name',
+      title: <ItemWithRequired>Name</ItemWithRequired>,
       width: 200,
       render: (d, index) => {
         return (
-          <Form.Item style={{marginBottom: 0}}>
-            <Input
-              rules={[rules.required]}
-              name={`values[${index}].name`}
-            />
-          </Form.Item>
+          <ItemWithRequired>
+            <Form.Item style={{marginBottom: 0}}>
+              <Input
+                rules={[rules.required]}
+                name={`values[${index}].name`}
+              />
+            </Form.Item>
+          </ItemWithRequired>
         );
       },
     },
