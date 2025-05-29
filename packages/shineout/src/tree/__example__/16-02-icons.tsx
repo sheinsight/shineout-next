@@ -79,7 +79,7 @@ export default () => {
   return (
     <div>
       <Tree
-        defaultExpandAll
+        defaultExpanded={['0', '0-0', '0-0-0']}
         line={false}
         data={data}
         keygen='id'
