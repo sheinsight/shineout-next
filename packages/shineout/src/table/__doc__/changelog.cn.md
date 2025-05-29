@@ -21,8 +21,8 @@
 ## 3.7.0-beta.14
 2025-04-30
 
-### 💎 Enhancement
-- 优化 `Table` 的虚拟列表垂直滚动性能，需设置`virtual`为字符串lazy ([#1093](https://github.com/sheinsight/shineout-next/pull/1093))
+### 🆕 Feature
+- `Table` 的 `virtual` 属性值新增lazy，设置后可提高虚拟列表的垂直滚动性能 ([#1093](https://github.com/sheinsight/shineout-next/pull/1093))
 
 ## 3.7.0-beta.6
 2025-04-14
