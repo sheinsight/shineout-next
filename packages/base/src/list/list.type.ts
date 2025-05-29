@@ -23,6 +23,7 @@ export interface ListClasses extends BaseItemClasses {
   checkContent: string;
   pagination: string;
   loading: string;
+  loadingBottom: string;
   empty: string;
   footer: string;
 }
@@ -129,6 +130,15 @@ export interface ListProps<DataItem, Value>
    * @default false
    */
   loading?: boolean | React.ReactNode;
+
+  /**
+   * @en The position of the loading icon
+   * @cn loading 图标位置， 如果设置了fixed=true，则bottom位置无效
+   * @default 'center'
+   * @version 3.7.0
+   */
+  loadingPosition?: 'center' | 'bottom';
+
   /**
    * @en The content at the bottom
    * @cn 底部内容

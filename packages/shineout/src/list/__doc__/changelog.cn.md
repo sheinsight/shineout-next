@@ -1,3 +1,10 @@
+## 3.7.0-beta.35
+2025-05-29
+
+### 🆕 Feature
+
+-  `List` 新增 `loadingPosition` 属性，设置为bottom后在列表底部显示加载图标 ([#1134](https://github.com/sheinsight/shineout-next/pull/1134))
+
 ## 3.5.8
 2025-02-13
 
@@ -16,18 +23,6 @@
 ## 3.1.0
 2024-05-09
 
-### 🆕 Feature
-
 ### 🐞 BugFix
 
 - 修复 `List` 在缩放场景下滚动加载可能失效的问题 ([#414](https://github.com/sheinsight/shineout-next/pull/414))
-
-### 💎 Enhancement
-
-### 💅 Style
-
-### 🆎 Type
-
-
-
-

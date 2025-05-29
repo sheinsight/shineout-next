@@ -119,14 +119,20 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
         })}
       </div>
     );
-    return;
   });
 
-  const renderLoading = () => {
-    if (!props.loading) return null;
+  const loadingPosition = props.loadingPosition || 'center';
+  const renderCenterLoading = () => {
+    if (!props.loading || loadingPosition !== 'center') return null;
     const Loading =
       props.loading === true ? <Spin size={16} jssStyle={props.jssStyle} /> : props.loading;
     return <div className={listClasses?.loading}>{Loading}</div>;
+  };
+  const renderBottomLoading = () => {
+    if (!props.loading || loadingPosition !== 'bottom') return null;
+    const Loading =
+      props.loading === true ? <Spin size={16} jssStyle={props.jssStyle} /> : props.loading;
+    return <div className={listClasses?.loadingBottom}>{Loading}</div>;
   };
 
   const renderEmpty = () => {
@@ -189,6 +195,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
         {columnData.map((column, colIndex) => {
           return renderColumn(column, colIndex);
         })}
+        {renderBottomLoading()}
         {renderFooter()}
       </div>
     );
@@ -210,7 +217,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     <>
       <div className={wrapperClass} style={wrapperStyle}>
         {renderList()}
-        {renderLoading()}
+        {renderCenterLoading()}
         {renderEmpty()}
       </div>
       {props.pagination && (
