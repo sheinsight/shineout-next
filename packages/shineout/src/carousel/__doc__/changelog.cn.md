@@ -1,3 +1,11 @@
+## 3.7.0-beta.37
+2025-05-30
+
+### 🆕 Feature
+
+- `Carousel` 新增 `itemClassName` 属性，支持设置轮播项 className ([#1136](https://github.com/sheinsight/shineout-next/pull/1136))
+- `Carousel` 新增 `showIndicator` 属性，支持隐藏指示器 ([#1136](https://github.com/sheinsight/shineout-next/pull/1136))
+
 ## 3.6.0
 2025-02-27
 
