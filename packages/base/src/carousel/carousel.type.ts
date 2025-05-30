@@ -99,8 +99,20 @@ export interface CarouselProps extends Pick<CommonType, 'className' | 'style'> {
    */
   showArrow?: 'always' | 'hover';
   /**
+   * @en Whether to show the indicator
+   * @cn 是否展示指示器
+   * @default true
+   *
+   */
+  showIndicator?: boolean;
+  /**
    * @en The additional css class for arrow
    * @cn 箭头扩展 class
    */
   arrowClassName?: string;
+  /**
+   * @en The additional css class for carousel items
+   * @cn 轮播项的 class
+   */
+  itemClassName?: string;
 }
