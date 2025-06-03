@@ -230,12 +230,6 @@ export interface SelectModeColumnFilter<DataItem> extends TableColumnFilterBase<
      * @en Whether to open the top search box
      */
     search?: boolean;
-
-    /**
-     * @cn 是否高亮命中的关键词，仅当 search 为 true 时有效
-     * @en Whether to highlight the hit keywords
-     */
-    highlight?: boolean;
   };
 
   /**

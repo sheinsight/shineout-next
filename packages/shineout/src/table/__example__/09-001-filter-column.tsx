@@ -153,8 +153,6 @@ const columns: TableColumnItem[] = [
         multiple: false,
         // 是否显示搜索框
         search: true,
-        // 是否高亮匹配项，仅在search为true时有效
-        highlight: true,
       },
       onFilter: (value, row) => {
         return value.includes(row.company);
