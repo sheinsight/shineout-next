@@ -89,7 +89,7 @@ const Carousel = (props: CarouselProps) => {
   };
 
   const renderIndicator = () => {
-    if (total <= 1 || showIndicator === false) return null;
+    if ((total <= 1 && typeof indicatorType !== 'function') || showIndicator === false) return null;
     let content = null;
     if (typeof indicatorType === 'function') {
       content = indicatorType(current, func.moveTo);
