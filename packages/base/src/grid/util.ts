@@ -29,13 +29,13 @@ function createStyle(text: string, id: string) {
 
 function generateGrid(width: number | string, className: string, responsive: Responsive) {
   const minWidth = RESPONSIVE[responsive];
-  const text = `@media screen and (min-width: ${minWidth}px) { .${className}{width: ${width}%} }`;
+  const text = `@media screen and (min-width: ${minWidth}px) { .${GridClassName}.${className}{width: ${width}%} }`;
   createStyle(text, className);
 }
 
 function generateOffset(width: number | string, className: string, responsive: Responsive) {
   const minWidth = RESPONSIVE[responsive];
-  const text = `@media screen and (min-width: ${minWidth}px) { .${className}{margin-left: ${width}%} }`;
+  const text = `@media screen and (min-width: ${minWidth}px) { .${GridClassName}.${className}{margin-left: ${width}%} }`;
   createStyle(text, className);
 }
 
