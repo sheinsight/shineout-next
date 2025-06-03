@@ -4,6 +4,12 @@
 ### 🆕 Feature
 - `Form.Item` 新增 `keepErrorBelow` 属性，错误信息独占一行，不再覆盖提示信息 ([#1130](https://github.com/sheinsight/shineout-next/pull/1130))
 
+## 3.6.7-beta.7
+2025-05-27
+
+### 🐞 BugFix
+- 修复 `Form` 在相同 `name` 的组件切换渲染过程中，执行 `datum.set` 等改值行为失效的问题  ([#1127](https://github.com/sheinsight/shineout-next/pull/1127))
+
 ## 3.6.7-beta.5
 2025-05-23
 
