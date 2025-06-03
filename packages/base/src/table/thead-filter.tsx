@@ -78,14 +78,14 @@ export const FilterSelect = (props: TheadCommonProps) => {
 
   const treeProps = config?.multiple
     ? {
-        value: currentFilter?.value,
+        value: tempValue,
         onChange: (v: any) => {
           setTempValue(v);
         },
         renderItem: config?.renderItem || 'label',
       }
     : {
-        active: currentFilter?.value,
+        active: tempValue,
         setActive: (v: any) => {
           setTempValue(v);
         },
