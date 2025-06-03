@@ -50,7 +50,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   bindUpdate(id, forceUpdate);
 
   const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
-  const commonStyles = jssStyle?.common() || ({} as CommonClasses);
+  const commonStyles = jssStyle?.common?.() || ({} as CommonClasses);
   const rootClass = classNames(contentStyle.contentWrapper, {
     [contentStyle.childnode]: data[childrenKey] && (data[childrenKey] as DataItem[]).length > 0,
     [contentStyle.inlineContent]: inlineNode,
