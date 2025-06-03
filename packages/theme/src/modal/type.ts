@@ -70,7 +70,7 @@ export interface ModalTokens {
   modalHeaderIconMarginEnd: string;
   /**
    * @type {string}
-   * @token Spacing-4
+   * @token Spacing-3
    * @description 对话框头部区域图标外边距顶部距离
    */
   modalHeaderIconMarginTop: string;
