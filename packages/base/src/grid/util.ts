@@ -13,6 +13,7 @@ const RESPONSIVE = {
 type Responsive = keyof typeof RESPONSIVE;
 
 const GridClassName = `${config.prefix}-grid`;
+const GridFullClassName = `${config.prefix}-grid-full`;
 const defaultResponsive = 'md';
 
 function createStyle(text: string, id: string) {
@@ -87,3 +88,25 @@ export function getGrid(
 
   return `${gridClass} ${offsetClass}`;
 }
+
+
+function init() {
+  const text = [];
+
+  text.push(`
+.${GridClassName} {
+  position: relative;
+  display: inline-block;
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+  box-sizing: border-box;
+}`);
+
+  text.push(`.${GridFullClassName}{width:100%}`);
+  createStyle(text.join(''), GridClassName);
+}
+
+init();

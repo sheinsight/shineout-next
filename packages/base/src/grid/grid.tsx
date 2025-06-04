@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { getGrid } from './util';
 import { GridProps } from './grid.type';
 
-const Gird = (props: GridProps) => {
+const Grid = (props: GridProps) => {
   const { width = 1, offset, responsive, stretch, children, gutter, jssStyle, ...other } = props;
   let autoCount = 0;
   let settleWidth = 0;
@@ -53,6 +53,6 @@ const Gird = (props: GridProps) => {
     </div>
   );
 };
-Gird.isGrid = true;
+Grid.isGrid = true;
 
-export default Gird;
+export default Grid;
