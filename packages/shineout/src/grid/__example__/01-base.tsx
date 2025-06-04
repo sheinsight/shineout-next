@@ -26,7 +26,17 @@ const App: React.FC = () => {
   };
   return (
     <div>
-      <Slider
+      <Grid stretch>
+        {Array.from({ length: 8 })
+          .map((_, i) => i + 1)
+          .map((i) => (
+            <Grid key={i} width={1 / 8}>
+              {123123}
+            </Grid>
+          ))}
+      </Grid>
+
+      {/* <Slider
         step={0}
         value={count}
         formatValue={false}
@@ -42,7 +52,7 @@ const App: React.FC = () => {
             {`${i + 1}/${count}`}
           </Grid>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
