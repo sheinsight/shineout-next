@@ -23,3 +23,4 @@ export * from './immer';
 export * from './warning';
 export * from './highlight';
 export * as flat from './flat';
+export * from './clean-props';
