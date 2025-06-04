@@ -25,7 +25,8 @@ const useTableFilter = <Item = any>(props: UseTableFilterProps<Item>) => {
   }, [filterInfo]);
 
   const filteredData = useMemo(() => {
-    if(activeFilters.length === 0) return props.data;
+    // why use slice: props.data引用不改变会导致后续的useMemo无法重新计算
+    if(activeFilters.length === 0) return (props.data || []).slice();
     return props.data?.filter((item) => {
       return activeFilters.every((key) => {
         const filter = filterInfo.get(key);
