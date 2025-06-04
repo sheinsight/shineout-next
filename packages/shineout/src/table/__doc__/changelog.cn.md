@@ -1,9 +1,16 @@
+## 3.7.0-beta.44
+2025-06-04
+
+### 🐞 BugFix
+
+- 修复 `Table` 自定义 `empty` 缺失一层内部结构导致 flex 布局异常的问题 ([#1148](https://github.com/sheinsight/shineout-next/pull/1148))
+
 ## 3.7.0-beta.42
 2025-06-04
 
 ### 🐞 BugFix
 
-- 修复 `Table` 的data引用不变但数据变化后，组件不触发更新的问题 ([#1146](https://github.com/sheinsight/shineout-next/pull/1146))
+- 修复 `Table` 的 data 引用不变但数据变化后，组件不触发更新的问题 ([#1146](https://github.com/sheinsight/shineout-next/pull/1146))
 
 ## 3.7.0-beta.38
 2025-06-03

@@ -299,6 +299,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const renderEmpty = () => {
     if (!props.data?.length || (filteredData !== undefined && filteredData.length === 0)) {
+      const empty = props.empty !== undefined ? <span>{props.empty}</span> : <Empty jssStyle={props.jssStyle} />
       return (
         <div
           className={classNames(
@@ -309,7 +310,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             context.emptyHeight = el?.clientHeight || 0;
           }}
         >
-          {props.empty || <Empty jssStyle={props.jssStyle} />}
+          {empty}
         </div>
       );
     }
