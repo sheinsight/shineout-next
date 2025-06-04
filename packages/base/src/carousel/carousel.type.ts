@@ -102,6 +102,7 @@ export interface CarouselProps extends Pick<CommonType, 'className' | 'style'> {
    * @en Whether to show the indicator
    * @cn 是否展示指示器
    * @default true
+   * @version 3.7.0
    *
    */
   showIndicator?: boolean;
