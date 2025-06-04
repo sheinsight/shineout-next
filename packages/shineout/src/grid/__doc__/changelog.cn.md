@@ -1,9 +1,9 @@
-## 3.7.0-beta.39
-2025-06-03
+## 3.7.0-beta.40
+2025-06-04
 
 ### 🐞 BugFix
 
-- 修复 `Grid` 多应用下加载出现样式覆盖的问题 ([#1141](https://github.com/sheinsight/shineout-next/pull/1141))
+- 修复 `Grid` 在多个shineout版本的同时使用时出现的样式覆盖问题 ([#1143](https://github.com/sheinsight/shineout-next/pull/1143))
 
 
 ## 3.1.22
