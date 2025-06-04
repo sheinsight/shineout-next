@@ -88,7 +88,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     mounted: false,
     unmounted: false,
     removeLock: false,
-    settingMap: {},
   });
 
   const update = (name?: string | string[]) => {
@@ -341,8 +340,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           // upload组件返回的可能是函数: (prev) => [...prev, file]
           const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key];
           deepSet(draft, key, valueOfKey, deepSetOptions);
-          // 设置 settingMap 用于标记该字段正在被设置值
-          context.settingMap[key] = true;
         });
         values.forEach((key) => {
           if (option.validate) {
@@ -352,13 +349,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
               validate(key, valueOfKey, current(draft));
             });
           }
-        });
-
-        // 设置 settingMap 的值为 false，表示该字段设置值完成
-        setTimeout(() => {
-          values.forEach((key) => {
-            delete context.settingMap[key];
-          });
         });
       });
 
@@ -527,21 +517,13 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.updateMap[n] = new Set();
       }
       context.updateMap[n].add(updateFn);
-      const shouldTriggerResetChange = context.removeArr.has(n);
       context.removeArr.delete(n);
-      const currentValue = deepGet(context.value, n);
-      const shouldTriggerDefaultChange = df !== undefined && currentValue === undefined;
 
-      if (shouldTriggerDefaultChange || shouldTriggerResetChange) {
+      if (df !== undefined && deepGet(context.value, n) === undefined) {
         if (!context.mounted) context.defaultValues[n] = df;
-        let defaultValue = df;
 
-        // 如果组件是重新 bind ，比如更改了 key 或者通过三元表达式切换了组件但 name 都是相同的情况下，在切换过程中改了 value 的值（比如通过 datum.set），需要阻止 defaultValue 的上位，按照当前的 value 来设置 defaultValue
-        if (shouldTriggerResetChange && context.settingMap[n]) {
-          defaultValue = currentValue !== undefined ? currentValue : df;
-        }
         onChange((v) => {
-          deepSet(v, n, defaultValue, deepSetOptions);
+          deepSet(v, n, df, deepSetOptions);
         });
         update(n);
       }
