@@ -299,6 +299,9 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const renderEmpty = () => {
     if (!props.data?.length || (filteredData !== undefined && filteredData.length === 0)) {
+
+      const empty = props.empty !== undefined ? <span>{props.empty}</span> : <Empty jssStyle={props.jssStyle} />
+
       return (
         <div
           className={classNames(
@@ -309,7 +312,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             context.emptyHeight = el?.clientHeight || 0;
           }}
         >
-          {props.empty || <Empty jssStyle={props.jssStyle} />}
+          {empty}
         </div>
       );
     }
@@ -397,7 +400,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       css: sticky?.css,
       parent: tableRef?.current,
       onChange: (isSticky: boolean) => {
-        if(isSticky){
+        if (isSticky) {
           syncHeaderScroll(scrollRef.current?.scrollLeft || 0);
         }
       }
@@ -623,7 +626,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   useEffect(() => {
-    if(!props.sticky || !scrollRef.current || !isScrollX) return;
+    if (!props.sticky || !scrollRef.current || !isScrollX) return;
     // sticky场景下，从空数据到有数据切换时，同步一次滚动条的位置
     syncHeaderScroll(scrollRef.current?.scrollLeft || 0);
   }, [isScrollX, props.sticky, $empty])
