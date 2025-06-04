@@ -180,6 +180,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
   >
     <div
       class="soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 "
+      style="padding-left: 4px; padding-right: 4px;"
     >
       <div
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;"
@@ -189,6 +190,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
     </div>
     <div
       class="soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 "
+      style="padding-left: 4px; padding-right: 4px;"
     >
       <div
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(107, 181, 255); font-size: 14px;"
@@ -198,6 +200,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
     </div>
     <div
       class="soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 "
+      style="padding-left: 4px; padding-right: 4px;"
     >
       <div
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;"
@@ -207,6 +210,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
     </div>
     <div
       class="soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 "
+      style="padding-left: 4px; padding-right: 4px;"
     >
       <div
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(107, 181, 255); font-size: 14px;"
@@ -216,6 +220,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
     </div>
     <div
       class="soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 "
+      style="padding-left: 4px; padding-right: 4px;"
     >
       <div
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;"
@@ -225,6 +230,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
     </div>
     <div
       class="soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 "
+      style="padding-left: 4px; padding-right: 4px;"
     >
       <div
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(107, 181, 255); font-size: 14px;"
@@ -234,6 +240,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
     </div>
     <div
       class="soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 "
+      style="padding-left: 4px; padding-right: 4px;"
     >
       <div
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;"
@@ -243,6 +250,7 @@ exports[`Grid[Base] should render correctly about gutter 1`] = `
     </div>
     <div
       class="soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 "
+      style="padding-left: 4px; padding-right: 4px;"
     >
       <div
         style="color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(107, 181, 255); font-size: 14px;"
