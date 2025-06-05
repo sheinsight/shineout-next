@@ -114,6 +114,7 @@ export interface CarouselProps extends Pick<CommonType, 'className' | 'style'> {
   /**
    * @en The additional css class for carousel items
    * @cn 轮播项的 class
+   * @version 3.7.0
    */
   itemClassName?: string;
 }
