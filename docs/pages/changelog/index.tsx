@@ -9,7 +9,7 @@ const mainChangelog = require(`!!raw-loader!../../markdown/shineout/changelog-v3
 
 const changelogArr = Object.values(changelogs);
 
-const ORDER = ['Featrue', 'Enhancement', 'Performance', 'BugFix', 'Style', 'Theme']
+const ORDER = ['Feature', 'Enhancement', 'Performance', 'BugFix', 'Style', 'Theme']
 
 const Changelog = () => {
   const [showSubVersion, setShowSubVersion] = useState(false);
