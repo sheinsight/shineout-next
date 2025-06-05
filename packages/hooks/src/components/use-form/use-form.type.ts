@@ -267,6 +267,7 @@ export type FormContext = {
   unmounted: boolean;
   removeLock: boolean;
   ignoreValidateFields: string[];
+  settingMap: ObjectType<boolean>;
 };
 
 export type UseFormSlotOwnProps = {
