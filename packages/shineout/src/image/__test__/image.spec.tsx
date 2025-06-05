@@ -104,7 +104,6 @@ describe('Image[Base]', () => {
         classTest(img, fit === 'fill' ? imageFillClassName : imageFitClassName);
         classTest(img, imageRoundedClassName);
         styleTest(img, 'width: 100%; padding-bottom: 100%;');
-        styleTest(imgContent, `background-image: url(${imageUrl});`);
       });
     });
   });
@@ -265,7 +264,7 @@ describe('Image[Target]', () => {
       classTest(a, imagePreviewClassName);
       attributesTest(a, 'target', '_modal');
       classLengthTest(a, imagePreviewMaskClassName, 1);
-      classLengthTest(container, 'img', 0);
+      classLengthTest(container, 'img', 1);
       fireEvent.click(container.querySelector(imagePreviewMaskClassName));
       expect(clickFn.mock.calls.length).toBe(1);
     });
@@ -279,7 +278,7 @@ describe('Image[Target]', () => {
       hasAttributesTest(a, 'download');
       attributesTest(a, 'target', '_self');
       classLengthTest(a, imagePreviewMaskClassName, 1);
-      classLengthTest(container, 'img', 0);
+      classLengthTest(container, 'img', 1);
       fireEvent.click(container.querySelector(imagePreviewMaskClassName));
       expect(clickFn.mock.calls.length).toBe(1);
     });

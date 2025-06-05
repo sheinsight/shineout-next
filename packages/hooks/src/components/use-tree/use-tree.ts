@@ -22,7 +22,7 @@ import {
   isUnMatchedData,
   isOptionalDisabled,
 } from '../../utils/is';
-import { devUseWarning, produce } from '../../utils';
+import { devUseWarning, produce, shallowEqual } from '../../utils';
 
 function toArray<Value>(value: Value) {
   if (!value) return [];
@@ -134,7 +134,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       return { active: isActive, expanded: shouldDefaultExpand };
     }
     if (virtual) {
-      return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };
+      return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
     }
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
@@ -143,7 +143,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const bindVirtualNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
-    return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };
+    return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
   };
 
   const get = (id: KeygenResult) => {
@@ -679,6 +679,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return context.dataFlat;
   };
 
+  const updateExpanded = usePersistFn((expanded?: KeygenResult[]) => {
+    const tempExpandMap = new Set(expanded);
+    if (!expanded) return;
+
+    if (virtual) {
+      expandedFlat(expanded);
+    }
+
+    context.updateMap.forEach((update, id) => {
+      update('expanded', tempExpandMap.has(id));
+    });
+  });
+
   useEffect(() => {
     if (defaultExpandAll) {
       const nextExpanded = [] as KeygenResult[];
@@ -696,8 +709,15 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (props.datum) return;
     if (!dataUpdate) return;
     setData(data);
+    const nextExpanded = props.expanded || props.defaultExpanded || [];
+
+    if (!shallowEqual(nextExpanded, expanded)) {
+      onExpand(nextExpanded);
+      updateExpanded(nextExpanded);
+    }
+
     updateInnerCheckStatus();
-  }, [data]);
+  }, [props.data]);
 
   useEffect(() => {
     if (props.datum) return;
@@ -726,16 +746,17 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     getChecked,
     getKey,
     getFlatData,
+    getDataById,
     getDataByValues,
     setValue,
     setData,
     isDisabled,
+    isUnMatched,
     bindNode,
     bindVirtualNode,
-    getDataById,
     bindUpdate,
     unBindUpdate,
-    isUnMatched,
+    updateExpanded,
     childrenKey,
     data,
     dataFlat,

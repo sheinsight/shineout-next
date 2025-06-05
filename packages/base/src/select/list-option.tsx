@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import classNames from 'classnames';
-import { addResizeObserver, usePersistFn } from '@sheinx/hooks';
+import { addResizeObserver, usePersistFn, util, FilterContext } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { ListOptionProps } from './list-option.type';
 import Icons from '../icons';
 import { useConfig } from '../config';
+import { CommonClasses } from '../common/type';
 
 const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) => {
   const {
@@ -24,6 +25,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   const optionRef = useRef<HTMLLIElement>(null);
   const config = useConfig();
   const styles = jssStyle?.select?.() as SelectClasses;
+  const commonStyles = jssStyle?.common?.() as CommonClasses;
   const isChecked = datum.check(data);
   const isDisabled = datum.disabledCheck(data);
   const rootClass = classNames(styles?.option, `option-${index}`, {
@@ -65,7 +67,13 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     );
   };
 
-  const result = renderItem(data);
+  const { filterText, highlight } = useContext(FilterContext);
+  const result = util.getHighlightText({
+    enable: highlight,
+    nodeList: renderItem(data),
+    searchWords: filterText,
+    highlightClassName: commonStyles?.highlight,
+  });
   const title = typeof result === 'string' ? result : '';
 
   useEffect(() => {

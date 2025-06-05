@@ -40,7 +40,5 @@ export interface TransferListProps<DataItem, Value extends KeygenResult[]>
   renderFilter?: (filterProps: FilterProps) => React.ReactNode;
   customRender?: (props: CustomRenderProps<Value>) => React.ReactNode;
   onFilter?: (text: string, listType: TransferListType) => void;
-  onSelectChange:
-    | ((value: KeygenResult[], sourceKeys: KeygenResult[], targetKeys: KeygenResult[]) => void)
-    | ((selectKeys: KeygenResult[]) => void);
+  onSelectChange: ((selectKeys: KeygenResult[]) => void);
 }

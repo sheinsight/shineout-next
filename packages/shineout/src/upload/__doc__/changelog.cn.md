@@ -1,3 +1,22 @@
+## 3.7.0-beta.22
+2025-05-08
+
+### 🆕 Feature
+
+- `Upload` 新增 `beforeDrop` 属性，支持自行处理拖拽释放事件以及读取文件列表处理返回文件 ([#1104](https://github.com/sheinsight/shineout-next/pull/1104))
+
+## 3.6.5-beta.6
+2025-04-29
+
+### 🐞 BugFix
+
+- 修复 `Upload` 同时上传多个文件时偶现的99%进度不消失问题  ([#1084](https://github.com/sheinsight/shineout-next/pull/1084))
+
+### 🆕 Feature
+
+- `Upload` 新增 `functionalOnChange` 属性，开启后onChange的回调值将变为函数  ([#1084](https://github.com/sheinsight/shineout-next/pull/1084))
+
+
 ## 3.6.0
 2025-03-14
 

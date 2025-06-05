@@ -4,10 +4,27 @@ import { TreeClasses } from '@sheinx/base';
 
 export type TreeClassType = keyof TreeClasses;
 
+const childNodeMarginLeft = 12;
+
 const treeStyle: JsStyles<TreeClassType> = {
   rootClass: {},
   tree: {},
   virtual: {},
+  sizeSmall: {
+    '&$line $node': {
+      '&:last-child': {
+        '&::before': {
+          top: 0,
+          height: 14,
+        },
+      },
+      '&::before': {
+        top: -2,
+        height: 'calc(100% + 2px)',
+      }
+    },
+  },
+  sizeLarge: {},
   notTree: {
     '&$root > $node$leaf': {
       paddingLeft: 0,
@@ -17,6 +34,19 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
   },
   line: {
+    '&$virtual $node': {
+      '&::before, &::after': {
+        display: 'none',
+      }
+    },
+    '&$virtual $leaf $contentWrapper': {
+      marginLeft: 12,
+    },
+    '&$virtual $leaf $contentWrapper, &$virtual $childnode$contentWrapper': {
+      '&::after': {
+        display: 'none',
+      }
+    },
     '& $node': {
       '&[dir=ltr]::before': { left: 0 },
       '&[dir=rtl]::before': { right: 0 },
@@ -27,23 +57,6 @@ const treeStyle: JsStyles<TreeClassType> = {
         height: 'calc(100% + 6px)',
         width: 1,
         background: Token.treeLineBackgroundColor,
-      },
-      '&[dir=ltr]::after': { left: 0 },
-      '&[dir=rtl]::after': { right: 0 },
-      '&::after': {
-        content: '""',
-        position: 'absolute',
-        top: 18,
-        height: 1,
-        width: 16,
-        background: Token.treeLineBackgroundColor,
-      },
-    },
-
-    '& $node:first-child': {},
-    '& $node:first-child:last-child': {
-      '&::before,&::after': {
-        display: 'none',
       },
     },
 
@@ -57,16 +70,111 @@ const treeStyle: JsStyles<TreeClassType> = {
     '& $contentWrapper': {},
 
     '& $iconWrapper': {
-      '&[dir=ltr]': { left: 16 },
-      '&[dir=rtl]': { right: 16 },
       width: 24,
-      '& $icon': {
-        // width: 16,
-      },
+      '&[dir=ltr]': { left: -24 },
+      '&[dir=rtl]': { right: -24 },
     },
     '& $childnode': {
-      marginLeft: 12,
+      marginLeft: childNodeMarginLeft,
+      '&$contentWrapper': {
+        position: 'relative',
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: 18,
+          left: 0,
+          marginLeft: -24,
+          transform: 'translate(-100%, 0)',
+          height: 1,
+          width: 16,
+          background: Token.treeLineBackgroundColor,
+        },
+      }
     },
+    '& $leaf': {
+      '& $contentWrapper': {
+        position: 'relative',
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: 18,
+          left: 0,
+          marginLeft: -24,
+          transform: 'translate(-100%, 0)',
+          height: 1,
+          width: 16,
+          background: Token.treeLineBackgroundColor,
+        },
+      }
+    },
+    '& $childnode[dir=rtl]': {
+      '&$contentWrapper': {
+        '&::after': {
+          top: '50%',
+          right: 0,
+          transform: 'translate(100%, -50%)',
+        }
+      }
+    },
+    '&$sizeSmall': {
+      '& $contentWrapper::after': {
+        display: 'none',
+      },
+    },
+    '&$sizeLarge': {
+      '& $node:last-child::before': {
+        height: 21,
+      },
+      '& $iconWrapper': {
+        '&[dir=ltr]': { left: -32 },
+        '&[dir=rtl]': { right: -32 },
+      },
+      '&:not($virtual) $childnode, &:not($virtual) $leaf': {
+        marginLeft: 20,
+      },
+      '': {
+        marginLeft: 20,
+      },
+      '& $node': {
+        paddingLeft: 32,
+        '&[dir=ltr]::before': { left: 4 },
+        '&[dir=rtl]::before': { right: 4 },
+
+        '&::before': {
+          top: -4,
+          height: 'calc(100% + 4px)',
+        }
+      },
+      '& $node$leaf': {
+        '&[dir=ltr]::before': { left: -16 },
+        '&[dir=rtl]::before': { right: -16 },
+
+        '&::after': {
+          left: -14,
+        }
+      },
+      '& > $root > $node': {
+        paddingLeft: 12,
+      },
+      '& $leaf $contentWrapper::after': {
+        left: -24,
+        top: 21,
+        transform: 'translate(0, -50%)',
+      },
+      '& $contentWrapper$childnode::after': {
+        top: 21,
+        marginLeft: -32,
+      },
+    },
+
+    '& > $root > $node': {
+      paddingLeft: 12,
+      '& > $contentWrapper': {
+        '&::after': {
+          display: 'none'
+        },
+      }
+    }
   },
   noline: {
     '& $iconWrapper': {
@@ -97,24 +205,28 @@ const treeStyle: JsStyles<TreeClassType> = {
         paddingLeft: 24,
       },
     },
+    '&$sizeLarge': {
+      '& > $root > $node, & $node$leaf': {
+        paddingLeft: 32,
+      }
+    }
+  },
+
+  lineIndent: {
+    position: 'absolute',
+    top: 0,
+    width: 1,
+    height: '100%',
+    background: Token.treeLineBackgroundColor,
+    '$sizeLarge &': {
+      transform: 'translateX(-4px)',
+    }
   },
   root: {
-    // '& > :first-child$node': {
-    //   '&::before': {
-    //     top: 18,
-    //   },
-    // },
-    // '& > :last-child$node': {
-    //   '&::before': {},
-    // },
     '& > $node': {
       paddingLeft: 12,
       '&$leaf': {
         paddingLeft: 24,
-      },
-      '& > $contentWrapper > $iconWrapper': {
-        '&[dir=ltr]': { left: 0 },
-        '&[dir=rtl]': { right: 0 },
       },
       '&::before': {
         display: 'none',
@@ -130,6 +242,13 @@ const treeStyle: JsStyles<TreeClassType> = {
     display: 'flex',
     alignItems: 'flex-start',
     padding: '5px 0',
+
+    '$sizeSmall &': {
+      padding: '1px 0',
+    },
+    '$sizeLarge & $text': {
+      lineHeight: '28px',
+    },
   },
   inlineContent: {
     display: 'inline-flex',
@@ -151,15 +270,6 @@ const treeStyle: JsStyles<TreeClassType> = {
     alignItems: 'center',
     marginLeft: 4,
 
-    // 'label&': {
-    //   cursor: 'pointer',
-    //   userSelect: 'none',
-    // },
-
-    // '$iconWrapper + &': {
-    //   marginLeft: 4,
-    // },
-
     '$contentDisabled &': {
       '& $text': {
         color: Token.treeContentDisabledFontColor,
@@ -177,8 +287,12 @@ const treeStyle: JsStyles<TreeClassType> = {
   checkbox: {
     '&[class*="checkbox-wrapper"]': {
       height: 26,
+      alignSelf: 'flex-start',
       marginRight: Token.treeCheckboxMarginX,
     },
+    '$sizeLarge &': {
+      marginTop: 4,
+    }
   },
   text: {
     cursor: 'pointer',
@@ -196,18 +310,29 @@ const treeStyle: JsStyles<TreeClassType> = {
       background: Token.treeContentHoverBackgroundColor,
     },
   },
-  // textDisabled: {
-  //   color: Token.treeItemDisabledFontColor,
-  // },
   list: {},
   node: {
     position: 'relative',
     paddingLeft: 28,
+    '$sizeSmall$line &': {
+      paddingLeft: 12,
+      '&$leaf': {
+        paddingLeft: 24,
+      },
+      "&::after": {
+        position: 'absolute',
+        content: '""',
+        top: 28,
+        width: 1,
+        height: 'calc(100% - 28px)',
+        background: Token.treeLineBackgroundColor,
+      }
+    },
+    '$sizeLarge &': {
+      paddingLeft: 32,
+    },
     '&$leaf': {
       paddingLeft: 40,
-      '&::after': {
-        width: 12,
-      },
     },
 
     '&[draggable="true"]': {
@@ -221,7 +346,8 @@ const treeStyle: JsStyles<TreeClassType> = {
     '&[dir=rtl]': { right: 0 },
     position: 'absolute',
     width: 24,
-    height: 26,
+    height: 24,
+    margin: '1px 0',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -230,10 +356,15 @@ const treeStyle: JsStyles<TreeClassType> = {
         transform: 'rotate(0deg)',
       },
     },
+    '$sizeLarge &': {
+      width: 32,
+      height: 32,
+      top: 5,
+    }
   },
   icon: {
-    width: 24,
-    height: 24,
+    width: '100%',
+    height: '100%',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -251,6 +382,9 @@ const treeStyle: JsStyles<TreeClassType> = {
 
     '& svg': {
       width: 14,
+      '$sizeLarge &': {
+        width: 16,
+      }
     },
   },
   children: {},

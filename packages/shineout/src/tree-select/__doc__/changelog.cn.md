@@ -1,3 +1,40 @@
+## 3.7.0-beta.32
+2025-05-27
+
+### 💎 Enhancement
+- `TreeSelect` 增强 `size` 属性，下拉面板的列表尺寸跟随size联动 ([#1128](https://github.com/sheinsight/shineout-next/pull/1128))
+
+## 3.7.0-beta.31
+2025-05-27
+
+### 🆕 Feature
+- `TreeSelect` 新增 `highlight` 属性，开启搜索关键字高亮功能 ([#1126](https://github.com/sheinsight/shineout-next/pull/1126))
+
+
+## 3.7.0-beta.27
+2025-05-22
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 的 `beforeChange` 不生效的问题 ([#1120](https://github.com/sheinsight/shineout-next/pull/1120))
+
+## 3.7.0-beta.18
+2025-05-07
+
+### 🆕 Feature
+- `TreeSelect` 新增 `renderCompressed` 属性，支持自定义渲染合并内容 ([#1099](https://github.com/sheinsight/shineout-next/pull/1099))
+
+## 3.6.6-beta.4
+2025-05-09
+
+### 🐞 BugFix
+- 修复 `TreeSelect`结果框高度不继承的问题  ([#1105](https://github.com/sheinsight/shineout-next/pull/1105))
+
+## 3.6.6-beta.3
+2025-05-07
+
+### 💎 Enhancement
+- `TreeSelect` 增强 `compressed` 属性，新增 `hide-popover` 模式隐藏合并后的选项，仅展示合并数量 ([#1098](https://github.com/sheinsight/shineout-next/pull/1098))
+
 ## 3.6.5-beta.1
 2025-04-23
 

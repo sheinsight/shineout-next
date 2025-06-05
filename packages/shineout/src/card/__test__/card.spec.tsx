@@ -214,7 +214,7 @@ describe('Card[Collapse]', () => {
   });
   test('should render when set collapsible is true', async () => {
     const { container } = render(<CardTest collapsible />);
-    
+
     const cardWrapper = container.querySelector(wrapper)!;
     classTest(cardWrapper, wrapperCollapsible);
     const cardHeaderWrapper = cardWrapper.querySelector(header)!;
@@ -225,13 +225,13 @@ describe('Card[Collapse]', () => {
     await waitFor(async () => {
       await delay(500);
     });
-    
+
     styleContentTest(cardBodyCollapse, closeDefaultStyle);
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
     });
-    
+
     styleContentTest(cardBodyCollapse, activeDefaultStyle);
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
@@ -244,17 +244,17 @@ describe('Card[Collapse]', () => {
     await waitFor(async () => {
       await delay(500);
     });
-    
+
     const cardWrapper = container.querySelector(wrapper)!;
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
     styleContentTest(cardBodyCollapse, closeDefaultStyle);
-    
+
     const cardIndicatorWrapper = cardWrapper.querySelector(indicator)!;
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
     });
-    
+
     styleContentTest(cardBodyCollapse, activeDefaultStyle);
   });
   test('should render when set collapsed and defaultCollapsed at the same time', async () => {
@@ -286,7 +286,7 @@ describe('Card[Collapse]', () => {
   });
 });
 describe('Card[Form/Accordion]', () => {
-  test('should render when set card.submit', () => {
+  test('should render when set card.submit', async () => {
     const onSubmit = jest.fn();
     const { container } = render(
       <CardFooterTest>
@@ -295,6 +295,9 @@ describe('Card[Form/Accordion]', () => {
     );
     const cardFooter = container.querySelector(footer)!;
     fireEvent.click(cardFooter.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(500);
+    });
     expect(onSubmit.mock.calls.length).toBe(1);
   });
   test('should render when is accordion', async () => {
@@ -305,7 +308,7 @@ describe('Card[Form/Accordion]', () => {
         <CardTest />
       </Card.Accordion>,
     );
-    
+
     const cardAccordion = container.querySelector(accordion)!;
     const cardWrappers = cardAccordion.querySelectorAll(wrapper)!;
     cardWrappers.forEach((item) => {
@@ -317,7 +320,7 @@ describe('Card[Form/Accordion]', () => {
     await waitFor(async () => {
       await delay(500)
     })
-    
+
     styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, activeDefaultStyle);
     fireEvent.click(cardWrappers[1].querySelector(indicatorIcon)!);
     await waitFor(async () => {

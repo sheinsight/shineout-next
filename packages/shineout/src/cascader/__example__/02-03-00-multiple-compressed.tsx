@@ -1,8 +1,8 @@
 /**
- * cn -
- *    -- 当`compressed`属性值为 'no-repeat' 时，合并的选项中不会出现结果框中的重复内容
- * en -
- *    -- When the value of the `compressed` property is 'no-repeat', the repeated content in the merged options will not appear in the result box
+ * cn - 合并选项
+ *    -- 设置`compressed`属性，当选项超长的时候会合并选项
+ * en - Compressed
+ *    -- Set the `compressed` property, when the option is too long, the option will be merged
  */
 import React from 'react';
 import { Cascader } from 'shineout';
@@ -50,8 +50,9 @@ export default () => {
       <Cascader
         clearable
         multiple
+        defaultValue={['jiangning', 'yuhuatai', 'nanjing', 'jiangsu', 'feidong', 'hefei', 'anhui']}
         mode={0}
-        compressed='no-repeat'
+        compressed
         width={300}
         placeholder='Please select city'
         data={data}

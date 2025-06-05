@@ -150,6 +150,11 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   noBordered: {
     borderColor: 'transparent',
   },
+  noChildren: {
+    '&&$confirmwarning': {
+      marginBottom: 0,
+    }
+  },
   icon: {
     width: Token.alertIconSize,
     display: 'inline-flex',

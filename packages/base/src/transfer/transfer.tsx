@@ -174,7 +174,15 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
         searchPlaceholder={placeholder}
         renderFilter={renderFilter}
         onFilter={onFilterProp ? onFilter : undefined}
-        onSelectChange={onSelectChange}
+        onSelectChange={(keys) => {
+          if (isSource) {
+            const newAllKeys = Array.from(new Set([...keys, ...(targetSelectedKeys || [])]));
+            onSelectChange(newAllKeys, keys, targetSelectedKeys);
+          } else {
+            const newAllKeys = Array.from(new Set([...keys, ...(sourceSelectedKeys || [])]));
+            onSelectChange(newAllKeys, sourceSelectedKeys, keys);
+          }
+        }}
       />
     );
   };

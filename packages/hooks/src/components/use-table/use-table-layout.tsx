@@ -8,6 +8,33 @@ import { KeygenResult } from '../../common/type';
 import { isFunc, isNumber } from '../../utils/is';
 import { toNum } from '../../utils/number';
 
+function getDecimalAndIntegerPart(num?: number | string): number[] {
+  if (!num) return [0, 0];
+  const str = num.toString();
+  const dotIndex = str.indexOf('.');
+  if (dotIndex === -1) return [parseInt(str), 0];
+
+  const integerPart = parseInt(str.slice(0, dotIndex));
+  const decimalPart = parseFloat(`0.${str.slice(dotIndex + 1)}`);
+  return [integerPart, decimalPart];
+}
+
+// 将所有的小数部分转移到最后一列
+function shiftDecimalToLastColumn(cols: Array<number | string | undefined>) {
+  let decimalSum = 0;
+  cols.forEach((v, i) => {
+    const [inter, decimal] = getDecimalAndIntegerPart(v);
+    if (decimal > 0) {
+      decimalSum += decimal;
+      cols[i] = inter;
+    }
+  });
+  if (decimalSum > 0) {
+    cols[cols.length - 1] = Number(cols[cols.length - 1]) + decimalSum;
+  }
+  return cols;
+}
+
 const MIN_RESIZABLE_WIDTH = 20;
 
 function compareColumnWidth(curCols: TableFormatColumn<any>[], preCols: TableFormatColumn<any>[]) {
@@ -62,7 +89,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       return;
     }
     context.clientWidth = scrollEl.clientWidth;
-    if(scrollEl.clientHeight === 0) return
+    if (scrollEl.clientHeight === 0) return;
     const overHeight = scrollEl.scrollHeight > scrollEl.clientHeight;
     const overWidth = scrollEl.scrollWidth > context.clientWidth;
     const newScrollBarWidth = overHeight ? scrollEl.offsetWidth - scrollEl.clientWidth : 0;
@@ -107,9 +134,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
 
   const changeColGroup = (cols: Array<number | string | undefined>, adjust: boolean | 'drag') => {
     // 修改`Table`被display:none时，表格头样式错乱的问题
-    if(cols && cols.every((v) => v === 0)) return
+    if (cols && cols.every((v) => v === 0)) return;
 
-    setColgroup(cols);
+    setColgroup(shiftDecimalToLastColumn(cols));
     setAdjust(adjust);
     if (!adjust) {
       updateResizeFlag();
@@ -288,7 +315,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       syncScrollWidth();
     }
     checkScroll();
-    checkFloat()
+    checkFloat();
   }, [colgroup]);
 
   let tableWidth = props.width;
@@ -313,7 +340,6 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     width: tableWidth,
     shouldLastColAuto: props.columnResizable && !adjust,
     scrollWidth,
-    maxScrollLeft: scrollWidth - context.clientWidth,
     resizeFlag,
   };
 };

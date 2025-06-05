@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import { getGrid } from './util';
 import { GridProps } from './grid.type';
 
-const Gird = (props: GridProps) => {
-  const { width = 1, offset, responsive, stretch, children, gutter, ...other } = props;
+const Grid = (props: GridProps) => {
+  const { width = 1, offset, responsive, stretch, children, gutter, jssStyle, ...other } = props;
   let autoCount = 0;
   let settleWidth = 0;
   Children.toArray(children).forEach((c) => {
@@ -16,7 +16,15 @@ const Gird = (props: GridProps) => {
   });
   const autoWidth = autoCount > 0 ? (1 - settleWidth) / autoCount : 0;
 
-  const className = classNames(props.className, getGrid({ width, offset, responsive }));
+  const gridClasses = jssStyle?.grid?.();
+
+  const className = classNames(
+    props.className,
+    gridClasses?.rootClass,
+    gridClasses?.wrapper,
+    gridClasses?.full,
+    getGrid({ width, offset, responsive }),
+  );
   const style = Object.assign({}, props.style);
   if (gutter && gutter > 0) {
     style.width = 'auto';
@@ -45,6 +53,6 @@ const Gird = (props: GridProps) => {
     </div>
   );
 };
-Gird.isGrid = true;
+Grid.isGrid = true;
 
-export default Gird;
+export default Grid;

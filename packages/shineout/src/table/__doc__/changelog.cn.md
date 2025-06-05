@@ -1,3 +1,74 @@
+## 3.7.0-beta.44
+2025-06-04
+
+### 🐞 BugFix
+
+- 修复 `Table` 自定义 `empty` 缺失一层内部结构导致 flex 布局异常的问题 ([#1148](https://github.com/sheinsight/shineout-next/pull/1148))
+
+## 3.7.0-beta.42
+2025-06-04
+
+### 🐞 BugFix
+
+- 修复 `Table` 的 data 引用不变但数据变化后，组件不触发更新的问题 ([#1146](https://github.com/sheinsight/shineout-next/pull/1146))
+
+## 3.7.0-beta.38
+2025-06-03
+
+### 🐞 BugFix
+
+- 修复 `Table` 前端过滤多选的勾选状态在重置后未清空的问题 ([#1140](https://github.com/sheinsight/shineout-next/pull/1140))
+
+## 3.7.0-beta.26
+2025-05-20
+
+### 🐞 BugFix
+
+- 修复 `Table` 的不定高场景下依然开启了虚拟列表的数据渲染不全和抖动的问题 ([#1117](https://github.com/sheinsight/shineout-next/pull/1117))
+
+## 3.7.0-beta.23
+2025-05-14
+
+### 🆕 Feature
+
+- `Table` 的 columns 新增 `groupProps` 属性，支持设置 style 和 className ([#1112](https://github.com/sheinsight/shineout-next/pull/1112))
+
+## 3.7.0-beta.21
+2025-05-07
+
+### 🐞 BugFix
+- 修复 `Table` 的 columns 中 render 字段不传导致组件报错的问题 ([#1102](https://github.com/sheinsight/shineout-next/pull/1102))
+
+## 3.7.0-beta.14
+2025-04-30
+
+### 🆕 Feature
+- `Table` 的 `virtual` 属性值新增lazy，设置后可提高虚拟列表的垂直滚动性能 ([#1093](https://github.com/sheinsight/shineout-next/pull/1093))
+
+## 3.7.0-beta.6
+2025-04-14
+
+### 🆕 Feature
+
+- `Table` 新增 `showBottomScrollbar` 属性，启用后显示可吸附底部的横向滚动条 ([#1068](https://github.com/sheinsight/shineout-next/pull/1068))
+
+
+## 3.7.0-beta.4
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `Table` 的colgroup平均分配时产生的小数位像素在浏览器渲染时偶现的单元格垂直边框对不齐问题  ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
+
+###  🚀 Performance
+- 优化 `Table` 合并行或列的hover渲染性能 ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
+
+
+## 3.7.0-beta.3
+2025-04-09
+
+### 🚀 Performance
+- 优化 `Table` 的虚拟列表横向滚动性能，调整了thead的dom位置 ([#1047](https://github.com/sheinsight/shineout-next/pull/1047))
+
 ## 3.6.3-beta.3
 2025-04-11
 

@@ -179,6 +179,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     display: 'flex',
     flex: '1',
     minWidth: 0,
+    height: '100%',
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
   },
@@ -442,6 +443,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     maxHeight: 160,
     overflow: 'auto',
     padding: `${token.treeSelectMorePaddingY} ${token.treeSelectMorePaddingX}`,
+    '& $tag': {
+      maxWidth: 'none',
+    },
   },
   virtualList: {
     margin: 0,

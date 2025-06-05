@@ -26,7 +26,11 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
       marginRight: 0,
     },
   },
-  wrapperSmall: {},
+  wrapperSmall: {
+    '[data-soui-role="form-control"] > $group > &': {
+      marginTop: 1,
+    },
+  },
   wrapperLarge: {},
   wrapperChecked: {},
   wrapperDisabled: {
@@ -37,13 +41,16 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     position: 'relative',
     boxSizing: 'border-box',
     width: token.radioIconWidth,
+    minWidth: token.radioIconWidth,
     height: token.radioIconWidth,
     '$wrapperSmall &': {
       width: token.radioSmallIconWidth,
+      minWidth: token.radioSmallIconWidth,
       height: token.radioSmallIconWidth,
     },
     '$wrapperLarge &': {
       width: token.radioLargeIconWidth,
+      minWidth: token.radioLargeIconWidth,
       height: token.radioLargeIconWidth,
     },
     marginRight: token.radioIconGap,

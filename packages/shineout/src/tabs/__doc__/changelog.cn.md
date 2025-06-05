@@ -1,3 +1,17 @@
+## 3.7.0-beta.8
+2025-04-21
+
+### 🆕 Feature
+- `Tabs` 新增 `renderTabsHeader` 属性，支持自定义渲染头部内容 ([#1075](https://github.com/sheinsight/shineout-next/pull/1075))
+
+## 3.6.6-beta.1
+2025-04-30
+
+### 🐞 BugFix
+- 修复 `Tabs.Panel` 设置 `background` 非预期的影响到shape为button和fill的样式（Regression: since v3.6.2） ([#1094](https://github.com/sheinsight/shineout-next/pull/1094))
+
+
+
 ## 3.6.2-beta.1
 2025-03-31
 

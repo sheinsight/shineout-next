@@ -11,8 +11,14 @@ exports[`Image[Base] should render correctly  1`] = `
   >
     <div
       class="soui-image-inner"
-      style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
-    />
+    >
+      <img
+        class="soui-image-img"
+        draggable="true"
+        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+        style="width: 100%; height: auto;"
+      />
+    </div>
     <span
       class="soui-image-preview-mask"
     >
@@ -102,8 +108,14 @@ exports[`Image[Group] should render correctly about group 1`] = `
     >
       <div
         class="soui-image-inner"
-        style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png);"
-      />
+      >
+        <img
+          class="soui-image-img"
+          draggable="true"
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png"
+          style="width: 100%; height: auto;"
+        />
+      </div>
       <span
         class="soui-image-preview-mask"
       >
@@ -134,8 +146,14 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
   >
     <div
       class="soui-image-inner"
-      style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
-    />
+    >
+      <img
+        class="soui-image-img"
+        draggable="true"
+        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+        style="width: 100%; height: auto;"
+      />
+    </div>
     <span
       class="soui-image-preview-mask"
     >
@@ -200,8 +218,14 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
   >
     <div
       class="soui-image-inner"
-      style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
-    />
+    >
+      <img
+        class="soui-image-img"
+        draggable="true"
+        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+        style="width: 100%; height: auto;"
+      />
+    </div>
     <span
       class="soui-image-preview-mask"
     >
@@ -236,8 +260,14 @@ exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 >
   <div
     class="soui-image-inner"
-    style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
-  />
+  >
+    <img
+      class="soui-image-img"
+      draggable="true"
+      src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+      style="width: 100%; height: auto;"
+    />
+  </div>
 </div>
 `;
 
@@ -249,8 +279,14 @@ exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 >
   <div
     class="soui-image-inner"
-    style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
-  />
+  >
+    <img
+      class="soui-image-img"
+      draggable="true"
+      src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+      style="width: 100%; height: auto;"
+    />
+  </div>
 </div>
 `;
 
@@ -262,7 +298,13 @@ exports[`Image[Shape] should render correctly about shape is thumbnail 1`] = `
 >
   <div
     class="soui-image-inner"
-    style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
-  />
+  >
+    <img
+      class="soui-image-img"
+      draggable="true"
+      src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+      style="width: 100%; height: auto;"
+    />
+  </div>
 </div>
 `;

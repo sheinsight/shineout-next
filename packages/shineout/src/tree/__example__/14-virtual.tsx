@@ -2,7 +2,6 @@
  * cn - 虚拟列表
  *    -- 设置 `virtual` 属性，开启虚拟列表功能，本例为 100000 条数据
  *    -- 设置虚拟列表后需要指定 `height` 属性或者将其设置在固定高度容器中
- *    -- *虚拟列表仅在非 line 模式下生效
  *    -- *虚拟暂不支持高级筛选模式、节点拖拽
  * en - Virtual list
  *    -- Set the `virtual` property to enable the virtual list function, this example has 100000 data
@@ -29,12 +28,13 @@ export default () => {
     <div style={{ height: 300 }}>
       <Tree
         virtual
-        line={false}
+        line={true}
         data={data}
         defaultExpandAll
         keygen='id'
         parentClickExpand
         mode={2}
+        size="small"
         onChange={(v) => console.log(v)}
         renderItem={renderItem}
       ></Tree>

@@ -1,4 +1,9 @@
-export { default as useDatePickerFormat } from './use-datepicker-format';
+export {
+  default as useDatePickerFormat,
+  getFormatValueArr,
+  convertValueToDateArr,
+  getFormat,
+} from './use-datepicker-format';
 export { default as dateUtil } from './util';
 export { default as useDatePick } from './use-date';
 export { default as useYearPick } from './use-year';

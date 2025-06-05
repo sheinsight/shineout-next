@@ -14,7 +14,7 @@ import {
 import { classLengthTest } from '../../tests/structureTest';
 import TreeSelectBase from '../__example__/01-base';
 import TreeMultiple from '../__example__/02-multiple';
-import TreeSelectCompressed from '../__example__/03-compressed';
+import TreeSelectCompressed from '../__example__/03-01-01-compressed';
 import TreeSelectFilter from '../__example__/04-01-filter';
 import TreeSelectFilterMore from '../__example__/04-02-filter';
 import TreeSelectLoader from '../__example__/05-loader';

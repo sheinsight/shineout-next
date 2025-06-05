@@ -136,7 +136,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     if (props.open) {
       func.startEdit();
     }
-  }, []);
+  }, [props.open]);
 
   const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
     open: props.open,

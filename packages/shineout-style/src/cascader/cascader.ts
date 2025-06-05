@@ -183,6 +183,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     display: 'flex',
     flex: '1',
     minWidth: 0,
+    height: '100%',
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
   },
@@ -459,6 +460,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     maxHeight: 160,
     overflow: 'auto',
     padding: `${token.cascaderMorePaddingY} ${token.cascaderMorePaddingX}`,
+    '& $tag': {
+      maxWidth: 'none',
+    },
   },
   virtualList: {
     margin: 0,

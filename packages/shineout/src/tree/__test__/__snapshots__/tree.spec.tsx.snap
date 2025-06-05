@@ -2629,8 +2629,191 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
 
 exports[`Tree[Base] should render correctly about size 1`] = `
 <div>
+  <form
+    class="soui-form soui-form-wrapper soui-form-wrapper-inline"
+    style="margin-bottom: 12px;"
+  >
+    <div
+      class="soui-form-item-wrapper soui-form-item-wrapper-inline"
+      data-soui-status="default"
+    >
+      <div
+        class="soui-form-item-label soui-form-item-label-with-colon"
+      >
+        Size
+        <span
+          class="soui-form-item-label-colon"
+        >
+          :
+        </span>
+      </div>
+      <div
+        class="soui-form-item-control"
+        data-soui-role="form-control"
+      >
+        <div
+          class="soui-radio-group"
+        >
+          <div
+            class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
+          >
+            <input
+              checked=""
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              small
+            </span>
+          </div>
+          <div
+            class="soui-radio soui-radio-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              default
+            </span>
+          </div>
+          <div
+            class="soui-radio soui-radio-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              large
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="soui-form-item-wrapper soui-form-item-wrapper-inline"
+      data-soui-status="default"
+    >
+      <div
+        class="soui-form-item-label soui-form-item-label-with-colon"
+      >
+        Line
+        <span
+          class="soui-form-item-label-colon"
+        >
+          :
+        </span>
+      </div>
+      <div
+        class="soui-form-item-control"
+        data-soui-role="form-control"
+      >
+        <button
+          class="soui-switch soui-switch-wrapper soui-switch-wrapper-checked soui-switch-wrapper-small"
+          role="switch"
+          style="margin-top: 8px;"
+          type="button"
+        >
+          <input
+            checked=""
+            style="display: none;"
+            tabindex="0"
+            type="checkbox"
+          />
+          <div
+            class="soui-switch-indicator"
+            dir="ltr"
+          />
+          <div
+            class="soui-switch-content"
+          >
+            <div
+              class="soui-switch-text-padding"
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="soui-form-item-wrapper soui-form-item-wrapper-inline"
+      data-soui-status="default"
+    >
+      <div
+        class="soui-form-item-label soui-form-item-label-with-colon"
+      >
+        Checkbox
+        <span
+          class="soui-form-item-label-colon"
+        >
+          :
+        </span>
+      </div>
+      <div
+        class="soui-form-item-control"
+        data-soui-role="form-control"
+      >
+        <button
+          class="soui-switch soui-switch-wrapper soui-switch-wrapper-small"
+          role="switch"
+          style="margin-top: 8px;"
+          type="button"
+        >
+          <input
+            style="display: none;"
+            tabindex="0"
+            type="checkbox"
+          />
+          <div
+            class="soui-switch-indicator"
+            dir="ltr"
+          />
+          <div
+            class="soui-switch-content"
+          >
+            <div
+              class="soui-switch-text-padding"
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+  </form>
   <div
-    class="soui-tree soui-tree-tree soui-tree-line"
+    class="soui-tree soui-tree-tree soui-tree-line soui-tree-size-small"
   >
     <div
       class="soui-tree-root"
@@ -2646,7 +2829,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
         >
           <span
             class="soui-tree-icon-wrapper"
-            data-expanded="false"
+            data-expanded="true"
             data-icon="false"
             dir="ltr"
           >
@@ -2662,7 +2845,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
               >
                 <path
                   clip-rule="evenodd"
-                  d="M19.502 2C20.8827 2 22.002 3.11929 22.002 4.5V19.5C22.002 20.8807 20.8827 22 19.502 22H4.50195C3.12124 22 2.00195 20.8807 2.00195 19.5V4.5C2.00195 3.11929 3.12124 2 4.50195 2H19.502ZM19.502 4H4.50195C4.22581 4 4.00195 4.22386 4.00195 4.5V19.5C4.00195 19.7761 4.22581 20 4.50195 20H19.502C19.7781 20 20.002 19.7761 20.002 19.5V4.5C20.002 4.22386 19.7781 4 19.502 4ZM12.002 7C12.5148 7 12.9375 7.38604 12.9952 7.88338L13.002 8V11H16.002C16.5542 11 17.002 11.4477 17.002 12C17.002 12.5128 16.6159 12.9355 16.1186 12.9933L16.002 13H13.002V16C13.002 16.5523 12.5542 17 12.002 17C11.4891 17 11.0664 16.614 11.0087 16.1166L11.002 16V13H8.00195C7.44967 13 7.00195 12.5523 7.00195 12C7.00195 11.4872 7.38799 11.0645 7.88533 11.0067L8.00195 11H11.002V8C11.002 7.44772 11.4497 7 12.002 7Z"
+                  d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
                   fill-rule="evenodd"
                 />
               </svg>
@@ -2670,7 +2853,7 @@ exports[`Tree[Base] should render correctly about size 1`] = `
           </span>
           <div
             class="soui-tree-content"
-            data-expanded="false"
+            data-expanded="true"
             dir="ltr"
           >
             <div
@@ -2678,6 +2861,449 @@ exports[`Tree[Base] should render correctly about size 1`] = `
               dir="ltr"
             >
               node 0
+            </div>
+          </div>
+        </div>
+        <div
+          class="soui-tree-children"
+          style="display: block;"
+        >
+          <div
+            class="soui-tree-node"
+            dir="ltr"
+          >
+            <div
+              class="soui-tree-content-wrapper soui-tree-childnode"
+              dir="ltr"
+            >
+              <span
+                class="soui-tree-icon-wrapper"
+                data-expanded="true"
+                data-icon="false"
+                dir="ltr"
+              >
+                <span
+                  class="soui-tree-icon"
+                  dir="ltr"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="soui-tree-content"
+                data-expanded="true"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-text"
+                  dir="ltr"
+                >
+                  node 0-0
+                </div>
+              </div>
+            </div>
+            <div
+              class="soui-tree-children"
+              style="display: block;"
+            >
+              <div
+                class="soui-tree-node"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-content-wrapper soui-tree-childnode"
+                  dir="ltr"
+                >
+                  <span
+                    class="soui-tree-icon-wrapper"
+                    data-expanded="true"
+                    data-icon="false"
+                    dir="ltr"
+                  >
+                    <span
+                      class="soui-tree-icon"
+                      dir="ltr"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <div
+                    class="soui-tree-content"
+                    data-expanded="true"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-tree-text"
+                      dir="ltr"
+                    >
+                      node 0-0-0
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="soui-tree-children"
+                  style="display: block;"
+                >
+                  <div
+                    class="soui-tree-node soui-tree-leaf"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-tree-content-wrapper"
+                      dir="ltr"
+                    >
+                      <div
+                        class="soui-tree-content"
+                        data-expanded="false"
+                        dir="ltr"
+                      >
+                        <div
+                          class="soui-tree-text"
+                          dir="ltr"
+                        >
+                          node 0-0-0-0
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="soui-tree-node soui-tree-leaf"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-tree-content-wrapper"
+                      dir="ltr"
+                    >
+                      <div
+                        class="soui-tree-content"
+                        data-expanded="false"
+                        dir="ltr"
+                      >
+                        <div
+                          class="soui-tree-text"
+                          dir="ltr"
+                        >
+                          node 0-0-0-1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="soui-tree-node soui-tree-leaf"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-content-wrapper"
+                  dir="ltr"
+                >
+                  <div
+                    class="soui-tree-content"
+                    data-expanded="false"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-tree-text"
+                      dir="ltr"
+                    >
+                      node 0-0-1
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="soui-tree-node"
+            dir="ltr"
+          >
+            <div
+              class="soui-tree-content-wrapper soui-tree-childnode"
+              dir="ltr"
+            >
+              <span
+                class="soui-tree-icon-wrapper"
+                data-expanded="true"
+                data-icon="false"
+                dir="ltr"
+              >
+                <span
+                  class="soui-tree-icon"
+                  dir="ltr"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="soui-tree-content"
+                data-expanded="true"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-text"
+                  dir="ltr"
+                >
+                  node 0-1
+                </div>
+              </div>
+            </div>
+            <div
+              class="soui-tree-children"
+              style="display: block;"
+            >
+              <div
+                class="soui-tree-node soui-tree-leaf"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-content-wrapper"
+                  dir="ltr"
+                >
+                  <div
+                    class="soui-tree-content"
+                    data-expanded="false"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-tree-text"
+                      dir="ltr"
+                    >
+                      node 0-1-0
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="soui-tree-node"
+        dir="ltr"
+      >
+        <div
+          class="soui-tree-content-wrapper soui-tree-childnode"
+          dir="ltr"
+        >
+          <span
+            class="soui-tree-icon-wrapper"
+            data-expanded="true"
+            data-icon="false"
+            dir="ltr"
+          >
+            <span
+              class="soui-tree-icon"
+              dir="ltr"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="soui-tree-content"
+            data-expanded="true"
+            dir="ltr"
+          >
+            <div
+              class="soui-tree-text"
+              dir="ltr"
+            >
+              node 1
+            </div>
+          </div>
+        </div>
+        <div
+          class="soui-tree-children"
+          style="display: block;"
+        >
+          <div
+            class="soui-tree-node"
+            dir="ltr"
+          >
+            <div
+              class="soui-tree-content-wrapper soui-tree-childnode"
+              dir="ltr"
+            >
+              <span
+                class="soui-tree-icon-wrapper"
+                data-expanded="true"
+                data-icon="false"
+                dir="ltr"
+              >
+                <span
+                  class="soui-tree-icon"
+                  dir="ltr"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="soui-tree-content"
+                data-expanded="true"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-text"
+                  dir="ltr"
+                >
+                  node 1-0
+                </div>
+              </div>
+            </div>
+            <div
+              class="soui-tree-children"
+              style="display: block;"
+            >
+              <div
+                class="soui-tree-node soui-tree-leaf"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-content-wrapper"
+                  dir="ltr"
+                >
+                  <div
+                    class="soui-tree-content"
+                    data-expanded="false"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-tree-text"
+                      dir="ltr"
+                    >
+                      node 1-0-0
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="soui-tree-node"
+            dir="ltr"
+          >
+            <div
+              class="soui-tree-content-wrapper soui-tree-childnode"
+              dir="ltr"
+            >
+              <span
+                class="soui-tree-icon-wrapper"
+                data-expanded="true"
+                data-icon="false"
+                dir="ltr"
+              >
+                <span
+                  class="soui-tree-icon"
+                  dir="ltr"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM16 11C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13C10.701 13 12.6557 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11C12.5606 11 10.8111 11 16 11Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="soui-tree-content"
+                data-expanded="true"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-text"
+                  dir="ltr"
+                >
+                  node 1-1
+                </div>
+              </div>
+            </div>
+            <div
+              class="soui-tree-children"
+              style="display: block;"
+            >
+              <div
+                class="soui-tree-node soui-tree-leaf"
+                dir="ltr"
+              >
+                <div
+                  class="soui-tree-content-wrapper"
+                  dir="ltr"
+                >
+                  <div
+                    class="soui-tree-content"
+                    data-expanded="false"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-tree-text"
+                      dir="ltr"
+                    >
+                      node 1-1-0
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

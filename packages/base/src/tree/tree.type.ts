@@ -1,4 +1,4 @@
-import { CommonType } from '../common/type';
+import { CommonClasses, CommonType } from '../common/type';
 import {
   BaseTreeProps,
   ObjectKey,
@@ -22,6 +22,7 @@ export type TreeClasses = {
   root: string;
   line: string;
   noline: string;
+  lineIndent: string;
   contentDisabled: string;
   content: string;
   small: string;
@@ -38,18 +39,21 @@ export type TreeClasses = {
   children: string;
   leaf: string;
   placement: string;
-  // textDisabled: string;
+  sizeSmall: string;
+  sizeLarge: string;
 };
 export type JsstyleType = {
   tree: () => TreeClasses;
   spin: () => SpinClasses;
   checkbox: () => CheckboxClasses;
+  common: () => CommonClasses;
 };
 
 export type DatumType<DataItem> = ReturnType<typeof useTree<DataItem>>;
 
 type ActionOnClick = 'check' | 'expand';
 
+export type LeafIcon<T> = boolean | ((d: T) => React.ReactNode) | React.ReactNode
 export interface TreeProps<DataItem, Value extends any[]>
   extends Omit<BaseTreeProps<DataItem>, 'isControlled'>,
     Pick<CommonType, 'className' | 'style'> {
@@ -85,6 +89,14 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @cn 叶子节点的 class, 函数的参数为该条叶子节点数据
    */
   leafClass?: string | ((data: DataItem) => string);
+
+  /**
+   * @en The class of checkbox, the params of function is data
+   * @cn 开启叶子节点前的图标，或者自定义函数渲染
+   * @version 3.7.0
+   */
+  leafIcon?: LeafIcon<DataItem>;
+
   /**
    * @en Custom expand/collapse buttons
    * @cn 自定义展开/收起按钮
@@ -150,7 +162,7 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @en Change event
    * @cn 设置 onChange 属性时，显示 选择框。参数为当前选中值，和 mode 属性相关
    */
-  onChange?: (value: Value) => void;
+  onChange?: (value: Value, id: KeygenResult) => void;
   /**
    * @en Dom style when drop images
    * @cn 拖拽图片的原生 style 样式
@@ -179,6 +191,7 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @default true
    */
   highlight?: boolean;
+
   /**
    * @en Dynamically load nodes
    * @cn 设置 loader 属性后，未定义 children 的节点视为动态加载节点，点击展开触发 loader事件，children 为 null 或者长度为 0 视为叶子节点
@@ -227,10 +240,11 @@ export interface TreeProps<DataItem, Value extends any[]>
    */
   lineHeight?: number;
   /**
-   * @en The height of the list
-   * @cn 列表高度
+   * @en Height of the list, only effective when virtual is opened
+   * @cn 列表高度，仅开启virtual时生效
+   * @version 3.6.0
    */
-  height?: number | string;
+  height?: number;
   /**
    * @en Number of list items displayed at the same time
    * @cn 同时展示的列表项数量
@@ -241,6 +255,14 @@ export interface TreeProps<DataItem, Value extends any[]>
   rootStyle?: React.CSSProperties;
   ignoreSetFlat?: boolean;
   tiledData?: DataItem[];
+
+  /**
+   * @en size of Tree
+   * @cn 组件尺寸
+   * @default default
+   * @version 3.7.0
+   */
+  size?: 'small' | 'default' | 'large';
 }
 
 export interface VirtualTreeProps<DataItem, Value extends any[]>

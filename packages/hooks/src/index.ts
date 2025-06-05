@@ -28,6 +28,7 @@ export * from './common/use-drag-mock';
 export * from './common/use-pagination-list';
 export * from './common/use-filter';
 export * from './common/use-scrollbar-width';
+export * from './common/use-component-memo';
 
 //components
 export * from './components/use-input';

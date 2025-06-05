@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTableRow, useTableExpand, util } from '@sheinx/hooks';
+import { useTableRow, useTableExpand, util, useComponentMemo } from '@sheinx/hooks';
 import Tr from './tr';
 import { TbodyProps } from './tbody.type';
 
@@ -11,7 +11,7 @@ export default (props: TbodyProps) => {
     keygen: props.keygen,
   });
 
-  const { rowData, isCellHover, handleCellHover, hoverIndex, rowSelectMergeStartData } =
+  const { rowData, handleCellHover, hoverIndex, rowSelectMergeStartData } =
     useTableRow({
       columns: props.columns,
       data: props.data,
@@ -54,11 +54,8 @@ export default (props: TbodyProps) => {
         isEmptyTree={props.isEmptyTree}
         treeColumnsName={props.treeColumnsName}
         setRowHeight={props.setRowHeight}
-        fixLeftNum={props.fixLeftNum}
-        fixRightNum={props.fixRightNum}
         striped={props.striped}
         radio={props.radio}
-        isCellHover={isCellHover}
         hover={hover}
         isSelect={props.datum.check(rowSelectMergeStartData[index])}
         handleCellHover={handleCellHover}
@@ -72,8 +69,24 @@ export default (props: TbodyProps) => {
         resizeFlag={props.resizeFlag}
         treeCheckAll={props.treeCheckAll}
         onCellClick={props.onCellClick}
+        virtual={props.virtual}
+        scrolling={props.scrolling}
       />
     );
   };
-  return <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>;
+
+
+  const $tbody = useComponentMemo(
+    () => <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>,
+    [props.data, currentIndex],
+    props.virtual === 'lazy'
+      ? (prev: any, next: any) => {
+          return prev.some((_:any, index:number) => {
+            return !util.shallowEqual(prev?.[index], next?.[index]);
+          }) || !props.scrolling;
+        }
+      : undefined,
+  );
+
+  return $tbody;
 };

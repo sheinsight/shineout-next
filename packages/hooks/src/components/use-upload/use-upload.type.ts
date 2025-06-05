@@ -168,6 +168,14 @@ export interface UseUploadProps<ValueItem = any> {
     forceAcceptErrorMsg: string;
     invalidImage: string;
   };
+
+  /**
+   * @cn 设置为true后，组件的onChange参数会返回函数，即回调函数方式的setState
+   * @en After setting to true, the onChange parameter of the component will return a function, that is, the setState of the callback function
+   * @default false
+   * @version 3.6.5
+   */
+  functionalOnChange?: boolean;
 }
 
 export interface Validator {

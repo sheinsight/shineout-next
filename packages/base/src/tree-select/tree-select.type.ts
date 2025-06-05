@@ -107,6 +107,19 @@ export interface ComponentRef<DataItem, Value> {
   ) => Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
 }
 
+export interface RenderCompressedOption<DataItem> {
+  /**
+   * @en The current selected data
+   * @cn 当前选中的数据
+   */
+  data: DataItem[];
+  /**
+   * @en Method to remove the option
+   * @cn 删除选项的方法
+   */
+  onRemove: (item: DataItem) => void;
+}
+
 export interface TreeSelectProps<DataItem, Value>
   extends Pick<
       CommonType,
@@ -287,7 +300,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 将选中值合并，只在多选模式下有效；为 'no-repeat' 时弹出框中不重复展示值
    * @default false
    */
-  compressed?: boolean | 'no-repeat';
+  compressed?: boolean | 'no-repeat' | 'hide-popover';
   /**
    * @en Set visible of datepicker popup
    * @cn 控制浮层显隐
@@ -430,4 +443,22 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 内容样式
    */
   contentClass?: string | ((data: DataItem) => string);
+  /**
+   * @en Custom render compressed content
+   * @cn 自定义渲染折叠内容，其中 data 为选中的数据，onRemove 为删除事件
+   * @version 3.7.0
+   */
+  renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
+  beforeChange?: (value: Value) => any;
+
+  /**
+   * @cn 开启搜索关键字高亮功能
+   * @en Whether to enable highlight feature
+   * @version 3.7.0
+   */
+  highlight?: boolean;
 }

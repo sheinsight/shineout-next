@@ -49,6 +49,7 @@ const Tabs = (props: TabsProps) => {
     color,
     sticky,
     allowNonPanel,
+    renderTabsHeader,
     className: tabsClassName,
     ...rest
   } = props;
@@ -222,8 +223,18 @@ const Tabs = (props: TabsProps) => {
           className: classNames(stickyClassName, (sticky as StickyProps).className),
         };
       }
+
+      if (renderTabsHeader) {
+        return renderTabsHeader(<Sticky {...stickyProps}>{header}</Sticky>, props);
+      }
+
       return <Sticky {...stickyProps}>{header}</Sticky>;
     }
+
+    if (renderTabsHeader) {
+      return renderTabsHeader(header, props);
+    }
+
     return header;
   };
 

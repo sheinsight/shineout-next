@@ -1,9 +1,9 @@
 /**
- * cn -
+ * cn - 自定义渲染合并内容
  *    -- 通过配置 `renderCompressed` 支持自定义折叠内容渲染，大体量数据可自定义优化渲染
  *    -- `renderCompressed` 参数为一个对象，包含 `data` 和 `onRemove` 两个属性，`data` 为折叠内容数据，`onRemove` 为删除事件
  *    -- 该示例演示使用Tabel组件的虚拟列表特性渲染大体量的结果
- * en -
+ * en - Custom rendering of compressed content
  *    -- Support custom rendering of compressed content by configuring `renderCompressed`, and customize optimized rendering for large data
  *    -- The `renderCompressed` parameter is an object containing two properties, `data` and `onRemove`, `data` is the compressed content data, and `onRemove` is the delete event
  *    -- This example demonstrates using the virtual list feature of the Table component to render large amounts of results
@@ -22,7 +22,7 @@ const useStyles = createUseStyles(
       '&:hover': {
         borderRadius: 2,
         backgroundColor: 'var(---Neutral-fill-2-, #F4F5F8)',
-      }
+      },
     },
     table: {
       borderRadius: 4,
@@ -39,14 +39,13 @@ const useStyles = createUseStyles(
       },
       '& [data-soui-role="scroll"]': {
         scrollbarColor: '#c0c0c0 transparent',
-      }
-    }
+      },
+    },
   },
   { name: 'cascader-multiple-custom' },
 );
 
-
-const d = createNestedArray([100, 100, 20]);
+const d = createNestedArray([100, 100, 1]);
 
 interface TableRowData {
   id: string;
@@ -70,12 +69,14 @@ export default () => {
 
     const columns: TableColumnItem[] = [
       {
-        render: (item) => <div className={classNames.item}>
-          <span>node-{item.id}</span>
-          <Link type='primary' onClick={() => onRemove(item)}>
+        render: (item) => (
+          <div className={classNames.item}>
+            <span>node-{item.id}</span>
+            <Link type='primary' onClick={() => onRemove(item)}>
               删除
             </Link>
-        </div>,
+          </div>
+        ),
       },
     ];
 
@@ -100,7 +101,7 @@ export default () => {
             hideHeader
             width={200}
             hover={false}
-            style={{maxHeight: 160}}
+            style={{ maxHeight: 160 }}
             className={classNames.table}
           />
         </Popover>

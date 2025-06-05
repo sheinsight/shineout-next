@@ -139,8 +139,7 @@ const Day = (props: DayProps) => {
 
   const renderFooter = () => {
     const showLeft =
-      (props.type === 'datetime' || props.type === 'date') &&
-      (props.rangeDate?.[0] || props.rangeDate?.[1]);
+      (props.type === 'datetime' || props.type === 'date');
 
     const timeStr = func.getTimeStr();
     if (!showLeft && !props.showSelNow) return null;
@@ -171,7 +170,6 @@ const Day = (props: DayProps) => {
             className={classNames(
               styles?.pickerFooterTime,
               styles?.datetime,
-              !timeStr && styles?.datetimeHide,
             )}
             style={{ paddingRight: showNeedConfirm ? 0 : undefined }}
           >
@@ -179,7 +177,7 @@ const Day = (props: DayProps) => {
               <>
                 <span>{Icons.datepicker.Time}</span>
                 <TimePicker {...props} showSelNow={false} showTitle={false} format={format} />
-                <span>{timeStr}</span>
+                <span>{timeStr || '00:00:00'}</span>
               </>
             }
           </div>

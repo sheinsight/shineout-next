@@ -134,7 +134,6 @@ export default createUseStyles(
       display: 'flex',
       marginTop: top,
       position: 'relative',
-      overflow: 'auto',
       '& .examples': {
         flex: 1,
         minWidth: 800,

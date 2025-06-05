@@ -1,7 +1,7 @@
 /**
- * cn -
- *    -- 设置 `singleRemove` 属性，支持单个结果的删除。
- * en -
+ * cn - 允许删除选项
+ *    -- 设置 `singleRemove` 属性，支持单个结果的删除
+ * en - Allow delete options
  *    -- Set the `singleRemove` property, support delete single result.
  */
 import React from 'react';

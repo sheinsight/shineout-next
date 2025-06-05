@@ -136,6 +136,12 @@ export interface BaseTagProps
    * 内部属性，用于控制截断样式
    */
   inlineStyle?: boolean;
+  /**
+   * @en Trigger the mousedown event when deleting
+   * @cn 触发删除时的mousedown事件
+   * @private 内部属性
+   */
+  onMouseDown?: () => void;
 }
 
 export interface BaseTagInputProps extends Pick<CommonType, 'style' | 'className' | 'size'> {

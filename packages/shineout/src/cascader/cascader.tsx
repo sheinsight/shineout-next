@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Cascader as UnStyledCascader } from '@sheinx/base';
-import { useCascaderStyle } from '@sheinx/shineout-style';
+import { useCascaderStyle, useCommonStyle } from '@sheinx/shineout-style';
 import { KeygenResult } from '@sheinx/hooks';
 import { CascaderProps } from './cascader.type';
 import useFieldCommon from '../hooks/use-field-common';
@@ -23,6 +23,7 @@ const jssStyle = {
   checkbox: useCheckboxStyle,
   radio: useRadioStyle,
   spin: useSpinStyle,
+  common: useCommonStyle,
 };
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(

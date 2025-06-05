@@ -48,6 +48,7 @@ const Alert = (props: AlertProps) => {
     [alertStyle.withTitle]: title,
     [alertStyle.pending]: dismiss === PENDING,
     [alertStyle.noBordered]: bordered === false,
+    [alertStyle.noChildren]: !children,
   });
 
   const getRootProps = () => {

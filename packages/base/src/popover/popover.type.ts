@@ -186,4 +186,11 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @version 3.6.0
    */
   popupGap?: number;
+
+  /**
+   * @en Whether to disable pop-up
+   * @cn 是否禁用弹出
+   * @version 3.7.0
+   */
+  disabled?: boolean;
 }

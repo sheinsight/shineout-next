@@ -22,6 +22,7 @@ export interface AlertClasses {
   confirmIcon: string;
   pending: string;
   noBordered: string;
+  noChildren: string;
   closeWrapper: string
 }
 
