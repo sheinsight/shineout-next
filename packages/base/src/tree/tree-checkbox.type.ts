@@ -8,4 +8,5 @@ export interface TreeCheckboxProps extends Pick<CommonType, 'className'> {
   disabled?: boolean;
   checked: boolean | "indeterminate";
   onChange?: (_: any, checked: boolean) => void;
+  size?: 'small' | 'default' | 'large';
 }

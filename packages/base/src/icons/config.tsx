@@ -135,6 +135,7 @@ const config = {
     LineExpand: icons.Expand,
     LineCollapse: icons.Shrink,
     Expand: icons.ArrowDownFill,
+    Leaf: icons.File,
   },
   treeSelect: {
     More: icons.More,

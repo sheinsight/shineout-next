@@ -173,40 +173,27 @@ export default (props: TheadProps) => {
     colSpan: number,
     level: number,
   ): React.CSSProperties | undefined => {
+    // 累加level 至 0 的所有高度
+    const top = context.trHeights.slice(0, level).reduce((a, b) => toNum(a) + toNum(b), 0);
     if (fixed === 'left') {
-      if (props.fixLeftNum !== undefined) {
-        // 这是virtual table场景下的th样式
-        return {
-          transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
-        };
-      }
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
-      // 这是base table场景下的th样式
       return {
         left: left,
-        top: context.trHeights[level - 1] || 0,
+        top: top,
         position: 'sticky',
       };
     }
     if (fixed === 'right') {
-      if (props.fixRightNum !== undefined) {
-        // 这是virtual table场景下的th样式
-        return {
-          transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
-        };
-      }
       const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
-      // 这是base table场景下的th样式
       return {
         right: right,
-        top: context.trHeights[level - 1] || 0,
+        top: top,
         position: 'sticky',
       };
     }
 
-    // 这是base table场景下的非fixed th样式
     return {
-      top: context.trHeights[level - 1] || 0,
+      top: top,
       position: 'sticky',
     };
   };
@@ -304,10 +291,16 @@ export default (props: TheadProps) => {
       );
       return;
     }
-    const style = typeof colTemp2.name === 'string' ? fixedStyle : { padding: 0, ...fixedStyle };
+    let style = typeof colTemp2.name === 'string' ? fixedStyle : { padding: 0, ...fixedStyle };
+    if(colTemp2?.groupProps?.style){
+      style = {
+        ...style,
+        ...colTemp2.groupProps.style,
+      }
+    }
     trs[level].push(
       <th
-        className={classNames(cellClassName, tableClasses?.cellGroup)}
+        className={classNames(cellClassName, tableClasses?.cellGroup, colTemp2?.groupProps?.className)}
         style={style}
         key={colTemp2.key}
         colSpan={colTemp2.colSpan}

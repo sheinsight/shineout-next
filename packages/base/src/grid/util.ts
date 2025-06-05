@@ -13,7 +13,6 @@ const RESPONSIVE = {
 type Responsive = keyof typeof RESPONSIVE;
 
 const GridClassName = `${config.prefix}-grid`;
-const GridFullClassName = `${config.prefix}-grid-full`;
 const defaultResponsive = 'md';
 
 function createStyle(text: string, id: string) {
@@ -29,13 +28,13 @@ function createStyle(text: string, id: string) {
 
 function generateGrid(width: number | string, className: string, responsive: Responsive) {
   const minWidth = RESPONSIVE[responsive];
-  const text = `@media screen and (min-width: ${minWidth}px) { .${className}{width: ${width}%} }`;
+  const text = `@media screen and (min-width: ${minWidth}px) { .${GridClassName}.${className}{width: ${width}%} }`;
   createStyle(text, className);
 }
 
 function generateOffset(width: number | string, className: string, responsive: Responsive) {
   const minWidth = RESPONSIVE[responsive];
-  const text = `@media screen and (min-width: ${minWidth}px) { .${className}{margin-left: ${width}%} }`;
+  const text = `@media screen and (min-width: ${minWidth}px) { .${GridClassName}.${className}{margin-left: ${width}%} }`;
   createStyle(text, className);
 }
 
@@ -86,26 +85,5 @@ export function getGrid(
   const gridClass = generate(width!, 'grid', responsive!);
   const offsetClass = generate(offset!, 'offset', responsive!);
 
-  return `${GridClassName} ${GridFullClassName} ${gridClass} ${offsetClass}`;
+  return `${gridClass} ${offsetClass}`;
 }
-
-function init() {
-  const text = [];
-
-  text.push(`
-.${GridClassName} {
-  position: relative;
-  display: inline-block;
-  zoom: 1;
-  letter-spacing: normal;
-  word-spacing: normal;
-  vertical-align: top;
-  text-rendering: auto;
-  box-sizing: border-box;
-}`);
-
-  text.push(`.${GridFullClassName}{width:100%}`);
-  createStyle(text.join(''), GridClassName);
-}
-
-init();

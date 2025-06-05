@@ -230,12 +230,6 @@ export interface SelectModeColumnFilter<DataItem> extends TableColumnFilterBase<
      * @en Whether to open the top search box
      */
     search?: boolean;
-
-    /**
-     * @cn 是否高亮命中的关键词，仅当 search 为 true 时有效
-     * @en Whether to highlight the hit keywords
-     */
-    highlight?: boolean;
   };
 
   /**
@@ -302,6 +296,16 @@ export interface TableColumnItem<DataItem> {
    * @cn 表头分组，相邻的相同 group 会生成一个新的表头
    */
   group?: string | React.ReactNode | Array<string | React.ReactNode>;
+
+  /**
+   * @en The group of header column, the extra props
+   * @cn 表头分组的额外属性
+   * @version 3.7.0
+   */
+  groupProps?: {
+    className?: string;
+    style?: React.CSSProperties;
+  }
 
   /**
    * @en hide the column, only work on row-expand column
@@ -461,6 +465,10 @@ export interface TableGroupColumn {
   columns: TableHeadColumn[];
   lastFixed?: boolean;
   index: number;
+  groupProps?: {
+    className?: string;
+    style?: React.CSSProperties;
+  };
 }
 
 export type TableHeadColumn = TableGroupColumn | TableFormatColumn<any>;

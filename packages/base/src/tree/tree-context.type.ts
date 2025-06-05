@@ -1,8 +1,9 @@
 import { useTree } from '@sheinx/hooks';
+import { TreeProps } from './tree.type';
 
 export type CheckedStatusType = 0 | 1 | 2;
 
-export type TreeContextProps<DataItem> = ReturnType<typeof useTree<DataItem>>['datum'];
+export type TreeContextProps<DataItem> = ReturnType<typeof useTree<DataItem>>['datum'] & Pick<TreeProps<DataItem, any>, 'size' | 'leafIcon'>;
 
 export interface TreeProviderProps<DataItem> {
   children: React.ReactNode;

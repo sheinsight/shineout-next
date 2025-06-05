@@ -39,7 +39,7 @@ export interface PopoverConfirmProps extends Omit<PopoverProps, 'type'> {
    * @en Pop-up content.
    * @cn 弹出显示内容
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * @en same with [Alert](/components/Alert) type
    * @cn 类型同 [Alert](/components/Alert) type 属性

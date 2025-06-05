@@ -1,9 +1,24 @@
+## 3.7.0-beta.30
+2025-05-23
+
+### 🆕 Feature
+
+- `Tree` 新增 `leafIcon` 属性，可配置叶子结点的图标 ([#1124](https://github.com/sheinsight/shineout-next/pull/1124))
+
+
+## 3.7.0-beta.28
+2025-05-22
+
+### 🆕 Feature
+
+- `Tree` 新增 `size` 属性，可配置紧凑或稀疏的样式 ([#1121](https://github.com/sheinsight/shineout-next/pull/1121))
+
 ## 3.6.7-beta.4
 2025-05-20
 
 ### 🐞 BugFix
 
-- 修复 `Tree` 在 data 发生变化后 `defaultExpanded` 不生效的问题 ([#1119](https://github.com/sheinsight/shineout-next/pull/1119))
+- 修复 `Tree` 在开启虚拟列表后 data 为 undefined 时可能存在死循环的问题 ([#1119](https://github.com/sheinsight/shineout-next/pull/1119))
 
 ## 3.6.7-beta.3
 2025-05-20

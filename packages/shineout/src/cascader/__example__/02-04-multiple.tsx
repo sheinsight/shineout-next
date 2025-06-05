@@ -22,7 +22,7 @@ const useStyles = createUseStyles(
       '&:hover': {
         borderRadius: 2,
         backgroundColor: 'var(---Neutral-fill-2-, #F4F5F8)',
-      }
+      },
     },
     table: {
       borderRadius: 4,
@@ -39,12 +39,11 @@ const useStyles = createUseStyles(
       },
       '& [data-soui-role="scroll"]': {
         scrollbarColor: '#c0c0c0 transparent',
-      }
-    }
+      },
+    },
   },
   { name: 'cascader-multiple-custom' },
 );
-
 
 const d = createNestedArray([100, 100, 1]);
 
@@ -70,12 +69,14 @@ export default () => {
 
     const columns: TableColumnItem[] = [
       {
-        render: (item) => <div className={classNames.item}>
-          <span>node-{item.id}</span>
-          <Link type='primary' onClick={() => onRemove(item)}>
+        render: (item) => (
+          <div className={classNames.item}>
+            <span>node-{item.id}</span>
+            <Link type='primary' onClick={() => onRemove(item)}>
               删除
             </Link>
-        </div>,
+          </div>
+        ),
       },
     ];
 
@@ -100,7 +101,7 @@ export default () => {
             hideHeader
             width={200}
             hover={false}
-            style={{maxHeight: 160}}
+            style={{ maxHeight: 160 }}
             className={classNames.table}
           />
         </Popover>

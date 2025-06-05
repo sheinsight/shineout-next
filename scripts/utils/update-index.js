@@ -9,7 +9,7 @@ const shineoutStyleDir = path.join(__dirname, '../../packages', 'shineout-style'
 const whiteList = {
   shineout: ['icon'],
   'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts', 'cssvar'],
-  base: ['rule', 'config'],
+  base: ['rule', 'config', 'common'],
   theme: ['index.ts', 'config.ts', 'utils', 'token', '.DS_Store', 'hooks', 'provider'],
 };
 

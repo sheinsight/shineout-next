@@ -76,6 +76,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onChange: onChangeProp,
     compressedBound,
     compressedClassName,
+    renderCompressed,
     expanded: expandedProp,
     defaultExpanded,
     defaultExpandAll,
@@ -88,6 +89,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onChangeAddition,
     onEnterExpand,
     onExpand,
+    beforeChange,
     filterSameChange,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
@@ -109,6 +111,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     control: 'value' in props,
     filterSameChange: filterSameChange,
     multiple,
+    beforeChange,
   });
 
   const checkEmpty = () => {
@@ -133,6 +136,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onFilter,
     onClearCreatedData,
     setInputText,
+    FilterProvider,
   } = useFilter({
     treeData: data,
     keygen: keygen as any,
@@ -568,6 +572,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           disabled={disabled}
           compressed={compressed}
           compressedBound={compressedBound}
+          renderCompressed={renderCompressed}
           compressedClassName={compressedClassName}
           multiple={multiple}
           placeholder={placeholder}
@@ -687,6 +692,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           contentClass={getContentClass}
           datum={datum}
           actionOnClick={props.actionOnClick}
+          size={size}
         ></Tree>
       </div>
     );
@@ -704,45 +710,47 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const { fieldId } = useContext(FormFieldContext);
   return (
-    <div
-      id={fieldId}
-      ref={targetRef}
-      tabIndex={disabled === true || showInput ? undefined : 0}
-      {...util.getDataAttribute({ ['input-border']: 'true' })}
-      className={rootClass}
-      style={rootStyle}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      onKeyDown={handleKeyDown}
-    >
-      {tipNode}
-      {renderResult()}
-      {hadOpened && (
-        <AbsoluteList
-          adjust={adjust}
-          focus={open}
-          fixedWidth='min'
-          lazy={false}
-          absolute={props.absolute}
-          zIndex={props.zIndex}
-          position={position}
-          popupGap={4}
-          popupElRef={popupRef}
-          parentElRef={targetRef}
-        >
-          <AnimationList
-            onRef={popupRef}
-            show={open}
-            className={classNames(styles?.pickerWrapper)}
-            display={'block'}
-            type='scale-y'
-            duration={'fast'}
+    <FilterProvider value={{ filterText, highlight: props.highlight }}>
+      <div
+        id={fieldId}
+        ref={targetRef}
+        tabIndex={disabled === true || showInput ? undefined : 0}
+        {...util.getDataAttribute({ ['input-border']: 'true' })}
+        className={rootClass}
+        style={rootStyle}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onKeyDown={handleKeyDown}
+      >
+        {tipNode}
+        {renderResult()}
+        {hadOpened && (
+          <AbsoluteList
+            adjust={adjust}
+            focus={open}
+            fixedWidth='min'
+            lazy={false}
+            absolute={props.absolute}
+            zIndex={props.zIndex}
+            position={position}
+            popupGap={4}
+            popupElRef={popupRef}
+            parentElRef={targetRef}
           >
-            {renderList()}
-          </AnimationList>
-        </AbsoluteList>
-      )}
-    </div>
+            <AnimationList
+              onRef={popupRef}
+              show={open}
+              className={classNames(styles?.pickerWrapper)}
+              display={'block'}
+              type='scale-y'
+              duration={'fast'}
+            >
+              {renderList()}
+            </AnimationList>
+          </AbsoluteList>
+        )}
+      </div>
+    </FilterProvider>
   );
 };
 

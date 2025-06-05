@@ -1,3 +1,9 @@
+## 3.7.0-beta.1
+2025-04-01
+
+### 🆕 Feature
+- `Popover` 新增 `disabled` 属性，是否禁用 ([#1032](https://github.com/sheinsight/shineout-next/pull/1032))
+
 ## 3.6.7-beta.1
 2025-05-14
 

@@ -26,7 +26,5 @@ export interface TheadProps
   bordered?: boolean;
   colgroup: (number | string | undefined)[];
   datum: ListDatum;
-  fixLeftNum?: number;
-  fixRightNum?: number;
   treeColumnsName: string | undefined;
 }

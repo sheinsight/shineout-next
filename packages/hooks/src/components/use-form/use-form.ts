@@ -527,19 +527,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.updateMap[n] = new Set();
       }
       context.updateMap[n].add(updateFn);
-      const shouldTriggerResetChange = context.removeArr.has(n);
       context.removeArr.delete(n);
-      const currentValue = deepGet(context.value, n);
-      const shouldTriggerDefaultChange = df !== undefined && currentValue === undefined;
 
-      if (shouldTriggerDefaultChange || shouldTriggerResetChange) {
+      if (df !== undefined && deepGet(context.value, n) === undefined) {
         if (!context.mounted) context.defaultValues[n] = df;
-        let defaultValue = df;
 
-        // 如果组件是重新 bind ，比如更改了 key 或者通过三元表达式切换了组件但 name 都是相同的情况下，在切换过程中改了 value 的值（比如通过 datum.set），需要阻止 defaultValue 的上位，按照当前的 value 来设置 defaultValue
-        if (shouldTriggerResetChange && context.settingMap[n]) {
-          defaultValue = currentValue !== undefined ? currentValue : df;
-        }
         onChange((v) => {
           deepSet(v, n, defaultValue, deepSetOptions);
         });
