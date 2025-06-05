@@ -62,6 +62,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     actionOnClick,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     tiledData,
+    height,
     ...rest
   } = props;
 
@@ -103,6 +104,8 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
     [treeStyle.virtual]: virtual,
+    [treeStyle.sizeSmall]: props.size === 'small',
+    [treeStyle.sizeLarge]: props.size === 'large',
   });
 
   const getDragImageSelector = (data?: DataItem) => {
@@ -303,7 +306,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   return (
     <div ref={treeRef} className={rootClass} id={fieldId} {...rest}>
-      <Provider value={datum as any}>{renderList()}</Provider>
+      <Provider value={{...datum, size: props.size, leafIcon: props.leafIcon }}>{renderList()}</Provider>
     </div>
   );
 };

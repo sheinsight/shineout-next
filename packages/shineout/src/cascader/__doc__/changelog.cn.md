@@ -1,3 +1,22 @@
+## 3.7.0-beta.34
+2025-05-29
+
+### 🐞 BugFix
+- 修复 `Cascader` 外部受控打开的场景下，从外部修改 `value` 导致的面板勾选情况没有及时同步([#4e70d57](https://github.com/sheinsight/shineout-next/commit/4e70d57c6c01fc3d6f6031af3f8b590432e07a7a))
+
+## 3.7.0-beta.31
+2025-05-27
+
+### 🆕 Feature
+- `Cascader` 新增 `highlight` 属性，开启搜索关键字高亮功能 ([#1126](https://github.com/sheinsight/shineout-next/pull/1126))
+
+
+## 3.7.0-beta.27
+2025-05-22
+
+### 🐞 BugFix
+- 修复 `Cascader` 的 `beforeChange` 不生效的问题 ([#1120](https://github.com/sheinsight/shineout-next/pull/1120))
+
 ## 3.6.6-beta.4
 2025-05-09
 

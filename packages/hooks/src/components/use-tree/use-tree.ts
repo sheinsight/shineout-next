@@ -134,7 +134,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       return { active: isActive, expanded: shouldDefaultExpand };
     }
     if (virtual) {
-      return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };
+      return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
     }
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
@@ -143,7 +143,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const bindVirtualNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
-    return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };
+    return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
   };
 
   const get = (id: KeygenResult) => {

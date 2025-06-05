@@ -60,7 +60,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
           >
             <div
               data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+              style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
             >
               <div
                 style="flex-grow: 1; width: 100%;"
@@ -775,7 +775,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -1820,7 +1820,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
           >
             <div
               data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+              style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
             >
               <div
                 style="flex-grow: 1; width: 100%;"
@@ -2543,7 +2543,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
             >
               <div
                 data-soui-role="scroll-container"
-                style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+                style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
               >
                 <div
                   style="flex-grow: 1; width: 100%;"
@@ -3299,7 +3299,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -4063,7 +4063,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -4806,7 +4806,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -5538,7 +5538,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -6261,7 +6261,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
           >
             <div
               data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+              style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
             >
               <div
                 style="flex-grow: 1; width: 100%;"
@@ -6974,7 +6974,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -7269,7 +7269,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -7509,7 +7509,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
           >
             <div
               data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+              style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
             >
               <div
                 style="flex-grow: 1; width: 100%;"

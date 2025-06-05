@@ -45,6 +45,7 @@ const tableStyle: JsStyles<TableClassType> = {
         borderBottom: `1px solid ${token.tableCellBorderColor}`,
         boxSizing: 'border-box',
         lineHeight: token.lineHeightDynamic,
+        zIndex: fixedIndex - 1,
         '&$cellFixedLeft, &$cellFixedRight': {
           zIndex: fixedIndex,
         },
@@ -167,12 +168,16 @@ const tableStyle: JsStyles<TableClassType> = {
       borderTop: `1px solid ${token.tableCellBorderColor}`,
     },
   },
-  headMirrorScroller: {
+  mirrorScroller: {
     overflow: 'scroll hidden',
+
+    '[data-soui-sticky="false"] &': {
+      display: 'none',
+    }
   },
   headWrapper: {
     flex: '0 0 auto',
-    overflow: 'hidden',
+    // overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTheadBackgroundColor,
     '$sticky > &': {
@@ -205,14 +210,35 @@ const tableStyle: JsStyles<TableClassType> = {
     '$wrapper & table > tfoot': {
       position: 'sticky',
       bottom: 0,
-      zIndex: fixedIndex,
+      zIndex: fixedFixedIndex + 1,
     }
   },
   footWrapper: {
     flex: '0 0 auto',
-    overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTfootBackgroundColor,
+
+    "[data-soui-role='scroll'] &": {
+      position: 'sticky',
+      bottom: 0,
+      zIndex: fixedIndex + 1,
+    }
+  },
+  scrollY: {
+    '&$headWrapper, &$footWrapper': {
+      overflow: 'hidden scroll',
+      ...customScrollBar({ background: 'transparent' }),
+    },
+  },
+  scrollX: {
+    '&$headWrapper, &$footWrapper': {
+      overflowX: 'hidden',
+    },
+  },
+  emptyHeader: {
+    position: 'sticky',
+    top: 0,
+    zIndex: 1,
   },
   emptyWrapper: {
     minHeight: '170px',
@@ -221,17 +247,14 @@ const tableStyle: JsStyles<TableClassType> = {
     position: 'sticky',
     left: 0,
     top: 0,
-    right: 0,
     justifyContent: 'center',
+    textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
     borderBottom: `1px solid ${token.tableCellBorderColor}`,
   },
-  scrollY: {
-    '&$headWrapper, &$footWrapper': {
-      overflowY: 'scroll',
-      ...customScrollBar({ background: 'transparent' }),
-    },
+  emptyNoBorder: {
+    borderBottom: 'none',
   },
   cellFixedLeft: {
     position: 'sticky',

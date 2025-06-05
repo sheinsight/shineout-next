@@ -12,7 +12,7 @@ const FormItem = (props: FormItemProps) => {
   const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
   const formItemClasses = jssStyle?.formItem?.() as FormItemClasses;
   const { Provider, ProviderValue, labelConfig, errors, showError, attributes } = useFormItem();
-  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight, colon } = {
+  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight, keepErrorBelow, colon } = {
     ...labelConfig,
     ...rest,
   };
@@ -104,6 +104,9 @@ const FormItem = (props: FormItemProps) => {
         {...util.getDataAttribute({ role: 'form-control' })}
       >
         <Provider value={ProviderValue}>{children}</Provider>
+
+        {!!tip && (!showError || keepErrorBelow) && <div className={formItemClasses?.tip}>{tip}</div>}
+
         {showError && (
           <div className={formItemClasses?.error}>
             {errors.map((error, index) => (
@@ -111,7 +114,6 @@ const FormItem = (props: FormItemProps) => {
             ))}
           </div>
         )}
-        {!!tip && !showError && <div className={formItemClasses?.tip}>{tip}</div>}
       </div>
     </div>
   );

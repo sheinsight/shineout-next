@@ -1,3 +1,10 @@
+## 3.7.0-beta.24
+2025-05-15
+### 🐞 BugFix
+
+- 修复 `Button` 在React 18以下初始化时有过渡动画的问题 ([#1114](https://github.com/sheinsight/shineout-next/pull/1114))
+
+
 ## 3.5.3
 2024-12-04
 ### 🐞 BugFix

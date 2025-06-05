@@ -22,17 +22,15 @@ interface UseTableVirtualProps {
   isRtl?: boolean;
   columns: TableFormatColumn<any>[];
   colgroup: (number | string | undefined)[];
+  theadAndTfootHeight: number;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
-  const [innerLeft, setLeft] = useState(0);
   const [innerTop, setTop] = useState(0);
   const [scrollHeight, setHeight] = useState(props.data.length * props.rowHeight);
   const [startIndex, setStartIndex] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
 
   const rowsInView = props.rowsInView === 0 ? props.data.length : props.rowsInView;
-
-  const sleft = props.scrollLeft !== undefined ? props.scrollLeft : innerLeft;
 
   const rowSpanInfo = useMemo(() => {
     const rowSpanColumns = props.columns.filter((col) => typeof col.rowSpan === 'function');
@@ -103,28 +101,13 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     autoAddRows: 0,
   });
 
-  const getTranslate = usePersistFn((left?: number, top?: number) => {
-    let l = left === undefined ? sleft : left;
-    let t = top === undefined ? innerTop + offsetY : top;
-    if (t < 0) {
-      t = 0;
-    }
-    if (!props.isRtl && l < 0) {
-      l = 0;
-    }
-    if (props.isRtl && l > 0) {
-      l = 0;
-    }
-    return `translate3d(${0 - l}px, ${0 - t}px, 0)`;
-  });
-
   const getContentHeight = (index: number) => {
     if (props.disabled) return 0;
     let sum = 0;
     for (let i = 0; i <= index; i++) {
       sum += context.cachedHeight[i] || props.rowHeight;
     }
-    return sum;
+    return sum + props.theadAndTfootHeight;
   };
 
   const setRowHeight = usePersistFn((index: number, height: number) => {
@@ -221,16 +204,15 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     setHeight(sumHeight);
   });
 
-  const handleScroll = (info: {
+  const handleScroll = usePersistFn((info: {
     scrollLeft: number;
     scrollTop: number;
     y: number;
     height: number;
     fromDrag: boolean;
   }) => {
-    const { scrollLeft, height, y, fromDrag } = info;
+    const { height, y, fromDrag } = info;
     let { scrollTop } = info;
-    setLeft(scrollLeft);
     if (props.disabled) {
       setTop(scrollTop);
       return;
@@ -260,7 +242,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     } else {
       updateIndexAndTopFromTop(scrollTop);
     }
-  };
+  });
 
   const scrollToIndex = usePersistFn((index: number, callback?: () => void) => {
     if (props.disabled) return;
@@ -290,7 +272,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     const max = scrollEl.scrollWidth - scrollEl.clientWidth;
     const left = Math.min(targetLeft, max);
     if(left === scrollEl.scrollLeft) return;
-    setLeft(left);
     scrollEl.scrollLeft = left;
   });
   const scrollColumnIntoView = usePersistFn((colKey: string | number) => {
@@ -307,6 +288,12 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
     scrollColumnByLeft(left);
   })
+
+  useEffect(() => {
+    if(props.scrollLeft){
+      scrollColumnByLeft(props.scrollLeft);
+    }
+  }, [props.scrollLeft]);
 
   useEffect(() => {
     const scrollRefHeight = props.scrollRef.current ? props.scrollRef.current.clientHeight : 0;
@@ -353,7 +340,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   useEffect(() => {
     if (props.disabled) return;
     setHeight(getContentHeight(props.data.length - 1));
-  }, [props.data.length]);
+  }, [props.data.length, props.theadAndTfootHeight]);
 
   useEffect(() => {
     if (props.disabled) return;
@@ -367,19 +354,28 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   }, [scrollHeight]);
 
   const finalRowsInView = rowsInView + context.rowSpanRows + context.autoAddRows;
-  const renderData = props.disabled
-    ? props.data
-    : [...props.data].slice(startIndex, startIndex + finalRowsInView);
+
+  const renderData = useMemo(() => {
+    if (props.disabled) return props.data;
+    return [...props.data].slice(startIndex, startIndex + finalRowsInView);
+  }
+  , [props.data, props.disabled, startIndex, finalRowsInView]);
+
+  const translateStyle = useMemo(() => {
+    let t = innerTop + offsetY;
+    if (t < 0) {
+      t = 0;
+    }
+    return `translate3d(0, ${0 - t}px, 0)`;
+  }, [innerTop]);
 
   return {
     scrollHeight,
     startIndex,
-    innerLeft: sleft,
-    innerTop: innerTop + offsetY,
+    translateStyle,
     data: renderData,
     handleScroll,
     setRowHeight,
-    getTranslate,
     scrollToIndex,
     scrollColumnByLeft,
     scrollColumnIntoView,

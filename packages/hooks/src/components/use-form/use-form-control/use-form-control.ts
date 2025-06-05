@@ -13,6 +13,7 @@ import { ObjectType } from '../../../common/type';
 import useLatestObj from '../../../common/use-latest-obj';
 import { ValidateFnConfig } from '../use-form.type';
 import { devUseWarning } from '../../../utils/warning';
+import { cleanProps } from '../../../utils/clean-props';
 
 const getValue = (name: string | string[], formValue: ObjectType) => {
   if (!name) return undefined;
@@ -137,7 +138,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         }
       };
       const fullRules = controlFunc?.combineRules(name, rules || []) || [];
-      return validate(v, formV, fullRules, validateProps)
+      return validate(v, formV, fullRules, cleanProps(validateProps))
         .then((res) => {
           const err = res === true ? undefined : res;
           formFunc?.setError(name, err);
@@ -165,7 +166,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
           return e;
         });
     } else {
-      return validate(v, {}, rules || [], {})
+      return validate(v, {}, rules || [], cleanProps(validateProps))
         .then((res) => {
           const err = res === true ? undefined : res;
           setErrorState(err);

@@ -7,6 +7,7 @@ import Spin from '../spin';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
 import Radio from '../radio';
+import Td from './td';
 import { TbodyProps, UseTableRowResult } from './tbody.type';
 import { useConfig } from '../config';
 
@@ -25,8 +26,6 @@ interface TrProps
     | 'loader'
     | 'isEmptyTree'
     | 'setRowHeight'
-    | 'fixLeftNum'
-    | 'fixRightNum'
     | 'striped'
     | 'radio'
     | 'onRowClick'
@@ -36,6 +35,7 @@ interface TrProps
     | 'resizeFlag'
     | 'treeCheckAll'
     | 'onCellClick'
+    | 'virtual'
   > {
   row: {
     data: any[];
@@ -53,12 +53,12 @@ interface TrProps
   handleExpandClick: (col: TableFormatColumn<any>, data: any, index: number) => void;
   treeColumnsName?: string;
   originKey: string | number;
-  isCellHover: UseTableRowResult['isCellHover'];
   hover?: boolean;
   handleCellHover: UseTableRowResult['handleCellHover'];
   hoverIndex: UseTableRowResult['hoverIndex'];
   isSelect: boolean;
   disabled?: boolean;
+  scrolling?: boolean;
 }
 
 const Tr = (props: TrProps) => {
@@ -72,11 +72,6 @@ const Tr = (props: TrProps) => {
   const getFixedStyle = (fixed: 'left' | 'right' | undefined, index: number, colSpan: number) => {
     if (!props.isScrollX) return;
     if (fixed === 'left') {
-      if (props.fixLeftNum !== undefined) {
-        return {
-          transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
-        } as React.CSSProperties;
-      }
       const left = props.colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         position: 'sticky',
@@ -84,11 +79,6 @@ const Tr = (props: TrProps) => {
       } as React.CSSProperties;
     }
     if (fixed === 'right') {
-      if (props.fixRightNum !== undefined) {
-        return {
-          transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
-        } as React.CSSProperties;
-      }
       const right = props.colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
 
       return {
@@ -96,16 +86,17 @@ const Tr = (props: TrProps) => {
         right,
       } as React.CSSProperties;
     }
-    return {} as React.CSSProperties;
+    return undefined;
   };
-  const getTdStyle = (column: TableFormatColumn<any>, colSpan: number) => {
+  const getTdStyle = usePersistFn((column: TableFormatColumn<any>, colSpan: number) => {
     const index = column.index;
     const fixedStyle = getFixedStyle(column.fixed, index, colSpan);
+    if (!fixedStyle && !column.style) return;
     return {
       ...column.style,
       ...fixedStyle,
     } as React.CSSProperties;
-  };
+  });
 
   const handleCellClick = usePersistFn((data: any, colIndex: number) => {
     if (!props.onCellClick) return;
@@ -118,6 +109,8 @@ const Tr = (props: TrProps) => {
 
   const setVirtualRowHeight = usePersistFn(() => {
     if (props.setRowHeight && trRef.current) {
+      // 祖先元素不可见时（display: none）
+      if (!trRef.current.offsetParent) return;
       const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
       props.setRowHeight(
         props.rowIndex,
@@ -161,7 +154,7 @@ const Tr = (props: TrProps) => {
     }
   });
 
-  const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
+  const renderTreeExpand = usePersistFn((content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
     const className = tableClasses?.expandWrapper;
     const children = props.rawData[props.treeColumnsName!];
@@ -221,9 +214,9 @@ const Tr = (props: TrProps) => {
         {content}
       </span>
     );
-  };
+  });
 
-  const renderContent = (col: TrProps['columns'][number], data: any) => {
+  const renderContent = usePersistFn((col: TrProps['columns'][number], data: any) => {
     if (col.type === 'expand' || col.type === 'row-expand') {
       const renderResult =
         typeof col.render === 'function' ? col.render(props.rawData, props.rowIndex) : undefined;
@@ -314,10 +307,12 @@ const Tr = (props: TrProps) => {
       return renderTreeExpand(content, col.treeIndent);
     }
 
-    return content;
-  };
+    if (col.render === undefined) return null;
 
-  const renderTds = (cols: TrProps['columns'], data: TrProps['row']) => {
+    return content;
+  });
+
+  const renderTds = usePersistFn((cols: TrProps['columns'], data: TrProps['row']) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
     const lastRowIndex = data.length - 1;
@@ -332,26 +327,30 @@ const Tr = (props: TrProps) => {
         const last = cols[i + (data[i].colSpan || 1) - 1] || {};
 
         const isRowSpanTd = data[i].rowSpan > 1;
-        const $tdContent = renderContent(col, data[i].data);
+
+        const shouldBindMouseEvent = (props.hover && hasSiblingRowSpan) || isRowSpanTd;
+        let showCellHover = props.hoverIndex.has(props.rowIndex);
+        if (!showCellHover && data[i].rowSpan > 1) {
+          for (let j = 0; j < data[i].rowSpan; j++) {
+            if (props.hoverIndex.has(props.rowIndex + j)) {
+              showCellHover = true;
+              break;
+            }
+          }
+        }
         const td = (
-          <td
-            key={col.key}
+          <Td
+            key={`${col.key}-${props.rowIndex}-${i}`}
+            col={col}
+            data={data[i].data}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
             onMouseEnter={
-              (props.hover && hasSiblingRowSpan) || isRowSpanTd
-                ? () => {
-                    props.handleCellHover(props.rowIndex, data[i].rowSpan);
-                  }
+              shouldBindMouseEvent
+                ? () => props.handleCellHover(props.rowIndex, data[i].rowSpan)
                 : undefined
             }
-            onMouseLeave={
-              (props.hover && hasSiblingRowSpan) || isRowSpanTd
-                ? () => {
-                    props.handleCellHover(-1, 0);
-                  }
-                : undefined
-            }
+            onMouseLeave={shouldBindMouseEvent ? () => props.handleCellHover(-1, 0) : undefined}
             className={classNames(
               col.className,
               col.type === 'checkbox' && tableClasses?.cellCheckbox,
@@ -361,25 +360,23 @@ const Tr = (props: TrProps) => {
               col.align === 'right' && tableClasses?.cellAlignRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
-              props.hoverIndex.has(props.rowIndex) && tableClasses?.cellHover,
-              isRowSpanTd &&
-                props.isCellHover(props.rowIndex, data[i].rowSpan) &&
-                tableClasses?.cellHover,
+              showCellHover && tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
-            dir={config.direction}
+            direction={config.direction}
             data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
-          >
-            {$tdContent}
-          </td>
+            renderContent={renderContent}
+            virtual={props.virtual}
+            scrolling={props.scrolling}
+          />
         );
         tds.push(td);
         if (data[i].colSpan) skip = data[i].colSpan - 1;
       }
     }
     return tds;
-  };
+  });
 
   const renderExpand = () => {
     if (!props.expanded) return null;
@@ -437,7 +434,9 @@ const Tr = (props: TrProps) => {
       attributes.push(rowClickAttr);
     }
 
-    const isFireElement = attributes.map((v) => (v === '*' ? '' : v)).find(v=>target.hasAttribute(v));
+    const isFireElement = attributes
+      .map((v) => (v === '*' ? '' : v))
+      .find((v) => target.hasAttribute(v));
     const isExpandable = !isNotExpandableElement(target) || isFireElement;
 
     if (onRowClick && rowClickAttr) {

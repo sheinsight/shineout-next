@@ -17,6 +17,7 @@ const Popover = (props: PopoverProps) => {
     trigger = 'hover',
     type,
     destroy,
+    disabled,
     popupGap = 0,
     showArrow = true,
     zIndex = 1060,
@@ -112,6 +113,8 @@ const Popover = (props: PopoverProps) => {
       }
     };
   });
+
+  if(disabled) return;
 
   const noRender = props.lazy && !open && !context.rendered;
 

@@ -2,6 +2,7 @@ import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 import border from '../input/input-border';
 import { DatePickerClasses } from '@sheinx/base';
+import { animations } from '../common'
 
 export type DatePickerClassType = keyof DatePickerClasses;
 
@@ -68,6 +69,7 @@ linear-gradient(to left, transparent 0%,transparent 50%, ${token.datePickerCellR
 
 const datePickerStyle: JsStyles<DatePickerClassType> = {
   rootClass: {},
+  ...animations,
   wrapper: {
     display: 'inline-block',
     position: 'relative',
@@ -682,25 +684,15 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       top: 0,
       '&[dir=ltr]': { left: 0 },
       '&[dir=rtl]': { right: 0 },
-      transform: 'translateY(-100%)',
+      transformOrigin: 'bottom',
+      animation: '$scale-y-top 0.2s ease-in-out forwards',
       backgroundColor: token.datePickerPanelBackgroundColor,
       boxShadow: token.datePickerPanelShadow,
-      opacity: '0',
-      zIndex: '-1',
-      visibility: 'hidden',
+      display: 'none',
     },
     '&:hover $timePicker': {
       zIndex: '1',
-      opacity: '1',
-      visibility: 'visible',
-    },
-  },
-  datetimeHide: {
-    opacity: '0',
-    pointerEvents: 'none',
-
-    '& > span': {
-      display: 'none',
+      display: 'block',
     },
   },
   quickPicker: {

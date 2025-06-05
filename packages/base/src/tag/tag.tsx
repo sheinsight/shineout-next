@@ -1,9 +1,9 @@
 import classNames from 'classnames';
+import Icons from '../icons';
 import { TagClasses, TagProps } from './tag.type';
 import useTag from './use-tag';
 import { util } from '@sheinx/hooks';
 import TagInput from './tag-input';
-import Icons from '../icons';
 
 const { devUseWarning } = util;
 const Done = 2;

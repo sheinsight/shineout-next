@@ -27,6 +27,7 @@ document.body.className = direction;
 
 const app = document.getElementById('app');
 
+// import ReactDOM from 'react-dom';
 // ReactDOM.render(<App></App>, app);
 if (app) {
   const root = ReactDOM.createRoot(app);

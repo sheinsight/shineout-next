@@ -206,9 +206,6 @@ exports[`Table[Base] should render correctly  1`] = `
             </td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr />
-        </tfoot>
       </table>
     </div>
   </div>
@@ -421,9 +418,6 @@ exports[`Table[Base] should render correctly about border 1`] = `
             </td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr />
-        </tfoot>
       </table>
     </div>
   </div>
@@ -478,10 +472,10 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class="soui-table-cell-align-left soui-table-cell-ignore-border soui-table-cell-group"
+            class="soui-table-cell-align-left soui-table-cell-ignore-border soui-table-cell-group my-custom-header"
             colspan="2"
             dir="ltr"
-            style="padding: 0px; top: 0px; position: sticky;"
+            style="padding: 0px; top: 0px; position: sticky; background: rgb(238, 242, 254);"
           >
             <div>
               <span>
@@ -761,9 +755,6 @@ exports[`Table[Base] should render correctly about group 1`] = `
           </td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr />
-      </tfoot>
     </table>
   </div>
 </div>
@@ -1047,9 +1038,6 @@ exports[`Table[Base] should render correctly about size 1`] = `
             </td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr />
-        </tfoot>
       </table>
     </div>
   </div>

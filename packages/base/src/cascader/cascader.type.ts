@@ -1,7 +1,7 @@
 import React from 'react';
 import { KeygenResult, ObjectKey, TreeModeType, DisabledOption } from '@sheinx/hooks';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
-import { CommonType } from '../common/type';
+import { CommonClasses, CommonType } from '../common/type';
 import { TagClasses } from '../tag/tag.type';
 import { SelectClasses } from '../select/select.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
@@ -97,6 +97,7 @@ export type JssStyleType = {
   spin?: () => SpinClasses;
   input?: () => InputClasses;
   cascader?: () => CascaderClasses;
+  common?: () => CommonClasses;
 };
 
 export interface CascaderRef {
@@ -395,4 +396,16 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @version 3.6.0
    */
   emptyText?: React.ReactNode | boolean;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
+  beforeChange?: (value: Value) => any;
+
+  /**
+   * @cn 开启搜索关键字高亮功能
+   * @en Whether to enable highlight feature
+   * @version 3.7.0
+   */
+  highlight?: boolean;
 }

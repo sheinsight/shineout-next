@@ -55,37 +55,18 @@ export const FilterSelect = (props: TheadCommonProps) => {
 
   const treeOptions = config?.data || [];
 
-  const onReset = () => {
-    setTempValue(undefined);
-    props.onFilterChange(props.columnKey, undefined);
-    setPopoverVisible(false);
-  };
-
-  const onConfirm = () => {
-    props.onFilterChange(props.columnKey, tempValue);
-    setPopoverVisible(false);
-  };
-
-  const onVisibleChange = (visible: boolean) => {
-    // 关闭popover时就提交筛选条件，包括click away触发的
-    if (!visible) {
-      props.onFilterChange(props.columnKey, tempValue);
-    }
-    setPopoverVisible(visible);
-  };
-
   const treeKeygen = (d: TableFilterData) => d.value;
 
   const treeProps = config?.multiple
     ? {
-        value: currentFilter?.value,
+        value: tempValue,
         onChange: (v: any) => {
           setTempValue(v);
         },
         renderItem: config?.renderItem || 'label',
       }
     : {
-        active: currentFilter?.value,
+        active: tempValue,
         setActive: (v: any) => {
           setTempValue(v);
         },
@@ -109,7 +90,27 @@ export const FilterSelect = (props: TheadCommonProps) => {
     onFilter: (text) => (item) => item.label.includes(text),
   });
 
-  const displayData = filterData || rawData;
+  const onReset = () => {
+    setTempValue(undefined);
+    setInputText('');
+    props.onFilterChange(props.columnKey, undefined);
+    setPopoverVisible(false);
+  };
+
+  const onConfirm = () => {
+    props.onFilterChange(props.columnKey, tempValue);
+    setPopoverVisible(false);
+  };
+
+  const onVisibleChange = (visible: boolean) => {
+    // 关闭popover时就提交筛选条件，包括click away触发的
+    if (!visible) {
+      props.onFilterChange(props.columnKey, tempValue);
+    }
+    setPopoverVisible(visible);
+  };
+
+  const displayData = inputText ? filterData || rawData : rawData;
 
   return (
     <Button

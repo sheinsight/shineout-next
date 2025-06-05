@@ -6,7 +6,7 @@
  *    -- Set the `onFilter` property and return the content as a function, the local data will be filtered according to the returned filter function
  */
 import React, { useState } from 'react';
-import { TreeSelect, TYPE } from 'shineout';
+import { Form, Switch, TreeSelect, TYPE } from 'shineout';
 
 interface DataItem {
   id: string;
@@ -45,8 +45,9 @@ const data: DataItem[] = [
 
 export default () => {
   const [value, setValue] = useState<TreeSelectProps['value']>('');
+  const [highlight, setHighlight] = useState(true);
 
-  const handleFilter = (text: string) => (d: DataItem) => d.title.indexOf(text) > -1;
+  const handleFilter = (text: string) => (d: DataItem) => `node ${d.title}`.indexOf(text) > -1;
 
   const handleChange: TreeSelectProps['onChange'] = (v) => {
     setValue(v);
@@ -54,6 +55,12 @@ export default () => {
 
   return (
     <div>
+      <Form>
+        <Form.Item label='高亮关键字' labelWidth={72}>
+          <Switch value={highlight} onChange={setHighlight} />
+        </Form.Item>
+      </Form>
+
       <TreeSelect
         width={300}
         multiple
@@ -66,6 +73,7 @@ export default () => {
         renderItem={(node) => `node ${node?.title}`}
         data={data}
         placeholder='Please select content'
+        highlight={highlight}
       />
     </div>
   );

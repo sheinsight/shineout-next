@@ -5,20 +5,28 @@
  *    -- Set the tip property on Form.Item, the prompt text is displayed below the component
  */
 import React from 'react';
-import { Form, Input } from 'shineout';
+import { Form, Input, Rule } from 'shineout';
 
+const rules = Rule();
 const App: React.FC = () => (
   <Form style={{ maxWidth: 500 }}>
-    <Form.Item label='Email' tip='Email or nickname or phonenumber'>
-      <Input name='email' clearable />
+    <Form.Item label='Email' tip='Email or nickname or phonenumber' required keepErrorBelow>
+      <Input name='email' clearable rules={[rules.required('Please input your email')]} />
     </Form.Item>
 
     <Form.Item
       label='Password'
       tip='Use at least one letter, one numeral, and seven characters.'
       style={{ marginBottom: 0 }}
+      required
+      keepErrorBelow
     >
-      <Input name='password' type='password' clearable />
+      <Input
+        name='password'
+        type='password'
+        clearable
+        rules={[rules.required('Please input your password')]}
+      />
     </Form.Item>
   </Form>
 );

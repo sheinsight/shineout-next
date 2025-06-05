@@ -460,6 +460,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     maxHeight: 160,
     overflow: 'auto',
     padding: `${token.cascaderMorePaddingY} ${token.cascaderMorePaddingX}`,
+    '& $tag': {
+      maxWidth: 'none',
+    },
   },
   virtualList: {
     margin: 0,

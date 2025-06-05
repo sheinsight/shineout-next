@@ -3,7 +3,16 @@ import { CommonType } from '../common/type';
 
 export type ResponsiveType = 'sm' | 'md' | 'lg' | 'xl';
 
+export interface GridClasses {
+  rootClass: string;
+  wrapper: string;
+  full: string;
+}
+
 export interface GridProps extends Pick<CommonType, 'className' | 'style'> {
+    jssStyle?: {
+      grid?: () => GridClasses;
+    };
   /**
    * @en Spacing between grids
    * @cn 栅格之间间距

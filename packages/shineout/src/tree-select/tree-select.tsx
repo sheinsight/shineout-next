@@ -3,6 +3,7 @@ import { TreeSelect as UnStyleTreeSelect, TreeSelectValueType } from '@sheinx/ba
 import useFieldCommon from '../hooks/use-field-common';
 import {
   useCheckboxStyle,
+  useCommonStyle,
   useInnerTitleStyle,
   usePopoverStyle,
   useSelectStyle,
@@ -22,6 +23,7 @@ const jssStyle = {
   popover: usePopoverStyle,
   treeSelect: useTreeSelectStyle,
   innerTitle: useInnerTitleStyle,
+  common: useCommonStyle,
 };
 
 const TreeSelectComponent = <DataItem, Value extends TreeSelectValueType>(
