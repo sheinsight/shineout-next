@@ -88,7 +88,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     mounted: false,
     unmounted: false,
     removeLock: false,
-    settingMap: {},
   });
 
   const update = (name?: string | string[]) => {
@@ -341,8 +340,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           // upload组件返回的可能是函数: (prev) => [...prev, file]
           const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key];
           deepSet(draft, key, valueOfKey, deepSetOptions);
-          // 设置 settingMap 用于标记该字段正在被设置值
-          context.settingMap[key] = true;
         });
         values.forEach((key) => {
           if (option.validate) {
@@ -352,13 +349,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
               validate(key, valueOfKey, current(draft));
             });
           }
-        });
-
-        // 设置 settingMap 的值为 false，表示该字段设置值完成
-        setTimeout(() => {
-          values.forEach((key) => {
-            delete context.settingMap[key];
-          });
         });
       });
 
