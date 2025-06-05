@@ -2,7 +2,7 @@
 2025-06-04
 
 ### 🐞 BugFix
-- 修复 `Form` 在同字段表单组件发生挂载卸载时 `defaultValue` 可能覆盖原值的问题(Regression: since v3.6.4-beta.5、v3.6.7-beta.5) ([#1144](https://github.com/sheinsight/shineout-next/pull/1144))
+- 修复 `Form` 在同字段表单组件发生挂载卸载时 `defaultValue` 可能覆盖原值的问题(Regression: since v3.6.4-beta.5) ([#1144](https://github.com/sheinsight/shineout-next/pull/1144))
 
 ## 3.7.0-beta.33
 2025-05-28

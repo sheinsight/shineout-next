@@ -2,7 +2,7 @@
 2025-05-07
 
 ### 🆕 Feature
-- 新增 `Skeleton` 组件 ([#1100](https://github.com/sheinsight/shineout-next/pull/1100))
+- 新增 `Skeleton` 骨架屏组件 ([#1100](https://github.com/sheinsight/shineout-next/pull/1100))
 
 ## 3.5.8
 2025-01-20
@@ -32,8 +32,8 @@
 2024-09-19
 
 ### 🆕 Feature
-- 新增 `Badge` 组件
-- 新增 `Link` 组件
+- 新增 `Badge` 徽标组件
+- 新增 `Link` 链接组件
 
 ## 3.2.0
 2024-06-14
