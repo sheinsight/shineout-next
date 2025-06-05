@@ -248,6 +248,7 @@ const tableStyle: JsStyles<TableClassType> = {
     left: 0,
     top: 0,
     justifyContent: 'center',
+    textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
     borderBottom: `1px solid ${token.tableCellBorderColor}`,
