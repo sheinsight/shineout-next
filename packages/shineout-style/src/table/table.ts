@@ -45,10 +45,6 @@ const tableStyle: JsStyles<TableClassType> = {
         borderBottom: `1px solid ${token.tableCellBorderColor}`,
         boxSizing: 'border-box',
         lineHeight: token.lineHeightDynamic,
-        zIndex: fixedIndex - 1,
-        '&$cellFixedLeft, &$cellFixedRight': {
-          zIndex: fixedIndex,
-        },
         '$bordered&': {
           '&::after': {
             content: '""',
@@ -183,6 +179,14 @@ const tableStyle: JsStyles<TableClassType> = {
     '$sticky > &': {
       zIndex: headerIndex,
     },
+    '& table th': {
+      zIndex: fixedFixedIndex + 1,
+      '&$cellFixedLeft': {
+        position: 'sticky',
+        top: 'auto',
+        zIndex: fixedFixedIndex + 2,
+      },
+    },
   },
   bodyWrapper: {
     overflow: 'auto',
@@ -199,7 +203,6 @@ const tableStyle: JsStyles<TableClassType> = {
         },
       },
       '& td': {
-        zIndex: fixedIndex,
         '&$cellFixedLeft': {
           position: 'sticky',
           top: 'auto',
