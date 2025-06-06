@@ -120,6 +120,20 @@ export interface RenderCompressedOption<DataItem> {
   onRemove: (item: DataItem) => void;
 }
 
+export interface DisabledOption<DataItem> {
+  /**
+   * @en When it is true, all nodes disable the selection; when it is a function, it determines whether it is disabled according to the return result of the function.
+   * @cn 为 true 时，所有节点禁用选择，为函数时，根据函数返回结果确定是否禁用
+   * @default false
+   */
+  disabled: (data: DataItem) => boolean;
+  /**
+   * @en Whether to enable real-time calculation of disabled state. When set to true, the disabled state will be calculated in real-time, which is useful for scenarios where the disabled function depends on external states. Note that enabling this will incur additional performance overhead.
+   * @cn 是否开启实时计算禁用状态，设置为 true 时，禁用状态会实时计算，用于禁用函数依赖外部状态的场景。注意，开启后会有额外性能开销
+   */
+  isRealtime: boolean;
+}
+
 export interface TreeSelectProps<DataItem, Value>
   extends Pick<
       CommonType,
@@ -226,7 +240,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 为 true 时，所有节点禁用选择，为函数时，根据函数返回结果确定是否禁用
    * @default false
    */
-  disabled?: ((data: DataItem) => boolean) | boolean;
+  disabled?: boolean | ((item: DataItem) => boolean) | DisabledOption<DataItem>;
   /**
    * @en The content displayed in the result after selecting, if not set, use renderItem. not show while return null, result is current selected
    * @cn 选中后在结果中显示的内容，默认和 renderItem 相同
