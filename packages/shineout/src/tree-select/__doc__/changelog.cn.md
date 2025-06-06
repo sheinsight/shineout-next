@@ -1,3 +1,9 @@
+## 3.7.1-beta.3
+2025-06-06
+
+### 💎 Enhancement
+- `TreeSelect` 增强 `disabled` 属性，支持动态 disabled ([#1156](https://github.com/sheinsight/shineout-next/pull/1156))
+
 ## 3.7.0-beta.32
 2025-05-27
 
