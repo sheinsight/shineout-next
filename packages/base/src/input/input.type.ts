@@ -39,7 +39,7 @@ export interface InputClasses {
   infoError: string;
   // group
   group: string;
-  groupSeperate: string;
+  groupSeparate: string;
   groupSmall: string;
   groupLarge: string;
   groupFocus: string;
