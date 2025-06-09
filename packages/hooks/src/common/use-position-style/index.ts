@@ -334,7 +334,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     updateKey,
     fixedWidth,
     parentElNewPosition,
-    popupElSize?.width,
+    popupElSize,
   ]);
 
   return { style };
