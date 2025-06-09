@@ -14,7 +14,6 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     fixedWidth,
     zIndex = 1051,
     focus,
-    arrowRef,
     popupElRef,
     updateKey,
     popupGap,
@@ -47,7 +46,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     }
   }, [parentElRef, scrollElRefProp, scrollElRefContext]);
 
-  const { style, arrayStyle } = usePositionStyle({
+  const { style } = usePositionStyle({
     getContainer: getRoot,
     position,
     absolute: !!absolute,
@@ -70,15 +69,6 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   };
 
   if (React.isValidElement(children) === false) return null;
-
-  if (arrowRef && arrayStyle && Object.keys(arrayStyle).length > 0) {
-    Object.keys(arrayStyle).forEach((key) => {
-      if (arrowRef.current) {
-        // @ts-ignore
-        arrowRef.current.style[key] = arrayStyle[key];
-      }
-    });
-  }
 
 
   const styledChild = React.cloneElement(children as any, { style: newStyle });

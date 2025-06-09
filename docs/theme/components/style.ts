@@ -1,26 +1,40 @@
 import { createUseStyles } from 'react-jss';
 
+
+const animations = {
+  '@keyframes logoFadeUp': {
+    '0%': { transform: 'translateY(200px)', opacity: 0, },
+    '100%': { transform: 'translateY(0)', opacity: 1 },
+  },
+  '@keyframes logoFadeDown': {
+    '0%': { transform: 'translate(0, -200px)', opacity: 0, },
+    '100%': { transform: 'translate(0, 0)', opacity: 1 },
+  },
+}
 const top = 208;
 export default createUseStyles(
   {
     pages: {},
+    ...animations,
     header: {
-      position: 'fixed',
-      top: 59,
+      position: 'absolute',
+      top: 0,
+      left: 0,
       right: 0,
-      left: 259,
       zIndex: 1,
       color: 'var(--soui-neutral-text-5)',
       padding: '0 40px',
       backgroundColor: 'var(--soui-neutral-fill-1)',
       borderBottom: '1px solid var(--soui-neutral-border-1)',
       overflow: 'hidden',
-      transition: 'all 0.15s ease',
+      marginBottom: 0,
+      // transition: 'all 0.3s ease',
       'body.rtl &': {
-        right: 259,
+        right: 0,
         left: 0,
       },
       '& .title': {
+        position: 'relative',
         fontSize: 36,
         fontWeight: 500,
         color: 'var(--soui-neutral-text-5)',
@@ -33,6 +47,7 @@ export default createUseStyles(
       },
 
       '& .subtitle': {
+        position: 'relative',
         fontSize: 14,
         lineHeight: '22px',
         opacity: 1,
@@ -47,7 +62,7 @@ export default createUseStyles(
       right: 0,
       left: 0,
       top: 0,
-      zIndex: -1,
+      animation: '$logoFadeDown .3s ease forwards',
       'body.rtl &': {
         transition: 'transform 0.3s ease',
         transform: 'scaleX(-1)',
@@ -74,21 +89,31 @@ export default createUseStyles(
       position: 'absolute',
     },
     stickyHeader: {
+      position: 'sticky',
+      top: 0,
+      marginTop: -65,
+      // marginBottom: 32,
       '& .title': {
         paddingTop: 0,
         fontSize: 24,
         opacity: 0,
         height: 0,
+        transition: 'none',
       },
       '& .subtitle': {
         height: 0,
         opacity: 0,
         marginTop: 0,
+        transition: 'none',
       },
       '& $tabs': {
         marginTop: 12,
         marginBottom: 12,
+        transition: 'none',
       },
+      '& $headerLogo': {
+        animation: '$logoFadeUp 0.3s ease forwards',
+      }
     },
     hiddenHeader: {},
     tabs: {
@@ -109,7 +134,6 @@ export default createUseStyles(
       display: 'flex',
       marginTop: top,
       position: 'relative',
-      overflow: 'auto',
       '& .examples': {
         flex: 1,
         minWidth: 800,
@@ -117,7 +141,7 @@ export default createUseStyles(
       '& .anchor': {
         width: 192,
 
-        '@media (max-width: 1200px)': {
+        '@media (max-width: 960px)': {
           display: 'none',
         },
       },
@@ -156,6 +180,25 @@ export default createUseStyles(
         marginTop: 16,
         marginBottom: 32,
         boxSizing: 'border-box',
+      },
+    },
+    guideIcon: {
+      width: 14,
+      height: 14,
+      marginRight: 4,
+      '& svg': {
+        width: '100%',
+        height: '100%',
+      },
+    },
+    guideIconSuccess: {
+      '& svg': {
+        fill: 'var(--soui-success-6)',
+      },
+    },
+    guideIconWarning: {
+      '& svg': {
+        fill: 'var(--soui-warning-6)',
       },
     },
     api: {
@@ -225,7 +268,7 @@ export default createUseStyles(
       marginTop: 16,
       display: 'flex',
       flexWrap: 'wrap',
-      padding: '0 40px',
+      padding: '0 0 0 40px',
       maxWidth: 909,
       boxSizing: 'content-box',
       gap: 24,
@@ -238,7 +281,7 @@ export default createUseStyles(
     },
     image: {
       width: '100%',
-      maxWidth: 412,
+      maxWidth: 442,
     },
     imageContent: {
       display: 'flex',
@@ -285,6 +328,20 @@ export default createUseStyles(
         fontSize: 'inherit',
       },
     },
+    apiCode: {
+      marginRight: 4,
+      color: '#c41d7f',
+      margin: '1px',
+      border: '1px solid rgba(5,5,5,0.06)',
+      borderRadius: 4,
+      background: 'rgba(0,0,0,0.04)',
+      padding: '0.2em 0.4em',
+    },
+    activeApi: {
+      '&& td': {
+        background: 'var(--soui-table-tbody-hover-background-color,var(--soui-indigo-1,#EEF2FE))',
+      }
+    }
   },
   { name: 'doc-markdown' },
 );

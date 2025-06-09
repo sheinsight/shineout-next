@@ -59,7 +59,7 @@ const useContainer = (props: ContainerProps = {}) => {
       context.element = document.createElement('div');
       context.element.setAttribute(
         'style',
-        ' position: absolute; top: 0px; left: 0px; width: 100% ',
+        'position: absolute; top: 0px; left: 0px; width: 100%;',
       );
     }
     const rootContainer = getRootContainer(props);

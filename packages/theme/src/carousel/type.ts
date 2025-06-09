@@ -94,6 +94,18 @@ export interface CarouselTokens {
   carouselIndicatorLineGap: string;
   /**
    * @type {string}
+   * @token Size-12
+   * @description 轮播图指示器undefined宽度
+   */
+  carouselIndicatorBarWidth: string;
+  /**
+   * @type {string}
+   * @token Size-2
+   * @description 轮播图指示器undefined高度
+   */
+  carouselIndicatorBarHeight: string;
+  /**
+   * @type {string}
    * @token Size-8
    * @description 轮播图指示器箭头字号
    */

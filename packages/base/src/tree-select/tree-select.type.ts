@@ -1,5 +1,5 @@
 import React from 'react';
-import { TreeClasses } from '../tree/tree.type';
+import { TreeClasses, TreeProps } from '../tree/tree.type';
 import { KeygenResult, ObjectKey, UnMatchedData, ValueItem } from '@sheinx/hooks';
 import { SelectClasses } from '../select/select.type';
 import { TagClasses } from '../tag/tag.type';
@@ -107,12 +107,40 @@ export interface ComponentRef<DataItem, Value> {
   ) => Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
 }
 
+export interface RenderCompressedOption<DataItem> {
+  /**
+   * @en The current selected data
+   * @cn 当前选中的数据
+   */
+  data: DataItem[];
+  /**
+   * @en Method to remove the option
+   * @cn 删除选项的方法
+   */
+  onRemove: (item: DataItem) => void;
+}
+
+export interface DisabledOption<DataItem> {
+  /**
+   * @en When it is true, all nodes disable the selection; when it is a function, it determines whether it is disabled according to the return result of the function.
+   * @cn 为 true 时，所有节点禁用选择，为函数时，根据函数返回结果确定是否禁用
+   * @default false
+   */
+  disabled: (data: DataItem) => boolean;
+  /**
+   * @en Whether to enable real-time calculation of disabled state. When set to true, the disabled state will be calculated in real-time, which is useful for scenarios where the disabled function depends on external states. Note that enabling this will incur additional performance overhead.
+   * @cn 是否开启实时计算禁用状态，设置为 true 时，禁用状态会实时计算，用于禁用函数依赖外部状态的场景。注意，开启后会有额外性能开销
+   */
+  isRealtime: boolean;
+}
+
 export interface TreeSelectProps<DataItem, Value>
   extends Pick<
       CommonType,
       'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'filterSameChange'
     >,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
+    Pick<TreeProps<DataItem, any>, 'actionOnClick'>,
     BaseTipProps {
   /**
    * @en Data cache, if data change asynchronously, better set true
@@ -185,7 +213,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering
    * @cn onFilter 不为空时，可以输入过滤数据。 onFilter 如果返回一个函数，使用这个函数做前端过滤。 如果不返回，可以自行做后端过滤
    */
-  onFilter?: (text: string) => void;
+  onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
   /**
    * @en Placeholder content when there is no data
    * @cn 无数据时的占位内容
@@ -212,7 +240,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 为 true 时，所有节点禁用选择，为函数时，根据函数返回结果确定是否禁用
    * @default false
    */
-  disabled?: ((data: DataItem) => boolean) | boolean;
+  disabled?: boolean | ((item: DataItem) => boolean) | DisabledOption<DataItem>;
   /**
    * @en The content displayed in the result after selecting, if not set, use renderItem. not show while return null, result is current selected
    * @cn 选中后在结果中显示的内容，默认和 renderItem 相同
@@ -286,7 +314,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 将选中值合并，只在多选模式下有效；为 'no-repeat' 时弹出框中不重复展示值
    * @default false
    */
-  compressed?: boolean | 'no-repeat';
+  compressed?: boolean | 'no-repeat' | 'hide-popover';
   /**
    * @en Set visible of datepicker popup
    * @cn 控制浮层显隐
@@ -418,4 +446,33 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 虚拟列表
    */
   virtual?: boolean;
+  /**
+   * @en There are onFilter and onCreate, select Option, automatically focus Input
+   * @cn 存在 onFilter 和 onCreate，选中 Option，自动 focus Input
+   * @default false
+   */
+  reFocus?: boolean;
+  /**
+   * @en Class name of content
+   * @cn 内容样式
+   */
+  contentClass?: string | ((data: DataItem) => string);
+  /**
+   * @en Custom render compressed content
+   * @cn 自定义渲染折叠内容，其中 data 为选中的数据，onRemove 为删除事件
+   * @version 3.7.0
+   */
+  renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
+  beforeChange?: (value: Value) => any;
+
+  /**
+   * @cn 开启搜索关键字高亮功能
+   * @en Whether to enable highlight feature
+   * @version 3.7.0
+   */
+  highlight?: boolean;
 }

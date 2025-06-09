@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useLayoutEffect, useEffect, useRef, useState, useMemo } from 'react';
 import { BasePopupProps, PositionType } from './use-popup.type';
 import useClickAway from '../../common/use-click-away';
 import { getPosition } from '../../utils/position';
@@ -18,24 +18,33 @@ const usePopup = (props: BasePopupProps) => {
   } = props;
 
   const [openState, setOpenState] = useState(defaultOpen);
-  const { bindChild, removeChild } = useContext(popupContext);
+  const { bindChild, removeChild, addParent, removeParent } = useContext(popupContext);
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
-  const arrowRef = useRef<HTMLSpanElement | null>(null);
 
-  useEffect(() => {
-    bindChild(popupRef);
-    return () => {
-      removeChild(popupRef);
-    };
-  }, []);
 
   const { current: context } = useRef({
     triggerTimer: null as NodeJS.Timeout | null,
     // 记录所有的子popup 点击子 popup 不关闭弹窗
     chain: [targetRef, popupRef] as React.MutableRefObject<HTMLElement | null>[],
   });
+
+  const handleAddParent = (elRef: React.MutableRefObject<HTMLElement | null>) => {
+    context.chain.push(elRef);
+
+    // 继续向上添加当前的 popupRef 到父级
+    addParent(elRef);
+  };
+
+  const handleRemoveParent = (elRef: React.MutableRefObject<HTMLElement | null>) => {
+    const index = context.chain.findIndex((item) => item === elRef);
+    if (index > -1) {
+      context.chain.splice(index, 1);
+      removeParent(elRef);
+    }
+  }
+
   const open = openState;
   const changeOpen = (openIn: boolean, delay?: number) => {
     if (context.triggerTimer) clearTimeout(context.triggerTimer);
@@ -180,27 +189,39 @@ const usePopup = (props: BasePopupProps) => {
     event: 'mousedown',
   });
 
-  const providerValue = useMemo(
-    () => ({
-      bindChild: (elRef: React.MutableRefObject<HTMLElement | null>) => {
+  const providerValue = useMemo(() => ({
+    addParent: handleAddParent,
+    removeParent: handleRemoveParent,
+    bindChild: (elRef: React.MutableRefObject<HTMLElement | null>) => {
+      if (elRef.current) {
+        addParent(elRef);
         context.chain.push(elRef);
-      },
-      removeChild: (elRef: React.MutableRefObject<HTMLElement | null>) => {
-        const index = context.chain.findIndex((item) => item === elRef);
-        if (index > -1) {
-          context.chain.splice(index, 1);
-        }
-      },
-    }),
-    [],
-  );
+      }
+    },
+    removeChild: (elRef: React.MutableRefObject<HTMLElement | null>) => {
+      const index = context.chain.findIndex((item) => item === elRef);
+      if (index > -1) {
+        context.chain.splice(index, 1);
+
+        removeParent(elRef);
+      }
+    },
+  }), []);
+
+  useLayoutEffect(() => {
+    if(open){
+      bindChild(popupRef);
+    }
+    return () => {
+      removeChild(popupRef);
+    };
+  }, [open]);
 
   return {
     open,
     position,
     targetRef,
     popupRef,
-    arrowRef,
     getTargetProps,
     openPop,
     closePop,

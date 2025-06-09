@@ -1,3 +1,10 @@
+## 3.6.0
+2025-02-25
+### 🐞 BugFix
+
+- 修复 `Spin` 的 `className`重复设置到content dom节点上的问题 ([#970](https://github.com/sheinsight/shineout-next/pull/970))
+
+
 ## 3.5.6
 2025-01-06
 ### 🐞 BugFix

@@ -21,6 +21,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     renderResult = (a: any) => a as React.ReactNode,
     listType = 'text',
     leftHandler,
+    hideHandler = false,
   } = props;
 
   const { locale } = useConfig();
@@ -53,6 +54,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     },
     value: value,
     onChange,
+    functionalOnChange: props.functionalOnChange,
   });
 
   const uploadValidate = usePersistFn(() => {
@@ -89,7 +91,13 @@ const Upload = <T,>(props0: UploadProps<T>) => {
   const renderHandler = () => {
     if (restLength <= 0) return null;
 
-    const inputOriginProps = { webkitdirectory: props.webkitdirectory };
+    const inputOriginProps: {
+      webkitdirectory?: string;
+    } = {};
+
+    if (props.webkitdirectory) {
+      inputOriginProps.webkitdirectory = 'true';
+    }
 
     return (
       <Drop
@@ -97,6 +105,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         accept={accept}
         disabled={props.disabled}
         onDrop={func.addFiles}
+        beforeDrop={props.beforeDrop}
         multiple={!!props.multiple || limit > 1}
         className={classNames(uploadClasses?.dropItem)}
       >
@@ -106,6 +115,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
           )}
           style={listType === 'image' ? imageStyle : undefined}
           {...wrapperProps}
+          role='button'
         >
           {listType === 'image' &&
             (props.children || (
@@ -222,7 +232,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
       );
     });
   };
-  const CustomResult = props.customResult;
+  const renderCustomResult = props.customResult;
   const shouldRenderLeft = listType !== 'image' || leftHandler;
   const { fieldId } = useContext(FormFieldContext);
   return (
@@ -238,25 +248,28 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         props.className,
       )}
     >
-      {CustomResult ? (
+      {renderCustomResult ? (
         <>
           {shouldRenderLeft && renderHandler()}
-          <CustomResult
-            value={value}
-            files={files}
-            onFileRemove={func.removeFile}
-            onValueRemove={func.removeValue}
-            recoverValue={recycleValues}
-            onValueRecover={func.recoverValue}
-          />
-          {!shouldRenderLeft && renderHandler()}
+          {renderCustomResult({
+            value,
+            files,
+            filesInstances: renderFile(),
+            valueInstances: renderValue(),
+            onFileRemove: func.removeFile,
+            onValueRemove: func.removeValue,
+            recoverValue: recycleValues,
+            handler: renderHandler(),
+            onValueRecover: func.recoverValue,
+          })}
+          {!shouldRenderLeft && !hideHandler && renderHandler()}
         </>
       ) : (
         <>
-          {shouldRenderLeft && renderHandler()}
+          {shouldRenderLeft && !hideHandler && renderHandler()}
           {renderValue()}
           {renderFile()}
-          {!shouldRenderLeft && renderHandler()}
+          {!shouldRenderLeft && !hideHandler && renderHandler()}
           {renderRecover()}
         </>
       )}

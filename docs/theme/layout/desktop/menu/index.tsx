@@ -5,6 +5,7 @@ import store, { Menu, dispatch } from '../../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Locale from '../../../locales';
 import { Tag, setConfig } from 'shineout';
+import FloatMenu from '../float/menu';
 
 import useStyles from '../style';
 
@@ -117,58 +118,70 @@ const MenuComponent = () => {
     return componentName;
   }, [location.pathname]);
 
+  const menuFloat = state.menuFloat
+  const menuCollapsed = state.menuCollapsed
+
+  const rootClass = classnames(classes.menuContainer, {
+    [classes.menuFloat]: menuFloat,
+    [classes.collapsed]: menuCollapsed,
+  });
+
   return (
-    <ul className={classnames(classes.menu, classes.customScrollbar)}>
-      <li>
-        <div className={classnames('group', 'first')}>
-          {docsLocale['shineout.menu.group.guide']}
-        </div>
-        <ul>
-          {devGuide.map((component, index) => {
-            return (
-              component &&
-              component.title && (
-                <li
-                  key={index}
-                  onClick={() => handleDocClick(component.name)}
-                  className={active === component.name ? 'active' : ''}
-                >
-                  {component.title[state.locales]}
-                </li>
-              )
-            );
-          })}
-        </ul>
-      </li>
+    <aside className={rootClass}>
+      <ul className={classnames(classes.menu, classes.customScrollbar)}>
+        <li>
+          <div className={classnames('group', 'first')}>
+            {docsLocale['shineout.menu.group.guide']}
+          </div>
+          <ul>
+            {devGuide.map((component, index) => {
+              return (
+                component &&
+                component.title && (
+                  <li
+                    key={index}
+                    onClick={() => handleDocClick(component.name)}
+                    className={active === component.name ? 'active' : ''}
+                  >
+                    {component.title[state.locales]}
+                  </li>
+                )
+              );
+            })}
+          </ul>
+        </li>
 
-      {state.menu.map((item, index) => {
-        return (
-          <li key={index}>
-            <div className={classnames('group')}>
-              {groupLocale[item.group as keyof typeof groupLocale]}
-            </div>
-            <ul>
-              {item.components.map((component, index) => {
-                return (
-                  component &&
-                  component.title && (
-                    <li
-                      key={index}
-                      onClick={() => handleClick(component)}
-                      className={active === component.name ? 'active' : ''}
-                    >
-                      {component.title[state.locales]}
+        {state.menu.map((item, index) => {
+          return (
+            <li key={index}>
+              <div className={classnames('group')}>
+                {groupLocale[item.group as keyof typeof groupLocale]}
+              </div>
+              <ul>
+                {item.components.map((component, index) => {
+                  return (
+                    component &&
+                    component.title && (
+                      <li
+                        key={index}
+                        onClick={() => handleClick(component)}
+                        className={active === component.name ? 'active' : ''}
+                      >
+                        {component.title[state.locales]}
 
-                      {component.version && <Tag color='success'>{component.version}</Tag>}
-                    </li>
-                  )
-                );
-              })}
-            </ul>
-          </li>
-        );
-      })}
-    </ul>
+                        {component.version && <Tag color='success'>{component.version}</Tag>}
+                      </li>
+                    )
+                  );
+                })}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
+
+      <FloatMenu />
+    </aside>
   );
 };
 

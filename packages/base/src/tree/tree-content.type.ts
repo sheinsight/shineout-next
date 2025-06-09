@@ -1,10 +1,13 @@
 import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
-import { JsstyleType, TreeRenderItemType } from './tree.type';
+import { JsstyleType, TreeRenderItemType, TreeProps } from './tree.type';
 
 export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
-  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded' | 'active'> {
+  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded' | 'active'>,
+  Pick<TreeProps<DataItem, Value>, 'actionOnClick' | 'onChange'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
+  virtual?: boolean;
+  level?: number;
   parentClickExpand?: boolean;
   doubleClickExpand?: boolean;
   data: DataItem;
@@ -18,7 +21,8 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
   childrenClass?: ((data: DataItem) => string) | string;
-  bindNode: (
+  // TODO: tree-content里面没有用到这个属性，是否可以删除？
+  bindNode?: (
     id: KeygenResult,
     update: UpdateFunc,
     data: DataItem,
@@ -31,9 +35,8 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   setFetching: (value: boolean) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   onFetch: () => void;
-  onDragOver: (e: React.DragEvent) => void;
+  onDragOver?: (e: React.DragEvent) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
-  onChange?: (value: Value) => void;
 }
 
 export interface TreeVirtualContextProps<DataItem, Value extends KeygenResult[]>

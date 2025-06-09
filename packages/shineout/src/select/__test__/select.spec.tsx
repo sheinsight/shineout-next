@@ -33,7 +33,7 @@ import SelectAbsolute from '../__example__/11-absolute';
 import SelectInnerTitle from '../__example__/14-inner-title';
 import SelectLoading from '../__example__/15-loading';
 import SelectCustomRender from '../__example__/16-custom-render';
-import SelectCustomResult from '../__example__/17-custom-result';
+import SelectCustomResult from '../__example__/17-custom-result-1';
 import SelectCustomUnmatch from '../__example__/18-custom-unmatch';
 
 const SO_PREFIX = 'select';
@@ -151,7 +151,8 @@ const defaultSelectPickerOpen = {
   top: 'calc(100% + 4px)',
   left: '0px',
   transform: 'scaleY(1)',
-  transition: 'transform 240ms ease-in-out',
+  "transform-origin": "center top",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 }
 
 const testDataObject = [

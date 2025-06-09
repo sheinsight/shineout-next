@@ -6,6 +6,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 require('../scripts/dev-doc.js');
 
+const port = 3333;
+
 const webpackConfig = {
   mode: 'development',
   stats: 'errors-only',
@@ -97,6 +99,6 @@ const server = new WebpackDevServer(
   compiler,
 );
 
-server.listen(3333, 'localhost', () => {
-  console.log('Shineout Doc is running on port 2333');
+server.listen(port, 'localhost', () => {
+  console.log(`Shineout Doc is running on port ${port}`);
 });

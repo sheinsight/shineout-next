@@ -26,7 +26,7 @@ import { useState } from 'react';
 
 const SO_PREFIX = 'button';
 const originClasses = [] as string[];
-const originItemClasses = ['button', 'secondary', 'outline', 'text', 'disabled', 'loading', 'href', 'round', 'square', 'circle', 'small', 'large', 'danger', 'warning', 'success'];
+const originItemClasses = ['button', 'primary', 'secondary', 'outline', 'text', 'disabled', 'loading', 'href', 'round', 'square', 'circle', 'small', 'large', 'danger', 'warning', 'success'];
 const {
   button: buttonClassName,
   secondary: buttonSecondary,
@@ -40,6 +40,7 @@ const {
   circle: buttonCircle,
   small: buttonSmall,
   large: buttonLarge,
+  primary: buttonPrimary,
   danger: buttonDanger,
   warning: buttonWarning,
   success: buttonSuccess,
@@ -136,9 +137,12 @@ describe('Button[Status]', () => {
   test('should render when set type', () => {
     const { container } = render(<ButtonStatus />);
     container.querySelectorAll('button').forEach((button, index) => {
-      if (Math.floor(index / 4) === 0) classTest(button, buttonDanger);
-      if (Math.floor(index / 4) === 1) classTest(button, buttonWarning);
-      if (Math.floor(index / 4) === 2) classTest(button, buttonSuccess);
+
+      if (Math.floor(index / 4) === 0) classTest(button, buttonSecondary);
+      if (Math.floor(index / 4) === 1) classTest(button, buttonPrimary);
+      if (Math.floor(index / 4) === 2) classTest(button, buttonDanger);
+      if (Math.floor(index / 4) === 3) classTest(button, buttonWarning);
+      if (Math.floor(index / 4) === 4) classTest(button, buttonSuccess);
     });
   });
 });

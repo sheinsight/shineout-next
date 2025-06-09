@@ -62,6 +62,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     colon,
     name: formName,
     scrollParent,
+    isControl,
   } = props;
   const deepSetOptions = {
     removeUndefined,
@@ -69,8 +70,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   };
 
   const preValue = usePrevious(props.value);
-
-  const formDomRef = React.useRef<HTMLFormElement>();
 
   const { current: context } = React.useRef<FormContext>({
     defaultValues: {},
@@ -95,7 +94,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     if (!name) {
       Object.keys(context.updateMap).forEach((key) => {
         context.updateMap[key]?.forEach((update) => {
-          update(context.value, context.errors, context.serverErrors, context.names);
+          update(context.value, context.errors, context.serverErrors);
         });
       });
       Object.keys(context.flowMap).forEach((key) => {
@@ -111,11 +110,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         if (!context.updateMap[key]) {
           const parentKey = key.split('.')[0];
           context.updateMap[parentKey]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors, context.names);
+            update(context.value, context.errors, context.serverErrors);
           });
         } else {
           context.updateMap[key]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors, context.names);
+            update(context.value, context.errors, context.serverErrors);
           });
         }
         context.flowMap[key]?.forEach((update) => {
@@ -144,7 +143,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       const selector = `[${getDataAttributeName('status')}="error"]`;
 
-      const el = formDomRef.current?.querySelector(selector);
+      const el = props.formElRef.current?.querySelector(selector);
       if (el) {
         el.scrollIntoView();
         const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
@@ -223,7 +222,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
             if (errors.length > 0) {
               const errorFields = [];
               for (const key in context.errors) {
-                if (context.errors[key]) {
+                if (context.errors[key] && context.names.has(key)) {
                   errorFields.push({
                     name: key,
                     errors: [(context.errors[key]?.message as string) || ''],
@@ -278,10 +277,26 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
           if (!isVisibleY || !isVisibleX) {
             // 计算元素相对于父元素的偏移量
-            const offsetTop = element.offsetTop - parentEl.offsetTop;
-            const offsetLeft = element.offsetLeft - parentEl.offsetLeft;
-            parentEl.scrollTop = offsetTop;
-            parentEl.scrollLeft = offsetLeft;
+            const offsetTop = elementRect.top - parentRect.top;
+            const offsetLeft = elementRect.left - parentRect.left;
+            // 如果是往上滚动，那么只有当元素的偏移量小于0时才需要滚动
+            if (offsetTop < 0) {
+              parentEl.scrollTop = Math.max(parentEl.scrollTop + offsetTop, 0);
+            } else {
+              parentEl.scrollTop = Math.min(
+                parentEl.scrollTop + offsetTop,
+                parentEl.scrollHeight - parentEl.clientHeight,
+              );
+            }
+            // 如果是往左滚动，那么只有当元素的偏移量小于0时才需要滚动
+            if (offsetLeft < 0) {
+              parentEl.scrollLeft = Math.max(parentEl.scrollLeft + offsetLeft, 0);
+            } else {
+              parentEl.scrollLeft = Math.min(
+                parentEl.scrollLeft + offsetLeft,
+                parentEl.scrollWidth - parentEl.clientWidth,
+              );
+            }
           }
         } else {
           // 如果没有找到可滚动的父元素，使用默认行为
@@ -316,18 +331,22 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const setValue = usePersistFn(
     (
       vals: { [key: string]: any },
-      option: { validate?: boolean; names?: string[] } = { validate: false },
+      option: { validate?: boolean; forceUpdate?: boolean } = { validate: false },
     ) => {
       onChange((draft) => {
         const values = Object.keys(vals);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
         values.forEach((key) => {
-          deepSet(draft, key, vals[key], deepSetOptions);
+          // upload组件返回的可能是函数: (prev) => [...prev, file]
+          const valueOfKey = typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key];
+          deepSet(draft, key, valueOfKey, deepSetOptions);
         });
         values.forEach((key) => {
           if (option.validate) {
             context.validateMap[key]?.forEach((validate) => {
-              validate(key, vals[key], current(draft));
+              const valueOfKey =
+                typeof vals[key] === 'function' ? vals[key](getValue(key)) : vals[key];
+              validate(key, valueOfKey, current(draft));
             });
           }
         });
@@ -339,7 +358,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       fullKeyPaths.forEach((key) => {
         delete context.serverErrors[key];
       });
-      update(fullKeyPaths);
+      if (option.forceUpdate) {
+        update();
+      } else {
+        update(fullKeyPaths);
+      }
     },
   );
 
@@ -383,7 +406,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     updateFieldsets(name);
   });
 
-  const submit = usePersistFn((withValidate: boolean = true) => {
+  const submit = usePersistFn((withValidate: boolean = true, callback?: () => void) => {
     if (disabled) return;
     if (context.submitLock) {
       return;
@@ -399,6 +422,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     (async () => {
       if (!withValidate) {
         props.onSubmit?.((context.value ?? {}) as T);
+        callback?.();
         return;
       }
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
@@ -407,8 +431,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         if (activeEl) activeEl.focus();
       } else {
         handleSubmitError(result);
-        return;
       }
+      callback?.();
     })();
   });
 
@@ -469,7 +493,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     return {
       ...externalProps,
       ...externalEventHandlers,
-      ref: formDomRef,
       disabled: !!disabled,
       onSubmit: handleSubmit(externalEventHandlers),
       onReset: handleReset(externalEventHandlers),
@@ -495,14 +518,14 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       }
       context.updateMap[n].add(updateFn);
       context.removeArr.delete(n);
+
       if (df !== undefined && deepGet(context.value, n) === undefined) {
         if (!context.mounted) context.defaultValues[n] = df;
-        setTimeout(() => {
-          onChange((v) => {
-            deepSet(v, n, df, deepSetOptions);
-          });
-          update(n);
+
+        onChange((v) => {
+          deepSet(v, n, df, deepSetOptions);
         });
+        update(n);
       }
     },
     unbind: (n: string, reserveAble?: boolean, validateField?: ValidateFn, update?: UpdateFn) => {
@@ -587,7 +610,17 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       formName,
       colon,
     }),
-    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size, formName, colon],
+    [
+      labelWidth,
+      labelAlign,
+      labelVerticalAlign,
+      keepErrorHeight,
+      inline,
+      disabled,
+      size,
+      formName,
+      colon,
+    ],
   );
 
   const updateValue = () => {
@@ -620,7 +653,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   React.useEffect(() => {
     context.removeLock = false;
     // 内部 onChange 改的 value, 不需要更新
-    if (props.value === context.value) return;
+    if (props.value === context.value) {
+      if (!isControl) update();
+      return;
+    }
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
         const oldValue = deepGet(preValue || emptyObj, key);
@@ -630,7 +666,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       validateFields(keys).catch(() => {});
     }
     update();
-    updateDefaultValue();
+    // 默认值上位时会提前触发外部的onChange, 导致外部的多次setFormValue不能合并后生效的问题(ReactDOM.render方式渲染)
+    setTimeout(updateDefaultValue);
     context.resetTime = 0;
   }, [props.value]);
 

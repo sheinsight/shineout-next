@@ -1,9 +1,78 @@
-## 3.6.0-beta.2
-2024-12-19
+## 3.7.1-beta.4
+2025-06-09
 
-### 💎 Performance
+### 🐞 BugFix
+- 修复 `Select` 的下拉框是动态高度时，弹出层位置不自动调整的问题 ([#1157](https://github.com/sheinsight/shineout-next/pull/1157))
+
+
+## 3.7.1-beta.1
+2025-06-05
+
+### 🐞 BugFix
+- 修复 `Select` 设置了 `absolute` 用法下，在某些位置打开下拉框时有多余的过渡动画问题 ([#1154](https://github.com/sheinsight/shineout-next/pull/1154))
+
+
+## 3.7.0-beta.31
+2025-05-27
+
+### 🆕 Feature
+- `Select` 新增 `highlight` 属性，开启搜索关键字高亮功能 ([#1126](https://github.com/sheinsight/shineout-next/pull/1126))
+
+
+## 3.7.0-beta.18
+2025-05-07
+
+### 🆕 Feature
+- `Select` 新增 `renderCompressed` 属性，支持自定义渲染合并内容 ([#1099](https://github.com/sheinsight/shineout-next/pull/1099))
+
+## 3.6.6-beta.4
+2025-05-09
+
+### 🐞 BugFix
+- 修复 `Select`结果框高度不继承的问题  ([#1105](https://github.com/sheinsight/shineout-next/pull/1105))
+
+## 3.6.6-beta.3
+2025-05-07
+
+### 💎 Enhancement
+- `Select` 增强 `compressed` 属性，新增 `hide-popover` 模式隐藏合并后的选项，仅展示合并数量 ([#1098](https://github.com/sheinsight/shineout-next/pull/1098))
+
+## 3.6.5-beta.1
+2025-04-23
+
+### 🐞 BugFix
+- 修复 `Select` 在 `Popover` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除条目时会引起样式异常的问题 ([#1079](https://github.com/sheinsight/shineout-next/pull/1079))
+
+## 3.6.4-beta.3
+2025-04-16
+
+### 🐞 BugFix
+- 修复 `Select` 开启过滤后打开面板快速再次聚焦时可能清空输入框文本内容的问题 ([#1064](https://github.com/sheinsight/shineout-next/pull/1064))
+
+## 3.6.4-beta.2
+2025-04-16
+
+### 🐞 BugFix
+- 修复 `Select` 搜索内容后选项被遮挡的问题 ([#1066](https://github.com/sheinsight/shineout-next/pull/1066))
+
+## 3.6.2-beta.4
+2025-04-01
+
+### 🐞 BugFix
+- 修复 `Select` 最大高度限制失效的问题（默认 max-height 应为 80px） ([#1030](https://github.com/sheinsight/shineout-next/pull/1030))
+
+## 3.6.0
+2025-03-19
+
+### 🐞 BugFix
+- 修复 `Select` 的 `onLoadMore` 在加载第二页的时候重新打开面板滚动位置异常的问题(Regression: since v3.5.5) ([#1000](https://github.com/sheinsight/shineout-next/pull/1000))
+- 修复 `Select` 的 `reFocus` 属性失效的问题 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
+
+
+### 🚀 Performance
 - 优化 `Select` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
 - 优化 `Select` 在大数据量下同时被渲染很多个时的页面初始化性能问题 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
+
 
 
 ## 3.5.7
@@ -27,14 +96,14 @@
 - 修复 `Select` 开启 `filterSameChange` 后单选模式下选择重复项无法关闭面板的问题 ([#819](https://github.com/sheinsight/shineout-next/pull/819))
 - 修复 `Select` 默认事件引起的点击异常问题(Regression: since v3.4.4) ([#810](https://github.com/sheinsight/shineout-next/pull/810))
 - 修复 `Select` 开启创建选项后无法选中创建内容的问题(Regression: since v3.4.4) ([#807](https://github.com/sheinsight/shineout-next/pull/807))
-- 修复 `Select` 组件在开启 `absolute` 属性后，多选模式下选择内容换行后面板位置不更新的问题 ([#804](https://github.com/sheinsight/shineout-next/pull/804))
+- 修复 `Select` 在开启 `absolute` 属性后，多选模式下选择内容换行后面板位置不更新的问题 ([#804](https://github.com/sheinsight/shineout-next/pull/804))
 
 ## 3.5.0
 2024-11-11
 
 ### 💎 Enhancement
 
-- 优化 `Select` 组件默认 `placeholder` 占位形式 ([#788](https://github.com/sheinsight/shineout-next/pull/788))
+- 优化 `Select` 默认 `placeholder` 占位形式 ([#788](https://github.com/sheinsight/shineout-next/pull/788))
 
 ## 3.4.7
 2024-11-08
@@ -76,7 +145,7 @@
 2024-09-29
 
 ### 🐞 BugFix
-- 修复 `Select` 组件 `columns` 只有 1 列情况下列表宽度不自动撑满的问题 ([#686](https://github.com/sheinsight/shineout-next/pull/686))
+- 修复 `Select` 的 `columns` 只有 1 列情况下列表宽度不自动撑满的问题 ([#686](https://github.com/sheinsight/shineout-next/pull/686))
 
 ## 3.4.0
 2024-09-19

@@ -1,6 +1,6 @@
 /**
- * cn - 带图标的下拉菜单
- *    -- content 可以传 ReactNode 来渲染复杂的内容
+ * cn - 自定义渲染
+ *    -- content 可以传 ReactNode 来渲染复杂的内容，包括图标
  * en - Dropdown with icon
  *    -- Content can pass ReactNode to render complex content
  */

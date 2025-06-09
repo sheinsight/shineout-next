@@ -42,11 +42,6 @@ const Circle = (props: ProgressProps) => {
     type === 'danger' && progressClasses?.wrapperDanger,
   );
 
-  console.log('======================')
-  console.log('dasharray: >>', dasharray)
-  console.log('strokeLinecap: >>', strokeLinecap)
-  console.log('width: >>', width)
-  console.log('======================')
   return (
     <div className={mc} style={style}>
       <svg viewBox={`0 0 ${size} ${size}`}>

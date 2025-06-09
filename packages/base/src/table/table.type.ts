@@ -15,7 +15,10 @@ import { DatePickerClasses } from '../date-picker/date-picker.type';
 import { SwitchClasses } from '../switch/switch.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { RadioClasses } from '../radio/radio.type';
+import { PopoverClasses } from '../popover/popover.type';
+import { TreeClasses } from '../tree/tree.type';
 import { KeygenResult } from '@sheinx/hooks';
+import { StickyProps } from '../sticky';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -26,7 +29,6 @@ export interface TableClasses {
   small: string;
   large: string;
   default: string;
-  scrollY: string;
   floatLeft: string;
   floatRight: string;
   bordered: string;
@@ -39,11 +41,15 @@ export interface TableClasses {
 
   loading: string;
 
-  headMirrorScroller: string;
+  mirrorScroller: string;
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
   emptyWrapper: string;
+  emptyNoBorder: string;
+  emptyHeader: string;
+  scrollY: string;
+  scrollX: string;
 
   cellAlignLeft: string;
   cellAlignRight: string;
@@ -66,6 +72,19 @@ export interface TableClasses {
   sorterActive: string;
   sorterAsc: string;
   sorterDesc: string;
+
+  hasFilter: string;
+  filterContainer: string;
+  filterActive: string;
+  filterInput: string;
+  filterInputIcon: string;
+  filterIcon: string;
+  filterIconContainer: string;
+  filterRadio: string;
+
+  filterHeader: string;
+  filterBody: string;
+  filterFooter: string;
 
   resizeSpanner: string;
   resizeSpannerActive: string;
@@ -135,6 +154,8 @@ export interface TableProps<DataItem, Value>
     treeSelect?: () => TreeSelectClasses;
     datePicker?: () => DatePickerClasses;
     switch?: () => SwitchClasses;
+    popover?: () => PopoverClasses
+    tree?: () => TreeClasses;
   };
   /**
    *
@@ -205,9 +226,9 @@ export interface TableProps<DataItem, Value>
   fixed?: TableFix | 'auto';
   /**
    *  @en Whether to use virtual list
-   *  @cn 是否使用虚拟列表
+   *  @cn 是否使用虚拟列表，设置为 lazy 时，表示在滚动时不触发 rerender
    */
-  virtual?: boolean;
+  virtual?: boolean | 'lazy';
   /**
    * @en The maximum number of rows for a single render. Table uses lazy render to optimize performance under large amounts of data. If your table displays more than 20 rows, you can change the value of rowsInView. Value of 0 render all data.
    * @cn 单次 render的 最大行数。Table 采用了 lazy render 的方式来优化在大量数据下的性能，如果你的表格显示的高度超出了20条，可以调整 rowsInView 的值。为 0 表示单次 render 所有数据。
@@ -333,7 +354,7 @@ export interface TableProps<DataItem, Value>
    * @cn 表头是否附着顶部，为 true 时距离顶部为0
    *
    */
-  sticky?: boolean | { top?: number; css?: boolean };
+  sticky?: boolean | { top?: number; css?: boolean, target?: Element | null };
 
   /**
    * @en Whether to show the top scroller
@@ -342,6 +363,15 @@ export interface TableProps<DataItem, Value>
    * @version 3.4.0
    */
   showTopScrollbar?: boolean;
+
+  /**
+   * @en Whether to show the bottom scroller
+   * @cn 是否开启底部自定吸附的滚动条
+   * @default false
+   * @version 3.7.0
+   */
+  showBottomScrollbar?: boolean | BottomScrollbarOption;
+
   /**
    * @en Table instance (please use with caution: only fixed Table)
    * @cn Table 实例（请谨慎使用：仅虚拟列表支持）
@@ -352,6 +382,10 @@ export interface TableProps<DataItem, Value>
    * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
    */
   onRowSelect?: (rows: Value) => void;
+}
+
+interface BottomScrollbarOption extends Pick<StickyProps, 'bottom'> {
+  zIndex?: number;
 }
 
 export interface SorterInfo {

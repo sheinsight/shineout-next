@@ -1,53 +1,12 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import { CarouselClasses } from '@sheinx/base';
+import { animations } from '../common'
 
 export type CarouselClassType = keyof CarouselClasses;
 
 const carouselDuration = '0.4s';
 
-const animations = {
-  '@keyframes r2c': {
-    '0%': { transform: 'translateX(100%)' },
-    '100%': { transform: 'translateX(0)' },
-  },
-  '@keyframes  c2r': {
-    '0%': { transform: 'translateX(0)' },
-    '100%': { transform: 'translateX(100%)' },
-  },
-  '@keyframes  l2c': {
-    '0%': { transform: 'translateX(-100%)' },
-    '100%': { transform: 'translateX(0)' },
-  },
-  '@keyframes  c2l': {
-    '0%': { transform: 'translateX(0)' },
-    '100%': { transform: 'translateX(-100%)' },
-  },
-  '@keyframes t2c': {
-    '0%': { transform: 'translateY(-100%)' },
-    '100%': { transform: 'translateY(0)' },
-  },
-  '@keyframes c2t': {
-    '0%': { transform: 'translateY(0)' },
-    '100%': { transform: 'translateY(-100%)' },
-  },
-  '@keyframes b2c': {
-    '0%': { transform: 'translateY(100%)' },
-    '100%': { transform: 'translateY(0)' },
-  },
-  '@keyframes c2b': {
-    '0%': { transform: 'translateY(0)' },
-    '100%': { transform: 'translateY(100%)' },
-  },
-  '@keyframes fade-in': {
-    '0%': { opacity: 0 },
-    '100%': { opacity: 1 },
-  },
-  '@keyframes fade-out': {
-    '0%': { opacity: 1 },
-    '100%': { opacity: 0 },
-  },
-};
 const carouselStyle: JsStyles<CarouselClassType> = {
   rootClass: {},
   ...animations,
@@ -242,7 +201,48 @@ const carouselStyle: JsStyles<CarouselClassType> = {
       },
     },
   },
-  indicatorTypeSlider: {},
+  indicatorTypeBar: {
+    '& $indicator': {
+      position: 'relative',
+      borderRadius: '100px',
+      '&:first-child': {
+        '&:before': {
+          borderRadius: '100px 0 0 100px'
+        }
+      },
+      '&:last-child': {
+        '&:before': {
+          borderRadius: '0 100px 100px 0',
+        }
+      },
+      width: token.carouselIndicatorBarWidth,
+      height: token.carouselIndicatorBarHeight,
+    },
+    '& $indicator:before': {
+        content: '""',
+        position: 'absolute',
+        zIndex: -1,
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: token.carouselIndicatorBackgroundColor,
+    },
+    '$indicatorLeft& $indicator, $indicatorRight& $indicator': {
+      width: token.carouselIndicatorBarHeight,
+      height: token.carouselIndicatorBarWidth,
+      '&:first-child': {
+        '&:before': {
+          borderRadius: '100px 100px 0 0'
+        }
+      },
+      '&:last-child': {
+        '&:before': {
+          borderRadius: '0 0 100px 100px',
+        }
+      },
+    },
+  },
   indicatorArrow: {
     width: token.carouselIndicatorArrowSize,
     height: token.carouselIndicatorArrowSize,

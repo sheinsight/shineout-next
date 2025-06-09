@@ -166,6 +166,12 @@ export interface AlertTokens {
   alertCloseHoverColor: string;
   /**
    * @type {string}
+   * @token Size-8
+   * @description 提示框关闭icon字号
+   */
+  alertCloseSize: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description 提示框在全局提示中使用时鼠标移入时的颜色
    */

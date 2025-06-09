@@ -8,11 +8,12 @@ import { validate } from '../../../utils/validate';
 import { deepGet } from '../../../utils/object';
 import { shallowEqual } from '../../../utils/shallow-equal';
 import usePersistFn from '../../../common/use-persist-fn';
-
-import { BaseFormControlProps } from './use-form-control.type';
+import { BaseFormControlProps, FormControlContext } from './use-form-control.type';
 import { ObjectType } from '../../../common/type';
 import useLatestObj from '../../../common/use-latest-obj';
 import { ValidateFnConfig } from '../use-form.type';
+import { devUseWarning } from '../../../utils/warning';
+import { cleanProps } from '../../../utils/clean-props';
 
 const getValue = (name: string | string[], formValue: ObjectType) => {
   if (!name) return undefined;
@@ -51,6 +52,10 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
 
   const [errorState, setErrorState] = React.useState<Error | undefined>(undefined);
 
+  const { current: context } = React.useRef<FormControlContext>({
+    mounted: false,
+  });
+
   let value: T | undefined;
   let error: Error | undefined = errorState;
   let inForm = false;
@@ -78,12 +83,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   }
 
   const update = usePersistFn(
-    (
-      formValue: ObjectType = {},
-      errors: ObjectType,
-      severErrors: ObjectType,
-      names: Set<string>,
-    ) => {
+    (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
       if (!name) return;
       if (isArray(name)) {
         const value = getValue(name, formValue) as T[];
@@ -95,7 +95,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         const dv = isArray(defaultValue) ? defaultValue : [];
         const nextValue = [] as T[];
         name.forEach((n, index) => {
-          if (!names.has(n) && value[index] === undefined && dv[index] !== undefined) {
+          if (value[index] === undefined && dv[index] !== undefined) {
             nextValue[index] = dv[index];
           } else {
             nextValue[index] = value[index];
@@ -109,7 +109,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
           setErrorState(error);
         }
         if (!shallowEqual(value, latestInfo.valueState)) {
-          if (!names.has(name) && value === undefined && defaultValue !== undefined) {
+          if (value === undefined && defaultValue !== undefined) {
             setValueState(defaultValue);
           } else {
             setValueState(value);
@@ -138,7 +138,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         }
       };
       const fullRules = controlFunc?.combineRules(name, rules || []) || [];
-      return validate(v, formV, fullRules, validateProps)
+      return validate(v, formV, fullRules, cleanProps(validateProps))
         .then((res) => {
           const err = res === true ? undefined : res;
           formFunc?.setError(name, err);
@@ -166,7 +166,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
           return e;
         });
     } else {
-      return validate(v, {}, rules || [], {})
+      return validate(v, {}, rules || [], cleanProps(validateProps))
         .then((res) => {
           const err = res === true ? undefined : res;
           setErrorState(err);
@@ -205,19 +205,29 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       if (isArray(name)) {
         const dv = isArray(defaultValue) ? defaultValue : [];
         name.forEach((n, index) => {
-          controlFunc.bind(n, dv[index], validateField, update);
+          const v = formFunc?.getValue(n);
+          const bindedValue = v === undefined ? dv[index] : v;
+          controlFunc.bind(n, context.mounted ? bindedValue : dv[index], validateField, update);
         });
       } else {
-        controlFunc.bind(name, defaultValue, validateField, update);
+        const v = formFunc?.getValue(name);
+        const bindedValue = v === undefined ? defaultValue : v;
+        controlFunc.bind(name, context.mounted ? bindedValue : defaultValue, validateField, update);
+      }
+      if (context.mounted) {
+        devUseWarning.warn(
+          'Please avoid modifying the name property after the component has mounted, as this may result in unintended behavior or errors.',
+        );
       }
     }
+    context.mounted = true;
     return () => {
       if (inForm && controlFunc) {
         if (isArray(name)) {
           name.forEach((n) => {
             controlFunc.unbind(n, reserveAble, validateField, update);
-            updateError(n, undefined);
           });
+          updateError(isArray(name) ? name.join('|') : name, undefined);
         } else {
           controlFunc.unbind(name, reserveAble, validateField, update);
           updateError(name, undefined);

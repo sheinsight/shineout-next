@@ -31,6 +31,8 @@ interface State {
   rtl: boolean;
   env: Env;
   scroll: boolean;
+  menuFloat: boolean;
+  menuCollapsed: boolean;
   activeAnchor: string;
   locked: boolean;
 }
@@ -44,6 +46,8 @@ const state: State = {
   rtl: false,
   env: 'SHEIN',
   scroll: false,
+  menuFloat: false,
+  menuCollapsed: false,
   activeAnchor: '',
   locked: false,
 };
@@ -102,6 +106,12 @@ export const dispatch = {
   },
   setDoctab: (doctab: DocType) => {
     proxyState.doctab = doctab;
+  },
+  setMenuFloat: (v: boolean) => {
+    proxyState.menuFloat = v;
+  },
+  setMenuCollapsed: (v: boolean) => {
+    proxyState.menuCollapsed = v;
   },
   setScroll: (scroll: boolean) => {
     proxyState.scroll = scroll;

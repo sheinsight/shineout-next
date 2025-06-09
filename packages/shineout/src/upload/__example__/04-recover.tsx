@@ -22,6 +22,7 @@ const App: React.FC = () => (
       recoverAble
       renderResult={(d) => d.name}
       onSuccess={(_res, file) => ({ name: file.name })}
+      style={{ width: 400 }}
     >
       <Button mode={'outline'}>
         <UploadIcon style={{ marginInlineEnd: 4 }} />

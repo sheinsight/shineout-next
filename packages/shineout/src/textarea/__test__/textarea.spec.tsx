@@ -20,7 +20,7 @@ import TextareaSize from '../__example__/02-size';
 import TextareaAutosize from '../__example__/03-autosize';
 import TextareaInfo from '../__example__/04-info';
 import TextareaInfoFunction from '../__example__/05-custom';
-import TextareaFooter from '../__example__/06-footer';
+import TextareaFooter from '../__example__/07-footer';
 
 const SO_PREFIX = 'textarea';
 const {

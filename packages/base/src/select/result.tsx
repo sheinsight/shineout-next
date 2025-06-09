@@ -18,6 +18,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     jssStyle,
     multiple,
     size,
+    reFocus,
     value: valueProp,
     focus,
     keygen,
@@ -62,6 +63,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const render = useRender();
   const resultRef = useRef<HTMLDivElement>(null);
   const prevMore = useRef(more);
+  const removeLock = useRef(false);
   const showInput = allowOnFilter;
   const mounted = useRef(false);
   const styles = props.classes;
@@ -163,6 +165,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
+  const handleCloseMouseDown = () => {
+    removeLock.current = true;
+    setTimeout(() => {
+      removeLock.current = false;
+    }, 0);
+  };
+
   const renderResultItem = (
     item: DataItem | UnMatchedData,
     index: number,
@@ -214,6 +223,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         className={classNames(styles.tag, more === 1 && styles.tagOnly, resultClassName)}
         closable={closeable && 'only'}
         onClose={closeable && handleClose}
+        onMouseDown={closeable ? handleCloseMouseDown : undefined}
         onClick={handleClick}
         jssStyle={jssStyle as any}
         inlineStyle={true}
@@ -332,6 +342,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const handleResetMore = () => {
     if (!compressed) return;
     if (isCompressedBound()) return;
+    if (removeLock.current) return;
+
     setMore(-1);
     setShouldResetMore(true);
   };
@@ -341,7 +353,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       props.setInputText('');
       setTimeout(() => {
         onFilter?.('', 'blur');
-      }, 400);
+      }, 200);
     }
 
     // 单选场景下，焦点时自动选中input文本
@@ -372,10 +384,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           props.setInputText(textContent);
         }
       }
-
-      setTimeout(() => {
-        inputRef?.current?.select();
-      }, 10);
+      if (!reFocus) {
+        setTimeout(() => {
+          inputRef?.current?.select();
+        }, 10);
+      }
     }
     mounted.current = true;
   }, [focus, placeholder, multiple]);

@@ -21,6 +21,10 @@ const useStyle = createUseStyles(
   { name: 'custom-tag' },
 );
 
+const plusIcon = <svg viewBox="0 0 24 24" width="12px" height="12px" fill="currentColor" style={{display: 'block'}}>
+  <path fillRule="evenodd" clipRule="evenodd" d="M11.8185 2.09595C12.3708 2.09595 12.8185 2.54366 12.8185 3.09595V10.8181H20.9041C21.4564 10.8181 21.9041 11.2658 21.9041 11.8181C21.9041 12.3704 21.4564 12.8181 20.9041 12.8181H12.8185V20.904C12.8185 21.4563 12.3708 21.904 11.8185 21.904C11.2662 21.904 10.8185 21.4563 10.8185 20.904V12.8181H3.10059C2.5483 12.8181 2.10059 12.3704 2.10059 11.8181C2.10059 11.2658 2.5483 10.8181 3.10059 10.8181H10.8185V3.09595C10.8185 2.54366 11.2662 2.09595 11.8185 2.09595Z"></path>
+</svg>
+
 export default () => {
   const [tags, setTags] = useState(['Tag 1', 'Tag 2', 'Tag 3']);
   const [inputVisible, setInputVisible] = useState(false);
@@ -64,7 +68,7 @@ export default () => {
             className={classes.addTag}
           >
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <div style={{ marginInlineEnd: 4 }}>+ </div>
+              <div style={{ marginInlineEnd: 4 }}>{plusIcon}</div>
               <div>Add Tag</div>
             </div>
           </Tag>

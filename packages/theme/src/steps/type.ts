@@ -106,7 +106,7 @@ export interface StepsTokens {
   stepsWaitFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-4
+   * @token Neutral-fill-2
    * @description 步骤条等待状态中的背景颜色
    */
   stepsWaitBackgroundColor: string;

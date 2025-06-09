@@ -1,3 +1,10 @@
+## 3.6.1-beta.8
+2025-03-28
+### 🐞 BugFix
+
+- 修复 `Card.Header` 和 `Card.Footer` 在未开启 `moveable` 属性时不可选中文本的问题 ([#1022](https://github.com/sheinsight/shineout-next/pull/1022))
+
+
 ## 3.1.23
 2024-06-01
 ### 🐞 BugFix

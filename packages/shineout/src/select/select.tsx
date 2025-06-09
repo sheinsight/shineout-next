@@ -10,6 +10,7 @@ import {
   usePopoverStyle,
   useTreeStyle,
   useSpinStyle,
+  useCommonStyle,
 } from '@sheinx/shineout-style';
 import { SelectProps, SelectPropsA, SelectPropsB } from './select.type';
 
@@ -22,6 +23,7 @@ const jssStyle = {
   radio: useRadioStyle,
   tree: useTreeStyle,
   spin: useSpinStyle,
+  common: useCommonStyle,
 };
 
 function SelectComponent<DataItem, Value>(props: SelectProps<DataItem, Value>) {

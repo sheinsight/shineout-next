@@ -6,6 +6,7 @@
 import React from 'react';
 import { HandlerType, ObjectType } from '../../common/type';
 import { extractEventHandlers } from '../../utils';
+import { util } from '@sheinx/hooks';
 import useForkRef from '../../common/use-fork-ref';
 import { BaseCheckProps } from './use-check.type';
 
@@ -24,7 +25,10 @@ const useCheck = (props: BaseCheckProps) => {
 
   const handleInputRef = useForkRef(inputRef, inputRefPo);
 
-  const handleClick = (otherHandlers: HandlerType) => (event: React.MouseEvent) => {
+  const handleClick = (otherHandlers: HandlerType, needStopPropagation: boolean) => (event: React.MouseEvent) => {
+    if(needStopPropagation) {
+      event.stopPropagation();
+    }
     inputRef.current?.click();
     otherHandlers?.onClick?.(event);
   };
@@ -32,8 +36,8 @@ const useCheck = (props: BaseCheckProps) => {
   const getRootProps = <TOther extends ObjectType>(externalProps: TOther = {} as TOther) => {
     const externalEventHandlers = extractEventHandlers(externalProps);
     return {
-      ...externalProps,
-      onClick: handleClick(externalEventHandlers),
+      ...util.removeProps(externalProps, { needStopPropagation: true }),
+      onClick: handleClick(externalEventHandlers, externalProps.needStopPropagation),
     };
     //封装点击事件 点击触发input 的点击
     // disabled 禁用后不可点击
@@ -62,6 +66,7 @@ const useCheck = (props: BaseCheckProps) => {
       disabled,
       ...checkProps,
       onClick: (e: React.MouseEvent<HTMLInputElement>) => {
+        // TODO: 这个e.stopPropagation生效不了，外部的触发是通过inputRef.current?.click()方式的；没啥用的代码
         e.stopPropagation();
         onClick?.(e);
       },

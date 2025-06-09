@@ -232,6 +232,108 @@ export interface TableTokens {
   tableSorterActiveColor: string;
   /**
    * @type {string}
+   * @token Spacing-12
+   * @description 表格undefinedundefined内边距（水平方向）
+   */
+  tableFilterHeaderPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 表格undefinedundefined内边距（垂直方向）
+   */
+  tableFilterHeaderPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 表格undefinedundefined内边距（水平方向）
+   */
+  tableFilterBodyPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 表格undefinedundefined内边距（垂直方向）
+   */
+  tableFilterBodyPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 表格undefinedundefined内边距（水平方向）
+   */
+  tableFilterFooterPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 表格undefinedundefined内边距（垂直方向）
+   */
+  tableFilterFooterPaddingY: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 表格undefinedundefined边框颜色
+   */
+  tableFilterFooterBorderColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 表格undefinedundefined外边距undefined
+   */
+  tableFilterInputMarginBottom: string;
+  /**
+   * @type {string}
+   * @token Size-7
+   * @description 表格undefinedundefined图标字号
+   */
+  tableFilterInputIconSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 表格undefinedundefined图标颜色
+   */
+  tableFilterInputIconColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 表格undefinedundefined图标外边距undefined
+   */
+  tableFilterInputIconMarginRight: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 表格undefined图标颜色
+   */
+  tableFilterIconColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 表格undefined图标鼠标移入时的颜色
+   */
+  tableFilterIconHoverColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 表格undefined图标鼠标移入时的背景颜色
+   */
+  tableFilterIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 表格undefined图标鼠标点击时的颜色
+   */
+  tableFilterIconActiveColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 表格undefined图标内边距
+   */
+  tableFilterIconPadding: string;
+  /**
+   * @type {string}
+   * @token Size-7
+   * @description 表格undefined图标字号
+   */
+  tableFilterIconSize: string;
+  /**
+   * @type {string}
    * @token Brand-7
    * @description 表格拖拽时的颜色
    */

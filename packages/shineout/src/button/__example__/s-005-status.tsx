@@ -6,28 +6,56 @@
  */
 
 import { Button } from 'shineout';
+
+const buttonStyle = {
+  margin: 0,
+  width: 72,
+} as React.CSSProperties;
+
+const wrapperStyle = {
+  gap: 24,
+  display: 'flex',
+  flexWrap: 'wrap',
+  flexDirection: 'column',
+} as React.CSSProperties;
+
+const buttonWrapperStyle = {
+  gap: 24,
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignItems: 'center',
+} as React.CSSProperties;
 export default () => {
-  const buttonStyle = {
-    margin: 0,
-    width: 72,
-  };
-
-  const wrapperStyle = {
-    gap: 24,
-    display: 'flex',
-    flexWrap: 'wrap',
-    flexDirection: 'column',
-  };
-
-  const buttonWrapperStyle = {
-    gap: 24,
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-  };
-
   return (
     <div style={wrapperStyle}>
+      <div style={buttonWrapperStyle}>
+        <Button type='default' style={buttonStyle}>
+          Danger
+        </Button>
+        <Button type='default' mode='outline' style={buttonStyle}>
+          Danger
+        </Button>
+        <Button type='default' mode='dashed' style={buttonStyle}>
+          Danger
+        </Button>
+        <Button type='default' mode='text' style={buttonStyle}>
+          Danger
+        </Button>
+      </div>
+      <div style={buttonWrapperStyle}>
+        <Button type='primary' style={buttonStyle}>
+          Danger
+        </Button>
+        <Button type='primary' mode='outline' style={buttonStyle}>
+          Danger
+        </Button>
+        <Button type='primary' mode='dashed' style={buttonStyle}>
+          Danger
+        </Button>
+        <Button type='primary' mode='text' style={buttonStyle}>
+          Danger
+        </Button>
+      </div>
       <div style={buttonWrapperStyle}>
         <Button type='danger' style={buttonStyle}>
           Danger

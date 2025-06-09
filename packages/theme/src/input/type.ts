@@ -316,6 +316,12 @@ export interface InputTokens {
   inputInnerFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 输入框内嵌undefined字体颜色
+   */
+  inputInnerPlaceFontColor: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 输入框内嵌小尺寸内边距（水平方向）
    */

@@ -197,7 +197,6 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     borderRadius: Token.buttonBorderRadius,
     lineHeight: Token.lineHeightDynamic,
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
-    transition: 'all .1s linear',
     fontFamily: 'inherit',
     // height: Token.buttonHeight,
 
@@ -209,9 +208,45 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
       margin: 0,
     },
 
+    '&:hover': {
+      transition: 'all .1s linear',
+    },
+
     '&:active': {
       transition: 'none',
     },
+
+    '[data-soui-role="input-group"] > &': {
+      borderWidth: 0,
+      borderRadius: 0,
+
+      '&:first-child': {
+        borderTopLeftRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
+        borderBottomLeftRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
+      },
+      '&:last-child': {
+        borderTopRightRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
+        borderBottomRightRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
+      },
+    },
+    '[data-soui-role="input-group-separate"] > &': {
+      borderRadius: 0,
+      marginLeft: -1,
+
+      '&:first-child': {
+        marginLeft: 0,
+        borderTopLeftRadius: Token.buttonBorderRadius,
+        borderBottomLeftRadius: Token.buttonBorderRadius,
+      },
+      '&:last-child': {
+        borderTopRightRadius: Token.buttonBorderRadius,
+        borderBottomRightRadius: Token.buttonBorderRadius,
+      },
+
+      '&:hover': {
+        zIndex: 1,
+      }
+    }
   },
   small: {
     // height: Token.buttonSmallHeight,

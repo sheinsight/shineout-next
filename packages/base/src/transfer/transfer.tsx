@@ -174,18 +174,26 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
         searchPlaceholder={placeholder}
         renderFilter={renderFilter}
         onFilter={onFilterProp ? onFilter : undefined}
-        onSelectChange={onSelectChange}
+        onSelectChange={(keys) => {
+          if (isSource) {
+            const newAllKeys = Array.from(new Set([...keys, ...(targetSelectedKeys || [])]));
+            onSelectChange(newAllKeys, keys, targetSelectedKeys);
+          } else {
+            const newAllKeys = Array.from(new Set([...keys, ...(sourceSelectedKeys || [])]));
+            onSelectChange(newAllKeys, sourceSelectedKeys, keys);
+          }
+        }}
       />
     );
   };
 
   const renderSourceList = useMemo(() => {
     return renderList('source');
-  }, [source, size, filterSourceText, sourceSelectedKeys, renderFilter]);
+  }, [source, loading, size, filterSourceText, sourceSelectedKeys, renderFilter, children]);
 
   const renderTargetList = useMemo(() => {
     return renderList('target');
-  }, [target, size, filterTargetText, targetSelectedKeys, renderFilter]);
+  }, [target, loading, size, filterTargetText, targetSelectedKeys, renderFilter, children]);
 
   const { fieldId } = useContext(FormFieldContext);
 

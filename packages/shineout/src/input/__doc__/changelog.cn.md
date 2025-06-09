@@ -1,3 +1,47 @@
+## 3.7.1-beta.4
+2025-06-09
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 的 `seperate` 在hover时层级高过了Table固定列的问题 ([#1158](https://github.com/sheinsight/shineout-next/pull/1158))
+- 修复 `Input.Group` 的 `seperate` 属性名称拼写错误问题，修正为 `separate`，原 `seperate` 属性仍保留但标记为废弃 ([#1158](https://github.com/sheinsight/shineout-next/pull/1158))
+
+
+## 3.6.2-beta.6
+2025-04-03
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 的 `seperate` 在一些组合场景下的样式问题 ([#1038](https://github.com/sheinsight/shineout-next/pull/1038))
+
+## 3.6.1-beta.7
+2025-03-27
+
+### 🐞 BugFix
+
+- 修复 `Input.Number` 输入“0.0”这种格式时小数点丢失的问题 ([#1014](https://github.com/sheinsight/shineout-next/pull/1014))
+
+
+## 3.6.1-beta.4
+2025-03-25
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 下面的 `Input` 的 `onBlur` 和 `onFocus` 回调函数的参数格式不正确的问题 ([#1014](https://github.com/sheinsight/shineout-next/pull/1014))
+
+## 3.6.0
+2025-03-13
+
+### 🆕 Feature
+
+- `Input.Group` 新增 `seperate`属性：组合到一起的组件有独立的边框 ([#992](https://github.com/sheinsight/shineout-next/pull/992))
+
+
+### 🐞 BugFix
+
+- 修复 `Input.Number` 在输入小数点情况下，退格至小数点前时会将小数点删除的问题（Regression: since v3.4.0） ([#989](https://github.com/sheinsight/shineout-next/pull/989))
+
+
 ## 3.5.8
 2025-02-13
 
@@ -105,8 +149,8 @@
 
 ### 🐞 BugFix
 
-- 修复 `Input.Nummber` 组件 `min = 0` 不生效的问题 ([#364](https://github.com/sheinsight/shineout-next/pull/364))
-- 修复 `Input.Nummber` 组件缺失 `hideArrow` 属性的问题 ([#362](https://github.com/sheinsight/shineout-next/pull/362))
+- 修复 `Input.Nummber` 的 `min = 0` 不生效的问题 ([#364](https://github.com/sheinsight/shineout-next/pull/364))
+- 修复 `Input.Nummber` 缺失 `hideArrow` 属性的问题 ([#362](https://github.com/sheinsight/shineout-next/pull/362))
 
 
 

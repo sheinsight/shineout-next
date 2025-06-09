@@ -8,10 +8,10 @@ const arrowHeight = 8;
 const animation = {
   '@keyframes fadeIn': {
     '0%': {
-      opacity: '0',
+      opacity: 0,
     },
     '100%': {
-      opacity: '1',
+      opacity: 1,
     },
   },
   '@keyframes moveRight': {
@@ -24,26 +24,32 @@ const animation = {
   },
   '@keyframes moveLeft': {
     '0%': {
-      marginLeft: '0',
+      opacity: 0,
+      marginRight: '0',
     },
     '100%': {
-      marginLeft: '-9px',
+      opacity: 1,
+      marginRight: '10px',
     },
   },
   '@keyframes moveTop': {
     '0%': {
+      opacity: 0,
       marginTop: '0',
     },
     '100%': {
-      marginTop: '-9px',
+      opacity: 1,
+      marginTop: -10,
     },
   },
   '@keyframes moveBottom': {
     '0%': {
+      opacity: 0,
       marginTop: '0',
     },
     '100%': {
-      marginTop: '9px',
+      opacity: 1,
+      marginTop: 10,
     },
   },
 };
@@ -68,10 +74,10 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       boxSizing: 'border-box',
       '--tooltip-background-color': token.tooltipLightBackgroundColor,
       '&[data-soui-position^="top"] $arrow': {
-        transform: 'translateY(calc(100% - 1px)) rotate(-180deg)',
+        transform: 'translate(0, -1px) rotate(-180deg)',
       },
       '&[data-soui-position^="bottom"] $arrow': {
-        transform: 'translateY(calc(-100% + 1px)) rotate(0deg)',
+        transform: 'translate(0, calc(-100% + 1px)) rotate(0deg)',
       },
     },
     '&[data-soui-type^="primary"]': {
@@ -96,44 +102,108 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
     },
     '&[data-soui-position^="bottom"]': {
       marginTop: arrowGap - 2,
+    },
+    '&[data-soui-position="bottom"]': {
       '& $arrow': {
-        transform: 'translateY(calc(-100% + 1px)) rotate(0deg)',
+        left: '50%',
+        transform: 'translate(-50%, calc(-100% + 1px)) rotate(0deg)',
+      },
+    },
+    '&[data-soui-position="bottom-left"]': {
+      '& $arrow': {
+        left: 8,
+        transform: 'translate(0, calc(-100% + 1px)) rotate(0deg)',
+      },
+    },
+    '&[data-soui-position="bottom-right"]': {
+      '& $arrow': {
+        right: 8,
+        transform: 'translate(0, calc(-100% + 1px)) rotate(0deg)',
       },
     },
     '&[data-soui-position^="top"]': {
       marginTop: (arrowGap - 2) * -1,
       '& $arrow': {
-        transform: 'translateY(calc(100% + 1px)) rotate(-180deg)',
+        top: '100%',
+      },
+    },
+    '&[data-soui-position="top"]': {
+      '& $arrow': {
+        left: '50%',
+        transform: 'translate(-50%, -1px) rotate(-180deg)',
+      },
+    },
+    '&[data-soui-position="top-left"]': {
+      '& $arrow': {
+        left: 8,
+        transform: 'translate(0, -1px) rotate(-180deg)',
+      },
+    },
+    '&[data-soui-position="top-right"]': {
+      '& $arrow': {
+        right: 8,
+        transform: 'translate(0, -1px) rotate(-180deg)',
       },
     },
     '&[data-soui-position^="left"]': {
       '&[dir=ltr]': {
-        marginLeft: -(arrowGap - 2),
-        '& $arrow': {
-          transform: 'translateX(11px) rotate(90deg)',
-        },
+        marginRight: (arrowGap - 2),
       },
       '&[dir=rtl]': {
-        marginRight: -(arrowGap - 2),
-        '& $arrow': {
-          left: 0,
-          transform: 'translateX(11px) rotate(90deg)',
-        },
+        'margin-right': (arrowGap - 2),
+      },
+    },
+    '&[data-soui-position="left"]': {
+      '& $arrow': {
+        right: 0,
+        top: '50%',
+        transform: 'translate(11px, -50%) rotate(90deg)',
+        transformOrigin: 'center center',
+      },
+    },
+    '&[data-soui-position="left-top"]': {
+      '& $arrow': {
+        right: 0,
+        top: 8,
+        transform: 'translate(11px, 0) rotate(90deg)',
+        transformOrigin: 'center center',
+      },
+    },
+    '&[data-soui-position="left-bottom"]': {
+      '& $arrow': {
+        right: 0,
+        bottom: 8,
+        transform: 'translate(11px, 0) rotate(90deg)',
+        transformOrigin: 'center center',
       },
     },
     '&[data-soui-position^="right"]': {
       '&[dir=ltr]': {
         marginLeft: arrowGap - 2,
-        '& $arrow': {
-          transform: 'translateX(-11px) rotate(-90deg)',
-        },
       },
       '&[dir=rtl]': {
         marginRight: arrowGap - 2,
-        '& $arrow': {
-          left: 0,
-          transform: 'translateX(-11px) rotate(-90deg)',
-        },
+      },
+    },
+    '&[data-soui-position="right"]': {
+      '& $arrow': {
+        top: '50%',
+        left: 0,
+        transform: 'translate(-11px, -50%) rotate(-90deg)',
+      },
+    },
+    '&[data-soui-position="right-top"]': {
+      '& $arrow': {
+        top: 8,
+        left: 0,
+        transform: 'translate(-11px, 0) rotate(-90deg)',
+      },
+    },
+    '&[data-soui-position="right-bottom"]': {
+      '& $arrow': {
+        bottom: 8,
+        left: 0,
+        transform: 'translate(-11px, 0) rotate(-90deg)',
       },
     },
   },
@@ -178,7 +248,7 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
         width: arrowGap,
         height: '100%',
         top: 0,
-        right: 0,
+        left: 0,
         transform: 'translateX(-100%)',
       },
     },

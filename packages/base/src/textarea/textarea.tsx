@@ -26,6 +26,7 @@ const Textarea = (props0: TextareaProps) => {
     jssStyle,
     onBlur,
     status,
+    limit,
     trim: trimProps,
     delay: delayProps,
     ...resetProps
@@ -61,7 +62,14 @@ const Textarea = (props0: TextareaProps) => {
   const inputAbleParams = {
     value: resetProps.value,
     onChange: resetProps.onChange,
-    beforeChange: resetProps.beforeChange,
+    beforeChange:
+      typeof limit === 'number'
+        ? (v: string) => {
+            if (v.length > limit) return v.slice(0, limit);
+            if (resetProps.beforeChange) resetProps.beforeChange?.(v);
+            return v;
+          }
+        : resetProps.beforeChange,
     defaultValue: resetProps.defaultValue,
     delay: delay,
   };
@@ -198,14 +206,16 @@ const Textarea = (props0: TextareaProps) => {
       {...formatProps}
       className={classNames(
         innerTitleProps.innerTitle && textareaClasses?.wrapperInnerTitle,
+        props.clearable && textareaClasses?.wrapperWithClear,
         resetProps.className,
       )}
       renderTextarea={renderTextarea}
+      limit={limit}
       status={tipProps.error ? 'error' : status}
+      onStatusChange={onStatusChange}
       value={inputAbleProps.value || ''}
       suffix={mergeSuffix}
       style={mergeStyle}
-      getStatus={onStatusChange}
       rootRef={rootRef}
       autosize={props.autosize}
     />

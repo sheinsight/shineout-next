@@ -19,6 +19,8 @@ const carouselTokens: CarouselTokens = {
   carouselIndicatorLineWidth: 'Size-6',
   carouselIndicatorLineHeight: 'Size-2',
   carouselIndicatorLineGap: 'Spacing-4',
+  carouselIndicatorBarWidth: 'Size-12',
+  carouselIndicatorBarHeight: 'Size-2',
   carouselIndicatorArrowSize: 'Size-8',
   carouselIndicatorArrowColor: 'Neutral-fill-4',
   carouselIndicatorArrowHoverColor: 'Neutral-fill-1',

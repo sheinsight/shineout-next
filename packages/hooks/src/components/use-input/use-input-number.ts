@@ -60,6 +60,7 @@ const useNumberFormat = (props: InputNumberProps) => {
   const onInnerChange = usePersistFn((val?: string | number | null) => {
     setInternalInputValue(getStringValue(val));
     if(typeof val === 'string'){
+      if (val.endsWith('.') || (val.includes('.') && val.endsWith('0'))) return;
       const num = parseFloat(val);
       if(val === '') {
         // 如果允许空值，则返回 null，否则返回 undefined

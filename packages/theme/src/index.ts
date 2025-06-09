@@ -102,6 +102,9 @@ import { RateTokens } from './rate/type';
 import Select, { Select as defaultSelect } from './select';
 import { SelectTokens } from './select/type';
 
+import Skeleton, { Skeleton as defaultSkeleton } from './skeleton';
+import { SkeletonTokens } from './skeleton/type';
+
 import Slider, { Slider as defaultSlider } from './slider';
 import { SliderTokens } from './slider/type';
 
@@ -177,6 +180,7 @@ export type ThemeTokens = AlertTokens &
   RadioTokens &
   RateTokens &
   SelectTokens &
+  SkeletonTokens &
   SliderTokens &
   SpinTokens &
   StepsTokens &
@@ -227,6 +231,7 @@ const Tokens: ThemeTokens = {
   ...Radio,
   ...Rate,
   ...Select,
+  ...Skeleton,
   ...Slider,
   ...Spin,
   ...Steps,
@@ -277,6 +282,7 @@ const ComponentTokenMap: ThemeTokens = {
   ...defaultRadio,
   ...defaultRate,
   ...defaultSelect,
+  ...defaultSkeleton,
   ...defaultSlider,
   ...defaultSpin,
   ...defaultSteps,
@@ -295,6 +301,7 @@ const ComponentTokenMap: ThemeTokens = {
 
 export type { TokenType };
 export * from './hooks';
+export { getTokenName } from './utils/css-var';
 export * from './utils/css-var';
 export { CommonToken, CommonTokenMap, ComponentTokenMap, setToken, setConfig };
 

@@ -28,7 +28,7 @@ const originItemClasses = [
   'danger',
   'pending',
   'noBordered',
-  'widthTitle',
+  'withTitle',
 ];
 const {
   alert: alertClassName,
@@ -40,7 +40,7 @@ const {
   close: closeClassName,
   pending: pendingClassName,
   noBordered: noBorderedClassName,
-  widthTitle: widthTitleClassName,
+  withTitle: withTitleClassName,
   title: titleClassName,
   content: contentClassName,
   text: textClassName,
@@ -228,7 +228,7 @@ describe('Alert[Title]', () => {
       </Alert>,
     );
     const alert = container.querySelector(alertClassName)!;
-    classTest(alert, widthTitleClassName);
+    classTest(alert, withTitleClassName);
     const title = alert.querySelector(titleClassName)!;
     expect(title).toBeInTheDocument();
     classLengthTest(title, '.demo', 1);

@@ -1,3 +1,9 @@
+## 3.6.1-beta.2
+2025-03-25
+
+### 🐞 BugFix
+- 修复 `Pagination` 的 `simple` 模式输入框不展示当前页的问题（Regression： since v3.6.0） ([#1010](https://github.com/sheinsight/shineout-next/pull/1010))
+
 ## 3.4.4
 2024-10-28
 

@@ -171,9 +171,26 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
   lazy?: boolean;
 
   /**
-   * @en The offset of the pop-up layer
-   * @cn 弹出层偏移量, [x, y]
+   * @en The offset value of the width|height of the pop-up layer, expect the width|height of the pop-up layer to increase or decrease
+   * @cn 弹出层宽度|高度的附加值，期望弹出层的宽度|高度增加或减少的值，可以是负数；举例：[4, 0] 表示宽度增加 4px，高度不变
    * @example [0, 4]
+   * @default [0,0]
+   * @version 3.6.0
    */
   offset?: [number, number];
+
+  /**
+   * @en The gap between the pop-up layer and the trigger element
+   * @cn 弹出层与触发元素的间距
+   * @default 0
+   * @version 3.6.0
+   */
+  popupGap?: number;
+
+  /**
+   * @en Whether to disable pop-up
+   * @cn 是否禁用弹出
+   * @version 3.7.0
+   */
+  disabled?: boolean;
 }

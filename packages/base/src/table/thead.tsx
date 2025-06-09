@@ -6,6 +6,7 @@ import Icons from '../icons';
 import classNames from 'classnames';
 import Checkbox from '../checkbox';
 import { useConfig } from '../config';
+import { FilterSearch, FilterSelect } from './thead-filter';
 
 const { toNum } = util;
 
@@ -111,6 +112,43 @@ export default (props: TheadProps) => {
     );
   };
 
+  const renderFilter = (column: TableFormatColumn<any>, columnIndex: number) => {
+    if (!column.filter) {
+      return null;
+    }
+    const { mode } = column.filter;
+
+    const columnKey = typeof column.render === 'string' ? column.render : String(columnIndex);
+
+    if (mode === 'search') {
+      return (
+        <FilterSearch
+          tableClasses={tableClasses!}
+          jssStyle={props.jssStyle}
+          filter={column.filter}
+          filterInfo={props.filterInfo}
+          onFilterChange={props.onFilterChange}
+          columnKey={columnKey}
+        />
+      );
+    }
+
+    if (mode === 'select') {
+      return (
+        <FilterSelect
+          tableClasses={tableClasses!}
+          jssStyle={props.jssStyle}
+          filter={column.filter}
+          filterInfo={props.filterInfo}
+          onFilterChange={props.onFilterChange}
+          columnKey={columnKey}
+        />
+      );
+    }
+
+    return null;
+  };
+
   const renderDrag = (index: number) => {
     if (!props.columnResizable) return null;
     return (
@@ -135,40 +173,27 @@ export default (props: TheadProps) => {
     colSpan: number,
     level: number,
   ): React.CSSProperties | undefined => {
+    // 累加level 至 0 的所有高度
+    const top = context.trHeights.slice(0, level).reduce((a, b) => toNum(a) + toNum(b), 0);
     if (fixed === 'left') {
-      if (props.fixLeftNum !== undefined) {
-        // 这是virtual table场景下的th样式
-        return {
-          transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
-        };
-      }
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
-      // 这是base table场景下的th样式
       return {
         left: left,
-        top: context.trHeights[level - 1] || 0,
+        top: top,
         position: 'sticky',
       };
     }
     if (fixed === 'right') {
-      if (props.fixRightNum !== undefined) {
-        // 这是virtual table场景下的th样式
-        return {
-          transform: `translate3d(${0 - props.fixRightNum}px, 0, 0)`,
-        };
-      }
       const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
-      // 这是base table场景下的th样式
       return {
         right: right,
-        top: context.trHeights[level - 1] || 0,
+        top: top,
         position: 'sticky',
       };
     }
 
-    // 这是base table场景下的非fixed th样式
     return {
-      top: context.trHeights[level - 1] || 0,
+      top: top,
       position: 'sticky',
     };
   };
@@ -178,6 +203,7 @@ export default (props: TheadProps) => {
     col: TableHeadColumn,
     level: number,
     isLast: boolean,
+    columnIndex: number,
   ) => {
     const colTemp = col as TableFormatColumn<any>;
     const colTemp2 = col as TableGroupColumn;
@@ -199,6 +225,7 @@ export default (props: TheadProps) => {
 
     if (colTemp.title || isExpand) {
       const sorter = renderSort(colTemp);
+      const filter = renderFilter(colTemp, columnIndex);
       trs[level].push(
         <th
           className={cellClassName}
@@ -207,9 +234,15 @@ export default (props: TheadProps) => {
           style={fixedStyle}
           dir={config.direction}
         >
-          <div className={classNames(sorter && tableClasses?.hasSorter)}>
+          <div
+            className={classNames(
+              sorter && tableClasses?.hasSorter,
+              filter && tableClasses?.hasFilter,
+            )}
+          >
             {renderTitle(colTemp.title)}
-            {renderSort(colTemp)}
+            {sorter}
+            {filter}
             {colTemp.columnResizable !== false && renderDrag(colTemp.index)}
           </div>
         </th>,
@@ -258,10 +291,16 @@ export default (props: TheadProps) => {
       );
       return;
     }
-    const style = typeof colTemp2.name === 'string' ? fixedStyle : { padding: 0, ...fixedStyle };
+    let style = typeof colTemp2.name === 'string' ? fixedStyle : { padding: 0, ...fixedStyle };
+    if(colTemp2?.groupProps?.style){
+      style = {
+        ...style,
+        ...colTemp2.groupProps.style,
+      }
+    }
     trs[level].push(
       <th
-        className={classNames(cellClassName, tableClasses?.cellGroup)}
+        className={classNames(cellClassName, tableClasses?.cellGroup, colTemp2?.groupProps?.className)}
         style={style}
         key={colTemp2.key}
         colSpan={colTemp2.colSpan}
@@ -272,7 +311,7 @@ export default (props: TheadProps) => {
     );
     if (colTemp2.columns) {
       colTemp2.columns.forEach((c, index) =>
-        createTh(trs, c, level + 1, isLast && colTemp2.columns.length - 1 === index),
+        createTh(trs, c, level + 1, isLast && colTemp2.columns.length - 1 === index, index),
       );
     }
   };
@@ -281,7 +320,7 @@ export default (props: TheadProps) => {
     const trs: React.ReactElement[][] = Array.from({ length: columnLevel + 1 }).map(() => []);
     groupColumns.forEach((col, index) => {
       const isLast = index === groupColumns.length - 1;
-      createTh(trs, col, 0, isLast);
+      createTh(trs, col, 0, isLast, index);
     });
     return trs.map((tr, i) => (
       <tr key={i} ref={(el) => (trRefs.current[i] = el)}>

@@ -40,6 +40,7 @@ const useTableGroup = (props: UseTableGroupProps) => {
       last.colSpan += colSpan;
       if (col.fixed) last.fixed = col.fixed;
       if (col.lastFixed) last.lastFixed = true;
+      if (col.groupProps) last.groupProps = col.groupProps;
     } else {
       const sub = [] as TableHeadColumn[];
       colSpan = setColumns(sub, col, level + 1, index);
@@ -56,6 +57,7 @@ const useTableGroup = (props: UseTableGroupProps) => {
         firstFixed: col.firstFixed,
         index: index,
         columns: sub,
+        groupProps: col.groupProps,
       };
       columns.push(groupCol);
     }

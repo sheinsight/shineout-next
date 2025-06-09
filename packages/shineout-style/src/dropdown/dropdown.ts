@@ -121,6 +121,10 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
     '& + $caret': {
       marginLeft: token.dropdownCaretMarginLeft,
     },
+    '& > svg': {
+      display: 'block',
+      margin: '0 auto'
+    }
   },
   button: {
     '$wrapper &': {

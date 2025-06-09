@@ -22,7 +22,14 @@ const App: React.FC = () => {
         backgroundPosition: '0 0, 10px 10px',
       }}
     >
-      <Sticky top={200} scrollContainer='#layout' parent={elRef.current}>
+      <Sticky
+        top={200}
+        scrollContainer='#layout'
+        parent={elRef.current}
+        onChange={(isStikcy) => {
+          console.log('isStikcy: >>', isStikcy);
+        }}
+      >
         <Alert>Sticky 200px to top</Alert>
       </Sticky>
     </div>

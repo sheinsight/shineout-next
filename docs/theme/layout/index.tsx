@@ -2,26 +2,23 @@ import { HashRouter as Router, useLocation } from 'react-router-dom';
 import Nav from './desktop/nav';
 import Menu from './desktop/menu';
 import LayoutDasktop from './desktop';
+import useStyles from './style'
 
-const LayoutDesktop = () => {
-  const location = useLocation();
-  const isFullScreen = location.pathname.includes('/home');
 
+
+const Layout = () => {
+  const classes = useStyles();
   return (
     <>
-      {!isFullScreen && <Nav />}
-      {!isFullScreen && <Menu />}
-      <LayoutDasktop isFullScreen={isFullScreen}  />
+      <Router>
+        <Nav></Nav>
+        <main className={classes.container}>
+          <Menu></Menu>
+          <LayoutDasktop />
+        </main>
+      </Router>
     </>
   )
 }
-
-const Layout = () => (
-  <>
-    <Router>
-      <LayoutDesktop />
-    </Router>
-  </>
-);
 
 export default Layout;

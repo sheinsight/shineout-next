@@ -40,6 +40,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       {...getRootProps({
         className: rootClass,
         style,
+        needStopPropagation: props.needStopPropagation,
       })}
     >
       <input {...inputProps} type='checkbox' />

@@ -1,9 +1,37 @@
-## 3.5.5
-2024-12-24
+## 3.7.0-beta.20
+2025-05-07
 
 ### 🐞 BugFix
 
-- 修复 `Modal.Submit` 在存在多个Form组件切换时，点击触发的onSubmit的value不正确的问题 ([#885](https://github.com/sheinsight/shineout-next/pull/885))
+- 修复 `Modal` 组件初始化时样式延迟注入导致其他组件测绘不准确的问题 ([#1101](https://github.com/sheinsight/shineout-next/pull/1101))
+
+## 3.6.6-beta.7
+2025-05-12
+
+### 🐞 BugFix
+
+- 修复 `Modal` 开启 `destory` 属性关闭后多次执行渲染函数的问题 ([#1109](https://github.com/sheinsight/shineout-next/pull/1109))
+
+## 3.6.5-beta.12
+2025-04-29
+
+### 🐞 BugFix
+
+- 修复 `Modal.Submit` 的onClick事件比 `onSubmit` 先执行的问题 ([#1090](https://github.com/sheinsight/shineout-next/pull/1090))
+
+## 3.6.4-beta.1
+2025-04-15
+
+### 🐞 BugFix
+
+- 修复 `Modal` 全屏模式下内容超出窗口高度时的滚动条样式异常问题 ([#1062](https://github.com/sheinsight/shineout-next/pull/1062))
+
+## 3.6.3-beta.4
+2025-04-14
+
+### 🐞 BugFix
+
+- 修复 `Modal` 多层嵌套使用时，关闭子Modal但未关闭父Modal时body的滚动条出现的问题 ([#1054](https://github.com/sheinsight/shineout-next/pull/1054))
 
 
 ## 3.5.0
@@ -19,7 +47,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Modal` 组件 confirm 模式下确认按钮 loading 交互失效的问题 ([#774](https://github.com/sheinsight/shineout-next/pull/774))
+- 修复 `Modal` 的 confirm 模式下确认按钮 loading 交互失效的问题 ([#774](https://github.com/sheinsight/shineout-next/pull/774))
 
 ## 3.4.0
 2024-09-19
@@ -33,15 +61,15 @@
 
 ### 🐞 BugFix
 
-- 修复 `Modal` 组件下存在多个`Form`组件时，`Modal.Submit`提交无效的问题 ([#625](https://github.com/sheinsight/shineout-next/pull/625))
+- 修复 `Modal` 下存在多个`Form`时，`Modal.Submit`提交无效的问题 ([#625](https://github.com/sheinsight/shineout-next/pull/625))
 
 ## 3.3.2
 2024-07-29
 
 ### 🐞 BugFix
 
-- 修复 `Modal` 组件的onClick事件冒泡至父节点的问题 ([#591](https://github.com/sheinsight/shineout-next/pull/591))
-- 修复 `Modal` 组件的maskCloseAble和hideClose同时设置时, hideClose不生效的问题 ([#591](https://github.com/sheinsight/shineout-next/pull/591))
+- 修复 `Modal` 的onClick事件冒泡至父节点的问题 ([#591](https://github.com/sheinsight/shineout-next/pull/591))
+- 修复 `Modal` 的maskCloseAble和hideClose同时设置时, hideClose不生效的问题 ([#591](https://github.com/sheinsight/shineout-next/pull/591))
 
 ## 3.2.3
 2024-06-25

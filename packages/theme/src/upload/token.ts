@@ -32,14 +32,14 @@ const uploadTokenValue = { font: { size: 'Font-14' } };
 
 const uploadTokenExtraValue = {
   result: {
-    padding: { x: 'Spacing-16', y: 'Spacing-5' },
+    padding: { x: 'Spacing-12', y: 'Spacing-5' },
     background: { color: 'Neutral-fill-2' },
     gap: 'Spacing-4',
     margin: { y: 'Spacing-8' },
     icon: {
       size: 'Size-7',
-      color: 'Neutral-text-4',
-      hover: { background: { color: 'Neutral-fill-2' } },
+      color: 'Neutral-text-5',
+      hover: { background: { color: 'Neutral-fill-3' }, color: 'Brand-6' },
     },
     font: { size: 'Font-14', color: 'Neutral-text-5' },
     border: { radius: 'Radius-default' },
@@ -64,12 +64,16 @@ const uploadTokenExtraValue = {
   image: {
     border: { radius: 'Radius-default' },
     handler: {
-      border: { color: 'Neutral-border-1' },
+      border: { color: 'Neutral-border-2' },
       background: { color: 'Neutral-fill-1' },
       font: { color: 'Neutral-text-4' },
       hover: {
         border: { color: 'Brand-6' },
         font: { color: 'Brand-6' },
+      },
+      active: {
+        border: { color: 'Brand-7' },
+        font: { color: 'Brand-7' },
       },
       error: {
         border: { color: 'Danger-6' },
@@ -80,6 +84,9 @@ const uploadTokenExtraValue = {
         background: { color: 'Neutral-fill-2' },
         font: { color: 'Neutral-text-2' },
       },
+      icon: {
+        color: 'Neutral-text-3',
+      }
     },
     result: {
       border: { color: 'Neutral-border-1' },

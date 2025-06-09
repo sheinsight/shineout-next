@@ -4,13 +4,20 @@ import { VirtualScrollList } from '../virtual-scroll';
 import { KeygenResult, FlatNodeType } from '@sheinx/hooks';
 import { VirtualTreeProps } from './tree.type';
 
+const SIZE_MAP = {
+  'small': 28,
+  'default': 36,
+  'large': 42,
+}
+
 const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
   props: VirtualTreeProps<DataItem, Value>,
 ) => {
   const {
     jssStyle,
     height,
-    lineHeight = 36,
+    lineHeight: lineHeightProp,
+    rowsInView,
     line,
     mode,
     contentClass,
@@ -36,6 +43,8 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
   } = props;
 
   const datum = useTreeContext();
+
+  const lineHeight = lineHeightProp || SIZE_MAP[datum.size || 'default'];
 
   const renderItem = (item: FlatNodeType<DataItem>, index: number) => {
     const { id, data, level } = item;
@@ -71,6 +80,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
         onNodeClick={onNodeClick}
         onToggle={onToggle}
         onChange={onChange}
+        size={datum.size}
       ></VirtualTreeNode>
     );
   };
@@ -79,7 +89,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
     <VirtualScrollList
       data={datum.dataFlat}
       height={height}
-      rowsInView={10}
+      rowsInView={rowsInView}
       scrollerStyle={{
         height: '100%',
         width: '100%',

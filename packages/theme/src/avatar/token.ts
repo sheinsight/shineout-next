@@ -25,7 +25,13 @@ const avatarTokenExtraValue = {
   small: { width: 'Size-12', height: 'Size-12', font: { size: 'font-12' } },
   large: { width: 'Size-20', height: 'Size-20', font: { size: 'font-16' } },
   circle: { border: { radius: 'Radius-circle' } },
-  max: { font: { color: 'Neutral-text-5', weight: 'Weight-regular' } },
+  max: {
+    font: { color: 'Neutral-text-5', weight: 'Weight-regular' },
+    hover: {
+      color: 'Neutral-text-1',
+      background: { color: 'Brand-6' },
+    },
+  },
   popover: { padding: 'Spacing-16' },
   square: { border: { radius: 'Radius-default' } },
   group: {

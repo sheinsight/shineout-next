@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { TabsHeaderProps } from './tabs-header.type';
 import { TabsClasses } from './tabs.type';
@@ -25,17 +25,8 @@ const getRectDiff = (node: HTMLElement, pNode: HTMLElement) => {
 };
 
 const TabsHeader = (props: TabsHeaderProps) => {
-  const {
-    tabs,
-    jssStyle,
-    hideSplit,
-    collapsible,
-    extra,
-    splitColor,
-    tabBarStyle,
-    getPosition,
-  } = props;
-
+  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition } =
+    props;
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -146,7 +137,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const [currentTabOffset, setCurrentTabOffset] = useState({ offsetTop: 0, offsetLeft: 0 });
   const [currentTabRect, setCurrentTabRect] = useState<DOMRect | null>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (shape !== 'line' && shape !== 'dash') return;
 
     const currentTab = tabRef.current[active!];

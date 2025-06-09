@@ -1,6 +1,8 @@
 import { createUseStyles } from 'react-jss';
 
-const navHeight = 59;
+// @ts-ignore 嵌入的目标系统顶部是64px
+const navHeight = window.__ALITA__ ? 64 : 59;
+const menuWidth = 259;
 
 export default createUseStyles(
   {
@@ -18,17 +20,15 @@ export default createUseStyles(
       height: '100% !important',
     },
     desktop: {
-      position: 'absolute',
-      left: 259,
-      right: 0,
-      top: navHeight,
-      height: `calc(100% - ${navHeight}px)`,
+      position: 'relative',
+      flex: 1,
+      height: `calc(100vh - ${navHeight}px)`,
       overflowY: 'auto',
       overflowX: 'hidden',
       backgroundColor: 'var(--soui-neutral-fill-1)',
       'body.rtl &': {
         left: 0,
-        right: 259,
+        right: 0,
       },
     },
 
@@ -100,20 +100,23 @@ export default createUseStyles(
       },
     },
 
-    menu: {
+    menuContainer: {
       position: 'sticky',
-      overflow: 'auto',
-      float: 'left',
-      top: 59,
-      width: 259,
-      height: 'calc(100% - 59px)',
+      top: 0,
       borderRight: '1px solid var(--soui-neutral-border-1)',
       backgroundColor: 'var(--soui-neutral-fill-1)',
+      boxSizing: 'border-box',
+      transition: '0.2s',
+    },
+
+    menu: {
       listStyle: 'none',
       margin: 0,
-      fontSize: 14,
       padding: '0 16px',
-      boxSizing: 'border-box',
+      fontSize: 14,
+      width: menuWidth,
+      height: `calc(100vh - ${navHeight}px)`,
+      overflow: 'auto',
       'body.rtl &': {
         float: 'right',
         borderRight: 'none',
@@ -296,13 +299,91 @@ export default createUseStyles(
       },
     },
 
+    menuFloat: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      zIndex: 1050 * 2,
+      'body.rtl &': {
+        right: 0,
+        left: 'auto',
+      },
+      '$menuContainer$collapsed&': {
+        width: 0,
+        padding: 0,
+        whiteSpace: 'nowrap',
+        overflow: 'visible',
+        '& $menu': {
+          width: 0,
+          padding: 0,
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+        },
+        '& $floatMenuButtonContainer:after': {
+          display: 'none',
+        }
+      },
+
+      '$menuContainer$collapsed& $menu': {
+        width: 0,
+        whiteSpace: 'nowrap',
+        overflow: 'visible',
+      },
+
+      '& + $desktop': {
+        left: 0,
+      }
+    },
+
+    collapsed: {},
+
+    floatMenuButtonContainer: {
+      position: 'absolute',
+      top: 100,
+      right: -1,
+      transform: 'translateX(100%)',
+      "&:after": {
+        content: '""',
+        position: 'absolute',
+        top: -100,
+        bottom: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: 'var(--soui-modal-mask-background,var(--soui-rgba-2-11-24-0-3-,rgba(2, 11, 24, 0.3)))',
+        display: 'block',
+      },
+      'body.rtl &': {
+        left: 0,
+        right: 'auto',
+        transform: 'translateX(-100%)',
+        '&:after': {
+          left: 'auto',
+          right: 0,
+        }
+      }
+    },
+    floatMenuButton: {
+      position: 'relative',
+      zIndex: 1,
+      padding: 8,
+      cursor: 'pointer',
+      color: 'var(--soui-neutral-text-5)',
+      backgroundColor: 'var(--soui-neutral-fill-1)',
+      boxShadow: '1px 0 4px 0 rgba(0, 0, 0, 0.1)',
+      '&:hover': {
+        boxShadow: '1px 0 8px 0 rgba(0, 0, 0, 0.2)',
+      },
+      '& > svg': {
+        display: 'block',
+      },
+    },
+
     floatButton: {
       position: 'fixed',
       right: 16,
       bottom: 40,
-      '& svg': {
-        fill: 'var(--soui-neutral-text-5)',
-      },
     },
     floatButtonTarget: {
       width: 40,

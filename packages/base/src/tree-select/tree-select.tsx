@@ -46,6 +46,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     multiple,
     mode = 1,
     line = false,
+    reFocus = false,
     innerTitle,
     clearable = true,
     border = true,
@@ -55,7 +56,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     position: positionProp = dfp,
     open: openProp,
     onCollapse: onCollapseProp,
-    disabled,
+    disabled: disabledProp,
     style,
     width,
     height = 250,
@@ -75,6 +76,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onChange: onChangeProp,
     compressedBound,
     compressedClassName,
+    renderCompressed,
     expanded: expandedProp,
     defaultExpanded,
     defaultExpandAll,
@@ -87,11 +89,16 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onChangeAddition,
     onEnterExpand,
     onExpand,
+    beforeChange,
     filterSameChange,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
   const showInput = util.isFunc(props.onAdvancedFilter || onFilterProp);
+
+  const disabled = util.isOptionalDisabled<DataItem>(disabledProp)
+    ? disabledProp.disabled
+    : disabledProp;
 
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
@@ -108,6 +115,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     control: 'value' in props,
     filterSameChange: filterSameChange,
     multiple,
+    beforeChange,
   });
 
   const checkEmpty = () => {
@@ -132,6 +140,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onFilter,
     onClearCreatedData,
     setInputText,
+    FilterProvider,
   } = useFilter({
     treeData: data,
     keygen: keygen as any,
@@ -167,21 +176,23 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     // rawDatum: datum,
   });
 
-  const {
-    datum,
-    onExpand: onExpandTree,
-    expanded: unControlExpanded,
-  } = useTree({
+  const handleExpanded = (id: KeygenResult[]) => {
+    setVirtualExpanded(id);
+    onExpand?.(id);
+  };
+
+  const { datum, expanded: unControlExpanded } = useTree({
     mode,
     value,
-    data: tiledData,
+    data: data,
     unmatch,
+    tiledData,
     virtual,
-    disabled,
+    disabled: props.disabled,
     active: multiple ? undefined : value[0],
     childrenKey: childrenKey,
     keygen,
-    onExpand,
+    onExpand: handleExpanded,
     expanded: controlExpanded,
     defaultExpanded: defaultExpanded,
     defaultExpandAll: defaultExpandAll,
@@ -286,11 +297,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       openPop();
     }
   });
-
-  const handleExpanded = (id: KeygenResult[]) => {
-    setVirtualExpanded(id);
-    onExpandTree(id);
-  };
 
   const focusAndOpen = () => {
     if (!focused) {
@@ -422,20 +428,34 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     const isDisabled = datum?.isDisabled(key);
     const isCheck = datum?.getChecked(key);
 
-    if (isDisabled) {
-      return classNames(styles.optionDisabled);
+    let contentClass = '';
+    if (props.contentClass) {
+      if (util.isString(props.contentClass)) {
+        contentClass = props.contentClass;
+      }
+
+      if (util.isFunc(props.contentClass)) {
+        contentClass = props.contentClass(data);
+      }
     }
 
+    if (isDisabled) {
+      return classNames(styles.optionDisabled, contentClass);
+    }
+
+    const activeClassName = classNames(styles.optionActive, contentClass);
+    const inactiveClassName = classNames(contentClass);
+
     if (multiple) {
-      return isCheck ? classNames(styles.optionActive) : '';
+      return isCheck ? activeClassName : inactiveClassName;
     }
 
     if (!util.isArray(value)) {
       const currentData = getDataByValues(value);
-      return currentData === data ? classNames(styles.optionActive) : '';
+      return currentData === data ? activeClassName : inactiveClassName;
     }
 
-    return '';
+    return inactiveClassName;
   };
 
   const checkUnMatched = (item: unknown) => {
@@ -456,9 +476,14 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     if (from !== 'blur') {
       focusAndOpen();
     }
-    setVirtualExpanded([]);
-    onTiledFilter?.(trim ? text.trim() : text);
+    onTiledFilter?.(trim ? text.trim() : text, from);
   };
+
+  useEffect(() => {
+    if (virtual && expanded) {
+      setVirtualExpanded(expanded);
+    }
+  }, [expanded]);
 
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
     if (disabled === true || datum?.isDisabled(id)) return;
@@ -491,6 +516,12 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const handleTreeChange = (_value: any, id: KeygenResult) => {
     const item = datum.getDataById(id) as DataItem;
     handleChange(item, id);
+
+    const shouldFocus = showInput && reFocus;
+
+    if (multiple && !shouldFocus) {
+      inputRef?.current?.select();
+    }
   };
 
   const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult) => {
@@ -540,10 +571,12 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           value={getResultValue() as any}
           data={data}
           focus={open}
+          reFocus={reFocus}
           keygen={keygen as any}
           disabled={disabled}
           compressed={compressed}
           compressedBound={compressedBound}
+          renderCompressed={renderCompressed}
           compressedClassName={compressedClassName}
           multiple={multiple}
           placeholder={placeholder}
@@ -644,24 +677,26 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           virtual={virtual}
           childrenKey={props.childrenKey}
           line={line}
+          ignoreSetFlat
           mode={mode}
           height={height}
           data={tiledData}
+          tiledData={tiledData}
           keygen={keygen}
           unmatch={unmatch}
           value={value}
           highlight={!multiple}
           loader={loader}
           onExpand={handleExpanded}
-          expanded={
-            virtualExpanded.length > 0 ? virtualExpanded : controlExpanded || unControlExpanded
-          }
+          expanded={virtual ? virtualExpanded : controlExpanded || unControlExpanded}
           defaultExpandAll={defaultExpandAll}
           expandIcons={tiledExpandIcons}
-          disabled={disabled}
+          disabled={props.disabled}
           parentClickExpand={parentClickExpand}
           contentClass={getContentClass}
           datum={datum}
+          actionOnClick={props.actionOnClick}
+          size={size}
         ></Tree>
       </div>
     );
@@ -679,43 +714,47 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const { fieldId } = useContext(FormFieldContext);
   return (
-    <div
-      id={fieldId}
-      ref={targetRef}
-      tabIndex={disabled === true || showInput ? undefined : 0}
-      {...util.getDataAttribute({ ['input-border']: 'true' })}
-      className={rootClass}
-      style={rootStyle}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      onKeyDown={handleKeyDown}
-    >
-      {tipNode}
-      {renderResult()}
-      {hadOpened && <AbsoluteList
-        adjust={adjust}
-        focus={open}
-        fixedWidth='min'
-        lazy={false}
-        absolute={props.absolute}
-        zIndex={props.zIndex}
-        position={position}
-        popupGap={4}
-        popupElRef={popupRef}
-        parentElRef={targetRef}
+    <FilterProvider value={{ filterText, highlight: props.highlight }}>
+      <div
+        id={fieldId}
+        ref={targetRef}
+        tabIndex={disabled === true || showInput ? undefined : 0}
+        {...util.getDataAttribute({ ['input-border']: 'true' })}
+        className={rootClass}
+        style={rootStyle}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onKeyDown={handleKeyDown}
       >
-        <AnimationList
-          onRef={popupRef}
-          show={open}
-          className={classNames(styles?.pickerWrapper)}
-          display={'block'}
-          type='scale-y'
-          duration={'fast'}
-        >
-          {renderList()}
-        </AnimationList>
-      </AbsoluteList>}
-    </div>
+        {tipNode}
+        {renderResult()}
+        {hadOpened && (
+          <AbsoluteList
+            adjust={adjust}
+            focus={open}
+            fixedWidth='min'
+            lazy={false}
+            absolute={props.absolute}
+            zIndex={props.zIndex}
+            position={position}
+            popupGap={4}
+            popupElRef={popupRef}
+            parentElRef={targetRef}
+          >
+            <AnimationList
+              onRef={popupRef}
+              show={open}
+              className={classNames(styles?.pickerWrapper)}
+              display={'block'}
+              type='scale-y'
+              duration={'fast'}
+            >
+              {renderList()}
+            </AnimationList>
+          </AbsoluteList>
+        )}
+      </div>
+    </FilterProvider>
   );
 };
 

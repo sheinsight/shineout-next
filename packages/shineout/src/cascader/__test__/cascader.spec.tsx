@@ -8,8 +8,8 @@ import CascaderBase from "../__example__/01-01-base";
 import CascaderRenderResult from '../__example__/01-02-base'
 import CascaderHideTag from '../__example__/01-03-base'
 import CascaderMultiple from '../__example__/02-01-multiple'
-import CascaderCompressed from '../__example__/02-02-multiple'
-import CascaderNoRepeat from '../__example__/02-03-multiple'
+import CascaderCompressed from '../__example__/02-03-00-multiple-compressed'
+import CascaderNoRepeat from '../__example__/02-03-01-multiple'
 import CascaderTrigger from '../__example__/03-01-trigger'
 import CascaderFinal from '../__example__/03-02-finalDismiss'
 import CascaderDisabled from '../__example__/04-disabled-normal'
@@ -86,7 +86,8 @@ const defaultOpenStyle = {
   top: 'calc(100% + 4px)',
   left: '0px',
   transform: 'scaleY(1)',
-  transition: 'transform 240ms ease-in-out',
+  "transform-origin": "center top",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 }
 
 beforeAll(() => {

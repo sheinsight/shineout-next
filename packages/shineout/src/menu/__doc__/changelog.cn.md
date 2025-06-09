@@ -2,19 +2,19 @@
 2024-09-19
 
 ### 🆕 Feature
-- `Menu` 组件新增父节点激活状态下的文字颜色 token ([#659](https://github.com/sheinsight/shineout-next/pull/659))
+- `Menu` 新增父节点激活状态下的文字颜色 token ([#659](https://github.com/sheinsight/shineout-next/pull/659))
 
 ## 3.3.3
 2024-08-07
 
 ### 🐞 BugFix
-- 修复 `Menu` 组件水平模式下高度100%的问题
+- 修复 `Menu` 水平模式下高度100%的问题
 
 ## 3.3.0
 2024-07-23
 
 ### 🐞 BugFix
-- 修复 `Menu.Search` 组件 `collapse` 属性拼写错误的问题 ([#585](https://github.com/sheinsight/shineout-next/pull/585))
+- 修复 `Menu.Search` 的 `collapse` 属性拼写错误的问题 ([#585](https://github.com/sheinsight/shineout-next/pull/585))
 
 ### 🆕 Feature
 - `Menu` 支持水平模式的暗系主题 ([#505](https://github.com/sheinsight/shineout-next/pull/505))

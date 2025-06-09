@@ -1,20 +1,26 @@
+## 3.6.2-beta.4
+2025-04-01
+
+### 🐞 BugFix
+- 修复 `Steps` 等待状态样式错误的问题 ([#1030](https://github.com/sheinsight/shineout-next/pull/1030))
+
 ## 3.5.6
 2025-01-06
 ### 🐞 BugFix
 
 - 修复 `Steps` 在 `size='large'` 情况下样式异常的问题 ([#900](https://github.com/sheinsight/shineout-next/pull/900))
-- 修复 `Steps` 组件 `type='arrow'` 模式下小尺寸样式异常的问题 ([#899](https://github.com/sheinsight/shineout-next/pull/899))
+- 修复 `Steps` 的 `type='arrow'` 模式下小尺寸样式异常的问题 ([#899](https://github.com/sheinsight/shineout-next/pull/899))
 
 
 ## 3.5.4
 2024-12-12
 ### 💎 Enhancement
 
-- 优化 `Steps` 组件 `disabled` 用法，`Steps` 支持传入 boolean 或 function 类型，`Step` 支持传入 boolean 类型且优先级大于 `Steps` ([#860](https://github.com/sheinsight/shineout-next/pull/860))
+- 优化 `Steps` 的 `disabled` 用法，`Steps` 支持传入 boolean 或 function 类型，`Step` 支持传入 boolean 类型且优先级大于 `Steps` ([#860](https://github.com/sheinsight/shineout-next/pull/860))
 
 ### 🐞 BugFix
 
-- 修复 `Step` 组件设置 `disabled` 属性后功能失效的问题 ([#854](https://github.com/sheinsight/shineout-next/pull/854))
+- 修复 `Steps.Step` 设置 `disabled` 属性后功能失效的问题 ([#854](https://github.com/sheinsight/shineout-next/pull/854))
 
 ## 3.3.0
 2024-07-23

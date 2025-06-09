@@ -1,9 +1,83 @@
-## 3.6.0-beta.4
-2025-02-11
+## 3.7.0-beta.30
+2025-05-23
+
+### 🆕 Feature
+
+- `Tree` 新增 `leafIcon` 属性，可配置叶子结点的图标 ([#1124](https://github.com/sheinsight/shineout-next/pull/1124))
+
+
+## 3.7.0-beta.28
+2025-05-22
+
+### 🆕 Feature
+
+- `Tree` 新增 `size` 属性，可配置紧凑或稀疏的样式 ([#1121](https://github.com/sheinsight/shineout-next/pull/1121))
+
+## 3.6.7-beta.4
+2025-05-20
+
+### 🐞 BugFix
+
+- 修复 `Tree` 在开启虚拟列表后 data 为 undefined 时可能存在死循环的问题 ([#1119](https://github.com/sheinsight/shineout-next/pull/1119))
+
+## 3.6.7-beta.3
+2025-05-20
+
+### 🐞 BugFix
+
+- 修复 `Tree` 在 data 发生变化后 `defaultExpanded` 不生效的问题 ([#1118](https://github.com/sheinsight/shineout-next/pull/1118))
+
+## 3.6.6-beta.2
+2025-05-06
+
+### 🐞 BugFix
+
+- 修复 `Tree` 的 `onChange` 第二参数丢失和类型问题 ([#1095](https://github.com/sheinsight/shineout-next/pull/1095))
+
+## 3.6.4-beta.6
+2025-04-17
+
+### 🐞 BugFix
+
+- 修复 `Tree` 传入 `rowsInView` 属性失效的问题 ([#1071](https://github.com/sheinsight/shineout-next/pull/1071))
+
+## 3.6.3-beta.7
+2025-04-15
 
 ### 💎 Enhancement
 
-- `Tree` 组件新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
+- 优化 `Tree` 的节点鼠标手势，节点content区域的鼠标手势修改为pointer ([#1058](https://github.com/sheinsight/shineout-next/pull/1058))
+
+## 3.6.2-beta.6
+2025-04-07
+
+### 💎 Enhancement
+
+- 优化 `Tree` 拖拽时原节点立即隐藏带来的性能问题和交互不友好问题，改为不立即隐藏原节点 ([#1039](https://github.com/sheinsight/shineout-next/pull/1039))
+
+## 3.6.0
+2025-03-19
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` 开 `virtual` 和 `defaultExpandedAll` 后，过滤数据不展开的问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
+- 修复 `TreeSelect` 节点样式可能不对齐对问题 ([#1001](https://github.com/sheinsight/shineout-next/pull/1001))
+
+## 3.6.0
+2025-03-07
+
+### 🆕 Feature
+
+- `Tree` 新增 `actionOnClick` 属性，配置点击节点时的行为：`expand` 展开/收起节点，`check` 勾选或取消勾选节点 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
+- `Tree` 新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
+
+
+## 3.6.0
+2025-03-04
+
+### 🐞 BugFix
+
+- 修复 `Tree` 传入的非树形数据时, 一级节点有多余的缩进问题 ([#981](https://github.com/sheinsight/shineout-next/pull/981))
 
 ## 3.5.8
 2025-02-13
@@ -26,11 +100,11 @@
 ### 🐞 BugFix
 
 - 修复 `Tree` 组件在开启 `loader` 情况下设置 `defaultExpandAll` 展开状态异常的问题 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
-- 修复 `Tree` 组件 `setActive` 会触发多次的问题 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
+- 修复 `Tree` 的 `setActive` 会触发多次的问题 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
 
 ### 💎 Enhancement
 
-- `Tree` 组件 `setActive` 新增第二参当前选中节点数据数的返回 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
+- `Tree` 的 `setActive` 新增第二参当前选中节点数据数的返回 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
 - 新增 `Tree` 类型 `KeygenResult` 导出 ([#699](https://github.com/sheinsight/shineout-next/pull/699))
 
 ## 3.4.2

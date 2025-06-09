@@ -10,6 +10,12 @@ export interface TreeTokens {
   treeTextPaddingY: string;
   /**
    * @type {string}
+   * @token Spacing-4
+   * @description 树组件文字内边距（水平方向）
+   */
+  treeTextPaddingX: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 树组件复选框外边距（水平方向）
    */
@@ -118,6 +124,12 @@ export interface TreeTokens {
   treeItemDisabledFontColor: string;
   /**
    * @type {string}
+   * @token Radius-lesser
+   * @description 树组件节点容器边框圆角
+   */
+  treeContentBorderRadius: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description 树组件节点容器鼠标移入时的背景颜色
    */
@@ -142,6 +154,12 @@ export interface TreeTokens {
   treeContentActiveFontColor: string;
   /**
    * @type {string}
+   * @token Radius-2
+   * @description 树组件节点容器鼠标点击时的边框圆角
+   */
+  treeContentActiveBorderRadius: string;
+  /**
+   * @type {string}
    * @token Transprent
    * @description 树组件节点容器禁用时的背景颜色
    */
@@ -164,10 +182,4 @@ export interface TreeTokens {
    * @description 树组件拖拽时的背景颜色
    */
   treeDragBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Radius-lesser
-   * @description 树组件节点容器边框圆角
-   */
-  treeContentBorderRadius: string;
 }

@@ -54,6 +54,9 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       minWidth: token.switchSmallWidth,
       borderRadius: `calc( ${token.switchSmallCircleSize} / 2 + ${token.switchSmallPaddingY} )`,
       fontSize: token.switchSmallFontSize,
+      '[data-soui-role="form-control"] > &': {
+        marginTop: 8,
+      }
     },
     '$wrapperLarge&': {
       height: `calc( ${token.switchLargeCircleSize} + ${token.switchLargePaddingY} * 2 )`,

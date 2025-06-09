@@ -103,24 +103,23 @@ export function getParent(el: HTMLElement | null | Element, target?: string | HT
   return null;
 }
 
+export function isScrollable(el: HTMLElement) {
+  const style = window.getComputedStyle(el);
+  const overflowX = style.overflowX;
+  const overflowY = style.overflowY;
+  return (
+    (overflowX === 'auto' ||
+      overflowX === 'scroll' ||
+      overflowY === 'auto' ||
+      overflowY === 'scroll') &&
+    (el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth)
+  );
+}
+
 export function getClosestScrollContainer(element: HTMLElement | null): HTMLElement | null {
   if (!element) {
     return null;
   }
-
-  // 检查元素是否可滚动
-  const isScrollable = (el: HTMLElement) => {
-    const style = window.getComputedStyle(el);
-    const overflowX = style.overflowX;
-    const overflowY = style.overflowY;
-    return (
-      (overflowX === 'auto' ||
-        overflowX === 'scroll' ||
-        overflowY === 'auto' ||
-        overflowY === 'scroll') &&
-      (el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth)
-    );
-  };
 
   // 如果元素本身是可滚动的，直接返回
   if (isScrollable(element)) {
@@ -140,14 +139,18 @@ export function getClosestScrollContainer(element: HTMLElement | null): HTMLElem
   return (document.scrollingElement || document.documentElement) as HTMLElement;
 }
 
-export function getClosestFixedContainer(element: Element | HTMLElement | null) {
+export function getClosestPositionedContainer(
+  element: Element | HTMLElement | null,
+  positions: React.CSSProperties['position'][] = ['fixed', 'absolute'],
+) {
   if (!element) {
     return null;
   }
 
   const isFixable = (el: HTMLElement) => {
     const style = window.getComputedStyle(el);
-    return style.position === 'fixed';
+    const position = style.position as React.CSSProperties['position'];
+    return positions.includes(position);
   };
 
   // 遍历父元素
@@ -181,5 +184,5 @@ export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, '
 
 export const getFieldId = (name?: string, formName?: string) => {
   if (!name) return undefined;
-  return `${formName ? `${formName}_` : ''}${name}`
+  return `${formName ? `${formName}_` : ''}${name}`;
 };

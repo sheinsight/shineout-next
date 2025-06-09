@@ -55,14 +55,14 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
         },
       },
     },
-    '&$widthTitle': {},
+    '&$withTitle': {},
     '& $icon': {},
   },
-  widthTitle: {
+  withTitle: {
     '& $icon': {
       fontSize: Token.alertTitleFontSize,
       // marginBottom: Token.alertNearlyMargin,
-      width: Token.alertTitleIconWidth,
+      width: `calc(${Token.alertTitleIconWidth} + 2px)`,
       height: Token.lineHeightDynamic,
     },
     '& $title': {
@@ -86,10 +86,10 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   close: {
     cursor: 'pointer',
-    width: Token.alertFontSize,
     color: Token.alertCloseFontColor,
     fontSize: Token.alertFontSize,
-    height: Token.alertFontSize,
+    height: Token.alertCloseSize,
+    width: Token.alertCloseSize,
     flex: '0 0 auto',
     display: 'flex',
     alignItems: 'center',
@@ -104,7 +104,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   },
   closeWrapper: {
     fontSize: Token.alertFontSize,
-    width: Token.alertFontSize,
+    width: Token.alertCloseSize,
     height: Token.lineHeightDynamic,
     display: 'flex',
     alignItems: 'center',
@@ -149,6 +149,11 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   confirmIcon: { color: Token.alertWarningFontColor },
   noBordered: {
     borderColor: 'transparent',
+  },
+  noChildren: {
+    '&&$confirmwarning': {
+      marginBottom: 0,
+    }
   },
   icon: {
     width: Token.alertIconSize,

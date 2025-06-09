@@ -48,7 +48,10 @@ const TagInput = (props: TagInputProps) => {
       size={size}
       style={style}
       inputRef={inputRef}
-      className={classNames(tagStyle.input)}
+      className={classNames(tagStyle.input, {
+        [tagStyle.small]: size === 'small',
+        [tagStyle.large]: size === 'large',
+      })}
       jssStyle={jssStyle}
       onKeyUp={handleKeyUp}
       onChange={handleChange}

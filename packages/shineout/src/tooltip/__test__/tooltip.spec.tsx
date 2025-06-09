@@ -65,7 +65,7 @@ const TooltipDemo = ({
   </Tooltip>
 );
 
-const defaultStyle = 'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px;'
+const defaultStyle = 'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;'
 
 beforeAll(() => {
   jest.useFakeTimers();
@@ -177,7 +177,7 @@ describe('Tooltip[Base]', () => {
       await delay(200);
       styleTest(
         wrappers[0],
-        'position: absolute; z-index: 1051; top: 0px; transform: translateY(-50%) translateX(-100%); left: 0px;',
+        'position: absolute; z-index: 1051; top: 0px; transform: translateY(-50%); right: 0px;',
       );
     });
     fireEvent.mouseEnter(screen.getByText(positions[1]));
@@ -193,7 +193,7 @@ describe('Tooltip[Base]', () => {
       await delay(200);
       styleTest(
         wrappers[2],
-        'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px;',
+        'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;',
       );
     });
     fireEvent.mouseEnter(screen.getByText(positions[3]));
@@ -212,7 +212,7 @@ describe('Tooltip[Base]', () => {
       await delay(200);
       styleTest(
         document.querySelector(tooltipClassName)!,
-        'position: absolute; z-index: 1051; top: 0px; transform: translateY(-100%) translateX(-100%); left: 0px;',
+        'position: absolute; z-index: 1051; top: 0px; transform: translateY(-100%); right: 0px;',
       );
     });
   });
@@ -269,7 +269,7 @@ describe('Tooltip[Base]', () => {
       await delay(200);
       styleTest(
         document.querySelector(tooltipClassName)!,
-        'position: absolute; z-index: 1051; top: 0px; transform: translateY(-50%) translateX(-100%); left: 0px;',
+        'position: absolute; z-index: 1051; top: 0px; transform: translateY(-50%); right: 0px;',
       );
     });
   });

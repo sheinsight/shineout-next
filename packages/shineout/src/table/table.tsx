@@ -14,6 +14,8 @@ import {
   useTreeSelectStyle,
   useDatePickerStyle,
   useSwitchStyle,
+  usePopoverStyle,
+  useTreeStyle,
 } from '@sheinx/shineout-style';
 import { TableProps } from './table.type';
 
@@ -31,6 +33,8 @@ const jssStyle = {
   treeSelect: useTreeSelectStyle,
   datePicker: useDatePickerStyle,
   switch: useSwitchStyle,
+  popover: usePopoverStyle,
+  tree: useTreeStyle
 };
 export default <DataItem, Value>(props: TableProps<DataItem, Value>) => {
   return <Table jssStyle={jssStyle} {...props} />;

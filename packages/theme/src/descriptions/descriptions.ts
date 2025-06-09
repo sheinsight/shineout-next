@@ -6,7 +6,7 @@ import { DescriptionsTokens } from './type';
 const descriptionsTokens: DescriptionsTokens = {
   descriptionsTitlePaddingBottom: 'Spacing-12',
   descriptionsLabelPaddingBottom: 'Spacing-12',
-  descriptionsLabelPaddingRight: 'Spacing-24',
+  descriptionsLabelPaddingRight: 'Spacing-8',
   descriptionsValuePaddingBottom: 'Spacing-12',
   descriptionsTitleSmallSize: 'Font-14',
   descriptionsTitleDefaultSize: 'Font-16',

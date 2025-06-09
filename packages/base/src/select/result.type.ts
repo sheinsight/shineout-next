@@ -39,6 +39,7 @@ export interface ResultProps<DataItem, Value>
   onRef: React.MutableRefObject<HTMLInputElement | undefined>;
   allowOnFilter: boolean;
   closeable?: boolean;
+  reFocus?: boolean;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   renderResultContent?: (props: any) => React.ReactNode;
   setInputText: (text: string) => void;

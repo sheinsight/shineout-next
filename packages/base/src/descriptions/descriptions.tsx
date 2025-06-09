@@ -30,13 +30,13 @@ const Descriptions = (props: DescriptionsProps) => {
   const jssStyle = jssStyleProps?.descriptions?.() || ({} as DescriptionsClasses);
 
   const Header = () => {
-    if(!title && !extra) return null;
+    if (!title && !extra) return null;
     return (
       <div className={jssStyle?.header}>
         {title && <div className={jssStyle?.title}>{title}</div>}
         {extra && <div className={jssStyle?.extra}>{extra}</div>}
       </div>
-    )
+    );
   };
 
   const getColSpan = usePersistFn((d: DescriptionsItemProps, isHorizontal?: boolean) =>
@@ -126,6 +126,13 @@ const Descriptions = (props: DescriptionsProps) => {
       <Header />
       <div className={bodyClassName}>
         <table className={jssStyle?.table} cellPadding={0} cellSpacing={0}>
+          {layout === 'inlineHorizontal' && typeof column === 'number' && column > 1 && (
+            <colgroup>
+              {renderItem[0]?.map((_, index, arr) => (
+                <col key={index} style={{ width: `${(1 / arr.length) * 100}%` }} />
+              ))}
+            </colgroup>
+          )}
           <tbody>
             {renderItem.map((d: DescriptionsItemProps[], i: number) => renderHandle(d, i))}
           </tbody>

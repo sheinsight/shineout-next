@@ -62,6 +62,7 @@ const AnimationList = (props: AnimationListProps) => {
     }
     if (type.indexOf('scale-y') >= 0) {
       transition.push(`transform ${durationNum}ms ease-in-out`);
+      transition.push(`opacity ${durationNum / 2}ms ease-in-out`);
     }
     if (type.indexOf('collapse') >= 0) {
       transition.push(`height ${durationNum}ms ease-in-out`);
@@ -107,6 +108,7 @@ const AnimationList = (props: AnimationListProps) => {
     }
     if (type.includes('scale-y')) {
       newStyle.transform = 'scaleY(0)';
+      newStyle.opacity = 0;
     }
     setStyle((s) => ({ ...s, ...newStyle }));
   };
@@ -120,6 +122,7 @@ const AnimationList = (props: AnimationListProps) => {
     }
     if (type.includes('scale-y')) {
       newStyle.transform = 'scaleY(1)';
+      newStyle.opacity = 1;
     }
     setStyle((s) => ({ ...s, ...newStyle }));
     setStatus('enter');
@@ -148,6 +151,7 @@ const AnimationList = (props: AnimationListProps) => {
     }
     if (type.includes('scale-y')) {
       newStyle.transform = 'scaleY(1)';
+      newStyle.opacity = 1;
     }
     setStyle((s) => ({ ...s, ...newStyle }));
     setStatus('beforeLeave');
@@ -162,6 +166,7 @@ const AnimationList = (props: AnimationListProps) => {
     }
     if (type.includes('scale-y')) {
       newStyle.transform = 'scaleY(0)';
+      newStyle.opacity = 0;
     }
     setStyle((s) => ({ ...s, ...newStyle }));
     setStatus('leave');

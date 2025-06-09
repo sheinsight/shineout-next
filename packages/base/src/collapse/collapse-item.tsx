@@ -58,12 +58,7 @@ const CollapseItem = (props: CollapseItemProps) => {
       : null;
     return (
       headerIcon && (
-        <div
-          dir={config.direction}
-          {...getHeaderIconProps({ className: collapseItemIconClassName })}
-        >
-          {headerIcon}
-        </div>
+        <div dir={config.direction} {...getHeaderIconProps({ className: collapseItemIconClassName })} role="button">{headerIcon}</div>
       )
     );
   };
@@ -84,7 +79,7 @@ const CollapseItem = (props: CollapseItemProps) => {
   const collapseItemHeaderClassName = classNames(
     jssStyle?.collapseItem.header,
     !showExpandIcon && jssStyle?.collapseItem.noIcon,
-    !triggerRegion && jssStyle?.collapseItem.region,
+    triggerRegion !== 'icon' && jssStyle?.collapseItem.region,
   );
 
   const collapseItemContentClassName = classNames(

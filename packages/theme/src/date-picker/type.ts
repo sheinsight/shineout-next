@@ -52,6 +52,18 @@ export interface DatePickerTokens {
   datePickerIconColor: string;
   /**
    * @type {string}
+   * @token Spacing-16
+   * @description 日期选择器小尺寸面板底部undefined内边距（水平方向）
+   */
+  datePickerSmallPanelFooterNowPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-11
+   * @description 日期选择器小尺寸面板底部undefined内边距（垂直方向）
+   */
+  datePickerSmallPanelFooterNowPaddingY: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 日期选择器小尺寸字体字号
    */

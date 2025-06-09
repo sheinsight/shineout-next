@@ -193,6 +193,7 @@ const modalStyle: JsStyles<ModalClassType> = {
       top: 0,
       height: '100vh',
       width: '100vw',
+      overflow: 'auto',
     },
   },
   wrapperZoom: {

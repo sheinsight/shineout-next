@@ -6,7 +6,7 @@
 
 ### Combine with text buttons to guide users on the next step of action.
 
-![](001)
+![{maxWidth:100%}](001)
 
 ## Recommended/Cautionary Examples
 

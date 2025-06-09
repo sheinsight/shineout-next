@@ -1,3 +1,64 @@
+## 3.7.0-beta.34
+2025-05-29
+
+### 🐞 BugFix
+- 修复 `Cascader` 外部受控打开的场景下，从外部修改 `value` 导致的面板勾选情况没有及时同步([#4e70d57](https://github.com/sheinsight/shineout-next/commit/4e70d57c6c01fc3d6f6031af3f8b590432e07a7a))
+
+## 3.7.0-beta.31
+2025-05-27
+
+### 🆕 Feature
+- `Cascader` 新增 `highlight` 属性，开启搜索关键字高亮功能 ([#1126](https://github.com/sheinsight/shineout-next/pull/1126))
+
+
+## 3.7.0-beta.27
+2025-05-22
+
+### 🐞 BugFix
+- 修复 `Cascader` 的 `beforeChange` 不生效的问题 ([#1120](https://github.com/sheinsight/shineout-next/pull/1120))
+
+## 3.6.6-beta.4
+2025-05-09
+
+### 🐞 BugFix
+- 修复 `Cascader`结果框高度不继承的问题  ([#1105](https://github.com/sheinsight/shineout-next/pull/1105))
+
+## 3.6.6-beta.3
+2025-05-07
+
+### 💎 Enhancement
+- `Cascader` 增强 `compressed` 属性，新增 `hide-popover` 模式隐藏合并后的选项，仅展示合并数量 ([#1098](https://github.com/sheinsight/shineout-next/pull/1098))
+
+## 3.6.5-beta.1
+2025-04-23
+
+### 🐞 BugFix
+- 修复 `Cascader` 在 `Popover` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除条目时会引起样式异常的问题 ([#1079](https://github.com/sheinsight/shineout-next/pull/1079))
+
+
+## 3.6.4-beta.6
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `Cascader` 设置了expandTrigger为hover后切换高亮路径后但不选中值，二次打开面板时高亮路径与选中值不匹配的问题 ([#1070](https://github.com/sheinsight/shineout-next/pull/1070))
+
+
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `Cascader` 最大高度限制失效的问题（默认 max-height 应为 80px） ([#1051](https://github.com/sheinsight/shineout-next/pull/1051))
+
+## 3.6.0
+2025-03-18
+
+### 🆕 Feature
+- `Cascader` 新增 `emptyText` 属性，支持自定义空数据时的下拉列表内容 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
+
+### 🐞 BugFix
+- 修复 `Cascader` mode=0时，外部动态修改data后导致的选中结果与勾选的显示情况不一致的问题 ([#999](https://github.com/sheinsight/shineout-next/pull/999))
+
+
 ## 3.5.8
 2025-02-13
 
@@ -47,14 +108,14 @@
 2024-10-28
 
 ### 🐞 BugFix
-- 修复 `Cascader` 组件无法拖拽选中 dom 内容的问题 ([#729](https://github.com/sheinsight/shineout-next/pull/729))
+- 修复 `Cascader` 无法拖拽选中 dom 内容的问题 ([#729](https://github.com/sheinsight/shineout-next/pull/729))
 
 
 ## 3.3.6
 2024-09-02
 
 ### 🐞 BugFix
-- 修复 `Cascader` 组件 `onChange` 第二参数缺失的问题([#632](https://github.com/sheinsight/shineout-next/pull/632))
+- 修复 `Cascader` 的 `onChange` 第二参数缺失的问题([#632](https://github.com/sheinsight/shineout-next/pull/632))
 
 ## 3.3.3
 2024-08-15

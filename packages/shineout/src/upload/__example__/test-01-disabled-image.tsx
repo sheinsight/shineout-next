@@ -1,8 +1,8 @@
 /**
  * cn - 图片禁用
- *    --
+ *    -- 设置 `disabled` 禁用上传
  * en - Image Disabled
- *    --
+ *    -- Set `disabled` to disable upload
 
  */
 import React from 'react';
@@ -30,6 +30,7 @@ const App: React.FC = () => {
           data: data,
         };
       }}
+      style={{ width: 400 }}
     />
   );
 };

@@ -12,18 +12,22 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const formClasses = jssStyle?.form?.();
   const modalFormContext = useFormFooter();
 
+  const isControl = 'value' in props
+
   const inputAbleParams = {
     value: props.value,
     onChange: props.onChange,
     defaultValue: props.defaultValue,
-    control: 'value' in props,
+    control: isControl,
     beforeChange: undefined,
     reserveAble: false,
   };
 
+  const formElRef = useRef<HTMLFormElement>(null)
+
   const { value, onChange } = useInputAble(inputAbleParams);
 
-  const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange });
+  const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange, formElRef: formElRef, isControl });
 
   const validate = usePersistFn(() => {
     return formFunc.validateFields();
@@ -104,7 +108,6 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     style,
   })
 
-  const formElRef = useRef<HTMLFormElement>(null)
   useEffect(() => {
     if (formElRef.current instanceof HTMLFormElement) {
       formElRef.current.addEventListener('submit', formProps.onSubmit)

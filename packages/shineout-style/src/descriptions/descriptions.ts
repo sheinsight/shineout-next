@@ -94,6 +94,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
   valueInline: {
     paddingRight: token.descriptionsLabelPaddingRight,
     textAlign: 'left',
+    wordBreak: 'break-all',
     boxSizing: 'border-box',
     color: token.descriptionsValueColor,
   },
@@ -110,10 +111,9 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
   inlineHorizontal: {
     '& $item': {
       display: 'flex',
-      alignItems: 'center',
     },
     '& $cell': {
-      verticalAlign: 'middle',
+      verticalAlign: 'top',
     },
     '& $row': {
       '&>td': {

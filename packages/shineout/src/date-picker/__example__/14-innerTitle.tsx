@@ -9,11 +9,9 @@ import { DatePicker } from 'shineout';
 
 const App: React.FC = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <DatePicker size="small" type='date' innerTitle='Select date' clearable showSelNow width={240} />
     <DatePicker type='date' innerTitle='Select date' clearable showSelNow width={240} />
-
-    <DatePicker range innerTitle='Select date' clearable showSelNow width={240} />
-
-    <DatePicker type='datetime' inputable clearable innerTitle='Select datetime' showSelNow width={240} />
+    <DatePicker size="large" type='date' innerTitle='Select date' clearable showSelNow width={240} />
   </div>
 );
 

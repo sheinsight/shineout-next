@@ -47,6 +47,7 @@ export interface CollapseProps
    * @en Whether to enable collapse animation
    * @cn 是否开启折叠动画
    * @default true
+   * @version 3.6.0
    */
   animation?: boolean;
 }

@@ -79,7 +79,7 @@ const spinStyle: JsStyles<keyof SpinClasses> = {
     alignItems: 'center',
     justifyContent: 'center',
 
-    '&:after': {
+    '&:before': {
       content: '""',
       position: 'absolute',
       top: 0,

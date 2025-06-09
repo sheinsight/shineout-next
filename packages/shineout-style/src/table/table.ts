@@ -9,6 +9,7 @@ const resizeIndex = 8;
 const fixedFixedIndex = 10;
 const headerIndex = 12;
 const loadingIndex = 16;
+const shadowWidth = 12;
 
 export type TableClassType = keyof TableClasses;
 
@@ -44,9 +45,6 @@ const tableStyle: JsStyles<TableClassType> = {
         borderBottom: `1px solid ${token.tableCellBorderColor}`,
         boxSizing: 'border-box',
         lineHeight: token.lineHeightDynamic,
-        '&$cellFixedLeft, &$cellFixedRight': {
-          zIndex: fixedIndex,
-        },
         '$bordered&': {
           '&::after': {
             content: '""',
@@ -54,7 +52,6 @@ const tableStyle: JsStyles<TableClassType> = {
             zIndex: cellBaseIndex,
             top: 0,
             bottom: 0,
-            background: token.tableCellBorderColor,
             borderLeft: `1px solid ${token.tableCellBorderColor}`,
           },
           '[dir=ltr]&::after': {
@@ -158,6 +155,7 @@ const tableStyle: JsStyles<TableClassType> = {
     },
     '&::after': {
       position: 'absolute',
+      zIndex: fixedFixedIndex + 3,
       content: '""',
       display: 'block',
       bottom: 0,
@@ -166,16 +164,28 @@ const tableStyle: JsStyles<TableClassType> = {
       borderTop: `1px solid ${token.tableCellBorderColor}`,
     },
   },
-  headMirrorScroller: {
+  mirrorScroller: {
     overflow: 'scroll hidden',
+
+    '[data-soui-sticky="false"] &': {
+      display: 'none',
+    }
   },
   headWrapper: {
     flex: '0 0 auto',
-    overflow: 'hidden',
+    // overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTheadBackgroundColor,
     '$sticky > &': {
       zIndex: headerIndex,
+    },
+    '& table th': {
+      zIndex: fixedFixedIndex + 1,
+      '&$cellFixedLeft': {
+        position: 'sticky',
+        top: 'auto',
+        zIndex: fixedFixedIndex + 2,
+      },
     },
   },
   bodyWrapper: {
@@ -193,20 +203,45 @@ const tableStyle: JsStyles<TableClassType> = {
         },
       },
       '& td': {
-        zIndex: fixedIndex,
         '&$cellFixedLeft': {
           position: 'sticky',
           top: 'auto',
           zIndex: fixedIndex + 1,
         },
       }
+    },
+    '$wrapper & table > tfoot': {
+      position: 'sticky',
+      bottom: 0,
+      zIndex: fixedFixedIndex + 1,
     }
   },
   footWrapper: {
     flex: '0 0 auto',
-    overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTfootBackgroundColor,
+
+    "[data-soui-role='scroll'] &": {
+      position: 'sticky',
+      bottom: 0,
+      zIndex: fixedIndex + 1,
+    }
+  },
+  scrollY: {
+    '&$headWrapper, &$footWrapper': {
+      overflow: 'hidden scroll',
+      ...customScrollBar({ background: 'transparent' }),
+    },
+  },
+  scrollX: {
+    '&$headWrapper, &$footWrapper': {
+      overflowX: 'hidden',
+    },
+  },
+  emptyHeader: {
+    position: 'sticky',
+    top: 0,
+    zIndex: 1,
   },
   emptyWrapper: {
     minHeight: '170px',
@@ -215,17 +250,14 @@ const tableStyle: JsStyles<TableClassType> = {
     position: 'sticky',
     left: 0,
     top: 0,
-    right: 0,
     justifyContent: 'center',
+    textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
     borderBottom: `1px solid ${token.tableCellBorderColor}`,
   },
-  scrollY: {
-    '&$headWrapper, &$footWrapper': {
-      overflowY: 'scroll',
-      ...customScrollBar({ background: 'transparent' }),
-    },
+  emptyNoBorder: {
+    borderBottom: 'none',
   },
   cellFixedLeft: {
     position: 'sticky',
@@ -270,16 +302,16 @@ const tableStyle: JsStyles<TableClassType> = {
         position: 'absolute',
         top: 0,
         bottom: -1,
-        width: '5px',
+        width: `${shadowWidth}px`,
         pointerEvents: 'none',
+        boxShadow: 'inset 8px 0 10px -6px rgba(2,11,24,.1)',
+        // border: 'none',
       },
       '&[dir=ltr]::after': {
-        right: '-5px',
-        background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+        right: `-${shadowWidth}px`,
       },
       '&[dir=rtl]::after': {
-        left: '-5px',
-        background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
+        left: `-${shadowWidth}px`,
       },
     },
     '& table': {
@@ -304,16 +336,15 @@ const tableStyle: JsStyles<TableClassType> = {
         position: 'absolute',
         top: 0,
         bottom: 0,
-        width: '5px',
+        width: `${shadowWidth}px`,
         pointerEvents: 'none',
+        boxShadow: 'inset -8px 0 10px -6px rgba(2,11,24,.1)',
       },
       '&[dir=rtl]::before': {
-        right: '-5px',
-        background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
+        right: `-${shadowWidth}px`,
       },
       '&[dir=ltr]::before': {
-        left: '-5px',
-        background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
+        left: `-${shadowWidth}px`,
       },
     },
     '& table': {
@@ -335,6 +366,78 @@ const tableStyle: JsStyles<TableClassType> = {
     display: 'inline-flex',
     alignItems: 'center',
   },
+
+  hasFilter: {
+    display: 'inline-flex',
+    alignItems: 'center',
+  },
+
+  filterIconContainer: {
+    '&:hover $filterIcon': {
+      color: token.tableFilterIconHoverColor,
+    }
+  },
+  filterIcon: {
+    width: token.tableFilterIconSize,
+    height: token.tableFilterIconSize,
+    color: token.tableFilterIconColor,
+
+    '& > svg': {
+      display: 'block',
+    }
+  },
+
+  filterActive: {
+    '& $filterIcon, &:hover $filterIcon': {
+      color: token.tableFilterIconActiveColor,
+    },
+  },
+
+  filterContainer: {
+    minWidth: '120px',
+  },
+  filterHeader:{
+    padding: `${token.tableFilterHeaderPaddingY} ${token.tableFilterHeaderPaddingX}`,
+    '& + $filterBody': {
+      paddingTop: 0,
+    }
+  },
+  filterBody: {
+    padding: `${token.tableFilterBodyPaddingY} ${token.tableFilterBodyPaddingX}`,
+    maxHeight: '300px',
+    overflow: 'auto',
+  },
+  filterFooter: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: `${token.tableFilterFooterPaddingY} ${token.tableFilterFooterPaddingX}`,
+    borderTop: `1px solid ${token.tableFilterFooterBorderColor}`,
+  },
+
+  filterInput: {
+    cursor: 'pointer',
+  },
+  filterInputIcon: {
+    color: token.tableFilterInputIconColor,
+    flexShrink: 0,
+    width: token.tableFilterInputIconSize,
+    height: token.tableFilterInputIconSize,
+    marginRight: token.tableFilterInputIconMarginRight,
+    '& > svg': {
+      display: 'block',
+    }
+  },
+
+  filterRadio: {
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+
+    '& > div': {
+      marginRight: 0,
+    }
+  },
+
   sorterContainer: {
     minWidth: '14px',
     width: '14px',

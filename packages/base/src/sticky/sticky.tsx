@@ -1,6 +1,6 @@
 import { usePersistFn, util, useResize, useRender } from '@sheinx/hooks';
 import { createPortal } from 'react-dom';
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { StickyProps } from './sticky.type';
 
 const { cssSupport, devUseWarning } = util;
@@ -358,6 +358,12 @@ const Sticky = (props: StickyProps) => {
     return cancelParentObserver;
   }, [props.parent, css, context.target, top, bottom]);
 
+  useEffect(() => {
+    if (props.onChange) {
+      props.onChange(show);
+    };
+  }, [show]);
+
   // 纯css方法 直接使用css
   // js方法
   // 1. 不指定滚动容器 基于document.body 使用fixed + js计算
@@ -401,6 +407,7 @@ const Sticky = (props: StickyProps) => {
           ...(show && parentVisible ? hideStyle : {}),
         }}
         ref={handleElementRef}
+        {...util.getDataAttribute({ sticky: show && parentVisible ? 'true' : 'false'})}
       >
         {children}
       </div>

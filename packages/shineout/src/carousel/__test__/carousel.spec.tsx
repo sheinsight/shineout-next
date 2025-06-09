@@ -34,7 +34,7 @@ const originItemClasses = [
   'indicatorTypeCircle',
   'indicatorTypeNumber',
   'indicatorTypeLine',
-  'indicatorTypeSlider',
+  'indicatorTypeBar',
   'arrowHover',
   'arrowLeft',
   'arrowRight',
@@ -57,7 +57,7 @@ const {
   indicatorTypeCircle,
   indicatorTypeNumber,
   indicatorTypeLine,
-  indicatorTypeSlider,
+  indicatorTypeBar,
   indicator,
   arrowWrapper,
   arrowHover,
@@ -258,9 +258,9 @@ describe('Carousel[Type]', () => {
   const indicatorTypeClassNameMap: { [key: string]: string } = {
     line: indicatorTypeLine,
     number: indicatorTypeNumber,
-    slider: indicatorTypeSlider,
+    bar: indicatorTypeBar,
   };
-  test.each(['line', 'number', 'slider'])('should render when set indicatorType is %s', (type) => {
+  test.each(['line', 'number', 'bar'])('should render when set indicatorType is %s', (type) => {
     const { container } = render(<CarouselType indicatorType={type} />);
     classTest(container.querySelector(indicatorWrapper)!, indicatorTypeClassNameMap[type]);
   });

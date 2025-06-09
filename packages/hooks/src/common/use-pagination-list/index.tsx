@@ -26,8 +26,15 @@ const usePaginationList = (props: ListPaginationProps) => {
   const getPager = (data: any[]) => {
     if (!shouldPage) return {};
     const total = props.total ?? (Array.isArray(data) ? data.length : 0);
+
+    let finalCurrent = props.current || current;
+    const maxCurrent = Math.ceil(total / (props.pageSize || pageSize));
+    if (current > maxCurrent) {
+      finalCurrent = 1;
+    }
+
     return {
-      current: props.current || current,
+      current: finalCurrent,
       pageSize: props.pageSize || pageSize,
       total,
       disabled: !!props.loading,

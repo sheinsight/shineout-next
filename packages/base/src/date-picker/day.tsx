@@ -138,7 +138,8 @@ const Day = (props: DayProps) => {
   };
 
   const renderFooter = () => {
-    const showLeft = props.type === 'datetime' && (props.rangeDate?.[0] || props.rangeDate?.[1]);
+    const showLeft =
+      (props.type === 'datetime' || props.type === 'date');
 
     const timeStr = func.getTimeStr();
     if (!showLeft && !props.showSelNow) return null;
@@ -152,6 +153,9 @@ const Day = (props: DayProps) => {
     }
 
     const showNeedConfirm = props.needConfirm && !props.range;
+
+    if(props.type !== 'datetime' && props.type !== 'date' && !showNeedConfirm) return null;
+
     return (
       <div
         className={styles?.pickerFooter}
@@ -166,7 +170,6 @@ const Day = (props: DayProps) => {
             className={classNames(
               styles?.pickerFooterTime,
               styles?.datetime,
-              !timeStr && styles?.datetimeHide,
             )}
             style={{ paddingRight: showNeedConfirm ? 0 : undefined }}
           >
@@ -174,20 +177,20 @@ const Day = (props: DayProps) => {
               <>
                 <span>{Icons.datepicker.Time}</span>
                 <TimePicker {...props} showSelNow={false} showTitle={false} format={format} />
-                <span>{timeStr}</span>
+                <span>{timeStr || '00:00:00'}</span>
               </>
             }
           </div>
         )}
         {props.showSelNow && (
           <div
-            className={styles?.pickerFooterNow}
+            className={classNames(styles?.pickerFooterNow)}
             style={{
               marginRight: showNeedConfirm ? 'auto' : undefined,
-              paddingLeft: showNeedConfirm ? 6 : undefined,
+              paddingLeft: showNeedConfirm ? (props.type === 'date' ? 22 : 6) : undefined,
             }}
           >
-            {props.showSelNow && props.type === 'date' && (
+            {props.type === 'date' && (
               <Link
                 type='primary'
                 jssStyle={jssStyle}
@@ -197,7 +200,7 @@ const Day = (props: DayProps) => {
                 {getLocale(locale, 'now')}
               </Link>
             )}
-            {props.showSelNow && props.type === 'datetime' && (
+            {props.type === 'datetime' && (
               <Link
                 type='primary'
                 jssStyle={jssStyle}

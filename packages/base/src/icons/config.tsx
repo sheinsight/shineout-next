@@ -110,11 +110,19 @@ const config = {
     SortDown: icons.SortDesc,
     Expand: icons.Expand,
     Collapse: icons.Shrink,
+    Filter: icons.Filter,
+    Search: icons.Search,
   },
   tabs: {
     Pre: icons.ArrowLeft,
     Next: icons.ArrowRight,
     CollapseArrow: icons.ArrowLeft,
+  },
+  tag: {
+    Close: icons.Close,
+  },
+  textarea: {
+    Close: icons.CloseFill,
   },
   transfer: {
     DeleteAll: icons.Delete,
@@ -127,6 +135,7 @@ const config = {
     LineExpand: icons.Expand,
     LineCollapse: icons.Shrink,
     Expand: icons.ArrowDownFill,
+    Leaf: icons.File,
   },
   treeSelect: {
     More: icons.More,

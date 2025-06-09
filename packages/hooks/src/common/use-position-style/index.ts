@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
-import { useCheckElementPosition } from './check-position'
+import { useCheckElementPosition, type Position } from './check-position'
 import { useCheckElementBorderWidth } from './check-border';
+import { useCheckElementSize } from './check-element-size'
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { getCurrentCSSZoom } from '../../utils';
@@ -75,7 +76,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
-  const [arrayStyle, setArrayStyle] = useState<React.CSSProperties>({});
 
   const { current: context } = React.useRef({
     containerRect: { left: 0, width: 0 } as DOMRect,
@@ -83,11 +83,14 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     parentRect: { left: 0, width: 0 } as DOMRect,
     popUpHeight: 0,
     popUpWidth: 0,
+    prevParentPosition: null as (Position | null),
   });
 
   const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
 
   const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal'});
+
+  const popupElSize = useCheckElementSize(popupElRef, { enable: show });
 
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
@@ -152,7 +155,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       position: 'absolute',
       zIndex,
     };
-    const arrayStyle: React.CSSProperties = {};
 
     if (fixedWidth) {
       const widthKey = fixedWidth === 'min' ? 'minWidth' : 'width';
@@ -172,17 +174,13 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
     context.containerRect = containerRect;
     context.containerScroll = containerScroll;
-    console.log('======================')
-    console.log('targetPosition: >>', targetPosition)
-    console.log('======================')
     if (verticalPosition.includes(targetPosition)) {
       const [v, h] = targetPosition.split('-');
       let overRight = 0;
       let overLeft = 0;
       if (h === 'left') {
-        style.left = rect.left - containerRect.left + containerScroll.left;
+        style.left = rect.left - containerRect.left + containerScroll.left - (offset ? offset[0] : 0);
         style.transform = '';
-        arrayStyle.left = `8px`;
         if (adjust) {
           overRight = rect.left + context.popUpWidth - bodyRect.right + containerScrollBarWidth;
           if (style.left < 0 && targetRect) {
@@ -191,18 +189,10 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         }
       } else if (h === 'right') {
         style.right =
-          containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left;
+          containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left - (offset ? offset[0] : 0);
 
         style.left = 'auto';
         style.transform = '';
-        arrayStyle.right = `8px`;
-        if (adjust) {
-          overLeft = bodyRect.left - (rect.right - context.popUpWidth);
-          if (style.right < 0 && targetRect) {
-            style.left = bodyRect.width - targetRect.width;
-            style.right = 'auto';
-          }
-        }
       } else {
         // 居中对齐
         style.left = rect.left + rect.width / 2 - containerRect.left + containerScroll.left;
@@ -216,9 +206,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
             containerScrollBarWidth;
           overLeft = bodyRect.left - (rect.left + rect.width / 2 - context.popUpWidth / 2);
         }
-        if (targetRect) {
-          arrayStyle.left = `${targetRect.width / 2 - 5.9}px`;
-        }
       }
       if (adjust) {
         // 调节左右溢出
@@ -227,64 +214,50 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
           (style.left as number) -= overRight;
           // 扣除触发器距离页面右侧的距离，以保证从右侧弹出的窗口最右边对齐触发器最右边
           (style.left as number) -= toRightDistance;
-          if (targetRect) {
-            arrayStyle.left = `${targetRect?.width - context.parentRect.width / 2 - 5.9}px`;
-          }
         }
         if (overLeft > 0) {
           (style.left as number) += overLeft;
-
-          arrayStyle.left = `${rect.width / 2 - 5.9}px`;
         }
       }
       if (v === 'bottom') {
         style.top = rect.bottom - containerRect.top + containerScroll.top + popupGap;
-        if (targetRect) {
-          arrayStyle.top = `${0}px`;
-        }
       } else {
         style.top = rect.top - containerRect.top + containerScroll.top - popupGap;
         style.transform += 'translateY(-100%)';
-        if (targetRect) {
-          arrayStyle.top = `${targetRect.height - 5.9 - 4}px`;
-        }
       }
     } else if (horizontalPosition.includes(targetPosition)) {
       const [h, v] = targetPosition.split('-');
       if (v === 'top') {
         style.top = rect.top - containerRect.top + containerScroll.top - (offset ? offset[1] : 0);
         style.transform = '';
-        arrayStyle.top = `8px`;
       } else if (v === 'bottom') {
         style.top = rect.bottom - containerRect.top + containerScroll.top + (offset ? offset[1] : 0);
-        arrayStyle.bottom = `8px`;
         style.transform = 'translateY(-100%)';
       } else {
         // 居中对齐
         style.top = rect.top - containerRect.top + containerScroll.top + rect.height / 2;
-        if (targetRect) {
-          arrayStyle.top = `${targetRect.height / 2 - 5.9 / 2}px`;
-        }
+
         style.transform = 'translateY(-50%)';
       }
       if (h === 'right') {
         style.left = rect.right - containerRect.left + containerScroll.left + popupGap;
       } else {
-        style.left = rect.left - containerRect.left + containerScroll.left - popupGap;
-        arrayStyle.right = `0px`;
-        style.transform += ' translateX(-100%)';
+        style.right = containerRect.right - rect.left;
       }
     } else if (position === 'cover') {
       style.top = rect.top - containerRect.top + containerScroll.top;
       style.left = rect.left - containerRect.left + containerScroll.left;
     }
-    return { style, arrayStyle };
+    return { style };
   };
 
   const getAbsoluteStyle = (position: string) => {
     if (!parentElRef.current) return { style: hideStyle };
     const rect = context.parentRect;
-    if (!show && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
+
+    const needCheck = !show || !shallowEqual(context.prevParentPosition, parentElNewPosition)
+
+    if (needCheck && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
         rect.bottom < visibleRect.top ||
@@ -295,7 +268,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         return { style: hideStyle };
       }
     }
-    const { style, arrayStyle } = getAbsolutePositionStyle(rect, position);
+    const { style } = getAbsolutePositionStyle(rect, position);
 
     const currentCSSZoom = getCurrentCSSZoom()
     if (currentCSSZoom && currentCSSZoom !== 1) {
@@ -312,12 +285,11 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.bottom = style.bottom * (1 / currentCSSZoom);
       }
     }
-    return { style, arrayStyle };
+    return { style };
   };
 
   const getStyle = () => {
     let newStyle: React.CSSProperties = {};
-    let newArrayStyle: React.CSSProperties | undefined = {};
     const { position, absolute } = config || {};
     if (!position || !show || !parentElRef.current) return { newStyle: style };
     context.parentRect = parentElRef.current.getBoundingClientRect();
@@ -333,23 +305,26 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     if (!absolute) {
       newStyle = getPositionStyle(realPosition, { popupGap, zIndex, fixedWidth, parentBorderWidth: parentElBorderWidth });
     } else {
-      const { style: nextStyle, arrayStyle: nextArrayStyle } = getAbsoluteStyle(realPosition)!;
+      const { style: nextStyle } = getAbsoluteStyle(realPosition)!;
       newStyle = nextStyle;
-      newArrayStyle = nextArrayStyle;
     }
     // for animation
     if (realPosition.indexOf('top') === 0) {
       newStyle.transformOrigin = 'center bottom';
+    } else if(realPosition.indexOf('bottom') === 0){
+      newStyle.transformOrigin = 'center top';
     }
-    return { newStyle, newArrayStyle };
+    return { newStyle };
   };
 
   const updateStyle = usePersistFn(() => {
-    const { newStyle, newArrayStyle } = getStyle();
+    const { newStyle } = getStyle();
     if (newStyle && !shallowEqual(style, newStyle)) {
       setStyle(newStyle);
-      setArrayStyle(newArrayStyle || {});
     }
+
+    // 当父元素的滚动容器滚动时，判断是否需要更新弹出层位置，包括是否隐藏弹出层（通过hideStyle隐藏，不是show状态）
+    context.prevParentPosition = parentElNewPosition;
   });
 
   useEffect(updateStyle, [
@@ -358,10 +333,11 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     absolute,
     updateKey,
     fixedWidth,
-    parentElNewPosition
+    parentElNewPosition,
+    popupElSize,
   ]);
 
-  return { style, arrayStyle };
+  return { style };
 };
 
 export default usePositionStyle;

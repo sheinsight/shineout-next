@@ -632,6 +632,76 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#FAF4E3'
+   * @description 浅色背景
+   */
+  'Brown-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#4D2100'
+   * @description -10
+   */
+  'Brown-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#EBDDBC'
+   * @description 聚焦
+   */
+  'Brown-2': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#D6C094'
+   * @description 禁用
+   */
+  'Brown-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#C2A470'
+   * @description 悬浮
+   */
+  'Brown-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#AD8951'
+   * @description 悬浮
+   */
+  'Brown-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#996F37'
+   * @description 常规
+   */
+  'Brown-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#865824'
+   * @description 点击
+   */
+  'Brown-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#734415'
+   * @description -8
+   */
+  'Brown-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#603109'
+   * @description -9
+   */
+  'Brown-9': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#F8EEFE'
    * @description 浅色背景
    */
@@ -961,8 +1031,15 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#666C7C'
+   * @description
+   */
+  'Neutral-fill-7': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#B3B7C1'
-   * @description 点击
+   * @description
    */
   'Neutral-fill-5': string;
   /**

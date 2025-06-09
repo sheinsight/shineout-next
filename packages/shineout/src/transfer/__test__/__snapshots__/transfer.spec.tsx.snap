@@ -48,7 +48,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -60,7 +60,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
           >
             <div
               data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+              style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
             >
               <div
                 style="flex-grow: 1; width: 100%;"
@@ -428,7 +428,9 @@ exports[`Transfer[Base] should render correctly  1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+              clip-rule="evenodd"
+              d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+              fill-rule="evenodd"
             />
           </svg>
         </button>
@@ -448,7 +450,9 @@ exports[`Transfer[Base] should render correctly  1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+              clip-rule="evenodd"
+              d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+              fill-rule="evenodd"
             />
           </svg>
         </button>
@@ -495,7 +499,7 @@ exports[`Transfer[Base] should render correctly  1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -759,7 +763,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -771,7 +775,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -1469,7 +1473,9 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            clip-rule="evenodd"
+            d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -1489,7 +1495,9 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            clip-rule="evenodd"
+            d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -1536,7 +1544,7 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -1800,7 +1808,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -1812,7 +1820,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
           >
             <div
               data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+              style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
             >
               <div
                 style="flex-grow: 1; width: 100%;"
@@ -2180,7 +2188,9 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+              clip-rule="evenodd"
+              d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+              fill-rule="evenodd"
             />
           </svg>
         </button>
@@ -2200,7 +2210,9 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+              clip-rule="evenodd"
+              d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+              fill-rule="evenodd"
             />
           </svg>
         </button>
@@ -2247,7 +2259,7 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -2519,7 +2531,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
           </span>
         </div>
         <div
-          class="soui-transfer-spin-container soui-spin-container"
+          class="soui-transfer-spin-container soui-spin soui-spin-container"
         >
           <div
             class="soui-transfer-list"
@@ -2531,7 +2543,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
             >
               <div
                 data-soui-role="scroll-container"
-                style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+                style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
               >
                 <div
                   style="flex-grow: 1; width: 100%;"
@@ -2971,7 +2983,7 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
           </span>
         </div>
         <div
-          class="soui-transfer-spin-container soui-spin-container"
+          class="soui-transfer-spin-container soui-spin soui-spin-container"
         >
           <div
             class="soui-transfer-list"
@@ -3253,7 +3265,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-input"
@@ -3287,7 +3299,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -3655,7 +3667,9 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            clip-rule="evenodd"
+            d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -3675,7 +3689,9 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            clip-rule="evenodd"
+            d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -3722,7 +3738,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-input"
@@ -4007,7 +4023,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-input-wrapper"
@@ -4047,7 +4063,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -4415,7 +4431,9 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            clip-rule="evenodd"
+            d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -4435,7 +4453,9 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            clip-rule="evenodd"
+            d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -4482,7 +4502,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-input-wrapper"
@@ -4774,7 +4794,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -4786,7 +4806,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -5138,7 +5158,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
@@ -5162,7 +5182,9 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            clip-rule="evenodd"
+            d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -5182,7 +5204,9 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            clip-rule="evenodd"
+            d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -5230,7 +5254,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -5447,7 +5471,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
@@ -5502,7 +5526,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -5514,7 +5538,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -5866,7 +5890,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
         class="soui-spin-loading"
       >
         <div
-          class="soui-transfer-spin-container soui-spin soui-spin-spin soui-spin-ring"
+          class="soui-spin soui-spin-spin soui-spin-ring"
           style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
         />
       </div>
@@ -5890,7 +5914,9 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            clip-rule="evenodd"
+            d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -5910,7 +5936,9 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            clip-rule="evenodd"
+            d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -5957,7 +5985,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -6221,7 +6249,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -6233,7 +6261,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
           >
             <div
               data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+              style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
             >
               <div
                 style="flex-grow: 1; width: 100%;"
@@ -6601,7 +6629,9 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+              clip-rule="evenodd"
+              d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+              fill-rule="evenodd"
             />
           </svg>
         </button>
@@ -6621,7 +6651,9 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+              clip-rule="evenodd"
+              d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+              fill-rule="evenodd"
             />
           </svg>
         </button>
@@ -6668,7 +6700,7 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -6930,7 +6962,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
       />
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -6942,7 +6974,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -7218,16 +7250,14 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              clip-rule="evenodd"
-              d="M14.0525 2C14.4425 2 14.797 2.22679 14.9604 2.58094L16.076 4.999L20 5C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H19V20C19 21.1046 18.1046 22 17 22H7C5.89543 22 5 21.1046 5 20V7H4C3.44772 7 3 6.55228 3 6C3 5.44772 3.44772 5 4 5L7.923 4.999L9.03957 2.58094C9.20302 2.22679 9.55747 2 9.94753 2H14.0525ZM16.1423 7.00015L7.858 7L7.75838 7.00673C7.2993 7.06005 6.93505 7.4243 6.88173 7.88338L6.875 8V19.2222C6.875 19.7351 7.26104 20.1577 7.75838 20.2155L7.875 20.2222H16.125C16.6378 20.2222 17.0605 19.8362 17.1183 19.3388L17.125 19.2222V8C17.125 7.4535 16.6866 7.00939 16.1423 7.00015ZM10 10C10.5523 10 11 10.4477 11 11V16C11 16.5523 10.5523 17 10 17C9.44772 17 9 16.5523 9 16V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V16C15 16.5523 14.5523 17 14 17C13.4477 17 13 16.5523 13 16V11C13 10.4477 13.4477 10 14 10ZM13.486 4H10.5089C10.3839 4 10.2648 4.04668 10.1737 4.12897L10.111 4.1972L9.88052 4.5C9.83926 4.55421 9.81692 4.62046 9.81692 4.68859C9.81692 4.83601 9.91935 4.9595 10.0569 4.99178L10.1283 5H13.8697C13.9382 5 14.0047 4.97742 14.0589 4.93577C14.1757 4.8462 14.2112 4.69006 14.1532 4.56153L14.1163 4.5L13.8827 4.1956C13.7881 4.07229 13.6415 4 13.486 4Z"
-              fill-rule="evenodd"
+              d="M17.002 5.0957H20.002C20.5542 5.0957 21.002 5.54342 21.002 6.0957C21.002 6.64799 20.5542 7.0957 20.002 7.0957V20.9215C20.002 21.8927 18.9913 22.9215 18.002 22.9215H6.00195C4.99391 22.9215 4.00195 21.9515 4.00195 20.9215V7.0957C3.44967 7.0957 3.00195 6.64799 3.00195 6.0957C3.00195 5.54342 3.44967 5.0957 4.00195 5.0957H7.00195V3.0957C7.00195 2.09329 8.00911 1.0957 9.00195 1.0957H15.002C16.0252 1.0957 17.002 2.0957 17.002 3.0957V5.0957ZM18.002 7.0957H6.00195V19.9215C6.00195 20.4738 6.44967 20.9215 7.00195 20.9215H17.002C17.5542 20.9215 18.002 20.4738 18.002 19.9215V7.0957ZM9.00195 12.0001C9.00195 11.4479 9.44967 11.0001 10.002 11.0001C10.5542 11.0001 11.002 11.4479 11.002 12.0001V16.0001C11.002 16.5524 10.5542 17.0001 10.002 17.0001C9.44967 17.0001 9.00195 16.5524 9.00195 16.0001V12.0001ZM13.002 12.0001C13.002 11.4479 13.4497 11.0001 14.002 11.0001C14.5542 11.0001 15.002 11.4479 15.002 12.0001V16.0001C15.002 16.5524 14.5542 17.0001 14.002 17.0001C13.4497 17.0001 13.002 16.5524 13.002 16.0001V12.0001ZM9.00195 3.0957V5.0957H15.002V3.0957H9.00195Z"
             />
           </svg>
         </span>
       </span>
     </div>
     <div
-      class="soui-transfer-spin-container soui-spin-container"
+      class="soui-transfer-spin-container soui-spin soui-spin-container"
     >
       <div
         class="soui-transfer-list"
@@ -7239,7 +7269,7 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
         >
           <div
             data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+            style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
           >
             <div
               style="flex-grow: 1; width: 100%;"
@@ -7265,10 +7295,10 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                           aria-hidden="true"
                           fill="currentColor"
                           focusable="false"
-                          viewBox="0 0 16 16"
+                          viewBox="0 0 24 24"
                         >
                           <path
-                            d="M3.73895 2.81241L3.80175 2.86787L8 7.05665L12.2379 2.81922C12.4983 2.55888 12.9204 2.55888 13.1808 2.81922C13.4211 3.05955 13.4396 3.4377 13.2362 3.69923L13.1808 3.76203L8.94334 7.99998L13.1376 12.1948C13.398 12.4552 13.398 12.8773 13.1376 13.1376C12.8973 13.3779 12.5192 13.3964 12.2576 13.1931L12.1948 13.1376L8 8.94332L3.78745 13.1553C3.5271 13.4156 3.10499 13.4156 2.84464 13.1553C2.60432 12.9149 2.58583 12.5368 2.78918 12.2753L2.84464 12.2124L7.05667 7.99998L2.85894 3.81068C2.59859 3.55033 2.59859 3.12822 2.85894 2.86787C3.09927 2.62755 3.47742 2.60906 3.73895 2.81241Z"
+                            d="M5.60994 4.21871L5.70415 4.30189L12.0015 10.5851L18.3584 4.22893C18.749 3.8384 19.3821 3.8384 19.7727 4.22893C20.1331 4.58941 20.1609 5.15664 19.8558 5.54893L19.7727 5.64314L13.4165 12.0001L19.708 18.2923C20.0985 18.6828 20.0985 19.316 19.708 19.7065C19.3475 20.067 18.7803 20.0947 18.388 19.7897L18.2938 19.7065L12.0015 13.4151L5.68269 19.733C5.29217 20.1235 4.659 20.1235 4.26848 19.733C3.908 19.3725 3.88027 18.8053 4.18529 18.413L4.26848 18.3188L10.5865 12.0001L4.28994 5.71611C3.89941 5.32558 3.89941 4.69242 4.28994 4.30189C4.65042 3.94141 5.21765 3.91368 5.60994 4.21871Z"
                             fill="currentColor"
                           />
                         </svg>
@@ -7294,10 +7324,10 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                           aria-hidden="true"
                           fill="currentColor"
                           focusable="false"
-                          viewBox="0 0 16 16"
+                          viewBox="0 0 24 24"
                         >
                           <path
-                            d="M3.73895 2.81241L3.80175 2.86787L8 7.05665L12.2379 2.81922C12.4983 2.55888 12.9204 2.55888 13.1808 2.81922C13.4211 3.05955 13.4396 3.4377 13.2362 3.69923L13.1808 3.76203L8.94334 7.99998L13.1376 12.1948C13.398 12.4552 13.398 12.8773 13.1376 13.1376C12.8973 13.3779 12.5192 13.3964 12.2576 13.1931L12.1948 13.1376L8 8.94332L3.78745 13.1553C3.5271 13.4156 3.10499 13.4156 2.84464 13.1553C2.60432 12.9149 2.58583 12.5368 2.78918 12.2753L2.84464 12.2124L7.05667 7.99998L2.85894 3.81068C2.59859 3.55033 2.59859 3.12822 2.85894 2.86787C3.09927 2.62755 3.47742 2.60906 3.73895 2.81241Z"
+                            d="M5.60994 4.21871L5.70415 4.30189L12.0015 10.5851L18.3584 4.22893C18.749 3.8384 19.3821 3.8384 19.7727 4.22893C20.1331 4.58941 20.1609 5.15664 19.8558 5.54893L19.7727 5.64314L13.4165 12.0001L19.708 18.2923C20.0985 18.6828 20.0985 19.316 19.708 19.7065C19.3475 20.067 18.7803 20.0947 18.388 19.7897L18.2938 19.7065L12.0015 13.4151L5.68269 19.733C5.29217 20.1235 4.659 20.1235 4.26848 19.733C3.908 19.3725 3.88027 18.8053 4.18529 18.413L4.26848 18.3188L10.5865 12.0001L4.28994 5.71611C3.89941 5.32558 3.89941 4.69242 4.28994 4.30189C4.65042 3.94141 5.21765 3.91368 5.60994 4.21871Z"
                             fill="currentColor"
                           />
                         </svg>
@@ -7323,10 +7353,10 @@ exports[`Transfer[Base] should render correctly about simple 1`] = `
                           aria-hidden="true"
                           fill="currentColor"
                           focusable="false"
-                          viewBox="0 0 16 16"
+                          viewBox="0 0 24 24"
                         >
                           <path
-                            d="M3.73895 2.81241L3.80175 2.86787L8 7.05665L12.2379 2.81922C12.4983 2.55888 12.9204 2.55888 13.1808 2.81922C13.4211 3.05955 13.4396 3.4377 13.2362 3.69923L13.1808 3.76203L8.94334 7.99998L13.1376 12.1948C13.398 12.4552 13.398 12.8773 13.1376 13.1376C12.8973 13.3779 12.5192 13.3964 12.2576 13.1931L12.1948 13.1376L8 8.94332L3.78745 13.1553C3.5271 13.4156 3.10499 13.4156 2.84464 13.1553C2.60432 12.9149 2.58583 12.5368 2.78918 12.2753L2.84464 12.2124L7.05667 7.99998L2.85894 3.81068C2.59859 3.55033 2.59859 3.12822 2.85894 2.86787C3.09927 2.62755 3.47742 2.60906 3.73895 2.81241Z"
+                            d="M5.60994 4.21871L5.70415 4.30189L12.0015 10.5851L18.3584 4.22893C18.749 3.8384 19.3821 3.8384 19.7727 4.22893C20.1331 4.58941 20.1609 5.15664 19.8558 5.54893L19.7727 5.64314L13.4165 12.0001L19.708 18.2923C20.0985 18.6828 20.0985 19.316 19.708 19.7065C19.3475 20.067 18.7803 20.0947 18.388 19.7897L18.2938 19.7065L12.0015 13.4151L5.68269 19.733C5.29217 20.1235 4.659 20.1235 4.26848 19.733C3.908 19.3725 3.88027 18.8053 4.18529 18.413L4.26848 18.3188L10.5865 12.0001L4.28994 5.71611C3.89941 5.32558 3.89941 4.69242 4.28994 4.30189C4.65042 3.94141 5.21765 3.91368 5.60994 4.21871Z"
                             fill="currentColor"
                           />
                         </svg>
@@ -7467,7 +7497,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"
@@ -7479,7 +7509,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
           >
             <div
               data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; display: inline-flex; overflow: hidden; position: sticky; left: 0px; top: 0px;"
+              style="height: 100%; width: 100%; display: inline-flex; position: sticky; top: 0px;"
             >
               <div
                 style="flex-grow: 1; width: 100%;"
@@ -7847,7 +7877,9 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+              clip-rule="evenodd"
+              d="M10.0625 17.9999C9.67198 18.3904 9.03881 18.3904 8.64829 17.9999C8.25776 17.6094 8.25776 16.9762 8.64829 16.5857L13.2341 11.9999L8.64829 7.41414C8.25776 7.02361 8.25776 6.39045 8.64829 5.99992C9.03881 5.6094 9.67198 5.6094 10.0625 5.99992L15.3554 11.2928C15.7459 11.6833 15.7459 12.3165 15.3554 12.707L10.0625 17.9999Z"
+              fill-rule="evenodd"
             />
           </svg>
         </button>
@@ -7867,7 +7899,9 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+              clip-rule="evenodd"
+              d="M13.3115 6.00008C13.702 5.60955 14.3352 5.60955 14.7257 6.00008C15.1163 6.3906 15.1163 7.02377 14.7257 7.41429L10.14 12.0001L14.7257 16.5859C15.1163 16.9764 15.1163 17.6096 14.7257 18.0001C14.3352 18.3906 13.702 18.3906 13.3115 18.0001L8.01863 12.7072C7.62811 12.3167 7.62811 11.6835 8.01863 11.293L13.3115 6.00008Z"
+              fill-rule="evenodd"
             />
           </svg>
         </button>
@@ -7914,7 +7948,7 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
         />
       </div>
       <div
-        class="soui-transfer-spin-container soui-spin-container"
+        class="soui-transfer-spin-container soui-spin soui-spin-container"
       >
         <div
           class="soui-transfer-list"

@@ -154,17 +154,19 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
         >
           {shouldShowMore ? '+' : `+${itemsLength}`}
         </Tag>
-        <Popover
-          jssStyle={jssStyle}
-          className={compressedClassName}
-          visible={visible}
-          onVisibleChange={setVisible}
-        >
-          <div className={styles.moreWrapper} onClick={(e) => e.stopPropagation()}>
-            {compressed === 'no-repeat' ? null : before}
-            {after}
-          </div>
-        </Popover>
+        {compressed !== 'hide-popover' && (
+          <Popover
+            jssStyle={jssStyle}
+            className={compressedClassName}
+            visible={visible}
+            onVisibleChange={setVisible}
+          >
+            <div className={styles.moreWrapper} onClick={(e) => e.stopPropagation()}>
+              {compressed === 'no-repeat' ? null : before}
+              {after}
+            </div>
+          </Popover>
+        )}
       </React.Fragment>
     );
   };

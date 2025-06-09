@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
@@ -39,6 +39,7 @@ const Scroll = (props: scrollProps) => {
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef, timer: 100 });
   const height = h || defaultHeight;
+
   const config = useConfig();
   const isRtl = config.direction === 'rtl';
 
@@ -51,14 +52,15 @@ const Scroll = (props: scrollProps) => {
     height: '100%',
     width: '100%',
     display: 'inline-flex',
-    overflow: 'hidden',
     position: 'sticky',
-    [isRtl ? 'right' : 'left']: 0,
     top: 0,
   } as React.CSSProperties;
 
   // 当滚动容器的高度为 0 时，paddingTop 为 0，避免滚动条抖动现象
-  const paddingTop = height === 0 ? 0 : Math.max(0, Math.floor(scrollHeight - height));
+  const paddingTop = useMemo(() => {
+    return height === 0 ? 0 : Math.max(0, Math.floor(scrollHeight - height));
+  }, [scrollHeight, height]);
+
   const placeStyle = {
     paddingTop,
     width: scrollWidth,
@@ -79,10 +81,8 @@ const Scroll = (props: scrollProps) => {
 
   const handleScroll = usePersistFn((e: React.UIEvent) => {
     const { onScrollToBottom } = props;
-
     const target = e.currentTarget as HTMLDivElement;
     let { scrollLeft, scrollTop } = target;
-
     if (props.height && onScrollToBottom) {
       const realHeight = extractHeightValue(props.height);
       if (realHeight !== undefined) {
@@ -148,9 +148,7 @@ const Scroll = (props: scrollProps) => {
           ref={containerRef}
           onScroll={handleInnerScroll}
         >
-          <div style={{ flexGrow: 1, ...props.childrenStyle }}>
-            {props.children}
-          </div>
+          <div style={{ flexGrow: 1, ...props.childrenStyle }}>{props.children}</div>
         </div>
         <div style={placeStyle}>&nbsp;</div>
       </div>

@@ -120,6 +120,7 @@ const innerTitle: JsStyles<keyof InnerTitleClasses> = {
     '& $title': {
       position: 'relative',
       top: 0,
+      color: token.inputInnerPlaceFontColor,
     },
     '$animation$wrapperOpen & $title': {
       animation: `$movein ${moveTime} ease-in`,

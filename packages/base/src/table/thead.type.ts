@@ -1,5 +1,5 @@
 import { TableProps, ListDatum } from './table.type';
-import { useTableSort, useTableLayout } from '@sheinx/hooks';
+import { useTableSort, useTableFilter, useTableLayout } from '@sheinx/hooks';
 import type { TableFormatColumn, OptionalToRequired } from '@sheinx/hooks';
 
 export type UseTableLayoutResultFunc = ReturnType<typeof useTableLayout>['func'];
@@ -19,13 +19,12 @@ export interface TheadProps
       | 'sortDirections'
     >,
     Pick<ReturnType<typeof useTableSort<any>>, 'sortInfo' | 'onSorterChange'>,
+    Pick<ReturnType<typeof useTableFilter<any>>, 'filterInfo' | 'onFilterChange'>,
     Pick<UseTableLayoutResultFunc, 'dragCol' | 'resizeCol'> {
   columns: TableFormatColumn<any>[];
   isScrollY?: boolean;
   bordered?: boolean;
   colgroup: (number | string | undefined)[];
   datum: ListDatum;
-  fixLeftNum?: number;
-  fixRightNum?: number;
   treeColumnsName: string | undefined;
 }

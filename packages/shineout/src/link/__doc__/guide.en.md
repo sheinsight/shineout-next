@@ -1,17 +1,21 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+When a text hyperlink is needed to jump to a new page.
 
-## Related to layout
+## Common Uses
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### Commonly used to describe links to files, websites, or pages.
+![{maxWidth:100%}](001)
 
+## Component Pairing Usage
 
-## Component combination
+### Used in combination with Alert prompts.
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+![{maxWidth:100%}](002)
 
+## Recommended/Cautionary Examples
 
-## Recommended/Use with caution examples
+### When using links extensively, to reduce reading distraction, it is not recommended to apply theme colors or underline styles to all links. It is advised to use style three (default text in neutral color, highlight and underline only appear on mouse hover).
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![{maxWidth:100%}success](003)
+![{maxWidth:100%}warning](004)

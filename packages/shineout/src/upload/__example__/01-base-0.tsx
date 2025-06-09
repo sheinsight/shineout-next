@@ -23,6 +23,7 @@ const App: React.FC = () => {
       onChange={(v) => {
         setValue(v);
       }}
+      style={{ width: 400 }}
     >
       <Button mode={'outline'}>
         <UploadIcon style={{ marginInlineEnd: 4 }} />

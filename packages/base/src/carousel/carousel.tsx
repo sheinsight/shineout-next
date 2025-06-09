@@ -6,7 +6,7 @@ import Icons from '../icons';
 import { useConfig } from '../config';
 
 const Carousel = (props: CarouselProps) => {
-  const { animation = 'slide', indicatorPosition = 'center', indicatorType = 'circle' } = props;
+  const { animation = 'slide', indicatorPosition = 'center', indicatorType = 'circle', itemClassName, showIndicator = true } = props;
   const total = React.Children.toArray(props.children).length;
   const carouselClasses = props.jssStyle?.carousel?.();
   const config = useConfig();
@@ -37,6 +37,7 @@ const Carousel = (props: CarouselProps) => {
             carouselClasses?.item,
             index === current && carouselClasses?.itemCurrent,
             index === pre && pre !== current && carouselClasses?.itemPre,
+            itemClassName,
           );
           return <div className={itemClasses}>{child}</div>;
         })}
@@ -46,17 +47,17 @@ const Carousel = (props: CarouselProps) => {
   const renderArrow = () => {
     if (!props.showArrow) return null;
     const handlePrev = () => {
-      if(config.direction === 'ltr') {
+      if (config.direction === 'ltr') {
         func.backward()
-      }else {
+      } else {
         func.forward()
       }
       func.stop()
     }
     const handleNext = () => {
-      if(config.direction === 'ltr') {
+      if (config.direction === 'ltr') {
         func.forward()
-      }else {
+      } else {
         func.backward()
       }
       func.stop()
@@ -88,7 +89,7 @@ const Carousel = (props: CarouselProps) => {
   };
 
   const renderIndicator = () => {
-    if (total <= 1) return null;
+    if ((total <= 1 && typeof indicatorType !== 'function') || showIndicator === false) return null;
     let content = null;
     if (typeof indicatorType === 'function') {
       content = indicatorType(current, func.moveTo);
@@ -145,7 +146,7 @@ const Carousel = (props: CarouselProps) => {
           indicatorType === 'circle' && carouselClasses?.indicatorTypeCircle,
           indicatorType === 'number' && carouselClasses?.indicatorTypeNumber,
           indicatorType === 'line' && carouselClasses?.indicatorTypeLine,
-          indicatorType === 'slider' && carouselClasses?.indicatorTypeSlider,
+          indicatorType === 'bar' && carouselClasses?.indicatorTypeBar,
         )}
       >
         {content}

@@ -39,6 +39,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     dragImageStyle,
     dragSibling,
     unmatch,
+    ignoreSetFlat = false,
     dragHoverExpand,
     active: propActive,
     setActive: propSetActive,
@@ -57,6 +58,12 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     onDragOver,
     onDragStart,
     datum: propsDatum,
+    rowsInView = 20,
+    actionOnClick,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    tiledData,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    height,
     ...rest
   } = props;
 
@@ -98,6 +105,8 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
     [treeStyle.virtual]: virtual,
+    [treeStyle.sizeSmall]: props.size === 'small',
+    [treeStyle.sizeLarge]: props.size === 'large',
   });
 
   const getDragImageSelector = (data?: DataItem) => {
@@ -113,19 +122,6 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     }
 
     return props.height || styleHeight;
-  };
-
-  const handleUpdateExpanded = (expanded?: KeygenResult[]) => {
-    const tempExpandMap = new Set(expanded);
-    if (!expanded) return;
-
-    if (virtual) {
-      datum.expandedFlat(expanded);
-    }
-
-    datum.updateMap.forEach((update, id) => {
-      update('expanded', tempExpandMap.has(id));
-    });
   };
 
   const handleUpdateActive = (active?: KeygenResult, item?: DataItem) => {
@@ -150,6 +146,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   const handleToggle = (id: KeygenResult) => {
     let newExpanded;
+
     if (!expanded && onExpand) {
       onExpand([id]);
       return;
@@ -159,10 +156,10 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
     if (expandedArr.indexOf(id) >= 0) {
       newExpanded = expandedArr.filter((e) => e !== id);
-      if (virtual) datum.removeFlat(id);
+      if (virtual && !ignoreSetFlat) datum.removeFlat(id);
     } else {
       newExpanded = [...expandedArr, id];
-      if (virtual) datum.insertFlat(id);
+      if (virtual && !ignoreSetFlat) datum.insertFlat(id);
     }
     if (onExpand) onExpand(newExpanded);
   };
@@ -177,7 +174,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     const newData = produce(data, (draft) => {
       let node: any = draft;
       let temp: DataItem[];
-      let removeNode: () => void = () => {};
+      let removeNode: () => void = () => { };
       let offset = 0;
       current.indexPath.forEach((p, i) => {
         if (i < current.indexPath.length - 1) {
@@ -199,7 +196,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
           if (current.index <= target.index) {
             offset = -1;
           }
-          removeNode = () => {};
+          removeNode = () => { };
         }
       });
 
@@ -232,6 +229,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
           {...props}
           data={data}
           line={line}
+          rowsInView={rowsInView}
           expanded={expanded}
           height={realHeight}
           childrenKey={props.childrenKey || ('children' as ObjectKey<DataItem>)}
@@ -239,6 +237,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
           bindNode={datum.bindNode}
           onNodeClick={handleNodeClick}
           onToggle={handleToggle}
+          actionOnClick={actionOnClick}
         />
       );
     }
@@ -280,6 +279,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
         doubleClickExpand={doubleClickExpand}
         dragImageSelector={getDragImageSelector}
         dragImageStyle={dragImageStyle}
+        actionOnClick={actionOnClick}
       ></RootTree>
     );
   };
@@ -290,7 +290,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
       return;
     }
     if (!props.expanded) return;
-    handleUpdateExpanded(expanded);
+    datum.updateExpanded(expanded);
   }, [expanded]);
 
   useEffect(() => {
@@ -307,7 +307,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   return (
     <div ref={treeRef} className={rootClass} id={fieldId} {...rest}>
-      <Provider value={datum as any}>{renderList()}</Provider>
+      <Provider value={{...datum, size: props.size, leafIcon: props.leafIcon }}>{renderList()}</Provider>
     </div>
   );
 };

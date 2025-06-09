@@ -94,6 +94,18 @@ export interface AvatarTokens {
   avatarMaxFontWeight: string;
   /**
    * @type {string}
+   * @token Neutral-text-1
+   * @description 头像undefined鼠标移入时的颜色
+   */
+  avatarMaxHoverColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 头像undefined鼠标移入时的背景颜色
+   */
+  avatarMaxHoverBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Spacing-16
    * @description 头像undefined内边距
    */

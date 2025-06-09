@@ -1,7 +1,7 @@
 import React from 'react';
 import { KeygenResult, ObjectKey, TreeModeType, DisabledOption } from '@sheinx/hooks';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
-import { CommonType } from '../common/type';
+import { CommonClasses, CommonType } from '../common/type';
 import { TagClasses } from '../tag/tag.type';
 import { SelectClasses } from '../select/select.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
@@ -97,6 +97,7 @@ export type JssStyleType = {
   spin?: () => SpinClasses;
   input?: () => InputClasses;
   cascader?: () => CascaderClasses;
+  common?: () => CommonClasses;
 };
 
 export interface CascaderRef {
@@ -250,7 +251,7 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 将选中值合并。为'no-repeat'时弹出框中不重复展示值
    * @default false
    */
-  compressed?: boolean | 'no-repeat';
+  compressed?: boolean | 'no-repeat' | 'hide-popover';
   /**
    * @en Custom render compressed content
    * @cn 自定义渲染折叠内容，其中 data 为选中的数据，onRemove 为删除事件
@@ -389,4 +390,22 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @version 3.5.0
    */
   virtual?: boolean;
+  /**
+   * @en custom empty copy
+   * @cn 自定义 empty 文案。与 renderOptionList 搭配使用时，emptyText 设置为 false 后将忽略该功能，如需渲染空内容可在 renderOptionList 中处理
+   * @version 3.6.0
+   */
+  emptyText?: React.ReactNode | boolean;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
+  beforeChange?: (value: Value) => any;
+
+  /**
+   * @cn 开启搜索关键字高亮功能
+   * @en Whether to enable highlight feature
+   * @version 3.7.0
+   */
+  highlight?: boolean;
 }

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import { Tooltip, setToken } from 'shineout';
 import { CommonTokenMap } from '@sheinx/theme';
@@ -73,7 +73,7 @@ const FloatButton = () => {
       }
       setToken({
         selector: 'html',
-        token: CommonTokenMap,
+        token: CommonTokenMap as any,
       });
       localStorage.removeItem('shineout-theme-dark');
       setDarkActive('');
@@ -116,7 +116,7 @@ const FloatButton = () => {
       }
       setToken({
         selector: 'html',
-        token: CommonTokenMap,
+        token: CommonTokenMap as any,
       });
       localStorage.removeItem('shineout-theme-compact');
       setCompactActive('');

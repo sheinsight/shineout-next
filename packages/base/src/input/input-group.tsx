@@ -35,21 +35,23 @@ export default (props: InputGroupProps) => {
       ref.current.eventMap.set(child, {
         onFocus: (...args: any) => {
           setFocus(true);
-          ref.current.propsMap.get(child)?.onFocus?.(args);
+          ref.current.propsMap.get(child)?.onFocus?.(...args);
         },
         onBlur: (...args: any) => {
           setFocus(false);
-          ref.current.propsMap.get(child)?.onBlur?.(args);
+          ref.current.propsMap.get(child)?.onBlur?.(...args);
         },
       });
     }
     return ref.current.eventMap.get(child) || {};
   };
 
-  const { children, className, width, style } = props;
+  const { children, className, width, style, seperate, separate } = props;
+  const shouldSeparate = separate ?? seperate;
   const rootClass = classNames(
     className,
     inputStyle?.group,
+    shouldSeparate && inputStyle?.groupSeparate,
     size === 'small' && inputStyle?.groupSmall,
     size === 'large' && inputStyle?.groupLarge,
     !!disabled && inputStyle?.groupDisabled,
@@ -58,7 +60,7 @@ export default (props: InputGroupProps) => {
   );
   return (
     <div
-      {...util.getDataAttribute({ role: 'input-group' })}
+      {...util.getDataAttribute({ role: shouldSeparate ? 'input-group-separate' : 'input-group' })}
       className={rootClass}
       style={{ width, ...style }}
       dir={config?.direction}

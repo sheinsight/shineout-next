@@ -1,10 +1,10 @@
 import classNames from 'classnames';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Input from '../input';
 import { PaginationJumperProps } from './pagination-jumper.type';
 
 const PaginationJumper = (props: PaginationJumperProps) => {
-  const { jssStyle, simple, size, total, pageSize, disabled, current, text, onChange } = props;
+  const { jssStyle, simple, size, total, pageSize, disabled, text, current, onChange } = props;
   const paginationStyle = jssStyle?.pagination?.();
   const rootClasses = classNames(paginationStyle?.section, paginationStyle?.jumper);
 
@@ -13,6 +13,11 @@ const PaginationJumper = (props: PaginationJumperProps) => {
 
   const getMax = () => {
     return Math.ceil(total / pageSize) || 1;
+  };
+
+  const cleatInternalState = () => {
+    if(simple) return;
+    setValue('');
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -24,6 +29,7 @@ const PaginationJumper = (props: PaginationJumperProps) => {
       if (current > max) current = max;
       onChange(current);
       setValue(String(current));
+      setTimeout(cleatInternalState, 20);
     }
   };
 
@@ -31,9 +37,10 @@ const PaginationJumper = (props: PaginationJumperProps) => {
     setValue(v || '');
   };
 
-  const handleBlur = () => {
+  useEffect(() => {
+    if(!simple) return;
     setValue(String(current));
-  };
+  }, [current, simple]);
 
   const renderInput = () => {
     return (
@@ -48,7 +55,7 @@ const PaginationJumper = (props: PaginationJumperProps) => {
         disabled={disabled}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        onBlur={handleBlur}
+        onBlur={cleatInternalState}
       ></Input>
     );
   };
@@ -60,10 +67,6 @@ const PaginationJumper = (props: PaginationJumperProps) => {
   const renderSuffixText = () => {
     return txt[1] ? <span className={paginationStyle?.section}>{txt[1]}</span> : undefined;
   };
-
-  useEffect(() => {
-    setValue(String(current));
-  }, [current]);
 
   if (simple) {
     return (

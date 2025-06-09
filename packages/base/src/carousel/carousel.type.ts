@@ -27,7 +27,7 @@ export interface CarouselClasses {
   indicatorTypeCircle?: string;
   indicatorTypeNumber?: string;
   indicatorTypeLine?: string;
-  indicatorTypeSlider?: string;
+  indicatorTypeBar?: string;
   indicatorArrow?: string;
   indicatorNumber?: string;
   indicator?: string;
@@ -60,13 +60,14 @@ export interface CarouselProps extends Pick<CommonType, 'className' | 'style'> {
    * @en the style of indicator, using function for custom styles
    * @cn 指示标示样式, 函数则可以自定义样式: (current, moveTo) => (<Component />)
    * @default 'circle'
+   * @version 3.6.0 新增bar类型
    */
   indicatorType?:
     | ((current: number, moveTo: (index: number) => void) => React.ReactNode)
     | 'circle'
     | 'number'
     | 'line'
-    | 'slider';
+    | 'bar';
 
   /**
    * @en the interval of animation, When it is not 0, play automatically
@@ -98,8 +99,21 @@ export interface CarouselProps extends Pick<CommonType, 'className' | 'style'> {
    */
   showArrow?: 'always' | 'hover';
   /**
+   * @en Whether to show the indicator
+   * @cn 是否展示指示器
+   * @default true
+   * @version 3.7.0
+   *
+   */
+  showIndicator?: boolean;
+  /**
    * @en The additional css class for arrow
    * @cn 箭头扩展 class
    */
   arrowClassName?: string;
+  /**
+   * @en The additional css class for carousel items
+   * @cn 轮播项的 class
+   */
+  itemClassName?: string;
 }

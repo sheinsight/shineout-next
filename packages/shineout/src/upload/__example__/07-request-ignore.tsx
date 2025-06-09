@@ -29,6 +29,7 @@ const App: React.FC = () => (
     request={request}
     renderResult={(d) => d.name}
     limit={3}
+    style={{ width: 400 }}
   >
     <Button mode={'outline'}>
       <UploadIcon style={{ marginInlineEnd: 4 }} />

@@ -59,3 +59,7 @@ export interface CommonChangeType<T> {
    */
   beforeChange?: (value: T) => T | void | undefined;
 }
+
+export interface CommonClasses {
+  highlight: string;
+}

@@ -1,3 +1,30 @@
+## 3.6.4-beta.5
+2025-04-17
+
+### 💎 Enhancement
+- 优化 `Tooltip` 在窗口resize和父容器滚动后依然能跟随目标 ([#1069](https://github.com/sheinsight/shineout-next/pull/1069))
+
+
+## 3.6.1-beta.7
+2025-03-27
+
+### 🐞 BugFix
+- 修复 `Tooltip` 的 `persistent` 配置优先级问题，使其优先于全局配置并符合就近原则 ([#1020](https://github.com/sheinsight/shineout-next/pull/1020))
+
+### 💎 Enhancement
+- 优化 `Tooltip` 的箭头，使其在内容动态修改后位置保持正确 ([#1019](https://github.com/sheinsight/shineout-next/pull/1019))
+
+
+## 3.6.0
+2025-03-17
+
+### 🆕 Feature
+- `Tooltip` 新增 `showArrow` 属性，用于控制是否显示箭头 ([#998](https://github.com/sheinsight/shineout-next/pull/998))
+
+### 🐞 BugFix
+- 修复 `Tooltip` 在滚动容器中的水平用法下，且不给定宽，在靠近窗口右侧时弹出层的宽度被非预期挤压，导致内容换行的问题 ([#997](https://github.com/sheinsight/shineout-next/pull/997))
+
+
 ## 3.5.3
 2024-12-04
 

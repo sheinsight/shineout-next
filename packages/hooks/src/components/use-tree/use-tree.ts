@@ -22,7 +22,7 @@ import {
   isUnMatchedData,
   isOptionalDisabled,
 } from '../../utils/is';
-import { devUseWarning, produce } from '../../utils';
+import { devUseWarning, produce, shallowEqual } from '../../utils';
 
 function toArray<Value>(value: Value) {
   if (!value) return [];
@@ -134,7 +134,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       return { active: isActive, expanded: shouldDefaultExpand };
     }
     if (virtual) {
-      return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };
+      return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
     }
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
@@ -143,7 +143,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const bindVirtualNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
-    return { active: isActive, expanded: context.dataFlatStatusMap.get(id)!.expanded };
+    return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
   };
 
   const get = (id: KeygenResult) => {
@@ -339,6 +339,41 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     }
     return ids;
   };
+
+  const initFlatData = (
+    data: DataItem[],
+    path: KeygenResult[],
+    level: number = 1,
+    pid: KeygenResult | null = null,
+    result: FlatNodeType<DataItem>[] = [],
+  ) => {
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      const id = getKey(item, path[path.length - 1], i) as KeygenResult;
+
+      const node = {
+        id,
+        level,
+        data: item,
+        pid,
+      };
+      if (defaultExpandAll) {
+        result.push(node);
+      } else {
+        if (level === 1) {
+          result.push(node);
+        } else if (expanded && pid !== null && expanded.indexOf(pid) >= 0) {
+          result.push(node);
+        }
+      }
+
+      if (Array.isArray(item[childrenKey])) {
+        initFlatData(item[childrenKey] as DataItem[], [...path, id], level + 1, id, result);
+      }
+    }
+    return result;
+  };
+
   const initValue = (ids_outer?: KeygenResult[], forceCheck?: boolean) => {
     let ids = ids_outer;
     if (!context.data || !context.value) {
@@ -436,15 +471,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const setData = (data?: DataItem[]) => {
-    // if(data && global_tree_map.get(data)){
-    //   context.cachedValue = global_tree_map.get(data)?.cachedValue || []
-    //   context.pathMap = global_tree_map.get(data)?.pathMap || new Map()
-    //   context.dataMap = global_tree_map.get(data)?.dataMap || new Map()
-    //   context.valueMap = global_tree_map.get(data)?.valueMap || new Map()
-    //   context.unmatchedValueMap = global_tree_map.get(data)?.unmatchedValueMap || new Map()
-    //   return
-    // }
-
     const prevValue = context.value || [];
     context.cachedValue = [];
     context.pathMap = new Map();
@@ -465,8 +491,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     }
     initValue();
     setValue(prevValue);
-
-    // global_tree_map.set(data, context)
   };
 
   const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
@@ -516,6 +540,24 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       set(parentId, parentChecked, 'asc');
     }
     return current;
+  };
+
+  const updateInnerCheckStatus = () => {
+    if (mode !== MODE.MODE_0) return;
+    context.value?.forEach((id) => {
+      const { children } = context.pathMap.get(id)!;
+      if (children.length) {
+        const noCheckedChildren = children.filter((cid) => !context.value?.includes(cid));
+        if (noCheckedChildren.length > 0) {
+          setTimeout(() => {
+            setValueMap(id, 2);
+            noCheckedChildren.forEach((cid) => {
+              setValueMap(cid, 0);
+            });
+          }, 0);
+        }
+      }
+    });
   };
 
   const appendChildrenExpanded = (
@@ -620,7 +662,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       });
     });
 
-    const { treeDataInfo } = getExpandVirtualData(context.data, expanded, getKey, childrenKey);
+    const { treeDataInfo } = getExpandVirtualData(
+      props.tiledData || context.data,
+      expanded,
+      getKey,
+      childrenKey,
+    );
+
     if (!treeDataInfo) {
       return;
     }
@@ -631,6 +679,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return context.dataFlat;
   };
 
+  const updateExpanded = usePersistFn((expanded?: KeygenResult[]) => {
+    const tempExpandMap = new Set(expanded);
+    if (!expanded) return;
+
+    if (virtual) {
+      expandedFlat(expanded);
+    }
+
+    context.updateMap.forEach((update, id) => {
+      update('expanded', tempExpandMap.has(id));
+    });
+  });
+
   useEffect(() => {
     if (defaultExpandAll) {
       const nextExpanded = [] as KeygenResult[];
@@ -639,6 +700,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
           nextExpanded.push(k);
         }
       });
+
       onExpand(nextExpanded);
     }
   }, [context.dataMap]);
@@ -647,12 +709,27 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (props.datum) return;
     if (!dataUpdate) return;
     setData(data);
-  }, [data]);
+    const nextExpanded = props.expanded || props.defaultExpanded || [];
+
+    if (!shallowEqual(nextExpanded, expanded)) {
+      onExpand(nextExpanded);
+      updateExpanded(nextExpanded);
+    }
+
+    updateInnerCheckStatus();
+  }, [props.data]);
 
   useEffect(() => {
     if (props.datum) return;
     setValue(value);
   }, [value]);
+
+  useEffect(() => {
+    if (!virtual) return;
+    if (!props.tiledData) return;
+    const tiledFlatData = initFlatData(props.tiledData, [], 1);
+    setDataFlat(tiledFlatData);
+  }, [props.tiledData]);
 
   useEffect(() => {
     setInited(true);
@@ -669,16 +746,17 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     getChecked,
     getKey,
     getFlatData,
+    getDataById,
     getDataByValues,
     setValue,
     setData,
     isDisabled,
+    isUnMatched,
     bindNode,
     bindVirtualNode,
-    getDataById,
     bindUpdate,
     unBindUpdate,
-    isUnMatched,
+    updateExpanded,
     childrenKey,
     data,
     dataFlat,

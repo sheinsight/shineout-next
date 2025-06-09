@@ -1,77 +1,73 @@
 /**
- * cn - deley 0
+ * cn - form onchange
  *    -- 调试用的，在这个例子基础上随便改吧
  * en - Test Form
  *    -- Test Form
  */
-import React, { useEffect, useState } from 'react';
-import { Form, DatePicker, Input, Modal, Rule, TYPE, setConfig } from 'shineout';
+import { Form, Input, DatePicker, Select } from 'shineout';
+import { useState } from 'react';
 
-type Value = string[];
-type FormProps = TYPE.Form.Props<Value>;
-
-setConfig({
-  delay: 0,
-});
-
-const NameInput = (props: FormProps) => {
-  const { value, onChange } = props;
-  // console.log("%c Line:37 🥒", "color:#7f2b82",{value});
-
-  const {name} = value || {}
-
-  const handleLastName = (v: string | undefined) => {
-    console.log('outer onChange')
-    onChange!({
-      name: v
-    });
-  };
-
-  useEffect(() => {
-    return () => {
-      console.log('💀💀NameInput Unmount')
-    }
-  }, [])
-
-
-  // console.log("%c Line:37 🥒", "color:#7f2b82",{name});
-
+export default () => {
+  const data = [1, 2];
+  const [formValue, setFormValue] = useState<Record<string, any>>({});
 
   return (
     <div>
-        <Input
-         value={name} width={120} onChange={handleLastName} clearable onFocus={() => {
-          console.log('focus')
+      <Form
+        value={formValue}
+        onChange={(vv) => {
+          console.log(111, vv);
+          setFormValue(vv);
         }}
-        onBlur={() => {
-          console.log('blur')
-        }}/>
+      >
+        <Form.Item label='时间类型'>
+          <Select
+            name='timeType'
+            clearable
+            data={data}
+            keygen
+            onChange={(v) => {
+              const tempValue = {
+                ...formValue,
+                effectiveTimeEnd: '',
+                timeType: v,
+              };
+              // 为红色则name赋值
+              if (v === 1) {
+                console.log(222);
+                tempValue.effectiveTimeEnd = '2099-12-31 23:59:00';
+              }
+              console.log(333, tempValue);
+              setFormValue(tempValue);
+            }}
+          />
+        </Form.Item>
+        <Form.Item label='生效时间'>
+          {formValue.timeType === 1 ? (
+            <Input.Group style={{ width: '100%' }}>
+              <DatePicker
+                type='datetime'
+                format='YYYY-MM-DD HH:mm'
+                defaultTime='00:00:00'
+                name='effectiveTimeBegin'
+                placeholder={'开始时间'}
+              />
+              <div style={{ display: 'flex', alignItems: 'center', padding: '0 8px' }}>~</div>
+              <div style={{ padding: '5px 8px' }}>{formValue.effectiveTimeEnd?.slice(0, 16)}</div>
+            </Input.Group>
+          ) : (
+            <DatePicker
+              type='datetime'
+              range
+              name={['effectiveTimeBegin', 'effectiveTimeEnd']}
+              reserveAble
+              defaultTime={['00:00:00', '23:59:00']}
+              placeholder={['开始时间', '结束时间']}
+              format='YYYY-MM-DD HH:mm'
+            />
+          )}
+        </Form.Item>
+      </Form>
     </div>
   );
 };
-
-
-const App: React.FC = () => {
-  const [initValue, setInitValue] = useState({
-    user:{
-      name: 'Harry',
-    }
-  });
-
-  return (
-    <Form
-      value={initValue}
-      onChange={v => {
-        setInitValue(v)
-      }}
-    >
-      <Form.Item label='Name'>
-        <Form.Field name={'user'}>
-          {({value, onChange}) => <NameInput value={value} onChange={onChange} />}
-        </Form.Field>
-      </Form.Item>
-    </Form>
-  );
-};
-
-export default App;

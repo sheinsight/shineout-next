@@ -9,7 +9,7 @@ import shallowEqual from '../../utils/shallow-equal';
 import { usePersistFn } from '../../common/use-persist-fn';
 import useLatestObj from '../../common/use-latest-obj';
 
-const convertValueToDateArr = (
+export const convertValueToDateArr = (
   value: DatePickerValueType,
   format: string,
   options: {
@@ -24,7 +24,7 @@ const convertValueToDateArr = (
   });
 };
 
-const getFormat = (format: string | undefined, type: string) => {
+export const getFormat = (format: string | undefined, type: string) => {
   if (typeof format === 'string') return format;
   switch (type) {
     case 'datetime':
@@ -68,6 +68,27 @@ const getTypeMode = (type: string) => {
 const getDefaultMode = (type: string) => {
   const mode = getTypeMode(type);
   return [mode, mode];
+};
+
+interface FormatValueType {
+  dateArr: (Date | undefined)[];
+  format: string;
+  fmt?: string;
+  type: 'date' | 'datetime' | 'month' | 'time' | 'week' | 'year' | 'quarter';
+  clearWithUndefined?: boolean;
+  options: {
+    timeZone?: string;
+    weekStartsOn?: number;
+  };
+}
+
+export const getFormatValueArr = (opts: FormatValueType) => {
+  const { dateArr, format, clearWithUndefined, options, type } = opts;
+  const fmt = getFormat(format, type);
+  return dateArr.map((item) => {
+    if (!item) return clearWithUndefined ? undefined : '';
+    return dateUtil.format(item, fmt, options);
+  });
 };
 
 const useDatePickerFormat = <Value extends DatePickerValueType>(
@@ -184,6 +205,13 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
         position === 'end' ? context.modeDisabledEnd[mode] : context.modeDisabledStart[mode];
 
       let isDisabled = disabled ? disabled(date) : false;
+
+      if (triggerType === 'input' && !isDisabled) {
+        isDisabled = isDisabledInputDate(
+          position === 'end' ? [currentArr[0], date] : [date, currentArr[1]],
+        );
+      }
+
       if (type === 'datetime' && !isDisabled) {
         const disabledTime =
           position === 'end' ? context.modeDisabledEnd['time'] : context.modeDisabledStart['time'];
@@ -204,6 +232,8 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     if (props.formatResult) {
       if (typeof props.formatResult === 'string') {
         return getFormatValueArr(dateArr, props.formatResult);
+      } else if (typeof props.formatResult === 'function') {
+        return dateArr.map((item) => (props.formatResult as (date?: Date) => string)(item));
       } else {
         return dateArr.map((item) => {
           if (!item) return '';
@@ -256,7 +286,6 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
         formatValue = getFormatValueArr(inputValue);
       }
     }
-    // const formatValue = getFormatValueArr(stateDate);
     const v = range ? formatValue : formatValue[0];
     if (range && (!stateDate[0] || !stateDate[1]) && !props.allowSingle) {
       return;

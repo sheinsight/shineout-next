@@ -93,4 +93,12 @@ export interface TooltipProps
    * @version 3.5.3
    */
   persistent?: boolean;
+
+  /**
+   * @cn 是否显示箭头
+   * @en Whether to show the arrow
+   * @default true
+   * @version 3.6.0
+   */
+  showArrow?: boolean;
 }

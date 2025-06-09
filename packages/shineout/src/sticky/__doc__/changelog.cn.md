@@ -1,9 +1,17 @@
+## 3.6.3-beta.1
+2025-04-09
+
+### 🐞 BugFix
+
+- 修复 `Sticky` 的 `onChange` 不触发的问题 ([#1048](https://github.com/sheinsight/shineout-next/pull/1048))
+
+
 ## 3.5.4
 2024-12-12
 
 ### 🐞 BugFix
 
-- 修复 `Sticky` 组件设置负值 `top` 或 `bottom` 值时组件报错的问题 ([#848](https://github.com/sheinsight/shineout-next/pull/848))
+- 修复 `Sticky` 设置负值 `top` 或 `bottom` 值时组件报错的问题 ([#848](https://github.com/sheinsight/shineout-next/pull/848))
 
 ## 3.1.16
 2024-05-24

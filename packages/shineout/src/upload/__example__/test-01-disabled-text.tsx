@@ -1,8 +1,8 @@
 /**
  * cn - 禁用
- *    --
+ *    -- 设置 `disabled` 禁用上传
  * en - Disabled
- *    --
+ *    -- Set `disabled` to disable upload
 
  */
 import React from 'react';
@@ -18,6 +18,7 @@ const App: React.FC = () => {
       htmlName='file'
       disabled
       onSuccess={(_res, file) => file.name}
+      style={{ width: 400 }}
     >
       <Button mode={'outline'} disabled>
         <UploadIcon style={{ marginInlineEnd: 4 }} />

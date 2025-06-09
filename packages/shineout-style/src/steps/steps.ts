@@ -371,7 +371,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       overflow: 'hidden',
     },
     '& $icon': {
-      marginRight: 12,
+      marginRight: 16,
     },
     '& $title, $description': {
       textAlign: 'left',
@@ -502,11 +502,13 @@ const stepsStyle: JsStyles<StepsClassType> = {
       },
       '& $icon': {
         lineHeight: 0,
+        marginRight: 6,
         padding: '8px 10px',
       },
       '& $process': {
         '& $icon': {
           marginTop: 0,
+          marginRight: 8,
           padding: '7px 8px',
         },
         '& $tail': {

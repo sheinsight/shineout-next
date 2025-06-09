@@ -13,6 +13,7 @@ export interface FilterListProps<DataItem, Value extends KeygenResult[]>
     | 'keygen'
     | 'size'
     | 'mode'
+    | 'highlight'
   > {
   jssStyle?: JssStyleType;
   data: DataItem[];

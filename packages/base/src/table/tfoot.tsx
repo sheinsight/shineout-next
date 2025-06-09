@@ -17,11 +17,6 @@ export default (props: TfootProps) => {
   ): React.CSSProperties | undefined => {
     const colgroup = props.colgroup;
     if (fixed === 'left') {
-      if (props.fixLeftNum !== undefined) {
-        return {
-          transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
-        } as React.CSSProperties;
-      }
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         left: left,
@@ -29,11 +24,6 @@ export default (props: TfootProps) => {
       } as React.CSSProperties;
     }
     if (fixed === 'right') {
-      if (props.fixRightNum !== undefined) {
-        return {
-          transform: `translate3d(-${props.fixRightNum}px, 0, 0)`,
-        } as React.CSSProperties;
-      }
       const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         right: right,

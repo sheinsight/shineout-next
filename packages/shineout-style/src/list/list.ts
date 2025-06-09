@@ -45,6 +45,9 @@ const listStyle: JsStyles<ListClassType> = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  loadingBottom: {
+    padding: 16,
+  },
   empty: {
     display: 'flex',
     justifyContent: 'center',

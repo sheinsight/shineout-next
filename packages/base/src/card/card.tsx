@@ -61,7 +61,7 @@ const Card = (props: CardProps) => {
       collapsed: realCollapsed,
       collapsible: collapsible,
       onCollapse: handleCollapsed,
-      handleDragMouseDown: moveInfo.handleMouseDown,
+      handleDragMouseDown: props.moveable ? moveInfo.handleMouseDown : undefined,
     };
   }, [realCollapsed, collapsible]);
 

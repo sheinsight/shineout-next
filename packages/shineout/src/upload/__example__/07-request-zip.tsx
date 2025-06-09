@@ -43,7 +43,7 @@ const App: React.FC = () => (
   <Upload
     onSuccess={(_res, file) => ({ name: `upload ${file.name}` })}
     limit={3}
-    style={{ width: 300 }}
+    style={{ width: 400 }}
     request={request}
     renderResult={(d) => d.name}
   >

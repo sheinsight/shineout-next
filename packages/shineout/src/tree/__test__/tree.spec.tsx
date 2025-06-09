@@ -16,7 +16,7 @@ import {
   textContentTest,
 } from '../../tests/utils';
 import TreeBase from '../__example__/01-base';
-import TreeSize from '../__example__/02-size';
+import TreeSize from '../__example__/15-size';
 import TreeLine from '../__example__/03-line';
 import TreeExpand from '../__example__/04-01-expand';
 import TreeDisabled from '../__example__/05-disabled';
@@ -24,8 +24,8 @@ import TreeOnChange from '../__example__/06-onchange';
 import TreeLoader from '../__example__/07-loader';
 import TreeDrag from '../__example__/08-drag';
 import TreeDragStyle from '../__example__/09-drag-style';
-import TreeHighlight from '../__example__/10-highlight';
-import TreeHighlightControl from '../__example__/11-highlight-control';
+import TreeHighlight from '../__example__/12-highlight';
+import TreeHighlightControl from '../__example__/13-highlight-control';
 
 const SO_PREFIX = 'tree';
 const originClasses = [
@@ -66,7 +66,7 @@ const { wrapperDisabled, wrapperChecked, wrapperIndeterminate } = createClassNam
 );
 
 const originCopyNodeStyle =
-  'position: absolute; top: -1000px; left: -1000px; width: 0px; background: rgb(255, 255, 255); box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);';
+  'position: absolute; z-index: 99999; top: -1000px; left: -1000px; width: 0px; background: rgb(255, 255, 255); box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);';
 
 const renderItem = (node: any) => {
   return <span>{`node ${node.id}`}</span>;

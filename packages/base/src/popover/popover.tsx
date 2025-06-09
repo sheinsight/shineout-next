@@ -1,4 +1,4 @@
-import { usePersistFn, usePopup, useRender, util } from '@sheinx/hooks';
+import { getClosestScrollContainer, usePersistFn, usePopup, useRender, util } from '@sheinx/hooks';
 import AbsoluteList from '../absolute-list';
 import React, { useEffect } from 'react';
 import { PopoverProps } from './popover.type';
@@ -17,6 +17,8 @@ const Popover = (props: PopoverProps) => {
     trigger = 'hover',
     type,
     destroy,
+    disabled,
+    popupGap = 0,
     showArrow = true,
     zIndex = 1060,
   } = props;
@@ -52,6 +54,11 @@ const Popover = (props: PopoverProps) => {
 
   const events = getTargetProps();
 
+  const [updateKey, setUpdateKey] = React.useState(0);
+  const handleUpdateKey = usePersistFn(() => {
+    setUpdateKey(prev => (prev + 1) % 2);
+  });
+
   const bindEvents = () => {
     const targetEl = targetRef.current;
     if (!targetEl) return;
@@ -62,8 +69,13 @@ const Popover = (props: PopoverProps) => {
     if (trigger === 'hover' && props.clickToCancelDelay && props.mouseEnterDelay) {
       targetEl.addEventListener('click', closePop);
     }
-  };
 
+    window?.addEventListener('resize', handleUpdateKey);
+    if (props.adjust) {
+      const scrollContainer = getClosestScrollContainer(targetEl);
+      if(scrollContainer) scrollContainer.addEventListener('scroll', handleUpdateKey);
+    }
+  };
   const unbindEvents = () => {
     const targetEl = targetRef.current;
     if (!targetEl) return;
@@ -72,6 +84,12 @@ const Popover = (props: PopoverProps) => {
     if (events.onMouseLeave) targetEl.removeEventListener('mouseleave', events.onMouseLeave);
     if (events.onClick) targetEl.removeEventListener('click', events.onClick);
     targetEl.removeEventListener('click', closePop);
+
+    window?.removeEventListener('resize', handleUpdateKey);
+    if (props.adjust) {
+      const scrollContainer = getClosestScrollContainer(targetEl);
+      if(scrollContainer) scrollContainer.removeEventListener('scroll', handleUpdateKey);
+    }
   };
 
   useEffect(() => {
@@ -96,6 +114,8 @@ const Popover = (props: PopoverProps) => {
     };
   });
 
+  if(disabled) return;
+
   const noRender = props.lazy && !open && !context.rendered;
 
   if (!targetRef.current || !children || noRender) {
@@ -116,10 +136,17 @@ const Popover = (props: PopoverProps) => {
   context.rendered = true;
 
   const childrened = util.isFunc(children) ? children(closePop) : children;
-  const colorStyle = {
+  const containerStyle = {
     borderColor: props.border,
     backgroundColor: props.background,
   };
+
+  if (popupGap) {
+    Object.assign(containerStyle, {
+      '--popover-arrow-gap-extra': `${popupGap}px`,
+    });
+  };
+
   return (
     <AbsoluteList
       focus={open}
@@ -128,12 +155,13 @@ const Popover = (props: PopoverProps) => {
       absolute={typeof props.getPopupContainer === 'function' ? props.getPopupContainer : true}
       position={position}
       fixedWidth={false}
-      popupGap={0}
+      popupGap={popupGap}
       destroy={destroy}
       zIndex={zIndex}
       adjust={props.adjust}
       lazy={props.lazy}
       offset={props.offset}
+      updateKey={updateKey}
     >
       <div
         className={classNames(
@@ -143,7 +171,7 @@ const Popover = (props: PopoverProps) => {
           open && popoverStyle?.wrapperOpen,
           !showArrow && popoverStyle?.hideArrow,
         )}
-        style={colorStyle}
+        style={containerStyle}
         {...util.getDataAttribute({ position, type })}
         {...props.attributes}
         ref={popupRef}

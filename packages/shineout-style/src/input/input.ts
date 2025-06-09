@@ -66,6 +66,16 @@ const groupSpace = (gap: string) => ({
   '& > i:last-child, & > span:last-child': {
     paddingRight: gap,
   },
+  '[data-soui-role="input-group-separate"]&, [data-soui-role="input-group-seperate"]&': {
+    '& > b:first-child': {
+      marginLeft: 0,
+      borderLeft: `1px solid ${token.inputBorderColor}`,
+    },
+    '& > b:last-child': {
+      marginRight: 0,
+      borderRight: `1px solid ${token.inputBorderColor}`,
+    }
+  },
   '& > b': {
     padding: `0 ${gap}`,
     display: 'flex',
@@ -76,12 +86,10 @@ const groupSpace = (gap: string) => ({
     fontWeight: 'normal',
     color: token.inputGroupFontColor,
     '&:first-child': {
-      borderLeftColor: 'inherit',
-      marginLeft: '-1px',
+      borderLeft: 'none',
     },
     '&:last-child': {
-      borderRightColor: 'inherit',
-      marginRight: '-1px',
+      borderRight: 'none',
     },
   },
   '&[dir=ltr] > b': {
@@ -115,6 +123,11 @@ const input: JsStyles<keyof InputClasses> = {
     alignItems: 'center',
     position: 'relative',
     ...wrapper,
+
+    '[data-soui-role="input-group-separate"] &, [data-soui-role="input-group-seperate"] &': {
+      flex: 1,
+      minWidth: 0,
+    },
   },
   ...resetWrapper,
   wrapperNumber: {},
@@ -206,6 +219,14 @@ const input: JsStyles<keyof InputClasses> = {
       background: 'transparent',
     },
     ...groupSpace(token.inputPaddingX),
+  },
+  groupSeparate: {
+    border: 'none',
+
+    '& > b': {
+      border: `1px solid ${token.inputBorderColor}`,
+      'margin-left': '-1px',
+    }
   },
   groupSmall: {
     ...groupSmall,

@@ -70,7 +70,7 @@ export interface BadgeProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn 徽标状态
    *
    */
-  status?: 'success' | 'processing' | 'default' | 'error' | 'warning';
+  status?: 'default' | 'processing' | 'error' | 'warning' | 'success' ;
   /**
    * @en Status point text, only valid after configuring the status property
    * @cn 状态点文本，仅在配置了 status 属性后生效

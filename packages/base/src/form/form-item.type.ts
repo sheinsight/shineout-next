@@ -15,7 +15,10 @@ export interface FormItemClasses {
   wrapperRequired: string;
   wrapperTip: string;
   label: string;
+  labelWithColon: string;
+  labelWithTooltip: string;
   labelTooltip: string;
+  labelColon: string;
   labelLeft: string;
   control: string;
   error: string;

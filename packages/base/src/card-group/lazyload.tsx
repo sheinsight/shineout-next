@@ -6,7 +6,7 @@ const { addStack, removeStack } = util;
 export interface LazyloadProps {
   children?: React.ReactNode;
   placeholder?: React.ReactNode;
-  container?: HTMLElement;
+  container?: HTMLElement | null;
   offset?: number;
   isInView?: boolean;
 }

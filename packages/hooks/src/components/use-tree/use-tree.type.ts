@@ -52,6 +52,10 @@ export interface BaseTreeProps<DataItem> {
    * @private 内部属性
    */
   isControlled: boolean;
+  /**
+   * @private 内部属性
+   */
+  tiledData?: DataItem[];
   active?: KeygenResult;
   /**
    * @en Selected key (controlled)
@@ -180,4 +184,5 @@ export interface TreeDatum<DataItem> {
   dataMap: Map<KeygenResult, DataItem>;
   valueMap: Map<KeygenResult, CheckedStatusType>;
   dataFlatStatusMap: Map<KeygenResult, FlatMapType>;
+  updateExpanded: (expanded?: KeygenResult[]) => void;
 }

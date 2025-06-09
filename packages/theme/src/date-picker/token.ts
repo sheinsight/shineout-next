@@ -54,6 +54,13 @@ const datePickerTokenExtraValue = {
   padding: { x: 'Spacing-8', y: 'Spacing-4' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
+    panel: {
+      footer: {
+        now: {
+          padding: { x: 'Spacing-16', y: 'Spacing-11' },
+        },
+      },
+    },
     font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Spacing-8', y: 'Spacing-1' },

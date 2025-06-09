@@ -104,9 +104,15 @@ const ImageStyle: JsStyles<ImageClass> = {
 
   fill: {
     '& $inner': {
-      backgroundSize: 'cover',
-      backgroundPosition: '50% 50%',
-      backgroundRepeat: 'no-repeat',
+
+      '& > img': {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        maxWidth: 'none',
+        maxHeight: 'none',
+      }
     },
   },
 
@@ -279,6 +285,21 @@ const ImageStyle: JsStyles<ImageClass> = {
     '&[dir=rtl]': {
       left: -15,
     },
+
+    '& > svg': {
+      position: 'relative',
+    },
+    '&:before': {
+      content: '""',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      width: '80%',
+      height: '80%',
+      transform: 'translate(-50%, -50%)',
+      backgroundColor: '#fff',
+      borderRadius: '50%',
+    }
   },
 
   // gallery

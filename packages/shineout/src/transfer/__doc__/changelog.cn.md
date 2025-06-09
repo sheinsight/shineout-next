@@ -1,17 +1,39 @@
+## 3.6.5-beta.11
+2025-04-29
+
+### 🐞 BugFix
+
+- 修复 `Transfer` 自定义children时左右勾选互斥的问题，并修正children的 `onSelect` TS类型 ([#1089](https://github.com/sheinsight/shineout-next/pull/1089))
+
+
+## 3.6.2-beta.6
+2025-04-02
+
+### 🐞 BugFix
+
+- 修复 `Transfer` 动态设置 `loading` 不生效的问题 ([#1035](https://github.com/sheinsight/shineout-next/pull/1035))
+
+## 3.6.1-beta.1
+2025-03-24
+
+### 🐞 BugFix
+
+- 修复 `Transfer` 设置了 `renderFilter` 之后可能导致左右面板高度不一致的问题 ([#1008](https://github.com/sheinsight/shineout-next/pull/1008))
+
 ## 3.5.8
 2025-02-13
 
 ### 🐞 BugFix
 
-- 修复 `Transfer` 组件 `renderFilter` 内部获取不到外部数据的问题 ([#932](https://github.com/sheinsight/shineout-next/pull/932))
-- 修复 `Transfer` 组件 `filterProps` 中 `isSrouce` 错别字为 `isSource` 的问题 ([#932](https://github.com/sheinsight/shineout-next/pull/932))
+- 修复 `Transfer` 的 `renderFilter` 内部获取不到外部数据的问题 ([#932](https://github.com/sheinsight/shineout-next/pull/932))
+- 修复 `Transfer` 的 `filterProps` 中 `isSrouce` 错别字为 `isSource` 的问题 ([#932](https://github.com/sheinsight/shineout-next/pull/932))
 
 ## 3.3.7
 2024-09-09
 
 ### 🐞 BugFix
 
-- 修复 `Transfer` 组件 `onSelectChange` 第二参数丢失的问题 ([#652](https://github.com/sheinsight/shineout-next/pull/652))
+- 修复 `Transfer` 的 `onSelectChange` 第二参数丢失的问题 ([#652](https://github.com/sheinsight/shineout-next/pull/652))
 
 
 ## 3.1.19

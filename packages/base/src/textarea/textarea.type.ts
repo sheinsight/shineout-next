@@ -36,6 +36,9 @@ export interface TextareaClasses {
   shadow: string;
   info: string;
   footer: string;
+  limit: string;
+  clear: string;
+  wrapperWithClear: string;
 }
 
 export interface SimpleTextareaProps
@@ -56,7 +59,7 @@ export interface SimpleTextareaProps
    * @private not export
    */
   suffix?: React.ReactNode;
-  getStatus?: (status: { focused?: boolean }) => void;
+  onStatusChange?: (status: { focused?: boolean }) => void;
   /**
    * @en Whether to display only the bottom border
    * @cn 是否只展示下边框
@@ -92,6 +95,21 @@ export interface SimpleTextareaProps
    * @cn 自定义渲染Textarea
    */
   renderTextarea?: (textareaEl: React.ReactElement) => React.ReactElement;
+
+  /**
+   * @en Maximum number of characters
+   * @cn 最大字符数
+   * @version 3.6.0
+   */
+  limit?: number | ((text?: string) => React.ReactNode);
+
+  /**
+   * @en Whether to clear the value
+   * @cn 是否可以清空值
+   * @default false
+   * @version 3.6.0
+   */
+  clearable?: boolean;
 }
 
 type TextareaValueType = string;

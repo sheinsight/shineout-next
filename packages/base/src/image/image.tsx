@@ -35,6 +35,7 @@ const Image = (props: ImageProps) => {
     noImgDrag,
     onClick,
     componentRef,
+    renderHoverMask,
     ...rest
   } = props;
 
@@ -46,6 +47,7 @@ const Image = (props: ImageProps) => {
     lazy,
     autoSSL,
     noImgDrag,
+    fit,
     ...rest,
   });
 
@@ -121,7 +123,7 @@ const Image = (props: ImageProps) => {
 
   // 渲染 img / div 类型的内部标签
   const renderInner = (src?: string) => {
-    return fit === 'fill' || fit === 'fit' ? renderDivInnerEl(src) : renderImgeInnerEl(src);
+    return fit === 'fit' ? renderDivInnerEl(src) : renderImgeInnerEl(src);
   };
 
   // 默认占位图
@@ -172,6 +174,9 @@ const Image = (props: ImageProps) => {
 
   // 遮罩层
   const renderMask = () => {
+    if (renderHoverMask) {
+      return <span className={maskClass}>{renderHoverMask({ preview })}</span>;
+    }
     return (
       <span className={maskClass} onClick={handleOpenGallery}>
         {shouldDownload && Icons.image.Download}

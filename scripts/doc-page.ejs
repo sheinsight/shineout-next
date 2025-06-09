@@ -40,7 +40,9 @@ export const examples = [
       <% }) -%>
       ],
     },
-    code: require('!raw-loader!<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '').trim(),
+    code: require('!raw-loader!<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default
+      .replace(/^\/\*\*[\s\S]*?\*\//, '')
+      .trim(),
     component: require('<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default,
   },
 <% }) -%>

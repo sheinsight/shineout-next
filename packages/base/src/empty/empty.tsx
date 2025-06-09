@@ -21,6 +21,7 @@ const Empty = (props: EmptyProps) => {
   };
 
   const renderImage = () => {
+    if(icon === null) return null;
     if (imgSrc) {
       return (
         <div className={styles?.image}>

@@ -156,13 +156,16 @@ const selectStyle: JsStyles<SelectClassType> = {
     display: 'flex',
     flex: 1,
     minWidth: 0,
+    maxHeight: 78,
     position: 'relative',
     outline: 'none',
-    overflow: 'hidden',
+    // overflow: 'hidden',
+    overflow: 'auto',
   },
   result: {
     display: 'flex',
     flex: '1',
+    height: '100%',
     minWidth: 0,
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
@@ -285,6 +288,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     transformOrigin: '0 0',
     border: `1px solid ${token.selectPanelBorder}`,
     cursor: 'initial',
+
+    '& [data-soui-role="scroll"]': {
+      overscrollBehavior: 'none',
+    },
   },
   pickerSmall: {
     '& $optionInner': {
@@ -312,6 +319,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   iconWrapper: {
     display: 'flex',
     alignItems: 'center',
+    position: 'sticky',
+    top: 0,
     justifyContent: 'center',
     marginLeft: token.selectIconMarginLeft,
   },
@@ -434,10 +443,14 @@ const selectStyle: JsStyles<SelectClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
+    width: 'max-content',
     maxWidth: 400,
     maxHeight: 160,
     overflow: 'auto',
     padding: `${token.selectMorePaddingY} ${token.selectMorePaddingX}`,
+    '& $tag': {
+      maxWidth: 'none',
+    },
     '&:hover': {
       '& $clearIcon': {
         display: 'inline-block',

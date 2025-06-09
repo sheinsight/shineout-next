@@ -1,3 +1,10 @@
+## 3.7.0-beta.35
+2025-05-29
+### 🐞 BugFix
+
+- 修复 `Alert` 只有 `title` 没有 `children` 的样式问题 ([#1133](https://github.com/sheinsight/shineout-next/pull/1133))
+
+
 ## 3.2.5
 2024-07-02
 ### 🐞 BugFix

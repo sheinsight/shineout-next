@@ -215,6 +215,18 @@ const App: React.FC = () => {
                 />
               </Form.Item>
             </Form.FieldSet>
+            <Form.FieldSet name='config3' defaultValue={['1', '2']}>
+              {({ value, onChange, index }) => (
+                <Form.Item label={`public.config3[${index}]`} required>
+                  <Input value={value} onChange={(v) => onChange(v as string)} rules={[{ required: true, message: `public.config3[${index}] is required` }]} />
+                </Form.Item>
+              )}
+            </Form.FieldSet>
+            <Form.Item label='public.config4' required>
+              <Form.Field name='config4' defaultValue={'4'} rules={[{ required: true, message: 'public.config4 is required' }]}>
+                <Input />
+              </Form.Field>
+            </Form.Item>
           </Form.FieldSet>
         </Tabs.Panel>
         <Tabs.Panel id='child-panel' tab='Child Config' style={panelStyle}>

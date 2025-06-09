@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import classNames from 'classnames';
 import { TreeClasses } from './tree.type';
 import { TreeVirtualNodeProps } from './tree-node.type';
-import TreeVirtualContent from './tree-virtual-content';
+import TreeVirtualContent from './tree-content';
 import { useTreeVirtualNode, util, KeygenResult } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
@@ -36,6 +36,8 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     onChange,
     onNodeClick,
     onToggle,
+    actionOnClick,
+    size,
   } = props;
 
   const config = useConfig();
@@ -72,7 +74,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
   );
 
   if (placeElement) {
-    placeElement.className = contentStyle.placement;
+    (placeElement as HTMLElement).className = contentStyle.placement;
   }
 
   const handleFetch = () => {};
@@ -91,14 +93,29 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     if (onToggle) onToggle(id, nextExpanded);
   };
 
+  const indent = size === "large" ? 32 : 24;
+
+  let $indents
+  if(line){
+    $indents = Array.from({ length: level - 1 }).map((_, index) => (
+      <span
+        key={index}
+        className={contentStyle.lineIndent}
+        style={{left: (index + 1) * indent }}
+      />
+    ))
+  }
+
   return (
     <div
       ref={element}
       className={rootClass}
       dir={config.direction}
-      style={{ paddingLeft: level * 24 }}
+      style={{ paddingLeft: level * indent }}
     >
+      {$indents}
       <TreeVirtualContent
+        virtual
         jssStyle={jssStyle}
         isControlled={isControlled}
         id={id}
@@ -127,6 +144,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
         onToggle={handleToggle}
+        actionOnClick={actionOnClick}
       ></TreeVirtualContent>
     </div>
   );

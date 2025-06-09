@@ -50,7 +50,7 @@ const modalTokenExtraValue = {
     font: { size: 'Font-14' },
   },
   header: {
-    icon: { margin: { end: 'Spacing-8', top: 'Spacing-2' }, size: 'Size-8' },
+    icon: { margin: { end: 'Spacing-8', top: 'Spacing-3' }, size: 'Size-9' },
     close: {
       margin: { x: { start: 'Spacing-16' } },
       size: 'Size-8',

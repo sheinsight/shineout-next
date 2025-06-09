@@ -16,5 +16,6 @@ export type InputPasswordProps = GetWithFieldProps<BasePasswordProps, BasePasswo
  * @title Input.Password
  * @cn 基本API 和 Input 一致，特定API如下
  * @en The basic API is consistent with Input, and the specific API is as follows
+ * @sort 4
  */
 type _InputPasswordPropsWithoutInput = Omit<InputPasswordProps, keyof InputProps>;

@@ -79,6 +79,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     position: positionProp = 'bottom-left',
     absolute,
     zIndex,
+    emptyText,
     getComponentRef,
     onFocus,
     onBlur,
@@ -88,6 +89,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     size,
     virtual,
     filterSameChange,
+    beforeChange,
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
@@ -120,6 +122,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     setFilterText,
     filterFunc,
     onFilter,
+    FilterProvider,
   } = useFilter({
     treeData: data,
     keygen,
@@ -147,6 +150,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     defaultValue,
     childrenKey,
     value: valueProp,
+    beforeChange,
     onChange: onChangeProp,
     filterSameChange,
   });
@@ -417,7 +421,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderClearable = () => {
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = compressed || multiple ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     const arrow = (
       <span
         className={classNames(
@@ -449,7 +453,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       return renderClearable();
     }
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = (compressed || multiple) ? Icons.cascader.More : Icons.cascader.DropdownArrow;
+    const defaultIcon = compressed || multiple ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     return (
       <span
         className={classNames(
@@ -605,11 +609,24 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
+  const renderEmpty = () => {
+    if (emptyText) {
+      return <div className={styles?.empty}>{emptyText}</div>;
+    }
+    return <div className={styles?.empty}>{getLocale(locale, 'noData')}</div>;
+  };
+
   const renderNormalList = () => {
     if (!open && isFirstRender.current) {
       return null;
     }
+
     isFirstRender.current = false;
+
+    const isEmpty = !filterData?.length;
+
+    if (isEmpty && props.emptyText !== false) return renderEmpty();
+
     const list = renderList();
     return renderOptionList ? renderOptionList(list, { loading: !!loading }) : list;
   };
@@ -654,10 +671,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
-  const renderEmpty = () => {
-    return <div className={styles?.empty}>{getLocale(locale, 'noData')}</div>;
-  };
-
   const renderPanel = () => {
     if (props.loading) {
       return renderLoading();
@@ -678,11 +691,21 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   }, [data]);
 
+  // 修复外部受控打开的场景下，从外部修改value导致的面板勾选情况没有及时同步
+  if (openProp && !util.shallowEqual(value, datum.getValue())) {
+    datum.setValue(value);
+  };
+
   useEffect(() => {
     if (!value) return;
     datum.setValue(value);
+
+    if(!open) return
     updatePathByValue();
-  }, [value]);
+    if (props.renderOptionList) {
+      updatePath();
+    }
+  }, [value, open]);
 
   useEffect(() => {
     if (filterText !== undefined) {
@@ -728,44 +751,46 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   return (
-    <div
-      id={fieldId}
-      tabIndex={disabled === true || showInput ? undefined : 0}
-      {...util.getDataAttribute({ ['input-border']: 'true' })}
-      className={rootClass}
-      style={rootStyle}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      onKeyDown={handleKeyDown}
-      ref={targetRef}
-    >
-      {tipNode}
-      {renderResult()}
-      <AbsoluteList
-        adjust={adjust}
-        focus={open}
-        fixedWidth={getFixedWidth()}
-        absolute={absolute}
-        zIndex={zIndex}
-        position={position}
-        updateKey={updateKey}
-        popupGap={4}
-        popupElRef={popupRef}
-        parentElRef={targetRef}
+    <FilterProvider value={{ filterText, highlight: props.highlight }}>
+      <div
+        id={fieldId}
+        tabIndex={disabled === true || showInput ? undefined : 0}
+        {...util.getDataAttribute({ ['input-border']: 'true' })}
+        className={rootClass}
+        style={rootStyle}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onKeyDown={handleKeyDown}
+        ref={targetRef}
       >
-        <AnimationList
-          onRef={popupRef}
-          show={open}
-          className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow)}
-          display={'block'}
-          type='scale-y'
-          duration={'fast'}
-          style={pickerWrapperStyle}
+        {tipNode}
+        {renderResult()}
+        <AbsoluteList
+          adjust={adjust}
+          focus={open}
+          fixedWidth={getFixedWidth()}
+          absolute={absolute}
+          zIndex={zIndex}
+          position={position}
+          updateKey={updateKey}
+          popupGap={4}
+          popupElRef={popupRef}
+          parentElRef={targetRef}
         >
-          {renderPanel()}
-        </AnimationList>
-      </AbsoluteList>
-    </div>
+          <AnimationList
+            onRef={popupRef}
+            show={open}
+            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow)}
+            display={'block'}
+            type='scale-y'
+            duration={'fast'}
+            style={pickerWrapperStyle}
+          >
+            {renderPanel()}
+          </AnimationList>
+        </AbsoluteList>
+      </div>
+    </FilterProvider>
   );
 };
 export default Cascader;

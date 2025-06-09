@@ -76,8 +76,13 @@ const avatarStyle: JsStyles<AvatarClassType> = {
     fontSize: token.avatarLargeFontSize,
   },
   max: {
+    cursor: 'pointer',
     color: token.avatarMaxFontColor,
     fontWeight: token.avatarMaxFontWeight,
+    '& $wrapper:hover': {
+      color: token.avatarMaxHoverColor,
+      backgroundColor: token.avatarMaxHoverBackgroundColor,
+    },
   },
   popover: {
     padding: token.avatarPopoverPadding,

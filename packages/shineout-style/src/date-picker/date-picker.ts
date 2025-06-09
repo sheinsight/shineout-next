@@ -2,6 +2,7 @@ import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 import border from '../input/input-border';
 import { DatePickerClasses } from '@sheinx/base';
+import { animations } from '../common'
 
 export type DatePickerClassType = keyof DatePickerClasses;
 
@@ -60,14 +61,15 @@ const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const leftCircleBackground = `radial-gradient(circle closest-side, ${token.datePickerCellRangeBackgroundColor} 100%, transparent 0%),
 linear-gradient(to right, transparent 0%,transparent 50%, ${token.datePickerCellRangeBackgroundColor} 50%, ${token.datePickerCellRangeBackgroundColor} 100%)
-`
+`;
 
 const rightCircleBackground = `radial-gradient(circle closest-side, ${token.datePickerCellRangeBackgroundColor} 100%, transparent 0%),
 linear-gradient(to left, transparent 0%,transparent 50%, ${token.datePickerCellRangeBackgroundColor} 50%, ${token.datePickerCellRangeBackgroundColor} 100%)
-`
+`;
 
 const datePickerStyle: JsStyles<DatePickerClassType> = {
   rootClass: {},
+  ...animations,
   wrapper: {
     display: 'inline-block',
     position: 'relative',
@@ -357,9 +359,20 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     borderTop: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
     display: 'flex',
     justifyContent: 'space-between',
+    '&[dir=rtl] $pickerFooterConfirm': {
+      'margin-right': 'auto',
+    },
+    '&[dir=ltr] $pickerFooterConfirm': {
+      'margin-left': 'auto',
+    },
   },
   pickerFooterTime: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
+  },
+  wrapperSmall: {
+    '& $pickerFooterNow': {
+      padding: `${token.datePickerSmallPanelFooterNowPaddingY} ${token.datePickerSmallPanelFooterNowPaddingX}`,
+    },
   },
   pickerFooterNow: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
@@ -450,9 +463,10 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
         backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
-    '&$pickerCellActive$pickerCellInRange:not($pickerCellDisabled):not($pickerCellInRangeStart):not($pickerCellInRangeEnd):hover $pickerCellContent': {
-      backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
-    },
+    '&$pickerCellActive$pickerCellInRange:not($pickerCellDisabled):not($pickerCellInRangeStart):not($pickerCellInRangeEnd):hover $pickerCellContent':
+      {
+        backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
+      },
   },
   pickerCellContent: {
     marginTop: token.datePickerCellMarginY,
@@ -670,25 +684,15 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       top: 0,
       '&[dir=ltr]': { left: 0 },
       '&[dir=rtl]': { right: 0 },
-      transform: 'translateY(-100%)',
+      transformOrigin: 'bottom',
+      animation: '$scale-y-top 0.2s ease-in-out forwards',
       backgroundColor: token.datePickerPanelBackgroundColor,
       boxShadow: token.datePickerPanelShadow,
-      opacity: '0',
-      zIndex: '-1',
-      visibility: 'hidden',
+      display: 'none',
     },
     '&:hover $timePicker': {
       zIndex: '1',
-      opacity: '1',
-      visibility: 'visible',
-    },
-  },
-  datetimeHide: {
-    opacity: '0',
-    pointerEvents: 'none',
-
-    '& > span': {
-      display: 'none',
+      display: 'block',
     },
   },
   quickPicker: {

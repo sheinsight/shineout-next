@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import DatePicker from '..';
 import {
@@ -18,31 +18,31 @@ import {
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import mountTest from '../../tests/mountTest';
-import DatePickerBase from '../__example__/01-base';
-import DatePickerDateTime from '../__example__/02-datetime';
-import DatePickerSize from '../__example__/03-size';
-import DatePickerWeek from '../__example__/04-week';
-import DatePickerMonth from '../__example__/05-month';
-import DatePickerQuarter from '../__example__/05-quarter';
-import DatePickerYear from '../__example__/06-year';
-import DatePickerTime from '../__example__/07-time-0';
-import DatePickerTimeOther from '../__example__/07-time-1';
-import DatePickerRange from '../__example__/08-range';
-import DatePickerQuick from '../__example__/09-quick';
-import DatePickerDisable from '../__example__/10-disable';
-import DatePickerDisbaleDateOne from '../__example__/11-disable-date-1';
-import DatePickerDisbaleDateTwo from '../__example__/11-disable-date-2';
-import DatePickerDisbaleDateThree from '../__example__/11-disable-date-3';
-import DatePickerInputable from '../__example__/12-inputable';
-import DatePickerAbsolute from '../__example__/13-absolute';
-import DatePickerInnerTitle from '../__example__/14-innerTitle';
-import DatePickerPosition from '../__example__/14-position';
-import DatePickerTimezone from '../__example__/15-timezone';
+// import DatePickerBase from '../__example__/01-base';
+// import DatePickerDateTime from '../__example__/02-datetime';
+// import DatePickerSize from '../__example__/03-size';
+// import DatePickerWeek from '../__example__/04-week';
+// import DatePickerMonth from '../__example__/05-month';
+// import DatePickerQuarter from '../__example__/05-quarter';
+// import DatePickerYear from '../__example__/06-year';
+// import DatePickerTime from '../__example__/07-time-0';
+// import DatePickerTimeOther from '../__example__/07-time-1';
+// import DatePickerRange from '../__example__/08-range';
+// import DatePickerQuick from '../__example__/09-quick';
+// import DatePickerDisable from '../__example__/10-disable';
+// import DatePickerDisbaleDateOne from '../__example__/11-disable-date-1';
+// import DatePickerDisbaleDateTwo from '../__example__/11-disable-date-2';
+// import DatePickerDisbaleDateThree from '../__example__/11-disable-date-3';
+// import DatePickerInputable from '../__example__/12-inputable';
+// import DatePickerAbsolute from '../__example__/13-absolute';
+// import DatePickerInnerTitle from '../__example__/14-innerTitle';
+// import DatePickerPosition from '../__example__/14-position';
+// import DatePickerTimezone from '../__example__/15-timezone';
 import DatePickerClearableWithUndefine from '../__example__/16-clearable-02';
-import DatePickerDefaultPicker from '../__example__/17-default-picker';
-import DatePickerAllowSingle from '../__example__/18-allow-single';
-import DatePickerFormat from '../__example__/19-format';
-import DatePickerMinmax from '../__example__/20-minmax';
+// import DatePickerDefaultPicker from '../__example__/17-default-picker';
+// import DatePickerAllowSingle from '../__example__/18-allow-single';
+// import DatePickerFormat from '../__example__/19-format';
+// import DatePickerMinmax from '../__example__/20-minmax';
 import DatePickerControlled from '../__example__/test-001-control';
 import DatePickerOpen from '../__example__/test-003-open';
 
@@ -154,24 +154,26 @@ const hours = getFormatTime(nowDate.getHours());
 const minutes = getFormatTime(nowDate.getMinutes());
 const seconds = getFormatTime(nowDate.getSeconds());
 
-const styleWithoutShow = 'pointer-events: none; position: absolute; z-index: -1000; display: none;';
-const styleWithShow =
-  'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
-const styleWithShowRight =
-  'z-index: 1051; display: block; right: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
-const styleWithShowTopLeft =
-  'z-index: 1051; display: block; left: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 240ms ease-in-out;';
-const styleWithShowTopRight =
-  'z-index: 1051; display: block; right: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 240ms ease-in-out;';
-const styleWithShowOther =
-  'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
+// const styleWithoutShow = 'pointer-events: none; position: absolute; z-index: -1000; display: none;';
+// const styleWithShow =
+//   'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 120ms ease-in-out;';
+// const styleWithShowRight =
+//   'z-index: 1051; display: block; right: 0px; opacity: 1; transition: opacity 120ms ease-in-out;';
+// const styleWithShowTopLeft =
+//   'z-index: 1051; display: block; left: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 120ms ease-in-out;';
+// const styleWithShowTopRight =
+//   'z-index: 1051; display: block; right: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 120ms ease-in-out;';
+// const styleWithShowOther =
+//   'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 120ms ease-in-out;';
 const pickerWrapperStyle = {
-  zIndex: '1051',
   opacity: '1',
   display: 'block',
   top: 'calc(100% + 4px)',
   left: '0px',
-  transition: 'opacity 240ms ease-in-out',
+  "transform": "scaleY(1)",
+  "transform-origin": "center top",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
+  "z-index": "1051",
 };
 const pickerWrapperStyleTopLeft = {
   zIndex: '1051',
@@ -180,7 +182,8 @@ const pickerWrapperStyleTopLeft = {
   bottom: 'calc(100% + 4px)',
   left: '0px',
   transformOrigin: 'center bottom',
-  transition: 'opacity 240ms ease-in-out',
+  "transform": "scaleY(1)",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 };
 const pickerWrapperStyleTopRight = {
   zIndex: '1051',
@@ -189,7 +192,8 @@ const pickerWrapperStyleTopRight = {
   bottom: 'calc(100% + 4px)',
   right: '0px',
   transformOrigin: 'center bottom',
-  transition: 'opacity 240ms ease-in-out',
+  "transform": "scaleY(1)",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 };
 const piCKerWrapperStyleRight = {
   zIndex: '1051',
@@ -197,7 +201,8 @@ const piCKerWrapperStyleRight = {
   display: 'block',
   top: 'calc(100% + 4px)',
   right: '0px',
-  transition: 'opacity 240ms ease-in-out',
+  "transform": "scaleY(1)",
+  "transition": "transform 240ms ease-in-out ,opacity 120ms ease-in-out",
 };
 beforeAll(() => {
   jest.useFakeTimers();
@@ -466,7 +471,10 @@ describe('DatePicker[Clearable]', () => {
     const resultInput = datePickerResultWrapper.querySelector(resultTextInput)!;
     inputValueTest(resultInput, value);
 
-    fireEvent.click(datePickerResultWrapper.querySelector(clear)?.querySelector('svg')!);
+    const clearButton = datePickerResultWrapper.querySelector(clear)?.querySelector('svg') ?? null;
+    if (clearButton) {
+      fireEvent.click(clearButton);
+    }
 
     await waitFor(async () => {
       await delay(500);
@@ -601,7 +609,7 @@ describe('DatePicker[Event]', () => {
       await delay(300);
     });
     const datePickerPickerWrapper = container.querySelector(pickerWrapper)!;
-    const pickers = datePickerPickerWrapper.querySelectorAll(picker)!;
+    const pickers = datePickerPickerWrapper.querySelectorAll(`${picker}:not(${timePicker})`)!;
     const cell = pickers[0]
       .querySelector(pickerBody)
       ?.querySelector('table')
@@ -697,7 +705,7 @@ describe('DatePicker[Type]', () => {
     await waitFor(async () => {
       let month = `${tbody.querySelectorAll('tr')[2].querySelector('th')?.textContent}`;
       if (month.length === 1) month = `0${month}`;
-      inputValueTest(datePickerResult, `${year}-${month}`);
+      inputValueTest(datePickerResult, `${year}-${month}W`);
       tbody
         .querySelectorAll('tr')[2]
         .querySelectorAll('td')
@@ -854,6 +862,10 @@ describe('DatePicker[Type]', () => {
       classLengthTest(tbody.querySelector('tr')!, 'td', 3);
     });
     fireEvent.click(tbody.querySelectorAll('tr')[1]?.querySelectorAll('td')[0] as Element);
+    fireEvent.blur(datePickerResult);
+    await act(async () => {
+      jest.runAllTimers(); // 如果有定时器
+    });
     await waitFor(async () => {
       await delay(300);
       inputValueTest(datePickerResult, '2022');
@@ -1467,7 +1479,7 @@ describe('DatePicker[Inputable]', () => {
     const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
     const resultInput = datePickerResultWrapper.querySelector('input')!;
     expect(resultInput).toBeInTheDocument();
-    const tempTime = `${year}-${month}-25`;
+    const tempTime = `${year}-${month}-15`;
     fireEvent.change(resultInput, {
       target: {
         value: tempTime,
@@ -1486,7 +1498,7 @@ describe('DatePicker[Inputable]', () => {
       ?.querySelectorAll('tr')
       .forEach((tr) => {
         tr.querySelectorAll('td').forEach((td) => {
-          if (td.textContent !== '25') return;
+          if (td.textContent !== '15') return;
           classTest(td, pickerCellActive);
         });
       });

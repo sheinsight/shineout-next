@@ -31,7 +31,6 @@ export type UpdateFn = (
   formValue: ObjectType,
   errors: ObjectType<Error | undefined>,
   serverErrors: ObjectType<Error | undefined>,
-  names: Set<string>,
 ) => void;
 
 export interface FormContextValueType {
@@ -78,6 +77,14 @@ export interface FormLabelConfig {
    * @default false
    */
   keepErrorHeight?: boolean;
+
+  /**
+   * @en Whether to keep the error message below the form item, the default is false
+   * @cn 是否保持错误信息在提示信息下方
+   * @default false
+   * @version 3.7.0
+   */
+  keepErrorBelow?: boolean;
   /**
    * @en When inline is true, the form is horizontal layout
    * @cn 是否水平布局
@@ -91,7 +98,7 @@ export interface FormLabelConfig {
    * @default false
    * @version 3.6.0
    */
-  colon?: boolean | React.ReactNode
+  colon?: boolean | React.ReactNode;
 }
 export interface FormCommonConfig extends FormLabelConfig {
   /**
@@ -215,7 +222,10 @@ export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
   name?: string;
 }
 
-export type UseFormProps<T> = BaseFormProps<T>;
+export type UseFormProps<T> = BaseFormProps<T> & {
+  formElRef: React.RefObject<HTMLFormElement>;
+  isControl: boolean;
+};
 
 export type FormContext = {
   defaultValues: ObjectType;
@@ -246,7 +256,6 @@ export type FormContext = {
         formValue: ObjectType,
         errors: ObjectType<Error | undefined>,
         serverErrors: ObjectType<Error | undefined>,
-        names: Set<string>,
       ) => void
     >
   >;

@@ -1,4 +1,4 @@
-import { usePopup, util } from '@sheinx/hooks';
+import { usePersistFn, usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { cloneElement, isValidElement, useEffect } from 'react';
 import { TooltipProps } from './tooltip.type';
@@ -20,6 +20,7 @@ const Tooltip = (props: TooltipProps) => {
     className,
     style,
     zIndex,
+    showArrow = true,
     persistent: persistentProp,
     type = 'default',
     position: popsitionProps = 'auto',
@@ -28,14 +29,14 @@ const Tooltip = (props: TooltipProps) => {
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
 
-  const persistent = config.tooltip?.persistent ?? persistentProp;
+  const persistent = persistentProp ?? config.tooltip?.persistent;
 
   const childrenProps = isValidElement(children)
     ? (children?.props as { [name: string]: any })
     : {};
 
   const delay = props.delay || props.mouseEnterDelay || defaultDelay;
-  const { open, position, getTargetProps, targetRef, popupRef, arrowRef, closePop } = usePopup({
+  const { open, position, getTargetProps, targetRef, popupRef, closePop } = usePopup({
     position: popsitionProps,
     trigger: trigger,
     autoMode: 'popover',
@@ -46,12 +47,19 @@ const Tooltip = (props: TooltipProps) => {
 
   const events = getTargetProps();
 
+  const [updateKey, setUpdateKey] = React.useState(0);
+  const handleUpdateKey = usePersistFn(() => {
+    setUpdateKey((prev) => (prev + 1) % 2);
+  });
+
   const bindEvents = () => {
     const targetEl = targetRef.current;
     if (!targetEl) return;
     if (events.onMouseEnter) targetEl.addEventListener('mouseenter', events.onMouseEnter);
     if (events.onMouseLeave) targetEl.addEventListener('mouseleave', events.onMouseLeave);
     if (events.onClick) targetEl.addEventListener('click', events.onClick);
+
+    window?.addEventListener('resize', handleUpdateKey);
   };
 
   const unbindEvents = () => {
@@ -62,10 +70,12 @@ const Tooltip = (props: TooltipProps) => {
     if (events.onMouseLeave) targetEl.removeEventListener('mouseleave', events.onMouseLeave);
     if (events.onClick) targetEl.removeEventListener('click', events.onClick);
     targetEl.removeEventListener('click', closePop);
+
+    window?.removeEventListener('resize', handleUpdateKey);
   };
 
   useEffect(() => {
-    if(!persistent) return
+    if (!persistent) return;
     bindEvents();
     return () => {
       unbindEvents();
@@ -112,8 +122,7 @@ const Tooltip = (props: TooltipProps) => {
         popupGap={0}
         zIndex={zIndex}
         adjust={popsitionProps === 'auto'}
-
-        arrowRef={arrowRef}
+        updateKey={updateKey}
       >
         <div
           className={classNames(
@@ -128,11 +137,12 @@ const Tooltip = (props: TooltipProps) => {
           onMouseLeave={events.onMouseLeave}
           dir={config.direction}
         >
-          <span
-            ref={arrowRef}
-            className={tooltipClasses?.arrow}
-            {...util.getDataAttribute({ role: 'arrow' })}
-          ></span>
+          {showArrow && (
+            <span
+              className={tooltipClasses?.arrow}
+              {...util.getDataAttribute({ role: 'arrow' })}
+            />
+          )}
           <div style={style} className={classNames(tooltipClasses?.content)}>
             {tip}
           </div>

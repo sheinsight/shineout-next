@@ -10,10 +10,16 @@ export interface CollapseTokens {
   collapseIconColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-3
+   * @token Neutral-fill-2
    * @description 折叠面板图标鼠标移入时的背景颜色
    */
   collapseIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 折叠面板图标鼠标点击时的背景颜色
+   */
+  collapseIconActiveBackgroundColor: string;
   /**
    * @type {string}
    * @token Spacing-24

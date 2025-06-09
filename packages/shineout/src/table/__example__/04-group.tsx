@@ -91,7 +91,7 @@ const columns: TableColumnItem[] = [
   { title: 'Nick Name', render: () => 'nickname', group: name },
   { title: 'Country', render: 'country' },
   { title: 'Office', render: 'office', group: other },
-  { title: 'Position', render: 'position', group: other },
+  { title: 'Position', render: 'position', group: other, groupProps: { style: { background: '#EEF2FE' }, className: 'my-custom-header' } },
 ];
 
 const App: React.FC = () => <Table bordered keygen='id' columns={columns} data={data} />;

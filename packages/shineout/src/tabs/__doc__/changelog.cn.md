@@ -1,3 +1,23 @@
+## 3.7.0-beta.8
+2025-04-21
+
+### 🆕 Feature
+- `Tabs` 新增 `renderTabsHeader` 属性，支持自定义渲染头部内容 ([#1075](https://github.com/sheinsight/shineout-next/pull/1075))
+
+## 3.6.6-beta.1
+2025-04-30
+
+### 🐞 BugFix
+- 修复 `Tabs.Panel` 设置 `background` 非预期的影响到shape为button和fill的样式（Regression: since v3.6.2） ([#1094](https://github.com/sheinsight/shineout-next/pull/1094))
+
+
+
+## 3.6.2-beta.1
+2025-03-31
+
+### 🐞 BugFix
+- 修复 `Tabs.Panel` 设置 `background` 属性失效的问题 ([#1028](https://github.com/sheinsight/shineout-next/pull/1028))
+
 ## 3.5.8
 2025-02-13
 
@@ -54,7 +74,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Tabs` 组件的 Tabs.Panel 是异步动态长度时，需要 resize 页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
+- 修复 `Tabs.Panel` 是异步的动态长度时，需要 resize 页面才会出现左右的滚动箭头 ([#668](https://github.com/sheinsight/shineout-next/pull/668))
 
 ## 3.3.7
 2024-09-10

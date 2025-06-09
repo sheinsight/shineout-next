@@ -1,14 +1,89 @@
-## 3.6.0-beta.4
-2025-02-11
+## 3.7.1-beta.3
+2025-06-06
 
 ### 💎 Enhancement
+- `TreeSelect` 增强 `disabled` 属性，支持动态 disabled ([#1156](https://github.com/sheinsight/shineout-next/pull/1156))
 
-- `TreeSelect` 组件新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
+## 3.7.0-beta.32
+2025-05-27
 
-## 3.6.0-beta.2
-2024-12-19
+### 💎 Enhancement
+- `TreeSelect` 增强 `size` 属性，下拉面板的列表尺寸跟随size联动 ([#1128](https://github.com/sheinsight/shineout-next/pull/1128))
 
-### 💎 Performance
+## 3.7.0-beta.31
+2025-05-27
+
+### 🆕 Feature
+- `TreeSelect` 新增 `highlight` 属性，开启搜索关键字高亮功能 ([#1126](https://github.com/sheinsight/shineout-next/pull/1126))
+
+
+## 3.7.0-beta.27
+2025-05-22
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 的 `beforeChange` 不生效的问题 ([#1120](https://github.com/sheinsight/shineout-next/pull/1120))
+
+## 3.7.0-beta.18
+2025-05-07
+
+### 🆕 Feature
+- `TreeSelect` 新增 `renderCompressed` 属性，支持自定义渲染合并内容 ([#1099](https://github.com/sheinsight/shineout-next/pull/1099))
+
+## 3.6.6-beta.4
+2025-05-09
+
+### 🐞 BugFix
+- 修复 `TreeSelect`结果框高度不继承的问题  ([#1105](https://github.com/sheinsight/shineout-next/pull/1105))
+
+## 3.6.6-beta.3
+2025-05-07
+
+### 💎 Enhancement
+- `TreeSelect` 增强 `compressed` 属性，新增 `hide-popover` 模式隐藏合并后的选项，仅展示合并数量 ([#1098](https://github.com/sheinsight/shineout-next/pull/1098))
+
+## 3.6.5-beta.1
+2025-04-23
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 在 `Popover` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除条目时会引起样式异常的问题 ([#1079](https://github.com/sheinsight/shineout-next/pull/1079))
+
+## 3.6.4-beta.8
+2025-04-22
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 在页面边界搜索时，下拉弹出层的位置未实时更新导致偏离父元素的问题 ([#1076](https://github.com/sheinsight/shineout-next/pull/1076))
+
+## 3.6.4-beta.7
+2025-04-18
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 的 `onFilter` ts 类型和第二参数丢失的问题 ([#1073](https://github.com/sheinsight/shineout-next/pull/1073))
+
+## 3.6.3-beta.6
+2025-04-11
+
+### 🆕 Feature
+- `TreeSelect` 新增 `contentClass` 属性，功能同 `Tree` 组件属性 ([#1055](https://github.com/sheinsight/shineout-next/pull/1055))
+
+## 3.6.3-beta.3
+2025-04-11
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 最大高度限制失效的问题（默认 max-height 应为 80px） ([#1051](https://github.com/sheinsight/shineout-next/pull/1051))
+
+## 3.6.0
+2025-03-20
+
+### 🆕 Feature
+
+- `TreeSelect` 新增 `actionOnClick` 属性，配置点击节点时的行为：`expand` 展开/收起节点，`check` 勾选或取消勾选节点 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
+- `TreeSelect` 新增 `virtual` 属性支持虚拟列表 ([#948](https://github.com/sheinsight/shineout-next/pull/948))
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 输入过滤内容并选中选项后，输入内容无法默认全选的问题 ([#971](https://github.com/sheinsight/shineout-next/pull/971))
+
+
+### 🚀 Performance
 - 优化 `TreeSelect` 大数据量下的树形数据搜索性能 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
 - 优化 `TreeSelect` 在大数据量下同时被渲染很多个时的页面初始化性能问题 ([#877](https://github.com/sheinsight/shineout-next/pull/877))
 
@@ -23,7 +98,7 @@
 2024-09-19
 
 ### 🐞 BugFix
-- 修复 `TreeSelect` 组件 `filterDelay` 属性失效的问题 ([#672](https://github.com/sheinsight/shineout-next/pull/672))
+- 修复 `TreeSelect` 的 `filterDelay` 属性失效的问题 ([#672](https://github.com/sheinsight/shineout-next/pull/672))
 
 ## 3.3.3
 2024-08-15

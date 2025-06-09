@@ -24,6 +24,17 @@ exports[`Alert[Base] should render correctly  1`] = `
         cellspacing="0"
         class="soui-descriptions-table"
       >
+        <colgroup>
+          <col
+            style="width: 33.33333333333333%;"
+          />
+          <col
+            style="width: 33.33333333333333%;"
+          />
+          <col
+            style="width: 33.33333333333333%;"
+          />
+        </colgroup>
         <tbody>
           <tr
             class="soui-descriptions-row"
@@ -38,11 +49,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Name
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -61,11 +68,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Residence
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -84,11 +87,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Address
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -111,11 +110,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Mobile
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -135,11 +130,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="soui-descriptions-label-inline"
                 >
                   Hometown
-                  <span
-                    style="padding-inline-start: 4px;"
-                  >
-                    :
-                  </span>
+                   :
                 </div>
                 <div
                   class="soui-descriptions-value-inline"
@@ -1349,6 +1340,17 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         cellspacing="0"
         class="soui-descriptions-table"
       >
+        <colgroup>
+          <col
+            style="width: 33.33333333333333%;"
+          />
+          <col
+            style="width: 33.33333333333333%;"
+          />
+          <col
+            style="width: 33.33333333333333%;"
+          />
+        </colgroup>
         <tbody>
           <tr
             class="soui-descriptions-row"
