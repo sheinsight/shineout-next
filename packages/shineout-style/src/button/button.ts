@@ -229,7 +229,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
         borderBottomRightRadius: `calc(${Token.buttonBorderRadius} - 1px)`,
       },
     },
-    '[data-soui-role="input-group-seperate"] > &': {
+    '[data-soui-role="input-group-separate"] > &': {
       borderRadius: 0,
       marginLeft: -1,
 

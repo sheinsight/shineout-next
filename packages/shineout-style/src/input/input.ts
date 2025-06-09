@@ -66,7 +66,7 @@ const groupSpace = (gap: string) => ({
   '& > i:last-child, & > span:last-child': {
     paddingRight: gap,
   },
-  '[data-soui-role="input-group-seperate"]&': {
+  '[data-soui-role="input-group-separate"]&, [data-soui-role="input-group-seperate"]&': {
     '& > b:first-child': {
       marginLeft: 0,
       borderLeft: `1px solid ${token.inputBorderColor}`,
@@ -124,7 +124,7 @@ const input: JsStyles<keyof InputClasses> = {
     position: 'relative',
     ...wrapper,
 
-    '[data-soui-role="input-group-seperate"] &': {
+    '[data-soui-role="input-group-separate"] &, [data-soui-role="input-group-seperate"] &': {
       flex: 1,
       minWidth: 0,
     },
@@ -220,7 +220,7 @@ const input: JsStyles<keyof InputClasses> = {
     },
     ...groupSpace(token.inputPaddingX),
   },
-  groupSeperate: {
+  groupSeparate: {
     border: 'none',
 
     '& > b': {

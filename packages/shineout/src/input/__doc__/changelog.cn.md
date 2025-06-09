@@ -4,6 +4,8 @@
 ### 🐞 BugFix
 
 - 修复 `Input.Group` 的 `seperate` 在hover时层级高过了Table固定列的问题 ([#1158](https://github.com/sheinsight/shineout-next/pull/1158))
+- 修复 `Input.Group` 的 `seperate` 属性名称拼写错误问题，修正为 `separate`，原 `seperate` 属性仍保留但标记为废弃 ([#1158](https://github.com/sheinsight/shineout-next/pull/1158))
+
 
 ## 3.6.2-beta.6
 2025-04-03

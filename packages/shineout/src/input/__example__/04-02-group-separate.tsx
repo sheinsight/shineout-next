@@ -2,7 +2,7 @@
  * cn - 独立边框
  *    -- 设置 `separate` 属性开启：组合到一起的组件有独立的边框
  * en - Group separate
- *    -- Set `separate` property to enable: the components combined together have independent borders
+ *    -- The components combined together have independent borders
  */
 
 import React from 'react';
