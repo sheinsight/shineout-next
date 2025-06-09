@@ -85,7 +85,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         'margin-left': `-1px`,
 
         '&:hover': {
-          zIndex: 1050,
+          zIndex: 7,
         },
 
         '&:first-child': {

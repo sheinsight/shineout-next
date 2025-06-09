@@ -1,3 +1,10 @@
+## 3.7.1-beta.4
+2025-06-09
+
+### 🐞 BugFix
+
+- 修复 `Input.Group` 的 `seperate` 在hover时层级高过了Table固定列的问题 ([#1158](https://github.com/sheinsight/shineout-next/pull/1158))
+
 ## 3.6.2-beta.6
 2025-04-03
 
