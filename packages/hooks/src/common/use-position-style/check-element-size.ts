@@ -30,7 +30,8 @@ export const useCheckElementSize = (
 
       if (
         newSize.width !== lastSize.current.width ||
-        newSize.height !== lastSize.current.height
+        newSize.height !== lastSize.current.height &&
+        newSize.height !== 0
       ) {
         setSize(newSize);
         lastSize.current = newSize;
