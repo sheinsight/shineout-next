@@ -1,3 +1,9 @@
+## 3.7.1-beta.5
+2025-06-10
+
+### 🐞 BugFix
+- 修复 `Select` 同时设置了 `absolute` 和 `optionWidth` 属性后，弹出层在右侧溢出时位置不自动调整的问题 ([#1159](https://github.com/sheinsight/shineout-next/pull/1159))
+
 ## 3.7.1-beta.4
 2025-06-09
 
