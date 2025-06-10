@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
 import { useCheckElementPosition, type Position } from './check-position'
 import { useCheckElementBorderWidth } from './check-border';
@@ -92,6 +92,18 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
   const popupElSize = useCheckElementSize(popupElRef, { enable: show });
 
+  const [popupElWidth, setPopupElWidth] = useState(0);
+  useLayoutEffect(() => {
+    if (!show || !popupElRef.current) return;
+    if (popupElRef.current) {
+      // 二次打开弹出层时，元素被之前的动画设置了display: none，重新获取元素尺寸时，需要立即设置display: block
+      if (popupElRef.current.style.display === 'none') {
+        popupElRef.current.style.display = 'block';
+      }
+      setPopupElWidth(popupElRef.current.getBoundingClientRect().width);
+    }
+  }, [show, popupElRef.current])
+
   const adjustPosition = (position: PositionType) => {
     const winHeight = docSize.height;
     if (!verticalPosition.includes(position)) return position;
@@ -126,6 +138,12 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         ) {
           newPosition = newPosition.replace('left', 'right') as VerticalPosition;
         }
+      }
+    } else {
+      // absolute 场景下，右侧溢出判断需要考虑弹出层元素的尺寸
+      const [, horizontalPosition] = position.split('-');
+      if (horizontalPosition === 'left' && context.parentRect.left + (popupElWidth || context.popUpWidth) > docSize.width) {
+        newPosition = newPosition.replace('left', 'right') as VerticalPosition;
       }
     }
 
@@ -326,6 +344,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     // 当父元素的滚动容器滚动时，判断是否需要更新弹出层位置，包括是否隐藏弹出层（通过hideStyle隐藏，不是show状态）
     context.prevParentPosition = parentElNewPosition;
   });
+
+
 
   useEffect(updateStyle, [
     show,
