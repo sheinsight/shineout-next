@@ -305,39 +305,45 @@ export interface TreeSelectTokens {
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 树选择器undefined鼠标移入时的字体颜色
+   * @description 树选择器选项容器鼠标移入时的字体颜色
    */
   treeSelectContentHoverFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
-   * @description 树选择器undefined鼠标移入时的背景颜色
+   * @description 树选择器选项容器鼠标移入时的背景颜色
    */
   treeSelectContentHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-6
-   * @description 树选择器undefined鼠标点击时的字体颜色
+   * @description 树选择器选项容器鼠标点击时的字体颜色
    */
   treeSelectContentActiveFontColor: string;
   /**
    * @type {string}
    * @token Brand-1
-   * @description 树选择器undefined鼠标点击时的背景颜色
+   * @description 树选择器选项容器鼠标点击时的背景颜色
    */
   treeSelectContentActiveBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 树选择器undefined禁用时的字体颜色
+   * @description 树选择器选项容器禁用时的字体颜色
    */
   treeSelectContentDisabledFontColor: string;
   /**
    * @type {string}
    * @token Transprent
-   * @description 树选择器undefined禁用时的背景颜色
+   * @description 树选择器选项容器禁用时的背景颜色
    */
   treeSelectContentDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 树选择器选项容器禁用时的鼠标移入时的背景颜色
+   */
+  treeSelectContentDisabledHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Size-16

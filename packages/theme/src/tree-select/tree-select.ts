@@ -60,6 +60,7 @@ const treeSelectTokens: TreeSelectTokens = {
   treeSelectContentActiveBackgroundColor: 'Brand-1',
   treeSelectContentDisabledFontColor: 'Neutral-text-2',
   treeSelectContentDisabledBackgroundColor: 'Transprent',
+  treeSelectContentDisabledHoverBackgroundColor: 'Neutral-fill-2',
   treeSelectOptionHeight: 'Size-16',
   treeSelectOptionPaddingX: 'Spacing-4',
   treeSelectOptionPaddingY: 'Spacing-1',

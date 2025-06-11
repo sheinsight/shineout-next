@@ -22,6 +22,7 @@ const treeSelectTokenDescription = {
   more: '合并弹层的',
   right: '（右侧）',
   header: '下拉列表的头部区域',
+  content: '选项容器',
 };
 
 /**
@@ -109,6 +110,9 @@ const treeSelectTokenExtraValue = {
     disabled: {
       font: { color: 'Neutral-text-2' },
       background: { color: 'Transprent' },
+      hover: {
+        background: { color: 'Neutral-fill-2' },
+      },
     },
   },
   option: {
