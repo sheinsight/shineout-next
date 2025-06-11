@@ -74,7 +74,7 @@ const useNumberFormat = (props: InputNumberProps) => {
     };
   })
 
-  const onNumberBlur = usePersistFn((e: React.FocusEvent) => {
+  const onNumberBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
     const newValue = target.value;
 

@@ -14,12 +14,12 @@ export interface TextAreaPropsOwn {
    * @en The callback when Textarea blur
    * @cn 失去焦点后的回调
    */
-  onBlur?: React.FocusEventHandler;
+  onBlur?: React.FocusEventHandler<HTMLTextAreaElement>;
   /**
    * @en Callback function for blur focus
    * @cn focus 事件回调函数
    */
-  onFocus?: React.FocusEventHandler;
+  onFocus?: React.FocusEventHandler<HTMLTextAreaElement>;
   /**
    * @en Callback function for click
    * @cn click 事件回调函数
