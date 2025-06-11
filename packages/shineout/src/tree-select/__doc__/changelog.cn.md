@@ -1,3 +1,9 @@
+## 3.7.1-beta.8
+2025-06-06
+
+### 💅 Style
+- `TreeSelect` 新增禁用选项的背景色 token ([#1163](https://github.com/sheinsight/shineout-next/pull/1163))
+
 ## 3.7.1-beta.3
 2025-06-06
 
