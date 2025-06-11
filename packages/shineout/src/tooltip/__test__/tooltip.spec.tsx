@@ -311,4 +311,13 @@ describe('Tooltip[Base]', () => {
     const wrapper = document.querySelector(tooltipClassName)! as HTMLDivElement;
     expect(wrapper.style.pointerEvents).toBe('initial');
   });
+  test('should render when set popupGap', async () => {
+    render(<Tooltip popupGap={100} tip='hello'><span>demo</span></Tooltip>);
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName) ! as HTMLDivElement
+    expect(wrapper.style.top).toBe('100px');
+  });
 });
