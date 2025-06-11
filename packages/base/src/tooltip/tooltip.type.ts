@@ -101,4 +101,11 @@ export interface TooltipProps
    * @version 3.6.0
    */
   showArrow?: boolean;
+
+  /**
+   * @en Popup gap
+   * @cn 弹出层与目标元素的间距，是在默认4px的基础上增加的
+   * @version 3.8.0
+   */
+  popupGap?: number;
 }
