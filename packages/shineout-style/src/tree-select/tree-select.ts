@@ -498,6 +498,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       color: token.treeSelectOptionDisabledColor,
       backgroundColor: token.treeSelectOptionDisabledBackgroundColor,
     },
+    '&&:not([data-active="true"]):hover > div': {
+      backgroundColor: token.treeSelectContentDisabledHoverBackgroundColor,
+    },
   },
   optionGroup: {},
   optionGroupTitle: {
