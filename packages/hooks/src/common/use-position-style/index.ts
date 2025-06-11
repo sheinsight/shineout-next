@@ -260,7 +260,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       if (h === 'right') {
         style.left = rect.right - containerRect.left + containerScroll.left + popupGap;
       } else {
-        style.right = containerRect.right - rect.left;
+        style.right = containerRect.right - rect.left + popupGap;
       }
     } else if (position === 'cover') {
       style.top = rect.top - containerRect.top + containerScroll.top;
