@@ -64,7 +64,7 @@ const useInputFormat = (props: InputFormatProps) => {
     onChange(value);
   });
 
-  const handleBlur = usePersistFn((e: React.FocusEvent) => {
+  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
     let value = target.value;
     let before = value;
@@ -112,7 +112,7 @@ const useInputFormat = (props: InputFormatProps) => {
     onBlur?.(e);
   });
 
-  const focusHandler = usePersistFn((e: React.FocusEvent) => {
+  const focusHandler = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
     if (type === 'number' && coin) {
       setShowCoin(false);
     }

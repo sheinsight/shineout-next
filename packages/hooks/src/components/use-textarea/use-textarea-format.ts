@@ -5,8 +5,8 @@ import { InputFormatProps } from './use-textarea-format.type';
 const useTextareaFormat = (props: InputFormatProps) => {
   const { trim, onChange, onBlur } = props;
 
-  const handleBlur = usePersistFn((e: React.FocusEvent) => {
-    const target = e.target as HTMLInputElement;
+  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLTextAreaElement>) => {
+    const target = e.target;
     let value = target.value;
     let before = value;
 

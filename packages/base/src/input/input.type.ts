@@ -200,7 +200,7 @@ export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'cla
    * @en The callback of blur
    * @cn 失去焦点后的回调
    */
-  onBlur?: React.FocusEventHandler;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   status?: CommonType['status'];
 }
 

@@ -1,3 +1,10 @@
+## 3.7.1-beta.7
+2025-06-11
+
+### 🐞 BugFix
+
+- 修复 `Input` 的 `onBlur` 和 `onFocus` 事件的参数类型错误问题 ([#1161](https://github.com/sheinsight/shineout-next/pull/1161))
+
 ## 3.7.1-beta.4
 2025-06-09
 
