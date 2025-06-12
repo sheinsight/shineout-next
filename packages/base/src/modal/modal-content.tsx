@@ -155,8 +155,10 @@ const Modal = (props: ModalContentProps) => {
   // 设置 document.body.style.overflow 和 document.body.style.paddingRight，并记录原始值到 context 中
   const setDocumentOverflow = usePersistFn(() => {
     const doc = document.body.parentNode! as HTMLElement;
-    context.originDocumentStyle.overflow = doc.style.overflow;
-    context.originDocumentStyle.paddingRight = doc.style.paddingRight;
+    if (context.isMask) {
+      context.originDocumentStyle.overflow = doc.style.overflow;
+      context.originDocumentStyle.paddingRight = doc.style.paddingRight;
+    }
     doc.style.overflow = 'hidden';
     if (!doc.style.paddingRight) {
       doc.style.paddingRight = `${window.innerWidth - util.docSize.width}px`;
@@ -194,18 +196,9 @@ const Modal = (props: ModalContentProps) => {
         resetDocumentOverflow();
       };
       props.shouldDestroy?.(true);
-      // if (props.autoShow) {
-      //   props.onClose?.();
-      // }
       if (context.isMask) {
         context.isMask = false;
         hasMask = false;
-      }
-      {
-        if (!context.isMask) return;
-        const doc = document.body.parentNode! as HTMLElement;
-        doc.style.paddingRight = '';
-        doc.style.overflow = '';
       }
     };
   }, []);
