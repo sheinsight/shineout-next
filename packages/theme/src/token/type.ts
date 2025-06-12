@@ -1402,6 +1402,13 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
+   * @default 'calc( max(1em, 14px) + 8px )'
+   * @description 根据当前的字体大小 + 8px，但字体大小小于 14px 时，使用 14px 计算
+   */
+  'Line-height-dynamic-min': string;
+  /**
+   * @type {string}
+   * @categoty string
    * @default 'transparent'
    * @description 较粗边框宽度
    */
