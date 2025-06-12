@@ -42,11 +42,15 @@ const selectTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5', weight: 'Weight-regular' },
   border: { radius: 'Radius-default', color: 'Neutral-border-2', width: 'Border-1' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
-  icon: { size: 'Size-7', color: 'Neutral-text-4', margin: {left: 'Spacing-8'} },
+  icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { left: 'Spacing-8' } },
   tag: {
     margin: {
       y: 'Spacing-2',
       right: 'Spacing-4',
+    },
+    height: 'Line-height-dynamic',
+    line: {
+      height: 'Line-height-dynamic',
     },
   },
   small: {
@@ -56,6 +60,12 @@ const selectTokenExtraValue = {
     option: {
       inner: {
         padding: { x: 'Spacing-8', y: 'Spacing-2' },
+      },
+    },
+    tag: {
+      height: 'Size-9',
+      line: {
+        height: 'Size-8',
       },
     },
   },
@@ -69,6 +79,12 @@ const selectTokenExtraValue = {
     },
     placeholder: {
       margin: { y: 'Spacing-4' },
+    },
+    tag: {
+      height: 'Line-height-dynamic',
+      line: {
+        height: 'Line-height-dynamic',
+      },
     },
   },
   inner: {
@@ -147,7 +163,7 @@ const selectTokenExtraValue = {
     padding: {
       x: 'Spacing-8',
       y: 'Spacing-6',
-    }
+    },
   },
   header: {
     padding: { x: 'Spacing-8', y: 'Spacing-8' },

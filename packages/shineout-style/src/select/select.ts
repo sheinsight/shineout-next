@@ -58,6 +58,14 @@ const inputBorderToken = {
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
+const selectTagHeightCssvar = `--select-tag-height`;
+const selectSmallTagHeightCssvar = `--select-small-tag-height`;
+const selectLargeTagHeightCssvar = `--select-large-tag-height`;
+
+const selectTagHeight = `var(${selectTagHeightCssvar})`;
+const selectSmallTagHeight = `var(${selectSmallTagHeightCssvar})`;
+const selectLargeTagHeight = `var(${selectLargeTagHeightCssvar})`;
+
 const selectStyle: JsStyles<SelectClassType> = {
   rootClass: {},
   wrapper: {
@@ -67,6 +75,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     outline: 'none',
     cursor: 'pointer',
     ...wrapper,
+    [selectTagHeightCssvar]: token.selectTagHeight,
+    [selectSmallTagHeightCssvar]: token.selectSmallTagHeight,
+    [selectLargeTagHeightCssvar]: token.selectLargeTagHeight,
+
     '&$wrapperInnerTitle': {
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: 0,
@@ -76,23 +88,30 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginTop: 0,
         paddingTop: 0,
         paddingBottom: 0,
-        height: token.lineHeightDynamic,
+        height: selectTagHeight,
         border: 'none',
         '&  *': {
-          lineHeight: token.lineHeightDynamic,
+          lineHeight: selectTagHeight,
         },
       },
       '&$wrapperSmall $tag': {
-        height: 18,
+        height: selectSmallTagHeight,
         marginBottom: 2,
         '&$tag  *': {
-          lineHeight: '18px',
+          lineHeight: selectSmallTagHeight,
+        },
+      },
+      '&$wrapperLarge $tag': {
+        height: selectLargeTagHeight,
+        marginBottom: 2,
+        '&$tag  *': {
+          lineHeight: selectLargeTagHeight,
         },
       },
     },
     '&$wrapperSmall': {
       '& $tag': {
-        height: 18,
+        height: selectSmallTagHeight,
         lineHeight: '16px',
         marginTop: 1,
         marginBottom: 1,
@@ -103,6 +122,12 @@ const selectStyle: JsStyles<SelectClassType> = {
       },
     },
     '&$wrapperLarge': {
+      '& $tag': {
+        height: selectLargeTagHeight,
+        '&  *': {
+          lineHeight: selectLargeTagHeight,
+        },
+      },
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: token.selectLargePlaceholderMarginY,
         marginBottom: token.selectLargePlaceholderMarginY,
