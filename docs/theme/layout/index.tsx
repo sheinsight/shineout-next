@@ -4,27 +4,26 @@ import Menu from './desktop/menu';
 import LayoutDasktop from './desktop';
 import useStyles from './style'
 
+const LayoutWithoutRouter = () => {
+  const classes = useStyles();
 
-
-const LayoutDesktop = () => {
-  const location = useLocation();
-  const isFullScreen = location.pathname.includes('/home');
+  const isFullScreen = useLocation().pathname?.includes('/home')
 
   return (
     <>
       {!isFullScreen && <Nav />}
-      {!isFullScreen && <Menu />}
-      <LayoutDasktop isFullScreen={isFullScreen}  />
+      <main className={classes.container}>
+        {!isFullScreen && <Menu />}
+        <LayoutDasktop isFullScreen={isFullScreen} />
+      </main>
     </>
   )
 }
 
 const Layout = () => (
-  <>
-    <Router>
-      <LayoutDesktop />
-    </Router>
-  </>
-);
+  <Router>
+    <LayoutWithoutRouter />
+  </Router>
+)
 
 export default Layout;
