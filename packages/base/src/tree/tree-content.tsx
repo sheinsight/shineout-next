@@ -262,6 +262,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         <div
           dir={config.direction}
           className={contentStyle.text}
+          data-role='text'
           onDoubleClick={onNodeDoubleClick}
           onClick={handleNodeClick}
         >
