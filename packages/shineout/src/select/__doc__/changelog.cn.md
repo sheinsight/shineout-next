@@ -1,3 +1,9 @@
+## 3.7.1-beta.9
+2025-06-11
+
+### 🐞 BugFix
+- 修复 `Select` 在 `Drawer` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除第二次无效的问题 ([#1164](https://github.com/sheinsight/shineout-next/pull/1164))
+
 ## 3.7.1-beta.5
 2025-06-10
 

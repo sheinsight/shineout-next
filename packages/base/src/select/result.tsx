@@ -167,9 +167,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const handleCloseMouseDown = () => {
     removeLock.current = true;
-    setTimeout(() => {
-      removeLock.current = false;
-    }, 0);
   };
 
   const renderResultItem = (
@@ -342,7 +339,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const handleResetMore = () => {
     if (!compressed) return;
     if (isCompressedBound()) return;
-    if (removeLock.current) return;
+    if (removeLock.current) {
+      removeLock.current = false;
+      return;
+    }
 
     setMore(-1);
     setShouldResetMore(true);
