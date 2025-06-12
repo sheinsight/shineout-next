@@ -35,5 +35,8 @@ export default {
   },
   'shineout.playground': {
     configuration: 'Configuration',
+  },
+  'shineout.frontPage': {
+    begin: 'Get started',
   }
 };
