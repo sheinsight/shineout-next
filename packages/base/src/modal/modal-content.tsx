@@ -45,6 +45,10 @@ const Modal = (props: ModalContentProps) => {
     mouseDownTarget: null as HTMLElement | null,
     mouseUpTarget: null as HTMLElement | null,
     content: null as React.ReactNode,
+    originDocumentStyle: {
+      overflow: '',
+      paddingRight: '',
+    },
   });
 
   const [animation, setAnimation] = useState(props.visible || props.autoShow);
@@ -148,18 +152,33 @@ const Modal = (props: ModalContentProps) => {
     }
   }, [props.visible]);
 
+  // 设置 document.body.style.overflow 和 document.body.style.paddingRight，并记录原始值到 context 中
+  const setDocumentOverflow = usePersistFn(() => {
+    const doc = document.body.parentNode! as HTMLElement;
+    if (context.isMask) {
+      context.originDocumentStyle.overflow = doc.style.overflow;
+      context.originDocumentStyle.paddingRight = doc.style.paddingRight;
+    }
+    doc.style.overflow = 'hidden';
+    if (!doc.style.paddingRight) {
+      doc.style.paddingRight = `${window.innerWidth - util.docSize.width}px`;
+    }
+  })
+
+  // 还原 document.body.style.overflow 和 document.body.style.paddingRight
+  const resetDocumentOverflow = usePersistFn(() => {
+    const doc = document.body.parentNode! as HTMLElement;
+    doc.style.overflow = context.originDocumentStyle.overflow;
+    doc.style.paddingRight = context.originDocumentStyle.paddingRight;
+  })
+
   useEffect(() => {
     if (!props.hideMask) {
-      const doc = document.body.parentNode! as HTMLElement;
       if (visible) {
-        doc.style.overflow = 'hidden';
-        if (!doc.style.paddingRight) {
-          doc.style.paddingRight = `${window.innerWidth - util.docSize.width}px`;
-        }
+        setDocumentOverflow();
       } else {
         if (!context.isMask) return;
-        doc.style.paddingRight = '';
-        doc.style.overflow = '';
+        resetDocumentOverflow();
       }
     }
   }, [visible]);
@@ -173,19 +192,13 @@ const Modal = (props: ModalContentProps) => {
   useEffect(() => {
     // unmount
     return () => {
+      if (context.isMask) {
+        resetDocumentOverflow();
+      };
       props.shouldDestroy?.(true);
-      // if (props.autoShow) {
-      //   props.onClose?.();
-      // }
       if (context.isMask) {
         context.isMask = false;
         hasMask = false;
-      }
-      {
-        if (!context.isMask) return;
-        const doc = document.body.parentNode! as HTMLElement;
-        doc.style.paddingRight = '';
-        doc.style.overflow = '';
       }
     };
   }, []);
