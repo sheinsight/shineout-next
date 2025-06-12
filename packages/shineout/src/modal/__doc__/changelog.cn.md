@@ -1,3 +1,11 @@
+## 3.7.2-beta.3
+2025-06-12
+
+### 🐞 BugFix
+
+- 修复 `Modal` 被外部通过 ReactDOM.unmountComponentAtNode 卸载后，无法重置html元素的样式的问题 ([#1170](https://github.com/sheinsight/shineout-next/pull/1170))
+
+
 ## 3.7.0-beta.20
 2025-05-07
 
