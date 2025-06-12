@@ -5,9 +5,15 @@ export interface UploadTokens {
   /**
    * @type {string}
    * @token Spacing-12
-   * @description 上传结果内边距（水平方向）
+   * @description 上传结果内边距（水平方向）undefined
    */
-  uploadResultPaddingX: string;
+  uploadResultPaddingX1: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 上传结果内边距（水平方向）undefined
+   */
+  uploadResultPaddingX2: string;
   /**
    * @type {string}
    * @token Spacing-5

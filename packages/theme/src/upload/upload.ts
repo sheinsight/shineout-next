@@ -4,7 +4,8 @@
 import { UploadTokens } from './type';
 
 const uploadTokens: UploadTokens = {
-  uploadResultPaddingX: 'Spacing-12',
+  uploadResultPaddingX1: 'Spacing-12',
+  uploadResultPaddingX2: 'Spacing-8',
   uploadResultPaddingY: 'Spacing-5',
   uploadResultBackgroundColor: 'Neutral-fill-2',
   uploadResultGap: 'Spacing-4',
