@@ -9,6 +9,13 @@ export interface CommonTokens {
   /**
    * @type {string}
    * @categoty string
+   * @default 'calc( max(1em, 14px) + 8px )'
+   * @description 最小动态行高，根据当前的字体大小 + 8px，但字体大小小于 14px 时，使用 14px 计算
+   */
+  lineHeightDynamicMin: string;
+  /**
+   * @type {string}
+   * @categoty string
    * @default '3px'
    * @description 较粗边框宽度
    */

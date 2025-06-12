@@ -29,7 +29,8 @@ export interface UploadClasses {
   resultError: string;
   resultDeleted: string;
   resultClose: string;
-  resultStatusIcon: string;
+  resultErrorClose: string;
+  resultProgressText: string;
   // image
   imageHandler: string;
   imageHandlerIcon: string;

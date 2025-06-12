@@ -8,6 +8,7 @@
 import React from 'react';
 import { Button, Form, Upload } from 'shineout';
 import { UploadIcon } from './static/icon';
+import { mockRquest } from './request';
 
 const App: React.FC = () => {
   return (
@@ -17,7 +18,10 @@ const App: React.FC = () => {
       }}
     >
       <Upload
-        action='//jsonplaceholder.typicode.com/posts/404'
+        request={mockRquest({
+          uploadTime: 3000,
+          success: Math.random() > 0.5,
+        })}
         defaultValue={['1.png']}
         showUploadList={true}
         accept='image/*'
