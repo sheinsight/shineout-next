@@ -61,17 +61,15 @@ const hideStyle: React.CSSProperties = {
 
 function setTransform(style: React.CSSProperties, transform: string, addon?: boolean) {
   if (addon) {
-    style.transform += transform;
+    style.transform += ' ' + transform;
   } else {
     style.transform = transform;
   }
   // 提供给动画侧合并使用
-  if (transform) {
-    if(addon){
-      (style as any)['--soui-popup-transform'] += transform;
-    } else {
-      (style as any)['--soui-popup-transform'] = transform;
-    }
+  if(addon){
+    (style as any)['--soui-popup-transform'] += ' ' + transform;
+  } else {
+    (style as any)['--soui-popup-transform'] = transform;
   }
 }
 
@@ -215,7 +213,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       let overLeft = 0;
       if (h === 'left') {
         style.left = rect.left - containerRect.left + containerScroll.left - (offset ? offset[0] : 0);
-        setTransform(style, 'translateX(0)');
+        setTransform(style, '');
         if (adjust) {
           overRight = rect.left + context.popUpWidth - bodyRect.right + containerScrollBarWidth;
           if (style.left < 0 && targetRect) {
@@ -227,7 +225,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
           containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left - (offset ? offset[0] : 0);
 
         style.left = 'auto';
-        setTransform(style, 'translateX(0)');
+        setTransform(style, '');
       } else {
         // 居中对齐
         style.left = rect.left + rect.width / 2 - containerRect.left + containerScroll.left;
@@ -264,7 +262,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       const [h, v] = targetPosition.split('-');
       if (v === 'top') {
         style.top = rect.top - containerRect.top + containerScroll.top - (offset ? offset[1] : 0);
-        setTransform(style, 'translateY(0)');
+        setTransform(style, '');
       } else if (v === 'bottom') {
         style.top = rect.bottom - containerRect.top + containerScroll.top + (offset ? offset[1] : 0);
         setTransform(style, 'translateY(-100%)');

@@ -17,41 +17,41 @@ export const tooltipAnimation = {
   '@keyframes moveRight': {
     '0%': {
       transformOrigin: 'left center',
-      transform: `var(--soui-popup-transform, '') scale(0.5)`,
+      transform: `var(--soui-popup-transform) scale(0.5)`,
     },
     '100%': {
       transformOrigin: 'left center',
-      transform: `var(--soui-popup-transform, '') scale(1)`,
+      transform: `var(--soui-popup-transform) scale(1)`,
     },
   },
   '@keyframes moveLeft': {
     '0%': {
       transformOrigin: 'right center',
-      transform: `var(--soui-popup-transform, '') scale(0.5)`,
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
     },
     '100%': {
       transformOrigin: 'right center',
-      transform: `var(--soui-popup-transform, '') scale(1)`,
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
   '@keyframes moveTop': {
     '0%': {
       transformOrigin: 'center bottom',
-      transform: `var(--soui-popup-transform, '') scale(0.5)`,
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
     },
     '100%': {
       transformOrigin: 'center bottom',
-      transform: `var(--soui-popup-transform, '') scale(1)`,
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
   '@keyframes moveBottom': {
     '0%': {
       transformOrigin: 'center top',
-      transform: `var(--soui-popup-transform, '') scale(0.5)`,
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
     },
     '100%': {
       transformOrigin: 'center top',
-      transform: `var(--soui-popup-transform, '') scale(1)`,
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
 };
