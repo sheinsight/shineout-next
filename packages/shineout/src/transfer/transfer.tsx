@@ -10,6 +10,7 @@ import {
   useButtonStyle,
   useTransferStyle,
   useCheckboxStyle,
+  useCommonStyle,
 } from '@sheinx/shineout-style';
 
 const jssStyle = {
@@ -19,6 +20,7 @@ const jssStyle = {
   empty: useEmptyStyle,
   input: useInputStyle,
   spin: useSpinStyle,
+  common: useCommonStyle,
 };
 
 const Transfer = <DataItem, Value extends KeygenResult[]>(
