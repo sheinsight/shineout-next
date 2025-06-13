@@ -86,6 +86,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       },
       '& $tag': {
         marginTop: 0,
+        marginBottom: token.selectInnerTitleMarginY,
         paddingTop: 0,
         paddingBottom: 0,
         height: selectTagHeight,

@@ -36,6 +36,7 @@ const selectTokens: SelectTokens = {
   selectLargeTagLineHeight: 'Line-height-dynamic',
   selectInnerPaddingX: 'Spacing-8',
   selectInnerPaddingY: 'Spacing-5',
+  selectInnerTitleMarginY: 'Spacing-2',
   selectPlaceholderColor: 'Neutral-text-2',
   selectPlaceholderMarginY: 'Spacing-2',
   selectBackgroundColor: 'Neutral-fill-1',
