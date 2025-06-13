@@ -1,3 +1,9 @@
+## 3.7.2-beta.5
+2025-06-13
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 开启 `virtual` 后传入 undefined 数据导致死循环问题 ([#1172](https://github.com/sheinsight/shineout-next/pull/1172))
+
 ## 3.7.1-beta.8
 2025-06-06
 
