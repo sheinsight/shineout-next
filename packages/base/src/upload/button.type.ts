@@ -9,7 +9,6 @@ export type ButtonUploadInnerPropsType = Pick<
   | 'canDelete'
   | 'showUploadList'
   | 'customResult'
-  | 'drop'
   | 'multiple'
   | 'leftHandler'
   | 'onPreview'

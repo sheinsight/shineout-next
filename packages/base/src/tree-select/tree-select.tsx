@@ -27,6 +27,10 @@ import { FormFieldContext } from '../form/form-field-context';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
+const defaultProps = {
+  data: []
+}
+
 const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
@@ -42,7 +46,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     adjust = true,
     value: valueProp,
     defaultValue,
-    data = [],
+    data = defaultProps.data,
     multiple,
     mode = 1,
     line = false,
