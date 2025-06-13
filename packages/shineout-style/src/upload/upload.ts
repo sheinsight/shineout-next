@@ -66,7 +66,11 @@ const uploadStyle: JsStyles<UploadClassType> = {
       border: `1px dashed ${token.uploadImageHandlerBorderColor}`,
       backgroundColor: token.uploadImageHandlerBackgroundColor,
       color: token.uploadImageHandlerFontColor,
-      '&:hover, &:hover *': {
+      '&:hover, &:hover': {
+        borderColor: token.uploadImageHandlerHoverBorderColor,
+        color: token.uploadImageHandlerHoverFontColor,
+      },
+      '&:hover, &:hover svg': {
         borderColor: token.uploadImageHandlerHoverBorderColor,
         color: token.uploadImageHandlerHoverFontColor,
       },
@@ -181,7 +185,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
       borderColor: token.uploadImageHandlerHoverBorderColor,
       color: token.uploadImageHandlerHoverFontColor,
     },
-    '$wrapper:not($wrapperDisabled) &:hover *': {
+    '$wrapper:not($wrapperDisabled) &:hover svg': {
       color: `${token.uploadImageHandlerHoverFontColor} !important`,
     },
     '$wrapper:not($wrapperDisabled) &:active, $wrapper:not($wrapperDisabled) &:active *': {
