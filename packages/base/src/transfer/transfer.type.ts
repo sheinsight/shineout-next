@@ -1,4 +1,4 @@
-import { CommonType } from '../common/type';
+import { CommonClasses, CommonType } from '../common/type';
 import { BaseTransferProps, ObjectKey, KeygenResult, useListSelectMultiple } from '@sheinx/hooks';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
@@ -50,6 +50,7 @@ export type JssStyleType = {
   input: () => InputClasses;
   spin: () => SpinClasses;
   empty: () => EmptyClasses;
+  common: () => CommonClasses;
 };
 
 export interface FilterProps {
@@ -183,4 +184,11 @@ export interface TransferProps<DataItem, Value extends KeygenResult[]>
    * @cn 面板均等分配容器宽度
    */
   equalPanelWidth?: boolean;
+
+    /**
+   * @cn 开启搜索关键字高亮功能
+   * @en Whether to enable highlight feature
+   * @version 3.8.0
+   */
+    highlight?: boolean;
 }

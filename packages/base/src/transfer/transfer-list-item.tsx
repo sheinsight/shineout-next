@@ -1,8 +1,8 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import classNames from 'classnames';
 import { TransferListItemProps } from './transfer-list-item.type';
 import { TransferClasses } from './transfer.type';
-import { util } from '@sheinx/hooks';
+import { util, TransferContext } from '@sheinx/hooks';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
 
@@ -23,6 +23,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
   // const listItemHeight = useRef(lineHeight);
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
+  const commonStyles = jssStyle?.common?.() || {};
   const isChecked = listDatum.check(data);
 
   const disabled = listDatum.disabledCheck(data);
@@ -59,11 +60,19 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     );
   };
 
+  const { filterSourceText, filterTargetText, highlight } = useContext(TransferContext);
+  const $item = util.getHighlightText({
+    enable: highlight,
+    nodeList: renderItem(),
+    searchWords: listType === 'target' ? filterTargetText : filterSourceText,
+    highlightClassName: commonStyles.highlight,
+  });
+
   const renderCheckbox = () => {
     if (simple && listType === 'target')
       return (
         <span className={classNames(styles.simpleTarget, disabled && styles.disabled)}>
-          {renderItem()}
+          {$item}
           {renderRemove()}
         </span>
       );
@@ -78,7 +87,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
         disabled={disabled}
         onChange={handleChange}
       >
-        {renderItem()}
+        {$item}
       </Checkbox>
     );
   };

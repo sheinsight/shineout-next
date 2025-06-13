@@ -1,3 +1,11 @@
+## 3.8.0-beta.3
+2025-06-13
+
+### 🆕 Feature
+
+- `Transfer` 新增 `highlight` 属性，开启搜索关键字高亮功能 ([#1174](https://github.com/sheinsight/shineout-next/pull/1174))
+
+
 ## 3.6.5-beta.11
 2025-04-29
 
