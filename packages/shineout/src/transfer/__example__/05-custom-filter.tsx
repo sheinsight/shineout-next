@@ -42,6 +42,7 @@ export default () => {
       searchPlaceholder='Input search text'
       onFilter={handleFilter}
       renderFilter={renderFilter}
+      highlight
     ></Transfer>
   );
 };
