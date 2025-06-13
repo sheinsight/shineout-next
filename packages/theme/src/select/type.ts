@@ -196,6 +196,12 @@ export interface SelectTokens {
   selectInnerPaddingY: string;
   /**
    * @type {string}
+   * @token Spacing-2
+   * @description 选择器内部容器的标题的外边距（垂直方向）
+   */
+  selectInnerTitleMarginY: string;
+  /**
+   * @type {string}
    * @token Neutral-text-2
    * @description 选择器占位符颜色
    */
