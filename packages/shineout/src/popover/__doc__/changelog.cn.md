@@ -1,3 +1,10 @@
+## 3.8.0-beta.2
+2025-04-01
+
+### 💎 Enhancement
+
+- 增加 `Popover` 的弹出动画效果 ([#1173](https://github.com/sheinsight/shineout-next/pull/1173))
+
 ## 3.7.0-beta.1
 2025-04-01
 
