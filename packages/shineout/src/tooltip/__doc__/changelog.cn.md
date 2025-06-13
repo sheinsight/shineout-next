@@ -1,9 +1,14 @@
+## 3.8.0-beta.2
+2025-06-13
+
+### 💎 Enhancement
+- 优化 `Tooltip` 的弹出动画，增加缩放效果 ([#1173](https://github.com/sheinsight/shineout-next/pull/1173))
+
 ## 3.8.0-beta.1
 2025-06-11
 
 ### 🆕 Feature
 - `Tooltip` 新增 `popupGap` 属性，用于设置弹出层与目标元素的间距 ([#1162](https://github.com/sheinsight/shineout-next/pull/1162))
-
 
 ## 3.6.4-beta.5
 2025-04-17
