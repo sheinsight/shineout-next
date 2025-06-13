@@ -215,7 +215,7 @@ describe('Tooltip[Base]', () => {
           position: 'absolute',
           zIndex: '1051',
           left: '0px',
-          transform: 'translateX(-50%)translateY(-100%)',
+          transform: 'translateX(-50%) translateY(-100%)',
           top: '0px',
           transformOrigin: 'center bottom',
         },
