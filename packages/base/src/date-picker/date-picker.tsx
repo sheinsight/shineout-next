@@ -168,16 +168,20 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     jssStyle: jssStyle,
   });
 
-  const handleFocus = usePersistFn((e: React.FocusEvent) => {
+  const handleFocus = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
     setFocused(true);
     props.onFocus?.(e);
   });
 
-  const handleBlur = usePersistFn((e: React.FocusEvent) => {
+  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>, index?: number) => {
     setFocused(false);
-    props.onBlur?.(e);
+    props.onBlur?.(e, index);
 
     if(props.needConfirm) return;
+
+    if (props.inputable && index !== undefined) {
+      func.handleInputBlur(e.target.value, index);
+    }
 
     // 当输入框有值时，失焦时需要立即触发 onChange，否则触控板的轻触模拟出来的click事件就获取不到最新的值
     if(inputArr.some(d => d !== undefined)) {

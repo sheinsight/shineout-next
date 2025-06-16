@@ -331,12 +331,12 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @en blur event callback
    * @cn blur 事件回调
    */
-  onBlur?: (e: any) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>, index?: number) => void;
   /**
    * @en focus event callback
    * @cn focus 事件回调
    */
-  onFocus?: (e: any) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
   /**
    * @en only display border bottom
    * @cn 是否只展示下边框

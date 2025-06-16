@@ -9,7 +9,7 @@ import { DatePicker } from 'shineout';
 
 const App: React.FC = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-    <DatePicker inputable />
+    <DatePicker inputable type="datetime" />
     <DatePicker type={'datetime'} inputable range absolute />
   </div>
 );
