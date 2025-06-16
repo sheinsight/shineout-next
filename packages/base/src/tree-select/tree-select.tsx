@@ -670,11 +670,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     const style = { maxHeight: height };
+    let rootStyle = { padding: '0 4px' };
+    if (!virtual) {
+      if(size === 'small') {
+        rootStyle = { padding: '3px 4px' };
+      } else if(size === 'large') {
+        rootStyle = { padding: '0 5px' };
+      }
+    }
 
     return (
       <div className={classNames(styles.tree, styles.treeWrapper)} style={style}>
         <Tree
-          rootStyle={{ padding: '0 4px' }}
+          rootStyle={rootStyle}
           jssStyle={jssStyle}
           renderItem={renderItem}
           {...treeProps}

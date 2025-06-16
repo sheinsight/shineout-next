@@ -10,6 +10,12 @@ const SIZE_MAP = {
   'large': 42,
 }
 
+const PADDING_Y_MAP = {
+  'small': 3,
+  'default': 0,
+  'large': 0,
+}
+
 const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
   props: VirtualTreeProps<DataItem, Value>,
 ) => {
@@ -100,6 +106,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
       dynamicVirtual
       lineHeight={lineHeight}
       renderItem={renderItem}
+      paddingY={PADDING_Y_MAP[datum.size || 'default']}
     ></VirtualScrollList>
   );
 };
