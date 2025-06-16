@@ -58,6 +58,21 @@ const hideStyle: React.CSSProperties = {
   position: 'fixed',
   visibility: 'hidden',
 };
+
+function setTransform(style: React.CSSProperties, transform: string, addon?: boolean) {
+  if (addon) {
+    style.transform += ' ' + transform;
+  } else {
+    style.transform = transform;
+  }
+  // 提供给动画侧合并使用
+  if(addon){
+    (style as any)['--soui-popup-transform'] += ' ' + transform;
+  } else {
+    (style as any)['--soui-popup-transform'] = transform;
+  }
+}
+
 export const usePositionStyle = (config: PositionStyleConfig) => {
   const {
     absolute,
@@ -198,7 +213,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       let overLeft = 0;
       if (h === 'left') {
         style.left = rect.left - containerRect.left + containerScroll.left - (offset ? offset[0] : 0);
-        style.transform = '';
+        setTransform(style, '');
         if (adjust) {
           overRight = rect.left + context.popUpWidth - bodyRect.right + containerScrollBarWidth;
           if (style.left < 0 && targetRect) {
@@ -210,11 +225,11 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
           containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left - (offset ? offset[0] : 0);
 
         style.left = 'auto';
-        style.transform = '';
+        setTransform(style, '');
       } else {
         // 居中对齐
         style.left = rect.left + rect.width / 2 - containerRect.left + containerScroll.left;
-        style.transform = 'translateX(-50%)';
+        setTransform(style, 'translateX(-50%)')
         if (adjust) {
           overRight =
             rect.left +
@@ -241,21 +256,21 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.top = rect.bottom - containerRect.top + containerScroll.top + popupGap;
       } else {
         style.top = rect.top - containerRect.top + containerScroll.top - popupGap;
-        style.transform += 'translateY(-100%)';
+        setTransform(style, 'translateY(-100%)', true);
       }
     } else if (horizontalPosition.includes(targetPosition)) {
       const [h, v] = targetPosition.split('-');
       if (v === 'top') {
         style.top = rect.top - containerRect.top + containerScroll.top - (offset ? offset[1] : 0);
-        style.transform = '';
+        setTransform(style, '');
       } else if (v === 'bottom') {
         style.top = rect.bottom - containerRect.top + containerScroll.top + (offset ? offset[1] : 0);
-        style.transform = 'translateY(-100%)';
+        setTransform(style, 'translateY(-100%)');
       } else {
         // 居中对齐
         style.top = rect.top - containerRect.top + containerScroll.top + rect.height / 2;
 
-        style.transform = 'translateY(-50%)';
+        setTransform(style, 'translateY(-50%)');
       }
       if (h === 'right') {
         style.left = rect.right - containerRect.left + containerScroll.left + popupGap;
