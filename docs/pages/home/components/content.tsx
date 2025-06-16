@@ -123,7 +123,7 @@ const Content = (props: ContentProps) => {
             renderArea(
               <div className={styles.avatarList}>
                 <Avatar icon={userIcon} />
-                <Avatar src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar/01.png'></Avatar>
+                <Avatar src={`${url}/01.png`}></Avatar>
                 <Avatar>W</Avatar>
                 <Avatar.Group>{renderAvatars()}</Avatar.Group>
               </div>

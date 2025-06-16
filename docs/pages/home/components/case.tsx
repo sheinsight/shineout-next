@@ -11,7 +11,7 @@ import { Image } from 'shineout';
 const data = [
   {
     name: '接入项目数量',
-    num: 138
+    num: 202
   },
   {
     name: '迁移升级数量',
