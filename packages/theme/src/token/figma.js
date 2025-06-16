@@ -1401,6 +1401,13 @@ const figma = [
     locked: true,
   },
   {
+    name: '最小动态行高',
+    value: 'calc( max(1em, 14px) + 8px )',
+    describe: '根据当前的字体大小 + 8px，但字体大小小于 14px 时，使用 14px 计算',
+    token: 'Line-height-dynamic-min',
+    locked: true,
+  },
+  {
     name: '透明色',
     value: 'transparent',
     describe: '较粗边框宽度',

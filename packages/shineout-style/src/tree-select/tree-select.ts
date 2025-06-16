@@ -58,6 +58,14 @@ const inputBorderToken = {
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
+const selectTagHeightCssvar = `--select-tag-height`;
+const selectSmallTagHeightCssvar = `--select-small-tag-height`;
+const selectLargeTagHeightCssvar = `--select-large-tag-height`;
+
+const selectTagHeight = `var(${selectTagHeightCssvar})`;
+const selectSmallTagHeight = `var(${selectSmallTagHeightCssvar})`;
+const selectLargeTagHeight = `var(${selectLargeTagHeightCssvar})`;
+
 const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   rootClass: {},
   wrapper: {
@@ -67,6 +75,10 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     outline: 'none',
     cursor: 'pointer',
     ...wrapper,
+    [selectTagHeightCssvar]: token.selectTagHeight,
+    [selectSmallTagHeightCssvar]: token.selectSmallTagHeight,
+    [selectLargeTagHeightCssvar]: token.selectLargeTagHeight,
+
     '&$wrapperInnerTitle': {
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: 0,
@@ -74,25 +86,33 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       },
       '& $tag': {
         marginTop: 0,
+        marginBottom: token.selectInnerTitleMarginY,
         paddingTop: 0,
         paddingBottom: 0,
-        height: token.lineHeightDynamic,
+        height: selectTagHeight,
         border: 'none',
         '&  *': {
-          lineHeight: token.lineHeightDynamic,
+          lineHeight: selectTagHeight,
         },
       },
       '&$wrapperSmall $tag': {
-        height: 18,
+        height: selectSmallTagHeight,
         marginBottom: 2,
         '&$tag  *': {
-          lineHeight: '18px',
+          lineHeight: selectSmallTagHeight,
+        },
+      },
+      '&$wrapperLarge $tag': {
+        height: selectLargeTagHeight,
+        marginBottom: 2,
+        '&$tag  *': {
+          lineHeight: selectLargeTagHeight,
         },
       },
     },
     '&$wrapperSmall': {
       '& $tag': {
-        height: 18,
+        height: selectSmallTagHeight,
         lineHeight: '16px',
         marginTop: 1,
         marginBottom: 1,
@@ -114,6 +134,12 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       },
     },
     '&$wrapperLarge': {
+      '& $tag': {
+        height: selectLargeTagHeight,
+        '&  *': {
+          lineHeight: selectLargeTagHeight,
+        },
+      },
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: token.treeSelectLargePlaceholderMarginY,
         marginBottom: token.treeSelectLargePlaceholderMarginY,
@@ -497,6 +523,12 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       cursor: 'not-allowed',
       color: token.treeSelectOptionDisabledColor,
       backgroundColor: token.treeSelectOptionDisabledBackgroundColor,
+    },
+    '&&:not([data-active="true"]) > [data-role="text"]': {
+      backgroundColor: token.treeSelectContentDisabledBackgroundColor,
+    },
+    '&&:not([data-active="true"]) > [data-role="text"]:hover': {
+      backgroundColor: token.treeSelectContentDisabledHoverBackgroundColor,
     },
   },
   optionGroup: {},

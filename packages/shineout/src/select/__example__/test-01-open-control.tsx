@@ -10,11 +10,13 @@ const defaultData = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet
 
 export default () => {
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState(['red'])
-  const [data, setData] = useState(defaultData);
+  const [value, setValue] = React.useState([])
+  const [data, setData] = useState<string[]>(['123']);
 
   const handleAppend = () => {
-    setData(['new color', ...data]);
+    setTimeout(() => {
+      setData(defaultData);
+    }, 3000);
   };
 
   const addMore = (
@@ -35,15 +37,6 @@ export default () => {
   return (
     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
       <Select
-        width={300}
-        data={data}
-        keygen
-        placeholder='测试单选'
-        clearable
-        onFilter={text => item => item.indexOf(text) >= 0}
-      />
-
-      <Select
         keygen
         open={open}
         onCollapse={setOpen}
@@ -58,9 +51,9 @@ export default () => {
         renderOptionList={(s) => (
           <div>
             {addMore}
-            <input type='text' placeholder='input' />
+            {/* <input type='text' placeholder='input' /> */}
             <div>{s}</div>
-            {addMore}
+            {/* {addMore} */}
           </div>
         )}
       />

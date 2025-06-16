@@ -1,3 +1,35 @@
+## 3.7.2-beta.2
+2025-06-11
+
+### 💅 Style
+- 优化框类组件小尺寸字号下 `innerTitle` 的样式表现 ([#1169](https://github.com/sheinsight/shineout-next/pull/1169))
+
+## 3.7.1-beta.9
+2025-06-11
+
+### 🐞 BugFix
+- 修复 `Select` 在 `Drawer` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除第二次无效的问题 ([#1164](https://github.com/sheinsight/shineout-next/pull/1164))
+
+## 3.7.1-beta.5
+2025-06-10
+
+### 🐞 BugFix
+- 修复 `Select` 同时设置了 `absolute` 和 `optionWidth` 属性后，弹出层在右侧溢出时位置不自动调整的问题 ([#1159](https://github.com/sheinsight/shineout-next/pull/1159))
+
+## 3.7.1-beta.4
+2025-06-09
+
+### 🐞 BugFix
+- 修复 `Select` 的下拉框是动态高度时，弹出层位置不自动调整的问题 ([#1157](https://github.com/sheinsight/shineout-next/pull/1157))
+
+
+## 3.7.1-beta.1
+2025-06-05
+
+### 🐞 BugFix
+- 修复 `Select` 设置了 `absolute` 用法下，在某些位置打开下拉框时有多余的过渡动画问题 ([#1154](https://github.com/sheinsight/shineout-next/pull/1154))
+
+
 ## 3.7.0-beta.31
 2025-05-27
 

@@ -29,9 +29,12 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     onChange,
     onPathChange,
     mode,
+    activeLeaf,
+    setActiveLeaf,
   } = props;
 
   const [loading, setLoading] = useState(false);
+  // const [activeState, setActiveState] = useState(false);
   const checkboxRef = useRef<HTMLElement>();
   const isDisabled = datum.isDisabled(id);
   const children = data[childrenKey] as DataItem[];
@@ -42,7 +45,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   const commonStyles = jssStyle?.common?.() as CommonClasses;
   const rootClass = classNames(
     styles.option,
-    active && styles.activeOption,
+    (active || activeLeaf === id) && styles.activeOption,
     isDisabled && mode !== 4 && styles.optionDisabled,
   );
 
@@ -80,6 +83,9 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     if (util.getParent(e.target as HTMLElement, checkboxRef.current)) return;
     const checked = datum.getChecked(id);
     handleChange(null, !checked);
+    if(setActiveLeaf){
+      setActiveLeaf(id);
+    }
   };
 
   const isHoverAble = expandTrigger === 'hover' || expandTrigger === 'hover-only';

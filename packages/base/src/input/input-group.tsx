@@ -19,7 +19,7 @@ export default (props: InputGroupProps) => {
   const { size, disabled, status, error, onBlur } = useWithFormConfig(props);
 
   const getProps = (child: React.ReactElement) => {
-    const onChildBlur = (e: React.FocusEvent<HTMLElement>) => {
+    const onChildBlur = (e: React.FocusEvent<HTMLInputElement>) => {
       const childBlurEvent = child.props.onBlur;
       if (childBlurEvent) {
         childBlurEvent(e);
@@ -46,11 +46,12 @@ export default (props: InputGroupProps) => {
     return ref.current.eventMap.get(child) || {};
   };
 
-  const { children, className, width, style, seperate } = props;
+  const { children, className, width, style, seperate, separate } = props;
+  const shouldSeparate = separate ?? seperate;
   const rootClass = classNames(
     className,
     inputStyle?.group,
-    seperate && inputStyle?.groupSeperate,
+    shouldSeparate && inputStyle?.groupSeparate,
     size === 'small' && inputStyle?.groupSmall,
     size === 'large' && inputStyle?.groupLarge,
     !!disabled && inputStyle?.groupDisabled,
@@ -59,7 +60,7 @@ export default (props: InputGroupProps) => {
   );
   return (
     <div
-      {...util.getDataAttribute({ role: seperate ? 'input-group-seperate' : 'input-group' })}
+      {...util.getDataAttribute({ role: shouldSeparate ? 'input-group-separate' : 'input-group' })}
       className={rootClass}
       style={{ width, ...style }}
       dir={config?.direction}

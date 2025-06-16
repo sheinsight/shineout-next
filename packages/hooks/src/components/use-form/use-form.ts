@@ -90,83 +90,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     removeLock: false,
   });
 
-  const update = (name?: string | string[]) => {
-    if (!name) {
-      Object.keys(context.updateMap).forEach((key) => {
-        context.updateMap[key]?.forEach((update) => {
-          update(context.value, context.errors, context.serverErrors);
-        });
-      });
-      Object.keys(context.flowMap).forEach((key) => {
-        context.flowMap[key].forEach((update) => {
-          update();
-        });
-      });
-    } else {
-      const names = isArray(name) ? name : [name];
-      names.forEach((key) => {
-        // 外部直接设置user.name这种格式的，但是又没有显性的声明user.name绑定的表单元素；
-        // 这里需要手动触发，否则会导致Input输入过程中光标跳到末尾的异常
-        if (!context.updateMap[key]) {
-          const parentKey = key.split('.')[0];
-          context.updateMap[parentKey]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors);
-          });
-        } else {
-          context.updateMap[key]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors);
-          });
-        }
-        context.flowMap[key]?.forEach((update) => {
-          update();
-        });
-      });
-    }
-    context.flowMap[globalKey]?.forEach((update) => {
-      update();
-    });
-  };
-
-  const updateFieldsets = usePersistFn((name: string) => {
-    const na = `${name}[`;
-    const no = `${name}.`;
-    context.names.forEach((key) => {
-      if (key.startsWith(na) || key.startsWith(no)) {
-        update(key);
-      }
-    });
-  });
-
-  const handleSubmitError = (err: Error) => {
-    onError?.(err);
-    if (!props.scrollToError) return;
-    setTimeout(() => {
-      const selector = `[${getDataAttributeName('status')}="error"]`;
-
-      const el = props.formElRef.current?.querySelector(selector);
-      if (el) {
-        el.scrollIntoView();
-        const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
-        const focusEl = el.querySelector(focusableSelectors) as HTMLElement;
-        if (focusEl && focusEl.focus) focusEl.focus();
-      }
-      if (typeof scrollToError === 'number' && scrollToError !== 0) {
-        const scrollEl = scrollParent?.();
-        if (scrollEl) {
-          scrollEl.scrollTop -= scrollToError;
-        } else {
-          docScroll.top -= scrollToError;
-        }
-      }
-    });
-  };
-
-  const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
-    const newValue = typeof change === 'function' ? produce(context.value as T, change) : change;
-    context.value = newValue;
-    props.onChange?.(context.value as T);
-  });
-
   const getValue = usePersistFn((name?: string) => {
     if (name) {
       return deepGet(context.value, name);
@@ -254,6 +177,87 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       });
     },
   );
+
+
+  const update = (name?: string | string[]) => {
+    if (!name) {
+      Object.keys(context.updateMap).forEach((key) => {
+        context.updateMap[key]?.forEach((update) => {
+          update(context.value, context.errors, context.serverErrors);
+          if(context.errors[key]) {
+            validateFields(key).catch(() => {});
+          }
+        });
+      });
+      Object.keys(context.flowMap).forEach((key) => {
+        context.flowMap[key].forEach((update) => {
+          update();
+        });
+      });
+    } else {
+      const names = isArray(name) ? name : [name];
+      names.forEach((key) => {
+        // 外部直接设置user.name这种格式的，但是又没有显性的声明user.name绑定的表单元素；
+        // 这里需要手动触发，否则会导致Input输入过程中光标跳到末尾的异常
+        if (!context.updateMap[key]) {
+          const parentKey = key.split('.')[0];
+          context.updateMap[parentKey]?.forEach((update) => {
+            update(context.value, context.errors, context.serverErrors);
+          });
+        } else {
+          context.updateMap[key]?.forEach((update) => {
+            update(context.value, context.errors, context.serverErrors);
+          });
+        }
+        context.flowMap[key]?.forEach((update) => {
+          update();
+        });
+      });
+    }
+    context.flowMap[globalKey]?.forEach((update) => {
+      update();
+    });
+  };
+
+  const updateFieldsets = usePersistFn((name: string) => {
+    const na = `${name}[`;
+    const no = `${name}.`;
+    context.names.forEach((key) => {
+      if (key.startsWith(na) || key.startsWith(no)) {
+        update(key);
+      }
+    });
+  });
+
+  const handleSubmitError = (err: Error) => {
+    onError?.(err);
+    if (!props.scrollToError) return;
+    setTimeout(() => {
+      const selector = `[${getDataAttributeName('status')}="error"]`;
+
+      const el = props.formElRef.current?.querySelector(selector);
+      if (el) {
+        el.scrollIntoView();
+        const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
+        const focusEl = el.querySelector(focusableSelectors) as HTMLElement;
+        if (focusEl && focusEl.focus) focusEl.focus();
+      }
+      if (typeof scrollToError === 'number' && scrollToError !== 0) {
+        const scrollEl = scrollParent?.();
+        if (scrollEl) {
+          scrollEl.scrollTop -= scrollToError;
+        } else {
+          docScroll.top -= scrollToError;
+        }
+      }
+    });
+  };
+
+  const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
+    const newValue = typeof change === 'function' ? produce(context.value as T, change) : change;
+    context.value = newValue;
+    props.onChange?.(context.value as T);
+  });
 
   const scrollToField = usePersistFn(
     (name: string, scrollIntoViewOptions: ScrollIntoViewOptions = {}) => {

@@ -82,6 +82,18 @@ export interface SelectTokens {
   selectTagMarginRight: string;
   /**
    * @type {string}
+   * @token Line-height-dynamic
+   * @description 选择器标签的高度
+   */
+  selectTagHeight: string;
+  /**
+   * @type {string}
+   * @token Line-height-dynamic
+   * @description 选择器标签的行高度
+   */
+  selectTagLineHeight: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 选择器小尺寸字体字号
    */
@@ -110,6 +122,18 @@ export interface SelectTokens {
    * @description 选择器小尺寸选项内部容器的内边距（垂直方向）
    */
   selectSmallOptionInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-9
+   * @description 选择器小尺寸标签的高度
+   */
+  selectSmallTagHeight: string;
+  /**
+   * @type {string}
+   * @token Size-8
+   * @description 选择器小尺寸标签的行高度
+   */
+  selectSmallTagLineHeight: string;
   /**
    * @type {string}
    * @token Font-16
@@ -148,6 +172,18 @@ export interface SelectTokens {
   selectLargePlaceholderMarginY: string;
   /**
    * @type {string}
+   * @token Line-height-dynamic
+   * @description 选择器大尺寸标签的高度
+   */
+  selectLargeTagHeight: string;
+  /**
+   * @type {string}
+   * @token Line-height-dynamic
+   * @description 选择器大尺寸标签的行高度
+   */
+  selectLargeTagLineHeight: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 选择器内部容器的内边距（水平方向）
    */
@@ -158,6 +194,12 @@ export interface SelectTokens {
    * @description 选择器内部容器的内边距（垂直方向）
    */
   selectInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-2
+   * @description 选择器内部容器的标题的外边距（垂直方向）
+   */
+  selectInnerTitleMarginY: string;
   /**
    * @type {string}
    * @token Neutral-text-2

@@ -1,3 +1,21 @@
+## 3.7.2-beta.5
+2025-06-13
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 开启 `virtual` 后传入 undefined 数据导致死循环问题 ([#1172](https://github.com/sheinsight/shineout-next/pull/1172))
+
+## 3.7.1-beta.8
+2025-06-06
+
+### 💅 Style
+- `TreeSelect` 新增禁用选项的背景色 token ([#1163](https://github.com/sheinsight/shineout-next/pull/1163))
+
+## 3.7.1-beta.3
+2025-06-06
+
+### 💎 Enhancement
+- `TreeSelect` 增强 `disabled` 属性，支持动态 disabled ([#1156](https://github.com/sheinsight/shineout-next/pull/1156))
+
 ## 3.7.0-beta.32
 2025-05-27
 

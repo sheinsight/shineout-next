@@ -1,3 +1,16 @@
+## 3.7.2-beta.6
+2025-06-13
+
+### 💅 Style
+- 调整 Upload 在鼠标移入上传触发区域时的样式优先级 ([#1175](https://github.com/sheinsight/shineout-next/pull/1175))
+
+## 3.7.2-beta.2
+2025-06-12
+
+### 💎 Enhancement
+
+- 优化 `Upload` 上传结果的样式，移除了成功和失败状态的图标 ([#1168](https://github.com/sheinsight/shineout-next/pull/1168))
+
 ## 3.7.0-beta.22
 2025-05-08
 

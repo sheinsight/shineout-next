@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import classNames from 'classnames';
 import { KeygenResult } from '@sheinx/hooks';
 import { VirtualScrollList } from '../virtual-scroll';
@@ -73,6 +73,8 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
     return <span>noData</span>;
   };
 
+  const [activeLeaf, setActiveLeaf] = useState<KeygenResult>();
+  const needSetActiveLeaf = (multiple || mode !== undefined) && props.id === undefined;
   const renderItem = (item: DataItem, index: number) => {
     const id = getKey(item, index);
     return (
@@ -80,6 +82,8 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
         key={id}
         jssStyle={jssStyle}
         active={props.id === id}
+        activeLeaf={activeLeaf}
+        setActiveLeaf={needSetActiveLeaf ? setActiveLeaf : undefined}
         id={id}
         data={item}
         datum={datum}

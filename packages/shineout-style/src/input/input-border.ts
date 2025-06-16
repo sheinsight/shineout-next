@@ -78,14 +78,14 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       '[data-soui-role="input-group"] [data-soui-input-border] + &&&': {
         borderLeftWidth: '1px',
       },
-      '[data-soui-role="input-group-seperate"] &&&, [data-soui-role="input-group-seperate"] &&&:hover': {
+      '[data-soui-role="input-group-separate"] &&&, [data-soui-role="input-group-separate"] &&&:hover': {
         borderRadius: 0,
         flexShrink: 0,
         width: 'auto',
         'margin-left': `-1px`,
 
         '&:hover': {
-          zIndex: 1050,
+          zIndex: 7,
         },
 
         '&:first-child': {
@@ -99,7 +99,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         },
       },
 
-      '[dir=rtl][data-soui-role="input-group-seperate"] &&&, [dir=rtl][data-soui-role="input-group-seperate"] &&&:hover': {
+      '[dir=rtl][data-soui-role="input-group-separate"] &&&, [dir=rtl][data-soui-role="input-group-separate"] &&&:hover': {
         '&:first-child': {
           borderRadius: `0 ${token.borderRadius} ${token.borderRadius} 0`,
         },
@@ -166,11 +166,11 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       borderColor: token.focusBorderColor,
       boxShadow: `0 0 0 2px ${token.focusShadow}`,
       background: token.focusBackgroundColor,
-      '&[data-soui-role="input-group-seperate"]': {
+      '&[data-soui-role="input-group-separate"]': {
         boxShadow: 'none',
       },
 
-      '[data-soui-role="input-group-seperate"] &': {
+      '[data-soui-role="input-group-separate"] &': {
         zIndex: 1,
       },
       '&:hover': {
@@ -188,7 +188,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
         borderColor: token.errorFocusBorderColor,
         background: token.errorFocusBackgroundColor,
-        // '[data-soui-role="input-group-seperate"]&': {
+        // '[data-soui-role="input-group-separate"]&': {
         //   boxShadow: 'none',
         // }
       },

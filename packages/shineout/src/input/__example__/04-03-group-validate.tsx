@@ -1,11 +1,11 @@
 /**
  * cn - Group的校验
  *    -- 配置 `status` 属性可以展示错误状态
- *    -- 配置 `seperate` 属性也有相应的校验效果
+ *    -- 配置 `separate` 属性也有相应的校验效果
  *    -- 配置 `keepErrorHeight` 属性可以保持错误提示的高度
  * en - Group validate
  *    -- The `status` property of Input.Group can be used to display error status
- *    -- The `seperate` property also has the corresponding verification effect
+ *    -- The `separate` property also has the corresponding verification effect
  *    -- The `keepErrorHeight` property can keep the height of the error prompt
  */
 
@@ -22,16 +22,16 @@ const App: React.FC = () => (
         {({ value, error, onChange }) => (
           <Input.Group style={{ width: 340 }} status={error ? 'error' : undefined}>
             <b>http://</b>
-            <Input value={value} onChange={onChange} placeholder='i am not seperate input group' />
+            <Input value={value} onChange={onChange} placeholder='i am not separate input group' />
           </Input.Group>
         )}
       </Form.Field>
     </Form.Item>
 
     <Form.Item label='Home2' required>
-      <Input.Group style={{ width: 340 }} seperate>
+      <Input.Group style={{ width: 340 }} separate>
         <Form.Field name='url2' rules={[rules.required]}>
-          <Input placeholder='i am seperate input group' />
+          <Input placeholder='i am separate input group' />
         </Form.Field>
         <b>.com</b>
       </Input.Group>

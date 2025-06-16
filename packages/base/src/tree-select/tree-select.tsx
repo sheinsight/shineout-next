@@ -27,6 +27,10 @@ import { FormFieldContext } from '../form/form-field-context';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
+const defaultProps = {
+  data: []
+}
+
 const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
@@ -42,7 +46,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     adjust = true,
     value: valueProp,
     defaultValue,
-    data = [],
+    data = defaultProps.data,
     multiple,
     mode = 1,
     line = false,
@@ -56,7 +60,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     position: positionProp = dfp,
     open: openProp,
     onCollapse: onCollapseProp,
-    disabled,
+    disabled: disabledProp,
     style,
     width,
     height = 250,
@@ -95,6 +99,10 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
   const showInput = util.isFunc(props.onAdvancedFilter || onFilterProp);
+
+  const disabled = util.isOptionalDisabled<DataItem>(disabledProp)
+    ? disabledProp.disabled
+    : disabledProp;
 
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
@@ -184,7 +192,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     unmatch,
     tiledData,
     virtual,
-    disabled,
+    disabled: props.disabled,
     active: multiple ? undefined : value[0],
     childrenKey: childrenKey,
     keygen,
@@ -687,7 +695,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           expanded={virtual ? virtualExpanded : controlExpanded || unControlExpanded}
           defaultExpandAll={defaultExpandAll}
           expandIcons={tiledExpandIcons}
-          disabled={disabled}
+          disabled={props.disabled}
           parentClickExpand={parentClickExpand}
           contentClass={getContentClass}
           datum={datum}

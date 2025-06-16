@@ -191,6 +191,8 @@ const compact = {
   selectLargePaddingY: 'var(--soui-spacing-0)',
   selectLargeOptionInnerPaddingX: 'var(--soui-spacing-8)',
   selectTagMarginY: 'var(--soui-spacing-1)',
+  selectTagHeight: 'var(--soui-size-9)',
+  selectTagLineHeight: 'var(--soui-size-8)',
   alertFontSize: 'var(--soui-font-12)',
   alertFontColor: 'var(--soui-neutral-text-5)',
   alertPaddingX: 'var(--soui-spacing-12)',

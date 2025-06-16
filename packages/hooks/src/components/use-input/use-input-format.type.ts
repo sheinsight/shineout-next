@@ -38,13 +38,13 @@ export interface InputFormatProps {
    */
   digits?: number;
   /**
-   * @en Whether to automatically complete the number of decimal places, only works when type = number  
+   * @en Whether to automatically complete the number of decimal places, only works when type = number
    * @cn 是否自动补全小数位数, 仅在 type = number 下生效
    */
   autoFix?: boolean;
 
-  onBlur?: React.FocusEventHandler;
-  onFocus?: React.FocusEventHandler;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * @en Cancel blur trigger onChange, used for multi-layer nesting of formatting, only trigger onChange once at the outermost layer
    * @cn 取消 blur 触发 onChange,用于多层嵌套的格式化，只在最外层触发一次onChange

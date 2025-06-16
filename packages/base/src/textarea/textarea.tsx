@@ -78,7 +78,7 @@ const Textarea = (props0: TextareaProps) => {
     control: 'value' in resetProps,
   });
 
-  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
+  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLTextAreaElement>) => {
     onBlur?.(e);
     inputAbleProps.forceDelayChange();
   });
