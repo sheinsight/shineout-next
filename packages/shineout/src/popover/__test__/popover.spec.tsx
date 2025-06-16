@@ -122,7 +122,7 @@ describe('Popover[Base]', () => {
       ).toBeTruthy();
       styleTest(
         popover,
-        'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;',
+        'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); --soui-popup-transform: translateX(-50%); top: 0px; transform-origin: center top;',
       );
       attributesTest(popover, 'data-soui-position', 'bottom');
       expect(
@@ -195,23 +195,23 @@ describe('Popover[Base]', () => {
 
   const positionStyleMap: Record<string, string> = {
     'bottom-left': 'position: absolute; z-index: 1060; left: 0px; top: 0px; transform-origin: center top;',
-    bottom: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;',
+    bottom: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); --soui-popup-transform: translateX(-50%); top: 0px; transform-origin: center top;',
     'bottom-right':
       'position: absolute; z-index: 1060; right: 0px; top: 0px; transform-origin: center top;',
     'right-top': 'position: absolute; z-index: 1060; top: 0px; left: 0px;',
     'left-top':
       'position: absolute; z-index: 1060; top: 0px; right: 0px;',
-    right: 'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); left: 0px;',
-    left: 'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); right: 0px;',
+    right: 'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); --soui-popup-transform: translateY(-50%); left: 0px;',
+    left: 'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); --soui-popup-transform: translateY(-50%); right: 0px;',
     'right-bottom':
-      'position: absolute; z-index: 1060; top: 0px; transform: translateY(-100%); left: 0px;',
+      'position: absolute; z-index: 1060; top: 0px; transform: translateY(-100%); --soui-popup-transform: translateY(-100%); left: 0px;',
     'left-bottom':
-      'position: absolute; z-index: 1060; top: 0px; transform: translateY(-100%); right: 0px;',
+      'position: absolute; z-index: 1060; top: 0px; transform: translateY(-100%); --soui-popup-transform: translateY(-100%); right: 0px;',
     'top-left':
-      'position: absolute; z-index: 1060; left: 0px; transform: translateY(-100%); top: 0px; transform-origin: center bottom;',
-    top: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%)translateY(-100%); top: 0px; transform-origin: center bottom;',
+      'position: absolute; z-index: 1060; left: 0px; transform: translateY(-100%); --soui-popup-transform: translateY(-100%); top: 0px; transform-origin: center bottom;',
+    top: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%) translateY(-100%); --soui-popup-transform: translateX(-50%) translateY(-100%); top: 0px; transform-origin: center bottom;',
     'top-right':
-      'position: absolute; z-index: 1060; right: 0px; transform: translateY(-100%); top: 0px; transform-origin: center bottom;',
+      'position: absolute; z-index: 1060; right: 0px; transform: translateY(-100%); --soui-popup-transform: translateY(-100%); top: 0px; transform-origin: center bottom;',
   };
 
   Object.keys(positionStyleMap).forEach((item: string) => {
@@ -494,7 +494,7 @@ describe('Popover[PriorityDirection]', () => {
       await delay(200);
       styleTest(
         getPopoverRoot(),
-        'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); left: 0px;',
+        'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); --soui-popup-transform: translateY(-50%); left: 0px;',
       );
     });
   });
