@@ -23,6 +23,4 @@ export interface CascaderNodeProps<DataItem, Value extends KeygenResult[]>
     fromClick?: boolean,
   ) => void;
   onChange: (value: Value, data?: DataItem | UnMatchedData | null) => void;
-  activeLeaf?: KeygenResult;
-  setActiveLeaf?: (id: KeygenResult) => void;
 }
