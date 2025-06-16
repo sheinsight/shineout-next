@@ -877,7 +877,7 @@ exports[`Button[Base] should render correctly about status 1`] = `
       type="button"
     >
       <span>
-        Danger
+        Default
       </span>
     </button>
     <button
@@ -887,7 +887,7 @@ exports[`Button[Base] should render correctly about status 1`] = `
       type="button"
     >
       <span>
-        Danger
+        Default
       </span>
     </button>
     <button
@@ -897,7 +897,7 @@ exports[`Button[Base] should render correctly about status 1`] = `
       type="button"
     >
       <span>
-        Danger
+        Default
       </span>
     </button>
     <button
@@ -907,7 +907,7 @@ exports[`Button[Base] should render correctly about status 1`] = `
       type="button"
     >
       <span>
-        Danger
+        Default
       </span>
     </button>
   </div>
@@ -921,7 +921,7 @@ exports[`Button[Base] should render correctly about status 1`] = `
       type="button"
     >
       <span>
-        Danger
+        Primary
       </span>
     </button>
     <button
@@ -931,7 +931,7 @@ exports[`Button[Base] should render correctly about status 1`] = `
       type="button"
     >
       <span>
-        Danger
+        Primary
       </span>
     </button>
     <button
@@ -941,7 +941,7 @@ exports[`Button[Base] should render correctly about status 1`] = `
       type="button"
     >
       <span>
-        Danger
+        Primary
       </span>
     </button>
     <button
@@ -951,7 +951,7 @@ exports[`Button[Base] should render correctly about status 1`] = `
       type="button"
     >
       <span>
-        Danger
+        Primary
       </span>
     </button>
   </div>
