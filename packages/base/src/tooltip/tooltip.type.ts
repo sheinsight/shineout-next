@@ -57,12 +57,6 @@ export interface TooltipProps
    */
   children: React.ReactNode;
   /**
-   * @en use animation
-   * @cn 弹出是否使用动画
-   * @default true
-   */
-  animation?: boolean;
-  /**
    * @en make disabled element work
    * @cn 使被禁用的元素正常显示提示
    * @default false
