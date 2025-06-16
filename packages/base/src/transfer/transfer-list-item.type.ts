@@ -1,4 +1,4 @@
-import { CommonType } from '../common/type';
+import { CommonClasses, CommonType } from '../common/type';
 import { ObjectKey, KeygenType, TransferListType } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { ButtonClasses } from '../button/button.type';
@@ -9,6 +9,7 @@ export interface TransferListItemProps<DataItem> extends Pick<CommonType, 'size'
     transfer: () => TransferClasses;
     button: () => ButtonClasses;
     checkbox: () => CheckboxClasses;
+    common: () => CommonClasses;
   };
   disabled?: boolean;
   data: DataItem;
