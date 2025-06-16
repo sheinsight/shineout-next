@@ -307,6 +307,9 @@ export default createUseStyles({
     zIndex: 2,
     '& .soui-button-button + .soui-button-button': {
       marginInlineStart: '0px !important',
+    },
+    '& span': {
+      width: '68px'
     }
   },
   columnsArea: {
@@ -760,6 +763,24 @@ export default createUseStyles({
     justifyContent: 'center',
     gap: '24px',
     flexWrap: 'wrap',
+    width: '100%',
+  },
+  dynamicItemCaseMainFlexStart: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    gap: '24px',
+    flexWrap: 'wrap',
+    '& .soui-button-button + .soui-button-button': {
+      marginInlineStart: '0px !important',
+    },
+  },
+  dynamicItemCaseMainTop: {
+    display: 'flex',
+    height: '100%',
+    alignItems: 'flex-start',
+    width: '100%',
   },
   dynamicTag: {
     padding: '0 8px !important',
