@@ -1,3 +1,11 @@
+## 3.7.3-beta.1
+2025-06-16
+
+### 🐞 BugFix
+
+- 修复 `Input` 设置了 `digits` 和 `autoFix` 属性时，偶现的精度丢失问题 ([#1178](https://github.com/sheinsight/shineout-next/pull/1178))
+
+
 ## 3.7.1-beta.7
 2025-06-11
 
