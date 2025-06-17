@@ -55,6 +55,15 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(png|jpg|gif|jpeg|svg)$/i,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 8 * 1024 // 8kb
+          }
+        }
+      },
     ],
   },
   plugins: [
