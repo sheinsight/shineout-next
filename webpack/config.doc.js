@@ -16,6 +16,10 @@ module.exports = {
   output: {
     path: path.join(__dirname, `../dist`),
     publicPath: './',
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[name].[contenthash].chunk.js',
+    assetModuleFilename: 'assets/[name].[contenthash][ext]',
+    clean: true,
     libraryTarget: 'umd',
     library: 'ShineoutDoc',
   },
@@ -74,7 +78,10 @@ module.exports = {
       title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[name].[contenthash].chunk.css',
+    }),
     new Webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
@@ -89,5 +96,6 @@ module.exports = {
         },
       ],
     }),
+    new Webpack.ids.HashedModuleIdsPlugin()
   ],
 };
