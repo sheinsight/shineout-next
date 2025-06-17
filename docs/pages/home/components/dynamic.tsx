@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import useStyle from '../style';
-import { Avatar, Button, Empty, Select, Steps, Tag, Tree } from 'shineout';
+import { Avatar, Button, Empty, Select, Skeleton, Steps, Tag, Tree } from 'shineout';
 import { userIcon } from '../svg';
 import { url } from '../constants';
 
@@ -125,6 +125,16 @@ const Dynamic = () => {
           <Steps.Step title='Processing' description='This is a description' />
           <Steps.Step title='Pending' description='This is a description' />
         </Steps>
+      )
+    },{
+      title: '骨架屏',
+      type: 'add',
+      case: (
+        <Skeleton loading style={{width: '100%'}}>
+          <div>
+            I am the content after loading. I am the content after loading. I am the content after loading.
+          </div>
+        </Skeleton>
       )
     }
   ]
