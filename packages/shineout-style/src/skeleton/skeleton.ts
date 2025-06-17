@@ -1,4 +1,3 @@
-// import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import { SkeletonClasses } from '@sheinx/base'
 import token from '@sheinx/theme';
@@ -20,7 +19,7 @@ const skeletonStyle: JsStyles<SkeletonClassType> = {
   },
   animation: {
     '& $textItem, & $image, & $buttonItem':{
-      background: `linear-gradient(90deg, ${token.skeletonAnimationFromColor} 25%, ${token.skeletonAnimationToColor} 37%, ${token.skeletonAnimationFromColor} 63%)`,
+      backgroundImage: `linear-gradient(90deg, ${token.skeletonAnimationFromColor} 25%, ${token.skeletonAnimationToColor} 37%, ${token.skeletonAnimationFromColor} 63%)`,
       backgroundSize: '400% 100%',
       animation: '$skeleton-animation 1.4s ease infinite',
     }
