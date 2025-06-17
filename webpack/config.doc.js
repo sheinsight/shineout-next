@@ -2,7 +2,6 @@ const path = require('path');
 const Webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { docBuild } = require('../scripts/doc-build');
 
 docBuild();
@@ -11,7 +10,6 @@ module.exports = {
   mode: 'production',
   entry: {
     app: path.join(__dirname, '../docs/index.tsx'),
-    css: path.join(__dirname, '../public/index.css'),
   },
   output: {
     path: path.join(__dirname, `../dist`),
@@ -39,7 +37,7 @@ module.exports = {
     rules: [
       {
         test: /\.(css)$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.html$/i,
@@ -57,13 +55,8 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|gif|jpeg|svg)$/i,
-        type: 'asset',
-        parser: {
-          dataUrlCondition: {
-            maxSize: 8 * 1024 // 8kb
-          }
-        }
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
       },
     ],
   },
@@ -74,11 +67,6 @@ module.exports = {
     new HTMLWebpackPlugin({
       title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
-
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-      chunkFilename: '[name].[contenthash].chunk.css',
     }),
     new Webpack.DefinePlugin({
       'process.env': {
