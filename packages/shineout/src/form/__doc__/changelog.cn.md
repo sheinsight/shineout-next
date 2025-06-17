@@ -2,7 +2,7 @@
 2025-06-17
 
 ### 🐞 BugFix
-- 修复 `Form` 开启了 `scrollToError` 后，Input组件的 `onEnterPress` 事件不触发的问题 ([#1181](https://github.com/sheinsight/shineout-next/pull/1181))
+- 修复 `Form` 的 `scrollToError` 偶现的无法滚动到错误字段位置的问题 ([#1181](https://github.com/sheinsight/shineout-next/pull/1181))
 
 ## 3.7.1-beta.6
 2025-06-10
