@@ -62,9 +62,9 @@ export {
   setJssConfig,
   scopeNormalizeStyle,
 } from '@sheinx/shineout-style';
-export * as utls from './utils';
+export * as utils from './utils';
 export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.7.3-beta.5' };
+export default { version: '3.8.0-beta.3' };
