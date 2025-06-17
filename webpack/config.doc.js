@@ -15,11 +15,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, `../dist`),
-    publicPath: './',
-    filename: '[name].[contenthash].js',
-    chunkFilename: '[name].[contenthash].chunk.js',
-    assetModuleFilename: 'assets/[name].[contenthash][ext]',
-    clean: true,
+    filename: '[name].[hash:8].js',
+    publicPath: process.env.LEGO_FRONTEND_PUBLIC_PATH ?? '/',
     libraryTarget: 'umd',
     library: 'ShineoutDoc',
   },
@@ -77,7 +74,6 @@ module.exports = {
     new HTMLWebpackPlugin({
       title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
-      hash: true,
 
     }),
     new MiniCssExtractPlugin({
@@ -98,6 +94,5 @@ module.exports = {
         },
       ],
     }),
-    new Webpack.ids.HashedModuleIdsPlugin()
   ],
 };
