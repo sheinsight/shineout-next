@@ -432,9 +432,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         return;
       }
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
-      if (activeEl) activeEl.focus();
       if (result === true) {
         props.onSubmit?.((context.value ?? {}) as T);
+        if (activeEl) activeEl.focus();
       } else {
         handleSubmitError(result);
       }
