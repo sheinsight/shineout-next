@@ -1,3 +1,9 @@
+## 3.7.3-beta.5
+2025-06-17
+
+### 🐞 BugFix
+- 修复 `DatePicker` 设置 `allowSingle` 后无法点击已选日期取消选中的问题 ([#1183](https://github.com/sheinsight/shineout-next/pull/1183))
+
 ## 3.7.3-beta.2
 2025-06-16
 
