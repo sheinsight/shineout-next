@@ -77,6 +77,8 @@ module.exports = {
     new HTMLWebpackPlugin({
       title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
+      hash: true,
+
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
