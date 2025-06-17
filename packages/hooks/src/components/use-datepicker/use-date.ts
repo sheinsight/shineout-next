@@ -136,7 +136,7 @@ const useDate = (props: UseDateProps) => {
       Array.isArray(props.rangeDate) &&
       props.rangeDate[index] &&
       utils.clearHMS(newDate, options).getTime() ===
-        utils.clearHMS(props.rangeDate[index], options).getTime()
+        utils.clearHMS(props.rangeDate[index] as Date, options).getTime()
     ) {
       newDate = '';
     }
