@@ -341,6 +341,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
             type={type}
             options={options}
             disabled={disabled}
+            allowSingle={props.allowSingle}
             jssStyle={jssStyle}
             closePop={handleClose}
             defaultTime={props.defaultTime}
