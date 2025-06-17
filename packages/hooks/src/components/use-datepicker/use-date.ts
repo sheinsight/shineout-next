@@ -18,13 +18,14 @@ const useDate = (props: UseDateProps) => {
     cachedDays: [],
   });
 
-  const current = props.current === undefined ? currentState : props.current;
-
+  const current = props.current === undefined || !props.current ? currentState : props.current;
   const setCurrent = (date: Date) => {
     if (props.current !== undefined) {
       props.onCurrentChange?.(date);
     } else {
-      setCurrentState(date);
+      if (date) {
+        setCurrentState(date);
+      }
     }
     props.onCurrentChange?.(date);
   };
@@ -127,10 +128,24 @@ const useDate = (props: UseDateProps) => {
   const handleDayClick = (date: Date, noClose?: boolean) => {
     if (isDisabled(date)) return;
 
-    let newDate = getDateWithTime(date);
-    props?.onClearInputArr(position === 'start' ? 0 : 1);
+    let newDate: Date | string = getDateWithTime(date);
+    const index = position === 'start' ? 0 : 1;
+    if (
+      props.allowSingle &&
+      props.rangeDate &&
+      Array.isArray(props.rangeDate) &&
+      props.rangeDate[index] &&
+      utils.clearHMS(newDate, options).getTime() ===
+        utils.clearHMS(props.rangeDate[index], options).getTime()
+    ) {
+      newDate = '';
+    }
+
+    props?.onClearInputArr(index);
     props.onChange?.(newDate, noClose);
-    setCurrent(newDate);
+    if (newDate) {
+      setCurrent(newDate as Date);
+    }
   };
 
   const getTimeStr = () => {
