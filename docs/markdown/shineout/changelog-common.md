@@ -1,3 +1,10 @@
+## 3.8.0
+2025-06-17
+
+### 🐞 BugFix
+- 修复 `utils` 导出名称错误的问题 ([#1187](https://github.com/sheinsight/shineout-next/pull/1187))
+
+
 ## 3.7.0
 2025-05-07
 
