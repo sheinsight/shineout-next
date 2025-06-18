@@ -1,8 +1,8 @@
 /**
  * cn - 尺寸类型
- *    -- 设置 size 为 small 显示紧凑表格，large 为显示松散表格
+ *    -- 设置 `size` 为 small 显示紧凑表格，large 为显示松散表格
  * en - Size
- *    -- Set size to small to display compact table, large to display loose table
+ *    -- Set `size` to small to display compact table, large to display loose table
  */
 import React from 'react';
 import { Radio, Table, TYPE } from 'shineout';

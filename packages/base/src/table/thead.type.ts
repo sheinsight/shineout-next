@@ -17,6 +17,7 @@ export interface TheadProps
       | 'disabled'
       | 'treeCheckAll'
       | 'sortDirections'
+      | 'cellSortable'
     >,
     Pick<ReturnType<typeof useTableSort<any>>, 'sortInfo' | 'onSorterChange'>,
     Pick<ReturnType<typeof useTableFilter<any>>, 'filterInfo' | 'onFilterChange'>,

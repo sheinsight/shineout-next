@@ -1,9 +1,9 @@
-## 3.7.1-beta.2
-2025-06-06
+## 3.8.0-beta.5
+2025-06-18
 
-### 🐞 BugFix
+### 🆕 Feature
 
-- 修复 `Table` 单元格中使用的 Popover 设置的挂载容器在 td 元素内时的遮挡问题 ([#1155](https://github.com/sheinsight/shineout-next/pull/1155))
+- `Table` 新增 `cellSortable` 属性，支持点击单元格触发排序 ([#1188](https://github.com/sheinsight/shineout-next/pull/1188))
 
 
 ## 3.7.0-beta.44

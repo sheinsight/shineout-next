@@ -1,6 +1,6 @@
 /**
  * cn - 底部滚动
- *    -- 设置`showBottomScrollbar`开启底部可吸附的滚动条
+ *    -- 设置 `showBottomScrollbar` 开启底部可吸附的滚动条
  * en - Bottom scrollbar
  *    -- Set `showBottomScrollbar` to enable the bottom scrollbar
  */

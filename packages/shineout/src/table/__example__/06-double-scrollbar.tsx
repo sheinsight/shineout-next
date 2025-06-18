@@ -1,6 +1,6 @@
 /**
  * cn - 顶部滚动
- *    -- 设置`showTopScrollbar`开启顶部滚动条
+ *    -- 设置 `showTopScrollbar` 开启顶部滚动条
  * en - Double scrollbar
  *    -- Set `showTopScrollbar` to enable double scrollbar
  */

@@ -91,6 +91,7 @@ export interface TableClasses {
   resizeSpannerInactive: string;
 
   cellIgnoreBorder: string;
+  cellSortable: string;
 
   expandIcon: string;
   iconWrapper: string;
@@ -382,6 +383,13 @@ export interface TableProps<DataItem, Value>
    * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
    */
   onRowSelect?: (rows: Value) => void;
+
+  /**
+   * @en Click the cell to trigger sorting
+   * @cn 点击单元格触发排序
+   * @version 3.8.0
+   */
+  cellSortable?: boolean;
 }
 
 interface BottomScrollbarOption extends Pick<StickyProps, 'bottom'> {

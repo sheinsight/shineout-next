@@ -220,6 +220,7 @@ export default (props: TheadProps) => {
       colTemp.align !== 'right' && colTemp.align !== 'center' && tableClasses?.cellAlignLeft,
       (col.lastFixed || col.firstFixed) && tableClasses?.cellFixedLast,
       isLast && tableClasses?.cellIgnoreBorder,
+      colTemp.sorter && props.cellSortable && tableClasses?.cellSortable,
     );
     const isExpand = colTemp.type === 'expand' || colTemp.type === 'row-expand';
 
@@ -233,6 +234,21 @@ export default (props: TheadProps) => {
           key={col.key}
           style={fixedStyle}
           dir={config.direction}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (props.cellSortable && colTemp.sorter) {
+              const currentOrder = sortInfo.get(colTemp.key)?.order;
+              let order: 'asc' | 'desc' | null = null;
+              if (!currentOrder) {
+                order = 'asc';
+              } else if (currentOrder === 'asc') {
+                order = 'desc';
+              } else if (currentOrder === 'desc') {
+                order = null;
+              }
+              onSorterChange?.(colTemp.key, order, true, colTemp.sorter);
+            }
+          }}
         >
           <div
             className={classNames(
@@ -292,15 +308,19 @@ export default (props: TheadProps) => {
       return;
     }
     let style = typeof colTemp2.name === 'string' ? fixedStyle : { padding: 0, ...fixedStyle };
-    if(colTemp2?.groupProps?.style){
+    if (colTemp2?.groupProps?.style) {
       style = {
         ...style,
         ...colTemp2.groupProps.style,
-      }
+      };
     }
     trs[level].push(
       <th
-        className={classNames(cellClassName, tableClasses?.cellGroup, colTemp2?.groupProps?.className)}
+        className={classNames(
+          cellClassName,
+          tableClasses?.cellGroup,
+          colTemp2?.groupProps?.className,
+        )}
         style={style}
         key={colTemp2.key}
         colSpan={colTemp2.colSpan}

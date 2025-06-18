@@ -1,11 +1,11 @@
 /**
  * cn - 可伸缩列
- *    -- 设置 columnResizable，使所有列可伸缩。<br />可在columns中设置某一列 columnResizable: false 来取消伸缩该列。
+ *    -- 设置 `columnResizable`，使所有列可伸缩。<br />可在columns中设置某一列 columnResizable: false 来取消伸缩该列。
  * en - Fixed head
- *    -- Set the columnResizable property to make all columns resizable. set columnResizable: false on columns item to cancel resizable
+ *    -- Set the `columnResizable` property to make all columns resizable. set columnResizable: false on columns item to cancel resizable
  */
 import React from 'react';
-import { Table, TYPE, Popover } from 'shineout';
+import { Table, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface TableRowData {
