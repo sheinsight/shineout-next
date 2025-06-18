@@ -1,8 +1,8 @@
 /**
- * cn -
- *    -- 使用 treeExpandKeys 和 onTreeExpand 使展开行受控
- * en -
- *    -- Use treeExpandKeys and onTreeExpand to control the expand row
+ * cn - 树形数据受控
+ *    -- 使用 `treeExpandKeys` 和 `onTreeExpand` 使展开行受控
+ * en - Tree Control
+ *    -- Use `treeExpandKeys` and `onTreeExpand` to control the expand row
  */
 import React, { useState } from 'react';
 import { Table, TYPE } from 'shineout';
