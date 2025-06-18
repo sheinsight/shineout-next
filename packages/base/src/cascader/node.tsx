@@ -147,7 +147,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
             className={styles.optionCheckbox}
             checked={datum.getChecked(id)}
             disabled={isDisabled}
-            onChange={events.onClick === handleSelect ? undefined : handleChange}
+            onChange={isRealLeafNode && multiple ? undefined : handleChange}
           />
         )}
         {renderContent()}

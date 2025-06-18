@@ -1,3 +1,9 @@
+## 3.7.3-beta.7
+2025-06-18
+
+### 🐞 BugFix
+- 修复 `Cascader` 多选模式下，末级叶子节点的勾选框点击失效的问题（Regression: since v3.7.2） ([#1192](https://github.com/sheinsight/shineout-next/pull/1192))
+
 ## 3.7.2-beta.1
 2025-06-12
 
