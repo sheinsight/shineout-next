@@ -292,55 +292,10 @@ const input: JsStyles<keyof InputClasses> = {
     '&:hover svg': {
       color: token.inputHoverToggleColor,
     },
-    // marginRight: token.inputPaddingX,
   },
   info: {
-    position: 'absolute',
-    '&[dir=ltr]': {
-      right: '0',
-    },
-    '&[dir=rtl]': {
-      left: '0',
-    },
-    top: '100%',
-    zIndex: 1000,
-    transformOrigin: '100% 0',
-    marginTop: '10px',
-    animation: 'so-input-fade .16s ease-in',
-    maxWidth: '400px',
-    padding: '5px 8px',
     background: token.inputInfoBackgroundColor,
-    borderRadius: token.inputBorderRadius,
-    boxShadow: `0 0 0 1px ${token.inputBorderColor}`,
-    fontSize: '12px',
     color: token.inputInfoFontColor,
-    '&::before': {
-      display: 'block',
-      position: 'absolute',
-
-      bottom: '100%',
-      transform: 'rotate(45deg) translateY(3px)',
-      width: '6px',
-      height: '6px',
-      borderTop: `1px solid ${token.inputBorderColor}`,
-      borderLeft: `1px solid ${token.inputBorderColor}`,
-      background: 'inherit',
-      content: "'  '",
-    },
-    '&[dir=ltr]::before': {
-      right: '4px',
-    },
-    '&[dir=rtl]::before': {
-      left: '8px',
-    },
-  },
-  infoError: {
-    boxShadow: `0 0 0 1px ${token.inputInfoErrorBorderColor}`,
-    color: token.inputInfoErrorFontColor,
-    background: token.inputInfoErrorBackgroundColor,
-    '&::before': {
-      borderColor: token.inputInfoErrorBorderColor,
-    },
   },
 };
 
