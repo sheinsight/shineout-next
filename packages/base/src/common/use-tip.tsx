@@ -54,7 +54,7 @@ const useTip = (
     return (
       <Popover
         jssStyle={jssStyle}
-        getPopupContainer={() => rootRef.current}
+        getPopupContainer={popoverProps?.getPopupContainer || (() => rootRef.current)}
         useTextStyle
         {...popoverProps}
         style={styles}

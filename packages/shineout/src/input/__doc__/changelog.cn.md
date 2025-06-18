@@ -1,3 +1,11 @@
+## 3.8.0-beta.6
+2025-06-18
+
+### 💎 Enhancement
+
+- 增强 `Input` 的 `info` 属性，支持配置提示信息的位置和挂载点 ([#1189](https://github.com/sheinsight/shineout-next/pull/1189))
+
+
 ## 3.7.3-beta.1
 2025-06-16
 

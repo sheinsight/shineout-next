@@ -49,7 +49,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
 
   const delay = delayProps ?? config.delay ?? 0;
 
-  const inputStyle = props.jssStyle?.input?.();
+  const inputClasses = props.jssStyle?.input?.();
 
   const rootRef = React.useRef<HTMLElement>(null);
 
@@ -59,7 +59,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
     popover,
     popoverProps: {
       popupGap: 4,
-      offset: [1,0],
+      offset: [1, 0],
       ...popoverProps,
     },
     error,
@@ -95,32 +95,53 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
     onChange: inputAbleProps.onChange,
   });
 
-  const getInfo = () => {
+  const getInfoState = () => {
     const notNumber = typeof info !== 'number';
-    if (typeof info !== 'function' && notNumber) return null;
-    const textInfo = notNumber ? info : defaultInfo.bind(null, info);
-    const res = textInfo(inputAbleProps.value);
-    // empty
-    if (!res) return null;
-    const isError = res instanceof Error;
-    const text = isError ? res.message : res;
+    if (typeof info !== 'function' && typeof info !== 'object' && notNumber) return null;
+    let infoContent: number | ((value: string) => React.ReactNode | Error);
+    if (typeof info === 'object') {
+      infoContent = info.content;
+    } else {
+      infoContent = info;
+    }
+    const notContentNumber = typeof infoContent !== 'number';
+    const textInfo = notContentNumber
+      ? (infoContent as (value: string) => React.ReactNode | Error)
+      : defaultInfo.bind(null, infoContent as number);
+    const error = textInfo(inputAbleProps.value as string);
+    if (!error) return null;
+    const isError = error instanceof Error;
+    const text = isError ? error.message : error;
     if (!isError && !focused) return null;
-    return (
-      <div
-        key='info'
-        style={{ minWidth: 'auto' }}
-        className={classNames(inputStyle?.info, !!isError && inputStyle?.infoError)}
-        dir={config.direction}
-      >
-        {text}
-      </div>
-    );
+    return { text, error };
   };
+
+  const infoState = useMemo(getInfoState, [info, inputAbleProps.value, focused]);
+  const infoPopoverProps = {
+    popover: props.popover || (typeof info === 'object' ? info.position : 'bottom-right'),
+    popoverProps: Object.assign(
+      {
+        style: { width: 'auto', fontSize: 12 },
+        adjust: true,
+      },
+      props.popoverProps,
+    ),
+    error:
+      infoState?.error && infoState?.error instanceof Error ? infoState?.error?.message : undefined,
+    tip: <div className={inputClasses?.info}>{infoState?.text}</div>,
+  };
+
+  const infoPopoverNode = useTip({
+    ...infoPopoverProps,
+    focused,
+    rootRef,
+    jssStyle: props.jssStyle,
+  });
 
   const mergeSuffix = (
     <React.Fragment>
       {suffix}
-      {getInfo()}
+      {infoState?.text && infoPopoverNode}
       {tipNode}
     </React.Fragment>
   );
@@ -140,7 +161,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
   return {
     ...rest,
     value: inputAbleProps.value,
-    className: classNames(props.className, innerTitle && inputStyle?.wrapperInnerTitle),
+    className: classNames(props.className, innerTitle && inputClasses?.wrapperInnerTitle),
     onChange: inputAbleProps.onChange,
     onBlur: handleBlur,
     ...clearProps,
