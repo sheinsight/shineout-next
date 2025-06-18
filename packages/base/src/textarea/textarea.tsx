@@ -162,6 +162,7 @@ const Textarea = (props0: TextareaProps) => {
     popoverProps: Object.assign(
       {
         style: { width: 'auto', fontSize: 12 },
+        adjust: true,
       },
       resetProps.popoverProps,
     ),

@@ -10,7 +10,7 @@ import InputSize from '../__example__/02-size'
 import InputNumber from '../__example__/03-number-0'
 import InputNumberOther from '../__example__/03-number-1'
 import InputGroup from '../__example__/04-01-group'
-import InputTip from '../__example__/05-tip'
+import InputTip from '../__example__/05-01-tip'
 import InputValidate from '../__example__/06-validate'
 import InputDisabled from '../__example__/07-disabled'
 import InputPassword from '../__example__/08-password'
@@ -559,9 +559,8 @@ describe('Input[info]', () => {
     const infoText = '1234567890';
     const info = infoText.length - 1;
     const { container } = render(<Input info={info} defaultValue={infoText} />);
-    const inputInfoWrapper = container.querySelector(infoWrapper)!
+    const inputInfoWrapper = container.querySelector('[data-soui-type="error"]')!
     textContentTest(inputInfoWrapper, `${infoText.length} / ${info}`)
-    classTest(inputInfoWrapper, infoError)
   });
 
   test('should set custom info', async () => {
