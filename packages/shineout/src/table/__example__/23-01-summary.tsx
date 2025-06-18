@@ -1,6 +1,6 @@
 /**
  * cn - 底部总结栏
- *    -- 通过 summary 属性来渲染底部信息
+ *    -- 通过 `summary` 属性来渲染底部信息
  * en - footer summary
  *    -- Render bottom information through the summary property
  */

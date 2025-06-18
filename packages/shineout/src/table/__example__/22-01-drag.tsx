@@ -1,8 +1,8 @@
 /**
  * cn - 拖动行
- *    -- 通过 rowEvents 属性来自定义拖拽事件
+ *    -- 通过 `rowEvents` 属性来自定义拖拽事件
  * en - drag row
- *    -- customize drag events through the rowEvents property
+ *    -- customize drag events through the `rowEvents` property
  */
 import React, { useState, useRef, useCallback } from 'react';
 import { Table, TYPE } from 'shineout';
@@ -150,7 +150,7 @@ const App: React.FC = () => {
     e.preventDefault();
   }, []);
 
-  const dragEndHandler = useCallback((e: React.DragEvent) => {
+  const dragEndHandler = useCallback(() => {
     if (!ref.current.dragging) return;
     ref.current.dragging = false;
     setTarget(null);

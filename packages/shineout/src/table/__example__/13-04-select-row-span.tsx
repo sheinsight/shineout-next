@@ -1,6 +1,6 @@
 /**
  * cn - 选择行合并
- *    -- 给 type 为 checkbox 的列设置 rowSpan 属性，可以合并选择行
+ *    -- 给 `type` 为 checkbox 的列设置 rowSpan 属性，可以合并选择行
  * en - Select row span
  *    -- Set the rowSpan property of the column with type checkbox to merge the selection row
  */

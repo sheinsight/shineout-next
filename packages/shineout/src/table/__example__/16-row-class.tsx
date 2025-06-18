@@ -1,8 +1,8 @@
 /**
  * cn - 行样式
- *    -- 通过 rowClassName 设置单行样式（使用了 rowClassName 必须给 td 指定背景色）
+ *    -- 通过 `rowClassName` 设置单行样式（使用了 rowClassName 必须给 td 指定背景色）
  * en - Row ClassName
- *    -- Set the rowClassName property to set row style. (You must specify td background-color when the rowClassName is set)
+ *    -- Set the `rowClassName` property to set row style. (You must specify td background-color when the rowClassName is set)
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

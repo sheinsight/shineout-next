@@ -1,6 +1,6 @@
 /**
  * cn - 可展开受控
- *    -- 受控,当传入一个expandKeys时,展开会变成受控的,需要自行在column里面的onClick去处理
+ *    -- 受控,当传入一个 `expandKeys` 时,展开会变成受控的,需要自行在column里面的onClick去处理
  * en -
  *    -- When an expandKeys is provided, the expansion becomes controlled and needs to be processed by the onClick in the column
  */
