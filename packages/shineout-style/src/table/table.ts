@@ -532,6 +532,12 @@ const tableStyle: JsStyles<TableClassType> = {
       display: 'none',
     },
   },
+  cellSortable: {
+    cursor: 'pointer',
+    '&:hover': {
+      background: token.tableTbodyHoverBackgroundColor,
+    },
+  },
   sticky: {},
   expandIcon: {
     position: 'relative',

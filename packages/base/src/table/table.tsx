@@ -367,6 +367,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       onFilterChange,
       sortInfo: sortInfo,
       sortDirections: props.sortDirections,
+      cellSortable: props.cellSortable,
       onSorterChange: onSorterChange,
       dragCol: layoutFunc.dragCol,
       resizeCol: layoutFunc.resizeCol,
