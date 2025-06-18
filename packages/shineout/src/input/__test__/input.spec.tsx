@@ -559,9 +559,8 @@ describe('Input[info]', () => {
     const infoText = '1234567890';
     const info = infoText.length - 1;
     const { container } = render(<Input info={info} defaultValue={infoText} />);
-    const inputInfoWrapper = container.querySelector(infoWrapper)!
+    const inputInfoWrapper = container.querySelector('[data-soui-type="error"]')!
     textContentTest(inputInfoWrapper, `${infoText.length} / ${info}`)
-    classTest(inputInfoWrapper, infoError)
   });
 
   test('should set custom info', async () => {
