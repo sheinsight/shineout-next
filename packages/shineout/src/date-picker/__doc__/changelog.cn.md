@@ -1,3 +1,9 @@
+## 3.7.3-beta.8
+2025-06-20
+
+### 🐞 BugFix
+- 修复 `DatePicker` 在开启 `allowSingle` 时可能引发表单死循环的问题 ([#1194](https://github.com/sheinsight/shineout-next/pull/1194))
+
 ## 3.7.3-beta.5
 2025-06-17
 

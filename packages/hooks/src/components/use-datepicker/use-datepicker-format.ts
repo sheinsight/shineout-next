@@ -5,7 +5,7 @@ import type {
   DatePickerValueType,
   UseDatePickerFormatProps,
 } from './use-datepicker-format.type';
-import shallowEqual from '../../utils/shallow-equal';
+import shallowEqual, { shallowEqualExceptFalsely } from '../../utils/shallow-equal';
 import { usePersistFn } from '../../common/use-persist-fn';
 import useLatestObj from '../../common/use-latest-obj';
 
@@ -254,8 +254,18 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     }
     const formatValue = getFormatValueArr(dateArr);
     const v = range ? formatValue : formatValue[0];
-    if (!shallowEqual(v, value)) {
-      onChange?.(v as FormatValueType);
+    if (Array.isArray(value) && value.length && Array.isArray(v) && v.length) {
+      // 针对 range 的情况，['2025-01-01',''] 和 ['2025-01-01',undefined] 无法通过 shallowEqual 出来，这边需要放行
+      if (
+        !shallowEqualExceptFalsely(v[0], value[0]) ||
+        !shallowEqualExceptFalsely(v[1], value[1])
+      ) {
+        onChange?.(v as FormatValueType);
+      }
+    } else {
+      if (!shallowEqual(v, value)) {
+        onChange?.(v as FormatValueType);
+      }
     }
   };
 
