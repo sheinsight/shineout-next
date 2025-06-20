@@ -1,3 +1,9 @@
+## 3.7.4-beta.1
+2025-06-20
+
+### 💎 Enhancement
+- `setToken` 新增忽略扩展样式开关 `ignoreExtra` 用于屏蔽兼容老版本组件的额外 cssvar ([#1196](https://github.com/sheinsight/shineout-next/pull/1196))
+
 ## 3.7.0
 2025-05-07
 
