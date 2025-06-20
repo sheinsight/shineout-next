@@ -38,7 +38,6 @@ const App: React.FC = () => {
         width={400}
         visible={visible}
         title='Modal Title'
-        type='success'
         onClose={handleCancel}
         footer={[
           <Button key='cancel' mode='outline' onClick={handleCancel}>
