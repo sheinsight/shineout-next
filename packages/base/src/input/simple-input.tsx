@@ -32,7 +32,8 @@ const Input = (props: SimpleInputProps) => {
   const inputStyle = jssStyle?.input?.();
   const config = useConfig();
   const { fieldId } = useContext(FormFieldContext);
-  const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
+  const showClearFromProp = props.showClear && !props.disabled;
+  const { getRootProps, getClearProps, getInputProps, showClear: showClearFromClearable, focused, disabled } = useInput({
     ...rest,
     onFocusedChange,
     // 由于form的原生submit事件是在keydown中触发的，submit校验后触发scrollToError会导致当前焦点的input立即失焦，导致input的回车事件无法触发
@@ -91,8 +92,8 @@ const Input = (props: SimpleInputProps) => {
     !!underline && inputStyle?.wrapperUnderline,
     !border && inputStyle?.wrapperNoBorder,
     hasSuffix && inputStyle?.password,
-    props.showClear && inputStyle?.wrapperShowClear,
-    inputElProps.value?.length > 0 && inputStyle?.wrapperHasValue,
+    showClearFromProp && inputStyle?.wrapperShowClear,
+    showClearFromProp && inputElProps.value?.length > 0 && inputStyle?.wrapperHasValue,
   );
 
   return (
@@ -114,7 +115,7 @@ const Input = (props: SimpleInputProps) => {
       >
         {prefix}
         {inputEl}
-        {(props.showClear || showClear) && (
+        {(showClearFromProp || showClearFromClearable) && (
           <div className={inputStyle?.clearWrapper} {...getClearProps()}>
             <span className={inputStyle?.clear} dir={config.direction}>
               {clearIcon || Icons.input.Close}
