@@ -1,3 +1,10 @@
+## 3.8.0-beta.8
+2025-06-23
+
+### 🆕 Feature
+- `Cascader` 新增 `showParent` 属性，支持显示父级节点 ([#1199](https://github.com/sheinsight/shineout-next/pull/1199))
+
+
 ## 3.7.3-beta.7
 2025-06-18
 
