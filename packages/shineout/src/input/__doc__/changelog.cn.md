@@ -1,3 +1,11 @@
+## 3.8.0-beta.7
+2025-06-23
+
+### 🆕 Feature
+
+- `Input` 新增 `showClear` 属性，支持有值时，是否常驻显示清除按钮，优先级高于 `clearable` ([#1197](https://github.com/sheinsight/shineout-next/pull/1197))
+
+
 ## 3.8.0-beta.6
 2025-06-18
 

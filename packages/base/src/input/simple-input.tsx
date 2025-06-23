@@ -52,19 +52,6 @@ const Input = (props: SimpleInputProps) => {
     },
   });
 
-  const rootClass = classNames(
-    className,
-    inputStyle?.rootClass,
-    inputStyle?.wrapper,
-    !!focused && inputStyle?.wrapperFocus,
-    !!disabled && inputStyle?.wrapperDisabled,
-    status === 'error' && inputStyle?.wrapperError,
-    size === 'small' && inputStyle?.wrapperSmall,
-    size === 'large' && inputStyle?.wrapperLarge,
-    !!underline && inputStyle?.wrapperUnderline,
-    !border && inputStyle?.wrapperNoBorder,
-    hasSuffix && inputStyle?.password,
-  );
 
   const keyHandler = useKeyEvent({
     onEnterPress: (e: KeyboardEvent) => {
@@ -92,6 +79,22 @@ const Input = (props: SimpleInputProps) => {
     inputEl = renderInput(inputEl);
   }
 
+  const rootClass = classNames(
+    className,
+    inputStyle?.rootClass,
+    inputStyle?.wrapper,
+    !!focused && inputStyle?.wrapperFocus,
+    !!disabled && inputStyle?.wrapperDisabled,
+    status === 'error' && inputStyle?.wrapperError,
+    size === 'small' && inputStyle?.wrapperSmall,
+    size === 'large' && inputStyle?.wrapperLarge,
+    !!underline && inputStyle?.wrapperUnderline,
+    !border && inputStyle?.wrapperNoBorder,
+    hasSuffix && inputStyle?.password,
+    props.showClear && inputStyle?.wrapperShowClear,
+    inputElProps.value?.length > 0 && inputStyle?.wrapperHasValue,
+  );
+
   return (
     <div
       id={fieldId}
@@ -111,7 +114,7 @@ const Input = (props: SimpleInputProps) => {
       >
         {prefix}
         {inputEl}
-        {showClear && (
+        {(props.showClear || showClear) && (
           <div className={inputStyle?.clearWrapper} {...getClearProps()}>
             <span className={inputStyle?.clear} dir={config.direction}>
               {clearIcon || Icons.input.Close}

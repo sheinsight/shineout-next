@@ -27,6 +27,7 @@ export default () => {
       <div style={{ display: 'flex', padding: '8px 12px 4px 12px' }}>
         <Input
           placeholder='Custom filter'
+          showClear
           onChange={filterProps.onFilter as (text?: string) => void}
         />
       </div>

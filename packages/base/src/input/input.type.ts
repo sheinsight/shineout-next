@@ -52,6 +52,8 @@ export interface InputClasses {
   //password
   passwordToggle: string;
   password: string;
+  wrapperShowClear: string;
+  wrapperHasValue: string;
 }
 
 export interface InputStyle {
@@ -98,8 +100,9 @@ export interface SimpleInputProps
    */
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
   /**
-   * @en Whether to show clear
-   * @cn 是否显示清除
+   * @en Whether to show clear button when has value, higher priority than clearable
+   * @cn 有值时，是否常驻显示清除按钮，优先级高于 clearable
+   * @version 3.8.0
    */
   showClear?: boolean;
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
@@ -226,7 +229,6 @@ export type GetCommonProps<Props, V> = Omit<
   | 'addEnd'
   | 'hasSuffix'
   | 'onFocusedChange'
-  | 'showClear'
 > &
   InputCommonProps<V>;
 
