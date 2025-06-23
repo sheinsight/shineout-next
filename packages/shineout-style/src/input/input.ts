@@ -162,6 +162,18 @@ const input: JsStyles<keyof InputClasses> = {
       fontSize: 'inherit',
     },
   },
+
+  wrapperShowClear: {
+    '& $clearWrapper': {
+      display: 'flex',
+      opacity: 0,
+    }
+  },
+  wrapperHasValue: {
+    '& $clearWrapper': {
+      opacity: 1,
+    }
+  },
   clearWrapper: {
     position: 'relative',
     flexBasis: `calc(${token.inputIconSize} + 8px)`,

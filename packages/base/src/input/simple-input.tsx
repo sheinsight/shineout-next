@@ -32,7 +32,8 @@ const Input = (props: SimpleInputProps) => {
   const inputStyle = jssStyle?.input?.();
   const config = useConfig();
   const { fieldId } = useContext(FormFieldContext);
-  const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
+  const showClearFromProp = props.showClear && !props.disabled;
+  const { getRootProps, getClearProps, getInputProps, showClear: showClearFromClearable, focused, disabled } = useInput({
     ...rest,
     onFocusedChange,
     // 由于form的原生submit事件是在keydown中触发的，submit校验后触发scrollToError会导致当前焦点的input立即失焦，导致input的回车事件无法触发
@@ -52,19 +53,6 @@ const Input = (props: SimpleInputProps) => {
     },
   });
 
-  const rootClass = classNames(
-    className,
-    inputStyle?.rootClass,
-    inputStyle?.wrapper,
-    !!focused && inputStyle?.wrapperFocus,
-    !!disabled && inputStyle?.wrapperDisabled,
-    status === 'error' && inputStyle?.wrapperError,
-    size === 'small' && inputStyle?.wrapperSmall,
-    size === 'large' && inputStyle?.wrapperLarge,
-    !!underline && inputStyle?.wrapperUnderline,
-    !border && inputStyle?.wrapperNoBorder,
-    hasSuffix && inputStyle?.password,
-  );
 
   const keyHandler = useKeyEvent({
     onEnterPress: (e: KeyboardEvent) => {
@@ -92,6 +80,22 @@ const Input = (props: SimpleInputProps) => {
     inputEl = renderInput(inputEl);
   }
 
+  const rootClass = classNames(
+    className,
+    inputStyle?.rootClass,
+    inputStyle?.wrapper,
+    !!focused && inputStyle?.wrapperFocus,
+    !!disabled && inputStyle?.wrapperDisabled,
+    status === 'error' && inputStyle?.wrapperError,
+    size === 'small' && inputStyle?.wrapperSmall,
+    size === 'large' && inputStyle?.wrapperLarge,
+    !!underline && inputStyle?.wrapperUnderline,
+    !border && inputStyle?.wrapperNoBorder,
+    hasSuffix && inputStyle?.password,
+    showClearFromProp && inputStyle?.wrapperShowClear,
+    showClearFromProp && inputElProps.value?.length > 0 && inputStyle?.wrapperHasValue,
+  );
+
   return (
     <div
       id={fieldId}
@@ -111,7 +115,7 @@ const Input = (props: SimpleInputProps) => {
       >
         {prefix}
         {inputEl}
-        {showClear && (
+        {(showClearFromProp || showClearFromClearable) && (
           <div className={inputStyle?.clearWrapper} {...getClearProps()}>
             <span className={inputStyle?.clear} dir={config.direction}>
               {clearIcon || Icons.input.Close}
