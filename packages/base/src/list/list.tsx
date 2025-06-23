@@ -6,7 +6,7 @@ import {
   useInputAble,
 } from '@sheinx/hooks';
 import classNames from 'classnames';
-import { useMemo } from 'react';
+import { useMemo, useLayoutEffect, useRef } from 'react';
 import React from 'react';
 import { ListProps } from './list.type';
 import { VirtualScrollList } from '../virtual-scroll';
@@ -121,26 +121,44 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     );
   });
 
+  const DynamicRow = ({ columnData, columnIndex, setRowHeight }: {
+    columnData: DataItem[];
+    columnIndex: number;
+    setRowHeight?: (index: number, height: number) => void;
+  }) => {
+    const rowRef = useRef<HTMLDivElement>(null);
+    
+    useLayoutEffect(() => {
+      if (rowRef.current && setRowHeight) {
+        const rect = rowRef.current.getBoundingClientRect();
+        if (rect.height > 0) {
+          setRowHeight(columnIndex, rect.height);
+        }
+      }
+    });
+
+    return (
+      <div
+        ref={rowRef}
+        className={listClasses?.row}
+      >
+        {columnData.map((item, rowIndex) => {
+          const index = rowIndex + columnIndex * colNum;
+          return renderItem(item, index);
+        })}
+      </div>
+    );
+  };
+
   const renderDynamicColumn = usePersistFn(
-    (columnData: DataItem[], columnIndex: number, setRowHeight?: (index: number, height: number) => void) => {
+    (columnData: DataItem[], columnIndex: number, _relativeIndex: number, setRowHeight?: (index: number, height: number) => void) => {
       return (
-        <div
+        <DynamicRow
           key={columnIndex}
-          className={listClasses?.row}
-          ref={(el) => {
-            if (el && setRowHeight) {
-              const rect = el.getBoundingClientRect();
-              if (rect.height > 0) {
-                setRowHeight(columnIndex, rect.height);
-              }
-            }
-          }}
-        >
-          {columnData.map((item, rowIndex) => {
-            const index = rowIndex + columnIndex * colNum;
-            return renderItem(item, index);
-          })}
-        </div>
+          columnData={columnData}
+          columnIndex={columnIndex}
+          setRowHeight={setRowHeight}
+        />
       );
     }
   );
