@@ -1,5 +1,5 @@
 import React from 'react';
-import { UseFormFlowProps, FormDatum } from '@sheinx/hooks';
+import { UseFormFlowProps, FormDatum as UiFormDatum } from '@sheinx/hooks';
 
 /**
  * @title FormFlow
@@ -25,3 +25,8 @@ export interface FormFlowProps extends UseFormFlowProps {
    */
   strict?: boolean;
 }
+
+/**
+ * @title FormDatum
+ */
+export type FormDatum = UiFormDatum;
