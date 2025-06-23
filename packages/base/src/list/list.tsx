@@ -111,7 +111,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
       <div
         key={columnIndex}
         className={listClasses?.row}
-        style={{ height: props.fixed ? lineHeight : 'auto' }}
+        style={{ height: props.fixed && !props.dynamicHeight ? lineHeight : 'auto' }}
       >
         {columnData.map((item, rowIndex) => {
           const index = rowIndex + columnIndex * colNum;
@@ -120,6 +120,30 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
       </div>
     );
   });
+
+  const renderDynamicColumn = usePersistFn(
+    (columnData: DataItem[], columnIndex: number, setRowHeight?: (index: number, height: number) => void) => {
+      return (
+        <div
+          key={columnIndex}
+          className={listClasses?.row}
+          ref={(el) => {
+            if (el && setRowHeight) {
+              const rect = el.getBoundingClientRect();
+              if (rect.height > 0) {
+                setRowHeight(columnIndex, rect.height);
+              }
+            }
+          }}
+        >
+          {columnData.map((item, rowIndex) => {
+            const index = rowIndex + columnIndex * colNum;
+            return renderItem(item, index);
+          })}
+        </div>
+      );
+    }
+  );
 
   const loadingPosition = props.loadingPosition || 'center';
   const renderCenterLoading = () => {
@@ -173,22 +197,24 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
   const renderList = () => {
     if (isEmpty) return null;
 
-    if (props.fixed)
+    if (props.fixed) {
       return (
         <>
           <VirtualScrollList
             data={columnData}
-            renderItem={renderColumn}
+            renderItem={props.dynamicHeight ? renderDynamicColumn : renderColumn}
             lineHeight={lineHeight}
             rowsInView={rowsInView}
             onScroll={handleVirtualScroll}
             height={'auto'}
             style={{ flex: '1', minHeight: '0', display: 'flex' }}
             scrollerStyle={{ flex: 1, minHeight: 0, minWidth: 0, overflow: 'auto' }}
+            dynamicVirtual={props.dynamicHeight}
           />
           {renderFooter()}
         </>
       );
+    }
 
     return (
       <div className={listClasses?.scrollContainer} onScroll={handleListScroll}>
