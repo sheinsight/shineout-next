@@ -1205,6 +1205,124 @@ describe('Select[Other]', () => {
   });
 });
 
+describe('Select[ResultClassName]', () => {
+  interface ColorData {
+    id: number;
+    name: string;
+    category: string;
+  }
+
+  const colorData: ColorData[] = [
+    { id: 1, name: 'Red', category: 'warm' },
+    { id: 2, name: 'Blue', category: 'cool' },
+    { id: 3, name: 'Green', category: 'cool' },
+  ];
+
+  const SelectTestWithData = (props: any) => <Select keygen="id" data={colorData} renderItem={(d: ColorData) => d.name} {...props} />;
+
+  test('should apply string resultClassName to multiple select result', async () => {
+    const className = 'test-result-class';
+    const { container } = render(<SelectTestWithData multiple resultClassName={className} />);
+    
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!);
+    
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    const selectOptions = selectWrapper.querySelectorAll(option);
+    fireEvent.click(selectOptions[0]);
+    
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    classTest(selectResultWrapper.querySelectorAll(tag)[0], className);
+  });
+
+  test('should apply function resultClassName to multiple select result', async () => {
+    const { container } = render(
+      <SelectTestWithData multiple resultClassName={(value: ColorData) => `result-${value.category}`} />
+    );
+    
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!);
+    
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    const selectOptions = selectWrapper.querySelectorAll(option);
+    fireEvent.click(selectOptions[0]); // Select Red (warm category)
+    
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    classTest(selectResultWrapper.querySelectorAll(tag)[0], 'result-warm');
+  });
+
+  test('should apply resultClassName to multiple select results', async () => {
+    const { container } = render(
+      <SelectTestWithData multiple resultClassName={(value: ColorData) => `result-${value.category}`} />
+    );
+    
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!);
+    
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    const selectOptions = selectWrapper.querySelectorAll(option);
+    fireEvent.click(selectOptions[0]); // Select Red (warm)
+    fireEvent.click(selectOptions[1]); // Select Blue (cool)
+    
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    const tags = selectResultWrapper.querySelectorAll(tag);
+    
+    classTest(tags[0], 'result-warm');
+    classTest(tags[1], 'result-cool');
+  });
+
+  test('should work with renderResult and resultClassName together', async () => {
+    const className = 'custom-render-result';
+    const { container } = render(
+      <SelectTestWithData 
+        multiple
+        renderResult={(d: ColorData) => `Custom ${d.name}`}
+        resultClassName={className}
+      />
+    );
+    
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!);
+    
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    const selectOptions = selectWrapper.querySelectorAll(option);
+    fireEvent.click(selectOptions[0]);
+    
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    const tagElement = selectResultWrapper.querySelectorAll(tag)[0];
+    classTest(tagElement, className);
+    textContentTest(tagElement, 'Custom Red');
+  });
+});
+
 // virtual list is same as table or list
 
 // disabled
