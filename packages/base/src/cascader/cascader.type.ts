@@ -410,8 +410,8 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
   highlight?: boolean;
 
   /**
-   * @en Whether to include parent node in the result
-   * @cn 是否包含父节点
+   * @en Whether to show parent node in the result
+   * @cn 展示的结果是否包含父节点
    * @default false
    * @version 3.8.0
    */
