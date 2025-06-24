@@ -103,7 +103,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
   const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
 
-  const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal'});
+  const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal', enable: show});
 
   const popupElSize = useCheckElementSize(popupElRef, { enable: show });
 

@@ -4,6 +4,7 @@ interface UseCheckElementBorderWidthOptions {
   // horizontal: border-left + border-right
   // vertical: border-top + border-bottom
   direction?: 'horizontal' | 'vertical';
+  enable?: boolean;
 }
 
 
@@ -15,7 +16,7 @@ export const useCheckElementBorderWidth = (
 
   // 获取指定方向上的border宽度之和
   const getBorderWidth = useCallback(() => {
-    if (elementRef.current) {
+    if (elementRef.current && options.enable) {
       const { direction = 'horizontal' } = options;
       const style = window.getComputedStyle(elementRef.current);
       const borderWidth = direction === 'horizontal'
@@ -24,7 +25,7 @@ export const useCheckElementBorderWidth = (
 
       setBorderWidth(borderWidth);
     }
-  }, [elementRef]);
+  }, [elementRef, options.enable]);
 
   useEffect(() => {
     getBorderWidth();
