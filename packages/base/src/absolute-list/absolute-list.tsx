@@ -39,12 +39,12 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   }, [scrollElRefProp, scrollElRefContext]);
 
   useEffect(() => {
-    if (scrollElRefProp || scrollElRefContext) return;
+    if (scrollElRefProp || scrollElRefContext || !focus) return;
     const closestScrollContainer = getClosestScrollContainer(parentElRef.current);
     if (closestScrollContainer) {
       closestScrollContainerRef.current = closestScrollContainer;
     }
-  }, [parentElRef, scrollElRefProp, scrollElRefContext]);
+  }, [parentElRef, scrollElRefProp, scrollElRefContext, focus]);
 
   const { style } = usePositionStyle({
     getContainer: getRoot,
