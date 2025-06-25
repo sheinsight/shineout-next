@@ -179,15 +179,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
 
     if(props.needConfirm) return;
 
-    if (props.inputable && index !== undefined) {
-      if (props.quickSelect) {
-        // why: 快速选择时，需要加上timeout，否则e.target.value 获取不到最新的值
-        setTimeout(() => {
-          func.handleInputBlur(e.target.value, index);
-        });
-      } else {
-        func.handleInputBlur(e.target.value, index);
-      }
+    if (props.inputable && !props.quickSelect && index !== undefined) {
+      func.handleInputBlur(e.target.value, index);
     }
 
     // 当输入框有值时，失焦时需要立即触发 onChange，否则触控板的轻触模拟出来的click事件就获取不到最新的值
