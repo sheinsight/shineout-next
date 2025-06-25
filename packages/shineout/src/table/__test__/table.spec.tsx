@@ -1299,7 +1299,7 @@ describe('Table[Virtual]', () => {
     );
     const tableHead = container.querySelector(headWrapper)!;
     // const tableFoot = container.querySelector(footWrapper)!;
-    styleTest(tableHead.querySelector('table')!, null);
+    styleTest(tableHead.querySelector('table')!, 'border-spacing: 0;');
     // const tableBody = tableHead.nextElementSibling;
     const tableSroll = container.querySelector('[data-soui-role="scroll"]') as Element;
     // attributesTest(tableSroll, 'data-soui-type', 'scroll');
@@ -1730,8 +1730,8 @@ describe('Table[Foot]', () => {
     );
     const tables = container.querySelectorAll('table');
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, 'width: 100px; transform: translate3d(0, 0px, 0);');
-      else styleTest(item, 'width: 100px;');
+      if (index === 1) styleTest(item, 'width: 100px; border-spacing: 0; transform: translate3d(0, 0px, 0);');
+      else styleTest(item, 'width: 100px; border-spacing: 0;');
     });
     rerender(
       <Table
@@ -1746,8 +1746,8 @@ describe('Table[Foot]', () => {
       />,
     );
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, 'width: 100px; transform: translate3d(0, 0px, 0);');
-      else styleTest(item, 'width: 100px;');
+      if (index === 1) styleTest(item, 'width: 100px; border-spacing: 0; transform: translate3d(0, 0px, 0);');
+      else styleTest(item, 'width: 100px; border-spacing: 0;');
     });
   });
 });
