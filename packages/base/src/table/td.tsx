@@ -23,7 +23,6 @@ export default function Td(props: TdProps): JSX.Element {
   const [style, setStyle] = React.useState<React.CSSProperties>();
 
   useEffect(() => {
-    if(!props.style) return
     if(util.shallowEqual(props.style, style)) {
       return;
     }
