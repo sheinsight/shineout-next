@@ -1,3 +1,8 @@
+## 3.7.4-beta.7
+2025-06-26
+### 🐞 BugFix
+- 修复 `Form` 的 `useForm` 用非受控用法下，表单实例获取不正确的问题 ([#1208](https://github.com/sheinsight/shineout-next/pull/1208))
+
 ## 3.7.3-beta.3
 2025-06-17
 
