@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useComponentMemo, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import { TbodyProps } from './tbody.type';
@@ -20,15 +20,6 @@ interface TdProps extends Pick<TbodyProps, | 'virtual'>  {
 }
 
 export default function Td(props: TdProps): JSX.Element {
-  const [style, setStyle] = React.useState<React.CSSProperties>();
-
-  useEffect(() => {
-    if(util.shallowEqual(props.style, style)) {
-      return;
-    }
-    setStyle(props.style);
-  }, [props.style]);
-
   const {
     col,
     colSpan,
@@ -54,7 +45,7 @@ export default function Td(props: TdProps): JSX.Element {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           className={className}
-          style={style}
+          style={props.style}
           dir={direction}
           data-role={role}
           onClick={onClick}
@@ -66,7 +57,8 @@ export default function Td(props: TdProps): JSX.Element {
     [
       data,
       className,
-      style,
+      props.style?.left,
+      props.style?.right,
       col.type,
       col.treeColumnsName,
     ],
