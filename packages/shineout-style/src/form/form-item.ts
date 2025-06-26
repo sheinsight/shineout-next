@@ -126,6 +126,11 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
       top: '2px',
     },
   },
+  wrapperHideRequired: {
+    '& $label::before': {
+      display: 'none',
+    },
+  },
   wrapperKeepHeight: {
     marginBottom: token.formItemTipMinHeight,
     '&$wrapperTip': {
