@@ -1,3 +1,17 @@
+## 3.7.3-beta.4
+2025-06-17
+
+### 🐞 BugFix
+- 修复 `Input` 的 `onEnterPress` 事件在开启了 Form 的 scrollToError 后偶现的无法触发的问题 ([#1182](https://github.com/sheinsight/shineout-next/pull/1182))
+
+## 3.7.3-beta.1
+2025-06-16
+
+### 🐞 BugFix
+
+- 修复 `Input` 设置了 `digits` 和 `autoFix` 属性时，偶现的精度丢失问题 ([#1178](https://github.com/sheinsight/shineout-next/pull/1178))
+
+
 ## 3.7.1-beta.7
 2025-06-11
 

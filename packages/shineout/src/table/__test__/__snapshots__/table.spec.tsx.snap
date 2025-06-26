@@ -9,7 +9,9 @@ exports[`Table[Base] should render correctly  1`] = `
     <div
       class="soui-table-body-wrapper"
     >
-      <table>
+      <table
+        style="border-spacing: 0;"
+      >
         <colgroup>
           <col />
           <col />
@@ -221,7 +223,9 @@ exports[`Table[Base] should render correctly about border 1`] = `
     <div
       class="soui-table-body-wrapper"
     >
-      <table>
+      <table
+        style="border-spacing: 0;"
+      >
         <colgroup>
           <col />
           <col />
@@ -432,7 +436,9 @@ exports[`Table[Base] should render correctly about group 1`] = `
   <div
     class="soui-table-body-wrapper"
   >
-    <table>
+    <table
+      style="border-spacing: 0;"
+    >
       <colgroup>
         <col />
         <col />
@@ -841,7 +847,9 @@ exports[`Table[Base] should render correctly about size 1`] = `
     <div
       class="soui-table-body-wrapper"
     >
-      <table>
+      <table
+        style="border-spacing: 0;"
+      >
         <colgroup>
           <col />
           <col />

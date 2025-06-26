@@ -1,8 +1,8 @@
 /**
  * cn -
- *    -- 当遇到渲染性能问题时，可设置 `virtual="lazy"` 属性为一个函数，返回值为 false 时，表示该单元格不需要更新，
+ *    -- 当遇到渲染性能问题时，可设置 `virtual="lazy"`
  * en -
- *    -- When encountering rendering performance issues, you can set the `virtual="lazy"` property to a function. If the return value is false, it means that the cell does not need to be updated.
+ *    -- When encountering rendering performance issues, you can set the `virtual="lazy"` property.
  */
 import React, { useState } from 'react';
 import { Input, Table, TYPE } from 'shineout';

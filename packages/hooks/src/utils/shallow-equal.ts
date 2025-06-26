@@ -82,4 +82,13 @@ export function shallowEqual(objA: any, objB?: any, options = {}) {
   return true;
 }
 
+export function shallowEqualExceptFalsely(objA: any, objB?: any, options = {}) {
+  const falselys = [false, 0, '', null, undefined, NaN];
+  if (falselys.includes(objA) && falselys.includes(objB)) {
+    return true;
+  }
+  
+  return shallowEqual(objA, objB, options);
+}
+
 export default shallowEqual;

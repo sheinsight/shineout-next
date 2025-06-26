@@ -22,8 +22,8 @@ export const Input = (props: {
     | undefined
   >;
   onPaste?: (e: React.ClipboardEvent) => void;
-  onFocus?: (e: React.FocusEvent) => void;
-  onBlur?: (e: React.FocusEvent) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   onClick?: (e?: React.MouseEvent) => void;
   readOnly?: boolean;
 }) => {
@@ -85,8 +85,8 @@ interface ResultProps
     inputRef: HTMLInputElement | null;
     inputRefs: (HTMLInputElement | null)[];
   }>;
-  onFocus?: (e: React.FocusEvent) => void;
-  onBlur?: (e: React.FocusEvent) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>, index?: number) => void;
   onClick?: (e?: React.MouseEvent) => void;
 }
 const Result = (props: ResultProps) => {
@@ -208,7 +208,7 @@ const Result = (props: ResultProps) => {
             onBlur={(e) => {
               e.stopPropagation();
               if (e.relatedTarget === context.inputRefs[1 - info.index]) return;
-              props.onBlur?.(e);
+              props.onBlur?.(e, info.index);
               if (inputRef.current) inputRef.current.updateValue?.();
               context.clickIndex = 0;
             }}

@@ -1,6 +1,7 @@
 import React from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 import { InputFormatProps } from './use-input-format.type';
+import { preciseString } from '../../utils/number';
 
 function regLength(size?: number) {
   return /\d+/.test(String(size)) && size! > 0 ? `{0,${size}}` : '*';
@@ -96,7 +97,7 @@ const useInputFormat = (props: InputFormatProps) => {
 
       if (digits !== undefined && autoFix) {
         if (digits > 0) {
-          value = parseFloat(value).toFixed(digits);
+          value = preciseString(value, digits);
         } else if (digits === 0) {
           value = parseInt(value, 10).toString();
         }

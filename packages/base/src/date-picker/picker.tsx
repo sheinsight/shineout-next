@@ -68,6 +68,7 @@ const Picker = (props: PickerProps) => {
       format: props.format,
       disabled: position === 'end' ? func.endDisabled : func.startDisabled,
       rangeDate: dateArr,
+      allowSingle: props.allowSingle,
 
       min: position === 'end' ? endMin : startMin,
       staticMin: position === 'end' ? endMin : staticStartMin,

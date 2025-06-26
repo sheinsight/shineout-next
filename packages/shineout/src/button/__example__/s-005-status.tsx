@@ -30,30 +30,30 @@ export default () => {
     <div style={wrapperStyle}>
       <div style={buttonWrapperStyle}>
         <Button type='default' style={buttonStyle}>
-          Danger
+          Default
         </Button>
         <Button type='default' mode='outline' style={buttonStyle}>
-          Danger
+          Default
         </Button>
         <Button type='default' mode='dashed' style={buttonStyle}>
-          Danger
+          Default
         </Button>
         <Button type='default' mode='text' style={buttonStyle}>
-          Danger
+          Default
         </Button>
       </div>
       <div style={buttonWrapperStyle}>
         <Button type='primary' style={buttonStyle}>
-          Danger
+          Primary
         </Button>
         <Button type='primary' mode='outline' style={buttonStyle}>
-          Danger
+          Primary
         </Button>
         <Button type='primary' mode='dashed' style={buttonStyle}>
-          Danger
+          Primary
         </Button>
         <Button type='primary' mode='text' style={buttonStyle}>
-          Danger
+          Primary
         </Button>
       </div>
       <div style={buttonWrapperStyle}>

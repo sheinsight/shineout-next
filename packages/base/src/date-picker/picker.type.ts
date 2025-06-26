@@ -13,6 +13,7 @@ export interface PickerProps {
   minuteStep?: DatePickerProps<any>['minuteStep'];
   secondStep?: DatePickerProps<any>['secondStep'];
   children?: DatePickerProps<any>['children'];
+  allowSingle?: DatePickerProps<any>['allowSingle'];
   onClearInputArr: (index?: number | undefined) => void;
   format: string;
   type: string;
@@ -66,6 +67,7 @@ export interface CommonPickerProps
     | 'needConfirm'
     | 'registerModeDisabled'
     | 'children'
+    | 'allowSingle'
   > {
   rangeDate: Array<Date | undefined>;
   current: Date;

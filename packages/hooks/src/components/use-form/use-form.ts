@@ -7,6 +7,8 @@ import { insertValue, spliceValue } from '../../utils/flat';
 import { usePrevious } from '../../common/use-default-value';
 
 const globalKey = '__global__&&@@';
+const SUBMIT_TIMEOUT = 10;
+
 import { current, produce } from '../../utils/immer';
 import {
   deepGet,
@@ -250,7 +252,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           docScroll.top -= scrollToError;
         }
       }
-    });
+    }, SUBMIT_TIMEOUT + 10);
   };
 
   const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
@@ -445,7 +447,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       submit();
       other?.onSubmit?.(e);
-    }, 10);
+    }, SUBMIT_TIMEOUT);
   };
 
   const validateFieldset = (name: string, config?: ValidateFnConfig) => {

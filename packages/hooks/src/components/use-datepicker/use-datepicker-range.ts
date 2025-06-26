@@ -29,7 +29,7 @@ const useRangePick = (props: useRangeProps) => {
     setDateArr((arr) => {
       const newArr = [...arr];
       newArr[index] = date;
-      if (range && index === 0 && newArr[1]) {
+      if (date && range && index === 0 && newArr[1]) {
         if (typeof range === 'number') {
           const rangeMax = utils.addSeconds(date, range, options);
           if (rangeMax.getTime() < newArr[1].getTime()) {
@@ -62,7 +62,7 @@ const useRangePick = (props: useRangeProps) => {
       const newArr = [...arr];
       newArr[index] = date;
       const modeCache = context.modeCache;
-      if (modeCache[0] === modeCache[1]) {
+      if (date && modeCache[0] === modeCache[1]) {
         const mode = modeCache[0];
         if (range && index === 0 && newArr[1]) {
           if (mode === 'year') {

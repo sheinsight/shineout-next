@@ -11,7 +11,7 @@ import PickerTitle from './pickerTitle';
 import Confirm from './confirm';
 
 const Day = (props: DayProps) => {
-  const { jssStyle } = props;
+  const { jssStyle, allowSingle } = props;
   const { locale, direction } = useConfig();
 
   const styles = jssStyle?.datePicker?.();
@@ -32,6 +32,7 @@ const Day = (props: DayProps) => {
     value: props.value,
     range: props.range,
     onChange,
+    allowSingle,
     onClearInputArr: props.onClearInputArr,
     position: props.position,
     min: props.min,

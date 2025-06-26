@@ -88,7 +88,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
   const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
 
-  const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal'});
+  const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal', enable: show});
 
   const popupElSize = useCheckElementSize(popupElRef, { enable: show });
 
@@ -274,14 +274,16 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     const rect = context.parentRect;
 
     const needCheck = !show || !shallowEqual(context.prevParentPosition, parentElNewPosition)
+    const scrollTop = scrollElRef?.current?.scrollTop || 0;
+    const scrollLeft = scrollElRef?.current?.scrollLeft || 0;
 
     if (needCheck && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
         rect.bottom < visibleRect.top ||
-        rect.top > visibleRect.bottom ||
+        rect.top > (visibleRect.bottom + scrollTop) ||
         rect.right < visibleRect.left ||
-        rect.left > visibleRect.right
+        rect.left > (visibleRect.right + scrollLeft)
       ) {
         return { style: hideStyle };
       }

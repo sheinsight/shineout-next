@@ -6,7 +6,8 @@ export interface UseDateProps {
   onCurrentChange?: (date: Date) => void;
   onClearInputArr: (index?: number | undefined) => void;
   value?: Date;
-  onChange?: (date: Date, noClose?: boolean) => void;
+  allowSingle?: boolean;
+  onChange?: (date: Date | string, noClose?: boolean) => void;
   min?: Date;
   max?: Date;
   position?: 'start' | 'end';
