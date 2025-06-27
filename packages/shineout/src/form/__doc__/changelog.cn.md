@@ -1,3 +1,13 @@
+## 3.7.4-beta.8
+2025-06-26
+### 🐞 BugFix
+- 修复 `Form.Item` 嵌套使用时，子级的 `required` 属性设置为 `false` 不生效的问题 ([#1210](https://github.com/sheinsight/shineout-next/pull/1210))
+
+## 3.7.4-beta.7
+2025-06-26
+### 🐞 BugFix
+- 修复 `Form` 的 `useForm` 用非受控用法下，表单实例获取不正确的问题 ([#1208](https://github.com/sheinsight/shineout-next/pull/1208))
+
 ## 3.7.3-beta.3
 2025-06-17
 

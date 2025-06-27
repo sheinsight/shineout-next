@@ -1,3 +1,10 @@
+## 3.7.4-beta.6
+2025-06-25
+
+### 🐞 BugFix
+- 修复 `DatePicker` 可输入模式下的快速选择，二次选值后不生效的问题（Regression: since v3.7.3） ([#1207](https://github.com/sheinsight/shineout-next/pull/1207))
+
+
 ## 3.7.3-beta.8
 2025-06-20
 

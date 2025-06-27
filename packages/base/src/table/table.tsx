@@ -319,6 +319,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const $empty = renderEmpty();
 
+  const tableStyle = { width, borderSpacing: 0 }
   const renderTable = () => {
     const Group = (
       <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
@@ -495,7 +496,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const $headTable = (
       <div className={headWrapperClass} {...util.getDataAttribute({ role: theadIdRef.current })}>
-        <table style={{ width }} ref={theadRef}>
+        <table style={tableStyle} ref={theadRef}>
           {Group}
           <Thead {...headCommonProps} />
         </table>
@@ -531,7 +532,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
             {/* tbody of virtual */}
             {!!props.data?.length && (
-              <table style={{ width, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
+              <table style={{ ...tableStyle, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
                 {Group}
                 <Tbody
                   {...bodyCommonProps}
@@ -546,7 +547,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {/* tfoot of virtual */}
             {showFoot ? (
               <div className={footWrapperClass}>
-                <table style={{ width }} ref={tfootRef}>
+                <table style={tableStyle} ref={tfootRef}>
                   {Group}
                   <Tfoot {...footCommonProps} />
                 </table>
@@ -566,7 +567,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       <>
         {renderHeadMirrorScroller()}
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-          <table style={{ width }} ref={tbodyRef}>
+          <table style={tableStyle} ref={tbodyRef}>
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (
@@ -688,7 +689,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         style={{ height: defaultHeight, ...props.style }}
         dir={config.direction}
       >
-        <table style={{ width }}>{props.children}</table>
+        <table style={tableStyle}>{props.children}</table>
       </div>
     );
 

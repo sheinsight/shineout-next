@@ -179,7 +179,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
 
     if(props.needConfirm) return;
 
-    if (props.inputable && index !== undefined) {
+    if (props.inputable && !props.quickSelect && index !== undefined) {
       func.handleInputBlur(e.target.value, index);
     }
 

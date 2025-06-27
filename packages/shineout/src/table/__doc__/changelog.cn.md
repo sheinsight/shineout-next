@@ -6,6 +6,27 @@
 - `Table` 新增 `cellSortable` 属性，支持点击单元格触发排序 ([#1188](https://github.com/sheinsight/shineout-next/pull/1188))
 
 
+## 3.7.4-beta.7
+2025-06-26
+
+### 🐞 BugFix
+
+- 修复 `Table` 的固定列在快速滚动时，sticky样式的应用可能有迟滞的问题 ([#1209](https://github.com/sheinsight/shineout-next/pull/1209))
+
+## 3.7.4-beta.4
+2025-06-25
+
+### 🐞 BugFix
+
+- 修复 `Table` 在有动态固定列时，固定列吸附的位置不正确的问题 ([#1203](https://github.com/sheinsight/shineout-next/pull/1203))
+
+## 3.7.1-beta.2
+2025-06-06
+
+### 🐞 BugFix
+- 修复 `Table` 单元格中使用的 Popover 设置的挂载容器在 td 元素内时的遮挡问题 ([#1155](https://github.com/sheinsight/shineout-next/pull/1155))
+
+
 ## 3.7.0-beta.44
 2025-06-04
 

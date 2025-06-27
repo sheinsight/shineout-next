@@ -6,6 +6,7 @@ import {
   ObjectType,
   FormFlowProps as UiFormFlowProps,
   FormRef as UiFormRef,
+  FormDatum as UiFormDatum,
 } from '@sheinx/base';
 
 /**
@@ -13,6 +14,12 @@ import {
  * @sort 6
  */
 export type FormRef<T> = UiFormRef<T>;
+
+/**
+ * @title FormDatum
+ * @sort 7
+ */
+export type FormDatum = UiFormDatum;
 
 /**
  * @title Form

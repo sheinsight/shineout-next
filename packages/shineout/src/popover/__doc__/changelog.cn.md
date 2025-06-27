@@ -9,7 +9,7 @@
 2025-06-24
 
 ### 🚀 Performance
-- 优化 `Popover` 初始化性能，移除mount时多余的dom样式计算 ([#1200](https://github.com/sheinsight/shineout-next/pull/1200))
+- 优化 `Popover` 初始化性能，移除mount时多余的DOM样式计算 ([#1200](https://github.com/sheinsight/shineout-next/pull/1200))
 
 ## 3.7.0-beta.1
 2025-04-01
