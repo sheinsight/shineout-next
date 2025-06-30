@@ -106,6 +106,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     noCache,
     highlight,
     trigger = 'click',
+    preventEnterSelect = false,
   } = props;
 
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
@@ -363,6 +364,12 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         return;
       }
     }
+    
+    // 当开启 preventEnterSelect 且存在 onCreate 功能时，阻止选中已有选项
+    if (preventEnterSelect && onCreate && !createdData) {
+      return;
+    }
+    
     const currentDataItem = filterData?.[hoverIndex];
     if (currentDataItem && !currentDataItem[groupKey as keyof typeof currentDataItem]) {
       handleChange(currentDataItem);

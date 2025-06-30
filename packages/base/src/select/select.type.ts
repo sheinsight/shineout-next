@@ -593,6 +593,13 @@ export interface SelectPropsBase<DataItem, Value>
    * @version 3.7.0
    */
   highlight?: boolean;
+
+  /**
+   * @en Whether to prevent selecting existing options when pressing Enter while onCreate is enabled
+   * @cn 开启 onCreate 时，是否阻止回车选中已有选项，仅创建选项
+   * @default false
+   */
+  preventEnterSelect?: boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>
