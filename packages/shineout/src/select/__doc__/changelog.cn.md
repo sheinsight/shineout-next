@@ -1,3 +1,9 @@
+## 3.8.0-beta.9
+2025-06-30
+
+### 🆕 Feature
+- `Select` 新增 `preventEnterSelect` 属性，开启 onCreate 时可阻止回车选中已有选项，仅创建选项 ([#1214](https://github.com/sheinsight/shineout-next/pull/1214))
+
 ## 3.7.2-beta.2
 2025-06-11
 
