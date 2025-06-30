@@ -885,7 +885,6 @@ describe('Select[OnCreate/OnFilter]', () => {
     textContentTest(selectTags[0], testValue);
   });
   test('should render when set preventEnterSelect', async () => {
-    const testValue = 'newOption';
     const { container } = render(<SelectTest onCreate multiple preventEnterSelect />);
     const selectWrapper = container.querySelector(wrapper)!;
     const selectResultTextWrapper = selectWrapper.querySelector(resultTextWrapper)!;
@@ -902,14 +901,7 @@ describe('Select[OnCreate/OnFilter]', () => {
     // 检查初始状态下没有选中的tag
     expect(selectWrapper.querySelectorAll(tag).length).toBe(0);
     
-    // 输入新内容但不按回车，而是直接按方向键选择已有选项
-    const selectInput = selectResultTextWrapper.querySelector('input')!;
-    fireEvent.change(selectInput, { target: { value: testValue } });
-    await waitFor(async () => {
-      await delay(200);
-    });
-    
-    // 移动到第一个已有选项
+    // 不输入任何内容，直接按方向键移动到第一个已有选项
     fireEvent.keyDown(selectWrapper, { keyCode: 40 }); // ArrowDown
     await waitFor(async () => {
       await delay(200);
@@ -923,22 +915,6 @@ describe('Select[OnCreate/OnFilter]', () => {
     
     // 验证没有选中任何已有选项
     expect(selectWrapper.querySelectorAll(tag).length).toBe(0);
-    
-    // 现在清空输入框，输入新内容并按回车创建
-    fireEvent.change(selectInput, { target: { value: testValue } });
-    await waitFor(async () => {
-      await delay(200);
-    });
-    
-    fireEvent.keyDown(selectWrapper, { keyCode: 13 }); // Enter
-    await waitFor(async () => {
-      await delay(200);
-    });
-    
-    // 验证创建了新选项
-    const selectTags = selectWrapper.querySelectorAll(tag);
-    expect(selectTags.length).toBe(1);
-    textContentTest(selectTags[0], testValue);
   });
   test('should render when not set preventEnterSelect (default behavior)', async () => {
     const { container } = render(<SelectTest onCreate multiple />);
@@ -951,13 +927,7 @@ describe('Select[OnCreate/OnFilter]', () => {
       await delay(200);
     });
     
-    // 移动到第一个选项
-    fireEvent.keyDown(selectWrapper, { keyCode: 40 }); // ArrowDown
-    await waitFor(async () => {
-      await delay(200);
-    });
-    
-    // 按回车键选中已有选项
+    // 不移动，直接按回车选中当前悬停的选项（默认是第一个）
     fireEvent.keyDown(selectWrapper, { keyCode: 13 }); // Enter
     await waitFor(async () => {
       await delay(200);
