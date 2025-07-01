@@ -5,6 +5,7 @@ import usePersistFn from '../../common/use-persist-fn';
 import { getDataAttributeName } from '../../utils/attribute';
 import { insertValue, spliceValue } from '../../utils/flat';
 import { usePrevious } from '../../common/use-default-value';
+import { SchemaBuilder } from './use-form-schema/form-schema-builder';
 
 const globalKey = '__global__&&@@';
 const SUBMIT_TIMEOUT = 10;
@@ -90,6 +91,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     mounted: false,
     unmounted: false,
     removeLock: false,
+    schema: props.name ? new SchemaBuilder(props.name) : null,
   });
 
   const getValue = usePersistFn((name?: string) => {
@@ -611,6 +613,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     insertError,
     spliceError,
     scrollToField,
+    getSchema: () => context.schema?.getSchema(),
   });
 
   const formConfig: ProviderProps['formConfig'] = React.useMemo(
@@ -701,6 +704,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       formValue,
       formConfig,
       formFunc,
+      formSchema: context.schema,
     },
     formFunc,
   };

@@ -7,6 +7,8 @@
 //     : `${Key}`;
 // }[keyof ObjectType & (string | number)];
 
+import { SchemaProperty } from './use-form-schema/form-schema-builder';
+
 export interface FormRef<Value = any> {
   /**
    * @en return form value
@@ -58,4 +60,10 @@ export interface FormRef<Value = any> {
    * @cn 滚动到指定字段
    */
   scrollToField: (name: string, scrollIntoViewOptions?: ScrollIntoViewOptions) => void;
+
+  /**
+   * @en get form schema
+   * @cn 获取表单的 schema
+   */
+  getSchema: () => SchemaProperty;
 }

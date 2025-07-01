@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { AddNoProps, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule/rule.type';
 import { FormError } from '../../utils';
+import { SchemaBuilder } from './use-form-schema';
 
 export type KeyType = string | number | symbol;
 
@@ -50,6 +51,7 @@ export interface ProviderProps {
   formConfig: FormCommonConfig;
   formValue: FormContextValueType;
   formFunc: FormFunc;
+  formSchema: SchemaBuilder;
   children?: ReactNode;
 }
 
@@ -271,6 +273,7 @@ export type FormContext = {
   unmounted: boolean;
   removeLock: boolean;
   ignoreValidateFields: string[];
+  schema: SchemaBuilder | null;
 };
 
 export type UseFormSlotOwnProps = {

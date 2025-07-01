@@ -186,3 +186,8 @@ export const getFieldId = (name?: string, formName?: string) => {
   if (!name) return undefined;
   return `${formName ? `${formName}_` : ''}${name}`;
 };
+
+export const getOriginField = (name?: string, formName?: string) => {
+  if (!name || !formName) return '';
+  return name.replace(`${formName}_`, '');
+};

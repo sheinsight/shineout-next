@@ -79,6 +79,8 @@ export interface FormRef<FormValue> {
    * @cn 滚动页面到指定表单字段的位置。name 参数为字段路径，支持 'name'、'user.email'、'list[0].id' 等格式。需要 Form 设置 name 属性才能正常工作。scrollIntoViewOptions 参数符合标准 ScrollIntoViewOptions 接口，可以控制滚动行为、位置等。常用于错误定位、分步表单导航等
    */
   scrollToField: (name: string, scrollIntoViewOptions?: ScrollIntoViewOptions) => void;
+
+  getSchema: () => any;
 }
 export interface FormProps<V extends ObjectType>
   extends Partial<BaseFormProps<V>>,
