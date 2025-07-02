@@ -708,7 +708,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       onExpand(nextExpanded);
       updateExpanded(nextExpanded, true);
     }
-  }, [context.dataMap]);
+  }, [context.dataMap, props.data]);
 
   useEffect(() => {
     if (props.datum) return;
@@ -716,7 +716,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     setData(data);
     const nextExpanded = props.expanded || props.defaultExpanded || [];
 
-    if (!shallowEqual(nextExpanded, expanded)) {
+    if (!defaultExpandAll && !shallowEqual(nextExpanded, expanded)) {
       onExpand(nextExpanded);
       updateExpanded(nextExpanded, true);
     }
