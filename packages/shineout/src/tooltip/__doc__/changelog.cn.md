@@ -1,3 +1,10 @@
+## 3.7.5-beta.1
+2025-07-02
+
+### 🐞 BugFix
+- 修复 `Tooltip` 在 `Dropdown` 中使用时，'soui-dropdown-item' 的 className 被传递到 `Tooltip` 的问题 ([#1216](https://github.com/sheinsight/shineout-next/pull/1216))
+
+
 ## 3.6.4-beta.5
 2025-04-17
 
