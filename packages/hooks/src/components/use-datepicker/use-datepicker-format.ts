@@ -233,7 +233,10 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       if (typeof props.formatResult === 'string') {
         return getFormatValueArr(dateArr, props.formatResult);
       } else if (typeof props.formatResult === 'function') {
-        return dateArr.map((item) => (props.formatResult as (date?: Date) => string)(item));
+        return dateArr.map((item) => {
+          if(!item) return ''
+          return (props.formatResult as (date?: Date) => string)(item)
+        })
       } else {
         return dateArr.map((item) => {
           if (!item) return '';

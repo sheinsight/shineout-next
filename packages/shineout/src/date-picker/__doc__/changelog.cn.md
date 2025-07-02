@@ -1,3 +1,10 @@
+## 3.7.5-beta.5
+2025-07-02
+
+### 🐞 BugFix
+- 修复 `DatePicker` 的 `formatResult` 属性在 `type` 为 `month` 时，切换月份时展示结果不正确的问题 ([#1220](https://github.com/sheinsight/shineout-next/pull/1220))
+
+
 ## 3.7.4-beta.6
 2025-06-25
 
