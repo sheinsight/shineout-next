@@ -1,3 +1,10 @@
+## 3.7.5-beta.2
+2025-07-02
+
+### 🐞 BugFix
+
+- 修复 `Tree` 在首次加载时 `defaultExpandAll` 可能不生效的问题 ([#1215](https://github.com/sheinsight/shineout-next/pull/1215))
+
 ## 3.7.0-beta.30
 2025-05-23
 

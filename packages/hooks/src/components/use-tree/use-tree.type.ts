@@ -4,7 +4,14 @@ export type CheckedStatusType = 0 | 1 | 2;
 
 export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 
-export type UpdateFunc = (name: string, active: boolean) => void;
+export type NodeStates = {
+  active: boolean;
+  expanded: boolean;
+  fetching: boolean;
+  hasTriggered?: boolean;
+};
+
+export type UpdateFunc = (name: string, active: boolean) => void | NodeStates;
 
 export type FlatNodeType<DataItem> = {
   id: KeygenResult;
