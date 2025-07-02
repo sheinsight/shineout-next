@@ -10,6 +10,7 @@ import {
   TreeDatum,
   FlatMapType,
   FlatNodeType,
+  NodeStates,
 } from './use-tree.type';
 import { getExpandVirtualData } from '../use-table/use-table-tree';
 import { usePersistFn } from '../../common/use-persist-fn';
@@ -679,7 +680,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return context.dataFlat;
   };
 
-  const updateExpanded = usePersistFn((expanded?: KeygenResult[]) => {
+  const updateExpanded = usePersistFn((expanded?: KeygenResult[], ignoreExpanded?: boolean) => {
     const tempExpandMap = new Set(expanded);
     if (!expanded) return;
 
@@ -687,8 +688,12 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       expandedFlat(expanded);
     }
 
-    context.updateMap.forEach((update, id) => {
-      update('expanded', tempExpandMap.has(id));
+    context.updateMap.forEach((call, id) => {
+      if (ignoreExpanded) {
+        const { hasTriggered } = call('get', true) as NodeStates;
+        if (hasTriggered) return;
+      }
+      call('expanded', tempExpandMap.has(id));
     });
   });
 
@@ -700,8 +705,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
           nextExpanded.push(k);
         }
       });
-
       onExpand(nextExpanded);
+      updateExpanded(nextExpanded, true);
     }
   }, [context.dataMap]);
 
@@ -713,7 +718,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     if (!shallowEqual(nextExpanded, expanded)) {
       onExpand(nextExpanded);
-      updateExpanded(nextExpanded);
+      updateExpanded(nextExpanded, true);
     }
 
     updateInnerCheckStatus();
