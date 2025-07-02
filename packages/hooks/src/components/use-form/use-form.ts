@@ -180,13 +180,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     },
   );
 
-
   const update = (name?: string | string[]) => {
     if (!name) {
       Object.keys(context.updateMap).forEach((key) => {
         context.updateMap[key]?.forEach((update) => {
           update(context.value, context.errors, context.serverErrors);
-          if(context.errors[key]) {
+          if (context.errors[key]) {
             validateFields(key).catch(() => {});
           }
         });
@@ -549,6 +548,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.names.delete(n);
         delete context.defaultValues[n];
       }
+
+      if (context.errors[n]) {
+        delete context.errors[n];
+      }
+
       const finalReserveAble = props.reserveAble ?? reserveAble;
       if (!finalReserveAble && !context.removeLock) {
         addRemove(n);
