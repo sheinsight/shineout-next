@@ -62,6 +62,7 @@ export interface ResultProps<DataItem, Value>
     tagOnly: string;
     resultTextWrapper: string;
     compressedWrapper: string;
+    compressedBoundWrapper: string;
     multipleResultWrapper: string;
     multipleCompressedWrapper: string;
     hideTag: string;

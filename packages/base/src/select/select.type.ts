@@ -41,6 +41,7 @@ export type SelectClasses = {
   triggerHover: string;
   resultTextPadding: string;
   compressedWrapper: string;
+  compressedBoundWrapper: string;
   multipleCompressedWrapper: string;
   controlMouse: string;
   controlKeyboard: string;
