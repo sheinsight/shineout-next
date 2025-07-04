@@ -4,6 +4,9 @@
 ### 🐞 BugFix
 - 修复 `Cascader` 的 `expandTrigger` 为 `hover` 或 `hover-only` 时，多选模式下，勾选框点击失效的问题（Regression: since v3.7.3） ([#1224](https://github.com/sheinsight/shineout-next/pull/1224))
 
+### 🚀 Performance
+- 优化 `Cascader` 的 `compressed` 属性在大数据场景下的性能表现，解决了在3000+选项时INP指标超过1000ms的性能问题 ([#1224](https://github.com/sheinsight/shineout-next/pull/1224))
+
 ## 3.7.3-beta.7
 2025-06-18
 

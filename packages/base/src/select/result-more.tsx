@@ -25,48 +25,31 @@ export function getResetMore(
 
   let num = 0;
   let sumWidth = 0;
-  const itemWidthArr = items.map((item) => {
+  for (let i = 0; i < doms.length; i++) {
+    const item = doms[i];
     const itemStyle = getComputedStyle(item);
-    const itemLen =
+    const itemWidth =
       item.offsetWidth +
       parsePxToNumber(itemStyle.marginLeft) +
       parsePxToNumber(itemStyle.marginRight);
-    sumWidth += itemLen;
-    return itemLen;
-  });
-  if (sumWidth <= contentWidth) {
-    num = -1;
-  } else {
-    let len = 0;
-    for (let i = 0; i < itemWidthArr.length; i++) {
-      const itemLen = itemWidthArr[i];
-      // number length
-      const resetNum = items.length - 1 - i;
-      let moreWidth;
-      if (resetNum <= 0) {
-        moreWidth = 0;
-      } else {
-        const reset = `+${resetNum}`;
-        (hideEl.childNodes[0] as HTMLElement).innerText = reset;
-        // (+num) width
-        moreWidth = hideEl.offsetWidth + hideMargin;
-      }
+    sumWidth += itemWidth;
 
-      len += itemLen;
-      if (len > contentWidth - moreWidth) {
-        break;
-      }
-      num += 1;
-      if (i === items.length - 1) {
-        // not show more
-        num = -1;
-      }
+    let moreWidth = 0;
+    const resetNum = items.length - 1 - i;
+    if (resetNum > 0) {
+      const reset = `+${resetNum}`;
+      (hideEl.childNodes[0] as HTMLElement).innerText = reset;
+      moreWidth = hideEl.offsetWidth + hideMargin
     }
-  }
-  // at least show one
-  if (num === 0 && itemWidthArr[0]) {
-    num = 1;
-  }
+
+    if (sumWidth > contentWidth - moreWidth ) {
+      num = i;
+      break;
+    }
+
+    num = -1
+  };
+
   return num;
 }
 
@@ -90,18 +73,7 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
   const shouldShowMore = showNum! < 0 || showNum! >= data.length;
   let before: React.ReactElement[] = [];
   let after: React.ReactElement[] = [];
-  let itemsLength = 0;
-  let tagStyle: React.CSSProperties = shouldShowMore
-    ? {
-        position: 'absolute',
-        zIndex: -100,
-        userSelect: 'none',
-        msUserSelect: 'none',
-        contain: 'layout',
-        opacity: 0,
-        pointerEvents: 'none',
-      }
-    : {};
+  let afterLength = 0;
 
   if (!shouldShowMore) {
     before = new Array(showNum!)
@@ -111,10 +83,10 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
     after = new Array(data.length - showNum!)
       .fill(undefined)
       .map((_item, index) => data[showNum! + index] as React.ReactElement);
-    itemsLength = after.length;
+    afterLength = after.length;
   }
 
-  if (showNum! < 0 || showNum! >= data.length) {
+  if (shouldShowMore) {
     return (
       <React.Fragment>
         {data}
@@ -148,11 +120,10 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
           jssStyle={jssStyle as any}
           key='more'
           size={size}
-          style={tagStyle}
           mode={visible ? 'fill' : 'bright'}
           color={visible ? 'info' : 'default'}
         >
-          {shouldShowMore ? '+' : `+${itemsLength}`}
+          {shouldShowMore ? '+' : `+${afterLength}`}
         </Tag>
         {compressed !== 'hide-popover' && (
           <Popover
