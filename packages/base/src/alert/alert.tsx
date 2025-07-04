@@ -111,8 +111,7 @@ const Alert = (props: AlertProps) => {
   if (dismiss === HIDE) {
     return null;
   }
-
-  if ('title' in props && title !== undefined) {
+  if (title) {
     return (
       <div className={rootClass} {...getRootProps()}>
         {icon && renderIcon()}
