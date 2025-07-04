@@ -40,6 +40,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     onToggle,
     onDragOver,
     onNodeClick,
+    onTriggered,
     actionOnClick,
   } = props;
   const forceUpdate = useRender();
@@ -82,7 +83,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
 
   const handleNodeExpand = () => {
     onToggle?.(id);
-
+    onTriggered?.()
     if (data[childrenKey] !== undefined) return;
 
     if (loader) {

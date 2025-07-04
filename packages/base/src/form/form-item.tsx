@@ -78,6 +78,7 @@ const FormItem = (props: FormItemProps) => {
           [formItemClasses?.wrapperInline]: inline,
           [formItemClasses?.wrapperKeepHeight]: keepErrorHeight,
           [formItemClasses?.wrapperRequired]: required,
+          [formItemClasses?.wrapperHideRequired]: required === false,
           [formItemClasses?.wrapperTip]: showError || tip,
         }
       )}

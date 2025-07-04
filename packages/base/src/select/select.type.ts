@@ -41,6 +41,7 @@ export type SelectClasses = {
   triggerHover: string;
   resultTextPadding: string;
   compressedWrapper: string;
+  compressedBoundWrapper: string;
   multipleCompressedWrapper: string;
   controlMouse: string;
   controlKeyboard: string;
@@ -593,6 +594,14 @@ export interface SelectPropsBase<DataItem, Value>
    * @version 3.7.0
    */
   highlight?: boolean;
+
+  /**
+   * @en Whether to prevent selecting existing options when pressing Enter while onCreate is enabled
+   * @cn 开启 onCreate 时，是否阻止回车选中已有选项，仅创建选项
+   * @default false
+   * @version 3.8.0
+   */
+  preventEnterSelect?: boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>

@@ -70,7 +70,11 @@ class Item extends React.PureComponent<ItemProps> {
       const { className: contentPropsClassName = '', onClick: contentPropsOnClick, ...otherContentProps } =
         content.props as Props;
 
-      const className = classNames(propsClassName, contentPropsClassName);
+      const className = classNames(
+        // 如果content是Tooltip，则不传递className(就是dropdown-item的className)
+        (content.type as any).displayName !== 'ShineoutTooltip' ? propsClassName : '',
+        contentPropsClassName,
+      );
 
       return cloneElement(
         content,

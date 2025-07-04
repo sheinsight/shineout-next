@@ -14,7 +14,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, `../dist`),
     filename: '[name].[hash:8].js',
-    publicPath: process.env.LEGO_FRONTEND_PUBLIC_PATH ?? '/',
+    // publicPath: process.env.LEGO_FRONTEND_PUBLIC_PATH ?? '/',
     libraryTarget: 'umd',
     library: 'ShineoutDoc',
   },
@@ -53,6 +53,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
       },
     ],
   },

@@ -285,6 +285,9 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   compressedWrapper: {
     width: 0,
+    overflow: 'hidden',
+  },
+  compressedBoundWrapper: {
     overflow: 'auto',
   },
   controlMouse: {

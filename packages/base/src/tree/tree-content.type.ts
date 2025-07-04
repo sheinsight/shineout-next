@@ -34,6 +34,7 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   loader?: (key: KeygenResult, data: DataItem) => void | Promise<any>;
   setFetching: (value: boolean) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
+  onTriggered?: () => void;
   onFetch: () => void;
   onDragOver?: (e: React.DragEvent) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;

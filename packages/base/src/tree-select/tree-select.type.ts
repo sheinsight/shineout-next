@@ -37,6 +37,7 @@ export type TreeSelectClasses = {
   resultTextWrapper: string;
   resultTextPadding: string;
   compressedWrapper: string;
+  compressedBoundWrapper: string;
   multipleCompressedWrapper: string;
   multipleResultWrapper: string;
   controlMouse: string;

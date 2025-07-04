@@ -7,6 +7,8 @@ import { insertValue, spliceValue } from '../../utils/flat';
 import { usePrevious } from '../../common/use-default-value';
 
 const globalKey = '__global__&&@@';
+const SUBMIT_TIMEOUT = 10;
+
 import { current, produce } from '../../utils/immer';
 import {
   deepGet,
@@ -178,13 +180,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     },
   );
 
-
   const update = (name?: string | string[]) => {
     if (!name) {
       Object.keys(context.updateMap).forEach((key) => {
         context.updateMap[key]?.forEach((update) => {
           update(context.value, context.errors, context.serverErrors);
-          if(context.errors[key]) {
+          if (context.errors[key]) {
             validateFields(key).catch(() => {});
           }
         });
@@ -250,7 +251,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           docScroll.top -= scrollToError;
         }
       }
-    });
+    }, SUBMIT_TIMEOUT + 10);
   };
 
   const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
@@ -445,7 +446,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       submit();
       other?.onSubmit?.(e);
-    }, 10);
+    }, SUBMIT_TIMEOUT);
   };
 
   const validateFieldset = (name: string, config?: ValidateFnConfig) => {
@@ -547,6 +548,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.names.delete(n);
         delete context.defaultValues[n];
       }
+
+      if (context.errors[n]) {
+        delete context.errors[n];
+      }
+
       const finalReserveAble = props.reserveAble ?? reserveAble;
       if (!finalReserveAble && !context.removeLock) {
         addRemove(n);

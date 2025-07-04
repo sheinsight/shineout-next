@@ -19,7 +19,6 @@ export interface ResultMoreProps<DataItem, Value>
   > {
   data: React.ReactNode[];
   datas?: (DataItem | UnMatchedData)[];
-  more?: number;
   showNum?: number;
   onRemove?: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
   classes: { tag: string; moreWrapper: string };

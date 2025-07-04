@@ -57,12 +57,6 @@ export interface TooltipProps
    */
   children: React.ReactNode;
   /**
-   * @en use animation
-   * @cn 弹出是否使用动画
-   * @default true
-   */
-  animation?: boolean;
-  /**
    * @en make disabled element work
    * @cn 使被禁用的元素正常显示提示
    * @default false
@@ -101,4 +95,11 @@ export interface TooltipProps
    * @version 3.6.0
    */
   showArrow?: boolean;
+
+  /**
+   * @en Popup gap
+   * @cn 弹出层与目标元素的间距，是在默认4px的基础上增加的
+   * @version 3.8.0
+   */
+  popupGap?: number;
 }

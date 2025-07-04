@@ -1,3 +1,24 @@
+## 3.8.0-beta.8
+2025-06-23
+
+### 🆕 Feature
+- `Cascader` 新增 `showParent` 属性，支持显示父级节点 ([#1199](https://github.com/sheinsight/shineout-next/pull/1199))
+
+## 3.7.5-beta.9
+2025-07-04
+
+### 🐞 BugFix
+- 修复 `Cascader` 的 `expandTrigger` 为 `hover` 或 `hover-only` 时，多选模式下，勾选框点击失效的问题（Regression: since v3.7.3） ([#1224](https://github.com/sheinsight/shineout-next/pull/1224))
+
+### 🚀 Performance
+- 优化 `Cascader` 的 `compressed` 在大数据场景下的性能表现 ([#1224](https://github.com/sheinsight/shineout-next/pull/1224))
+
+## 3.7.3-beta.7
+2025-06-18
+
+### 🐞 BugFix
+- 修复 `Cascader` 多选模式下，末级叶子节点的勾选框点击失效的问题（Regression: since v3.7.2） ([#1192](https://github.com/sheinsight/shineout-next/pull/1192))
+
 ## 3.7.2-beta.1
 2025-06-12
 

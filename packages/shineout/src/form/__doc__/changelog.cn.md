@@ -1,3 +1,24 @@
+## 3.7.5-beta.4
+2025-07-02
+### 🐞 BugFix
+- 修复 `Form` 卸载携带校验错误字段后，重新挂载该字段时会携带历史校验错误信息的问题 ([#1219](https://github.com/sheinsight/shineout-next/pull/1219))
+
+## 3.7.4-beta.8
+2025-06-26
+### 🐞 BugFix
+- 修复 `Form.Item` 嵌套使用时，子级的 `required` 属性设置为 `false` 不生效的问题 ([#1210](https://github.com/sheinsight/shineout-next/pull/1210))
+
+## 3.7.4-beta.7
+2025-06-26
+### 🐞 BugFix
+- 修复 `Form` 的 `useForm` 用非受控用法下，表单实例获取不正确的问题 ([#1208](https://github.com/sheinsight/shineout-next/pull/1208))
+
+## 3.7.3-beta.3
+2025-06-17
+
+### 🐞 BugFix
+- 修复 `Form` 的 `scrollToError` 偶现的无法滚动到错误字段位置的问题 ([#1181](https://github.com/sheinsight/shineout-next/pull/1181))
+
 ## 3.7.1-beta.6
 2025-06-10
 

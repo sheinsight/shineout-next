@@ -1,7 +1,7 @@
 {
   "name": "sheinx",
   "private": true,
-  "version": "3.7.2-beta.6",
+  "version": "3.8.0-beta.9",
   "description": "A react library developed with sheinx",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -148,6 +148,7 @@
     "ts-deepmerge": "^1.0.0",
     "ts-loader": "^9.4.2",
     "ts-morph": "^19.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
     "unified": "^10.1.2",
     "valtio": "^1.13.0",

@@ -62,7 +62,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const [shouldResetMore, setShouldResetMore] = useState(false);
   const render = useRender();
   const resultRef = useRef<HTMLDivElement>(null);
-  const prevMore = useRef(more);
+  const { current: context } = useRef({
+    prevMore: more,
+    maxMore: 0,
+  });
   const removeLock = useRef(false);
   const showInput = allowOnFilter;
   const mounted = useRef(false);
@@ -70,6 +73,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const rootClass = classNames(
     styles.resultTextWrapper,
     compressed && styles.compressedWrapper,
+    compressedBound && compressedBound > 0 && styles.compressedBoundWrapper,
     multiple && styles.multipleResultWrapper,
     multiple && compressed && styles.multipleCompressedWrapper,
   );
@@ -303,7 +307,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       data={result}
       datas={renderMultipleResult.datas}
       size={size}
-      more={moreNumber}
       compressed={compressed}
       renderCompressed={renderCompressed}
       compressedClassName={compressedClassName}
@@ -336,7 +339,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return result;
   };
 
-  const handleResetMore = () => {
+  const handleResetMore = (valueLength?: number) => {
     if (!compressed) return;
     if (isCompressedBound()) return;
     if (removeLock.current) {
@@ -344,8 +347,19 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       return;
     }
 
-    setMore(-1);
-    setShouldResetMore(true);
+    // why requestIdleCallback: 当选项数量远超容器承载能力时，延迟昂贵的DOM计算，在1000+选项时，同步的重新计算会导致INP超过1000ms
+    const hasExistingCompression = context.prevMore > 0;
+    const hasValidEstimate = context.maxMore > 0;
+    const exceedsCapacity = valueLength && valueLength > context.maxMore;
+    if (hasExistingCompression && hasValidEstimate && exceedsCapacity && typeof requestIdleCallback !== 'undefined') {
+      requestIdleCallback(() => {
+        setMore(-1);
+        setShouldResetMore(true);
+      });
+    } else {
+      setMore(-1);
+      setShouldResetMore(true);
+    }
   };
 
   useEffect(() => {
@@ -401,7 +415,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   }, [focus, multiple]);
 
   useLayoutEffect(() => {
-    handleResetMore();
+    handleResetMore((valueProp as any)?.length || 0);
   }, [valueProp, data]);
 
   useEffect(() => {
@@ -424,7 +438,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           resultRef.current,
           resultRef.current.querySelectorAll(tagClassName),
         );
-        prevMore.current = newMore;
+        context.prevMore = newMore;
         setMore(newMore);
         setShouldResetMore(false);
       } else {
@@ -439,6 +453,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!resultRef.current) return;
     if (!compressed) return;
     if (isCompressedBound()) return;
+
+    context.maxMore = Math.floor(resultRef.current.clientWidth / 20);
 
     const cancelObserver = addResizeObserver(resultRef.current, handleResetMore, {
       direction: 'x',

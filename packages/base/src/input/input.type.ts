@@ -4,6 +4,7 @@ import { InnerTitleClasses } from '../common/use-inner-title';
 import { BaseTipProps } from '../common/use-tip';
 import { BaseInputProps, InputFormatProps } from '@sheinx/hooks';
 import { PopoverClasses } from '../popover/popover.type';
+import { TextareaInfoOption } from '../textarea/textarea.type';
 
 export interface InputClasses {
   rootClass: string;
@@ -36,7 +37,6 @@ export interface InputClasses {
   wrapperUnderline: string;
   wrapperNoBorder: string;
   info: string;
-  infoError: string;
   // group
   group: string;
   groupSeparate: string;
@@ -52,6 +52,8 @@ export interface InputClasses {
   //password
   passwordToggle: string;
   password: string;
+  wrapperShowClear: string;
+  wrapperHasValue: string;
 }
 
 export interface InputStyle {
@@ -98,14 +100,19 @@ export interface SimpleInputProps
    */
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
   /**
-   * @en Whether to show clear
-   * @cn 是否显示清除
+   * @en Whether to show clear button when has value, higher priority than clearable
+   * @cn 有值时，是否常驻显示清除按钮，优先级高于 clearable
+   * @version 3.8.0
    */
   showClear?: boolean;
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
   hasSuffix?: boolean;
   name?: string;
 }
+
+type InputInfoOption = TextareaInfoOption
+
+export type InputInfo = number | ((value: string) => React.ReactNode | Error);
 
 export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'className' | 'style' | 'name'> {
   suffix?: SimpleInputProps['suffix'];
@@ -184,7 +191,7 @@ export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'cla
    * @cn 提示信息
    * @override number | ((value: string | undefined) => string)
    */
-  info?: number | ((value: V | undefined) => string);
+  info?: InputInfo | InputInfoOption;
   /**
    * @en Disable component
    * @cn 禁用组件
@@ -222,7 +229,6 @@ export type GetCommonProps<Props, V> = Omit<
   | 'addEnd'
   | 'hasSuffix'
   | 'onFocusedChange'
-  | 'showClear'
 > &
   InputCommonProps<V>;
 

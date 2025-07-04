@@ -119,6 +119,7 @@ const App: React.FC = () => {
       data={data}
       keygen='id'
       columns={columns}
+      cellSortable
       sorter={handleSorter}
       onSortCancel={handleCancel}
       renderSorter={renderSorter}

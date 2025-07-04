@@ -186,8 +186,17 @@ function isValid(date: DateTimeType) {
   return dayjs(date).isValid();
 }
 
-function isValidString(date: string, fmt: string) {
+/**
+ * @param date 日期字符串
+ * @param fmt 日期格式
+ * @param isLoose 是否为宽松模式
+ * @returns 是否为有效日期
+ */
+function isValidString(date: string, fmt: string, isLoose?: boolean) {
   if (!date) return false;
+  if (isLoose) {
+    return dayjs(date).isValid();
+  }
   return dayjs(date, fmt, true).isValid();
 }
 

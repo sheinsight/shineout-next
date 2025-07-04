@@ -64,6 +64,12 @@ export interface Options {
    * @en Whether to update the token only, default is false
    */
   update?: boolean;
+  /**
+   * @cn 是否忽略额外的 token，默认为 false，即默认加载额外的 token，额外的 token 包括 primary-color、gray-500、primary-color-fade-50
+   * @en Whether to ignore extra tokens, default is false
+   * @default false
+   */
+  ignoreExtra?: boolean;
 }
 
 const getExtraToken = (prefix: string) => {
@@ -94,6 +100,7 @@ const setToken = (options?: Options) => {
     onlyExtra,
     update,
     extraToken: customExtraToken,
+    ignoreExtra = false,
   } = options || {};
 
   const { prefix } = getConfig();
@@ -140,8 +147,10 @@ const setToken = (options?: Options) => {
   tag.setAttribute('data-token', tokenName || '');
   tag.setAttribute('data-token-id', id);
   tag.setAttribute('data-token-selector', selector);
-
-  tag.innerHTML = `${selector} {${tokens.concat(extraToken).join(';')}}`;
+  
+  tag.innerHTML = ignoreExtra
+    ? `${selector} {${tokens.join(';')}}`
+    : `${selector} {${tokens.concat(extraToken).join(';')}}`;
 
   if (!target) {
     document.head.appendChild(tag);
