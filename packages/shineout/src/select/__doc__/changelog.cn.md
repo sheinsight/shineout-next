@@ -2,7 +2,7 @@
 2025-07-04
 
 ### 🚀 Performance
-- 优化 `Select` 的 `compressed` 在大数据场景下的初始化性能问题 ([#1226](https://github.com/sheinsight/shineout-next/pull/1226))
+- 优化 `Select` 的 `compressed` 在大数据场景下的性能表现 ([#1226](https://github.com/sheinsight/shineout-next/pull/1226))
 
 ## 3.7.2-beta.2
 2025-06-11
