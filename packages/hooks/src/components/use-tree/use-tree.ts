@@ -690,8 +690,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     context.updateMap.forEach((call, id) => {
       if (ignoreExpanded) {
-        const { hasTriggered } = call('get', true) as NodeStates;
-        if (hasTriggered) return;
+        const nodeStatus = call('get', true) as NodeStates;
+        if (nodeStatus && nodeStatus.hasTriggered) return;
       }
       call('expanded', tempExpandMap.has(id));
     });
