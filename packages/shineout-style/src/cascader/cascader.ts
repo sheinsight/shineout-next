@@ -79,7 +79,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     [selectTagHeightCssvar]: token.selectTagHeight,
     [selectSmallTagHeightCssvar]: token.selectSmallTagHeight,
     [selectLargeTagHeightCssvar]: token.selectLargeTagHeight,
-    
+
     '&$wrapperInnerTitle': {
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: 0,
@@ -318,6 +318,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   compressedWrapper: {
     width: 0,
+    overflow: 'hidden',
+  },
+  compressedBoundWrapper: {
     overflow: 'auto',
   },
   controlMouse: {

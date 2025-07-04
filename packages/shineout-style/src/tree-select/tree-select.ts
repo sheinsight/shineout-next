@@ -296,6 +296,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   },
   compressedWrapper: {
     width: 0,
+    overflow: 'hidden',
+  },
+  compressedBoundWrapper: {
     overflow: 'auto',
   },
   controlMouse: {

@@ -41,6 +41,7 @@ export interface CascaderClasses {
   resultTextWrapper: string;
   resultTextPadding: string;
   compressedWrapper: string;
+  compressedBoundWrapper: string;
   controlMouse: string;
   controlKeyboard: string;
   placeholder: string;

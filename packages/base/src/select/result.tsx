@@ -73,6 +73,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const rootClass = classNames(
     styles.resultTextWrapper,
     compressed && styles.compressedWrapper,
+    compressedBound && compressedBound > 0 && styles.compressedBoundWrapper,
     multiple && styles.multipleResultWrapper,
     multiple && compressed && styles.multipleCompressedWrapper,
   );
@@ -346,18 +347,19 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       return;
     }
 
-    // 性能优化：当选项数量远超容器承载能力时，跳过昂贵的DOM计算
-    // 在1000+选项时，重新计算会导致INP超过1000ms
+    // why requestIdleCallback: 当选项数量远超容器承载能力时，延迟昂贵的DOM计算，在1000+选项时，同步的重新计算会导致INP超过1000ms
     const hasExistingCompression = context.prevMore > 0;
     const hasValidEstimate = context.maxMore > 0;
     const exceedsCapacity = valueLength && valueLength > context.maxMore;
-
-    if (hasExistingCompression && hasValidEstimate && exceedsCapacity) {
-      return; // 跳过重新计算，保持现有的压缩状态
+    if (hasExistingCompression && hasValidEstimate && exceedsCapacity && typeof requestIdleCallback !== 'undefined') {
+      requestIdleCallback(() => {
+        setMore(-1);
+        setShouldResetMore(true);
+      });
+    } else {
+      setMore(-1);
+      setShouldResetMore(true);
     }
-
-    setMore(-1);
-    setShouldResetMore(true);
   };
 
   useEffect(() => {
