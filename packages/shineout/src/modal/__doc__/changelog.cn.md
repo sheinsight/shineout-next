@@ -1,3 +1,10 @@
+## 3.7.5-beta.3
+2025-07-02
+
+### 🐞 BugFix
+
+- 修复 `Dropdown` 组件在开启 `hover` 模式时，鼠标移入非 dom 包含关系元素（如在 Dropdown 列表里打开一个 Modal）导致意外打开列表的问题 ([#1218](https://github.com/sheinsight/shineout-next/pull/1218))
+
 ## 3.7.2-beta.3
 2025-06-12
 

@@ -72,18 +72,20 @@ const Node = <DataItem, Value extends KeygenResult[]>(
   const dragImage = useRef<null | HTMLElement>(null);
 
   const { getPath } = useTreeContext();
-  const { active, isLeaf, fetching, setFetching, expanded, setExpanded } = useTreeNode({
-    id,
-    data,
-    bindNode,
-    loader,
-    onToggle,
-    childrenKey,
-    element,
-    content: content.current,
-    dragImageSelector,
-    dragImageStyle,
-  });
+  const { active, isLeaf, fetching, setFetching, expanded, setExpanded, onTriggered } = useTreeNode(
+    {
+      id,
+      data,
+      bindNode,
+      loader,
+      onToggle,
+      childrenKey,
+      element,
+      content: content.current,
+      dragImageSelector,
+      dragImageStyle,
+    },
+  );
 
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
@@ -312,6 +314,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
         onChange={onChange}
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
+        onTriggered={onTriggered}
         onDragOver={handleDragOver}
         onToggle={handleToggle}
         actionOnClick={actionOnClick}

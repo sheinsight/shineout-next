@@ -1,3 +1,9 @@
+## 3.7.5-beta.10
+2025-07-04
+### 🐞 BugFix
+
+- 修复 `Alert` 传入空字符串 `title` 属性也能渲染结构的问题 ([#1225](https://github.com/sheinsight/shineout-next/pull/1225))
+
 ## 3.7.0-beta.35
 2025-05-29
 ### 🐞 BugFix
