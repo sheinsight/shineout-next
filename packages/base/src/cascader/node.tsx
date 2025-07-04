@@ -32,8 +32,8 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   } = props;
 
   const [loading, setLoading] = useState(false);
-  // const [activeState, setActiveState] = useState(false);
   const checkboxRef = useRef<HTMLElement>();
+  const hasHandleSelectRef = useRef(false);
   const isDisabled = datum.isDisabled(id);
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
@@ -96,13 +96,17 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
     if (isHoverAble) {
       events.onMouseEnter = handlePathChange;
-      if (multiple) events.onClick = handleSelect;
+      if (multiple) {
+        events.onClick = handleSelect;
+        hasHandleSelectRef.current = true;
+      }
     } else if(isRealLeafNode && multiple) {
       // 非hover模式下: 末级节点支持整个节点区域点击选中checkbox
       events.onClick = (e: MouseEvent) => {
         handleClick(e);
         handleSelect(e);
       }
+      hasHandleSelectRef.current = true;
     }
     return events;
   };
@@ -147,7 +151,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
             className={styles.optionCheckbox}
             checked={datum.getChecked(id)}
             disabled={isDisabled}
-            onChange={isRealLeafNode && multiple ? undefined : handleChange}
+            onChange={hasHandleSelectRef.current ? undefined : handleChange}
           />
         )}
         {renderContent()}
