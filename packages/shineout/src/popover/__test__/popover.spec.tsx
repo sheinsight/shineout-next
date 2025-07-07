@@ -198,9 +198,9 @@ describe('Popover[Base]', () => {
     bottom: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); --soui-popup-transform: translateX(-50%); top: 0px; transform-origin: center top;',
     'bottom-right':
       'position: absolute; z-index: 1060; right: 0px; top: 0px; transform-origin: center top;',
-    'right-top': 'position: absolute; z-index: 1060; top: 0px; left: 0px;',
+    'right-top': 'position: absolute; z-index: 1060; top: 0px; transform: translateX(0%); --soui-popup-transform: translateX(0%); left: 0px;',
     'left-top':
-      'position: absolute; z-index: 1060; top: 0px; right: 0px;',
+      'position: absolute; z-index: 1060; top: 0px; transform: translateX(0%); --soui-popup-transform: translateX(0%); right: 0px;',
     right: 'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); --soui-popup-transform: translateY(-50%); left: 0px;',
     left: 'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); --soui-popup-transform: translateY(-50%); right: 0px;',
     'right-bottom':

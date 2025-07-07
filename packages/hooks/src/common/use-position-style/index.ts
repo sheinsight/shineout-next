@@ -262,7 +262,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       const [h, v] = targetPosition.split('-');
       if (v === 'top') {
         style.top = rect.top - containerRect.top + containerScroll.top - (offset ? offset[1] : 0);
-        setTransform(style, '');
+        setTransform(style, 'translateX(0%)');
       } else if (v === 'bottom') {
         style.top = rect.bottom - containerRect.top + containerScroll.top + (offset ? offset[1] : 0);
         setTransform(style, 'translateY(-100%)');
