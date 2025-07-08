@@ -15,6 +15,7 @@ export interface BreadcrumbClasses {
   dropdownItem: string;
   separator: string;
   content: string;
+  contentMaxWidth: string;
   item: string;
   itemWithDrop: string;
   dropdown: string;
