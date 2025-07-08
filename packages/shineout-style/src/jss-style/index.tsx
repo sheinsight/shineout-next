@@ -1,9 +1,9 @@
-import { createUseStyles, JssProvider, SheetsRegistry } from 'react-jss';
+import { createUseStyles, JssProvider, SheetsRegistry, jss } from 'react-jss';
 import { JssStyle, GenerateId, Classes } from 'jss';
 import handleStyle from './handleStyle';
 import version from '../version';
 
-export { JssProvider, SheetsRegistry };
+export { JssProvider, SheetsRegistry, jss };
 const prefix = 'soui';
 
 const config: {
