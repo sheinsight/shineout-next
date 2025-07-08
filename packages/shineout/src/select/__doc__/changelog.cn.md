@@ -5,6 +5,12 @@
 - `Select` 新增 `preventEnterSelect` 属性，开启 onCreate 时可阻止回车选中已有选项，仅创建选项 ([#1214](https://github.com/sheinsight/shineout-next/pull/1214))
 
 
+## 3.7.6-beta.2
+2025-07-08
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `highlight` 后在 renderItem 中渲染非单层 dom 结构功能失效的问题 ([#1232](https://github.com/sheinsight/shineout-next/pull/1232))
+
 ## 3.7.5-beta.11
 2025-07-04
 
