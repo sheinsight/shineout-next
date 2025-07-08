@@ -9,7 +9,7 @@
 2025-07-08
 
 ### 💎 Enhancement
-- 优化 `Radio` 和 `Checkbox` 的选中动画效果 ([#1230](https://github.com/sheinsight/shineout-next/pull/1230))
+- 增加 `Radio` 和 `Checkbox` 的选中动画效果 ([#1230](https://github.com/sheinsight/shineout-next/pull/1230))
 
 ## 3.8.0-beta.4
 2025-06-17
