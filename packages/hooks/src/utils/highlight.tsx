@@ -18,7 +18,7 @@ export function getHighlightText<T>({
   }
 
   // 递归转换节点
-  const transformNode = (node: any, index: number): any => {
+  const transformNode = (node: any, index?: number): any => {
     // 如果是合法的 React 元素
     if (React.isValidElement(node) && node.props && (node.props as any).children) {
       // 对 children 递归调用 getHighlightText 进行转换
