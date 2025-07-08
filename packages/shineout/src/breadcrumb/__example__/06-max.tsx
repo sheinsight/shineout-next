@@ -1,6 +1,6 @@
 /**
  * cn - 显示省略
- *    -- 通过 max 来指定最多渲染的面包屑数量，超出的部分将显示为省略号。
+ *    -- 通过 max 来指定最多渲染的面包屑数量，超出的部分将显示为省略号
  * en - Max
  *    -- Set max to limit the number of breadcrumbs displayed
  */
@@ -14,7 +14,12 @@ type BreadcrumbProps<data> = TYPE.Breadcrumb.Props<data>;
 
 const data: BreadcrumbProps<BreadcrumbData>['data'] = [
   { title: 'Home', url: '/' },
-  { title: 'Button' },
+  {
+    title: 'Button',
+    onClick: () => {
+      Message.info('Button');
+    },
+  },
   {
     title: 'Dropdown',
     onClick: () => {
@@ -29,9 +34,9 @@ const data: BreadcrumbProps<BreadcrumbData>['data'] = [
     },
   },
   {
-    title: 'Table',
+    title: '我是超宽的面包屑🍞🍞🍞',
     onClick: () => {
-      Message.info('Table');
+      Message.info('我是超宽的面包屑🍞🍞🍞');
     },
   },
   { title: 'Self' },
