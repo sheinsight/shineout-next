@@ -1,3 +1,9 @@
+## 3.7.6-beta.2
+2025-07-08
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `highlight` 后在 renderItem 中渲染非单层 dom 结构功能失效的问题 ([#1232](https://github.com/sheinsight/shineout-next/pull/1232))
+
 ## 3.7.5-beta.11
 2025-07-04
 
