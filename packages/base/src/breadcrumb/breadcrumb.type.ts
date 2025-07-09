@@ -10,6 +10,7 @@ export type StructureArray<T> = Array<T | T[]>;
 export interface BreadcrumbClasses {
   rootClass: string;
   wrapper: string;
+  wrapperPopover: string;
   down: string;
   downOpen: string;
   dropdownItem: string;

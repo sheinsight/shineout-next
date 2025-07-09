@@ -22,6 +22,9 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
       },
     },
   },
+  wrapperPopover: {
+    flexWrap: 'wrap',
+  },
   content: {
     '&&': {
       display: 'flex',
