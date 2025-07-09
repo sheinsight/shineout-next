@@ -79,6 +79,16 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       '&[data-soui-position^="bottom"] $arrow': {
         transform: 'translate(0, calc(-100% + 1px)) rotate(0deg)',
       },
+      '& $arrow:before': {
+        clipPath: 'none',
+        borderTop: `1px solid ${token.tooltipLightBorderColor}`,
+        borderLeft: `1px solid ${token.tooltipLightBorderColor}`,
+        borderRight: 'transparent',
+        borderBottom: 'transparent',
+        width: 8.4,
+        height: 8.4,
+        transform: 'translate(50%, 27.5%) rotate(45deg)',
+      },
     },
     '&[data-soui-type^="primary"]': {
       backgroundColor: token.tooltipPrimaryBackgroundColor,
