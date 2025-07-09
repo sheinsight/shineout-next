@@ -1,7 +1,7 @@
 import React, { ReactNode, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { BreadcrumbClasses, BreadcrumbDataType, BreadcrumbJssStyle } from './breadcrumb.type';
-import Popover from '../popover';
+import Tooltip from '../tooltip';
 
 interface BreadcrumbItemProps<Item = BreadcrumbDataType> {
   dataItem: Item;
@@ -26,15 +26,6 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
   const d = dataItem as BreadcrumbDataType;
   let item = d.title;
 
-  let $popover
-  if(isOverflow && d.title && max !== undefined) {
-    $popover = (
-      <Popover jssStyle={jssStyle} useTextStyle>
-        {d.title}
-      </Popover>
-    )
-  }
-
   if (!React.isValidElement(item)) {
     if (d.onClick || d.url) {
       const props: React.AnchorHTMLAttributes<HTMLAnchorElement> = {
@@ -46,8 +37,6 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
           {d.icon}
           {d.icon && d.title && <>&nbsp;</>}
           {d.title}
-
-          {$popover}
         </a>
       );
     } else {
@@ -56,13 +45,19 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
           {d.icon}
           {d.icon && d.title && <>&nbsp;</>}
           {d.title}
-
-          {$popover}
         </span>
       );
     }
   }
-  return renderItem ? renderItem(dataItem) : item;
+  if(renderItem) {
+    return renderItem(dataItem);
+  }
+
+  if(isOverflow && d.title && max !== undefined) {
+    return <Tooltip jssStyle={jssStyle} type='light' tip={d.title}>{item}</Tooltip>;
+  }
+
+  return item;
 };
 
 export default BreadcrumbItem;
