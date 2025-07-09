@@ -22,6 +22,9 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
       },
     },
   },
+  wrapperPopover: {
+    flexWrap: 'wrap',
+  },
   content: {
     '&&': {
       display: 'flex',
@@ -31,10 +34,23 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
       color: token.breadcrumbDefaultLinkActiveColor,
     }
   },
+  contentMaxWidth: {
+    maxWidth: '150px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    '&&': {
+      display: 'block',
+    }
+  },
   ellipsis: {
     color: token.breadcrumbLinkColor,
     position: 'relative',
-    top: '-3px',
+    top: '-0.25em',
+    cursor: 'pointer',
+    '&:hover': {
+      color: token.breadcrumbLinkHoverColor,
+    },
   },
   itemWrapper: {
     // padding: `0 ${token.breadcrumbListItemWrapperPaddingX}`,
