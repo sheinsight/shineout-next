@@ -154,6 +154,7 @@ export interface BaseListProps<DataItem, Value>
   originalData: any;
   groupKey?: string;
   dynamicVirtual?: boolean;
+  keepScrollTop?: boolean;
   controlType?: 'mouse' | 'keyboard';
   optionListRef: React.MutableRefObject<OptionListRefType | undefined>;
   isAnimationFinish: boolean;
