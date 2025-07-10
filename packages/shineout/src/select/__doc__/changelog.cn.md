@@ -5,6 +5,12 @@
 - `Select` 新增 `preventEnterSelect` 属性，开启 onCreate 时可阻止回车选中已有选项，仅创建选项 ([#1214](https://github.com/sheinsight/shineout-next/pull/1214))
 
 
+## 3.7.6-beta.4
+2025-07-10
+
+### 🐞 BugFix
+- 修复 Select 开启 onLoadMore 加载新数据时列表重置到第一条的问题(Regression: since v3.7.1) ([#1237](https://github.com/sheinsight/shineout-next/pull/1237))
+
 ## 3.7.6-beta.2
 2025-07-08
 
