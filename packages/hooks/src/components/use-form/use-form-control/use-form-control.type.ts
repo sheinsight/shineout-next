@@ -33,6 +33,13 @@ export interface BaseFormControlProps<T> {
    * @private 内部属性 for validate
    */
   getValidateProps: (() => ObjectType) | undefined;
+
+  /**
+   * @en If set to true, the form will not automatically delete the data after the component is uninstalled
+   * @cn 设置为 true 组件后，有defaultValue时，允许undefined作为最终值
+   * @version 3.8.0
+   */
+  clearToUndefined?: boolean;
 }
 
 export interface FormControlContext {
