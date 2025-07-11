@@ -385,7 +385,7 @@ exports[`Breadcrumb[Base] should render correctly about max 1`] = `
       class="soui-breadcrumb-content"
       role="button"
     >
-      Table
+      我是超宽的面包屑🍞🍞🍞
     </a>
     <div
       class="soui-breadcrumb-separator"

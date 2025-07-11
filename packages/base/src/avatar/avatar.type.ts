@@ -73,6 +73,12 @@ export interface AvatarProps extends Pick<CommonType, 'className' | 'style' | 's
    * @cn 图片加载失败的事件，返回 false 会关闭组件默认的 fallback 行为
    */
   onError?: () => boolean;
+
+  /**
+   * @en The event that the avatar is clicked
+   * @cn 头像点击事件
+   */
+  onClick?: () => void;
 }
 export interface AvatarGroupProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,

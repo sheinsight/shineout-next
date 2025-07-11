@@ -24,6 +24,26 @@ export const tooltipAnimation = {
       transform: `var(--soui-popup-transform) scale(1)`,
     },
   },
+  '@keyframes moveRightTop': {
+    '0%': {
+      transformOrigin: 'left top',
+      transform: `var(--soui-popup-transform) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'left top',
+      transform: `var(--soui-popup-transform) scale(1)`,
+    },
+  },
+  '@keyframes moveRightBottom': {
+    '0%': {
+      transformOrigin: 'left bottom',
+      transform: `var(--soui-popup-transform) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'left bottom',
+      transform: `var(--soui-popup-transform) scale(1)`,
+    },
+  },
   '@keyframes moveLeft': {
     '0%': {
       transformOrigin: 'right center',
@@ -31,6 +51,26 @@ export const tooltipAnimation = {
     },
     '100%': {
       transformOrigin: 'right center',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveLeftTop': {
+    '0%': {
+      transformOrigin: 'right top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'right top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveLeftBottom': {
+    '0%': {
+      transformOrigin: 'right bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'right bottom',
       transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
@@ -44,6 +84,26 @@ export const tooltipAnimation = {
       transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
+  '@keyframes moveTopLeft': {
+    '0%': {
+      transformOrigin: 'left bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'left bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveTopRight': {
+    '0%': {
+      transformOrigin: 'right bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'right bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
   '@keyframes moveBottom': {
     '0%': {
       transformOrigin: 'center top',
@@ -51,6 +111,26 @@ export const tooltipAnimation = {
     },
     '100%': {
       transformOrigin: 'center top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveBottomLeft': {
+    '0%': {
+      transformOrigin: 'left top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'left top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveBottomRight': {
+    '0%': {
+      transformOrigin: 'right top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'right top',
       transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
@@ -80,6 +160,16 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       },
       '&[data-soui-position^="bottom"] $arrow': {
         transform: 'translate(0, calc(-100% + 1px)) rotate(0deg)',
+      },
+      '& $arrow:before': {
+        clipPath: 'none',
+        borderTop: `1px solid ${token.tooltipLightBorderColor}`,
+        borderLeft: `1px solid ${token.tooltipLightBorderColor}`,
+        borderRight: 'transparent',
+        borderBottom: 'transparent',
+        width: 8.4,
+        height: 8.4,
+        transform: 'translate(50%, 27.5%) rotate(45deg)',
       },
     },
     '&[data-soui-type^="primary"]': {
