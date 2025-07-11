@@ -376,6 +376,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     Object.keys(context.defaultValues).forEach((df) => {
       const latestDefaultValue = getValue(df);
       if (latestDefaultValue === undefined) {
+        // todo: Form组件传了clearToUndefined时，加入这部分判断？
+        // if(context.value.hasOwnProperty(df) && clearToUndefined){
+        //   return;
+        // }
         setValue({ [df]: context.defaultValues[df] }, { validate: false });
       }
     });

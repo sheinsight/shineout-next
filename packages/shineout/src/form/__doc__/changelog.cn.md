@@ -1,3 +1,11 @@
+## 3.8.0-beta.13
+2025-07-11
+
+### 🆕 Feature
+
+- `Form.Field` 新增 `clearToUndefined` 属性，当字段有defaultValue时，清空时可设置为undefined ([#1238](https://github.com/sheinsight/shineout-next/pull/1238))
+
+
 ## 3.7.5-beta.4
 2025-07-02
 ### 🐞 BugFix
