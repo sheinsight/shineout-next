@@ -1,8 +1,22 @@
-## 3.8.0
+## 3.8.0-beta.11
+2025-07-08
+
+### 💅 Style
+- 优化 `normalize` 和 `jss` 样式的插入位置，默认插入到 `document.head` 最前面 ([#1231](https://github.com/sheinsight/shineout-next/pull/1231))
+
+
+## 3.8.0-beta.10
+2025-07-08
+
+### 💎 Enhancement
+- 增加 `Radio` 和 `Checkbox` 的选中动画效果 ([#1230](https://github.com/sheinsight/shineout-next/pull/1230))
+
+## 3.8.0-beta.4
 2025-06-17
 
 ### 🐞 BugFix
 - 修复 `utils` 导出名称错误的问题 ([#1187](https://github.com/sheinsight/shineout-next/pull/1187))
+
 
 ## 3.7.4-beta.1
 2025-06-20

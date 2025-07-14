@@ -5,7 +5,7 @@ import { JsStyles } from '../jss-style';
 
 export type CommonClass = keyof CommonClasses;
 
-const collapseStyle: JsStyles<CommonClass> = {
+const commonStyle: JsStyles<CommonClass> = {
   highlight: {
     color: Token.tagWarningFontColor,
   },
@@ -63,6 +63,10 @@ export const animations = {
       transform: 'translateY(-100%) scaleY(1)'
     },
   },
+  '@keyframes bounce-in-center': {
+    '0%': { transform: 'translate(-50%, -50%) scale(0)' },
+    '100%': { transform: 'translate(-50%, -50%) scale(1)' },
+  },
 };
 
-export default collapseStyle;
+export default commonStyle;

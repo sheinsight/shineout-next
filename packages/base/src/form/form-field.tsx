@@ -22,6 +22,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     onError: props.onError,
     bind: props.bind,
     getValidateProps,
+    clearToUndefined: props.clearToUndefined,
   });
 
   const handleChange = usePersistFn((value: T, ...args) => {

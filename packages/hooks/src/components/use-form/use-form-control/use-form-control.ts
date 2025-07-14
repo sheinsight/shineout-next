@@ -44,6 +44,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     rules,
     onError,
     getValidateProps,
+    clearToUndefined,
   } = props;
   const { name, bind, validateFieldSet } = useFieldSetConsumer({
     name: props.name,
@@ -96,7 +97,11 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         const nextValue = [] as T[];
         name.forEach((n, index) => {
           if (value[index] === undefined && dv[index] !== undefined) {
-            nextValue[index] = dv[index];
+            if (clearToUndefined) {
+              nextValue[index] = undefined as T;
+            } else {
+              nextValue[index] = dv[index];
+            }
           } else {
             nextValue[index] = value[index];
           }
@@ -110,7 +115,11 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         }
         if (!shallowEqual(value, latestInfo.valueState)) {
           if (value === undefined && defaultValue !== undefined) {
-            setValueState(defaultValue);
+            if (clearToUndefined) {
+              setValueState(undefined);
+            } else {
+              setValueState(defaultValue);
+            }
           } else {
             setValueState(value);
           }
