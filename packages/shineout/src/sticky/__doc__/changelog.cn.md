@@ -1,3 +1,11 @@
+## 3.8.0-beta.14
+2025-07-14
+
+### 🆕 Feature
+
+- `Sticky` 新增 `stickyBoundary` 属性，当滚动到指定位置或与指定元素底部重合时，取消sticky ([#1240](https://github.com/sheinsight/shineout-next/pull/1240))
+
+
 ## 3.6.3-beta.1
 2025-04-09
 

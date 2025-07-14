@@ -1,8 +1,8 @@
 /**
  * cn - 触底检测吸附
- *    -- 触底后取消吸附，并且元素应用 justify-content: flex-end;
+ *    -- hack实现的：触底（碰撞到sticky元素的parentNode底部）后取消吸附，跟随父元素一起滚走
  * en - Auto sticky to top after bottom
- *    -- Auto sticky to top after bottom
+ *    -- hack implemented: after bottom, cancel sticky, and follow parent element scroll
  */
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Sticky, Skeleton } from 'shineout';
@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [placeholderTop, setPlaceholderTop] = useState(0);
 
   useLayoutEffect(() => {
-    const scrollContainer = document.getElementById('document-body');
+    const scrollContainer = document.getElementById('document-body2');
     // 计算targetRef底部到scrollContainer element顶部的距离
     if (targetRef.current && scrollContainer) {
       setPlaceholderTop(targetRef.current.getBoundingClientRect().bottom - scrollContainer.getBoundingClientRect().top);
@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
   return (
     <div
-      id='document-body'
+      id='document-body2'
       style={{
         height: 600,
         overflow: 'auto',
@@ -46,6 +46,7 @@ const App: React.FC = () => {
           position: 'sticky',
           top: 0,
           backgroundColor: '#f7f8f9',
+          zIndex: 1000,
           borderBottom: '1px solid #e0e0e0',
         }}
       >
@@ -68,7 +69,7 @@ const App: React.FC = () => {
               justifyContent: 'space-between',
             }}
           >
-            <Sticky top={125} scrollContainer='#document-body' onChange={setIsTargetStikcy}>
+            <Sticky top={125} scrollContainer='#document-body2' onChange={setIsTargetStikcy}>
               <div ref={targetRef} style={isPlaceholderSticky ? { opacity: 0, height: 0, pointerEvents: 'none' } : {}}>
                 {$image}
               </div>
@@ -87,7 +88,7 @@ const App: React.FC = () => {
               </div>
             </Skeleton>
             <Sticky
-              scrollContainer='#document-body'
+              scrollContainer='#document-body2'
               top={placeholderTop}
               onChange={(isStikcy) => {
                 setIsPlaceholderSticky(isStikcy);

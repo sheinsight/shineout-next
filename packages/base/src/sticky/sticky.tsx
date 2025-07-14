@@ -8,22 +8,6 @@ const supportSticky = cssSupport('position', 'sticky');
 export const defaultZIndex = 900;
 const events = ['scroll', 'pageshow', 'load', 'resize'];
 
-// const getFirstScrollParent = (el: HTMLElement) => {
-//   let parent = el.parentNode as HTMLElement;
-//   while (parent) {
-//     if (parent === document.body || parent === document.documentElement) {
-//       parent = document.body;
-//       break;
-//     }
-//     const { overflowY } = window.getComputedStyle(parent);
-//     if (overflowY === 'scroll' || overflowY === 'auto') {
-//       break;
-//     }
-//     parent = parent.parentNode as HTMLElement;
-//   }
-//   return parent;
-// };
-
 const Sticky = (props: StickyProps) => {
   if (props.target) {
     devUseWarning.deprecated('target', 'scrollContainer', 'Sticky');
@@ -32,6 +16,7 @@ const Sticky = (props: StickyProps) => {
   // 是否使用css sticky
   const css = (props.css || props.target) && supportSticky;
   const forceUpdate = useRender();
+  const elementRef = useRef(null as HTMLElement | null);
   const { current: context } = useRef({
     target: null as HTMLElement | null,
     div: null as HTMLElement | null,
@@ -39,13 +24,54 @@ const Sticky = (props: StickyProps) => {
     targetObserver: null as IntersectionObserver | null,
     parentObserver: null as IntersectionObserver | null,
     fixedObserver: null as IntersectionObserver | null,
+    stoped: false,
+    stopStickyFn: (e: any) => {
+      const target = e.target as HTMLElement;
+      if (!target || typeof target.scrollTop !== 'number') return;
+
+      let stopStickyPoint = -1;
+      if (typeof props.stickyBoundary === 'number') {
+        stopStickyPoint = props.stickyBoundary;
+      } else if (typeof props.stickyBoundary === 'function') {
+        const stopStickyElement = props.stickyBoundary();
+        if (!stopStickyElement) return;
+        const stopStickyRect = stopStickyElement.getBoundingClientRect();
+        const targetRect = elementRef.current!.getBoundingClientRect();
+        stopStickyPoint = stopStickyRect.bottom - targetRect.bottom;
+      }
+      if (stopStickyPoint < 0) return;
+
+      if (target.scrollTop > stopStickyPoint) {
+        if (context.stoped) return;
+        context.stoped = true;
+
+        // 把 div 移动到 target 内部，使用 absolute 定位跟随滚动
+        if (context.div && context.target) {
+          context.target.insertBefore(context.div, context.target.firstChild);
+          const paddingLeft =
+            Number(window.getComputedStyle(context.target).paddingLeft.replace('px', '')) || 0;
+          const borderLeftWidth =
+            Number(window.getComputedStyle(context.target).borderLeftWidth.replace('px', '')) || 0;
+          const left = paddingLeft + borderLeftWidth;
+          context.div.style.transform = `translate(-${left}px, ${stopStickyPoint}px)`;
+        }
+      } else {
+        if (!context.stoped) return;
+        context.stoped = false;
+
+        // 恢复正常吸附模式：把 div 移动到 target 外部
+        if (context.div && context.target && context.target.parentNode) {
+          context.target.parentNode.insertBefore(context.div, context.target);
+        }
+
+        context.div!.style.transform = 'none';
+      }
+    },
   });
 
   const [style, setStyle] = useState({} as React.CSSProperties);
   const [show, setShow] = useState(false);
   const [parentVisible, setParentVisible] = useState(true);
-
-  const elementRef = useRef(null as HTMLElement | null);
 
   const getTarget = () => {
     let { scrollContainer } = props;
@@ -229,6 +255,10 @@ const Sticky = (props: StickyProps) => {
       context.targetObserver.disconnect();
       context.targetObserver = null;
     }
+
+    if (props.stickyBoundary) {
+      context.target?.removeEventListener('scroll', context.stopStickyFn);
+    }
   };
 
   const createObserver = () => {
@@ -254,6 +284,11 @@ const Sticky = (props: StickyProps) => {
         }
       }
       cancelFixedObserver();
+
+      if (props.stickyBoundary) {
+        context.target.addEventListener('scroll', context.stopStickyFn);
+      }
+
       if (window.IntersectionObserver) {
         const observer = new IntersectionObserver(handleTargetPosition, {
           root: context.target,
