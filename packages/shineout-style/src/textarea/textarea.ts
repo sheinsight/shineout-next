@@ -76,6 +76,7 @@ const input: JsStyles<keyof TextareaClasses> = {
       color: token.textareaPlaceholderColor,
     },
     width: '100%',
+    height: '100%',
     background: 'transparent',
     border: '0',
     margin: '0',

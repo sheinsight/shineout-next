@@ -649,6 +649,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       renderItem,
       controlType,
       onLoadMore,
+      keepScrollTop: !!filterText ? false : true,
       isAnimationFinish,
       threshold,
       onControlTypeChange: setControlType,

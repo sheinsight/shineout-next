@@ -35,7 +35,7 @@ const AvatarGroup = (props: AvatarGroupProps) => {
       );
     } else {
       childrenShow.push(
-        <span className={avatarGroupClasses.max}>
+        <span className={avatarGroupClasses.max} key="more-avatar">
           <Avatar key='avatar-provider-key' jssStyle={jssStyle}>
             +{childrenHidden.length}
           </Avatar>
