@@ -83,6 +83,6 @@ export default {
   search: 'search',
   urlInvalidMsg: 'Picture format is incorrect, please upload again',
   invalidAccept: 'Invalid file format',
-
+  invalidImage: 'Invalid image format',
   notFound: 'not found',
 };
