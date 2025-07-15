@@ -170,6 +170,8 @@ const Time = (props: TimeProps) => {
     );
   };
 
+  const shouldRenderTimes = times && times.length > 0;
+
   return (
     <div
       onMouseEnter={props.onMouseEnter}
@@ -178,21 +180,23 @@ const Time = (props: TimeProps) => {
       dir={direction}
     >
       {props.showTitle && <PickerTitle position={props.position} jssStyle={props.jssStyle} />}
-      <div className={styles?.pickerBody}>
-        {times.map((item) => {
-          return (
-            <TimeScroll
-              key={item.mode}
-              mode={item.mode}
-              jssStyle={props.jssStyle}
-              times={item.times}
-              currentIndex={item.currentIndex}
-              isEmpty={props.value === null || props.value === undefined}
-              onChange={func.handleChange}
-            />
-          );
-        })}
-      </div>
+      {shouldRenderTimes && (
+        <div className={styles?.pickerBody}>
+          {times.map((item) => {
+            return (
+              <TimeScroll
+                key={item.mode}
+                mode={item.mode}
+                jssStyle={props.jssStyle}
+                times={item.times}
+                currentIndex={item.currentIndex}
+                isEmpty={props.value === null || props.value === undefined}
+                onChange={func.handleChange}
+              />
+            );
+          })}
+        </div>
+      )}
       {renderFooter()}
     </div>
   );
