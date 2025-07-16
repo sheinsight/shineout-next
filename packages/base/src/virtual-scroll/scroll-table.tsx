@@ -47,6 +47,7 @@ const Scroll = (props: ScrollProps) => {
   const { current: context } = useRef({
     isMouseDown: false,
     lastTableHeight: 0,
+    unmounted: false,
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef, timer: 100 });
@@ -151,7 +152,7 @@ const Scroll = (props: ScrollProps) => {
 
   // 非定高的Table但依旧采用了virtual渲染方式，需要渲染出全部的data
   useLayoutEffect(() => {
-    if (!props.tableRef.current) return;
+    if (!props.tableRef.current || context.unmounted) return;
     const rootTableHeight = props.tableRef.current.clientHeight;
     const container = containerRef.current
     // 判断内容滚动高度是否真的超过了容器高度
@@ -162,6 +163,9 @@ const Scroll = (props: ScrollProps) => {
       context.lastTableHeight = 0;
     } else {
       context.lastTableHeight = rootTableHeight;
+    }
+    return () => {
+      context.unmounted = true;
     }
   }, [paddingTop]);
 
