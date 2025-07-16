@@ -22,6 +22,7 @@ import {
   useResize,
   useScrollbarWidth,
   util,
+  addResizeObserver,
 } from '@sheinx/hooks';
 import { TableClasses, TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -205,13 +206,37 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     disabled: props.disabled,
   });
 
-  useEffect(() => {
+  const handleTheadAndTfootHeight = usePersistFn(() => {
     const theadHeight = theadRef?.current?.clientHeight || 0;
     const tfootHeight = tfootRef.current?.clientHeight || 0;
     if (props.sticky) {
       context.theadAndTfootHeight = tfootHeight;
     } else {
       context.theadAndTfootHeight = theadHeight + tfootHeight;
+    }
+  })
+
+  useEffect(() => {
+    handleTheadAndTfootHeight();
+
+    let cancelFunc1: () => void | undefined;
+    if (theadRef?.current) {
+      cancelFunc1 = addResizeObserver(theadRef?.current, handleTheadAndTfootHeight, {
+        direction: 'y',
+        timer: 10,
+      });
+    }
+    let cancelFunc2: () => void | undefined;
+    if (tfootRef?.current) {
+      cancelFunc2 = addResizeObserver(tfootRef?.current, handleTheadAndTfootHeight, {
+        direction: 'y',
+        timer: 10,
+      });
+    }
+
+    return () => {
+      cancelFunc1?.();
+      cancelFunc2?.();
     }
   }, [theadRef.current, tfootRef.current]);
 
