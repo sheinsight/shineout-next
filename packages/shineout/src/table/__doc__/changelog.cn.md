@@ -1,3 +1,10 @@
+## 3.7.7-beta.7
+2025-07-17
+
+### 🐞 BugFix
+
+- 修复 `Table` 的 `scrollToIndex` 方法滚动位置计算不准确的问题 （Regression: since v3.7.0） ([#1250](https://github.com/sheinsight/shineout-next/pull/1250))
+
 ## 3.7.7-beta.6
 2025-07-16
 
