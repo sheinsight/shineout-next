@@ -74,7 +74,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const { current: context } = useRef({
     emptyHeight: 0,
-    theadAndTfootHeight: 0,
+    theadHeight: 0,
+    tfootHeight: 0,
     scrollingTimer: null as any,
   });
 
@@ -210,9 +211,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     const theadHeight = theadRef?.current?.clientHeight || 0;
     const tfootHeight = tfootRef.current?.clientHeight || 0;
     if (props.sticky) {
-      context.theadAndTfootHeight = tfootHeight;
+      context.tfootHeight = tfootHeight;
     } else {
-      context.theadAndTfootHeight = theadHeight + tfootHeight;
+      context.theadHeight = theadHeight;
+      context.tfootHeight = tfootHeight;
     }
   })
 
@@ -251,7 +253,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     innerRef: tbodyRef,
     scrollLeft: props.scrollLeft,
     isRtl,
-    theadAndTfootHeight: context.theadAndTfootHeight,
+    theadHeight: context.theadHeight,
+    tfootHeight: context.tfootHeight,
   });
 
   const syncHeaderScroll = usePersistFn((left: number) => {
