@@ -68,8 +68,13 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
         },
         onInsert: (val: T extends (infer U)[] ? U : never) => {
           const oldValue = formFunc?.getValue(name);
+          let insertValue = val;
+          const valueTemplate = oldValue[i]
+          if(insertValue === undefined){
+            insertValue = util.clearValue(util.deepClone(valueTemplate));
+          }
           const newValue = produce(oldValue, (draft) => {
-            draft.splice(i, 0, val);
+            draft.splice(i, 0, insertValue);
           }) as T;
           onChange(newValue);
           // context.ids.splice(i, 0, util.generateUUID());
@@ -77,8 +82,13 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
         },
         onAppend: (val: T extends (infer U)[] ? U : never) => {
           const oldValue = formFunc?.getValue(name);
+          let insertValue = val;
+          const valueTemplate = oldValue[i]
+          if(insertValue === undefined){
+            insertValue = util.clearValue(util.deepClone(valueTemplate));
+          }
           const newValue = produce(oldValue, (draft) => {
-            draft.splice(i + 1, 0, val);
+            draft.splice(i + 1, 0, insertValue);
           }) as T;
           onChange(newValue);
           // context.ids.splice(i + 1, 0, util.generateUUID());
