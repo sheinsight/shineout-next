@@ -1,3 +1,9 @@
+## 3.7.7-beta.8
+2025-07-17
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 的 `onAppend` 和 `onInsert` 在非末尾的位置插入插入undefined时，children的表单组件不渲染的问题 ([#1252](https://github.com/sheinsight/shineout-next/pull/1252))
+
 ## 3.7.5-beta.4
 2025-07-02
 ### 🐞 BugFix
