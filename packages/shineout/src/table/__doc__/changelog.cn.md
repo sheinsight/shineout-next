@@ -1,3 +1,10 @@
+## 3.7.7-beta.6
+2025-07-16
+
+### 🐞 BugFix
+
+- 修复 `Table` 的thead或tfoot存在动态高度时，虚拟列表的最后一条数据看不全的问题 （Regression: since v3.7.0） ([#1249](https://github.com/sheinsight/shineout-next/pull/1249))
+
 ## 3.7.7-beta.5
 2025-07-16
 
