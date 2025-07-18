@@ -7,6 +7,10 @@ export const useInputClick = () => {
     ref: inputRef,
     type: 'file',
     style: { display: 'none' },
+    onClick: (event: React.MouseEvent) => {
+      // 阻止程序化触发(inputRef.current.click())的input点击事件冒泡
+      event.stopPropagation();
+    },
   };
   const wrapperProps = {
     onClick: () => {
