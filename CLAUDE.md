@@ -56,6 +56,12 @@ pnpm release
 - `packages/hooks/` - 共享的 React hooks 和工具函数
 - `packages/mock/` - 开发/测试用的模拟数据
 
+### 站点文档内容结构
+- `packages/shineout/[component]/__doc__` - 版本 changelog 概览
+- `packages/shineout/[component]/__example__` - 文档站点组件示例
+- `packages/shineout/[component]/__changelog__/[version]/[pr].md` - 文档站点组件示例
+- `packages/shineout/[component]/__diff__/[version]/index.md`
+
 ### 组件开发模式
 组件遵循三层架构：
 1. **基础组件** (`packages/base/src/[component]/`): 不含样式的核心逻辑
@@ -111,6 +117,6 @@ import { token } from '@sheinx/theme'  // → packages/theme/src
 ### 组件使用注意事项
 任何使用到组件的地方，包括 demo、测试用例、伪代码、changelog 等，需要遵循以下约定：
 - 必须使用 Shineout 组件中存在的属性
-- 组件可使用的属性在各自的 packages/shineout/src/[component]/interface.ts 中查看
+- 组件可使用的属性位于 packages/shineout/src/[component]/interface.ts 中查看
 - 书写组件后必须检查组件上的属性是否存在
-- 必须使用 Shineout 中暴露给外部且存在的组件，在各自的 packages/shineout/src/[component]/index.ts 中查看
+- 必须使用 Shineout 中暴露给外部且存在的组件，位于 packages/shineout/src/[component]/index.ts 中查看
