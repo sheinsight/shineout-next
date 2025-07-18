@@ -16,7 +16,7 @@ export function getResetMore(
   const paddingLeft = parsePxToNumber(style.paddingLeft);
   const paddingRight = parsePxToNumber(style.paddingRight);
   const minFilterWidth = onFilter ? 16 : 0;
-  const contentWidth = clientWidth - paddingLeft - paddingRight - minFilterWidth - 1;
+  const contentWidth = clientWidth - paddingLeft - paddingRight - minFilterWidth;
 
   const hideEl = items.pop() as HTMLElement;
   const hideElStyle = getComputedStyle(hideEl);
