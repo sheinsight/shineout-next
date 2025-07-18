@@ -68,21 +68,95 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
         <div
           class="soui-cascader-result-text-wrapper soui-cascader-compressed-wrapper soui-cascader-multiple-result-wrapper soui-cascader-multiple-compressed-wrapper"
         >
-          <span
-            style="display: inline-flex;"
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
           >
             <div
-              class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+              class="soui-tag-wrapper soui-tag-inline"
             >
-              <div
-                class="soui-tag-wrapper"
-              >
-                <span>
-                  +7
-                </span>
-              </div>
+              <span>
+                jiangning
+              </span>
             </div>
-          </span>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                yuhuatai
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                nanjing
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                jiangsu
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                feidong
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                hefei
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                anhui
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            style="position: absolute; z-index: -100; user-select: none; contain: layout;"
+          >
+            <div
+              class="soui-tag-wrapper"
+            >
+              <span>
+                +
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -1193,21 +1267,95 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
         <div
           class="soui-cascader-result-text-wrapper soui-cascader-compressed-wrapper soui-cascader-multiple-result-wrapper soui-cascader-multiple-compressed-wrapper"
         >
-          <span
-            style="display: inline-flex;"
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
           >
             <div
-              class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+              class="soui-tag-wrapper soui-tag-inline"
             >
-              <div
-                class="soui-tag-wrapper"
-              >
-                <span>
-                  +7
-                </span>
-              </div>
+              <span>
+                jiangning
+              </span>
             </div>
-          </span>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                yuhuatai
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                nanjing
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                jiangsu
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                feidong
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                hefei
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                anhui
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            style="position: absolute; z-index: -100; user-select: none; contain: layout;"
+          >
+            <div
+              class="soui-tag-wrapper"
+            >
+              <span>
+                +
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
