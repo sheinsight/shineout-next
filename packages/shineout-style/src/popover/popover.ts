@@ -24,7 +24,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     borderRadius: token.popoverRadius,
     border: `1px solid ${token.popoverBorderColor}`,
     wordWrap: 'break-word',
-    '& $arrow': {
+    '& > $arrow': {
       'z-index': 1,
       position: 'absolute',
       content: '" "',
@@ -43,7 +43,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     },
     '&[data-soui-position^="bottom"]': {
       marginTop: `calc(${hideArrowGap} - 2px)`,
-      '& $arrow': {
+      '& > $arrow': {
         top: '0',
         transform: 'translate(0, -50%) rotate(-45deg)',
         left: '0',
@@ -64,7 +64,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       // marginTop: (arrowGap - 2) * -1,
       marginTop: `calc((${hideArrowGap} - 2px) * -1)`,
 
-      '& $arrow': {
+      '& > $arrow': {
         bottom: '0',
         transform: 'translate(0, 50%) rotate(135deg)',
         left: '0',
@@ -86,7 +86,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     '&[data-soui-position^="left"]': {
       '&[dir=ltr]': { marginRight: `calc((${hideArrowGap} - 2px))` },
       '&[dir=rtl]': { marginLeft: `calc((${hideArrowGap} - 2px))` },
-      '& $arrow': {
+      '& > $arrow': {
         right: token.popoverBorderWidth,
         transform: 'translate(50%, 0) rotate(45deg)',
         top: '0',
@@ -106,7 +106,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     '&[data-soui-position^="right"]': {
       '&[dir=ltr]': { marginLeft: `calc(${hideArrowGap} - 2px)` },
       '&[dir=rtl]': { marginRight: `calc(${hideArrowGap} - 2px)` },
-      '& $arrow': {
+      '& > $arrow': {
         left: '0',
         transform: 'translate(-50%, 0) rotate(-135deg)',
         top: '0',
@@ -125,10 +125,10 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         position: 'absolute',
       },
     },
-    '&&[data-soui-position$="-left"] $arrow': { left: arrowMargin, right: 'auto' },
-    '&&[data-soui-position$="-right"] $arrow': { right: arrowMargin, left: 'auto' },
-    '&&[data-soui-position$="-top"] $arrow': { top: arrowMargin, bottom: 'auto' },
-    '&&[data-soui-position$="-bottom"] $arrow': { bottom: arrowMargin, top: 'auto' },
+    '&&[data-soui-position$="-left"] > $arrow': { left: arrowMargin, right: 'auto' },
+    '&&[data-soui-position$="-right"] > $arrow': { right: arrowMargin, left: 'auto' },
+    '&&[data-soui-position$="-top"] > $arrow': { top: arrowMargin, bottom: 'auto' },
+    '&&[data-soui-position$="-bottom"] > $arrow': { bottom: arrowMargin, top: 'auto' },
 
     '&[data-soui-type="danger"]': {
       borderColor: token.popoverDangerBorderColor,

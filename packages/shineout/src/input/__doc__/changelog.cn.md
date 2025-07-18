@@ -13,6 +13,12 @@
 
 - 增强 `Input` 的 `info` 属性，支持配置提示信息的位置和挂载点 ([#1189](https://github.com/sheinsight/shineout-next/pull/1189))
 
+## 3.7.7-beta.3
+2025-07-16
+
+### 🐞 BugFix
+
+- 修复 `Input` 的 `autoSelect` 属性在某些场景下无法自动选中所有文本的问题 ([#1245](https://github.com/sheinsight/shineout-next/pull/1245))
 
 ## 3.7.3-beta.4
 2025-06-17
