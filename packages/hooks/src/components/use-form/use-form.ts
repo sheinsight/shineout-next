@@ -257,7 +257,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
     const newValue = typeof change === 'function' ? produce(context.value as T, change) : change;
     context.value = newValue;
-    props.onChange?.(context.value as T);
+    props.onChange?.(deepClone(context.value) as T);
   });
 
   const scrollToField = usePersistFn(
@@ -662,11 +662,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   // 默认值更新
   React.useEffect(() => {
     context.removeLock = false;
-    // 内部 onChange 改的 value, 不需要更新
-    if (props.value === context.value) {
-      if (!isControl) update();
-      return;
-    }
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
         const oldValue = deepGet(preValue || emptyObj, key);
@@ -676,6 +671,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       validateFields(keys).catch(() => {});
     }
     update();
+    if (!isControl) return;
     // 默认值上位时会提前触发外部的onChange, 导致外部的多次setFormValue不能合并后生效的问题(ReactDOM.render方式渲染)
     setTimeout(updateDefaultValue);
     context.resetTime = 0;
