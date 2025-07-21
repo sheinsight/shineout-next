@@ -36,4 +36,9 @@ export interface AlertClasses {
 - 其他类型的 Alert（info、success、warning、danger）不受影响
 
 ## 风险使用场景
-- 如果业务中依赖了 confirmwarning 类型只有 title 时的底部边距，可能需要调整布局
+
+### 代码执行风险
+- 无直接代码执行风险
+
+### 交互体验差异
+- confirmwarning 类型只有 title 时底部边距被移除，布局可能更紧凑

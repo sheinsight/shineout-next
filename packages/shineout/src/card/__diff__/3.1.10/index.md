@@ -44,5 +44,10 @@ const renderHeader = () => {
 - 复杂 Header（有 extra 或 collapsible）保持原有结构
 
 ## 风险使用场景
-- CSS 选择器依赖 `.header .headerContent` 结构的样式需要调整
-- 依赖嵌套 DOM 结构进行布局的场景可能受影响
+
+### 代码执行风险
+- CSS 选择器 `.header .headerContent` 在简单 header 上失效
+
+### 交互体验差异
+- className 应用位置从内层变为 header 层
+- DOM 结构简化可能影响依赖嵌套结构的布局

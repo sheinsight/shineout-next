@@ -35,5 +35,10 @@ const getRootProps = () => {
 - 减少 CSS 体积和维护成本
 
 ## 风险使用场景
-- 如果项目自定义了 loading 样式，需要改为自定义 disabled 样式
-- 依赖 loading 状态特殊样式的场景需要调整
+
+### 代码执行风险
+- CSS 选择器使用 `.loading` 类名的样式将失效
+
+### 交互体验差异
+- loading 状态的按钮与 disabled 状态视觉一致
+- 原有 loading 状态的特殊颜色、背景等样式不再生效

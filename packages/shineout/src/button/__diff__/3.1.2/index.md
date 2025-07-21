@@ -36,5 +36,10 @@ const renderChildren = () => {
 - 按钮加载动画统一为 ring 类型
 
 ## 风险使用场景
-- 如果业务中使用自定义组件包装了 ShineoutIcon，可能不会被正确检测
-- 依赖原有 Spin 默认样式的场景需要适配
+
+### 代码执行风险
+- 自定义组件包装 ShineoutIcon 时，`isShineoutIcon` 检测可能失效
+
+### 交互体验差异
+- Spin 加载动画从默认样式变为 ring 类型
+- 加载状态下原来显示的图标现在会被隐藏

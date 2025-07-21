@@ -44,5 +44,10 @@ simpleHeader: {
 - 不影响其他属性如 extra、size 等
 
 ## 风险使用场景
-- 如果业务中依赖了 simple 模式下 align 不生效的行为，需要调整布局
-- 自定义样式可能需要考虑 display: block 的影响
+
+### 代码执行风险
+- 无直接代码执行风险
+
+### 交互体验差异
+- simple 模式下 align 属性从不生效变为生效
+- display: block 可能影响自定义布局
