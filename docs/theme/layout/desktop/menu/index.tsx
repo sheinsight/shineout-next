@@ -81,6 +81,9 @@ const MenuComponent = () => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
+  
+  // Check if we're on the diff page
+  const isDiffPage = location.pathname.includes('/diff');
   // const params = useParams();
   const docsLocale = Locale({ locale: state.locales });
   // const lan = params.lan === 'en' ? 'en-US' : 'zh-CN';
@@ -142,6 +145,11 @@ const MenuComponent = () => {
     [classes.menuFloat]: menuFloat,
     [classes.collapsed]: menuCollapsed,
   });
+
+  // Hide menu on diff page
+  if (isDiffPage) {
+    return null;
+  }
 
   return (
     <aside className={rootClass}>
