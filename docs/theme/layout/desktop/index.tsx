@@ -14,6 +14,7 @@ import Component from '../../../pages/component';
 import Changelog from '../../../pages/changelog';
 import Debugger from '../../../pages/debug';
 import Markdown from '../../../pages/markdown';
+import Diff from '../../../pages/diff';
 
 const Desktop = () => {
   const classes = useStyles();
@@ -53,6 +54,10 @@ const Desktop = () => {
     {
       path: ':lan/doc/:project/:comp',
       element: <Markdown />,
+    },
+    {
+      path: ':lan/diff/:version?/:component?/:pr?',
+      element: <Diff />,
     },
     {
       path: '*',

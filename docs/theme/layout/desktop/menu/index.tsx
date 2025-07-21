@@ -67,6 +67,13 @@ const devGuide = [
     },
     name: 'migration',
   },
+  {
+    title: {
+      cn: 'Diff 报告',
+      en: 'Diff Reports',
+    },
+    name: 'diff',
+  },
 ];
 
 const MenuComponent = () => {
@@ -93,10 +100,19 @@ const MenuComponent = () => {
   const handleDocClick = (name: string) => {
     const params = new URLSearchParams(location.search);
     params.delete('tab');
-    navigate({
-      pathname: `/${state.locales}/doc/${state.doc}/${name}`,
-      search: params.toString(),
-    });
+    
+    // Special handling for diff page
+    if (name === 'diff') {
+      navigate({
+        pathname: `/${state.locales}/diff`,
+        search: params.toString(),
+      });
+    } else {
+      navigate({
+        pathname: `/${state.locales}/doc/${state.doc}/${name}`,
+        search: params.toString(),
+      });
+    }
     document.getElementById('layout')?.scrollTo(0, 0);
   };
   useEffect(() => {
