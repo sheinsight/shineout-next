@@ -59,8 +59,8 @@ pnpm release
 ### 站点文档内容结构
 - `packages/shineout/[component]/__doc__` - 版本 changelog 概览
 - `packages/shineout/[component]/__example__` - 文档站点组件示例
-- `packages/shineout/[component]/__changelog__/[version]/[pr].md` - 文档站点组件示例
-- `packages/shineout/[component]/__diff__/[version]/index.md`
+- `packages/shineout/[component]/__changelog__/[version]/[pr].md` - changelog 明细
+- `packages/shineout/[component]/__diff__/[version]/index.md` - diff 报告，记录变更带来的逻辑上的差异和对组件上下文逻辑的影响
 
 ### 组件开发模式
 组件遵循三层架构：
