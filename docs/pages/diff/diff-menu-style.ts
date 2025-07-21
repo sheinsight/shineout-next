@@ -1,11 +1,11 @@
-import { createStyles } from '../../theme/style/create-styles';
+import { createUseStyles } from 'react-jss';
 
-export default createStyles((theme) => ({
+export default createUseStyles({
   menu: {
     width: 280,
     height: '100%',
-    borderRight: `1px solid ${theme.colors.border}`,
-    backgroundColor: theme.colors.background.default,
+    borderRight: '1px solid #e8e8e8',
+    backgroundColor: '#fafafa',
     overflowY: 'auto',
     overflowX: 'hidden',
   },
@@ -13,8 +13,8 @@ export default createStyles((theme) => ({
     padding: '16px 24px',
     fontSize: 16,
     fontWeight: 600,
-    color: theme.colors.text.primary,
-    borderBottom: `1px solid ${theme.colors.border}`,
+    color: '#333',
+    borderBottom: '1px solid #e8e8e8',
   },
   menuList: {
     margin: 0,
@@ -31,14 +31,14 @@ export default createStyles((theme) => ({
     padding: '8px 24px',
     cursor: 'pointer',
     fontSize: 14,
-    color: theme.colors.text.secondary,
+    color: '#666',
     transition: 'all 0.2s',
     '&:hover': {
-      backgroundColor: theme.colors.background.hover,
-      color: theme.colors.text.primary,
+      backgroundColor: '#f0f0f0',
+      color: '#333',
     },
     '&.expanded': {
-      color: theme.colors.text.primary,
+      color: '#333',
       '& $arrow': {
         transform: 'rotate(90deg)',
       },
@@ -64,17 +64,17 @@ export default createStyles((theme) => ({
   componentItem: {
     padding: '6px 24px 6px 48px',
     fontSize: 14,
-    color: theme.colors.text.secondary,
+    color: '#666',
     cursor: 'pointer',
     transition: 'all 0.2s',
     '&:hover': {
-      backgroundColor: theme.colors.background.hover,
-      color: theme.colors.text.primary,
+      backgroundColor: '#f0f0f0',
+      color: '#333',
     },
     '&.active': {
-      backgroundColor: theme.colors.primary + '10',
-      color: theme.colors.primary,
+      backgroundColor: 'rgba(24, 144, 255, 0.1)',
+      color: '#1890ff',
       fontWeight: 500,
     },
   },
-}), 'diff-menu');
+});

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import store, { dispatch } from '../../theme/store';
+import store from '../../theme/store';
 import useStyles from './style';
 import DiffMenu from './diff-menu';
 import DiffContent from './diff-content';
