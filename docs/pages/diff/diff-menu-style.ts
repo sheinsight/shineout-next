@@ -62,7 +62,7 @@ export default createUseStyles({
     listStyle: 'none',
   },
   componentItem: {
-    padding: '6px 24px 6px 48px',
+    padding: '6px 24px 6px 64px',
     fontSize: 14,
     color: '#666',
     cursor: 'pointer',
@@ -76,5 +76,57 @@ export default createUseStyles({
       color: '#1890ff',
       fontWeight: 500,
     },
+  },
+  subVersionList: {
+    margin: 0,
+    padding: 0,
+    listStyle: 'none',
+  },
+  stableVersionItem: {
+    margin: 0,
+    padding: 0,
+  },
+  stableVersionHeader: {
+    padding: '8px 24px 8px 40px',
+    fontSize: 14,
+    fontWeight: 500,
+    color: '#333',
+  },
+  betaGroupItem: {
+    margin: 0,
+    padding: 0,
+  },
+  betaGroupHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '8px 24px 8px 40px',
+    cursor: 'pointer',
+    fontSize: 14,
+    color: '#666',
+    transition: 'all 0.2s',
+    '&:hover': {
+      backgroundColor: '#f0f0f0',
+      color: '#333',
+    },
+    '&.expanded': {
+      color: '#333',
+      '& $arrow': {
+        transform: 'rotate(90deg)',
+      },
+    },
+  },
+  betaVersionList: {
+    margin: 0,
+    padding: 0,
+    listStyle: 'none',
+  },
+  betaVersionItem: {
+    margin: 0,
+    padding: 0,
+  },
+  betaVersionHeader: {
+    padding: '6px 24px 6px 56px',
+    fontSize: 13,
+    color: '#999',
   },
 });
