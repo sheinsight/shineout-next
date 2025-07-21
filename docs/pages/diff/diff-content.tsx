@@ -27,29 +27,77 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
       setError('');
       
       try {
-        // Load the diff report file
-        const response = await fetch(`/packages/shineout/src/${component}/__diff__/${version}/index.md`);
-        if (!response.ok) {
+        // Load diff report content based on version and component
+        let markdown = '';
+        
+        // Import all diff reports statically
+        if (component === 'alert') {
+          if (version === '3.7.5-beta.10') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/alert/__diff__/3.7.5-beta.10/index.md').default;
+          } else if (version === '3.7.0-beta.35') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/alert/__diff__/3.7.0-beta.35/index.md').default;
+          } else if (version === '3.2.5') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/alert/__diff__/3.2.5/index.md').default;
+          } else if (version === '3.1.31') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/alert/__diff__/3.1.31/index.md').default;
+          }
+        } else if (component === 'button') {
+          if (version === '3.0.2') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.0.2/index.md').default;
+          } else if (version === '3.1.2') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.1.2/index.md').default;
+          } else if (version === '3.1.30') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.1.30/index.md').default;
+          } else if (version === '3.5.3') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.5.3/index.md').default;
+          } else if (version === '3.7.0-beta.24') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.7.0-beta.24/index.md').default;
+          }
+        } else if (component === 'card') {
+          if (version === '3.1.10') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/card/__diff__/3.1.10/index.md').default;
+          } else if (version === '3.1.16') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/card/__diff__/3.1.16/index.md').default;
+          } else if (version === '3.1.23') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/card/__diff__/3.1.23/index.md').default;
+          } else if (version === '3.6.1-beta.8') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/card/__diff__/3.6.1-beta.8/index.md').default;
+          }
+        } else if (component === 'badge') {
+          if (version === '3.5.2') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/badge/__diff__/3.5.2/index.md').default;
+          }
+        } else if (component === 'breadcrumb') {
+          if (version === '3.7.6-beta.3') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/breadcrumb/__diff__/3.7.6-beta.3/index.md').default;
+          }
+        } else if (component === 'carousel') {
+          if (version === '3.4.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.4.0/index.md').default;
+          } else if (version === '3.6.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.6.0/index.md').default;
+          } else if (version === '3.7.0-beta.37') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.7.0-beta.37/index.md').default;
+          } else if (version === '3.7.0-beta.38') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.7.0-beta.38/index.md').default;
+          }
+        }
+        
+        if (markdown) {
+          setContent(markdown);
+        } else {
           throw new Error('Diff report not found');
         }
-        const text = await response.text();
-        setContent(text);
       } catch (err) {
-        try {
-          // Try to load from the bundled files
-          const markdown = require(`!!raw-loader!../../../../packages/shineout/src/${component}/__diff__/${version}/index.md`).default;
-          setContent(markdown);
-        } catch (innerErr) {
-          setError(`无法加载 ${component} 组件 ${version} 版本的 Diff 报告`);
-          setContent('');
-        }
+        setError(`无法加载 ${component} 组件 ${version} 版本的 Diff 报告`);
+        setContent('');
       } finally {
         setLoading(false);
       }
     };
 
     loadDiffContent();
-  }, [version, component, pr]);
+  }, [version, component]);
 
   if (loading) {
     return <div className={classes.loading}>加载中...</div>;
