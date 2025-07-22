@@ -4,9 +4,9 @@
 修复 `Alert` 只有 `title` 没有 `children` 的样式问题
 
 ## 代码变更文件
-1. `packages/base/src/alert/alert.tsx`
-2. `packages/base/src/alert/alert.type.ts`
-3. `packages/shineout-style/src/alert/alert.ts`
+- `packages/base/src/alert/alert.tsx`
+- `packages/base/src/alert/alert.type.ts`
+- `packages/shineout-style/src/alert/alert.ts`
 
 ## 变更代码行
 ```diff

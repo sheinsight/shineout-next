@@ -99,4 +99,25 @@ export default createUseStyles({
     fontSize: 14,
     color: '#999',
   },
+  filePath: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 8,
+    backgroundColor: '#f5f5f5',
+    padding: '2px 4px',
+    borderRadius: 3,
+    '& code': {
+      backgroundColor: 'transparent',
+      padding: 0,
+    },
+  },
+  copyButton: {
+    fontSize: 12,
+    padding: '0 8px',
+    height: 20,
+    lineHeight: '20px',
+    '&:hover': {
+      color: '#1890ff',
+    },
+  },
 });

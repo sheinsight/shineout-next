@@ -4,8 +4,8 @@
 `Carousel` 新增 `itemClassName` 属性支持设置轮播项 className，新增 `showIndicator` 属性支持隐藏指示器
 
 ## 代码变更文件
-1. `packages/base/src/carousel/carousel.tsx`
-2. `packages/base/src/carousel/carousel.type.ts`
+- `packages/base/src/carousel/carousel.tsx`
+- `packages/base/src/carousel/carousel.type.ts`
 
 ## 变更代码行
 ```diff

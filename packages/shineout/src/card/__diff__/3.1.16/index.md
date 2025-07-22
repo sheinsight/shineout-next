@@ -4,8 +4,8 @@
 修复 `Card.Header` 的 `simple` 模式下 `align` 不生效问题
 
 ## 代码变更文件
-1. `packages/base/src/card/card-header.tsx`
-2. `packages/shineout-style/src/card/card.ts`
+- `packages/base/src/card/card-header.tsx`
+- `packages/shineout-style/src/card/card.ts`
 
 ## 变更代码行
 ```diff

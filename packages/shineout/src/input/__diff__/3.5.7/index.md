@@ -5,8 +5,8 @@
 2. 优化 `Input` 在 `type='number'` 开启 `coin` 下输入溢出内容时的交互逻辑
 
 ## 代码变更文件
-1. `packages/base/src/input/input.tsx`
-2. `packages/hooks/src/components/use-input/use-input-format.ts`
+- `packages/base/src/input/input.tsx`
+- `packages/hooks/src/components/use-input/use-input-format.ts`
 
 ## 变更代码行
 ```diff

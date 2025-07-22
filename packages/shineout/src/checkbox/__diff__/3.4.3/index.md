@@ -4,8 +4,8 @@
 修复 `Checkbox` 在 createPortal 中使用时，无法改变勾选状态的问题
 
 ## 代码变更文件
-1. `packages/base/src/checkbox/checkbox.tsx`
-2. `packages/base/src/checkbox/use-checkbox-inputable.tsx`
+- `packages/base/src/checkbox/checkbox.tsx`
+- `packages/base/src/checkbox/use-checkbox-inputable.tsx`
 
 ## 变更代码行
 ```diff

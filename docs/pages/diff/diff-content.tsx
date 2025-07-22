@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { Button } from 'shineout';
 import useStyles from './diff-content-style';
 
 interface DiffContentProps {
@@ -135,6 +136,38 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
     return <div className={classes.empty}>请从左侧菜单选择版本和组件查看 Diff 报告</div>;
   }
 
+  // Function to copy text to clipboard
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      // Optional: Show a success message
+    });
+  };
+
+  // Function to render file paths with copy functionality
+  const renderFilePath = (path: string) => {
+    return (
+      <span className={classes.filePath}>
+        <code>{path}</code>
+        <Button
+          size="small"
+          mode="text"
+          onClick={() => copyToClipboard(path)}
+          className={classes.copyButton}
+        >
+          复制
+        </Button>
+      </span>
+    );
+  };
+
+  // Process content to replace file paths with clickable elements
+  const processedContent = content.replace(
+    /`(packages\/[^`]+)`/g,
+    (match, path) => {
+      return `<span class="file-path-wrapper" data-path="${path}"></span>`;
+    }
+  );
+
   return (
     <div className={classes.content}>
       <ReactMarkdown
@@ -143,13 +176,20 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
         components={{
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');
+            const childString = String(children);
+            
+            // Check if this is a file path
+            if (inline && childString.startsWith('packages/')) {
+              return renderFilePath(childString);
+            }
+            
             return !inline && match ? (
               <SyntaxHighlighter
                 language={match[1]}
                 PreTag="div"
                 {...props}
               >
-                {String(children).replace(/\n$/, '')}
+                {childString.replace(/\n$/, '')}
               </SyntaxHighlighter>
             ) : (
               <code className={className} {...props}>
@@ -157,9 +197,18 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
               </code>
             );
           },
+          span({ node, className, children, ...props }) {
+            if (className === 'file-path-wrapper') {
+              const path = (props as any)['data-path'];
+              if (path) {
+                return renderFilePath(path);
+              }
+            }
+            return <span className={className} {...props}>{children}</span>;
+          },
         }}
       >
-        {content}
+        {processedContent}
       </ReactMarkdown>
     </div>
   );

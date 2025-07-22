@@ -4,8 +4,8 @@
 修复 `Checkbox.Group` 在嵌套情况下影响内部选中状态的问题
 
 ## 代码变更文件
-1. `packages/base/src/checkbox/checkbox.tsx`
-2. `packages/base/src/checkbox/checkbox.type.ts`
+- `packages/base/src/checkbox/checkbox.tsx`
+- `packages/base/src/checkbox/checkbox.type.ts`
 
 ## 变更代码行
 ```diff

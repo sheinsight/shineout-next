@@ -4,8 +4,8 @@
 修复 `Checkbox` 在 Form 中使用且传了 name 时，Checkbox 的 onChange 会触发两次的问题（Regression: since v3.4.3）
 
 ## 代码变更文件
-1. `packages/base/src/checkbox/checkbox.tsx`
-2. `packages/base/src/checkbox/use-checkbox-inputable.tsx`
+- `packages/base/src/checkbox/checkbox.tsx`
+- `packages/base/src/checkbox/use-checkbox-inputable.tsx`
 
 ## 变更代码行
 ```diff
