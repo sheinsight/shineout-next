@@ -16,6 +16,28 @@ const App: React.FC = () => {
   const applyStartDate = new Date(applyStartTime);
   const applyEndDate = new Date(applyEndTime);
   const now = new Date();
+  
+  // 为了演示，我们假设当前时间是 2025-07-22 12:00:00
+  // 这样可以看到 13:01:02 是可以选择的
+  const demoNow = new Date('2025-07-22 12:00:00');
+  
+  const [value, setValue] = React.useState<[Date, Date] | undefined>();
+  const [error, setError] = React.useState<string>('');
+
+  const handleChange = (val: [Date, Date] | undefined) => {
+    setValue(val);
+    
+    if (val && val[1]) {
+      // 要求2：验证结束时间必须在当前时间之后
+      if (val[1] <= demoNow) {
+        setError('结束时间必须在当前时间之后');
+      } else {
+        setError('');
+      }
+    } else {
+      setError('');
+    }
+  };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -24,7 +46,7 @@ const App: React.FC = () => {
           <strong>申请时间范围：</strong>{applyStartTime} 至 {applyEndTime}
         </p>
         <p style={{ marginBottom: 0, color: '#666', fontSize: '14px' }}>
-          <strong>当前时间：</strong>{now.toLocaleString('zh-CN', { 
+          <strong>演示当前时间：</strong>{demoNow.toLocaleString('zh-CN', { 
             year: 'numeric',
             month: '2-digit',
             day: '2-digit',
@@ -32,7 +54,7 @@ const App: React.FC = () => {
             minute: '2-digit',
             second: '2-digit',
             hour12: false
-          }).replace(/\//g, '-')}
+          }).replace(/\//g, '-')}（实际会使用真实的当前时间）
         </p>
       </div>
       
@@ -41,22 +63,28 @@ const App: React.FC = () => {
         type="datetime"
         format="YYYY-MM-DD HH:mm:ss"
         placeholder={["开始时间", "结束时间"]}
+        value={value}
+        onChange={handleChange}
         disabled={(date) => {
           // 要求1：时间必须在 applyStartTime 和 applyEndTime 之间
           if (date < applyStartDate || date > applyEndDate) {
             return true;
           }
           
-          // 要求2：结束时间必须在当前时间之后（可以是今天）
-          // 对于范围选择器，第二个日期（结束时间）需要在当前时间之后
-          // 这里的 date 是每个可选择的日期，会对两个输入框都生效
-          // 所以我们允许选择今天及之后的日期
-          const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+          // 对于日期选择，我们只限制在申请时间范围内
+          // 具体的时间限制（结束时间必须在当前时间之后）可以通过其他方式处理
+          // 比如在 onChange 时验证，或使用 disabledTime
           
           return false;
         }}
         style={{ width: 420 }}
       />
+      
+      {error && (
+        <div style={{ color: '#ff4d4f', fontSize: '12px', marginTop: '-8px' }}>
+          {error}
+        </div>
+      )}
       
       <div style={{ marginTop: 8 }}>
         <p style={{ color: '#999', fontSize: '12px' }}>
@@ -65,7 +93,8 @@ const App: React.FC = () => {
         <ul style={{ color: '#999', fontSize: '12px', paddingLeft: '20px', margin: '4px 0' }}>
           <li>选择的时间范围必须在申请时间范围内</li>
           <li>开始时间和结束时间都必须在 {applyStartTime} 和 {applyEndTime} 之间</li>
-          <li>如果需要限制结束时间在当前时间之后，可以在选择后进行验证</li>
+          <li>结束时间必须在当前时间之后（演示时间：{demoNow.toLocaleString()}）</li>
+          <li>比如 2025-07-22 13:01:02 是可以选择的，因为它在申请时间范围内且在演示当前时间之后</li>
         </ul>
       </div>
     </div>
