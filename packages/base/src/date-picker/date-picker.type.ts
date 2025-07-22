@@ -143,7 +143,7 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @en Disable the specified Time.
    * @cn 禁用指定 Time。
    */
-  disabledTime?: string | ((time: string) => boolean);
+  disabledTime?: string | ((time: string, type?: 'start' | 'end', value0?: Date, value1?: Date) => boolean);
 
   /**
    * @en Set visible of datepicker popup

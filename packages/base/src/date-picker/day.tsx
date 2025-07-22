@@ -13,11 +13,9 @@ import Confirm from './confirm';
 const Day = (props: DayProps) => {
   const { jssStyle, allowSingle } = props;
   const { locale, direction } = useConfig();
-
   const styles = jssStyle?.datePicker?.();
 
   const areaType = props.type === 'week' ? 'week' : 'day';
-
   const onChange = usePersistFn((date, noClose?: boolean) => {
     props.onChange(date, noClose || props.type === 'datetime');
     props.setTarget(undefined);
@@ -156,7 +154,6 @@ const Day = (props: DayProps) => {
     const showNeedConfirm = props.needConfirm && !props.range;
 
     if(props.type !== 'datetime' && props.type !== 'date' && !showNeedConfirm) return null;
-
     return (
       <div
         className={styles?.pickerFooter}
