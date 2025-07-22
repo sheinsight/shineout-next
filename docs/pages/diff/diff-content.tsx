@@ -98,6 +98,16 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
           if (version === '3.6.0') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/collapse/__diff__/3.6.0/index.md').default;
           }
+        } else if (component === 'date-picker') {
+          if (version === '3.7.5-beta.5') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.5-beta.5/index.md').default;
+          } else if (version === '3.7.4-beta.6') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.4-beta.6/index.md').default;
+          } else if (version === '3.6.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.0/index.md').default;
+          } else if (version === '3.4.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.4.0/index.md').default;
+          }
         } else if (component === 'input') {
           if (version === '3.5.7') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.7/index.md').default;
