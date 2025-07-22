@@ -16,6 +16,10 @@ interface VersionGroup {
     version: string;
     components: string[];
   }[];
+  stableVersions?: {
+    version: string;
+    components: string[];
+  }[];
 }
 
 const organizedDiffReports: VersionGroup[] = [
@@ -33,35 +37,59 @@ const organizedDiffReports: VersionGroup[] = [
   },
   {
     version: '3.6',
-    components: ['carousel'],
+    components: [],
     betaVersions: [
       { version: '3.6.1-beta.8', components: ['card'] },
+    ],
+    stableVersions: [
+      { version: '3.6.0', components: ['carousel'] },
     ],
   },
   {
     version: '3.5',
-    components: ['button', 'badge'],
+    components: [],
     betaVersions: [],
+    stableVersions: [
+      { version: '3.5.3', components: ['button'] },
+      { version: '3.5.2', components: ['badge'] },
+    ],
   },
   {
     version: '3.4',
-    components: ['carousel'],
+    components: [],
     betaVersions: [],
+    stableVersions: [
+      { version: '3.4.0', components: ['carousel'] },
+    ],
   },
   {
     version: '3.2',
-    components: ['alert'],
+    components: [],
     betaVersions: [],
+    stableVersions: [
+      { version: '3.2.5', components: ['alert'] },
+    ],
   },
   {
     version: '3.1',
-    components: ['alert', 'button', 'card'],
+    components: [],
     betaVersions: [],
+    stableVersions: [
+      { version: '3.1.31', components: ['alert'] },
+      { version: '3.1.30', components: ['button'] },
+      { version: '3.1.23', components: ['card'] },
+      { version: '3.1.16', components: ['card'] },
+      { version: '3.1.10', components: ['card'] },
+      { version: '3.1.2', components: ['button'] },
+    ],
   },
   {
     version: '3.0',
-    components: ['button'],
+    components: [],
     betaVersions: [],
+    stableVersions: [
+      { version: '3.0.2', components: ['button'] },
+    ],
   },
 ];
 
@@ -127,16 +155,6 @@ const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent,
     onSelect(version, component);
   };
 
-  // Helper to get actual version for stable releases
-  const getStableVersion = (majorVersion: string, component: string): string => {
-    // Find the most recent stable version for this component
-    const stableVersions = Object.entries(versionComponentMap)
-      .filter(([v, comps]) => !v.includes('beta') && v.startsWith(majorVersion) && comps.includes(component))
-      .sort(([a], [b]) => b.localeCompare(a, undefined, { numeric: true }));
-    
-    return stableVersions.length > 0 ? stableVersions[0][0] : `${majorVersion}.0`;
-  };
-
   const renderComponent = (version: string, component: string) => (
     <li 
       key={`${version}-${component}`}
@@ -166,17 +184,19 @@ const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent,
             </div>
             {expandedVersions.includes(versionGroup.version) && (
               <ul className={classes.subVersionList}>
-                {/* Render stable version components */}
-                {versionGroup.components.length > 0 && (
-                  <li className={classes.stableVersionItem}>
-                    <div className={classes.stableVersionHeader}>正式版</div>
+                {/* Render stable versions */}
+                {versionGroup.stableVersions && versionGroup.stableVersions.map(stableVersion => (
+                  <li key={stableVersion.version} className={classes.stableVersionItem}>
+                    <div className={classes.stableVersionHeader}>
+                      {stableVersion.version}
+                    </div>
                     <ul className={classes.componentList}>
-                      {versionGroup.components.map(component => 
-                        renderComponent(getStableVersion(versionGroup.version, component), component)
+                      {stableVersion.components.map(component => 
+                        renderComponent(stableVersion.version, component)
                       )}
                     </ul>
                   </li>
-                )}
+                ))}
                 
                 {/* Render beta versions */}
                 {versionGroup.betaVersions && versionGroup.betaVersions.length > 0 && (

@@ -87,10 +87,9 @@ export default createUseStyles({
     padding: 0,
   },
   stableVersionHeader: {
-    padding: '8px 24px 8px 40px',
-    fontSize: 14,
-    fontWeight: 500,
-    color: '#333',
+    padding: '6px 24px 6px 40px',
+    fontSize: 13,
+    color: '#666',
   },
   betaGroupItem: {
     margin: 0,
