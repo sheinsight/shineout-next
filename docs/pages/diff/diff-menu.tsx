@@ -23,6 +23,8 @@ const organizedDiffReports: VersionGroup[] = [
     versions: [
       { version: '3.7.6-beta.3', components: ['breadcrumb'] },
       { version: '3.7.5-beta.10', components: ['alert'] },
+      { version: '3.7.3-beta.4', components: ['input'] },
+      { version: '3.7.3-beta.1', components: ['input'] },
       { version: '3.7.0-beta.38', components: ['carousel'] },
       { version: '3.7.0-beta.37', components: ['carousel'] },
       { version: '3.7.0-beta.35', components: ['alert'] },
@@ -33,12 +35,15 @@ const organizedDiffReports: VersionGroup[] = [
     majorVersion: '3.6',
     versions: [
       { version: '3.6.1-beta.8', components: ['card'] },
-      { version: '3.6.0', components: ['carousel'] },
+      { version: '3.6.0', components: ['carousel', 'checkbox', 'input'] },
     ],
   },
   {
     majorVersion: '3.5',
     versions: [
+      { version: '3.5.8', components: ['checkbox', 'input'] },
+      { version: '3.5.7', components: ['input'] },
+      { version: '3.5.6', components: ['checkbox'] },
       { version: '3.5.3', components: ['button'] },
       { version: '3.5.2', components: ['badge'] },
     ],
@@ -46,7 +51,14 @@ const organizedDiffReports: VersionGroup[] = [
   {
     majorVersion: '3.4',
     versions: [
+      { version: '3.4.3', components: ['checkbox'] },
       { version: '3.4.0', components: ['carousel'] },
+    ],
+  },
+  {
+    majorVersion: '3.3',
+    versions: [
+      { version: '3.3.7', components: ['checkbox'] },
     ],
   },
   {
@@ -78,15 +90,22 @@ const organizedDiffReports: VersionGroup[] = [
 const versionComponentMap: Record<string, string[]> = {
   '3.7.6-beta.3': ['breadcrumb'],
   '3.7.5-beta.10': ['alert'],
+  '3.7.3-beta.4': ['input'],
+  '3.7.3-beta.1': ['input'],
   '3.7.0-beta.38': ['carousel'],
   '3.7.0-beta.37': ['carousel'],
   '3.7.0-beta.35': ['alert'],
   '3.7.0-beta.24': ['button'],
   '3.6.1-beta.8': ['card'],
-  '3.6.0': ['carousel'],
+  '3.6.0': ['carousel', 'checkbox', 'input'],
+  '3.5.8': ['checkbox', 'input'],
+  '3.5.7': ['input'],
+  '3.5.6': ['checkbox'],
   '3.5.3': ['button'],
   '3.5.2': ['badge'],
+  '3.4.3': ['checkbox'],
   '3.4.0': ['carousel'],
+  '3.3.7': ['checkbox'],
   '3.2.5': ['alert'],
   '3.1.31': ['alert'],
   '3.1.30': ['button'],

@@ -81,6 +81,30 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
           } else if (version === '3.7.0-beta.38') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.7.0-beta.38/index.md').default;
           }
+        } else if (component === 'checkbox') {
+          if (version === '3.3.7') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.3.7/index.md').default;
+          } else if (version === '3.4.3') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.4.3/index.md').default;
+          } else if (version === '3.5.6') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.5.6/index.md').default;
+          } else if (version === '3.5.8') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.5.8/index.md').default;
+          } else if (version === '3.6.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0/index.md').default;
+          }
+        } else if (component === 'input') {
+          if (version === '3.5.7') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.7/index.md').default;
+          } else if (version === '3.5.8') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.8/index.md').default;
+          } else if (version === '3.6.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.6.0/index.md').default;
+          } else if (version === '3.7.3-beta.1') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.7.3-beta.1/index.md').default;
+          } else if (version === '3.7.3-beta.4') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.7.3-beta.4/index.md').default;
+          }
         }
         
         if (markdown) {
