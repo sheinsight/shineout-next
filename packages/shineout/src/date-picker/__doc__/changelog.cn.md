@@ -1,3 +1,9 @@
+## 3.7.8-beta.2
+2025-07-22
+
+### 💎 Enhancement
+- `DatePicker` 增强 `disabledTime` 在开启 `range` 且为函数模式下的返回参数 ([#1259](https://github.com/sheinsight/shineout-next/pull/1259))
+
 ## 3.7.7-beta.2
 2025-07-15
 
