@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import { Tag, Badge } from 'shineout';
+import { Badge } from 'shineout';
 import useStyles from './diff-menu-style';
 
 interface DiffMenuProps {
@@ -124,6 +124,7 @@ const versionComponentMap: Record<string, string[]> = {
 const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent, onSelect }) => {
   const classes = useStyles();
   const [expandedVersions, setExpandedVersions] = useState<string[]>([]);
+  const [expandedSubVersions, setExpandedSubVersions] = useState<string[]>([]);
 
   // Initialize expanded states based on selected version
   React.useEffect(() => {
@@ -131,11 +132,21 @@ const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent,
       // Find which major version group contains the selected version
       const majorVersion = selectedVersion.split('.').slice(0, 2).join('.');
       setExpandedVersions([majorVersion]);
+      // Also expand the sub-version
+      setExpandedSubVersions([selectedVersion]);
     }
   }, [selectedVersion]);
 
   const toggleVersion = (version: string) => {
     setExpandedVersions(prev => 
+      prev.includes(version) 
+        ? prev.filter(v => v !== version)
+        : [...prev, version]
+    );
+  };
+
+  const toggleSubVersion = (version: string) => {
+    setExpandedSubVersions(prev => 
       prev.includes(version) 
         ? prev.filter(v => v !== version)
         : [...prev, version]
@@ -169,24 +180,50 @@ const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent,
               <ul className={classes.subVersionList}>
                 {versionGroup.versions.map(versionInfo => (
                   <li key={versionInfo.version} className={classes.subVersionItem}>
-                    <div className={classes.subVersionHeader}>
-                      <Tag size="small" type={versionInfo.version.includes('beta') ? 'warning' : 'success'}>
-                        {versionInfo.version}
-                      </Tag>
+                    <div 
+                      className={classnames(classes.subVersionHeader, {
+                        [classes.expanded]: expandedSubVersions.includes(versionInfo.version),
+                        [classes.hasMultiple]: versionInfo.components.length > 1,
+                      })}
+                      onClick={() => versionInfo.components.length > 1 && toggleSubVersion(versionInfo.version)}
+                    >
+                      {versionInfo.components.length > 1 && (
+                        <span className={classes.subArrow}>▶</span>
+                      )}
+                      <span className={classes.subVersionName}>{versionInfo.version}</span>
+                      {versionInfo.components.length > 1 && (
+                        <Badge 
+                          count={versionInfo.components.length} 
+                          color={versionInfo.version.includes('beta') ? 'warning' : 'success'}
+                        />
+                      )}
                     </div>
-                    <ul className={classes.componentList}>
-                      {versionInfo.components.map(component => (
-                        <li 
-                          key={`${versionInfo.version}-${component}`}
-                          className={classnames(classes.componentItem, {
-                            [classes.active]: selectedVersion === versionInfo.version && selectedComponent === component,
-                          })}
-                          onClick={() => handleComponentClick(versionInfo.version, component)}
-                        >
-                          {component}
-                        </li>
-                      ))}
-                    </ul>
+                    {versionInfo.components.length === 1 ? (
+                      <div 
+                        className={classnames(classes.singleComponent, {
+                          [classes.active]: selectedVersion === versionInfo.version && selectedComponent === versionInfo.components[0],
+                        })}
+                        onClick={() => handleComponentClick(versionInfo.version, versionInfo.components[0])}
+                      >
+                        {versionInfo.components[0]}
+                      </div>
+                    ) : (
+                      expandedSubVersions.includes(versionInfo.version) && (
+                        <ul className={classes.componentList}>
+                          {versionInfo.components.map(component => (
+                            <li 
+                              key={`${versionInfo.version}-${component}`}
+                              className={classnames(classes.componentItem, {
+                                [classes.active]: selectedVersion === versionInfo.version && selectedComponent === component,
+                              })}
+                              onClick={() => handleComponentClick(versionInfo.version, component)}
+                            >
+                              {component}
+                            </li>
+                          ))}
+                        </ul>
+                      )
+                    )}
                   </li>
                 ))}
               </ul>
