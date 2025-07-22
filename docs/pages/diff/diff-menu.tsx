@@ -112,6 +112,7 @@ const rawVersionData = [
   { version: '3.1.10', components: ['card'] },
   { version: '3.1.2', components: ['button'] },
   // 3.0.x versions
+  { version: '3.0.5', components: ['drawer'] },
   { version: '3.0.2', components: ['button'] },
 ];
 
@@ -150,6 +151,7 @@ const versionComponentMap: Record<string, string[]> = {
   '3.1.16': ['card'],
   '3.1.10': ['card'],
   '3.1.2': ['button'],
+  '3.0.5': ['drawer'],
   '3.0.2': ['button'],
 };
 
