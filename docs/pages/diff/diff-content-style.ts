@@ -11,7 +11,6 @@ export default createUseStyles({
   },
   content: {
     maxWidth: 900,
-    margin: '0 auto',
     '& h1': {
       fontSize: 32,
       fontWeight: 600,
@@ -93,7 +92,6 @@ export default createUseStyles({
   errorContainer: {
     padding: '40px 24px',
     maxWidth: 600,
-    margin: '0 auto',
   },
   emptyContainer: {
     padding: '80px 24px',
