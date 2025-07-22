@@ -77,6 +77,8 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
             markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.4.0/index.md').default;
           } else if (version === '3.6.0') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.6.0/index.md').default;
+          } else if (version === '3.6.0-beta.1') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.6.0-beta.1/index.md').default;
           } else if (version === '3.7.0-beta.37') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.7.0-beta.37/index.md').default;
           } else if (version === '3.7.0-beta.38') {
@@ -93,6 +95,8 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
             markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.5.8/index.md').default;
           } else if (version === '3.6.0') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0/index.md').default;
+          } else if (version === '3.6.0-beta.1') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0-beta.1/index.md').default;
           }
         } else if (component === 'collapse') {
           if (version === '3.6.0') {
@@ -117,6 +121,8 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
             markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.8/index.md').default;
           } else if (version === '3.6.0') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.6.0/index.md').default;
+          } else if (version === '3.6.0-beta.22') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.6.0-beta.22/index.md').default;
           } else if (version === '3.7.3-beta.1') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.7.3-beta.1/index.md').default;
           } else if (version === '3.7.3-beta.4') {
