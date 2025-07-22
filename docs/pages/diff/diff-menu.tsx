@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import { Tag, Badge } from 'shineout';
 import useStyles from './diff-menu-style';
 
 interface DiffMenuProps {
@@ -155,13 +156,19 @@ const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent,
             >
               <span className={classes.arrow}>▶</span>
               <span className={classes.versionName}>{versionGroup.majorVersion}.x</span>
+              <Badge 
+                count={versionGroup.versions.reduce((sum, v) => sum + v.components.length, 0)} 
+                color="primary"
+              />
             </div>
             {expandedVersions.includes(versionGroup.majorVersion) && (
               <ul className={classes.subVersionList}>
                 {versionGroup.versions.map(versionInfo => (
                   <li key={versionInfo.version} className={classes.subVersionItem}>
                     <div className={classes.subVersionHeader}>
-                      {versionInfo.version}
+                      <Tag size="small" type={versionInfo.version.includes('beta') ? 'warning' : 'success'}>
+                        {versionInfo.version}
+                      </Tag>
                     </div>
                     <ul className={classes.componentList}>
                       {versionInfo.components.map(component => (

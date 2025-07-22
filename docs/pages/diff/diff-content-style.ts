@@ -1,6 +1,14 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
+  contentCard: {
+    border: 'none',
+    boxShadow: 'none',
+    padding: 0,
+    '& .so-card-body': {
+      padding: 0,
+    },
+  },
   content: {
     maxWidth: 900,
     margin: '0 auto',
@@ -79,25 +87,19 @@ export default createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 200,
-    fontSize: 14,
-    color: '#666',
+    height: 400,
+    flexDirection: 'column',
   },
-  error: {
+  errorContainer: {
+    padding: '40px 24px',
+    maxWidth: 600,
+    margin: '0 auto',
+  },
+  emptyContainer: {
+    padding: '80px 24px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 200,
-    fontSize: 14,
-    color: '#ff4d4f',
-  },
-  empty: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 200,
-    fontSize: 14,
-    color: '#999',
   },
   filePath: {
     cursor: 'pointer',

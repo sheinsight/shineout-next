@@ -88,7 +88,8 @@ export default createUseStyles({
   },
   subVersionHeader: {
     padding: '6px 24px 6px 40px',
-    fontSize: 13,
-    color: '#666',
+    '& .so-tag': {
+      fontWeight: 600,
+    },
   },
 });
