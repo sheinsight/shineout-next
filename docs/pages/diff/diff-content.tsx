@@ -140,14 +140,18 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
     navigator.clipboard.writeText(text).then(() => {
       // Show visual feedback
       const target = event.currentTarget as HTMLElement;
-      const originalText = target.innerText;
-      target.innerText = '已复制!';
+      if (!target) return;
+      
+      const originalText = target.textContent || text;
+      target.textContent = '已复制!';
       target.style.color = '#52c41a';
       
       setTimeout(() => {
-        target.innerText = originalText;
+        target.textContent = originalText;
         target.style.color = '';
       }, 1000);
+    }).catch((err) => {
+      console.error('Failed to copy:', err);
     });
   };
 
