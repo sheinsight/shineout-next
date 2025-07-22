@@ -5,6 +5,17 @@
 
 - `Form.Field` 新增 `clearToUndefined` 属性，当字段有defaultValue时，清空时可设置为undefined ([#1238](https://github.com/sheinsight/shineout-next/pull/1238))
 
+## 3.7.8-beta.1
+2025-07-21
+### 🐞 BugFix
+
+- 修复 `Form` 对 `onChange` 的返回值直接修改数据后再设置新 value 不生效的问题 ([#1257](https://github.com/sheinsight/shineout-next/pull/1257))
+
+## 3.7.7-beta.8
+2025-07-17
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 的 `onAppend` 和 `onInsert` 在非末尾的位置插入插入undefined时，children的表单组件不渲染的问题 ([#1252](https://github.com/sheinsight/shineout-next/pull/1252))
 
 ## 3.7.5-beta.4
 2025-07-02

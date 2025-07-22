@@ -1,3 +1,15 @@
+## 3.7.7-beta.9
+2025-07-18
+
+### 🐞 BugFix
+- 修复 `Upload` 的父容器点击事件触发两次的问题 ([#1253](https://github.com/sheinsight/shineout-next/pull/1253))
+
+## 3.7.7-beta.1
+2025-07-15
+
+### 🐞 BugFix
+- 修复 `Upload.Image` 不限制 `accept` 时选择非图片格式文件内部校验不通过后，报错信息无内容的问题 ([#1242](https://github.com/sheinsight/shineout-next/pull/1242))
+
 ## 3.7.2-beta.6
 2025-06-16
 

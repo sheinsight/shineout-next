@@ -5,6 +5,26 @@
 
 - `Table` 新增 `cellSortable` 属性，支持点击单元格触发排序 ([#1188](https://github.com/sheinsight/shineout-next/pull/1188))
 
+## 3.7.7-beta.7
+2025-07-17
+
+### 🐞 BugFix
+
+- 修复 `Table` 的 `scrollToIndex` 方法滚动位置计算不准确的问题 （Regression: since v3.7.0） ([#1250](https://github.com/sheinsight/shineout-next/pull/1250))
+
+## 3.7.7-beta.6
+2025-07-16
+
+### 🐞 BugFix
+
+- 修复 `Table` 的thead或tfoot存在动态高度时，虚拟列表的最后一条数据看不全的问题 （Regression: since v3.7.0） ([#1249](https://github.com/sheinsight/shineout-next/pull/1249))
+
+## 3.7.7-beta.5
+2025-07-16
+
+### 🐞 BugFix
+
+- 修复 `Table` 在 `Popover` 中使用虚拟列表时，二次打开弹窗后虚拟列表失效，渲染了全量数据的问题 （Regression: since v3.7.0） ([#1248](https://github.com/sheinsight/shineout-next/pull/1248))
 
 ## 3.7.4-beta.7
 2025-06-26

@@ -4,6 +4,11 @@
 ### 💎 Enhancement
 
 - 增加 `Popover` 的弹出动画效果 ([#1173](https://github.com/sheinsight/shineout-next/pull/1173))
+## 3.7.7-beta.4
+2025-07-16
+
+### 🐞 BugFix
+- 修复 `Popover` 嵌套使用时，父子的position不相同时，子元素的箭头位置不正确的问题 ([#1247](https://github.com/sheinsight/shineout-next/pull/1247))
 
 ## 3.7.4-beta.2
 2025-06-24
