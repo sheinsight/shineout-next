@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { Button } from 'shineout';
 import useStyles from './diff-content-style';
 
 interface DiffContentProps {
@@ -137,26 +136,31 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
   }
 
   // Function to copy text to clipboard
-  const copyToClipboard = (text: string) => {
+  const copyToClipboard = (text: string, event: React.MouseEvent) => {
     navigator.clipboard.writeText(text).then(() => {
-      // Optional: Show a success message
+      // Show visual feedback
+      const target = event.currentTarget as HTMLElement;
+      const originalText = target.innerText;
+      target.innerText = '已复制!';
+      target.style.color = '#52c41a';
+      
+      setTimeout(() => {
+        target.innerText = originalText;
+        target.style.color = '';
+      }, 1000);
     });
   };
 
   // Function to render file paths with copy functionality
   const renderFilePath = (path: string) => {
     return (
-      <span className={classes.filePath}>
-        <code>{path}</code>
-        <Button
-          size="small"
-          mode="text"
-          onClick={() => copyToClipboard(path)}
-          className={classes.copyButton}
-        >
-          复制
-        </Button>
-      </span>
+      <code 
+        className={classes.filePath}
+        onClick={(e) => copyToClipboard(path, e)}
+        title="点击复制路径"
+      >
+        {path}
+      </code>
     );
   };
 
