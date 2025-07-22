@@ -94,6 +94,10 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
           } else if (version === '3.6.0') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0/index.md').default;
           }
+        } else if (component === 'collapse') {
+          if (version === '3.6.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/collapse/__diff__/3.6.0/index.md').default;
+          }
         } else if (component === 'input') {
           if (version === '3.5.7') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.7/index.md').default;

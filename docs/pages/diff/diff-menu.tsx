@@ -36,7 +36,7 @@ const organizedDiffReports: VersionGroup[] = [
     majorVersion: '3.6',
     versions: [
       { version: '3.6.1-beta.8', components: ['card'] },
-      { version: '3.6.0', components: ['carousel', 'checkbox', 'input'] },
+      { version: '3.6.0', components: ['carousel', 'checkbox', 'collapse', 'input'] },
     ],
   },
   {
@@ -98,7 +98,7 @@ const versionComponentMap: Record<string, string[]> = {
   '3.7.0-beta.35': ['alert'],
   '3.7.0-beta.24': ['button'],
   '3.6.1-beta.8': ['card'],
-  '3.6.0': ['carousel', 'checkbox', 'input'],
+  '3.6.0': ['carousel', 'checkbox', 'collapse', 'input'],
   '3.5.8': ['checkbox', 'input'],
   '3.5.7': ['input'],
   '3.5.6': ['checkbox'],
