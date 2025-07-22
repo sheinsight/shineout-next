@@ -37,14 +37,10 @@ export default createUseStyles({
       backgroundColor: '#f0f0f0',
       color: '#333',
     },
-    '&.expanded': {
-      color: '#333',
-      '& $arrow': {
-        transform: 'rotate(90deg)',
-      },
-    },
-    '&.selected': {
-      fontWeight: 600,
+  },
+  expanded: {
+    '& $arrow': {
+      transform: 'rotate(90deg)',
     },
   },
   arrow: {
@@ -71,11 +67,11 @@ export default createUseStyles({
       backgroundColor: '#f0f0f0',
       color: '#333',
     },
-    '&.active': {
-      backgroundColor: 'rgba(24, 144, 255, 0.1)',
-      color: '#1890ff',
-      fontWeight: 500,
-    },
+  },
+  active: {
+    backgroundColor: 'rgba(24, 144, 255, 0.1)',
+    color: '#1890ff',
+    fontWeight: 500,
   },
   subVersionList: {
     margin: 0,
@@ -93,19 +89,13 @@ export default createUseStyles({
     fontSize: 13,
     color: '#666',
     transition: 'all 0.2s',
-    '&.hasMultiple': {
-      cursor: 'pointer',
-      '&:hover': {
-        backgroundColor: '#f0f0f0',
-        color: '#333',
-      },
-    },
-    '&.expanded': {
+    '&:hover': {
+      backgroundColor: '#f0f0f0',
       color: '#333',
-      '& $subArrow': {
-        transform: 'rotate(90deg)',
-      },
     },
+  },
+  hasMultiple: {
+    cursor: 'pointer',
   },
   subArrow: {
     display: 'inline-block',
@@ -127,10 +117,25 @@ export default createUseStyles({
       backgroundColor: '#f0f0f0',
       color: '#333',
     },
-    '&.active': {
-      backgroundColor: 'rgba(24, 144, 255, 0.1)',
-      color: '#1890ff',
-      fontWeight: 500,
+  },
+  versionList: {
+    margin: 0,
+    padding: '0 0 0 20px',
+    listStyle: 'none',
+  },
+  versionArrow: {
+    display: 'inline-block',
+    marginRight: 6,
+    fontSize: 10,
+    transition: 'transform 0.2s',
+  },
+  versionText: {
+    flex: 1,
+  },
+  isBeta: {
+    '& $versionText': {
+      fontStyle: 'italic',
+      fontSize: 12,
     },
   },
 });
