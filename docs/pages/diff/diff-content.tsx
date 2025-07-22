@@ -103,6 +103,8 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
             markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.5-beta.5/index.md').default;
           } else if (version === '3.7.4-beta.6') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.4-beta.6/index.md').default;
+          } else if (version === '3.6.7-beta.6') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.7-beta.6/index.md').default;
           } else if (version === '3.6.0') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.0/index.md').default;
           } else if (version === '3.4.0') {
