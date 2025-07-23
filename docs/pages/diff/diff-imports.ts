@@ -65,9 +65,22 @@ import pagination_3_4_4 from '!!raw-loader!../../../packages/shineout/src/pagina
 import pagination_3_6_1_beta_2 from '!!raw-loader!../../../packages/shineout/src/pagination/__diff__/3.6.1-beta.2/index.md';
 import pagination_3_7_4_beta_3 from '!!raw-loader!../../../packages/shineout/src/pagination/__diff__/3.7.4-beta.3/index.md';
 import pagination_3_7_5_beta_7 from '!!raw-loader!../../../packages/shineout/src/pagination/__diff__/3.7.5-beta.7/index.md';
+import popover_3_1_18 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.1.18/index.md';
+import popover_3_1_28 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.1.28/index.md';
+import popover_3_2_0 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.2.0/index.md';
+import popover_3_2_2 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.2.2/index.md';
+import popover_3_3_7 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.3.7/index.md';
 import popover_3_4_3 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.4.3/index.md';
+import popover_3_4_4 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.4.4/index.md';
+import popover_3_5_5 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.5.5/index.md';
+import popover_3_5_6 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.5.6/index.md';
 import popover_3_6_0 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.6.0/index.md';
+import popover_3_6_1_beta_7 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.6.1-beta.7/index.md';
+import popover_3_6_4_beta_5 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.6.4-beta.5/index.md';
+import popover_3_6_7_beta_1 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.6.7-beta.1/index.md';
 import popover_3_7_0_beta_1 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.7.0-beta.1/index.md';
+import popover_3_7_4_beta_2 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.7.4-beta.2/index.md';
+import popover_3_7_7_beta_4 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.7.7-beta.4/index.md';
 
 export const diffReports: Record<string, string> = {
   'alert/3.1.31': alert_3_1_31,
@@ -134,9 +147,22 @@ export const diffReports: Record<string, string> = {
   'pagination/3.6.1-beta.2': pagination_3_6_1_beta_2,
   'pagination/3.7.4-beta.3': pagination_3_7_4_beta_3,
   'pagination/3.7.5-beta.7': pagination_3_7_5_beta_7,
+  'popover/3.1.18': popover_3_1_18,
+  'popover/3.1.28': popover_3_1_28,
+  'popover/3.2.0': popover_3_2_0,
+  'popover/3.2.2': popover_3_2_2,
+  'popover/3.3.7': popover_3_3_7,
   'popover/3.4.3': popover_3_4_3,
+  'popover/3.4.4': popover_3_4_4,
+  'popover/3.5.5': popover_3_5_5,
+  'popover/3.5.6': popover_3_5_6,
   'popover/3.6.0': popover_3_6_0,
-  'popover/3.7.0-beta.1': popover_3_7_0_beta_1
+  'popover/3.6.1-beta.7': popover_3_6_1_beta_7,
+  'popover/3.6.4-beta.5': popover_3_6_4_beta_5,
+  'popover/3.6.7-beta.1': popover_3_6_7_beta_1,
+  'popover/3.7.0-beta.1': popover_3_7_0_beta_1,
+  'popover/3.7.4-beta.2': popover_3_7_4_beta_2,
+  'popover/3.7.7-beta.4': popover_3_7_7_beta_4
 };
 
 export const diffReportsList = [
@@ -204,7 +230,20 @@ export const diffReportsList = [
   { component: 'pagination', version: '3.6.1-beta.2' },
   { component: 'pagination', version: '3.7.4-beta.3' },
   { component: 'pagination', version: '3.7.5-beta.7' },
+  { component: 'popover', version: '3.1.18' },
+  { component: 'popover', version: '3.1.28' },
+  { component: 'popover', version: '3.2.0' },
+  { component: 'popover', version: '3.2.2' },
+  { component: 'popover', version: '3.3.7' },
   { component: 'popover', version: '3.4.3' },
+  { component: 'popover', version: '3.4.4' },
+  { component: 'popover', version: '3.5.5' },
+  { component: 'popover', version: '3.5.6' },
   { component: 'popover', version: '3.6.0' },
-  { component: 'popover', version: '3.7.0-beta.1' }
+  { component: 'popover', version: '3.6.1-beta.7' },
+  { component: 'popover', version: '3.6.4-beta.5' },
+  { component: 'popover', version: '3.6.7-beta.1' },
+  { component: 'popover', version: '3.7.0-beta.1' },
+  { component: 'popover', version: '3.7.4-beta.2' },
+  { component: 'popover', version: '3.7.7-beta.4' }
 ];
