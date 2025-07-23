@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
-import { Badge, Spin, Alert } from 'shineout';
+import { Badge } from 'shineout';
 import useStyles from './diff-menu-style';
+import { diffReportsList } from './diff-imports';
 
 interface DiffMenuProps {
   selectedVersion: string;
@@ -25,7 +26,24 @@ interface MinorVersionGroup {
 }
 
 // Helper function to organize versions
-function organizeVersions(versions: { version: string; components: string[] }[]): MinorVersionGroup[] {
+function organizeVersions(reports: { component: string; version: string }[]): MinorVersionGroup[] {
+  // Group by version first
+  const versionMap: Record<string, string[]> = {};
+  
+  reports.forEach(report => {
+    if (!versionMap[report.version]) {
+      versionMap[report.version] = [];
+    }
+    versionMap[report.version].push(report.component);
+  });
+  
+  // Convert to array format
+  const versions = Object.entries(versionMap).map(([version, components]) => ({
+    version,
+    components
+  }));
+  
+  // Group by minor version
   const grouped: Record<string, { version: string; components: string[] }[]> = {};
   
   versions.forEach(v => {
@@ -77,41 +95,9 @@ const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent,
   const classes = useStyles();
   const [expandedMinorVersions, setExpandedMinorVersions] = useState<string[]>([]);
   const [expandedVersions, setExpandedVersions] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [organizedDiffReports, setOrganizedDiffReports] = useState<MinorVersionGroup[]>([]);
 
-  // Fetch diff reports from API
-  useEffect(() => {
-    const fetchDiffReports = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        const response = await fetch('/api/diff-reports');
-        if (!response.ok) {
-          throw new Error(`Failed to fetch diff reports: ${response.statusText}`);
-        }
-        
-        const data = await response.json();
-        
-        if (data.error) {
-          throw new Error(data.error);
-        }
-        
-        // Organize the data
-        const organized = organizeVersions(data.menu);
-        setOrganizedDiffReports(organized);
-      } catch (err) {
-        console.error('Error fetching diff reports:', err);
-        setError(err instanceof Error ? err.message : 'Failed to load diff reports');
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    fetchDiffReports();
-  }, []);
+  // Organize the diff reports
+  const organizedDiffReports = organizeVersions(diffReportsList);
 
   // Initialize expanded states based on selected version
   useEffect(() => {
@@ -143,30 +129,6 @@ const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent,
   const handleComponentClick = (version: string, component: string) => {
     onSelect(version, component);
   };
-
-  if (loading) {
-    return (
-      <aside className={classes.menu}>
-        <div className={classes.menuTitle}>Diff 报告</div>
-        <div style={{ padding: '20px', textAlign: 'center' }}>
-          <Spin size={24} tip="加载中..." />
-        </div>
-      </aside>
-    );
-  }
-
-  if (error) {
-    return (
-      <aside className={classes.menu}>
-        <div className={classes.menuTitle}>Diff 报告</div>
-        <div style={{ padding: '20px' }}>
-          <Alert type="error">
-            {error}
-          </Alert>
-        </div>
-      </aside>
-    );
-  }
 
   return (
     <aside className={classes.menu}>

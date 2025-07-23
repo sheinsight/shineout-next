@@ -5,6 +5,7 @@ import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { Spin, Alert, Empty, Message, Tooltip, Card, Divider } from 'shineout';
 import useStyles from './diff-content-style';
+import { diffReports } from './diff-imports';
 
 interface DiffContentProps {
   version: string;
@@ -19,41 +20,26 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
 
   useEffect(() => {
     if (!version || !component) {
-      setContent('请从左侧菜单选择版本和组件查看 Diff 报告');
+      setContent('');
+      setError('');
       return;
     }
 
-    const loadDiffContent = async () => {
-      setLoading(true);
-      setError('');
-      
-      try {
-        const response = await fetch(`/api/diff-content/${component}/${version}`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch diff content: ${response.statusText}`);
-        }
-        
-        const data = await response.json();
-        
-        if (data.error) {
-          throw new Error(data.error);
-        }
-        
-        if (data.content) {
-          setContent(data.content);
-        } else {
-          throw new Error('Diff report not found');
-        }
-      } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : 'Unknown error';
-        setError(`无法加载 ${component} 组件 ${version} 版本的 Diff 报告: ${errorMessage}`);
-        setContent('');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadDiffContent();
+    setLoading(true);
+    setError('');
+    
+    // Get content from imported data
+    const key = `${component}/${version}`;
+    const reportContent = diffReports[key];
+    
+    if (reportContent) {
+      setContent(reportContent);
+    } else {
+      setError(`无法加载 ${component} 组件 ${version} 版本的 Diff 报告`);
+      setContent('');
+    }
+    
+    setLoading(false);
   }, [version, component]);
 
   if (loading) {
