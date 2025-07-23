@@ -118,6 +118,16 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
           if (version === '3.0.5') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/drawer/__diff__/3.0.5/index.md').default;
           }
+        } else if (component === 'dropdown') {
+          if (version === '3.6.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.6.0/index.md').default;
+          } else if (version === '3.4.0') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.4.0/index.md').default;
+          } else if (version === '3.3.3') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.3.3/index.md').default;
+          } else if (version === '3.3.2') {
+            markdown = require('!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.3.2/index.md').default;
+          }
         } else if (component === 'input') {
           if (version === '3.5.7') {
             markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.7/index.md').default;
