@@ -28,11 +28,11 @@ import checkbox_3_5_8 from '!!raw-loader!../../../packages/shineout/src/checkbox
 import checkbox_3_6_0 from '!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0/index.md';
 import checkbox_3_6_0_beta_1 from '!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0-beta.1/index.md';
 import collapse_3_6_0 from '!!raw-loader!../../../packages/shineout/src/collapse/__diff__/3.6.0/index.md';
-import date-picker_3_4_0 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.4.0/index.md';
-import date-picker_3_6_0 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.0/index.md';
-import date-picker_3_6_7_beta_6 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.7-beta.6/index.md';
-import date-picker_3_7_4_beta_6 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.4-beta.6/index.md';
-import date-picker_3_7_5_beta_5 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.5-beta.5/index.md';
+import date_picker_3_4_0 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.4.0/index.md';
+import date_picker_3_6_0 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.0/index.md';
+import date_picker_3_6_7_beta_6 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.7-beta.6/index.md';
+import date_picker_3_7_4_beta_6 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.4-beta.6/index.md';
+import date_picker_3_7_5_beta_5 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.5-beta.5/index.md';
 import drawer_3_0_5 from '!!raw-loader!../../../packages/shineout/src/drawer/__diff__/3.0.5/index.md';
 import dropdown_3_3_2 from '!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.3.2/index.md';
 import dropdown_3_3_3 from '!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.3.3/index.md';
@@ -73,11 +73,11 @@ export const diffReports: Record<string, string> = {
   'checkbox/3.6.0': checkbox_3_6_0,
   'checkbox/3.6.0-beta.1': checkbox_3_6_0_beta_1,
   'collapse/3.6.0': collapse_3_6_0,
-  'date-picker/3.4.0': date-picker_3_4_0,
-  'date-picker/3.6.0': date-picker_3_6_0,
-  'date-picker/3.6.7-beta.6': date-picker_3_6_7_beta_6,
-  'date-picker/3.7.4-beta.6': date-picker_3_7_4_beta_6,
-  'date-picker/3.7.5-beta.5': date-picker_3_7_5_beta_5,
+  'date-picker/3.4.0': date_picker_3_4_0,
+  'date-picker/3.6.0': date_picker_3_6_0,
+  'date-picker/3.6.7-beta.6': date_picker_3_6_7_beta_6,
+  'date-picker/3.7.4-beta.6': date_picker_3_7_4_beta_6,
+  'date-picker/3.7.5-beta.5': date_picker_3_7_5_beta_5,
   'drawer/3.0.5': drawer_3_0_5,
   'dropdown/3.3.2': dropdown_3_3_2,
   'dropdown/3.3.3': dropdown_3_3_3,

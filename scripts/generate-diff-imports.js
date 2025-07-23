@@ -25,7 +25,10 @@ function scanDiffReports() {
         
         // 检查是否存在 index.md 文件
         if (fs.existsSync(indexPath) && fs.statSync(indexPath).isFile()) {
-          const key = `${component}_${version.replace(/\./g, '_').replace(/-/g, '_')}`;
+          // 将组件名和版本中的短横线替换为下划线
+          const safeComponent = component.replace(/-/g, '_');
+          const safeVersion = version.replace(/\./g, '_').replace(/-/g, '_');
+          const key = `${safeComponent}_${safeVersion}`;
           imports.push(`import ${key} from '!!raw-loader!../../../packages/shineout/src/${component}/__diff__/${version}/index.md';`);
           exports.push(`  '${component}/${version}': ${key}`);
         }
