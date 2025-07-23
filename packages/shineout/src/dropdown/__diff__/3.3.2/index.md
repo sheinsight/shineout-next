@@ -106,10 +106,10 @@ content: {
 - 箭头图标的左边距通过相邻兄弟选择器 `content + caret` 实现，只在有 content 时生效
 - DOM 结构：无 placeholder 时只有 caret 元素，有 placeholder 时包含 content 和 caret
 
-### 对组件上下文及运作逻辑的影响
-1. **DOM 结构优化**：减少了不必要的 DOM 节点，提升了渲染性能
-2. **样式计算优化**：通过 CSS 相邻选择器实现条件样式，避免了 JavaScript 逻辑判断
-3. **视觉对齐改进**：箭头图标在没有 placeholder 时能够正确居中
+## 逻辑影响范围
+- DOM 结构优化：不传 placeholder 时不渲染 content 元素
+- 样式计算优化：通过 CSS 相邻选择器实现条件样式
+- 修复了箭头图标在没有 placeholder 时的居中问题
 
 ## 风险使用场景
 

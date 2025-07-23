@@ -82,10 +82,10 @@ content: {
 - 占位符容器的直接子 SVG 元素应用了 `display: block` 和 `margin: 0 auto` 样式，实现水平居中
 - 该属性为可选属性，不传递时保持原有行为
 
-### 对组件上下文及运作逻辑的影响
-1. **属性传递机制**：在 dropdownIn 组件中新增了 buttonShape 的解构和传递，建立了从 Dropdown 到内部 Button 组件的属性映射关系
-2. **样式层级影响**：新增的 SVG 居中样式仅作用于 `.content` 类下的直接子 SVG 元素，不会影响嵌套更深的 SVG 元素
-3. **组件复用性**：通过复用 Button 组件的 shape 属性逻辑，保持了组件库的一致性
+## 逻辑影响范围
+- 新增 `buttonShape` 属性传递链路，从 Dropdown 组件传递到内部 Button 组件
+- SVG 居中样式仅作用于 `.content` 类下的直接子 SVG 元素
+- 复用 Button 组件的 shape 逻辑，保持组件库 API 一致性
 
 ## 风险使用场景
 

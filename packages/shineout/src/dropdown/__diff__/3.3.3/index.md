@@ -43,10 +43,10 @@ return React.cloneElement(
 - 创建新的 onClick 处理函数，依次执行 content 的 onClick 和 Item 的 onClick
 - 保证了 content 元素的自定义点击事件和下拉菜单的关闭行为都能正常执行
 
-### 对组件上下文及运作逻辑的影响
-1. **事件处理顺序**：先执行 content 元素的 onClick，再执行 Item 组件的 onClick
-2. **事件冒泡**：两个 onClick 处理函数接收同一个事件对象，如果 content 的 onClick 调用了 `e.stopPropagation()`，Item 的 onClick 仍会执行
-3. **向后兼容**：对于没有在 content 中设置 onClick 的情况，行为保持不变
+## 逻辑影响范围
+- 修复了 content 元素带 onClick 时的事件处理逻辑
+- 事件执行顺序：先执行 content 的 onClick，再执行 Item 的 onClick
+- 不影响没有在 content 中设置 onClick 的场景
 
 ## 风险使用场景
 
