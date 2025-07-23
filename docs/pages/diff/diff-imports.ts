@@ -38,6 +38,11 @@ import dropdown_3_3_2 from '!!raw-loader!../../../packages/shineout/src/dropdown
 import dropdown_3_3_3 from '!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.3.3/index.md';
 import dropdown_3_4_0 from '!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.4.0/index.md';
 import dropdown_3_6_0 from '!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.6.0/index.md';
+import gap_3_1_30 from '!!raw-loader!../../../packages/shineout/src/gap/__diff__/3.1.30/index.md';
+import grid_3_1_22 from '!!raw-loader!../../../packages/shineout/src/grid/__diff__/3.1.22/index.md';
+import grid_3_7_0_beta_40 from '!!raw-loader!../../../packages/shineout/src/grid/__diff__/3.7.0-beta.40/index.md';
+import image_3_5_4 from '!!raw-loader!../../../packages/shineout/src/image/__diff__/3.5.4/index.md';
+import image_3_6_0 from '!!raw-loader!../../../packages/shineout/src/image/__diff__/3.6.0/index.md';
 import input_3_5_7 from '!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.7/index.md';
 import input_3_5_8 from '!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.8/index.md';
 import input_3_6_0 from '!!raw-loader!../../../packages/shineout/src/input/__diff__/3.6.0/index.md';
@@ -83,6 +88,11 @@ export const diffReports: Record<string, string> = {
   'dropdown/3.3.3': dropdown_3_3_3,
   'dropdown/3.4.0': dropdown_3_4_0,
   'dropdown/3.6.0': dropdown_3_6_0,
+  'gap/3.1.30': gap_3_1_30,
+  'grid/3.1.22': grid_3_1_22,
+  'grid/3.7.0-beta.40': grid_3_7_0_beta_40,
+  'image/3.5.4': image_3_5_4,
+  'image/3.6.0': image_3_6_0,
   'input/3.5.7': input_3_5_7,
   'input/3.5.8': input_3_5_8,
   'input/3.6.0': input_3_6_0,
@@ -129,6 +139,11 @@ export const diffReportsList = [
   { component: 'dropdown', version: '3.3.3' },
   { component: 'dropdown', version: '3.4.0' },
   { component: 'dropdown', version: '3.6.0' },
+  { component: 'gap', version: '3.1.30' },
+  { component: 'grid', version: '3.1.22' },
+  { component: 'grid', version: '3.7.0-beta.40' },
+  { component: 'image', version: '3.5.4' },
+  { component: 'image', version: '3.6.0' },
   { component: 'input', version: '3.5.7' },
   { component: 'input', version: '3.5.8' },
   { component: 'input', version: '3.6.0' },
