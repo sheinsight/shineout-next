@@ -48,6 +48,23 @@ import input_3_6_0 from '!!raw-loader!../../../packages/shineout/src/input/__dif
 import input_3_6_0_beta_22 from '!!raw-loader!../../../packages/shineout/src/input/__diff__/3.6.0-beta.22/index.md';
 import input_3_7_3_beta_1 from '!!raw-loader!../../../packages/shineout/src/input/__diff__/3.7.3-beta.1/index.md';
 import input_3_7_3_beta_4 from '!!raw-loader!../../../packages/shineout/src/input/__diff__/3.7.3-beta.4/index.md';
+import list_3_1_0 from '!!raw-loader!../../../packages/shineout/src/list/__diff__/3.1.0/index.md';
+import list_3_4_4 from '!!raw-loader!../../../packages/shineout/src/list/__diff__/3.4.4/index.md';
+import list_3_5_8 from '!!raw-loader!../../../packages/shineout/src/list/__diff__/3.5.8/index.md';
+import list_3_7_0_beta_35 from '!!raw-loader!../../../packages/shineout/src/list/__diff__/3.7.0-beta.35/index.md';
+import menu_3_2_0 from '!!raw-loader!../../../packages/shineout/src/menu/__diff__/3.2.0/index.md';
+import menu_3_2_1 from '!!raw-loader!../../../packages/shineout/src/menu/__diff__/3.2.1/index.md';
+import menu_3_2_2 from '!!raw-loader!../../../packages/shineout/src/menu/__diff__/3.2.2/index.md';
+import menu_3_3_0 from '!!raw-loader!../../../packages/shineout/src/menu/__diff__/3.3.0/index.md';
+import menu_3_3_3 from '!!raw-loader!../../../packages/shineout/src/menu/__diff__/3.3.3/index.md';
+import menu_3_4_0 from '!!raw-loader!../../../packages/shineout/src/menu/__diff__/3.4.0/index.md';
+import message_3_1_28 from '!!raw-loader!../../../packages/shineout/src/message/__diff__/3.1.28/index.md';
+import message_3_4_3 from '!!raw-loader!../../../packages/shineout/src/message/__diff__/3.4.3/index.md';
+import pagination_3_2_3 from '!!raw-loader!../../../packages/shineout/src/pagination/__diff__/3.2.3/index.md';
+import pagination_3_4_4 from '!!raw-loader!../../../packages/shineout/src/pagination/__diff__/3.4.4/index.md';
+import pagination_3_6_1_beta_2 from '!!raw-loader!../../../packages/shineout/src/pagination/__diff__/3.6.1-beta.2/index.md';
+import pagination_3_7_4_beta_3 from '!!raw-loader!../../../packages/shineout/src/pagination/__diff__/3.7.4-beta.3/index.md';
+import pagination_3_7_5_beta_7 from '!!raw-loader!../../../packages/shineout/src/pagination/__diff__/3.7.5-beta.7/index.md';
 
 export const diffReports: Record<string, string> = {
   'alert/3.1.31': alert_3_1_31,
@@ -96,7 +113,24 @@ export const diffReports: Record<string, string> = {
   'input/3.6.0': input_3_6_0,
   'input/3.6.0-beta.22': input_3_6_0_beta_22,
   'input/3.7.3-beta.1': input_3_7_3_beta_1,
-  'input/3.7.3-beta.4': input_3_7_3_beta_4
+  'input/3.7.3-beta.4': input_3_7_3_beta_4,
+  'list/3.1.0': list_3_1_0,
+  'list/3.4.4': list_3_4_4,
+  'list/3.5.8': list_3_5_8,
+  'list/3.7.0-beta.35': list_3_7_0_beta_35,
+  'menu/3.2.0': menu_3_2_0,
+  'menu/3.2.1': menu_3_2_1,
+  'menu/3.2.2': menu_3_2_2,
+  'menu/3.3.0': menu_3_3_0,
+  'menu/3.3.3': menu_3_3_3,
+  'menu/3.4.0': menu_3_4_0,
+  'message/3.1.28': message_3_1_28,
+  'message/3.4.3': message_3_4_3,
+  'pagination/3.2.3': pagination_3_2_3,
+  'pagination/3.4.4': pagination_3_4_4,
+  'pagination/3.6.1-beta.2': pagination_3_6_1_beta_2,
+  'pagination/3.7.4-beta.3': pagination_3_7_4_beta_3,
+  'pagination/3.7.5-beta.7': pagination_3_7_5_beta_7
 };
 
 export const diffReportsList = [
@@ -146,5 +180,22 @@ export const diffReportsList = [
   { component: 'input', version: '3.6.0' },
   { component: 'input', version: '3.6.0-beta.22' },
   { component: 'input', version: '3.7.3-beta.1' },
-  { component: 'input', version: '3.7.3-beta.4' }
+  { component: 'input', version: '3.7.3-beta.4' },
+  { component: 'list', version: '3.1.0' },
+  { component: 'list', version: '3.4.4' },
+  { component: 'list', version: '3.5.8' },
+  { component: 'list', version: '3.7.0-beta.35' },
+  { component: 'menu', version: '3.2.0' },
+  { component: 'menu', version: '3.2.1' },
+  { component: 'menu', version: '3.2.2' },
+  { component: 'menu', version: '3.3.0' },
+  { component: 'menu', version: '3.3.3' },
+  { component: 'menu', version: '3.4.0' },
+  { component: 'message', version: '3.1.28' },
+  { component: 'message', version: '3.4.3' },
+  { component: 'pagination', version: '3.2.3' },
+  { component: 'pagination', version: '3.4.4' },
+  { component: 'pagination', version: '3.6.1-beta.2' },
+  { component: 'pagination', version: '3.7.4-beta.3' },
+  { component: 'pagination', version: '3.7.5-beta.7' }
 ];
