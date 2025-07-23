@@ -26,7 +26,6 @@ import checkbox_3_4_3 from '!!raw-loader!../../../packages/shineout/src/checkbox
 import checkbox_3_5_6 from '!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.5.6/index.md';
 import checkbox_3_5_8 from '!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.5.8/index.md';
 import checkbox_3_6_0 from '!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0/index.md';
-import checkbox_3_6_0_beta_1 from '!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0-beta.1/index.md';
 import collapse_3_6_0 from '!!raw-loader!../../../packages/shineout/src/collapse/__diff__/3.6.0/index.md';
 import date_picker_3_4_0 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.4.0/index.md';
 import date_picker_3_6_0 from '!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.0/index.md';
@@ -76,7 +75,6 @@ export const diffReports: Record<string, string> = {
   'checkbox/3.5.6': checkbox_3_5_6,
   'checkbox/3.5.8': checkbox_3_5_8,
   'checkbox/3.6.0': checkbox_3_6_0,
-  'checkbox/3.6.0-beta.1': checkbox_3_6_0_beta_1,
   'collapse/3.6.0': collapse_3_6_0,
   'date-picker/3.4.0': date_picker_3_4_0,
   'date-picker/3.6.0': date_picker_3_6_0,
@@ -127,7 +125,6 @@ export const diffReportsList = [
   { component: 'checkbox', version: '3.5.6' },
   { component: 'checkbox', version: '3.5.8' },
   { component: 'checkbox', version: '3.6.0' },
-  { component: 'checkbox', version: '3.6.0-beta.1' },
   { component: 'collapse', version: '3.6.0' },
   { component: 'date-picker', version: '3.4.0' },
   { component: 'date-picker', version: '3.6.0' },
