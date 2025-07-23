@@ -58,50 +58,55 @@
    - 成功时：清除 loading 并关闭弹窗
    - 失败时：仅清除 loading，保持弹窗打开
 
-## 风险使用场景
+## 逻辑影响范围
 
-### 代码执行风险
-1. **无风险**：这是一个纯粹的 bug 修复，不会引入新的风险
-2. **向后兼容**：完全兼容现有代码，只是修复了异常情况
+- 完善了 Promise 错误处理机制，确保 loading 状态的生命周期完整
+- 失败时仅清除 loading 状态，保持弹窗打开，支持用户重试
+- 提升了异步操作场景下的用户体验
 
-### 交互体验差异
+## 升级注意事项
 
-1. **修复的问题**：
-   - 异步操作失败时按钮不再卡在 loading 状态
-   - 用户可以在失败后重试操作
-   - 提升了错误场景下的用户体验
+### 代码兼容性
+- **无破坏性变更**：纯 bug 修复，完全向后兼容
 
-2. **行为变化**：
-   - Promise reject 时弹窗不会自动关闭（这是合理的，因为操作失败了）
-   - 用户需要手动处理失败情况（重试或取消）
+### 行为变化说明
 
-### 需要注意的场景
+1. **Promise reject 处理**：
+   - 影响场景：`onOk` 或 `onCancel` 返回 Promise 并 reject 的情况
+   - 具体表现：按钮 loading 状态正确清除，弹窗保持打开
+   - 受影响代码示例：
+   ```tsx
+   // 之前：Promise reject 后按钮卡在 loading 状态
+   // 现在：loading 清除，用户可以重试
+   <Popover.Confirm
+     onOk={() => {
+       return api.deleteItem()
+         .catch(error => {
+           message.error('删除失败：' + error.message);
+           return Promise.reject(error); // 保持弹窗打开
+         });
+     }}
+     text="确定要删除吗？"
+   >
+     <Button>删除</Button>
+   </Popover.Confirm>
+   ```
+   - 是否需要调整：不需要，体验优化
 
-1. **异步验证场景**：
-   - 表单提交前的服务端验证
-   - 需要网络请求的确认操作
-   - 依赖外部服务的操作
-
-2. **错误处理策略**：
-   - 开发者可以在 Promise reject 时提供错误提示
-   - 可以根据错误类型决定是否允许重试
-   - 需要考虑网络超时等异常情况
-
-3. **用户体验优化**：
-   - 可以配合错误提示使用
-   - 考虑添加重试次数限制
-   - 提供明确的错误反馈
-
-4. **典型使用案例**：
-   ```javascript
-   onOk: () => {
-     return api.deleteItem()
-       .then(() => {
-         message.success('删除成功');
-       })
-       .catch(error => {
-         message.error('删除失败：' + error.message);
-         return Promise.reject(error); // 保持弹窗打开
-       });
+2. **错误场景体验提升**：
+   - 影响场景：网络请求失败、服务端验证失败等
+   - 具体表现：用户可以在失败后选择重试或取消
+   - 受影响代码示例：
+   ```tsx
+   // 典型的异步验证场景
+   onOk: async () => {
+     try {
+       await api.validateAndSubmit(data);
+       message.success('提交成功');
+     } catch (error) {
+       message.error('验证失败，请重试');
+       throw error; // 保持弹窗打开，允许重试
+     }
    }
    ```
+   - 是否需要调整：不需要，提升了错误处理能力
