@@ -38,62 +38,48 @@
 ### 代码执行风险
 - 无破坏性变更，仅修复了 CSS 语法错误
 
-### 交互体验差异
+### 升级影响分析
 
-#### 升级前的缺陷表现
-当图片 URL 包含特殊字符且使用 `fit="fit"` 时，图片完全无法显示：
-```tsx
-// 缺陷：以下场景图片都无法加载
+1. **特殊 URL 图片显示修复**：
+   - 升级前：URL 包含特殊字符的图片完全无法显示（空白区域）
+   - 升级后：所有合法 URL 的图片都能正常显示
+   - 受影响场景：
+     ```tsx
+     // 以下代码在升级前图片不显示，升级后正常显示
+     
+     // URL 包含空格
+     <Image fit="fit" src="https://example.com/image (1).jpg" />
+     
+     // URL 包含中文
+     <Image fit="fit" src="https://example.com/产品图片.jpg" />
+     
+     // URL 包含括号、中括号等
+     <Image fit="fit" src="https://example.com/[2024]/image.jpg" />
+     ```
+   - 行为变化：从完全不显示变为正常显示图片
+   - 是否需要调整：不需要，纯粹的缺陷修复
 
-// URL 包含空格
-<Image fit="fit" src="https://example.com/image (1).jpg" />
-// CSS 生成：background-image: url(https://example.com/image (1).jpg)
-// 结果：CSS 解析错误，图片不显示
+2. **用户上传图片场景**：
+   - 升级前：用户上传的文件名包含特殊字符时，预览失败
+   - 升级后：支持各种文件名的图片预览
+   - 受影响场景：
+     - 文件上传组件的图片预览
+     - 用户头像显示（文件名可能包含用户名）
+     - 产品图片展示（可能包含型号、日期等特殊字符）
+   - 是否需要调整：不需要，提升了用户体验
 
-// URL 包含中文
-<Image fit="fit" src="https://example.com/图片.jpg" />
-// 结果：图片不显示
+3. **CDN 或第三方图片服务**：
+   - 升级前：某些 CDN 生成的 URL 包含查询参数或特殊字符时失效
+   - 升级后：兼容各种 CDN 的 URL 格式
+   - 受影响场景：
+     ```tsx
+     // 带查询参数的 CDN URL
+     <Image fit="fit" src="https://cdn.example.com/img?size=large&name=产品 (1).jpg" />
+     ```
+   - 是否需要调整：不需要
 
-// URL 包含特殊字符
-<Image fit="fit" src="https://example.com/[image].jpg" />
-// 结果：图片不显示
-```
-
-具体表现：
-- 图片区域完全空白
-- 浏览器控制台可能显示 CSS 解析警告
-- 仅占位符显示，实际图片无法加载
-
-#### 升级后的正确行为
-所有合法的图片 URL 都能正常加载：
-```tsx
-// 修复后：所有场景图片都能正常显示
-
-// URL 包含空格
-<Image fit="fit" src="https://example.com/image (1).jpg" />
-// CSS 生成：background-image: url("https://example.com/image (1).jpg")
-// 结果：图片正常显示
-
-// URL 包含中文
-<Image fit="fit" src="https://example.com/图片.jpg" />
-// 结果：图片正常显示
-
-// URL 包含特殊字符
-<Image fit="fit" src="https://example.com/[image].jpg" />
-// 结果：图片正常显示
-```
-
-#### 使用层面的差异
-1. **图片显示恢复正常**：
-   - 升级前：特殊 URL 的图片无法显示，用户看到空白区域
-   - 升级后：所有合法 URL 的图片都能正常加载和显示
-   
-2. **受影响的具体场景**：
-   - 仅影响使用 `fit="fit"` 属性的 Image 组件
-   - 且图片 URL 包含空格、括号、中括号、中文等特殊字符
-   - 其他 fit 模式不受影响（因为使用 img 标签而非背景图）
-
-3. **无需代码修改**：
-   - 这是一个纯粹的 bug 修复
-   - 用户无需修改任何代码
-   - 原本不显示的图片会自动恢复显示
+4. **仅影响 fit="fit" 模式**：
+   - 升级前后：其他 fit 模式（fill、center、stretch）不受影响
+   - 原因：只有 fit="fit" 使用背景图方式渲染
+   - 受影响场景：明确使用 `fit="fit"` 的图片组件
+   - 是否需要调整：不需要，其他模式本身就正常工作

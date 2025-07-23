@@ -99,21 +99,49 @@ if (fixedContainer) {
 ### 代码执行风险
 - 无破坏性变更，新增功能为可选属性
 
-### 交互体验差异
-1. **新增自定义能力**：
-   - 影响场景：需要自定义图片悬停效果的场景
-   - 具体表现：可以通过 `customRenderHoverMask` 完全控制悬停时的遮罩内容
-   - 使用示例：
+### 升级影响分析
+1. **新增自定义悬停遮罩功能**：
+   - 升级前：只能使用默认的悬停遮罩样式
+   - 升级后：支持通过 `renderHoverMask` 自定义遮罩内容
+   - 受影响场景：需要自定义图片悬停效果的业务
+   - 示例代码：
    ```tsx
+   // 升级后新增的能力
    <Image 
-     src="..." 
-     customRenderHoverMask={({ preview }) => (
-       <div onClick={preview}>自定义预览按钮</div>
+     src="product.jpg" 
+     href="product-large.jpg"
+     renderHoverMask={({ preview }) => (
+       <div className="custom-mask">
+         <button onClick={preview}>查看大图</button>
+         <button>收藏</button>
+       </div>
      )}
    />
    ```
+   - 是否需要调整：不需要，这是新增功能，不影响现有代码
 
-2. **lazy 加载改进**：
-   - 影响场景：在 absolute 定位容器中使用 lazy 加载的图片
-   - 具体表现：原本可能不触发的懒加载现在能正常工作
-   - 正面影响：提升了组件在复杂布局中的可用性
+2. **absolute 定位容器中的懒加载修复**：
+   - 升级前：在 absolute 定位容器中，图片懒加载可能失效（图片不会加载）
+   - 升级后：懒加载在 absolute 定位容器中正常工作
+   - 受影响场景：
+     ```tsx
+     // 这类场景的懒加载会从失效变为正常
+     <div style={{ position: 'absolute' }}>
+       <Image src="large-image.jpg" lazy />
+     </div>
+     ```
+   - 行为变化：原本不加载的图片现在会正常懒加载
+   - 是否需要调整：不需要，这是缺陷修复
+
+3. **属性名称注意**：
+   - 升级前：无此属性
+   - 升级后：新增 `renderHoverMask` 属性
+   - 受影响场景：无（纯新增）
+   - 注意事项：文档中显示为 `customRenderHoverMask`，但实际使用应为 `renderHoverMask`
+   - 是否需要调整：使用时注意正确的属性名
+
+4. **懒加载性能提升**：
+   - 升级前：只监听 fixed 定位容器
+   - 升级后：同时监听 fixed 和 absolute 定位容器
+   - 受影响场景：复杂布局（弹窗、下拉菜单等）中的图片
+   - 是否需要调整：不需要，性能和兼容性提升

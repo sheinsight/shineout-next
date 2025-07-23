@@ -41,56 +41,37 @@ const itemStyle = supportFlexGap
 ### 代码执行风险
 - 无破坏性变更，仅修复了属性传递的缺陷
 
-### 交互体验差异
+### 升级影响分析
 
-#### 升级前的缺陷表现
-在支持 flex gap 的现代浏览器中，`itemStyle` 属性完全不生效：
-```tsx
-// 缺陷：在 Chrome、Firefox 等现代浏览器中
-// background、padding、border 等所有样式都不会应用
-<Gap 
-  gap={16}
-  itemStyle={{ 
-    background: '#f0f0f0', 
-    padding: '10px',
-    border: '1px solid #ddd'
-  }}
->
-  <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-</Gap>
-```
+1. **itemStyle 样式生效变化**：
+   - 升级前：在支持 flex gap 的现代浏览器（Chrome、Firefox、Safari等）中，`itemStyle` 完全不生效，样式被忽略
+   - 升级后：`itemStyle` 在所有浏览器中都正确生效，子元素会应用设置的样式
+   - 受影响场景：
+     ```tsx
+     // 现有代码
+     <Gap 
+       gap={16}
+       itemStyle={{ 
+         background: '#f0f0f0', 
+         padding: '10px',
+         border: '1px solid #ddd'
+       }}
+     >
+       <div>Item 1</div>
+       <div>Item 2</div>
+     </Gap>
+     ```
+   - 行为变化：子元素从无样式变为有灰色背景、内边距和边框
+   - 是否需要调整：需要检查视觉效果是否符合预期，可能需要移除或调整 `itemStyle`
 
-#### 升级后的正确行为
-`itemStyle` 在所有浏览器中都正确生效：
-```tsx
-// 修复后：所有浏览器中样式都正确应用
-// 每个子元素都有灰色背景、10px内边距和边框
-<Gap 
-  gap={16}
-  itemStyle={{ 
-    background: '#f0f0f0', 
-    padding: '10px',
-    border: '1px solid #ddd'
-  }}
->
-  <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-</Gap>
-```
+2. **浏览器兼容性差异**：
+   - 升级前：旧浏览器（不支持 flex gap）显示样式，新浏览器不显示样式
+   - 升级后：所有浏览器表现一致，都会显示样式
+   - 受影响场景：跨浏览器测试时发现的样式不一致问题
+   - 是否需要调整：不需要，这是正向修复
 
-#### 使用层面的差异
-1. **视觉突变风险**：
-   - 升级前：绝大多数用户（使用现代浏览器）看不到 `itemStyle` 效果
-   - 升级后：原本"无效"的样式突然生效，可能导致界面外观发生明显变化
-   
-2. **需要检查的场景**：
-   - 如果项目中存在设置了 `itemStyle` 的 Gap 组件
-   - 升级后这些样式会突然生效，需要确认视觉效果是否符合预期
-   - 特别注意那些可能因为 bug 而"遗留"在代码中的 `itemStyle` 设置
-
-3. **浏览器差异消除**：
-   - 升级前：不同浏览器表现不一致（旧浏览器有样式，新浏览器无样式）
-   - 升级后：所有浏览器表现一致，消除了跨浏览器的兼容性问题
+3. **遗留代码影响**：
+   - 升级前：开发者可能因为样式不生效而放弃使用，但代码未清理
+   - 升级后：这些"遗留"的 `itemStyle` 会突然生效
+   - 受影响场景：项目中存在但未生效的 `itemStyle` 配置
+   - 是否需要调整：需要全局搜索并检查所有使用 `itemStyle` 的 Gap 组件
