@@ -2,7 +2,7 @@
 
 ## 问题描述
 
-修复 `Grid` 在多个 shineout 版本的同时使用时出现的样式覆盖问题。将 Grid 组件从动态插入样式改为使用 JSS 样式系统，彻底解决多版本共存的样式冲突。
+修复 `Grid` 在多个 shineout 版本同时使用时出现的样式覆盖缺陷。这是一个严重的 bug：当页面中同时存在多个版本的 shineout（如微前端场景），后加载的版本会覆盖先加载版本的 Grid 样式，导致布局错乱。通过将 Grid 组件从动态插入全局样式改为使用 JSS 样式系统，彻底解决了此缺陷。
 
 ## 代码变更文件
 
@@ -81,8 +81,8 @@ const createStyle = () => {
 +  const styleTag = document.createElement('style');
 -  styleTag.id = id;
 +  styleTag.setAttribute('data-id', id);
-   styleTag.innerHTML = styles;
-   document.head.appendChild(styleTag);
+  styleTag.innerHTML = styles;
+  document.head.appendChild(styleTag);
 };
 ```
 
@@ -116,34 +116,78 @@ const createStyle = () => {
 ## 变更前后逻辑差异
 
 ### 变更前
-- 使用动态插入 `<style>` 标签的方式添加样式
-- 通过生成随机类名避免样式冲突
-- 在组件初始化时执行 `init()` 函数插入全局样式
-- 多版本共存时可能出现样式覆盖问题
+- 使用动态插入 `<style>` 标签的方式添加全局样式
+- 通过 `document.getElementById(id)` 检查样式是否已存在
+- 使用固定的 id 导致多版本冲突时样式被覆盖
+- 所有 Grid 组件共享同一个全局样式
 
 ### 变更后
-- 采用 JSS 样式系统，样式与组件绑定
-- 移除了全局样式插入逻辑
-- 通过 `jssStyle` 属性传递样式对象
+- 采用 JSS 样式系统，样式与组件实例绑定
+- 移除了全局样式插入和检查逻辑
 - 每个 Grid 实例都有独立的样式作用域
+- 通过 `jssStyle` 属性传递样式对象
 
 ## 逻辑影响范围
-- 彻底解决了多版本 shineout 共存时的样式冲突
-- 提升了样式隔离性，适配微前端场景
-- 保持了组件的功能和 API 不变
+- 彻底解决了多版本 shineout 共存时的样式冲突问题
+- 提升了样式隔离性，完美适配微前端场景
+- 保持了组件的功能和 API 不变，向后兼容
 
 ## 风险使用场景
 
 ### 代码执行风险
-- 无破坏性变更，API 保持兼容
+- 无破坏性变更，API 保持完全兼容
 
 ### 交互体验差异
-1. **样式加载时机**：
-   - 影响场景：样式从全局预加载改为按需加载
-   - 具体表现：首次渲染 Grid 组件时才会注入样式
-   - 性能影响：减少了初始加载的样式体积
 
-2. **样式作用域**：
-   - 影响场景：依赖全局 Grid 样式的自定义样式
-   - 具体表现：原本的全局类名不再生效
-   - 迁移建议：使用组件提供的 className 属性添加自定义样式
+#### 升级前的缺陷表现
+在微前端或多版本共存场景下，Grid 样式会被覆盖：
+```tsx
+// 场景：页面中同时存在 shineout 3.6.0 和 3.7.0
+// 缺陷：后加载的版本会覆盖先加载版本的样式
+
+// App1 使用 shineout 3.6.0
+<Grid gutter={16}>
+  <Grid.Item span={12}>内容1</Grid.Item>
+  <Grid.Item span={12}>内容2</Grid.Item>
+</Grid>
+
+// App2 使用 shineout 3.7.0（后加载）
+// 加载后，App1 的 Grid 样式被覆盖，布局错乱
+<Grid gutter={24}>
+  <Grid.Item span={8}>内容A</Grid.Item>
+  <Grid.Item span={8}>内容B</Grid.Item>
+</Grid>
+```
+
+#### 升级后的正确行为
+每个版本的 Grid 组件样式相互独立：
+```tsx
+// 修复后：两个版本的 Grid 样式互不影响
+
+// App1 使用 shineout 3.6.0
+<Grid gutter={16}>  // 正常显示，16px 间距
+  <Grid.Item span={12}>内容1</Grid.Item>
+  <Grid.Item span={12}>内容2</Grid.Item>
+</Grid>
+
+// App2 使用 shineout 3.7.0
+<Grid gutter={24}>  // 正常显示，24px 间距
+  <Grid.Item span={8}>内容A</Grid.Item>
+  <Grid.Item span={8}>内容B</Grid.Item>
+</Grid>
+```
+
+#### 使用层面的差异
+1. **样式隔离性提升**：
+   - 升级前：全局样式容易被覆盖，导致布局异常
+   - 升级后：每个组件实例样式独立，不会相互影响
+   
+2. **样式加载时机变化**：
+   - 升级前：组件初始化时就插入全局样式
+   - 升级后：首次渲染组件时才注入样式（按需加载）
+   - 影响：首屏样式体积减少，但首次渲染可能有极轻微的延迟
+
+3. **自定义样式注意事项**：
+   - 如果项目中通过全局 CSS 选择器覆盖 Grid 样式
+   - 需要改为使用组件的 `className` 属性来添加自定义样式
+   - 原因：全局类名发生了变化
