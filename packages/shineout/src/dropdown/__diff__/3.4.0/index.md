@@ -13,32 +13,44 @@
 ## 变更代码行
 
 ### 1. packages/base/src/dropdown/dropdown.type.ts
-```typescript
+```diff
 // 第213-218行：新增属性定义
-/**
- * @en The z-index value of the panel, the default value is 1051
- * @cn 面板的 zIndex 值，默认为 1051
- * @version 3.4.0
- */
-zIndex?: number;
++/**
++ * @en The z-index value of the panel, the default value is 1051
++ * @cn 面板的 zIndex 值，默认为 1051
++ * @version 3.4.0
++ */
++zIndex?: number;
 ```
 
 ### 2. packages/base/src/dropdown/dropdownIn.tsx
-```typescript
+```diff
 // 第31行：解构新增属性
-zIndex,
+const {
+  // ... 其他属性
++ zIndex,
+} = props;
 
 // 第215行：传递属性到 Absolute 组件
-zIndex={zIndex}
+<Absolute
+  // ... 其他属性
++ zIndex={zIndex}
+  // ...
+/>
 
 // 第84-89行：代码格式化调整（三元运算符）
-const child = placeholder
-  ? [
-      <span key='text' className={dropdownClasses?.content}>
-        {placeholder}
-      </span>,
-    ]
-  : [];
+-const child = placeholder ? [
+-  <span key='text' className={dropdownClasses?.content}>
+-    {placeholder}
+-  </span>,
+-] : [];
++const child = placeholder
++  ? [
++      <span key='text' className={dropdownClasses?.content}>
++        {placeholder}
++      </span>,
++    ]
++  : [];
 ```
 
 ## 变更前后逻辑差异

@@ -12,16 +12,23 @@
 ## 变更代码行
 
 ### 1. packages/base/src/dropdown/Item.tsx
-```typescript
+```diff
 // 第70行：解构 content.props 时新增提取 onClick
-const { className: contentPropsClassName = '', onClick: contentPropsOnClick, ...otherContentProps } =
+-const { className: contentPropsClassName = '', ...otherContentProps } =
++const { className: contentPropsClassName = '', onClick: contentPropsOnClick, ...otherContentProps } =
   content.props as Props;
 
 // 第79-82行：新增 onClick 合并逻辑
-onClick: (e: React.MouseEvent) => {
-  if (contentPropsOnClick) contentPropsOnClick(e);
-  if (props.onClick) props.onClick(e);
-}
+return React.cloneElement(
+  content,
+  Object.assign(otherProps, otherContentProps, {
+    className,
++   onClick: (e: React.MouseEvent) => {
++     if (contentPropsOnClick) contentPropsOnClick(e);
++     if (props.onClick) props.onClick(e);
++   }
+  }),
+);
 ```
 
 ## 变更前后逻辑差异

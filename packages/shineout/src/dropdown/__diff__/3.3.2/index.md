@@ -13,28 +13,86 @@
 ## 变更代码行
 
 ### 1. packages/base/src/dropdown/dropdownIn.tsx
-```typescript
+```diff
 // 第83-87行：条件渲染 content
-const child = placeholder ? [
-  <span key='text' className={dropdownClasses?.content}>
-    {placeholder}
-  </span>,
-] : [];
+-const child = [
+-  <span key='text' className={dropdownClasses?.content}>
+-    {placeholder}
+-  </span>,
+-];
++const child = placeholder ? [
++  <span key='text' className={dropdownClasses?.content}>
++    {placeholder}
++  </span>,
++] : [];
 ```
 
 ### 2. packages/shineout-style/src/dropdown/dropdown.ts
-```css
-// 第92行：注释掉 caret 的默认 marginLeft
-// marginLeft: token.dropdownCaretMarginLeft,
+```diff
+caret: {
+  // ... 其他样式
+- marginLeft: token.dropdownCaretMarginLeft,
++ // marginLeft: token.dropdownCaretMarginLeft,
+},
 
-// 第120-122行：新增相邻选择器样式
-'& + $caret': {
-  marginLeft: token.dropdownCaretMarginLeft,
-}
+content: {
+  flex: '1',
+  minWidth: '0',
++ '& + $caret': {
++   marginLeft: token.dropdownCaretMarginLeft,
++ },
+},
 ```
 
 ### 3. packages/shineout/src/dropdown/__example__/t-002-no-placeholder.tsx
-新增测试示例文件，展示不传 placeholder 的使用场景
+```diff
++/**
++ * cn - no-placeholder
++ *    -- no-placeholder
++ * en - no-placeholder
++ *   -- no-placeholder
++ */
++import React from 'react';
++import { Dropdown, TYPE } from 'shineout';
++
++type DropdownItem = TYPE.Dropdown.Item;
++const data: DropdownItem[] = [
++  {
++    content: 'Submenu',
++    children: [
++      {
++        content: 'Link to Google',
++        target: '_blank',
++        url: 'https://google.com',
++      },
++      {
++        content: 'Disabled',
++        disabled: true,
++      },
++    ],
++  },
++  <a key={'link'} href='/'>
++    Home
++  </a>,
++  {
++    content: 'Message',
++    onClick: () => {
++      console.info('Some message.');
++    },
++  },
++];
++
++const App: React.FC = () => {
++  return (
++    <>
++      <Dropdown data={data} onClick={console.log} />
++      <Dropdown data={data} disabled />
++    </>
++  );
++};
++
++export default App;
+```
 
 ## 变更前后逻辑差异
 

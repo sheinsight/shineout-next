@@ -15,47 +15,59 @@
 ## 变更代码行
 
 ### 1. packages/base/src/dropdown/dropdown.type.ts
-```typescript
+```diff
 // 第5行：新增导入
-import { ButtonShape } from '@sheinx/hooks';
++import { ButtonShape } from '@sheinx/hooks';
 
 // 第172-177行：新增属性定义
-/**
- * @en The shape of placeholder button
- * @cn 占位按钮的shape
- * @version 3.6.0
- */
-buttonShape?: ButtonShape
++/**
++ * @en The shape of placeholder button
++ * @cn 占位按钮的shape
++ * @version 3.6.0
++ */
++buttonShape?: ButtonShape
 ```
 
 ### 2. packages/base/src/dropdown/dropdownIn.tsx
-```typescript
+```diff
 // 第32行：解构新增属性
-buttonShape,
+const {
+  // ... 其他属性
++ buttonShape,
+} = props;
 
 // 第132行：传递属性到 Button 组件
-shape={buttonShape}
+<Button
+  // ... 其他属性
++ shape={buttonShape}
+  // ...
+/>
 ```
 
 ### 3. packages/shineout-style/src/dropdown/dropdown.ts
-```css
-// 第124-127行：新增样式
-'& > svg': {
-  display: 'block',
-  margin: '0 auto'
-}
+```diff
+content: {
+  flex: '1',
+  minWidth: '0',
++ '& > svg': {
++   display: 'block',
++   margin: '0 auto'
++ }
+},
 ```
 
 ### 4. packages/shineout/src/dropdown/__example__/t-002-no-placeholder.tsx
-```tsx
+```diff
 // 第10-12行：新增 SVG 图标
-const moreIcon = <svg viewBox="0 0 24 24" width="24px" height="24px" style={{display: 'block'}}>
-<path d="M4.00195 10C5.10652 10 6.00195 10.8954 6.00195 12C6.00195 13.1046 5.10652 14 4.00195 14C2.89738 14 2.00195 13.1046 2.00195 12C2.00195 10.8954 2.89738 10 4.00195 10ZM12.002 10C13.1065 10 14.002 10.8954 14.002 12C14.002 13.1046 13.1065 14 12.002 14C10.8974 14 10.002 13.1046 10.002 12C10.002 10.8954 10.8974 10 12.002 10ZM20.002 10C21.1065 10 22.002 10.8954 22.002 12C22.002 13.1046 21.1065 14 20.002 14C18.8974 14 18.002 13.1046 18.002 12C18.002 10.8954 18.8974 10 20.002 10Z"></path>
-</svg>
++const moreIcon = <svg viewBox="0 0 24 24" width="24px" height="24px" style={{display: 'block'}}>
++<path d="M4.00195 10C5.10652 10 6.00195 10.8954 6.00195 12C6.00195 13.1046 5.10652 14 4.00195 14C2.89738 14 2.00195 13.1046 2.00195 12C2.00195 10.8954 2.89738 10 4.00195 10ZM12.002 10C13.1065 10 14.002 10.8954 14.002 12C14.002 13.1046 13.1065 14 12.002 14C10.8974 14 10.002 13.1046 10.002 12C10.002 10.8954 10.8974 10 12.002 10ZM20.002 10C21.1065 10 22.002 10.8954 22.002 12C22.002 13.1046 21.1065 14 20.002 14C18.8974 14 18.002 13.1046 18.002 12C18.002 10.8954 18.8974 10 20.002 10Z"></path>
++</svg>
 
 // 第44-45行：修改示例
-<Dropdown data={data} placeholder="Default" />
-<Dropdown data={data} placeholder={moreIcon} buttonShape="circle" hideArrow />
+-<Dropdown data={data} onClick={console.log} />
+-<Dropdown data={data} disabled />
++<Dropdown data={data} placeholder="Default" />
++<Dropdown data={data} placeholder={moreIcon} buttonShape="circle" hideArrow />
 ```
 
 ## 变更前后逻辑差异
