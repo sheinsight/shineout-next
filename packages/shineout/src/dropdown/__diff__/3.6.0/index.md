@@ -87,24 +87,29 @@ content: {
 - SVG 居中样式仅作用于 `.content` 类下的直接子 SVG 元素
 - 复用 Button 组件的 shape 逻辑，保持组件库 API 一致性
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
-1. **无破坏性变更**：`buttonShape` 为新增的可选属性，现有代码无需修改即可正常运行
+### 代码兼容性
+- **无破坏性变更**：`buttonShape` 为新增的可选属性，现有代码无需修改即可正常运行
 
-### 交互体验差异
-1. **SVG 图标布局变化**：
-   - 影响场景：在 placeholder 中直接传入 SVG 元素的现有代码
-   - 具体表现：SVG 元素会从原本的内联元素变为块级元素并自动居中
-   - 受影响代码示例：`<Dropdown placeholder={<svg>...</svg>} />`
-   - 视觉变化：原本可能左对齐或有自定义 margin 的 SVG 图标会变为居中显示
+### 行为变化说明
+1. **SVG 图标自动居中**：
+   - 升级前：placeholder 中的 SVG 元素按内联元素显示，可能左对齐
+   - 升级后：SVG 元素自动设置为块级元素并水平居中
+   - 受影响场景：在 placeholder 中直接传入 SVG 元素
+   - 示例代码：`<Dropdown placeholder={<svg>...</svg>} />`
+   - 是否需要调整：通常不需要，但如果需要保持原有对齐方式，可通过额外包裹元素处理
 
-2. **自定义样式覆盖**：
-   - 影响场景：用户对 placeholder 中的 SVG 设置了自定义 margin 样式
-   - 具体表现：自定义的 margin 样式会被 `margin: 0 auto` 覆盖
-   - 受影响代码示例：`<Dropdown placeholder={<svg style={{margin: '0 10px'}}>...</svg>} />`
+2. **自定义 margin 样式被覆盖**：
+   - 升级前：SVG 元素的自定义 margin 样式正常生效
+   - 升级后：自定义的 margin 会被 `margin: 0 auto` 覆盖
+   - 受影响场景：对 placeholder 中的 SVG 设置了 margin 样式
+   - 示例代码：`<Dropdown placeholder={<svg style={{margin: '0 10px'}}>...</svg>} />`
+   - 是否需要调整：如需保留自定义间距，可使用 padding 或包裹元素
 
-3. **复合内容布局**：
-   - 影响场景：placeholder 中包含 SVG 和其他元素的组合
-   - 具体表现：仅 SVG 元素会被设置为块级并居中，可能破坏原有的行内布局
-   - 受影响代码示例：`<Dropdown placeholder={<span><svg />文字</span>} />`
+3. **复合内容布局变化**：
+   - 升级前：SVG 与其他元素保持行内布局
+   - 升级后：SVG 变为块级元素，可能破坏原有布局
+   - 受影响场景：placeholder 包含 SVG 和文字的组合
+   - 示例代码：`<Dropdown placeholder={<span><svg />文字</span>} />`
+   - 是否需要调整：需要调整布局结构或添加样式以保持原有效果
