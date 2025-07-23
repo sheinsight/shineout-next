@@ -56,10 +56,10 @@ export interface CarouselProps {
 - 新代码需要使用 `indicatorType='bar'` 来实现条形指示器
 - 样式类名从 `indicatorTypeSlider` 变更为 `indicatorTypeBar`
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
+### 代码兼容性
 - 使用 `indicatorType='slider'` 的代码将无法正常工作，需要改为 `indicatorType='bar'`
 
-### 交互体验差异
+### 行为变化说明
 - 功能保持不变，仅是属性值名称变更

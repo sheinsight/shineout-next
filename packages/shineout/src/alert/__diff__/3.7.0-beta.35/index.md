@@ -35,10 +35,10 @@ export interface AlertClasses {
 - 有 children 的 Alert 保持原有样式不变
 - 其他类型的 Alert（info、success、warning、danger）不受影响
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
+### 代码兼容性
 - 无直接代码执行风险
 
-### 交互体验差异
+### 行为变化说明
 - confirmwarning 类型只有 title 时底部边距被移除，布局可能更紧凑

@@ -35,10 +35,10 @@ const CheckboxWithContext = <T,>(props: CheckboxProps<T>) => {
 - 影响在 Checkbox.Group 中使用的 Checkbox 组件
 - 确保 onChange 事件只被触发一次
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
+### 代码兼容性
 - 依赖 onChange 被触发两次的代码逻辑需要调整
 
-### 交互体验差异
+### 行为变化说明
 - onChange 事件恢复正常，只触发一次

@@ -51,10 +51,24 @@ const CheckboxWithContext = <T,>(props: CheckboxProps<T>) => {
 - 不影响非嵌套场景的正常使用
 - 新增内部 API `onRawChange` 用于区分不同来源的 onChange 事件
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
-- 无直接代码执行风险
+### 代码兼容性
+- **无破坏性变更**：修复了嵌套场景下的状态管理问题，不影响现有代码
 
-### 交互体验差异
-- 嵌套 Checkbox.Group 的选中状态不再相互影响，各自独立管理
+### 行为变化说明
+1. **嵌套 Checkbox.Group 状态修复**：
+   - 升级前：内层 Checkbox.Group 的选中状态会被外层 Group 影响，导致状态混乱
+   - 升级后：每个 Checkbox.Group 独立管理自己的状态，互不干扰
+   - 受影响场景：
+     ```tsx
+     <Checkbox.Group value={outerValue}>
+       <Checkbox value="A">选项 A</Checkbox>
+       <Checkbox.Group value={innerValue}>
+         <Checkbox value="B">选项 B</Checkbox>
+         <Checkbox value="C">选项 C</Checkbox>
+       </Checkbox.Group>
+     </Checkbox.Group>
+     ```
+   - 行为变化：内层 Group 的选中状态不再受外层 Group 影响
+   - 是否需要调整：不需要，这是缺陷修复

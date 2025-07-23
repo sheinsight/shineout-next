@@ -34,10 +34,10 @@ if ('value' in props && props.checked === undefined) {
 - 修复了 v3.4.3 版本引入的回归问题
 - 不影响独立使用的 Checkbox 组件
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
+### 代码兼容性
 - 依赖 Checkbox onChange 被调用两次的代码逻辑需要调整
 
-### 交互体验差异
+### 行为变化说明
 - Form 中的 Checkbox 不再触发两次 onChange，恢复正常行为

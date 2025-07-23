@@ -87,11 +87,41 @@ export interface DatePickerProps {
 - 影响日期选择的交互流程
 - 影响清除操作的返回值类型
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
-- 无直接代码执行风险
+### 代码兼容性
+- **无破坏性变更**：新增的属性都是可选的，现有代码无需修改
 
-### 交互体验差异
-- 开启 needConfirm 后需要额外的确认步骤，改变了用户习惯
-- clearToUndefined 改变了清除后的返回值类型，可能影响表单验证逻辑
+### 行为变化说明
+1. **needConfirm 属性（新增功能）**：
+   - 升级前：选择日期后立即关闭面板并提交值
+   - 升级后：可通过 `needConfirm={true}` 开启确认模式
+   - 受影响场景：需要用户二次确认的日期选择场景
+   - 示例代码：
+     ```tsx
+     <DatePicker 
+       needConfirm
+       onChange={(date) => console.log(date)}
+     />
+     ```
+   - 是否需要调整：不需要，这是新增功能，默认关闭
+
+2. **clearToUndefined 属性（新增功能）**：
+   - 升级前：清除操作返回 `null`
+   - 升级后：可通过 `clearToUndefined={true}` 让清除操作返回 `undefined`
+   - 受影响场景：
+     - 表单验证中区分 null 和 undefined 的场景
+     - 使用 `value === undefined` 判断的逻辑
+   - 示例代码：
+     ```tsx
+     <DatePicker 
+       clearToUndefined
+       onChange={(date) => {
+         // date 可能为 undefined（清除后）
+         if (date === undefined) {
+           // 处理清除逻辑
+         }
+       }}
+     />
+     ```
+   - 是否需要调整：不需要，默认行为保持不变（返回 null）

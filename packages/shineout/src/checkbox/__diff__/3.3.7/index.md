@@ -43,10 +43,10 @@ const handleCheckboxChange = usePersistFn(
 - 不影响通过 data 属性渲染的 Checkbox
 - 确保开发者自定义的 onChange 回调能够正常执行
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
+### 代码兼容性
 - 无直接代码执行风险
 
-### 交互体验差异
+### 行为变化说明
 - Checkbox.Group 中的 Checkbox 组件的 onChange 事件恢复正常触发

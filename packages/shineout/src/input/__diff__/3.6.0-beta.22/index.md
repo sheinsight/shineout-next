@@ -73,12 +73,12 @@ const InputGroup = (props: InputGroupProps) => {
 - 不影响原有的紧密连接样式（默认 seperate=false）
 - 同时影响 Input.Group 中的 Button 组件样式
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
+### 代码兼容性
 - 无直接代码执行风险
 
-### 交互体验差异
+### 行为变化说明
 - 开启 seperate 后，组件之间有明显的间距
 - 每个组件都有独立的边框和圆角，视觉上更加独立
 

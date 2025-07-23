@@ -43,11 +43,11 @@ const renderHeader = () => {
 - DOM 结构更简洁，减少不必要的嵌套
 - 复杂 Header（有 extra 或 collapsible）保持原有结构
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
+### 代码兼容性
 - CSS 选择器 `.header .headerContent` 在简单 header 上失效
 
-### 交互体验差异
+### 行为变化说明
 - className 应用位置从内层变为 header 层
 - DOM 结构简化可能影响依赖嵌套结构的布局

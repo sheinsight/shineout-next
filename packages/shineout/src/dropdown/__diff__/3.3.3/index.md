@@ -48,12 +48,12 @@ return React.cloneElement(
 - 事件执行顺序：先执行 content 的 onClick，再执行 Item 的 onClick
 - 不影响没有在 content 中设置 onClick 的场景
 
-## 风险使用场景
+## 升级注意事项
 
-### 代码执行风险
+### 代码兼容性
 1. **无破坏性变更**：修复了原有的 bug，不会影响正常使用场景
 
-### 交互体验差异
+### 行为变化说明
 1. **行为变化**：
    - 影响场景：在 data 的 content 中传入带有 onClick 的 React 元素
    - 具体表现：点击后下拉菜单会自动关闭（之前不会关闭）
