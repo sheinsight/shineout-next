@@ -67,6 +67,13 @@ const devGuide = [
     },
     name: 'migration',
   },
+  {
+    title: {
+      cn: 'Diff 报告',
+      en: 'Diff Reports',
+    },
+    name: 'diff',
+  },
 ];
 
 const MenuComponent = () => {
@@ -74,6 +81,9 @@ const MenuComponent = () => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
+  
+  // Check if we're on the diff page
+  const isDiffPage = location.pathname.includes('/diff');
   // const params = useParams();
   const docsLocale = Locale({ locale: state.locales });
   // const lan = params.lan === 'en' ? 'en-US' : 'zh-CN';
@@ -93,10 +103,19 @@ const MenuComponent = () => {
   const handleDocClick = (name: string) => {
     const params = new URLSearchParams(location.search);
     params.delete('tab');
-    navigate({
-      pathname: `/${state.locales}/doc/${state.doc}/${name}`,
-      search: params.toString(),
-    });
+    
+    // Special handling for diff page
+    if (name === 'diff') {
+      navigate({
+        pathname: `/${state.locales}/diff`,
+        search: params.toString(),
+      });
+    } else {
+      navigate({
+        pathname: `/${state.locales}/doc/${state.doc}/${name}`,
+        search: params.toString(),
+      });
+    }
     document.getElementById('layout')?.scrollTo(0, 0);
   };
   useEffect(() => {
@@ -126,6 +145,11 @@ const MenuComponent = () => {
     [classes.menuFloat]: menuFloat,
     [classes.collapsed]: menuCollapsed,
   });
+
+  // Hide menu on diff page
+  if (isDiffPage) {
+    return null;
+  }
 
   return (
     <aside className={rootClass}>

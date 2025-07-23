@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
+import { useLocation } from 'react-router-dom';
 import store, {dispatch} from '../../../store'
 import useStyles from '../style';
 
@@ -24,10 +25,14 @@ const useWindowWidth = () => {
 
 export default function Component(): JSX.Element | null {
   const classes = useStyles();
+  const location = useLocation();
 
   const winWidth = useWindowWidth();
 
   const { menuFloat, menuCollapsed } = useSnapshot(store);
+  
+  // Check if we're on the diff page
+  const isDiffPage = location.pathname.includes('/diff');
 
   const setMenuFloat = (val: boolean) => {
     dispatch.setMenuFloat(val);
@@ -43,7 +48,7 @@ export default function Component(): JSX.Element | null {
     setCollapsed(val ? true : false);
   }, [winWidth]);
 
-  if (!menuFloat) return null;
+  if (!menuFloat || isDiffPage) return null;
 
   return (
     <div
