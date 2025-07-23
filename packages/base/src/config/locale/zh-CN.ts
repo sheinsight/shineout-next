@@ -55,9 +55,11 @@ export default {
 
   ok: '确定',
   cancel: '取消',
+  reset: '重置',
   noData: '暂无数据',
   selectAll: '全选',
   loading: '加载中...',
+  searchPlaceholder: '在筛选项中搜索',
 
   rules: {
     required: {

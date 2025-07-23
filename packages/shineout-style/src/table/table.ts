@@ -393,6 +393,10 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
 
+  filterOpened: {
+    background: token.buttonSecondaryHoverBackgroundColor
+  },
+
   filterContainer: {
     minWidth: '120px',
   },
