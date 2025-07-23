@@ -74,6 +74,8 @@ const webpackConfig = {
 
 const compiler = Webpack(webpackConfig);
 
+const { scanDiffReports, getDiffContent } = require('../scripts/api-diff-reports');
+
 const upload = multer({ dest: 'uploads/' });
 const server = new WebpackDevServer(
   {
@@ -89,6 +91,18 @@ const server = new WebpackDevServer(
       server.app.all('/api/upload/error', upload.any(), (req, res) => {
         // 读取请求中的formData 数据的file 字段
         res.error('上传失败');
+      });
+      
+      // diff reports API
+      server.app.get('/api/diff-reports', (req, res) => {
+        const data = scanDiffReports();
+        res.json(data);
+      });
+      
+      server.app.get('/api/diff-content/:component/:version', (req, res) => {
+        const { component, version } = req.params;
+        const data = getDiffContent(component, version);
+        res.json(data);
       });
     },
   },

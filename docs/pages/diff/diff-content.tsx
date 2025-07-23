@@ -28,129 +28,25 @@ const DiffContent: React.FC<DiffContentProps> = ({ version, component }) => {
       setError('');
       
       try {
-        // Load diff report content based on version and component
-        let markdown = '';
-        
-        // Import all diff reports statically
-        if (component === 'alert') {
-          if (version === '3.7.5-beta.10') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/alert/__diff__/3.7.5-beta.10/index.md').default;
-          } else if (version === '3.7.0-beta.35') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/alert/__diff__/3.7.0-beta.35/index.md').default;
-          } else if (version === '3.2.5') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/alert/__diff__/3.2.5/index.md').default;
-          } else if (version === '3.1.31') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/alert/__diff__/3.1.31/index.md').default;
-          }
-        } else if (component === 'button') {
-          if (version === '3.0.2') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.0.2/index.md').default;
-          } else if (version === '3.1.2') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.1.2/index.md').default;
-          } else if (version === '3.1.30') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.1.30/index.md').default;
-          } else if (version === '3.5.3') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.5.3/index.md').default;
-          } else if (version === '3.7.0-beta.24') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/button/__diff__/3.7.0-beta.24/index.md').default;
-          }
-        } else if (component === 'card') {
-          if (version === '3.1.10') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/card/__diff__/3.1.10/index.md').default;
-          } else if (version === '3.1.16') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/card/__diff__/3.1.16/index.md').default;
-          } else if (version === '3.1.23') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/card/__diff__/3.1.23/index.md').default;
-          } else if (version === '3.6.1-beta.8') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/card/__diff__/3.6.1-beta.8/index.md').default;
-          }
-        } else if (component === 'badge') {
-          if (version === '3.5.2') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/badge/__diff__/3.5.2/index.md').default;
-          }
-        } else if (component === 'breadcrumb') {
-          if (version === '3.7.6-beta.3') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/breadcrumb/__diff__/3.7.6-beta.3/index.md').default;
-          }
-        } else if (component === 'carousel') {
-          if (version === '3.4.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.4.0/index.md').default;
-          } else if (version === '3.6.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.6.0/index.md').default;
-          } else if (version === '3.6.0-beta.1') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.6.0-beta.1/index.md').default;
-          } else if (version === '3.7.0-beta.37') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.7.0-beta.37/index.md').default;
-          } else if (version === '3.7.0-beta.38') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/carousel/__diff__/3.7.0-beta.38/index.md').default;
-          }
-        } else if (component === 'checkbox') {
-          if (version === '3.3.7') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.3.7/index.md').default;
-          } else if (version === '3.4.3') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.4.3/index.md').default;
-          } else if (version === '3.5.6') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.5.6/index.md').default;
-          } else if (version === '3.5.8') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.5.8/index.md').default;
-          } else if (version === '3.6.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0/index.md').default;
-          } else if (version === '3.6.0-beta.1') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/checkbox/__diff__/3.6.0-beta.1/index.md').default;
-          }
-        } else if (component === 'collapse') {
-          if (version === '3.6.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/collapse/__diff__/3.6.0/index.md').default;
-          }
-        } else if (component === 'date-picker') {
-          if (version === '3.7.5-beta.5') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.5-beta.5/index.md').default;
-          } else if (version === '3.7.4-beta.6') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.7.4-beta.6/index.md').default;
-          } else if (version === '3.6.7-beta.6') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.7-beta.6/index.md').default;
-          } else if (version === '3.6.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.6.0/index.md').default;
-          } else if (version === '3.4.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/date-picker/__diff__/3.4.0/index.md').default;
-          }
-        } else if (component === 'drawer') {
-          if (version === '3.0.5') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/drawer/__diff__/3.0.5/index.md').default;
-          }
-        } else if (component === 'dropdown') {
-          if (version === '3.6.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.6.0/index.md').default;
-          } else if (version === '3.4.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.4.0/index.md').default;
-          } else if (version === '3.3.3') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.3.3/index.md').default;
-          } else if (version === '3.3.2') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/dropdown/__diff__/3.3.2/index.md').default;
-          }
-        } else if (component === 'input') {
-          if (version === '3.5.7') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.7/index.md').default;
-          } else if (version === '3.5.8') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.5.8/index.md').default;
-          } else if (version === '3.6.0') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.6.0/index.md').default;
-          } else if (version === '3.6.0-beta.22') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.6.0-beta.22/index.md').default;
-          } else if (version === '3.7.3-beta.1') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.7.3-beta.1/index.md').default;
-          } else if (version === '3.7.3-beta.4') {
-            markdown = require('!!raw-loader!../../../packages/shineout/src/input/__diff__/3.7.3-beta.4/index.md').default;
-          }
+        const response = await fetch(`/api/diff-content/${component}/${version}`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch diff content: ${response.statusText}`);
         }
         
-        if (markdown) {
-          setContent(markdown);
+        const data = await response.json();
+        
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        
+        if (data.content) {
+          setContent(data.content);
         } else {
           throw new Error('Diff report not found');
         }
       } catch (err) {
-        setError(`无法加载 ${component} 组件 ${version} 版本的 Diff 报告`);
+        const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+        setError(`无法加载 ${component} 组件 ${version} 版本的 Diff 报告: ${errorMessage}`);
         setContent('');
       } finally {
         setLoading(false);

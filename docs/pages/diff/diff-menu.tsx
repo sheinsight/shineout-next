@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
-import { Badge } from 'shineout';
+import { Badge, Spin, Alert } from 'shineout';
 import useStyles from './diff-menu-style';
 
 interface DiffMenuProps {
@@ -73,99 +73,48 @@ function organizeVersions(versions: { version: string; components: string[] }[])
     });
 }
 
-const rawVersionData = [
-  // 3.7.x versions
-  { version: '3.7.6-beta.3', components: ['breadcrumb'] },
-  { version: '3.7.5-beta.10', components: ['alert'] },
-  { version: '3.7.5-beta.5', components: ['date-picker'] },
-  { version: '3.7.4-beta.6', components: ['date-picker'] },
-  { version: '3.7.3-beta.4', components: ['input'] },
-  { version: '3.7.3-beta.1', components: ['input'] },
-  { version: '3.7.0-beta.38', components: ['carousel'] },
-  { version: '3.7.0-beta.37', components: ['carousel'] },
-  { version: '3.7.0-beta.35', components: ['alert'] },
-  { version: '3.7.0-beta.24', components: ['button'] },
-  // 3.6.x versions
-  { version: '3.6.7-beta.6', components: ['date-picker'] },
-  { version: '3.6.1-beta.8', components: ['card'] },
-  { version: '3.6.0', components: ['carousel', 'checkbox', 'collapse', 'date-picker', 'dropdown', 'input'] },
-  { version: '3.6.0-beta.22', components: ['input'] },
-  { version: '3.6.0-beta.1', components: ['carousel', 'checkbox'] },
-  // 3.5.x versions
-  { version: '3.5.8', components: ['checkbox', 'input'] },
-  { version: '3.5.7', components: ['input'] },
-  { version: '3.5.6', components: ['checkbox'] },
-  { version: '3.5.3', components: ['button'] },
-  { version: '3.5.2', components: ['badge'] },
-  // 3.4.x versions
-  { version: '3.4.3', components: ['checkbox'] },
-  { version: '3.4.0', components: ['carousel', 'date-picker', 'dropdown'] },
-  // 3.3.x versions
-  { version: '3.3.7', components: ['checkbox'] },
-  { version: '3.3.3', components: ['dropdown'] },
-  { version: '3.3.2', components: ['dropdown'] },
-  // 3.2.x versions
-  { version: '3.2.5', components: ['alert'] },
-  // 3.1.x versions
-  { version: '3.1.31', components: ['alert'] },
-  { version: '3.1.30', components: ['button'] },
-  { version: '3.1.23', components: ['card'] },
-  { version: '3.1.16', components: ['card'] },
-  { version: '3.1.10', components: ['card'] },
-  { version: '3.1.2', components: ['button'] },
-  // 3.0.x versions
-  { version: '3.0.5', components: ['drawer'] },
-  { version: '3.0.2', components: ['button'] },
-];
-
-// Organize data into hierarchical structure
-const organizedDiffReports: MinorVersionGroup[] = organizeVersions(rawVersionData);
-
-// Map specific version to components for easier lookup
-const versionComponentMap: Record<string, string[]> = {
-  '3.7.6-beta.3': ['breadcrumb'],
-  '3.7.5-beta.10': ['alert'],
-  '3.7.5-beta.5': ['date-picker'],
-  '3.7.4-beta.6': ['date-picker'],
-  '3.7.3-beta.4': ['input'],
-  '3.7.3-beta.1': ['input'],
-  '3.7.0-beta.38': ['carousel'],
-  '3.7.0-beta.37': ['carousel'],
-  '3.7.0-beta.35': ['alert'],
-  '3.7.0-beta.24': ['button'],
-  '3.6.7-beta.6': ['date-picker'],
-  '3.6.1-beta.8': ['card'],
-  '3.6.0': ['carousel', 'checkbox', 'collapse', 'date-picker', 'dropdown', 'input'],
-  '3.6.0-beta.22': ['input'],
-  '3.6.0-beta.1': ['carousel', 'checkbox'],
-  '3.5.8': ['checkbox', 'input'],
-  '3.5.7': ['input'],
-  '3.5.6': ['checkbox'],
-  '3.5.3': ['button'],
-  '3.5.2': ['badge'],
-  '3.4.3': ['checkbox'],
-  '3.4.0': ['carousel', 'date-picker', 'dropdown'],
-  '3.3.7': ['checkbox'],
-  '3.3.3': ['dropdown'],
-  '3.3.2': ['dropdown'],
-  '3.2.5': ['alert'],
-  '3.1.31': ['alert'],
-  '3.1.30': ['button'],
-  '3.1.23': ['card'],
-  '3.1.16': ['card'],
-  '3.1.10': ['card'],
-  '3.1.2': ['button'],
-  '3.0.5': ['drawer'],
-  '3.0.2': ['button'],
-};
-
 const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent, onSelect }) => {
   const classes = useStyles();
   const [expandedMinorVersions, setExpandedMinorVersions] = useState<string[]>([]);
   const [expandedVersions, setExpandedVersions] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [organizedDiffReports, setOrganizedDiffReports] = useState<MinorVersionGroup[]>([]);
+
+  // Fetch diff reports from API
+  useEffect(() => {
+    const fetchDiffReports = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const response = await fetch('/api/diff-reports');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch diff reports: ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        
+        // Organize the data
+        const organized = organizeVersions(data.menu);
+        setOrganizedDiffReports(organized);
+      } catch (err) {
+        console.error('Error fetching diff reports:', err);
+        setError(err instanceof Error ? err.message : 'Failed to load diff reports');
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchDiffReports();
+  }, []);
 
   // Initialize expanded states based on selected version
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectedVersion) {
       const [major, minor] = selectedVersion.split('.');
       const minorVersion = `${major}.${minor}`;
@@ -194,6 +143,30 @@ const DiffMenu: React.FC<DiffMenuProps> = ({ selectedVersion, selectedComponent,
   const handleComponentClick = (version: string, component: string) => {
     onSelect(version, component);
   };
+
+  if (loading) {
+    return (
+      <aside className={classes.menu}>
+        <div className={classes.menuTitle}>Diff 报告</div>
+        <div style={{ padding: '20px', textAlign: 'center' }}>
+          <Spin size={24} tip="加载中..." />
+        </div>
+      </aside>
+    );
+  }
+
+  if (error) {
+    return (
+      <aside className={classes.menu}>
+        <div className={classes.menuTitle}>Diff 报告</div>
+        <div style={{ padding: '20px' }}>
+          <Alert type="error">
+            {error}
+          </Alert>
+        </div>
+      </aside>
+    );
+  }
 
   return (
     <aside className={classes.menu}>
