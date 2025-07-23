@@ -46,7 +46,7 @@ const tableStyle: JsStyles<TableClassType> = {
         boxSizing: 'border-box',
         lineHeight: token.lineHeightDynamic,
         '$bordered&': {
-          '&::after': {
+          '&:not(:last-child)::after': {
             content: '""',
             position: 'absolute',
             zIndex: cellBaseIndex,
