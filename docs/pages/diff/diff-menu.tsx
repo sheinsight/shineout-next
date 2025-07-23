@@ -88,7 +88,7 @@ const rawVersionData = [
   // 3.6.x versions
   { version: '3.6.7-beta.6', components: ['date-picker'] },
   { version: '3.6.1-beta.8', components: ['card'] },
-  { version: '3.6.0', components: ['carousel', 'checkbox', 'collapse', 'date-picker', 'input'] },
+  { version: '3.6.0', components: ['carousel', 'checkbox', 'collapse', 'date-picker', 'dropdown', 'input'] },
   { version: '3.6.0-beta.22', components: ['input'] },
   { version: '3.6.0-beta.1', components: ['carousel', 'checkbox'] },
   // 3.5.x versions
@@ -99,9 +99,11 @@ const rawVersionData = [
   { version: '3.5.2', components: ['badge'] },
   // 3.4.x versions
   { version: '3.4.3', components: ['checkbox'] },
-  { version: '3.4.0', components: ['carousel', 'date-picker'] },
+  { version: '3.4.0', components: ['carousel', 'date-picker', 'dropdown'] },
   // 3.3.x versions
   { version: '3.3.7', components: ['checkbox'] },
+  { version: '3.3.3', components: ['dropdown'] },
+  { version: '3.3.2', components: ['dropdown'] },
   // 3.2.x versions
   { version: '3.2.5', components: ['alert'] },
   // 3.1.x versions
@@ -133,7 +135,7 @@ const versionComponentMap: Record<string, string[]> = {
   '3.7.0-beta.24': ['button'],
   '3.6.7-beta.6': ['date-picker'],
   '3.6.1-beta.8': ['card'],
-  '3.6.0': ['carousel', 'checkbox', 'collapse', 'date-picker', 'input'],
+  '3.6.0': ['carousel', 'checkbox', 'collapse', 'date-picker', 'dropdown', 'input'],
   '3.6.0-beta.22': ['input'],
   '3.6.0-beta.1': ['carousel', 'checkbox'],
   '3.5.8': ['checkbox', 'input'],
@@ -142,8 +144,10 @@ const versionComponentMap: Record<string, string[]> = {
   '3.5.3': ['button'],
   '3.5.2': ['badge'],
   '3.4.3': ['checkbox'],
-  '3.4.0': ['carousel', 'date-picker'],
+  '3.4.0': ['carousel', 'date-picker', 'dropdown'],
   '3.3.7': ['checkbox'],
+  '3.3.3': ['dropdown'],
+  '3.3.2': ['dropdown'],
   '3.2.5': ['alert'],
   '3.1.31': ['alert'],
   '3.1.30': ['button'],
