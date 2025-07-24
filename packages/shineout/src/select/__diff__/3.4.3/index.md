@@ -92,18 +92,18 @@
    - 风险示例：
    ```css
    /* 风险样式：依赖原有选择器结构 */
-   .so-select-multiple .so-select-option-inner {
+   .soui-select-multiple .soui-select-option-inner {
      /* 之前：这个选择器会匹配到结果框和下拉列表 */
      /* 现在：只匹配到结果框，不再匹配下拉列表 */
      padding-right: 40px !important;
    }
    
    /* 可能失效的样式覆盖 */
-   .custom-select.so-select-multiple .so-select-option-inner {
+   .custom-select.soui-select-multiple .soui-select-option-inner {
      background: #f0f0f0;
    }
    ```
-   - 规避方案：更新选择器为 `.so-select-multipleList .so-select-option-inner` 或使用更精确的选择器
+   - 规避方案：更新选择器为 `.soui-select-multipleList .soui-select-option-inner` 或使用更精确的选择器
 
 ## 升级注意事项
 

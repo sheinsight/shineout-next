@@ -110,7 +110,7 @@
    - 风险示例：
    ```css
    /* 风险样式：依赖伪元素进行样式覆盖 */
-   .so-tree-node::before {
+   .soui-tree-node::before {
      border-color: red !important;
    }
    ```

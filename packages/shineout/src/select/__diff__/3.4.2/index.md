@@ -118,7 +118,7 @@
    - 风险示例：
    ```css
    /* 风险样式：基于固定宽度的样式覆盖 */
-   .so-select[data-columns="1"] .so-select-option {
+   .soui-select[data-columns="1"] .soui-select-option {
      /* 之前：基于 160px 设计的样式 */
      padding: 0 10px;
      text-overflow: ellipsis;

@@ -102,7 +102,7 @@
    - 风险示例：
    ```css
    /* 风险样式：假设列表项高度固定 */
-   .so-select-option {
+   .soui-select-option {
      height: 32px !important; /* 可能与动态高度冲突 */
    }
    
@@ -122,7 +122,7 @@
    ```tsx
    // 风险代码：自定义滚动监听可能与内置滚动加载冲突
    useEffect(() => {
-     const dropdown = document.querySelector('.so-select-list');
+     const dropdown = document.querySelector('.soui-select-list');
      dropdown?.addEventListener('scroll', customScrollHandler);
      // 现在：可能与 onLoadMore 的滚动监听冲突
    }, []);
@@ -152,7 +152,7 @@
    const isEmptyShown = () => {
      // 之前：空数据时一定有空提示元素
      // 现在：可能没有空提示元素
-     return !!document.querySelector('.so-select-empty');
+     return !!document.querySelector('.soui-select-empty');
    };
    ```
    - 规避方案：使用数据长度判断替代 DOM 元素检测

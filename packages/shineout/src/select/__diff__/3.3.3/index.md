@@ -112,7 +112,7 @@
    - 风险示例：
    ```css
    /* 风险样式：直接定位输入框的兄弟元素 */
-   .so-select-result-input + div {
+   .soui-select-result-input + div {
      display: none;
    }
    ```
