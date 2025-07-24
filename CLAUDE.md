@@ -154,6 +154,7 @@ diff 报告用于记录组件版本间的具体变更内容，需要根据 chang
 
 ##### 2.2 代码变更文件
 - 使用完整相对路径
+- **必须使用 commit 中实际的文件路径**（通过 `git show [commit-hash] --stat` 验证）
 - 按逻辑顺序排列（类型定义 → 实现 → 样式）
 - 示例：
   ```markdown
@@ -165,6 +166,9 @@ diff 报告用于记录组件版本间的具体变更内容，需要根据 chang
 ##### 2.3 变更代码行
 - 每个文件单独一个子标题，格式：`### 文件路径 - 变更说明`
 - 使用标准 diff 格式，只展示关键变更
+- **必须使用 commit 中实际的代码变更**（通过 `git show [commit-hash] -- [file-path]` 获取）
+- **重要**：文件路径必须与实际 commit 一致
+- **重要**：代码内容必须是当时提交的实际代码，不能想象或推测
 - **重要**：涉及 CSS 类名和样式时，必须使用实际存在的类名（查看 shineout-style 包中的定义）
 - **重要**：组件属性必须真实存在（查看 packages/shineout/src/[component]/interface.ts）
 - 示例：
@@ -251,15 +255,24 @@ cat packages/shineout/src/[component]/__doc__/changelog.cn.md
 git log --oneline --grep="[关键词]" -i
 git log --oneline --grep="#[PR编号]"
 
-# 3. 查看 commit 详情
+# 3. 查看 commit 详情（获取文件列表）
 git show [commit-hash] --stat
 
-# 4. 查看具体文件变更
+# 4. 查看具体文件变更（获取实际代码）
 git show [commit-hash] -- [file-path]
 
-# 5. 生成/更新 diff-imports.ts
+# 5. 验证文件路径和代码
+# 确保 diff 报告中的文件路径与 git show --stat 显示的一致
+# 确保 diff 代码与 git show 显示的实际变更一致
+
+# 6. 生成/更新 diff-imports.ts
 pnpm run generate:diff-imports
 ```
+
+**重要提醒**：
+- diff 报告中的所有文件路径必须是 commit 中实际存在的路径
+- diff 代码必须是从 `git show` 获取的实际代码，不能凭记忆或推测
+- 如果多个 PR 合并到一个版本，需要分别查看每个 PR 的变更
 
 #### 四、自动化工具
 
@@ -280,6 +293,8 @@ pnpm run generate:diff-imports
    - 不使用编号的章节标题
    - 不添加测试建议或总结
    - 风险场景分析必须包含三个子章节
+   - 必须使用 git show 获取的实际文件路径和代码变更
+   - 不能想象或推测代码内容
    - CSS 类名必须使用 .soui- 前缀（查看 shineout-style 包）
    - 组件属性必须真实存在（查看 interface.ts）
    - 参考 checkbox 3.4.3 或 dropdown 3.3.2 的格式
@@ -292,6 +307,8 @@ pnpm run generate:diff-imports
 - [ ] 没有使用编号的章节标题
 - [ ] 风险场景分析包含三个子章节（DOM、行为逻辑、样式）
 - [ ] 每个风险都有具体的风险示例和规避方案
+- [ ] **文件路径与 git show --stat 显示的完全一致**
+- [ ] **diff 代码是从 git show 获取的实际代码**
 - [ ] CSS 类名使用 .soui- 前缀且真实存在
 - [ ] 组件属性已验证存在于 interface.ts
 - [ ] 代码示例包含"之前/现在"对比
