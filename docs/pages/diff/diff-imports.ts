@@ -81,6 +81,16 @@ import popover_3_6_7_beta_1 from '!!raw-loader!../../../packages/shineout/src/po
 import popover_3_7_0_beta_1 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.7.0-beta.1/index.md';
 import popover_3_7_4_beta_2 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.7.4-beta.2/index.md';
 import popover_3_7_7_beta_4 from '!!raw-loader!../../../packages/shineout/src/popover/__diff__/3.7.7-beta.4/index.md';
+import select_3_3_3 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.3.3/index.md';
+import select_3_3_4 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.3.4/index.md';
+import select_3_4_0 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.0/index.md';
+import select_3_4_2 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.2/index.md';
+import select_3_4_3 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.3/index.md';
+import select_3_4_4 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.4/index.md';
+import select_3_4_5 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.5/index.md';
+import select_3_4_6 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.6/index.md';
+import select_3_4_7 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.7/index.md';
+import select_3_5_0 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.5.0/index.md';
 
 export const diffReports: Record<string, string> = {
   'alert/3.1.31': alert_3_1_31,
@@ -162,7 +172,17 @@ export const diffReports: Record<string, string> = {
   'popover/3.6.7-beta.1': popover_3_6_7_beta_1,
   'popover/3.7.0-beta.1': popover_3_7_0_beta_1,
   'popover/3.7.4-beta.2': popover_3_7_4_beta_2,
-  'popover/3.7.7-beta.4': popover_3_7_7_beta_4
+  'popover/3.7.7-beta.4': popover_3_7_7_beta_4,
+  'select/3.3.3': select_3_3_3,
+  'select/3.3.4': select_3_3_4,
+  'select/3.4.0': select_3_4_0,
+  'select/3.4.2': select_3_4_2,
+  'select/3.4.3': select_3_4_3,
+  'select/3.4.4': select_3_4_4,
+  'select/3.4.5': select_3_4_5,
+  'select/3.4.6': select_3_4_6,
+  'select/3.4.7': select_3_4_7,
+  'select/3.5.0': select_3_5_0
 };
 
 export const diffReportsList = [
@@ -245,5 +265,15 @@ export const diffReportsList = [
   { component: 'popover', version: '3.6.7-beta.1' },
   { component: 'popover', version: '3.7.0-beta.1' },
   { component: 'popover', version: '3.7.4-beta.2' },
-  { component: 'popover', version: '3.7.7-beta.4' }
+  { component: 'popover', version: '3.7.7-beta.4' },
+  { component: 'select', version: '3.3.3' },
+  { component: 'select', version: '3.3.4' },
+  { component: 'select', version: '3.4.0' },
+  { component: 'select', version: '3.4.2' },
+  { component: 'select', version: '3.4.3' },
+  { component: 'select', version: '3.4.4' },
+  { component: 'select', version: '3.4.5' },
+  { component: 'select', version: '3.4.6' },
+  { component: 'select', version: '3.4.7' },
+  { component: 'select', version: '3.5.0' }
 ];
