@@ -100,6 +100,10 @@ import select_3_6_4 from '!!raw-loader!../../../packages/shineout/src/select/__d
 import select_3_6_5 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.6.5/index.md';
 import select_3_6_6 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.6.6/index.md';
 import select_3_7_0 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.7.0/index.md';
+import select_3_7_1 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.7.1/index.md';
+import select_3_7_2 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.7.2/index.md';
+import select_3_7_5 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.7.5/index.md';
+import select_3_7_6 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.7.6/index.md';
 
 export const diffReports: Record<string, string> = {
   'alert/3.1.31': alert_3_1_31,
@@ -200,7 +204,11 @@ export const diffReports: Record<string, string> = {
   'select/3.6.4': select_3_6_4,
   'select/3.6.5': select_3_6_5,
   'select/3.6.6': select_3_6_6,
-  'select/3.7.0': select_3_7_0
+  'select/3.7.0': select_3_7_0,
+  'select/3.7.1': select_3_7_1,
+  'select/3.7.2': select_3_7_2,
+  'select/3.7.5': select_3_7_5,
+  'select/3.7.6': select_3_7_6
 };
 
 export const diffReportsList = [
@@ -302,5 +310,9 @@ export const diffReportsList = [
   { component: 'select', version: '3.6.4' },
   { component: 'select', version: '3.6.5' },
   { component: 'select', version: '3.6.6' },
-  { component: 'select', version: '3.7.0' }
+  { component: 'select', version: '3.7.0' },
+  { component: 'select', version: '3.7.1' },
+  { component: 'select', version: '3.7.2' },
+  { component: 'select', version: '3.7.5' },
+  { component: 'select', version: '3.7.6' }
 ];
