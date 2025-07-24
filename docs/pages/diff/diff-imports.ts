@@ -91,6 +91,15 @@ import select_3_4_5 from '!!raw-loader!../../../packages/shineout/src/select/__d
 import select_3_4_6 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.6/index.md';
 import select_3_4_7 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.4.7/index.md';
 import select_3_5_0 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.5.0/index.md';
+import select_3_5_2 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.5.2/index.md';
+import select_3_5_6 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.5.6/index.md';
+import select_3_5_7 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.5.7/index.md';
+import select_3_6_0 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.6.0/index.md';
+import select_3_6_2 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.6.2/index.md';
+import select_3_6_4 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.6.4/index.md';
+import select_3_6_5 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.6.5/index.md';
+import select_3_6_6 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.6.6/index.md';
+import select_3_7_0 from '!!raw-loader!../../../packages/shineout/src/select/__diff__/3.7.0/index.md';
 
 export const diffReports: Record<string, string> = {
   'alert/3.1.31': alert_3_1_31,
@@ -182,7 +191,16 @@ export const diffReports: Record<string, string> = {
   'select/3.4.5': select_3_4_5,
   'select/3.4.6': select_3_4_6,
   'select/3.4.7': select_3_4_7,
-  'select/3.5.0': select_3_5_0
+  'select/3.5.0': select_3_5_0,
+  'select/3.5.2': select_3_5_2,
+  'select/3.5.6': select_3_5_6,
+  'select/3.5.7': select_3_5_7,
+  'select/3.6.0': select_3_6_0,
+  'select/3.6.2': select_3_6_2,
+  'select/3.6.4': select_3_6_4,
+  'select/3.6.5': select_3_6_5,
+  'select/3.6.6': select_3_6_6,
+  'select/3.7.0': select_3_7_0
 };
 
 export const diffReportsList = [
@@ -275,5 +293,14 @@ export const diffReportsList = [
   { component: 'select', version: '3.4.5' },
   { component: 'select', version: '3.4.6' },
   { component: 'select', version: '3.4.7' },
-  { component: 'select', version: '3.5.0' }
+  { component: 'select', version: '3.5.0' },
+  { component: 'select', version: '3.5.2' },
+  { component: 'select', version: '3.5.6' },
+  { component: 'select', version: '3.5.7' },
+  { component: 'select', version: '3.6.0' },
+  { component: 'select', version: '3.6.2' },
+  { component: 'select', version: '3.6.4' },
+  { component: 'select', version: '3.6.5' },
+  { component: 'select', version: '3.6.6' },
+  { component: 'select', version: '3.7.0' }
 ];

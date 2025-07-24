@@ -170,6 +170,7 @@ diff 报告用于记录组件版本间的具体变更内容，需要根据 chang
 - **重要**：文件路径必须与实际 commit 一致
 - **重要**：代码内容必须是当时提交的实际代码，不能想象或推测
 - **重要**：涉及 CSS 类名和样式时，必须使用实际存在的类名（查看 shineout-style 包中的定义）
+- **重要**：CSS 类名必须遵循 JSS 生成规则：`.soui-[组件名]-[驼峰转横线的属性名]`，如 `resultWrapper` → `.soui-select-result-wrapper`
 - **重要**：组件属性必须真实存在（查看 packages/shineout/src/[component]/interface.ts）
 - 示例：
   ```markdown
@@ -207,7 +208,7 @@ diff 报告用于记录组件版本间的具体变更内容，需要根据 chang
 ###### DOM 结构变更风险
 - 分析 DOM 结构的变化
 - 列出用户可能依赖的 DOM 选择器
-- 提供风险代码示例（使用 `.soui-` 前缀的实际类名）
+- 提供风险代码示例（使用 JSS 生成的实际类名，格式：`.soui-[组件]-[属性]`）
 - 给出规避方案
 - 如无风险，标注"无相关风险"
 
@@ -221,7 +222,10 @@ diff 报告用于记录组件版本间的具体变更内容，需要根据 chang
 ###### 样式变更风险
 - 检查样式类名或规则变化（必须基于 shineout-style 包中的实际定义）
 - 分析对自定义样式的影响
-- 提供可能失效的样式示例（使用 `.soui-` 前缀）
+- 提供可能失效的样式示例（遵循 JSS 类名规则：驼峰转横线）
+- CSS 类名示例：
+  - `Select` 组件：`.soui-select-result-wrapper`、`.soui-select-icon-wrapper`
+  - `common` 组件：`.soui-common-highlight`
 - 给出样式迁移方案
 - 如无风险，标注"无相关风险"
 
@@ -265,8 +269,14 @@ git show [commit-hash] -- [file-path]
 # 确保 diff 报告中的文件路径与 git show --stat 显示的一致
 # 确保 diff 代码与 git show 显示的实际变更一致
 
-# 6. 生成/更新 diff-imports.ts
-pnpm run generate:diff-imports
+# 6. 验证 CSS 类名格式
+# 查看 packages/shineout-style/src/[component]/[component].ts 中的样式定义
+# 类名转换规则：驼峰转横线，如 resultWrapper → result-wrapper
+# 最终格式：.soui-[component]-[property]
+# 示例：.soui-select-result-wrapper
+
+# 7. 生成/更新 diff-imports.ts
+pnpm run generate:diff
 ```
 
 **重要提醒**：
@@ -295,7 +305,7 @@ pnpm run generate:diff-imports
    - 风险场景分析必须包含三个子章节
    - 必须使用 git show 获取的实际文件路径和代码变更
    - 不能想象或推测代码内容
-   - CSS 类名必须使用 .soui- 前缀（查看 shineout-style 包）
+   - CSS 类名必须遵循 JSS 规则：.soui-[组件]-[属性]（驼峰转横线）
    - 组件属性必须真实存在（查看 interface.ts）
    - 参考 checkbox 3.4.3 或 dropdown 3.3.2 的格式
    ```
@@ -309,7 +319,7 @@ pnpm run generate:diff-imports
 - [ ] 每个风险都有具体的风险示例和规避方案
 - [ ] **文件路径与 git show --stat 显示的完全一致**
 - [ ] **diff 代码是从 git show 获取的实际代码**
-- [ ] CSS 类名使用 .soui- 前缀且真实存在
+- [ ] CSS 类名遵循 JSS 格式：.soui-[组件]-[驼峰转横线属性]
 - [ ] 组件属性已验证存在于 interface.ts
 - [ ] 代码示例包含"之前/现在"对比
 - [ ] 升级注意事项完整（兼容性+行为变化）
