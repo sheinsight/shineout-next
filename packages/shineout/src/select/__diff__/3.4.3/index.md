@@ -74,6 +74,37 @@
 2. **选项内边距**：调整选项右侧内边距，为勾选图标预留空间
 3. **不受影响**：单选模式、结果框显示、其他组件样式
 
+## 风险场景分析
+
+### DOM 结构变更风险
+
+- **无相关风险**：本次变更仅涉及样式类的添加，不改变 DOM 结构
+
+### 行为逻辑变更风险
+
+- **无相关风险**：本次变更仅涉及样式调整，不影响组件行为逻辑
+
+### 样式变更风险
+
+1. **多选列表样式选择器变化**：
+   - 变更描述：右内边距样式从 `.multiple .optionInner` 移至 `.multipleList .optionInner`
+   - 风险场景：自定义样式依赖原有选择器的场景
+   - 风险示例：
+   ```css
+   /* 风险样式：依赖原有选择器结构 */
+   .so-select-multiple .so-select-option-inner {
+     /* 之前：这个选择器会匹配到结果框和下拉列表 */
+     /* 现在：只匹配到结果框，不再匹配下拉列表 */
+     padding-right: 40px !important;
+   }
+   
+   /* 可能失效的样式覆盖 */
+   .custom-select.so-select-multiple .so-select-option-inner {
+     background: #f0f0f0;
+   }
+   ```
+   - 规避方案：更新选择器为 `.so-select-multipleList .so-select-option-inner` 或使用更精确的选择器
+
 ## 升级注意事项
 
 ### 代码兼容性
