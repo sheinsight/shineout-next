@@ -54,9 +54,11 @@ export default {
 
   ok: 'Ok',
   cancel: 'Cancel',
+  reset: 'Reset',
   noData: 'Data not found',
   selectAll: 'Select All',
   loading: 'loading...',
+  searchPlaceholder: 'Search in filter options',
 
   rules: {
     required: {

@@ -10,6 +10,7 @@ import Radio from '../radio';
 import { TheadProps } from './thead.type';
 import { TableClasses } from './table.type';
 import Empty from '../empty';
+import { getLocale, useConfig } from '../config';
 
 interface FilterFooterProps extends Pick<TheadProps, 'jssStyle'> {
   tableClasses: TableClasses;
@@ -20,6 +21,7 @@ interface FilterFooterProps extends Pick<TheadProps, 'jssStyle'> {
 
 const FilterFooter = (props: FilterFooterProps) => {
   const { tableClasses } = props;
+  const { locale } = useConfig();
   return (
     <footer className={tableClasses.filterFooter}>
       <Button
@@ -28,11 +30,12 @@ const FilterFooter = (props: FilterFooterProps) => {
         size='small'
         onClick={props.onReset}
         disabled={!props.resetable}
+        mode='outline'
       >
-        重置
+        {getLocale(locale, 'reset')}
       </Button>
       <Button jssStyle={props.jssStyle} size='small' type='primary' onClick={props.onConfirm}>
-        确定
+        {getLocale(locale, 'ok')}
       </Button>
     </footer>
   );
@@ -45,6 +48,7 @@ interface TheadCommonProps extends Pick<TheadProps, 'jssStyle' | 'filterInfo' | 
 }
 
 export const FilterSelect = (props: TheadCommonProps) => {
+  const { locale } = useConfig();
   const [popoverVisible, setPopoverVisible] = useState(false);
   const [tempValue, setTempValue] = useState();
   const { tableClasses, filter } = props;
@@ -120,6 +124,7 @@ export const FilterSelect = (props: TheadCommonProps) => {
       className={classnames(
         tableClasses.filterIconContainer,
         currentFilter?.value && tableClasses.filterActive,
+        popoverVisible && tableClasses.filterOpened
       )}
       style={{ border: 'none' }}
     >
@@ -135,13 +140,14 @@ export const FilterSelect = (props: TheadCommonProps) => {
           {config?.search && (
             <header className={tableClasses.filterHeader}>
               <Input
+                showClear
                 value={inputText}
                 onChange={(v) => {
                   if (onFilter) onFilter(v || '');
                   setInputText(v as string);
                 }}
                 jssStyle={props.jssStyle}
-                placeholder='在筛选项中搜索'
+                placeholder={getLocale(locale, 'searchPlaceholder')}
                 className={tableClasses.filterInput}
                 prefix={<span className={tableClasses.filterInputIcon}>{Icons.table.Search}</span>}
               />
@@ -174,6 +180,7 @@ export const FilterSelect = (props: TheadCommonProps) => {
 };
 
 export const FilterSearch = (props: TheadCommonProps) => {
+  const { locale } = useConfig();
   const { tableClasses, filter } = props;
   const [popoverVisible, setPopoverVisible] = useState(false);
   const [tempValue, setTempValue] = useState<any>();
@@ -224,6 +231,7 @@ export const FilterSearch = (props: TheadCommonProps) => {
       className={classnames(
         tableClasses.filterIconContainer,
         currentFilter?.value && tableClasses.filterActive,
+        popoverVisible && tableClasses.filterOpened
       )}
       style={{ border: 'none' }}
     >
@@ -240,13 +248,14 @@ export const FilterSearch = (props: TheadCommonProps) => {
           <header className={tableClasses.filterHeader}>
             <Input
               jssStyle={props.jssStyle}
-              placeholder='在筛选项中搜索'
+              placeholder={getLocale(locale, 'searchPlaceholder')}
               className={tableClasses.filterInput}
               prefix={<span className={tableClasses.filterInputIcon}>{Icons.table.Search}</span>}
               value={tempValue}
               onChange={setTempValue}
               onEnterPress={onConfirm}
               forwardRef={inputRef}
+              showClear
             />
           </header>
           <FilterFooter
