@@ -130,6 +130,8 @@ const Time = (props: TimeProps) => {
     hourStep: props.hourStep,
     minuteStep: props.minuteStep,
     secondStep: props.secondStep,
+    position: props.position,
+    rangeDate: props.rangeDate,
   });
 
   const selNow = () => {

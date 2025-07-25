@@ -3,6 +3,11 @@
 
 ### 🆕 Feature
 - `Cascader` 新增 `showParent` 属性，支持显示父级节点 ([#1199](https://github.com/sheinsight/shineout-next/pull/1199))
+## 3.7.8-beta.3
+2025-07-23
+
+### 🐞 BugFix
+- 修复 `Cascader` 用 `renderOptionList` 做全选的场景下，输入框可能不能聚焦的问题 ([#1260](https://github.com/sheinsight/shineout-next/pull/1260))
 
 ## 3.7.5-beta.9
 2025-07-04

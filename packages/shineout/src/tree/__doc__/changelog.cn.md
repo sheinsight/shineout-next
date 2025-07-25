@@ -1,3 +1,11 @@
+## 3.7.8-beta.4
+2025-07-24
+
+### 🐞 BugFix
+
+- 修复 `Tree` 动态数据时，存在 children 为 undefined 导致报错的问题 ([#1261](https://github.com/sheinsight/shineout-next/pull/1261))
+
+
 ## 3.7.5-beta.8
 2025-07-03
 

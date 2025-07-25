@@ -547,7 +547,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (mode !== MODE.MODE_0) return;
     context.value?.forEach((id) => {
       const { children } = context.pathMap.get(id)!;
-      if (children.length) {
+      if (children && children.length) {
         const noCheckedChildren = children.filter((cid) => !context.value?.includes(cid));
         if (noCheckedChildren.length > 0) {
           setTimeout(() => {

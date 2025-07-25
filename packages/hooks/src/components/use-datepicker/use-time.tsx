@@ -14,6 +14,8 @@ const useTime = (props: UseTimeProps) => {
     secondStep = 1,
     staticMin,
     staticMax,
+    position,
+    rangeDate,
   } = props;
 
   const min = dateUtil.resetTimeByFormat(mi, format, options);
@@ -44,7 +46,8 @@ const useTime = (props: UseTimeProps) => {
 
     if (disabledTime) {
       const time = dateUtil.format(date, dateUtil.TIME_FORMAT, options);
-      if (typeof disabledTime === 'function') return disabledTime(time);
+      if (typeof disabledTime === 'function')
+        return disabledTime(time, position, rangeDate?.[0], rangeDate?.[1]);
       return disabledTime === time;
     }
     let isDis = disabled && typeof disabled === 'function' ? disabled(date) : false;
