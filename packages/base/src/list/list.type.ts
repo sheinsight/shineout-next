@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import type { KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { PaginationProps, PaginationJssStyle } from '../pagination/pagination.type';
@@ -84,6 +84,12 @@ export interface ListProps<DataItem, Value>
    * @default false
    */
   fixed?: boolean;
+  /**
+   * @en enable dynamic height virtual list (requires fixed=true)
+   * @cn 启用不定高虚拟列表 (需要设置 fixed=true)
+   * @default false
+   */
+  dynamicHeight?: boolean;
   /**
    * @en list height
    * @cn 列表高度

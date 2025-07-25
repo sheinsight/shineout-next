@@ -6,7 +6,7 @@ import {
   useInputAble,
 } from '@sheinx/hooks';
 import classNames from 'classnames';
-import { useMemo } from 'react';
+import { useMemo, useLayoutEffect, useRef } from 'react';
 import React from 'react';
 import { ListProps } from './list.type';
 import { VirtualScrollList } from '../virtual-scroll';
@@ -111,7 +111,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
       <div
         key={columnIndex}
         className={listClasses?.row}
-        style={{ height: props.fixed ? lineHeight : 'auto' }}
+        style={{ height: props.fixed && !props.dynamicHeight ? lineHeight : 'auto' }}
       >
         {columnData.map((item, rowIndex) => {
           const index = rowIndex + columnIndex * colNum;
@@ -120,6 +120,48 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
       </div>
     );
   });
+
+  const DynamicRow = ({ columnData, columnIndex, setRowHeight }: {
+    columnData: DataItem[];
+    columnIndex: number;
+    setRowHeight?: (index: number, height: number) => void;
+  }) => {
+    const rowRef = useRef<HTMLDivElement>(null);
+    
+    useLayoutEffect(() => {
+      if (rowRef.current && setRowHeight) {
+        const rect = rowRef.current.getBoundingClientRect();
+        if (rect.height > 0) {
+          setRowHeight(columnIndex, rect.height);
+        }
+      }
+    });
+
+    return (
+      <div
+        ref={rowRef}
+        className={listClasses?.row}
+      >
+        {columnData.map((item, rowIndex) => {
+          const index = rowIndex + columnIndex * colNum;
+          return renderItem(item, index);
+        })}
+      </div>
+    );
+  };
+
+  const renderDynamicColumn = usePersistFn(
+    (columnData: DataItem[], columnIndex: number, _relativeIndex: number, setRowHeight?: (index: number, height: number) => void) => {
+      return (
+        <DynamicRow
+          key={columnIndex}
+          columnData={columnData}
+          columnIndex={columnIndex}
+          setRowHeight={setRowHeight}
+        />
+      );
+    }
+  );
 
   const loadingPosition = props.loadingPosition || 'center';
   const renderCenterLoading = () => {
@@ -173,22 +215,24 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
   const renderList = () => {
     if (isEmpty) return null;
 
-    if (props.fixed)
+    if (props.fixed) {
       return (
         <>
           <VirtualScrollList
             data={columnData}
-            renderItem={renderColumn}
+            renderItem={props.dynamicHeight ? renderDynamicColumn : renderColumn}
             lineHeight={lineHeight}
             rowsInView={rowsInView}
             onScroll={handleVirtualScroll}
             height={'auto'}
             style={{ flex: '1', minHeight: '0', display: 'flex' }}
             scrollerStyle={{ flex: 1, minHeight: 0, minWidth: 0, overflow: 'auto' }}
+            dynamicVirtual={props.dynamicHeight}
           />
           {renderFooter()}
         </>
       );
+    }
 
     return (
       <div className={listClasses?.scrollContainer} onScroll={handleListScroll}>
