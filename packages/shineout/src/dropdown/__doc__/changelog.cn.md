@@ -1,3 +1,10 @@
+## 3.7.8-beta.5
+2025-07-25
+
+### 🐞 BugFix
+
+- 修复 `Dropdown` 的 `trigger` 为 `hover` 且设置 `absolute` 时，鼠标移入下拉框后下拉框自动消失的问题 (Regression: since v3.7.5) [#1262](https://github.com/sheinsight/shineout-next/pull/1262)）
+
 ## 3.6.0
 2024-03-21
 
