@@ -11,7 +11,7 @@ English | [简体中文](./README-zh_CN.md)
 <p align="center">
   <a href="https://www.npmjs.com/package/shineout"><img src="https://img.shields.io/npm/v/shineout.svg?style=flat-square"></a>
   <a href="https://www.npmjs.com/package/shineout"><img src="https://img.shields.io/npm/dm/shineout.svg?style=flat-square"></a>
-  <img src="https://img.shields.io/badge/React-%3E%3D16.8.0-green.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/React-%3E%3D16.14.0-green.svg?style=flat-square">
 </p>
 
 ## ✨ Features
