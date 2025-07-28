@@ -344,7 +344,9 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
 
     // 当父元素的滚动容器滚动时，判断是否需要更新弹出层位置，包括是否隐藏弹出层（通过hideStyle隐藏，不是show状态）
-    context.prevParentPosition = parentElNewPosition;
+    if (show) {
+      context.prevParentPosition = parentElNewPosition;
+    }
   });
 
 

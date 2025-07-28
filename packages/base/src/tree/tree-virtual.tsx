@@ -87,6 +87,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
         onToggle={onToggle}
         onChange={onChange}
         size={datum.size}
+        lineHeight={lineHeight}
       ></VirtualTreeNode>
     );
   };
