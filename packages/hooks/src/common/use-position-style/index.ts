@@ -5,7 +5,7 @@ import { useCheckElementBorderWidth } from './check-border';
 import { useCheckElementSize } from './check-element-size'
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
-import { getCurrentCSSZoom } from '../../utils';
+import { getCurrentCSSZoom, getScrollPosition } from '../../utils';
 import { docSize } from '../../utils';
 
 export type HorizontalPosition =
@@ -274,8 +274,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     const rect = context.parentRect;
 
     const needCheck = !show || !shallowEqual(context.prevParentPosition, parentElNewPosition)
-    const scrollTop = scrollElRef?.current?.scrollTop || 0;
-    const scrollLeft = scrollElRef?.current?.scrollLeft || 0;
+    const { scrollTop, scrollLeft } = getScrollPosition(scrollElRef?.current);
 
     if (needCheck && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
       const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
