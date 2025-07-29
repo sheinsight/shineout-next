@@ -2,13 +2,7 @@
 2025-07-29
 ### 🐞 BugFix
 
-- 修复 `Form` 对 `onChange` 的返回值直接修改数据后再设置新 value 不生效的问题 (Regression: since v3.7.8-beta.1) ([#1272](https://github.com/sheinsight/shineout-next/pull/1272))
-
-## 3.7.8-beta.1
-2025-07-21
-### 🐞 BugFix
-
-- 修复 `Form` 对 `onChange` 的返回值直接修改数据后再设置新 value 不生效的问题 ([#1257](https://github.com/sheinsight/shineout-next/pull/1257))
+- 修复 `Form` 对 `onChange` 的返回值直接修改数据后再设置新 value 不生效的问题 ([#1272](https://github.com/sheinsight/shineout-next/pull/1272))([#1257](https://github.com/sheinsight/shineout-next/pull/1257))
 
 ## 3.7.7-beta.8
 2025-07-17
