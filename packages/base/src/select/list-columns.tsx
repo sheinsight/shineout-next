@@ -174,6 +174,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
+        paddingY={4}
       ></VirtualScrollList>
     );
   };
