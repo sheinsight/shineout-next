@@ -112,24 +112,24 @@ export interface TableRef {
 export interface TableSelectProps<DataItem, Value> {
   /**
    * @en The current selected value.
-   * @cn 当前选中值，格式和 onRowSelect 返回值一致
+   * @cn 当前选中的数据值，数据格式与 onRowSelect 回调返回的格式保持一致
    * @override any
    */
   value?: Value;
   /**
    * @en Select row. Rows is the selected data.
-   * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
+   * @cn 行选择事件的回调函数。rows 参数为当前选中的行数据。如需格式化选中的数据，请配合使用 format 和 prediction 属性
    */
   onRowSelect?: (rows: Value) => void;
   /**
-   * @en Format value. The defaule value is return the original data. When it is a string, the value is fetched from the original data as a key equivalent to (d) => d\\[format] When it is a function, use its return value.
-   * @cn 格式化 value, 默认值，返回原始数据。 为 string 时，会作为 key 从原始数据中获取值，相当于 (d) => d\\[format]; 为函数时，以函数返回结果作为 value。
+   * @en Format selected value. When string: extracts value using key (e.g., 'id' extracts d.id). When function: parameter is row data, returns formatted value
+   * @cn 格式化选中值。字符串时：作为属性名提取值（如 'id' 提取 d.id）。函数时：参数为行数据，返回格式化后的值
    * @default d => d
    */
   format?: ObjectKey<DataItem> | ((data: DataItem) => Value extends (infer U)[] ? U : Value);
   /**
-   * @en By default, the result of the format function is used to compare whether it matches. In some cases (for example, whe an object that returns the original data is updated, an different option with the same value  is generated), the prediction function needs to be used to determine whether match
-   * @cn 默认使用 format 函数执行的结果来比较是否匹配，在某些情况下（例如返回原始数据的对象，更新数据时，生成了一个值相同，非同一个对象的选项），需要借助 prediction 函数来判断是否匹配
+   * @en Custom value matching function. Parameters: value (selected value), data (row data). Returns true if matched. Used when default comparison fails (e.g., different object references)
+   * @cn 自定义值匹配函数。参数：value（选中值），data（行数据）。返回 true 表示匹配。用于默认比较失效时（如对象引用不同）
    * @default (val, d) => val===format(d)
    */
   prediction?: (value: Value extends (infer U)[] ? U : Value, data: DataItem) => boolean;
@@ -158,9 +158,8 @@ export interface TableProps<DataItem, Value>
     tree?: () => TreeClasses;
   };
   /**
-   *
-   * @cn 单元格点击事件
-   * @en Cell click event
+   * @en Cell click event handler. Parameters: data (row data), info.rowIndex (row index), info.columnIndex (column index), info.columnKey (column key)
+   * @cn 单元格点击事件的回调函数。参数：data（行数据），info.rowIndex（行索引），info.columnIndex（列索引），info.columnKey（列的唯一标识）
    */
   onCellClick?: (
     data: DataItem,
@@ -171,52 +170,52 @@ export interface TableProps<DataItem, Value>
     },
   ) => void;
   /**
-   * @en which takes effect when the virtual list is enabled
-   * @cn 当开启虚拟列表时生效
+   * @en Horizontal scroll position (only works with virtual scrolling)
+   * @cn 横向滚动位置（仅在虚拟滚动模式下生效）
    */
   scrollLeft?: number;
   /**
-   * @en The expected height of a one-line table is just a rough estimate to show the scroll bar.
-   * @cn 单行表格的预期高度，只是一个大概的估值，用来展示滚动条
+   * @en Expected height of a single row. Used for virtual scrolling calculations and scrollbar display.
+   * @cn 单行的预估高度。用于虚拟滚动的计算和滚动条显示
    * @default 40
    */
   rowHeight?: number;
   /**
-   * @en row hover highlight
-   * @cn 数据行鼠标悬浮高亮效果
+   * @en Enable row hover highlighting effect
+   * @cn 是否启用行的鼠标悬浮高亮效果
    * @default true
    */
   hover?: boolean;
   /**
-   * @en empty text
-   * @cn 空数据文案
+   * @en Content to display when table has no data
+   * @cn 表格无数据时显示的内容
    * @default getLocale("Data not found")
    */
   empty?: React.ReactNode;
   /**
-   * @en whether to enable ctrl/cmd + click check
-   * @cn 是否启用 ctrl/cmd + click 选中单元格
+   * @en Enable cell selection with Ctrl/Cmd + click
+   * @cn 是否启用 Ctrl/Cmd + 点击来选中单元格
    * @default false
    */
   cellSelectable?: boolean;
   /**
-   * @en height of table, same with style.height
-   * @cn 表格高度，与 style.height 作用相同
+   * @en Table height (same as style.height)
+   * @cn 表格高度（与 style.height 作用相同）
    */
   height?: number | string;
   /**
-   * @en The callback function after scrolling.\nx: Horizontal rolling ratio(0 <= x <= 1)\ny: Vertical scroll ratio(0 <= y <= 1)
-   * @cn 滚动条滚动后回调函数；\nx: 横向滚动比(0 <= x <= 1)\ny: 纵向滚动比(0 <= y <= 1)
+   * @en Scroll event callback. Parameters: x (horizontal scroll ratio 0-1), y (vertical scroll ratio 0-1), left (horizontal scroll pixels), top (vertical scroll pixels)
+   * @cn 滚动事件回调函数。参数：x（横向滚动比例 0-1），y（纵向滚动比例 0-1），left（横向滚动像素值），top（纵向滚动像素值）
    */
   onScroll?: (x: number, y: number, left: number, top: number) => void;
   /**
-   * @en Show pagination See [Pagination](/components/Pagination) for details
-   * @cn 展示分页 详见 [Pagination](/components/Pagination)
+   * @en Pagination configuration. See [Pagination](/components/Pagination) for details
+   * @cn 分页配置项。详见 [Pagination](/components/Pagination) 组件文档
    */
   pagination?: PaginationProps;
   /**
-   * @en When it is true, a default [Spin](/components/Spin) component will be displayed, a custom loading icon can be passed in to replace.
-   * @cn 数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替
+   * @en Loading state. Shows default [Spin](/components/Spin) when true, or custom loading component when provided
+   * @cn 加载状态。为 true 时显示默认的 [Spin](/components/Spin) 组件，也可传入自定义的加载组件
    * @default false
    */
   loading?: boolean | React.ReactNode;
@@ -225,161 +224,160 @@ export interface TableProps<DataItem, Value>
    */
   fixed?: TableFix | 'auto';
   /**
-   *  @en Whether to use virtual list
-   *  @cn 是否使用虚拟列表，设置为 lazy 时，表示在滚动时不触发 rerender
+   *  @en Enable virtual scrolling. Set to 'lazy' to prevent re-rendering during scroll
+   *  @cn 启用虚拟滚动。设置为 'lazy' 可在滚动时避免重新渲染，提升性能
    */
   virtual?: boolean | 'lazy';
   /**
-   * @en The maximum number of rows for a single render. Table uses lazy render to optimize performance under large amounts of data. If your table displays more than 20 rows, you can change the value of rowsInView. Value of 0 render all data.
-   * @cn 单次 render的 最大行数。Table 采用了 lazy render 的方式来优化在大量数据下的性能，如果你的表格显示的高度超出了20条，可以调整 rowsInView 的值。为 0 表示单次 render 所有数据。
+   * @en Maximum rows rendered at once. Uses lazy rendering for performance with large datasets. Adjust if displaying more than 20 rows. Set to 0 to render all data.
+   * @cn 单次渲染的最大行数。使用懒加载优化大数据量性能。若表格超过 20 行，可调整此值。设为 0 渲染全部数据
    * @default 20
    */
   rowsInView?: number;
   /**
-   * @en size of table
-   * @cn 表格尺寸
+   * @en Table size
+   * @cn 表格尺寸大小
    * @default 'default'
    */
   size?: CommonType['size'];
   /**
-   * @en is Radio
-   * @cn 是否为单选
+   * @en Enable single row selection (radio mode)
+   * @cn 启用单选模式（只能选中一行）
    * @default false
    */
   radio?: boolean;
   /**
-   * @en vertical align with content
-   * @cn 单元格内容垂直对齐方式
+   * @en Vertical alignment of cell content
+   * @cn 单元格内容的垂直对齐方式
    * @default 'top'
    */
   verticalAlign?: 'top' | 'middle';
   /**
-   * @en Pass in the native tr td, using styles only
-   * @cn 传入原生 tr td, 只使用样式
+   * @en Native tr/td elements (only applies styles, no functionality)
+   * @cn 原生 tr/td 元素（仅应用样式，不提供功能）
    */
   children?: React.ReactNode;
   /**
-   * @en TThe total width of the table, which defaults to the container width, must not be less than the sum of width set in columns
-   * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
+   * @en Total table width. Defaults to container width. Must not be less than sum of column widths
+   * @cn 表格总宽度。默认为容器宽度，不能小于各列宽度之和
    */
   width?: number | string;
   /**
-   * @en array，see TableColumn
-   * @cn 数组，见 TableColumn
+   * @en Column configuration array. See TableColumn for details
+   * @cn 列配置数组。详见 TableColumn 文档
    * @override TableColumn[]
    * @default []
    */
   columns?: ColumnItem<DataItem>[];
   /**
-   * @en When the value is true, disabled all checkboxes; When the value is function, disable the checkbox that this function returns true.
-   * @cn 如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项
+   * @en Disable rows. When true, disables all rows. When function: parameter d is row data, returns true to disable that row
+   * @cn 禁用行选择。为 true 时禁用所有行。为函数时：参数 d 为行数据，返回 true 禁用该行
    */
   disabled?: boolean | ((d: DataItem) => boolean);
   /**
-   * @en show expand button while children data is empty
-   * @cn 树形表格子数据为空时依然展示展开按钮
+   * @en Show expand button even when tree node has no children
+   * @cn 树形表格中，即使节点没有子数据也显示展开按钮
    * @default false
    */
   treeEmptyExpand?: boolean;
   /**
-   * @en Sets the attribute of inner element to trigger onRowClick as needed, and '*' to accept the row click
-   * @cn 设置行内元素的 attribute 来按需触发 onRowClick, '*'表示接受行点击触发
+   * @en Specify which elements can trigger row click. Use '*' to allow any element, or specify attribute names
+   * @cn 指定哪些元素可以触发行点击。'*' 表示任何元素都可触发，也可指定特定的属性名
    * @default ['*']
    */
   rowClickAttr?: string[] | string | boolean;
   /**
-   * @en Callback when row click. data: current row data; index: current row index
-   * @cn 行点击事件; data: 当前行数据; index: 当前行索引
+   * @en Row click event handler. Parameters: rowData (current row data), index (row index), fireAttr (triggered element attribute)
+   * @cn 行点击事件回调。参数：rowData（当前行数据），index（行索引），fireAttr（触发点击的元素属性）
    */
   onRowClick?: (rowData: DataItem, index: number, fireAttr?: string | boolean) => void;
   /**
-   * @en Whether to display zebra shading.
-   * @cn 是否显示交错斑马底纹
+   * @en Enable alternating row colors (zebra striping)
+   * @cn 启用交替行颜色（斑马纹效果）
    */
   striped?: boolean;
   /**
-   * @en Specify row className
-   * @cn 指定单行className
+   * @en Custom CSS class for each row. Parameters: rowData (row data), index (row index). Returns class name string
+   * @cn 为每一行设置自定义 CSS 类名。参数：rowData（行数据），index（行索引）。返回类名字符串
    * @override (rowData: DataItem, index: number) => string | undefined
    */
   rowClassName?: (rowData: DataItem, index: number) => string | undefined;
   /**
-   * @en tr events
-   * @cn tr 事件监听器集合
+   * @en Event handlers for tr elements
+   * @cn 表格行 (tr) 元素的事件处理器集合
    * @override object
    */
   rowEvents?: ObjectType;
   /**
-   * @en data
-   * @cn 数据
+   * @en Table data array
+   * @cn 表格数据数组
    * @override object[]
    */
   data?: DataItem[];
   /**
-   * @en Whether to show being fully selected.
-   * @cn 是否显示全选
+   * @en Show select all checkbox in header
+   * @cn 是否在表头显示全选复选框
    * @default true
    */
   showSelectAll?: boolean;
   /**
-   * @en Whether to display the border
-   * @cn 是否显示外边框
+   * @en Display table border
+   * @cn 显示表格边框
    * @default false
    */
   bordered?: boolean;
   /**
-   * @en check children data while select all
-   * @cn 全选时是否将子孙数据选中
+   * @en Include all descendant nodes when selecting all (tree mode)
+   * @cn 全选时是否包含所有子孙节点（树形模式）
    * @default false
    */
   treeCheckAll?: boolean;
   /**
-   * @en customize sort icons
-   * @cn 自定义排序图标
+   * @en Custom render function for sort icons. params.status: current sort state ('asc'|'desc'|null), params.triggerAsc: trigger ascending sort, params.triggerDesc: trigger descending sort
+   * @cn 自定义渲染排序图标的函数。参数：status 当前排序状态（'asc'|'desc'|null），triggerAsc 触发升序排序，triggerDesc 触发降序排序
    */
   renderSorter?: (params: RenderSorterParam) => React.ReactNode;
   /**
-   * @en whether hide thead
-   * @cn 是否隐藏表头
+   * @en Hide table header
+   * @cn 隐藏表格头部
    * @default false
    */
   hideHeader?: boolean;
   /**
-   * @en Footer information can be used to summarize
-   * @cn 底部信息可用于总结
+   * @en Table footer for summary rows
+   * @cn 表格底部，用于显示汇总行
    */
   summary?: SummaryItem[][] | SummaryItem[];
   /**
-   * @en sticky header, When it is true, the distance from the top is 0
-   * @cn 表头是否附着顶部，为 true 时距离顶部为0
-   *
+   * @en Sticky table header. When true, sticks to top with 0 offset. Can also pass object with top offset and CSS mode options
+   * @cn 固定表头。为 true 时固定在顶部（偏移量为 0）。也可传入对象配置 top 偏移量和 CSS 模式等选项
    */
   sticky?: boolean | { top?: number; css?: boolean, target?: Element | null };
 
   /**
-   * @en Whether to show the top scroller
-   * @cn 是否开启顶部滚动条
+   * @en Show horizontal scrollbar at table top
+   * @cn 在表格顶部显示横向滚动条
    * @default false
    * @version 3.4.0
    */
   showTopScrollbar?: boolean;
 
   /**
-   * @en Whether to show the bottom scroller
-   * @cn 是否开启底部自定吸附的滚动条
+   * @en Show sticky horizontal scrollbar at table bottom. Can pass boolean or object with bottom offset and zIndex
+   * @cn 在表格底部显示固定的横向滚动条。可传入布尔值或包含 bottom 偏移量和 zIndex 的对象
    * @default false
    * @version 3.7.0
    */
   showBottomScrollbar?: boolean | BottomScrollbarOption;
 
   /**
-   * @en Table instance (please use with caution: only fixed Table)
-   * @cn Table 实例（请谨慎使用：仅虚拟列表支持）
+   * @en Get table instance reference. Provides methods: scrollToIndex, getRenderIndexByData, scrollColumnIntoView, scrollColumnByLeft, sortByColumn. Use with caution, only supported in virtual mode
+   * @cn 获取表格实例引用。提供方法：scrollToIndex 滚动到指定行，getRenderIndexByData 获取数据的渲染索引，scrollColumnIntoView 滚动到指定列，scrollColumnByLeft 按像素横向滚动，sortByColumn 程序化排序。请谨慎使用，仅在虚拟模式下支持
    */
   tableRef?: (table: TableRef) => void;
   /**
-   * @en Select row. Rows is the selected data.
-   * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
+   * @en Row selection callback. Parameter rows contains selected data. Use format and prediction for data formatting
+   * @cn 行选择回调函数。参数 rows 包含选中的数据。如需数据格式化，请配合使用 format 和 prediction
    */
   onRowSelect?: (rows: Value) => void;
 }
