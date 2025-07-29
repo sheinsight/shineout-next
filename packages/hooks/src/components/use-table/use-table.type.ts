@@ -167,23 +167,20 @@ export interface ColumnRenderFunc<DataItem> {
 
 export interface TableColumnFilterBase<DataItem> {
   /**
-   * @cn 筛选模式: search 搜索模式, select 选择模式
-   * @en Filter mode: search search mode, select select mode
+   * @en Filter mode. 'search': Text search mode. 'select': Select from predefined options
+   * @cn 筛选模式。'search'：文本搜索模式。'select'：从预定义选项中选择
    */
   mode: 'search' | 'select';
 
   /**
-   * @cn 筛选数据的函数
-   * @en Filter data function
-   * @param value 筛选值
-   * @param row 行数据
-   * @returns 是否通过筛选
+   * @en Filter function. Parameters: value (filter value), row (row data). Returns true if row passes filter
+   * @cn 筛选函数。参数：value（筛选值）、row（行数据）。返回 true 表示通过筛选
    */
   onFilter: (value: any, row: DataItem) => boolean;
 
   /**
-   * @cn 自定义的筛选项图标
-   * @en Custom filter icon
+   * @en Custom icon for filter button
+   * @cn 自定义筛选按钮图标
    */
   icon?: React.ReactNode;
 }
@@ -197,8 +194,8 @@ export type TableFilterData = {
 };
 export interface SelectModeColumnFilter<DataItem> extends TableColumnFilterBase<DataItem> {
   /**
-   * @cn 筛选模式为 select 时
-   * @en Filter mode is select
+   * @en Filter mode is 'select'
+   * @cn 筛选模式为 'select'
    */
   mode: 'select';
 
@@ -207,37 +204,34 @@ export interface SelectModeColumnFilter<DataItem> extends TableColumnFilterBase<
    */
   config: {
     /**
-     * @cn 筛选项数据
-     * @en Filter item data
+     * @en Filter options data array
+     * @cn 筛选选项数据数组
      */
     data: Array<TableFilterData>;
 
     /**
-     * @cn 自定义渲染筛选项
-     * @en Custom rendering filter options
+     * @en Custom render for filter options. Can be function or property key
+     * @cn 自定义渲染筛选选项。可以是函数或属性名
      * @default (data) => data.label
      */
     renderItem?: ((item: TableFilterData) => React.ReactNode) | ObjectKey<TableFilterData>;
 
     /**
-     * @cn 是否多选
-     * @en Whether to multiple select
+     * @en Enable multiple selection
+     * @cn 启用多选
      */
     multiple?: boolean;
 
     /**
-     * @cn 是否开启顶部的搜索框
-     * @en Whether to open the top search box
+     * @en Show search box in filter dropdown
+     * @cn 在筛选下拉框中显示搜索框
      */
     search?: boolean;
   };
 
   /**
-   * @cn 筛选数据的函数
-   * @en Filter data function
-   * @param value 筛选值，单选时为单个值，多选时为数组
-   * @param row 行数据
-   * @returns 是否通过筛选
+   * @en Filter function. Parameters: value (single value or array for multiple), row (row data). Returns true if row passes filter
+   * @cn 筛选函数。参数：value（单选时为单值，多选时为数组）、row（行数据）。返回 true 通过筛选
    */
   onFilter: (value: any, row: DataItem) => boolean;
 }
@@ -266,40 +260,40 @@ export type TableColumnFilter<DataItem> =
  */
 export interface TableColumnItem<DataItem> {
   /**
-   * @en cell align
-   * @cn 单元格内容排布方式
+   * @en Horizontal alignment of cell content
+   * @cn 单元格内容的水平对齐方式
    * @default 'left'
    * @override union
    */
   align?: 'left' | 'center' | 'right';
 
   /**
-   * @en The function for controlling to merge columns. The return value is an integer indicating the number of columns that need to be merged。
-   * @cn 合并列控制函数，row为单行数据，返回值一个整数，标明需要合并的列数
+   * @en Column span control function. Parameters: row (current row data), index (row index). Returns number of columns to merge
+   * @cn 列合并控制函数。参数：row（当前行数据），index（行索引）。返回要合并的列数
    */
   colSpan?: (row: DataItem, index: number) => number;
 
   /**
-   * @en default sort
-   * @cn 默认排序规则
+   * @en Default sort order for this column
+   * @cn 该列的默认排序方向
    */
   defaultOrder?: TableColumnOrder;
 
   /**
-   * @en Fixed columns. If multiple adjacent columns need to be locked, specify only the outermost column
-   * @cn 固定列,如果相邻的多列需要锁定，只需指定最外侧的 column 即可
+   * @en Fix column to left or right. For multiple adjacent fixed columns, only specify the outermost one
+   * @cn 固定列在左侧或右侧。若多个相邻列需要固定，只需指定最外侧的列
    */
   fixed?: TableColumnFix;
 
   /**
-   * @en The group of header column.
-   * @cn 表头分组，相邻的相同 group 会生成一个新的表头
+   * @en Header group name. Adjacent columns with the same group will be merged into one header
+   * @cn 表头分组名称。相邻的相同分组会合并为一个表头
    */
   group?: string | React.ReactNode | Array<string | React.ReactNode>;
 
   /**
-   * @en The group of header column, the extra props
-   * @cn 表头分组的额外属性
+   * @en Additional props for header group (className, style)
+   * @cn 表头分组的额外属性（类名、样式）
    * @version 3.7.0
    */
   groupProps?: {
@@ -308,60 +302,51 @@ export interface TableColumnItem<DataItem> {
   }
 
   /**
-   * @en hide the column, only work on row-expand column
-   * @cn 只针对行展开列有效，表示是否隐藏该列
+   * @en Hide column (only works for row-expand type columns)
+   * @cn 隐藏列（仅对 row-expand 类型的列有效）
    */
   hide?: boolean;
 
   /**
-   * @en The key of the column
-   * @cn 列的key，默认使用 index
+   * @en Unique key for column. Defaults to column index if not provided
+   * @cn 列的唯一标识。未提供时默认使用列索引
    */
   key?: string | number;
 
   /**
-   * @en min width
-   * @cn 最小列宽
+   * @en Minimum column width
+   * @cn 列的最小宽度
    */
   minWidth?: number;
 
   /**
-   * @en max width
-   * @cn 最大可拖动列宽
+   * @en Maximum column width (when resizing)
+   * @cn 列的最大宽度（拖动调整时的限制）
    */
   maxWidth?: number;
 
   /**
-   * @en Select All to screen data. Valid only if type="checkbox"
-   * @cn 全选时用来筛除数据，仅当 type="checkbox" 时有效
+   * @en Filter function for select all. Only works when type="checkbox". Parameter: data array. Returns filtered data
+   * @cn 全选时的数据过滤函数。仅在 type="checkbox" 时有效。参数：数据数组。返回过滤后的数据
    */
   filterAll?: (data: DataItem[]) => DataItem[];
 
   /**
-   * @en The generation function for Table content.d: the data of the current row. i: the index of the current row .For ease of use, you can pass in the key of a data, such as 'id', which is equivalent to (d) => { return d.id }
-   * @cn 表格内容生成函数，返回渲染的内容,  data 当前行的数据，index 当前索引，instance 当 type="checkbox" 时会传入 Checkbox 实例
-   * 为了使用方便，可以传入一个数据的key，如 'id'，相当于 (d) => { return d.id }
+   * @en Render cell content. Can be property key string (e.g., 'name' renders row.name) or function with parameters: data (row data), index (row index), checkboxInstance (when type="checkbox")
+   * @cn 渲染单元格内容。可以是属性名字符串（如 'name' 渲染 row.name）或函数，函数参数：data（行数据）、index（行索引）、checkboxInstance（当 type="checkbox" 时）
    * @override ObjectKey<DataItem> | function(d, id, instance)
    */
   render?: ObjectKey<DataItem> | ColumnRenderFunc<DataItem>;
 
   /**
-   * @en According to the result (boolean) returned by the function to determine whether to merge rows, a and b are two adjacent rows of data
-   * @cn 根据函数返回的结果（boolean）判断是否合并行，a、b为相邻的两行数据。
+   * @en Row merge control function. Parameters: prevRowData, nextRowData (adjacent rows). Returns true to merge rows
+   * @cn 行合并控制函数。参数：prevRowData、nextRowData（相邻两行数据）。返回 true 合并行
    */
   rowSpan?: (prevRowData: DataItem, nextRowData: DataItem) => boolean;
 
   /**
-   * @en When the sorter is not empty, the sort icon appears in this column. the value of order: ['asc', 'desc']
-   * Indicate the sort key string, will pass to table sorter method.
-   * Front-end sorting returns a sort function, refer to Array.sort.
-   * Server-side sorting, do not return values and handle it itself.
-   *
-   * @cn sorter 不为空时，这一列会出现排序 icon。order的值为['asc', 'desc']
-   * 字符串表示排序依据字段，作为第一个参数传入Table.sorter
-   * 为 Sorter 对象
-   * 前端排序，返回一个排序函数，参考 Array.sort。(旧用法)
-   * 服务端排序，不要返回值，自行处理即可。(旧用法)
+   * @en Sort configuration. Can be string (sort field name), sort function, or Sorter object with rule and weight. When provided, sort icon appears in column header
+   * @cn 排序配置。可以是字符串（排序字段名）、排序函数或包含 rule 和 weight 的 Sorter 对象。提供后列头会显示排序图标
    */
   sorter?:
     | ((
@@ -371,79 +356,72 @@ export interface TableColumnItem<DataItem> {
     | TableColumnSorter;
 
   /**
-   * @en sort directions
-   * @cn 排序方向
+   * @en Available sort directions for this column
+   * @cn 该列可用的排序方向
    * @default ['asc', 'desc']
    * @version 3.5.0
    */
   sortDirections?: ('asc' | 'desc')[];
 
   /**
-   * @cn 列的筛选配置
-   * @en Column filter configuration
+   * @en Column filter configuration. Supports search and select modes
+   * @cn 列筛选配置。支持搜索和选择两种模式
    * @version 3.6.0
    */
   filter?: TableColumnFilter<DataItem>;
 
   /**
-   * @en The content of the header
-   * @cn 表头显示内容
+   * @en Column header content. Can be string, ReactNode, or function that receives all data
+   * @cn 列头内容。可以是字符串、ReactNode 或接收所有数据的函数
    */
   title?: string | React.ReactNode | ((rowData: DataItem[]) => React.ReactNode);
 
   /**
-   * @en tree table children-data name
-   * @cn 树形表格子数据字段名
+   * @en Property name for tree children data
+   * @cn 树形表格中子节点数据的属性名
    */
   treeColumnsName?: ObjectKey<DataItem>;
 
   /**
-   * @en indent of each level
-   * @cn 每一层缩进宽度
+   * @en Indentation width for each tree level (in pixels)
+   * @cn 树形表格每一层的缩进宽度（像素）
    * @default 25
    */
   treeIndent?: number;
 
   /**
-   * @en Special column
-   * expand: Expand the column. When the render function returns a function, it means that the row can be expanded and the content  is the result returned by this function.
-   * row-expand: Similar to expand. The difference is that clicking on the entire row triggers the expand event.
-   * checkbox: Select column for scenes with only fixed selection columns
-   *
-   * @cn 特殊用途列
-   * expand: 行展开列，render 函数返回函数时，表示此行可以展开，内容为此函数返回结果。
-   * row-expand: 同 expand。不同为点击行内空白区域也可以折叠/展开行。
-   * checkbox: 选择列，仅用于固定选择列的场景
+   * @en Special column type. 'expand': Row expand column, render returns function for expandable content. 'row-expand': Like expand but clicking anywhere in row triggers expand. 'checkbox': Selection column
+   * @cn 特殊列类型。'expand'：行展开列，render 返回函数时可展开。'row-expand'：与 expand 相似，但点击整行触发展开。'checkbox'：选择列
    */
   type?: TableColumnType;
 
   /**
-   * @en width
-   * @cn 列宽
+   * @en Column width
+   * @cn 列宽度
    */
   width?: number | string;
 
   /**
-   * @cn 列对应的类名
-   * @en classname of column
+   * @en CSS class name for this column
+   * @cn 该列的 CSS 类名
    */
   className?: string;
 
   /**
-   * @cn td 样式
-   * @en style of td
+   * @en Inline styles for table cells in this column
+   * @cn 该列单元格的内联样式
    */
   style?: React.CSSProperties;
 
   /**
-   * @cn 可展开元素点击事件仅当（仅该列为行展开列，并且传入 expandKeys 的时候生效）
-   * @en Click event of expandable element only when (only this column is row-expand column and expandKeys is passed in)
+   * @en Click event for expandable element. Only works when column type is 'expand' or 'row-expand' and expandKeys prop is provided. Parameters: data (row data), isExpand (expand state)
+   * @cn 可展开元素的点击事件。仅在列类型为 'expand' 或 'row-expand' 且提供 expandKeys 属性时有效。参数：data（行数据）、isExpand（展开状态）
    */
   onClick?: (d: DataItem, isExpand: boolean) => void;
 
   /**
-   * @cn 单独设置某一列不可拖动
-   * @en Separately set a column not to be draggable
+   * @en Disable column resizing for this specific column
+   * @cn 禁用该列的宽度调整功能
    */
   columnResizable?: false;
 }
