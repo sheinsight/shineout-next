@@ -1,0 +1,392 @@
+{
+  "timestamp": "2025-07-28T12:53:35.003Z",
+  "summary": {
+    "total": 46,
+    "successful": 44,
+    "failed": 2,
+    "withInternalProps": 19,
+    "issues": [
+      {
+        "component": "Breadcrumb",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle, renderItem"
+      },
+      {
+        "component": "Cascader",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle, renderItem, renderResult, renderOptionList, getComponentRef"
+      },
+      {
+        "component": "Checkbox",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Drawer",
+        "issue": "no_props",
+        "details": "未提取到任何属性"
+      },
+      {
+        "component": "Dropdown",
+        "issue": "internal_props",
+        "details": "包含内部属性: renderItem"
+      },
+      {
+        "component": "Form",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Input",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "List",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle, renderItem"
+      },
+      {
+        "component": "Menu",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle, renderItem"
+      },
+      {
+        "component": "Message",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Radio",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Rate",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Rule",
+        "issue": "no_props",
+        "details": "未提取到任何属性"
+      },
+      {
+        "component": "Select",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle, renderItem, renderResult, renderOptionList"
+      },
+      {
+        "component": "Skeleton",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (15) 不匹配"
+      },
+      {
+        "component": "Slider",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Slider",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (16) 不匹配"
+      },
+      {
+        "component": "Spin",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (20) 不匹配"
+      },
+      {
+        "component": "Steps",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (10) 不匹配"
+      },
+      {
+        "component": "Sticky",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (9) 不匹配"
+      },
+      {
+        "component": "Switch",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Switch",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (7) 不匹配"
+      },
+      {
+        "component": "Table",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Table",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (59) 不匹配"
+      },
+      {
+        "component": "Tabs",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (25) 不匹配"
+      },
+      {
+        "component": "Tag",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (17) 不匹配"
+      },
+      {
+        "component": "Textarea",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle"
+      },
+      {
+        "component": "Textarea",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (30) 不匹配"
+      },
+      {
+        "component": "Tooltip",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (11) 不匹配"
+      },
+      {
+        "component": "Transfer",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle, renderItem"
+      },
+      {
+        "component": "Transfer",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (42) 不匹配"
+      },
+      {
+        "component": "Tree",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle, renderItem"
+      },
+      {
+        "component": "Tree",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (57) 不匹配"
+      },
+      {
+        "component": "Upload",
+        "issue": "internal_props",
+        "details": "包含内部属性: jssStyle, renderResult"
+      },
+      {
+        "component": "Upload",
+        "issue": "prop_count_mismatch",
+        "details": "文件中属性数量 (0) 与提取结果 (49) 不匹配"
+      }
+    ]
+  },
+  "cleanComponents": [
+    "Alert",
+    "Avatar",
+    "Badge",
+    "Button",
+    "Card",
+    "Carousel",
+    "Collapse",
+    "Descriptions",
+    "Divider",
+    "Drawer",
+    "Empty",
+    "Gap",
+    "Grid",
+    "Image",
+    "Link",
+    "Modal",
+    "Pagination",
+    "Popover",
+    "Progress",
+    "Rule",
+    "Skeleton",
+    "Spin",
+    "Steps",
+    "Sticky",
+    "Tabs",
+    "Tag",
+    "Tooltip"
+  ],
+  "issues": [
+    {
+      "component": "Breadcrumb",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle, renderItem"
+    },
+    {
+      "component": "Cascader",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle, renderItem, renderResult, renderOptionList, getComponentRef"
+    },
+    {
+      "component": "Checkbox",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Drawer",
+      "issue": "no_props",
+      "details": "未提取到任何属性"
+    },
+    {
+      "component": "Dropdown",
+      "issue": "internal_props",
+      "details": "包含内部属性: renderItem"
+    },
+    {
+      "component": "Form",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Input",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "List",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle, renderItem"
+    },
+    {
+      "component": "Menu",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle, renderItem"
+    },
+    {
+      "component": "Message",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Radio",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Rate",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Rule",
+      "issue": "no_props",
+      "details": "未提取到任何属性"
+    },
+    {
+      "component": "Select",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle, renderItem, renderResult, renderOptionList"
+    },
+    {
+      "component": "Skeleton",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (15) 不匹配"
+    },
+    {
+      "component": "Slider",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Slider",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (16) 不匹配"
+    },
+    {
+      "component": "Spin",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (20) 不匹配"
+    },
+    {
+      "component": "Steps",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (10) 不匹配"
+    },
+    {
+      "component": "Sticky",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (9) 不匹配"
+    },
+    {
+      "component": "Switch",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Switch",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (7) 不匹配"
+    },
+    {
+      "component": "Table",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Table",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (59) 不匹配"
+    },
+    {
+      "component": "Tabs",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (25) 不匹配"
+    },
+    {
+      "component": "Tag",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (17) 不匹配"
+    },
+    {
+      "component": "Textarea",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle"
+    },
+    {
+      "component": "Textarea",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (30) 不匹配"
+    },
+    {
+      "component": "Tooltip",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (11) 不匹配"
+    },
+    {
+      "component": "Transfer",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle, renderItem"
+    },
+    {
+      "component": "Transfer",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (42) 不匹配"
+    },
+    {
+      "component": "Tree",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle, renderItem"
+    },
+    {
+      "component": "Tree",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (57) 不匹配"
+    },
+    {
+      "component": "Upload",
+      "issue": "internal_props",
+      "details": "包含内部属性: jssStyle, renderResult"
+    },
+    {
+      "component": "Upload",
+      "issue": "prop_count_mismatch",
+      "details": "文件中属性数量 (0) 与提取结果 (49) 不匹配"
+    }
+  ]
+}

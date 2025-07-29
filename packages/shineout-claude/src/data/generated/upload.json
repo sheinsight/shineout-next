@@ -1,0 +1,447 @@
+{
+  "name": "Upload",
+  "description": "用户可传输文件或提交相应的内容 (本页中的示例服务端限制为 10 KB，大于此限制的文件会上传失败)",
+  "category": "form",
+  "importPath": "import { Upload } from 'shineout'",
+  "props": [
+    {
+      "name": "onChange",
+      "type": "((value: T[]) => void)",
+      "required": false,
+      "description": "值改变回调(上传成功，删除)。values: 数组, 其每个值是 onSuccess 的返回值"
+    },
+    {
+      "name": "value",
+      "type": "any[]",
+      "required": false,
+      "description": "defaultValue 和 value 可以同时设置，defaultValue 会被value覆盖 在 Form 中，value会被表单接管，value 无效"
+    },
+    {
+      "name": "accept",
+      "type": "string",
+      "required": false,
+      "description": "上传文件类型, 和标准一致, 详见[accept](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)"
+    },
+    {
+      "name": "action",
+      "type": "string | ((file: File) => string)",
+      "required": false,
+      "description": "上传地址"
+    },
+    {
+      "name": "beforeUpload",
+      "type": "((file: File) => Promise<any>)",
+      "required": false,
+      "description": "上传前的回调"
+    },
+    {
+      "name": "validatorHandle",
+      "type": "boolean | ((error: any, file: File) => boolean)",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否处理校验失败的情况, 如果提供一个函数, 则以函数的返回值判断是否处理此 error"
+    },
+    {
+      "name": "headers",
+      "type": "object",
+      "required": false,
+      "description": "请求头部信息"
+    },
+    {
+      "name": "htmlName",
+      "type": "string",
+      "required": false,
+      "description": "服务端接收的 filename，不填使用 name"
+    },
+    {
+      "name": "limit",
+      "type": "number",
+      "required": false,
+      "defaultValue": "100",
+      "description": "最大上传文件数"
+    },
+    {
+      "name": "responseType",
+      "type": "XMLHttpRequestResponseType",
+      "required": false,
+      "description": "设置 xhr.responseType"
+    },
+    {
+      "name": "request",
+      "type": "(options: UploadOptions) => Xhr | void",
+      "required": false,
+      "description": "自定义上传方法。 options: 上传的配置"
+    },
+    {
+      "name": "params",
+      "type": "object",
+      "required": false,
+      "description": "上传参数"
+    },
+    {
+      "name": "withCredentials",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否携带 cookie"
+    },
+    {
+      "name": "onStart",
+      "type": "((file: File) => void)",
+      "required": false,
+      "description": "开始上传的回调函数"
+    },
+    {
+      "name": "onProgress",
+      "type": "false | ((fileInfo: FileRecord) => any)",
+      "required": false,
+      "description": "上传中进度"
+    },
+    {
+      "name": "onSuccess",
+      "type": "((res: any, file: File, data?: any, xhr?: XhrResult ) => ValueItem | Error)",
+      "required": false,
+      "description": "上传成功事件\\nres: 上传接口返回结果\\nfile: 选择的文件\\ndata: 请求的数据\\nxhr: 返回的 response"
+    },
+    {
+      "name": "onHttpError",
+      "type": "((xhr: XhrResult, file: File) => string )",
+      "required": false,
+      "description": "上传出错事件(props 中为 onHttpError)"
+    },
+    {
+      "name": "filesFilter",
+      "type": "((fileList: File[]) => File[])",
+      "required": false,
+      "description": "文件选中后的筛选，用户可自定义最终需要上传的文件列表。需返回一个新的文件列表"
+    },
+    {
+      "name": "validator",
+      "type": "Validator",
+      "required": false,
+      "description": "上传前文件校验，详见下方 Validator"
+    },
+    {
+      "name": "forceAccept",
+      "type": "string",
+      "required": false,
+      "description": "在使用时关闭了 accept 提供的文件类型过滤后，强制对文件类型进行校验（值同accept)"
+    },
+    {
+      "name": "onErrorRemove",
+      "type": "((xhr: XhrResult, file: File, fileInfo?: any) => void)",
+      "required": false,
+      "description": "上传失败图片删除之后的回调"
+    },
+    {
+      "name": "beforeCancel",
+      "type": "((file: FileRecord) => void)",
+      "required": false,
+      "description": "取消文件上传前的回调"
+    },
+    {
+      "name": "recoverAble",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否可以恢复已删除的value"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否禁用"
+    },
+    {
+      "name": "beforeRemove",
+      "type": "((value: ValueItem) => Promise<any>)",
+      "required": false,
+      "description": "删除前的确认，返回一个Promise用于最终确定是否删除"
+    },
+    {
+      "name": "ignorePreview",
+      "type": "boolean",
+      "required": false,
+      "description": "是否忽略上传图片预览"
+    },
+    {
+      "name": "functionalOnChange",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "设置为true后，组件的onChange参数会返回函数，即回调函数方式的setState"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "showUploadList",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否展示上传列表"
+    },
+    {
+      "name": "drop",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否开启拖拽上传文件"
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "文件多选"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "上传占位内容"
+    },
+    {
+      "name": "webkitdirectory",
+      "type": "string | boolean",
+      "required": false,
+      "description": "同原生 input 标签的 webkitdirectory 属性"
+    },
+    {
+      "name": "defaultValue",
+      "type": "T[]",
+      "required": false,
+      "description": "默认值"
+    },
+    {
+      "name": "renderResult",
+      "type": "((data: any) => ReactNode)",
+      "required": false,
+      "defaultValue": "a => a",
+      "description": "结果展示"
+    },
+    {
+      "name": "canDelete",
+      "type": "boolean | ((item: T, index: number) => boolean)",
+      "required": false,
+      "defaultValue": "true",
+      "description": "文件是否可以删除"
+    },
+    {
+      "name": "customResult",
+      "type": "((options: { value: any; files: any; onValueRemove: (index: number) => void; onFileRemove: (id: string) => void; filesInstances: ReactNode; valueInstances: ReactNode; recoverValue: any; onValueRecover: (index: number) => void; handler: ReactNode; }) => ReactNode)",
+      "required": false,
+      "description": "自定义Result 组件"
+    },
+    {
+      "name": "forceAcceptErrorMsg",
+      "type": "string",
+      "required": false,
+      "description": "forceAccept 类型校验失败后自定义错误提示"
+    },
+    {
+      "name": "removeConfirm",
+      "type": "string | PopoverConfirmProps",
+      "required": false,
+      "description": "是否在删除文件和图片前弹出确认"
+    },
+    {
+      "name": "listType",
+      "type": "\"text\" | \"image\"",
+      "required": false,
+      "defaultValue": "\\\"text\\\"",
+      "description": "展示类型"
+    },
+    {
+      "name": "hideHandler",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否隐藏图片上传触发器。注意，开启该属性后不会影响 customResult 中的 handler 返回，只会隐藏默认的触发器"
+    },
+    {
+      "name": "beforeDrop",
+      "type": "((e: DragEvent<Element>) => FileList)",
+      "required": false,
+      "description": "拖拽释放前的回调。允许用户自行处理拖拽事件以及读取文件列表，要求返回值必须为 FileList 类型"
+    },
+    {
+      "name": "leftHandler",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "添加图片视图是否在左侧展示"
+    },
+    {
+      "name": "imageStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "defaultValue": "{width: 80, height: 80}",
+      "description": "图片选择框的样式"
+    },
+    {
+      "name": "renderContent",
+      "type": "((res: any, item: T, index: number, values: T[]) => ReactNode)",
+      "required": false,
+      "description": "自定义渲染上传的图片"
+    },
+    {
+      "name": "onPreview",
+      "type": "((url: string, value: T, index: number, values: T[], fun: { preview: () => void; }) => void)",
+      "required": false,
+      "description": "自定义预览图片操作，默认为画廊展示"
+    },
+    {
+      "name": "name",
+      "type": "Name",
+      "required": false,
+      "description": "Form 内存取数据的 key"
+    },
+    {
+      "name": "beforeChange",
+      "type": "((value: T) => void | T )",
+      "required": false,
+      "description": "值改变前的回调，当返回值不为空时将作为组件的新值"
+    },
+    {
+      "name": "reserveAble",
+      "type": "boolean",
+      "required": false,
+      "description": "设置为 true 组件卸载后表单不自动删除数据"
+    },
+    {
+      "name": "rules",
+      "type": "RuleItem[]",
+      "required": false,
+      "description": "校验规则 详见 [Rule](/components/rule)"
+    },
+    {
+      "name": "onError",
+      "type": "((error?: Error ) => void)",
+      "required": false,
+      "description": "rules 校验回调"
+    },
+    {
+      "name": "bind",
+      "type": "string[]",
+      "required": false,
+      "description": "当值改变是会联动校验 bind 中的字段, 需要配合 Form 使用"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "基础的文件上传, onSuccess 的返回值会作为 value 传给 onChange",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 基础的文件上传, onSuccess 的返回值会作为 value 传给 onChange\n * en - Base\n *    -- Basic usage for uploading file, the onSuccess's returns will be the onChange params\n\n */\nimport React from 'react';\nimport { Button, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\n\n\nconst App: React.FC = () => {\n  const [value, setValue] = React.useState<string[]>([]);\n\n  return (\n    <Upload\n      action='//jsonplaceholder.typicode.com/posts'\n      accept='image/*'\n      value={value}\n      htmlName='file'\n      onSuccess={(_res, file) => file.name}\n      onChange={(v) => {\n        setValue(v);\n      }}\n      style={{ width: 400 }}\n    >\n      <Button mode={'outline'}>\n        <UploadIcon style={{ marginInlineEnd: 4 }} />\n        Upload file\n      </Button>\n    </Upload>\n  );\n};\nexport default App;\n"
+    },
+    {
+      "title": "上传图片",
+      "description": "使用 Upload.Image 处理带预览的图片上",
+      "scenario": "basic",
+      "code": "/**\n * cn - 上传图片\n *    -- 使用 Upload.Image 处理带预览的图片上\n * en - Upload Image\n *    -- Basic usage for uploading file, the onSuccess's returns will be the onChange params\n\n */\nimport React from 'react';\nimport { Upload } from 'shineout';\nimport { mockRquest } from './request';\n\nconst App: React.FC = () => {\n  const [value, setValue] = React.useState<string[]>([]);\n\n  return (\n    <Upload.Image\n      request={mockRquest({\n        uploadTime: 5000,\n        success: true,\n      })}\n      accept='image/*'\n      value={value}\n      htmlName='file'\n      recoverAble\n      leftHandler\n      removeConfirm='Are you sure to delete it ?'\n      limit={3}\n      onSuccess={(_res, filem, data) => {\n        return data;\n      }}\n      onChange={(v) => {\n        setValue(v);\n      }}\n    />\n  );\n};\nexport default App;\n"
+    },
+    {
+      "title": "按钮上传",
+      "description": "使用 Upload.Button 展示单个文件的上传进度",
+      "scenario": "basic",
+      "code": "/**\n * cn - 按钮上传\n *    -- 使用 Upload.Button 展示单个文件的上传进度\n * en - Button\n *    -- Use Upload.Button to show the upload progress of individual files\n */\nimport React from 'react';\nimport { Upload } from 'shineout';\nimport { mockRquest } from './request';\n\nconst App: React.FC = () => {\n\n  return (\n  <Upload.Button\n    type={'primary'}\n    request={mockRquest({\n      uploadTime: 5000,\n      success: true\n    })}\n    name='file'\n    onSuccess={(_res, file) => file.name}\n    loading='Uploading...'\n    placeholder='Click to upload'\n  />\n)\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "自定义结果",
+      "description": "默认展示的结果和 value 里面所存储的值是一样的, 如果有需求需要, 可以用 renderResult 自行处理",
+      "scenario": "basic",
+      "code": "/**\n * cn - 自定义结果\n *    -- 默认展示的结果和 value 里面所存储的值是一样的, 如果有需求需要, 可以用 renderResult 自行处理\n * en - Custom result\n *    -- The result of the default display is the same as the value stored in the value. If there is a need, you can use the renderResult to handle it yourself\n\n */\nimport React from 'react';\nimport { Button, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\nimport { mockRquest } from './request';\n\nconst App: React.FC = () => {\n  const [value, setValue] = React.useState<{ name: string }[]>([]);\n\n  return (\n    <Upload\n      request={mockRquest({\n        uploadTime: 5000,\n        // 随机成功或失败\n        success: Math.random() > 0.5,\n      })}\n      accept='image/*'\n      value={value}\n      htmlName='file'\n      renderResult={(f) => f.name}\n      onSuccess={(_res, file) => ({\n        name: file.name,\n      })}\n      onChange={(v) => {\n        setValue(v);\n      }}\n      limit={3}\n      style={{ width: 400 }}\n    >\n      <Button mode={'outline'}>\n        <UploadIcon style={{ marginInlineEnd: 4 }} />\n        Upload file\n      </Button>\n    </Upload>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "*    -- 设置 `customResult` 属性可以自定义上传结果展示",
+      "description": "设置 `customResult` 属性可以自定义上传结果展示",
+      "scenario": "basic",
+      "code": "/**\n * cn -\n *    -- 设置 `customResult` 属性可以自定义上传结果展示\n * en -\n *    -- Set the `customResult` property to customize the upload result display\n\n */\nimport React from 'react';\nimport { Button, Upload, Link, icons } from 'shineout';\nimport { UploadIcon, FilePdfIcon, FielWordIcon, FileIcon, ImageIcon } from './static/icon';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    item: {\n      display: 'flex',\n      alignItems: 'center',\n      padding: '4px 8px',\n      gap: 4,\n      marginTop: 2,\n      '&:hover': {\n        borderRadius: 2,\n        backgroundColor: 'var(---Neutral-fill-2-, #F4F5F8)',\n      },\n    },\n    btn: {\n      marginLeft: 'auto',\n    }\n  },\n  { name: 'upload-custom' },\n);\n\n\ninterface FileItem {\n  name: string;\n}\nconst df = [\n  {\n    name: '文件名称.doc',\n  },\n  {\n    name: '文件名称.pdf',\n  },\n  {\n    name: '文件名称.txt',\n  },\n  {\n    name: '文件名称.png',\n  },\n  {\n    name: '文件名称.gif',\n  },\n];\n\n// 根据文件名获取文件图标\nconst renderFileIcon = (name: string) => {\n  const ext = name.split('.').pop();\n  if (ext === 'pdf') {\n    return <FilePdfIcon fontSize={14} />;\n  }\n  if (ext === 'doc') {\n    return <FielWordIcon fontSize={14} />;\n  }\n  if(ext === 'png' || ext === 'gif') {\n    return <ImageIcon fontSize={14} />\n  }\n  return <FileIcon fontSize={14} />;\n}\n\ninterface CustomResultProps {\n  value: FileItem[];\n  files: any;\n  onValueRemove: (index: number) => void;\n  onFileRemove: (id: string) => void;\n  recoverValue: any;\n  onValueRecover: (index: number) => void;\n}\n\nconst App: React.FC = () => {\n  const [value, setValue] = React.useState<FileItem[]>(df);\n\n  const classnames = useStyles();\n\n  const customResult = (options: CustomResultProps) => {\n    const { value, onValueRemove } = options;\n    return value.map((item, index) => {\n\n      return <div key={item.name} className={classnames.item} style={index === 0 ? { marginTop: 12 } : {}}>\n        {renderFileIcon(item.name)}\n        {item.name}\n        <Link type=\"secondary\" onClick={() => onValueRemove(index)} style={{width: 14, height: 14}} className={classnames.btn}>\n          {icons.Delete}\n        </Link>\n      </div>\n    }) as any;\n  }\n  return (\n    <Upload\n      accept='*'\n      value={value}\n      htmlName='file'\n      customResult={customResult}\n      onSuccess={(_res, file) => ({\n        name: file.name,\n      })}\n      onChange={(v) => {\n        setValue(v);\n      }}\n      style={{ width: 400 }}\n    >\n      <Button mode={'outline'}>\n        <UploadIcon style={{ marginInlineEnd: 4 }} />\n        Upload file\n      </Button>\n    </Upload>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "自定义图片",
+      "description": "使用  renderContent 可以自定义上传之后的图片结果.",
+      "scenario": "basic",
+      "code": "/**\n * cn - 自定义图片\n *    -- 使用  renderContent 可以自定义上传之后的图片结果.\n * en - Custom Image\n *    -- Use renderContent to customize the image results after uploading\n */\nimport React from 'react';\nimport { Message, Upload } from 'shineout';\n\n\nconst App: React.FC = () => (\n  <Upload.Image\n    action='//jsonplaceholder.typicode.com/posts'\n    accept='image/*'\n    name='file'\n    leftHandler\n    onSuccess={(_res, _file, data) => ({ data })}\n    renderResult={(f) => f.data}\n    limit={3}\n    renderContent={(d, v, i, values) => {\n      console.log(d, v, i, values);\n      return (\n        <div onClick={() => Message.info('i am click')}>\n          <img width='100%' src={d} alt='not found' />\n        </div>\n      );\n    }}\n  />\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "删除确认",
+      "description": "设置 removeConfirm 属性来开启删除前确认",
+      "scenario": "basic",
+      "code": "/**\n * cn - 删除确认\n *    -- 设置 removeConfirm 属性来开启删除前确认\n * en - Remove Confirm\n *    -- Set the removeConfirm property to enable confirmation before deleting\n */\nimport React from 'react';\nimport { Button, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\n\nconst df = [\n  {\n    name: 'mountain.png',\n    data: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n  },\n];\n\nconst App: React.FC = () => (\n  <div>\n    <Upload\n      defaultValue={df}\n      action='//jsonplaceholder.typicode.com/posts'\n      renderResult={(d) => d.name}\n      onSuccess={(_res, file) => ({ name: file.name })}\n      removeConfirm='Are you sure to delete it ?'\n      style={{ width: 400 }}\n    >\n      <Button mode={'outline'}>\n        <UploadIcon style={{ marginInlineEnd: 4 }} />\n        Upload file\n      </Button>\n    </Upload>\n    <Upload.Image\n      leftHandler\n      style={{ marginTop: 24 }}\n      defaultValue={df}\n      action='//jsonplaceholder.typicode.com/posts'\n      renderResult={(d) => d.data}\n      onSuccess={(_res, file, data) => ({ data })}\n      removeConfirm='Are you sure to delete it ?'\n    />\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "撤销删除",
+      "description": "设置 recoverAble 属性来开启撤销删除",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 撤销删除\n *    -- 设置 recoverAble 属性来开启撤销删除\n * en - Recover Delete\n *    -- Set the recoverAble property to enable recover delete\n */\nimport React from 'react';\nimport { Button, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\n\nconst df = [\n  {\n    name: 'mountain.png',\n    data: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n  },\n];\nconst App: React.FC = () => (\n  <div>\n    <Upload\n      defaultValue={df}\n      action='//jsonplaceholder.typicode.com/posts'\n      recoverAble\n      renderResult={(d) => d.name}\n      onSuccess={(_res, file) => ({ name: file.name })}\n      style={{ width: 400 }}\n    >\n      <Button mode={'outline'}>\n        <UploadIcon style={{ marginInlineEnd: 4 }} />\n        Upload file\n      </Button>\n    </Upload>\n    <Upload.Image\n      leftHandler\n      style={{ marginTop: 24 }}\n      defaultValue={df}\n      action='//jsonplaceholder.typicode.com/posts'\n      renderResult={(d) => d.data}\n      onSuccess={(_res, file, data) => ({ data, name: file.name })}\n      recoverAble\n    />\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "校验尺寸",
+      "description": "通过 validator.imageSize 校验图片长宽，本例为 200px * 100px",
+      "scenario": "validation",
+      "code": "/**\n * cn - 校验尺寸\n *    -- 通过 validator.imageSize 校验图片长宽，本例为 200px * 100px\n * en - Validator Image Size\n *    -- Set validator.imageSize to validate the width and height of the image\n */\nimport React from 'react';\nimport { Upload } from 'shineout';\nimport { AddIcon } from './static/icon';\n\nconst App: React.FC = () => (\n  <Upload.Image\n    action='//jsonplaceholder.typicode.com/posts'\n    accept='image/*'\n    name='file'\n    leftHandler\n    onSuccess={(_res, _file, data) => ({ data })}\n    width={400}\n    height={200}\n    renderResult={(f) => f.data}\n    validator={{\n      imageSize: (img) =>\n        img.width !== 200 || img.height !== 100 ? new Error('only allow 200px * 100px') : undefined,\n      ext: (ext) =>\n        ['jpg', 'png'].includes(ext) ? undefined : new Error('File extension must be jpg or png'),\n    }}\n  >\n    <div style={{ padding: '50px 16px' }}>\n      <div style={{ margin: 'auto', fontSize: 12, textAlign: 'center', lineHeight: '16px' }}>\n        <AddIcon />\n        <div style={{ marginTop: 16, color: '#666c7c' }}>Upload Image</div>\n        <div style={{ marginTop: 4, color: '#999DA8' }}>Allow size 200 * 100</div>\n      </div>\n    </div>\n  </Upload.Image>\n);\nexport default App;\n"
+    },
+    {
+      "title": "文件大小",
+      "description": "文件大小校验，本例为 10KB",
+      "scenario": "validation",
+      "code": "/**\n * cn - 文件大小\n *    -- 文件大小校验，本例为 10KB\n * en -\n *    -- Set validator.size to validate the size of the file. This example is 10KB\n */\nimport React from 'react';\nimport { Button, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\n\nconst App: React.FC = () => (\n  <div>\n    <Upload\n      action='//jsonplaceholder.typicode.com/posts'\n      accept='image/*'\n      multiple\n      name='file'\n      onSuccess={(_res, file) => file.name}\n      validator={{\n        size: (s) => (s > 10240 ? new Error('max file size is 10KB') : undefined),\n      }}\n      validatorHandle={(error, file) => {\n        console.log(error, file);\n        return true;\n      }}\n      style={{ width: 400 }}\n    >\n      <Button mode={'outline'}>\n        <UploadIcon style={{ marginInlineEnd: 4 }} />\n        Upload file\n      </Button>\n    </Upload>\n  </div>\n);\nexport default App;\n"
+    },
+    {
+      "title": "异常处理",
+      "description": "onHttpError 用来处理上传到服务器返回的异常",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 异常处理\n *    -- onHttpError 用来处理上传到服务器返回的异常\n * en - Error\n *    -- Set onHttpError to handle exceptions returned by uploading to the server\n */\nimport React from 'react';\nimport { Button, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\n\nconst App: React.FC = () => (\n  <div>\n    <Upload\n      action='/path-no-exist'\n      accept='image/*'\n      name='file'\n      onSuccess={(_res, file) => file.name}\n      onHttpError={(xhr) => {\n        console.log(xhr);\n        if (xhr.status === 404) return 'Url not found.';\n        return 'Upload Fail.';\n      }}\n      limit={3}\n      style={{ width: 400 }}\n    >\n      <Button mode={'outline'}>\n        <UploadIcon style={{ marginInlineEnd: 4 }} />\n        Upload file\n      </Button>\n    </Upload>\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "自定义上传",
+      "description": "通过 request 函数，替代默认上传方法",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 自定义上传\n *    -- 通过 request 函数，替代默认上传方法\n * en - Custom Request\n *    -- Set request property to use your own XMLHttpRequest\n */\nimport React from 'react';\nimport { Button, TYPE, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\n\ntype ValueItem = { name: string };\ntype UploadProps = TYPE.Upload.Props<ValueItem>;\n\nconst request: UploadProps['request'] = (options) => {\n  const { file, onLoad, onError, onProgress } = options;\n  const xhr = new XMLHttpRequest();\n  xhr.open('post', '//jsonplaceholder.typicode.com/posts');\n\n  const data = new FormData();\n  data.append('test', file);\n  xhr.upload.onprogress = onProgress;\n  xhr.onload = () => onLoad(xhr);\n  xhr.onerror = () => onError({ statusText: 'error message' });\n  xhr.send(data);\n\n  return xhr;\n};\n\nconst App: React.FC = () => (\n  <Upload\n    accept='image/*'\n    onSuccess={(_res, file) => ({ name: `upload ${file.name}` })}\n    limit={3}\n    request={request}\n    renderResult={(d) => d.name}\n    style={{ width: 400 }}\n  >\n    <Button mode={'outline'}>\n      <UploadIcon style={{ marginInlineEnd: 4 }} />\n      Upload file\n    </Button>\n  </Upload>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "*    -- 使用 request 略过上传过程",
+      "description": "使用 request 略过上传过程",
+      "scenario": "advanced",
+      "code": "/**\n * cn -\n *    -- 使用 request 略过上传过程\n * en -\n *    -- ignore request with request\n */\nimport React from 'react';\nimport { Button, TYPE, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\n\ntype ValueItem = { name: string; src: string };\ntype UploadProps = TYPE.Upload.Props<ValueItem>;\nconst request: UploadProps['request'] = (options) => {\n  const { file, onLoad, onError } = options;\n  const reader = new FileReader();\n  reader.addEventListener('load', () => {\n    onLoad({ status: 200, response: reader.result });\n  });\n  reader.addEventListener('error', () => {\n    onError({ statusText: 'Oops, something went wrong' });\n  });\n  reader.readAsDataURL(file);\n};\n\nconst App: React.FC = () => (\n  <Upload\n    accept='image/*'\n    onSuccess={(dataURL, file) => ({ name: file.name, src: dataURL })}\n    request={request}\n    renderResult={(d) => d.name}\n    limit={3}\n    style={{ width: 400 }}\n  >\n    <Button mode={'outline'}>\n      <UploadIcon style={{ marginInlineEnd: 4 }} />\n      Upload file\n    </Button>\n  </Upload>\n);\nexport default App;\n"
+    },
+    {
+      "title": "*    -- 此事例演示通过自定义函数压缩文件后上传",
+      "description": "此事例演示通过自定义函数压缩文件后上传",
+      "scenario": "advanced",
+      "code": "/**\n * cn -\n *    -- 此事例演示通过自定义函数压缩文件后上传\n * en -\n *    -- Zip file and upload\n */\nimport React from 'react';\nimport { Button, TYPE, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\nimport JSZip from 'jszip';\n\ntype ValueItem = { name: string };\ntype UploadProps = TYPE.Upload.Props<ValueItem>;\nconst request: UploadProps['request'] = (options) => {\n  const { file, onLoad, onError, onProgress } = options;\n\n  const xhr = new XMLHttpRequest();\n  xhr.open('post', '//jsonplaceholder.typicode.com/posts');\n\n  // @ts-ignore\n  const zip = new JSZip();\n  zip.file(file.name, file);\n  zip\n    .generateInternalStream({ type: 'blob' })\n    .accumulate((e) => {\n      // @ts-ignore\n      onProgress(e, 'zipping...');\n    })\n    .then((content: Blob) => {\n      const zipFile = new File([content], `${file.name}.zip`);\n      const data = new FormData();\n      data.append('file', zipFile);\n      xhr.upload.onprogress = (m) => onProgress(m, 'sending...');\n      xhr.onload = () => onLoad(xhr);\n      xhr.onerror = () => onError({ statusText: 'error message' });\n      xhr.send(data);\n    });\n\n  return xhr;\n};\n\nconst App: React.FC = () => (\n  <Upload\n    onSuccess={(_res, file) => ({ name: `upload ${file.name}` })}\n    limit={3}\n    style={{ width: 400 }}\n    request={request}\n    renderResult={(d) => d.name}\n  >\n    <Button mode={'outline'}>\n      <UploadIcon style={{ marginInlineEnd: 4 }} />\n      Upload file\n    </Button>\n  </Upload>\n);\nexport default App;\n"
+    },
+    {
+      "title": "默认值",
+      "description": "默认值示例",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 默认值\n *    -- 默认值示例\n * en - defaultValue\n *    -- defaultValue example\n */\nimport React from 'react';\nimport { Button, Upload } from 'shineout';\nimport { UploadIcon } from './static/icon';\n\nconst defaultValue = [\n  {\n    name: 'test file.png',\n    url: '../../../images/1_s.jpg',\n  },\n];\nconst App: React.FC = () => (\n  <div>\n    <Upload\n      action='//jsonplaceholder.typicode.com/posts'\n      accept='image/*'\n      multiple\n      limit={2}\n      name='file'\n      onSuccess={(_res, file) => ({ name: file.name })}\n      style={{ width: 400 }}\n      defaultValue={defaultValue}\n      renderResult={(f) => f.name}\n    >\n      <Button mode={'outline'}>\n        <UploadIcon style={{ marginInlineEnd: 4 }} />\n        Upload file\n      </Button>\n    </Upload>\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "拖拽上传",
+      "description": "设置 drop 来支持拖拽上传",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 拖拽上传\n *    -- 设置 drop 来支持拖拽上传\n * en - Drag and Drop\n *    -- set drop to Drag files to upload\n */\nimport React from 'react';\nimport { Upload } from 'shineout';\nimport { AddIcon, ImageIcon } from './static/icon';\n\nconst DraggerImage: React.FC = () => (\n  <Upload.Image\n    action='//jsonplaceholder.typicode.com/posts'\n    multiple\n    name='file'\n    onSuccess={(_res, _file, data) => data}\n    width={200}\n    height={156}\n    leftHandler\n    drop\n  >\n    <div style={{ textAlign: 'center', padding: '50px 16px', fontSize: 12, lineHeight: '16px' }}>\n      <ImageIcon style={{ fontSize: 20, marginBottom: 16 }} />\n      <p style={{ margin: '0' }}>Click or drag image to upload</p>\n    </div>\n  </Upload.Image>\n);\n\nconst DraggerFile: React.FC = () => (\n  <Upload\n    action='//jsonplaceholder.typicode.com/posts'\n    multiple\n    name='file'\n    onSuccess={(_res, file) => file.name}\n    limit={3}\n    style={{ width: 400 }}\n    drop\n  >\n    <div\n      style={{\n        height: 200,\n        boxSizing: 'border-box',\n        padding: '50px 16px',\n        fontSize: 12,\n        lineHeight: '16px',\n        textAlign: 'center',\n        display: 'flex',\n        flexDirection: 'column',\n        justifyContent: 'center',\n        alignItems: 'center',\n      }}\n    >\n      <AddIcon style={{ fontSize: 20, marginBottom: 16 }} />\n      <p style={{ margin: '0' }}>Click or drag file to this area to upload</p>\n    </div>\n  </Upload>\n);\n\nconst App: React.FC = () => (\n  <div>\n    <DraggerFile />\n    <div style={{ marginTop: 24 }} />\n    <DraggerImage />\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "上传前处理",
+      "description": "选择文件后可以使用beforeUpload对文件进行处理",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 上传前处理\n *    -- 选择文件后可以使用beforeUpload对文件进行处理\n * en - Before Upload\n *    -- After selecting a file, you can use beforeUpload to process the file\n */\nimport React from 'react';\nimport { Upload } from 'shineout';\n\nconst App: React.FC = () => {\n\n  return (\n    <Upload.Image\n      leftHandler\n      multiple\n      limit={2}\n      // beforeUpload需要返回Promise\n      beforeUpload={async(file) => {\n        return new Promise((resolve) => {\n          setTimeout(() => {\n            console.log('beforeUpload file: >>', file)\n            resolve(true)\n          })\n        })\n      }}\n      request={(options) => {\n        const f = options.file\n        if (f) {\n          setTimeout(() => {\n            options.onLoad({ status: 200 })\n          }, 100)\n        }\n      }}\n      onSuccess={(_res, file) => {\n        return file instanceof File ? URL.createObjectURL(file) : file\n      }}\n    />\n  );\n}\n\nexport default App;\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

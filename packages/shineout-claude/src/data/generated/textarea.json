@@ -1,0 +1,284 @@
+{
+  "name": "Textarea",
+  "description": "用户可以在文本框内输入或编辑文字",
+  "category": "form",
+  "importPath": "import { Textarea } from 'shineout'",
+  "props": [
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "description": "defaultValue 和 value 可以同时设置，defaultValue 会被value覆盖"
+    },
+    {
+      "name": "onChange",
+      "type": "((value: string) => void)",
+      "required": false,
+      "description": "值改变回调函数"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false,
+      "description": "默认值  和 value 类型相同"
+    },
+    {
+      "name": "autosize",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "高度是否随内容自动变化"
+    },
+    {
+      "name": "onBlur",
+      "type": "FocusEventHandler<Element>",
+      "required": false,
+      "description": "失去焦点后的回调"
+    },
+    {
+      "name": "onFocus",
+      "type": "FocusEventHandler<Element>",
+      "required": false,
+      "description": "focus 事件回调函数"
+    },
+    {
+      "name": "onClick",
+      "type": "MouseEventHandler<Element>",
+      "required": false,
+      "description": "click 事件回调函数"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否禁用"
+    },
+    {
+      "name": "textareaRef",
+      "type": "Ref<HTMLTextAreaElement>",
+      "required": false,
+      "description": "获取textarea dom"
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | \"large\" | \"default\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "不同尺寸"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "description": "Form 内存取数据的 key"
+    },
+    {
+      "name": "status",
+      "type": "\"error\"",
+      "required": false,
+      "description": "组件状态"
+    },
+    {
+      "name": "onStatusChange",
+      "type": "((status: { focused?: boolean ; }) => void)",
+      "required": false,
+      "description": ""
+    },
+    {
+      "name": "underline",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否只展示下边框"
+    },
+    {
+      "name": "border",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否展示边框"
+    },
+    {
+      "name": "resize",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否可以伸缩高度"
+    },
+    {
+      "name": "onEnterPress",
+      "type": "((value: string, e: KeyboardEvent<Element>) => void)",
+      "required": false,
+      "description": "回车键的回调函数"
+    },
+    {
+      "name": "limit",
+      "type": "number | ((text?: string ) => ReactNode)",
+      "required": false,
+      "description": "最大字符数"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否可以清空值"
+    },
+    {
+      "name": "info",
+      "type": "number | ((value: string) => ReactNode | Error) | { content: number | ((value: string) => ReactNode | Error), position?: \"bottom-left\" | \"bottom-right\" }",
+      "required": false,
+      "description": "提示信息"
+    },
+    {
+      "name": "maxHeight",
+      "type": "string | number",
+      "required": false,
+      "description": "输入框的最大高度, 超过之后会出现滚动条"
+    },
+    {
+      "name": "trim",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "Trim 为 true 时，失去焦点时会自动删除空白字符"
+    },
+    {
+      "name": "renderFooter",
+      "type": "((value?: string ) => ReactNode)",
+      "required": false,
+      "description": "渲染 textarea footer"
+    },
+    {
+      "name": "width",
+      "type": "string | number",
+      "required": false,
+      "description": "输入框宽度"
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "required": false,
+      "description": "用户输入触发 onChange 和校验间隔时间，单位 毫秒"
+    },
+    {
+      "name": "popover",
+      "type": "PopoverProps[\"position\"]",
+      "required": false,
+      "description": "校验信息弹出位置"
+    },
+    {
+      "name": "popoverProps",
+      "type": "PopoverProps",
+      "required": false,
+      "description": "校验或者tip弹框接受的属性"
+    },
+    {
+      "name": "beforeChange",
+      "type": "((value: T) => void | T )",
+      "required": false,
+      "description": "值改变前的回调，当返回值不为空时将作为组件的新值"
+    },
+    {
+      "name": "onError",
+      "type": "((error?: Error ) => void)",
+      "required": false,
+      "description": "rules 校验回调"
+    },
+    {
+      "name": "reserveAble",
+      "type": "boolean",
+      "required": false,
+      "description": "设置为 true 组件卸载后表单不自动删除数据"
+    },
+    {
+      "name": "rules",
+      "type": "RuleItem[]",
+      "required": false,
+      "description": "校验规则 详见 [Rule](/components/rule)"
+    },
+    {
+      "name": "bind",
+      "type": "string[]",
+      "required": false,
+      "description": "当值改变是会联动校验 bind 中的字段, 需要配合 Form 使用"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "基础用法",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    --基础用法\n * en - Base\n *    --Basic usage of `Textarea`\n */\nimport { Textarea } from 'shineout';\n\nexport default () => {\n  return <Textarea autoFocus placeholder='input something' />;\n};\n"
+    },
+    {
+      "title": "拖动高度",
+      "description": "设置 `resize` 属性可以拖动改变高度",
+      "scenario": "basic",
+      "code": "/**\n * cn - 拖动高度\n *    -- 设置 `resize` 属性可以拖动改变高度\n * en - resize\n *    -- Set the `resize` property to change the height by dragging\n */\nimport { Textarea } from 'shineout';\n\nexport default () => {\n  return <Textarea placeholder='input something' resize />;\n};\n"
+    },
+    {
+      "title": "尺寸",
+      "description": "提供了三种尺寸 `small | default | large`",
+      "scenario": "basic",
+      "code": "/**\n * cn - 尺寸\n *    -- 提供了三种尺寸 `small | default | large`\n * en - Size\n *    -- There are three sizes: small, default, and large\n */\nimport React from 'react';\nimport { Textarea } from 'shineout';\n\nconst style: React.CSSProperties = { width: 120, marginInlineEnd: 24 };\n\nconst App: React.FC = () => (\n  <div>\n    <Textarea size='small' rows={3} style={style} placeholder='small size' />\n    <Textarea style={style} rows={3} placeholder='default size' />\n    <Textarea size='large' rows={3} style={style} placeholder='large size' />\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "自适应高度",
+      "description": "`autosize` 为 true 时， rows 为最小高度，如果要设置最大高度，使用 `maxHeight` 即可",
+      "scenario": "basic",
+      "code": "/**\n * cn - 自适应高度\n *    -- `autosize` 为 true 时， rows 为最小高度，如果要设置最大高度，使用 `maxHeight` 即可\n * en - Adaptive height\n *    -- `autosize` 为 true 时， rows 为最小高度，如果要设置最大高度，使用 `maxHeight` 即可\n */\nimport { Textarea } from 'shineout';\n\nexport default () => {\n  return (\n    <Textarea\n      autosize\n      rows={2}\n      placeholder='Please enter content, the height can be automatically adjusted'\n      maxHeight={150}\n      resize\n    />\n  );\n};\n"
+    },
+    {
+      "title": "提示信息",
+      "description": "设置 `info` 为数字, 设定最大长度，用户 focus 时会显示用户已输入文字长度。",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 提示信息\n *    -- 设置 `info` 为数字, 设定最大长度，用户 focus 时会显示用户已输入文字长度。\n *    -- 如果超出长度， 则会报错，不会隐藏。\n * en - Info\n *    -- Set info to number, set the maximum length, and the user's focus shows the length of text that the user has entered\n *    -- If the length is exceeded, the error is reported. It is not hidden\n *\n */\nimport React from 'react';\nimport { Textarea } from 'shineout';\n\nconst App: React.FC = () => <Textarea rows={4} trim placeholder='input something' info={10} />;\n\nexport default App;\n"
+    },
+    {
+      "title": "*    -- 可以通过设置 `info` 为函数去自定义提示信息;",
+      "description": "可以通过设置 `info` 为函数去自定义提示信息;",
+      "scenario": "advanced",
+      "code": "/**\n * cn -\n *    -- 可以通过设置 `info` 为函数去自定义提示信息;\n *    -- 如果 `info` 返回类型为 Error，不会隐藏；\n *    -- 可以通过设置 `popoverProps` 来自定义弹窗的属性， 参考Popover组件的属性。\n * en -\n *    -- can customize the info by setting info as a function;\n *    -- if the functio return an Error , the info doesn't hide;\n *    -- can customize the popover by setting `popoverProps` , reference to Popover component's props.\n */\nimport React from 'react';\nimport { Textarea } from 'shineout';\n\nconst renderInfo = (value?: string) => {\n  if (!value || value.length === 0) return null;\n  const text = `total is  ${value.length}`;\n  if (value.length <= 20) return text;\n  return new Error(text);\n};\n\nconst App: React.FC = () => (\n  <Textarea\n    rows={4}\n    trim\n    placeholder='input something'\n    info={renderInfo}\n    popoverProps={{\n      position: 'bottom-left',\n      getPopupContainer: () => document.body,\n    }}\n  />\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "字数统计",
+      "description": "设置 `limit` 为数字，右下角显示字数统计",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 字数统计\n *    -- 设置 `limit` 为数字，右下角显示字数统计\n *    -- 输入达到最大字数后，不再允许输入\n * en - Limit\n *    -- Set the `limit` property to display the word count\n */\nimport React from 'react';\nimport { Textarea } from 'shineout';\n\nconst App: React.FC = () => (\n  <Textarea rows={3} limit={50} placeholder='input something' />\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "*    -- 设置 `limit` 为函数，可以自定义右下角的字数统计显示",
+      "description": "设置 `limit` 为函数，可以自定义右下角的字数统计显示",
+      "scenario": "advanced",
+      "code": "/**\n * cn -\n *    -- 设置 `limit` 为函数，可以自定义右下角的字数统计显示\n *    -- 输入达到最大字数后，可以继续输入\n * en -\n *    -- Set the `limit` to a function to customize the display of the word count\n */\nimport React from 'react';\nimport { Textarea } from 'shineout';\n\nconst max = 100\nconst App: React.FC = () => {\n  const [value, setValue] = React.useState('');\n\n  const error = value.length > max ? 'error' : undefined;\n  return (\n    <Textarea\n      status={error}\n      limit={(text) => (\n        <span>\n          最大字数：\n          <span\n            style={{\n              color: error ? 'var(--soui-danger-6,#EB4242)' : 'var(--soui-brand-6,#197AFA)',\n            }}\n          >\n            {text?.length || 0}\n          </span> / {max}\n        </span>\n      )}\n      value={value}\n      onChange={setValue}\n      placeholder='input something'\n    />\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "底部信息",
+      "description": "设置 `renderFooter` 可自定义底部信息",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 底部信息\n *    -- 设置 `renderFooter` 可自定义底部信息\n * en - RenderFooter\n *    -- render textarea `footer`\n */\nimport React from 'react';\nimport { Textarea } from 'shineout';\n\nfunction renderFooter(text: string = '') {\n  const style: React.CSSProperties = {\n    color: text.length > 20 ? 'var(--danger-6,#CC3D3A)' : 'inherit',\n  };\n  return (\n    <div style={{ textAlign: 'end', color: 'var(--neutral-text-2, #b3b7c1)' }}>\n      <span style={style}>{text.length}</span> / 20\n    </div>\n  );\n}\n\nconst App: React.FC = () => (\n  <Textarea rows={3} renderFooter={renderFooter} placeholder='input something' />\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "可清除",
+      "description": "设置 `clearable` 可以显示清除按钮",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 可清除\n *    -- 设置 `clearable` 可以显示清除按钮\n * en - Clearable\n *    -- Set `clearable` to show clear button\n */\nimport React from 'react';\nimport { Textarea } from 'shineout';\n\nconst App: React.FC = () => (\n  <Textarea placeholder='input something' clearable />\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "Rules",
+      "description": "* en - Rules",
+      "scenario": "validation",
+      "code": "/**\n * cn - Rules\n *   --\n * en - Rules\n *    --\n */\nimport { Rule, Textarea } from 'shineout';\n\nconst rule = Rule();\nexport default () => {\n  return (\n    <Textarea\n      rules={[rule.required('必填')]}\n      tip={'input something'}\n      placeholder='input something'\n    />\n  );\n};\n"
+    },
+    {
+      "title": "innerTitle",
+      "description": "* en - innerTitle",
+      "scenario": "basic",
+      "code": "/**\n * cn - innerTitle\n *   --\n * en - innerTitle\n *    --\n */\nimport { Rule, Textarea } from 'shineout';\n\nconst rule = Rule();\nexport default () => {\n  return (\n    <Textarea\n      rows={1}\n      innerTitle={'hello world'}\n      rules={[rule.required('必填')]}\n      placeholder='input something'\n    />\n  );\n};\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

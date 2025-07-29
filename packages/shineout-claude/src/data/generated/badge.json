@@ -1,0 +1,121 @@
+{
+  "name": "Badge",
+  "description": "图标右上角的圆形徽标数字，一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理",
+  "category": "display",
+  "importPath": "import { Badge } from 'shineout'",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "内容"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "description": "自定义徽标颜色"
+    },
+    {
+      "name": "count",
+      "type": "ReactNode",
+      "required": false,
+      "description": "展示的数字，大于 overflowCount 时显示 ${overflowCount}+，为 0 时隐藏"
+    },
+    {
+      "name": "dot",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "小点模式，开启后不展示数字"
+    },
+    {
+      "name": "offset",
+      "type": "[number, number]",
+      "required": false,
+      "description": "偏移量"
+    },
+    {
+      "name": "overflowCount",
+      "type": "number",
+      "required": false,
+      "description": "封顶数值"
+    },
+    {
+      "name": "showZero",
+      "type": "boolean",
+      "required": false,
+      "description": "当数值为 0 时，是否展示 Badge"
+    },
+    {
+      "name": "status",
+      "type": "\"default\" | \"processing\" | \"error\" | \"warning\" | \"success\"",
+      "required": false,
+      "description": "徽标状态"
+    },
+    {
+      "name": "text",
+      "type": "ReactNode",
+      "required": false,
+      "description": "状态点文本，仅在配置了 status 属性后生效"
+    },
+    {
+      "name": "size",
+      "type": "\"default\" | \"small\"",
+      "required": false,
+      "description": "尺寸，仅在非 dot 模式下生效，支持 small 和 default 两种尺寸"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "基础的徽标展示。当 `count` 为0时默认不展示，可以通过配置 `showZero` 修改为展示。",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 基础的徽标展示。当 `count` 为0时默认不展示，可以通过配置 `showZero` 修改为展示。\n * en - Basic\n *    -- The basic badge display, the badge is not displayed by default when `count` is 0. You can modify it to display by configuring `showZero`\n */\nimport React, { useState } from 'react';\nimport { Badge, Switch } from 'shineout';\nimport Avatar from './static/avatar';\n\nexport default () => {\n  const [showZero, setShowZero] = useState(false);\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>\n      <Badge count={1}>\n        <Avatar></Avatar>\n      </Badge>\n      <Badge count={0} showZero={showZero}>\n        <Switch onChange={setShowZero} value={showZero}></Switch>\n      </Badge>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "独立使用",
+      "description": "不包裹任何元素即是独立使用，可自定样式展现",
+      "scenario": "basic",
+      "code": "/**\n * cn - 独立使用\n *    -- 不包裹任何元素即是独立使用，可自定样式展现\n * en - No children\n *    -- Independent use, no wrapping elements is independent use, you can customize the style\n */\nimport React from 'react';\nimport { Badge } from 'shineout';\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 42 }}>\n      <Badge count={1}></Badge>\n      <Badge count={100} overflowCount={99} color='#faad14'></Badge>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "封顶数字",
+      "description": "设置`overflowCount`属性，当数字大于该值时显示 $\\{overflowCount\\}+",
+      "scenario": "basic",
+      "code": "/**\n * cn - 封顶数字\n *    -- 设置`overflowCount`属性，当数字大于该值时显示 $\\{overflowCount\\}+\n * en - Overflow count\n *    -- Set the `overflowCount` property, when the number is greater than this value, display $\\{overflowCount\\}+\n */\nimport React from 'react';\nimport { Badge } from 'shineout';\nimport Avatar from './static/avatar';\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>\n      <Badge count={99}>\n        <Avatar></Avatar>\n      </Badge>\n      <Badge count={100} overflowCount={9}>\n        <Avatar></Avatar>\n      </Badge>\n      <Badge count={100} overflowCount={99}>\n        <Avatar></Avatar>\n      </Badge>\n      <Badge count={1000} overflowCount={999}>\n        <Avatar></Avatar>\n      </Badge>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "尺寸",
+      "description": "设置 `size` 属性为 `small` 可以显示小尺寸的徽标。支持的尺寸有 `small` 和 `default`。",
+      "scenario": "basic",
+      "code": "/**\n * cn - 尺寸\n *    -- 设置 `size` 属性为 `small` 可以显示小尺寸的徽标。支持的尺寸有 `small` 和 `default`。\n * en - Size\n *    -- Set the `size` property to `small` to display a small badge. The supported sizes are `small` and `default`.\n */\nimport React from 'react';\nimport { Badge } from 'shineout';\nimport Avatar from './static/avatar';\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>\n      <Badge count={99} size='small'>\n        <Avatar></Avatar>\n      </Badge>\n      <Badge count={99}>\n        <Avatar></Avatar>\n      </Badge>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "小点模式",
+      "description": "开启 `dot` 小点模式，不展示数字",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 小点模式\n *    -- 开启 `dot` 小点模式，不展示数字\n * en - Dot\n *    -- Open `dot` dot mode, do not display numbers\n */\nimport React from 'react';\nimport { Badge } from 'shineout';\nimport Avatar from './static/avatar';\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>\n      <Badge dot>\n        <Avatar></Avatar>\n      </Badge>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "带状态的小点",
+      "description": "配置`status`更改徽标的状态",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 带状态的小点\n *    -- 配置`status`更改徽标的状态\n * en - Basic\n *    -- The basic badge display, the badge is not displayed by default when `count` is 0. You can modify it to display by configuring `showZero`\n */\nimport React from 'react';\nimport { Badge } from 'shineout';\n\nexport default () => {\n  return (\n    <div>\n      <div style={{ display: 'flex', alignItems: 'center', gap: 24, marginBottom: 32 }}>\n        <Badge dot status='default'></Badge>\n        <Badge dot status='processing'></Badge>\n        <Badge dot status='error'></Badge>\n        <Badge dot status='warning'></Badge>\n        <Badge dot status='success'></Badge>\n      </div>\n      <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>\n        <Badge dot status='default' text='Default'></Badge>\n        <Badge dot status='processing' text='Processing'></Badge>\n        <Badge dot status='error' text='Error'></Badge>\n        <Badge dot status='warning' text='Warning'></Badge>\n        <Badge dot status='success' text='Success'></Badge>\n      </div>\n    </div>\n  );\n};\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

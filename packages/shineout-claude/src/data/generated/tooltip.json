@@ -1,0 +1,160 @@
+{
+  "name": "Tooltip",
+  "description": "鼠标悬停、聚焦或点击在某个组件时，弹出的文字提示。主要用来显示文字提示，如果需要显示更多内容，请使 Popover",
+  "category": "display",
+  "importPath": "import { Tooltip } from 'shineout'",
+  "props": [
+    {
+      "name": "trigger",
+      "type": "\"hover\" | \"click\" | \"focus\"",
+      "required": false,
+      "defaultValue": "\\\"hover\\\"",
+      "description": "弹出方式"
+    },
+    {
+      "name": "position",
+      "type": "| \"left-top\" | \"left-bottom\" | \"right-top\" | \"right-bottom\" | \"top-right\" | \"top-left\" | \"bottom-right\" | \"bottom-left\" | \"left\" | \"right\" | \"top\" | \"bottom\" | \"auto\"",
+      "required": false,
+      "defaultValue": "\\\"auto\\\"",
+      "description": "弹出层位置"
+    },
+    {
+      "name": "priorityDirection",
+      "type": "\"auto\" | \"vertical\" | \"horizontal\"",
+      "required": false,
+      "defaultValue": "\\\"vertical\\\"",
+      "description": "弹出位置优先级, 默认为上下优先, 只在未设置 position 时生效"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "mouseEnterDelay",
+      "type": "number",
+      "required": false,
+      "defaultValue": "0",
+      "description": "弹出延迟，默认为 0 不延迟，单位为毫秒。"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": true,
+      "description": "子元素只能为一个 ReactElement"
+    },
+    {
+      "name": "animation",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "弹出是否使用动画"
+    },
+    {
+      "name": "disabledChild",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "使被禁用的元素正常显示提示"
+    },
+    {
+      "name": "tip",
+      "type": "ReactNode",
+      "required": true,
+      "description": "弹出文字"
+    },
+    {
+      "name": "type",
+      "type": "\"default\" | \"light\" | \"primary\" | \"success\" | \"warning\" | \"danger\"",
+      "required": false,
+      "defaultValue": "default",
+      "description": "样式"
+    },
+    {
+      "name": "zIndex",
+      "type": "number",
+      "required": false,
+      "defaultValue": "1051",
+      "description": "tooltip 层级"
+    },
+    {
+      "name": "persistent",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "鼠标悬停提示信息内容时，是否保持显示"
+    },
+    {
+      "name": "showArrow",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否显示箭头"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "children 只能为一个 ReactElement 并且不可以使用 Fragment",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- children 只能为一个 ReactElement 并且不可以使用 Fragment\n *    -- 内置了四个弹出方向\n * en - Base\n *    -- children can only be a ReactElement and cannot be a Fragment\n *    -- There are four pop-up directions built in\n */\nimport React from 'react';\nimport { Tooltip, Button } from 'shineout';\n\nconst App: React.FC = () => (\n  <div>\n    <Tooltip tip='hello world' trigger='hover'>\n      <Button type='primary'>hover me</Button>\n    </Tooltip>\n  </div>\n);\nexport default App;\n"
+    },
+    {
+      "title": "弹出位置",
+      "description": "内置了十二个弹出的位置",
+      "scenario": "basic",
+      "code": "/**\n * cn - 弹出位置\n *    -- 内置了十二个弹出的位置\n * en - Position\n *    -- Twelve pop-up positions are built in\n *\n */\n\nimport React from 'react';\nimport { Button, Tooltip, TYPE } from 'shineout';\n\ntype PopoverProps = TYPE.Popover.Props;\ntype PopoverPosition = PopoverProps['position'];\n\nconst positions: Array<PopoverPosition[]> = [\n  [undefined, 'bottom-left', 'bottom', 'bottom-right', undefined],\n  ['right-top', undefined, undefined, undefined, 'left-top'],\n  ['right', undefined, undefined, undefined, 'left'],\n  ['right-bottom', undefined, undefined, undefined, 'left-bottom'],\n  [undefined, 'top-left', 'top', 'top-right', undefined],\n];\n\nconst style: React.CSSProperties = {\n  margin: 4,\n  width: 110,\n  display: 'inline-block',\n};\n\nconst App: React.FC = () => (\n  <div>\n    {positions.map((row, i) => (\n      <div key={i}>\n        {row.map((p, j) =>\n          p ? (\n            <Tooltip\n              key={j}\n              position={p}\n              tip={\n                <div>\n                  <div>i am popover content</div>\n                  <div>{p}</div>\n                </div>\n              }\n            >\n              <Button key={j} mode={'outline'} style={style}>\n                {p}\n              </Button>\n            </Tooltip>\n          ) : (\n            <div key={j} style={{ ...style, border: 0 }} />\n          ),\n        )}\n      </div>\n    ))}\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "点击触发",
+      "description": "默认触发事件为 hover，如果需要点击触发，可以设置 `trigger` 为 'click'",
+      "scenario": "basic",
+      "code": "/**\n * cn - 点击触发\n *    -- 默认触发事件为 hover，如果需要点击触发，可以设置 `trigger` 为 'click'\n * en - Click\n *    -- Set the trigger property to change the `trigger` event to 'click'\n */\nimport React from 'react';\nimport { Tooltip, Button } from 'shineout';\n\nconst App: React.FC = () => (\n  <div>\n    <Tooltip tip='Some text.' trigger='click'>\n      <Button type='primary'>click me</Button>\n    </Tooltip>\n  </div>\n);\nexport default App;\n"
+    },
+    {
+      "title": "聚焦触发",
+      "description": "需要聚焦触发，可以设置 `trigger` 为 'focus', children 需要是一个可以聚焦的元素",
+      "scenario": "basic",
+      "code": "/**\n * cn - 聚焦触发\n *    -- 需要聚焦触发，可以设置 `trigger` 为 'focus', children 需要是一个可以聚焦的元素\n * en - Focus\n *    -- Set the trigger property to change the `trigger` event to 'focus'\n * \n */\nimport React from 'react';\nimport { Tooltip, Input } from 'shineout';\n\nconst App: React.FC = () => (\n  <div>\n    <Tooltip tip='Some text.' trigger='focus'>\n      <Input style={{ width: 300 }} />\n    </Tooltip>\n  </div>\n);\nexport default App;\n"
+    },
+    {
+      "title": "禁用元素",
+      "description": "设置 disabledChild 来使内部禁用的元素正常工作",
+      "scenario": "basic",
+      "code": "/**\n * cn - 禁用元素\n *    -- 设置 disabledChild 来使内部禁用的元素正常工作\n * en - Disabled\n *    -- Set disabledChild make disabled child work\n */\nimport React from 'react';\nimport { Button, Tooltip } from 'shineout';\n\nconst App: React.FC = () => (\n  <div>\n    <Tooltip tip='Some text.' disabledChild>\n      <Button disabled>Disabled</Button>\n    </Tooltip>\n  </div>\n);\nexport default App;\n"
+    },
+    {
+      "title": "主题色",
+      "description": "通过 `type` 设置主题色",
+      "scenario": "basic",
+      "code": "/**\n * cn - 主题色\n *    -- 通过 `type` 设置主题色\n * en - Type\n *    -- Set the type property to change the theme color\n */\nimport React from 'react';\nimport { Tooltip, Button } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex' }}>\n    <Tooltip tip='This is tooltip content'>\n      <Button style={{ marginRight: 24 }} type='secondary'>\n        default\n      </Button>\n    </Tooltip>\n    <Tooltip tip='This is tooltip content' type='light'>\n      <Button style={{ marginRight: 24 }} type='default' mode='outline'>\n        light\n      </Button>\n    </Tooltip>\n    <Tooltip tip='This is tooltip content' type='primary'>\n      <Button style={{ marginRight: 24 }} type='primary'>\n        primary\n      </Button>\n    </Tooltip>\n    <Tooltip tip='This is tooltip content' type='success'>\n      <Button style={{ marginRight: 24 }} type='success'>\n        success\n      </Button>\n    </Tooltip>\n    <Tooltip tip='This is tooltip content' type='warning'>\n      <Button style={{ marginRight: 24 }} type='warning'>\n        warning\n      </Button>\n    </Tooltip>\n    <Tooltip tip='This is tooltip content' type='danger'>\n      <Button style={{ marginRight: 24 }} type='danger'>\n        danger\n      </Button>\n    </Tooltip>\n  </div>\n);\nexport default App;\n"
+    },
+    {
+      "title": "鼠标悬停",
+      "description": "设置 `persistent` 属性后，鼠标悬停提示信息时将不会关闭 tooltip",
+      "scenario": "basic",
+      "code": "/**\n * cn - 鼠标悬停\n *    -- 设置 `persistent` 属性后，鼠标悬停提示信息时将不会关闭 tooltip\n * en - Stay on hover\n *    -- Set the `persistent` property, the tooltip will not close when the mouse hovers over the tooltip content\n */\nimport React from 'react';\nimport { Tooltip, Button } from 'shineout';\n\nconst App: React.FC = () => (\n  <div>\n    <Tooltip tip='i will not close when hover' trigger='hover' persistent>\n      <Button type='primary'>hover me</Button>\n    </Tooltip>\n  </div>\n);\nexport default App;\n"
+    },
+    {
+      "title": "延迟出现",
+      "description": "旧属性 `delay` 即将废弃，请使用 `mouseEnterDelay`",
+      "scenario": "basic",
+      "code": "/**\n * cn - 延迟出现\n *    -- 旧属性 `delay` 即将废弃，请使用 `mouseEnterDelay`\n *    -- 设置 `mouseEnterDelay` 属性后，鼠标移入后将延迟出现组件，单位为毫秒\n *    -- 注意，该属性仅在 `trigger` 为 `hover` 时有效\n * en - Delay\n *    -- The old property `delay` is about to be deprecated, please use `mouseEnterDelay`.\n *    -- When the `mouseEnterDelay` property is set, the component will appear after the mouse enters, in milliseconds.\n *    -- Note that this property is only valid when `trigger` is `hover`.\n */\nimport React from 'react';\nimport { Tooltip, Button } from 'shineout';\n\nconst App: React.FC = () => (\n  <div>\n    <Tooltip tip='1000ms delay' trigger='hover' mouseEnterDelay={1000}>\n      <Button type='primary'>hover me</Button>\n    </Tooltip>\n  </div>\n);\nexport default App;\n"
+    },
+    {
+      "title": "不带箭头",
+      "description": "设置 `showArrow` 属性为 `false` 可以隐藏箭头",
+      "scenario": "basic",
+      "code": "/**\n * cn - 不带箭头\n *    -- 设置 `showArrow` 属性为 `false` 可以隐藏箭头\n * en - Hide arrow\n*     -- Set the `showArrow` property to `false` to hide the arrow\n */\nimport React from 'react';\nimport { Tooltip, Button } from 'shineout';\n\nconst App: React.FC = () => (\n  <Tooltip tip='Tip message has no arrow.' showArrow={false} persistent>\n    <Button type='primary'>hover me</Button>\n  </Tooltip>\n);\nexport default App;\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

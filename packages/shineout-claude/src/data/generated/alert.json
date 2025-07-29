@@ -1,0 +1,117 @@
+{
+  "name": "Alert",
+  "description": "Alert 用于承载显示用户需要关注的关键信息",
+  "category": "feedback",
+  "importPath": "import { Alert } from 'shineout'",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "type",
+      "type": "\"success\" | \"info\" | \"warning\" | \"danger\" | \"confirmwarning\" | \"error\"",
+      "required": false,
+      "defaultValue": "\\\"warning",
+      "description": "类型"
+    },
+    {
+      "name": "closeItem",
+      "type": "ReactNode",
+      "required": false,
+      "description": "自定义关闭按钮"
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false,
+      "description": "为 true 时，根据 type 属性显示状态图标。如果需要显示自定义图标，传入 ReactElement"
+    },
+    {
+      "name": "iconSize",
+      "type": "number",
+      "required": false,
+      "defaultValue": "14",
+      "description": "icon 的尺寸"
+    },
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "required": false,
+      "description": "标题模式"
+    },
+    {
+      "name": "titleStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "标题样式"
+    },
+    {
+      "name": "closable",
+      "type": "boolean | \"only\"",
+      "required": false,
+      "description": "是否可以关闭Alert，当设置为only的时候，点击按钮不会自动隐藏Alert"
+    },
+    {
+      "name": "onClose",
+      "type": "((e: MouseEvent<HTMLDivElement, MouseEvent>) => void)",
+      "required": false,
+      "description": "关闭事件"
+    },
+    {
+      "name": "bordered",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否显示边框"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "内容，文字或 react 组件"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "提示框基本用法，在页面内用于展示重要提示信息",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 提示框基本用法，在页面内用于展示重要提示信息\n * en - Basic\n *    -- The basic usage of Alert, used to display important prompt information in the page\n */\nimport React from 'react';\nimport { Alert } from 'shineout';\n\nexport default () => {\n  return (\n    <Alert icon type='info'>\n      This is a line of important text for alerting purposes\n    </Alert>\n  );\n};\n"
+    },
+    {
+      "title": "不同类型",
+      "description": "通过设置 `type` 属性切换不同的提示框类型，支持 4 种不同的类型：`success`、`info`、`warning`、`danger`",
+      "scenario": "basic",
+      "code": "/**\n * cn - 不同类型\n *    -- 通过设置 `type` 属性切换不同的提示框类型，支持 4 种不同的类型：`success`、`info`、`warning`、`danger`\n * en - Type\n *    -- Set the `type` property to switch between different types of alert boxes. Support 4 different types: `success`, `info`, `warning`, `danger`\n */\nimport React from 'react';\nimport { Alert } from 'shineout';\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>\n      <Alert icon type='info' style={{ width: 'calc(50% - 16px)' }}>\n        This is informative text.\n      </Alert>\n      <Alert icon type='success' style={{ width: 'calc(50% - 16px)' }}>\n        This is success text.\n      </Alert>\n      <Alert icon type='warning' style={{ width: 'calc(50% - 16px)' }}>\n        This is warning text.\n      </Alert>\n      <Alert icon type='danger' style={{ width: 'calc(50% - 16px)' }}>\n        This is danger text.\n      </Alert>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "允许关闭",
+      "description": "通过设置 `closable` 属性可以展示关闭按钮。通过 `onClose` 属性可以设置关闭回调函数",
+      "scenario": "basic",
+      "code": "/**\n * cn - 允许关闭\n *    -- 通过设置 `closable` 属性可以展示关闭按钮。通过 `onClose` 属性可以设置关闭回调函数\n *    -- 注意 `onClose` 属性未来不再支持 boolean 类型，`hideClose` 属性即将弃用，请使用 `closable`\n * en - Basic\n *    -- The basic usage of Alert, used to display important prompt information in the page\n */\nimport React, { useState } from 'react';\nimport { Alert, Button } from 'shineout';\n\nexport default () => {\n  const [reset, setReset] = useState(true);\n  const handleReset = () => {\n    setReset(true);\n  };\n\n  const handleClose = () => {\n    setTimeout(() => {\n      setReset(false);\n    }, 300);\n  };\n\n  return (\n    <div>\n      {!reset && (\n        <Button onClick={handleReset} mode='text' type='primary'>\n          重置\n        </Button>\n      )}\n      {reset && (\n        <Alert icon closable type='info' onClose={handleClose}>\n          This is informative text.\n        </Alert>\n      )}\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "标题模式",
+      "description": "通过设置 `title` 属性可以展示标题模式的提示框",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 标题模式\n *    -- 通过设置 `title` 属性可以展示标题模式的提示框\n * en - Title\n *    -- Set the `title` property to display the title mode alert box\n */\nimport React from 'react';\nimport { Alert } from 'shineout';\n\nexport default () => {\n  return (\n    <Alert type='info' icon title='Heading' closable>\n      This is a line of important text for alerting purposes\n    </Alert>\n  );\n};\n"
+    },
+    {
+      "title": "无边框",
+      "description": "设置 `bordered` 属性为 false 可以隐藏提示框的边框",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 无边框\n *    -- 设置 `bordered` 属性为 false 可以隐藏提示框的边框\n * en - No border\n *    -- Set the `bordered` property to false to hide the border of the alert box\n */\nimport React from 'react';\nimport { Alert } from 'shineout';\n\nexport default () => {\n  return (\n    <Alert icon type='info' bordered={false}>\n      This is a line of important text for alerting purposes\n    </Alert>\n  );\n};\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

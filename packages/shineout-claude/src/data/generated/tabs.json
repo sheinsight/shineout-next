@@ -1,0 +1,243 @@
+{
+  "name": "Tabs",
+  "description": "用来分隔内容上有关联但属于不同类别的数据集合，具有全局导航的作用",
+  "category": "display",
+  "importPath": "import { Tabs } from 'shineout'",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "lazy",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否开启懒加载"
+    },
+    {
+      "name": "shape",
+      "type": "\"button\" | \"line\" | \"bordered\" | \"card\" | \"dash\" | \"fill\"",
+      "required": false,
+      "defaultValue": "\\\"card\\\"",
+      "description": "Shape 不为空时，activeBackground 等颜色参数将会无效，当shape为bordered时，指向card"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "子元素,必须为 Panel 元素"
+    },
+    {
+      "name": "extra",
+      "type": "ReactNode",
+      "required": false,
+      "description": "额外内容"
+    },
+    {
+      "name": "splitColor",
+      "type": "string",
+      "required": false,
+      "description": "分割线颜色,替代原有border属性"
+    },
+    {
+      "name": "hideSplit",
+      "type": "boolean",
+      "required": false,
+      "description": "是否隐藏分割线"
+    },
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false,
+      "description": "是否可折叠"
+    },
+    {
+      "name": "defaultCollapsed",
+      "type": "boolean",
+      "required": false,
+      "description": "默认折叠状态,当 collapsible 设置为 true 时生效"
+    },
+    {
+      "name": "autoFill",
+      "type": "boolean",
+      "required": false,
+      "description": "自动填充内容区域,当position为left-top, right-top且shape为非button和fill时默认开启，其他情况需手动控制"
+    },
+    {
+      "name": "switchToTop",
+      "type": "boolean",
+      "required": false,
+      "description": "切换 tab 将自动滚动到 Tabs"
+    },
+    {
+      "name": "sticky",
+      "type": "number | boolean | StickyProps",
+      "required": false,
+      "description": "开启头部附着"
+    },
+    {
+      "name": "position",
+      "type": "| \"top-left\" | \"top-right\" | \"bottom-left\" | \"bottom-right\" | \"left-top\" | \"left-bottom\" | \"right-top\" | \"right-bottom\"",
+      "required": false,
+      "description": "选项卡位置"
+    },
+    {
+      "name": "activeBackground",
+      "type": "string",
+      "required": false,
+      "description": "选中标签背景色"
+    },
+    {
+      "name": "inactiveBackground",
+      "type": "string",
+      "required": false,
+      "description": "未选中标签背景色"
+    },
+    {
+      "name": "tabBarStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "tab bar 的样式对象"
+    },
+    {
+      "name": "onChange",
+      "type": "((key: string | number) => void)",
+      "required": false,
+      "description": "标签选中时触发回调事件"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "description": "标签页文字颜色，仅当 shape 为 \\\"card\\\" 时生效"
+    },
+    {
+      "name": "allowNonPanel",
+      "type": "boolean",
+      "required": false,
+      "description": "允许非Tabs.Panel的子元素"
+    },
+    {
+      "name": "renderTabsHeader",
+      "type": "((header: ReactNode, props: Omit<TabsProps, \"renderTabsHeader\">) => ReactNode)",
+      "required": false,
+      "description": "自定义渲染 header 内容"
+    },
+    {
+      "name": "active",
+      "type": "string | number",
+      "required": false,
+      "description": "当前选中标签页（受控）"
+    },
+    {
+      "name": "defaultActive",
+      "type": "string | number",
+      "required": false,
+      "defaultValue": "0",
+      "description": "默认选中标签页（非受控）"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "选项卡的基本用法",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 选项卡的基本用法\n * en - Basic\n *    -- Basic usage of Tabs\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const tabs = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape='line' defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "不同样式",
+      "description": "选项卡有五种样式，可通过 `shape` 属性设置，card 卡片，line 线条，button 按钮, fill 填充, dash 短线",
+      "scenario": "basic",
+      "code": "/**\n * cn - 不同样式\n *    -- 选项卡有五种样式，可通过 `shape` 属性设置，card 卡片，line 线条，button 按钮, fill 填充, dash 短线\n *    -- 设置 `shape = \"line\"` 标签页显示为线条\n * en - Shape\n *    -- There are three shapes for tabs, you can set the `shape` property to change it\n *    -- Set `shape = \"line\"` to show tabs as line\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const tabs: any[] = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape={'line'} defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "*    -- 设置 `shape = \"button\"` 标签页显示为按钮",
+      "description": "设置 `shape = \"button\"` 标签页显示为按钮",
+      "scenario": "basic",
+      "code": "/**\n * cn - \n *    -- 设置 `shape = \"button\"` 标签页显示为按钮\n * en - \n *    -- Set `shape = \"button\"` to show tabs as buttons\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const tabs: any[] = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape={'button'} defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "*    -- 设置 `shape = \"card\"` 标签页显示为卡片式",
+      "description": "设置 `shape = \"card\"` 标签页显示为卡片式",
+      "scenario": "basic",
+      "code": "/**\n * cn - \n *    -- 设置 `shape = \"card\"` 标签页显示为卡片式\n * en - \n *    -- Set `shape = \"card\"` to show tabs as card\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const tabs: any[] = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape={'card'} defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "*    -- 设置 `shape = \"fill\"` 标签页显示为填充",
+      "description": "设置 `shape = \"fill\"` 标签页显示为填充",
+      "scenario": "basic",
+      "code": "/**\n * cn - \n *    -- 设置 `shape = \"fill\"` 标签页显示为填充\n * en - \n *    -- Set `shape = \"fill\"` to show tabs as fill\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const tabs: any[] = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape={'fill'} defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "*    -- 设置 `shape = \"dash\"` 标签页显示为短线",
+      "description": "设置 `shape = \"dash\"` 标签页显示为短线",
+      "scenario": "basic",
+      "code": "/**\n * cn - \n *    -- 设置 `shape = \"dash\"` 标签页显示为短线\n * en - \n *    -- Set `shape = \"dash\"` to show tabs as dash\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const tabs: any[] = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape={'dash'} defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "不同位置",
+      "description": "通过设置 `position` 属性来控制选项卡的位置",
+      "scenario": "basic",
+      "code": "/**\n * cn - 不同位置\n *    -- 通过设置 `position` 属性来控制选项卡的位置\n *    -- 当 `shape` 为 button 或 fill 时，仅支持 top-left, top-right, bottom-left, bottom-right 四个位置\n *    -- 目前支持的位置有 top-left, top-right, bottom-left, bottom-right, left-top, right-top 六种布局\n * en - Position\n *    -- Set the position of the tab through the `position` property. When the `shape` is button or fill, only the four positions of top-left, top-right, bottom-left, bottom-right are supported\n *    -- Currently supported positions are top-left, top-right, bottom-left, bottom-right, left-top, right-top\n */\nimport { useState } from 'react';\nimport { Tabs, Radio, Form } from 'shineout';\n\nexport default () => {\n  const [shape, setShape] = useState('line');\n  const [position, setPosition] = useState('top-left');\n  const shapes = ['line', 'card', 'button', 'fill', 'dash'];\n  const positions = [\n    'top-left',\n    'top-right',\n    'bottom-left',\n    'bottom-right',\n    'left-top',\n    'right-top',\n  ];\n\n  const tabs = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({\n      title: `Tab ${i + 1}`,\n      content:\n        i === 1\n          ? 'Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings. We can never get it by working for it directly. It comes, like happiness, to those who are aiming at something higher. It is a byproduct of great, simple living. The joy of living comes from what we put into living, not from what we seek to get from it. As you travel through life there are always those times when decisions just have to be made when the choices are hard, and solutions seem scarce and the rain seems to soak your parade!Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings. We can never get it by working for it directly. It comes, like happiness, to those who are aiming at something higher. It is a byproduct of great, simple living. The joy of living comes from what we put into living, not from what we seek to get from it. As you travel through life there are always those times when decisions just have to be made when the choices are hard, and solutions seem scarce and the rain seems to soak your parade!'\n          : `Content of Tab ${i + 1}`,\n    });\n  }\n\n  return (\n    <div>\n      <Form labelWidth={65} labelAlign='left'>\n        <Form.Item label='Position:' style={{ marginBottom: 16 }}>\n          <Radio.Group keygen data={positions} value={position} onChange={setPosition} />\n        </Form.Item>\n\n        <Form.Item label='Type:' style={{ marginBottom: 24 }}>\n          <Radio.Group keygen data={shapes} value={shape} onChange={setShape} />\n        </Form.Item>\n      </Form>\n\n      <div style={{ height: 150 }}>\n        <Tabs shape={shape as any} position={position as any} autoFill defaultActive={0}>\n          {tabs.map((tab, index) => {\n            return (\n              <Tabs.Panel key={index} tab={tab.title} disabled={index === tabs.length - 1}>\n                <div style={{ padding: 16, fontSize: 14 }}>{tab.content}</div>\n              </Tabs.Panel>\n            );\n          })}\n        </Tabs>\n      </div>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "受控",
+      "description": "通过设置 `active` 属性来控制选项卡的激活状态",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 受控\n *    -- 通过设置 `active` 属性来控制选项卡的激活状态\n * en - Control\n *    -- Set the `active` property to control the active state of the tab\n */\nimport { useState } from 'react';\nimport { Tabs, Radio } from 'shineout';\n\nexport default () => {\n  const [active, setActive] = useState<string | number>(1);\n  const actives = [0, 1, 2];\n  const tabs = [];\n\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  return (\n    <div>\n      <Radio.Group\n        keygen\n        data={actives}\n        value={active}\n        renderItem={(v) => `Tab ${v + 1}`}\n        onChange={setActive}\n        style={{ marginBottom: 24 }}\n      />\n      <div style={{ height: 100 }}>\n        <Tabs shape='line' active={active} onChange={setActive}>\n          {tabs.map((tab, index) => {\n            return (\n              <Tabs.Panel key={index} tab={tab.title}>\n                <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n              </Tabs.Panel>\n            );\n          })}\n        </Tabs>\n      </div>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "自动填充",
+      "description": "设置 `autoFill` 属性后，选项卡会自动填充父元素的宽度",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 自动填充\n *    -- 设置 `autoFill` 属性后，选项卡会自动填充父元素的宽度\n * en - autoFill\n *    -- Set the `autoFill` property, the tab will automatically fill the width of the parent element\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const tabs = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  return (\n    <div style={{ height: 150 }}>\n      <Tabs shape='line' autoFill defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div\n                style={{\n                  padding: 12,\n                  height: '100%',\n                  fontSize: 14,\n                  lineHeight: '20px',\n                }}\n              >\n                Joy in living comes from having fine emotions, trusting them, giving them the\n                freedom of a bird in the open. Joy in living can never be assumed as a pose, or put\n                on from the outside as a mask. People who have this joy do not need to talk about\n                it; they radiate it. They just live out their joy and let it splash its sunlight and\n                glow into other lives as naturally as bird sings. We can never get it by working for\n                it directly. It comes, like happiness, to those who are aiming at something higher.\n                It is a byproduct of great, simple living. The joy of living comes from what we put\n                into living, not from what we seek to get from it. As you travel through life there\n                are always those times when decisions just have to be made when the choices are\n                hard, and solutions seem scarce and the rain seems to soak your parade!\n              </div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "额外内容",
+      "description": "通过配置 `extra` 属性，允许传入额外的内容",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 额外内容\n *    -- 通过配置 `extra` 属性，允许传入额外的内容\n * en - extra\n *    -- Set the `extra` property to add extra content\n */\nimport { Tabs, Button } from 'shineout';\n\nexport default () => {\n  const tabs = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  const renderExtra = () => {\n    return (\n      <Button mode='text' type='primary'>\n        extra operation\n      </Button>\n    );\n  };\n\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape='line' defaultActive={0} extra={renderExtra()}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "滚动",
+      "description": "当 Tabs 数量过多时，将自动开启滚动功能",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 滚动\n *    -- 当 Tabs 数量过多时，将自动开启滚动功能\n * en - Scroll\n *    -- When there are too many Tabs, the scroll function will be automatically enabled\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const tabs = [];\n  for (let i = 0; i < 100; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape='line' defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={tab.title}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "折叠",
+      "description": "通过设置 `collapsible` 属性折叠面板区域",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 折叠\n *    -- 通过设置 `collapsible` 属性折叠面板区域\n * en - Collapsible\n *    -- Set the `collapsible` property to collapse the panel area\n */\nimport { Tabs } from 'shineout';\n\nexport default () => {\n  const renderIcon = () => {\n    return (\n      <svg viewBox=\"0 0 24 24\" width=\"14px\" height=\"14px\">\n        <path fill='#666C7C' d=\"M16.002 1C16.9526 1 17.9107 1.91116 17.9958 2.86373L18.002 3V4H19.002C19.9526 4 20.9107 4.91116 20.9958 5.86373L21.002 6V22C21.002 22.6984 20.3103 23.1694 19.673 22.9446L19.5674 22.9006L13.502 19.974L7.43652 22.9006C6.84449 23.1863 6.1677 22.8326 6.02798 22.23L6.00823 22.1142L6.00195 22V19.145L4.43652 19.9006C3.84449 20.1863 3.1677 19.8326 3.02798 19.23L3.00823 19.1142L3.00195 19V3C3.00195 2.0725 3.9728 1.09337 4.87382 1.00627L5.00195 1H16.002ZM18.502 6H8.50195C8.25649 6 8.05234 6.17688 8.01001 6.41012L8.00195 6.5V19.6106C8.00195 19.6858 8.01893 19.7601 8.05163 19.8279C8.15829 20.049 8.40631 20.156 8.63478 20.0927L8.71923 20.0609L12.809 18.087L13.0674 17.963C13.2635 17.8684 13.4828 17.8413 13.6922 17.8819L13.8163 17.9143L13.9215 17.9569L13.9511 17.9701L17.6557 19.757L18.2847 20.0609C18.3524 20.0936 18.4267 20.1106 18.502 20.1106C18.7474 20.1106 18.9516 19.9337 18.9939 19.7005L19.002 19.6106V6.5C19.002 6.22386 18.7781 6 18.502 6ZM15.502 3H5.50195C5.25649 3 5.05234 3.17688 5.01001 3.41012L5.00195 3.5V16.6106C5.00195 16.6858 5.01893 16.7601 5.05163 16.8279C5.15829 17.049 5.40631 17.156 5.63478 17.0927L5.71923 17.0609L6.00195 16.924V6C6.00195 5.08197 6.95654 4.09423 7.8716 4.00633L8.00195 4H16.002V3.5C16.002 3.25454 15.8251 3.05039 15.5918 3.00806L15.502 3Z\"></path>\n      </svg>\n    );\n  };\n\n  return (\n    <div>\n      <Tabs shape='line' defaultActive={0} collapsible>\n        <Tabs.Panel tab='Tab 1'>\n          <div style={{ padding: 16, fontSize: 14 }}>\n            Joy in living comes from having fine emotions, trusting them, giving them the freedom of\n            a bird in the open. Joy in living can never be assumed as a pose, or put on from the\n            outside as a mask. People who have this joy do not need to talk about it; they radiate\n            it. They just live out their joy and let it splash its sunlight and glow into other\n            lives as naturally as bird sings. We can never get it by working for it directly. It\n            comes, like happiness, to those who are aiming at something higher. It is a byproduct of\n            great, simple living. The joy of living comes from what we put into living, not from\n            what we seek to get from it. As you travel through life there are always those times\n            when decisions just have to be made when the choices are hard, and solutions seem scarce\n            and the rain seems to soak your parade!\n          </div>\n        </Tabs.Panel>\n        <Tabs.Panel\n          tab={\n            <span style={{ marginInlineStart: 4, display: 'flex', alignItems: 'center' }}>\n              <span style={{ marginInlineEnd: 4 }}>Tab2</span>\n              {renderIcon()}\n            </span>\n          }\n        >\n          <div style={{ padding: 16, fontSize: 14 }}>Content of Tab 2</div>\n        </Tabs.Panel>\n        <Tabs.Panel\n          tab={\n            <span style={{ display: 'flex', alignItems: 'center' }}>\n              {renderIcon()}\n              <span style={{ marginInlineStart: 4 }}>Tab3</span>\n            </span>\n          }\n        >\n          <div style={{ padding: 16, fontSize: 14 }}>Content of Tab 3</div>\n        </Tabs.Panel>\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "头部附着",
+      "description": "sticky 属性会开启头部附着功能；sticky=true时，开启附着在顶部；sticky=number时，代表附着顶部，且距离顶部的间距；sticky=StickyProps时，参数将传入 Sticky 组件内；switchToTop 属性支持是否自动滚动到Tabs",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 头部附着\n *    -- sticky 属性会开启头部附着功能；sticky=true时，开启附着在顶部；sticky=number时，代表附着顶部，且距离顶部的间距；sticky=StickyProps时，参数将传入 Sticky 组件内；switchToTop 属性支持是否自动滚动到Tabs\n * en - Sticky header\n *    -- The sticky property will enable the sticky header feature; when sticky=true, the header will be attached to the top; when sticky=number, it means that the header is attached to the top and the distance from the top; when sticky=StickyProps, the parameters will be passed to the Sticky component; the switchToTop property supports whether to automatically scroll to Tabs\n */\nimport React, { useRef } from 'react';\nimport { Tabs } from 'shineout';\n\nconst App: React.FC = () => {\n  const Element = useRef(null);\n  const tabs = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });\n  }\n\n  return (\n    <div style={{ position: 'relative', zIndex: 0 }}>\n      <div id='sticky_element' style={{ height: 400, overflow: 'auto' }}>\n        <div\n          style={{\n            height: 1600,\n            backgroundColor: '#f4f5f8',\n            backgroundImage:\n              'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n              'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n            backgroundSize: '20px 20px',\n            backgroundPosition: '0 0, 10px 10px',\n          }}\n        >\n          <div style={{ height: 200 }}></div>\n          <div ref={Element}>\n            <Tabs\n              shape='line'\n              defaultActive={0}\n              sticky={{\n                scrollContainer: '#sticky_element',\n                parent: Element.current,\n                top: 0,\n              }}\n              style={{ backgroundColor: '#fff' }}\n              inactiveBackground='transparent'\n              activeBackground='transparent'\n              tabBarStyle={{ backgroundColor: '#fff' }}\n            >\n              {tabs.map((tab, index) => {\n                return (\n                  <Tabs.Panel key={index} tab={tab.title}>\n                    <div style={{ padding: 16, height: 100, fontSize: 14 }}>{tab.content}</div>\n                  </Tabs.Panel>\n                );\n              })}\n            </Tabs>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "lcd-link",
+      "description": "选项卡的基本用法",
+      "scenario": "basic",
+      "code": "/**\n * cn - lcd-link\n *    -- 选项卡的基本用法\n * en - Basic\n *    -- Basic usage of Tabs\n */\nimport { Tabs } from 'shineout';\nimport {Link as ReactRouterLink} from 'react-router-dom'\n// import { createLocation } from 'history';\nimport _extends from \"@babel/runtime/helpers/extends\";\nimport _objectWithoutProperties from \"@babel/runtime/helpers/objectWithoutProperties\";\nimport _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport _createClass from \"@babel/runtime/helpers/createClass\";\nimport _inherits from \"@babel/runtime/helpers/inherits\";\nimport _possibleConstructorReturn from \"@babel/runtime/helpers/possibleConstructorReturn\";\nimport _getPrototypeOf from \"@babel/runtime/helpers/getPrototypeOf\";\n\nimport _defineProperty from \"@babel/runtime/helpers/defineProperty\";\n\nfunction _createSuper(Derived) { let hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { let Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { let NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }\n\nconst createLocation = (str) => str\nconst isModifiedEvent = () => false\nimport React, { Component } from 'react';\n// import PropTypes from 'prop-types';\n// import gud from 'gud';\n// import warning from 'tiny-warning';\nconst warning = str => str\nconst gud = () => ''\nlet MAX_SIGNED_31_BIT_INT = 1073741823; // Inlined Object.is polyfill.1\n// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is\n\nfunction objectIs(x, y) {\n  if (x === y) {\n    return x !== 0 || 1 / x === 1 / y;\n  }\n\n  return x !== x && y !== y;\n}\n\nfunction createEventEmitter(value) {\n  let handlers = [];\n  return {\n    on: function on(handler) {\n      handlers.push(handler);\n    },\n    off: function off(handler) {\n      handlers = handlers.filter(function (h) {\n        return h !== handler;\n      });\n    },\n    get: function get() {\n      return value;\n    },\n    set: function set(newValue, changedBits) {\n      value = newValue;\n      handlers.forEach(function (handler) {\n        return handler(value, changedBits);\n      });\n    }\n  };\n}\n\nfunction onlyChild(children) {\n  return Array.isArray(children) ? children[0] : children;\n}\n\nfunction createReactContext(defaultValue, calculateChangedBits) {\n  let contextProp = '__create-react-context-' + gud() + '__';\n\n  let Provider = /*#__PURE__*/function (_Component) {\n    _inherits(Provider, _Component);\n\n    let _super = _createSuper(Provider);\n\n    function Provider(props, context) {\n      let _this;\n\n      _classCallCheck(this, Provider);\n\n      _this = _super.call(this, props, context);\n      _this.emitter = createEventEmitter(_this.props.value);\n      return _this;\n    }\n\n    _createClass(Provider, [{\n      key: \"getChildContext\",\n      value: function getChildContext() {\n        return _defineProperty({}, contextProp, this.emitter);\n      }\n    }, {\n      key: \"UNSAFE_componentWillReceiveProps\",\n      value: function UNSAFE_componentWillReceiveProps(nextProps) {\n        if (this.props.value !== nextProps.value) {\n          let oldValue = this.props.value;\n          let newValue = nextProps.value;\n          let changedBits = 0;\n\n          if (objectIs(oldValue, newValue)) {\n            changedBits = 0; // No change\n          } else {\n            changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;\n\n            if (process.env.NODE_ENV !== 'production') {\n              warning((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, 'calculateChangedBits: Expected the return value to be a ' + '31-bit integer. Instead received: ' + changedBits);\n            }\n\n            changedBits |= 0;\n\n            if (changedBits !== 0) {\n              this.emitter.set(nextProps.value, changedBits);\n            }\n          }\n        }\n      }\n    }, {\n      key: \"render\",\n      value: function render() {\n        return this.props.children;\n      }\n    }]);\n\n    return Provider;\n  }(Component);\n\n  // Provider.childContextTypes = _defineProperty({}, contextProp, PropTypes.object.isRequired);\n\n  let Consumer = /*#__PURE__*/function (_Component2) {\n    _inherits(Consumer, _Component2);\n\n    let _super2 = _createSuper(Consumer);\n\n    function Consumer(props, context) {\n      let _this2;\n\n      _classCallCheck(this, Consumer);\n\n      _this2 = _super2.call(this, props, context);\n      _this2.state = {\n        value: _this2.getValue()\n      };\n      _this2.observedBits = 0;\n\n      _this2.onUpdate = function (newValue, changedBits) {\n        let observedBits = _this2.observedBits | 0;\n\n        if ((observedBits & changedBits) !== 0) {\n          _this2.setState({\n            value: _this2.getValue()\n          });\n        }\n      };\n\n      return _this2;\n    }\n\n    _createClass(Consumer, [{\n      key: \"componentDidMount\",\n      value: function componentDidMount() {\n        if (this.context[contextProp]) {\n          this.context[contextProp].on(this.onUpdate);\n        }\n\n        let observedBits = this.props.observedBits;\n        this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default\n        : observedBits;\n      }\n    }, {\n      key: \"UNSAFE_componentWillReceiveProps\",\n      value: function UNSAFE_componentWillReceiveProps(nextProps) {\n        let observedBits = nextProps.observedBits;\n        this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default\n        : observedBits;\n      }\n    }, {\n      key: \"componentWillUnmount\",\n      value: function componentWillUnmount() {\n        if (this.context[contextProp]) {\n          this.context[contextProp].off(this.onUpdate);\n        }\n      }\n    }, {\n      key: \"getValue\",\n      value: function getValue() {\n        if (this.context[contextProp]) {\n          return this.context[contextProp].get();\n        }\n\n        return defaultValue;\n      }\n    }, {\n      key: \"render\",\n      value: function render() {\n        return onlyChild(this.props.children)(this.state.value);\n      }\n    }]);\n\n    return Consumer;\n  }(Component);\n\n  // Consumer.contextTypes = _defineProperty({}, contextProp, PropTypes.object);\n  return {\n    Provider: Provider,\n    Consumer: Consumer\n  };\n}\n\n\nlet RouterContext = createReactContext(null);\nRouterContext.displayName = 'RRC-Router';\n\n\n\n\n\nlet Link = /*#__PURE__*/function (_React$Component) {\n  _inherits(Link, _React$Component);\n\n  let _super = _createSuper(Link);\n\n  function Link() {\n    _classCallCheck(this, Link);\n\n    return _super.apply(this, arguments);\n  }\n\n  _createClass(Link, [{\n    key: \"handleClick\",\n    value: function handleClick(event, context, linkExtendable, to) {\n      let _this$props = this.props,\n          onClick = _this$props.onClick,\n          target = _this$props.target,\n          replace = _this$props.replace;\n\n      if (onClick) {\n        onClick(event);\n      }\n\n      let nextUrl = linkExtendable && context.linkExtendable ? context.genNextUrl(to) : to;\n\n      if (!event.defaultPrevented // onClick prevented default\n      && event.button === 0 // ignore everything but left clicks\n      && (!target || target === '_self') // let browser handle \"target=_blank\" etc.\n      && !isModifiedEvent(event) // ignore clicks with modifier keys\n      ) {\n          event.preventDefault();\n          let method = replace ? context.history.replace : context.history.push;\n          method(nextUrl);\n        }\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      let _this = this;\n\n      let _this$props2 = this.props,\n          innerRef = _this$props2.innerRef,\n          replace = _this$props2.replace,\n          to = _this$props2.to,\n          children = _this$props2.children,\n          linkExtendable = _this$props2.linkExtendable,\n          rest = _objectWithoutProperties(_this$props2, [\"innerRef\", \"replace\", \"to\", \"children\", \"linkExtendable\"]);\n\n      return /*#__PURE__*/React.createElement(RouterContext.Consumer, null, function (context) {\n        // if (!context) {\n        //   throw new Error('You should not use <Link> outside a <Router>');\n        // }\n\n        let location = '';\n        let href = location ? context.history.createHref(location) : '';\n        return /*#__PURE__*/React.createElement(\"a\", _extends({}, rest, {\n          onClick: function onClick(event) {\n            return _this.handleClick(event, context, linkExtendable, to);\n          },\n          href: href,\n          ref: innerRef\n        }), children);\n      });\n    }\n  }]);\n\n  return Link;\n}(React.Component);\n\nfunction MyLink(props) {\n  return <span>{props.children}</span>\n}\nexport default () => {\n  const tabs = [];\n  for (let i = 0; i < 3; i++) {\n    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}`, link: '/cn/component/shineout/Table' });\n  }\n  // const renderTab = (title) => {\n  //   return <Link to=\"/\">{title}</Link>\n  // }\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs shape='line' defaultActive={0}>\n        {tabs.map((tab, index) => {\n          return (\n            <Tabs.Panel key={index} tab={<Link to={'/'}>{tab.title}</Link>}>\n              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>\n            </Tabs.Panel>\n          );\n        })}\n      </Tabs>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "Tab nest",
+      "description": "嵌套使用",
+      "scenario": "basic",
+      "code": "/**\n * cn - Tab nest\n *    -- 嵌套使用\n * en - Tab nest\n *    -- Nest usage\n */\nimport React from 'react';\nimport { Tabs } from 'shineout';\n\nexport default () => {\n   const [outerIndex, setOuterIndex] = React.useState(0);\n   const [innerIndex, setInnerIndex] = React.useState([0, 0]);\n  return (\n    <div style={{ height: 100 }}>\n      <Tabs active={outerIndex} onChange={setOuterIndex}>\n        <Tabs.Panel tab=\"home\">\n          <Tabs\n            shape=\"line\"\n            active={innerIndex[0]} onChange={v => {\n            setInnerIndex([v, innerIndex[1]]);\n          }}>\n              <Tabs.Panel tab=\"111\">111</Tabs.Panel>\n              <Tabs.Panel tab=\"222\">222</Tabs.Panel>\n              <Tabs.Panel tab=\"333\">333</Tabs.Panel>\n          </Tabs>\n        </Tabs.Panel>\n        <Tabs.Panel tab=\"demo\">\n          <Tabs\n            shape=\"line\"\n            active={innerIndex[1]} onChange={v => {\n            setInnerIndex([innerIndex[0], v]);\n          }}>\n              <Tabs.Panel tab=\"aaa\">aaa</Tabs.Panel>\n              <Tabs.Panel tab=\"bbb\">bbb</Tabs.Panel>\n          </Tabs>\n        </Tabs.Panel>\n      </Tabs>\n    </div>\n  );\n};\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

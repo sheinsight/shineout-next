@@ -1,0 +1,147 @@
+{
+  "name": "Radio",
+  "description": "单选框代表从一组互斥的选项中仅选择一个选项",
+  "category": "form",
+  "importPath": "import { Radio } from 'shineout'",
+  "props": [
+    {
+      "name": "onChange",
+      "type": "((value: T) => void)",
+      "required": false,
+      "description": "改变选中状态时触发回调"
+    },
+    {
+      "name": "checked",
+      "type": "boolean | ((d: T) => boolean)",
+      "required": false,
+      "description": "checked 传入时为受控组件"
+    },
+    {
+      "name": "onClick",
+      "type": "((e: MouseEvent<HTMLInputElement, MouseEvent>) => void)",
+      "required": false,
+      "description": "勾选框点击回调"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否禁用"
+    },
+    {
+      "name": "inputRef",
+      "type": "Ref<HTMLInputElement>",
+      "required": false,
+      "description": "获取input dom"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | \"large\" | \"default\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "不同尺寸"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "内容"
+    },
+    {
+      "name": "htmlValue",
+      "type": "T",
+      "required": false,
+      "defaultValue": "true",
+      "description": "选中后返回的值"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "最基础的 Radio",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 最基础的 Radio\n * en - Base\n *    -- Simple Radio\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\nconst App: React.FC = () => {\n  const [value, setValue] = React.useState('');\n  return (\n    <Radio\n      checked={value === 'option'}\n      htmlValue={'option'}\n      onChange={(v) => {\n        setValue(v);\n      }}\n    >\n      Option\n    </Radio>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "状态",
+      "description": "checked 属性设置 Radio 选中状态； disabled 属性设置 Radio 禁用状态",
+      "scenario": "basic",
+      "code": "/**\n * cn - 状态\n *    -- checked 属性设置 Radio 选中状态； disabled 属性设置 Radio 禁用状态\n * en - Base\n *    -- checked property set the checked status of Radio; disabled property set the disabled status of Radio\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <>\n      <Radio checked={false}>OptionA</Radio>\n      <Radio checked={true}>OptionB</Radio>\n      <Radio checked={false} disabled>\n        OptionC\n      </Radio>\n      <Radio checked={true} disabled>\n        OptionD\n      </Radio>\n    </>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "尺寸",
+      "description": "设置 `size` 属性可以控制 Radio 的大小",
+      "scenario": "basic",
+      "code": "/**\n * cn - 尺寸\n *    -- 设置 `size` 属性可以控制 Radio 的大小\n * en - Size\n *    -- Set `size` property to change the size of Radio\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <Radio.Group keygen>\n      <Radio size={'small'} htmlValue={'a'}>\n        OptionA\n      </Radio>\n      <Radio htmlValue={'b'}>OptionB</Radio>\n      <Radio size={'large'} htmlValue={'c'}>\n        OptionC\n      </Radio>\n    </Radio.Group>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "单选框组",
+      "description": "Radio.Group 通过数据来生成一组单选框",
+      "scenario": "basic",
+      "code": "/**\n * cn - 单选框组\n *    -- Radio.Group 通过数据来生成一组单选框\n * en - Group\n *    -- Radio.Group generate a group of radios from an array\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    myRadioGroup: {\n      '& .soui-radio': {\n        marginBottom: 12\n      },\n    },\n  },\n  { name: 'example-radio-group-0' },\n);\n\n\ntype RadioGroupItem = string;\n\nconst data: RadioGroupItem[] = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst App: React.FC = () => {\n  const classes = useStyles();\n\n  return <Radio.Group keygen data={data} defaultValue='blue' renderItem={(d) => d} className={classes.myRadioGroup} />;\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "*    -- 将一组 Radio 放在 Radio.Group 中，以 React 组件方式调用",
+      "description": "将一组 Radio 放在 Radio.Group 中，以 React 组件方式调用",
+      "scenario": "basic",
+      "code": "/**\n * cn -\n *    -- 将一组 Radio 放在 Radio.Group 中，以 React 组件方式调用\n * en -\n *    -- A series of radios group by Radio.Group\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    myRadioGroup: {\n      '& .soui-radio': {\n        marginBottom: 12\n      },\n    },\n  },\n  { name: 'example-radio-group-1' },\n);\n\nconst data: string[] = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst App: React.FC = () => {\n  const classes = useStyles();\n\n  return (\n    <>\n      <Radio.Group\n        keygen\n        defaultValue='yellow'\n        onChange={(...args) => {\n          console.log(args);\n        }}\n        className={classes.myRadioGroup}\n      >\n        {data.map((d) => (\n          <Radio key={d} htmlValue={d}>\n            {d}\n          </Radio>\n        ))}\n      </Radio.Group>\n    </>\n  )\n};\nexport default App;\n"
+    },
+    {
+      "title": "布局",
+      "description": "默认为水平布局，设置 `block` 属性可以改为垂直布局",
+      "scenario": "basic",
+      "code": "/**\n * cn - 布局\n *    -- 默认为水平布局，设置 `block` 属性可以改为垂直布局\n * en - Vertical layout\n *    -- The default is horizontal layout and setting the block property can changed it to be vertical layout\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\ninterface RadioGroupItem {\n  id: number;\n  color: string;\n}\n\nconst data: RadioGroupItem[] = [\n  { id: 1, color: 'red' },\n  { id: 2, color: 'orange' },\n  { id: 3, color: 'yellow' },\n  { id: 4, color: 'green' },\n  { id: 5, color: 'cyan' },\n  { id: 6, color: 'blue' },\n  { id: 7, color: 'violet' },\n];\n\nconst App: React.FC = () => (\n  <>\n    <Radio.Group\n      style={{}}\n      keygen='id'\n      data={data}\n      format={'id'}\n      defaultValue={3}\n      renderItem='color'\n    />\n    <Radio.Group\n      style={{ display: 'inline-block', marginTop: 24 }}\n      block\n      keygen='id'\n      data={data}\n      format={'id'}\n      defaultValue={3}\n      renderItem='color'\n    />\n  </>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "支持取消",
+      "description": "使用组件形式来支持取消选中",
+      "scenario": "basic",
+      "code": "/**\n * cn - 支持取消\n *    -- 使用组件形式来支持取消选中\n * en - Cancel\n *    -- Use component list for toggle radio\n */\nimport React, { useState } from 'react';\nimport { Radio } from 'shineout';\n\ntype RadioGroupItem = string;\n\nconst data: string[] = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState<RadioGroupItem>('red');\n\n  return (\n    <Radio.Group keygen value={current}>\n      {data.map((d) => (\n        <Radio\n          key={d}\n          htmlValue={d}\n          onClick={() => {\n            if (current === d) {\n              setCurrent('');\n            } else {\n              setCurrent(d);\n            }\n          }}\n        >\n          {d}\n        </Radio>\n      ))}\n    </Radio.Group>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "按钮单选框",
+      "description": "设置 button 属性可以展示为按钮样式",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 按钮单选框\n *    -- 设置 button 属性可以展示为按钮样式\n * en - Button Radio\n *    -- set button to show button style\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\nconst data = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];\n\nconst App: React.FC = () => (\n  <>\n    <Radio.Group button keygen data={data} defaultValue='Wednesday' />\n    <br />\n    <Radio.Group\n      button\n      keygen\n      data={data}\n      defaultValue='Wednesday'\n      disabled\n      style={{ marginTop: 24 }}\n    />\n  </>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "*    -- 设置 button 为 outline 可以展示透明背景的按钮样式",
+      "description": "设置 button 为 outline 可以展示透明背景的按钮样式",
+      "scenario": "advanced",
+      "code": "/**\n * cn -\n *    -- 设置 button 为 outline 可以展示透明背景的按钮样式\n * en -\n *    -- set button with outline to show outline button style\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\nconst data = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];\n\nconst App: React.FC = () => (\n  <>\n    <Radio.Group button='outline' keygen data={data} defaultValue='Wednesday' />\n    <br />\n    <Radio.Group\n      button='outline'\n      keygen\n      data={data}\n      defaultValue='Wednesday'\n      disabled\n      style={{ marginTop: 24 }}\n    />\n  </>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "按钮单选框尺寸",
+      "description": "设置 size 可以控制按钮样式的大小",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 按钮单选框尺寸\n *    -- 设置 size 可以控制按钮样式的大小\n * en - Button size\n *    -- size to set button style size\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\nconst data: string[] = ['red', 'orange', 'yellow'];\n\nconst App: React.FC = () => (\n  <div>\n    <Radio.Group size='small' button keygen data={data} defaultValue='red' />\n    <br />\n    <Radio.Group keygen button data={data} defaultValue='red' style={{ marginTop: 24 }} />\n    <br />\n    <Radio.Group\n      size='large'\n      button\n      keygen\n      data={data}\n      defaultValue='red'\n      style={{ marginTop: 24 }}\n    />\n    <br />\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "Radio 组禁用",
+      "description": "设置 disabled 为 true 时，禁用所有选项",
+      "scenario": "advanced",
+      "code": "/**\n * cn - Radio 组禁用\n *    -- 设置 disabled 为 true 时，禁用所有选项\n * en - Radio Group Disabled\n *    -- Set disabled property is set to true, all the options is disabled\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\nconst data: string[] = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst App: React.FC = () => (\n  <Radio.Group keygen disabled data={data} defaultValue='blue' renderItem={(d) => d} />\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "*    -- disabled 为函数时，根据函数返回结果实现有条件禁用",
+      "description": "disabled 为函数时，根据函数返回结果实现有条件禁用",
+      "scenario": "advanced",
+      "code": "/**\n * cn -\n *    -- disabled 为函数时，根据函数返回结果实现有条件禁用\n * en -\n *    -- When the disabled is a function, disbale the option that the function to return true\n */\nimport React from 'react';\nimport { Radio } from 'shineout';\n\nconst data: string[] = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst App: React.FC = () => (\n  <Radio.Group\n    keygen\n    data={data}\n    disabled={(d) => d === 'yellow'}\n    defaultValue='blue'\n    renderItem={(d) => d}\n  />\n);\n\nexport default App;\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

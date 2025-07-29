@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "shineout": {
+      "command": "npx",
+      "args": ["shineout-claude"],
+      "env": {}
+    }
+  }
+}

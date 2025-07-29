@@ -1,0 +1,279 @@
+{
+  "name": "Modal",
+  "description": "Modal 对话框是一种临时窗口，通常在不想跳转页面的前提下，使用 Modal 展示次要内容或者操作",
+  "category": "feedback",
+  "importPath": "import { Modal } from 'shineout'",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "hideMask",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否隐藏遮罩"
+    },
+    {
+      "name": "forceMask",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否强制设置遮罩透明度（多层Modal中，除第一层外的其他弹出层遮罩透明度会被调整为0.01）"
+    },
+    {
+      "name": "top",
+      "type": "string | number",
+      "required": false,
+      "defaultValue": "10vh",
+      "description": "弹框距离顶部距离"
+    },
+    {
+      "name": "fullScreen",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否全屏展示"
+    },
+    {
+      "name": "bodyStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "扩展弹出层 body 的样式"
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false,
+      "description": "底部内容"
+    },
+    {
+      "name": "maskCloseAble",
+      "type": "boolean | null",
+      "required": false,
+      "defaultValue": "true",
+      "description": "点击遮罩层是否关闭对话框, 设置为 null 右上角关闭图标会保留"
+    },
+    {
+      "name": "padding",
+      "type": "string | number",
+      "required": false,
+      "description": "内容内边距"
+    },
+    {
+      "name": "position",
+      "type": "\"top\" | \"right\" | \"bottom\" | \"left\"",
+      "required": false,
+      "description": "弹出位置"
+    },
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "required": false,
+      "description": "弹出层的标题"
+    },
+    {
+      "name": "visible",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否显示"
+    },
+    {
+      "name": "width",
+      "type": "string | number",
+      "required": false,
+      "defaultValue": "500",
+      "description": "弹出层宽度 （设置 position 后无效）"
+    },
+    {
+      "name": "height",
+      "type": "string | number",
+      "required": false,
+      "description": "对话框高度 （设置 position 后无效）"
+    },
+    {
+      "name": "zIndex",
+      "type": "number",
+      "required": false,
+      "defaultValue": "1050",
+      "description": "弹出层 z-index 值，注意：如果嵌套 Select 组件，并且 Select 组件含有 absolute 字段，需要修改 Select 的 z-index 的值"
+    },
+    {
+      "name": "rootClassName",
+      "type": "string",
+      "required": false,
+      "description": "弹出层的根元素类名, 为遮罩层的父元素"
+    },
+    {
+      "name": "container",
+      "type": "(() => HTMLElement | null) | HTMLElement | null",
+      "required": false,
+      "defaultValue": "document.body",
+      "description": "渲染的目标节点"
+    },
+    {
+      "name": "moveable",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否可移动"
+    },
+    {
+      "name": "maskBackground",
+      "type": "string",
+      "required": false,
+      "description": "遮罩背景色，设置后透明度将失效"
+    },
+    {
+      "name": "onClose",
+      "type": "(() => void)",
+      "required": false,
+      "description": "弹出层关闭回调"
+    },
+    {
+      "name": "destroy",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "关闭时是否销毁元素"
+    },
+    {
+      "name": "hideClose",
+      "type": "boolean",
+      "required": false,
+      "description": "是否隐藏关闭按钮"
+    },
+    {
+      "name": "type",
+      "type": "\"success\" | \"info\" | \"warning\" | \"error\"",
+      "required": false,
+      "description": "弹出层 title 显示状态 icon，drawer模式下需配合title使用"
+    },
+    {
+      "name": "zoom",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否开启 zoom 动画效果"
+    },
+    {
+      "name": "esc",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否支持 esc 键关闭"
+    },
+    {
+      "name": "events",
+      "type": "object",
+      "required": false,
+      "defaultValue": "{}",
+      "description": "外层元素所接受的事件列表，可用于在 createPortal 场景中阻止冒泡"
+    },
+    {
+      "name": "resizable",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否可调整大小"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "弹出层内容"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "最基本的组件用法",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 最基本的组件用法\n *    -- Modal 会在 document.body 中创建一个新的层显示弹出内容\n *    -- 关闭 Modal 时默认没有对组件进行销毁, 只是隐藏, 组件的状态会被保留。 如果不需要保留组件之前的状态, 可以设置 destroy 属性\n * en - Base\n *    -- The basic usage for component\n */\nimport React, { useState } from 'react';\nimport { Modal, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const [content, setContent] = useState(1);\n  const [visible, setVisible] = useState(false);\n\n  const show = () => {\n    setVisible(true);\n  };\n\n  const handleOk = () => {\n    setVisible(false);\n    setContent(content + 1);\n    console.log('clicked ok!');\n  };\n\n  const handleCancel = () => {\n    setVisible(false);\n    setContent(content + 1);\n    console.log('clicked cancel');\n  };\n\n  return (\n    <div>\n      <Button onClick={show} mode='outline'>\n        click me\n      </Button>\n      <Modal\n        width={400}\n        visible={visible}\n        title='Modal Title'\n        onClose={handleCancel}\n        footer={[\n          <Button key='cancel' mode='outline' onClick={handleCancel}>\n            Cancel\n          </Button>,\n          <Button key='ok' type='primary' onClick={handleOk}>\n            Ok\n          </Button>,\n        ]}\n      >\n        {`you are visited ${content}`}\n      </Modal>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "类型",
+      "description": "Modal 内置了 4 个类型的样式：info（纯信息展示，不带有状态）、Success、Warn 和 Error，为了方便调用，设计为静态函数",
+      "scenario": "basic",
+      "code": "/**\n * cn - 类型\n *    -- Modal 内置了 4 个类型的样式：info（纯信息展示，不带有状态）、Success、Warn 和 Error，为了方便调用，设计为静态函数\n * en - Type\n *    -- Modal has 4 built in style\n */\nimport React from 'react';\nimport { Modal, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const info = () => {\n    Modal.info({\n      title: 'This is a info message',\n      content: 'this is  some information that user must know',\n    });\n  };\n\n  const success = () => {\n    Modal.success({\n      title: 'This is a success message',\n      content: 'this is some information that user successful operation',\n    });\n  };\n\n  const warning = () => {\n    Modal.warn({\n      title: 'This is a warning message',\n      content: 'this is  some information that user must know',\n    });\n  };\n\n  const error = () => {\n    Modal.error({\n      title: 'This is a error message',\n      content: 'this is some information that user attended',\n    });\n  };\n\n  const show = () => {\n    Modal.show({\n      title: 'This is a message',\n      content: 'this is show information',\n    });\n  };\n\n  return (\n    <div style={{ display: 'flex', gap: '16px' }}>\n      <Button onClick={show} mode='outline'>\n        show\n      </Button>\n      <Button type='primary' onClick={info}>\n        info\n      </Button>\n      <Button type='danger' onClick={error}>\n        error\n      </Button>\n      <Button type='success' onClick={success}>\n        success\n      </Button>\n      <Button type='warning' onClick={warning}>\n        warning\n      </Button>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "确认框",
+      "description": "调用 confirm 函数可以快捷的显示确认框，便于用户操作；同时可以通过 text 配置 Modal 按钮文案，onOk 与 onClose 配置 Modal 确认和取消事件回调（当事件返回 Promise 时会等待 Promise resolve 后关闭 Modal）",
+      "scenario": "basic",
+      "code": "/**\n * cn - 确认框\n *    -- 调用 confirm 函数可以快捷的显示确认框，便于用户操作；同时可以通过 text 配置 Modal 按钮文案，onOk 与 onClose 配置 Modal 确认和取消事件回调（当事件返回 Promise 时会等待 Promise resolve 后关闭 Modal）\n * en - Confirm\n *    -- The confirmation modal dialog\n */\nimport React from 'react';\nimport { Modal, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const confirm = () => {\n    Modal.confirm({\n      title: 'This is a confirm message',\n      content: 'this is some information that user confirm',\n      onOk: () =>\n        new Promise((resolve) => {\n          console.log('yes i know');\n          setTimeout(() => resolve(true), 2000);\n        }),\n      text: { ok: 'Yes', cancel: 'No' },\n    });\n  };\n\n  return (\n    <div>\n      <Button onClick={confirm} mode='outline'>\n        confirm\n      </Button>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "默认聚焦按钮",
+      "description": "设置 autoFocusButton 可以在打开的时候默认聚焦到某个按钮, 再点击回车可以触发改按钮的点击事件, 方便用户进行键盘操作. 该属性仅在 Modal 的 methods 中生效",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 默认聚焦按钮\n *    -- 设置 autoFocusButton 可以在打开的时候默认聚焦到某个按钮, 再点击回车可以触发改按钮的点击事件, 方便用户进行键盘操作. 该属性仅在 Modal 的 methods 中生效\n * en - Default focus button\n *    -- Setting autoFocusButton can focus on a button by default when you open it, and then press Enter to trigger the click event of the button, which is convenient for the user to perform keyboard operation. This property only takes effect in Modal methods\n */\nimport React from 'react';\nimport { Modal, Button, Message } from 'shineout';\n\nconst App: React.FC = () => {\n  const confirm = (type: 'cancel' | 'ok') => {\n    Modal.confirm({\n      title: 'This is a confirm message',\n      content: `the ${type} button will be focus`,\n      text: {\n        ok: 'ok',\n        cancel: 'cancel',\n      },\n      onOk: () => {\n        Message.info('you chose the ok');\n      },\n      onCancel: () => {\n        Message.info('you chose the cancel');\n      },\n      autoFocusButton: type,\n    });\n  };\n\n  return (\n    <div>\n      <Button onClick={() => confirm('cancel')} mode='outline'>\n        cancel\n      </Button>\n      <Button onClick={() => confirm('ok')} mode='outline'>\n        ok\n      </Button>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "全屏",
+      "description": "使用 fullScreen 属性来使对话框全屏展示",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 全屏\n *    -- 使用 fullScreen 属性来使对话框全屏展示\n * en - Full Screen\n *    -- Use the fullScreen property to display the modal in full screen\n */\nimport React, { useState, useCallback } from 'react';\nimport {\n  Form,\n  Modal,\n  Button,\n  Input,\n  Upload,\n  Radio,\n  Checkbox,\n  DatePicker,\n  Textarea,\n} from 'shineout';\nconst Content = () => {\n  return (\n    <div>\n      <Form\n        defaultValue={{ name: 'zhangsan', email: 'zhangsan@qq.com', score: 3 }}\n        onSubmit={(v) => {\n          console.log('form submit', v);\n        }}\n        onChange={(v) => {\n          console.log('form change', v);\n        }}\n        onReset={() => {\n          console.log('form reset');\n        }}\n      >\n        <Form.Item label='Name'>\n          <Input name={'name'} placeholder='please input name' clearable />\n        </Form.Item>\n        <Form.Item label='Password'>\n          <Input name={'password'} placeholder='please input password' clearable />\n        </Form.Item>\n        <Form.Item label='Email'>\n          <Input name={'email'} clearable placeholder='please input email' />\n        </Form.Item>\n        <Form.Item label='Gendar'>\n          <Radio.Group name='gendar' data={['male', 'female']} keygen />\n        </Form.Item>\n        <Form.Item label='Course'>\n          <Checkbox.Group name='course' data={['chinese', 'maths', 'english', 'physics']} keygen />\n        </Form.Item>\n        <Form.Item label='Enrollment date'>\n          <DatePicker name='date' placeholder={'please select date'} clearable showSelNow />\n        </Form.Item>\n        <Form.Item label='upload avatar'>\n          <Upload.Image\n            action='/api/upload'\n            accept='image/*'\n            name='file'\n            htmlName='file'\n            recoverAble\n            leftHandler\n            removeConfirm='Are you sure to delete it ?'\n            limit={3}\n            onSuccess={(_res, filem, data) => {\n              return data;\n            }}\n          />\n        </Form.Item>\n        <Form.Item label='Address'>\n          <Textarea name='address' />\n        </Form.Item>\n\n        <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>\n          <Form.Submit>Submit</Form.Submit>\n          <Form.Reset>Reset</Form.Reset>\n        </Form.Item>\n      </Form>\n    </div>\n  );\n};\n\nconst App: React.FC = () => {\n  const [visible, setVisible] = useState(false);\n\n  const cancel = useCallback(() => {\n    setVisible(false);\n  }, [visible]);\n\n  const footer = () => (\n    <Button type='primary' onClick={cancel}>\n      OK\n    </Button>\n  );\n\n  return (\n    <div>\n      <Modal title='Profile' fullScreen visible={visible} onClose={cancel} footer={footer()}>\n        <Content></Content>\n      </Modal>\n      <Button mode='outline' onClick={() => setVisible(true)}>\n        Full Screen\n      </Button>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "指定目标",
+      "description": "使用 container 来指定 Modal 渲染的目标节点",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 指定目标\n *    -- 使用 container 来指定 Modal 渲染的目标节点\n * en - Target\n *    -- set container to render target node\n */\nimport React, { useRef, useState } from 'react';\nimport { Modal, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const [visible, setVisible] = useState(false);\n  const wrapperRef = useRef<HTMLDivElement | null>(null);\n\n  const show = () => {\n    setVisible(true);\n  };\n\n  const handleDismiss = () => {\n    setVisible(false);\n  };\n\n  return (\n    <div ref={wrapperRef}>\n      <Button onClick={show} mode='outline'>\n        click me\n      </Button>\n      <Modal\n        container={wrapperRef.current || undefined}\n        visible={visible}\n        width={400}\n        title='Modal Title'\n        onClose={handleDismiss}\n        footer={[\n          <Button key='cancel' mode='outline' onClick={handleDismiss}>\n            Cancel\n          </Button>,\n          <Button key='ok' type='primary' onClick={handleDismiss}>\n            Ok\n          </Button>,\n        ]}\n      >\n        Modal mount after Button\n      </Modal>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "表单",
+      "description": "Modal 支持 Form 表单，并且支持 Form 的所有特性，表单提交可以使用 Modal.Submit 来代替 Button[type=submit]",
+      "scenario": "form",
+      "code": "/**\n * cn - 表单\n *    -- Modal 支持 Form 表单，并且支持 Form 的所有特性，表单提交可以使用 Modal.Submit 来代替 Button[type=submit]\n * en - Form\n *    --The internal form of Modal can use Modal.Submit to trigger submit\n */\nimport React, { useState } from 'react';\nimport { Modal, Button, Form, Input, Message, TYPE } from 'shineout';\n\ntype FormProps = TYPE.Form.Props<any>;\n\nconst rules: FormProps['rules'] = {\n  email: [\n    { required: true, message: 'Please enter your email.' },\n    { type: 'email', message: 'Please enter a valid email.' },\n  ],\n  password: [\n    { required: true, message: 'Please enter password.' },\n    { min: 7, message: 'Password must be at least {min} characters.' },\n    { regExp: /[a-z]+/i, message: 'Password at least has one letter.' },\n    // eslint-disable-next-line no-unused-vars\n    (value: string, _formdata: any, callback: (v: boolean | Error) => void) => {\n      if (/\\d+/.test(value)) callback(true);\n      else callback(new Error('Password at least has one numeral.'));\n    },\n  ],\n};\n\nconst App: React.FC = () => {\n  const [visible, setVisible] = useState(false);\n\n  const show = () => {\n    setVisible(true);\n  };\n\n  const handleClose = () => {\n    setVisible(false);\n  };\n\n  const footer = () => (\n    <div>\n      <Button onClick={handleClose} mode='outline'>\n        Cancel\n      </Button>\n      <Modal.Submit type='primary'>Submit</Modal.Submit>\n    </div>\n  );\n\n  const handleSubmit = (data: any) => {\n    setVisible(false);\n    Message.success(JSON.stringify(data));\n  };\n\n  return (\n    <div>\n      <Button mode='outline' onClick={show}>\n        Modal Form\n      </Button>\n\n      <Modal visible={visible} width={456} title='Form' onClose={handleClose} footer={footer()}>\n        <Form\n          labelWidth={75}\n          rules={rules}\n          labelAlign='right'\n          onSubmit={handleSubmit}\n        >\n          <Form.Item required label='Email'>\n            <Input name='email' />\n          </Form.Item>\n\n          <Form.Item required label='Password'>\n            <Input name='password' type='password' />\n          </Form.Item>\n        </Form>\n      </Modal>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "可移动/伸缩",
+      "description": "设置 moveable 来使 Modal 可以按住头部移动, 设置 resizable 来自由调整 Modal 大小",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 可移动/伸缩\n *    -- 设置 moveable 来使 Modal 可以按住头部移动, 设置 resizable 来自由调整 Modal 大小\n * en - Moveable/resizable\n *    -- set moveable mark modal move by header, set resizable to resize modal\n */\nimport React, { useState } from 'react';\nimport { Modal, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const [show, setShow] = useState(false);\n\n  const footer = () => (\n    <Button type='primary' onClick={() => setShow(false)}>\n      Confirm\n    </Button>\n  );\n\n  return (\n    <div>\n      <Button mode='outline' onClick={() => setShow(true)}>\n        Moveable modal\n      </Button>\n      <Modal\n        moveable\n        resizable\n        width={400}\n        visible={show}\n        title='Moveable'\n        footer={footer()}\n        onClose={() => setShow(false)}\n      >\n        drag title to move\n      </Modal>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "多层 Modal",
+      "description": "支持多层叠加 Modal",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 多层 Modal\n *    -- 支持多层叠加 Modal\n * en - Multistage\n *    -- Multi-layer Modal\n */\nimport React, { useState, Fragment } from 'react';\nimport { Modal, Button } from 'shineout';\n\nconst pickNumber = (ma = 65555, mi = 0, fixed = 2) => {\n  let max = ma;\n  let min = mi;\n  if (typeof max === 'string') max = parseInt(max, 10);\n  if (typeof min === 'string') min = parseInt(min, 10);\n\n  const num = Math.random() * (max - min) + min;\n  return parseFloat(num.toFixed(fixed));\n};\n\nconst range = (end: number, start = 0) => {\n  const delta = end - start;\n  if (typeof delta !== 'number' || Number.isNaN(delta)) {\n    console.error(new Error('end can not computed with start'));\n  }\n  return Array.from({ length: end - start }, (_v, k) => k + start);\n};\n\nconst size = range(11, 0).map(() => [pickNumber(450, 380), pickNumber(400, 300)]);\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState(0);\n\n  const show = (v: number) => setCurrent(v);\n\n  const footer = (i: number) => (\n    <>\n    <Button mode='outline' onClick={() => show(0)}>\n      Close All\n    </Button>\n    {i < 10 && (\n      <Button type='primary' onClick={() => show(i + 1)}>\n        Next Level\n      </Button>\n    )}\n    </>\n  );\n\n  return (\n    <div>\n      <Button mode='outline' onClick={() => show(1)}>\n        click me\n      </Button>\n\n      {range(11, 1).map((i) => (\n        <Modal\n          key={i}\n          width={size[i][0]}\n          footer={footer(i)}\n          visible={current >= i}\n          title={`Modal Title ${i}`}\n          onClose={() => {\n            console.log('close', i);\n            show(i - 1);\n          }}\n        >\n          <p>{`Level ${i}`}. This is show information.</p>\n        </Modal>\n      ))}\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "点击空白关闭",
+      "description": "默认点击对话框外部空白页面会关闭对话框",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 点击空白关闭\n *    -- 默认点击对话框外部空白页面会关闭对话框\n *    -- 设置 maskCloseAble 属性为 false，禁用点击空白关闭，同时右上角的关闭图标也会隐藏\n *    -- 设置 maskCloseAble 属性为 null，禁用点击空白关闭，右上角的关闭图标会保留\n * en - Close\n *    -- By default, clicking on the blank page outside the Modal box will closes the Modal box\n *    -- Set maskCloseAble to false to disable the function that click mask to close and the close icon in the upper right corner will be hidden at the same time\n *    -- Set maskCloseAbel to null to disable the function that click mask to close and the close icon in the upper right corner will be preserved\n */\nimport React, { useState } from 'react';\nimport { Modal, Button, Radio } from 'shineout';\n\nconst list: { title: string; value: boolean | null }[] = [\n  {\n    title: 'false',\n    value: false,\n  },\n  {\n    title: 'true',\n    value: true,\n  },\n  {\n    title: 'null',\n    value: null,\n  },\n];\n\nconst App: React.FC = () => {\n  const [selected, setSelected] = useState(list[0]);\n  const [visible, setVisible] = useState(false);\n\n  const footer = () => (\n    <Button mode='outline' onClick={() => setVisible(false)}>\n      Close\n    </Button>\n  );\n\n  return (\n    <div>\n      <div style={{ display: 'flex', alignItems: 'center', marginBlock: 24 }}>\n        <Radio.Group\n          data={list}\n          keygen='title'\n          value={selected}\n          renderItem='title'\n          onChange={(c) => setSelected(c)}\n          prediction={(v, d) => v.title === d.title}\n          style={{ marginInlineEnd: 20 }}\n        />\n      </div>\n\n      <Button mode='outline' onClick={() => setVisible(true)}>\n        Open\n      </Button>\n\n      <Modal\n        width={400}\n        visible={visible}\n        footer={footer()}\n        title='Modal Title'\n        maskCloseAble={selected.value}\n        onClose={() => setVisible(false)}\n      >\n        The prop maskCloseAble is &nbsp;\n        {selected.title}\n        .\n        <br />\n        You must click the button to close the Modal.\n      </Modal>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "附带图标",
+      "description": "使用 type 属性来指定标题附带的图标",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 附带图标\n *    -- 使用 type 属性来指定标题附带的图标\n * en - Icon\n *    -- use type display type icon\n */\nimport React, { useState } from 'react';\nimport { Modal, Button, Radio, TYPE } from 'shineout';\n\ntype ModalProps = TYPE.Modal.Props;\ntype ModalType = ModalProps['type'];\n\nconst typeList: ModalType[] = ['info', 'success', 'warning', 'error'];\n\nconst App: React.FC = () => {\n  const [type, setType] = useState<ModalType>('success');\n  const [visible, setVisible] = useState(false);\n\n  const handleOk = () => {\n    setVisible(false);\n    console.log('clicked ok!');\n  };\n\n  const handleCancel = () => {\n    setVisible(false);\n    console.log('clicked cancel');\n  };\n\n  const show = () => setVisible(true);\n\n  const footer = () => [\n    <Button key='cancel' mode=\"outline\" onClick={handleCancel}>\n      Cancel\n    </Button>,\n\n    <Button key='ok' type='primary' onClick={handleOk}>\n      Ok\n    </Button>,\n  ];\n\n  return (\n    <div>\n      <Radio.Group\n        style={{ marginBottom: 24 }}\n        data={typeList}\n        value={type}\n        keygen\n        onChange={setType}\n      />\n\n      <Button mode='outline' onClick={show}>\n        click me\n      </Button>\n\n      <Modal\n        type={type}\n        width={500}\n        visible={visible}\n        footer={footer()}\n        onClose={handleCancel}\n        title={`Modal Title with ${type} Icon`}\n      >\n        <span>Modal type: </span>\n        <b>{type}</b>\n      </Modal>\n    </div>\n  );\n};\nexport default App;\n"
+    },
+    {
+      "title": "缩放动画",
+      "description": "设置 zoom 属性来开启缩放动画",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 缩放动画\n *    -- 设置 zoom 属性来开启缩放动画\n * en - Zoom\n *    -- Set the zoom property to enable zoom animation\n */\nimport React, { useState } from 'react';\nimport { Modal, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const [visible, setVisible] = useState(false);\n\n  const handleClose = () => setVisible(false);\n\n  const footer = () => (\n    <Button key='ok' type='primary' onClick={() => setVisible(false)}>\n      Ok\n    </Button>\n  );\n\n  return (\n    <div>\n      <Button mode='outline' onClick={() => setVisible(true)}>\n        Open\n      </Button>\n\n      <Modal\n        zoom\n        width={400}\n        title='zoom'\n        footer={footer()}\n        visible={visible}\n        onClose={handleClose}\n      >\n        Set the zoom property to enable zoom animation\n      </Modal>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "位置（抽屉）",
+      "description": "通过 position 可设置 Modal 弹出的位置，这时 Modal 就如 Drawer 一样。现支持 top、right、bottom 和 left 四个位置配置",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 位置（抽屉）\n *    -- 通过 position 可设置 Modal 弹出的位置，这时 Modal 就如 Drawer 一样。现支持 top、right、bottom 和 left 四个位置配置\n * en - Position\n *    -- Set position property to specify the pop-up position\n */\nimport React, { useState } from 'react';\nimport { Modal, Button, Form, Input, Radio, TYPE } from 'shineout';\n\ntype ModalProps = TYPE.Modal.Props;\ntype ModalPosition = ModalProps['position'];\n\nconst positionList: ModalPosition[] = ['top', 'right', 'bottom', 'left'];\n\nconst App: React.FC = () => {\n  const [visible, setVisible] = useState(false);\n  const [position, setPosition] = useState<ModalPosition>('right');\n\n  const toggle = (v: boolean) => {\n    setVisible(v);\n  };\n\n  const footer = () => (\n    <div>\n      <Button mode='outline' onClick={() => toggle(false)}>\n        Cancel\n      </Button>\n      <Modal.Submit>Submit</Modal.Submit>\n    </div>\n  );\n  return (\n    <div>\n      <Radio.Group\n        keygen\n        value={position}\n        data={positionList}\n        onChange={(p) => setPosition(p)}\n        style={{ marginBottom: 24 }}\n      />\n\n      <Button mode='outline' onClick={() => toggle(true)}>click me</Button>\n\n      <Modal\n        title='Form'\n        key={position}\n        footer={footer()}\n        visible={visible}\n        position={position}\n        onClose={() => toggle(false)}\n      >\n        <Form\n          labelWidth={100}\n          labelAlign='right'\n          style={{ width: 500 }}\n          onSubmit={() => toggle(false)}\n        >\n          <Form.Item required label='Email'>\n            <Input name='email' />\n          </Form.Item>\n\n          <Form.Item required label='Password'>\n            <Input name='password' type='password' />\n          </Form.Item>\n        </Form>\n      </Modal>\n    </div>\n  );\n};\n\nexport default App;\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

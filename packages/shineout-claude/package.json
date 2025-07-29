@@ -1,0 +1,57 @@
+{
+  "name": "shineout-claude",
+  "version": "0.1.0",
+  "description": "Shineout documentation provider for Claude AI via MCP protocol",
+  "keywords": [
+    "shineout",
+    "claude",
+    "mcp",
+    "ai",
+    "documentation",
+    "react",
+    "components"
+  ],
+  "author": "Shineout Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sheinsight/shineout-next.git",
+    "directory": "packages/shineout-claude"
+  },
+  "bugs": {
+    "url": "https://github.com/sheinsight/shineout-next/issues"
+  },
+  "homepage": "https://github.com/sheinsight/shineout-next/tree/main/packages/shineout-claude",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "shineout-claude": "./bin/shineout-claude.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md",
+    "INSTALLATION.md",
+    "claude-config-example.json"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc && npm run copy-data",
+    "clean": "rm -rf dist",
+    "copy-data": "mkdir -p dist/data && cp -r src/data/generated dist/data/ 2>/dev/null || echo 'No generated data to copy'",
+    "dev": "tsc --watch",
+    "generate": "node scripts/generate-data.js",
+    "test": "node test-mcp.js",
+    "prepublishOnly": "npm run generate && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "typescript": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

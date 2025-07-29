@@ -1,0 +1,153 @@
+{
+  "name": "Switch",
+  "description": "用于两个互斥选项，用来打开或关闭选项的选择控件",
+  "category": "form",
+  "importPath": "import { Switch } from 'shineout'",
+  "props": [
+    {
+      "name": "checked",
+      "type": "boolean",
+      "required": false,
+      "description": "当前选中状态，checked 传入时为受控组件"
+    },
+    {
+      "name": "onChange",
+      "type": "((value: boolean) => void)",
+      "required": false,
+      "description": "改变回调,Checked 表示选中状态"
+    },
+    {
+      "name": "onClick",
+      "type": "((e: MouseEvent<HTMLInputElement, MouseEvent>) => void)",
+      "required": false,
+      "description": "勾选框点击回调"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否禁用"
+    },
+    {
+      "name": "inputRef",
+      "type": "Ref<HTMLInputElement>",
+      "required": false,
+      "description": "获取input dom"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | \"large\" | \"default\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "不同尺寸"
+    },
+    {
+      "name": "content",
+      "type": "[ReactNode, ReactNode]",
+      "required": false,
+      "description": "选中和未选中时的内容"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "加载中"
+    },
+    {
+      "name": "value",
+      "type": "boolean",
+      "required": false,
+      "description": "Checked 未设置的情况下， checked = value"
+    },
+    {
+      "name": "defaultValue",
+      "type": "boolean",
+      "required": false,
+      "description": "默认值 和 value 类型相同"
+    },
+    {
+      "name": "name",
+      "type": "Name",
+      "required": false,
+      "description": "Form 内存取数据的 key"
+    },
+    {
+      "name": "beforeChange",
+      "type": "((value: T) => void | T )",
+      "required": false,
+      "description": "值改变前的回调，当返回值不为空时将作为组件的新值"
+    },
+    {
+      "name": "reserveAble",
+      "type": "boolean",
+      "required": false,
+      "description": "设置为 true 组件卸载后表单不自动删除数据"
+    },
+    {
+      "name": "rules",
+      "type": "RuleItem[]",
+      "required": false,
+      "description": "校验规则 详见 [Rule](/components/rule)"
+    },
+    {
+      "name": "onError",
+      "type": "((error?: Error ) => void)",
+      "required": false,
+      "description": "rules 校验回调"
+    },
+    {
+      "name": "bind",
+      "type": "string[]",
+      "required": false,
+      "description": "当值改变是会联动校验 bind 中的字段, 需要配合 Form 使用"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "最基础的用法",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 最基础的用法\n * en - Base\n *    -- The basic usage\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return <Switch />;\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "禁用状态",
+      "description": "设置 `disabled` 属性, 可以设置禁用状态",
+      "scenario": "basic",
+      "code": "/**\n * cn - 禁用状态\n *    -- 设置 `disabled` 属性, 可以设置禁用状态\n * en - Disabled\n *    -- Set disabled property to disable the Switch\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24 }}>\n      <Switch value={true} disabled />\n      <Switch value={false} disabled />\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "尺寸",
+      "description": "设置 `size` 属性可以调整组件尺寸",
+      "scenario": "basic",
+      "code": "/**\n * cn - 尺寸\n *    -- 设置 `size` 属性可以调整组件尺寸\n * en - Base\n *    -- Set the size property to adjust the size of the component\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n      <Switch size={'small'} />\n      <Switch />\n      <Switch size={'large'} />\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "加载中",
+      "description": "设置 `loading` 属性可以让 Switch 处于加载状态",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 加载中\n *    -- 设置 `loading` 属性可以让 Switch 处于加载状态\n * en - Base\n *    -- Set `loading` property to make Switch loading\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n      <Switch loading value />\n      <Switch loading />\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "自定义文案",
+      "description": "自定义开关打开（关闭）时需要显示的文字和图标",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 自定义文案\n *    -- 自定义开关打开（关闭）时需要显示的文字和图标\n * en - Custom content\n *    -- Customize the text and icon to display when the switch is on (off)\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n    <Switch size='small' defaultValue content={['ON', 'OFF']} />\n    <Switch defaultValue content={['ON', 'OFF']} />\n    <Switch size='large' defaultValue content={['ON', 'OFF']} />\n  </div>\n);\n\nexport default App;\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

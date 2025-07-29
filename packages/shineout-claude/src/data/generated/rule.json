@@ -1,0 +1,60 @@
+{
+  "name": "Rule",
+  "description": "Shineout Form 内部定义了一套数据校验机制，在 Form 内的组件上通过 rules 属性进行配置",
+  "category": "form",
+  "importPath": "import { Rule } from 'shineout'",
+  "props": [
+    {
+      "name": "message",
+      "type": "string",
+      "required": false,
+      "description": "报错提示"
+    }
+  ],
+  "examples": [
+    {
+      "title": "required",
+      "description": "必填校验函数",
+      "scenario": "basic",
+      "code": "/**\n * cn - required\n *    -- 必填校验函数\n * en - required\n *    -- Basic Spin usage\n */\nimport React from 'react';\nimport { Form, Input, Rule } from 'shineout';\n\nconst rule = Rule();\nexport default () => {\n  return (\n    <Form style={{ maxWidth: 500 }}>\n      <Form.Item label='name' required>\n        <Input name='name' title='name' rules={[rule.required()]} />\n      </Form.Item>\n      <Form.Item label='age' required>\n        <Input name='age' rules={[rule.required('age required')]} />\n      </Form.Item>\n      <Form.Item label='address' required>\n        <Input name='address' rules={[{ required: true, message: 'address required' }]} />\n      </Form.Item>\n      <Form.Item label=''>\n        <Form.Submit>Submit</Form.Submit>\n      </Form.Item>\n    </Form>\n  );\n};\n"
+    },
+    {
+      "title": "min",
+      "description": "最小值校验，会根据 Field 的 type 自动判断校验类型为字符串、数字或选项",
+      "scenario": "basic",
+      "code": "/**\n * cn - min\n *    -- 最小值校验，会根据 Field 的 type 自动判断校验类型为字符串、数字或选项\n * en - min\n *    -- min value validation, the validation type is automatically determined according to the type of Field\n */\nimport React from 'react';\nimport { Form, Input, Rule } from 'shineout';\n\nconst rule = Rule();\nexport default () => {\n  return (\n    <Form style={{ maxWidth: 500 }}>\n      <Form.Item label='name' required>\n        <Input name='name' title='name' rules={[rule.required(), rule.min(2)]} />\n      </Form.Item>\n      <Form.Item label='age' required>\n        <Input.Number name='age' title='age' rules={[rule.required(), rule.min(18)]} />\n      </Form.Item>\n      <Form.Item label='address' required>\n        <Input.Number\n          name='address'\n          title='address'\n          rules={[rule.required(), { min: 3, message: 'address must be at least three characters' }]}\n        />\n      </Form.Item>\n      <Form.Item label=''>\n        <Form.Submit>Submit</Form.Submit>\n      </Form.Item>\n    </Form>\n  );\n};\n"
+    },
+    {
+      "title": "max",
+      "description": "最大值校验，会根据 Field 的 type 自动判断校验类型为字符串、数字或选项",
+      "scenario": "basic",
+      "code": "/**\n * cn - max\n *    -- 最大值校验，会根据 Field 的 type 自动判断校验类型为字符串、数字或选项\n * en - max\n *    -- max value validation, the validation type is automatically determined according to the type of Field\n */\nimport React from 'react';\nimport { Form, Input, Rule } from 'shineout';\n\nconst rule = Rule();\nexport default () => {\n  return (\n    <Form style={{ maxWidth: 500 }}>\n      <Form.Item label='name' required>\n        <Input name='name' title='name' rules={[rule.required(), rule.max(5)]} />\n      </Form.Item>\n      <Form.Item label='age' required>\n        <Input.Number name='age' title='age' rules={[rule.required(), rule.max(100)]} />\n      </Form.Item>\n      <Form.Item label='address' required>\n        <Input.Number\n          name='address'\n          title='address'\n          rules={[rule.required(), { max: 3, message: 'address must be at least three characters' }]}\n        />\n      </Form.Item>\n      <Form.Item label=''>\n        <Form.Submit>Submit</Form.Submit>\n      </Form.Item>\n    </Form>\n  );\n};\n"
+    },
+    {
+      "title": "range",
+      "description": "数值范围校验，会根据 Field 的 type 自动判断校验类型为字符串、数字或选项",
+      "scenario": "basic",
+      "code": "/**\n * cn - range\n *    -- 数值范围校验，会根据 Field 的 type 自动判断校验类型为字符串、数字或选项\n * en - range\n *    -- Range value validation, the validation type is automatically determined according to the type of Field\n */\nimport React from 'react';\nimport { Form, Input, Rule } from 'shineout';\n\nconst rule = Rule();\nexport default () => {\n  return (\n    <Form style={{ maxWidth: 500 }}>\n      <Form.Item label='name' required>\n        <Input name='name' title='name' rules={[rule.required(), rule.range(1, 5)]} />\n      </Form.Item>\n      <Form.Item label='age' required>\n        <Input.Number name='age' title='age' rules={[rule.required(), rule.range(18, 100)]} />\n      </Form.Item>\n      <Form.Item label=''>\n        <Form.Submit>Submit</Form.Submit>\n      </Form.Item>\n    </Form>\n  );\n};\n"
+    },
+    {
+      "title": "type",
+      "description": "内置了常用的类型校验",
+      "scenario": "advanced",
+      "code": "/**\n * cn - type\n *    -- 内置了常用的类型校验\n * en - type\n *    -- Built-in type validation\n */\nimport React from 'react';\nimport { Form, Input, Rule } from 'shineout';\n\nconst rule = Rule();\nexport default () => {\n  return (\n    <Form style={{ maxWidth: 500 }}>\n      <Form.Item label='name' required>\n        <Input name='email' rules={[rule.required(), rule.email('email is invalid')]} />\n      </Form.Item>\n      <Form.Item label='age' required>\n        <Input name='age' rules={[rule.required(), rule.integer('Please enter a valid age')]} />\n      </Form.Item>\n      <Form.Item label='price' required>\n        <Input name='price' rules={[rule.required(), rule.number('Please enter a valid price')]} />\n      </Form.Item>\n      <Form.Item label='url' required>\n        <Input name='url' rules={[rule.required(), rule.url('The url is not valid')]} />\n      </Form.Item>\n      <Form.Item label=''>\n        <Form.Submit>Submit</Form.Submit>\n      </Form.Item>\n    </Form>\n  );\n};\n"
+    },
+    {
+      "title": "regExp",
+      "description": "正则表达式校验",
+      "scenario": "advanced",
+      "code": "/**\n * cn - regExp\n *    -- 正则表达式校验\n * en - regExp\n *    -- Regular expression validation\n */\nimport React from 'react';\nimport { Form, Input, Rule } from 'shineout';\n\nconst rule = Rule();\nexport default () => {\n  return (\n    <Form style={{ maxWidth: 500 }}>\n      <Form.Item label='tel' required>\n        <Input\n          name='tel'\n          rules={[rule.required(), rule.regExp('^[\\\\d\\\\s ().-]+$', 'Please enter a valid tel')]}\n        />\n      </Form.Item>\n      <Form.Item label=''>\n        <Form.Submit>Submit</Form.Submit>\n      </Form.Item>\n    </Form>\n  );\n};\n"
+    },
+    {
+      "title": "自定义校验",
+      "description": "使用函数自定义校验规则",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 自定义校验\n *    -- 使用函数自定义校验规则\n * en - Custom\n *    -- Custom validation rules using function\n */\nimport React from 'react';\nimport { Form, Input, Rule } from 'shineout';\n\nconst rule = Rule({\n  tel: (value, _formData, callback, _props) => {\n    if (!value) return callback(new Error('Please enter your phone number'));\n    if (!/^[0-9\\s ().-]+$/.test(value)) return callback(new Error('Please enter a valid phone number'));\n    return callback(true);\n  },\n});\nexport default () => {\n  return (\n    <Form style={{ maxWidth: 500 }}>\n      <Form.Item label='tel' required>\n        <Input name='tel' rules={[rule.tel]} />\n      </Form.Item>\n      <Form.Item label=''>\n        <Form.Submit>Submit</Form.Submit>\n      </Form.Item>\n    </Form>\n  );\n};\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}

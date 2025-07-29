@@ -1,0 +1,145 @@
+{
+  "name": "Tag",
+  "description": "标签是一种灵活、常用的分类方式，对关键词进行标记、分类或选择",
+  "category": "display",
+  "importPath": "import { Tag } from 'shineout'",
+  "props": [
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | \"large\" | \"default\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "不同尺寸"
+    },
+    {
+      "name": "mode",
+      "type": "\"bright\" | \"outline\" | \"fill\" | \"brightOutline\"",
+      "required": false,
+      "defaultValue": "\\\"bright\\\"",
+      "description": "标签样式"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否禁用"
+    },
+    {
+      "name": "color",
+      "type": "| \"default\" | \"info\" | \"success\" | \"warning\" | \"danger\" | \"brown\" | \"purple\" | \"cyan\" | \"magenta\" | \"indigo\" | \"tangerine\" | \"lemon\" | \"neon\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "标签颜色,代替原有type属性，支持更多色系"
+    },
+    {
+      "name": "shape",
+      "type": "\"rounded\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "标签形状"
+    },
+    {
+      "name": "backgroundColor",
+      "type": "string",
+      "required": false,
+      "description": "背景色,可以自行的设置标签的背景色"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "内容，文字或react组件"
+    },
+    {
+      "name": "onCompleted",
+      "type": "((value: string) => void)",
+      "required": false,
+      "description": "Tag 编辑完成时触发该事件（children 必须为 string）"
+    },
+    {
+      "name": "onClick",
+      "type": "((e: MouseEvent<HTMLDivElement, MouseEvent>) => void)",
+      "required": false,
+      "description": "点击 tag 事件"
+    },
+    {
+      "name": "onClose",
+      "type": "boolean | ((e: MouseEvent<HTMLDivElement, MouseEvent>) => void | Promise<any>)",
+      "required": false,
+      "description": "当 onClose 为空时，不显示关闭。如果需要关闭又不需要处理回调，设置为 true 即可"
+    },
+    {
+      "name": "onKeyUp",
+      "type": "((e: KeyboardEvent<HTMLInputElement>) => void)",
+      "required": false,
+      "description": "可编辑输入框 keyUp 事件"
+    },
+    {
+      "name": "onEnterPress",
+      "type": "((value: string, e: KeyboardEvent<HTMLInputElement>) => void)",
+      "required": false,
+      "description": "可编辑输入框回车事件"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "标签常用的 5 种基本功能，默认、信息、危险、警告、成功",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 标签常用的 5 种基本功能，默认、信息、危险、警告、成功\n *    -- 注意，`type` 属性将弃用，请使用 `color` 属性\n * en - Base\n *    -- The five basic functions of the tag, default, info, danger, warning, success\n *   -- Note that the `type` property will be deprecated, please use the `color` property\n */\n\nimport { Tag } from 'shineout';\nexport default () => {\n  const TagColor = ['default', 'info', 'danger', 'warning', 'success'];\n\n  const capitalizeFirstLetter = (str: string) => {\n    return str.charAt(0).toUpperCase() + str.slice(1);\n  };\n  return (\n    <div>\n      {TagColor.map((item, index) => (\n        <Tag key={index} color={item as any}>\n          {capitalizeFirstLetter(item)}\n        </Tag>\n      ))}\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "标签尺寸",
+      "description": "标签尺寸分为 小、中、大 3 种",
+      "scenario": "basic",
+      "code": "/**\n * cn - 标签尺寸\n *    -- 标签尺寸分为 小、中、大 3 种\n * en - Size\n *    -- The size of the tag is divided into small, default and large\n */\n\nimport { Tag } from 'shineout';\nexport default () => {\n  return (\n    <div>\n      <div style={{ marginBottom: 24 }}>\n        <Tag size='small'>Small</Tag>\n        <Tag>Default</Tag>\n        <Tag size='large'>Large</Tag>\n      </div>\n      <div>\n        <Tag size='small' onClose>\n          Small\n        </Tag>\n        <Tag onClose>Default</Tag>\n        <Tag size='large' onClose>\n          Large\n        </Tag>\n      </div>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "标签样式",
+      "description": "标签样式分为 亮色、填充、线框、亮色线框 4 种",
+      "scenario": "basic",
+      "code": "/**\n * cn - 标签样式\n *    -- 标签样式分为 亮色、填充、线框、亮色线框 4 种\n * en - Mode\n *    -- The mode of the tag is divided into bright, fill, outline, brightOutline line 4 kinds\n */\n\nimport { Tag } from 'shineout';\nexport default () => {\n  const TagColor = ['default', 'info', 'danger', 'warning', 'success'];\n  const TagMode = ['bright', 'fill', 'outline', 'brightOutline'];\n\n  const capitalizeFirstLetter = (str: string) => {\n    return str.charAt(0).toUpperCase() + str.slice(1);\n  };\n\n  return (\n    <div>\n      {TagMode.map((mode, midx) => {\n        return (\n          <div key={midx} style={{ marginBottom: midx === TagMode.length - 1 ? 0 : 24 }}>\n            {TagColor.map((color, cidx) => (\n              <Tag mode={mode as any} key={cidx} color={color as any}>\n                {capitalizeFirstLetter(color)}\n              </Tag>\n            ))}\n          </div>\n        );\n      })}\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "多色标签",
+      "description": "除常用 5 种常用的基本功能色外，组件还提供了其他色系的标签",
+      "scenario": "basic",
+      "code": "/**\n * cn - 多色标签\n *    -- 除常用 5 种常用的基本功能色外，组件还提供了其他色系的标签\n *    -- 注意，`type` 属性将弃用，`color` 属性同样支持 type 同属性值的样式\n * en - Color\n *    -- In addition to the five basic functions of the commonly used tag, the component also provides tags of other colors\n *    -- Note that the `type` property will be deprecated, and the `color` property also supports the style of the same property value as type\n */\n\nimport { TYPE, Tag } from 'shineout';\n\ntype TagColorType = Exclude<TYPE.Tag.Props['color'], undefined>\ntype TagModeType = Exclude<TYPE.Tag.Props['mode'], undefined>\n\nexport default () => {\n  const TagColor: TagColorType[] = ['tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown'];\n  const TagMode: TagModeType[] = ['bright', 'fill', 'outline', 'brightOutline'];\n\n  const capitalizeFirstLetter = (str: string) => {\n    return str.charAt(0).toUpperCase() + str.slice(1);\n  };\n\n  return (\n    <div>\n      {TagMode.map((mode, midx) => {\n        return (\n          <div key={midx} style={{ marginBottom: 24 }}>\n            {TagColor.map((color, cidx) => (\n              <Tag mode={mode} key={cidx} color={color}>\n                {capitalizeFirstLetter(color)}\n              </Tag>\n            ))}\n          </div>\n        );\n      })}\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "可删除和添加标签",
+      "description": "通过数组生成tags，动态增改",
+      "scenario": "basic",
+      "code": "/**\n * cn - 可删除和添加标签\n *    -- 通过数组生成tags，动态增改\n * en - Delete and add tags\n *    -- Generate tags through arrays, dynamically increase and change\n */\n\nimport { useState } from 'react';\nimport { Tag } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyle = createUseStyles(\n  {\n    addTag: {\n      '&:hover': {\n        borderColor: 'var(--soui-tag-info-outline-border-color,var(--soui-brand-6,#197AFA))',\n        color: 'var(--soui-tag-info-outline-font-color,var(--soui-brand-6,#197AFA))',\n      },\n    },\n  },\n  { name: 'custom-tag' },\n);\n\nconst plusIcon = <svg viewBox=\"0 0 24 24\" width=\"12px\" height=\"12px\" fill=\"currentColor\" style={{display: 'block'}}>\n  <path fillRule=\"evenodd\" clipRule=\"evenodd\" d=\"M11.8185 2.09595C12.3708 2.09595 12.8185 2.54366 12.8185 3.09595V10.8181H20.9041C21.4564 10.8181 21.9041 11.2658 21.9041 11.8181C21.9041 12.3704 21.4564 12.8181 20.9041 12.8181H12.8185V20.904C12.8185 21.4563 12.3708 21.904 11.8185 21.904C11.2662 21.904 10.8185 21.4563 10.8185 20.904V12.8181H3.10059C2.5483 12.8181 2.10059 12.3704 2.10059 11.8181C2.10059 11.2658 2.5483 10.8181 3.10059 10.8181H10.8185V3.09595C10.8185 2.54366 11.2662 2.09595 11.8185 2.09595Z\"></path>\n</svg>\n\nexport default () => {\n  const [tags, setTags] = useState(['Tag 1', 'Tag 2', 'Tag 3']);\n  const [inputVisible, setInputVisible] = useState(false);\n\n  const classes = useStyle();\n\n  const remove = (removedTag: string) => {\n    const t = tags.filter((tag: string) => tag !== removedTag);\n    setTags(t);\n  };\n\n  const showInput = () => {\n    setInputVisible(true);\n  };\n\n  const handleInputBlur = (value: string) => {\n    let newTags = tags;\n    if (value && tags.indexOf(value) === -1) {\n      newTags = [...tags, value];\n    }\n    setTags(newTags);\n    setInputVisible(false);\n  };\n\n  return (\n    <div>\n      <div style={{ display: 'flex', alignItems: 'center', height: 24 }}>\n        {tags.map((a) => (\n          <Tag key={a} disabled={a === 'Tag 3' ? true : false} onClose={() => remove(a)}>\n            {a}\n          </Tag>\n        ))}\n\n        {inputVisible ? (\n          <Tag.Input style={{ marginLeft: 8 }} onBlur={handleInputBlur} size='small' />\n        ) : (\n          <Tag\n            style={{ cursor: 'pointer', borderStyle: 'dashed' }}\n            onClick={showInput}\n            mode='outline'\n            className={classes.addTag}\n          >\n            <div style={{ display: 'flex', alignItems: 'center' }}>\n              <div style={{ marginInlineEnd: 4 }}>{plusIcon}</div>\n              <div>Add Tag</div>\n            </div>\n          </Tag>\n        )}\n      </div>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "可编辑标签",
+      "description": "通过设置 `onCompleted` 属性开启编辑模式，编辑完成后会调用该函数，参数为编辑后的值",
+      "scenario": "basic",
+      "code": "/**\n * cn - 可编辑标签\n *    -- 通过设置 `onCompleted` 属性开启编辑模式，编辑完成后会调用该函数，参数为编辑后的值\n * en - onCompleted\n *    -- Set the `onCompleted` property to enable edit mode, and the function will be called after editing is completed, and the parameter is the edited value\n */\n\nimport { useState } from 'react';\nimport { Tag } from 'shineout';\nexport default () => {\n  const [value, setValue] = useState('Abc');\n\n  return (\n    <div>\n      <Tag\n        onCompleted={(val) => {\n          setValue(val);\n        }}\n        onClose={() => {\n          console.log('close');\n        }}\n      >\n        {value}\n      </Tag>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "标签形状",
+      "description": "通过设置 `shape` 属性可以设置标签的形状，可选值为 rounded 全圆角形",
+      "scenario": "basic",
+      "code": "/**\n * cn - 标签形状\n *    -- 通过设置 `shape` 属性可以设置标签的形状，可选值为 rounded 全圆角形\n * en - Shape\n *    -- The shape of the tag can be set by setting the `shape` property. The optional value is rounded\n */\n\nimport { Tag } from 'shineout';\nexport default () => {\n  return (\n    <div>\n      <Tag>Default</Tag>\n      <Tag shape='rounded'>Rounded</Tag>\n    </div>\n  );\n};\n"
+    }
+  ],
+  "subComponents": [
+    "Input"
+  ],
+  "version": "3.7.7"
+}

@@ -1,0 +1,765 @@
+{
+  "name": "Select",
+  "description": "用于收纳大量选项的信息录入类组件",
+  "category": "form",
+  "importPath": "import { Select } from 'shineout'",
+  "props": [
+    {
+      "name": "filterSameChange",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "当两次选择的值相同时不触发 onChange"
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "required": false,
+      "description": "在 Form 中，value 会被表单接管，value 无效。注意，请勿将 undefined 和 null 作为有意义的选项值，当 value 类型为 undefined 和 null 时，组件将不处理数据和渲染"
+    },
+    {
+      "name": "data",
+      "type": "DataItem[]",
+      "required": false,
+      "description": "选项数据"
+    },
+    {
+      "name": "treeData",
+      "type": "Object[]",
+      "required": false,
+      "description": "树形结构数据项，[{children: []}]"
+    },
+    {
+      "name": "noCache",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否开启数据缓存，如果数据存在动态更新的情况建议开启"
+    },
+    {
+      "name": "defaultValue",
+      "type": "Value",
+      "required": false,
+      "description": "默认值 通过 Value 类型"
+    },
+    {
+      "name": "separator",
+      "type": "string",
+      "required": false,
+      "description": "多选情况下设置后，value 会处理为 separator 分隔的字符串"
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否是多选"
+    },
+    {
+      "name": "childrenKey",
+      "type": "ObjectKey<DataItem>",
+      "required": false,
+      "defaultValue": "\\\"children\\\"",
+      "description": "指定子数据的属性名"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean | ((data: DataItem) => boolean)",
+      "required": false,
+      "defaultValue": "false",
+      "description": "如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项"
+    },
+    {
+      "name": "prediction",
+      "type": "((value: Value extends (infer U)[] ? U : Value, Data: DataItem) => boolean)",
+      "required": false,
+      "defaultValue": "(val, d) => val===format(d)",
+      "description": "默认使用 format 函数执行的结果来比较是否匹配，在某些情况下（例如返回原始数据的对象，更新数据时，生成了一个值相同，非同一个对象的选项），需要借助 prediction 函数来判断是否匹配"
+    },
+    {
+      "name": "format",
+      "type": "((data: DataItem) => Value extends (infer U)[] ? U : Value) | ObjectKey<DataItem>",
+      "required": false,
+      "defaultValue": "d => d",
+      "description": "格式化 value, 默认值，返回原始数据。 为 string 时，会作为 key 从原始数据中获取值，相当于 (d) => d[format]; 为函数时，以函数返回结果作为 value"
+    },
+    {
+      "name": "onChange",
+      "type": "((value: Value, data?: DataItem , checked?: boolean ) => void)",
+      "required": false,
+      "description": "值改变回调"
+    },
+    {
+      "name": "groupBy",
+      "type": "((item: DataItem, index?: number , data?: DataItem[] ) => string)",
+      "required": false,
+      "description": "分组"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | \"large\" | \"default\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "不同尺寸"
+    },
+    {
+      "name": "status",
+      "type": "\"error\"",
+      "required": false,
+      "description": "组件状态"
+    },
+    {
+      "name": "innerTitle",
+      "type": "ReactNode",
+      "required": false,
+      "description": "内嵌标题"
+    },
+    {
+      "name": "absolute",
+      "type": "boolean | (() => HTMLElement | null)",
+      "required": false,
+      "defaultValue": "false",
+      "description": "为 true 时，选项弹出层在 DOM 中独立 render; 为函数时，返回值作为弹出层容器"
+    },
+    {
+      "name": "zIndex",
+      "type": "number",
+      "required": false,
+      "defaultValue": "1000",
+      "description": "选项列表 z-index 值, 需要配合 absolute"
+    },
+    {
+      "name": "emptyText",
+      "type": "ReactNode",
+      "required": false,
+      "description": "自定义 empty 文案。与 renderOptionList 搭配使用时，emptyText 设置为 false 后将忽略该功能，如需渲染空内容可在 renderOptionList 中处理"
+    },
+    {
+      "name": "keygen",
+      "type": "| ObjectKey<DataItem> | ((data: DataItem, index?: number) => string | number) | true",
+      "required": true,
+      "defaultValue": "index",
+      "description": "生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 \\\"id\\\"，相当于 (d) => d.id"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否显示清除数据图标"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "description": "占位文字"
+    },
+    {
+      "name": "loading",
+      "type": "boolean | ReactNode",
+      "required": false,
+      "defaultValue": "false",
+      "description": "数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替"
+    },
+    {
+      "name": "header",
+      "type": "ReactNode",
+      "required": false,
+      "description": "自定义渲染列表头部内容"
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false,
+      "description": "自定义渲染列表底部内容"
+    },
+    {
+      "name": "renderOptionList",
+      "type": "((list: ReactNode, info: { loading?: ReactNode; }) => ReactNode)",
+      "required": false,
+      "description": "自定义渲染下拉列表"
+    },
+    {
+      "name": "border",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否展示边框"
+    },
+    {
+      "name": "underline",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否只展示下边框"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "description": "控制浮层显隐"
+    },
+    {
+      "name": "width",
+      "type": "string | number",
+      "required": false,
+      "description": "选择框的宽度"
+    },
+    {
+      "name": "height",
+      "type": "string | number",
+      "required": false,
+      "description": "下拉列表的高度"
+    },
+    {
+      "name": "optionWidth",
+      "type": "string | number",
+      "required": false,
+      "defaultValue": "100%",
+      "description": "下拉列表的宽度"
+    },
+    {
+      "name": "itemsInView",
+      "type": "number",
+      "required": false,
+      "defaultValue": "10",
+      "description": "单次 render 的最大行数。Select 采用了lazy render 的方式来优化在大量数据下的性能，如果你的表格显示的高度超出了 10 条，可以调整 itemsInView"
+    },
+    {
+      "name": "lineHeight",
+      "type": "number | \"auto\"",
+      "required": false,
+      "defaultValue": "32",
+      "description": "每一条选项的高度。出于默认性能考虑，Select 采用了虚拟列表的方式渲染列表项，如果选项为高度固定内容，比如一个固定尺寸的 ReactNode，可以通过调整 lineHeight 来重新分配每一项的高度。当 lineHeight 设置为 auto 时，将开启动态虚拟列表，实际高度将根据内容自适应，并赋予每一项最小高度，最小高度跟随 size 属性对应的选项高度，该模式将有一定的性能开销，请根据实际情况选择不同的模式。"
+    },
+    {
+      "name": "position",
+      "type": "\"auto\" | \"bottom-left\" | \"bottom-right\" | \"top-left\" | \"top-right\"",
+      "required": false,
+      "defaultValue": "auto",
+      "description": "弹出框位置"
+    },
+    {
+      "name": "columns",
+      "type": "number",
+      "required": false,
+      "defaultValue": "1",
+      "description": "columns 大于 1 时，选项展示为多列布局模式"
+    },
+    {
+      "name": "columnsTitle",
+      "type": "ReactNode",
+      "required": false,
+      "description": "多列选项多选时的标题文字"
+    },
+    {
+      "name": "showArrow",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否显示下拉箭头，仅针对单选情况"
+    },
+    {
+      "name": "focusSelected",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "onFilter 在多选情况下点击选项后是否选中过滤文本"
+    },
+    {
+      "name": "trim",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "trim 为 true 时，失去焦点时会自动删除空白字符"
+    },
+    {
+      "name": "columnWidth",
+      "type": "number",
+      "required": false,
+      "defaultValue": "160",
+      "description": "columns 大于 1 时，选项展示为多列布局模式"
+    },
+    {
+      "name": "maxLength",
+      "type": "number",
+      "required": false,
+      "description": "Select 输入框输入字符串最大长度"
+    },
+    {
+      "name": "autoAdapt",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "下拉列表宽度根据内容自由展开"
+    },
+    {
+      "name": "compressed",
+      "type": "boolean | \"no-repeat\" | \"hide-popover\"",
+      "required": false,
+      "defaultValue": "false",
+      "description": "将选中值合并，只在多选模式下有效; 为 \\\"no-repeat\\\" 时弹出框中不重复展示值"
+    },
+    {
+      "name": "compressedBound",
+      "type": "number",
+      "required": false,
+      "description": "开启多选后，指定允许展示标签数量，超过后将折叠"
+    },
+    {
+      "name": "compressedClassName",
+      "type": "string",
+      "required": false,
+      "description": "多选合并展示弹出框的类名"
+    },
+    {
+      "name": "renderCompressed",
+      "type": "((options: { data: DataItem[], onRemove: (item: DataItem) => void }) => ReactNode)",
+      "required": false,
+      "description": "自定义渲染折叠内容"
+    },
+    {
+      "name": "hideCreateOption",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "在使用创建选项时，在选项列表中隐藏该选项，回车后直接选中"
+    },
+    {
+      "name": "filterSingleSelect",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "当筛选数据仅为一条时，失焦后直接选中该条数据。仅在 Filter 下有效"
+    },
+    {
+      "name": "defaultExpanded",
+      "type": "(string | number)[]",
+      "required": false,
+      "description": "默认展开的节点 key（非受控）"
+    },
+    {
+      "name": "defaultExpandAll",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "默认展开全部子节点, 仅树形数据下有效"
+    },
+    {
+      "name": "expanded",
+      "type": "(string | number)[]",
+      "required": false,
+      "description": "展开的节点 key(受控)"
+    },
+    {
+      "name": "showHitDescendants",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "筛选后是否展示命中节点的后代节点"
+    },
+    {
+      "name": "convertBr",
+      "type": "string | ((text: string) => string)",
+      "required": false,
+      "defaultValue": "\\\" \\\"",
+      "description": "用来转化粘贴文本中的换行"
+    },
+    {
+      "name": "resultClassName",
+      "type": "string | ((value: DataItem) => string)",
+      "required": false,
+      "description": "选中结果内容容器的className"
+    },
+    {
+      "name": "renderItem",
+      "type": "ObjectKey<DataItem> | ((data: DataItem, index?: number ) => ReactNode)",
+      "required": false,
+      "defaultValue": "d => d",
+      "description": "为 string 时，返回 d[string]。 为 function 时，返回函数结果"
+    },
+    {
+      "name": "renderResult",
+      "type": "((data: DataItem, index?: number ) => ReactNode)",
+      "required": false,
+      "defaultValue": "renderItem",
+      "description": "为 选中后在结果中显示的内容，默认和 renderItem 相同"
+    },
+    {
+      "name": "renderUnmatched",
+      "type": "((value: Value extends (infer U)[] ? U : Value) => ReactNode)",
+      "required": false,
+      "description": "渲染未匹配值的方式"
+    },
+    {
+      "name": "onBlur",
+      "type": "((e: any) => void)",
+      "required": false,
+      "description": "blur 事件回调"
+    },
+    {
+      "name": "onFocus",
+      "type": "((e: any) => void)",
+      "required": false,
+      "description": "focus 事件回调"
+    },
+    {
+      "name": "onFilter",
+      "type": "((text: string, from?: string ) => void | ((data: DataItem) => boolean) )",
+      "required": false,
+      "description": "onFilter 不为空时，可以输入过滤数据。onFilter 如果返回一个函数，使用这个函数做前端过滤。如果不返回，可以自行做后端过滤"
+    },
+    {
+      "name": "onCreate",
+      "type": "boolean | ((input: string | DataItem) => string | DataItem)",
+      "required": false,
+      "description": "设置 `onCreate` 属性，即可创建选项中不存在的条目；当 `onCreate` 为 true 时，使用默认函数 text => text；当 `onCreate` 为函数时，将此函数返回值作为新的选项插入最上方。"
+    },
+    {
+      "name": "onEnterExpand",
+      "type": "((e: KeyboardEvent<HTMLDivElement>) => boolean)",
+      "required": false,
+      "description": "回车触发下拉框展开的时候调用"
+    },
+    {
+      "name": "onCollapse",
+      "type": "((collapse: boolean) => void)",
+      "required": false,
+      "description": "下拉列表展开/收起回调"
+    },
+    {
+      "name": "onExpand",
+      "type": "((value: (string | number)[]) => void)",
+      "required": false,
+      "description": "节点展开回调，参数为当前展开节点 key 数组"
+    },
+    {
+      "name": "emptyAfterSelect",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "选中后是否清空输入框内容"
+    },
+    {
+      "name": "filterDelay",
+      "type": "number",
+      "required": false,
+      "defaultValue": "400",
+      "description": "毫秒。用户输入触发 fitler 事件的延时"
+    },
+    {
+      "name": "loader",
+      "type": "((key: string | number, data: DataItem) => void)",
+      "required": false,
+      "description": "设置 loader 属性后，未定义 children 的节点视为动态加载节点，点击展开触发 loader事件，children 为 null 或者长度为 0 视为叶子节点"
+    },
+    {
+      "name": "onAdvancedFilter",
+      "type": "((text: string) => (data: DataItem) => boolean)",
+      "required": false,
+      "description": "高级筛选模式，可针对当前层级在筛选结果和原始数据间切换"
+    },
+    {
+      "name": "reFocus",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "存在 onFilter 和 onCreate，选中 Option，自动 focus Input"
+    },
+    {
+      "name": "adjust",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否开启自动调整面板位置功能。当面板被窗口遮挡时，自动调整位置"
+    },
+    {
+      "name": "onLoadMore",
+      "type": "(() => void | Promise<any>)",
+      "required": false,
+      "description": "滚动加载回的调函数。当配置该属性后，下拉列表滚动到底部时触发该函数"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "required": false,
+      "defaultValue": "1",
+      "description": "触发滚动加载回的调函数的阈值。当前滚动进度达到该值时触发，最大值为 1，即滚动进度 100%"
+    },
+    {
+      "name": "trigger",
+      "type": "\"click\" | \"hover\"",
+      "required": false,
+      "defaultValue": "\\\"click\\\"",
+      "description": "触发打开选择面板的方式，默认为点击打开"
+    },
+    {
+      "name": "highlight",
+      "type": "boolean",
+      "required": false,
+      "description": "开启搜索关键字高亮功能"
+    },
+    {
+      "name": "popover",
+      "type": "PopoverProps[\"position\"]",
+      "required": false,
+      "description": "校验信息弹出位置"
+    },
+    {
+      "name": "popoverProps",
+      "type": "PopoverProps",
+      "required": false,
+      "description": "校验或者tip弹框接受的属性"
+    },
+    {
+      "name": "name",
+      "type": "Name",
+      "required": false,
+      "description": "Form 内存取数据的 key"
+    },
+    {
+      "name": "beforeChange",
+      "type": "((value: T) => void | T )",
+      "required": false,
+      "description": "值改变前的回调，当返回值不为空时将作为组件的新值"
+    },
+    {
+      "name": "reserveAble",
+      "type": "boolean",
+      "required": false,
+      "description": "设置为 true 组件卸载后表单不自动删除数据"
+    },
+    {
+      "name": "rules",
+      "type": "RuleItem[]",
+      "required": false,
+      "description": "校验规则 详见 [Rule](/components/rule)"
+    },
+    {
+      "name": "onError",
+      "type": "((error?: Error ) => void)",
+      "required": false,
+      "description": "rules 校验回调"
+    },
+    {
+      "name": "bind",
+      "type": "string[]",
+      "required": false,
+      "description": "当值改变是会联动校验 bind 中的字段, 需要配合 Form 使用"
+    }
+  ],
+  "examples": [
+    {
+      "title": "基本用法",
+      "description": "Select 通过`data`属性设置数据源，通过`keygen`属性设置key生成器，通过`renderItem`属性设置渲染函数",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- Select 通过`data`属性设置数据源，通过`keygen`属性设置key生成器，通过`renderItem`属性设置渲染函数\n * en - Basic\n *    --\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <div>\n      <Select width={300} clearable data={data} keygen placeholder='Select Color' />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "多选",
+      "description": "设置`multiple`属性允许开启多选功能",
+      "scenario": "basic",
+      "code": "/**\n * cn - 多选\n *    -- 设置`multiple`属性允许开启多选功能\n * en - Multiple\n *    -- Set `multiple` to enable multiple selection\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nexport default () => {\n  const [value, setValue] = React.useState<string[]>();\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <div>\n      <Select\n        width={300}\n        multiple\n        data={data}\n        keygen\n        value={value}\n        onChange={(v) => setValue(v)}\n        placeholder='Select Color'\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "合并选项",
+      "description": "多选下设置`compressed`属性，结果不换行，超出折叠显示",
+      "scenario": "basic",
+      "code": "/**\n * cn - 合并选项\n *    -- 多选下设置`compressed`属性，结果不换行，超出折叠显示\n * en - Compressed\n *    -- Set `compressed` to prevent wrapping and will be displayed beyond the fold when multiple\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <div>\n      <Select\n        width={300}\n        defaultValue={data}\n        multiple\n        onChange={(v) => console.log(v)}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        compressed\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "合并选项去重",
+      "description": "当`compressed`属性值为 \"no-repeat\" 时，合并的选项中不会出现结果框中的重复内容",
+      "scenario": "basic",
+      "code": "/**\n * cn - 合并选项去重\n *    -- 当`compressed`属性值为 \"no-repeat\" 时，合并的选项中不会出现结果框中的重复内容\n * en - Compressed no-repeat\n *    -- When the value of the `compressed` property is 'no-repeat', the repeated content in the merged options will not appear in the result box\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <div>\n      <Select\n        width={300}\n        defaultValue={data}\n        multiple\n        onChange={(v) => console.log(v)}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        compressed='no-repeat'\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "隐藏合并选项",
+      "description": "使用 `compressed` 属性并设置值为 \"hide-popover\" 可以合并选中结果，仅展示合并后的选项数量，不再弹出层中展示合并的选项",
+      "scenario": "basic",
+      "code": "/**\n * cn - 隐藏合并选项\n *    -- 使用 `compressed` 属性并设置值为 \"hide-popover\" 可以合并选中结果，仅展示合并后的选项数量，不再弹出层中展示合并的选项\n *    -- 建议数据量较大的情况下开启该功能，配合固定数值的 `compressedBound` 属性可降额外的低性能开销\n * en - Only merge options\n *    -- Set the `compressed` property to `hide-popover` to merge the selected results, only display the number of merged options, and no longer display the merged options in the pop-up layer\n *    -- It is recommended to enable this function when the data volume is large\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <div>\n      <Select\n        width={300}\n        defaultValue={data}\n        multiple\n        onChange={(v) => console.log(v)}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        compressed='hide-popover'\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "自定义渲染合并内容",
+      "description": "通过配置 `renderCompressed` 支持自定义折叠内容渲染，大体量数据可自定义优化渲染",
+      "scenario": "basic",
+      "code": "/**\n * cn - 自定义渲染合并内容\n *    -- 通过配置 `renderCompressed` 支持自定义折叠内容渲染，大体量数据可自定义优化渲染\n *    -- `renderCompressed` 参数为一个对象，包含 `data` 和 `onRemove` 两个属性，`data` 为折叠内容数据，`onRemove` 为删除事件\n *    -- 该示例演示使用Table组件的虚拟列表特性渲染大体量的结果\n * en - Custom rendering of compressed content\n *    -- Support custom rendering of compressed content by configuring `renderCompressed`, and customize optimized rendering for large data\n *    -- The `renderCompressed` parameter is an object containing two properties, `data` and `onRemove`, `data` is the compressed content data, and `onRemove` is the delete event\n *    -- This example demonstrates using the virtual list feature of the Table component to render large amounts of results\n */\nimport React, { useState } from 'react';\nimport { Select, Popover, Table, Link, TYPE } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    item: {\n      display: 'flex',\n      justifyContent: 'space-between',\n      padding: '5px 8px',\n      '&:hover': {\n        borderRadius: 2,\n        backgroundColor: 'var(---Neutral-fill-2-, #F4F5F8)',\n      },\n    },\n    table: {\n      borderRadius: 4,\n      overflow: 'hidden',\n      '& td': {\n        padding: '0 8px',\n        border: 'none !important',\n      },\n      '& tr:first-child td': {\n        paddingTop: '8px',\n      },\n      '& tr:last-child td': {\n        paddingBottom: '8px',\n      },\n      '& [data-soui-role=\"scroll\"]': {\n        scrollbarColor: '#c0c0c0 transparent',\n      },\n    },\n  },\n);\n\ninterface DataItem {\n  id: string;\n  name: string;\n  height: number;\n}\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\ntype TableColumnItem = TYPE.Table.ColumnItem<DataItem>;\n\nconst data: DataItem[] = [];\n\nfor (let i = 0; i < 10000; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `标签 ${i}`,\n    height: Math.floor(Math.random() * 100) + 34,\n  });\n}\n\nexport default () => {\n  const [value, setValue] = useState<DataItem[]>(data);\n  const classNames = useStyles();\n\n  const handleChange = (v: DataItem[]) => {\n    setValue(v);\n  };\n\n  const renderItem: SelectProps['renderItem'] = (d) => d.name;\n\n  const renderCompressed: SelectProps['renderCompressed'] = (options) => {\n    const { data, onRemove } = options;\n\n    const columns: TableColumnItem[] = [\n      {\n        render: (item) => (\n          <div className={classNames.item}>\n            <span>node-{item.id}</span>\n            <Link type='primary' onClick={() => onRemove(item)}>\n              删除\n            </Link>\n          </div>\n        ),\n      },\n    ];\n\n    return (\n      <span\n        style={{\n          fontSize: 12,\n          color: '#fff',\n          margin: '2px 0',\n          borderRadius: 4,\n          padding: '0 4px',\n          background: 'var(--soui-brand-6)',\n        }}\n      >\n        +{data ? data.length : ''}\n        <Popover position='bottom'>\n          <Table\n            data={data}\n            keygen='id'\n            virtual\n            columns={columns}\n            hideHeader\n            width={200}\n            hover={false}\n            style={{ maxHeight: 160 }}\n            className={classNames.table}\n          />\n        </Popover>\n      </span>\n    );\n  };\n\n  return (\n    <div>\n      <Select\n        width={300}\n        data={data}\n        keygen='id'\n        multiple\n        compressed\n        value={value}\n        onChange={handleChange}\n        compressedBound={2}\n        renderCompressed={renderCompressed}\n        placeholder='Static lineHeight'\n        renderItem={renderItem}\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "自动撑开列表",
+      "description": "设置`autoAdapt`属性，列表会随内容宽度自动撑开",
+      "scenario": "basic",
+      "code": "/**\n * cn - 自动撑开列表\n *    -- 设置`autoAdapt`属性，列表会随内容宽度自动撑开\n * en - autoAdapt\n *    -- Set the `autoAdapt` property, the list will automatically expand with the content width\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nexport default () => {\n  const data = [\n    'red',\n    'loooooooooooooooooooooooooooooooooooooooooooong',\n    'yellow',\n    'green',\n    'cyan',\n    'blue',\n    'violet',\n    'pink',\n  ];\n  return (\n    <div>\n      <Select width={300} autoAdapt data={data} keygen placeholder='Select Color' clearable />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "数据格式化",
+      "description": "设置`format`属性，可以对数据进行格式化，format为字符串时，会从数据中取对应的值；为函数时，会使用函数返回值",
+      "scenario": "form",
+      "code": "/**\n * cn - 数据格式化\n *    -- 设置`format`属性，可以对数据进行格式化，format为字符串时，会从数据中取对应的值；为函数时，会使用函数返回值\n *    -- 注意，复杂数据格式化时，需要配置`prediction`辅助比对函数用于比较复杂类型的数据\n * en - Format\n *    -- Set the format property to format the data. When the format is a string, the corresponding value will be taken from the data. When the format is a function, the return value of the function will be used\n *    -- Note that when formatting complex data, you need to configure the prediction auxiliary comparison function to compare complex types of data\n */\nimport React from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\n\ninterface DataItem {\n  id: string;\n  name: string;\n}\n\nconst data: DataItem[] = [];\nfor (let i = 0; i < 15; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `Label ${i}`,\n  });\n}\n\nexport default () => {\n  const prediction: SelectProps['prediction'] = (v, d) => v === d.id;\n\n  const renderItem: SelectProps['renderItem'] = (d) => d.name;\n\n  return (\n    <div>\n      <Select\n        width={300}\n        data={data}\n        keygen='id'\n        format='id'\n        prediction={prediction}\n        placeholder='Select Color'\n        renderItem={renderItem}\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "*    -- 多选格式化时，设置 `prediction` 为: (v, d) => v.id === d.id",
+      "description": "多选格式化时，设置 `prediction` 为: (v, d) => v.id === d.id",
+      "scenario": "form",
+      "code": "/**\n * cn -\n *    -- 多选格式化时，设置 `prediction` 为: (v, d) => v.id === d.id\n * en -\n *    -- When multi-select formatting, set `prediction` to: (v, d) => v.id === d.id\n */\nimport React, { useState } from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<DataItem, DataItem>;\n\ninterface DataItem {\n  id: string;\n  name: string;\n}\n\nconst data: DataItem[] = [];\nfor (let i = 0; i < 15; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `Label ${i}`,\n  });\n}\n\nexport default () => {\n  const [value, setValue] = useState<DataItem[]>([data[0], data[1]]);\n  const prediction: SelectProps['prediction'] = (v, d) => v.id === d.id;\n  const renderItem: SelectProps['renderItem'] = (d) => d.name;\n\n  console.log('======================')\n  console.log('select value: >>', value)\n  console.log('======================')\n  return (\n    <div>\n      <Select\n        width={300}\n        data={data}\n        keygen='id'\n        value={value}\n        onChange={setValue}\n        prediction={prediction}\n        placeholder='Select Color'\n        renderItem={renderItem}\n        clearable\n        multiple\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "*    -- 设置`separator`属性支持多选时以分隔符分合并或解析值",
+      "description": "设置`separator`属性支持多选时以分隔符分合并或解析值",
+      "scenario": "form",
+      "code": "/**\n * cn -\n *    -- 设置`separator`属性支持多选时以分隔符分合并或解析值\n * en -\n *    -- Set the `separator` property to merge or parse values with a separator when multiple selection is supported\n */\nimport React, { useState } from 'react';\nimport { Select } from 'shineout';\nimport { primitiveData } from './static/mock';\nimport Code from './static/code';\n\nexport default () => {\n  const [value, setValue] = useState('orange~blue');\n  return (\n    <div style={{ display: 'flex' }}>\n      <div style={{ marginRight: 100 }}>\n        <Select\n          width={300}\n          multiple\n          value={value}\n          separator='~'\n          onChange={setValue}\n          data={primitiveData}\n          keygen\n          placeholder='Select Color'\n          renderItem={(d) => d}\n          clearable\n        />\n      </div>\n      <Code value={value}></Code>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "虚拟列表",
+      "description": "内置虚拟列表，支持大数据渲染，本例展示10万条数据",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 虚拟列表\n *    -- 内置虚拟列表，支持大数据渲染，本例展示10万条数据\n *    -- 出于默认的性能考虑，每条选项的高度默认为统一高度值，可以通过调整 `lineHeight` 属性来调整每一条选项的固定高度\n *    -- 如果需要根据内容自适应高度，通过设置 `lineHeight='auto'` 开启动态虚拟列表功能，组件将对渲染的条目预先测绘并动态计算高度\n *    -- 开启`lineHeight='auto'`将不再限制选项换行行为\n *    -- 注意，开启动态虚拟列表功能会带来额外的性能开销，请根据实际情况选择使用。此外，如果选项内容为动态的，例如选项中包含异步内容，出于性能考虑组件不自动处理尺寸的变化。\n * en - Virtual List\n *    -- Select has built-in virtual list to support big data rendering, this example shows 100,000 pieces of data\n */\nimport React from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\n\ninterface DataItem {\n  id: string;\n  name: string;\n  height: number;\n}\n\nconst data: DataItem[] = [];\n\nfor (let i = 0; i < 100000; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `标签 ${i}`,\n    height: Math.floor(Math.random() * 100) + 34,\n  });\n}\n\nexport default () => {\n  const renderItem: SelectProps['renderItem'] = (d) => d.name;\n  const renderDynamicHeightItem: SelectProps['renderItem'] = (d) => (\n    <div style={{ height: d.height }}>{d.name}</div>\n  );\n  return (\n    <div style={{ display: 'flex', gap: 24 }}>\n      <Select\n        width={300}\n        data={data}\n        keygen='id'\n        placeholder='Static lineHeight'\n        renderItem={renderItem}\n        clearable\n        onFilter={(v) => (d) => d.name.indexOf(v) >= 0}\n      />\n      <Select\n        width={300}\n        data={data}\n        keygen='id'\n        lineHeight='auto'\n        renderResult={(d) => d.name}\n        placeholder='Auto lineHeight'\n        renderItem={renderDynamicHeightItem}\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "尺寸大小",
+      "description": "设置 `size` 属性改变输入框组件的尺寸大小。内置三种尺寸：small、default、large",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 尺寸大小\n *    -- 设置 `size` 属性改变输入框组件的尺寸大小。内置三种尺寸：small、default、large\n * en - Size\n *    -- Set the size property to change the size of the input box component. There are three built-in sizes available: small, default, and large.\n */\n\nimport React from 'react';\nimport { Select } from 'shineout';\n\nconst data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>\n      <Select width={240} size='small' placeholder='Select Color' data={data} keygen clearable />\n      <Select\n        width={240}\n        placeholder='Select Color'\n        data={data}\n        keygen\n        renderItem={(d) => d}\n        clearable\n      />\n      <Select width={240} placeholder='Select Color' size='large' data={data} keygen clearable />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "数据分组",
+      "description": "设置`groupBy`分组函数，对数据进行分组",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 数据分组\n *    -- 设置`groupBy`分组函数，对数据进行分组\n * en - Group\n *    -- Set the `groupBy` function to group the data\n */\nimport React from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\ninterface DataItem {\n  value: string;\n  group: string;\n}\n\nexport default () => {\n  const data: DataItem[] = [\n    { value: 'Mars', group: '3' },\n    { value: 'China', group: '2' },\n    { value: 'Beijing', group: '1' },\n    { value: 'Shanghai', group: '1' },\n  ];\n\n  const groupBy: SelectProps['groupBy'] = (d) => {\n    if (d.group === '1') return 'City';\n    if (d.group === '2') return 'Country';\n    return 'Other';\n  };\n\n  return (\n    <Select\n      width={300}\n      data={data}\n      placeholder='Select a city'\n      keygen='value'\n      format='value'\n      prediction={(v, d) => v === d.value}\n      renderItem='value'\n      style={{ width: 240 }}\n      groupBy={groupBy}\n      clearable\n    />\n  );\n};\n"
+    },
+    {
+      "title": "禁用/禁用选项",
+      "description": "通过设置`disabled`属性可以禁用组件。disabled为函数时，支持禁用单个选项",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 禁用/禁用选项\n *    -- 通过设置`disabled`属性可以禁用组件。disabled为函数时，支持禁用单个选项\n * en - Disabled\n *    -- Set the `disabled` property to disable the component. When `disabled` is a function, support disabling a single option\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, width: 624 }}>\n      <Select width={300} disabled data={data} keygen placeholder='Select Color' clearable />\n      <Select\n        width={300}\n        disabled={(d) => d === 'orange'}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n      <Select\n        compressed\n        multiple\n        value={['red', 'orange']}\n        width={300}\n        disabled\n        data={data}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n      <Select\n        multiple\n        compressed\n        defaultValue={['red', 'orange']}\n        width={300}\n        disabled={(d) => d === 'orange'}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "树形数据",
+      "description": "设置 `treeData` 属性，即可创建树形数据；效果同 `TreeSelect`组件。",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 树形数据\n *    -- 设置 `treeData` 属性，即可创建树形数据；效果同 `TreeSelect`组件。\n * en - Tree Data\n *    -- Set the `treeData` property to create tree data; the effect is the same as the `TreeSelect` component.\n */\nimport React from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\n\ntype DataItem = {\n  id: string;\n  title: string;\n  children?: DataItem[];\n};\n\nexport default () => {\n  const treeData: SelectProps['treeData'] = [\n    {\n      id: '1',\n      title: 'node 1',\n      children: [\n        {\n          id: '1-1',\n          title: 'node 1-1',\n          children: [\n            {\n              id: '1-1-1',\n              title: 'node 1-1-1',\n              // 模拟嵌套深度为10层的树形数据，重复嵌套children\n              children: [\n                {\n                  id: '1-1-1-1',\n                  title: 'node 1-1-1-1',\n                  children: [\n                    {\n                      id: '1-1-1-1-1',\n                      title: 'node 1-1-1-1-1',\n                      children: [\n                        {\n                          id: '1-1-1-1-1-1',\n                          title: 'node 1-1-1-1-1-1',\n                          children: [\n                            {\n                              id: '1-1-1-1-1-1-1',\n                              title: 'node 1-1-1-1-1-1-1',\n                              children: [\n                                {\n                                  id: '1-1-1-1-1-1-1-1',\n                                  title: 'node 1-1-1-1-1-1-1-1',\n                                  children: [\n                                    {\n                                      id: '1-1-1-1-1-1-1-1-1',\n                                      title: 'node 1-1-1-1-1-1-1-1-1',\n                                      children: [\n                                        {\n                                          id: '1-1-1-1-1-1-1-1-1-1',\n                                          title: 'node 1-1-1-1-1-1-1-1-1-1',\n                                          children: [\n                                            {\n                                              id: '1-1-1-1-1-1-1-1-1-1-1',\n                                              title: 'node 1-1-1-1-1-1-1-1-1-1-1',\n                                              children: [\n                                                {\n                                                  id: '1-1-1-1-1-1-1-1-1-1-1-1',\n                                                  title: 'node 1-1-1-1-1-1-1-1-1-1-1-1',\n                                                },\n                                              ],\n                                            },\n                                          ],\n                                        },\n                                      ],\n                                    },\n                                  ],\n                                },\n                              ],\n                            },\n                          ],\n                        },\n                      ],\n                    },\n                  ],\n                },\n              ]\n            },\n            { id: '1-1-2', title: 'node 1-1-2' },\n          ],\n        },\n        { id: '1-2', title: 'node 1-2' },\n      ],\n    },\n    {\n      id: '2',\n      title: 'node 2',\n    },\n    { id: '3', title: 'node 3', children: [{ id: '3-1', title: 'node 3-1' }] },\n    { id: '4', title: 'node 4' },\n  ];\n\n  const prediction: SelectProps['prediction'] = (v, d) => v === d.id;\n\n  const renderItem: SelectProps['renderItem'] = (d) => d.title;\n\n  return (\n    <div>\n      <Select\n        width={300}\n        childrenKey='children'\n        treeData={treeData}\n        keygen='id'\n        format='id'\n        placeholder='Select Color'\n        prediction={prediction}\n        renderItem={renderItem}\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "创建选项",
+      "description": "设置 `onCreate` 属性，即可创建选项中不存在的条目；",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 创建选项\n *    -- 设置 `onCreate` 属性，即可创建选项中不存在的条目；\n *    -- 当 `onCreate` 为 true 时，使用默认函数 text => text；\n *    -- 当 `onCreate` 为函数时，将此函数返回值作为新的选项插入最上方。\n * en - Create option\n *    -- If the `onCreate` property is set, you can create entries that do not exist in the options;\n *   -- When `onCreate` is true, use the default function text => text;\n *  -- When `onCreate` is a function, the return value of this function is inserted as a new option at the top.\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\ntype DataItem = {\n  id: string;\n  name: string;\n};\n\nconst data: DataItem[] = [];\nfor (let i = 0; i < 15; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `标签 ${i}`,\n  });\n}\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <div>\n      <Select\n        width={300}\n        data={data}\n        onCreate\n        height={250}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n\n      <Select\n        multiple\n        style={{ marginLeft: 24 }}\n        width={300}\n        data={data}\n        onCreate\n        height={250}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "过滤数据（本地）",
+      "description": "设置`onFilter`属性且返回内容为函数时，会根据返回的过滤函数对本地数据进行过滤",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 过滤数据（本地）\n *    -- 设置`onFilter`属性且返回内容为函数时，会根据返回的过滤函数对本地数据进行过滤\n * en - Filter data (local)\n *    -- Set the `onFilter` property and return the content as a function, the local data will be filtered according to the returned filter function\n */\nimport React from 'react';\nimport { Form, Select, Switch, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<string, string>;\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  const handleFilter: SelectProps['onFilter'] = (v) => (d) => d.indexOf(v) >= 0;\n  const [highlight, setHighlight] = React.useState(true);\n\n  return (\n    <div>\n      <Form>\n        <Form.Item label='高亮关键字' labelWidth={72}>\n          <Switch value={highlight} onChange={setHighlight} />\n        </Form.Item>\n      </Form>\n\n      <Select\n        width={200}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        onFilter={handleFilter}\n        clearable\n        highlight={highlight}\n      />\n      <br />\n      <br />\n      <Select\n        width={300}\n        data={data}\n        keygen\n        placeholder='Select Multiple Color'\n        onFilter={handleFilter}\n        clearable\n        multiple\n        highlight={highlight}\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "过滤数据（服务端）",
+      "description": "设置 `onFilter` 属性且不返回内容时，可以根据输入的内容自行进行过滤，并根据后端接口返回的数据重新设置data",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 过滤数据（服务端）\n *    -- 设置 `onFilter` 属性且不返回内容时，可以根据输入的内容自行进行过滤，并根据后端接口返回的数据重新设置data\n *    -- 其中第二参数为触发过滤的方式，值为 `edit` 时代表输入框输入内容，值为 `blur` 代表输入框失去焦点并关闭下拉框\n * en - Filter data (server)\n *    -- Set the `onFilter` property and do not return the content, you can filter according to the input content, and reset the data according to the data returned by the backend interface\n *    -- The second parameter of `onFilter` is the way to trigger the filter. When the value is `edit`, it means that the input box enters the content, and when the value is `blur`, it means that the input box loses focus and closes the drop-down box\n *\n */\nimport React, { useState, useEffect } from 'react';\nimport { Select, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\n\ninterface DataItem {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\nexport default () => {\n  const [data, setData] = useState<DataItem[]>([]);\n  const [loading, setLoading] = useState(false);\n\n  const getData = (text: string) => {\n    user.fetch.get('user', { username: text, sorter: {} }).then((res: { data: DataItem[] }) => {\n      setData(res.data);\n      setLoading(false);\n    });\n  };\n\n  const handleFilter: SelectProps['onFilter'] = (text, from) => {\n    if (from === 'blur') {\n      console.log('选择结束并关闭面板，清空过滤条件，查询默认的列表数据');\n      getData('');\n      setLoading(false);\n      return;\n    }\n\n    if (from === 'edit') {\n      console.log('输入框输入内容，根据输入内容进行过滤');\n      setLoading(true);\n      getData(text);\n    }\n  };\n\n  const renderItem: SelectProps['renderItem'] = (d) => `${d.firstName}-${d.lastName}`;\n\n  useEffect(() => {\n    getData('');\n  }, []);\n\n  return (\n    <div>\n      <Select\n        loading={loading}\n        width={300}\n        data={data}\n        keygen='id'\n        format={'id'}\n        placeholder='Select Color'\n        renderItem={renderItem}\n        onFilter={handleFilter}\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "树形数据过滤",
+      "description": "通过设置`onFilter`和`treeData`可以对树形数据进行过滤",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 树形数据过滤\n *    -- 通过设置`onFilter`和`treeData`可以对树形数据进行过滤\n * en - Tree data filter\n *    -- Set onFilter and treeData to filter tree data\n */\nimport React from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\n\ntype DataItem = {\n  id: string;\n  title: string;\n  children?: DataItem[];\n};\n\nexport default () => {\n  const treeData: DataItem[] = [\n    {\n      id: '1',\n      title: 'node 1',\n      children: [\n        {\n          id: '1-1',\n          title: 'node 1-1',\n          children: [\n            { id: '1-1-1', title: 'node 1-1-1' },\n            { id: '1-1-2', title: 'node 1-1-2' },\n          ],\n        },\n        { id: '1-2', title: 'node 1-2' },\n      ],\n    },\n    {\n      id: '2',\n      title: 'node 2',\n    },\n    { id: '3', title: 'node 3', children: [{ id: '3-1', title: 'node 3-1' }] },\n    { id: '4', title: 'node 4' },\n  ];\n\n  const handleFilter: SelectProps['onFilter'] = (text) => (d) => {\n    return d.title.indexOf(text) >= 0;\n  };\n\n  const renderItem: SelectProps['renderItem'] = (d) => d.title;\n\n  const prediction: SelectProps['prediction'] = (v, d) => v === d.id;\n\n  return (\n    <div>\n      <Select\n        width={300}\n        childrenKey='children'\n        treeData={treeData}\n        keygen='id'\n        format='id'\n        onFilter={handleFilter}\n        placeholder='Select Color'\n        prediction={prediction}\n        renderItem={renderItem}\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "绝对定位",
+      "description": "如果选项弹出层的父容器被遮挡，可以设置 absolute 属性使弹出选项在单独层中渲染。（非必要情况下不建议）",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 绝对定位\n *    -- 如果选项弹出层的父容器被遮挡，可以设置 absolute 属性使弹出选项在单独层中渲染。（非必要情况下不建议）\n * en - Absolute\n *    -- If the parent container of the option popup layer is blocked, you can set the absolute property to render the popup option in a separate layer. (Not recommended unless necessary)\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nconst data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\nconst styleAbsolute: React.CSSProperties = {\n  padding: 10,\n  height: 100,\n  width: '100%',\n  overflow: 'hidden',\n};\n\nexport default () => {\n  return (\n    <div style={styleAbsolute}>\n      <Select width={120} keygen data={data} placeholder='default' clearable />\n      <Select\n        style={{ marginInlineStart: 16 }}\n        width={300}\n        absolute\n        multiple\n        keygen\n        data={data}\n        placeholder='Select user'\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "多列选择",
+      "description": "设置 `columns` 属性可以让选择框变成多列显示，`columns` 为每行显示的数量",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 多列选择\n *    -- 设置 `columns` 属性可以让选择框变成多列显示，`columns` 为每行显示的数量\n * en - Columns\n *    -- Set the `columns` property to make the selection box multi-column display, and `columns` is the number of items displayed per row.\n */\nimport React, { useState, useEffect } from 'react';\nimport { Select, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\n\ninterface DataItem {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\nexport default () => {\n  const [data, setData] = useState<DataItem[]>([]);\n\n  const renderItem: SelectProps['renderItem'] = (d) => `${d.firstName}-${d.lastName}`;\n\n  useEffect(() => {\n    user.fetch.get('user', { username: '', sorter: {} }).then((res: { data: DataItem[] }) => {\n      setData(res.data);\n    });\n  }, []);\n\n  return (\n    <div style={{ display: 'flex', gap: 24 }}>\n      <Select\n        width={300}\n        data={data}\n        keygen='id'\n        columns={4}\n        placeholder='Select Color'\n        renderItem={renderItem}\n        clearable\n      />\n      <Select\n        multiple\n        compressed\n        // compressedBound={2}\n        width={300}\n        data={data}\n        keygen='id'\n        columns={4}\n        placeholder='Select Color'\n        renderItem={renderItem}\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "内嵌标题",
+      "description": "通过配置`innerTitle`可以渲染内嵌标题",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 内嵌标题\n *    -- 通过配置`innerTitle`可以渲染内嵌标题\n * en - Inner title\n *    -- Set `innerTitle` to render inner title\n */\nimport React from 'react';\nimport { Select, Gap } from 'shineout';\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <Gap style={{ flexDirection: 'column', gap: 24 }}>\n      <Select size=\"small\" innerTitle='Select Color' width={300} data={data} keygen clearable />\n      <Select innerTitle='Select Color' width={300} data={data} keygen clearable />\n      <Select size=\"large\" innerTitle='Select Color' width={300} data={data} keygen clearable />\n    </Gap>\n  );\n};\n"
+    },
+    {
+      "title": "加载中",
+      "description": "设置`loading`为true时会展示一个默认的Spin组件，可以传入一个自定义的Spin代替",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 加载中\n *    -- 设置`loading`为true时会展示一个默认的Spin组件，可以传入一个自定义的Spin代替\n * en - Loading\n *    -- Set `loading` to true will show a default Spin component, you can pass a custom Spin to replace it\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  return (\n    <div>\n      <Select loading width={300} data={data} keygen placeholder='Select Color' clearable />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "自定义列表布局",
+      "description": "通过设置`header`属性可以自定义列表头部区域内容",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 自定义列表布局\n *    -- 通过设置`header`属性可以自定义列表头部区域内容\n *    -- 通过设置`footer`属性可以自定义列表底部区域内容\n *    -- 通过设置`renderOptionList`可以自定义列表内容，并将列表实例抛出\n *    -- 注意，与`emptyText`属性搭配使用时，`emptyText`渲染优先级高于`renderOptionList`，可将`emptyText`设置为 false 忽略空内容渲染，如需渲染空内容，请在`renderOptionList`中自行处理\n * en - Header\n *    -- Set `header` to customize the content of the header area\n */\nimport React, { useState } from 'react';\nimport { Select } from 'shineout';\n\nconst defaultData = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n\nexport default () => {\n  const [data, setData] = useState(defaultData);\n\n  const handleAppend = () => {\n    setData(['new color', ...data]);\n  };\n\n  const addMore = (\n    <div\n      style={{\n        height: 32,\n        backgroundColor: '#197AFA',\n        color: '#ffffff',\n        padding: '5px 12px',\n        boxSizing: 'border-box',\n      }}\n      onClick={handleAppend}\n    >\n      + add\n    </div>\n  );\n\n  return (\n    <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>\n      <Select\n        header={addMore}\n        width={300}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n      <Select\n        footer={addMore}\n        width={300}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n      <Select\n        keygen\n        onCollapse={(v) => console.log(v)}\n        width={300}\n        clearable\n        data={data}\n        placeholder='Select Color'\n        renderOptionList={(s) => (\n          <div>\n            {addMore}\n            <div>{s}</div>\n            {addMore}\n          </div>\n        )}\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "自定义选中结果",
+      "description": "通过`renderResult`可以自定义选中结果的渲染",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 自定义选中结果\n *    -- 通过`renderResult`可以自定义选中结果的渲染\n * en - renderResult\n *    -- Set `renderResult` to custom render the result\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  const renderResult = (d: string) => {\n    return `i love ${d}`;\n  };\n  return (\n    <div>\n      <Select\n        width={300}\n        renderResult={renderResult}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "*    -- 演示更复杂的自定义渲染",
+      "description": "演示更复杂的自定义渲染",
+      "scenario": "advanced",
+      "code": "/**\n * cn -\n *    -- 演示更复杂的自定义渲染\n * en -\n *    -- Show more complex custom rendering\n */\nimport React, { useEffect, useMemo, useRef, Ref } from 'react';\nimport { Select, Input, Empty, icons } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    select: {\n      '& .soui-select-option-inner:has(.soui-select-empty)': {\n        overflow: 'visible'\n      },\n    },\n  },\n  { name: 'select-example-17' },\n);\n\nconst svgs = [\n  <svg key='0' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width={14} height={14}>\n    <path\n      d='M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM4 7c-.6 0-1 .4-1 1s.4 1 1 1h8c.6 0 1-.4 1-1s-.4-1-1-1H4z'\n      fill='#ff5630'\n    />\n  </svg>,\n  <svg key='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width={14} height={14}>\n    <linearGradient\n      id='a'\n      gradientUnits='userSpaceOnUse'\n      x1='-46.25'\n      y1='65.1105'\n      x2='-46.25'\n      y2='64.1105'\n      gradientTransform='matrix(12 0 0 -13.1121 563 854.7415)'\n    >\n      <stop offset='0' stopColor='#ff5630' />\n      <stop offset='1' stopColor='#ff8f73' />\n    </linearGradient>\n    <path\n      d='M2.5 4l5-2.9c.3-.2.7-.2 1 0l5 2.9c.3.2.5.5.5.9v8.2c0 .6-.4 1-1 1-.2 0-.4 0-.5-.1L8 11.4 3.5 14c-.5.3-1.1.1-1.4-.4-.1-.1-.1-.3-.1-.5V4.9c0-.4.2-.7.5-.9z'\n      fill='url(#a)'\n    />\n  </svg>,\n  <svg key='2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width={14} height={14}>\n    <path\n      d='M3.47876 7.9c-.5.3-1.1.1-1.4-.4s-.1-1 .4-1.3l5-3c.3-.2.7-.2 1 0l5 3c.5.3.6.9.3 1.4-.2.4-.8.6-1.3.3l-4.5-2.7-4.5 2.7z'\n      fill='#ff5630'\n    />\n    <path\n      d='M3.47876 12.2c-.5.3-1.1.2-1.4-.3s-.1-1.1.4-1.4l5-3c.3-.2.7-.2 1 0l5 3c.5.3.6.9.3 1.4-.3.5-.9.6-1.4.3l-4.4-2.7-4.5 2.7z'\n      fill='#ff7452'\n    />\n  </svg>,\n  <svg key='3' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width={14} height={14}>\n    <path\n      d='M8.045319 12.806152l4.5-2.7c.5-.3 1.1-.1 1.3.4s.2 1.1-.3 1.3l-5 3c-.3.2-.7.2-1 0l-5-3c-.5-.3-.6-.9-.3-1.4.3-.5.9-.6 1.4-.3l4.4 2.7z'\n      fill='#0065ff'\n    />\n    <path\n      d='M12.545319 5.806152c.5-.3 1.1-.1 1.3.3s.2 1.1-.3 1.4l-5 3c-.3.2-.7.2-1 0l-5-3c-.5-.3-.6-.9-.3-1.4.3-.5.9-.6 1.4-.3l4.4 2.7 4.5-2.7z'\n      fill='#2684ff'\n    />\n    <path\n      d='M12.545319 1.506152c.5-.3 1.1-.2 1.3.3s.2 1.1-.3 1.4l-5 3c-.3.2-.7.2-1 0l-5-3c-.5-.3-.6-.9-.3-1.4.3-.5.9-.6 1.4-.3l4.4 2.7 4.5-2.7z'\n      fill='#4c9aff'\n    />\n  </svg>,\n];\n\ninterface DataItem {\n  label: string;\n  value: string;\n  icon: React.ReactNode;\n}\n\nconst data = [\n  {\n    label: 'P0-紧急',\n    value: '0',\n    icon: svgs[0],\n  },\n  {\n    label: 'P1-高',\n    value: '1',\n    icon: svgs[1],\n  },\n  {\n    label: 'P2-中',\n    value: '2',\n    icon: svgs[2],\n  },\n  {\n    label: 'P3-低',\n    value: '3',\n    icon: svgs[3],\n  },\n];\n\nconst FilterInput = React.forwardRef(\n  (\n    {\n      value,\n      onChange,\n      style,\n    }: {\n      value?: string;\n      onChange: (value?: string) => void;\n      style?: React.CSSProperties;\n    },\n    ref,\n  ) => {\n    return (\n      <div style={{ ...style, border: 'none', borderBottom: '1px solid #E8EBF0' }}>\n        <Input\n          forwardRef={ref as Ref<HTMLInputElement>}\n          type='search'\n          placeholder='搜索'\n          value={value}\n          onChange={onChange}\n          style={{ border: 'none', boxShadow: 'none' }}\n          onKeyDown={(e) => e.stopPropagation()}\n          prefix={\n            <div\n              style={{\n                display: 'flex',\n                width: 14,\n                marginRight: 8,\n                color: 'var(--soui-input-icon-color,var(--soui-neutral-text-4,#666C7C))',\n              }}\n            >\n              {icons.Search}\n            </div>\n          }\n        />\n      </div>\n    );\n  },\n);\n\nexport default () => {\n  const [value, setValue] = React.useState<string[]>(['0', '1']);\n  const [filterText, setFilterText] = React.useState<string | undefined>('');\n\n  const classes = useStyles()\n\n  const displayData = useMemo(() => {\n    if (!filterText) return data;\n    return data.filter((d) => d.label.includes(filterText));\n  }, [filterText]);\n\n  const renderItem = (d: DataItem) => {\n    return (\n      <div style={{ display: 'flex', alignItems: 'center' }}>\n        {d.icon}\n        <span style={{ marginLeft: 4 }}>{d.label}</span>\n      </div>\n    );\n  };\n\n  const inputRef = useRef<HTMLInputElement>(null);\n  useEffect(() => {\n    if (inputRef.current) {\n      inputRef.current.focus();\n    }\n  }, [displayData.length]);\n\n  const renderOptionList = (list: React.ReactNode) => {\n    return (\n      <div style={{ height: 173, overflow: 'au' }}>\n        <FilterInput value={filterText} onChange={setFilterText} ref={inputRef} />\n        {list}\n      </div>\n    );\n  };\n\n  return (\n    <div>\n      <Select\n        keygen='value'\n        format={'value'}\n        value={value}\n        onChange={setValue}\n        width={300}\n        renderItem={renderItem}\n        className={classes.select}\n        emptyText={\n          <div>\n            <FilterInput\n              value={filterText}\n              onChange={setFilterText}\n              style={{ margin: '-6px 0 0 -12px', width: 'calc(100% + 24px)' }}\n              ref={inputRef}\n            />\n            <Empty style={{ margin: '24px auto 12px' }} />\n          </div>\n        }\n        data={displayData}\n        placeholder='Please Select'\n        clearable\n        compressed\n        multiple\n        renderOptionList={renderOptionList}\n        onCollapse={(v) => {\n          setTimeout(() => {\n            if (v && inputRef.current) {\n              inputRef.current.focus();\n            }\n          }, 20);\n        }}\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "渲染未匹配值",
+      "description": "通过`renderUnmatched`属性可以渲染未匹配的值",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 渲染未匹配值\n *    -- 通过`renderUnmatched`属性可以渲染未匹配的值\n * en - renderUnmatched\n *    -- The unmatched value can be rendered through the `renderUnmatched` property\n */\nimport React from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<string, string>;\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n\n  const renderUnmatched: SelectProps['renderUnmatched'] = (v) => {\n    return `I am ${v} color`;\n  };\n\n  return (\n    <div>\n      <Select\n        width={300}\n        defaultValue='redddd'\n        renderUnmatched={renderUnmatched}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "滚动加载",
+      "description": "通过配置`onLoadMore`方法，当下拉面板内容滚动至一定程度时，会触发该方法，实现滚动加载的效果",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 滚动加载\n *    -- 通过配置`onLoadMore`方法，当下拉面板内容滚动至一定程度时，会触发该方法，实现滚动加载的效果\n *    -- 通过配置`threshold`属性控制触发加载的阈值，默认为 1 即滚动至底部时触发加载，范围为 0 ~ 1\n *    -- 注意，加载中样式及效果需自行设置，`onLoadMore`方法需自行设置触发频率，避免高频调用\n * en - Basic\n *    --\n */\nimport React, { useState, useEffect } from 'react';\nimport { Select, Spin } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface ListItem {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\nexport default () => {\n  const [current, setCurrent] = useState(1);\n  const [loading, setLoading] = useState(false);\n  const [data, setData] = useState<ListItem[]>([]);\n\n  const fetchData = (c: number) => {\n    setLoading(true);\n    user.fetch\n      .get('List', { current: c, pageSize: 10, sorter: {}, username: '' })\n      .then((_data: { data: ListItem[] }) => {\n        setData([...data, ..._data.data]);\n        setCurrent(c);\n        setLoading(false);\n      });\n  };\n\n  const onLoadMore = async () => {\n    if (current >= 10) return;\n    // 避免高频调用\n    if (loading) return;\n    await fetchData(current + 1);\n  };\n\n  useEffect(() => {\n    fetchData(1);\n  }, []);\n\n  return (\n    <div>\n      <Select\n        width={300}\n        clearable\n        data={data}\n        keygen='id'\n        format='id'\n        threshold={1}\n        renderItem={(d) => d.firstName}\n        placeholder='Select User'\n        onLoadMore={onLoadMore}\n        renderOptionList={(List) => {\n          return (\n            <Spin loading={loading} name='ring' size={14}>\n              {List}\n            </Spin>\n          );\n        }}\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "触发方式",
+      "description": "Select 通过`trigger`属性设置面板的打开方式。设置为`hover`时，鼠标移入时触发，默认为点击触发",
+      "scenario": "advanced",
+      "code": "/**\n * cn - 触发方式\n *    -- Select 通过`trigger`属性设置面板的打开方式。设置为`hover`时，鼠标移入时触发，默认为点击触发\n * en - Trigger\n *    -- Set the trigger property to set the way the panel opens. Set to `hover` to trigger on mouse enter, default click trigger\n */\nimport React from 'react';\nimport { Select } from 'shineout';\nimport { primitiveData } from './static/mock';\n\nexport default () => {\n  return (\n    <div>\n      <Select\n        width={300}\n        trigger='hover'\n        clearable\n        data={primitiveData}\n        keygen\n        placeholder='Hover Me & Select Color'\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "tip",
+      "description": "test tip",
+      "scenario": "basic",
+      "code": "/**\n * cn - tip\n *    -- test tip\n * en - tip\n *    -- test tip\n */\nimport React from 'react';\nimport { Select } from 'shineout';\nimport { primitiveData } from './static/mock';\n\nexport default () => {\n  return (\n    <div>\n      <Select tip='i am a tip' width={300} data={primitiveData} keygen placeholder='Select Color' />\n      <Select status='error' width={300} data={primitiveData} keygen placeholder='Select Color' />\n      <Select\n        error={'error'}\n        popover\n        width={300}\n        data={primitiveData}\n        keygen\n        placeholder='Select Color'\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "empty",
+      "description": "test empty",
+      "scenario": "basic",
+      "code": "/**\n * cn - empty\n *    -- test empty\n * en - empty\n *    -- test empty\n */\nimport React from 'react';\nimport { Select } from 'shineout';\n\nconst options = [\n  { id: 0, name: 'zero' },\n  { id: 1, name: 'red' },\n  { id: 2, name: 'blue' },\n  { id: 3, name: 'yellow' },\n  { id: 4, name: 'green' },\n  { id: 5, name: 'black' },\n  { id: 6, name: 'white' },\n]\n\nexport default () => {\n  return (\n    <div>\n      <Select\n        width={300}\n        data={options}\n        keygen=\"id\"\n        // multiple\n        // renderItem=\"name\"\n        renderItem={item => <span>\n          <span style={{background: 'green', color: '#fff', marginRight: 8}}>通过</span>\n          {item.name}\n        </span>}\n        placeholder='Select Color'\n        onFilter={text => (item) => item.name.indexOf(text) > -1}\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "限制过滤字符长度",
+      "description": "设置`maxLength`属性可以限制输入过滤字符的长度",
+      "scenario": "basic",
+      "code": "/**\n * cn - 限制过滤字符长度\n *    -- 设置`maxLength`属性可以限制输入过滤字符的长度\n * en - maxLength\n *    -- Set `maxLength` property can limit the length of the input filter characters\n */\nimport React from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<string, string>;\n\nexport default () => {\n  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];\n  const handleFilter: SelectProps['onFilter'] = (v) => (d) => d.indexOf(v) >= 0;\n\n  return (\n    <div>\n      <Select\n        maxLength={2}\n        width={300}\n        data={data}\n        keygen\n        placeholder='Select Color'\n        onFilter={handleFilter}\n        clearable\n      />\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "树形数据自动撑宽下拉框容器",
+      "description": "* en - Tree data auto adapt dropdown width",
+      "scenario": "basic",
+      "code": "/**\n * cn - 树形数据自动撑宽下拉框容器\n *    --\n * en - Tree data auto adapt dropdown width\n *    --\n */\nimport React from 'react';\nimport { Select, TYPE } from 'shineout';\n\ntype SelectProps = TYPE.Select.Props<DataItem, string>;\n\ntype DataItem = {\n  id: string;\n  title: string;\n  children?: DataItem[];\n};\n\nexport default () => {\n  const treeData: SelectProps['treeData'] = [\n    {\n      id: '1',\n      title: 'node 1',\n      children: [\n        {\n          id: '1-1',\n          title: 'node 1-1',\n          children: [\n            {\n              id: '1-1-1',\n              title: 'node 1-1-1',\n              // 模拟嵌套深度为10层的树形数据，重复嵌套children\n              children: [\n                {\n                  id: '1-1-1-1',\n                  title: 'node 1-1-1-1',\n                  children: [\n                    {\n                      id: '1-1-1-1-1',\n                      title: 'node 1-1-1-1-1',\n                      children: [\n                        {\n                          id: '1-1-1-1-1-1',\n                          title: 'node 1-1-1-1-1-1',\n                          children: [\n                            {\n                              id: '1-1-1-1-1-1-1',\n                              title: 'node 1-1-1-1-1-1-1',\n                              children: [\n                                {\n                                  id: '1-1-1-1-1-1-1-1',\n                                  title: 'node 1-1-1-1-1-1-1-1',\n                                  children: [\n                                    {\n                                      id: '1-1-1-1-1-1-1-1-1',\n                                      title: 'node 1-1-1-1-1-1-1-1-1',\n                                      children: [\n                                        {\n                                          id: '1-1-1-1-1-1-1-1-1-1',\n                                          title: 'node 1-1-1-1-1-1-1-1-1-1',\n                                          children: [\n                                            {\n                                              id: '1-1-1-1-1-1-1-1-1-1-1',\n                                              title: 'node 1-1-1-1-1-1-1-1-1-1-1',\n                                              children: [\n                                                {\n                                                  id: '1-1-1-1-1-1-1-1-1-1-1-1',\n                                                  title: 'node 1-1-1-1-1-1-1-1-1-1-1-1',\n                                                },\n                                              ],\n                                            },\n                                          ],\n                                        },\n                                      ],\n                                    },\n                                  ],\n                                },\n                              ],\n                            },\n                          ],\n                        },\n                      ],\n                    },\n                  ],\n                },\n              ],\n            },\n            { id: '1-1-2', title: 'node 1-1-2' },\n          ],\n        },\n        { id: '1-2', title: 'node 1-2' },\n      ],\n    },\n    {\n      id: '2',\n      title: 'node 2',\n    },\n    { id: '3', title: 'node 3', children: [{ id: '3-1', title: 'node 3-1' }] },\n    { id: '4', title: 'node 4' },\n  ];\n\n  const prediction: SelectProps['prediction'] = (v, d) => v === d.id;\n\n  const renderItem: SelectProps['renderItem'] = (d) => d.title;\n\n  const [value, setValue] = React.useState<string | undefined>('1');\n\n  return (\n    <div\n      style={{\n        position: 'absolute',\n        bottom: 100,\n        right: 50,\n      }}\n    >\n      <Select\n        width={260}\n        childrenKey='children'\n        treeData={treeData}\n        keygen='id'\n        format='id'\n        placeholder='Select Color'\n        prediction={prediction}\n        renderItem={renderItem}\n        clearable\n        autoAdapt\n        // expanded={['1', '1-1', '1-1-1', '1-1-1-1', '1-1-1-1-1']}\n        value={value}\n        onChange={setValue}\n      />\n    </div>\n  );\n};\n"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7"
+}
