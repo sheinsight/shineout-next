@@ -1,3 +1,9 @@
+## 3.7.8-beta.12
+2025-07-29
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `columns` 后，滚动容器的内边距不正确的样式问题 ([#1274](https://github.com/sheinsight/shineout-next/pull/1274))
+
 ## 3.7.8-beta.8
 2025-07-28
 

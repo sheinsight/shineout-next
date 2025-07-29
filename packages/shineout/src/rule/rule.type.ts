@@ -4,8 +4,8 @@
  */
 type _RequiedRuleParams = {
   /**
-   * @cn 报错提示
-   * @en message
+   * @cn 校验失败时显示的错误提示信息
+   * @en Error message displayed when validation fails
    */
   message?: string;
 };
@@ -16,13 +16,13 @@ type _RequiedRuleParams = {
  */
 type _MinRuleParams = {
   /**
-   * @cn 最小值
-   * @en min
+   * @cn 最小值限制（对于数字类型为最小数值，字符串类型为最小长度，数组类型为最少项数）
+   * @en Minimum value limit (minimum numeric value for numbers, minimum length for strings, minimum items for arrays)
    */
   min: number;
   /**
-   * @cn 报错提示
-   * @en message
+   * @cn 校验失败时显示的错误提示信息
+   * @en Error message displayed when validation fails
    */
   message?: string;
 };
@@ -33,13 +33,13 @@ type _MinRuleParams = {
  */
 type _MaxRuleParams = {
   /**
-   * @cn 最大值
-   * @en max
+   * @cn 最大值限制（对于数字类型为最大数值，字符串类型为最大长度，数组类型为最多项数）
+   * @en Maximum value limit (maximum numeric value for numbers, maximum length for strings, maximum items for arrays)
    */
   max: number;
   /**
-   * @cn 报错提示
-   * @en message
+   * @cn 校验失败时显示的错误提示信息
+   * @en Error message displayed when validation fails
    */
   message?: string;
 };
@@ -50,18 +50,18 @@ type _MaxRuleParams = {
  */
 type _RangeRuleParams = {
   /**
-   * @cn 最小值
-   * @en min
+   * @cn 范围的最小值限制（对于数字类型为最小数值，字符串类型为最小长度，数组类型为最少项数）
+   * @en Minimum value of the range (minimum numeric value for numbers, minimum length for strings, minimum items for arrays)
    */
   min: number;
   /**
-   * @cn 最大值
-   * @en max
+   * @cn 范围的最大值限制（对于数字类型为最大数值，字符串类型为最大长度，数组类型为最多项数）
+   * @en Maximum value of the range (maximum numeric value for numbers, maximum length for strings, maximum items for arrays)
    */
   max: number;
   /**
-   * @cn 报错提示
-   * @en message
+   * @cn 校验失败时显示的错误提示信息
+   * @en Error message displayed when validation fails
    */
   message?: string;
 };
@@ -73,13 +73,13 @@ type _RangeRuleParams = {
  */
 type _RegExpRuleParams = {
   /**
-   * @cn 正则表达式
-   * @en reg
+   * @cn 用于匹配输入值的正则表达式，可以是 RegExp 对象或正则字符串
+   * @en Regular expression pattern to match input value, can be RegExp object or regex string
    */
   reg: RegExp | string;
   /**
-   * @cn 报错提示
-   * @en message
+   * @cn 校验失败时显示的错误提示信息
+   * @en Error message displayed when validation fails
    */
   message?: string;
 };
@@ -93,8 +93,8 @@ type _RegExpRuleParams = {
  */
 type _TypeRuleParams = {
   /**
-   * @cn 报错提示
-   * @en message
+   * @cn 校验失败时显示的错误提示信息
+   * @en Error message displayed when validation fails
    */
   message?: string;
 };
@@ -106,18 +106,18 @@ type _TypeRuleParams = {
  */
 type _CutsomRuleParam = {
   /**
-   * @cn 值
-   * @en value
+   * @cn 当前需要校验的字段值
+   * @en Current field value to be validated
    */
   value?: any;
   /**
-   * @cn form 值
-   * @en form value
+   * @cn 整个表单的数据对象，可用于关联校验多个字段
+   * @en Complete form data object, useful for cross-field validation
    */
   formValue?: object;
   /**
-   * @cn 回调
-   * @en callback
+   * @cn 校验结果回调函数，传入 true 表示校验通过，传入 Error 对象表示校验失败
+   * @en Validation result callback function, pass true for validation success, Error object for validation failure
    */
   callback?: (result: true | Error) => void;
 };

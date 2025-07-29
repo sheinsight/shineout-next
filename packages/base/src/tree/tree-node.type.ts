@@ -71,6 +71,7 @@ export interface TreeVirtualNodeProps<DataItem, Value extends KeygenResult[]>
   inlineNode?: boolean;
   highlight?: boolean;
   level: number;
+  lineHeight: number;
 }
 
 export type TreeNodeProps<DataItem, Value extends KeygenResult[]> =

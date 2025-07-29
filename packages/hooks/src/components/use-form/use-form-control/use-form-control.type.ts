@@ -25,8 +25,8 @@ export interface BaseFormControlProps<T> {
    */
   onError: ((error: Error | undefined) => void) | undefined;
   /**
-   * @en When the value changes, it will link to verify the fields in the bind, which needs to be used with Form
-   * @cn 当值改变是会联动校验 bind 中的字段, 需要配合 Form 使用
+   * @en Array of field names that should be re-validated when current field's value changes. Enables field linkage validation for dependent fields. Commonly used in scenarios like password confirmation, related dropdown selections, or interdependent form calculations
+   * @cn 当前字段值改变时需要重新校验的字段名称数组。启用字段间的联动校验功能。常用于密码确认、关联下拉选择或相互依赖的表单计算等场景
    */
   bind: string[] | undefined;
   /**
