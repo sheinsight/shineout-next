@@ -76,6 +76,7 @@ export interface TableClasses {
   hasFilter: string;
   filterContainer: string;
   filterActive: string;
+  filterOpened: string;
   filterInput: string;
   filterInputIcon: string;
   filterIcon: string;

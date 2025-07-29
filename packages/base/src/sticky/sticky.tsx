@@ -8,6 +8,16 @@ const supportSticky = cssSupport('position', 'sticky');
 export const defaultZIndex = 900;
 const events = ['scroll', 'pageshow', 'load', 'resize'];
 
+function getStaticTop(el: HTMLElement | null, stopper = document.body) {
+  let top = 0;
+  let currentEl = el;
+  while (currentEl && currentEl !== stopper) {
+    top += currentEl.offsetTop;
+    currentEl = currentEl.offsetParent as HTMLElement;
+  }
+  return top;
+}
+
 const Sticky = (props: StickyProps) => {
   if (props.target) {
     devUseWarning.deprecated('target', 'scrollContainer', 'Sticky');
@@ -16,7 +26,8 @@ const Sticky = (props: StickyProps) => {
   // 是否使用css sticky
   const css = (props.css || props.target) && supportSticky;
   const forceUpdate = useRender();
-  const elementRef = useRef(null as HTMLElement | null);
+
+  const fixedStickyElRef = useRef(null as HTMLDivElement | null);
   const { current: context } = useRef({
     target: null as HTMLElement | null,
     div: null as HTMLElement | null,
@@ -25,53 +36,91 @@ const Sticky = (props: StickyProps) => {
     parentObserver: null as IntersectionObserver | null,
     fixedObserver: null as IntersectionObserver | null,
     stoped: false,
-    stopStickyFn: (e: any) => {
-      const target = e.target as HTMLElement;
-      if (!target || typeof target.scrollTop !== 'number') return;
-
-      let stopStickyPoint = -1;
-      if (typeof props.stickyBoundary === 'number') {
-        stopStickyPoint = props.stickyBoundary;
-      } else if (typeof props.stickyBoundary === 'function') {
-        const stopStickyElement = props.stickyBoundary();
-        if (!stopStickyElement) return;
-        const stopStickyRect = stopStickyElement.getBoundingClientRect();
-        const targetRect = elementRef.current!.getBoundingClientRect();
-        stopStickyPoint = stopStickyRect.bottom - targetRect.bottom;
-      }
-      if (stopStickyPoint < 0) return;
-
-      if (target.scrollTop > stopStickyPoint) {
-        if (context.stoped) return;
-        context.stoped = true;
-
-        // 把 div 移动到 target 内部，使用 absolute 定位跟随滚动
-        if (context.div && context.target) {
-          context.target.insertBefore(context.div, context.target.firstChild);
-          const paddingLeft =
-            Number(window.getComputedStyle(context.target).paddingLeft.replace('px', '')) || 0;
-          const borderLeftWidth =
-            Number(window.getComputedStyle(context.target).borderLeftWidth.replace('px', '')) || 0;
-          const left = paddingLeft + borderLeftWidth;
-          context.div.style.transform = `translate(-${left}px, ${stopStickyPoint}px)`;
-        }
-      } else {
-        if (!context.stoped) return;
-        context.stoped = false;
-
-        // 恢复正常吸附模式：把 div 移动到 target 外部
-        if (context.div && context.target && context.target.parentNode) {
-          context.target.parentNode.insertBefore(context.div, context.target);
-        }
-
-        context.div!.style.transform = 'none';
-      }
-    },
+    originPosition: null as { top: string; left: string } | null,
   });
 
   const [style, setStyle] = useState({} as React.CSSProperties);
   const [show, setShow] = useState(false);
   const [parentVisible, setParentVisible] = useState(true);
+
+  const elementRef = useRef(null as HTMLElement | null);
+
+  const onStickyBoundaryChange = usePersistFn((e: any) => {
+    const target = e.target as HTMLElement;
+    const isDocument = !context.target || context.target === document.documentElement;
+    const scrollTop = isDocument ? window.scrollY : target.scrollTop;
+    if (!target || typeof scrollTop !== 'number') return;
+
+    let stopStickyPoint = -1;
+    let baseTop = 0;
+    let absoluteTop = 0;
+    let absoluteLeft = 0;
+    let stopStickyElement: HTMLElement | null = null;
+    if (typeof props.stickyBoundary === 'number') {
+      stopStickyPoint = props.stickyBoundary;
+    } else if (typeof props.stickyBoundary === 'function') {
+      stopStickyElement = props.stickyBoundary();
+      if (!stopStickyElement) return;
+      const stopStickyRect = stopStickyElement.getBoundingClientRect();
+      const targetRect = elementRef.current!.getBoundingClientRect();
+      if (context.target === document.documentElement || !context.target) {
+        baseTop = getStaticTop(elementRef.current as HTMLElement) - (props.top || 0);
+        absoluteTop = stopStickyRect.bottom - targetRect.bottom;
+        absoluteLeft = stopStickyRect.left - targetRect.left;
+      }
+      stopStickyPoint = stopStickyRect.bottom - targetRect.bottom + baseTop;
+    }
+
+    if (stopStickyPoint < 0) return;
+
+    if (scrollTop > stopStickyPoint) {
+      if (context.stoped) return;
+      context.stoped = true;
+
+      // 把 div 移动到 target 内部，使用 absolute 定位跟随滚动
+      if (context.div && context.target) {
+        context.target.insertBefore(context.div, context.target.firstChild);
+        const paddingLeft =
+          Number(window.getComputedStyle(context.target).paddingLeft.replace('px', '')) || 0;
+        const borderLeftWidth =
+          Number(window.getComputedStyle(context.target).borderLeftWidth.replace('px', '')) || 0;
+        const left = paddingLeft + borderLeftWidth;
+        context.div.style.transform = `translate(-${left}px, ${stopStickyPoint}px)`;
+      } else {
+        if (stopStickyElement) {
+          if (!fixedStickyElRef.current) return;
+          // 存储原始位置到 context 中
+          if (!context.originPosition) {
+            const originStyle = window.getComputedStyle(fixedStickyElRef.current);
+            context.originPosition = {
+              top: originStyle.top,
+              left: originStyle.left,
+            };
+          }
+
+          // 直接操作DOM的原因是：不闪烁且性能更好
+          stopStickyElement.style.transform = `translateZ(0)`;
+          fixedStickyElRef.current!.style.top = `${absoluteTop}px`;
+          fixedStickyElRef.current!.style.left = `${absoluteLeft}px`;
+        }
+        // 暂不支持 props.stickyBoundary 为 number 的fixed定位情况
+      }
+    } else {
+      if (!context.stoped) return;
+      context.stoped = false;
+
+      // 恢复正常吸附模式：把 div 移动到 target 外部
+      if (context.div && context.target && context.target.parentNode) {
+        context.target.parentNode.insertBefore(context.div, context.target);
+        context.div.style.transform = 'none';
+      } else if (stopStickyElement && fixedStickyElRef.current && context.originPosition) {
+        stopStickyElement.style.transform = `none`;
+        fixedStickyElRef.current.style.top = context.originPosition.top;
+        fixedStickyElRef.current.style.left = context.originPosition.left;
+        context.originPosition = null; // 清理状态
+      }
+    }
+  });
 
   const getTarget = () => {
     let { scrollContainer } = props;
@@ -255,10 +304,6 @@ const Sticky = (props: StickyProps) => {
       context.targetObserver.disconnect();
       context.targetObserver = null;
     }
-
-    if (props.stickyBoundary) {
-      context.target?.removeEventListener('scroll', context.stopStickyFn);
-    }
   };
 
   const createObserver = () => {
@@ -284,10 +329,6 @@ const Sticky = (props: StickyProps) => {
         }
       }
       cancelFixedObserver();
-
-      if (props.stickyBoundary) {
-        context.target.addEventListener('scroll', context.stopStickyFn);
-      }
 
       if (window.IntersectionObserver) {
         const observer = new IntersectionObserver(handleTargetPosition, {
@@ -331,6 +372,10 @@ const Sticky = (props: StickyProps) => {
       context.div.remove();
       context.div = null;
     }
+
+    if (props.stickyBoundary) {
+      context.target?.removeEventListener('scroll', onStickyBoundaryChange);
+    }
   };
 
   const createFixedEvents = () => {
@@ -345,6 +390,10 @@ const Sticky = (props: StickyProps) => {
     events.forEach((event) => {
       window.removeEventListener(event, handleFixedPosition);
     });
+
+    if (props.stickyBoundary) {
+      context.target?.removeEventListener('scroll', onStickyBoundaryChange);
+    }
   };
 
   const handleElementRef = (el: HTMLElement | null) => {
@@ -374,7 +423,16 @@ const Sticky = (props: StickyProps) => {
       context.target = target;
       forceUpdate();
     }
-    if (context.target) {
+
+    if (props.stickyBoundary) {
+      if (!context.target || context.target === document.documentElement) {
+        window.addEventListener('scroll', onStickyBoundaryChange);
+      } else {
+        context.target?.addEventListener('scroll', onStickyBoundaryChange);
+      }
+    }
+
+    if (context.target && context.target !== document.documentElement) {
       createTargetEvents();
       return cancelTargetEvents;
     } else {
@@ -396,7 +454,7 @@ const Sticky = (props: StickyProps) => {
   useEffect(() => {
     if (props.onChange) {
       props.onChange(show);
-    };
+    }
   }, [show]);
 
   // 纯css方法 直接使用css
@@ -416,7 +474,7 @@ const Sticky = (props: StickyProps) => {
   }
   const StickyEl =
     show && parentVisible ? (
-      <div style={{ zIndex: defaultZIndex, ...style, ...elementSize }}>
+      <div style={{ zIndex: defaultZIndex, ...style, ...elementSize }} ref={fixedStickyElRef}>
         <div className={props.className} style={props.style}>
           {children}
         </div>
@@ -442,7 +500,7 @@ const Sticky = (props: StickyProps) => {
           ...(show && parentVisible ? hideStyle : {}),
         }}
         ref={handleElementRef}
-        {...util.getDataAttribute({ sticky: show && parentVisible ? 'true' : 'false'})}
+        {...util.getDataAttribute({ sticky: show && parentVisible ? 'true' : 'false' })}
       >
         {children}
       </div>

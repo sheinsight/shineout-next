@@ -236,7 +236,8 @@ export interface TreeProps<DataItem, Value extends any[]>
   virtual?: boolean;
   /**
    * @en The height of the list item
-   * @cn 列表项高度
+   * @cn 列表项高度，仅开启virtual时生效
+   * @version 3.6.0
    */
   lineHeight?: number;
   /**

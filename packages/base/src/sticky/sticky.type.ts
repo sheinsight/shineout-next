@@ -37,7 +37,7 @@ export interface StickyProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn sticky元素滚动到指定位置或与指定元素底部重合时，取消sticky
    * @version 3.8.0
    */
-  stickyBoundary?: number | (() => HTMLElement | Element | null);
+  stickyBoundary?: number | (() => HTMLElement | null);
 
   /**
    * @cn sticky 父级元素, 当父元素离开视窗时，sticky 将失效

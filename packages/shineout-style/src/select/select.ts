@@ -566,7 +566,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     height: 32,
     padding: `${token.selectHeaderPaddingY} ${token.selectHeaderPaddingX}`,
     borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
-    marginBottom: 4,
     '& $columnsCheckbox': {
       marginRight: 0,
       marginLeft: 4,

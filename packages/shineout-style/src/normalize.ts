@@ -385,7 +385,7 @@ function appendNormalizeStyle(styleString: string, id: string){
 }
 
 function appendJssInsertionPoint(){
-  const insertionPoint = document.createElement('noscript');
+  const insertionPoint = document.createElement('style');
   insertionPoint.id = jssInsertionPointId;
   document.head.insertBefore(insertionPoint, document.head.firstChild);
 

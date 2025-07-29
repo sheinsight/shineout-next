@@ -50,3 +50,18 @@ export const getCurrentCSSZoom = (): number => {
 //   }
 // }
 
+export const getScrollPosition = (element?: HTMLElement | null) => {
+  if (!element) return { scrollTop: 0, scrollLeft: 0 };
+
+  if (element === document.documentElement || element === document.body) {
+    return {
+      scrollTop: document.documentElement.scrollTop || document.body.scrollTop,
+      scrollLeft: document.documentElement.scrollLeft || document.body.scrollLeft
+    };
+  }
+
+  return {
+    scrollTop: element.scrollTop,
+    scrollLeft: element.scrollLeft
+  };
+};

@@ -1,3 +1,15 @@
+## 3.7.8-beta.9
+2025-07-25
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 开启 `virtual` 后，滚动到底部后再搜索切换数据时，滚动条位置不正确的问题 ([#1266](https://github.com/sheinsight/shineout-next/pull/1266))
+
+## 3.7.8-beta.6
+2025-07-25
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 的 `compressed` 属性在某些场景下，仅展示了合并数量而不展示第一项结果的问题 ([#1265](https://github.com/sheinsight/shineout-next/pull/1265))
+
 ## 3.7.5-beta.11
 2025-07-04
 

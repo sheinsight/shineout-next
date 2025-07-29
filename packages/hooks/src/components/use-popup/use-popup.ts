@@ -140,7 +140,7 @@ const usePopup = (props: BasePopupProps) => {
     targetEvents?.onMouseEnter?.(e);
     if (trigger !== 'hover') return;
     const isParentContainsCurrent = targetRef.current?.contains(e.target as Node);
-    if (isParentContainsCurrent) {
+    if (isParentContainsCurrent || popupRef?.current?.contains(e.target as Node)) {
       handleHoverToggle(true);
     }
   });
