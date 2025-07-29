@@ -1,7 +1,7 @@
 /**
- * cn - min
+ * cn - 最小值校验
  *    -- 最小值校验，会根据字段值的数据类型自动判断：如果值是数字类型则验证数值大小，如果值是字符串类型则验证字符串长度，如果值是数组类型则验证数组长度。支持 rule.min(value) 和对象形式 { min: value, message: '自定义提示' }
- * en - min
+ * en - Minimum value validation
  *    -- Minimum value validation, automatically determines based on field data type: validates numeric value for number type, string length for string type, array length for array type. Supports rule.min(value) and object form { min: value, message: 'custom message' }
  */
 import React from 'react';
