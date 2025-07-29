@@ -84,8 +84,8 @@ export interface BaseTableProps<Item> {
     sortedList: Array<TableSorterInfo>,
   ) => undefined | void | ((a: Item, b: Item) => number);
   /**
-   * @en sort cancel event
-   * @cn 排序取消事件
+   * @en Sort cancel event callback. Triggered when clicking a sorted column to cancel sorting. Parameters: preType (previous sort direction), key (column key), orders (all current sort items), sorter (column sorter name)
+   * @cn 排序取消事件回调。当点击已排序的列取消排序时触发。参数：preType（之前的排序方向），key（列的唯一标识），orders（当前所有排序项信息），sorter（列的排序器名称）
    */
   onSortCancel?: (
     preType: 'asc' | 'desc',
