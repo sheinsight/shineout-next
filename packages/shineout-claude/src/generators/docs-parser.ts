@@ -46,8 +46,8 @@ export class DocsParser {
       // 读取文件内容
       const fileContent = fs.readFileSync(filePath, 'utf-8');
       
-      // 提取 JSON 数据
-      const jsonMatch = fileContent.match(/JSON\.parse\('(.+)'\)/);
+      // 提取 JSON 数据 - 新格式直接是 JSON.parse('[...]')
+      const jsonMatch = fileContent.match(/JSON\.parse\('(\[.+\])'\)/s);
       if (!jsonMatch) {
         console.warn(`⚠️  无法从文档文件中提取 JSON 数据: ${filePath}`);
         return [];

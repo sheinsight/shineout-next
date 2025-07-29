@@ -37,13 +37,13 @@
     },
     {
       "name": "onBlur",
-      "type": "FocusEventHandler<Element>",
+      "type": "FocusEventHandler<HTMLInputElement>",
       "required": false,
       "description": "失去焦点后的回调"
     },
     {
       "name": "onFocus",
-      "type": "FocusEventHandler<Element>",
+      "type": "FocusEventHandler<HTMLInputElement>",
       "required": false,
       "description": "聚焦后的回调"
     },
@@ -244,25 +244,25 @@
       "name": "onError",
       "type": "((error?: Error ) => void)",
       "required": false,
-      "description": "rules 校验回调"
+      "description": "校验完成时触发的回调函数。接收校验错误（如果有）作为参数。适用于自定义错误处理、记录校验结果，或根据校验状态触发副作用"
     },
     {
       "name": "reserveAble",
       "type": "boolean",
       "required": false,
-      "description": "设置为 true 组件卸载后表单不自动删除数据"
+      "description": "控制组件卸载时是否保留字段数据。设置为 true 时，组件移除后在表单状态中保留数据。适用于动态表单、条件字段，或需要临时隐藏/显示字段但保留其值的场景"
     },
     {
       "name": "rules",
       "type": "RuleItem[]",
       "required": false,
-      "description": "校验规则 详见 [Rule](/components/rule)"
+      "description": "用于校验字段值的规则数组。每个规则可以是函数、正则表达式或规则对象。支持内置规则（必填、邮箱等）和自定义校验逻辑。详细配置参见 [Rule](/components/rule)"
     },
     {
       "name": "bind",
       "type": "string[]",
       "required": false,
-      "description": "当值改变是会联动校验 bind 中的字段, 需要配合 Form 使用"
+      "description": "当前字段值改变时需要重新校验的字段名称数组。启用字段间的联动校验功能。常用于密码确认、关联下拉选择或相互依赖的表单计算等场景"
     }
   ],
   "examples": [

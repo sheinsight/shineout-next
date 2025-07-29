@@ -5,6 +5,18 @@
   "importPath": "import { Grid } from 'shineout'",
   "props": [
     {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
       "name": "gutter",
       "type": "number",
       "required": false,
@@ -42,18 +54,6 @@
       "type": "ReactNode",
       "required": false,
       "description": "子元素"
-    },
-    {
-      "name": "className",
-      "type": "string",
-      "required": false,
-      "description": "自定义类名"
-    },
-    {
-      "name": "style",
-      "type": "CSSProperties",
-      "required": false,
-      "description": "自定义样式"
     }
   ],
   "examples": [

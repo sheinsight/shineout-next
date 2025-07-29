@@ -8,13 +8,13 @@
       "name": "value",
       "type": "object",
       "required": false,
-      "description": "表单数据"
+      "description": "设置后表单变为受控组件，需要配合 onChange 使用。适用于需要外部管理表单状态的场景，如跨组件共享表单数据、实时同步表单数据到状态管理器等"
     },
     {
       "name": "onChange",
       "type": "((value: T) => void)",
       "required": false,
-      "description": "表单内组件值变化函数"
+      "description": "在受控模式下必须设置此函数来更新外部状态。每当表单内任意字段值改变时都会触发，参数为整个表单的最新数据"
     },
     {
       "name": "className",
@@ -39,111 +39,112 @@
       "type": "string | number",
       "required": false,
       "defaultValue": "140px",
-      "description": "标签宽度，labelAlign 为 \\\"top\\\" 时无效。"
+      "description": "标签宽度，labelAlign 为 \\\"top\\\" 时无效。统一设置表单项标签的宽度。可以是具体像素值（如 \\\"140px\\\"）或百分比（如 \\\"30%\\\"）。当标签顶部对齐时此配置无效。用于保持表单整齐的视觉效果，确保所有表单项的输入区域左对齐"
     },
     {
       "name": "labelAlign",
       "type": "\"left\" | \"right\" | \"top\"",
       "required": false,
-      "description": "默认为空，跟随主题样式。"
+      "description": "默认为空，跟随主题样式。标签的对齐方式。\\\"left\\\" 左对齐，\\\"right\\\" 右对齐，\\\"top\\\" 顶部对齐。不同的对齐方式适用于不同的表单布局需求：\\\"right\\\" 适合传统表单布局，\\\"top\\\" 适合移动端或紧凑布局，\\\"left\\\" 适合特殊设计需求"
     },
     {
       "name": "labelVerticalAlign",
       "type": "\"top\" | \"bottom\" | \"middle\"",
       "required": false,
       "defaultValue": "\\\"top\\\"",
-      "description": "默认顶部对齐"
+      "description": "默认顶部对齐。标签的垂直对齐方式。当标签和输入框在同一行时（labelAlign 为 \\\"left\\\" 或 \\\"right\\\"），控制标签相对于输入框的垂直位置。\\\"top\\\" 与输入框顶部对齐，\\\"middle\\\" 居中对齐，\\\"bottom\\\" 与输入框底部对齐"
     },
     {
       "name": "keepErrorHeight",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "单行错误提示不撑开页面高度"
+      "description": "单行错误提示不撑开页面高度。保持错误提示高度固定，避免错误信息出现/消失时页面抖动。开启后会预留错误信息的显示空间，确保表单高度稳定。适用于对布局稳定性要求较高的场景，如表单项较多的长表单。注意：当 keepErrorBelow 为 true 时，此配置会失效"
     },
     {
       "name": "keepErrorBelow",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否保持错误信息在提示信息下方"
+      "description": "是否保持错误信息在提示信息下方。控制错误信息的显示位置。开启后错误信息始终显示在表单项的 tip 属性下方，保持布局的一致性。关闭时错误信息可能会覆盖 tip 信息。适用于同时需要显示提示信息和错误信息的场景。注意：开启后会使 keepErrorHeight 失效"
     },
     {
       "name": "inline",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否水平布局"
+      "description": "是否水平布局。将表单项横向排列，适用于简单的单行表单或筛选表单。开启后表单项会在同一行显示，自动换行。通常用于搜索条件、筛选器等需要节省垂直空间的场景"
     },
     {
       "name": "colon",
       "type": "ReactNode",
       "required": false,
       "defaultValue": "false",
-      "description": "标签后是否追加显示一个冒号，优先级小于Form.Item的colon设置"
+      "description": "统一控制所有表单项标签后是否显示冒号。可以是布尔值（true 显示默认冒号 \\\":\\\"）或自定义的 ReactNode（如 \\\"：\\\"、\\\"->\\\"等）。Form.Item 上的 colon 属性优先级更高，可以覆盖此全局设置"
     },
     {
       "name": "name",
       "type": "string",
       "required": false,
-      "description": "表单名称，会作为表单字段 id 的前缀，设置后可使用 formRef 的 scrollToField 方法"
+      "description": "表单的唯一标识名称。设置后会作为所有表单字段 id 的前缀，确保多个表单共存时 id 不冲突。同时启用 formRef.scrollToField 方法，可以通过字段名称快速定位到指定字段"
     },
     {
       "name": "defaultValue",
       "type": "T",
       "required": false,
-      "description": "默认值"
+      "description": "非受控模式下的表单初始值。仅在组件首次渲染时生效，后续修改不会影响表单内部数据。适用于表单数据由组件内部管理的场景，如新建表单、独立表单等"
     },
     {
       "name": "reserveAble",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "设置为 true 时，表单内所有组件的reserveAble都为 true : 卸载后不自动删除数据"
+      "description": "设置为 true 时，表单内所有组件的 reserveAble 都为 true : 卸载后不自动删除数据。控制表单项卸载时是否保留数据。适用于标签页切换、条件渲染等场景，避免用户填写的数据丢失。开启后即使表单项被隐藏或卸载，其数据仍会保留在表单中。可在 Form.Field 组件或支持的表单组件（如 Input、Select、DatePicker 等）上单独设置覆盖此全局配置"
     },
     {
       "name": "rules",
       "type": "RuleItem[]",
       "required": false,
-      "description": "校验规则"
+      "description": "表单级别的校验规则配置。支持嵌套对象的规则定义，可以为表单的任意字段设置校验规则。规则对象的 key 对应表单字段路径（如 \\\"name\\\"、\\\"user.email\\\"、\\\"list[0].id\\\"），value 为该字段的校验规则数组（FormItemRule）。这些规则会与 Form.Field 组件上设置的 rules 属性合并，Form 级别的规则会先执行。规则类型请参考 Rule 组件文档"
     },
     {
       "name": "onError",
       "type": "((error: Error) => void)",
       "required": false,
-      "description": "rules 校验回调"
+      "description": "校验规则触发时的错误回调函数。当任意字段校验失败时调用，参数为错误对象。可用于统一处理校验错误，如记录日志、显示全局通知、上报错误等"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否禁用，为 true 时，表单内所有元素 disabled 都为 true"
+      "description": "是否禁用，为 true 时，表单内所有元素 disabled 都为 true。全局控制表单的禁用状态。适用于查看详情、提交中等需要临时禁用整个表单的场景。表单内所有受控组件（如 Input、Select、DatePicker 等）都会继承此属性"
     },
     {
       "name": "size",
       "type": "\"small\" | \"default\" | \"large\"",
       "required": false,
       "defaultValue": "\\\"default\\\"",
-      "description": "表单元素的尺寸"
+      "description": "表单元素的尺寸。统一设置表单内所有组件的尺寸。支持 \\\"small\\\"、\\\"default\\\"、\\\"large\\\" 三种规格，影响输入框高度、字体大小等。表单内的受控组件会继承此属性，也可以在具体组件上单独覆盖"
     },
     {
       "name": "initValidate",
       "type": "boolean",
       "required": false,
-      "description": "设置 value 后是否自动校验"
+      "defaultValue": "false",
+      "description": "当表单 value 发生变化时，是否自动触发校验。开启后可以在数据变化时实时显示校验结果，适用于需要即时反馈的场景。注意：仅在受控模式下有效"
     },
     {
       "name": "onSubmit",
       "type": "((value: T) => void)",
       "required": false,
-      "description": "表单提交函数。表单内部校验失败时不会触发。"
+      "description": "表单提交时的回调函数。只有当所有字段校验通过后才会调用，参数为完整的表单数据。通常用于处理表单数据的提交逻辑，如发送请求到服务器。可配合 Form.Submit 按钮或 formRef.submit() 方法触发"
     },
     {
       "name": "onReset",
       "type": "(() => void)",
       "required": false,
-      "description": "表单重置函数"
+      "description": "表单重置时的回调函数。在表单被重置为初始值（defaultValue 或空值）后触发。可用于执行额外的重置逻辑，如清除关联状态、重置相关组件等。配合 Form.Reset 按钮或 formRef.reset() 方法使用"
     },
     {
       "name": "scrollToError",
@@ -157,32 +158,32 @@
       "type": "boolean",
       "required": false,
       "defaultValue": "true",
-      "description": "是否删除值为 undefined 的字段"
+      "description": "提交表单时是否自动移除值为 undefined 的字段。开启后可以避免提交无意义的空值，保持数据整洁。特别适用于与后端 API 对接时，避免传递不必要的 undefined 值"
     },
     {
       "name": "throttle",
       "type": "number",
       "required": false,
       "defaultValue": "1000",
-      "description": "ms, 两次提交间隔时长（防止重复提交)"
+      "description": "防止用户频繁点击提交按钮的节流时间。在此时间内重复点击提交将被忽略，有效避免重复提交问题。适用于网络请求较慢或处理时间较长的场景"
     },
     {
       "name": "scrollParent",
       "type": "(() => HTMLElement | null)",
       "required": false,
-      "description": "滚动的父元素，用于滚动到错误位置增加偏移量"
+      "description": "指定滚动容器元素。当表单不在 document.body 直接滚动时（如在弹窗、抽屉中），需要指定实际的滚动容器以确保正确滚动到错误位置。返回 null 时使用默认滚动行为"
     },
     {
       "name": "formRef",
       "type": "((form: FormRef<V>) => void) | { current?: FormRef<V> ; }",
       "required": false,
-      "description": "绑定 form 的引用, 可以调用某些 form 的方法"
+      "description": "获取表单实例的引用。支持函数回调和 ref 对象两种方式。通过 formRef 可以调用表单的各种方法，如手动触发校验（validate、validateFields）、提交（submit）、重置（reset）、获取/设置值（getValue、set）等。FormRef<V> 中的泛型 V 表示表单数据的类型"
     },
     {
       "name": "setForm",
       "type": "((form: FormRef<V>) => void)",
       "required": false,
-      "description": "hooks用法下，设置 form 的引用"
+      "description": "在使用 Form.useForm() hooks 时，用于设置表单引用的回调函数。通常不需要手动设置，Form 组件会自动处理。但在某些特殊场景（如跨组件通信）可能需要使用"
     }
   ],
   "examples": [

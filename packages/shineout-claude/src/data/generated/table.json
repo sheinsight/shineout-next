@@ -20,241 +20,241 @@
       "name": "onCellClick",
       "type": "((data: DataItem, info: { rowIndex: number; columnIndex: number; columnKey: string | number; }) => void)",
       "required": false,
-      "description": "单元格点击事件"
+      "description": "单元格点击事件的回调函数。参数：data（行数据），info.rowIndex（行索引），info.columnIndex（列索引），info.columnKey（列的唯一标识）"
     },
     {
       "name": "scrollLeft",
       "type": "number",
       "required": false,
-      "description": "当开启虚拟列表时生效"
+      "description": "横向滚动位置（仅在虚拟滚动模式下生效）"
     },
     {
       "name": "rowHeight",
       "type": "number",
       "required": false,
       "defaultValue": "40",
-      "description": "单行表格的预期高度，只是一个大概的估值，用来展示滚动条"
+      "description": "单行的预估高度。用于虚拟滚动的计算和滚动条显示"
     },
     {
       "name": "hover",
       "type": "boolean",
       "required": false,
       "defaultValue": "true",
-      "description": "数据行鼠标悬浮高亮效果"
+      "description": "是否启用行的鼠标悬浮高亮效果"
     },
     {
       "name": "empty",
       "type": "ReactNode",
       "required": false,
       "defaultValue": "getLocale(\\\"Data not found\\\")",
-      "description": "空数据文案"
+      "description": "表格无数据时显示的内容"
     },
     {
       "name": "cellSelectable",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否启用 ctrl/cmd + click 选中单元格"
+      "description": "是否启用 Ctrl/Cmd + 点击来选中单元格"
     },
     {
       "name": "height",
       "type": "string | number",
       "required": false,
-      "description": "表格高度，与 style.height 作用相同"
+      "description": "表格高度（与 style.height 作用相同）"
     },
     {
       "name": "onScroll",
       "type": "((x: number, y: number, left: number, top: number) => void)",
       "required": false,
-      "description": "滚动条滚动后回调函数；\\nx: 横向滚动比(0 <= x <= 1)\\ny: 纵向滚动比(0 <= y <= 1)"
+      "description": "滚动事件回调函数。参数：x（横向滚动比例 0-1），y（纵向滚动比例 0-1），left（横向滚动像素值），top（纵向滚动像素值）"
     },
     {
       "name": "pagination",
       "type": "PaginationProps",
       "required": false,
-      "description": "展示分页 详见 [Pagination](/components/Pagination)"
+      "description": "分页配置项。详见 [Pagination](/components/Pagination) 组件文档"
     },
     {
       "name": "loading",
       "type": "ReactNode",
       "required": false,
       "defaultValue": "false",
-      "description": "数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替"
+      "description": "加载状态。为 true 时显示默认的 [Spin](/components/Spin) 组件，也可传入自定义的加载组件"
     },
     {
       "name": "virtual",
       "type": "boolean | \"lazy\"",
       "required": false,
-      "description": "是否使用虚拟列表，设置为 lazy 时，表示在滚动时不触发 rerender"
+      "description": "启用虚拟滚动。设置为 \\\"lazy\\\" 可在滚动时避免重新渲染，提升性能"
     },
     {
       "name": "rowsInView",
       "type": "number",
       "required": false,
       "defaultValue": "20",
-      "description": "单次 render的 最大行数。Table 采用了 lazy render 的方式来优化在大量数据下的性能，如果你的表格显示的高度超出了20条，可以调整 rowsInView 的值。为 0 表示单次 render 所有数据。"
+      "description": "单次渲染的最大行数。使用懒加载优化大数据量性能。若表格超过 20 行，可调整此值。设为 0 渲染全部数据"
     },
     {
       "name": "size",
       "type": "\"small\" | \"large\" | \"default\"",
       "required": false,
       "defaultValue": "\\\"default\\\"",
-      "description": "表格尺寸"
+      "description": "表格尺寸大小"
     },
     {
       "name": "radio",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否为单选"
+      "description": "启用单选模式（只能选中一行）"
     },
     {
       "name": "verticalAlign",
       "type": "\"top\" | \"middle\"",
       "required": false,
       "defaultValue": "\\\"top\\\"",
-      "description": "单元格内容垂直对齐方式"
+      "description": "单元格内容的垂直对齐方式"
     },
     {
       "name": "children",
       "type": "ReactNode",
       "required": false,
-      "description": "传入原生 tr td, 只使用样式"
+      "description": "原生 tr/td 元素（仅应用样式，不提供功能）"
     },
     {
       "name": "width",
       "type": "string | number",
       "required": false,
-      "description": "表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和"
+      "description": "表格总宽度。默认为容器宽度，不能小于各列宽度之和"
     },
     {
       "name": "columns",
       "type": "TableColumn[]",
       "required": false,
       "defaultValue": "[]",
-      "description": "数组，见 TableColumn"
+      "description": "列配置数组。详见 TableColumn 文档"
     },
     {
       "name": "disabled",
       "type": "boolean | ((d: DataItem) => boolean)",
       "required": false,
-      "description": "如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项"
+      "description": "禁用行选择。为 true 时禁用所有行。为函数时：参数 d 为行数据，返回 true 禁用该行"
     },
     {
       "name": "treeEmptyExpand",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "树形表格子数据为空时依然展示展开按钮"
+      "description": "树形表格中，即使节点没有子数据也显示展开按钮"
     },
     {
       "name": "rowClickAttr",
       "type": "string | boolean | string[]",
       "required": false,
       "defaultValue": "[\\\"*\\\"]",
-      "description": "设置行内元素的 attribute 来按需触发 onRowClick, \\\"*\\\"表示接受行点击触发"
+      "description": "指定哪些元素可以触发行点击。\\\"*\\\" 表示任何元素都可触发，也可指定特定的属性名"
     },
     {
       "name": "onRowClick",
       "type": "((rowData: DataItem, index: number, fireAttr?: string | boolean ) => void)",
       "required": false,
-      "description": "行点击事件; data: 当前行数据; index: 当前行索引"
+      "description": "行点击事件回调。参数：rowData（当前行数据），index（行索引），fireAttr（触发点击的元素属性）"
     },
     {
       "name": "striped",
       "type": "boolean",
       "required": false,
-      "description": "是否显示交错斑马底纹"
+      "description": "启用交替行颜色（斑马纹效果）"
     },
     {
       "name": "rowClassName",
       "type": "(rowData: DataItem, index: number) => string | undefined",
       "required": false,
-      "description": "指定单行className"
+      "description": "为每一行设置自定义 CSS 类名。参数：rowData（行数据），index（行索引）。返回类名字符串"
     },
     {
       "name": "rowEvents",
       "type": "object",
       "required": false,
-      "description": "tr 事件监听器集合"
+      "description": "表格行 (tr) 元素的事件处理器集合"
     },
     {
       "name": "data",
       "type": "object[]",
       "required": false,
-      "description": "数据"
+      "description": "表格数据数组"
     },
     {
       "name": "showSelectAll",
       "type": "boolean",
       "required": false,
       "defaultValue": "true",
-      "description": "是否显示全选"
+      "description": "是否在表头显示全选复选框"
     },
     {
       "name": "bordered",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否显示外边框"
+      "description": "显示表格边框"
     },
     {
       "name": "treeCheckAll",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "全选时是否将子孙数据选中"
+      "description": "全选时是否包含所有子孙节点（树形模式）"
     },
     {
       "name": "renderSorter",
       "type": "((params: { status?: \"asc\" | \"desc\" | null , triggerAsc: () => void, triggerDesc: () => void }) => ReactNode)",
       "required": false,
-      "description": "自定义排序图标"
+      "description": "自定义渲染排序图标的函数。参数：status 当前排序状态（\\\"asc\\\"|\\\"desc\\\"|null），triggerAsc 触发升序排序，triggerDesc 触发降序排序"
     },
     {
       "name": "hideHeader",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否隐藏表头"
+      "description": "隐藏表格头部"
     },
     {
       "name": "summary",
       "type": "({ render: () => ReactNode, colSpan?: number , rowSpan?: number })[] | ({ render: () => ReactNode, colSpan?: number , rowSpan?: number })[][]",
       "required": false,
-      "description": "底部信息可用于总结"
+      "description": "表格底部，用于显示汇总行"
     },
     {
       "name": "sticky",
       "type": "boolean | { top?: number ; css?: boolean ; target?: Element | null ; }",
       "required": false,
-      "description": "表头是否附着顶部，为 true 时距离顶部为0"
+      "description": "固定表头。为 true 时固定在顶部（偏移量为 0）。也可传入对象配置 top 偏移量和 CSS 模式等选项"
     },
     {
       "name": "showTopScrollbar",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否开启顶部滚动条"
+      "description": "在表格顶部显示横向滚动条"
     },
     {
       "name": "showBottomScrollbar",
       "type": "boolean | BottomScrollbarOption",
       "required": false,
       "defaultValue": "false",
-      "description": "是否开启底部自定吸附的滚动条"
+      "description": "在表格底部显示固定的横向滚动条。可传入布尔值或包含 bottom 偏移量和 zIndex 的对象"
     },
     {
       "name": "tableRef",
       "type": "((table: TableRef) => void)",
       "required": false,
-      "description": "Table 实例（请谨慎使用：仅虚拟列表支持）"
+      "description": "获取表格实例引用。提供方法：scrollToIndex 滚动到指定行，getRenderIndexByData 获取数据的渲染索引，scrollColumnIntoView 滚动到指定列，scrollColumnByLeft 按像素横向滚动，sortByColumn 程序化排序。请谨慎使用，仅在虚拟模式下支持"
     },
     {
       "name": "onRowSelect",
       "type": "((rows: Value) => void)",
       "required": false,
-      "description": "选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction"
+      "description": "行选择回调函数。参数 rows 包含选中的数据。如需数据格式化，请配合使用 format 和 prediction"
     },
     {
       "name": "defaultTreeExpandKeys",
@@ -303,7 +303,7 @@
       "name": "onSortCancel",
       "type": "((preType: \"asc\" | \"desc\", key: string | number, orders: ({ order: \"asc\" | \"desc\", weight?: number , key: string | number, manual: boolean })[], sorter: string) => void)",
       "required": false,
-      "description": "排序取消事件"
+      "description": "排序取消事件回调。当点击已排序的列取消排序时触发。参数：preType（之前的排序方向），key（列的唯一标识），orders（当前所有排序项信息），sorter（列的排序器名称）"
     },
     {
       "name": "sortDirections",
@@ -347,21 +347,21 @@
       "name": "value",
       "type": "any",
       "required": false,
-      "description": "当前选中值，格式和 onRowSelect 返回值一致"
+      "description": "当前选中的数据值，数据格式与 onRowSelect 回调返回的格式保持一致"
     },
     {
       "name": "format",
       "type": "ObjectKey<DataItem> | ((data: DataItem) => Value extends (infer U)[] ? U : Value)",
       "required": false,
       "defaultValue": "d => d",
-      "description": "格式化 value, 默认值，返回原始数据。 为 string 时，会作为 key 从原始数据中获取值，相当于 (d) => d\\\\[format]; 为函数时，以函数返回结果作为 value。"
+      "description": "格式化选中值。字符串时：作为属性名提取值（如 \\\"id\\\" 提取 d.id）。函数时：参数为行数据，返回格式化后的值"
     },
     {
       "name": "prediction",
       "type": "((value: Value extends (infer U)[] ? U : Value, data: DataItem) => boolean)",
       "required": false,
       "defaultValue": "(val, d) => val===format(d)",
-      "description": "默认使用 format 函数执行的结果来比较是否匹配，在某些情况下（例如返回原始数据的对象，更新数据时，生成了一个值相同，非同一个对象的选项），需要借助 prediction 函数来判断是否匹配"
+      "description": "自定义值匹配函数。参数：value（选中值），data（行数据）。返回 true 表示匹配。用于默认比较失效时（如对象引用不同）"
     }
   ],
   "examples": [
