@@ -31,14 +31,14 @@ export type FormDatum = UiFormDatum;
  */
 export interface FormProps<T extends ObjectType> extends Omit<UiFormProps<T>, 'jssStyle'> {
   /**
-   * @en Form value. When set, the form becomes a controlled component and needs to be used with onChange. Suitable for scenarios where external management of form state is required, such as sharing form data across components, real-time synchronization of form data to state managers, etc.
-   * @cn 表单数据。受控模式下的表单数据。设置后表单变为受控组件，需要配合 onChange 使用。适用于需要外部管理表单状态的场景，如跨组件共享表单数据、实时同步表单数据到状态管理器等
+   * @en When set, the form becomes a controlled component and needs to be used with onChange. Suitable for scenarios where external management of form state is required, such as sharing form data across components, real-time synchronization of form data to state managers, etc.
+   * @cn 设置后表单变为受控组件，需要配合 onChange 使用。适用于需要外部管理表单状态的场景，如跨组件共享表单数据、实时同步表单数据到状态管理器等
    * @override object
    */
   value?: T;
   /**
-   * @en Callback function executed when the form value changes. Must be set in controlled mode to update external state. Triggered whenever any field value in the form changes, with the parameter being the latest data of the entire form
-   * @cn 表单内组件值变化函数。表单值发生变化时的回调函数。在受控模式下必须设置此函数来更新外部状态。每当表单内任意字段值改变时都会触发，参数为整个表单的最新数据
+   * @en Must be set in controlled mode to update external state. Triggered whenever any field value in the form changes, with the parameter being the latest data of the entire form
+   * @cn 在受控模式下必须设置此函数来更新外部状态。每当表单内任意字段值改变时都会触发，参数为整个表单的最新数据
    */
   onChange?: (value: T) => void;
 }

@@ -93,8 +93,8 @@ export interface FormLabelConfig {
   inline?: boolean;
 
   /**
-   * @en Whether to append a colon after the label, the priority is less than the colon setting of Form.Item. Uniformly controls whether to display a colon after all form item labels. Can be a boolean value (true displays default colon ':') or custom ReactNode (such as '：', '->', etc.). The colon property on Form.Item has higher priority and can override this global setting
-   * @cn 标签后是否追加显示一个冒号，优先级小于 Form.Item 的 colon 设置。统一控制所有表单项标签后是否显示冒号。可以是布尔值（true 显示默认冒号 ':'）或自定义的 ReactNode（如 '：'、'->'等）。Form.Item 上的 colon 属性优先级更高，可以覆盖此全局设置
+   * @en Uniformly controls whether to display a colon after all form item labels. Can be a boolean value (true displays default colon ':') or custom ReactNode (such as '：', '->', etc.). The colon property on Form.Item has higher priority and can override this global setting
+   * @cn 统一控制所有表单项标签后是否显示冒号。可以是布尔值（true 显示默认冒号 ':'）或自定义的 ReactNode（如 '：'、'->'等）。Form.Item 上的 colon 属性优先级更高，可以覆盖此全局设置
    * @default false
    * @version 3.6.0
    */
@@ -160,58 +160,58 @@ export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
   value?: T;
   onChange?: (value: T) => void;
   /**
-   * @en Default value. Initial value of the form in uncontrolled mode. Only effective when the component is first rendered, subsequent modifications will not affect the internal data of the form. Suitable for scenarios where form data is managed internally by the component, such as creating new forms, standalone forms, etc.
-   * @cn 默认值。非受控模式下的表单初始值。仅在组件首次渲染时生效，后续修改不会影响表单内部数据。适用于表单数据由组件内部管理的场景，如新建表单、独立表单等
+   * @en Initial value of the form in uncontrolled mode. Only effective when the component is first rendered, subsequent modifications will not affect the internal data of the form. Suitable for scenarios where form data is managed internally by the component, such as creating new forms, standalone forms, etc.
+   * @cn 非受控模式下的表单初始值。仅在组件首次渲染时生效，后续修改不会影响表单内部数据。适用于表单数据由组件内部管理的场景，如新建表单、独立表单等
    */
   defaultValue?: T;
   /**
-   * @en Whether to validate automatically after setting value. When the form value changes, whether to automatically trigger validation. When enabled, validation results can be displayed in real time when data changes, suitable for scenarios that require immediate feedback. Note: Only effective in controlled mode
-   * @cn 设置 value 后是否自动校验。当表单 value 发生变化时，是否自动触发校验。开启后可以在数据变化时实时显示校验结果，适用于需要即时反馈的场景。注意：仅在受控模式下有效
+   * @en When the form value changes, whether to automatically trigger validation. When enabled, validation results can be displayed in real time when data changes, suitable for scenarios that require immediate feedback. Note: Only effective in controlled mode
+   * @cn 当表单 value 发生变化时，是否自动触发校验。开启后可以在数据变化时实时显示校验结果，适用于需要即时反馈的场景。注意：仅在受控模式下有效
    * @default false
    */
   initValidate?: boolean;
   /**
-   * @en The function for Form Submission. When the internal validation fails, it will not be triggered. Callback function when the form is submitted. Only called when all fields pass validation, with the parameter being the complete form data. Usually used to handle form data submission logic, such as sending requests to the server. Can be triggered with Form.Submit button or formRef.submit() method
-   * @cn 表单提交函数。表单内部校验失败时不会触发。表单提交时的回调函数。只有当所有字段校验通过后才会调用，参数为完整的表单数据。通常用于处理表单数据的提交逻辑，如发送请求到服务器。可配合 Form.Submit 按钮或 formRef.submit() 方法触发
+   * @en Callback function when the form is submitted. Only called when all fields pass validation, with the parameter being the complete form data. Usually used to handle form data submission logic, such as sending requests to the server. Can be triggered with Form.Submit button or formRef.submit() method
+   * @cn 表单提交时的回调函数。只有当所有字段校验通过后才会调用，参数为完整的表单数据。通常用于处理表单数据的提交逻辑，如发送请求到服务器。可配合 Form.Submit 按钮或 formRef.submit() 方法触发
    */
   onSubmit?: (value: T) => void;
   /**
-   * @en The function for Form Reset. Callback function when the form is reset. Triggered after the form is reset to initial value (defaultValue or empty value). Can be used to execute additional reset logic, such as clearing related states, resetting related components, etc. Used with Form.Reset button or formRef.reset() method
-   * @cn 表单重置函数。表单重置时的回调函数。在表单被重置为初始值（defaultValue 或空值）后触发。可用于执行额外的重置逻辑，如清除关联状态、重置相关组件等。配合 Form.Reset 按钮或 formRef.reset() 方法使用
+   * @en Callback function when the form is reset. Triggered after the form is reset to initial value (defaultValue or empty value). Can be used to execute additional reset logic, such as clearing related states, resetting related components, etc. Used with Form.Reset button or formRef.reset() method
+   * @cn 表单重置时的回调函数。在表单被重置为初始值（defaultValue 或空值）后触发。可用于执行额外的重置逻辑，如清除关联状态、重置相关组件等。配合 Form.Reset 按钮或 formRef.reset() 方法使用
    */
   onReset?: () => void;
   /**
-   * @en When the verification fails, whether to scroll to the first verification failure component, when the value is a number, it means the offset relative to the top. Important configuration for improving user experience. When the form is long, automatically scrolling to the error position can help users quickly locate problems. Set to true to use default scrolling, set to a number to adjust the offset of the scroll position to avoid being blocked by fixed headers
-   * @cn 校验失败时是否滚动到第一个校验失败组件，该值为数字时，表示相对于顶部的偏移量。提升用户体验的重要配置。当表单较长时，自动滚动到错误位置可以帮助用户快速定位问题。设置为 true 时使用默认滚动，设置为数字时可以调整滚动位置的偏移量，避免被固定头部遮挡
+   * @en When the form is long, automatically scrolling to the error position can help users quickly locate problems. Set to true to use default scrolling, set to a number to adjust the offset of the scroll position to avoid being blocked by fixed headers
+   * @cn 当表单较长时，自动滚动到错误位置可以帮助用户快速定位问题。设置为 true 时使用默认滚动，设置为数字时可以调整滚动位置的偏移量，避免被固定头部遮挡
    * @default false
    */
   scrollToError?: boolean | number;
   /**
-   * @en Rules validation callback. Error callback function when validation rules are triggered. Called when any field validation fails, with the parameter being the error object. Can be used to uniformly handle validation errors, such as logging, displaying global notifications, reporting errors, etc.
-   * @cn rules 校验回调。校验规则触发时的错误回调函数。当任意字段校验失败时调用，参数为错误对象。可用于统一处理校验错误，如记录日志、显示全局通知、上报错误等
+   * @en Error callback function when validation rules are triggered. Called when any field validation fails, with the parameter being the error object. Can be used to uniformly handle validation errors, such as logging, displaying global notifications, reporting errors, etc.
+   * @cn 校验规则触发时的错误回调函数。当任意字段校验失败时调用，参数为错误对象。可用于统一处理校验错误，如记录日志、显示全局通知、上报错误等
    */
   onError?: (error: Error) => void;
   /**
-   * @en Whether to remove fields with undefined values. Whether to automatically remove fields with undefined values when submitting the form. When enabled, it can avoid submitting meaningless empty values and keep data clean. Especially suitable for interfacing with backend APIs to avoid passing unnecessary undefined values
-   * @cn 是否删除值为 undefined 的字段。提交表单时是否自动移除值为 undefined 的字段。开启后可以避免提交无意义的空值，保持数据整洁。特别适用于与后端 API 对接时，避免传递不必要的 undefined 值
+   * @en Whether to automatically remove fields with undefined values when submitting the form. When enabled, it can avoid submitting meaningless empty values and keep data clean. Especially suitable for interfacing with backend APIs to avoid passing unnecessary undefined values
+   * @cn 提交表单时是否自动移除值为 undefined 的字段。开启后可以避免提交无意义的空值，保持数据整洁。特别适用于与后端 API 对接时，避免传递不必要的 undefined 值
    * @default true
    */
   removeUndefined?: boolean;
   /**
-   * @en Validation rules. Form-level validation rule configuration. Supports nested object rule definitions, and can set validation rules for any field in the form. The key of the rule object corresponds to the form field path (such as 'name', 'user.email', 'list[0].id'), and the value is the validation rule array (FormItemRule) for that field. These rules will be merged with the rules property set on the Form.Field component, with Form-level rules executing first. For rule types, please refer to the Rule component documentation
-   * @cn 校验规则。表单级别的校验规则配置。支持嵌套对象的规则定义，可以为表单的任意字段设置校验规则。规则对象的 key 对应表单字段路径（如 'name'、'user.email'、'list[0].id'），value 为该字段的校验规则数组（FormItemRule）。这些规则会与 Form.Field 组件上设置的 rules 属性合并，Form 级别的规则会先执行。规则类型请参考 Rule 组件文档
+   * @en Form-level validation rule configuration. Supports nested object rule definitions, and can set validation rules for any field in the form. The key of the rule object corresponds to the form field path (such as 'name', 'user.email', 'list[0].id'), and the value is the validation rule array (FormItemRule) for that field. These rules will be merged with the rules property set on the Form.Field component, with Form-level rules executing first. For rule types, please refer to the Rule component documentation
+   * @cn 表单级别的校验规则配置。支持嵌套对象的规则定义，可以为表单的任意字段设置校验规则。规则对象的 key 对应表单字段路径（如 'name'、'user.email'、'list[0].id'），value 为该字段的校验规则数组（FormItemRule）。这些规则会与 Form.Field 组件上设置的 rules 属性合并，Form 级别的规则会先执行。规则类型请参考 Rule 组件文档
    * @override RuleItem[]
    */
   rules?: FormRuleObject<any>;
   /**
-   * @en Throttle time for submit (ms) to prevent duplicate submission. Throttle time to prevent users from clicking the submit button frequently. Repeated clicks on submit within this time will be ignored, effectively avoiding duplicate submission issues. Suitable for scenarios with slow network requests or long processing times
-   * @cn ms, 两次提交间隔时长（防止重复提交)。防止用户频繁点击提交按钮的节流时间。在此时间内重复点击提交将被忽略，有效避免重复提交问题。适用于网络请求较慢或处理时间较长的场景
+   * @en Throttle time to prevent users from clicking the submit button frequently. Repeated clicks on submit within this time will be ignored, effectively avoiding duplicate submission issues. Suitable for scenarios with slow network requests or long processing times
+   * @cn 防止用户频繁点击提交按钮的节流时间。在此时间内重复点击提交将被忽略，有效避免重复提交问题。适用于网络请求较慢或处理时间较长的场景
    * @default 1000
    */
   throttle?: number;
   /**
-   * @en The parent element of the scroll, used to scroll to the error position to increase the offset. Specify the scroll container element. When the form is not scrolling directly on document.body (such as in a modal or drawer), you need to specify the actual scroll container to ensure correct scrolling to the error position. Returns null to use default scrolling behavior
-   * @cn 滚动的父元素，用于滚动到错误位置增加偏移量。指定滚动容器元素。当表单不在 document.body 直接滚动时（如在弹窗、抽屉中），需要指定实际的滚动容器以确保正确滚动到错误位置。返回 null 时使用默认滚动行为
+   * @en Specify the scroll container element. When the form is not scrolling directly on document.body (such as in a modal or drawer), you need to specify the actual scroll container to ensure correct scrolling to the error position. Returns null to use default scrolling behavior
+   * @cn 指定滚动容器元素。当表单不在 document.body 直接滚动时（如在弹窗、抽屉中），需要指定实际的滚动容器以确保正确滚动到错误位置。返回 null 时使用默认滚动行为
    */
   scrollParent?: () => HTMLElement | null;
   /**
@@ -219,8 +219,8 @@ export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
    */
   error?: ObjectType<string | Error>;
   /**
-   * @en The name of the form, will be used as the prefix of the form field id, and can enable the <label for="id" /> function after setting. Unique identifier name of the form. After setting, it will be used as the prefix for all form field ids to ensure that ids do not conflict when multiple forms coexist. Also enables the formRef.scrollToField method to quickly locate specified fields by field name
-   * @cn 表单名称，会作为表单字段 id 的前缀，设置后可使用 formRef 的 scrollToField 方法。表单的唯一标识名称。设置后会作为所有表单字段 id 的前缀，确保多个表单共存时 id 不冲突。同时启用 formRef.scrollToField 方法，可以通过字段名称快速定位到指定字段
+   * @en Unique identifier name of the form. After setting, it will be used as the prefix for all form field ids to ensure that ids do not conflict when multiple forms coexist. Also enables the formRef.scrollToField method to quickly locate specified fields by field name
+   * @cn 表单的唯一标识名称。设置后会作为所有表单字段 id 的前缀，确保多个表单共存时 id 不冲突。同时启用 formRef.scrollToField 方法，可以通过字段名称快速定位到指定字段
    * @version 3.5.3
    */
   name?: string;
