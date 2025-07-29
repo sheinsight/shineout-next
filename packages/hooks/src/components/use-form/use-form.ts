@@ -256,8 +256,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
     const newValue = typeof change === 'function' ? produce(context.value as T, change) : change;
+
     context.value = newValue;
-    props.onChange?.(deepClone(context.value) as T);
+    props.onChange?.(newValue as T);
   });
 
   const scrollToField = usePersistFn(
