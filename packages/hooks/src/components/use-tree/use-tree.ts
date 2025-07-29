@@ -546,7 +546,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const updateInnerCheckStatus = () => {
     if (mode !== MODE.MODE_0) return;
     context.value?.forEach((id) => {
-      const { children } = context.pathMap.get(id)!;
+      const node = context.pathMap.get(id);
+      const children = node?.children;
       if (children && children.length) {
         const noCheckedChildren = children.filter((cid) => !context.value?.includes(cid));
         if (noCheckedChildren.length > 0) {

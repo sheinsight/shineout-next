@@ -105,7 +105,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     }
     return 24;
   }
-  
+
   const indent = getIndent()
 
   let $indents
@@ -124,7 +124,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
       ref={element}
       className={rootClass}
       dir={config.direction}
-      style={{ paddingLeft: level * indent }}
+      style={{ paddingLeft: level * indent, height: props.lineHeight }}
     >
       {$indents}
       <TreeVirtualContent

@@ -1,3 +1,9 @@
+## 3.7.8-beta.10
+2025-07-28
+
+### 🐞 BugFix
+- 修复 `Pagination` 的 `select` 下拉框在限制了高度的html或body滚动容器中第一次点击不出现的问题 ([#1270](https://github.com/sheinsight/shineout-next/pull/1270))
+
 ## 3.7.5-beta.7
 2025-07-03
 
