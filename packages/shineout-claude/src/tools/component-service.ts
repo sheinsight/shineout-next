@@ -117,52 +117,185 @@ export class ComponentService {
     doc += `## 基本信息\n\n`;
     doc += `- **分类**: ${this.getCategoryName(component.category)}\n`;
     doc += `- **版本**: ${component.version || '3.7.7'}\n`;
+    doc += `- **导入**: \`${component.importPath}\`\n`;
     if (component.subComponents && component.subComponents.length > 0) {
-      doc += `- **子组件**: ${component.subComponents.map(sub => `${component.name}.${sub}`).join(', ')}\n`;
+      doc += `- **子组件**: ${component.subComponents.map(sub => {
+        const subName = typeof sub === 'object' && 'name' in sub ? sub.name : sub;
+        return `${component.name}.${subName}`;
+      }).join(', ')}\n`;
     }
     doc += `\n`;
 
-    doc += `**导入方式**:\n\`\`\`typescript\n${component.importPath}\n\`\`\`\n\n`;
-
-    // Props 信息（当前为空，显示占位符）
+    // 主要 Props（使用与搜索结果相同的格式）
     if (component.props && component.props.length > 0) {
-      doc += `## Props\n\n`;
-      doc += `| 属性名 | 类型 | 默认值 | 必填 | 描述 |\n`;
-      doc += `|--------|------|--------|------|------|\n`;
+      doc += `## 主要 Props\n\n`;
       
-      for (const prop of component.props) {
-        const required = prop.required ? '✅' : '❌';
-        const defaultValue = prop.defaultValue || '-';
-        doc += `| ${prop.name} | \`${prop.type}\` | \`${defaultValue}\` | ${required} | ${prop.description} |\n`;
+      // 定义重要属性的优先级
+      const priorityProps = ['value', 'onChange', 'name', 'data', 'columns', 'rules', 'onSubmit', 'disabled', 'placeholder', 'type', 'keygen'];
+      
+      // 按优先级排序 props
+      const sortedProps = [...component.props].sort((a, b) => {
+        const aIndex = priorityProps.indexOf(a.name);
+        const bIndex = priorityProps.indexOf(b.name);
+        if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+        if (aIndex !== -1) return -1;
+        if (bIndex !== -1) return 1;
+        return a.required === b.required ? 0 : a.required ? -1 : 1;
+      });
+      
+      // 显示重要的 props
+      const topProps = sortedProps.slice(0, 10);
+      for (const prop of topProps) {
+        const required = prop.required ? ' *(必填)*' : '';
+        const defaultValue = prop.defaultValue ? ` 默认: \`${prop.defaultValue}\`` : '';
+        const relatedNote = this.getRelatedNote(prop, component);
+        doc += `### ${prop.name}${required}\n`;
+        doc += `- **类型**: \`${prop.type}\`\n`;
+        doc += `- **描述**: ${prop.description}${relatedNote}\n`;
+        if (defaultValue) doc += `- **默认值**: ${defaultValue}\n`;
+        doc += `\n`;
       }
-      doc += `\n`;
-    } else {
-      doc += `## Props\n\n`;
-      doc += `> 📝 Props 信息正在完善中，请参考示例代码了解具体用法。\n\n`;
+      
+      if (component.props.length > 10) {
+        doc += `> 还有 ${component.props.length - 10} 个其他属性，使用表格查看完整列表\n\n`;
+        
+        // 完整属性表格
+        doc += `<details>\n<summary>查看完整属性列表</summary>\n\n`;
+        doc += `| 属性名 | 类型 | 默认值 | 必填 | 描述 |\n`;
+        doc += `|--------|------|--------|------|------|\n`;
+        
+        for (const prop of sortedProps.slice(10)) {
+          const required = prop.required ? '✅' : '❌';
+          const defaultValue = prop.defaultValue || '-';
+          const desc = this.truncateDescription(prop.description, 60);
+          doc += `| ${prop.name} | \`${prop.type}\` | \`${defaultValue}\` | ${required} | ${desc} |\n`;
+        }
+        doc += `\n</details>\n\n`;
+      }
+    }
+
+    // FormRef 方法（仅对 Form 组件）
+    if (component.name === 'Form' && (component as any).formRefMethods) {
+      doc += `## FormRef 方法\n\n`;
+      const methods = (component as any).formRefMethods;
+      for (const method of methods) {
+        doc += `### ${method.name}\n`;
+        doc += `- **描述**: ${method.description}\n`;
+        if (method.signature) {
+          doc += `- **签名**: \`${method.signature}\`\n`;
+        }
+        doc += `\n`;
+      }
+    }
+
+    // FormDatum 方法（仅对 Form 组件）
+    if (component.name === 'Form' && (component as any).formDatumMethods) {
+      doc += `## FormDatum 方法\n\n`;
+      const methods = (component as any).formDatumMethods;
+      for (const method of methods) {
+        doc += `### ${method.name}\n`;
+        doc += `- **描述**: ${method.description}\n`;
+        if (method.signature) {
+          doc += `- **签名**: \`${method.signature}\`\n`;
+        }
+        doc += `\n`;
+      }
+    }
+
+    // 列配置（仅对 Table 组件）
+    if (component.name === 'Table' && (component as any).columnsProps) {
+      doc += `## 列配置选项 (CommonColumn)\n\n`;
+      const columnProps = (component as any).columnsProps;
+      
+      // 重要的列配置属性
+      const importantProps = ['title', 'render', 'width', 'sorter', 'filter', 'fixed', 'type'];
+      doc += `### 常用列配置\n\n`;
+      
+      for (const propName of importantProps) {
+        const prop = columnProps.find((p: any) => p.name === propName);
+        if (prop) {
+          const required = prop.required ? ' *(必填)*' : '';
+          doc += `#### ${prop.name}${required}\n`;
+          doc += `- **类型**: \`${prop.type}\`\n`;
+          doc += `- **描述**: ${prop.description}\n`;
+          if (prop.defaultValue) {
+            doc += `- **默认值**: \`${prop.defaultValue}\`\n`;
+          }
+          doc += `\n`;
+        }
+      }
+      
+      // 其他列配置
+      const otherProps = columnProps.filter((p: any) => !importantProps.includes(p.name));
+      if (otherProps.length > 0) {
+        doc += `### 其他列配置选项\n\n`;
+        doc += `| 属性 | 类型 | 描述 |\n`;
+        doc += `|------|------|------|\n`;
+        for (const prop of otherProps.slice(0, 10)) {
+          doc += `| ${prop.name} | \`${prop.type}\` | ${this.truncateDescription(prop.description, 50)} |\n`;
+        }
+        if (otherProps.length > 10) {
+          doc += `\n> 还有 ${otherProps.length - 10} 个其他列配置属性\n`;
+        }
+        doc += `\n`;
+      }
     }
 
     // 使用示例
     if (component.examples && component.examples.length > 0) {
       doc += `## 使用示例\n\n`;
       
-      // 显示第一个示例（通常是基础用法）
-      const primaryExample = component.examples[0];
-      doc += `### ${primaryExample.title}\n\n`;
-      if (primaryExample.description) {
-        doc += `${primaryExample.description}\n\n`;
+      // 优先显示基础示例
+      const basicExample = component.examples.find(ex => ex.scenario === 'basic') || component.examples[0];
+      
+      if (basicExample) {
+        doc += `### ${basicExample.title}\n\n`;
+        if (basicExample.description) {
+          doc += `${basicExample.description}\n\n`;
+        }
+        
+        // 提取并清理示例代码
+        const cleanCode = this.extractCleanCode(basicExample.code);
+        const truncatedCode = this.truncateCode(cleanCode, 600);
+        doc += `\`\`\`tsx\n${truncatedCode}\n\`\`\`\n\n`;
       }
       
-      // 提取并清理示例代码
-      const cleanCode = this.extractCleanCode(primaryExample.code);
-      doc += `\`\`\`tsx\n${cleanCode}\n\`\`\`\n\n`;
-      
-      // 如果有多个示例，列出其他示例
-      if (component.examples.length > 1) {
-        doc += `### 其他示例\n\n`;
-        for (let i = 1; i < Math.min(component.examples.length, 4); i++) {
-          const example = component.examples[i];
-          doc += `**${example.title}**: ${example.description || '查看源码了解更多'}\n\n`;
+      // 如果是表单组件，显示表单相关示例
+      if (component.category === 'form' || component.name === 'Form') {
+        const formExample = component.examples.find(ex => 
+          ex.scenario === 'form' || 
+          ex.title.toLowerCase().includes('form') ||
+          ex.title.includes('表单')
+        );
+        
+        if (formExample && formExample !== basicExample) {
+          doc += `### ${formExample.title}\n\n`;
+          if (formExample.description) {
+            doc += `${formExample.description}\n\n`;
+          }
+          const cleanCode = this.extractCleanCode(formExample.code);
+          const truncatedCode = this.truncateCode(cleanCode, 400);
+          doc += `\`\`\`tsx\n${truncatedCode}\n\`\`\`\n\n`;
         }
+      }
+      
+      // 列出其他可用示例
+      const displayedExamples = [basicExample];
+      if (component.category === 'form') {
+        const formEx = component.examples.find(ex => ex.scenario === 'form');
+        if (formEx) displayedExamples.push(formEx);
+      }
+      
+      const otherExamples = component.examples.filter(ex => !displayedExamples.includes(ex));
+      if (otherExamples.length > 0) {
+        doc += `### 其他可用示例\n\n`;
+        for (const example of otherExamples.slice(0, 4)) {
+          doc += `- **${example.title}**: ${example.description || example.scenario}\n`;
+        }
+        if (otherExamples.length > 4) {
+          doc += `- ...还有 ${otherExamples.length - 4} 个其他示例\n`;
+        }
+        doc += `\n`;
       }
     }
 
