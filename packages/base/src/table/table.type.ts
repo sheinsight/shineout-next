@@ -263,9 +263,9 @@ export interface TableProps<DataItem, Value>
    */
   width?: number | string;
   /**
-   * @en Column configuration array. See TableColumn for details
-   * @cn 列配置数组。详见 TableColumn 文档
-   * @override TableColumn[]
+   * @en Column configuration array. See Table columns 配置 (CommonColumn) for details
+   * @cn 列配置数组。详见 Table columns 配置
+   * @override CommonColumn[]
    * @default []
    */
   columns?: ColumnItem<DataItem>[];
@@ -428,6 +428,8 @@ export interface SummaryItem {
 }
 
 /**
- * @title TableColumn
+ * @title Table columns 配置项 (CommonColumn)
+ * @en Column configuration for Table component. The TypeScript type is CommonColumn
+ * @cn Table 组件的列配置项。TypeScript 类型为 CommonColumn
  */
 export type ColumnItem<DataItem> = TableColumnItem<DataItem>;

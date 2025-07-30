@@ -256,7 +256,7 @@ export type TableColumnFilter<DataItem> =
   | SearchModeColumnFilter<DataItem>;
 
 /**
- * @title TableColumn
+ * @title Table columns 配置项 (CommonColumn)
  */
 export interface TableColumnItem<DataItem> {
   /**
