@@ -41,7 +41,7 @@ class ShineoutClaudeServer {
         tools: [
           {
             name: 'get_component',
-            description: '获取指定组件的完整文档、API信息和代码示例。包括主要 Props、FormRef方法（Form组件）、列配置（Table组件）和实际使用示例',
+            description: '获取指定组件的完整文档、API信息和代码示例。包括主要 Props、FormRef方法（Form组件）、列配置（Table组件）和实际使用示例。\n\n重要：查询到组件 API 后，后续的代码实现必须严格使用查询到的 API，包括：\n- 使用正确的属性名称和类型\n- 遵循 API 中定义的方法签名\n- 参考提供的代码示例\n- 不要使用未在 API 中定义的属性或方法',
             inputSchema: {
               type: 'object',
               properties: {
@@ -55,7 +55,7 @@ class ShineoutClaudeServer {
           },
           {
             name: 'search_components',
-            description: '搜索组件并自动返回完整的 API 信息。包括主要 Props、子组件、相关方法等',
+            description: '搜索组件并自动返回完整的 API 信息。包括主要 Props、子组件、相关方法等。\n\n重要：查询到组件 API 后，后续的代码实现必须严格使用查询到的 API，包括：\n- 使用正确的属性名称和类型\n- 遵循 API 中定义的方法签名\n- 参考提供的代码示例\n- 不要使用未在 API 中定义的属性或方法',
             inputSchema: {
               type: 'object',
               properties: {

@@ -113,6 +113,9 @@ export class ComponentService {
     let doc = `# ${component.name}\n\n`;
     doc += `${component.description}\n\n`;
     
+    // 重要提示
+    doc += `> **重要提示**: 请严格按照以下 API 文档使用此组件。仅使用文档中列出的属性、方法和配置项。不要使用未在此文档中定义的 API。\n\n`;
+    
     // 基本信息
     doc += `## 基本信息\n\n`;
     doc += `- **分类**: ${this.getCategoryName(component.category)}\n`;
@@ -299,6 +302,14 @@ export class ComponentService {
       }
     }
 
+    // 使用规范提醒
+    doc += `## 使用规范\n\n`;
+    doc += `在实现功能时，请严格遵循以下规范：\n`;
+    doc += `1. **仅使用上述文档中列出的属性和方法**\n`;
+    doc += `2. **参考提供的代码示例编写代码**\n`;
+    doc += `3. **不要使用任何未在文档中明确定义的 API**\n`;
+    doc += `4. **如需使用其他组件，请先查询其 API 文档**\n\n`;
+
     return doc;
   }
 
@@ -316,6 +327,7 @@ export class ComponentService {
 
   private formatSearchResultsWithAPI(components: ComponentData[]): string {
     let content = `找到 ${components.length} 个相关组件:\n\n`;
+    content += `> **重要提示**: 请严格按照以下查询到的 API 文档使用组件。后续代码实现必须仅使用文档中列出的属性、方法和配置项。\n\n`;
     
     for (const component of components) {
       content += `## ${component.name}\n`;
@@ -443,6 +455,8 @@ export class ComponentService {
         }
       }
 
+      // 每个组件后添加使用提醒
+      content += `> 💡 **使用提醒**: 请严格使用上述 ${component.name} 组件的 API 进行开发\n\n`;
       content += `---\n\n`;
     }
     
