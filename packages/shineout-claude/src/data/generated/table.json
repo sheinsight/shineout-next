@@ -129,10 +129,11 @@
     },
     {
       "name": "columns",
-      "type": "TableColumn[]",
+      "type": "CommonColumn[]",
       "required": false,
       "defaultValue": "[]",
-      "description": "列配置数组。详见 TableColumn 文档"
+      "description": "列配置数组。每个列的配置项包括：align（对齐方式）、width（宽度）、title（标题）、render（渲染函数）、sorter（排序）、filter（筛选）、fixed（固定列）等。详见下方 columnsProps 配置说明",
+      "relatedConfig": "columnsProps"
     },
     {
       "name": "disabled",
@@ -664,6 +665,161 @@
       "description": "演示与Form组件结合使用实现可编辑单元格",
       "scenario": "form",
       "code": "/**\n * cn - 可编辑单元格\n *    -- 演示与Form组件结合使用实现可编辑单元格\n * en - Editable Cells\n *    -- Demonstrates the use of Form component to implement editable cells in a table\n */\n\nimport { useState } from 'react';\nimport { Button, Form, Input, Table, TYPE, Rule, Link, Modal, Message, Popover } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    cell: {\n      cursor: 'pointer',\n      lineHeight: '32px',\n      height: 32,\n      padding: '0 8px',\n      borderRadius: 4,\n      border: '1px solid transparent',\n      '&:hover': {\n        borderColor: 'var(--soui-brand-6,#197AFA)',\n      },\n    },\n  },\n  { name: 'table-editable' },\n);\n\nexport function ItemWithRequired(props: { children: React.ReactNode; top?: number }) {\n  return (\n    <div style={{ position: 'relative' }}>\n      <span\n        style={{\n          color: '#EB4242',\n          position: 'absolute',\n          top: props.top || 0,\n          left: -2,\n          transform: 'translate(-100%, 0)',\n        }}\n      >\n        *\n      </span>\n      {props.children}\n    </div>\n  );\n}\n\nfunction EditableCell({ value, onEdit }: { value?: string; onEdit: () => void }) {\n  const classes = useStyles();\n  return (\n    <div onClick={onEdit} className={classes.cell}>\n      {value}\n    </div>\n  );\n}\ninterface TableRowData {\n  id?: number;\n  name?: string;\n  age?: string;\n}\n\ninterface FormTableValues {\n  values: TableRowData[];\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst rules = Rule();\n\nconst defaultData = [\n  { id: 1, name: 'Tom1', age: '18' },\n  { id: 2, name: 'Tom2', age: '28' },\n];\nexport default () => {\n  const [edits, setEdits] = useState<boolean[]>([]);\n  const [formDatas, setFormDatas] = useState<FormTableValues>({\n    values: defaultData,\n  });\n  const [tableData, setTableData] = useState<FormTableValues>({\n    values: defaultData,\n  });\n\n  const columns: TableColumnItem[] = [\n    { title: 'ID', width: 100, render: (d) => <div style={{ lineHeight: '32px' }}>{d.id}</div> },\n    {\n      title: <ItemWithRequired>Name</ItemWithRequired>,\n      width: 200,\n      render: (d, index) => {\n        return edits[index] ? (\n          <ItemWithRequired top={5}>\n            <Form.Item style={{ marginBottom: 0 }}>\n              <Input\n                rules={[rules.required]}\n                name={`values[${index}].name`}\n                autoFocus\n                onBlur={(e) => {\n                  setEdits((prev) => [\n                    ...prev.slice(0, index),\n                    !prev[index],\n                    ...prev.slice(index + 1),\n                  ]);\n                  setTableData({\n                    values: tableData.values.map((item, i) =>\n                      i === index ? { ...item, name: (e.target as any).value } : item,\n                    ),\n                  });\n\n                  Message.success('Data saved successfully');\n                }}\n              />\n            </Form.Item>\n          </ItemWithRequired>\n        ) : (\n          <EditableCell\n            value={d.name}\n            onEdit={() => {\n              setEdits((prev) => [...prev.slice(0, index), !prev[index], ...prev.slice(index + 1)]);\n            }}\n          />\n        );\n      },\n    },\n    {\n      title: 'Age',\n      width: 200,\n      render: (d) => <div style={{ lineHeight: '32px' }}>{d.age}</div>,\n    },\n    {\n      title: 'Operation',\n      width: 100,\n      render: (d) => {\n        return (\n          <Link type='danger' style={{ lineHeight: '32px' }}>\n            <Popover.Confirm\n              title='Sure to delete?'\n              onCancel={() => console.log('cancel')}\n              onOk={() => {\n                const newDatas = tableData.values.filter((item) => item.id !== d.id);\n                setTableData({ values: newDatas });\n                setFormDatas({ values: newDatas });\n              }}\n            ></Popover.Confirm>\n            Delete\n          </Link>\n        );\n      },\n    },\n  ];\n\n  return (\n    <Form\n      value={formDatas}\n      onChange={setFormDatas}\n      onSubmit={() => console.log('submit:>>', JSON.stringify(formDatas, null, 2))}\n      reserveAble\n    >\n      <div style={{ marginBottom: 12 }}>\n        <Button\n          type='primary'\n          onClick={() => {\n            const newDatas = {\n              values: [\n                ...tableData.values,\n                {\n                  id: tableData.values.length + 1,\n                  name: `Tom${tableData.values.length + 1}`,\n                  age: `${(tableData.values.length + 1) * 10 + 8}`,\n                },\n              ],\n            };\n            setTableData(newDatas);\n            setFormDatas(newDatas);\n          }}\n        >\n          Add\n        </Button>\n\n        <Form.Submit\n          onClick={() => {\n            Modal.info({\n              title: 'Form Data in Table',\n              content: <pre>{JSON.stringify(formDatas, null, 2)}</pre>,\n            });\n          }}\n        >\n          Submit\n        </Form.Submit>\n      </div>\n\n      <Table data={tableData.values} columns={columns} keygen='id' />\n    </Form>\n  );\n};\n"
+    }
+  ],
+  "columnsProps": [
+    {
+      "name": "align",
+      "type": "\"left\" | \"center\" | \"right\"",
+      "required": false,
+      "defaultValue": "\"left\"",
+      "description": "单元格内容的水平对齐方式"
+    },
+    {
+      "name": "colSpan",
+      "type": "((row: DataItem, index: number) => number)",
+      "required": false,
+      "description": "列合并控制函数。参数：row（当前行数据），index（行索引）。返回要合并的列数"
+    },
+    {
+      "name": "defaultOrder",
+      "type": "\"asc\" | \"desc\"",
+      "required": false,
+      "description": "该列的默认排序方向"
+    },
+    {
+      "name": "fixed",
+      "type": "\"left\" | \"right\"",
+      "required": false,
+      "description": "固定列在左侧或右侧。若多个相邻列需要固定，只需指定最外侧的列"
+    },
+    {
+      "name": "group",
+      "type": "ReactNode | ReactNode[]",
+      "required": false,
+      "description": "表头分组名称。相邻的相同分组会合并为一个表头"
+    },
+    {
+      "name": "groupProps",
+      "type": "{ className?: string; style?: CSSProperties; }",
+      "required": false,
+      "description": "表头分组的额外属性（类名、样式）"
+    },
+    {
+      "name": "hide",
+      "type": "boolean",
+      "required": false,
+      "description": "隐藏列（仅对 row-expand 类型的列有效）"
+    },
+    {
+      "name": "key",
+      "type": "string | number",
+      "required": false,
+      "description": "列的唯一标识。未提供时默认使用列索引"
+    },
+    {
+      "name": "minWidth",
+      "type": "number",
+      "required": false,
+      "description": "列的最小宽度"
+    },
+    {
+      "name": "maxWidth",
+      "type": "number",
+      "required": false,
+      "description": "列的最大宽度（拖动调整时的限制）"
+    },
+    {
+      "name": "filterAll",
+      "type": "((data: DataItem[]) => DataItem[])",
+      "required": false,
+      "description": "全选时的数据过滤函数。仅在 type=\"checkbox\" 时有效。参数：数据数组。返回过滤后的数据"
+    },
+    {
+      "name": "render",
+      "type": "ObjectKey<DataItem> | function(d, id, instance)",
+      "required": false,
+      "description": "渲染单元格内容。可以是属性名字符串（如 \"name\" 渲染 row.name）或函数，函数参数：data（行数据）、index（行索引）、checkboxInstance（当 type=\"checkbox\" 时）"
+    },
+    {
+      "name": "rowSpan",
+      "type": "((prevRowData: DataItem, nextRowData: DataItem) => boolean)",
+      "required": false,
+      "description": "行合并控制函数。参数：prevRowData、nextRowData（相邻两行数据）。返回 true 合并行"
+    },
+    {
+      "name": "sorter",
+      "type": "string | ((order: \"asc\" | \"desc\") => void | ((prevRowData: DataItem, nextRowData: DataItem) => number)) | { rule: string | ((sorter: ({ order: \"asc\" | \"desc\", manual: boolean, key: string | number, weight?: number })[]) => void), weight: number }",
+      "required": false,
+      "description": "排序配置。可以是字符串（排序字段名）、排序函数或包含 rule 和 weight 的 Sorter 对象。提供后列头会显示排序图标"
+    },
+    {
+      "name": "sortDirections",
+      "type": "(\"asc\" | \"desc\")[]",
+      "required": false,
+      "defaultValue": "[\"asc\", \"desc\"]",
+      "description": "该列可用的排序方向"
+    },
+    {
+      "name": "filter",
+      "type": "SelectModeColumnFilter<DataItem> | SearchModeColumnFilter<DataItem>",
+      "required": false,
+      "description": "列筛选配置。支持搜索和选择两种模式"
+    },
+    {
+      "name": "title",
+      "type": "ReactNode | ((rowData: DataItem[]) => ReactNode)",
+      "required": false,
+      "description": "列头内容。可以是字符串、ReactNode 或接收所有数据的函数"
+    },
+    {
+      "name": "treeColumnsName",
+      "type": "ObjectKey<DataItem>",
+      "required": false,
+      "description": "树形表格中子节点数据的属性名"
+    },
+    {
+      "name": "treeIndent",
+      "type": "number",
+      "required": false,
+      "defaultValue": "25",
+      "description": "树形表格每一层的缩进宽度（像素）"
+    },
+    {
+      "name": "type",
+      "type": "\"expand\" | \"row-expand\" | \"checkbox\"",
+      "required": false,
+      "description": "特殊列类型。\"expand\"：行展开列，render 返回函数时可展开。\"row-expand\"：与 expand 相似，但点击整行触发展开。\"checkbox\"：选择列"
+    },
+    {
+      "name": "width",
+      "type": "string | number",
+      "required": false,
+      "description": "列宽度"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "该列的 CSS 类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "该列单元格的内联样式"
+    },
+    {
+      "name": "onClick",
+      "type": "((d: DataItem, isExpand: boolean) => void)",
+      "required": false,
+      "description": "可展开元素的点击事件。仅在列类型为 \"expand\" 或 \"row-expand\" 且提供 expandKeys 属性时有效。参数：data（行数据）、isExpand（展开状态）"
+    },
+    {
+      "name": "columnResizable",
+      "type": "false",
+      "required": false,
+      "description": "禁用该列的宽度调整功能"
     }
   ],
   "subComponents": [],
