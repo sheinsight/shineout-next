@@ -55,13 +55,13 @@ class ShineoutClaudeServer {
           },
           {
             name: 'search_components',
-            description: '搜索组件或功能',
+            description: '搜索组件并自动返回完整的 API 信息。包括主要 Props、子组件、相关方法等',
             inputSchema: {
               type: 'object',
               properties: {
                 query: {
                   type: 'string',
-                  description: '搜索关键词',
+                  description: '搜索关键词（组件名、功能描述等）',
                 },
                 category: {
                   type: 'string',

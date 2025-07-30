@@ -1,4 +1,4 @@
-import { ComponentData, ComponentExample, SearchResult } from '../types/index.js';
+import { ComponentData, ComponentExample } from '../types/index.js';
 import { getComponentData, getAllComponents, searchInComponents } from '../data/loader.js';
 
 export class ComponentService {
@@ -42,7 +42,18 @@ export class ComponentService {
       };
     }
 
-    const content = this.formatSearchResults(results);
+    // 自动获取匹配组件的完整 API 信息
+    const detailedResults = await Promise.all(
+      results.map(async (result) => {
+        const fullComponent = await getComponentData(result.name);
+        return fullComponent;
+      })
+    );
+
+    // 过滤掉 null 值
+    const validComponents = detailedResults.filter((comp): comp is ComponentData => comp !== null);
+
+    const content = this.formatSearchResultsWithAPI(validComponents);
     
     return {
       content: [
@@ -169,17 +180,195 @@ export class ComponentService {
     return cleaned.trim();
   }
 
-  private formatSearchResults(results: SearchResult[]): string {
-    let content = `找到 ${results.length} 个相关结果:\n\n`;
+
+  private formatSearchResultsWithAPI(components: ComponentData[]): string {
+    let content = `找到 ${components.length} 个相关组件:\n\n`;
     
-    for (const result of results) {
-      content += `## ${result.name}\n`;
-      content += `${result.description}\n`;
-      content += `**分类**: ${result.category}\n`;
-      content += `**导入**: \`${result.importPath}\`\n\n`;
+    for (const component of components) {
+      content += `## ${component.name}\n`;
+      content += `${component.description}\n\n`;
+      
+      // 基本信息
+      content += `### 基本信息\n`;
+      content += `- **分类**: ${this.getCategoryName(component.category)}\n`;
+      content += `- **导入**: \`${component.importPath}\`\n`;
+      if (component.subComponents && component.subComponents.length > 0) {
+        content += `- **子组件**: ${component.subComponents.map(sub => {
+          // 如果子组件是对象，提取名称；如果是字符串，直接使用
+          const subName = typeof sub === 'object' && 'name' in sub ? sub.name : sub;
+          return `${component.name}.${subName}`;
+        }).join(', ')}\n`;
+      }
+      content += `\n`;
+
+      // 主要 Props（优先显示重要属性）
+      if (component.props && component.props.length > 0) {
+        content += `### 主要 Props\n`;
+        
+        // 定义重要属性的优先级
+        const priorityProps = ['value', 'onChange', 'name', 'data', 'columns', 'rules', 'onSubmit', 'disabled', 'placeholder', 'type'];
+        
+        // 按优先级排序 props
+        const sortedProps = [...component.props].sort((a, b) => {
+          const aIndex = priorityProps.indexOf(a.name);
+          const bIndex = priorityProps.indexOf(b.name);
+          if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+          if (aIndex !== -1) return -1;
+          if (bIndex !== -1) return 1;
+          return a.required === b.required ? 0 : a.required ? -1 : 1;
+        });
+        
+        // 显示前 6 个最重要的 props
+        const importantProps = sortedProps.slice(0, 6);
+        for (const prop of importantProps) {
+          const required = prop.required ? ' *(必填)*' : '';
+          const relatedNote = this.getRelatedNote(prop, component);
+          content += `- **${prop.name}**${required}: \`${prop.type}\` - ${this.truncateDescription(prop.description, 80)}${relatedNote}\n`;
+        }
+        
+        if (component.props.length > 6) {
+          content += `- ...还有 ${component.props.length - 6} 个其他属性\n`;
+        }
+        content += `\n`;
+      }
+
+      // 相关方法或配置
+      if ((component as any).formRefMethods) {
+        content += `### FormRef 方法\n`;
+        const methods = (component as any).formRefMethods;
+        for (let i = 0; i < Math.min(3, methods.length); i++) {
+          content += `- **${methods[i].name}**: ${this.truncateDescription(methods[i].description, 80)}\n`;
+        }
+        if (methods.length > 3) {
+          content += `- ...还有 ${methods.length - 3} 个其他方法\n`;
+        }
+        content += `\n`;
+      }
+
+      if ((component as any).columnsProps) {
+        content += `### 列配置选项\n`;
+        const columnProps = (component as any).columnsProps;
+        content += `支持 ${columnProps.length} 个列配置属性，包括：\n`;
+        const mainProps = ['title', 'render', 'width', 'sorter', 'filter'];
+        for (const propName of mainProps) {
+          const prop = columnProps.find((p: any) => p.name === propName);
+          if (prop) {
+            content += `- **${prop.name}**: ${this.truncateDescription(prop.description, 60)}\n`;
+          }
+        }
+        content += `\n`;
+      }
+
+      // 使用示例 - 包含实际代码
+      if (component.examples && component.examples.length > 0) {
+        content += `### 使用示例\n\n`;
+        
+        // 选择最相关的示例（优先基础示例）
+        const basicExample = component.examples.find(ex => ex.scenario === 'basic') || component.examples[0];
+        
+        if (basicExample) {
+          content += `#### ${basicExample.title}\n`;
+          if (basicExample.description) {
+            content += `${basicExample.description}\n\n`;
+          }
+          
+          // 提取并清理示例代码
+          const cleanCode = this.extractCleanCode(basicExample.code);
+          const truncatedCode = this.truncateCode(cleanCode, 500);
+          
+          content += `\`\`\`tsx\n${truncatedCode}\n\`\`\`\n\n`;
+        }
+
+        // 如果有表单相关的示例，也包含它
+        if (component.category === 'form' || component.name === 'Form') {
+          const formExample = component.examples.find(ex => 
+            ex.scenario === 'form' || 
+            ex.title.toLowerCase().includes('form') ||
+            ex.title.includes('表单')
+          );
+          
+          if (formExample && formExample !== basicExample) {
+            content += `#### ${formExample.title}\n`;
+            const cleanCode = this.extractCleanCode(formExample.code);
+            const truncatedCode = this.truncateCode(cleanCode, 300);
+            content += `\`\`\`tsx\n${truncatedCode}\n\`\`\`\n\n`;
+          }
+        }
+
+        // 列出其他可用示例
+        const otherExamples = component.examples.filter(ex => 
+          ex !== basicExample && 
+          !(component.category === 'form' && ex.scenario === 'form')
+        );
+        
+        if (otherExamples.length > 0) {
+          content += `#### 其他可用示例：\n`;
+          otherExamples.slice(0, 3).forEach(ex => {
+            content += `- **${ex.title}**: ${ex.description || ex.scenario}\n`;
+          });
+          content += `\n`;
+        }
+      }
+
+      content += `---\n\n`;
     }
     
     return content;
+  }
+
+  private truncateDescription(description: string, maxLength: number): string {
+    if (description.length <= maxLength) return description;
+    return description.substring(0, maxLength) + '...';
+  }
+
+  private getRelatedNote(prop: any, component: ComponentData): string {
+    // 为特定属性添加相关提示
+    if (prop.relatedComponent) {
+      return ` (见 ${prop.relatedComponent} 组件)`;
+    }
+    if (prop.relatedMethods) {
+      return ` (见下方${prop.relatedMethods}方法)`;
+    }
+    if (prop.relatedConfig) {
+      return ` (见下方${prop.relatedConfig}配置)`;
+    }
+    
+    // 基于属性名的智能提示
+    if (prop.name === 'formRef' && component.name === 'Form') {
+      return ' (见下方FormRef方法)';
+    }
+    if (prop.name === 'columns' && component.name === 'Table') {
+      return ' (见下方列配置选项)';
+    }
+    if (prop.name === 'rules') {
+      return ' (见 Rule 组件)';
+    }
+    
+    return '';
+  }
+
+  private truncateCode(code: string, maxLength: number): string {
+    if (code.length <= maxLength) return code;
+    
+    // 尝试在合适的位置截断（如组件结尾、函数结尾等）
+    const lines = code.split('\n');
+    let truncated = '';
+    let currentLength = 0;
+    
+    for (const line of lines) {
+      if (currentLength + line.length > maxLength) {
+        // 如果当前行会超过限制，尝试找到一个好的截断点
+        if (truncated.includes('return (') || truncated.includes('return <')) {
+          // 如果已经包含了组件的返回部分，可以在这里截断
+          truncated += '\n  // ... 更多代码\n';
+          break;
+        }
+      }
+      truncated += line + '\n';
+      currentLength += line.length + 1;
+    }
+    
+    return truncated.trim();
   }
 
   private formatComponentList(components: ComponentData[]): string {

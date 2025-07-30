@@ -25,6 +25,12 @@ export interface ComponentExample {
   code: string;
 }
 
+export interface SubComponent {
+  name: string;
+  description: string;
+  props?: ComponentProp[];
+}
+
 export interface ComponentData {
   name: string;
   description: string;
@@ -33,10 +39,15 @@ export interface ComponentData {
   props?: ComponentProp[];
   events?: ComponentEvent[];
   examples?: ComponentExample[];
-  subComponents?: string[];
+  subComponents?: (string | SubComponent)[];
   relatedComponents?: string[];
   version?: string;
   deprecated?: boolean;
+  // 扩展字段
+  formRefMethods?: any[];
+  formDatumMethods?: any[];
+  columnsProps?: any[];
+  [key: string]: any;
 }
 
 export interface SearchResult {
