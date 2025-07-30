@@ -1,3 +1,11 @@
+## 3.7.9-beta.1
+2025-07-30
+
+### 🐞 BugFix
+
+- 修复 `Textarea` 在 flex 容器中使用时，可能存在的内部textarea元素与外部容器高度不一致的问题 (Regression: since v3.7.6) ([#1229](https://github.com/sheinsight/shineout-next/pull/1229))
+
+
 ## 3.7.6-beta.1
 2025-07-07
 

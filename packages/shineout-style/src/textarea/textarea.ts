@@ -76,7 +76,6 @@ const input: JsStyles<keyof TextareaClasses> = {
       color: token.textareaPlaceholderColor,
     },
     width: '100%',
-    height: '100%',
     background: 'transparent',
     border: '0',
     margin: '0',
@@ -94,6 +93,10 @@ const input: JsStyles<keyof TextareaClasses> = {
     '&$resize': {
       resize: 'vertical',
     },
+
+    '&:not($shadow)': {
+      minHeight: '-webkit-fill-available',
+    }
   },
   resize: {
     resize: 'vertical',
