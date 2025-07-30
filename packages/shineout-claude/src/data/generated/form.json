@@ -105,7 +105,8 @@
       "name": "rules",
       "type": "RuleItem[]",
       "required": false,
-      "description": "表单级别的校验规则配置。支持嵌套对象的规则定义，可以为表单的任意字段设置校验规则。规则对象的 key 对应表单字段路径（如 \\\"name\\\"、\\\"user.email\\\"、\\\"list[0].id\\\"），value 为该字段的校验规则数组（FormItemRule）。这些规则会与 Form.Field 组件上设置的 rules 属性合并，Form 级别的规则会先执行。规则类型请参考 Rule 组件文档"
+      "description": "表单级别的校验规则配置。支持嵌套对象的规则定义，可以为表单的任意字段设置校验规则。规则对象的 key 对应表单字段路径（如 \"name\"、\"user.email\"、\"list[0].id\"），value 为该字段的校验规则数组（FormItemRule）。这些规则会与 Form.Field 组件上设置的 rules 属性合并，Form 级别的规则会先执行。规则类型请参考 Rule 组件文档",
+      "relatedComponent": "Rule"
     },
     {
       "name": "onError",
@@ -177,7 +178,8 @@
       "name": "formRef",
       "type": "((form: FormRef<V>) => void) | { current?: FormRef<V> ; }",
       "required": false,
-      "description": "获取表单实例的引用。支持函数回调和 ref 对象两种方式。通过 formRef 可以调用表单的各种方法，如手动触发校验（validate、validateFields）、提交（submit）、重置（reset）、获取/设置值（getValue、set）等。FormRef<V> 中的泛型 V 表示表单数据的类型"
+      "description": "获取表单实例的引用。支持函数回调和 ref 对象两种方式。通过 formRef 可以调用表单的各种方法，如手动触发校验（validate、validateFields）、提交（submit）、重置（reset）、获取/设置值（getValue、set）等。FormRef<V> 中的泛型 V 表示表单数据的类型。详见下方 formRefMethods 中的方法定义",
+      "relatedMethods": "formRefMethods"
     },
     {
       "name": "setForm",
@@ -338,16 +340,295 @@
       "code": "/**\n * cn - size\n *    -- 表单元素的尺寸\n * en - size\n *    -- The size of the form element\n */\nimport React from 'react';\nimport { Form, Input, Radio, Textarea, TYPE } from 'shineout';\n\ntype RadioSize = TYPE.Radio.GroupProps<any, any>['size'];\n\nconst App: React.FC = () => {\n  const [size, setSize] = React.useState<RadioSize>('default');\n  return (\n    <>\n      <Radio.Group data={['default', 'small', 'large']} keygen value={size} onChange={setSize} />\n      <Form disabled size={size}>\n        <Form.Item label='Email'>\n          <Input name='email' />\n        </Form.Item>\n        <Form.Item label='Email2'>\n          <Input />\n        </Form.Item>\n\n        <Form.Item label='Password'>\n          <Input name='password' type='password' />\n        </Form.Item>\n\n        <Form.Item label='Name'>\n          <Input.Group style={{ width: 300 }} disabled>\n            <Input name='firstName' placeholder='First Name' />\n            -\n            <Input name='lastName' placeholder='Last Name' />\n          </Input.Group>\n        </Form.Item>\n\n        <Form.Item label='Age'>\n          <Input.Number\n            style={{ width: 100 }}\n            name='age'\n            type='number'\n            digits={0}\n            defaultValue='0'\n          />\n        </Form.Item>\n        <Form.Item label='address'>\n          <Textarea rows={2} name='address' defaultValue='xxx' />\n        </Form.Item>\n      </Form>\n    </>\n  );\n};\n\nexport default App;\n"
     }
   ],
+  "formRefMethods": [
+    {
+      "name": "getValue",
+      "type": "(name?: string) => any",
+      "description": "获取表单数据。不传参数时返回整个表单的数据对象（FormValue 类型），传入字段路径时返回指定字段的值。字段路径支持点表示法和数组索引，如 \"user.name\"（获取嵌套对象）、\"list[0].id\"（获取数组元素）。常用于获取表单数据进行其他操作"
+    },
+    {
+      "name": "validate",
+      "type": "() => Promise<any>",
+      "description": "校验整个表单的所有字段。返回一个 Promise，校验成功时 resolve 整个表单的数据对象（FormValue 类型），失败时 reject 错误信息。通常在提交表单前调用以确保所有数据的有效性"
+    },
+    {
+      "name": "validateFields",
+      "type": "(fields: string | string[]) => Promise<any>",
+      "description": "校验指定的表单字段。fields 参数为字段路径，可以是单个路径字符串或路径数组。字段路径支持：\"name\"（顶层字段）、\"user.email\"（嵌套对象）、\"list[0].name\"（数组元素）。返回 Promise，成功时 resolve 指定字段的数据，失败时 reject 第一个遇到的错误。适用于分步表单或部分校验场景"
+    },
+    {
+      "name": "validateFieldsWithValue",
+      "type": "(fields?: string | keyof FormValue | (string | keyof FormValue)[]) => Promise<any>",
+      "description": "校验指定字段并始终返回表单数据。fields 参数为字段路径，不传时校验所有字段。成功时 resolve 指定字段的数据，失败时 reject 一个 ValidationError 对象，包含：values（表单数据）和 errorFields（数组，包含每个错误字段的 name 和 errors 信息）。适用于需要同时获取表单数据和详细错误信息的场景"
+    },
+    {
+      "name": "validateFieldsWithError",
+      "type": "(fields: string | string[]) => Promise<any>",
+      "description": "校验指定字段并返回第一个遇到的错误。fields 参数为字段路径。与 validateFields 功能相同，但名称更明确地表示会返回错误信息。失败时 reject 一个 FormError 对象（仅包含第一个错误）。适用于只关心第一个错误的场景"
+    },
+    {
+      "name": "clearValidate",
+      "type": "(names?: string[]) => void",
+      "description": "清除指定字段的校验错误信息。names 参数为字段路径数组，不传时清除所有字段的错误。字段路径支持 \"name\"、\"user.email\"、\"list[0].id\" 等格式。常用于重置表单状态、清除特定字段错误等场景"
+    },
+    {
+      "name": "submit",
+      "type": "(withValidate?: boolean) => void",
+      "description": "手动触发表单提交。withValidate 参数控制是否在提交前进行校验，默认为 true。校验通过后会调用 Form 的 onSubmit 回调，传入整个表单的数据对象（FormValue 类型）。通常用于自定义提交按钮或程序化提交"
+    },
+    {
+      "name": "reset",
+      "type": "() => void",
+      "description": "重置表单到初始状态。将表单数据恢复为 defaultValue（非受控）或空对象（受控），并清除所有校验错误。会触发 Form 的 onReset 回调"
+    },
+    {
+      "name": "set",
+      "type": "(value: { [key: string]: any; }, options?: { validate?: boolean; forceUpdate?: boolean; }) => void",
+      "description": "批量设置表单字段值。传入一个对象，key 为字段路径，value 为要设置的值。字段路径支持：点表示法（\"user.name\"）访问嵌套对象，数组索引（\"list[0].id\"）访问数组元素。options 参数：validate 控制是否触发校验（默认 false），forceUpdate 控制是否强制更新（默认 false）。适用于动态设置表单值、联动更新等场景"
+    },
+    {
+      "name": "scrollToField",
+      "type": "(name: string, scrollIntoViewOptions?: ScrollIntoViewOptions) => void",
+      "description": "滚动页面到指定表单字段的位置。name 参数为字段路径，支持 \"name\"、\"user.email\"、\"list[0].id\" 等格式。需要 Form 设置 name 属性才能正常工作。scrollIntoViewOptions 参数符合标准 ScrollIntoViewOptions 接口，可以控制滚动行为、位置等。常用于错误定位、分步表单导航等"
+    }
+  ],
+  "formDatumMethods": [
+    {
+      "name": "set",
+      "type": "(vals: string | { [name: string]: any; }, value?: any) => void",
+      "description": "设置表单字段值。可以接收对象以批量设置多个字段，或接收字段名和值以设置单个字段。字段名支持嵌套路径如 \"user.name\" 或 \"items[0].price\"。更改会触发表单校验和相关 Flow 组件的重新渲染"
+    },
+    {
+      "name": "get",
+      "type": "(name?: string) => any",
+      "description": "根据名称获取表单字段值。未提供名称时返回整个表单数据对象。支持嵌套路径如 \"user.name\" 或 \"items[0].price\" 来访问深层嵌套的值"
+    }
+  ],
   "subComponents": [
-    "Item",
-    "Field",
-    "FieldSet",
-    "Button",
-    "Submit",
-    "Reset",
-    "Flow",
-    "useForm",
-    "useFormInstance"
+    {
+      "name": "Form.Item",
+      "description": "表单项组件，用于包装表单控件并提供标签、错误提示等功能。每个表单控件都应该被 Form.Item 包裹，以便正确显示标签和校验信息",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "自定义类名"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "自定义样式"
+        },
+        {
+          "name": "label",
+          "type": "ReactNode | LabelConfig",
+          "required": false,
+          "description": "未定义时，标签不会 render，也不会占位。如果无内容需要占位，使用空字符串 \"\""
+        },
+        {
+          "name": "tip",
+          "type": "ReactNode",
+          "required": false,
+          "description": "提示文案"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "必填标记，纯展示用，不会触发校验"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "表单元素"
+        },
+        {
+          "name": "labelWidth",
+          "type": "string | number",
+          "required": false,
+          "defaultValue": "140px",
+          "description": "标签宽度，labelAlign 为 \"top\" 时无效。统一设置表单项标签的宽度。可以是具体像素值（如 \"140px\"）或百分比（如 \"30%\"）。当标签顶部对齐时此配置无效。用于保持表单整齐的视觉效果，确保所有表单项的输入区域左对齐"
+        },
+        {
+          "name": "labelAlign",
+          "type": "\"left\" | \"right\" | \"top\"",
+          "required": false,
+          "description": "默认为空，跟随主题样式。标签的对齐方式。\"left\" 左对齐，\"right\" 右对齐，\"top\" 顶部对齐。不同的对齐方式适用于不同的表单布局需求：\"right\" 适合传统表单布局，\"top\" 适合移动端或紧凑布局，\"left\" 适合特殊设计需求"
+        },
+        {
+          "name": "labelVerticalAlign",
+          "type": "\"top\" | \"bottom\" | \"middle\"",
+          "required": false,
+          "defaultValue": "\"top\"",
+          "description": "默认顶部对齐。标签的垂直对齐方式。当标签和输入框在同一行时（labelAlign 为 \"left\" 或 \"right\"），控制标签相对于输入框的垂直位置。\"top\" 与输入框顶部对齐，\"middle\" 居中对齐，\"bottom\" 与输入框底部对齐"
+        },
+        {
+          "name": "keepErrorHeight",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "单行错误提示不撑开页面高度。保持错误提示高度固定，避免错误信息出现/消失时页面抖动。开启后会预留错误信息的显示空间，确保表单高度稳定。适用于对布局稳定性要求较高的场景，如表单项较多的长表单。注意：当 keepErrorBelow 为 true 时，此配置会失效"
+        },
+        {
+          "name": "keepErrorBelow",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "是否保持错误信息在提示信息下方。控制错误信息的显示位置。开启后错误信息始终显示在表单项的 tip 属性下方，保持布局的一致性。关闭时错误信息可能会覆盖 tip 信息。适用于同时需要显示提示信息和错误信息的场景。注意：开启后会使 keepErrorHeight 失效"
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "是否水平布局。将表单项横向排列，适用于简单的单行表单或筛选表单。开启后表单项会在同一行显示，自动换行。通常用于搜索条件、筛选器等需要节省垂直空间的场景"
+        },
+        {
+          "name": "colon",
+          "type": "ReactNode",
+          "required": false,
+          "defaultValue": "false",
+          "description": "统一控制所有表单项标签后是否显示冒号。可以是布尔值（true 显示默认冒号 \":\"）或自定义的 ReactNode（如 \"：\"、\"->\"等）。Form.Item 上的 colon 属性优先级更高，可以覆盖此全局设置"
+        }
+      ]
+    },
+    {
+      "name": "Form.Field",
+      "description": "表单字段组件，用于创建自定义的表单控件。提供了表单数据绑定、校验等功能，适用于封装复杂的自定义表单组件",
+      "props": [
+        {
+          "name": "name",
+          "type": "string | string[]",
+          "required": true,
+          "description": "绑定到表单数据的字段名称。支持点表示法访问嵌套对象（如 \"user.name\"）或数组语法（如 [\"user\", \"name\"]）。用于标识和管理特定的表单字段数据"
+        },
+        {
+          "name": "reserveAble",
+          "type": "boolean",
+          "required": false,
+          "description": "控制组件卸载时是否保留字段数据。设置为 true 时，组件移除后在表单状态中保留数据。适用于动态表单、条件字段，或需要临时隐藏/显示字段但保留其值的场景"
+        },
+        {
+          "name": "defaultValue",
+          "type": "T",
+          "required": false,
+          "description": "表单首次渲染时字段的初始值。仅在组件初始化时生效，后续更改不会更新。常用于为新记录设置初始状态或提供默认值"
+        },
+        {
+          "name": "rules",
+          "type": "RuleItem[]",
+          "required": false,
+          "description": "用于校验字段值的规则数组。每个规则可以是函数、正则表达式或规则对象。支持内置规则（必填、邮箱等）和自定义校验逻辑。详细配置参见 Rule 组件文档",
+          "relatedComponent": "Rule"
+        },
+        {
+          "name": "children",
+          "type": "((opts: object) => ReactNode) | ReactNode",
+          "required": true,
+          "description": "要渲染的表单控件。可以是具有 value/onChange 属性的 React 元素，或渲染函数。使用渲染函数时，会接收包含以下属性的对象：value（当前字段值）、onChange（值变更处理器）、error（校验错误）、disabled（继承自表单）、status（字段状态）。适用于自定义组件、第三方控件或复杂输入场景"
+        },
+        {
+          "name": "onError",
+          "type": "((error?: Error) => void)",
+          "required": false,
+          "description": "校验完成时触发的回调函数。接收校验错误（如果有）作为参数。适用于自定义错误处理、记录校验结果，或根据校验状态触发副作用"
+        },
+        {
+          "name": "bind",
+          "type": "string[]",
+          "required": false,
+          "description": "当前字段值改变时需要重新校验的字段名称数组。启用字段间的联动校验功能。常用于密码确认、关联下拉选择或相互依赖的表单计算等场景"
+        }
+      ]
+    },
+    {
+      "name": "Form.FieldSet",
+      "description": "表单字段集组件，用于管理一组相关的表单字段。适用于处理对象或数组类型的表单数据，如动态表单列表、嵌套对象等复杂场景",
+      "props": [
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": "绑定到表单数据的字段集名称。用于标识和管理一组相关的表单字段或数组数据。支持点表示法访问嵌套对象（如 \"users\"、\"company.employees\"）"
+        },
+        {
+          "name": "children",
+          "type": "((opts: object) => ReactNode) | ReactNode",
+          "required": true,
+          "description": "在字段集内渲染的内容。支持两种模式：对象模式（React 元素）：用于管理嵌套对象字段。子字段名称会自动加上字段集名称前缀。适用于分组相关表单字段，如地址、联系信息或用户资料等部分。数组模式（渲染函数）：用于管理动态数组数据。函数接收包含 list、value、index、error、onChange、onInsert、onAppend、onRemove 等属性的对象"
+        },
+        {
+          "name": "empty",
+          "type": "((insert: (val: any) => void) => ReactNode)",
+          "required": false,
+          "description": "数组为空时显示的内容。仅在数组模式下（children 为函数时）有效。渲染函数接收 insert 回调来添加第一个数据项。适用于显示'添加第一个项目'按钮、空状态提示或动态列表的引导信息"
+        },
+        {
+          "name": "defaultValue",
+          "type": "T",
+          "required": false,
+          "description": "默认值"
+        },
+        {
+          "name": "reserveAble",
+          "type": "boolean",
+          "required": false,
+          "description": "设置为 true 组件卸载后表单不自动删除数据"
+        },
+        {
+          "name": "rules",
+          "type": "RuleItem[]",
+          "required": false,
+          "description": "校验规则。支持 Rule 组件提供的所有规则类型，如 required（必填）、email（邮箱格式）、min/max（最小/最大值）等。详见 Rule 组件文档",
+          "relatedComponent": "Rule"
+        }
+      ]
+    },
+    {
+      "name": "Form.Flow",
+      "description": "表单流程组件，用于监听表单数据变化并执行相应的副作用。适用于实现表单联动、条件渲染等场景",
+      "props": [
+        {
+          "name": "children",
+          "type": "(datum: FormDatum) => ReactNode",
+          "required": true,
+          "description": "渲染函数，接收表单数据管理器（datum）并返回 React 节点。datum 对象提供了动态获取/设置表单值的方法。适用于创建表单字段依赖关系、基于表单状态的条件渲染，或执行需要访问多个表单值的操作。详见下方 formDatumMethods 中的方法定义",
+          "relatedMethods": "formDatumMethods"
+        },
+        {
+          "name": "names",
+          "type": "string[]",
+          "required": false,
+          "description": "要监听变化的字段名称数组。为空或未定义时，表单内任意值变化都会触发重新渲染。指定后，仅这些字段的变化会触发更新。支持嵌套路径如 \"user.name\" 或 \"items[0].price\"。通过限制不必要的重新渲染来优化性能"
+        },
+        {
+          "name": "strict",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "设为 true 时，使用缓存机制防止重新渲染，除非监听的字段值真正发生变化。在严格模式下，只有指定的 names 字段值（而非仅引用）改变时才重新渲染子组件。适用于包含昂贵渲染操作的复杂表单的性能优化"
+        }
+      ]
+    },
+    {
+      "name": "Form.Submit",
+      "description": "表单提交按钮组件",
+      "props": []
+    },
+    {
+      "name": "Form.Reset",
+      "description": "表单重置按钮组件",
+      "props": []
+    },
+    {
+      "name": "Form.Button",
+      "description": "表单按钮组件",
+      "props": []
+    }
   ],
   "version": "3.7.7"
 }

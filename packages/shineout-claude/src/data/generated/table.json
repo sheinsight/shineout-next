@@ -72,14 +72,16 @@
       "name": "pagination",
       "type": "PaginationProps",
       "required": false,
-      "description": "分页配置项。详见 [Pagination](/components/Pagination) 组件文档"
+      "description": "分页配置项。支持 Pagination 组件的所有属性，如 current（当前页）、pageSize（每页条数）、total（总条数）、onChange（页码改变回调）等。详见 Pagination 组件文档了解完整配置选项",
+      "relatedComponent": "Pagination"
     },
     {
       "name": "loading",
       "type": "ReactNode",
       "required": false,
       "defaultValue": "false",
-      "description": "加载状态。为 true 时显示默认的 [Spin](/components/Spin) 组件，也可传入自定义的加载组件"
+      "description": "加载状态。为 true 时显示默认的 Spin 组件，也可传入自定义的加载组件。支持传入 Spin 组件的实例来自定义加载样式",
+      "relatedComponent": "Spin"
     },
     {
       "name": "virtual",
