@@ -416,6 +416,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       columns: columns,
       jssStyle: props.jssStyle,
       colgroup: colgroup,
+      data: props.data,
     };
 
     const StickyWrapper = props.sticky ? Sticky : React.Fragment;
