@@ -3,4 +3,4 @@
 
 ### 💎 Enhancement
 
-- `Empty` 增强 `icon` 和 `description` 属性，支持通过 `setConfig` 进行全局配置 ([#1282](https://github.com/sheinsight/shineout-next/pull/1282))
+- 增强 `Empty` 的 `icon` 和 `description` 属性，支持通过 `setConfig` 进行全局配置 ([#1282](https://github.com/sheinsight/shineout-next/pull/1282))
