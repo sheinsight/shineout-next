@@ -4,6 +4,12 @@
 ### 🆕 Feature
 
 - `Table` 新增 `cellSortable` 属性，支持点击单元格触发排序 ([#1188](https://github.com/sheinsight/shineout-next/pull/1188))
+## 3.7.9-beta.2
+2025-07-30
+
+### 🐞 BugFix
+
+- 修复 `Table` 在数据为空时，底部总结行依然会展示，表现与 v1 v2 不一致的问题 ([#1278](https://github.com/sheinsight/shineout-next/pull/1278))
 
 ## 3.7.7-beta.7
 2025-07-17

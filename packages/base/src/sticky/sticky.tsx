@@ -474,7 +474,7 @@ const Sticky = (props: StickyProps) => {
   }
   const StickyEl =
     show && parentVisible ? (
-      <div style={{ zIndex: defaultZIndex, ...style, ...elementSize }} ref={fixedStickyElRef}>
+      <div style={{ zIndex: props.style?.zIndex || defaultZIndex, ...style, ...elementSize }}>
         <div className={props.className} style={props.style}>
           {children}
         </div>
