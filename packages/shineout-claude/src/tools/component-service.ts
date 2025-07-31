@@ -1,6 +1,7 @@
 import { ComponentFormatter } from './formatters/index.js';
 import { ComponentQuery } from './queries/index.js';
 import { APIQueryService, APIFormatter } from './api/index.js';
+import { SearchHelper } from './helpers/index.js';
 
 export class ComponentService {
   private formatter: ComponentFormatter;
@@ -45,11 +46,17 @@ export class ComponentService {
     const validComponents = await this.query.searchComponents(query, category);
     
     if (validComponents.length === 0) {
+      // 获取所有组件名称用于提供建议
+      const allComponents = await this.query.listComponents();
+      const componentNames = allComponents.map(c => c.name);
+      const suggestions = SearchHelper.generateSearchSuggestions(query, componentNames);
+      const suggestionText = SearchHelper.formatSuggestions(suggestions);
+      
       return {
         content: [
           {
             type: 'text',
-            text: `没有找到与 "${query}" 相关的组件。`,
+            text: `没有找到与 "${query}" 相关的组件。${suggestionText}`,
           },
         ],
       };
@@ -193,6 +200,24 @@ export class ComponentService {
 
   async searchAPI(keyword: string, searchIn: 'props' | 'methods' | 'all' = 'all') {
     const results = await this.apiQuery.searchAPI(keyword, searchIn);
+    
+    if (results.length === 0) {
+      // 提供搜索建议
+      const allComponents = await this.query.listComponents();
+      const componentNames = allComponents.map(c => c.name);
+      const suggestions = SearchHelper.generateSearchSuggestions(keyword, componentNames);
+      const suggestionText = SearchHelper.formatSuggestions(suggestions);
+      
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `没有找到与 "${keyword}" 匹配的 API。${suggestionText}`,
+          },
+        ],
+      };
+    }
+    
     let content = this.apiFormatter.formatAPISearchResults(results);
     
     // 为每个找到的组件添加相关示例

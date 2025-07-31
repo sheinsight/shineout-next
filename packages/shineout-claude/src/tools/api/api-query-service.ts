@@ -108,15 +108,30 @@ export class APIQueryService {
       item: any;
     }> = [];
 
+    // 将查询字符串拆分为多个关键词
+    const keywords = keyword.toLowerCase().split(/\s+/).filter(k => k.length > 0);
+    console.error(`[MCP API] Searching APIs with keywords: ${keywords.join(', ')}`);
+
     for (const component of components) {
       // 搜索 props
       if (searchIn === 'all' || searchIn === 'props') {
         if (component.props) {
           for (const prop of component.props) {
-            if (
-              prop.name.toLowerCase().includes(keyword.toLowerCase()) ||
-              prop.description.toLowerCase().includes(keyword.toLowerCase())
-            ) {
+            let matches = false;
+            
+            // 检查是否匹配任何关键词
+            for (const kw of keywords) {
+              if (
+                prop.name.toLowerCase().includes(kw) ||
+                prop.description.toLowerCase().includes(kw) ||
+                prop.type?.toLowerCase().includes(kw)
+              ) {
+                matches = true;
+                break;
+              }
+            }
+            
+            if (matches) {
               results.push({
                 component: component.name,
                 type: 'prop',
@@ -132,10 +147,20 @@ export class APIQueryService {
         // FormRef methods
         if ((component as any).formRefMethods) {
           for (const method of (component as any).formRefMethods) {
-            if (
-              method.name.toLowerCase().includes(keyword.toLowerCase()) ||
-              method.description.toLowerCase().includes(keyword.toLowerCase())
-            ) {
+            let matches = false;
+            
+            for (const kw of keywords) {
+              if (
+                method.name.toLowerCase().includes(kw) ||
+                method.description.toLowerCase().includes(kw) ||
+                method.signature?.toLowerCase().includes(kw)
+              ) {
+                matches = true;
+                break;
+              }
+            }
+            
+            if (matches) {
               results.push({
                 component: component.name,
                 type: 'method',
@@ -148,10 +173,20 @@ export class APIQueryService {
         // FormDatum methods
         if ((component as any).formDatumMethods) {
           for (const method of (component as any).formDatumMethods) {
-            if (
-              method.name.toLowerCase().includes(keyword.toLowerCase()) ||
-              method.description.toLowerCase().includes(keyword.toLowerCase())
-            ) {
+            let matches = false;
+            
+            for (const kw of keywords) {
+              if (
+                method.name.toLowerCase().includes(kw) ||
+                method.description.toLowerCase().includes(kw) ||
+                method.signature?.toLowerCase().includes(kw)
+              ) {
+                matches = true;
+                break;
+              }
+            }
+            
+            if (matches) {
               results.push({
                 component: component.name,
                 type: 'method',
@@ -163,6 +198,7 @@ export class APIQueryService {
       }
     }
 
+    console.error(`[MCP API] Found ${results.length} APIs matching "${keyword}"`);
     return results;
   }
 

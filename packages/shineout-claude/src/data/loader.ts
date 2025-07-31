@@ -136,31 +136,64 @@ export async function searchInComponents(query: string, category?: string): Prom
     
   const results: SearchResult[] = [];
   
+  // 将查询字符串拆分为多个关键词
+  const keywords = query.toLowerCase().split(/\s+/).filter(k => k.length > 0);
+  console.error(`[MCP Data] Searching with keywords: ${keywords.join(', ')}`);
+  
   for (const component of filteredComponents) {
     let relevance = 0;
-    const queryLower = query.toLowerCase();
+    let matchedKeywords = 0;
     
-    // 组件名称匹配
-    if (component.name.toLowerCase().includes(queryLower)) {
-      relevance += 10;
-    }
-    
-    // 描述匹配
-    if (component.description.toLowerCase().includes(queryLower)) {
-      relevance += 5;
-    }
-    
-    // Props 匹配
-    if (component.props) {
-      for (const prop of component.props) {
-        if (prop.name.toLowerCase().includes(queryLower) || 
-            prop.description.toLowerCase().includes(queryLower)) {
-          relevance += 2;
+    for (const keyword of keywords) {
+      let keywordRelevance = 0;
+      
+      // 组件名称匹配（最高权重）
+      if (component.name.toLowerCase() === keyword) {
+        keywordRelevance += 20; // 完全匹配
+      } else if (component.name.toLowerCase().includes(keyword)) {
+        keywordRelevance += 10; // 部分匹配
+      }
+      
+      // 描述匹配
+      if (component.description.toLowerCase().includes(keyword)) {
+        keywordRelevance += 5;
+      }
+      
+      // Props 匹配
+      if (component.props) {
+        for (const prop of component.props) {
+          if (prop.name.toLowerCase().includes(keyword)) {
+            keywordRelevance += 3;
+          }
+          if (prop.description.toLowerCase().includes(keyword)) {
+            keywordRelevance += 2;
+          }
         }
+      }
+      
+      // 子组件匹配
+      if (component.subComponents) {
+        for (const sub of component.subComponents) {
+          const subName = typeof sub === 'string' ? sub : sub.name;
+          if (subName.toLowerCase().includes(keyword)) {
+            keywordRelevance += 4;
+          }
+        }
+      }
+      
+      // 如果这个关键词有匹配，计入总分
+      if (keywordRelevance > 0) {
+        relevance += keywordRelevance;
+        matchedKeywords++;
       }
     }
     
-    if (relevance > 0) {
+    // 只有当至少匹配一个关键词时才包含结果
+    // 如果是多关键词搜索，匹配越多关键词的结果权重越高
+    if (matchedKeywords > 0) {
+      // 奖励匹配多个关键词的结果
+      relevance = relevance * (1 + (matchedKeywords - 1) * 0.5);
+      
       results.push({
         name: component.name,
         description: component.description,
@@ -171,6 +204,9 @@ export async function searchInComponents(query: string, category?: string): Prom
     }
   }
   
+  console.error(`[MCP Data] Found ${results.length} components matching "${query}"`);
+  
+  // 按相关性排序，相关性高的在前
   return results.sort((a, b) => b.relevance - a.relevance);
 }
 
