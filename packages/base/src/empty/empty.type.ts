@@ -22,13 +22,13 @@ export interface EmptyProps
    */
   imgSrc?: string;
   /**
-   * @en Empty state icon
-   * @cn 空状态图标
+   * @en Empty state icon. Enhanced in v3.8.0 to support global configuration via setConfig
+   * @cn 空状态图标。3.8.0版本增强，支持通过setConfig进行全局配置
    */
   icon?: React.ReactNode;
   /**
-   * @en Description, if false, the description will not be displayed
-   * @cn 描述,若为false则不显示描述
+   * @en Description, if false, the description will not be displayed. Enhanced in v3.8.0 to support global configuration via setConfig
+   * @cn 描述，若为false则不显示描述。3.8.0版本增强，支持通过setConfig进行全局配置
    */
   description?: React.ReactNode | boolean;
 }
