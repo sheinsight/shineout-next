@@ -1,0 +1,1 @@
+export { ComponentFormatter } from './component-formatter.js';

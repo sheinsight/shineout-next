@@ -1,0 +1,1 @@
+export { ComponentQuery } from './component-query.js';

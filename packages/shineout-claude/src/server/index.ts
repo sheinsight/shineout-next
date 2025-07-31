@@ -9,8 +9,9 @@ import {
   ReadResourceRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 
-import { ComponentService } from '../tools/component-service.js';
+import { ComponentService, TOOL_DEFINITIONS } from '../tools/index.js';
 import { loadComponentData } from '../data/loader.js';
+import { ToolFeedbackManager } from '../tools/feedback/index.js';
 
 class ShineoutClaudeServer {
   private server: Server;
@@ -37,99 +38,79 @@ class ShineoutClaudeServer {
   private setupHandlers() {
     // 列出可用的工具
     this.server.setRequestHandler(ListToolsRequestSchema, async () => {
+      console.error('[MCP] 📦 正在加载 Shineout 组件工具...');
       return {
-        tools: [
-          {
-            name: 'get_component',
-            description: '获取指定组件的完整文档、API信息和代码示例。包括主要 Props、FormRef方法（Form组件）、列配置（Table组件）和实际使用示例。\n\n重要：查询到组件 API 后，后续的代码实现必须严格使用查询到的 API，包括：\n- 使用正确的属性名称和类型\n- 遵循 API 中定义的方法签名\n- 参考提供的代码示例\n- 不要使用未在 API 中定义的属性或方法',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                name: {
-                  type: 'string',
-                  description: '组件名称，如 Button, Input, Form 等',
-                },
-              },
-              required: ['name'],
-            },
-          },
-          {
-            name: 'search_components',
-            description: '搜索组件并自动返回完整的 API 信息。包括主要 Props、子组件、相关方法等。\n\n重要：查询到组件 API 后，后续的代码实现必须严格使用查询到的 API，包括：\n- 使用正确的属性名称和类型\n- 遵循 API 中定义的方法签名\n- 参考提供的代码示例\n- 不要使用未在 API 中定义的属性或方法',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                query: {
-                  type: 'string',
-                  description: '搜索关键词（组件名、功能描述等）',
-                },
-                category: {
-                  type: 'string',
-                  description: '组件分类：form, display, layout, feedback, navigation',
-                  enum: ['form', 'display', 'layout', 'feedback', 'navigation'],
-                },
-              },
-              required: ['query'],
-            },
-          },
-          {
-            name: 'list_components',
-            description: '列出所有可用的组件',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                category: {
-                  type: 'string',
-                  description: '按分类筛选',
-                  enum: ['form', 'display', 'layout', 'feedback', 'navigation', 'all'],
-                },
-              },
-            },
-          },
-          {
-            name: 'get_examples',
-            description: '获取组件的使用示例',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                component: {
-                  type: 'string',
-                  description: '组件名称',
-                },
-                scenario: {
-                  type: 'string',
-                  description: '使用场景：basic, advanced, form, validation',
-                },
-              },
-              required: ['component'],
-            },
-          },
-        ],
+        tools: TOOL_DEFINITIONS,
       };
     });
 
     // 处理工具调用
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const { name, arguments: args } = request.params;
+      const startTime = Date.now();
+
+      // 发送开始执行的反馈
+      const startingMessage = ToolFeedbackManager.createStartingFeedback(name, args || {});
+      console.error(`[MCP] ${startingMessage}`);
 
       try {
+        let result;
+        
+        // 发送处理中的反馈
+        const processingMessage = ToolFeedbackManager.createProcessingFeedback(name, args || {});
+        console.error(`[MCP] ${processingMessage}`);
+        
         switch (name) {
           case 'get_component':
-            return await this.componentService.getComponent(args?.name as string);
+            result = await this.componentService.getComponent(args?.name as string);
+            break;
           
           case 'search_components':
-            return await this.componentService.searchComponents(args?.query as string, args?.category as string);
+            result = await this.componentService.searchComponents(args?.query as string, args?.category as string);
+            break;
           
           case 'list_components':
-            return await this.componentService.listComponents((args?.category as string) || 'all');
+            result = await this.componentService.listComponents((args?.category as string) || 'all');
+            break;
           
           case 'get_examples':
-            return await this.componentService.getExamples(args?.component as string, args?.scenario as string);
+            result = await this.componentService.getExamples(args?.component as string, args?.scenario as string);
+            break;
+          
+          case 'get_component_api':
+            result = await this.componentService.getComponentAPI(args?.component as string, args?.category as string);
+            break;
+          
+          case 'search_api':
+            result = await this.componentService.searchAPI(args?.keyword as string, args?.searchIn as 'props' | 'methods' | 'all');
+            break;
+          
+          case 'compare_components_api':
+            result = await this.componentService.compareComponentsAPI(args?.components as string[]);
+            result._componentCount = args?.components?.length; // 保存组件数量以便反馈
+            break;
           
           default:
             throw new McpError(ErrorCode.MethodNotFound, `Unknown tool: ${name}`);
         }
+        
+        // 发送成功反馈
+        const successMessage = ToolFeedbackManager.createSuccessFeedback(name, result);
+        const summary = ToolFeedbackManager.createExecutionSummary(name, startTime);
+        console.error(`[MCP] ${successMessage}${summary}`);
+        
+        // 在结果中添加反馈信息
+        if (result && result.content && result.content[0]) {
+          const feedbackHeader = `🚀 **Shineout MCP 工具正在为您服务**\n\n${successMessage}\n\n---\n\n`;
+          result.content[0].text = feedbackHeader + result.content[0].text;
+        }
+        
+        return result;
       } catch (error) {
+        // 发送错误反馈
+        const errorMessage = ToolFeedbackManager.createErrorFeedback(name, error as Error);
+        console.error(`[MCP] ${errorMessage}`);
+        
         throw new McpError(
           ErrorCode.InternalError,
           `Error executing tool ${name}: ${error instanceof Error ? error.message : String(error)}`
@@ -173,13 +154,18 @@ class ShineoutClaudeServer {
   }
 
   async run() {
+    console.error('[MCP] 🚀 正在启动 Shineout MCP 服务...');
+    
     // 初始化组件数据
+    console.error('[MCP] 📊 正在加载组件数据...');
     await loadComponentData();
+    console.error('[MCP] ✅ 组件数据加载完成');
     
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
     
-    console.error('Shineout Claude MCP server running on stdio');
+    console.error('[MCP] 🎉 Shineout MCP 服务已成功启动！');
+    console.error('[MCP] 💡 可用工具：get_component, search_components, get_component_api 等');
   }
 }
 
