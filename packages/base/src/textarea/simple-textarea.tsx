@@ -71,7 +71,8 @@ const Textarea = (props: SimpleTextareaProps) => {
     }
   }, [focused]);
 
-  let textareaEl = <textarea {...textareaProps} />;
+  const textareaElProps = util.removeProps(textareaProps, { formName: undefined })
+  let textareaEl = <textarea {...textareaElProps} />;
 
   if (typeof renderTextarea === 'function') {
     textareaEl = renderTextarea(textareaEl);

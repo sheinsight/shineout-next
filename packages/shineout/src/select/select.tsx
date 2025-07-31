@@ -26,14 +26,14 @@ const jssStyle = {
   common: useCommonStyle,
 };
 
-function SelectComponent<DataItem, Value>(props: SelectProps<DataItem, Value>) {
+function Select<DataItem, Value>(props: SelectProps<DataItem, Value>) {
   return <BaseSelect jssStyle={jssStyle} {...props} />;
 }
 
-function Select<DataItem, Value>(props: SelectPropsA<DataItem, Value>): JSX.Element;
-function Select<DataItem, Value>(props: SelectPropsB<DataItem, Value>): JSX.Element;
-function Select<DataItem, Value>(props: SelectProps<DataItem, Value>) {
-  return useFieldCommon(props, SelectComponent<DataItem, Value>, 'array');
+function SelectComponent<DataItem, Value>(props: SelectPropsA<DataItem, Value>): JSX.Element;
+function SelectComponent<DataItem, Value>(props: SelectPropsB<DataItem, Value>): JSX.Element;
+function SelectComponent<DataItem, Value>(props: SelectProps<DataItem, Value>) {
+  return useFieldCommon(props, Select<DataItem, Value>, 'array');
 }
 
-export default Select;
+export default SelectComponent;
