@@ -297,7 +297,7 @@ export class SchemaBuilder {
     }
   }
 
-  getSchema(): SchemaProperty {
+  getFormSchema(): SchemaProperty {
     return this.schema;
   }
 }

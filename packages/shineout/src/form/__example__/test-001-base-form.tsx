@@ -37,7 +37,7 @@ export default () => {
       </Form.Item>
 
       <Form.Item label=''>
-        <Button onClick={() => console.log(form.getSchema())}>Get Schema</Button>
+        <Button onClick={() => console.log(form.getFormSchema())}>Get Schema</Button>
       <Form.Submit>Submit</Form.Submit>
       <Form.Reset>Reset</Form.Reset>
       </Form.Item>

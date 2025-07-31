@@ -65,5 +65,5 @@ export interface FormRef<Value = any> {
    * @en get form schema
    * @cn 获取表单的 schema
    */
-  getSchema: () => SchemaProperty | undefined;
+  getFormSchema: () => SchemaProperty | undefined;
 }

@@ -85,7 +85,7 @@ export interface FormRef<FormValue> {
    * @cn 获取表单结构的 JSON Schema。返回一个标准的 JSON Schema 对象，描述表单的结构、字段类型、验证规则和约束。用于表单文档化、验证以及与基于 JSON Schema 的工具集成
    * @version 3.8.0
    */
-  getSchema: () => any;
+  getFormSchema: () => any;
 }
 export interface FormProps<V extends ObjectType>
   extends Partial<BaseFormProps<V>>,

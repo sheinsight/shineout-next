@@ -613,7 +613,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     insertError,
     spliceError,
     scrollToField,
-    getSchema: () => context.schema?.getSchema(),
+    getFormSchema: () => context.schema?.getFormSchema(),
   });
 
   const formConfig: ProviderProps['formConfig'] = React.useMemo(
