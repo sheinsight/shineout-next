@@ -87,7 +87,7 @@ class ShineoutClaudeServer {
           
           case 'compare_components_api':
             result = await this.componentService.compareComponentsAPI(args?.components as string[]);
-            result._componentCount = args?.components?.length; // 保存组件数量以便反馈
+            (result as any)._componentCount = (args?.components as string[] | undefined)?.length; // 保存组件数量以便反馈
             break;
           
           default:

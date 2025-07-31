@@ -96,16 +96,16 @@ async function updateFromIndividualFiles(): Promise<void> {
           const existing = componentsIndex[componentData.name];
           if (existing && (!existing.props || existing.props.length === 0) && 
               componentData.props && componentData.props.length > 0) {
-            console.log(`Updating ${componentData.name} with ${componentData.props.length} props`);
+            console.error(`[MCP Data] Updating ${componentData.name} with ${componentData.props.length} props`);
             componentsIndex[componentData.name] = componentData;
           }
         } catch (error) {
-          console.warn(`Failed to update from ${file}:`, error);
+          console.error(`[MCP Data] Failed to update from ${file}:`, error);
         }
       }
     }
   } catch (error) {
-    console.warn('Failed to update from individual files:', error);
+    console.error('[MCP Data] Failed to update from individual files:', error);
   }
 }
 

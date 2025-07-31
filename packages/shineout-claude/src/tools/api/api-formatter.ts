@@ -287,14 +287,14 @@ export class APIFormatter {
     for (const [key, items] of grouped) {
       if (items.length > 0) {
         const example = items[0].example;
-        doc += `#### 使用 `${key}` 的示例\n\n`;
+        doc += `#### 使用 \`${key}\` 的示例\n\n`;
         if (example.description) {
           doc += `${example.description}\n\n`;
         }
         
         // 提取相关代码片段
         const codeSnippet = this.extractRelevantCode(example.code, key);
-        doc += ````tsx\n${codeSnippet}\n```\n\n`;
+        doc += `\`\`\`tsx\n${codeSnippet}\n\`\`\`\n\n`;
       }
     }
 
@@ -318,7 +318,7 @@ export class APIFormatter {
       
       const cleanCode = this.extractCleanCode(basicExample.code);
       const truncatedCode = this.truncateCode(cleanCode, 600);
-      doc += ````tsx\n${truncatedCode}\n```\n\n`;
+      doc += `\`\`\`tsx\n${truncatedCode}\n\`\`\`\n\n`;
     }
 
     // 其他重要示例
@@ -332,7 +332,7 @@ export class APIFormatter {
         }
         const cleanCode = this.extractCleanCode(example.code);
         const truncatedCode = this.truncateCode(cleanCode, 400);
-        doc += ````tsx\n${truncatedCode}\n```\n\n`;
+        doc += `\`\`\`tsx\n${truncatedCode}\n\`\`\`\n\n`;
       }
     }
 

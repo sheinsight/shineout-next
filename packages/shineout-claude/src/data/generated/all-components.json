@@ -7399,10 +7399,10 @@
       },
       {
         "name": "columns",
-        "type": "TableColumn[]",
+        "type": "CommonColumn[]",
         "required": false,
         "defaultValue": "[]",
-        "description": "列配置数组。详见 TableColumn 文档"
+        "description": "列配置数组。详见 Table columns 配置"
       },
       {
         "name": "disabled",
