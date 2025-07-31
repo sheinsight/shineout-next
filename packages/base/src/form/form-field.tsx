@@ -1,5 +1,13 @@
 import React, { useContext, useMemo } from 'react';
-import { useFormConfig, useFormControl, usePersistFn, util, FieldsetContext } from '@sheinx/hooks';
+import {
+  useFormConfig,
+  useFormControl,
+  usePersistFn,
+  util,
+  FieldsetContext,
+  FormItemContext,
+  useFormSchema,
+} from '@sheinx/hooks';
 import { FieldControlProps, FormFieldProps } from './form-field.type';
 import { FormFieldContext } from './form-field-context';
 
@@ -43,22 +51,23 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
 
   const { fieldId, separator } = useContext(FormFieldContext);
   const formFieldId = useMemo(() => {
-    if(!formConfig.formName) return
-    if(childrenProps.id) return childrenProps.id
+    if (!formConfig.formName) return;
+    if (childrenProps.id) return childrenProps.id;
 
-    if(Array.isArray(formControl.name)) {
-      return formControl.name.map(name => util.getFieldId(name, formConfig.formName)).join(separator)
+    if (Array.isArray(formControl.name)) {
+      return formControl.name
+        .map((name) => util.getFieldId(name, formConfig.formName))
+        .join(separator);
     }
 
-    return util.getFieldId(formControl.name, formConfig.formName)
-  }, [formControl.name, formConfig.formName, childrenProps.id])
+    return util.getFieldId(formControl.name, formConfig.formName);
+  }, [formControl.name, formConfig.formName, childrenProps.id]);
 
   const { path: fieldsetPath } = useContext(FieldsetContext);
   const fieldsetPathId = useMemo(() => {
-    if(!formConfig.formName) return
-    return util.getFieldId(fieldsetPath, formConfig.formName)
-  }
-  , [fieldsetPath, formConfig.formName])
+    if (!formConfig.formName) return;
+    return util.getFieldId(fieldsetPath, formConfig.formName);
+  }, [fieldsetPath, formConfig.formName]);
 
   const cloneProps: FieldControlProps<T> = {
     onChange: handleChange,
@@ -74,17 +83,40 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     cloneProps.disabled = true;
   }
 
-  let finalChildren
+  let finalChildren;
   if (util.isFunc(children)) {
-    finalChildren = children(cloneProps)
+    finalChildren = children(cloneProps);
   } else if (React.isValidElement(children)) {
-    finalChildren = React.cloneElement(children, cloneProps)
+    finalChildren = React.cloneElement(children, cloneProps);
   } else {
-    finalChildren = children
+    finalChildren = children;
+  }
+
+  const formSchema = useFormSchema();
+  const { label } = useContext(FormItemContext);
+  const finalFieldId = formFieldId || fieldId || fieldsetPathId;
+
+  // 只有当 formConfig.formName 存在时才运行 schema 逻辑
+  if (formConfig.formName && formSchema && finalFieldId) {
+    const schemaFields = finalFieldId.split(separator) || [];
+    const schemaMeta = formSchema.buildSchemaFromComponent({
+      componentElement: finalChildren,
+      rules: props.rules,
+      label,
+      finalFieldId,
+      separator,
+    });
+
+    schemaFields.forEach((field: string) => {
+      formSchema.updateSchema({
+        path: util.getOriginField(field, formConfig.formName),
+        meta: schemaMeta,
+      });
+    });
   }
 
   return (
-    <FormFieldContext.Provider value={{ fieldId: formFieldId || fieldId || fieldsetPathId, separator }}>
+    <FormFieldContext.Provider value={{ fieldId: finalFieldId, separator }}>
       {finalChildren}
     </FormFieldContext.Provider>
   );

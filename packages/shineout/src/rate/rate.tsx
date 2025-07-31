@@ -9,12 +9,12 @@ const jssStyle = {
 
 type InnerProps = Omit<BaseRateProps, keyof ArgProps>;
 
-const BaseRate = (props: BaseRateProps) => {
+const Rate = (props: BaseRateProps) => {
   return <UnStyleRate jssStyle={jssStyle} {...props} />;
 };
 
-const Rate = (props: RateProps) => {
-  return useFieldCommon(props, BaseRate, 'number');
+const WrappedRate = (props: RateProps) => {
+  return useFieldCommon(props, Rate, 'number');
 };
 
 export default (
@@ -23,7 +23,7 @@ export default (
   opts?: InnerProps,
 ) => {
   const RateIns = (props: RateProps) => {
-    return <Rate {...opts} background={background} front={front || background} {...props} />;
+    return <WrappedRate {...opts} background={background} front={front || background} {...props} />;
   };
   return RateIns;
 };

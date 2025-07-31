@@ -79,6 +79,13 @@ export interface FormRef<FormValue> {
    * @cn 滚动页面到指定表单字段的位置。name 参数为字段路径，支持 'name'、'user.email'、'list[0].id' 等格式。需要 Form 设置 name 属性才能正常工作。scrollIntoViewOptions 参数符合标准 ScrollIntoViewOptions 接口，可以控制滚动行为、位置等。常用于错误定位、分步表单导航等
    */
   scrollToField: (name: string, scrollIntoViewOptions?: ScrollIntoViewOptions) => void;
+
+  /**
+   * @en Get the JSON Schema of the form structure. Returns a standard JSON Schema object that describes the form's structure, field types, validation rules, and constraints. Useful for form documentation, validation, and integration with JSON Schema-based tools
+   * @cn 获取表单结构的 JSON Schema。返回一个标准的 JSON Schema 对象，描述表单的结构、字段类型、验证规则和约束。用于表单文档化、验证以及与基于 JSON Schema 的工具集成
+   * @version 3.8.0
+   */
+  getFormSchema: () => any;
 }
 export interface FormProps<V extends ObjectType>
   extends Partial<BaseFormProps<V>>,

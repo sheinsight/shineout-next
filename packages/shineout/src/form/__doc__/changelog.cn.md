@@ -1,3 +1,10 @@
+## 3.8.0-beta.21
+2025-07-31
+
+### 🆕 Feature
+
+- `Form` 的 `FormRef` 新增 `getFormSchema` 方法，用于获取表单结构的标准 JSON Schema ([#1281](https://github.com/sheinsight/shineout-next/pull/1281))
+
 ## 3.8.0-beta.13
 2025-07-11
 
