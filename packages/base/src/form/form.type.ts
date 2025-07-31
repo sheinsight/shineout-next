@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BaseFormProps, ObjectType, SchemaProperty } from '@sheinx/hooks';
+import { BaseFormProps, ObjectType } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 
 export type KeyType = string | number | symbol;
@@ -83,8 +83,9 @@ export interface FormRef<FormValue> {
   /**
    * @en Get the JSON Schema of the form structure. Returns a standard JSON Schema object that describes the form's structure, field types, validation rules, and constraints. Useful for form documentation, validation, and integration with JSON Schema-based tools
    * @cn 获取表单结构的 JSON Schema。返回一个标准的 JSON Schema 对象，描述表单的结构、字段类型、验证规则和约束。用于表单文档化、验证以及与基于 JSON Schema 的工具集成
+   * @version 3.8.0
    */
-  getSchema: () => SchemaProperty;
+  getSchema: () => any;
 }
 export interface FormProps<V extends ObjectType>
   extends Partial<BaseFormProps<V>>,

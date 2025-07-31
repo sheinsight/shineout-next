@@ -51,7 +51,7 @@ export interface ProviderProps {
   formConfig: FormCommonConfig;
   formValue: FormContextValueType;
   formFunc: FormFunc;
-  formSchema: SchemaBuilder;
+  formSchema: SchemaBuilder | null;
   children?: ReactNode;
 }
 

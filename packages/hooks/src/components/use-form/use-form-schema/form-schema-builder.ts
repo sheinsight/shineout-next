@@ -10,57 +10,14 @@ interface SchemaMeta {
 }
 
 export interface SchemaProperty {
-  // Core JSONSchema properties
-  $schema?: string;
-  $id?: string;
-  type?: 'string' | 'number' | 'integer' | 'boolean' | 'array' | 'object' | 'null';
+  type?: string;
+  properties?: Record<string, SchemaProperty>;
+  items?: SchemaProperty;
+  required?: string[];
   title?: string;
   description?: string;
-  default?: any;
-  examples?: any[];
-  
-  // Object properties
-  properties?: Record<string, SchemaProperty>;
-  additionalProperties?: boolean | SchemaProperty;
-  required?: string[];
-  minProperties?: number;
-  maxProperties?: number;
-  
-  // Array properties
-  items?: SchemaProperty | SchemaProperty[];
-  minItems?: number;
-  maxItems?: number;
-  uniqueItems?: boolean;
-  
-  // String properties
-  minLength?: number;
-  maxLength?: number;
-  pattern?: string;
   format?: string;
-  
-  // Number properties
-  minimum?: number;
-  maximum?: number;
-  exclusiveMinimum?: number;
-  exclusiveMaximum?: number;
-  multipleOf?: number;
-  
-  // Enumeration
-  enum?: any[];
-  const?: any;
-  
-  // Conditional schemas
-  if?: SchemaProperty;
-  then?: SchemaProperty;
-  else?: SchemaProperty;
-  
-  // Composition
-  allOf?: SchemaProperty[];
-  anyOf?: SchemaProperty[];
-  oneOf?: SchemaProperty[];
-  not?: SchemaProperty;
-  
-  // Allow additional properties for extensibility
+  enum?: any;
   [key: string]: any;
 }
 
@@ -68,11 +25,9 @@ export class SchemaBuilder {
   private schema: SchemaProperty;
   constructor(formName: string) {
     this.schema = {
-      $schema: 'https://json-schema.org/draft-07/schema#',
       type: 'object',
       title: formName,
-      properties: {},
-      additionalProperties: false
+      properties: {}
     };
   }
 
