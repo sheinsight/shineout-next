@@ -169,83 +169,82 @@ export interface SelectPropsBase<DataItem, Value>
     BaseTipProps {
   jssStyle?: JssStyleType;
   /**
-   * @en custom empty copy
-   * @cn 自定义 empty 文案。与 renderOptionList 搭配使用时，emptyText 设置为 false 后将忽略该功能，如需渲染空内容可在 renderOptionList 中处理
+   * @en Custom empty state content. When used with renderOptionList, setting emptyText to false will disable this feature. You can render custom empty content in renderOptionList
+   * @cn 自定义空状态内容。与 renderOptionList 搭配使用时，将 emptyText 设置为 false 可禁用此功能，需要自定义空内容时可在 renderOptionList 中处理
    */
   emptyText?: React.ReactNode;
 
   /**
-   * @en Options data
-   * @cn 选项数据
+   * @en Array of option items to display in the dropdown list
+   * @cn 下拉列表的选项数据数组
    * @override DataItem[]
    */
-  // data treeData 的类型交给重载去实现
   data?: DataItem[];
 
   /**
-   * @en Tree data, [{children: []}]
-   * @cn 树形结构数据项，[{children: []}]
+   * @en Tree-structured data with nested children. Format: [{children: [...]}]
+   * @cn 树形结构数据，包含嵌套的子节点。格式：[{children: [...]}]
    * @override Object[]
    */
   treeData?: DataItem[];
 
   /**
-   * @en specify the name of the subdata
-   * @cn 指定子数据的属性名
+   * @en Specifies the property name for child nodes in tree data
+   * @cn 指定树形数据中子节点的属性名称
    * @default 'children'
    */
   childrenKey?: ObjectKey<DataItem>;
 
   /**
-   * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, "id" is the same thing as (d) => d.id
-   * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 "id"，相当于 (d) => d.id
+   * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, "id" is the same thing as (d) => d.id. The default value is the array index. For simple arrays (strings/numbers), this works fine. However, for object arrays, you MUST specify a proper keygen to avoid errors. Without a proper keygen, the component will use the entire object as the key, which can cause React rendering errors when renderItem defaults to (d) => d.
+   * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 "id"，相当于 (d) => d.id。默认值为数组索引。对于简单数组（字符串/数字），可以使用默认值。但对于对象数组，必须指定合适的 keygen 以避免错误。如果不指定 keygen，组件会将整个对象作为 key，当 renderItem 默认为 (d) => d 时，会导致将对象直接渲染到 DOM 中，引发 React 渲染错误。
    * @default index
    */
   keygen: KeygenType<DataItem>;
 
   /**
-   * @en In the Form, the value will be taken over by the form, and the value is invalid. Note: Do not use undefined and null as meaningful option values. When the value type is undefined and null, the component will not process data and rendering
-   * @cn 在 Form 中，value 会被表单接管，value 无效。注意，请勿将 undefined 和 null 作为有意义的选项值，当 value 类型为 undefined 和 null 时，组件将不处理数据和渲染
+   * @en The selected value(s). In Form context, this prop is managed by Form. Note: Do not use undefined or null as meaningful option values - the component will skip processing when value is undefined/null
+   * @cn 选中的值。在表单中使用时，此属性由表单管理。注意：请勿使用 undefined 或 null 作为有效选项值，当 value 为 undefined/null 时组件将跳过处理
    * @override any
    */
   value?: Value;
 
   /**
-   * @en If clearable is true, show clear value icon
-   * @cn 是否显示清除数据图标
+   * @en Shows a clear icon to remove all selected values when enabled
+   * @cn 启用时显示清除图标，可一键清空所有选中值
    * @default false
    */
   clearable?: boolean;
 
   /**
-   * @en Placeholder text
-   * @cn 占位文字
+   * @en Placeholder text displayed when no option is selected
+   * @cn 未选择任何选项时显示的占位文本
    */
   placeholder?: string;
 
   /**
-   * @en When it is true, a default [Spin](/components/Spin) component will be displayed, a custom loading icon can be passed in to replace.
-   * @cn 数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替
+   * @en Loading state indicator. Shows default Spin component when true, or accepts custom loading component
+   * @cn 加载状态指示器。为 true 时显示默认的 Spin 组件，也可传入自定义加载组件
    * @override boolean | ReactNode
    * @default false
    */
   loading?: boolean | React.ReactNode;
 
   /**
-   * @en Custom render option list header
-   * @cn 自定义渲染列表头部内容
+   * @en Custom content rendered at the top of the dropdown list
+   * @cn 自定义下拉列表顶部内容
    */
   header?: React.ReactNode;
 
   /**
-   * @en Custom render option list header
-   * @cn 自定义渲染列表底部内容
+   * @en Custom content rendered at the bottom of the dropdown list
+   * @cn 自定义下拉列表底部内容
    */
   footer?: React.ReactNode;
 
   /**
-   * @cn 自定义渲染下拉列表
-   * @en Custom render dropdown
+   * @en Custom render function for the entire dropdown list. Receives the list and loading state as parameters
+   * @cn 自定义渲染整个下拉列表。接收列表内容和加载状态作为参数
    */
   renderOptionList?: (
     list: React.ReactNode,
@@ -253,274 +252,273 @@ export interface SelectPropsBase<DataItem, Value>
   ) => React.ReactNode;
 
   /**
-   * @cn 是否展示边框
-   * @en Whether to display border
+   * @en Controls whether to display the select box border
+   * @cn 控制是否显示选择框边框
    * @default true
    */
   border?: boolean;
 
   /**
-   * @en Only display border bottom
-   * @cn 是否只展示下边框
+   * @en Shows only the bottom border for a minimal underline style
+   * @cn 仅显示底部边框，呈现下划线样式
    * @default false
    */
   underline?: boolean;
 
   /**
-   * @en Set visible of datepicker popup
-   * @cn 控制浮层显隐
+   * @en Controls the visibility of the dropdown list programmatically
+   * @cn 程序化控制下拉列表的显示/隐藏状态
    */
   open?: boolean;
 
   /**
-   * @cn 选择框的宽度
-   * @en Custom width
+   * @en Width of the select input box. Accepts number (px) or string with units
+   * @cn 选择框的宽度。可接受数字（像素）或带单位的字符串
    */
   width?: number | string;
 
   /**
-   * @cn 下拉列表的高度
-   * @en Custom width
+   * @en Maximum height of the dropdown list. Accepts number (px) or string with units
+   * @cn 下拉列表的最大高度。可接受数字（像素）或带单位的字符串
    */
   height?: number | string;
 
   /**
-   * @cn 下拉列表的宽度
-   * @en Custom width
+   * @en Width of the dropdown list. Accepts number (px) or string with units
+   * @cn 下拉列表的宽度。可接受数字（像素）或带单位的字符串
    * @default 100%
    */
   optionWidth?: number | string;
 
   /**
-   * @en The maximum number of rows for a single render. Select uses lazy render to optimize performance under large amounts of data. If your table displays more than 10 rows, you can change the value of itemsInView.
-   * @cn 单次 render 的最大行数。Select 采用了lazy render 的方式来优化在大量数据下的性能，如果你的表格显示的高度超出了 10 条，可以调整 itemsInView
+   * @en Maximum number of options rendered at once. Uses virtual scrolling for performance with large datasets. Increase if you need to display more than 10 visible items
+   * @cn 一次渲染的最大选项数。使用虚拟滚动优化大数据集性能。如需显示超过 10 个可见项，请调整此值
    * @default 10
    */
   itemsInView?: number;
 
   /**
-   * @en The height of each option. For performance reasons, Select uses a virtual list to render the options. If the option is a fixed height content, such as a fixed size ReactNode, you can adjust the lineHeight to redistribute the height of each item. When lineHeight is set to auto, dynamic virtual list will be enabled, and the actual height will be adaptive according to the content, and each item will be given a minimum height, which will follow the option height corresponding to the size property. This mode will have a certain performance overhead, please choose different modes according to the actual situation.
-   * @cn 每一条选项的高度。出于默认性能考虑，Select 采用了虚拟列表的方式渲染列表项，如果选项为高度固定内容，比如一个固定尺寸的 ReactNode，可以通过调整 lineHeight 来重新分配每一项的高度。当 lineHeight 设置为 auto 时，将开启动态虚拟列表，实际高度将根据内容自适应，并赋予每一项最小高度，最小高度跟随 size 属性对应的选项高度，该模式将有一定的性能开销，请根据实际情况选择不同的模式。
+   * @en Height of each option item. For fixed-height content, set a number. Use 'auto' for dynamic heights based on content (may impact performance with large datasets)
+   * @cn 每个选项的高度。固定高度内容请设置数字；设为 'auto' 则根据内容自适应高度（大数据集时可能影响性能）
    * @default 32
-   * @version 3.4.0 新增 auto 模式
+   * @version 3.4.0 added 'auto' mode
    */
   lineHeight?: number | 'auto';
 
   /**
-   * @en Set Position can control the different position of DatePicker
-   * @cn 弹出框位置
+   * @en Dropdown list placement position. 'auto' adjusts based on available space
+   * @cn 下拉列表弹出位置。'auto' 会根据可用空间自动调整
    * @default auto
    */
   position?: 'auto' | 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
 
   /**
-   * @en Option columns.
-   * @cn columns 大于 1 时，选项展示为多列布局模式
+   * @en Number of columns to display options. Values > 1 enable multi-column layout
+   * @cn 选项显示的列数。大于 1 时启用多列布局模式
    * @default 1
    */
   columns?: number;
 
   /**
-   * @en Title of columns multiple select
-   * @cn 多列选项多选时的标题文字
+   * @en Title displayed above columns in multi-column multi-select mode
+   * @cn 多列多选模式下，列顶部显示的标题
    */
   columnsTitle?: React.ReactNode;
 
   /**
-   * @en Data cache, if data change asynchronously, better set true
-   * @cn 是否开启数据缓存，如果数据存在动态更新的情况建议开启
+   * @en Disables value-to-data caching. By default, Select caches the mapping between values and data items for performance. When data changes frequently, set this to true to ensure the component always uses the latest data
+   * @cn 禁用值与数据项的缓存。默认情况下，Select 会缓存 value 对应的 data 项以优化性能。当 data 频繁变化时，建议设为 true 以确保组件始终使用最新数据
    * @default false
    */
   noCache?: boolean;
 
   /**
-   * @en Show dropdown arrow, only single select
-   * @cn 是否显示下拉箭头，仅针对单选情况
+   * @en Shows dropdown arrow icon (single select only)
+   * @cn 显示下拉箭头图标（仅单选模式）
    * @default true
    */
   showArrow?: boolean;
 
   /**
-   * @en onFilter Whether to select filter text after clicking the option in multi-selection situation
-   * @cn onFilter 在多选情况下点击选项后是否选中过滤文本
+   * @en In multi-select with filter, whether to select the filter text after clicking an option
+   * @cn 多选模式下启用过滤时，点击选项后是否选中过滤输入框中的文本
    * @default true
    */
   focusSelected?: boolean;
 
   /**
-   * @en When trim is true, blank characters are automatically deleted when lose focus
-   * @cn trim 为 true 时，失去焦点时会自动删除空白字符
+   * @en Automatically removes leading/trailing whitespace from input on blur
+   * @cn 失去焦点时自动删除输入内容的首尾空白字符
    * @default false
    */
   trim?: boolean;
 
   /**
-   * @en Option column width, only effective when columns > 1
-   * @cn columns 大于 1 时，选项展示为多列布局模式
+   * @en Width of each column in multi-column layout (only when columns > 1)
+   * @cn 多列布局中每列的宽度（仅在 columns > 1 时生效）
    * @default 160
    */
   columnWidth?: number;
 
   /**
-   * @en The maximum length of the input string in the Select input box
-   * @cn Select 输入框输入字符串最大长度
+   * @en Maximum character length allowed in the filter input
+   * @cn 过滤输入框允许输入的最大字符数
    */
   maxLength?: number;
 
   /**
-   * @en Set with multiple, value will separator by this
-   * @cn 多选情况下设置后，value 会处理为 separator 分隔的字符串
+   * @en In multi-select mode, joins selected values into a string using this separator
+   * @cn 多选模式下，使用此分隔符将选中值连接成字符串
    */
   separator?: string;
 
   /**
-   * @en Option list is auto adapt
-   * @cn 下拉列表宽度根据内容自由展开
+   * @en Auto-adjusts dropdown width based on content
+   * @cn 下拉列表宽度根据内容自动调整
    * @default false
    */
   autoAdapt?: boolean;
 
   /**
-   * @en Merges selected values, valid only in multiselect mode；When it is "no-repeat", the value is not repeated in the pop-up box
-   * @cn 将选中值合并，只在多选模式下有效; 为 "no-repeat" 时弹出框中不重复展示值
+   * @en Compresses multiple selected items display. true: dynamically calculates and shows '+N' based on container width; 'no-repeat': same as true but hides already selected items from popover; 'hide-popover': shows '+N' without popover
+   * @cn 压缩多选项显示。true: 根据容器宽度动态计算并显示 '+N'；'no-repeat': 与 true 相同但弹出框中不重复显示已选项；'hide-popover': 仅显示 '+N' 不显示弹出框
    * @default false
    */
   compressed?: boolean | 'no-repeat' | 'hide-popover';
 
   /**
-   * @en When compressed is True,the comptessedBound can limit the numbers of multiple selected item"s label
-   * @cn 开启多选后，指定允许展示标签数量，超过后将折叠
+   * @en Fixed number of tags to display before showing '+N'. When set, always shows this many tags regardless of container width. This provides better performance for large datasets as it avoids expensive DOM calculations
+   * @cn 固定显示的标签数量，超出部分显示 '+N'。设置后将始终显示指定数量的标签，不再根据容器宽度动态计算。对于大数据集，推荐设置此属性以避免昂贵的 DOM 计算，提升性能
    */
   compressedBound?: number;
 
   /**
-   * @en Compressed popover classname
-   * @cn 多选合并展示弹出框的类名
+   * @en CSS class name for the compressed items popover
+   * @cn 压缩项弹出框的 CSS 类名
    */
   compressedClassName?: string;
 
   /**
-   * @en Custom render compressed content
-   * @cn 自定义渲染折叠内容
+   * @en Custom render function for compressed items display
+   * @cn 自定义渲染压缩/折叠项的显示内容
    * @version 3.5.0
    */
   renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
 
   /**
-   * @en Hide the creat option while set onCreate
-   * @cn 在使用创建选项时，在选项列表中隐藏该选项，回车后直接选中
+   * @en Hides the create option from the dropdown list. Press Enter to select the created value directly
+   * @cn 从下拉列表中隐藏创建选项。按回车键直接选中创建的值
    * @default false
    */
   hideCreateOption?: boolean;
 
   /**
-   * @en Blur to select the data when filter data has only single. only work in filter
-   * @cn 当筛选数据仅为一条时，失焦后直接选中该条数据。仅在 Filter 下有效
+   * @en Auto-selects the only matching option on blur when filtering returns single result
+   * @cn 过滤结果仅剩一个选项时，失焦自动选中该选项（仅在启用过滤时有效）
    * @default false
    */
   filterSingleSelect?: boolean;
 
   /**
-   * @en default expanded nodes
-   * @cn 默认展开的节点 key（非受控）
+   * @en Initially expanded node keys for tree data (uncontrolled)
+   * @cn 树形数据中默认展开的节点 key 值（非受控）
    * @override (string | number)[]
    */
-  // Tree 组件同款属性
   defaultExpanded?: KeygenResult[];
 
   /**
-   * @en Expand all node, only in can be use in treeData
-   * @cn 默认展开全部子节点, 仅树形数据下有效
+   * @en Initially expands all tree nodes (tree data only)
+   * @cn 初始展开所有树节点（仅树形数据有效）
    * @default false
    */
   defaultExpandAll?: boolean;
 
   /**
-   * @en Expanded node
-   * @cn 展开的节点 key(受控)
+   * @en Controlled expanded node keys for tree data
+   * @cn 树形数据中展开的节点 key 值（受控）
    * @override (string | number)[]
    */
   expanded?: KeygenResult[];
 
   /**
-   * @en Whether to show the descendant nodes of the hit node after filtering
-   * @cn 筛选后是否展示命中节点的后代节点
+   * @en Shows descendant nodes of matched items when filtering tree data
+   * @cn 过滤树形数据时，显示匹配项的所有子节点
    * @default false
    */
   showHitDescendants?: boolean;
 
   /**
-   * @cn 用来转化粘贴文本中的换行
-   * @en Used to convert line breaks in pasted text
+   * @en Converts line breaks when pasting text. String replaces breaks; function transforms the text
+   * @cn 粘贴文本时转换换行符。字符串用于替换换行；函数用于转换文本
    * @default " "
    */
   convertBr?: string | ((text: string) => string);
 
   /**
-   * @en The className of the selected result content container
-   * @cn 选中结果内容容器的className
+   * @en CSS class name for selected item display. Can be string or function returning class based on value
+   * @cn 选中项显示容器的 CSS 类名。可为字符串或基于值返回类名的函数
    */
   resultClassName?: ((value: DataItem) => string) | string;
 
   /**
-   * @en When it is a string, return d[string]. When it is a function, return the result of the function
-   * @cn 为 string 时，返回 d[string]。 为 function 时，返回函数结果
+   * @en Renders each option in dropdown. String uses property value; function customizes display
+   * @cn 渲染下拉列表中的每个选项。字符串使用属性值；函数自定义显示
    * @default d => d
    */
   renderItem?: ((data: DataItem, index?: number) => React.ReactNode) | ObjectKey<DataItem>;
 
   /**
-   * @en The content displayed in the result after selecting, if not set, use renderItem
-   * @cn 为 选中后在结果中显示的内容，默认和 renderItem 相同
+   * @en Renders selected items display. Falls back to renderItem if not specified
+   * @cn 渲染选中项的显示内容。未指定时使用 renderItem
    * @default renderItem
    */
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;
 
   /**
-   * @en The way to render not matched data value
-   * @cn 渲染未匹配值的方式
+   * @en Custom render for values that don't match any option in data
+   * @cn 自定义渲染数据中不存在的值
    */
   renderUnmatched?: (value: Value extends (infer U)[] ? U : Value) => React.ReactNode;
 
   /**
-   * @en blur event callback
-   * @cn blur 事件回调
+   * @en Triggered when the select loses focus
+   * @cn 选择框失去焦点时触发
    */
   onBlur?: (e: any) => void;
 
   /**
-   * @en focus event callback
-   * @cn focus 事件回调
+   * @en Triggered when the select receives focus
+   * @cn 选择框获得焦点时触发
    */
   onFocus?: (e: any) => void;
 
   /**
-   * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering
-   * @cn onFilter 不为空时，可以输入过滤数据。onFilter 如果返回一个函数，使用这个函数做前端过滤。如果不返回，可以自行做后端过滤
+   * @en Enables filtering. Return a function for client-side filtering, or undefined for server-side filtering
+   * @cn 启用过滤功能。返回函数用于前端过滤，返回 undefined 用于后端过滤
    */
   onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
 
   /**
-   * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering
-   * @cn 设置 `onCreate` 属性，即可创建选项中不存在的条目；当 `onCreate` 为 true 时，使用默认函数 text => text；当 `onCreate` 为函数时，将此函数返回值作为新的选项插入最上方。
+   * @en Creates new options from input. true uses input as-is; function transforms input into option
+   * @cn 从输入创建新选项。true 直接使用输入值；函数将输入转换为选项
    */
   onCreate?: ((input: string | DataItem) => DataItem | string) | boolean;
 
   /**
-   * @en Expand option list while enter press
-   * @cn 回车触发下拉框展开的时候调用
+   * @en Called when Enter key is pressed to expand dropdown. Return false to prevent expansion
+   * @cn 按回车键展开下拉框时调用。返回 false 阻止展开
    */
   onEnterExpand?: (e: React.KeyboardEvent<HTMLDivElement>) => boolean;
 
   /**
-   * @en Option list collapse callback
-   * @cn 下拉列表展开/收起回调
+   * @en Triggered when dropdown opens or closes. Parameter indicates collapsed state
+   * @cn 下拉框打开/关闭时触发。参数表示是否收起状态
    */
   onCollapse?: (collapse: boolean) => void;
 
   /**
-   * @en Expand event
-   * @cn 节点展开回调，参数为当前展开节点 key 数组
+   * @en Triggered when tree nodes expand/collapse. Receives array of expanded node keys
+   * @cn 树节点展开/收起时触发。接收展开节点的 key 数组
    */
   onExpand?: (value: KeygenResult[]) => void;
 
@@ -531,67 +529,67 @@ export interface SelectPropsBase<DataItem, Value>
   // onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
 
   /**
-   * @en empty input after select value
-   * @cn 选中后是否清空输入框内容
+   * @en Clears filter input after selecting an option
+   * @cn 选中选项后清空过滤输入框
    * @default false
    */
   emptyAfterSelect?: boolean;
   /**
-   * @en ms. The delay of user input triggering filter events
-   * @cn 毫秒。用户输入触发 fitler 事件的延时
+   * @en Debounce delay (ms) for filter input
+   * @cn 过滤输入的防抖延迟（毫秒）
    * @default 400
    */
   filterDelay?: number;
   /**
-   * @en Dynamically load nodes
-   * @cn 设置 loader 属性后，未定义 children 的节点视为动态加载节点，点击展开触发 loader事件，children 为 null 或者长度为 0 视为叶子节点
+   * @en Loads children dynamically for tree nodes. Nodes without children trigger loader on expand
+   * @cn 动态加载树节点子级。无 children 的节点展开时触发加载
    */
   loader?: (key: KeygenResult, data: DataItem) => void;
   /**
-   * @en In the advanced filter mode, you can switch between the filter results and the original data for the current level by pressing the button
-   * @cn 高级筛选模式，可针对当前层级在筛选结果和原始数据间切换
+   * @en Advanced filter mode allowing toggle between filtered results and original data at current level
+   * @cn 高级过滤模式，允许在当前层级的过滤结果和原始数据间切换
    */
   onAdvancedFilter?: (text: string) => (data: DataItem) => boolean;
   /**
-   * @en There are onFilter and onCreate, select Option, automatically focus Input
-   * @cn 存在 onFilter 和 onCreate，选中 Option，自动 focus Input
+   * @en Auto-focuses filter input after selecting when filter and create are enabled
+   * @cn 启用过滤和创建功能时，选中选项后自动聚焦输入框
    * @default false
    */
   reFocus?: boolean;
 
   /**
-   * @en Whether to adjust the position of the panel automatically. When the panel is blocked by the window, the position is adjusted automatically
-   * @cn 是否开启自动调整面板位置功能。当面板被窗口遮挡时，自动调整位置
+   * @en Auto-adjusts dropdown position when blocked by viewport edges
+   * @cn 下拉框被视口边缘遮挡时自动调整位置
    * @default true
    */
   adjust?: boolean;
 
   /**
-   * @en Whether to adjust the position of the panel automatically. When the panel is blocked by the window, the position is adjusted automatically
-   * @cn 滚动加载回的调函数。当配置该属性后，下拉列表滚动到底部时触发该函数
+   * @en Triggered when scrolling to bottom of dropdown list for infinite scrolling
+   * @cn 滚动到下拉列表底部时触发，用于无限滚动加载
    * @version 3.4.0
    */
   onLoadMore?: () => void | Promise<any>;
 
   /**
-   * @en The threshold for triggering the callback function of the scroll load. When the current scroll progress reaches this value, the callback is triggered, and the maximum value is 1, that is, the scroll progress is 100%
-   * @cn 触发滚动加载回的调函数的阈值。当前滚动进度达到该值时触发，最大值为 1，即滚动进度 100%
+   * @en Scroll threshold (0-1) for triggering onLoadMore. 1 means bottom of list
+   * @cn 触发 onLoadMore 的滚动阈值（0-1）。1 表示列表底部
    * @default 1
    * @version 3.4.0
    */
   threshold?: number;
 
   /**
-   * @cn 触发打开选择面板的方式，默认为点击打开
-   * @en Trigger the way to open the selection panel, default is click to open
+   * @en Trigger mode for opening dropdown
+   * @cn 打开下拉框的触发方式
    * @default 'click'
    * @version 3.4.0
    */
   trigger?: 'click' | 'hover';
 
   /**
-   * @cn 开启搜索关键字高亮功能
-   * @en Whether to enable highlight feature
+   * @en Highlights matching text when filtering
+   * @cn 过滤时高亮匹配的文本
    * @version 3.7.0
    */
   highlight?: boolean;
