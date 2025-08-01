@@ -261,6 +261,8 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   cellFixedLeft: {
     position: 'sticky',
+    // 快速横滚，有可能出现非固定列遮挡了固定列的短暂一瞬间，因此加上这个zIndex
+    zIndex: fixedIndex + 1,
   },
   cellFixedRight: {
     position: 'sticky',
