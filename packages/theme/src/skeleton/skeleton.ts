@@ -8,6 +8,7 @@ const skeletonTokens: SkeletonTokens = {
   skeletonHeight: 'Size-8',
   skeletonBackgroundColor: 'Neutral-fill-2',
   skeletonBackgroundRadius: 'Radius-default',
+  skeletonButtonMarginTop: 'Spacing-32',
   skeletonAnimationFromColor: 'Neutral-fill-2',
   skeletonAnimationToColor: 'Neutral-fill-3',
 };

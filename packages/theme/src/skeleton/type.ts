@@ -28,14 +28,20 @@ export interface SkeletonTokens {
   skeletonBackgroundRadius: string;
   /**
    * @type {string}
+   * @token Spacing-32
+   * @description 骨架屏按钮外边距上
+   */
+  skeletonButtonMarginTop: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
-   * @description 骨架屏undefinedundefined颜色
+   * @description 骨架屏动画起始颜色
    */
   skeletonAnimationFromColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-3
-   * @description 骨架屏undefinedundefined颜色
+   * @description 骨架屏动画结束颜色
    */
   skeletonAnimationToColor: string;
 }

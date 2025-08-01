@@ -72,7 +72,8 @@ const defaultData = [
   { id: 2, name: 'Tom2', age: '28' },
 ];
 export default () => {
-  const [edits, setEdits] = useState<boolean[]>([]);
+  const [nextId, setNextId] = useState(3);
+  const [edits, setEdits] = useState<boolean[]>(new Array(defaultData.length).fill(false));
   const [formDatas, setFormDatas] = useState<FormTableValues>({
     values: defaultData,
   });
@@ -87,34 +88,36 @@ export default () => {
       width: 200,
       render: (d, index) => {
         return edits[index] ? (
-          <ItemWithRequired top={5}>
-            <Form.Item style={{ marginBottom: 0 }}>
-              <Input
-                rules={[rules.required]}
-                name={`values[${index}].name`}
-                autoFocus
-                onBlur={(e) => {
-                  setEdits((prev) => [
-                    ...prev.slice(0, index),
-                    !prev[index],
-                    ...prev.slice(index + 1),
-                  ]);
-                  setTableData({
-                    values: tableData.values.map((item, i) =>
-                      i === index ? { ...item, name: (e.target as any).value } : item,
-                    ),
-                  });
+          <Form.Item style={{ marginBottom: 0 }}>
+            <Input
+              rules={[rules.required]}
+              name={`values[${index}].name`}
+              autoFocus
+              onBlur={(e) => {
+                setEdits((prev) => {
+                  const newEdits = [...prev];
+                  newEdits[index] = !newEdits[index];
+                  return newEdits;
+                });
+                setTableData({
+                  values: tableData.values.map((item, i) =>
+                    i === index ? { ...item, name: (e.target as any).value } : item,
+                  ),
+                });
 
-                  Message.success('Data saved successfully');
-                }}
-              />
-            </Form.Item>
-          </ItemWithRequired>
+                Message.success('Data saved successfully');
+              }}
+            />
+          </Form.Item>
         ) : (
           <EditableCell
             value={d.name}
             onEdit={() => {
-              setEdits((prev) => [...prev.slice(0, index), !prev[index], ...prev.slice(index + 1)]);
+              setEdits((prev) => {
+                const newEdits = [...prev];
+                newEdits[index] = !newEdits[index];
+                return newEdits;
+              });
             }}
           />
         );
@@ -128,16 +131,17 @@ export default () => {
     {
       title: 'Operation',
       width: 100,
-      render: (d) => {
+      render: (d, index) => {
         return (
           <Link type='danger' style={{ lineHeight: '32px' }}>
             <Popover.Confirm
               title='Sure to delete?'
               onCancel={() => console.log('cancel')}
               onOk={() => {
-                const newDatas = tableData.values.filter((item) => item.id !== d.id);
+                const newDatas = tableData.values.filter((_, idx) => idx !== index);
                 setTableData({ values: newDatas });
                 setFormDatas({ values: newDatas });
+                setEdits(prev => prev.filter((_, idx) => idx !== index));
               }}
             ></Popover.Confirm>
             Delete
@@ -162,14 +166,16 @@ export default () => {
               values: [
                 ...tableData.values,
                 {
-                  id: tableData.values.length + 1,
-                  name: `Tom${tableData.values.length + 1}`,
-                  age: `${(tableData.values.length + 1) * 10 + 8}`,
+                  id: nextId,
+                  name: `Tom${nextId}`,
+                  age: `${nextId * 10 + 8}`,
                 },
               ],
             };
             setTableData(newDatas);
             setFormDatas(newDatas);
+            setEdits(prev => [...prev, false]);
+            setNextId(prev => prev + 1);
           }}
         >
           Add

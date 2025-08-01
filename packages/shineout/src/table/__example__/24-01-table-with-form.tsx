@@ -8,7 +8,10 @@
 import { useState } from 'react';
 import { Button, Form, Input, Table, TYPE, Rule, Link, Modal, Message, Popover } from 'shineout';
 
-export function ItemWithRequired(props: { children: React.ReactNode; top?: number }) {
+export function ItemWithRequired(props: { children: React.ReactNode; top?: number, disabled?: boolean }) {
+  if (props.disabled) {
+    return props.children;
+  }
   return (
     <div style={{ position: 'relative' }}>
       <span
@@ -45,7 +48,8 @@ const defaultData = [
   { id: 2, name: 'Tom2', age: '28' },
 ];
 export default () => {
-  const [edits, setEdits] = useState<boolean[]>([]);
+  const [nextId, setNextId] = useState(3);
+  const [edits, setEdits] = useState<boolean[]>(new Array(defaultData.length).fill(false));
   const [formDatas, setFormDatas] = useState<FormTableValues>({
     values: defaultData,
   });
@@ -60,11 +64,9 @@ export default () => {
       width: 200,
       render: (d, index) => {
         return edits[index] ? (
-          <ItemWithRequired top={5}>
-            <Form.Item style={{ marginBottom: 0 }}>
-              <Input rules={[rules.required]} name={`values[${index}].name`} />
-            </Form.Item>
-          </ItemWithRequired>
+          <Form.Item style={{ marginBottom: 0 }}>
+            <Input rules={[rules.required]} name={`values[${index}].name`} />
+          </Form.Item>
         ) : (
           d.name
         );
@@ -75,9 +77,11 @@ export default () => {
       width: 200,
       render: (d, index) => {
         return edits[index] ? (
-          <Form.Item style={{ marginBottom: 0 }}>
-            <Input rules={[rules.required]} name={`values[${index}].age`} />
-          </Form.Item>
+          <ItemWithRequired disabled={Number(d.age) <= 18} top={5}>
+            <Form.Item style={{ marginBottom: 0 }}>
+              <Input rules={[rules.required]} name={`values[${index}].age`} />
+            </Form.Item>
+          </ItemWithRequired>
         ) : (
           d.age
         );
@@ -92,11 +96,10 @@ export default () => {
             <Link
               type='primary'
               onClick={() => {
-                setEdits(prev => ([
-                  ...prev.slice(0, index),
-                  !prev[index],
-                  ...prev.slice(index + 1),
-                ]));
+                setEdits(prev => {
+                  const newEdits = new Array(prev.length).fill(false);
+                  return newEdits;
+                });
                 setTableData({
                   values: tableData.values.map((item, idx) =>
                     idx === index ? { ...item, ...formDatas.values[index] } : item,
@@ -108,19 +111,16 @@ export default () => {
             >
               Save
             </Link>
-            <Link type='primary' style={{ lineHeight: '32px' }}>
-              <Popover.Confirm
-                title='Sure to cancel?'
-                onCancel={() => console.log('cancel')}
-                onOk={() => {
-                  setEdits(prev => ([
-                    ...prev.slice(0, index),
-                    !prev[index],
-                    ...prev.slice(index + 1),
-                  ]));
-                }}
-              >
-              </Popover.Confirm>
+            <Link
+              type='primary'
+              style={{ lineHeight: '32px' }}
+              onClick={() => {
+                setEdits(prev => {
+                  const newEdits = new Array(prev.length).fill(false);
+                  return newEdits;
+                });
+              }}
+            >
               Cancel
             </Link>
           </>
@@ -129,11 +129,11 @@ export default () => {
           <Link
             type='primary'
             onClick={() => {
-              setEdits(prev => ([
-                ...prev.slice(0, index),
-                !prev[index],
-                ...prev.slice(index + 1),
-              ]));
+              setEdits(prev => {
+                const newEdits = new Array(prev.length).fill(false);
+                newEdits[index] = !prev[index];
+                return newEdits;
+              });
               setFormDatas({
                 values: formDatas.values.map((item, idx) => (idx === index ? { ...d } : item)),
               });
@@ -149,9 +149,10 @@ export default () => {
               title='Sure to delete?'
               onCancel={() => console.log('cancel')}
               onOk={() => {
-                const newDatas = tableData.values.filter((item) => item.id !== d.id);
+                const newDatas = tableData.values.filter((_, idx) => idx !== index);
                 setTableData({ values: newDatas });
                 setFormDatas({ values: newDatas });
+                setEdits(prev => prev.filter((_, idx) => idx !== index));
               }}
             >
             </Popover.Confirm>
@@ -178,14 +179,16 @@ export default () => {
               values: [
                 ...tableData.values,
                 {
-                  id: tableData.values.length + 1,
-                  name: `Tom${tableData.values.length + 1}`,
-                  age: `${(tableData.values.length + 1) * 10 + 8}`,
+                  id: nextId,
+                  name: `Tom${nextId}`,
+                  age: `${nextId * 10 + 8}`,
                 },
               ],
             }
             setTableData(newDatas);
             setFormDatas(newDatas);
+            setEdits(prev => [...prev, false]);
+            setNextId(prev => prev + 1);
           }}
         >
           Add
