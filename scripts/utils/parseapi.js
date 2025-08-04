@@ -46,7 +46,7 @@ function parseApi(pack, filePath) {
       result = result.replaceAll(item, parseTypes[item]);
     });
     return result
-      .replaceAll('| undefined', '')
+      .replace(/\s*\|\s*undefined(?!\w)/g, '') // 更精确地匹配 | undefined，避免影响其他类型
       .replaceAll('React.', '')
       .replace(/\r?\n|\r/g, '');
   }
@@ -58,7 +58,9 @@ function parseApi(pack, filePath) {
     properties.forEach((property) => {
       const isOptional = property.isOptional();
       const name = property.getName();
-      const pt = property.getDeclarations()[0].getType().getText().replaceAll('| undefined', '');
+      const originalType = property.getDeclarations()[0].getType().getText();
+      const pt = originalType.replace(/\s*\|\s*undefined(?!\w)/g, ''); // 更精确地匹配 | undefined
+      
       strArr.push(` ${name}${isOptional ? '?:' : ':'} ${pt}`);
     });
 
@@ -123,11 +125,25 @@ function parseApi(pack, filePath) {
   }
 
   // 获取类型字符串
-  function getTypeStr(override, type, optional) {
+  function getTypeStr(override, type, optional, propertyName) {
     if (override && override !== 'union') {
       return override;
     }
     let text = type.getText();
+    
+    // 特殊处理：检查是否是 React.ReactNode | boolean 的情况 (仅针对 description 属性)
+    if (type.isUnion() && propertyName === 'description') {
+      const unionTypes = type.getUnionTypes().map(t => t.getText());
+      const hasTrue = unionTypes.includes('true');
+      const hasFalse = unionTypes.includes('false');
+      const hasReactNode = text.includes('React.ReactNode');
+      
+      // 只有当同时存在 true, false 和 ReactNode 时才认为是 ReactNode | boolean
+      if (hasTrue && hasFalse && hasReactNode) {
+        text = 'React.ReactNode | boolean';
+      }
+    }
+    
     if (override === 'union') {
       text = type
         .getUnionTypes()
@@ -196,6 +212,7 @@ function parseApi(pack, filePath) {
 
         const nodeType = declarations1[0].getType();
         const optional = property.isOptional();
+        
         const typeText = getTypeStr(
           propertyJsDocTags.override,
           nodeType,
