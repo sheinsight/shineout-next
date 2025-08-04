@@ -209,6 +209,7 @@ function parseApi(pack, filePath) {
             en: convertQuotes(propertyJsDocTags.en),
             default: convertQuotes(propertyJsDocTags.default),
             version: convertQuotes(propertyJsDocTags.version),
+            when: convertQuotes(propertyJsDocTags.when),
           },
           required: !optional,
           type: convertQuotes(typeText),
