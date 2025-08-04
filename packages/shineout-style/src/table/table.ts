@@ -206,7 +206,10 @@ const tableStyle: JsStyles<TableClassType> = {
         '&$cellFixedLeft': {
           position: 'sticky',
           top: 'auto',
-          zIndex: fixedIndex + 1,
+          zIndex: fixedIndex,
+        },
+        '&$cellFixedRight': {
+          zIndex: fixedIndex,
         },
       }
     },
