@@ -135,7 +135,7 @@ const Popover = (props: PopoverProps) => {
 
   context.rendered = true;
 
-  const childrened = util.isFunc(children) ? children(closePop) : children;
+  const childrened = util.isFunc(children) ? (open ? children(closePop) : null) : children;
   const containerStyle = {
     borderColor: props.border,
     backgroundColor: props.background,
