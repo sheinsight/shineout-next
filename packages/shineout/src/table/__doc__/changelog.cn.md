@@ -8,7 +8,7 @@
 2025-07-31
 
 ### 🐞 BugFix
-- 修复 Table` 虚拟列表模式下合并行 `checkbox` 状态丢失的问题 ([#1280](https://github.com/sheinsight/shineout-next/pull/1280))
+- 修复 `Table` 虚拟列表模式下合并行 `checkbox` 状态丢失的问题 ([#1280](https://github.com/sheinsight/shineout-next/pull/1280))
 
 ## 3.7.9-beta.2
 2025-07-30
