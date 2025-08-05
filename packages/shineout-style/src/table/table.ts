@@ -179,12 +179,15 @@ const tableStyle: JsStyles<TableClassType> = {
     '$sticky > &': {
       zIndex: headerIndex,
     },
-    '& table th': {
+    '$wrapper & table th': {
       zIndex: fixedFixedIndex + 1,
       '&$cellFixedLeft': {
         position: 'sticky',
         top: 'auto',
         zIndex: fixedFixedIndex + 2,
+      },
+      '&$cellFixedRight': {
+        zIndex: fixedFixedIndex + 3,
       },
     },
   },
@@ -269,6 +272,7 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   cellFixedRight: {
     position: 'sticky',
+    zIndex: fixedFixedIndex,
   },
   cellAlignLeft: { textAlign: 'left' },
   cellAlignCenter: { textAlign: 'center' },
