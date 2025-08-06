@@ -1,28 +1,194 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio[Base] should render correctly  1`] = `
-<div
-  class="soui-radio soui-radio-wrapper"
+<form
+  class="soui-form soui-form-wrapper"
 >
-  <input
-    style="display: none;"
-    tabindex="0"
-    type="radio"
-  />
-  <span
-    class="soui-radio-indicator-wrapper"
+  <div
+    class="soui-radio-group soui-radio-group-block"
+    style="display: inline-block; margin-top: 24px;"
   >
-    <span
-      class="soui-radio-indicator"
-      tabindex="1"
-    />
-  </span>
-  <span
-    class="soui-radio-desc"
-  >
-    Option
-  </span>
-</div>
+    <div
+      class="soui-radio soui-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="soui-radio-indicator-wrapper"
+      >
+        <span
+          class="soui-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="soui-radio-desc"
+      >
+        <div
+          class="soui-radio-group"
+        >
+          <div
+            class="soui-radio soui-radio-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              red
+            </span>
+          </div>
+          <div
+            class="soui-radio soui-radio-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              orange
+            </span>
+          </div>
+          <div
+            class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              yellow
+            </span>
+          </div>
+          <div
+            class="soui-radio soui-radio-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              green
+            </span>
+          </div>
+          <div
+            class="soui-radio soui-radio-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              cyan
+            </span>
+          </div>
+          <div
+            class="soui-radio soui-radio-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              blue
+            </span>
+          </div>
+          <div
+            class="soui-radio soui-radio-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="soui-radio-indicator-wrapper"
+            >
+              <span
+                class="soui-radio-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="soui-radio-desc"
+            >
+              violet
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</form>
 `;
 
 exports[`Radio[Base] should render correctly about block 1`] = `
