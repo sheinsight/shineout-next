@@ -380,6 +380,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     scrollToIndex,
     scrollColumnByLeft,
     scrollColumnIntoView,
+    rowSpanInfo,
   };
 };
 

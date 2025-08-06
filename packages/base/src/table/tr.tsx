@@ -59,6 +59,7 @@ interface TrProps
   isSelect: boolean;
   disabled?: boolean;
   scrolling?: boolean;
+  selectData?: any;
 }
 
 const Tr = (props: TrProps) => {
@@ -257,6 +258,7 @@ const Tr = (props: TrProps) => {
     }
 
     if (col.type === 'checkbox') {
+      const selectData = props.selectData || data;
       const instance = (
         <div className={tableClasses?.iconWrapper}>
           {props.radio ? (
@@ -267,9 +269,9 @@ const Tr = (props: TrProps) => {
               disabled={props.disabled}
               onChange={(value: boolean) => {
                 if (value) {
-                  props.datum.add(data);
+                  props.datum.add(selectData);
                 } else {
-                  props.datum.remove(data);
+                  props.datum.remove(selectData);
                 }
               }}
             />
@@ -282,12 +284,12 @@ const Tr = (props: TrProps) => {
               onChange={(_value, check) => {
                 if (check) {
                   props.datum.add(
-                    data,
+                    selectData,
                     props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
                   );
                 } else {
                   props.datum.remove(
-                    data,
+                    selectData,
                     props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
                   );
                 }

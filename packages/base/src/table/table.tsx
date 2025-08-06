@@ -569,6 +569,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                   data={virtualInfo.data}
                   setRowHeight={virtualInfo.setRowHeight}
                   scrolling={scrolling}
+                  virtualRowSpanInfo={virtualInfo.rowSpanInfo}
+                  fullData={treeData}
                 />
               </table>
             )}
