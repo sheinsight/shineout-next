@@ -2,13 +2,8 @@
 2025-08-04
 
 ### 🐞 BugFix
-- 修复 `Table` 快速横滚时可能出现的右固定列被瞬时遮挡一下的问题 ([#1290](https://github.com/sheinsight/shineout-next/pull/1290))
+- 修复 `Table` 快速横滚时可能出现的固定列被瞬时遮挡一下的问题 ([#1287](https://github.com/sheinsight/shineout-next/pull/1287))([#1290](https://github.com/sheinsight/shineout-next/pull/1290))
 
-## 3.7.9-beta.5
-2025-08-01
-
-### 🐞 BugFix
-- 修复 `Table` 快速横滚时可能出现的左固定列被瞬时遮挡一下的问题 ([#1287](https://github.com/sheinsight/shineout-next/pull/1287))
 
 ## 3.7.9-beta.4
 2025-07-31
