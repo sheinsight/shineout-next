@@ -143,6 +143,7 @@ const Popover = (props: PopoverProps) => {
   // Only execute functional children after popover has been opened at least once
   const childrened = util.isFunc(children) ? (context.hasOpened ? children(closePop) : null) : children;
   const containerStyle = {
+    display: open ? undefined : 'none',
     borderColor: props.border,
     backgroundColor: props.background,
   };

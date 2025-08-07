@@ -371,7 +371,7 @@ const Modal = (props: ModalContentProps) => {
           props.position === 'bottom' && modalClasses?.wrapperDrawerBottom,
         )}
         onAnimationEnd={handleAnimationEnd}
-        style={{ background: props.maskBackground, zIndex: props.zIndex }}
+        style={{ background: props.maskBackground, zIndex: props.zIndex, display: !visible && !animation ? 'none' : undefined }}
       >
         <div
           className={modalClasses?.mask}
