@@ -38,26 +38,35 @@ React.useEffect(() => {
 ## 受影响的使用场景
 
 ### 核心问题分析
-这个问题的本质是：在并发渲染场景下，当表单组件使用数组形式的 name 属性时，初始值可能无法正确设置。虽然 changelog 中提到了 DatePicker，但实际上所有支持数组 name 的表单组件都可能受影响。
+**重要说明**：3.6.1-beta.4 的修复在 3.6.2-beta.6 中被回退了。团队认为使用 `reserveAble` 属性更符合组件的设计原则。
 
-### 场景 1: 任何使用数组 name 的表单组件
-**检查点**: 查 Form 中所有使用数组 name 的组件
+原始问题：在 Form.Flow 中直接通过 `datum.set` 设置表单值时，在并发渲染场景下可能出现值被覆盖的情况。这个问题的根本原因是 `updateValue()` 函数的执行时机与组件渲染周期的冲突。
+
+### 场景 1: Form.Flow 中使用 datum.set 设置多个字段（主要风险点）
+**检查点**: 查 Form.Flow 中使用 datum.set 同时设置多个字段的场景
 ```jsx
-// 需要检查的代码模式 - 不限于 DatePicker
-<Form value={value} onChange={onChange}>
-  {/* DatePicker 数组 name */}
-  <DatePicker name={['startDate', 'endDate']} range />
-  
-  {/* Form.Field 包裹的自定义组件 */}
-  <Form.Field name={['firstName', 'lastName']}>
-    <CustomInput />
-  </Form.Field>
-  
-  {/* 其他组件使用 JSON path 字符串格式 */}
-  <Input name="user.info.name" />
-  <Select name="config.options" data={options} />
-</Form>
+// 需要检查的代码模式 - 这是最典型的问题场景
+<Form.Flow>
+  {(datum) => {
+    return (
+      <Select 
+        onChange={(v) => {
+          // 同时设置多个字段值
+          datum?.set({
+            field1: value1,
+            field2: value2,
+            // ...
+          })
+        }}
+      />
+    )
+  }}
+</Form.Flow>
 ```
+
+**解决方案**：
+1. 对于使用数组 name 的组件（如 DatePicker range），添加 `reserveAble` 属性
+2. 或避免在 onChange 中直接使用 datum.set，改用表单的受控模式
 
 ### 场景 2: 受控表单中的条件渲染
 **检查点**: 查 Form 受控模式下根据条件切换渲染使用数组 name 的组件
@@ -75,21 +84,24 @@ const [showRange, setShowRange] = useState(false);
 </Form>
 ```
 
-### 场景 3: 动态设置表单值的场景
-**检查点**: 查在组件 onChange 回调中直接修改 formValue 并立即设置的场景
+### 场景 2: 条件渲染与数组 name 组件的组合
+**检查点**: 查根据条件切换使用数组 name 的组件场景
 ```jsx
-// 需要检查的代码模式
-<Select
-  onChange={(v) => {
-    const newValue = {
-      ...formValue,
-      field1: '',
-      field2: v === 1 ? 'default' : ''
-    };
-    setFormValue(newValue); // 立即设置新值
-  }}
-/>
+// 需要检查的代码模式 - 用户示例中的典型场景
+{formValue.timeType === 1 ? (
+  // 单独的日期选择器
+  <DatePicker name='effectiveTimeBegin' />
+) : (
+  // 范围日期选择器，使用数组 name
+  <DatePicker 
+    range
+    name={['effectiveTimeBegin', 'effectiveTimeEnd']}
+    // 注意：需要添加 reserveAble 属性
+  />
+)}
 ```
+
+**风险说明**：条件切换时，如果没有设置 `reserveAble`，组件卸载时会清除对应的表单值
 
 ### 场景 4: Form.FieldSet 中的数组字段
 **检查点**: 查 Form.FieldSet 内部使用数组 name 的场景
@@ -113,8 +125,23 @@ const [showRange, setShowRange] = useState(false);
 
 ## Breaking Changes
 
-无破坏性变更
+无直接的破坏性变更，但此修复在 3.6.2-beta.6 中被回退
 
 ## 风险等级
 
-低风险 - 修复了并发渲染场景下的初始值设置问题，不会影响现有功能的正常使用
+**实际影响极小**：
+- 此修复仅存在于 3.6.1-beta.4 ~ 3.6.2-beta.5 这个狭窄的 beta 版本区间
+- 3.6.1 正式版包含此修复，但 3.6.2 正式版已回退
+- **对于正式版用户**：如果直接从 3.6.0 或更早升级到 3.6.2 或更高，可完全忽略此变更
+
+**仅以下情况需要关注**：
+1. 当前使用 3.6.1 正式版，准备升级到 3.6.2 或更高版本
+2. 当前使用 3.6.1-beta.4 ~ 3.6.2-beta.5 之间的 beta 版本
+
+**解决方案**：
+为使用数组 name 的组件添加 `reserveAble` 属性即可
+
+## 版本修复历史
+
+1. **3.6.1-beta.4**：将 `updateValue()` 移入 useEffect 以解决并发渲染问题
+2. **3.6.2-beta.6**：回退上述修复，恢复原有逻辑，推荐使用 `reserveAble` 属性解决问题

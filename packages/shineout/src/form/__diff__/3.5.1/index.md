@@ -20,41 +20,45 @@
 ## 代码变更分析
 
 ### 修改文件
-涉及 Form.FieldSet 组件的校验逻辑处理
+- `packages/base/src/form/form-fieldset.tsx`
+- `packages/base/src/form/form-item.tsx`
+- `packages/hooks/src/components/use-form/use-form-control/use-form-control.ts`
+- `packages/hooks/src/components/use-form/use-form-fieldset/use-form-fieldset.ts`
+- `packages/hooks/src/components/use-form/use-form.ts`
 
 ### 关键改动
-修复了当自定义校验函数返回 Error 数组时，FieldSet 无法正确处理校验结果的问题。
+修复了 FieldSet 处理自定义校验函数返回值的逻辑：
+1. 正确处理稀疏 Error 数组（部分索引为 undefined）
+2. 支持嵌套对象结构（如 `{ fieldName: Error }` 格式）
+3. 避免内部解析时的类型错误
 
 ## 受影响的使用场景
 
 ### 核心问题分析
-当使用 Form.FieldSet 管理数组数据，并且自定义校验规则返回 Error 数组时，校验结果无法正确显示。
+当使用 Form.FieldSet 管理数组数据，并且自定义校验规则返回 Error 数组时，特别是返回稀疏数组（仅部分索引有错误）或嵌套对象结构时，FieldSet 内部处理逻辑没有考虑这些场景，导致解析错误报错。
 
-### 场景 1: FieldSet 数组项校验
-**检查点**: 查使用 Form.FieldSet 管理数组数据并有自定义校验规则的场景
+### 场景 1: FieldSet 返回稀疏 Error 数组（最典型问题）
+**检查点**: 查 Form.FieldSet 校验函数返回稀疏数组或嵌套对象的场景
 ```jsx
-// 需要检查的代码模式
-const validateItems = (value, formData, callback) => {
-  // 返回 Error 数组进行批量校验
-  const errors = [];
+// 需要检查的代码模式 - 用户实际遇到的问题示例
+const isExist: RuleFunc = (values, _, callback: any) => {
+  const result: any[] = []  // 稀疏数组
+  const valueMap: ValueMap = {}
   
-  if (!Array.isArray(value)) {
-    callback(new Error('数据格式错误'));
-    return;
-  }
-  
-  value.forEach((item, index) => {
-    if (!item.name) {
-      errors[index] = new Error(`第${index + 1}项的名称不能为空`);
+  values.forEach(({ name }: Value, i: number) => {
+    if (!name) return
+    if (valueMap[name]) {
+      // 仅在有错误的索引位置设置值，其他位置为 undefined
+      result[i] = { name: new Error(`Name "${name}" is existed.`) }
+    } else {
+      valueMap[name] = true
     }
-    if (item.price < 0) {
-      errors[index] = new Error(`第${index + 1}项的价格不能为负数`);
-    }
-  });
+  })
   
-  // 3.5.1 之前：返回 Error 数组可能导致校验异常
-  callback(errors.some(e => e) ? errors : true);
-};
+  // 3.5.1 之前：返回包含嵌套对象的稀疏数组会导致解析错误
+  // 例如：[undefined, {name: Error}, undefined, {name: Error}]
+  callback(result.length > 0 ? result : true)
+}
 
 <Form>
   <Form.FieldSet 
@@ -76,8 +80,8 @@ const validateItems = (value, formData, callback) => {
 </Form>
 ```
 
-### 场景 2: FieldSet 的 empty 属性使用
-**检查点**: 查 FieldSet 使用 empty 属性且有校验规则的场景
+### 场景 2: 返回简单 Error 数组
+**检查点**: 查 FieldSet 校验函数返回简单 Error 数组的场景
 ```jsx
 // 需要检查的代码模式
 const validateUsers = (users, formData, callback) => {
@@ -123,8 +127,8 @@ const validateUsers = (users, formData, callback) => {
 </Form>
 ```
 
-### 场景 3: FieldSet 使用 onChange 回调
-**检查点**: 查 FieldSet 子项使用 onChange 并有校验的场景
+### 场景 3: 混合返回格式
+**检查点**: 查 FieldSet 校验函数根据不同条件返回不同格式错误的场景
 ```jsx
 // 需要检查的代码模式
 const validateProducts = (products, formData, callback) => {
@@ -292,35 +296,26 @@ const validateOrders = (orders, formData, callback) => {
 </Form>
 ```
 
-### 场景 6: 动态错误信息
-**检查点**: 查根据数据动态生成错误信息数组的场景
+### 场景 6: 检查重复项的校验
+**检查点**: 查检查数组项重复并返回稀疏错误数组的场景
 ```jsx
-// 需要检查的代码模式
-const dynamicValidation = (items, formData, callback) => {
-  if (!Array.isArray(items)) {
-    callback(true);
-    return;
-  }
-  
-  const errors = [];
-  const nameMap = {};
+// 需要检查的代码模式 - 类似用户提供的 isExist 函数
+const checkDuplicate = (items, formData, callback) => {
+  const errors = [];  // 稀疏数组
+  const seen = {};
   
   items.forEach((item, index) => {
-    // 检查重复
-    if (item.name && nameMap[item.name]) {
-      errors[index] = new Error(`名称"${item.name}"与第${nameMap[item.name]}项重复`);
-    } else if (item.name) {
-      nameMap[item.name] = index + 1;
-    }
-    
-    // 检查关联
-    if (item.parentId && !items.find(i => i.id === item.parentId)) {
-      errors[index] = new Error('父级项目不存在');
+    if (item.key && seen[item.key]) {
+      // 仅在重复项处设置错误
+      errors[index] = new Error(`Key "${item.key}" 已存在`);
+    } else if (item.key) {
+      seen[item.key] = true;
     }
   });
   
-  // 3.5.1 之前：返回错误数组可能导致校验异常
-  callback(errors.some(e => e) ? errors : true);
+  // 3.5.1 之前：返回稀疏数组可能导致解析异常
+  // errors 可能是：[undefined, undefined, Error, undefined, Error]
+  callback(errors.filter(Boolean).length > 0 ? errors : true);
 };
 
 <Form>
@@ -381,4 +376,15 @@ const dynamicValidation = (items, formData, callback) => {
 
 ## 风险等级
 
-低风险 - 修复了特定场景下的校验问题，提升了 FieldSet 的校验可靠性
+低风险 - 修复了特定场景下的校验问题，提升了 FieldSet 处理复杂校验返回值的能力
+
+## 问题特征总结
+
+**如果你的项目满足以下条件，可能受影响**：
+1. 使用 Form.FieldSet 组件
+2. 自定义校验函数通过 callback 返回 Error 数组
+3. 返回的 Error 数组是稀疏数组或包含嵌套对象
+
+**升级后的收益**：
+- 解决校验函数执行报错问题
+- 错误信息能正确显示在对应的数组项上

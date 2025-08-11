@@ -7,7 +7,9 @@
 
 ## 变更概要
 
-本版本主要修复了 Form.Field 组件在使用数组 name 时的错误信息清理问题，确保组件卸载时相关的校验错误能够正确清除。
+本版本包含两个主要变更：
+1. **3.6.2-beta.5**：修复了 Form.Field 组件在使用数组 name 时的错误信息清理问题
+2. **3.6.2-beta.6**：回退了 3.6.1-beta.4 的修复，恢复 `updateValue()` 的原始执行位置
 
 ## 详细变更
 
@@ -17,12 +19,16 @@
 - **影响组件**: Form.Field
 - **问题原因**: 组件卸载时，数组形式的 name 对应的错误信息没有正确清理
 
+### 3.6.2-beta.6
+- **修复问题**: 修正 Form 内部 update 行为 (Regression: since v3.6.1-beta.4)
+- **PR**: [#1034](https://github.com/sheinsight/shineout-next/pull/1034)
+- **影响组件**: Form
+- **问题原因**: 回退 3.6.1-beta.4 的修复，团队认为使用 `reserveAble` 属性更符合组件设计原则
+
 ## 代码变更分析
 
-### 修改文件
-- `packages/hooks/src/components/use-form/use-form-control/use-form-control.ts`
-
-### 关键改动
+### 3.6.2-beta.5 的修改
+**文件**: `packages/hooks/src/components/use-form/use-form-control/use-form-control.ts`
 ```javascript
 // 修改前：分别清理每个 name 的错误
 name.forEach((n) => {
@@ -35,6 +41,21 @@ name.forEach((n) => {
   controlFunc.unbind(n, reserveAble, validateField, update);
 });
 + updateError(isArray(name) ? name.join('|') : name, undefined);
+```
+
+### 3.6.2-beta.6 的回退
+**文件**: `packages/hooks/src/components/use-form/use-form.ts`
+```javascript
+// 回退 3.6.1-beta.4 的修复，恢复原始逻辑
+- React.useEffect(() => {
+-   updateValue();
+    // ...
+- })
+
++ updateValue();  // 直接在组件渲染时执行
++ React.useEffect(() => {
+    // ...
++ })
 ```
 
 ## 受影响的使用场景
@@ -128,8 +149,31 @@ const rules = Rule();
 
 ## Breaking Changes
 
-无破坏性变更
+**重要提示**：3.6.2-beta.6 回退了 3.6.1-beta.4 的修复，可能影响依赖该修复的代码
 
 ## 风险等级
 
-低风险 - 修复了错误信息清理的问题，不会影响正常功能，反而会改善用户体验
+**影响范围说明**：
+- **无风险**：如果从 3.6.0 或更早版本直接升级到 3.6.2 或更高版本
+- **中风险**：仅当从 3.6.1-beta.4 ~ 3.6.2-beta.5 这个区间升级时
+
+对于绝大多数用户（使用正式版本），这个变更可以忽略。只有使用了特定 beta 版本的用户需要注意：
+1. 如果项目从 3.6.1-beta.4 ~ 3.6.2-beta.5 升级到 3.6.2 正式版，需要注意并发渲染问题可能重现
+2. 建议为受影响的组件添加 `reserveAble` 属性来解决问题
+
+## 关联问题说明
+
+### Form.Flow 中 datum.set 的正确用法
+
+当需要在 Form.Flow 中通过 datum.set 设置多个字段时，特别是涉及到使用数组 name 的组件（如 DatePicker range），应该：
+
+```jsx
+// 推荐做法：为数组 name 组件添加 reserveAble
+<DatePicker 
+  range
+  name={['effectiveTimeBegin', 'effectiveTimeEnd']}
+  reserveAble  // 重要：添加此属性
+/>
+```
+
+这样可以避免在并发渲染场景下出现值被覆盖的问题。
