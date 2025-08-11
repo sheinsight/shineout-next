@@ -48,16 +48,60 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   //   context.ids = valueArr.map(() => util.generateUUID());
   // }
 
-  return valueArr.map((v: any, i: number) => (
-    <Provider
-      key={i}
-      value={{ path: `${ProviderValue.path}[${i}]`, validateFieldSet }}
-    >
-      {children({
-        list: valueArr,
-        value: v,
-        index: i,
-        error: errorList,
+  return valueArr.map((v: any, i: number) => {
+    // 创建一个代理对象，让 {...value} 操作能获取最新值
+    // 确保 target 是一个对象，避免 Proxy 报错
+    const target = (v && typeof v === 'object') ? v : {};
+    const valueProxy = new Proxy(target, {
+      get(target, prop) {
+        const currentValue = formFunc?.getValue(name);
+        const latestItem = Array.isArray(currentValue) ? currentValue[i] : v;
+
+        // 如果最新值是对象，返回对象的属性
+        if (latestItem && typeof latestItem === 'object') {
+          return latestItem[prop];
+        }
+
+        // 如果最新值是基本类型，但原始target是对象，从target获取
+        if (target && typeof target === 'object' && prop in target) {
+          return target[prop];
+        }
+
+        // 其他情况返回undefined
+        return undefined;
+      },
+      ownKeys(target) {
+        const currentValue = formFunc?.getValue(name);
+        const latestItem = Array.isArray(currentValue) ? currentValue[i] : v;
+        if (latestItem && typeof latestItem === 'object') {
+          return Object.keys(latestItem);
+        }
+        return Object.keys(target || {});
+      },
+      getOwnPropertyDescriptor(target, prop) {
+        const currentValue = formFunc?.getValue(name);
+        const latestItem = Array.isArray(currentValue) ? currentValue[i] : v;
+        if (latestItem && typeof latestItem === 'object' && prop in latestItem) {
+          return {
+            enumerable: true,
+            configurable: true,
+            value: latestItem[prop]
+          };
+        }
+        return Object.getOwnPropertyDescriptor(target || {}, prop);
+      }
+    });
+
+    return (
+      <Provider
+        key={i}
+        value={{ path: `${ProviderValue.path}[${i}]`, validateFieldSet }}
+      >
+        {children({
+          list: valueArr,
+          value: valueProxy,
+          index: i,
+          error: errorList,
         onChange: (val: T extends (infer U)[] ? U : never, options) => {
           const oldValue = formFunc?.getValue(name);
           const newValue = produce(oldValue, (draft) => {
@@ -105,7 +149,8 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
         },
       })}
     </Provider>
-  ));
+    );
+  });
 };
 
 export default FormFieldSet;
