@@ -1,3 +1,10 @@
+## 3.8.0-beta.25
+2025-08-11
+
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 的 children 函数用法的 value 参数在某些场景下获取不到最新值的问题 ([#1295](https://github.com/sheinsight/shineout-next/pull/1295))
+
 ## 3.8.0-beta.21
 2025-07-31
 
