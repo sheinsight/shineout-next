@@ -1,3 +1,9 @@
+## 3.7.10-beta.1
+2025-08-11
+
+### 🐞 BugFix
+- 优化 `Select` 开启 `columns` 后，列表上方的全选字样支持多语言配置 ([#1294](https://github.com/sheinsight/shineout-next/pull/1294))
+
 ## 3.7.8-beta.12
 2025-07-29
 
