@@ -39,215 +39,77 @@
 
 ## 受影响的使用场景
 
-### 场景 1: Form.FieldSet 使用 formRef.set 更新数据（输入失焦问题）
+### 场景 1: Form.Field/FieldSet 中自定义组件使用 onChange 更新表单值（核心问题）
 
-**快速判断**：
-如果你的代码不满足以下条件，可以跳过此检查：
-- 使用 Form.FieldSet 组件
-- 在输入事件（onChange/onBlur）中调用 formRef.set
-- 更新的字段名与 FieldSet 的 name 属性相同
+**Bug 特征**（基于实际复现代码）：
+- 使用 `Form.Field` 或 `Form.FieldSet` 包装自定义输入组件
+- 自定义组件内部通过 `onChange` 属性更新表单值
+- 每次输入触发 onChange 时，组件重新渲染导致输入框失焦
+- 3.5.3 版本引入的回归问题
 
-**精准检查特征**：
-```javascript
-// 高风险模式 - 必须检查
-// 特征：onChange 中直接调用 formRef.set 更新当前 FieldSet
-<Form.FieldSet name="items">
-  {() => (
-    <Input 
-      onChange={(value) => {
-        formRef.current.set('items', newItems); // ⚠️ 高风险
-      }}
-    />
-  )}
-</Form.FieldSet>
-
-// 低风险模式 - 可以忽略
-// 特征：仅在按钮点击等非输入事件中更新
-<Button onClick={() => formRef.current.set('items', newItems)}>
-  更新数据
-</Button>
-```
-
-**检查命令建议**：
-```bash
-# 第一步：粗筛（找出所有 FieldSet + formRef.set 的文件）
-grep -l "Form.FieldSet" $(grep -l "formRef.*set" *.jsx)
-
-# 第二步：精筛（检查是否在 onChange 等事件中使用）
-grep -A5 -B5 "onChange.*formRef.*set\|formRef.*set.*onChange" <file>
-```
+**实际问题代码模式**：
 ```jsx
-// 需要检查的代码模式 - 3.5.4 之前会导致失焦
-const formRef = useRef();
-
-const updateFieldSetData = () => {
-  // 3.5.3 引入的问题：执行后输入框会失去焦点
-  formRef.current.set('items', [
-    { id: 1, name: 'Item 1', quantity: 10 },
-    { id: 2, name: 'Item 2', quantity: 20 }
-  ]);
+// 复现代码的核心模式
+const NameInput = (props) => {
+  const { value, onChange } = props;
+  const { name } = value || {};
+  
+  const handleChange = (v) => {
+    onChange({ name: v });  // 每次调用会导致重渲染和失焦
+  };
+  
+  return <Input value={name} onChange={handleChange} />;
 };
 
-<Form ref={formRef}>
-  <Form.FieldSet name="items">
-    {({ onAppend, onRemove }) => (
-      <>
-        <Input 
-          name="name" 
-          placeholder="输入后会失焦（3.5.3）"
-        />
-        <Input 
-          name="quantity" 
-          type="number"
-        />
-        <Button onClick={updateFieldSetData}>
-          更新数据
-        </Button>
-      </>
-    )}
-  </Form.FieldSet>
+<Form value={initValue}>
+  <Form.Field name="user">
+    <NameInput />  // 自定义组件在 onChange 时失焦
+  </Form.Field>
 </Form>
 ```
 
-**问题表现**：
-- 使用 formRef.set 更新 FieldSet 数据后
-- 用户在输入框中输入时，每输入一个字符就会失去焦点
-- 需要重新点击输入框才能继续输入
+**检查点**：
+- 搜索 `Form.Field` 或 `Form.FieldSet` 包装的自定义组件
+- 检查自定义组件是否在 onChange 中调用 props.onChange 更新值
+- 重点关注嵌套对象的更新模式（如 `onChange({ field: value })`）
+- 验证输入时是否有失焦问题（需要重新点击才能继续输入）
 
-### 场景 2: 动态更新 FieldSet 数组项
-**检查点**: 查动态操作 FieldSet 数组项并保持编辑状态的场景
-```jsx
-// 需要检查的代码模式
-const formRef = useRef();
-const [editingIndex, setEditingIndex] = useState(null);
+### 场景 2: 使用 formRef.set 动态更新表单数据
 
-const handleUpdateItem = (index, newData) => {
-  const items = formRef.current.get('items');
-  items[index] = { ...items[index], ...newData };
-  // 3.5.3 的问题：这里会导致正在编辑的输入框失焦
-  formRef.current.set('items', items);
-};
+**Bug 特征**：
+- 使用 `formRef.set` 更新 Form.FieldSet 管理的数据
+- 在输入过程中（onChange 事件）调用 set 方法
+- 导致正在编辑的输入框失去焦点
 
-<Form ref={formRef}>
-  <Form.FieldSet name="items" defaultValue={[{ name: '', price: 0 }]}>
-    {({ value, index }) => (
-      <div>
-        <Input 
-          name="name"
-          onFocus={() => setEditingIndex(index)}
-          onChange={(name) => {
-            // 实时更新其他关联字段
-            if (name.length > 0) {
-              handleUpdateItem(index, { hasName: true });
-            }
-          }}
-        />
-        <Input name="price" type="number" />
-      </div>
-    )}
-  </Form.FieldSet>
-</Form>
-```
+**检查点**：
+- 搜索 `formRef.set` 或 `form.set` 在 onChange 事件中的使用
+- 检查是否在输入过程中更新 FieldSet 的整体数据
+- 重点关注实时联动更新的场景（输入一个字段影响其他字段）
 
 ### 场景 3: Form 嵌套 Form
-**检查点**: 查表单嵌套使用的场景
-```jsx
-// 需要检查的代码模式 - 3.5.4 之前可能有问题
-<Form 
-  onSubmit={(outerData) => {
-    console.log('外层表单提交', outerData);
-  }}
-  onReset={() => {
-    console.log('外层表单重置');
-  }}
->
-  <Input name="outerField" />
-  
-  {/* 嵌套的内层表单 */}
-  <div style={{ border: '1px solid #ccc', padding: 20 }}>
-    <Form 
-      onSubmit={(innerData) => {
-        // 3.5.4 之前：可能会同时触发外层表单的提交
-        console.log('内层表单提交', innerData);
-      }}
-      onReset={() => {
-        // 3.5.4 之前：可能会同时触发外层表单的重置
-        console.log('内层表单重置');
-      }}
-    >
-      <Input name="innerField" />
-      <Form.Submit>提交内层</Form.Submit>
-      <Form.Reset>重置内层</Form.Reset>
-    </Form>
-  </div>
-  
-  <Form.Submit>提交外层</Form.Submit>
-  <Form.Reset>重置外层</Form.Reset>
-</Form>
-```
 
-**问题表现**：
-- 内层表单的提交/重置会冒泡到外层表单
-- 导致意外的表单操作
+**Bug 特征**：
+- 一个 Form 组件内部包含另一个 Form 组件
+- 内层表单的提交/重置事件会冒泡到外层表单
+- 导致外层表单意外被触发提交或重置
+
+**检查点**：
+- 搜索 `<Form` 标签内部是否还有 `<Form` 标签
+- 检查 Modal、Drawer 等弹出层中是否有独立表单
+- 验证内层表单操作是否会影响外层表单
+- 关注表单分步、表单嵌套等复杂场景
 
 ### 场景 4: Modal/Drawer 中的嵌套表单
-**检查点**: 查在弹出层中使用嵌套表单的场景
-```jsx
-// 需要检查的代码模式
-const [modalVisible, setModalVisible] = useState(false);
 
-<Form onSubmit={handleMainSubmit}>
-  <Input name="mainField" />
-  
-  <Modal 
-    visible={modalVisible}
-    footer={null}
-  >
-    {/* Modal 中的独立表单 */}
-    <Form 
-      onSubmit={(modalData) => {
-        // 3.5.4 之前：可能会触发主表单的提交
-        saveModalData(modalData);
-        setModalVisible(false);
-      }}
-    >
-      <Input name="modalField" />
-      <Form.Submit>保存</Form.Submit>
-    </Form>
-  </Modal>
-  
-  <Button onClick={() => setModalVisible(true)}>
-    打开Modal
-  </Button>
-  <Form.Submit>提交主表单</Form.Submit>
-</Form>
-```
+**Bug 特征**：
+- 主表单中包含 Modal 或 Drawer
+- Modal/Drawer 内部有独立的 Form 组件
+- 弹出层中的表单操作可能影响主表单
 
-### 场景 5: 条件渲染的嵌套表单
-**检查点**: 查根据条件渲染嵌套表单的场景
-```jsx
-// 需要检查的代码模式
-const [showNested, setShowNested] = useState(false);
-
-<Form onSubmit={handleMainSubmit}>
-  <Input name="type" />
-  
-  {showNested && (
-    <Form 
-      onSubmit={(nestedData) => {
-        // 处理嵌套表单数据
-        // 3.5.4 之前：需要阻止事件冒泡
-        handleNestedSubmit(nestedData);
-      }}
-    >
-      <Input name="nestedField" />
-      <Form.Submit>提交嵌套表单</Form.Submit>
-    </Form>
-  )}
-  
-  <Form.Submit>提交主表单</Form.Submit>
-</Form>
-```
+**检查点**：
+- 搜索 Modal、Drawer 组件内部的 Form 使用
+- 验证弹出层表单提交是否会触发主表单提交
+- 检查弹出层关闭时的表单数据处理
 
 ## Breaking Changes
 
@@ -264,23 +126,3 @@ const [showNested, setShowNested] = useState(false);
 2. **中优先级修复**：
    - 嵌套表单的事件处理改进
    - 影响特定的表单嵌套场景
-
-## 升级建议
-
-### 从 3.5.3 升级
-**强烈建议升级**，特别是如果你：
-- 使用 Form.FieldSet 并通过 formRef.set 更新数据
-- 发现输入框频繁失焦的问题
-- 使用了嵌套表单
-
-### 从更早版本升级
-如果你的项目中有：
-- Form.FieldSet 的动态数据更新
-- 表单嵌套使用（Form 中包含 Form）
-- Modal/Drawer 中的独立表单
-
-建议在升级后重点测试这些场景。
-
-## 版本关联说明
-
-此版本修复了 3.5.3 中引入的回归问题。如果你跳过了 3.5.3 直接升级到 3.5.4，可以避免输入失焦的问题。

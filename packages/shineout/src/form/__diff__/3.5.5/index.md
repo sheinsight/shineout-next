@@ -53,57 +53,43 @@ const handleSubmit = async () => {
 ## 受影响的使用场景
 
 ### 场景 1: 使用回车键提交带 trim 的 Input（核心问题）
-**检查点**: 查 Form 中使用了 trim 属性的 Input，并通过回车键提交的场景
 
-**实际复现代码**：
-```jsx
-// 用户报告的问题代码
-<Form onSubmit={(v) => console.log(v)}>
-  <Input name='name' trim />
-  <Form.Submit>Submit</Form.Submit>
-  <Form.Reset>Reset</Form.Reset>
-</Form>
+**Bug 特征**：
+- Input 组件设置了 `trim` 属性
+- 表单支持回车键提交（有 `onSubmit` 处理函数）
+- trim 逻辑依赖 onBlur 事件，但回车提交时 Input 保持焦点不触发 onBlur
+- 导致提交的数据包含前后空格，影响数据质量
 
-// 复现步骤：
-// 1. 在 Input 中输入 "  test  "（前后有空格）
-// 2. 按回车键提交（不是点击 Submit 按钮）
-// 3. 问题：提交的值是 "  test  "，而不是期望的 "test"
-// 4. 注意：点击 Submit 按钮提交是正常的
+**检查点**：
+- 查找所有使用 `trim` 属性的 Input 组件：`<Input[^>]*\btrim\b`
+- 重点排查单字段表单、搜索框、登录表单等常用回车提交的场景
+- 检查提交数据的后续处理是否依赖去除空格后的值（如唯一性校验、数据匹配）
 
-```
+### 场景 2: 多字段表单的 trim 失效
 
-**问题特征**：
-- 必须同时满足：使用 trim 属性 + 回车键提交
-- 点击提交按钮不受影响
+**Bug 特征**：
+- 表单中多个 Input 字段都使用 `trim` 属性
+- 用户在任意输入框按回车提交，所有字段的 trim 都失效
+- 数据库可能存储了带空格的数据，影响后续数据匹配和唯一性校验
 
-### 场景 2: 多个 Input 都使用 trim
-**检查点**: 查多个 Input 字段都需要 trim 的表单
-```jsx
-// 需要检查的代码模式
-<Form onSubmit={handleSubmit}>
-  <Input name="firstName" trim placeholder="名" />
-  <Input name="lastName" trim placeholder="姓" />
-  <Input name="email" trim placeholder="邮箱" />
-  <Form.Submit>提交</Form.Submit>
-</Form>
+**检查点**：
+- 查找同一表单内多个 Input 使用 trim 的情况
+- 重点检查用户信息表单、注册表单、配置表单等需要精确数据的场景
+- 关注数据唯一性要求高的字段（如用户名、邮箱、手机号）
 
-// 3.5.5 之前：任意输入框按回车提交，所有 trim 都不生效
-```
+### 场景 3: 搜索框场景（最常见）
 
-### 场景 3: 搜索框场景
-**检查点**: 查单个搜索输入框使用 trim 的场景
-```jsx
-// 需要检查的代码模式
-<Form onSubmit={handleSearch}>
-  <Input 
-    name="keyword" 
-    trim
-    placeholder="输入关键词搜索..."
-  />
-  {/* 用户习惯按回车搜索，而不是点击按钮 */}
-  <Form.Submit>搜索</Form.Submit>
-</Form>
-```
+**Bug 特征**：
+- 搜索输入框使用 `trim` 属性
+- 用户习惯按回车键搜索（而非点击搜索按钮）
+- 搜索词前后空格导致搜索结果不准确或触发重复请求
+- 可能同时设置了 `onEnterPress` 处理函数
+
+**检查点**：
+- 查找文件名或函数名包含 search、filter 的组件
+- 查找 placeholder 包含"搜索"、"查询"、"关键词"的 Input
+- 检查搜索请求的去重逻辑是否考虑了空格问题
+- 验证搜索历史记录是否会保存带空格的关键词
 
 ## Breaking Changes
 

@@ -59,169 +59,81 @@
 
 ## 受影响的使用场景
 
-### 场景 1: Form.Field 使用数组 name 导致 onChange 多次执行（最典型问题）
-**检查点**: 查 Form.Field 使用数组 name 并且表单为受控组件的场景
-```jsx
-// 需要检查的代码模式 - 用户实际遇到的问题示例
-const [value, setValue] = useState({
-  nameObj: {
-    firstName: 'Harry1',
-    lastName: 'Potter2',
-  },
-});
+### 场景 1: Form.Field 使用数组 name 导致 onChange 死循环（最严重问题）
 
-const handleChange = (v) => {
-  console.log(v); // 3.5.3 之前：这里会打印多次
-  setValue(v);
-};
+**Bug 特征**：
+- Form.Field 使用数组 name：`name={['field1', 'field2']}`
+- 表单为受控组件（设置了 value 和 onChange）
+- immer 的 `current(draft)` 处理数组 name 时触发追踪机制，导致 onChange 重复执行
+- 如果 onChange 中有副作用（API 调用、存储操作），会造成严重性能问题
 
-<Form value={value} onChange={handleChange}>
-  {/* 数组 name 映射到嵌套对象字段 */}
-  <Form.Field name={['nameObj.firstName', 'nameObj.lastName']}>
-    <NameInput />
-  </Form.Field>
-</Form>
-```
-
-**问题表现**：
-- 用户输入一次，onChange 会被触发 2-3 次
-- 在某些情况下可能导致死循环
-- 影响性能和用户体验
+**检查点**：
+- 搜索 `Form.Field` 配合数组 name 的使用：`Form\.Field[^>]*name=\{[`
+- 检查 onChange 处理函数中是否有副作用操作（API 调用、localStorage、重计算）
+- 重点关注映射到嵌套对象的数组 name（如 `['user.firstName', 'user.lastName']`）
+- 验证是否有性能监控告警或用户反馈的卡顿问题
 
 ### 场景 2: reserveAble 与嵌套字段
-**检查点**: 查使用 reserveAble 并有嵌套字段的表单
-```jsx
-// 需要检查的代码模式
-<Form reserveAble>
-  {/* 深度嵌套字段 */}
-  <Input name="user.profile.settings.theme" />
-  
-  {/* 条件渲染的嵌套字段 */}
-  {showAdvanced && (
-    <Input name="config.advanced.options.timeout" />
-  )}
-  
-  {/* FieldSet 中的嵌套字段 */}
-  <Form.FieldSet name="addresses" reserveAble>
-    {() => (
-      <>
-        <Input name="city.district.street" />
-        <Input name="postal.code" />
-      </>
-    )}
-  </Form.FieldSet>
-</Form>
-```
 
-**问题表现**：3.5.3 之前，深度嵌套字段在组件卸载后值可能丢失
+**Bug 特征**：
+- 使用 `reserveAble` 属性保留卸载组件的值
+- 字段名包含多层嵌套（如 `user.profile.settings.theme`）
+- 条件渲染的嵌套字段在隐藏后值丢失
 
-### 场景 3: formRef.set 更新数组值
-**检查点**: 查使用 formRef.set 更新数组字段的场景
-```jsx
-// 需要检查的代码模式
-const formRef = useRef();
+**检查点**：
+- 搜索使用 `reserveAble` 的表单
+- 查找三层以上嵌套的字段名（包含两个以上的点号）
+- 检查条件渲染（`{condition && <Input />}`）配合嵌套字段的场景
+- 验证表单切换或步骤切换时数据是否正确保留
 
-// 更新相同长度的数组
-const updateArrayField = () => {
-  const currentValue = formRef.current.get('items');
-  // 3.5.3 之前：如果新数组长度与原数组相同，可能无法更新
-  formRef.current.set('items', [
-    { id: 1, name: 'new1' },
-    { id: 2, name: 'new2' },
-    { id: 3, name: 'new3' }
-  ]);
-};
+### 场景 3: formRef.set 更新相同长度数组失败
 
-// FieldSet 场景
-const updateFieldSetArray = () => {
-  // 3.5.3 之前：更新 FieldSet 管理的数组可能失败
-  formRef.current.set('users', newUsersArray);
-};
-```
+**Bug 特征**：
+- 使用 `formRef.set` 或 `form.set` 更新数组字段
+- 新数组与原数组长度相同但内容不同
+- 更新操作不生效，数组内容未改变
 
-### 场景 4: 嵌套字段的自定义校验
-**检查点**: 查对嵌套字段使用自定义校验规则的场景
-```jsx
-// 需要检查的代码模式
-const validateNested = (value, formData, callback) => {
-  // 3.5.3 之前：formData 结构可能不正确
-  // 例如期望 formData.user.profile，但实际可能是扁平结构
-  console.log('formData structure:', formData);
-  
-  if (formData.user && formData.user.role === 'admin') {
-    // 基于其他嵌套字段的校验逻辑
-    if (!value) {
-      callback(new Error('管理员必须设置此字段'));
-      return;
-    }
-  }
-  callback(true);
-};
+**检查点**：
+- 搜索 `formRef.set` 或 `form.set` 的使用
+- 重点检查批量更新、状态同步、数据刷新等场景
+- 验证列表编辑功能中的批量操作是否正常
+- 关注 FieldSet 管理的数组数据更新
 
-<Form>
-  <Input name="user.role" />
-  <Input 
-    name="user.permissions.level" 
-    rules={[validateNested]}
-  />
-</Form>
-```
+### 场景 4: 嵌套字段自定义校验的 formData 结构错误
+
+**Bug 特征**：
+- Input 的 name 包含点号（嵌套字段）：`name="a.b.c"`
+- 自定义校验函数依赖 formData 参数
+- formData 结构不正确，导致基于其他字段的联动校验失败
+
+**检查点**：
+- 搜索自定义校验函数中使用 formData 参数的场景
+- 检查密码确认、条件必填等联动校验逻辑
+- 验证嵌套字段的校验规则是否正常工作
+- 重点关注跨字段依赖的业务规则校验
 
 ### 场景 5: 嵌套 FieldSet 与 onChange
-**检查点**: 查嵌套使用 Form.FieldSet 的场景
-```jsx
-// 需要检查的代码模式
-<Form 
-  value={formValue}
-  onChange={(value) => {
-    // 3.5.3 之前：嵌套 FieldSet 可能导致死循环
-    setFormValue(value);
-  }}
->
-  <Form.FieldSet name="items">
-    {() => (
-      <Form.FieldSet name="subItems">
-        {() => <Input name="value" />}
-      </Form.FieldSet>
-    )}
-  </Form.FieldSet>
-</Form>
-```
+
+**Bug 特征**：
+- 多层嵌套的 Form.FieldSet
+- 受控组件模式（value + onChange）
+- 可能触发 onChange 死循环或重复执行
+
+**检查点**：
+- 搜索嵌套使用 Form.FieldSet 的场景
+- 检查复杂表单结构中的性能问题
+- 验证数据更新的正确性和触发次数
 
 ### 场景 6: 新增功能使用
-**检查点**: 可以利用新增的 formRef 方法改善用户体验
-```jsx
-// 新增功能示例
-const formRef = useRef();
 
-// 1. validateFieldsWithValue - 获取校验后的值
-const handleValidateWithValue = async () => {
-  try {
-    const values = await formRef.current.validateFieldsWithValue();
-    console.log('Validated values:', values);
-    // 直接使用校验后的值进行提交
-    submitForm(values);
-  } catch (errors) {
-    console.log('Validation failed:', errors);
-  }
-};
+**可用的新功能**：
+1. **validateFieldsWithValue**：校验并返回表单值
+2. **scrollToField**：滚动到指定字段
 
-// 2. scrollToField - 滚动到指定字段
-const handleScrollToError = () => {
-  formRef.current.validate().catch((errors) => {
-    // 滚动到第一个错误字段
-    const firstErrorField = Object.keys(errors)[0];
-    formRef.current.scrollToField(firstErrorField);
-  });
-};
-
-<Form ref={formRef} name="myForm">
-  <Input name="username" />
-  <Input name="email" />
-  {/* 很长的表单内容 */}
-  <Input name="address.detail" />
-</Form>
-```
+**使用建议**：
+- 使用 `validateFieldsWithValue` 简化提交前的校验和取值逻辑
+- 使用 `scrollToField` 改善长表单的错误定位体验
+- 在表单校验失败时自动滚动到第一个错误字段
 
 ## Breaking Changes
 
@@ -241,20 +153,3 @@ const handleScrollToError = () => {
 
 3. **功能增强**：
    - 新增的 formRef 方法可以改善用户体验
-
-## 升级建议
-
-1. **重点检查**：
-   - **Form.Field 使用数组 name 的场景**（最高优先级）
-   - 嵌套 Form.FieldSet 的使用
-   - 使用 formRef.set 更新数组的代码
-   - 依赖 reserveAble 的条件渲染场景
-
-2. **测试重点**：
-   - 表单数据更新的正确性
-   - 嵌套字段的校验逻辑
-   - 条件渲染时的数据保留
-
-3. **可选优化**：
-   - 使用新增的 scrollToField 改善错误提示体验
-   - 使用 validateFieldsWithValue 简化提交逻辑

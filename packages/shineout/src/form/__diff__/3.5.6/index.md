@@ -11,13 +11,15 @@
 
 ## 详细变更
 
-### 3.5.6-beta.4
+### Bug 修复
+
+#### 3.5.6-beta.4
 - **修复问题**: Form.Field 下的 Input 使用 onChange 设置对象格式的值时，光标跳到末尾的问题 (Regression: since v3.4.4)
 - **PR**: [#901](https://github.com/sheinsight/shineout-next/pull/901)
 - **影响组件**: Form.Field / Input
 - **问题原因**: onChange 设置对象值时触发了不必要的重渲染
 
-### 3.5.6-beta.2
+#### 3.5.6-beta.2
 - **修复问题**: Form.FieldSet 在非结尾位置插入数据时，数组的渲染显示异常的问题 (Regression: since v3.5.4)
 - **PR**: [#889](https://github.com/sheinsight/shineout-next/pull/889)
 - **影响组件**: Form.FieldSet
@@ -25,99 +27,73 @@
 
 ## 代码变更分析
 
-### 修改文件
-- Form.Field 与 Input 的交互逻辑
-- Form.FieldSet 的数组渲染逻辑
-
 ### 关键改动
+
 1. 修复了 Form.Field 包装 Input 时，onChange 返回对象导致的光标位置问题
 2. 修复了 FieldSet 使用 onInsert 在数组中间插入项时的渲染错误
 
 ## 受影响的使用场景
 
-### 场景 1: Form.Field 包装 Input 并返回对象值
-**检查点**: 查 Form.Field 中 Input 的 onChange 返回对象格式数据的场景
-```jsx
-// 需要检查的代码模式
-<Form.Field name="customField">
-  <Input 
-    onChange={(value) => {
-      // 3.5.6 之前：返回对象会导致光标跳到末尾
-      return {
-        text: value,
-        timestamp: Date.now()
-      };
-    }}
-  />
-</Form.Field>
-```
+### 场景 1: Form.Field 包装 Input 返回对象值（回归问题）
 
-### 场景 2: Form.FieldSet 在中间位置插入数据
-**检查点**: 查使用 onInsert 在数组非结尾位置插入数据的场景
-```jsx
-// 需要检查的代码模式
-<Form.FieldSet name="items">
-  {({ onInsert, index }) => (
-    <div>
-      <Input name="name" />
-      <Button onClick={() => {
-        // 3.5.6 之前：在中间插入会导致渲染异常
-        onInsert({ name: '' }, index);
-      }}>
-        在此位置插入
-      </Button>
-    </div>
-  )}
-</Form.FieldSet>
-```
+**Bug 特征**：
+- Form.Field 包装 Input 组件
+- Input 的 onChange 返回对象格式数据
+- 输入时光标跳转到末尾
+- 影响输入体验，特别是在中间位置编辑时
 
-### 场景 3: 复杂对象的表单字段
-**检查点**: 查 Input 需要维护复杂状态的场景
-```jsx
-// 需要检查的代码模式
-<Form.Field 
-  name="metadata"
-  defaultValue={{ value: '', meta: {} }}
->
-  <Input 
-    onChange={(val) => ({
-      value: val,
-      meta: { 
-        length: val.length,
-        lastModified: new Date()
-      }
-    })}
-  />
-</Form.Field>
-```
+**检查点**：
+- 搜索 `Form.Field` 包装自定义输入组件的场景
+- 查找 onChange 返回对象格式的模式：`return { ... }`
+- 检查封装了额外数据的输入组件（如带时间戳、元数据等）
+- 验证输入过程中光标位置是否正常
 
-### 场景 4: FieldSet 动态排序场景
-**检查点**: 查 FieldSet 支持拖拽排序或手动调整顺序的场景
-```jsx
-// 需要检查的代码模式
-<Form.FieldSet name="sortableItems">
-  {({ value, index, onRemove, onInsert, list }) => (
-    <div>
-      <Input name="content" />
-      {index > 0 && (
-        <Button onClick={() => {
-          // 上移：先删除再在前面插入
-          const item = list[index];
-          onRemove();
-          onInsert(item, index - 1);
-        }}>
-          上移
-        </Button>
-      )}
-    </div>
-  )}
-</Form.FieldSet>
-```
+### 场景 2: FieldSet 数组中间插入（回归问题）
+
+**Bug 特征**：
+- Form.FieldSet 管理数组数据
+- 使用 onInsert 在非末尾位置插入新项
+- 插入后数组渲染顺序错乱
+- 3.5.4 版本引入的回归问题
+
+**检查点**：
+- 搜索 FieldSet 使用 `onInsert` 方法的场景
+- 查找在列表中间插入项的功能（如"在此项后插入"）
+- 检查数组操作后的渲染顺序
+- 验证插入、删除、移动操作的正确性
+
+### 场景 3: 自定义输入组件的对象值处理
+
+**Bug 特征**：
+- 自定义组件需要存储额外信息
+- onChange 返回包含多个字段的对象
+- 需要保持输入过程中的光标位置
+- 常见于富文本、标签输入等场景
+
+**检查点**：
+- 搜索自定义的复合输入组件
+- 查找返回结构化数据的输入场景
+- 检查是否有光标位置管理的代码
+- 验证编辑体验是否流畅
+
+### 场景 4: 动态表单的复杂操作
+
+**Bug 特征**：
+- FieldSet 支持多种数组操作（插入、删除、移动）
+- 在任意位置进行插入操作
+- 操作后需要保持正确的顺序和索引
+- 影响表单数据的完整性
+
+**检查点**：
+- 搜索支持拖拽排序的动态表单
+- 查找有"插入到指定位置"功能的表单
+- 检查数组索引相关的业务逻辑
+- 验证操作后表单数据的正确性
 
 ## Breaking Changes
 
-无破坏性变更，但修复了之前版本引入的回归问题
+无破坏性变更
 
 ## 风险等级
 
-**中风险** - 修复了两个影响用户体验的回归问题，建议受影响的用户升级
+**中风险** - 修复了两个影响用户体验的回归问题
