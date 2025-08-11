@@ -16,4 +16,4 @@ cypress-coverage
 jest-coverage
 packages/shineout/.fatherrc.ts
 .mcp.json
-.bug-example
+bug-example
