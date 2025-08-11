@@ -357,7 +357,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         setShouldResetMore(true);
       });
     } else {
-      setMore(-1);
+      if(!renderCompressed) setMore(-1);
       setShouldResetMore(true);
     }
   };
