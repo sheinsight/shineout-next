@@ -1,3 +1,9 @@
+## 3.8.0-beta.26
+2025-08-11
+
+### 🐞 BugFix
+- 修复 `Cascader` 的 `renderCompressed` 在某些特殊交互后，自定义的Popover无法正常打开的问题 ([#1296](https://github.com/sheinsight/shineout-next/pull/1296))
+
 ## 3.8.0-beta.8
 2025-06-23
 
