@@ -4,7 +4,7 @@
  * en - Test Form
  *    -- Test Form
  */
-import { Form, Input, Select, Rule, Textarea, DatePicker, Button } from 'shineout';
+import { Form, Input, Select, Switch, Rule, Radio, Textarea, DatePicker, Button, Checkbox } from 'shineout';
 
 const rules = Rule();
 export default () => {
@@ -22,6 +22,26 @@ export default () => {
 
       <Form.Item label='工作代理人' required>
         <Input name='agent' rules={[rules.required()]} />
+      </Form.Item>
+
+      <Form.Item label='喜欢的颜色' required>
+        <Checkbox.Group
+          name="likeColors"
+          keygen
+          data={['red', 'green']}
+        />
+      </Form.Item>
+
+      <Form.Item label='不喜欢的颜色' required>
+        <Radio.Group
+          name="dislikeColor"
+          keygen
+          data={['red', 'green']}
+        />
+      </Form.Item>
+
+      <Form.Item label='是否支持颜色' required>
+        <Switch name="isSupportColor" />
       </Form.Item>
 
       <Form.Item label='请假事由' required>

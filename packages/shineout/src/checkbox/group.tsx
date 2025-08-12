@@ -7,7 +7,7 @@ const jssStyle = {
   checkbox: useCheckboxStyle,
   input: useInputStyle,
 };
-const BaseCheckboxGroup = <DataItem, Value extends any[]>(
+const CheckboxGroup = <DataItem, Value extends any[]>(
   props: BaseCheckboxGroupProps<DataItem, Value>,
 ) => {
   return <UnStyledCheckboxGroup {...props} jssStyle={jssStyle} />;
@@ -16,7 +16,7 @@ const BaseCheckboxGroup = <DataItem, Value extends any[]>(
 const CheckboxGroupWithField = <DataItem, Value extends any[]>(
   props: CheckboxGroupProps<DataItem, Value>,
 ) => {
-  return useFieldCommon(props, BaseCheckboxGroup<DataItem, Value>, 'array');
+  return useFieldCommon(props, CheckboxGroup<DataItem, Value>, 'array');
 };
 
 export default CheckboxGroupWithField;
