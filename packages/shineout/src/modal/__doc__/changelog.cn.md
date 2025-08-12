@@ -1,3 +1,11 @@
+## 3.8.0-beta.26
+2025-08-12
+
+### 🐞 BugFix
+- 修复 `Modal` 的 panel 面板的 margin 样式问题 ([#1298](https://github.com/sheinsight/shineout-next/pull/1298))
+
+
+
 ## 3.8.0-beta.23
 2025-08-04
 
