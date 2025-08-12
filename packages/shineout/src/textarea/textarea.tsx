@@ -8,10 +8,10 @@ const jssStyle = {
   popover: usePopoverStyle,
   innerTitle: useInnerTitleStyle,
 };
-const BaseTextarea = (props: BaseTextareaProps) => {
+const Textarea = (props: BaseTextareaProps) => {
   return <UnStyledTextarea {...props} jssStyle={jssStyle} />;
 };
 
 export default (props: TextareaProps) => {
-  return useFieldCommon(props, BaseTextarea);
+  return useFieldCommon(props, Textarea);
 };

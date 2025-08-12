@@ -148,13 +148,18 @@ export class SchemaBuilder {
           fieldSchemaInfo.description += `默认时间：${componentElement.props.defaultTime?.toString() || ''}; 格式：${componentElement.props.format || ''} `
           break;
         case 'Checkbox':
+        case 'CheckboxGroup':
           fieldSchemaInfo.type = 'array';
           fieldSchemaInfo.items = {
             type: 'string',
           };
           break;
         case 'Radio':
+        case 'RadioGroup':
           fieldSchemaInfo.type = 'string';
+          break;
+        case 'Switch':
+          fieldSchemaInfo.type = 'boolean';
           break;
         case 'Rate':
           fieldSchemaInfo.type = 'number';
