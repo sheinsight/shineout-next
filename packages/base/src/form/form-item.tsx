@@ -73,6 +73,23 @@ const FormItem = (props: FormItemProps) => {
     labelText += ` (tip: ${labelTipRef.current?.textContent})`;
   }
 
+  const renderError = () => {
+    if(!showError) return null;
+    let uniqueErrors = errors;
+    if(errors.length > 1) {
+      uniqueErrors = errors.filter((error, index, self) =>
+        index === self.findIndex((t) => t.message === error.message)
+      )
+    }
+    return (
+      <div className={formItemClasses?.error}>
+        {uniqueErrors.map((error, index) => (
+          <div key={index}>{error && <ErrorTrans error={error} />}</div>
+        ))}
+      </div>
+    )
+  }
+
   return (
     <div
       className={classNames(
@@ -116,13 +133,7 @@ const FormItem = (props: FormItemProps) => {
 
         {!!tip && (!showError || keepErrorBelow) && <div ref={labelTipRef} className={formItemClasses?.tip}>{tip}</div>}
 
-        {showError && (
-          <div className={formItemClasses?.error}>
-            {errors.map((error, index) => (
-              <div key={index}>{error && <ErrorTrans error={error} />}</div>
-            ))}
-          </div>
-        )}
+        {renderError()}
       </div>
     </div>
   );

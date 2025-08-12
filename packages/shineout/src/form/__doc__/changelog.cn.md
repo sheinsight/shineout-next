@@ -1,3 +1,10 @@
+## 3.8.0-beta.27
+2025-08-12
+
+### 🐞 BugFix
+
+- 修复 `Form.Field` 的 `name` 为数组时，错误信息重复渲染的问题 ([#1299](https://github.com/sheinsight/shineout-next/pull/1299))
+
 ## 3.8.0-beta.25
 2025-08-11
 
