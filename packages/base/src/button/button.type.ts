@@ -50,6 +50,7 @@ export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'>
   /**
    * @en The mode of the button
    * @cn 按钮风格
+   * @when 根据按钮的使用场景选择：text用于轻量级操作，outline用于次要操作，dashed用于添加类操作
    */
   mode: ButtonMode;
   /**
@@ -68,12 +69,14 @@ export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'>
    * @en When outline is true, the background is transparent
    * @cn outline 为 true 时，显示透明背景的按钮
    * @default false
+   * @when 当需要使用线框按钮样式时使用，通常用于次要操作或在深色背景上需要突出按钮边框的场景
    */
   outline?: boolean;
   /**
    * @en Specifies the button should be disabled
    * @cn 禁用
    * @default false
+   * @when 当按钮不可用时设置，如表单未填写完整、权限不足或正在加载等场景
    */
   disabled?: boolean;
   jssStyle?: ButtonJssStyle;

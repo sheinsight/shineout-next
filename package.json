@@ -13,6 +13,7 @@
     "dev:create": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-create.js",
     "build:doc": "cross-env NODE_ENV=production webpack --config ./webpack/config.doc.js",
     "build:api": "node ./scripts/api-build.js",
+    "build:api:mcp": "node ./scripts/api-build-with-mcp.js",
     "build": "pnpm run build:doc && cp .gateway-publish dist",
     "build:pkg": "node ./scripts/build-index && pnpm run build:bundless && pnpm run build:bundle",
     "build:bundless": "pnpm --filter=./packages/* run build",
