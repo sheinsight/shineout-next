@@ -2,7 +2,7 @@
   "mcpServers": {
     "shineout": {
       "command": "npx",
-      "args": ["shineout-claude"],
+      "args": ["shineout-mcp"],
       "env": {}
     }
   }

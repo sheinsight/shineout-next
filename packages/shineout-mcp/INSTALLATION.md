@@ -1,6 +1,6 @@
 # 安装和配置指南
 
-本指南将帮助你在 Claude Desktop 中配置 shineout-claude MCP 服务器。
+本指南将帮助你在 Claude Desktop 中配置 shineout-mcp MCP 服务器。
 
 ## 前置要求
 
@@ -10,20 +10,20 @@
 
 ## 安装步骤
 
-### 1. 安装 shineout-claude
+### 1. 安装 shineout-mcp
 
 有两种安装方式：
 
 #### 方式一：全局安装（推荐）
 
 ```bash
-npm install -g shineout-claude
+npm install -g shineout-mcp
 ```
 
 或使用 yarn：
 
 ```bash
-yarn global add shineout-claude
+yarn global add shineout-mcp
 ```
 
 #### 方式二：使用 npx（无需安装）
@@ -47,7 +47,7 @@ yarn global add shineout-claude
   "mcpServers": {
     "shineout": {
       "command": "npx",
-      "args": ["shineout-claude"],
+      "args": ["shineout-mcp"],
       "env": {}
     }
   }
@@ -60,7 +60,7 @@ yarn global add shineout-claude
 {
   "mcpServers": {
     "shineout": {
-      "command": "shineout-claude",
+      "command": "shineout-mcp",
       "args": [],
       "env": {}
     }
@@ -94,12 +94,12 @@ yarn global add shineout-claude
 
 2. 验证包安装：
    ```bash
-   npm list -g shineout-claude
+   npm list -g shineout-mcp
    ```
 
 3. 手动测试服务器：
    ```bash
-   npx shineout-claude
+   npx shineout-mcp
    ```
    应该看到服务器启动日志
 
@@ -122,7 +122,7 @@ yarn global add shineout-claude
 更新到最新版本：
 
 ```bash
-npm update -g shineout-claude
+npm update -g shineout-mcp
 ```
 
 或使用 npx 时会自动使用最新版本。
@@ -132,7 +132,7 @@ npm update -g shineout-claude
 如需卸载：
 
 ```bash
-npm uninstall -g shineout-claude
+npm uninstall -g shineout-mcp
 ```
 
 并从 Claude Desktop 配置文件中移除相关配置。

@@ -1,12 +1,12 @@
 # 本地开发使用指南
 
-本指南将帮助你在本地开发环境中使用 shineout-claude MCP 服务器，无需发布到 npm。
+本指南将帮助你在本地开发环境中使用 shineout-mcp MCP 服务器，无需发布到 npm。
 
 ## 步骤
 
 ### 1. 构建项目
 
-在 shineout-claude 目录下执行：
+在 shineout-mcp 目录下执行：
 
 ```bash
 # 生成组件数据
@@ -32,7 +32,7 @@ npm run build
   "mcpServers": {
     "shineout-local": {
       "command": "node",
-      "args": ["/你的实际路径/shineout-next/packages/shineout-claude/bin/shineout-claude.js"],
+      "args": ["/你的实际路径/shineout-next/packages/shineout-mcp/bin/shineout-mcp.js"],
       "env": {}
     }
   }
@@ -46,7 +46,7 @@ npm run build
   "mcpServers": {
     "shineout-local": {
       "command": "node",
-      "args": ["/Users/username/projects/shineout-next/packages/shineout-claude/bin/shineout-claude.js"],
+      "args": ["/Users/username/projects/shineout-next/packages/shineout-mcp/bin/shineout-mcp.js"],
       "env": {}
     }
   }
@@ -78,7 +78,7 @@ npm run build
 
 手动测试服务器：
 ```bash
-node /你的路径/shineout-claude/bin/shineout-claude.js
+node /你的路径/shineout-mcp/bin/shineout-mcp.js
 ```
 
 应该看到：
@@ -96,14 +96,14 @@ Loaded 46 components
 
 ### 3. 权限问题
 
-确保 bin/shineout-claude.js 有执行权限：
+确保 bin/shineout-mcp.js 有执行权限：
 ```bash
-chmod +x /你的路径/shineout-claude/bin/shineout-claude.js
+chmod +x /你的路径/shineout-mcp/bin/shineout-mcp.js
 ```
 
 ## 开发模式
 
-如果你正在开发 shineout-claude，可以使用监听模式：
+如果你正在开发 shineout-mcp，可以使用监听模式：
 
 1. 在一个终端运行：
    ```bash

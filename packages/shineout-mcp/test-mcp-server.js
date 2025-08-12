@@ -9,10 +9,10 @@
 import { spawn } from 'child_process';
 import readline from 'readline';
 
-console.log('🧪 测试 Shineout Claude MCP 服务器...\n');
+console.log('🧪 测试 Shineout MCP 服务器...\n');
 
 // 启动 MCP 服务器
-const server = spawn('node', ['./bin/shineout-claude.js'], {
+const server = spawn('node', ['./bin/shineout-mcp.js'], {
   stdio: ['pipe', 'pipe', 'pipe']
 });
 

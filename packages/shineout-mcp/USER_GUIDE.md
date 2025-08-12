@@ -1,8 +1,8 @@
-# Shineout Claude 用户测试指南
+# Shineout MCP 用户测试指南
 
 ## 📖 概述
 
-Shineout Claude 是一个为 Claude AI 提供 Shineout 组件库文档的 MCP (Model Context Protocol) 服务器。它可以让 Claude 准确回答关于 Shineout 组件的使用问题。
+Shineout MCP 是一个为 Claude AI 提供 Shineout 组件库文档的 MCP (Model Context Protocol) 服务器。它可以让 Claude 准确回答关于 Shineout 组件的使用问题。
 
 ## 🚀 当前功能状态
 
@@ -101,7 +101,7 @@ Button 组件有哪些属性？
 
 如果遇到问题，可以检查：
 
-1. **MCP 连接状态**: Claude Desktop 是否正确连接到 shineout-claude 服务器
+1. **MCP 连接状态**: Claude Desktop 是否正确连接到 shineout-mcp 服务器
 2. **数据加载**: 服务器启动时是否显示 "Loaded 46 components"
 3. **错误信息**: MCP 工具调用是否返回错误信息
 

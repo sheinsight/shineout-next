@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * Shineout Claude MCP Server
+ * Shineout MCP Server
  * 
- * 这是 shineout-claude 的可执行入口文件
- * 用户通过 `npx shineout-claude` 或全局安装后运行此文件
+ * 这是 shineout-mcp 的可执行入口文件
+ * 用户通过 `npx shineout-mcp` 或全局安装后运行此文件
  */
 
 import { spawn } from 'child_process';
@@ -28,7 +28,7 @@ const server = spawn('node', [serverPath], {
 });
 
 server.on('error', (error) => {
-  console.error('Failed to start shineout-claude MCP server:', error);
+  console.error('Failed to start shineout-mcp server:', error);
   process.exit(1);
 });
 

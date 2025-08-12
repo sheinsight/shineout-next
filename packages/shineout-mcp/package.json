@@ -1,5 +1,5 @@
 {
-  "name": "shineout-claude",
+  "name": "shineout-mcp",
   "version": "0.1.0",
   "description": "Shineout documentation provider for Claude AI via MCP protocol",
   "keywords": [
@@ -16,16 +16,16 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sheinsight/shineout-next.git",
-    "directory": "packages/shineout-claude"
+    "directory": "packages/shineout-mcp"
   },
   "bugs": {
     "url": "https://github.com/sheinsight/shineout-next/issues"
   },
-  "homepage": "https://github.com/sheinsight/shineout-next/tree/main/packages/shineout-claude",
+  "homepage": "https://github.com/sheinsight/shineout-next/tree/main/packages/shineout-mcp",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "shineout-claude": "./bin/shineout-claude.js"
+    "shineout-mcp": "./bin/shineout-mcp.js"
   },
   "files": [
     "bin",

@@ -1,4 +1,4 @@
-# shineout-claude
+# shineout-mcp
 
 Shineout 组件文档提供器，通过 MCP (Model Context Protocol) 协议为 Claude AI 提供准确的 Shineout 组件使用信息。
 
@@ -15,7 +15,7 @@ Shineout 组件文档提供器，通过 MCP (Model Context Protocol) 协议为 C
 ## 安装
 
 ```bash
-npm install -g shineout-claude
+npm install -g shineout-mcp
 ```
 
 ## 快速开始
@@ -23,7 +23,7 @@ npm install -g shineout-claude
 ### 1. 安装包
 
 ```bash
-npm install -g shineout-claude
+npm install -g shineout-mcp
 ```
 
 ### 2. 配置 Claude Desktop
@@ -38,7 +38,7 @@ npm install -g shineout-claude
   "mcpServers": {
     "shineout": {
       "command": "npx",
-      "args": ["shineout-claude"],
+      "args": ["shineout-mcp"],
       "env": {}
     }
   }
@@ -97,7 +97,7 @@ npm install -g shineout-claude
 ```bash
 # 克隆仓库
 git clone <repository-url>
-cd packages/shineout-claude
+cd packages/shineout-mcp
 
 # 安装依赖
 npm install
@@ -112,9 +112,9 @@ npm run generate
 ### 目录结构
 
 ```
-packages/shineout-claude/
+packages/shineout-mcp/
 ├── bin/                    # 可执行文件
-│   └── shineout-claude.js  # MCP 服务器入口
+│   └── shineout-mcp.js  # MCP 服务器入口
 ├── src/
 │   ├── server/             # MCP 服务器实现
 │   ├── tools/              # 工具服务

@@ -13,14 +13,14 @@ import { ComponentService, TOOL_DEFINITIONS } from '../tools/index.js';
 import { loadComponentData } from '../data/loader.js';
 import { ToolFeedbackManager } from '../tools/feedback/index.js';
 
-class ShineoutClaudeServer {
+class ShineoutMcpServer {
   private server: Server;
   private componentService: ComponentService;
 
   constructor() {
     this.server = new Server(
       {
-        name: 'shineout-claude',
+        name: 'shineout-mcp',
         version: '0.1.0',
       },
       {
@@ -170,7 +170,7 @@ class ShineoutClaudeServer {
 }
 
 // 启动服务器
-const server = new ShineoutClaudeServer();
+const server = new ShineoutMcpServer();
 server.run().catch((error) => {
   console.error('Failed to run server:', error);
   process.exit(1);
