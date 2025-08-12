@@ -1,8 +1,8 @@
 /**
  * cn - 不定高虚拟列表
- *    -- 使用 dynamicHeight 属性开启不定高虚拟列表功能，需要同时设置 fixed={true}
+ *    -- 使用 `dynamicHeight` 属性开启不定高虚拟列表功能，需要同时设置 `fixed` 为 true
  * en - Dynamic Height Virtual List
- *    -- Use dynamicHeight prop to enable dynamic height virtual list, requires fixed={true}
+ *    -- Use `dynamicHeight` prop to enable dynamic height virtual list, requires `fixed` to be true
  */
 import React from 'react';
 import { List } from 'shineout';
