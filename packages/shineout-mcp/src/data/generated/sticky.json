@@ -62,30 +62,35 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "附着在顶部 20px",
-      "scenario": "basic",
-      "code": "/**\n * cn - 基本用法\n *    -- 附着在顶部 20px\n * en - Basic\n *    -- Sticky 20px to top\n */\nimport React, { useRef } from 'react';\nimport { Alert, Sticky } from 'shineout';\n\nconst App: React.FC = () => {\n  const elRef = useRef(null);\n  return (\n    <div\n      ref={elRef}\n      style={{\n        height: 300,\n        backgroundColor: '#f4f5f8',\n        backgroundImage:\n          'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n          'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n        backgroundSize: '20px 20px',\n        backgroundPosition: '0 0, 10px 10px',\n      }}\n    >\n      <Sticky\n        top={200}\n        scrollContainer='#layout'\n        parent={elRef.current}\n        onChange={(isStikcy) => {\n          console.log('isStikcy: >>', isStikcy);\n        }}\n      >\n        <Alert>Sticky 200px to top</Alert>\n      </Sticky>\n    </div>\n  );\n};\n\nexport default App;\n"
+      "name": "01-base",
+      "title": "cn - 基本用法",
+      "code": "/**\n * cn - 基本用法\n *    -- 附着在顶部 20px\n * en - Basic\n *    -- Sticky 20px to top\n */\nimport React, { useRef } from 'react';\nimport { Alert, Sticky } from 'shineout';\n\nconst App: React.FC = () => {\n  const elRef = useRef(null);\n  return (\n    <div\n      ref={elRef}\n      style={{\n        height: 300,\n        backgroundColor: '#f4f5f8',\n        backgroundImage:\n          'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n          'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n        backgroundSize: '20px 20px',\n        backgroundPosition: '0 0, 10px 10px',\n      }}\n    >\n      <Sticky\n        top={200}\n        scrollContainer='#layout'\n        parent={elRef.current}\n        onChange={(isStikcy) => {\n          console.log('isStikcy: >>', isStikcy);\n        }}\n      >\n        <Alert>Sticky 200px to top</Alert>\n      </Sticky>\n    </div>\n  );\n};\n\nexport default App;\n",
+      "language": "tsx"
     },
     {
-      "title": "容器内固定",
-      "description": "附着在元素内",
-      "scenario": "basic",
-      "code": "/**\n * cn - 容器内固定\n *    -- 附着在元素内\n * en - Element\n *    -- Sticky to element\n */\nimport React, { useRef } from 'react';\nimport { Alert, Sticky } from 'shineout';\n\nconst App: React.FC = () => {\n  const Element = useRef(null);\n\n  return (\n    <div style={{ position: 'relative', zIndex: 0 }}>\n      <div id='sticky_element' ref={Element} style={{ height: 400, overflow: 'auto' }}>\n        <div\n          style={{\n            height: 1600,\n            backgroundColor: '#f4f5f8',\n            backgroundImage:\n              'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n              'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n            backgroundSize: '20px 20px',\n            backgroundPosition: '0 0, 10px 10px',\n          }}\n        >\n          <div style={{ height: 600 }}></div>\n          <Sticky top={0} bottom={0} scrollContainer='#sticky_element'>\n            <Alert style={{ marginBottom: 0 }} type='info'>\n              Sticky to element\n            </Alert>\n          </Sticky>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
+      "name": "02-element",
+      "title": "cn - 容器内固定",
+      "code": "/**\n * cn - 容器内固定\n *    -- 附着在元素内\n * en - Element\n *    -- Sticky to element\n */\nimport React, { useRef } from 'react';\nimport { Alert, Sticky } from 'shineout';\n\nconst App: React.FC = () => {\n  const Element = useRef(null);\n\n  return (\n    <div style={{ position: 'relative', zIndex: 0 }}>\n      <div id='sticky_element' ref={Element} style={{ height: 400, overflow: 'auto' }}>\n        <div\n          style={{\n            height: 1600,\n            backgroundColor: '#f4f5f8',\n            backgroundImage:\n              'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n              'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n            backgroundSize: '20px 20px',\n            backgroundPosition: '0 0, 10px 10px',\n          }}\n        >\n          <div style={{ height: 600 }}></div>\n          <Sticky top={0} bottom={0} scrollContainer='#sticky_element'>\n            <Alert style={{ marginBottom: 0 }} type='info'>\n              Sticky to element\n            </Alert>\n          </Sticky>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n",
+      "language": "tsx"
     },
     {
-      "title": "底部固定",
-      "description": "附着在底部",
-      "scenario": "basic",
-      "code": "/**\n * cn - 底部固定\n *    -- 附着在底部\n * en - Bottom\n *    -- Sticky to bottom\n */\nimport React, { useRef } from 'react';\nimport { Alert, Sticky } from 'shineout';\n\nconst App: React.FC = () => {\n  const elRef = useRef<HTMLDivElement | null>(null);\n  return (\n    <div\n      ref={elRef}\n      style={{\n        backgroundColor: '#f4f5f8',\n        backgroundImage:\n          'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n          'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n        backgroundSize: '20px 20px',\n        backgroundPosition: '0 0, 10px 10px',\n      }}\n    >\n      <div style={{ height: 300 }}></div>\n      <Sticky bottom={0} scrollContainer='#layout' parent={elRef.current}>\n        <Alert style={{ marginBottom: 0 }}>Sticky at bottom.</Alert>\n      </Sticky>\n    </div>\n  );\n};\n\nexport default App;\n"
+      "name": "03-bottom",
+      "title": "cn - 底部固定",
+      "code": "/**\n * cn - 底部固定\n *    -- 附着在底部\n * en - Bottom\n *    -- Sticky to bottom\n */\nimport React, { useRef } from 'react';\nimport { Alert, Sticky } from 'shineout';\n\nconst App: React.FC = () => {\n  const elRef = useRef<HTMLDivElement | null>(null);\n  return (\n    <div\n      ref={elRef}\n      style={{\n        backgroundColor: '#f4f5f8',\n        backgroundImage:\n          'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n          'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n        backgroundSize: '20px 20px',\n        backgroundPosition: '0 0, 10px 10px',\n      }}\n    >\n      <div style={{ height: 300 }}></div>\n      <Sticky bottom={0} scrollContainer='#layout' parent={elRef.current}>\n        <Alert style={{ marginBottom: 0 }}>Sticky at bottom.</Alert>\n      </Sticky>\n    </div>\n  );\n};\n\nexport default App;\n",
+      "language": "tsx"
     },
     {
-      "title": "fixed",
-      "description": "不传 scrollContainer 时，使用 fixe 定位",
-      "scenario": "basic",
-      "code": "/**\n * cn - fixed\n *    -- 不传 scrollContainer 时，使用 fixe 定位\n * en - fixed\n *    -- When scrollContainer is not passed, use fixed positioning\n */\nimport React, { useRef, useState } from 'react';\nimport { Alert, Sticky, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const elRef = useRef<HTMLDivElement | null>(null);\n  const [left, setLeft] = useState(0);\n  return (\n    <div>\n      <Button onClick={() => setLeft(left + 10)}>Move Right</Button>\n      <div\n        ref={elRef}\n        style={{\n          backgroundColor: '#f4f5f8',\n          backgroundImage:\n            'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n            'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n          backgroundSize: '20px 20px',\n          backgroundPosition: '0 0, 10px 10px',\n        }}\n      >\n        <div style={{ height: 300 }}></div>\n        <Sticky bottom={0}>\n          <Alert style={{ marginBottom: 0, marginLeft: left }}>Sticky at bottom.</Alert>\n        </Sticky>\n        <div style={{ height: 300 }}></div>\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
+      "name": "t-01-fixed",
+      "title": "cn - fixed",
+      "code": "/**\n * cn - fixed\n *    -- 不传 scrollContainer 时，使用 fixe 定位\n * en - fixed\n *    -- When scrollContainer is not passed, use fixed positioning\n */\nimport React, { useRef, useState } from 'react';\nimport { Alert, Sticky, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const elRef = useRef<HTMLDivElement | null>(null);\n  const [left, setLeft] = useState(0);\n  return (\n    <div>\n      <Button onClick={() => setLeft(left + 10)}>Move Right</Button>\n      <div\n        ref={elRef}\n        style={{\n          backgroundColor: '#f4f5f8',\n          backgroundImage:\n            'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), ' +\n            'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)',\n          backgroundSize: '20px 20px',\n          backgroundPosition: '0 0, 10px 10px',\n        }}\n      >\n        <div style={{ height: 300 }}></div>\n        <Sticky bottom={0}>\n          <Alert style={{ marginBottom: 0, marginLeft: left }}>Sticky at bottom.</Alert>\n        </Sticky>\n        <div style={{ height: 300 }}></div>\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n",
+      "language": "tsx"
     }
   ],
   "subComponents": [],
-  "version": "3.7.7"
+  "version": "3.7.7",
+  "apiSummary": {
+    "totalProps": 9,
+    "requiredProps": 0,
+    "propsWithWhen": 0
+  }
 }

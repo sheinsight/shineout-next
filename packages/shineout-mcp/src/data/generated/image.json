@@ -1,7 +1,7 @@
 {
   "name": "Image",
   "description": "用于图片展示及预览",
-  "category": "display",
+  "category": "other",
   "importPath": "import { Image } from 'shineout'",
   "props": [
     {
@@ -45,7 +45,8 @@
       "name": "renderHoverMask",
       "type": "((options: { preview: () => void }) => ReactElement)",
       "required": false,
-      "description": "自定义渲染 hover 时的遮罩层内容，options参数中有一个 preview 方法，调用 preview 方法可以预览图片"
+      "description": "自定义渲染 hover 时的遮罩层内容，options参数中有一个 preview 方法，调用 preview 方法可以预览图片",
+      "version": "3.6.0"
     },
     {
       "name": "fit",
@@ -86,7 +87,8 @@
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否仅在视图内加载"
+      "description": "是否仅在视图内加载",
+      "version": "3.4.5"
     },
     {
       "name": "noImgDrag",
@@ -145,68 +147,121 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "基础 Image 用法",
-      "scenario": "basic",
-      "code": "/**\n * cn - 基本用法\n *    --基础 Image 用法\n * en - Base\n *    --Base Image\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  return (\n    <div\n      style={{\n        gap: 8,\n        display: 'flex',\n      }}\n    >\n      <Image\n        fit='fill'\n        width={128}\n        height={128}\n        target='_modal'\n        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n        href='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      ></Image>\n    </div>\n  );\n};\n"
+      "name": "s-001-base",
+      "title": "cn - 基本用法",
+      "code": "/**\n * cn - 基本用法\n *    --基础 Image 用法\n * en - Base\n *    --Base Image\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  return (\n    <div\n      style={{\n        gap: 8,\n        display: 'flex',\n      }}\n    >\n      <Image\n        fit='fill'\n        width={128}\n        height={128}\n        target='_modal'\n        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n        href='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      ></Image>\n    </div>\n  );\n};\n",
+      "language": "tsx"
     },
     {
-      "title": "不同状态",
-      "description": "图片在加载过程中，会有不同的状态。不同状态下的 Image 展现形式不同",
-      "scenario": "basic",
-      "code": "/**\n * cn - 不同状态\n *    -- 图片在加载过程中，会有不同的状态。不同状态下的 Image 展现形式不同\n * en - Status\n *    -- Image has different status when loading\n */\n\nimport React from 'react';\nimport { Image, Button } from 'shineout';\n\nexport default () => {\n  const [key, setKey] = React.useState(0);\n  return (\n    <>\n      <Button\n        onClick={() => {\n          setKey(key + 1);\n        }}\n        style={{marginBottom: 12}}\n      >\n        reload\n      </Button>\n      <div\n        key={key}\n        style={{\n          gap: 8,\n          display: 'flex',\n        }}\n      >\n        <Image\n          fit='fill'\n          width={128}\n          height={128}\n          target='_modal'\n          src={`https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png?v=${key}`}\n          href={`https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png?v=${key}`}\n        />\n        <Image fit='fill' width={128} height={128} src='error' />\n      </div>\n    </>\n  );\n};\n"
+      "name": "s-002-status",
+      "title": "cn - 不同状态",
+      "code": "/**\n * cn - 不同状态\n *    -- 图片在加载过程中，会有不同的状态。不同状态下的 Image 展现形式不同\n * en - Status\n *    -- Image has different status when loading\n */\n\nimport React from 'react';\nimport { Image, Button } from 'shineout';\n\nexport default () => {\n  const [key, setKey] = React.useState(0);\n  return (\n    <>\n      <Button\n        onClick={() => {\n          setKey(key + 1);\n        }}\n        style={{marginBottom: 12}}\n      >\n        reload\n      </Button>\n      <div\n        key={key}\n        style={{\n          gap: 8,\n          display: 'flex',\n        }}\n      >\n        <Image\n          fit='fill'\n          width={128}\n          height={128}\n          target='_modal'\n          src={`https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png?v=${key}`}\n          href={`https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png?v=${key}`}\n        />\n        <Image fit='fill' width={128} height={128} src='error' />\n      </div>\n    </>\n  );\n};\n",
+      "language": "tsx"
     },
     {
-      "title": "*    -- 支持自定义渲染不同状态下的内容：",
-      "description": "支持自定义渲染不同状态下的内容：",
-      "scenario": "basic",
-      "code": "/**\n * cn -\n *    -- 支持自定义渲染不同状态下的内容：\n *    -- 1、通过设置 `error` 属性自定义渲染加载失败时的内容\n *    -- 2、通过设置 `placeholder` 属性用于自定义渲染加载中时的占位符内容\n * en -\n *    -- Custom rendering of content in different states:\n *    -- 1. `error` is used to customize the content when loading fails\n *    -- 2. `placeholder` is used to customize the placeholder content when loading\n */\n\nimport React from 'react';\nimport { Image, Button } from 'shineout';\n\nexport default () => {\n  const [key, setKey] = React.useState(0);\n  const renderIcon = () => {\n    return (\n      <svg\n        width='16'\n        height='16'\n        viewBox='0 0 16 16'\n        fill='none'\n        xmlns='http://www.w3.org/2000/svg'\n      >\n        <path\n          fillRule='evenodd'\n          clipRule='evenodd'\n          d='M6.67122 2C7.4076 2 8.00456 2.59695 8.00456 3.33333C8.00456 3.50839 7.97008 3.68173 7.90311 3.84347L7.42418 5L8.6665 6.91387L7.18965 9.80933L8.04044 12.2235C8.2852 12.918 7.92059 13.6794 7.22608 13.9242C7.08371 13.9744 6.93386 14 6.78291 14H1.99984C1.26346 14 0.666504 13.403 0.666504 12.6667V3.33333C0.666504 2.59695 1.26346 2 1.99984 2H6.67122ZM13.9998 2C14.7362 2 15.3332 2.59695 15.3332 3.33333V12.6667C15.3332 13.403 14.7362 14 13.9998 14H10.7806C10.2061 14 9.69625 13.6321 9.51521 13.0869L8.42684 9.80933L9.81843 6.66667L8.6665 5L9.10115 3.04409C9.23672 2.43404 9.7778 2 10.4027 2H13.9998ZM4.13693 9.53628L1.99984 11.664V12C1.99984 12.3682 2.29831 12.6667 2.6665 12.6667H5.84111C6.2093 12.6667 6.50778 12.3682 6.50778 12C6.50778 11.9245 6.49497 11.8496 6.46988 11.7784L5.86317 10.058L5.1383 9.48081C4.83888 9.24225 4.40817 9.26611 4.13693 9.53628ZM10.2945 8.88333L9.95912 9.64247C9.89202 9.79403 9.88378 9.96515 9.93601 10.1225L10.6292 12.2101C10.7197 12.4827 10.9747 12.6667 11.2619 12.6667H13.3332C13.7014 12.6667 13.9998 12.3682 13.9998 12V11.7053L10.2945 8.88333ZM13.3332 3.33333H10.9377C10.6251 3.33333 10.3545 3.55045 10.2868 3.85556L10.1579 4.43666C10.1177 4.61775 10.1548 4.8074 10.2602 4.96002L11.1278 6.21597C11.2597 6.40688 11.2829 6.65263 11.1889 6.86479L10.8145 7.70933L13.9998 10.1347V4C13.9998 3.63181 13.7014 3.33333 13.3332 3.33333ZM5.69471 3.33333H2.6665C2.29831 3.33333 1.99984 3.63181 1.99984 4V10.0933L4.13693 7.96532C4.40817 7.69516 4.83888 7.6713 5.1383 7.90986L6.03493 8.62424C6.0979 8.67442 6.16629 8.71346 6.23767 8.7416L6.95367 7.33688C7.06186 7.1247 7.04864 6.87093 6.919 6.67114L6.11482 5.43183C5.99536 5.24774 5.97415 5.01664 6.05812 4.81387L6.29761 4.23555C6.43549 3.90258 6.27735 3.52087 5.94438 3.38298C5.86522 3.3502 5.78038 3.33333 5.69471 3.33333ZM3.99984 4C4.73621 4 5.33317 4.59696 5.33317 5.33333C5.33317 6.0697 4.73621 6.66667 3.99984 6.66667C3.26347 6.66667 2.6665 6.0697 2.6665 5.33333C2.6665 4.59696 3.26347 4 3.99984 4ZM3.99984 5.14286C3.89463 5.14286 3.80936 5.22813 3.80936 5.33333C3.80936 5.43854 3.89463 5.52381 3.99984 5.52381C4.10504 5.52381 4.19031 5.43854 4.19031 5.33333C4.19031 5.22813 4.10504 5.14286 3.99984 5.14286Z'\n          fill='#B3B7C1'\n        />\n      </svg>\n    );\n  };\n  const renderError = () => {\n    return (\n      <div\n        style={{\n          width: '100%',\n          height: '100%',\n          display: 'flex',\n          alignItems: 'center',\n          justifyContent: 'center',\n          flexDirection: 'column',\n          fontSize: 12,\n          color: '#666C7C',\n        }}\n      >\n        <div>{renderIcon()}</div>\n        <div>Error</div>\n      </div>\n    );\n  };\n\n  const renderPlaceholder = () => {\n    return (\n      <div\n        style={{\n          width: '100%',\n          height: '100%',\n          display: 'flex',\n          alignItems: 'center',\n          justifyContent: 'center',\n          fontSize: 12,\n          color: '#666C7C',\n        }}\n      >\n        <div>疯狂加载中...</div>\n      </div>\n    );\n  };\n\n  return (\n    <>\n      <Button\n        onClick={() => {\n          setKey(key + 1);\n        }}\n        style={{ marginBottom: 12 }}\n      >\n        reload\n      </Button>\n\n      <div\n        key={key}\n        style={{\n          gap: 8,\n          display: 'flex',\n        }}\n      >\n        <Image\n          fit='fill'\n          width={128}\n          height={128}\n          target='_modal'\n          placeholder={renderPlaceholder()}\n          src={`https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png?v=${key}`}\n        />\n        <Image fit='fill' width={128} height={128} src='error' error={renderError()} />\n      </div>\n    </>\n  );\n};\n"
+      "name": "s-003-custom",
+      "title": "cn -",
+      "code": "/**\n * cn -\n *    -- 支持自定义渲染不同状态下的内容：\n *    -- 1、通过设置 `error` 属性自定义渲染加载失败时的内容\n *    -- 2、通过设置 `placeholder` 属性用于自定义渲染加载中时的占位符内容\n * en -\n *    -- Custom rendering of content in different states:\n *    -- 1. `error` is used to customize the content when loading fails\n *    -- 2. `placeholder` is used to customize the placeholder content when loading\n */\n\nimport React from 'react';\nimport { Image, Button } from 'shineout';\n\nexport default () => {\n  const [key, setKey] = React.useState(0);\n  const renderIcon = () => {\n    return (\n      <svg\n        width='16'\n        height='16'\n        viewBox='0 0 16 16'\n        fill='none'\n        xmlns='http://www.w3.org/2000/svg'\n      >\n        <path\n          fillRule='evenodd'\n          clipRule='evenodd'\n          d='M6.67122 2C7.4076 2 8.00456 2.59695 8.00456 3.33333C8.00456 3.50839 7.97008 3.68173 7.90311 3.84347L7.42418 5L8.6665 6.91387L7.18965 9.80933L8.04044 12.2235C8.2852 12.918 7.92059 13.6794 7.22608 13.9242C7.08371 13.9744 6.93386 14 6.78291 14H1.99984C1.26346 14 0.666504 13.403 0.666504 12.6667V3.33333C0.666504 2.59695 1.26346 2 1.99984 2H6.67122ZM13.9998 2C14.7362 2 15.3332 2.59695 15.3332 3.33333V12.6667C15.3332 13.403 14.7362 14 13.9998 14H10.7806C10.2061 14 9.69625 13.6321 9.51521 13.0869L8.42684 9.80933L9.81843 6.66667L8.6665 5L9.10115 3.04409C9.23672 2.43404 9.7778 2 10.4027 2H13.9998ZM4.13693 9.53628L1.99984 11.664V12C1.99984 12.3682 2.29831 12.6667 2.6665 12.6667H5.84111C6.2093 12.6667 6.50778 12.3682 6.50778 12C6.50778 11.9245 6.49497 11.8496 6.46988 11.7784L5.86317 10.058L5.1383 9.48081C4.83888 9.24225 4.40817 9.26611 4.13693 9.53628ZM10.2945 8.88333L9.95912 9.64247C9.89202 9.79403 9.88378 9.96515 9.93601 10.1225L10.6292 12.2101C10.7197 12.4827 10.9747 12.6667 11.2619 12.6667H13.3332C13.7014 12.6667 13.9998 12.3682 13.9998 12V11.7053L10.2945 8.88333ZM13.3332 3.33333H10.9377C10.6251 3.33333 10.3545 3.55045 10.2868 3.85556L10.1579 4.43666C10.1177 4.61775 10.1548 4.8074 10.2602 4.96002L11.1278 6.21597C11.2597 6.40688 11.2829 6.65263 11.1889 6.86479L10.8145 7.70933L13.9998 10.1347V4C13.9998 3.63181 13.7014 3.33333 13.3332 3.33333ZM5.69471 3.33333H2.6665C2.29831 3.33333 1.99984 3.63181 1.99984 4V10.0933L4.13693 7.96532C4.40817 7.69516 4.83888 7.6713 5.1383 7.90986L6.03493 8.62424C6.0979 8.67442 6.16629 8.71346 6.23767 8.7416L6.95367 7.33688C7.06186 7.1247 7.04864 6.87093 6.919 6.67114L6.11482 5.43183C5.99536 5.24774 5.97415 5.01664 6.05812 4.81387L6.29761 4.23555C6.43549 3.90258 6.27735 3.52087 5.94438 3.38298C5.86522 3.3502 5.78038 3.33333 5.69471 3.33333ZM3.99984 4C4.73621 4 5.33317 4.59696 5.33317 5.33333C5.33317 6.0697 4.73621 6.66667 3.99984 6.66667C3.26347 6.66667 2.6665 6.0697 2.6665 5.33333C2.6665 4.59696 3.26347 4 3.99984 4ZM3.99984 5.14286C3.89463 5.14286 3.80936 5.22813 3.80936 5.33333C3.80936 5.43854 3.89463 5.52381 3.99984 5.52381C4.10504 5.52381 4.19031 5.43854 4.19031 5.33333C4.19031 5.22813 4.10504 5.14286 3.99984 5.14286Z'\n          fill='#B3B7C1'\n        />\n      </svg>\n    );\n  };\n  const renderError = () => {\n    return (\n      <div\n        style={{\n          width: '100%',\n          height: '100%',\n          display: 'flex',\n          alignItems: 'center',\n          justifyContent: 'center',\n          flexDirection: 'column',\n          fontSize: 12,\n          color: '#666C7C',\n        }}\n      >\n        <div>{renderIcon()}</div>\n        <div>Error</div>\n      </div>\n    );\n  };\n\n  const renderPlaceholder = () => {\n    return (\n      <div\n        style={{\n          width: '100%',\n          height: '100%',\n          display: 'flex',\n          alignItems: 'center',\n          justifyContent: 'center',\n          fontSize: 12,\n          color: '#666C7C',\n        }}\n      >\n        <div>疯狂加载中...</div>\n      </div>\n    );\n  };\n\n  return (\n    <>\n      <Button\n        onClick={() => {\n          setKey(key + 1);\n        }}\n        style={{ marginBottom: 12 }}\n      >\n        reload\n      </Button>\n\n      <div\n        key={key}\n        style={{\n          gap: 8,\n          display: 'flex',\n        }}\n      >\n        <Image\n          fit='fill'\n          width={128}\n          height={128}\n          target='_modal'\n          placeholder={renderPlaceholder()}\n          src={`https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png?v=${key}`}\n        />\n        <Image fit='fill' width={128} height={128} src='error' error={renderError()} />\n      </div>\n    </>\n  );\n};\n",
+      "language": "tsx"
     },
     {
-      "title": "图片形状",
-      "description": "Image 可以设置不同的形状",
-      "scenario": "basic",
-      "code": "/**\n * cn - 图片形状\n *    -- Image 可以设置不同的形状\n *    -- 内置三种不同的形状：圆角模式 rounded、圆形模式 circle、带边框模式 thumbnail\n * en - Shape\n *    -- Image can be set to different shapes\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  return (\n    <div\n      style={{\n        gap: 8,\n        display: 'flex',\n      }}\n    >\n      <Image\n        shape='rounded'\n        fit='fill'\n        width={128}\n        height={128}\n        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      ></Image>\n      <Image\n        shape='circle'\n        fit='fill'\n        width={128}\n        height={128}\n        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      ></Image>\n      <Image\n        shape='thumbnail'\n        fit='fill'\n        width={128}\n        height={128}\n        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      ></Image>\n    </div>\n  );\n};\n"
+      "name": "s-004-shape",
+      "title": "cn - 图片形状",
+      "code": "/**\n * cn - 图片形状\n *    -- Image 可以设置不同的形状\n *    -- 内置三种不同的形状：圆角模式 rounded、圆形模式 circle、带边框模式 thumbnail\n * en - Shape\n *    -- Image can be set to different shapes\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  return (\n    <div\n      style={{\n        gap: 8,\n        display: 'flex',\n      }}\n    >\n      <Image\n        shape='rounded'\n        fit='fill'\n        width={128}\n        height={128}\n        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      ></Image>\n      <Image\n        shape='circle'\n        fit='fill'\n        width={128}\n        height={128}\n        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      ></Image>\n      <Image\n        shape='thumbnail'\n        fit='fill'\n        width={128}\n        height={128}\n        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      ></Image>\n    </div>\n  );\n};\n",
+      "language": "tsx"
     },
     {
-      "title": "填充方式",
-      "description": "Image 四种不同的图片填充方式：",
-      "scenario": "basic",
-      "code": "/**\n * cn - 填充方式\n *    -- Image 四种不同的图片填充方式：\n *    -- fill 填充整个容器、center 居中、fit 原图、stretch 拉伸；默认推荐使用「填充」\n * en - Fit\n *    -- Image has four different fill modes:\n *    -- fill, center, fit, stretch ; fill is recommended by default\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  const fit = ['fill', 'center', 'fit', 'stretch'];\n\n  return (\n    <div\n      style={{\n        gap: 8,\n        display: 'flex',\n      }}\n    >\n      {fit.map((item, index) => {\n        return (\n          <div key={index} style={{ display: 'flex', flexDirection: 'column' }}>\n            <Image\n              fit={item as any}\n              width={128}\n              height={128}\n              src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n            ></Image>\n            <div style={{ textAlign: 'center', color: '#141737', fontSize: 12, marginTop: 5 }}>\n              {item}\n            </div>\n          </div>\n        );\n      })}\n    </div>\n  );\n};\n"
-    },
-    {
-      "title": "打开方式",
-      "description": "Image 通过配置 `target` 属性实现四种打开方式：",
-      "scenario": "basic",
-      "code": "/**\n * cn - 打开方式\n *    -- Image 通过配置 `target` 属性实现四种打开方式：\n *    -- _modal 通过弹层打开预览、_blank 通过新窗口打开预览、_self 通过当前窗口打开预览、_download 下载图片\n * en - Target\n *    -- Image has four open modes: _modal open preview through layer, _blank open preview through new window, _self open preview through current window, _download download image\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  const images = [\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n      target: '_modal',\n    },\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n      target: '_blank',\n    },\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n      target: '_self',\n    },\n    {\n      src: 'static/image/s-01.png',\n      target: '_download',\n    },\n  ];\n  return (\n    <div\n      style={{\n        gap: 8,\n        display: 'flex',\n      }}\n    >\n      {images.map((item, index) => {\n        return (\n          <div key={index}>\n            <Image\n              fit='fill'\n              width={128}\n              height={128}\n              target={item.target as any}\n              src={item.src}\n              href={item.src}\n            ></Image>\n            <div style={{ fontSize: 12, textAlign: 'center' }}>{item.target}</div>\n          </div>\n        );\n      })}\n    </div>\n  );\n};\n"
-    },
-    {
-      "title": "图片组",
-      "description": "Image 支持一组图片的展示",
-      "scenario": "basic",
-      "code": "/**\n * cn - 图片组\n *    -- Image 支持一组图片的展示\n *    -- 通过设置 `pile` 属性折叠图片，通过设置 `showCount` 展示图片数量\n *    -- 注意，showCount 属性仅在 pile 属性为 true 时生效。开启 pile 属性后，图片组将默认开启 _modal 模式预览\n * en - Group\n *    -- Image supports a group of images.\n *    -- Set the `pile` property to fold the images, and set the `showCount` property to show the number of images\n *    -- Note that the showCount property only takes effect when the pile property is true. After the pile property is turned on, the image group will default to preview in _modal mode\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  const images = [\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png',\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png',\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png',\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png',\n  ];\n  return (\n    <div\n      style={{\n        gap: 16,\n        width: '100%',\n        display: 'flex',\n      }}\n    >\n      <Image.Group fit='fill' target='_modal' pile lazy>\n        {images.map((item, index) => {\n          return <Image key={index} width={128} height={128} src={item} href={item}></Image>;\n        })}\n      </Image.Group>\n\n      <Image.Group fit='fill' target='_modal' pile showCount lazy>\n        {images.map((item, index) => {\n          return <Image key={index} width={128} height={128} src={item} href={item}></Image>;\n        })}\n      </Image.Group>\n    </div>\n  );\n};\n"
-    },
-    {
-      "title": "*    -- Image 支持平铺展示一组图片",
-      "description": "Image 支持平铺展示一组图片",
-      "scenario": "basic",
-      "code": "/**\n * cn -\n *    -- Image 支持平铺展示一组图片\n * en -\n *    -- Image supports tiled display of a group of images\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  const images = [\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png',\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png',\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png',\n    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png',\n  ];\n  return (\n    <div\n      style={{\n        gap: 8,\n        display: 'flex',\n      }}\n    >\n      <Image.Group fit='fill' target='_modal' style={{ fontSize: 0 }}>\n        {images.map((item, index) => {\n          return <Image key={index} width={128} height={128} src={item} href={item} style={{ marginBottom: 8 }}></Image>;\n        })}\n      </Image.Group>\n    </div>\n  );\n};\n"
-    },
-    {
-      "title": "懒加载",
-      "description": "Image 通过配置 `lazy` 属性开启懒加载模式",
-      "scenario": "basic",
-      "code": "/**\n * cn - 懒加载\n *    -- Image 通过配置 `lazy` 属性开启懒加载模式\n * en - Lazy\n *    -- Image enables lazy loading mode by configuring the `lazy` property\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  const images = [\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n      target: '_modal',\n    },\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png',\n      target: '_blank',\n    },\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png',\n      target: '_self',\n    },\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png',\n      target: '_download',\n    },\n  ];\n  return (\n    <div style={{ width: '100%' }}>\n      {images.map((item, index) => {\n        return <Image key={index} lazy fit='fill' width={'100%'} height={528} src={item.src}></Image>;\n      })}\n    </div>\n  );\n};\n"
-    },
-    {
-      "title": "*    -- 通过配置 `container` 对指定容器下的 Image 进行懒加载",
-      "description": "通过配置 `container` 对指定容器下的 Image 进行懒加载",
-      "scenario": "basic",
-      "code": "/**\n * cn -\n *    -- 通过配置 `container` 对指定容器下的 Image 进行懒加载\n * en -\n *    -- Set `container` to lazy load Image in the specified container\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  const images = [\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',\n      target: '_modal',\n    },\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png',\n      target: '_blank',\n    },\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png',\n      target: '_self',\n    },\n    {\n      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png',\n      target: '_download',\n    },\n  ];\n  return (\n    <div id='image-container' style={{ width: '100%', height: 300, overflow: 'auto' }}>\n      {images.map((item, index) => {\n        return (\n          <Image\n            key={index}\n            lazy\n            container='#image-container'\n            fit='fill'\n            width='100%'\n            height='100%'\n            src={item.src}\n          ></Image>\n        );\n      })}\n    </div>\n  );\n};\n"
+      "name": "s-005-fit",
+      "title": "cn - 填充方式",
+      "code": "/**\n * cn - 填充方式\n *    -- Image 四种不同的图片填充方式：\n *    -- fill 填充整个容器、center 居中、fit 原图、stretch 拉伸；默认推荐使用「填充」\n * en - Fit\n *    -- Image has four different fill modes:\n *    -- fill, center, fit, stretch ; fill is recommended by default\n */\n\nimport React from 'react';\nimport { Image } from 'shineout';\n\nexport default () => {\n  const fit = ['fill', 'center', 'fit', 'stretch'];\n\n  return (\n    <div\n      style={{\n        gap: 8,\n        display: 'flex',\n      }}\n    >\n      {fit.map((item, index) => {\n        return (\n          <div key={index} style={{ display: 'flex', flexDirection: 'column' }}>\n            <Image\n              fit={item as any}\n              width={128}\n              height={128}\n              src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n            ></Image>\n            <div style={{ textAlign: 'center', color: '#141737', fontSize: 12, marginTop: 5 }}>\n              {item}\n            </div>\n          </div>\n        );\n      })}\n    </div>\n  );\n};\n",
+      "language": "tsx"
     }
   ],
   "subComponents": [
     "Group"
   ],
-  "version": "3.7.7"
+  "version": "3.7.7",
+  "apiSummary": {
+    "totalProps": 21,
+    "requiredProps": 0,
+    "propsWithWhen": 0
+  },
+  "subComponentApis": {
+    "Group": {
+      "props": [
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "自定义样式"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "自定义类名"
+        },
+        {
+          "name": "showCount",
+          "type": "boolean",
+          "required": false,
+          "description": "显示图片数量"
+        },
+        {
+          "name": "target",
+          "type": "\"_self\" | \"_blank\" | \"_modal\" | \"_download\"",
+          "required": false,
+          "defaultValue": "\\\"_modal\\\"",
+          "description": "图片打开方式"
+        },
+        {
+          "name": "shape",
+          "type": "\"rounded\" | \"circle\" | \"thumbnail\"",
+          "required": false,
+          "defaultValue": "\\\"rounded\\\"",
+          "description": "图片形状"
+        },
+        {
+          "name": "lazy",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "是否延迟加载"
+        },
+        {
+          "name": "pile",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "是否堆叠"
+        },
+        {
+          "name": "fit",
+          "type": "\"fill\" | \"center\" | \"fit\" | \"stretch\"",
+          "required": false,
+          "description": "图片填充方式"
+        },
+        {
+          "name": "width",
+          "type": "string | number",
+          "required": false,
+          "defaultValue": "100%",
+          "description": "图片宽度"
+        },
+        {
+          "name": "height",
+          "type": "string | number",
+          "required": false,
+          "defaultValue": "100%",
+          "description": "图片高度"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "子元素"
+        }
+      ]
+    }
+  }
 }

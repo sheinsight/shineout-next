@@ -1,7 +1,7 @@
 {
   "name": "Avatar",
   "description": "用图标、图片、字符的形式展示用户或事物信息",
-  "category": "display",
+  "category": "other",
   "importPath": "import { Avatar } from 'shineout'",
   "props": [
     {
@@ -94,38 +94,98 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "头像的基础使用",
-      "scenario": "basic",
-      "code": "/**\n * cn - 基本用法\n *    -- 头像的基础使用\n * en - Basic\n *    -- The basic usage of Avatar\n */\nimport React from 'react';\nimport { Avatar } from 'shineout';\n\nconst userIcon = (\n  <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      d='M7.99992 8.66667C10.2091 8.66667 11.9999 6.87581 11.9999 4.66667C11.9999 2.45753 10.2091 0.666672 7.99992 0.666672C5.79078 0.666672 3.99992 2.45753 3.99992 4.66667C3.99992 6.87581 5.79078 8.66667 7.99992 8.66667Z'\n      fill='#B3B7C1'\n    />\n    <path\n      d='M5.44625 10C3.1747 10 1.33325 11.8415 1.33325 14.113C1.33325 14.4188 1.58114 14.6667 1.88693 14.6667H14.1129C14.4187 14.6667 14.6666 14.4188 14.6666 14.113C14.6666 11.8415 12.8251 10 10.5536 10H5.44625Z'\n      fill='#B3B7C1'\n    />\n  </svg>\n);\n\nexport default () => {\n  return (\n    <div>\n      <Avatar icon={userIcon} />\n    </div>\n  );\n};\n"
+      "name": "01-base",
+      "title": "cn - 基本用法",
+      "code": "/**\n * cn - 基本用法\n *    -- 头像的基础使用\n * en - Basic\n *    -- The basic usage of Avatar\n */\nimport React from 'react';\nimport { Avatar } from 'shineout';\n\nconst userIcon = (\n  <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      d='M7.99992 8.66667C10.2091 8.66667 11.9999 6.87581 11.9999 4.66667C11.9999 2.45753 10.2091 0.666672 7.99992 0.666672C5.79078 0.666672 3.99992 2.45753 3.99992 4.66667C3.99992 6.87581 5.79078 8.66667 7.99992 8.66667Z'\n      fill='#B3B7C1'\n    />\n    <path\n      d='M5.44625 10C3.1747 10 1.33325 11.8415 1.33325 14.113C1.33325 14.4188 1.58114 14.6667 1.88693 14.6667H14.1129C14.4187 14.6667 14.6666 14.4188 14.6666 14.113C14.6666 11.8415 12.8251 10 10.5536 10H5.44625Z'\n      fill='#B3B7C1'\n    />\n  </svg>\n);\n\nexport default () => {\n  return (\n    <div>\n      <Avatar icon={userIcon} />\n    </div>\n  );\n};\n",
+      "language": "tsx"
     },
     {
-      "title": "类型",
-      "description": "支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色",
-      "scenario": "basic",
-      "code": "/**\n * cn - 类型\n *    -- 支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色\n * en - Basic\n *    -- The basic usage of Avatar\n */\nimport React from 'react';\nimport { Avatar, Badge } from 'shineout';\n\nconst userIcon = (\n  <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      d='M7.99992 8.66667C10.2091 8.66667 11.9999 6.87581 11.9999 4.66667C11.9999 2.45753 10.2091 0.666672 7.99992 0.666672C5.79078 0.666672 3.99992 2.45753 3.99992 4.66667C3.99992 6.87581 5.79078 8.66667 7.99992 8.66667Z'\n      fill='#B3B7C1'\n    />\n    <path\n      d='M5.44625 10C3.1747 10 1.33325 11.8415 1.33325 14.113C1.33325 14.4188 1.58114 14.6667 1.88693 14.6667H14.1129C14.4187 14.6667 14.6666 14.4188 14.6666 14.113C14.6666 11.8415 12.8251 10 10.5536 10H5.44625Z'\n      fill='#B3B7C1'\n    />\n  </svg>\n);\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', gap: 24 }}>\n      <Avatar icon={userIcon}></Avatar>\n      <Avatar>J</Avatar>\n      <Avatar src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar/01.png'></Avatar>\n      <Badge count={<div style={{ fontSize: 16, transform: 'rotate(45deg)' }}>🌱</div>}>\n        <Avatar style={{ background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', color: '#fff' }}>\n          🍊\n        </Avatar>\n      </Badge>\n    </div>\n  );\n};\n"
+      "name": "02-icon",
+      "title": "cn - 类型",
+      "code": "/**\n * cn - 类型\n *    -- 支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色\n * en - Basic\n *    -- The basic usage of Avatar\n */\nimport React from 'react';\nimport { Avatar, Badge } from 'shineout';\n\nconst userIcon = (\n  <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      d='M7.99992 8.66667C10.2091 8.66667 11.9999 6.87581 11.9999 4.66667C11.9999 2.45753 10.2091 0.666672 7.99992 0.666672C5.79078 0.666672 3.99992 2.45753 3.99992 4.66667C3.99992 6.87581 5.79078 8.66667 7.99992 8.66667Z'\n      fill='#B3B7C1'\n    />\n    <path\n      d='M5.44625 10C3.1747 10 1.33325 11.8415 1.33325 14.113C1.33325 14.4188 1.58114 14.6667 1.88693 14.6667H14.1129C14.4187 14.6667 14.6666 14.4188 14.6666 14.113C14.6666 11.8415 12.8251 10 10.5536 10H5.44625Z'\n      fill='#B3B7C1'\n    />\n  </svg>\n);\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', gap: 24 }}>\n      <Avatar icon={userIcon}></Avatar>\n      <Avatar>J</Avatar>\n      <Avatar src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar/01.png'></Avatar>\n      <Badge count={<div style={{ fontSize: 16, transform: 'rotate(45deg)' }}>🌱</div>}>\n        <Avatar style={{ background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', color: '#fff' }}>\n          🍊\n        </Avatar>\n      </Badge>\n    </div>\n  );\n};\n",
+      "language": "tsx"
     },
     {
-      "title": "尺寸和形状",
-      "description": "头像尺寸支持三种：小、中、大，默认为中",
-      "scenario": "basic",
-      "code": "/**\n * cn - 尺寸和形状\n *    -- 头像尺寸支持三种：小、中、大，默认为中\n *    -- 头像形状支持两种：`circle` | `square`，默认为`circle`\n * en - Size\n *    -- Avatar supports three sizes: large, medium, and small\n *    -- Avatar supports two shapes: `circle` | `square`, default is `circle`\n */\nimport React from 'react';\nimport { Avatar } from 'shineout';\n\nfunction UserIcon(props:any){\n  return <svg width={props.size || '16'} height={props.size || '16'} viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      d='M7.99992 8.66667C10.2091 8.66667 11.9999 6.87581 11.9999 4.66667C11.9999 2.45753 10.2091 0.666672 7.99992 0.666672C5.79078 0.666672 3.99992 2.45753 3.99992 4.66667C3.99992 6.87581 5.79078 8.66667 7.99992 8.66667Z'\n      fill='#B3B7C1'\n    />\n    <path\n      d='M5.44625 10C3.1747 10 1.33325 11.8415 1.33325 14.113C1.33325 14.4188 1.58114 14.6667 1.88693 14.6667H14.1129C14.4187 14.6667 14.6666 14.4188 14.6666 14.113C14.6666 11.8415 12.8251 10 10.5536 10H5.44625Z'\n      fill='#B3B7C1'\n    />\n  </svg>\n}\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', gap: 24, flexDirection: 'column' }}>\n      <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>\n        <Avatar icon={<UserIcon size={12} />} size='small'></Avatar>\n        <Avatar icon={<UserIcon size={16} />}></Avatar>\n        <Avatar icon={<UserIcon size={20} />} size='large'></Avatar>\n      </div>\n      <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>\n        <Avatar icon={<UserIcon size={12} />} size='small' shape='square'></Avatar>\n        <Avatar icon={<UserIcon size={16} />} shape='square'></Avatar>\n        <Avatar icon={<UserIcon size={20} />} size='large' shape='square'></Avatar>\n      </div>\n    </div>\n  );\n};\n"
+      "name": "03-shape",
+      "title": "cn - 尺寸和形状",
+      "code": "/**\n * cn - 尺寸和形状\n *    -- 头像尺寸支持三种：小、中、大，默认为中\n *    -- 头像形状支持两种：`circle` | `square`，默认为`circle`\n * en - Size\n *    -- Avatar supports three sizes: large, medium, and small\n *    -- Avatar supports two shapes: `circle` | `square`, default is `circle`\n */\nimport React from 'react';\nimport { Avatar } from 'shineout';\n\nfunction UserIcon(props:any){\n  return <svg width={props.size || '16'} height={props.size || '16'} viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      d='M7.99992 8.66667C10.2091 8.66667 11.9999 6.87581 11.9999 4.66667C11.9999 2.45753 10.2091 0.666672 7.99992 0.666672C5.79078 0.666672 3.99992 2.45753 3.99992 4.66667C3.99992 6.87581 5.79078 8.66667 7.99992 8.66667Z'\n      fill='#B3B7C1'\n    />\n    <path\n      d='M5.44625 10C3.1747 10 1.33325 11.8415 1.33325 14.113C1.33325 14.4188 1.58114 14.6667 1.88693 14.6667H14.1129C14.4187 14.6667 14.6666 14.4188 14.6666 14.113C14.6666 11.8415 12.8251 10 10.5536 10H5.44625Z'\n      fill='#B3B7C1'\n    />\n  </svg>\n}\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', gap: 24, flexDirection: 'column' }}>\n      <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>\n        <Avatar icon={<UserIcon size={12} />} size='small'></Avatar>\n        <Avatar icon={<UserIcon size={16} />}></Avatar>\n        <Avatar icon={<UserIcon size={20} />} size='large'></Avatar>\n      </div>\n      <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>\n        <Avatar icon={<UserIcon size={12} />} size='small' shape='square'></Avatar>\n        <Avatar icon={<UserIcon size={16} />} shape='square'></Avatar>\n        <Avatar icon={<UserIcon size={20} />} size='large' shape='square'></Avatar>\n      </div>\n    </div>\n  );\n};\n",
+      "language": "tsx"
     },
     {
-      "title": "字符大小自适应",
-      "description": "头像支持字符自适应，即字符长度过长时，头像可自动调整字符以便呈现完整内容,也可使用 `gap` 来设置字符距离左右两侧边界单位像素",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 字符大小自适应\n *    -- 头像支持字符自适应，即字符长度过长时，头像可自动调整字符以便呈现完整内容,也可使用 `gap` 来设置字符距离左右两侧边界单位像素\n * en - Auto text size\n *    -- Avatar supports character adaptation, that is, when the character length is too long, the avatar can automatically adjust the character to present the complete content\n */\nimport React from 'react';\nimport { Avatar } from 'shineout';\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', gap: 24 }}>\n      <Avatar>J</Avatar>\n      <Avatar>Jay</Avatar>\n      <Avatar>Janny</Avatar>\n    </div>\n  );\n};\n"
+      "name": "04-autotext",
+      "title": "cn - 字符大小自适应",
+      "code": "/**\n * cn - 字符大小自适应\n *    -- 头像支持字符自适应，即字符长度过长时，头像可自动调整字符以便呈现完整内容,也可使用 `gap` 来设置字符距离左右两侧边界单位像素\n * en - Auto text size\n *    -- Avatar supports character adaptation, that is, when the character length is too long, the avatar can automatically adjust the character to present the complete content\n */\nimport React from 'react';\nimport { Avatar } from 'shineout';\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', gap: 24 }}>\n      <Avatar>J</Avatar>\n      <Avatar>Jay</Avatar>\n      <Avatar>Janny</Avatar>\n    </div>\n  );\n};\n",
+      "language": "tsx"
     },
     {
-      "title": "头像组",
-      "description": "通过配置 `max` 属性设置最大展示个数，超过则隐藏显示，如果需要个性化展示超出内容，可以使用 `renderMax` 属性",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 头像组\n *    -- 通过配置 `max` 属性设置最大展示个数，超过则隐藏显示，如果需要个性化展示超出内容，可以使用 `renderMax` 属性\n * en - Group\n *    -- Set the maximum number of avatars displayed by configuring the `max` property. If it exceeds, it will be hidden. If you need to display the content beyond the personalized display, you can use the `renderMax` property\n */\nimport React from 'react';\nimport { Avatar, Popover, icons } from 'shineout';\n\nconst url =\n  'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar';\n\nconst avatarImgIndex = [1, 2, 3, 4, 5, 6, 7, 8];\n\nexport default () => {\n  const renderAvatars = () => {\n    return avatarImgIndex.map((item, index) => {\n      return <Avatar key={index} src={`${url}/0${item}.png`}></Avatar>;\n    });\n  };\n\n  const renderMax = (dom: React.ReactNode[]) => {\n    return (\n      <div>\n        <Avatar><div style={{ width: 16, height: 16, display: 'flex' }}>{icons.More}</div></Avatar>\n        <Popover style={{ padding: 16, display: 'flex', gap: 8 }}>{dom}</Popover>\n      </div>\n    );\n  };\n\n  return (\n    <div>\n      <div style={{ marginBottom: 24 }}>\n        <Avatar.Group>{renderAvatars()}</Avatar.Group>\n      </div>\n      <div style={{ marginBottom: 24 }}>\n        <Avatar.Group max={3}>{renderAvatars()}</Avatar.Group>\n      </div>\n      <div>\n        <Avatar.Group max={3} renderMax={renderMax}>\n          {renderAvatars()}\n        </Avatar.Group>\n      </div>\n    </div>\n  );\n};\n"
+      "name": "05-group",
+      "title": "cn - 头像组",
+      "code": "/**\n * cn - 头像组\n *    -- 通过配置 `max` 属性设置最大展示个数，超过则隐藏显示，如果需要个性化展示超出内容，可以使用 `renderMax` 属性\n * en - Group\n *    -- Set the maximum number of avatars displayed by configuring the `max` property. If it exceeds, it will be hidden. If you need to display the content beyond the personalized display, you can use the `renderMax` property\n */\nimport React from 'react';\nimport { Avatar, Popover, icons } from 'shineout';\n\nconst url =\n  'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/avatar';\n\nconst avatarImgIndex = [1, 2, 3, 4, 5, 6, 7, 8];\n\nexport default () => {\n  const renderAvatars = () => {\n    return avatarImgIndex.map((item, index) => {\n      return <Avatar key={index} src={`${url}/0${item}.png`}></Avatar>;\n    });\n  };\n\n  const renderMax = (dom: React.ReactNode[]) => {\n    return (\n      <div>\n        <Avatar><div style={{ width: 16, height: 16, display: 'flex' }}>{icons.More}</div></Avatar>\n        <Popover style={{ padding: 16, display: 'flex', gap: 8 }}>{dom}</Popover>\n      </div>\n    );\n  };\n\n  return (\n    <div>\n      <div style={{ marginBottom: 24 }}>\n        <Avatar.Group>{renderAvatars()}</Avatar.Group>\n      </div>\n      <div style={{ marginBottom: 24 }}>\n        <Avatar.Group max={3}>{renderAvatars()}</Avatar.Group>\n      </div>\n      <div>\n        <Avatar.Group max={3} renderMax={renderMax}>\n          {renderAvatars()}\n        </Avatar.Group>\n      </div>\n    </div>\n  );\n};\n",
+      "language": "tsx"
     }
   ],
   "subComponents": [
     "Group"
   ],
-  "version": "3.7.7"
+  "version": "3.7.7",
+  "apiSummary": {
+    "totalProps": 14,
+    "requiredProps": 0,
+    "propsWithWhen": 0
+  },
+  "subComponentApis": {
+    "Group": {
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "自定义类名"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "自定义样式"
+        },
+        {
+          "name": "size",
+          "type": "\"small\" | \"large\" | \"default\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "不同尺寸"
+        },
+        {
+          "name": "shape",
+          "type": "\"circle\" | \"square\"",
+          "required": false,
+          "description": "头像文本内容，会根据内容尺寸自适应计算缩放比例"
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "required": false,
+          "description": "设置头像组展示头像的最大数量"
+        },
+        {
+          "name": "renderMax",
+          "type": "((hideAvatarNodes: ReactNode[], max: number) => ReactNode)",
+          "required": false,
+          "description": "自定义渲染隐藏的头像节点，hideAvatarNodes 为隐藏的节点 dom 数组，max 为隐藏的节点数量"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "头像节点"
+        },
+        {
+          "name": "popover",
+          "type": "Pick<PopoverProps, \"position\" | \"zIndex\" | \"getPopupContainer\" | \"adjust\">",
+          "required": false,
+          "description": "用于展示隐藏头像的 Popover 相关配置，配置属性为 Popover 部分属性: position、zIndex、getPopupContainer、adjust"
+        }
+      ]
+    }
+  }
 }

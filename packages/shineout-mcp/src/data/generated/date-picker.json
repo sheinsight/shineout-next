@@ -1,0 +1,396 @@
+{
+  "name": "DatePicker",
+  "description": "选择日期。支持年、月、季度、周、日类型，支持范围选择等",
+  "category": "other",
+  "importPath": "import { DatePicker } from 'shineout'",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | \"large\" | \"default\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "不同尺寸"
+    },
+    {
+      "name": "status",
+      "type": "\"error\"",
+      "required": false,
+      "description": "组件状态"
+    },
+    {
+      "name": "innerTitle",
+      "type": "ReactNode",
+      "required": false,
+      "description": "内嵌标题"
+    },
+    {
+      "name": "placeTitle",
+      "type": "ReactNode",
+      "required": false,
+      "description": "占位标题，需要配合 innerTitle 一起使用"
+    },
+    {
+      "name": "absolute",
+      "type": "boolean | (() => HTMLElement | null)",
+      "required": false,
+      "defaultValue": "false",
+      "description": "为 true 时，选项弹出层在 DOM 中独立 render; 为函数时，返回值作为弹出层容器"
+    },
+    {
+      "name": "zIndex",
+      "type": "number",
+      "required": false,
+      "defaultValue": "1000",
+      "description": "选项列表 z-index 值, 需要配合 absolute"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "required": false,
+      "description": "额外渲染的节点"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean | ((date: Date, type?: \"start\" | \"end\" , value0?: Date , value1?: Date ) => boolean) | (boolean | ((date: Date) => boolean))[]",
+      "required": false,
+      "defaultValue": "false",
+      "description": "如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项"
+    },
+    {
+      "name": "disabledTime",
+      "type": "string | ((time: string, type?: \"start\" | \"end\" , value0?: Date , value1?: Date ) => boolean)",
+      "required": false,
+      "description": "禁用指定 Time。"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "description": "控制浮层显隐"
+    },
+    {
+      "name": "onCollapse",
+      "type": "((collapse: boolean) => void)",
+      "required": false,
+      "description": "下拉列表展开/收起回调"
+    },
+    {
+      "name": "align",
+      "type": "\"left\" | \"right\" | \"center\"",
+      "required": false,
+      "defaultValue": "\\\"center\\\"",
+      "description": "值水平排布方式"
+    },
+    {
+      "name": "timeZone",
+      "type": "string",
+      "required": false,
+      "description": "设置默认时区,格式为/^([+-]\\\\d{2})$/ 支持 \\\"-12\\\" 到 \\\"+13\\\""
+    },
+    {
+      "name": "position",
+      "type": "\"top-left\" | \"top-right\" | \"bottom-left\" | \"bottom-right\"",
+      "required": false,
+      "description": "弹出框位置"
+    },
+    {
+      "name": "type",
+      "type": "\"date\" | \"time\" | \"datetime\" | \"month\" | \"week\" | \"quarter\" | \"year\"",
+      "required": false,
+      "defaultValue": "\\\"date\\\"",
+      "description": "时间类型"
+    },
+    {
+      "name": "format",
+      "type": "string",
+      "required": false,
+      "description": "不同type对应的默认值。\\\"date\\\": \\\"YYYY-MM-DD\\\"; \\\"time\\\": \\\"HH:mm:ss\\\"; \\\"week\\\": \\\"GGGG WW\\\"; \\\"month\\\": \\\"YYYY-MM\\\"; \\\"quarter\\\": \\\"YYYY-\\\\[Q]Q\\\";  \\\"year\\\": \\\"YYYY\\\"; \\\"datetime\\\": \\\"YYYY-MM-DD HH:mm:ss\\\""
+    },
+    {
+      "name": "formatResult",
+      "type": "string | ((date?: Date ) => string)",
+      "required": false,
+      "defaultValue": "props.format",
+      "description": "对选中时间进行格式化"
+    },
+    {
+      "name": "range",
+      "type": "number | boolean",
+      "required": false,
+      "description": "范围跨度，单位 秒，为 true 时表示不限制选择范围"
+    },
+    {
+      "name": "value",
+      "type": "Value",
+      "required": false,
+      "description": "值为 string 时，需要和 format 属性匹配。非 string 会格式化为 string。range 属性为 true 时，值为长度为2的数组"
+    },
+    {
+      "name": "defaultValue",
+      "type": "Value",
+      "required": false,
+      "description": "默认值  和 value 类型相同"
+    },
+    {
+      "name": "onChange",
+      "type": "((value: Value extends any[] ? string[] : string) => void)",
+      "required": false,
+      "description": "值改变回调函数"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否显示清除数据图标"
+    },
+    {
+      "name": "clearWithUndefined",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "清空值时抛出 undefined"
+    },
+    {
+      "name": "clearToUndefined",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "点击清除按钮后数据变为 undefined",
+      "version": "3.4.0"
+    },
+    {
+      "name": "allowSingle",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否允许单选, 仅在 range 模式下有效"
+    },
+    {
+      "name": "border",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否展示边框"
+    },
+    {
+      "name": "defaultRangeMonth",
+      "type": "(Date | number | string )[]",
+      "required": false,
+      "description": "使用 defaultPickerValue 代替"
+    },
+    {
+      "name": "defaultPickerValue",
+      "type": "Date | number | string | (Date | number | string )[]",
+      "required": false,
+      "description": "面板默认时间，在未选择日期时生效"
+    },
+    {
+      "name": "placeholder",
+      "type": "string | string[]",
+      "required": false,
+      "description": "占位文字。range 属性不为空时，为长度为2的数组"
+    },
+    {
+      "name": "defaultTime",
+      "type": "DateTimeType | DateTimeType[]",
+      "required": false,
+      "description": "选择日期时默认的时间, 格式为: \\\"HH:mm:ss\\\""
+    },
+    {
+      "name": "min",
+      "type": "Date | number | string",
+      "required": false,
+      "description": "可选最小值"
+    },
+    {
+      "name": "max",
+      "type": "Date | number | string",
+      "required": false,
+      "description": "可选最大值"
+    },
+    {
+      "name": "hourStep",
+      "type": "number",
+      "required": false,
+      "description": "小时选项步长"
+    },
+    {
+      "name": "minuteStep",
+      "type": "number",
+      "required": false,
+      "description": "分钟选项步长"
+    },
+    {
+      "name": "secondStep",
+      "type": "number",
+      "required": false,
+      "description": "秒选项步长"
+    },
+    {
+      "name": "quickSelect",
+      "type": "{name: string, value: Value}[]",
+      "required": false,
+      "description": "快速选择, 仅在 range 模式下有效, name: 文字提示, value: 时间范围, immediate: 选择后是否立刻关闭面板",
+      "version": "3.4.4 新增 immediate 配置项"
+    },
+    {
+      "name": "showSelNow",
+      "type": "boolean",
+      "required": false,
+      "description": "是否展示今天或者此刻按钮"
+    },
+    {
+      "name": "inputable",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "可输入"
+    },
+    {
+      "name": "onPickerChange",
+      "type": "((value: DateTimeType | DateTimeType[], quickSelectItem: void | { name: ReactNode, immediate?: boolean , value: DateTimeType | DateTimeType[] | (() => DateTimeType | DateTimeType[]) } , areaType: \"year\" | \"month\" | \"week\" | \"day\" | \"time\" | \"quick\" | \"quarter\") => void)",
+      "required": false,
+      "description": "值改变回调，有别于 onChange, onPickerChange会在每项值改变的时候执行"
+    },
+    {
+      "name": "onBlur",
+      "type": "((e: FocusEvent<HTMLInputElement, Element>, index?: number ) => void)",
+      "required": false,
+      "description": "blur 事件回调"
+    },
+    {
+      "name": "onFocus",
+      "type": "((e: FocusEvent<HTMLInputElement, Element>) => void)",
+      "required": false,
+      "description": "focus 事件回调"
+    },
+    {
+      "name": "underline",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否只展示下边框"
+    },
+    {
+      "name": "width",
+      "type": "string | number",
+      "required": false,
+      "description": "自定义宽度"
+    },
+    {
+      "name": "adjust",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否开启自动调整面板位置功能。当面板被窗口遮挡时，自动调整位置"
+    },
+    {
+      "name": "needConfirm",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否开启手动确认按钮，开启后只有点击确认按钮才会提交选择的值。",
+      "version": "3.4.0"
+    },
+    {
+      "name": "popover",
+      "type": "PopoverProps[\"position\"]",
+      "required": false,
+      "description": "校验信息弹出位置"
+    },
+    {
+      "name": "popoverProps",
+      "type": "PopoverProps",
+      "required": false,
+      "description": "校验或者tip弹框接受的属性"
+    },
+    {
+      "name": "name",
+      "type": "Name",
+      "required": false,
+      "description": "Form 内存取数据的 key"
+    },
+    {
+      "name": "beforeChange",
+      "type": "((value: T) => void | T )",
+      "required": false,
+      "description": "值改变前的回调，当返回值不为空时将作为组件的新值"
+    },
+    {
+      "name": "reserveAble",
+      "type": "boolean",
+      "required": false,
+      "description": "控制组件卸载时是否保留字段数据。设置为 true 时，组件移除后在表单状态中保留数据。适用于动态表单、条件字段，或需要临时隐藏/显示字段但保留其值的场景"
+    },
+    {
+      "name": "rules",
+      "type": "RuleItem[]",
+      "required": false,
+      "description": "用于校验字段值的规则数组。每个规则可以是函数、正则表达式或规则对象。支持内置规则（必填、邮箱等）和自定义校验逻辑。详细配置参见 [Rule](/components/rule)"
+    },
+    {
+      "name": "onError",
+      "type": "((error?: Error ) => void)",
+      "required": false,
+      "description": "校验完成时触发的回调函数。接收校验错误（如果有）作为参数。适用于自定义错误处理、记录校验结果，或根据校验状态触发副作用"
+    },
+    {
+      "name": "bind",
+      "type": "string[]",
+      "required": false,
+      "description": "当前字段值改变时需要重新校验的字段名称数组。启用字段间的联动校验功能。常用于密码确认、关联下拉选择或相互依赖的表单计算等场景"
+    }
+  ],
+  "examples": [
+    {
+      "name": "01-base",
+      "title": "cn - 基本用法",
+      "code": "/**\n * cn - 基本用法\n *    -- 最基本的用法\n * en - Base\n *    -- The basic usage\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker showSelNow />\n\nexport default App;\n",
+      "language": "tsx"
+    },
+    {
+      "name": "02-datetime",
+      "title": "cn - 选择日期时间",
+      "code": "/**\n * cn - 选择日期时间\n *    -- 设置 type 为 datetime，选择日期 + 时间\n * en - Datetime Mode\n *    -- Set type to be datetime to select date and time\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker type='datetime' />;\n\nexport default App;\n",
+      "language": "tsx"
+    },
+    {
+      "name": "03-size",
+      "title": "cn - 尺寸",
+      "code": "/**\n * cn - 尺寸\n *    -- 内置了三种尺寸，small、default、large\n * en - Size\n *    -- There are three built-in size: small、default、large\n */\nimport React from 'react';\nimport { DatePicker, TYPE, Radio } from 'shineout';\n\ntype DatePickerProps = TYPE.DatePicker.Props;\ntype DatePickerSize = DatePickerProps['size'];\n\nconst Size: DatePickerSize[] = ['small', 'default', 'large'];\n\nconst App: React.FC = () => {\n  const [size, setSize] = React.useState<DatePickerSize>('default');\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n      <Radio.Group button={'outline'} data={Size} value={size} onChange={setSize} keygen />\n      <DatePicker size={size} type='date' showSelNow />\n      <DatePicker size={size} type='datetime' showSelNow />\n      <DatePicker size={size} type='date' range showSelNow />\n      <DatePicker size={size} type='datetime' range showSelNow />\n    </div>\n  );\n};\n\nexport default App;\n",
+      "language": "tsx"
+    },
+    {
+      "name": "04-week",
+      "title": "cn - 选择星期",
+      "code": "/**\n * cn - 选择星期\n *    -- 设置 type 为 week，选择星期\n * en - Week Mode\n *    -- Set type to be week to select week\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker type='week' />;\n\nexport default App;\n",
+      "language": "tsx"
+    },
+    {
+      "name": "05-month",
+      "title": "cn - 选择月",
+      "code": "/**\n * cn - 选择月\n *    -- 设置 type 为 month，选择月\n * en - Month Mode\n *    -- Set type to be month to select month\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker type='month' />;\n\nexport default App;\n",
+      "language": "tsx"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7",
+  "apiSummary": {
+    "totalProps": 55,
+    "requiredProps": 0,
+    "propsWithWhen": 0
+  }
+}

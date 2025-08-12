@@ -1,7 +1,7 @@
 {
   "name": "Slider",
   "description": "滑动型输入器，帮助用户在连续或间断的区间内，通过滑动来选择一个数值或范围数值的控件",
-  "category": "form",
+  "category": "other",
   "importPath": "import { Slider } from 'shineout'",
   "props": [
     {
@@ -149,84 +149,41 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "最基本的用法",
-      "scenario": "basic",
-      "code": "/**\n * cn - 基本用法\n *    -- 最基本的用法\n * en - Base\n *    -- The basic usage\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <Slider defaultValue={50} />;\n\nexport default App;\n"
+      "name": "01-base",
+      "title": "cn - 基本用法",
+      "code": "/**\n * cn - 基本用法\n *    -- 最基本的用法\n * en - Base\n *    -- The basic usage\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <Slider defaultValue={50} />;\n\nexport default App;\n",
+      "language": "tsx"
     },
     {
-      "title": "范围选择",
-      "description": "设置 range 属性显示为双滑块，输入(返回)值为长度为 2 的数组",
-      "scenario": "basic",
-      "code": "/**\n * cn - 范围选择\n *    -- 设置 range 属性显示为双滑块，输入(返回)值为长度为 2 的数组\n * en - Range\n *    -- Set the range property to display double sliders, and value is an array of length 2\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <Slider range defaultValue={[25, 75]} />;\n\nexport default App;\n"
+      "name": "02-range",
+      "title": "cn - 范围选择",
+      "code": "/**\n * cn - 范围选择\n *    -- 设置 range 属性显示为双滑块，输入(返回)值为长度为 2 的数组\n * en - Range\n *    -- Set the range property to display double sliders, and value is an array of length 2\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <Slider range defaultValue={[25, 75]} />;\n\nexport default App;\n",
+      "language": "tsx"
     },
     {
-      "title": "区间",
-      "description": "设置 scale 属性可以自定义区间",
-      "scenario": "basic",
-      "code": "/**\n * cn - 区间\n *    -- 设置 scale 属性可以自定义区间\n * en - Scale\n *    -- Set the scale property to customize the interval\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <Slider scale={[0, 10, 100, 250, 500, 1000]} />;\n\nexport default App;\n"
+      "name": "03-scale",
+      "title": "cn - 区间",
+      "code": "/**\n * cn - 区间\n *    -- 设置 scale 属性可以自定义区间\n * en - Scale\n *    -- Set the scale property to customize the interval\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <Slider scale={[0, 10, 100, 250, 500, 1000]} />;\n\nexport default App;\n",
+      "language": "tsx"
     },
     {
-      "title": "带输入框",
-      "description": "和数组输入框保持同步",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 带输入框\n *    -- 和数组输入框保持同步\n * en - Input\n *    -- change with number input\n */\nimport React, { useState } from 'react';\nimport { Slider, Input } from 'shineout';\n\nconst container: React.CSSProperties = {\n  display: 'flex',\n  alignItems: 'center',\n};\n\nconst slider: React.CSSProperties = {\n  flex: 1,\n  marginInlineEnd: 16,\n};\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState<number | undefined>(50);\n\n  return (\n    <div style={container}>\n      <Slider value={value} onChange={(n) => setValue(n)} style={slider} />\n      <Input.Number\n        digits={0}\n        width={100}\n        max={100}\n        min={0}\n        value={value}\n        onChange={(n) => {\n          if (n === '') {\n            setValue(undefined);\n          } else {\n            setValue(Number(n || 0));\n          }\n        }}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
+      "name": "04-01-input",
+      "title": "cn - 带输入框",
+      "code": "/**\n * cn - 带输入框\n *    -- 和数组输入框保持同步\n * en - Input\n *    -- change with number input\n */\nimport React, { useState } from 'react';\nimport { Slider, Input } from 'shineout';\n\nconst container: React.CSSProperties = {\n  display: 'flex',\n  alignItems: 'center',\n};\n\nconst slider: React.CSSProperties = {\n  flex: 1,\n  marginInlineEnd: 16,\n};\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState<number | undefined>(50);\n\n  return (\n    <div style={container}>\n      <Slider value={value} onChange={(n) => setValue(n)} style={slider} />\n      <Input.Number\n        digits={0}\n        width={100}\n        max={100}\n        min={0}\n        value={value}\n        onChange={(n) => {\n          if (n === '') {\n            setValue(undefined);\n          } else {\n            setValue(Number(n || 0));\n          }\n        }}\n      />\n    </div>\n  );\n};\n\nexport default App;\n",
+      "language": "tsx"
     },
     {
-      "title": "格式化",
-      "description": "通过 formatScale 属性自定义刻度显示信息",
-      "scenario": "form",
-      "code": "/**\n * cn - 格式化\n *    -- 通过 formatScale 属性自定义刻度显示信息\n *    -- 通过 formatValue 属性自定义值显示信息\n * en - Format\n *    -- Set the formatScale property to customize the display scale\n *    -- Set the formatValue property to customize the display value\n */\nimport React from 'react';\nimport { Slider, TYPE } from 'shineout';\n\ntype SliderProps = TYPE.Slider.Props<number[]>;\ntype SliderFormatValue = SliderProps['formatValue'];\n\nconst pad = (i: number) => (i < 10 ? `0${i}` : i);\n\nconst format: SliderFormatValue = (v: number) => {\n  const value = v + 540;\n  const hours = Math.floor(value / 60);\n  return `${pad(hours)}:${pad(value - hours * 60)}`;\n};\n\nconst App: React.FC = () => (\n  <Slider\n    range\n    formatScale={format}\n    formatValue={format}\n    defaultValue={[33, 216]}\n    scale={[0, 60, 120, 180, 240, 300, 360, 420, 480, 540]}\n  />\n);\n\nexport default App;\n"
-    },
-    {
-      "title": "步长",
-      "description": "设置 step 属性，定义拖动的步长，默认为 1",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 步长\n *    -- 设置 step 属性，定义拖动的步长，默认为 1\n * en - Step\n *    -- Set the step property to define the step size of the drag and the default value is 1\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <Slider step={0.05} range defaultValue={[0.05, 0.25]} scale={[0, 1]} />;\n\nexport default App;\n"
-    },
-    {
-      "title": "*    -- step 设定为 0 时，只能取 scale 内定义的值",
-      "description": "step 设定为 0 时，只能取 scale 内定义的值",
-      "scenario": "advanced",
-      "code": "/**\n * cn -\n *    -- step 设定为 0 时，只能取 scale 内定义的值\n * en -\n *    -- When the step is set to 0, only the value defined in scale can be taken\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => (\n  <Slider\n    step={0}\n    scale={[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]}\n  />\n);\n\nexport default App;\n"
-    },
-    {
-      "title": "隐藏信息",
-      "description": "autoHide 选项为 true 时，自动隐藏当前值和刻度",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 隐藏信息\n *    -- autoHide 选项为 true 时，自动隐藏当前值和刻度\n * en - Hide value\n *    -- When then autoHide property is true, automatically hide current values and scales\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => (\n  <Slider autoHide defaultValue={4} scale={[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]} step={1} />\n);\n\nexport default App;\n"
-    },
-    {
-      "title": "*    -- 如果要彻底不显示刻度和当前值，设置 formatValue 和 fotmatScale 为 false",
-      "description": "如果要彻底不显示刻度和当前值，设置 formatValue 和 fotmatScale 为 false",
-      "scenario": "advanced",
-      "code": "/**\n * cn -\n *    -- 如果要彻底不显示刻度和当前值，设置 formatValue 和 fotmatScale 为 false\n * en -\n *    -- Set formatValue and fotmatScale to false to hide the scale and current values completely\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => (\n  <Slider defaultValue={4} step={1} formatValue={false} formatScale={false} />\n);\n\nexport default App;\n"
-    },
-    {
-      "title": "禁用",
-      "description": "设置 disabled 属性，禁用组件",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 禁用\n *    -- 设置 disabled 属性，禁用组件\n * en - Disabled\n *    -- Set the disabled property to disable the component\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <Slider range disabled defaultValue={[25, 75]} />;\n\nexport default App;\n"
-    },
-    {
-      "title": "垂直",
-      "description": "设置 vertical 属性，修改组件为垂直方向",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 垂直\n *    -- 设置 vertical 属性，修改组件为垂直方向\n * en - Vertical\n *    -- Set the vertical property to change the component vertical\n */\nimport React from 'react';\nimport { Slider, TYPE } from 'shineout';\n\ntype SliderProps = TYPE.Slider.Props<number | number[]>;\ntype SliderFormatScale = SliderProps['formatScale'];\n\nconst App: React.FC = () => {\n  const formatTemp: SliderFormatScale = (v: number) => `${v}℃`;\n\n  return (\n    <div>\n      <Slider vertical defaultValue={50} />\n      <Slider range vertical defaultValue={[12, 70]} />\n      <Slider\n        vertical\n        defaultValue={18}\n        scale={[0, 20, 40, 60, 100]}\n        formatValue={false}\n        formatScale={formatTemp}\n      />\n      <Slider autoHide range vertical defaultValue={[12, 70]} />\n      <Slider disabled range vertical defaultValue={[12, 70]} />\n    </div>\n  );\n};\n\nexport default App;\n"
-    },
-    {
-      "title": "增长",
-      "description": "允许拖动到最右边的时候进行增长",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 增长\n *    -- 允许拖动到最右边的时候进行增长\n * en - onIncrease\n *    -- can increase the maximum infinitely while dragging\n */\nimport React, { useState } from 'react';\nimport { Slider, TYPE } from 'shineout';\n\ntype SliderProps = TYPE.Slider.Props<number | number[]>;\ntype SliderScale = SliderProps['scale'];\ntype SliderOnIncrease = SliderProps['onIncrease'];\n\nconst App: React.FC = () => {\n  const [scale1, setScale1] = useState<SliderScale>([0, 100]);\n  const [scale2, setScale2] = useState<SliderScale>([0, 100]);\n\n  const onIncrease1: SliderOnIncrease = () => setScale1([0, scale1![1] + 1]);\n  const onIncrease2: SliderOnIncrease = () => setScale2([0, scale2![1] + 5]);\n\n  return (\n    <div>\n      <Slider\n        scale={scale1}\n        defaultValue={50}\n        onIncrease={onIncrease1}\n        style={{ marginBottom: '24px' }}\n      />\n      <Slider range scale={scale2} defaultValue={[20, 50]} onIncrease={onIncrease2} />\n    </div>\n  );\n};\n\nexport default App;\n"
-    },
-    {
-      "title": "悬浮提示",
-      "description": "设置 tipType 为 hover，鼠标悬浮时显示当前值",
-      "scenario": "advanced",
-      "code": "/**\n * cn - 悬浮提示\n *    -- 设置 tipType 为 hover，鼠标悬浮时显示当前值\n * en - HoverTip\n *    -- Set tipType to hover, the current value is displayed when the mouse is hovered\n */\nimport React from 'react';\nimport { Slider } from 'shineout';\n\nconst App: React.FC = () => <div>\n  <Slider defaultValue={50} valueTipType='hover' />\n\n  <Slider defaultValue={50} valueTipType='hover' disabled />\n</div>;\n\nexport default App;\n"
+      "name": "05-format",
+      "title": "cn - 格式化",
+      "code": "/**\n * cn - 格式化\n *    -- 通过 formatScale 属性自定义刻度显示信息\n *    -- 通过 formatValue 属性自定义值显示信息\n * en - Format\n *    -- Set the formatScale property to customize the display scale\n *    -- Set the formatValue property to customize the display value\n */\nimport React from 'react';\nimport { Slider, TYPE } from 'shineout';\n\ntype SliderProps = TYPE.Slider.Props<number[]>;\ntype SliderFormatValue = SliderProps['formatValue'];\n\nconst pad = (i: number) => (i < 10 ? `0${i}` : i);\n\nconst format: SliderFormatValue = (v: number) => {\n  const value = v + 540;\n  const hours = Math.floor(value / 60);\n  return `${pad(hours)}:${pad(value - hours * 60)}`;\n};\n\nconst App: React.FC = () => (\n  <Slider\n    range\n    formatScale={format}\n    formatValue={format}\n    defaultValue={[33, 216]}\n    scale={[0, 60, 120, 180, 240, 300, 360, 420, 480, 540]}\n  />\n);\n\nexport default App;\n",
+      "language": "tsx"
     }
   ],
   "subComponents": [],
-  "version": "3.7.7"
+  "version": "3.7.7",
+  "apiSummary": {
+    "totalProps": 22,
+    "requiredProps": 0,
+    "propsWithWhen": 0
+  }
 }

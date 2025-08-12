@@ -1,8 +1,7 @@
 {
-  "lastUpdated": "2025-07-31T07:50:57.612Z",
+  "lastUpdated": "2025-08-12T07:07:35.656Z",
   "version": "3.7.7",
-  "totalComponents": 51,
-  "extractedComponents": 46,
+  "totalComponents": 48,
   "components": [
     "Alert",
     "Avatar",
@@ -14,6 +13,7 @@
     "Cascader",
     "Checkbox",
     "Collapse",
+    "DatePicker",
     "Descriptions",
     "Divider",
     "Drawer",
@@ -49,6 +49,7 @@
     "Tooltip",
     "Transfer",
     "Tree",
+    "TreeSelect",
     "Upload"
   ],
   "categories": {
@@ -59,24 +60,39 @@
       "Modal",
       "Progress"
     ],
-    "display": [
+    "other": [
       "Avatar",
       "Badge",
       "Card",
       "Carousel",
+      "Cascader",
+      "Checkbox",
       "Collapse",
+      "DatePicker",
       "Descriptions",
       "Empty",
+      "Form",
       "Image",
+      "Input",
       "List",
       "Popover",
+      "Radio",
+      "Rate",
+      "Rule",
+      "Select",
       "Skeleton",
+      "Slider",
       "Spin",
+      "Switch",
       "Table",
       "Tabs",
       "Tag",
+      "Textarea",
       "Tooltip",
-      "Tree"
+      "Transfer",
+      "Tree",
+      "TreeSelect",
+      "Upload"
     ],
     "navigation": [
       "Breadcrumb",
@@ -85,24 +101,9 @@
       "Pagination",
       "Steps"
     ],
-    "other": [
+    "general": [
       "Button",
       "Link"
-    ],
-    "form": [
-      "Cascader",
-      "Checkbox",
-      "Form",
-      "Input",
-      "Radio",
-      "Rate",
-      "Rule",
-      "Select",
-      "Slider",
-      "Switch",
-      "Textarea",
-      "Transfer",
-      "Upload"
     ],
     "layout": [
       "Divider",

@@ -1,0 +1,512 @@
+{
+  "name": "TreeSelect",
+  "description": "用清晰的层级结构来展示层级信息，便于用户根据数据之间的关系来逐级找到相应的节点及数据",
+  "category": "other",
+  "importPath": "import { TreeSelect } from 'shineout'",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "description": "自定义类名"
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "required": false,
+      "description": "自定义样式"
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | \"large\" | \"default\"",
+      "required": false,
+      "defaultValue": "\\\"default\\\"",
+      "description": "不同尺寸"
+    },
+    {
+      "name": "status",
+      "type": "\"error\"",
+      "required": false,
+      "description": "组件状态"
+    },
+    {
+      "name": "innerTitle",
+      "type": "ReactNode",
+      "required": false,
+      "description": "内嵌标题"
+    },
+    {
+      "name": "filterSameChange",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "当两次选择的值相同时不触发 onChange"
+    },
+    {
+      "name": "absolute",
+      "type": "boolean | (() => HTMLElement | null)",
+      "required": false,
+      "defaultValue": "false",
+      "description": "为 true 时，选项弹出层在 DOM 中独立 render; 为函数时，返回值作为弹出层容器"
+    },
+    {
+      "name": "zIndex",
+      "type": "number",
+      "required": false,
+      "defaultValue": "1000",
+      "description": "选项列表 z-index 值, 需要配合 absolute"
+    },
+    {
+      "name": "actionOnClick",
+      "type": "ActionOnClick | ActionOnClick[]",
+      "required": false,
+      "description": "点击节点展开是的操作: \\\"expand\\\" 展开节点，\\\"check\\\" 选中复选框",
+      "version": "3.6.0"
+    },
+    {
+      "name": "value",
+      "type": "Value",
+      "required": false,
+      "description": "选中的 key （受控），多选时必须为array。注意，请勿将 undefined 和 null 作为有意义的选项值，当 value 类型为 undefined 和 null 时，组件将不处理数据和渲染"
+    },
+    {
+      "name": "defaultValue",
+      "type": "Value",
+      "required": false,
+      "description": "默认值  和 value 类型相同"
+    },
+    {
+      "name": "data",
+      "type": "DataItem[]",
+      "required": false,
+      "defaultValue": "[]",
+      "description": "数据源"
+    },
+    {
+      "name": "expanded",
+      "type": "(string | number)[]",
+      "required": false,
+      "description": "展开的节点 key(受控)"
+    },
+    {
+      "name": "defaultExpanded",
+      "type": "(string | number)[]",
+      "required": false,
+      "description": "默认展开的节点 key（非受控）"
+    },
+    {
+      "name": "defaultExpandAll",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "默认展开全部子节点, 仅树形数据下有效"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean | ((item: DataItem) => boolean) | { disabled: (data: DataItem) => boolean, isRealtime: boolean }",
+      "required": false,
+      "defaultValue": "false",
+      "description": "为 true 时，所有节点禁用选择，为函数时，根据函数返回结果确定是否禁用"
+    },
+    {
+      "name": "keygen",
+      "type": "ObjectKey<DataItem> | ((data: DataItem, parentKey: string | number) => string | number)",
+      "required": true,
+      "description": "生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 \\\"id\\\"，相当于 (d) => d.id"
+    },
+    {
+      "name": "childrenKey",
+      "type": "ObjectKey<DataItem>",
+      "required": false,
+      "defaultValue": "\\\"children\\\"",
+      "description": "指定子数据的属性名"
+    },
+    {
+      "name": "mode",
+      "type": "0 | 1 | 2 | 3 | 4",
+      "required": false,
+      "defaultValue": "1",
+      "description": "选中值模式，未设置值为单选 0: 只返回完全选中的节点，包含父节点 1: 返回全部选中的节点和半选中的父节点 2: 只返回选中的子节点 3: 如果父节点选中，只返回父节点 4: 所选即所得"
+    },
+    {
+      "name": "unmatch",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否展示data中不存在的值"
+    },
+    {
+      "name": "onExpand",
+      "type": "((value: (string | number)[]) => void)",
+      "required": false,
+      "description": "节点展开回调，参数为当前展开节点 key 数组"
+    },
+    {
+      "name": "virtual",
+      "type": "boolean",
+      "required": false,
+      "description": "虚拟列表"
+    },
+    {
+      "name": "noCache",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否开启数据缓存，如果数据存在动态更新的情况建议开启"
+    },
+    {
+      "name": "emptyText",
+      "type": "string",
+      "required": false,
+      "description": "自定义 empty 文案"
+    },
+    {
+      "name": "loading",
+      "type": "boolean | ReactNode",
+      "required": false,
+      "defaultValue": "false",
+      "description": "数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "description": "value 为空时的占位符"
+    },
+    {
+      "name": "compressedBound",
+      "type": "number",
+      "required": false,
+      "description": "开启多选后，指定允许展示标签数量，超过后将折叠"
+    },
+    {
+      "name": "compressedClassName",
+      "type": "string",
+      "required": false,
+      "description": "多选合并展示弹出框的类名"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否可清除值"
+    },
+    {
+      "name": "renderUnmatched",
+      "type": "((data: Value extends (infer U)[] ? U : Value) => ReactNode)",
+      "required": false,
+      "description": "渲染未匹配值的方式"
+    },
+    {
+      "name": "getComponentRef",
+      "type": "((ref: ComponentRef<DataItem, Value>) => void) | { current?: ComponentRef<DataItem, Value> ; }",
+      "required": false,
+      "description": "获取组件的一些方法 目前只支持 getDataByValues"
+    },
+    {
+      "name": "onFilter",
+      "type": "((text: string, from?: string ) => void | ((data: DataItem) => boolean) )",
+      "required": false,
+      "description": "onFilter 不为空时，可以输入过滤数据。 onFilter 如果返回一个函数，使用这个函数做前端过滤。 如果不返回，可以自行做后端过滤"
+    },
+    {
+      "name": "empty",
+      "type": "ReactNode",
+      "required": false,
+      "description": "无数据时的占位内容"
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否是多选"
+    },
+    {
+      "name": "onBlur",
+      "type": "((e?: any) => void)",
+      "required": false,
+      "description": "blur 事件回调函数"
+    },
+    {
+      "name": "onFocus",
+      "type": "((e?: any) => void)",
+      "required": false,
+      "description": "focus 事件回调函数"
+    },
+    {
+      "name": "renderResult",
+      "type": "((data: DataItem) => ReactNode)",
+      "required": false,
+      "defaultValue": "renderItem",
+      "description": "选中后在结果中显示的内容，默认和 renderItem 相同"
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "defaultValue": "300",
+      "description": "列表高度"
+    },
+    {
+      "name": "onCollapse",
+      "type": "((collapse: boolean) => void)",
+      "required": false,
+      "description": "下拉列表展开/收起回调"
+    },
+    {
+      "name": "showHitDescendants",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "筛选后是否展示命中节点的后代节点"
+    },
+    {
+      "name": "position",
+      "type": "\"auto\" | \"bottom-left\" | \"top-left\"",
+      "required": false,
+      "description": "弹出位置"
+    },
+    {
+      "name": "onEnterExpand",
+      "type": "((e: KeyboardEvent<HTMLDivElement>) => boolean)",
+      "required": false,
+      "description": "回车触发下拉框展开的时候调用"
+    },
+    {
+      "name": "onChange",
+      "type": "((value: Value, selected?: DataItem | { IS_NOT_MATCHED_VALUE: boolean, value: any } , path?: (string | number)[] ) => void)",
+      "required": false,
+      "description": "参数 为 当前选中值"
+    },
+    {
+      "name": "onChangeAddition",
+      "type": "((params: { current?: DataItem | UnMatchedData | (DataItem | UnMatchedData)[] ; checked?: 0 | 1 | 2 ; data?: DataItem | UnMatchedData | (DataItem | UnMatchedData)[] | null ; }) => void)",
+      "required": false,
+      "description": "onChange 额外参数 (current 为点击的节点的数据， data 为当前选中的数据， checked 为多选状态下是选中还是取消)"
+    },
+    {
+      "name": "compressed",
+      "type": "boolean | \"no-repeat\" | \"hide-popover\"",
+      "required": false,
+      "defaultValue": "false",
+      "description": "将选中值合并，只在多选模式下有效；为 \\\"no-repeat\\\" 时弹出框中不重复展示值"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "description": "控制浮层显隐"
+    },
+    {
+      "name": "line",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否显示连接线"
+    },
+    {
+      "name": "width",
+      "type": "string | number",
+      "required": false,
+      "description": "输入框宽度"
+    },
+    {
+      "name": "underline",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否只展示下边框"
+    },
+    {
+      "name": "border",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "是否展示边框"
+    },
+    {
+      "name": "showArrow",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否展示箭头"
+    },
+    {
+      "name": "focusSelected",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "onFilter 在多选情况下点击选项后是否选中过滤文本"
+    },
+    {
+      "name": "resultClassName",
+      "type": "string | ((value: DataItem) => string)",
+      "required": false,
+      "description": "选中结果内容容器的className"
+    },
+    {
+      "name": "loader",
+      "type": "((key: string | number, data: DataItem) => void)",
+      "required": false,
+      "description": "设置 loader 属性后，未定义 children 的节点视为动态加载节点，点击展开触发 loader事件，children 为 null 或者长度为 0 视为叶子节点"
+    },
+    {
+      "name": "parentClickExpand",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "点击父节点展开"
+    },
+    {
+      "name": "trim",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "trim 为 true 时，失去焦点时会自动删除空白字符"
+    },
+    {
+      "name": "renderItem",
+      "type": "ObjectKey<DataItem> | ((data: DataItem, expanded: boolean, active: boolean, id: string | number) => ReactNode)",
+      "required": true,
+      "defaultValue": "index",
+      "description": "为 string 时，返回 d[string]。 为 function 时，返回函数结果"
+    },
+    {
+      "name": "onAdvancedFilter",
+      "type": "((text: string) => (data: DataItem) => boolean)",
+      "required": false,
+      "description": "高级筛选模式，可针对当前层级在筛选结果和原始数据间切换"
+    },
+    {
+      "name": "adjust",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "true",
+      "description": "是否开启自动调整面板位置功能。当面板被窗口遮挡时，自动调整位置"
+    },
+    {
+      "name": "filterDelay",
+      "type": "number",
+      "required": false,
+      "defaultValue": "400",
+      "description": "毫秒。用户输入触发 fitler 事件的延时"
+    },
+    {
+      "name": "reFocus",
+      "type": "boolean",
+      "required": false,
+      "defaultValue": "false",
+      "description": "存在 onFilter 和 onCreate，选中 Option，自动 focus Input"
+    },
+    {
+      "name": "contentClass",
+      "type": "string | ((data: DataItem) => string)",
+      "required": false,
+      "description": "内容样式"
+    },
+    {
+      "name": "renderCompressed",
+      "type": "((options: { data: DataItem[], onRemove: (item: DataItem) => void }) => ReactNode)",
+      "required": false,
+      "description": "自定义渲染折叠内容，其中 data 为选中的数据，onRemove 为删除事件",
+      "version": "3.7.0"
+    },
+    {
+      "name": "highlight",
+      "type": "boolean",
+      "required": false,
+      "description": "开启搜索关键字高亮功能",
+      "version": "3.7.0"
+    },
+    {
+      "name": "popover",
+      "type": "PopoverProps[\"position\"]",
+      "required": false,
+      "description": "校验信息弹出位置"
+    },
+    {
+      "name": "popoverProps",
+      "type": "PopoverProps",
+      "required": false,
+      "description": "校验或者tip弹框接受的属性"
+    },
+    {
+      "name": "name",
+      "type": "Name",
+      "required": false,
+      "description": "Form 内存取数据的 key"
+    },
+    {
+      "name": "beforeChange",
+      "type": "((value: T) => void | T )",
+      "required": false,
+      "description": "值改变前的回调，当返回值不为空时将作为组件的新值"
+    },
+    {
+      "name": "reserveAble",
+      "type": "boolean",
+      "required": false,
+      "description": "控制组件卸载时是否保留字段数据。设置为 true 时，组件移除后在表单状态中保留数据。适用于动态表单、条件字段，或需要临时隐藏/显示字段但保留其值的场景"
+    },
+    {
+      "name": "rules",
+      "type": "RuleItem[]",
+      "required": false,
+      "description": "用于校验字段值的规则数组。每个规则可以是函数、正则表达式或规则对象。支持内置规则（必填、邮箱等）和自定义校验逻辑。详细配置参见 [Rule](/components/rule)"
+    },
+    {
+      "name": "onError",
+      "type": "((error?: Error ) => void)",
+      "required": false,
+      "description": "校验完成时触发的回调函数。接收校验错误（如果有）作为参数。适用于自定义错误处理、记录校验结果，或根据校验状态触发副作用"
+    },
+    {
+      "name": "bind",
+      "type": "string[]",
+      "required": false,
+      "description": "当前字段值改变时需要重新校验的字段名称数组。启用字段间的联动校验功能。常用于密码确认、关联下拉选择或相互依赖的表单计算等场景"
+    }
+  ],
+  "examples": [
+    {
+      "name": "01-base",
+      "title": "cn - 基本用法",
+      "code": "/**\n * cn - 基本用法\n *    -- 基础的 TreeSelect 用法\n *    -- 默认`childrenKey`属性值为 'children'\n *    -- 单选模式下 TreeSelect 遵循`mode`属性规则，详见mode属性说明\n * en - Basic\n *    -- Basic usage of TreeSelect\n *    -- The default value of the `childrenKey` property is 'children'\n *    -- In single selection `mode`, TreeSelect follows the mode attribute rules, see the mode attribute description for details\n */\nimport React, { useState } from 'react';\nimport { TreeSelect, TYPE } from 'shineout';\n\ninterface DataItem {\n  id: string;\n  title: string;\n  children?: DataItem[];\n}\n\ntype TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string[]>;\n\nconst data: DataItem[] = [\n  {\n    id: '1',\n    title: '1',\n    children: [\n      {\n        id: '1-1',\n        title: '1-1',\n        children: [\n          { id: '1-1-1', title: '1-1-1' },\n          { id: '1-1-2', title: '1-1-2' },\n        ],\n      },\n      { id: '1-2', title: '1-2' },\n    ],\n  },\n  {\n    id: '2',\n    title: '2',\n    children: [\n      { id: '2-1', title: '2-1' },\n      { id: '2-2', title: '2-2' },\n    ],\n  },\n  { id: '3', title: '3', children: [{ id: '3-1', title: '3-1' }] },\n];\n\nexport default () => {\n  const [value, setValue] = useState<TreeSelectProps['value']>([]);\n\n  const handleChange: TreeSelectProps['onChange'] = (v) => {\n    setValue(v);\n  };\n\n  return (\n    <div>\n      <TreeSelect\n        width={300}\n        value={value}\n        onChange={handleChange}\n        clearable\n        keygen='id'\n        renderItem={(node) => `node ${node.title}`}\n        data={data}\n        placeholder='Please select content'\n      ></TreeSelect>\n    </div>\n  );\n};\n",
+      "language": "tsx"
+    },
+    {
+      "name": "02-multiple",
+      "title": "cn - 多选",
+      "code": "/**\n * cn - 多选\n *    -- 开启`multiple`属性后，可以选择多个节点\n *    -- 注意，开启多选模式后，最终数据结果遵循`mode`属性规则，详见mode属性说明\n * en - Multiple\n *    -- Set `multiple` to true, you can select multiple nodes\n */\nimport React, { useState } from 'react';\nimport { TreeSelect, TYPE } from 'shineout';\n\ninterface DataItem {\n  id: string;\n  title: string;\n  children?: DataItem[];\n}\n\ntype TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string[]>;\n\nconst data: DataItem[] = [\n  {\n    id: '1',\n    title: '1',\n    children: [\n      {\n        id: '1-1',\n        title: '1-1',\n        children: [\n          { id: '1-1-1', title: '1-1-1' },\n          { id: '1-1-2', title: '1-1-2' },\n        ],\n      },\n      { id: '1-2', title: '1-2' },\n    ],\n  },\n  {\n    id: '2',\n    title: '2',\n    children: [\n      { id: '2-1', title: '2-1' },\n      { id: '2-2', title: '2-2' },\n    ],\n  },\n  { id: '3', title: '3', children: [{ id: '3-1', title: '3-1' }] },\n];\n\nexport default () => {\n  const [value, setValue] = useState<TreeSelectProps['value']>([]);\n\n  const handleChange: TreeSelectProps['onChange'] = (v) => {\n    setValue(v);\n  };\n\n  return (\n    <div>\n      <TreeSelect\n        multiple\n        width={300}\n        value={value}\n        onChange={handleChange}\n        clearable\n        keygen='id'\n        renderItem={(node) => `node ${node.title}`}\n        data={data}\n        placeholder='Please select content'\n      ></TreeSelect>\n    </div>\n  );\n};\n",
+      "language": "tsx"
+    },
+    {
+      "name": "03-01-01-compressed",
+      "title": "cn - 合并选项",
+      "code": "/**\n * cn - 合并选项\n *    -- 使用`compressed`属性可以合并选中结果\n * en - Compressed\n *    -- Set `compressed` to true, you can merge the selected results\n */\nimport React, { useState } from 'react';\nimport { TreeSelect, TYPE } from 'shineout';\n\ninterface DataItem {\n  id: string;\n  title: string;\n  children?: DataItem[];\n}\n\ntype TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string[]>;\n\nconst data: DataItem[] = [\n  {\n    id: '1',\n    title: '1',\n    children: [\n      {\n        id: '1-1',\n        title: '1-1',\n        children: [\n          { id: '1-1-1', title: '1-1-1' },\n          { id: '1-1-2', title: '1-1-2' },\n        ],\n      },\n      { id: '1-2', title: '1-2' },\n    ],\n  },\n  {\n    id: '2',\n    title: '2',\n    children: [\n      { id: '2-1', title: '2-1' },\n      { id: '2-2', title: '2-2' },\n    ],\n  },\n  { id: '3', title: '3', children: [{ id: '3-1', title: '3-1' }] },\n];\n\nexport default () => {\n  const [value, setValue] = useState<TreeSelectProps['value']>([\"1-1-1\",\"1-1-2\",\"1-1\",\"1-2\",\"1\",\"2-1\",\"2-2\",\"2\",\"3-1\",\"3\"]);\n\n  const handleChange: TreeSelectProps['onChange'] = (v) => {\n    setValue(v);\n  };\n\n  return (\n    <div>\n      <TreeSelect\n        multiple\n        width={300}\n        value={value}\n        compressed\n        onChange={handleChange}\n        clearable\n        keygen='id'\n        renderItem={(node) => `node ${node.title}`}\n        data={data}\n        placeholder='Please select content'\n      ></TreeSelect>\n    </div>\n  );\n};\n",
+      "language": "tsx"
+    },
+    {
+      "name": "03-01-02-compressed",
+      "title": "cn - 合并选项去重",
+      "code": "/**\n * cn - 合并选项去重\n *    -- 当`compressed`属性值为 \"no-repeat\" 时，合并的选项中不会出现结果框中的重复内容\n * en - Compressed no-repeat\n *    -- When the value of the `compressed` property is 'no-repeat', the repeated content in the merged options will not appear in the result box\n */\nimport React, { useState } from 'react';\nimport { TreeSelect, TYPE } from 'shineout';\n\ninterface DataItem {\n  id: string;\n  title: string;\n  children?: DataItem[];\n}\n\ntype TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string[]>;\n\nconst data: DataItem[] = [\n  {\n    id: '1',\n    title: '1',\n    children: [\n      {\n        id: '1-1',\n        title: '1-1',\n        children: [\n          { id: '1-1-1', title: '1-1-1' },\n          { id: '1-1-2', title: '1-1-2' },\n        ],\n      },\n      { id: '1-2', title: '1-2' },\n    ],\n  },\n  {\n    id: '2',\n    title: '2',\n    children: [\n      { id: '2-1', title: '2-1' },\n      { id: '2-2', title: '2-2' },\n    ],\n  },\n  { id: '3', title: '3', children: [{ id: '3-1', title: '3-1' }] },\n];\n\nexport default () => {\n  const [value, setValue] = useState<TreeSelectProps['value']>([\n    '1-1-1',\n    '1-1-2',\n    '1-1',\n    '1-2',\n    '1',\n    '2-1',\n    '2-2',\n    '2',\n    '3-1',\n    '3',\n  ]);\n\n  const handleChange: TreeSelectProps['onChange'] = (v) => {\n    setValue(v);\n  };\n\n  return (\n    <div>\n      <TreeSelect\n        multiple\n        width={300}\n        value={value}\n        compressed='no-repeat'\n        onChange={handleChange}\n        clearable\n        keygen='id'\n        renderItem={(node) => `node ${node.title}`}\n        data={data}\n        placeholder='Please select content'\n      ></TreeSelect>\n    </div>\n  );\n};\n",
+      "language": "tsx"
+    },
+    {
+      "name": "03-02-compressed",
+      "title": "cn - 隐藏合并选项",
+      "code": "/**\n * cn - 隐藏合并选项\n *    -- 使用 `compressed` 属性并设置值为 \"hide-popover\" 可以合并选中结果，仅展示合并后的选项数量，不再弹出层中展示合并的选项\n *    -- 建议数据量较大的情况下开启该功能，配合固定数值的 `compressedBound` 属性可降额外的低性能开销\n * en - Only merge options\n *    -- Set the `compressed` property to `hide-popover` to merge the selected results, only display the number of merged options, and no longer display the merged options in the pop-up layer\n *    -- It is recommended to enable this function when the data volume is large\n */\nimport React, { useState } from 'react';\nimport { TreeSelect, TYPE } from 'shineout';\nimport { createNestedArray } from '../../tree/__example__/utils';\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\ntype TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string[]>;\n\nconst data: DataItem[] = createNestedArray([10, 10, 10]);\n\nexport default () => {\n  const [value, setValue] = useState<TreeSelectProps['value']>([\n    '0-0-0',\n    '0-0-1',\n    '0-0-2',\n    '0-0-3',\n    '0-0-4',\n    '0-0-5',\n    '0-0-6',\n    '0-0-7',\n    '0-0-8',\n    '0-0-9',\n    '0-0',\n    '0',\n    '2-0-0',\n    '2-0-1',\n    '2-0-2',\n    '2-0-3',\n    '2-0-4',\n    '2-0-5',\n    '2-0-6',\n    '2-0-7',\n    '2-0-8',\n    '2-0-9',\n    '2-0',\n    '2',\n    '4-0-0',\n    '4-0-1',\n    '4-0-2',\n    '4-0-3',\n    '4-0-4',\n    '4-0-5',\n    '4-0-6',\n    '4-0-7',\n    '4-0-8',\n    '4-0-9',\n    '4-0',\n    '4-1-0',\n    '4-1-1',\n    '4-1-2',\n    '4-1-3',\n    '4-1-4',\n    '4-1-5',\n    '4-1-6',\n    '4-1-7',\n    '4-1-8',\n    '4-1-9',\n    '4-1',\n    '4-3-0',\n    '4-3-1',\n    '4-3-2',\n    '4-3-3',\n    '4-3-4',\n    '4-3-5',\n    '4-3-6',\n    '4-3-7',\n    '4-3-8',\n    '4-3-9',\n    '4-3',\n    '4-5-0',\n    '4-5-1',\n    '4-5-2',\n    '4-5-3',\n    '4-5-4',\n    '4-5-5',\n    '4-5-6',\n    '4-5-7',\n    '4-5-8',\n    '4-5-9',\n    '4-5',\n    '4',\n  ]);\n\n  const handleChange: TreeSelectProps['onChange'] = (v) => {\n    setValue(v);\n  };\n\n  return (\n    <div>\n      <TreeSelect\n        multiple\n        clearable\n        width={300}\n        value={value}\n        compressed='hide-popover'\n        compressedBound={2}\n        onChange={handleChange}\n        keygen='id'\n        renderItem={(node) => `node ${node.id}`}\n        data={data}\n        placeholder='Please select content'\n      ></TreeSelect>\n    </div>\n  );\n};\n",
+      "language": "tsx"
+    }
+  ],
+  "subComponents": [],
+  "version": "3.7.7",
+  "apiSummary": {
+    "totalProps": 72,
+    "requiredProps": 2,
+    "propsWithWhen": 0
+  },
+  "subComponentApis": {}
+}
