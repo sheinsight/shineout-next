@@ -320,6 +320,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     background: token.modalPanelBackground,
     borderRadius: token.modalPanelRadius,
     padding: `${token.modalPanelPaddingY} ${token.modalPanelPaddingX}`,
+    margin: '0 auto',
     fontSize: token.modalPanelFontSize,
     boxSizing: 'border-box',
     boxShadow: token.modalPanelShadow,
