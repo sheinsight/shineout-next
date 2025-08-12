@@ -53,7 +53,10 @@ export default () => {
 - **问题原因**: absolute 定位模式下，弹出层的位置计算和过渡动画存在冲突
 
 #### Bug 特征
-- 待补充复现示例
+- 设置了 `absolute` 属性的 Select 在滚动容器中或页面边缘
+- 打开下拉框时出现明显的过渡动画，从错误位置滑动到正确位置
+- 特别是父容器滚动后，下拉框会先显示在错误位置再动画移动
+- `usePositionStyle` 钩子对 `popupElSize` 依赖项设置不当导致重复计算
 
 **代码模式**：
 ```jsx
@@ -140,7 +143,10 @@ export default () => {
 - **问题原因**: 下拉框高度动态变化时，位置计算没有及时更新
 
 #### Bug 特征
-- 待补充复现示例
+- 使用 `renderOptionList` 自定义渲染且内容高度会动态变化
+- 异步加载或搜索过滤导致下拉框高度变化时位置不更新
+- Select 位于视口底部时，应向上展开但没有正确调整
+- 虚拟滚动的 `keepScrollTop` 属性和尺寸检测模块响应不及时
 
 **代码模式**：
 ```jsx
@@ -148,6 +154,12 @@ export default () => {
 <Select
   data={dynamicData}
   onFilter={...}
+  renderOptionList={(s) => (
+    <div>
+      {/* 动态内容会改变高度 */}
+      {loading ? <Loading /> : s}
+    </div>
+  )}
   // 搜索后数据量变化导致下拉框高度变化，位置不正确
 />
 ```
@@ -166,7 +178,10 @@ export default () => {
 - **问题原因**: absolute 模式下，自定义宽度的弹出层溢出边界检测失效
 
 #### Bug 特征
-- 待补充复现示例
+- 同时设置 `absolute` 和 `optionWidth` 属性
+- Select 位于视口右侧时，下拉框按设定宽度展开溢出右边界
+- absolute 模式下边界检测失效，不会自动向左调整
+- 自定义宽度破坏了原有的溢出检测和位置调整机制
 
 **代码模式**：
 ```jsx
@@ -193,7 +208,10 @@ export default () => {
 - **问题原因**: 在 Drawer 中的事件冒泡处理异常，导致第二次点击失效
 
 #### Bug 特征
-- 待补充复现示例
+- Select 在 Drawer/Modal 内使用且开启 `compressed` 属性
+- 多选合并显示时，点击删除按钮第一次正常，第二次无响应
+- Drawer 的事件冒泡处理与 Select 事件处理冲突
+- compressed 模式下 Popover 组件事件传播被阻断
 
 **代码模式**：
 ```jsx

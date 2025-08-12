@@ -9,14 +9,41 @@
 
 ### 3.7.7-beta.9
 - **变更类型**: 修复问题
-- **复现示例**: 无
+- **复现示例**: 
+```
+import React from 'react';
+import { Select } from 'shineout';
+
+export default () => {
+  const data = Array.from({ length: 224 }, () => Math.random().toString(36).substring(2, 15));
+  data.unshift('PayU-GooglePay');
+  return (
+    <div>
+      <Select
+        width={221}
+        defaultValue={data}
+        multiple
+        onChange={(v) => console.log(v)}
+        data={data}
+        keygen
+        placeholder='Select Color'
+        compressed
+        clearable
+      />
+    </div>
+  );
+};
+```
 - **变更描述**: 修复 `Select` compressed 初始化时第一项结果都不显示，而是显示 more 的 Tag
 - **PR**: [#1251](https://github.com/sheinsight/shineout-next/pull/1251)
 - **影响组件**: Select
 - **问题原因**: compressed 功能的显示逻辑在特定条件下计算错误
 
 #### Bug 特征
-- 待补充复现示例
+- 多选 Select 设置 `compressed` 属性用于合并显示选中项
+- 初始化时有大量默认选中值（特别是全选状态）
+- 第一项选中值不显示，直接显示 "+N More" 标签
+- compressed 计数逻辑在初始化时错误地包含了第一项
 
 **代码模式**：
 ```jsx
@@ -24,9 +51,9 @@
 <Select
   multiple
   compressed
+  defaultValue={data} // 默认全选
   data={data}
-  value={[1, 2, 3]} // 初始值
-  // 可能只显示 "+3 More" 而不显示第一项
+  // 初始化时不显示第一项，直接显示 "+224 More"
 />
 ```
 
