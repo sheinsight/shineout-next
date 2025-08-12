@@ -23,7 +23,7 @@ const UseFormItem = () => {
     }
   });
 
-  const msg = Object.values(errors).filter(Boolean);
+  const msg = Object.values(errors).filter(Boolean) as Error[];
 
   const showError = msg && msg.length > 0;
 
