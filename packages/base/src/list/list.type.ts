@@ -88,6 +88,7 @@ export interface ListProps<DataItem, Value>
    * @en enable dynamic height virtual list (requires fixed=true)
    * @cn 启用不定高虚拟列表 (需要设置 fixed=true)
    * @default false
+   * @version 3.8.0
    */
   dynamicHeight?: boolean;
   /**
