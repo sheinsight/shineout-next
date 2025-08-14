@@ -8,6 +8,11 @@ const templateApiPath = path.resolve(__dirname, '../doc-page-api.ejs');
 const apiDir = path.join(__dirname, '../../docs', 'api');
 const mcpDataDir = path.join(__dirname, '../../packages/shineout-mcp/src/data/generated');
 
+// 读取 package.json 中的版本号
+const packageJsonPath = path.join(__dirname, '../../package.json');
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+const packageVersion = packageJson.version;
+
 /**
  * 从组件目录提取基础信息
  */
@@ -227,7 +232,7 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     props,
     examples: mcpExamples,
     subComponents,
-    version: '3.7.7',
+    version: packageVersion,
     // 添加额外的 API 相关信息
     apiSummary: {
       totalProps: props.length,
@@ -357,7 +362,7 @@ function compile(dirPath, componentPath) {
     // 生成 MCP 索引文件
     const indexData = {
       lastUpdated: new Date().toISOString(),
-      version: '3.7.7',
+      version: packageVersion,
       totalComponents: Object.keys(allMcpData).length,
       components: Object.keys(allMcpData),
       categories: {}
