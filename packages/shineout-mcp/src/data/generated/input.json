@@ -426,7 +426,7 @@
   "subComponents": [
     "Group"
   ],
-  "version": "3.7.7",
+  "version": "3.7.10-beta.3",
   "apiSummary": {
     "totalProps": 42,
     "requiredProps": 0,

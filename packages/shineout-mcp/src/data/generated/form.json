@@ -125,8 +125,20 @@
       "description": "是否禁用，为 true 时，表单内所有元素 disabled 都为 true。全局控制表单的禁用状态。适用于查看详情、提交中等需要临时禁用整个表单的场景。表单内所有受控组件（如 Input、Select、DatePicker 等）都会继承此属性"
     },
     {
+      "name": "onReset",
+      "type": "(() => void)",
+      "required": false,
+      "description": "表单重置时的回调函数。在表单被重置为初始值（defaultValue 或空值）后触发。可用于执行额外的重置逻辑，如清除关联状态、重置相关组件等。配合 Form.Reset 按钮或 formRef.reset() 方法使用"
+    },
+    {
+      "name": "onSubmit",
+      "type": "((value: T) => void)",
+      "required": false,
+      "description": "表单提交时的回调函数。只有当所有字段校验通过后才会调用，参数为完整的表单数据。通常用于处理表单数据的提交逻辑，如发送请求到服务器。可配合 Form.Submit 按钮或 formRef.submit() 方法触发"
+    },
+    {
       "name": "size",
-      "type": "\"small\" | \"default\" | \"large\"",
+      "type": "\"default\" | \"small\" | \"large\"",
       "required": false,
       "defaultValue": "\\\"default\\\"",
       "description": "表单元素的尺寸。统一设置表单内所有组件的尺寸。支持 \\\"small\\\"、\\\"default\\\"、\\\"large\\\" 三种规格，影响输入框高度、字体大小等。表单内的受控组件会继承此属性，也可以在具体组件上单独覆盖"
@@ -137,18 +149,6 @@
       "required": false,
       "defaultValue": "false",
       "description": "当表单 value 发生变化时，是否自动触发校验。开启后可以在数据变化时实时显示校验结果，适用于需要即时反馈的场景。注意：仅在受控模式下有效"
-    },
-    {
-      "name": "onSubmit",
-      "type": "((value: T) => void)",
-      "required": false,
-      "description": "表单提交时的回调函数。只有当所有字段校验通过后才会调用，参数为完整的表单数据。通常用于处理表单数据的提交逻辑，如发送请求到服务器。可配合 Form.Submit 按钮或 formRef.submit() 方法触发"
-    },
-    {
-      "name": "onReset",
-      "type": "(() => void)",
-      "required": false,
-      "description": "表单重置时的回调函数。在表单被重置为初始值（defaultValue 或空值）后触发。可用于执行额外的重置逻辑，如清除关联状态、重置相关组件等。配合 Form.Reset 按钮或 formRef.reset() 方法使用"
     },
     {
       "name": "scrollToError",
@@ -401,7 +401,7 @@
     "useForm",
     "useFormInstance"
   ],
-  "version": "3.7.7",
+  "version": "3.7.10-beta.3",
   "apiSummary": {
     "totalProps": 28,
     "requiredProps": 0,
@@ -607,6 +607,208 @@
           "defaultValue": "false",
           "description": "设为 true 时，使用缓存机制防止重新渲染，除非监听的字段值真正发生变化。在严格模式下，只有指定的 names 字段值（而非仅引用）改变时才重新渲染子组件。适用于包含昂贵渲染操作的复杂表单的性能优化",
           "version": "3.6.0"
+        }
+      ]
+    },
+    "Button": {
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "自定义类名"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "自定义样式"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "按钮里面的内容, 可以是文字图标等"
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<Element>",
+          "required": false,
+          "description": "按钮点击回调"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "禁用"
+        },
+        {
+          "name": "renderLoading",
+          "type": "((buttonEl: ReactNode) => ReactElement)",
+          "required": false,
+          "description": "自定义loading"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "loading 状态"
+        },
+        {
+          "name": "mode",
+          "type": "\"text\" | \"outline\" | \"dashed\"",
+          "required": false,
+          "description": "按钮风格"
+        },
+        {
+          "name": "type",
+          "type": "| \"default\" | \"primary\" | \"secondary\" | \"danger\" | \"warning\" | \"success\" | \"link\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "按钮类型"
+        },
+        {
+          "name": "size",
+          "type": "\"default\" | \"small\" | \"large\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "按钮尺寸"
+        },
+        {
+          "name": "space",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "仅有2个汉字的按钮，是否在2个汉字中间插入空格"
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "required": false,
+          "description": "如果设置了 href 属性，将会用 <a> 代替 <button>"
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "required": false,
+          "description": "当设置了 href 属性时，target 会被设置到 <a> 元素上"
+        },
+        {
+          "name": "shape",
+          "type": "\"circle\" | \"round\" | \"square\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "设置按钮形状"
+        },
+        {
+          "name": "htmlType",
+          "type": "\"button\" | \"submit\" | \"reset\"",
+          "required": false,
+          "defaultValue": "\\\"button\\\"",
+          "description": "按钮原生type属性"
+        }
+      ]
+    },
+    "Submit": {
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "自定义类名"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "自定义样式"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "按钮里面的内容, 可以是文字图标等"
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<Element>",
+          "required": false,
+          "description": "按钮点击回调"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "禁用"
+        },
+        {
+          "name": "renderLoading",
+          "type": "((buttonEl: ReactNode) => ReactElement)",
+          "required": false,
+          "description": "自定义loading"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "loading 状态"
+        },
+        {
+          "name": "mode",
+          "type": "\"text\" | \"outline\" | \"dashed\"",
+          "required": false,
+          "description": "按钮风格"
+        },
+        {
+          "name": "type",
+          "type": "| \"default\" | \"primary\" | \"secondary\" | \"danger\" | \"warning\" | \"success\" | \"link\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "按钮类型"
+        },
+        {
+          "name": "size",
+          "type": "\"default\" | \"small\" | \"large\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "按钮尺寸"
+        },
+        {
+          "name": "space",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "仅有2个汉字的按钮，是否在2个汉字中间插入空格"
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "required": false,
+          "description": "如果设置了 href 属性，将会用 <a> 代替 <button>"
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "required": false,
+          "description": "当设置了 href 属性时，target 会被设置到 <a> 元素上"
+        },
+        {
+          "name": "shape",
+          "type": "\"circle\" | \"round\" | \"square\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "设置按钮形状"
+        },
+        {
+          "name": "htmlType",
+          "type": "\"button\" | \"submit\" | \"reset\"",
+          "required": false,
+          "defaultValue": "\\\"button\\\"",
+          "description": "按钮原生type属性"
         }
       ]
     }
