@@ -12,6 +12,8 @@ const Textarea = (props: BaseTextareaProps) => {
   return <UnStyledTextarea {...props} jssStyle={jssStyle} />;
 };
 
+Textarea.displayName = 'ShineoutTextarea';
+
 export default (props: TextareaProps) => {
   return useFieldCommon(props, Textarea);
 };

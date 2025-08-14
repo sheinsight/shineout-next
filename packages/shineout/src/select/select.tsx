@@ -30,6 +30,8 @@ function Select<DataItem, Value>(props: SelectProps<DataItem, Value>) {
   return <BaseSelect jssStyle={jssStyle} {...props} />;
 }
 
+Select.displayName = 'ShineoutSelect';
+
 function SelectComponent<DataItem, Value>(props: SelectPropsA<DataItem, Value>): JSX.Element;
 function SelectComponent<DataItem, Value>(props: SelectPropsB<DataItem, Value>): JSX.Element;
 function SelectComponent<DataItem, Value>(props: SelectProps<DataItem, Value>) {

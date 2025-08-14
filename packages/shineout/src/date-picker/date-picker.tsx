@@ -24,6 +24,8 @@ const DatePicker = <Value extends DatePickerValueType>(props: BaseDatePickerProp
   return <BaseDatePicker jssStyle={jssStyle} {...props} />;
 };
 
+DatePicker.displayName = 'ShineoutDatePicker';
+
 export default <Value extends DatePickerValueType = DatePickerValueType>(
   props: DatePickerProps<Value>,
 ) => {
