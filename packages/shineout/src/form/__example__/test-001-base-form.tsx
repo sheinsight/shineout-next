@@ -63,6 +63,17 @@ export default () => {
           compressed
         />
       </Form.Item>
+      <Form.Item label='下拉多选对象' required>
+        <Select
+          data={checkboxGroupData}
+          keygen='id'
+          renderItem='color'
+          format={d=>d}
+          name='multiSelectObject'
+          multiple
+          compressed
+        />
+      </Form.Item>
 
       <Form.Item label='工作代理人' required>
         <Input name='agent' rules={[rules.required()]} />

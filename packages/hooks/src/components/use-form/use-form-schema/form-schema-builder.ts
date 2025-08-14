@@ -4,7 +4,7 @@ interface SchemaMeta {
   title?: string;
   format?: string;
   items?: any;
-  enum?: any[] | { anyOf: any[] };
+  enum?: any[] | { anyOf?: any[], oneOf?: any[] };
   description?: string;
   [key: string]: any;
 }
@@ -83,6 +83,7 @@ export class SchemaBuilder {
         case 'ShineoutTextarea':
           fieldSchemaInfo.type = 'string';
           break;
+        case 'ShineoutCascader':
         case 'ShineoutSelect':
         case 'ShineoutTreeSelect': {
           const format = componentElement.props.format || componentElement.props.keygen;
@@ -105,29 +106,23 @@ export class SchemaBuilder {
           } else {
             fieldSchemaInfo.type = itemType;
           }
-          // props.data格式： [
-          //   { "value": 1, "title": "年假" },
-          //   { "value": 2, "title": "调休" },
-          //   { "value": 3, "title": "事假" },
-          //   { "value": 4, "title": "病假" },
-          //   { "value": 5, "title": "其他" }
-          // ]
-          // 转换为jsonschema中的enum格式：
-          // "enum": {
-          //   "anyOf": [
-          //     { "const": 1, "title": "年假" },
-          //     { "const": 2, "title": "调休" },
-          //     { "const": 3, "title": "事假" },
-          //     { "const": 4, "title": "病假" },
-          //     { "const": 5, "title": "其他" }
-          //   ]
-          // }
-          fieldSchemaInfo.enum = {
-            anyOf: componentElement.props.data.map((item: any) => ({
-              const: item?.[format] || item,
-              title: item?.title || item,
-            })),
-          };
+
+          if (itemType === 'object') {
+            // 对于对象类型，使用 oneOf 而不是 enum
+            if (componentElement.props.multiple) {
+              fieldSchemaInfo.items.oneOf = componentElement.props.data.map((item: any) => ({
+                const: item,
+                title: item?.title || JSON.stringify(item)
+              }));
+            } else {
+              fieldSchemaInfo.oneOf = componentElement.props.data.map((item: any) => ({
+                const: item,
+                title: item?.title || JSON.stringify(item)
+              }));
+            }
+          } else {
+            fieldSchemaInfo.enum = componentElement.props.data.map((item: any) => item?.[format] || item);
+          }
           break;
         }
         case 'ShineoutDatePicker':
