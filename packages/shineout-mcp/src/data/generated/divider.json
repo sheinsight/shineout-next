@@ -46,28 +46,28 @@
   ],
   "examples": [
     {
-      "name": "01-01-base-solid",
-      "title": "cn - 基本用法",
-      "code": "/**\n * cn - 基本用法\n *    --默认为水平分割线\n * en - Base\n *    --Divider is horizontal by default. You can add text within Divider\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider />\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Base",
+      "description": "Divider is horizontal by default. You can add text within Divider",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    --默认为水平分割线\n * en - Base\n *    --Divider is horizontal by default. You can add text within Divider\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider />\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "name": "01-02-base-dashed",
-      "title": "cn - 虚线分割",
-      "code": "/**\n * cn - 虚线分割\n *    --使用 `type`=\"dashed\" 设置为虚线分割线\n * en - Dashed\n *    --Use type=\"dashed\" make it dashed\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider type='dashed' />\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Dashed",
+      "description": "Use type=\"dashed\" make it dashed",
+      "scenario": "basic",
+      "code": "/**\n * cn - 虚线分割\n *    --使用 `type`=\"dashed\" 设置为虚线分割线\n * en - Dashed\n *    --Use type=\"dashed\" make it dashed\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider type='dashed' />\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "name": "02-text",
-      "title": "cn - 带文字的分割线",
-      "code": "/**\n * cn - 带文字的分割线\n *    -- 分割线中带有文字，可以用 orientation 指定文字位置\n * en - Divider with title\n *    --Divider with inner title, set orientation=\"left/right\" to align it\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider>Center</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider orientation={'left'}>Left</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider orientation={'right'}>Right</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Divider with title",
+      "description": "Divider with inner title, set orientation=\"left/right\" to align it",
+      "scenario": "basic",
+      "code": "/**\n * cn - 带文字的分割线\n *    -- 分割线中带有文字，可以用 orientation 指定文字位置\n * en - Divider with title\n *    --Divider with inner title, set orientation=\"left/right\" to align it\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider>Center</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider orientation={'left'}>Left</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider orientation={'right'}>Right</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "name": "03-vertical",
-      "title": "cn - 垂直分割线",
-      "code": "/**\n * cn - 垂直分割线\n *    -- 使用 mode=\"vertical\" 设置为行内的垂直分割线\n * en - Vertical\n *    --Use type=\"vertical\" make it vertical\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst inlineStyle = {\n  display: 'inline-block',\n  lineHeight: '22px',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <>\n    <span style={inlineStyle}>Item 1</span>\n    <Divider mode='vertical'>H</Divider>\n    <span style={inlineStyle}>Item 2</span>\n    <Divider mode='vertical' />\n    <span style={inlineStyle}>Item 3</span>\n  </>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Vertical",
+      "description": "Use type=\"vertical\" make it vertical",
+      "scenario": "basic",
+      "code": "/**\n * cn - 垂直分割线\n *    -- 使用 mode=\"vertical\" 设置为行内的垂直分割线\n * en - Vertical\n *    --Use type=\"vertical\" make it vertical\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst inlineStyle = {\n  display: 'inline-block',\n  lineHeight: '22px',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <>\n    <span style={inlineStyle}>Item 1</span>\n    <Divider mode='vertical'>H</Divider>\n    <span style={inlineStyle}>Item 2</span>\n    <Divider mode='vertical' />\n    <span style={inlineStyle}>Item 3</span>\n  </>\n);\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
@@ -75,6 +75,7 @@
   "apiSummary": {
     "totalProps": 6,
     "requiredProps": 0,
-    "propsWithWhen": 0
+    "propsWithWhen": 0,
+    "examplesCount": 4
   }
 }

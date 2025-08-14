@@ -118,34 +118,34 @@
   ],
   "examples": [
     {
-      "name": "01-basic",
-      "title": "cn - 基本用法",
-      "code": "/**\n * cn - 基本用法\n *    -- 最基础的用法\n * en - Base\n *    -- The basic usage\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return <Switch />;\n};\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Base",
+      "description": "The basic usage",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 最基础的用法\n * en - Base\n *    -- The basic usage\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return <Switch />;\n};\n\nexport default App;\n"
     },
     {
-      "name": "02-status",
-      "title": "cn - 禁用状态",
-      "code": "/**\n * cn - 禁用状态\n *    -- 设置 `disabled` 属性, 可以设置禁用状态\n * en - Disabled\n *    -- Set disabled property to disable the Switch\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24 }}>\n      <Switch value={true} disabled />\n      <Switch value={false} disabled />\n    </div>\n  );\n};\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Disabled",
+      "description": "Set disabled property to disable the Switch",
+      "scenario": "basic",
+      "code": "/**\n * cn - 禁用状态\n *    -- 设置 `disabled` 属性, 可以设置禁用状态\n * en - Disabled\n *    -- Set disabled property to disable the Switch\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24 }}>\n      <Switch value={true} disabled />\n      <Switch value={false} disabled />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "name": "03-size",
-      "title": "cn - 尺寸",
-      "code": "/**\n * cn - 尺寸\n *    -- 设置 `size` 属性可以调整组件尺寸\n * en - Base\n *    -- Set the size property to adjust the size of the component\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n      <Switch size={'small'} />\n      <Switch />\n      <Switch size={'large'} />\n    </div>\n  );\n};\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Base",
+      "description": "Set the size property to adjust the size of the component",
+      "scenario": "basic",
+      "code": "/**\n * cn - 尺寸\n *    -- 设置 `size` 属性可以调整组件尺寸\n * en - Base\n *    -- Set the size property to adjust the size of the component\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n      <Switch size={'small'} />\n      <Switch />\n      <Switch size={'large'} />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "name": "04-loading",
-      "title": "cn - 加载中",
-      "code": "/**\n * cn - 加载中\n *    -- 设置 `loading` 属性可以让 Switch 处于加载状态\n * en - Base\n *    -- Set `loading` property to make Switch loading\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n      <Switch loading value />\n      <Switch loading />\n    </div>\n  );\n};\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Base",
+      "description": "Set `loading` property to make Switch loading",
+      "scenario": "basic",
+      "code": "/**\n * cn - 加载中\n *    -- 设置 `loading` 属性可以让 Switch 处于加载状态\n * en - Base\n *    -- Set `loading` property to make Switch loading\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n      <Switch loading value />\n      <Switch loading />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "name": "05-text",
-      "title": "cn - 自定义文案",
-      "code": "/**\n * cn - 自定义文案\n *    -- 自定义开关打开（关闭）时需要显示的文字和图标\n * en - Custom content\n *    -- Customize the text and icon to display when the switch is on (off)\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n    <Switch size='small' defaultValue content={['ON', 'OFF']} />\n    <Switch defaultValue content={['ON', 'OFF']} />\n    <Switch size='large' defaultValue content={['ON', 'OFF']} />\n  </div>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Custom content",
+      "description": "Customize the text and icon to display when the switch is on (off)",
+      "scenario": "basic",
+      "code": "/**\n * cn - 自定义文案\n *    -- 自定义开关打开（关闭）时需要显示的文字和图标\n * en - Custom content\n *    -- Customize the text and icon to display when the switch is on (off)\n */\nimport React from 'react';\nimport { Switch } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center' }}>\n    <Switch size='small' defaultValue content={['ON', 'OFF']} />\n    <Switch defaultValue content={['ON', 'OFF']} />\n    <Switch size='large' defaultValue content={['ON', 'OFF']} />\n  </div>\n);\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
@@ -153,6 +153,7 @@
   "apiSummary": {
     "totalProps": 18,
     "requiredProps": 0,
-    "propsWithWhen": 0
+    "propsWithWhen": 0,
+    "examplesCount": 5
   }
 }

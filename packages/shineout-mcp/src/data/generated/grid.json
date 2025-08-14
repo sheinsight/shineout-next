@@ -58,28 +58,28 @@
   ],
   "examples": [
     {
-      "name": "01-base",
-      "title": "cn - 任意等分",
-      "code": "/**\n * cn - 任意等分\n *    -- Grid 的栅格体系是动态生成，可以实现任意等份\n * en - Arbitrary\n *    -- Grid system is dynamic generated and can be any number\n */\nimport React, { useState } from 'react';\nimport { Grid, Slider, TYPE } from 'shineout';\n\ntype SliderProps = TYPE.Slider.Props<number>;\ntype SliderOnChange = SliderProps['onChange'];\n\nconst gridStyle: React.CSSProperties = {\n  color: '#fff',\n  paddingInlineStart: 8,\n  background: '#197afa',\n  fontSize: 14,\n};\nconst style: React.CSSProperties = { background: '#e8ebf0', marginBottom: 4, lineHeight: '30px' };\n\nconst App: React.FC = () => {\n  const [count, setCount] = useState(5);\n\n  const handleCountChange: SliderOnChange = (v) => {\n    setCount(v);\n  };\n  return (\n    <div>\n      <Slider\n        step={0}\n        value={count}\n        formatValue={false}\n        onChange={handleCountChange}\n        scale={[1, 2, 3, 5, 8, 13, 21, 34, 55]}\n      />\n\n      <div style={{ height: 20 }} />\n\n      {Array.from({ length: count }).map((_n, i) => (\n        <div key={i} style={style}>\n          <Grid width={(i + 1) / count} style={gridStyle}>\n            {`${i + 1}/${count}`}\n          </Grid>\n        </div>\n      ))}\n    </div>\n  );\n};\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Arbitrary",
+      "description": "Grid system is dynamic generated and can be any number",
+      "scenario": "basic",
+      "code": "/**\n * cn - 任意等分\n *    -- Grid 的栅格体系是动态生成，可以实现任意等份\n * en - Arbitrary\n *    -- Grid system is dynamic generated and can be any number\n */\nimport React, { useState } from 'react';\nimport { Grid, Slider, TYPE } from 'shineout';\n\ntype SliderProps = TYPE.Slider.Props<number>;\ntype SliderOnChange = SliderProps['onChange'];\n\nconst gridStyle: React.CSSProperties = {\n  color: '#fff',\n  paddingInlineStart: 8,\n  background: '#197afa',\n  fontSize: 14,\n};\nconst style: React.CSSProperties = { background: '#e8ebf0', marginBottom: 4, lineHeight: '30px' };\n\nconst App: React.FC = () => {\n  const [count, setCount] = useState(5);\n\n  const handleCountChange: SliderOnChange = (v) => {\n    setCount(v);\n  };\n  return (\n    <div>\n      <Slider\n        step={0}\n        value={count}\n        formatValue={false}\n        onChange={handleCountChange}\n        scale={[1, 2, 3, 5, 8, 13, 21, 34, 55]}\n      />\n\n      <div style={{ height: 20 }} />\n\n      {Array.from({ length: count }).map((_n, i) => (\n        <div key={i} style={style}>\n          <Grid width={(i + 1) / count} style={gridStyle}>\n            {`${i + 1}/${count}`}\n          </Grid>\n        </div>\n      ))}\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "name": "02-offset",
-      "title": "cn - 偏移",
-      "code": "/**\n * cn - 偏移\n *    -- offset 属性可以设置偏移，取值方式和宽度相同\n * en - Offset\n *    -- The offset property set the offset in the same way as the width\n */\nimport React from 'react';\nimport { Grid } from 'shineout';\n\nconst style: React.CSSProperties = {\n  background: '#e8ebf0',\n};\nconst gridStyle: React.CSSProperties = {\n  color: '#fff',\n  lineHeight: '60px',\n  textAlign: 'center',\n  background: '#197afa',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <div style={style}>\n    <Grid width={1 / 3} offset={1 / 3} style={gridStyle}>\n      With 1/3, Offset 1/3\n    </Grid>\n  </div>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Offset",
+      "description": "The offset property set the offset in the same way as the width",
+      "scenario": "basic",
+      "code": "/**\n * cn - 偏移\n *    -- offset 属性可以设置偏移，取值方式和宽度相同\n * en - Offset\n *    -- The offset property set the offset in the same way as the width\n */\nimport React from 'react';\nimport { Grid } from 'shineout';\n\nconst style: React.CSSProperties = {\n  background: '#e8ebf0',\n};\nconst gridStyle: React.CSSProperties = {\n  color: '#fff',\n  lineHeight: '60px',\n  textAlign: 'center',\n  background: '#197afa',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <div style={style}>\n    <Grid width={1 / 3} offset={1 / 3} style={gridStyle}>\n      With 1/3, Offset 1/3\n    </Grid>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "name": "03-nested",
-      "title": "cn - 嵌套",
-      "code": "/**\n * cn - 嵌套\n *    -- 嵌套的栅格\n * en - Nested\n *    -- Nested grids\n */\nimport React from 'react';\nimport { Grid } from 'shineout';\n\nconst style: React.CSSProperties = {\n  color: '#fff',\n  lineHeight: '30px',\n  textAlign: 'center',\n  background: '#197afa',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <Grid style={{ textAlign: 'center' }}>\n    <Grid width={1 / 2} style={style}>\n      1/2\n    </Grid>\n\n    <Grid width={1 / 2} style={{ lineHeight: '30px' }}>\n      <div style={{ fontSize: 14 }}>1/2</div>\n      <div>\n        <Grid style={style} width={1 / 3}>\n          1/3\n        </Grid>\n        <Grid\n          style={{ ...style, background: '#6bb5ff', color: '#fff', fontSize: 14 }}\n          width={1 / 3}\n        >\n          1/3\n        </Grid>\n        <Grid style={style} width={1 / 3}>\n          1/3\n        </Grid>\n      </div>\n    </Grid>\n  </Grid>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Nested",
+      "description": "Nested grids",
+      "scenario": "basic",
+      "code": "/**\n * cn - 嵌套\n *    -- 嵌套的栅格\n * en - Nested\n *    -- Nested grids\n */\nimport React from 'react';\nimport { Grid } from 'shineout';\n\nconst style: React.CSSProperties = {\n  color: '#fff',\n  lineHeight: '30px',\n  textAlign: 'center',\n  background: '#197afa',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <Grid style={{ textAlign: 'center' }}>\n    <Grid width={1 / 2} style={style}>\n      1/2\n    </Grid>\n\n    <Grid width={1 / 2} style={{ lineHeight: '30px' }}>\n      <div style={{ fontSize: 14 }}>1/2</div>\n      <div>\n        <Grid style={style} width={1 / 3}>\n          1/3\n        </Grid>\n        <Grid\n          style={{ ...style, background: '#6bb5ff', color: '#fff', fontSize: 14 }}\n          width={1 / 3}\n        >\n          1/3\n        </Grid>\n        <Grid style={style} width={1 / 3}>\n          1/3\n        </Grid>\n      </div>\n    </Grid>\n  </Grid>\n);\n\nexport default App;\n"
     },
     {
-      "name": "04-gutter",
-      "title": "cn - 间距",
-      "code": "/**\n * cn - 间距\n *    -- 通过 gutter 属性设置栅格间距\n * en - Gutter\n *    -- Set grid spacing through the gutter property\n */\nimport React from 'react';\nimport { Grid } from 'shineout';\n\nconst style: React.CSSProperties = {\n  background: '#e8ebf0',\n};\nconst gridStyle: React.CSSProperties = {\n  color: '#fff',\n  lineHeight: '30px',\n  textAlign: 'center',\n  background: '#197afa',\n  fontSize: 14,\n};\nconst gridStyle2: React.CSSProperties = {\n  color: '#fff',\n  lineHeight: '30px',\n  textAlign: 'center',\n  background: '#6bb5ff',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <div style={style}>\n    <Grid gutter={8}>\n      {Array.from({ length: 8 })\n        .map((_, i) => i + 1)\n        .map((i) => (\n          <Grid key={i} width={1 / 8}>\n            <div style={i % 2 === 0 ? gridStyle2 : gridStyle}>1/8</div>\n          </Grid>\n        ))}\n    </Grid>\n  </div>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Gutter",
+      "description": "Set grid spacing through the gutter property",
+      "scenario": "basic",
+      "code": "/**\n * cn - 间距\n *    -- 通过 gutter 属性设置栅格间距\n * en - Gutter\n *    -- Set grid spacing through the gutter property\n */\nimport React from 'react';\nimport { Grid } from 'shineout';\n\nconst style: React.CSSProperties = {\n  background: '#e8ebf0',\n};\nconst gridStyle: React.CSSProperties = {\n  color: '#fff',\n  lineHeight: '30px',\n  textAlign: 'center',\n  background: '#197afa',\n  fontSize: 14,\n};\nconst gridStyle2: React.CSSProperties = {\n  color: '#fff',\n  lineHeight: '30px',\n  textAlign: 'center',\n  background: '#6bb5ff',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <div style={style}>\n    <Grid gutter={8}>\n      {Array.from({ length: 8 })\n        .map((_, i) => i + 1)\n        .map((i) => (\n          <Grid key={i} width={1 / 8}>\n            <div style={i % 2 === 0 ? gridStyle2 : gridStyle}>1/8</div>\n          </Grid>\n        ))}\n    </Grid>\n  </div>\n);\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
@@ -87,6 +87,7 @@
   "apiSummary": {
     "totalProps": 8,
     "requiredProps": 0,
-    "propsWithWhen": 0
+    "propsWithWhen": 0,
+    "examplesCount": 4
   }
 }

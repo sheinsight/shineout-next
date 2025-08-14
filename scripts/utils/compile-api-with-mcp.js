@@ -57,24 +57,78 @@ function extractExamples(componentDir) {
     const examples = [];
     const files = fs.readdirSync(exampleDir);
     
-    files.forEach(file => {
-      if (file.endsWith('.tsx')) {
-        const filePath = path.join(exampleDir, file);
-        const content = fs.readFileSync(filePath, 'utf-8');
+    // 按文件名排序，确保示例有序
+    const sortedFiles = files
+      .filter(file => file.endsWith('.tsx'))
+      .sort((a, b) => {
+        // 提取文件名中的序号
+        const aMatch = a.match(/s-(\d+)/);
+        const bMatch = b.match(/s-(\d+)/);
+        if (aMatch && bMatch) {
+          return parseInt(aMatch[1]) - parseInt(bMatch[1]);
+        }
+        return a.localeCompare(b);
+      });
+    
+    sortedFiles.forEach(file => {
+      const filePath = path.join(exampleDir, file);
+      const content = fs.readFileSync(filePath, 'utf-8');
+      
+      // 解析示例注释块
+      const commentMatch = content.match(/\/\*\*[\s\S]*?\*\//);
+      let cnTitle = '';
+      let enTitle = '';
+      let cnDescription = '';
+      let enDescription = '';
+      
+      if (commentMatch) {
+        const comment = commentMatch[0];
         
-        // 提取示例标题（从注释中）
-        const titleMatch = content.match(/\/\*\*\s*\n\s*\*\s*(.+?)\n/);
+        // 提取中文标题和描述
+        const cnMatch = comment.match(/\*\s*cn\s*-\s*(.+?)(?:\n\s*\*\s*--\s*(.+?))?(?:\n|\*\/)/s);
+        if (cnMatch) {
+          cnTitle = cnMatch[1].trim();
+          cnDescription = cnMatch[2] ? cnMatch[2].trim() : '';
+        }
         
-        examples.push({
-          name: file.replace('.tsx', ''),
-          title: titleMatch?.[1] || file.replace('.tsx', ''),
-          code: content,
-          language: 'tsx'
-        });
+        // 提取英文标题和描述
+        const enMatch = comment.match(/\*\s*en\s*-\s*(.+?)(?:\n\s*\*\s*--\s*(.+?))?(?:\n|\*\/)/s);
+        if (enMatch) {
+          enTitle = enMatch[1].trim();
+          enDescription = enMatch[2] ? enMatch[2].trim() : '';
+        }
       }
+      
+      // 确定示例场景类型
+      let scenario = 'basic';
+      const fileName = file.toLowerCase();
+      
+      if (fileName.includes('base') || fileName.includes('001')) {
+        scenario = 'basic';
+      } else if (fileName.includes('form') || fileName.includes('validation')) {
+        scenario = 'form';
+      } else if (fileName.includes('custom') || fileName.includes('render')) {
+        scenario = 'custom';
+      } else if (fileName.includes('advanced') || parseInt(fileName.match(/s-(\d+)/)?.[1] || '0') > 10) {
+        scenario = 'advanced';
+      }
+      
+      examples.push({
+        name: file.replace('.tsx', ''),
+        title: cnTitle || enTitle || file.replace('.tsx', ''),
+        titleEn: enTitle,
+        titleCn: cnTitle,
+        description: cnDescription || enDescription || '',
+        descriptionEn: enDescription,
+        descriptionCn: cnDescription,
+        scenario,
+        code: content,
+        language: 'tsx'
+      });
     });
 
-    return examples.slice(0, 5); // 限制示例数量
+    // 返回所有示例
+    return examples;
   } catch (error) {
     console.error('Error extracting examples:', error);
     return [];
@@ -156,6 +210,14 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     version: prop.tag.version || undefined
   }));
 
+  // 转换示例格式以符合 MCP 的 ComponentExample 接口
+  const mcpExamples = examples.map(ex => ({
+    title: ex.titleEn || ex.title,
+    description: ex.descriptionEn || ex.description,
+    scenario: ex.scenario,
+    code: ex.code
+  }));
+
   // 构建 MCP 数据结构
   const mcpData = {
     name: componentName,
@@ -163,14 +225,15 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     category: mapCategory(basicInfo?.group || 'General'),
     importPath: `import { ${componentName} } from 'shineout'`,
     props,
-    examples,
+    examples: mcpExamples,
     subComponents,
     version: '3.7.7',
     // 添加额外的 API 相关信息
     apiSummary: {
       totalProps: props.length,
       requiredProps: props.filter(p => p.required).length,
-      propsWithWhen: props.filter(p => p.when).length
+      propsWithWhen: props.filter(p => p.when).length,
+      examplesCount: mcpExamples.length
     }
   };
 
@@ -272,16 +335,22 @@ function compile(dirPath, componentPath) {
         allMcpData[componentName] = mcpData;
         processedCount++;
         
-        console.log(`✅ Generated MCP data for ${componentName} (${mcpData.apiSummary.totalProps} props, ${mcpData.apiSummary.propsWithWhen} with @when)`);
+        console.log(`✅ Generated MCP data for ${componentName} (${mcpData.apiSummary.totalProps} props, ${mcpData.apiSummary.examplesCount} examples, ${mcpData.apiSummary.propsWithWhen} with @when)`);
       }
     }
   }
 
   if (!componentPath) {
     // 处理所有组件
-    fs.readdirSync(dirPath).forEach((dir) => {
+    const dirs = fs.readdirSync(dirPath).filter(dir => {
       const mdPath = path.join(dirPath, dir, docDirName, 'index.md');
-      if (!fs.existsSync(mdPath)) return;
+      return fs.existsSync(mdPath);
+    });
+    
+    console.log(`📦 Found ${dirs.length} components to process\n`);
+    
+    dirs.forEach((dir, index) => {
+      console.log(`[${index + 1}/${dirs.length}] Processing ${dir}...`);
       makeApi(dir);
     });
 

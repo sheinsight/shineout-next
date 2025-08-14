@@ -184,34 +184,112 @@
   ],
   "examples": [
     {
-      "name": "01-base",
-      "title": "cn - 基本用法",
-      "code": "/**\n * cn - 基本用法\n *    -- 基本的用法，支持鼠标悬浮即显提示文字\n * en - Basic\n *    -- Basic usage, support mouse hover to show prompt text\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nexport default () => {\n  return (\n    <Button mode='outline'>\n      Hover\n      <Popover>some Text</Popover>\n    </Button>\n  );\n};\n",
-      "language": "tsx"
+      "title": "Basic",
+      "description": "Basic usage, support mouse hover to show prompt text",
+      "scenario": "basic",
+      "code": "/**\n * cn - 基本用法\n *    -- 基本的用法，支持鼠标悬浮即显提示文字\n * en - Basic\n *    -- Basic usage, support mouse hover to show prompt text\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nexport default () => {\n  return (\n    <Button mode='outline'>\n      Hover\n      <Popover>some Text</Popover>\n    </Button>\n  );\n};\n"
     },
     {
-      "name": "02-position",
-      "title": "cn - 弹出位置",
-      "code": "/**\n * cn - 弹出位置\n *    -- 内置了十二个弹出的位置\n * en - Position\n *    -- Twelve pop-up positions are built in\n */\n\nimport React from 'react';\nimport { Button, Popover, TYPE } from 'shineout';\n\ntype PopoverProps = TYPE.Popover.Props;\ntype PopoverPosition = PopoverProps['position'];\n\nconst positions: Array<PopoverPosition[]> = [\n  [undefined, 'bottom-left', 'bottom', 'bottom-right', undefined],\n  ['right-top', undefined, undefined, undefined, 'left-top'],\n  ['right', undefined, undefined, undefined, 'left'],\n  ['right-bottom', undefined, undefined, undefined, 'left-bottom'],\n  [undefined, 'top-left', 'top', 'top-right', undefined],\n];\n\nconst style: React.CSSProperties = {\n  margin: 4,\n  width: 110,\n  display: 'inline-block',\n};\n\nconst App: React.FC = () => (\n  <div>\n    {positions.map((row, i) => (\n      <div key={i}>\n        {row.map((p, j) =>\n          p ? (\n            <Button key={j} mode={'outline'} style={style}>\n              <Popover trigger='hover' position={p} useTextStyle>\n                <div>i am popover content</div>\n                <div>{p}</div>\n              </Popover>\n              {p}\n            </Button>\n          ) : (\n            <div key={j} style={{ ...style, border: 0 }} />\n          ),\n        )}\n      </div>\n    ))}\n  </div>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Position",
+      "description": "Twelve pop-up positions are built in",
+      "scenario": "basic",
+      "code": "/**\n * cn - 弹出位置\n *    -- 内置了十二个弹出的位置\n * en - Position\n *    -- Twelve pop-up positions are built in\n */\n\nimport React from 'react';\nimport { Button, Popover, TYPE } from 'shineout';\n\ntype PopoverProps = TYPE.Popover.Props;\ntype PopoverPosition = PopoverProps['position'];\n\nconst positions: Array<PopoverPosition[]> = [\n  [undefined, 'bottom-left', 'bottom', 'bottom-right', undefined],\n  ['right-top', undefined, undefined, undefined, 'left-top'],\n  ['right', undefined, undefined, undefined, 'left'],\n  ['right-bottom', undefined, undefined, undefined, 'left-bottom'],\n  [undefined, 'top-left', 'top', 'top-right', undefined],\n];\n\nconst style: React.CSSProperties = {\n  margin: 4,\n  width: 110,\n  display: 'inline-block',\n};\n\nconst App: React.FC = () => (\n  <div>\n    {positions.map((row, i) => (\n      <div key={i}>\n        {row.map((p, j) =>\n          p ? (\n            <Button key={j} mode={'outline'} style={style}>\n              <Popover trigger='hover' position={p} useTextStyle>\n                <div>i am popover content</div>\n                <div>{p}</div>\n              </Popover>\n              {p}\n            </Button>\n          ) : (\n            <div key={j} style={{ ...style, border: 0 }} />\n          ),\n        )}\n      </div>\n    ))}\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "name": "03-click",
-      "title": "cn - 点击触发",
-      "code": "/**\n * cn - 点击触发\n *    -- 默认是移入组件触发，设置 trigger 为 'click'，可以改为点击触发\n * en - Trigger\n *    -- Set the trigger property to change the trigger event to 'click'\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst App: React.FC = () => (\n  <Button mode=\"outline\">\n    <Popover trigger='click'>hello shineout</Popover>\n    Click me\n  </Button>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "Trigger",
+      "description": "Set the trigger property to change the trigger event to 'click'",
+      "scenario": "basic",
+      "code": "/**\n * cn - 点击触发\n *    -- 默认是移入组件触发，设置 trigger 为 'click'，可以改为点击触发\n * en - Trigger\n *    -- Set the trigger property to change the trigger event to 'click'\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst App: React.FC = () => (\n  <Button mode=\"outline\">\n    <Popover trigger='click'>hello shineout</Popover>\n    Click me\n  </Button>\n);\n\nexport default App;\n"
     },
     {
-      "name": "04-controll",
-      "title": "cn - 受控模式",
-      "code": "/**\n * cn - 受控模式\n *    -- 可以通过 visible 去控制\n * en -  control\n *    -- can be controlled by visible\n */\nimport React, { useState } from 'react';\nimport { Button, Popover, Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  const [visible, setVisible] = useState(false);\n\n  return (\n    <div>\n      <div style={{ marginBottom: 24 }}>\n        <Switch value={visible} onChange={setVisible} />\n        <span style={{ marginInlineStart: 8, fontSize: 14 }}>\n          {!visible ? 'Turn on switch to display popover' : 'Turn off switch to hide popover'}{' '}\n        </span>\n      </div>\n      <Button mode=\"outline\">\n        <Popover\n          priorityDirection='horizontal'\n          visible={visible}\n          onVisibleChange={(v) => {\n            console.log('onVisibleChange', v);\n          }}\n        >\n          Some text1\n        </Popover>\n        Hover\n      </Button>\n    </div>\n  );\n};\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "control",
+      "description": "can be controlled by visible",
+      "scenario": "basic",
+      "code": "/**\n * cn - 受控模式\n *    -- 可以通过 visible 去控制\n * en -  control\n *    -- can be controlled by visible\n */\nimport React, { useState } from 'react';\nimport { Button, Popover, Switch } from 'shineout';\n\nconst App: React.FC = () => {\n  const [visible, setVisible] = useState(false);\n\n  return (\n    <div>\n      <div style={{ marginBottom: 24 }}>\n        <Switch value={visible} onChange={setVisible} />\n        <span style={{ marginInlineStart: 8, fontSize: 14 }}>\n          {!visible ? 'Turn on switch to display popover' : 'Turn off switch to hide popover'}{' '}\n        </span>\n      </div>\n      <Button mode=\"outline\">\n        <Popover\n          priorityDirection='horizontal'\n          visible={visible}\n          onVisibleChange={(v) => {\n            console.log('onVisibleChange', v);\n          }}\n        >\n          Some text1\n        </Popover>\n        Hover\n      </Button>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "name": "05-delay",
-      "title": "cn - 延迟",
-      "code": "/**\n * cn - 延迟\n *    -- 可以设置展示延时和关闭延时\n * en - delay\n *    -- the hidden/show delay\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst App: React.FC = () => (\n  <Button mode=\"outline\">\n    <Popover mouseEnterDelay={200} mouseLeaveDelay={1000}>\n      Some text\n    </Popover>\n    Hover\n  </Button>\n);\n\nexport default App;\n",
-      "language": "tsx"
+      "title": "delay",
+      "description": "the hidden/show delay",
+      "scenario": "basic",
+      "code": "/**\n * cn - 延迟\n *    -- 可以设置展示延时和关闭延时\n * en - delay\n *    -- the hidden/show delay\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst App: React.FC = () => (\n  <Button mode=\"outline\">\n    <Popover mouseEnterDelay={200} mouseLeaveDelay={1000}>\n      Some text\n    </Popover>\n    Hover\n  </Button>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "Custom container",
+      "description": "use getPopupContainer return target container",
+      "scenario": "basic",
+      "code": "/**\n * cn - 自定义容器\n *    -- 使用 getPopupContainer 指定渲染的目标容器\n * en - Custom container\n *    -- use getPopupContainer return target container\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst buttonStyle: React.CSSProperties = { margin: '100px 0' };\nconst targetStyle: React.CSSProperties = { height: 200, overflowY: 'auto', position: 'relative' };\n\nconst App: React.FC = () => (\n  <div id='popup-target' style={targetStyle}>\n    <Button style={buttonStyle} mode=\"outline\">\n      Scrollable\n      <Popover trigger='click' getPopupContainer={() => document.querySelector('#popup-target')}>\n        render in parent element\n      </Popover>\n    </Button>\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "Disabled",
+      "description": "When the parent element is disabled, you can place the Popver and the disabled element in the same hierarchy and wrap them with the element",
+      "scenario": "basic",
+      "code": "/**\n * cn - 禁用元素\n *    -- 当父元素被禁用，可以将 Popver 和禁用元素置于同一层级，并用元素将他们包裹\n * en - Disabled\n *    -- When the parent element is disabled, you can place the Popver and the disabled element in the same hierarchy and wrap them with the element\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst style: React.CSSProperties = { display: 'inline-block' };\n\nconst App: React.FC = () => (\n  <div style={style}>\n    <Popover>Disabled parent</Popover>\n\n    <Button disabled mode=\"outline\">Disabled</Button>\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "Type",
+      "description": "Four styles are built in",
+      "scenario": "basic",
+      "code": "/**\n * cn - 样式\n *    -- 内置四种样式\n * en - Type\n *    -- Four styles are built in\n */\nimport React from 'react';\nimport { Popover, Button, TYPE } from 'shineout';\n\ntype PopoverProps = TYPE.Popover.Props;\n\nconst types: PopoverProps['type'][] = ['success', 'info', 'warning', 'danger'];\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', gap: 12 }}>\n    {types.map((t, i) => (\n      <Button key={i} mode=\"outline\">\n        <Popover type={t}>Some text</Popover>\n        {t}\n      </Button>\n    ))}\n  </div>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "Confirm",
+      "description": "Popover.Confirm provide popover confirm",
+      "scenario": "basic",
+      "code": "/**\n * cn - 确认\n *    -- Popover.Confirm 提供弹出气泡式的确认框\n * en - Confirm\n *    -- Popover.Confirm provide popover confirm\n */\nimport React from 'react';\nimport { Button, Popover, TYPE } from 'shineout';\n\ntype PopoverConfirmProps = TYPE.Popover.ConfirmProps;\ntype PopoverOnOk = PopoverConfirmProps['onOk'];\n\nconst App: React.FC = () => {\n  const onOk: PopoverOnOk = () =>\n    new Promise((resolve) => {\n      console.log('ok');\n      setTimeout(() => resolve(true), 2000);\n    });\n\n  return (\n    <Button mode=\"outline\">\n      <Popover.Confirm\n        priorityDirection='horizontal'\n        title='Tips'\n        onCancel={() => console.log('cancel')}\n        onOk={onOk}\n      >\n        Are you sure you want to delete this content ?\n      </Popover.Confirm>\n      Delete\n    </Button>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "Close",
+      "description": "Set the content property to a function, you can handle the close event inside the popup panel",
+      "scenario": "basic",
+      "code": "/**\n * cn - 关闭事件\n *    -- content 属性可以为一个函数，会传递 close 函数，用来在弹出面板内部处理关闭事件\n * en - Close\n *    -- Set the content property to a function, you can handle the close event inside the popup panel\n */\nimport React from 'react';\nimport { Button, Popover, Message, TYPE } from 'shineout';\n\ntype PopoverProps = TYPE.Popover.Props;\ntype PopoverContentChildren = PopoverProps['children'];\n\nconst App: React.FC = () => {\n  const content: PopoverContentChildren = (close: () => void) => (\n    <div style={{ padding: 16 }}>\n      <div>Are you sure you want to close this panel?</div>\n      <div style={{ marginTop: 16, textAlign: 'right' }}>\n        <Button\n          size='small'\n          mode=\"outline\"\n          onClick={() => {\n            close();\n            Message.success('Popover panel closed.');\n          }}\n        >\n          close\n        </Button>\n      </div>\n    </div>\n  );\n\n  return (\n    <Button mode=\"outline\">\n      <Popover priorityDirection='horizontal' trigger='click'>\n        {content}\n      </Popover>\n      Click me\n    </Button>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "Events",
+      "description": "provider onOpen and onClose event",
+      "scenario": "basic",
+      "code": "/**\n * cn - 事件\n *    -- 提供了onOpen 和 onClose 事件\n * en - Events\n *    -- provider onOpen and onClose event\n */\nimport React from 'react';\nimport { Button, Popover, TYPE } from 'shineout';\n\ntype PopoverProps = TYPE.Popover.Props;\ntype PopoverOnOpen = PopoverProps['onOpen'];\ntype PopoverOnClose = PopoverProps['onClose'];\n\nconst App: React.FC = () => {\n  const open: PopoverOnOpen = () => console.log('popover open');\n  const close: PopoverOnClose = () => console.log('popover close');\n\n  return (\n    <Button mode=\"outline\">\n      <Popover onOpen={open} onClose={close} trigger='click'>\n        Some text\n      </Popover>\n      Click me\n    </Button>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "useTextStyle",
+      "description": "When the content is string or set useTextStyle to true, the default text style will be used",
+      "scenario": "basic",
+      "code": "/**\n * cn - 文本样式\n *    -- 当内容为 string 或者 设置 useTextStyle 为 true 时会有默认的文本样式\n * en - useTextStyle\n *    -- When the content is string or set useTextStyle to true, the default text style will be used\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ display: 'flex', gap: 12 }}>\n      <Button mode=\"outline\">\n        <Popover useTextStyle={false}>\n          <div>hello</div>\n        </Popover>\n        defaultStyle\n      </Button>\n\n      <Button mode=\"outline\">\n        <Popover useTextStyle>\n          <div>hello</div>\n        </Popover>\n        useTextStyle\n      </Button>\n    </div>\n  );\n};\nexport default App;\n"
+    },
+    {
+      "title": "Hide arrow",
+      "description": "Set `showArrow` to false to hide the arrow.",
+      "scenario": "basic",
+      "code": "/**\n * cn - 不带箭头\n *    -- 设置 `showArrow` 为 false，不显示箭头。\n *    -- 不带箭头的问题提示没有明确指向性。常用于不需要针对性提示的场景中。\n * en - Hide arrow\n *    -- Set `showArrow` to false to hide the arrow.\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst App: React.FC = () => {\n  return (\n    <Button mode=\"outline\">\n      <Popover showArrow={false}>\n        This is some notice content.\n      </Popover>\n      Text prompt without arrow\n    </Button>\n  );\n};\nexport default App;\n"
+    },
+    {
+      "title": "Offset",
+      "description": "Set the `popupGap` property to adjust the offset distance between the popup and the target element.",
+      "scenario": "basic",
+      "code": "/**\n * cn - 调节偏移\n *    -- 设置 `popupGap` 属性可以调节弹出框与目标元素的偏移距离。\n *    -- 带箭头的间距默认是 10px，不带箭头的间距默认是 4px。\n *    -- 最终的间距是默认间距加上 popupGap 的值。\n * en - Offset\n *   -- Set the `popupGap` property to adjust the offset distance between the popup and the target element.\n *   -- The default gap with an arrow is 10px, and the default gap without an arrow is 4px.\n *   -- The final gap is the default gap plus the value of popupGap.\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst style = {\n  height: 60,\n  padding: 12,\n  backgroundColor: '#f7f8f9',\n  display: 'flex',\n  alignItems: 'center',\n};\n\nconst App: React.FC = () => {\n  return (\n    <div style={style}>\n      <Button mode='outline'>\n        <Popover showArrow={false} popupGap={12}>\n          popover content.\n        </Popover>\n        PopupGap\n      </Button>\n    </div>\n  );\n};\nexport default App;\n"
+    },
+    {
+      "title": "Disabled",
+      "description": "Set the disabled property to disable the popover",
+      "scenario": "basic",
+      "code": "/**\n * cn - 禁用弹出\n *    -- 设置 `disabled` 属性可以禁用弹出\n * en - Disabled\n *    -- Set the disabled property to disable the popover\n */\nimport React from 'react';\nimport { Link, Switch, Popover } from 'shineout';\n\nexport default () => {\n  const [disabled, setDisabled] = React.useState(true);\n\n  return (\n    <div>\n      <div style={{marginBottom: 12}}>\n        <Switch checked={disabled} onChange={setDisabled} content={['禁用', '启用']} />\n      </div>\n\n      <Link type='primary' disabled>\n        Link\n        <Popover.Confirm disabled={disabled}>Are you sure?</Popover.Confirm>\n      </Link>\n    </div>\n  );\n};\n"
+    },
+    {
+      "title": "destroy",
+      "description": "当popover 卸载后删除dom",
+      "scenario": "basic",
+      "code": "/**\n * cn - destroy\n *    -- 当popover 卸载后删除dom\n */\nimport React from 'react';\nimport { Button, Popover } from 'shineout';\n\nconst App: React.FC = () => (\n  <Button mode=\"outline\">\n    <Popover destroy style={{ padding: '4px 8px' }}>\n      Some text\n    </Popover>\n    Hover\n  </Button>\n);\n\nexport default App;\n"
+    },
+    {
+      "title": "受控加载dom",
+      "description": "当 popover 受控时，检查是否加载 dom",
+      "scenario": "basic",
+      "code": "/**\n * cn - 受控加载dom\n *    -- 当 popover 受控时，检查是否加载 dom\n */\nimport React, { useState } from 'react';\nimport { Button, Popover, TYPE } from 'shineout';\n\ntype PopoverProps = TYPE.Popover.Props;\ntype PopoverOnVisibleChange = PopoverProps['onVisibleChange'];\n\nconst style: React.CSSProperties = { width: 200, padding: 20 };\n\nconst App: React.FC = () => {\n  const [visible, setVisible] = useState(false);\n\n  const onVisibleChange: PopoverOnVisibleChange = (v) => setVisible(v);\n\n  return (\n    <div>\n      <Button onClick={() => setVisible(!visible)} mode=\"outline\">{visible ? 'Close' : 'Open'}</Button>\n      <Button mode=\"outline\">\n        <Popover visible={visible} onVisibleChange={onVisibleChange} style={style}>\n          Some text\n        </Popover>\n        Hover\n      </Button>\n    </div>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "title": "Nested of Popovers",
+      "description": "Using more than one Popover by nested",
+      "scenario": "basic",
+      "code": "/**\n * cn - 嵌套使用\n *    -- 使用多个 Popover 进行嵌套展示\n * en - Nested of Popovers\n *    -- Using more than one Popover by nested\n */\nimport React, { useState } from 'react';\nimport { Button, Popover, TYPE } from 'shineout';\n\ntype PopoverProps = TYPE.Popover.Props;\ntype PopoverConfirmProps = TYPE.Popover.ConfirmProps;\ntype PopoverOnOk = PopoverConfirmProps['onOk'];\ntype PopoverText = PopoverConfirmProps['text'];\ntype PopoverOnCancel = PopoverConfirmProps['onCancel'];\ntype PopoverOnVisibleChange = PopoverProps['onVisibleChange'];\n\nconst style: React.CSSProperties = { padding: '4px 8px' };\n\nconst App: React.FC = () => {\n  const [show, setshow] = useState(false);\n\n  const text: PopoverText = { ok: 'Yes', cancel: 'No' };\n\n  const onOk: PopoverOnOk = () =>\n    new Promise((resolve) => {\n      console.log('ok');\n      setTimeout(() => resolve(true), 2000);\n    });\n\n  const onCancel: PopoverOnCancel = () => console.log('cancel');\n\n  const onVisibleChange: PopoverOnVisibleChange = (v) => setshow(v);\n\n  return (\n    <Button mode=\"outline\">\n      <Popover style={style} trigger='hover' onVisibleChange={onVisibleChange}>\n        <Button mode=\"outline\">\n          {show && (\n            <Popover.Confirm onCancel={onCancel} onOk={onOk} text={text}>\n              Hello Sheinout\n            </Popover.Confirm>\n          )}\n          Nested\n        </Button>\n      </Popover>\n      Hover\n    </Button>\n  );\n};\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
@@ -219,7 +297,8 @@
   "apiSummary": {
     "totalProps": 27,
     "requiredProps": 0,
-    "propsWithWhen": 0
+    "propsWithWhen": 0,
+    "examplesCount": 18
   },
   "subComponentApis": {}
 }
