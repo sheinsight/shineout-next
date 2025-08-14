@@ -68,20 +68,27 @@ export class SchemaBuilder {
 
     let itemType;
     if (typeof componentElement.type === 'function') {
-      switch (componentElement.type.name) {
+      const componentName = componentElement.type.displayName || componentElement.type.name;
+      switch (componentName) {
+        case 'ShineoutInput':
         case 'Input':
           fieldSchemaInfo.type = 'string';
           break;
+        case 'ShineoutInputNumber':
         case 'InputNumber':
           fieldSchemaInfo.type = 'number';
           break;
+        case 'ShineoutInputPassword':
         case 'InputPassword':
           fieldSchemaInfo.type = 'string';
           break;
+        case 'ShineoutTextarea':
         case 'Textarea':
           fieldSchemaInfo.type = 'string';
           break;
+        case 'ShineoutSelect':
         case 'Select':
+        case 'ShineoutTreeSelect':
         case 'TreeSelect': {
           const format = componentElement.props.format || componentElement.props.keygen;
           if (typeof componentElement.props.keygen !== 'boolean') {
@@ -128,6 +135,7 @@ export class SchemaBuilder {
           };
           break;
         }
+        case 'ShineoutDatePicker':
         case 'DatePicker':
           if (componentElement.props.range) {
             if (finalFieldId?.includes(separator || '')) {
@@ -147,20 +155,26 @@ export class SchemaBuilder {
 
           fieldSchemaInfo.description += `默认时间：${componentElement.props.defaultTime?.toString() || ''}; 格式：${componentElement.props.format || ''} `
           break;
+        case 'ShineoutCheckbox':
         case 'Checkbox':
+        case 'ShineoutCheckboxGroup':
         case 'CheckboxGroup':
           fieldSchemaInfo.type = 'array';
           fieldSchemaInfo.items = {
             type: 'string',
           };
           break;
+        case 'ShineoutRadio':
         case 'Radio':
+        case 'ShineoutRadioGroup':
         case 'RadioGroup':
           fieldSchemaInfo.type = 'string';
           break;
+        case 'ShineoutSwitch':
         case 'Switch':
           fieldSchemaInfo.type = 'boolean';
           break;
+        case 'ShineoutRate':
         case 'Rate':
           fieldSchemaInfo.type = 'number';
           break;
