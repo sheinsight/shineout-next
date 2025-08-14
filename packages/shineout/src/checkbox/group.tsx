@@ -13,6 +13,8 @@ const CheckboxGroup = <DataItem, Value extends any[]>(
   return <UnStyledCheckboxGroup {...props} jssStyle={jssStyle} />;
 };
 
+CheckboxGroup.displayName = 'ShineoutCheckboxGroup';
+
 const CheckboxGroupWithField = <DataItem, Value extends any[]>(
   props: CheckboxGroupProps<DataItem, Value>,
 ) => {

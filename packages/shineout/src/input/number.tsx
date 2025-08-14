@@ -13,6 +13,9 @@ const jssStyle = {
 const InputNumber = (props: BaseNumberProps) => {
   return <UnStyledInputNumber {...props} jssStyle={jssStyle} />;
 };
+
+InputNumber.displayName = 'ShineoutInputNumber';
+
 export default (props: InputNumberProps) => {
   return useFieldCommon(props, InputNumber, 'number');
 };

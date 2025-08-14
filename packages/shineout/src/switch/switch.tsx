@@ -11,6 +11,8 @@ const Switch = (props: BaseSwitchProps) => {
   return <UnStyleSwitch jssStyle={jssStyle} {...props} />;
 };
 
+Switch.displayName = 'ShineoutSwitch';
+
 export default (props: SwitchProps) => {
   return useFieldCommon(props, Switch);
 };

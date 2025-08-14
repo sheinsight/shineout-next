@@ -23,6 +23,8 @@ const BaseUploadButton = <T,>(props: BaseUploadButtonProps<T>) => {
   return <UploadButton jssStyle={jssStyle} {...props} />;
 };
 
+BaseUploadButton.displayName = 'ShineoutUploadButton';
+
 export default <T,>(props: UploadButtonProps<T>) => {
   const customProps = useUploadCommon({ rules: props.rules });
 

@@ -13,6 +13,8 @@ const Rate = (props: BaseRateProps) => {
   return <UnStyleRate jssStyle={jssStyle} {...props} />;
 };
 
+Rate.displayName = 'ShineoutRate';
+
 const WrappedRate = (props: RateProps) => {
   return useFieldCommon(props, Rate, 'number');
 };

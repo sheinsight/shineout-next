@@ -23,6 +23,8 @@ const BaseUploadImage = <T,>(props: BaseUploadImageProps<T>) => {
   return <UploadImage jssStyle={jssStyle} {...props} />;
 };
 
+BaseUploadImage.displayName = 'ShineoutUploadImage';
+
 export default <T,>(props: UploadImageProps<T>) => {
   const customProps = useUploadCommon({ rules: props.rules });
 
