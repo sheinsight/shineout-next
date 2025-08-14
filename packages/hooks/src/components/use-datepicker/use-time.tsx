@@ -3,6 +3,19 @@ import useLatestObj from '../../common/use-latest-obj';
 import dateUtil from './util';
 
 type TimeType = 'H' | 'h' | 'm' | 's' | 'ampm';
+type TimesType = {
+  mode: TimeType;
+  times: {
+    str: string;
+    date: Date;
+    disabled: boolean;
+  }[];
+  currentIndex: number;
+};
+
+const getStepIndex = (index: number, step: number) => Math.floor(index / step);
+
+
 const useTime = (props: UseTimeProps) => {
   const {
     options,
@@ -21,9 +34,19 @@ const useTime = (props: UseTimeProps) => {
   const min = dateUtil.resetTimeByFormat(mi, format, options);
   const max = dateUtil.resetTimeByFormat(ma, format, options);
 
-  const current = props.value || dateUtil.newDate(undefined, options);
-
-  const getStepIndex = (index: number, step: number) => Math.floor(index / step);
+  let current = props.value || dateUtil.newDate(undefined, options);
+  if(!props.value && typeof props.defaultTime === 'string' && /^\d{1,2}(:\d{2}(:\d{2})?)?$/.test(props.defaultTime)) {
+    const today = new Date();
+    const todayStr = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    const timesStr = props.defaultTime.split(':');
+    const hStr = timesStr[0];
+    const mStr = timesStr[1] || '00';
+    const sStr = timesStr[2] || '00';
+    const timeStr = hStr + ':' + mStr + ':' + sStr;
+    const dayStr = todayStr + ' ' + timeStr;
+    const val = new Date(dayStr)
+    if(val) current = val;
+  }
 
   const time = {
     hour: dateUtil.getDateInfo(current, 'hour', options),
@@ -133,39 +156,39 @@ const useTime = (props: UseTimeProps) => {
       .filter((item) => item) as Array<{ str: string; date: Date; disabled: boolean }>;
   };
 
-  const getTimes = () => {
-    const res = [];
+  const getTimes = (): TimesType[] => {
+    const res: TimesType[] = [];
     if (format.indexOf('H') >= 0) {
       res.push({
-        mode: 'H',
+        mode: 'H' as TimeType,
         times: getModeArr('H', 24),
         currentIndex: getStepIndex(time.hour, hourStep),
       });
     }
     if (format.indexOf('h') >= 0) {
       res.push({
-        mode: 'h',
+        mode: 'h' as TimeType,
         times: getModeArr('h', 12),
         currentIndex: getStepIndex(time.hour, hourStep),
       });
     }
     if (format.indexOf('m') >= 0) {
       res.push({
-        mode: 'm',
+        mode: 'm' as TimeType,
         times: getModeArr('m', 60),
         currentIndex: getStepIndex(time.minute, minuteStep),
       });
     }
     if (format.indexOf('s') >= 0) {
       res.push({
-        mode: 's',
+        mode: 's' as TimeType,
         times: getModeArr('s', 60),
         currentIndex: getStepIndex(time.second, secondStep),
       });
     }
     if (/a|A/.test(format)) {
       res.push({
-        mode: 'ampm',
+        mode: 'ampm' as TimeType,
         times: getModeArr('ampm', 2),
         currentIndex: time.apm === 'pm' ? 1 : 0,
       });

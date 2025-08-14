@@ -257,7 +257,16 @@ function toDate(day: DateTimeType, options?: DateOptions): Date {
   if (!day) return new Date('');
   if (day instanceof Date) return dayjs(day).toDate();
   if (typeof day === 'number') return new Date(day);
-  if (typeof day === 'string') return transDateWithZone(dayjs(day).toDate(), options, true);
+  if (typeof day === 'string') {
+    // 当 day 只有时间部分，没有日期部分时
+    if (/^\d{1,2}(:\d{2}(:\d{2})?)?$/.test(day)) {
+      const today = new Date();
+      const todayStr = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+      const dayStr = todayStr + ' ' + day;
+      return transDateWithZone(dayjs(dayStr).toDate(), options, true);
+    }
+    return transDateWithZone(dayjs(day).toDate(), options, true);
+  }
   return dayjs(day).toDate();
 }
 
