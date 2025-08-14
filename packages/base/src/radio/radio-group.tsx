@@ -108,7 +108,8 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
     props.data === undefined ? (
       <GroupContext.Provider value={providerValue}>{children}</GroupContext.Provider>
     ) : (
-      <>
+      // 传一个空的providerValue目的是为了避免父级Radio向下传递的GroupContext.Consumer影响
+      <GroupContext.Provider value={{}}>
         {props.data.map((d, i) => (
           <Radio
             jssStyle={jssStyle}
@@ -124,7 +125,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
           </Radio>
         ))}
         {children}
-      </>
+      </GroupContext.Provider>
     );
   if (button)
     return (

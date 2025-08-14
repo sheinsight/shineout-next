@@ -699,6 +699,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   useEffect(() => {
+    if (props.datum) return;
+    if (!dataUpdate) return;
+    setData(data);
+    const nextExpanded = props.expanded || props.defaultExpanded || [];
+    if (!defaultExpandAll && !shallowEqual(nextExpanded, expanded)) {
+      onExpand(nextExpanded);
+      updateExpanded(nextExpanded, true);
+    }
+
+    updateInnerCheckStatus();
+  }, [props.data]);
+
+  useEffect(() => {
     if (defaultExpandAll) {
       const nextExpanded = [] as KeygenResult[];
       context.dataMap.forEach((item, k) => {
@@ -710,20 +723,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       updateExpanded(nextExpanded, true);
     }
   }, [context.dataMap, props.data]);
-
-  useEffect(() => {
-    if (props.datum) return;
-    if (!dataUpdate) return;
-    setData(data);
-    const nextExpanded = props.expanded || props.defaultExpanded || [];
-
-    if (!defaultExpandAll && !shallowEqual(nextExpanded, expanded)) {
-      onExpand(nextExpanded);
-      updateExpanded(nextExpanded, true);
-    }
-
-    updateInnerCheckStatus();
-  }, [props.data]);
 
   useEffect(() => {
     if (props.datum) return;

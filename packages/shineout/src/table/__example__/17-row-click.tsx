@@ -35,11 +35,10 @@ const columns: TableColumnItem[] = [
     title: 'Operation',
     render: () => (
       <Gap>
-        <Link data-info size='small'>
+        <Link data-info>
           <span data-info>info</span>
         </Link>
-        &nbsp;
-        <Link data-call type='primary' size='small'>
+        <Link data-call>
           <span data-call>call</span>
         </Link>
       </Gap>
