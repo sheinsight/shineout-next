@@ -82,9 +82,16 @@ export default () => {
       <Form.Item label='喜欢的颜色' required>
         <Checkbox.Group name='likeColors' keygen data={['red', 'green']} />
       </Form.Item>
+      <Form.Item label='喜欢的颜色对象' required>
+        <Checkbox.Group name='likeColorsObject' keygen data={[{id:1, color:'red'}, {id:2, color:'green'}]} renderItem={"color"} />
+      </Form.Item>
 
       <Form.Item label='不喜欢的颜色' required>
         <Radio.Group name='dislikeColor' keygen data={['red', 'green']} />
+      </Form.Item>
+
+      <Form.Item label='不喜欢的颜色对象' required>
+        <Radio.Group name='dislikeColorObject' keygen data={[{id:1, color:'red'}, {id:2, color:'green'}]} renderItem={"color"} />
       </Form.Item>
 
       <Form.Item label='是否支持颜色' required>

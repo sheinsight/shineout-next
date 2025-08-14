@@ -69,6 +69,7 @@ export class SchemaBuilder {
     let itemType;
     if (typeof componentElement.type === 'function') {
       const componentName = componentElement.type.displayName || componentElement.type.name;
+      const format = componentElement.props.format || componentElement.props.keygen;
       switch (componentName) {
         case 'ShineoutInput':
         case 'ShineoutEditableArea':
@@ -86,7 +87,6 @@ export class SchemaBuilder {
         case 'ShineoutCascader':
         case 'ShineoutSelect':
         case 'ShineoutTreeSelect': {
-          const format = componentElement.props.format || componentElement.props.keygen;
           if (typeof componentElement.props.keygen !== 'boolean') {
             if (typeof format === 'string') {
               itemType = typeof data?.[0] === 'object' ? typeof data?.[0]?.[format] : typeof data?.[0];
@@ -145,16 +145,61 @@ export class SchemaBuilder {
           fieldSchemaInfo.description += `默认时间：${componentElement.props.defaultTime?.toString() || ''}; 格式：${componentElement.props.format || ''} `
           break;
         case 'ShineoutCheckbox':
-        case 'ShineoutCheckboxGroup':
+        case 'ShineoutCheckboxGroup': {
+          if (typeof componentElement.props.keygen !== 'boolean') {
+            if (typeof format === 'string') {
+              itemType = typeof data?.[0] === 'object' ? typeof data?.[0]?.[format] : typeof data?.[0];
+            } else if (typeof format === 'function') {
+              itemType = typeof format(data?.[0]);
+            } else {
+              itemType = typeof data?.[0];
+            }
+          } else {
+            itemType = typeof data?.[0];
+          }
+
           fieldSchemaInfo.type = 'array';
-          fieldSchemaInfo.items = {
-            type: 'string',
-          };
+          fieldSchemaInfo.items = { type: itemType };
+
+          // ShineoutCheckboxGroup 有 data 时（多选的）
+          if (itemType === 'object') {
+            fieldSchemaInfo.items.oneOf = componentElement.props.data.map((item: any) => ({
+              const: item,
+              title: item?.title || JSON.stringify(item)
+            }));
+          } else {
+            fieldSchemaInfo.items.enum = componentElement.props.data.map((item: any) => item?.[format] || item);
+          }
           break;
+        }
         case 'ShineoutRadio':
-        case 'ShineoutRadioGroup':
-          fieldSchemaInfo.type = 'string';
+        case 'ShineoutRadioGroup': {
+
+          if (typeof componentElement.props.keygen !== 'boolean') {
+            if (typeof format === 'string') {
+              itemType = typeof data?.[0] === 'object' ? typeof data?.[0]?.[format] : typeof data?.[0];
+            } else if (typeof format === 'function') {
+              itemType = typeof format(data?.[0]);
+            } else {
+              itemType = typeof data?.[0];
+            }
+          } else {
+            itemType = typeof data?.[0];
+          }
+
+          fieldSchemaInfo.type = itemType;
+
+          // ShineoutRadioGroup 有 data 时（单选的）
+          if (itemType === 'object') {
+            fieldSchemaInfo.oneOf = componentElement.props.data.map((item: any) => ({
+              const: item,
+              title: item?.title || JSON.stringify(item)
+            }));
+          } else {
+            fieldSchemaInfo.enum = componentElement.props.data.map((item: any) => item?.[format] || item);
+          }
           break;
+        }
         case 'ShineoutSwitch':
           fieldSchemaInfo.type = 'boolean';
           break;
