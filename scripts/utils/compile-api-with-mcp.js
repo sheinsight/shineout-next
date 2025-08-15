@@ -245,10 +245,25 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
   // 处理子组件的 API
   if (apis.length > 1) {
     mcpData.subComponentApis = {};
+    
+    // 将 subComponents 从字符串数组转换为对象数组，包含 when 信息
+    const subComponentsWithInfo = [];
+    
     apis.slice(1).forEach(api => {
       const subName = api.title.split('.').pop();
       if (subName && subComponents.includes(subName)) {
+        // 提取子组件的 when 描述
+        const whenDescription = api.tag?.when || '';
+        
+        subComponentsWithInfo.push({
+          name: subName,
+          description: api.cn || api.en || '',
+          when: whenDescription,
+        });
+        
         mcpData.subComponentApis[subName] = {
+          when: whenDescription,
+          description: api.cn || api.en || '',
           props: api.properties.map(prop => ({
             name: prop.name,
             type: prop.type.replace(/\\\"/g, '"').replace(/\s+/g, ' ').trim(),
@@ -261,6 +276,11 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
         };
       }
     });
+    
+    // 如果有子组件信息，更新 subComponents 字段
+    if (subComponentsWithInfo.length > 0) {
+      mcpData.subComponents = subComponentsWithInfo;
+    }
   }
 
   return mcpData;

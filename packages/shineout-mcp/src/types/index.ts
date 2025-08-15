@@ -28,6 +28,7 @@ export interface ComponentExample {
 export interface SubComponent {
   name: string;
   description: string;
+  when?: string;  // 何时使用该子组件的说明
   props?: ComponentProp[];
 }
 

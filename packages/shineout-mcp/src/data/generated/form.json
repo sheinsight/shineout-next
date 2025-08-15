@@ -391,15 +391,41 @@
     }
   ],
   "subComponents": [
-    "Item",
-    "Field",
-    "FieldSet",
-    "Button",
-    "Submit",
-    "Reset",
-    "Flow",
-    "useForm",
-    "useFormInstance"
+    {
+      "name": "Item",
+      "description": "表单项组件，用于包装表单控件并提供标签、错误提示等功能。每个表单控件都应该被 Form.Item 包裹，以便正确显示标签和校验信息",
+      "when": "需要为表单控件添加标签、错误提示、必填标记等界面元素时使用。这是最常用的表单布局组件，适合包装 Input、Select、DatePicker 等表单控件"
+    },
+    {
+      "name": "Field",
+      "description": "表单字段组件，用于创建自定义的表单控件。提供了表单数据绑定、校验等功能，适用于封装复杂的自定义表单组件",
+      "when": "需要创建自定义表单控件或封装复杂的表单逻辑时使用。适合将非标准表单组件（如自定义的颜色选择器、代码编辑器等）接入表单系统"
+    },
+    {
+      "name": "FieldSet",
+      "description": "表单字段集组件，用于管理一组相关的表单字段。适用于处理对象或数组类型的表单数据，如动态表单列表、嵌套对象等复杂场景",
+      "when": "需要处理动态表单列表、嵌套对象或数组数据时使用。典型场景包括：动态添加/删除表单项、编辑用户列表、管理多个地址信息等"
+    },
+    {
+      "name": "Flow",
+      "description": "表单流程组件，用于监听表单数据变化并执行相应的副作用。适用于实现表单联动、条件渲染等场景",
+      "when": "需要实现表单联动、条件渲染或监听表单数据变化时使用。例如：根据选择的国家显示不同的省份列表、根据用户类型显示不同的表单字段等"
+    },
+    {
+      "name": "Button",
+      "description": "表单按钮组件，htmlType=\\\"button\\\"。防止用户在表单输入框中按回车键时意外提交表单。用户必须显式点击按钮才能提交表单。内部调用 formFunc.submit() 以更好地控制提交逻辑",
+      "when": "需要防止回车键意外提交表单，或需要在提交前执行自定义逻辑（如确认对话框）时使用。适合复杂表单或需要额外验证步骤的场景"
+    },
+    {
+      "name": "Submit",
+      "description": "表单提交按钮组件，htmlType=\\\"submit\\\"。使用浏览器原生提交行为。当用户在任何表单输入框中按回车键时，会自动触发此按钮。适用于希望支持回车提交的简单表单",
+      "when": "需要支持回车键快速提交表单时使用。适合登录表单、搜索表单等简单场景，用户体验更流畅"
+    },
+    {
+      "name": "Reset",
+      "description": "表单重置按钮组件，htmlType=\\\"reset\\\"。点击时将所有表单字段重置为初始值。适用于需要让用户快速恢复初始状态的复杂表单",
+      "when": "需要提供重置表单功能时使用。适合复杂表单或编辑表单，让用户可以快速恢复到初始状态或默认值"
+    }
   ],
   "version": "3.7.10-beta.3",
   "apiSummary": {
@@ -410,6 +436,8 @@
   },
   "subComponentApis": {
     "Item": {
+      "when": "需要为表单控件添加标签、错误提示、必填标记等界面元素时使用。这是最常用的表单布局组件，适合包装 Input、Select、DatePicker 等表单控件",
+      "description": "表单项组件，用于包装表单控件并提供标签、错误提示等功能。每个表单控件都应该被 Form.Item 包裹，以便正确显示标签和校验信息",
       "props": [
         {
           "name": "className",
@@ -501,6 +529,8 @@
       ]
     },
     "Field": {
+      "when": "需要创建自定义表单控件或封装复杂的表单逻辑时使用。适合将非标准表单组件（如自定义的颜色选择器、代码编辑器等）接入表单系统",
+      "description": "表单字段组件，用于创建自定义的表单控件。提供了表单数据绑定、校验等功能，适用于封装复杂的自定义表单组件",
       "props": [
         {
           "name": "name",
@@ -547,6 +577,8 @@
       ]
     },
     "FieldSet": {
+      "when": "需要处理动态表单列表、嵌套对象或数组数据时使用。典型场景包括：动态添加/删除表单项、编辑用户列表、管理多个地址信息等",
+      "description": "表单字段集组件，用于管理一组相关的表单字段。适用于处理对象或数组类型的表单数据，如动态表单列表、嵌套对象等复杂场景",
       "props": [
         {
           "name": "name",
@@ -587,6 +619,8 @@
       ]
     },
     "Flow": {
+      "when": "需要实现表单联动、条件渲染或监听表单数据变化时使用。例如：根据选择的国家显示不同的省份列表、根据用户类型显示不同的表单字段等",
+      "description": "表单流程组件，用于监听表单数据变化并执行相应的副作用。适用于实现表单联动、条件渲染等场景",
       "props": [
         {
           "name": "children",
@@ -611,6 +645,8 @@
       ]
     },
     "Button": {
+      "when": "需要防止回车键意外提交表单，或需要在提交前执行自定义逻辑（如确认对话框）时使用。适合复杂表单或需要额外验证步骤的场景",
+      "description": "表单按钮组件，htmlType=\\\"button\\\"。防止用户在表单输入框中按回车键时意外提交表单。用户必须显式点击按钮才能提交表单。内部调用 formFunc.submit() 以更好地控制提交逻辑",
       "props": [
         {
           "name": "className",
@@ -712,6 +748,111 @@
       ]
     },
     "Submit": {
+      "when": "需要支持回车键快速提交表单时使用。适合登录表单、搜索表单等简单场景，用户体验更流畅",
+      "description": "表单提交按钮组件，htmlType=\\\"submit\\\"。使用浏览器原生提交行为。当用户在任何表单输入框中按回车键时，会自动触发此按钮。适用于希望支持回车提交的简单表单",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "自定义类名"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "自定义样式"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "description": "按钮里面的内容, 可以是文字图标等"
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<Element>",
+          "required": false,
+          "description": "按钮点击回调"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "禁用"
+        },
+        {
+          "name": "renderLoading",
+          "type": "((buttonEl: ReactNode) => ReactElement)",
+          "required": false,
+          "description": "自定义loading"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "loading 状态"
+        },
+        {
+          "name": "mode",
+          "type": "\"text\" | \"outline\" | \"dashed\"",
+          "required": false,
+          "description": "按钮风格"
+        },
+        {
+          "name": "type",
+          "type": "| \"default\" | \"primary\" | \"secondary\" | \"danger\" | \"warning\" | \"success\" | \"link\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "按钮类型"
+        },
+        {
+          "name": "size",
+          "type": "\"default\" | \"small\" | \"large\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "按钮尺寸"
+        },
+        {
+          "name": "space",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "仅有2个汉字的按钮，是否在2个汉字中间插入空格"
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "required": false,
+          "description": "如果设置了 href 属性，将会用 <a> 代替 <button>"
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "required": false,
+          "description": "当设置了 href 属性时，target 会被设置到 <a> 元素上"
+        },
+        {
+          "name": "shape",
+          "type": "\"circle\" | \"round\" | \"square\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "设置按钮形状"
+        },
+        {
+          "name": "htmlType",
+          "type": "\"button\" | \"submit\" | \"reset\"",
+          "required": false,
+          "defaultValue": "\\\"button\\\"",
+          "description": "按钮原生type属性"
+        }
+      ]
+    },
+    "Reset": {
+      "when": "需要提供重置表单功能时使用。适合复杂表单或编辑表单，让用户可以快速恢复到初始状态或默认值",
+      "description": "表单重置按钮组件，htmlType=\\\"reset\\\"。点击时将所有表单字段重置为初始值。适用于需要让用户快速恢复初始状态的复杂表单",
       "props": [
         {
           "name": "className",
