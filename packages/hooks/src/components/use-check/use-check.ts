@@ -29,7 +29,16 @@ const useCheck = (props: BaseCheckProps) => {
     if(needStopPropagation) {
       event.stopPropagation();
     }
-    inputRef.current?.click();
+
+    // 检查是否被 label 元素包裹，如果是则不需要手动触发 input.click()
+    // 因为 label 会自动将点击事件传递给内部的 input 元素
+    const target = event.currentTarget as HTMLElement;
+    const isInsideLabel = target.closest('label') !== null;
+
+    if (!isInsideLabel) {
+      inputRef.current?.click();
+    }
+
     otherHandlers?.onClick?.(event);
   };
 
