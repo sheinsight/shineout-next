@@ -184,10 +184,14 @@ const Nav = () => {
     );
   };
 
+  const handleLogoClick = () => {
+    navigate(`/${state.locales}/home`);
+  };
+
   return (
     <div className={classes.nav}>
       <div className='left-nav'>{renderLeftNav()}</div>
-      <div className='logo'>
+      <div className='logo' onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
         {renderLogo()}
         {renderEnv()}
       </div>

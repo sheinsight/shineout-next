@@ -126,10 +126,14 @@ export default createUseStyles({
   },
   titleButton: {
     padding: '8px 32px !important',
-    background: 'linear-gradient(90deg, var(---Brand-5-, #429AFF) 0%, var(---Brand-6-, #197AFA) 100%) !important',
-    boxShadow: '0px 8px 20px 0px rgba(25, 122, 250, 0.10) !important',
+    background: 'var(--theme-primary-color, linear-gradient(90deg, var(---Brand-5-, #429AFF) 0%, var(---Brand-6-, #197AFA) 100%)) !important',
+    border: 'none',
+    borderRadius: 'var(--theme-border-radius, 20px)',
+    fontSize: 'var(--theme-font-size, 14px)',
+    boxShadow: '0px 8px 20px 0px var(--theme-light-color, rgba(25, 122, 250, 0.10)) !important',
+    transition: 'all 0.2s ease !important',
     '&:hover': {
-      background: 'linear-gradient(90deg, var(---Brand-4, #6BB5FF) 0%, var(---Brand-5-, #429AFF) 100%) !important',
+      opacity: '0.8 !important',
     }
   },
   customDropdown: {
@@ -499,10 +503,46 @@ export default createUseStyles({
     borderRadius: '24px',
     padding: '24px',
     flex: 1,
-    width: '100%',
+    width: '100%'
   },
+  
   prettyMenu: {
-    width: '200px'
+    width: '200px',
+    position: 'relative',
+    
+    // 使用更强势的全局选择器
+    '& *': {
+      transition: 'all 0.2s ease'
+    },
+    
+    // 直接针对 Shineout Menu 的具体激活状态类名
+    '& .soui-menu-item.soui-menu-item-active': {
+      backgroundColor: 'var(--theme-light-color, ' + token.brand_1 + ')',
+      color: 'var(--theme-primary-color, ' + token.brand_6 + ')',
+      
+      '& .soui-menu-title': {
+        backgroundColor: 'var(--theme-light-color, ' + token.brand_1 + ')',
+      }
+    },
+
+    '& .soui-menu-item-has-children': {
+      '& .soui-menu-item-content.soui-menu-item-content-back': {
+        color: 'var(--theme-primary-color, ' + token.brand_6 + ')'
+      },
+    },
+
+    '& .soui-menu-icon': {
+      color: 'var(--theme-primary-color, ' + token.brand_6 + ') !important'
+    },
+    
+    // 确保未选中的二级菜单项保持默认颜色
+    '& .soui-menu-item:not(.soui-menu-item-active):not(.soui-menu-item-in-path)': {
+      color: token.neutral_text_5 ,
+      
+      '& .soui-menu-title': {
+        color: token.neutral_text_5 
+      }
+    }
   },
   prettyList: {
     flex: 1,
@@ -538,17 +578,14 @@ export default createUseStyles({
     width: '126px',
     flexDirection: 'column',
     gap: '8px',
-    cursor: 'pointer',
-    // '&:hover': {
-    //   background: token.brand_1,
-    //   border: `2px solid ${token.brand_6}`,
-    //   color: token.brand_6,
-    // }
+    cursor: 'pointer'
   },
   prettyListAreaItemActive: {
-    background: token.brand_1,
-    border: `2px solid ${token.brand_6}`,
-    color: token.brand_6,
+    background: 'var(--theme-light-color, ' + token.brand_1 + ')',
+    border: '2px solid var(--theme-primary-color, ' + token.brand_6 + ')',
+    color: 'var(--theme-primary-color, ' + token.brand_6 + ')',
+    borderRadius: 'var(--theme-border-radius, 8px)',
+    fontSize: 'var(--theme-font-size, 14px)',
   },
   prettyListAreaItemColor: {
     width: '40px',

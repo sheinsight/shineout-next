@@ -17,6 +17,12 @@ export interface ISelectValue {
   fontSize: string
 }
 
+export interface IThemeConfig {
+  primaryColor: string,
+  borderRadius: string,
+  fontSize: string
+}
+
 const menuData = [
   {
     id: '1',
@@ -136,6 +142,37 @@ const Pretty = () => {
     fontSize: '14px'
   })
 
+  // 主题颜色配置
+  const themeColors = useMemo(() => ({
+    '山药蓝': { primary: '#197AFA', light: '#E9F5FE' },
+    '生机绿': { primary: '#00A85F', light: '#E6F7F0' },
+    '活力橙': { primary: '#F75229', light: '#FEF0EA' },
+    '科技蓝': { primary: '#4446F7', light: '#EAEAFF' },
+    '魅力粉': { primary: '#D84293', light: '#F9E8F2' },
+    '喜庆红': { primary: '#EB4242', light: '#FDEAEA' }
+  }), []);
+
+  // 主题配置映射
+  const themeConfig = useMemo(() => {
+    const selectedTheme = themeColors[selectValue.color as keyof typeof themeColors] || themeColors['山药蓝'];
+    
+    return {
+      primaryColor: selectedTheme.primary,
+      lightColor: selectedTheme.light,
+      borderRadius: selectValue.radius,
+      fontSize: selectValue.fontSize
+    };
+  }, [selectValue, themeColors]);
+
+  // 处理卡片点击
+  const handleItemClick = (name: keyof ISelectValue, title: string) => {
+    setSelectValue(prev => ({
+      ...prev,
+      [name]: title
+    }));
+  };
+
+
   const renderIcon = (d: IMenuData) => d.icon
 
   const renderContentListArea = (title: string, name: string, list: {
@@ -147,7 +184,11 @@ const Pretty = () => {
       <div className={styles.prettyListAreaContent}>
         {
           list.map(({title, color}) => (
-            <div className={classNames(styles.prettyListAreaItem, [selectValue[name as keyof ISelectValue] === title && styles.prettyListAreaItemActive])}>
+            <div 
+              className={classNames(styles.prettyListAreaItem, [selectValue[name as keyof ISelectValue] === title && styles.prettyListAreaItemActive])} 
+              key={title}
+              onClick={() => handleItemClick(name as keyof ISelectValue, title)}
+            >
               {color && <div className={styles.prettyListAreaItemColor} style={{backgroundColor: color}}></div>}
               {title}
             </div>
@@ -165,11 +206,11 @@ const Pretty = () => {
         mode='inline' 
         data={menuData} 
         inlineIndent={22} 
-        renderItem={(v) => v.title}
-        // @ts-ignore
+        renderItem={(v: IMenuData) => v.title}
         renderIcon={renderIcon}
-        active={(d) => ['3'].includes(d.id)}
+        active={(d: IMenuData) => ['3'].includes(d.id)}
         defaultOpenKeys={['2']}
+        // caretColor={themeConfig.primaryColor}
       />
       <div className={styles.prettyList}>
         {prettyList.map(({title, name, list}) => renderContentListArea(title, name, list))}
@@ -178,16 +219,31 @@ const Pretty = () => {
   )
 
   return (
-    <div className={classNames(styles.commonPageArea, styles.prettyWrapper)}>
+    <div 
+      className={classNames(styles.commonPageArea, styles.prettyWrapper)}
+      style={{
+        '--theme-primary-color': themeConfig.primaryColor,
+        '--theme-light-color': themeConfig.lightColor,
+        '--theme-border-radius': themeConfig.borderRadius,
+        '--theme-font-size': themeConfig.fontSize
+      } as React.CSSProperties}
+    >
       {'定制主题 随心所欲'}
       <div className={styles.prettyContent}>
         <div className={styles.otherBack}></div>
         <div className={styles.pretty}>
           <div className={styles.prettyTitle}>
             {prettyIcon}
-            <Button type='primary' shape='round' onClick={() => {
-              window.open('https://shineout-pretty.sheincorp.cn/', '_blank', 'noopener,noreferrer');
-            }} className={styles.titleButton}>{'立即使用'}</Button>
+            <Button 
+              type='primary' 
+              shape='round' 
+              onClick={() => {
+                window.open('https://shineout-pretty.sheincorp.cn/', '_blank', 'noopener,noreferrer');
+              }} 
+              className={styles.titleButton}
+            >
+              {'立即使用'}
+            </Button>
           </div>
           {renderContent()}
         </div>

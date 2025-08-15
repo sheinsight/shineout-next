@@ -1,9 +1,12 @@
 import { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSnapshot } from 'valtio';
 import classNames from 'classnames';
 import useStyle from '../style';
 import { Avatar, Button, Empty, Select, Skeleton, Steps, Tag, Tree } from 'shineout';
 import { userIcon } from '../svg';
 import { url } from '../constants';
+import store from '../../../theme/store';
 
 const treeData = [
   {
@@ -57,13 +60,18 @@ const Dynamic = () => {
     });
   }
 
+  const navigate = useNavigate();
+  const state = useSnapshot(store);
+
   const dynamicList: {
     title: string,
+    name: string,
     type: IDynamicItemType
     case?: React.ReactNode
   }[] = [
     {
       title: '下拉列表',
+      name: 'select',
       type: 'update',
       case: (
         <div className={styles.dynamicItemCaseMainTop} style={{ height: '280px' }}>
@@ -73,6 +81,7 @@ const Dynamic = () => {
       
     },{
       title: '头像',
+      name: 'avatar',
       type: 'add',
       case: (
         <>
@@ -84,6 +93,7 @@ const Dynamic = () => {
       )
     },{
       title: '按钮',
+      name: 'button',
       type: 'update',
       case: (
         <div className={styles.dynamicItemCaseMainFlexStart} style={{ width: '188px' }}>
@@ -98,6 +108,7 @@ const Dynamic = () => {
       )
     },{
       title: '树组件',
+      name: 'tree',
       type: 'update',
       case: (
         <div className={styles.dynamicItemCaseMainFlexStart}>
@@ -112,12 +123,14 @@ const Dynamic = () => {
       )
     },{
       title: '空状态',
+      name: 'empty',
       type: 'update',
       case: (
         <Empty description={'暂无数据'} />
       )
     },{
       title: '步骤条',
+      name: 'steps',
       type: 'add',
       case: (
         <Steps current={1} direction='vertical'>
@@ -128,6 +141,7 @@ const Dynamic = () => {
       )
     },{
       title: '骨架屏',
+      name: 'skeleton',
       type: 'add',
       case: (
         <Skeleton loading style={{width: '100%'}}>
@@ -199,10 +213,17 @@ const Dynamic = () => {
     };
   }, []);
 
-  const renderItem = (title: string, type: IDynamicItemType, caseNode: React.ReactNode) => (
+  const handleItemClick = (name: string) => {
+    navigate(`/${state.locales}/component/shineout/${name}?tab=examples`);
+    document.getElementById('layout')?.scrollTo(0, 0);
+  };
+
+  const renderItem = (title: string, name: string, type: IDynamicItemType, caseNode: React.ReactNode) => (
     <div 
       className={styles.dynamicItem} 
       key={title}
+      onClick={() => handleItemClick(name)}
+      style={{ cursor: 'pointer' }}
     >
       <div className={styles.dynamicItemTitle}>
         {title}
@@ -221,7 +242,7 @@ const Dynamic = () => {
       {'组件最新动态'}
       <div className={styles.dynamicList} ref={containerRef}>
         <div className={styles.dynamicListContent} ref={contentRef}>
-          {dynamicList.map(({title, type, case: caseNode}) => renderItem(title, type, caseNode))}
+          {dynamicList.map(({title, name, type, case: caseNode}) => renderItem(title, name, type, caseNode))}
         </div>
       </div>
     </div>
