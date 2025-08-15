@@ -171,6 +171,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Custom empty state content. When used with renderOptionList, setting emptyText to false will disable this feature. You can render custom empty content in renderOptionList
    * @cn 自定义空状态内容。与 renderOptionList 搭配使用时，将 emptyText 设置为 false 可禁用此功能，需要自定义空内容时可在 renderOptionList 中处理
+   * @whenCn 当没有选项匹配过滤条件或数据数组为空时使用
    * @whenEn When no options match the filter or data array is empty
    */
   emptyText?: React.ReactNode;
@@ -179,6 +180,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Array of option items to display in the dropdown list
    * @cn 下拉列表的选项数据数组
    * @override DataItem[]
+   * @whenCn 用于扁平的列表数据结构
    * @whenEn Use for flat list data structure
    */
   data?: DataItem[];
@@ -187,6 +189,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Tree-structured data with nested children. Format: [{children: [...]}]
    * @cn 树形结构数据，包含嵌套的子节点。格式：[{children: [...]}]
    * @override Object[]
+   * @whenCn 用于层级/嵌套数据结构，替代扁平数据
    * @whenEn Use for hierarchical/nested data structure instead of flat data
    */
   treeData?: DataItem[];
@@ -195,6 +198,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Specifies the property name for child nodes in tree data
    * @cn 指定树形数据中子节点的属性名称
    * @default 'children'
+   * @whenCn 当使用 treeData 且子节点属性名不是 'children' 时使用
    * @whenEn When using treeData with a different property name for children
    */
   childrenKey?: ObjectKey<DataItem>;
@@ -203,6 +207,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, "id" is the same thing as (d) => d.id. The default value is the array index. For simple arrays (strings/numbers), this works fine. However, for object arrays, you MUST specify a proper keygen to avoid errors. Without a proper keygen, the component will use the entire object as the key, which can cause React rendering errors when renderItem defaults to (d) => d.
    * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 "id"，相当于 (d) => d.id。默认值为数组索引。对于简单数组（字符串/数字），可以使用默认值。但对于对象数组，必须指定合适的 keygen 以避免错误。如果不指定 keygen，组件会将整个对象作为 key，当 renderItem 默认为 (d) => d 时，会导致将对象直接渲染到 DOM 中，引发 React 渲染错误。
    * @default index
+   * @whenCn 对象数组必须指定；基础类型数组可选
    * @whenEn Always required for object arrays; optional for primitive arrays
    */
   keygen: KeygenType<DataItem>;
@@ -211,6 +216,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en The selected value(s). In Form context, this prop is managed by Form. Note: Do not use undefined or null as meaningful option values - the component will skip processing when value is undefined/null
    * @cn 选中的值。在表单中使用时，此属性由表单管理。注意：请勿使用 undefined 或 null 作为有效选项值，当 value 为 undefined/null 时组件将跳过处理
    * @override any
+   * @whenCn 用于受控组件；在 Form 内使用时可省略
    * @whenEn For controlled component usage; omit when used inside Form
    */
   value?: Value;
@@ -219,6 +225,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Shows a clear icon to remove all selected values when enabled
    * @cn 启用时显示清除图标，可一键清空所有选中值
    * @default false
+   * @whenCn 当用户需要快速清空选择时使用
    * @whenEn When users need ability to quickly clear selection
    */
   clearable?: boolean;
@@ -226,6 +233,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Placeholder text displayed when no option is selected
    * @cn 未选择任何选项时显示的占位文本
+   * @whenCn 为空选择框提供提示文本时使用
    * @whenEn To provide hint text when select is empty
    */
   placeholder?: string;
@@ -235,6 +243,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 加载状态指示器。为 true 时显示默认的 Spin 组件，也可传入自定义加载组件
    * @override boolean | ReactNode
    * @default false
+   * @whenCn 异步获取数据或搜索操作期间使用
    * @whenEn When fetching data asynchronously or during search operations
    */
   loading?: boolean | React.ReactNode;
@@ -242,6 +251,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Custom content rendered at the top of the dropdown list
    * @cn 自定义下拉列表顶部内容
+   * @whenCn 在选项上方显示说明、过滤器或操作按钮时使用
    * @whenEn To display instructions, filters, or actions above options
    */
   header?: React.ReactNode;
@@ -249,6 +259,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Custom content rendered at the bottom of the dropdown list
    * @cn 自定义下拉列表底部内容
+   * @whenCn 在选项下方显示汇总、操作按钮或加载更多按钮时使用
    * @whenEn To display summary, actions, or load more button below options
    */
   footer?: React.ReactNode;
@@ -256,6 +267,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Custom render function for the entire dropdown list content. The first parameter `list` contains the pre-rendered option list (including virtual scrolling, columns layout if configured). The second parameter `info` contains: `loading` - current loading state, which can be boolean (shows default spinner when true) or custom ReactNode. Note: When using this prop with emptyText, set emptyText to false to fully control empty state rendering
    * @cn 自定义渲染整个下拉列表内容。第一个参数 `list` 包含预渲染的选项列表（包括虚拟滚动、多列布局等）。第二个参数 `info` 包含：`loading` - 当前加载状态，可为 boolean（true 时显示默认加载动画）或自定义 ReactNode。注意：与 emptyText 配合使用时，将 emptyText 设为 false 可完全控制空状态渲染
+   * @whenCn 完全控制下拉内容（如自定义容器、动画、在选项列表周围添加额外 UI 元素）时使用
    * @whenEn For complete control over dropdown content (e.g., custom wrapper, animations, additional UI elements around the option list)
    */
   renderOptionList?: (
@@ -267,6 +279,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Controls whether to display the select box border
    * @cn 控制是否显示选择框边框
    * @default true
+   * @whenCn 设为 false 实现无边框设计或自定义样式时使用
    * @whenEn Set to false for borderless design or custom styling
    */
   border?: boolean;
@@ -275,6 +288,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Shows only the bottom border for a minimal underline style
    * @cn 仅显示底部边框，呈现下划线样式
    * @default false
+   * @whenCn 用于极简 UI 设计或类似表单的外观时使用
    * @whenEn For minimal UI design or form-like appearance
    */
   underline?: boolean;
@@ -282,6 +296,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Controls the visibility of the dropdown list programmatically
    * @cn 程序化控制下拉列表的显示/隐藏状态
+   * @whenCn 用于受控的下拉状态或自定义触发逻辑时使用
    * @whenEn For controlled dropdown state or custom trigger logic
    */
   open?: boolean;
@@ -289,6 +304,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Width of the select input box. Accepts number (px) or string with units
    * @cn 选择框的宽度。可接受数字（像素）或带单位的字符串
+   * @whenCn 设置固定宽度替代默认的自动调整宽度时使用
    * @whenEn To set fixed width instead of default auto-sizing
    */
   width?: number | string;
@@ -296,6 +312,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Maximum height of the dropdown list. Accepts number (px) or string with units
    * @cn 下拉列表的最大高度。可接受数字（像素）或带单位的字符串
+   * @whenCn 当选项较多时限制下拉列表高度使用
    * @whenEn To limit dropdown height when many options exist
    */
   height?: number | string;
@@ -304,6 +321,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Width of the dropdown list. Accepts number (px) or string with units
    * @cn 下拉列表的宽度。可接受数字（像素）或带单位的字符串
    * @default 100%
+   * @whenCn 当下拉列表需要与选择框不同宽度时使用
    * @whenEn When dropdown needs different width than select input
    */
   optionWidth?: number | string;
@@ -312,6 +330,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Maximum number of options rendered at once. Uses virtual scrolling for performance with large datasets. Increase if you need to display more than 10 visible items
    * @cn 一次渲染的最大选项数。使用虚拟滚动优化大数据集性能。如需显示超过 10 个可见项，请调整此值
    * @default 10
+   * @whenCn 当下拉高度需显示超过 10 个项目时增加此值
    * @whenEn Increase when dropdown height shows more than 10 items
    */
   itemsInView?: number;
@@ -321,6 +340,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 每个选项的高度。固定高度内容请设置数字；设为 'auto' 则根据内容自适应高度（大数据集时可能影响性能）
    * @default 32
    * @version 3.4.0 added 'auto' mode
+   * @whenCn 固定高度项目设置数字；可变内容使用 'auto'
    * @whenEn Set number for consistent height items; 'auto' for variable content
    */
   lineHeight?: number | 'auto';
@@ -329,6 +349,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Dropdown list placement position. 'auto' adjusts based on available space
    * @cn 下拉列表弹出位置。'auto' 会根据可用空间自动调整
    * @default auto
+   * @whenCn 需要覆盖自动定位以满足特定布局需求时使用
    * @whenEn Override auto positioning for specific layout requirements
    */
   position?: 'auto' | 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
@@ -337,6 +358,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Number of columns to display options. Values > 1 enable multi-column layout
    * @cn 选项显示的列数。大于 1 时启用多列布局模式
    * @default 1
+   * @whenCn 当有许多短选项需要更好地利用空间时使用
    * @whenEn When many short options need better space utilization
    */
   columns?: number;
@@ -344,6 +366,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Title displayed above columns in multi-column multi-select mode
    * @cn 多列多选模式下，列顶部显示的标题
+   * @whenCn 使用多列布局且启用多选时使用
    * @whenEn Using multi-column layout with multiple selection
    */
   columnsTitle?: React.ReactNode;
@@ -352,6 +375,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Disables value-to-data caching. By default, Select caches the mapping between values and data items for performance. When data changes frequently, set this to true to ensure the component always uses the latest data
    * @cn 禁用值与数据项的缓存。默认情况下，Select 会缓存 value 对应的 data 项以优化性能。当 data 频繁变化时，建议设为 true 以确保组件始终使用最新数据
    * @default false
+   * @whenCn 当数据频繁更新或动态变化时使用
    * @whenEn When data updates frequently or dynamically
    */
   noCache?: boolean;
@@ -360,6 +384,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Shows dropdown arrow icon (single select only)
    * @cn 显示下拉箭头图标（仅单选模式）
    * @default true
+   * @whenCn 设为 false 实现更简洁的外观或使用自定义图标时使用
    * @whenEn Set to false for cleaner appearance or custom icon
    */
   showArrow?: boolean;
@@ -368,6 +393,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en In multi-select with filter, whether to select the filter text after clicking an option
    * @cn 多选模式下启用过滤时，点击选项后是否选中过滤输入框中的文本
    * @default true
+   * @whenCn 设为 false 以在选择后保留过滤文本
    * @whenEn Set to false to preserve filter text after selection
    */
   focusSelected?: boolean;
@@ -376,6 +402,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Automatically removes leading/trailing whitespace from input on blur
    * @cn 失去焦点时自动删除输入内容的首尾空白字符
    * @default false
+   * @whenCn 当用户可能意外输入空格时，用于保持数据整洁
    * @whenEn For cleaner data when users may accidentally input spaces
    */
   trim?: boolean;
@@ -384,6 +411,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Width of each column in multi-column layout (only when columns > 1)
    * @cn 多列布局中每列的宽度（仅在 columns > 1 时生效）
    * @default 160
+   * @whenCn 在多列模式下根据选项内容长度调整
    * @whenEn Adjust based on option content length in multi-column mode
    */
   columnWidth?: number;
@@ -391,6 +419,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Maximum character length allowed in the filter input
    * @cn 过滤输入框允许输入的最大字符数
+   * @whenCn 限制过滤/创建输入长度时使用
    * @whenEn To limit filter/create input length
    */
   maxLength?: number;
@@ -398,6 +427,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en In multi-select mode, joins selected values into a string using this separator
    * @cn 多选模式下，使用此分隔符将选中值连接成字符串
+   * @whenCn 当后端需要逗号分隔或其他分隔符字符串时使用
    * @whenEn When backend expects comma-separated or other delimited string
    */
   separator?: string;
@@ -406,6 +436,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Auto-adjusts dropdown width based on content
    * @cn 下拉列表宽度根据内容自动调整
    * @default false
+   * @whenCn 当选项内容宽度差异较大时使用
    * @whenEn When option content varies significantly in width
    */
   autoAdapt?: boolean;
@@ -414,6 +445,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Compresses multiple selected items display. true: dynamically calculates and shows '+N' based on container width; 'no-repeat': same as true but hides already selected items from popover; 'hide-popover': shows '+N' without popover
    * @cn 压缩多选项显示。true: 根据容器宽度动态计算并显示 '+N'；'no-repeat': 与 true 相同但弹出框中不重复显示已选项；'hide-popover': 仅显示 '+N' 不显示弹出框
    * @default false
+   * @whenCn 当多选项可能超出容器宽度时使用
    * @whenEn When multiple selections may exceed container width
    */
   compressed?: boolean | 'no-repeat' | 'hide-popover';
@@ -421,6 +453,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Fixed number of tags to display before showing '+N'. When set, always shows this many tags regardless of container width. This provides better performance for large datasets as it avoids expensive DOM calculations
    * @cn 固定显示的标签数量，超出部分显示 '+N'。设置后将始终显示指定数量的标签，不再根据容器宽度动态计算。对于大数据集，推荐设置此属性以避免昂贵的 DOM 计算，提升性能
+   * @whenCn 配合压缩模式和大量选项以提升性能时使用
    * @whenEn With compressed mode and many selections for better performance
    */
   compressedBound?: number;
@@ -428,6 +461,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en CSS class name for the compressed items popover
    * @cn 压缩项弹出框的 CSS 类名
+   * @whenCn 为压缩项弹出框设置样式时使用
    * @whenEn To style the compressed items popover
    */
   compressedClassName?: string;
@@ -436,6 +470,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Custom render function for compressed items display
    * @cn 自定义渲染压缩/折叠项的显示内容
    * @version 3.5.0
+   * @whenCn 自定义 '+N' 显示或压缩内容时使用
    * @whenEn To customize the '+N' display or compressed content
    */
   renderCompressed?: (options: RenderCompressedOption<DataItem>) => React.ReactNode;
@@ -444,6 +479,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Hides the create option from the dropdown list. Press Enter to select the created value directly
    * @cn 从下拉列表中隐藏创建选项。按回车键直接选中创建的值
    * @default false
+   * @whenCn 配合 onCreate 使用，当创建是主要操作时保持界面简洁
    * @whenEn With onCreate for cleaner UI when creating is primary action
    */
   hideCreateOption?: boolean;
@@ -452,6 +488,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Auto-selects the only matching option on blur when filtering returns single result
    * @cn 过滤结果仅剩一个选项时，失焦自动选中该选项（仅在启用过滤时有效）
    * @default false
+   * @whenCn 当用户期望单一匹配项被自动选中以提升体验时使用
    * @whenEn For better UX when users expect single match to be selected
    */
   filterSingleSelect?: boolean;
@@ -460,6 +497,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Initially expanded node keys for tree data (uncontrolled)
    * @cn 树形数据中默认展开的节点 key 值（非受控）
    * @override (string | number)[]
+   * @whenCn 配合 treeData 使用，初始显示特定节点展开
    * @whenEn With treeData to show specific nodes expanded initially
    */
   defaultExpanded?: KeygenResult[];
@@ -468,6 +506,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Initially expands all tree nodes (tree data only)
    * @cn 初始展开所有树节点（仅树形数据有效）
    * @default false
+   * @whenCn 用于小型树形数据集，所有节点都应该可见时使用
    * @whenEn For small tree datasets where all nodes should be visible
    */
   defaultExpandAll?: boolean;
@@ -476,6 +515,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Controlled expanded node keys for tree data
    * @cn 树形数据中展开的节点 key 值（受控）
    * @override (string | number)[]
+   * @whenCn 用于受控的树展开状态管理
    * @whenEn For controlled tree expansion state
    */
   expanded?: KeygenResult[];
@@ -484,6 +524,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Shows descendant nodes of matched items when filtering tree data
    * @cn 过滤树形数据时，显示匹配项的所有子节点
    * @default false
+   * @whenCn 在搜索期间保持父子节点上下文可见时使用
    * @whenEn To keep parent-child context visible during search
    */
   showHitDescendants?: boolean;
@@ -492,6 +533,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Converts line breaks when pasting text. String replaces breaks; function transforms the text
    * @cn 粘贴文本时转换换行符。字符串用于替换换行；函数用于转换文本
    * @default " "
+   * @whenCn 配合 onCreate 粘贴多行内容时使用
    * @whenEn When pasting multi-line content with onCreate
    */
   convertBr?: string | ((text: string) => string);
@@ -499,6 +541,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en CSS class name for selected item display. Can be string or function returning class based on value
    * @cn 选中项显示容器的 CSS 类名。可为字符串或基于值返回类名的函数
+   * @whenCn 根据值为选中项设置不同样式时使用
    * @whenEn To style selected items differently based on value
    */
   resultClassName?: ((value: DataItem) => string) | string;
@@ -507,6 +550,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Renders each option in dropdown. String uses property value; function customizes display
    * @cn 渲染下拉列表中的每个选项。字符串使用属性值；函数自定义显示
    * @default d => d
+   * @whenCn 显示复杂选项内容或特定属性时使用
    * @whenEn To display complex option content or specific property
    */
   renderItem?: ((data: DataItem, index?: number) => React.ReactNode) | ObjectKey<DataItem>;
@@ -515,6 +559,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Renders selected items display. Falls back to renderItem if not specified
    * @cn 渲染选中项的显示内容。未指定时使用 renderItem
    * @default renderItem
+   * @whenCn 当选中项显示与下拉显示不同时使用
    * @whenEn When selected display differs from dropdown display
    */
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;
@@ -522,6 +567,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Custom render for values that don't match any option in data
    * @cn 自定义渲染数据中不存在的值
+   * @whenCn 当值可能不存在于当前数据中时（如异步加载）使用
    * @whenEn When value might not exist in current data (e.g., async loading)
    */
   renderUnmatched?: (value: Value extends (infer U)[] ? U : Value) => React.ReactNode;
@@ -529,6 +575,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Triggered when the select loses focus
    * @cn 选择框失去焦点时触发
+   * @whenCn 用于表单验证或保存草稿选择时使用
    * @whenEn For form validation or saving draft selections
    */
   onBlur?: (e: any) => void;
@@ -536,6 +583,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Triggered when the select receives focus
    * @cn 选择框获得焦点时触发
+   * @whenCn 用于加载数据、显示提示或跟踪分析时使用
    * @whenEn To load data, show hints, or track analytics
    */
   onFocus?: (e: any) => void;
@@ -543,6 +591,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Enables filtering. Return a function for client-side filtering, or undefined for server-side filtering
    * @cn 启用过滤功能。返回函数用于前端过滤，返回 undefined 用于后端过滤
+   * @whenCn 用于可搜索选择框或大数据集时使用
    * @whenEn For searchable select or large datasets
    */
   onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
@@ -550,6 +599,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Creates new options from input. true uses input as-is; function transforms input into option
    * @cn 从输入创建新选项。true 直接使用输入值；函数将输入转换为选项
+   * @whenCn 用于标签输入或允许自定义值时使用
    * @whenEn For tags input or allowing custom values
    */
   onCreate?: ((input: string | DataItem) => DataItem | string) | boolean;
@@ -557,6 +607,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Called when Enter key is pressed to expand dropdown. Return false to prevent expansion
    * @cn 按回车键展开下拉框时调用。返回 false 阻止展开
+   * @whenCn 自定义回车键行为时使用
    * @whenEn To customize Enter key behavior
    */
   onEnterExpand?: (e: React.KeyboardEvent<HTMLDivElement>) => boolean;
@@ -564,6 +615,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Triggered when dropdown opens or closes. Parameter indicates collapsed state
    * @cn 下拉框打开/关闭时触发。参数表示是否收起状态
+   * @whenCn 同步 UI 状态或打开时加载数据时使用
    * @whenEn To sync UI state or load data on open
    */
   onCollapse?: (collapse: boolean) => void;
@@ -571,6 +623,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Triggered when tree nodes expand/collapse. Receives array of expanded node keys
    * @cn 树节点展开/收起时触发。接收展开节点的 key 数组
+   * @whenCn 用于受控的树展开或跟踪状态时使用
    * @whenEn For controlled tree expansion or tracking state
    */
   onExpand?: (value: KeygenResult[]) => void;
@@ -585,6 +638,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Clears filter input after selecting an option
    * @cn 选中选项后清空过滤输入框
    * @default false
+   * @whenCn 在可搜索多选中提升用户体验时使用
    * @whenEn For better UX in searchable multi-select
    */
   emptyAfterSelect?: boolean;
@@ -592,18 +646,21 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Debounce delay (ms) for filter input
    * @cn 过滤输入的防抖延迟（毫秒）
    * @default 400
+   * @whenCn 为服务端过滤或性能调整时使用
    * @whenEn Adjust for server-side filtering or performance
    */
   filterDelay?: number;
   /**
    * @en Loads children dynamically for tree nodes. Nodes without children trigger loader on expand
    * @cn 动态加载树节点子级。无 children 的节点展开时触发加载
+   * @whenCn 用于懒加载大型树结构时使用
    * @whenEn For lazy-loading large tree structures
    */
   loader?: (key: KeygenResult, data: DataItem) => void;
   /**
    * @en Advanced filter mode allowing toggle between filtered results and original data at current level
    * @cn 高级过滤模式，允许在当前层级的过滤结果和原始数据间切换
+   * @whenCn 用于具有切换能力的复杂过滤场景时使用
    * @whenEn For complex filtering scenarios with toggle capability
    */
   onAdvancedFilter?: (text: string) => (data: DataItem) => boolean;
@@ -611,6 +668,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Auto-focuses filter input after selecting when filter and create are enabled
    * @cn 启用过滤和创建功能时，选中选项后自动聚焦输入框
    * @default false
+   * @whenCn 在过滤+创建模式下连续输入时使用
    * @whenEn For continuous input in filter+create mode
    */
   reFocus?: boolean;
@@ -619,6 +677,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Auto-adjusts dropdown position when blocked by viewport edges
    * @cn 下拉框被视口边缘遮挡时自动调整位置
    * @default true
+   * @whenCn 设为 false 用于固定定位需求时使用
    * @whenEn Set to false for fixed positioning requirements
    */
   adjust?: boolean;
@@ -627,6 +686,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Triggered when scrolling to bottom of dropdown list for infinite scrolling
    * @cn 滚动到下拉列表底部时触发，用于无限滚动加载
    * @version 3.4.0
+   * @whenCn 用于分页或懒加载大数据集时使用
    * @whenEn For pagination or lazy-loading large datasets
    */
   onLoadMore?: () => void | Promise<any>;
@@ -636,6 +696,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 触发 onLoadMore 的滚动阈值（0-1）。1 表示列表底部
    * @default 1
    * @version 3.4.0
+   * @whenCn 设置较低值以在到达底部前预加载时使用
    * @whenEn Set lower to preload before reaching bottom
    */
   threshold?: number;
@@ -645,6 +706,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 打开下拉框的触发方式
    * @default 'click'
    * @version 3.4.0
+   * @whenCn 使用 'hover' 用于快速预览场景时使用
    * @whenEn Use 'hover' for quick preview scenarios
    */
   trigger?: 'click' | 'hover';
@@ -653,6 +715,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Highlights matching text when filtering
    * @cn 过滤时高亮匹配的文本
    * @version 3.7.0
+   * @whenCn 视觉标识搜索匹配项时使用
    * @whenEn To visually indicate search matches
    */
   highlight?: boolean;
