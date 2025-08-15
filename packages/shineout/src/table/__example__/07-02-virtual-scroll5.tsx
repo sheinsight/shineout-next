@@ -43,9 +43,8 @@ const App: React.FC = () => {
     },
     {
       title: 'Country',
-      //  style: { background: 'red' },
       render: (d) => (
-        <div>
+        <div style={{ display: 'flex', gap: 8 }}>
           {d.country}
           <Input value={inputValue} onChange={setInputValue} width={100} />
         </div>

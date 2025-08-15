@@ -1,3 +1,24 @@
+## 3.8.0-beta.27
+2025-08-12
+
+### 🐞 BugFix
+
+- 修复 `Form.Field` 的 `name` 为数组时，错误信息重复渲染的问题 ([#1299](https://github.com/sheinsight/shineout-next/pull/1299))
+
+## 3.8.0-beta.25
+2025-08-11
+
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 的 children 函数用法的 value 参数在某些场景下获取不到最新值的问题 ([#1295](https://github.com/sheinsight/shineout-next/pull/1295))
+
+## 3.8.0-beta.21
+2025-07-31
+
+### 🆕 Feature
+
+- `Form` 的 `FormRef` 新增 `getFormSchema` 方法，用于获取表单结构的标准 JSON Schema ([#1281](https://github.com/sheinsight/shineout-next/pull/1281))
+
 ## 3.8.0-beta.13
 2025-07-11
 

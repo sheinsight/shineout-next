@@ -144,6 +144,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const bindVirtualNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
+    // 立即调用update函数设置正确的active状态
+    if (isActive) update('active', isActive);
     return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
   };
 
@@ -286,7 +288,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
       if (virtual) {
         context.dataFlatStatusMap.set(id, {
-          active: false,
+          active: activeProp === id,
           expanded: defaultExpandAll ? true : expanded?.includes(id) || false,
           fetching: false,
         });
@@ -699,6 +701,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   useEffect(() => {
+    if (props.datum) return;
+    if (!dataUpdate) return;
+    setData(data);
+    const nextExpanded = props.expanded || props.defaultExpanded || [];
+    if (!defaultExpandAll && !shallowEqual(nextExpanded, expanded)) {
+      onExpand(nextExpanded);
+      updateExpanded(nextExpanded, true);
+    }
+
+    updateInnerCheckStatus();
+  }, [props.data]);
+
+  useEffect(() => {
     if (defaultExpandAll) {
       const nextExpanded = [] as KeygenResult[];
       context.dataMap.forEach((item, k) => {
@@ -710,20 +725,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       updateExpanded(nextExpanded, true);
     }
   }, [context.dataMap, props.data]);
-
-  useEffect(() => {
-    if (props.datum) return;
-    if (!dataUpdate) return;
-    setData(data);
-    const nextExpanded = props.expanded || props.defaultExpanded || [];
-
-    if (!defaultExpandAll && !shallowEqual(nextExpanded, expanded)) {
-      onExpand(nextExpanded);
-      updateExpanded(nextExpanded, true);
-    }
-
-    updateInnerCheckStatus();
-  }, [props.data]);
 
   useEffect(() => {
     if (props.datum) return;

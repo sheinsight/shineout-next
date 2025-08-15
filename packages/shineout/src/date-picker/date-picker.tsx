@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { DatePicker, getLocale, useConfig } from '@sheinx/base';
+import { DatePicker as BaseDatePicker, getLocale, useConfig } from '@sheinx/base';
 import {
   useButtonStyle,
   useDatePickerStyle,
@@ -20,9 +20,11 @@ const jssStyle = {
   popover: usePopoverStyle,
   link: useLinkStyle,
 };
-const BaseDatePicker = <Value extends DatePickerValueType>(props: BaseDatePickerProps<Value>) => {
-  return <DatePicker jssStyle={jssStyle} {...props} />;
+const DatePicker = <Value extends DatePickerValueType>(props: BaseDatePickerProps<Value>) => {
+  return <BaseDatePicker jssStyle={jssStyle} {...props} />;
 };
+
+DatePicker.displayName = 'ShineoutDatePicker';
 
 export default <Value extends DatePickerValueType = DatePickerValueType>(
   props: DatePickerProps<Value>,
@@ -55,5 +57,5 @@ export default <Value extends DatePickerValueType = DatePickerValueType>(
   return useFieldCommon({
     ...props,
     defaultValue,
-  }, BaseDatePicker<Value>);
+  }, DatePicker<Value>);
 };

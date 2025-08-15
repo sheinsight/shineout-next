@@ -1,8 +1,8 @@
 /**
- * cn - range
- *    -- 数值范围校验，会根据 Field 的 type 自动判断校验类型为字符串、数字或选项
- * en - range
- *    -- Range value validation, the validation type is automatically determined according to the type of Field
+ * cn - 范围校验
+ *    -- 范围校验，同时设置最小值和最大值限制。会根据字段值的数据类型自动判断：如果值是数字类型则验证数值范围，如果值是字符串类型则验证字符串长度范围，如果值是数组类型则验证数组长度范围。使用 rule.range(min, max, message) 设置范围
+ * en - Range validation
+ *    -- Range validation, sets both minimum and maximum limits. Automatically determines based on field data type: validates numeric range for number type, string length range for string type, array length range for array type. Use rule.range(min, max, message) to set range
  */
 import React from 'react';
 import { Form, Input, Rule } from 'shineout';

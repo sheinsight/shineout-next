@@ -13,6 +13,9 @@ const jssStyle = {
 const Input = (props: BaseInputProps) => {
   return <UnStyleInput {...props} jssStyle={jssStyle} />;
 };
+
+Input.displayName = 'ShineoutInput';
+
 export default memo((props: InputProps) => {
   return useFieldCommon(props, Input);
 });

@@ -22,7 +22,7 @@ const Popover = (props: PopoverProps) => {
     showArrow = true,
     zIndex = 1060,
   } = props;
-  const { current: context } = React.useRef({ rendered: false });
+  const { current: context } = React.useRef({ rendered: false, hasOpened: false });
 
   const config = useConfig();
 
@@ -135,8 +135,15 @@ const Popover = (props: PopoverProps) => {
 
   context.rendered = true;
 
-  const childrened = util.isFunc(children) ? children(closePop) : children;
+  // Track if popover has ever been opened
+  if (open && !context.hasOpened) {
+    context.hasOpened = true;
+  }
+
+  // Only execute functional children after popover has been opened at least once
+  const childrened = util.isFunc(children) ? (context.hasOpened ? children(closePop) : null) : children;
   const containerStyle = {
+    display: open ? undefined : 'none',
     borderColor: props.border,
     backgroundColor: props.background,
   };

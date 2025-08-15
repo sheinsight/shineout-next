@@ -1,3 +1,10 @@
+## 3.7.9-beta.8
+2025-08-06
+### 🐞 BugFix
+
+- 修复 `Radio.Group` 在嵌套使用时，内层 `Radio.Group` 的勾选状态不符合预期的问题 ([#1291](https://github.com/sheinsight/shineout-next/pull/1291))
+
+
 ## 3.7.0-beta.36
 2025-05-29
 ### 🐞 BugFix

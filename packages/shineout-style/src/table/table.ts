@@ -179,12 +179,15 @@ const tableStyle: JsStyles<TableClassType> = {
     '$sticky > &': {
       zIndex: headerIndex,
     },
-    '& table th': {
+    '$wrapper & table th': {
       zIndex: fixedFixedIndex + 1,
       '&$cellFixedLeft': {
         position: 'sticky',
         top: 'auto',
         zIndex: fixedFixedIndex + 2,
+      },
+      '&$cellFixedRight': {
+        zIndex: fixedFixedIndex + 3,
       },
     },
   },
@@ -206,7 +209,10 @@ const tableStyle: JsStyles<TableClassType> = {
         '&$cellFixedLeft': {
           position: 'sticky',
           top: 'auto',
-          zIndex: fixedIndex + 1,
+          zIndex: fixedIndex,
+        },
+        '&$cellFixedRight': {
+          zIndex: fixedIndex,
         },
       }
     },
@@ -261,9 +267,12 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   cellFixedLeft: {
     position: 'sticky',
+    // 快速横滚，有可能出现非固定列遮挡了固定列的短暂一瞬间，因此加上这个zIndex
+    zIndex: fixedIndex + 1,
   },
   cellFixedRight: {
     position: 'sticky',
+    zIndex: fixedFixedIndex,
   },
   cellAlignLeft: { textAlign: 'left' },
   cellAlignCenter: { textAlign: 'center' },

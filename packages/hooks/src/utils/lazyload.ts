@@ -72,9 +72,43 @@ export function removeStack(id?: string | null, removeListener?: boolean) {
   delete components[id];
 }
 
+// 检测容器是否高度受限
+const isRootHeightConstrained = (root: Element | null, targetElement: Element): boolean => {
+  if (!root || root === document.body) {
+    const bodyRect = document.body.getBoundingClientRect();
+    const targetRect = targetElement.getBoundingClientRect();
+    // body的底部和targetElement的顶部永远不可能有相交，则是受限的
+    if (bodyRect.bottom < targetRect.top) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // 当root的overflow是auto或hidden，则认为不是受限的
+  const rootStyle = window.getComputedStyle(root);
+  if (rootStyle.overflow === 'auto' || rootStyle.overflow === 'hidden') {
+    return false;
+  }
+
+  // 当root的底部与targetElement的顶部永远不可能有相交，则是受限的
+  const rootRect = root.getBoundingClientRect();
+  const targetRect = targetElement.getBoundingClientRect();
+  if (rootRect.top > targetRect.bottom || rootRect.bottom < targetRect.top) {
+    return true;
+  }
+
+  return false;
+};
+
 function getObserver(obj: LazyConfig, id: string) {
   const { container = null, element, offset, render, offscreen, noRemove } = obj;
   const fixedContainer = getClosestPositionedContainer(element, ['fixed', 'absolute']);
+
+  // 获取最优的观察器配置
+  const candidateRoot = fixedContainer || container;
+  const observerRoot = isRootHeightConstrained(candidateRoot, element) ? null : candidateRoot;
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((en) => {
@@ -88,7 +122,7 @@ function getObserver(obj: LazyConfig, id: string) {
       });
     },
     {
-      root: fixedContainer || container,
+      root: observerRoot,
       rootMargin: `${offset}px`,
     },
   );

@@ -113,5 +113,23 @@ setConfig({
 })
 ```
 
+### Empty 默认图标和描述
+
+配置 Empty 组件的全局默认图标和描述
+
+类型： `empty: {
+  icon: React.ReactNode;
+  description: React.ReactNode | boolean;
+}`
+
+```js
+// 设置 Empty 组件的全局默认图标
+setConfig({
+  empty: {
+    icon: <CustomIcon />
+    description: 'Custom description'
+  }
+})
+```
 
 

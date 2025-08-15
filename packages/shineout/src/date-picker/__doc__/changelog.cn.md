@@ -1,3 +1,10 @@
+## 3.8.0-beta.30
+2025-08-14
+
+### 🐞 BugFix
+- 修复 `DatePicker` 的时间范围选择器设置的 `min` 、 `max`、`defaultTime` 属性不生效的问题 ([#1301](https://github.com/sheinsight/shineout-next/pull/1301))
+
+
 ## 3.7.8-beta.2
 2025-07-22
 

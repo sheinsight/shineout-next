@@ -32,6 +32,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   return <UnStyledCascader {...props} jssStyle={jssStyle} />;
 };
 
+Cascader.displayName = 'ShineoutCascader';
+
 export default memo(
   <DataItem, Value extends KeygenResult[]>(props: CascaderProps<DataItem, Value>) => {
     return useFieldCommon(props, Cascader<DataItem, Value>, 'array');

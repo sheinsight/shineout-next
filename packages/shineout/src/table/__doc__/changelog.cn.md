@@ -5,6 +5,27 @@
 
 - `Table` 新增 `cellSortable` 属性，支持点击单元格触发排序 ([#1188](https://github.com/sheinsight/shineout-next/pull/1188))
 
+
+## 3.7.9-beta.7
+2025-08-04
+
+### 🐞 BugFix
+- 修复 `Table` 快速横滚时可能出现的固定列被瞬时遮挡一下的问题 ([#1287](https://github.com/sheinsight/shineout-next/pull/1287))([#1290](https://github.com/sheinsight/shineout-next/pull/1290))
+
+
+## 3.7.9-beta.4
+2025-07-31
+
+### 🐞 BugFix
+- 修复 `Table` 虚拟列表模式下合并行 `checkbox` 状态丢失的问题 ([#1280](https://github.com/sheinsight/shineout-next/pull/1280))
+
+## 3.7.9-beta.2
+2025-07-30
+
+### 🐞 BugFix
+
+- 修复 `Table` 在数据为空时，底部总结行依然会展示，表现与 v1 v2 不一致的问题 ([#1278](https://github.com/sheinsight/shineout-next/pull/1278))
+
 ## 3.7.7-beta.7
 2025-07-17
 

@@ -92,7 +92,7 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     color: token.radioIconColor,
     backgroundColor: token.radioIconBackgroundColor,
     border: '1px solid currentColor',
-    '$wrapperChecked &': {
+    '$wrapperChecked > $indicatorWrapper > &': {
       backgroundColor: token.radioIconCheckedBackgroundColor,
       color: token.radioIconCheckedColor,
       '&::after': {

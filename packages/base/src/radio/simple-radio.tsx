@@ -30,6 +30,7 @@ const Radio = (props: SimpleRadioProps) => {
   const rootProps = getRootProps({
     className: rootClass,
     style,
+    needStopPropagation: true,
   });
   const indicatorProps = getIndicatorProps();
 
