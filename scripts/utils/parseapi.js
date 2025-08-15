@@ -169,6 +169,7 @@ function parseApi(pack, filePath) {
         sort: mainTags.sort || '0',
         tag: {
           when: convertQuotes(mainTags.when),
+          whenEn: convertQuotes(mainTags.whenEn),
         },
       };
       const type = inter.getType();
@@ -213,6 +214,7 @@ function parseApi(pack, filePath) {
             default: convertQuotes(propertyJsDocTags.default),
             version: convertQuotes(propertyJsDocTags.version),
             when: convertQuotes(propertyJsDocTags.when),
+            whenEn: convertQuotes(propertyJsDocTags.whenEn),
           },
           required: !optional,
           type: convertQuotes(typeText),
