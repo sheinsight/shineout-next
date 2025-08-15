@@ -148,10 +148,31 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
     // 使用 offsetWidth/offsetHeight 而不是 getBoundingClientRect()
     // 这样可以避免受到外部容器 CSS transform scale 的影响
-    setCurrentTabSize({
-      width: currentTab?.offsetWidth || 0,
-      height: currentTab?.offsetHeight || 0,
-    });
+    let width = currentTab?.offsetWidth || 0;
+    let height = currentTab?.offsetHeight || 0;
+    // 微前端场景下，可能出现获取不到元素的尺寸信息
+    if (width === 0 || height === 0) {
+      let timerCount = 0;
+      const timer = setInterval(() => {
+        timerCount++;
+        if (currentTab?.offsetWidth && currentTab?.offsetHeight) {
+          setCurrentTabSize({
+            width: currentTab.offsetWidth,
+            height: currentTab.offsetHeight,
+          });
+          clearInterval(timer);
+        }
+        if (timerCount >= 100) {
+          clearInterval(timer);
+        }
+      }, 16);
+      return () => clearInterval(timer);
+    } else {
+      setCurrentTabSize({
+        width,
+        height,
+      });
+    }
   }, [active, tabs]);
 
   const renderHeaderScrollBar = () => {
