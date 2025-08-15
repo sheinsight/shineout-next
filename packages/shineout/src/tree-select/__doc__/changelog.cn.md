@@ -1,3 +1,9 @@
+## 3.7.10-beta.5
+2025-08-15
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 开启 `virtual` 后，预设值在面板首次打开时节点未高亮的问题 ([#1309](https://github.com/sheinsight/shineout-next/pull/1309))
+
 ## 3.7.8-beta.9
 2025-07-25
 
