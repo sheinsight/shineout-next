@@ -64,10 +64,10 @@ const getCardStyle = () => {
             height: '100%',
           },
         },
-        ...active({ top: 0, bottom: 0, right: -1, width: 1, background: '#FFFFFF' }),
+        ...active({ top: 0, bottom: 0, right: -1, width: 1, background: Token.tabsCardCheckedBackgroundColor }),
       },
       '&[dir=rtl]': {
-        ...active({ top: 0, bottom: 0, left: -1, width: 1, background: '#FFFFFF' }),
+        ...active({ top: 0, bottom: 0, left: -1, width: 1, background: Token.tabsCardCheckedBackgroundColor }),
 
         '& $cardHr': {
           '&:before': {
@@ -95,7 +95,7 @@ const getCardStyle = () => {
             height: '100%',
           },
         },
-        ...active({ top: 0, bottom: 0, left: -1, width: 1, background: '#FFFFFF' }),
+        ...active({ top: 0, bottom: 0, left: -1, width: 1, background: Token.tabsCardCheckedBackgroundColor }),
       },
 
       '&[dir=rtl]': {
@@ -106,7 +106,7 @@ const getCardStyle = () => {
             height: '100%',
           },
         },
-        ...active({ top: 0, bottom: 0, right: -1, width: 1, background: '#FFFFFF' }),
+        ...active({ top: 0, bottom: 0, right: -1, width: 1, background: Token.tabsCardCheckedBackgroundColor }),
       },
     },
     '&[data-soui-position^="top-"][data-soui-shape="card"]': {
@@ -114,7 +114,7 @@ const getCardStyle = () => {
         borderRadius: `${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0 0`,
       },
       '& $hr': { bottom: 0, height: 1, width: '100%' },
-      ...active({ bottom: -1, left: 0, right: 0, height: 1, background: '#FFFFFF' }),
+      ...active({ bottom: -1, left: 0, right: 0, height: 1, background: Token.tabsCardCheckedBackgroundColor }),
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="card"]': {
       '& $tab,& $next,& $prev': {
@@ -127,14 +127,14 @@ const getCardStyle = () => {
           bottom: 'auto',
         },
       },
-      ...active({ top: -1, left: 0, right: 0, height: 1, background: '#FFFFFF' }),
+      ...active({ top: -1, left: 0, right: 0, height: 1, background: Token.tabsCardCheckedBackgroundColor }),
     },
   };
 };
 
 const getLineStyle = () => {
   return {
-    '$tab':  {
+    '&[data-soui-shape="line"] $tab':  {
       '&:after': {
         display: 'none',
       },

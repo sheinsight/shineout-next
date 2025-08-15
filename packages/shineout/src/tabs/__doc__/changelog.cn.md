@@ -1,3 +1,9 @@
+## 3.7.10-beta.4
+2025-08-14
+### 🐞 BugFix
+
+- 修复 `Tabs` 暗黑主题下 card 模式的下划线样式问题 ([#1308](https://github.com/sheinsight/shineout-next/pull/1308))
+
 ## 3.7.0-beta.8
 2025-04-21
 
