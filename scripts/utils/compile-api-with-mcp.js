@@ -211,7 +211,8 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     required: prop.required,
     defaultValue: prop.tag.default || undefined,
     description: prop.tag.cn || prop.tag.en || '',
-    when: prop.tag.when || undefined, // 添加 when 字段
+    whenCn: prop.tag.whenCn || undefined,
+    whenEn: prop.tag.whenEn || undefined,
     version: prop.tag.version || undefined
   }));
 
@@ -237,7 +238,7 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     apiSummary: {
       totalProps: props.length,
       requiredProps: props.filter(p => p.required).length,
-      propsWithWhen: props.filter(p => p.when).length,
+      propsWithWhen: props.filter(p => p.whenCn || p.whenEn).length,
       examplesCount: mcpExamples.length
     }
   };
@@ -252,19 +253,19 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     apis.slice(1).forEach(api => {
       const subName = api.title.split('.').pop();
       if (subName && subComponents.includes(subName)) {
-        // 提取子组件的 when 描述（优先使用中文，如果没有则使用英文）
-        const whenDescription = api.tag?.when || api.tag?.whenEn || '';
-        const whenDescriptionEn = api.tag?.whenEn || api.tag?.when || '';
+        // 提取子组件的 when 描述
+        const whenDescriptionCn = api.tag?.whenCn || '';
+        const whenDescriptionEn = api.tag?.whenEn || '';
         
         subComponentsWithInfo.push({
           name: subName,
           description: api.cn || api.en || '',
-          when: whenDescription,
+          whenCn: whenDescriptionCn,
           whenEn: whenDescriptionEn,
         });
         
         mcpData.subComponentApis[subName] = {
-          when: whenDescription,
+          whenCn: whenDescriptionCn,
           whenEn: whenDescriptionEn,
           description: api.cn || api.en || '',
           props: api.properties.map(prop => ({
@@ -273,7 +274,8 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
             required: prop.required,
             defaultValue: prop.tag.default || undefined,
             description: prop.tag.cn || prop.tag.en || '',
-            when: prop.tag.when || undefined,
+            whenCn: prop.tag.whenCn || undefined,
+            whenEn: prop.tag.whenEn || undefined,
             version: prop.tag.version || undefined
           }))
         };

@@ -168,7 +168,7 @@ function parseApi(pack, filePath) {
         en: convertQuotes(mainTags.en),
         sort: mainTags.sort || '0',
         tag: {
-          when: convertQuotes(mainTags.when),
+          whenCn: convertQuotes(mainTags.whenCn),
           whenEn: convertQuotes(mainTags.whenEn),
         },
       };
@@ -213,7 +213,7 @@ function parseApi(pack, filePath) {
             en: convertQuotes(propertyJsDocTags.en),
             default: convertQuotes(propertyJsDocTags.default),
             version: convertQuotes(propertyJsDocTags.version),
-            when: convertQuotes(propertyJsDocTags.when),
+            whenCn: convertQuotes(propertyJsDocTags.whenCn),
             whenEn: convertQuotes(propertyJsDocTags.whenEn),
           },
           required: !optional,

@@ -28,7 +28,7 @@ export interface ComponentExample {
 export interface SubComponent {
   name: string;
   description: string;
-  when?: string;  // 何时使用该子组件的说明（中文）
+  whenCn?: string;  // 何时使用该子组件的说明（中文）
   whenEn?: string;  // 何时使用该子组件的说明（英文）
   props?: ComponentProp[];
 }
