@@ -144,6 +144,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const bindVirtualNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
+    // 立即调用update函数设置正确的active状态
+    if (isActive) update('active', isActive);
     return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
   };
 
@@ -286,7 +288,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
       if (virtual) {
         context.dataFlatStatusMap.set(id, {
-          active: false,
+          active: activeProp === id,
           expanded: defaultExpandAll ? true : expanded?.includes(id) || false,
           fetching: false,
         });
