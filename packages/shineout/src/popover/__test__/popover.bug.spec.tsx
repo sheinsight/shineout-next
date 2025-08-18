@@ -1,23 +1,13 @@
 /**
  * Bug Regression Tests for Popover Component
  * 
- * Related PR: https://github.com/sheinsight/shineout-next/pull/1288
+ * This file contains regression test cases for various bug fixes in the Popover component.
+ * Each test suite is organized by the specific issue/PR it addresses to prevent future regressions.
  * 
- * Issue Description:
- * - 问题：3.2.0-beta.2 版本后，Popover 的 children 函数在组件挂载时就会执行，而不是在 Popover 打开时才执行
- * - 原因：在提交 4e47d2e0 中，lazy 逻辑修改导致默认不再懒加载，children 函数会在渲染时立即执行
- * - 修复：只有当 Popover 打开时才执行 children 函数，未打开时返回 null
- * - 修复版本：3.7.9-beta.6
- * 
- * Test Coverage:
- * 1. 函数型 children 在组件挂载时不执行 - 确保修复了原问题，避免过早执行
- * 2. 函数型 children 只在首次打开时执行 - 验证懒加载行为，保证性能优化
- * 3. 关闭后重新打开的正确行为 - 确保后续操作正常，维持一致性体验
- * 4. close 回调函数正常工作 - 验证函数参数传递和功能完整性
- * 5. visible=true 时立即执行 - 确保显式控制时的行为符合预期
- * 
- * These tests ensure that the function-type children behavior remains consistent
- * with legacy versions and prevents regression of this specific issue.
+ * Test Organization:
+ * - Each bug fix should have its own describe block
+ * - Include PR links and issue descriptions in the describe block comments
+ * - Maintain comprehensive test coverage for critical bug fixes
  */
 
 import { render, cleanup, waitFor, fireEvent } from '@testing-library/react';
@@ -43,6 +33,24 @@ afterEach(cleanup);
 const getPopoverRoot = () => document.querySelector(popoverClassName)!;
 
 describe('Popover[Bug Regression Tests]', () => {
+  /**
+   * PR #1288: 修复 Popover children 函数执行时机问题
+   * 
+   * Related PR: https://github.com/sheinsight/shineout-next/pull/1288
+   * Fixed Version: 3.7.9-beta.6
+   * 
+   * Issue Description:
+   * - 问题：3.2.0-beta.2 版本后，Popover 的 children 函数在组件挂载时就会执行，而不是在 Popover 打开时才执行
+   * - 原因：在提交 4e47d2e0 中，lazy 逻辑修改导致默认不再懒加载，children 函数会在渲染时立即执行
+   * - 修复：只有当 Popover 打开时才执行 children 函数，未打开时返回 null
+   * 
+   * Test Coverage:
+   * 1. 函数型 children 在组件挂载时不执行 - 确保修复了原问题，避免过早执行
+   * 2. 函数型 children 只在首次打开时执行 - 验证懒加载行为，保证性能优化
+   * 3. 关闭后重新打开的正确行为 - 确保后续操作正常，维持一致性体验
+   * 4. close 回调函数正常工作 - 验证函数参数传递和功能完整性
+   * 5. visible=true 时立即执行 - 确保显式控制时的行为符合预期
+   */
   describe('Issue #1288: Children function execution timing', () => {
     /**
      * Test 1: 验证函数型 children 在组件挂载时不执行
