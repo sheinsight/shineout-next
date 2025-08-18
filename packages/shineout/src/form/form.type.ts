@@ -8,6 +8,7 @@ import {
   FormRef as UiFormRef,
   FormDatum as UiFormDatum,
 } from '@sheinx/base';
+import { ButtonProps } from '../button/button.type';
 
 /**
  * @title FormRef
@@ -73,3 +74,19 @@ export type FormFieldSetProps<T> = UiFormFieldSetProps<T>;
  * @cn 表单流程组件，用于监听表单数据变化并执行相应的副作用。适用于实现表单联动、条件渲染等场景
  */
 export type FormFlowProps = UiFormFlowProps;
+
+/**
+ * @title Form.Button
+ * @sort 8
+ * @en Form button component with htmlType='button'. Prevents accidental form submission when users press Enter in form inputs. Users must explicitly click the button to submit the form. Internally calls formFunc.submit() for better control over submission logic
+ * @cn 表单按钮组件，htmlType='button'。防止用户在表单输入框中按回车键时意外提交表单。用户必须显式点击按钮才能提交表单。内部调用 formFunc.submit() 以更好地控制提交逻辑
+ */
+export type FormButtonProps = ButtonProps;
+
+/**
+ * @title Form.Submit
+ * @sort 9
+ * @en Form submit button component with htmlType='submit'. Uses native browser submit behavior. When users press Enter in any form input, it will trigger this button automatically. Suitable for simple forms where Enter-to-submit behavior is desired
+ * @cn 表单提交按钮组件，htmlType='submit'。使用浏览器原生提交行为。当用户在任何表单输入框中按回车键时，会自动触发此按钮。适用于希望支持回车提交的简单表单
+ */
+export type FormSubmitProps = ButtonProps;
