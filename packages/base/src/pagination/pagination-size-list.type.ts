@@ -1,7 +1,7 @@
 import { PaginationJssStyle, PaginationProps, TextParams } from './pagination.type';
 
 export interface PaginationSizeListProps
-  extends Pick<PaginationProps, 'pageSizeList' | 'size' | 'disabled' | 'select'> {
+  extends Pick<PaginationProps, 'pageSizeList' | 'size' | 'disabled' | 'select' | 'sizeListProps'> {
   jssStyle?: PaginationJssStyle;
   current: number;
   total: number;

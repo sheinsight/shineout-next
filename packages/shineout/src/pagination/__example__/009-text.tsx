@@ -12,25 +12,20 @@
  *    -- page Page button text
  *    -- jumper Jumper text, the placeholder {input} represents the input box
  */
-import { Pagination } from 'shineout';
+import { TYPE, Pagination } from 'shineout';
 
 export default () => {
-  const info = ({
-    current,
-    pageSize,
-    total,
-  }: {
-    current: number;
-    pageSize: number;
-    total: number;
-  }) => {
+  const info = (props: TYPE.Pagination.Props) => {
+    const current = props.current || props.defaultCurrent || 1;
+    const pageSize = props.pageSize || 10;
+    const total = props.total || 0;
     let to = current * pageSize;
     if (to > total) to = total;
     const from = (current - 1) * pageSize + 1;
     return `${from} to ${to} of ${total} items`;
   };
   const total = 256;
-  const layout = ['links', 'list', info];
+  const layout: TYPE.Pagination.Props['layout'] = ['links', 'list', info];
   const text = {
     prev: 'Previous',
     next: 'Next',
@@ -38,6 +33,6 @@ export default () => {
   };
 
   return (
-    <Pagination total={total} text={text} layout={layout} defaultCurrent={1} span={3}></Pagination>
+    <Pagination total={total} text={text} layout={layout} defaultCurrent={1} span={3} />
   );
 };
