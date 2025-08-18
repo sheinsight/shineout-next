@@ -205,7 +205,10 @@ const Modal = (props: ModalContentProps) => {
 
   useEffect(() => {
     if (props.setInnerClose) {
-      props.setInnerClose(handleClose);
+      props.setInnerClose(() => {
+        setVisible(false);
+        setAnimation(true);
+      });
     }
   }, [props.setInnerClose]);
 
