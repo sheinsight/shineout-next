@@ -1,3 +1,10 @@
+## 3.8.0-beta.37
+2025-08-18
+
+### 🐞 BugFix
+- 修复 `Radio.Group` 设置的函数式 `disabled` 导致的子Radio组件(非推荐用法)都被禁用的问题 ([#1314](https://github.com/sheinsight/shineout-next/pull/1314))
+
+
 ## 3.7.9-beta.8
 2025-08-06
 ### 🐞 BugFix
