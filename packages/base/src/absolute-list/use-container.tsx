@@ -6,6 +6,7 @@ let root: HTMLDivElement | null = null;
 
 export interface ContainerProps {
   container?: HTMLElement | null | (() => HTMLElement | null);
+  containerClassName?: string
 }
 
 export const getContainer = (props: ContainerProps) => {
@@ -61,6 +62,9 @@ const useContainer = (props: ContainerProps = {}) => {
         'style',
         'position: absolute; top: 0px; left: 0px; width: 100%;',
       );
+      if (props.containerClassName) {
+        context.element.classList.add(props.containerClassName)
+      }
     }
     const rootContainer = getRootContainer(props);
     if (rootContainer && context.element.parentElement !== rootContainer) {

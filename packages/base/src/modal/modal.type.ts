@@ -149,11 +149,19 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
   rootClassName?: string;
 
   /**
-   * @en target element
-   * @cn 渲染的目标节点
+   * @en target container element
+   * @cn 渲染的目标节点位置
    * @default document.body
    */
   container?: (() => HTMLElement | null) | HTMLElement | null;
+
+
+  /**
+   * @cn 渲染的目标节点的className
+   * @en the className of target container element
+   * @version 3.8.0
+   */
+  containerClassName?: string
 
   /**
    * @en pop-up support move
