@@ -115,6 +115,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 12,
       "requiredProps": 0,
@@ -249,9 +250,15 @@
       }
     ],
     "subComponents": [
-      "Group"
+      {
+        "name": "Group",
+        "description": "",
+        "whenCn": "",
+        "whenEn": ""
+      }
     ],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 14,
       "requiredProps": 0,
@@ -260,6 +267,9 @@
     },
     "subComponentApis": {
       "Group": {
+        "whenCn": "",
+        "whenEn": "",
+        "description": "",
         "props": [
           {
             "name": "className",
@@ -434,6 +444,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 12,
       "requiredProps": 0,
@@ -545,6 +556,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 8,
       "requiredProps": 0,
@@ -708,9 +720,15 @@
       }
     ],
     "subComponents": [
-      "Group"
+      {
+        "name": "Group",
+        "description": "",
+        "whenCn": "",
+        "whenEn": ""
+      }
     ],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 15,
       "requiredProps": 0,
@@ -719,6 +737,9 @@
     },
     "subComponentApis": {
       "Group": {
+        "whenCn": "",
+        "whenEn": "",
+        "description": "",
         "props": [
           {
             "name": "style",
@@ -917,13 +938,27 @@
       }
     ],
     "subComponents": [
-      "Header",
-      "Body",
-      "Footer",
-      "Submit",
-      "Accordion"
+      {
+        "name": "Header",
+        "description": "",
+        "whenCn": "",
+        "whenEn": ""
+      },
+      {
+        "name": "Body",
+        "description": "",
+        "whenCn": "",
+        "whenEn": ""
+      },
+      {
+        "name": "Footer",
+        "description": "",
+        "whenCn": "",
+        "whenEn": ""
+      }
     ],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 13,
       "requiredProps": 0,
@@ -932,6 +967,9 @@
     },
     "subComponentApis": {
       "Header": {
+        "whenCn": "",
+        "whenEn": "",
+        "description": "",
         "props": [
           {
             "name": "className",
@@ -966,6 +1004,9 @@
         ]
       },
       "Body": {
+        "whenCn": "",
+        "whenEn": "",
+        "description": "",
         "props": [
           {
             "name": "className",
@@ -988,6 +1029,9 @@
         ]
       },
       "Footer": {
+        "whenCn": "",
+        "whenEn": "",
+        "description": "",
         "props": [
           {
             "name": "className",
@@ -1131,6 +1175,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 12,
       "requiredProps": 0,
@@ -1700,6 +1745,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 63,
       "requiredProps": 2,
@@ -1926,6 +1972,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 20,
       "requiredProps": 0,
@@ -2071,6 +2118,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 13,
       "requiredProps": 0,
@@ -2637,6 +2685,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 55,
       "requiredProps": 0,
@@ -2780,6 +2829,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 13,
       "requiredProps": 0,
@@ -2862,6 +2912,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 6,
       "requiredProps": 0,
@@ -3120,6 +3171,7 @@
       "Submit"
     ],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 28,
       "requiredProps": 0,
@@ -3365,6 +3417,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 22,
       "requiredProps": 1,
@@ -3438,6 +3491,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 5,
       "requiredProps": 0,
@@ -3838,17 +3892,51 @@
       }
     ],
     "subComponents": [
-      "Item",
-      "Field",
-      "FieldSet",
-      "Button",
-      "Submit",
-      "Reset",
-      "Flow",
-      "useForm",
-      "useFormInstance"
+      {
+        "name": "Item",
+        "description": "表单项组件，用于包装表单控件并提供标签、错误提示等功能。每个表单控件都应该被 Form.Item 包裹，以便正确显示标签和校验信息",
+        "whenCn": "需要为表单控件添加标签、错误提示、必填标记等界面元素时使用。这是最常用的表单布局组件，适合包装 Input、Select、DatePicker 等表单控件",
+        "whenEn": "Use when you need to add UI elements like labels, error messages, and required marks to form controls. This is the most commonly used form layout component, suitable for wrapping Input, Select, DatePicker and other form controls"
+      },
+      {
+        "name": "Field",
+        "description": "表单字段组件，用于创建自定义的表单控件。提供了表单数据绑定、校验等功能，适用于封装复杂的自定义表单组件",
+        "whenCn": "需要创建自定义表单控件或封装复杂的表单逻辑时使用。适合将非标准表单组件（如自定义的颜色选择器、代码编辑器等）接入表单系统",
+        "whenEn": "Use when you need to create custom form controls or encapsulate complex form logic. Suitable for integrating non-standard form components (like custom color pickers, code editors, etc.) into the form system"
+      },
+      {
+        "name": "FieldSet",
+        "description": "表单字段集组件，用于管理一组相关的表单字段。适用于处理对象或数组类型的表单数据，如动态表单列表、嵌套对象等复杂场景",
+        "whenCn": "需要处理动态表单列表、嵌套对象或数组数据时使用。典型场景包括：动态添加/删除表单项、编辑用户列表、管理多个地址信息等",
+        "whenEn": "Use when you need to handle dynamic form lists, nested objects or array data. Typical scenarios include: dynamically adding/removing form items, editing user lists, managing multiple address information, etc."
+      },
+      {
+        "name": "Flow",
+        "description": "表单流程组件，用于监听表单数据变化并执行相应的副作用。适用于实现表单联动、条件渲染等场景",
+        "whenCn": "需要实现表单联动、条件渲染或监听表单数据变化时使用。例如：根据选择的国家显示不同的省份列表、根据用户类型显示不同的表单字段等",
+        "whenEn": "Use when you need to implement form linkage, conditional rendering or listen to form data changes. For example: showing different province lists based on selected country, displaying different form fields based on user type, etc."
+      },
+      {
+        "name": "Button",
+        "description": "表单按钮组件，htmlType=\\\"button\\\"。防止用户在表单输入框中按回车键时意外提交表单。用户必须显式点击按钮才能提交表单。内部调用 formFunc.submit() 以更好地控制提交逻辑",
+        "whenCn": "需要防止回车键意外提交表单，或需要在提交前执行自定义逻辑（如确认对话框）时使用。适合复杂表单或需要额外验证步骤的场景",
+        "whenEn": "Use when you need to prevent accidental form submission via Enter key, or need to execute custom logic before submission (like confirmation dialogs). Suitable for complex forms or scenarios requiring additional validation steps"
+      },
+      {
+        "name": "Submit",
+        "description": "表单提交按钮组件，htmlType=\\\"submit\\\"。使用浏览器原生提交行为。当用户在任何表单输入框中按回车键时，会自动触发此按钮。适用于希望支持回车提交的简单表单",
+        "whenCn": "需要支持回车键快速提交表单时使用。适合登录表单、搜索表单等简单场景，用户体验更流畅",
+        "whenEn": "Use when you need to support quick form submission via Enter key. Suitable for login forms, search forms and other simple scenarios for smoother user experience"
+      },
+      {
+        "name": "Reset",
+        "description": "表单重置按钮组件，htmlType=\\\"reset\\\"。点击时将所有表单字段重置为初始值。适用于需要让用户快速恢复初始状态的复杂表单",
+        "whenCn": "需要提供重置表单功能时使用。适合复杂表单或编辑表单，让用户可以快速恢复到初始状态或默认值",
+        "whenEn": "Use when you need to provide form reset functionality. Suitable for complex forms or edit forms, allowing users to quickly restore to initial state or default values"
+      }
     ],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 28,
       "requiredProps": 0,
@@ -3857,6 +3945,9 @@
     },
     "subComponentApis": {
       "Item": {
+        "whenCn": "需要为表单控件添加标签、错误提示、必填标记等界面元素时使用。这是最常用的表单布局组件，适合包装 Input、Select、DatePicker 等表单控件",
+        "whenEn": "Use when you need to add UI elements like labels, error messages, and required marks to form controls. This is the most commonly used form layout component, suitable for wrapping Input, Select, DatePicker and other form controls",
+        "description": "表单项组件，用于包装表单控件并提供标签、错误提示等功能。每个表单控件都应该被 Form.Item 包裹，以便正确显示标签和校验信息",
         "props": [
           {
             "name": "className",
@@ -3948,6 +4039,9 @@
         ]
       },
       "Field": {
+        "whenCn": "需要创建自定义表单控件或封装复杂的表单逻辑时使用。适合将非标准表单组件（如自定义的颜色选择器、代码编辑器等）接入表单系统",
+        "whenEn": "Use when you need to create custom form controls or encapsulate complex form logic. Suitable for integrating non-standard form components (like custom color pickers, code editors, etc.) into the form system",
+        "description": "表单字段组件，用于创建自定义的表单控件。提供了表单数据绑定、校验等功能，适用于封装复杂的自定义表单组件",
         "props": [
           {
             "name": "name",
@@ -3994,6 +4088,9 @@
         ]
       },
       "FieldSet": {
+        "whenCn": "需要处理动态表单列表、嵌套对象或数组数据时使用。典型场景包括：动态添加/删除表单项、编辑用户列表、管理多个地址信息等",
+        "whenEn": "Use when you need to handle dynamic form lists, nested objects or array data. Typical scenarios include: dynamically adding/removing form items, editing user lists, managing multiple address information, etc.",
+        "description": "表单字段集组件，用于管理一组相关的表单字段。适用于处理对象或数组类型的表单数据，如动态表单列表、嵌套对象等复杂场景",
         "props": [
           {
             "name": "name",
@@ -4034,6 +4131,9 @@
         ]
       },
       "Flow": {
+        "whenCn": "需要实现表单联动、条件渲染或监听表单数据变化时使用。例如：根据选择的国家显示不同的省份列表、根据用户类型显示不同的表单字段等",
+        "whenEn": "Use when you need to implement form linkage, conditional rendering or listen to form data changes. For example: showing different province lists based on selected country, displaying different form fields based on user type, etc.",
+        "description": "表单流程组件，用于监听表单数据变化并执行相应的副作用。适用于实现表单联动、条件渲染等场景",
         "props": [
           {
             "name": "children",
@@ -4058,6 +4158,9 @@
         ]
       },
       "Button": {
+        "whenCn": "需要防止回车键意外提交表单，或需要在提交前执行自定义逻辑（如确认对话框）时使用。适合复杂表单或需要额外验证步骤的场景",
+        "whenEn": "Use when you need to prevent accidental form submission via Enter key, or need to execute custom logic before submission (like confirmation dialogs). Suitable for complex forms or scenarios requiring additional validation steps",
+        "description": "表单按钮组件，htmlType=\\\"button\\\"。防止用户在表单输入框中按回车键时意外提交表单。用户必须显式点击按钮才能提交表单。内部调用 formFunc.submit() 以更好地控制提交逻辑",
         "props": [
           {
             "name": "className",
@@ -4159,6 +4262,113 @@
         ]
       },
       "Submit": {
+        "whenCn": "需要支持回车键快速提交表单时使用。适合登录表单、搜索表单等简单场景，用户体验更流畅",
+        "whenEn": "Use when you need to support quick form submission via Enter key. Suitable for login forms, search forms and other simple scenarios for smoother user experience",
+        "description": "表单提交按钮组件，htmlType=\\\"submit\\\"。使用浏览器原生提交行为。当用户在任何表单输入框中按回车键时，会自动触发此按钮。适用于希望支持回车提交的简单表单",
+        "props": [
+          {
+            "name": "className",
+            "type": "string",
+            "required": false,
+            "description": "自定义类名"
+          },
+          {
+            "name": "style",
+            "type": "CSSProperties",
+            "required": false,
+            "description": "自定义样式"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode",
+            "required": false,
+            "description": "按钮里面的内容, 可以是文字图标等"
+          },
+          {
+            "name": "onClick",
+            "type": "MouseEventHandler<Element>",
+            "required": false,
+            "description": "按钮点击回调"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false,
+            "defaultValue": "false",
+            "description": "禁用"
+          },
+          {
+            "name": "renderLoading",
+            "type": "((buttonEl: ReactNode) => ReactElement)",
+            "required": false,
+            "description": "自定义loading"
+          },
+          {
+            "name": "loading",
+            "type": "boolean",
+            "required": false,
+            "defaultValue": "false",
+            "description": "loading 状态"
+          },
+          {
+            "name": "mode",
+            "type": "\"text\" | \"outline\" | \"dashed\"",
+            "required": false,
+            "description": "按钮风格"
+          },
+          {
+            "name": "type",
+            "type": "| \"default\" | \"primary\" | \"secondary\" | \"danger\" | \"warning\" | \"success\" | \"link\"",
+            "required": false,
+            "defaultValue": "\\\"default\\\"",
+            "description": "按钮类型"
+          },
+          {
+            "name": "size",
+            "type": "\"default\" | \"small\" | \"large\"",
+            "required": false,
+            "defaultValue": "\\\"default\\\"",
+            "description": "按钮尺寸"
+          },
+          {
+            "name": "space",
+            "type": "boolean",
+            "required": false,
+            "defaultValue": "false",
+            "description": "仅有2个汉字的按钮，是否在2个汉字中间插入空格"
+          },
+          {
+            "name": "href",
+            "type": "string",
+            "required": false,
+            "description": "如果设置了 href 属性，将会用 <a> 代替 <button>"
+          },
+          {
+            "name": "target",
+            "type": "string",
+            "required": false,
+            "description": "当设置了 href 属性时，target 会被设置到 <a> 元素上"
+          },
+          {
+            "name": "shape",
+            "type": "\"circle\" | \"round\" | \"square\"",
+            "required": false,
+            "defaultValue": "\\\"default\\\"",
+            "description": "设置按钮形状"
+          },
+          {
+            "name": "htmlType",
+            "type": "\"button\" | \"submit\" | \"reset\"",
+            "required": false,
+            "defaultValue": "\\\"button\\\"",
+            "description": "按钮原生type属性"
+          }
+        ]
+      },
+      "Reset": {
+        "whenCn": "需要提供重置表单功能时使用。适合复杂表单或编辑表单，让用户可以快速恢复到初始状态或默认值",
+        "whenEn": "Use when you need to provide form reset functionality. Suitable for complex forms or edit forms, allowing users to quickly restore to initial state or default values",
+        "description": "表单重置按钮组件，htmlType=\\\"reset\\\"。点击时将所有表单字段重置为初始值。适用于需要让用户快速恢复初始状态的复杂表单",
         "props": [
           {
             "name": "className",
@@ -4334,6 +4544,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 6,
       "requiredProps": 0,
@@ -4427,6 +4638,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 8,
       "requiredProps": 0,
@@ -4644,9 +4856,15 @@
       }
     ],
     "subComponents": [
-      "Group"
+      {
+        "name": "Group",
+        "description": "",
+        "whenCn": "",
+        "whenEn": ""
+      }
     ],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 21,
       "requiredProps": 0,
@@ -4655,6 +4873,9 @@
     },
     "subComponentApis": {
       "Group": {
+        "whenCn": "",
+        "whenEn": "",
+        "description": "",
         "props": [
           {
             "name": "style",
@@ -5158,9 +5379,15 @@
       }
     ],
     "subComponents": [
-      "Group"
+      {
+        "name": "Group",
+        "description": "",
+        "whenCn": "",
+        "whenEn": ""
+      }
     ],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 42,
       "requiredProps": 0,
@@ -5169,6 +5396,9 @@
     },
     "subComponentApis": {
       "Group": {
+        "whenCn": "",
+        "whenEn": "",
+        "description": "",
         "props": [
           {
             "name": "className",
@@ -5334,6 +5564,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 9,
       "requiredProps": 0,
@@ -5605,6 +5836,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 26,
       "requiredProps": 2,
@@ -5857,6 +6089,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 24,
       "requiredProps": 1,
@@ -5924,6 +6157,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 2,
       "requiredProps": 1,
@@ -6246,6 +6480,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 29,
       "requiredProps": 0,
@@ -6444,6 +6679,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 17,
       "requiredProps": 0,
@@ -6747,6 +6983,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 27,
       "requiredProps": 0,
@@ -6899,6 +7136,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 13,
       "requiredProps": 0,
@@ -7052,6 +7290,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 10,
       "requiredProps": 0,
@@ -7259,6 +7498,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 20,
       "requiredProps": 0,
@@ -7326,6 +7566,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 1,
       "requiredProps": 0,
@@ -7352,21 +7593,24 @@
         "type": "any",
         "required": false,
         "description": "选中的值。在表单中使用时，此属性由表单管理。注意：请勿使用 undefined 或 null 作为有效选项值，当 value 为 undefined/null 时组件将跳过处理",
-        "when": "For controlled component usage; omit when used inside Form"
+        "whenCn": "用于受控组件；在 Form 内使用时可省略",
+        "whenEn": "For controlled component usage; omit when used inside Form"
       },
       {
         "name": "data",
         "type": "DataItem[]",
         "required": false,
         "description": "下拉列表的选项数据数组",
-        "when": "Use for flat list data structure"
+        "whenCn": "用于扁平的列表数据结构",
+        "whenEn": "Use for flat list data structure"
       },
       {
         "name": "treeData",
         "type": "Object[]",
         "required": false,
         "description": "树形结构数据，包含嵌套的子节点。格式：[{children: [...]}]",
-        "when": "Use for hierarchical/nested data structure instead of flat data"
+        "whenCn": "用于层级/嵌套数据结构，替代扁平数据",
+        "whenEn": "Use for hierarchical/nested data structure instead of flat data"
       },
       {
         "name": "noCache",
@@ -7374,21 +7618,23 @@
         "required": false,
         "defaultValue": "false",
         "description": "禁用值与数据项的缓存。默认情况下，Select 会缓存 value 对应的 data 项以优化性能。当 data 频繁变化时，建议设为 true 以确保组件始终使用最新数据",
-        "when": "When data updates frequently or dynamically"
+        "whenCn": "当数据频繁更新或动态变化时使用",
+        "whenEn": "When data updates frequently or dynamically"
       },
       {
         "name": "defaultValue",
         "type": "Value",
         "required": false,
         "description": "非受控组件的初始值",
-        "when": "需要设置初始选中值但不需要外部控制时使用"
+        "whenCn": "需要设置初始选中值但不需要外部控制时使用"
       },
       {
         "name": "separator",
         "type": "string",
         "required": false,
         "description": "多选模式下，使用此分隔符将选中值连接成字符串",
-        "when": "When backend expects comma-separated or other delimited string"
+        "whenCn": "当后端需要逗号分隔或其他分隔符字符串时使用",
+        "whenEn": "When backend expects comma-separated or other delimited string"
       },
       {
         "name": "multiple",
@@ -7396,7 +7642,7 @@
         "required": false,
         "defaultValue": "false",
         "description": "是否开启多选模式",
-        "when": "需要选择多个选项时使用"
+        "whenCn": "需要选择多个选项时使用"
       },
       {
         "name": "childrenKey",
@@ -7404,7 +7650,8 @@
         "required": false,
         "defaultValue": "\\\"children\\\"",
         "description": "指定树形数据中子节点的属性名称",
-        "when": "When using treeData with a different property name for children"
+        "whenCn": "当使用 treeData 且子节点属性名不是 \\\"children\\\" 时使用",
+        "whenEn": "When using treeData with a different property name for children"
       },
       {
         "name": "disabled",
@@ -7412,7 +7659,7 @@
         "required": false,
         "defaultValue": "false",
         "description": "为 true 时禁用全部选项；为函数时根据返回值禁用特定选项",
-        "when": "需要禁用整个选择器或根据条件禁用特定选项时使用"
+        "whenCn": "需要禁用整个选择器或根据条件禁用特定选项时使用"
       },
       {
         "name": "prediction",
@@ -7420,7 +7667,7 @@
         "required": false,
         "defaultValue": "(val, d) => val===format(d)",
         "description": "自定义匹配函数，用于判断 value 是否与数据项匹配。解决 JavaScript 引用相等（===）的局限性，即内容相同但引用不同的对象会被判定为不相等的问题",
-        "when": "当选中值为对象类型且数据源会重新生成（如从接口获取）时使用，避免因引用变化导致的匹配失败"
+        "whenCn": "当选中值为对象类型且数据源会重新生成（如从接口获取）时使用，避免因引用变化导致的匹配失败"
       },
       {
         "name": "format",
@@ -7428,21 +7675,21 @@
         "required": false,
         "defaultValue": "d => d",
         "description": "格式化数据项为选中值。字符串：提取对应属性（如 \\\"id\\\" 获取 d.id）。函数：从数据项返回自定义值",
-        "when": "当数据项为对象但只需要其中某个属性作为值时使用"
+        "whenCn": "当数据项为对象但只需要其中某个属性作为值时使用"
       },
       {
         "name": "onChange",
         "type": "((value: Value, data?: DataItem , checked?: boolean ) => void)",
         "required": false,
         "description": "值变更回调。参数：value（选中值）、data（选中的数据项）、checked（选中状态）",
-        "when": "需要响应选择变化时使用"
+        "whenCn": "需要响应选择变化时使用"
       },
       {
         "name": "groupBy",
         "type": "((item: DataItem, index?: number , data?: DataItem[] ) => string)",
         "required": false,
         "description": "通过返回分组名称对选项进行分组。参数：item（当前要分类的数据项）、index（数据项在数组中的索引位置）、data（完整的数据数组，提供上下文信息）",
-        "when": "需要将选项按类别分组显示时使用，如按部门、类型或首字母等条件组织选项"
+        "whenCn": "需要将选项按类别分组显示时使用，如按部门、类型或首字母等条件组织选项"
       },
       {
         "name": "className",
@@ -7494,7 +7741,8 @@
         "type": "ReactNode",
         "required": false,
         "description": "自定义空状态内容。与 renderOptionList 搭配使用时，将 emptyText 设置为 false 可禁用此功能，需要自定义空内容时可在 renderOptionList 中处理",
-        "when": "When no options match the filter or data array is empty"
+        "whenCn": "当没有选项匹配过滤条件或数据数组为空时使用",
+        "whenEn": "When no options match the filter or data array is empty"
       },
       {
         "name": "keygen",
@@ -7502,7 +7750,8 @@
         "required": true,
         "defaultValue": "index",
         "description": "生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 \\\"id\\\"，相当于 (d) => d.id。默认值为数组索引。对于简单数组（字符串/数字），可以使用默认值。但对于对象数组，必须指定合适的 keygen 以避免错误。如果不指定 keygen，组件会将整个对象作为 key，当 renderItem 默认为 (d) => d 时，会导致将对象直接渲染到 DOM 中，引发 React 渲染错误。",
-        "when": "Always required for object arrays; optional for primitive arrays"
+        "whenCn": "对象数组必须指定；基础类型数组可选",
+        "whenEn": "Always required for object arrays; optional for primitive arrays"
       },
       {
         "name": "clearable",
@@ -7510,14 +7759,16 @@
         "required": false,
         "defaultValue": "false",
         "description": "启用时显示清除图标，可一键清空所有选中值",
-        "when": "When users need ability to quickly clear selection"
+        "whenCn": "当用户需要快速清空选择时使用",
+        "whenEn": "When users need ability to quickly clear selection"
       },
       {
         "name": "placeholder",
         "type": "string",
         "required": false,
         "description": "未选择任何选项时显示的占位文本",
-        "when": "To provide hint text when select is empty"
+        "whenCn": "为空选择框提供提示文本时使用",
+        "whenEn": "To provide hint text when select is empty"
       },
       {
         "name": "loading",
@@ -7525,28 +7776,32 @@
         "required": false,
         "defaultValue": "false",
         "description": "加载状态指示器。为 true 时显示默认的 Spin 组件，也可传入自定义加载组件",
-        "when": "When fetching data asynchronously or during search operations"
+        "whenCn": "异步获取数据或搜索操作期间使用",
+        "whenEn": "When fetching data asynchronously or during search operations"
       },
       {
         "name": "header",
         "type": "ReactNode",
         "required": false,
         "description": "自定义下拉列表顶部内容",
-        "when": "To display instructions, filters, or actions above options"
+        "whenCn": "在选项上方显示说明、过滤器或操作按钮时使用",
+        "whenEn": "To display instructions, filters, or actions above options"
       },
       {
         "name": "footer",
         "type": "ReactNode",
         "required": false,
         "description": "自定义下拉列表底部内容",
-        "when": "To display summary, actions, or load more button below options"
+        "whenCn": "在选项下方显示汇总、操作按钮或加载更多按钮时使用",
+        "whenEn": "To display summary, actions, or load more button below options"
       },
       {
         "name": "renderOptionList",
         "type": "((list: ReactNode, info: { loading?: ReactNode; }) => ReactNode)",
         "required": false,
         "description": "自定义渲染整个下拉列表内容。第一个参数 `list` 包含预渲染的选项列表（包括虚拟滚动、多列布局等）。第二个参数 `info` 包含：`loading` - 当前加载状态，可为 boolean（true 时显示默认加载动画）或自定义 ReactNode。注意：与 emptyText 配合使用时，将 emptyText 设为 false 可完全控制空状态渲染",
-        "when": "For complete control over dropdown content (e.g., custom wrapper, animations, additional UI elements around the option list)"
+        "whenCn": "完全控制下拉内容（如自定义容器、动画、在选项列表周围添加额外 UI 元素）时使用",
+        "whenEn": "For complete control over dropdown content (e.g., custom wrapper, animations, additional UI elements around the option list)"
       },
       {
         "name": "border",
@@ -7554,7 +7809,8 @@
         "required": false,
         "defaultValue": "true",
         "description": "控制是否显示选择框边框",
-        "when": "Set to false for borderless design or custom styling"
+        "whenCn": "设为 false 实现无边框设计或自定义样式时使用",
+        "whenEn": "Set to false for borderless design or custom styling"
       },
       {
         "name": "underline",
@@ -7562,28 +7818,32 @@
         "required": false,
         "defaultValue": "false",
         "description": "仅显示底部边框，呈现下划线样式",
-        "when": "For minimal UI design or form-like appearance"
+        "whenCn": "用于极简 UI 设计或类似表单的外观时使用",
+        "whenEn": "For minimal UI design or form-like appearance"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": false,
         "description": "程序化控制下拉列表的显示/隐藏状态",
-        "when": "For controlled dropdown state or custom trigger logic"
+        "whenCn": "用于受控的下拉状态或自定义触发逻辑时使用",
+        "whenEn": "For controlled dropdown state or custom trigger logic"
       },
       {
         "name": "width",
         "type": "string | number",
         "required": false,
         "description": "选择框的宽度。可接受数字（像素）或带单位的字符串",
-        "when": "To set fixed width instead of default auto-sizing"
+        "whenCn": "设置固定宽度替代默认的自动调整宽度时使用",
+        "whenEn": "To set fixed width instead of default auto-sizing"
       },
       {
         "name": "height",
         "type": "string | number",
         "required": false,
         "description": "下拉列表的最大高度。可接受数字（像素）或带单位的字符串",
-        "when": "To limit dropdown height when many options exist"
+        "whenCn": "当选项较多时限制下拉列表高度使用",
+        "whenEn": "To limit dropdown height when many options exist"
       },
       {
         "name": "optionWidth",
@@ -7591,7 +7851,8 @@
         "required": false,
         "defaultValue": "100%",
         "description": "下拉列表的宽度。可接受数字（像素）或带单位的字符串",
-        "when": "When dropdown needs different width than select input"
+        "whenCn": "当下拉列表需要与选择框不同宽度时使用",
+        "whenEn": "When dropdown needs different width than select input"
       },
       {
         "name": "itemsInView",
@@ -7599,7 +7860,8 @@
         "required": false,
         "defaultValue": "10",
         "description": "一次渲染的最大选项数。使用虚拟滚动优化大数据集性能。如需显示超过 10 个可见项，请调整此值",
-        "when": "Increase when dropdown height shows more than 10 items"
+        "whenCn": "当下拉高度需显示超过 10 个项目时增加此值",
+        "whenEn": "Increase when dropdown height shows more than 10 items"
       },
       {
         "name": "lineHeight",
@@ -7607,7 +7869,8 @@
         "required": false,
         "defaultValue": "32",
         "description": "每个选项的高度。固定高度内容请设置数字；设为 \\\"auto\\\" 则根据内容自适应高度（大数据集时可能影响性能）",
-        "when": "Set number for consistent height items; \\\"auto\\\" for variable content",
+        "whenCn": "固定高度项目设置数字；可变内容使用 \\\"auto\\\"",
+        "whenEn": "Set number for consistent height items; \\\"auto\\\" for variable content",
         "version": "3.4.0 added \\\"auto\\\" mode"
       },
       {
@@ -7616,7 +7879,8 @@
         "required": false,
         "defaultValue": "auto",
         "description": "下拉列表弹出位置。\\\"auto\\\" 会根据可用空间自动调整",
-        "when": "Override auto positioning for specific layout requirements"
+        "whenCn": "需要覆盖自动定位以满足特定布局需求时使用",
+        "whenEn": "Override auto positioning for specific layout requirements"
       },
       {
         "name": "columns",
@@ -7624,14 +7888,16 @@
         "required": false,
         "defaultValue": "1",
         "description": "选项显示的列数。大于 1 时启用多列布局模式",
-        "when": "When many short options need better space utilization"
+        "whenCn": "当有许多短选项需要更好地利用空间时使用",
+        "whenEn": "When many short options need better space utilization"
       },
       {
         "name": "columnsTitle",
         "type": "ReactNode",
         "required": false,
         "description": "多列多选模式下，列顶部显示的标题",
-        "when": "Using multi-column layout with multiple selection"
+        "whenCn": "使用多列布局且启用多选时使用",
+        "whenEn": "Using multi-column layout with multiple selection"
       },
       {
         "name": "showArrow",
@@ -7639,7 +7905,8 @@
         "required": false,
         "defaultValue": "true",
         "description": "显示下拉箭头图标（仅单选模式）",
-        "when": "Set to false for cleaner appearance or custom icon"
+        "whenCn": "设为 false 实现更简洁的外观或使用自定义图标时使用",
+        "whenEn": "Set to false for cleaner appearance or custom icon"
       },
       {
         "name": "focusSelected",
@@ -7647,7 +7914,8 @@
         "required": false,
         "defaultValue": "true",
         "description": "多选模式下启用过滤时，点击选项后是否选中过滤输入框中的文本",
-        "when": "Set to false to preserve filter text after selection"
+        "whenCn": "设为 false 以在选择后保留过滤文本",
+        "whenEn": "Set to false to preserve filter text after selection"
       },
       {
         "name": "trim",
@@ -7655,7 +7923,8 @@
         "required": false,
         "defaultValue": "false",
         "description": "失去焦点时自动删除输入内容的首尾空白字符",
-        "when": "For cleaner data when users may accidentally input spaces"
+        "whenCn": "当用户可能意外输入空格时，用于保持数据整洁",
+        "whenEn": "For cleaner data when users may accidentally input spaces"
       },
       {
         "name": "columnWidth",
@@ -7663,14 +7932,16 @@
         "required": false,
         "defaultValue": "160",
         "description": "多列布局中每列的宽度（仅在 columns > 1 时生效）",
-        "when": "Adjust based on option content length in multi-column mode"
+        "whenCn": "在多列模式下根据选项内容长度调整",
+        "whenEn": "Adjust based on option content length in multi-column mode"
       },
       {
         "name": "maxLength",
         "type": "number",
         "required": false,
         "description": "过滤输入框允许输入的最大字符数",
-        "when": "To limit filter/create input length"
+        "whenCn": "限制过滤/创建输入长度时使用",
+        "whenEn": "To limit filter/create input length"
       },
       {
         "name": "autoAdapt",
@@ -7678,7 +7949,8 @@
         "required": false,
         "defaultValue": "false",
         "description": "下拉列表宽度根据内容自动调整",
-        "when": "When option content varies significantly in width"
+        "whenCn": "当选项内容宽度差异较大时使用",
+        "whenEn": "When option content varies significantly in width"
       },
       {
         "name": "compressed",
@@ -7686,28 +7958,32 @@
         "required": false,
         "defaultValue": "false",
         "description": "压缩多选项显示。true: 根据容器宽度动态计算并显示 \\\"+N\\\"；\\\"no-repeat\\\": 与 true 相同但弹出框中不重复显示已选项；\\\"hide-popover\\\": 仅显示 \\\"+N\\\" 不显示弹出框",
-        "when": "When multiple selections may exceed container width"
+        "whenCn": "当多选项可能超出容器宽度时使用",
+        "whenEn": "When multiple selections may exceed container width"
       },
       {
         "name": "compressedBound",
         "type": "number",
         "required": false,
         "description": "固定显示的标签数量，超出部分显示 \\\"+N\\\"。设置后将始终显示指定数量的标签，不再根据容器宽度动态计算。对于大数据集，推荐设置此属性以避免昂贵的 DOM 计算，提升性能",
-        "when": "With compressed mode and many selections for better performance"
+        "whenCn": "配合压缩模式和大量选项以提升性能时使用",
+        "whenEn": "With compressed mode and many selections for better performance"
       },
       {
         "name": "compressedClassName",
         "type": "string",
         "required": false,
         "description": "压缩项弹出框的 CSS 类名",
-        "when": "To style the compressed items popover"
+        "whenCn": "为压缩项弹出框设置样式时使用",
+        "whenEn": "To style the compressed items popover"
       },
       {
         "name": "renderCompressed",
         "type": "((options: { data: DataItem[], onRemove: (item: DataItem) => void }) => ReactNode)",
         "required": false,
         "description": "自定义渲染压缩/折叠项的显示内容",
-        "when": "To customize the \\\"+N\\\" display or compressed content",
+        "whenCn": "自定义 \\\"+N\\\" 显示或压缩内容时使用",
+        "whenEn": "To customize the \\\"+N\\\" display or compressed content",
         "version": "3.5.0"
       },
       {
@@ -7716,7 +7992,8 @@
         "required": false,
         "defaultValue": "false",
         "description": "从下拉列表中隐藏创建选项。按回车键直接选中创建的值",
-        "when": "With onCreate for cleaner UI when creating is primary action"
+        "whenCn": "配合 onCreate 使用，当创建是主要操作时保持界面简洁",
+        "whenEn": "With onCreate for cleaner UI when creating is primary action"
       },
       {
         "name": "filterSingleSelect",
@@ -7724,14 +8001,16 @@
         "required": false,
         "defaultValue": "false",
         "description": "过滤结果仅剩一个选项时，失焦自动选中该选项（仅在启用过滤时有效）",
-        "when": "For better UX when users expect single match to be selected"
+        "whenCn": "当用户期望单一匹配项被自动选中以提升体验时使用",
+        "whenEn": "For better UX when users expect single match to be selected"
       },
       {
         "name": "defaultExpanded",
         "type": "(string | number)[]",
         "required": false,
         "description": "树形数据中默认展开的节点 key 值（非受控）",
-        "when": "With treeData to show specific nodes expanded initially"
+        "whenCn": "配合 treeData 使用，初始显示特定节点展开",
+        "whenEn": "With treeData to show specific nodes expanded initially"
       },
       {
         "name": "defaultExpandAll",
@@ -7739,14 +8018,16 @@
         "required": false,
         "defaultValue": "false",
         "description": "初始展开所有树节点（仅树形数据有效）",
-        "when": "For small tree datasets where all nodes should be visible"
+        "whenCn": "用于小型树形数据集，所有节点都应该可见时使用",
+        "whenEn": "For small tree datasets where all nodes should be visible"
       },
       {
         "name": "expanded",
         "type": "(string | number)[]",
         "required": false,
         "description": "树形数据中展开的节点 key 值（受控）",
-        "when": "For controlled tree expansion state"
+        "whenCn": "用于受控的树展开状态管理",
+        "whenEn": "For controlled tree expansion state"
       },
       {
         "name": "showHitDescendants",
@@ -7754,7 +8035,8 @@
         "required": false,
         "defaultValue": "false",
         "description": "过滤树形数据时，显示匹配项的所有子节点",
-        "when": "To keep parent-child context visible during search"
+        "whenCn": "在搜索期间保持父子节点上下文可见时使用",
+        "whenEn": "To keep parent-child context visible during search"
       },
       {
         "name": "convertBr",
@@ -7762,14 +8044,16 @@
         "required": false,
         "defaultValue": "\\\" \\\"",
         "description": "粘贴文本时转换换行符。字符串用于替换换行；函数用于转换文本",
-        "when": "When pasting multi-line content with onCreate"
+        "whenCn": "配合 onCreate 粘贴多行内容时使用",
+        "whenEn": "When pasting multi-line content with onCreate"
       },
       {
         "name": "resultClassName",
         "type": "string | ((value: DataItem) => string)",
         "required": false,
         "description": "选中项显示容器的 CSS 类名。可为字符串或基于值返回类名的函数",
-        "when": "To style selected items differently based on value"
+        "whenCn": "根据值为选中项设置不同样式时使用",
+        "whenEn": "To style selected items differently based on value"
       },
       {
         "name": "renderItem",
@@ -7777,7 +8061,8 @@
         "required": false,
         "defaultValue": "d => d",
         "description": "渲染下拉列表中的每个选项。字符串使用属性值；函数自定义显示",
-        "when": "To display complex option content or specific property"
+        "whenCn": "显示复杂选项内容或特定属性时使用",
+        "whenEn": "To display complex option content or specific property"
       },
       {
         "name": "renderResult",
@@ -7785,63 +8070,72 @@
         "required": false,
         "defaultValue": "renderItem",
         "description": "渲染选中项的显示内容。未指定时使用 renderItem",
-        "when": "When selected display differs from dropdown display"
+        "whenCn": "当选中项显示与下拉显示不同时使用",
+        "whenEn": "When selected display differs from dropdown display"
       },
       {
         "name": "renderUnmatched",
         "type": "((value: Value extends (infer U)[] ? U : Value) => ReactNode)",
         "required": false,
         "description": "自定义渲染数据中不存在的值",
-        "when": "When value might not exist in current data (e.g., async loading)"
+        "whenCn": "当值可能不存在于当前数据中时（如异步加载）使用",
+        "whenEn": "When value might not exist in current data (e.g., async loading)"
       },
       {
         "name": "onBlur",
         "type": "((e: any) => void)",
         "required": false,
         "description": "选择框失去焦点时触发",
-        "when": "For form validation or saving draft selections"
+        "whenCn": "用于表单验证或保存草稿选择时使用",
+        "whenEn": "For form validation or saving draft selections"
       },
       {
         "name": "onFocus",
         "type": "((e: any) => void)",
         "required": false,
         "description": "选择框获得焦点时触发",
-        "when": "To load data, show hints, or track analytics"
+        "whenCn": "用于加载数据、显示提示或跟踪分析时使用",
+        "whenEn": "To load data, show hints, or track analytics"
       },
       {
         "name": "onFilter",
         "type": "((text: string, from?: string ) => void | ((data: DataItem) => boolean) )",
         "required": false,
         "description": "启用过滤功能。返回函数用于前端过滤，返回 undefined 用于后端过滤",
-        "when": "For searchable select or large datasets"
+        "whenCn": "用于可搜索选择框或大数据集时使用",
+        "whenEn": "For searchable select or large datasets"
       },
       {
         "name": "onCreate",
         "type": "boolean | ((input: string | DataItem) => string | DataItem)",
         "required": false,
         "description": "从输入创建新选项。true 直接使用输入值；函数将输入转换为选项",
-        "when": "For tags input or allowing custom values"
+        "whenCn": "用于标签输入或允许自定义值时使用",
+        "whenEn": "For tags input or allowing custom values"
       },
       {
         "name": "onEnterExpand",
         "type": "((e: KeyboardEvent<HTMLDivElement>) => boolean)",
         "required": false,
         "description": "按回车键展开下拉框时调用。返回 false 阻止展开",
-        "when": "To customize Enter key behavior"
+        "whenCn": "自定义回车键行为时使用",
+        "whenEn": "To customize Enter key behavior"
       },
       {
         "name": "onCollapse",
         "type": "((collapse: boolean) => void)",
         "required": false,
         "description": "下拉框打开/关闭时触发。参数表示是否收起状态",
-        "when": "To sync UI state or load data on open"
+        "whenCn": "同步 UI 状态或打开时加载数据时使用",
+        "whenEn": "To sync UI state or load data on open"
       },
       {
         "name": "onExpand",
         "type": "((value: (string | number)[]) => void)",
         "required": false,
         "description": "树节点展开/收起时触发。接收展开节点的 key 数组",
-        "when": "For controlled tree expansion or tracking state"
+        "whenCn": "用于受控的树展开或跟踪状态时使用",
+        "whenEn": "For controlled tree expansion or tracking state"
       },
       {
         "name": "emptyAfterSelect",
@@ -7849,7 +8143,8 @@
         "required": false,
         "defaultValue": "false",
         "description": "选中选项后清空过滤输入框",
-        "when": "For better UX in searchable multi-select"
+        "whenCn": "在可搜索多选中提升用户体验时使用",
+        "whenEn": "For better UX in searchable multi-select"
       },
       {
         "name": "filterDelay",
@@ -7857,21 +8152,24 @@
         "required": false,
         "defaultValue": "400",
         "description": "过滤输入的防抖延迟（毫秒）",
-        "when": "Adjust for server-side filtering or performance"
+        "whenCn": "为服务端过滤或性能调整时使用",
+        "whenEn": "Adjust for server-side filtering or performance"
       },
       {
         "name": "loader",
         "type": "((key: string | number, data: DataItem) => void)",
         "required": false,
         "description": "动态加载树节点子级。无 children 的节点展开时触发加载",
-        "when": "For lazy-loading large tree structures"
+        "whenCn": "用于懒加载大型树结构时使用",
+        "whenEn": "For lazy-loading large tree structures"
       },
       {
         "name": "onAdvancedFilter",
         "type": "((text: string) => (data: DataItem) => boolean)",
         "required": false,
         "description": "高级过滤模式，允许在当前层级的过滤结果和原始数据间切换",
-        "when": "For complex filtering scenarios with toggle capability"
+        "whenCn": "用于具有切换能力的复杂过滤场景时使用",
+        "whenEn": "For complex filtering scenarios with toggle capability"
       },
       {
         "name": "reFocus",
@@ -7879,7 +8177,8 @@
         "required": false,
         "defaultValue": "false",
         "description": "启用过滤和创建功能时，选中选项后自动聚焦输入框",
-        "when": "For continuous input in filter+create mode"
+        "whenCn": "在过滤+创建模式下连续输入时使用",
+        "whenEn": "For continuous input in filter+create mode"
       },
       {
         "name": "adjust",
@@ -7887,14 +8186,16 @@
         "required": false,
         "defaultValue": "true",
         "description": "下拉框被视口边缘遮挡时自动调整位置",
-        "when": "Set to false for fixed positioning requirements"
+        "whenCn": "设为 false 用于固定定位需求时使用",
+        "whenEn": "Set to false for fixed positioning requirements"
       },
       {
         "name": "onLoadMore",
         "type": "(() => void | Promise<any>)",
         "required": false,
         "description": "滚动到下拉列表底部时触发，用于无限滚动加载",
-        "when": "For pagination or lazy-loading large datasets",
+        "whenCn": "用于分页或懒加载大数据集时使用",
+        "whenEn": "For pagination or lazy-loading large datasets",
         "version": "3.4.0"
       },
       {
@@ -7903,7 +8204,8 @@
         "required": false,
         "defaultValue": "1",
         "description": "触发 onLoadMore 的滚动阈值（0-1）。1 表示列表底部",
-        "when": "Set lower to preload before reaching bottom",
+        "whenCn": "设置较低值以在到达底部前预加载时使用",
+        "whenEn": "Set lower to preload before reaching bottom",
         "version": "3.4.0"
       },
       {
@@ -7912,7 +8214,8 @@
         "required": false,
         "defaultValue": "\\\"click\\\"",
         "description": "打开下拉框的触发方式",
-        "when": "Use \\\"hover\\\" for quick preview scenarios",
+        "whenCn": "使用 \\\"hover\\\" 用于快速预览场景时使用",
+        "whenEn": "Use \\\"hover\\\" for quick preview scenarios",
         "version": "3.4.0"
       },
       {
@@ -7920,7 +8223,8 @@
         "type": "boolean",
         "required": false,
         "description": "过滤时高亮匹配的文本",
-        "when": "To visually indicate search matches",
+        "whenCn": "视觉标识搜索匹配项时使用",
+        "whenEn": "To visually indicate search matches",
         "version": "3.7.0"
       },
       {
@@ -8180,6 +8484,10 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {
+      "cn": "当 data 为对象数组时，必须正确配置以下属性以确保组件正常工作：\\n1. keygen（必需）：指定唯一标识，避免 React 渲染错误\\n2. format（推荐）：定义 value 的格式，如 format=\\\"id\\\" 将使用对象的 id 属性作为值\\n3. prediction（可选）：当数据源会重新生成时使用，解决对象引用变化导致的匹配失败。如果不设置 format，强烈建议设置 prediction 来确保对象匹配的准确性\\n4. renderItem/renderResult（推荐）：自定义显示内容，避免显示 [object Object]\\n\\n重要提示：format 只影响 value 格式，不影响 renderItem 和 renderResult 的显示内容",
+      "en": "When data is an object array, the following properties must be configured correctly:\\n1. keygen (required): Specify unique identifier to avoid React rendering errors\\n2. format (recommended): Define value format, e.g., format=\\\"id\\\" uses object\\\"s id property as value\\n3. prediction (optional): Use when data source regenerates to solve matching failures due to reference changes. If format is not set, it\\\"s strongly recommended to set prediction for accurate object matching\\n4. renderItem/renderResult (recommended): Customize display content to avoid showing [object Object]\\n\\nImportant: format only affects value format, not the display content of renderItem and renderResult"
+    },
     "apiSummary": {
       "totalProps": 86,
       "requiredProps": 1,
@@ -8270,6 +8578,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 8,
       "requiredProps": 0,
@@ -8508,6 +8817,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 22,
       "requiredProps": 0,
@@ -8626,6 +8936,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 11,
       "requiredProps": 0,
@@ -8781,6 +9092,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 12,
       "requiredProps": 1,
@@ -8879,6 +9191,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 9,
       "requiredProps": 0,
@@ -9038,6 +9351,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 18,
       "requiredProps": 0,
@@ -9067,215 +9381,281 @@
         "name": "onCellClick",
         "type": "((data: DataItem, info: { rowIndex: number; columnIndex: number; columnKey: string | number; }) => void)",
         "required": false,
-        "description": "单元格点击事件的回调函数。参数：data（行数据），info.rowIndex（行索引），info.columnIndex（列索引），info.columnKey（列的唯一标识）"
+        "description": "单元格点击事件的回调函数。参数：data（行数据），info.rowIndex（行索引），info.columnIndex（列索引），info.columnKey（列的唯一标识）",
+        "whenCn": "需要单元格级别的交互（如单元格编辑、详情查看）时使用",
+        "whenEn": "Use when cell-level interaction is needed (e.g., cell editing, detail viewing)"
       },
       {
         "name": "scrollLeft",
         "type": "number",
         "required": false,
-        "description": "横向滚动位置（仅在虚拟滚动模式下生效）"
+        "description": "横向滚动位置（仅在虚拟滚动模式下生效）",
+        "whenCn": "需要程序化控制横向滚动位置时使用",
+        "whenEn": "Use to programmatically control horizontal scroll position"
       },
       {
         "name": "rowHeight",
         "type": "number",
         "required": false,
         "defaultValue": "40",
-        "description": "单行的预估高度。用于虚拟滚动的计算和滚动条显示"
+        "description": "单行的预估高度。用于虚拟滚动的计算和滚动条显示",
+        "whenCn": "当行高与默认值差异较大时调整，以优化虚拟滚动性能",
+        "whenEn": "Adjust when row height differs significantly from default to optimize virtual scrolling performance"
       },
       {
         "name": "hover",
         "type": "boolean",
         "required": false,
         "defaultValue": "true",
-        "description": "是否启用行的鼠标悬浮高亮效果"
+        "description": "是否启用行的鼠标悬浮高亮效果",
+        "whenCn": "设为 false 可在复杂表格或特殊设计需求时禁用悬浮效果",
+        "whenEn": "Set to false to disable hover effect for complex tables or special design requirements"
       },
       {
         "name": "empty",
         "type": "ReactNode",
         "required": false,
         "defaultValue": "getLocale(\\\"Data not found\\\")",
-        "description": "表格无数据时显示的内容"
+        "description": "表格无数据时显示的内容",
+        "whenCn": "自定义空数据提示，如添加操作按钮或个性化提示信息",
+        "whenEn": "Customize empty state message, e.g., add action buttons or personalized hints"
       },
       {
         "name": "cellSelectable",
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "是否启用 Ctrl/Cmd + 点击来选中单元格"
+        "description": "是否启用 Ctrl/Cmd + 点击来选中单元格",
+        "whenCn": "需要单元格选择功能（如复制单元格内容）时使用",
+        "whenEn": "Use when cell selection is needed (e.g., copying cell content)"
       },
       {
         "name": "height",
         "type": "string | number",
         "required": false,
-        "description": "表格高度（与 style.height 作用相同）"
+        "description": "表格高度（与 style.height 作用相同）",
+        "whenCn": "需要固定表格高度或启用纵向滚动时使用",
+        "whenEn": "Use to set fixed table height or enable vertical scrolling"
       },
       {
         "name": "onScroll",
         "type": "((x: number, y: number, left: number, top: number) => void)",
         "required": false,
-        "description": "滚动事件回调函数。参数：x（横向滚动比例 0-1），y（纵向滚动比例 0-1），left（横向滚动像素值），top（纵向滚动像素值）"
+        "description": "滚动事件回调函数。参数：x（横向滚动比例 0-1），y（纵向滚动比例 0-1），left（横向滚动像素值），top（纵向滚动像素值）",
+        "whenCn": "需要监听滚动位置（如同步滚动、懒加载）时使用",
+        "whenEn": "Use to monitor scroll position (e.g., synchronized scrolling, lazy loading)"
       },
       {
         "name": "pagination",
         "type": "PaginationProps",
         "required": false,
-        "description": "分页配置项。详见 [Pagination](/components/Pagination) 组件文档"
+        "description": "分页配置项。详见 [Pagination](/components/Pagination) 组件文档",
+        "whenCn": "数据量较大需要分页显示时使用",
+        "whenEn": "Use when large datasets need paginated display"
       },
       {
         "name": "loading",
         "type": "ReactNode",
         "required": false,
         "defaultValue": "false",
-        "description": "加载状态。为 true 时显示默认的 [Spin](/components/Spin) 组件，也可传入自定义的加载组件"
+        "description": "加载状态。为 true 时显示默认的 [Spin](/components/Spin) 组件，也可传入自定义的加载组件",
+        "whenCn": "数据加载中或异步操作时显示加载状态",
+        "whenEn": "Show loading state during data fetching or async operations"
       },
       {
         "name": "virtual",
         "type": "boolean | \"lazy\"",
         "required": false,
-        "description": "启用虚拟滚动。设置为 \\\"lazy\\\" 可在滚动时避免重新渲染，提升性能"
+        "description": "启用虚拟滚动。设置为 \\\"lazy\\\" 可在滚动时避免重新渲染，提升性能",
+        "whenCn": "大数据量表格（超过 100 行）时使用以优化性能",
+        "whenEn": "Use for large datasets (over 100 rows) to optimize performance"
       },
       {
         "name": "rowsInView",
         "type": "number",
         "required": false,
         "defaultValue": "20",
-        "description": "单次渲染的最大行数。使用懒加载优化大数据量性能。若表格超过 20 行，可调整此值。设为 0 渲染全部数据"
+        "description": "单次渲染的最大行数。使用懒加载优化大数据量性能。若表格超过 20 行，可调整此值。设为 0 渲染全部数据",
+        "whenCn": "根据可视区域行数调整以平衡性能和用户体验",
+        "whenEn": "Adjust based on visible rows to balance performance and user experience"
       },
       {
         "name": "size",
         "type": "\"small\" | \"large\" | \"default\"",
         "required": false,
         "defaultValue": "\\\"default\\\"",
-        "description": "表格尺寸大小"
+        "description": "表格尺寸大小",
+        "whenCn": "根据内容密度和设计需求选择合适的尺寸",
+        "whenEn": "Choose appropriate size based on content density and design requirements"
       },
       {
         "name": "radio",
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "启用单选模式（只能选中一行）"
+        "description": "启用单选模式（只能选中一行）",
+        "whenCn": "需要单选功能（如选择主记录、默认项）时使用",
+        "whenEn": "Use when single selection is needed (e.g., selecting primary record, default item)"
       },
       {
         "name": "verticalAlign",
         "type": "\"top\" | \"middle\"",
         "required": false,
         "defaultValue": "\\\"top\\\"",
-        "description": "单元格内容的垂直对齐方式"
+        "description": "单元格内容的垂直对齐方式",
+        "whenCn": "当单元格内容高度不一致时调整对齐方式",
+        "whenEn": "Adjust alignment when cell content heights vary"
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": false,
-        "description": "原生 tr/td 元素（仅应用样式，不提供功能）"
+        "description": "原生 tr/td 元素（仅应用样式，不提供功能）",
+        "whenCn": "需要使用原生 HTML 表格元素但保留样式时使用",
+        "whenEn": "Use when native HTML table elements are needed but want to keep styling"
       },
       {
         "name": "width",
         "type": "string | number",
         "required": false,
-        "description": "表格总宽度。默认为容器宽度，不能小于各列宽度之和"
+        "description": "表格总宽度。默认为容器宽度，不能小于各列宽度之和",
+        "whenCn": "需要固定表格宽度或处理横向滚动时使用",
+        "whenEn": "Use to set fixed table width or handle horizontal scrolling"
       },
       {
         "name": "columns",
         "type": "CommonColumn[]",
         "required": false,
         "defaultValue": "[]",
-        "description": "列配置数组。详见 Table columns 配置"
+        "description": "列配置数组。详见 Table columns 配置",
+        "whenCn": "定义表格的列结构、渲染方式和行为",
+        "whenEn": "Define table column structure, rendering and behavior"
       },
       {
         "name": "disabled",
         "type": "boolean | ((d: DataItem) => boolean)",
         "required": false,
-        "description": "禁用行选择。为 true 时禁用所有行。为函数时：参数 d 为行数据，返回 true 禁用该行"
+        "description": "禁用行选择。为 true 时禁用所有行。为函数时：参数 d 为行数据，返回 true 禁用该行",
+        "whenCn": "需要根据条件禁用某些行的选择功能时使用",
+        "whenEn": "Use to disable row selection based on conditions"
       },
       {
         "name": "treeEmptyExpand",
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "树形表格中，即使节点没有子数据也显示展开按钮"
+        "description": "树形表格中，即使节点没有子数据也显示展开按钮",
+        "whenCn": "在树形表格中需要动态加载子节点时使用",
+        "whenEn": "Use in tree tables when child nodes are loaded dynamically"
       },
       {
         "name": "rowClickAttr",
         "type": "string | boolean | string[]",
         "required": false,
         "defaultValue": "[\\\"*\\\"]",
-        "description": "指定哪些元素可以触发行点击。\\\"*\\\" 表示任何元素都可触发，也可指定特定的属性名"
+        "description": "指定哪些元素可以触发行点击。\\\"*\\\" 表示任何元素都可触发，也可指定特定的属性名",
+        "whenCn": "需要精确控制行点击触发区域时使用",
+        "whenEn": "Use to precisely control which areas trigger row clicks"
       },
       {
         "name": "onRowClick",
         "type": "((rowData: DataItem, index: number, fireAttr?: string | boolean ) => void)",
         "required": false,
-        "description": "行点击事件回调。参数：rowData（当前行数据），index（行索引），fireAttr（触发点击的元素属性）"
+        "description": "行点击事件回调。参数：rowData（当前行数据），index（行索引），fireAttr（触发点击的元素属性）",
+        "whenCn": "需要响应整行点击（如展开详情、导航）时使用",
+        "whenEn": "Use when responding to full row clicks (e.g., expand details, navigation)"
       },
       {
         "name": "striped",
         "type": "boolean",
         "required": false,
-        "description": "启用交替行颜色（斑马纹效果）"
+        "description": "启用交替行颜色（斑马纹效果）",
+        "whenCn": "需要通过视觉区分提高表格可读性时使用",
+        "whenEn": "Use to improve table readability through visual distinction"
       },
       {
         "name": "rowClassName",
         "type": "(rowData: DataItem, index: number) => string | undefined",
         "required": false,
-        "description": "为每一行设置自定义 CSS 类名。参数：rowData（行数据），index（行索引）。返回类名字符串"
+        "description": "为每一行设置自定义 CSS 类名。参数：rowData（行数据），index（行索引）。返回类名字符串",
+        "whenCn": "需要根据数据状态（如高亮、警告）自定义行样式时使用",
+        "whenEn": "Use to customize row styles based on data state (e.g., highlight, warning)"
       },
       {
         "name": "rowEvents",
         "type": "object",
         "required": false,
-        "description": "表格行 (tr) 元素的事件处理器集合"
+        "description": "表格行 (tr) 元素的事件处理器集合",
+        "whenCn": "需要监听行级别的 DOM 事件（如鼠标悬停、右键菜单）时使用",
+        "whenEn": "Use to listen to row-level DOM events (e.g., hover, context menu)"
       },
       {
         "name": "data",
         "type": "object[]",
         "required": false,
-        "description": "表格数据数组"
+        "description": "表格数据数组",
+        "whenCn": "提供表格要显示的数据源",
+        "whenEn": "Provide data source for table display"
       },
       {
         "name": "showSelectAll",
         "type": "boolean",
         "required": false,
         "defaultValue": "true",
-        "description": "是否在表头显示全选复选框"
+        "description": "是否在表头显示全选复选框",
+        "whenCn": "需要隐藏全选功能（如分页场景下避免误操作）时设为 false",
+        "whenEn": "Set to false to hide select-all (e.g., avoid mistakes in paginated scenarios)"
       },
       {
         "name": "bordered",
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "显示表格边框"
+        "description": "显示表格边框",
+        "whenCn": "需要清晰的表格边界或符合特定设计规范时使用",
+        "whenEn": "Use when clear table boundaries are needed or to meet design requirements"
       },
       {
         "name": "treeCheckAll",
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "全选时是否包含所有子孙节点（树形模式）"
+        "description": "全选时是否包含所有子孙节点（树形模式）",
+        "whenCn": "树形表格中需要级联选择所有子节点时使用",
+        "whenEn": "Use in tree tables when cascading selection of all child nodes is needed"
       },
       {
         "name": "renderSorter",
         "type": "((params: { status?: \"asc\" | \"desc\" | null , triggerAsc: () => void, triggerDesc: () => void }) => ReactNode)",
         "required": false,
-        "description": "自定义渲染排序图标的函数。参数：status 当前排序状态（\\\"asc\\\"|\\\"desc\\\"|null），triggerAsc 触发升序排序，triggerDesc 触发降序排序"
+        "description": "自定义渲染排序图标的函数。参数：status 当前排序状态（\\\"asc\\\"|\\\"desc\\\"|null），triggerAsc 触发升序排序，triggerDesc 触发降序排序",
+        "whenCn": "需要自定义排序图标样式或交互方式时使用",
+        "whenEn": "Use to customize sort icon style or interaction"
       },
       {
         "name": "hideHeader",
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "隐藏表格头部"
+        "description": "隐藏表格头部",
+        "whenCn": "特殊场景下不需要表头（如纯数据展示）时使用",
+        "whenEn": "Use in special cases when header is not needed (e.g., pure data display)"
       },
       {
         "name": "summary",
         "type": "({ render: () => ReactNode, colSpan?: number , rowSpan?: number })[] | ({ render: () => ReactNode, colSpan?: number , rowSpan?: number })[][]",
         "required": false,
-        "description": "表格底部，用于显示汇总行"
+        "description": "表格底部，用于显示汇总行",
+        "whenCn": "需要显示数据汇总、统计信息或总计时使用",
+        "whenEn": "Use to display data summaries, statistics or totals"
       },
       {
         "name": "sticky",
         "type": "boolean | { top?: number ; css?: boolean ; target?: Element | null ; }",
         "required": false,
-        "description": "固定表头。为 true 时固定在顶部（偏移量为 0）。也可传入对象配置 top 偏移量和 CSS 模式等选项"
+        "description": "固定表头。为 true 时固定在顶部（偏移量为 0）。也可传入对象配置 top 偏移量和 CSS 模式等选项",
+        "whenCn": "长表格需要保持表头可见以便理解数据含义时使用",
+        "whenEn": "Use for long tables to keep header visible for data context"
       },
       {
         "name": "showTopScrollbar",
@@ -9283,6 +9663,8 @@
         "required": false,
         "defaultValue": "false",
         "description": "在表格顶部显示横向滚动条",
+        "whenCn": "宽表格且表头需要滚动控制时使用，避免滚动到底部才能横向滚动",
+        "whenEn": "Use for wide tables when header needs scroll control without scrolling to bottom",
         "version": "3.4.0"
       },
       {
@@ -9291,43 +9673,57 @@
         "required": false,
         "defaultValue": "false",
         "description": "在表格底部显示固定的横向滚动条。可传入布尔值或包含 bottom 偏移量和 zIndex 的对象",
+        "whenCn": "长表格需要始终可见的横向滚动控制时使用",
+        "whenEn": "Use for long tables needing always-visible horizontal scroll control",
         "version": "3.7.0"
       },
       {
         "name": "tableRef",
         "type": "((table: TableRef) => void)",
         "required": false,
-        "description": "获取表格实例引用。提供方法：scrollToIndex 滚动到指定行，getRenderIndexByData 获取数据的渲染索引，scrollColumnIntoView 滚动到指定列，scrollColumnByLeft 按像素横向滚动，sortByColumn 程序化排序。请谨慎使用，仅在虚拟模式下支持"
+        "description": "获取表格实例引用。提供方法：scrollToIndex 滚动到指定行，getRenderIndexByData 获取数据的渲染索引，scrollColumnIntoView 滚动到指定列，scrollColumnByLeft 按像素横向滚动，sortByColumn 程序化排序。请谨慎使用，仅在虚拟模式下支持",
+        "whenCn": "需要程序化控制表格滚动或排序行为时使用",
+        "whenEn": "Use for programmatic control of table scrolling or sorting behavior"
       },
       {
         "name": "onRowSelect",
         "type": "((rows: Value) => void)",
         "required": false,
-        "description": "行选择回调函数。参数 rows 包含选中的数据。如需数据格式化，请配合使用 format 和 prediction"
+        "description": "行选择回调函数。参数 rows 包含选中的数据。如需数据格式化，请配合使用 format 和 prediction",
+        "whenCn": "需要响应行选择变化进行后续操作时使用",
+        "whenEn": "Use to respond to row selection changes for subsequent operations"
       },
       {
         "name": "defaultTreeExpandKeys",
         "type": "(string | number)[]",
         "required": false,
-        "description": "默认展开行(非受控)"
+        "description": "默认展开行(非受控)",
+        "whenCn": "需要设置初始展开的树形行但不需要外部控制时使用",
+        "whenEn": "Use to set initially expanded tree rows without external control"
       },
       {
         "name": "onTreeExpand",
         "type": "((openKeys: (string | number)[], data: Item, expand: boolean, index: number) => void)",
         "required": false,
-        "description": "当设置 treeExpandKeys 后，展开行时会触发该回调，keys 为展开的行"
+        "description": "当设置 treeExpandKeys 后，展开行时会触发该回调，keys 为展开的行",
+        "whenCn": "需要响应树形行展开/折叠操作时使用",
+        "whenEn": "Use to respond to tree row expand/collapse operations"
       },
       {
         "name": "treeExpandKeys",
         "type": "(string | number)[]",
         "required": false,
-        "description": "树形数据展开行，受控"
+        "description": "树形数据展开行，受控",
+        "whenCn": "需要外部控制树形行的展开状态时使用",
+        "whenEn": "Use for external control of tree row expansion state"
       },
       {
         "name": "treeExpandIcon",
         "type": "((data: Item, index: number, isExpanded: boolean) => ReactNode)",
         "required": false,
         "description": "树形数据展开图标，函数返回 null 时隐藏展开图标",
+        "whenCn": "需要自定义树形表格展开图标的样式或行为时使用",
+        "whenEn": "Use to customize tree table expand icon style or behavior",
         "version": "3.5.0"
       },
       {
@@ -9335,6 +9731,8 @@
         "type": "((data: Item, index: number, isExpanded: boolean, expandInstance: ReactNode, clickEvent?: (() => void) ) => ReactNode)",
         "required": false,
         "description": "自定义渲染可展开行的图标内容，其中 data 为当前行的数据，index 为数据下标，isExpanded 为当前行的展开状态，expandInstance 为原始展开行图标实例，clickEvent 为展开事件。展开事件 clickEvent 仅在列类型为 `expand` 时返回",
+        "whenCn": "需要自定义展开行图标的渲染逻辑或样式时使用",
+        "whenEn": "Use to customize expand row icon rendering logic or style",
         "version": "3.5.4"
       },
       {
@@ -9342,6 +9740,8 @@
         "type": "((data: Item, index: number) => Promise<void>)",
         "required": false,
         "description": "树形数据加载函数",
+        "whenCn": "需要动态加载树形子节点数据时使用",
+        "whenEn": "Use for dynamic loading of tree child node data",
         "version": "3.5.0"
       },
       {
@@ -9349,13 +9749,17 @@
         "type": "((sortName: string, sorter: \"asc\" | \"desc\", sortedList: ({ order: \"asc\" | \"desc\", manual: boolean, key: string | number, weight?: number })[]) => void | ((a: Item, b: Item) => number) )",
         "required": false,
         "defaultValue": "alphaSort(Column.sorter, sorter)",
-        "description": "表格统一排序函数，参数分别为 Column.sorter 和 排序方式;\\n支持多列排序，sorter传入对象{ rule: string | function, weight: number }, rule为排序规则，为字符串时参考单列排序的用法, weight 为权重，指明排序的优先级。\\n多列排序时，sortedList 返回所有参与排序的字段信息"
+        "description": "表格统一排序函数，参数分别为 Column.sorter 和 排序方式;\\n支持多列排序，sorter传入对象{ rule: string | function, weight: number }, rule为排序规则，为字符串时参考单列排序的用法, weight 为权重，指明排序的优先级。\\n多列排序时，sortedList 返回所有参与排序的字段信息",
+        "whenCn": "需要自定义排序逻辑或实现多列排序时使用",
+        "whenEn": "Use for custom sorting logic or multi-column sorting"
       },
       {
         "name": "onSortCancel",
         "type": "((preType: \"asc\" | \"desc\", key: string | number, orders: ({ order: \"asc\" | \"desc\", weight?: number , key: string | number, manual: boolean })[], sorter: string) => void)",
         "required": false,
-        "description": "排序取消事件回调。当点击已排序的列取消排序时触发。参数：preType（之前的排序方向），key（列的唯一标识），orders（当前所有排序项信息），sorter（列的排序器名称）"
+        "description": "排序取消事件回调。当点击已排序的列取消排序时触发。参数：preType（之前的排序方向），key（列的唯一标识），orders（当前所有排序项信息），sorter（列的排序器名称）",
+        "whenCn": "需要在取消排序时执行特定操作时使用",
+        "whenEn": "Use to perform specific actions when sorting is cancelled"
       },
       {
         "name": "sortDirections",
@@ -9363,58 +9767,76 @@
         "required": false,
         "defaultValue": "[\\\"asc\\\", \\\"desc\\\"]",
         "description": "排序方向",
+        "whenCn": "需要限制可用的排序方向（如只允许升序）时使用",
+        "whenEn": "Use to limit available sort directions (e.g., ascending only)",
         "version": "3.5.0"
       },
       {
         "name": "columnResizable",
         "type": "boolean",
         "required": false,
-        "description": "设置 columnResizable 为 true，使所有列可伸缩"
+        "description": "设置 columnResizable 为 true，使所有列可伸缩",
+        "whenCn": "需要用户能够手动调整列宽时使用",
+        "whenEn": "Use when users need to manually adjust column widths"
       },
       {
         "name": "onColumnResize",
         "type": "(columns: TableColumn[]) => void",
         "required": false,
-        "description": "列宽伸缩后的回调"
+        "description": "列宽伸缩后的回调",
+        "whenCn": "需要响应列宽变化（如保存用户配置）时使用",
+        "whenEn": "Use to respond to column width changes (e.g., save user preferences)"
       },
       {
         "name": "dataChangeResize",
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "数据发生变化后是否重新计算列宽"
+        "description": "数据发生变化后是否重新计算列宽",
+        "whenCn": "数据内容长度变化较大时使用，保持列宽合理分配",
+        "whenEn": "Use when data content length varies significantly to maintain proper column width distribution"
       },
       {
         "name": "expandKeys",
         "type": "(string | number)[]",
         "required": false,
-        "description": "展开行受控"
+        "description": "展开行受控",
+        "whenCn": "需要外部控制行展开状态时使用",
+        "whenEn": "Use for external control of row expansion state"
       },
       {
         "name": "keygen",
         "type": "| ObjectKey<DataItem> | ((data: DataItem, index?: number) => string | number)",
         "required": true,
-        "description": "生成每一项key的辅助方法\\n为函数时，使用此函数返回值\\n为string时，使用这个string对应的数据值。如 \\\"id\\\"，相当于 (d => d.id)"
+        "description": "生成每一项key的辅助方法\\n为函数时，使用此函数返回值\\n为string时，使用这个string对应的数据值。如 \\\"id\\\"，相当于 (d => d.id)",
+        "whenCn": "为每行数据生成唯一标识，用于选择、展开等功能",
+        "whenEn": "Generate unique identifier for each row, used for selection, expansion, etc."
       },
       {
         "name": "value",
         "type": "any",
         "required": false,
-        "description": "当前选中的数据值，数据格式与 onRowSelect 回调返回的格式保持一致"
+        "description": "当前选中的数据值，数据格式与 onRowSelect 回调返回的格式保持一致",
+        "whenCn": "需要受控的行选择功能时使用，用于外部管理选中状态",
+        "whenEn": "Use for controlled row selection to manage selected state externally"
       },
       {
         "name": "format",
         "type": "ObjectKey<DataItem> | ((data: DataItem) => Value extends (infer U)[] ? U : Value)",
         "required": false,
         "defaultValue": "d => d",
-        "description": "格式化选中值。字符串时：作为属性名提取值（如 \\\"id\\\" 提取 d.id）。函数时：参数为行数据，返回格式化后的值"
+        "description": "格式化选中值。字符串时：作为属性名提取值（如 \\\"id\\\" 提取 d.id）。函数时：参数为行数据，返回格式化后的值",
+        "whenCn": "当选中值需要特定格式（如仅保存 ID）时使用",
+        "whenEn": "Use when selected values need specific format (e.g., storing only IDs)"
       },
       {
         "name": "prediction",
         "type": "((value: Value extends (infer U)[] ? U : Value, data: DataItem) => boolean)",
         "required": false,
         "defaultValue": "(val, d) => val===format(d)",
-        "description": "自定义值匹配函数。参数：value（选中值），data（行数据）。返回 true 表示匹配。用于默认比较失效时（如对象引用不同）"
+        "description": "自定义值匹配函数。参数：value（选中值），data（行数据）。返回 true 表示匹配。用于默认比较失效时（如对象引用不同）",
+        "whenCn": "当数据对象引用变化（如从服务器重新获取）但需保持选中状态时使用",
+        "whenEn": "Use when data object references change (e.g., refetched from server) but selection state needs to persist"
       }
     ],
     "examples": [
@@ -9775,10 +10197,11 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 56,
       "requiredProps": 1,
-      "propsWithWhen": 0,
+      "propsWithWhen": 54,
       "examplesCount": 59
     },
     "subComponentApis": {}
@@ -10039,6 +10462,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 23,
       "requiredProps": 0,
@@ -10188,9 +10612,15 @@
       }
     ],
     "subComponents": [
-      "Input"
+      {
+        "name": "Input",
+        "description": "",
+        "whenCn": "",
+        "whenEn": ""
+      }
     ],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 14,
       "requiredProps": 0,
@@ -10199,6 +10629,9 @@
     },
     "subComponentApis": {
       "Input": {
+        "whenCn": "",
+        "whenEn": "",
+        "description": "",
         "props": [
           {
             "name": "style",
@@ -10545,6 +10978,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 32,
       "requiredProps": 0,
@@ -10719,6 +11153,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 14,
       "requiredProps": 2,
@@ -11059,6 +11494,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 40,
       "requiredProps": 1,
@@ -11507,6 +11943,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 51,
       "requiredProps": 3,
@@ -12085,6 +12522,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 72,
       "requiredProps": 2,
@@ -12560,6 +12998,7 @@
     ],
     "subComponents": [],
     "version": "3.7.10-beta.3",
+    "notes": {},
     "apiSummary": {
       "totalProps": 53,
       "requiredProps": 0,

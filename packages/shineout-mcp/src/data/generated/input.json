@@ -424,9 +424,15 @@
     }
   ],
   "subComponents": [
-    "Group"
+    {
+      "name": "Group",
+      "description": "",
+      "whenCn": "",
+      "whenEn": ""
+    }
   ],
   "version": "3.7.10-beta.3",
+  "notes": {},
   "apiSummary": {
     "totalProps": 42,
     "requiredProps": 0,
@@ -435,6 +441,9 @@
   },
   "subComponentApis": {
     "Group": {
+      "whenCn": "",
+      "whenEn": "",
+      "description": "",
       "props": [
         {
           "name": "className",

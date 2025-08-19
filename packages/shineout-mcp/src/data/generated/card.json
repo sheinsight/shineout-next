@@ -140,13 +140,27 @@
     }
   ],
   "subComponents": [
-    "Header",
-    "Body",
-    "Footer",
-    "Submit",
-    "Accordion"
+    {
+      "name": "Header",
+      "description": "",
+      "whenCn": "",
+      "whenEn": ""
+    },
+    {
+      "name": "Body",
+      "description": "",
+      "whenCn": "",
+      "whenEn": ""
+    },
+    {
+      "name": "Footer",
+      "description": "",
+      "whenCn": "",
+      "whenEn": ""
+    }
   ],
   "version": "3.7.10-beta.3",
+  "notes": {},
   "apiSummary": {
     "totalProps": 13,
     "requiredProps": 0,
@@ -155,6 +169,9 @@
   },
   "subComponentApis": {
     "Header": {
+      "whenCn": "",
+      "whenEn": "",
+      "description": "",
       "props": [
         {
           "name": "className",
@@ -189,6 +206,9 @@
       ]
     },
     "Body": {
+      "whenCn": "",
+      "whenEn": "",
+      "description": "",
       "props": [
         {
           "name": "className",
@@ -211,6 +231,9 @@
       ]
     },
     "Footer": {
+      "whenCn": "",
+      "whenEn": "",
+      "description": "",
       "props": [
         {
           "name": "className",

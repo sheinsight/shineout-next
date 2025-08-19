@@ -284,6 +284,7 @@
   ],
   "subComponents": [],
   "version": "3.7.10-beta.3",
+  "notes": {},
   "apiSummary": {
     "totalProps": 32,
     "requiredProps": 0,
