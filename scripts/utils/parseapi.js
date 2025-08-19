@@ -170,6 +170,8 @@ function parseApi(pack, filePath) {
         tag: {
           whenCn: convertQuotes(mainTags.whenCn),
           whenEn: convertQuotes(mainTags.whenEn),
+          notesCn: convertQuotes(mainTags.notesCn),
+          notesEn: convertQuotes(mainTags.notesEn),
         },
       };
       const type = inter.getType();

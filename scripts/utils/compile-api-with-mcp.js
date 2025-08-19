@@ -234,6 +234,11 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     examples: mcpExamples,
     subComponents,
     version: packageVersion,
+    // 添加使用注意事项
+    notes: {
+      cn: mainApi.tag?.notesCn || undefined,
+      en: mainApi.tag?.notesEn || undefined
+    },
     // 添加额外的 API 相关信息
     apiSummary: {
       totalProps: props.length,
