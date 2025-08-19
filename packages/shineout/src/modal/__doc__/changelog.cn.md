@@ -1,3 +1,9 @@
+## 3.8.0-beta.41
+2025-08-19
+
+### 🆕 Feature
+- `Modal` 新增 `containerClassName`: 设置挂载容器的className ([#1318](https://github.com/sheinsight/shineout-next/pull/1318))
+
 ## 3.8.0-beta.38
 2025-08-18
 

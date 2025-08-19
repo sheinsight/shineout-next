@@ -16,6 +16,7 @@ const Modal = (props: ModalProps) => {
   }
   const { getRoot, unMount } = useContainer({
     container: props.container,
+    containerClassName: props.containerClassName
   });
   const [canDestroy, seCanDestroy] = useState(true);
   const { current: context } = useRef({ rendered: false });
