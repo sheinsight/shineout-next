@@ -229,9 +229,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     }
   };
 
+
+  const finalData = createdData ? [createdData, ...(data || [])] : data;
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
-    data,
+    data: finalData,
     separator,
     treeData,
     childrenKey,
@@ -364,12 +366,12 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         return;
       }
     }
-    
+
     // 当开启 preventEnterSelect 且存在 onCreate 功能时，阻止选中已有选项
     if (preventEnterSelect && onCreate && !createdData) {
       return;
     }
-    
+
     const currentDataItem = filterData?.[hoverIndex];
     if (currentDataItem && !currentDataItem[groupKey as keyof typeof currentDataItem]) {
       handleChange(currentDataItem);
