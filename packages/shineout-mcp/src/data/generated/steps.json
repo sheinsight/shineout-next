@@ -153,5 +153,120 @@
     "propsWithWhen": 0,
     "examplesCount": 10
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "Step": {
+      "title": "Step",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "current",
+          "type": "number",
+          "required": false,
+          "description": "当前步数"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "当前步骤节点是否被禁用，优先级高于 Steps 的 disabled"
+        },
+        {
+          "name": "labelPlacement",
+          "type": "\"horizontal\" | \"vertical\"",
+          "required": false,
+          "defaultValue": "\\\"vertical\\\"",
+          "description": "标签描述文字放置的位置"
+        },
+        {
+          "name": "direction",
+          "type": "\"horizontal\" | \"vertical\"",
+          "required": false,
+          "defaultValue": "\\\"horizontal\\\"",
+          "description": "步骤条方向"
+        },
+        {
+          "name": "size",
+          "type": "\"small\" | \"large\" | \"default\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "不同尺寸"
+        },
+        {
+          "name": "type",
+          "type": "\"default\" | \"dot\" | \"arrow\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "节点样式类型"
+        },
+        {
+          "name": "onChange",
+          "type": "((index: number) => void)",
+          "required": false,
+          "description": "步骤切换的回调,配置该属性可让步骤条可点击"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "节点类名"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "自定义样式"
+        },
+        {
+          "name": "currentStatus",
+          "type": "\"wait\" | \"process\" | \"finish\" | \"error\"",
+          "required": false,
+          "description": "当前步数节点状态"
+        },
+        {
+          "name": "index",
+          "type": "number",
+          "required": false,
+          "description": "当前节点索引"
+        },
+        {
+          "name": "id",
+          "type": "any",
+          "required": false,
+          "description": "当前节点id,可用于点击回调"
+        },
+        {
+          "name": "status",
+          "type": "\"wait\" | \"process\" | \"finish\" | \"error\"",
+          "required": false,
+          "description": "节点状态"
+        },
+        {
+          "name": "renderIcon",
+          "type": "((index: number, status?: \"wait\" | \"process\" | \"finish\" | \"error\" ) => ReactNode)",
+          "required": false,
+          "description": "自定义节点图标"
+        },
+        {
+          "name": "title",
+          "type": "ReactNode | ((index: number, status: \"wait\" | \"process\" | \"finish\" | \"error\") => ReactNode)",
+          "required": false,
+          "description": "节点标题"
+        },
+        {
+          "name": "description",
+          "type": "ReactNode",
+          "required": false,
+          "description": "节点描述"
+        },
+        {
+          "name": "onClick",
+          "type": "((e: MouseEvent<HTMLElement, MouseEvent>, index: number, id: any) => void)",
+          "required": false,
+          "description": "点击回调"
+        }
+      ]
+    }
+  }
 }

@@ -109,5 +109,38 @@
     "propsWithWhen": 0,
     "examplesCount": 7
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "BreadcrumbData": {
+      "title": "BreadcrumbData",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLAnchorElement>",
+          "required": false,
+          "description": "点击事件"
+        },
+        {
+          "name": "title",
+          "type": "ReactNode",
+          "required": false,
+          "description": "显示内容"
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": false,
+          "description": "链接地址，onClick 属性二选一"
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "required": false,
+          "description": "自定义图标"
+        }
+      ]
+    }
+  }
 }

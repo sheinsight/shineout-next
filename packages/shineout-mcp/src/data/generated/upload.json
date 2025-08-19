@@ -472,5 +472,118 @@
     "propsWithWhen": 0,
     "examplesCount": 20
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "UploadOptions": {
+      "title": "UploadOptions",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "url",
+          "type": "string",
+          "required": true,
+          "description": "上传地址从 action 中获取"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": "formData 中存的字段名"
+        },
+        {
+          "name": "withCredentials",
+          "type": "boolean",
+          "required": true,
+          "defaultValue": "false",
+          "description": "是否携带 cookie"
+        },
+        {
+          "name": "responseType",
+          "type": "XMLHttpRequestResponseType",
+          "required": true,
+          "description": "同 props 中的 responseType"
+        },
+        {
+          "name": "file",
+          "type": "File",
+          "required": true,
+          "description": "传入文件"
+        },
+        {
+          "name": "headers",
+          "type": "object",
+          "required": false,
+          "description": "请求头部信息"
+        },
+        {
+          "name": "onError",
+          "type": "(xhr: XhrResult) => void",
+          "required": true,
+          "description": "上传出错事件(props 中为 onHttpError)"
+        },
+        {
+          "name": "onLoad",
+          "type": "(xhr: XhrResult) => void",
+          "required": true,
+          "description": "上传事件"
+        },
+        {
+          "name": "onProgress",
+          "type": "(event: ProgressEvent<EventTarget>, msg?: string ) => any",
+          "required": true,
+          "description": "上传中进度"
+        },
+        {
+          "name": "onStart",
+          "type": "((file: File) => void)",
+          "required": false,
+          "description": "开始上传事件"
+        },
+        {
+          "name": "onSuccess",
+          "type": "((res?: string , file?: File , data?: any, xhr?: XhrResult ) => Error | T)",
+          "required": false,
+          "description": "上传成功事件"
+        },
+        {
+          "name": "params",
+          "type": "object",
+          "required": false,
+          "description": "上传参数"
+        }
+      ]
+    },
+    "Validator": {
+      "title": "Validator",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "customValidator",
+          "type": "((file: File) => void | Promise<any> | Error)",
+          "required": false,
+          "description": "自定义校验"
+        },
+        {
+          "name": "ext",
+          "type": "((ext: string) => void | Promise<any> | Error)",
+          "required": false,
+          "description": "判断后缀名，传入参数为文件后缀，校验失败返回 Error"
+        },
+        {
+          "name": "imageSize",
+          "type": "(image: { width: number; height: number; }) => void | Error",
+          "required": false,
+          "description": "只对 Image 有效，判断图片尺寸，校验失败返回 Error"
+        },
+        {
+          "name": "size",
+          "type": "((size: number) => void | Promise<any> | Error)",
+          "required": false,
+          "description": "判断文件大小，校验失败返回 Error"
+        }
+      ]
+    }
+  }
 }

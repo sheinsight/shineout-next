@@ -141,5 +141,44 @@
     "propsWithWhen": 0,
     "examplesCount": 7
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "ItemType": {
+      "title": "ItemType",
+      "description": "数据项结构",
+      "notes": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "required": false,
+          "description": "数据标签"
+        },
+        {
+          "name": "value",
+          "type": "ReactNode",
+          "required": false,
+          "description": "数据值"
+        },
+        {
+          "name": "span",
+          "type": "number",
+          "required": false,
+          "description": "占据的列数"
+        },
+        {
+          "name": "itemLabelStyle",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "当前数据标签样式"
+        },
+        {
+          "name": "itemValueStyle",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "当前数据值样式"
+        }
+      ]
+    }
+  }
 }

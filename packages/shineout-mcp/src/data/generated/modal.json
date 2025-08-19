@@ -319,5 +319,45 @@
     "propsWithWhen": 0,
     "examplesCount": 19
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "ModalMethods": {
+      "title": "ModalMethods",
+      "description": "Modal 提供了一组方法供全局调用，这些方法生成的元素，会在关闭后销毁。\\n该组方法应仅供展示所用, 如果需要数据交互, 请使用 Modal。\\nModal.info(options) // 提示信息\\nModal.success(options) // 成功信息\\nModal.warning(options) // 警告信息\\nModal.error(options) // 错误信息\\nModal.confirm(options) // 确认信息\\nModal.show(options) // 普通信息\\nModal.closeAll // 关闭所有Modal\\noptions 支持 Modal除了 destory, visible 的其他任何属性, 此外还有如下的额外属性:",
+      "notes": {},
+      "props": [
+        {
+          "name": "content",
+          "type": "ReactNode",
+          "required": false,
+          "description": "提示内容主体"
+        },
+        {
+          "name": "onCancel",
+          "type": "(() => void)",
+          "required": false,
+          "description": "点击取消按钮时触发事件，仅在 confirm 方法中有效"
+        },
+        {
+          "name": "onOk",
+          "type": "(() => void | Promise<any>)",
+          "required": false,
+          "description": "点击确定按钮时触发事件，返回 Promise 时，会在 Promise resolve 后关闭Modal"
+        },
+        {
+          "name": "text",
+          "type": "{ ok?: string ; cancel?: string ; }",
+          "required": false,
+          "defaultValue": "{ ok: \\\"Ok\\\", cancel: \\\"Cancel\\\" }",
+          "description": "按钮文字"
+        },
+        {
+          "name": "autoFocusButton",
+          "type": "\"ok\" | \"cancel\"",
+          "required": false,
+          "description": "默认聚焦的按钮"
+        }
+      ]
+    }
+  }
 }

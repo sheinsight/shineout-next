@@ -64,5 +64,127 @@
     "propsWithWhen": 0,
     "examplesCount": 7
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "min": {
+      "title": "min",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "min",
+          "type": "number",
+          "required": true,
+          "description": "最小值限制（对于数字类型为最小数值，字符串类型为最小长度，数组类型为最少项数）"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "required": false,
+          "description": "校验失败时显示的错误提示信息"
+        }
+      ]
+    },
+    "max": {
+      "title": "max",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "max",
+          "type": "number",
+          "required": true,
+          "description": "最大值限制（对于数字类型为最大数值，字符串类型为最大长度，数组类型为最多项数）"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "required": false,
+          "description": "校验失败时显示的错误提示信息"
+        }
+      ]
+    },
+    "range": {
+      "title": "range",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "min",
+          "type": "number",
+          "required": true,
+          "description": "范围的最小值限制（对于数字类型为最小数值，字符串类型为最小长度，数组类型为最少项数）"
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "required": true,
+          "description": "范围的最大值限制（对于数字类型为最大数值，字符串类型为最大长度，数组类型为最多项数）"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "required": false,
+          "description": "校验失败时显示的错误提示信息"
+        }
+      ]
+    },
+    "regExp": {
+      "title": "regExp",
+      "description": "function(reg: RegExp, message?: string)",
+      "notes": {},
+      "props": [
+        {
+          "name": "reg",
+          "type": "string | RegExp",
+          "required": true,
+          "description": "用于匹配输入值的正则表达式，可以是 RegExp 对象或正则字符串"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "required": false,
+          "description": "校验失败时显示的错误提示信息"
+        }
+      ]
+    },
+    "type": {
+      "title": "type",
+      "description": "type 可选值为 [\\\"email\\\", \\\"integer\\\", \\\"number\\\", \\\"url\\\", \\\"json\\\", \\\"hex\\\", \\\"rgb\\\", \\\"ipv4\\\"]",
+      "notes": {},
+      "props": [
+        {
+          "name": "message",
+          "type": "string",
+          "required": false,
+          "description": "校验失败时显示的错误提示信息"
+        }
+      ]
+    },
+    "custom": {
+      "title": "custom",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "value",
+          "type": "any",
+          "required": false,
+          "description": "当前需要校验的字段值"
+        },
+        {
+          "name": "formValue",
+          "type": "object",
+          "required": false,
+          "description": "整个表单的数据对象，可用于关联校验多个字段"
+        },
+        {
+          "name": "callback",
+          "type": "((result: true | Error) => void)",
+          "required": false,
+          "description": "校验结果回调函数，传入 true 表示校验通过，传入 Error 对象表示校验失败"
+        }
+      ]
+    }
+  }
 }

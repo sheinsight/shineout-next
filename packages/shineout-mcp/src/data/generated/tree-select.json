@@ -576,5 +576,20 @@
     "propsWithWhen": 0,
     "examplesCount": 16
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "TreeSelectRef": {
+      "title": "TreeSelectRef",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "getDataByValues",
+          "type": "(values: Value) => Value extends any[] ? (DataItem | UnMatchedData)[] : DataItem | UnMatchedData",
+          "required": true,
+          "description": "获取 value 对应的 data"
+        }
+      ]
+    }
+  }
 }

@@ -204,5 +204,26 @@
     "propsWithWhen": 0,
     "examplesCount": 10
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "RateFunction": {
+      "title": "RateFunction",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "background",
+          "type": "ReactElement | string | Array<string | ReactElement>",
+          "required": true,
+          "description": "未选中元素背景"
+        },
+        {
+          "name": "front",
+          "type": "ReactElement | string | Array<string | ReactElement>",
+          "required": true,
+          "description": "选中元素背景"
+        }
+      ]
+    }
+  }
 }

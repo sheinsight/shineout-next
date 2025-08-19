@@ -968,5 +968,93 @@
         }
       ]
     }
+  },
+  "relatedTypes": {
+    "FormRef": {
+      "title": "FormRef",
+      "description": "表单引用对象，提供了一系列操作表单的方法。通过 ref 或 useForm 获取实例后，可以主动控制表单的校验、提交、重置等行为",
+      "notes": {},
+      "props": [
+        {
+          "name": "getValue",
+          "type": "(name?: string ) => any",
+          "required": true,
+          "description": "获取表单数据。不传参数时返回整个表单的数据对象（FormValue 类型），传入字段路径时返回指定字段的值。字段路径支持点表示法和数组索引，如 \\\"user.name\\\"（获取嵌套对象）、\\\"list[0].id\\\"（获取数组元素）。常用于获取表单数据进行其他操作"
+        },
+        {
+          "name": "validate",
+          "type": "() => Promise<any>",
+          "required": true,
+          "description": "校验整个表单的所有字段。返回一个 Promise，校验成功时 resolve 整个表单的数据对象（FormValue 类型），失败时 reject 错误信息。通常在提交表单前调用以确保所有数据的有效性"
+        },
+        {
+          "name": "validateFields",
+          "type": "(fields: string | string[]) => Promise<any>",
+          "required": true,
+          "description": "校验指定的表单字段。fields 参数为字段路径，可以是单个路径字符串或路径数组。字段路径支持：\\\"name\\\"（顶层字段）、\\\"user.email\\\"（嵌套对象）、\\\"list[0].name\\\"（数组元素）。返回 Promise，成功时 resolve 指定字段的数据，失败时 reject 第一个遇到的错误。适用于分步表单或部分校验场景"
+        },
+        {
+          "name": "validateFieldsWithValue",
+          "type": "(fields?: string | keyof FormValue | (string | keyof FormValue)[] ) => Promise<any>",
+          "required": true,
+          "description": "校验指定字段并始终返回表单数据。fields 参数为字段路径，不传时校验所有字段。成功时 resolve 指定字段的数据，失败时 reject 一个 ValidationError 对象，包含：values（表单数据）和 errorFields（数组，包含每个错误字段的 name 和 errors 信息）。适用于需要同时获取表单数据和详细错误信息的场景"
+        },
+        {
+          "name": "validateFieldsWithError",
+          "type": "(fields: string | string[]) => Promise<any>",
+          "required": true,
+          "description": "校验指定字段并返回第一个遇到的错误。fields 参数为字段路径。与 validateFields 功能相同，但名称更明确地表示会返回错误信息。失败时 reject 一个 FormError 对象（仅包含第一个错误）。适用于只关心第一个错误的场景"
+        },
+        {
+          "name": "clearValidate",
+          "type": "(names?: string[] ) => void",
+          "required": true,
+          "description": "清除指定字段的校验错误信息。names 参数为字段路径数组，不传时清除所有字段的错误。字段路径支持 \\\"name\\\"、\\\"user.email\\\"、\\\"list[0].id\\\" 等格式。常用于重置表单状态、清除特定字段错误等场景"
+        },
+        {
+          "name": "submit",
+          "type": "(withValidate?: boolean ) => void",
+          "required": true,
+          "description": "手动触发表单提交。withValidate 参数控制是否在提交前进行校验，默认为 true。校验通过后会调用 Form 的 onSubmit 回调，传入整个表单的数据对象（FormValue 类型）。通常用于自定义提交按钮或程序化提交"
+        },
+        {
+          "name": "reset",
+          "type": "() => void",
+          "required": true,
+          "description": "重置表单到初始状态。将表单数据恢复为 defaultValue（非受控）或空对象（受控），并清除所有校验错误。会触发 Form 的 onReset 回调"
+        },
+        {
+          "name": "set",
+          "type": "(value: { [key: string]: any; }, options?: { validate?: boolean ; forceUpdate?: boolean ; } ) => void",
+          "required": true,
+          "description": "批量设置表单字段值。传入一个对象，key 为字段路径，value 为要设置的值。字段路径支持：点表示法（\\\"user.name\\\"）访问嵌套对象，数组索引（\\\"list[0].id\\\"）访问数组元素。options 参数：validate 控制是否触发校验（默认 false），forceUpdate 控制是否强制更新（默认 false）。适用于动态设置表单值、联动更新等场景"
+        },
+        {
+          "name": "scrollToField",
+          "type": "(name: string, scrollIntoViewOptions?: ScrollIntoViewOptions ) => void",
+          "required": true,
+          "description": "滚动页面到指定表单字段的位置。name 参数为字段路径，支持 \\\"name\\\"、\\\"user.email\\\"、\\\"list[0].id\\\" 等格式。需要 Form 设置 name 属性才能正常工作。scrollIntoViewOptions 参数符合标准 ScrollIntoViewOptions 接口，可以控制滚动行为、位置等。常用于错误定位、分步表单导航等"
+        }
+      ]
+    },
+    "FormDatum": {
+      "title": "FormDatum",
+      "description": "表单数据管理对象，用于管理表单内部的数据状态和校验逻辑",
+      "notes": {},
+      "props": [
+        {
+          "name": "set",
+          "type": "(vals: string | { [name: string]: any; }, value?: any) => void",
+          "required": true,
+          "description": "设置表单字段值。可以接收对象以批量设置多个字段，或接收字段名和值以设置单个字段。字段名支持嵌套路径如 \\\"user.name\\\" 或 \\\"items[0].price\\\"。更改会触发表单校验和相关 Flow 组件的重新渲染"
+        },
+        {
+          "name": "get",
+          "type": "(name?: string ) => any",
+          "required": true,
+          "description": "根据名称获取表单字段值。未提供名称时返回整个表单数据对象。支持嵌套路径如 \\\"user.name\\\" 或 \\\"items[0].price\\\" 来访问深层嵌套的值"
+        }
+      ]
+    }
   }
 }

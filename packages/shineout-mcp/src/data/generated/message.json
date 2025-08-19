@@ -65,5 +65,60 @@
     "propsWithWhen": 0,
     "examplesCount": 6
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "MessageOptions": {
+      "title": "MessageOptions",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "类名"
+        },
+        {
+          "name": "onClose",
+          "type": "(() => void)",
+          "required": false,
+          "description": "关闭后回调事件"
+        },
+        {
+          "name": "position",
+          "type": "\"top\" | \"middle\" | \"top-left\" | \"top-right\" | \"bottom-left\" | \"bottom-right\"",
+          "required": false,
+          "defaultValue": "\\\"top\\\"",
+          "description": "消息显示的位置"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "description": "标题文字"
+        },
+        {
+          "name": "hideClose",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": "false",
+          "description": "是否隐藏关闭按钮"
+        },
+        {
+          "name": "top",
+          "type": "string",
+          "required": false,
+          "defaultValue": "\\\"auto\\\"",
+          "description": "距离顶部的距离。注意，Message 容器距离顶部默认为 20px，如果需要距离顶部 0px，需要设置为 -20px"
+        },
+        {
+          "name": "container",
+          "type": "(() => HTMLElement) | HTMLElement",
+          "required": false,
+          "defaultValue": "document.body",
+          "description": "渲染的目标节点"
+        }
+      ]
+    }
+  }
 }

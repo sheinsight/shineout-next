@@ -563,7 +563,40 @@
       "propsWithWhen": 0,
       "examplesCount": 7
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "BreadcrumbData": {
+        "title": "BreadcrumbData",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "onClick",
+            "type": "MouseEventHandler<HTMLAnchorElement>",
+            "required": false,
+            "description": "点击事件"
+          },
+          {
+            "name": "title",
+            "type": "ReactNode",
+            "required": false,
+            "description": "显示内容"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "required": false,
+            "description": "链接地址，onClick 属性二选一"
+          },
+          {
+            "name": "icon",
+            "type": "ReactNode",
+            "required": false,
+            "description": "自定义图标"
+          }
+        ]
+      }
+    }
   },
   "Button": {
     "name": "Button",
@@ -1752,7 +1785,22 @@
       "propsWithWhen": 0,
       "examplesCount": 24
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "CascaderRef": {
+        "title": "CascaderRef",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "close",
+            "type": "(e?: MouseEvent ) => void",
+            "required": true,
+            "description": "关闭下拉框"
+          }
+        ]
+      }
+    }
   },
   "Checkbox": {
     "name": "Checkbox",
@@ -2836,7 +2884,46 @@
       "propsWithWhen": 0,
       "examplesCount": 7
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "ItemType": {
+        "title": "ItemType",
+        "description": "数据项结构",
+        "notes": {},
+        "props": [
+          {
+            "name": "label",
+            "type": "ReactNode",
+            "required": false,
+            "description": "数据标签"
+          },
+          {
+            "name": "value",
+            "type": "ReactNode",
+            "required": false,
+            "description": "数据值"
+          },
+          {
+            "name": "span",
+            "type": "number",
+            "required": false,
+            "description": "占据的列数"
+          },
+          {
+            "name": "itemLabelStyle",
+            "type": "CSSProperties",
+            "required": false,
+            "description": "当前数据标签样式"
+          },
+          {
+            "name": "itemValueStyle",
+            "type": "CSSProperties",
+            "required": false,
+            "description": "当前数据值样式"
+          }
+        ]
+      }
+    }
   },
   "Divider": {
     "name": "Divider",
@@ -3424,7 +3511,64 @@
       "propsWithWhen": 0,
       "examplesCount": 14
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "DropdownData": {
+        "title": "DropdownData",
+        "description": "data 选项有三种情况：\\n  为 ReactElement 时，直接显示此元素；\\n  为 object 且设置了 renderItem，显示 renderItem 返回的内容；\\n  为 object 且未设置 renderItem，按以下数据结构处理。",
+        "notes": {},
+        "props": [
+          {
+            "name": "group",
+            "type": "string",
+            "required": false,
+            "description": "分组"
+          },
+          {
+            "name": "divider",
+            "type": "boolean",
+            "required": false,
+            "description": "分割线"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "required": false,
+            "description": "url属性不为空时，render为一个链接"
+          },
+          {
+            "name": "target",
+            "type": "string",
+            "required": false,
+            "description": "url 不为空时有效"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false,
+            "description": "禁用"
+          },
+          {
+            "name": "content",
+            "type": "ReactNode",
+            "required": false,
+            "description": "默认从content获取内容"
+          },
+          {
+            "name": "children",
+            "type": "DropdownNode[]",
+            "required": false,
+            "description": "子节点"
+          },
+          {
+            "name": "onClick",
+            "type": "((data: DropdownNode) => void)",
+            "required": false,
+            "description": "点击事件"
+          }
+        ]
+      }
+    }
   },
   "Empty": {
     "name": "Empty",
@@ -4466,6 +4610,94 @@
             "required": false,
             "defaultValue": "\\\"button\\\"",
             "description": "按钮原生type属性"
+          }
+        ]
+      }
+    },
+    "relatedTypes": {
+      "FormRef": {
+        "title": "FormRef",
+        "description": "表单引用对象，提供了一系列操作表单的方法。通过 ref 或 useForm 获取实例后，可以主动控制表单的校验、提交、重置等行为",
+        "notes": {},
+        "props": [
+          {
+            "name": "getValue",
+            "type": "(name?: string ) => any",
+            "required": true,
+            "description": "获取表单数据。不传参数时返回整个表单的数据对象（FormValue 类型），传入字段路径时返回指定字段的值。字段路径支持点表示法和数组索引，如 \\\"user.name\\\"（获取嵌套对象）、\\\"list[0].id\\\"（获取数组元素）。常用于获取表单数据进行其他操作"
+          },
+          {
+            "name": "validate",
+            "type": "() => Promise<any>",
+            "required": true,
+            "description": "校验整个表单的所有字段。返回一个 Promise，校验成功时 resolve 整个表单的数据对象（FormValue 类型），失败时 reject 错误信息。通常在提交表单前调用以确保所有数据的有效性"
+          },
+          {
+            "name": "validateFields",
+            "type": "(fields: string | string[]) => Promise<any>",
+            "required": true,
+            "description": "校验指定的表单字段。fields 参数为字段路径，可以是单个路径字符串或路径数组。字段路径支持：\\\"name\\\"（顶层字段）、\\\"user.email\\\"（嵌套对象）、\\\"list[0].name\\\"（数组元素）。返回 Promise，成功时 resolve 指定字段的数据，失败时 reject 第一个遇到的错误。适用于分步表单或部分校验场景"
+          },
+          {
+            "name": "validateFieldsWithValue",
+            "type": "(fields?: string | keyof FormValue | (string | keyof FormValue)[] ) => Promise<any>",
+            "required": true,
+            "description": "校验指定字段并始终返回表单数据。fields 参数为字段路径，不传时校验所有字段。成功时 resolve 指定字段的数据，失败时 reject 一个 ValidationError 对象，包含：values（表单数据）和 errorFields（数组，包含每个错误字段的 name 和 errors 信息）。适用于需要同时获取表单数据和详细错误信息的场景"
+          },
+          {
+            "name": "validateFieldsWithError",
+            "type": "(fields: string | string[]) => Promise<any>",
+            "required": true,
+            "description": "校验指定字段并返回第一个遇到的错误。fields 参数为字段路径。与 validateFields 功能相同，但名称更明确地表示会返回错误信息。失败时 reject 一个 FormError 对象（仅包含第一个错误）。适用于只关心第一个错误的场景"
+          },
+          {
+            "name": "clearValidate",
+            "type": "(names?: string[] ) => void",
+            "required": true,
+            "description": "清除指定字段的校验错误信息。names 参数为字段路径数组，不传时清除所有字段的错误。字段路径支持 \\\"name\\\"、\\\"user.email\\\"、\\\"list[0].id\\\" 等格式。常用于重置表单状态、清除特定字段错误等场景"
+          },
+          {
+            "name": "submit",
+            "type": "(withValidate?: boolean ) => void",
+            "required": true,
+            "description": "手动触发表单提交。withValidate 参数控制是否在提交前进行校验，默认为 true。校验通过后会调用 Form 的 onSubmit 回调，传入整个表单的数据对象（FormValue 类型）。通常用于自定义提交按钮或程序化提交"
+          },
+          {
+            "name": "reset",
+            "type": "() => void",
+            "required": true,
+            "description": "重置表单到初始状态。将表单数据恢复为 defaultValue（非受控）或空对象（受控），并清除所有校验错误。会触发 Form 的 onReset 回调"
+          },
+          {
+            "name": "set",
+            "type": "(value: { [key: string]: any; }, options?: { validate?: boolean ; forceUpdate?: boolean ; } ) => void",
+            "required": true,
+            "description": "批量设置表单字段值。传入一个对象，key 为字段路径，value 为要设置的值。字段路径支持：点表示法（\\\"user.name\\\"）访问嵌套对象，数组索引（\\\"list[0].id\\\"）访问数组元素。options 参数：validate 控制是否触发校验（默认 false），forceUpdate 控制是否强制更新（默认 false）。适用于动态设置表单值、联动更新等场景"
+          },
+          {
+            "name": "scrollToField",
+            "type": "(name: string, scrollIntoViewOptions?: ScrollIntoViewOptions ) => void",
+            "required": true,
+            "description": "滚动页面到指定表单字段的位置。name 参数为字段路径，支持 \\\"name\\\"、\\\"user.email\\\"、\\\"list[0].id\\\" 等格式。需要 Form 设置 name 属性才能正常工作。scrollIntoViewOptions 参数符合标准 ScrollIntoViewOptions 接口，可以控制滚动行为、位置等。常用于错误定位、分步表单导航等"
+          }
+        ]
+      },
+      "FormDatum": {
+        "title": "FormDatum",
+        "description": "表单数据管理对象，用于管理表单内部的数据状态和校验逻辑",
+        "notes": {},
+        "props": [
+          {
+            "name": "set",
+            "type": "(vals: string | { [name: string]: any; }, value?: any) => void",
+            "required": true,
+            "description": "设置表单字段值。可以接收对象以批量设置多个字段，或接收字段名和值以设置单个字段。字段名支持嵌套路径如 \\\"user.name\\\" 或 \\\"items[0].price\\\"。更改会触发表单校验和相关 Flow 组件的重新渲染"
+          },
+          {
+            "name": "get",
+            "type": "(name?: string ) => any",
+            "required": true,
+            "description": "根据名称获取表单字段值。未提供名称时返回整个表单数据对象。支持嵌套路径如 \\\"user.name\\\" 或 \\\"items[0].price\\\" 来访问深层嵌套的值"
           }
         ]
       }
@@ -6164,7 +6396,62 @@
       "propsWithWhen": 0,
       "examplesCount": 6
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "MessageOptions": {
+        "title": "MessageOptions",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "className",
+            "type": "string",
+            "required": false,
+            "description": "类名"
+          },
+          {
+            "name": "onClose",
+            "type": "(() => void)",
+            "required": false,
+            "description": "关闭后回调事件"
+          },
+          {
+            "name": "position",
+            "type": "\"top\" | \"middle\" | \"top-left\" | \"top-right\" | \"bottom-left\" | \"bottom-right\"",
+            "required": false,
+            "defaultValue": "\\\"top\\\"",
+            "description": "消息显示的位置"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": false,
+            "description": "标题文字"
+          },
+          {
+            "name": "hideClose",
+            "type": "boolean",
+            "required": false,
+            "defaultValue": "false",
+            "description": "是否隐藏关闭按钮"
+          },
+          {
+            "name": "top",
+            "type": "string",
+            "required": false,
+            "defaultValue": "\\\"auto\\\"",
+            "description": "距离顶部的距离。注意，Message 容器距离顶部默认为 20px，如果需要距离顶部 0px，需要设置为 -20px"
+          },
+          {
+            "name": "container",
+            "type": "(() => HTMLElement) | HTMLElement",
+            "required": false,
+            "defaultValue": "document.body",
+            "description": "渲染的目标节点"
+          }
+        ]
+      }
+    }
   },
   "Modal": {
     "name": "Modal",
@@ -6487,7 +6774,47 @@
       "propsWithWhen": 0,
       "examplesCount": 19
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "ModalMethods": {
+        "title": "ModalMethods",
+        "description": "Modal 提供了一组方法供全局调用，这些方法生成的元素，会在关闭后销毁。\\n该组方法应仅供展示所用, 如果需要数据交互, 请使用 Modal。\\nModal.info(options) // 提示信息\\nModal.success(options) // 成功信息\\nModal.warning(options) // 警告信息\\nModal.error(options) // 错误信息\\nModal.confirm(options) // 确认信息\\nModal.show(options) // 普通信息\\nModal.closeAll // 关闭所有Modal\\noptions 支持 Modal除了 destory, visible 的其他任何属性, 此外还有如下的额外属性:",
+        "notes": {},
+        "props": [
+          {
+            "name": "content",
+            "type": "ReactNode",
+            "required": false,
+            "description": "提示内容主体"
+          },
+          {
+            "name": "onCancel",
+            "type": "(() => void)",
+            "required": false,
+            "description": "点击取消按钮时触发事件，仅在 confirm 方法中有效"
+          },
+          {
+            "name": "onOk",
+            "type": "(() => void | Promise<any>)",
+            "required": false,
+            "description": "点击确定按钮时触发事件，返回 Promise 时，会在 Promise resolve 后关闭Modal"
+          },
+          {
+            "name": "text",
+            "type": "{ ok?: string ; cancel?: string ; }",
+            "required": false,
+            "defaultValue": "{ ok: \\\"Ok\\\", cancel: \\\"Cancel\\\" }",
+            "description": "按钮文字"
+          },
+          {
+            "name": "autoFocusButton",
+            "type": "\"ok\" | \"cancel\"",
+            "required": false,
+            "description": "默认聚焦的按钮"
+          }
+        ]
+      }
+    }
   },
   "Pagination": {
     "name": "Pagination",
@@ -7505,7 +7832,28 @@
       "propsWithWhen": 0,
       "examplesCount": 10
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "RateFunction": {
+        "title": "RateFunction",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "background",
+            "type": "ReactElement | string | Array<string | ReactElement>",
+            "required": true,
+            "description": "未选中元素背景"
+          },
+          {
+            "name": "front",
+            "type": "ReactElement | string | Array<string | ReactElement>",
+            "required": true,
+            "description": "选中元素背景"
+          }
+        ]
+      }
+    }
   },
   "Rule": {
     "name": "Rule",
@@ -7573,7 +7921,129 @@
       "propsWithWhen": 0,
       "examplesCount": 7
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "min": {
+        "title": "min",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "min",
+            "type": "number",
+            "required": true,
+            "description": "最小值限制（对于数字类型为最小数值，字符串类型为最小长度，数组类型为最少项数）"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "required": false,
+            "description": "校验失败时显示的错误提示信息"
+          }
+        ]
+      },
+      "max": {
+        "title": "max",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "max",
+            "type": "number",
+            "required": true,
+            "description": "最大值限制（对于数字类型为最大数值，字符串类型为最大长度，数组类型为最多项数）"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "required": false,
+            "description": "校验失败时显示的错误提示信息"
+          }
+        ]
+      },
+      "range": {
+        "title": "range",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "min",
+            "type": "number",
+            "required": true,
+            "description": "范围的最小值限制（对于数字类型为最小数值，字符串类型为最小长度，数组类型为最少项数）"
+          },
+          {
+            "name": "max",
+            "type": "number",
+            "required": true,
+            "description": "范围的最大值限制（对于数字类型为最大数值，字符串类型为最大长度，数组类型为最多项数）"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "required": false,
+            "description": "校验失败时显示的错误提示信息"
+          }
+        ]
+      },
+      "regExp": {
+        "title": "regExp",
+        "description": "function(reg: RegExp, message?: string)",
+        "notes": {},
+        "props": [
+          {
+            "name": "reg",
+            "type": "string | RegExp",
+            "required": true,
+            "description": "用于匹配输入值的正则表达式，可以是 RegExp 对象或正则字符串"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "required": false,
+            "description": "校验失败时显示的错误提示信息"
+          }
+        ]
+      },
+      "type": {
+        "title": "type",
+        "description": "type 可选值为 [\\\"email\\\", \\\"integer\\\", \\\"number\\\", \\\"url\\\", \\\"json\\\", \\\"hex\\\", \\\"rgb\\\", \\\"ipv4\\\"]",
+        "notes": {},
+        "props": [
+          {
+            "name": "message",
+            "type": "string",
+            "required": false,
+            "description": "校验失败时显示的错误提示信息"
+          }
+        ]
+      },
+      "custom": {
+        "title": "custom",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "value",
+            "type": "any",
+            "required": false,
+            "description": "当前需要校验的字段值"
+          },
+          {
+            "name": "formValue",
+            "type": "object",
+            "required": false,
+            "description": "整个表单的数据对象，可用于关联校验多个字段"
+          },
+          {
+            "name": "callback",
+            "type": "((result: true | Error) => void)",
+            "required": false,
+            "description": "校验结果回调函数，传入 true 表示校验通过，传入 Error 对象表示校验失败"
+          }
+        ]
+      }
+    }
   },
   "Select": {
     "name": "Select",
@@ -9099,7 +9569,122 @@
       "propsWithWhen": 0,
       "examplesCount": 10
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "Step": {
+        "title": "Step",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "current",
+            "type": "number",
+            "required": false,
+            "description": "当前步数"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "required": false,
+            "description": "当前步骤节点是否被禁用，优先级高于 Steps 的 disabled"
+          },
+          {
+            "name": "labelPlacement",
+            "type": "\"horizontal\" | \"vertical\"",
+            "required": false,
+            "defaultValue": "\\\"vertical\\\"",
+            "description": "标签描述文字放置的位置"
+          },
+          {
+            "name": "direction",
+            "type": "\"horizontal\" | \"vertical\"",
+            "required": false,
+            "defaultValue": "\\\"horizontal\\\"",
+            "description": "步骤条方向"
+          },
+          {
+            "name": "size",
+            "type": "\"small\" | \"large\" | \"default\"",
+            "required": false,
+            "defaultValue": "\\\"default\\\"",
+            "description": "不同尺寸"
+          },
+          {
+            "name": "type",
+            "type": "\"default\" | \"dot\" | \"arrow\"",
+            "required": false,
+            "defaultValue": "\\\"default\\\"",
+            "description": "节点样式类型"
+          },
+          {
+            "name": "onChange",
+            "type": "((index: number) => void)",
+            "required": false,
+            "description": "步骤切换的回调,配置该属性可让步骤条可点击"
+          },
+          {
+            "name": "className",
+            "type": "string",
+            "required": false,
+            "description": "节点类名"
+          },
+          {
+            "name": "style",
+            "type": "CSSProperties",
+            "required": false,
+            "description": "自定义样式"
+          },
+          {
+            "name": "currentStatus",
+            "type": "\"wait\" | \"process\" | \"finish\" | \"error\"",
+            "required": false,
+            "description": "当前步数节点状态"
+          },
+          {
+            "name": "index",
+            "type": "number",
+            "required": false,
+            "description": "当前节点索引"
+          },
+          {
+            "name": "id",
+            "type": "any",
+            "required": false,
+            "description": "当前节点id,可用于点击回调"
+          },
+          {
+            "name": "status",
+            "type": "\"wait\" | \"process\" | \"finish\" | \"error\"",
+            "required": false,
+            "description": "节点状态"
+          },
+          {
+            "name": "renderIcon",
+            "type": "((index: number, status?: \"wait\" | \"process\" | \"finish\" | \"error\" ) => ReactNode)",
+            "required": false,
+            "description": "自定义节点图标"
+          },
+          {
+            "name": "title",
+            "type": "ReactNode | ((index: number, status: \"wait\" | \"process\" | \"finish\" | \"error\") => ReactNode)",
+            "required": false,
+            "description": "节点标题"
+          },
+          {
+            "name": "description",
+            "type": "ReactNode",
+            "required": false,
+            "description": "节点描述"
+          },
+          {
+            "name": "onClick",
+            "type": "((e: MouseEvent<HTMLElement, MouseEvent>, index: number, id: any) => void)",
+            "required": false,
+            "description": "点击回调"
+          }
+        ]
+      }
+    }
   },
   "Sticky": {
     "name": "Sticky",
@@ -10204,7 +10789,222 @@
       "propsWithWhen": 54,
       "examplesCount": 59
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "Table columns 配置": {
+        "title": "Table columns 配置",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "align",
+            "type": "\"left\" | \"center\" | \"right\"",
+            "required": false,
+            "defaultValue": "\\\"left\\\"",
+            "description": "单元格内容的水平对齐方式",
+            "whenCn": "根据内容类型调整对齐（如数字右对齐）",
+            "whenEn": "Adjust alignment based on content type (e.g., right-align numbers)"
+          },
+          {
+            "name": "colSpan",
+            "type": "((row: DataItem, index: number) => number)",
+            "required": false,
+            "description": "列合并控制函数。参数：row（当前行数据），index（行索引）。返回要合并的列数",
+            "whenCn": "需要动态合并单元格（如汇总行）时使用",
+            "whenEn": "Use for dynamic cell merging (e.g., summary rows)"
+          },
+          {
+            "name": "defaultOrder",
+            "type": "\"asc\" | \"desc\"",
+            "required": false,
+            "description": "该列的默认排序方向",
+            "whenCn": "需要初始加载时按该列排序时使用",
+            "whenEn": "Use when initial sorting by this column is needed"
+          },
+          {
+            "name": "fixed",
+            "type": "\"left\" | \"right\"",
+            "required": false,
+            "description": "固定列在左侧或右侧。若多个相邻列需要固定，只需指定最外侧的列",
+            "whenCn": "需要保持某些列始终可见（如操作列）时使用",
+            "whenEn": "Use to keep columns always visible (e.g., action columns)"
+          },
+          {
+            "name": "group",
+            "type": "ReactNode | ReactNode[]",
+            "required": false,
+            "description": "表头分组名称。相邻的相同分组会合并为一个表头",
+            "whenCn": "需要将相关列组织在一起显示时使用",
+            "whenEn": "Use to organize related columns together"
+          },
+          {
+            "name": "groupProps",
+            "type": "{ className?: string ; style?: CSSProperties ; }",
+            "required": false,
+            "description": "表头分组的额外属性（类名、样式）",
+            "whenCn": "需要自定义分组表头样式时使用",
+            "whenEn": "Use to customize group header styling",
+            "version": "3.7.0"
+          },
+          {
+            "name": "hide",
+            "type": "boolean",
+            "required": false,
+            "description": "隐藏列（仅对 row-expand 类型的列有效）",
+            "whenCn": "仅需要展开功能但不显示展开列时使用",
+            "whenEn": "Use when expand functionality is needed without showing expand column"
+          },
+          {
+            "name": "key",
+            "type": "string | number",
+            "required": false,
+            "description": "列的唯一标识。未提供时默认使用列索引",
+            "whenCn": "需要明确标识列（用于排序、筛选等）时使用",
+            "whenEn": "Use to explicitly identify columns (for sorting, filtering, etc.)"
+          },
+          {
+            "name": "minWidth",
+            "type": "number",
+            "required": false,
+            "description": "列的最小宽度",
+            "whenCn": "限制列宽调整的最小值，保证内容可读性",
+            "whenEn": "Limit minimum column width to ensure content readability"
+          },
+          {
+            "name": "maxWidth",
+            "type": "number",
+            "required": false,
+            "description": "列的最大宽度（拖动调整时的限制）",
+            "whenCn": "限制列宽调整的最大值，避免过宽",
+            "whenEn": "Limit maximum column width to prevent excessive width"
+          },
+          {
+            "name": "filterAll",
+            "type": "((data: DataItem[]) => DataItem[])",
+            "required": false,
+            "description": "全选时的数据过滤函数。仅在 type=\\\"checkbox\\\" 时有效。参数：数据数组。返回过滤后的数据",
+            "whenCn": "需要在全选时排除某些行（如禁用行）时使用",
+            "whenEn": "Use to exclude certain rows (e.g., disabled rows) when selecting all"
+          },
+          {
+            "name": "render",
+            "type": "ObjectKey<DataItem> | function(d, id, instance)",
+            "required": false,
+            "description": "渲染单元格内容。可以是属性名字符串（如 \\\"name\\\" 渲染 row.name）或函数，函数参数：data（行数据）、index（行索引）、checkboxInstance（当 type=\\\"checkbox\\\" 时）",
+            "whenCn": "定义如何显示单元格内容",
+            "whenEn": "Define how to display cell content"
+          },
+          {
+            "name": "rowSpan",
+            "type": "((prevRowData: DataItem, nextRowData: DataItem) => boolean)",
+            "required": false,
+            "description": "行合并控制函数。参数：prevRowData、nextRowData（相邻两行数据）。返回 true 合并行",
+            "whenCn": "需要合并相同值的相邻单元格时使用",
+            "whenEn": "Use to merge adjacent cells with identical values"
+          },
+          {
+            "name": "sorter",
+            "type": "string | ((order: \"asc\" | \"desc\") => void | ((prevRowData: DataItem, nextRowData: DataItem) => number)) | { rule: string | ((sorter: ({ order: \"asc\" | \"desc\", manual: boolean, key: string | number, weight?: number })[]) => void), weight: number }",
+            "required": false,
+            "description": "排序配置。可以是字符串（排序字段名）、排序函数或包含 rule 和 weight 的 Sorter 对象。提供后列头会显示排序图标",
+            "whenCn": "让该列支持排序功能时使用",
+            "whenEn": "Use to enable sorting for this column"
+          },
+          {
+            "name": "sortDirections",
+            "type": "(\"asc\" | \"desc\")[]",
+            "required": false,
+            "defaultValue": "[\\\"asc\\\", \\\"desc\\\"]",
+            "description": "该列可用的排序方向",
+            "whenCn": "限制该列的排序方向选项时使用",
+            "whenEn": "Use to limit sort direction options for this column",
+            "version": "3.5.0"
+          },
+          {
+            "name": "filter",
+            "type": "| SelectModeColumnFilter<DataItem> | SearchModeColumnFilter<DataItem>",
+            "required": false,
+            "description": "列筛选配置。支持搜索和选择两种模式",
+            "whenCn": "为该列添加筛选功能时使用",
+            "whenEn": "Use to add filtering capability to this column",
+            "version": "3.6.0"
+          },
+          {
+            "name": "title",
+            "type": "ReactNode | ((rowData: DataItem[]) => ReactNode)",
+            "required": false,
+            "description": "列头内容。可以是字符串、ReactNode 或接收所有数据的函数",
+            "whenCn": "定义列头显示内容",
+            "whenEn": "Define column header display content"
+          },
+          {
+            "name": "treeColumnsName",
+            "type": "ObjectKey<DataItem>",
+            "required": false,
+            "description": "树形表格中子节点数据的属性名",
+            "whenCn": "指定树形数据的子节点字段时使用",
+            "whenEn": "Use to specify the field for tree child nodes"
+          },
+          {
+            "name": "treeIndent",
+            "type": "number",
+            "required": false,
+            "defaultValue": "25",
+            "description": "树形表格每一层的缩进宽度（像素）",
+            "whenCn": "调整树形表格的层级缩进距离时使用",
+            "whenEn": "Use to adjust tree table level indentation distance"
+          },
+          {
+            "name": "type",
+            "type": "\"expand\" | \"row-expand\" | \"checkbox\"",
+            "required": false,
+            "description": "特殊列类型。\\\"expand\\\"：行展开列，render 返回函数时可展开。\\\"row-expand\\\"：与 expand 相似，但点击整行触发展开。\\\"checkbox\\\"：选择列",
+            "whenCn": "需要特殊功能列（展开、选择）时使用",
+            "whenEn": "Use for special function columns (expand, selection)"
+          },
+          {
+            "name": "width",
+            "type": "string | number",
+            "required": false,
+            "description": "列宽度",
+            "whenCn": "设置固定列宽或比例宽度时使用",
+            "whenEn": "Use to set fixed or proportional column width"
+          },
+          {
+            "name": "className",
+            "type": "string",
+            "required": false,
+            "description": "该列的 CSS 类名",
+            "whenCn": "为特定列添加自定义样式时使用",
+            "whenEn": "Use to add custom styles to specific column"
+          },
+          {
+            "name": "style",
+            "type": "CSSProperties",
+            "required": false,
+            "description": "该列单元格的内联样式",
+            "whenCn": "直接设置列的样式属性时使用",
+            "whenEn": "Use to directly set column style properties"
+          },
+          {
+            "name": "onClick",
+            "type": "((d: DataItem, isExpand: boolean) => void)",
+            "required": false,
+            "description": "可展开元素的点击事件。仅在列类型为 \\\"expand\\\" 或 \\\"row-expand\\\" 且提供 expandKeys 属性时有效。参数：data（行数据）、isExpand（展开状态）",
+            "whenCn": "需要响应展开/折叠操作时使用",
+            "whenEn": "Use to respond to expand/collapse operations"
+          },
+          {
+            "name": "columnResizable",
+            "type": "false",
+            "required": false,
+            "description": "禁用该列的宽度调整功能",
+            "whenCn": "某些列需要固定宽度不允许调整时使用",
+            "whenEn": "Use when certain columns need fixed width without adjustment"
+          }
+        ]
+      }
+    }
   },
   "Tabs": {
     "name": "Tabs",
@@ -12529,7 +13329,22 @@
       "propsWithWhen": 0,
       "examplesCount": 16
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "TreeSelectRef": {
+        "title": "TreeSelectRef",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "getDataByValues",
+            "type": "(values: Value) => Value extends any[] ? (DataItem | UnMatchedData)[] : DataItem | UnMatchedData",
+            "required": true,
+            "description": "获取 value 对应的 data"
+          }
+        ]
+      }
+    }
   },
   "Upload": {
     "name": "Upload",
@@ -13005,6 +13820,119 @@
       "propsWithWhen": 0,
       "examplesCount": 20
     },
-    "subComponentApis": {}
+    "subComponentApis": {},
+    "relatedTypes": {
+      "UploadOptions": {
+        "title": "UploadOptions",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "上传地址从 action 中获取"
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "required": true,
+            "description": "formData 中存的字段名"
+          },
+          {
+            "name": "withCredentials",
+            "type": "boolean",
+            "required": true,
+            "defaultValue": "false",
+            "description": "是否携带 cookie"
+          },
+          {
+            "name": "responseType",
+            "type": "XMLHttpRequestResponseType",
+            "required": true,
+            "description": "同 props 中的 responseType"
+          },
+          {
+            "name": "file",
+            "type": "File",
+            "required": true,
+            "description": "传入文件"
+          },
+          {
+            "name": "headers",
+            "type": "object",
+            "required": false,
+            "description": "请求头部信息"
+          },
+          {
+            "name": "onError",
+            "type": "(xhr: XhrResult) => void",
+            "required": true,
+            "description": "上传出错事件(props 中为 onHttpError)"
+          },
+          {
+            "name": "onLoad",
+            "type": "(xhr: XhrResult) => void",
+            "required": true,
+            "description": "上传事件"
+          },
+          {
+            "name": "onProgress",
+            "type": "(event: ProgressEvent<EventTarget>, msg?: string ) => any",
+            "required": true,
+            "description": "上传中进度"
+          },
+          {
+            "name": "onStart",
+            "type": "((file: File) => void)",
+            "required": false,
+            "description": "开始上传事件"
+          },
+          {
+            "name": "onSuccess",
+            "type": "((res?: string , file?: File , data?: any, xhr?: XhrResult ) => Error | T)",
+            "required": false,
+            "description": "上传成功事件"
+          },
+          {
+            "name": "params",
+            "type": "object",
+            "required": false,
+            "description": "上传参数"
+          }
+        ]
+      },
+      "Validator": {
+        "title": "Validator",
+        "description": "",
+        "notes": {},
+        "props": [
+          {
+            "name": "customValidator",
+            "type": "((file: File) => void | Promise<any> | Error)",
+            "required": false,
+            "description": "自定义校验"
+          },
+          {
+            "name": "ext",
+            "type": "((ext: string) => void | Promise<any> | Error)",
+            "required": false,
+            "description": "判断后缀名，传入参数为文件后缀，校验失败返回 Error"
+          },
+          {
+            "name": "imageSize",
+            "type": "(image: { width: number; height: number; }) => void | Error",
+            "required": false,
+            "description": "只对 Image 有效，判断图片尺寸，校验失败返回 Error"
+          },
+          {
+            "name": "size",
+            "type": "((size: number) => void | Promise<any> | Error)",
+            "required": false,
+            "description": "判断文件大小，校验失败返回 Error"
+          }
+        ]
+      }
+    }
   }
 }

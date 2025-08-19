@@ -567,5 +567,20 @@
     "propsWithWhen": 0,
     "examplesCount": 24
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "CascaderRef": {
+      "title": "CascaderRef",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "close",
+          "type": "(e?: MouseEvent ) => void",
+          "required": true,
+          "description": "关闭下拉框"
+        }
+      ]
+    }
+  }
 }

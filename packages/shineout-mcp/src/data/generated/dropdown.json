@@ -243,5 +243,62 @@
     "propsWithWhen": 0,
     "examplesCount": 14
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "DropdownData": {
+      "title": "DropdownData",
+      "description": "data 选项有三种情况：\\n  为 ReactElement 时，直接显示此元素；\\n  为 object 且设置了 renderItem，显示 renderItem 返回的内容；\\n  为 object 且未设置 renderItem，按以下数据结构处理。",
+      "notes": {},
+      "props": [
+        {
+          "name": "group",
+          "type": "string",
+          "required": false,
+          "description": "分组"
+        },
+        {
+          "name": "divider",
+          "type": "boolean",
+          "required": false,
+          "description": "分割线"
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": false,
+          "description": "url属性不为空时，render为一个链接"
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "required": false,
+          "description": "url 不为空时有效"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "禁用"
+        },
+        {
+          "name": "content",
+          "type": "ReactNode",
+          "required": false,
+          "description": "默认从content获取内容"
+        },
+        {
+          "name": "children",
+          "type": "DropdownNode[]",
+          "required": false,
+          "description": "子节点"
+        },
+        {
+          "name": "onClick",
+          "type": "((data: DropdownNode) => void)",
+          "required": false,
+          "description": "点击事件"
+        }
+      ]
+    }
+  }
 }
