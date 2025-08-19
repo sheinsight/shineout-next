@@ -843,5 +843,220 @@
     "propsWithWhen": 54,
     "examplesCount": 59
   },
-  "subComponentApis": {}
+  "subComponentApis": {},
+  "relatedTypes": {
+    "Table columns 配置": {
+      "title": "Table columns 配置",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "align",
+          "type": "\"left\" | \"center\" | \"right\"",
+          "required": false,
+          "defaultValue": "\\\"left\\\"",
+          "description": "单元格内容的水平对齐方式",
+          "whenCn": "根据内容类型调整对齐（如数字右对齐）",
+          "whenEn": "Adjust alignment based on content type (e.g., right-align numbers)"
+        },
+        {
+          "name": "colSpan",
+          "type": "((row: DataItem, index: number) => number)",
+          "required": false,
+          "description": "列合并控制函数。参数：row（当前行数据），index（行索引）。返回要合并的列数",
+          "whenCn": "需要动态合并单元格（如汇总行）时使用",
+          "whenEn": "Use for dynamic cell merging (e.g., summary rows)"
+        },
+        {
+          "name": "defaultOrder",
+          "type": "\"asc\" | \"desc\"",
+          "required": false,
+          "description": "该列的默认排序方向",
+          "whenCn": "需要初始加载时按该列排序时使用",
+          "whenEn": "Use when initial sorting by this column is needed"
+        },
+        {
+          "name": "fixed",
+          "type": "\"left\" | \"right\"",
+          "required": false,
+          "description": "固定列在左侧或右侧。若多个相邻列需要固定，只需指定最外侧的列",
+          "whenCn": "需要保持某些列始终可见（如操作列）时使用",
+          "whenEn": "Use to keep columns always visible (e.g., action columns)"
+        },
+        {
+          "name": "group",
+          "type": "ReactNode | ReactNode[]",
+          "required": false,
+          "description": "表头分组名称。相邻的相同分组会合并为一个表头",
+          "whenCn": "需要将相关列组织在一起显示时使用",
+          "whenEn": "Use to organize related columns together"
+        },
+        {
+          "name": "groupProps",
+          "type": "{ className?: string ; style?: CSSProperties ; }",
+          "required": false,
+          "description": "表头分组的额外属性（类名、样式）",
+          "whenCn": "需要自定义分组表头样式时使用",
+          "whenEn": "Use to customize group header styling",
+          "version": "3.7.0"
+        },
+        {
+          "name": "hide",
+          "type": "boolean",
+          "required": false,
+          "description": "隐藏列（仅对 row-expand 类型的列有效）",
+          "whenCn": "仅需要展开功能但不显示展开列时使用",
+          "whenEn": "Use when expand functionality is needed without showing expand column"
+        },
+        {
+          "name": "key",
+          "type": "string | number",
+          "required": false,
+          "description": "列的唯一标识。未提供时默认使用列索引",
+          "whenCn": "需要明确标识列（用于排序、筛选等）时使用",
+          "whenEn": "Use to explicitly identify columns (for sorting, filtering, etc.)"
+        },
+        {
+          "name": "minWidth",
+          "type": "number",
+          "required": false,
+          "description": "列的最小宽度",
+          "whenCn": "限制列宽调整的最小值，保证内容可读性",
+          "whenEn": "Limit minimum column width to ensure content readability"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number",
+          "required": false,
+          "description": "列的最大宽度（拖动调整时的限制）",
+          "whenCn": "限制列宽调整的最大值，避免过宽",
+          "whenEn": "Limit maximum column width to prevent excessive width"
+        },
+        {
+          "name": "filterAll",
+          "type": "((data: DataItem[]) => DataItem[])",
+          "required": false,
+          "description": "全选时的数据过滤函数。仅在 type=\\\"checkbox\\\" 时有效。参数：数据数组。返回过滤后的数据",
+          "whenCn": "需要在全选时排除某些行（如禁用行）时使用",
+          "whenEn": "Use to exclude certain rows (e.g., disabled rows) when selecting all"
+        },
+        {
+          "name": "render",
+          "type": "ObjectKey<DataItem> | function(d, id, instance)",
+          "required": false,
+          "description": "渲染单元格内容。可以是属性名字符串（如 \\\"name\\\" 渲染 row.name）或函数，函数参数：data（行数据）、index（行索引）、checkboxInstance（当 type=\\\"checkbox\\\" 时）",
+          "whenCn": "定义如何显示单元格内容",
+          "whenEn": "Define how to display cell content"
+        },
+        {
+          "name": "rowSpan",
+          "type": "((prevRowData: DataItem, nextRowData: DataItem) => boolean)",
+          "required": false,
+          "description": "行合并控制函数。参数：prevRowData、nextRowData（相邻两行数据）。返回 true 合并行",
+          "whenCn": "需要合并相同值的相邻单元格时使用",
+          "whenEn": "Use to merge adjacent cells with identical values"
+        },
+        {
+          "name": "sorter",
+          "type": "string | ((order: \"asc\" | \"desc\") => void | ((prevRowData: DataItem, nextRowData: DataItem) => number)) | { rule: string | ((sorter: ({ order: \"asc\" | \"desc\", manual: boolean, key: string | number, weight?: number })[]) => void), weight: number }",
+          "required": false,
+          "description": "排序配置。可以是字符串（排序字段名）、排序函数或包含 rule 和 weight 的 Sorter 对象。提供后列头会显示排序图标",
+          "whenCn": "让该列支持排序功能时使用",
+          "whenEn": "Use to enable sorting for this column"
+        },
+        {
+          "name": "sortDirections",
+          "type": "(\"asc\" | \"desc\")[]",
+          "required": false,
+          "defaultValue": "[\\\"asc\\\", \\\"desc\\\"]",
+          "description": "该列可用的排序方向",
+          "whenCn": "限制该列的排序方向选项时使用",
+          "whenEn": "Use to limit sort direction options for this column",
+          "version": "3.5.0"
+        },
+        {
+          "name": "filter",
+          "type": "| SelectModeColumnFilter<DataItem> | SearchModeColumnFilter<DataItem>",
+          "required": false,
+          "description": "列筛选配置。支持搜索和选择两种模式",
+          "whenCn": "为该列添加筛选功能时使用",
+          "whenEn": "Use to add filtering capability to this column",
+          "version": "3.6.0"
+        },
+        {
+          "name": "title",
+          "type": "ReactNode | ((rowData: DataItem[]) => ReactNode)",
+          "required": false,
+          "description": "列头内容。可以是字符串、ReactNode 或接收所有数据的函数",
+          "whenCn": "定义列头显示内容",
+          "whenEn": "Define column header display content"
+        },
+        {
+          "name": "treeColumnsName",
+          "type": "ObjectKey<DataItem>",
+          "required": false,
+          "description": "树形表格中子节点数据的属性名",
+          "whenCn": "指定树形数据的子节点字段时使用",
+          "whenEn": "Use to specify the field for tree child nodes"
+        },
+        {
+          "name": "treeIndent",
+          "type": "number",
+          "required": false,
+          "defaultValue": "25",
+          "description": "树形表格每一层的缩进宽度（像素）",
+          "whenCn": "调整树形表格的层级缩进距离时使用",
+          "whenEn": "Use to adjust tree table level indentation distance"
+        },
+        {
+          "name": "type",
+          "type": "\"expand\" | \"row-expand\" | \"checkbox\"",
+          "required": false,
+          "description": "特殊列类型。\\\"expand\\\"：行展开列，render 返回函数时可展开。\\\"row-expand\\\"：与 expand 相似，但点击整行触发展开。\\\"checkbox\\\"：选择列",
+          "whenCn": "需要特殊功能列（展开、选择）时使用",
+          "whenEn": "Use for special function columns (expand, selection)"
+        },
+        {
+          "name": "width",
+          "type": "string | number",
+          "required": false,
+          "description": "列宽度",
+          "whenCn": "设置固定列宽或比例宽度时使用",
+          "whenEn": "Use to set fixed or proportional column width"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "该列的 CSS 类名",
+          "whenCn": "为特定列添加自定义样式时使用",
+          "whenEn": "Use to add custom styles to specific column"
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "该列单元格的内联样式",
+          "whenCn": "直接设置列的样式属性时使用",
+          "whenEn": "Use to directly set column style properties"
+        },
+        {
+          "name": "onClick",
+          "type": "((d: DataItem, isExpand: boolean) => void)",
+          "required": false,
+          "description": "可展开元素的点击事件。仅在列类型为 \\\"expand\\\" 或 \\\"row-expand\\\" 且提供 expandKeys 属性时有效。参数：data（行数据）、isExpand（展开状态）",
+          "whenCn": "需要响应展开/折叠操作时使用",
+          "whenEn": "Use to respond to expand/collapse operations"
+        },
+        {
+          "name": "columnResizable",
+          "type": "false",
+          "required": false,
+          "description": "禁用该列的宽度调整功能",
+          "whenCn": "某些列需要固定宽度不允许调整时使用",
+          "whenEn": "Use when certain columns need fixed width without adjustment"
+        }
+      ]
+    }
+  }
 }

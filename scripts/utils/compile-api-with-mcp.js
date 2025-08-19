@@ -248,15 +248,18 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     }
   };
 
-  // 处理子组件的 API
+  // 处理子组件和相关类型的 API
   if (apis.length > 1) {
     mcpData.subComponentApis = {};
+    mcpData.relatedTypes = {}; // 新增：相关类型定义（如 Table 的 ColumnItem）
     
     // 将 subComponents 从字符串数组转换为对象数组，包含 when 信息
     const subComponentsWithInfo = [];
     
     apis.slice(1).forEach(api => {
       const subName = api.title.split('.').pop();
+      
+      // 处理子组件
       if (subName && subComponents.includes(subName)) {
         // 提取子组件的 when 描述
         const whenDescriptionCn = api.tag?.whenCn || '';
@@ -284,12 +287,39 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
             version: prop.tag.version || undefined
           }))
         };
+      } 
+      // 处理相关类型定义（如 Table 的 ColumnItem）
+      else if (api.title && !api.title.includes('.')) {
+        // 如果标题不包含点号，说明是独立的类型定义（如 "Table columns 配置"）
+        mcpData.relatedTypes[api.title] = {
+          title: api.title,
+          description: api.cn || api.en || '',
+          notes: {
+            cn: api.tag?.notesCn || undefined,
+            en: api.tag?.notesEn || undefined
+          },
+          props: api.properties.map(prop => ({
+            name: prop.name,
+            type: prop.type.replace(/\\\"/g, '"').replace(/\s+/g, ' ').trim(),
+            required: prop.required,
+            defaultValue: prop.tag.default || undefined,
+            description: prop.tag.cn || prop.tag.en || '',
+            whenCn: prop.tag.whenCn || undefined,
+            whenEn: prop.tag.whenEn || undefined,
+            version: prop.tag.version || undefined
+          }))
+        };
       }
     });
     
     // 如果有子组件信息，更新 subComponents 字段
     if (subComponentsWithInfo.length > 0) {
       mcpData.subComponents = subComponentsWithInfo;
+    }
+    
+    // 清理空的 relatedTypes
+    if (Object.keys(mcpData.relatedTypes).length === 0) {
+      delete mcpData.relatedTypes;
     }
   }
 
