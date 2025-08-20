@@ -53,94 +53,37 @@ const validateBuild = () => {
 
 // 准备发布的 package.json
 const preparePackageJson = () => {
-  const pkg = { ...mcpPackage };
-  
   // 更新版本号
-  pkg.version = version;
-  
-  // 更新源文件的 package.json 版本号（用于 update-version 脚本）
   mcpPackage.version = version;
+  
+  // 保留 repository 和 license
+  mcpPackage.repository = mainPackage.repository;
+  mcpPackage.license = mainPackage.license;
+  
+  // 写回 package.json
   fs.writeFileSync(mcpPackagePath, JSON.stringify(mcpPackage, null, 2));
-  
-  // 保留必要的字段
-  pkg.repository = mainPackage.repository;
-  pkg.license = mainPackage.license;
-  
-  // 删除开发相关的字段
-  delete pkg.scripts;
-  delete pkg.devDependencies;
-  
-  // 修正路径（从 dist 目录发布）
-  if (pkg.main) {
-    pkg.main = pkg.main.replace(/^dist\//, './');
-  }
-  if (pkg.bin && pkg.bin['sheinx-mcp']) {
-    // bin 路径需要相对于发布目录
-    pkg.bin['sheinx-mcp'] = './bin/shineout-mcp.js';
-  }
-  
-  // 更新 files 字段
-  // 使用 '*' 来包含所有文件，因为我们是从 dist 目录发布
-  // npm 会自动包含 package.json，README，LICENSE 等文件
-  pkg.files = [
-    '*',
-    '**/*'
-  ];
-  
-  // 写入到 dist 目录
-  const distPackageJsonPath = path.resolve(__dirname, '../packages/shineout-mcp/dist/package.json');
-  fs.writeFileSync(distPackageJsonPath, JSON.stringify(pkg, null, 2));
   
   console.log('✓ package.json 准备完成');
 };
 
-// 复制必要的文件到 dist 目录
+// 复制 LICENSE 文件
 const copyFiles = () => {
   const mcpPath = path.resolve(__dirname, '../packages/shineout-mcp');
-  const distPath = path.resolve(__dirname, '../packages/shineout-mcp/dist');
   const rootPath = path.resolve(__dirname, '..');
   
   // 复制 LICENSE
   if (fs.existsSync(`${rootPath}/LICENSE`)) {
-    fs.copyFileSync(`${rootPath}/LICENSE`, `${distPath}/LICENSE`);
+    fs.copyFileSync(`${rootPath}/LICENSE`, `${mcpPath}/LICENSE`);
   }
   
-  // 复制 README
-  if (fs.existsSync(`${mcpPath}/README.md`)) {
-    fs.copyFileSync(`${mcpPath}/README.md`, `${distPath}/README.md`);
-  }
-  
-  // 复制 INSTALLATION.md
-  if (fs.existsSync(`${mcpPath}/INSTALLATION.md`)) {
-    fs.copyFileSync(`${mcpPath}/INSTALLATION.md`, `${distPath}/INSTALLATION.md`);
-  }
-  
-  // 复制示例配置文件
-  if (fs.existsSync(`${mcpPath}/claude-config-example.json`)) {
-    fs.copyFileSync(`${mcpPath}/claude-config-example.json`, `${distPath}/claude-config-example.json`);
-  }
-  
-  // 复制 bin 目录
-  const binSourcePath = `${mcpPath}/bin`;
-  const binTargetPath = `${distPath}/bin`;
-  if (fs.existsSync(binSourcePath)) {
-    if (!fs.existsSync(binTargetPath)) {
-      fs.mkdirSync(binTargetPath, { recursive: true });
-    }
-    const binFiles = fs.readdirSync(binSourcePath);
-    binFiles.forEach(file => {
-      fs.copyFileSync(`${binSourcePath}/${file}`, `${binTargetPath}/${file}`);
-    });
-  }
-  
-  console.log('✓ 文件复制完成');
+  console.log('✓ LICENSE 文件复制完成');
 };
 
 // 发布到 NPM
 const publish = () => {
-  const distPath = path.resolve(__dirname, '../packages/shineout-mcp/dist');
+  const mcpPath = path.resolve(__dirname, '../packages/shineout-mcp');
   // 只有在有特定 tag 时才添加 --tag 参数，否则使用 npm 默认的 latest
-  const command = `npm publish ${distPath} --access public${tag ? ` --tag ${tag}` : ''}`;
+  const command = `npm publish ${mcpPath} --access public${tag ? ` --tag ${tag}` : ''}`;
   
   console.log('执行发布命令:', command);
   

@@ -32,7 +32,8 @@
     "dist",
     "README.md",
     "INSTALLATION.md",
-    "claude-config-example.json"
+    "claude-config-example.json",
+    "LICENSE"
   ],
   "scripts": {
     "build": "npm run clean && npm run update-version && tsc && npm run copy-data",
