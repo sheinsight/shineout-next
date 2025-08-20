@@ -3,7 +3,7 @@ const title = 'Shineout 3.0'
 const description = '一个兼顾『美丽』和『流畅』，坚信优雅永不过时的 React 组件库'
 
 import EcologyWithIcon from "./components/ecology-with-icon";
-import { more1, more2, more3, more4, more5, more6, more7, more8, more9 } from "./svg";
+import { more1, more2, more3, more4, more5, more6, more7, more8, more9, axureIcon } from "./svg";
 import type { IEcologyList } from "./types";
 
 export const ecologyList: IEcologyList[] = [
@@ -45,6 +45,11 @@ export const ecologyList: IEcologyList[] = [
         target: 'https://www.figma.com/design/p6T6pz3CDqXtJA97QKPgMb/%E7%A7%BB%E5%8A%A8%E7%AB%AF3.0?node-id=318-7603&t=whgDiP8o0AzcNI1u-1&fuid=1358637105456413607',
         icon: more3
       },
+      {
+        title:'Shineout Axure 元件库',
+        target:'https://arc.sheincorp.cn/docs/2810122401493379072',
+        icon: axureIcon
+      }
     ]
   },
   {
