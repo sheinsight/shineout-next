@@ -70,6 +70,19 @@ const preparePackageJson = () => {
     pkg.bin['sheinx-mcp'] = './bin/shineout-mcp.js';
   }
   
+  // 更新 files 字段，包含所有需要发布的内容
+  pkg.files = [
+    'bin',
+    'server',
+    'tools',
+    'types',
+    'data',
+    'README.md',
+    'INSTALLATION.md',
+    'claude-config-example.json',
+    'LICENSE'
+  ];
+  
   // 写入到 dist 目录
   const distPackageJsonPath = path.resolve(__dirname, '../packages/shineout-mcp/dist/package.json');
   fs.writeFileSync(distPackageJsonPath, JSON.stringify(pkg, null, 2));
