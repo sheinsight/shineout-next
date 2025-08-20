@@ -20,14 +20,19 @@ if (tagName.startsWith('version-mcp-')) {
 }
 
 // 获取发布 tag (beta, alpha, rc, latest)
-let tag = (version.split('-')[1] || '').split('.')[0] || 'latest';
-if (tag === 'rc') {
-  tag = 'next';
+// 如果是正式版本（没有预发布标签），不设置 tag，让 npm 默认使用 latest
+let tag = '';
+if (version.includes('-')) {
+  // 预发布版本
+  tag = version.split('-')[1].split('.')[0];
+  if (tag === 'rc') {
+    tag = 'next';
+  }
 }
 
 console.log('MCP 包发布信息:');
 console.log('版本号:', version);
-console.log('NPM Tag:', tag);
+console.log('NPM Tag:', tag || 'latest');
 
 // 验证构建文件
 const validateBuild = () => {
@@ -135,6 +140,7 @@ const copyFiles = () => {
 // 发布到 NPM
 const publish = () => {
   const distPath = path.resolve(__dirname, '../packages/shineout-mcp/dist');
+  // 只有在有特定 tag 时才添加 --tag 参数，否则使用 npm 默认的 latest
   const command = `npm publish ${distPath} --access public${tag ? ` --tag ${tag}` : ''}`;
   
   console.log('执行发布命令:', command);
@@ -148,7 +154,7 @@ const publish = () => {
     
     console.log(stdout);
     console.log(`\n✅ @sheinx/shineout-mcp@${version} 发布成功！`);
-    console.log(`   NPM Tag: ${tag}`);
+    console.log(`   NPM Tag: ${tag || 'latest'}`);
     console.log(`   查看: https://www.npmjs.com/package/@sheinx/shineout-mcp`);
   });
 };
