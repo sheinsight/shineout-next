@@ -37,6 +37,7 @@ jobs:
       - name: Build MCP package
         run: |
           cd packages/shineout-mcp
+          npm run build
           npm run generate
           npm run build
 
