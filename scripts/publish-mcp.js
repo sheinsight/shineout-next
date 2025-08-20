@@ -75,17 +75,12 @@ const preparePackageJson = () => {
     pkg.bin['sheinx-mcp'] = './bin/shineout-mcp.js';
   }
   
-  // 更新 files 字段，包含所有需要发布的内容
+  // 更新 files 字段
+  // 使用 '*' 来包含所有文件，因为我们是从 dist 目录发布
+  // npm 会自动包含 package.json，README，LICENSE 等文件
   pkg.files = [
-    'bin',
-    'server',
-    'tools',
-    'types',
-    'data',
-    'README.md',
-    'INSTALLATION.md',
-    'claude-config-example.json',
-    'LICENSE'
+    '*',
+    '**/*'
   ];
   
   // 写入到 dist 目录
