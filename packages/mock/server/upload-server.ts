@@ -81,6 +81,93 @@ const upload = multer({
   }
 });
 
+// 解析速率参数（如 "1M/s", "100kb/s"）
+const parseSpeed = (speedStr: string): number => {
+  if (!speedStr) return 0;
+  
+  const match = speedStr.toLowerCase().match(/^(\d+(?:\.\d+)?)(k|kb|m|mb)?\/s$/);
+  if (!match) return 0;
+  
+  const value = parseFloat(match[1]);
+  const unit = match[2] || '';
+  
+  switch (unit) {
+    case 'k':
+    case 'kb':
+      return value * 1024; // KB/s to bytes/s
+    case 'm':
+    case 'mb':
+      return value * 1024 * 1024; // MB/s to bytes/s
+    default:
+      return value; // bytes/s
+  }
+};
+
+// 模拟慢速上传的中间件
+const simulateSlowUpload = (req: MulterRequest, res: Response, next: Function) => {
+  const speed = parseSpeed(req.query.speed as string);
+  
+  if (!speed || !req.file) {
+    return next();
+  }
+
+  const fileSize = req.file.size;
+  const chunkSize = Math.min(8192, speed); // 8KB 或设定速率，取较小值
+  const chunkDelay = (chunkSize / speed) * 1000; // 每个chunk的延迟时间（毫秒）
+  const totalChunks = Math.ceil(fileSize / chunkSize);
+  
+  console.log('模拟上传速率:', {
+    speed: `${speed} bytes/s`,
+    fileSize,
+    chunkSize,
+    chunkDelay: `${chunkDelay}ms`,
+    totalChunks,
+    estimatedTime: `${(fileSize / speed).toFixed(1)}s`
+  });
+
+  // 设置响应头，准备流式响应
+  res.writeHead(200, {
+    'Content-Type': 'application/json',
+    'Transfer-Encoding': 'chunked',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With'
+  });
+
+  let sentChunks = 0;
+  const responseData = {
+    code: 0,
+    message: '上传成功',
+    data: {
+      filename: req.file.filename,
+      originalname: req.file.originalname,
+      size: req.file.size,
+      url: `http://localhost:${PORT}/uploads/${req.file.filename}`,
+      path: req.file.path
+    }
+  };
+
+  const sendChunk = () => {
+    sentChunks++;
+    const progress = (sentChunks / totalChunks) * 100;
+    
+    console.log(`发送chunk ${sentChunks}/${totalChunks}, 进度: ${progress.toFixed(1)}%`);
+    
+    if (sentChunks >= totalChunks) {
+      // 发送最终响应
+      res.end(JSON.stringify(responseData));
+      console.log('上传模拟完成');
+    } else {
+      // 发送一个空chunk来模拟上传进度
+      res.write('');
+      setTimeout(sendChunk, chunkDelay);
+    }
+  };
+
+  // 开始发送chunks
+  setTimeout(sendChunk, chunkDelay);
+};
+
 // 上传成功接口
 app.post('/api/upload', upload.single('file'), (req: MulterRequest, res: Response<ApiResponse<FileInfo>>) => {
   try {
@@ -95,8 +182,9 @@ app.post('/api/upload', upload.single('file'), (req: MulterRequest, res: Respons
     const delay = parseInt(req.query.delay as string) || 0; // 延迟时间（毫秒）
     const shouldFail = req.query.fail === 'true'; // 是否模拟失败
     const progressSteps = parseInt(req.query.progress as string) || 0; // 进度步骤数
+    const speed = req.query.speed as string; // 上传速率（如 "1M/s", "100kb/s"）
 
-    console.log('文件上传配置:', { delay, shouldFail, progressSteps, filename: req.file.filename });
+    console.log('文件上传配置:', { delay, shouldFail, progressSteps, speed, filename: req.file.filename });
 
     // 模拟上传失败
     if (shouldFail) {
@@ -110,6 +198,11 @@ app.post('/api/upload', upload.single('file'), (req: MulterRequest, res: Respons
       return;
     }
 
+    // 如果设置了速率，使用速率模拟
+    if (speed && parseSpeed(speed) > 0) {
+      return simulateSlowUpload(req, res, () => {});
+    }
+
     // 模拟上传进度和延迟
     if (progressSteps > 0 || delay > 0) {
       const stepDelay = delay / Math.max(progressSteps, 1);
@@ -118,10 +211,6 @@ app.post('/api/upload', upload.single('file'), (req: MulterRequest, res: Respons
       const sendProgress = () => {
         currentStep++;
         const progress = Math.min((currentStep / Math.max(progressSteps, 1)) * 100, 100);
-        
-        // 这里实际上无法发送进度事件到客户端，因为这是在请求完成后
-        // 进度是由客户端的 XMLHttpRequest 自动处理的
-        // 我们只能通过延迟来模拟慢速上传
         
         if (currentStep >= progressSteps || progress >= 100) {
           // 上传完成
