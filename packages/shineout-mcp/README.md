@@ -1,36 +1,57 @@
-# shineout-mcp
+# @sheinx/shineout-mcp
 
-Shineout 组件文档提供器，通过 MCP (Model Context Protocol) 协议为 Claude AI 提供准确的 Shineout 组件使用信息。
+<p align="center">
+  <img alt="shineout-mcp" src="https://user-images.githubusercontent.com/101764/44770646-44f53000-ab9b-11e8-834e-2b1394cea318.png" width="300">
+</p>
 
-让 Claude AI 成为你的 Shineout 开发助手！
+<p align="center">
+  Shineout documentation provider for Claude AI via MCP protocol
+</p>
 
-## 功能特性
+<p align="center">
+  <a href="https://www.npmjs.com/package/@sheinx/shineout-mcp"><img src="https://img.shields.io/npm/v/@sheinx/shineout-mcp.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@sheinx/shineout-mcp"><img src="https://img.shields.io/npm/dm/@sheinx/shineout-mcp.svg?style=flat-square"></a>
+  <img src="https://img.shields.io/badge/MCP-v0.5.0-blue.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/Claude-Desktop-purple.svg?style=flat-square">
+</p>
 
-- 📚 完整的 Shineout 组件 API 文档
-- 🔍 智能组件搜索和过滤
-- 💡 丰富的使用示例和最佳实践
-- 🎯 针对 AI 优化的文档格式
-- 🔄 与 Claude Desktop 无缝集成
+## ✨ Features
 
-## 安装
+- 📚 Complete Shineout component API documentation
+- 🔍 Intelligent component search and filtering
+- 💡 Rich usage examples and best practices  
+- 🎯 AI-optimized documentation format
+- 🔄 Seamless integration with Claude Desktop
+- 🚀 Real-time component data generation
 
-```bash
-npm install -g shineout-mcp
+## 🛠️ Requirements
+
+```
+node >= 16.0.0
+Claude Desktop
 ```
 
-## 快速开始
-
-### 1. 安装包
+## 📦 Installation
 
 ```bash
-npm install -g shineout-mcp
+npm install -g @sheinx/shineout-mcp
 ```
 
-### 2. 配置 Claude Desktop
+```bash
+yarn global add @sheinx/shineout-mcp
+```
 
-在 Claude Desktop 的配置文件中添加 MCP 服务器配置：
+```bash
+pnpm add -g @sheinx/shineout-mcp
+```
 
-**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+## 🔨 Quick Start
+
+### 1. Configure Claude Desktop
+
+Add the MCP server configuration to Claude Desktop's config file:
+
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
 **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
@@ -38,118 +59,137 @@ npm install -g shineout-mcp
   "mcpServers": {
     "shineout": {
       "command": "npx",
-      "args": ["shineout-mcp"],
+      "args": ["@sheinx/shineout-mcp"],
       "env": {}
     }
   }
 }
 ```
 
-### 3. 重启 Claude Desktop
+### 2. Restart Claude Desktop
 
-配置完成后重启 Claude Desktop，你就可以在对话中使用 Shineout 文档功能了！
+After configuration, restart Claude Desktop to enable the Shineout documentation features.
 
-### 4. 开始使用
+### 3. Start Using
 
-在 Claude Desktop 中，你可以这样提问：
+Ask Claude about Shineout components:
 
-- `获取 Button 组件的文档`
-- `搜索表单相关的组件`
-- `列出所有表单组件`
-- `Button 组件有哪些属性？`
-- `如何使用 Input 组件？`
-- `给我一个 Form 的使用示例`
+- "Show me the Button component documentation"
+- "Search for form-related components"
+- "List all form components"
+- "What props does the Input component have?"
+- "Give me a Form usage example"
 
-## 可用工具
+## 🔧 Available Tools
 
-### get_component
-获取指定组件的详细文档和 API 信息。
+### `get_component`
+Get detailed documentation and API information for a specific component.
 
+### `search_components`
+Search for components or features.
+
+### `list_components`
+List all available components, with optional category filtering.
+
+### `get_examples`
+Get usage examples for components.
+
+### `get_component_api`
+Get detailed API information for a component.
+
+## 📖 Usage Examples
+
+```typescript
+// In Claude Desktop conversation:
+
+// Get component documentation
+"Get the documentation for Button component"
+
+// Search components
+"Search for components related to forms"
+
+// List components by category
+"List all display components"
+
+// Get component examples
+"Show me examples of using the Table component"
+
+// Get component API
+"What are the props for Select component?"
 ```
-获取 Button 组件的文档
-```
 
-### search_components
-搜索组件或功能。
+## 🏗️ Development
 
-```
-搜索表单相关的组件
-```
-
-### list_components
-列出所有可用的组件，可按分类筛选。
-
-```
-列出所有表单组件
-```
-
-### get_examples
-获取组件的使用示例。
-
-```
-获取 Form 组件的高级用法示例
-```
-
-## 开发
-
-### 本地开发
+### Local Development
 
 ```bash
-# 克隆仓库
-git clone <repository-url>
+# Clone repository
+git clone https://github.com/sheinsight/shineout-next.git
 cd packages/shineout-mcp
 
-# 安装依赖
-npm install
+# Install dependencies
+pnpm install
 
-# 构建项目
+# Generate component data
+npm run generate
+
+# Build project
 npm run build
 
-# 生成组件数据
-npm run generate
+# Test locally
+npm run test
 ```
 
-### 目录结构
+### Project Structure
 
 ```
 packages/shineout-mcp/
-├── bin/                    # 可执行文件
-│   └── shineout-mcp.js  # MCP 服务器入口
+├── bin/                    # Executable files
+│   └── shineout-mcp.js    # MCP server entry
 ├── src/
-│   ├── server/             # MCP 服务器实现
-│   ├── tools/              # 工具服务
-│   ├── data/               # 组件数据和加载器
-│   └── types/              # TypeScript 类型定义
-├── scripts/                # 构建和生成脚本
-└── dist/                   # 编译输出
+│   ├── server/            # MCP server implementation
+│   ├── tools/             # Tool services
+│   ├── data/              # Component data and loaders
+│   ├── generators/        # Data generation scripts
+│   └── types/             # TypeScript definitions
+├── scripts/               # Build and generation scripts
+└── dist/                  # Compiled output
 ```
 
-## 数据生成
+### Data Generation
 
-项目包含脚本来从 Shineout 源码自动提取组件信息：
+The project includes scripts to automatically extract component information from Shineout source code:
 
 ```bash
 npm run generate
 ```
 
-这将：
-- 解析 TypeScript 类型定义
-- 提取组件 Props 和事件
-- 生成使用示例
-- 创建搜索索引
+This will:
+- Parse TypeScript type definitions
+- Extract component Props and events
+- Generate usage examples
+- Create search indexes
+- Build comprehensive documentation
 
-## 贡献
+## 🤝 Contributing
 
-1. Fork 项目
-2. 创建功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 创建 Pull Request
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可证
+## 📄 License
 
-MIT License
+[MIT](./LICENSE)
 
-## 支持
+## 🔗 Links
 
-如有问题或建议，请在 [GitHub Issues](https://github.com/sheinsight/shineout-next/issues) 中提出。
+- [Shineout Documentation](https://shineout.com)
+- [GitHub Repository](https://github.com/sheinsight/shineout-next)
+- [NPM Package](https://www.npmjs.com/package/@sheinx/shineout-mcp)
+- [MCP Protocol](https://modelcontextprotocol.io)
+
+## 💬 Support
+
+For issues or suggestions, please file an issue on [GitHub Issues](https://github.com/sheinsight/shineout-next/issues).
