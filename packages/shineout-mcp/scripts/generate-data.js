@@ -15,8 +15,8 @@ async function generateComponentData() {
   console.log('开始生成组件数据...');
   
   try {
-    // 导入 TypeScript 模块
-    const { ComponentExtractor } = await import('../dist/generators/component-extractor.js');
+    // 导入 TypeScript 模块（使用 tsx 运行时直接导入源文件）
+    const { ComponentExtractor } = await import('../src/generators/component-extractor.ts');
     
     const rootPath = path.join(__dirname, '..', '..', '..');
     const extractor = new ComponentExtractor(rootPath);

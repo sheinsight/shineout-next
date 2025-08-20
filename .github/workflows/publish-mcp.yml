@@ -37,14 +37,9 @@ jobs:
       - name: Build MCP package
         run: |
           cd packages/shineout-mcp
-          echo "=== First build (compile TypeScript) ==="
-          npm run build
-          echo "=== Check dist directory ==="
-          ls -la dist/
-          ls -la dist/generators/ || echo "generators directory not found"
-          echo "=== Generate data ==="
+          echo "=== Generate component data ==="
           npm run generate
-          echo "=== Final build (with generated data) ==="
+          echo "=== Build package ==="
           npm run build
 
       - name: Set NPM token
