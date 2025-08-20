@@ -58,6 +58,10 @@ const preparePackageJson = () => {
   // 更新版本号
   pkg.version = version;
   
+  // 更新源文件的 package.json 版本号（用于 update-version 脚本）
+  mcpPackage.version = version;
+  fs.writeFileSync(mcpPackagePath, JSON.stringify(mcpPackage, null, 2));
+  
   // 保留必要的字段
   pkg.repository = mainPackage.repository;
   pkg.license = mainPackage.license;

@@ -35,12 +35,13 @@
     "claude-config-example.json"
   ],
   "scripts": {
-    "build": "npm run clean && tsc && npm run copy-data",
+    "build": "npm run clean && npm run update-version && tsc && npm run copy-data",
     "clean": "rm -rf dist",
     "copy-data": "mkdir -p dist/data && cp -r src/data/generated dist/data/ 2>/dev/null || echo 'No generated data to copy'",
     "dev": "tsc --watch",
     "generate": "tsx scripts/generate-data.js",
     "test": "node test-mcp.js",
+    "update-version": "node scripts/update-version.js",
     "prepublishOnly": "npm run generate && npm run build"
   },
   "dependencies": {

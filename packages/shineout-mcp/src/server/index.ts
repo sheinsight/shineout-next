@@ -12,6 +12,7 @@ import {
 import { ComponentService, TOOL_DEFINITIONS } from '../tools/index.js';
 import { loadComponentData } from '../data/loader.js';
 import { ToolFeedbackManager } from '../tools/feedback/index.js';
+import { VERSION } from '../version.js';
 
 class ShineoutMcpServer {
   private server: Server;
@@ -21,7 +22,7 @@ class ShineoutMcpServer {
     this.server = new Server(
       {
         name: 'shineout-mcp',
-        version: '0.1.0',
+        version: VERSION,
       },
       {
         capabilities: {
