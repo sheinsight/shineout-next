@@ -1,7 +1,7 @@
 {
   "name": "Table",
   "description": "展示行列数据，用于数据收集展示、分析整理、操作处理",
-  "category": "other",
+  "category": "display",
   "importPath": "import { Table } from 'shineout'",
   "props": [
     {
@@ -20,1043 +20,652 @@
       "name": "onCellClick",
       "type": "((data: DataItem, info: { rowIndex: number; columnIndex: number; columnKey: string | number; }) => void)",
       "required": false,
-      "description": "单元格点击事件的回调函数。参数：data（行数据），info.rowIndex（行索引），info.columnIndex（列索引），info.columnKey（列的唯一标识）",
-      "whenCn": "需要单元格级别的交互（如单元格编辑、详情查看）时使用",
-      "whenEn": "Use when cell-level interaction is needed (e.g., cell editing, detail viewing)"
+      "description": "单元格点击事件的回调函数。参数：data（行数据），info.rowIndex（行索引），info.columnIndex（列索引），info.columnKey（列的唯一标识）"
     },
     {
       "name": "scrollLeft",
       "type": "number",
       "required": false,
-      "description": "横向滚动位置（仅在虚拟滚动模式下生效）",
-      "whenCn": "需要程序化控制横向滚动位置时使用",
-      "whenEn": "Use to programmatically control horizontal scroll position"
+      "description": "横向滚动位置（仅在虚拟滚动模式下生效）"
     },
     {
       "name": "rowHeight",
       "type": "number",
       "required": false,
       "defaultValue": "40",
-      "description": "单行的预估高度。用于虚拟滚动的计算和滚动条显示",
-      "whenCn": "当行高与默认值差异较大时调整，以优化虚拟滚动性能",
-      "whenEn": "Adjust when row height differs significantly from default to optimize virtual scrolling performance"
+      "description": "单行的预估高度。用于虚拟滚动的计算和滚动条显示"
     },
     {
       "name": "hover",
       "type": "boolean",
       "required": false,
       "defaultValue": "true",
-      "description": "是否启用行的鼠标悬浮高亮效果",
-      "whenCn": "设为 false 可在复杂表格或特殊设计需求时禁用悬浮效果",
-      "whenEn": "Set to false to disable hover effect for complex tables or special design requirements"
+      "description": "是否启用行的鼠标悬浮高亮效果"
     },
     {
       "name": "empty",
       "type": "ReactNode",
       "required": false,
       "defaultValue": "getLocale(\\\"Data not found\\\")",
-      "description": "表格无数据时显示的内容",
-      "whenCn": "自定义空数据提示，如添加操作按钮或个性化提示信息",
-      "whenEn": "Customize empty state message, e.g., add action buttons or personalized hints"
+      "description": "表格无数据时显示的内容"
     },
     {
       "name": "cellSelectable",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "是否启用 Ctrl/Cmd + 点击来选中单元格",
-      "whenCn": "需要单元格选择功能（如复制单元格内容）时使用",
-      "whenEn": "Use when cell selection is needed (e.g., copying cell content)"
+      "description": "是否启用 Ctrl/Cmd + 点击来选中单元格"
     },
     {
       "name": "height",
       "type": "string | number",
       "required": false,
-      "description": "表格高度（与 style.height 作用相同）",
-      "whenCn": "需要固定表格高度或启用纵向滚动时使用",
-      "whenEn": "Use to set fixed table height or enable vertical scrolling"
+      "description": "表格高度（与 style.height 作用相同）"
     },
     {
       "name": "onScroll",
       "type": "((x: number, y: number, left: number, top: number) => void)",
       "required": false,
-      "description": "滚动事件回调函数。参数：x（横向滚动比例 0-1），y（纵向滚动比例 0-1），left（横向滚动像素值），top（纵向滚动像素值）",
-      "whenCn": "需要监听滚动位置（如同步滚动、懒加载）时使用",
-      "whenEn": "Use to monitor scroll position (e.g., synchronized scrolling, lazy loading)"
+      "description": "滚动事件回调函数。参数：x（横向滚动比例 0-1），y（纵向滚动比例 0-1），left（横向滚动像素值），top（纵向滚动像素值）"
     },
     {
       "name": "pagination",
       "type": "PaginationProps",
       "required": false,
-      "description": "分页配置项。详见 [Pagination](/components/Pagination) 组件文档",
-      "whenCn": "数据量较大需要分页显示时使用",
-      "whenEn": "Use when large datasets need paginated display"
+      "description": "分页配置项。详见 [Pagination](/components/Pagination) 组件文档"
     },
     {
       "name": "loading",
       "type": "ReactNode",
       "required": false,
       "defaultValue": "false",
-      "description": "加载状态。为 true 时显示默认的 [Spin](/components/Spin) 组件，也可传入自定义的加载组件",
-      "whenCn": "数据加载中或异步操作时显示加载状态",
-      "whenEn": "Show loading state during data fetching or async operations"
+      "description": "加载状态。为 true 时显示默认的 [Spin](/components/Spin) 组件，也可传入自定义的加载组件"
     },
     {
       "name": "virtual",
       "type": "boolean | \"lazy\"",
       "required": false,
-      "description": "启用虚拟滚动。设置为 \\\"lazy\\\" 可在滚动时避免重新渲染，提升性能",
-      "whenCn": "大数据量表格（超过 100 行）时使用以优化性能",
-      "whenEn": "Use for large datasets (over 100 rows) to optimize performance"
+      "description": "启用虚拟滚动。设置为 \\\"lazy\\\" 可在滚动时避免重新渲染，提升性能"
     },
     {
       "name": "rowsInView",
       "type": "number",
       "required": false,
       "defaultValue": "20",
-      "description": "单次渲染的最大行数。使用懒加载优化大数据量性能。若表格超过 20 行，可调整此值。设为 0 渲染全部数据",
-      "whenCn": "根据可视区域行数调整以平衡性能和用户体验",
-      "whenEn": "Adjust based on visible rows to balance performance and user experience"
+      "description": "单次渲染的最大行数。使用懒加载优化大数据量性能。若表格超过 20 行，可调整此值。设为 0 渲染全部数据"
     },
     {
       "name": "size",
       "type": "\"small\" | \"large\" | \"default\"",
       "required": false,
       "defaultValue": "\\\"default\\\"",
-      "description": "表格尺寸大小",
-      "whenCn": "根据内容密度和设计需求选择合适的尺寸",
-      "whenEn": "Choose appropriate size based on content density and design requirements"
+      "description": "表格尺寸大小"
     },
     {
       "name": "radio",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "启用单选模式（只能选中一行）",
-      "whenCn": "需要单选功能（如选择主记录、默认项）时使用",
-      "whenEn": "Use when single selection is needed (e.g., selecting primary record, default item)"
+      "description": "启用单选模式（只能选中一行）"
     },
     {
       "name": "verticalAlign",
       "type": "\"top\" | \"middle\"",
       "required": false,
       "defaultValue": "\\\"top\\\"",
-      "description": "单元格内容的垂直对齐方式",
-      "whenCn": "当单元格内容高度不一致时调整对齐方式",
-      "whenEn": "Adjust alignment when cell content heights vary"
+      "description": "单元格内容的垂直对齐方式"
     },
     {
       "name": "children",
       "type": "ReactNode",
       "required": false,
-      "description": "原生 tr/td 元素（仅应用样式，不提供功能）",
-      "whenCn": "需要使用原生 HTML 表格元素但保留样式时使用",
-      "whenEn": "Use when native HTML table elements are needed but want to keep styling"
+      "description": "原生 tr/td 元素（仅应用样式，不提供功能）"
     },
     {
       "name": "width",
       "type": "string | number",
       "required": false,
-      "description": "表格总宽度。默认为容器宽度，不能小于各列宽度之和",
-      "whenCn": "需要固定表格宽度或处理横向滚动时使用",
-      "whenEn": "Use to set fixed table width or handle horizontal scrolling"
+      "description": "表格总宽度。默认为容器宽度，不能小于各列宽度之和"
     },
     {
       "name": "columns",
       "type": "CommonColumn[]",
       "required": false,
       "defaultValue": "[]",
-      "description": "列配置数组。详见 Table columns 配置",
-      "whenCn": "定义表格的列结构、渲染方式和行为",
-      "whenEn": "Define table column structure, rendering and behavior"
+      "description": "列配置数组。详见 Table columns 配置"
     },
     {
       "name": "disabled",
       "type": "boolean | ((d: DataItem) => boolean)",
       "required": false,
-      "description": "禁用行选择。为 true 时禁用所有行。为函数时：参数 d 为行数据，返回 true 禁用该行",
-      "whenCn": "需要根据条件禁用某些行的选择功能时使用",
-      "whenEn": "Use to disable row selection based on conditions"
+      "description": "禁用行选择。为 true 时禁用所有行。为函数时：参数 d 为行数据，返回 true 禁用该行"
     },
     {
       "name": "treeEmptyExpand",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "树形表格中，即使节点没有子数据也显示展开按钮",
-      "whenCn": "在树形表格中需要动态加载子节点时使用",
-      "whenEn": "Use in tree tables when child nodes are loaded dynamically"
+      "description": "树形表格中，即使节点没有子数据也显示展开按钮"
     },
     {
       "name": "rowClickAttr",
       "type": "string | boolean | string[]",
       "required": false,
       "defaultValue": "[\\\"*\\\"]",
-      "description": "指定哪些元素可以触发行点击。\\\"*\\\" 表示任何元素都可触发，也可指定特定的属性名",
-      "whenCn": "需要精确控制行点击触发区域时使用",
-      "whenEn": "Use to precisely control which areas trigger row clicks"
+      "description": "指定哪些元素可以触发行点击。\\\"*\\\" 表示任何元素都可触发，也可指定特定的属性名"
     },
     {
       "name": "onRowClick",
       "type": "((rowData: DataItem, index: number, fireAttr?: string | boolean ) => void)",
       "required": false,
-      "description": "行点击事件回调。参数：rowData（当前行数据），index（行索引），fireAttr（触发点击的元素属性）",
-      "whenCn": "需要响应整行点击（如展开详情、导航）时使用",
-      "whenEn": "Use when responding to full row clicks (e.g., expand details, navigation)"
+      "description": "行点击事件回调。参数：rowData（当前行数据），index（行索引），fireAttr（触发点击的元素属性）"
     },
     {
       "name": "striped",
       "type": "boolean",
       "required": false,
-      "description": "启用交替行颜色（斑马纹效果）",
-      "whenCn": "需要通过视觉区分提高表格可读性时使用",
-      "whenEn": "Use to improve table readability through visual distinction"
+      "description": "启用交替行颜色（斑马纹效果）"
     },
     {
       "name": "rowClassName",
       "type": "(rowData: DataItem, index: number) => string | undefined",
       "required": false,
-      "description": "为每一行设置自定义 CSS 类名。参数：rowData（行数据），index（行索引）。返回类名字符串",
-      "whenCn": "需要根据数据状态（如高亮、警告）自定义行样式时使用",
-      "whenEn": "Use to customize row styles based on data state (e.g., highlight, warning)"
+      "description": "为每一行设置自定义 CSS 类名。参数：rowData（行数据），index（行索引）。返回类名字符串"
     },
     {
       "name": "rowEvents",
       "type": "object",
       "required": false,
-      "description": "表格行 (tr) 元素的事件处理器集合",
-      "whenCn": "需要监听行级别的 DOM 事件（如鼠标悬停、右键菜单）时使用",
-      "whenEn": "Use to listen to row-level DOM events (e.g., hover, context menu)"
+      "description": "表格行 (tr) 元素的事件处理器集合"
     },
     {
       "name": "data",
       "type": "object[]",
       "required": false,
-      "description": "表格数据数组",
-      "whenCn": "提供表格要显示的数据源",
-      "whenEn": "Provide data source for table display"
+      "description": "表格数据数组"
     },
     {
       "name": "showSelectAll",
       "type": "boolean",
       "required": false,
       "defaultValue": "true",
-      "description": "是否在表头显示全选复选框",
-      "whenCn": "需要隐藏全选功能（如分页场景下避免误操作）时设为 false",
-      "whenEn": "Set to false to hide select-all (e.g., avoid mistakes in paginated scenarios)"
+      "description": "是否在表头显示全选复选框"
     },
     {
       "name": "bordered",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "显示表格边框",
-      "whenCn": "需要清晰的表格边界或符合特定设计规范时使用",
-      "whenEn": "Use when clear table boundaries are needed or to meet design requirements"
+      "description": "显示表格边框"
     },
     {
       "name": "treeCheckAll",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "全选时是否包含所有子孙节点（树形模式）",
-      "whenCn": "树形表格中需要级联选择所有子节点时使用",
-      "whenEn": "Use in tree tables when cascading selection of all child nodes is needed"
+      "description": "全选时是否包含所有子孙节点（树形模式）"
     },
     {
       "name": "renderSorter",
       "type": "((params: { status?: \"asc\" | \"desc\" | null , triggerAsc: () => void, triggerDesc: () => void }) => ReactNode)",
       "required": false,
-      "description": "自定义渲染排序图标的函数。参数：status 当前排序状态（\\\"asc\\\"|\\\"desc\\\"|null），triggerAsc 触发升序排序，triggerDesc 触发降序排序",
-      "whenCn": "需要自定义排序图标样式或交互方式时使用",
-      "whenEn": "Use to customize sort icon style or interaction"
+      "description": "自定义渲染排序图标的函数。参数：status 当前排序状态（\\\"asc\\\"|\\\"desc\\\"|null），triggerAsc 触发升序排序，triggerDesc 触发降序排序"
     },
     {
       "name": "hideHeader",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "隐藏表格头部",
-      "whenCn": "特殊场景下不需要表头（如纯数据展示）时使用",
-      "whenEn": "Use in special cases when header is not needed (e.g., pure data display)"
+      "description": "隐藏表格头部"
     },
     {
       "name": "summary",
       "type": "({ render: () => ReactNode, colSpan?: number , rowSpan?: number })[] | ({ render: () => ReactNode, colSpan?: number , rowSpan?: number })[][]",
       "required": false,
-      "description": "表格底部，用于显示汇总行",
-      "whenCn": "需要显示数据汇总、统计信息或总计时使用",
-      "whenEn": "Use to display data summaries, statistics or totals"
+      "description": "表格底部，用于显示汇总行"
     },
     {
       "name": "sticky",
       "type": "boolean | { top?: number ; css?: boolean ; target?: Element | null ; }",
       "required": false,
-      "description": "固定表头。为 true 时固定在顶部（偏移量为 0）。也可传入对象配置 top 偏移量和 CSS 模式等选项",
-      "whenCn": "长表格需要保持表头可见以便理解数据含义时使用",
-      "whenEn": "Use for long tables to keep header visible for data context"
+      "description": "固定表头。为 true 时固定在顶部（偏移量为 0）。也可传入对象配置 top 偏移量和 CSS 模式等选项"
     },
     {
       "name": "showTopScrollbar",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "在表格顶部显示横向滚动条",
-      "whenCn": "宽表格且表头需要滚动控制时使用，避免滚动到底部才能横向滚动",
-      "whenEn": "Use for wide tables when header needs scroll control without scrolling to bottom",
-      "version": "3.4.0"
+      "description": "在表格顶部显示横向滚动条"
     },
     {
       "name": "showBottomScrollbar",
       "type": "boolean | BottomScrollbarOption",
       "required": false,
       "defaultValue": "false",
-      "description": "在表格底部显示固定的横向滚动条。可传入布尔值或包含 bottom 偏移量和 zIndex 的对象",
-      "whenCn": "长表格需要始终可见的横向滚动控制时使用",
-      "whenEn": "Use for long tables needing always-visible horizontal scroll control",
-      "version": "3.7.0"
+      "description": "在表格底部显示固定的横向滚动条。可传入布尔值或包含 bottom 偏移量和 zIndex 的对象"
     },
     {
       "name": "tableRef",
       "type": "((table: TableRef) => void)",
       "required": false,
-      "description": "获取表格实例引用。提供方法：scrollToIndex 滚动到指定行，getRenderIndexByData 获取数据的渲染索引，scrollColumnIntoView 滚动到指定列，scrollColumnByLeft 按像素横向滚动，sortByColumn 程序化排序。请谨慎使用，仅在虚拟模式下支持",
-      "whenCn": "需要程序化控制表格滚动或排序行为时使用",
-      "whenEn": "Use for programmatic control of table scrolling or sorting behavior"
+      "description": "获取表格实例引用。提供方法：scrollToIndex 滚动到指定行，getRenderIndexByData 获取数据的渲染索引，scrollColumnIntoView 滚动到指定列，scrollColumnByLeft 按像素横向滚动，sortByColumn 程序化排序。请谨慎使用，仅在虚拟模式下支持"
     },
     {
       "name": "onRowSelect",
       "type": "((rows: Value) => void)",
       "required": false,
-      "description": "行选择回调函数。参数 rows 包含选中的数据。如需数据格式化，请配合使用 format 和 prediction",
-      "whenCn": "需要响应行选择变化进行后续操作时使用",
-      "whenEn": "Use to respond to row selection changes for subsequent operations"
+      "description": "行选择回调函数。参数 rows 包含选中的数据。如需数据格式化，请配合使用 format 和 prediction"
     },
     {
       "name": "defaultTreeExpandKeys",
       "type": "(string | number)[]",
       "required": false,
-      "description": "默认展开行(非受控)",
-      "whenCn": "需要设置初始展开的树形行但不需要外部控制时使用",
-      "whenEn": "Use to set initially expanded tree rows without external control"
+      "description": "默认展开行(非受控)"
     },
     {
       "name": "onTreeExpand",
       "type": "((openKeys: (string | number)[], data: Item, expand: boolean, index: number) => void)",
       "required": false,
-      "description": "当设置 treeExpandKeys 后，展开行时会触发该回调，keys 为展开的行",
-      "whenCn": "需要响应树形行展开/折叠操作时使用",
-      "whenEn": "Use to respond to tree row expand/collapse operations"
+      "description": "当设置 treeExpandKeys 后，展开行时会触发该回调，keys 为展开的行"
     },
     {
       "name": "treeExpandKeys",
       "type": "(string | number)[]",
       "required": false,
-      "description": "树形数据展开行，受控",
-      "whenCn": "需要外部控制树形行的展开状态时使用",
-      "whenEn": "Use for external control of tree row expansion state"
+      "description": "树形数据展开行，受控"
     },
     {
       "name": "treeExpandIcon",
       "type": "((data: Item, index: number, isExpanded: boolean) => ReactNode)",
       "required": false,
-      "description": "树形数据展开图标，函数返回 null 时隐藏展开图标",
-      "whenCn": "需要自定义树形表格展开图标的样式或行为时使用",
-      "whenEn": "Use to customize tree table expand icon style or behavior",
-      "version": "3.5.0"
+      "description": "树形数据展开图标，函数返回 null 时隐藏展开图标"
     },
     {
       "name": "expandIcon",
       "type": "((data: Item, index: number, isExpanded: boolean, expandInstance: ReactNode, clickEvent?: (() => void) ) => ReactNode)",
       "required": false,
-      "description": "自定义渲染可展开行的图标内容，其中 data 为当前行的数据，index 为数据下标，isExpanded 为当前行的展开状态，expandInstance 为原始展开行图标实例，clickEvent 为展开事件。展开事件 clickEvent 仅在列类型为 `expand` 时返回",
-      "whenCn": "需要自定义展开行图标的渲染逻辑或样式时使用",
-      "whenEn": "Use to customize expand row icon rendering logic or style",
-      "version": "3.5.4"
+      "description": "自定义渲染可展开行的图标内容，其中 data 为当前行的数据，index 为数据下标，isExpanded 为当前行的展开状态，expandInstance 为原始展开行图标实例，clickEvent 为展开事件。展开事件 clickEvent 仅在列类型为 `expand` 时返回"
     },
     {
       "name": "loader",
       "type": "((data: Item, index: number) => Promise<void>)",
       "required": false,
-      "description": "树形数据加载函数",
-      "whenCn": "需要动态加载树形子节点数据时使用",
-      "whenEn": "Use for dynamic loading of tree child node data",
-      "version": "3.5.0"
+      "description": "树形数据加载函数"
     },
     {
       "name": "sorter",
       "type": "((sortName: string, sorter: \"asc\" | \"desc\", sortedList: ({ order: \"asc\" | \"desc\", manual: boolean, key: string | number, weight?: number })[]) => void | ((a: Item, b: Item) => number) )",
       "required": false,
       "defaultValue": "alphaSort(Column.sorter, sorter)",
-      "description": "表格统一排序函数，参数分别为 Column.sorter 和 排序方式;\\n支持多列排序，sorter传入对象{ rule: string | function, weight: number }, rule为排序规则，为字符串时参考单列排序的用法, weight 为权重，指明排序的优先级。\\n多列排序时，sortedList 返回所有参与排序的字段信息",
-      "whenCn": "需要自定义排序逻辑或实现多列排序时使用",
-      "whenEn": "Use for custom sorting logic or multi-column sorting"
+      "description": "表格统一排序函数，参数分别为 Column.sorter 和 排序方式;\\n支持多列排序，sorter传入对象{ rule: string | function, weight: number }, rule为排序规则，为字符串时参考单列排序的用法, weight 为权重，指明排序的优先级。\\n多列排序时，sortedList 返回所有参与排序的字段信息"
     },
     {
       "name": "onSortCancel",
       "type": "((preType: \"asc\" | \"desc\", key: string | number, orders: ({ order: \"asc\" | \"desc\", weight?: number , key: string | number, manual: boolean })[], sorter: string) => void)",
       "required": false,
-      "description": "排序取消事件回调。当点击已排序的列取消排序时触发。参数：preType（之前的排序方向），key（列的唯一标识），orders（当前所有排序项信息），sorter（列的排序器名称）",
-      "whenCn": "需要在取消排序时执行特定操作时使用",
-      "whenEn": "Use to perform specific actions when sorting is cancelled"
+      "description": "排序取消事件回调。当点击已排序的列取消排序时触发。参数：preType（之前的排序方向），key（列的唯一标识），orders（当前所有排序项信息），sorter（列的排序器名称）"
     },
     {
       "name": "sortDirections",
       "type": "(\"asc\" | \"desc\")[]",
       "required": false,
       "defaultValue": "[\\\"asc\\\", \\\"desc\\\"]",
-      "description": "排序方向",
-      "whenCn": "需要限制可用的排序方向（如只允许升序）时使用",
-      "whenEn": "Use to limit available sort directions (e.g., ascending only)",
-      "version": "3.5.0"
+      "description": "排序方向"
     },
     {
       "name": "columnResizable",
       "type": "boolean",
       "required": false,
-      "description": "设置 columnResizable 为 true，使所有列可伸缩",
-      "whenCn": "需要用户能够手动调整列宽时使用",
-      "whenEn": "Use when users need to manually adjust column widths"
+      "description": "设置 columnResizable 为 true，使所有列可伸缩"
     },
     {
       "name": "onColumnResize",
       "type": "(columns: TableColumn[]) => void",
       "required": false,
-      "description": "列宽伸缩后的回调",
-      "whenCn": "需要响应列宽变化（如保存用户配置）时使用",
-      "whenEn": "Use to respond to column width changes (e.g., save user preferences)"
+      "description": "列宽伸缩后的回调"
     },
     {
       "name": "dataChangeResize",
       "type": "boolean",
       "required": false,
       "defaultValue": "false",
-      "description": "数据发生变化后是否重新计算列宽",
-      "whenCn": "数据内容长度变化较大时使用，保持列宽合理分配",
-      "whenEn": "Use when data content length varies significantly to maintain proper column width distribution"
+      "description": "数据发生变化后是否重新计算列宽"
     },
     {
       "name": "expandKeys",
       "type": "(string | number)[]",
       "required": false,
-      "description": "展开行受控",
-      "whenCn": "需要外部控制行展开状态时使用",
-      "whenEn": "Use for external control of row expansion state"
+      "description": "展开行受控"
     },
     {
       "name": "keygen",
       "type": "| ObjectKey<DataItem> | ((data: DataItem, index?: number) => string | number)",
       "required": true,
-      "description": "生成每一项key的辅助方法\\n为函数时，使用此函数返回值\\n为string时，使用这个string对应的数据值。如 \\\"id\\\"，相当于 (d => d.id)",
-      "whenCn": "为每行数据生成唯一标识，用于选择、展开等功能",
-      "whenEn": "Generate unique identifier for each row, used for selection, expansion, etc."
+      "description": "生成每一项key的辅助方法\\n为函数时，使用此函数返回值\\n为string时，使用这个string对应的数据值。如 \\\"id\\\"，相当于 (d => d.id)"
     },
     {
       "name": "value",
       "type": "any",
       "required": false,
-      "description": "当前选中的数据值，数据格式与 onRowSelect 回调返回的格式保持一致",
-      "whenCn": "需要受控的行选择功能时使用，用于外部管理选中状态",
-      "whenEn": "Use for controlled row selection to manage selected state externally"
+      "description": "当前选中的数据值，数据格式与 onRowSelect 回调返回的格式保持一致"
     },
     {
       "name": "format",
       "type": "ObjectKey<DataItem> | ((data: DataItem) => Value extends (infer U)[] ? U : Value)",
       "required": false,
       "defaultValue": "d => d",
-      "description": "格式化选中值。字符串时：作为属性名提取值（如 \\\"id\\\" 提取 d.id）。函数时：参数为行数据，返回格式化后的值",
-      "whenCn": "当选中值需要特定格式（如仅保存 ID）时使用",
-      "whenEn": "Use when selected values need specific format (e.g., storing only IDs)"
+      "description": "格式化选中值。字符串时：作为属性名提取值（如 \\\"id\\\" 提取 d.id）。函数时：参数为行数据，返回格式化后的值"
     },
     {
       "name": "prediction",
       "type": "((value: Value extends (infer U)[] ? U : Value, data: DataItem) => boolean)",
       "required": false,
       "defaultValue": "(val, d) => val===format(d)",
-      "description": "自定义值匹配函数。参数：value（选中值），data（行数据）。返回 true 表示匹配。用于默认比较失效时（如对象引用不同）",
-      "whenCn": "当数据对象引用变化（如从服务器重新获取）但需保持选中状态时使用",
-      "whenEn": "Use when data object references change (e.g., refetched from server) but selection state needs to persist"
+      "description": "自定义值匹配函数。参数：value（选中值），data（行数据）。返回 true 表示匹配。用于默认比较失效时（如对象引用不同）"
     }
   ],
   "examples": [
     {
-      "title": "Base",
-      "description": "Basic table usage",
+      "title": "基本用法",
+      "description": "基础的表格用法。推荐 columns 写为常量，以提升性能",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- 基础的表格用法。推荐 columns 写为常量，以提升性能\n * en - Base\n *    -- Basic table usage\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nexport default () => {\n  return (\n    <div>\n      <Table keygen='id' columns={columns} data={data} />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Empty",
-      "description": "Table empty state",
+      "title": "空状态",
+      "description": "表格空状态",
       "scenario": "basic",
       "code": "/**\n * cn - 空状态\n *    -- 表格空状态\n * en - Empty\n *    -- Table empty state\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst columns: TableColumnItem[] = [\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nexport default () => {\n  return (\n    <div>\n      <Table keygen='id' columns={columns} data={[]} />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Style",
-      "description": "Set striped to add zebra-striping; Set bordered to add borders",
+      "title": "边框和底纹",
+      "description": "通过 striped 显示交错底纹；通过 bordered 显示边框",
       "scenario": "basic",
       "code": "/**\n * cn - 边框和底纹\n *    -- 通过 striped 显示交错底纹；通过 bordered 显示边框\n * en - Style\n *    -- Set striped to add zebra-striping; Set bordered to add borders\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nexport default () => {\n  return (\n    <div>\n      <Table keygen='id' columns={columns} data={data} bordered striped />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Size",
-      "description": "Set size to small to display compact table, large to display loose table",
+      "title": "尺寸类型",
+      "description": "设置 size 为 small 显示紧凑表格，large 为显示松散表格",
       "scenario": "basic",
       "code": "/**\n * cn - 尺寸类型\n *    -- 设置 size 为 small 显示紧凑表格，large 为显示松散表格\n * en - Size\n *    -- Set size to small to display compact table, large to display loose table\n */\nimport React from 'react';\nimport { Radio, Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst sizeList = ['small', 'default', 'large'];\nexport default () => {\n  const [size, setSize] = React.useState<'small' | 'large' | 'default'>('default');\n  return (\n    <div>\n      <Radio.Group\n        keygen\n        data={sizeList}\n        value={size}\n        onChange={setSize}\n        style={{ marginBottom: 24 }}\n      />\n      <Table keygen='id' size={size} columns={columns} data={data} />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Column group",
-      "description": "Table automatically merges headers with adjacent and identical groups",
-      "scenario": "basic",
+      "title": "表头分组",
+      "description": "Table 会自动合并相邻相同 group 的表头",
+      "scenario": "advanced",
       "code": "/**\n * cn - 表头分组\n *    -- Table 会自动合并相邻相同 group 的表头\n * en - Column group\n *    -- Table automatically merges headers with adjacent and identical groups\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst name = (\n  <span style={{ background: '#E8EBF0', display: 'block', lineHeight: '40px', color: '#141737' }}>\n    Name\n  </span>\n);\n\nconst other = <span>Other</span>;\n\nconst columns: TableColumnItem[] = [\n  { title: 'First Name', render: 'firstName', group: [name, 'True Name'] },\n  { title: 'Last Name', render: 'lastName', group: [name, 'True Name'] },\n  { title: 'Nick Name', render: () => 'nickname', group: name },\n  { title: 'Country', render: 'country' },\n  { title: 'Office', render: 'office', group: other },\n  { title: 'Position', render: 'position', group: other, groupProps: { style: { background: '#EEF2FE' }, className: 'my-custom-header' } },\n];\n\nconst App: React.FC = () => <Table bordered keygen='id' columns={columns} data={data} />;\n\nexport default App;\n"
     },
     {
-      "title": "Fixed head",
-      "description": "When the table sets the height, the header will be fixed at the top",
-      "scenario": "basic",
+      "title": "固定表头",
+      "description": "当 table 设置高度后，表头会固定在顶部",
+      "scenario": "advanced",
       "code": "/**\n * cn - 固定表头\n *    -- 当 table 设置高度后，表头会固定在顶部\n * en - Fixed head\n *    -- When the table sets the height, the header will be fixed at the top\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => (\n  <Table keygen='id' style={{ height: 300 }} columns={columns} data={data} width={1500} />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Bottom scrollbar",
-      "description": "Set `showBottomScrollbar` to enable the bottom scrollbar",
-      "scenario": "basic",
+      "title": "底部滚动",
+      "description": "设置`showBottomScrollbar`开启底部可吸附的滚动条",
+      "scenario": "advanced",
       "code": "/**\n * cn - 底部滚动\n *    -- 设置`showBottomScrollbar`开启底部可吸附的滚动条\n * en - Bottom scrollbar\n *    -- Set `showBottomScrollbar` to enable the bottom scrollbar\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  {\n    title: 'First Name',\n    group: 'Name',\n    render: 'firstName',\n    width: 120,\n  },\n  {\n    title: 'Last Name',\n    fixed: 'left',\n    group: 'Name',\n    render: 'lastName',\n    width: 120,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    fixed: 'right',\n    align: 'right',\n    width: 100,\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => (\n  <Table\n    bordered\n    keygen='id'\n    width={1500}\n    columns={columns}\n    data={data}\n    showBottomScrollbar={{\n      bottom: 0,\n      // 可选属性\n      zIndex: 10,\n    }}\n  />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Double scrollbar",
-      "description": "Set `showTopScrollbar` to enable double scrollbar",
-      "scenario": "basic",
+      "title": "顶部滚动",
+      "description": "设置`showTopScrollbar`开启顶部滚动条",
+      "scenario": "advanced",
       "code": "/**\n * cn - 顶部滚动\n *    -- 设置`showTopScrollbar`开启顶部滚动条\n * en - Double scrollbar\n *    -- Set `showTopScrollbar` to enable double scrollbar\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  {\n    title: 'First Name',\n    group: 'Name',\n    render: 'firstName',\n    width: 120,\n  },\n  {\n    title: 'Last Name',\n    fixed: 'left',\n    group: 'Name',\n    render: 'lastName',\n    width: 120,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    fixed: 'right',\n    align: 'right',\n    width: 100,\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => (\n  <Table showTopScrollbar bordered keygen='id' width={1500} columns={columns} data={data} />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Fixed column",
-      "description": "Set the fixed property of the column can fix the column; Only take effect if the table's width property is set and width is greater than the external container",
-      "scenario": "basic",
+      "title": "固定列",
+      "description": "设置 column 的 fixed 属性，可以固定列。只在设置了表格的 width 属性，并且 width 大于外部容器情况下才会生效",
+      "scenario": "advanced",
       "code": "/**\n * cn - 固定列\n *    -- 设置 column 的 fixed 属性，可以固定列。只在设置了表格的 width 属性，并且 width 大于外部容器情况下才会生效\n * en - Fixed column\n *    -- Set the fixed property of the column can fix the column; Only take effect if the table's width property is set and width is greater than the external container\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  {\n    title: 'First Name',\n    group: 'Name',\n    render: 'firstName',\n    width: 120,\n  },\n  {\n    title: 'Last Name',\n    fixed: 'left',\n    group: 'Name',\n    render: 'lastName',\n    width: 120,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    fixed: 'right',\n    align: 'right',\n    width: 100,\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => (\n  <Table bordered keygen='id' width={1500} style={{ height: 300 }} columns={columns} data={data} />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Large data",
-      "description": "The rendering of large amounts of data in the Table has been optimized by lazy render. This example loads 10000 pieces and 55 columns of data",
-      "scenario": "basic",
+      "title": "大数据量表格",
+      "description": "Table内部对大量数据的渲染做了lazy render的优化。这个例子加载了10000条，55列数据。可以通过设置rowsInView调整单次最多render的行数，默认为20",
+      "scenario": "advanced",
       "code": "/**\n * cn - 大数据量表格\n *    -- Table内部对大量数据的渲染做了lazy render的优化。这个例子加载了10000条，55列数据。可以通过设置rowsInView调整单次最多render的行数，默认为20\n * en - Large data\n *    -- The rendering of large amounts of data in the Table has been optimized by lazy render. This example loads 10000 pieces and 55 columns of data\n *    -- You can set rowsInView property to change the number of rows in rendering. The default value is 20\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(10000);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 80 },\n  {\n    title: 'Name',\n    fixed: 'left',\n    render: (d) => <div style={{ height: d.height }}>{`${d.firstName} ${d.lastName}`}</div>,\n    width: 160,\n  },\n  { title: 'Country', render: 'country', width: 200 },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start', width: 140 },\n];\n\nfor (let i = 0; i < 50; i++) {\n  columns.push({\n    title: `${i + 1}($)`,\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  });\n}\n\nconst App: React.FC = () => (\n  <Table\n    verticalAlign='top'\n    virtual\n    keygen='id'\n    width={6400}\n    style={{ height: 600 }}\n    columns={columns}\n    data={data}\n    rowsInView={20}\n    bordered\n  />\n);\n\nexport default App;\n"
     },
     {
-      "title": "scrollToIndex",
-      "description": "The virtual list table provides a scrollToIndex method to scroll to the specified row",
-      "scenario": "basic",
+      "title": "虚拟滚动",
+      "description": "虚拟列表提供了一个`scrollToIndex`方法滚动到指定行",
+      "scenario": "advanced",
       "code": "/**\n * cn - 虚拟滚动\n *    -- 虚拟列表提供了一个`scrollToIndex`方法滚动到指定行\n * en - scrollToIndex\n *    -- The virtual list table provides a scrollToIndex method to scroll to the specified row\n */\nimport React, { useState, useEffect } from 'react';\nimport { Input, Table, Form, TYPE, Button } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(10000);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 80 },\n  {\n    title: 'Name',\n    fixed: 'left',\n    render: (d) => (\n      <div id={`name_${d.id}`} style={{ height: d.height }}>\n        {`${d.firstName} ${d.lastName}`}\n      </div>\n    ),\n    width: 160,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start', width: 140 },\n];\n\nconst App: React.FC = () => {\n  const [table, setTable] = useState<any>();\n\n  const [state, setState] = useState({\n    index: 25,\n  });\n\n  const handleScroll = () => {\n    if (table)\n      table.scrollToIndex(state.index - 1, () => {\n        const el: HTMLElement = document.querySelector(`#name_${state.index}`)!;\n        if (el) {\n          el.style.color = 'red';\n        }\n      });\n  };\n\n  const handleIndexChange = ({ index }: { index: number }) => {\n    setState({ index });\n  };\n\n  useEffect(() => {\n    setTimeout(handleScroll);\n  }, [state]);\n\n  return (\n    <div>\n      <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>\n        <Input.Number min={1} max={10000} width={100} name='index' style={{marginRight: 12}} />\n        <Button type='primary' htmlType='submit'>\n          Scroll\n        </Button>\n      </Form>\n\n      <Table\n        keygen='id'\n        bordered\n        data={data}\n        virtual\n        width={1400}\n        rowsInView={10}\n        columns={columns}\n        style={{ height: 500 }}\n        tableRef={(t) => setTable(t)}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "scrollToIndex",
-      "description": "The virtual list table provides a getRenderIndexByData method to get the actual index of the data, and then call the `scrollToIndex` method to scroll to the specified row",
-      "scenario": "basic",
+      "title": "*    -- 虚拟列表提供了`getRenderIndexByData`方法获取数据实际的index，然后再调用`scrollToIndex`方法滚动到指定行",
+      "description": "虚拟列表提供了`getRenderIndexByData`方法获取数据实际的index，然后再调用`scrollToIndex`方法滚动到指定行",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 虚拟列表提供了`getRenderIndexByData`方法获取数据实际的index，然后再调用`scrollToIndex`方法滚动到指定行\n * en - scrollToIndex\n *    -- The virtual list table provides a getRenderIndexByData method to get the actual index of the data, and then call the `scrollToIndex` method to scroll to the specified row\n */\nimport React, { useState, useEffect } from 'react';\nimport { Input, Table, Form, TYPE, Button } from 'shineout';\n\ninterface TableRowData {\n  id: string;\n  office: string;\n  country: string;\n  position: string;\n  children?: TableRowData[];\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\n\nlet defaultTreeExpandKeys:string[] = []\nfunction generateMockTreeData(depth: number, count: number, parentId?: string): TableRowData[] {\n  const data: TableRowData[] = [];\n  for (let i = 0; i < count; i++) {\n    const currentId = parentId ? `${parentId}__${depth}_${i}` : `${depth}_${i}`\n    const children = depth > 1 ? generateMockTreeData(depth - 1, count, currentId) : undefined;\n    if(children?.length) {\n      defaultTreeExpandKeys.push(currentId)\n    }\n    data.push({\n      id: currentId,\n      position: `position_${i}`,\n      country: `country_${i}`,\n      office: `office_${i}`,\n      children,\n    });\n  }\n  return data;\n}\n\nconst mockData = generateMockTreeData(4, 20);\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'ID',\n    render: (d) => (\n      <span id={`name_${d.id}`}>\n        {d.id}\n      </span>\n    ),\n    width: 300,\n    treeIndent: 22,\n    treeColumnsName: 'children',\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => {\n  const [tableRef, setTableRef] = useState<any>();\n\n  const [state, setState] = useState({\n    id: '4_0__3_0__2_5__1_0',\n  });\n\n  const handleScroll = () => {\n    if (tableRef){\n      const index = tableRef.getRenderIndexByData({id: state.id});\n      // 或者这样使用也可以：\n      // const index = tableRef.getRenderIndexByData(state.id)\n      if(index === -1) return;\n      tableRef.scrollToIndex(index, () => {\n        const el: HTMLElement = document.querySelector(`#name_${state.id}`)!;\n        if (el) {\n          el.style.color = 'red';\n        }\n      });\n    }\n  };\n\n  const handleIndexChange = ({ id }: { id: string }) => {\n    setState({ id });\n  };\n\n  useEffect(() => {\n    setTimeout(handleScroll);\n  }, [state]);\n\n  return (\n    <div>\n      <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>\n        <Input placeholder='输入ID' width={200} name='id' style={{marginRight: 12}} />\n        <Button type='primary' htmlType='submit'>\n          Scroll\n        </Button>\n      </Form>\n\n      <Table\n        keygen='id'\n        bordered\n        data={mockData}\n        virtual\n        width={1400}\n        rowsInView={10}\n        columns={columns}\n        style={{ height: 500 }}\n        tableRef={(t) => setTableRef(t)}\n        defaultTreeExpandKeys={defaultTreeExpandKeys}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "scrollColumnIntoView",
-      "description": "The virtual list table provides a scrollColumnIntoView method to scroll to the specified column",
-      "scenario": "basic",
+      "title": "*    -- 虚拟列表提供了一个`scrollColumnIntoView`方法滚动到指定列",
+      "description": "虚拟列表提供了一个`scrollColumnIntoView`方法滚动到指定列",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 虚拟列表提供了一个`scrollColumnIntoView`方法滚动到指定列\n * en - scrollColumnIntoView\n *    -- The virtual list table provides a scrollColumnIntoView method to scroll to the specified column\n */\nimport React, { useState, useEffect } from 'react';\nimport { Input, Table, Form, TYPE, Button, Link, Gap } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(10000);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 80 },\n  {\n    title: 'Name',\n    fixed: 'left',\n    render: (d) => (\n      <div id={`name_${d.id}`} style={{ height: d.height }}>\n        {`${d.firstName} ${d.lastName}`}\n      </div>\n    ),\n    width: 160,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start', width: 140 },\n  { title: 'Operation', render: () => {\n    return <Gap>\n      <Link type='primary'>Detail</Link>\n      <Link type='primary'>Edit</Link>\n    </Gap>\n  }, width: 140, fixed: 'right' },\n];\n\nconst App: React.FC = () => {\n  const [table, setTable] = useState<any>();\n\n  const [state, setState] = useState({\n    key: 0,\n  });\n\n  const handleScroll = () => {\n    if (table)\n      table.scrollColumnIntoView(state.key);\n  };\n\n  const handleIndexChange = ({ key }: { key: number }) => {\n    setState({ key });\n  };\n\n  useEffect(() => {\n    setTimeout(handleScroll);\n  }, [state]);\n\n  return (\n    <div>\n      <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>\n        <Input.Number width={200} name='key' min={0} max={columns.length - 1} placeholder='输入列key' style={{marginRight: 12}} />\n        <Button type='primary' htmlType='submit'>\n          Scroll\n        </Button>\n      </Form>\n\n      <Table\n        keygen='id'\n        bordered\n        data={data}\n        virtual\n        width={1400}\n        rowsInView={10}\n        columns={columns}\n        style={{ height: 300 }}\n        tableRef={(t) => setTable(t)}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "scrollColumnByLeft",
-      "description": "The virtual list table provides a scrollColumnByLeft method to scroll to a specified column based on the left value",
-      "scenario": "basic",
+      "title": "*    -- 虚拟列表提供了一个`scrollColumnByLeft`方法根据left值滚动到指定列",
+      "description": "虚拟列表提供了一个`scrollColumnByLeft`方法根据left值滚动到指定列",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 虚拟列表提供了一个`scrollColumnByLeft`方法根据left值滚动到指定列\n * en - scrollColumnByLeft\n *    -- The virtual list table provides a scrollColumnByLeft method to scroll to a specified column based on the left value\n */\nimport React, { useState, useEffect } from 'react';\nimport { Input, Table, Form, TYPE, Button, Gap, Link } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(10000);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 80 },\n  {\n    title: 'Name',\n    fixed: 'left',\n    render: (d) => (\n      <div id={`name_${d.id}`} style={{ height: d.height }}>\n        {`${d.firstName} ${d.lastName}`}\n      </div>\n    ),\n    width: 160,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start', width: 140 },\n  { title: 'Operation', render: () => {\n    return <Gap>\n      <Link type='primary'>Detail</Link>\n      <Link type='primary'>Edit</Link>\n    </Gap>\n  }, width: 140, fixed: 'right' },\n];\n\nconst App: React.FC = () => {\n  const [table, setTable] = useState<any>();\n\n  const [state, setState] = useState({\n    left: 100,\n  });\n\n  const handleScroll = () => {\n    if (table)\n      table.scrollColumnByLeft(state.left);\n  };\n\n  const handleIndexChange = ({ left }: { left: number }) => {\n    setState({ left });\n  };\n\n  useEffect(() => {\n    setTimeout(handleScroll);\n  }, [state]);\n\n  return (\n    <div>\n      <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>\n        <Input.Number min={0} max={1000} width={100} name='left' style={{marginRight: 12}} />\n        <Button type='primary' htmlType='submit'>\n          Scroll\n        </Button>\n      </Form>\n\n      <Table\n        keygen='id'\n        bordered\n        data={data}\n        virtual\n        width={1400}\n        rowsInView={10}\n        columns={columns}\n        style={{ height: 300 }}\n        tableRef={(t) => setTable(t)}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "*    -- When encountering rendering performance issues, you can set the `virtual=\"lazy\"` property.",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- 当遇到渲染性能问题时，可设置 `virtual=\"lazy\"`",
+      "description": "当遇到渲染性能问题时，可设置 `virtual=\"lazy\"`",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 当遇到渲染性能问题时，可设置 `virtual=\"lazy\"`\n * en -\n *    -- When encountering rendering performance issues, you can set the `virtual=\"lazy\"` property.\n */\nimport React, { useState } from 'react';\nimport { Input, Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(1000);\n\nconst App: React.FC = () => {\n  const [inputValue, setInputValue] = useState<string | undefined>();\n\n  const columns: TableColumnItem[] = [\n    { title: 'id', render: 'id', width: 80 },\n    {\n      title: 'Name',\n      fixed: 'left',\n      render: (d) => (\n        <div id={`name_${d.id}`} style={{ height: d.height }}>\n          {`${d.firstName} ${d.lastName}`}\n        </div>\n      ),\n      width: 160,\n    },\n    {\n      title: 'Country',\n      render: (d) => (\n        <div style={{ display: 'flex', gap: 8 }}>\n          {d.country}\n          <Input value={inputValue} onChange={setInputValue} width={100} />\n        </div>\n      ),\n    },\n    { title: 'Position', render: 'position' },\n    { title: 'Office', render: 'office' },\n    { title: 'Start Date', render: 'start', width: 140 },\n  ];\n\n  return (\n    <div>\n      <Table\n        keygen='id'\n        bordered\n        data={data}\n        virtual=\"lazy\"\n        width={1400}\n        columns={columns}\n        style={{ height: 500 }}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Loading",
-      "description": "Set the loading property can set the table state to loading",
-      "scenario": "basic",
+      "title": "加载中",
+      "description": "设置 loading 属性可以将表格状态设置为加载中",
+      "scenario": "advanced",
       "code": "/**\n * cn - 加载中\n *    -- 设置 loading 属性可以将表格状态设置为加载中\n * en - Loading\n *    -- Set the loading property can set the table state to loading\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(8);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => {\n  return <Table keygen='id' loading columns={columns} data={data} />;\n};\n\nexport default App;\n"
     },
     {
-      "title": "Filter",
-      "description": "Set the filter property of column to display the filter box",
-      "scenario": "basic",
+      "title": "筛选",
+      "description": "设置 column 的 `filter` 开启数据筛选功能",
+      "scenario": "advanced",
       "code": "/**\n * cn - 筛选\n *    -- 设置 column 的 `filter` 开启数据筛选功能\n *    -- 支持搜索框和下拉选择框两种模式，下拉框支持单选和多选\n * en - Filter\n *    -- Set the filter property of column to display the filter box\n *    -- Support two modes: search and select, select mode supports single and multiple selection\n */\n\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport {icon1, icon2, icon3, icon4, icon5, icon6} from './static/icon'\n\ninterface TableRowData {\n  id: number;\n  name: string;\n  age: number;\n  salary: number;\n  company: string;\n  address: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    name: 'Ephraim',\n    age: 28,\n    address: 'New York No.1 Lake Park',\n    salary: 88000,\n    company: 'Google',\n  },\n  {\n    id: 2,\n    name: 'Osvaldo',\n    age: 50,\n    address: 'New York No.2 Lake Park',\n    salary: 90000,\n    company: 'Apple',\n  },\n  {\n    id: 3,\n    name: 'Dylan',\n    age: 25,\n    address: 'New York No.3 Lake Park',\n    salary: 68000,\n    company: 'Microsoft',\n  },\n  {\n    id: 4,\n    name: 'Shaniya',\n    age: 42,\n    address: 'New York No.4 Lake Park',\n    salary: 55000,\n    company: 'Tictok',\n  },\n  {\n    id: 5,\n    name: 'Jovanny',\n    age: 35,\n    address: 'New York No.5 Lake Park',\n    salary: 45000,\n    company: 'Tencent',\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    render: 'name',\n    width: 300,\n    filter: {\n      // 筛选模式：search 搜索框\n      mode: 'search',\n      // 根据onFilter函数过滤数据\n      onFilter: (value: string, row) => {\n        return row.name.startsWith(value);\n      },\n    },\n  },\n  {\n    title: 'Age',\n    render: 'age',\n    width: 300,\n    filter: {\n      // 筛选模式：select 选择框（单选或多选）\n      mode: 'select',\n      // 仅select模式下有效，筛选选项的配置\n      config: {\n        // 筛选的选项数据\n        data: [\n          { label: 'Young', value: 'young' },\n          { label: 'Middle', value: 'middle' },\n          { label: 'Old', value: 'old' },\n        ],\n        // 是否开启多选\n        multiple: true,\n      },\n      onFilter: (values: string[], row) => {\n        return values.some(value => {\n          if (value === 'young') return row.age < 30;\n          if (value === 'middle') return row.age >= 30 && row.age < 40;\n          return row.age >= 40;\n        })\n      },\n    },\n  },\n  {\n    title: 'Salary',\n    render: 'salary',\n    width: 300,\n    filter: {\n      mode: 'select',\n      config: {\n        data: [\n          { label: '50000', value: 50000 },\n          { label: '60000', value: 60000 },\n          { label: '70000', value: 70000 },\n          { label: '80000', value: 80000 },\n          { label: '90000', value: 90000 },\n        ],\n        // 自定义渲染选项\n        renderItem: (d) => `>= ${d.label}`,\n        multiple: false,\n      },\n      onFilter: (value, row) => {\n        return row.salary >= value;\n      },\n    },\n  },\n  {\n    title: 'Company',\n    render: 'company',\n    width: 300,\n    filter: {\n      mode: 'select',\n      config: {\n        data: [\n          { label: 'Google', value: 'Google', icon: icon1 },\n          { label: 'Apple', value: 'Apple', icon: icon2 },\n          { label: 'Microsoft', value: 'Microsoft', icon: icon3 },\n          { label: 'Tictok', value: 'Tictok', icon: icon4 },\n          { label: 'Tencent', value: 'Tencent', icon: icon5 },\n        ],\n        // 自定义渲染选项\n        renderItem: (d) => (\n          <div style={{display: 'flex', alignItems: 'center', gap: 8}}>\n            {d.icon}\n            <span>{d.label}</span>\n          </div>\n        ),\n        multiple: false,\n        // 是否显示搜索框\n        search: true,\n      },\n      onFilter: (value, row) => {\n        return value.includes(row.company);\n      },\n    },\n  },\n\n  {\n    title: 'Address',\n    render: 'address',\n    width: 300,\n    filter: {\n      mode: 'search',\n      onFilter: (value, row) => {\n        return row.address.includes(value);\n      },\n      icon: icon6,\n    },\n  },\n];\n\nexport default () => {\n  return <Table keygen='id' columns={columns} data={data} />;\n};\n"
     },
     {
-      "title": "Sorter",
-      "description": "Set the sorter property of Table to indicate the method of table sort",
-      "scenario": "basic",
+      "title": "排序",
+      "description": "设置 Table 的 sorter 属性统一指定排序函数",
+      "scenario": "advanced",
       "code": "/**\n * cn - 排序\n *    -- 设置 Table 的 sorter 属性统一指定排序函数\n *    -- 设置 column 的 sorter 标示此列需要排序并指定依据字段，会作为第一个参数传入排序函数\n *    -- defaultOrder 指定该列默认排序规则\n *    -- sorter 返回一个 sort 函数时，使用这个函数对数据进行内部排序\n *    -- 后端或自行排序用户自行处理，sorter 函数不要返回结果\n * en - Sorter\n *    -- Set the sorter property of Table to indicate the method of table sort\n *    -- Set the sorter property of Column to indicate the sort key string, will pass to table sorter method\n *    -- Set defaultOrder mark defualt order\n *    -- When the sorter returns a function, use this function to sort data internally\n *    -- Server-side or self-sorting is is handled by the user, do not return results\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  age: number;\n  salary: number;\n  office: string;\n  country: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableProps = TYPE.Table.Props<TableRowData, TableRowData>;\ntype TableSorter = TableProps['sorter'];\ntype TableColumnOrder = TYPE.Table.ColumnOrder;\ntype TableOnSortCancel = TableProps['onSortCancel'];\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(10);\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    fixed: 'left',\n    sorter: 'firstName',\n    defaultOrder: 'asc',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n  },\n  { title: 'Age', render: 'age', sorter: 'age', align: 'right', },\n  { title: 'Position', render: 'position' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => {\n  const sorter: {\n    [x: string]: any;\n  } = {\n    age: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n      order === 'asc' ? a.age - b.age : b.age - a.age,\n    firstName: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n      order === 'asc'\n        ? a.firstName.localeCompare(b.firstName)\n        : b.firstName.localeCompare(a.firstName),\n  };\n\n  const handleSorter: TableSorter = (name, order) => sorter[name](order);\n\n  const handleCancel: TableOnSortCancel = (prevType, index) => {\n    console.log('sort cancel : ', prevType, index);\n  };\n\n  return (\n    <Table\n      striped\n      data={data}\n      keygen='id'\n      columns={columns}\n      sorter={handleSorter}\n      onSortCancel={handleCancel}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Sorter",
-      "description": "Set the renderSorter property of the Table to customize the icon",
-      "scenario": "custom",
+      "title": "自定义排序图标",
+      "description": "设置 Table 的 renderSorter 属性来自定义图标",
+      "scenario": "advanced",
       "code": "/**\n * cn - 自定义排序图标\n *    -- 设置 Table 的 renderSorter 属性来自定义图标\n * en - Sorter\n *    -- Set the renderSorter property of the Table to customize the icon\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  age: number;\n  salary: number;\n  office: string;\n  country: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, TableRowData>;\ntype TableSorter = TableProps['sorter'];\ntype TableColumnOrder = TYPE.Table.ColumnOrder;\ntype TableRenderSorter = TableProps['renderSorter'];\ntype TableOnSortCancel = TableProps['onSortCancel'];\ntype TableSorterParam = TYPE.Table.RenderSorterParam;\n\nconst data: TableRowData[] = user.fetchSync(10);\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    fixed: 'left',\n    sorter: 'firstName',\n    defaultOrder: 'asc',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n  },\n  { title: 'Age', render: 'age', sorter: 'age', align: 'right' },\n  { title: 'Position', render: 'position' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst commonStyle: React.CSSProperties = {\n  cursor: 'pointer',\n  width: '8px',\n  height: '5px',\n  display: 'flex',\n  alignItems: 'center',\n};\n\nconst App: React.FC = () => {\n  const sorter: {\n    [x: string]: any;\n  } = {\n    age: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n      order === 'asc' ? a.age - b.age : b.age - a.age,\n    firstName: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n      order === 'asc'\n        ? a.firstName.localeCompare(b.firstName)\n        : b.firstName.localeCompare(a.firstName),\n  };\n\n  const renderSorter: TableRenderSorter = ({\n    status,\n    triggerAsc,\n    triggerDesc,\n  }: TableSorterParam) => (\n    <>\n      <div\n        style={{\n          ...commonStyle,\n          color: status === 'asc' ? '#197afa' : '#999da8',\n        }}\n        onClick={triggerAsc}\n      >\n        <svg\n          fill='currentColor'\n          width='8'\n          height='5'\n          viewBox='0 0 8 5'\n          xmlns='http://www.w3.org/2000/svg'\n        >\n          <path d='M3.59594 0.183058C3.80193 -0.0422441 4.12606 -0.0595753 4.35023 0.131065L4.40406 0.183058L7.83263 3.93306C8.05579 4.17714 8.05579 4.57286 7.83263 4.81694C7.62664 5.04224 7.30251 5.05958 7.07834 4.86893L7.02451 4.81694L4.40409 1.95128C4.18088 1.70732 3.81912 1.70732 3.59591 1.95128L0.975489 4.81694C0.769499 5.04224 0.445367 5.05958 0.2212 4.86893L0.167368 4.81694C-0.0386232 4.59164 -0.0544688 4.23712 0.119831 3.99194L0.167368 3.93306L3.59594 0.183058Z' />\n        </svg>\n      </div>\n      <div\n        style={{\n          ...commonStyle,\n          color: status === 'desc' ? '#197afa' : '#999da8',\n          marginTop: 4,\n        }}\n        onClick={triggerDesc}\n      >\n        <svg\n          width='8'\n          height='5'\n          viewBox='0 0 8 5'\n          fill='currentColor'\n          xmlns='http://www.w3.org/2000/svg'\n        >\n          <path d='M3.59594 4.81694C3.80193 5.04224 4.12606 5.05958 4.35023 4.86893L4.40406 4.81694L7.83263 1.06694C8.05579 0.822864 8.05579 0.427136 7.83263 0.183058C7.62664 -0.042244 7.30251 -0.0595751 7.07834 0.131065L7.02451 0.183058L4.40409 3.04872C4.18088 3.29268 3.81912 3.29268 3.59591 3.04872L0.975489 0.183058C0.769499 -0.042244 0.445367 -0.0595751 0.2212 0.131065L0.167368 0.183058C-0.0386232 0.408361 -0.0544688 0.76288 0.119831 1.00806L0.167368 1.06694L3.59594 4.81694Z' />\n        </svg>\n      </div>\n    </>\n  );\n\n  const handleSorter: TableSorter = (name, order) => sorter[name](order);\n\n  const handleCancel: TableOnSortCancel = (prevType, index) => {\n    console.log('sort cancel : ', prevType, index);\n  };\n  return (\n    <Table\n      striped\n      data={data}\n      keygen='id'\n      columns={columns}\n      sorter={handleSorter}\n      onSortCancel={handleCancel}\n      renderSorter={renderSorter}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "multiple Sorter",
-      "description": "Set the sorter property of Table to indicate the method of table sort",
-      "scenario": "basic",
+      "title": "多列排序",
+      "description": "设置 column 的 sorter 为一个对象，对象的rule属性同单列排序的sorter，weight表示排序权重，值越大表示排序优先级越高",
+      "scenario": "advanced",
       "code": "/**\n * cn - 多列排序\n *    -- 设置 column 的 sorter 为一个对象，对象的rule属性同单列排序的sorter，weight表示排序权重，值越大表示排序优先级越高\n *    -- 支持多列默认排序，为需要默认排序的列设置defaultOrder\n *    -- sorter 返回一个 sort 函数时，使用这个函数对数据进行内部排序\n *    -- 后端或自行排序用户自行处理，sorter 函数不要返回结果\n * en - multiple Sorter\n *    -- Set the sorter property of Table to indicate the method of table sort\n *    -- Set the sorter of column to an object, the rule attribute of the object is the same as the sorter of single column sorting, weight indicates the sorting weight, the larger the value, the higher the sorting priority\n *    -- Support multi-column default sorting, set defaultOrder for columns that need default sorting\n *    -- When the sorter returns a function, use this function to sort data internally\n *    -- Server-side or self-sorting is is handled by the user, do not return results\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  age: number;\n  salary: number;\n  office: string;\n  country: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, TableRowData>;\ntype TableSorter = TableProps['sorter'];\ntype TableColumnOrder = TYPE.Table.ColumnOrder;\ntype TableOnSortCancel = TableProps['onSortCancel'];\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    age: 20,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    age: 20,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    age: 25,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    age: 26,\n  },\n];\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    fixed: 'left',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n  },\n  {\n    title: 'Age',\n    render: 'age',\n    sorter: {\n      rule: 'age',\n      weight: 2,\n    },\n    align: 'right',\n    defaultOrder: 'asc',\n  },\n  { title: 'Position', render: 'position' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n    sorter: { rule: 'salary', weight: 1 },\n    defaultOrder: 'desc',\n  },\n];\n\nconst sorter: {\n  [x: string]: any;\n} = {\n  age: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n    order === 'asc' ? a.age - b.age : b.age - a.age,\n  salary: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n    order === 'asc' ? a.salary - b.salary : b.salary - a.salary,\n};\n\nconst App: React.FC = () => {\n  const handleSorter: TableSorter = (name, order) => sorter[name](order);\n\n  const handleCancel: TableOnSortCancel = (prevType, index) => {\n    console.log('sort cancel : ', prevType, index);\n  };\n\n  return (\n    <Table\n      striped\n      data={data}\n      keygen='id'\n      columns={columns}\n      sorter={handleSorter}\n      onSortCancel={handleCancel}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Configure sorter",
-      "description": "Set the `sortDirections` of Table to set the available sorting directions for all columns. Support only ascending or descending.",
-      "scenario": "basic",
+      "title": "配置排序",
+      "description": "设置 Table 的 `sortDirections`，可对全部列设置可用的排序方向。支持仅开启升序或降序。",
+      "scenario": "advanced",
       "code": "/**\n * cn - 配置排序\n *    -- 设置 Table 的 `sortDirections`，可对全部列设置可用的排序方向。支持仅开启升序或降序。\n *    -- 设置 column 的 `sortDirections` 优先级高于 Table 的 `sortDirections`\n * en - Configure sorter\n *    -- Set the `sortDirections` of Table to set the available sorting directions for all columns. Support only ascending or descending.\n *    -- The `sortDirections` of column takes precedence over the `sortDirections` of Table\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  age: number;\n  salary: number;\n  office: string;\n  country: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, TableRowData>;\ntype TableSorter = TableProps['sorter'];\ntype TableColumnOrder = TYPE.Table.ColumnOrder;\ntype TableOnSortCancel = TableProps['onSortCancel'];\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    age: 21,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    age: 20,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    age: 25,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    age: 26,\n  },\n];\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    fixed: 'left',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n  },\n  {\n    title: 'Age',\n    render: 'age',\n    sorter: {\n      rule: 'age',\n      weight: 2,\n    },\n    align: 'right',\n    defaultOrder: 'asc',\n    sortDirections: ['asc'],\n  },\n  { title: 'Position', render: 'position' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n    sorter: { rule: 'salary', weight: 1 },\n    sortDirections: ['asc', 'desc'],\n  },\n];\n\nconst sorter: {\n  [x: string]: any;\n} = {\n  age: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n    order === 'asc' ? a.age - b.age : b.age - a.age,\n  salary: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n    order === 'asc' ? a.salary - b.salary : b.salary - a.salary,\n};\n\nconst App: React.FC = () => {\n  const handleSorter: TableSorter = (name, order) => sorter[name](order);\n\n  const handleCancel: TableOnSortCancel = (prevType, index) => {\n    console.log('sort cancel : ', prevType, index);\n  };\n\n  return (\n    <Table\n      striped\n      data={data}\n      keygen='id'\n      columns={columns}\n      sorter={handleSorter}\n      sortDirections={['desc']}\n      onSortCancel={handleCancel}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Configure sorter",
-      "description": "Call the `sortByColumn` method of TableRef from the outside to sort the column",
-      "scenario": "basic",
+      "title": "外部排序",
+      "description": "调用 TableRef 的 `sortByColumn` 方法，从外部对 列进行排序",
+      "scenario": "advanced",
       "code": "/**\n * cn - 外部排序\n *    -- 调用 TableRef 的 `sortByColumn` 方法，从外部对 列进行排序\n * en - Configure sorter\n *    -- Call the `sortByColumn` method of TableRef from the outside to sort the column\n */\n\nimport React, { useState } from 'react';\nimport { Button, Form, Radio, Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  age: number;\n  salary: number;\n  office: string;\n  country: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableProps = TYPE.Table.Props<TableRowData, TableRowData>;\ntype TableSorter = TableProps['sorter'];\ntype TableColumnOrder = TYPE.Table.ColumnOrder;\ntype TableOnSortCancel = TableProps['onSortCancel'];\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(10);\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'FirstName',\n    fixed: 'left',\n    sorter: 'firstName',\n    key: 'firstName',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n  },\n  { title: 'Age',\n    render: 'age',\n    sorter: 'age',\n    key: 'age',\n    align: 'right',\n  },\n  { title: 'Position', render: 'position' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => {\n  const [sortForm, setSortForm] = useState<{\n    columnName: string;\n    order: TableColumnOrder;\n  }>({\n    columnName: 'firstName',\n    order: 'asc',\n  });\n  const [tableRef, setTableRef] = useState<TYPE.Table.TableRef>();\n\n  const sorters: {\n    [x: string]: any;\n  } = {\n    age: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n      order === 'asc' ? a.age - b.age : b.age - a.age,\n    firstName: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>\n      order === 'asc'\n        ? a.firstName.localeCompare(b.firstName)\n        : b.firstName.localeCompare(a.firstName),\n  };\n\n  const getTableSorter: TableSorter = (name, order) => sorters[name](order);\n\n  const handleCancel: TableOnSortCancel = (prevType, index) => {\n    console.log('sort cancel : ', prevType, index);\n  };\n\n  const handleManualSort = () => {\n    tableRef?.sortByColumn({\n      columnKey: sortForm.columnName,\n      direction: sortForm.order,\n      columnSorter: sorters[sortForm.columnName]\n    });\n  };\n\n  return (\n    <div>\n      <Form value={sortForm} onChange={setSortForm} inline>\n        <Form.Item label='Column Name'>\n          <Radio.Group name=\"columnName\" keygen data={['firstName', 'age']}>\n          </Radio.Group>\n        </Form.Item>\n        <Form.Item label='Sort Order'>\n        <Radio.Group name=\"order\" keygen data={['asc', 'desc']}>\n        </Radio.Group>\n        </Form.Item>\n        <Form.Item label=''>\n        <Button onClick={handleManualSort}>排序</Button>\n        </Form.Item>\n      </Form>\n    <Table\n      striped\n      data={data}\n      keygen='id'\n      columns={columns}\n      sorter={getTableSorter}\n      onSortCancel={handleCancel}\n      tableRef={ref => setTableRef(ref)}\n    />\n    </div>\n  );\n};\n\nexport default App;\n\n"
     },
     {
-      "title": "Pagination",
-      "description": "Set the pagination property to show the pagination and if not set onChange property, the data is automatically paged",
-      "scenario": "basic",
+      "title": "分页",
+      "description": "前端分页的情况下, 设置 pagination 显示分页，没有设置 onChange 处理数据的情况下，会自动对数据进行分页",
+      "scenario": "advanced",
       "code": "/**\n * cn - 分页\n *    -- 前端分页的情况下, 设置 pagination 显示分页，没有设置 onChange 处理数据的情况下，会自动对数据进行分页\n *    -- pagination 的参数和 Pagination 组件一致\n * en - Pagination\n *    -- Set the pagination property to show the pagination and if not set onChange property, the data is automatically paged\n *    -- The parameters of pagination are consistent with the Pagination component\n */\nimport React, { useState } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(1000);\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState<number>(1);\n  const [pageSize, setPageSize] = useState<number>(10);\n\n  const handlePageChange = (_current: number, size?: number) => {\n    if(size !== undefined) setPageSize(size);\n    setCurrent(_current);\n  };\n\n  const columns: TableColumnItem[] = [\n    {\n      title: 'id',\n      render: 'id',\n      width: 70,\n      sorter: (order) => {\n        handlePageChange(1);\n        return (a, b) => {\n          if (order === 'asc') return a.id - b.id;\n          return b.id - a.id;\n        };\n      },\n    },\n    {\n      title: 'First Name',\n      group: 'Name',\n      render: 'firstName',\n      width: 100,\n    },\n    {\n      title: 'Last Name',\n      fixed: 'left',\n      group: 'Name',\n      render: 'lastName',\n      width: 120,\n      sorter: (order) => {\n        handlePageChange(1);\n        return (a, b) => {\n          if (order === 'asc') return a.lastName.localeCompare(b.lastName);\n          return b.lastName.localeCompare(a.lastName);\n        };\n      },\n    },\n    { title: 'Country', render: 'country' },\n    { title: 'Position', render: 'position' },\n    { title: 'Office', render: 'office' },\n    { title: 'Start Date', render: 'start' },\n    {\n      title: 'Salary($)',\n      align: 'right',\n      fixed: 'right',\n      width: 100,\n      render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n    },\n  ];\n\n  return (\n    <Table\n      keygen='id'\n      data={data}\n      width={1500}\n      style={{maxHeight: '80vh'}}\n      columns={columns}\n      // bordered\n      pagination={{\n        current,\n        pageSize,\n        layout: ['links', 'list'],\n        onChange: handlePageChange,\n        pageSizeList: [10, 15, 20],\n        text: {\n          page: '/ page',\n        },\n      }}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "*    -- Processing (acquiring) data in pagination's onChange realizes the pagination of server-side",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- 后端分页的情况下, 在 pagination 的 onChange 中处理（获取）数据，可以实现服务端分页",
+      "description": "后端分页的情况下, 在 pagination 的 onChange 中处理（获取）数据，可以实现服务端分页",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 后端分页的情况下, 在 pagination 的 onChange 中处理（获取）数据，可以实现服务端分页\n * en -\n *    -- Processing (acquiring) data in pagination's onChange realizes the pagination of server-side\n */\nimport React, { useState, useEffect } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableColumnOrder = TYPE.Table.ColumnOrder;\n\nconst App: React.FC = () => {\n  const [total, setTotal] = useState(0);\n  const [sorter, setSorter] = useState({});\n  const [current, setCurrent] = useState(1);\n  const [pageSize, setPageSize] = useState(20);\n  const [loading, setLoading] = useState(false);\n  const [data, setData] = useState<TableRowData[]>([]);\n\n  const fetchData = () => {\n    setLoading(true);\n    user.fetch.get('user', { sorter, current, pageSize, username: '' }).then((res) => {\n      setData(res.data);\n      setLoading(false);\n      setTotal(res.total);\n    });\n  };\n\n  const handleSorter = (name: string, order: TableColumnOrder) => {\n    setSorter({ name, order });\n    setCurrent(1);\n  };\n\n  const handlePageChange = (c: number, p: number) => {\n    setCurrent(c);\n    setPageSize(p);\n  };\n\n  const columns: TableColumnItem[] = [\n    {\n      width: 80,\n      title: 'id',\n      render: 'id',\n      sorter: (order) => handleSorter('id', order),\n    },\n    {\n      width: 100,\n      group: 'Name',\n      title: 'First Name',\n      render: 'firstName',\n    },\n    {\n      width: 120,\n      fixed: 'left',\n      group: 'Name',\n      render: 'lastName',\n      title: 'Last Name',\n      sorter: (order) => handleSorter('lastName', order),\n    },\n    { title: 'Country', render: 'country' },\n    { title: 'Office', render: 'office' },\n    { title: 'Start Date', render: 'start', sorter: (order) => handleSorter('start', order) },\n  ];\n\n  useEffect(() => {\n    fetchData();\n  }, [current, pageSize, sorter]);\n\n  return (\n    <Table\n      bordered\n      virtual\n      keygen='id'\n      data={data}\n      loading={loading}\n      columns={columns}\n      style={{ height: 400 }}\n      pagination={{\n        total,\n        current,\n        pageSize,\n        layout: ['links', 'list'],\n        onChange: handlePageChange,\n        pageSizeList: [10, 15, 20, 100],\n      }}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "onScroll",
-      "description": "The onScroll event returns the current position(float,[0,1]) of the scroll bar",
-      "scenario": "basic",
+      "title": "滚动加载",
+      "description": "onScroll 事件会返回当前滚动条位置 (float 类型，[0,1])，可以据此实现滚动加载数据",
+      "scenario": "advanced",
       "code": "/**\n * cn - 滚动加载\n *    -- onScroll 事件会返回当前滚动条位置 (float 类型，[0,1])，可以据此实现滚动加载数据\n * en - onScroll\n *    -- The onScroll event returns the current position(float,[0,1]) of the scroll bar\n */\nimport React, { useState, useEffect } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst App: React.FC = () => {\n  const [pageSize] = useState(20);\n  const [current, setCurrent] = useState(1);\n  const [loading, setLoading] = useState(false);\n  const [data, setData] = useState<TableRowData[]>([]);\n\n  const fetchData = () => {\n    setLoading(true);\n    user.fetch.get('table', { current, pageSize, sorter: {}, username: '' }).then((res) => {\n      setData([...data, ...res.data]);\n      setLoading(false);\n    });\n  };\n\n  const handleScroll = (_left: number, top: number) => {\n    if (top === 1 && !loading) {\n      setCurrent(current + 1);\n    }\n  };\n\n  const columns: TableColumnItem[] = [\n    { title: 'id', render: 'id', width: 70 },\n    {\n      width: 100,\n      group: 'Name',\n      title: 'First Name',\n      render: 'firstName',\n    },\n    {\n      width: 120,\n      fixed: 'left',\n      group: 'Name',\n      title: 'Last Name',\n      render: 'lastName',\n    },\n    { title: 'Country', render: 'country' },\n    { title: 'Office', render: 'office' },\n    { title: 'Start Date', render: 'start' },\n  ];\n\n  useEffect(() => {\n    fetchData();\n  }, [pageSize, current]);\n\n  return (\n    <Table\n      bordered\n      virtual\n      keygen='id'\n      data={data}\n      loading={loading}\n      columns={columns}\n      verticalAlign='middle'\n      style={{ height: 450 }}\n      onScroll={handleScroll}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "*    -- The style of the loading element at the bottom of the Table",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- loading 元素位置在 Table 底部的样式",
+      "description": "loading 元素位置在 Table 底部的样式",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- loading 元素位置在 Table 底部的样式\n * en -\n *    -- The style of the loading element at the bottom of the Table\n */\nimport React, { useState, useEffect } from 'react';\nimport { Table, Spin, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst App: React.FC = () => {\n  const [pageSize] = useState(20);\n  const [current, setCurrent] = useState(1);\n  const [loading, setLoading] = useState(false);\n  const [data, setData] = useState<TableRowData[]>([]);\n\n  const fetchData = () => {\n    setLoading(true);\n    user.fetch.get('table', { current, pageSize, sorter: {}, username: '' }).then((res) => {\n      setData([...data, ...res.data]);\n      setLoading(false);\n    });\n  };\n\n  const handleScroll = (_left: number, top: number) => {\n    if (top === 1 && !loading) {\n      setCurrent(current + 1);\n    }\n  };\n\n  const columns: TableColumnItem[] = [\n    { title: 'id', render: 'id', width: 70 },\n    {\n      width: 100,\n      group: 'Name',\n      title: 'First Name',\n      render: 'firstName',\n    },\n    {\n      width: 120,\n      fixed: 'left',\n      group: 'Name',\n      title: 'Last Name',\n      render: 'lastName',\n    },\n    { title: 'Country', render: 'country' },\n    { title: 'Office', render: 'office' },\n    { title: 'Start Date', render: 'start' },\n  ];\n\n  useEffect(() => {\n    fetchData();\n  }, [pageSize, current]);\n\n  return (\n    <Table\n      bordered\n      virtual\n      keygen='id'\n      data={data}\n      columns={columns}\n      verticalAlign='middle'\n      style={{ height: 450 }}\n      onScroll={handleScroll}\n    >\n      {loading && <div style={{padding: 16}}><Spin size={16} /></div>}\n    </Table>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "rowSpan & colSpan",
-      "description": "- Set column's rowSpan property to merge rows. The rowSpan property is a function that passed in two adjacent rows of data and determine whether to merge or not",
-      "scenario": "basic",
+      "title": "合并行/列",
+      "description": "设置 column 的 rowSpan 可以合并行，rowSpan 为函数，会传入相邻的两行数据，根据此函数返回结果(bool)判断是否合并行",
+      "scenario": "advanced",
       "code": "/**\n * cn - 合并行/列\n *    -- 设置 column 的 rowSpan 可以合并行，rowSpan 为函数，会传入相邻的两行数据，根据此函数返回结果(bool)判断是否合并行\n *    -- 设置 column 的 colSpan 可以合并列，colSpan 为函数，传入参数为当前行数据，函数返回结果为需要向后合并的列数，不合并返回 1\n *    -- 一个单元格同时指定了rowSpan和colSpan时，如果两行的colSpan计算结果不同，这两行不会合并\n * en - rowSpan & colSpan\n *    -- - Set column's rowSpan property to merge rows. The rowSpan property is a function that passed in two adjacent rows of data and determine whether to merge or not\n *    -- - Set column's colSpan property to merge columns. The colSpan property is a function that passed in current row of data and the result returned by this function is as the number of columns that need to be merged\n *    -- - When a cell specifies both rowSpan and colSpan, if the colSpan's calculation results of the two rows are different, the two rows will not be merged\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 8850,\n    firstName: 'Kyler',\n    lastName: 'Corkery',\n    position: 'Systems Administrator',\n    start: '2010-03-22',\n    time: '01:49',\n    salary: 492227,\n    country: 'Bulgaria',\n    office: 'Accra',\n    office5: 'Pune',\n    height: 163.5,\n  },\n  {\n    id: 9656,\n    firstName: 'Blanca',\n    lastName: 'Beatty',\n    position: 'Integration Specialist',\n    start: '2010-03-24',\n    time: '08:41',\n    salary: 197056,\n    country: 'Hong Kong',\n    office: 'Qingdao',\n    office5: 'Fuzhou',\n    height: 165.15,\n  },\n  {\n    id: 1263,\n    firstName: 'Deondre',\n    lastName: 'Steuber',\n    position: 'Accountant',\n    start: '2010-03-25',\n    time: '08:15',\n    salary: 399963,\n    country: 'Ghana',\n    office: 'Lagos',\n    office5: 'Fuzhou',\n    height: 137.43,\n  },\n  {\n    id: 1487,\n    firstName: 'Sister',\n    lastName: 'Auer',\n    position: 'Support Engineer',\n    start: '2010-03-25',\n    time: '08:52',\n    salary: 172989,\n    country: 'Falkland Islands (Malvinas)',\n    office: 'Washington',\n    office5: 'Qingdao',\n    height: 157.17,\n  },\n  {\n    id: 5844,\n    firstName: 'Brett',\n    lastName: 'Harvey',\n    position: 'System Architect',\n    start: '2010-03-25',\n    time: '01:36',\n    salary: 253785,\n    country: 'Norfolk Island',\n    office: 'London',\n    office5: 'Fuzhou',\n    height: 131.22,\n  },\n  {\n    id: 8620,\n    firstName: 'Geovany',\n    lastName: 'Gulgowski',\n    position: 'Support Engineer',\n    start: '2010-03-25',\n    time: '07:20',\n    salary: 134985,\n    country: 'Bulgaria',\n    office: 'San Paulo',\n    office5: 'Chongqing',\n    height: 86.96,\n  },\n  {\n    id: 7323,\n    firstName: 'Luz',\n    lastName: 'Homenick',\n    position: 'Technical Author',\n    start: '2010-03-26',\n    time: '12:53',\n    salary: 380952,\n    country: 'Botswana',\n    office: 'Qingdao',\n    office5: 'Qingdao',\n    height: 132.83,\n  },\n  {\n    id: 9831,\n    firstName: 'Oma',\n    lastName: 'Hoeger',\n    position: 'Regional Director',\n    start: '2010-03-26',\n    time: '02:42',\n    salary: 390428,\n    country: 'Nauru',\n    office: 'Abidjan',\n    office5: 'Chongqing',\n    height: 158.7,\n  },\n  {\n    id: 1230,\n    firstName: 'Lillie',\n    lastName: 'Aufderhar',\n    position: 'Technical Author',\n    start: '2010-03-27',\n    time: '05:43',\n    salary: 71278,\n    country: 'Norfolk Island',\n    office: 'Riyadh',\n    office5: 'Fuzhou',\n    height: 133.9,\n  },\n  {\n    id: 4014,\n    firstName: 'Dominic',\n    lastName: 'Thiel',\n    position: 'Developer',\n    start: '2010-03-27',\n    time: '01:25',\n    salary: 361583,\n    country: 'Nauru',\n    office: 'Alexandria',\n    office5: 'Xian',\n    height: 109.25,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'id',\n    render: 'id',\n    width: 70,\n  },\n  {\n    title: 'First Name',\n    group: 'Name',\n    render: 'firstName',\n    rowSpan: (a, b) => a.firstName === b.firstName,\n  },\n  { title: 'Last Name', group: 'Name', render: 'lastName' },\n  {\n    title: 'Start Date',\n    width: 120,\n    render: 'start',\n    rowSpan: (a, b) => a.start === b.start,\n    colSpan: (d) => {\n      const hour = parseInt(d.time.slice(0, 2), 10);\n      if (hour > 21 || hour < 9) return 2;\n      return 1;\n    },\n  },\n  { title: 'Time', render: 'time' },\n  { title: 'Office', render: 'office5' },\n];\n\nconst App: React.FC = () => <Table bordered data={data} keygen='id' columns={columns} />;\n\nexport default App;\n"
     },
     {
-      "title": "Select",
-      "description": "Set the onRowSelect property will automatically add a column with checkbox",
-      "scenario": "basic",
+      "title": "选择行",
+      "description": "设置 onRowSelect 属性，会自动添加选择列",
+      "scenario": "advanced",
       "code": "/**\n * cn - 选择行\n *    -- 设置 onRowSelect 属性，会自动添加选择列\n * en - Select\n *    -- Set the onRowSelect property will automatically add a column with checkbox\n */\nimport React, { useState } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, TableRowData[]>;\ntype TableOnRowSelect = TableProps['onRowSelect'];\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  {\n    type: 'checkbox',\n    width: 40,\n  },\n  {\n    title: 'id',\n    render: 'id',\n    width: 60,\n  },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}`, width: 160 },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => {\n  const [selectedValue, setSelectedValue] = useState([data[2]]);\n  const handelRowSelect: TableOnRowSelect = (v) => {\n    setSelectedValue(v);\n  };\n\n  return (\n    <div>\n      <Table\n        data={data}\n        width={3000}\n        keygen='id'\n        columns={columns}\n        value={selectedValue}\n        style={{ height: 300 }}\n        onRowSelect={handelRowSelect}\n        prediction={(v, d) => v.id === d.id}\n      />\n      <div style={{ marginTop: 24, fontSize: 14 }}>{`selected rows: [${selectedValue\n        .map((v) => v.id)\n        .join(', ')}]`}</div>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Select format",
-      "description": "Set format property to format the returned value",
+      "title": "选择行格式化",
+      "description": "使用 format，可以格式化返回的数据",
       "scenario": "form",
       "code": "/**\n * cn - 选择行格式化\n *    -- 使用 format，可以格式化返回的数据\n * en - Select format\n *    -- Set format property to format the returned value\n */\nimport React, { useState } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, string[]>;\ntype TableOnRowSelect = TableProps['onRowSelect'];\n\nconst data: TableRowData[] = user.fetchSync(20);\nconst value = [2, 3, 5].map((i) => `${data[i].firstName} ${data[i].lastName}`);\n\nconst columns: TableColumnItem[] = [\n  {\n    width: 60,\n    title: 'id',\n    render: 'id',\n  },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}`, width: 160 },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => {\n  const [selectedValue, setSelectedValue] = useState(value);\n\n  const handelRowSelect: TableOnRowSelect = (v) => {\n    setSelectedValue(v);\n  };\n  return (\n    <div>\n      <Table\n        keygen='id'\n        data={data}\n        columns={columns}\n        value={selectedValue}\n        style={{ height: 300 }}\n        onRowSelect={handelRowSelect}\n        format={(d) => `${d.firstName} ${d.lastName}`}\n      />\n      <div style={{ wordBreak: 'break-all', marginTop: 24, fontSize: 14 }}>\n        selected rows:\n        {JSON.stringify(selectedValue)}\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Select signle",
-      "description": "Set the radio attribute to achieve the radio effect",
-      "scenario": "basic",
+      "title": "单选",
+      "description": "设置 radio 属性实现单选效果",
+      "scenario": "advanced",
       "code": "/**\n * cn - 单选\n *    -- 设置 radio 属性实现单选效果\n * en - Select signle\n *    -- Set the radio attribute to achieve the radio effect\n */\nimport React, { useState } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, number>;\ntype TableOnRowSelect = TableProps['onRowSelect'];\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  {\n    width: 60,\n    title: 'id',\n    render: 'id',\n  },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}`, width: 160 },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => {\n  const [selectedValue, setSelectedValue] = useState(3);\n\n  const handelRowSelect: TableOnRowSelect = (v) => {\n    setSelectedValue(v);\n  };\n  return (\n    <Table\n      keygen='id'\n      radio\n      data={data}\n      columns={columns}\n      value={selectedValue}\n      style={{ height: 300 }}\n      onRowSelect={handelRowSelect}\n      format='id'\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Select row span",
-      "description": "Set the rowSpan property of the column with type checkbox to merge the selection row",
-      "scenario": "basic",
+      "title": "选择行合并",
+      "description": "给 type 为 checkbox 的列设置 rowSpan 属性，可以合并选择行",
+      "scenario": "advanced",
       "code": "/**\n * cn - 选择行合并\n *    -- 给 type 为 checkbox 的列设置 rowSpan 属性，可以合并选择行\n * en - Select row span\n *    -- Set the rowSpan property of the column with type checkbox to merge the selection row\n */\nimport React, { useState } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, number[]>;\ntype TableOnRowSelect = TableProps['onRowSelect'];\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst rowSpan = (a: TableRowData, _next: TableRowData) => a.id % 3 === 0;\nconst columns: TableColumnItem[] = [\n  {\n    type: 'checkbox',\n    rowSpan,\n  },\n  {\n    width: 60,\n    title: 'id',\n    render: 'id',\n  },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}`, width: 160 },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => {\n  const [selectedValue, setSelectedValue] = useState([2, 3, 5]);\n\n  const handelRowSelect: TableOnRowSelect = (v) => {\n    setSelectedValue(v);\n  };\n  return (\n    <div>\n      <Table\n        keygen='id'\n        data={data}\n        columns={columns}\n        value={selectedValue}\n        style={{ height: 300 }}\n        onRowSelect={handelRowSelect}\n        format={'id'}\n      />\n      <div style={{ wordBreak: 'break-all', marginTop: 24, fontSize: 14 }}>\n        selected rows:\n        {JSON.stringify(selectedValue)}\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Select disabled",
-      "description": "Set disabled to true to disable all, set to a function to disable a specific row",
-      "scenario": "basic",
+      "title": "选择行禁用",
+      "description": "disabled 属性设置为 true 时禁用全部, 设置为函数时禁用指定行",
+      "scenario": "advanced",
       "code": "/**\n * cn - 选择行禁用\n *    -- disabled 属性设置为 true 时禁用全部, 设置为函数时禁用指定行\n * en - Select disabled\n *    -- Set disabled to true to disable all, set to a function to disable a specific row\n */\nimport React, { useState } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, number[]>;\ntype TableOnRowSelect = TableProps['onRowSelect'];\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst rowSpan = (a: TableRowData, _next: TableRowData) => a.id % 3 === 0;\nconst columns: TableColumnItem[] = [\n  {\n    type: 'checkbox',\n    rowSpan,\n  },\n  {\n    width: 60,\n    title: 'id',\n    render: 'id',\n  },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}`, width: 160 },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => {\n  const [selectedValue, setSelectedValue] = useState([2, 3, 5]);\n\n  const handelRowSelect: TableOnRowSelect = (v) => {\n    setSelectedValue(v);\n  };\n  return (\n    <div>\n      <Table\n        keygen='id'\n        disabled={(d) => d.id === 3}\n        data={data}\n        columns={columns}\n        value={selectedValue}\n        style={{ height: 300 }}\n        onRowSelect={handelRowSelect}\n        format={'id'}\n      />\n      <div style={{ wordBreak: 'break-all', marginTop: 24, fontSize: 14 }}>\n        selected rows:\n        {JSON.stringify(selectedValue)}\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Fixed head",
-      "description": "Set the columnResizable property to make all columns resizable. set columnResizable: false on columns item to cancel resizable",
-      "scenario": "basic",
+      "title": "可伸缩列",
+      "description": "设置 columnResizable，使所有列可伸缩。<br />可在columns中设置某一列 columnResizable: false 来取消伸缩该列。",
+      "scenario": "advanced",
       "code": "/**\n * cn - 可伸缩列\n *    -- 设置 columnResizable，使所有列可伸缩。<br />可在columns中设置某一列 columnResizable: false 来取消伸缩该列。\n * en - Fixed head\n *    -- Set the columnResizable property to make all columns resizable. set columnResizable: false on columns item to cancel resizable\n */\nimport React from 'react';\nimport { Table, TYPE, Popover } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', fixed: 'left', maxWidth: 300, minWidth: 100 },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start', columnResizable: false },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => (\n  <Table\n    columnResizable\n    virtual\n    height={300}\n    width={1200}\n    keygen='id'\n    columns={columns}\n    bordered\n    data={data}\n  />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Expand",
-      "description": "Add a column with type 'expand' and the render function returns a function, that means the row can be expanded. The content is the result returned by this function",
-      "scenario": "basic",
+      "title": "可展开",
+      "description": "需要展开行时，可以增加一个 type 为 'expand' 的 column，render 函数返回函数时，表示此行可以展开，内容为此函数返回结果",
+      "scenario": "advanced",
       "code": "/**\n * cn - 可展开\n *    -- 需要展开行时，可以增加一个 type 为 'expand' 的 column，render 函数返回函数时，表示此行可以展开，内容为此函数返回结果\n * en - Expand\n *    -- Add a column with type 'expand' and the render function returns a function, that means the row can be expanded. The content is the result returned by this function\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(100);\n\nconst columns: TableColumnItem[] = [\n  {\n    width: 10,\n    type: 'row-expand',\n    render: (d) => {\n      if (d.salary < 300000) return undefined;\n      return () => (\n        <div style={{ padding: '8px 12px', wordBreak: 'break-all' }}>{JSON.stringify(d)}</div>\n      );\n    },\n  },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => (\n  <Table\n    keygen='id'\n    data={data}\n    columns={columns}\n    style={{ height: 300 }}\n    onRowClick={(d, i) => console.log(d, i)}\n  />\n);\n\nexport default App;\n"
     },
     {
-      "title": "*    -- When an expandKeys is provided, the expansion becomes controlled and needs to be processed by the onClick in the column",
+      "title": "可展开受控",
       "description": "受控,当传入一个expandKeys时,展开会变成受控的,需要自行在column里面的onClick去处理",
-      "scenario": "basic",
+      "scenario": "advanced",
       "code": "/**\n * cn - 可展开受控\n *    -- 受控,当传入一个expandKeys时,展开会变成受控的,需要自行在column里面的onClick去处理\n * en -\n *    -- When an expandKeys is provided, the expansion becomes controlled and needs to be processed by the onClick in the column\n */\nimport React, { useState } from 'react';\nimport { Table, Checkbox, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(5);\n\nconst App: React.FC = () => {\n  const [expandKeys, setExpandKeys] = useState([1]);\n\n  const columns: TableColumnItem[] = [\n    { title: 'id', render: 'id', width: 50 },\n    {\n      type: 'expand',\n      onClick: (d, isExpand) => {\n        if (isExpand) setExpandKeys([...expandKeys, d.id]);\n        else setExpandKeys(expandKeys.filter((k) => k !== d.id));\n      },\n      render: (d) => {\n        if (d.id > 5) return undefined;\n        return () => (\n          <div style={{ padding: '8px 12px', wordBreak: 'break-all' }}>{JSON.stringify(d)}</div>\n        );\n      },\n    },\n    { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n    { title: 'Office', render: 'office' },\n    { title: 'Start Date', render: 'start' },\n    {\n      title: 'Salary($)',\n      align: 'right',\n      render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n    },\n  ];\n\n  return (\n    <div>\n      <Checkbox.Group\n        style={{ marginBottom: 24 }}\n        keygen='id'\n        value={expandKeys}\n        onChange={setExpandKeys}\n      >\n        {[1, 2, 3, 4, 5].map((d) => (\n          <Checkbox key={d} htmlValue={d}>{`展开第 ${d} 行`}</Checkbox>\n        ))}\n      </Checkbox.Group>\n\n      <Table\n        expandKeys={expandKeys}\n        data={data}\n        keygen='id'\n        style={{ height: 300 }}\n        columns={columns}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Row ClassName",
-      "description": "Set the rowClassName property to set row style. (You must specify td background-color when the rowClassName is set)",
-      "scenario": "basic",
+      "title": "行样式",
+      "description": "通过 rowClassName 设置单行样式（使用了 rowClassName 必须给 td 指定背景色）",
+      "scenario": "advanced",
       "code": "/**\n * cn - 行样式\n *    -- 通过 rowClassName 设置单行样式（使用了 rowClassName 必须给 td 指定背景色）\n * en - Row ClassName\n *    -- Set the rowClassName property to set row style. (You must specify td background-color when the rowClassName is set)\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyle = createUseStyles(\n  {\n    danger: {\n      'table & td': {\n        backgroundColor: '#FCE6E6',\n      },\n    },\n    success: {\n      'table & td': {\n        backgroundColor: '#E4FCED',\n      },\n    },\n  },\n  { name: 'custom-table' },\n);\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, TableRowData[]>;\ntype TableRowClassName = TableProps['rowClassName'];\n\nconst data: TableRowData[] = user.fetchSync(5);\n\nconst columns: TableColumnItem[] = [\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => {\n  const classes = useStyle();\n\n  const rowClassName: TableRowClassName = (d) => {\n    if (d.id === 2) return classes.danger;\n    if (d.id === 3) return classes.success;\n    return undefined;\n  };\n  return <Table keygen='id' columns={columns} data={data} rowClassName={rowClassName} />;\n};\n\nexport default App;\n"
     },
     {
-      "title": "Base",
-      "description": "Set the rowClickAttr to trigger an onRowClick event for an element",
-      "scenario": "basic",
+      "title": "行内元素点击",
+      "description": "设置 rowClickAttr，可以使行内元素的点击事件触发onRowClick",
+      "scenario": "advanced",
       "code": "/**\n * cn - 行内元素点击\n *    -- 设置 rowClickAttr，可以使行内元素的点击事件触发onRowClick\n * en - Base\n *    -- Set the rowClickAttr to trigger an onRowClick event for an element\n */\nimport React, { useState } from 'react';\nimport { Table, Radio, Gap, Link, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst dataList = user.fetchSync(4);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  {\n    title: 'Operation',\n    render: () => (\n      <Gap>\n        <Link data-info>\n          <span data-info>info</span>\n        </Link>\n        <Link data-call>\n          <span data-call>call</span>\n        </Link>\n      </Gap>\n    ),\n  },\n];\n\nconst App: React.FC = () => {\n  const [count, setCount] = useState(0);\n  const [attrs, setAttrs] = useState(['*']);\n\n  const handleClick = () => setCount(count + 1);\n\n  const handleChange = (v: string[]) => setAttrs(v);\n\n  return (\n    <div>\n      <Table\n        rowClickAttr={attrs}\n        onRowClick={handleClick}\n        keygen='id'\n        columns={columns}\n        data={dataList}\n      />\n      <div style={{ marginTop: 12, fontSize: 14, lineHeight: '22px' }}>\n        <span>rowClickAttr：</span>\n        <Radio.Group\n          keygen\n          value={attrs}\n          onChange={handleChange}\n          data={['data-info', 'data-call', '*']}\n          style={{ display: 'inline-block', verticalAlign: 'middle' }}\n        />\n      </div>\n      <div style={{ fontSize: 14 }}>\n        <span>onRowClick call count： </span>\n        <span>{count}</span>\n      </div>\n    </div>\n  );\n};\nexport default App;\n"
     },
     {
-      "title": "Tree Data",
-      "description": "Support Tree Data",
-      "scenario": "basic",
+      "title": "树形数据",
+      "description": "支持树形数据的展示，通过 `columns.treeColumnsName` 指定子数据字段名，同时在该列自动添加 展开/收起 按钮；",
+      "scenario": "advanced",
       "code": "/**\n * cn - 树形数据\n *    -- 支持树形数据的展示，通过 `columns.treeColumnsName` 指定子数据字段名，同时在该列自动添加 展开/收起 按钮；\n *    -- 通过 columns.treeIndent 指定每一层缩进宽度；\n *    -- 备注：当展开列内容过长时，单元格会自动换行，可以通过 width 设定足够的长度来避免。\n * en - Tree Data\n *    -- Support Tree Data\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  office: string;\n  country: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n  children?: TableRowData[];\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    country: 'Reunion',\n    office: 'Miami',\n    children: [\n      {\n        id: 6,\n        firstName: 'Ialu',\n        lastName: 'Opis',\n        position: 'Finalick Designer',\n        country: 'Tokiy',\n        office: 'Miami',\n        children: [\n          {\n            id: 3,\n            firstName: 'Dylan',\n            lastName: 'Ratke',\n            position: 'Development Lead',\n            country: 'Peru',\n            office: 'Boston',\n            children: [\n              {\n                id: 10,\n                firstName: 'Danil',\n                lastName: 'Forun',\n                position: 'Development Lead',\n                country: 'Deini',\n                office: 'Conty',\n              },\n            ],\n          },\n        ],\n      },\n      {\n        id: 7,\n        firstName: 'Foak',\n        lastName: 'Resilt',\n        position: 'Dcaoko Designer',\n        country: 'Moran',\n        office: 'Korosal',\n      },\n      {\n        id: 8,\n        firstName: 'Jest',\n        lastName: 'Rokio',\n        position: 'Fmaiil Mail',\n        country: 'Moran',\n        office: 'Ticko',\n        children: [\n          {\n            id: 9,\n            firstName: 'Domo',\n            lastName: 'Wang',\n            position: 'Ameri Kich',\n            country: 'Moran',\n            office: 'Fiour',\n          },\n        ],\n      },\n    ],\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n  },\n  {\n    id: 11,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    country: 'Peru',\n    office: 'Chengdu',\n    children: [\n      {\n        id: 12,\n        firstName: 'Dylan',\n        lastName: 'Ratke',\n        position: 'Development Lead',\n        country: 'Peru',\n        office: 'Boston',\n      },\n    ],\n  },\n  {\n    id: 13,\n    firstName: 'Wolo',\n    lastName: 'Casho',\n    position: 'Developer',\n    country: 'Franch',\n    office: 'Jiangsu',\n  },\n  {\n    id: 14,\n    firstName: 'Lou',\n    lastName: 'Woch',\n    position: 'Befined',\n    country: 'China',\n    office: 'Beijing',\n    children: [\n      {\n        id: 15,\n        firstName: 'Oos',\n        lastName: 'Wargen',\n        position: 'UX Designer',\n        country: 'Upck',\n        office: 'Andwarea',\n      },\n    ],\n  },\n  {\n    id: 16,\n    firstName: 'Endted',\n    lastName: 'Wang',\n    position: 'Ameri Kich',\n    country: 'Moran',\n    office: 'Fiour',\n    children: [\n      {\n        id: 17,\n        firstName: 'Oos',\n        lastName: 'Wargen',\n        position: 'UX Designer',\n        country: 'Upck',\n        office: 'Andwarea',\n      },\n    ],\n  },\n  {\n    id: 18,\n    firstName: 'Danil',\n    lastName: 'Forun',\n    position: 'Development Lead',\n    country: 'Deini',\n    office: 'Conty',\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n    width: 300,\n    treeIndent: 22,\n    treeColumnsName: 'children',\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => (\n  <Table bordered height={300} keygen='id' columns={columns} data={data} />\n);\n\nexport default App;\n"
     },
     {
-      "title": "*    -- Set treeCheckAll to deep check children",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- 设置 treeCheckAll, 支持递归选择子数据",
+      "description": "设置 treeCheckAll, 支持递归选择子数据",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 设置 treeCheckAll, 支持递归选择子数据\n * en -\n *    -- Set treeCheckAll to deep check children\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  office: string;\n  country: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n  children?: TableRowData[];\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    country: 'Reunion',\n    office: 'Miami',\n    children: [\n      {\n        id: 6,\n        firstName: 'Ialu',\n        lastName: 'Opis',\n        position: 'Finalick Designer',\n        country: 'Tokiy',\n        office: 'Miami',\n        children: [\n          {\n            id: 3,\n            firstName: 'Dylan',\n            lastName: 'Ratke',\n            position: 'Development Lead',\n            country: 'Peru',\n            office: 'Boston',\n            children: [\n              {\n                id: 10,\n                firstName: 'Danil',\n                lastName: 'Forun',\n                position: 'Development Lead',\n                country: 'Deini',\n                office: 'Conty',\n              },\n            ],\n          },\n        ],\n      },\n      {\n        id: 7,\n        firstName: 'Foak',\n        lastName: 'Resilt',\n        position: 'Dcaoko Designer',\n        country: 'Moran',\n        office: 'Korosal',\n      },\n      {\n        id: 8,\n        firstName: 'Jest',\n        lastName: 'Rokio',\n        position: 'Fmaiil Mail',\n        country: 'Moran',\n        office: 'Ticko',\n        children: [\n          {\n            id: 9,\n            firstName: 'Domo',\n            lastName: 'Wang',\n            position: 'Ameri Kich',\n            country: 'Moran',\n            office: 'Fiour',\n          },\n        ],\n      },\n    ],\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n  },\n  {\n    id: 11,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    country: 'Peru',\n    office: 'Chengdu',\n    children: [\n      {\n        id: 12,\n        firstName: 'Dylan',\n        lastName: 'Ratke',\n        position: 'Development Lead',\n        country: 'Peru',\n        office: 'Boston',\n      },\n    ],\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n    width: 300,\n    treeColumnsName: 'children',\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => (\n  <Table\n    bordered\n    defaultTreeExpandKeys={[1]}\n    keygen='id'\n    format='id'\n    data={data}\n    treeCheckAll\n    columns={columns}\n    onRowSelect={(selected) => console.log(selected)}\n  />\n);\n\nexport default App;\n"
     },
     {
-      "title": "*    -- Use treeExpandKeys and onTreeExpand to control the expand row",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- 使用 treeExpandKeys 和 onTreeExpand 使展开行受控",
+      "description": "使用 treeExpandKeys 和 onTreeExpand 使展开行受控",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 使用 treeExpandKeys 和 onTreeExpand 使展开行受控\n * en -\n *    -- Use treeExpandKeys and onTreeExpand to control the expand row\n */\nimport React, { useState } from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  office: string;\n  country: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n  children?: TableRowData[];\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\ntype TableProps = TYPE.Table.Props<TableRowData, TableRowData>;\ntype TableOnTreeExpand = TableProps['onTreeExpand'];\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    country: 'Reunion',\n    office: 'Miami',\n    children: [\n      {\n        id: 6,\n        firstName: 'Ialu',\n        lastName: 'Opis',\n        position: 'Finalick Designer',\n        country: 'Tokiy',\n        office: 'Miami',\n        children: [\n          {\n            id: 3,\n            firstName: 'Dylan',\n            lastName: 'Ratke',\n            position: 'Development Lead',\n            country: 'Peru',\n            office: 'Boston',\n            children: [\n              {\n                id: 10,\n                firstName: 'Danil',\n                lastName: 'Forun',\n                position: 'Development Lead',\n                country: 'Deini',\n                office: 'Conty',\n              },\n            ],\n          },\n        ],\n      },\n      {\n        id: 7,\n        firstName: 'Foak',\n        lastName: 'Resilt',\n        position: 'Dcaoko Designer',\n        country: 'Moran',\n        office: 'Korosal',\n      },\n      {\n        id: 8,\n        firstName: 'Jest',\n        lastName: 'Rokio',\n        position: 'Fmaiil Mail',\n        country: 'Moran',\n        office: 'Ticko',\n        children: [\n          {\n            id: 9,\n            firstName: 'Domo',\n            lastName: 'Wang',\n            position: 'Ameri Kich',\n            country: 'Moran',\n            office: 'Fiour',\n          },\n        ],\n      },\n    ],\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n  },\n  {\n    id: 11,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    country: 'Peru',\n    office: 'Chengdu',\n    children: [\n      {\n        id: 12,\n        firstName: 'Dylan',\n        lastName: 'Ratke',\n        position: 'Development Lead',\n        country: 'Peru',\n        office: 'Boston',\n      },\n    ],\n  },\n  {\n    id: 13,\n    firstName: 'Wolo',\n    lastName: 'Casho',\n    position: 'Developer',\n    country: 'Franch',\n    office: 'Jiangsu',\n  },\n  {\n    id: 14,\n    firstName: 'Lou',\n    lastName: 'Woch',\n    position: 'Befined',\n    country: 'China',\n    office: 'Beijing',\n    children: [\n      {\n        id: 15,\n        firstName: 'Oos',\n        lastName: 'Wargen',\n        position: 'UX Designer',\n        country: 'Upck',\n        office: 'Andwarea',\n      },\n    ],\n  },\n  {\n    id: 16,\n    firstName: 'Endted',\n    lastName: 'Wang',\n    position: 'Ameri Kich',\n    country: 'Moran',\n    office: 'Fiour',\n    children: [\n      {\n        id: 17,\n        firstName: 'Oos',\n        lastName: 'Wargen',\n        position: 'UX Designer',\n        country: 'Upck',\n        office: 'Andwarea',\n      },\n    ],\n  },\n  {\n    id: 18,\n    firstName: 'Danil',\n    lastName: 'Forun',\n    position: 'Development Lead',\n    country: 'Deini',\n    office: 'Conty',\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n    width: 300,\n    treeColumnsName: 'children',\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nconst App: React.FC = () => {\n  const [expands, setExpands] = useState<(number | string)[]>([1]);\n\n  const handleExpand: TableOnTreeExpand = (keys) => {\n    console.log(keys);\n    setExpands(keys);\n  };\n\n  return (\n    <Table\n      bordered\n      virtual\n      keygen='id'\n      data={data}\n      height={300}\n      columns={columns}\n      treeExpandKeys={expands}\n      onTreeExpand={handleExpand}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "*    -- Set loader, support dynamic loading of child nodes",
+      "title": "动态加载",
       "description": "树形数据用法下，设置 `loader`后支持动态加载子节点数据;",
-      "scenario": "basic",
+      "scenario": "advanced",
       "code": "/**\n * cn - 动态加载\n *    -- 树形数据用法下，设置 `loader`后支持动态加载子节点数据;\n *    -- 备注：`column.treeColumnsName` 对应的字段(该例子中是children)未定义时视为可以动态加载节点，开启该节点的加载图标，点击图标触发 `loader` 函数，当children 为 null 或者长度为 0 视为叶子节点；\n * en -\n *    -- Set loader, support dynamic loading of child nodes\n */\nimport React, { useEffect, useState } from 'react';\nimport { Table, TYPE } from 'shineout';\ninterface TableRowData {\n  id: string;\n  title: string;\n  children?: TableRowData[] | null;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst initialData: TableRowData[] = [\n  {\n    id: '1',\n    title: 'Can Expand to load more1',\n  },\n  {\n    id: '2',\n    title: 'Can Expand to load more2',\n  },\n  {\n    id: '3',\n    title: 'Can\\'t Expand to load more3, cause children.length === 0',\n    children: [],\n  },\n  {\n    id: '4',\n    title: 'Can\\'t Expand to load more4, cause children is null',\n    children: null,\n  },\n  // mock 至 20\n  ...new Array(16).fill(0).map((_, index) => ({\n    id: `${index + 5}`,\n    title: `Can't Expand to load more${index + 5}, cause children is null`,\n    children: null,\n  })),\n];\n\nconst updateTreeData = (list: TableRowData[], key: React.Key, children: TableRowData[]): TableRowData[] =>\n  list.map((node) => {\n    if (node.id === key) {\n      return {\n        ...node,\n        children,\n      };\n    }\n    if (node.children) {\n      return {\n        ...node,\n        children: updateTreeData(node.children, key, children),\n      };\n    }\n    return node;\n  });\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Title',\n    render: 'title',\n    width: 300,\n    treeIndent: 24,\n    treeColumnsName: 'children',\n  },\n  {\n    title: 'Id',\n    render: 'id',\n    width: 300,\n  },\n];\n\nconst App: React.FC = () => {\n  const [treeData, setTreeData] = useState<TableRowData[]>([]);\n  const [current, setCurrent] = useState(1);\n\n  useEffect(() => {\n    //根据current计算分页后的treeData\n    setTreeData(initialData.slice((current - 1) * 10, current * 10));\n  }, [current]);\n\n  const onLoadData = (dataItem: TableRowData) => {\n    return new Promise<void>((resolve) => {\n      if (dataItem?.children && dataItem?.children?.length > 0) {\n        resolve();\n        return;\n      }\n      setTimeout(() => {\n        setTreeData((origin) =>\n          updateTreeData(origin, dataItem?.id, [\n            { title: 'Child Node', id: `${dataItem?.id}-0` },\n            { title: 'Child Node', id: `${dataItem?.id}-1` },\n          ]),\n        );\n\n        resolve();\n      }, 3000);\n    })\n  };\n\n  return (\n    <Table\n      bordered\n      keygen='id'\n      columns={columns}\n      data={treeData}\n      loader={onLoadData}\n      pagination={{\n        pageSize: 10,\n        current,\n        onChange: setCurrent,\n        total: initialData.length,\n        pageSizeList: [10, 20, 30],\n      }}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Style only",
-      "description": "Use the native tr and td to display the table",
-      "scenario": "basic",
+      "title": "只使用样式",
+      "description": "使用原生的tr, td来显示表格",
+      "scenario": "advanced",
       "code": "/**\n * cn - 只使用样式\n *    -- 使用原生的tr, td来显示表格\n * en - Style only\n *    -- Use the native tr and td to display the table\n */\nimport React from 'react';\nimport { Table } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\nconst data: TableRowData[] = user.fetchSync(6);\n\nconst App: React.FC = () => (\n  <Table striped keygen='id' bordered>\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Office</th>\n        <th>Start Date</th>\n        <th style={{ textAlign: 'right' }}>Salary($)</th>\n      </tr>\n    </thead>\n    <tbody>\n      {data.map((d) => (\n        <tr key={d.id}>\n          <td>{`${d.firstName} ${d.lastName}`}</td>\n          <td>{d.office}</td>\n          <td>{d.start}</td>\n          <td style={{ textAlign: 'right' }}>{`${d.salary\n            .toString()\n            .replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`}</td>\n        </tr>\n      ))}\n    </tbody>\n  </Table>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Sticky Header",
-      "description": "Use the sticky attribute to sticky the header",
-      "scenario": "basic",
+      "title": "表头附着",
+      "description": "在滚屏场景下，可以设置 sticky 属性使表头附着顶部",
+      "scenario": "advanced",
       "code": "/**\n * cn - 表头附着\n *    -- 在滚屏场景下，可以设置 sticky 属性使表头附着顶部\n * en - Sticky Header\n *    -- Use the sticky attribute to sticky the header\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => {\n  return <Table sticky={{ top: 65, css: true }} data={data} columns={columns} keygen='id' />;\n};\n\nexport default App;\n"
     },
     {
-      "title": "Cell selectable",
-      "description": "whether to enable ctrl/cmd + click check",
-      "scenario": "basic",
+      "title": "单元格选中",
+      "description": "通过 cellSelectable 属性来启用 ctrl/cmd + click 选中单元格",
+      "scenario": "advanced",
       "code": "/**\n * cn - 单元格选中\n *    -- 通过 cellSelectable 属性来启用 ctrl/cmd + click 选中单元格\n * en - Cell selectable\n *    -- whether to enable ctrl/cmd + click check\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => (\n  <Table keygen='id' width={1500} columns={columns} data={data} cellSelectable />\n);\n\nexport default App;\n"
     },
     {
-      "title": "drag row",
-      "description": "customize drag events through the rowEvents property",
-      "scenario": "basic",
+      "title": "拖动行",
+      "description": "通过 rowEvents 属性来自定义拖拽事件",
+      "scenario": "advanced",
       "code": "/**\n * cn - 拖动行\n *    -- 通过 rowEvents 属性来自定义拖拽事件\n * en - drag row\n *    -- customize drag events through the rowEvents property\n */\nimport React, { useState, useRef, useCallback } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    exampleDragable: {\n      cursor: 'move',\n    },\n    exampleDragIn: {\n      '& td': {\n        borderBottom: '2px dashed #197AFA !important',\n      },\n    },\n  },\n  { name: 'table-example-drag' },\n);\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst findNearestDOM = (el: HTMLElement, tagName: string) => {\n  let node: any = el;\n  while (node.tagName !== tagName && node.tagName !== 'BODY') {\n    node = node.parentNode;\n  }\n  return node;\n};\nconst findIndex = (el: HTMLElement) => {\n  const tbody = findNearestDOM(el, 'TBODY');\n  const nodes = Array.prototype.slice.call(tbody.children);\n\n  return nodes.indexOf(el);\n};\n\nconst App: React.FC = () => {\n  const [d, setD] = useState(data);\n  const classes = useStyles();\n  const [target, setTarget] = useState<number | null>();\n  const ref = useRef<{\n    startIndex?: number;\n    dragging?: boolean;\n    current: { dragging?: boolean; startIndex?: number };\n  }>({ current: {} });\n\n  const dragStartHandler = useCallback((e: React.DragEvent) => {\n    if (ref.current.dragging) return;\n    ref.current.dragging = true;\n    ref.current.startIndex = findIndex(e.target as HTMLElement);\n  }, []);\n\n  const dragEnterHandler = useCallback((e: React.DragEvent) => {\n    e.preventDefault();\n    if (!ref.current.dragging) return;\n    const tr = findNearestDOM(e.target as HTMLElement, 'TR');\n    const index = findIndex(tr);\n    setTarget(index);\n  }, []);\n\n  const dragOverHandler = useCallback((e: React.DragEvent) => {\n    if (!ref.current.dragging) return;\n    e.preventDefault();\n  }, []);\n\n  const dragEndHandler = useCallback((e: React.DragEvent) => {\n    if (!ref.current.dragging) return;\n    ref.current.dragging = false;\n    setTarget(null);\n  }, []);\n\n  const dropHandler = useCallback(\n    (e: React.DragEvent) => {\n      if (!ref.current.dragging) return;\n      e.preventDefault();\n      const tr = findNearestDOM(e.target as HTMLTableRowElement, 'TR');\n      const start = ref.current.startIndex;\n      const end = findIndex(tr);\n      if (start === end) return;\n      const source = d[start!];\n      const r = [...d];\n      console.log(start, end);\n      r.splice(start!, 1);\n      r.splice(end, 0, source);\n      setD(r);\n    },\n    [d],\n  );\n\n  return (\n    <Table\n      data={d}\n      keygen='id'\n      cellSelectable\n      columns={columns}\n      rowClassName={(_row, index) =>\n        `${index === target ? classes.exampleDragIn : ''} ${classes.exampleDragable}`\n      }\n      rowEvents={{\n        draggable: true,\n        onDrop: dropHandler,\n        onDragEnd: dragEndHandler,\n        onDragOver: dragOverHandler,\n        onDragStart: dragStartHandler,\n        onDragEnter: dragEnterHandler,\n      }}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "handle drag",
-      "description": "customize drag events through the rowEvents property",
-      "scenario": "basic",
+      "title": "句柄拖拽",
+      "description": "通过 rowEvents 属性来自定义拖拽事件",
+      "scenario": "advanced",
       "code": "/**\n * cn - 句柄拖拽\n *    -- 通过 rowEvents 属性来自定义拖拽事件\n * en - handle drag\n *    -- customize drag events through the rowEvents property\n */\nimport React, { useState, useRef, useCallback } from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    exampleDragIn: {\n      '& td': {\n        borderBottom: '2px dashed #197AFA !important',\n      },\n    },\n  },\n  { name: 'table-example-drag' },\n);\n\nlet canDrag = false;\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  {\n    title: '',\n    render: () => {\n      return (\n        <div\n          style={{\n            display: 'flex',\n            justifyContent: 'center',\n            alignItems: 'center',\n            position: 'absolute',\n            top: 0,\n            bottom: 0,\n            left: 0,\n            right: 0,\n            minHeight: '14px',\n          }}\n        >\n          <span\n            style={{ cursor: 'move', height: '14px', lineHeight: 1 }}\n            onMouseEnter={() => {\n              canDrag = true;\n            }}\n            onMouseLeave={() => {\n              canDrag = false;\n            }}\n          >\n            <svg viewBox=\"0 0 24 24\" width=\"14px\" height=\"14px\">\n              <path fill='#B3B7C1' d=\"M16.002 18C17.1065 18 18.002 18.8954 18.002 20C18.002 21.1046 17.1065 22 16.002 22C14.8974 22 14.002 21.1046 14.002 20C14.002 18.8954 14.8974 18 16.002 18ZM8.00195 18C9.10652 18 10.002 18.8954 10.002 20C10.002 21.1046 9.10652 22 8.00195 22C6.89738 22 6.00195 21.1046 6.00195 20C6.00195 18.8954 6.89738 18 8.00195 18ZM16.002 10C17.1065 10 18.002 10.8954 18.002 12C18.002 13.1046 17.1065 14 16.002 14C14.8974 14 14.002 13.1046 14.002 12C14.002 10.8954 14.8974 10 16.002 10ZM8.00195 10C9.10652 10 10.002 10.8954 10.002 12C10.002 13.1046 9.10652 14 8.00195 14C6.89738 14 6.00195 13.1046 6.00195 12C6.00195 10.8954 6.89738 10 8.00195 10ZM16.002 2C17.1065 2 18.002 2.89543 18.002 4C18.002 5.10457 17.1065 6 16.002 6C14.8974 6 14.002 5.10457 14.002 4C14.002 2.89543 14.8974 2 16.002 2ZM8.00195 2C9.10652 2 10.002 2.89543 10.002 4C10.002 5.10457 9.10652 6 8.00195 6C6.89738 6 6.00195 5.10457 6.00195 4C6.00195 2.89543 6.89738 2 8.00195 2Z\"></path>\n            </svg>\n          </span>\n        </div>\n      );\n    },\n    width: 40,\n  },\n  { title: 'id', render: 'id', width: 50 },\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst findNearestDOM = (el: HTMLElement, tagName: string) => {\n  let node: any = el;\n  while (node.tagName !== tagName && node.tagName !== 'BODY') {\n    node = node.parentNode;\n  }\n  return node;\n};\nconst findIndex = (el: HTMLElement) => {\n  const tbody = findNearestDOM(el, 'TBODY');\n  const nodes = Array.prototype.slice.call(tbody.children);\n\n  return nodes.indexOf(el);\n};\n\nconst App: React.FC = () => {\n  const [d, setD] = useState(data);\n  const classes = useStyles();\n  const [target, setTarget] = useState<number | null>();\n  const ref = useRef<{\n    startIndex?: number;\n    dragging?: boolean;\n    current: { dragging?: boolean; startIndex?: number };\n  }>({ current: {} });\n\n  const dragStartHandler = useCallback((e: React.DragEvent) => {\n    if (!canDrag) {\n      e.preventDefault();\n      return;\n    }\n    if (ref.current.dragging) return;\n    ref.current.dragging = true;\n    ref.current.startIndex = findIndex(e.target as HTMLElement);\n  }, []);\n\n  const dragEnterHandler = useCallback((e: React.DragEvent) => {\n    e.preventDefault();\n    if (!ref.current.dragging) return;\n    const tr = findNearestDOM(e.target as HTMLElement, 'TR');\n    const index = findIndex(tr);\n    setTarget(index);\n  }, []);\n\n  const dragOverHandler = useCallback((e: React.DragEvent) => {\n    e.preventDefault();\n  }, []);\n\n  const dragEndHandler = useCallback(() => {\n    if (!ref.current.dragging) return;\n    ref.current.dragging = false;\n    setTarget(null);\n  }, []);\n\n  const dropHandler = useCallback(\n    (e: React.DragEvent) => {\n      e.preventDefault();\n      if (!ref.current.dragging) return;\n      const tr = findNearestDOM(e.target as HTMLTableRowElement, 'TR');\n      const start = ref.current.startIndex;\n      const end = findIndex(tr);\n      if (start === end) return;\n      const source = d[start!];\n      const r = [...d];\n      console.log(start, end);\n      r.splice(start!, 1);\n      r.splice(end, 0, source);\n      setD(r);\n    },\n    [d],\n  );\n\n  return (\n    <Table\n      data={d}\n      keygen='id'\n      cellSelectable\n      columns={columns}\n      rowClassName={(_row, index) => `${index === target ? classes.exampleDragIn : ''}`}\n      rowEvents={{\n        draggable: true,\n        onDrop: dropHandler,\n        onDragEnd: dragEndHandler,\n        onDragOver: dragOverHandler,\n        onDragStart: dragStartHandler,\n        onDragEnter: dragEnterHandler,\n      }}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "footer summary",
-      "description": "Render bottom information through the summary property",
-      "scenario": "basic",
+      "title": "底部总结栏",
+      "description": "通过 summary 属性来渲染底部信息",
+      "scenario": "advanced",
       "code": "/**\n * cn - 底部总结栏\n *    -- 通过 summary 属性来渲染底部信息\n * en - footer summary\n *    -- Render bottom information through the summary property\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  height: number;\n  salary: number;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\ntype TableProps = TYPE.Table.Props<TableRowData, number[]>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    salary: 115777,\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    salary: 396093,\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    salary: 236064,\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    salary: 338985,\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'height', render: 'height' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst summary: TableProps['summary'] = [\n  [\n    {\n      render: () => <span>Total</span>,\n    },\n    {\n      render: () => <span>{1347016}</span>,\n    },\n    {\n      render: () => <span>{2341312}</span>,\n    },\n  ],\n  [\n    {\n      render: () => <span>Balance</span>,\n    },\n    {\n      render: () => <span>{1234}</span>,\n      colSpan: 2,\n    },\n  ],\n];\n\nconst App: React.FC = () => (\n  <Table bordered data={data} keygen='id' cellSelectable columns={columns} summary={summary} />\n);\n\nexport default App;\n"
     },
     {
-      "title": "*    -- Fixed column usage",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- 固定列用法",
+      "description": "固定列用法",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 固定列用法\n * en -\n *    -- Fixed column usage\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\ntype TableProps = TYPE.Table.Props<TableRowData, number[]>;\n\nconst data: TableRowData[] = user.fetchSync(20);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  {\n    title: 'First Name',\n    group: 'Name',\n    render: 'firstName',\n    width: 120,\n  },\n  {\n    title: 'Last Name',\n    fixed: 'left',\n    group: 'Name',\n    render: 'lastName',\n    width: 120,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    align: 'right',\n    fixed: 'right',\n    width: 100,\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst summary: TableProps['summary'] = [\n  [\n    { render: () => <span>Summary</span>, colSpan: 3 },\n    { render: () => <span>summary content</span>, colSpan: 4 },\n    { render: () => <span>summary2</span> },\n  ],\n];\n\nconst App: React.FC = () => (\n  <Table\n    bordered\n    keygen='id'\n    width={1500}\n    style={{ height: 300 }}\n    columns={columns}\n    data={data}\n    summary={summary}\n  />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Editable Rows",
-      "description": "Usage of Table with Form component",
+      "title": "可编辑行",
+      "description": "演示与Form组件结合使用实现可编辑行",
       "scenario": "form",
       "code": "/**\n * cn - 可编辑行\n *    -- 演示与Form组件结合使用实现可编辑行\n * en - Editable Rows\n *    -- Usage of Table with Form component\n */\n\nimport { useState } from 'react';\nimport { Button, Form, Input, Table, TYPE, Rule, Link, Modal, Message, Popover } from 'shineout';\n\nexport function ItemWithRequired(props: { children: React.ReactNode; top?: number, disabled?: boolean }) {\n  if (props.disabled) {\n    return props.children;\n  }\n  return (\n    <div style={{ position: 'relative' }}>\n      <span\n        style={{\n          color: '#EB4242',\n          position: 'absolute',\n          top: props.top || 0,\n          left: -2,\n          transform: 'translate(-100%, 0)',\n        }}\n      >\n        *\n      </span>\n      {props.children}\n    </div>\n  );\n}\ninterface TableRowData {\n  id?: number;\n  name?: string;\n  age?: string;\n}\n\ninterface FormTableValues {\n  values: TableRowData[];\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst rules = Rule();\n\nconst defaultData = [\n  { id: 1, name: 'Tom1', age: '18' },\n  { id: 2, name: 'Tom2', age: '28' },\n];\nexport default () => {\n  const [nextId, setNextId] = useState(3);\n  const [edits, setEdits] = useState<boolean[]>(new Array(defaultData.length).fill(false));\n  const [formDatas, setFormDatas] = useState<FormTableValues>({\n    values: defaultData,\n  });\n  const [tableData, setTableData] = useState<FormTableValues>({\n    values: defaultData,\n  });\n\n  const columns: TableColumnItem[] = [\n    { title: 'ID', width: 100, render: (d, index) => <div key={edits[index]?.toString()} style={{ lineHeight: edits[index] ? '32px' : 'auto' }}>{d.id}</div> },\n    {\n      title: <ItemWithRequired>Name</ItemWithRequired>,\n      width: 200,\n      render: (d, index) => {\n        return edits[index] ? (\n          <Form.Item style={{ marginBottom: 0 }}>\n            <Input rules={[rules.required]} name={`values[${index}].name`} />\n          </Form.Item>\n        ) : (\n          d.name\n        );\n      },\n    },\n    {\n      title: 'Age',\n      width: 200,\n      render: (d, index) => {\n        return edits[index] ? (\n          <ItemWithRequired disabled={Number(d.age) <= 18} top={5}>\n            <Form.Item style={{ marginBottom: 0 }}>\n              <Input rules={[rules.required]} name={`values[${index}].age`} />\n            </Form.Item>\n          </ItemWithRequired>\n        ) : (\n          d.age\n        );\n      },\n    },\n    {\n      title: 'Operation',\n      width: 100,\n      render: (d, index) => {\n        return edits[index] ? (\n          <>\n            <Link\n              type='primary'\n              onClick={() => {\n                setEdits(prev => {\n                  const newEdits = new Array(prev.length).fill(false);\n                  return newEdits;\n                });\n                setTableData({\n                  values: tableData.values.map((item, idx) =>\n                    idx === index ? { ...item, ...formDatas.values[index] } : item,\n                  ),\n                });\n                Message.success('Data saved successfully');\n              }}\n              style={{ lineHeight: '32px', marginRight: 8 }}\n            >\n              Save\n            </Link>\n            <Link\n              type='primary'\n              style={{ lineHeight: '32px' }}\n              onClick={() => {\n                setEdits(prev => {\n                  const newEdits = new Array(prev.length).fill(false);\n                  return newEdits;\n                });\n              }}\n            >\n              Cancel\n            </Link>\n          </>\n        ) : (\n          <>\n          <Link\n            type='primary'\n            onClick={() => {\n              setEdits(prev => {\n                const newEdits = new Array(prev.length).fill(false);\n                newEdits[index] = !prev[index];\n                return newEdits;\n              });\n              setFormDatas({\n                values: formDatas.values.map((item, idx) => (idx === index ? { ...d } : item)),\n              });\n            }}\n            style={{ marginRight: 8 }}\n          >\n            Edit\n          </Link>\n          <Link\n            type='danger'\n          >\n            <Popover.Confirm\n              title='Sure to delete?'\n              onCancel={() => console.log('cancel')}\n              onOk={() => {\n                const newDatas = tableData.values.filter((_, idx) => idx !== index);\n                setTableData({ values: newDatas });\n                setFormDatas({ values: newDatas });\n                setEdits(prev => prev.filter((_, idx) => idx !== index));\n              }}\n            >\n            </Popover.Confirm>\n            Delete\n          </Link>\n          </>\n        );\n      },\n    },\n  ];\n\n  return (\n    <Form\n      value={formDatas}\n      onChange={setFormDatas}\n      onSubmit={() => console.log('submit:>>', JSON.stringify(formDatas, null, 2))}\n      reserveAble\n    >\n      <div style={{ marginBottom: 12 }}>\n        <Button\n          type='primary'\n          onClick={() => {\n            const newDatas = {\n              values: [\n                ...tableData.values,\n                {\n                  id: nextId,\n                  name: `Tom${nextId}`,\n                  age: `${nextId * 10 + 8}`,\n                },\n              ],\n            }\n            setTableData(newDatas);\n            setFormDatas(newDatas);\n            setEdits(prev => [...prev, false]);\n            setNextId(prev => prev + 1);\n          }}\n        >\n          Add\n        </Button>\n\n        <Form.Submit\n          onClick={() => {\n            Modal.info({\n              title: 'Form Data in Table',\n              content: <pre>{JSON.stringify(formDatas, null, 2)}</pre>,\n            });\n          }}\n        >\n          Submit\n        </Form.Submit>\n      </div>\n\n      <Table data={tableData.values} columns={columns} keygen='id' />\n    </Form>\n  );\n};\n"
     },
     {
-      "title": "Editable Cells",
-      "description": "Demonstrates the use of Form component to implement editable cells in a table",
+      "title": "可编辑单元格",
+      "description": "演示与Form组件结合使用实现可编辑单元格",
       "scenario": "form",
       "code": "/**\n * cn - 可编辑单元格\n *    -- 演示与Form组件结合使用实现可编辑单元格\n * en - Editable Cells\n *    -- Demonstrates the use of Form component to implement editable cells in a table\n */\n\nimport { useState } from 'react';\nimport { Button, Form, Input, Table, TYPE, Rule, Link, Modal, Message, Popover } from 'shineout';\nimport { createUseStyles } from 'react-jss';\n\nconst useStyles = createUseStyles(\n  {\n    cell: {\n      cursor: 'pointer',\n      lineHeight: '32px',\n      height: 32,\n      padding: '0 8px',\n      borderRadius: 4,\n      border: '1px solid transparent',\n      '&:hover': {\n        borderColor: 'var(--soui-brand-6,#197AFA)',\n      },\n    },\n  },\n  { name: 'table-editable' },\n);\n\nexport function ItemWithRequired(props: { children: React.ReactNode; top?: number }) {\n  return (\n    <div style={{ position: 'relative' }}>\n      <span\n        style={{\n          color: '#EB4242',\n          position: 'absolute',\n          top: props.top || 0,\n          left: -2,\n          transform: 'translate(-100%, 0)',\n        }}\n      >\n        *\n      </span>\n      {props.children}\n    </div>\n  );\n}\n\nfunction EditableCell({ value, onEdit }: { value?: string; onEdit: () => void }) {\n  const classes = useStyles();\n  return (\n    <div onClick={onEdit} className={classes.cell}>\n      {value}\n    </div>\n  );\n}\ninterface TableRowData {\n  id?: number;\n  name?: string;\n  age?: string;\n}\n\ninterface FormTableValues {\n  values: TableRowData[];\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst rules = Rule();\n\nconst defaultData = [\n  { id: 1, name: 'Tom1', age: '18' },\n  { id: 2, name: 'Tom2', age: '28' },\n];\nexport default () => {\n  const [nextId, setNextId] = useState(3);\n  const [edits, setEdits] = useState<boolean[]>(new Array(defaultData.length).fill(false));\n  const [formDatas, setFormDatas] = useState<FormTableValues>({\n    values: defaultData,\n  });\n  const [tableData, setTableData] = useState<FormTableValues>({\n    values: defaultData,\n  });\n\n  const columns: TableColumnItem[] = [\n    { title: 'ID', width: 100, render: (d) => <div style={{ lineHeight: '32px' }}>{d.id}</div> },\n    {\n      title: <ItemWithRequired>Name</ItemWithRequired>,\n      width: 200,\n      render: (d, index) => {\n        return edits[index] ? (\n          <Form.Item style={{ marginBottom: 0 }}>\n            <Input\n              rules={[rules.required]}\n              name={`values[${index}].name`}\n              autoFocus\n              onBlur={(e) => {\n                setEdits((prev) => {\n                  const newEdits = [...prev];\n                  newEdits[index] = !newEdits[index];\n                  return newEdits;\n                });\n                setTableData({\n                  values: tableData.values.map((item, i) =>\n                    i === index ? { ...item, name: (e.target as any).value } : item,\n                  ),\n                });\n\n                Message.success('Data saved successfully');\n              }}\n            />\n          </Form.Item>\n        ) : (\n          <EditableCell\n            value={d.name}\n            onEdit={() => {\n              setEdits((prev) => {\n                const newEdits = [...prev];\n                newEdits[index] = !newEdits[index];\n                return newEdits;\n              });\n            }}\n          />\n        );\n      },\n    },\n    {\n      title: 'Age',\n      width: 200,\n      render: (d) => <div style={{ lineHeight: '32px' }}>{d.age}</div>,\n    },\n    {\n      title: 'Operation',\n      width: 100,\n      render: (d, index) => {\n        return (\n          <Link type='danger' style={{ lineHeight: '32px' }}>\n            <Popover.Confirm\n              title='Sure to delete?'\n              onCancel={() => console.log('cancel')}\n              onOk={() => {\n                const newDatas = tableData.values.filter((_, idx) => idx !== index);\n                setTableData({ values: newDatas });\n                setFormDatas({ values: newDatas });\n                setEdits(prev => prev.filter((_, idx) => idx !== index));\n              }}\n            ></Popover.Confirm>\n            Delete\n          </Link>\n        );\n      },\n    },\n  ];\n\n  return (\n    <Form\n      value={formDatas}\n      onChange={setFormDatas}\n      onSubmit={() => console.log('submit:>>', JSON.stringify(formDatas, null, 2))}\n      reserveAble\n    >\n      <div style={{ marginBottom: 12 }}>\n        <Button\n          type='primary'\n          onClick={() => {\n            const newDatas = {\n              values: [\n                ...tableData.values,\n                {\n                  id: nextId,\n                  name: `Tom${nextId}`,\n                  age: `${nextId * 10 + 8}`,\n                },\n              ],\n            };\n            setTableData(newDatas);\n            setFormDatas(newDatas);\n            setEdits(prev => [...prev, false]);\n            setNextId(prev => prev + 1);\n          }}\n        >\n          Add\n        </Button>\n\n        <Form.Submit\n          onClick={() => {\n            Modal.info({\n              title: 'Form Data in Table',\n              content: <pre>{JSON.stringify(formDatas, null, 2)}</pre>,\n            });\n          }}\n        >\n          Submit\n        </Form.Submit>\n      </div>\n\n      <Table data={tableData.values} columns={columns} keygen='id' />\n    </Form>\n  );\n};\n"
-    },
-    {
-      "title": "Sorter (Out of date)",
-      "description": "Set the sorter property of column to indicate that this column can be sorted",
-      "scenario": "basic",
-      "code": "/**\n * cn - 排序 (旧)\n *    -- 设置 column 的 sorter 属性标示此列需要排序\n *    -- sorter 返回一个 sort 函数时，使用这个函数对数据进行内部排序\n *    -- 后端或自行排序用户自行处理，sorter 函数不要返回结果\n * en - Sorter (Out of date)\n *    -- Set the sorter property of column to indicate that this column can be sorted\n *    -- When the sorter returns a function, use this function to sort data internally\n *    -- Server-side or self-sorting is is handled by the user, do not return results\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(1000);\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'id',\n    render: 'id',\n    width: '50%',\n    sorter: (order) => (a, b) => {\n      if (order === 'asc') return a.id - b.id;\n      return b.id - a.id;\n    },\n  },\n  {\n    title: 'Name',\n    fixed: 'left',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n    width: 160,\n    sorter: (order) => (a, b) => {\n      if (order === 'asc') return a.firstName.localeCompare(b.firstName);\n      return b.firstName.localeCompare(a.firstName);\n    },\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n];\n\nconst App: React.FC = () => (\n  <Table\n    striped\n    keygen='id'\n    virtual\n    data={data}\n    width={1200}\n    rowsInView={10}\n    columns={columns}\n    style={{ maxHeight: 400 }}\n  />\n);\n\nexport default App;\n"
-    },
-    {
-      "title": "empty",
-      "description": "empty",
-      "scenario": "basic",
-      "code": "/**\n * cn - 无数据\n *    -- empty\n * en - empty\n *    -- empty\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [];\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'id',\n    render: 'id',\n    width: 80,\n    fixed: 'left',\n  },\n  {\n    title: 'Name',\n    fixed: 'left',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n    width: 160,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start', fixed: 'right' },\n];\n\nconst App: React.FC = () => (\n  <Table\n    striped\n    keygen='id'\n    data={data}\n    width={1200}\n    rowsInView={10}\n    columns={columns}\n    style={{ height: 400 }}\n  />\n);\n\nexport default App;\n"
-    },
-    {
-      "title": "Hide headers",
-      "description": "set hideHeader to hide headers",
-      "scenario": "basic",
-      "code": "/**\n * cn - 隐藏表头\n *    -- hideHeader 隐藏表头\n * en - Hide headers\n *    -- set hideHeader to hide headers\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nexport default () => {\n  return (\n    <div>\n      <Table keygen='id' columns={columns} data={data} hideHeader bordered virtual />\n    </div>\n  );\n};\n"
-    },
-    {
-      "title": "Disable hover",
-      "description": "set hover to false",
-      "scenario": "basic",
-      "code": "/**\n * cn - 禁用hover\n *    -- set hover to false\n * en - Disable hover\n *    -- set hover to false\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nexport default () => {\n  return (\n    <div>\n      <Table keygen='id' columns={columns} data={data} bordered virtual hover={false} />\n    </div>\n  );\n};\n"
-    },
-    {
-      "title": "Column align",
-      "description": "Set the align property of the columns object to set the column alignment",
-      "scenario": "basic",
-      "code": "/**\n * cn - 列对齐方式\n *    -- columns 对象增加 align 属性，设置列对齐方式\n * en - Column align\n *    -- Set the align property of the columns object to set the column alignment\n */\nimport React from 'react';\nimport { Table, TYPE } from 'shineout';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = [\n  {\n    id: 1,\n    firstName: 'Ephraim',\n    lastName: 'Wisozk',\n    position: 'Marketing Designer',\n    start: '2012-01-29',\n    time: '01:42',\n    salary: 115777,\n    country: 'Reunion',\n    office: 'Miami',\n    office5: 'Istanbul',\n    height: 113.74,\n  },\n  {\n    id: 2,\n    firstName: 'Osvaldo',\n    lastName: 'Beer',\n    position: 'Financial Controller',\n    start: '2007-09-04',\n    time: '03:26',\n    salary: 396093,\n    country: 'Syrian Arab Republic',\n    office: 'San Paulo',\n    office5: 'Shenzhen',\n    height: 82.13,\n  },\n  {\n    id: 3,\n    firstName: 'Dylan',\n    lastName: 'Ratke',\n    position: 'Development Lead',\n    start: '2009-10-16',\n    time: '01:45',\n    salary: 236064,\n    country: 'Peru',\n    office: 'Boston',\n    office5: 'Delhi',\n    height: 179.53,\n  },\n  {\n    id: 4,\n    firstName: 'Shaniya',\n    lastName: 'Jacobs',\n    position: 'Developer',\n    start: '2014-06-30',\n    time: '02:17',\n    salary: 338985,\n    country: 'Peru',\n    office: 'Chengdu',\n    office5: 'Dallas-Fort Worth',\n    height: 190.11,\n  },\n];\n\nconst columns: TableColumnItem[] = [\n  {\n    title: 'Name',\n    render: (d) => `${d.firstName} ${d.lastName}`,\n    align: 'right',\n    className: 'hello',\n    style: { color: 'red' },\n  },\n  { title: 'Country', render: 'country', align: 'center' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n];\n\nexport default () => {\n  return (\n    <div>\n      <Table keygen='id' columns={columns} data={data} bordered virtual hover={false} />\n    </div>\n  );\n};\n"
-    },
-    {
-      "title": "scrollToIndex",
-      "description": "The virtual list table provides a scrollToIndex method to scroll to the specified row",
-      "scenario": "basic",
-      "code": "/**\n * cn - 动态增减行\n *    -- 测试动态添加或删除行之后表格是否闪烁\n * en - scrollToIndex\n *    -- The virtual list table provides a scrollToIndex method to scroll to the specified row\n */\nimport { useState } from 'react';\nimport { Table } from 'shineout';\n\nconst AA = () => {\n  const [list, setList] = useState([\n    { a: 1, id: 1 },\n    { a: 2, id: 2 },\n    { a: 3, id: 4 },\n  ]);\n\n  const columns = [\n    { title: 'col1', render: 'a' },\n    {\n      title: 'operate',\n      render: (_d, i) => (\n        <div style={{ height: 100 }}>\n          <button\n            onClick={() =>\n              setList((pre) => {\n                const temp = [...pre];\n                temp.splice(i, 1);\n                return temp;\n              })\n            }\n          >\n            remove\n          </button>\n          <button onClick={() => {\n            setList((pre) => {\n              const temp = [...pre];\n              temp.splice(i, 0, { a: Math.random().toString(32), id: Math.random() * 100000 });\n              return temp;\n            })\n          }}>\n            add row\n          </button>\n        </div>\n      ),\n    },\n  ];\n\n  return (\n    <div\n      style={{\n        height: 1000,\n        background: '#ccc',\n        padding: 20,\n        display: 'flex',\n        flexDirection: 'column',\n      }}\n    >\n      <div style={{ height: 100 }}></div>\n      <div style={{ padding: 20, background: 'red' }}>\n        <Table\n          style={{ flex: 1 }}\n          data={list}\n          columns={columns}\n          keygen='id'\n          sticky={{ css: true, top: 0 }}\n        />\n      </div>\n    </div>\n  );\n};\n\nexport default AA;\n"
-    },
-    {
-      "title": "scroll-y-debug",
-      "description": "table-tabs debug",
-      "scenario": "basic",
-      "code": "/**\n * cn - table-tabs\n *    -- table-tabs debug\n * en - scroll-y-debug\n *    -- table-tabs debug\n */\nimport React from 'react';\nimport { Table, TYPE, Tabs, Button } from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(1000);\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  {\n    title: 'First Name',\n    group: 'Name',\n    render: 'firstName',\n    width: 120,\n  },\n  {\n    title: 'Last Name',\n    fixed: 'left',\n    group: 'Name',\n    render: 'lastName',\n    width: 120,\n  },\n  { title: 'Country', render: 'country' },\n  { title: 'Position', render: 'position' },\n  { title: 'Office', render: 'office' },\n  { title: 'Start Date', render: 'start' },\n  {\n    title: 'Salary($)',\n    // fixed: 'right',\n    align: 'right',\n    width: 100,\n    render: (d) => `${d.salary.toString().replace(/(\\d)(?=(\\d\\d\\d)+(?!\\d))/g, '$1,')}`,\n  },\n];\n\nconst App: React.FC = () => {\n  const [activeTab, setActiveTab] = React.useState<string | number>('tab1');\n  const [tableData, setTableData] = React.useState<any[]>(data);\n\n  // React.useEffect(()=>{\n  //   if(activeTab === 'tab2') {\n  //     setTableData(data)\n  //   }else{\n  //     setTableData([])\n  //   }\n  // }, [activeTab])\n\n  return <div>\n    <Tabs\n  active={activeTab}\n  onChange={v => {\n    setActiveTab(v)\n  }}\n  style={{padding: 32}}\n  >\n    <Tabs.Panel id=\"tab1\" tab=\"Tab1\">\n      <h1>Tab1</h1>\n    </Tabs.Panel>\n    <Tabs.Panel id=\"tab2\" tab=\"Tab2\">\n      <Table\n        bordered\n        keygen='id'\n        width={1500}\n        style={{ height: '50vh' }}\n        // height=\"auto\"\n        columns={columns}\n        data={tableData}\n        // rowsInView={30}\n        fixed=\"y\"\n      />\n    </Tabs.Panel>\n    <Tabs.Panel id=\"tab3\" tab=\"Tab3\">\n      <Table\n        bordered\n        keygen='id'\n        width={1500}\n        style={{ height: '60vh' }}\n        // height=\"auto\"\n        columns={columns}\n        data={tableData}\n        // rowsInView={30}\n        fixed=\"y\"\n      />\n    </Tabs.Panel>\n  </Tabs>\n  <Button onClick={() => {\n    setTableData([])\n  }}>清空数据</Button>\n\n<Button onClick={() => {\n    setTableData(data)\n  }}>设置数据</Button>\n  </div>\n}\n\nexport default App;\n"
-    },
-    {
-      "title": "Select absolute",
-      "description": "The absolute property of the Select component in the Table",
-      "scenario": "basic",
-      "code": "/**\n * cn - Select absolute\n *    -- Select 组件的 absolute 属性在Table内的表现\n * en - Select absolute\n *    -- The absolute property of the Select component in the Table\n */\nimport React from 'react';\nimport {\n  Button,\n  Popover,\n  Select,\n  Table,\n  Tooltip,\n  TYPE,\n  DatePicker,\n  Dropdown,\n  TreeSelect,\n} from 'shineout';\nimport { user } from '@sheinx/mock';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n}\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(20);\n\n\nconst App: React.FC = () => {\n  const tableContainerRef = React.useRef<HTMLDivElement>(null);\n\n\nconst columns: TableColumnItem[] = [\n  { title: 'id', render: 'id', width: 50 },\n  {\n    title: () => <Select keygen data={[1, 2, 3]} absolute={() => tableContainerRef.current} />,\n    group: 'Name',\n    render: 'firstName',\n    width: 120,\n  },\n  {\n    title: 'Last Name',\n    fixed: 'left',\n    group: 'Name',\n    render: 'lastName',\n    width: 120,\n  },\n  { title: () => <Select keygen data={[1, 2, 3]} absolute={() => tableContainerRef.current}  placeholder=\"absolute=tableContainerRef.current\" />, render: 'country' },\n  { title: () => <Select keygen data={[1, 2, 3]} absolute={false} placeholder=\"absolute=false\" />, render: 'position' },\n  { title: () => <Select keygen data={[1, 2, 3]} absolute placeholder=\"absolute=true\" />, render: 'office' },\n  { title: 'Start Date', render: () => <Select keygen data={[1, 2, 3]} follow /> },\n  {\n    title: 'tooltip',\n    render: () => (\n      <Tooltip\n        trigger='click'\n        tip={<div style={{ height: 200 }}>Are you sure you want to delete this content ?</div>}\n      >\n        <Button>tooltip</Button>\n      </Tooltip>\n    ),\n  },\n  {\n    title: 'Popover',\n    render: () => (\n      <Button>\n        confirm\n        <Popover\n          title='Tips'\n          trigger='click'\n          onCancel={() => console.log('cancel')}\n          // onOk={onOk}\n        >\n          <div style={{ height: 200 }}>Are you sure you want to delete this content ?</div>\n        </Popover>\n      </Button>\n    ),\n  },\n  {\n    title: 'Salary($)',\n    fixed: 'right',\n    align: 'right',\n    width: 100,\n    render: () => <Select keygen data={[1, 2, 3]} />,\n  },\n];\n\n  return (\n    <div>\n      <h4>测试表格</h4>\n      <div ref={tableContainerRef}>\n        <Table\n          bordered\n          keygen='id'\n          width={1500}\n          style={{ height: 300 }}\n          columns={columns}\n          data={data}\n          virtual\n          sticky={{top: 100}}\n        />\n      </div>\n      <h4>测试div内滚</h4>\n      <div style={{ height: 300, overflow: 'auto' }}>\n        <div style={{ height: 500 }}>placeholder</div>\n        <Tooltip\n          trigger='click'\n          tip={<div style={{ height: 200 }}>Are you sure you want to delete this content ?</div>}\n        >\n          <Button>tooltip</Button>\n        </Tooltip>\n\n        <DatePicker absolute />\n\n        <Dropdown absolute />\n\n        <Select keygen data={[1, 2, 3]} absolute />\n\n        <TreeSelect keygen data={[]} absolute />\n\n        <div style={{ height: 800 }}>placeholder</div>\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
-    },
-    {
-      "title": "virtual=lazy",
-      "description": "virtual=lazy does not trigger rerender during Table scrolling",
-      "scenario": "basic",
-      "code": "/**\n * cn - virtual=lazy\n *    -- virtual=lazy 在Table滚动期间不触发rerender\n * en - virtual=lazy\n *    -- virtual=lazy does not trigger rerender during Table scrolling\n */\nimport React, { useState } from 'react';\nimport { Input, Table, TYPE, Button } from 'shineout';\nimport { user } from '@sheinx/mock';\nimport TreeSelectExample from '../../tree-select/__example__/10-virtual';\n\ninterface TableRowData {\n  id: number;\n  time: string;\n  start: string;\n  height: number;\n  salary: number;\n  office: string;\n  country: string;\n  office5: string;\n  position: string;\n  lastName: string;\n  firstName: string;\n  [k: string]: any;\n}\n\ntype TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;\n\nconst data: TableRowData[] = user.fetchSync(1000);\n\nconst CacheTable = () => {\n  const [inputValue, setInputValue] = useState<string | undefined>('');\n\n  const columns: TableColumnItem[] = [\n    {\n      type: 'checkbox',\n      width: 80,\n    },\n    { title: 'id', render: 'id', width: 80 },\n    {\n      title: 'Name',\n      fixed: 'left',\n      render: (d) => (\n        <div\n          id={`name_${d.id}`}\n          style={{ height: d.height }}\n        >\n          {`${d.firstName} ${d.lastName}`}\n\n          <Button type=\"primary\">test</Button>\n\n          {/* <TreeSelectExample /> */}\n        </div>\n      ),\n      width: 160,\n    },\n    { title: 'Country', render: 'country' },\n    { title: 'Position', render: 'position' },\n\n    // @ts-ignore mock 100 more columns\n    ...Array.from({ length: 100 }, (_, i) => ({\n      title: `Office${i}`,\n      render: 'office',\n      width: 100,\n    })),\n\n    {\n      title: 'Office',\n      render: () => (\n        <div>\n          <Input\n            value={inputValue}\n            onChange={(v) => {\n              console.log('input onChange: >>', v);\n              setInputValue(v);\n            }}\n          />\n          <Button type=\"primary\">test</Button>\n\n          <TreeSelectExample />\n        </div>\n      ),\n    },\n    {\n      title: 'Start Date',\n      render: () => (\n        <div>\n          inputValue: {inputValue}\n          {/* <Button mode='text'>test2</Button>\n          <TreeSelectExample /> */}\n        </div>\n      ),\n      fixed: 'right',\n      width: 140,\n    },\n  ];\n\n  return <Table\n      keygen='id'\n      bordered\n      data={data}\n      virtual=\"lazy\"\n      width={columns.reduce((a, b) => a + ((b.width || 100) as number), 0)}\n      rowsInView={5}\n      columns={columns}\n      style={{ height: 500 }}\n    />\n}\n\nconst NoCacheTable = () => {\n\n  const [inputValue, setInputValue] = useState<string | undefined>('');\n\n  const columns: TableColumnItem[] = [\n    {\n      type: 'checkbox',\n      width: 80,\n    },\n    { title: 'id', render: 'id', width: 80 },\n    {\n      title: 'Name',\n      fixed: 'left',\n      render: (d) => (\n        <div\n          id={`name_${d.id}`}\n          style={{ height: d.height }}\n        >\n          {`${d.firstName} ${d.lastName}`}\n          <Button type=\"warning\">test</Button>\n        </div>\n      ),\n      width: 160,\n    },\n    { title: 'Country', render: 'country' },\n    { title: 'Position', render: 'position' },\n    // @ts-ignore mock 100 more columns\n    ...Array.from({ length: 100 }, (_, i) => ({\n      title: `Office${i}`,\n      render: 'office',\n      width: 100,\n    })),\n\n    {\n      title: 'Office',\n      render: () => (\n        <div>\n          <Input\n            value={inputValue}\n            onChange={(v) => {\n              console.log('======================');\n              console.log('input onChange: >>', v);\n              console.log('======================');\n              setInputValue(v);\n            }}\n          />\n          <Button type=\"primary\">test</Button>\n\n          <TreeSelectExample />\n        </div>\n      ),\n    },\n    {\n      title: 'Start Date',\n      render: () => (\n        <div>\n          inputValue: {inputValue}\n          {/* <Button mode='text'>test2</Button>\n          <TreeSelectExample /> */}\n        </div>\n      ),\n      fixed: 'right',\n      width: 140,\n    },\n  ];\n\n  return <Table\n      keygen='id'\n      bordered\n      data={data}\n      virtual\n      width={columns.reduce((a, b) => a + ((b.width || 100) as number), 0)}\n      rowsInView={10}\n      columns={columns}\n      style={{ height: 500 }}\n    />\n\n}\nconst App: React.FC = () => {\n  return (\n    <div style={{ width: '100%', display: 'flex' }}>\n      <div style={{flex: 1, minWidth: 0}}>\n        <h2>CacheTable</h2>\n        <CacheTable />\n      </div>\n      <div style={{flex: 1, minWidth: 0}}>\n        <h2>NoCacheTable</h2>\n        <NoCacheTable />\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 56,
-    "requiredProps": 1,
-    "propsWithWhen": 54,
-    "examplesCount": 59
-  },
-  "subComponentApis": {},
-  "relatedTypes": {
-    "Table columns 配置": {
-      "title": "Table columns 配置",
-      "description": "",
-      "notes": {},
-      "props": [
-        {
-          "name": "align",
-          "type": "\"left\" | \"center\" | \"right\"",
-          "required": false,
-          "defaultValue": "\\\"left\\\"",
-          "description": "单元格内容的水平对齐方式",
-          "whenCn": "根据内容类型调整对齐（如数字右对齐）",
-          "whenEn": "Adjust alignment based on content type (e.g., right-align numbers)"
-        },
-        {
-          "name": "colSpan",
-          "type": "((row: DataItem, index: number) => number)",
-          "required": false,
-          "description": "列合并控制函数。参数：row（当前行数据），index（行索引）。返回要合并的列数",
-          "whenCn": "需要动态合并单元格（如汇总行）时使用",
-          "whenEn": "Use for dynamic cell merging (e.g., summary rows)"
-        },
-        {
-          "name": "defaultOrder",
-          "type": "\"asc\" | \"desc\"",
-          "required": false,
-          "description": "该列的默认排序方向",
-          "whenCn": "需要初始加载时按该列排序时使用",
-          "whenEn": "Use when initial sorting by this column is needed"
-        },
-        {
-          "name": "fixed",
-          "type": "\"left\" | \"right\"",
-          "required": false,
-          "description": "固定列在左侧或右侧。若多个相邻列需要固定，只需指定最外侧的列",
-          "whenCn": "需要保持某些列始终可见（如操作列）时使用",
-          "whenEn": "Use to keep columns always visible (e.g., action columns)"
-        },
-        {
-          "name": "group",
-          "type": "ReactNode | ReactNode[]",
-          "required": false,
-          "description": "表头分组名称。相邻的相同分组会合并为一个表头",
-          "whenCn": "需要将相关列组织在一起显示时使用",
-          "whenEn": "Use to organize related columns together"
-        },
-        {
-          "name": "groupProps",
-          "type": "{ className?: string ; style?: CSSProperties ; }",
-          "required": false,
-          "description": "表头分组的额外属性（类名、样式）",
-          "whenCn": "需要自定义分组表头样式时使用",
-          "whenEn": "Use to customize group header styling",
-          "version": "3.7.0"
-        },
-        {
-          "name": "hide",
-          "type": "boolean",
-          "required": false,
-          "description": "隐藏列（仅对 row-expand 类型的列有效）",
-          "whenCn": "仅需要展开功能但不显示展开列时使用",
-          "whenEn": "Use when expand functionality is needed without showing expand column"
-        },
-        {
-          "name": "key",
-          "type": "string | number",
-          "required": false,
-          "description": "列的唯一标识。未提供时默认使用列索引",
-          "whenCn": "需要明确标识列（用于排序、筛选等）时使用",
-          "whenEn": "Use to explicitly identify columns (for sorting, filtering, etc.)"
-        },
-        {
-          "name": "minWidth",
-          "type": "number",
-          "required": false,
-          "description": "列的最小宽度",
-          "whenCn": "限制列宽调整的最小值，保证内容可读性",
-          "whenEn": "Limit minimum column width to ensure content readability"
-        },
-        {
-          "name": "maxWidth",
-          "type": "number",
-          "required": false,
-          "description": "列的最大宽度（拖动调整时的限制）",
-          "whenCn": "限制列宽调整的最大值，避免过宽",
-          "whenEn": "Limit maximum column width to prevent excessive width"
-        },
-        {
-          "name": "filterAll",
-          "type": "((data: DataItem[]) => DataItem[])",
-          "required": false,
-          "description": "全选时的数据过滤函数。仅在 type=\\\"checkbox\\\" 时有效。参数：数据数组。返回过滤后的数据",
-          "whenCn": "需要在全选时排除某些行（如禁用行）时使用",
-          "whenEn": "Use to exclude certain rows (e.g., disabled rows) when selecting all"
-        },
-        {
-          "name": "render",
-          "type": "ObjectKey<DataItem> | function(d, id, instance)",
-          "required": false,
-          "description": "渲染单元格内容。可以是属性名字符串（如 \\\"name\\\" 渲染 row.name）或函数，函数参数：data（行数据）、index（行索引）、checkboxInstance（当 type=\\\"checkbox\\\" 时）",
-          "whenCn": "定义如何显示单元格内容",
-          "whenEn": "Define how to display cell content"
-        },
-        {
-          "name": "rowSpan",
-          "type": "((prevRowData: DataItem, nextRowData: DataItem) => boolean)",
-          "required": false,
-          "description": "行合并控制函数。参数：prevRowData、nextRowData（相邻两行数据）。返回 true 合并行",
-          "whenCn": "需要合并相同值的相邻单元格时使用",
-          "whenEn": "Use to merge adjacent cells with identical values"
-        },
-        {
-          "name": "sorter",
-          "type": "string | ((order: \"asc\" | \"desc\") => void | ((prevRowData: DataItem, nextRowData: DataItem) => number)) | { rule: string | ((sorter: ({ order: \"asc\" | \"desc\", manual: boolean, key: string | number, weight?: number })[]) => void), weight: number }",
-          "required": false,
-          "description": "排序配置。可以是字符串（排序字段名）、排序函数或包含 rule 和 weight 的 Sorter 对象。提供后列头会显示排序图标",
-          "whenCn": "让该列支持排序功能时使用",
-          "whenEn": "Use to enable sorting for this column"
-        },
-        {
-          "name": "sortDirections",
-          "type": "(\"asc\" | \"desc\")[]",
-          "required": false,
-          "defaultValue": "[\\\"asc\\\", \\\"desc\\\"]",
-          "description": "该列可用的排序方向",
-          "whenCn": "限制该列的排序方向选项时使用",
-          "whenEn": "Use to limit sort direction options for this column",
-          "version": "3.5.0"
-        },
-        {
-          "name": "filter",
-          "type": "| SelectModeColumnFilter<DataItem> | SearchModeColumnFilter<DataItem>",
-          "required": false,
-          "description": "列筛选配置。支持搜索和选择两种模式",
-          "whenCn": "为该列添加筛选功能时使用",
-          "whenEn": "Use to add filtering capability to this column",
-          "version": "3.6.0"
-        },
-        {
-          "name": "title",
-          "type": "ReactNode | ((rowData: DataItem[]) => ReactNode)",
-          "required": false,
-          "description": "列头内容。可以是字符串、ReactNode 或接收所有数据的函数",
-          "whenCn": "定义列头显示内容",
-          "whenEn": "Define column header display content"
-        },
-        {
-          "name": "treeColumnsName",
-          "type": "ObjectKey<DataItem>",
-          "required": false,
-          "description": "树形表格中子节点数据的属性名",
-          "whenCn": "指定树形数据的子节点字段时使用",
-          "whenEn": "Use to specify the field for tree child nodes"
-        },
-        {
-          "name": "treeIndent",
-          "type": "number",
-          "required": false,
-          "defaultValue": "25",
-          "description": "树形表格每一层的缩进宽度（像素）",
-          "whenCn": "调整树形表格的层级缩进距离时使用",
-          "whenEn": "Use to adjust tree table level indentation distance"
-        },
-        {
-          "name": "type",
-          "type": "\"expand\" | \"row-expand\" | \"checkbox\"",
-          "required": false,
-          "description": "特殊列类型。\\\"expand\\\"：行展开列，render 返回函数时可展开。\\\"row-expand\\\"：与 expand 相似，但点击整行触发展开。\\\"checkbox\\\"：选择列",
-          "whenCn": "需要特殊功能列（展开、选择）时使用",
-          "whenEn": "Use for special function columns (expand, selection)"
-        },
-        {
-          "name": "width",
-          "type": "string | number",
-          "required": false,
-          "description": "列宽度",
-          "whenCn": "设置固定列宽或比例宽度时使用",
-          "whenEn": "Use to set fixed or proportional column width"
-        },
-        {
-          "name": "className",
-          "type": "string",
-          "required": false,
-          "description": "该列的 CSS 类名",
-          "whenCn": "为特定列添加自定义样式时使用",
-          "whenEn": "Use to add custom styles to specific column"
-        },
-        {
-          "name": "style",
-          "type": "CSSProperties",
-          "required": false,
-          "description": "该列单元格的内联样式",
-          "whenCn": "直接设置列的样式属性时使用",
-          "whenEn": "Use to directly set column style properties"
-        },
-        {
-          "name": "onClick",
-          "type": "((d: DataItem, isExpand: boolean) => void)",
-          "required": false,
-          "description": "可展开元素的点击事件。仅在列类型为 \\\"expand\\\" 或 \\\"row-expand\\\" 且提供 expandKeys 属性时有效。参数：data（行数据）、isExpand（展开状态）",
-          "whenCn": "需要响应展开/折叠操作时使用",
-          "whenEn": "Use to respond to expand/collapse operations"
-        },
-        {
-          "name": "columnResizable",
-          "type": "false",
-          "required": false,
-          "description": "禁用该列的宽度调整功能",
-          "whenCn": "某些列需要固定宽度不允许调整时使用",
-          "whenEn": "Use when certain columns need fixed width without adjustment"
-        }
-      ]
-    }
-  }
+  "version": "3.7.7"
 }

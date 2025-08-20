@@ -1,7 +1,7 @@
 {
   "name": "Input",
   "description": "通常用于承载用户信息录入的文本框，常用于表单、对话框、表格等场景，在输入框基础样式上可以根据需求拓展出多种信息录入形式",
-  "category": "other",
+  "category": "form",
   "importPath": "import { Input } from 'shineout'",
   "props": [
     {
@@ -267,117 +267,117 @@
   ],
   "examples": [
     {
-      "title": "Base",
-      "description": "Input usually needs to be used with other components, so the default width is 100% and the default display is block",
+      "title": "基本用法",
+      "description": "Input 通常需要和其他的组件配合使用，所以默认的宽度是 100%，默认 display 为 block",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- Input 通常需要和其他的组件配合使用，所以默认的宽度是 100%，默认 display 为 block\n *    -- 如果设置了 style.width，默认 display 为 inline-flex\n * en - Base\n *    -- Input usually needs to be used with other components, so the default width is 100% and the default display is block\n *    -- If the style.width is set, the default display is inline-flex\n */\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst App: React.FC = () => <Input width={300} placeholder='input something' clearable />;\n\nexport default App;\n"
     },
     {
-      "title": "Size",
-      "description": "Set the size property to change the size of the input box component. There are three built-in sizes available: small, default, and large",
+      "title": "尺寸大小",
+      "description": "设置 `size` 属性改变输入框组件的尺寸大小。内置三种尺寸：small、default、large",
       "scenario": "basic",
       "code": "/**\n * cn - 尺寸大小\n *    -- 设置 `size` 属性改变输入框组件的尺寸大小。内置三种尺寸：small、default、large\n * en - Size\n *    -- Set the size property to change the size of the input box component. There are three built-in sizes available: small, default, and large\n */\n\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>\n    <Input size='small' width={240} placeholder='small size' clearable />\n    <Input width={240} placeholder='default size' clearable />\n    <Input size='large' width={240} placeholder='large size' clearable />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Number",
-      "description": "Set `type` to number, the input will be verified once when inputting, and non-numeric characters are not allowed to be entered",
+      "title": "数字",
+      "description": "设置 `type` 为 number，输入时会做一次校验，禁止输入非数字类型字符",
       "scenario": "basic",
       "code": "/**\n * cn - 数字\n *    -- 设置 `type` 为 number，输入时会做一次校验，禁止输入非数字类型字符\n *    -- 设置 `digits` 限制小数位数\n *    -- 设置 `integerLimit` 限制整数位数\n *    -- 设置 `numType` 限制数字格式, 支持 'positive' 和 'non-negative'\n * en - Number\n *    -- Set `type` to number, the input will be verified once when inputting, and non-numeric characters are not allowed to be entered\n *    -- Set `digits` to limit the number of decimal places\n *    -- Set `integerLimit` to limit the number of integers\n *    -- Set `numType` to limit the number format, support 'positive' and 'non-negative'\n */\n\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst style: React.CSSProperties = { marginBottom: 24 };\n\nconst App: React.FC = () => (\n  <div style={{ width: 300 }}>\n    <Input style={style} type='number' placeholder='digits undefined' clearable />\n    <Input style={style} digits={0} type='number' placeholder='digits 0' clearable />\n    <Input style={style} digits={1} type='number' placeholder='digits 1' clearable />\n    <Input style={style} digits={2} type='number' placeholder='digits 2' clearable />\n    <Input style={style} numType='non-negative' type='number' placeholder='non-negative' clearable />\n    <Input style={style} type='number' integerLimit={3} placeholder='integerLimit 3' clearable />\n    <Input\n      style={style}\n      autoFix\n      digits={3}\n      type='number'\n      placeholder='digits 3; autoFix'\n      clearable\n    />\n    <Input\n      style={style}\n      numType='positive'\n      integerLimit={3}\n      type='number'\n      placeholder='positive;integerLimit 3'\n      clearable\n    />\n    <Input.Number numType='positive' integerLimit={3} placeholder='positive; integerLimit 3' clearable />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "*    -- Input.Number component, can be assisted by mouse and up and down keys to input",
-      "description": "Note that the value is a string type during input; it will be converted to a number type when blur",
+      "title": "*    -- Input.Number 组件，可以通过鼠标和上下键辅助输入",
+      "description": "Input.Number 组件，可以通过鼠标和上下键辅助输入",
       "scenario": "basic",
       "code": "/**\n * cn -\n *    -- Input.Number 组件，可以通过鼠标和上下键辅助输入\n *    -- 需要注意在输入的过程中 value 是 string 类型；blur 时会转换为 number 类型\n * en -\n *    -- Input.Number component, can be assisted by mouse and up and down keys to input\n *    -- Note that the value is a string type during input; it will be converted to a number type when blur\n */\n\nimport React from 'react';\nimport { Input, Gap, Link, icons } from 'shineout';\n\nconst btnStyle: React.CSSProperties = {\n  cursor: 'pointer',\n  padding: '0 8px',\n  background: 'var(--soui-input-group-font-background-color,var(--soui-neutral-fill-2,#F4F5F8))',\n};\n\nconst leftBtnStyle: React.CSSProperties = {\n  ...btnStyle,\n  borderLeft: 'none',\n  borderRadius: '4px 0 0 4px',\n};\nconst rightBtnStyle: React.CSSProperties = {\n  ...btnStyle,\n  borderRight: 'none',\n  borderRadius: '0 4px 4px 0',\n};\n\nconst iconStyle: React.CSSProperties = {\n  width: 16,\n  height: 16,\n};\n\nconst App: React.FC = () => {\n  const [number, setNumber] = React.useState<string | undefined>();\n\n  const onMinus = () => {\n    setNumber((Number(number || 0) - 1).toString());\n  };\n\n  const onPlus = () => {\n    setNumber((Number(number || 0) + 1).toString());\n  };\n\n  return (\n    <Gap style={{ flexDirection: 'column', gap: 24 }}>\n      <Input.Group width={300}>\n        <Link onClick={onMinus} style={leftBtnStyle} type='secondary'>\n          <div style={iconStyle}>{icons.Minus}</div>\n        </Link>\n        <Input\n          type='number'\n          value={number}\n          onChange={(v) => setNumber(v)}\n          placeholder='please enter'\n        />\n        <Link onClick={onPlus} style={rightBtnStyle} type='secondary'>\n          <div style={iconStyle}>{icons.Add}</div>\n        </Link>\n      </Input.Group>\n\n      <Input.Number\n        width={300}\n        onChange={(v) => {\n          console.log('🚀outter Input.Number onChange', v);\n        }}\n        placeholder='please enter'\n      />\n    </Gap>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Front and rear tags",
-      "description": "Use the built-in group component to add tags before and after",
-      "scenario": "basic",
+      "title": "前后标签",
+      "description": "利用内置的 group 组件可以在前后增加标签",
+      "scenario": "advanced",
       "code": "/**\n * cn - 前后标签\n *    -- 利用内置的 group 组件可以在前后增加标签\n * en - Front and rear tags\n *    -- Use the built-in group component to add tags before and after\n */\n\nimport React from 'react';\nimport { Input, Select, DatePicker, Button } from 'shineout';\n\nconst style: React.CSSProperties = { width: 300, marginBottom: 24 };\n\nconst App: React.FC = () => (\n  <div>\n    <Input.Group style={style}>\n      <b>http://</b>\n      <Input placeholder='please enter' />\n    </Input.Group>\n    <Input.Group style={style}>\n      <Input placeholder='please enter' />\n      <b>.com</b>\n    </Input.Group>\n    <Input.Group style={style}>\n      <b>http://</b>\n      <Input placeholder='please enter' />\n      <b>.com</b>\n    </Input.Group>\n\n    <Input.Group style={style}>\n      <Input placeholder='please enter' />\n      <div style={{ lineHeight: '30px' }}>-</div>\n      <Input placeholder='please enter' />\n    </Input.Group>\n\n    <Input.Group style={style}>\n      <Select keygen data={['Option1', 'Option2']} style={{width: 100, flex: 'none'}} defaultValue='Option1' />\n      <Input placeholder='please enter' />\n    </Input.Group>\n\n    <Input.Group style={style}>\n      <Select keygen data={['Option1', 'Option2']} style={{width: 100, flex: 'none'}} defaultValue='Option1' />\n      <DatePicker placeholder='please select' />\n    </Input.Group>\n\n    <Input.Group style={style}>\n      <Select keygen data={['Option1', 'Option2']} style={{width: 100, flex: 'none'}} defaultValue='Option1' />\n      <Input placeholder='please enter' />\n      <Button type='primary'>Search</Button>\n    </Input.Group>\n\n    <h3 style={{ marginBottom: 12, fontSize: 16 }}>Other Size</h3>\n    <Input.Group style={style} size=\"small\">\n      <b>http://</b>\n      <Input placeholder='email' />\n      <b>.com</b>\n    </Input.Group>\n\n    <Input.Group style={style} size=\"large\">\n      <b>http://</b>\n      <Input placeholder='email' />\n      <b>.com</b>\n    </Input.Group>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Group separate",
-      "description": "The components combined together have independent borders",
-      "scenario": "basic",
+      "title": "独立边框",
+      "description": "设置 `separate` 属性开启：组合到一起的组件有独立的边框",
+      "scenario": "advanced",
       "code": "/**\n * cn - 独立边框\n *    -- 设置 `separate` 属性开启：组合到一起的组件有独立的边框\n * en - Group separate\n *    -- The components combined together have independent borders\n */\n\nimport React from 'react';\nimport { Input, Select, DatePicker, Button, icons } from 'shineout';\n\nconst style: React.CSSProperties = { width: 300, marginBottom: 24 };\n\nconst App: React.FC = () => (\n  <div>\n    <Input.Group separate style={style}>\n      <Select keygen data={['Option1', 'Option2']} width={100} defaultValue=\"Option1\" />\n      <Input placeholder='please enter' suffix={<div style={{width: 14}}>{icons.Search}</div>} />\n    </Input.Group>\n\n    <Input.Group separate style={style}>\n      <Select keygen data={['Option1', 'Option2']} width={100} defaultValue='Option1' />\n      <Input placeholder='please enter' />\n    </Input.Group>\n\n    <Input.Group separate style={style}>\n      <Select keygen data={['Option1', 'Option2']} width={100} defaultValue='Option1' />\n      <DatePicker placeholder='please select' style={{ flex: 1 }} />\n    </Input.Group>\n\n    <Input.Group separate style={style}>\n      <Select keygen data={['Option1', 'Option2']} width={100} defaultValue='Option1' />\n      <Input placeholder='please enter' />\n      <Button type='primary'>Search</Button>\n    </Input.Group>\n  </div>\n\n);\n\nexport default App;\n"
     },
     {
-      "title": "Prefix and suffix",
-      "description": "Set `prefix` and `suffix` to add prefix and suffix to the input box",
-      "scenario": "basic",
+      "title": "前后缀",
+      "description": "通过指定 `prefix` 和 `suffix` 来在输入框内添加前缀和后缀",
+      "scenario": "advanced",
       "code": "/**\n * cn - 前后缀\n *    -- 通过指定 `prefix` 和 `suffix` 来在输入框内添加前缀和后缀\n * en - Prefix and suffix\n *    -- Set `prefix` and `suffix` to add prefix and suffix to the input box\n */\n\nimport React from 'react';\nimport { Input, icons } from 'shineout';\n\nfunction MyIcon(props: any){\n  const style={\n    width: 20,\n    height: 20,\n    display: 'flex',\n    alignItems: 'center',\n    margin: '0 auto',\n    color: 'var(--soui-input-icon-color,var(--soui-neutral-text-4,#666C7C))',\n    ...props.style\n  }\n    return <div style={style}>{props.children}</div>;\n}\n\n\nconst App: React.FC = () => (\n  <Input\n    placeholder='please enter'\n    width={300}\n    prefix={<MyIcon style={{ marginRight: 8 }}>{icons.Calendar}</MyIcon>}\n    suffix={<MyIcon style={{ marginLeft: 8 }}>{icons.Search}</MyIcon>}\n  />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Group validate",
-      "description": "The `status` property of Input.Group can be used to display error status",
-      "scenario": "basic",
+      "title": "Group的校验",
+      "description": "配置 `status` 属性可以展示错误状态",
+      "scenario": "validation",
       "code": "/**\n * cn - Group的校验\n *    -- 配置 `status` 属性可以展示错误状态\n *    -- 配置 `separate` 属性也有相应的校验效果\n *    -- 配置 `keepErrorHeight` 属性可以保持错误提示的高度\n * en - Group validate\n *    -- The `status` property of Input.Group can be used to display error status\n *    -- The `separate` property also has the corresponding verification effect\n *    -- The `keepErrorHeight` property can keep the height of the error prompt\n */\n\nimport React from 'react';\nimport { Input, Form, Button, Rule } from 'shineout';\nimport { add, cancel } from '../../form/__example__/011-fieldset-loop';\n\nconst rules = Rule();\n\nconst App: React.FC = () => (\n  <Form labelWidth='100' keepErrorHeight>\n    <Form.Item label='Home1' required>\n      <Form.Field name='url1' rules={[rules.required, rules.url('url is invalid')]}>\n        {({ value, error, onChange }) => (\n          <Input.Group style={{ width: 340 }} status={error ? 'error' : undefined}>\n            <b>http://</b>\n            <Input value={value} onChange={onChange} placeholder='i am not separate input group' />\n          </Input.Group>\n        )}\n      </Form.Field>\n    </Form.Item>\n\n    <Form.Item label='Home2' required>\n      <Input.Group style={{ width: 340 }} separate>\n        <Form.Field name='url2' rules={[rules.required]}>\n          <Input placeholder='i am separate input group' />\n        </Form.Field>\n        <b>.com</b>\n      </Input.Group>\n    </Form.Item>\n\n    <Form.Item label='Friends' required>\n      <Form.FieldSet\n        name='friends'\n        empty={(insert) => {\n          return (\n            <Button type='primary' mode='outline' onClick={() => insert({ name: '' })}>\n              + Add new friends\n            </Button>\n          );\n        }}\n        defaultValue={[{ name: 'Hermione Granger', age: '16' }, {}]}\n      >\n        {({ onAppend, onRemove }) => (\n          <div style={{ display: 'flex' }}>\n            <Form.Item>\n              <Input\n                name='name'\n                placeholder='Name'\n                title='Friend name'\n                rules={[rules.required('Name is required')]}\n                style={{ width: 180 }}\n                clearable\n              />\n            </Form.Item>\n            <div style={{ height: 32, lineHeight: '30px', padding: '0 4px' }}>-</div>\n            <Form.Item>\n              <Input\n                name='age'\n                type='number'\n                placeholder='Age'\n                rules={[rules.required('Age is required')]}\n                title='Friend age'\n                style={{ width: 90 }}\n                clearable\n              />\n            </Form.Item>\n            <div style={{ height: 32, display: 'flex', alignItems: 'center' }}>\n              <a\n                style={{ margin: '0 12px', lineHeight: 1, cursor: 'pointer' }}\n                onClick={() => onAppend({ name: '', age: '16' })}\n              >\n                {add}\n              </a>\n              <a style={{ lineHeight: 1, cursor: 'pointer' }} onClick={onRemove}>\n                {cancel}\n              </a>\n            </div>\n          </div>\n        )}\n      </Form.FieldSet>\n    </Form.Item>\n  </Form>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Tip",
-      "description": "The tip set on the input pops up when focus",
-      "scenario": "basic",
+      "title": "提示文字",
+      "description": "在 input 上设置的 tip 在 focus 时弹出",
+      "scenario": "advanced",
       "code": "/**\n * cn - 提示文字\n *    -- 在 input 上设置的 tip 在 focus 时弹出\n * en - Tip\n *    -- The tip set on the input pops up when focus\n */\n\nimport { Input } from 'shineout';\n\nexport default () => {\n  return <Input width={300} placeholder='input something' tip={'please input something here'} />;\n};\n"
     },
     {
-      "title": "Validate",
-      "description": "When the `rules` property is set, it will automatically verify the input data. When the `popover` property is set, it will pop up at the specified location",
-      "scenario": "basic",
+      "title": "校验",
+      "description": "设置了 `rules`，会自动校验输入数据，设置了 `popover` 会在指定位置弹出",
+      "scenario": "validation",
       "code": "/**\n * cn - 校验\n *    -- 设置了 `rules`，会自动校验输入数据，设置了 `popover` 会在指定位置弹出\n *    -- 如果没有设置 `popover`，不会弹出错误提示\n *    -- 有错误时，提示框不会隐藏\n * en - Validate\n *    -- When the `rules` property is set, it will automatically verify the input data. When the `popover` property is set, it will pop up at the specified location\n *    -- If the popover `property` is not set, no error message will pop up\n *    -- If input is invalid, the message will not be hidden\n */\n\nimport React from 'react';\nimport { Input, Rule } from 'shineout';\n\nconst rules = Rule();\n\nexport default function () {\n  return (\n    <Input\n      placeholder='email'\n      rules={[rules.required]}\n      tip='Please enter a valid Email address'\n      popover='top-left'\n      width={300}\n    />\n  );\n}\n"
     },
     {
-      "title": "allow clear",
-      "description": "Set the `clearable` property, the Input will display the clear button, click the clear button to clear the content",
-      "scenario": "basic",
+      "title": "允许删除",
+      "description": "设置 `clearable` 属性，Input 将显示删除按钮，点击删除按钮清空内容",
+      "scenario": "advanced",
       "code": "/**\n * cn - 允许删除\n *    -- 设置 `clearable` 属性，Input 将显示删除按钮，点击删除按钮清空内容\n * en -  allow clear\n *    -- Set the `clearable` property, the Input will display the clear button, click the clear button to clear the content\n */\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst App: React.FC = () => <Input width={300} clearable placeholder='input something' />;\n\nexport default App;\n"
     },
     {
-      "title": "disabled",
-      "description": "When the `disabled` attribute is enabled, the component will prevent input",
-      "scenario": "basic",
+      "title": "禁用",
+      "description": "开启 `disabled` 属性后，组件将禁止输入",
+      "scenario": "advanced",
       "code": "/**\n * cn - 禁用\n *    -- 开启 `disabled` 属性后，组件将禁止输入\n * en - disabled\n *    -- When the `disabled` attribute is enabled, the component will prevent input\n */\n\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst style: React.CSSProperties = { width: 300 };\n\nconst App: React.FC = () => (\n  <div>\n    <Input.Group disabled style={{ ...style, marginBottom: 24 }}>\n      <Input placeholder='first name' />\n      -\n      <Input placeholder='last name' />\n    </Input.Group>\n\n    <Input disabled style={style} placeholder='disabled input' />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Built-in password component",
-      "description": "We use the built-in password component specifically for handling password-related scenarios",
-      "scenario": "basic",
+      "title": "内置密码组件",
+      "description": "使用内置 password 组件专门处理密码业务场景",
+      "scenario": "advanced",
       "code": "/**\n * cn - 内置密码组件\n *    -- 使用内置 password 组件专门处理密码业务场景\n * en - Built-in password component\n *    -- We use the built-in password component specifically for handling password-related scenarios\n */\n\nimport React from 'react';\nimport { Form, Input } from 'shineout';\n\nconst App: React.FC = () => (\n  <Form>\n    <Input.Password\n      width={300}\n      name={'password'}\n      defaultValue='12312312312321312321312'\n      placeholder='input password'\n      visibilityToggle\n      clearable\n    />\n  </Form>\n);\n\nexport default App;\n"
     },
     {
-      "title": "inner title",
-      "description": "use innerTitle to display the inner title",
-      "scenario": "basic",
+      "title": "内嵌标题",
+      "description": "使用 innerTitle 展示内嵌标题",
+      "scenario": "advanced",
       "code": "/**\n /**\n * cn - 内嵌标题\n *    -- 使用 innerTitle 展示内嵌标题\n * en - inner title\n *    -- use innerTitle to display the inner title\n */\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ width: 300, display: 'flex', flexDirection: 'column', gap: 24 }}>\n    <Input innerTitle='Small title' clearable size={'small'} />\n    <Input innerTitle='Medium Title' clearable />\n    <Input innerTitle='Large Title' clearable size={'large'} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Bottom border",
-      "description": "After enabling the `underline` attribute, the component will support the bottom border style and display only the border at the bottom",
-      "scenario": "basic",
+      "title": "下边框",
+      "description": "开启 `underline` 属性后，组件将支持下边框样式，仅展示下部的边框",
+      "scenario": "advanced",
       "code": "/**\n * cn - 下边框\n *    -- 开启 `underline` 属性后，组件将支持下边框样式，仅展示下部的边框\n * en - Bottom border\n *    -- After enabling the `underline` attribute, the component will support the bottom border style and display only the border at the bottom\n */\n\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst App: React.FC = () => <Input width={300} underline clearable placeholder='Underline' />;\n\nexport default App;\n"
     },
     {
-      "title": "Automatically select Input",
-      "description": "After enabling the `autoSelect` attribute, when the Input component is focused, the content of the current Input component will be automatically selected",
-      "scenario": "basic",
+      "title": "自动选中",
+      "description": "开启 `autoSelect` 属性后，当 Input 组件聚焦时，将自动全选当前 Input 组件的内容",
+      "scenario": "advanced",
       "code": "/**\n * cn - 自动选中\n *    -- 开启 `autoSelect` 属性后，当 Input 组件聚焦时，将自动全选当前 Input 组件的内容\n * en - Automatically select Input\n *    -- After enabling the `autoSelect` attribute, when the Input component is focused, the content of the current Input component will be automatically selected\n */\n\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst App: React.FC = () => (\n  <Input width={300} defaultValue={'hello world'} placeholder='input something' autoSelect />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Trim whitespace",
-      "description": "After enabling the `trim` attribute, the Input component will remove the whitespace characters at both ends of the content after typing",
-      "scenario": "basic",
+      "title": "清除空格",
+      "description": "开启 `trim` 属性，Input 组件会在键入内容后去除内容两端的空格字符",
+      "scenario": "advanced",
       "code": "/**\n * cn - 清除空格\n *    -- 开启 `trim` 属性，Input 组件会在键入内容后去除内容两端的空格字符\n * en - Trim whitespace\n *    -- After enabling the `trim` attribute, the Input component will remove the whitespace characters at both ends of the content after typing\n */\n\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst App: React.FC = () => <Input width={300} placeholder='input something' trim />;\n\nexport default App;\n"
     },
     {
-      "title": "Keyboard events",
-      "description": "The Input component supports the `onKeyUp` (key up), `onKeyDown` (key down), and `onEnterPress` (enter key) events",
-      "scenario": "basic",
+      "title": "键盘事件",
+      "description": "Input 组件支持 `onKeyUp`（键盘弹起）、`onKeyDown`（键盘按下）、`onEnterPress`（回车） 事件",
+      "scenario": "advanced",
       "code": "/**\n * cn - 键盘事件\n *    -- Input 组件支持 `onKeyUp`（键盘弹起）、`onKeyDown`（键盘按下）、`onEnterPress`（回车） 事件\n * en - Keyboard events\n *    -- The Input component supports the `onKeyUp` (key up), `onKeyDown` (key down), and `onEnterPress` (enter key) events\n */\n\nimport React, { useState } from 'react';\nimport { Input } from 'shineout';\n\nconst style: React.CSSProperties = { marginBottom: 24, width: 300 };\n\nconst App: React.FC = () => {\n  const [keyUp, setKeyUp] = useState<number>(0);\n  const [keyDown, setKeyDown] = useState<number>(0);\n  const [keyEnterPress, setKeyEnterPress] = useState<number>(0);\n\n  const onKeyUp = () => setKeyUp(keyUp + 1);\n  const onKeyDown = () => setKeyDown(keyDown + 1);\n  const onEnterPress = () => setKeyEnterPress(keyEnterPress + 1);\n\n  return (\n    <div>\n      <Input.Group style={style}>\n        <Input placeholder='onKeyUp' onKeyUp={onKeyUp} />\n        <b className='onKeyUp'>{`onKeyUp: ${keyUp} times`}</b>\n      </Input.Group>\n\n      <Input.Group style={style}>\n        <Input placeholder='onKeyDown' onKeyDown={onKeyDown} />\n        <b className='onKeyDown'>{`onKeyDown: ${keyDown} times`}</b>\n      </Input.Group>\n\n      <Input.Group style={style}>\n        <Input placeholder='onEnterPress' onEnterPress={onEnterPress} />\n        <b className='onEnterPress'>{`onEnterPress: ${keyEnterPress} times`}</b>\n      </Input.Group>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Input restriction",
-      "description": "Set `min` (minimum value), `max` (maximum value), and `maxLength` (maximum length) to restrict the input content of the Input component",
-      "scenario": "basic",
+      "title": "输入限制",
+      "description": "通过设置 `min`（最小值）、 `max`（最大值）、 `maxLength`（最大长度）来限制 Input 组件的输入内容",
+      "scenario": "advanced",
       "code": "/**\n * cn - 输入限制\n *    -- 通过设置 `min`（最小值）、 `max`（最大值）、 `maxLength`（最大长度）来限制 Input 组件的输入内容\n * en - Input restriction\n *    -- Set `min` (minimum value), `max` (maximum value), and `maxLength` (maximum length) to restrict the input content of the Input component\n */\n\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst style: React.CSSProperties = { marginBottom: 24 };\n\nconst App: React.FC = () => {\n  return (\n    <div style={{ width: 300 }}>\n      <Input.Group style={style}>\n        <b className='min'>min</b>\n        <Input.Number placeholder='100' min={100} />\n      </Input.Group>\n\n      <Input.Group style={style}>\n        <b className='max'>max</b>\n        <Input.Number placeholder='200' max={200} />\n      </Input.Group>\n\n      <Input.Group style={style}>\n        <b className='maxLength'>maxLength</b>\n        <Input placeholder='5' maxLength={5} />\n      </Input.Group>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
@@ -387,14 +387,14 @@
       "code": "/**\n * cn - clearToUndefined\n *    --\n * en - clearToUndefined\n *    --\n */\n\nimport React from 'react';\nimport { Input } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ width: 300, display: 'flex', flexDirection: 'column', gap: 24 }}>\n    <Input clearable placeholder='input' />\n    <Input\n      clearable\n      clearToUndefined\n      placeholder='input clearToUndefined'\n      onChange={console.log.bind(null, 'change')}\n    />\n    <Input.Number clearable placeholder='number' />\n    <Input.Number\n      clearable\n      allowNull\n      placeholder='number allowNull'\n      onChange={console.log.bind(null, 'change')}\n    />\n    <Input.Number\n      clearable\n      clearToUndefined\n      placeholder='number clearToUndefined'\n      onChange={console.log.bind(null, 'change')}\n    />\n\n    <Input.Password clearable placeholder='password' />\n    <Input.Password\n      clearable\n      clearToUndefined\n      placeholder='password clearToUndefined'\n      onChange={console.log.bind(null, 'change')}\n    />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Invalid number",
-      "description": "When an invalid number is entered, Input.Number will not trigger the onChange event",
+      "title": "非法number",
+      "description": "输入非法的数字时，Input.Number 不会触发 onChange 事件",
       "scenario": "basic",
       "code": "/**\n * cn - 非法number\n *    -- 输入非法的数字时，Input.Number 不会触发 onChange 事件\n * en - Invalid number\n *    -- When an invalid number is entered, Input.Number will not trigger the onChange event\n */\nimport React from 'react';\nimport { Button, Input } from 'shineout';\n\nexport default () => {\n  const [value, setValue] = React.useState();\n  const onIncrease = () => {\n    setValue((v) => {\n      const next = Number(v || 0) + 1;\n      return next;\n    });\n  }\n\n  const [defaultValue, setDefaultValue] = React.useState(1);\n  const onDefaultChange = () => {\n    setDefaultValue((v) => {\n      const next = Number(v || 0) + 1;\n      return next;\n    });\n  }\n  return (\n    <div style={{display: 'flex', gap: 12}}>\n      <Input.Number\n        width={300}\n        placeholder='input something'\n        defaultValue={defaultValue}\n        type=\"number\"\n        // value={value}\n        // onChange={v => {\n        //   console.log('======================')\n        //   console.log('outter onChange: >>', typeof v, v)\n        //   console.log('======================')\n        //   setValue(v);\n        // }}\n      />\n      <Button onClick={onIncrease}>increase value</Button>\n      <Button onClick={onDefaultChange}>change default value</Button>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Borderless mode",
-      "description": "Set `border` false, the Input component will no longer display the border",
+      "title": "border",
+      "description": "设置 `border` false ，Input 组件将不再显示边框",
       "scenario": "basic",
       "code": "/**\n * cn - border\n *    -- 设置 `border` false ，Input 组件将不再显示边框\n * en - Borderless mode\n *    -- Set `border` false, the Input component will no longer display the border\n */\n\nimport { Input } from 'shineout';\n\nexport default () => {\n  return (\n    <Input\n      style={{ backgroundColor: '#eee' }}\n      width={300}\n      placeholder='input something'\n      border={false}\n    />\n  );\n};\n"
     },
@@ -424,85 +424,7 @@
     }
   ],
   "subComponents": [
-    {
-      "name": "Group",
-      "description": "",
-      "whenCn": "",
-      "whenEn": ""
-    }
+    "Group"
   ],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 42,
-    "requiredProps": 0,
-    "propsWithWhen": 0,
-    "examplesCount": 26
-  },
-  "subComponentApis": {
-    "Group": {
-      "whenCn": "",
-      "whenEn": "",
-      "description": "",
-      "props": [
-        {
-          "name": "className",
-          "type": "string",
-          "required": false,
-          "description": ""
-        },
-        {
-          "name": "status",
-          "type": "\"error\"",
-          "required": false,
-          "description": "组件状态"
-        },
-        {
-          "name": "style",
-          "type": "CSSProperties",
-          "required": false,
-          "description": "自定义样式"
-        },
-        {
-          "name": "size",
-          "type": "\"small\" | \"large\" | \"default\"",
-          "required": false,
-          "defaultValue": "\\\"default\\\"",
-          "description": "不同尺寸"
-        },
-        {
-          "name": "children",
-          "type": "ReactNode",
-          "required": false,
-          "description": "子元素"
-        },
-        {
-          "name": "width",
-          "type": "string | number",
-          "required": false,
-          "description": "宽度"
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "description": "是否禁用 Input.Group 区域内容"
-        },
-        {
-          "name": "onBlur",
-          "type": "FocusEventHandler<HTMLInputElement>",
-          "required": false,
-          "description": "失去焦点后的回调"
-        },
-        {
-          "name": "separate",
-          "type": "boolean",
-          "required": false,
-          "defaultValue": "false",
-          "description": "是否分离边框",
-          "version": "3.7.0"
-        }
-      ]
-    }
-  }
+  "version": "3.7.7"
 }

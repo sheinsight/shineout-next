@@ -114,85 +114,77 @@
       "name": "select",
       "type": "SelectProps",
       "required": false,
-      "description": "分页器有关 Select 组件的配置，目前支持 absolute、position 和 zIndex，类型同 Select 组件",
-      "version": "3.4.4"
+      "description": "分页器有关 Select 组件的配置，目前支持 absolute、position 和 zIndex，类型同 Select 组件"
     }
   ],
   "examples": [
     {
-      "title": "Base",
-      "description": "The basic usage",
+      "title": "基本用法",
+      "description": "最基本的使用",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- 最基本的使用\n * en - Base\n *    -- The basic usage\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  return <Pagination total={10000} defaultCurrent={1} span={3}></Pagination>;\n};\n"
     },
     {
-      "title": "Total",
-      "description": "Show total by custom layout property",
+      "title": "带总条数的",
+      "description": "通过自定义 layout 属性展示总条数",
       "scenario": "basic",
       "code": "/**\n * cn - 带总条数的\n *    -- 通过自定义 layout 属性展示总条数\n * en - Total\n *    -- Show total by custom layout property\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  const total = 500;\n  const renderTotal = () => {\n    return `total ${total}`;\n  };\n  const layout = [renderTotal, 'links'] as any;\n  return <Pagination total={total} layout={layout} defaultCurrent={1} span={3}></Pagination>;\n};\n"
     },
     {
-      "title": "Jumper",
-      "description": "Show jumper by setting `jumper` value of `layout` property",
+      "title": "跳转",
+      "description": "通过配置`layout`属性的`jumper`值展示跳转输入框，借助`text`属性自定义文案",
       "scenario": "basic",
       "code": "/**\n * cn - 跳转\n *    -- 通过配置`layout`属性的`jumper`值展示跳转输入框，借助`text`属性自定义文案\n * en - Jumper\n *    -- Show jumper by setting `jumper` value of `layout` property\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  const total = 100;\n  const layout = ['links', 'jumper'];\n  const text = {\n    jumper: 'Go to {input} Page',\n  };\n  return (\n    <Pagination total={total} text={text} layout={layout} defaultCurrent={1} span={3}></Pagination>\n  );\n};\n"
     },
     {
-      "title": "Mode",
-      "description": "Set `mode` property to change the style of pagination",
-      "scenario": "basic",
+      "title": "样式",
+      "description": "配置`mode`属性切换不同风格的分页器，有文字、线框两种样式",
+      "scenario": "advanced",
       "code": "/**\n * cn - 样式\n *    -- 配置`mode`属性切换不同风格的分页器，有文字、线框两种样式\n * en - Mode\n *    -- Set `mode` property to change the style of pagination\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  return (\n    <div>\n      <Pagination\n        style={{ marginBottom: 24 }}\n        total={100}\n        mode='text'\n        defaultCurrent={1}\n        span={3}\n      ></Pagination>\n      <Pagination total={100} mode='outline' defaultCurrent={1} span={3}></Pagination>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Size",
-      "description": "Set the size of pagination by `size` property",
-      "scenario": "basic",
+      "title": "尺寸",
+      "description": "通过`size`属性设置分页器的尺寸",
+      "scenario": "advanced",
       "code": "/**\n * cn - 尺寸\n *    -- 通过`size`属性设置分页器的尺寸\n * en - Size\n *    -- Set the size of pagination by `size` property\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  return (\n    <div>\n      <Pagination\n        size='small'\n        total={100}\n        defaultCurrent={1}\n        span={3}\n        style={{ marginBottom: 24 }}\n      ></Pagination>\n      <Pagination total={100} defaultCurrent={1} span={3} style={{ marginBottom: 24 }}></Pagination>\n      <Pagination size='large' total={100} defaultCurrent={1} span={3}></Pagination>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Disabled",
-      "description": "Set `disabled` property to disable pagination",
-      "scenario": "basic",
+      "title": "禁用",
+      "description": "通过设置`disabled`属性禁用分页器",
+      "scenario": "advanced",
       "code": "/**\n * cn - 禁用\n *    -- 通过设置`disabled`属性禁用分页器\n * en - Disabled\n *    -- Set `disabled` property to disable pagination\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  const total = 500;\n  const renderTotal = () => {\n    return `total ${total}`;\n  };\n  const text = {\n    jumper: 'Go to {input} Page',\n    page: ' / page',\n  };\n\n  const layout = [renderTotal, 'links', 'list', 'jumper'];\n  return (\n    <Pagination\n      disabled\n      total={total}\n      layout={layout}\n      text={text}\n      defaultCurrent={1}\n      span={3}\n    ></Pagination>\n  );\n};\n"
     },
     {
-      "title": "Span",
-      "description": "Set the number of buttons by `span` property",
-      "scenario": "basic",
+      "title": "按钮数量",
+      "description": "通过`span`属性设置按钮数量",
+      "scenario": "advanced",
       "code": "/**\n * cn - 按钮数量\n *    -- 通过`span`属性设置按钮数量\n * en - Span\n *    -- Set the number of buttons by `span` property\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  return (\n    <div>\n      <Pagination total={100} defaultCurrent={1} span={5} style={{ marginBottom: 24 }}></Pagination>\n      <Pagination total={1000} defaultCurrent={10} span={10}></Pagination>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Align",
-      "description": "Set the position of pagination by `align` property",
-      "scenario": "basic",
+      "title": "位置",
+      "description": "设置`align`属性调整分页器的位置，默认为left",
+      "scenario": "advanced",
       "code": "/**\n * cn - 位置\n *    -- 设置`align`属性调整分页器的位置，默认为left\n * en - Align\n *    -- Set the position of pagination by `align` property\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  return (\n    <div>\n      <Pagination\n        align='left'\n        total={100}\n        defaultCurrent={1}\n        span={3}\n        style={{ marginBottom: 24 }}\n      ></Pagination>\n      <Pagination\n        align='center'\n        total={100}\n        defaultCurrent={1}\n        span={3}\n        style={{ marginBottom: 24 }}\n      ></Pagination>\n      <Pagination align='right' total={100} defaultCurrent={1} span={3}></Pagination>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Jumper",
-      "description": "Show jumper by setting `jumper` value of `layout` property",
-      "scenario": "basic",
+      "title": "自定义文案",
+      "description": "通过编辑`text`属性的prev、next、jumper、page属性值自定义分页器文案",
+      "scenario": "advanced",
       "code": "/**\n * cn - 自定义文案\n *    -- 通过编辑`text`属性的prev、next、jumper、page属性值自定义分页器文案\n *    -- prev 上一页按钮文案\n *    -- next 下一页按钮文案\n *    -- page 每页数量列表选择器文案\n *    -- jumper 跳转输入框文案，其中 {input} 占位符代表输入框\n * en - Jumper\n *    -- Show jumper by setting `jumper` value of `layout` property\n *    -- prev Prev button text\n *    -- next Next button text\n *    -- page Page button text\n *    -- jumper Jumper text, the placeholder {input} represents the input box\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  const info = ({\n    current,\n    pageSize,\n    total,\n  }: {\n    current: number;\n    pageSize: number;\n    total: number;\n  }) => {\n    let to = current * pageSize;\n    if (to > total) to = total;\n    const from = (current - 1) * pageSize + 1;\n    return `${from} to ${to} of ${total} items`;\n  };\n  const total = 256;\n  const layout = ['links', 'list', info];\n  const text = {\n    prev: 'Previous',\n    next: 'Next',\n    page: ' / page',\n  };\n\n  return (\n    <Pagination total={total} text={text} layout={layout} defaultCurrent={1} span={3}></Pagination>\n  );\n};\n"
     },
     {
-      "title": "Controlled",
-      "description": "Set `current` and `onChange` property to use as a controlled component",
-      "scenario": "basic",
+      "title": "受控模式",
+      "description": "设置`current`和`onChange`属性，可以作为受控组件使用",
+      "scenario": "advanced",
       "code": "/**\n * cn - 受控模式\n *    -- 设置`current`和`onChange`属性，可以作为受控组件使用\n * en - Controlled\n *    -- Set `current` and `onChange` property to use as a controlled component\n */\nimport { useState } from 'react';\nimport { Pagination, Input } from 'shineout';\n\nexport default () => {\n  const [current, setCurrent] = useState(1);\n\n  const handleCurrentChange = (v) => setCurrent(Number(v));\n\n  return (\n    <div>\n      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>\n        <span style={{ fontSize: 14 }}>Jump to</span>\n        <Input.Number\n          min={1}\n          max={10}\n          value={current}\n          onChange={handleCurrentChange}\n          style={{ width: 80, marginInlineStart: 8 }}\n        />\n      </div>\n      <Pagination total={100} span={3} current={current} onChange={setCurrent} />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Simple",
-      "description": "Set `simple` property to use simple mode",
-      "scenario": "basic",
+      "title": "极简模式",
+      "description": "设置`simple`属性，可以使用极简模式",
+      "scenario": "advanced",
       "code": "/**\n * cn - 极简模式\n *    -- 设置`simple`属性，可以使用极简模式\n * en - Simple\n *    -- Set `simple` property to use simple mode\n */\nimport { Pagination } from 'shineout';\n\nexport default () => {\n  return <Pagination simple defaultCurrent={1} pageSize={20} total={100}></Pagination>;\n};\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 17,
-    "requiredProps": 0,
-    "propsWithWhen": 0,
-    "examplesCount": 11
-  }
+  "version": "3.7.7"
 }

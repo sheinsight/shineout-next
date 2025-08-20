@@ -86,7 +86,6 @@ const publishPackage = (name) => {
       if (error) {
         console.error(error);
         process.exit(1);
-        return;
       }
       console.log(stdout);
     },

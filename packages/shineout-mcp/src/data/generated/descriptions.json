@@ -1,7 +1,7 @@
 {
   "name": "Descriptions",
   "description": "一般用于详情页的信息展示",
-  "category": "other",
+  "category": "display",
   "importPath": "import { Descriptions } from 'shineout'",
   "props": [
     {
@@ -90,95 +90,48 @@
   ],
   "examples": [
     {
-      "title": "Basic",
-      "description": "Basic usage of Descriptions",
+      "title": "基本用法",
+      "description": "描述列表的基本样式",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- 描述列表的基本样式\n * en - Basic\n *    -- Basic usage of Descriptions\n */\nimport React from 'react';\nimport { Descriptions } from 'shineout';\n\nconst data = [\n  {\n    label: 'Name',\n    value: 'Mai Mai',\n  },\n  {\n    label: 'Residence',\n    value: 'Beijing',\n  },\n  {\n    label: 'Address',\n    value: 'Yingdu Building',\n  },\n  {\n    label: 'Mobile',\n    value: '187-2323-9834',\n  },\n  {\n    label: 'Hometown',\n    value: 'Beijing',\n  },\n];\n\nexport default () => {\n  return (\n    <div style={{ marginBottom: '-12px' }}>\n      <Descriptions\n        items={data}\n        title='User Info'\n        colon={' :'}\n      />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "One Colums",
-      "description": "One colums style of Descriptions",
+      "title": "单列样式",
+      "description": "单列的描述列表样式",
       "scenario": "basic",
       "code": "/**\n * cn - 单列样式\n *    -- 单列的描述列表样式\n * en - One Colums\n *    -- One colums style of Descriptions\n */\nimport React from 'react';\nimport { Descriptions } from 'shineout';\n\nconst data = [\n  {\n    label: 'Name',\n    value: 'Mai Mai',\n  },\n  {\n    label: 'Mobile',\n    value: '187-2323-9834',\n  },\n  {\n    label: 'Residence',\n    value: 'Beijing',\n  },\n];\n\nexport default () => {\n  return (\n    <>\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='horizontal'\n        column={1}\n        style={{ marginBottom: '12px' }}\n      />\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='horizontal'\n        column={1}\n        labelStyle={{ textAlign: 'end' }}\n      />\n    </>\n  );\n};\n"
     },
     {
-      "title": "Label text alignment",
-      "description": "The label text can be set to left-aligned, right-aligned, and can also be set to vertical style arrangement",
+      "title": "标签文本对齐",
+      "description": "标签文本可以设置左对齐、右对齐，也可以设置垂直的样式排列",
       "scenario": "basic",
       "code": "/**\n * cn - 标签文本对齐\n *    -- 标签文本可以设置左对齐、右对齐，也可以设置垂直的样式排列\n * en - Label text alignment\n *    -- The label text can be set to left-aligned, right-aligned, and can also be set to vertical style arrangement\n */\nimport React from 'react';\nimport { Descriptions } from 'shineout';\n\nconst data = [\n  {\n    label: 'Name',\n    value: 'Mai Mai',\n  },\n  {\n    label: 'Residence',\n    value: 'Beijing',\n  },\n  {\n    label: 'Address',\n    value: 'Yingdu Building',\n  },\n  {\n    label: 'Hometown',\n    value: 'Beijing',\n  },\n  {\n    label: 'Mobile',\n    value: '187-2323-9834',\n  },\n];\n\nexport default () => {\n  return (\n    <div style={{ marginBottom: '-12px' }}>\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='horizontal'\n        colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}\n        style={{ marginBottom: '12px' }}\n      />\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='horizontal'\n        colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}\n        labelStyle={{ textAlign: 'end' }}\n        style={{ marginBottom: '12px' }}\n      />\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='vertical'\n        colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}\n      />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Show With Border",
-      "description": "List with border and background color",
-      "scenario": "basic",
+      "title": "带边框展示",
+      "description": "带边框和背景颜色的列表",
+      "scenario": "advanced",
       "code": "/**\n * cn - 带边框展示\n *    -- 带边框和背景颜色的列表\n * en - Show With Border\n *    -- List with border and background color\n */\nimport React from 'react';\nimport { Descriptions } from 'shineout';\n\nconst data = [\n  {\n    label: 'Name',\n    value: 'Mai Mai',\n  },\n  {\n    label: 'Residence',\n    value: 'Beijing',\n  },\n  {\n    label: 'Address',\n    value: 'Yingdu Building,Zhichun Road,Beijing',\n  },\n  {\n    label: 'Mobile',\n    value: '187-2323-9834',\n  },\n  {\n    label: 'Hometown',\n    value: 'Beijing',\n  },\n];\n\nexport default () => {\n  return (\n    <div>\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='horizontal'\n        border\n        tableLayout='fixed'\n        style={{ marginBottom: 24 }}\n      />\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='horizontal'\n        border\n        tableLayout='fixed'\n        labelStyle={{ textAlign: 'end' }}\n        style={{ marginBottom: 24 }}\n      />\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='vertical'\n        border\n        tableLayout='fixed'\n        column={4}\n      />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Arrangement",
-      "description": "You can set the same width by tableLayout='fixed', and set different arrangement by layout, set border to show border",
-      "scenario": "basic",
+      "title": "不同排列模式",
+      "description": "可以通过tableLayout='fixed'设置等宽，通过layout设置不同的排列方式，设置border是否显示边框",
+      "scenario": "advanced",
       "code": "/**\n * cn - 不同排列模式\n *    -- 可以通过tableLayout='fixed'设置等宽，通过layout设置不同的排列方式，设置border是否显示边框\n * en - Arrangement\n *    -- You can set the same width by tableLayout='fixed', and set different arrangement by layout, set border to show border\n */\nimport React from 'react';\nimport { Descriptions, Radio } from 'shineout';\n\nconst data = [\n  {\n    label: 'Name',\n    value: 'Mai Mai',\n  },\n  {\n    label: 'Residence',\n    value: 'Beijing',\n  },\n  {\n    label: 'Address',\n    value: 'Yingdu Building',\n  },\n  {\n    label: 'Mobile',\n    value: '187-2323-9834',\n  },\n  {\n    label: 'Hometown',\n    value: 'Beijing',\n  },\n];\n\ntype layoutType = 'horizontal' | 'vertical' | 'inlineHorizontal' | 'inlineVertical';\nconst layouts: layoutType[] = ['horizontal', 'vertical', 'inlineHorizontal', 'inlineVertical'];\n\ntype tableLayoutType = 'fixed' | 'auto';\nconst tableLayouts: tableLayoutType[] = ['auto', 'fixed'];\n\ninterface borderType {\n  label: string;\n  value: boolean;\n}\nconst borders: borderType[] = [\n  { label: 'no border', value: false },\n  { label: 'border', value: true },\n];\n\nexport default () => {\n  const [layout, setLayout] = React.useState<layoutType>('horizontal');\n  const [tableLayout, setTableLayout] = React.useState<tableLayoutType>('auto');\n  const [border, setBorder] = React.useState<boolean>(false);\n  return (\n    <div style={{ marginBottom: '-12px' }}>\n      <Radio.Group\n        data={layouts}\n        value={layout}\n        onChange={setLayout}\n        keygen\n        style={{ marginBottom: 24 }}\n      />\n      <Radio.Group\n        data={tableLayouts}\n        value={tableLayout}\n        onChange={setTableLayout}\n        keygen\n        style={{ marginBottom: 24 }}\n      />\n      <Radio.Group\n        data={borders}\n        format={'value'}\n        renderItem={'label'}\n        value={border}\n        onChange={setBorder}\n        keygen={'label'}\n        style={{ marginBottom: 24 }}\n      />\n      <Descriptions\n        items={data}\n        title='User Info'\n        colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}\n        layout={layout}\n        tableLayout={tableLayout}\n        border={border}\n        labelStyle={{\n          marginBottom: layout === 'inlineVertical' ? '2px' : '',\n          paddingBottom: layout === 'vertical' && !border ? '2px' : '',\n        }}\n      />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Different Size",
-      "description": "Show Descriptions of different sizes",
-      "scenario": "basic",
+      "title": "不同尺寸",
+      "description": "展示不同尺寸下的描述列表",
+      "scenario": "advanced",
       "code": "/**\n * cn - 不同尺寸\n *    -- 展示不同尺寸下的描述列表\n * en - Different Size\n *    -- Show Descriptions of different sizes\n */\nimport React from 'react';\nimport { Descriptions, Radio } from 'shineout';\n\nconst data = [\n  {\n    label: 'Name',\n    value: 'Mai Mai',\n  },\n  {\n    label: 'Residence',\n    value: 'Beijing',\n  },\n  {\n    label: 'Address',\n    value: 'Yingdu Building,Zhichun Road,Beijing',\n  },\n  {\n    label: 'Mobile',\n    value: '187-2323-9834',\n  },\n  {\n    label: 'Hometown',\n    value: 'Beijing',\n  },\n];\n\ntype SizeType = 'small' | 'default' | 'large' | undefined;\nconst Size: SizeType[] = ['small', 'default', 'large'];\n\nexport default () => {\n  const [size, setSize] = React.useState<SizeType>('default');\n  return (\n    <div>\n      <Radio.Group\n        data={Size}\n        value={size}\n        onChange={setSize}\n        keygen\n        style={{ marginBottom: 24 }}\n      />\n      <Descriptions\n        items={data}\n        title='User Info'\n        colon={<span style={{ paddingLeft: '4px' }}>:</span>}\n        style={{ marginBottom: '12px' }}\n        size={size}\n      />\n      <Descriptions\n        items={data}\n        title='User Info'\n        layout='horizontal'\n        labelStyle={{ textAlign: 'end' }}\n        size={size}\n        border\n      />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Responsive",
-      "description": "Responsive arrangement",
-      "scenario": "basic",
+      "title": "响应式排列",
+      "description": "支持响应式排列",
+      "scenario": "advanced",
       "code": "/**\n * cn - 响应式排列\n *    -- 支持响应式排列\n * en - Responsive\n *    -- Responsive arrangement\n */\nimport React from 'react';\nimport { Descriptions } from 'shineout';\n\nconst data = [\n  {\n    label: 'Name',\n    value: 'Mai Mai',\n  },\n  {\n    label: 'Residence',\n    value: 'Beijing',\n  },\n  {\n    label: 'Address',\n    value: 'Yingdu Building,Zhichun Road,Beijing',\n  },\n  {\n    label: 'Mobile',\n    value: '187-2323-9834',\n  },\n  {\n    label: 'Hometown',\n    value: 'Beijing',\n  },\n];\n\nexport default () => {\n  return (\n    <div>\n      <Descriptions\n        items={data}\n        title='User Info'\n        border\n        layout='horizontal'\n        labelStyle={{ textAlign: 'end' }}\n        column={{\n          xs: 1,\n          sm: 2,\n          md: 2,\n          lg: 2,\n          xl: 3,\n          xxl: 4,\n        }}\n      />\n    </div>\n  );\n};\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 13,
-    "requiredProps": 0,
-    "propsWithWhen": 0,
-    "examplesCount": 7
-  },
-  "subComponentApis": {},
-  "relatedTypes": {
-    "ItemType": {
-      "title": "ItemType",
-      "description": "数据项结构",
-      "notes": {},
-      "props": [
-        {
-          "name": "label",
-          "type": "ReactNode",
-          "required": false,
-          "description": "数据标签"
-        },
-        {
-          "name": "value",
-          "type": "ReactNode",
-          "required": false,
-          "description": "数据值"
-        },
-        {
-          "name": "span",
-          "type": "number",
-          "required": false,
-          "description": "占据的列数"
-        },
-        {
-          "name": "itemLabelStyle",
-          "type": "CSSProperties",
-          "required": false,
-          "description": "当前数据标签样式"
-        },
-        {
-          "name": "itemValueStyle",
-          "type": "CSSProperties",
-          "required": false,
-          "description": "当前数据值样式"
-        }
-      ]
-    }
-  }
+  "version": "3.7.7"
 }

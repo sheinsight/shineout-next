@@ -46,37 +46,30 @@
   ],
   "examples": [
     {
-      "title": "Base",
-      "description": "Divider is horizontal by default. You can add text within Divider",
+      "title": "基本用法",
+      "description": "默认为水平分割线",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    --默认为水平分割线\n * en - Base\n *    --Divider is horizontal by default. You can add text within Divider\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider />\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Dashed",
-      "description": "Use type=\"dashed\" make it dashed",
+      "title": "虚线分割",
+      "description": "使用 `type`=\"dashed\" 设置为虚线分割线",
       "scenario": "basic",
       "code": "/**\n * cn - 虚线分割\n *    --使用 `type`=\"dashed\" 设置为虚线分割线\n * en - Dashed\n *    --Use type=\"dashed\" make it dashed\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider type='dashed' />\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Divider with title",
-      "description": "Divider with inner title, set orientation=\"left/right\" to align it",
+      "title": "带文字的分割线",
+      "description": "分割线中带有文字，可以用 orientation 指定文字位置",
       "scenario": "basic",
       "code": "/**\n * cn - 带文字的分割线\n *    -- 分割线中带有文字，可以用 orientation 指定文字位置\n * en - Divider with title\n *    --Divider with inner title, set orientation=\"left/right\" to align it\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ fontSize: 12 }}>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider>Center</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider orientation={'left'}>Left</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n    <Divider orientation={'right'}>Right</Divider>\n    <p>A design is a plan or specification for the construction of an object.</p>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Vertical",
-      "description": "Use type=\"vertical\" make it vertical",
+      "title": "垂直分割线",
+      "description": "使用 mode=\"vertical\" 设置为行内的垂直分割线",
       "scenario": "basic",
       "code": "/**\n * cn - 垂直分割线\n *    -- 使用 mode=\"vertical\" 设置为行内的垂直分割线\n * en - Vertical\n *    --Use type=\"vertical\" make it vertical\n */\nimport React from 'react';\nimport { Divider } from 'shineout';\n\nconst inlineStyle = {\n  display: 'inline-block',\n  lineHeight: '22px',\n  fontSize: 14,\n};\n\nconst App: React.FC = () => (\n  <>\n    <span style={inlineStyle}>Item 1</span>\n    <Divider mode='vertical'>H</Divider>\n    <span style={inlineStyle}>Item 2</span>\n    <Divider mode='vertical' />\n    <span style={inlineStyle}>Item 3</span>\n  </>\n);\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 6,
-    "requiredProps": 0,
-    "propsWithWhen": 0,
-    "examplesCount": 4
-  }
+  "version": "3.7.7"
 }

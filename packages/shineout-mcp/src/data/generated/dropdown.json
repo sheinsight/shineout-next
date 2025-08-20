@@ -144,86 +144,85 @@
       "name": "zIndex",
       "type": "number",
       "required": false,
-      "description": "面板的 zIndex 值，默认为 1051",
-      "version": "3.4.0"
+      "description": "面板的 zIndex 值，默认为 1051"
     }
   ],
   "examples": [
     {
-      "title": "Base",
-      "description": "Dropdown is rendered through data and supports json formatted data and React components",
+      "title": "基本用法",
+      "description": "Dropdown 通过数据来渲染，支持 json 格式数据、React 组件",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- Dropdown 通过数据来渲染，支持 json 格式数据、React 组件\n * en - Base\n *   -- Dropdown is rendered through data and supports json formatted data and React components\n */\nimport React from 'react';\nimport { Dropdown, TYPE } from 'shineout';\n\ntype DropdownItem = TYPE.Dropdown.Item;\nconst data: DropdownItem[] = [\n  {\n    content: 'Submenu',\n    children: [\n      {\n        content: 'Link to Google',\n        target: '_blank',\n        url: 'https://google.com',\n      },\n      {\n        content: <div style={{cursor: 'not-allowed'}}>Disabled</div>,\n        disabled: true,\n        children: [\n          { content: 'Child 1' },\n          { content: 'Child 2' },\n        ],\n      },\n    ],\n  },\n  <a key={'link'} href='/'>\n    Home\n  </a>,\n  {\n    content: 'Message',\n    onClick: () => {\n      console.info('Some message.');\n    },\n  },\n];\n\nconst App: React.FC = () => {\n  return (\n    <>\n      <Dropdown placeholder='Click me' data={data} onClick={console.log} />\n      <Dropdown placeholder='Click me' data={data} disabled />\n    </>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Trigger",
-      "description": "By default, Dropdown toggled clicking, setting trigger=\"hover\" can toggled by mouse move in",
+      "title": "触发方式",
+      "description": "Dropdown 默认通过点击触发下拉行为，设置 trigger=\"hover\" 属性可以改为移入触发",
       "scenario": "basic",
       "code": "/**\n * cn - 触发方式\n *    -- Dropdown 默认通过点击触发下拉行为，设置 trigger=\"hover\" 属性可以改为移入触发\n * en - Trigger\n *    -- By default, Dropdown toggled clicking, setting trigger=\"hover\" can toggled by mouse move in\n */\nimport React from 'react';\nimport { Dropdown, TYPE } from 'shineout';\n\ntype DropdownItem = TYPE.Dropdown.Item;\n\nconst menu: DropdownItem[] = [\n  { content: 'America' },\n  { content: 'Germany' },\n  { content: 'United Kingdom' },\n  { content: 'France' },\n  { content: 'Russia' },\n];\n\nconst App: React.FC = () => (\n  <>\n    <Dropdown trigger='click' placeholder='Click me' data={menu} />\n    <Dropdown trigger='hover' placeholder='Hover me' data={menu} />\n  </>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Position",
-      "description": "Set position property can control the direction and position of the drop-down menu",
+      "title": "弹出位置",
+      "description": "设置 position 属性可以控制下拉菜单弹出的方向和位置",
       "scenario": "basic",
       "code": "/**\n * cn - 弹出位置\n *    -- 设置 position 属性可以控制下拉菜单弹出的方向和位置\n * en - Position\n *    -- Set position property can control the direction and position of the drop-down menu\n */\nimport React from 'react';\nimport { Dropdown, TYPE } from 'shineout';\n\ntype DropdownItem = TYPE.Dropdown.Item;\n\nconst menu: DropdownItem[] = [\n  {\n    content: 'First',\n    children: [\n      {\n        content: 'link1',\n      },\n      {\n        content: 'link2',\n      },\n    ],\n  },\n  {\n    content: 'Second',\n    children: [\n      {\n        content: 'link3',\n      },\n      {\n        content: 'link4',\n        children: [\n          {\n            content: 'link5',\n          },\n          {\n            content: 'link6',\n          },\n        ],\n      },\n    ],\n  },\n];\n\nconst App: React.FC = () => (\n  <div style={{ display: 'inline-flex', flexDirection: 'column', gap: 12 }}>\n    <div style={{ display: 'flex', justifyContent: 'center', gap: 12, padding: '0 120px' }}>\n      <Dropdown placeholder='Bottom left' position='bottom-left' data={menu} />\n      <Dropdown placeholder='Bottom' position='bottom' data={menu} />\n      <Dropdown placeholder='Bottom right' position='bottom-right' data={menu} />\n    </div>\n    <div style={{ display: 'flex', justifyContent: 'space-between' }}>\n      <Dropdown placeholder='Right Top' position='right-top' data={menu} />\n      <Dropdown placeholder='Left Top' position='left-top' data={menu} />\n    </div>\n    <div style={{ display: 'flex', justifyContent: 'space-between' }}>\n      <Dropdown placeholder='Right' position='right' data={menu} />\n      <Dropdown placeholder='Left' position='left' data={menu} />\n    </div>\n    <div style={{ display: 'flex', justifyContent: 'space-between' }}>\n      <Dropdown placeholder='Right Bottom' position='right-bottom' data={menu} />\n      <Dropdown placeholder='Left Bottom' position='left-bottom' data={menu} />\n    </div>\n    <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>\n      <Dropdown placeholder='Top Left' position='top-left' data={menu} />\n      <Dropdown placeholder='Top' position='top' data={menu} />\n      <Dropdown placeholder='Top right' position='top-right' data={menu} />\n    </div>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Button",
-      "description": "Same as Button, support type text outline",
-      "scenario": "basic",
+      "title": "按钮下拉",
+      "description": "和 Button 属性相同, 支持 type text outline",
+      "scenario": "advanced",
       "code": "/**\n * cn - 按钮下拉\n *    -- 和 Button 属性相同, 支持 type text outline\n * en - Button\n *    -- Same as Button, support type text outline\n */\nimport React from 'react';\nimport { Dropdown } from 'shineout';\n\nconst menu: {\n  id: string;\n  content: string;\n}[] = [];\n\nfor (let i = 1; i <= 3; i++) {\n  menu.push({\n    id: `${i}`,\n    content: `item${i}`,\n  });\n}\n\nconst columnStyle: React.CSSProperties = {\n  display: 'flex',\n  flexDirection: 'column',\n  alignItems: 'flex-start',\n  gap: 24,\n};\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', gap: 24 }}>\n    <div style={columnStyle}>\n      <Dropdown data={menu} type={'primary'} placeholder={'Default'} />\n      <Dropdown data={menu} type={'secondary'} placeholder={'Default'} />\n      <Dropdown data={menu} type={'danger'} placeholder={'Default'} />\n      <Dropdown data={menu} type={'warning'} placeholder={'Default'} />\n      <Dropdown data={menu} type={'success'} placeholder={'Default'} />\n    </div>\n    <div style={columnStyle}>\n      <Dropdown data={menu} type={'primary'} placeholder={'Outline'} outline />\n      <Dropdown data={menu} type={'secondary'} placeholder={'Outline'} outline />\n      <Dropdown data={menu} type={'danger'} placeholder={'Outline'} outline />\n      <Dropdown data={menu} type={'warning'} placeholder={'Outline'} outline />\n      <Dropdown data={menu} type={'success'} placeholder={'Outline'} outline />\n    </div>\n    <div style={columnStyle}>\n      <Dropdown data={menu} type={'primary'} placeholder={'Text'} text />\n      <Dropdown data={menu} type={'secondary'} placeholder={'Text'} text />\n      <Dropdown data={menu} type={'danger'} placeholder={'Text'} text />\n      <Dropdown data={menu} type={'warning'} placeholder={'Text'} text />\n      <Dropdown data={menu} type={'success'} placeholder={'Text'} text />\n    </div>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Multi-level",
-      "description": "Dropdown with multiple levels of menu, set the children property in data",
-      "scenario": "basic",
+      "title": "多级菜单",
+      "description": "带有多个下钻层级菜单的下拉框, 在 data 中设置 children 属性即可",
+      "scenario": "advanced",
       "code": "/**\n * cn - 多级菜单\n *    -- 带有多个下钻层级菜单的下拉框, 在 data 中设置 children 属性即可\n * en - Multi-level\n *   -- Dropdown with multiple levels of menu, set the children property in data\n */\nimport React from 'react';\nimport { Dropdown } from 'shineout';\n\nconst menu = new Array(5).fill(null).map((_, index) => ({\n  id: `${index}`,\n  content: `item${index}`,\n  children: new Array(5).fill(null).map((_, i) => ({\n    id: `${index}-${i}`,\n    content: `item${index}-${i}`,\n  })),\n}));\n\nconst App: React.FC = () => <Dropdown data={menu} placeholder={'Click me'} />;\n\nexport default App;\n"
     },
     {
-      "title": "Group",
-      "description": "Add a group to the menu by setting group in the data item",
-      "scenario": "basic",
+      "title": "分组菜单",
+      "description": "通过在数据项配置 group 可以在菜单中添加分组",
+      "scenario": "advanced",
       "code": "/**\n * cn - 分组菜单\n *    -- 通过在数据项配置 group 可以在菜单中添加分组\n * en - Group\n *   -- Add a group to the menu by setting group in the data item\n */\nimport React from 'react';\nimport { Dropdown } from 'shineout';\n\nconst menu = new Array(4).fill(null).map((_, index) => ({\n  id: `${index}`,\n  content: `item${index}`,\n  group: index % 2 === 0 ? `group${index / 2}` : undefined,\n}));\n\nconst App: React.FC = () => <Dropdown data={menu} placeholder={'Group Menu'} absolute />;\n\nexport default App;\n"
     },
     {
-      "title": "Divider",
-      "description": "Add a divider to the menu by setting divider:true in the data item",
-      "scenario": "basic",
+      "title": "带分割线下拉菜单",
+      "description": "通过在数据项配置 divider:true 可以在菜单中添加分割线",
+      "scenario": "advanced",
       "code": "/**\n * cn - 带分割线下拉菜单\n *    -- 通过在数据项配置 divider:true 可以在菜单中添加分割线\n * en - Divider\n *    -- Add a divider to the menu by setting divider:true in the data item\n */\nimport React from 'react';\nimport { Dropdown, TYPE } from 'shineout';\n\ntype DropdownItem = TYPE.Dropdown.Item;\n\nconst menu: DropdownItem[] = [\n  {\n    content: 'First',\n  },\n  {\n    content: 'Second',\n  },\n  {\n    content: 'Third',\n    divider: true,\n  },\n  {\n    content: 'Fourth',\n  },\n];\n\nconst App: React.FC = () => (\n  <Dropdown data={menu} placeholder={'Dividing Line'} position='bottom-left' />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Multiple columns",
-      "description": "Set columns property can make the option multi-column tiled",
-      "scenario": "basic",
+      "title": "多列平铺下拉菜单",
+      "description": "设置 columns 属性可以让选项多列平铺",
+      "scenario": "advanced",
       "code": "/**\n * cn - 多列平铺下拉菜单\n *    -- 设置 columns 属性可以让选项多列平铺\n * en - Multiple columns\n *    -- Set columns property can make the option multi-column tiled\n */\nimport React from 'react';\nimport { Dropdown } from 'shineout';\n\nconst menu = new Array(30).fill(null).map((_, index) => ({\n  id: `${index}`,\n  content: <div style={{textAlign: 'left'}}>{`item${index}`}</div>,\n}));\n\nconst App: React.FC = () => (\n  <Dropdown placeholder='Tiling Menu' width={500} columns={5} data={menu} />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Dropdown with icon",
-      "description": "Content can pass ReactNode to render complex content",
-      "scenario": "basic",
+      "title": "自定义渲染",
+      "description": "content 可以传 ReactNode 来渲染复杂的内容，包括图标",
+      "scenario": "advanced",
       "code": "/**\n * cn - 自定义渲染\n *    -- content 可以传 ReactNode 来渲染复杂的内容，包括图标\n * en - Dropdown with icon\n *    -- Content can pass ReactNode to render complex content\n */\nimport React from 'react';\nimport { Dropdown } from 'shineout';\nimport FontAwesome from './Icon';\n\nconst menu = new Array(5).fill(null).map((_, index) => ({\n  id: `${index}`,\n  content: (\n    <div style={{ display: 'flex', alignItems: 'center' }}>\n      <FontAwesome name={'user-o'} style={{color: '#666C7C', width: 14}} /> <span style={{ marginInlineStart: 8 }}>{`item${index}`}</span>\n    </div>\n  ),\n}));\n\nconst App: React.FC = () => <Dropdown placeholder='Icon Menu' data={menu} />;\n\nexport default App;\n"
     },
     {
-      "title": "Size",
-      "description": "Set the size of the dropdown menu through size",
-      "scenario": "basic",
+      "title": "尺寸",
+      "description": "通过 size 设置下拉菜单的尺寸",
+      "scenario": "advanced",
       "code": "/**\n * cn - 尺寸\n *    -- 通过 size 设置下拉菜单的尺寸\n * en - Size\n *    -- Set the size of the dropdown menu through size\n */\nimport React from 'react';\nimport { Dropdown } from 'shineout';\n\nconst menu = new Array(4).fill(null).map((_, index) => ({\n  id: `${index}`,\n  content: `item${index}`,\n}));\n\nconst marginStyle = { marginInlineEnd: 24 };\nconst App: React.FC = () => (\n  <div>\n    {['small', 'default', 'large'].map((size: any) => (\n      <Dropdown\n        outline\n        type={'primary'}\n        key={size}\n        data={menu}\n        placeholder='Dropdown'\n        size={size}\n        style={marginStyle}\n      />\n    ))}\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Group",
-      "description": "Dropdown can be combined with Button used in Button.Group",
-      "scenario": "basic",
+      "title": "组合下拉",
+      "description": "在 Button.Group 中组合使用，通常用于隐藏一组按钮中不太常用的选项",
+      "scenario": "advanced",
       "code": "/**\n * cn - 组合下拉\n *    -- 在 Button.Group 中组合使用，通常用于隐藏一组按钮中不太常用的选项\n * en - Group\n *    -- Dropdown can be combined with Button used in Button.Group\n */\nimport React from 'react';\nimport { Button, Dropdown, TYPE } from 'shineout';\n\ntype DropdownItem = TYPE.Dropdown.Item;\n\nconst menu: DropdownItem[] = [\n  {\n    content: 'First',\n  },\n  {\n    content: 'Second',\n    target: '_blank',\n    url: 'http://www.google.com',\n  },\n];\n\nconst App: React.FC = () => (\n  <>\n    <Button.Group mode={'outline'} type={'secondary'} style={{ marginInlineEnd: 24 }}>\n      <Button>Option</Button>\n      <Button>Option</Button>\n      <Dropdown\n        data={menu}\n        position='bottom-right'\n        onClick={(data: any) => console.info(`The Dropdown clicked ${data.content}.`)}\n      />\n    </Button.Group>\n    <Button.Group type={'secondary'}>\n      <Button>Option</Button>\n      <Button>Option</Button>\n      <Dropdown\n        data={menu}\n        position='bottom-right'\n        onClick={(data: any) => console.info(`The Dropdown clicked ${data.content}.`)}\n      />\n    </Button.Group>\n  </>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Absolute",
-      "description": "If the parent container of the pop-up layer is occluded, you can set the absolute property to make the pop-up options rendered in a separate layer",
-      "scenario": "basic",
+      "title": "绝对定位",
+      "description": "如果选项弹出层的父容器被遮挡，可以设置 absolute 属性使弹出选项在单独层中渲染",
+      "scenario": "advanced",
       "code": "/**\n * cn - 绝对定位\n *    -- 如果选项弹出层的父容器被遮挡，可以设置 absolute 属性使弹出选项在单独层中渲染\n * en - Absolute\n *    -- If the parent container of the pop-up layer is occluded, you can set the absolute property to make the pop-up options rendered in a separate layer\n */\nimport React from 'react';\nimport { Dropdown, TYPE } from 'shineout';\n\ntype DropdownItem = TYPE.Dropdown.Item;\n\nconst data: DropdownItem[] = [\n  {\n    content:\n      'SubMenu',\n    children: [\n      {\n        content: 'Link to Google',\n        target: '_blank',\n        url: 'https://google.com',\n      },\n      {\n        content: <div style={{cursor: 'not-allowed'}}>Disabled</div>,\n        disabled: true,\n      },\n    ],\n  },\n  <a href='/' key={'home'}>\n    Home\n  </a>,\n  {\n    content: 'Message',\n    onClick: () => {\n      console.info('Some message.');\n    },\n  },\n];\n\nconst App: React.FC = () => (\n  <div style={{ background: '#eee', padding: 20, borderRadius: 4, overflow: 'hidden' }}>\n    <Dropdown\n      mode=\"outline\"\n      type={'primary'}\n      absolute\n      placeholder='Absolute'\n      data={data}\n    />\n\n    <Dropdown\n      outline\n      type={'primary'}\n      placeholder='Default'\n      data={data}\n      style={{ marginInlineStart: 24 }}\n    />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Controlled",
-      "description": "Component controlled by open property",
+      "title": "控制弹层（受控）",
+      "description": "Dropdown 通过 open 控制弹层的显示和隐藏",
       "scenario": "basic",
       "code": "/**\n * cn - 控制弹层（受控）\n *    -- Dropdown 通过 open 控制弹层的显示和隐藏\n * en - Controlled\n *    -- Component controlled by open property\n */\nimport React, { useState } from 'react';\nimport { Button, Dropdown } from 'shineout';\n\nconst menu = new Array(4).fill(null).map((_, index) => ({\n  id: `${index}`,\n  content: `item${index}`,\n}));\n\nconst App: React.FC = () => {\n  const [show, setShow] = useState(false);\n\n  const handleCollapse = (collapsed: boolean) => {\n    setShow(collapsed);\n    console.log('控制弹层（受控）:', collapsed);\n  };\n  return (\n    <div style={{ height: 150 }}>\n      <Button onClick={() => setShow(true)} style={{ marginInlineEnd: 24 }}>\n        Open elastic layer\n      </Button>\n      <Dropdown onCollapse={handleCollapse} open={show} placeholder='Dropdown' data={menu} />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
@@ -235,70 +234,5 @@
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 22,
-    "requiredProps": 1,
-    "propsWithWhen": 0,
-    "examplesCount": 14
-  },
-  "subComponentApis": {},
-  "relatedTypes": {
-    "DropdownData": {
-      "title": "DropdownData",
-      "description": "data 选项有三种情况：\\n  为 ReactElement 时，直接显示此元素；\\n  为 object 且设置了 renderItem，显示 renderItem 返回的内容；\\n  为 object 且未设置 renderItem，按以下数据结构处理。",
-      "notes": {},
-      "props": [
-        {
-          "name": "group",
-          "type": "string",
-          "required": false,
-          "description": "分组"
-        },
-        {
-          "name": "divider",
-          "type": "boolean",
-          "required": false,
-          "description": "分割线"
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "required": false,
-          "description": "url属性不为空时，render为一个链接"
-        },
-        {
-          "name": "target",
-          "type": "string",
-          "required": false,
-          "description": "url 不为空时有效"
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "description": "禁用"
-        },
-        {
-          "name": "content",
-          "type": "ReactNode",
-          "required": false,
-          "description": "默认从content获取内容"
-        },
-        {
-          "name": "children",
-          "type": "DropdownNode[]",
-          "required": false,
-          "description": "子节点"
-        },
-        {
-          "name": "onClick",
-          "type": "((data: DropdownNode) => void)",
-          "required": false,
-          "description": "点击事件"
-        }
-      ]
-    }
-  }
+  "version": "3.7.7"
 }

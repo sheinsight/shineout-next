@@ -1,7 +1,7 @@
 {
   "name": "Tree",
   "description": "用于承载有父子关系的结构化内容，提供内容层级的展示",
-  "category": "other",
+  "category": "display",
   "importPath": "import { Tree } from 'shineout'",
   "props": [
     {
@@ -104,8 +104,7 @@
       "name": "virtual",
       "type": "boolean",
       "required": false,
-      "description": "虚拟列表",
-      "version": "3.6.0"
+      "description": "虚拟列表"
     },
     {
       "name": "className",
@@ -154,8 +153,7 @@
       "name": "leafIcon",
       "type": "boolean | ((d: T) => ReactNode) | ReactNode",
       "required": false,
-      "description": "开启叶子节点前的图标，或者自定义函数渲染",
-      "version": "3.7.0"
+      "description": "开启叶子节点前的图标，或者自定义函数渲染"
     },
     {
       "name": "expandIcons",
@@ -179,8 +177,7 @@
       "name": "setActive",
       "type": "((key: string | number , data?: DataItem ) => void)",
       "required": false,
-      "description": "设置激活节点的key",
-      "version": "3.4.0"
+      "description": "设置激活节点的key"
     },
     {
       "name": "doubleClickExpand",
@@ -200,8 +197,7 @@
       "name": "actionOnClick",
       "type": "ActionOnClick | ActionOnClick[]",
       "required": false,
-      "description": "点击节点展开是的操作: \\\"expand\\\" 展开节点，\\\"check\\\" 选中复选框",
-      "version": "3.6.0"
+      "description": "点击节点展开是的操作: \\\"expand\\\" 展开节点，\\\"check\\\" 选中复选框"
     },
     {
       "name": "dragImageSelector",
@@ -301,16 +297,14 @@
       "name": "height",
       "type": "number",
       "required": false,
-      "description": "列表高度，仅开启virtual时生效",
-      "version": "3.6.0"
+      "description": "列表高度，仅开启virtual时生效"
     },
     {
       "name": "rowsInView",
       "type": "number",
       "required": false,
       "defaultValue": "20",
-      "description": "同时展示的列表项数量",
-      "version": "3.6.0"
+      "description": "同时展示的列表项数量"
     },
     {
       "name": "rootStyle",
@@ -329,121 +323,113 @@
       "type": "\"small\" | \"default\" | \"large\"",
       "required": false,
       "defaultValue": "default",
-      "description": "组件尺寸",
-      "version": "3.7.0"
+      "description": "组件尺寸"
     }
   ],
   "examples": [
     {
-      "title": "Base",
-      "description": "Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes",
+      "title": "基本用法",
+      "description": "基础 Tree 组件用法，当配置 `children` 字段时，允许展开和收起节点",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- 基础 Tree 组件用法，当配置 `children` 字段时，允许展开和收起节点\n * en - Base\n *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes\n */\n\nimport { Tree, TYPE } from 'shineout';\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const data = [\n    {\n      id: '0',\n      children: [\n        {\n          id: '0-0',\n          children: [\n            {\n              id: '0-0-0',\n            },\n            {\n              id: '0-0-1',\n              children: [\n                {\n                  id: '0-0-1-0',\n                },\n              ],\n            },\n          ],\n        },\n        {\n          id: '0-1',\n          children: [\n            {\n              id: '0-1-0',\n            },\n          ],\n        },\n      ],\n    },\n    {\n      id: '1',\n      children: [\n        {\n          id: '1-0',\n          children: [\n            {\n              id: '1-0-0',\n            },\n            {\n              id: '1-0-1',\n              children: [\n                {\n                  id: '1-0-1-0',\n                },\n              ],\n            },\n          ],\n        },\n        {\n          id: '1-1',\n          children: [\n            {\n              id: '1-1-0',\n            },\n          ],\n        },\n      ],\n    },\n  ];\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return `node ${node.id}`;\n  };\n\n  return (\n    <div>\n      <Tree data={data} keygen='id' renderItem={renderItem}></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "line",
-      "description": "Set `line` to false to hide the connection line",
+      "title": "无连接线",
+      "description": "设置 `line` 为 false，不显示连接线",
       "scenario": "basic",
       "code": "/**\n * cn - 无连接线\n *    -- 设置 `line` 为 false，不显示连接线\n * en - line\n *    -- Set `line` to false to hide the connection line\n */\n\nimport { Tree, TYPE } from 'shineout';\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const data: DataItem[] = [\n    {\n      id: '0',\n      children: [\n        {\n          id: '0-0',\n          children: [\n            {\n              id: '0-0-0',\n              children: [\n                {\n                  id: '0-0-0-0',\n                },\n              ],\n            },\n          ],\n        },\n        {\n          id: '0-1',\n          children: [\n            {\n              id: '0-1-0',\n            },\n          ],\n        },\n      ],\n    },\n  ];\n\n  const renderItem: TreeProps['renderItem'] = (node: any) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  return (\n    <div>\n      <Tree\n        defaultExpanded={['0', '0-0']}\n        line={false}\n        data={data}\n        keygen='id'\n        renderItem={renderItem}\n      ></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "expand",
-      "description": "Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes",
-      "scenario": "basic",
+      "title": "控制展开",
+      "description": "基础 Tree 组件用法，当配置 `children` 字段时，允许展开和收起节点",
+      "scenario": "advanced",
       "code": "/**\n * cn - 控制展开\n *    -- 基础 Tree 组件用法，当配置 `children` 字段时，允许展开和收起节点\n * en - expand\n *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes\n *\n */\nimport { useState } from 'react';\nimport { Tree, Button, TYPE } from 'shineout';\nimport { createNestedArray, getIds } from './utils';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nconst data: DataItem[] = createNestedArray([2, 2, 2]);\n\nexport default () => {\n  const [expanded, setExpanded] = useState<TreeProps['expanded']>([]);\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  const handleExpandAll = () => {\n    setExpanded(getIds(data));\n  };\n\n  const handleCloseAll = () => {\n    setExpanded([]);\n  };\n\n  const handleExpand: TreeProps['onExpand'] = (ids) => {\n    setExpanded([...ids]);\n  };\n\n  return (\n    <div>\n      <div style={{ marginBottom: 24 }}>\n        <Button size='small' mode='outline' type='secondary' onClick={handleExpandAll}>\n          Expand all\n        </Button>\n        <Button size='small' mode='outline' type='secondary' onClick={handleCloseAll}>\n          Collapse all\n        </Button>\n      </div>\n      <Tree\n        line={false}\n        data={data}\n        expanded={expanded}\n        onExpand={handleExpand}\n        keygen='id'\n        renderItem={renderItem}\n      ></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Default Expand all",
-      "description": "Set the `defaultExpandAll` property to expand all nodes by default",
-      "scenario": "basic",
+      "title": "默认展开全部",
+      "description": "设置 `defaultExpandAll` 属性，可以默认展开所有节点",
+      "scenario": "advanced",
       "code": "/**\n * cn - 默认展开全部\n *    -- 设置 `defaultExpandAll` 属性，可以默认展开所有节点\n * en - Default Expand all\n *    -- Set the `defaultExpandAll` property to expand all nodes by default\n *\n */\nimport { Tree, TYPE } from 'shineout';\nimport { createNestedArray } from './utils';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nconst data: DataItem[] = createNestedArray([2, 2, 2]);\nexport default () => {\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  return (\n    <div>\n      <Tree defaultExpandAll line={false} data={data} keygen='id' renderItem={renderItem}></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "disabled",
-      "description": "Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes",
-      "scenario": "basic",
+      "title": "禁用状态",
+      "description": "基础 Tree 组件用法，当配置 `children` 字段时，允许展开和收起节点",
+      "scenario": "advanced",
       "code": "/**\n * cn - 禁用状态\n *    -- 基础 Tree 组件用法，当配置 `children` 字段时，允许展开和收起节点\n * en - disabled\n *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes\n */\n\nimport { useState } from 'react';\nimport { Tree, TYPE } from 'shineout';\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const data: DataItem[] = [\n    {\n      id: '0',\n      children: [\n        {\n          id: '0-0',\n          children: [\n            {\n              id: '0-0-0',\n            },\n          ],\n        },\n        {\n          id: '0-1',\n          children: [\n            {\n              id: '0-1-0',\n            },\n          ],\n        },\n        {\n          id: '0-2',\n          children: [\n            {\n              id: '0-2-0',\n            },\n          ],\n        },\n      ],\n    },\n  ];\n\n  const [value, setValue] = useState<TreeProps['value']>([]);\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  const isDisabled: TreeProps['disabled'] = (node) => {\n    return node.id === '0-0';\n  };\n\n  const handleChange: TreeProps['onChange'] = (keys) => {\n    setValue(keys);\n  };\n\n  return (\n    <div>\n      <Tree\n        line={false}\n        value={value}\n        data={data}\n        keygen='id'\n        mode={0}\n        defaultExpanded={['0']}\n        onChange={handleChange}\n        disabled={isDisabled}\n        renderItem={renderItem}\n      ></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Selectable tree",
-      "description": "Configure the `onChange` and `value` properties to enable data selection",
-      "scenario": "basic",
+      "title": "可选择树",
+      "description": "配置 `onChange` 以及 `value` 属性开启数据选择功能",
+      "scenario": "advanced",
       "code": "/**\n * cn - 可选择树\n *    -- 配置 `onChange` 以及 `value` 属性开启数据选择功能\n *    -- 配置 `mode` 属性返回不同结构的数据：\n *    -- 模式为 0 时，返回完全选中的节点，包含父节点\n *    -- 模式为 1 时，返回选中、半选中的节点\n *    -- 模式为 2 时，只返回叶子节点\n *    -- 模式为 3 时，只返回完全选中的父节点\n *    -- 模式为 4 时，所选即所得\n * en - Selectable tree\n *    -- Configure the `onChange` and `value` properties to enable data selection\n *    -- Configure the `mode` property to return different structures of data:\n *    -- When the mode is 0, it returns the fully selected node, including the parent node\n *    -- When the mode is 1, it returns the selected and half-selected nodes\n *    -- When the mode is 2, it only returns leaf nodes\n *    -- When the mode is 3, it only returns fully selected parent nodes\n *    -- When the mode is 4, it returns what you see is what you get\n */\n\nimport { useState } from 'react';\nimport { Tree, Radio, TYPE } from 'shineout';\nimport { createNestedArray } from './utils';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nconst data: DataItem[] = createNestedArray([5, 1, 2]);\n\nexport default () => {\n  const radio = [\n    {\n      mode: 'full',\n      value: 0,\n    },\n    {\n      mode: 'half',\n      value: 1,\n    },\n    {\n      mode: 'child only',\n      value: 2,\n    },\n    {\n      mode: 'shallow',\n      value: 3,\n    },\n    {\n      mode: 'freedom',\n      value: 4,\n    },\n  ];\n\n  const [value, setValue] = useState<TreeProps['value']>([]);\n  const [mode, setMode] = useState<0 | 1 | 2 | 3 | 4>(0);\n\n  const renderItem = (node: any) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  const handleChange: TreeProps['onChange'] = (v) => {\n    setValue(v);\n  };\n\n  const handleModeChange = (v: any) => {\n    setMode(v.value);\n    setValue([]);\n  };\n\n  return (\n    <div>\n      <Radio.Group\n        size='small'\n        keygen='value'\n        prediction={(item, v) => item === v.value}\n        value={mode}\n        onChange={handleModeChange}\n        renderItem={(item) => `模式 ${item.value}`}\n        data={radio}\n        style={{ marginBottom: 24 }}\n      />\n      <div style={{ display: 'flex' }}>\n        <div style={{ flex: 1 }}>\n          <Tree\n            key={mode}\n            line={false}\n            value={value}\n            data={data}\n            mode={mode}\n            keygen='id'\n            renderItem={renderItem}\n            onChange={handleChange}\n          ></Tree>\n        </div>\n        <pre\n          style={{\n            flex: 1,\n            margin: 10,\n            background: '#1d1d1d',\n            color: '#94d5fc',\n            borderRadius: 4,\n            padding: 10,\n          }}\n        >\n          <div style={{ marginBottom: 10 }}>\n            <code style={{ color: '#5D8E4E' }}>\n              <span>/</span>\n              <span>/</span> DataItem[]\n            </code>\n          </div>\n          {value && value.length > 0 && <code>{JSON.stringify(value, null, 2)}</code>}\n          {!value || (value.length === 0 && <code style={{ color: '#757575' }}>no data</code>)}\n        </pre>\n      </div>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Dynamic loading",
-      "description": "Set the `loader` function to enable dynamic loading of nodes",
-      "scenario": "basic",
+      "title": "动态加载",
+      "description": "设置 `loader` 函数开启动态加载节点功能",
+      "scenario": "advanced",
       "code": "/**\n * cn - 动态加载\n *    -- 设置 `loader` 函数开启动态加载节点功能\n * en - Dynamic loading\n *    -- Set the `loader` function to enable dynamic loading of nodes\n */\nimport { useState } from 'react';\nimport { Tree, TYPE } from 'shineout';\nimport { produce } from 'immer';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const initData = ['0', '1', '2', '3', '4'].map((i) => ({ id: i }));\n  const [data, setData] = useState(initData);\n  const [value, setValue] = useState<TreeProps['value']>([]);\n\n  const renderItem = (node: any) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  const createRange = () => Array.from({ length: Math.round(Math.random() * 4) }, (_, i) => i);\n\n  const handleChange: TreeProps['onChange'] = (v) => {\n    setValue(v);\n  };\n\n  const handleLoader: TreeProps['loader'] = (key) => {\n    setTimeout(() => setData(currentData => {\n      const nextData = produce(currentData, (draft) => {\n        const path: string[] = key.toString().split(',');\n        let target: any = draft;\n        path.forEach((pid, i) => {\n          target = target.find((d: any) => d.id === pid);\n          if (i < path.length - 1) target = target.children;\n        });\n        target.children = [...createRange().map((i) => ({ id: `${target.id}-${i}` }))];\n      });\n\n      return nextData\n    }), 1000);\n  };\n\n  return (\n    <div>\n      <Tree\n        value={value}\n        line={false}\n        onChange={handleChange}\n        loader={handleLoader}\n        data={data}\n        keygen={(node, parentKey) => `${parentKey},${node.id}`.replace(/^,/, '')}\n        renderItem={renderItem}\n      ></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Drag",
-      "description": "Set the `onDrop` property to drag the node.",
-      "scenario": "basic",
+      "title": "可拖拽",
+      "description": "设置 `onDrop` 属性，可以拖拽节点",
+      "scenario": "advanced",
       "code": "/**\n * cn - 可拖拽\n *    -- 设置 `onDrop` 属性，可以拖拽节点\n *    -- 设置 `dragSibling` 属性，将限制节点拖拽范围至兄弟节点之间\n * en - Drag\n *    -- Set the `onDrop` property to drag the node.\n *    -- Set the `dragSibling` property to limit the node drag range to between sibling nodes\n */\n\nimport { useState } from 'react';\nimport { Tree, TYPE } from 'shineout';\nimport { createNestedArray } from './utils';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nconst d: DataItem[] = createNestedArray([4, 1, 1]);\n\nexport default () => {\n  const [data, setData] = useState(d);\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  const handleDrag: TreeProps['onDrop'] = (data) => {\n    setData(data);\n  };\n\n  return (\n    <div>\n      <Tree\n        line={false}\n        data={data}\n        onDragStart={(v) => console.log(v)}\n        keygen='id'\n        renderItem={renderItem}\n        onDrop={handleDrag}\n      ></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Drag Style",
-      "description": "Set the `dragImageStyle` property to add style to the node that follows the mouse during dragging",
-      "scenario": "basic",
+      "title": "自定义拖拽样式",
+      "description": "通过设置 `dragImageStyle` 属性为处于拖拽中跟随鼠标的节点添加样式",
+      "scenario": "advanced",
       "code": "/**\n * cn - 自定义拖拽样式\n *    -- 通过设置 `dragImageStyle` 属性为处于拖拽中跟随鼠标的节点添加样式\n * en - Drag Style\n *    -- Set the `dragImageStyle` property to add style to the node that follows the mouse during dragging\n */\n\nimport { useState } from 'react';\nimport { Tree, TYPE } from 'shineout';\nimport { createNestedArray } from './utils';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const [data, setData] = useState<TreeProps['data']>(createNestedArray([5, 2, 2]));\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  const handleDrag: TreeProps['onDrop'] = (data) => {\n    setData(data);\n  };\n\n  return (\n    <div>\n      <Tree\n        dragImageStyle={{ background: '#F1FAEB', border: '2px dashed #74D13D' }}\n        line={false}\n        data={data}\n        keygen='id'\n        renderItem={renderItem}\n        onDrop={handleDrag}\n      ></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Inline node",
-      "description": "Set the `inlineNode` property to make the node not occupy the entire row",
-      "scenario": "basic",
+      "title": "节点非占满一行",
+      "description": "设置 `inlineNode` 属性可以让节点不占满整行（鼠标移动至节点上查看效果）。",
+      "scenario": "advanced",
       "code": "/**\n * cn - 节点非占满一行\n *    -- 设置 `inlineNode` 属性可以让节点不占满整行（鼠标移动至节点上查看效果）。\n * en - Inline node\n *    -- Set the `inlineNode` property to make the node not occupy the entire row\n */\n\nimport { useState } from 'react';\nimport { Tree, Switch, TYPE } from 'shineout';\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const [inlineNode, setInlineNode] = useState(true);\n  const data = [\n    {\n      id: '0',\n      children: [\n        {\n          id: '0-0',\n          children: [\n            {\n              id: '0-0-0',\n            },\n            {\n              id: '0-0-1',\n              children: [\n                {\n                  id: '0-0-1-0',\n                },\n              ],\n            },\n          ],\n        },\n        {\n          id: '0-1',\n          children: [\n            {\n              id: '0-1-0',\n            },\n          ],\n        },\n      ],\n    },\n    {\n      id: '1',\n      children: [\n        {\n          id: '1-0',\n          children: [\n            {\n              id: '1-0-0',\n            },\n            {\n              id: '1-0-1',\n              children: [\n                {\n                  id: '1-0-1-0',\n                },\n              ],\n            },\n          ],\n        },\n        {\n          id: '1-1',\n          children: [\n            {\n              id: '1-1-0',\n            },\n          ],\n        },\n      ],\n    },\n  ];\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return `node ${node.id}`;\n  };\n\n  return (\n    <div>\n      <Switch value={inlineNode} onChange={setInlineNode} style={{ marginBottom: 12 }} />\n      <Tree inlineNode={inlineNode} data={data} keygen='id' renderItem={renderItem} />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Action on click",
-      "description": "Set `actionOnClick` to control the behavior when clicking a node, it can be 'expand', 'check', or both.",
-      "scenario": "basic",
+      "title": "点击行为",
+      "description": "设置 `actionOnClick` 设置点击节点的行为，可以是 'expand', 'check' 或者两者都有。",
+      "scenario": "advanced",
       "code": "/**\n * cn - 点击行为\n *    -- 设置 `actionOnClick` 设置点击节点的行为，可以是 'expand', 'check' 或者两者都有。\n * en - Action on click\n *    -- Set `actionOnClick` to control the behavior when clicking a node, it can be 'expand', 'check', or both.\n */\n\nimport { useState } from 'react';\nimport { Tree, Form, Checkbox, TYPE } from 'shineout';\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const data = [\n    {\n      id: '0',\n      children: [\n        {\n          id: '0-0',\n          children: [\n            {\n              id: '0-0-0',\n            },\n            {\n              id: '0-0-1',\n              children: [\n                {\n                  id: '0-0-1-0',\n                },\n              ],\n            },\n          ],\n        },\n        {\n          id: '0-1',\n          children: [\n            {\n              id: '0-1-0',\n            },\n          ],\n        },\n      ],\n    },\n    {\n      id: '1',\n      children: [\n        {\n          id: '1-0',\n          children: [\n            {\n              id: '1-0-0',\n            },\n            {\n              id: '1-0-1',\n              children: [\n                {\n                  id: '1-0-1-0',\n                },\n              ],\n            },\n          ],\n        },\n        {\n          id: '1-1',\n          children: [\n            {\n              id: '1-1-0',\n            },\n          ],\n        },\n      ],\n    },\n  ];\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return `node ${node.id}`;\n  };\n\n  const [config, setConfig] = useState<{ actionOnClick: TreeProps['actionOnClick'] }>({\n    actionOnClick: ['check'],\n  });\n  const [value, setValue] = useState<TreeProps['value']>([]);\n\n  return (\n    <>\n      <Form value={config} onChange={setConfig}>\n        <Form.Item label='配置点击行为:' labelWidth='7em' labelAlign='left'>\n          <Checkbox.Group name='actionOnClick' keygen data={['check', 'expand']} />\n        </Form.Item>\n      </Form>\n      <Tree\n        data={data}\n        keygen='id'\n        renderItem={renderItem}\n        value={value}\n        onChange={setValue}\n        actionOnClick={config.actionOnClick}\n      />\n    </>\n  );\n};\n"
     },
     {
-      "title": "Highlight",
-      "description": "Set the `highlight` property to highlight the node when clicked",
-      "scenario": "basic",
+      "title": "点击高亮",
+      "description": "设置 `highlight` 属性后在点击节点时高亮",
+      "scenario": "advanced",
       "code": "/**\n * cn - 点击高亮\n *    -- 设置 `highlight` 属性后在点击节点时高亮\n * en - Highlight\n *    -- Set the `highlight` property to highlight the node when clicked\n */\n\nimport { Tree, TYPE } from 'shineout';\nimport { createNestedArray } from './utils';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const data: DataItem[] = createNestedArray([5, 1, 1]);\n\n  const renderItem: TreeProps['renderItem'] = (node) => `node ${node.id}`;\n\n  return (\n    <Tree line={false} highlight data={data} keygen='id' renderItem={renderItem} />\n  );\n};\n"
     },
     {
-      "title": "*    -- Highlight control: set `active` and `setActive`",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- 受控高亮：设置 `active` 和 `setActive`",
+      "description": "受控高亮：设置 `active` 和 `setActive`",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 受控高亮：设置 `active` 和 `setActive`\n * en -\n *    -- Highlight control: set `active` and `setActive`\n */\n\nimport { Button, Tree, TYPE } from 'shineout';\nimport { createNestedArray } from './utils';\nimport { useState } from 'react';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const [active, setActive] = useState<string | number | undefined>();\n  const data: DataItem[] = createNestedArray([5, 1, 1]);\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  const handleClearHighlight = () => {\n    setActive(undefined);\n  }\n\n  return (\n    <div>\n      <Tree\n        active={active}\n        setActive={setActive}\n        data={data}\n        keygen='id'\n        line={false}\n        renderItem={renderItem}\n      />\n\n      <br />\n\n      <Button onClick={handleClearHighlight}>Clear highlight</Button>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Virtual list",
-      "description": "Set the `virtual` property to enable the virtual list function, this example has 100000 data",
-      "scenario": "basic",
+      "title": "虚拟列表",
+      "description": "设置 `virtual` 属性，开启虚拟列表功能，本例为 100000 条数据",
+      "scenario": "advanced",
       "code": "/**\n * cn - 虚拟列表\n *    -- 设置 `virtual` 属性，开启虚拟列表功能，本例为 100000 条数据\n *    -- 设置虚拟列表后需要指定 `height` 属性或者将其设置在固定高度容器中\n *    -- *虚拟暂不支持高级筛选模式、节点拖拽\n * en - Virtual list\n *    -- Set the `virtual` property to enable the virtual list function, this example has 100000 data\n *\n */\nimport { Tree, TYPE } from 'shineout';\nimport { createNestedArray } from './utils';\n\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nconst data: DataItem[] = createNestedArray([100, 10, 10, 10]);\n\nexport default () => {\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  return (\n    <div style={{ height: 300 }}>\n      <Tree\n        virtual\n        line={true}\n        data={data}\n        defaultExpandAll\n        keygen='id'\n        parentClickExpand\n        mode={2}\n        size=\"small\"\n        onChange={(v) => console.log(v)}\n        renderItem={renderItem}\n      ></Tree>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Size",
-      "description": "Set the `size` property to configure different sizes, with three options: `small`, `default`, and `large`",
-      "scenario": "basic",
+      "title": "尺寸",
+      "description": "设置 `size` 属性配置不同的尺寸，有 small、default、large 三种可选值",
+      "scenario": "advanced",
       "code": "/**\n * cn - 尺寸\n *    -- 设置 `size` 属性配置不同的尺寸，有 small、default、large 三种可选值\n * en - Size\n *    -- Set the `size` property to configure different sizes, with three options: `small`, `default`, and `large`\n */\nimport React from 'react';\nimport { Form, Radio, Switch, Tree, TYPE } from 'shineout';\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const data: DataItem[] = [\n    {\n      id: '0',\n      children: [\n        {\n          id: '0-0',\n          children: [\n            {\n              id: '0-0-0',\n              children: [\n                {\n                  id: '0-0-0-0',\n                },\n                {\n                  id: '0-0-0-1',\n                },\n              ],\n            },\n            {\n              id: '0-0-1',\n            },\n          ],\n        },\n        {\n          id: '0-1',\n          children: [\n            {\n              id: '0-1-0',\n            },\n          ],\n        },\n      ],\n    },\n    {\n      id: '1',\n      children: [\n        {\n          id: '1-0',\n          children: [\n            {\n              id: '1-0-0',\n            },\n          ],\n        },\n        {\n          id: '1-1',\n          children: [\n            {\n              id: '1-1-0',\n            },\n          ],\n        },\n      ],\n    },\n  ];\n\n  const renderItem: TreeProps['renderItem'] = (node) => {\n    return `node ${node.id}`;\n  };\n\n  const [size, setSize] = React.useState<'small' | 'default' | 'large'>('small');\n  const [line, setLine] = React.useState(true);\n  const [checkbox, setCheckbox] = React.useState(false);\n  const [virtual, setVirtual] = React.useState(false);\n\n  return (\n    <div>\n      <Form inline style={{ marginBottom: 12 }} colon>\n        <Form.Item label='Size'>\n          <Radio.Group\n            keygen\n            data={['small', 'default', 'large']}\n            value={size}\n            onChange={setSize}\n          />\n        </Form.Item>\n        <Form.Item label='Line'>\n          <Switch size='small' value={line} onChange={setLine} style={{ marginTop: 8 }} />\n        </Form.Item>\n        <Form.Item label='Checkbox'>\n          <Switch size='small' value={checkbox} onChange={setCheckbox} style={{ marginTop: 8 }} />\n        </Form.Item>\n        {/* <Form.Item label='Virtual'>\n          <Switch size='small' value={virtual} onChange={setVirtual} style={{ marginTop: 8 }} />\n        </Form.Item> */}\n      </Form>\n      <Tree\n        data={data}\n        keygen='id'\n        height={300}\n        renderItem={renderItem}\n        size={size}\n        defaultExpandAll\n        line={line}\n        virtual={virtual}\n        value={checkbox ? [] : undefined}\n        onChange={checkbox ? (v) => console.log(v) : undefined}\n      />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Custom icons",
-      "description": "Set the `expandIcons` property to configure custom expand/collapse icons",
-      "scenario": "basic",
+      "title": "自定义图标",
+      "description": "设置 `expandIcons` 属性配置自定义的展开/收起图标",
+      "scenario": "advanced",
       "code": "/**\n * cn - 自定义图标\n *    -- 设置 `expandIcons` 属性配置自定义的展开/收起图标\n *    -- 也可以设置 `expandIcons` 属性为函数，返回自定义的展开/收起图标\n * en - Custom icons\n *    -- Set the `expandIcons` property to configure custom expand/collapse icons\n *    -- You can also set the `expandIcons` property to a function that returns custom expand/collapse icons\n */\n\nimport { Tree, TYPE } from 'shineout';\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nconst collapseIcon = (\n  <svg viewBox='0 0 24 24' width='24px' height='24px'>\n    <path\n      d='M3 3H8.923C9.28928 3.00014 9.65067 3.08411 9.97948 3.24548C10.3083 3.40686 10.5958 3.64135 10.82 3.931L12.6 6.4H1V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3Z'\n      fill='#F7BA1E'\n    ></path>\n    <path\n      d='M20.436 6.40005C21.328 6.40005 21.651 6.49305 21.976 6.66705C22.303 6.84105 22.559 7.09705 22.733 7.42305C22.907 7.74905 23 8.07305 23 8.96305V19.436C23 20.328 22.907 20.651 22.733 20.976C22.563 21.2988 22.2995 21.5627 21.977 21.733C21.651 21.907 21.327 22 20.437 22H3.563C2.671 22 2.348 21.907 2.023 21.733C1.70051 21.5627 1.43674 21.2993 1.266 20.977C1.093 20.65 1 20.327 1 19.437V6.39905L20.436 6.40005Z'\n      fill='#F9CC45'\n    ></path>\n  </svg>\n);\n\nconst expandIcon = (\n  <svg viewBox='0 0 24 24' width='24px' height='24px'>\n    <path\n      d='M20.625 20.75C20.625 21.5 20 22.125 19.25 22.125H3L5.438 11.75C5.438 11 6.063 10.375 6.813 10.375H21.625C22.375 10.375 23 11 23 11.75L20.625 20.75Z'\n      fill='#F9CC45'\n    ></path>\n    <path\n      d='M4.75 8.375H20.25V7C20.25 6.25 19.625 6 18.875 6H11.625L9.851 3.759C9.6637 3.52229 9.42525 3.33104 9.15353 3.19959C8.8818 3.06815 8.58385 2.99991 8.282 3H2.375C1.625 3 1 3.625 1 4.375V20.75L3.438 9.75C3.375 8.937 4 8.375 4.75 8.375Z'\n      fill='#F7BA1E'\n    ></path>\n  </svg>\n);\n\nconst leafIcon = (\n  <svg viewBox='0 0 44 44' width='24px' height='24px'>\n    <path\n      fill-rule='evenodd'\n      clip-rule='evenodd'\n      d='M3.63281 7.26578C3.63281 5.25935 5.25935 3.63281 7.26577 3.63281L18.3403 3.63281C18.9922 3.63281 19.5941 3.9821 19.9175 4.54807L22.5044 9.07524C22.8278 9.64121 23.4297 9.9905 24.0816 9.9905H34.513C36.5194 9.9905 38.146 11.617 38.146 13.6235V36.1383C38.146 38.2503 36.4338 39.9624 34.3218 39.9624H7.45698C5.34495 39.9624 3.63281 38.2503 3.63281 36.1383V7.26578Z'\n      fill='url(#paint0_linear_767_26603278315253)'\n    ></path>\n    <path\n      fill-rule='evenodd'\n      clip-rule='evenodd'\n      d='M4.86895 18.0921C5.00735 16.087 6.67422 14.5313 8.68405 14.5313H36.3297C38.4346 14.5313 40.099 16.3145 39.9541 18.4144L38.7125 36.4012C38.5741 38.4062 36.9072 39.962 34.8974 39.962H7.45661C5.24091 39.962 3.48894 38.0849 3.64152 35.8745L4.86895 18.0921Z'\n      fill='url(#paint1_linear_767_2660311446405)'\n    ></path>\n    <path\n      d='M23.7296 27.859L24.2549 27.8645L24.7238 27.8754L25.1422 27.8929L25.2396 27.8984L25.3343 27.9044L25.6879 27.9338C26.4132 28.0071 26.8863 28.1464 27.3763 28.4034C28.2101 28.8407 28.8951 29.5135 29.3522 30.3349L29.4617 30.5433L29.5473 30.7247L29.5671 30.7696L29.5864 30.8146L29.6572 30.9953L29.6735 31.0411L29.6892 31.0873L29.7466 31.2774L29.7958 31.479L29.8069 31.5318L29.8175 31.5856L29.8555 31.813L29.8869 32.0629L29.9123 32.3399L29.9321 32.6483L29.9472 32.9924L29.962 33.5853L29.9705 34.542L29.9714 35.6954C29.9714 36.1636 29.5963 36.549 29.1145 36.5983L29.0097 36.6036H14.5847C14.0889 36.6036 13.6809 36.2493 13.6287 35.7942L13.623 35.6952L13.6234 34.522L13.6261 33.9752L13.6382 33.2602L13.653 32.8459L13.6742 32.4751L13.7028 32.1426L13.7112 32.0649L13.7201 31.9891L13.7615 31.7039L13.7989 31.5066L13.8421 31.321L13.9095 31.0879C13.9706 30.8991 14.0442 30.7222 14.1328 30.5433C14.5862 29.6272 15.3148 28.8772 16.2182 28.4034C16.6537 28.1749 17.0759 28.0395 17.6737 27.9607L17.9065 27.9338L18.2601 27.9044L18.3548 27.8984L18.4522 27.8929L18.8706 27.8754L19.3395 27.8645L19.8648 27.859H23.7296ZM23.6933 29.6754H19.9028L19.7827 29.6761L19.6663 29.6771L19.0414 29.6882L18.6891 29.701L18.3822 29.7187L18.1159 29.742C18.0334 29.7507 17.9567 29.7604 17.8852 29.7712L17.7815 29.7883L17.5947 29.8275C17.4201 29.8704 17.28 29.9242 17.1519 29.9914C16.6681 30.2452 16.2601 30.638 15.9759 31.1254L15.8752 31.3125L15.8425 31.3816L15.7836 31.5271L15.7325 31.6866L15.7209 31.7292L15.7098 31.773L15.6697 31.9622L15.6363 32.177L15.6289 32.2353L15.622 32.2955L15.5976 32.5577L15.5786 32.8572L15.5646 33.1989L15.5549 33.5874L15.5491 34.0274L15.5464 34.7865H28.0471L28.0424 33.8982L28.0319 33.3193L28.0144 32.8398L27.9982 32.5684L27.9779 32.3305L27.9531 32.122L27.9233 31.9386L27.8883 31.7761L27.8475 31.6302L27.8364 31.5958L27.8249 31.5621L27.7749 31.4331L27.7193 31.3125C27.4351 30.7384 26.9868 30.2769 26.4425 29.9914C26.3464 29.941 26.2436 29.8981 26.1246 29.8618L25.9998 29.8275L25.813 29.7883L25.7621 29.7795L25.7094 29.7712L25.4787 29.742L25.4157 29.7356L25.3504 29.7296L25.0647 29.7092L24.736 29.694L24.3593 29.6835L23.6933 29.6754ZM21.7972 17.2559C24.3052 17.2559 26.3384 19.289 26.3384 21.7971C26.3384 24.3051 24.3052 26.3383 21.7972 26.3383C19.2892 26.3383 17.256 24.3051 17.256 21.7971C17.256 19.289 19.2892 17.2559 21.7972 17.2559ZM21.7972 19.0723C20.2924 19.0723 19.0725 20.2922 19.0725 21.7971C19.0725 23.3019 20.2924 24.5218 21.7972 24.5218C23.302 24.5218 24.5219 23.3019 24.5219 21.7971C24.5219 20.2922 23.302 19.0723 21.7972 19.0723Z'\n      fill='url(#paint2_linear_767_26603943154657)'\n    ></path>\n    <defs>\n      <linearGradient\n        id='paint0_linear_767_26603278315253'\n        x1='-33.0435'\n        y1='4.66394'\n        x2='7.5637'\n        y2='40.76'\n        gradientUnits='userSpaceOnUse'\n      >\n        <stop stop-color='#FFDF81'></stop>\n        <stop offset='1' stop-color='#FFBB4A'></stop>\n      </linearGradient>\n      <linearGradient\n        id='paint1_linear_767_2660311446405'\n        x1='3.35938'\n        y1='14.5312'\n        x2='3.35938'\n        y2='39.962'\n        gradientUnits='userSpaceOnUse'\n      >\n        <stop stop-color='#FFDF81'></stop>\n        <stop offset='1' stop-color='#FFBB4A'></stop>\n      </linearGradient>\n      <linearGradient\n        id='paint2_linear_767_26603943154657'\n        x1='28.7165'\n        y1='36.6036'\n        x2='11.9215'\n        y2='21.5717'\n        gradientUnits='userSpaceOnUse'\n      >\n        <stop stop-color='#A96A00'></stop>\n        <stop offset='1' stop-color='#D28400' stop-opacity='0.7'></stop>\n      </linearGradient>\n    </defs>\n  </svg>\n);\n\nexport default () => {\n  const data: DataItem[] = [\n    {\n      id: '0',\n      children: [\n        {\n          id: '0-0',\n          children: [\n            {\n              id: '0-0-0',\n              children: [\n                {\n                  id: '0-0-0-0',\n                },\n              ],\n            },\n          ],\n        },\n        {\n          id: '0-1',\n          children: [\n            {\n              id: '0-1-0',\n            },\n          ],\n        },\n      ],\n    },\n  ];\n\n  const renderItem: TreeProps['renderItem'] = (node: any) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  return (\n    <div>\n      <Tree\n        defaultExpanded={['0', '0-0', '0-1']}\n        line={false}\n        data={data}\n        keygen='id'\n        renderItem={renderItem}\n        expandIcons={[collapseIcon, expandIcon]}\n        leafIcon={leafIcon}\n      />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "*    -- Set the `expandIcons` property to configure custom expand/collapse icons",
-      "description": "You can also set the `leafIcon` property to a function to return a custom leaf node icon",
-      "scenario": "basic",
+      "title": "*    -- 设置 `leafIcon` 属性为true，显示默认的叶子节点图标",
+      "description": "设置 `leafIcon` 属性为true，显示默认的叶子节点图标",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 设置 `leafIcon` 属性为true，显示默认的叶子节点图标\n *    -- 也可以设置 `leafIcon` 属性为函数，返回自定义的叶子节点图标\n * en -\n *    -- Set the `expandIcons` property to configure custom expand/collapse icons\n *    -- You can also set the `leafIcon` property to a function to return a custom leaf node icon\n */\n\nimport { Tree, TYPE } from 'shineout';\ntype TreeProps = TYPE.Tree.Props<DataItem, string[]>;\n\ninterface DataItem {\n  id: string;\n  children?: DataItem[];\n}\n\nexport default () => {\n  const data: DataItem[] = [\n    {\n      id: '0',\n      children: [\n        {\n          id: '0-0',\n          children: [\n            {\n              id: '0-0-0',\n              children: [\n                {\n                  id: '0-0-0-0',\n                },\n                {\n                  id: '0-0-0-1',\n                },\n              ],\n            },\n            {\n              id: '0-0-1',\n            },\n          ],\n        },\n        {\n          id: '0-1',\n          children: [\n            {\n              id: '0-1-0',\n            },\n          ],\n        },\n      ],\n    },\n    {\n      id: '1',\n      children: [\n        {\n          id: '1-0',\n          children: [\n            {\n              id: '1-0-0',\n            },\n          ],\n        },\n        {\n          id: '1-1',\n          children: [\n            {\n              id: '1-1-0',\n            },\n          ],\n        },\n      ],\n    },\n  ];\n\n  const renderItem: TreeProps['renderItem'] = (node: any) => {\n    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;\n  };\n\n  return (\n    <div>\n      <Tree\n        defaultExpanded={['0', '0-0', '0-0-0']}\n        line={false}\n        data={data}\n        keygen='id'\n        renderItem={renderItem}\n        leafIcon\n      />\n    </div>\n  );\n};\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 51,
-    "requiredProps": 3,
-    "propsWithWhen": 0,
-    "examplesCount": 17
-  }
+  "version": "3.7.7"
 }

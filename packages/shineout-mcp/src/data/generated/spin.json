@@ -1,7 +1,7 @@
 {
   "name": "Spin",
   "description": "用于页面和区块的加载中状态 至 页面局部处于等待异步数据或正在渲染过程时，合适的加载动效会有效缓解用户的焦虑",
-  "category": "other",
+  "category": "display",
   "importPath": "import { Spin } from 'shineout'",
   "props": [
     {
@@ -77,43 +77,36 @@
   ],
   "examples": [
     {
-      "title": "Basic",
-      "description": "Basic Spin usage",
+      "title": "基本用法",
+      "description": "基础 Spin 用法",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- 基础 Spin 用法\n * en - Basic\n *    -- Basic Spin usage\n */\nimport React from 'react';\nimport { Spin } from 'shineout';\n\nexport default () => {\n  return (\n    <div style={{ width: 20 }}>\n      <Spin name=\"ring\" size={16} />\n    </div>\n  );\n};\n"
     },
     {
-      "title": "*    -- Set different animation effects by configuring `name`, and set animation size by configuring `size`",
-      "description": "",
+      "title": "*    -- 通过配置 `name` ，可以设置不同的动画效果, 通过配置 `size` 可以设置动画大小",
+      "description": "通过配置 `name` ，可以设置不同的动画效果, 通过配置 `size` 可以设置动画大小",
       "scenario": "basic",
       "code": "/**\n * cn -\n *    -- 通过配置 `name` ，可以设置不同的动画效果, 通过配置 `size` 可以设置动画大小\n * en -\n *    -- Set different animation effects by configuring `name`, and set animation size by configuring `size`\n */\nimport React from 'react';\nimport { Spin } from 'shineout';\n\nexport default () => {\n  const names1 = [\n    // 'default',\n    'chasing-dots',\n    'cube-grid',\n    'double-bounce',\n    'fading-circle',\n    'four-dots',\n    'plane',\n  ];\n\n  const names2 = ['pulse', 'ring', 'scale-circle', 'three-bounce', 'wave', 'chasing-ring'];\n\n  const renderTip = (name: string) => {\n    return (\n      <span style={{ fontSize: 12, lineHeight: '20px', display: 'inline-block' }}>\n        {name}\n      </span>\n    );\n  };\n  return (\n    <div style={{ width: '100%', overflow: 'auto' }}>\n      <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 65, marginBottom: 32 }}>\n        {names1.map((name, index) => (\n          <div key={index} style={{ width: '16%' }}>\n            <Spin name={name as any} size={16} tip={renderTip(name)} />\n          </div>\n        ))}\n      </div>\n      <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 65 }}>\n        {names2.map((name, index) => (\n          <div key={index} style={{ width: '16%' }}>\n            <Spin key={index} name={name as any} size={16} tip={renderTip(name)} />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Basic",
-      "description": "After setting the `tip` text, you can use the `mode` property to set the layout mode: horizontal or vertical",
+      "title": "布局模式",
+      "description": "在设置 `tip` 文案后，可以通过配置 `mode` 实现不同的布局模式：horizontal 水平布局、vertical 垂直布局",
       "scenario": "basic",
       "code": "/**\n * cn - 布局模式\n *    -- 在设置 `tip` 文案后，可以通过配置 `mode` 实现不同的布局模式：horizontal 水平布局、vertical 垂直布局\n * en - Basic\n *    -- After setting the `tip` text, you can use the `mode` property to set the layout mode: horizontal or vertical\n */\nimport React from 'react';\nimport { Spin } from 'shineout';\n\nexport default () => {\n  const renderTip = () => {\n    return <span style={{ fontSize: 12 }}>Loading...</span>;\n  };\n\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>\n      <div style={{ width: 100 }}>\n        <Spin name='ring' size={16} mode='vertical' tip={renderTip()} />\n      </div>\n      <div style={{ width: 100 }}>\n        <Spin name='ring' size={16} mode='horizontal' tip={renderTip()} />\n      </div>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Wrapper",
-      "description": "Spin can be used as a container, just wrap it in the outer layer",
+      "title": "对容器使用",
+      "description": "Spin 可以当作容器使用，只需将它包裹在外层即可",
       "scenario": "basic",
       "code": "/**\n * cn - 对容器使用\n *    -- Spin 可以当作容器使用，只需将它包裹在外层即可\n * en - Wrapper\n *    -- Spin can be used as a container, just wrap it in the outer layer\n */\nimport React, { useEffect } from 'react';\nimport { Spin } from 'shineout';\n\nexport default () => {\n  const [loading, setLoading] = React.useState(false);\n  useEffect(() => {\n    setLoading(true);\n  }, []);\n  return (\n    <Spin\n      size={20}\n      tip={<span style={{ fontSize: 14 }}>loading...</span>}\n      name='ring'\n      mode='vertical'\n      loading={loading}\n    >\n      <div\n        style={{\n          width: '100%',\n          fontWeight: 300,\n          border: '1px solid #E8EBF0',\n          padding: 16,\n          boxSizing: 'border-box',\n        }}\n      >\n        <p\n          style={{\n            width: '20%',\n            height: 18,\n            background: '#E8EBF0',\n            borderRadius: 2,\n            marginBottom: 16,\n          }}\n        ></p>\n        <p\n          style={{\n            width: '100%',\n            height: 18,\n            borderRadius: 2,\n            background: '#E8EBF0',\n            marginBottom: 16,\n          }}\n        ></p>\n        <p style={{ width: '100%', height: 18, borderRadius: 2, background: '#E8EBF0' }}></p>\n      </div>\n    </Spin>\n  );\n};\n"
     },
     {
-      "title": "Tip",
-      "description": "Set the `tip` property to customize the text",
-      "scenario": "basic",
+      "title": "自定义文案",
+      "description": "通过配置 `tip` 属性来自定义文案",
+      "scenario": "advanced",
       "code": "/**\n * cn - 自定义文案\n *    -- 通过配置 `tip` 属性来自定义文案\n * en - Tip\n *    -- Set the `tip` property to customize the text\n */\nimport React from 'react';\nimport { Spin } from 'shineout';\n\nexport default () => {\n  const renderTip = () => {\n    return <div style={{ fontSize: 14 }}>This may take a while...</div>;\n  };\n  return (\n    <div style={{ width: 200 }}>\n      <Spin name='ring' size={24} tip={renderTip()} />\n    </div>\n  );\n};\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 11,
-    "requiredProps": 0,
-    "propsWithWhen": 0,
-    "examplesCount": 5
-  }
+  "version": "3.7.7"
 }

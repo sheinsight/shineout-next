@@ -92,61 +92,54 @@
   ],
   "examples": [
     {
-      "title": "Basic",
-      "description": "Basic Usage",
+      "title": "基本用法",
+      "description": "最基本的用法",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    --  最基本的用法\n * en - Basic\n *    --  Basic Usage\n */\nimport React from 'react';\nimport { Progress } from 'shineout';\n\nexport default () => {\n  return <Progress style={{ width: 400 }} value={75} />;\n};\n"
     },
     {
-      "title": "Basic",
-      "description": "set shape=\"line-pop\"，children will show in a popup",
+      "title": "弹出展示",
+      "description": "设置 shape=\"line-pop\"，children 会通过弹出框展示",
       "scenario": "basic",
       "code": "/**\n * cn - 弹出展示\n *    --  设置 shape=\"line-pop\"，children 会通过弹出框展示\n * en - Basic\n *    --  set shape=\"line-pop\"，children will show in a popup\n */\n\nimport React, { useState } from 'react';\nimport { Progress, Button } from 'shineout';\n\nlet store = 0;\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState(0);\n\n  const handleClick = (num = store) => {\n    let v = num;\n    v += Math.random() * 12;\n    if (v >= 100) {\n      v = 100;\n      setValue(v);\n    } else {\n      store = v;\n      if (store > 100) {\n        setValue(100);\n        store = 0;\n      } else {\n        setValue(v);\n        setTimeout(handleClick, 320);\n      }\n    }\n  };\n\n  return (\n    <div style={{ width: 400 }}>\n      <Progress value={value} shape='line-pop'>{`${parseInt(value.toString(), 10)}%`}</Progress>\n\n      <Button mode=\"outline\" onClick={() => handleClick(0)} style={{ marginTop: 24 }}>Start</Button>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Type",
-      "description": "There are 4 built-in style",
+      "title": "进度条状态",
+      "description": "内置了四种样式，通过 type 来调用",
       "scenario": "basic",
       "code": "/**\n * cn - 进度条状态\n *    -- 内置了四种样式，通过 type 来调用\n * en - Type\n *    -- There are 4 built-in style\n */\nimport React from 'react';\nimport { Progress } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ width: 400, display: 'flex', flexDirection: \"column\", gap: 24 }}>\n    <Progress value={100} type='success'>100%</Progress>\n    <Progress value={90} type='info'>90%</Progress>\n    <Progress value={80} type='warning'>80%</Progress>\n    <Progress value={70} type='danger'>70%</Progress>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Circle",
-      "description": "set shape to 'circle' to show circle progress",
-      "scenario": "basic",
+      "title": "环形进度条",
+      "description": "设置 shape 为 'circle' 展示环形进度条",
+      "scenario": "advanced",
       "code": "/**\n * cn - 环形进度条\n *    -- 设置 shape 为 'circle' 展示环形进度条\n * en - Circle\n *    -- set shape to 'circle' to show circle progress\n */\nimport React from 'react';\nimport { Progress } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', gap: '32px' }}>\n    <Progress value={0} shape='circle' type='info' size={64} strokeWidth={4}>0%</Progress>\n    <Progress value={60} shape='circle' type='info' size={64} strokeWidth={4}>60%</Progress>\n    <Progress value={70} shape='circle' type='warning' size={64} strokeWidth={4} icon />\n    <Progress value={100} shape='circle' type='success' size={64} strokeWidth={4} icon />\n    <Progress value={90} shape='circle' type='danger' size={64} strokeWidth={4} icon />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Line inner",
-      "description": "set shape to 'line-inner' to show line inner progress",
-      "scenario": "basic",
+      "title": "内嵌进度条",
+      "description": "设置 shape 为 'line-inner' 展示内嵌的进度条",
+      "scenario": "advanced",
       "code": "/**\n * cn - 内嵌进度条\n *    -- 设置 shape 为 'line-inner' 展示内嵌的进度条\n * en - Line inner\n *    -- set shape to 'line-inner' to show line inner progress\n */\nimport React from 'react';\nimport { Progress } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: 24, width: 400 }}>\n    <Progress value={0} shape='line-inner' type='info'>\n      0%\n    </Progress>\n    <Progress value={5} shape='line-inner' type='info'>\n      5%\n    </Progress>\n    <Progress value={40} shape='line-inner' type='info'>\n      10%\n    </Progress>\n    <Progress value={50} shape='line-inner' type='warning'>\n      50%\n    </Progress>\n    <Progress value={100} shape='line-inner' type='success'>\n      100%\n    </Progress>\n    <Progress value={60} shape='line-inner' type='danger'>\n      60%\n    </Progress>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Gradient",
-      "description": "Gradient color can be set when color is an object, recommended only in two colors",
-      "scenario": "basic",
+      "title": "渐变色",
+      "description": "当 color 为对象时可以设置渐变色, 推荐只使用两种颜色",
+      "scenario": "advanced",
       "code": "/**\n * cn - 渐变色\n *    -- 当 color 为对象时可以设置渐变色, 推荐只使用两种颜色\n * en - Gradient\n *    -- Gradient color can be set when color is an object, recommended only in two colors\n */\nimport React from 'react';\nimport { Progress } from 'shineout';\n\nconst blue = '#7949FF';\nconst green = '#19A9FA';\n\nconst App: React.FC = () => (\n  <div style={{ width: 400 }}>\n    <Progress\n      value={40}\n      color={{\n        '0%': green,\n        '100%': blue,\n      }}\n    >\n      40%\n    </Progress>\n    <br />\n    <Progress\n      value={75}\n      color={{\n        from: green,\n        to: blue,\n      }}\n      shape='line-inner'\n    >\n      75%\n    </Progress>\n    <br />\n    <Progress\n      value={60}\n      color={{\n        '0%': green,\n        '100%': blue,\n      }}\n      shape='circle'\n    >\n      60%\n    </Progress>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Size",
-      "description": "Set size or style to change the size of progress",
-      "scenario": "basic",
+      "title": "大小",
+      "description": "通过 size 或 style 来控制大小",
+      "scenario": "advanced",
       "code": "/**\n * cn - 大小\n *    -- 通过 size 或 style 来控制大小\n *    -- 通过 strokeWidth 属性来控制线框宽度\n *    -- 通过 iconSize 属性来控制图标大小\n * en - Size\n *    -- Set size or style to change the size of progress\n *   -- Set strokeWidth to change the width of line\n *  -- Set iconSize to change the size of icon\n */\nimport React, { useState } from 'react';\nimport { Progress, Radio } from 'shineout';\n\nconst sizeList = ['small', 'default', 'large'];\nconst App: React.FC = () => {\n  const [size, setSize] = useState('default');\n\n  return (\n    <div>\n      <Radio.Group\n        keygen\n        data={sizeList}\n        value={size}\n        onChange={setSize}\n        style={{ marginBottom: 24 }}\n      />\n      {size === 'small' && (\n        <>\n          <Progress style={{ width: 400 }} strokeWidth={3} value={75}>\n            <span style={{ fontSize: 12 }}>75%</span>\n          </Progress>\n          <Progress\n            shape='line-inner'\n            style={{ width: 400, marginTop: 24 }}\n            strokeWidth={16}\n            value={40}\n          >\n            <span style={{ fontSize: 12 }}>40%</span>\n          </Progress>\n          <Progress size={48} strokeWidth={4} shape='circle' value={60} style={{ marginTop: 24 }}>\n            <span style={{ fontSize: 12 }}>60%</span>\n          </Progress>\n        </>\n      )}\n      {size === 'large' && (\n        <>\n          <Progress style={{ width: 400 }} strokeWidth={8} value={75}>\n            <span style={{ fontSize: 16 }}>75%</span>\n          </Progress>\n          <Progress\n            shape='line-inner'\n            style={{ width: 400, marginTop: 24 }}\n            strokeWidth={24}\n            value={40}\n          >\n            <span>40%</span>\n          </Progress>\n          <Progress size={80} strokeWidth={4} shape='circle' value={60} style={{ marginTop: 24 }}>\n            <span style={{ fontSize: 16 }}>60%</span>\n          </Progress>\n        </>\n      )}\n      {size === 'default' && (\n        <>\n          <Progress style={{ width: 400 }} value={75}>\n            <span>75%</span>\n          </Progress>\n          <Progress shape='line-inner' style={{ width: 400, marginTop: 24 }} value={40}>\n            <span>40%</span>\n          </Progress>\n          <Progress shape='circle' value={60} style={{ marginTop: 24 }}>\n            <span>60%</span>\n          </Progress>\n        </>\n      )}\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Animation",
-      "description": "The animation for changing value",
-      "scenario": "basic",
+      "title": "动态进度条",
+      "description": "value 变更时动画效果演示",
+      "scenario": "advanced",
       "code": "/**\n * cn - 动态进度条\n *    -- value 变更时动画效果演示\n * en - Animation\n *    -- The animation for changing value\n */\nimport React, { useState } from 'react';\nimport { Button, Progress } from 'shineout';\n\nlet store = 0;\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState(0);\n\n  const handleClick = (num = store) => {\n    let v = num;\n    v += Math.random() * 12;\n    if (v >= 100) {\n      v = 100;\n      setValue(v);\n    } else {\n      store = v;\n      if (store > 100) {\n        setValue(100);\n        store = 0;\n      } else {\n        setValue(v);\n        setTimeout(handleClick, 320);\n      }\n    }\n  };\n\n  return (\n    <div>\n      <div>\n        <Progress style={{ width: 400 }} value={value}>\n          <div style={{ width: 50 }}>{`${value.toFixed(0)}%`}</div>\n        </Progress>\n      </div>\n      <div style={{ marginTop: 24 }}>\n        <Progress shape='circle' type='success' value={value}>\n          {`${value.toFixed(0)}%`}\n        </Progress>\n      </div>\n\n      <Button onClick={() => handleClick(0)} style={{ marginTop: 24 }} mode=\"outline\">\n        Start\n      </Button>\n    </div>\n  );\n};\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 13,
-    "requiredProps": 0,
-    "propsWithWhen": 0,
-    "examplesCount": 8
-  }
+  "version": "3.7.7"
 }

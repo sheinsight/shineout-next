@@ -1,7 +1,7 @@
 {
   "name": "Checkbox",
   "description": "在一组数据中，用户可通过复选框选择一个或多个数据",
-  "category": "other",
+  "category": "form",
   "importPath": "import { Checkbox } from 'shineout'",
   "props": [
     {
@@ -130,98 +130,84 @@
   ],
   "examples": [
     {
-      "title": "Base",
-      "description": "Basic Checkbox",
+      "title": "基本用法",
+      "description": "基本的 Checkbox",
       "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- 基本的 Checkbox\n * en - Base\n *    -- Basic Checkbox\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst App: React.FC = () => <Checkbox>Checkbox</Checkbox>;\n\nexport default App;\n"
     },
     {
-      "title": "Base",
-      "description": "Set the size property to change the size of the component. There are three built-in sizes: small, default, and large",
+      "title": "尺寸",
+      "description": "设置 `size` 属性改变组件的尺寸大小, 内置三种尺寸：small、default、large",
       "scenario": "basic",
       "code": "/**\n * cn - 尺寸\n *    -- 设置 `size` 属性改变组件的尺寸大小, 内置三种尺寸：small、default、large\n * en - Base\n *    -- Set the size property to change the size of the component. There are three built-in sizes: small, default, and large\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', alignItems: 'center' }}>\n    <Checkbox size={'small'}>Checkbox</Checkbox>\n    <Checkbox>Checkbox</Checkbox>\n    <Checkbox size={'large'}>Checkbox</Checkbox>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Checked",
-      "description": "The checked has three values: true(checked), false(not checked), 'indeterminate'(half-checked)",
+      "title": "状态",
+      "description": "checked 有三个值，选中(true)、未选中(false)、半选中('indeterminate')，checked 设置时为受控组件（此示例没有处理 onChange 事件）",
       "scenario": "basic",
       "code": "/**\n * cn - 状态\n *    -- checked 有三个值，选中(true)、未选中(false)、半选中('indeterminate')，checked 设置时为受控组件（此示例没有处理 onChange 事件）\n * en - Checked\n *    -- The checked has three values: true(checked), false(not checked), 'indeterminate'(half-checked)\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst App: React.FC = () => (\n  <div>\n    <div style={{ marginBottom: 12, lineHeight: 0 }}>\n      <Checkbox checked={false}>not checked</Checkbox>\n      <Checkbox checked>checked</Checkbox>\n      <Checkbox checked='indeterminate'>indeterminate</Checkbox>\n    </div>\n\n    <div style={{ lineHeight: 0 }}>\n      <Checkbox checked={false} disabled>\n        not checked\n      </Checkbox>\n      <Checkbox checked disabled>\n        checked\n      </Checkbox>\n      <Checkbox checked='indeterminate' disabled>\n        indeterminate\n      </Checkbox>\n    </div>\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Check all",
-      "description": "Set checked = 'indeterminate' to achieve half-check effect",
+      "title": "全选/半选",
+      "description": "通过设置 checked = 'indeterminate' 属性，可以实现半选效果",
       "scenario": "basic",
       "code": "/**\n * cn - 全选/半选\n *    -- 通过设置 checked = 'indeterminate' 属性，可以实现半选效果\n * en - Check all\n *    -- Set checked = 'indeterminate' to achieve half-check effect\n */\nimport React, { useState } from 'react';\nimport { Checkbox } from 'shineout';\n\nconst data = ['Option1', 'Option2', 'Option3'];\nconst getChecked = (value: string[], num: number) => {\n  if (value.length === num) return true;\n  if (value.length === 0) return false;\n  return 'indeterminate';\n};\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState<string[]>([]);\n  return (\n    <div>\n      <Checkbox\n        checked={getChecked(value, data.length)}\n        onChange={(v) => {\n          if (v) {\n            setValue(data);\n          } else {\n            setValue([]);\n          }\n        }}\n      >\n        {getChecked(value, data.length) === true ? 'UnCheckAll' : 'CheckAll'}\n      </Checkbox>\n      <Checkbox.Group\n        style={{ marginTop: 12 }}\n        data={data}\n        keygen\n        value={value}\n        onChange={setValue}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "Value",
-      "description": "When the htmlValue is set, the checkbox return the htmlValue (checked) and undefined (not checked)",
+      "title": "选中值",
+      "description": "未设置htmlValue的状态下，checkbox选中时返回true，如果设置 htmlValue，返回 htmlValue。未选中状态都是返回 undefined",
       "scenario": "basic",
       "code": "/**\n * cn - 选中值\n *    -- 未设置htmlValue的状态下，checkbox选中时返回true，如果设置 htmlValue，返回 htmlValue。未选中状态都是返回 undefined\n * en - Value\n *    -- When the htmlValue is set, the checkbox return the htmlValue (checked) and undefined (not checked)\n *    -- When the htmlValue is not set, the checkbox selected return true (checked) and undefined (not checked)\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst App: React.FC = () => (\n  <Checkbox htmlValue='ok' onChange={console.log}>\n    {'value is \"ok\"'}\n  </Checkbox>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Group",
-      "description": "A series of checkboxes group by Checkbox.Group",
-      "scenario": "basic",
+      "title": "一组复选框",
+      "description": "一组复选框可以放在 Checkbox.Group 中",
+      "scenario": "advanced",
       "code": "/**\n * cn - 一组复选框\n *    -- 一组复选框可以放在 Checkbox.Group 中\n * en - Group\n *    -- A series of checkboxes group by Checkbox.Group\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst data = [\n  { id: 1, color: 'red' },\n  { id: 2, color: 'cyan' },\n  { id: 3, color: 'blue' },\n  { id: 4, color: 'green' },\n  { id: 5, color: 'yellow' },\n  { id: 6, color: 'orange' },\n  { id: 7, color: 'violet' },\n];\n\nconst App: React.FC = () => (\n  <Checkbox.Group keygen='id' defaultValue={[3, 5]}>\n    {data.map((d) => (\n      <Checkbox key={d.id} htmlValue={d.id}>\n        {d.color}\n      </Checkbox>\n    ))}\n  </Checkbox.Group>\n);\n\nexport default App;\n"
     },
     {
-      "title": "*    -- Render a group of checkboxes from data",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- 可以直接通过数据来渲染一组 Checkbox",
+      "description": "可以直接通过数据来渲染一组 Checkbox",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- 可以直接通过数据来渲染一组 Checkbox\n * en -\n *    -- Render a group of checkboxes from data\n */\nimport React from 'react';\nimport { Checkbox, TYPE } from 'shineout';\n\ntype CheckboxGroupProps = TYPE.Checkbox.GroupProps<string, string[]>;\ntype CheckboxGroupRenderItem = CheckboxGroupProps['renderItem'];\n\nconst data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst renderItem: CheckboxGroupRenderItem = (color) => {\n  const style = { borderBottom: `solid 1px ${color}` };\n  return <span style={style}>{color}</span>;\n};\n\nconst App: React.FC = () => (\n  <Checkbox.Group\n    keygen={(c) => c}\n    data={data}\n    defaultValue={['blue', 'cyan']}\n    renderItem={renderItem}\n  />\n);\n\nexport default App;\n"
     },
     {
-      "title": "Layout",
-      "description": "The default layout is horizontal, and the block property can be set to vertical",
-      "scenario": "basic",
+      "title": "布局",
+      "description": "默认是水平布局，设置 block 属性可以改为垂直布局",
+      "scenario": "advanced",
       "code": "/**\n * cn - 布局\n *    -- 默认是水平布局，设置 block 属性可以改为垂直布局\n * en - Layout\n *    -- The default layout is horizontal, and the block property can be set to vertical\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst App: React.FC = () => (\n  <>\n    <Checkbox.Group keygen={(c) => c} data={data} defaultValue={['blue', 'cyan']} />\n    <Checkbox.Group\n      keygen={(c) => c}\n      data={data}\n      defaultValue={['blue', 'cyan']}\n      block\n      style={{ marginTop: 24, display: 'inline-block' }}\n    />\n  </>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Group disabled",
-      "description": "Set the disabled property of Checkbox.Group to true to disable all options",
-      "scenario": "basic",
+      "title": "复选框组禁用",
+      "description": "设置 Checkbox.Group 的 disabled 为 true，禁用全部选项",
+      "scenario": "advanced",
       "code": "/**\n * cn - 复选框组禁用\n *    -- 设置 Checkbox.Group 的 disabled 为 true，禁用全部选项\n * en - Group disabled\n *    -- Set the disabled property of Checkbox.Group to true to disable all options\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst App: React.FC = () => (\n  <>\n    <Checkbox.Group disabled keygen={(c) => c} data={data} defaultValue={['blue', 'cyan']} />\n  </>\n);\n\nexport default App;\n"
     },
     {
-      "title": "*    -- When the disabled property is a function, the conditional disable is implemented according to the function result",
-      "description": "",
-      "scenario": "basic",
+      "title": "*    -- disabled 为函数时，根据函数结果实现有条件禁用",
+      "description": "disabled 为函数时，根据函数结果实现有条件禁用",
+      "scenario": "advanced",
       "code": "/**\n * cn -\n *    -- disabled 为函数时，根据函数结果实现有条件禁用\n * en -\n *    -- When the disabled property is a function, the conditional disable is implemented according to the function result\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];\n\nconst App: React.FC = () => (\n  <>\n    <Checkbox.Group\n      disabled={(d) => d === 'yellow'}\n      keygen={(c) => c}\n      data={data}\n      defaultValue={['blue', 'cyan']}\n    />\n  </>\n);\n\nexport default App;\n"
     },
     {
-      "title": "OnClick",
-      "description": "Checkbox click callback",
-      "scenario": "basic",
+      "title": "点击回调",
+      "description": "点击选择框后的回调",
+      "scenario": "advanced",
       "code": "/**\n * cn - 点击回调\n *    -- 点击选择框后的回调\n * en - OnClick\n *    -- Checkbox click callback\n */\nimport React, { useState } from 'react';\nimport { Checkbox } from 'shineout';\n\nconst App: React.FC = () => {\n  const [total, setTotal] = useState(0);\n\n  return (\n    <div>\n      <Checkbox onClick={() => setTotal(total + 1)}>\n        Click Me\n        {` ${total} Times!`}\n      </Checkbox>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
       "title": "separator",
-      "description": "Set the separator by separator property",
+      "description": "通过 separator 属性设置分隔符",
       "scenario": "basic",
       "code": "/**\n * cn - separator\n *    -- 通过 separator 属性设置分隔符\n * en - separator\n *    -- Set the separator by separator property\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst data = [\n  { id: '1', color: 'red' },\n  { id: '2', color: 'cyan' },\n  { id: '3', color: 'blue' },\n  { id: '4', color: 'green' },\n  { id: '5', color: 'yellow' },\n  { id: '6', color: 'orange' },\n  { id: '7', color: 'violet' },\n];\n\nconst App: React.FC = () => (\n  <Checkbox.Group separator={','} keygen='id' defaultValue={'3,5'}>\n    {data.map((d) => (\n      <Checkbox key={d.id} htmlValue={d.id}>\n        {d.color}\n      </Checkbox>\n    ))}\n  </Checkbox.Group>\n);\n\nexport default App;\n"
     },
     {
-      "title": "Inputable",
-      "description": "Set the inputable property to true can show the input box and the return value is the value of the input box.",
+      "title": "带输入（deprecated）",
+      "description": "设置 inputable 属性可以显示输入框，返回值为输入框内容",
       "scenario": "basic",
       "code": "/**\n * cn - 带输入（deprecated）\n *    -- 设置 inputable 属性可以显示输入框，返回值为输入框内容\n * en - Inputable\n *    -- Set the inputable property to true can show the input box and the return value is the value of the input box.\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst App: React.FC = () => (\n  <Checkbox inputable onChange={console.log}>\n    more...\n  </Checkbox>\n);\n\nexport default App;\n"
-    },
-    {
-      "title": "Group OnChange",
-      "description": "The onChange of the Checkbox wrapped by Checkbox.Group can still be triggered",
-      "scenario": "basic",
-      "code": "/**\n * cn - Group OnChange\n *    -- 被Checkbox.Group包裹的Checkbox的onChange依然能触发\n * en - Group OnChange\n *    -- The onChange of the Checkbox wrapped by Checkbox.Group can still be triggered\n */\nimport React from 'react';\nimport { Checkbox } from 'shineout';\n\nconst App: React.FC = () => {\n  const [myState, setMyState] = React.useState();\n\n  console.log('myState: >>', myState);\n  const handleChange = (value, checked, raw) => {\n    console.log('value, checked, raw: >>', value, checked, raw)\n    setMyState(value)\n  }\n  return (\n    <Checkbox.Group keygen>\n      <Checkbox\n        value={myState}\n        onChange={handleChange}\n        htmlValue=\"htmlValue\"\n      >\n        {myState ? 'Checked' : 'Unchecked'}\n      </Checkbox>\n    </Checkbox.Group>\n  );\n};\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 20,
-    "requiredProps": 0,
-    "propsWithWhen": 0,
-    "examplesCount": 14
-  },
-  "subComponentApis": {}
+  "version": "3.7.7"
 }

@@ -1,10 +1,10 @@
-name: publish
+name: publish-mcp
 
 on:
   push:
     tags:
-      - 'version-*'
-      - '!version-mcp-*'
+      - 'version-mcp-*'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,29 +12,38 @@ jobs:
     strategy:
       matrix:
         node-version: [18.19.1]
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          ref: ${{ github.event.release.tag_name}}
+          ref: ${{ github.ref }}
 
       - name: Use Pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9.4.0
 
-      - name: dependencies
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: build
-        run: pnpm run build:pkg
+      - name: Build MCP package
+        run: |
+          cd packages/shineout-mcp
+          npm run generate
+          npm run build
 
-      - name: set token
+      - name: Set NPM token
         run: echo -e //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
         env:
           NPM_TOKEN: ${{ secrets.SHINEOUT_PUB_TOKEN }}
-      - name: publish
-        run: pnpm run release
-
-
+      
+      - name: Publish MCP package
+        run: node ./scripts/publish-mcp.js

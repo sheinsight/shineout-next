@@ -1,7 +1,7 @@
 {
   "name": "Skeleton",
   "description": "在页面没有加载出真实内容时，给页面提供一个大致结构的占位图形组合",
-  "category": "other",
+  "category": "display",
   "importPath": "import { Skeleton } from 'shineout'",
   "props": [
     {
@@ -55,37 +55,30 @@
   ],
   "examples": [
     {
-      "title": "Basic",
-      "description": "Set `loading` to true to enable loading state",
+      "title": "基本用法",
+      "description": "设置 `loading` 为true，开启加载状态",
       "scenario": "basic",
       "code": "/**\n* cn - 基本用法\n*    -- 设置 `loading` 为true，开启加载状态\n* en - Basic\n*    -- Set `loading` to true to enable loading state\n */\nimport { Skeleton } from 'shineout';\n\nexport default () => {\n  return (\n    <Skeleton loading>\n      <div>\n        I am the content after loading. I am the content after loading. I am the content after loading.\n      </div>\n    </Skeleton>\n  );\n};\n"
     },
     {
-      "title": "animation",
-      "description": "Set `animation` to true to enable animation",
+      "title": "动画",
+      "description": "设置 `animation` 为true，开启动画效果",
       "scenario": "basic",
       "code": "/**\n* cn - 动画\n*    -- 设置 `animation` 为true，开启动画效果\n* en - animation\n*    -- Set `animation` to true to enable animation\n */\nimport React from 'react';\nimport { Skeleton, Switch } from 'shineout';\n\nexport default () => {\n  const [animation, setAnimation] = React.useState(true);\n  return (\n    <>\n      <Switch value={animation} onChange={setAnimation} style={{ marginBottom: 24 }} />\n      <Skeleton loading animation={animation} text={{ rows: 5, width: '70%' }} image button={{ count: 2 }}>\n        <div>\n          I am the content after loading. I am the content after loading. I am the content after loading.\n        </div>\n      </Skeleton>\n    </>\n  );\n};\n"
     },
     {
-      "title": "Different elements",
-      "description": "Configure different `text`, `image` and `button` properties to render different elements",
+      "title": "不同元素",
+      "description": "配置不同的 `text`，`image` 和 `button` 属性来渲染不同的元素",
       "scenario": "basic",
       "code": "/**\n* cn - 不同元素\n*    -- 配置不同的 `text`，`image` 和 `button` 属性来渲染不同的元素\n* en - Different elements\n*    -- Configure different `text`, `image` and `button` properties to render different elements\n */\nimport React from 'react';\nimport { Skeleton } from 'shineout';\n\nconst style = {\n  marginTop: 32,\n  marginBottom: 16,\n}\n\nexport default () => {\n  return (\n    <div>\n      <p style={{marginBottom: 16}}>文本</p>\n      <Skeleton loading text={{ rows: 1 }}>I am the content after loading. </Skeleton>\n\n      <p style={style}>段落</p>\n      <Skeleton loading text={{ rows: 3, width: '70%' }}>I am the content after loading. </Skeleton>\n\n      <p style={style}>头像</p>\n      <Skeleton loading text={false} image={{ size: 'large' }}>I am the content after loading. </Skeleton>\n\n      <p style={style}>图片</p>\n      <Skeleton loading text={false} image={{ shape: 'square', size: 'large' }}>I am the content after loading. </Skeleton>\n\n      <p style={style}>按钮</p>\n      <Skeleton loading text={false} button>I am the content after loading. </Skeleton>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "Combination usage",
-      "description": "A placeholder effect that combines multiple elements such as images, text, buttons, and avatars",
-      "scenario": "basic",
+      "title": "组合用法",
+      "description": "包含图片、文字、按钮、头像等多种元素组合在一起的占位效果",
+      "scenario": "advanced",
       "code": "/**\n* cn - 组合用法\n*    -- 包含图片、文字、按钮、头像等多种元素组合在一起的占位效果\n* en - Combination usage\n*    -- A placeholder effect that combines multiple elements such as images, text, buttons, and avatars\n */\nimport React from 'react';\nimport { Skeleton } from 'shineout';\n\nconst style = {\n  marginTop: 32,\n  marginBottom: 16,\n}\n\nexport default () => {\n  return (\n    <div>\n      <p style={{marginBottom: 16}}>头像 + 文本</p>\n      <Skeleton loading text={{rows: 5, width: '70%'}} image={{size: 'large'}} style={{marginBottom: 32}}>I am the content after loading. </Skeleton>\n      <Skeleton loading text={{rows: 3, width: '70%'}} image={{size: 'large'}}>I am the content after loading. </Skeleton>\n\n      <p style={style}>图片 + 文本 + 按钮</p>\n      <Skeleton loading text={{rows: 5, width: '70%'}} image={{ shape: 'square', size: 'large' }} style={{marginBottom: 32}}>I am the content after loading. </Skeleton>\n      <Skeleton loading text={{rows: 5, width: '70%'}} image={{ shape: 'square', size: 'large' }} button={{count: 2}}>I am the content after loading. </Skeleton>\n    </div>\n  );\n};\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.10-beta.3",
-  "notes": {},
-  "apiSummary": {
-    "totalProps": 8,
-    "requiredProps": 0,
-    "propsWithWhen": 0,
-    "examplesCount": 4
-  }
+  "version": "3.7.7"
 }
