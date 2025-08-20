@@ -1,3 +1,9 @@
+## 3.8.0-beta.42
+2025-08-20
+
+### 🐞 BugFix
+- 修复 `Upload` 自定义的 `request` 没有处理 onProgress 事件时，没有加载状态的问题 ([#1319](https://github.com/sheinsight/shineout-next/pull/1319))
+
 ## 3.7.7-beta.9
 2025-07-18
 

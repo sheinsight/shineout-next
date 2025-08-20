@@ -25,9 +25,9 @@ const App: React.FC = () => {
           如何启动上传服务？
         </Button>
       </div>
-      
+
       <Upload
-        action="http://localhost:3001/api/upload?delay=3000"
+        action="http://localhost:3001/api/upload?speed=100kb/s"
         accept="*"
         value={value}
         htmlName="file"
@@ -56,10 +56,10 @@ const App: React.FC = () => {
           return '上传失败';
         }}
         renderResult={(f) => (
-          <div style={{ 
-            padding: '8px 12px', 
-            border: '1px solid #d9d9d9', 
-            borderRadius: 4, 
+          <div style={{
+            padding: '8px 12px',
+            border: '1px solid #d9d9d9',
+            borderRadius: 4,
             marginBottom: 8,
             display: 'flex',
             alignItems: 'center',
@@ -67,9 +67,9 @@ const App: React.FC = () => {
           }}>
             <span>{f.name} ({(f.size / 1024).toFixed(1)}KB)</span>
             {f.url && (
-              <a 
-                href={`http://localhost:3001${f.url}`} 
-                target="_blank" 
+              <a
+                href={f.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#1890ff' }}
               >
@@ -81,7 +81,7 @@ const App: React.FC = () => {
       >
         <Button>选择文件上传</Button>
       </Upload>
-      
+
       <div style={{ marginTop: 16, fontSize: 12, color: '#666' }}>
         <p>本示例使用本地 mock 上传服务，需要先启动服务：</p>
         <pre style={{ background: '#f5f5f5', padding: 8, borderRadius: 4 }}>
@@ -94,8 +94,9 @@ const App: React.FC = () => {
           <li>delay=3000 - 延迟3秒响应</li>
           <li>fail=true - 模拟上传失败</li>
           <li>progress=10 - 模拟进度步骤</li>
+          <li>speed=100kb/s - 模拟上传速率（支持 kb/s, mb/s）</li>
         </ul>
-        <p>示例: http://localhost:3001/api/upload?delay=3000&amp;fail=false</p>
+        <p>示例: http://localhost:3001/api/upload?speed=100kb/s</p>
       </div>
     </div>
   );
