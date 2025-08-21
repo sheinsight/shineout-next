@@ -104,20 +104,6 @@ function extractExamples(componentDir) {
         }
       }
       
-      // 确定示例场景类型
-      let scenario = 'basic';
-      const fileName = file.toLowerCase();
-      
-      if (fileName.includes('base') || fileName.includes('001')) {
-        scenario = 'basic';
-      } else if (fileName.includes('form') || fileName.includes('validation')) {
-        scenario = 'form';
-      } else if (fileName.includes('custom') || fileName.includes('render')) {
-        scenario = 'custom';
-      } else if (fileName.includes('advanced') || parseInt(fileName.match(/s-(\d+)/)?.[1] || '0') > 10) {
-        scenario = 'advanced';
-      }
-      
       examples.push({
         name: file.replace('.tsx', ''),
         title: cnTitle || enTitle || file.replace('.tsx', ''),
@@ -126,7 +112,6 @@ function extractExamples(componentDir) {
         description: cnDescription || enDescription || '',
         descriptionEn: enDescription,
         descriptionCn: cnDescription,
-        scenario,
         code: content,
         language: 'tsx'
       });
@@ -240,7 +225,6 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
   const mcpExamples = examples.map(ex => ({
     title: ex.titleEn || ex.title,
     description: ex.descriptionEn || ex.description,
-    scenario: ex.scenario,
     code: ex.code
   }));
 

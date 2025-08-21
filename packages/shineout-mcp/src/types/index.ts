@@ -21,7 +21,6 @@ export interface ComponentEvent {
 export interface ComponentExample {
   title: string;
   description?: string;
-  scenario: 'basic' | 'advanced' | 'form' | 'validation' | 'custom';
   code: string;
 }
 

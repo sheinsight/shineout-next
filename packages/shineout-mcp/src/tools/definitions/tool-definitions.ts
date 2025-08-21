@@ -320,7 +320,6 @@ Benefits:
 
 Parameters explained:
 - component: The component name to get examples for (e.g., Button, Form, Table)
-- scenario: Optional filter for specific use cases (basic/advanced/form/validation)
 
 You should:
 1. ALWAYS use this tool before showing component APIs to understand usage patterns
@@ -336,10 +335,6 @@ You should:
         component: {
           type: 'string',
           description: '组件名称',
-        },
-        scenario: {
-          type: 'string',
-          description: '使用场景：basic, advanced, form, validation',
         },
       },
       required: ['component'],
