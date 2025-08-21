@@ -4,6 +4,7 @@ import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
 import { util } from '@sheinx/hooks';
 import { create } from '@shined/reactive';
+import { getSnapshot } from '@shined/reactive/vanilla';
 import { useDragMove, useDragResize, usePersistFn, useRender } from '@sheinx/hooks';
 import { FormFooterProvider } from '../form/form-footer-context';
 
@@ -24,14 +25,13 @@ const useModalConfig = () => {
   return state.useSnapshot();
 };
 
-const setModalConfig = (option: Partial<ModalConfig>) => {
-  for (const [key, value] of Object.entries(option)) {
-    if (key in config) {
-      const k = key as keyof ModalConfig;
-      state.mutate[k] = value;
-    }
-  }
-};
+const addModalInstance = (instanceId: string) => {
+  state.mutate.instanceIds.push(instanceId)
+}
+
+const removeModalInstance = (instanceId: string) => {
+  state.mutate.instanceIds = state.mutate.instanceIds.filter(id => id !== instanceId)
+}
 
 
 let mousePosition: { x: number; y: number } | null = null;
@@ -110,17 +110,13 @@ const Modal = (props: ModalContentProps) => {
     const index = config.instanceIds.indexOf(context.instanceId);
 
     if (visible && index === -1) {
-        setModalConfig({
-          instanceIds: [...config.instanceIds, context.instanceId],
-        })
+        addModalInstance(context.instanceId)
     }
 
-    if (!visible && index > -1) {
-      setModalConfig({
-        instanceIds: config.instanceIds.filter(id => id !== context.instanceId),
-      });
+    if (!visible && index > -1 && !animation) {
+      removeModalInstance(context.instanceId)
     }
-  }, [visible, config.instanceIds])
+  }, [visible, animation, config.instanceIds])
 
   useEffect(handleMaskVisible, [visible]);
 
@@ -244,6 +240,7 @@ const Modal = (props: ModalContentProps) => {
   useEffect(() => {
     // unmount
     return () => {
+      removeModalInstance(context.instanceId)
       if (context.isMask) {
         resetDocumentOverflow();
       };
