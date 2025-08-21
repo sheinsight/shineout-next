@@ -1,7 +1,7 @@
 {
   "name": "Button",
   "description": "使用按钮触发操作和链接",
-  "category": "other",
+  "category": "general",
   "importPath": "import { Button } from 'shineout'",
   "props": [
     {
@@ -104,56 +104,120 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "按钮分为主要按钮、次要按钮、线框按钮、虚框按钮、文字按钮五种，主按钮在同一个操作区域最多出现一次",
-      "scenario": "basic",
+      "title": "Base",
+      "description": "Button is divided into five types: primary, secondary, outline, dash, and text. The primary button can only appear once in the same operation area",
       "code": "/**\n * cn - 基本用法\n *    -- 按钮分为主要按钮、次要按钮、线框按钮、虚框按钮、文字按钮五种，主按钮在同一个操作区域最多出现一次\n * en - Base\n *    -- Button is divided into five types: primary, secondary, outline, dash, and text. The primary button can only appear once in the same operation area\n */\n\nimport { Button } from 'shineout';\nexport default () => {\n  const buttonStyle = {\n    margin: 0,\n  };\n\n  return (\n    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>\n      <Button type='primary' style={buttonStyle}>\n        Primary\n      </Button>\n\n      <Button type='secondary' style={buttonStyle}>\n        Secondary\n      </Button>\n\n      <Button type='secondary' mode='outline' style={buttonStyle}>\n        Outline\n      </Button>\n\n      <Button type='secondary' mode='dashed' style={buttonStyle}>\n        Dashed\n      </Button>\n\n      <Button type='primary' mode='text' style={buttonStyle}>\n        Text\n      </Button>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "图标按钮",
-      "description": "Button 可以嵌入图标",
-      "scenario": "basic",
+      "title": "Button with icon",
+      "description": "Button can embed icons",
       "code": "/**\n * cn - 图标按钮\n *    -- Button 可以嵌入图标\n * en - Button with icon\n *    -- Button can embed icons\n */\n\nimport { Button } from 'shineout';\nimport { Icon01 } from './static/icon';\n\nexport default () => {\n  const buttonStyle = {\n    margin: 0,\n  };\n\n  return (\n    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>\n      <Button type='primary' style={buttonStyle}>\n        <Icon01 style={{ marginInlineEnd: 4 }}></Icon01>\n        Primary\n      </Button>\n      <Button type='primary' style={buttonStyle}>\n        Primary\n        <Icon01 style={{ marginInlineStart: 4 }}></Icon01>\n      </Button>\n      <Button type='primary' shape='square' style={buttonStyle}>\n        <Icon01></Icon01>\n      </Button>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "按钮形状",
-      "description": "按钮分为矩形、全圆角、方形、圆形四种",
-      "scenario": "basic",
+      "title": "Button shape",
+      "description": "Button is divided into square, circle, round, and rectangle",
       "code": "/**\n * cn - 按钮形状\n *    -- 按钮分为矩形、全圆角、方形、圆形四种\n * en - Button shape\n *    -- Button is divided into square, circle, round, and rectangle\n */\n\nimport { Button } from 'shineout';\nimport { Icon01 } from './static/icon';\n\nexport default () => {\n  const buttonStyle = {\n    margin: 0,\n  };\n\n  const iconWarpperStyle = {\n    display: 'flex',\n    alignItems: 'center',\n    justifyContent: 'center',\n    gap: 4,\n  };\n\n  return (\n    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>\n      <Button type='primary' style={buttonStyle}>\n        Primary\n      </Button>\n      <Button type='primary' shape='round' style={buttonStyle}>\n        Primary\n      </Button>\n      <Button type='primary' shape='square' style={buttonStyle}>\n        <span style={iconWarpperStyle}>\n          <Icon01></Icon01>\n        </span>\n      </Button>\n      <Button type='primary' shape='circle' style={buttonStyle}>\n        <span style={iconWarpperStyle}>\n          <Icon01></Icon01>\n        </span>\n      </Button>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "按钮尺寸",
-      "description": "按钮分为小、中、大三种尺寸，推荐及默认为尺寸「中」，可在不同场景及不同业务需求选择适合尺寸",
-      "scenario": "basic",
+      "title": "Button size",
+      "description": "Button is divided into small, medium, and large. The recommended and default size is medium. You can choose the appropriate size in different scenarios and different business needs",
       "code": "/**\n * cn - 按钮尺寸\n *    -- 按钮分为小、中、大三种尺寸，推荐及默认为尺寸「中」，可在不同场景及不同业务需求选择适合尺寸\n * en - Button size\n *    -- Button is divided into small, medium, and large. The recommended and default size is medium. You can choose the appropriate size in different scenarios and different business needs\n */\n\nimport { Button } from 'shineout';\nexport default () => {\n  const buttonStyle = {\n    margin: 0,\n  };\n\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>\n      <Button type='primary' size='small' style={buttonStyle}>\n        Primary\n      </Button>\n      <Button type='primary' style={buttonStyle}>\n        Primary\n      </Button>\n      <Button type='primary' size='large' style={buttonStyle}>\n        Primary\n      </Button>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "按钮状态",
-      "description": "按钮状态分为危险、警告、成功三种，可以与按钮类型同时生效，优先级高于按钮类型",
-      "scenario": "basic",
+      "title": "Button status",
+      "description": "Button status is divided into danger, warning, and success. It can take effect at the same time as the button type, and the priority is higher than the button type",
       "code": "/**\n * cn - 按钮状态\n *    -- 按钮状态分为危险、警告、成功三种，可以与按钮类型同时生效，优先级高于按钮类型\n * en - Button status\n *    -- Button status is divided into danger, warning, and success. It can take effect at the same time as the button type, and the priority is higher than the button type\n */\n\nimport { Button } from 'shineout';\n\nconst buttonStyle = {\n  margin: 0,\n  width: 72,\n} as React.CSSProperties;\n\nconst wrapperStyle = {\n  gap: 24,\n  display: 'flex',\n  flexWrap: 'wrap',\n  flexDirection: 'column',\n} as React.CSSProperties;\n\nconst buttonWrapperStyle = {\n  gap: 24,\n  display: 'flex',\n  flexWrap: 'wrap',\n  alignItems: 'center',\n} as React.CSSProperties;\nexport default () => {\n  return (\n    <div style={wrapperStyle}>\n      <div style={buttonWrapperStyle}>\n        <Button type='default' style={buttonStyle}>\n          Default\n        </Button>\n        <Button type='default' mode='outline' style={buttonStyle}>\n          Default\n        </Button>\n        <Button type='default' mode='dashed' style={buttonStyle}>\n          Default\n        </Button>\n        <Button type='default' mode='text' style={buttonStyle}>\n          Default\n        </Button>\n      </div>\n      <div style={buttonWrapperStyle}>\n        <Button type='primary' style={buttonStyle}>\n          Primary\n        </Button>\n        <Button type='primary' mode='outline' style={buttonStyle}>\n          Primary\n        </Button>\n        <Button type='primary' mode='dashed' style={buttonStyle}>\n          Primary\n        </Button>\n        <Button type='primary' mode='text' style={buttonStyle}>\n          Primary\n        </Button>\n      </div>\n      <div style={buttonWrapperStyle}>\n        <Button type='danger' style={buttonStyle}>\n          Danger\n        </Button>\n        <Button type='danger' mode='outline' style={buttonStyle}>\n          Danger\n        </Button>\n        <Button type='danger' mode='dashed' style={buttonStyle}>\n          Danger\n        </Button>\n        <Button type='danger' mode='text' style={buttonStyle}>\n          Danger\n        </Button>\n      </div>\n      <div style={buttonWrapperStyle}>\n        <Button type='warning' style={buttonStyle}>\n          Warning\n        </Button>\n        <Button type='warning' mode='outline' style={buttonStyle}>\n          Warning\n        </Button>\n        <Button type='warning' mode='dashed' style={buttonStyle}>\n          Warning\n        </Button>\n        <Button type='warning' mode='text' style={buttonStyle}>\n          Warning\n        </Button>\n      </div>\n      <div style={buttonWrapperStyle}>\n        <Button type='success' style={buttonStyle}>\n          Success\n        </Button>\n        <Button type='success' mode='outline' style={buttonStyle}>\n          Success\n        </Button>\n        <Button type='success' mode='dashed' style={buttonStyle}>\n          Success\n        </Button>\n        <Button type='success' mode='text' style={buttonStyle}>\n          Success\n        </Button>\n      </div>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "禁用按钮",
-      "description": "按钮的禁用状态",
-      "scenario": "basic",
+      "title": "Disabled",
+      "description": "Button disabled state",
       "code": "/**\n * cn - 禁用按钮\n *    -- 按钮的禁用状态\n * en - Disabled\n *    -- Button disabled state\n */\n\nimport { Button } from 'shineout';\nexport default () => {\n  const buttonStyle = {\n    margin: 0,\n    width: 72,\n  };\n\n  const wrapperStyle = {\n    gap: 24,\n    display: 'flex',\n    flexWrap: 'wrap',\n    flexDirection: 'column',\n  };\n\n  const buttonWrapperStyle = {\n    gap: 24,\n    display: 'flex',\n    flexWrap: 'wrap',\n    alignItems: 'center',\n  };\n\n  return (\n    <div style={wrapperStyle}>\n      <div style={buttonWrapperStyle}>\n        <Button type='primary' disabled style={buttonStyle}>\n          Primary\n        </Button>\n        <Button type='primary' disabled mode='outline' style={buttonStyle}>\n          Primary\n        </Button>\n        <Button type='primary' disabled mode='dashed' style={buttonStyle}>\n          Primary\n        </Button>\n        <Button type='primary' disabled mode='text' style={buttonStyle}>\n          Primary\n        </Button>\n      </div>\n      <div style={buttonWrapperStyle}>\n        <Button type='danger' disabled style={buttonStyle}>\n          Danger\n        </Button>\n        <Button type='danger' disabled mode='outline' style={buttonStyle}>\n          Danger\n        </Button>\n        <Button type='danger' disabled mode='dashed' style={buttonStyle}>\n          Danger\n        </Button>\n        <Button type='danger' disabled mode='text' style={buttonStyle}>\n          Danger\n        </Button>\n      </div>\n      <div style={buttonWrapperStyle}>\n        <Button type='warning' disabled style={buttonStyle}>\n          Warning\n        </Button>\n        <Button type='warning' disabled mode='outline' style={buttonStyle}>\n          Warning\n        </Button>\n        <Button type='warning' disabled mode='dashed' style={buttonStyle}>\n          Warning\n        </Button>\n        <Button type='warning' disabled mode='text' style={buttonStyle}>\n          Warning\n        </Button>\n      </div>\n      <div style={buttonWrapperStyle}>\n        <Button type='success' disabled style={buttonStyle}>\n          Success\n        </Button>\n        <Button type='success' disabled mode='outline' style={buttonStyle}>\n          Success\n        </Button>\n        <Button type='success' disabled mode='dashed' style={buttonStyle}>\n          Success\n        </Button>\n        <Button type='success' disabled mode='text' style={buttonStyle}>\n          Success\n        </Button>\n      </div>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "加载中按钮",
-      "description": "通过设置 loading 可以让一个按钮处于加载中状态，处于加载中状态的按钮不会触发点击事件",
-      "scenario": "basic",
+      "title": "Loading",
+      "description": "Set loading to make a button loading. The button in the loading state does not trigger the click event",
       "code": "/**\n * cn - 加载中按钮\n *    -- 通过设置 loading 可以让一个按钮处于加载中状态，处于加载中状态的按钮不会触发点击事件\n * en - Loading\n *    -- Set loading to make a button loading. The button in the loading state does not trigger the click event\n */\n\nimport { useState } from 'react';\nimport { Button, Gap, Icon, Message, icons } from 'shineout';\n\nconst url = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';\n\nconst ShineoutIcon = Icon(url, 'FontAwesome', 'fa');\n\nconst prefixIconStyle = {\n  marginRight: 4,\n  fontSize: 12,\n  width: 12,\n  height: 12,\n};\n\n\nexport default () => {\n  const [loadings, setLoadings] = useState([false, false, false, false]);\n\n  const handleMockLoading = (index: number) => {\n    setLoadings(prev => prev.map((loading, i) => i === index ? true : loading));\n    Message.info('Deleting...', 2);\n    setTimeout(() => {\n      setLoadings(prev => prev.map((loading, i) => i === index ? false : loading));\n      Message.success('Delete success');\n    }, 2000);\n  };\n\n  return (\n    <Gap style={{width: 400}}>\n      <Gap>\n        <Button type='primary' loading>\n          Loading\n        </Button>\n\n        <Button type='primary' loading shape='square'>\n          <ShineoutIcon name='trash-o' style={{ ...prefixIconStyle, marginRight: 0 }} />\n        </Button>\n\n        <Button type='primary' loading>\n          <ShineoutIcon name='trash-o' style={prefixIconStyle} />\n          Delete\n        </Button>\n\n        <Button type='primary' loading>\n          <ShineoutIcon name='trash-o' style={prefixIconStyle} />\n          Delete\n          <div style={{ width: 14, display: 'flex', marginLeft: 4 }}>\n            {icons.HelpCircleOutline}\n          </div>\n        </Button>\n      </Gap>\n\n      <Gap>\n        <Button type='primary' loading={loadings[0]} onClick={() => handleMockLoading(0)}>\n          Loading\n        </Button>\n\n        <Button type='primary' loading={loadings[1]} shape='square' onClick={() => handleMockLoading(1)}>\n          <ShineoutIcon name='trash-o' style={{ ...prefixIconStyle, marginRight: 0 }}/>\n        </Button>\n\n        <Button type='primary' loading={loadings[2]} onClick={() => handleMockLoading(2)}>\n          <ShineoutIcon name='trash-o' style={prefixIconStyle} />\n          Delete\n        </Button>\n\n        <Button type='primary' loading={loadings[3]} onClick={() => handleMockLoading(3)}>\n          <ShineoutIcon name='trash-o' style={prefixIconStyle} />\n          Delete\n          <div style={{ width: 14, display: 'flex', marginLeft: 4 }}>\n            {icons.HelpCircleOutline}\n          </div>\n        </Button>\n      </Gap>\n    </Gap>\n  );\n};\n"
     },
     {
-      "title": "组合按钮",
-      "description": "可用在同级多项操作，以按钮组合方式出现",
-      "scenario": "basic",
+      "title": "Group",
+      "description": "Can be used in the same level of multiple operations, in the form of button group",
       "code": "/**\n * cn - 组合按钮\n *    -- 可用在同级多项操作，以按钮组合方式出现\n * en - Group\n *    -- Can be used in the same level of multiple operations, in the form of button group\n */\n\nimport { Button } from 'shineout';\nimport { Icon02, Icon03 } from './static/icon';\n\nexport default () => {\n  return (\n    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', flexDirection: 'column' }}>\n      <Button.Group mode='text'>\n        <Button type='primary'>Publish</Button>\n        <Button type='secondary'>Publish</Button>\n        <Button type='secondary'>Publish</Button>\n        <Button type='secondary' disabled>\n          Publish\n        </Button>\n      </Button.Group>\n\n      <Button.Group type='secondary'>\n        <Button type='primary'>Publish</Button>\n        <Button>Publish</Button>\n        <Button>Publish</Button>\n        <Button>Publish</Button>\n      </Button.Group>\n\n      <Button.Group type='secondary' mode='outline'>\n        <Button>Publish</Button>\n        <Button>Publish</Button>\n        <Button>Publish</Button>\n        <Button>Publish</Button>\n      </Button.Group>\n\n      <div style={{ display: 'flex', gap: 24 }}>\n        <Button.Group type='primary'>\n          <Button>Publish</Button>\n          <Button>\n            <Icon02></Icon02>\n          </Button>\n        </Button.Group>\n\n        <Button.Group type='secondary'>\n          <Button>Publish</Button>\n          <Button>\n            <Icon03 color='#666C7C'></Icon03>\n          </Button>\n        </Button.Group>\n      </div>\n    </div>\n  );\n};\n"
     }
   ],
   "subComponents": [
-    "Group"
+    {
+      "name": "Group",
+      "description": "",
+      "whenCn": "",
+      "whenEn": ""
+    }
   ],
-  "version": "3.7.7"
+  "version": "3.7.10-beta.3",
+  "notes": {},
+  "apiSummary": {
+    "totalProps": 15,
+    "requiredProps": 0,
+    "propsWithWhen": 0,
+    "examplesCount": 8
+  },
+  "subComponentApis": {
+    "Group": {
+      "whenCn": "",
+      "whenEn": "",
+      "description": "",
+      "props": [
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "description": "自定义样式"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "自定义类名"
+        },
+        {
+          "name": "size",
+          "type": "\"small\" | \"large\" | \"default\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "不同尺寸"
+        },
+        {
+          "name": "shape",
+          "type": "\"round\"",
+          "required": false,
+          "description": "设置按钮形状"
+        },
+        {
+          "name": "mode",
+          "type": "\"text\" | \"outline\" | \"dashed\"",
+          "required": false,
+          "description": "按钮风格;如果Button和Group同时设置mode,以Group为准"
+        },
+        {
+          "name": "type",
+          "type": "| \"default\" | \"primary\" | \"secondary\" | \"danger\" | \"warning\" | \"success\" | \"link\"",
+          "required": false,
+          "defaultValue": "\\\"default\\\"",
+          "description": "按钮类型;如果Button和Group同时设置type,以Button为准"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "defaultValue": "index",
+          "description": "由 Button 组成的 array"
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "description": "按钮组id"
+        }
+      ]
+    }
+  }
 }

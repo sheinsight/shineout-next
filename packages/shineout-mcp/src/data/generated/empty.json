@@ -1,7 +1,7 @@
 {
   "name": "Empty",
   "description": "空状态时的展示占位图",
-  "category": "display",
+  "category": "other",
   "importPath": "import { Empty } from 'shineout'",
   "props": [
     {
@@ -37,30 +37,33 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "空状态组件的基础用法",
-      "scenario": "basic",
+      "title": "Basic",
+      "description": "The basic usage of Empty",
       "code": "/**\n * cn - 基本用法\n *    -- 空状态组件的基础用法\n * en - Basic\n *    -- The basic usage of Empty\n */\nimport React from 'react';\nimport { Empty } from 'shineout';\n\nexport default () => {\n  return <Empty></Empty>;\n};\n"
     },
     {
-      "title": "自定义图标和文案",
-      "description": "设置`icon`和`description`属性可以自定义图标和文案",
-      "scenario": "basic",
+      "title": "Custom icon and description",
+      "description": "Set the `icon` and `description` property to customize the icon and description",
       "code": "/**\n * cn - 自定义图标和文案\n *    -- 设置`icon`和`description`属性可以自定义图标和文案\n * en - Custom icon and description\n *    -- Set the `icon` and `description` property to customize the icon and description\n */\nimport React from 'react';\nimport { Empty } from 'shineout';\nimport { customIcon } from './static/icon';\n\nexport default () => {\n  return <Empty icon={customIcon} description='No network'></Empty>;\n};\n"
     },
     {
-      "title": "自定义图片",
-      "description": "设置`imgSrc`参数传入图片的Url",
-      "scenario": "basic",
+      "title": "Custom image",
+      "description": "Set the `imgSrc` parameter to the Url of the image",
       "code": "/**\n * cn - 自定义图片\n *    -- 设置`imgSrc`参数传入图片的Url\n * en - Custom image\n *    -- Set the `imgSrc` parameter to the Url of the image\n */\nimport React from 'react';\nimport { Empty, Button } from 'shineout';\n\nexport default () => {\n  const renderDescription = () => {\n    return <Button type='primary'>Refresh</Button>;\n  };\n  return (\n    <Empty\n      imgSrc='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'\n      description={renderDescription()}\n    ></Empty>\n  );\n};\n"
     },
     {
-      "title": "推荐状态",
-      "description": "推荐空状态的类型",
-      "scenario": "advanced",
+      "title": "Status",
+      "description": "The recommended status type of Empty",
       "code": "/**\n * cn - 推荐状态\n *    -- 推荐空状态的类型\n * en - Status\n *    -- The recommended status type of Empty\n */\nimport React from 'react';\nimport { Message } from 'shineout';\nimport {\n  noData,\n  noResult,\n  noAuth,\n  noInternet,\n  web404,\n  error,\n  noDataColorful,\n  noResultColorful,\n  noAuthColorful,\n  noInternetColorful,\n  web404Colorful,\n  errorColorful,\n} from './static/icon';\n\nexport default () => {\n  const handleCopy = (id: string) => {\n    const icon = document.getElementById(id)!.innerHTML;\n    navigator?.clipboard?.writeText(icon);\n    Message.success('svg copied successfully', 1, {\n      hideClose: true,\n    });\n  };\n\n  const renderIcon = (icon: React.ReactNode, id: string, name: string) => {\n    return (\n      <div style={{ width: 100, cursor: 'pointer' }} onClick={() => handleCopy(id)}>\n        <div id={id}>{icon}</div>\n        <div\n          style={{\n            fontSize: 14,\n            color: '#999DA8',\n            lineHeight: '20px',\n            textAlign: 'center',\n            marginTop: 8,\n          }}\n        >\n          {name}\n        </div>\n      </div>\n    );\n  };\n  return (\n    <div>\n      <div\n        style={{\n          marginBottom: 32,\n          display: 'flex',\n          gap: 32,\n          justifyContent: 'space-between',\n          flexWrap: 'wrap',\n        }}\n      >\n        {renderIcon(noData, 'noData', 'No data')}\n        {renderIcon(noResult, 'noResult', 'Search results are empty')}\n        {renderIcon(noAuth, 'noAuth', 'No permission yet')}\n        {renderIcon(noInternet, 'noInternet', 'No network')}\n        {renderIcon(web404, 'web404', '404')}\n        {renderIcon(error, 'error', 'Failed to load')}\n      </div>\n      <div\n        style={{\n          display: 'flex',\n          gap: 32,\n          justifyContent: 'space-between',\n          flexWrap: 'wrap',\n        }}\n      >\n        {renderIcon(noDataColorful, 'noDataColorful', 'No data')}\n        {renderIcon(noResultColorful, 'noResultColorful', 'Search results are empty')}\n        {renderIcon(noAuthColorful, 'noAuthColorful', 'No permission yet')}\n        {renderIcon(noInternetColorful, 'noInternetColorful', 'No network')}\n        {renderIcon(web404Colorful, 'web404Colorful', '404')}\n        {renderIcon(errorColorful, 'errorColorful', 'Failed to load')}\n      </div>\n    </div>\n  );\n};\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.7"
+  "version": "3.7.10-beta.3",
+  "notes": {},
+  "apiSummary": {
+    "totalProps": 5,
+    "requiredProps": 0,
+    "propsWithWhen": 0,
+    "examplesCount": 4
+  }
 }

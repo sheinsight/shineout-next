@@ -45,30 +45,33 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "为子元素设置水平和垂直间距",
-      "scenario": "basic",
+      "title": "Base",
+      "description": "Set horizontal and vertical spacing for child elements",
       "code": "/**\n * cn - 基本用法\n *    -- 为子元素设置水平和垂直间距\n * en - Base\n *    -- Set horizontal and vertical spacing for child elements\n */\nimport React from 'react';\nimport { Gap, Button } from 'shineout';\n\nconst App: React.FC = () => (\n  <Gap style={{ width: 400 }}>\n    {Array.from({ length: 10 }).map((_, i) => (\n      <Button key={i} type='primary'>\n        Button\n      </Button>\n    ))}\n  </Gap>\n);\n\nexport default App;\n"
     },
     {
-      "title": "自定义间距",
-      "description": "通过 row 和 column 分别来调整垂直和水平间距",
-      "scenario": "basic",
+      "title": "Custom",
+      "description": "custom the vertical and horizontal spacing by row and column",
       "code": "/**\n * cn - 自定义间距\n *    -- 通过 row 和 column 分别来调整垂直和水平间距\n *    -- 推荐优先考虑4px、8px、12px、16px、24px的间距值\n * en - Custom\n *    -- custom the vertical and horizontal spacing by row and column\n *    -- It is recommended to consider the spacing values of 4px, 8px, 12px, 16px, 24px first\n */\nimport React, { useState } from 'react';\nimport { Gap, Button, Slider } from 'shineout';\n\nconst App: React.FC = () => {\n  const [row, setRow] = useState(8);\n  const [column, setColumn] = useState(8);\n  return (\n    <>\n      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>\n        <div style={{ width: 80 }}>column:</div>\n        <Slider\n          style={{ flex: 1 }}\n          scale={[0, 100]}\n          formatScale={false}\n          defaultValue={column}\n          onChange={setColumn}\n        />\n      </div>\n      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>\n        <div style={{ width: 80 }}>row:</div>\n        <Slider\n          style={{ flex: 1 }}\n          scale={[0, 100]}\n          formatScale={false}\n          defaultValue={row}\n          onChange={setRow}\n        />\n      </div>\n      <div style={{ width: 500, border: '1px solid #e8ebf0', borderRadius: '4px', padding: 10 }}>\n        <Gap row={row} column={column}>\n          {Array.from({ length: 10 }).map((_, i) => (\n            <Button key={i} type='primary'>\n              Button\n            </Button>\n          ))}\n        </Gap>\n      </div>\n    </>\n  );\n};\n\nexport default App;\n"
     },
     {
-      "title": "垂直方向",
-      "description": "设置  flexDirection 样式来改变方向",
-      "scenario": "basic",
+      "title": "Vertical",
+      "description": "Set flexDirection to change the direction",
       "code": "/**\n * cn - 垂直方向\n *    -- 设置  flexDirection 样式来改变方向\n * en - Vertical\n *    -- Set flexDirection to change the direction\n */\nimport React from 'react';\nimport { Gap, Button } from 'shineout';\n\nconst App: React.FC = () => (\n  <Gap style={{ width: 400, flexDirection: 'column' }} row={10}>\n    {Array.from({ length: 4 }).map((_, i) => (\n      <Button key={i} type='primary'>\n        Button\n      </Button>\n    ))}\n  </Gap>\n);\n\nexport default App;\n"
     },
     {
-      "title": "对齐方式",
-      "description": "通过 alignItem 设置对齐方式",
-      "scenario": "advanced",
+      "title": "Align",
+      "description": "Set align to change the alignment",
       "code": "/**\n * cn - 对齐方式\n *    -- 通过 alignItem 设置对齐方式\n * en - Align\n *    -- Set align to change the alignment\n */\nimport React, { useState } from 'react';\nimport { Gap, Button, Radio } from 'shineout';\n\nconst App: React.FC = () => {\n  const [align, setAlign] = useState('flex-start');\n  return (\n    <>\n      <Radio.Group\n        value={align}\n        onChange={setAlign}\n        data={['flex-start', 'center', 'flex-end', 'baseline']}\n        keygen\n        defaultValue='flex-start'\n      />\n\n      <Gap\n        style={{\n          width: 160,\n          marginTop: 16,\n          border: '1px solid #e8ebf0',\n          borderRadius: '4px',\n          alignItems: align,\n          padding: 12,\n        }}\n        row={20}\n      >\n        <span>start</span>\n        <Button type='primary'>Button</Button>\n        <div\n          style={{\n            fontSize: 14,\n            background: '#f4f5f8',\n            height: 120,\n            lineHeight: '24px',\n            borderRadius: '4px',\n            padding: '12px',\n          }}\n        >\n          end\n        </div>\n      </Gap>\n    </>\n  );\n};\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.7"
+  "version": "3.7.10-beta.3",
+  "notes": {},
+  "apiSummary": {
+    "totalProps": 6,
+    "requiredProps": 0,
+    "propsWithWhen": 0,
+    "examplesCount": 4
+  }
 }

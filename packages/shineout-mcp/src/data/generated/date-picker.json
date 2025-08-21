@@ -358,199 +358,166 @@
     {
       "title": "Base",
       "description": "The basic usage",
-      "scenario": "basic",
       "code": "/**\n * cn - 基本用法\n *    -- 最基本的用法\n * en - Base\n *    -- The basic usage\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker showSelNow />\n\nexport default App;\n"
     },
     {
       "title": "Datetime Mode",
       "description": "Set type to be datetime to select date and time",
-      "scenario": "basic",
       "code": "/**\n * cn - 选择日期时间\n *    -- 设置 type 为 datetime，选择日期 + 时间\n * en - Datetime Mode\n *    -- Set type to be datetime to select date and time\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker type='datetime' />;\n\nexport default App;\n"
     },
     {
       "title": "Size",
       "description": "There are three built-in size: small、default、large",
-      "scenario": "basic",
       "code": "/**\n * cn - 尺寸\n *    -- 内置了三种尺寸，small、default、large\n * en - Size\n *    -- There are three built-in size: small、default、large\n */\nimport React from 'react';\nimport { DatePicker, TYPE, Radio } from 'shineout';\n\ntype DatePickerProps = TYPE.DatePicker.Props;\ntype DatePickerSize = DatePickerProps['size'];\n\nconst Size: DatePickerSize[] = ['small', 'default', 'large'];\n\nconst App: React.FC = () => {\n  const [size, setSize] = React.useState<DatePickerSize>('default');\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n      <Radio.Group button={'outline'} data={Size} value={size} onChange={setSize} keygen />\n      <DatePicker size={size} type='date' showSelNow />\n      <DatePicker size={size} type='datetime' showSelNow />\n      <DatePicker size={size} type='date' range showSelNow />\n      <DatePicker size={size} type='datetime' range showSelNow />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
       "title": "Week Mode",
       "description": "Set type to be week to select week",
-      "scenario": "basic",
       "code": "/**\n * cn - 选择星期\n *    -- 设置 type 为 week，选择星期\n * en - Week Mode\n *    -- Set type to be week to select week\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker type='week' />;\n\nexport default App;\n"
     },
     {
       "title": "Month Mode",
       "description": "Set type to be month to select month",
-      "scenario": "basic",
       "code": "/**\n * cn - 选择月\n *    -- 设置 type 为 month，选择月\n * en - Month Mode\n *    -- Set type to be month to select month\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker type='month' />;\n\nexport default App;\n"
     },
     {
       "title": "Quarter Mode",
       "description": "Set type to be quarter to select month",
-      "scenario": "basic",
       "code": "/**\n * cn - 选择季度\n *    -- 设置 type 为 quarter，选择季度\n * en - Quarter Mode\n *    -- Set type to be quarter to select month\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker type='quarter' />;\n\nexport default App;\n"
     },
     {
       "title": "Year Mode",
       "description": "Set type to be year to select year",
-      "scenario": "basic",
       "code": "/**\n * cn - 选择年\n *    -- 设置 type 为 year，选择年\n * en - Year Mode\n *    -- Set type to be year to select year\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => <DatePicker type='year' />;\n\nexport default App;\n"
     },
     {
       "title": "Time Mode",
       "description": "Set type to be time to select time and automatically load the corresponding selection column according to the format property",
-      "scenario": "basic",
       "code": "/**\n * cn - 选择时间\n *    -- 设置 type 为 time，选择时间，根据 format 自动加载相应的选择列\n * en - Time Mode\n *    -- Set type to be time to select time and automatically load the corresponding selection column according to the format property\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst now = Date.now();\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n    <DatePicker type='time' defaultValue={now} showSelNow />\n    <DatePicker type='time' format='HH:mm' defaultValue={now} />\n    <DatePicker type='time' format='hh:mm A' defaultValue={now} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "Step",
       "description": "Set step of TimePicker",
-      "scenario": "basic",
       "code": "/**\n * cn -\n *    -- 步进设置\n * en - Step\n *    -- Set step of TimePicker\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst step: number = 2;\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', gap: '24px' }}>\n    <DatePicker placeholder='Hour Step' type='time' hourStep={step} />\n    <DatePicker placeholder='Minute Step' type='time' minuteStep={step} />\n    <DatePicker placeholder='Second Step' type='time' secondStep={step} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "Range",
       "description": "Set the range property to select range, the input value and return value is an array of length 2",
-      "scenario": "basic",
       "code": "/**\n * cn - 范围选择\n *    -- 设置 range 属性可以选择范围，输入和返回的 value 为长度为 2 的数组\n * en - Range\n *    --Set the range property to select range, the input value and return value is an array of length 2\n */\nimport React from 'react';\nimport { DatePicker, Radio, TYPE } from 'shineout';\n\ntype DateType = TYPE.DatePicker.Props['type'];\nconst types: DateType[] = ['date', 'week', 'month', 'quarter', 'year', 'time', 'datetime'];\n\nconst App: React.FC = () => {\n  const [type, setType] = React.useState<DateType>('date');\n  return (\n    <div>\n      <Radio.Group\n        button={'outline'}\n        data={types}\n        value={type}\n        onChange={setType}\n        keygen\n        style={{ marginBottom: 24 }}\n      />\n      <br />\n      <DatePicker type={type} range defaultTime={['00:00:00', '23:59:59']} />\n    </div>\n  );\n};\nexport default App;\n"
     },
     {
       "title": "Quick select",
       "description": "can configure some options for quick selection. The date can be Date, timestamp, or string. The string needs to be in the same format as the format",
-      "scenario": "basic",
       "code": "/**\n * cn - 快速选择\n *    -- 可以配置一些快速选择的选项, 日期可以是 Date, 时间戳, 或者字符串,字符串需要和所格式填写的 format 一致\n *    -- 其中配置项 `name` 为选项名称 `value` 为选项值 `immediate` 设置为 true 后将会在点击后立即关闭弹窗并触发 onChange\n *    -- 注意，快速选择的选项如果为 new Date 等动态值，选中后的激活交互会失效。如需维持激活状态，需要使用固定值\n *    -- 配置项 `immediate` 在开启 `needConfirm` 后不生效\n * en - Quick select\n *    -- can configure some options for quick selection. The date can be Date, timestamp, or string. The string needs to be in the same format as the format\n *    -- Note that if the quick selection option is a dynamic value such as new Date, the activation interaction after selection will fail. If you need to maintain the activation state, you need to use a fixed value\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst QuickSelectData = [\n  { name: 'Today', value: () => Date.now() },\n  {\n    name: 'A week later',\n    value: () => {\n      const now = Date.now();\n      return now + 7 * 24 * 60 * 60 * 1000;\n    },\n  },\n  {\n    name: 'A month later',\n    value: () => {\n      const now = Date.now();\n      const date = new Date(now) ;\n      const year = date.getFullYear();\n      const nextMonth = date.getMonth() + 1;\n      const day = date.getDate();\n      return new Date(year, nextMonth, day).getTime();\n    },\n  },\n];\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n    <DatePicker placeholder='Quick Date' quickSelect={QuickSelectData} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "Select confirm",
       "description": "Select confirm",
-      "scenario": "basic",
       "code": "/**\n * cn - 确认选择\n *    -- 设置`needConfirm`属性后开启手动确认按钮。默认会在选择值或者失去焦点时提交。\n * en - Select confirm\n *    -- Select confirm\n */\nimport React from 'react';\nimport { Checkbox, DatePicker, Radio, TYPE } from 'shineout';\n\ntype DateType = TYPE.DatePicker.Props['type'];\nconst types: DateType[] = ['date', 'week', 'month', 'quarter', 'year', 'time', 'datetime'];\n\nconst App: React.FC = () => {\n  const [dateValue, setDateValue] = React.useState<Date | Date[]>();\n  const [type, setType] = React.useState<DateType>('date');\n  const [isRange, setIsRange] = React.useState(true);\n  const [isConfirm, setIsConfirm] = React.useState(true);\n  return (\n    <div>\n      <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>\n        <Radio.Group keygen button={'outline'} data={types} value={type} onChange={setType} />\n        <Checkbox value={isRange} onChange={(v) => setIsRange(!!v)} style={{ margin: 0 }}>\n          范围选择\n        </Checkbox>\n        <Checkbox value={isConfirm} onChange={(v) => setIsConfirm(!!v)} style={{ margin: 0 }}>\n          启用确认\n        </Checkbox>\n      </div>\n      <br />\n      <DatePicker\n        type={type}\n        defaultTime={['00:00:00', '23:59:59']}\n        range={isRange}\n        showSelNow\n        value={dateValue}\n        onChange={(v) => {\n          console.log('外部的onChange: ', v);\n          setDateValue(v);\n        }}\n        clearable\n        needConfirm={isConfirm}\n      />\n    </div>\n  );\n};\nexport default App;\n"
     },
     {
       "title": "Disabled",
       "description": "Disabled date picker",
-      "scenario": "basic",
       "code": "/**\n * cn - 禁用\n *    -- 日期选择框禁用状态\n * en - Disabled\n *    -- Disabled date picker\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst Now = Date.now();\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n    <DatePicker disabled={true} defaultValue={Now} width={240} />\n    <DatePicker range disabled={true} defaultValue={['2017-05-10', '2017-05-20']} width={240} />\n    <DatePicker range disabled={[false, true]} defaultValue={['2017-05-10', '2017-05-20']} width={240} />\n    <DatePicker range disabled={[true, false]} defaultValue={['2017-05-10', '2017-05-20']} width={240} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "Disabled date",
       "description": "When `disabled` is a function, you can disable some date according to the return value",
-      "scenario": "basic",
       "code": "/**\n * cn - 不可选取的时间\n *    -- 当 `disabled` 为函数时，可以根据返回值禁用某些时间\n * en - Disabled date\n *    -- When `disabled` is a function, you can disable some date according to the return value\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst Now = Date.now();\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', gap: '24px' }}>\n    <DatePicker\n      type='datetime'\n      inputable\n      defaultValue={Now}\n      disabled={(d) => {\n        return d.getDay() === 0 || d.getDay() === 6;\n      }}\n    />\n\n    <DatePicker\n      type='time'\n      defaultValue='14:30:30'\n      disabled={(d) => {\n        if (d.getHours() > 15) return true;\n        return false;\n      }}\n    />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "*    -- The disabledTime attribute supports separate disable time",
       "description": "",
-      "scenario": "basic",
       "code": "/**\n * cn -\n *    -- disabledTime 属性支持单独禁用时间。\n * en -\n *    -- The disabledTime attribute supports separate disable time\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst Now = Date.now();\n\nconst App: React.FC = () => (\n  <div>\n    <DatePicker\n      type='datetime'\n      defaultValue={Now}\n      defaultTime='10:00:00'\n      disabledTime={(time) => time === '12:00:00'}\n    />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "*    -- Disable both special date and special time",
       "description": "",
-      "scenario": "basic",
       "code": "/**\n * cn -\n *    -- 同时禁用日期和时间\n * en -\n *    -- Disable both special date and special time\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => (\n  <div>\n    <DatePicker\n      inputable\n      type='datetime'\n      defaultValue={'2023-10-12 12:00:00'}\n      style={{ marginInlineEnd: 12 }}\n      disabled={(d) => {\n        return d.getDay() === 0 || d.getDay() === 6;\n      }}\n      disabledTime={'11:00:00'}\n    />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "Inputable",
       "description": "Set `inputable` to make date inputable",
-      "scenario": "basic",
       "code": "/**\n * cn - 可输入\n *    -- 设置 `inputable` 使日期可输入\n * en - Inputable\n *    -- Set `inputable` to make date inputable\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n    <DatePicker inputable type=\"datetime\" />\n    <DatePicker type={'datetime'} inputable range absolute />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "Absolute",
       "description": "If the parent container of the pop-up layer is occluded, you can set the absolute property to make the pop-up options rendered in a separate layer. (not recommended if not necessary)",
-      "scenario": "basic",
       "code": "/**\n * cn - 绝对定位\n *    -- 如果选项弹出层的父容器被遮挡，可以设置 absolute 属性使弹出选项在单独层中渲染。（非必要情况下不建议）\n * en - Absolute\n *    -- If the parent container of the pop-up layer is occluded, you can set the absolute property to make the pop-up options rendered in a separate layer. (not recommended if not necessary)\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst Now = Date.now();\n\nconst App: React.FC = () => (\n  <div\n    style={{\n      padding: 10,\n      overflow: 'hidden',\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '24px',\n    }}\n  >\n    <DatePicker\n      absolute\n      format='x'\n      type='datetime'\n      defaultValue={new Date()}\n      formatResult='YYYY-MM-DD HH:mm:ss'\n      width={240}\n    />\n    <DatePicker absolute inputable range defaultValue={['2018-05-25', '2018-06-05']} width={240} />\n    <DatePicker absolute type='time' defaultValue={Now} width={240} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "inner title",
       "description": "-- use innerTitle to display the inner title",
-      "scenario": "basic",
       "code": "/**\n * cn - 内嵌标题\n *    -- 使用 innerTitle 展示内嵌标题\n * en - inner title\n *    -- -- use innerTitle to display the inner title\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n    <DatePicker size=\"small\" type='date' innerTitle='Select date' clearable showSelNow width={240} />\n    <DatePicker type='date' innerTitle='Select date' clearable showSelNow width={240} />\n    <DatePicker size=\"large\" type='date' innerTitle='Select date' clearable showSelNow width={240} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "Position",
       "description": "Set `Position` can control the different position of DatePicker",
-      "scenario": "basic",
       "code": "/**\n * cn - 弹出框位置\n *    -- 通过设置 `position` 指定弹出面板的位置。默认为自动\n * en - Position\n *    -- Set `Position` can control the different position of DatePicker\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst style = { width: 160 };\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', gap: 24, flexFlow: 'row wrap' }}>\n    <DatePicker style={style} type='date' placeholder='top-left' position='top-left' />\n    <DatePicker style={style} type='date' placeholder='top-right' position='top-right' />\n    <DatePicker style={style} type='date' placeholder='bottom-left' position='bottom-left' />\n    <DatePicker style={style} type='date' placeholder='bottom-right' position='bottom-right' />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "timeZone",
       "description": "set timeZone",
-      "scenario": "basic",
       "code": "/**\n * cn - 时区\n *    -- 设置 timeZone\n * en - timeZone\n *    -- set timeZone\n */\nimport React, { useState } from 'react';\nimport { DatePicker, Select } from 'shineout';\n\nconst offsetList = new Array(26).fill(undefined).map((_, index) => {\n  const num = index - 12;\n  const abs = Math.abs(num);\n  const str = abs < 10 ? `0${abs}` : `${abs}`;\n  return `${num < 0 ? '-' : '+'}${str}`;\n});\n\nconst App: React.FC = () => {\n  const [tz, setTz] = useState('+08');\n  return (\n    <div>\n      <DatePicker\n        format='X'\n        timeZone={tz}\n        type='datetime'\n        defaultValue={new Date()}\n        placeholder='Select datetime'\n        onChange={(d) => console.log(d)}\n        formatResult='YYYY-MM-DD HH:mm:ss'\n      />\n      <Select\n        keygen\n        renderItem={(d) => d}\n        width={90}\n        value={tz}\n        data={offsetList}\n        onChange={(v) => setTz(v)}\n        style={{ marginInlineStart: 12 }}\n      />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
       "title": "Clearable",
       "description": "Could be clearable",
-      "scenario": "basic",
       "code": "/**\n * cn - 可清空\n *    -- 允许清空内容\n * en - Clearable\n *    -- Could be clearable\n */\nimport React from 'react'\nimport { DatePicker } from 'shineout'\n\nconst App: React.FC = () => (\n  <div>\n    <DatePicker\n      clearable\n      defaultValue=\"2022-02-22\"\n      onChange={v => {\n        console.log(v)\n      }}\n      type=\"date\"\n      placeholder=\"Select date\"\n    />\n  </div>\n)\nexport default App\n"
     },
     {
       "title": "*    -- onChange get undefined while clear value",
       "description": "",
-      "scenario": "basic",
       "code": "/**\n * cn -\n *    -- 在清空值时抛出抛出 undefined\n * en -\n *    -- onChange get undefined while clear value\n */\nimport React, { useState } from 'react';\nimport { DatePicker, Input, TYPE } from 'shineout';\n\ntype DatePickerValue = TYPE.DatePicker.Value;\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState<DatePickerValue>('2022-02-22');\n  return (\n    <div>\n      <DatePicker\n        clearable\n        type='date'\n        value={value}\n        clearWithUndefined\n        onChange={setValue}\n        style={{ marginBottom: 24 }}\n      />\n      <Input.Group style={{ width: 240 }} disabled>\n        <b>Value</b>\n        <Input value={String(value)} />\n      </Input.Group>\n    </div>\n  );\n};\nexport default App;\n"
     },
     {
       "title": "DefaultPickerValue",
       "description": "default date of panel，work under has no value",
-      "scenario": "basic",
       "code": "/**\n * cn - 面板默认时间\n *    -- 打开面板后的默认时间，仅在未选择日期时生效\n * en - DefaultPickerValue\n *    -- default date of panel，work under has no value\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n    <DatePicker defaultPickerValue='2022-09' type='date' width={240} />\n\n    <DatePicker range type='date' defaultPickerValue={['2022-11', '2022-12']} width={240} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "allow single",
       "description": "can set range select only select single",
-      "scenario": "basic",
       "code": "/**\n * cn - 允许单选\n *    -- 可以设置范围选择的时候只选择一侧.\n * en - allow single\n *    -- can set range select only select single\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => (\n  <DatePicker range allowSingle type='datetime' onChange={(d) => console.log(d)} />\n);\n\nexport default App;\n"
     },
     {
       "title": "Format",
       "description": "The format attribute defines the format of the return value",
-      "scenario": "form",
       "code": "/**\n * cn - 格式化\n *    -- 传入值可为 日期对象，时间戳，字符串，通过format 属性可以定义返回值的格式.\n *    -- 支持通过 formatResult 属性单独格式化值展示格式.\n *    -- 注: 我们使用dayjs格式化\n * en - Format\n *    -- The format attribute defines the format of the return value\n *    -- support formatResult attribute to format the display format separately\n *    -- tip: we use dayjs format\n */\nimport React, { useState } from 'react';\nimport { DatePicker, Input, TYPE } from 'shineout';\n\ntype DatePickerProps = TYPE.DatePicker.Props;\ntype DatePickerValue = TYPE.DatePicker.Value;\ntype DatePickerFormat = DatePickerProps['format'];\n\ntype InputProps = TYPE.Input.Props;\ntype InputOnChange = InputProps['onChange'];\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState<DatePickerValue>(new Date());\n  const [format, setFormat] = useState<DatePickerFormat>('YYYY-M-D HH:mm');\n  const [formatResult, setFormatResult] = useState<DatePickerFormat>('YY/MM/DD');\n  const [formatResultValue, setFormatResultValue] = useState<DatePickerValue>(new Date());\n\n  const handleFormatChange: InputOnChange = (v) => setFormat(v);\n\n  const handleFormatResultChange: InputOnChange = (v) => setFormatResult(v);\n\n  return (\n    <div>\n      <DatePicker\n        value={value}\n        format={format}\n        type='datetime'\n        placeholder='format date'\n        style={{ marginBottom: 24 }}\n        onChange={setValue}\n      />\n\n      <Input.Group width={240} style={{ marginBottom: 32 }}>\n        <Input style={{ flex: 1 }} value='format' disabled />\n        <Input\n          style={{ flex: 3 }}\n          placeholder='格式化'\n          value={format}\n          onChange={handleFormatChange}\n        />\n      </Input.Group>\n\n      <DatePicker\n        type='datetime'\n        format='YYYY-MM-DD HH:mm:ss'\n        placeholder='format date'\n        value={formatResultValue}\n        formatResult={formatResult}\n        onChange={setFormatResultValue}\n        style={{ marginBottom: 24 }}\n      />\n\n      <Input.Group width={240} style={{ marginBottom: 24 }} disabled>\n        <Input style={{ flex: 1 }} value='value' />\n        <Input style={{ flex: 3 }} placeholder='值' value={String(formatResultValue)} />\n      </Input.Group>\n\n      <Input.Group width={240}>\n        <Input style={{ flex: 3 }} value='formatResult' disabled />\n        <Input\n          style={{ flex: 4 }}\n          placeholder='展示格式化'\n          value={formatResult}\n          onChange={handleFormatResultChange}\n        />\n      </Input.Group>\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
       "title": "min max date",
       "description": "The basic usage",
-      "scenario": "basic",
       "code": "/**\n * cn - 最大最小时间\n *    -- 可以通过设置 min/max 去设置一个选择时间的最大最小值. 推荐在单选且datetime 类型下使用\n * en - min max date\n *    -- The basic usage\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst Now = Date.now();\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n    <DatePicker type='datetime' min={Now} placeholder='Select min datetime' />\n\n    <DatePicker\n      min={Now}\n      type='datetime'\n      max={Now + 4 * 86400000}\n      placeholder='Select min/max datetime'\n    />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "controlled",
       "description": "value onChange",
-      "scenario": "basic",
       "code": "/**\n * cn - 完全受控\n *    -- value onChange\n * en - controlled\n *    -- value onChange\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App = () => {\n  const [v, setV] = React.useState('');\n  return (\n    <DatePicker\n      type='date'\n      placeholder='Select date'\n      value={v}\n      onChange={(d: string) => {\n        console.log(d);\n        setV(d);\n      }}\n    />\n  );\n};\n\nexport default App;\n"
     },
     {
       "title": "timepicker range max",
       "description": "timepicker max 和 range 一起使用导致禁用逻辑错误",
-      "scenario": "basic",
       "code": "/**\n * cn - timepicker range max\n *    -- timepicker max 和 range 一起使用导致禁用逻辑错误\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst date = new Date('2022/02/24 23:59:59');\n\nconst App = () => (\n  <div>\n    <DatePicker\n      type='datetime'\n      defaultValue={['2022-02-17 00:00:00', '2022-02-24 00:00:00']}\n      range={7 * 24 * 3600}\n      style={{ marginTop: '12px' }}\n      placeholder='Select datetime'\n      max={date}\n    />\n  </div>\n);\nexport default App;\n"
     },
     {
       "title": "Dropdown list controlled by open property",
       "description": "The dropdown list of Datepicker controlled by open property",
-      "scenario": "basic",
       "code": "/**\n * cn - 控制弹层（受控）\n *    -- DatePicker 通过 open 控制弹层的显示和隐藏。请注意，将面板设置成常开时，建议同时设置 position 属性，否则面板易遮挡其他内容。\n * en -  Dropdown list controlled by open property\n *    -- The dropdown list of Datepicker controlled by open property\n */\nimport React, { useState } from 'react';\nimport { DatePicker, Button } from 'shineout';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n  const handleClose = (close: boolean) => {\n    setOpen(close);\n  };\n  return (\n    <div style={{ display: 'flex' }}>\n      <Button id='control' onClick={() => setOpen(true)}>\n        Open elastic layer\n      </Button>\n      <DatePicker open={open} onCollapse={handleClose} type='date' placeholder='Select date' />\n    </div>\n  );\n};\n\nexport default App;\n"
     },
     {
       "title": "focus blur 事件",
       "description": "",
-      "scenario": "basic",
       "code": "/**\n * cn - focus blur 事件\n */\n\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => (\n  <DatePicker\n    showSelNow\n    inputable\n    range\n    absolute\n    type={'date'}\n    onFocus={() => {\n      console.log('focus');\n    }}\n    onBlur={() => {\n      console.log('blur');\n    }}\n  />\n);\n\nexport default App;\n"
     },
     {
       "title": "Border style",
       "description": "Set the status property to change the border style",
-      "scenario": "basic",
       "code": "/**\n * cn - 边框样式\n *    -- 设置 status 属性可以改变边框样式\n * en - Border style\n *    -- Set the status property to change the border style\n */\nimport React from 'react';\nimport { DatePicker } from 'shineout';\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', gap: '24px' }}>\n    <DatePicker status='error' showSelNow onChange={(v) => console.log(v)} />\n    <DatePicker tip='i am a tip' onChange={(v) => console.log(v)} />\n    <DatePicker\n      tip='i am a tip'\n      error='something wrong'\n      popover\n      showSelNow\n      onChange={(v) => console.log(v)}\n    />\n  </div>\n);\n\nexport default App;\n"
     },
     {
       "title": "Remote Multi-language",
       "description": "Test getting multi-language data from remote",
-      "scenario": "basic",
       "code": "/**\n * cn - 远程多语言\n *    -- 测试从远程获取多语言数据\n * en - Remote Multi-language\n *    -- Test getting multi-language data from remote\n */\nimport React, { useEffect } from 'react';\nimport { Radio, DatePicker, setLocale } from 'shineout';\n\nfunction  transData(data) {\n  // 拍平数据\n  if (!data || typeof data !== 'object') {\n    return data\n  }\n  const keys = Object.keys(data)\n  const lans = Object.keys(data[keys[0]]).filter(name => name!== 'nid')\n  const result = lans.reduce((result, lan)=> {\n    result[lan] = {}\n    return result\n  }, {})\n\n  for (let i = 0; i < keys.length; i++) {\n    const key = keys[i]\n    const myRe = /(^[^\\.^\\[]+)|(\\.([^\\.^\\[]+))|\\[([\\d]+?)\\]/g\n    let myArray;\n    let temp = {...result}\n    const path = lans.reduce((r, lan)=>{r[lan] = []; return r}, {})\n    while ((myArray = myRe.exec(key)) !== null) {\n      const  msg = myArray[0]\n      const isArr = msg[0] === '['\n      const name = msg.replace(/\\.|\\[|\\]/g, '')\n      const isLast = myRe.lastIndex === key.length\n      lans.forEach((lan)=>{\n        const before = path[lan].reduce((vv, kk) => {\n          if (!vv[kk]) {\n            vv[kk]= isArr ? [] : {}\n          }\n          return vv[kk]\n        }, temp[lan])\n        if (isLast) {\n          before[name] = data[key][lan]\n        } else {\n          path[lan].push(name)\n        }\n      })\n    }\n  }\n  return result\n}\n\nfunction handleWeek(data) {\n  if (!data) return\n  const lans = Object.keys(data)\n  lans.forEach((lan)=>{\n    const locale = data[lan]\n    locale.startOfWeek = Number(locale.startOfWeek)\n    const {long, narrow, short} = locale.weekdayValues\n    locale.weekdayValues.long = long.slice(locale.startOfWeek).concat(long.slice(0, locale.startOfWeek))\n    locale.weekdayValues.narrow = narrow.slice(locale.startOfWeek).concat(narrow.slice(0, locale.startOfWeek))\n    locale.weekdayValues.short = short.slice(locale.startOfWeek).concat(short.slice(0, locale.startOfWeek))\n  })\n\n}\ninterface getLocaleType{\n  (lan: string, config?: {version?: string, timeout?: number, project?: 'shineout' | 'shineout-mobile' | 'shineout-next'}) : Promise<unknown>\n}\nlet getLocale:getLocaleType\ngetLocale = function (lan: string, {version = 'latest', timeout= 5000, project = 'shineout'} = {}): Promise<unknown> {\n  return new Promise((resolve, reject) => {\n    let timer\n    if (!lan) {reject(new Error('语言必传'))}\n    if (window.XMLHttpRequest)\n    {\n      const xmlhttp: XMLHttpRequest = new window.XMLHttpRequest();\n      const nid = {\n        'shineout': 117,\n        'shineout-next': 117,\n        'shineout-mobile': 125\n      }[project] || 117\n\n      const url = 'https://assets.dotfashion.cn/webassets/babel_tower_snap/frontend/production/'+ nid + '/' + version +'/'+ lan +'.json'\n      xmlhttp.open(\"get\", url, true)\n      xmlhttp.onreadystatechange = function() {\n        if (xmlhttp.readyState==4 && xmlhttp.status==200)\n        {\n          if (timer) {clearTimeout(timer)}\n          const data  = JSON.parse(this.responseText);\n          if (data && data.code === 0) {\n            const ret = transData(data.data)\n            // shineout-next 不需要处理周数据\n            if (nid === 117 && project === 'shineout') {\n              handleWeek(ret)\n            }\n            resolve(ret[lan])\n          } else {\n            reject(new Error('获取数据异常'))\n          }\n        }\n      }\n      xmlhttp.onerror = function () {\n        reject(new Error('获取数据失败'))\n      }\n       timer = setTimeout(()=>{\n          xmlhttp.abort()\n          reject(new Error('请求数据超时 10s'))\n      }, timeout)\n      xmlhttp.send();\n    } else {\n      reject(new Error('浏览器版本过低无法加载语言包'))\n    }\n  })\n}\n\n\nconst App: React.FC = () => {\n  const [lang, setLang] = React.useState('CN')\n\n  useEffect(()=>{\n    getLocale(lang, {project: 'shineout-next'}).then((res)=>{\n      console.log('remote locale: >>', res)\n      setLocale(res)\n    })\n  }, [lang])\n\n\n  return <div>\n    <Radio.Group keygen data={['CN', 'US']} value={lang} onChange={(v) => setLang(v)}>\n\n    </Radio.Group>\n    <DatePicker showSelNow range onChange={(v) => console.log(v)} />\n  </div>\n};\n\nexport default App;\n"
     }
   ],

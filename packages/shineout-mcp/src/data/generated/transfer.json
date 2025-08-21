@@ -1,7 +1,7 @@
 {
   "name": "Transfer",
   "description": "在两栏中移动元素，完成选择行为，左栏是“源”，右边是“目标”",
-  "category": "form",
+  "category": "other",
   "importPath": "import { Transfer } from 'shineout'",
   "props": [
     {
@@ -257,72 +257,78 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "基础 Transfer 使用",
-      "scenario": "basic",
+      "title": "Base",
+      "description": "Base Transfer",
       "code": "/**\n * cn - 基本用法\n *    -- 基础 Transfer 使用\n * en - Base\n *    -- Base Transfer\n */\nimport { Transfer } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  return (\n    <div style={{ width: 600 }}>\n      <Transfer data={data} keygen='id' listHeight={232} renderItem='name'></Transfer>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "尺寸",
-      "description": "内置三种尺寸，small、default、large",
-      "scenario": "basic",
+      "title": "Size",
+      "description": "There are three built-in sizes, small, default, and large",
       "code": "/**\n * cn - 尺寸\n *    -- 内置三种尺寸，small、default、large\n * en - Size\n *    -- There are three built-in sizes, small, default, and large\n */\nimport { useState } from 'react';\nimport { Transfer, Radio } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\nconst radios = ['small', 'default', 'large'];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  const [radio, setRadio] = useState<'small' | 'default' | 'large'>('default');\n\n  return (\n    <div>\n      <Radio.Group\n        style={{ marginBottom: 24 }}\n        keygen\n        value={radio}\n        onChange={setRadio}\n        data={radios}\n      ></Radio.Group>\n      <Transfer data={data} size={radio} keygen='id' listHeight={232} renderItem='name'></Transfer>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "简单模式",
-      "description": "通过开启 `simple` 属性，可以使用简单模式",
-      "scenario": "basic",
+      "title": "Simple",
+      "description": "By turning on the `simple` property, you can use the simple mode. In simple mode, `selectKeys` and `onSelectChange` are not valid",
       "code": "/**\n * cn - 简单模式\n *    -- 通过开启 `simple` 属性，可以使用简单模式\n *    -- 简单模式下`selectedKeys`和`onSelectChange`不生效\n * en - Simple\n *    -- By turning on the `simple` property, you can use the simple mode. In simple mode, `selectKeys` and `onSelectChange` are not valid\n *    -- In simple mode, `selectKeys` and `onSelectChange` are not valid\n */\nimport { Transfer } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  return (\n    <Transfer\n      simple\n      data={data}\n      defaultValue={['id-7', 'id-8', 'id-9']}\n      keygen='id'\n      format='id'\n      listHeight={232}\n      renderItem='name'\n    ></Transfer>\n  );\n};\n"
     },
     {
-      "title": "筛选",
-      "description": "通过`onFilter`属性设置自定义筛选方法",
-      "scenario": "advanced",
+      "title": "Filter",
+      "description": "Set custom filter method through the `onFilter` property",
       "code": "/**\n * cn - 筛选\n *    -- 通过`onFilter`属性设置自定义筛选方法\n * en - Filter\n *    -- Set custom filter method through the `onFilter` property\n */\nimport { Transfer } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  const handleFilter = (text: string, item: { id: string; name: string }) => {\n    return item.name.indexOf(text) > -1;\n  };\n  return (\n    <Transfer\n      data={data}\n      keygen='id'\n      listHeight={188}\n      renderItem='name'\n      searchPlaceholder='Input search text'\n      onFilter={handleFilter}\n    ></Transfer>\n  );\n};\n"
     },
     {
-      "title": "自定义渲染筛选",
-      "description": "通过`renderFilter`获取过滤参数实现自定义渲染过滤区域",
-      "scenario": "advanced",
+      "title": "Custom render filter",
+      "description": "Use `renderFilter` to get the filter parameters to achieve custom rendering of the filter area",
       "code": "/**\n * cn - 自定义渲染筛选\n *    -- 通过`renderFilter`获取过滤参数实现自定义渲染过滤区域\n * en - Custom render filter\n *    -- Use `renderFilter` to get the filter parameters to achieve custom rendering of the filter area\n */\nimport { Transfer, Input, TYPE } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\ntype FilterProps = TYPE.Transfer.TransferFilterProps;\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  const handleFilter = (text: string, item: { id: string; name: string }) => {\n    return item.name.indexOf(text) > -1;\n  };\n\n  const renderFilter = (filterProps: FilterProps) => {\n    return (\n      <div style={{ display: 'flex', padding: '8px 12px 4px 12px' }}>\n        <Input\n          placeholder='Custom filter'\n          onChange={filterProps.onFilter as (text?: string) => void}\n        />\n      </div>\n    );\n  };\n\n  return (\n    <Transfer\n      data={data}\n      keygen='id'\n      listHeight={188}\n      renderItem='name'\n      searchPlaceholder='Input search text'\n      onFilter={handleFilter}\n      renderFilter={renderFilter}\n    ></Transfer>\n  );\n};\n"
     },
     {
-      "title": "自定义渲染",
-      "description": "支持自定义渲染标题、按钮、底部内容区域",
-      "scenario": "advanced",
+      "title": "Custom render",
+      "description": "Support custom rendering of title, button, and bottom content area",
       "code": "/**\n * cn - 自定义渲染\n *    -- 支持自定义渲染标题、按钮、底部内容区域\n * en - Custom render\n *    -- Support custom rendering of title, button, and bottom content area\n */\nimport { Transfer, Button } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  const renderFooter = () => {\n    return (\n      <div\n        style={{\n          width: '100%',\n          height: '100%',\n          display: 'flex',\n          alignItems: 'center',\n          padding: '8px 12px',\n          boxSizing: 'border-box',\n        }}\n      >\n        <Button type='secondary'>Button</Button>\n      </div>\n    );\n  };\n\n  return (\n    <div style={{ width: '100%', overflow: 'auto' }}>\n      <div style={{ minWidth: 530 }}>\n        <Transfer\n          titles={['Source', 'Target']}\n          footers={[renderFooter(), renderFooter()]}\n          data={data}\n          keygen='id'\n          operations={['To right', 'To left']}\n          listHeight={184}\n          renderItem='name'\n        ></Transfer>\n      </div>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "加载中",
-      "description": "设置`loading`属性可以显示加载中状态",
-      "scenario": "advanced",
+      "title": "Loading",
+      "description": "Set the `loading` property to display the loading state",
       "code": "/**\n * cn - 加载中\n *    -- 设置`loading`属性可以显示加载中状态\n * en - Loading\n *    -- Set the `loading` property to display the loading state\n */\nimport { Transfer } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  return <Transfer data={data} loading keygen='id' listHeight={232} renderItem='name'></Transfer>;\n};\n"
     },
     {
-      "title": "*    -- `loading`属性支持数组类型，可以对每个列表设置不同的加载状态",
-      "description": "`loading`属性支持数组类型，可以对每个列表设置不同的加载状态",
-      "scenario": "advanced",
+      "title": "*    -- The `loading` property supports array types, which can set different loading states for each list",
+      "description": "",
       "code": "/**\n * cn -\n *    -- `loading`属性支持数组类型，可以对每个列表设置不同的加载状态\n * en -\n *    -- The `loading` property supports array types, which can set different loading states for each list\n */\nimport { Transfer } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  return (\n    <Transfer\n      data={data}\n      loading={[true, false]}\n      keygen='id'\n      listHeight={232}\n      renderItem='name'\n    ></Transfer>\n  );\n};\n"
     },
     {
-      "title": "受控",
-      "description": "支持组件受控",
-      "scenario": "advanced",
+      "title": "Controlled",
+      "description": "The value of Transfer can be controlled",
       "code": "/**\n * cn - 受控\n *    -- 支持组件受控\n *    -- 可以通过`format`属性指定最终获取的数据类型，默认返回选中的数据项\n * en - Controlled\n *    -- The value of Transfer can be controlled\n *   -- The data type of the final value can be specified by the `format` property. The default is to return the selected data item\n */\nimport { useState } from 'react';\nimport { Transfer } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  const [value, setValue] = useState([]);\n\n  const handleChange = (v: { id: string; name: string }, dataItem) => {\n    console.log('======================')\n    console.log('dataItem: >>', dataItem)\n    console.log('======================')\n    setValue(v);\n  };\n\n  return (\n    <div>\n      <Transfer\n        data={data}\n        value={value}\n        onChange={handleChange}\n        keygen='id'\n        listHeight={232}\n        renderItem='name'\n      ></Transfer>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "勾选受控",
-      "description": "勾选项支持受控",
-      "scenario": "advanced",
+      "title": "Selected control",
+      "description": "The selected item supports controlled",
       "code": "/**\n * cn - 勾选受控\n *    -- 勾选项支持受控\n *    -- 注意，勾选项返回值为`keygen`所组成的数组\n * en - Selected control\n *    -- The selected item supports controlled\n *    -- Note that the return value of the selected item is an array of `keygen`\n */\nimport { useState } from 'react';\nimport { Transfer } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  const [selectedKeys, setSelectedKeys] = useState([]);\n\n  const handleSelectedChange = (source, target) => {\n    setSelectedKeys([...source, ...target]);\n  };\n\n  return (\n    <div>\n      <Transfer\n        data={data}\n        selectedKeys={selectedKeys}\n        onSelectChange={handleSelectedChange}\n        keygen='id'\n        listHeight={232}\n        renderItem='name'\n      ></Transfer>\n    </div>\n  );\n};\n"
     },
     {
-      "title": "大数据性能",
-      "description": "Transfer 默认开启虚拟列表，支持大数据渲染",
-      "scenario": "advanced",
+      "title": "Big data",
+      "description": "Transfer turns on virtual list by default, supports rendering of large data",
       "code": "/**\n * cn - 大数据性能\n *    -- Transfer 默认开启虚拟列表，支持大数据渲染\n *    -- 本例数据量为10万\n * en - Big data\n *    -- Transfer turns on virtual list by default, supports rendering of large data\n *    -- The amount of data in this example is 100,000\n */\nimport { Transfer } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\nfor (let i = 0; i < 100000; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  return <Transfer data={data} keygen='id' listHeight={232} renderItem='name'></Transfer>;\n};\n"
+    },
+    {
+      "title": "Different height",
+      "description": "Transfer with different height",
+      "code": "/**\n * cn - 左右高度不同\n *    -- 左右高度不同的 Transfer\n * en - Different height\n *    -- Transfer with different height\n */\nimport { Transfer, Input } from 'shineout';\n\nconst data: { id: string; name: string }[] = [];\n\ninterface FilterProps {\n  text?: string;\n  disabled: boolean;\n  onFilter?: (text: string) => void;\n  placeholder?: string;\n  isSource?: boolean;\n}\n\nfor (let i = 0; i < 10; i++) {\n  data.push({\n    id: `id-${i}`,\n    name: `name-${i + 1}`,\n  });\n}\n\nexport default () => {\n  const handleFilter = (text: string, item: { id: string; name: string }) => {\n    return item.name.indexOf(text) > -1;\n  };\n\n  const renderFilter = (filterProps: FilterProps) => {\n    if(filterProps.isSource) {\n      return <div style={{width: 200}}>\n        <Input placeholder=\"请输入\" />\n        <Input placeholder=\"请输入\" />\n      </div>\n    }\n\n    return (\n      <div style={{ display: 'flex' }}>\n        <Input\n          placeholder='Custom filter'\n          onChange={filterProps.onFilter as (text?: string) => void}\n        />\n      </div>\n    );\n  };\n\n  return (\n    <Transfer\n      data={data}\n      keygen='id'\n      listHeight={188}\n      renderItem='name'\n      searchPlaceholder='Input search text'\n      onFilter={handleFilter}\n      renderFilter={renderFilter}\n    ></Transfer>\n  );\n};\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.7"
+  "version": "3.7.10-beta.3",
+  "tips": [
+    "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+    "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+    "❌ 避免在 Form 中同时使用 name 和 value/onChange"
+  ],
+  "notes": {},
+  "apiSummary": {
+    "totalProps": 40,
+    "requiredProps": 1,
+    "propsWithWhen": 0,
+    "examplesCount": 12
+  }
 }

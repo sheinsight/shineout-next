@@ -1,7 +1,7 @@
 {
   "name": "Rate",
   "description": "评分打星组件",
-  "category": "form",
+  "category": "other",
   "importPath": "import { Rate } from 'shineout'",
   "props": [
     {
@@ -135,66 +135,90 @@
   ],
   "examples": [
     {
-      "title": "基本用法",
-      "description": "Rate 为一个函数，创建一个指定图标或文字的 Rate 组件，供多处复用",
-      "scenario": "basic",
+      "title": "Base",
+      "description": "Rate is a function that creates a new custom Rate component that specifies an icon or text",
       "code": "/**\n * cn - 基本用法\n *    -- Rate 为一个函数，创建一个指定图标或文字的 Rate 组件，供多处复用\n * en - Base\n *    -- Rate is a function that creates a new custom Rate component that specifies an icon or text\n */\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst star = (\n  <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>\n    <path d='M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59415 22.7575 6.29763 22.3824L11.999 19.343L17.7023 22.3825L17.7988 22.4279C18.5105 22.7194 19.2948 22.1128 19.1578 21.3281L18.054 15.008L22.6997 10.46L22.7779 10.3745C23.2586 9.78723 22.9242 8.86973 22.1443 8.75601L15.758 7.825L12.895 2.05544C12.5264 1.31273 11.4661 1.31545 11.1013 2.06004L8.276 7.825Z' />\n  </svg>\n);\n\nconst StarRate = Rate(star, star);\n\nconst App: React.FC = () => <StarRate />;\n\nexport default App;\n"
     },
     {
-      "title": "半选",
-      "description": "Rate 是否允许半选",
-      "scenario": "basic",
+      "title": "Semi selection",
+      "description": "Rate whether to allow semi selection",
       "code": "/**\n * cn - 半选\n *    -- Rate 是否允许半选\n * en - Semi selection\n *    -- Rate whether to allow semi selection\n */\n\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst star = (\n  <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>\n    <path d='M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59415 22.7575 6.29763 22.3824L11.999 19.343L17.7023 22.3825L17.7988 22.4279C18.5105 22.7194 19.2948 22.1128 19.1578 21.3281L18.054 15.008L22.6997 10.46L22.7779 10.3745C23.2586 9.78723 22.9242 8.86973 22.1443 8.75601L15.758 7.825L12.895 2.05544C12.5264 1.31273 11.4661 1.31545 11.1013 2.06004L8.276 7.825Z' />\n  </svg>\n);\n\nconst StarRate = Rate(star, star);\n\nconst App: React.FC = () => <StarRate allowHalf defaultValue={3.5} />;\n\nexport default App;\n"
     },
     {
-      "title": "大小",
-      "description": "通过 size 属性可以设置大小",
-      "scenario": "basic",
+      "title": "Size",
+      "description": "Set the size through the size property",
       "code": "/**\n * cn - 大小\n *    -- 通过 size 属性可以设置大小\n * en - Size\n *    -- Set the size through the size property\n */\n\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst star = (\n  <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>\n    <path d='M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59415 22.7575 6.29763 22.3824L11.999 19.343L17.7023 22.3825L17.7988 22.4279C18.5105 22.7194 19.2948 22.1128 19.1578 21.3281L18.054 15.008L22.6997 10.46L22.7779 10.3745C23.2586 9.78723 22.9242 8.86973 22.1443 8.75601L15.758 7.825L12.895 2.05544C12.5264 1.31273 11.4661 1.31545 11.1013 2.06004L8.276 7.825Z' />\n  </svg>\n);\n\nconst titleStyle = { marginBottom: 8, fontSize: 16, fontWeight: '500' };\nconst StarRate = Rate(star, star);\n\nconst App: React.FC = () => (\n  <div>\n    <div style={titleStyle}>16px</div>\n    <StarRate size={16} style={{ marginBottom: 32 }} />\n    <div style={titleStyle}>24px</div>\n    <StarRate size={24} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "附加文字",
-      "description": "text 属性可以为每个选项附加文字",
-      "scenario": "advanced",
+      "title": "Text",
+      "description": "Set text property to append text to each item",
       "code": "/**\n * cn - 附加文字\n *    -- text 属性可以为每个选项附加文字\n * en - Text\n *    -- Set text property to append text to each item\n */\n\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst star = (\n  <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>\n    <path d='M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59415 22.7575 6.29763 22.3824L11.999 19.343L17.7023 22.3825L17.7988 22.4279C18.5105 22.7194 19.2948 22.1128 19.1578 21.3281L18.054 15.008L22.6997 10.46L22.7779 10.3745C23.2586 9.78723 22.9242 8.86973 22.1443 8.75601L15.758 7.825L12.895 2.05544C12.5264 1.31273 11.4661 1.31545 11.1013 2.06004L8.276 7.825Z' />\n  </svg>\n);\n\nconst StarRate = Rate(star, star);\n\nconst App: React.FC = () => (\n  <StarRate allowHalf defaultValue={4} text={['poor', 'fair', 'good', 'very good', 'excellent']} />\n);\n\nexport default App;\n"
     },
     {
-      "title": "只读",
-      "description": "设置 disabled 标示为只读，只读状态下，value可以传入小数",
-      "scenario": "advanced",
+      "title": "Disabled",
+      "description": "Set disabled to true make it be read-only. When disabled, value can be passed in decimals",
       "code": "/**\n * cn - 只读\n *    -- 设置 disabled 标示为只读，只读状态下，value可以传入小数\n * en - Disabled\n *    -- Set disabled to true make it be read-only. When disabled, value can be passed in decimals\n */\n\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst star = (\n  <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>\n    <path d='M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59415 22.7575 6.29763 22.3824L11.999 19.343L17.7023 22.3825L17.7988 22.4279C18.5105 22.7194 19.2948 22.1128 19.1578 21.3281L18.054 15.008L22.6997 10.46L22.7779 10.3745C23.2586 9.78723 22.9242 8.86973 22.1443 8.75601L15.758 7.825L12.895 2.05544C12.5264 1.31273 11.4661 1.31545 11.1013 2.06004L8.276 7.825Z' />\n  </svg>\n);\n\nconst StarRate = Rate(star, star);\n\nconst App: React.FC = () => <StarRate value={3.6} disabled />;\n\nexport default App;\n"
     },
     {
-      "title": "分级显示",
-      "description": "创建组件时可以使用数组显示不同分数下的选项，这种情况下，不支持带小数的value",
-      "scenario": "advanced",
+      "title": "Array",
+      "description": "You can use arrays to display items with different scores when creating components. In this case, values with decimals are not supported",
       "code": "/**\n * cn - 分级显示\n *    -- 创建组件时可以使用数组显示不同分数下的选项，这种情况下，不支持带小数的value\n * en - Array\n *    -- You can use arrays to display items with different scores when creating components. In this case, values with decimals are not supported\n */\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst defaultIcon = (\n  <svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      fillRule='evenodd'\n      clipRule='evenodd'\n      d='M16 29.0909C23.2299 29.0909 29.0909 23.2299 29.0909 16C29.0909 8.77009 23.2299 2.90909 16 2.90909C8.77006 2.90909 2.90906 8.77009 2.90906 16C2.90906 23.2299 8.77006 29.0909 16 29.0909ZM20.1653 14.8099C21.1511 14.8099 21.9504 14.0107 21.9504 13.0248C21.9504 12.0389 21.1511 11.2397 20.1653 11.2397C19.1794 11.2397 18.3801 12.0389 18.3801 13.0248C18.3801 14.0107 19.1794 14.8099 20.1653 14.8099ZM11.8347 14.8099C12.8206 14.8099 13.6198 14.0107 13.6198 13.0248C13.6198 12.039 12.8206 11.2397 11.8347 11.2397C10.8488 11.2397 10.0495 12.039 10.0495 13.0248C10.0495 14.0107 10.8488 14.8099 11.8347 14.8099ZM10.9091 20C10.9091 19.3975 11.3975 18.9091 12 18.9091H20C20.6025 18.9091 21.0909 19.3975 21.0909 20C21.0909 20.6025 20.6025 21.0909 20 21.0909H12C11.3975 21.0909 10.9091 20.6025 10.9091 20Z'\n      fill='#E8EBF0'\n    />\n  </svg>\n);\n\nconst cryIcon0 = (\n  <svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      fillRule='evenodd'\n      clipRule='evenodd'\n      d='M16 29.0909C23.2299 29.0909 29.0909 23.2299 29.0909 16C29.0909 8.77009 23.2299 2.90909 16 2.90909C8.77012 2.90909 2.90912 8.77009 2.90912 16C2.90912 23.2299 8.77012 29.0909 16 29.0909ZM10.2754 10.884C10.406 11.1841 10.8529 11.5374 11.5396 11.5374C12.2262 11.5374 12.6731 11.1841 12.8037 10.884C13.0003 10.4319 13.5261 10.2248 13.9782 10.4214C14.4302 10.618 14.6373 11.1438 14.4407 11.5959C13.9685 12.6818 12.7782 13.3226 11.5396 13.3226C10.301 13.3226 9.11067 12.6818 8.6384 11.5959C8.44181 11.1438 8.64891 10.618 9.10096 10.4214C9.55302 10.2248 10.0788 10.4319 10.2754 10.884ZM20.4629 11.5374C19.7762 11.5374 19.3293 11.1841 19.1987 10.884C19.0021 10.4319 18.4763 10.2248 18.0243 10.4214C17.5722 10.618 17.3651 11.1438 17.5617 11.5959C18.034 12.6818 19.2243 13.3226 20.4629 13.3226C21.7014 13.3226 22.8917 12.6818 23.364 11.5959C23.5606 11.1438 23.3535 10.618 22.9015 10.4214C22.4494 10.2248 21.9236 10.4319 21.727 10.884C21.5964 11.1841 21.1495 11.5374 20.4629 11.5374ZM11.2573 22.1879C11.1262 22.7759 10.5432 23.1463 9.95513 23.0152C9.36709 22.884 8.9967 22.301 9.12785 21.713C9.83008 18.5644 12.639 16.2101 16.0004 16.2101C19.3617 16.2101 22.1707 18.5644 22.8729 21.713C23.004 22.301 22.6336 22.884 22.0456 23.0152C21.4575 23.1463 20.8745 22.7759 20.7434 22.1879C20.2588 20.0153 18.3179 18.3919 16.0004 18.3919C13.6828 18.3919 11.7419 20.0153 11.2573 22.1879Z'\n      fill='#FFC91A'\n    />\n  </svg>\n);\n\nconst cryIcon = (\n  <svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      fillRule='evenodd'\n      clipRule='evenodd'\n      d='M16 29.0909C23.2299 29.0909 29.0909 23.2299 29.0909 16C29.0909 8.77009 23.2299 2.90909 16 2.90909C8.77006 2.90909 2.90906 8.77009 2.90906 16C2.90906 23.2299 8.77006 29.0909 16 29.0909ZM21.9504 13.0248C21.9504 14.0107 21.1511 14.8099 20.1653 14.8099C19.1794 14.8099 18.3801 14.0107 18.3801 13.0248C18.3801 12.0389 19.1794 11.2397 20.1653 11.2397C21.1511 11.2397 21.9504 12.0389 21.9504 13.0248ZM16 19.4708C14.3046 19.4708 12.8188 20.6196 12.2772 22.2871C12.0911 22.8602 11.4757 23.1738 10.9027 22.9877C10.3297 22.8016 10.016 22.1862 10.2021 21.6132C11.0093 19.1278 13.2765 17.289 16 17.289C18.7234 17.289 20.9907 19.1278 21.7979 21.6132C21.984 22.1862 21.6703 22.8016 21.0973 22.9877C20.5243 23.1738 19.9089 22.8602 19.7228 22.2871C19.1812 20.6196 17.6954 19.4708 16 19.4708ZM11.8347 14.8099C12.8206 14.8099 13.6198 14.0107 13.6198 13.0248C13.6198 12.039 12.8206 11.2397 11.8347 11.2397C10.8488 11.2397 10.0495 12.039 10.0495 13.0248C10.0495 14.0107 10.8488 14.8099 11.8347 14.8099Z'\n      fill='#FFC91A'\n    />\n  </svg>\n);\n\nconst normallyIcon = (\n  <svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      fillRule='evenodd'\n      clipRule='evenodd'\n      d='M16 29.0909C23.2299 29.0909 29.0909 23.2299 29.0909 16C29.0909 8.77009 23.2299 2.90909 16 2.90909C8.77006 2.90909 2.90906 8.77009 2.90906 16C2.90906 23.2299 8.77006 29.0909 16 29.0909ZM20.1653 14.8099C21.1511 14.8099 21.9504 14.0107 21.9504 13.0248C21.9504 12.0389 21.1511 11.2397 20.1653 11.2397C19.1794 11.2397 18.3801 12.0389 18.3801 13.0248C18.3801 14.0107 19.1794 14.8099 20.1653 14.8099ZM11.8347 14.8099C12.8206 14.8099 13.6198 14.0107 13.6198 13.0248C13.6198 12.039 12.8206 11.2397 11.8347 11.2397C10.8488 11.2397 10.0495 12.039 10.0495 13.0248C10.0495 14.0107 10.8488 14.8099 11.8347 14.8099ZM10.9091 20C10.9091 19.3975 11.3975 18.9091 12 18.9091H20C20.6025 18.9091 21.0909 19.3975 21.0909 20C21.0909 20.6025 20.6025 21.0909 20 21.0909H12C11.3975 21.0909 10.9091 20.6025 10.9091 20Z'\n      fill='#FFC91A'\n    />\n  </svg>\n);\n\nconst happyIcon0 = (\n  <svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      fillRule='evenodd'\n      clipRule='evenodd'\n      d='M16 29.0909C23.2299 29.0909 29.0909 23.2299 29.0909 16C29.0909 8.77009 23.2299 2.90909 16 2.90909C8.77006 2.90909 2.90906 8.77009 2.90906 16C2.90906 23.2299 8.77006 29.0909 16 29.0909ZM20.1653 14.8099C21.1511 14.8099 21.9504 14.0107 21.9504 13.0248C21.9504 12.0389 21.1511 11.2397 20.1653 11.2397C19.1794 11.2397 18.3801 12.0389 18.3801 13.0248C18.3801 14.0107 19.1794 14.8099 20.1653 14.8099ZM11.8347 14.8099C12.8206 14.8099 13.6198 14.0107 13.6198 13.0248C13.6198 12.039 12.8206 11.2397 11.8347 11.2397C10.8488 11.2397 10.0495 12.039 10.0495 13.0248C10.0495 14.0107 10.8488 14.8099 11.8347 14.8099ZM16 20.8596C14.3046 20.8596 12.8188 19.7108 12.2772 18.0432C12.0911 17.4702 11.4757 17.1565 10.9027 17.3427C10.3297 17.5288 10.016 18.1442 10.2021 18.7172C11.0093 21.2026 13.2765 23.0414 16 23.0414C18.7234 23.0414 20.9907 21.2026 21.7979 18.7172C21.984 18.1442 21.6703 17.5288 21.0973 17.3427C20.5243 17.1565 19.9089 17.4702 19.7228 18.0432C19.1812 19.7108 17.6954 20.8596 16 20.8596Z'\n      fill='#FFC91A'\n    />\n  </svg>\n);\n\nconst happyIcon = (\n  <svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>\n    <path\n      fillRule='evenodd'\n      clipRule='evenodd'\n      d='M16 29.0909C23.2299 29.0909 29.0909 23.2299 29.0909 16C29.0909 8.77009 23.2299 2.90909 16 2.90909C8.77006 2.90909 2.90906 8.77009 2.90906 16C2.90906 23.2299 8.77006 29.0909 16 29.0909ZM11.5395 12.1322C10.8529 12.1322 10.4059 12.4855 10.2754 12.7857C10.0788 13.2378 9.55295 13.4449 9.1009 13.2483C8.64885 13.0517 8.44175 12.5259 8.63834 12.0738C9.1106 10.9878 10.3009 10.3471 11.5395 10.3471C12.7781 10.3471 13.9684 10.9878 14.4407 12.0738C14.6372 12.5259 14.4301 13.0517 13.9781 13.2483C13.526 13.4449 13.0002 13.2378 12.8036 12.7857C12.6731 12.4855 12.2261 12.1322 11.5395 12.1322ZM20.4628 12.1322C19.7762 12.1322 19.3292 12.4855 19.1987 12.7857C19.0021 13.2378 18.4762 13.4449 18.0242 13.2483C17.5721 13.0517 17.365 12.5259 17.5616 12.0738C18.0339 10.9878 19.2242 10.3471 20.4628 10.3471C21.7014 10.3471 22.8917 10.9878 23.364 12.0738C23.5605 12.5259 23.3534 13.0517 22.9014 13.2483C22.4493 13.4449 21.9235 13.2378 21.7269 12.7857C21.5964 12.4855 21.1494 12.1322 20.4628 12.1322ZM11.2573 17.0637C11.1261 16.4757 10.5431 16.1053 9.95507 16.2364C9.36703 16.3676 8.99664 16.9506 9.12779 17.5387C9.83002 20.6873 12.6389 23.0415 16.0003 23.0415C19.3617 23.0415 22.1706 20.6873 22.8728 17.5387C23.004 16.9506 22.6336 16.3676 22.0455 16.2364C21.4575 16.1053 20.8745 16.4757 20.7433 17.0637C20.2588 19.2363 18.3178 20.8597 16.0003 20.8597C13.6828 20.8597 11.7418 19.2363 11.2573 17.0637Z'\n      fill='#FFC91A'\n    />\n  </svg>\n);\n\nconst background = defaultIcon;\n\nconst front = [cryIcon0, cryIcon, normallyIcon, happyIcon0, happyIcon];\nconst TextRate = Rate(background, front);\n\nexport default function () {\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>\n      <TextRate size={28} defaultValue={5} />\n      <TextRate size={28} defaultValue={4} />\n      <TextRate size={28} defaultValue={3} />\n      <TextRate size={28} defaultValue={2} />\n      <TextRate size={28} defaultValue={1} />\n      <TextRate size={28} defaultValue={0} />\n    </div>\n  );\n}\n"
     },
     {
-      "title": "不重复选项",
-      "description": "默认情况下，会重复显示当前分值对应的选项，设置 repeat 属性为 false 可以按分值显示不同选项",
-      "scenario": "advanced",
+      "title": "No Repeat",
+      "description": "By default, the item corresponding to the current value is displayed repeatedly. Set repeat property to false to display different item by value",
       "code": "/**\n * cn - 不重复选项\n *    -- 默认情况下，会重复显示当前分值对应的选项，设置 repeat 属性为 false 可以按分值显示不同选项\n * en - No Repeat\n *    -- By default, the item corresponding to the current value is displayed repeatedly. Set repeat property to false to display different item by value\n */\n\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst LetterRate = Rate(['A', 'B', 'C', 'D', 'E'], ['A', 'B', 'C', 'D', 'E']);\nconst NumberRate = Rate(['1', '2', '3', '4', '5'], ['1', '2', '3', '4', '5']);\n\nconst App: React.FC = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>\n    <LetterRate size={16} repeat={false} defaultValue={3} />\n    <NumberRate size={16} repeat={false} defaultValue={3} />\n  </div>\n);\n\nexport default App;\n"
     },
     {
-      "title": "最大值",
-      "description": "通过 max 属性设置选项最大值，默认为 5",
-      "scenario": "advanced",
+      "title": "Max",
+      "description": "Set the maximum value of the option through the max attribute. The default value is 5",
       "code": "/**\n * cn - 最大值\n *    -- 通过 max 属性设置选项最大值，默认为 5\n * en - Max\n *    -- Set the maximum value of the option through the max attribute. The default value is 5\n */\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst star = (\n  <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>\n    <path d='M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59415 22.7575 6.29763 22.3824L11.999 19.343L17.7023 22.3825L17.7988 22.4279C18.5105 22.7194 19.2948 22.1128 19.1578 21.3281L18.054 15.008L22.6997 10.46L22.7779 10.3745C23.2586 9.78723 22.9242 8.86973 22.1443 8.75601L15.758 7.825L12.895 2.05544C12.5264 1.31273 11.4661 1.31545 11.1013 2.06004L8.276 7.825Z' />\n  </svg>\n);\n\nconst StarRate = Rate(star, star);\n\nconst App: React.FC = () => <StarRate max={10} defaultValue={3} />;\n\nexport default App;\n"
     },
     {
-      "title": "颜色",
-      "description": "在创建组件时设置颜色",
-      "scenario": "advanced",
+      "title": "Icon color",
+      "description": "Set the color when the component is created",
       "code": "/**\n * cn - 颜色\n *    -- 在创建组件时设置颜色\n * en - Icon color\n *    -- Set the color when the component is created\n */\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst getColorStar = (color: string) => (\n  <svg viewBox='0 0 24 24' fill={color} xmlns='http://www.w3.org/2000/svg'>\n    <path d='M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59415 22.7575 6.29763 22.3824L11.999 19.343L17.7023 22.3825L17.7988 22.4279C18.5105 22.7194 19.2948 22.1128 19.1578 21.3281L18.054 15.008L22.6997 10.46L22.7779 10.3745C23.2586 9.78723 22.9242 8.86973 22.1443 8.75601L15.758 7.825L12.895 2.05544C12.5264 1.31273 11.4661 1.31545 11.1013 2.06004L8.276 7.825Z' />\n  </svg>\n);\n\nconst heartBg = getColorStar('currentColor');\nconst heart = getColorStar('#ff4d4f');\nconst HeartRate = Rate(heartBg, heart);\n\nconst App: React.FC = () => <HeartRate defaultValue={2} />;\n\nexport default App;\n"
     },
     {
-      "title": "清除",
-      "description": "通过 clearable 属性可以设置再次点击清除 value",
-      "scenario": "advanced",
+      "title": "clear",
+      "description": "Set the clearable to clear value when click again",
       "code": "/**\n * cn - 清除\n *    -- 通过 clearable 属性可以设置再次点击清除 value\n * en - clear\n *    -- Set the clearable to clear value when click again\n */\nimport React from 'react';\nimport { Rate } from 'shineout';\n\nconst star = (\n  <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>\n    <path d='M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59415 22.7575 6.29763 22.3824L11.999 19.343L17.7023 22.3825L17.7988 22.4279C18.5105 22.7194 19.2948 22.1128 19.1578 21.3281L18.054 15.008L22.6997 10.46L22.7779 10.3745C23.2586 9.78723 22.9242 8.86973 22.1443 8.75601L15.758 7.825L12.895 2.05544C12.5264 1.31273 11.4661 1.31545 11.1013 2.06004L8.276 7.825Z' />\n  </svg>\n);\n\nconst StarRate = Rate(star, star);\n\nconst App: React.FC = () => <StarRate clearable />;\n\nexport default App;\n"
     }
   ],
   "subComponents": [],
-  "version": "3.7.7"
+  "version": "3.7.10-beta.3",
+  "tips": [
+    "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+    "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+    "❌ 避免在 Form 中同时使用 name 和 value/onChange"
+  ],
+  "notes": {},
+  "apiSummary": {
+    "totalProps": 20,
+    "requiredProps": 0,
+    "propsWithWhen": 0,
+    "examplesCount": 10
+  },
+  "subComponentApis": {},
+  "relatedTypes": {
+    "RateFunction": {
+      "title": "RateFunction",
+      "description": "",
+      "notes": {},
+      "props": [
+        {
+          "name": "background",
+          "type": "ReactElement | string | Array<string | ReactElement>",
+          "required": true,
+          "description": "未选中元素背景"
+        },
+        {
+          "name": "front",
+          "type": "ReactElement | string | Array<string | ReactElement>",
+          "required": true,
+          "description": "选中元素背景"
+        }
+      ]
+    }
+  }
 }
