@@ -1,0 +1,8 @@
+{
+  "componentName": "Switch",
+  "tips": [
+    "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+    "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+    "❌ 避免在 Form 中同时使用 name 和 value/onChange"
+  ]
+}
