@@ -777,6 +777,10 @@
   ],
   "subComponents": [],
   "version": "3.7.10-beta.3",
+  "tips": [
+    "建议给每一列添加宽度，并给 Table 本身添加宽度，Table 本身的宽度为所有列的总和",
+    "开启虚拟列表后必须指定高度或者让容器 flex 撑满高度，Table 继承容器高度"
+  ],
   "notes": {},
   "apiSummary": {
     "totalProps": 56,

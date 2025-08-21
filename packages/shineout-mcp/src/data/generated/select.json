@@ -876,7 +876,13 @@
   "tips": [
     "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
     "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
-    "❌ 避免在 Form 中同时使用 name 和 value/onChange"
+    "必须设置 keygen 属性，简单数组可以设置为 true，复杂数组如对象数组需要设置为对象的唯一键或者一个函数",
+    "复杂数组建议设置 prediction 属性",
+    "建议默认设置 absolute 属性防止列表打开后被裁剪遮挡",
+    "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+    "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理",
+    "🚫 禁止设置 onFilter 为 true",
+    "🚫 禁止使用 Select.Option"
   ],
   "notes": {
     "cn": "当 data 为对象数组时，必须正确配置以下属性以确保组件正常工作：\\n1. keygen（必需）：指定唯一标识，避免 React 渲染错误\\n2. format（推荐）：定义 value 的格式，如 format=\\\"id\\\" 将使用对象的 id 属性作为值\\n3. prediction（可选）：当数据源会重新生成时使用，解决对象引用变化导致的匹配失败。如果不设置 format，强烈建议设置 prediction 来确保对象匹配的准确性\\n4. renderItem/renderResult（推荐）：自定义显示内容，避免显示 [object Object]\\n\\n重要提示：format 只影响 value 格式，不影响 renderItem 和 renderResult 的显示内容",
