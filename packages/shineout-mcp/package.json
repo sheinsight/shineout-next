@@ -1,6 +1,6 @@
 {
   "name": "@sheinx/shineout-mcp",
-  "version": "3.7.10-beta.4",
+  "version": "3.7.10-beta.5",
   "description": "Shineout documentation provider for Claude AI via MCP protocol",
   "keywords": [
     "shineout",
