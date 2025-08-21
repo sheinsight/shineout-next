@@ -191,9 +191,29 @@ function mapCategory(group) {
 }
 
 /**
+ * 提取组件的 tips
+ */
+function extractTips(componentDir) {
+  try {
+    const tipsPath = path.join(componentDir, '__mcp__', 'tips.json');
+    if (!fs.existsSync(tipsPath)) {
+      return [];
+    }
+    
+    const content = fs.readFileSync(tipsPath, 'utf-8');
+    const tipsData = JSON.parse(content);
+    
+    return tipsData.tips || [];
+  } catch (error) {
+    console.error('Error extracting tips:', error);
+    return [];
+  }
+}
+
+/**
  * 转换 API 数据为 MCP 格式
  */
-function convertToMcpFormat(componentName, apis, basicInfo, examples, subComponents) {
+function convertToMcpFormat(componentName, apis, basicInfo, examples, subComponents, tips) {
   // 找到主组件的 API 数据
   const mainApi = apis.find(api => 
     api.title === componentName || 
@@ -234,6 +254,7 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
     examples: mcpExamples,
     subComponents,
     version: packageVersion,
+    tips: tips.length > 0 ? tips : undefined,
     // 添加使用注意事项
     notes: {
       cn: mainApi.tag?.notesCn || undefined,
@@ -386,9 +407,10 @@ function compile(dirPath, componentPath) {
       const basicInfo = extractBasicInfo(componentDir);
       const examples = extractExamples(componentDir);
       const subComponents = extractSubComponents(componentDir);
+      const tips = extractTips(componentDir);
 
       // 转换为 MCP 格式
-      const mcpData = convertToMcpFormat(componentName, apis, basicInfo, examples, subComponents);
+      const mcpData = convertToMcpFormat(componentName, apis, basicInfo, examples, subComponents, tips);
       
       if (mcpData) {
         // 保存单个组件的 MCP 数据
@@ -400,7 +422,8 @@ function compile(dirPath, componentPath) {
         allMcpData[componentName] = mcpData;
         processedCount++;
         
-        console.log(`✅ Generated MCP data for ${componentName} (${mcpData.apiSummary.totalProps} props, ${mcpData.apiSummary.examplesCount} examples, ${mcpData.apiSummary.propsWithWhen} with @when)`);
+        const tipsInfo = mcpData.tips ? `, ${mcpData.tips.length} tips` : '';
+        console.log(`✅ Generated MCP data for ${componentName} (${mcpData.apiSummary.totalProps} props, ${mcpData.apiSummary.examplesCount} examples, ${mcpData.apiSummary.propsWithWhen} with @when${tipsInfo})`);
       }
     }
   }

@@ -34,6 +34,21 @@ export class BestPracticesFormatter {
     if (data.version || data.lastUpdated) {
       output += `> 版本: ${data.version || 'N/A'} | 更新时间: ${data.lastUpdated || 'N/A'}\n\n`;
     }
+    
+    // 如果是精简版，显示提示
+    if (data._hasMore) {
+      output += `📌 **精简版本**: 显示部分内容以避免上下文过长\n`;
+      output += `- 推荐实践: 显示 2/${data._totalCounts.recommended} 项\n`;
+      output += `- 不推荐实践: 显示 1/${data._totalCounts.notRecommended} 项\n`;
+      output += `- 场景示例: 显示 1/${data._totalCounts.scenarios} 项\n`;
+      output += `- 使用技巧: 显示 3/${data._totalCounts.tips} 项\n\n`;
+      output += `💡 使用 \`category\` 参数获取特定类别的完整内容：\n`;
+      output += `- \`category: "recommended"\` - 所有推荐实践\n`;
+      output += `- \`category: "not-recommended"\` - 所有不推荐实践\n`;
+      output += `- \`category: "scenarios"\` - 所有场景示例\n`;
+      output += `- \`category: "tips"\` - 所有使用技巧\n`;
+      output += `- \`category: "all"\` - 完整内容\n\n`;
+    }
 
     // 推荐实践
     if (data.bestPractices?.recommended && data.bestPractices.recommended.length > 0) {

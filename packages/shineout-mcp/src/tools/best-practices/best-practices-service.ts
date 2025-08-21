@@ -33,7 +33,7 @@ export class BestPracticesService {
     if (this.loaded) return;
 
     try {
-      const dataPath = path.join(__dirname, '../../data/best-practices');
+      const dataPath = path.join(__dirname, '../../data/tips');
       
       // 加载索引文件
       const indexPath = path.join(dataPath, 'index.json');
@@ -41,7 +41,7 @@ export class BestPracticesService {
         const indexContent = fs.readFileSync(indexPath, 'utf-8');
         const index = JSON.parse(indexContent);
         
-        // 加载每个组件的最佳实践
+        // 加载每个组件的 tips
         for (const componentName of index.components || []) {
           const filePath = path.join(dataPath, `${componentName.toLowerCase()}.json`);
           if (fs.existsSync(filePath)) {
@@ -52,8 +52,8 @@ export class BestPracticesService {
         }
       }
       
-      // 也尝试加载 all-best-practices.json
-      const allPath = path.join(dataPath, 'all-best-practices.json');
+      // 也尝试加载 all-tips.json
+      const allPath = path.join(dataPath, 'all-tips.json');
       if (fs.existsSync(allPath)) {
         const content = fs.readFileSync(allPath, 'utf-8');
         const allBestPractices = JSON.parse(content);
@@ -75,7 +75,7 @@ export class BestPracticesService {
     await this.loadBestPractices();
     
     if (componentName.toLowerCase() === 'all') {
-      // 返回所有组件的最佳实践摘要
+      // 返回所有组件的 tips 摘要
       const summary: any = {
         componentName: 'All Components',
         components: Array.from(this.bestPracticesData.keys()),
@@ -97,6 +97,26 @@ export class BestPracticesService {
     
     const data = this.bestPracticesData.get(componentName);
     if (!data) return null;
+    
+    // 如果没有指定类别，默认返回精简版（只返回部分内容）
+    if (!category) {
+      return {
+        ...data,
+        bestPractices: {
+          recommended: data.bestPractices.recommended.slice(0, 2),
+          notRecommended: data.bestPractices.notRecommended.slice(0, 1),
+        },
+        commonScenarios: data.commonScenarios?.slice(0, 1),
+        tips: data.tips?.slice(0, 3),
+        _hasMore: true,
+        _totalCounts: {
+          recommended: data.bestPractices.recommended.length,
+          notRecommended: data.bestPractices.notRecommended.length,
+          scenarios: data.commonScenarios?.length || 0,
+          tips: data.tips?.length || 0,
+        }
+      } as any;
+    }
     
     // 如果指定了类别，过滤数据
     if (category && category !== 'all') {

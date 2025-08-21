@@ -1,0 +1,20 @@
+{
+  "componentName": "Form",
+  "tips": [
+    "Form 内置数据管理，通过 name 属性自动收集，无需手动管理 state",
+    "提交优先级：Form.Button（默认） > Form.Submit（需要回车键） > formRef（复杂逻辑）",
+    "Form.Button 适合大多数场景，Form.Submit 适合登录搜索等需要回车提交的场景",
+    "Form.Reset 重置表单到初始状态，Form.Button/Submit 都会自动触发验证",
+    "使用 rules 属性进行字段验证，支持 required、email、min、max 等规则",
+    "Form.FieldSet 两种模式：children 为 JSX 处理对象嵌套，为函数自动处理数组循环",
+    "FieldSet 数组模式提供 onAppend/onInsert/onRemove，无需手写 map",
+    "路径语法：点号（user.name）访问对象，方括号（items[0]）访问数组",
+    "FieldSet 路径拼接：外层 name + 内层 name = 完整路径",
+    "Form.Flow 监听字段变化实现联动，datum 获取当前 FieldSet 作用域数据",
+    "受控模式下 defaultValue 初始化会触发一次 onChange",
+    "formRef 仅在表单外部操作或复杂逻辑时使用",
+    "❌ 避免为每个字段创建 state，避免直接操作 DOM",
+    "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+    "❌ 避免简单场景使用 formRef，避免使用其他组件库的 API 模式"
+  ]
+}

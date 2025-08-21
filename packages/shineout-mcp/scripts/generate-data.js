@@ -33,6 +33,17 @@ async function generateComponentData() {
       fs.mkdirSync(generatedDir, { recursive: true });
     }
     
+    // 先加载已有的 tips 数据
+    const tipsData = {};
+    const tipsPath = path.join(dataDir, 'tips', 'all-tips.json');
+    if (fs.existsSync(tipsPath)) {
+      const tipsContent = fs.readFileSync(tipsPath, 'utf-8');
+      const allTips = JSON.parse(tipsContent);
+      Object.entries(allTips).forEach(([name, data]) => {
+        tipsData[name] = data.tips || [];
+      });
+    }
+    
     const extractedComponents = {};
     let successCount = 0;
     
@@ -43,6 +54,11 @@ async function generateComponentData() {
       try {
         const componentData = await extractor.extractComponent(componentName);
         if (componentData) {
+          // 添加 tips 字段
+          if (tipsData[componentName]) {
+            componentData.tips = tipsData[componentName];
+          }
+          
           extractedComponents[componentName] = componentData;
           
           // 保存单个组件文件
@@ -93,13 +109,13 @@ async function generateComponentData() {
     console.log(`- 成功提取 ${successCount} 个组件`);
     console.log(`- 分类统计:`, indexData.categories);
     
-    // 收集最佳实践
-    console.log('\\n📚 开始收集最佳实践...');
+    // 收集 tips
+    console.log('\\n📚 开始收集 tips...');
     try {
-      const { collectBestPractices } = await import('./collect-best-practices.js');
+      const { collectBestPractices } = await import('./collect-tips.js');
       await collectBestPractices();
     } catch (error) {
-      console.warn('⚠️  收集最佳实践失败（可能还没有最佳实践文件）:', error.message);
+      console.warn('⚠️  收集 tips 失败（可能还没有 tips 文件）:', error.message);
     }
     
   } catch (error) {

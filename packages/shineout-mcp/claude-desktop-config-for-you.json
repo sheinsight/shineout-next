@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "shineout-local": {
-      "command": "node",
-      "args": ["/root/shineout-next/packages/shineout-mcp/bin/shineout-mcp.js"],
-      "env": {}
-    }
-  }
-}
