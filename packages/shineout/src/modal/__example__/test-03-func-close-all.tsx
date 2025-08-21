@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const open = () => {
     let uid = id++;
     Modal.info({
-      title: 'This is a info message',
+      title: `title ${uid}`,
       content: '哈哈哈哈',
       onClose: () => {
         console.log('close', uid);

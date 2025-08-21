@@ -1,14 +1,38 @@
 import classNames from 'classnames';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
 import { util } from '@sheinx/hooks';
+import { create } from '@shined/reactive';
+import { getSnapshot } from '@shined/reactive/vanilla';
 import { useDragMove, useDragResize, usePersistFn, useRender } from '@sheinx/hooks';
 import { FormFooterProvider } from '../form/form-footer-context';
 
 import type { ModalContentProps } from './modal-content.type';
 
 let hasMask = false;
+
+interface ModalConfig {
+  instanceIds: string[];
+}
+
+const config = {
+  instanceIds: [],
+}
+const state = create<ModalConfig>(config);
+
+const useModalConfig = () => {
+  return state.useSnapshot();
+};
+
+const addModalInstance = (instanceId: string) => {
+  state.mutate.instanceIds.push(instanceId)
+}
+
+const removeModalInstance = (instanceId: string) => {
+  state.mutate.instanceIds = state.mutate.instanceIds.filter(id => id !== instanceId)
+}
+
 
 let mousePosition: { x: number; y: number } | null = null;
 
@@ -45,11 +69,14 @@ const Modal = (props: ModalContentProps) => {
     mouseDownTarget: null as HTMLElement | null,
     mouseUpTarget: null as HTMLElement | null,
     content: null as React.ReactNode,
-    originDocumentStyle: {
-      overflow: '',
-      paddingRight: '',
-    },
+    originDocumentStyle: null as {
+      overflow: string;
+      paddingRight: string;
+    } | null,
+    instanceId: util.generateUUID(),
   });
+
+  const config = useModalConfig();
 
   const [animation, setAnimation] = useState(props.visible || props.autoShow);
   const [visible, setVisible] = useState(props.visible || props.autoShow);
@@ -62,6 +89,11 @@ const Modal = (props: ModalContentProps) => {
     panelRef,
   });
 
+  const showMask = useMemo(() => {
+    if (props.forceMask) return config.instanceIds.includes(context.instanceId)
+    return config.instanceIds[0] === context.instanceId
+  }, [config.instanceIds, props.forceMask])
+
   const rerender = useRender();
   const handleMaskVisible = () => {
     // 多个moal 只有第一个显示的时候才显示遮罩
@@ -73,6 +105,18 @@ const Modal = (props: ModalContentProps) => {
       rerender();
     }
   };
+
+  useEffect(() => {
+    const index = config.instanceIds.indexOf(context.instanceId);
+
+    if (visible && index === -1) {
+        addModalInstance(context.instanceId)
+    }
+
+    if (!visible && index > -1 && !animation) {
+      removeModalInstance(context.instanceId)
+    }
+  }, [visible, animation, config.instanceIds])
 
   useEffect(handleMaskVisible, [visible]);
 
@@ -155,9 +199,11 @@ const Modal = (props: ModalContentProps) => {
   // 设置 document.body.style.overflow 和 document.body.style.paddingRight，并记录原始值到 context 中
   const setDocumentOverflow = usePersistFn(() => {
     const doc = document.body.parentNode! as HTMLElement;
-    if (context.isMask) {
-      context.originDocumentStyle.overflow = doc.style.overflow;
-      context.originDocumentStyle.paddingRight = doc.style.paddingRight;
+    if (context.isMask && !context.originDocumentStyle) {
+      context.originDocumentStyle = {
+        overflow: doc.style.overflow,
+        paddingRight: doc.style.paddingRight,
+      }
     }
     doc.style.overflow = 'hidden';
     if (!doc.style.paddingRight) {
@@ -168,8 +214,10 @@ const Modal = (props: ModalContentProps) => {
   // 还原 document.body.style.overflow 和 document.body.style.paddingRight
   const resetDocumentOverflow = usePersistFn(() => {
     const doc = document.body.parentNode! as HTMLElement;
-    doc.style.overflow = context.originDocumentStyle.overflow;
-    doc.style.paddingRight = context.originDocumentStyle.paddingRight;
+    if (context.originDocumentStyle) {
+      doc.style.overflow = context.originDocumentStyle.overflow;
+      doc.style.paddingRight = context.originDocumentStyle.paddingRight;
+    }
   })
 
   useEffect(() => {
@@ -177,11 +225,11 @@ const Modal = (props: ModalContentProps) => {
       if (visible) {
         setDocumentOverflow();
       } else {
-        if (!context.isMask) return;
+        if (config.instanceIds.length && config.instanceIds[config.instanceIds.length - 1] === context.instanceId) return;
         resetDocumentOverflow();
       }
     }
-  }, [visible]);
+  }, [visible, config.instanceIds]);
 
   const canDestroy = !visible && !animation;
   useEffect(() => {
@@ -192,6 +240,7 @@ const Modal = (props: ModalContentProps) => {
   useEffect(() => {
     // unmount
     return () => {
+      removeModalInstance(context.instanceId)
       if (context.isMask) {
         resetDocumentOverflow();
       };
@@ -362,7 +411,7 @@ const Modal = (props: ModalContentProps) => {
           modalClasses?.wrapper,
           animation && modalClasses?.wrapperAnimation,
           visible ? modalClasses?.wrapperShow : modalClasses?.wrapperHide,
-          (context.isMask || props.forceMask) && modalClasses?.wrapperIsMask,
+          showMask && modalClasses?.wrapperIsMask,
           props.fullScreen && modalClasses?.wrapperFullScreen,
           props.moveable && modalClasses?.wrapperMoveable,
           props.hideMask && modalClasses?.wrapperHideMask,
