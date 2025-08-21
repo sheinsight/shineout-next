@@ -1,3 +1,10 @@
+## 3.8.0-beta.43
+2025-08-21
+
+### 🐞 BugFix
+- 修复 `Table` 设置了 `showBottomScrollbar` 属性后可能出现双滚动条的问题 ([#1320](https://github.com/sheinsight/shineout-next/pull/1320))
+
+
 ## 3.8.0-beta.5
 2025-06-18
 
