@@ -32,7 +32,6 @@ const App: React.FC = () => {
         width={400}
         title='Modal Title'
         onClose={handleDismiss}
-        rootClassName='1231312'
         footer={[
           <Button key='cancel' mode='outline' onClick={handleDismiss}>
             Cancel
