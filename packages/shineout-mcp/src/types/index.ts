@@ -22,6 +22,7 @@ export interface ComponentExample {
   title: string;
   description?: string;
   code: string;
+  scenario?: string;
 }
 
 export interface SubComponent {

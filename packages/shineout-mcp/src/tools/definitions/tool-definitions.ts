@@ -341,59 +341,52 @@ You should:
     },
   },
   {
-    name: 'get_best_practices',
-    description: `A specialized tool for retrieving component best practices, common patterns, and implementation guidelines.
-This tool provides curated knowledge about optimal component usage and common pitfalls to avoid.
+    name: 'get_tips',
+    description: `A specialized tool for retrieving component usage tips and best practices.
+This tool provides curated tips about optimal component usage and common pitfalls to avoid.
 
 When to use this tool:
-- User asks for best practices or recommendations
-- Need guidance on proper component implementation
-- Looking for do's and don'ts
-- Want to understand common patterns and anti-patterns
-- Need tips for performance optimization
-- Seeking architectural guidance for component usage
+- User asks for component usage tips or guidelines
+- Need quick reference for do's and don'ts
+- Want to understand proper component usage in Forms
+- Looking for validation and submission flow explanations
+- Need guidance on component integration patterns
+- Seeking tips to avoid common mistakes
 
 Key features:
-- Returns recommended practices with code examples
-- Shows anti-patterns and what to avoid
-- Provides common scenarios and solutions
-- Includes performance tips and optimization techniques
-- Offers migration guidance from other libraries
+- Returns concise usage tips for components
+- Shows what to avoid (marked with ❌ or 🚫)
+- Explains Form integration patterns
+- Provides submission and validation flow details
 - Highlights important implementation notes
+- Covers data flow and state management tips
 
 Content includes:
-- Recommended patterns with explanations
-- Not recommended patterns with reasons
-- Common use cases and their solutions
-- API usage highlights and tips
-- Real-world scenario implementations
-- Performance considerations
+- Core usage tips and best practices
+- Common mistakes to avoid
+- Form integration guidelines
+- Validation rules and patterns
+- Submission flow explanations
+- Data flow mechanisms (for Form component)
 
 Parameters explained:
-- component: The component name (e.g., Form, Table, Select) or "all" for general practices
-- category: Optional filter (recommended/not-recommended/scenarios/tips)
+- component: The component name (e.g., Form, Input, Select) or "all" to see all available tips
 
 You should:
-1. Use this when users ask "how should I..." or "what's the best way to..."
-2. Combine with get_examples to show practical implementations
-3. Emphasize the "why" behind each recommendation
-4. Show both good and bad examples for comparison
-5. Focus on patterns that solve real problems
-6. Include migration tips if user is coming from other libraries`,
+1. Use this when users need quick guidance on component usage
+2. Show tips when users are implementing Forms or form controls
+3. Emphasize the integration patterns with Form component
+4. Highlight what NOT to do (❌ items) to prevent errors
+5. Explain the automatic data binding through 'name' prop
+6. Clarify when to use controlled vs uncontrolled patterns`,
     inputSchema: {
       type: 'object',
       properties: {
         component: {
           type: 'string',
-          description: '组件名称，如 Form, Table, Select 或 "all" 获取所有最佳实践',
-        },
-        category: {
-          type: 'string',
-          description: '筛选类别',
-          enum: ['recommended', 'not-recommended', 'scenarios', 'tips', 'all'],
+          description: '组件名称，如 Form, Input, Select 或 "all" 获取所有组件提示',
         },
       },
-      required: ['component'],
     },
   },
 ];

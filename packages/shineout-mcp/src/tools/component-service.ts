@@ -2,23 +2,23 @@ import { ComponentFormatter } from './formatters/index.js';
 import { ComponentQuery } from './queries/index.js';
 import { APIQueryService, APIFormatter } from './api/index.js';
 import { SearchHelper } from './helpers/index.js';
-import { BestPracticesService, BestPracticesFormatter } from './best-practices/index.js';
+import { TipsService, TipsFormatter } from './tips/index.js';
 
 export class ComponentService {
   private formatter: ComponentFormatter;
   private query: ComponentQuery;
   private apiQuery: APIQueryService;
   private apiFormatter: APIFormatter;
-  private bestPracticesService: BestPracticesService;
-  private bestPracticesFormatter: BestPracticesFormatter;
+  private tipsService: TipsService;
+  private tipsFormatter: TipsFormatter;
 
   constructor() {
     this.formatter = new ComponentFormatter();
     this.query = new ComponentQuery();
     this.apiQuery = new APIQueryService();
     this.apiFormatter = new APIFormatter();
-    this.bestPracticesService = new BestPracticesService();
-    this.bestPracticesFormatter = new BestPracticesFormatter();
+    this.tipsService = new TipsService();
+    this.tipsFormatter = new TipsFormatter();
   }
 
   async getComponent(name: string) {
@@ -280,16 +280,32 @@ export class ComponentService {
     };
   }
 
-  async getBestPractices(componentName: string, category?: string) {
-    const bestPractices = await this.bestPracticesService.getBestPractices(componentName, category);
-    
-    if (!bestPractices) {
-      // 获取可用的组件列表
-      const availableComponents = await this.bestPracticesService.listAvailableComponents();
+  async getTips(componentName?: string) {
+    // 如果没有指定组件名或者是 'all'，返回所有组件的摘要
+    if (!componentName || componentName.toLowerCase() === 'all') {
+      const summary = await this.tipsService.getAllTipsSummary();
+      const content = this.tipsFormatter.formatTipsSummary(summary);
       
-      let message = `组件 "${componentName}" 的最佳实践未找到。\n\n`;
+      return {
+        content: [
+          {
+            type: 'text',
+            text: content,
+          },
+        ],
+      };
+    }
+    
+    // 获取指定组件的 tips
+    const tips = await this.tipsService.getComponentTips(componentName);
+    
+    if (!tips) {
+      // 获取可用的组件列表
+      const availableComponents = await this.tipsService.listComponentsWithTips();
+      
+      let message = `组件 "${componentName}" 的使用提示未找到。\n\n`;
       if (availableComponents.length > 0) {
-        message += `目前有以下组件的最佳实践：\n`;
+        message += `目前有以下组件包含使用提示：\n`;
         message += availableComponents.map(c => `- ${c}`).join('\n');
       }
       
@@ -303,7 +319,7 @@ export class ComponentService {
       };
     }
     
-    const content = this.bestPracticesFormatter.formatBestPractices(bestPractices);
+    const content = this.tipsFormatter.formatComponentTips(tips);
     
     return {
       content: [
