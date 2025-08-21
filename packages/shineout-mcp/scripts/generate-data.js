@@ -93,6 +93,15 @@ async function generateComponentData() {
     console.log(`- 成功提取 ${successCount} 个组件`);
     console.log(`- 分类统计:`, indexData.categories);
     
+    // 收集最佳实践
+    console.log('\\n📚 开始收集最佳实践...');
+    try {
+      const { collectBestPractices } = await import('./collect-best-practices.js');
+      await collectBestPractices();
+    } catch (error) {
+      console.warn('⚠️  收集最佳实践失败（可能还没有最佳实践文件）:', error.message);
+    }
+    
   } catch (error) {
     console.error('❌ 生成组件数据失败:', error);
     process.exit(1);

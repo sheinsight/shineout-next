@@ -1,0 +1,17 @@
+{
+  "lastUpdated": "2025-08-21T06:09:48.704Z",
+  "totalComponents": 1,
+  "components": [
+    "Form"
+  ],
+  "summary": {
+    "Form": {
+      "recommendedCount": 7,
+      "notRecommendedCount": 4,
+      "scenariosCount": 4,
+      "tipsCount": 8,
+      "version": "1.0.0",
+      "lastUpdated": "2025-01-21"
+    }
+  }
+}

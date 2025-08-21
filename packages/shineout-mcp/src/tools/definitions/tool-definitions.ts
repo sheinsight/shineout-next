@@ -345,4 +345,60 @@ You should:
       required: ['component'],
     },
   },
+  {
+    name: 'get_best_practices',
+    description: `A specialized tool for retrieving component best practices, common patterns, and implementation guidelines.
+This tool provides curated knowledge about optimal component usage and common pitfalls to avoid.
+
+When to use this tool:
+- User asks for best practices or recommendations
+- Need guidance on proper component implementation
+- Looking for do's and don'ts
+- Want to understand common patterns and anti-patterns
+- Need tips for performance optimization
+- Seeking architectural guidance for component usage
+
+Key features:
+- Returns recommended practices with code examples
+- Shows anti-patterns and what to avoid
+- Provides common scenarios and solutions
+- Includes performance tips and optimization techniques
+- Offers migration guidance from other libraries
+- Highlights important implementation notes
+
+Content includes:
+- Recommended patterns with explanations
+- Not recommended patterns with reasons
+- Common use cases and their solutions
+- API usage highlights and tips
+- Real-world scenario implementations
+- Performance considerations
+
+Parameters explained:
+- component: The component name (e.g., Form, Table, Select) or "all" for general practices
+- category: Optional filter (recommended/not-recommended/scenarios/tips)
+
+You should:
+1. Use this when users ask "how should I..." or "what's the best way to..."
+2. Combine with get_examples to show practical implementations
+3. Emphasize the "why" behind each recommendation
+4. Show both good and bad examples for comparison
+5. Focus on patterns that solve real problems
+6. Include migration tips if user is coming from other libraries`,
+    inputSchema: {
+      type: 'object',
+      properties: {
+        component: {
+          type: 'string',
+          description: '组件名称，如 Form, Table, Select 或 "all" 获取所有最佳实践',
+        },
+        category: {
+          type: 'string',
+          description: '筛选类别',
+          enum: ['recommended', 'not-recommended', 'scenarios', 'tips', 'all'],
+        },
+      },
+      required: ['component'],
+    },
+  },
 ];

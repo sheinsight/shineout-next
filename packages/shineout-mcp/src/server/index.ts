@@ -91,6 +91,13 @@ class ShineoutMcpServer {
             (result as any)._componentCount = (args?.components as string[] | undefined)?.length; // 保存组件数量以便反馈
             break;
           
+          case 'get_best_practices':
+            result = await this.componentService.getBestPractices(
+              args?.component as string, 
+              args?.category as string
+            );
+            break;
+          
           default:
             throw new McpError(ErrorCode.MethodNotFound, `Unknown tool: ${name}`);
         }
