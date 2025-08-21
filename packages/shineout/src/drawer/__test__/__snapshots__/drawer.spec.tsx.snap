@@ -2,7 +2,7 @@
 
 exports[`Drawer[Base] should render correctly about base 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -69,7 +69,7 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
 
 exports[`Drawer[Base] should render correctly about close 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -116,7 +116,7 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
 
 exports[`Drawer[Base] should render correctly about container 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -183,7 +183,7 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
 
 exports[`Drawer[Base] should render correctly about form 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -314,7 +314,7 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
 
 exports[`Drawer[Base] should render correctly about full screen 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-full-screen soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-full-screen soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -1028,7 +1028,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
 
 exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-hide-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-hide-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -1095,7 +1095,7 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 
 exports[`Drawer[Base] should render correctly about position 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -1227,7 +1227,7 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
 
 exports[`Drawer[Base] should render correctly about resizable 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
@@ -1363,7 +1363,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
 
 exports[`Drawer[Base] should render correctly about type 1`] = `
 <div
-  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
+  class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-drawer soui-modal-wrapper-drawer-right"
 >
   <div
     class="soui-modal-mask"
