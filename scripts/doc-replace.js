@@ -46,10 +46,6 @@ function updateWebpackFile(filePath) {
   const updatedContent = updatedFirstLine.replace(/plugins: \[/, `plugins: [
 ${pluginToAdd}`);
 
-console.log('======================')
-console.log('🚀🚀🚀🚀🚀 updatedContent: >>', updatedContent)
-console.log('======================')
-
   writeFile(filePath, updatedContent);
 }
 
