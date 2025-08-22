@@ -1,3 +1,17 @@
+## 3.8.0-beta.45
+2025-08-22
+
+### 🆕 Feature
+- `Select` 新增 `onClear` 属性，支持监听清除事件 ([#1322](https://github.com/sheinsight/shineout-next/pull/1322))
+
+
+## 3.8.0-beta.36
+2025-08-18
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `onCreate` 且开启 `renderUnmatched` 时，渲染结果与老版本不一致的问题 ([#1312](https://github.com/sheinsight/shineout-next/pull/1312))
+
+
 ## 3.8.0-beta.9
 2025-06-30
 

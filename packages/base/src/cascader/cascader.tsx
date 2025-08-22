@@ -392,6 +392,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
     handleChange([] as unknown as Value);
     if (open) closePop();
+    if (props.onClear) props.onClear();
   };
 
   const handleResultItemClick = (

@@ -278,6 +278,10 @@ const uploadStyle: JsStyles<UploadClassType> = {
     height: token.uploadImageResultMaskIconSize,
     borderColor: token.uploadImageResultMaskIconColor,
     borderTopColor: 'transparent',
+    '$resultText &': {
+      borderColor: token.uploadResultUploadingIconColor,
+      borderTopColor: 'transparent',
+    }
   },
   imageResultMaskInfo: {
     lineHeight: token.lineHeightDynamic,

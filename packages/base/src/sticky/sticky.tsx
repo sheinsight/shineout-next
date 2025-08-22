@@ -240,7 +240,7 @@ const Sticky = (props: StickyProps) => {
     if (top !== undefined && Math.ceil(selfRect.top) <= top) {
       setFixedStyle(true, 'top', selfRect.left);
       return;
-    } else if (bottom !== undefined && Math.ceil(selfRect.bottom) + bottom > scrollRect.bottom) {
+    } else if (bottom !== undefined && (Math.ceil(selfRect.bottom) + bottom > Math.max(window.innerHeight, scrollRect.bottom) || selfRect.bottom + bottom >= window.innerHeight)) {
       setFixedStyle(true, 'bottom', selfRect.left);
       return;
     } else {

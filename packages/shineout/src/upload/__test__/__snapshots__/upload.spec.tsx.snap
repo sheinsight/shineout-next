@@ -174,9 +174,6 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
         >
           mountain.png
         </div>
-        <div
-          class="soui-upload-result-text-footer"
-        />
       </div>
       <div
         class="soui-upload-result-close soui-upload-icon soui-upload-icon-hover"
@@ -353,9 +350,6 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
         >
           test file.png
         </div>
-        <div
-          class="soui-upload-result-text-footer"
-        />
       </div>
       <div
         class="soui-upload-result-close soui-upload-icon soui-upload-icon-hover"
@@ -583,9 +577,6 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
         >
           mountain.png
         </div>
-        <div
-          class="soui-upload-result-text-footer"
-        />
       </div>
       <div
         class="soui-upload-result-close soui-upload-icon soui-upload-icon-hover"

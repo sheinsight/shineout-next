@@ -1,4 +1,3 @@
-import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
@@ -19,13 +18,6 @@ const Nav = () => {
     searchParams.set('direction', nextDirection);
     navigate(location.pathname + '?' + searchParams.toString());
     document.body.className = nextDirection;
-    // @ts-ignore
-    if (window.__ALITA__) {
-      const section = document.querySelector('body section[alita-name="shineout"] section');
-      if (section) {
-        section.className = nextDirection;
-      }
-    }
     setConfig({ direction: nextDirection });
   };
 
@@ -192,9 +184,19 @@ const Nav = () => {
     );
   };
 
-  const renderEntry = () => (
-    <>
-      {/* <li>
+  const handleLogoClick = () => {
+    navigate(`/${state.locales}/home`);
+  };
+
+  return (
+    <div className={classes.nav}>
+      <div className='left-nav'>{renderLeftNav()}</div>
+      <div className='logo' onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
+        {renderLogo()}
+        {renderEnv()}
+      </div>
+      <ul className='entry'>
+        {/* <li>
           <Input
             placeholder={`${getLocale(locale, 'search')}...`}
             prefix={renderPrefix()}
@@ -207,7 +209,7 @@ const Nav = () => {
             {direction === 'rtl' ? 'LTR' : 'RTL'}
           </Button>
         </li>
-        <li style={{ paddingInlineEnd: 24, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'  }} onClick={handleChangeLocales}>
+        <li style={{ paddingInlineEnd: 24 }} onClick={handleChangeLocales}>
           <svg
             width='20'
             height='20'
@@ -270,28 +272,6 @@ const Nav = () => {
           </li>
         ))} */}
         {/* <li onClick={handleChangeEnv}>{state.env}</li> */}
-    </>
-  )
-  // @ts-ignore
-  if (window.__ALITA__) {
-    const extraHeader = document.querySelector('#extra-header')
-    const entry = (
-      <ul style={{ width: '100%', display: 'flex', padding: '0 16px', listStyle: 'none', alignItems: 'center', fontWeight: 700, justifyContent: 'flex-end' }}>
-        {renderEntry()}
-      </ul>
-    )
-    if (extraHeader && entry) {
-      return createPortal(entry, extraHeader)
-    }
-    return null
-  }
-
-  return (
-    <div className={classes.nav}>
-      <div className='left-nav'>{renderLeftNav()}</div>
-      <div className='logo'>{renderLogo()}</div>
-      <ul className='entry'>
-        {renderEntry()}
       </ul>
     </div>
   );

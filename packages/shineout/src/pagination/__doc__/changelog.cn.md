@@ -1,3 +1,10 @@
+## 3.8.0-beta.39
+2025-08-18
+
+### 🆕 Feature
+- `Pagination` 新增 `sizeListProps` 属性，兼容旧版本 ([#1316](https://github.com/sheinsight/shineout-next/pull/1316))
+
+
 ## 3.7.8-beta.10
 2025-07-28
 

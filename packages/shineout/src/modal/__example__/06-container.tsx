@@ -1,8 +1,9 @@
 /**
  * cn - 指定目标
- *    -- 使用 container 来指定 Modal 渲染的目标节点
+ *    -- 设置 `container` 来指定 Modal 渲染的目标节点
+ *    -- 设置 `containerClassName` 来指定目标节点的 className
  * en - Target
- *    -- set container to render target node
+ *    -- set `container` to render target node
  */
 import React, { useRef, useState } from 'react';
 import { Modal, Button } from 'shineout';
@@ -26,6 +27,7 @@ const App: React.FC = () => {
       </Button>
       <Modal
         container={wrapperRef.current || undefined}
+        containerClassName="my-custom-modal-container"
         visible={visible}
         width={400}
         title='Modal Title'
