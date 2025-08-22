@@ -45,7 +45,11 @@ function updateWebpackFile(filePath) {
 
   const updatedContent = updatedFirstLine.replace(/plugins: \[/, `plugins: [
 ${pluginToAdd}`);
-  
+
+console.log('======================')
+console.log('🚀🚀🚀🚀🚀 updatedContent: >>', updatedContent)
+console.log('======================')
+
   writeFile(filePath, updatedContent);
 }
 
@@ -62,4 +66,3 @@ if (process.env.CI) {
 }else {
   console.log('skip doc build , only for ci')
 }
- 
