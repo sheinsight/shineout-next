@@ -492,6 +492,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     }
 
     if (open) closePop();
+    if (props.onClear) props.onClear();
   };
 
   const getRenderResult = (data: DataItem, index?: number): ReactNode => {
