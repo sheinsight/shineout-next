@@ -132,7 +132,7 @@ const Tooltip = (props: TooltipProps) => {
             tooltipClasses?.wrapper,
             open && tooltipClasses?.wrapperOpen,
           )}
-          style={{ pointerEvents: persistent ? 'initial' : undefined }}
+          style={{ pointerEvents: persistent ? 'initial' : undefined, display: open ? 'block' : 'none' }}
           {...util.getDataAttribute({ type, position })}
           ref={popupRef}
           onMouseLeave={events.onMouseLeave}
