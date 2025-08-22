@@ -1,3 +1,11 @@
+## 3.8.0-beta.45
+2025-08-22
+
+### 🆕 Feature
+- `TreeSelect` 新增 `onClear` 属性，支持监听清除事件 ([#1322](https://github.com/sheinsight/shineout-next/pull/1322))
+
+
+
 ## 3.7.10-beta.5
 2025-08-15
 

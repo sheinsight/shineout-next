@@ -343,6 +343,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       });
     }
     if (open) closePop();
+    if (props.onClear) props.onClear();
   };
 
   const renderClearable = () => {

@@ -459,20 +459,24 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     setControlType('keyboard');
 
     switch (e.keyCode || e.code) {
-      case 38 || 'ArrowUp':
+      case 38:
+      case 'ArrowUp':
         if (optionListRef.current?.hoverHover) optionListRef.current?.hoverMove(-1);
         e.preventDefault();
         break;
-      case 40 || 'ArrowDown':
+      case 40:
+      case 'ArrowDown':
         if (optionListRef.current?.hoverHover) optionListRef.current?.hoverMove(1);
         e.preventDefault();
         break;
-      case 13 || 'Enter':
+      case 13:
+      case 'Enter':
         handleEnter();
         e.preventDefault();
         e.stopPropagation();
         break;
-      case 8 || 'Backspace':
+      case 8:
+      case 'Backspace':
         handleDelete(e);
         break;
     }
@@ -488,6 +492,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     }
 
     if (open) closePop();
+    if (props.onClear) props.onClear();
   };
 
   const getRenderResult = (data: DataItem, index?: number): ReactNode => {
