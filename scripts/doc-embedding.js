@@ -1,6 +1,6 @@
 const path = require('path');
 const axios = require('axios')
-const package = require('../package.json');
+const pkgInfo = require('../package.json');
 const { compileContent, formatApi, formatExamples, formatGuides, capitalizeFirstLetter } = require('./doc-markdown')
 
 const targetPath = `${process.env.EMBEDDING_URL}/api/public/saveEmbeddings`
@@ -42,7 +42,7 @@ const formatData = () => {
   return {
     columnId: 159,
     version: {
-      version: package.version,
+      version: pkgInfo.version,
       description: ''
     },
     data: result,
