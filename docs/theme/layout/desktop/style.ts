@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 // @ts-ignore 嵌入的目标系统顶部是64px
-const navHeight = window.__ALITA__ ? 64 : 59;
+export const navHeight = window.__ALITA__ ? 64 : 59;
 const menuWidth = 259;
 
 export default createUseStyles(
@@ -65,6 +65,7 @@ export default createUseStyles(
         display: 'flex',
         alignItems: 'center',
         marginLeft: 24,
+        cursor: 'pointer',
       },
       '& .entry': {
         // gap: 12,
