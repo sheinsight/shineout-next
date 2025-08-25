@@ -19,6 +19,7 @@ const useNumberFormat = (props: InputNumberProps) => {
     step = 1,
     cancelBlurChange,
     disabled,
+    coin,
   } = props;
 
   const getStringValue = (value: string | number | null | undefined) => {
@@ -149,6 +150,7 @@ const useNumberFormat = (props: InputNumberProps) => {
       numType,
       integerLimit,
       digits,
+      coin,
       onChange: onNumberChange,
       onBlur: onNumberBlur,
       onFocus: props.onFocus,

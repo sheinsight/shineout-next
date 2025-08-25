@@ -19,10 +19,11 @@ const InputNumber = (props: InputNumberProps) => {
     max,
     step,
     allowNull,
+    coin,
     ...restProps
   } = commonProps;
   const inputStyle = jssStyle?.input?.();
-
+  
   const numberFormatParams = {
     onBlur: restProps.onBlur,
     onFocus: restProps.onFocus,
@@ -33,6 +34,7 @@ const InputNumber = (props: InputNumberProps) => {
     max: max,
     step: step,
     allowNull: allowNull,
+    coin: coin,
   };
 
   const { onMinus, onPlus, ...numberFormatProps } = useInputNumber({
