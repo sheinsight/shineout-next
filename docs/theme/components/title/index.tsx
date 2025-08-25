@@ -47,6 +47,7 @@ const Header = (props: HeaderProps) => {
     <>
       <div
         ref={headerRef}
+        // @ts-ignore
         className={headerClasses}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}

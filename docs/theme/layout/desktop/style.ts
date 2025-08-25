@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 // @ts-ignore 嵌入的目标系统顶部是64px
-const navHeight = window.__ALITA__ ? 64 : 59;
+export const navHeight = window.__ALITA__ ? 64 : 59;
 const menuWidth = 259;
 
 export default createUseStyles(
@@ -9,6 +9,11 @@ export default createUseStyles(
     '@global': {
       body: {
         position: 'relative',
+        '&.rtl': {
+          direction: 'rtl',
+        },
+      },
+      section: {
         '&.rtl': {
           direction: 'rtl',
         },
@@ -29,56 +34,6 @@ export default createUseStyles(
       'body.rtl &': {
         left: 0,
         right: 0,
-      },
-    },
-
-    nav: {
-      position: 'sticky',
-      top: 0,
-      height: navHeight,
-      width: '100%',
-      display: 'flex',
-      backgroundColor: 'var(--soui-neutral-fill-1)',
-      borderBottom: '1px solid var(--soui-neutral-border-1)',
-      zIndex: 2,
-      '& .left-nav': {
-        display: 'flex',
-        alignItems: 'center',
-        padding: '0 24px',
-        position: 'relative',
-        '&::after': {
-          content: '" "',
-          position: 'absolute',
-          right: 0,
-          width: 1,
-          height: 24,
-          top: 18,
-          backgroundColor: 'var(--soui-neutral-border-1)',
-        },
-      },
-      '& .logo': {
-        display: 'flex',
-        alignItems: 'center',
-        marginLeft: 24,
-      },
-      '& .entry': {
-        // gap: 12,
-        width: '100%',
-        fontWeight: '700',
-        display: 'flex',
-        listStyle: 'none',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        padding: '0 16px',
-        '& li': {
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          '&:hover': {
-            color: '#999999',
-          },
-        },
       },
     },
 
