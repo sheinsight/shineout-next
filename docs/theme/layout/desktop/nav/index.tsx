@@ -91,9 +91,10 @@ const Nav = () => {
     extraHeader.style.display = 'flex';
     extraHeader.style.flex = '1';
     extraHeader.style.justifyContent = 'flex-end';
+    extraHeader.setAttribute('alita-name', 'shineout');
 
     const entry = (
-      <ul className={classes.entry} alita-name='shineout'>
+      <ul className={classes.entry}>
         {renderEntry()}
       </ul>
     );
