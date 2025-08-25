@@ -32,8 +32,6 @@
 
 #### 排查规则
 - 搜索设置了 `type='number'` 且开启了 `coin` 属性的 Input 组件
-- 搜索在数值可能为 0 的场景中使用的 Input 组件
-- 搜索 `coin={true}` 且 `value={0}` 的组合使用
 
 ### 3.5.7-beta.7
 - **变更类型**: 修复问题 / 性能优化
@@ -60,9 +58,7 @@
 ```
 
 #### 排查规则
-- 搜索开启了 `coin` 属性的 Input 组件，特别关注初始化数据的显示
-- 搜索同时设置了 `type='number'`、`coin` 和 `digits` 属性的 Input 组件
-- 搜索在数据初始化时依赖千分位格式显示的场景
+- 搜索开启了 `coin` 属性和 设置了 `type='number'` 的 Input 组件
 
 ## Breaking Changes
 
