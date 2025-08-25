@@ -1,3 +1,10 @@
+## 3.7.11-beta.2
+2025-08-25
+### 🐞 BugFix
+
+- 修复 `Message` 在 bottom-left 和 bottom-right 位置手动关闭弹窗时可能出现动画闪一下的问题 ([#1325](https://github.com/sheinsight/shineout-next/pull/1325))
+
+
 ## 3.4.3
 2024-10-14
 

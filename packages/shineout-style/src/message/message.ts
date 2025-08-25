@@ -75,10 +75,10 @@ const messageStyle: JsStyles<MessageClassType> = {
   },
   itemDismissed: {
     ' [data-soui-position="bottom-left"] &': {
-      animation: `$left-out ${animationDuration} ease-in-out`,
+      animation: `$left-out ${animationDuration} ease-in-out forwards`,
     },
     ' [data-soui-position="bottom-right"] &': {
-      animation: `$right-out ${animationDuration} ease-in-out`,
+      animation: `$right-out ${animationDuration} ease-in-out forwards`,
     },
   },
   itemShow: {
