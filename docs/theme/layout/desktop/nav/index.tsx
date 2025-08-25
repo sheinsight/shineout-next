@@ -93,7 +93,7 @@ const Nav = () => {
     extraHeader.style.justifyContent = 'flex-end';
 
     const entry = (
-      <ul className={classes.entry}>
+      <ul className={classes.entry} alita-name='shineout'>
         {renderEntry()}
       </ul>
     );
