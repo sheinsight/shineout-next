@@ -81,7 +81,7 @@ export const ecologyList: IEcologyList[] = [
         icon: more7
       },
       {
-        title: 'iconCreator图标库',
+        title: 'iconCreater图标库',
         target: 'https://ue-icon.opscn.sheincorp.cn/',
         icon: more8
       },

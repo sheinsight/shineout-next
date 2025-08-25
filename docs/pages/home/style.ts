@@ -84,13 +84,13 @@ export default createUseStyles({
     zIndex: 0
   },
   pageBackFilter: {
-    width: '510px',
-    height: '500px',
+    width: '674px',
+    height: '427px',
     position: 'absolute',
-    top: '100px',
-    left: '425px',
+    top: '90px',
+    // left: '30%',
     background: '#fff',
-    filter: 'blur(105px)',
+    filter: 'blur(110px)',
     zIndex: 1
   },
   title: {
@@ -127,14 +127,14 @@ export default createUseStyles({
   titleButton: {
     padding: '8px 32px !important',
     background: 'var(--theme-primary-color, linear-gradient(90deg, var(---Brand-5-, #429AFF) 0%, var(---Brand-6-, #197AFA) 100%)) !important',
-    border: 'none',
+    border: '1px solid var(--theme-primary-color) !important',
     borderRadius: 'var(--theme-border-radius, 20px)',
     fontSize: 'var(--theme-font-size, 14px)',
     boxShadow: '0px 8px 20px 0px var(--theme-light-color, rgba(25, 122, 250, 0.10)) !important',
     transition: 'all 0.2s ease !important',
     '&:hover': {
       opacity: '0.8 !important',
-    }
+    },
   },
   customDropdown: {
     padding: '8px 16px',
@@ -148,10 +148,10 @@ export default createUseStyles({
     }
   },
   customDropdownPopover: {
-    background: 'rgba(255, 255, 255, 0.80) !important',
+    background: 'rgba(255, 255, 255, 0.4) !important',
     borderRadius: '16px !important',
     boxShadow: '0px 8px 22px 0px rgba(0, 63, 154, 0.05) !important',
-    backdropFilter: 'blur(12px) !important',
+    backdropFilter: 'blur(20px) !important',
     width: '560px !important',
     '& .soui-popover-content': {
       padding: '12px !important',
@@ -347,14 +347,24 @@ export default createUseStyles({
   icons: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '28px',
+    gap: '8px',
     alignItems: 'center',
+    justifyContent: 'center',
     width: '170px',
     height: '212px',
     color: token.brand_6,
   },
   icon: {
     position: 'relative',
+    width: '32px',
+    height: '32px',
+    padding: '4px',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    transition: 'background-color 0.2s ease',
+    '&:hover': {
+      backgroundColor: token.brand_1,
+    },
     '&::after': {
 
     }
@@ -509,10 +519,12 @@ export default createUseStyles({
   prettyMenu: {
     width: '200px',
     position: 'relative',
+    fontSize: 'var(--theme-font-size, 14px)',
     
     // 使用更强势的全局选择器
     '& *': {
-      transition: 'all 0.2s ease'
+      transition: 'all 0.2s ease',
+      fontSize: 'inherit'
     },
     
     // 直接针对 Shineout Menu 的具体激活状态类名
@@ -554,7 +566,7 @@ export default createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     gap: '16px',
-    fontSize: '16px',
+    fontSize: 'var(--theme-font-size, 16px)',
     fontWeight: 500,
     lineHeight: token.line_height_dynamic
   },
@@ -566,13 +578,13 @@ export default createUseStyles({
   },
   prettyListAreaItem: {
     padding: '16px 16px 12px 16px',
-    borderRadius: '12px',
+    borderRadius: 'var(--theme-border-radius, 12px)',
     background: '#F7F8FA',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     border: '2px solid transparent',
-    fontSize: '14px',
+    fontSize: 'var(--theme-font-size, 14px)',
     fontWeight: 400,
     lineHeight: token.line_height_dynamic,
     width: '126px',
@@ -678,9 +690,9 @@ export default createUseStyles({
     gap: '8px',
     fontSize: '16px',
     fontWeight: 400,
+    fontFamily: 'Outfit',
     lineHeight: token.line_height_dynamic,
     textAlign: 'center',
-
   },
   caseIndexItemNum: {
     width: '144px',
@@ -694,7 +706,7 @@ export default createUseStyles({
     width: 'fit-content',
     height: '100%',
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'baseline',
     justifyContent: 'center',
     fontSize: '48px',
     fontWeight: 500,
@@ -723,7 +735,7 @@ export default createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'linear-gradient(0deg, var(---Neutral-fill-2-, #F4F5F8) 0%, var(---Neutral-fill-2-, #F4F5F8) 100%), linear-gradient(113deg, var(---Indigo-6-, rgba(68, 70, 247, 0.10)) 17.01%, var(---Brand-6-, rgba(25, 122, 250, 0.10)) 93.16%)'
+    background: 'radial-gradient(circle at 10% 10%, var(---Brand-6-, rgba(25, 122, 250, 0.10)) 0%, transparent 30%), radial-gradient(circle at 90% 90%, var(---Indigo-6-, rgba(68, 70, 247, 0.05)) 0%, transparent 30%), #F4F5F8'
   },
   casePicItemContent: {
     width: '449px',
@@ -821,7 +833,14 @@ export default createUseStyles({
   },
   dynamicTag: {
     padding: '0 8px !important',
-    borderRadius: `${token.radius_1000} !important`
+    borderRadius: `${token.radius_1000} !important`,
+    border: '1px solid transparent !important',
+    '&.soui-tag-info, &[data-color="info"]': {
+      border: `1px solid ${token.brand_3} !important`, 
+    },
+    '&.soui-tag-success, &[data-color="success"]': {
+      border: `1px solid ${token.success_3} !important`, 
+    },
   },
   footer: {
     display: 'flex',
