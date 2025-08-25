@@ -56,8 +56,8 @@ if (process.env.CI) {
 
   updateWebpackFile('./webpack/config.doc.js')
 
-  execWithRegistry('pnpm install @alita/react@1.3.2 -w');
-  execWithRegistry('pnpm install @alita/webpack-plugin@1.3.2 -D -w');
+  execWithRegistry('pnpm install @alita/react@1.6.9 -w');
+  execWithRegistry('pnpm install @alita/webpack-plugin@1.6.9 -D -w');
   exec('pnpm run build:doc')
 }else {
   console.log('skip doc build , only for ci')
