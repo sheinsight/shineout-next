@@ -5,222 +5,78 @@
 - 包含 Beta 版本: 3.5.7-beta.1 ~ 3.5.7-beta.7
 - 发布日期: 2025-01-14
 
-## 变更概要
-
-本版本主要修复了 Input 组件在开启 `coin`（千分位）属性时的多个显示问题，并优化了数字输入溢出时的交互逻辑。
-
 ## 详细变更
 
-### 3.5.7-beta.7
-- **修复问题**: 修复 Input 开启 `coin` 情况下初始化数据不展示千分号的问题
-- **PR**: [#919](https://github.com/sheinsight/shineout-next/pull/919)
-- **影响组件**: Input (type="number" + coin)
-- **问题原因**: 初始化时未正确格式化带千分位的数字
-
 ### 3.5.7-beta.5
-- **修复问题**: 修复 Input 设置 `type='number'` 且开启 `coin` 属性后值为数字 0 时展示异常的问题
+- **变更类型**: 修复问题
+- **复现示例**: 无
+- **变更描述**: 修复 `Input` 设置 `type='number'` 且开启 `coin` 属性后值为数字 0 时展示异常的问题
 - **PR**: [#916](https://github.com/sheinsight/shineout-next/pull/916)
-- **影响组件**: Input (type="number" + coin)
-- **问题原因**: 对数字 0 的特殊处理不当导致显示异常
+- **影响组件**: Input
+- **问题原因**: 在处理数字类型输入框的千分位格式化时，值为 0 时的类型判断逻辑有误，导致 0 值无法正确显示
+
+#### Bug 特征
+- 当 Input 组件设置 `type='number'` 且开启 `coin` 属性时，如果值为数字 0，组件显示空白而非 "0"
+- 其他非 0 数值显示正常
+- 仅影响数值类型为 0 的初始化和赋值场景
+
+**代码模式**：
+```jsx
+// 容易出现问题的代码结构
+<Input
+  type="number"
+  coin={true}
+  value={0}  // 数字 0 会显示异常
+/>
+```
+
+#### 排查规则
+- 搜索设置了 `type='number'` 且开启了 `coin` 属性的 Input 组件
+- 搜索在数值可能为 0 的场景中使用的 Input 组件
+- 搜索 `coin={true}` 且 `value={0}` 的组合使用
 
 ### 3.5.7-beta.7
-- **优化功能**: 优化 Input 在 `type='number'` 开启 `coin` 下输入溢出内容时的交互逻辑
+- **变更类型**: 修复问题 / 性能优化
+- **复现示例**: 无
+- **变更描述**: 优化 `Input` 在 `type='number'` 开启 `coin` 下输入溢出内容时的交互逻辑、修复 `Input` 开启 `coin` 情况下初始化数据不展示千分号的问题
 - **PR**: [#919](https://github.com/sheinsight/shineout-next/pull/919)
-- **影响组件**: Input (type="number" + coin)
-- **优化内容**: 改善了当输入内容超出限制时的用户体验
+- **影响组件**: Input
+- **问题原因**: 1) 千分位格式化的初始化状态设置不正确，导致组件首次渲染时不显示千分号；2) 数字类型输入框在处理溢出内容时的交互逻辑不完善，小数位数修正机制存在问题
 
-## 代码变更分析
+#### Bug 特征
+- Input 组件开启 `coin` 属性时，初始化数据不显示千分号，需要用户操作后才显示
+- 在 `type='number'` 且开启 `coin` 的场景下，输入超出限制的内容时，小数部分可能被意外截断
+- 影响数字格式化的视觉一致性和用户体验
 
-### 修改文件
-- `packages/hooks/src/components/use-input/use-input-number.ts`
-- `packages/base/src/input/input.tsx`
-
-### 关键改动
-1. 修复了千分位格式化的初始化逻辑
-2. 增加了对数字 0 的特殊处理
-3. 优化了输入溢出时的处理逻辑
-
-## 受影响的使用场景
-
-### 核心问题分析
-本版本主要解决了开启千分位显示（coin）功能时的各种边界情况，包括初始化显示、特殊值处理和输入限制。
-
-### 场景 1: 带千分位的金额输入初始化
-**检查点**: 查使用 coin 属性且有初始值的 Input 组件
+**代码模式**：
 ```jsx
-// 需要检查的代码模式
-const [amount, setAmount] = useState<string | number>(10000);
-
-<Input 
+// 容易出现问题的代码结构
+<Input
   type="number"
-  coin
-  value={amount}
-  onChange={(v) => setAmount(v)}
-  placeholder="0"
-/>
-
-// 在表单中使用
-<Form defaultValue={{ price: 5000 }}>
-  <Form.Item label="Price">
-    <Input 
-      type="number"
-      name="price"
-      coin
-      placeholder="0"
-    />
-  </Form.Item>
-</Form>
-
-// 初始值为 0 的场景
-<Input.Number 
-  coin
-  defaultValue={0}
-  placeholder="Enter amount"
+  coin={true}
+  value={12345}  // 初始化时可能不显示为 "12,345"
+  digits={2}     // 配合小数位限制时可能出现截断
 />
 ```
 
-### 场景 2: 动态设置千分位数值
-**检查点**: 查动态更新带千分位显示的数值输入场景
-```jsx
-// 需要检查的代码模式
-const [price, setPrice] = useState<string | number>('');
-
-// 动态设置为 0
-<Button onClick={() => setPrice(0)}>Set to Zero</Button>
-<Input.Number 
-  coin
-  value={price}
-  onChange={(v) => {
-    // v3.5.6 版本值为 0 时可能显示异常
-    // v3.5.7 版本已修复
-    setPrice(v);
-  }}
-/>
-
-// 从接口获取数据
-useEffect(() => {
-  fetchData().then(data => {
-    // data.amount 可能为 0
-    setAmount(data.amount);
-  });
-}, []);
-
-<Input 
-  type="number"
-  coin
-  value={amount}
-  onChange={handleAmountChange}
-/>
-```
-
-### 场景 3: 千分位输入的范围限制
-**检查点**: 查带有输入限制的千分位数字输入场景
-```jsx
-// 需要检查的代码模式
-<Input.Number 
-  coin
-  max={999999}
-  value={value}
-  onChange={(v) => {
-    // 输入超过最大值时的处理
-    setValue(v);
-  }}
-  placeholder="Max: 999,999"
-/>
-
-// 带整数位限制
-<Input 
-  type="number"
-  coin
-  integerLimit={6}
-  value={salary}
-  onChange={handleSalaryChange}
-  placeholder="Salary"
-/>
-
-// 同时限制整数位和小数位
-<Input.Number 
-  coin
-  integerLimit={7}
-  digits={2}
-  value={budget}
-  onChange={(v) => {
-    // v3.5.7 优化了溢出时的交互
-    setBudget(v);
-  }}
-/>
-```
-
-### 场景 4: 表单中的千分位金额计算
-**检查点**: 查在表单中使用千分位输入并进行计算的场景
-```jsx
-// 需要检查的代码模式
-<Form value={formData} onChange={handleFormChange}>
-  <Form.Item label="Unit Price">
-    <Input.Number 
-      name="unitPrice"
-      coin
-      digits={2}
-      placeholder="0.00"
-    />
-  </Form.Item>
-  
-  <Form.Item label="Quantity">
-    <Input.Number 
-      name="quantity"
-      placeholder="0"
-    />
-  </Form.Item>
-  
-  <Form.Item label="Total">
-    <Input.Number 
-      coin
-      value={formData.unitPrice * formData.quantity || 0}
-      disabled
-      placeholder="0.00"
-    />
-  </Form.Item>
-</Form>
-```
-
-### 场景 5: 货币输入组合场景
-**检查点**: 查组合货币符号和千分位输入的场景
-```jsx
-// 需要检查的代码模式
-<Input.Group style={{ width: 300 }}>
-  <Select 
-    keygen 
-    data={['USD', 'CNY', 'EUR']} 
-    width={80}
-    defaultValue="USD"
-  />
-  <Input 
-    type="number"
-    coin
-    value={amount}
-    onChange={(v) => {
-      // 处理货币金额
-      setAmount(v);
-    }}
-    placeholder="0.00"
-  />
-</Input.Group>
-
-// 带前缀的金额输入
-<Input 
-  type="number"
-  coin
-  prefix="$"
-  value={price}
-  onChange={handlePriceChange}
-  placeholder="0"
-/>
-```
+#### 排查规则
+- 搜索开启了 `coin` 属性的 Input 组件，特别关注初始化数据的显示
+- 搜索同时设置了 `type='number'`、`coin` 和 `digits` 属性的 Input 组件
+- 搜索在数据初始化时依赖千分位格式显示的场景
 
 ## Breaking Changes
 
-无破坏性变更
+无
 
 ## 风险等级
 
-低风险 - 修复了千分位显示的问题，提升了用户体验，不影响功能的正常使用
+**中**：
+- 包含两个回归问题修复，影响数字输入框的显示和交互
+- 主要影响使用 `coin` 属性进行千分位格式化的场景
+- 修复了值为 0 时的显示异常和初始化时千分号缺失的问题
+- 可能影响依赖千分位格式化的业务逻辑和用户体验
+
+## 版本修复历史
+
+1. **3.5.7-beta.5**：修复数字 0 在开启千分位格式化时的显示异常
+2. **3.5.7-beta.7**：修复初始化时千分号不显示的问题，同时优化溢出内容的处理逻辑
