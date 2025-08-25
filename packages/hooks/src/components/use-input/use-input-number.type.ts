@@ -2,7 +2,7 @@ import { InputFormatProps } from './use-input-format.type';
 
 export type NumberValue = string | number | undefined | null;
 export interface InputNumberProps
-  extends Omit<InputFormatProps, 'value' | 'onChange' | 'autoFix' | 'trim' | 'coin' | 'type'> {
+  extends Omit<InputFormatProps, 'value' | 'onChange' | 'autoFix' | 'trim' | 'type'> {
   value: NumberValue;
   onChange: (value: NumberValue) => void | undefined;
   /**
