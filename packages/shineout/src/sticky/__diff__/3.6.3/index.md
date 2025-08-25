@@ -10,7 +10,7 @@
 ### 3.6.3-beta.1
 - **变更类型**: 修复问题
 - **变更标签**: 功能
-- **复现示例**: [https://shineout-playground.sheincorp.cn/#/playground?code=sticky-onchange-demo](https://shineout-playground.sheincorp.cn/#/playground?code=sticky-onchange-demo)
+- **复现示例**: 无
 - **变更描述**: 修复 Sticky 组件的 `onChange` 回调函数不触发的问题
 - **PR**: [#1048](https://github.com/sheinsight/shineout-next/pull/1048)
 - **影响组件**: Sticky
