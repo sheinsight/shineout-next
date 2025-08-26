@@ -105,12 +105,38 @@ class ShineoutDiffAnalyzer {
     }
     
     // 获取版本范围内的所有版本（不包含起始版本，包含目标版本）
-    const versionsInRange = this.gitTags.slice(fromIndex + 1, toIndex + 1);
+    let versionsInRange = this.gitTags.slice(fromIndex + 1, toIndex + 1);
     
-    // 只返回正式版本（非 beta 版本）
-    const releaseVersions = versionsInRange.filter(version => !version.includes('-beta'));
-    
-    return releaseVersions;
+    // 如果目标版本是 beta 版本，需要特殊处理
+    if (toVersion.includes('-beta')) {
+      // 获取 beta 版本所属的正式版本
+      const baseVersion = toVersion.replace(/-beta\.\d+$/, '');
+      
+      // 过滤出需要分析的版本：
+      // 1. 范围内的所有正式版本
+      // 2. 目标 beta 版本所属的正式版本（如果在范围内）
+      const releaseVersions = versionsInRange.filter(version => !version.includes('-beta'));
+      
+      // 如果目标 beta 版本的基础版本不在范围内，需要添加进去
+      if (!releaseVersions.includes(baseVersion) && this.gitTags.includes(baseVersion)) {
+        releaseVersions.push(baseVersion);
+        // 重新排序
+        releaseVersions.sort((a, b) => {
+          const [aMajor, aMinor, aPatch] = this.parseVersion(a);
+          const [bMajor, bMinor, bPatch] = this.parseVersion(b);
+          
+          if (aMajor !== bMajor) return aMajor - bMajor;
+          if (aMinor !== bMinor) return aMinor - bMinor;
+          return this.comparePatchVersion(aPatch, bPatch);
+        });
+      }
+      
+      return releaseVersions;
+    } else {
+      // 目标是正式版本，只返回正式版本（非 beta 版本）
+      const releaseVersions = versionsInRange.filter(version => !version.includes('-beta'));
+      return releaseVersions;
+    }
   }
 
   /**
@@ -315,7 +341,7 @@ class ShineoutDiffAnalyzer {
   /**
    * 收集指定版本的所有组件变更信息
    */
-  collectComponentChanges(versions, silent = false, filterType = null) {
+  collectComponentChanges(versions, silent = false, filterType = null, targetVersion = null) {
     const components = this.getAllComponents();
     const result = {};
     
@@ -332,7 +358,16 @@ class ShineoutDiffAnalyzer {
         if (fs.existsSync(diffPath)) {
           try {
             const content = fs.readFileSync(diffPath, 'utf-8');
-            const betaVersions = this.parseDiffReport(content);
+            let betaVersions = this.parseDiffReport(content);
+            
+            // 如果目标版本是 beta 版本，且当前处理的版本是目标版本的基础版本
+            if (targetVersion && targetVersion.includes('-beta')) {
+              const baseVersion = targetVersion.replace(/-beta\.\d+$/, '');
+              if (version === baseVersion) {
+                // 只保留到目标 beta 版本为止的变更
+                betaVersions = this.filterBetaVersionsUpTo(betaVersions, targetVersion);
+              }
+            }
             
             if (Object.keys(betaVersions).length > 0) {
               // 应用过滤器
@@ -541,7 +576,7 @@ class ShineoutDiffAnalyzer {
       }
       
       // 2. 收集组件变更信息
-      const componentChanges = this.collectComponentChanges(versionList, format === 'json', filterType);
+      const componentChanges = this.collectComponentChanges(versionList, format === 'json', filterType, toVersion);
       
       // 3. 输出结果
       this.outputResults(fromVersion, toVersion, versionList, componentChanges, format);
@@ -556,7 +591,9 @@ class ShineoutDiffAnalyzer {
    * 验证版本号格式
    */
   isValidVersion(version) {
-    return /^\d+\.\d+\.\d+$/.test(version);
+    // 支持正式版本格式: 3.6.3
+    // 支持 beta 版本格式: 3.6.3-beta.2
+    return /^\d+\.\d+\.\d+(-beta\.\d+)?$/.test(version);
   }
 
   /**
@@ -567,6 +604,33 @@ class ShineoutDiffAnalyzer {
     
     // 支持模糊匹配，比如 "修复问题 / 性能优化" 也能匹配 "修复问题"
     return changeType.includes(filterType);
+  }
+
+  /**
+   * 过滤 beta 版本，只保留到指定 beta 版本为止的变更
+   */
+  filterBetaVersionsUpTo(betaVersions, targetBetaVersion) {
+    const targetMatch = targetBetaVersion.match(/^(.+)-beta\.(\d+)$/);
+    if (!targetMatch) return betaVersions;
+    
+    const targetBetaNum = parseInt(targetMatch[2]);
+    const filteredVersions = {};
+    
+    for (const [betaVersion, changeInfo] of Object.entries(betaVersions)) {
+      const betaMatch = betaVersion.match(/^(.+)-beta\.(\d+)$/);
+      if (betaMatch) {
+        const betaNum = parseInt(betaMatch[2]);
+        // 只保留 beta 号小于等于目标 beta 号的版本
+        if (betaNum <= targetBetaNum) {
+          filteredVersions[betaVersion] = changeInfo;
+        }
+      } else {
+        // 非 beta 版本直接保留
+        filteredVersions[betaVersion] = changeInfo;
+      }
+    }
+    
+    return filteredVersions;
   }
 }
 
@@ -580,10 +644,12 @@ async function main() {
     console.log('      pnpm diff 3.5.6 3.6.1 --json');
     console.log('      pnpm diff 3.5.6 3.6.1 --fix-only');
     console.log('      pnpm diff 3.5.6 3.6.1 --json --fix-only');
+    console.log('      pnpm diff 3.6.2 3.6.3-beta.2');
+    console.log('      pnpm diff 3.6.3-beta.1 3.6.3-beta.5');
     console.log('');
     console.log('说明:');
-    console.log('  current     当前版本号');
-    console.log('  target      目标版本号');
+    console.log('  current     当前版本号（支持正式版本和 beta 版本）');
+    console.log('  target      目标版本号（支持正式版本和 beta 版本）');
     console.log('  --json      输出 JSON 格式（便于 AI 解析）');
     console.log('  --fix-only  只输出修复问题类的变更');
     process.exit(1);
