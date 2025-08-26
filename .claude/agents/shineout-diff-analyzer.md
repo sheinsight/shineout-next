@@ -78,7 +78,6 @@ Generate reports following this markdown template:
 **推荐排查规则:**
 1. 搜索模式: `[正则表达式或关键词]`
 2. 检查重点: [具体检查项]
-3. 测试场景: [需要测试的交互]
 ```
 
 ## Quality Assurance
