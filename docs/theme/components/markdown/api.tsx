@@ -163,6 +163,7 @@ const Api = (props: { api: MarkdownProps['api'] }) => {
               isLast={index === api.length - 1}
               rowClassName={(d) => (d.name === activeApi ? classes.activeApi : '')}
               onRowClick={(api) => {
+                if (activeApi === api) return;
                 context.isRowClick = true;
                 setTimeout(() => {
                   context.isRowClick = false;
