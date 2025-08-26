@@ -315,7 +315,7 @@ class ShineoutDiffAnalyzer {
   /**
    * 收集指定版本的所有组件变更信息
    */
-  collectComponentChanges(versions, silent = false) {
+  collectComponentChanges(versions, silent = false, filterType = null) {
     const components = this.getAllComponents();
     const result = {};
     
@@ -335,9 +335,25 @@ class ShineoutDiffAnalyzer {
             const betaVersions = this.parseDiffReport(content);
             
             if (Object.keys(betaVersions).length > 0) {
-              result[component][version] = betaVersions;
-              if (!silent) {
-                console.log(`✅ ${component} v${version}: 发现 ${Object.keys(betaVersions).length} 个 beta 版本变更`);
+              // 应用过滤器
+              if (filterType) {
+                const filteredBetaVersions = {};
+                for (const [betaVersion, changeInfo] of Object.entries(betaVersions)) {
+                  if (this.matchesFilter(changeInfo.changeType, filterType)) {
+                    filteredBetaVersions[betaVersion] = changeInfo;
+                  }
+                }
+                if (Object.keys(filteredBetaVersions).length > 0) {
+                  result[component][version] = filteredBetaVersions;
+                  if (!silent) {
+                    console.log(`✅ ${component} v${version}: 发现 ${Object.keys(filteredBetaVersions).length} 个${filterType}变更`);
+                  }
+                }
+              } else {
+                result[component][version] = betaVersions;
+                if (!silent) {
+                  console.log(`✅ ${component} v${version}: 发现 ${Object.keys(betaVersions).length} 个 beta 版本变更`);
+                }
               }
             }
           } catch (error) {
@@ -495,7 +511,7 @@ class ShineoutDiffAnalyzer {
   /**
    * 主分析方法
    */
-  async analyze(fromVersion, toVersion, format = 'console') {
+  async analyze(fromVersion, toVersion, format = 'console', filterType = null) {
     try {
       // 验证版本格式
       if (!this.isValidVersion(fromVersion) || !this.isValidVersion(toVersion)) {
@@ -525,7 +541,7 @@ class ShineoutDiffAnalyzer {
       }
       
       // 2. 收集组件变更信息
-      const componentChanges = this.collectComponentChanges(versionList, format === 'json');
+      const componentChanges = this.collectComponentChanges(versionList, format === 'json', filterType);
       
       // 3. 输出结果
       this.outputResults(fromVersion, toVersion, versionList, componentChanges, format);
@@ -542,6 +558,16 @@ class ShineoutDiffAnalyzer {
   isValidVersion(version) {
     return /^\d+\.\d+\.\d+$/.test(version);
   }
+
+  /**
+   * 检查变更类型是否匹配过滤条件
+   */
+  matchesFilter(changeType, filterType) {
+    if (!changeType || !filterType) return false;
+    
+    // 支持模糊匹配，比如 "修复问题 / 性能优化" 也能匹配 "修复问题"
+    return changeType.includes(filterType);
+  }
 }
 
 // CLI 入口
@@ -549,23 +575,27 @@ async function main() {
   const args = process.argv.slice(2);
   
   if (args.length < 2) {
-    console.log('使用方法: pnpm diff <current> <target> [--json]');
+    console.log('使用方法: pnpm diff <current> <target> [--json] [--fix-only]');
     console.log('示例: pnpm diff 3.5.6 3.6.1');
     console.log('      pnpm diff 3.5.6 3.6.1 --json');
+    console.log('      pnpm diff 3.5.6 3.6.1 --fix-only');
+    console.log('      pnpm diff 3.5.6 3.6.1 --json --fix-only');
     console.log('');
     console.log('说明:');
-    console.log('  current  当前版本号');
-    console.log('  target   目标版本号');
-    console.log('  --json   输出 JSON 格式（便于 AI 解析）');
+    console.log('  current     当前版本号');
+    console.log('  target      目标版本号');
+    console.log('  --json      输出 JSON 格式（便于 AI 解析）');
+    console.log('  --fix-only  只输出修复问题类的变更');
     process.exit(1);
   }
   
   const fromVersion = args[0];
   const toVersion = args[1];
   const format = args.includes('--json') ? 'json' : 'console';
+  const filterType = args.includes('--fix-only') ? '修复问题' : null;
   
   const analyzer = new ShineoutDiffAnalyzer();
-  await analyzer.analyze(fromVersion, toVersion, format);
+  await analyzer.analyze(fromVersion, toVersion, format, filterType);
 }
 
 if (require.main === module) {
