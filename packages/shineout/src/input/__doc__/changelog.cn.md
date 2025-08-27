@@ -13,6 +13,14 @@
 
 - 增强 `Input` 的 `info` 属性，支持配置提示信息的位置和挂载点 ([#1189](https://github.com/sheinsight/shineout-next/pull/1189))
 
+
+## 3.7.11-beta.1
+2025-08-25
+
+### 🐞 BugFix
+
+- 修复 `Input.Number` 的 `coin` 属性不生效，与 v1 v2 表现不一致的问题 ([#1324](https://github.com/sheinsight/shineout-next/pull/1324))
+
 ## 3.7.7-beta.3
 2025-07-16
 
