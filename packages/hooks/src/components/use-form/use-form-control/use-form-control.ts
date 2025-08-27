@@ -86,7 +86,9 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const update = usePersistFn(
     (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
       if (!name) return;
-      if (isArray(name)) {
+      // 加入defaultValue的判断，让其只对 https://github.com/sheinsight/shineout-next/pull/742 的场景生效
+      // 如果不加入defaultValue的判断，会导致 8ea43144-36a5-403a-9147-59d54087a110 的问题
+      if (isArray(name) && defaultValue !== undefined) {
         const value = getValue(name, formValue) as T[];
         const error = getError(name, errors, severErrors);
         if (error !== errorState) {

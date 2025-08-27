@@ -1,3 +1,9 @@
+## 3.8.0-beta.47
+2025-08-27
+
+### 🐞 BugFix
+- 修复 `DatePicker` 的 `range` 设置了name为数组的场景下强制在 `onPickerChange` 中设置name对应值为undefined后，结果框中无法选中值的问题 ([#1326](https://github.com/sheinsight/shineout-next/pull/1326))
+
 ## 3.8.0-beta.30
 2025-08-14
 
