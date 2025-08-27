@@ -22,5 +22,5 @@
       "@sheinx/theme": ["packages/theme/src/index.ts"],
     }
   },
-  "include": ["packages/**/*", "./docs/**/*"]
+  "includes": ["packages/**/*", "./docs/**/*"]
 }
