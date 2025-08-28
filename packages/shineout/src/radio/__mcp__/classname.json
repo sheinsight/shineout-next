@@ -1,0 +1,15 @@
+[
+  "soui-radio",
+  "soui-radio-wrapper",
+  "soui-radio-wrapper-small",
+  "soui-radio-wrapper-large",
+  "soui-radio-wrapper-checked",
+  "soui-radio-wrapper-disabled",
+  "soui-radio-indicator-wrapper",
+  "soui-radio-dark-indicator-wrapper",
+  "soui-radio-indicator",
+  "soui-radio-desc",
+  "soui-radio-group",
+  "soui-radio-group-block",
+  "soui-radio-group-button"
+]

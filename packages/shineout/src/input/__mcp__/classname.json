@@ -1,0 +1,18 @@
+[
+  "soui-input",
+  "soui-input-wrapper",
+  "soui-input-wrapper-number",
+  "soui-input-content",
+  "soui-input-input",
+  "soui-input-clear-wrapper",
+  "soui-input-password",
+  "soui-input-clear",
+  "soui-input-group",
+  "soui-input-group-separate",
+  "soui-input-group-small",
+  "soui-input-group-large",
+  "soui-input-number-step",
+  "soui-input-password-toggle",
+  "soui-input-info",
+  "soui-input-info-error"
+]

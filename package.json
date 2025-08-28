@@ -31,7 +31,9 @@
     "test:coverage": "jest --coverage -u",
     "test:merge": "cross-env NODE_ENV=test node ./scripts/merge-coverage.js",
     "cypress:open": "cross-env NODE_ENV=test cypress open",
-    "cypress:run": "cross-env NODE_ENV=test cypress run --browser chrome"
+    "cypress:run": "cross-env NODE_ENV=test cypress run --browser chrome",
+    "mcp:classname": "node scripts/generate-classnames.js",
+    "mcp:classname:component": "node scripts/generate-classnames.js"
   },
   "authors": "",
   "license": "MIT",

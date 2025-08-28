@@ -1,0 +1,23 @@
+[
+  "soui-progress",
+  "soui-progress-wrapper",
+  "soui-progress-wrapper-success",
+  "soui-progress-wrapper-info",
+  "soui-progress-wrapper-warning",
+  "soui-progress-wrapper-danger",
+  "soui-progress-line",
+  "soui-progress-line-default",
+  "soui-progress-line-pop",
+  "soui-progress-line-inner",
+  "soui-progress-line-inner-right",
+  "soui-progress-line-bg",
+  "soui-progress-line-front",
+  "soui-progress-content",
+  "soui-progress-line-pop-wrapper",
+  "soui-progress-line-pop-value",
+  "soui-progress-line-pop-arrow",
+  "soui-progress-icon",
+  "soui-progress-circle",
+  "soui-progress-circle-bg",
+  "soui-progress-circle-front"
+]

@@ -1,0 +1,15 @@
+[
+  "soui-link",
+  "soui-link-wrapper",
+  "soui-link-size-small",
+  "soui-link-size-large",
+  "soui-link-underline",
+  "soui-link-underline-hover",
+  "soui-link-disabled",
+  "soui-link-primary",
+  "soui-link-secondary",
+  "soui-link-danger",
+  "soui-link-warning",
+  "soui-link-success",
+  "soui-link-icon"
+]

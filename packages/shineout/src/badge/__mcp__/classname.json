@@ -1,0 +1,21 @@
+[
+  "soui-badge",
+  "soui-badge-badge",
+  "soui-badge-text-badge",
+  "soui-badge-count",
+  "soui-badge-small",
+  "soui-badge-dot",
+  "soui-badge-text-dot",
+  "soui-badge-number",
+  "soui-badge-single-word",
+  "soui-badge-multiple-words",
+  "soui-badge-custom",
+  "soui-badge-zoom",
+  "soui-badge-status",
+  "soui-badge-text",
+  "soui-badge-default",
+  "soui-badge-warning",
+  "soui-badge-success",
+  "soui-badge-error",
+  "soui-badge-processing"
+]

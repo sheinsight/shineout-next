@@ -1,0 +1,18 @@
+[
+  "soui-pagination",
+  "soui-pagination-pagination",
+  "soui-pagination-left",
+  "soui-pagination-right",
+  "soui-pagination-center",
+  "soui-pagination-section",
+  "soui-pagination-split",
+  "soui-pagination-icon",
+  "soui-pagination-buttons",
+  "soui-pagination-jumper",
+  "soui-pagination-jumper-input",
+  "soui-pagination-size-list",
+  "soui-pagination-simple",
+  "soui-pagination-small",
+  "soui-pagination-large",
+  "soui-pagination-button-item"
+]

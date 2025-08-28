@@ -1,0 +1,21 @@
+[
+  "soui-slider",
+  "soui-slider-wrapper",
+  "soui-slider-auto-hide",
+  "soui-slider-disabled",
+  "soui-slider-vertical",
+  "soui-slider-track",
+  "soui-slider-track-inner",
+  "soui-slider-indicator",
+  "soui-slider-indicator-active",
+  "soui-slider-indicator-hover",
+  "soui-slider-indicator-start",
+  "soui-slider-indicator-end",
+  "soui-slider-value",
+  "soui-slider-start-value",
+  "soui-slider-end-value",
+  "soui-slider-value-hover",
+  "soui-slider-scale-wrapper",
+  "soui-slider-scale",
+  "soui-slider-label"
+]

@@ -1,0 +1,16 @@
+[
+  "soui-breadcrumb",
+  "soui-breadcrumb-wrapper",
+  "soui-breadcrumb-wrapper-popover",
+  "soui-breadcrumb-content",
+  "soui-breadcrumb-content-max-width",
+  "soui-breadcrumb-ellipsis",
+  "soui-breadcrumb-item-wrapper",
+  "soui-breadcrumb-item",
+  "soui-breadcrumb-item-with-drop",
+  "soui-breadcrumb-down",
+  "soui-breadcrumb-down-open",
+  "soui-breadcrumb-dropdown",
+  "soui-breadcrumb-dropdown-item",
+  "soui-breadcrumb-separator"
+]

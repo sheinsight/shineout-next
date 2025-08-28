@@ -1,0 +1,20 @@
+[
+  "soui-dropdown",
+  "soui-dropdown-wrapper",
+  "soui-dropdown-open",
+  "soui-dropdown-list",
+  "soui-dropdown-list-small",
+  "soui-dropdown-list-large",
+  "soui-dropdown-list-has-children",
+  "soui-dropdown-box-list",
+  "soui-dropdown-caret",
+  "soui-dropdown-content",
+  "soui-dropdown-button",
+  "soui-dropdown-item-wrapper",
+  "soui-dropdown-item",
+  "soui-dropdown-item-disabled",
+  "soui-dropdown-option-group",
+  "soui-dropdown-option-divider",
+  "soui-dropdown-item-active",
+  "soui-dropdown-split-button"
+]

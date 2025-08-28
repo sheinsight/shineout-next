@@ -1,0 +1,16 @@
+[
+  "soui-checkbox",
+  "soui-checkbox-wrapper",
+  "soui-checkbox-wrapper-small",
+  "soui-checkbox-wrapper-large",
+  "soui-checkbox-input",
+  "soui-checkbox-wrapper-checked",
+  "soui-checkbox-wrapper-indeterminate",
+  "soui-checkbox-wrapper-disabled",
+  "soui-checkbox-indicator-wrapper",
+  "soui-checkbox-dark-indicator-wrapper",
+  "soui-checkbox-indicator",
+  "soui-checkbox-desc",
+  "soui-checkbox-group",
+  "soui-checkbox-group-block"
+]

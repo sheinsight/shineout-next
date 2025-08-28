@@ -1,0 +1,23 @@
+[
+  "soui-descriptions",
+  "soui-descriptions-wrapper",
+  "soui-descriptions-small",
+  "soui-descriptions-large",
+  "soui-descriptions-header",
+  "soui-descriptions-title",
+  "soui-descriptions-extra",
+  "soui-descriptions-body",
+  "soui-descriptions-table",
+  "soui-descriptions-row",
+  "soui-descriptions-label",
+  "soui-descriptions-value",
+  "soui-descriptions-cell",
+  "soui-descriptions-item",
+  "soui-descriptions-label-inline",
+  "soui-descriptions-value-inline",
+  "soui-descriptions-horizontal",
+  "soui-descriptions-vertical",
+  "soui-descriptions-inline-horizontal",
+  "soui-descriptions-table-layout-fixed",
+  "soui-descriptions-border"
+]
