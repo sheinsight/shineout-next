@@ -5,105 +5,91 @@
 - 包含 Beta 版本: 3.5.1-beta.1 ~ 3.5.1-beta.6
 - 发布日期: 2024-11-14
 
-## 变更概要
-
-本版本修复了 Form.FieldSet 校验返回 Error 数组时的处理异常问题。
-
 ## 详细变更
 
-### Bug 修复
-
-#### 3.5.1-beta.5
-- **修复问题**: Form.FieldSet 校验返回 Error 数组时校验异常的问题
+### 3.5.1-beta.2
+- **变更类型**: 修复问题
+- **变更标签**: 功能/逻辑/数据
+- **复现示例**: 无
+- **变更描述**: 修复 `Form.FieldSet` 校验返参为 Error 数组时校验异常的问题
 - **PR**: [#796](https://github.com/sheinsight/shineout-next/pull/796)
 - **影响组件**: Form.FieldSet
-- **问题原因**: FieldSet 处理批量校验结果时，对 Error 数组的处理逻辑有误
+- **问题原因**: 当使用自定义校验函数且 callback 接收 Error 数组时，内部处理 FieldSet 情况时未正确处理数组格式的错误，导致解析错误并抛出异常
 
-## 代码变更分析
+#### Bug 特征
+- 使用 Form.FieldSet 组件进行表单数组校验
+- 自定义校验函数通过 callback 返回 Error 数组格式的错误信息
+- 校验时出现解析错误，导致 FieldSet 校验异常
+- 影响复杂表单的数组字段验证功能
 
-### 关键改动
+**代码模式**：
+```jsx
+// 容易出现问题的代码结构
+<Form.FieldSet
+  name="arrayField"
+  rules={[
+    {
+      validator: (values, rule, callback) => {
+        const result = [];
+        values.forEach(({ name }, i) => {
+          if (!name) return;
+          if (valueMap[name]) {
+            result[i] = { name: new Error(`Name "${name}" is existed.`) };
+          }
+        });
+        callback(result.length > 0 ? result : true); // 返回Error数组时出错
+      }
+    }
+  ]}
+>
+  {/* 表单数组内容 */}
+</Form.FieldSet>
+```
 
-修复了 FieldSet 处理自定义校验函数返回值的逻辑：
-1. 正确处理稀疏 Error 数组（部分索引为 undefined）
-2. 支持嵌套对象结构（如 `{ fieldName: Error }` 格式）
-3. 避免内部解析时的类型错误
+#### 排查规则
+- 搜索使用了自定义校验规则的 Form.FieldSet 且在自定义校验函数中通过 callback 返回数组格式错误的表单项
 
-## 受影响的使用场景
+### 3.5.1-beta.3
+- **变更类型**: 修复问题
+- **变更标签**: 功能/逻辑
+- **复现示例**: 无
+- **变更描述**: 修复 Form 校验失效的问题
+- **PR**: [#797](https://github.com/sheinsight/shineout-next/pull/797)
+- **影响组件**: Form
+- **问题原因**: 在表单控件的错误处理逻辑中，当错误不是数组格式时，缺少对应的错误设置处理，导致基础校验失效
 
-### 场景 1: FieldSet 校验返回稀疏 Error 数组（核心问题）
+#### Bug 特征
+- Form 组件的基础校验功能失效
+- 表单控件在验证失败时无法正确设置错误状态
+- 主要影响非数组格式错误的处理逻辑
+- 可能导致表单验证反馈不准确
 
-**Bug 特征**：
-- Form.FieldSet 的自定义校验函数返回 Error 数组
-- 数组为稀疏数组（仅部分索引有值，其他为 undefined）
-- 可能返回嵌套对象格式（`{ fieldName: Error }`）
-- FieldSet 内部处理这些格式时解析错误
+**代码模式**：
+```jsx
+// 容易出现问题的代码结构
+<Form>
+  <Form.Field
+    name="username"
+    rules={[
+      { required: true, message: '请输入用户名' }  // 基础校验规则
+    ]}
+  >
+    <Input />
+  </Form.Field>
+</Form>
+```
 
-**检查点**：
-- 搜索 `Form.FieldSet` 配合 `rules` 属性的使用
-- 查找校验函数中 `errors[index] =` 的赋值模式
-- 重点关注唯一性校验、重复项检查等场景
-- 验证错误信息是否正确显示在对应的数组项上
-
-### 场景 2: 动态表单的唯一性校验（高频场景）
-
-**Bug 特征**：
-- 检查数组项的重复或唯一性
-- 校验函数创建稀疏错误数组
-- 只在有问题的索引位置设置 Error
-- 其他位置保持 undefined
-
-**检查点**：
-- 搜索 checkDuplicate、validateUnique、isExist 等函数名
-- 查找包含 `seen[item.xxx]` 的重复检查逻辑
-- 检查动态表单列表的校验规则
-- 验证重复项的错误提示是否正确显示
-
-### 场景 3: 返回嵌套对象格式的错误
-
-**Bug 特征**：
-- 校验函数返回 `{ fieldName: Error }` 格式
-- 用于标识具体字段的错误
-- FieldSet 需要正确解析这种格式
-- 影响错误信息的定位和显示
-
-**检查点**：
-- 搜索返回对象格式错误的校验函数
-- 查找 `{ name: new Error(...) }` 的模式
-- 检查多字段联合校验的场景
-- 验证字段级错误提示的准确性
-
-### 场景 4: 混合校验规则
-
-**Bug 特征**：
-- 同时使用多个校验规则
-- 其中包含返回 Error 数组的规则
-- 不同规则返回不同格式的错误
-- 需要正确处理所有格式
-
-**检查点**：
-- 搜索 FieldSet 使用多个 rules 的场景
-- 查找同时有简单校验和复杂校验的表单
-- 检查规则数组中是否有返回 Error 数组的函数
-- 验证多规则场景下的错误显示
-
-### 场景 5: FieldSet 的 onInsert 操作配合校验
-
-**Bug 特征**：
-- 使用 onInsert 在中间插入数组项
-- 配合返回 Error 数组的校验
-- 插入后错误索引需要正确对应
-- 错误信息显示位置可能错乱
-
-**检查点**：
-- 搜索 FieldSet 使用 onInsert 的场景
-- 查找配合复杂校验规则的动态表单
-- 检查插入操作后的错误信息对应关系
-- 验证数组操作后的校验状态
+#### 排查规则
+- 可忽略排查
 
 ## Breaking Changes
 
-无破坏性变更
+无
 
 ## 风险等级
 
-**低风险** - 修复了特定场景下的校验问题，提升了 FieldSet 处理复杂校验返回值的能力
+**中**：
+- 包含两个回归问题修复，涉及表单核心的校验功能
+- Form.FieldSet 的错误处理修复可能影响使用数组校验的复杂表单
+- Form 基础校验的修复涉及表单验证的核心逻辑
+- 虽然都是Bug修复，但涉及校验这一关键功能，建议重点测试表单验证相关功能
