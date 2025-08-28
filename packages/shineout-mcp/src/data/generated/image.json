@@ -207,11 +207,160 @@
   ],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-image",
+    "soui-image-href",
+    "soui-image-image",
+    "soui-image-img",
+    "soui-image-inner",
+    "soui-image-fit",
+    "soui-image-fill",
+    "soui-image-preview-mask",
+    "soui-image-download",
+    "soui-image-preview",
+    "soui-image-center",
+    "soui-image-stretch",
+    "soui-image-circle",
+    "soui-image-rounded",
+    "soui-image-thumbnail",
+    "soui-image-placeholder",
+    "soui-image-default-placeholder",
+    "soui-image-default-error",
+    "soui-image-error",
+    "soui-image-overlay",
+    "soui-image-magnify",
+    "soui-image-magnify-zoom-out",
+    "soui-image-close",
+    "soui-image-gallery",
+    "soui-image-gallery-current",
+    "soui-image-gallery-init",
+    "soui-image-gallery-forward",
+    "soui-image-gallery-backward",
+    "soui-image-gallery-center",
+    "soui-image-gallery-left",
+    "soui-image-gallery-right",
+    "soui-image-group",
+    "soui-image-group-pile",
+    "soui-image-group-pile-item",
+    "soui-image-group-count"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-image",
+        "soui-image-image",
+        "soui-image-href",
+        "soui-image-fill",
+        "soui-image-rounded",
+        "soui-image-preview",
+        "soui-image-inner",
+        "soui-image-img",
+        "soui-image-preview-mask"
+      ],
+      "domStructure": "\n<div\n  style=\"gap: 8px; display: flex;\"\n>\n  <a\n    class=\"soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview\"\n    style=\"width: 128px; padding-bottom: 128px;\"\n    target=\"_modal\"\n  >\n    <div\n      class=\"soui-image-inner\"\n    >\n      <img\n        class=\"soui-image-img\"\n        draggable=\"true\"\n        src=\"https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png\"\n        style=\"width: 100%; height: auto..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-image-group",
+        "soui-image",
+        "soui-image-image",
+        "soui-image-href",
+        "soui-image-fill",
+        "soui-image-rounded",
+        "soui-image-default-placeholder",
+        "soui-spin",
+        "soui-spin-spin",
+        "soui-spin-ring",
+        "soui-image-preview",
+        "soui-image-inner",
+        "soui-image-img",
+        "soui-image-preview-mask"
+      ],
+      "domStructure": "\n<div\n  style=\"gap: 8px; display: flex;\"\n>\n  <div\n    class=\"soui-image-group\"\n    style=\"font-size: 0px;\"\n  >\n    <a\n      class=\"soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded\"\n      style=\"margin-bottom: 8px; width: 128px; padding-bottom: 128px;\"\n      target=\"_modal\"\n    >\n      <div\n        class=\"soui-image-default-placeholder\"\n      >\n        <div\n          class=\"soui-spin soui-spin-spin soui-spin-ring\"\n          style=\"width: 16px; height: 16px; border-wi..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-image-group",
+        "soui-image-group-pile",
+        "soui-image",
+        "soui-image-image",
+        "soui-image-href",
+        "soui-image-fill",
+        "soui-image-rounded",
+        "soui-image-preview",
+        "soui-image-inner",
+        "soui-image-img",
+        "soui-image-preview-mask",
+        "soui-image-group-pile-item",
+        "soui-image-group-count"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-image-group soui-image-group-pile\"\n>\n  <a\n    class=\"soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview\"\n    style=\"width: 128px; padding-bottom: 128px;\"\n    target=\"_modal\"\n  >\n    <div\n      class=\"soui-image-inner\"\n    >\n      <img\n        class=\"soui-image-img\"\n        draggable=\"true\"\n        src=\"https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png\"\n        style=\"width: 100%..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-image-group",
+        "soui-image-group-pile",
+        "soui-image",
+        "soui-image-image",
+        "soui-image-href",
+        "soui-image-fill",
+        "soui-image-rounded",
+        "soui-image-preview",
+        "soui-image-inner",
+        "soui-image-img",
+        "soui-image-preview-mask",
+        "soui-image-group-pile-item"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-image-group soui-image-group-pile\"\n>\n  <a\n    class=\"soui-image soui-image-image soui-image-href soui-image-fill soui-image-rounded soui-image-preview\"\n    style=\"width: 128px; padding-bottom: 128px;\"\n    target=\"_modal\"\n  >\n    <div\n      class=\"soui-image-inner\"\n    >\n      <img\n        class=\"soui-image-img\"\n        draggable=\"true\"\n        src=\"https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png\"\n        style=\"width: 100%..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-image",
+        "soui-image-image",
+        "soui-image-fill",
+        "soui-image-circle",
+        "soui-image-inner",
+        "soui-image-img"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-image soui-image-image soui-image-fill soui-image-circle\"\n  style=\"width: 128px; padding-bottom: 128px;\"\n  target=\"_modal\"\n>\n  <div\n    class=\"soui-image-inner\"\n  >\n    <img\n      class=\"soui-image-img\"\n      draggable=\"true\"\n      src=\"https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png\"\n      style=\"width: 100%; height: auto;\"\n    />\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-image",
+        "soui-image-image",
+        "soui-image-fill",
+        "soui-image-rounded",
+        "soui-image-inner",
+        "soui-image-img"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-image soui-image-image soui-image-fill soui-image-rounded\"\n  style=\"width: 128px; padding-bottom: 128px;\"\n  target=\"_modal\"\n>\n  <div\n    class=\"soui-image-inner\"\n  >\n    <img\n      class=\"soui-image-img\"\n      draggable=\"true\"\n      src=\"https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png\"\n      style=\"width: 100%; height: auto;\"\n    />\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-image",
+        "soui-image-image",
+        "soui-image-fill",
+        "soui-image-thumbnail",
+        "soui-image-inner",
+        "soui-image-img"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-image soui-image-image soui-image-fill soui-image-thumbnail\"\n  style=\"width: 128px; padding-bottom: 128px;\"\n  target=\"_modal\"\n>\n  <div\n    class=\"soui-image-inner\"\n  >\n    <img\n      class=\"soui-image-img\"\n      draggable=\"true\"\n      src=\"https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png\"\n      style=\"width: 100%; height: auto;\"\n    />\n  </div>\n</div>\n"
+    }
+  ],
   "apiSummary": {
     "totalProps": 21,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 10
+    "examplesCount": 10,
+    "classNamesCount": 35,
+    "domStructuresCount": 7
   },
   "subComponentApis": {
     "Group": {

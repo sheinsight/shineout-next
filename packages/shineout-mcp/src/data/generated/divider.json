@@ -69,10 +69,49 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-divider",
+    "soui-divider-wrapper",
+    "soui-divider-wrapper-dashed",
+    "soui-divider-vertical",
+    "soui-divider-horizontal",
+    "soui-divider-with-text",
+    "soui-divider-with-text-center",
+    "soui-divider-with-text-left",
+    "soui-divider-with-text-right",
+    "soui-divider-inner-text"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-divider",
+        "soui-divider-wrapper",
+        "soui-divider-horizontal"
+      ],
+      "domStructure": "\n<div\n  style=\"font-size: 12px;\"\n>\n  <p>\n    A design is a plan or specification for the construction of an object.\n  </p>\n  <div\n    class=\"soui-divider soui-divider-wrapper soui-divider-horizontal\"\n  />\n  <p>\n    A design is a plan or specification for the construction of an object.\n  </p>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-divider",
+        "soui-divider-wrapper",
+        "soui-divider-horizontal",
+        "soui-divider-with-text",
+        "soui-divider-with-text-center",
+        "soui-divider-inner-text",
+        "soui-divider-with-text-left",
+        "soui-divider-with-text-right"
+      ],
+      "domStructure": "\n<div\n  style=\"font-size: 12px;\"\n>\n  <p>\n    A design is a plan or specification for the construction of an object.\n  </p>\n  <div\n    class=\"soui-divider soui-divider-wrapper soui-divider-horizontal soui-divider-with-text soui-divider-with-text-center\"\n  >\n    <span\n      class=\"soui-divider-inner-text\"\n    >\n      Center\n    </span>\n  </div>\n  <p>\n    A design is a plan or specification for the construction of an object.\n  </p>\n  <div\n    class=\"soui-divider soui-divider-wrapper soui-divider-ho..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 6,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 4
+    "examplesCount": 4,
+    "classNamesCount": 10,
+    "domStructuresCount": 2
   }
 }

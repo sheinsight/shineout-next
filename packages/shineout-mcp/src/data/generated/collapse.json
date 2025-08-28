@@ -129,11 +129,162 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-collapse",
+    "soui-collapse-wrapper",
+    "soui-collapse-border-less"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-collapse",
+        "soui-collapse-wrapper",
+        "soui-collapseItem-wrapper",
+        "soui-collapseItem-header",
+        "soui-collapseItem-region",
+        "soui-collapseItem-icon",
+        "soui-collapseItem-active-transform",
+        "soui-collapseItem-title",
+        "soui-collapseItem-content",
+        "soui-collapseItem-content-main",
+        "soui-collapseItem-active",
+        "soui-collapseItem-expanded",
+        "soui-collapseItem-disabled"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-collapse soui-collapse-wrapper\"\n    style=\"max-width: 1180px;\"\n  >\n    <div\n      class=\"soui-collapseItem-wrapper\"\n    >\n      <div\n        class=\"soui-collapseItem-header soui-collapseItem-region\"\n        data-soui-disabled=\"false\"\n        tabindex=\"0\"\n      >\n        <div\n          class=\"soui-collapseItem-icon soui-collapseItem-active-transform\"\n          dir=\"ltr\"\n          role=\"button\"\n        >\n          <svg\n            aria-hidden=\"true\"\n            fill=\"..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-collapse",
+        "soui-collapse-wrapper",
+        "soui-collapseItem-wrapper",
+        "soui-collapseItem-header",
+        "soui-collapseItem-region",
+        "soui-collapseItem-icon",
+        "soui-collapseItem-active-transform",
+        "soui-collapseItem-title",
+        "soui-collapseItem-content",
+        "soui-collapseItem-content-main"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-collapse soui-collapse-wrapper\"\n    style=\"max-width: 1180px;\"\n  >\n    <div\n      class=\"soui-collapseItem-wrapper\"\n    >\n      <div\n        class=\"soui-collapseItem-header soui-collapseItem-region\"\n        data-soui-disabled=\"false\"\n        tabindex=\"0\"\n      >\n        <div\n          class=\"soui-collapseItem-icon soui-collapseItem-active-transform\"\n          dir=\"ltr\"\n          role=\"button\"\n        >\n          <svg\n            aria-hidden=\"true\"\n            fill=\"..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-collapse",
+        "soui-collapse-wrapper",
+        "soui-collapseItem-wrapper",
+        "soui-collapseItem-header",
+        "soui-collapseItem-region",
+        "soui-collapseItem-icon",
+        "soui-collapseItem-active-transform",
+        "soui-collapseItem-title",
+        "soui-collapseItem-content",
+        "soui-collapseItem-content-main",
+        "soui-collapseItem-active",
+        "soui-collapseItem-expanded",
+        "soui-collapseItem-disabled"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-collapse soui-collapse-wrapper\"\n    style=\"max-width: 1180px;\"\n  >\n    <div\n      class=\"soui-collapseItem-wrapper\"\n      style=\"background: rgb(244, 245, 248);\"\n    >\n      <div\n        class=\"soui-collapseItem-header soui-collapseItem-region\"\n        data-soui-disabled=\"false\"\n        tabindex=\"0\"\n      >\n        <div\n          class=\"soui-collapseItem-icon soui-collapseItem-active-transform\"\n          dir=\"ltr\"\n          role=\"button\"\n        >\n          <svg\n   ..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-collapse",
+        "soui-collapse-wrapper",
+        "soui-collapseItem-wrapper",
+        "soui-collapseItem-header",
+        "soui-collapseItem-region",
+        "soui-collapseItem-icon",
+        "soui-collapseItem-active-transform",
+        "soui-collapseItem-title",
+        "soui-collapseItem-extra",
+        "soui-collapseItem-content",
+        "soui-collapseItem-content-main",
+        "soui-collapseItem-active",
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc",
+        "soui-collapseItem-expanded",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-collapse soui-collapse-wrapper\"\n    style=\"max-width: 1180px;\"\n  >\n    <div\n      class=\"soui-collapseItem-wrapper\"\n    >\n      <div\n        class=\"soui-collapseItem-header soui-collapseItem-region\"\n        data-soui-disabled=\"false\"\n        tabindex=\"0\"\n      >\n        <div\n          class=\"soui-collapseItem-icon soui-collapseItem-active-transform\"\n          dir=\"ltr\"\n          role=\"button\"\n        >\n          <svg\n            aria-hidden=\"true\"\n            fill=\"..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-wrapper-checked",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-collapse",
+        "soui-collapse-wrapper",
+        "soui-collapseItem-wrapper",
+        "soui-collapseItem-header",
+        "soui-collapseItem-region",
+        "soui-collapseItem-icon",
+        "soui-collapseItem-active-transform",
+        "soui-collapseItem-title",
+        "soui-collapseItem-content",
+        "soui-collapseItem-content-main"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"display: flex; margin-bottom: 16px; align-items: center;\"\n  >\n    <div\n      style=\"width: 80px;\"\n    >\n      Icon:\n    </div>\n    <div\n      class=\"soui-radio-group\"\n    >\n      <div\n        class=\"soui-radio soui-radio-wrapper soui-radio-wrapper-checked\"\n      >\n        <input\n          checked=\"\"\n          style=\"display: none;\"\n          tabindex=\"0\"\n          type=\"radio\"\n        />\n        <span\n          class=\"soui-radio-indicator-wrapper\"\n        >\n          <sp..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-collapse",
+        "soui-collapse-wrapper",
+        "soui-collapseItem-wrapper",
+        "soui-collapseItem-active",
+        "soui-collapseItem-header",
+        "soui-collapseItem-region",
+        "soui-collapseItem-icon",
+        "soui-collapseItem-active-transform",
+        "soui-collapseItem-title",
+        "soui-collapseItem-content",
+        "soui-collapseItem-expanded",
+        "soui-collapseItem-content-main"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-collapse soui-collapse-wrapper\"\n    style=\"max-width: 1180px;\"\n  >\n    <div\n      class=\"soui-collapseItem-wrapper soui-collapseItem-active\"\n    >\n      <div\n        class=\"soui-collapseItem-header soui-collapseItem-region\"\n        data-soui-disabled=\"false\"\n        tabindex=\"0\"\n      >\n        <div\n          class=\"soui-collapseItem-icon soui-collapseItem-active-transform\"\n          dir=\"ltr\"\n          role=\"button\"\n        >\n          <svg\n            aria-hidden=..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-collapse",
+        "soui-collapse-wrapper",
+        "soui-collapse-border-less",
+        "soui-collapseItem-wrapper",
+        "soui-collapseItem-active",
+        "soui-collapseItem-border-less",
+        "soui-collapseItem-header",
+        "soui-collapseItem-region",
+        "soui-collapseItem-icon",
+        "soui-collapseItem-active-transform",
+        "soui-collapseItem-title",
+        "soui-collapseItem-content",
+        "soui-collapseItem-expanded",
+        "soui-collapseItem-content-main"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-collapse soui-collapse-wrapper soui-collapse-border-less\"\n    style=\"max-width: 1180px;\"\n  >\n    <div\n      class=\"soui-collapseItem-wrapper soui-collapseItem-active soui-collapseItem-border-less\"\n    >\n      <div\n        class=\"soui-collapseItem-header soui-collapseItem-region\"\n        data-soui-disabled=\"false\"\n        tabindex=\"0\"\n      >\n        <div\n          class=\"soui-collapseItem-icon soui-collapseItem-active-transform\"\n          dir=\"ltr\"\n          role=\"b..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 13,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 7
+    "examplesCount": 7,
+    "classNamesCount": 3,
+    "domStructuresCount": 7
   },
   "subComponentApis": {}
 }

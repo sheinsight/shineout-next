@@ -223,10 +223,280 @@
     "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
   ],
   "notes": {},
+  "classNames": [
+    "soui-slider",
+    "soui-slider-wrapper",
+    "soui-slider-auto-hide",
+    "soui-slider-disabled",
+    "soui-slider-vertical",
+    "soui-slider-track",
+    "soui-slider-track-inner",
+    "soui-slider-indicator",
+    "soui-slider-indicator-active",
+    "soui-slider-indicator-hover",
+    "soui-slider-indicator-start",
+    "soui-slider-indicator-end",
+    "soui-slider-value",
+    "soui-slider-start-value",
+    "soui-slider-end-value",
+    "soui-slider-value-hover",
+    "soui-slider-scale-wrapper",
+    "soui-slider-scale",
+    "soui-slider-label"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 0%; right: 50%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-end\"\n        dir=\"ltr\"\n      />\n      <div\n        class=\"soui-slider-end-value soui-slider-value\"\n        dir=\"ltr\"\n      >\n        50\n      </div>\n    </div>\n  </div>\n  <div\n    class=\"soui-slider-scale-wrapper\"\n  >\n    <div\n      c..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-disabled",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-start",
+        "soui-slider-start-value",
+        "soui-slider-value",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper soui-slider-disabled\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 25%; right: 25%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-start\"\n        dir=\"ltr\"\n      />\n      <div\n        class=\"soui-slider-start-value soui-slider-value\"\n        dir=\"ltr\"\n      >\n        25\n      </div>\n      <div\n        class=\"soui-slider-indicator soui-slider..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-start",
+        "soui-slider-start-value",
+        "soui-slider-value",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 6.111111111111112%; right: 60%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-start\"\n        dir=\"ltr\"\n      />\n      <div\n        class=\"soui-slider-start-value soui-slider-value\"\n        dir=\"ltr\"\n      >\n        09:33\n      </div>\n      <div\n        class=\"soui-slider-indicator soui-slider-in..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 0%; right: 96%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-end\"\n        dir=\"ltr\"\n      />\n    </div>\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-auto-hide",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper soui-slider-auto-hide\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 0%; right: 87.5%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-end\"\n        dir=\"ltr\"\n      />\n      <div\n        class=\"soui-slider-end-value soui-slider-value\"\n        dir=\"ltr\"\n      >\n        4\n      </div>\n    </div>\n  </div>\n  <div\n    class=\"soui-slider-scale-wrappe..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label",
+        "soui-slider-indicator-start",
+        "soui-slider-start-value"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-slider soui-slider-wrapper\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-slider-track\"\n    >\n      <div\n        class=\"soui-slider-track-inner\"\n        dir=\"ltr\"\n        style=\"left: 0%; right: 50%;\"\n      >\n        <div\n          class=\"soui-slider-indicator soui-slider-indicator-end\"\n          dir=\"ltr\"\n        />\n        <div\n          class=\"soui-slider-end-value soui-slider-value\"\n          dir=\"ltr\"\n        >\n          50\n        </div>\n    ..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label",
+        "soui-input-wrapper-number",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input",
+        "soui-input-number-step"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; align-items: center;\"\n>\n  <div\n    class=\"soui-slider soui-slider-wrapper\"\n    style=\"flex: 1; margin-inline-end: 16px;\"\n  >\n    <div\n      class=\"soui-slider-track\"\n    >\n      <div\n        class=\"soui-slider-track-inner\"\n        dir=\"ltr\"\n        style=\"left: 0%; right: 50%;\"\n      >\n        <div\n          class=\"soui-slider-indicator soui-slider-indicator-end\"\n          dir=\"ltr\"\n        />\n        <div\n          class=\"soui-slider-end-value soui-slider-value\"\n  ..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-start",
+        "soui-slider-start-value",
+        "soui-slider-value",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 25%; right: 25%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-start\"\n        dir=\"ltr\"\n      />\n      <div\n        class=\"soui-slider-start-value soui-slider-value\"\n        dir=\"ltr\"\n      >\n        25\n      </div>\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-end\"\n     ..."
+    },
+    {
+      "scenario": "渲染场景 9",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 0%; right: 100%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-end\"\n        dir=\"ltr\"\n      />\n      <div\n        class=\"soui-slider-end-value soui-slider-value\"\n        dir=\"ltr\"\n      >\n        0\n      </div>\n    </div>\n  </div>\n  <div\n    class=\"soui-slider-scale-wrapper\"\n  >\n    <div\n      c..."
+    },
+    {
+      "scenario": "渲染场景 10",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-start",
+        "soui-slider-start-value",
+        "soui-slider-value",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 5%; right: 75%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-start\"\n        dir=\"ltr\"\n      />\n      <div\n        class=\"soui-slider-start-value soui-slider-value\"\n        dir=\"ltr\"\n      >\n        0.05\n      </div>\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-end\"\n    ..."
+    },
+    {
+      "scenario": "渲染场景 11",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-slider soui-slider-wrapper\"\n>\n  <div\n    class=\"soui-slider-track\"\n  >\n    <div\n      class=\"soui-slider-track-inner\"\n      dir=\"ltr\"\n      style=\"left: 0%; right: 100%;\"\n    >\n      <div\n        class=\"soui-slider-indicator soui-slider-indicator-end\"\n        dir=\"ltr\"\n      />\n      <div\n        class=\"soui-slider-end-value soui-slider-value\"\n        dir=\"ltr\"\n      >\n        1\n      </div>\n    </div>\n  </div>\n  <div\n    class=\"soui-slider-scale-wrapper\"\n  >\n    <div\n      c..."
+    },
+    {
+      "scenario": "渲染场景 12",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-indicator-hover",
+        "soui-slider-end-value",
+        "soui-slider-value",
+        "soui-slider-value-hover",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label",
+        "soui-slider-disabled"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-slider soui-slider-wrapper\"\n  >\n    <div\n      class=\"soui-slider-track\"\n    >\n      <div\n        class=\"soui-slider-track-inner\"\n        dir=\"ltr\"\n        style=\"left: 0%; right: 50%;\"\n      >\n        <div\n          class=\"soui-slider-indicator soui-slider-indicator-end soui-slider-indicator-hover\"\n          dir=\"ltr\"\n        />\n        <div\n          class=\"soui-slider-end-value soui-slider-value soui-slider-value-hover\"\n          dir=\"ltr\"\n        >\n          50\n..."
+    },
+    {
+      "scenario": "渲染场景 13",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-vertical",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-value",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label",
+        "soui-slider-indicator-start",
+        "soui-slider-start-value",
+        "soui-slider-auto-hide",
+        "soui-slider-disabled"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-slider soui-slider-wrapper soui-slider-vertical\"\n    style=\"height: 200px;\"\n  >\n    <div\n      class=\"soui-slider-track\"\n    >\n      <div\n        class=\"soui-slider-track-inner\"\n        dir=\"ltr\"\n        style=\"bottom: 0%; top: 50%;\"\n      >\n        <div\n          class=\"soui-slider-indicator soui-slider-indicator-end\"\n          dir=\"ltr\"\n        />\n        <div\n          class=\"soui-slider-end-value soui-slider-value\"\n          dir=\"ltr\"\n        >\n          50\n    ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 22,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 13
+    "examplesCount": 13,
+    "classNamesCount": 19,
+    "domStructuresCount": 13
   }
 }

@@ -135,10 +135,238 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-progress",
+    "soui-progress-wrapper",
+    "soui-progress-wrapper-success",
+    "soui-progress-wrapper-info",
+    "soui-progress-wrapper-warning",
+    "soui-progress-wrapper-danger",
+    "soui-progress-line",
+    "soui-progress-line-default",
+    "soui-progress-line-pop",
+    "soui-progress-line-inner",
+    "soui-progress-line-inner-right",
+    "soui-progress-line-bg",
+    "soui-progress-line-front",
+    "soui-progress-content",
+    "soui-progress-line-pop-wrapper",
+    "soui-progress-line-pop-value",
+    "soui-progress-line-pop-arrow",
+    "soui-progress-icon",
+    "soui-progress-circle",
+    "soui-progress-circle-bg",
+    "soui-progress-circle-front"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-line-default",
+        "soui-progress-line-bg",
+        "soui-progress-line-front"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default\"\n  style=\"width: 400px;\"\n>\n  <div\n    class=\"soui-progress-line-bg\"\n  >\n    <div\n      class=\"soui-progress-line-front\"\n      style=\"width: 75%;\"\n    />\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-line-default",
+        "soui-progress-line-bg",
+        "soui-progress-line-front",
+        "soui-progress-content",
+        "soui-progress-circle",
+        "soui-progress-wrapper-success",
+        "soui-progress-circle-bg",
+        "soui-progress-circle-front",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div>\n  <div>\n    <div\n      class=\"soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default\"\n      style=\"width: 400px;\"\n    >\n      <div\n        class=\"soui-progress-line-bg\"\n      >\n        <div\n          class=\"soui-progress-line-front\"\n          style=\"width: 0%;\"\n        />\n      </div>\n      <div\n        class=\"soui-progress-content\"\n      >\n        <div\n          style=\"width: 50px;\"\n        >\n          0%\n        </div>\n      </div>\n ..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-progress",
+        "soui-progress-circle",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-circle-bg",
+        "soui-progress-circle-front",
+        "soui-progress-content",
+        "soui-progress-wrapper-warning",
+        "soui-progress-icon",
+        "soui-progress-wrapper-success",
+        "soui-progress-wrapper-danger"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; gap: 32px;\"\n>\n  <div\n    class=\"soui-progress soui-progress-circle soui-progress-wrapper soui-progress-wrapper-info\"\n    style=\"width: 64px; height: 64px;\"\n  >\n    <svg\n      viewBox=\"0 0 64 64\"\n    >\n      <circle\n        class=\"soui-progress-circle-bg\"\n        cx=\"32\"\n        cy=\"32\"\n        fill=\"transparent\"\n        r=\"30\"\n        stroke-width=\"4\"\n      />\n      <circle\n        class=\"soui-progress-circle-front\"\n        cx=\"32\"\n        cy=\"32\"\n        fill=\"tran..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-line-default",
+        "soui-progress-line-bg",
+        "soui-progress-line-front",
+        "soui-progress-content",
+        "soui-progress-line-inner",
+        "soui-progress-circle",
+        "soui-progress-circle-bg",
+        "soui-progress-circle-front"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 400px;\"\n>\n  <div\n    class=\"soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default\"\n  >\n    <div\n      class=\"soui-progress-line-bg\"\n    >\n      <div\n        class=\"soui-progress-line-front\"\n        style=\"width: 40%;\"\n      />\n    </div>\n    <div\n      class=\"soui-progress-content\"\n    >\n      40%\n    </div>\n  </div>\n  <br />\n  <div\n    class=\"soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-line-inner",
+        "soui-progress-line-inner-right",
+        "soui-progress-line-bg",
+        "soui-progress-line-front",
+        "soui-progress-content",
+        "soui-progress-wrapper-warning",
+        "soui-progress-wrapper-success",
+        "soui-progress-wrapper-danger"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-direction: column; gap: 24px; width: 400px;\"\n>\n  <div\n    class=\"soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-inner soui-progress-line-inner-right\"\n  >\n    <div\n      class=\"soui-progress-line-bg\"\n    >\n      <div\n        class=\"soui-progress-line-front\"\n        style=\"width: 0%;\"\n      >\n        <div\n          class=\"soui-progress-content\"\n        >\n          0%\n        </div>\n      </div>\n    </div>\n  </..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-line-default",
+        "soui-progress-line-pop",
+        "soui-progress-line-bg",
+        "soui-progress-line-front",
+        "soui-progress-line-pop-wrapper",
+        "soui-progress-line-pop-value",
+        "soui-progress-line-pop-arrow",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 400px;\"\n>\n  <div\n    class=\"soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-info soui-progress-line-default soui-progress-line-pop\"\n  >\n    <div\n      class=\"soui-progress-line-bg\"\n    >\n      <div\n        class=\"soui-progress-line-front\"\n        style=\"width: 0%;\"\n      />\n    </div>\n    <div\n      class=\"soui-progress-line-pop-wrapper\"\n      style=\"left: 0%; transform: translateX(-50%) rotate(0deg);\"\n    >\n      <span\n        class=\"soui-progr..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked",
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-line-default",
+        "soui-progress-line-bg",
+        "soui-progress-line-front",
+        "soui-progress-content",
+        "soui-progress-line-inner",
+        "soui-progress-circle",
+        "soui-progress-circle-bg",
+        "soui-progress-circle-front"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-radio-group\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-radio soui-radio-wrapper\"\n    >\n      <input\n        style=\"display: none;\"\n        tabindex=\"0\"\n        type=\"radio\"\n      />\n      <span\n        class=\"soui-radio-indicator-wrapper\"\n      >\n        <span\n          class=\"soui-radio-indicator\"\n          tabindex=\"1\"\n        />\n      </span>\n      <span\n        class=\"soui-radio-desc\"\n      >\n        small\n      </span>\n    </div>\n    <div\n..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-wrapper-checked",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-line-default",
+        "soui-progress-line-bg",
+        "soui-progress-line-front",
+        "soui-progress-content",
+        "soui-progress-line-inner",
+        "soui-progress-circle",
+        "soui-progress-circle-bg",
+        "soui-progress-circle-front"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-radio-group\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-radio soui-radio-wrapper soui-radio-wrapper-checked\"\n    >\n      <input\n        style=\"display: none;\"\n        tabindex=\"0\"\n        type=\"radio\"\n      />\n      <span\n        class=\"soui-radio-indicator-wrapper\"\n      >\n        <span\n          class=\"soui-radio-indicator\"\n          tabindex=\"1\"\n        />\n      </span>\n      <span\n        class=\"soui-radio-desc\"\n      >\n        small\n      <..."
+    },
+    {
+      "scenario": "渲染场景 9",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked",
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-info",
+        "soui-progress-line-default",
+        "soui-progress-line-bg",
+        "soui-progress-line-front",
+        "soui-progress-content",
+        "soui-progress-line-inner",
+        "soui-progress-circle",
+        "soui-progress-circle-bg",
+        "soui-progress-circle-front"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-radio-group\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-radio soui-radio-wrapper\"\n    >\n      <input\n        style=\"display: none;\"\n        tabindex=\"0\"\n        type=\"radio\"\n      />\n      <span\n        class=\"soui-radio-indicator-wrapper\"\n      >\n        <span\n          class=\"soui-radio-indicator\"\n          tabindex=\"1\"\n        />\n      </span>\n      <span\n        class=\"soui-radio-desc\"\n      >\n        small\n      </span>\n    </div>\n    <div\n..."
+    },
+    {
+      "scenario": "渲染场景 10",
+      "appliedClassNames": [
+        "soui-progress",
+        "soui-progress-line",
+        "soui-progress-wrapper",
+        "soui-progress-wrapper-success",
+        "soui-progress-line-default",
+        "soui-progress-line-bg",
+        "soui-progress-line-front",
+        "soui-progress-content",
+        "soui-progress-wrapper-info",
+        "soui-progress-wrapper-warning",
+        "soui-progress-wrapper-danger"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 400px; display: flex; flex-direction: column; gap: 24px;\"\n>\n  <div\n    class=\"soui-progress soui-progress-line soui-progress-wrapper soui-progress-wrapper-success soui-progress-line-default\"\n  >\n    <div\n      class=\"soui-progress-line-bg\"\n    >\n      <div\n        class=\"soui-progress-line-front\"\n        style=\"width: 100%;\"\n      />\n    </div>\n    <div\n      class=\"soui-progress-content\"\n    >\n      100%\n    </div>\n  </div>\n  <div\n    class=\"soui-progress soui-progress-lin..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 13,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 8
+    "examplesCount": 8,
+    "classNamesCount": 21,
+    "domStructuresCount": 10
   }
 }

@@ -85,10 +85,16 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-sticky",
+    "soui-sticky-wrapper"
+  ],
   "apiSummary": {
     "totalProps": 9,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 4
+    "examplesCount": 4,
+    "classNamesCount": 2,
+    "domStructuresCount": 0
   }
 }

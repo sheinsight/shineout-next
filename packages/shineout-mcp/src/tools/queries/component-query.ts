@@ -35,19 +35,15 @@ export class ComponentQuery {
   }
 
   /**
-   * 获取组件的示例（带过滤）
+   * 获取组件的示例
    */
-  async getComponentExamples(componentName: string, scenario?: string) {
+  async getComponentExamples(componentName: string) {
     const component = await getComponentData(componentName);
     
     if (!component || !component.examples) {
       return null;
     }
 
-    const examples = scenario 
-      ? component.examples.filter(ex => ex.scenario === scenario)
-      : component.examples;
-
-    return { componentName, examples };
+    return { componentName, examples: component.examples };
   }
 }

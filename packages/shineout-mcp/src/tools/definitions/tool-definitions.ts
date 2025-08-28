@@ -389,4 +389,103 @@ You should:
       },
     },
   },
+  {
+    name: 'get_component_classnames',
+    description: `A specialized tool for retrieving component className information and DOM rendering structures.
+This tool provides comprehensive styling information including available CSS classes and actual DOM structures from test snapshots.
+
+When to use this tool:
+- Need to understand component styling system and available CSS classes
+- Want to see how components render in different scenarios
+- Looking for specific className usage patterns
+- Need DOM structure information for styling or testing
+- Understanding component CSS architecture
+- Debugging style-related issues
+
+Key features:
+- Complete list of all available className for a component
+- Real DOM structures extracted from test snapshots
+- Usage statistics showing which classes are used in which scenarios
+- Categorized className list (base, size, type, state, layout)
+- Actual rendered HTML structure with applied classes
+- Usage frequency analysis across different test scenarios
+
+Output includes:
+- Categorized className list with descriptions
+- DOM rendering structures from test scenarios
+- Usage statistics and frequency analysis
+- Unused className (for conditional or dynamic scenarios)
+- Component-specific styling patterns
+
+Benefits:
+- Understand complete component styling system
+- See real-world DOM structure and class usage
+- Identify available styling options
+- Debug CSS and styling issues
+- Plan custom styling and theme overrides
+
+Parameters explained:
+- component: The component name to get className info for (e.g., Button, Input, Form)
+
+You should:
+1. Use this when users ask about component styling or CSS classes
+2. Show both the available classes and how they're actually used
+3. Explain the categorization and meaning of different class types
+4. Highlight commonly used vs rarely used classes
+5. Show the relationship between props and applied classes
+6. Provide guidance on custom styling and theme customization`,
+    inputSchema: {
+      type: 'object',
+      properties: {
+        component: {
+          type: 'string',
+          description: '组件名称，如 Button, Input, Form 等',
+        },
+      },
+      required: ['component'],
+    },
+  },
+  {
+    name: 'list_all_classnames',
+    description: `A comprehensive overview tool for browsing className information across all Shineout components.
+This tool provides a high-level view of the entire component styling system.
+
+When to use this tool:
+- Want to see the overall Shineout styling system architecture
+- Browsing available styling options across all components
+- Planning consistent styling across multiple components
+- Understanding naming conventions and patterns
+- Getting an overview of component CSS architecture
+
+Key features:
+- Complete overview of all component className systems
+- Statistical analysis of styling patterns
+- Component comparison by styling complexity
+- Naming convention analysis
+- Overall system architecture insights
+
+Output includes:
+- Total className count across all components
+- Component-by-component styling statistics
+- Most commonly used styling patterns
+- System-wide naming conventions
+- Component styling complexity comparison
+
+Benefits:
+- Understand the complete Shineout styling ecosystem
+- Plan consistent styling strategies
+- Identify styling patterns and conventions
+- Choose components based on styling flexibility
+
+You should:
+1. Use this for system-wide styling planning and analysis
+2. Show statistical insights about the styling system
+3. Highlight components with the most styling options
+4. Explain naming conventions and patterns
+5. Guide users toward components that fit their styling needs`,
+    inputSchema: {
+      type: 'object',
+      properties: {},
+    },
+  },
 ];

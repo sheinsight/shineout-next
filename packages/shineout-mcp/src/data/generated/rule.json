@@ -55,7 +55,9 @@
     "totalProps": 1,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 7
+    "examplesCount": 7,
+    "classNamesCount": 0,
+    "domStructuresCount": 0
   },
   "subComponentApis": {},
   "relatedTypes": {

@@ -53,11 +53,171 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-message",
+    "soui-message-wrapper",
+    "soui-message-item",
+    "soui-message-item-dismissed",
+    "soui-message-item-show",
+    "soui-message-message"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-primary",
+        "soui-button-success",
+        "soui-button-warning",
+        "soui-button-danger"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-wrap: wrap; gap: 24px;\"\n>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span>\n      Show\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-primary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <span>\n      Info\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-success soui-button-button\"\n    dir=\"ltr\"\n    style=\"marg..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span>\n      Duration 10 s.\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin-inline-start: 24px;\"\n    type=\"button\"\n  >\n    <span>\n      Manually close\n    </span>\n  </button>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"display: flex; align-items: center; margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-radio-group\"\n    >\n      <div\n        class=\"soui-radio soui-radio-wrapper\"\n      >\n        <input\n          style=\"display: none;\"\n          tabindex=\"0\"\n          type=\"radio\"\n        />\n        <span\n          class=\"soui-radio-indicator-wrapper\"\n        >\n          <span\n            class=\"soui-radio-indicator\"\n            tabindex=\"1\"\n          />\n        </span>\n        <span\n ..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-message",
+        "soui-message-wrapper",
+        "soui-message-item",
+        "soui-message-item-show",
+        "soui-message-message",
+        "soui-alert",
+        "soui-alert-alert",
+        "soui-alert-warning",
+        "soui-alert-content",
+        "soui-alert-text",
+        "soui-alert-close-wrapper",
+        "soui-alert-close"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-message soui-message-wrapper\"\n  data-soui-position=\"top\"\n>\n  <div\n    class=\"soui-message-item soui-message-item-show \"\n  >\n    <div\n      class=\"soui-message-message soui-alert soui-alert-alert soui-alert-warning\"\n      data-soui-type=\"message\"\n    >\n      <div\n        class=\"soui-alert-content\"\n      >\n        <div\n          class=\"soui-alert-text\"\n        >\n          Test\n        </div>\n      </div>\n      <div\n        class=\"soui-alert-close-wrapper\"\n      >\n        <div\n ..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-message",
+        "soui-message-wrapper",
+        "soui-message-item",
+        "soui-message-item-show",
+        "soui-message-message",
+        "soui-alert",
+        "soui-alert-alert",
+        "soui-alert-warning",
+        "soui-alert-content",
+        "soui-alert-text",
+        "soui-alert-close-wrapper",
+        "soui-alert-close"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-message soui-message-wrapper\"\n  data-soui-position=\"top\"\n>\n  <div\n    class=\"soui-message-item soui-message-item-show \"\n  >\n    <div\n      class=\"soui-message-message soui-alert soui-alert-alert soui-alert-warning\"\n      data-soui-type=\"message\"\n    >\n      <div\n        class=\"soui-alert-content\"\n      >\n        <div\n          class=\"soui-alert-text\"\n        >\n          Test\n        </div>\n      </div>\n      <div\n        class=\"soui-alert-close-wrapper\"\n      >\n        <div\n ..."
+    },
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-primary",
+        "soui-button-success",
+        "soui-button-warning",
+        "soui-button-danger"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-wrap: wrap; gap: 24px;\"\n>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span>\n      Show\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-primary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <span>\n      Info\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-success soui-button-button\"\n    dir=\"ltr\"\n    style=\"marg..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span>\n      Duration 10 s.\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin-inline-start: 24px;\"\n    type=\"button\"\n  >\n    <span>\n      Manually close\n    </span>\n  </button>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"display: flex; align-items: center; margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-radio-group\"\n    >\n      <div\n        class=\"soui-radio soui-radio-wrapper\"\n      >\n        <input\n          style=\"display: none;\"\n          tabindex=\"0\"\n          type=\"radio\"\n        />\n        <span\n          class=\"soui-radio-indicator-wrapper\"\n        >\n          <span\n            class=\"soui-radio-indicator\"\n            tabindex=\"1\"\n          />\n        </span>\n        <span\n ..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-message",
+        "soui-message-wrapper",
+        "soui-message-item",
+        "soui-message-item-show",
+        "soui-message-message",
+        "soui-alert",
+        "soui-alert-alert",
+        "soui-alert-warning",
+        "soui-alert-content",
+        "soui-alert-text",
+        "soui-alert-close-wrapper",
+        "soui-alert-close"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-message soui-message-wrapper\"\n  data-soui-position=\"top\"\n>\n  <div\n    class=\"soui-message-item soui-message-item-show \"\n  >\n    <div\n      class=\"soui-message-message soui-alert soui-alert-alert soui-alert-warning\"\n      data-soui-type=\"message\"\n    >\n      <div\n        class=\"soui-alert-content\"\n      >\n        <div\n          class=\"soui-alert-text\"\n        >\n          Test\n        </div>\n      </div>\n      <div\n        class=\"soui-alert-close-wrapper\"\n      >\n        <div\n ..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-message",
+        "soui-message-wrapper",
+        "soui-message-item",
+        "soui-message-item-show",
+        "soui-message-message",
+        "soui-alert",
+        "soui-alert-alert",
+        "soui-alert-warning",
+        "soui-alert-content",
+        "soui-alert-text",
+        "soui-alert-close-wrapper",
+        "soui-alert-close"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-message soui-message-wrapper\"\n  data-soui-position=\"top\"\n>\n  <div\n    class=\"soui-message-item soui-message-item-show \"\n  >\n    <div\n      class=\"soui-message-message soui-alert soui-alert-alert soui-alert-warning\"\n      data-soui-type=\"message\"\n    >\n      <div\n        class=\"soui-alert-content\"\n      >\n        <div\n          class=\"soui-alert-text\"\n        >\n          Test\n        </div>\n      </div>\n      <div\n        class=\"soui-alert-close-wrapper\"\n      >\n        <div\n ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 2,
     "requiredProps": 1,
     "propsWithWhen": 0,
-    "examplesCount": 6
+    "examplesCount": 6,
+    "classNamesCount": 6,
+    "domStructuresCount": 10
   },
   "subComponentApis": {},
   "relatedTypes": {

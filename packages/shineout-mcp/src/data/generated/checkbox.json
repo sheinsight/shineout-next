@@ -209,11 +209,157 @@
     "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
   ],
   "notes": {},
+  "classNames": [
+    "soui-checkbox",
+    "soui-checkbox-wrapper",
+    "soui-checkbox-wrapper-small",
+    "soui-checkbox-wrapper-large",
+    "soui-checkbox-input",
+    "soui-checkbox-wrapper-checked",
+    "soui-checkbox-wrapper-indeterminate",
+    "soui-checkbox-wrapper-disabled",
+    "soui-checkbox-indicator-wrapper",
+    "soui-checkbox-dark-indicator-wrapper",
+    "soui-checkbox-indicator",
+    "soui-checkbox-desc",
+    "soui-checkbox-group",
+    "soui-checkbox-group-block"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-checkbox soui-checkbox-wrapper\"\n>\n  <input\n    style=\"display: none;\"\n    tabindex=\"0\"\n    type=\"checkbox\"\n  />\n  <span\n    class=\"soui-checkbox-indicator-wrapper\"\n  >\n    <i\n      class=\"soui-checkbox-indicator\"\n      data-soui-role=\"checkbox-indicator\"\n      tabindex=\"1\"\n    />\n  </span>\n  <span\n    class=\"soui-checkbox-desc\"\n    data-soui-role=\"desc\"\n  >\n    Checkbox\n  </span>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc",
+        "soui-checkbox-wrapper-checked",
+        "soui-checkbox-wrapper-indeterminate",
+        "soui-checkbox-wrapper-disabled"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"margin-bottom: 12px; line-height: 0;\"\n  >\n    <div\n      class=\"soui-checkbox soui-checkbox-wrapper\"\n    >\n      <input\n        style=\"display: none;\"\n        tabindex=\"0\"\n        type=\"checkbox\"\n      />\n      <span\n        class=\"soui-checkbox-indicator-wrapper\"\n      >\n        <i\n          class=\"soui-checkbox-indicator\"\n          data-soui-role=\"checkbox-indicator\"\n          tabindex=\"1\"\n        />\n      </span>\n      <span\n        class=\"soui-checkbox-desc\"\n        ..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc",
+        "soui-checkbox-group"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-checkbox soui-checkbox-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <span\n      class=\"soui-checkbox-indicator-wrapper\"\n    >\n      <i\n        class=\"soui-checkbox-indicator\"\n        data-soui-role=\"checkbox-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-checkbox-desc\"\n      data-soui-role=\"desc\"\n    >\n      CheckAll\n    </span>\n  </div>\n  <div\n    class=\"soui-checkbox-grou..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-checkbox soui-checkbox-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <span\n      class=\"soui-checkbox-indicator-wrapper\"\n    >\n      <i\n        class=\"soui-checkbox-indicator\"\n        data-soui-role=\"checkbox-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-checkbox-desc\"\n      data-soui-role=\"desc\"\n    >\n      Click Me\n       0 Times!\n    </span>\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-checkbox soui-checkbox-wrapper\"\n>\n  <input\n    style=\"display: none;\"\n    tabindex=\"0\"\n    type=\"checkbox\"\n  />\n  <span\n    class=\"soui-checkbox-indicator-wrapper\"\n  >\n    <i\n      class=\"soui-checkbox-indicator\"\n      data-soui-role=\"checkbox-indicator\"\n      tabindex=\"1\"\n    />\n  </span>\n  <span\n    class=\"soui-checkbox-desc\"\n    data-soui-role=\"desc\"\n  >\n    value is \"ok\"\n  </span>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-checkbox-group",
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc",
+        "soui-checkbox-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-checkbox-group\"\n>\n  <div\n    class=\"soui-checkbox soui-checkbox-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <span\n      class=\"soui-checkbox-indicator-wrapper\"\n    >\n      <i\n        class=\"soui-checkbox-indicator\"\n        data-soui-role=\"checkbox-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-checkbox-desc\"\n      data-soui-role=\"desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n   ..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-checkbox-group",
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc",
+        "soui-checkbox-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-checkbox-group\"\n>\n  <div\n    class=\"soui-checkbox soui-checkbox-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <span\n      class=\"soui-checkbox-indicator-wrapper\"\n    >\n      <i\n        class=\"soui-checkbox-indicator\"\n        data-soui-role=\"checkbox-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-checkbox-desc\"\n      data-soui-role=\"desc\"\n    >\n      <span\n        style=\"border-bottom:..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-checkbox-group",
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc",
+        "soui-checkbox-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-checkbox-group\"\n>\n  <div\n    class=\"soui-checkbox soui-checkbox-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <span\n      class=\"soui-checkbox-indicator-wrapper\"\n    >\n      <i\n        class=\"soui-checkbox-indicator\"\n        data-soui-role=\"checkbox-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-checkbox-desc\"\n      data-soui-role=\"desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n   ..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-checkbox-group",
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-wrapper-disabled",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc",
+        "soui-checkbox-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-checkbox-group\"\n>\n  <div\n    class=\"soui-checkbox soui-checkbox-wrapper soui-checkbox-wrapper-disabled\"\n  >\n    <input\n      disabled=\"\"\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <span\n      class=\"soui-checkbox-indicator-wrapper\"\n    >\n      <i\n        class=\"soui-checkbox-indicator\"\n        data-soui-role=\"checkbox-indicator\"\n        tabindex=\"-1\"\n      />\n    </span>\n    <span\n      class=\"soui-checkbox-desc\"\n      data-soui-role=\"des..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-checkbox-group",
+        "soui-checkbox",
+        "soui-checkbox-wrapper",
+        "soui-checkbox-indicator-wrapper",
+        "soui-checkbox-indicator",
+        "soui-checkbox-desc",
+        "soui-checkbox-wrapper-disabled",
+        "soui-checkbox-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-checkbox-group\"\n>\n  <div\n    class=\"soui-checkbox soui-checkbox-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <span\n      class=\"soui-checkbox-indicator-wrapper\"\n    >\n      <i\n        class=\"soui-checkbox-indicator\"\n        data-soui-role=\"checkbox-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-checkbox-desc\"\n      data-soui-role=\"desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n   ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 20,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 14
+    "examplesCount": 14,
+    "classNamesCount": 14,
+    "domStructuresCount": 10
   },
   "subComponentApis": {}
 }

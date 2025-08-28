@@ -277,11 +277,51 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-popover",
+    "soui-popover-wrapper",
+    "soui-popover-wrapper-open",
+    "soui-popover-arrow",
+    "soui-popover-hide-arrow",
+    "soui-popover-content",
+    "soui-popover-text",
+    "soui-popover-confirm",
+    "soui-popover-mention",
+    "soui-popover-footer"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-popover",
+        "soui-popover-wrapper",
+        "soui-popover-wrapper-open",
+        "soui-popover-arrow",
+        "soui-popover-content",
+        "soui-popover-text"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-popover soui-popover-wrapper soui-popover-wrapper-open\"\n  data-soui-position=\"bottom\"\n  dir=\"ltr\"\n  style=\"position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;\"\n>\n  <div\n    class=\"soui-popover-arrow\"\n    dir=\"ltr\"\n  />\n  <div\n    class=\"soui-popover-content soui-popover-text\"\n  >\n    some Text\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-popover",
+        "soui-popover-wrapper",
+        "soui-popover-wrapper-open",
+        "soui-popover-arrow",
+        "soui-popover-content",
+        "soui-popover-text"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-popover soui-popover-wrapper soui-popover-wrapper-open\"\n  data-soui-position=\"bottom\"\n  dir=\"ltr\"\n  style=\"position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px; transform-origin: center top;\"\n>\n  <div\n    class=\"soui-popover-arrow\"\n    dir=\"ltr\"\n  />\n  <div\n    class=\"soui-popover-content soui-popover-text\"\n  >\n    some Text\n  </div>\n</div>\n"
+    }
+  ],
   "apiSummary": {
     "totalProps": 27,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 18
+    "examplesCount": 18,
+    "classNamesCount": 10,
+    "domStructuresCount": 2
   },
   "subComponentApis": {}
 }

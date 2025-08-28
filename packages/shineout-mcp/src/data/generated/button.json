@@ -154,11 +154,167 @@
   ],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-button",
+    "soui-button-button",
+    "soui-button-small",
+    "soui-button-large",
+    "soui-button-default",
+    "soui-button-primary",
+    "soui-button-secondary",
+    "soui-button-danger",
+    "soui-button-warning",
+    "soui-button-success",
+    "soui-button-link",
+    "soui-button-outline",
+    "soui-button-dashed",
+    "soui-button-text",
+    "soui-button-href",
+    "soui-button-round",
+    "soui-button-circle",
+    "soui-button-square",
+    "soui-button-disabled",
+    "soui-button-loading",
+    "soui-button-group-item",
+    "soui-button-group",
+    "soui-button-spin"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-secondary",
+        "soui-button-outline",
+        "soui-button-dashed",
+        "soui-button-text"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; gap: 24px; flex-wrap: wrap;\"\n>\n  <button\n    class=\"soui-button soui-button-primary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <span>\n      Primary\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <span>\n      Secondary\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-bu..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-disabled",
+        "soui-button-outline",
+        "soui-button-dashed",
+        "soui-button-text",
+        "soui-button-danger",
+        "soui-button-warning",
+        "soui-button-success"
+      ],
+      "domStructure": "\n<div\n  style=\"gap: 24px; display: flex; flex-wrap: wrap; flex-direction: column;\"\n>\n  <div\n    style=\"gap: 24px; display: flex; flex-wrap: wrap; align-items: center;\"\n  >\n    <button\n      class=\"soui-button soui-button-primary soui-button-button soui-button-disabled\"\n      dir=\"ltr\"\n      disabled=\"\"\n      style=\"margin: 0px; width: 72px;\"\n      type=\"button\"\n    >\n      <span>\n        Primary\n      </span>\n    </button>\n    <button\n      class=\"soui-button soui-button-primary soui-button-butt..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-button-group",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-button-secondary",
+        "soui-button-disabled",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;\"\n>\n  <div\n    class=\"soui-button-group\"\n    dir=\"ltr\"\n  >\n    <button\n      class=\"soui-button soui-button-primary soui-button-button soui-button-text\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <span>\n        Publish\n      </span>\n    </button>\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button soui-button-text\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <span>\n        Publish\n..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-square"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; gap: 24px; flex-wrap: wrap;\"\n>\n  <button\n    class=\"soui-button soui-button-primary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <svg\n      fill=\"none\"\n      height=\"14\"\n      style=\"margin-inline-end: 4px;\"\n      viewBox=\"0 0 24 24\"\n      width=\"14\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path\n        clip-rule=\"evenodd\"\n        d=\"M14.9997 10.3264C16.0184 9.47087 16.666 8.18765 16.666 6.75317C16.666 4.17728 14...."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-gap",
+        "soui-gap-wrapper",
+        "soui-gap-item",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-disabled",
+        "soui-button-loading",
+        "soui-button-spin",
+        "soui-spin",
+        "soui-spin-spin",
+        "soui-spin-ring",
+        "soui-button-square",
+        "soui-icon",
+        "soui-icon-wrapper"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-gap soui-gap-wrapper\"\n  style=\"margin-bottom: -8px; margin-right: -8px; width: 400px;\"\n>\n  <div\n    class=\"soui-gap-item\"\n    style=\"margin-bottom: 8px; margin-right: 8px;\"\n  >\n    <div\n      class=\"soui-gap soui-gap-wrapper\"\n      style=\"margin-bottom: -8px; margin-right: -8px;\"\n    >\n      <div\n        class=\"soui-gap-item\"\n        style=\"margin-bottom: 8px; margin-right: 8px;\"\n      >\n        <button\n          class=\"soui-button soui-button-primary soui-button-button soui-..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-round",
+        "soui-button-square",
+        "soui-button-circle"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; gap: 24px; flex-wrap: wrap;\"\n>\n  <button\n    class=\"soui-button soui-button-primary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <span>\n      Primary\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-primary soui-button-button soui-button-round\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <span>\n      Primary\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-primary so..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-small",
+        "soui-button-large"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; align-items: center; gap: 24px; flex-wrap: wrap;\"\n>\n  <button\n    class=\"soui-button soui-button-primary soui-button-button soui-button-small\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <span>\n      Primary\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-primary soui-button-button\"\n    dir=\"ltr\"\n    style=\"margin: 0px;\"\n    type=\"button\"\n  >\n    <span>\n      Primary\n    </span>\n  </button>\n  <button\n    class=\"soui-button s..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline",
+        "soui-button-dashed",
+        "soui-button-text",
+        "soui-button-primary",
+        "soui-button-danger",
+        "soui-button-warning",
+        "soui-button-success"
+      ],
+      "domStructure": "\n<div\n  style=\"gap: 24px; display: flex; flex-wrap: wrap; flex-direction: column;\"\n>\n  <div\n    style=\"gap: 24px; display: flex; flex-wrap: wrap; align-items: center;\"\n  >\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button\"\n      dir=\"ltr\"\n      style=\"margin: 0px; width: 72px;\"\n      type=\"button\"\n    >\n      <span>\n        Default\n      </span>\n    </button>\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n      dir=\"..."
+    },
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-button-group",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-button-secondary",
+        "soui-button-disabled",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;\"\n>\n  <div\n    class=\"soui-button-group\"\n    dir=\"ltr\"\n  >\n    <button\n      class=\"soui-button soui-button-primary soui-button-button soui-button-text\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <span>\n        Publish\n      </span>\n    </button>\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button soui-button-text\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <span>\n        Publish\n..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 15,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 8
+    "examplesCount": 8,
+    "classNamesCount": 23,
+    "domStructuresCount": 9
   },
   "subComponentApis": {
     "Group": {

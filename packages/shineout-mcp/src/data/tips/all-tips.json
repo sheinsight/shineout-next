@@ -1,0 +1,146 @@
+{
+  "Cascader": {
+    "componentName": "Cascader",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  },
+  "Checkbox": {
+    "componentName": "Checkbox",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  },
+  "Form": {
+    "componentName": "Form",
+    "tips": [
+      "Form 内置数据管理，通过 name 属性自动收集，无需手动管理 state",
+      "默认使用 Form.Button，Form.Submit 需要回车提交的场景才使用",
+      "使用 rules 属性进行字段验证，支持 required、email、min、max 等规则，具体内容查看 Rule 组件",
+      "Form.Reset 重置表单到初始状态，Form.Button/Submit 都会自动触发验证",
+      "Form.Button/Submit 点击后会自动触发验证执行所有 rules 中的校验方法，校验都通过后会执行 onSubmit 回调",
+      "Form.FieldSet 两种模式：children 为 JSX 处理对象嵌套，为函数自动处理数组循环",
+      "FieldSet 数组模式提供 onAppend/onInsert/onRemove，无需手写 map，具体查看 FieldSet Loop 例子",
+      "FieldSet 路径拼接：外层 name + 内层 name = 完整路径，比如：FieldSet name='a' > Input name='b' 这种嵌套结构，最终修改的数据完整路径为 a.b",
+      "如果表单组件（Form.FieldSet、Form.Field、Input、Textarea 等）设置了 defaultValue 初始化会触发一次 onChange，目的是将默认值同步到表单数据中",
+      "formRef 仅在表单外部操作或复杂逻辑时使用，",
+      "❌ 避免为每个字段创建 state，避免直接操作 DOM",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 避免简单场景使用 formRef，避免使用其他组件库的 API 模式",
+      "🚫 禁止在 Form.FieldSet 下写 map"
+    ]
+  },
+  "Input": {
+    "componentName": "Input",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理",
+      "🚫 禁止使用 Input.Textarea 组件，请使用 Textarea 组件",
+      "🚫 禁止使用 Input.Search 组件",
+      "🚫 禁止使用 addonAfter 属性",
+      "🚫 禁止使用 addonBefore 属性",
+      "🚫 禁止使用 allowClear 属性",
+      "🚫 禁止使用 addonAfter 属性"
+    ]
+  },
+  "Radio": {
+    "componentName": "Radio",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  },
+  "Rate": {
+    "componentName": "Rate",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange"
+    ]
+  },
+  "Select": {
+    "componentName": "Select",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "必须设置 keygen 属性，简单数组可以设置为 true，复杂数组如对象数组需要设置为对象的唯一键或者一个函数",
+      "复杂数组建议设置 prediction 属性",
+      "建议默认设置 absolute 属性防止列表打开后被裁剪遮挡",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理",
+      "🚫 禁止设置 onFilter 为 true",
+      "🚫 禁止使用 Select.Option"
+    ]
+  },
+  "Slider": {
+    "componentName": "Slider",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  },
+  "Switch": {
+    "componentName": "Switch",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  },
+  "Table": {
+    "componentName": "Table",
+    "tips": [
+      "建议给每一列添加宽度，并给 Table 本身添加宽度，Table 本身的宽度为所有列的总和",
+      "开启虚拟列表后必须指定高度或者让容器 flex 撑满高度，Table 继承容器高度"
+    ]
+  },
+  "Textarea": {
+    "componentName": "Textarea",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  },
+  "Transfer": {
+    "componentName": "Transfer",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  },
+  "TreeSelect": {
+    "componentName": "TreeSelect",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  },
+  "Upload": {
+    "componentName": "Upload",
+    "tips": [
+      "在 Form 中使用时通过 name 属性自动接入，无需手动管理 value 和 onChange",
+      "通过 rules 属性配置校验规则，会自动集成到 Form 的校验流程",
+      "❌ 避免在 Form 中同时使用 name 和 value/onChange",
+      "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
+    ]
+  }
+}

@@ -196,9 +196,82 @@ function extractTips(componentDir) {
 }
 
 /**
+ * 提取组件的 className 信息
+ */
+function extractClassNameInfo(componentDir, componentName) {
+  try {
+    const classNamePath = path.join(componentDir, '__mcp__', 'classname.json');
+    const snapPath = path.join(componentDir, '__test__', '__snapshots__');
+    
+    const result = {
+      classNames: [],
+      domStructures: []
+    };
+    
+    // 读取 className 列表
+    if (fs.existsSync(classNamePath)) {
+      const content = fs.readFileSync(classNamePath, 'utf-8');
+      const classNameData = JSON.parse(content);
+      // 支持数组格式和对象格式
+      result.classNames = Array.isArray(classNameData) ? classNameData : (classNameData.classNames || []);
+    }
+    
+    // 读取测试快照提取 DOM 结构
+    if (fs.existsSync(snapPath)) {
+      const snapFiles = fs.readdirSync(snapPath).filter(file => file.endsWith('.snap'));
+      
+      for (const snapFile of snapFiles) {
+        const snapFilePath = path.join(snapPath, snapFile);
+        const snapContent = fs.readFileSync(snapFilePath, 'utf-8');
+        
+        // 解析快照文件中的测试用例
+        const testCases = snapContent.split(/exports\[`[^`]+`\] = `/);
+        
+        for (let i = 1; i < testCases.length; i++) {
+          const testCase = testCases[i];
+          const endIndex = testCase.lastIndexOf('`;');
+          if (endIndex === -1) continue;
+          
+          const htmlContent = testCase.substring(0, endIndex);
+          
+          // 提取使用的 className
+          const classMatches = htmlContent.matchAll(/class="([^"]+)"/g);
+          const usedClasses = new Set();
+          
+          for (const match of classMatches) {
+            const classes = match[1].split(/\s+/);
+            classes.forEach(cls => {
+              if (cls.startsWith('soui-') || cls.includes(componentName.toLowerCase())) {
+                usedClasses.add(cls);
+              }
+            });
+          }
+          
+          if (usedClasses.size > 0) {
+            result.domStructures.push({
+              scenario: `渲染场景 ${i}`,
+              appliedClassNames: Array.from(usedClasses),
+              domStructure: htmlContent.substring(0, Math.min(500, htmlContent.length)) + (htmlContent.length > 500 ? '...' : '')
+            });
+          }
+        }
+      }
+    }
+    
+    return result;
+  } catch (error) {
+    console.error('Error extracting className info:', error);
+    return {
+      classNames: [],
+      domStructures: []
+    };
+  }
+}
+
+/**
  * 转换 API 数据为 MCP 格式
  */
-function convertToMcpFormat(componentName, apis, basicInfo, examples, subComponents, tips) {
+function convertToMcpFormat(componentName, apis, basicInfo, examples, subComponents, tips, classNameInfo) {
   // 找到主组件的 API 数据
   const mainApi = apis.find(api => 
     api.title === componentName || 
@@ -244,12 +317,17 @@ function convertToMcpFormat(componentName, apis, basicInfo, examples, subCompone
       cn: mainApi.tag?.notesCn || undefined,
       en: mainApi.tag?.notesEn || undefined
     },
+    // 添加 className 信息
+    classNames: classNameInfo.classNames.length > 0 ? classNameInfo.classNames : undefined,
+    domStructures: classNameInfo.domStructures.length > 0 ? classNameInfo.domStructures : undefined,
     // 添加额外的 API 相关信息
     apiSummary: {
       totalProps: props.length,
       requiredProps: props.filter(p => p.required).length,
       propsWithWhen: props.filter(p => p.whenCn || p.whenEn).length,
-      examplesCount: mcpExamples.length
+      examplesCount: mcpExamples.length,
+      classNamesCount: classNameInfo.classNames.length,
+      domStructuresCount: classNameInfo.domStructures.length
     }
   };
 
@@ -392,9 +470,10 @@ function compile(dirPath, componentPath) {
       const examples = extractExamples(componentDir);
       const subComponents = extractSubComponents(componentDir);
       const tips = extractTips(componentDir);
+      const classNameInfo = extractClassNameInfo(componentDir, componentName);
 
       // 转换为 MCP 格式
-      const mcpData = convertToMcpFormat(componentName, apis, basicInfo, examples, subComponents, tips);
+      const mcpData = convertToMcpFormat(componentName, apis, basicInfo, examples, subComponents, tips, classNameInfo);
       
       if (mcpData) {
         // 保存单个组件的 MCP 数据
@@ -407,7 +486,9 @@ function compile(dirPath, componentPath) {
         processedCount++;
         
         const tipsInfo = mcpData.tips ? `, ${mcpData.tips.length} tips` : '';
-        console.log(`✅ Generated MCP data for ${componentName} (${mcpData.apiSummary.totalProps} props, ${mcpData.apiSummary.examplesCount} examples, ${mcpData.apiSummary.propsWithWhen} with @when${tipsInfo})`);
+        const classNameInfo = mcpData.classNames ? `, ${mcpData.apiSummary.classNamesCount} classNames` : '';
+        const domInfo = mcpData.domStructures ? `, ${mcpData.apiSummary.domStructuresCount} DOM structures` : '';
+        console.log(`✅ Generated MCP data for ${componentName} (${mcpData.apiSummary.totalProps} props, ${mcpData.apiSummary.examplesCount} examples, ${mcpData.apiSummary.propsWithWhen} with @when${tipsInfo}${classNameInfo}${domInfo})`);
       }
     }
   }
@@ -460,6 +541,7 @@ function compile(dirPath, componentPath) {
     console.log(`   - Total components: ${processedCount}`);
     console.log(`   - Output directory: ${mcpDataDir}`);
     console.log(`   - Categories:`, indexData.categories);
+
   } else {
     // 处理单个组件
     makeApi(componentPath);

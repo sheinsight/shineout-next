@@ -3,6 +3,7 @@ import { ComponentQuery } from './queries/index.js';
 import { APIQueryService, APIFormatter } from './api/index.js';
 import { SearchHelper } from './helpers/index.js';
 import { TipsService, TipsFormatter } from './tips/index.js';
+import { ClassNameService, ClassNameFormatter } from './classname/index.js';
 
 export class ComponentService {
   private formatter: ComponentFormatter;
@@ -11,6 +12,8 @@ export class ComponentService {
   private apiFormatter: APIFormatter;
   private tipsService: TipsService;
   private tipsFormatter: TipsFormatter;
+  private classNameService: ClassNameService;
+  private classNameFormatter: ClassNameFormatter;
 
   constructor() {
     this.formatter = new ComponentFormatter();
@@ -19,6 +22,8 @@ export class ComponentService {
     this.apiFormatter = new APIFormatter();
     this.tipsService = new TipsService();
     this.tipsFormatter = new TipsFormatter();
+    this.classNameService = new ClassNameService();
+    this.classNameFormatter = new ClassNameFormatter();
   }
 
   async getComponent(name: string) {
@@ -93,8 +98,8 @@ export class ComponentService {
     };
   }
 
-  async getExamples(componentName: string, scenario?: string) {
-    const result = await this.query.getComponentExamples(componentName, scenario);
+  async getExamples(componentName: string) {
+    const result = await this.query.getComponentExamples(componentName);
     
     if (!result) {
       return {
@@ -329,5 +334,55 @@ export class ComponentService {
         },
       ],
     };
+  }
+
+  async getComponentClassNames(componentName: string) {
+    try {
+      const info = await this.classNameService.getComponentClassNameInfo(componentName);
+      const content = this.classNameFormatter.formatComponentClassNameInfo(info);
+      
+      return {
+        content: [
+          {
+            type: 'text',
+            text: content,
+          },
+        ],
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `获取组件 "${componentName}" 的 className 信息时发生错误: ${error instanceof Error ? error.message : String(error)}`,
+          },
+        ],
+      };
+    }
+  }
+
+  async listAllClassNames() {
+    try {
+      const allComponents = await this.classNameService.getAllComponentsClassNameInfo();
+      const content = this.classNameFormatter.formatAllComponentsOverview(allComponents);
+      
+      return {
+        content: [
+          {
+            type: 'text',
+            text: content,
+          },
+        ],
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `获取所有组件的 className 信息时发生错误: ${error instanceof Error ? error.message : String(error)}`,
+          },
+        ],
+      };
+    }
   }
 }

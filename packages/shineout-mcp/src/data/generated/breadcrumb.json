@@ -96,11 +96,110 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-breadcrumb",
+    "soui-breadcrumb-wrapper",
+    "soui-breadcrumb-wrapper-popover",
+    "soui-breadcrumb-content",
+    "soui-breadcrumb-content-max-width",
+    "soui-breadcrumb-ellipsis",
+    "soui-breadcrumb-item-wrapper",
+    "soui-breadcrumb-item",
+    "soui-breadcrumb-item-with-drop",
+    "soui-breadcrumb-down",
+    "soui-breadcrumb-down-open",
+    "soui-breadcrumb-dropdown",
+    "soui-breadcrumb-dropdown-item",
+    "soui-breadcrumb-separator"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-breadcrumb",
+        "soui-breadcrumb-wrapper",
+        "soui-breadcrumb-item",
+        "soui-breadcrumb-content",
+        "soui-breadcrumb-separator"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-breadcrumb soui-breadcrumb-wrapper\"\n>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    <a\n      class=\"soui-breadcrumb-content\"\n      href=\"/\"\n      role=\"button\"\n    >\n      Home\n    </a>\n    <div\n      class=\"soui-breadcrumb-separator\"\n    >\n      /\n    </div>\n  </div>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    <a\n      class=\"soui-breadcrumb-content\"\n      href=\"/#/cn/component/shineout/Button?tab=examples\"\n      role=\"button\"\n    >\n      Button\n    </a>\n    <div\n     ..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-breadcrumb",
+        "soui-breadcrumb-wrapper",
+        "soui-breadcrumb-item",
+        "soui-breadcrumb-content",
+        "soui-breadcrumb-separator",
+        "soui-breadcrumb-item-with-drop",
+        "soui-breadcrumb-down"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-breadcrumb soui-breadcrumb-wrapper\"\n>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    <a\n      class=\"soui-breadcrumb-content\"\n      href=\"/\"\n      role=\"button\"\n    >\n      Home\n    </a>\n    <div\n      class=\"soui-breadcrumb-separator\"\n    >\n      /\n    </div>\n  </div>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    <a\n      class=\"soui-breadcrumb-content\"\n      href=\"/#/cn/component/shineout/Button?tab=examples\"\n      role=\"button\"\n    >\n      Button\n    </a>\n    <div\n     ..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-breadcrumb",
+        "soui-breadcrumb-wrapper",
+        "soui-breadcrumb-item",
+        "soui-breadcrumb-content",
+        "soui-breadcrumb-separator"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-breadcrumb soui-breadcrumb-wrapper\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-breadcrumb-item\"\n    >\n      <a\n        class=\"soui-breadcrumb-content\"\n        href=\"#home\"\n        role=\"button\"\n      >\n        <svg\n          fill=\"none\"\n          height=\"1em\"\n          viewBox=\"0 0 24 24\"\n          width=\"1em\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <g\n            clip-path=\"url(#clip0_423_8269715856220)\"\n          >\n   ..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-breadcrumb",
+        "soui-breadcrumb-wrapper",
+        "soui-breadcrumb-item",
+        "soui-breadcrumb-content",
+        "soui-breadcrumb-separator",
+        "soui-breadcrumb-ellipsis"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-breadcrumb soui-breadcrumb-wrapper\"\n>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    <a\n      class=\"soui-breadcrumb-content\"\n      href=\"/\"\n      role=\"button\"\n    >\n      Home\n    </a>\n    <div\n      class=\"soui-breadcrumb-separator\"\n    >\n      /\n    </div>\n  </div>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    <span\n      class=\"soui-breadcrumb-content soui-breadcrumb-ellipsis\"\n    >\n      ...\n    </span>\n    <div\n      class=\"soui-breadcrumb-separator\"\n    >\n      /\n ..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-breadcrumb",
+        "soui-breadcrumb-wrapper",
+        "soui-breadcrumb-item",
+        "soui-breadcrumb-separator"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-breadcrumb soui-breadcrumb-wrapper\"\n>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    <a\n      href=\"#home\"\n    >\n      home\n    </a>\n    <div\n      class=\"soui-breadcrumb-separator\"\n    >\n      /\n    </div>\n  </div>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    <a\n      href=\"https://www.google.com\"\n    >\n      menu\n    </a>\n    <div\n      class=\"soui-breadcrumb-separator\"\n    >\n      /\n    </div>\n  </div>\n  <div\n    class=\"soui-breadcrumb-item\"\n  >\n    self\n  </div>\n</div..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-breadcrumb",
+        "soui-breadcrumb-wrapper",
+        "soui-breadcrumb-item",
+        "soui-breadcrumb-content",
+        "soui-breadcrumb-separator"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-breadcrumb soui-breadcrumb-wrapper\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-breadcrumb-item\"\n    >\n      <a\n        class=\"soui-breadcrumb-content\"\n        href=\"/\"\n        role=\"button\"\n      >\n        Home\n      </a>\n      <div\n        class=\"soui-breadcrumb-separator\"\n      >\n        /\n      </div>\n    </div>\n    <div\n      class=\"soui-breadcrumb-item\"\n    >\n      <span\n        class=\"soui-breadcrumb-content\"\n      >\n        Self\n      </s..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-breadcrumb",
+        "soui-breadcrumb-wrapper",
+        "soui-breadcrumb-item",
+        "soui-breadcrumb-content",
+        "soui-breadcrumb-separator"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-breadcrumb soui-breadcrumb-wrapper\"\n    style=\"font-size: 12px;\"\n  >\n    <div\n      class=\"soui-breadcrumb-item\"\n    >\n      <a\n        class=\"soui-breadcrumb-content\"\n        href=\"/\"\n        role=\"button\"\n      >\n        Home\n      </a>\n      <div\n        class=\"soui-breadcrumb-separator\"\n      >\n        /\n      </div>\n    </div>\n    <div\n      class=\"soui-breadcrumb-item\"\n    >\n      <a\n        class=\"soui-breadcrumb-content\"\n        href=\"/#/cn/component/shineou..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 8,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 7
+    "examplesCount": 7,
+    "classNamesCount": 14,
+    "domStructuresCount": 7
   },
   "subComponentApis": {},
   "relatedTypes": {

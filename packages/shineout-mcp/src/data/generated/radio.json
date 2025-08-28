@@ -139,11 +139,187 @@
     "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
   ],
   "notes": {},
+  "classNames": [
+    "soui-radio",
+    "soui-radio-wrapper",
+    "soui-radio-wrapper-small",
+    "soui-radio-wrapper-large",
+    "soui-radio-wrapper-checked",
+    "soui-radio-wrapper-disabled",
+    "soui-radio-indicator-wrapper",
+    "soui-radio-dark-indicator-wrapper",
+    "soui-radio-indicator",
+    "soui-radio-desc",
+    "soui-radio-group",
+    "soui-radio-group-block",
+    "soui-radio-group-button"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio soui-radio-wrapper\"\n>\n  <input\n    style=\"display: none;\"\n    tabindex=\"0\"\n    type=\"radio\"\n  />\n  <span\n    class=\"soui-radio-indicator-wrapper\"\n  >\n    <span\n      class=\"soui-radio-indicator\"\n      tabindex=\"1\"\n    />\n  </span>\n  <span\n    class=\"soui-radio-desc\"\n  >\n    Option\n  </span>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio-group\"\n>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span\n      class=\"soui-radio-indicator-wrapper\"\n    >\n      <span\n        class=\"soui-radio-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-radio-desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      t..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio-group-button",
+        "soui-button-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-radio-wrapper-checked",
+        "soui-button-primary"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio-group soui-radio-group-button soui-button-group\"\n  dir=\"ltr\"\n>\n  <button\n    class=\"soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span>\n      Monday\n    </span>\n  </button>\n  <button\n    class=\"soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button\"\n    dir=\"ltr\"\n    type=\"button\"\n..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio-group-button",
+        "soui-button-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline",
+        "soui-radio-wrapper-checked",
+        "soui-button-primary"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio-group soui-radio-group-button soui-button-group\"\n  dir=\"ltr\"\n>\n  <button\n    class=\"soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-outline\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span>\n      Monday\n    </span>\n  </button>\n  <button\n    class=\"soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-o..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-wrapper-checked",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio-group\"\n>\n  <div\n    class=\"soui-radio soui-radio-wrapper soui-radio-wrapper-checked\"\n  >\n    <input\n      checked=\"\"\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span\n      class=\"soui-radio-indicator-wrapper\"\n    >\n      <span\n        class=\"soui-radio-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-radio-desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n   ..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-wrapper-disabled",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio-group\"\n>\n  <div\n    class=\"soui-radio soui-radio-wrapper soui-radio-wrapper-disabled\"\n  >\n    <input\n      disabled=\"\"\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span\n      class=\"soui-radio-indicator-wrapper\"\n    >\n      <span\n        class=\"soui-radio-indicator\"\n        tabindex=\"-1\"\n      />\n    </span>\n    <span\n      class=\"soui-radio-desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n    class=\"soui-radio soui-radio-wrapper soui-..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-disabled",
+        "soui-radio-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio-group\"\n>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span\n      class=\"soui-radio-indicator-wrapper\"\n    >\n      <span\n        class=\"soui-radio-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-radio-desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      t..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "example-radio-group-0-myRadioGroup-0-2-1",
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"example-radio-group-0-myRadioGroup-0-2-1 soui-radio-group\"\n>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span\n      class=\"soui-radio-indicator-wrapper\"\n    >\n      <span\n        class=\"soui-radio-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-radio-desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <i..."
+    },
+    {
+      "scenario": "渲染场景 9",
+      "appliedClassNames": [
+        "example-radio-group-1-myRadioGroup-0-2-2",
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"example-radio-group-1-myRadioGroup-0-2-2 soui-radio-group\"\n>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span\n      class=\"soui-radio-indicator-wrapper\"\n    >\n      <span\n        class=\"soui-radio-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-radio-desc\"\n    >\n      red\n    </span>\n  </div>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <i..."
+    },
+    {
+      "scenario": "渲染场景 10",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio-group-button",
+        "soui-button-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-wrapper-checked",
+        "soui-radio-wrapper-small",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-small",
+        "soui-button-secondary",
+        "soui-radio-wrapper-large",
+        "soui-button-large"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-radio-group soui-radio-group-button soui-button-group\"\n    dir=\"ltr\"\n  >\n    <button\n      class=\"soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-radio-wrapper-small soui-button soui-button-primary soui-button-button soui-button-small\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <input\n        checked=\"\"\n        style=\"display: none;\"\n        tabindex=\"0\"\n        type=\"radio\"\n      />\n      <span>\n        red\n      </span>\n    </button>\n    <button..."
+    },
+    {
+      "scenario": "渲染场景 11",
+      "appliedClassNames": [
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio soui-radio-wrapper\"\n>\n  <input\n    style=\"display: none;\"\n    tabindex=\"0\"\n    type=\"radio\"\n  />\n  <span\n    class=\"soui-radio-indicator-wrapper\"\n  >\n    <span\n      class=\"soui-radio-indicator\"\n      tabindex=\"1\"\n    />\n  </span>\n  <span\n    class=\"soui-radio-desc\"\n  >\n    OptionA\n  </span>\n</div>\n"
+    }
+  ],
   "apiSummary": {
     "totalProps": 10,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 12
+    "examplesCount": 12,
+    "classNamesCount": 13,
+    "domStructuresCount": 11
   },
   "subComponentApis": {}
 }

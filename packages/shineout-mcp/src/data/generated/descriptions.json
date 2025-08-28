@@ -128,11 +128,177 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-descriptions",
+    "soui-descriptions-wrapper",
+    "soui-descriptions-small",
+    "soui-descriptions-large",
+    "soui-descriptions-header",
+    "soui-descriptions-title",
+    "soui-descriptions-extra",
+    "soui-descriptions-body",
+    "soui-descriptions-table",
+    "soui-descriptions-row",
+    "soui-descriptions-label",
+    "soui-descriptions-value",
+    "soui-descriptions-cell",
+    "soui-descriptions-item",
+    "soui-descriptions-label-inline",
+    "soui-descriptions-value-inline",
+    "soui-descriptions-horizontal",
+    "soui-descriptions-vertical",
+    "soui-descriptions-inline-horizontal",
+    "soui-descriptions-table-layout-fixed",
+    "soui-descriptions-border"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-descriptions",
+        "soui-descriptions-wrapper",
+        "soui-descriptions-header",
+        "soui-descriptions-title",
+        "soui-descriptions-body",
+        "soui-descriptions-inline-horizontal",
+        "soui-descriptions-table",
+        "soui-descriptions-row",
+        "soui-descriptions-cell",
+        "soui-descriptions-item",
+        "soui-descriptions-label-inline",
+        "soui-descriptions-value-inline"
+      ],
+      "domStructure": "\n<div\n  style=\"margin-bottom: -12px;\"\n>\n  <div\n    class=\"soui-descriptions soui-descriptions-wrapper\"\n  >\n    <div\n      class=\"soui-descriptions-header\"\n    >\n      <div\n        class=\"soui-descriptions-title\"\n      >\n        User Info\n      </div>\n    </div>\n    <div\n      class=\"soui-descriptions-body soui-descriptions-inline-horizontal\"\n    >\n      <table\n        cellpadding=\"0\"\n        cellspacing=\"0\"\n        class=\"soui-descriptions-table\"\n      >\n        <colgroup>\n          <col\n       ..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-descriptions",
+        "soui-descriptions-wrapper",
+        "soui-descriptions-header",
+        "soui-descriptions-title",
+        "soui-descriptions-body",
+        "soui-descriptions-horizontal",
+        "soui-descriptions-table",
+        "soui-descriptions-row",
+        "soui-descriptions-label",
+        "soui-descriptions-value",
+        "soui-descriptions-vertical"
+      ],
+      "domStructure": "\n<div\n  style=\"margin-bottom: -12px;\"\n>\n  <div\n    class=\"soui-descriptions soui-descriptions-wrapper\"\n    style=\"margin-bottom: 12px;\"\n  >\n    <div\n      class=\"soui-descriptions-header\"\n    >\n      <div\n        class=\"soui-descriptions-title\"\n      >\n        User Info\n      </div>\n    </div>\n    <div\n      class=\"soui-descriptions-body soui-descriptions-horizontal\"\n    >\n      <table\n        cellpadding=\"0\"\n        cellspacing=\"0\"\n        class=\"soui-descriptions-table\"\n      >\n        <tbody>..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-wrapper-checked",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-descriptions",
+        "soui-descriptions-wrapper",
+        "soui-descriptions-header",
+        "soui-descriptions-title",
+        "soui-descriptions-body",
+        "soui-descriptions-horizontal",
+        "soui-descriptions-table",
+        "soui-descriptions-row",
+        "soui-descriptions-label",
+        "soui-descriptions-value"
+      ],
+      "domStructure": "\n<div\n  style=\"margin-bottom: -12px;\"\n>\n  <div\n    class=\"soui-radio-group\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-radio soui-radio-wrapper soui-radio-wrapper-checked\"\n    >\n      <input\n        checked=\"\"\n        style=\"display: none;\"\n        tabindex=\"0\"\n        type=\"radio\"\n      />\n      <span\n        class=\"soui-radio-indicator-wrapper\"\n      >\n        <span\n          class=\"soui-radio-indicator\"\n          tabindex=\"1\"\n        />\n      </span>\n      <span\n        c..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-descriptions",
+        "soui-descriptions-wrapper",
+        "soui-descriptions-header",
+        "soui-descriptions-title",
+        "soui-descriptions-body",
+        "soui-descriptions-border",
+        "soui-descriptions-table-layout-fixed",
+        "soui-descriptions-horizontal",
+        "soui-descriptions-table",
+        "soui-descriptions-row",
+        "soui-descriptions-label",
+        "soui-descriptions-value",
+        "soui-descriptions-vertical"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-descriptions soui-descriptions-wrapper\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-descriptions-header\"\n    >\n      <div\n        class=\"soui-descriptions-title\"\n      >\n        User Info\n      </div>\n    </div>\n    <div\n      class=\"soui-descriptions-body soui-descriptions-border soui-descriptions-table-layout-fixed soui-descriptions-horizontal\"\n    >\n      <table\n        cellpadding=\"0\"\n        cellspacing=\"0\"\n        class=\"soui-descriptions-t..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-descriptions",
+        "soui-descriptions-wrapper",
+        "soui-descriptions-header",
+        "soui-descriptions-title",
+        "soui-descriptions-body",
+        "soui-descriptions-horizontal",
+        "soui-descriptions-table",
+        "soui-descriptions-row",
+        "soui-descriptions-label",
+        "soui-descriptions-value"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-descriptions soui-descriptions-wrapper\"\n  style=\"margin-bottom: 12px;\"\n>\n  <div\n    class=\"soui-descriptions-header\"\n  >\n    <div\n      class=\"soui-descriptions-title\"\n    >\n      User Info\n    </div>\n  </div>\n  <div\n    class=\"soui-descriptions-body soui-descriptions-horizontal\"\n  >\n    <table\n      cellpadding=\"0\"\n      cellspacing=\"0\"\n      class=\"soui-descriptions-table\"\n    >\n      <tbody>\n        <tr\n          class=\"soui-descriptions-row\"\n        >\n          <td\n      ..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-descriptions",
+        "soui-descriptions-wrapper",
+        "soui-descriptions-header",
+        "soui-descriptions-title",
+        "soui-descriptions-body",
+        "soui-descriptions-border",
+        "soui-descriptions-horizontal",
+        "soui-descriptions-table",
+        "soui-descriptions-row",
+        "soui-descriptions-label",
+        "soui-descriptions-value"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-descriptions soui-descriptions-wrapper\"\n  >\n    <div\n      class=\"soui-descriptions-header\"\n    >\n      <div\n        class=\"soui-descriptions-title\"\n      >\n        User Info\n      </div>\n    </div>\n    <div\n      class=\"soui-descriptions-body soui-descriptions-border soui-descriptions-horizontal\"\n    >\n      <table\n        cellpadding=\"0\"\n        cellspacing=\"0\"\n        class=\"soui-descriptions-table\"\n      >\n        <tbody>\n          <tr\n            class=\"soui-de..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked",
+        "soui-descriptions",
+        "soui-descriptions-wrapper",
+        "soui-descriptions-header",
+        "soui-descriptions-title",
+        "soui-descriptions-body",
+        "soui-descriptions-inline-horizontal",
+        "soui-descriptions-table",
+        "soui-descriptions-row",
+        "soui-descriptions-cell",
+        "soui-descriptions-item",
+        "soui-descriptions-label-inline",
+        "soui-descriptions-value-inline",
+        "soui-descriptions-border",
+        "soui-descriptions-horizontal",
+        "soui-descriptions-label",
+        "soui-descriptions-value"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-radio-group\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-radio soui-radio-wrapper\"\n    >\n      <input\n        style=\"display: none;\"\n        tabindex=\"0\"\n        type=\"radio\"\n      />\n      <span\n        class=\"soui-radio-indicator-wrapper\"\n      >\n        <span\n          class=\"soui-radio-indicator\"\n          tabindex=\"1\"\n        />\n      </span>\n      <span\n        class=\"soui-radio-desc\"\n      >\n        small\n      </span>\n    </div>\n    <div\n..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 13,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 7
+    "examplesCount": 7,
+    "classNamesCount": 21,
+    "domStructuresCount": 7
   },
   "subComponentApis": {},
   "relatedTypes": {

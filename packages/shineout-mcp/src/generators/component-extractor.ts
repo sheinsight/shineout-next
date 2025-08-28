@@ -165,7 +165,6 @@ export class ComponentExtractor {
       const commentMatch = content.match(/\/\*\*([\s\S]*?)\*\//);
       let title = file.replace('.tsx', '');
       let description = '';
-      let scenario: ComponentExample['scenario'] = 'basic';
       
       if (commentMatch) {
         const comment = commentMatch[1];
@@ -176,25 +175,9 @@ export class ComponentExtractor {
         if (descMatch) description = descMatch[1].trim();
       }
       
-      // 根据文件名判断场景
-      if (file.includes('validate') || file.includes('rules')) scenario = 'validation';
-      else if (file.includes('advanced') || file.includes('complex')) scenario = 'advanced';
-      else if (file.includes('form')) scenario = 'form';
-      else if (file.match(/^s?\d+-/)) {
-        // 处理编号文件，如 01-base.tsx, s-01-base.tsx
-        const orderMatch = file.match(/^s?(\d+)-/);
-        if (orderMatch) {
-          const order = parseInt(orderMatch[1]);
-          if (order <= 3) scenario = 'basic';
-          else if (order <= 6) scenario = 'advanced';
-          else scenario = 'advanced';
-        }
-      }
-      
       examples.push({
         title,
         description,
-        scenario,
         code: content,
       });
     }

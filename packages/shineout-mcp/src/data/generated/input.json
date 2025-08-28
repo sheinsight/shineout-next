@@ -419,11 +419,296 @@
     "🚫 禁止使用 addonAfter 属性"
   ],
   "notes": {},
+  "classNames": [
+    "soui-input",
+    "soui-input-wrapper",
+    "soui-input-wrapper-number",
+    "soui-input-content",
+    "soui-input-input",
+    "soui-input-clear-wrapper",
+    "soui-input-password",
+    "soui-input-clear",
+    "soui-input-group",
+    "soui-input-group-separate",
+    "soui-input-group-small",
+    "soui-input-group-large",
+    "soui-input-number-step",
+    "soui-input-password-toggle",
+    "soui-input-info",
+    "soui-input-info-error"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-input soui-input-wrapper\"\n  data-soui-input-border=\"true\"\n  style=\"width: 300px;\"\n>\n  <div\n    class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n  >\n    <input\n      class=\"soui-input-input\"\n      placeholder=\"input something\"\n      value=\"\"\n    />\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-input soui-input-wrapper\"\n  data-soui-input-border=\"true\"\n  style=\"width: 300px;\"\n>\n  <div\n    class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n  >\n    <input\n      class=\"soui-input-input\"\n      placeholder=\"input something\"\n      value=\"hello world\"\n    />\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-input-group",
+        "soui-input-group-disabled",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-disabled",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-input-group soui-input-group-disabled\"\n    data-soui-role=\"input-group\"\n    dir=\"ltr\"\n    style=\"width: 300px; margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-input soui-input-wrapper soui-input-wrapper-disabled\"\n      data-soui-input-border=\"true\"\n    >\n      <div\n        class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n      >\n        <input\n          class=\"soui-input-input\"\n  ..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-input-group",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-input-group\"\n    data-soui-role=\"input-group\"\n    dir=\"ltr\"\n    style=\"width: 300px; margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-input soui-input-wrapper\"\n      data-soui-input-border=\"true\"\n    >\n      <div\n        class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n      >\n        <input\n          class=\"soui-input-input\"\n          placeholder=\"onKeyUp\"\n          value=\"\"\n     ..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-input-group",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input",
+        "soui-select",
+        "soui-select-wrapper",
+        "soui-select-result-wrapper",
+        "soui-select-wrapper-padding-box",
+        "soui-select-wrapper-inner-title-top",
+        "soui-select-wrapper-inner-title-bottom",
+        "soui-select-result",
+        "soui-select-result-text-wrapper",
+        "soui-select-ellipsis",
+        "soui-select-icon-wrapper",
+        "soui-select-arrow-icon",
+        "soui-date-picker",
+        "soui-datePicker-wrapper",
+        "soui-datePicker-result-wrapper",
+        "soui-datePicker-wrapper-padding-box",
+        "soui-datePicker-wrapper-inner-title-top",
+        "soui-datePicker-wrapper-inner-title-bottom",
+        "soui-datePicker-result",
+        "soui-datePicker-result-text-wrapper",
+        "soui-datePicker-result-text",
+        "soui-datePicker-result-text-padding",
+        "soui-datePicker-result-text-bg",
+        "soui-datePicker-icon",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-input-group-small",
+        "soui-input-wrapper-small",
+        "soui-input-group-large",
+        "soui-input-wrapper-large"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-input-group\"\n    data-soui-role=\"input-group\"\n    dir=\"ltr\"\n    style=\"width: 300px; margin-bottom: 24px;\"\n  >\n    <b>\n      http://\n    </b>\n    <div\n      class=\"soui-input soui-input-wrapper\"\n      data-soui-input-border=\"true\"\n    >\n      <div\n        class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n      >\n        <input\n          class=\"soui-input-input\"\n          placeholder=\"pl..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-input-wrapper-inner-title",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-small",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-inner-title-wrapper",
+        "soui-inner-title-wrapper-small",
+        "soui-inner-title-title",
+        "soui-inner-title-top",
+        "soui-inner-title-place",
+        "soui-inner-title-content",
+        "soui-input-input",
+        "soui-input-wrapper-large",
+        "soui-inner-title-wrapper-large"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 300px; display: flex; flex-direction: column; gap: 24px;\"\n>\n  <div\n    class=\"soui-input-wrapper-inner-title soui-input soui-input-wrapper soui-input-wrapper-small\"\n    data-soui-input-border=\"true\"\n  >\n    <div\n      class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n    >\n      <div\n        class=\"soui-inner-title-wrapper soui-inner-title-wrapper-small\"\n      >\n        <div\n          class=\"so..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-input-group",
+        "soui-input-wrapper-number",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input",
+        "soui-input-number-step"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 300px;\"\n>\n  <div\n    class=\"soui-input-group\"\n    data-soui-role=\"input-group\"\n    dir=\"ltr\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <b\n      class=\"min\"\n    >\n      min\n    </b>\n    <div\n      class=\"soui-input-wrapper-number soui-input soui-input-wrapper\"\n      data-soui-input-border=\"true\"\n    >\n      <div\n        class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n      >\n        <input\n    ..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input",
+        "soui-input-wrapper-number",
+        "soui-input-number-step"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 300px;\"\n>\n  <div\n    class=\"soui-input soui-input-wrapper\"\n    data-soui-input-border=\"true\"\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n    >\n      <input\n        class=\"soui-input-input\"\n        placeholder=\"digits undefined\"\n        type=\"text\"\n        value=\"\"\n      />\n    </div>\n  </div>\n  <div\n    class=\"soui-input soui-input-wrapp..."
+    },
+    {
+      "scenario": "渲染场景 9",
+      "appliedClassNames": [
+        "soui-gap",
+        "soui-gap-wrapper",
+        "soui-gap-item",
+        "soui-input-group",
+        "soui-link",
+        "soui-link-wrapper",
+        "soui-link-secondary",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input",
+        "soui-input-wrapper-number",
+        "soui-input-number-step"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-gap soui-gap-wrapper\"\n  style=\"margin-bottom: -8px; margin-right: -8px; flex-direction: column; gap: 24px;\"\n>\n  <div\n    class=\"soui-gap-item\"\n    style=\"margin-bottom: 8px; margin-right: 8px;\"\n  >\n    <div\n      class=\"soui-input-group\"\n      data-soui-role=\"input-group\"\n      dir=\"ltr\"\n      style=\"width: 300px;\"\n    >\n      <a\n        class=\"soui-link soui-link-wrapper soui-link-secondary\"\n        style=\"cursor: pointer; padding: 0px 8px; border-radius: 4px 0 0 4px;\"\n     ..."
+    },
+    {
+      "scenario": "渲染场景 10",
+      "appliedClassNames": [
+        "soui-form",
+        "soui-form-wrapper",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-password",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input",
+        "soui-input-clear-wrapper",
+        "soui-input-clear",
+        "soui-input-password-toggle"
+      ],
+      "domStructure": "\n<form\n  class=\"soui-form soui-form-wrapper\"\n>\n  <div\n    class=\"soui-input soui-input-wrapper soui-input-password\"\n    data-soui-input-border=\"true\"\n    style=\"width: 300px;\"\n  >\n    <div\n      class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n    >\n      <input\n        class=\"soui-input-input\"\n        placeholder=\"input password\"\n        type=\"text\"\n        value=\"•••••••••••••••••••••••\"\n      />\n      <div\n     ..."
+    },
+    {
+      "scenario": "渲染场景 11",
+      "appliedClassNames": [
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-small",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input",
+        "soui-input-wrapper-large"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 100%; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;\"\n>\n  <div\n    class=\"soui-input soui-input-wrapper soui-input-wrapper-small\"\n    data-soui-input-border=\"true\"\n    style=\"width: 240px;\"\n  >\n    <div\n      class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n    >\n      <input\n        class=\"soui-input-input\"\n        placeholder=\"small size\"\n        value=\"\"\n      />\n    </div>..."
+    },
+    {
+      "scenario": "渲染场景 12",
+      "appliedClassNames": [
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-input soui-input-wrapper\"\n  data-soui-input-border=\"true\"\n  style=\"width: 300px;\"\n>\n  <div\n    class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n  >\n    <input\n      class=\"soui-input-input\"\n      placeholder=\"input something\"\n      value=\"\"\n    />\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 13",
+      "appliedClassNames": [
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-input soui-input-wrapper\"\n  data-soui-input-border=\"true\"\n  style=\"width: 300px;\"\n>\n  <div\n    class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n  >\n    <input\n      class=\"soui-input-input\"\n      placeholder=\"input something\"\n      value=\"\"\n    />\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 14",
+      "appliedClassNames": [
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-underline",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-input soui-input-wrapper soui-input-wrapper-underline\"\n  data-soui-input-border=\"true\"\n  style=\"width: 300px;\"\n>\n  <div\n    class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n  >\n    <input\n      class=\"soui-input-input\"\n      placeholder=\"Underline\"\n      value=\"\"\n    />\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 15",
+      "appliedClassNames": [
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-input soui-input-wrapper\"\n  data-soui-input-border=\"true\"\n  style=\"width: 300px;\"\n>\n  <div\n    class=\"soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content\"\n  >\n    <input\n      class=\"soui-input-input\"\n      placeholder=\"email\"\n      value=\"\"\n    />\n  </div>\n</div>\n"
+    }
+  ],
   "apiSummary": {
     "totalProps": 42,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 26
+    "examplesCount": 26,
+    "classNamesCount": 16,
+    "domStructuresCount": 15
   },
   "subComponentApis": {
     "Group": {

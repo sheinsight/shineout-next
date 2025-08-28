@@ -193,11 +193,161 @@
     "❌ 避免在 Form 中同时使用 name 和 value/onChange"
   ],
   "notes": {},
+  "classNames": [
+    "soui-rate",
+    "soui-rate-wrapper",
+    "soui-rate-inner",
+    "soui-rate-item",
+    "soui-rate-item-bg",
+    "soui-rate-item-front",
+    "soui-rate-item-half",
+    "soui-rate-item-checked",
+    "soui-rate-item-checked-half",
+    "soui-rate-text",
+    "soui-rate-item-disabled",
+    "soui-rate-item-animation"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-bg",
+        "soui-rate-item-front"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-rate soui-rate-wrapper\"\n>\n  <div\n    class=\"soui-rate-inner\"\n  >\n    <div\n      class=\"soui-rate-item\"\n    >\n      <span\n        class=\"soui-rate-item-bg\"\n      >\n        <svg\n          fill=\"currentColor\"\n          viewBox=\"0 0 24 24\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path\n            d=\"M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-checked",
+        "soui-rate-item-bg",
+        "soui-rate-item-front"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-rate soui-rate-wrapper\"\n>\n  <div\n    class=\"soui-rate-inner\"\n  >\n    <div\n      class=\"soui-rate-item soui-rate-item-checked\"\n    >\n      <span\n        class=\"soui-rate-item-bg\"\n      >\n        <svg\n          fill=\"currentColor\"\n          viewBox=\"0 0 24 24\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path\n            d=\"M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.43..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-checked",
+        "soui-rate-item-disabled",
+        "soui-rate-item-bg",
+        "soui-rate-item-front"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-rate soui-rate-wrapper\"\n>\n  <div\n    class=\"soui-rate-inner\"\n  >\n    <div\n      class=\"soui-rate-item soui-rate-item-checked soui-rate-item-disabled\"\n    >\n      <span\n        class=\"soui-rate-item-bg\"\n      >\n        <svg\n          fill=\"currentColor\"\n          viewBox=\"0 0 24 24\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path\n            d=\"M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.842..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-checked",
+        "soui-rate-item-bg",
+        "soui-rate-item-front",
+        "soui-rate-item-half",
+        "soui-rate-item-checked-half"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-rate soui-rate-wrapper\"\n>\n  <div\n    class=\"soui-rate-inner\"\n  >\n    <div\n      class=\"soui-rate-item soui-rate-item-checked\"\n    >\n      <span\n        class=\"soui-rate-item-bg\"\n      >\n        <svg\n          fill=\"currentColor\"\n          viewBox=\"0 0 24 24\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path\n            d=\"M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.43..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-checked",
+        "soui-rate-item-bg",
+        "soui-rate-item-front"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-direction: column; gap: 12px;\"\n>\n  <div\n    class=\"soui-rate soui-rate-wrapper\"\n  >\n    <div\n      class=\"soui-rate-inner\"\n    >\n      <div\n        class=\"soui-rate-item soui-rate-item-checked\"\n        style=\"font-size: 28px; width: 28px;\"\n      >\n        <span\n          class=\"soui-rate-item-bg\"\n        >\n          <svg\n            fill=\"none\"\n            height=\"32\"\n            viewBox=\"0 0 32 32\"\n            width=\"32\"\n            xmlns=\"http://www.w3.org/20..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-checked",
+        "soui-rate-item-bg",
+        "soui-rate-item-front"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-rate soui-rate-wrapper\"\n>\n  <div\n    class=\"soui-rate-inner\"\n  >\n    <div\n      class=\"soui-rate-item soui-rate-item-checked\"\n    >\n      <span\n        class=\"soui-rate-item-bg\"\n      >\n        <svg\n          fill=\"currentColor\"\n          viewBox=\"0 0 24 24\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path\n            d=\"M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.43..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-checked",
+        "soui-rate-item-bg",
+        "soui-rate-item-front"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-direction: column; gap: 24px;\"\n>\n  <div\n    class=\"soui-rate soui-rate-wrapper\"\n  >\n    <div\n      class=\"soui-rate-inner\"\n    >\n      <div\n        class=\"soui-rate-item soui-rate-item-checked\"\n        style=\"font-size: 16px; width: 16px;\"\n      >\n        <span\n          class=\"soui-rate-item-bg\"\n        >\n          A\n        </span>\n        <span\n          class=\"soui-rate-item-front\"\n        >\n          A\n        </span>\n      </div>\n      <div\n        class=..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-bg",
+        "soui-rate-item-front"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"margin-bottom: 8px; font-size: 16px; font-weight: 500;\"\n  >\n    16px\n  </div>\n  <div\n    class=\"soui-rate soui-rate-wrapper\"\n    style=\"margin-bottom: 32px;\"\n  >\n    <div\n      class=\"soui-rate-inner\"\n    >\n      <div\n        class=\"soui-rate-item\"\n        style=\"font-size: 16px; width: 16px;\"\n      >\n        <span\n          class=\"soui-rate-item-bg\"\n        >\n          <svg\n            fill=\"currentColor\"\n            viewBox=\"0 0 24 24\"\n            xmlns=\"http://www.w3...."
+    },
+    {
+      "scenario": "渲染场景 9",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-checked",
+        "soui-rate-item-bg",
+        "soui-rate-item-front",
+        "soui-rate-item-half",
+        "soui-rate-text"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-rate soui-rate-wrapper\"\n>\n  <div\n    class=\"soui-rate-inner\"\n  >\n    <div\n      class=\"soui-rate-item soui-rate-item-checked\"\n    >\n      <span\n        class=\"soui-rate-item-bg\"\n      >\n        <svg\n          fill=\"currentColor\"\n          viewBox=\"0 0 24 24\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path\n            d=\"M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.43..."
+    },
+    {
+      "scenario": "渲染场景 10",
+      "appliedClassNames": [
+        "soui-rate",
+        "soui-rate-wrapper",
+        "soui-rate-inner",
+        "soui-rate-item",
+        "soui-rate-item-bg",
+        "soui-rate-item-front"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-rate soui-rate-wrapper\"\n>\n  <div\n    class=\"soui-rate-inner\"\n  >\n    <div\n      class=\"soui-rate-item\"\n    >\n      <span\n        class=\"soui-rate-item-bg\"\n      >\n        <svg\n          fill=\"currentColor\"\n          viewBox=\"0 0 24 24\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path\n            d=\"M8.276 7.825L1.85649 8.7559L1.74278 8.77878C1.00761 8.96968 0.736859 9.90915 1.30093 10.4606L5.953 15.008L4.84231 21.3268L4.82911 21.4327C4.77288 22.2003 5.59..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 20,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 10
+    "examplesCount": 10,
+    "classNamesCount": 12,
+    "domStructuresCount": 10
   },
   "subComponentApis": {},
   "relatedTypes": {

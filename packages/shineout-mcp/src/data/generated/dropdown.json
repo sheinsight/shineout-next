@@ -223,11 +223,223 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-dropdown",
+    "soui-dropdown-wrapper",
+    "soui-dropdown-open",
+    "soui-dropdown-list",
+    "soui-dropdown-list-small",
+    "soui-dropdown-list-large",
+    "soui-dropdown-list-has-children",
+    "soui-dropdown-box-list",
+    "soui-dropdown-caret",
+    "soui-dropdown-content",
+    "soui-dropdown-button",
+    "soui-dropdown-item-wrapper",
+    "soui-dropdown-item",
+    "soui-dropdown-item-disabled",
+    "soui-dropdown-option-group",
+    "soui-dropdown-option-divider",
+    "soui-dropdown-item-active",
+    "soui-dropdown-split-button"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-dropdown soui-dropdown-wrapper\"\n  data-position=\"bottom-left\"\n  data-role=\"dropdown\"\n>\n  <button\n    class=\"soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span\n      class=\"soui-dropdown-content\"\n    >\n      Click me\n    </span>\n    <span\n      class=\"soui-dropdown-caret\"\n      data-role=\"caret\"\n      dir=\"ltr\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n        f..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-outline",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  style=\"background: rgb(238, 238, 238); padding: 20px; border-radius: 4px; overflow: hidden;\"\n>\n  <div\n    class=\"soui-dropdown soui-dropdown-wrapper\"\n    data-position=\"bottom-left\"\n    data-role=\"dropdown\"\n  >\n    <button\n      class=\"soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-outline\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <span\n        class=\"soui-dropdown-content\"\n      >\n        Absolute\n      </span>\n      <span\n        class=\"soui-..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-dropdown-content",
+        "soui-dropdown-caret",
+        "soui-button-secondary",
+        "soui-button-danger",
+        "soui-button-warning",
+        "soui-button-success",
+        "soui-button-outline",
+        "soui-button-text"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; gap: 24px;\"\n>\n  <div\n    style=\"display: flex; flex-direction: column; align-items: flex-start; gap: 24px;\"\n  >\n    <div\n      class=\"soui-dropdown soui-dropdown-wrapper\"\n      data-position=\"bottom-left\"\n      data-role=\"dropdown\"\n    >\n      <button\n        class=\"soui-dropdown-button soui-button soui-button-primary soui-button-button\"\n        dir=\"ltr\"\n        type=\"button\"\n      >\n        <span\n          class=\"soui-dropdown-content\"\n        >\n          Default\n..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-dropdown soui-dropdown-wrapper\"\n  data-position=\"bottom-left\"\n  data-role=\"dropdown\"\n>\n  <button\n    class=\"soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span\n      class=\"soui-dropdown-content\"\n    >\n      Click me\n    </span>\n    <span\n      class=\"soui-dropdown-caret\"\n      data-role=\"caret\"\n      dir=\"ltr\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n        f..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-dropdown soui-dropdown-wrapper\"\n  data-position=\"bottom-left\"\n  data-role=\"dropdown\"\n>\n  <button\n    class=\"soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span\n      class=\"soui-dropdown-content\"\n    >\n      Tiling Menu\n    </span>\n    <span\n      class=\"soui-dropdown-caret\"\n      data-role=\"caret\"\n      dir=\"ltr\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n      ..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-dropdown soui-dropdown-wrapper\"\n  data-position=\"bottom-left\"\n  data-role=\"dropdown\"\n>\n  <button\n    class=\"soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span\n      class=\"soui-dropdown-content\"\n    >\n      Dividing Line\n    </span>\n    <span\n      class=\"soui-dropdown-caret\"\n      data-role=\"caret\"\n      dir=\"ltr\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n    ..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-dropdown soui-dropdown-wrapper\"\n  data-position=\"bottom-left\"\n  data-role=\"dropdown\"\n>\n  <button\n    class=\"soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span\n      class=\"soui-dropdown-content\"\n    >\n      Group Menu\n    </span>\n    <span\n      class=\"soui-dropdown-caret\"\n      data-role=\"caret\"\n      dir=\"ltr\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n       ..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-dropdown soui-dropdown-wrapper\"\n  data-position=\"bottom-left\"\n  data-role=\"dropdown\"\n>\n  <button\n    class=\"soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span\n      class=\"soui-dropdown-content\"\n    >\n      Click me\n    </span>\n    <span\n      class=\"soui-dropdown-caret\"\n      data-role=\"caret\"\n      dir=\"ltr\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n        f..."
+    },
+    {
+      "scenario": "渲染场景 9",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-dropdown soui-dropdown-wrapper\"\n  data-position=\"bottom-left\"\n  data-role=\"dropdown\"\n>\n  <button\n    class=\"soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span\n      class=\"soui-dropdown-content\"\n    >\n      Icon Menu\n    </span>\n    <span\n      class=\"soui-dropdown-caret\"\n      data-role=\"caret\"\n      dir=\"ltr\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n        ..."
+    },
+    {
+      "scenario": "渲染场景 10",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-dropdown-content",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  style=\"display: inline-flex; flex-direction: column; gap: 12px;\"\n>\n  <div\n    style=\"display: flex; justify-content: center; gap: 12px; padding: 0px 120px;\"\n  >\n    <div\n      class=\"soui-dropdown soui-dropdown-wrapper\"\n      data-position=\"bottom-left\"\n      data-role=\"dropdown\"\n    >\n      <button\n        class=\"soui-dropdown-button soui-button soui-button-secondary soui-button-button soui-button-text\"\n        dir=\"ltr\"\n        type=\"button\"\n      >\n        <span\n          class=\"soui-..."
+    },
+    {
+      "scenario": "渲染场景 11",
+      "appliedClassNames": [
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-outline",
+        "soui-button-small",
+        "soui-dropdown-content",
+        "soui-dropdown-caret",
+        "soui-button-large"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-dropdown soui-dropdown-wrapper\"\n    data-position=\"bottom-left\"\n    data-role=\"dropdown\"\n    style=\"margin-inline-end: 24px;\"\n  >\n    <button\n      class=\"soui-dropdown-button soui-button soui-button-primary soui-button-button soui-button-outline soui-button-small\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <span\n        class=\"soui-dropdown-content\"\n      >\n        Dropdown\n      </span>\n      <span\n        class=\"soui-dropdown-caret\"\n        data-role=\"caret\"..."
+    },
+    {
+      "scenario": "渲染场景 12",
+      "appliedClassNames": [
+        "soui-button-group",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline",
+        "soui-dropdown",
+        "soui-dropdown-wrapper",
+        "soui-dropdown-button",
+        "soui-dropdown-split-button",
+        "soui-dropdown-caret"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-button-group\"\n  dir=\"ltr\"\n  style=\"margin-inline-end: 24px;\"\n>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span>\n      Option\n    </span>\n  </button>\n  <button\n    class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n    dir=\"ltr\"\n    type=\"button\"\n  >\n    <span>\n      Option\n    </span>\n  </button>\n  <div\n    class=\"soui-dropdown soui-dropdown-wrapper\"\n    ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 22,
     "requiredProps": 1,
     "propsWithWhen": 0,
-    "examplesCount": 14
+    "examplesCount": 14,
+    "classNamesCount": 18,
+    "domStructuresCount": 12
   },
   "subComponentApis": {},
   "relatedTypes": {

@@ -68,10 +68,70 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-gap",
+    "soui-gap-item",
+    "soui-gap-wrapper"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-gap",
+        "soui-gap-wrapper",
+        "soui-gap-item",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-gap soui-gap-wrapper\"\n  style=\"margin-bottom: -8px; margin-right: -8px; width: 400px;\"\n>\n  <div\n    class=\"soui-gap-item\"\n    style=\"margin-bottom: 8px; margin-right: 8px;\"\n  >\n    <button\n      class=\"soui-button soui-button-primary soui-button-button\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <span>\n        Button\n      </span>\n    </button>\n  </div>\n  <div\n    class=\"soui-gap-item\"\n    style=\"margin-bottom: 8px; margin-right: 8px;\"\n  >\n    <button\n      class=\"soui-b..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-wrapper-checked",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio-group\"\n>\n  <div\n    class=\"soui-radio soui-radio-wrapper soui-radio-wrapper-checked\"\n  >\n    <input\n      checked=\"\"\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span\n      class=\"soui-radio-indicator-wrapper\"\n    >\n      <span\n        class=\"soui-radio-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-radio-desc\"\n    >\n      flex-start\n    </span>\n  </div>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-end-value",
+        "soui-slider-value"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; align-items: center; margin-bottom: 16px;\"\n>\n  <div\n    style=\"width: 80px;\"\n  >\n    column:\n  </div>\n  <div\n    class=\"soui-slider soui-slider-wrapper\"\n    style=\"flex: 1;\"\n  >\n    <div\n      class=\"soui-slider-track\"\n    >\n      <div\n        class=\"soui-slider-track-inner\"\n        dir=\"ltr\"\n        style=\"left: 0%; right: 92%;\"\n      >\n        <div\n          class=\"soui-slider-indicator soui-slider-indicator-end\"\n          dir=\"ltr\"\n        />\n        <div\n       ..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-gap",
+        "soui-gap-wrapper",
+        "soui-gap-item",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-gap soui-gap-wrapper\"\n  style=\"margin-bottom: -10px; margin-right: -8px; width: 400px; flex-direction: column;\"\n>\n  <div\n    class=\"soui-gap-item\"\n    style=\"margin-bottom: 10px; margin-right: 8px;\"\n  >\n    <button\n      class=\"soui-button soui-button-primary soui-button-button\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <span>\n        Button\n      </span>\n    </button>\n  </div>\n  <div\n    class=\"soui-gap-item\"\n    style=\"margin-bottom: 10px; margin-right: 8px;\"\n  >\n    ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 6,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 4
+    "examplesCount": 4,
+    "classNamesCount": 3,
+    "domStructuresCount": 4
   }
 }

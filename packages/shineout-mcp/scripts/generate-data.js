@@ -118,6 +118,15 @@ async function generateComponentData() {
       console.warn('⚠️  收集 tips 失败（可能还没有 tips 文件）:', error.message);
     }
     
+    // 收集 className 信息
+    console.log('\\n🎨 开始收集 className 信息...');
+    try {
+      const { collectAllClassNames } = await import('./collect-classnames.js');
+      await collectAllClassNames();
+    } catch (error) {
+      console.warn('⚠️  收集 className 失败:', error.message);
+    }
+    
   } catch (error) {
     console.error('❌ 生成组件数据失败:', error);
     process.exit(1);

@@ -319,7 +319,7 @@ export class ComponentFormatter {
   private formatExamplesSection(component: ComponentData): string {
     let doc = `## 使用示例\n\n`;
     
-    const basicExample = component.examples!.find(ex => ex.scenario === 'basic') || component.examples![0];
+    const basicExample = component.examples!.find(ex => ex.title.includes('基本') || ex.title.includes('Base')) || component.examples![0];
     
     if (basicExample) {
       doc += `### ${basicExample.title}\n\n`;
@@ -334,7 +334,7 @@ export class ComponentFormatter {
     
     if (component.category === 'form' || component.name === 'Form') {
       const formExample = component.examples!.find(ex => 
-        ex.scenario === 'form' || 
+        ex.title.includes('表单') || ex.title.includes('Form') || 
         ex.title.toLowerCase().includes('form') ||
         ex.title.includes('表单')
       );
@@ -352,7 +352,7 @@ export class ComponentFormatter {
     
     const displayedExamples = [basicExample];
     if (component.category === 'form') {
-      const formEx = component.examples!.find(ex => ex.scenario === 'form');
+      const formEx = component.examples!.find(ex => ex.title.includes('表单') || ex.title.includes('Form'));
       if (formEx) displayedExamples.push(formEx);
     }
     
@@ -360,7 +360,7 @@ export class ComponentFormatter {
     if (otherExamples.length > 0) {
       doc += `### 其他可用示例\n\n`;
       for (const example of otherExamples.slice(0, 4)) {
-        doc += `- **${example.title}**: ${example.description || example.scenario}\n`;
+        doc += `- **${example.title}**: ${example.description || ''}\n`;
       }
       if (otherExamples.length > 4) {
         doc += `- ...还有 ${otherExamples.length - 4} 个其他示例\n`;
@@ -374,7 +374,7 @@ export class ComponentFormatter {
   private formatExamplesForSearch(component: ComponentData): string {
     let content = `### 使用示例\n\n`;
     
-    const basicExample = component.examples!.find(ex => ex.scenario === 'basic') || component.examples![0];
+    const basicExample = component.examples!.find(ex => ex.title.includes('基本') || ex.title.includes('Base')) || component.examples![0];
     
     if (basicExample) {
       content += `#### ${basicExample.title}\n`;
@@ -390,7 +390,7 @@ export class ComponentFormatter {
 
     if (component.category === 'form' || component.name === 'Form') {
       const formExample = component.examples!.find(ex => 
-        ex.scenario === 'form' || 
+        ex.title.includes('表单') || ex.title.includes('Form') || 
         ex.title.toLowerCase().includes('form') ||
         ex.title.includes('表单')
       );
@@ -405,13 +405,13 @@ export class ComponentFormatter {
 
     const otherExamples = component.examples!.filter(ex => 
       ex !== basicExample && 
-      !(component.category === 'form' && ex.scenario === 'form')
+      !(component.category === 'form' && ex.title.includes('表单') || ex.title.includes('Form'))
     );
     
     if (otherExamples.length > 0) {
       content += `#### 其他可用示例：\n`;
       otherExamples.slice(0, 3).forEach(ex => {
-        content += `- **${ex.title}**: ${ex.description || ex.scenario}\n`;
+        content += `- **${ex.title}**: ${ex.description || ''}\n`;
       });
       content += `\n`;
     }

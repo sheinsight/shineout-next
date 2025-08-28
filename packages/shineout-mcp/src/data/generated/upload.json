@@ -452,11 +452,298 @@
     "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
   ],
   "notes": {},
+  "classNames": [
+    "soui-upload",
+    "soui-upload-wrapper",
+    "soui-upload-wrapper-image",
+    "soui-upload-wrapper-disabled",
+    "soui-upload-wrapper-drop",
+    "soui-upload-dragger-wrapper",
+    "soui-upload-dragger-area",
+    "soui-upload-handler",
+    "soui-upload-result",
+    "soui-upload-icon",
+    "soui-upload-icon-hover",
+    "soui-upload-result-error",
+    "soui-upload-result-success",
+    "soui-upload-result-uploading",
+    "soui-upload-result-deleted",
+    "soui-upload-result-text-footer",
+    "soui-upload-result-text",
+    "soui-upload-result-text-body",
+    "soui-upload-result-close",
+    "soui-upload-result-error-close",
+    "soui-upload-result-progress-text",
+    "soui-upload-image-handler",
+    "soui-upload-image-handler-icon",
+    "soui-upload-image-result",
+    "soui-upload-image-bg",
+    "soui-upload-image-result-mask",
+    "soui-upload-image-result-mask-operator",
+    "soui-upload-image-result-loading",
+    "soui-upload-image-result-mask-info",
+    "soui-upload-image-result-top-btn",
+    "soui-upload-image-result-mask-show",
+    "soui-upload-custom-image-btn",
+    "soui-upload-image-result-tip",
+    "soui-upload-drop-item",
+    "soui-upload-button",
+    "soui-upload-button-uploading",
+    "soui-upload-button-cover",
+    "soui-upload-button-bg",
+    "soui-upload-button-bg-spin"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper\"\n  style=\"width: 400px;\"\n>\n  <span\n    class=\"soui-upload-handler\"\n    role=\"button\"\n  >\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <svg\n        fill=\"none\"\n        height=\"14\"\n        style=\"margin-inline-end: 4px;\"\n        viewBox=\"0 0 24 24\"\n        width=\"14\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path\n          clip-rule=..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-upload-button",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper\"\n>\n  <span\n    class=\"soui-upload-handler\"\n    role=\"button\"\n  >\n    <button\n      class=\"soui-upload-button soui-button soui-button-primary soui-button-button\"\n      dir=\"ltr\"\n      tabindex=\"0\"\n      type=\"button\"\n    >\n      <span>\n        Click to upload\n      </span>\n    </button>\n    <input\n      style=\"display: none;\"\n      type=\"file\"\n    />\n  </span>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-wrapper-image",
+        "soui-upload-image-handler",
+        "soui-upload-image-handler-icon"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper soui-upload-wrapper-image\"\n>\n  <span\n    class=\"soui-upload-image-handler\"\n    role=\"button\"\n    style=\"width: 80px; height: 80px;\"\n  >\n    <div\n      class=\"soui-upload-image-handler-icon\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n        focusable=\"false\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          clip-rule=\"evenodd\"\n          d=\"M11.8185 2.09595C12.3708 2.09595 12.8185 2.54366 12.8185 3.09595V10.8181..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline",
+        "soui-upload-result",
+        "soui-upload-result-success",
+        "soui-upload-result-text",
+        "soui-upload-icon",
+        "soui-upload-result-text-body",
+        "soui-upload-result-text-footer",
+        "soui-upload-result-close",
+        "soui-upload-icon-hover",
+        "soui-upload-wrapper-image",
+        "soui-upload-image-handler",
+        "soui-upload-image-handler-icon",
+        "soui-upload-image-result",
+        "soui-upload-image-bg",
+        "soui-image",
+        "soui-image-image",
+        "soui-image-fill",
+        "soui-image-rounded",
+        "soui-image-default-placeholder",
+        "soui-spin",
+        "soui-spin-spin",
+        "soui-spin-ring",
+        "soui-upload-image-result-mask",
+        "soui-upload-image-result-mask-operator"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-upload soui-upload-wrapper\"\n    style=\"width: 400px;\"\n  >\n    <span\n      class=\"soui-upload-handler\"\n      role=\"button\"\n    >\n      <button\n        class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n        dir=\"ltr\"\n        type=\"button\"\n      >\n        <svg\n          fill=\"none\"\n          height=\"14\"\n          style=\"margin-inline-end: 4px;\"\n          viewBox=\"0 0 24 24\"\n          width=\"14\"\n          xmlns=\"http://www.w3.org/2000/s..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline",
+        "soui-upload-result",
+        "soui-upload-result-success",
+        "soui-upload-result-text",
+        "soui-upload-icon",
+        "soui-upload-result-text-body",
+        "soui-upload-result-text-footer",
+        "soui-upload-result-close",
+        "soui-upload-icon-hover"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-upload soui-upload-wrapper\"\n    style=\"width: 400px;\"\n  >\n    <span\n      class=\"soui-upload-handler\"\n      role=\"button\"\n    >\n      <button\n        class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n        dir=\"ltr\"\n        type=\"button\"\n      >\n        <svg\n          fill=\"none\"\n          height=\"14\"\n          style=\"margin-inline-end: 4px;\"\n          viewBox=\"0 0 24 24\"\n          width=\"14\"\n          xmlns=\"http://www.w3.org/2000/s..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-wrapper-drop",
+        "soui-upload-drop-item",
+        "soui-upload-handler",
+        "soui-upload-wrapper-image",
+        "soui-upload-image-handler"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-upload soui-upload-wrapper soui-upload-wrapper-drop\"\n    style=\"width: 400px;\"\n  >\n    <span\n      class=\"soui-upload-drop-item\"\n      data-soui-dragover=\"false\"\n    >\n      <span\n        class=\"soui-upload-handler\"\n        role=\"button\"\n      >\n        <div\n          style=\"height: 200px; box-sizing: border-box; padding: 50px 16px; font-size: 12px; line-height: 16px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: ce..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-upload soui-upload-wrapper\"\n    style=\"width: 400px;\"\n  >\n    <span\n      class=\"soui-upload-handler\"\n      role=\"button\"\n    >\n      <button\n        class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n        dir=\"ltr\"\n        type=\"button\"\n      >\n        <svg\n          fill=\"none\"\n          height=\"14\"\n          style=\"margin-inline-end: 4px;\"\n          viewBox=\"0 0 24 24\"\n          width=\"14\"\n          xmlns=\"http://www.w3.org/2000/s..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline",
+        "soui-upload-result",
+        "soui-upload-result-success",
+        "soui-upload-result-text",
+        "soui-upload-icon",
+        "soui-upload-result-text-body",
+        "soui-upload-result-text-footer",
+        "soui-upload-result-close",
+        "soui-upload-icon-hover",
+        "soui-upload-wrapper-image",
+        "soui-upload-image-handler",
+        "soui-upload-image-handler-icon",
+        "soui-upload-image-result",
+        "soui-upload-image-bg",
+        "soui-image",
+        "soui-image-image",
+        "soui-image-fill",
+        "soui-image-rounded",
+        "soui-image-default-placeholder",
+        "soui-spin",
+        "soui-spin-spin",
+        "soui-spin-ring",
+        "soui-upload-image-result-mask",
+        "soui-upload-image-result-mask-operator"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-upload soui-upload-wrapper\"\n    style=\"width: 400px;\"\n  >\n    <span\n      class=\"soui-upload-handler\"\n      role=\"button\"\n    >\n      <button\n        class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n        dir=\"ltr\"\n        type=\"button\"\n      >\n        <svg\n          fill=\"none\"\n          height=\"14\"\n          style=\"margin-inline-end: 4px;\"\n          viewBox=\"0 0 24 24\"\n          width=\"14\"\n          xmlns=\"http://www.w3.org/2000/s..."
+    },
+    {
+      "scenario": "渲染场景 9",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper\"\n  style=\"width: 400px;\"\n>\n  <span\n    class=\"soui-upload-handler\"\n    role=\"button\"\n  >\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <svg\n        fill=\"none\"\n        height=\"14\"\n        style=\"margin-inline-end: 4px;\"\n        viewBox=\"0 0 24 24\"\n        width=\"14\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path\n          clip-rule=..."
+    },
+    {
+      "scenario": "渲染场景 10",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper\"\n  style=\"width: 400px;\"\n>\n  <span\n    class=\"soui-upload-handler\"\n    role=\"button\"\n  >\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <svg\n        fill=\"none\"\n        height=\"14\"\n        style=\"margin-inline-end: 4px;\"\n        viewBox=\"0 0 24 24\"\n        width=\"14\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path\n          clip-rule=..."
+    },
+    {
+      "scenario": "渲染场景 11",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper\"\n  style=\"width: 400px;\"\n>\n  <span\n    class=\"soui-upload-handler\"\n    role=\"button\"\n  >\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <svg\n        fill=\"none\"\n        height=\"14\"\n        style=\"margin-inline-end: 4px;\"\n        viewBox=\"0 0 24 24\"\n        width=\"14\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path\n          clip-rule=..."
+    },
+    {
+      "scenario": "渲染场景 12",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper\"\n  style=\"width: 400px;\"\n>\n  <span\n    class=\"soui-upload-handler\"\n    role=\"button\"\n  >\n    <button\n      class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n      dir=\"ltr\"\n      type=\"button\"\n    >\n      <svg\n        fill=\"none\"\n        height=\"14\"\n        style=\"margin-inline-end: 4px;\"\n        viewBox=\"0 0 24 24\"\n        width=\"14\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path\n          clip-rule=..."
+    },
+    {
+      "scenario": "渲染场景 13",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-wrapper-image",
+        "soui-upload-image-handler",
+        "soui-upload-image-handler-icon"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper soui-upload-wrapper-image\"\n>\n  <span\n    class=\"soui-upload-image-handler\"\n    role=\"button\"\n    style=\"width: 80px; height: 80px;\"\n  >\n    <div\n      class=\"soui-upload-image-handler-icon\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n        focusable=\"false\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          clip-rule=\"evenodd\"\n          d=\"M11.8185 2.09595C12.3708 2.09595 12.8185 2.54366 12.8185 3.09595V10.8181..."
+    },
+    {
+      "scenario": "渲染场景 14",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-wrapper-image",
+        "soui-upload-image-handler"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-upload soui-upload-wrapper soui-upload-wrapper-image\"\n>\n  <span\n    class=\"soui-upload-image-handler\"\n    role=\"button\"\n    style=\"width: 400px; height: 200px;\"\n  >\n    <div\n      style=\"padding: 50px 16px;\"\n    >\n      <div\n        style=\"margin: auto; font-size: 12px; text-align: center; line-height: 16px;\"\n      >\n        <svg\n          fill=\"none\"\n          height=\"20\"\n          viewBox=\"0 0 20 20\"\n          width=\"20\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        ..."
+    },
+    {
+      "scenario": "渲染场景 15",
+      "appliedClassNames": [
+        "soui-upload",
+        "soui-upload-wrapper",
+        "soui-upload-handler",
+        "soui-button",
+        "soui-button-secondary",
+        "soui-button-button",
+        "soui-button-outline"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-upload soui-upload-wrapper\"\n    style=\"width: 400px;\"\n  >\n    <span\n      class=\"soui-upload-handler\"\n      role=\"button\"\n    >\n      <button\n        class=\"soui-button soui-button-secondary soui-button-button soui-button-outline\"\n        dir=\"ltr\"\n        type=\"button\"\n      >\n        <svg\n          fill=\"none\"\n          height=\"14\"\n          style=\"margin-inline-end: 4px;\"\n          viewBox=\"0 0 24 24\"\n          width=\"14\"\n          xmlns=\"http://www.w3.org/2000/s..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 53,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 20
+    "examplesCount": 20,
+    "classNamesCount": 39,
+    "domStructuresCount": 15
   },
   "subComponentApis": {},
   "relatedTypes": {

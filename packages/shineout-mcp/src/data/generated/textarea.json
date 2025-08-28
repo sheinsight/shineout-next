@@ -279,10 +279,98 @@
     "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
   ],
   "notes": {},
+  "classNames": [
+    "soui-textarea",
+    "soui-textarea-wrapper",
+    "soui-textarea-textarea",
+    "soui-textarea-resize",
+    "soui-textarea-info",
+    "soui-textarea-shadow",
+    "soui-textarea-footer",
+    "soui-textarea-limit",
+    "soui-textarea-clear",
+    "soui-textarea-wrapper-with-clear"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-textarea",
+        "soui-textarea-wrapper",
+        "soui-textarea-wrapper-focus",
+        "soui-textarea-wrapper-padding-box",
+        "soui-textarea-wrapper-inner-title-bottom",
+        "soui-textarea-textarea"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-textarea soui-textarea-wrapper soui-textarea-wrapper-focus\"\n  data-soui-input-border=\"true\"\n>\n  <textarea\n    class=\"soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea\"\n    placeholder=\"input something\"\n    rows=\"4\"\n  />\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-textarea",
+        "soui-textarea-wrapper",
+        "soui-textarea-wrapper-padding-box",
+        "soui-textarea-wrapper-inner-title-bottom",
+        "soui-textarea-textarea",
+        "soui-textarea-resize",
+        "soui-textarea-shadow"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-textarea soui-textarea-wrapper\"\n  data-soui-input-border=\"true\"\n>\n  <textarea\n    class=\"soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea soui-textarea-resize\"\n    placeholder=\"Please enter content, the height can be automatically adjusted\"\n    rows=\"2\"\n    style=\"overflow: auto; max-height: 150px;\"\n  />\n  <textarea\n    class=\"soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea soui..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-textarea",
+        "soui-textarea-wrapper",
+        "soui-textarea-wrapper-padding-box",
+        "soui-textarea-wrapper-inner-title-bottom",
+        "soui-textarea-textarea",
+        "soui-textarea-footer"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-textarea soui-textarea-wrapper\"\n  data-soui-input-border=\"true\"\n>\n  <textarea\n    class=\"soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea\"\n    placeholder=\"input something\"\n    rows=\"3\"\n  />\n  <div\n    class=\"soui-textarea-wrapper-padding-box soui-textarea-footer\"\n  >\n    <div\n      style=\"text-align: end;\"\n    >\n      <span>\n        0\n      </span>\n       / 20\n    </div>\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-textarea",
+        "soui-textarea-wrapper",
+        "soui-textarea-wrapper-padding-box",
+        "soui-textarea-wrapper-inner-title-bottom",
+        "soui-textarea-textarea"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-textarea soui-textarea-wrapper\"\n  data-soui-input-border=\"true\"\n>\n  <textarea\n    class=\"soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea\"\n    placeholder=\"input something\"\n    rows=\"4\"\n  />\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-textarea",
+        "soui-textarea-wrapper",
+        "soui-textarea-wrapper-padding-box",
+        "soui-textarea-wrapper-inner-title-bottom",
+        "soui-textarea-textarea"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-textarea soui-textarea-wrapper\"\n  data-soui-input-border=\"true\"\n>\n  <textarea\n    class=\"soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea\"\n    placeholder=\"input something\"\n    rows=\"4\"\n  />\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-textarea",
+        "soui-textarea-wrapper",
+        "soui-textarea-wrapper-small",
+        "soui-textarea-wrapper-padding-box",
+        "soui-textarea-wrapper-inner-title-bottom",
+        "soui-textarea-textarea",
+        "soui-textarea-wrapper-large"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-textarea soui-textarea-wrapper soui-textarea-wrapper-small\"\n    data-soui-input-border=\"true\"\n    style=\"width: 120px; margin-inline-end: 24px;\"\n  >\n    <textarea\n      class=\"soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea\"\n      placeholder=\"small size\"\n      rows=\"3\"\n    />\n  </div>\n  <div\n    class=\"soui-textarea soui-textarea-wrapper\"\n    data-soui-input-border=\"true\"\n    style=\"width: 120px; margin-inline-end: ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 32,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 12
+    "examplesCount": 12,
+    "classNamesCount": 10,
+    "domStructuresCount": 6
   }
 }

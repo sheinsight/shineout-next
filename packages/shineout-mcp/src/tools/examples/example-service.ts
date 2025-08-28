@@ -9,16 +9,15 @@ export class ExampleService {
   }
 
   /**
-   * 获取特定场景的示例代码
+   * 获取所有示例代码
    */
-  async getScenarioExamples(scenario: string) {
+  async getAllExamples() {
     const components = await this.query.listComponents('all');
     const examples: { component: string; example: ComponentExample }[] = [];
 
     for (const component of components) {
       if (component.examples) {
-        const scenarioExamples = component.examples.filter(ex => ex.scenario === scenario);
-        for (const example of scenarioExamples) {
+        for (const example of component.examples) {
           examples.push({ component: component.name, example });
         }
       }
@@ -28,15 +27,20 @@ export class ExampleService {
   }
 
   /**
-   * 获取最佳实践示例
+   * 获取最佳实践示例（取每个组件的前几个示例）
    */
   async getBestPractices() {
-    const bestPracticeScenarios = ['best-practice', 'advanced', 'complex'];
+    const components = await this.query.listComponents('all');
     const examples: { component: string; example: ComponentExample }[] = [];
 
-    for (const scenario of bestPracticeScenarios) {
-      const scenarioExamples = await this.getScenarioExamples(scenario);
-      examples.push(...scenarioExamples);
+    for (const component of components) {
+      if (component.examples && component.examples.length > 0) {
+        // 取前2个示例作为最佳实践
+        const bestExamples = component.examples.slice(0, 2);
+        for (const example of bestExamples) {
+          examples.push({ component: component.name, example });
+        }
+      }
     }
 
     return examples;

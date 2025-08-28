@@ -96,10 +96,27 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-link",
+    "soui-link-wrapper",
+    "soui-link-size-small",
+    "soui-link-size-large",
+    "soui-link-underline",
+    "soui-link-underline-hover",
+    "soui-link-disabled",
+    "soui-link-primary",
+    "soui-link-secondary",
+    "soui-link-danger",
+    "soui-link-warning",
+    "soui-link-success",
+    "soui-link-icon"
+  ],
   "apiSummary": {
     "totalProps": 9,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 6
+    "examplesCount": 6,
+    "classNamesCount": 13,
+    "domStructuresCount": 0
   }
 }

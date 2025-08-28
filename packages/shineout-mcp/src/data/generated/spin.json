@@ -105,10 +105,86 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-spin",
+    "soui-spin-dots",
+    "soui-spin-item",
+    "soui-spin-fade",
+    "soui-spin-spin",
+    "soui-spin-content",
+    "soui-spin-container",
+    "soui-spin-loading",
+    "soui-spin-tip",
+    "soui-spin-vertical",
+    "soui-spin-horizontal"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-spin",
+        "soui-spin-spin",
+        "soui-spin-ring"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 20px;\"\n>\n  <div\n    class=\"soui-spin soui-spin-spin soui-spin-ring\"\n    style=\"width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;\"\n  />\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-spin",
+        "soui-spin-vertical",
+        "soui-spin-content",
+        "soui-spin-spin",
+        "soui-spin-chasing-dots",
+        "soui-spin-item",
+        "soui-spin-tip",
+        "soui-spin-cube-grid",
+        "soui-spin-double-bounce",
+        "soui-spin-fading-circle",
+        "soui-spin-fade",
+        "soui-spin-four-dots",
+        "soui-spin-plane",
+        "soui-spin-pulse",
+        "soui-spin-ring",
+        "soui-spin-scale-circle",
+        "soui-spin-three-bounce",
+        "soui-spin-wave",
+        "soui-spin-chasing-ring"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 100%; overflow: auto;\"\n>\n  <div\n    style=\"display: flex; flex-wrap: nowrap; gap: 65px; margin-bottom: 32px;\"\n  >\n    <div\n      style=\"width: 16%;\"\n    >\n      <div\n        class=\"soui-spin soui-spin-vertical soui-spin-content\"\n      >\n        <div\n          class=\"soui-spin soui-spin-spin soui-spin-chasing-dots\"\n          style=\"width: 16px; height: 16px;\"\n        >\n          <div\n            class=\"soui-spin-item\"\n          >\n            <svg\n              viewBox=\"0 0 1..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-spin",
+        "soui-spin-vertical",
+        "soui-spin-content",
+        "soui-spin-spin",
+        "soui-spin-ring",
+        "soui-spin-tip",
+        "soui-spin-horizontal"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; align-items: center; gap: 24px;\"\n>\n  <div\n    style=\"width: 100px;\"\n  >\n    <div\n      class=\"soui-spin soui-spin-vertical soui-spin-content\"\n    >\n      <div\n        class=\"soui-spin soui-spin-spin soui-spin-ring\"\n        style=\"width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;\"\n      />\n      <div\n        class=\"soui-spin-tip\"\n      >\n        <span\n          style=\"font-size: 12px;\"\n        >\n          Loading...\n        </span>\n      </div>\n    </..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-spin",
+        "soui-spin-vertical",
+        "soui-spin-content",
+        "soui-spin-spin",
+        "soui-spin-ring",
+        "soui-spin-tip"
+      ],
+      "domStructure": "\n<div\n  style=\"width: 200px;\"\n>\n  <div\n    class=\"soui-spin soui-spin-vertical soui-spin-content\"\n  >\n    <div\n      class=\"soui-spin soui-spin-spin soui-spin-ring\"\n      style=\"width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;\"\n    />\n    <div\n      class=\"soui-spin-tip\"\n    >\n      <div\n        style=\"font-size: 14px;\"\n      >\n        This may take a while...\n      </div>\n    </div>\n  </div>\n</div>\n"
+    }
+  ],
   "apiSummary": {
     "totalProps": 11,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 5
+    "examplesCount": 5,
+    "classNamesCount": 11,
+    "domStructuresCount": 4
   }
 }

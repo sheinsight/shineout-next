@@ -75,7 +75,7 @@ class ShineoutMcpServer {
             break;
           
           case 'get_examples':
-            result = await this.componentService.getExamples(args?.component as string, args?.scenario as string);
+            result = await this.componentService.getExamples(args?.component as string);
             break;
           
           case 'get_component_api':
@@ -95,6 +95,16 @@ class ShineoutMcpServer {
             result = await this.componentService.getTips(
               args?.component as string
             );
+            break;
+          
+          case 'get_component_classnames':
+            result = await this.componentService.getComponentClassNames(
+              args?.component as string
+            );
+            break;
+          
+          case 'list_all_classnames':
+            result = await this.componentService.listAllClassNames();
             break;
           
           default:
@@ -135,6 +145,12 @@ class ShineoutMcpServer {
             name: 'All Components',
             description: '所有 Shineout 组件列表',
           },
+          {
+            uri: 'shineout://classnames/all',
+            mimeType: 'application/json',
+            name: 'All Component ClassNames',
+            description: '所有组件的 className 信息和渲染结构',
+          },
         ],
       };
     });
@@ -151,6 +167,19 @@ class ShineoutMcpServer {
               uri,
               mimeType: 'application/json',
               text: JSON.stringify(components, null, 2),
+            },
+          ],
+        };
+      }
+      
+      if (uri === 'shineout://classnames/all') {
+        const result = await this.componentService.listAllClassNames();
+        return {
+          contents: [
+            {
+              uri,
+              mimeType: 'text/plain',
+              text: result.content[0].text,
             },
           ],
         };

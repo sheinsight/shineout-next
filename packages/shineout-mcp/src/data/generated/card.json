@@ -153,11 +153,204 @@
   ],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-card",
+    "soui-card-wrapper",
+    "soui-card-wrapper-split",
+    "soui-card-wrapper-collapsible",
+    "soui-card-wrapper-collapsed",
+    "soui-card-wrapper-in-accordion",
+    "soui-card-wrapper-shadow",
+    "soui-card-wrapper-hover",
+    "soui-card-wrapper-resizable",
+    "soui-card-wrapper-moveable",
+    "soui-card-accordion",
+    "soui-card-header",
+    "soui-card-header-content",
+    "soui-card-simple-header",
+    "soui-card-center",
+    "soui-card-right",
+    "soui-card-header-extra",
+    "soui-card-indicator",
+    "soui-card-indicator-icon",
+    "soui-card-body",
+    "soui-card-body-collapse",
+    "soui-card-footer",
+    "soui-card-resize-x",
+    "soui-card-resize-y",
+    "soui-card-resize-x-y"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-card",
+        "soui-card-wrapper",
+        "soui-card-wrapper-split",
+        "soui-card-header",
+        "soui-card-header-content",
+        "soui-card-header-extra",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-card-body",
+        "soui-card-right",
+        "soui-card-footer"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-card soui-card-wrapper soui-card-wrapper-split\"\n    style=\"width: 360px;\"\n  >\n    <div\n      class=\"soui-card-header\"\n    >\n      <div\n        class=\"soui-card-header-content\"\n      >\n        Card title\n      </div>\n      <div\n        class=\"soui-card-header-extra\"\n      >\n        <button\n          class=\"soui-button soui-button-primary soui-button-button soui-button-text\"\n          dir=\"ltr\"\n          type=\"button\"\n        >\n          <span>\n            Text Button..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-card-accordion",
+        "soui-card",
+        "soui-card-wrapper",
+        "soui-card-wrapper-collapsible",
+        "soui-card-wrapper-collapsed",
+        "soui-card-wrapper-split",
+        "soui-card-wrapper-in-accordion",
+        "soui-card-header",
+        "soui-card-indicator",
+        "soui-card-indicator-icon",
+        "soui-card-header-content",
+        "soui-card-body-collapse",
+        "soui-card-body"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-card-accordion\"\n>\n  <div\n    class=\"soui-card soui-card-wrapper soui-card-wrapper-collapsible soui-card-wrapper-collapsed soui-card-wrapper-split soui-card-wrapper-in-accordion\"\n  >\n    <div\n      class=\"soui-card-header\"\n    >\n      <div\n        class=\"soui-card-indicator\"\n      >\n        <div\n          class=\"soui-card-indicator-icon\"\n          dir=\"ltr\"\n        >\n          <svg\n            aria-hidden=\"true\"\n            fill=\"currentColor\"\n            focusable=\"false\"\n   ..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-card",
+        "soui-card-wrapper",
+        "soui-card-wrapper-split",
+        "soui-card-header",
+        "soui-card-header-content",
+        "soui-card-header-extra",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-card-body"
+      ],
+      "domStructure": "\n<div\n  style=\"padding: 32px; background: rgb(244, 245, 248);\"\n>\n  <div\n    class=\"soui-card soui-card-wrapper soui-card-wrapper-split\"\n    style=\"width: 360px;\"\n  >\n    <div\n      class=\"soui-card-header\"\n    >\n      <div\n        class=\"soui-card-header-content\"\n      >\n        Card title\n      </div>\n      <div\n        class=\"soui-card-header-extra\"\n      >\n        <button\n          class=\"soui-button soui-button-primary soui-button-button soui-button-text\"\n          dir=\"ltr\"\n          type=\"..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-card",
+        "soui-card-wrapper",
+        "soui-card-wrapper-collapsible",
+        "soui-card-wrapper-collapsed",
+        "soui-card-header",
+        "soui-card-indicator",
+        "soui-card-indicator-icon",
+        "soui-card-header-content",
+        "soui-card-body-collapse",
+        "soui-card-body",
+        "soui-date-picker",
+        "soui-datePicker-wrapper",
+        "soui-datePicker-result-wrapper",
+        "soui-datePicker-wrapper-padding-box",
+        "soui-datePicker-wrapper-inner-title-top",
+        "soui-datePicker-wrapper-inner-title-bottom",
+        "soui-datePicker-result",
+        "soui-datePicker-result-text-wrapper",
+        "soui-datePicker-result-text",
+        "soui-datePicker-result-text-padding",
+        "soui-datePicker-result-text-bg",
+        "soui-datePicker-icon"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-card soui-card-wrapper soui-card-wrapper-collapsible soui-card-wrapper-collapsed\"\n>\n  <div\n    class=\"soui-card-header\"\n  >\n    <div\n      class=\"soui-card-indicator\"\n    >\n      <div\n        class=\"soui-card-indicator-icon\"\n        dir=\"ltr\"\n      >\n        <svg\n          aria-hidden=\"true\"\n          fill=\"currentColor\"\n          focusable=\"false\"\n          viewBox=\"0 0 24 24\"\n        >\n          <path\n            clip-rule=\"evenodd\"\n            d=\"M10.0625 17.9999C9.67198 1..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-card",
+        "soui-card-wrapper",
+        "soui-card-header",
+        "soui-card-simple-header",
+        "soui-card-body",
+        "soui-form",
+        "soui-form-wrapper",
+        "soui-form-item-wrapper",
+        "soui-form-item-wrapper-label-top",
+        "soui-form-item-label",
+        "soui-form-item-control",
+        "soui-input",
+        "soui-input-wrapper",
+        "soui-input-wrapper-inner-title-top",
+        "soui-input-wrapper-inner-title-bottom",
+        "soui-input-wrapper-padding-box",
+        "soui-input-content",
+        "soui-input-input",
+        "soui-card-right",
+        "soui-card-footer",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-card soui-card-wrapper\"\n  style=\"width: 360px;\"\n>\n  <div\n    class=\"soui-card-header soui-card-simple-header\"\n  >\n    Card title\n  </div>\n  <div\n    class=\"soui-card-body\"\n  >\n    <form\n      class=\"soui-form soui-form-wrapper\"\n    >\n      <div\n        class=\"soui-form-item-wrapper soui-form-item-wrapper-label-top\"\n        data-soui-status=\"default\"\n      >\n        <div\n          class=\"soui-form-item-label\"\n        >\n          User name :\n        </div>\n        <div\n        ..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-card",
+        "soui-card-wrapper",
+        "soui-card-wrapper-hover",
+        "soui-card-wrapper-split",
+        "soui-card-header",
+        "soui-card-header-content",
+        "soui-card-header-extra",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-card-body",
+        "soui-card-right",
+        "soui-card-footer",
+        "custom-card-customCard-0-2-1"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-wrap: wrap; margin: -16px;\"\n>\n  <div\n    class=\"soui-card soui-card-wrapper soui-card-wrapper-hover soui-card-wrapper-split\"\n    style=\"width: 360px; display: inline-flex; margin: 16px;\"\n  >\n    <div\n      class=\"soui-card-header\"\n    >\n      <div\n        class=\"soui-card-header-content\"\n      >\n        Card title\n      </div>\n      <div\n        class=\"soui-card-header-extra\"\n      >\n        <button\n          class=\"soui-button soui-button-primary soui-button-b..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-card",
+        "soui-card-wrapper",
+        "soui-card-body",
+        "soui-card-wrapper-hover",
+        "soui-card-wrapper-shadow"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-card soui-card-wrapper\"\n    style=\"width: 140px; display: inline-flex; margin-inline-end: 20px;\"\n  >\n    <div\n      class=\"soui-card-body\"\n    >\n      Never\n    </div>\n  </div>\n  <div\n    class=\"soui-card soui-card-wrapper soui-card-wrapper-hover\"\n    style=\"width: 140px; display: inline-flex; margin-inline-end: 20px;\"\n  >\n    <div\n      class=\"soui-card-body\"\n    >\n      Hover\n    </div>\n  </div>\n  <div\n    class=\"soui-card soui-card-wrapper soui-card-wrapper-shado..."
+    },
+    {
+      "scenario": "渲染场景 8",
+      "appliedClassNames": [
+        "soui-card",
+        "soui-card-wrapper",
+        "soui-card-header",
+        "soui-card-header-content",
+        "soui-card-header-extra",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-text",
+        "soui-card-body",
+        "soui-card-right",
+        "soui-card-footer"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-card soui-card-wrapper\"\n    style=\"width: 360px;\"\n  >\n    <div\n      class=\"soui-card-header\"\n    >\n      <div\n        class=\"soui-card-header-content\"\n      >\n        Card title\n      </div>\n      <div\n        class=\"soui-card-header-extra\"\n      >\n        <button\n          class=\"soui-button soui-button-primary soui-button-button soui-button-text\"\n          dir=\"ltr\"\n          type=\"button\"\n        >\n          <span>\n            Text Button\n          </span>\n     ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 13,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 8
+    "examplesCount": 8,
+    "classNamesCount": 25,
+    "domStructuresCount": 8
   },
   "subComponentApis": {
     "Header": {

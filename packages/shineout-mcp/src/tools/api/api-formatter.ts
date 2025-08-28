@@ -307,8 +307,8 @@ export class APIFormatter {
   private formatFullExamples(examples: NonNullable<ComponentAPIWithExamples['examples']>): string {
     let doc = `## 完整使用示例\n\n`;
     
-    // 优先显示基础示例
-    const basicExample = examples.find(ex => ex.scenario === 'basic') || examples[0];
+    // 显示第一个示例
+    const basicExample = examples[0];
     
     if (basicExample) {
       doc += `### ${basicExample.title}\n\n`;
@@ -322,7 +322,7 @@ export class APIFormatter {
     }
 
     // 其他重要示例
-    const otherExamples = examples.filter(ex => ex !== basicExample && ex.scenario !== 'basic');
+    const otherExamples = examples.filter(ex => ex !== basicExample);
     if (otherExamples.length > 0) {
       doc += `### 其他示例\n\n`;
       for (const example of otherExamples.slice(0, 2)) {

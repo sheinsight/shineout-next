@@ -78,10 +78,33 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-skeleton",
+    "soui-skeleton-wrapper",
+    "soui-skeleton-animation",
+    "soui-skeleton-content",
+    "soui-skeleton-text",
+    "soui-skeleton-text-item",
+    "soui-skeleton-image",
+    "soui-skeleton-image-left",
+    "soui-skeleton-image-right",
+    "soui-skeleton-image-circle",
+    "soui-skeleton-image-square",
+    "soui-skeleton-image-small",
+    "soui-skeleton-image-large",
+    "soui-skeleton-button",
+    "soui-skeleton-button-item",
+    "soui-skeleton-button-left",
+    "soui-skeleton-button-right",
+    "soui-skeleton-button-small",
+    "soui-skeleton-button-large"
+  ],
   "apiSummary": {
     "totalProps": 8,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 4
+    "examplesCount": 4,
+    "classNamesCount": 19,
+    "domStructuresCount": 0
   }
 }

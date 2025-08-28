@@ -258,7 +258,6 @@ async function loadHardcodedData(): Promise<ComponentIndex> {
       examples: [
         {
           title: '基础用法',
-          scenario: 'basic',
           code: `import { Button } from 'shineout'
 
 function App() {
@@ -309,7 +308,6 @@ function App() {
       examples: [
         {
           title: '基础用法',
-          scenario: 'basic',
           code: `import { Input } from 'shineout'
 
 function App() {

@@ -129,11 +129,27 @@
   ],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-avatar-wrapper",
+    "soui-avatar-image",
+    "soui-avatar-circle",
+    "soui-avatar-square",
+    "soui-avatar-icon",
+    "soui-avatar-text",
+    "soui-avatar-string",
+    "soui-avatar-group",
+    "soui-avatar-small",
+    "soui-avatar-large",
+    "soui-avatar-max",
+    "soui-avatar-popover"
+  ],
   "apiSummary": {
     "totalProps": 14,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 5
+    "examplesCount": 5,
+    "classNamesCount": 12,
+    "domStructuresCount": 0
   },
   "subComponentApis": {
     "Group": {

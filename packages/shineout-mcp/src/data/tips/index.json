@@ -1,0 +1,106 @@
+{
+  "lastUpdated": "2025-08-28T06:47:30.959Z",
+  "totalComponents": 14,
+  "components": [
+    "Cascader",
+    "Checkbox",
+    "Form",
+    "Input",
+    "Radio",
+    "Rate",
+    "Select",
+    "Slider",
+    "Switch",
+    "Table",
+    "Textarea",
+    "Transfer",
+    "TreeSelect",
+    "Upload"
+  ],
+  "summary": {
+    "Cascader": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    },
+    "Checkbox": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    },
+    "Form": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 14
+    },
+    "Input": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 10
+    },
+    "Radio": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    },
+    "Rate": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 3
+    },
+    "Select": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 9
+    },
+    "Slider": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    },
+    "Switch": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    },
+    "Table": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 2
+    },
+    "Textarea": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    },
+    "Transfer": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    },
+    "TreeSelect": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    },
+    "Upload": {
+      "recommendedCount": 0,
+      "notRecommendedCount": 0,
+      "scenariosCount": 0,
+      "tipsCount": 4
+    }
+  }
+}

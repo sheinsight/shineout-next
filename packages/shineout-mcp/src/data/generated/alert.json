@@ -110,10 +110,103 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-alert",
+    "soui-alert-alert",
+    "soui-alert-with-title",
+    "soui-alert-title",
+    "soui-alert-text",
+    "soui-alert-close",
+    "soui-alert-close-wrapper",
+    "soui-alert-content",
+    "soui-alert-pending",
+    "soui-alert-info",
+    "soui-alert-success",
+    "soui-alert-warning",
+    "soui-alert-confirmwarning",
+    "soui-alert-danger",
+    "soui-alert-info-icon",
+    "soui-alert-success-icon",
+    "soui-alert-warning-icon",
+    "soui-alert-confirmwarning-icon",
+    "soui-alert-danger-icon",
+    "soui-alert-confirm-icon",
+    "soui-alert-no-bordered",
+    "soui-alert-no-children",
+    "soui-alert-icon"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-alert",
+        "soui-alert-alert",
+        "soui-alert-info",
+        "soui-alert-icon",
+        "soui-alert-info-icon",
+        "soui-alert-content",
+        "soui-alert-text"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-alert soui-alert-alert soui-alert-info\"\n>\n  <span\n    class=\"soui-alert-icon soui-alert-info-icon\"\n  >\n    <svg\n      aria-hidden=\"true\"\n      fill=\"currentColor\"\n      focusable=\"false\"\n      viewBox=\"0 0 24 24\"\n    >\n      <path\n        clip-rule=\"evenodd\"\n        d=\"M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM11.4373 20.0049C10.8633 20.0049 10.4072 19.5229 10.4388 18.9498L10.9285 10.064C10.9578 9.53393 1..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-alert",
+        "soui-alert-alert",
+        "soui-alert-info",
+        "soui-alert-icon",
+        "soui-alert-info-icon",
+        "soui-alert-content",
+        "soui-alert-text",
+        "soui-alert-close-wrapper",
+        "soui-alert-close"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-alert soui-alert-alert soui-alert-info\"\n  >\n    <span\n      class=\"soui-alert-icon soui-alert-info-icon\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n        focusable=\"false\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          clip-rule=\"evenodd\"\n          d=\"M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM11.4373 20.0049C10.8633 20.0049 10.4072 19.5229 10.4388 18.9..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-alert",
+        "soui-alert-alert",
+        "soui-alert-info",
+        "soui-alert-with-title",
+        "soui-alert-icon",
+        "soui-alert-info-icon",
+        "soui-alert-content",
+        "soui-alert-title",
+        "soui-alert-text",
+        "soui-alert-close-wrapper",
+        "soui-alert-close"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-alert soui-alert-alert soui-alert-info soui-alert-with-title\"\n>\n  <span\n    class=\"soui-alert-icon soui-alert-info-icon\"\n  >\n    <svg\n      aria-hidden=\"true\"\n      fill=\"currentColor\"\n      focusable=\"false\"\n      viewBox=\"0 0 24 24\"\n    >\n      <path\n        clip-rule=\"evenodd\"\n        d=\"M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM11.4373 20.0049C10.8633 20.0049 10.4072 19.5229 10.4388 18.9498L10.9285 10..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-alert",
+        "soui-alert-alert",
+        "soui-alert-info",
+        "soui-alert-icon",
+        "soui-alert-info-icon",
+        "soui-alert-content",
+        "soui-alert-text",
+        "soui-alert-success",
+        "soui-alert-success-icon",
+        "soui-alert-warning",
+        "soui-alert-warning-icon",
+        "soui-alert-danger",
+        "soui-alert-danger-icon"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-wrap: wrap; gap: 24px;\"\n>\n  <div\n    class=\"soui-alert soui-alert-alert soui-alert-info\"\n    style=\"width: calc(50% - 16px);\"\n  >\n    <span\n      class=\"soui-alert-icon soui-alert-info-icon\"\n    >\n      <svg\n        aria-hidden=\"true\"\n        fill=\"currentColor\"\n        focusable=\"false\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          clip-rule=\"evenodd\"\n          d=\"M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 12,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 5
+    "examplesCount": 5,
+    "classNamesCount": 23,
+    "domStructuresCount": 4
   }
 }

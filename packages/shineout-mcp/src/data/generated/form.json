@@ -419,11 +419,18 @@
     "🚫 禁止在 Form.FieldSet 下写 map"
   ],
   "notes": {},
+  "classNames": [
+    "soui-form",
+    "soui-form-wrapper",
+    "soui-form-wrapper-inline"
+  ],
   "apiSummary": {
     "totalProps": 28,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 33
+    "examplesCount": 33,
+    "classNamesCount": 3,
+    "domStructuresCount": 0
   },
   "subComponentApis": {
     "Item": {

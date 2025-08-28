@@ -60,10 +60,57 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-empty",
+    "soui-empty-empty",
+    "soui-empty-wrapper",
+    "soui-empty-image",
+    "soui-empty-description"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-empty",
+        "soui-empty-empty",
+        "soui-empty-wrapper",
+        "soui-empty-image",
+        "soui-empty-description"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-empty soui-empty-empty\"\n>\n  <div\n    class=\"soui-empty-wrapper\"\n  >\n    <div\n      class=\"soui-empty-image\"\n    >\n      <svg\n        fill=\"none\"\n        height=\"75\"\n        viewBox=\"0 0 100 75\"\n        width=\"100\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <g\n          clip-path=\"url(#clip0_4044_10434)\"\n        >\n          <path\n            d=\"M100 75C100 63.3607 77.6144 53.9257 50 53.9257C22.3857 53.9257 0 63.3607 0 75H100Z\"\n            fill=\"url(#paint0_line..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-empty",
+        "soui-empty-empty",
+        "soui-empty-wrapper",
+        "soui-empty-image",
+        "soui-empty-description"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-empty soui-empty-empty\"\n>\n  <div\n    class=\"soui-empty-wrapper\"\n  >\n    <div\n      class=\"soui-empty-image\"\n    >\n      <svg\n        fill=\"none\"\n        height=\"75\"\n        viewBox=\"0 0 100 75\"\n        width=\"100\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <g\n          clip-path=\"url(#clip0_4044_10441)\"\n        >\n          <path\n            d=\"M100 75C100 63.8612 77.6144 54.8319 50 54.8319C22.3857 54.8319 0 63.8612 0 75H100Z\"\n            fill=\"url(#paint0_line..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-empty",
+        "soui-empty-empty",
+        "soui-empty-wrapper",
+        "soui-empty-image",
+        "soui-empty-description",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-empty soui-empty-empty\"\n>\n  <div\n    class=\"soui-empty-wrapper\"\n  >\n    <div\n      class=\"soui-empty-image\"\n    >\n      <img\n        alt=\"empty\"\n        src=\"https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png\"\n      />\n    </div>\n    <div\n      class=\"soui-empty-description\"\n    >\n      <button\n        class=\"soui-button soui-button-primary soui-button-button\"\n        dir=\"ltr\"\n        type=\"button\"\n      >\n        <span>\n   ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 5,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 4
+    "examplesCount": 4,
+    "classNamesCount": 5,
+    "domStructuresCount": 3
   }
 }

@@ -152,10 +152,77 @@
     "❌ 在 Form 中使用时，避免主动使用 status、error 属性，Form 会自动管理"
   ],
   "notes": {},
+  "classNames": [
+    "soui-switch",
+    "soui-switch-wrapper",
+    "soui-switch-wrapper-checked",
+    "soui-switch-text-padding",
+    "soui-switch-wrapper-small",
+    "soui-switch-wrapper-large",
+    "soui-switch-indicator",
+    "soui-switch-content",
+    "soui-switch-wrapper-disabled",
+    "soui-switch-loading"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-switch",
+        "soui-switch-wrapper",
+        "soui-switch-indicator",
+        "soui-switch-content",
+        "soui-switch-text-padding"
+      ],
+      "domStructure": "\n<button\n  class=\"soui-switch soui-switch-wrapper\"\n  role=\"switch\"\n  type=\"button\"\n>\n  <input\n    style=\"display: none;\"\n    tabindex=\"0\"\n    type=\"checkbox\"\n  />\n  <div\n    class=\"soui-switch-indicator\"\n    dir=\"ltr\"\n  />\n  <div\n    class=\"soui-switch-content\"\n  >\n    <div\n      class=\"soui-switch-text-padding\"\n    />\n  </div>\n</button>\n"
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-switch",
+        "soui-switch-wrapper",
+        "soui-switch-wrapper-checked",
+        "soui-switch-wrapper-disabled",
+        "soui-switch-indicator",
+        "soui-switch-loading",
+        "soui-switch-content",
+        "soui-switch-text-padding"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-direction: row; gap: 24px; align-items: center;\"\n>\n  <button\n    class=\"soui-switch soui-switch-wrapper soui-switch-wrapper-checked soui-switch-wrapper-disabled\"\n    role=\"switch\"\n    type=\"button\"\n  >\n    <input\n      checked=\"\"\n      disabled=\"\"\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <div\n      class=\"soui-switch-indicator\"\n      dir=\"ltr\"\n    >\n      <div\n        class=\"soui-switch-loading\"\n      >\n        <svg\n     ..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-switch",
+        "soui-switch-wrapper",
+        "soui-switch-wrapper-small",
+        "soui-switch-indicator",
+        "soui-switch-content",
+        "soui-switch-text-padding",
+        "soui-switch-wrapper-large"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-direction: row; gap: 24px; align-items: center;\"\n>\n  <button\n    class=\"soui-switch soui-switch-wrapper soui-switch-wrapper-small\"\n    role=\"switch\"\n    type=\"button\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <div\n      class=\"soui-switch-indicator\"\n      dir=\"ltr\"\n    />\n    <div\n      class=\"soui-switch-content\"\n    >\n      <div\n        class=\"soui-switch-text-padding\"\n      />\n    </div>\n  </button>\n  <bu..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-switch",
+        "soui-switch-wrapper",
+        "soui-switch-wrapper-checked",
+        "soui-switch-wrapper-disabled",
+        "soui-switch-indicator",
+        "soui-switch-content",
+        "soui-switch-text-padding"
+      ],
+      "domStructure": "\n<div\n  style=\"display: flex; flex-direction: row; gap: 24px;\"\n>\n  <button\n    class=\"soui-switch soui-switch-wrapper soui-switch-wrapper-checked soui-switch-wrapper-disabled\"\n    role=\"switch\"\n    type=\"button\"\n  >\n    <input\n      checked=\"\"\n      disabled=\"\"\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"checkbox\"\n    />\n    <div\n      class=\"soui-switch-indicator\"\n      dir=\"ltr\"\n    />\n    <div\n      class=\"soui-switch-content\"\n    >\n      <div\n        class=\"soui-switch-text-p..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 18,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 5
+    "examplesCount": 5,
+    "classNamesCount": 10,
+    "domStructuresCount": 4
   }
 }

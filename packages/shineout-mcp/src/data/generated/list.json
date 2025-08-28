@@ -249,10 +249,120 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-list",
+    "soui-list-wrapper",
+    "soui-list-wrapper-bordered",
+    "soui-list-wrapper-empty",
+    "soui-list-wrapper-small",
+    "soui-list-wrapper-large",
+    "soui-list-wrapper-striped",
+    "soui-list-scroll-container",
+    "soui-list-loading",
+    "soui-list-loading-bottom",
+    "soui-list-empty",
+    "soui-list-footer",
+    "soui-list-row",
+    "soui-list-item",
+    "soui-list-check-content",
+    "soui-list-pagination",
+    "soui-list-base-item",
+    "soui-list-base-item-meta",
+    "soui-list-base-item-meta-includes",
+    "soui-list-base-item-meta-container",
+    "soui-list-base-item-meta-meta",
+    "soui-list-base-item-meta-avatar",
+    "soui-list-base-item-meta-title",
+    "soui-list-base-item-meta-desc",
+    "soui-list-base-item-meta-center",
+    "soui-list-base-item-meta-content",
+    "soui-list-base-item-extra",
+    "soui-list-base-item-extra-split"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-list",
+        "soui-list-wrapper",
+        "soui-list-wrapper-bordered",
+        "soui-list-scroll-container",
+        "soui-list-row",
+        "soui-list-item"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-list soui-list-wrapper soui-list-wrapper-bordered\"\n>\n  <div\n    class=\"soui-list-scroll-container\"\n  >\n    <div\n      class=\"soui-list-row\"\n      style=\"height: auto;\"\n    >\n      <div\n        class=\"soui-list-item\"\n        style=\"width: 100%;\"\n      >\n        This is a long list of contents\n      </div>\n    </div>\n    <div\n      class=\"soui-list-row\"\n      style=\"height: auto;\"\n    >\n      <div\n        class=\"soui-list-item\"\n        style=\"width: 100%;\"\n      >\n        This ..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-list",
+        "soui-list-wrapper",
+        "soui-list-scroll-container",
+        "soui-list-row",
+        "soui-list-item"
+      ],
+      "domStructure": "\n<div\n  style=\"padding: 0px 16px; border: 1px solid #e8ebf0;\"\n>\n  <div\n    class=\"soui-list soui-list-wrapper\"\n  >\n    <div\n      class=\"soui-list-scroll-container\"\n    >\n      <div\n        class=\"soui-list-row\"\n        style=\"height: auto;\"\n      >\n        <div\n          class=\"soui-list-item\"\n          style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"\n        >\n          <div>\n            Name: Ephraim-Wisozk\n          </div>\n        </div>\n      </div>\n      <div\n        class=\"soui..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-list",
+        "soui-list-wrapper",
+        "soui-list-wrapper-bordered",
+        "soui-list-scroll-container",
+        "soui-list-row",
+        "soui-list-item",
+        "soui-button",
+        "soui-button-primary",
+        "soui-button-button",
+        "soui-button-text"
+      ],
+      "domStructure": "\n<div\n  class=\"hello soui-list soui-list-wrapper soui-list-wrapper-bordered\"\n  style=\"color: blue;\"\n>\n  <div\n    class=\"soui-list-scroll-container\"\n  >\n    <div\n      class=\"soui-list-row\"\n      style=\"height: auto;\"\n    >\n      <div\n        class=\"soui-list-item\"\n        style=\"width: 50%;\"\n      >\n        <div\n          style=\"display: flex; align-items: center; width: 100%; font-size: 14px;\"\n        >\n          <svg\n            fill=\"none\"\n            height=\"40\"\n            viewBox=\"0 0 40 4..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-list",
+        "soui-list-wrapper",
+        "soui-list-wrapper-empty",
+        "soui-list-wrapper-bordered",
+        "soui-list-empty"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-list soui-list-wrapper soui-list-wrapper-empty soui-list-wrapper-bordered\"\n>\n  <div\n    class=\"soui-list-empty\"\n  >\n    no data\n  </div>\n</div>\n"
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-radio-group",
+        "soui-radio",
+        "soui-radio-wrapper",
+        "soui-radio-indicator-wrapper",
+        "soui-radio-indicator",
+        "soui-radio-desc",
+        "soui-radio-wrapper-checked"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-radio-group\"\n  style=\"margin-bottom: 24px;\"\n>\n  <div\n    class=\"soui-radio soui-radio-wrapper\"\n  >\n    <input\n      style=\"display: none;\"\n      tabindex=\"0\"\n      type=\"radio\"\n    />\n    <span\n      class=\"soui-radio-indicator-wrapper\"\n    >\n      <span\n        class=\"soui-radio-indicator\"\n        tabindex=\"1\"\n      />\n    </span>\n    <span\n      class=\"soui-radio-desc\"\n    >\n      small\n    </span>\n  </div>\n  <div\n    class=\"soui-radio soui-radio-wrapper soui-radio-wrapper-..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-list",
+        "soui-list-wrapper",
+        "soui-list-wrapper-bordered",
+        "soui-list-wrapper-striped",
+        "soui-list-scroll-container",
+        "soui-list-row",
+        "soui-list-item"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-list soui-list-wrapper soui-list-wrapper-bordered soui-list-wrapper-striped\"\n>\n  <div\n    class=\"soui-list-scroll-container\"\n  >\n    <div\n      class=\"soui-list-row\"\n      style=\"height: auto;\"\n    >\n      <div\n        class=\"soui-list-item\"\n        style=\"width: 100%;\"\n      >\n        <div>\n          Name: Ephraim-Wisozk\n        </div>\n      </div>\n    </div>\n    <div\n      class=\"soui-list-row\"\n      style=\"height: auto;\"\n    >\n      <div\n        class=\"soui-list-item\"\n    ..."
+    }
+  ],
   "apiSummary": {
     "totalProps": 26,
     "requiredProps": 2,
     "propsWithWhen": 0,
-    "examplesCount": 14
+    "examplesCount": 14,
+    "classNamesCount": 28,
+    "domStructuresCount": 6
   }
 }

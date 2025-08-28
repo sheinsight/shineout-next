@@ -141,11 +141,155 @@
   ],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-tag",
+    "soui-tag-tag",
+    "soui-tag-input",
+    "soui-tag-wrapper",
+    "soui-tag-inline",
+    "soui-tag-large",
+    "soui-tag-small",
+    "soui-tag-disabled",
+    "soui-tag-close-icon",
+    "soui-tag-close-icon-wrapper",
+    "soui-tag-info",
+    "soui-tag-default",
+    "soui-tag-success",
+    "soui-tag-warning",
+    "soui-tag-danger",
+    "soui-tag-brown",
+    "soui-tag-magenta",
+    "soui-tag-purple",
+    "soui-tag-indigo",
+    "soui-tag-cyan",
+    "soui-tag-neon",
+    "soui-tag-lemon",
+    "soui-tag-tangerine",
+    "soui-tag-fill",
+    "soui-tag-bright",
+    "soui-tag-outline",
+    "soui-tag-bright-outline",
+    "soui-tag-rounded"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-tag",
+        "soui-tag-tag",
+        "soui-tag-default",
+        "soui-tag-bright",
+        "soui-tag-wrapper",
+        "soui-tag-info",
+        "soui-tag-danger",
+        "soui-tag-warning",
+        "soui-tag-success"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-tag soui-tag-tag soui-tag-default soui-tag-bright\"\n  >\n    <div\n      class=\"soui-tag-wrapper\"\n    >\n      <span>\n        Default\n      </span>\n    </div>\n  </div>\n  <div\n    class=\"soui-tag soui-tag-tag soui-tag-info soui-tag-bright\"\n  >\n    <div\n      class=\"soui-tag-wrapper\"\n    >\n      <span>\n        Info\n      </span>\n    </div>\n  </div>\n  <div\n    class=\"soui-tag soui-tag-tag soui-tag-danger soui-tag-bright\"\n  >\n    <div\n      class=\"soui-tag-wrapper\"\n    >\n  ..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-tag",
+        "soui-tag-tag",
+        "soui-tag-tangerine",
+        "soui-tag-bright",
+        "soui-tag-wrapper",
+        "soui-tag-magenta",
+        "soui-tag-purple",
+        "soui-tag-indigo",
+        "soui-tag-cyan",
+        "soui-tag-neon",
+        "soui-tag-lemon",
+        "soui-tag-brown",
+        "soui-tag-fill",
+        "soui-tag-outline",
+        "soui-tag-bright-outline"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-tag soui-tag-tag soui-tag-tangerine soui-tag-bright\"\n    >\n      <div\n        class=\"soui-tag-wrapper\"\n      >\n        <span>\n          Tangerine\n        </span>\n      </div>\n    </div>\n    <div\n      class=\"soui-tag soui-tag-tag soui-tag-magenta soui-tag-bright\"\n    >\n      <div\n        class=\"soui-tag-wrapper\"\n      >\n        <span>\n          Magenta\n        </span>\n      </div>\n    </div>\n    <div\n      class=\"soui-..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-tag",
+        "soui-tag-tag",
+        "soui-tag-default",
+        "soui-tag-bright",
+        "soui-tag-wrapper",
+        "soui-tag-info",
+        "soui-tag-danger",
+        "soui-tag-warning",
+        "soui-tag-success",
+        "soui-tag-fill",
+        "soui-tag-outline",
+        "soui-tag-bright-outline"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-tag soui-tag-tag soui-tag-default soui-tag-bright\"\n    >\n      <div\n        class=\"soui-tag-wrapper\"\n      >\n        <span>\n          Default\n        </span>\n      </div>\n    </div>\n    <div\n      class=\"soui-tag soui-tag-tag soui-tag-info soui-tag-bright\"\n    >\n      <div\n        class=\"soui-tag-wrapper\"\n      >\n        <span>\n          Info\n        </span>\n      </div>\n    </div>\n    <div\n      class=\"soui-tag soui-t..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-tag",
+        "soui-tag-tag",
+        "soui-tag-small",
+        "soui-tag-default",
+        "soui-tag-bright",
+        "soui-tag-wrapper",
+        "soui-tag-large",
+        "soui-tag-close-icon",
+        "soui-tag-close-icon-wrapper"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"margin-bottom: 24px;\"\n  >\n    <div\n      class=\"soui-tag soui-tag-tag soui-tag-small soui-tag-default soui-tag-bright\"\n    >\n      <div\n        class=\"soui-tag-wrapper\"\n      >\n        <span>\n          Small\n        </span>\n      </div>\n    </div>\n    <div\n      class=\"soui-tag soui-tag-tag soui-tag-default soui-tag-bright\"\n    >\n      <div\n        class=\"soui-tag-wrapper\"\n      >\n        <span>\n          Default\n        </span>\n      </div>\n    </div>\n    <div\n      cla..."
+    },
+    {
+      "scenario": "渲染场景 5",
+      "appliedClassNames": [
+        "soui-tag",
+        "soui-tag-tag",
+        "soui-tag-default",
+        "soui-tag-bright",
+        "soui-tag-wrapper",
+        "soui-tag-close-icon",
+        "soui-tag-close-icon-wrapper",
+        "soui-tag-disabled",
+        "custom-tag-addTag-0-2-1",
+        "soui-tag-outline"
+      ],
+      "domStructure": "\n<div>\n  <div\n    style=\"display: flex; align-items: center; height: 24px;\"\n  >\n    <div\n      class=\"soui-tag soui-tag-tag soui-tag-default soui-tag-bright\"\n    >\n      <div\n        class=\"soui-tag-wrapper\"\n      >\n        <span>\n          Tag 1\n        </span>\n      </div>\n      <div\n        class=\"soui-tag-close-icon\"\n      >\n        <span\n          class=\"soui-tag-close-icon-wrapper\"\n        >\n          <svg\n            aria-hidden=\"true\"\n            fill=\"currentColor\"\n            focusable..."
+    },
+    {
+      "scenario": "渲染场景 6",
+      "appliedClassNames": [
+        "soui-tag",
+        "soui-tag-tag",
+        "soui-tag-default",
+        "soui-tag-bright",
+        "soui-tag-wrapper",
+        "soui-tag-close-icon",
+        "soui-tag-close-icon-wrapper"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-tag soui-tag-tag soui-tag-default soui-tag-bright\"\n  >\n    <div\n      class=\"soui-tag-wrapper\"\n    >\n      <span>\n        Abc\n      </span>\n    </div>\n    <div\n      class=\"soui-tag-close-icon\"\n    >\n      <span\n        class=\"soui-tag-close-icon-wrapper\"\n      >\n        <svg\n          aria-hidden=\"true\"\n          fill=\"currentColor\"\n          focusable=\"false\"\n          viewBox=\"0 0 24 24\"\n        >\n          <path\n            d=\"M5.60994 4.21871L5.70415 4.30189L12..."
+    },
+    {
+      "scenario": "渲染场景 7",
+      "appliedClassNames": [
+        "soui-tag",
+        "soui-tag-tag",
+        "soui-tag-default",
+        "soui-tag-bright",
+        "soui-tag-wrapper",
+        "soui-tag-rounded"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-tag soui-tag-tag soui-tag-default soui-tag-bright\"\n  >\n    <div\n      class=\"soui-tag-wrapper\"\n    >\n      <span>\n        Default\n      </span>\n    </div>\n  </div>\n  <div\n    class=\"soui-tag soui-tag-tag soui-tag-rounded soui-tag-default soui-tag-bright\"\n  >\n    <div\n      class=\"soui-tag-wrapper\"\n    >\n      <span>\n        Rounded\n      </span>\n    </div>\n  </div>\n</div>\n"
+    }
+  ],
   "apiSummary": {
     "totalProps": 14,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 7
+    "examplesCount": 7,
+    "classNamesCount": 28,
+    "domStructuresCount": 7
   },
   "subComponentApis": {
     "Input": {

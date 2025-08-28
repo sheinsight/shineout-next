@@ -81,10 +81,76 @@
   "subComponents": [],
   "version": "3.7.10-beta.3",
   "notes": {},
+  "classNames": [
+    "soui-grid",
+    "soui-grid-wrapper",
+    "soui-grid-full"
+  ],
+  "domStructures": [
+    {
+      "scenario": "渲染场景 1",
+      "appliedClassNames": [
+        "soui-slider",
+        "soui-slider-wrapper",
+        "soui-slider-track",
+        "soui-slider-track-inner",
+        "soui-slider-indicator",
+        "soui-slider-indicator-end",
+        "soui-slider-scale-wrapper",
+        "soui-slider-scale",
+        "soui-slider-label",
+        "soui-grid",
+        "soui-grid-wrapper",
+        "soui-grid-full",
+        "soui-grid-md-20-000",
+        "soui-grid-md-40-000",
+        "soui-grid-md-60-000",
+        "soui-grid-md-80-000",
+        "soui-grid-md-100-000"
+      ],
+      "domStructure": "\n<div>\n  <div\n    class=\"soui-slider soui-slider-wrapper\"\n  >\n    <div\n      class=\"soui-slider-track\"\n    >\n      <div\n        class=\"soui-slider-track-inner\"\n        dir=\"ltr\"\n        style=\"left: 0%; right: 62.5%;\"\n      >\n        <div\n          class=\"soui-slider-indicator soui-slider-indicator-end\"\n          dir=\"ltr\"\n        />\n      </div>\n    </div>\n    <div\n      class=\"soui-slider-scale-wrapper\"\n    >\n      <div\n        class=\"soui-slider-scale\"\n      >\n        <div\n          class=\"so..."
+    },
+    {
+      "scenario": "渲染场景 2",
+      "appliedClassNames": [
+        "soui-grid",
+        "soui-grid-wrapper",
+        "soui-grid-full",
+        "soui-grid-md-100-000",
+        "soui-grid-md-12-500"
+      ],
+      "domStructure": "\n<div\n  style=\"background: rgb(232, 235, 240);\"\n>\n  <div\n    class=\"soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-100-000 \"\n    style=\"width: auto; display: block; margin-left: -4px; margin-right: -4px;\"\n  >\n    <div\n      class=\"soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-12-500 \"\n      style=\"padding-left: 4px; padding-right: 4px;\"\n    >\n      <div\n        style=\"color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14..."
+    },
+    {
+      "scenario": "渲染场景 3",
+      "appliedClassNames": [
+        "soui-grid",
+        "soui-grid-wrapper",
+        "soui-grid-full",
+        "soui-grid-md-100-000",
+        "soui-grid-md-50-000",
+        "soui-grid-md-33-333"
+      ],
+      "domStructure": "\n<div\n  class=\"soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-100-000 \"\n  style=\"text-align: center;\"\n>\n  <div\n    class=\"soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-50-000 \"\n    style=\"color: rgb(255, 255, 255); line-height: 30px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;\"\n  >\n    1/2\n  </div>\n  <div\n    class=\"soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-50-000 \"\n    style=\"line-height: 30px;\"\n  >\n    <div\n      style=\"font-size: 14px;\"..."
+    },
+    {
+      "scenario": "渲染场景 4",
+      "appliedClassNames": [
+        "soui-grid",
+        "soui-grid-wrapper",
+        "soui-grid-full",
+        "soui-grid-md-33-333",
+        "soui-offset-md-33-333"
+      ],
+      "domStructure": "\n<div\n  style=\"background: rgb(232, 235, 240);\"\n>\n  <div\n    class=\"soui-grid soui-grid-wrapper soui-grid-full soui-grid-md-33-333 soui-offset-md-33-333\"\n    style=\"color: rgb(255, 255, 255); line-height: 60px; text-align: center; background: rgb(25, 122, 250); font-size: 14px;\"\n  >\n    With 1/3, Offset 1/3\n  </div>\n</div>\n"
+    }
+  ],
   "apiSummary": {
     "totalProps": 8,
     "requiredProps": 0,
     "propsWithWhen": 0,
-    "examplesCount": 4
+    "examplesCount": 4,
+    "classNamesCount": 3,
+    "domStructuresCount": 4
   }
 }
