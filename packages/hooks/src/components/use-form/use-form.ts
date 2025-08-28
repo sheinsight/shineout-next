@@ -324,6 +324,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       context.removeArr.forEach((n) => {
         deepRemove(v, n);
         context.removeArr.delete(n);
+
+        if (context.errors[n]) {
+          delete context.errors[n];
+        }
       });
     });
   };
@@ -554,10 +558,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       if (validateFieldSet.size === 0 && updateFieldSet.size === 0) {
         context.names.delete(n);
         delete context.defaultValues[n];
-      }
-
-      if (context.errors[n]) {
-        delete context.errors[n];
       }
 
       const finalReserveAble = props.reserveAble ?? reserveAble;

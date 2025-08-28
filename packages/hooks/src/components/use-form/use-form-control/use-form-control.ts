@@ -211,8 +211,29 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     if (validateFieldSet) validateFieldSet();
   });
 
+  const initError = usePersistFn(() => {
+    const errors = formFunc?.getErrors();
+    if (isArray(name)) {
+      for(let i = 0; i < name.length; i++) {
+        const n = name[i];
+        const currentErrorInForm = errors?.[n];
+        if (currentErrorInForm) {
+          setErrorState(currentErrorInForm);
+          break;
+        }
+      }
+    } else {
+      const currentErrorInForm = errors?.[name];
+      if (currentErrorInForm) {
+        setErrorState(currentErrorInForm);
+      }
+    }
+  })
+
   useEffect(() => {
     if (inForm && controlFunc) {
+      initError();
+
       if (isArray(name)) {
         const dv = isArray(defaultValue) ? defaultValue : [];
         name.forEach((n, index) => {

@@ -11,6 +11,11 @@
 
 - 增加 `Popover` 的弹出动画效果 ([#1173](https://github.com/sheinsight/shineout-next/pull/1173))
 
+## 3.7.11-beta.4
+2025-08-28
+
+### 🐞 BugFix
+- 修复 `Popover` 的 `defaultVisible` 属性不生效的问题 ([#1328](https://github.com/sheinsight/shineout-next/pull/1328))
 
 ## 3.7.9-beta.6
 2025-08-04
