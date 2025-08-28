@@ -79,6 +79,9 @@ const server = new WebpackDevServer(
   {
     open: false,
     compress: true,
+    client: {
+      overlay: false, // 禁用错误遮罩层
+    },
     onBeforeSetupMiddleware: (server) => {
       // mock upload api
       server.app.all('/api/upload', upload.any(), (req, res) => {
