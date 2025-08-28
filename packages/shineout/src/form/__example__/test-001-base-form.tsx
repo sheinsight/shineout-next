@@ -51,7 +51,7 @@ export default () => {
 
         <Form.Item label='下拉' required>
           <Select
-            data={checkboxGroupData}
+            data={[]}
             keygen='id'
             renderItem={(d) => d.color}
             format='id'
@@ -61,7 +61,7 @@ export default () => {
 
         <Form.Item label='下拉多选' required>
           <Select
-            data={checkboxGroupData}
+            data={[]}
             keygen='id'
             renderItem='color'
             format='id'
