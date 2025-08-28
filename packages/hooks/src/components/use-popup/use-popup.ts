@@ -84,24 +84,11 @@ const usePopup = (props: BasePopupProps) => {
     setOpenState(!!props.open);
   }, [props.open]);
 
-  // const getPopUpHeight = () => {
-  //   let height = 0;
-  //   if (popupRef.current) {
-  //     const el = popupRef.current;
-  //     const parent = el?.parentElement;
-  //     let clone = el.cloneNode(true) as HTMLElement;
-  //     clone.style.opacity = '0';
-  //     clone.style.display = '';
-  //     clone.style.visibility = 'visible';
-  //     clone.style.pointerEvents = 'none';
-  //     parent?.appendChild(clone);
-  //     height = clone.offsetHeight;
-  //     parent?.removeChild(clone);
-  //     //@ts-ignore
-  //     clone = null;
-  //   }
-  //   return height;
-  // };
+  useEffect(() => {
+    if (defaultOpen) {
+      setOpenState(true);
+    }
+  }, []);
 
   const handleFocus = (delay?: number) => {
     if (props.open === undefined) {
