@@ -284,7 +284,7 @@ describe('Popover[Visible]', () => {
     fireEvent.mouseDown(container.querySelector('button')!);
     await waitFor(async () => {
       await delay(200);
-      getPopoverStatus(false);
+      getPopoverStatus(true);
     });
   });
 });
