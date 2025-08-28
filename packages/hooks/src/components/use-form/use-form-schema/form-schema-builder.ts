@@ -100,11 +100,15 @@ export class SchemaBuilder {
           }
           if (componentElement.props.multiple) {
             fieldSchemaInfo.type = 'array';
-            fieldSchemaInfo.items = {
-              type: itemType,
-            };
+            if (itemType !== 'undefined') {
+              fieldSchemaInfo.items = {
+                type: itemType,
+              };
+            }
           } else {
-            fieldSchemaInfo.type = itemType;
+            if (itemType !== 'undefined') {
+              fieldSchemaInfo.type = itemType;
+            }
           }
 
           if (itemType === 'object') {
