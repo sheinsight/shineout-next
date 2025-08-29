@@ -46,7 +46,7 @@ const tableStyle: JsStyles<TableClassType> = {
         boxSizing: 'border-box',
         lineHeight: token.lineHeightDynamic,
         '$bordered&': {
-          '&:not(:last-child)::after': {
+          '&::after': {
             content: '""',
             position: 'absolute',
             zIndex: cellBaseIndex,
@@ -642,6 +642,13 @@ const tableStyle: JsStyles<TableClassType> = {
   simple: {
     '& th, & td': {
       textAlign: 'left',
+    },
+    '$bordered&': {
+      '& th:last-child, & td:last-child': {
+        '&:after': {
+          display: 'none',
+        },
+      },
     },
     '& table tr:hover td': {
       background: `${token.tableTbodyHoverBackgroundColor}`,
