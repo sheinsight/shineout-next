@@ -95,8 +95,8 @@ const Changelog = () => {
           {'`````\n开发指南\n# 更新日志 \n这里会有详细的发版记录，版本号严格遵循 Semver 规范`````'}
         </MarkdownWrapper>
       </div>
-      <MarkdownWrapper>{markdowns.join('\n')}</MarkdownWrapper>
-      <MarkdownWrapper>{mainChangelog}</MarkdownWrapper>
+      <MarkdownWrapper enableAnchor>{markdowns.join('\n')}</MarkdownWrapper>
+      <MarkdownWrapper enableAnchor>{mainChangelog}</MarkdownWrapper>
     </div>
   );
 };

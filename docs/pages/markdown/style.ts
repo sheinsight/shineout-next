@@ -14,6 +14,24 @@ const commonStyle = {
     position: 'relative',
     fontWeight: 500,
     color: 'var(--soui-neutral-text-5)',
+    '&[data-clickable="true"]': {
+      cursor: 'pointer',
+      transition: 'color 0.2s ease',
+      '&:hover': {
+        color: 'var(--soui-primary-6)',
+      },
+      '&::before': {
+        content: '"#"',
+        position: 'absolute',
+        left: '-20px',
+        color: 'var(--soui-primary-6)',
+        opacity: 0,
+        transition: 'opacity 0.2s ease',
+      },
+      '&:hover::before': {
+        opacity: 1,
+      },
+    },
   },
   '& h2': {
     margin: '32px 0 16px;',
