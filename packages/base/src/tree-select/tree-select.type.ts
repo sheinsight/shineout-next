@@ -476,4 +476,12 @@ export interface TreeSelectProps<DataItem, Value>
    * @version 3.7.0
    */
   highlight?: boolean;
+
+  /**
+   * @en Triggered when clearing the selected value
+   * @cn 清除选中值时触发
+   * @version 3.8.0
+   * @when For custom clearing behavior
+   */
+  onClear?: () => void;
 }

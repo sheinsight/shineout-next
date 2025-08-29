@@ -402,6 +402,10 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
 
+  filterOpened: {
+    background: token.buttonSecondaryHoverBackgroundColor
+  },
+
   filterContainer: {
     minWidth: '120px',
   },
@@ -415,6 +419,18 @@ const tableStyle: JsStyles<TableClassType> = {
     padding: `${token.tableFilterBodyPaddingY} ${token.tableFilterBodyPaddingX}`,
     maxHeight: '300px',
     overflow: 'auto',
+    // 特调Tree在Table filter中样式，以满足设计要求
+    '& [class*=tree-content-wrapper]': {
+      paddingTop: 1,
+      paddingBottom: 1,
+    },
+    '&& [class*=tree-checkbox]': {
+      alignSelf: 'center',
+    },
+    '& [class*=tree-text]': {
+      paddingTop: 5,
+      paddingBottom: 5,
+    },
   },
   filterFooter: {
     display: 'flex',
@@ -541,6 +557,12 @@ const tableStyle: JsStyles<TableClassType> = {
       display: 'none',
     },
   },
+  cellSortable: {
+    cursor: 'pointer',
+    '&:hover': {
+      background: token.tableTbodyHoverBackgroundColor,
+    },
+  },
   sticky: {},
   expandIcon: {
     position: 'relative',
@@ -620,6 +642,13 @@ const tableStyle: JsStyles<TableClassType> = {
   simple: {
     '& th, & td': {
       textAlign: 'left',
+    },
+    '$bordered&': {
+      '& th:last-child, & td:last-child': {
+        '&:after': {
+          display: 'none',
+        },
+      },
     },
     '& table tr:hover td': {
       background: `${token.tableTbodyHoverBackgroundColor}`,

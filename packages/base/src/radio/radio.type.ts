@@ -52,7 +52,7 @@ export interface SimpleRadioProps
   theme?: 'dark';
 }
 
-export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'checked' | 'theme'> {
+export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'checked' | 'theme' | 'disabled'> {
   /**
    * @en Specifies the result
    * @cn 选中后返回的值
@@ -74,4 +74,11 @@ export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'chec
    * @cn 勾选框点击回调
    */
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+
+  /**
+   * @en When the value is true, disabled all checkboxes; When the value is function, disable the checkbox that this function returns true
+   * @cn 如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项
+   * @default false
+   */
+  disabled?: boolean | ((data: T) => boolean);
 }

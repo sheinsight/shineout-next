@@ -5,7 +5,7 @@ import { TooltipClasses } from '@sheinx/base';
 const arrowGap = 12;
 const arrowHeight = 8;
 
-const animation = {
+export const tooltipAnimation = {
   '@keyframes fadeIn': {
     '0%': {
       opacity: 0,
@@ -16,46 +16,128 @@ const animation = {
   },
   '@keyframes moveRight': {
     '0%': {
-      marginLeft: '0',
+      transformOrigin: 'left center',
+      transform: `var(--soui-popup-transform) scale(0.5)`,
     },
     '100%': {
-      marginLeft: '9px',
+      transformOrigin: 'left center',
+      transform: `var(--soui-popup-transform) scale(1)`,
+    },
+  },
+  '@keyframes moveRightTop': {
+    '0%': {
+      transformOrigin: 'left top',
+      transform: `var(--soui-popup-transform) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'left top',
+      transform: `var(--soui-popup-transform) scale(1)`,
+    },
+  },
+  '@keyframes moveRightBottom': {
+    '0%': {
+      transformOrigin: 'left bottom',
+      transform: `var(--soui-popup-transform) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'left bottom',
+      transform: `var(--soui-popup-transform) scale(1)`,
     },
   },
   '@keyframes moveLeft': {
     '0%': {
-      opacity: 0,
-      marginRight: '0',
+      transformOrigin: 'right center',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
     },
     '100%': {
-      opacity: 1,
-      marginRight: '10px',
+      transformOrigin: 'right center',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveLeftTop': {
+    '0%': {
+      transformOrigin: 'right top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'right top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveLeftBottom': {
+    '0%': {
+      transformOrigin: 'right bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'right bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
   '@keyframes moveTop': {
     '0%': {
-      opacity: 0,
-      marginTop: '0',
+      transformOrigin: 'center bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
     },
     '100%': {
-      opacity: 1,
-      marginTop: -10,
+      transformOrigin: 'center bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveTopLeft': {
+    '0%': {
+      transformOrigin: 'left bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'left bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveTopRight': {
+    '0%': {
+      transformOrigin: 'right bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'right bottom',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
   '@keyframes moveBottom': {
     '0%': {
-      opacity: 0,
-      marginTop: '0',
+      transformOrigin: 'center top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
     },
     '100%': {
-      opacity: 1,
-      marginTop: 10,
+      transformOrigin: 'center top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveBottomLeft': {
+    '0%': {
+      transformOrigin: 'left top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'left top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
+    },
+  },
+  '@keyframes moveBottomRight': {
+    '0%': {
+      transformOrigin: 'right top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(0.5)`,
+    },
+    '100%': {
+      transformOrigin: 'right top',
+      transform: `var(--soui-popup-transform, rotate(0deg)) scale(1)`,
     },
   },
 };
 const tooltipStyle: JsStyles<keyof TooltipClasses> = {
   rootClass: {},
-  ...animation,
+  ...tooltipAnimation,
   wrapper: {
     display: 'none',
     cursor: 'pointer',
@@ -225,16 +307,16 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       position: 'absolute',
     },
     '&[data-soui-position^="bottom"]': {
-      animation: '$fadeIn .3s ease, $moveBottom .3s cubic-bezier(.71,1.7,.77,1.24);',
+      animation: '$fadeIn 200ms ease, $moveBottom 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
       '&::after': {
         width: '100%',
         height: arrowGap,
         top: 0,
         transform: 'translateY(-100%)',
-    },
+      },
     },
     '&[data-soui-position^="top"]': {
-      animation: '$fadeIn .3s ease, $moveTop .3s cubic-bezier(.71,1.7,.77,1.24);',
+      animation: '$fadeIn 200ms ease, $moveTop 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
       '&::after': {
         width: '100%',
         height: arrowGap,
@@ -243,7 +325,7 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       },
     },
     '&[data-soui-position^="left"]': {
-      animation: '$fadeIn .3s ease, $moveLeft .3s cubic-bezier(.71,1.7,.77,1.24);',
+      animation: '$fadeIn 200ms ease, $moveLeft 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
       '&::after': {
         width: arrowGap,
         height: '100%',
@@ -253,7 +335,7 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       },
     },
     '&[data-soui-position^="right"]': {
-      animation: '$fadeIn .3s ease, $moveRight .3s cubic-bezier(.71,1.7,.77,1.24);',
+      animation: '$fadeIn 200ms ease, $moveRight 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
       '&::after': {
         width: arrowGap,
         height: '100%',

@@ -57,7 +57,7 @@ export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'>
    * @cn 按钮尺寸
    * @default 'default'
    */
-  size?: string;
+  size?: 'small' | 'large' | 'default';
   /**
    * @en Text button
    * @cn 文字按钮，不展示边框和背景

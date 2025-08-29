@@ -7,8 +7,10 @@ import { getLocale, useConfig } from '../config';
 import PickerTitle from './pickerTitle';
 import Confirm from './confirm';
 
+type TimeType = 'H' | 'h' | 'm' | 's' | 'ampm';
+
 const TimeScroll = (props: {
-  mode: string;
+  mode: TimeType;
   jssStyle: TimeProps['jssStyle'];
   times: {
     str: string;
@@ -132,6 +134,7 @@ const Time = (props: TimeProps) => {
     secondStep: props.secondStep,
     position: props.position,
     rangeDate: props.rangeDate,
+    defaultTime: props.defaultTime,
   });
 
   const selNow = () => {

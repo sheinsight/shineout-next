@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom/client';
 import App from './theme/index';
 import { setConfig } from 'shineout';
 import { setJssConfig } from '@sheinx/shineout-style';
+import './index.css'
 
 if (process.env.NODE_ENV === 'development') {
   const camelToDash = (str: string) => str.replace(/([A-Z])/g, '-$1').toLowerCase();
@@ -29,7 +30,8 @@ const app = document.getElementById('app');
 
 // import ReactDOM from 'react-dom';
 // ReactDOM.render(<App></App>, app);
-if (app) {
+// @ts-ignore
+if (app && !window.__ALITA__) {
   const root = ReactDOM.createRoot(app);
   root.render(<App></App>);
 }

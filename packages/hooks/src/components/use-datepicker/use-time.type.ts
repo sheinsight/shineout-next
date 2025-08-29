@@ -1,3 +1,5 @@
+import { DateTimeType } from "./util";
+
 export interface UseTimeProps {
   format: string;
   options: {
@@ -17,4 +19,5 @@ export interface UseTimeProps {
   secondStep?: number;
   position?: 'start' | 'end';
   rangeDate?: Array<Date | undefined>;
+  defaultTime?: DateTimeType;
 }

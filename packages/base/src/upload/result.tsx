@@ -34,6 +34,22 @@ const Result = (props: ResultProps) => {
   const { current: context } = useRef({ preview: () => {} });
 
   const renderText = () => {
+    let $loading
+    if (status === 1) {
+      if (props.process !== -1) {
+        $loading = <div className={uploadClasses?.resultProgressText}>{Math.min(99, Math.floor(props.process || 0))}%</div>
+      } else {
+        $loading = (
+          <Spin
+            size={'null'}
+            jssStyle={props.jssStyle}
+            name={'ring'}
+            ignoreConfig
+            className={uploadClasses?.imageResultLoading}
+          />
+        )
+      }
+    }
     return (
       <>
         <div className={uploadClasses?.resultText}>
@@ -42,11 +58,9 @@ const Result = (props: ResultProps) => {
             {name}
             {message && <span>({message}) </span>}
           </div>
-          <div className={uploadClasses?.resultTextFooter}>
-            {status === 1 && props.process !== -1 && (
-              <div className={uploadClasses?.resultProgressText}>{Math.min(99, Math.floor(props.process || 0))}%</div>
-            )}
-          </div>
+          {$loading && <div className={uploadClasses?.resultTextFooter}>
+            {$loading}
+          </div>}
         </div>
         {props.removeAble && (
           <div

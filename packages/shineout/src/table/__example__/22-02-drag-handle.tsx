@@ -1,6 +1,6 @@
 /**
  * cn - 句柄拖拽
- *    -- 通过 rowEvents 属性来自定义拖拽事件
+ *    -- 通过 `rowEvents` 属性来自定义拖拽事件
  * en - handle drag
  *    -- customize drag events through the rowEvents property
  */

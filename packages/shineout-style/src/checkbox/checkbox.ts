@@ -1,8 +1,10 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import { CheckboxClasses } from '@sheinx/base';
+import { animations } from '../common';
 
 const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
+  ...animations,
   rootClass: {},
   wrapper: {
     display: 'inline-flex',
@@ -92,7 +94,8 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
       width: '80%',
       top: '50%',
       left: '50%',
-      transform: 'translateY(-50%) translateX(-50%)',
+      transform: 'translate(-50%, -50%)',
+      animation: '$bounce-in-center 0.2s cubic-bezier(0.22, 0.61, 0.36, 1)',
     },
     '$wrapperChecked &, $wrapperIndeterminate &': {
       borderColor: token.checkboxIconCheckedBorderColor,

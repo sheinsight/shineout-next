@@ -1,3 +1,11 @@
+## 3.8.0-beta.3
+2025-06-13
+
+### 🆕 Feature
+
+- `Transfer` 新增 `highlight` 属性，开启搜索关键字高亮功能 ([#1174](https://github.com/sheinsight/shineout-next/pull/1174))
+
+
 ## 3.6.5-beta.11
 2025-04-29
 
@@ -35,6 +43,17 @@
 
 - 修复 `Transfer` 的 `onSelectChange` 第二参数丢失的问题 ([#652](https://github.com/sheinsight/shineout-next/pull/652))
 
+
+## 3.1.19
+2024-05-29
+
+### 🆕 Feature
+
+- 新增 `equalPanelWidth` 属性，支持根据容器宽度均等分配面板宽度 ([#613](https://github.com/sheinsight/shineout-next/pull/613))
+
+### 💎 Enhancement
+
+- 优化勾选项的容器宽度，默认占满整行，超出后自动省略文案内容 ([#613](https://github.com/sheinsight/shineout-next/pull/613))
 
 ## 3.1.19
 2024-05-29

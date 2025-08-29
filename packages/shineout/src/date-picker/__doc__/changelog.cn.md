@@ -1,3 +1,16 @@
+## 3.8.0-beta.47
+2025-08-27
+
+### 🐞 BugFix
+- 修复 `DatePicker` 的 `range`模式下且设置了name时，在 `onPickerChange` 中设置undefined后无法选中值的问题 ([#1326](https://github.com/sheinsight/shineout-next/pull/1326))
+
+## 3.8.0-beta.30
+2025-08-14
+
+### 🐞 BugFix
+- 修复 `DatePicker` 的时间范围选择器设置的 `min` 、 `max`、`defaultTime` 属性不生效的问题 ([#1301](https://github.com/sheinsight/shineout-next/pull/1301))
+
+
 ## 3.7.8-beta.2
 2025-07-22
 

@@ -22,7 +22,7 @@ const copyDir = (src, dest) => {
  *   import 所有文件
  *
  */
-makeIndex = (dir) => {
+const makeIndex = (dir) => {
   const comps = [];
   const files = fs.readdirSync(dir).filter((file) => file.endsWith('.tsx') && file !== 'index.tsx');
   const before = files
@@ -41,7 +41,7 @@ makeIndex = (dir) => {
         ${comps.join('\n')}
       </div>
     )
-    
+
   }
   export default App;
   `;
@@ -49,7 +49,7 @@ makeIndex = (dir) => {
   fs.writeFileSync(path.join(dir, 'index.tsx'), str);
 };
 
-makeIndex2 = (dir) => {
+const makeIndex2 = (dir) => {
   const comps = [];
   const files = fs.readdirSync(dir).filter((file) => file !== 'index.tsx');
   const before = files
@@ -68,7 +68,7 @@ makeIndex2 = (dir) => {
         ${comps.join('\n')}
       </div>
     )
-    
+
   }
   export default App;
   `;

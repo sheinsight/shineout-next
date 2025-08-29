@@ -106,6 +106,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     noCache,
     highlight,
     trigger = 'click',
+    preventEnterSelect = false,
   } = props;
 
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
@@ -228,9 +229,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     }
   };
 
+
+  const finalData = createdData ? [createdData, ...(data || [])] : data;
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
-    data,
+    data: finalData,
     separator,
     treeData,
     childrenKey,
@@ -363,6 +366,12 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         return;
       }
     }
+
+    // 当开启 preventEnterSelect 且存在 onCreate 功能时，阻止选中已有选项
+    if (preventEnterSelect && onCreate && !createdData) {
+      return;
+    }
+
     const currentDataItem = filterData?.[hoverIndex];
     if (currentDataItem && !currentDataItem[groupKey as keyof typeof currentDataItem]) {
       handleChange(currentDataItem);
@@ -450,20 +459,24 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     setControlType('keyboard');
 
     switch (e.keyCode || e.code) {
-      case 38 || 'ArrowUp':
+      case 38:
+      case 'ArrowUp':
         if (optionListRef.current?.hoverHover) optionListRef.current?.hoverMove(-1);
         e.preventDefault();
         break;
-      case 40 || 'ArrowDown':
+      case 40:
+      case 'ArrowDown':
         if (optionListRef.current?.hoverHover) optionListRef.current?.hoverMove(1);
         e.preventDefault();
         break;
-      case 13 || 'Enter':
+      case 13:
+      case 'Enter':
         handleEnter();
         e.preventDefault();
         e.stopPropagation();
         break;
-      case 8 || 'Backspace':
+      case 8:
+      case 'Backspace':
         handleDelete(e);
         break;
     }
@@ -479,6 +492,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     }
 
     if (open) closePop();
+    if (props.onClear) props.onClear();
   };
 
   const getRenderResult = (data: DataItem, index?: number): ReactNode => {

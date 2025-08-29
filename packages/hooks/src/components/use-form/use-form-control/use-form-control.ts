@@ -44,6 +44,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     rules,
     onError,
     getValidateProps,
+    clearToUndefined,
   } = props;
   const { name, bind, validateFieldSet } = useFieldSetConsumer({
     name: props.name,
@@ -85,7 +86,9 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const update = usePersistFn(
     (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
       if (!name) return;
-      if (isArray(name)) {
+      // 加入defaultValue的判断，让其只对 https://github.com/sheinsight/shineout-next/pull/742 的场景生效
+      // 如果不加入defaultValue的判断，会导致 8ea43144-36a5-403a-9147-59d54087a110 的问题
+      if (isArray(name) && defaultValue !== undefined) {
         const value = getValue(name, formValue) as T[];
         const error = getError(name, errors, severErrors);
         if (error !== errorState) {
@@ -96,7 +99,11 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         const nextValue = [] as T[];
         name.forEach((n, index) => {
           if (value[index] === undefined && dv[index] !== undefined) {
-            nextValue[index] = dv[index];
+            if (clearToUndefined) {
+              nextValue[index] = undefined as T;
+            } else {
+              nextValue[index] = dv[index];
+            }
           } else {
             nextValue[index] = value[index];
           }
@@ -110,7 +117,11 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         }
         if (!shallowEqual(value, latestInfo.valueState)) {
           if (value === undefined && defaultValue !== undefined) {
-            setValueState(defaultValue);
+            if (clearToUndefined) {
+              setValueState(undefined);
+            } else {
+              setValueState(defaultValue);
+            }
           } else {
             setValueState(value);
           }

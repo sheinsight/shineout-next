@@ -1,6 +1,7 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import { PopoverClasses } from '@sheinx/base';
+import { tooltipAnimation } from '../tooltip/tooltip';
 
 export type PopoverClassType = keyof PopoverClasses;
 
@@ -13,6 +14,7 @@ const poyfillPos = `calc((${hideArrowGap} + ${extraArrowGap}) * -1)`;
 const poyfillHeight = `calc((${hideArrowGap} + ${extraArrowGap}))`;
 
 const popoverStyle: JsStyles<PopoverClassType> = {
+  ...tooltipAnimation,
   rootClass: {},
   wrapper: {
     display: 'none',
@@ -152,6 +154,42 @@ const popoverStyle: JsStyles<PopoverClassType> = {
   },
   wrapperOpen: {
     display: 'block',
+    '&[data-soui-position^="bottom"]': {
+      animation: '$fadeIn 200ms ease, $moveBottom 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="bottom-left"]': {
+      animation: '$fadeIn 200ms ease, $moveBottomLeft 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="bottom-right"]': {
+      animation: '$fadeIn 200ms ease, $moveBottomRight 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="top"]': {
+      animation: '$fadeIn 200ms ease, $moveTop 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="top-left"]': {
+      animation: '$fadeIn 200ms ease, $moveTopLeft 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="top-right"]': {
+      animation: '$fadeIn 200ms ease, $moveTopRight 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="left"]': {
+      animation: '$fadeIn 200ms ease, $moveLeft 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="left-top"]': {
+      animation: '$fadeIn 200ms ease, $moveLeftTop 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="left-bottom"]': {
+      animation: '$fadeIn 200ms ease, $moveLeftBottom 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="right"]': {
+      animation: '$fadeIn 200ms ease, $moveRight 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="right-top"]': {
+      animation: '$fadeIn 200ms ease, $moveRightTop 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="right-bottom"]': {
+      animation: '$fadeIn 200ms ease, $moveRightBottom 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
   },
   arrow: {},
   hideArrow: {},

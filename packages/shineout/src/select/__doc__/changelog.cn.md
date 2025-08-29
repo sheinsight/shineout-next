@@ -1,3 +1,24 @@
+## 3.8.0-beta.45
+2025-08-22
+
+### 🆕 Feature
+- `Select` 新增 `onClear` 属性，支持监听清除事件 ([#1322](https://github.com/sheinsight/shineout-next/pull/1322))
+
+
+## 3.8.0-beta.36
+2025-08-18
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `onCreate` 且开启 `renderUnmatched` 时，渲染结果与老版本不一致的问题 ([#1312](https://github.com/sheinsight/shineout-next/pull/1312))
+
+
+## 3.8.0-beta.9
+2025-06-30
+
+### 🆕 Feature
+- `Select` 新增 `preventEnterSelect` 属性，开启 onCreate 时可阻止回车选中已有选项，仅创建选项 ([#1214](https://github.com/sheinsight/shineout-next/pull/1214))
+
+
 ## 3.7.10-beta.1
 2025-08-11
 
@@ -223,6 +244,12 @@
 ### 🐞 BugFix
 - 修复 `Select` 的树形数据展开时，设置的autoAdapt(下拉列表宽度根据内容自由展开)不生效的问题([#614](https://github.com/sheinsight/shineout-next/pull/614))
 
+
+## 3.3.3
+2024-08-15
+
+### 🆕 Feature
+- 支持 `Select` 单选搜索时，展示非string类型的值(renderItem返回的结果) ([#605](https://github.com/sheinsight/shineout-next/pull/605))
 
 ## 3.3.3
 2024-08-15

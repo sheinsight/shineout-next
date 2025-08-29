@@ -1,8 +1,14 @@
-## 3.7.10-beta.4
-2025-08-14
-### 🐞 BugFix
+## 3.8.0-beta.35
+2025-08-15
 
-- 修复 `Tabs` 暗黑主题下 card 模式的下划线样式问题 ([#1308](https://github.com/sheinsight/shineout-next/pull/1308))
+### 🐞 BugFix
+- 修复 `Tabs` 的 line 模式在微前端环境下初始化时可能出现下划线不可见的问题 ([#1310](https://github.com/sheinsight/shineout-next/pull/1310))
+
+## 3.8.0-beta.17
+2025-07-22
+
+### 🐞 BugFix
+- 修复 `Tabs` 在外部容器设置了缩放后，下划线不居中对齐的问题 ([#1258](https://github.com/sheinsight/shineout-next/pull/1258))
 
 ## 3.7.0-beta.8
 2025-04-21

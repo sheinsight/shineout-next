@@ -15,6 +15,9 @@
       "chunk/*": ["./docs/chunk/*"],
       "shineout": ["packages/shineout/src/index.ts"],
       "base": ["packages/base/src/index.ts"],
+      "@sheinx/base": ["packages/base/src/index.ts"],
+      "@sheinx/hooks": ["packages/hooks/src/index.ts"],
+      "@sheinx/mock": ["packages/mock/src/index.ts"],
       "@sheinx/shineout-style": ["packages/shineout-style/src/index.ts"],
       "@sheinx/theme": ["packages/theme/src/index.ts"],
     }

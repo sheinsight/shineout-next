@@ -136,7 +136,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   };
 
   const [currentTabOffset, setCurrentTabOffset] = useState({ offsetTop: 0, offsetLeft: 0 });
-  const [currentTabRect, setCurrentTabRect] = useState<DOMRect | null>(null);
+  const [currentTabSize, setCurrentTabSize] = useState({ width: 0, height: 0 });
   useLayoutEffect(() => {
     if (shape !== 'line' && shape !== 'dash') return;
 
@@ -146,29 +146,54 @@ const TabsHeader = (props: TabsHeaderProps) => {
       offsetLeft: currentTab?.offsetLeft || 0,
     });
 
-    const currentTabRect = currentTab?.getBoundingClientRect?.();
-    setCurrentTabRect(currentTabRect);
+    // 使用 offsetWidth/offsetHeight 而不是 getBoundingClientRect()
+    // 这样可以避免受到外部容器 CSS transform scale 的影响
+    let width = currentTab?.offsetWidth || 0;
+    let height = currentTab?.offsetHeight || 0;
+    // 微前端场景下，可能出现获取不到元素的尺寸信息
+    if (width === 0 || height === 0) {
+      let timerCount = 0;
+      const timer = setInterval(() => {
+        timerCount++;
+        if (currentTab?.offsetWidth && currentTab?.offsetHeight) {
+          setCurrentTabSize({
+            width: currentTab.offsetWidth,
+            height: currentTab.offsetHeight,
+          });
+          clearInterval(timer);
+        }
+        if (timerCount >= 100) {
+          clearInterval(timer);
+        }
+      }, 16);
+      return () => clearInterval(timer);
+    } else {
+      setCurrentTabSize({
+        width,
+        height,
+      });
+    }
   }, [active, tabs]);
 
   const renderHeaderScrollBar = () => {
     if (shape !== 'line' && shape !== 'dash') return;
 
-    if (!currentTabRect) return;
+    if (!currentTabSize.width || !currentTabSize.height) return;
 
     const scrollBarStyle = isVertical
       ? {
           right: getPosition?.startsWith('left') ? 0 : 'auto',
           left: getPosition?.startsWith('right') ? 0 : 'auto',
-          top: currentTabOffset.offsetTop + currentTabRect.height / 2,
-          height: shape === 'line' ? currentTabRect.height : 24,
+          top: currentTabOffset.offsetTop + currentTabSize.height / 2,
+          height: shape === 'line' ? currentTabSize.height : 24,
           width: 2,
           transform: 'translateY(-50%)',
         }
       : {
           bottom: getPosition?.startsWith('top') ? 0 : 'auto',
           top: getPosition?.startsWith('bottom') ? 0 : 'auto',
-          left: currentTabOffset.offsetLeft + currentTabRect.width / 2,
-          width: shape === 'line' ? currentTabRect.width : 24,
+          left: currentTabOffset.offsetLeft + currentTabSize.width / 2,
+          width: shape === 'line' ? currentTabSize.width : 24,
           height: 2,
           transform: 'translateX(-50%)',
         };

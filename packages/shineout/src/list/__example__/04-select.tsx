@@ -1,8 +1,8 @@
 /**
  * cn - 选择行
- *    -- 设置 onChange 属性，会自动添加选择行
+ *    -- 设置 `onChange` 属性，会自动添加选择行
  * en - Select
- *    -- Set the onChange property will automatically add a row with checkbox
+ *    -- Set the `onChange` property will automatically add a row with checkbox
  */
 import React, { useState, useEffect } from 'react';
 import { List, Checkbox, TYPE } from 'shineout';

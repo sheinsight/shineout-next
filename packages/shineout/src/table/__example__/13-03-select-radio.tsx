@@ -1,8 +1,8 @@
 /**
  * cn - 单选
- *    -- 设置 radio 属性实现单选效果
+ *    -- 设置 `radio` 属性实现单选效果
  * en - Select signle
- *    -- Set the radio attribute to achieve the radio effect
+ *    -- Set the `radio` attribute to achieve the radio effect
  */
 import React, { useState } from 'react';
 import { Table, TYPE } from 'shineout';

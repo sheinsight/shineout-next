@@ -32,6 +32,8 @@ const TreeSelectComponent = <DataItem, Value extends TreeSelectValueType>(
   return <UnStyleTreeSelect jssStyle={jssStyle} {...props} />;
 };
 
+TreeSelectComponent.displayName = 'ShineoutTreeSelect';
+
 const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props: TreeSelectProps<DataItem, Value>,
 ) => {

@@ -24,6 +24,7 @@ const Tooltip = (props: TooltipProps) => {
     persistent: persistentProp,
     type = 'default',
     position: popsitionProps = 'auto',
+    popupGap = 0,
   } = props;
 
   const tooltipClasses = jssStyle?.tooltip?.();
@@ -119,7 +120,7 @@ const Tooltip = (props: TooltipProps) => {
         absolute
         position={position}
         fixedWidth={false}
-        popupGap={0}
+        popupGap={popupGap}
         zIndex={zIndex}
         adjust={popsitionProps === 'auto'}
         updateKey={updateKey}
@@ -131,7 +132,7 @@ const Tooltip = (props: TooltipProps) => {
             tooltipClasses?.wrapper,
             open && tooltipClasses?.wrapperOpen,
           )}
-          style={{ pointerEvents: persistent ? 'initial' : undefined }}
+          style={{ pointerEvents: persistent ? 'initial' : undefined, display: open ? 'block' : 'none' }}
           {...util.getDataAttribute({ type, position })}
           ref={popupRef}
           onMouseLeave={events.onMouseLeave}

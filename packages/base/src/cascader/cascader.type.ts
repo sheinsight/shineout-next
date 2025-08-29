@@ -409,4 +409,20 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @version 3.7.0
    */
   highlight?: boolean;
+
+  /**
+   * @en Whether to show parent node in the result
+   * @cn 展示的结果是否包含父节点
+   * @default false
+   * @version 3.8.0
+   */
+  showParent?: boolean;
+
+  /**
+   * @en Triggered when clearing the selected value
+   * @cn 清除选中值时触发
+   * @version 3.8.0
+   * @when For custom clearing behavior
+   */
+  onClear?: () => void;
 }

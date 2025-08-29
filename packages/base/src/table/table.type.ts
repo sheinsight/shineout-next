@@ -76,6 +76,7 @@ export interface TableClasses {
   hasFilter: string;
   filterContainer: string;
   filterActive: string;
+  filterOpened: string;
   filterInput: string;
   filterInputIcon: string;
   filterIcon: string;
@@ -91,6 +92,7 @@ export interface TableClasses {
   resizeSpannerInactive: string;
 
   cellIgnoreBorder: string;
+  cellSortable: string;
 
   expandIcon: string;
   iconWrapper: string;
@@ -380,6 +382,13 @@ export interface TableProps<DataItem, Value>
    * @cn 行选择回调函数。参数 rows 包含选中的数据。如需数据格式化，请配合使用 format 和 prediction
    */
   onRowSelect?: (rows: Value) => void;
+
+  /**
+   * @en Click the cell to trigger sorting
+   * @cn 点击单元格触发排序
+   * @version 3.8.0
+   */
+  cellSortable?: boolean;
 }
 
 interface BottomScrollbarOption extends Pick<StickyProps, 'bottom'> {

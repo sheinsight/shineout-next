@@ -6,6 +6,8 @@
 //    we force a non-overlapping, non-auto-hiding scrollbar to counteract.
 // 6. Change the default tap highlight to be completely transparent in iOS.
 import { CommonToken, setToken } from '@sheinx/theme';
+import { jss } from './jss-style';
+import  version from './version';
 
 const token = {
   fontFamily:
@@ -373,21 +375,31 @@ p {
   margin: 0 0 ${lineHeightComputed2};
 }`;
 
+const normalizeStyleId = 'shineout-next-normalize__' + version;
+const jssInsertionPointId = 'shineout-next-jss-insertion-point__' + version;
+
 function appendNormalizeStyle(styleString: string, id: string){
   const style = document.createElement('style');
-  style.id = id;
+  style.setAttribute('name', id);
   style.innerHTML = styleString;
-  document.head.appendChild(style);
+  document.head.insertBefore(style, document.head.firstChild);
 }
 
-const uniqueStyleId = 'shineout-next-normalize__' + Math.random().toString(36).substring(2, 15);
+function appendJssInsertionPoint(){
+  const insertionPoint = document.createElement('style');
+  insertionPoint.setAttribute('name', jssInsertionPointId);
+  document.head.insertBefore(insertionPoint, document.head.firstChild);
+
+  jss.setup({insertionPoint: insertionPoint})
+}
 
 if (typeof window !== 'undefined') {
-  appendNormalizeStyle(normalizeStyle, uniqueStyleId);
+  appendJssInsertionPoint();
+  appendNormalizeStyle(normalizeStyle, normalizeStyleId);
 }
 
 export const scopeNormalizeStyle = (csScopePrefix = '#app') => {
-  const styleElement = document.getElementById(uniqueStyleId) as HTMLStyleElement;
+  const styleElement = document.querySelector(`style[name="${normalizeStyleId}"]`) as HTMLStyleElement;
   // 移除styleElement
 
   const styleSheet = styleElement?.sheet;
@@ -415,7 +427,7 @@ export const scopeNormalizeStyle = (csScopePrefix = '#app') => {
 
   document.head.removeChild(styleElement);
 
-  appendNormalizeStyle(scopedStyleString, uniqueStyleId);
+  appendNormalizeStyle(scopedStyleString, normalizeStyleId);
 };
 
 setToken({ selector: 'html' });

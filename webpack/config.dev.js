@@ -54,6 +54,10 @@ const webpackConfig = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [

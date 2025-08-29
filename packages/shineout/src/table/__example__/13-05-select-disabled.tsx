@@ -1,8 +1,8 @@
 /**
  * cn - 选择行禁用
- *    -- disabled 属性设置为 true 时禁用全部, 设置为函数时禁用指定行
+ *    -- `disabled` 属性设置为 true 时禁用全部, 设置为函数时禁用指定行
  * en - Select disabled
- *    -- Set disabled to true to disable all, set to a function to disable a specific row
+ *    -- Set `disabled` to true to disable all, set to a function to disable a specific row
  */
 import React, { useState } from 'react';
 import { Table, TYPE } from 'shineout';

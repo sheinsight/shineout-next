@@ -1,3 +1,19 @@
+## 3.8.0-beta.7
+2025-06-23
+
+### 🆕 Feature
+
+- `Input` 新增 `showClear` 属性，支持有值时，是否常驻显示清除按钮，优先级高于 `clearable` ([#1197](https://github.com/sheinsight/shineout-next/pull/1197))
+
+
+## 3.8.0-beta.6
+2025-06-18
+
+### 💎 Enhancement
+
+- 增强 `Input` 的 `info` 属性，支持配置提示信息的位置和挂载点 ([#1189](https://github.com/sheinsight/shineout-next/pull/1189))
+
+
 ## 3.7.11-beta.1
 2025-08-25
 
@@ -17,6 +33,7 @@
 
 ### 🐞 BugFix
 - 修复 `Input` 的 `onEnterPress` 事件在开启了 Form 的 scrollToError 后偶现的无法触发的问题 ([#1182](https://github.com/sheinsight/shineout-next/pull/1182))
+
 
 ## 3.7.3-beta.1
 2025-06-16

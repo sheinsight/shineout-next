@@ -656,6 +656,22 @@ export interface SelectPropsBase<DataItem, Value>
    * @when To visually indicate search matches
    */
   highlight?: boolean;
+
+  /**
+   * @en Whether to prevent selecting existing options when pressing Enter while onCreate is enabled
+   * @cn 开启 onCreate 时，是否阻止回车选中已有选项，仅创建选项
+   * @default false
+   * @version 3.8.0
+   */
+  preventEnterSelect?: boolean;
+
+  /**
+   * @en Triggered when clearing the selected value
+   * @cn 清除选中值时触发
+   * @version 3.8.0
+   * @when For custom clearing behavior
+   */
+  onClear?: () => void;
 }
 
 export interface SelectPropsA<DataItem, Value>
