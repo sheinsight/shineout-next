@@ -85,7 +85,7 @@ const usePopup = (props: BasePopupProps) => {
   }, [props.open]);
 
   useEffect(() => {
-    if (defaultOpen) {
+    if (props.open === undefined && defaultOpen) {
       setOpenState(true);
     }
   }, []);
