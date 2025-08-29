@@ -127,7 +127,7 @@ export default createUseStyles({
   titleButton: {
     padding: '8px 32px !important',
     background: 'var(--theme-primary-color, linear-gradient(90deg, var(---Brand-5-, #429AFF) 0%, var(---Brand-6-, #197AFA) 100%)) !important',
-    border: '1px solid var(--theme-primary-color) !important',
+    border: 'var(--theme-primary-color) ? 1px solid var(--theme-primary-color) : none !important',
     borderRadius: 'var(--theme-border-radius, 20px)',
     fontSize: 'var(--theme-font-size, 14px)',
     boxShadow: '0px 8px 20px 0px var(--theme-light-color, rgba(25, 122, 250, 0.10)) !important',
