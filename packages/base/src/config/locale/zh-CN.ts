@@ -55,9 +55,11 @@ export default {
 
   ok: '确定',
   cancel: '取消',
+  reset: '重置',
   noData: '暂无数据',
   selectAll: '全选',
   loading: '加载中...',
+  searchPlaceholder: '在筛选项中搜索',
 
   rules: {
     required: {
@@ -84,6 +86,6 @@ export default {
   search: '搜索',
   urlInvalidMsg: '图片格式不正确，请重新上传',
   invalidAccept: '文件格式不正确',
-
+  invalidImage: '图片格式不正确',
   notFound: '未找到',
 };

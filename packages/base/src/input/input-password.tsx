@@ -50,6 +50,7 @@ const Password = (props: InputPasswordProps) => {
       className={props.className}
       suffix={suffix}
       hasSuffix
+      showClear={props.showClear}
     />
   );
 };

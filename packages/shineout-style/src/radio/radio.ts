@@ -1,20 +1,11 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 import { RadioClasses } from '@sheinx/base';
+import { animations } from '../common';
 
 const radioStyle: JsStyles<keyof RadioClasses> = {
+  ...animations,
   rootClass: {},
-  // '@keyframes so-checkinput-focus': {
-  //   '0%': {
-  //     boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,
-  //   },
-  //   '50%': {
-  //     boxShadow: `0 0 0 4px ${cssVars.primaryColorFade0}`,
-  //   },
-  //   '100%': {
-  //     boxShadow: `0 0 0 8px ${cssVars.primaryColorFade0}`,
-  //   },
-  // },
   wrapper: {
     display: 'inline-flex',
     position: 'relative',
@@ -101,7 +92,7 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     color: token.radioIconColor,
     backgroundColor: token.radioIconBackgroundColor,
     border: '1px solid currentColor',
-    '$wrapperChecked &': {
+    '$wrapperChecked > $indicatorWrapper > &': {
       backgroundColor: token.radioIconCheckedBackgroundColor,
       color: token.radioIconCheckedColor,
       '&::after': {
@@ -115,6 +106,7 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
+        animation: '$bounce-in-center 0.2s cubic-bezier(0.22, 0.61, 0.36, 1)',
       },
     },
     '$wrapperDisabled:not($wrapperChecked) &': {

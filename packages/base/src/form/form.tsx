@@ -50,7 +50,8 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     validateFieldsWithValue,
     validateFieldsWithError: formFunc.validateFields,
     set: formFunc.setValue,
-    scrollToField: formFunc.scrollToField
+    scrollToField: formFunc.scrollToField,
+    getFormSchema: formFunc.getFormSchema,
   });
 
   React.useEffect(() => {

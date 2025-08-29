@@ -163,6 +163,17 @@ const Api = (props: { api: MarkdownProps['api'] }) => {
               isLast={index === api.length - 1}
               rowClassName={(d) => (d.name === activeApi ? classes.activeApi : '')}
               onRowClick={(api) => {
+                if (activeApi === api) return;
+
+                // 检查是否有文字被选中
+                const selection = window.getSelection();
+                const selectedText = selection?.toString().trim();
+
+                // 如果有文字被选中，不触发导航
+                if (selectedText && selectedText.length > 0) {
+                  return;
+                }
+
                 context.isRowClick = true;
                 setTimeout(() => {
                   context.isRowClick = false;

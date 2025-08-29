@@ -4,17 +4,20 @@ import type { ReactNode } from 'react';
 import type { KeygenType } from '@sheinx/hooks';
 
 import type { PopoverJssStyle } from '../popover/popover.type';
+import type { TooltipClasses } from '../tooltip/tooltip.type';
 
 export type StructureArray<T> = Array<T | T[]>;
 
 export interface BreadcrumbClasses {
   rootClass: string;
   wrapper: string;
+  wrapperPopover: string;
   down: string;
   downOpen: string;
   dropdownItem: string;
   separator: string;
   content: string;
+  contentMaxWidth: string;
   item: string;
   itemWithDrop: string;
   dropdown: string;
@@ -24,6 +27,7 @@ export interface BreadcrumbClasses {
 
 export interface BreadcrumbJssStyle extends PopoverJssStyle {
   breadcrumb?: () => BreadcrumbClasses;
+  tooltip?: () => TooltipClasses;
 }
 
 export interface BreadcrumbProps<Item = BreadcrumbDataType>

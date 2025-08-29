@@ -66,7 +66,11 @@ const uploadStyle: JsStyles<UploadClassType> = {
       border: `1px dashed ${token.uploadImageHandlerBorderColor}`,
       backgroundColor: token.uploadImageHandlerBackgroundColor,
       color: token.uploadImageHandlerFontColor,
-      '&:hover, &:hover *': {
+      '&:hover, &:hover': {
+        borderColor: token.uploadImageHandlerHoverBorderColor,
+        color: token.uploadImageHandlerHoverFontColor,
+      },
+      '&:hover, &:hover svg': {
         borderColor: token.uploadImageHandlerHoverBorderColor,
         color: token.uploadImageHandlerHoverFontColor,
       },
@@ -91,7 +95,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     display: 'flex',
     gap: '8px',
     borderRadius: token.uploadResultBorderRadius,
-    padding: `${token.uploadResultPaddingY} ${token.uploadResultPaddingX}`,
+    padding: `${token.uploadResultPaddingY} ${token.uploadResultPaddingX2} ${token.uploadResultPaddingY} ${token.uploadResultPaddingX1}`,
     '&:hover': {
       backgroundColor: token.uploadResultBackgroundColor,
     },
@@ -119,11 +123,6 @@ const uploadStyle: JsStyles<UploadClassType> = {
   resultSuccess: {},
   resultUploading: {},
   resultDeleted: {},
-  resultStatusIcon: {
-    '$resultSuccess &': {
-      color: token.uploadResultSuccessIconColor,
-    },
-  },
   resultTextFooter: {
     display: 'flex',
     gap: token.uploadResultGap,
@@ -137,7 +136,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     gap: token.uploadResultGap,
     fontSize: token.uploadResultFontSize,
     color: token.uploadResultFontColor,
-    lineHeight: token.lineHeightDynamic,
+    lineHeight: token.lineHeightDynamicMin,
     '$resultError &': { color: token.uploadResultErrorFontColor },
     '$resultDeleted &': {
       textDecoration: 'line-through',
@@ -150,11 +149,26 @@ const uploadStyle: JsStyles<UploadClassType> = {
   },
   resultClose: {
     cursor: 'pointer',
-    '&$icon': {
-      boxSizing: 'content-box',
-      padding: '0 4px',
-      height: token.lineHeightDynamic,
+    boxSizing: 'content-box',
+    padding: '0 4px',
+    height: token.lineHeightDynamic,
+    '&$icon:not($resultErrorClose)': {
+      display: 'none',
+      '$result:hover &': {
+        display: 'flex',
+      },
     },
+  },
+  resultErrorClose: {
+    color: token.uploadResultErrorFontColor,
+    '&$iconHover:hover': {
+      color: token.uploadResultErrorFontColor,
+    }
+  },
+  resultProgressText: {
+    width: '2em',
+    textAlign: 'right',
+    whiteSpace: 'nowrap',
   },
   imageHandler: {
     boxSizing: 'border-box',
@@ -171,7 +185,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
       borderColor: token.uploadImageHandlerHoverBorderColor,
       color: token.uploadImageHandlerHoverFontColor,
     },
-    '$wrapper:not($wrapperDisabled) &:hover *': {
+    '$wrapper:not($wrapperDisabled) &:hover svg': {
       color: `${token.uploadImageHandlerHoverFontColor} !important`,
     },
     '$wrapper:not($wrapperDisabled) &:active, $wrapper:not($wrapperDisabled) &:active *': {
@@ -264,6 +278,10 @@ const uploadStyle: JsStyles<UploadClassType> = {
     height: token.uploadImageResultMaskIconSize,
     borderColor: token.uploadImageResultMaskIconColor,
     borderTopColor: 'transparent',
+    '$resultText &': {
+      borderColor: token.uploadResultUploadingIconColor,
+      borderTopColor: 'transparent',
+    }
   },
   imageResultMaskInfo: {
     lineHeight: token.lineHeightDynamic,

@@ -1,3 +1,32 @@
+## 3.7.10-beta.3
+2025-08-14
+
+### 🐞 BugFix
+
+- 修复 `Tree` 在设置了 `defaultExpandAll` 后，组件初始化完再更改数据导致默认展开不生效的问题 ([#1261](https://github.com/sheinsight/shineout-next/pull/1261))
+
+## 3.7.8-beta.4
+2025-07-24
+
+### 🐞 BugFix
+
+- 修复 `Tree` 动态数据时，存在 children 为 undefined 导致报错的问题 ([#1261](https://github.com/sheinsight/shineout-next/pull/1261))
+
+
+## 3.7.5-beta.8
+2025-07-03
+
+### 🐞 BugFix
+
+- 修复 `Tree` 开启 `virtual` 后根节点样式缩进与非虚拟列表不一致的问题 ([#1223](https://github.com/sheinsight/shineout-next/pull/1223))
+
+## 3.7.5-beta.2
+2025-07-02
+
+### 🐞 BugFix
+
+- 修复 `Tree` 在首次加载时 `defaultExpandAll` 可能不生效的问题 ([#1215](https://github.com/sheinsight/shineout-next/pull/1215))
+
 ## 3.7.0-beta.30
 2025-05-23
 

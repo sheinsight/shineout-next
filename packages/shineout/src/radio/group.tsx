@@ -7,12 +7,14 @@ const jssStyle = {
   radio: useRadioStyle,
   button: useButtonStyle,
 };
-const BaseRadioGroup = <DataItem, Value>(props: BaseRadioGroupProps<DataItem, Value>) => {
+const RadioGroup = <DataItem, Value>(props: BaseRadioGroupProps<DataItem, Value>) => {
   return <UnStyledRadioGroup {...props} jssStyle={jssStyle} />;
 };
 
+RadioGroup.displayName = 'ShineoutRadioGroup';
+
 const RadioGroupWithField = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
-  return useFieldCommon(props, BaseRadioGroup<DataItem, Value>, 'array');
+  return useFieldCommon(props, RadioGroup<DataItem, Value>, 'array');
 };
 
 export default RadioGroupWithField;

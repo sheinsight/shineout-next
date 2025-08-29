@@ -1,3 +1,17 @@
+## 3.8.0-beta.14
+2025-07-14
+
+### 🆕 Feature
+
+- `Sticky` 新增 `stickyBoundary` 属性，当滚动到指定位置或与指定元素底部重合时，取消sticky ([#1240](https://github.com/sheinsight/shineout-next/pull/1240))
+
+## 3.7.9-beta.3
+2025-07-31
+
+### 🐞 BugFix
+
+- 修复 `Sticky` 在非CSS模式下用户传入的 `zIndex` 样式未应用到最外层容器的问题 ([#1279](https://github.com/sheinsight/shineout-next/pull/1279))
+
 ## 3.6.3-beta.1
 2025-04-09
 

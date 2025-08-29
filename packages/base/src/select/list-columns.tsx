@@ -5,6 +5,7 @@ import { SelectClasses } from './select.type';
 import { BaseListProps } from './select.type';
 import ListColumnsOption from './list-columns-option';
 import Checkbox from '../checkbox/simple-checkbox';
+import { getLocale, useConfig } from '../config';
 
 const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const {
@@ -29,6 +30,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
 
   const groupKey = groupKeyProp as keyof DataItem;
   const styles = jssStyle?.select?.() as SelectClasses;
+  const { locale } = useConfig();
 
   // columns 模式无上下边距，故而 lineHeight 需要调整
   const getLineHeight = () => {
@@ -174,6 +176,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
+        paddingY={4}
       ></VirtualScrollList>
     );
   };
@@ -190,7 +193,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
           checked={checked}
           onChange={handleChange}
         >
-          全选
+          {getLocale(locale, 'selectAll')}
         </Checkbox>
         {columnsTitle && <div className={styles.columnsTitle}>{columnsTitle}</div>}
       </div>

@@ -1,9 +1,9 @@
 /**
  * cn - 大数据列表
- *    -- 设置 fixed 属性来启用虚拟列表，本例加载了10000条数据
+ *    -- 设置 `fixed` 属性来启用虚拟列表，本例加载了10000条数据
  *    -- 支持自动高度，默认跟随父元素高度
- *    -- lineHeight 用来设置列表项高度
- *    -- rowsInView 用来设置同时所展示的列表项数量，默认为10个
+ *    -- `lineHeight` 用来设置列表项高度，默认32像素
+ *    -- `rowsInView` 用来设置同时所展示的列表项数量，默认为10个
  * en - Big data list
  *    -- Set the fixed property to enable the virtual list, which in this case loads 10,000 pieces of data
  *    -- support automatic height, and follow the height of parent element by default

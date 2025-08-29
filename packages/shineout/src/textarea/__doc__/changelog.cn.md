@@ -1,3 +1,26 @@
+## 3.7.9-beta.1
+2025-07-30
+
+### 🐞 BugFix
+
+- 修复 `Textarea` 启动 autosize后输入内容后高度自动变高的问题 (Regression: since v3.7.6) ([#1229](https://github.com/sheinsight/shineout-next/pull/1229))
+
+
+## 3.7.6-beta.1
+2025-07-07
+
+### 🐞 BugFix
+
+- 修复 `Textarea` 在 flex 容器中使用时，可能存在的内部textarea元素与外部容器高度不一致的问题 ([#1229](https://github.com/sheinsight/shineout-next/pull/1229))
+
+
+## 3.7.1-beta.7
+2025-06-11
+
+### 🐞 BugFix
+
+- 修复 `Textarea` 的 `onBlur` 和 `onFocus` 事件的参数类型错误问题 ([#1161](https://github.com/sheinsight/shineout-next/pull/1161))
+
 ## 3.6.0
 2025-03-17
 

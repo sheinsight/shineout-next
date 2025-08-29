@@ -884,6 +884,60 @@ describe('Select[OnCreate/OnFilter]', () => {
     expect(selectTags.length).toBe(1);
     textContentTest(selectTags[0], testValue);
   });
+  test('should render when set preventEnterSelect', async () => {
+    const { container } = render(<SelectTest onCreate multiple preventEnterSelect />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    const selectResultTextWrapper = selectWrapper.querySelector(resultTextWrapper)!;
+    
+    // 打开下拉框
+    fireEvent.click(selectResultTextWrapper);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    // 确认下拉框打开
+    classTest(selectWrapper, wrapperOpen);
+    
+    // 检查初始状态下没有选中的tag
+    expect(selectWrapper.querySelectorAll(tag).length).toBe(0);
+    
+    // 不输入任何内容，直接按方向键移动到第一个已有选项
+    fireEvent.keyDown(selectWrapper, { keyCode: 40 }); // ArrowDown
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    // 按回车键，由于设置了 preventEnterSelect=true 且存在 onCreate，应该不会选中已有选项
+    fireEvent.keyDown(selectWrapper, { keyCode: 13 }); // Enter
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    // 验证没有选中任何已有选项
+    expect(selectWrapper.querySelectorAll(tag).length).toBe(0);
+  });
+  test('should render when not set preventEnterSelect (default behavior)', async () => {
+    const { container } = render(<SelectTest onCreate multiple />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    const selectResultTextWrapper = selectWrapper.querySelector(resultTextWrapper)!;
+    
+    // 打开下拉框
+    fireEvent.click(selectResultTextWrapper);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    // 不移动，直接按回车选中当前悬停的选项（默认是第一个）
+    fireEvent.keyDown(selectWrapper, { keyCode: 13 }); // Enter
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    // 验证选中了已有选项
+    const selectTags = selectWrapper.querySelectorAll(tag);
+    expect(selectTags.length).toBe(1);
+    textContentTest(selectTags[0], testData[0]);
+  });
   test('should render when set onFilter', async () => {
     const testValue = 'r';
     const handleFilter = (v: string) => (d: string) => d.indexOf(v) >= 0;

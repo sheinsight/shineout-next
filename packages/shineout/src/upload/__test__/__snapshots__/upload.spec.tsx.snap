@@ -174,24 +174,6 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
         >
           mountain.png
         </div>
-        <div
-          class="soui-upload-result-text-footer"
-        >
-          <div
-            class="soui-upload-icon soui-upload-result-status-icon"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6.34315 13.8284L8.46305 15.9483C9.24511 16.7304 10.5122 16.7304 11.2943 15.9483L17.6569 9.58579C18.0472 9.19546 18.0472 8.5619 17.6569 8.17157C17.2665 7.78125 16.633 7.78125 16.2426 8.17157L10.5872 13.827C10.1962 14.218 9.56119 14.218 9.17016 13.827L7.75736 12.4142C7.36704 12.0239 6.73347 12.0239 6.34315 12.4142C5.95282 12.8045 5.95282 13.4381 6.34315 13.8284Z"
-              />
-            </svg>
-          </div>
-        </div>
       </div>
       <div
         class="soui-upload-result-close soui-upload-icon soui-upload-icon-hover"
@@ -367,24 +349,6 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
           class="soui-upload-result-text-body"
         >
           test file.png
-        </div>
-        <div
-          class="soui-upload-result-text-footer"
-        >
-          <div
-            class="soui-upload-icon soui-upload-result-status-icon"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6.34315 13.8284L8.46305 15.9483C9.24511 16.7304 10.5122 16.7304 11.2943 15.9483L17.6569 9.58579C18.0472 9.19546 18.0472 8.5619 17.6569 8.17157C17.2665 7.78125 16.633 7.78125 16.2426 8.17157L10.5872 13.827C10.1962 14.218 9.56119 14.218 9.17016 13.827L7.75736 12.4142C7.36704 12.0239 6.73347 12.0239 6.34315 12.4142C5.95282 12.8045 5.95282 13.4381 6.34315 13.8284Z"
-              />
-            </svg>
-          </div>
         </div>
       </div>
       <div
@@ -612,24 +576,6 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
           class="soui-upload-result-text-body"
         >
           mountain.png
-        </div>
-        <div
-          class="soui-upload-result-text-footer"
-        >
-          <div
-            class="soui-upload-icon soui-upload-result-status-icon"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6.34315 13.8284L8.46305 15.9483C9.24511 16.7304 10.5122 16.7304 11.2943 15.9483L17.6569 9.58579C18.0472 9.19546 18.0472 8.5619 17.6569 8.17157C17.2665 7.78125 16.633 7.78125 16.2426 8.17157L10.5872 13.827C10.1962 14.218 9.56119 14.218 9.17016 13.827L7.75736 12.4142C7.36704 12.0239 6.73347 12.0239 6.34315 12.4142C5.95282 12.8045 5.95282 13.4381 6.34315 13.8284Z"
-              />
-            </svg>
-          </div>
         </div>
       </div>
       <div

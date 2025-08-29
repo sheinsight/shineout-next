@@ -6,7 +6,14 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const skeletonTokenDescription = { skeleton: '骨架屏' };
+const skeletonTokenDescription = {
+  skeleton: '骨架屏',
+  button: '按钮',
+  animation: '动画',
+  from: '起始',
+  to: '结束',
+  top: '上',
+};
 
 /**
  * token 值映射表
@@ -21,6 +28,7 @@ const skeletonTokenExtraValue = {
   margin: 'Spacing-12',
   height: 'Size-8',
   background: { color: 'Neutral-fill-2', radius: 'Radius-default' },
+  button: { margin: { top: 'Spacing-32' } },
   animation: {
     from: {color: 'Neutral-fill-2' },
     to: {color: 'Neutral-fill-3'}

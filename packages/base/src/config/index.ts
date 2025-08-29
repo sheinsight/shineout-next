@@ -18,6 +18,24 @@ type TooltipConfig = {
   persistent?: boolean;
 }
 
+/**
+ * @en Global configuration for Empty component
+ * @cn Empty组件的全局配置
+ * @version 3.8.0
+ */
+type EmptyConfig = {
+  /**
+   * @en Global default icon for Empty component
+   * @cn Empty组件的全局默认图标
+   */
+  icon?: React.ReactNode;
+  /**
+   * @en Global default description for Empty component
+   * @cn Empty组件的全局默认描述
+   */
+  description?: React.ReactNode | boolean;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -25,6 +43,12 @@ export interface ConfigOption {
   trim?: boolean;
   spin?: SpinConfig;
   tooltip?: TooltipConfig;
+  /**
+   * @en Global configuration for Empty component
+   * @cn Empty组件的全局配置
+   * @version 3.8.0
+   */
+  empty?: EmptyConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -37,6 +61,7 @@ export let config: ConfigOption = {
   trim: undefined,
   spin: 'ring',
   tooltip: undefined,
+  empty: undefined,
   direction: 'ltr',
   popupContainer: null,
 };

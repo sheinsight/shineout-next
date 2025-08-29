@@ -3274,7 +3274,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
           style="display: flex; padding: 8px 12px 4px 12px;"
         >
           <div
-            class="soui-input soui-input-wrapper"
+            class="soui-input soui-input-wrapper soui-input-wrapper-show-clear"
             data-soui-input-border="true"
           >
             <div
@@ -3285,6 +3285,25 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                 placeholder="Custom filter"
                 value=""
               />
+              <div
+                class="soui-input-clear-wrapper"
+              >
+                <span
+                  class="soui-input-clear"
+                  dir="ltr"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -3747,7 +3766,7 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
           style="display: flex; padding: 8px 12px 4px 12px;"
         >
           <div
-            class="soui-input soui-input-wrapper"
+            class="soui-input soui-input-wrapper soui-input-wrapper-show-clear"
             data-soui-input-border="true"
           >
             <div
@@ -3758,6 +3777,25 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
                 placeholder="Custom filter"
                 value=""
               />
+              <div
+                class="soui-input-clear-wrapper"
+              >
+                <span
+                  class="soui-input-clear"
+                  dir="ltr"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -4029,7 +4067,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
         class="soui-transfer-input-wrapper"
       >
         <div
-          class="soui-transfer-input soui-input soui-input-wrapper soui-input-password"
+          class="soui-transfer-input soui-input soui-input-wrapper soui-input-password soui-input-wrapper-show-clear"
           data-soui-input-border="true"
         >
           <div
@@ -4040,6 +4078,25 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
               placeholder="Input search text"
               value=""
             />
+            <div
+              class="soui-input-clear-wrapper"
+            >
+              <span
+                class="soui-input-clear"
+                dir="ltr"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+                  />
+                </svg>
+              </span>
+            </div>
             <svg
               aria-hidden="true"
               fill="currentColor"
@@ -4508,7 +4565,7 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
         class="soui-transfer-input-wrapper"
       >
         <div
-          class="soui-transfer-input soui-input soui-input-wrapper soui-input-password"
+          class="soui-transfer-input soui-input soui-input-wrapper soui-input-password soui-input-wrapper-show-clear"
           data-soui-input-border="true"
         >
           <div
@@ -4519,6 +4576,25 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
               placeholder="Input search text"
               value=""
             />
+            <div
+              class="soui-input-clear-wrapper"
+            >
+              <span
+                class="soui-input-clear"
+                dir="ltr"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+                  />
+                </svg>
+              </span>
+            </div>
             <svg
               aria-hidden="true"
               fill="currentColor"

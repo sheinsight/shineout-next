@@ -1,3 +1,28 @@
+## 3.8.0-beta.39
+2025-08-18
+
+### 🆕 Feature
+- `Pagination` 新增 `sizeListProps` 属性，兼容旧版本 ([#1316](https://github.com/sheinsight/shineout-next/pull/1316))
+
+
+## 3.7.8-beta.10
+2025-07-28
+
+### 🐞 BugFix
+- 修复 `Pagination` 的 `select` 下拉框在限制了高度的html或body滚动容器中第一次点击不出现的问题 ([#1270](https://github.com/sheinsight/shineout-next/pull/1270))
+
+## 3.7.5-beta.7
+2025-07-03
+
+### 🐞 BugFix
+- 修复 `Pagination` 受控模式下外部 value 和内部状态不同步的问题 (Regression: since v3.2.6) ([#1222](https://github.com/sheinsight/shineout-next/pull/1222))
+
+## 3.7.4-beta.3
+2025-06-24
+
+### 🐞 BugFix
+- 修复 `Pagination` 的分页器弹出层在滚动容器中的极限边界场景下可能出现的不可见问题 ([#1201](https://github.com/sheinsight/shineout-next/pull/1201))
+
 ## 3.6.1-beta.2
 2025-03-25
 

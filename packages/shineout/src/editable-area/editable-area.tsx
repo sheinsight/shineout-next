@@ -12,6 +12,8 @@ const EditableArea = (props: BaseEditableAreaProps) => {
   return <UnStyledEditableArea jssStyle={jssStyle} {...props} />;
 };
 
+EditableArea.displayName = 'ShineoutEditableArea';
+
 export default (props: EditableAreaProps) => {
   return useFieldCommon(props, EditableArea);
 };

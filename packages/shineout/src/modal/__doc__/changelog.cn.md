@@ -1,3 +1,50 @@
+## 3.8.0-beta.44
+2025-08-21
+
+### 🐞 BugFix
+- 修复 `Modal` 组件在多层嵌套使用时，重复两次打开关闭后出现的body滚动条不可见的问题 ([#1321](https://github.com/sheinsight/shineout-next/pull/1321))
+
+## 3.8.0-beta.41
+2025-08-19
+
+### 🆕 Feature
+- `Modal` 新增 `containerClassName`，设置挂载容器的className ([#1318](https://github.com/sheinsight/shineout-next/pull/1318))
+
+## 3.8.0-beta.38
+2025-08-18
+
+### 🐞 BugFix
+- 修复 `Modal` 方法调用方式时，点击 OK 按钮后触发了 `onClose` 事件的问题 ([#1315](https://github.com/sheinsight/shineout-next/pull/1315))
+
+## 3.8.0-beta.26
+2025-08-12
+
+### 🐞 BugFix
+- 修复 `Modal` 的 panel 面板的 margin 样式问题 ([#1298](https://github.com/sheinsight/shineout-next/pull/1298))
+
+
+
+## 3.8.0-beta.23
+2025-08-04
+
+### 🐞 BugFix
+- 修复 `Modal` 关闭后，外部意外的移除了组件样式后，弹出层暴露出来的问题 ([#1289](https://github.com/sheinsight/shineout-next/pull/1289))
+
+## 3.7.5-beta.3
+2025-07-02
+
+### 🐞 BugFix
+
+- 修复 `Dropdown` 组件在开启 `hover` 模式时，鼠标移入非 dom 包含关系元素（如在 Dropdown 列表里打开一个 Modal）导致意外打开列表的问题 ([#1218](https://github.com/sheinsight/shineout-next/pull/1218))
+
+## 3.7.2-beta.3
+2025-06-12
+
+### 🐞 BugFix
+
+- 修复 `Modal` 被外部通过 ReactDOM.unmountComponentAtNode 卸载后，无法重置html元素的样式的问题 ([#1170](https://github.com/sheinsight/shineout-next/pull/1170))
+
+
 ## 3.7.0-beta.20
 2025-05-07
 

@@ -7,6 +7,16 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
   const [active, setActive] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [fetching, setFetching] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
+
+  const get = () => {
+    return {
+      hasTriggered,
+      active,
+      expanded,
+      fetching,
+    };
+  };
 
   const update = usePersistFn((key: string, value: boolean) => {
     switch (key) {
@@ -23,10 +33,16 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
           setFetching(value);
         }
         break;
+      case 'get':
+        return get();
     }
   });
 
   const handleToggle = () => {};
+
+  const handleTriggered = () => {
+    setHasTriggered(true);
+  };
 
   const isLeaf = () => {
     const children = data[childrenKey] as DataItem[];
@@ -54,6 +70,7 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
     setFetching,
     setExpanded,
     onToggle: handleToggle,
+    onTriggered: handleTriggered,
   };
 };
 export default useTreeNode;

@@ -46,7 +46,7 @@ const tableStyle: JsStyles<TableClassType> = {
         boxSizing: 'border-box',
         lineHeight: token.lineHeightDynamic,
         '$bordered&': {
-          '&::after': {
+          '&:not(:last-child)::after': {
             content: '""',
             position: 'absolute',
             zIndex: cellBaseIndex,
@@ -179,12 +179,15 @@ const tableStyle: JsStyles<TableClassType> = {
     '$sticky > &': {
       zIndex: headerIndex,
     },
-    '& table th': {
+    '$wrapper & table th': {
       zIndex: fixedFixedIndex + 1,
       '&$cellFixedLeft': {
         position: 'sticky',
         top: 'auto',
         zIndex: fixedFixedIndex + 2,
+      },
+      '&$cellFixedRight': {
+        zIndex: fixedFixedIndex + 3,
       },
     },
   },
@@ -206,7 +209,10 @@ const tableStyle: JsStyles<TableClassType> = {
         '&$cellFixedLeft': {
           position: 'sticky',
           top: 'auto',
-          zIndex: fixedIndex + 1,
+          zIndex: fixedIndex,
+        },
+        '&$cellFixedRight': {
+          zIndex: fixedIndex,
         },
       }
     },
@@ -261,9 +267,12 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   cellFixedLeft: {
     position: 'sticky',
+    // 快速横滚，有可能出现非固定列遮挡了固定列的短暂一瞬间，因此加上这个zIndex
+    zIndex: fixedIndex + 1,
   },
   cellFixedRight: {
     position: 'sticky',
+    zIndex: fixedFixedIndex,
   },
   cellAlignLeft: { textAlign: 'left' },
   cellAlignCenter: { textAlign: 'center' },
@@ -393,6 +402,10 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
 
+  filterOpened: {
+    background: token.buttonSecondaryHoverBackgroundColor
+  },
+
   filterContainer: {
     minWidth: '120px',
   },
@@ -406,6 +419,18 @@ const tableStyle: JsStyles<TableClassType> = {
     padding: `${token.tableFilterBodyPaddingY} ${token.tableFilterBodyPaddingX}`,
     maxHeight: '300px',
     overflow: 'auto',
+    // 特调Tree在Table filter中样式，以满足设计要求
+    '& [class*=tree-content-wrapper]': {
+      paddingTop: 1,
+      paddingBottom: 1,
+    },
+    '&& [class*=tree-checkbox]': {
+      alignSelf: 'center',
+    },
+    '& [class*=tree-text]': {
+      paddingTop: 5,
+      paddingBottom: 5,
+    },
   },
   filterFooter: {
     display: 'flex',
@@ -530,6 +555,12 @@ const tableStyle: JsStyles<TableClassType> = {
   cellIgnoreBorder: {
     '&::after': {
       display: 'none',
+    },
+  },
+  cellSortable: {
+    cursor: 'pointer',
+    '&:hover': {
+      background: token.tableTbodyHoverBackgroundColor,
     },
   },
   sticky: {},

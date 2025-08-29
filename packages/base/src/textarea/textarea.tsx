@@ -78,7 +78,7 @@ const Textarea = (props0: TextareaProps) => {
     control: 'value' in resetProps,
   });
 
-  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
+  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLTextAreaElement>) => {
     onBlur?.(e);
     inputAbleProps.forceDelayChange();
   });
@@ -162,6 +162,7 @@ const Textarea = (props0: TextareaProps) => {
     popoverProps: Object.assign(
       {
         style: { width: 'auto', fontSize: 12 },
+        adjust: true,
       },
       resetProps.popoverProps,
     ),

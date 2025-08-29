@@ -7,8 +7,10 @@ import { getLocale, useConfig } from '../config';
 import PickerTitle from './pickerTitle';
 import Confirm from './confirm';
 
+type TimeType = 'H' | 'h' | 'm' | 's' | 'ampm';
+
 const TimeScroll = (props: {
-  mode: string;
+  mode: TimeType;
   jssStyle: TimeProps['jssStyle'];
   times: {
     str: string;
@@ -130,6 +132,9 @@ const Time = (props: TimeProps) => {
     hourStep: props.hourStep,
     minuteStep: props.minuteStep,
     secondStep: props.secondStep,
+    position: props.position,
+    rangeDate: props.rangeDate,
+    defaultTime: props.defaultTime,
   });
 
   const selNow = () => {
@@ -170,6 +175,8 @@ const Time = (props: TimeProps) => {
     );
   };
 
+  const shouldRenderTimes = times && times.length > 0;
+
   return (
     <div
       onMouseEnter={props.onMouseEnter}
@@ -178,21 +185,23 @@ const Time = (props: TimeProps) => {
       dir={direction}
     >
       {props.showTitle && <PickerTitle position={props.position} jssStyle={props.jssStyle} />}
-      <div className={styles?.pickerBody}>
-        {times.map((item) => {
-          return (
-            <TimeScroll
-              key={item.mode}
-              mode={item.mode}
-              jssStyle={props.jssStyle}
-              times={item.times}
-              currentIndex={item.currentIndex}
-              isEmpty={props.value === null || props.value === undefined}
-              onChange={func.handleChange}
-            />
-          );
-        })}
-      </div>
+      {shouldRenderTimes && (
+        <div className={styles?.pickerBody}>
+          {times.map((item) => {
+            return (
+              <TimeScroll
+                key={item.mode}
+                mode={item.mode}
+                jssStyle={props.jssStyle}
+                times={item.times}
+                currentIndex={item.currentIndex}
+                isEmpty={props.value === null || props.value === undefined}
+                onChange={func.handleChange}
+              />
+            );
+          })}
+        </div>
+      )}
       {renderFooter()}
     </div>
   );

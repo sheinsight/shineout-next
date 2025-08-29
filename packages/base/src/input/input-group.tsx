@@ -19,7 +19,7 @@ export default (props: InputGroupProps) => {
   const { size, disabled, status, error, onBlur } = useWithFormConfig(props);
 
   const getProps = (child: React.ReactElement) => {
-    const onChildBlur = (e: React.FocusEvent<HTMLElement>) => {
+    const onChildBlur = (e: React.FocusEvent<HTMLInputElement>) => {
       const childBlurEvent = child.props.onBlur;
       if (childBlurEvent) {
         childBlurEvent(e);

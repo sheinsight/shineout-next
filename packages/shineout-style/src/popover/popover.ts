@@ -1,6 +1,7 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import { PopoverClasses } from '@sheinx/base';
+import { tooltipAnimation } from '../tooltip/tooltip';
 
 export type PopoverClassType = keyof PopoverClasses;
 
@@ -13,6 +14,7 @@ const poyfillPos = `calc((${hideArrowGap} + ${extraArrowGap}) * -1)`;
 const poyfillHeight = `calc((${hideArrowGap} + ${extraArrowGap}))`;
 
 const popoverStyle: JsStyles<PopoverClassType> = {
+  ...tooltipAnimation,
   rootClass: {},
   wrapper: {
     display: 'none',
@@ -22,7 +24,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     borderRadius: token.popoverRadius,
     border: `1px solid ${token.popoverBorderColor}`,
     wordWrap: 'break-word',
-    '& $arrow': {
+    '& > $arrow': {
       'z-index': 1,
       position: 'absolute',
       content: '" "',
@@ -41,7 +43,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     },
     '&[data-soui-position^="bottom"]': {
       marginTop: `calc(${hideArrowGap} - 2px)`,
-      '& $arrow': {
+      '& > $arrow': {
         top: '0',
         transform: 'translate(0, -50%) rotate(-45deg)',
         left: '0',
@@ -62,7 +64,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       // marginTop: (arrowGap - 2) * -1,
       marginTop: `calc((${hideArrowGap} - 2px) * -1)`,
 
-      '& $arrow': {
+      '& > $arrow': {
         bottom: '0',
         transform: 'translate(0, 50%) rotate(135deg)',
         left: '0',
@@ -84,7 +86,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     '&[data-soui-position^="left"]': {
       '&[dir=ltr]': { marginRight: `calc((${hideArrowGap} - 2px))` },
       '&[dir=rtl]': { marginLeft: `calc((${hideArrowGap} - 2px))` },
-      '& $arrow': {
+      '& > $arrow': {
         right: token.popoverBorderWidth,
         transform: 'translate(50%, 0) rotate(45deg)',
         top: '0',
@@ -104,7 +106,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     '&[data-soui-position^="right"]': {
       '&[dir=ltr]': { marginLeft: `calc(${hideArrowGap} - 2px)` },
       '&[dir=rtl]': { marginRight: `calc(${hideArrowGap} - 2px)` },
-      '& $arrow': {
+      '& > $arrow': {
         left: '0',
         transform: 'translate(-50%, 0) rotate(-135deg)',
         top: '0',
@@ -123,10 +125,10 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         position: 'absolute',
       },
     },
-    '&&[data-soui-position$="-left"] $arrow': { left: arrowMargin, right: 'auto' },
-    '&&[data-soui-position$="-right"] $arrow': { right: arrowMargin, left: 'auto' },
-    '&&[data-soui-position$="-top"] $arrow': { top: arrowMargin, bottom: 'auto' },
-    '&&[data-soui-position$="-bottom"] $arrow': { bottom: arrowMargin, top: 'auto' },
+    '&&[data-soui-position$="-left"] > $arrow': { left: arrowMargin, right: 'auto' },
+    '&&[data-soui-position$="-right"] > $arrow': { right: arrowMargin, left: 'auto' },
+    '&&[data-soui-position$="-top"] > $arrow': { top: arrowMargin, bottom: 'auto' },
+    '&&[data-soui-position$="-bottom"] > $arrow': { bottom: arrowMargin, top: 'auto' },
 
     '&[data-soui-type="danger"]': {
       borderColor: token.popoverDangerBorderColor,
@@ -152,6 +154,42 @@ const popoverStyle: JsStyles<PopoverClassType> = {
   },
   wrapperOpen: {
     display: 'block',
+    '&[data-soui-position^="bottom"]': {
+      animation: '$fadeIn 200ms ease, $moveBottom 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="bottom-left"]': {
+      animation: '$fadeIn 200ms ease, $moveBottomLeft 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="bottom-right"]': {
+      animation: '$fadeIn 200ms ease, $moveBottomRight 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="top"]': {
+      animation: '$fadeIn 200ms ease, $moveTop 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="top-left"]': {
+      animation: '$fadeIn 200ms ease, $moveTopLeft 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="top-right"]': {
+      animation: '$fadeIn 200ms ease, $moveTopRight 200ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+    },
+    '&[data-soui-position^="left"]': {
+      animation: '$fadeIn 200ms ease, $moveLeft 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="left-top"]': {
+      animation: '$fadeIn 200ms ease, $moveLeftTop 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="left-bottom"]': {
+      animation: '$fadeIn 200ms ease, $moveLeftBottom 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="right"]': {
+      animation: '$fadeIn 200ms ease, $moveRight 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="right-top"]': {
+      animation: '$fadeIn 200ms ease, $moveRightTop 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
+    '&[data-soui-position^="right-bottom"]': {
+      animation: '$fadeIn 200ms ease, $moveRightBottom 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
+    },
   },
   arrow: {},
   hideArrow: {},

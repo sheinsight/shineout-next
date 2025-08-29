@@ -5,7 +5,7 @@ import type {
   DatePickerValueType,
   UseDatePickerFormatProps,
 } from './use-datepicker-format.type';
-import shallowEqual from '../../utils/shallow-equal';
+import shallowEqual, { shallowEqualExceptFalsely } from '../../utils/shallow-equal';
 import { usePersistFn } from '../../common/use-persist-fn';
 import useLatestObj from '../../common/use-latest-obj';
 
@@ -233,7 +233,10 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       if (typeof props.formatResult === 'string') {
         return getFormatValueArr(dateArr, props.formatResult);
       } else if (typeof props.formatResult === 'function') {
-        return dateArr.map((item) => (props.formatResult as (date?: Date) => string)(item));
+        return dateArr.map((item) => {
+          if(!item) return ''
+          return (props.formatResult as (date?: Date) => string)(item)
+        })
       } else {
         return dateArr.map((item) => {
           if (!item) return '';
@@ -254,8 +257,18 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     }
     const formatValue = getFormatValueArr(dateArr);
     const v = range ? formatValue : formatValue[0];
-    if (!shallowEqual(v, value)) {
-      onChange?.(v as FormatValueType);
+    if (Array.isArray(value) && value.length && Array.isArray(v) && v.length) {
+      // 针对 range 的情况，['2025-01-01',''] 和 ['2025-01-01',undefined] 无法通过 shallowEqual 出来，这边需要放行
+      if (
+        !shallowEqualExceptFalsely(v[0], value[0]) ||
+        !shallowEqualExceptFalsely(v[1], value[1])
+      ) {
+        onChange?.(v as FormatValueType);
+      }
+    } else {
+      if (!shallowEqual(v, value)) {
+        onChange?.(v as FormatValueType);
+      }
     }
   };
 
@@ -332,9 +345,9 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     props.onClear?.();
   });
 
-  const handleInputChange = usePersistFn((str: string, index: number) => {
+  const handleInputChange = usePersistFn((str: string, index: number, isFromBlur?: boolean) => {
     // 比较 日期字符串是否符合format格式, 如果符合返回 true 否则返回 false
-    const isValid = dateUtil.isValidString(str, format);
+    const isValid = dateUtil.isValidString(str, format, isFromBlur);
     if (!isValid) return;
     const date = dateUtil.toDateWithFormat(str, format, undefined, options);
 
@@ -359,6 +372,11 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       arr[index] = date;
       return arr;
     });
+  });
+
+  // 失焦时，需要宽松模式校验，eg: 2025-06-16 18:00 和 2025-06-16 18 都可以校验通过
+  const handleInputBlur = usePersistFn((str: string, index: number) => {
+    handleInputChange(str, index, true);
   });
 
   const handleClearInputArr = usePersistFn((index?: number) => {
@@ -404,6 +422,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     handleClear,
     handleClearInputArr,
     handleInputChange,
+    handleInputBlur,
     registerModeDisabled,
     setCurrentArrWithParams,
     isDisabledDate,

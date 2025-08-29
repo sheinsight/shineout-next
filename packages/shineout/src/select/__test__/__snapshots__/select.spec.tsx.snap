@@ -764,21 +764,80 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         <div
           class="soui-select-result-text-wrapper soui-select-compressed-wrapper soui-select-multiple-result-wrapper soui-select-multiple-compressed-wrapper"
         >
-          <span
-            style="display: inline-flex;"
+          <div
+            class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright soui-tag-disabled"
+            data-soui-type="dark"
           >
             <div
-              class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+              class="soui-tag-wrapper soui-tag-inline"
             >
-              <div
-                class="soui-tag-wrapper"
-              >
-                <span>
-                  +2
-                </span>
-              </div>
+              <span>
+                red
+              </span>
             </div>
-          </span>
+            <div
+              class="soui-tag-close-icon"
+            >
+              <span
+                class="soui-tag-close-icon-wrapper"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5.60994 4.21871L5.70415 4.30189L12.0015 10.5851L18.3584 4.22893C18.749 3.8384 19.3821 3.8384 19.7727 4.22893C20.1331 4.58941 20.1609 5.15664 19.8558 5.54893L19.7727 5.64314L13.4165 12.0001L19.708 18.2923C20.0985 18.6828 20.0985 19.316 19.708 19.7065C19.3475 20.067 18.7803 20.0947 18.388 19.7897L18.2938 19.7065L12.0015 13.4151L5.68269 19.733C5.29217 20.1235 4.659 20.1235 4.26848 19.733C3.908 19.3725 3.88027 18.8053 4.18529 18.413L4.26848 18.3188L10.5865 12.0001L4.28994 5.71611C3.89941 5.32558 3.89941 4.69242 4.28994 4.30189C4.65042 3.94141 5.21765 3.91368 5.60994 4.21871Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright soui-tag-disabled"
+            data-soui-type="dark"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                orange
+              </span>
+            </div>
+            <div
+              class="soui-tag-close-icon"
+            >
+              <span
+                class="soui-tag-close-icon-wrapper"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5.60994 4.21871L5.70415 4.30189L12.0015 10.5851L18.3584 4.22893C18.749 3.8384 19.3821 3.8384 19.7727 4.22893C20.1331 4.58941 20.1609 5.15664 19.8558 5.54893L19.7727 5.64314L13.4165 12.0001L19.708 18.2923C20.0985 18.6828 20.0985 19.316 19.708 19.7065C19.3475 20.067 18.7803 20.0947 18.388 19.7897L18.2938 19.7065L12.0015 13.4151L5.68269 19.733C5.29217 20.1235 4.659 20.1235 4.26848 19.733C3.908 19.3725 3.88027 18.8053 4.18529 18.413L4.26848 18.3188L10.5865 12.0001L4.28994 5.71611C3.89941 5.32558 3.89941 4.69242 4.28994 4.30189C4.65042 3.94141 5.21765 3.91368 5.60994 4.21871Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            style="position: absolute; z-index: -100; user-select: none; contain: layout;"
+          >
+            <div
+              class="soui-tag-wrapper"
+            >
+              <span>
+                +
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -816,21 +875,78 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         <div
           class="soui-select-result-text-wrapper soui-select-compressed-wrapper soui-select-multiple-result-wrapper soui-select-multiple-compressed-wrapper"
         >
-          <span
-            style="display: inline-flex;"
+          <div
+            class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
           >
             <div
-              class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+              class="soui-tag-wrapper soui-tag-inline"
             >
-              <div
-                class="soui-tag-wrapper"
-              >
-                <span>
-                  +2
-                </span>
-              </div>
+              <span>
+                red
+              </span>
             </div>
-          </span>
+            <div
+              class="soui-tag-close-icon"
+            >
+              <span
+                class="soui-tag-close-icon-wrapper"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5.60994 4.21871L5.70415 4.30189L12.0015 10.5851L18.3584 4.22893C18.749 3.8384 19.3821 3.8384 19.7727 4.22893C20.1331 4.58941 20.1609 5.15664 19.8558 5.54893L19.7727 5.64314L13.4165 12.0001L19.708 18.2923C20.0985 18.6828 20.0985 19.316 19.708 19.7065C19.3475 20.067 18.7803 20.0947 18.388 19.7897L18.2938 19.7065L12.0015 13.4151L5.68269 19.733C5.29217 20.1235 4.659 20.1235 4.26848 19.733C3.908 19.3725 3.88027 18.8053 4.18529 18.413L4.26848 18.3188L10.5865 12.0001L4.28994 5.71611C3.89941 5.32558 3.89941 4.69242 4.28994 4.30189C4.65042 3.94141 5.21765 3.91368 5.60994 4.21871Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright soui-tag-disabled"
+          >
+            <div
+              class="soui-tag-wrapper soui-tag-inline"
+            >
+              <span>
+                orange
+              </span>
+            </div>
+            <div
+              class="soui-tag-close-icon"
+            >
+              <span
+                class="soui-tag-close-icon-wrapper"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5.60994 4.21871L5.70415 4.30189L12.0015 10.5851L18.3584 4.22893C18.749 3.8384 19.3821 3.8384 19.7727 4.22893C20.1331 4.58941 20.1609 5.15664 19.8558 5.54893L19.7727 5.64314L13.4165 12.0001L19.708 18.2923C20.0985 18.6828 20.0985 19.316 19.708 19.7065C19.3475 20.067 18.7803 20.0947 18.388 19.7897L18.2938 19.7065L12.0015 13.4151L5.68269 19.733C5.29217 20.1235 4.659 20.1235 4.26848 19.733C3.908 19.3725 3.88027 18.8053 4.18529 18.413L4.26848 18.3188L10.5865 12.0001L4.28994 5.71611C3.89941 5.32558 3.89941 4.69242 4.28994 4.30189C4.65042 3.94141 5.21765 3.91368 5.60994 4.21871Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            style="position: absolute; z-index: -100; user-select: none; contain: layout;"
+          >
+            <div
+              class="soui-tag-wrapper"
+            >
+              <span>
+                +
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div

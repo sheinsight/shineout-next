@@ -139,7 +139,10 @@ const usePopup = (props: BasePopupProps) => {
   const handleMouseEnter = usePersistFn((e: { target: EventTarget | null }) => {
     targetEvents?.onMouseEnter?.(e);
     if (trigger !== 'hover') return;
-    handleHoverToggle(true);
+    const isParentContainsCurrent = targetRef.current?.contains(e.target as Node);
+    if (isParentContainsCurrent || popupRef?.current?.contains(e.target as Node)) {
+      handleHoverToggle(true);
+    }
   });
 
   const handleMouseLeave = usePersistFn((e: { target: EventTarget | null }) => {

@@ -44,6 +44,9 @@ const config = {
   dropdown: {
     DropdownArrow: icons.ArrowDown,
   },
+  empty: {
+    NoData: icons.EmptyNoData,
+  },
   editableArea: {
     Close: icons.CloseFill,
   },

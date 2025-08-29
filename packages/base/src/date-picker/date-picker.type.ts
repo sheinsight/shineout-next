@@ -143,7 +143,7 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @en Disable the specified Time.
    * @cn 禁用指定 Time。
    */
-  disabledTime?: string | ((time: string) => boolean);
+  disabledTime?: string | ((time: string, type?: 'start' | 'end', value0?: Date, value1?: Date) => boolean);
 
   /**
    * @en Set visible of datepicker popup
@@ -331,12 +331,12 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @en blur event callback
    * @cn blur 事件回调
    */
-  onBlur?: (e: any) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>, index?: number) => void;
   /**
    * @en focus event callback
    * @cn focus 事件回调
    */
-  onFocus?: (e: any) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
   /**
    * @en only display border bottom
    * @cn 是否只展示下边框

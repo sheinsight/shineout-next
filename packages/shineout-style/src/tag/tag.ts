@@ -245,6 +245,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     display: 'inline-flex',
     cursor: 'pointer',
     height: Token.lineHeightDynamic,
+    maxHeight: '100%',
   },
 
   closeIconWrapper: {

@@ -22,7 +22,8 @@ interface UseTableVirtualProps {
   isRtl?: boolean;
   columns: TableFormatColumn<any>[];
   colgroup: (number | string | undefined)[];
-  theadAndTfootHeight: number;
+  theadHeight: number;
+  tfootHeight: number;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerTop, setTop] = useState(0);
@@ -107,7 +108,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     for (let i = 0; i <= index; i++) {
       sum += context.cachedHeight[i] || props.rowHeight;
     }
-    return sum + props.theadAndTfootHeight;
+    return sum + props.theadHeight + props.tfootHeight;
   };
 
   const setRowHeight = usePersistFn((index: number, height: number) => {
@@ -260,7 +261,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
           callback()
         }
       };
-      props.scrollRef.current.scrollTop = beforeHeight;
+      props.scrollRef.current.scrollTop = beforeHeight - props.theadHeight;
     }
   });
 
@@ -340,7 +341,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   useEffect(() => {
     if (props.disabled) return;
     setHeight(getContentHeight(props.data.length - 1));
-  }, [props.data.length, props.theadAndTfootHeight]);
+  }, [props.data.length, props.theadHeight, props.tfootHeight]);
 
   useEffect(() => {
     if (props.disabled) return;
@@ -379,6 +380,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     scrollToIndex,
     scrollColumnByLeft,
     scrollColumnIntoView,
+    rowSpanInfo,
   };
 };
 

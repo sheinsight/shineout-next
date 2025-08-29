@@ -8,5 +8,5 @@ export interface InputFormatProps {
    * 是否去除前后空格
    */
   trim?: boolean;
-  onBlur?: React.FocusEventHandler;
+  onBlur?: React.FocusEventHandler<HTMLTextAreaElement>;
 }

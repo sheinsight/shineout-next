@@ -254,4 +254,67 @@ describe('TreeSelect[Base]', () => {
     classTest(iconElement, arrowIconOpen, false);
     expect(onEnterExpand.mock.calls.length).toBe(1);
   });
+  test('should call onChangeAddition with correct checked state in multiple mode', async () => {
+    const onChangeAddition = jest.fn();
+    const { container } = render(<TreeSelectTest multiple onChangeAddition={onChangeAddition} />);
+    const selectWrapper = container.querySelector(wrapper)!;
+
+    // 打开下拉框
+    fireEvent.click(selectWrapper.querySelector(result)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+
+    // 展开第一个节点
+    const treeRoot = selectWrapper.querySelector(root)!;
+    const treeNodes = treeRoot.querySelectorAll(`:scope > ${node}`);
+    fireEvent.click(treeNodes[0].querySelector('svg')!);
+
+    // 选中第一个子节点
+    const treeChildren = treeNodes[0].querySelector(children)!;
+    const treeChildrenNodes = treeChildren.querySelectorAll(node);
+    fireEvent.click(treeChildrenNodes[0].querySelector('input')!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+
+    // 验证选中时的回调参数
+    expect(onChangeAddition).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        checked: 1,
+        current: expect.objectContaining({
+          id: '1-1',
+          title: 'node 1-1',
+          children: expect.arrayContaining([
+            expect.objectContaining({ id: '1-1-1', title: 'node 1-1-1' }),
+            expect.objectContaining({ id: '1-1-2', title: 'node 1-1-2' })
+          ])
+        })
+      })
+    );
+
+    // 取消选中
+    fireEvent.click(treeChildrenNodes[0].querySelector('input')!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+
+    // 验证取消选中时的回调参数
+    expect(onChangeAddition).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        checked: 0,
+        current: expect.objectContaining({
+          id: '1-1',
+          title: 'node 1-1',
+          children: expect.arrayContaining([
+            expect.objectContaining({ id: '1-1-1', title: 'node 1-1-1' }),
+            expect.objectContaining({ id: '1-1-2', title: 'node 1-1-2' })
+          ])
+        })
+      })
+    );
+
+    // 验证总共调用次数
+    expect(onChangeAddition).toHaveBeenCalledTimes(2);
+  });
 });

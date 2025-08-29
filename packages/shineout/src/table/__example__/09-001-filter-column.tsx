@@ -75,7 +75,7 @@ const columns: TableColumnItem[] = [
       mode: 'search',
       // 根据onFilter函数过滤数据
       onFilter: (value: string, row) => {
-        return row.name.startsWith(value);
+        return row.name.toLowerCase().includes(value.toLowerCase());
       },
     },
   },
@@ -83,6 +83,7 @@ const columns: TableColumnItem[] = [
     title: 'Age',
     render: 'age',
     width: 300,
+    align: 'right',
     filter: {
       // 筛选模式：select 选择框（单选或多选）
       mode: 'select',
@@ -107,18 +108,19 @@ const columns: TableColumnItem[] = [
     },
   },
   {
-    title: 'Salary',
-    render: 'salary',
+    title: 'Salary($)',
+    render: d => d.salary.toLocaleString(),
     width: 300,
+    align: 'right',
     filter: {
       mode: 'select',
       config: {
         data: [
-          { label: '50000', value: 50000 },
-          { label: '60000', value: 60000 },
-          { label: '70000', value: 70000 },
-          { label: '80000', value: 80000 },
-          { label: '90000', value: 90000 },
+          { label: '50,000', value: 50000 },
+          { label: '60,000', value: 60000 },
+          { label: '70,000', value: 70000 },
+          { label: '80,000', value: 80000 },
+          { label: '90,000', value: 90000 },
         ],
         // 自定义渲染选项
         renderItem: (d) => `>= ${d.label}`,

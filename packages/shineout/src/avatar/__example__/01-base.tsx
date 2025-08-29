@@ -23,7 +23,7 @@ const userIcon = (
 export default () => {
   return (
     <div>
-      <Avatar icon={userIcon}></Avatar>
+      <Avatar icon={userIcon} />
     </div>
   );
 };

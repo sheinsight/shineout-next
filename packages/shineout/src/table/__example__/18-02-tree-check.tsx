@@ -1,8 +1,8 @@
 /**
- * cn -
- *    -- 设置 treeCheckAll, 支持递归选择子数据
- * en -
- *    -- Set treeCheckAll to deep check children
+ * cn - 树形数据选择
+ *    -- 设置 `treeCheckAll`，支持递归选择子数据
+ * en - Tree Check
+ *    -- Set `treeCheckAll` to deep check children
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

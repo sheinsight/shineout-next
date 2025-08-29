@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "description": "A components library for React",
   "license": "MIT",
-  "keywords": ["shein", "react", "ui", "soui", "component"],
+  "keywords": [
+    "shein",
+    "react",
+    "ui",
+    "soui",
+    "component"
+  ],
   "author": "",
   "sideEffects": false,
   "main": "./dist/cjs/index.js",
@@ -22,16 +28,17 @@
     "@sheinx/shineout-style": "workspace:*",
     "@sheinx/theme": "workspace:*",
     "classnames": "^2.0.0",
-    "immer": "^10.0.0",
-    "deep-eql": "^4.0.0"
+    "deep-eql": "^4.0.0",
+    "immer": "^10.0.0"
   },
   "devDependencies": {
-    "jszip": "^3.10.1",
-    "@sheinx/mock": "workspace:*"
+    "@sheinx/mock": "workspace:*",
+    "dayjs": "^1.11.9",
+    "jszip": "^3.10.1"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8",
-    "core-js": ">=3"
+    "core-js": ">=3",
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
   }
 }

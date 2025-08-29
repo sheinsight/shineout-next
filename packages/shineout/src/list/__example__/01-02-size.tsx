@@ -96,7 +96,7 @@ const App: React.FC = () => {
         value={size}
         onChange={setSize}
       />
-      <List keygen='id' bordered data={data} renderItem={renderItem} size={size} />
+      <List keygen='id' bordered data={data} renderItem={renderItem} size={size as any} />
     </>
   );
 };

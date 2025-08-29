@@ -48,7 +48,6 @@ const originClasses = [
 ];
 const originItemClasses = [
   'resultUploading',
-  'resultStatusIcon',
   'iconHover',
   'resultError',
   'resultSuccess',
@@ -61,10 +60,8 @@ const {
   result,
   resultText,
   resultTextBody,
-  resultTextFooter,
   icon,
   resultUploading,
-  resultStatusIcon,
   resultClose,
   iconHover,
   resultError,
@@ -140,8 +137,6 @@ describe('Upload[Base]', () => {
     const uploadResultText = uploadResult.querySelector(resultText)!;
     classLengthTest(uploadResultText.querySelector(icon)!, 'svg', 1);
     textContentTest(uploadResultText.querySelector(resultTextBody)!, fileTextName);
-    const uploadResultFooter = uploadResultText.querySelector(resultTextFooter)!;
-    classTest(uploadResultFooter.querySelector(icon)!, resultStatusIcon);
     const uploadResultClose = uploadResult.querySelector(resultClose)!;
     classTest(uploadResultClose, iconHover);
     classLengthTest(uploadResultClose, 'svg', 1);

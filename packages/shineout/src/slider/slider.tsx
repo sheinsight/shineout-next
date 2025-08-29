@@ -11,6 +11,8 @@ const BaseSlider = <Value extends SliderValueType>(props: BaseSliderProps<Value>
   return <Slider jssStyle={jssStyle} {...props} />;
 };
 
+BaseSlider.displayName = 'ShineoutSlider';
+
 export default <Value extends SliderValueType>(props: SliderProps<Value>) => {
   return useFieldCommon(props, BaseSlider<Value>, 'number');
 };

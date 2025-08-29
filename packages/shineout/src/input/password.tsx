@@ -12,6 +12,9 @@ const jssStyle = {
 const InputPassword = (props: BasePasswordProps) => {
   return <UnStyleInputPassword {...props} jssStyle={jssStyle} />;
 };
+
+InputPassword.displayName = 'ShineoutInputPassword';
+
 export default (props: InputPasswordProps) => {
   return useFieldCommon(props, InputPassword);
 };

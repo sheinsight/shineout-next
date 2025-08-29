@@ -1,3 +1,78 @@
+## 3.8.0-beta.45
+2025-08-22
+
+### 🆕 Feature
+- `Select` 新增 `onClear` 属性，支持监听清除事件 ([#1322](https://github.com/sheinsight/shineout-next/pull/1322))
+
+
+## 3.8.0-beta.36
+2025-08-18
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `onCreate` 且开启 `renderUnmatched` 时，渲染结果与老版本不一致的问题 ([#1312](https://github.com/sheinsight/shineout-next/pull/1312))
+
+
+## 3.8.0-beta.9
+2025-06-30
+
+### 🆕 Feature
+- `Select` 新增 `preventEnterSelect` 属性，开启 onCreate 时可阻止回车选中已有选项，仅创建选项 ([#1214](https://github.com/sheinsight/shineout-next/pull/1214))
+
+
+## 3.7.10-beta.1
+2025-08-11
+
+### 🐞 BugFix
+- 优化 `Select` 开启 `columns` 后，列表上方的全选字样支持多语言配置 ([#1294](https://github.com/sheinsight/shineout-next/pull/1294))
+
+## 3.7.8-beta.12
+2025-07-29
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `columns` 后，滚动容器的内边距不正确的样式问题 ([#1274](https://github.com/sheinsight/shineout-next/pull/1274))
+
+## 3.7.8-beta.8
+2025-07-28
+
+### 🐞 BugFix
+- 修复 `Select` 过滤过程中受 `trim` 属性影响，表现与老版本（v1、v2）不一致的问题 ([#1267](https://github.com/sheinsight/shineout-next/pull/1267))
+
+## 3.7.6-beta.4
+2025-07-10
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `onLoadMore` 加载新数据时列表重置到第一条的问题(Regression: since v3.7.1) ([#1237](https://github.com/sheinsight/shineout-next/pull/1237))
+
+## 3.7.6-beta.2
+2025-07-08
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `highlight` 后在 renderItem 中渲染非单层 dom 结构功能失效的问题 ([#1232](https://github.com/sheinsight/shineout-next/pull/1232))
+
+## 3.7.5-beta.11
+2025-07-04
+
+### 🚀 Performance
+- 优化 `Select` 的 `compressed` 在大数据场景下的性能表现 ([#1226](https://github.com/sheinsight/shineout-next/pull/1226))
+
+## 3.7.2-beta.2
+2025-06-11
+
+### 💅 Style
+- 优化框类组件小尺寸字号下 `innerTitle` 的样式表现 ([#1169](https://github.com/sheinsight/shineout-next/pull/1169))
+
+## 3.7.1-beta.9
+2025-06-11
+
+### 🐞 BugFix
+- 修复 `Select` 在 `Drawer` 中使用并且开启了compressed属性后，点击compressed弹出层中的删除第二次无效的问题 ([#1164](https://github.com/sheinsight/shineout-next/pull/1164))
+
+## 3.7.1-beta.5
+2025-06-10
+
+### 🐞 BugFix
+- 修复 `Select` 同时设置了 `absolute` 和 `optionWidth` 属性后，弹出层在右侧溢出时位置不自动调整的问题 ([#1159](https://github.com/sheinsight/shineout-next/pull/1159))
+
 ## 3.7.1-beta.4
 2025-06-09
 
@@ -169,6 +244,12 @@
 ### 🐞 BugFix
 - 修复 `Select` 的树形数据展开时，设置的autoAdapt(下拉列表宽度根据内容自由展开)不生效的问题([#614](https://github.com/sheinsight/shineout-next/pull/614))
 
+
+## 3.3.3
+2024-08-15
+
+### 🆕 Feature
+- 支持 `Select` 单选搜索时，展示非string类型的值(renderItem返回的结果) ([#605](https://github.com/sheinsight/shineout-next/pull/605))
 
 ## 3.3.3
 2024-08-15

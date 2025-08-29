@@ -12,6 +12,8 @@ const BaseCheckbox = <T,>(props: BaseCheckboxProps<T>) => {
   return <UnStyledCheckbox {...props} jssStyle={jssStyle} />;
 };
 
+BaseCheckbox.displayName = 'ShineoutCheckbox';
+
 const Checkbox = <T,>(props: CheckboxProps<T>) => {
   return useFieldCommon(props, BaseCheckbox<T>);
 };

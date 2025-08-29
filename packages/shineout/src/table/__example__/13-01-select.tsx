@@ -1,6 +1,6 @@
 /**
  * cn - 选择行
- *    -- 设置 onRowSelect 属性，会自动添加选择列
+ *    -- 设置 `onRowSelect` 属性，会自动添加选择列
  * en - Select
  *    -- Set the onRowSelect property will automatically add a column with checkbox
  */

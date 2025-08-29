@@ -54,9 +54,11 @@ export default {
 
   ok: 'Ok',
   cancel: 'Cancel',
+  reset: 'Reset',
   noData: 'Data not found',
   selectAll: 'Select All',
   loading: 'loading...',
+  searchPlaceholder: 'Search in filter options',
 
   rules: {
     required: {
@@ -83,6 +85,6 @@ export default {
   search: 'search',
   urlInvalidMsg: 'Picture format is incorrect, please upload again',
   invalidAccept: 'Invalid file format',
-
+  invalidImage: 'Invalid image format',
   notFound: 'not found',
 };

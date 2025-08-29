@@ -24,6 +24,8 @@ const BaseUpload = <T,>(props: BaseUploadProps<T>) => {
   return <Upload jssStyle={jssStyle} {...props} />;
 };
 
+BaseUpload.displayName = 'ShineoutUpload';
+
 export default <T,>(props: UploadProps<T>) => {
   const customProps = useUploadCommon({ rules: props.rules });
 

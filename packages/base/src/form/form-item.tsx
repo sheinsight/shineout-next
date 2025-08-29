@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useFormItem, util } from '@sheinx/hooks';
 import { useTooltipStyle } from '@sheinx/shineout-style';
 import classNames from 'classnames';
@@ -11,7 +11,7 @@ import type { FormItemClasses, FormItemProps } from './form-item.type';
 const FormItem = (props: FormItemProps) => {
   const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
   const formItemClasses = jssStyle?.formItem?.() as FormItemClasses;
-  const { Provider, ProviderValue, labelConfig, errors, showError, attributes } = useFormItem();
+  const { Provider: FormItemContextProvider, ProviderValue, labelConfig, errors, showError, attributes } = useFormItem();
   const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight, keepErrorBelow, colon } = {
     ...labelConfig,
     ...rest,
@@ -66,6 +66,30 @@ const FormItem = (props: FormItemProps) => {
     return <>{label as React.ReactNode}</>;
   };
 
+  const labelRef = useRef<HTMLDivElement>(null);
+  const labelTipRef = useRef<HTMLDivElement>(null);
+  let labelText = labelRef.current?.textContent;
+  if(labelTipRef.current?.textContent) {
+    labelText += ` (tip: ${labelTipRef.current?.textContent})`;
+  }
+
+  const renderError = () => {
+    if(!showError) return null;
+    let uniqueErrors = errors;
+    if(errors.length > 1) {
+      uniqueErrors = errors.filter((error, index, self) =>
+        index === self.findIndex((t) => t.message === error.message)
+      )
+    }
+    return (
+      <div className={formItemClasses?.error}>
+        {uniqueErrors.map((error, index) => (
+          <div key={index}>{error && <ErrorTrans error={error} />}</div>
+        ))}
+      </div>
+    )
+  }
+
   return (
     <div
       className={classNames(
@@ -78,6 +102,7 @@ const FormItem = (props: FormItemProps) => {
           [formItemClasses?.wrapperInline]: inline,
           [formItemClasses?.wrapperKeepHeight]: keepErrorHeight,
           [formItemClasses?.wrapperRequired]: required,
+          [formItemClasses?.wrapperHideRequired]: required === false,
           [formItemClasses?.wrapperTip]: showError || tip,
         }
       )}
@@ -86,6 +111,7 @@ const FormItem = (props: FormItemProps) => {
     >
       {label !== undefined ? (
         <div
+          ref={labelRef}
           className={classNames(
             formItemClasses?.label,
             {
@@ -103,17 +129,11 @@ const FormItem = (props: FormItemProps) => {
         className={formItemClasses?.control}
         {...util.getDataAttribute({ role: 'form-control' })}
       >
-        <Provider value={ProviderValue}>{children}</Provider>
+        <FormItemContextProvider value={{ ...ProviderValue, label: labelText }}>{children}</FormItemContextProvider>
 
-        {!!tip && (!showError || keepErrorBelow) && <div className={formItemClasses?.tip}>{tip}</div>}
+        {!!tip && (!showError || keepErrorBelow) && <div ref={labelTipRef} className={formItemClasses?.tip}>{tip}</div>}
 
-        {showError && (
-          <div className={formItemClasses?.error}>
-            {errors.map((error, index) => (
-              <div key={index}>{error && <ErrorTrans error={error} />}</div>
-            ))}
-          </div>
-        )}
+        {renderError()}
       </div>
     </div>
   );

@@ -1,3 +1,34 @@
+## 3.8.0-beta.42
+2025-08-20
+
+### 🐞 BugFix
+- 修复 `Upload` 自定义的 `request` 没有处理 onProgress 事件时，没有加载状态的问题 ([#1319](https://github.com/sheinsight/shineout-next/pull/1319))
+
+## 3.7.7-beta.9
+2025-07-18
+
+### 🐞 BugFix
+- 修复 `Upload` 的父容器点击事件触发两次的问题 ([#1253](https://github.com/sheinsight/shineout-next/pull/1253))
+
+## 3.7.7-beta.1
+2025-07-15
+
+### 🐞 BugFix
+- 修复 `Upload.Image` 不限制 `accept` 时选择非图片格式文件内部校验不通过后，报错信息无内容的问题 ([#1242](https://github.com/sheinsight/shineout-next/pull/1242))
+
+## 3.7.2-beta.6
+2025-06-16
+
+### 💅 Style
+- 调整 Upload 在鼠标移入上传触发区域时的样式优先级 ([#1175](https://github.com/sheinsight/shineout-next/pull/1175))
+
+## 3.7.2-beta.2
+2025-06-12
+
+### 💎 Enhancement
+
+- 优化 `Upload` 上传结果的样式，移除了成功和失败状态的图标 ([#1168](https://github.com/sheinsight/shineout-next/pull/1168))
+
 ## 3.7.0-beta.22
 2025-05-08
 

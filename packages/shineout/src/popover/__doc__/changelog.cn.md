@@ -1,3 +1,35 @@
+## 3.8.0-beta.23
+2025-08-04
+
+### 🐞 BugFix
+- 修复 `Popover` 关闭后，外部意外的移除了组件样式后，弹出层暴露出来的问题 ([#1289](https://github.com/sheinsight/shineout-next/pull/1289))
+
+## 3.8.0-beta.2
+2025-04-01
+
+### 💎 Enhancement
+
+- 增加 `Popover` 的弹出动画效果 ([#1173](https://github.com/sheinsight/shineout-next/pull/1173))
+
+
+## 3.7.9-beta.6
+2025-08-04
+
+### 🐞 BugFix
+- 修复 `Popover` 当 `children` 为函数时，在组件挂载时就执行，表现与老版本不一致的问题 ([#1288](https://github.com/sheinsight/shineout-next/pull/1288))
+
+## 3.7.7-beta.4
+2025-07-16
+
+### 🐞 BugFix
+- 修复 `Popover` 嵌套使用时，父子的position不相同时，子元素的箭头位置不正确的问题 ([#1247](https://github.com/sheinsight/shineout-next/pull/1247))
+
+## 3.7.4-beta.2
+2025-06-24
+
+### 🚀 Performance
+- 优化 `Popover` 初始化性能，移除mount时多余的DOM样式计算 ([#1200](https://github.com/sheinsight/shineout-next/pull/1200))
+
 ## 3.7.0-beta.1
 2025-04-01
 

@@ -19,6 +19,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     lineHeight: lineHeightProp,
     threshold,
     controlType,
+    keepScrollTop,
     hideCreateOption,
     optionListRef,
     isAnimationFinish,
@@ -194,6 +195,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         dynamicVirtual={dynamicVirtual}
         tagClassName={styles.virtualList}
         height={height}
+        keepScrollTop={keepScrollTop}
         onScroll={handleVirtualScroll}
         lineHeight={lineHeight}
         rowsInView={itemsInView}

@@ -22,6 +22,7 @@ import {
   useResize,
   useScrollbarWidth,
   util,
+  addResizeObserver,
 } from '@sheinx/hooks';
 import { TableClasses, TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -73,7 +74,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const { current: context } = useRef({
     emptyHeight: 0,
-    theadAndTfootHeight: 0,
+    theadHeight: 0,
+    tfootHeight: 0,
     scrollingTimer: null as any,
   });
 
@@ -205,13 +207,38 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     disabled: props.disabled,
   });
 
-  useEffect(() => {
+  const handleTheadAndTfootHeight = usePersistFn(() => {
     const theadHeight = theadRef?.current?.clientHeight || 0;
     const tfootHeight = tfootRef.current?.clientHeight || 0;
     if (props.sticky) {
-      context.theadAndTfootHeight = tfootHeight;
+      context.tfootHeight = tfootHeight;
     } else {
-      context.theadAndTfootHeight = theadHeight + tfootHeight;
+      context.theadHeight = theadHeight;
+      context.tfootHeight = tfootHeight;
+    }
+  })
+
+  useEffect(() => {
+    handleTheadAndTfootHeight();
+
+    let cancelFunc1: () => void | undefined;
+    if (theadRef?.current) {
+      cancelFunc1 = addResizeObserver(theadRef?.current, handleTheadAndTfootHeight, {
+        direction: 'y',
+        timer: 10,
+      });
+    }
+    let cancelFunc2: () => void | undefined;
+    if (tfootRef?.current) {
+      cancelFunc2 = addResizeObserver(tfootRef?.current, handleTheadAndTfootHeight, {
+        direction: 'y',
+        timer: 10,
+      });
+    }
+
+    return () => {
+      cancelFunc1?.();
+      cancelFunc2?.();
     }
   }, [theadRef.current, tfootRef.current]);
 
@@ -226,7 +253,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     innerRef: tbodyRef,
     scrollLeft: props.scrollLeft,
     isRtl,
-    theadAndTfootHeight: context.theadAndTfootHeight,
+    theadHeight: context.theadHeight,
+    tfootHeight: context.tfootHeight,
   });
 
   const syncHeaderScroll = usePersistFn((left: number) => {
@@ -319,6 +347,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const $empty = renderEmpty();
 
+  const tableStyle = { width, borderSpacing: 0 }
   const renderTable = () => {
     const Group = (
       <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
@@ -367,6 +396,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       onFilterChange,
       sortInfo: sortInfo,
       sortDirections: props.sortDirections,
+      cellSortable: props.cellSortable,
       onSorterChange: onSorterChange,
       dragCol: layoutFunc.dragCol,
       resizeCol: layoutFunc.resizeCol,
@@ -387,6 +417,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       columns: columns,
       jssStyle: props.jssStyle,
       colgroup: colgroup,
+      data: props.data,
     };
 
     const StickyWrapper = props.sticky ? Sticky : React.Fragment;
@@ -494,7 +525,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
     const $headTable = (
       <div className={headWrapperClass} {...util.getDataAttribute({ role: theadIdRef.current })}>
-        <table style={{ width }} ref={theadRef}>
+        <table style={tableStyle} ref={theadRef}>
           {Group}
           <Thead {...headCommonProps} />
         </table>
@@ -530,7 +561,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
             {/* tbody of virtual */}
             {!!props.data?.length && (
-              <table style={{ width, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
+              <table style={{ ...tableStyle, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
                 {Group}
                 <Tbody
                   {...bodyCommonProps}
@@ -538,6 +569,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                   data={virtualInfo.data}
                   setRowHeight={virtualInfo.setRowHeight}
                   scrolling={scrolling}
+                  virtualRowSpanInfo={virtualInfo.rowSpanInfo}
+                  fullData={treeData}
                 />
               </table>
             )}
@@ -545,7 +578,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {/* tfoot of virtual */}
             {showFoot ? (
               <div className={footWrapperClass}>
-                <table style={{ width }} ref={tfootRef}>
+                <table style={tableStyle} ref={tfootRef}>
                   {Group}
                   <Tfoot {...footCommonProps} />
                 </table>
@@ -565,7 +598,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       <>
         {renderHeadMirrorScroller()}
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-          <table style={{ width }} ref={tbodyRef}>
+          <table style={tableStyle} ref={tbodyRef}>
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (
@@ -687,7 +720,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         style={{ height: defaultHeight, ...props.style }}
         dir={config.direction}
       >
-        <table style={{ width }}>{props.children}</table>
+        <table style={tableStyle}>{props.children}</table>
       </div>
     );
 

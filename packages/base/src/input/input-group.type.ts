@@ -35,7 +35,7 @@ export interface InputGroupProps extends Pick<CommonType, 'status' | 'style' | '
    * @en The callback of blur
    * @cn 失去焦点后的回调
    */
-  onBlur?: React.FocusEventHandler;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * @en Whether to separate the border
    * @cn 是否分离边框

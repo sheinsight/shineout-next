@@ -71,6 +71,9 @@ export default (props: TfootProps) => {
     );
   };
   const getTrs = () => {
+    if (props?.summary?.length && props?.data?.length === 0) {
+      return [];
+    }
     let { summary = [] } = props;
     if (!isArray(summary[0])) {
       summary = [summary as SummaryItem[]];

@@ -3,8 +3,10 @@ import List from './pagination-size-list';
 import Jumper from './pagination-jumper';
 import Buttons from './pagination-buttons';
 import Simple from './pagination-simple';
-import { usePagination } from '@sheinx/hooks';
+import { usePagination, util } from '@sheinx/hooks';
 import { PaginationProps } from './pagination.type';
+
+const { devUseWarning } = util;
 
 const Pagination = (props: PaginationProps) => {
   const {
@@ -26,7 +28,13 @@ const Pagination = (props: PaginationProps) => {
     pageSizeList,
     style,
     select,
+    sizeListProps,
   } = props;
+
+  // 兼容v1 & v2版本
+  if (props.sizeListProps) {
+    devUseWarning.deprecated('sizeListProps', 'select', 'Pagination');
+  }
 
   const { onChange, current, pageSize } = usePagination({
     total,
@@ -118,6 +126,7 @@ const Pagination = (props: PaginationProps) => {
                 pageSize={pageSize}
                 pageSizeList={pageSizeList}
                 onChange={onChange}
+                sizeListProps={sizeListProps}
               />
             );
           case 'simple':

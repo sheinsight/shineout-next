@@ -1,6 +1,7 @@
 import React from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 import { InputFormatProps } from './use-input-format.type';
+import { preciseString } from '../../utils/number';
 
 function regLength(size?: number) {
   return /\d+/.test(String(size)) && size! > 0 ? `{0,${size}}` : '*';
@@ -64,7 +65,7 @@ const useInputFormat = (props: InputFormatProps) => {
     onChange(value);
   });
 
-  const handleBlur = usePersistFn((e: React.FocusEvent) => {
+  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
     let value = target.value;
     let before = value;
@@ -96,7 +97,7 @@ const useInputFormat = (props: InputFormatProps) => {
 
       if (digits !== undefined && autoFix) {
         if (digits > 0) {
-          value = parseFloat(value).toFixed(digits);
+          value = preciseString(value, digits);
         } else if (digits === 0) {
           value = parseInt(value, 10).toString();
         }
@@ -112,7 +113,7 @@ const useInputFormat = (props: InputFormatProps) => {
     onBlur?.(e);
   });
 
-  const focusHandler = usePersistFn((e: React.FocusEvent) => {
+  const focusHandler = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
     if (type === 'number' && coin) {
       setShowCoin(false);
     }

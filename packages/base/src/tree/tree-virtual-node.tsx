@@ -93,7 +93,20 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     if (onToggle) onToggle(id, nextExpanded);
   };
 
-  const indent = size === "large" ? 32 : 24;
+  const getIndent = ()=>{
+    if(size === "large"){
+      if(line && level ===1){
+        return 16
+      }
+      return 32;
+    }
+    if(line && level ===1){
+      return 8
+    }
+    return 24;
+  }
+
+  const indent = getIndent()
 
   let $indents
   if(line){
@@ -111,7 +124,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
       ref={element}
       className={rootClass}
       dir={config.direction}
-      style={{ paddingLeft: level * indent }}
+      style={{ paddingLeft: level * indent, height: props.lineHeight }}
     >
       {$indents}
       <TreeVirtualContent

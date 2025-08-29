@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Locale from '../../../locales';
 import { Tag, setConfig } from 'shineout';
 import FloatMenu from '../float/menu';
+import MenuItem from './menu-item';
 
 import useStyles from '../style';
 
@@ -162,15 +163,15 @@ const MenuComponent = () => {
                   return (
                     component &&
                     component.title && (
-                      <li
+                      <MenuItem
                         key={index}
+                        active={active === component.name}
                         onClick={() => handleClick(component)}
-                        className={active === component.name ? 'active' : ''}
                       >
                         {component.title[state.locales]}
 
                         {component.version && <Tag color='success'>{component.version}</Tag>}
-                      </li>
+                      </MenuItem>
                     )
                   );
                 })}

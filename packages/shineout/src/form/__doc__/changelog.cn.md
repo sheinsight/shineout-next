@@ -1,3 +1,70 @@
+## 3.8.0-beta.27
+2025-08-12
+
+### 🐞 BugFix
+
+- 修复 `Form.Field` 的 `name` 为数组时，错误信息重复渲染的问题 ([#1299](https://github.com/sheinsight/shineout-next/pull/1299))
+
+## 3.8.0-beta.25
+2025-08-11
+
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 的 children 函数用法的 value 参数在某些场景下获取不到最新值的问题 ([#1295](https://github.com/sheinsight/shineout-next/pull/1295))
+
+## 3.8.0-beta.21
+2025-07-31
+
+### 🆕 Feature
+
+- `Form` 的 `FormRef` 新增 `getFormSchema` 方法，用于获取表单结构的标准 JSON Schema ([#1281](https://github.com/sheinsight/shineout-next/pull/1281))
+
+## 3.8.0-beta.13
+2025-07-11
+
+### 🆕 Feature
+
+- `Form.Field` 新增 `clearToUndefined` 属性，当字段有defaultValue时，清空时可设置为undefined ([#1238](https://github.com/sheinsight/shineout-next/pull/1238))
+
+## 3.7.8-beta.11
+2025-07-29
+### 🐞 BugFix
+
+- 修复 `Form` 对 `onChange` 的返回值直接修改数据后再设置新 value 不生效的问题 ([#1272](https://github.com/sheinsight/shineout-next/pull/1272))([#1257](https://github.com/sheinsight/shineout-next/pull/1257))
+
+## 3.7.7-beta.8
+2025-07-17
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 的 `onAppend` 和 `onInsert` 在非末尾的位置插入插入undefined时，children的表单组件不渲染的问题 ([#1252](https://github.com/sheinsight/shineout-next/pull/1252))
+
+## 3.7.5-beta.4
+2025-07-02
+### 🐞 BugFix
+- 修复 `Form` 卸载携带校验错误字段后，重新挂载该字段时会携带历史校验错误信息的问题 ([#1219](https://github.com/sheinsight/shineout-next/pull/1219))
+
+## 3.7.4-beta.8
+2025-06-26
+### 🐞 BugFix
+- 修复 `Form.Item` 嵌套使用时，子级的 `required` 属性设置为 `false` 不生效的问题 ([#1210](https://github.com/sheinsight/shineout-next/pull/1210))
+
+## 3.7.4-beta.7
+2025-06-26
+### 🐞 BugFix
+- 修复 `Form` 的 `useForm` 用非受控用法下，表单实例获取不正确的问题 ([#1208](https://github.com/sheinsight/shineout-next/pull/1208))
+
+## 3.7.3-beta.3
+2025-06-17
+
+### 🐞 BugFix
+- 修复 `Form` 的 `scrollToError` 偶现的无法滚动到错误字段位置的问题 ([#1181](https://github.com/sheinsight/shineout-next/pull/1181))
+
+## 3.7.1-beta.6
+2025-06-10
+
+### 🐞 BugFix
+- 修复 `Form` 设置某字段值的同时设置了其他字段的值，此时其他字段上的错误状态未自动清除的问题 ([#1160](https://github.com/sheinsight/shineout-next/pull/1160))
+
 ## 3.7.0-beta.41
 2025-06-04
 

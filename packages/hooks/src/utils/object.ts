@@ -299,3 +299,22 @@ export const getCompleteFieldKeys = (fields: string | string[], allFields: strin
   // 返回之前去重
   return Array.from(new Set(completeFields));
 }
+
+
+/**
+ * 将对象中的所有值设置为空, 如果值是数组，重置为空数组，如果是对象，重置为空对象，如果是基础类型，重置为undefined
+ * @param obj 对象
+ * @returns 空对象
+ */
+export const clearValue = (obj: ObjectType): any => {
+  if(isArray(obj)){
+    return obj.map(item => clearValue(item));
+  }
+  if(isObject(obj)){
+    return Object.keys(obj).reduce((acc: any, key) => {
+      acc[key] = clearValue(obj[key]);
+      return acc;
+    }, {});
+  }
+  return undefined;
+};

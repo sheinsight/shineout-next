@@ -37,7 +37,10 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>)  => {
     ((item: DataItem, createdData: DataItem, key: string | number) => getKey(keygen, item) === key);
 
   const handleClearCreatedData = () => {
-    setCreatedData(undefined);
+    // why setTimeout: 避免回车时，新创建的数据走到了renderUnmatched逻辑中去
+    setTimeout(() => {
+      setCreatedData(undefined);
+    }, 0);
   };
 
   const handleCreate = (text: string) => {

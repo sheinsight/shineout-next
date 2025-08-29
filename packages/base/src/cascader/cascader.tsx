@@ -248,10 +248,36 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     index?: number,
     nodes?: (DataItem | UnMatchedData)[],
   ) => {
-    if (!renderResultProp) return renderItem(data);
-    return typeof renderResultProp === 'function'
-      ? renderResultProp(data, nodes as DataItem[])
-      : (data[renderResultProp] as React.ReactNode);
+    // 计算渲染项数组，包含父节点或不含
+    const items = props.showParent
+      ? [
+          ...((datum.getPath(datum.getKey(data))?.path ?? [])
+            .map(p => datum.getDataByValues(p)) ?? []),
+          data,
+        ]
+      : [data];
+
+    // 根据 renderResultProp 不同类型，返回处理单个元素的函数
+    const renderSingle = (d: DataItem | UnMatchedData) => {
+      if (!renderResultProp) {
+        return renderItem(d as DataItem);
+      }
+      if (typeof renderResultProp === 'function') {
+        return renderResultProp(d as DataItem, nodes as DataItem[]);
+      }
+      // renderResultProp 作为属性字符串提取对应字段
+      return (d as DataItem)?.[renderResultProp];
+    };
+
+    // 如果包含多个待渲染元素，拼接渲染结果并添加分隔符
+    if (items.length > 1) {
+      return items.map((d, i) =>
+        i > 0 ? [' / ', renderSingle(d as DataItem)] : renderSingle(d as DataItem),
+      );
+    }
+
+    // 单一项直接渲染
+    return renderSingle(items[0] as DataItem);
   };
 
   // 点击结果框的处理方法
@@ -366,6 +392,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
     handleChange([] as unknown as Value);
     if (open) closePop();
+    if (props.onClear) props.onClear();
   };
 
   const handleResultItemClick = (
@@ -498,7 +525,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           placeholder={placeholder}
           renderItem={renderItem as any}
           childrenKey={childrenKey}
-          renderResult={getRenderResult}
+          renderResult={getRenderResult as any}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
           renderResultContent={hideTag && !multiple ? renderResultContent : undefined}
@@ -691,8 +718,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   }, [data]);
 
-  // 修复外部受控打开的场景下，从外部修改value导致的面板勾选情况没有及时同步
-  if (openProp && !util.shallowEqual(value, datum.getValue())) {
+  // 修复外部受控打开或renderOptionList做全选的场景下，从外部修改value导致的面板勾选情况没有及时同步
+  if ((openProp || props.renderOptionList) && !util.shallowEqual(value, datum.getValue())) {
     datum.setValue(value);
   };
 
@@ -702,9 +729,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
     if(!open) return
     updatePathByValue();
-    if (props.renderOptionList) {
-      updatePath();
-    }
   }, [value, open]);
 
   useEffect(() => {

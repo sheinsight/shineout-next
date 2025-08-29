@@ -17,12 +17,12 @@ export interface InputPropsOwn {
    * @en The callback of blur
    * @cn 失去焦点后的回调
    */
-  onBlur?: React.FocusEventHandler;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * @en The callback when Textarea focus
    * @cn 聚焦后的回调
    */
-  onFocus?: React.FocusEventHandler;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * @en Click callback
    * @cn 点击回调

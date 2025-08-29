@@ -27,6 +27,10 @@ import { FormFieldContext } from '../form/form-field-context';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
+const defaultProps = {
+  data: []
+}
+
 const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
@@ -42,7 +46,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     adjust = true,
     value: valueProp,
     defaultValue,
-    data = [],
+    data = defaultProps.data,
     multiple,
     mode = 1,
     line = false,
@@ -339,6 +343,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       });
     }
     if (open) closePop();
+    if (props.onClear) props.onClear();
   };
 
   const renderClearable = () => {
@@ -666,11 +671,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     const style = { maxHeight: height };
+    let rootStyle = { padding: '0 4px' };
+    if (!virtual) {
+      if(size === 'small') {
+        rootStyle = { padding: '3px 4px' };
+      } else if(size === 'large') {
+        rootStyle = { padding: '0 5px' };
+      }
+    }
 
     return (
       <div className={classNames(styles.tree, styles.treeWrapper)} style={style}>
         <Tree
-          rootStyle={{ padding: '0 4px' }}
+          rootStyle={rootStyle}
           jssStyle={jssStyle}
           renderItem={renderItem}
           {...treeProps}

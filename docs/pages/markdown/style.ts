@@ -83,7 +83,7 @@ export const useStyles = createUseStyles(
       width: '100%',
       margin: '0 auto',
       padding: 20,
-
+      marginBottom: 60,
       ...commonStyle,
     },
     time: {

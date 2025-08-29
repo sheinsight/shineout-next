@@ -1,3 +1,48 @@
+## 3.8.0-beta.45
+2025-08-22
+
+### 🆕 Feature
+- `TreeSelect` 新增 `onClear` 属性，支持监听清除事件 ([#1322](https://github.com/sheinsight/shineout-next/pull/1322))
+
+
+
+## 3.7.10-beta.5
+2025-08-15
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 开启 `virtual` 后，预设值在面板首次打开时节点未高亮的问题 ([#1309](https://github.com/sheinsight/shineout-next/pull/1309))
+
+## 3.7.8-beta.9
+2025-07-25
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 开启 `virtual` 后，滚动到底部后再搜索切换数据时，滚动条位置不正确的问题 ([#1266](https://github.com/sheinsight/shineout-next/pull/1266))
+
+## 3.7.8-beta.6
+2025-07-25
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 的 `compressed` 属性在某些场景下，仅展示了合并数量而不展示第一项结果的问题 ([#1265](https://github.com/sheinsight/shineout-next/pull/1265))
+
+## 3.7.5-beta.11
+2025-07-04
+
+### 🚀 Performance
+- 优化 `TreeSelect` 的 `compressed` 在大数据场景下的性能表现 ([#1226](https://github.com/sheinsight/shineout-next/pull/1226))
+
+
+## 3.7.2-beta.5
+2025-06-13
+
+### 🐞 BugFix
+- 修复 `TreeSelect` 开启 `virtual` 后传入 undefined 数据导致死循环问题 ([#1172](https://github.com/sheinsight/shineout-next/pull/1172))
+
+## 3.7.1-beta.8
+2025-06-06
+
+### 💅 Style
+- `TreeSelect` 新增禁用选项的背景色 token ([#1163](https://github.com/sheinsight/shineout-next/pull/1163))
+
 ## 3.7.1-beta.3
 2025-06-06
 

@@ -1,8 +1,8 @@
 /**
  * cn - 行内元素点击
- *    -- 设置 rowClickAttr，可以使行内元素的点击事件触发onRowClick
+ *    -- 设置 `rowClickAttr`，可以使行内元素的点击事件触发 `onRowClick`
  * en - Base
- *    -- Set the rowClickAttr to trigger an onRowClick event for an element
+ *    -- Set the `rowClickAttr` to trigger an `onRowClick` event for an element
  */
 import React, { useState } from 'react';
 import { Table, Radio, Gap, Link, TYPE } from 'shineout';
@@ -35,11 +35,10 @@ const columns: TableColumnItem[] = [
     title: 'Operation',
     render: () => (
       <Gap>
-        <Link data-info size='small'>
+        <Link data-info>
           <span data-info>info</span>
         </Link>
-        &nbsp;
-        <Link data-call type='primary' size='small'>
+        <Link data-call>
           <span data-call>call</span>
         </Link>
       </Gap>

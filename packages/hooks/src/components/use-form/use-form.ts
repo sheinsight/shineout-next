@@ -5,8 +5,11 @@ import usePersistFn from '../../common/use-persist-fn';
 import { getDataAttributeName } from '../../utils/attribute';
 import { insertValue, spliceValue } from '../../utils/flat';
 import { usePrevious } from '../../common/use-default-value';
+import { SchemaBuilder } from './use-form-schema/form-schema-builder';
 
 const globalKey = '__global__&&@@';
+const SUBMIT_TIMEOUT = 10;
+
 import { current, produce } from '../../utils/immer';
 import {
   deepGet,
@@ -88,83 +91,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     mounted: false,
     unmounted: false,
     removeLock: false,
-  });
-
-  const update = (name?: string | string[]) => {
-    if (!name) {
-      Object.keys(context.updateMap).forEach((key) => {
-        context.updateMap[key]?.forEach((update) => {
-          update(context.value, context.errors, context.serverErrors);
-        });
-      });
-      Object.keys(context.flowMap).forEach((key) => {
-        context.flowMap[key].forEach((update) => {
-          update();
-        });
-      });
-    } else {
-      const names = isArray(name) ? name : [name];
-      names.forEach((key) => {
-        // 外部直接设置user.name这种格式的，但是又没有显性的声明user.name绑定的表单元素；
-        // 这里需要手动触发，否则会导致Input输入过程中光标跳到末尾的异常
-        if (!context.updateMap[key]) {
-          const parentKey = key.split('.')[0];
-          context.updateMap[parentKey]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors);
-          });
-        } else {
-          context.updateMap[key]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors);
-          });
-        }
-        context.flowMap[key]?.forEach((update) => {
-          update();
-        });
-      });
-    }
-    context.flowMap[globalKey]?.forEach((update) => {
-      update();
-    });
-  };
-
-  const updateFieldsets = usePersistFn((name: string) => {
-    const na = `${name}[`;
-    const no = `${name}.`;
-    context.names.forEach((key) => {
-      if (key.startsWith(na) || key.startsWith(no)) {
-        update(key);
-      }
-    });
-  });
-
-  const handleSubmitError = (err: Error) => {
-    onError?.(err);
-    if (!props.scrollToError) return;
-    setTimeout(() => {
-      const selector = `[${getDataAttributeName('status')}="error"]`;
-
-      const el = props.formElRef.current?.querySelector(selector);
-      if (el) {
-        el.scrollIntoView();
-        const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
-        const focusEl = el.querySelector(focusableSelectors) as HTMLElement;
-        if (focusEl && focusEl.focus) focusEl.focus();
-      }
-      if (typeof scrollToError === 'number' && scrollToError !== 0) {
-        const scrollEl = scrollParent?.();
-        if (scrollEl) {
-          scrollEl.scrollTop -= scrollToError;
-        } else {
-          docScroll.top -= scrollToError;
-        }
-      }
-    });
-  };
-
-  const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
-    const newValue = typeof change === 'function' ? produce(context.value as T, change) : change;
-    context.value = newValue;
-    props.onChange?.(context.value as T);
+    schema: props.name ? new SchemaBuilder(props.name) : null,
   });
 
   const getValue = usePersistFn((name?: string) => {
@@ -254,6 +181,87 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       });
     },
   );
+
+  const update = (name?: string | string[]) => {
+    if (!name) {
+      Object.keys(context.updateMap).forEach((key) => {
+        context.updateMap[key]?.forEach((update) => {
+          update(context.value, context.errors, context.serverErrors);
+          if (context.errors[key]) {
+            validateFields(key).catch(() => {});
+          }
+        });
+      });
+      Object.keys(context.flowMap).forEach((key) => {
+        context.flowMap[key].forEach((update) => {
+          update();
+        });
+      });
+    } else {
+      const names = isArray(name) ? name : [name];
+      names.forEach((key) => {
+        // 外部直接设置user.name这种格式的，但是又没有显性的声明user.name绑定的表单元素；
+        // 这里需要手动触发，否则会导致Input输入过程中光标跳到末尾的异常
+        if (!context.updateMap[key]) {
+          const parentKey = key.split('.')[0];
+          context.updateMap[parentKey]?.forEach((update) => {
+            update(context.value, context.errors, context.serverErrors);
+          });
+        } else {
+          context.updateMap[key]?.forEach((update) => {
+            update(context.value, context.errors, context.serverErrors);
+          });
+        }
+        context.flowMap[key]?.forEach((update) => {
+          update();
+        });
+      });
+    }
+    context.flowMap[globalKey]?.forEach((update) => {
+      update();
+    });
+  };
+
+  const updateFieldsets = usePersistFn((name: string) => {
+    const na = `${name}[`;
+    const no = `${name}.`;
+    context.names.forEach((key) => {
+      if (key.startsWith(na) || key.startsWith(no)) {
+        update(key);
+      }
+    });
+  });
+
+  const handleSubmitError = (err: Error) => {
+    onError?.(err);
+    if (!props.scrollToError) return;
+    setTimeout(() => {
+      const selector = `[${getDataAttributeName('status')}="error"]`;
+
+      const el = props.formElRef.current?.querySelector(selector);
+      if (el) {
+        el.scrollIntoView();
+        const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
+        const focusEl = el.querySelector(focusableSelectors) as HTMLElement;
+        if (focusEl && focusEl.focus) focusEl.focus();
+      }
+      if (typeof scrollToError === 'number' && scrollToError !== 0) {
+        const scrollEl = scrollParent?.();
+        if (scrollEl) {
+          scrollEl.scrollTop -= scrollToError;
+        } else {
+          docScroll.top -= scrollToError;
+        }
+      }
+    }, SUBMIT_TIMEOUT + 10);
+  };
+
+  const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
+    const newValue = typeof change === 'function' ? produce(context.value as T, change) : change;
+
+    context.value = newValue;
+    props.onChange?.(newValue as T);
+  });
 
   const scrollToField = usePersistFn(
     (name: string, scrollIntoViewOptions: ScrollIntoViewOptions = {}) => {
@@ -371,6 +379,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     Object.keys(context.defaultValues).forEach((df) => {
       const latestDefaultValue = getValue(df);
       if (latestDefaultValue === undefined) {
+        // todo: Form组件传了clearToUndefined时，加入这部分判断？
+        // if(context.value.hasOwnProperty(df) && clearToUndefined){
+        //   return;
+        // }
         setValue({ [df]: context.defaultValues[df] }, { validate: false });
       }
     });
@@ -441,7 +453,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       submit();
       other?.onSubmit?.(e);
-    }, 10);
+    }, SUBMIT_TIMEOUT);
   };
 
   const validateFieldset = (name: string, config?: ValidateFnConfig) => {
@@ -543,6 +555,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         context.names.delete(n);
         delete context.defaultValues[n];
       }
+
+      if (context.errors[n]) {
+        delete context.errors[n];
+      }
+
       const finalReserveAble = props.reserveAble ?? reserveAble;
       if (!finalReserveAble && !context.removeLock) {
         addRemove(n);
@@ -596,6 +613,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     insertError,
     spliceError,
     scrollToField,
+    getFormSchema: () => context.schema?.getFormSchema(),
   });
 
   const formConfig: ProviderProps['formConfig'] = React.useMemo(
@@ -652,11 +670,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   // 默认值更新
   React.useEffect(() => {
     context.removeLock = false;
-    // 内部 onChange 改的 value, 不需要更新
-    if (props.value === context.value) {
-      if (!isControl) update();
-      return;
-    }
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
         const oldValue = deepGet(preValue || emptyObj, key);
@@ -666,6 +679,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       validateFields(keys).catch(() => {});
     }
     update();
+    if (!isControl) return;
     // 默认值上位时会提前触发外部的onChange, 导致外部的多次setFormValue不能合并后生效的问题(ReactDOM.render方式渲染)
     setTimeout(updateDefaultValue);
     context.resetTime = 0;
@@ -690,6 +704,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       formValue,
       formConfig,
       formFunc,
+      formSchema: context.schema,
     },
     formFunc,
   };

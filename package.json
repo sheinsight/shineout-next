@@ -1,7 +1,7 @@
 {
   "name": "sheinx",
   "private": true,
-  "version": "3.7.1-beta.4",
+  "version": "3.8.0-beta.46",
   "description": "A react library developed with sheinx",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,13 +13,14 @@
     "dev:create": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-create.js",
     "build:doc": "cross-env NODE_ENV=production webpack --config ./webpack/config.doc.js",
     "build:api": "node ./scripts/api-build.js",
-    "build": "pnpm run build:doc && cp .gateway-publish dist",
+    "build": "node ./scripts/doc-replace.js && pnpm run build:doc",
     "build:pkg": "node ./scripts/build-index && pnpm run build:bundless && pnpm run build:bundle",
     "build:bundless": "pnpm --filter=./packages/* run build",
     "build:bundle": "pnpm --filter=./packages/shineout run build:bundle ",
     "build:watch": "pnpm --filter=./packages/* run build:watch",
     "clean": "pnpm --filter=./packages/* run clean",
     "release": "node ./scripts/publish.js",
+    "release:component": "node ./scripts/release.js",
     "prepare": "husky install",
     "doctor": "father doctor",
     "lint": "pnpm run lint:es",
@@ -67,8 +68,8 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
   },
   "pnpm": {
     "overrides": {
@@ -107,6 +108,7 @@
     "@types/react-dom": "18.3.1",
     "@types/react-syntax-highlighter": "^15.5.11",
     "@umijs/lint": "^4.0.87",
+    "axios": "^1.7.2",
     "babel-jest": "^29.5.0",
     "babel-loader": "^9.1.2",
     "chokidar": "^3.5.3",
@@ -147,6 +149,7 @@
     "ts-deepmerge": "^1.0.0",
     "ts-loader": "^9.4.2",
     "ts-morph": "^19.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
     "unified": "^10.1.2",
     "valtio": "^1.13.0",

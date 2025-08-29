@@ -138,7 +138,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
       <div className={styles.inputWrapper}>
         <Input
           className={styles.input}
-          clearable
+          showClear
           jssStyle={jssStyle}
           value={filterText}
           suffix={Icons.transfer.Search}

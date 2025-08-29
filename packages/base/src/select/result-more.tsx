@@ -16,7 +16,7 @@ export function getResetMore(
   const paddingLeft = parsePxToNumber(style.paddingLeft);
   const paddingRight = parsePxToNumber(style.paddingRight);
   const minFilterWidth = onFilter ? 16 : 0;
-  const contentWidth = clientWidth - paddingLeft - paddingRight - minFilterWidth - 1;
+  const contentWidth = clientWidth - paddingLeft - paddingRight - minFilterWidth;
 
   const hideEl = items.pop() as HTMLElement;
   const hideElStyle = getComputedStyle(hideEl);
@@ -90,18 +90,7 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
   const shouldShowMore = showNum! < 0 || showNum! >= data.length;
   let before: React.ReactElement[] = [];
   let after: React.ReactElement[] = [];
-  let itemsLength = 0;
-  let tagStyle: React.CSSProperties = shouldShowMore
-    ? {
-        position: 'absolute',
-        zIndex: -100,
-        userSelect: 'none',
-        msUserSelect: 'none',
-        contain: 'layout',
-        opacity: 0,
-        pointerEvents: 'none',
-      }
-    : {};
+  let afterLength = 0;
 
   if (!shouldShowMore) {
     before = new Array(showNum!)
@@ -111,10 +100,10 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
     after = new Array(data.length - showNum!)
       .fill(undefined)
       .map((_item, index) => data[showNum! + index] as React.ReactElement);
-    itemsLength = after.length;
+    afterLength = after.length;
   }
 
-  if (showNum! < 0 || showNum! >= data.length) {
+  if (shouldShowMore) {
     return (
       <React.Fragment>
         {data}
@@ -148,11 +137,10 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
           jssStyle={jssStyle as any}
           key='more'
           size={size}
-          style={tagStyle}
           mode={visible ? 'fill' : 'bright'}
           color={visible ? 'info' : 'default'}
         >
-          {shouldShowMore ? '+' : `+${itemsLength}`}
+          {shouldShowMore ? '+' : `+${afterLength}`}
         </Tag>
         {compressed !== 'hide-popover' && (
           <Popover

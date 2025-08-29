@@ -1,3 +1,10 @@
+## 3.8.0-beta.28
+2025-08-12
+
+### 🆕 Feature
+
+-  `List` 新增 `dynamicHeight` 属性，开启不定高虚拟列表功能，需要同时设置 `fixed` 为 true ([#1213](https://github.com/sheinsight/shineout-next/pull/1213))
+
 ## 3.7.0-beta.35
 2025-05-29
 

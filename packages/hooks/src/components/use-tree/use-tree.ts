@@ -10,6 +10,7 @@ import {
   TreeDatum,
   FlatMapType,
   FlatNodeType,
+  NodeStates,
 } from './use-tree.type';
 import { getExpandVirtualData } from '../use-table/use-table-tree';
 import { usePersistFn } from '../../common/use-persist-fn';
@@ -143,6 +144,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const bindVirtualNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
+    // 立即调用update函数设置正确的active状态
+    if (isActive) update('active', isActive);
     return { active: isActive, expanded: !!context.dataFlatStatusMap.get(id)?.expanded };
   };
 
@@ -285,7 +288,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
       if (virtual) {
         context.dataFlatStatusMap.set(id, {
-          active: false,
+          active: activeProp === id,
           expanded: defaultExpandAll ? true : expanded?.includes(id) || false,
           fetching: false,
         });
@@ -545,8 +548,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const updateInnerCheckStatus = () => {
     if (mode !== MODE.MODE_0) return;
     context.value?.forEach((id) => {
-      const { children } = context.pathMap.get(id)!;
-      if (children.length) {
+      const node = context.pathMap.get(id);
+      const children = node?.children;
+      if (children && children.length) {
         const noCheckedChildren = children.filter((cid) => !context.value?.includes(cid));
         if (noCheckedChildren.length > 0) {
           setTimeout(() => {
@@ -679,7 +683,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return context.dataFlat;
   };
 
-  const updateExpanded = usePersistFn((expanded?: KeygenResult[]) => {
+  const updateExpanded = usePersistFn((expanded?: KeygenResult[], ignoreExpanded?: boolean) => {
     const tempExpandMap = new Set(expanded);
     if (!expanded) return;
 
@@ -687,10 +691,27 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       expandedFlat(expanded);
     }
 
-    context.updateMap.forEach((update, id) => {
-      update('expanded', tempExpandMap.has(id));
+    context.updateMap.forEach((call, id) => {
+      if (ignoreExpanded) {
+        const nodeStatus = call('get', true) as NodeStates;
+        if (nodeStatus && nodeStatus.hasTriggered) return;
+      }
+      call('expanded', tempExpandMap.has(id));
     });
   });
+
+  useEffect(() => {
+    if (props.datum) return;
+    if (!dataUpdate) return;
+    setData(data);
+    const nextExpanded = props.expanded || props.defaultExpanded || [];
+    if (!defaultExpandAll && !shallowEqual(nextExpanded, expanded)) {
+      onExpand(nextExpanded);
+      updateExpanded(nextExpanded, true);
+    }
+
+    updateInnerCheckStatus();
+  }, [props.data]);
 
   useEffect(() => {
     if (defaultExpandAll) {
@@ -700,24 +721,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
           nextExpanded.push(k);
         }
       });
-
       onExpand(nextExpanded);
+      updateExpanded(nextExpanded, true);
     }
-  }, [context.dataMap]);
-
-  useEffect(() => {
-    if (props.datum) return;
-    if (!dataUpdate) return;
-    setData(data);
-    const nextExpanded = props.expanded || props.defaultExpanded || [];
-
-    if (!shallowEqual(nextExpanded, expanded)) {
-      onExpand(nextExpanded);
-      updateExpanded(nextExpanded);
-    }
-
-    updateInnerCheckStatus();
-  }, [props.data]);
+  }, [context.dataMap, props.data]);
 
   useEffect(() => {
     if (props.datum) return;

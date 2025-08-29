@@ -83,7 +83,10 @@ const useInput = (params: BaseInputProps) => {
       otherHandlers.onFocus?.(event);
       setFocused(true);
       if (autoSelect) {
-        event.target.select();
+        // why requestAnimationFrame: 当在文字身体上hover后立即点击，select()与浏览器的光标定位逻辑产生竞争，有可能导致只选中的部分文本，所以需要延迟一下
+        requestAnimationFrame(() => {
+          event.target.select();
+        });
       }
     };
 
