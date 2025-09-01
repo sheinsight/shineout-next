@@ -225,8 +225,7 @@ const Modal = (props: ModalContentProps) => {
       if (visible) {
         setDocumentOverflow();
       } else {
-        if (config.instanceIds.length && config.instanceIds[config.instanceIds.length - 1] === context.instanceId) return;
-        resetDocumentOverflow();
+        if (config.instanceIds.length === 0) resetDocumentOverflow();
       }
     }
   }, [visible, config.instanceIds]);
@@ -241,9 +240,7 @@ const Modal = (props: ModalContentProps) => {
     // unmount
     return () => {
       removeModalInstance(context.instanceId)
-      if (context.isMask) {
-        resetDocumentOverflow();
-      };
+      resetDocumentOverflow();
       props.shouldDestroy?.(true);
       if (context.isMask) {
         context.isMask = false;
