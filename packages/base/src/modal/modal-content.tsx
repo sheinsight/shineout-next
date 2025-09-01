@@ -33,6 +33,10 @@ const removeModalInstance = (instanceId: string) => {
   state.mutate.instanceIds = state.mutate.instanceIds.filter(id => id !== instanceId)
 }
 
+const getInstanceIds = () => {
+  return state.mutate.instanceIds;
+}
+
 
 let mousePosition: { x: number; y: number } | null = null;
 
@@ -240,7 +244,10 @@ const Modal = (props: ModalContentProps) => {
     // unmount
     return () => {
       removeModalInstance(context.instanceId)
-      resetDocumentOverflow();
+      const instanceIds = getInstanceIds();
+      if (instanceIds.length === 0) {
+        resetDocumentOverflow();
+      }
       props.shouldDestroy?.(true);
       if (context.isMask) {
         context.isMask = false;
