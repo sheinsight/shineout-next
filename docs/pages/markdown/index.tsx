@@ -10,17 +10,17 @@ import { useStyles } from './style';
 const parseHashQuery = () => {
   const fullHash = window.location.hash;
   const questionMarkIndex = fullHash.indexOf('?');
-  
+
   if (questionMarkIndex === -1) return {};
-  
+
   const queryString = fullHash.substring(questionMarkIndex + 1);
   const params = new URLSearchParams(queryString);
   const result: Record<string, string> = {};
-  
+
   params.forEach((value, key) => {
     result[key] = value;
   });
-  
+
   return result;
 };
 
@@ -30,14 +30,14 @@ const updateHashQuery = (params: Record<string, string>) => {
   const currentHash = window.location.hash;
   const questionMarkIndex = currentHash.indexOf('?');
   const basePath = questionMarkIndex === -1 ? currentHash : currentHash.substring(0, questionMarkIndex);
-  
+
   const searchParams = new URLSearchParams();
   Object.entries(params).forEach(([key, value]) => {
     if (value) {
       searchParams.set(key, value);
     }
   });
-  
+
   const queryString = searchParams.toString();
   return queryString ? `${basePath}?${queryString}` : basePath;
 };
@@ -50,16 +50,16 @@ const Md = (props: { children: string; className: string; enableAnchor?: boolean
 
   const handleHeadingClick = useCallback((text: string) => {
     if (!enableAnchor) return;
-    
+
     // 生成锚点ID，保留版本号中的点号
     const anchorId = text.toLowerCase().replace(/[^\w\s.-]/g, '').replace(/\s+/g, '-');
-    
+
     // 滚动到对应元素
     const element = document.getElementById(anchorId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    
+
     // 更新URL中的参数 - 这里假设版本号就是标题文本
     const versionMatch = text.match(/^\d+\.\d+\.\d+/);
     if (versionMatch) {
@@ -72,10 +72,10 @@ const Md = (props: { children: string; className: string; enableAnchor?: boolean
   // 每个Md组件渲染后尝试自动滚动
   useEffect(() => {
     if (!enableAnchor) return;
-    
+
     const hashParams = parseHashQuery();
     const version = hashParams.version;
-    
+
     if (version) {
       const anchorId = version.toLowerCase().replace(/[^\w\s.-]/g, '').replace(/\s+/g, '-');
       const element = document.getElementById(anchorId);
@@ -98,15 +98,15 @@ const Md = (props: { children: string; className: string; enableAnchor?: boolean
         h2: ({ children, node: _node, ...rest }) => {
           const text = children?.toString() || '';
           const isVersionTitle = enableAnchor && /^\d+\.\d+\.\d+/.test(text);
-          
+
           if (!isVersionTitle) {
             return <h2 {...rest}>{children}</h2>;
           }
-          
+
           const anchorId = text.toLowerCase().replace(/[^\w\s.-]/g, '').replace(/\s+/g, '-');
           return (
-            <h2 
-              {...rest} 
+            <h2
+              {...rest}
               id={anchorId}
               data-clickable="true"
               onClick={() => handleHeadingClick(text)}
@@ -155,7 +155,7 @@ const Md = (props: { children: string; className: string; enableAnchor?: boolean
 export const MarkdownWrapper = (props: { children: string; enableAnchor?: boolean }) => {
   const { children: markdown, enableAnchor = false } = props;
   const classes = useStyles();
-  
+
   const headReg = /`````([\s\S]+)`````/;
   const match = markdown.match(headReg);
   const headContent = match ? match[1] : '';
