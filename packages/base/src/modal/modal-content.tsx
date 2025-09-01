@@ -33,6 +33,10 @@ const removeModalInstance = (instanceId: string) => {
   state.mutate.instanceIds = state.mutate.instanceIds.filter(id => id !== instanceId)
 }
 
+const getInstanceIds = () => {
+  return state.mutate.instanceIds;
+}
+
 
 let mousePosition: { x: number; y: number } | null = null;
 
@@ -225,8 +229,7 @@ const Modal = (props: ModalContentProps) => {
       if (visible) {
         setDocumentOverflow();
       } else {
-        if (config.instanceIds.length && config.instanceIds[config.instanceIds.length - 1] === context.instanceId) return;
-        resetDocumentOverflow();
+        if (config.instanceIds.length === 0) resetDocumentOverflow();
       }
     }
   }, [visible, config.instanceIds]);
@@ -241,9 +244,10 @@ const Modal = (props: ModalContentProps) => {
     // unmount
     return () => {
       removeModalInstance(context.instanceId)
-      if (context.isMask) {
+      const instanceIds = getInstanceIds();
+      if (instanceIds.length === 0) {
         resetDocumentOverflow();
-      };
+      }
       props.shouldDestroy?.(true);
       if (context.isMask) {
         context.isMask = false;
