@@ -714,6 +714,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   };
 
   const renderEmpty = () => {
+    if (props.emptyText === false) return null;
     return (
       <div className={styles?.option}>
         <div className={styles?.optionInner}>
@@ -727,12 +728,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (loading) return renderLoading();
 
     const isEmpty = !filterData?.length;
-    if (isEmpty && props.emptyText !== false) return renderEmpty();
 
     const options = 'treeData' in props ? renderTreeList() : renderList();
     if (renderOptionList) {
-      return renderOptionList(options, { loading: loading });
+      return renderOptionList(isEmpty ? renderEmpty() : options, { loading: loading });
     }
+
+    if (isEmpty) return renderEmpty();
 
     return options;
   };
