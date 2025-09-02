@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import classNames from 'classnames';
 import useStyle from '../style';
@@ -60,7 +59,6 @@ const Dynamic = () => {
     });
   }
 
-  const navigate = useNavigate();
   const state = useSnapshot(store);
 
   const dynamicList: {
@@ -214,8 +212,8 @@ const Dynamic = () => {
   }, []);
 
   const handleItemClick = (name: string) => {
-    navigate(`/${state.locales}/component/shineout/${name}?tab=examples`);
-    document.getElementById('layout')?.scrollTo(0, 0);
+    const url = `#/${state.locales}/component/shineout/${name}?tab=examples`;
+    window.open(url, '_blank');
   };
 
   const renderItem = (title: string, name: string, type: IDynamicItemType, caseNode: React.ReactNode) => (
