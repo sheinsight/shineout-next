@@ -1,3 +1,10 @@
+## 3.8.1-beta.2
+2025-09-02
+
+### 🐞 BugFix
+- 修复 `Select` 开启 `renderOptionList` 后，当数据为空时，`renderOptionList` 不渲染的问题 ([#1337](https://github.com/sheinsight/shineout-next/pull/1337))
+
+
 ## 3.8.0-beta.45
 2025-08-22
 

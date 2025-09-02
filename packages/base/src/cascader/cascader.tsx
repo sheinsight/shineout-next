@@ -703,6 +703,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       return renderLoading();
     }
     if (isDataEmpty) {
+      // todo: 空数据时 是否 支持一下也能走到renderOptionList
       return renderEmpty();
     }
     if (!filterText || (filterText && mode !== undefined) || (data && data.length === 0)) {
