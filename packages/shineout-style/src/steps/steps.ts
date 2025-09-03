@@ -767,6 +767,12 @@ const stepsStyle: JsStyles<StepsClassType> = {
           width: 1,
         },
       },
+      '& $default': {
+        display: 'flex',
+        '& $content': {
+          wordBreak: 'break-all',
+        }
+      }
     },
     '&$horizontal': {
       '& $tail': {
