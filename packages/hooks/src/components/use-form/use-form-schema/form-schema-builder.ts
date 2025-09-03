@@ -219,7 +219,9 @@ export class SchemaBuilder {
               type: 'string',
             };
           } else {
-            fieldSchemaInfo.type = typeof componentElement.props.value;
+            if (typeof componentElement.props.value !== 'undefined') {
+              fieldSchemaInfo.type = typeof componentElement.props.value;
+            }
           }
           break;
       }
