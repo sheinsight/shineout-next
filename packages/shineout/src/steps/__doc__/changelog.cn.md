@@ -1,3 +1,9 @@
+## 3.8.1-beta.3
+2025-09-03
+### 🌈 Style
+
+- 优化 `Steps` 垂直方向下 `description`的样式，支持换行 ([#1341](https://github.com/sheinsight/shineout-next/pull/1341))
+
 ## 3.6.2-beta.4
 2025-04-01
 
