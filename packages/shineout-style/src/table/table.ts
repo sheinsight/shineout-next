@@ -379,6 +379,10 @@ const tableStyle: JsStyles<TableClassType> = {
   hasFilter: {
     display: 'inline-flex',
     alignItems: 'center',
+
+    '$cellAlignRight &': {
+      marginInlineEnd: -5,
+    },
   },
 
   filterIconContainer: {
