@@ -1,3 +1,10 @@
+## 3.8.1-beta.4
+2025-09-03
+
+### 🐞 BugFix
+- 修复 `Cascader` 开启 `renderOptionList` 时，当数据为空时，`renderOptionList` 不渲染的问题 ([#1342](https://github.com/sheinsight/shineout-next/pull/1342))
+
+
 ## 3.8.0-beta.45
 2025-08-22
 

@@ -637,10 +637,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderEmpty = () => {
-    if (emptyText) {
-      return <div className={styles?.empty}>{emptyText}</div>;
+    if (renderOptionList) {
+      return renderOptionList(null as any, { loading: !!loading });
     }
-    return <div className={styles?.empty}>{getLocale(locale, 'noData')}</div>;
+    return <div className={styles?.empty}>{emptyText || getLocale(locale, 'noData')}</div>;
   };
 
   const renderNormalList = () => {
@@ -703,7 +703,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       return renderLoading();
     }
     if (isDataEmpty) {
-      // todo: 空数据时 是否 支持一下也能走到renderOptionList
       return renderEmpty();
     }
     if (!filterText || (filterText && mode !== undefined) || (data && data.length === 0)) {
