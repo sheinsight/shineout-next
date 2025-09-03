@@ -139,14 +139,17 @@ export default () => {
               });
             }}
             style={{ marginRight: 8 }}
+            disabled={edits.some(item => item)}
           >
             Edit
           </Link>
           <Link
             type='danger'
+            disabled={edits.some(item => item)}
           >
             <Popover.Confirm
               title='Sure to delete?'
+              disabled={edits.some(item => item)}
               onCancel={() => console.log('cancel')}
               onOk={() => {
                 const newDatas = tableData.values.filter((_, idx) => idx !== index);
