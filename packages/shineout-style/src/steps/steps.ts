@@ -770,7 +770,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $default': {
         display: 'flex',
         '& $content': {
-          wordBreak: 'break-all',
+          wordBreak: 'break-word',
         }
       }
     },
