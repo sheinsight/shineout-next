@@ -219,7 +219,9 @@ export class SchemaBuilder {
               type: 'string',
             };
           } else {
-            fieldSchemaInfo.type = typeof componentElement.props.value;
+            if (typeof componentElement.props.value !== 'undefined') {
+              fieldSchemaInfo.type = typeof componentElement.props.value;
+            }
           }
           break;
       }
@@ -296,7 +298,9 @@ export class SchemaBuilder {
       };
     }
 
-    this.mergeSchema(currentSchema.items, remainingSegments, meta);
+    // 过滤掉 required 属性，items 对象不应该包含 required
+    const { required, ...itemsMeta } = meta;
+    this.mergeSchema(currentSchema.items, remainingSegments, itemsMeta);
   }
 
   handleObjectProperty(currentSchema: SchemaProperty, propertyName: string, remainingSegments: string[], meta: SchemaMeta): void {
