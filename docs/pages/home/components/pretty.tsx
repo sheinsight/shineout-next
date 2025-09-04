@@ -23,127 +23,46 @@ export interface IThemeConfig {
   fontSize: string
 }
 
-const menuData = [
-  {
-    id: '1',
-    title: 'Home page',
-    icon: <Icon type='home' />,
-    children: []
-  },
-  {
-    id: '2',
-    title: 'Experience Center',
-    icon: <Icon type='list' />,
-    children: [
-      {
-        id: '3',
-        title: 'Themes'
-      },{
-        id: '4',
-        title: 'Others'
-      },
-    ]
-  },
-  {
-    id: '5',
-    title: 'Global',
-    icon: <Icon type='cards' />,
-    children: []
-  },
-  {
-    id: '6',
-    title: 'Component',
-    icon: <Icon type='com' />,
-    children: []
-  }
-]
-
 const Pretty = () => {
   const styles = useStyle();
 
-  const prettyList = useMemo(() => [
+  const menuData = useMemo(() => [
     {
-      title: '主题色',
-      name: 'color',
-      list: [
-        {
-          title: '山药蓝',
-          color: '#197AFA',
-        },
-        {
-          title: '生机绿',
-          color: '#00A85F',
-        },
-        {
-          title: '活力橙',
-          color: '#F75229',
-        },
-        {
-          title: '科技蓝',
-          color: '#4446F7',
-        },
-        {
-          title: '魅力粉',
-          color: '#D84293',
-        },
-        {
-          title: '喜庆红',
-          color: '#EB4242',
-        }
-      ]
+      id: '1',
+      title: 'Home page',
+      icon: <Icon type='home' />,
+      children: []
     },
     {
-      title: '圆角',
-      name: 'radius',
-      list: [
+      id: '2',
+      title: 'Experience Center',
+      icon: <Icon type='list' />,
+      children: [
         {
-          title: '4px'
-        },
-        {
-          title: '8px'
-        },
-        {
-          title: '12px'
-        },
-        {
-          title: '16px'
-        },
-        {
-          title: '20px'
-        },
-        {
-          title: '24px'
+          id: '3',
+          title: 'Themes'
+        },{
+          id: '4',
+          title: 'Others'
         },
       ]
     },
     {
-      title: '字号',
-      name: 'fontSize',
-      list: [
-        {
-          title: '12px'
-        },
-        {
-          title: '14px'
-        },
-        {
-          title: '16px'
-        },
-        {
-          title: '18px'
-        },
-      ]
+      id: '5',
+      title: 'Global',
+      icon: <Icon type='cards' />,
+      children: []
+    },
+    {
+      id: '6',
+      title: 'Component',
+      icon: <Icon type='com' />,
+      children: []
     }
-  ], [])
+  ], []);
 
-  const [selectValue, setSelectValue] = useState<ISelectValue>({
-    color: '山药蓝',
-    radius: '12px',
-    fontSize: '14px'
-  })
-
-  // 主题颜色配置
-  const themeColors = useMemo(() => ({
+  // 统一的颜色配置
+  const colorConfig = useMemo(() => ({
     '山药蓝': { primary: '#197AFA', light: '#E9F5FE' },
     '生机绿': { primary: '#00A85F', light: '#E6F7F0' },
     '活力橙': { primary: '#F75229', light: '#FEF0EA' },
@@ -152,9 +71,36 @@ const Pretty = () => {
     '喜庆红': { primary: '#EB4242', light: '#FDEAEA' }
   }), []);
 
+  const prettyList = useMemo(() => [
+    {
+      title: '主题色',
+      name: 'color',
+      list: Object.entries(colorConfig).map(([title, config]) => ({ 
+        title, 
+        color: config.primary 
+      }))
+    },
+    {
+      title: '圆角',
+      name: 'radius',
+      list: ['4px', '8px', '12px', '16px', '20px', '24px'].map(title => ({ title }))
+    },
+    {
+      title: '字号',
+      name: 'fontSize',
+      list: ['12px', '14px', '16px', '18px'].map(title => ({ title }))
+    }
+  ], [colorConfig])
+
+  const [selectValue, setSelectValue] = useState<ISelectValue>({
+    color: '山药蓝',
+    radius: '12px',
+    fontSize: '14px'
+  })
+
   // 主题配置映射
   const themeConfig = useMemo(() => {
-    const selectedTheme = themeColors[selectValue.color as keyof typeof themeColors] || themeColors['山药蓝'];
+    const selectedTheme = colorConfig[selectValue.color as keyof typeof colorConfig] || colorConfig['山药蓝'];
     
     return {
       primaryColor: selectedTheme.primary,
@@ -162,7 +108,7 @@ const Pretty = () => {
       borderRadius: selectValue.radius,
       fontSize: selectValue.fontSize
     };
-  }, [selectValue, themeColors]);
+  }, [selectValue, colorConfig]);
 
   // 处理卡片点击
   const handleItemClick = (name: keyof ISelectValue, title: string) => {

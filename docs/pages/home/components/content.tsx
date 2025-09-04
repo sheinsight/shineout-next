@@ -139,7 +139,7 @@ const Content = (props: ContentProps) => {
     return (
       <div className={styles.icons}>
         {new Array(20).fill(0).map((_, index) => (
-          <Icon key={index} type={`icon${index + 1}`} className={styles.icon} />
+          <Icon key={index} type={`icon${index + 1}`} className={styles.icon}/>
         ))}
       </div>
     )

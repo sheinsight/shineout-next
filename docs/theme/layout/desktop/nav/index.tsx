@@ -91,6 +91,7 @@ const Nav = () => {
     extraHeader.style.display = 'flex';
     extraHeader.style.flex = '1';
     extraHeader.style.justifyContent = 'flex-end';
+    extraHeader.style.overflow = 'visible';
     extraHeader.setAttribute('alita-name', 'shineout');
 
     const entry = (
