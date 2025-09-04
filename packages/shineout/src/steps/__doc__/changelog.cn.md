@@ -1,6 +1,12 @@
+## 3.8.1-beta.6
+2025-09-04
+### 💅 Style
+
+- 优化 `Steps` 设置了 `labelPlacement` 属性后标题布局超出情况下的展示效果 ([#1346](https://github.com/sheinsight/shineout-next/pull/1346))
+
 ## 3.8.1-beta.3
 2025-09-03
-### 🌈 Style
+### 💅 Style
 
 - 优化 `Steps` 垂直方向下 `description`的样式，支持换行 ([#1341](https://github.com/sheinsight/shineout-next/pull/1341))
 
