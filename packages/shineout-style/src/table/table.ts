@@ -631,7 +631,7 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   rowExpand: {
-    '&& td': {
+    '&& > td': {
       background: token.tableExpandBackgroundColor,
     },
   },
