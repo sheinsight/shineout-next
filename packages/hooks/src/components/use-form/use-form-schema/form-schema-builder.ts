@@ -90,7 +90,7 @@ export class SchemaBuilder {
           if (typeof componentElement.props.keygen !== 'boolean') {
             if (typeof format === 'string') {
               itemType = typeof data?.[0] === 'object' ? typeof data?.[0]?.[format] : typeof data?.[0];
-            } else if (typeof format === 'function') {
+            } else if (typeof format === 'function' && data?.[0]) {
               itemType = typeof format(data?.[0]);
             } else {
               itemType = typeof data?.[0];
@@ -153,7 +153,7 @@ export class SchemaBuilder {
           if (typeof componentElement.props.keygen !== 'boolean') {
             if (typeof format === 'string') {
               itemType = typeof data?.[0] === 'object' ? typeof data?.[0]?.[format] : typeof data?.[0];
-            } else if (typeof format === 'function') {
+            } else if (typeof format === 'function' && data?.[0]) {
               itemType = typeof format(data?.[0]);
             } else {
               itemType = typeof data?.[0];
@@ -182,7 +182,7 @@ export class SchemaBuilder {
           if (typeof componentElement.props.keygen !== 'boolean') {
             if (typeof format === 'string') {
               itemType = typeof data?.[0] === 'object' ? typeof data?.[0]?.[format] : typeof data?.[0];
-            } else if (typeof format === 'function') {
+            } else if (typeof format === 'function' && data?.[0]) {
               itemType = typeof format(data?.[0]);
             } else {
               itemType = typeof data?.[0];
@@ -191,7 +191,9 @@ export class SchemaBuilder {
             itemType = typeof data?.[0];
           }
 
-          fieldSchemaInfo.type = itemType;
+          if (itemType !== 'undefined') {
+            fieldSchemaInfo.type = itemType;
+          }
 
           // ShineoutRadioGroup 有 data 时（单选的）
           if (itemType === 'object') {

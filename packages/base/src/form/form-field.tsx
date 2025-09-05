@@ -14,7 +14,7 @@ import { FormFieldContext } from './form-field-context';
 const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   const { children } = props;
 
-  const formConfig = useFormConfig()
+  const formConfig = useFormConfig();
 
   const getValidateProps = usePersistFn(() => {
     if (props.getValidateProps) return props.getValidateProps();
@@ -96,23 +96,29 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   const { label } = useContext(FormItemContext);
   const finalFieldId = formFieldId || fieldId || fieldsetPathId;
 
-  // 只有当 formConfig.formName 存在时才运行 schema 逻辑
-  if (formConfig.formName && formSchema && finalFieldId) {
-    const schemaFields = finalFieldId.split(separator) || [];
-    const schemaMeta = formSchema.buildSchemaFromComponent({
-      componentElement: finalChildren,
-      rules: props.rules,
-      label,
-      finalFieldId,
-      separator,
-    });
-
-    schemaFields.forEach((field: string) => {
-      formSchema.updateSchema({
-        path: util.getOriginField(field, formConfig.formName),
-        meta: schemaMeta,
+  try {
+    // 只有当 formConfig.formName 存在时才运行 schema 逻辑
+    if (formConfig.formName && formSchema && finalFieldId) {
+      const schemaFields = finalFieldId.split(separator) || [];
+      const schemaMeta = formSchema.buildSchemaFromComponent({
+        componentElement: finalChildren,
+        rules: props.rules,
+        label,
+        finalFieldId,
+        separator,
       });
-    });
+
+      schemaFields.forEach((field: string) => {
+        formSchema.updateSchema({
+          path: util.getOriginField(field, formConfig.formName),
+          meta: schemaMeta,
+        });
+      });
+    }
+  } catch (error) {
+    if (process.env.NODE_ENV !== 'production') {
+      util.devUseWarning.warn(`formSchema buildSchemaFromComponent error: >>${error}`);
+    }
   }
 
   return (
