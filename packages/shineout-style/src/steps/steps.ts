@@ -784,6 +784,26 @@ const stepsStyle: JsStyles<StepsClassType> = {
           width: `calc(100% - ${Token.stepsIconWidth} + 4px)`,
         },
       },
+      '& $horizontalLabel': {
+        '& > $default': {
+          display: 'flex',
+          '& $content': {
+            flex: 1,
+            minWidth: 0,
+            '& $title': {
+              display: 'flex',
+              alignItems: 'center',
+              '& > *': {
+                maxWidth: '100%',
+              },
+              '&::after': {
+                position: 'static',
+                width: '100%',
+              }
+            }
+          }
+        }
+      }
     },
     '& $verticalLabel': {
       '& $title': {

@@ -2,7 +2,7 @@
 2025-09-04
 
 ### 🐞 BugFix
-- 修复 `Table` 在可展开内嵌套使用时，斑马纹样式不正确的问题 ([#1345](https://github.com/sheinsight/shineout-next/pull/1345))
+- 修复 `Table` 在可展开行内嵌套使用时，斑马纹样式不正确的问题 ([#1345](https://github.com/sheinsight/shineout-next/pull/1345))
 
 
 ## 3.8.0-beta.43
