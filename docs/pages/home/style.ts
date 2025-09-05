@@ -217,9 +217,9 @@ export default createUseStyles({
     gap: '12px',
   },
   content: {
-    height: '508px',
-    width: '1011px',
-    padding: '20px',
+    height: '526px',
+    width: '1027px',
+    padding: '28px',
     display: 'flex',
     flexWrap: 'wrap',
     gap: '16px',
@@ -347,27 +347,38 @@ export default createUseStyles({
   icons: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '8px',
+    gap: '14px',
     alignItems: 'center',
     justifyContent: 'center',
     width: '170px',
     height: '212px',
     color: token.brand_6,
   },
-  icon: {
-    position: 'relative',
+  iconWrapper: {
     width: '32px',
     height: '32px',
-    padding: '4px',
-    borderRadius: '6px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '8px',
     cursor: 'pointer',
     transition: 'background-color 0.2s ease',
     '&:hover': {
-      backgroundColor: token.brand_1,
+      backgroundColor: '#F4F5F8',
     },
-    '&::after': {
+  },
+  icon: {
+    position: 'relative',
+    width: '20px',
+    height: '20px',
+    padding: '1.67px',
+    cursor: 'pointer',
+    borderRadius:'8px',
+    transition: 'background-color 0.2s ease',
+    '&:hover': {
+      backgroundColor: '#F4F5F8',
+    },
 
-    }
   },
   introduce: {
     padding: '80px 0 40px 0',
