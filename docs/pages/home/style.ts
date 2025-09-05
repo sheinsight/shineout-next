@@ -371,7 +371,6 @@ export default createUseStyles({
     position: 'relative',
     width: '20px',
     height: '20px',
-    padding: '1.67px',
     cursor: 'pointer',
     borderRadius:'8px',
     transition: 'background-color 0.2s ease',
