@@ -798,7 +798,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
               },
               '&::after': {
                 position: 'static',
-                width:  '100%',
+                width: '100%',
               }
             }
           }
