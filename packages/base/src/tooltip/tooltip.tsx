@@ -37,12 +37,14 @@ const Tooltip = (props: TooltipProps) => {
     : {};
 
   const delay = props.delay || props.mouseEnterDelay || defaultDelay;
+  const mouseLeaveDelay = props.mouseLeaveDelay || defaultDelay;
   const { open, position, getTargetProps, targetRef, popupRef, closePop } = usePopup({
     position: popsitionProps,
     trigger: trigger,
     autoMode: 'popover',
     priorityDirection,
     mouseEnterDelay: delay,
+    mouseLeaveDelay: mouseLeaveDelay,
     targetEvents: disabledChild ? {} : childrenProps,
   });
 
