@@ -48,6 +48,13 @@ export interface TooltipProps
    */
   mouseEnterDelay?: number;
   /**
+   * @en The hidden delay of mouseleave (ms)
+   * @cn 移除隐藏延迟(毫秒)
+   * @default 0
+   * @version 3.8.1
+   */
+  mouseLeaveDelay?: number;
+  /**
    * @deprecated 弹出延迟（即将废弃），请使用 mouseEnterDelay
    */
   delay?: number;

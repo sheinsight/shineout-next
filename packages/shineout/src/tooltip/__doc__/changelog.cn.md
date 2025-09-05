@@ -1,3 +1,10 @@
+## 3.8.1-beta.8
+2025-09-05
+
+### 🆕 Feature
+- `Tooltip` 新增 `mouseLeaveDelay` 属性，用于设置鼠标移出后延迟隐藏组件，单位为毫秒 ([#1348](https://github.com/sheinsight/shineout-next/pull/1348))
+
+
 ## 3.8.0-beta.46
 2025-08-04
 
