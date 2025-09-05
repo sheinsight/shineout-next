@@ -1,3 +1,10 @@
+## 3.8.1-beta.7
+2025-09-05
+
+### 🐞 BugFix
+
+- 修复 `Form` 设置了 `name` 属性用法下的TreeSelect组件的keygen函数报错问题 (Regression: since v3.8.0) ([#1347](https://github.com/sheinsight/shineout-next/pull/1347))
+
 ## 3.8.0-beta.27
 2025-08-12
 
