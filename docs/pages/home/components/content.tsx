@@ -1,7 +1,8 @@
+import React from 'react';
 import classNames from 'classnames';
 import useStyle from '../style';
 import { Icon, star, userIcon } from '../svg';
-import { Avatar, Button, Carousel, Progress, Rate, Switch, TYPE, useToken } from 'shineout';
+import { Avatar, Button, Carousel, Rate, Switch, TYPE, useToken } from 'shineout';
 // @ts-ignore
 import Item1 from '../static/item1.png';
 // @ts-ignore
@@ -9,9 +10,9 @@ import Item2 from '../static/item2.png';
 import AutoProgress from './auto-progress';
 import { url } from '../constants';
 
-type PropgressType = TYPE.Progress.Props['type'];
+type ProgressType = TYPE.Progress.Props['type'];
 
-export interface ContentProps {}
+export type ContentProps = Record<string, never>;
 
 const Content = (props: ContentProps) => {
   const { } = props;
@@ -114,7 +115,7 @@ const Content = (props: ContentProps) => {
             <div className={classNames(styles.columnsAreaList, styles.progress)}>
               {
                 progresses.map((item, index) => (
-                  <AutoProgress key={index} target={item.value} type={item.type as PropgressType} />
+                  <AutoProgress key={index} target={item.value} type={item.type as ProgressType} />
                 ))
               }
             </div>
@@ -139,7 +140,9 @@ const Content = (props: ContentProps) => {
     return (
       <div className={styles.icons}>
         {new Array(20).fill(0).map((_, index) => (
-          <Icon key={index} type={`icon${index + 1}`} className={styles.icon}/>
+          <div key={index} className={styles.iconWrapper}>
+            <Icon type={`icon${index + 1}`} className={styles.icon}/>
+          </div>
         ))}
       </div>
     )
