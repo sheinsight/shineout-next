@@ -31,6 +31,18 @@ export class SchemaBuilder {
     };
   }
 
+  private mapEnumData(data: any[], format: any): any[] {
+    return data.map((item: any) => {
+      if (typeof format === 'string') {
+        return item ? item[format] : item;
+      } else if (typeof format === 'function' && item) {
+        return format(item);
+      } else {
+        return item;
+      }
+    });
+  }
+
   updateSchema({ path, meta }: { path: string; meta: SchemaMeta }): void {
     const pathSegments = this.parsePath(path);
     if (!pathSegments) return
@@ -100,11 +112,9 @@ export class SchemaBuilder {
           }
           if (componentElement.props.multiple) {
             fieldSchemaInfo.type = 'array';
-            if (itemType !== 'undefined') {
-              fieldSchemaInfo.items = {
-                type: itemType,
-              };
-            }
+            fieldSchemaInfo.items = {
+              type: itemType !== 'undefined' ? itemType : 'string',
+            };
           } else {
             if (itemType !== 'undefined') {
               fieldSchemaInfo.type = itemType;
@@ -125,7 +135,10 @@ export class SchemaBuilder {
               }));
             }
           } else {
-            fieldSchemaInfo.enum = componentElement.props.data.map((item: any) => item?.[format] || item);
+            const enumData = this.mapEnumData(componentElement.props.data, format);
+            if (enumData.length > 0) {
+              fieldSchemaInfo.enum = enumData;
+            }
           }
           break;
         }
@@ -172,7 +185,7 @@ export class SchemaBuilder {
               title: item?.title || JSON.stringify(item)
             }));
           } else {
-            fieldSchemaInfo.items.enum = componentElement.props.data.map((item: any) => item?.[format] || item);
+            fieldSchemaInfo.items.enum = this.mapEnumData(componentElement.props.data, format);
           }
           break;
         }
@@ -202,7 +215,7 @@ export class SchemaBuilder {
               title: item?.title || JSON.stringify(item)
             }));
           } else {
-            fieldSchemaInfo.enum = componentElement.props.data.map((item: any) => item?.[format] || item);
+            fieldSchemaInfo.enum = this.mapEnumData(componentElement.props.data, format);
           }
           break;
         }
