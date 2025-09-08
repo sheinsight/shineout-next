@@ -99,7 +99,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
       >
         {children({
           list: valueArr,
-          value: valueProxy,
+          value: (v && typeof v === 'object') ? valueProxy : v,
           index: i,
           error: errorList,
         onChange: (val: T extends (infer U)[] ? U : never, options) => {

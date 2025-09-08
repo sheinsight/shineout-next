@@ -1,3 +1,9 @@
+## 3.8.2-beta.2
+
+### 🐞 BugFix
+
+- 修复 `Form.FieldSet` 的 children 函数用法的 value 参数是基本类型时渲染不正确的问题 (Regression: since v3.8.0) ([#1352](https://github.com/sheinsight/shineout-next/pull/1352))
+
 ## 3.8.1-beta.7
 2025-09-05
 
