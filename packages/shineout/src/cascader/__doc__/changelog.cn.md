@@ -1,3 +1,10 @@
+## 3.8.2-beta.3
+2025-09-09
+
+### 🐞 BugFix
+- 修复 `Cascader` 开启 `compressed` 时，在 `onFilter` 中重新设置 `data` 后可能报RangeError的问题 ([#1353](https://github.com/sheinsight/shineout-next/pull/1353))
+
+
 ## 3.8.1-beta.4
 2025-09-03
 

@@ -97,7 +97,8 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
       .fill(undefined)
       .map((_item, index) => data[index] as React.ReactElement);
 
-    after = new Array(data.length - showNum!)
+    const afterCount = Math.max(0, data.length - showNum!);
+    after = new Array(afterCount)
       .fill(undefined)
       .map((_item, index) => data[showNum! + index] as React.ReactElement);
     afterLength = after.length;
