@@ -140,6 +140,9 @@ export class SchemaBuilder {
               fieldSchemaInfo.enum = enumData;
             }
           }
+          if(componentElement.props.data.length > 0) {
+            fieldSchemaInfo.description += `enumData: ${JSON.stringify(componentElement.props.data)};`
+          }
           break;
         }
         case 'ShineoutDatePicker':
@@ -187,6 +190,9 @@ export class SchemaBuilder {
           } else {
             fieldSchemaInfo.items.enum = this.mapEnumData(componentElement.props.data, format);
           }
+          if(componentElement.props.data.length > 0) {
+            fieldSchemaInfo.description += `enumData: ${JSON.stringify(componentElement.props.data)};`
+          }
           break;
         }
         case 'ShineoutRadio':
@@ -216,6 +222,9 @@ export class SchemaBuilder {
             }));
           } else {
             fieldSchemaInfo.enum = this.mapEnumData(componentElement.props.data, format);
+          }
+          if(componentElement.props.data.length > 0) {
+            fieldSchemaInfo.description += `enumData: ${JSON.stringify(componentElement.props.data)};`
           }
           break;
         }
