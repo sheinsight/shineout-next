@@ -87,20 +87,21 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
 
   const styles = classes;
 
-  const shouldShowMore = showNum! < 0 || showNum! >= data.length;
+  const shouldShowMore = !showNum || showNum < 0 || showNum >= data.length;
   let before: React.ReactElement[] = [];
   let after: React.ReactElement[] = [];
   let afterLength = 0;
 
   if (!shouldShowMore) {
-    before = new Array(showNum!)
+    const validShowNum = showNum || 0;
+    before = new Array(validShowNum)
       .fill(undefined)
       .map((_item, index) => data[index] as React.ReactElement);
 
-    const afterCount = Math.max(0, data.length - showNum!);
+    const afterCount = Math.max(0, data.length - validShowNum);
     after = new Array(afterCount)
       .fill(undefined)
-      .map((_item, index) => data[showNum! + index] as React.ReactElement);
+      .map((_item, index) => data[validShowNum + index] as React.ReactElement);
     afterLength = after.length;
   }
 
