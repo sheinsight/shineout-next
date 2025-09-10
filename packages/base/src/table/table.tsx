@@ -489,7 +489,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
       const scrollRefWidth = scrollRef?.current?.clientWidth || 0;
       const scrollRefScrollWidth = scrollRef?.current?.scrollWidth || 0;
-      const mirrorScrollRefWidth = scrollRefWidth + scrollBarWidth;
+      const hasVerticalScroll = (scrollRef?.current?.scrollHeight || 0) > (scrollRef?.current?.clientHeight || 0);
+      const mirrorScrollRefWidth = scrollRefWidth + (hasVerticalScroll ? 0 : scrollBarWidth);
       const showScroll = scrollRefScrollWidth > scrollRefWidth;
       // 开启了双滚，但是没有滚动条，不显示
       if (!scrollRefWidth || !mirrorScrollRefWidth || !showScroll) return null;
@@ -499,6 +500,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         bottom: options.bottom || 0,
         zIndex: options.zIndex || defaultZIndex + 1,
         parent: tableRef?.current,
+        scrollContainer: options.scrollContainer,
       };
       return (
         <Sticky {...scrollerStickyProps}>

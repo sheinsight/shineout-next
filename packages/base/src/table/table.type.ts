@@ -391,7 +391,7 @@ export interface TableProps<DataItem, Value>
   cellSortable?: boolean;
 }
 
-interface BottomScrollbarOption extends Pick<StickyProps, 'bottom'> {
+interface BottomScrollbarOption extends Pick<StickyProps, 'bottom' | 'scrollContainer'> {
   zIndex?: number;
 }
 

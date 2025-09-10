@@ -1,3 +1,10 @@
+## 3.8.2-beta.6
+2025-09-10
+
+### 💎 Enhancement
+- 增强 `Table` 的 `showTopScrollbar` 属性设置，支持设置滚动容器 ([#1356](https://github.com/sheinsight/shineout-next/pull/1356))
+
+
 ## 3.8.1-beta.5
 2025-09-04
 
@@ -448,11 +455,6 @@
 - 修复 `Table` 属性 `onRowClick` 漏传参数 `fireAttr` ([#418](https://github.com/sheinsight/shineout-next/pull/418))
 - 修复 `Table` 选择行合并的场景下会出现部分选中的列没有高亮的问题 ([#415](https://github.com/sheinsight/shineout-next/pull/415))
 
-### 💎 Enhancement
-
-### 💅 Style
-
-### 🆎 Type
 
 ## 3.0.10
 2024-05-06
