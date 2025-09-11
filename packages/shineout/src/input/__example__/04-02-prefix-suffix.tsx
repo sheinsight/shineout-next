@@ -10,7 +10,7 @@ import { Input, icons } from 'shineout';
 
 function MyIcon(props: any){
   const style={
-    width: 20,
+    width: 14,
     height: 20,
     display: 'flex',
     alignItems: 'center',
@@ -26,8 +26,8 @@ const App: React.FC = () => (
   <Input
     placeholder='please enter'
     width={300}
-    prefix={<MyIcon style={{ marginRight: 8 }}>{icons.Calendar}</MyIcon>}
-    suffix={<MyIcon style={{ marginLeft: 8 }}>{icons.Search}</MyIcon>}
+    prefix={<MyIcon style={{ marginRight: 8, flexShrink: 0 }}>{icons.Calendar}</MyIcon>}
+    suffix={<MyIcon style={{ marginLeft: 8, flexShrink: 0 }}>{icons.Search}</MyIcon>}
   />
 );
 
