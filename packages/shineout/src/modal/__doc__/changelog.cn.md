@@ -1,3 +1,9 @@
+## 3.8.2-beta.11
+2025-09-12
+
+### 🐞 BugFix
+- 修复 `Modal` 设置了 `fullScreen` 属性后 `footer` 可能被遮挡的样式问题 ([#1335](https://github.com/sheinsight/shineout-next/pull/1335))
+
 ## 3.8.0-beta.44
 2025-08-21
 

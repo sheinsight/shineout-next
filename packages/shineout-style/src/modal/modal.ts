@@ -392,12 +392,16 @@ const modalStyle: JsStyles<ModalClassType> = {
   },
   body: {
     flex: '1 1 auto',
-    minHeight: '1px',
+    minHeight: 0,
     // overflow: 'auto',
     color: token.modalBodyFontColor,
     fontSize: token.modalBodyFontSize,
     fontWeight: token.modalBodyFontWeight,
     lineHeight: token.lineHeightDynamic,
+
+    '$wrapperFullScreen &': {
+      minHeight: 'unset',
+    },
   },
   bodyWithIcon: {
     paddingLeft: `calc(${token.modalHeaderIconMarginEnd} + ${token.modalHeaderIconSize})`,
