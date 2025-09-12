@@ -99,10 +99,15 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
       .map((_item, index) => data[index] as React.ReactElement);
 
     const afterCount = Math.max(0, data.length - validShowNum);
-    after = new Array(afterCount)
-      .fill(undefined)
-      .map((_item, index) => data[validShowNum + index] as React.ReactElement);
-    afterLength = after.length;
+    try {
+      after = new Array(afterCount)
+        .fill(undefined)
+        .map((_item, index) => data[validShowNum + index] as React.ReactElement);
+      afterLength = after.length;
+    } catch (error) {
+      after = [];
+      afterLength = 0;
+    }
   }
 
   if (shouldShowMore) {
