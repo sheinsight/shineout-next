@@ -1,3 +1,9 @@
+## 3.8.2-beta.7
+2025-09-12
+
+### 🐞 BugFix
+- 修复 `Table` 不定设置固定高度的虚拟列表下，compressed 弹出层内部无法滚动的问题 （Regression: since v3.7.7） ([#1358](https://github.com/sheinsight/shineout-next/pull/1358))
+
 ## 3.8.2-beta.6
 2025-09-10
 
