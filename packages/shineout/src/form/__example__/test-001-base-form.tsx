@@ -59,6 +59,33 @@ export default () => {
           />
         </Form.Item>
 
+        <Form.Item label='下拉2' required>
+          <Select
+            data={[1,2,3,4,5,6,7,8,9,10]}
+            multiple
+            keygen
+            name='select2'
+          />
+        </Form.Item>
+        <Form.Item label='下拉3' required>
+          <Select
+            data={[{id: 1, color: 'red'}, {id: 2, color: 'green'}, {id: 3, color: 'blue'}]}
+            multiple
+            keygen="id"
+            format="id"
+            name='select3'
+          />
+        </Form.Item>
+        <Form.Item label='下拉4' required>
+          <Select
+            data={[{id: 1, color: 'red'}, {id: 2, color: 'green'}, {id: 3, color: 'blue'}]}
+            multiple
+            keygen="id"
+            format={d => d.color}
+            name='select4'
+          />
+        </Form.Item>
+
         <Form.Item label='下拉多选' required>
           <Select
             data={[]}

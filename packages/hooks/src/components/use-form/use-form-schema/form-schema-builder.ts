@@ -137,7 +137,11 @@ export class SchemaBuilder {
           } else {
             const enumData = this.mapEnumData(componentElement.props.data, format);
             if (enumData.length > 0) {
-              fieldSchemaInfo.enum = enumData;
+              if (componentElement.props.multiple) {
+                fieldSchemaInfo.items.enum = enumData;
+              } else {
+                fieldSchemaInfo.enum = enumData;
+              }
             }
           }
           if(componentElement.props.data.length > 0) {
