@@ -314,6 +314,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
       syncHeaderScroll(info.scrollLeft);
 
+      if(props.virtual !== "lazy") return;
       if (context.scrollingTimer) {
         clearTimeout(context.scrollingTimer);
       }
