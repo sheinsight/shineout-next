@@ -156,7 +156,7 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
             visible={visible}
             onVisibleChange={setVisible}
           >
-            <div className={styles.moreWrapper} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.moreWrapper} onClick={(e) => e.stopPropagation()} onScroll={(e) => e.stopPropagation()}>
               {compressed === 'no-repeat' ? null : before}
               {after}
             </div>
