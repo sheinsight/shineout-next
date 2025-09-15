@@ -61,7 +61,7 @@ export let config: ConfigOption = {
   trim: undefined,
   spin: 'ring',
   tooltip: undefined,
-  empty: undefined,
+  empty: {},
   direction: 'ltr',
   popupContainer: null,
 };
