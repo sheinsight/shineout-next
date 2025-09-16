@@ -1,3 +1,10 @@
+## 3.8.3-beta.3
+2025-09-16
+
+### 💎 Enhancement
+- 增强 `Select` 的 `groupBy` 属性，支持返回 React 组件，用于自定义渲染分组标题 ([#1350](https://github.com/sheinsight/shineout-next/pull/1350))
+
+
 ## 3.8.1-beta.2
 2025-09-02
 

@@ -5,7 +5,7 @@
  *    -- Set the `groupBy` function to group the data
  */
 import React from 'react';
-import { Select, TYPE } from 'shineout';
+import { Checkbox, Select, TYPE } from 'shineout';
 
 type SelectProps = TYPE.Select.Props<DataItem, string>;
 interface DataItem {
@@ -13,6 +13,13 @@ interface DataItem {
   group: string;
 }
 
+const City = () => {
+  return <Checkbox>City</Checkbox>;
+};
+
+const Country = () => {
+  return <Checkbox>Country</Checkbox>;
+};
 export default () => {
   const data: DataItem[] = [
     { value: 'Mars', group: '3' },
@@ -22,8 +29,8 @@ export default () => {
   ];
 
   const groupBy: SelectProps['groupBy'] = (d) => {
-    if (d.group === '1') return 'City';
-    if (d.group === '2') return 'Country';
+    if (d.group === '1') return <div style={{marginTop: 20}}>City</div>;
+    if (d.group === '2') return <Checkbox>Country</Checkbox>;
     return 'Other';
   };
 
@@ -39,6 +46,7 @@ export default () => {
       style={{ width: 240 }}
       groupBy={groupBy}
       clearable
+      multiple
     />
   );
 };

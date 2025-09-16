@@ -1,3 +1,4 @@
+import React from 'react';
 import { ObjectKey } from '../../common/type';
 
 export interface BaseSelectProps<DataItem, Value> {
@@ -69,11 +70,12 @@ export interface BaseSelectProps<DataItem, Value> {
   onChange?: (value: Value, data?: DataItem, checked?: boolean) => void;
 
   /**
-   * @en Groups options by returning group name for each item. Parameters: item (current data item to categorize), index (item's position in array), data (complete data array for context)
-   * @cn 通过返回分组名称对选项进行分组。参数：item（当前要分类的数据项）、index（数据项在数组中的索引位置）、data（完整的数据数组，提供上下文信息）
-   * @when 需要将选项按类别分组显示时使用，如按部门、类型或首字母等条件组织选项
+   * @en Groups options by returning group name or React component for each item. Parameters: item (current data item to categorize), index (item's position in array), data (complete data array for context)
+   * @cn 通过返回分组名称或React组件对选项进行分组。参数：item（当前要分类的数据项）、index（数据项在数组中的索引位置）、data（完整的数据数组，提供上下文信息）
+   * @when 需要将选项按类别分组显示时使用，如按部门、类型或首字母等条件组织选项，或需要自定义分组头渲染时
+   * @version 3.8.3: 支持返回 React 组件
    */
-  groupBy?: (item: DataItem, index?: number, data?: DataItem[]) => string;
+  groupBy?: (item: DataItem, index?: number, data?: DataItem[]) => string | React.ReactNode;
   filterSameChange?: boolean;
 }
 
