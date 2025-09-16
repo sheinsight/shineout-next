@@ -13,13 +13,6 @@ interface DataItem {
   group: string;
 }
 
-const City = () => {
-  return <Checkbox>City</Checkbox>;
-};
-
-const Country = () => {
-  return <Checkbox>Country</Checkbox>;
-};
 export default () => {
   const data: DataItem[] = [
     { value: 'Mars', group: '3' },
@@ -29,8 +22,8 @@ export default () => {
   ];
 
   const groupBy: SelectProps['groupBy'] = (d) => {
-    if (d.group === '1') return <div style={{marginTop: 20}}>City</div>;
-    if (d.group === '2') return <Checkbox>Country</Checkbox>;
+    if (d.group === '1') return 'City';
+    if (d.group === '2') return 'Country';
     return 'Other';
   };
 
