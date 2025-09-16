@@ -175,10 +175,10 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     );
   };
 
-  const renderGroupTitle = (d: { [key: string]: string }) => {
+  const renderGroupTitle = (d: { [key: string]: any }) => {
     const title = d[groupKey as keyof typeof d];
     return (
-      <div className={styles.optionGroupTitle} title={title}>
+      <div className={styles.optionGroupTitle} title={typeof title === 'string' ? title : undefined}>
         {title}
       </div>
     );

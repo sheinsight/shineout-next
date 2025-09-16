@@ -100,9 +100,10 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
 
   const renderGroupTitle = (item: DataItem, key: string) => {
     if (item[groupKey]) {
+      const title = item[groupKey];
       return (
-        <div className={styles.optionGroupTitle} key={key}>
-          {item[groupKey] as string}
+        <div className={styles.optionGroupTitle} key={key} title={typeof title === 'string' ? title as string : undefined}>
+          {title as React.ReactNode}
         </div>
       );
     }

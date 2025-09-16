@@ -5,7 +5,7 @@
  *    -- Set the `groupBy` function to group the data
  */
 import React from 'react';
-import { Select, TYPE } from 'shineout';
+import { Checkbox, Select, TYPE } from 'shineout';
 
 type SelectProps = TYPE.Select.Props<DataItem, string>;
 interface DataItem {
@@ -39,6 +39,7 @@ export default () => {
       style={{ width: 240 }}
       groupBy={groupBy}
       clearable
+      multiple
     />
   );
 };
