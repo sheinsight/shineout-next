@@ -69,7 +69,10 @@ export let config: ConfigOption = {
 const state = create<ConfigOption>(config);
 
 state.subscribe(() => {
-  config = getSnapshot(state.mutate);
+  const snapshot = getSnapshot(state.mutate);
+  if (snapshot) {
+    config = snapshot;
+  }
 });
 
 export function getDefaultContainer() {
@@ -91,7 +94,7 @@ export const useConfig = () => {
 
 export const setConfig = (option: Partial<ConfigOption>) => {
   for (const [key, value] of Object.entries(option)) {
-    if (key in config) {
+    if (config && key in config) {
       const k = key as keyof ConfigOption;
       // @ts-ignore
       state.mutate[k] = value;
