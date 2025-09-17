@@ -505,7 +505,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   };
 
   const getDataByValues = (values: Value) => {
-    return datum.getDataByValues(values as Value[], { childrenKey });
+    if ('treeData' in props) {
+      return datum.getDataByValues(values as Value[], { childrenKey });
+    }
+    return datum.getDataByValues(values as Value[]);
   };
 
   const checkUnMatched = (item: DataItem | UnMatchedData | null): item is UnMatchedData => {
