@@ -28,7 +28,7 @@ type EmptyConfig = {
    * @en Global default icon for Empty component
    * @cn Empty组件的全局默认图标
    */
-  icon?: React.ReactNode;
+  icon?: () => React.ReactNode;
   /**
    * @en Global default description for Empty component
    * @cn Empty组件的全局默认描述
@@ -69,10 +69,7 @@ export let config: ConfigOption = {
 const state = create<ConfigOption>(config);
 
 state.subscribe(() => {
-  const snapshot = getSnapshot(state.mutate);
-  if (snapshot) {
-    config = snapshot;
-  }
+  config = getSnapshot(state.mutate);
 });
 
 export function getDefaultContainer() {
@@ -94,7 +91,7 @@ export const useConfig = () => {
 
 export const setConfig = (option: Partial<ConfigOption>) => {
   for (const [key, value] of Object.entries(option)) {
-    if (config && key in config) {
+    if (key in config) {
       const k = key as keyof ConfigOption;
       // @ts-ignore
       state.mutate[k] = value;
