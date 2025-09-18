@@ -601,7 +601,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       <>
         {renderHeadMirrorScroller()}
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-          <table style={tableStyle} ref={tbodyRef}>
+          <table style={{...tableStyle, }} ref={tbodyRef}>
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (
