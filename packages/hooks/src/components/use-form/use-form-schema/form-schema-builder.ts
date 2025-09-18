@@ -166,7 +166,46 @@ export class SchemaBuilder {
             fieldSchemaInfo.format = 'date';
           }
 
-          fieldSchemaInfo.description += `默认时间：${componentElement.props.defaultTime?.toString() || ''}; 格式：${componentElement.props.format || ''} `
+          const defaultTime = componentElement.props.defaultTime?.toString() || '';
+          if(defaultTime) {
+            fieldSchemaInfo.description += `默认时间：${defaultTime} `
+          }
+          let dateformat = componentElement.props.format || '';
+          if(!dateformat) {
+            switch(componentElement.props.type) {
+              case 'date':
+                dateformat = 'YYYY-MM-DD';
+                break;
+              case 'time':
+                dateformat = 'HH:mm:ss';
+                break;
+              case 'datetime':
+                dateformat = 'YYYY-MM-DD HH:mm:ss';
+                break;
+              case 'week':
+                dateformat = 'GGGG WW';
+                break;
+              case 'month':
+                dateformat = 'YYYY-MM';
+                break;
+              case 'quarter':
+                dateformat = 'YYYY-\[Q]Q';
+                break;
+              case 'year':
+                dateformat = 'YYYY';
+                break;
+              default:
+                dateformat = 'YYYY-MM-DD';
+                break;
+            }
+          }
+          fieldSchemaInfo.description += `格式：${dateformat} `
+          if (componentElement.props.max) {
+            fieldSchemaInfo.description += `最大时间：${componentElement.props.max} `
+          }
+          if (componentElement.props.min) {
+            fieldSchemaInfo.description += `最小时间：${componentElement.props.min} `
+          }
           break;
         case 'ShineoutCheckbox':
         case 'ShineoutCheckboxGroup': {

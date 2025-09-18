@@ -38,7 +38,7 @@ export default () => {
   const [schemaInfoModalVisible, setSchemaInfoModalVisible] = React.useState(false);
 
   return (
-    <div>
+    <div style={{ display: 'flex', gap: 10 }}>
       <Form setForm={setForm} name='请假申请单' onSubmit={(v) => console.log(v)}>
         <Form.Item label='假期类型' required>
           <Select
@@ -164,6 +164,11 @@ export default () => {
             rules={[rules.required()]}
           />
         </Form.Item>
+        <Form.Item label='时间1'>
+          <DatePicker
+            name='时间1'
+          />
+        </Form.Item>
 
         <Form.Item label='相关流程'>
           <Input name='relatedProcess' />
@@ -174,7 +179,7 @@ export default () => {
             onClick={() => {
               console.log(form.getFormSchema());
               setSchemaInfo(form.getFormSchema());
-              setSchemaInfoModalVisible(true);
+              // setSchemaInfoModalVisible(true);
             }}
           >
             Get Schema
@@ -183,6 +188,14 @@ export default () => {
           <Form.Reset>Reset</Form.Reset>
         </Form.Item>
       </Form>
+
+      <div style={{ maxHeight: 800, overflow: 'auto' }}>
+        <pre>
+          {
+            JSON.stringify(schemaInfo, null, 2)
+          }
+        </pre>
+      </div>
 
       <Modal
         title='Schema Info'
