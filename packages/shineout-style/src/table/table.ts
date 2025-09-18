@@ -231,6 +231,16 @@ const tableStyle: JsStyles<TableClassType> = {
       position: 'sticky',
       bottom: 0,
       zIndex: fixedIndex + 1,
+
+      display: 'flex',
+      flexDirection: 'column',
+      flex: 1,
+
+      '&::before': {
+        content: '""',
+        flex: 1,
+        backgroundColor: token.tableTbodyBackgroundColor,
+      }
     }
   },
   scrollY: {

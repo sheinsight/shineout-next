@@ -564,7 +564,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
             {/* tbody of virtual */}
             {!!props.data?.length && (
-              <table style={{ ...tableStyle,  height: '100%', transform: virtualInfo.translateStyle }} ref={tbodyRef}>
+              <table style={{ ...tableStyle, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
                 {Group}
                 <Tbody
                   {...bodyCommonProps}
@@ -601,7 +601,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       <>
         {renderHeadMirrorScroller()}
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-          <table style={{...tableStyle, height: '100%'}} ref={tbodyRef}>
+          <table style={{...tableStyle, }} ref={tbodyRef}>
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (

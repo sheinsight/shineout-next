@@ -1730,7 +1730,7 @@ describe('Table[Foot]', () => {
     );
     const tables = container.querySelectorAll('table');
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, 'width: 100px; border-spacing: 0; height: 100%; transform: translate3d(0, 0px, 0);');
+      if (index === 1) styleTest(item, 'width: 100px; border-spacing: 0; transform: translate3d(0, 0px, 0);');
       else styleTest(item, 'width: 100px; border-spacing: 0;');
     });
     rerender(
@@ -1746,7 +1746,7 @@ describe('Table[Foot]', () => {
       />,
     );
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, 'width: 100px; border-spacing: 0; height: 100%; transform: translate3d(0, 0px, 0);');
+      if (index === 1) styleTest(item, 'width: 100px; border-spacing: 0; transform: translate3d(0, 0px, 0);');
       else styleTest(item, 'width: 100px; border-spacing: 0;');
     });
   });
