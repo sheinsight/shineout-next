@@ -1,3 +1,11 @@
+## 3.8.3-beta.8
+2025-09-19
+
+### 🐞 BugFix
+
+- 修复 `Input` 初始化时 value 为数字 0 的时候可清除按钮显示不正确的问题 （Regression: since v3.8.0） ([#1374](https://github.com/sheinsight/shineout-next/pull/1374))
+
+
 ## 3.8.0-beta.7
 2025-06-23
 
