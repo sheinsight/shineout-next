@@ -1,5 +1,6 @@
 import useForkRef from '../../common/use-fork-ref';
 import * as React from 'react';
+import { util } from '@sheinx/hooks';
 import { extractEventHandlers } from '../../utils';
 import {
   BaseInputProps,
@@ -150,7 +151,7 @@ const useInput = (params: BaseInputProps) => {
     };
   };
 
-  const showClearValue = showClear !== undefined ? !!showClear : clearable && (value !== undefined && value !== null && value !== '');
+  const showClearValue = showClear !== undefined ? !!showClear : clearable && !util.isEmpty(value);
 
   return {
     focused,
