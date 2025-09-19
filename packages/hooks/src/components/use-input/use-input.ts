@@ -150,7 +150,7 @@ const useInput = (params: BaseInputProps) => {
     };
   };
 
-  const showClearValue = showClear !== undefined ? !!showClear : clearable && value;
+  const showClearValue = showClear !== undefined ? !!showClear : clearable && (value !== undefined && value !== null && value !== '');
 
   return {
     focused,
