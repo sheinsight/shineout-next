@@ -93,7 +93,7 @@ const Input = (props: SimpleInputProps) => {
     !border && inputStyle?.wrapperNoBorder,
     hasSuffix && inputStyle?.password,
     showClearFromProp && inputStyle?.wrapperShowClear,
-    showClearFromProp && inputElProps.value?.length > 0 && inputStyle?.wrapperHasValue,
+    showClearFromProp && !util.isEmpty(inputElProps.value) && inputStyle?.wrapperHasValue,
   );
 
   return (
