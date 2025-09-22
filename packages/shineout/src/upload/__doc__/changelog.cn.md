@@ -1,3 +1,11 @@
+## 3.8.4-beta.1
+2025-09-22
+
+### 🐞 BugFix
+
+- 修复 `Upload` 上传结果的图标在Safari浏览器中不可见的问题 ([#1378](https://github.com/sheinsight/shineout-next/pull/1378))
+
+
 ## 3.8.0-beta.42
 2025-08-20
 
