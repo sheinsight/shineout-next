@@ -111,6 +111,10 @@ const uploadStyle: JsStyles<UploadClassType> = {
     alignItems: 'center',
     '$resultError $resultText &': { color: token.uploadResultErrorFontColor },
     '$resultDeleted $resultText &': { color: token.uploadResultDeletedFontColor },
+
+    '& > svg': {
+      width: '100%',
+    }
   },
   iconHover: {
     '&:hover': {
