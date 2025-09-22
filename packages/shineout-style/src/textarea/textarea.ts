@@ -95,7 +95,14 @@ const input: JsStyles<keyof TextareaClasses> = {
     },
 
     '&:not($shadow)': {
-      minHeight: '-webkit-fill-available',
+      // 非 Safari 浏览器使用 -webkit-fill-available
+      '@supports not ((-webkit-hyphens: none))': {
+        minHeight: '-webkit-fill-available',
+      },
+      // Safari 使用 100%（Safari 支持 -webkit-hyphens）
+      '@supports (-webkit-hyphens: none)': {
+        minHeight: 'unset',
+      },
     }
   },
   resize: {

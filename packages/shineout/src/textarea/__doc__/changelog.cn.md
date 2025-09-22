@@ -1,3 +1,11 @@
+## 3.8.4-beta.1
+2025-09-22
+
+### 🐞 BugFix
+
+- 修复 `Textarea` 在 Safari 浏览器中使用 autosize 时，高度不正确的问题 (Regression: since v3.7.9) ([#1377](https://github.com/sheinsight/shineout-next/pull/1377))
+
+
 ## 3.7.9-beta.1
 2025-07-30
 
