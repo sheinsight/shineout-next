@@ -20,7 +20,7 @@ interface ScrollProps {
     width: number;
   }) => void;
   onScrollToBottom?: (options?: any) => void;
-  setFakeVirtual: (v: boolean) => void;
+  setFakeVirtual?: (v: boolean) => void;
   tableRef: React.RefObject<HTMLDivElement>;
   className?: string;
   childrenStyle?: React.CSSProperties;
@@ -151,13 +151,13 @@ const Scroll = (props: ScrollProps) => {
 
   // 非定高的Table但依旧采用了virtual渲染方式，需要渲染出全部的data
   useLayoutEffect(() => {
-    if (!props.tableRef.current) return;
-    const rootTableHeight = props.tableRef.current.clientHeight;
-    const container = containerRef.current
+    if (!props.tableRef.current || !props.setFakeVirtual) return;
 
+    const container = containerRef.current
     const isContainerVisible = container?.offsetParent !== null;
     if(!isContainerVisible) return;
 
+    const rootTableHeight = props.tableRef.current.clientHeight;
     // 判断内容滚动高度是否真的超过了容器高度
     const isRealScroll = container?.scrollHeight !== undefined && container.scrollHeight > rootTableHeight
     // 判断Table的根节点dom高度是否发生变化，如果变化了，则是因为不定高，被内部元素撑高了导致的
@@ -167,7 +167,7 @@ const Scroll = (props: ScrollProps) => {
     } else {
       context.lastTableHeight = rootTableHeight;
     }
-  }, [paddingTop]);
+  }, [paddingTop, props.setFakeVirtual]);
 
   if (props.isEmpty) {
     return <div {...scrollRoleProps}>
