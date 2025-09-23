@@ -50,6 +50,7 @@ export interface TableClasses {
   emptyHeader: string;
   scrollY: string;
   scrollX: string;
+  overlayScrollbar: string;
 
   cellAlignLeft: string;
   cellAlignRight: string;

@@ -248,7 +248,11 @@ const tableStyle: JsStyles<TableClassType> = {
       overflow: 'hidden scroll',
       ...customScrollBar({ background: 'transparent' }),
     },
+    '&$overlayScrollbar$headWrapper, &$overlayScrollbar$footWrapper': {
+      overflow: 'hidden',
+    }
   },
+  overlayScrollbar: {},
   scrollX: {
     '&$headWrapper, &$footWrapper': {
       overflowX: 'hidden',
