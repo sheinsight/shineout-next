@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Scroll from '../virtual-scroll/scroll-table';
 import classNames from 'classnames';
 import Spin from '../spin';
@@ -53,6 +53,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const headMirrorScrollRef = useRef<HTMLDivElement | null>(null);
   const bottomMirrorScrollRef = useRef<HTMLDivElement | null>(null);
   const tableRef = useRef<HTMLDivElement | null>(null);
+  const [scrollAble, setScrollAble] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const [fakeVirtual, setFakeVirtual] = useState(false);
 
@@ -83,6 +84,16 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     !fakeVirtual &&
     props.rowsInView !== 0 &&
     (!!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
+
+  useLayoutEffect(() => {
+    if (!virtual) return;
+    if (!tableRef.current) return;
+    const maxHeight = tableRef.current.style.maxHeight;
+    if(!maxHeight) return;
+
+    const isScrollAble = util.isScrollAble(tableRef.current);
+    setScrollAble(isScrollAble);
+  }, [virtual]);
 
   // 虚拟列表高度另外计算
   const { height: tbodyHeight } = useResize({ targetRef: virtual ? emptyRef : tbodyRef });
@@ -557,7 +568,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             isScrollX={isScrollX}
             isEmpty={!!$empty}
             tableRef={tableRef}
-            setFakeVirtual={setFakeVirtual}
+            setFakeVirtual={scrollAble ? undefined : setFakeVirtual}
           >
             {/* thead of virtual */}
             {!props.hideHeader && !props.sticky && $headTable}

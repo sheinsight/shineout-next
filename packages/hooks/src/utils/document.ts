@@ -36,3 +36,34 @@ export function isInDocument(element: HTMLElement | null) {
   }
   return isBrowser() && document.documentElement.contains(element);
 }
+
+export function isScrollAble(container: HTMLElement | null) {
+  if (!container || !isBrowser()) return false;
+
+  if (container.scrollHeight > container.clientHeight) {
+    return true;
+  }
+
+  const placeholderEl = document.createElement('div');
+  placeholderEl.style.height = '9999px';
+  placeholderEl.style.top = '0';
+  placeholderEl.style.flexShrink = '0';
+  placeholderEl.style.left = '0';
+  placeholderEl.style.width = '1px';
+  placeholderEl.style.pointerEvents = 'none';
+  container.appendChild(placeholderEl);
+
+  const absoluteEl = document.createElement('div');
+  absoluteEl.style.position = 'absolute';
+  absoluteEl.style.top = '0';
+  absoluteEl.style.bottom = '0';
+  absoluteEl.style.left = '0';
+  absoluteEl.style.width = '1px';
+  absoluteEl.style.pointerEvents = 'none';
+  container.appendChild(absoluteEl);
+
+  const hasScroll = absoluteEl.clientHeight < placeholderEl.clientHeight;
+  placeholderEl.remove();
+  absoluteEl.remove();
+  return hasScroll;
+}

@@ -1,3 +1,9 @@
+## 3.8.4-beta.2
+
+### 💎 Enhancement
+- 优化 `Table` 设置了 `virtual` 但未设置固定高度且设置了 maxHeight 后，表格内容变化后不再引起整体重新渲染 ([#1379](https://github.com/sheinsight/shineout-next/pull/1379))
+
+
 ## 3.8.3-beta.7
 2025-09-18
 
