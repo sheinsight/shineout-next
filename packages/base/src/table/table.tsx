@@ -454,6 +454,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       tableClasses?.headWrapper,
       !!$empty && tableClasses.emptyHeader,
       props.sticky && isScrollY && tableClasses.scrollY,
+      props.sticky && isScrollY && browserScrollbarWidth === 0 && tableClasses.overlayScrollbar,
       props.sticky && !isScrollY && tableClasses.scrollX,
     );
 
