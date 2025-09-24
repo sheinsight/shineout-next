@@ -156,13 +156,13 @@ function ImageDemo(){
       >
         <Image.Group fit='fill' target='_modal' pile lazy>
           {images.map((item, index) => {
-            return <Image inViewOnly key={index} width={128} height={128} src={item} href={item}></Image>;
+            return <Image key={index} width={128} height={128} src={item} href={item}></Image>;
           })}
         </Image.Group>
 
         <Image.Group fit='fill' target='_modal' pile showCount lazy>
           {images.map((item, index) => {
-            return <Image inViewOnly key={index} width={128} height={128} src={item} href={item}></Image>;
+            return <Image key={index} width={128} height={128} src={item} href={item}></Image>;
           })}
         </Image.Group>
       </div>
