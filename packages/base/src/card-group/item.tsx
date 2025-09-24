@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useEffect, useState } from 'react';
 import { useInView, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CardGroupContext } from './card-group-context';
@@ -10,19 +10,20 @@ import type { CardGroupItemProps } from './item.type';
 const Item = <V,>(props: CardGroupItemProps<V>) => {
   const { container } = useContext(CardGroupContext);
   const classes = props.jssStyle?.cardGroup?.();
-  const { current: context } = useRef({
-    isInView: false,
-  });
+  const [isInViewState, setIsInView] = useState(false);
 
-  const { ref: itemRef, isInView } = useInView<HTMLDivElement>({
+  const { ref: itemRef, isInView: isInViewRef } = useInView<HTMLDivElement>({
     rootMargin: `${container?.offsetHeight || 500}px`,
     root: container,
     threshold: [0, 1],
+    once: true,
   });
 
-  if (isInView && !context.isInView) {
-    context.isInView = true;
-  }
+  useEffect(() => {
+    if (isInViewRef) {
+      setIsInView(true);
+    }
+  }, [isInViewRef]);
 
   const handleChange = usePersistFn((_: any, checked: boolean) => {
     if (props.onChange) props.onChange(checked, props.value!);
@@ -31,7 +32,7 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
   const renderChildren = (content: React.ReactNode) => {
     if (!props.placeholder) return content;
     return (
-      <Lazyload container={container} placeholder={props.placeholder} isInView={context.isInView}>
+      <Lazyload container={container} placeholder={props.placeholder} isInView={isInViewState}>
         {content}
       </Lazyload>
     );
@@ -55,7 +56,7 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
     </>
   );
 
-  const hiddenStyle = context.isInView ? undefined : { visibility: 'hidden' };
+  const hiddenStyle = isInViewState ? undefined : { visibility: 'hidden' };
   const itemStyle = { ...props.style, ...hiddenStyle } as React.CSSProperties;
 
   return (

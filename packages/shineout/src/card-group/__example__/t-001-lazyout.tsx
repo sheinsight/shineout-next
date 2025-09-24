@@ -123,7 +123,7 @@ function Item({ title, icon, color }: ItemData) {
 }
 
 const placeholder: CardGroupItemProps['placeholder'] = (
-  <div style={{ width: '100%', height: 50, display: 'flex' }}>
+  <div style={{ width: '100%', height: 300, display: 'flex' }}>
     <Spin style={{ margin: 'auto' }} />
   </div>
 );
@@ -152,6 +152,7 @@ function ImageDemo(){
           gap: 16,
           width: '100%',
           display: 'flex',
+          height: 128,
         }}
       >
         <Image.Group fit='fill' target='_modal' pile lazy>
