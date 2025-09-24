@@ -1,3 +1,10 @@
+## 3.8.4-beta.5
+2025-09-24
+
+### 🐞 BugFix
+- 修复 `Tabs` 的 card 模式下 `hideSplit` 属性失效的问题 ([#1383](https://github.com/sheinsight/shineout-next/pull/1383))
+
+
 ## 3.8.0-beta.35
 2025-08-15
 
