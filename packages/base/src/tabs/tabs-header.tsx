@@ -202,7 +202,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   };
 
   const renderTab = () => {
-    const headerClass = classNames(headerStyle.header, shape === 'card' ? headerStyle.cardHr : '');
+    const headerClass = classNames(headerStyle.header);
     return (
       <div ref={headerRef} className={headerClass}>
         <div
@@ -300,7 +300,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
       {...getDataProps({ position: props.getPosition, shape })}
       dir={config.direction}
     >
-      {!hideSplit && shape !== 'card' && renderHr()}
+      {!hideSplit && renderHr()}
       {collapsible && renderCollapsibleButton()}
       {shouldScroll && renderPrevButton()}
       {renderTab()}
