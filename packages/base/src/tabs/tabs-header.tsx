@@ -160,6 +160,10 @@ const TabsHeader = (props: TabsHeaderProps) => {
             width: currentTab.offsetWidth,
             height: currentTab.offsetHeight,
           });
+          setCurrentTabOffset({
+            offsetTop: currentTab.offsetTop || 0,
+            offsetLeft: currentTab.offsetLeft || 0,
+          });
           clearInterval(timer);
         }
         if (timerCount >= 100) {
