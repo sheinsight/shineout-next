@@ -1,3 +1,11 @@
+## 3.8.4-beta.8
+2025-09-25
+
+### 🐞 BugFix
+- 修复 `Tooltip` 在 `persistent` 模式下 children 的 `onMouseEnter`、`onMouseLeave`、`onClick` 事件会触发两次的问题 ([#1386](https://github.com/sheinsight/shineout-next/pull/1386))
+
+
+
 ## 3.8.1-beta.8
 2025-09-05
 

@@ -1,6 +1,6 @@
 import { usePersistFn, usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { cloneElement, isValidElement, useEffect } from 'react';
+import React, { cloneElement, isValidElement, useEffect, useMemo } from 'react';
 import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
@@ -102,6 +102,20 @@ const Tooltip = (props: TooltipProps) => {
     children
   );
 
+  const innerProps = useMemo(() => {
+    if (persistent) {
+      return trigger === 'hover' ? {
+        ...events,
+        onMouseEnter: undefined,
+        onMouseLeave: undefined,
+      } : {
+        ...events,
+        onClick: undefined,
+      };
+    }
+    return events;
+  }, [persistent, events, trigger]);
+
   return (
     <>
       <noscript
@@ -114,7 +128,7 @@ const Tooltip = (props: TooltipProps) => {
         }}
         key='ns'
       />
-      {cloneElement(inner, events)}
+      {cloneElement(inner, innerProps)}
       <AbsoluteList
         focus={open}
         parentElRef={targetRef}
