@@ -16,18 +16,18 @@ export const mockRquest = (customConfig:CustomConfig) => (options:any) => {
   data.append('test', file);
 
   // 模拟进度：手动触发 `onProgress` 回调来伪造进度
-  // if (onProgress) {
-  //   let progress = 0;
-  //   const interval = Math.ceil(uploadTime / 100); // 每次进度变化的间隔
-  //   const progressInterval = setInterval(() => {
-  //     progress += 1;
-  //     if (progress <= 100) {
-  //       onProgress({ percent: progress });
-  //     } else {
-  //       clearInterval(progressInterval);
-  //     }
-  //   }, interval);
-  // }
+  if (onProgress) {
+    let progress = 0;
+    const interval = Math.ceil(uploadTime / 100); // 每次进度变化的间隔
+    const progressInterval = setInterval(() => {
+      progress += 1;
+      if (progress <= 100) {
+        onProgress({ percent: progress });
+      } else {
+        clearInterval(progressInterval);
+      }
+    }, interval);
+  }
 
   // 模拟上传耗时和成功/失败逻辑
   setTimeout(() => {
