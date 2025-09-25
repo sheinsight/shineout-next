@@ -125,6 +125,10 @@ const usePopup = (props: BasePopupProps) => {
 
   const handleMouseEnter = usePersistFn((e: { target: EventTarget | null }) => {
     targetEvents?.onMouseEnter?.(e);
+    // todo: 考虑是否严格一些执行，比如需要判断是否是子元素
+    // if (targetRef.current?.contains(e.target as Node)) {
+    //   targetEvents?.onMouseEnter?.(e);
+    // }
     if (trigger !== 'hover') return;
     const isParentContainsCurrent = targetRef.current?.contains(e.target as Node);
     if (isParentContainsCurrent || popupRef?.current?.contains(e.target as Node)) {
@@ -134,6 +138,10 @@ const usePopup = (props: BasePopupProps) => {
 
   const handleMouseLeave = usePersistFn((e: { target: EventTarget | null }) => {
     targetEvents?.onMouseLeave?.(e);
+    // todo: 考虑是否严格一些执行，比如需要判断是否是子元素
+    // if (targetRef.current?.contains(e.target as Node)) {
+    //   targetEvents?.onMouseLeave?.(e);
+    // }
     if (trigger !== 'hover') return;
     // @ts-ignore
     if (e.relatedTarget instanceof HTMLElement && popupRef.current?.contains(e.relatedTarget)) {

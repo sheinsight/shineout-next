@@ -104,15 +104,17 @@ const Tooltip = (props: TooltipProps) => {
 
   const innerProps = useMemo(() => {
     if (persistent) {
-      return {
+      return trigger === 'hover' ? {
         ...events,
         onMouseEnter: undefined,
         onMouseLeave: undefined,
+      } : {
+        ...events,
         onClick: undefined,
       };
     }
     return events;
-  }, [persistent, events]);
+  }, [persistent, events, trigger]);
 
   return (
     <>
