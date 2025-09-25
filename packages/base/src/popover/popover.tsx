@@ -1,7 +1,7 @@
 import { getClosestScrollContainer, usePersistFn, usePopup, useRender, util } from '@sheinx/hooks';
 import AbsoluteList from '../absolute-list';
 import React, { useEffect } from 'react';
-import { PopoverProps } from './popover.type';
+import { PopoverProps, PopoverPosition } from './popover.type';
 import { useConfig } from '../config';
 import classNames from 'classnames';
 
@@ -38,7 +38,6 @@ const Popover = (props: PopoverProps) => {
       props.onClose?.();
     }
   });
-
   const { open, position, getTargetProps, targetRef, popupRef, closePop, Provider, providerValue } =
     usePopup({
       open: props.visible,
@@ -51,6 +50,7 @@ const Popover = (props: PopoverProps) => {
       mouseEnterDelay: props.mouseEnterDelay,
       mouseLeaveDelay: props.mouseLeaveDelay,
     });
+  const [positionState, setPositionState] = React.useState<PopoverPosition>(position);
 
   const events = getTargetProps();
 
@@ -166,6 +166,7 @@ const Popover = (props: PopoverProps) => {
       destroy={destroy}
       zIndex={zIndex}
       adjust={props.adjust}
+      onAdjust={props.adjust ? setPositionState : undefined}
       lazy={props.lazy}
       offset={props.offset}
       updateKey={updateKey}
@@ -179,7 +180,7 @@ const Popover = (props: PopoverProps) => {
           !showArrow && popoverStyle?.hideArrow,
         )}
         style={containerStyle}
-        {...util.getDataAttribute({ position, type })}
+        {...util.getDataAttribute({ position: props.adjust ? positionState : position, type })}
         {...props.attributes}
         ref={popupRef}
         onMouseLeave={events.onMouseLeave}

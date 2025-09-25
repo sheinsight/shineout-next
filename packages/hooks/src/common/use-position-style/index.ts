@@ -50,6 +50,7 @@ export interface PositionStyleConfig {
   fixedWidth?: boolean | 'min';
   updateKey?: number | string;
   adjust?: boolean;
+  onAdjust?: (position: HorizontalPosition | VerticalPosition) => void;
   offset?: [number, number];
 }
 
@@ -119,10 +120,42 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
   }, [show, popupElRef.current])
 
-  const adjustPosition = (position: PositionType) => {
+  const adjustHorizontalPosition = (position: PositionType) => {
+    const winWidth = docSize.width;
     const winHeight = docSize.height;
-    if (!verticalPosition.includes(position)) return position;
+    let newPosition = position
+    const [h, v] = position.split('-');
+    if (h === 'right') {
+      const horizontalPoint = context.parentRect.left + context.parentRect.width;
+      if (horizontalPoint / winWidth > 0.5 && horizontalPoint + context.popUpWidth > winWidth) {
+        newPosition = position.replace('right', 'left') as HorizontalPosition;
+      }
+    } else if (h === 'left') {
+      const horizontalPoint = context.parentRect.left;
+      if (horizontalPoint / winWidth < 0.5 && horizontalPoint < context.popUpWidth) {
+        newPosition = position.replace('left', 'right') as HorizontalPosition;
+      }
+    }
+
+    if(v === 'top'){
+      const verticalPoint = context.parentRect.top;
+      if (verticalPoint / winHeight > 0.5 && verticalPoint + context.popUpHeight > winHeight) {
+        newPosition = newPosition.replace('top', 'bottom') as HorizontalPosition;
+      }
+    } else if (v === 'bottom') {
+      const verticalPoint = context.parentRect.bottom;
+      if (verticalPoint / winHeight < 0.5 && verticalPoint < context.popUpHeight) {
+        newPosition = newPosition.replace('bottom', 'top') as HorizontalPosition;
+      }
+    }
+
+    config?.onAdjust?.(newPosition as HorizontalPosition);
+    return newPosition as HorizontalPosition;
+  }
+
+  const adjustVerticalPosition = (position: PositionType) => {
     let newPosition = position;
+    const winHeight = docSize.height;
     const verticalPoint = context.parentRect.top + context.parentRect.height / 2;
     if (position.startsWith('top')) {
       if (
@@ -163,6 +196,13 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
 
     return newPosition;
+  }
+
+  const adjustPosition = (position: PositionType) => {
+    if (!verticalPosition.includes(position)) {
+      return adjustHorizontalPosition(position);
+    }
+    return adjustVerticalPosition(position);
   };
 
   const getPopUpInfo = (parentRect: DOMRect) => {
