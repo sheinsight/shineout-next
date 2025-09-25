@@ -30,6 +30,8 @@ export interface PopoverJssStyle {
   alert?: () => AlertClasses;
   button?: () => ButtonClasses;
 }
+
+export type PopoverPosition = BasePopupProps['position'];
 export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
     popover?: () => PopoverClasses;
@@ -40,7 +42,7 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @en The position of pop-up layer. Default auto
    * @cn 弹出层位置。若不设置，则默认为 auto
    */
-  position?: BasePopupProps['position'];
+  position?: PopoverPosition;
   /**
    * @en Popup location priority, default is top and bottom priority, only valid when position is not set, Options: ['vertical', 'horizontal', 'auto']
    * @cn 弹出位置优先级, 默认为左右优先, 只在未设置 position 时生效

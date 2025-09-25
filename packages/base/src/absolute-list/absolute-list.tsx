@@ -18,6 +18,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     updateKey,
     popupGap,
     adjust,
+    onAdjust,
     offset,
     destroy = false,
     lazy = true,
@@ -60,6 +61,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     popupGap,
     adjust,
     offset,
+    onAdjust,
   });
 
   const childStyle = children.props.style;

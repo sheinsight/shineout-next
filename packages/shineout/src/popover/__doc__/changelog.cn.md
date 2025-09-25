@@ -1,3 +1,10 @@
+## 3.8.4-beta.7
+2025-09-25
+
+### 🐞 BugFix
+- 修复 `Popover` 的 `position` 为水平方向时设置 `adjust` 属性后没有自动调整位置的问题 [#1385](https://github.com/sheinsight/shineout-next/pull/1385)）
+
+
 ## 3.8.0-beta.23
 2025-08-04
 

@@ -51,6 +51,8 @@ export interface AbsoluteListProps {
   destroy?: boolean;
   // 自动调整位置来适应容器大小
   adjust?: boolean;
+  // 自动调整位置的回调
+  onAdjust?: (position: HorizontalPosition | VerticalPosition ) => void;
   lazy?: boolean;
   // 偏移量, [x, y]
   offset?: [number, number];
