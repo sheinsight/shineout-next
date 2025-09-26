@@ -4,7 +4,6 @@ import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
 import { util } from '@sheinx/hooks';
 import { create } from '@shined/reactive';
-import { getSnapshot } from '@shined/reactive/vanilla';
 import { useDragMove, useDragResize, usePersistFn, useRender } from '@sheinx/hooks';
 import { FormFooterProvider } from '../form/form-footer-context';
 
@@ -12,12 +11,18 @@ import type { ModalContentProps } from './modal-content.type';
 
 let hasMask = false;
 
+type OriginDocumentStyle = null | {
+  overflow: string;
+  paddingRight: string;
+}
 interface ModalConfig {
   instanceIds: string[];
+  originDocumentStyle: OriginDocumentStyle,
 }
 
 const config = {
   instanceIds: [],
+  originDocumentStyle: null,
 }
 const state = create<ModalConfig>(config);
 
@@ -37,6 +42,13 @@ const getInstanceIds = () => {
   return state.mutate.instanceIds;
 }
 
+const setOriginDocumentStyle = (style: OriginDocumentStyle) => {
+  state.mutate.originDocumentStyle = style;
+}
+
+const getOriginDocumentStyle = () => {
+  return state.mutate.originDocumentStyle;
+}
 
 let mousePosition: { x: number; y: number } | null = null;
 
@@ -73,10 +85,6 @@ const Modal = (props: ModalContentProps) => {
     mouseDownTarget: null as HTMLElement | null,
     mouseUpTarget: null as HTMLElement | null,
     content: null as React.ReactNode,
-    originDocumentStyle: null as {
-      overflow: string;
-      paddingRight: string;
-    } | null,
     instanceId: util.generateUUID(),
   });
 
@@ -200,14 +208,16 @@ const Modal = (props: ModalContentProps) => {
     }
   }, [props.visible]);
 
+  const originDocumentStyle = getOriginDocumentStyle();
+
   // 设置 document.body.style.overflow 和 document.body.style.paddingRight，并记录原始值到 context 中
   const setDocumentOverflow = usePersistFn(() => {
     const doc = document.body.parentNode! as HTMLElement;
-    if (context.isMask && !context.originDocumentStyle) {
-      context.originDocumentStyle = {
+    if (context.isMask && !originDocumentStyle) {
+      setOriginDocumentStyle({
         overflow: doc.style.overflow,
         paddingRight: doc.style.paddingRight,
-      }
+      })
     }
     doc.style.overflow = 'hidden';
     if (!doc.style.paddingRight) {
@@ -218,9 +228,10 @@ const Modal = (props: ModalContentProps) => {
   // 还原 document.body.style.overflow 和 document.body.style.paddingRight
   const resetDocumentOverflow = usePersistFn(() => {
     const doc = document.body.parentNode! as HTMLElement;
-    if (context.originDocumentStyle) {
-      doc.style.overflow = context.originDocumentStyle.overflow;
-      doc.style.paddingRight = context.originDocumentStyle.paddingRight;
+    // 把originDocumentStyle放到全局管理后，多个modal连续打开关闭场景下，可以正确还原
+    if (originDocumentStyle) {
+      doc.style.overflow = originDocumentStyle.overflow;
+      doc.style.paddingRight = originDocumentStyle.paddingRight;
     }
   })
 
