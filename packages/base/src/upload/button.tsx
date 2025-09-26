@@ -74,6 +74,7 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
     <Upload
       {...props}
       {...innerProps}
+      limit={undefined}
       onProgress={onProgress}
       onStart={onStart}
       onSuccess={onSuccess}
