@@ -27,6 +27,14 @@ const Tooltip = (props: TooltipProps) => {
     popupGap = 0,
   } = props;
 
+  // Early validation checks BEFORE any hooks
+  if (!isValidElement(children)) {
+    devUseWarning.error('Tooltip children expect a single ReactElement.');
+    return null;
+  }
+
+  if (!tip) return children;
+
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
 
@@ -85,23 +93,6 @@ const Tooltip = (props: TooltipProps) => {
     };
   }, [persistent]);
 
-  if (!isValidElement(children)) {
-    devUseWarning.error('Tooltip children expect a single ReactElement.');
-    return null;
-  }
-
-  if (!tip) return children;
-
-  const inner = disabledChild ? (
-    <span className={tooltipClasses?.target} style={{ cursor: 'not-allowed' }}>
-      {cloneElement(children as React.ReactElement, {
-        style: { ...childrenProps.style, pointerEvents: 'none' },
-      })}
-    </span>
-  ) : (
-    children
-  );
-
   const innerProps = useMemo(() => {
     if (persistent) {
       return trigger === 'hover' ? {
@@ -115,6 +106,16 @@ const Tooltip = (props: TooltipProps) => {
     }
     return events;
   }, [persistent, events, trigger]);
+
+  const inner = disabledChild ? (
+    <span className={tooltipClasses?.target} style={{ cursor: 'not-allowed' }}>
+      {cloneElement(children as React.ReactElement, {
+        style: { ...childrenProps.style, pointerEvents: 'none' },
+      })}
+    </span>
+  ) : (
+    children
+  );
 
   return (
     <>
