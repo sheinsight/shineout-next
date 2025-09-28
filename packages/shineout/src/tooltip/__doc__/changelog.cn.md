@@ -1,3 +1,10 @@
+## 3.8.5-beta.2
+2025-09-28
+
+### 🐞 BugFix
+- 修复 `Tooltip` 组件 hooks 调用顺序问题，解决 "Rendered fewer hooks than expected" 错误 (Regression: since 3.8.4) ([#1390](https://github.com/sheinsight/shineout-next/pull/1390))
+
+
 ## 3.8.4-beta.8
 2025-09-25
 
