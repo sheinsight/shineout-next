@@ -67,7 +67,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     renderResult: renderResultProp,
     placeholder,
-    focusSelected = true,
     renderCompressed,
     compressedClassName,
     resultClassName,
@@ -530,7 +529,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           renderUnmatched={renderUnmatched}
           renderResultContent={hideTag && !multiple ? renderResultContent : undefined}
           allowOnFilter={showInput}
-          focusSelected={focusSelected}
           inputText={inputText}
           filterText={filterText}
           onFilter={handleFilter}
