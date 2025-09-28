@@ -357,8 +357,8 @@ export interface TreeSelectProps<DataItem, Value>
    */
   childrenKey?: ObjectKey<DataItem>;
   /**
-   * @en onFilter Whether to select filter text after clicking the option in multi-selection situation
-   * @cn onFilter 在多选情况下点击选项后是否选中过滤文本
+   * @en Whether to automatically select the filter text after clicking an option when onFilter is enabled
+   * @cn 启用onFilter过滤后，是否自动选中过滤输入框中的文本
    * @default true
    */
   focusSelected?: boolean;

@@ -365,8 +365,8 @@ export interface SelectPropsBase<DataItem, Value>
   showArrow?: boolean;
 
   /**
-   * @en In multi-select with filter, whether to select the filter text after clicking an option
-   * @cn 多选模式下启用过滤时，点击选项后是否选中过滤输入框中的文本
+   * @en Whether to automatically select the filter text after clicking an option when onFilter is enabled
+   * @cn 启用onFilter过滤后，是否自动选中过滤输入框中的文本
    * @default true
    * @when Set to false to preserve filter text after selection
    */

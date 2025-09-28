@@ -212,7 +212,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (!multiple && !shouldFocus) {
       closePop();
     }
-    if (multiple && !shouldFocus) {
+    if (multiple && !shouldFocus && focusSelected) {
       inputRef?.current?.select();
     }
     onChange?.(value, dataItem, checked);

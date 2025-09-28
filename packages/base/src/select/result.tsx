@@ -398,14 +398,14 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           props.setInputText(textContent);
         }
       }
-      if (!reFocus) {
+      if (!reFocus && props.focusSelected) {
         setTimeout(() => {
           inputRef?.current?.select();
         }, 10);
       }
     }
     mounted.current = true;
-  }, [focus, placeholder, multiple]);
+  }, [focus, placeholder, multiple, props.focusSelected]);
 
   // Select多选模式下，且开启了onFilter，自动聚焦
   useLayoutEffect(() => {

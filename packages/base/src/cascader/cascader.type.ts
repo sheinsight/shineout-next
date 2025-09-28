@@ -359,12 +359,6 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 多选合并展示弹出框的类名
    */
   compressedClassName?: string;
-  /**
-   * @en onFilter Whether to select filter text after clicking the option in multi-selection situation
-   * @cn onFilter 在多选情况下点击选项后是否选中过滤文本
-   * @default true
-   */
-  focusSelected?: boolean;
 
   /**
    * @en Hide tag style, by default, the result is displayed in tag mode. After hiding the tag style, the result can be rendered by custom renderResult
