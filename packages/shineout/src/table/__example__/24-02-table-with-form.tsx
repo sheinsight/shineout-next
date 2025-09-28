@@ -99,6 +99,7 @@ export default () => {
                   newEdits[index] = !newEdits[index];
                   return newEdits;
                 });
+                if (!e.target.value) return;
                 setTableData({
                   values: tableData.values.map((item, i) =>
                     i === index ? { ...item, name: (e.target as any).value } : item,
