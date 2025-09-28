@@ -8,7 +8,11 @@
 import { useState } from 'react';
 import { Button, Form, Input, Table, TYPE, Rule, Link, Modal, Message, Popover } from 'shineout';
 
-export function ItemWithRequired(props: { children: React.ReactNode; top?: number, disabled?: boolean }) {
+export function ItemWithRequired(props: {
+  children: React.ReactNode;
+  top?: number;
+  disabled?: boolean;
+}) {
   if (props.disabled) {
     return props.children;
   }
@@ -50,6 +54,7 @@ const defaultData = [
 export default () => {
   const [nextId, setNextId] = useState(3);
   const [edits, setEdits] = useState<boolean[]>(new Array(defaultData.length).fill(false));
+  const [errors, setErrors] = useState<boolean[]>(new Array(defaultData.length).fill(false));
   const [formDatas, setFormDatas] = useState<FormTableValues>({
     values: defaultData,
   });
@@ -58,14 +63,43 @@ export default () => {
   });
 
   const columns: TableColumnItem[] = [
-    { title: 'ID', width: 100, render: (d, index) => <div key={edits[index]?.toString()} style={{ lineHeight: edits[index] ? '32px' : 'auto' }}>{d.id}</div> },
+    {
+      title: 'ID',
+      width: 100,
+      render: (d, index) => (
+        <div key={edits[index]?.toString()} style={{ lineHeight: edits[index] ? '32px' : 'auto' }}>
+          {d.id}
+        </div>
+      ),
+    },
     {
       title: <ItemWithRequired>Name</ItemWithRequired>,
       width: 200,
       render: (d, index) => {
         return edits[index] ? (
           <Form.Item style={{ marginBottom: 0 }}>
-            <Input rules={[rules.required]} name={`values[${index}].name`} />
+            <Input
+              name={`values[${index}].name`}
+              rules={[rules.required]}
+              onError={(error) => {
+                if (error) {
+                  setErrors((prev) => {
+                    const newErrors = new Array(prev.length).fill(false);
+                    newErrors[index] = true;
+                    return newErrors;
+                  });
+                }
+              }}
+              onChange={(v) => {
+                if (v) {
+                  setErrors((prev) => {
+                    const newErrors = new Array(prev.length).fill(false);
+                    newErrors[index] = false;
+                    return newErrors;
+                  });
+                }
+              }}
+            />
           </Form.Item>
         ) : (
           d.name
@@ -77,11 +111,9 @@ export default () => {
       width: 200,
       render: (d, index) => {
         return edits[index] ? (
-          <ItemWithRequired disabled={Number(d.age) <= 18} top={5}>
-            <Form.Item style={{ marginBottom: 0 }}>
-              <Input rules={[rules.required]} name={`values[${index}].age`} />
-            </Form.Item>
-          </ItemWithRequired>
+          <Form.Item style={{ marginBottom: 0 }}>
+            <Input name={`values[${index}].age`} />
+          </Form.Item>
         ) : (
           d.age
         );
@@ -96,7 +128,7 @@ export default () => {
             <Link
               type='primary'
               onClick={() => {
-                setEdits(prev => {
+                setEdits((prev) => {
                   const newEdits = new Array(prev.length).fill(false);
                   return newEdits;
                 });
@@ -107,6 +139,7 @@ export default () => {
                 });
                 Message.success('Data saved successfully');
               }}
+              disabled={errors[index]}
               style={{ lineHeight: '32px', marginRight: 8 }}
             >
               Save
@@ -115,7 +148,7 @@ export default () => {
               type='primary'
               style={{ lineHeight: '32px' }}
               onClick={() => {
-                setEdits(prev => {
+                setEdits((prev) => {
                   const newEdits = new Array(prev.length).fill(false);
                   return newEdits;
                 });
@@ -126,41 +159,37 @@ export default () => {
           </>
         ) : (
           <>
-          <Link
-            type='primary'
-            onClick={() => {
-              setEdits(prev => {
-                const newEdits = new Array(prev.length).fill(false);
-                newEdits[index] = !prev[index];
-                return newEdits;
-              });
-              setFormDatas({
-                values: formDatas.values.map((item, idx) => (idx === index ? { ...d } : item)),
-              });
-            }}
-            style={{ marginRight: 8 }}
-            disabled={edits.some(item => item)}
-          >
-            Edit
-          </Link>
-          <Link
-            type='danger'
-            disabled={edits.some(item => item)}
-          >
-            <Popover.Confirm
-              title='Sure to delete?'
-              disabled={edits.some(item => item)}
-              onCancel={() => console.log('cancel')}
-              onOk={() => {
-                const newDatas = tableData.values.filter((_, idx) => idx !== index);
-                setTableData({ values: newDatas });
-                setFormDatas({ values: newDatas });
-                setEdits(prev => prev.filter((_, idx) => idx !== index));
+            <Link
+              type='primary'
+              onClick={() => {
+                setEdits((prev) => {
+                  const newEdits = new Array(prev.length).fill(false);
+                  newEdits[index] = !prev[index];
+                  return newEdits;
+                });
+                setFormDatas({
+                  values: formDatas.values.map((item, idx) => (idx === index ? { ...d } : item)),
+                });
               }}
+              style={{ marginRight: 8 }}
+              disabled={edits.some((item) => item)}
             >
-            </Popover.Confirm>
-            Delete
-          </Link>
+              Edit
+            </Link>
+            <Link type='danger' disabled={edits.some((item) => item)}>
+              <Popover.Confirm
+                title='Sure to delete?'
+                disabled={edits.some((item) => item)}
+                onCancel={() => console.log('cancel')}
+                onOk={() => {
+                  const newDatas = tableData.values.filter((_, idx) => idx !== index);
+                  setTableData({ values: newDatas });
+                  setFormDatas({ values: newDatas });
+                  setEdits((prev) => prev.filter((_, idx) => idx !== index));
+                }}
+              ></Popover.Confirm>
+              Delete
+            </Link>
           </>
         );
       },
@@ -187,11 +216,11 @@ export default () => {
                   age: `${nextId * 10 + 8}`,
                 },
               ],
-            }
+            };
             setTableData(newDatas);
             setFormDatas(newDatas);
-            setEdits(prev => [...prev, false]);
-            setNextId(prev => prev + 1);
+            setEdits((prev) => [...prev, false]);
+            setNextId((prev) => prev + 1);
           }}
         >
           Add
