@@ -524,7 +524,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
     const shouldFocus = showInput && reFocus;
 
-    if (multiple && !shouldFocus) {
+    if (multiple && !shouldFocus && focusSelected) {
       inputRef?.current?.select();
     }
   };

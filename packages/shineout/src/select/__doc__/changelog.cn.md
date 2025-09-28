@@ -1,3 +1,10 @@
+## 3.8.5-beta.3
+2025-09-28
+
+### 🐞 BugFix
+- 修复 `Select` 设置 `focusSelected` 为 `false` 不生效的问题 ([#1392](https://github.com/sheinsight/shineout-next/pull/1392))
+
+
 ## 3.8.3-beta.5
 2025-09-17
 
