@@ -98,7 +98,7 @@ export interface SimpleInputProps
    * @en The callback function for enter key
    * @cn 回车键回调函数
    */
-  onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
+  onEnterPress?: (value: string, e: React.KeyboardEvent<HTMLInputElement> & { target: HTMLInputElement }) => void;
   /**
    * @en Whether to show clear button when has value, higher priority than clearable
    * @cn 有值时，是否常驻显示清除按钮，优先级高于 clearable

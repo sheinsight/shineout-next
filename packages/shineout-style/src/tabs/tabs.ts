@@ -388,6 +388,10 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
 
     '&[data-soui-shape="card"] $prev, &[data-soui-shape="card"] $next': {
       background: '#FFFFFF',
+      alignSelf: 'stretch',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       border: `1px solid ${Token.tabsBorderColor}`,
 
       '&[data-soui-state="disabled"]': {

@@ -1,3 +1,9 @@
+## 3.8.5-beta.4
+2025-09-29
+
+### 🐞 BugFix
+- 修复 `Tabs` 的 card 模式下 prev 和 next 按钮的样式问题 ([#1396](https://github.com/sheinsight/shineout-next/pull/1396))
+
 ## 3.8.4-beta.6
 2025-09-24
 
