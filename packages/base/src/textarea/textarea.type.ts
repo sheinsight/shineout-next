@@ -89,7 +89,7 @@ export interface SimpleTextareaProps
    * @en The callback function for enter key
    * @cn 回车键的回调函数
    */
-  onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
+  onEnterPress?: (value: string, e: React.KeyboardEvent<HTMLTextAreaElement> & { target: HTMLTextAreaElement }) => void;
   /**
    * @en Custom rendering Textarea
    * @cn 自定义渲染Textarea

@@ -1,3 +1,10 @@
+## 3.8.5-beta.4
+2025-09-29
+
+### 🐞 BugFix
+- 修复 `Textarea` 的 `onEnterPress` 事件的第二参数ts类型错误问题 ([#1396](https://github.com/sheinsight/shineout-next/pull/1396))
+
+
 ## 3.8.4-beta.1
 2025-09-22
 
