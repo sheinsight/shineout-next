@@ -1,3 +1,11 @@
+## 3.9.0-beta.1
+2025-09-29
+
+### 💎 Enhancement
+- 增强 `Cascader` 的 `renderOptionList` 属性，支持其在搜索结果面板也生效 ([#1395](https://github.com/sheinsight/shineout-next/pull/1395))
+
+
+
 ## 3.8.2-beta.3
 2025-09-09
 
