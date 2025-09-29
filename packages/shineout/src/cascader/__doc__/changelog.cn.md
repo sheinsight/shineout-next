@@ -1,8 +1,16 @@
+## 3.9.0-beta.1
+2025-09-29
+
+### 💎 Enhancement
+- 增强 `Cascader` 的 `renderOptionList` 属性，支持其在搜索结果面板也生效 ([#1395](https://github.com/sheinsight/shineout-next/pull/1395))
+
+
 ## 3.8.6-beta.7
 2025-10-13
 
 ### 🐞 BugFix
 - 修复 `Cascader` 在大尺寸模式下的结果样式垂直不居中的问题 （Regression: since v3.7.2）([#1409](https://github.com/sheinsight/shineout-next/pull/1409))
+
 
 ## 3.8.2-beta.3
 2025-09-09
