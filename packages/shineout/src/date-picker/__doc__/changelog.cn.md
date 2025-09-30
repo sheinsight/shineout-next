@@ -1,3 +1,9 @@
+## 3.8.5-beta.5
+
+### 🐞 BugFix
+- 修复 `DatePicker` 的 `type` 为 week 时，`needConfirm` 属性不生效的问题 ([#1398](https://github.com/sheinsight/shineout-next/pull/1398))
+
+
 ## 3.8.0-beta.47
 2025-08-27
 
