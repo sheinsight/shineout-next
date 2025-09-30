@@ -4,8 +4,12 @@
 ### 🐞 BugFix
 - 修复 `Table` 在存在右固定列且浏览器滚动条宽度为0（通常发生在 macOS 上）时，固定列和头部垂直不对齐的问题 ([#1380](https://github.com/sheinsight/shineout-next/pull/1380))
 
+
 ## 3.8.4-beta.2
 2025-09-23
+
+
+
 ### 💎 Enhancement
 - 优化 `Table` 在设置了 `virtual` 且样式中有 maxHeight 但无 height 时的渲染性能，避免表格内容变化引起的不必要重新渲染 ([#1379](https://github.com/sheinsight/shineout-next/pull/1379))
 
@@ -16,11 +20,13 @@
 ### 🐞 BugFix
 - 修复 `Table` 在定高且 `data` 数量不足以撑满高度时，底部总结栏的位置不正确的问题 ([#1372](https://github.com/sheinsight/shineout-next/pull/1372))
 
+
 ## 3.8.2-beta.7
 2025-09-12
 
 ### 🐞 BugFix
 - 修复 `Table` 不定设置固定高度的虚拟列表下，compressed 弹出层内部无法滚动的问题 （Regression: since v3.7.7） ([#1358](https://github.com/sheinsight/shineout-next/pull/1358))
+
 
 ## 3.8.2-beta.6
 2025-09-10
@@ -64,12 +70,14 @@
 ### 🐞 BugFix
 - 修复 `Table` 虚拟列表模式下合并行 `checkbox` 状态丢失的问题 ([#1280](https://github.com/sheinsight/shineout-next/pull/1280))
 
+
 ## 3.7.9-beta.2
 2025-07-30
 
 ### 🐞 BugFix
 
 - 修复 `Table` 在数据为空时，底部总结行依然会展示，表现与 v1 v2 不一致的问题 ([#1278](https://github.com/sheinsight/shineout-next/pull/1278))
+
 
 ## 3.7.7-beta.7
 2025-07-17
@@ -78,12 +86,14 @@
 
 - 修复 `Table` 的 `scrollToIndex` 方法滚动位置计算不准确的问题 （Regression: since v3.7.0） ([#1250](https://github.com/sheinsight/shineout-next/pull/1250))
 
+
 ## 3.7.7-beta.6
 2025-07-16
 
 ### 🐞 BugFix
 
 - 修复 `Table` 的thead或tfoot存在动态高度时，虚拟列表的最后一条数据看不全的问题 （Regression: since v3.7.0） ([#1249](https://github.com/sheinsight/shineout-next/pull/1249))
+
 
 ## 3.7.7-beta.5
 2025-07-16
@@ -92,6 +102,7 @@
 
 - 修复 `Table` 在 `Popover` 中使用虚拟列表时，二次打开弹窗后虚拟列表失效，渲染了全量数据的问题 （Regression: since v3.7.0） ([#1248](https://github.com/sheinsight/shineout-next/pull/1248))
 
+
 ## 3.7.4-beta.7
 2025-06-26
 
@@ -99,12 +110,14 @@
 
 - 修复 `Table` 的固定列在快速滚动时，sticky样式的应用可能有迟滞的问题 ([#1209](https://github.com/sheinsight/shineout-next/pull/1209))
 
+
 ## 3.7.4-beta.4
 2025-06-25
 
 ### 🐞 BugFix
 
 - 修复 `Table` 在有动态固定列时，固定列吸附的位置不正确的问题 ([#1203](https://github.com/sheinsight/shineout-next/pull/1203))
+
 
 ## 3.7.1-beta.2
 2025-06-06
@@ -120,12 +133,14 @@
 
 - 修复 `Table` 自定义 `empty` 缺失一层内部结构导致 flex 布局异常的问题 ([#1148](https://github.com/sheinsight/shineout-next/pull/1148))
 
+
 ## 3.7.0-beta.42
 2025-06-04
 
 ### 🐞 BugFix
 
 - 修复 `Table` 的 data 引用不变但数据变化后，组件不触发更新的问题 ([#1146](https://github.com/sheinsight/shineout-next/pull/1146))
+
 
 ## 3.7.0-beta.38
 2025-06-03
@@ -134,12 +149,14 @@
 
 - 修复 `Table` 前端过滤多选的勾选状态在重置后未清空的问题 ([#1140](https://github.com/sheinsight/shineout-next/pull/1140))
 
+
 ## 3.7.0-beta.26
 2025-05-20
 
 ### 🐞 BugFix
 
 - 修复 `Table` 的不定高场景下依然开启了虚拟列表的数据渲染不全和抖动的问题 ([#1117](https://github.com/sheinsight/shineout-next/pull/1117))
+
 
 ## 3.7.0-beta.23
 2025-05-14
@@ -148,17 +165,20 @@
 
 - `Table` 的 columns 新增 `groupProps` 属性，支持设置 style 和 className ([#1112](https://github.com/sheinsight/shineout-next/pull/1112))
 
+
 ## 3.7.0-beta.21
 2025-05-07
 
 ### 🐞 BugFix
 - 修复 `Table` 的 columns 中 render 字段不传导致组件报错的问题 ([#1102](https://github.com/sheinsight/shineout-next/pull/1102))
 
+
 ## 3.7.0-beta.14
 2025-04-30
 
 ### 🆕 Feature
 - `Table` 的 `virtual` 属性值新增lazy，设置后可提高虚拟列表的垂直滚动性能 ([#1093](https://github.com/sheinsight/shineout-next/pull/1093))
+
 
 ## 3.7.0-beta.6
 2025-04-14
@@ -174,6 +194,7 @@
 ### 🐞 BugFix
 - 修复 `Table` 的colgroup平均分配时产生的小数位像素在浏览器渲染时偶现的单元格垂直边框对不齐问题  ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
 
+
 ###  🚀 Performance
 - 优化 `Table` 合并行或列的hover渲染性能 ([#1050](https://github.com/sheinsight/shineout-next/pull/1050))
 
@@ -184,11 +205,13 @@
 ### 🚀 Performance
 - 优化 `Table` 的虚拟列表横向滚动性能，调整了thead的dom位置 ([#1047](https://github.com/sheinsight/shineout-next/pull/1047))
 
+
 ## 3.6.3-beta.3
 2025-04-11
 
 ### 🐞 BugFix
 - 修复 `Table` 开启拖拽行之后偶现的拖拽不成功问题  ([#1052](https://github.com/sheinsight/shineout-next/pull/1052))
+
 
 ## 3.6.3-beta.3
 2025-04-11
@@ -196,11 +219,13 @@
 ### 🐞 BugFix
 - 修复 `Table` 的 tfoot 没有在底部吸附的问题（Regression： since v3.5.0）  ([#1045](https://github.com/sheinsight/shineout-next/pull/1045))
 
+
 ## 3.6.2-beta.6
 2025-04-07
 
 ### 🐞 BugFix
 - 修复 `Table` 点击 `Button` 等元素会触发单元格 click 事件的问题  ([#1040](https://github.com/sheinsight/shineout-next/pull/1040))
+
 
 ## 3.6.1-beta.3
 2025-03-25
@@ -208,12 +233,14 @@
 ### 🐞 BugFix
 - 修复 `Table` 的columns是动态值时，column.filter的过滤功能意外的被重置的问题 ([#1012](https://github.com/sheinsight/shineout-next/pull/1012))
 
+
 ## 3.6.0
 2025-03-06
 
 ### 🆕 Feature
 - `Table` 新增筛选功能： 设置 `columns` 配置项的 `filter` 属性 ([#986](https://github.com/sheinsight/shineout-next/pull/986))
 - `Table` 的 `TableRef` 新增 `sortByColumn` 方法，支持根据列 key 进行排序 ([#914](https://github.com/sheinsight/shineout-next/pull/914))
+
 
 ### 🐞 BugFix
 - 修复 `Table` 的column.width设置为0时不生效的问题（Regression: since v3.4.5） ([#998](https://github.com/sheinsight/shineout-next/pull/998))
@@ -227,14 +254,17 @@
 
 - 修复 `Table` 在虚拟列表大数据下拖拽滚动条时和调用 `scrollToIndex` 的性能问题（Regression: since: v3.5.4） ([#937](https://github.com/sheinsight/shineout-next/pull/937))
 
+
 ## 3.5.5
 2024-12-24
 
 ### 🐞 BugFix
 - `Table` 空数据状态下，右侧有固定列时，横向滚动时右侧可能有内容露底显示问题 ([#872](https://github.com/sheinsight/shineout-next/pull/872))
 
+
 ### 💎 Enhancement
 - `Table` 空数据状态下，tbody区域可展示横向滚动条 ([#872](https://github.com/sheinsight/shineout-next/pull/872))
+
 
 ## 3.5.4
 2024-12-12
@@ -247,6 +277,7 @@
 - 修复 `Table` 合并行数据在虚拟列表下偶现的抖动问题 ([#861](https://github.com/sheinsight/shineout-next/pull/861))
 - 修复 `Table` 同时设置了`defaultTreeExpandKeys`, `treeExpandKeys`, `onTreeExpand`后导致的组件渲染卡死问题 ([#852](https://github.com/sheinsight/shineout-next/pull/852))
 
+
 ### 🚀 Performance
 - 优化 `Table` 在大合并行数据下的性能 ([#850](https://github.com/sheinsight/shineout-next/pull/850))
 
@@ -258,12 +289,14 @@
 - 修复 `Table` 合并行数据的最大行数超过rowsInView时，导致垂直滚动时，这个合并单元格的内容闪烁的问题 ([#836](https://github.com/sheinsight/shineout-next/pull/836))
 - 修复 `Table` 的column type为'checkbox'，且column的render为函数时，render不生效的问题 ([#825](https://github.com/sheinsight/shineout-next/pull/825))
 
+
 ## 3.5.2
 2024-11-28
 
 ### 🐞 BugFix
 
 - 修复 `Table` 设置了`fixed`或`virtual`，但未设置表格高度时，动态添加表格行后横向滚动条出现抖动的问题 ([#821](https://github.com/sheinsight/shineout-next/pull/821))
+
 
 ## 3.5.1
 2024-11-14
@@ -281,6 +314,7 @@
 - `Table` 新增 `scrollColumnIntoView` 方法，支持根据列 key 跳转至指定列 ([#738](https://github.com/sheinsight/shineout-next/pull/738))
 - `Table` 新增 `scrollColumnByLeft` 方法，支持自定义跳转至指定横向位置 ([#738](https://github.com/sheinsight/shineout-next/pull/738))
 
+
 ### 💎 Enhancement
 - 优化 `Table` 内的弹出层类元素跟随滚动的行为逻辑 ([#754](https://github.com/sheinsight/shineout-next/pull/754))
 - `Table` 树形数据用法下，新增 `loader` 开启动态加载子节点数据 ([#747](https://github.com/sheinsight/shineout-next/pull/747))
@@ -294,6 +328,7 @@
 ### 🐞 BugFix
 
 - 修复 `Table` 点击 checkbox 触发行展开的问题 ([#777](https://github.com/sheinsight/shineout-next/pull/777))
+
 
 ## 3.4.5
 2024-10-31
@@ -327,6 +362,7 @@
 - 修复 `Table` 空数据状态下可能出现垂直滚动条的问题 ([#690](https://github.com/sheinsight/shineout-next/pull/690))
 - 修复 `Table` 在 `data` 动态变化后滚动状态异常的问题 ([#687](https://github.com/sheinsight/shineout-next/pull/687))
 
+
 ## 3.4.0
 2024-09-19
 
@@ -334,17 +370,21 @@
 
 - 修复TableRef的`scrollToIndex`的回调方法不生效问题 ([#651](https://github.com/sheinsight/shineout-next/pull/651))
 
+
 ### 🆕 Feature
 
 - `Table` 新增属性 `showTopScrollbar`，开启顶部滚动条  ([#671](https://github.com/sheinsight/shineout-next/pull/671))
 - `Table` 的 `onScroll` 事件新增 top 参数 ([#658](https://github.com/sheinsight/shineout-next/pull/658))
 - `Table` 的 `Ref` 支持 `getRenderIndexByData` 方法，用于获取指定数据在渲染列表中的索引
 
+
 ## 3.3.7
 2024-09-14
 
 ### 🐞 BugFix
 - 修复 `Table` 在 `Tabs` 中切换时的滚动条抖动一下的问题 ([#667](https://github.com/sheinsight/shineout-next/pull/667))
+
+
 ### 🐞 BugFix
 - 修复 `Table` 虚拟滚动时，默认的rowsInView渲染结果不够撑满一屏导致的滚动空白问题 ([#628](https://github.com/sheinsight/shineout-next/pull/628))
 - 修复 `Table` 虚拟滚动的内部元素被执行scrollIntoView导致的页面偏移的问题 ([#624](https://github.com/sheinsight/shineout-next/pull/624))
@@ -371,6 +411,7 @@
 - 修复 `Table` 在数据不断变化的场景下可能导致滚动偏移的位置计算错误 ([#553](https://github.com/sheinsight/shineout-next/pull/553))
 - 修复 `Table` 在数据不断变化的场景下可能导致滚动偏移的位置计算错误 ([#553](https://github.com/sheinsight/shineout-next/pull/553))
 
+
 ### 🆕 Feature
 - `Table` 新增属性 `onCellClick` 支持单元格点击后的回调 ([#550](https://github.com/sheinsight/shineout-next/pull/550))
 
@@ -390,6 +431,7 @@
 ### 🐞 BugFix
 - 修复 `Table` 虚拟列表在缩放场景下可能导致滚动条跳动的问题 ([#539](https://github.com/sheinsight/shineout-next/pull/539))
 
+
 ### 💎 Enhancement
 - 优化 `Table` 虚拟列表高度计算逻辑 ([#530](https://github.com/sheinsight/shineout-next/pull/530))
 
@@ -400,20 +442,32 @@
 ### 🐞 BugFix
 - 修复 `Table` 虚拟列表高度被撑高的问题 ([#523](https://github.com/sheinsight/shineout-next/pull/523))
 
+
 ## 3.1.30
 2024-06-13
+
+
+
 ### 🐞 BugFix
 
 - 修复 `Table` 在某些场景下无法滚动的问题 ([#519](https://github.com/sheinsight/shineout-next/pull/519))
 
+
 ## 3.1.28
 2024-06-07
+
+
+
 ### 🐞 BugFix
 
 - 修复 `Table` 虚拟列表在 Firefox 浏览器滚动条长度超长问题 ([#512](https://github.com/sheinsight/shineout-next/pull/512))
 
+
 ## 3.1.24
 2024-06-03
+
+
+
 ### 🐞 BugFix
 
 - 修复 `Table` 右侧固定列在某些场景会出现偏移的问题 ([#499](https://github.com/sheinsight/shineout-next/pull/499))
@@ -421,6 +475,9 @@
 
 ## 3.1.20
 2024-05-30
+
+
+
 ### 💅 Style
 
 - 修复 `Table` 选择行场景下复选框和文本不对齐问题([#486](https://github.com/sheinsight/shineout-next/pull/486)) 
@@ -428,13 +485,20 @@
 
 ## 3.1.15
 2024-05-23
+
+
+
 ### 🐞 BugFix
 
 - 修复 `Table` 异步加载数据可能导致滚动条闪烁的问题 ([#466](https://github.com/sheinsight/shineout-next/pull/466)) 
 - 修复 `Table` 只使用样式的用法单元格下边框样式问题 ([#469](https://github.com/sheinsight/shineout-next/pull/469)) 
 
+
 ## 3.1.9
 2024-05-14
+
+
+
 ### 🐞 BugFix
 
 - 修复 `Table` 在缩放场景下可能导致 Table 高度一直变化的问题 ([#442](https://github.com/sheinsight/shineout-next/pull/442))
@@ -447,6 +511,7 @@
 ### 🐞 BugFix
 
 - `Table` 在 React17 版本下右侧固定列在首次渲染的时候发生偏移的问题 ([#431](https://github.com/sheinsight/shineout-next/pull/431))
+
 
 ## 3.1.6
 2024-05-11
@@ -464,11 +529,13 @@
 
 - `Table` 在没有设置 `width` 的情况下表头可能错位的问题 ([#426](https://github.com/sheinsight/shineout-next/pull/426))
 
+
 ## 3.1.2
 2024-05-10
 
 ### 💅 Style
 - `Table` 容器增加 `min-width: 0` 样式 ([#422](https://github.com/sheinsight/shineout-next/pull/422))
+
 
 ## 3.1.0
 2024-05-09
@@ -487,6 +554,7 @@
 
 - 修复 `Table` 在 safari 中 `columns width` 没有效果([#409](https://github.com/sheinsight/shineout-next/pull/409))
 
+
 ## 3.0.3
 2024-04-22
 
@@ -502,9 +570,11 @@
 
 - 修复 `Table` 开启虚拟列表后 `height` 默认值与2.x 版本不一致的问题 ([#370](https://github.com/sheinsight/shineout-next/pull/370))
 
+
 ### 💎 Enhancement
 
 - 优化 `Table` 当没有传入 `summary` 时，不渲染总结栏区域([#377](https://github.com/sheinsight/shineout-next/pull/377))
+
 
 ### 💅 Style
 
