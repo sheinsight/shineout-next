@@ -12,7 +12,6 @@
 - 修复 `Tooltip` 在 `persistent` 模式下 children 的 `onMouseEnter`、`onMouseLeave`、`onClick` 事件会触发两次的问题 ([#1386](https://github.com/sheinsight/shineout-next/pull/1386))
 
 
-
 ## 3.8.1-beta.8
 2025-09-05
 
@@ -26,11 +25,13 @@
 ### 🐞 BugFix
 - 修复 `Tooltip` 关闭后，外部意外的移除了组件样式后暴露出来的问题 ([#1323](https://github.com/sheinsight/shineout-next/pull/1323))
 
+
 ## 3.8.0-beta.2
 2025-06-13
 
 ### 💎 Enhancement
 - 优化 `Tooltip` 的弹出动画，增加缩放效果 ([#1173](https://github.com/sheinsight/shineout-next/pull/1173))
+
 
 ## 3.8.0-beta.1
 2025-06-11
@@ -59,6 +60,7 @@
 ### 🐞 BugFix
 - 修复 `Tooltip` 的 `persistent` 配置优先级问题，使其优先于全局配置并符合就近原则 ([#1020](https://github.com/sheinsight/shineout-next/pull/1020))
 
+
 ### 💎 Enhancement
 - 优化 `Tooltip` 的箭头，使其在内容动态修改后位置保持正确 ([#1019](https://github.com/sheinsight/shineout-next/pull/1019))
 
@@ -68,6 +70,7 @@
 
 ### 🆕 Feature
 - `Tooltip` 新增 `showArrow` 属性，用于控制是否显示箭头 ([#998](https://github.com/sheinsight/shineout-next/pull/998))
+
 
 ### 🐞 BugFix
 - 修复 `Tooltip` 在滚动容器中的水平用法下，且不给定宽，在靠近窗口右侧时弹出层的宽度被非预期挤压，导致内容换行的问题 ([#997](https://github.com/sheinsight/shineout-next/pull/997))
@@ -80,9 +83,11 @@
 
 - `Tooltip` 的 `persistent` 属性支持 `setConfig` 全局配置 ([#832](https://github.com/sheinsight/shineout-next/pull/832))
 
+
 ### 🆕 Feature
 
 - `Tooltip` 新增 `persistent` 属性，鼠标悬停提示信息时将不会关闭 ([#813](https://github.com/sheinsight/shineout-next/pull/813))
+
 
 ## 3.3.6
 2024-08-29
@@ -100,12 +105,14 @@
 
 - 修复 `Tooltip` delay 属性失效的问题 ([#575](https://github.com/sheinsight/shineout-next/pull/575))
 
+
 ## 3.1.26
 2024-06-05
 
 ### 🐞 BugFix
 
 - 修复 `Tooltip` 在边界情况下高频触发 hover 的问题 ([#503](https://github.com/sheinsight/shineout-next/pull/503))
+
 
 ## 3.1.14
 2024-05-21
