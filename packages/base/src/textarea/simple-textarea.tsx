@@ -45,12 +45,12 @@ const Textarea = (props: SimpleTextareaProps) => {
   );
 
   const keyHandler = useKeyEvent({
-    onEnterPress: (e: KeyboardEvent) => {
-      onEnterPress?.((e.target as HTMLTextAreaElement).value || '', e);
+    onEnterPress: (e: KeyboardEvent<HTMLTextAreaElement> & { target: HTMLTextAreaElement }) => {
+      onEnterPress?.(e.target.value || '', e);
     },
   });
 
-  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLTextAreaElement>) => {
+  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLTextAreaElement> & { target: HTMLTextAreaElement }) => {
     props.onKeyUp?.(e);
     keyHandler(e);
   });

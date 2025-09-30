@@ -1,13 +1,13 @@
 import React from 'react';
 import usePersistFn from '../use-persist-fn';
-interface UseKeyEventParams {
-  onEnterPress?: (e: React.KeyboardEvent) => void;
-  onEscPress?: (e: React.KeyboardEvent) => void;
-  onSpacePress?: (e: React.KeyboardEvent) => void;
+interface UseKeyEventParams<T extends HTMLElement> {
+  onEnterPress?: (e: React.KeyboardEvent<T> & { target: T }) => void;
+  onEscPress?: (e: React.KeyboardEvent<T> & { target: T }) => void;
+  onSpacePress?: (e: React.KeyboardEvent<T> & { target: T }) => void;
 }
 
-const useKeyEvent = (params: UseKeyEventParams) => {
-  const keyEvent = usePersistFn((e: React.KeyboardEvent) => {
+const useKeyEvent = <T extends HTMLElement>(params: UseKeyEventParams<T>) => {
+  const keyEvent = usePersistFn((e: React.KeyboardEvent<T> & { target: T }) => {
     const { keyCode } = e;
     switch (keyCode) {
       case 13:

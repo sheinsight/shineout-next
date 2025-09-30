@@ -54,13 +54,13 @@ const Input = (props: SimpleInputProps) => {
   });
 
 
-  const keyHandler = useKeyEvent({
-    onEnterPress: (e: KeyboardEvent) => {
-      onEnterPress?.((e.target as HTMLInputElement).value || '', e);
+  const keyHandler = useKeyEvent<HTMLInputElement>({
+    onEnterPress: (e) => {
+      onEnterPress?.(e.target.value || '', e);
     },
   });
 
-  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLInputElement>) => {
+  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLInputElement> & { target: HTMLInputElement }) => {
     if (e.key === 'Enter') {
       context.needTriggerEnter = false;
     };
