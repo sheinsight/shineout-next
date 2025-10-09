@@ -1,8 +1,8 @@
 ## 3.8.6-beta.1
 2025-10-09
 
-### 🐞 BugFix
-- 修复 `Tooltip` 设置了非 `auto` 位置时，父容器滚动后弹出层未立即消失的问题 ([#1401](https://github.com/sheinsight/shineout-next/pull/1401))
+### 💎 Enhancement
+- 优化 `Tooltip` 在设置了非 `auto` 位置时的滚动跟随行为，提升用户体验 ([#1401](https://github.com/sheinsight/shineout-next/pull/1401))
 
 
 ## 3.8.5-beta.2
