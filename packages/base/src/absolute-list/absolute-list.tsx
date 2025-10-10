@@ -22,6 +22,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     offset,
     destroy = false,
     lazy = true,
+    checkPosition = false,
   } = props;
 
   const { absolute: defaultAbsolute, scrollElRef: scrollElRefContext } = useContext(AbsoluteContext);
@@ -62,6 +63,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     adjust,
     offset,
     onAdjust,
+    checkPosition,
   });
 
   const childStyle = children.props.style;

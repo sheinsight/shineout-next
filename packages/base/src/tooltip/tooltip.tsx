@@ -139,7 +139,8 @@ const Tooltip = (props: TooltipProps) => {
         fixedWidth={false}
         popupGap={popupGap}
         zIndex={zIndex}
-        adjust
+        adjust={popsitionProps === 'auto'}
+        checkPosition
         updateKey={updateKey}
       >
         <div
