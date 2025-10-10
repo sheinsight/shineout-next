@@ -51,6 +51,7 @@ export interface PositionStyleConfig {
   updateKey?: number | string;
   adjust?: boolean;
   onAdjust?: (position: HorizontalPosition | VerticalPosition) => void;
+  checkPosition?: boolean;
   offset?: [number, number];
 }
 
@@ -89,6 +90,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     updateKey,
     adjust,
     offset,
+    checkPosition,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
@@ -102,7 +104,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     prevParentPosition: null as (Position | null),
   });
 
-  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && adjust});
+  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && (adjust || checkPosition)});
 
   const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal', enable: show});
 

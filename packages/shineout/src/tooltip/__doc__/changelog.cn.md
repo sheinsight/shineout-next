@@ -1,5 +1,5 @@
-## 3.8.6-beta.1
-2025-10-09
+## 3.8.6-beta.2
+2025-10-10
 
 ### 💎 Enhancement
 - 优化 `Tooltip` 在设置了非 `auto` 位置时的滚动跟随行为，提升用户体验 ([#1401](https://github.com/sheinsight/shineout-next/pull/1401))
