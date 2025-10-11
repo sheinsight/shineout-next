@@ -61,5 +61,5 @@ export interface AbsoluteListProps {
   arrowStyleRef?: React.RefObject<{ style: React.CSSProperties }>;
 
   // 边界容器
-  boundary?: HTMLElement | null;
+  boundary?: () => HTMLElement | null;
 }
