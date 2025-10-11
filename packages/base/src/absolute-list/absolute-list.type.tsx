@@ -62,4 +62,7 @@ export interface AbsoluteListProps {
 
   // 边界容器
   boundary?: () => HTMLElement | null;
+
+  // 设置弹出层的容器尺寸样式
+  setSizingStyle?: (v?: React.CSSProperties) => void
 }
