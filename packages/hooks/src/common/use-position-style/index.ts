@@ -52,9 +52,11 @@ export interface PositionStyleConfig {
   updateKey?: number | string;
   adjust?: boolean;
   onAdjust?: (position: HorizontalPosition | VerticalPosition) => void;
+  // 是否监测父元素位置的变化
   checkPosition?: boolean;
   offset?: [number, number];
   boundary?: () => HTMLElement | null;
+  setSizingStyle?: (v?: React.CSSProperties) => void;
 }
 
 const hideStyle: React.CSSProperties = {
@@ -94,9 +96,11 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     adjust,
     offset,
     checkPosition,
+    setSizingStyle,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
+  // const [sizingStyle, setSizingStyle] = useState<React.CSSProperties>();
 
   const { current: context } = React.useRef({
     containerRect: { left: 0, width: 0 } as DOMRect,
@@ -370,7 +374,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getStyle = () => {
     let newStyle: React.CSSProperties = {};
     const { position, absolute } = config || {};
-    if (!position || !show || !parentElRef.current) return style;
+    if (!position || !show || !parentElRef.current) return { newStyle: style};
     context.parentRect = parentElRef.current.getBoundingClientRect();
 
     let realPosition = position
@@ -394,17 +398,18 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       newStyle.transformOrigin = 'center top';
     }
     if (boundary && show && popupElRef.current) {
-      const sizingStyle = getSizingStyle(realPosition, { boundary, parentRect: context.parentRect});
-      return { ...newStyle, ...sizingStyle };
+      const newSizingStyle = getSizingStyle(realPosition, { boundary, parentRect: context.parentRect});
+      return { newStyle, newSizingStyle };
     }
-    return newStyle;
+    return { newStyle };
   };
 
   const updateStyle = usePersistFn(() => {
-    const newStyle = getStyle();
+    const { newStyle, newSizingStyle } = getStyle();
     if (newStyle && !shallowEqual(style, newStyle)) {
       setStyle(newStyle);
     }
+    setSizingStyle?.(newSizingStyle);
 
     // 当父元素的滚动容器滚动时，判断是否需要更新弹出层位置，包括是否隐藏弹出层（通过hideStyle隐藏，不是show状态）
     if (show) {

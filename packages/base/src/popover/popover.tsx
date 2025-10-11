@@ -51,6 +51,7 @@ const Popover = (props: PopoverProps) => {
       mouseLeaveDelay: props.mouseLeaveDelay,
     });
   const [positionState, setPositionState] = React.useState<PopoverPosition>(position);
+  const [contentStyle, setContentStyle] = React.useState<React.CSSProperties>();
 
   const events = getTargetProps();
 
@@ -171,6 +172,7 @@ const Popover = (props: PopoverProps) => {
       lazy={props.lazy}
       offset={props.offset}
       updateKey={updateKey}
+      setSizingStyle={setContentStyle}
     >
       <div
         className={classNames(
@@ -195,7 +197,7 @@ const Popover = (props: PopoverProps) => {
           />
         )}
         <div
-          style={style}
+          style={{ ...contentStyle, ...style }}
           onClick={emptyEvent}
           className={classNames(
             popoverStyle?.content,

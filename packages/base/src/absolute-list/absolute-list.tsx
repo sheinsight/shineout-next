@@ -21,6 +21,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     adjust,
     onAdjust,
     offset,
+    setSizingStyle,
     destroy = false,
     lazy = true,
     checkPosition = false,
@@ -66,6 +67,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     offset,
     onAdjust,
     checkPosition,
+    setSizingStyle,
   });
 
   const childStyle = children.props.style;
