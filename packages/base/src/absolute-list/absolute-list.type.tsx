@@ -59,4 +59,7 @@ export interface AbsoluteListProps {
   // 偏移量, [x, y]
   offset?: [number, number];
   arrowStyleRef?: React.RefObject<{ style: React.CSSProperties }>;
+
+  // 边界容器
+  boundary?: HTMLElement | null;
 }

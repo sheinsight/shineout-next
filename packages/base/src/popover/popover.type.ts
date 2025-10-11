@@ -195,4 +195,9 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @version 3.7.0
    */
   disabled?: boolean;
+
+  /**
+   * @private 边界元素，内部使用
+   */
+  boundary?: HTMLElement | null;
 }
