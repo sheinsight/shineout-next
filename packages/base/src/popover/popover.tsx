@@ -159,6 +159,7 @@ const Popover = (props: PopoverProps) => {
       focus={open}
       parentElRef={targetRef}
       popupElRef={popupRef}
+      boundary={props.boundary}
       absolute={typeof props.getPopupContainer === 'function' ? props.getPopupContainer : true}
       position={position}
       fixedWidth={false}

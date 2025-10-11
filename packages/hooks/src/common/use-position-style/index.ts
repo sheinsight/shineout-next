@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
+import { getSizingStyle } from './get-sizing-style'
 import { useCheckElementPosition, type Position } from './check-position'
 import { useCheckElementBorderWidth } from './check-border';
 import { useCheckElementSize } from './check-element-size'
@@ -53,6 +54,7 @@ export interface PositionStyleConfig {
   onAdjust?: (position: HorizontalPosition | VerticalPosition) => void;
   checkPosition?: boolean;
   offset?: [number, number];
+  boundary?: HTMLElement | null;
 }
 
 const hideStyle: React.CSSProperties = {
@@ -87,6 +89,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     parentElRef,
     popupElRef,
     scrollElRef,
+    boundary,
     updateKey,
     adjust,
     offset,
@@ -367,7 +370,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getStyle = () => {
     let newStyle: React.CSSProperties = {};
     const { position, absolute } = config || {};
-    if (!position || !show || !parentElRef.current) return { newStyle: style };
+    if (!position || !show || !parentElRef.current) return style;
     context.parentRect = parentElRef.current.getBoundingClientRect();
 
     let realPosition = position
@@ -390,11 +393,15 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     } else if(realPosition.indexOf('bottom') === 0){
       newStyle.transformOrigin = 'center top';
     }
-    return { newStyle };
+    if (boundary && show && popupElRef.current) {
+      const sizingStyle = getSizingStyle(realPosition, { boundary, parentRect: context.parentRect});
+      return { ...newStyle, ...sizingStyle };
+    }
+    return newStyle;
   };
 
   const updateStyle = usePersistFn(() => {
-    const { newStyle } = getStyle();
+    const newStyle = getStyle();
     if (newStyle && !shallowEqual(style, newStyle)) {
       setStyle(newStyle);
     }
