@@ -130,7 +130,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           lazy={false}
           offset={offset}
           style={popoverContentStyle}
-          boundary={mode !== 'horizontal' ? props.scrollRef.current : undefined}
+          boundary={mode !== 'horizontal' ? () => props.scrollRef.current : undefined}
         >
           {(close) => {
             return content(close);

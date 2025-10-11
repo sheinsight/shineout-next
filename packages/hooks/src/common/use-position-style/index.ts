@@ -54,7 +54,7 @@ export interface PositionStyleConfig {
   onAdjust?: (position: HorizontalPosition | VerticalPosition) => void;
   checkPosition?: boolean;
   offset?: [number, number];
-  boundary?: HTMLElement | null;
+  boundary?: () => HTMLElement | null;
 }
 
 const hideStyle: React.CSSProperties = {
