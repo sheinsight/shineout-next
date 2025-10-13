@@ -55,7 +55,7 @@ const App: React.FC = () => (
       <b>.com</b>
     </Input.Group>
 
-    <Input.Group style={style} size="large">
+    <Input.Group style={{ width: 300 }} size="large">
       <b>http://</b>
       <Input placeholder='email' />
       <b>.com</b>

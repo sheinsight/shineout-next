@@ -74,6 +74,7 @@ export default (props: InputGroupProps) => {
             ...getProps(child),
             disabled: child.props.disabled || disabled,
             size: child.props.size || size,
+            border: props.seamless ? false : child.props.border,
           });
         }
         return <span key={i}>{child}</span>;
