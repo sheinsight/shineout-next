@@ -1,3 +1,10 @@
+## 3.9.0-beta.2
+2025-10-15
+
+### 🆕 Feature
+- `Input.Group` 新增 `seamless` 属性：隐藏表单项之间的边框 ([#1408](https://github.com/sheinsight/shineout-next/pull/1408))
+
+
 ## 3.8.5-beta.4
 2025-09-29
 
