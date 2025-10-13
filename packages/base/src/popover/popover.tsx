@@ -172,7 +172,7 @@ const Popover = (props: PopoverProps) => {
       lazy={props.lazy}
       offset={props.offset}
       updateKey={updateKey}
-      setSizingStyle={setContentStyle}
+      setSizingStyle={props.boundary ? setContentStyle : undefined}
     >
       <div
         className={classNames(
