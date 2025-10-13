@@ -53,8 +53,16 @@ export interface AbsoluteListProps {
   adjust?: boolean;
   // 自动调整位置的回调
   onAdjust?: (position: HorizontalPosition | VerticalPosition ) => void;
+  // 是否监听目标元素的位置
+  checkPosition?: boolean;
   lazy?: boolean;
   // 偏移量, [x, y]
   offset?: [number, number];
   arrowStyleRef?: React.RefObject<{ style: React.CSSProperties }>;
+
+  // 边界容器
+  boundary?: () => HTMLElement | null;
+
+  // 设置弹出层的容器尺寸样式
+  setSizingStyle?: (v?: React.CSSProperties) => void
 }

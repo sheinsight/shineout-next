@@ -107,9 +107,14 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       const position =
         isVertical || isSubHorizontal ? (isUp ? 'right-bottom' : 'right-top') : 'bottom-left';
       const offset = isVertical && props.isEdgeItem ? [0, 4] as [number, number] : undefined;
-      const popoverContentStyle = props.level === 0 && liRef.current ? { minWidth: liRef.current.clientWidth} : undefined;
+      let popoverContentStyle: React.CSSProperties | undefined;
+      if (mode === 'horizontal' && props.level === 0 && liRef.current) {
+        popoverContentStyle = { minWidth: liRef.current.clientWidth };
+      }
       return (
         <Popover
+         // popover现在有出现动画了，避免快速切换子菜单时的动画太多，也加上toggleDuration
+          mouseEnterDelay={toggleDuration}
           mouseLeaveDelay={toggleDuration}
           className={classNames(classes?.popover)}
           attributes={util.getDataAttribute({
@@ -127,6 +132,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           lazy={false}
           offset={offset}
           style={popoverContentStyle}
+          boundary={mode !== 'horizontal' ? () => props.scrollRef.current : undefined}
         >
           {(close) => {
             return content(close);

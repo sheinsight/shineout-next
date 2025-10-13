@@ -45,9 +45,9 @@ const dividerStyle: JsStyles<DividerClassesKeys> = {
       position: 'relative',
       top: '50%',
       width: '50%',
-      borderTop: `${token.dividerBorderWidth} solid transparent`,
+      borderTopWidth: `${token.dividerBorderWidth}`,
+      borderTopStyle: 'solid',
       borderTopColor: 'inherit',
-      borderBottom: 0,
       transform: 'translateY(50%)',
       content: '""',
       '$wrapperDashed&': {

@@ -11,6 +11,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     children,
     parentElRef,
     scrollElRef: scrollElRefProp,
+    boundary,
     fixedWidth,
     zIndex = 1051,
     focus,
@@ -20,8 +21,10 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     adjust,
     onAdjust,
     offset,
+    setSizingStyle,
     destroy = false,
     lazy = true,
+    checkPosition = false,
   } = props;
 
   const { absolute: defaultAbsolute, scrollElRef: scrollElRefContext } = useContext(AbsoluteContext);
@@ -56,12 +59,15 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     fixedWidth,
     zIndex,
     scrollElRef: finalScrollElRef,
+    boundary,
     popupElRef,
     updateKey,
     popupGap,
     adjust,
     offset,
     onAdjust,
+    checkPosition,
+    setSizingStyle,
   });
 
   const childStyle = children.props.style;

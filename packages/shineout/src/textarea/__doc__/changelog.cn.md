@@ -1,3 +1,10 @@
+## 3.8.5-beta.4
+2025-09-29
+
+### 🐞 BugFix
+- 修复 `Textarea` 的 `onEnterPress` 事件的第二参数ts类型错误问题 ([#1396](https://github.com/sheinsight/shineout-next/pull/1396))
+
+
 ## 3.8.4-beta.1
 2025-09-22
 
@@ -29,6 +36,7 @@
 
 - 修复 `Textarea` 的 `onBlur` 和 `onFocus` 事件的参数类型错误问题 ([#1161](https://github.com/sheinsight/shineout-next/pull/1161))
 
+
 ## 3.6.0
 2025-03-17
 
@@ -45,6 +53,7 @@
 
 - `Textarea` 的 `info` 重构为Popover实现，支持`popoverProps`设置 ([#735](https://github.com/sheinsight/shineout-next/pull/735))
 
+
 ## 3.4.0
 2024-09-19
 
@@ -52,12 +61,14 @@
 
 - `Textarea` 的 `info` 属性新增配置模式，支持配置定位 ([#676](https://github.com/sheinsight/shineout-next/pull/676))
 
+
 ## 3.1.10
 2024-05-15
 
 ### 🐞 BugFix
 
 - 修复 `Textarea` 失去焦点的时候 info 没有隐藏的问题和 info 会被遮挡的问题 ([#448](https://github.com/sheinsight/shineout-next/pull/448))
+
 
 ## 3.0.10
 2024-04-29
