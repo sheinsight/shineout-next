@@ -123,12 +123,6 @@ const selectStyle: JsStyles<SelectClassType> = {
       },
     },
     '&$wrapperLarge': {
-      '& $tag': {
-        height: selectLargeTagHeight,
-        '&  *': {
-          lineHeight: selectLargeTagHeight,
-        },
-      },
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: token.selectLargePlaceholderMarginY,
         marginBottom: token.selectLargePlaceholderMarginY,

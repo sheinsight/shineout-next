@@ -134,12 +134,6 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       },
     },
     '&$wrapperLarge': {
-      '& $tag': {
-        height: selectLargeTagHeight,
-        '&  *': {
-          lineHeight: selectLargeTagHeight,
-        },
-      },
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: token.treeSelectLargePlaceholderMarginY,
         marginBottom: token.treeSelectLargePlaceholderMarginY,

@@ -1,3 +1,9 @@
+## 3.8.6-beta.7
+2025-10-13
+
+### 🐞 BugFix
+- 修复 `Cascader` 在大尺寸模式下的结果样式垂直不居中的问题 （Regression: since v3.7.2）([#1409](https://github.com/sheinsight/shineout-next/pull/1409))
+
 ## 3.8.2-beta.3
 2025-09-09
 
