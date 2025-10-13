@@ -51,4 +51,12 @@ export interface InputGroupProps extends Pick<CommonType, 'status' | 'style' | '
    * @deprecated Use 'separate' instead, 'seperate' is a typo and will be removed in future versions
    */
   seperate?: boolean;
+
+  /**
+   * @en Whether to hide the border between form items
+   * @cn 是否隐藏表单项之间的边框
+   * @default false
+   * @version 3.9.0
+   */
+  seamless?: boolean;
 }
