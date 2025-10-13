@@ -135,12 +135,6 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       },
     },
     '&$wrapperLarge': {
-      '& $tag': {
-        height: selectLargeTagHeight,
-        '&  *': {
-          lineHeight: selectLargeTagHeight,
-        },
-      },
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: token.cascaderLargePlaceholderMarginY,
         marginBottom: token.cascaderLargePlaceholderMarginY,
