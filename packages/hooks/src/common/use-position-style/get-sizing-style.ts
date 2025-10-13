@@ -3,7 +3,7 @@ interface Options {
   boundary: () => HTMLElement | null;
 }
 
-// 第一阶段：支持上下边界的高度限制
+// 第一阶段：支持上下边界的高度限制，为vertical模式的Menu实现的
 // TODO 后续支持左右边界的宽度限制
 export const  getSizingStyle = (position: string, { boundary, parentRect }:Options) => {
   const boundaryEl = boundary();

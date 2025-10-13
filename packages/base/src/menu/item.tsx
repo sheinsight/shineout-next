@@ -113,6 +113,8 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       }
       return (
         <Popover
+         // popover现在有出现动画了，避免快速切换子菜单时的动画太多，也加上toggleDuration
+          mouseEnterDelay={toggleDuration}
           mouseLeaveDelay={toggleDuration}
           className={classNames(classes?.popover)}
           attributes={util.getDataAttribute({
