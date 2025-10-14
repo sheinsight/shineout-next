@@ -419,4 +419,12 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @when For custom clearing behavior
    */
   onClear?: () => void;
+
+  /**
+   * @en Check on filtered data. When enabled, checking operations will only apply to filtered results
+   * @cn 是否根据筛选后的数据集做勾选。开启后，勾选操作仅针对筛选后的数据生效
+   * @default false
+   * @version 3.9.0
+   */
+  checkOnFiltered?: boolean;
 }
