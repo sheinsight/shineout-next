@@ -96,6 +96,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onExpand,
     beforeChange,
     filterSameChange,
+    checkOnFiltered,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -189,7 +190,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const { datum, expanded: unControlExpanded } = useTree({
     mode,
     value,
-    data: data,
+    data: checkOnFiltered ? filterData || [] : data,
     unmatch,
     tiledData,
     virtual,
