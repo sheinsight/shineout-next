@@ -1,5 +1,11 @@
 import type { CSSProperties } from 'react';
 
+const supportsHas = () => {
+  if (typeof CSS === 'undefined' || typeof CSS.supports === 'undefined') {
+    return false;
+  }
+  return CSS.supports('selector(:has(*))');
+};
 interface Token {
   lineHeight: string;
   borderRadius: string;
@@ -106,7 +112,14 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         '&:last-child': {
           borderRadius: `${token.borderRadius} 0 0 ${token.borderRadius}`,
         },
-      }
+      },
+      ...(supportsHas() ? {
+        [`[data-soui-role="input-group"]:has(&$${name}Error)`]: {
+          borderColor: token.errorBorderColor,
+          background: token.errorBackgroundColor,
+          boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
+        },
+      } : {}),
     },
     [`${name}PaddingBox`]: {
       borderRadius: token.borderRadius,
