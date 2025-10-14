@@ -85,6 +85,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     ? props.disabled.isRealtime
     : false;
 
+  // todo 这个inited看起来没有用了，计划删除
   const [inited, setInited] = useState(false);
   const [dataFlat, setDataFlat] = useState<FlatNodeType<DataItem>[]>([]);
 
