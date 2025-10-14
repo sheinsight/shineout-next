@@ -89,6 +89,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     virtual,
     filterSameChange,
     beforeChange,
+    checkOnFiltered,
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
@@ -140,7 +141,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   }, [path]);
 
   const { datum, value, onChange } = useCascader({
-    data,
+    data: checkOnFiltered ? filterData || [] : data,
     control: 'value' in props,
     keygen,
     unmatch,
