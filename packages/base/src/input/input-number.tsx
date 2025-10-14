@@ -23,7 +23,7 @@ const InputNumber = (props: InputNumberProps) => {
     ...restProps
   } = commonProps;
   const inputStyle = jssStyle?.input?.();
-  
+
   const numberFormatParams = {
     onBlur: restProps.onBlur,
     onFocus: restProps.onFocus,
@@ -93,6 +93,7 @@ const InputNumber = (props: InputNumberProps) => {
       className={classNames(forwardProps.className, inputStyle?.wrapperNumber)}
       onKeyDown={onKeyDown}
       addEnd={addEnd}
+      showClear={props.showClear}
     />
   );
 };

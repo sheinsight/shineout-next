@@ -1,3 +1,9 @@
+## 3.8.7-beta.1
+2025-10-14
+
+### 🐞 BugFix
+- 修复 `Input.Number` 在有值时未设置 `showClear` 但一直显示了清除图标的问题  ([#1413](https://github.com/sheinsight/shineout-next/pull/1413))
+
 ## 3.8.5-beta.4
 2025-09-29
 
