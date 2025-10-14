@@ -106,7 +106,12 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         '&:last-child': {
           borderRadius: `${token.borderRadius} 0 0 ${token.borderRadius}`,
         },
-      }
+      },
+      [`[data-soui-role="input-group"]:has(&&$${name}Error)`]: {
+        borderColor: token.errorBorderColor,
+        background: token.errorBackgroundColor,
+        boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
+      },
     },
     [`${name}PaddingBox`]: {
       borderRadius: token.borderRadius,
