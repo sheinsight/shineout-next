@@ -3,7 +3,7 @@ import { useComponentMemo, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import { TbodyProps } from './tbody.type';
 
-interface TdProps extends Pick<TbodyProps, | 'virtual'>  {
+interface TdProps extends Pick<TbodyProps, 'virtual'> {
   col: TableFormatColumn<any>;
   data: any[];
   colSpan: number;
@@ -34,45 +34,39 @@ export default function Td(props: TdProps): JSX.Element {
     renderContent,
   } = props;
 
-  const $td = useComponentMemo(
-    () => {
-      const content = renderContent(props.col, props.data);
+  const $td = (
+    <td
+      key={col.key}
+      colSpan={colSpan}
+      rowSpan={rowSpan}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className={className}
+      style={props.style}
+      dir={direction}
+      data-role={role}
+      onClick={onClick}
+    >
+      {renderContent(props.col, props.data)}
+    </td>
+  );
+
+  if (props.virtual !== 'lazy') {
+    return $td;
+  }
+
+  return useComponentMemo(
+    () => $td,
+    [data, className, props.style?.left, props.style?.right, col.type, col.treeColumnsName],
+    (prev: any, next: any) => {
+      if (col.type || col.treeColumnsName) {
+        return true;
+      }
       return (
-        <td
-          key={col.key}
-          colSpan={colSpan}
-          rowSpan={rowSpan}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          className={className}
-          style={props.style}
-          dir={direction}
-          data-role={role}
-          onClick={onClick}
-        >
-          {content}
-        </td>
+        prev.some((_: any, index: any) => {
+          return !util.shallowEqual(prev?.[index], next?.[index]);
+        }) || !props.scrolling
       );
     },
-    [
-      data,
-      className,
-      props.style?.left,
-      props.style?.right,
-      col.type,
-      col.treeColumnsName,
-    ],
-    props.virtual === 'lazy'
-      ? (prev:any, next:any) => {
-          if (col.type || col.treeColumnsName) {
-            return true;
-          }
-          return prev.some((_:any, index:any) => {
-            return !util.shallowEqual(prev?.[index], next?.[index]);
-          }) || !props.scrolling;
-        }
-      : undefined,
   ) as JSX.Element;
-
-  return $td;
 }

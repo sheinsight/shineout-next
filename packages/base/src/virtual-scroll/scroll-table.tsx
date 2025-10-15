@@ -153,6 +153,8 @@ const Scroll = (props: ScrollProps) => {
   useLayoutEffect(() => {
     if (!props.tableRef.current || !props.setFakeVirtual) return;
 
+    if (props.tableRef.current.style.height || props.tableRef.current.style.flex) return;
+
     const container = containerRef.current
     const isContainerVisible = container?.offsetParent !== null;
     if(!isContainerVisible) return;
