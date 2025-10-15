@@ -1,3 +1,9 @@
+## 3.8.7-beta.2
+2025-10-15
+
+### 🚀 Performance
+- 优化 `Table` 的虚拟滚动性能 ([#1414](https://github.com/sheinsight/shineout-next/pull/1414))
+
 ## 3.8.4-beta.3
 2025-09-23
 

@@ -89,7 +89,7 @@ const Tr = (props: TrProps) => {
     }
     return undefined;
   };
-  const getTdStyle = usePersistFn((column: TableFormatColumn<any>, colSpan: number) => {
+  const getTdStyle = (column: TableFormatColumn<any>, colSpan: number) => {
     const index = column.index;
     const fixedStyle = getFixedStyle(column.fixed, index, colSpan);
     if (!fixedStyle && !column.style) return;
@@ -97,7 +97,7 @@ const Tr = (props: TrProps) => {
       ...column.style,
       ...fixedStyle,
     } as React.CSSProperties;
-  });
+  };
 
   const handleCellClick = usePersistFn((data: any, colIndex: number) => {
     if (!props.onCellClick) return;
@@ -110,8 +110,6 @@ const Tr = (props: TrProps) => {
 
   const setVirtualRowHeight = usePersistFn(() => {
     if (props.setRowHeight && trRef.current) {
-      // 祖先元素不可见时（display: none）
-      if (!trRef.current.offsetParent) return;
       const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
       props.setRowHeight(
         props.rowIndex,
@@ -128,7 +126,8 @@ const Tr = (props: TrProps) => {
   ]);
 
   useEffect(() => {
-    if (!trRef.current) return;
+    // 祖先元素不可见时（display: none）
+    if (!trRef.current || !trRef.current.offsetParent) return;
     const cancelObserver = addResizeObserver(trRef.current, setVirtualRowHeight, {
       direction: 'y',
     });
@@ -155,7 +154,7 @@ const Tr = (props: TrProps) => {
     }
   });
 
-  const renderTreeExpand = usePersistFn((content: React.ReactNode, treeIndent: number = 22) => {
+  const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
     const className = tableClasses?.expandWrapper;
     const children = props.rawData[props.treeColumnsName!];
@@ -215,9 +214,9 @@ const Tr = (props: TrProps) => {
         {content}
       </span>
     );
-  });
+  };
 
-  const renderContent = usePersistFn((col: TrProps['columns'][number], data: any) => {
+  const renderContent = (col: TrProps['columns'][number], data: any) => {
     if (col.type === 'expand' || col.type === 'row-expand') {
       const renderResult =
         typeof col.render === 'function' ? col.render(props.rawData, props.rowIndex) : undefined;
@@ -312,9 +311,9 @@ const Tr = (props: TrProps) => {
     if (col.render === undefined) return null;
 
     return content;
-  });
+  };
 
-  const renderTds = usePersistFn((cols: TrProps['columns'], data: TrProps['row']) => {
+  const renderTds = (cols: TrProps['columns'], data: TrProps['row']) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
     const lastRowIndex = data.length - 1;
@@ -331,7 +330,7 @@ const Tr = (props: TrProps) => {
         const isRowSpanTd = data[i].rowSpan > 1;
 
         const shouldBindMouseEvent = (props.hover && hasSiblingRowSpan) || isRowSpanTd;
-        let showCellHover = props.hoverIndex.has(props.rowIndex);
+        let showCellHover = props.hover && props.hoverIndex.has(props.rowIndex);
         if (!showCellHover && data[i].rowSpan > 1) {
           for (let j = 0; j < data[i].rowSpan; j++) {
             if (props.hoverIndex.has(props.rowIndex + j)) {
@@ -378,7 +377,7 @@ const Tr = (props: TrProps) => {
       }
     }
     return tds;
-  });
+  };
 
   const renderExpand = () => {
     if (!props.expanded) return null;

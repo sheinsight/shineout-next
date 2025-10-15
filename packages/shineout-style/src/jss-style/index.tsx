@@ -56,9 +56,13 @@ export type ClassStyle<K extends Record<string, any>> = {
 
 export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
   const hoc = createUseStyles(handleStyle(style), { name: ns, generateId: createClassname });
+  const styledCacheMap: Record<string, any> = {};
   const getClassName = () => {
     const classes = hoc();
-    return Object.keys(classes).reduce((acc, key) => {
+    if (styledCacheMap[ns]) {
+      return styledCacheMap[ns] as Classes<C>;
+    }
+    return styledCacheMap[ns] = Object.keys(classes).reduce((acc, key) => {
       const k = key as keyof typeof classes;
 
       let value = ''
