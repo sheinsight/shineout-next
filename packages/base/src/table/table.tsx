@@ -260,6 +260,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     colgroup,
     rowsInView: props.rowsInView || 20,
     rowHeight: props.rowHeight || 40,
+    strictRowHeight: props.strictRowHeight,
     scrollRef: scrollRef,
     innerRef: tbodyRef,
     scrollLeft: props.scrollLeft,
@@ -396,6 +397,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       resizeFlag: resizeFlag,
       treeCheckAll: props.treeCheckAll,
       onCellClick: props.onCellClick,
+      strictRowHeight: props.strictRowHeight,
     };
 
     const headCommonProps = {
