@@ -15,6 +15,7 @@ interface UseTableVirtualProps {
   data: any[];
   rowsInView: number;
   rowHeight: number;
+  strictRowHeight?: number;
   scrollRef: React.RefObject<HTMLDivElement>;
   innerRef: React.RefObject<HTMLDivElement>;
   scrollLeft?: number;
@@ -27,7 +28,9 @@ interface UseTableVirtualProps {
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerTop, setTop] = useState(0);
-  const [scrollHeight, setHeight] = useState(props.data.length * props.rowHeight);
+  const strictRowHeight = props.strictRowHeight ? props.strictRowHeight : 0;
+  const defaultScrollHeight = strictRowHeight ? props.data.length * strictRowHeight : props.data.length * props.rowHeight;
+  const [scrollHeight, setHeight] = useState(defaultScrollHeight);
   const [startIndex, setStartIndex] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
 
@@ -104,6 +107,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
 
   const getContentHeight = (index: number) => {
     if (props.disabled) return 0;
+    if (strictRowHeight) {
+      return strictRowHeight * (index + 1) + props.theadHeight + props.tfootHeight;
+    }
     let sum = 0;
     for (let i = 0; i <= index; i++) {
       sum += context.cachedHeight[i] || props.rowHeight;
@@ -141,7 +147,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     const scrollContainerHeight = Math.max(props.scrollRef.current?.clientHeight || 0, 200);
     for (let i = 0; i <= maxIndex; i++) {
       context.rowSpanRows = 0;
-      const currentRowHeight = context.cachedHeight[i] || props.rowHeight;
+      const currentRowHeight = strictRowHeight || context.cachedHeight[i] || props.rowHeight;
       sum += currentRowHeight;
       let rowSpanHeight = 0;
       if (rowSpanInfo) {
@@ -156,13 +162,13 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
           if(rowSpanHeight < scrollContainerHeight) {
           const index = siblingsIndexs[j];
           context.rowSpanRows += 1;
-          rowSpanHeight += context.cachedHeight[index] || props.rowHeight;
+          rowSpanHeight += strictRowHeight || context.cachedHeight[index] || props.rowHeight;
         }
         }
       }
       if (scrollTop < sum + rowSpanHeight || i === maxIndex) {
         currentIndex = i;
-        const beforeHeight = i === 0 ? 0 : sum - (context.cachedHeight[i] || props.rowHeight);
+        const beforeHeight = i === 0 ? 0 : sum - (strictRowHeight || context.cachedHeight[i] || props.rowHeight);
         top = scrollTop - beforeHeight;
         break;
       }
@@ -304,10 +310,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       let addonHeight = 0;
       let addonCount = 0;
       for (let i = startIndex + rowsInView; i < props.data.length; i++) {
-        const height = context.cachedHeight[i] || props.rowHeight;
+        const height = strictRowHeight || context.cachedHeight[i] || props.rowHeight;
         addonHeight += height;
         addonCount += 1;
-        if (addonHeight >= remainHeight + context.cachedHeight[0]) break;
+        if (addonHeight >= remainHeight + (strictRowHeight || context.cachedHeight[0])) break;
       }
       if (addonCount > 0) {
         context.autoAddRows = addonCount;
