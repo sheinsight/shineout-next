@@ -81,7 +81,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         flex: 1,
         minWidth: 0,
       },
-      '[data-soui-role="input-group"] [data-soui-input-border] + &&&': {
+      '[data-soui-role="input-group"]:not([data-soui-border="false"]) [data-soui-input-border] + &&&': {
         borderLeftWidth: '1px',
       },
       '[data-soui-role="input-group-separate"] &&&, [data-soui-role="input-group-separate"] &&&:hover': {
