@@ -60,7 +60,7 @@ export default (props: InputGroupProps) => {
   );
   return (
     <div
-      {...util.getDataAttribute({ role: shouldSeparate ? 'input-group-separate' : 'input-group' })}
+      {...util.getDataAttribute({ role: shouldSeparate ? 'input-group-separate' : 'input-group', border: props.seamless ? 'false' : undefined })}
       className={rootClass}
       style={{ width, ...style }}
       dir={config?.direction}
@@ -74,7 +74,6 @@ export default (props: InputGroupProps) => {
             ...getProps(child),
             disabled: child.props.disabled || disabled,
             size: child.props.size || size,
-            border: props.seamless ? false : child.props.border,
           });
         }
         return <span key={i}>{child}</span>;
