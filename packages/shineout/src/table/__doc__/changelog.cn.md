@@ -1,3 +1,11 @@
+## 3.9.0-beta.5
+2025-10-16
+
+### 🆕 Feature
+
+- `Table` 新增 `strictRowHeight` 属性，强制统一行高，可提升虚拟滚动性能 ([#1415](https://github.com/sheinsight/shineout-next/pull/1415))
+
+
 ## 3.8.8-beta.6
 2025-10-29
 
@@ -26,8 +34,6 @@
 
 ## 3.8.4-beta.2
 2025-09-23
-
-
 
 ### 💎 Enhancement
 - 优化 `Table` 在设置了 `virtual` 且样式中有 maxHeight 但无 height 时的渲染性能，避免表格内容变化引起的不必要重新渲染 ([#1379](https://github.com/sheinsight/shineout-next/pull/1379))
