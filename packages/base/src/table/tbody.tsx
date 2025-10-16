@@ -11,13 +11,12 @@ export default (props: TbodyProps) => {
     keygen: props.keygen,
   });
 
-  const { rowData, handleCellHover, hoverIndex, rowSelectMergeStartData } =
-    useTableRow({
-      columns: props.columns,
-      data: props.data,
-      currentIndex,
-      hover,
-    });
+  const { rowData, handleCellHover, hoverIndex, rowSelectMergeStartData } = useTableRow({
+    columns: props.columns,
+    data: props.data,
+    currentIndex,
+    hover,
+  });
 
   const expandCol = (props.expandHideCol ||
     columns.find(
@@ -27,8 +26,9 @@ export default (props: TbodyProps) => {
   const renderRow = (item: any, index: number) => {
     const rowIndex = index + currentIndex;
     const originKey = util.getKey(props.keygen, item, rowIndex);
-    const trRenderKey = props.loader || props.rowEvents?.draggable ? originKey : `${originKey}-${rowIndex}`;
-    
+    const trRenderKey =
+      props.loader || props.rowEvents?.draggable ? originKey : `${originKey}-${rowIndex}`;
+
     // 在虚拟列表模式下，使用 virtualRowSpanInfo 来获取正确的选择数据
     let selectData = item;
     if (props.virtualRowSpanInfo && props.fullData) {
@@ -39,7 +39,7 @@ export default (props: TbodyProps) => {
       // 非虚拟列表模式使用原有逻辑
       selectData = rowSelectMergeStartData[index];
     }
-    
+
     return (
       <Tr
         key={trRenderKey}
@@ -84,22 +84,25 @@ export default (props: TbodyProps) => {
         onCellClick={props.onCellClick}
         virtual={props.virtual}
         scrolling={props.scrolling}
+        strictRowHeight={props.strictRowHeight}
       />
     );
   };
+  const $tbody = <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>;
 
-
-  const $tbody = useComponentMemo(
-    () => <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>,
-    [props.data, currentIndex],
-    props.virtual === 'lazy'
-      ? (prev: any, next: any) => {
-          return prev.some((_:any, index:number) => {
+  if (props.virtual === 'lazy') {
+    return useComponentMemo(
+      () => $tbody,
+      [props.data, currentIndex],
+      (prev: any, next: any) => {
+        return (
+          prev.some((_: any, index: number) => {
             return !util.shallowEqual(prev?.[index], next?.[index]);
-          }) || !props.scrolling;
-        }
-      : undefined,
-  );
+          }) || !props.scrolling
+        );
+      },
+    );
+  }
 
   return $tbody;
 };

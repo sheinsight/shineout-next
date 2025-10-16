@@ -390,6 +390,14 @@ export interface TableProps<DataItem, Value>
    * @version 3.8.0
    */
   cellSortable?: boolean;
+
+  /**
+   * @en Enforce strict row height. When set, all rows will have the same height as specified. Improves performance in virtual mode when row heights are consistent
+   * @cn 强制统一行高。设置后所有行的高度将与指定值一致。在行高一致的情况下可提升虚拟模式下的性能
+   * @default null
+   * @version 3.9.0
+   */
+  strictRowHeight?: number
 }
 
 interface BottomScrollbarOption extends Pick<StickyProps, 'bottom' | 'scrollContainer'> {
