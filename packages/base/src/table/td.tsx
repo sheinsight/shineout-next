@@ -51,22 +51,21 @@ export default function Td(props: TdProps): JSX.Element {
     </td>
   );
 
-  if (props.virtual !== 'lazy') {
-    return $td;
+  if (props.virtual === 'lazy') {
+    return useComponentMemo(
+      () => $td,
+      [data, className, props.style?.left, props.style?.right, col.type, col.treeColumnsName],
+      (prev: any, next: any) => {
+        if (col.type || col.treeColumnsName) {
+          return true;
+        }
+        return (
+          prev.some((_: any, index: any) => {
+            return !util.shallowEqual(prev?.[index], next?.[index]);
+          }) || !props.scrolling
+        );
+      },
+    ) as JSX.Element;
   }
-
-  return useComponentMemo(
-    () => $td,
-    [data, className, props.style?.left, props.style?.right, col.type, col.treeColumnsName],
-    (prev: any, next: any) => {
-      if (col.type || col.treeColumnsName) {
-        return true;
-      }
-      return (
-        prev.some((_: any, index: any) => {
-          return !util.shallowEqual(prev?.[index], next?.[index]);
-        }) || !props.scrolling
-      );
-    },
-  ) as JSX.Element;
+  return $td;
 }
