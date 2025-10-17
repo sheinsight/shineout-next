@@ -1,3 +1,11 @@
+## 3.8.7-beta.4
+2025-10-17
+
+### 🐞 BugFix
+
+- 修复 `Breadcrumb` 设置 `max` 属性且设置了自定义的 `renderItem` 后，超宽标题的Tooltip弹出效果不展示的问题([#1418](https://github.com/sheinsight/shineout-next/pull/1418))
+
+
 ## 3.7.6-beta.3
 2025-07-08
 
