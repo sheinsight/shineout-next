@@ -50,7 +50,7 @@ export default function getRule<Value>(
         return;
       }
       if (reg.global) reg.lastIndex = 0;
-      if (typeof value === 'string' && reg.test(value)) {
+      if (reg.test(value as string)) {
         callback(true);
       } else {
         callback(new FormError(po.message, po));
