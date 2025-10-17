@@ -54,7 +54,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
               className={breadcrumbClasses?.item}
               key={props.keygen ? getKey(props.keygen, itemFirst as Item, index) : index}
             >
-              {Array.isArray(d) ? renderArray(d) : <BreadcrumbItem dataItem={d as Item} renderItem={renderItem} jssStyle={props.jssStyle} max={maxCount} />}
+              {Array.isArray(d) ? renderArray(d) : <BreadcrumbItem dataItem={d as Item} renderItem={props.renderItem} jssStyle={props.jssStyle} max={maxCount} />}
               {!isLastItem && <div className={breadcrumbClasses?.separator}>{separator}</div>}
             </div>
           );

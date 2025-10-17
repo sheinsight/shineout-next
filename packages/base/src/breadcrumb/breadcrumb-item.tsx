@@ -50,7 +50,13 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
     }
   }
   if(renderItem) {
-    return renderItem(dataItem);
+    if (max !== undefined) {
+      item = <span className={contentClass} ref={contentRef}>
+        {renderItem(dataItem)}
+      </span>
+    } else {
+      return renderItem(dataItem);
+    }
   }
 
   if(isOverflow && d.title && max !== undefined) {
