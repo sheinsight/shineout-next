@@ -1,8 +1,8 @@
 /**
  * cn - 附带图标
- *    -- 使用 type 属性来指定标题附带的图标，需配合title使用
+ *    -- 使用 `type` 属性来指定标题附带的图标，需配合 `title` 使用
  * en - Icon
- *    -- use type display type icon
+ *    -- use `type` display type icon
  */
 import React, { useState } from 'react';
 import { Drawer, Button, Radio, TYPE } from 'shineout';
