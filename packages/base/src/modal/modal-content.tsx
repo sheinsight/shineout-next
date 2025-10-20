@@ -412,6 +412,7 @@ const Modal = (props: ModalContentProps) => {
   context.renderEd = true;
 
   const marginStyle = useMemo(() => {
+    if (!props.cascade) return;
     const idx = config.instanceIds.findIndex(id => id === context.instanceId);
     const afterInstances = config.cascadeConfigs.filter((_,index) => index > idx).filter(c => c.cascade).slice(0, 1);
 
