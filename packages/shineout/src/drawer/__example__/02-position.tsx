@@ -1,8 +1,8 @@
 /**
  * cn - 位置
- *    -- 通过 position 可设置 Drawer 弹出的位置, 现支持 top、right、bottom 和 left 四个位置配置
+ *    -- 通过 `position` 可设置 Drawer 弹出的位置, 现支持 top、right、bottom 和 left 四个位置配置
  * en - Position
- *    -- Set position property to specify the pop-up position
+ *    -- Set `position` property to specify the pop-up position
  */
 import React, { useState } from 'react';
 import { Drawer, Button, Form, Input, Radio, TYPE } from 'shineout';
