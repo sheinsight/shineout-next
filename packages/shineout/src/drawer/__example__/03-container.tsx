@@ -1,8 +1,8 @@
 /**
  * cn - 指定目标
- *    -- 使用 container 来指定 Drawer 渲染的目标节点
+ *    -- 使用 `container` 来指定 Drawer 渲染的目标节点
  * en - Target
- *    -- set container to render target node
+ *    -- set `container` to render target node
  */
 import React, { useState } from 'react';
 import { Button, Drawer, TYPE } from 'shineout';

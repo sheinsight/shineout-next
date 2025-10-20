@@ -1,8 +1,8 @@
 /**
  * cn - 隐藏遮罩
- *    -- 使用 hideMask 属性来隐藏遮罩
+ *    -- 使用 `hideMask` 属性来隐藏遮罩
  * en - hide mask
- *    -- use hideMask property to hide mask
+ *    -- use `hideMask` property to hide mask
  */
 import React, { useState } from 'react';
 import { Drawer, Button } from 'shineout';
