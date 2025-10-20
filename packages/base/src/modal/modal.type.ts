@@ -234,4 +234,12 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn 弹出层内容
    */
   children?: React.ReactNode;
+
+  /**
+   * @en In multi-layer nesting, the parent automatically offsets to avoid being blocked (only left/right positions take effect)
+   * @cn 多层嵌套时，父级自动偏移避免被遮挡（仅 left/right 位置生效）
+   * @default false
+   * @version 3.9.0
+   */
+  cascade?: boolean;
 }
