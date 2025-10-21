@@ -15,13 +15,21 @@ type OriginDocumentStyle = null | {
   overflow: string;
   paddingRight: string;
 }
+
+type CascadeConfig = {
+  instanceId: string;
+  width?: number | string;
+  cascade: boolean;
+}
 interface ModalConfig {
   instanceIds: string[];
+  cascadeConfigs: CascadeConfig[];
   originDocumentStyle: OriginDocumentStyle,
 }
 
 const config = {
   instanceIds: [],
+  cascadeConfigs: [],
   originDocumentStyle: null,
 }
 const state = create<ModalConfig>(config);
@@ -34,8 +42,31 @@ const addModalInstance = (instanceId: string) => {
   state.mutate.instanceIds.push(instanceId)
 }
 
+const addModalCascadeConfig = (props: CascadeConfig) => {
+  const { width } = props;
+  let widthNumber = 0;
+  // width 是30% 这种格式的，转为number
+  if (typeof width === 'string' && width.indexOf('%') > -1) {
+    const parentWidth = document.body.clientWidth;
+    const percent = parseInt(width, 10);
+    widthNumber = parentWidth * percent / 100;
+  } else{
+    widthNumber = typeof width === 'number' ? width : parseInt(width as string, 10) || 0;
+  }
+  state.mutate.cascadeConfigs.push({
+    cascade: props.cascade,
+    instanceId: props.instanceId,
+    width: widthNumber,
+  });
+}
+
 const removeModalInstance = (instanceId: string) => {
-  state.mutate.instanceIds = state.mutate.instanceIds.filter(id => id !== instanceId)
+  state.mutate.instanceIds = state.mutate.instanceIds.filter((id) => id !== instanceId)
+}
+
+const removeModalCascadeConfig = (instanceId: string) => {
+  if (!state.mutate.cascadeConfigs.length) return;
+  state.mutate.cascadeConfigs = state.mutate.cascadeConfigs.filter((config) => config.instanceId !== instanceId)
 }
 
 const getInstanceIds = () => {
@@ -122,11 +153,17 @@ const Modal = (props: ModalContentProps) => {
     const index = config.instanceIds.indexOf(context.instanceId);
 
     if (visible && index === -1) {
-        addModalInstance(context.instanceId)
+      addModalInstance(context.instanceId);
+      addModalCascadeConfig({
+        instanceId: context.instanceId,
+        width: props.width,
+        cascade: !!props.cascade && !!props.width && !!isPositionX,
+      });
     }
 
     if (!visible && index > -1 && !animation) {
-      removeModalInstance(context.instanceId)
+      removeModalInstance(context.instanceId);
+      removeModalCascadeConfig(context.instanceId);
     }
   }, [visible, animation, config.instanceIds])
 
@@ -160,6 +197,7 @@ const Modal = (props: ModalContentProps) => {
   });
 
   const handleClose = usePersistFn(() => {
+    removeModalCascadeConfig(context.instanceId)
     if (!visible) return;
     if (props.autoShow) {
       setVisible(false);
@@ -255,6 +293,7 @@ const Modal = (props: ModalContentProps) => {
     // unmount
     return () => {
       removeModalInstance(context.instanceId)
+      removeModalCascadeConfig(context.instanceId);
       const instanceIds = getInstanceIds();
       if (instanceIds.length === 0) {
         resetDocumentOverflow();
@@ -372,12 +411,25 @@ const Modal = (props: ModalContentProps) => {
 
   context.renderEd = true;
 
+  const marginStyle = useMemo(() => {
+    if (!props.cascade) return;
+    const idx = config.instanceIds.findIndex(id => id === context.instanceId);
+    const afterInstances = config.cascadeConfigs.filter((_,index) => index > idx).filter(c => c.cascade).slice(0, 1);
+
+    const width = afterInstances.reduce((ret,cur) => (ret || 0) + (cur.width as number), 0)
+    return {
+      [props.position === 'left' ? 'marginLeft' : 'marginRight']: `${width}px`,
+      transition: width ? 'margin .3s ease .05s' : 'margin 0.2s ease',
+    }
+  }, [config.cascadeConfigs, config.instanceIds])
+
   const panelStyle: React.CSSProperties = {
     transformOrigin: origin,
     top: props.fullScreen ? undefined : top,
     ...props.style,
     width: props.fullScreen ? undefined : width,
     height: props.fullScreen ? undefined : height,
+    ...marginStyle,
   };
   if (props.resizable) {
     panelStyle.width = resizeInfo.width;
