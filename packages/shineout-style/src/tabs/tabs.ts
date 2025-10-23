@@ -301,7 +301,6 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
   },
   headerWrapper: {
     display: 'flex',
-    overflow: 'hidden',
     position: 'relative',
     '&[data-soui-position^="top-"],&[data-soui-position^="bottom-"]': {
       alignItems: 'center',
@@ -493,7 +492,9 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     '$headerWrapper[data-soui-shape="card"] &': {
+      marginTop: `calc(-1 * ${Token.tabsBadgeMargin})`,
       '& $tab': {
+        marginTop: Token.tabsBadgeMargin,
         position: 'relative',
         border: `1px solid ${Token.tabsCardBorderColor}`,
         padding: `${Token.tabsCardPaddingY} ${Token.tabsCardPaddingX}`,
