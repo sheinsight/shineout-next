@@ -125,6 +125,7 @@ const tabsTokenExtraValue = {
   },
   extra: { fill: { hover: { background: { color: 'Neutral-fill-3' } } } },
   arrow: { font: { color: 'Neutral-text-4' } },
+  badge: { margin: 'Spacing-0' },
 };
 
 module.exports = {
