@@ -26,16 +26,14 @@ export default () => {
   );
 
   return (
-    <div style={{ '--soui-tabs-badge-margin': '12px' } as React.CSSProperties}>
-      <Tabs shape={'card'} defaultActive={0}>
-        {tabs.map((tab, index) => {
-          return (
-            <Tabs.Panel key={index} tab={renderTab(tab)}>
-              <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>
-            </Tabs.Panel>
-          );
-        })}
-      </Tabs>
-    </div>
+    <Tabs shape={'card'} defaultActive={0} style={{ '--soui-tabs-badge-margin': '12px' } as React.CSSProperties}>
+      {tabs.map((tab, index) => {
+        return (
+          <Tabs.Panel key={index} tab={renderTab(tab)}>
+            <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>
+          </Tabs.Panel>
+        );
+      })}
+    </Tabs>
   );
 };
