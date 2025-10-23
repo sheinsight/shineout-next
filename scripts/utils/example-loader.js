@@ -57,8 +57,10 @@ const exampleLoader = (content, component, fileName) => {
     example.propName.cn = textLine[cnStart].split('cn -')?.[1].trim() || '';
     for (let i = cnStart; i < (enStart > -1 ? enStart : textLine.length); i++) {
       if (textLine[i].indexOf('*    --') > -1) {
+        const parts = textLine[i].split('--');
+        const description = parts.slice(1).join('--').trim();
         example.propDescribe.cn.push(
-          wrapWithSpan(textLine[i].split('--')?.[1].trim() || '').replace(/`/g, ''),
+          wrapWithSpan(description || '').replace(/`/g, ''),
         );
       }
     }
@@ -69,8 +71,10 @@ const exampleLoader = (content, component, fileName) => {
     example.propName.en = textLine[enStart].split('en -')?.[1].trim() || '';
     for (let i = enStart; i < end; i++) {
       if (textLine[i].indexOf('*    --') > -1) {
+        const parts = textLine[i].split('--');
+        const description = parts.slice(1).join('--').trim();
         example.propDescribe.en.push(
-          wrapWithSpan(textLine[i].split('--')?.[1].trim() || '').replace(/`/g, ''),
+          wrapWithSpan(description || '').replace(/`/g, ''),
         );
       }
     }
