@@ -43,12 +43,13 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
     return [first, more, ...reset];
   };
 
+  const lastIndex = Math.min(data.length - 1, (maxCount !== undefined ? maxCount : data.length - 1));
   return (
     <div className={className} style={props.style}>
       {data &&
         getRenderData().map((d, index) => {
           const itemFirst = Array.isArray(d) ? d[0] : d;
-          const isLastItem = index === (maxCount !== undefined ? maxCount : data.length - 1);
+          const isLastItem = index === lastIndex;
           return (
             <div
               className={breadcrumbClasses?.item}
