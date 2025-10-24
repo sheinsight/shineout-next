@@ -89,6 +89,11 @@ const replaceCssVarValue = (innerHTML: string, cssvar: string, targetValue?: str
   return innerHTML.replace(regex, `${cssvar}: ${targetValue};`);
 };
 
+const isCustomToken = (key: string) => {
+  if (key.startsWith('--')) return true;
+  return false;
+};
+
 const setToken = (options?: Options) => {
   const {
     tagName = 'style',
@@ -116,7 +121,7 @@ const setToken = (options?: Options) => {
 
   if (update && token) {
     Object.keys(token).forEach((key: string) => {
-      const cssvar = `--${prefix}-${camelCaseToDash(key)}`;
+      const cssvar = isCustomToken(key) ? key : `--${prefix}-${camelCaseToDash(key)}`;
       const targetValue = token[key as keyof Tokens];
       tag.innerHTML = replaceCssVarValue(tag.innerHTML, cssvar, targetValue);
     });
@@ -128,12 +133,14 @@ const setToken = (options?: Options) => {
     Object.keys(defaultToken)
       .filter((item) => (customExtraToken || ['Brand-6', 'Neutral-6']).includes(item))
       .forEach((key: string) => {
-        const token = `--${prefix}-${camelCaseToDash(key)}:${defaultToken[key as keyof Tokens]}`;
+        const cssvar = isCustomToken(key) ? key : `--${prefix}-${camelCaseToDash(key)}`;
+        const token = `${cssvar}:${defaultToken[key as keyof Tokens]}`;
         tokens.push(token);
       });
   } else {
     Object.keys(defaultToken).forEach((key: string) => {
-      const token = `--${prefix}-${camelCaseToDash(key)}:${defaultToken[key as keyof Tokens]}`;
+      const cssvar = isCustomToken(key) ? key : `--${prefix}-${camelCaseToDash(key)}`;
+      const token = `${cssvar}:${defaultToken[key as keyof Tokens]}`;
       tokens.push(token);
     });
   }
@@ -147,7 +154,7 @@ const setToken = (options?: Options) => {
   tag.setAttribute('data-token', tokenName || '');
   tag.setAttribute('data-token-id', id);
   tag.setAttribute('data-token-selector', selector);
-  
+
   tag.innerHTML = ignoreExtra
     ? `${selector} {${tokens.join(';')}}`
     : `${selector} {${tokens.concat(extraToken).join(';')}}`;
