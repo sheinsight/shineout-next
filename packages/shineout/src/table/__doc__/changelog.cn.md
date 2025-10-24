@@ -1,3 +1,11 @@
+## 3.9.0-beta.9
+2025-10-24
+
+### 🆕 Feature
+
+- `Table` 新增 `virtualColumn` 属性，设置后开启虚拟列能力 ([#1421](https://github.com/sheinsight/shineout-next/pull/1421))
+
+
 ## 3.9.0-beta.5
 2025-10-16
 
