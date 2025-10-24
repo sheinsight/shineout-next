@@ -1,5 +1,5 @@
 /**
- * cn - 虚拟滚动
+ * cn - 虚拟列表
  *    -- 虚拟列表提供了一个`scrollToIndex`方法滚动到指定行
  * en - scrollToIndex
  *    -- The virtual list table provides a scrollToIndex method to scroll to the specified row
