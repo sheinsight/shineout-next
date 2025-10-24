@@ -1,3 +1,9 @@
+## 3.9.0-beta.9
+2025-10-24
+
+### 💎 Enhancement
+- 增强 `setToken` 能力，支持设置 "--xxx" cssvar 格式的变量 ([#1421](https://github.com/sheinsight/shineout-next/pull/1421))
+
 ## 3.8.0-beta.16
 2025-07-08
 
