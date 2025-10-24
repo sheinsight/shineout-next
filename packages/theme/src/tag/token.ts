@@ -30,7 +30,10 @@ const tagTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 tagRules 强关联，非 tagRules 规则内的 token 需手动增加或删减。
  */
-const tagTokenValue = {
+const tagTokenValue = {};
+
+const tagTokenExtraValue = {
+
   info: {
     font: { color: 'Brand-6' },
     background: { color: 'Brand-1' },
@@ -80,6 +83,7 @@ const tagTokenValue = {
     },
   },
   default: {
+    line:  { height: 'Line-height-dynamic' },
     font: { color: 'Neutral-text-5' },
     background: { color: 'Neutral-fill-2' },
     border: { color: 'Neutral-fill-2' },
@@ -665,6 +669,7 @@ const tagTokenValue = {
     padding: { x: 'Spacing-4', y: '' },
     height: 'Size-10',
     input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-12' } },
+    line:  { height: 'Line-height-dynamic' }
   },
   large: {
     font: { size: 'Font-14', weight: 'Weight-regular' },
@@ -672,11 +677,10 @@ const tagTokenValue = {
     padding: { x: 'Spacing-12', y: 'Spacing-2' },
     height: 'Size-14',
     input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-14' } },
+    line:  { height: 'Line-height-dynamic' }
   },
   input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-12' } },
 };
-
-const tagTokenExtraValue = {};
 
 module.exports = {
   tagTokenValue,
