@@ -1,10 +1,15 @@
+## 3.9.0-beta.9
+2025-10-24
+
+### 💎 Enhancement
+- 增强 `setToken` 功能,支持设置 CSS 自定义属性(CSS Variables)格式的变量(如 `--variable-name`) ([#1421](https://github.com/sheinsight/shineout-next/pull/1421))
+
 ## 3.8.8-beta.1
 2025-10-27
 
 ### 💎 Enhancement
 
 - 支持自定义 data 属性透传至对应 DOM 节点 ([#1429](https://github.com/sheinsight/shineout-next/pull/1429))
-
 
 ## 3.8.0-beta.16
 2025-07-08
