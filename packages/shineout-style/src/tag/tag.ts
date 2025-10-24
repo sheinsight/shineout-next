@@ -187,7 +187,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   wrapper: {
     flex: 1,
     minWidth: 0,
-    lineHeight: Token.lineHeightDynamic,
+    lineHeight: Token.tagDefaultLineHeight,
   },
   inline: {
     display: 'inline-block',
@@ -208,6 +208,12 @@ const TagStyle: JsStyles<keyof TagClasses> = {
         height: 14,
       },
     },
+    '& $wrapper': {
+      lineHeight: Token.tagLargeLineHeight,
+    },
+    '& $closeIcon': {
+      height: Token.tagLargeLineHeight,
+    },
   },
   small: {
     fontSize: Token.tagSmallFontSize,
@@ -216,10 +222,10 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     fontWeight: Token.tagSmallFontWeight,
     borderRadius: Token.tagSmallBorderRadius,
     '& $wrapper': {
-      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
+      lineHeight: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 6px))`,
     },
     '& $closeIcon': {
-      height: `calc(${Token.tagSmallFontSize} + 6px)`,
+      height: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 6px))`,
     },
     '& $closeIconWrapper': {
       width: `calc(${Token.tagSmallFontSize} + 6px)`,
@@ -244,7 +250,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     alignItems: 'center',
     display: 'inline-flex',
     cursor: 'pointer',
-    height: Token.lineHeightDynamic,
+    height: Token.tagDefaultLineHeight,
     maxHeight: '100%',
   },
 
