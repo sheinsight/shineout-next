@@ -21,7 +21,7 @@ const data: TableRowData[] = user.fetchSync(10);
 
 const columns: TableColumnItem[] = []
 
-const count = 100;
+const count = 1000;
 for (let i = 0; i < count; i++) {
   columns.push({
     title: `${i + 1}($)`,
