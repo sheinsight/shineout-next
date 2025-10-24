@@ -1,10 +1,12 @@
 import { TableColumnItem, TableFormatColumn } from './use-table.type';
 import { produce } from '../../utils/immer';
-import { useRef } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 export interface UseColumnsProps<Data> {
   columns?: TableColumnItem<Data>[];
   showCheckbox?: boolean;
+  virtualColumn?: boolean;
+  scrollRef: React.RefObject<HTMLElement>;
 }
 
 const getHideExpandCol = (cols: UseColumnsProps<any>['columns'] = []) => {
@@ -24,7 +26,12 @@ export type RxpandHideColType = {
   onClick?: (data: any, expand: boolean) => void;
 } | null;
 
+// 缓冲区列数：左右各2列
+const BUFFER_COUNT = 2;
+
 const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
+  const [startIndex, setStartIndex] = useState(0);
+  const [renderedCount, setRenderedCount] = useState(20);
   const { columns: propsColumns = [] } = props;
 
   const { current: context } = useRef<{
@@ -84,8 +91,69 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
   });
 
   const columns = getColumns(propsColumns) || [];
+
+  const leftFixedColumns = columns.filter(col => col.fixed === 'left');
+  const middleColumns = columns.filter(col => !col.fixed);
+  const handleScroll = (scrollInfo: { scrollLeft: number }) => {
+    const { scrollLeft } = scrollInfo;
+
+    let sum = 0;
+    let currentIndex = 0;
+    for (let i = 0, len = middleColumns.length - 1; i < len; i++) {
+      const curCol = middleColumns[i];
+      sum += (curCol.width as number) || 100;
+      if (scrollLeft < sum) {
+        // 计算可视区域内需要渲染的列数
+        for(let j = i + 1; j < len; j++) {
+          const nextCol = middleColumns[j];
+          sum += (nextCol.width as number) || 100;
+          if (props.scrollRef.current && sum - scrollLeft >= props.scrollRef.current?.clientWidth) {
+            // 在原有基础上，右侧增加缓冲列
+            const visibleCount = j - i;
+            setRenderedCount(Math.min(visibleCount + BUFFER_COUNT * 2, len));
+            break;
+          }
+        }
+
+        // 左侧也增加缓冲列，但不能小于0
+        const bufferedStartIndex = Math.max(0, i - BUFFER_COUNT);
+        currentIndex = bufferedStartIndex + leftFixedColumns.length;
+        break;
+      }
+    }
+
+    setStartIndex(currentIndex);
+  }
+
+  useEffect(() => {
+    if (!props.virtualColumn) return;
+    handleScroll({ scrollLeft: 0 });
+  }, [])
+
   return {
-    columns,
+    columns: props.virtualColumn ? columns.map((col,index) => {
+      if(col.fixed) {
+        return col;
+      }
+      if(index < startIndex || index > startIndex + renderedCount) {
+        let colSpan;
+        if(index > startIndex + renderedCount && index === startIndex + renderedCount + 1) {
+          colSpan = () => middleColumns.length - (startIndex + renderedCount) + 1;
+        } else if (index < startIndex && index === leftFixedColumns.length && startIndex > 0){
+          colSpan = () => startIndex;
+        }
+        return {
+          ...col,
+          colSpan: colSpan,
+          render: () => null,
+          title: null,
+        };
+      }
+      return col;
+    }) : columns,
+    columnInfo: {
+      handleScroll,
+    },
     expandHideCol: context.expandHideCol,
   };
 };
