@@ -262,7 +262,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     columns,
     colgroup,
     rowsInView: props.rowsInView || 20,
-    rowHeight: props.rowHeight || 100,
+    rowHeight: props.rowHeight || 40,
     strictRowHeight: props.strictRowHeight,
     scrollRef: scrollRef,
     innerRef: tbodyRef,
