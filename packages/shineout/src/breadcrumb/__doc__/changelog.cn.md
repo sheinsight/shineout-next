@@ -1,3 +1,11 @@
+## 3.8.7-beta.5
+2025-10-24
+
+### 🐞 BugFix
+
+- 修复 `Breadcrumb` 设置 `max` 大于或等于 `data` 长度时，末尾多了个斜线的问题 ([#1424](https://github.com/sheinsight/shineout-next/pull/1424))
+
+
 ## 3.8.7-beta.4
 2025-10-17
 
