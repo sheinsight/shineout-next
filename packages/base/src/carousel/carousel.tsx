@@ -14,6 +14,9 @@ const Carousel = (props: CarouselProps) => {
   const { current, pre, direction, func } = useCarousel({
     total,
     interval: props.interval,
+    defaultValue: props.defaultValue,
+    value: props.value,
+    onChange: props.onChange,
     onMove: props.onMove,
   });
 
