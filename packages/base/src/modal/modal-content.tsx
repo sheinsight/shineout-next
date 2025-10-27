@@ -18,7 +18,7 @@ type OriginDocumentStyle = null | {
 
 type CascadeConfig = {
   instanceId: string;
-  width?: number | string;
+  cascadeWidth: number;
   cascade: boolean;
 }
 interface ModalConfig {
@@ -43,20 +43,10 @@ const addModalInstance = (instanceId: string) => {
 }
 
 const addModalCascadeConfig = (props: CascadeConfig) => {
-  const { width } = props;
-  let widthNumber = 0;
-  // width 是30% 这种格式的，转为number
-  if (typeof width === 'string' && width.indexOf('%') > -1) {
-    const parentWidth = document.body.clientWidth;
-    const percent = parseInt(width, 10);
-    widthNumber = parentWidth * percent / 100;
-  } else{
-    widthNumber = typeof width === 'number' ? width : parseInt(width as string, 10) || 0;
-  }
   state.mutate.cascadeConfigs.push({
     cascade: props.cascade,
+    cascadeWidth: props.cascadeWidth,
     instanceId: props.instanceId,
-    width: widthNumber,
   });
 }
 
@@ -156,8 +146,8 @@ const Modal = (props: ModalContentProps) => {
       addModalInstance(context.instanceId);
       addModalCascadeConfig({
         instanceId: context.instanceId,
-        width: props.width,
-        cascade: !!props.cascade && !!props.width && !!isPositionX,
+        cascade: !!props.cascade && !!isPositionX,
+        cascadeWidth: typeof props.cascade === 'object' ? (props.cascade.width || 180) : 180,
       });
     }
 
@@ -411,15 +401,18 @@ const Modal = (props: ModalContentProps) => {
 
   context.renderEd = true;
 
-  const marginStyle = useMemo(() => {
+  const cascadeStyle = useMemo(() => {
     if (!props.cascade) return;
     const idx = config.instanceIds.findIndex(id => id === context.instanceId);
-    const afterInstances = config.cascadeConfigs.filter((_,index) => index > idx).filter(c => c.cascade).slice(0, 1);
+    let instance = 0;
+    const curCascadeConfig = config.cascadeConfigs.find(c => c.instanceId === context.instanceId);
+    if(curCascadeConfig && idx < config.cascadeConfigs.length - 1) {
+      instance = curCascadeConfig.cascadeWidth;
+    }
 
-    const width = afterInstances.reduce((ret,cur) => (ret || 0) + (cur.width as number), 0)
     return {
-      [props.position === 'left' ? 'marginLeft' : 'marginRight']: `${width}px`,
-      transition: width ? 'margin .3s ease .05s' : 'margin 0.2s ease',
+      transform: props.position === 'left' ? `translateX(${instance}px)` : `translateX(-${instance}px)`,
+      transition: instance ? 'transform 0.3s ease 0.05s' : 'transform 0.2s ease',
     }
   }, [config.cascadeConfigs, config.instanceIds])
 
@@ -429,7 +422,7 @@ const Modal = (props: ModalContentProps) => {
     ...props.style,
     width: props.fullScreen ? undefined : width,
     height: props.fullScreen ? undefined : height,
-    ...marginStyle,
+    ...cascadeStyle,
   };
   if (props.resizable) {
     panelStyle.width = resizeInfo.width;
