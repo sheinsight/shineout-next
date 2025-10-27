@@ -241,5 +241,5 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
    * @default false
    * @version 3.9.0
    */
-  cascade?: boolean;
+  cascade?: boolean | { width?: number };
 }
