@@ -45,7 +45,6 @@ const App: React.FC = () => {
       </Drawer>
 
       <Drawer
-        cascade
         forceMask
         width={400}
         title='Drawer 2'
