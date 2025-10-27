@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../button';
 import { DropdownNode, MenuPosition, SimpleDropdownProps } from './dropdown.type';
-import { usePopup, util } from '@sheinx/hooks';
+import { getDataset, usePopup, util } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
 import Icons from '../icons';
@@ -206,6 +206,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       data-role='dropdown'
       ref={targetRef}
       {...targetProps}
+      {...getDataset(props)}
       onClick={isSub ? openPop : targetProps.onClick}
     >
       {renderButton()}

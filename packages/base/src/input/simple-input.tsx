@@ -1,4 +1,4 @@
-import { useInput, useKeyEvent, usePersistFn, util } from '@sheinx/hooks';
+import { getDataset, useInput, useKeyEvent, usePersistFn, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent, useContext, useRef } from 'react';
 import { SimpleInputProps } from './input.type';
@@ -73,7 +73,8 @@ const Input = (props: SimpleInputProps) => {
     onKeyUp,
   });
 
-  const inputElProps = util.removeProps(inputProps, { formName: undefined })
+  const datasetProps = getDataset(props);
+  const inputElProps = util.removeProps(inputProps, { formName: undefined, ...datasetProps })
   let inputEl = <input type='text' {...inputElProps} />;
 
   if (typeof renderInput === 'function') {
@@ -100,6 +101,7 @@ const Input = (props: SimpleInputProps) => {
     <div
       id={fieldId}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
+      {...datasetProps}
       {...getRootProps({
         className: rootClass,
         style,

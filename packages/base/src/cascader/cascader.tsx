@@ -10,6 +10,7 @@ import {
   UnMatchedData,
   ObjectKey,
   usePrevious,
+  getDataset,
 } from '@sheinx/hooks';
 import { Spin } from '../spin';
 import { AbsoluteList } from '../absolute-list';
@@ -778,6 +779,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         id={fieldId}
         tabIndex={disabled === true || showInput ? undefined : 0}
         {...util.getDataAttribute({ ['input-border']: 'true' })}
+        {...getDataset(props)}
         className={rootClass}
         style={rootStyle}
         onBlur={handleBlur}

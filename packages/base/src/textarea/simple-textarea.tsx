@@ -1,4 +1,4 @@
-import { useKeyEvent, usePersistFn, useTextarea, util } from '@sheinx/hooks';
+import { getDataset, useKeyEvent, usePersistFn, useTextarea, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent, useContext, useEffect } from 'react';
 import { SimpleTextareaProps } from './textarea.type';
@@ -105,6 +105,7 @@ const Textarea = (props: SimpleTextareaProps) => {
     <div
       id={fieldId}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
+      {...getDataset(props)}
       {...getRootProps({
         className: rootClass,
         style,

@@ -1,4 +1,4 @@
-import { useDatePickerFormat, useInputAble, usePersistFn, usePopup, util } from '@sheinx/hooks';
+import { getDataset, useDatePickerFormat, useInputAble, usePersistFn, usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { AbsoluteList } from '../absolute-list';
 import React, { useEffect, useRef } from 'react';
@@ -288,6 +288,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   return (
     <div
       {...util.getDataAttribute({ ['input-border']: 'true', type })}
+      {...getDataset(props)}
       className={classNames(
         props.className,
         styles?.rootClass,

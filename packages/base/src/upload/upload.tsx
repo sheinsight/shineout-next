@@ -1,4 +1,4 @@
-import { useInputAble, usePersistFn, useUpload, util } from '@sheinx/hooks';
+import { getDataset, useInputAble, usePersistFn, useUpload, util } from '@sheinx/hooks';
 import React, { useContext, useEffect } from 'react';
 import { UploadProps } from './upload.type';
 import Drop from './drop';
@@ -247,6 +247,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         props.disabled && uploadClasses?.wrapperDisabled,
         props.className,
       )}
+      {...getDataset(props)}
     >
       {renderCustomResult ? (
         <>

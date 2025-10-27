@@ -3,7 +3,7 @@ import List from './pagination-size-list';
 import Jumper from './pagination-jumper';
 import Buttons from './pagination-buttons';
 import Simple from './pagination-simple';
-import { usePagination, util } from '@sheinx/hooks';
+import { getDataset, usePagination, util } from '@sheinx/hooks';
 import { PaginationProps } from './pagination.type';
 
 const { devUseWarning } = util;
@@ -82,7 +82,7 @@ const Pagination = (props: PaginationProps) => {
   }
 
   return (
-    <div {...getRootProps()} className={rootClasses}>
+    <div {...getRootProps()} {...getDataset(props)} className={rootClasses}>
       {layout.map((section, i) => {
         switch (section) {
           case 'links':
