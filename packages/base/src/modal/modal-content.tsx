@@ -337,6 +337,7 @@ const Modal = (props: ModalContentProps) => {
       <div
         className={modalClasses?.header}
         onMouseDown={props.moveable && !props.fullScreen ? moveInfo.handleMouseDown : undefined}
+        style={props.headerStyle}
       >
         {renderIcon()}
         <div className={modalClasses?.headerTitle}>{props.title}</div>
@@ -369,7 +370,7 @@ const Modal = (props: ModalContentProps) => {
 
   const renderFooter = () => {
     if (!props.footer) return null;
-    return <div className={modalClasses?.footer}>{props.footer}</div>;
+    return <div className={modalClasses?.footer} style={props.footerStyle}>{props.footer}</div>;
   };
 
   const renderResize = () => {
