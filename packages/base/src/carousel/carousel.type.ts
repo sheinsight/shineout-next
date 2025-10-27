@@ -116,4 +116,28 @@ export interface CarouselProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn 轮播项的 class
    */
   itemClassName?: string;
+
+  /**
+   * @en default current index
+   * @cn 默认当前索引
+   * @default 0
+   * @version 3.9.0
+   */
+  defaultValue?: number;
+
+  /**
+   * @en current index
+   * @cn 当前索引
+   * @version 3.9.0
+   */
+  value?: number;
+
+  /**
+   * @en current index change callback
+   * @cn 当前索引变化回调
+   * @param current current index
+   * @returns void
+   * @version 3.9.0
+   */
+  onChange?: (current: number) => void;
 }
