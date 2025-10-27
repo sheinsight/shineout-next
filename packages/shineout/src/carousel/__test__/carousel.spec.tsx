@@ -281,3 +281,39 @@ describe('Carousel[Type]', () => {
     classLengthTest(container.querySelector(indicatorWrapper)!, '.demo', 4);
   });
 });
+describe('Carousel[Controlled]', () => {
+  test('should render with defaultValue', () => {
+    const { container } = render(<CarouselType defaultValue={2} />);
+    const carouselItems = container.querySelectorAll(item);
+    const indicators = container.querySelectorAll(indicator);
+    // 应该从第 3 张图片开始（索引 2）
+    classTest(carouselItems[2], itemCurrent);
+    classTest(indicators[2], indicatorActive);
+  });
+  test('should render with value and onChange', () => {
+    const handleChange = jest.fn();
+    const { container } = render(<CarouselType value={1} onChange={handleChange} />);
+    const carouselItems = container.querySelectorAll(item);
+    const indicators = container.querySelectorAll(indicator);
+    // 应该显示第 2 张图片（索引 1）
+    classTest(carouselItems[1], itemCurrent);
+    classTest(indicators[1], indicatorActive);
+    // 点击第 3 个指示器
+    fireEvent.click(indicators[2]);
+    // onChange 应该被调用，参数为 2
+    expect(handleChange).toHaveBeenCalledWith(2);
+  });
+  test('should update when value prop changes', () => {
+    const { container, rerender } = render(<CarouselType value={0} onChange={() => {}} />);
+    const carouselItems = container.querySelectorAll(item);
+    const indicators = container.querySelectorAll(indicator);
+    // 初始显示第 1 张图片
+    classTest(carouselItems[0], itemCurrent);
+    classTest(indicators[0], indicatorActive);
+    // 更新 value 为 2
+    rerender(<CarouselType value={2} onChange={() => {}} />);
+    // 应该显示第 3 张图片
+    classTest(carouselItems[2], itemCurrent);
+    classTest(indicators[2], indicatorActive);
+  });
+});
