@@ -401,7 +401,7 @@ const Modal = (props: ModalContentProps) => {
 
   context.renderEd = true;
 
-  const marginStyle = useMemo(() => {
+  const cascadeStyle = useMemo(() => {
     if (!props.cascade) return;
     const idx = config.instanceIds.findIndex(id => id === context.instanceId);
     let instance = 0;
@@ -422,7 +422,7 @@ const Modal = (props: ModalContentProps) => {
     ...props.style,
     width: props.fullScreen ? undefined : width,
     height: props.fullScreen ? undefined : height,
-    ...marginStyle,
+    ...cascadeStyle,
   };
   if (props.resizable) {
     panelStyle.width = resizeInfo.width;
