@@ -81,6 +81,20 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
   bodyStyle?: React.CSSProperties;
 
   /**
+   * @en Extend pop-up header style
+   * @cn 扩展弹出层 header 的样式
+   * @version 3.9.0
+   */
+  headerStyle?: React.CSSProperties;
+
+  /**
+   * @en Extend pop-up footer style
+   * @cn 扩展弹出层 footer 的样式
+   * @version 3.9.0
+   */
+  footerStyle?: React.CSSProperties;
+
+  /**
    * @en The content at the bottom
    * @cn 底部内容
    */
