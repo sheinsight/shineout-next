@@ -6,6 +6,7 @@ import { useConfig } from '../config';
 import React from 'react';
 
 const Input = (props: InputProps) => {
+
   const commonProps = useInputCommon<InputProps['value'], InputProps>(props);
   const config = useConfig();
   const inputFormatParams = {

@@ -2,7 +2,7 @@ import { useContext, useMemo } from 'react';
 import classNames from 'classnames';
 import { TransferProps } from './transfer.type';
 import { TransferClasses } from './transfer.type';
-import { TransferContext, useTransfer, TransferListType, KeygenResult, util } from '@sheinx/hooks';
+import { TransferContext, useTransfer, TransferListType, KeygenResult, util, getDataset } from '@sheinx/hooks';
 import TransferList from './transfer-list';
 import TransferOperate from './transfer-operate';
 import Icon from '../icons';
@@ -199,7 +199,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
 
   return (
     <TransferContext.Provider value={{ filterSourceText, filterTargetText, highlight: props.highlight }}>
-      <div className={rootClass} style={style} id={fieldId}>
+      <div className={rootClass} style={style} id={fieldId} {...getDataset(props)}>
         {renderSourceList}
         {!simple && renderOperations()}
         {renderTargetList}

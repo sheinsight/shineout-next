@@ -1,4 +1,4 @@
-import { useCarousel } from '@sheinx/hooks';
+import { getDataset, useCarousel } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
 import { CarouselProps } from './carousel.type';
@@ -159,6 +159,7 @@ const Carousel = (props: CarouselProps) => {
       style={{ ...props.style, height: 'auto' }}
       onMouseEnter={func.stop}
       onMouseLeave={func.start}
+      {...getDataset(props)}
     >
       {renderItems()}
       {renderIndicator()}

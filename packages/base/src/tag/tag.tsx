@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Icons from '../icons';
 import { TagClasses, TagProps } from './tag.type';
 import useTag from './use-tag';
-import { util } from '@sheinx/hooks';
+import { getDataset, util } from '@sheinx/hooks';
 import TagInput from './tag-input';
 
 const { devUseWarning } = util;
@@ -138,7 +138,7 @@ const Tag = (props: TagProps) => {
   }
 
   return (
-    <div {...getTagRootProps()}>
+    <div {...getTagRootProps()} {...getDataset(props)}>
       {renderChildren()}
       {renderClose()}
     </div>

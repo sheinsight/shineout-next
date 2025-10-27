@@ -1,4 +1,4 @@
-import { useCheck, util } from '@sheinx/hooks';
+import { getDataset, useCheck, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { useContext } from 'react';
 import { SimpleCheckboxProps } from './checkbox.type';
@@ -42,6 +42,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
         style,
         needStopPropagation: props.needStopPropagation,
       })}
+      {...getDataset(props)}
     >
       <input {...inputProps} type='checkbox' />
       <span className={indicatorClass}>

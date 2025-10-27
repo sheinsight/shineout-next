@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { useContext, useState } from 'react';
 import { RateProps } from './rate.type';
 import Icons from '../icons';
-import { useInputAble } from '@sheinx/hooks';
+import { getDataset, useInputAble } from '@sheinx/hooks';
 import useWithFormConfig from '../common/use-with-form-config';
 import { useConfig } from '../config';
 import { FormFieldContext } from '../form/form-field-context';
@@ -125,6 +125,7 @@ const Rate = (props0: RateProps) => {
       onMouseLeave={() => {
         setHoverValue(null);
       }}
+      {...getDataset(props)}
     >
       <div className={rateClasses?.inner}>
         {Array.from({ length: max }).map((_, index) => {

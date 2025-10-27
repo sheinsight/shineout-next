@@ -11,6 +11,7 @@ import {
   ObjectKey,
   useTiled,
   KeygenResult,
+  getDataset,
 } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { SelectPropsBase, OptionListRefType } from './select.type';
@@ -774,6 +775,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         ref={targetRef}
         tabIndex={disabled === true || showInput ? undefined : 0}
         {...util.getDataAttribute({ ['input-border']: 'true' })}
+        {...getDataset(props)}
         className={rootClass}
         style={rootStyle}
         onKeyDown={handleKeyDown}

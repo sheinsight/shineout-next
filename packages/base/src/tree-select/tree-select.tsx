@@ -9,6 +9,7 @@ import {
   UnMatchedData,
   KeygenResult,
   useTree,
+  getDataset,
 } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { TreeSelectProps, ResultItem } from './tree-select.type';
@@ -733,6 +734,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
         ref={targetRef}
         tabIndex={disabled === true || showInput ? undefined : 0}
         {...util.getDataAttribute({ ['input-border']: 'true' })}
+        {...getDataset(props)}
         className={rootClass}
         style={rootStyle}
         onBlur={handleBlur}
