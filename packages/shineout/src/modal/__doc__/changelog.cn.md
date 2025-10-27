@@ -1,3 +1,9 @@
+## 3.9.0-beta.14
+2025-10-27
+
+### 🆕 Feature
+- `Modal` 新增 `headerStyle` 和 `footerStyle` 用于自定义头部和脚部样式 ([#1428](https://github.com/sheinsight/shineout-next/pull/1428))
+
 
 ## 3.8.5-beta.1
 2025-09-26
