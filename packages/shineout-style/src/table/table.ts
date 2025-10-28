@@ -311,10 +311,8 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   rowHover: {
-    '& td': {
-      transition: 'background-color 0.2s',
-    },
     '&&:hover td': {
+      transition: 'background-color 0.2s',
       background: `${token.tableTbodyHoverBackgroundColor}`,
     },
   },
