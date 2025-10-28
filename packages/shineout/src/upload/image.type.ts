@@ -11,7 +11,7 @@ export type UploadImageProps<T> = GetWithFieldProps<
 
 /**
  * @title Upload.Image
- * @cn 基本API 和 Upload 一致，特定API如下
+ * @cn 不支持 listType，其他API 和 Upload 一致，特有API如下
  * @en The basic API is consistent with Upload, and the specific API is as follows
  * @sort 1
  */
