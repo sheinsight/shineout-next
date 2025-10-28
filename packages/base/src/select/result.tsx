@@ -383,6 +383,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
             if (typeof element === 'string' || typeof element === 'number') return String(element);
             // 如果是 React Element，处理的是renderResult返回的是React Element的场景
             if (React.isValidElement(element)) {
+              // 跳过 Portal 类组件(Popover, Tooltip)
+              const portalComponents = ['ShineoutPopover', 'ShineoutTooltip'];
+              const displayName = (element.type as any)?.displayName || (element.type as any)?.name;
+              if (portalComponents.includes(displayName)) {
+                return '';
+              }
+
               const children = (element.props as { children?: React.ReactNode })?.children;
               if (Array.isArray(children)) {
                 return children.map((child) => getTextFromReactElement(child)).join('');
