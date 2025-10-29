@@ -15,6 +15,6 @@ export interface UseFilterProps<DataItem> {
   firstMatch?: boolean;
   onFilter?: (text: string, from?: string) => void | ((data: DataItem) => boolean);
   onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
-  onCreate?: ((input: string | DataItem) => DataItem | string) | boolean;
+  onCreate?: ((input: string) => DataItem | string) | boolean;
   filterDelay?: number;
 }

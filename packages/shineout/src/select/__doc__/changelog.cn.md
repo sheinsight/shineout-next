@@ -1,3 +1,9 @@
+## 3.8.8-beta.4
+
+### 🐞 BugFix
+
+- 修复 `Select` 的 `onCreate` 函数参数的TS类型不正确的问题 ([#1434](https://github.com/sheinsight/shineout-next/pull/1434))
+
 ## 3.8.8-beta.2
 2025-10-28
 
