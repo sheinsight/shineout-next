@@ -739,6 +739,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       </div>
     );
 
+  const absoluteProviderValue = useMemo(() => {
+    return { absolute: true, scrollElRef: scrollRef };
+  }, [scrollRef]);
+
   return (
     <>
       <div
@@ -752,7 +756,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         ref={tableRef}
         dir={config.direction}
       >
-        <AbsoluteContext.Provider value={{ absolute: true, scrollElRef: scrollRef }}>
+        <AbsoluteContext.Provider value={absoluteProviderValue}>
           {renderTable()}
           {renderLoading()}
           {props.children}
