@@ -1,3 +1,10 @@
+## 3.8.8-beta.5
+2025-10-29
+
+### 🐞 BugFix
+- 修复 `Table` 设置的 `rowsInView` 偏小时容器底部有空白的问题 ([#1435](https://github.com/sheinsight/shineout-next/pull/1435))
+
+
 ## 3.8.7-beta.2
 2025-10-15
 

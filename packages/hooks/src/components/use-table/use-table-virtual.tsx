@@ -313,7 +313,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
         context.autoAddRows = addonCount;
       }
     }
-  }, []);
+  }, [props.data.length]);
 
   useEffect(() => {
     // 记录preIndex
