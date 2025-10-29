@@ -165,7 +165,7 @@ export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
    * @en Initial value of the form in uncontrolled mode. Only effective when the component is first rendered, subsequent modifications will not affect the internal data of the form. Suitable for scenarios where form data is managed internally by the component, such as creating new forms, standalone forms, etc.
    * @cn 非受控模式下的表单初始值。仅在组件首次渲染时生效，后续修改不会影响表单内部数据。适用于表单数据由组件内部管理的场景，如新建表单、独立表单等
    */
-  defaultValue?: T;
+  defaultValue?: Partial<T>;
   /**
    * @en When the form value changes, whether to automatically trigger validation. When enabled, validation results can be displayed in real time when data changes, suitable for scenarios that require immediate feedback. Note: Only effective in controlled mode
    * @cn 当表单 value 发生变化时，是否自动触发校验。开启后可以在数据变化时实时显示校验结果，适用于需要即时反馈的场景。注意：仅在受控模式下有效
