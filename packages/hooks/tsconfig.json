@@ -7,6 +7,7 @@
     "sourceMap": true,
     "baseUrl": "./",
     "paths": {
+      "@sheinx/base": ["../base/src/index"],
       "@sheinx/hooks": ["./src/index"],
     }
   }

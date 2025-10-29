@@ -1,3 +1,10 @@
+## 3.8.8-beta.3
+2025-10-29
+
+### 🐞 BugFix
+
+- 修复 `Rule` 内置校验规则的Error.message 未跟随国际化显示的问题 ([#1433](https://github.com/sheinsight/shineout-next/pull/1433))
+
 ## 3.7.0-beta.43
 2025-06-04
 
