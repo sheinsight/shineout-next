@@ -552,7 +552,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 从输入创建新选项。true 直接使用输入值；函数将输入转换为选项
    * @when For tags input or allowing custom values
    */
-  onCreate?: ((input: string | DataItem) => DataItem | string) | boolean;
+  onCreate?: ((input: string) => DataItem | string) | boolean;
 
   /**
    * @en Called when Enter key is pressed to expand dropdown. Return false to prevent expansion
