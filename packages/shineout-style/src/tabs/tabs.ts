@@ -346,10 +346,12 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       '& $tab': {
         display: 'block',
       },
-      '& $tab + $tab': {
+      '&& $tab + $tab': {
         marginTop: Token.tabsNearlyMargin,
       },
       '& $next,& $prev': {
+        // 考虑垂直方向可滚动功能时一并修复zIndex
+        // zIndex: 1,
         padding: `${Token.tabsActionVerticalPaddingY} ${Token.tabsActionVerticalPaddingX}`,
         '&:after': {
           display: 'none',
