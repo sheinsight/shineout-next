@@ -17,7 +17,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const inputAbleParams = {
     value: props.value,
     onChange: props.onChange,
-    defaultValue: props.defaultValue,
+    defaultValue: props.defaultValue as V | undefined,
     control: isControl,
     beforeChange: undefined,
     reserveAble: false,
