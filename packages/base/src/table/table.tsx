@@ -356,7 +356,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
         <div
           className={classNames(
             tableClasses?.emptyWrapper,
-            isScrollX && tableClasses?.emptyNoBorder,
+            isScrollX && browserScrollbarWidth > 0 && tableClasses?.emptyNoBorder,
           )}
           ref={(el) => {
             context.emptyHeight = el?.clientHeight || 0;
