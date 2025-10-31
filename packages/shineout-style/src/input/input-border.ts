@@ -178,8 +178,10 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       },
     } as CSSProperties,
     [`${name}Error`]: {
-      [`&:not($${name}Disabled)`]: {
+      '&&': {
         borderColor: token.errorBorderColor,
+      },
+      [`&:not($${name}Disabled)`]: {
         background: token.errorBackgroundColor,
         '&:hover': {
           borderColor: token.errorHoverBorderColor,
@@ -201,7 +203,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       borderColor: token.disabledBorderColor,
       boxShadow: 'none',
       cursor: 'not-allowed',
-      '&:hover': {
+      [`&:not($${name}Error):hover`]: {
         borderColor: token.disabledBorderColor,
       },
       '& *': {
