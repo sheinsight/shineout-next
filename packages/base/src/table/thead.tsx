@@ -170,7 +170,6 @@ export default (props: TheadProps) => {
   const getFixedStyle = (
     fixed: 'left' | 'right' | undefined,
     index: number,
-    colSpan: number,
     level: number,
   ): React.CSSProperties | undefined => {
     // 累加level 至 0 的所有高度
@@ -184,7 +183,7 @@ export default (props: TheadProps) => {
       };
     }
     if (fixed === 'right') {
-      const right = colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
+      const right = colgroup.slice(index + 1).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         right: right,
         top: top,
@@ -208,7 +207,7 @@ export default (props: TheadProps) => {
     const colTemp = col as TableFormatColumn<any>;
     const colTemp2 = col as TableGroupColumn;
 
-    const fixedStyle = getFixedStyle(col.fixed, col.index, colTemp2.colSpan || 1, level);
+    const fixedStyle = getFixedStyle(col.fixed, col.index, level);
 
     const cellClassName = classNames(
       colTemp.className,
