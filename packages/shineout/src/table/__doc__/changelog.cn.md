@@ -3,6 +3,7 @@
 
 ### 🐞 BugFix
 - 修复 `Table` 有合并列的表头同时设置为右固定列时，可能出现表头的布局错乱的问题 ([#1445](https://github.com/sheinsight/shineout-next/pull/1445))
+- 修复 `Empty` 组件的 `emptyNoData` 图标在页面存在多个实例时，除第一个外其他图标的渐变和滤镜效果不生效的问题（SVG ID 冲突） ([#1445](https://github.com/sheinsight/shineout-next/pull/1445))
 
 
 ## 3.8.8-beta.6
