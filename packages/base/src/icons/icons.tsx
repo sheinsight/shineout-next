@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import { util } from '@sheinx/hooks'
 
 function icon(paths: (string | JSX.Element)[] | JSX.Element) {
   return (
@@ -287,7 +287,7 @@ const filter = (
 )
 
 const EmptyNoData = () => {
-  const uniqueId = useId();
+  const uniqueId = util.generateUUID();
   const clip0 = `clip0_${uniqueId}`;
   const paint0 = `paint0_linear_${uniqueId}`;
   const filter0 = `filter0_f_${uniqueId}`;
