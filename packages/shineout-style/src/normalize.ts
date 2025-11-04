@@ -27,7 +27,7 @@ const token = {
 
 const lineHeightComputed = '20px';
 const lineHeightComputed2 = '10px';
-const normalizeStyle = `*,
+export const normalizeStyle = `*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -375,8 +375,8 @@ p {
   margin: 0 0 ${lineHeightComputed2};
 }`;
 
-const normalizeStyleId = 'shineout-next-normalize__' + version;
-const jssInsertionPointId = 'shineout-next-jss-insertion-point__' + version;
+export const normalizeStyleId = 'shineout-next-normalize__' + version;
+export const jssInsertionPointId = 'shineout-next-jss-insertion-point__' + version;
 
 function appendNormalizeStyle(styleString: string, id: string){
   const style = document.createElement('style');
