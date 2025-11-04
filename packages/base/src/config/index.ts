@@ -73,6 +73,8 @@ state.subscribe(() => {
 });
 
 export function getDefaultContainer() {
+  const config = state.mutate;
+
   if (util.isFunc(config.popupContainer)) {
     const container = config.popupContainer();
     if (util.isDomElement(container)) {
