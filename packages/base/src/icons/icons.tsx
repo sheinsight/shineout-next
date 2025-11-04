@@ -1,4 +1,6 @@
-import { util } from '@sheinx/hooks'
+import { useRef } from 'react';
+
+let emptyNoDataIdCounter = 0;
 
 function icon(paths: (string | JSX.Element)[] | JSX.Element) {
   return (
@@ -287,7 +289,11 @@ const filter = (
 )
 
 const EmptyNoData = () => {
-  const uniqueId = util.generateUUID();
+  const uniqueIdRef = useRef<string>();
+  if (!uniqueIdRef.current) {
+    uniqueIdRef.current = `empty-${emptyNoDataIdCounter++}`;
+  }
+  const uniqueId = uniqueIdRef.current;
   const clip0 = `clip0_${uniqueId}`;
   const paint0 = `paint0_linear_${uniqueId}`;
   const filter0 = `filter0_f_${uniqueId}`;
