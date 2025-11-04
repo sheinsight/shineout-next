@@ -12,9 +12,11 @@ function getMaxRowSpanLength(input: number[]) {
 }
 
 interface UseTableVirtualProps {
+  virtual?: boolean | 'lazy';
   data: any[];
   rowsInView: number;
   rowHeight: number;
+  strictRowHeight?: number;
   scrollRef: React.RefObject<HTMLDivElement>;
   innerRef: React.RefObject<HTMLDivElement>;
   scrollLeft?: number;
@@ -27,10 +29,20 @@ interface UseTableVirtualProps {
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerTop, setTop] = useState(0);
-  const [scrollHeight, setHeight] = useState(props.data.length * props.rowHeight);
+  const strictRowHeight = props.strictRowHeight ? props.strictRowHeight : 0;
+  const defaultScrollHeight = strictRowHeight ? props.data.length * strictRowHeight : props.data.length * props.rowHeight;
+  const [scrollHeight, setHeight] = useState(defaultScrollHeight);
   const [startIndex, setStartIndex] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
 
+  // TODO: 尝试垂直滚动采用延迟销毁 + 操作dom transform方案提升性能？
+  // const setTop = (v: number) => {
+  //   if (props.virtual === 'lazy') {
+  //     props.innerRef.current && (props.innerRef.current.style.transform = `translate3d(0, ${-v}px, 0)`);
+  //   } else {
+  //   }
+  //   _setTop(v);
+  // }
   const rowsInView = props.rowsInView === 0 ? props.data.length : props.rowsInView;
 
   const rowSpanInfo = useMemo(() => {
@@ -104,6 +116,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
 
   const getContentHeight = (index: number) => {
     if (props.disabled) return 0;
+    if (strictRowHeight) {
+      return strictRowHeight * (index + 1) + props.theadHeight + props.tfootHeight;
+    }
     let sum = 0;
     for (let i = 0; i <= index; i++) {
       sum += context.cachedHeight[i] || props.rowHeight;
@@ -131,17 +146,26 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   });
 
+  // const setStartIndex2 = (index:number) => {
+  //   let sum = 0;
+  //   for (let i = 0; i < index; i++) {
+  //     sum += context.cachedHeight[i] || props.rowHeight;
+  //   }
+  //   props.innerRef.current && (props.innerRef.current.style.transform = `translate3d(0, ${-innerTop + sum}px, 0)`);
+  //   setStartIndex(index);
+  // }
+
+  const maxIndex = Math.max(props.data.length - rowsInView, 0);
+  const scrollContainerHeight = Math.max(props.scrollRef.current?.clientHeight || 0, 200);
   const updateIndexAndTopFromTop = (scrollTop: number, fromDrag?: boolean) => {
     if (props.disabled) return;
     let sum = 0;
     let currentIndex = 0;
     let top = 0;
-    const maxIndex = Math.max(props.data.length - rowsInView, 0);
 
-    const scrollContainerHeight = Math.max(props.scrollRef.current?.clientHeight || 0, 200);
     for (let i = 0; i <= maxIndex; i++) {
       context.rowSpanRows = 0;
-      const currentRowHeight = context.cachedHeight[i] || props.rowHeight;
+      const currentRowHeight = strictRowHeight || context.cachedHeight[i] || props.rowHeight;
       sum += currentRowHeight;
       let rowSpanHeight = 0;
       if (rowSpanInfo) {
@@ -156,17 +180,26 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
           if(rowSpanHeight < scrollContainerHeight) {
           const index = siblingsIndexs[j];
           context.rowSpanRows += 1;
-          rowSpanHeight += context.cachedHeight[index] || props.rowHeight;
+          rowSpanHeight += strictRowHeight || context.cachedHeight[index] || props.rowHeight;
         }
         }
       }
       if (scrollTop < sum + rowSpanHeight || i === maxIndex) {
         currentIndex = i;
-        const beforeHeight = i === 0 ? 0 : sum - (context.cachedHeight[i] || props.rowHeight);
+        const beforeHeight = i === 0 ? 0 : sum - (strictRowHeight || context.cachedHeight[i] || props.rowHeight);
         top = scrollTop - beforeHeight;
         break;
       }
     }
+    // if (props.virtual === 'lazy') {
+    //   setTop(scrollTop);
+    //   context.autoAddRows = currentIndex
+    //   setTimeout(() => {
+    //     setStartIndex2(currentIndex);
+    //     context.autoAddRows = 0
+    //   }, 300);
+    //   return;
+    // }
     if (currentIndex !== startIndex) {
       setStartIndex(currentIndex);
 
@@ -304,10 +337,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       let addonHeight = 0;
       let addonCount = 0;
       for (let i = startIndex + rowsInView; i < props.data.length; i++) {
-        const height = context.cachedHeight[i] || props.rowHeight;
+        const height = strictRowHeight || context.cachedHeight[i] || props.rowHeight;
         addonHeight += height;
         addonCount += 1;
-        if (addonHeight >= remainHeight + context.cachedHeight[0]) break;
+        if (addonHeight >= remainHeight + (strictRowHeight || context.cachedHeight[0])) break;
       }
       if (addonCount > 0) {
         context.autoAddRows = addonCount;
@@ -363,6 +396,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   , [props.data, props.disabled, startIndex, finalRowsInView]);
 
   const translateStyle = useMemo(() => {
+    // if (props.virtual === 'lazy') return 'translate3d(0, 0, 0)';
     let t = innerTop + offsetY;
     if (t < 0) {
       t = 0;

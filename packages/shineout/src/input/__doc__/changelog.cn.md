@@ -1,8 +1,24 @@
+## 3.9.0-beta.4
+2025-10-14
+
+### 💎 Enhancement
+
+- 优化 `Input.Group` 下存在任意表单项的校验错误时，边框颜色能自动变为相应的错误颜色  ([#1412](https://github.com/sheinsight/shineout-next/pull/1412))
+
+
+## 3.9.0-beta.2
+2025-10-15
+
+### 🆕 Feature
+- `Input.Group` 新增 `seamless` 属性：隐藏表单项之间的边框 ([#1408](https://github.com/sheinsight/shineout-next/pull/1408))
+
+
 ## 3.8.7-beta.1
 2025-10-14
 
 ### 🐞 BugFix
 - 修复 `Input.Number` 在有值时未设置 `showClear` 但常驻显示了清除图标的问题  ([#1413](https://github.com/sheinsight/shineout-next/pull/1413))
+
 
 ## 3.8.5-beta.4
 2025-09-29

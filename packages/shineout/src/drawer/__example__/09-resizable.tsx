@@ -1,8 +1,8 @@
 /**
  * cn - 可伸缩
- *    -- 设置 resizable 来自由调整 Drawer 大小
+ *    -- 设置 `resizable` 来自由调整 Drawer 大小
  * en - Resizable
- *    -- Set resizable to resize Drawer freely
+ *    -- Set `resizable` to resize Drawer freely
  */
 import React, { useState } from 'react';
 import { Drawer, Button, Form, Input, Radio, TYPE } from 'shineout';

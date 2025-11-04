@@ -1,3 +1,9 @@
+## 3.9.0-beta.3
+2025-10-14
+
+### 🆕 Feature
+- `TreeSelect` 新增 `checkOnFiltered` 属性，开启后勾选操作仅针对筛选后的数据生效 ([#1411](https://github.com/sheinsight/shineout-next/pull/1411))
+
 ## 3.8.6-beta.7
 2025-10-13
 

@@ -22,6 +22,7 @@ import TreeSelectDisabled from '../__example__/06-disabled';
 import TreeSelectInnerTitle from '../__example__/07-inner-title';
 import TreeSelectUnmatch from '../__example__/08-unmatch';
 import TreeSelectSize from '../__example__/09-size';
+import TreeSelectCheckOnFiltered from '../__example__/04-02-filter-checkonfiltered';
 
 const SO_PREFIX = 'treeSelect';
 const originClasses = ['wrapper', 'tree', 'result', 'clearIcon', 'space', 'tag', 'arrowIcon'];
@@ -88,6 +89,7 @@ describe('TreeSelect[Base]', () => {
   snapshotTest(<TreeSelectInnerTitle />, 'about inner title');
   snapshotTest(<TreeSelectUnmatch />, 'about unmatch');
   snapshotTest(<TreeSelectSize />, 'about size');
+  snapshotTest(<TreeSelectCheckOnFiltered />, 'about checkOnFiltered');
   test('should render when set className and style', () => {
     const className = 'test';
     const style = { color: 'red' };
@@ -316,5 +318,92 @@ describe('TreeSelect[Base]', () => {
 
     // 验证总共调用次数
     expect(onChangeAddition).toHaveBeenCalledTimes(2);
+  });
+
+  test('should check on filtered data when checkOnFiltered is true', async () => {
+    const onChange = jest.fn();
+    const testData = [
+      {
+        id: '1',
+        title: '1',
+        children: [
+          {
+            id: '1-1',
+            title: '1-1',
+            children: [
+              { id: '1-1-1', title: '1-1-1' },
+              { id: '1-1-2', title: '1-1-2' },
+            ],
+          },
+          { id: '1-2', title: '1-2' },
+        ],
+      },
+      {
+        id: '2',
+        title: '2',
+        children: [
+          { id: '2-1', title: '2-1' },
+          { id: '2-2', title: '2-2' },
+        ],
+      },
+      { id: '3', title: '3', children: [{ id: '3-1', title: '3-1' }] },
+    ];
+
+    const { container } = render(
+      <TreeSelect
+        keygen="id"
+        renderItem={(d: any) => `node ${d.title}`}
+        data={testData}
+        multiple
+        mode={2}
+        onChange={onChange}
+        checkOnFiltered
+        onFilter={(text: string) => (d: any) => `node ${d.title}`.indexOf(text) > -1}
+        absolute={false}
+      />
+    );
+    const selectWrapper = container.querySelector(wrapper)!;
+
+    // 打开下拉框
+    fireEvent.click(selectWrapper.querySelector(result)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+
+    // 输入筛选关键字 '1-1'，只会匹配到 node 1-1 及其子节点
+    const input = selectWrapper.querySelector('input')!;
+    fireEvent.change(input, { target: { value: '1-1' } });
+    await waitFor(async () => {
+      await delay(500);
+    });
+
+    // 在筛选结果中全选（应该只选中筛选后的节点）
+    const treeRoot = container.querySelector(root)!;
+    if (treeRoot) {
+      const firstNode = treeRoot.querySelector(node);
+      if (firstNode) {
+        const checkbox = firstNode.querySelector('input[type="checkbox"]');
+        if (checkbox) {
+          fireEvent.click(checkbox);
+          await waitFor(async () => {
+            await delay(200);
+          });
+
+          // 验证 onChange 被调用
+          expect(onChange).toHaveBeenCalled();
+          const lastCall = onChange.mock.calls[onChange.mock.calls.length - 1];
+          const selectedValues = lastCall[0];
+
+          // 关键验证：选中的值应该只包含筛选后的节点（1-1, 1-1-1, 1-1-2）
+          // 不应该包含 node 1, node 1-2, node 2, node 2-1, node 3, node 3-1
+          expect(selectedValues).toBeDefined();
+          expect(Array.isArray(selectedValues)).toBe(true);
+
+          // 筛选 '1-1' 应该只匹配 1-1 及其子节点，mode=2 只返回叶子节点
+          // 所以应该是 ['1-1-1', '1-1-2']
+          expect(selectedValues).toEqual(['1-1-1', '1-1-2']);
+        }
+      }
+    }
   });
 });

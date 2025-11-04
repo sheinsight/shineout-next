@@ -1,8 +1,8 @@
 /**
  * cn - 全屏
- *    -- 使用 fullScreen 属性来使抽屉全屏展示
+ *    -- 使用 `fullScreen` 属性来使抽屉全屏展示
  * en - Full Screen
- *    -- Use the fullScreen property to display the Drawer in full screen
+ *    -- Use the `fullScreen` property to display the Drawer in full screen
  */
 import React, { useState, useCallback } from 'react';
 

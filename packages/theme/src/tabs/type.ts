@@ -464,4 +464,10 @@ export interface TabsTokens {
    * @description 标签页箭头icon字体颜色
    */
   tabsArrowFontColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-0
+   * @description 标签页undefined外边距
+   */
+  tabsBadgeMargin: string;
 }

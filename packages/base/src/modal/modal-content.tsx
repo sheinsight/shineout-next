@@ -15,13 +15,21 @@ type OriginDocumentStyle = null | {
   overflow: string;
   paddingRight: string;
 }
+
+type CascadeConfig = {
+  instanceId: string;
+  cascadeWidth: number;
+  cascade: boolean;
+}
 interface ModalConfig {
   instanceIds: string[];
+  cascadeConfigs: CascadeConfig[];
   originDocumentStyle: OriginDocumentStyle,
 }
 
 const config = {
   instanceIds: [],
+  cascadeConfigs: [],
   originDocumentStyle: null,
 }
 const state = create<ModalConfig>(config);
@@ -34,8 +42,21 @@ const addModalInstance = (instanceId: string) => {
   state.mutate.instanceIds.push(instanceId)
 }
 
+const addModalCascadeConfig = (props: CascadeConfig) => {
+  state.mutate.cascadeConfigs.push({
+    cascade: props.cascade,
+    cascadeWidth: props.cascadeWidth,
+    instanceId: props.instanceId,
+  });
+}
+
 const removeModalInstance = (instanceId: string) => {
-  state.mutate.instanceIds = state.mutate.instanceIds.filter(id => id !== instanceId)
+  state.mutate.instanceIds = state.mutate.instanceIds.filter((id) => id !== instanceId)
+}
+
+const removeModalCascadeConfig = (instanceId: string) => {
+  if (!state.mutate.cascadeConfigs.length) return;
+  state.mutate.cascadeConfigs = state.mutate.cascadeConfigs.filter((config) => config.instanceId !== instanceId)
 }
 
 const getInstanceIds = () => {
@@ -122,11 +143,17 @@ const Modal = (props: ModalContentProps) => {
     const index = config.instanceIds.indexOf(context.instanceId);
 
     if (visible && index === -1) {
-        addModalInstance(context.instanceId)
+      addModalInstance(context.instanceId);
+      addModalCascadeConfig({
+        instanceId: context.instanceId,
+        cascade: !!props.cascade && !!isPositionX,
+        cascadeWidth: typeof props.cascade === 'object' ? (props.cascade.width || 180) : 180,
+      });
     }
 
     if (!visible && index > -1 && !animation) {
-      removeModalInstance(context.instanceId)
+      removeModalInstance(context.instanceId);
+      removeModalCascadeConfig(context.instanceId);
     }
   }, [visible, animation, config.instanceIds])
 
@@ -160,6 +187,7 @@ const Modal = (props: ModalContentProps) => {
   });
 
   const handleClose = usePersistFn(() => {
+    removeModalCascadeConfig(context.instanceId)
     if (!visible) return;
     if (props.autoShow) {
       setVisible(false);
@@ -255,6 +283,7 @@ const Modal = (props: ModalContentProps) => {
     // unmount
     return () => {
       removeModalInstance(context.instanceId)
+      removeModalCascadeConfig(context.instanceId);
       const instanceIds = getInstanceIds();
       if (instanceIds.length === 0) {
         resetDocumentOverflow();
@@ -308,6 +337,7 @@ const Modal = (props: ModalContentProps) => {
       <div
         className={modalClasses?.header}
         onMouseDown={props.moveable && !props.fullScreen ? moveInfo.handleMouseDown : undefined}
+        style={props.headerStyle}
       >
         {renderIcon()}
         <div className={modalClasses?.headerTitle}>{props.title}</div>
@@ -340,7 +370,7 @@ const Modal = (props: ModalContentProps) => {
 
   const renderFooter = () => {
     if (!props.footer) return null;
-    return <div className={modalClasses?.footer}>{props.footer}</div>;
+    return <div className={modalClasses?.footer} style={props.footerStyle}>{props.footer}</div>;
   };
 
   const renderResize = () => {
@@ -372,12 +402,28 @@ const Modal = (props: ModalContentProps) => {
 
   context.renderEd = true;
 
+  const cascadeStyle = useMemo(() => {
+    if (!props.cascade) return;
+    const idx = config.instanceIds.findIndex(id => id === context.instanceId);
+    let instance = 0;
+    const curCascadeConfig = config.cascadeConfigs.find(c => c.instanceId === context.instanceId);
+    if(curCascadeConfig && idx < config.cascadeConfigs.length - 1) {
+      instance = curCascadeConfig.cascadeWidth;
+    }
+
+    return {
+      transform: props.position === 'left' ? `translateX(${instance}px)` : `translateX(-${instance}px)`,
+      transition: instance ? 'transform 0.3s ease 0.05s' : 'transform 0.2s ease',
+    }
+  }, [config.cascadeConfigs, config.instanceIds])
+
   const panelStyle: React.CSSProperties = {
     transformOrigin: origin,
     top: props.fullScreen ? undefined : top,
     ...props.style,
     width: props.fullScreen ? undefined : width,
     height: props.fullScreen ? undefined : height,
+    ...cascadeStyle,
   };
   if (props.resizable) {
     panelStyle.width = resizeInfo.width;
