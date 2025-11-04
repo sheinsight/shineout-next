@@ -1,3 +1,10 @@
+## 3.8.9-beta.2
+2025-11-04
+
+### 🐞 BugFix
+- 修复 `Table` 在某些场景下因 Hooks 调用顺序不一致导致的渲染错误（Regression: since v3.8.8-beta.6）([#1446](https://github.com/sheinsight/shineout-next/pull/1446))
+
+
 ## 3.8.9-beta.1
 2025-11-03
 
