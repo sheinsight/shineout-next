@@ -18,14 +18,14 @@ exports[`Empty[Base] should render correctly  1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <g
-          clip-path="url(#clip0_4044_10434)"
+          clip-path="url(#clip0_:r3:)"
         >
           <path
             d="M100 75C100 63.3607 77.6144 53.9257 50 53.9257C22.3857 53.9257 0 63.3607 0 75H100Z"
-            fill="url(#paint0_linear_4044_10434)"
+            fill="url(#paint0_linear_:r3:)"
           />
           <g
-            filter="url(#filter0_f_4044_10434)"
+            filter="url(#filter0_f_:r3:)"
             opacity="0.3"
           >
             <path
@@ -46,7 +46,7 @@ exports[`Empty[Base] should render correctly  1`] = `
             fill="#E8EBF0"
           />
           <g
-            filter="url(#filter1_d_4044_10434)"
+            filter="url(#filter1_d_:r3:)"
           >
             <path
               d="M16.0493 42.3192C16.0493 39.8108 16.0019 37.715 20.573 37.7774H79.3737C83.5612 37.7774 83.8968 39.8108 83.8968 42.3192V61.3998C83.8968 63.9087 81.8718 65.9419 79.3737 65.9419H20.573C18.075 65.9419 16.0493 63.9087 16.0493 61.3998V42.3192Z"
@@ -109,7 +109,7 @@ exports[`Empty[Base] should render correctly  1`] = `
             color-interpolation-filters="sRGB"
             filterUnits="userSpaceOnUse"
             height="20.0577"
-            id="filter0_f_4044_10434"
+            id="filter0_f_:r3:"
             width="81.7529"
             x="9.43213"
             y="55.9835"
@@ -133,7 +133,7 @@ exports[`Empty[Base] should render correctly  1`] = `
             color-interpolation-filters="sRGB"
             filterUnits="userSpaceOnUse"
             height="30.1659"
-            id="filter1_d_4044_10434"
+            id="filter1_d_:r3:"
             width="67.8474"
             x="16.0493"
             y="37.776"
@@ -169,7 +169,7 @@ exports[`Empty[Base] should render correctly  1`] = `
           </filter>
           <lineargradient
             gradientUnits="userSpaceOnUse"
-            id="paint0_linear_4044_10434"
+            id="paint0_linear_:r3:"
             x1="50"
             x2="50"
             y1="53.9257"
@@ -185,7 +185,7 @@ exports[`Empty[Base] should render correctly  1`] = `
             />
           </lineargradient>
           <clippath
-            id="clip0_4044_10434"
+            id="clip0_:r3:"
           >
             <rect
               fill="white"

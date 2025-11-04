@@ -1,4 +1,4 @@
-import React from 'react';
+import { useId } from 'react';
 
 function icon(paths: (string | JSX.Element)[] | JSX.Element) {
   return (
@@ -286,20 +286,27 @@ const filter = (
   <path d="M19.9653 2.10633C20.5175 2.10633 20.9652 2.55404 20.9652 3.10633C20.9652 3.65861 20.5175 4.10633 19.9653 4.10633H19.6834L14.9666 11.3709V19.8936C14.9666 20.9981 14.0712 21.8936 12.9666 21.8936H10.9666C9.86204 21.8936 8.96662 20.9981 8.96662 19.8936V11.3709L4.35408 4.10632L4.03906 4.10632C3.48677 4.10632 3.03906 3.65861 3.03906 3.10632C3.03906 2.55404 3.48677 2.10632 4.03906 2.10632L19.9653 2.10633ZM6.75776 4.10632L10.8119 10.5206C10.913 10.6804 10.9666 10.8657 10.9666 11.0548V18.8312C10.9666 19.3835 11.4143 19.8312 11.9666 19.8312C12.5189 19.8312 12.9666 19.3835 12.9666 18.8312V11.0609C12.9666 10.868 13.0224 10.6792 13.1273 10.5172L17.2797 4.10633L6.75776 4.10632Z"></path>
 )
 
-const emptyNoData = (
-  <svg
-    width='100'
-    height='75'
-    viewBox='0 0 100 75'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <g clipPath='url(#clip0_4044_10434)'>
-      <path
-        d='M100 75C100 63.3607 77.6144 53.9257 50 53.9257C22.3857 53.9257 0 63.3607 0 75H100Z'
-        fill='url(#paint0_linear_4044_10434)'
-      />
-      <g opacity='0.3' filter='url(#filter0_f_4044_10434)'>
+const EmptyNoData = () => {
+  const uniqueId = useId();
+  const clip0 = `clip0_${uniqueId}`;
+  const paint0 = `paint0_linear_${uniqueId}`;
+  const filter0 = `filter0_f_${uniqueId}`;
+  const filter1 = `filter1_d_${uniqueId}`;
+
+  return (
+    <svg
+      width='100'
+      height='75'
+      viewBox='0 0 100 75'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <g clipPath={`url(#${clip0})`}>
+        <path
+          d='M100 75C100 63.3607 77.6144 53.9257 50 53.9257C22.3857 53.9257 0 63.3607 0 75H100Z'
+          fill={`url(#${paint0})`}
+        />
+        <g opacity='0.3' filter={`url(#${filter0})`}>
         <path
           d='M50.3087 70.0413C69.5706 70.0413 85.185 68.2375 85.185 66.0125C85.185 63.7875 69.5706 61.9835 50.3087 61.9835C31.0469 61.9835 15.4321 63.7875 15.4321 66.0125C15.4321 68.2375 31.0469 70.0413 50.3087 70.0413Z'
           fill='#979EB0'
@@ -314,7 +321,7 @@ const emptyNoData = (
         d='M18.877 37.0161H81.0701C82.6314 37.0161 83.897 38.2871 83.897 39.8547V61.7805C83.897 64.2888 81.872 66.3225 79.3739 66.3225H20.5732C18.0752 66.3225 16.05 64.2888 16.05 61.7805V39.8547C16.05 38.2871 17.3157 37.0161 18.877 37.0161Z'
         fill='#E8EBF0'
       />
-      <g filter='url(#filter1_d_4044_10434)'>
+      <g filter={`url(#${filter1})`}>
         <path
           d='M16.0493 42.3192C16.0493 39.8108 16.0019 37.715 20.573 37.7774H79.3737C83.5612 37.7774 83.8968 39.8108 83.8968 42.3192V61.3998C83.8968 63.9087 81.8718 65.9419 79.3737 65.9419H20.573C18.075 65.9419 16.0493 63.9087 16.0493 61.3998V42.3192Z'
           fill='black'
@@ -364,7 +371,7 @@ const emptyNoData = (
     </g>
     <defs>
       <filter
-        id='filter0_f_4044_10434'
+        id={filter0}
         x='9.43213'
         y='55.9835'
         width='81.7529'
@@ -377,7 +384,7 @@ const emptyNoData = (
         <feGaussianBlur stdDeviation='3' result='effect1_foregroundBlur_4044_10434' />
       </filter>
       <filter
-        id='filter1_d_4044_10434'
+        id={filter1}
         x='16.0493'
         y='37.776'
         width='67.8474'
@@ -406,7 +413,7 @@ const emptyNoData = (
         />
       </filter>
       <linearGradient
-        id='paint0_linear_4044_10434'
+        id={paint0}
         x1='50'
         y1='53.9257'
         x2='50'
@@ -416,12 +423,13 @@ const emptyNoData = (
         <stop stopColor='#E9EBEF' />
         <stop offset='1' stopColor='#E9EBEF' stopOpacity='0' />
       </linearGradient>
-      <clipPath id='clip0_4044_10434'>
+      <clipPath id={clip0}>
         <rect width='100' height='75' fill='white' />
       </clipPath>
     </defs>
   </svg>
-);
+  );
+};
 
 const Icons = {
   SortAsc,
@@ -476,7 +484,7 @@ const Icons = {
 
   Loading: icon(loading),
 
-  EmptyNoData: emptyNoData,
+  EmptyNoData: <EmptyNoData />,
 };
 
 export default Icons;
