@@ -39,7 +39,7 @@ const emptyArr: any[] = [];
 
 const emptyRef = { current: null };
 
-export default <Item, Value>(props: TableProps<Item, Value>) => {
+export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
   const config = useConfig();
 
@@ -117,6 +117,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     columns: props.columns,
     showCheckbox: typeof props.onRowSelect === 'function',
   });
+
 
   const {
     func: layoutFunc,
@@ -712,6 +713,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     }
   }, []);
 
+  const absoluteProviderValue = useMemo(() => {
+    return { absolute: true, scrollElRef: scrollRef };
+  }, [scrollRef]);
+
   const tableWrapperClass = classNames(
     props.className,
     tableClasses?.rootClass,
@@ -738,10 +743,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         <table style={tableStyle}>{props.children}</table>
       </div>
     );
-
-  const absoluteProviderValue = useMemo(() => {
-    return { absolute: true, scrollElRef: scrollRef };
-  }, [scrollRef]);
 
   return (
     <>
