@@ -1,6 +1,5 @@
 import { util } from '@sheinx/hooks';
-import { create } from '@shined/reactive';
-import { getSnapshot } from '@shined/reactive/vanilla';
+import { create, snapshot } from '@shined/reactive';
 import { LanType, Direction } from './locale/Props';
 import { SpinNameType } from '../spin/spin.type';
 
@@ -54,7 +53,8 @@ export interface ConfigOption {
 }
 
 const processEnv: Record<string, any> = typeof process !== 'undefined' ? process?.env : {};
-export let config: ConfigOption = {
+
+export const defaultConfig: ConfigOption = {
   prefix: 'soui',
   locale: (processEnv.LOCALE as LanType) || 'en-US',
   delay: 400,
@@ -66,10 +66,12 @@ export let config: ConfigOption = {
   popupContainer: null,
 };
 
-const state = create<ConfigOption>(config);
+const state = create<ConfigOption>(defaultConfig);
+
+export let config: ConfigOption = snapshot(state.mutate);
 
 state.subscribe(() => {
-  config = getSnapshot(state.mutate);
+  config = snapshot(state.mutate);
 });
 
 export function getDefaultContainer() {
