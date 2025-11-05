@@ -1,8 +1,8 @@
 ## 3.9.0-beta.19
 2025-11-05
 
-### 💎 Enhancement
-- 优化 `Tabs` 的line样式的上下padding支持独立的token控制 ([#1451](https://github.com/sheinsight/shineout-next/pull/1451))
+### 💅 Style
+- `Tabs` 的--soui-tabs-line-padding-y变量替换为--soui-tabs-line-padding-top和--soui-tabs-line-padding-bottom ([#1451](https://github.com/sheinsight/shineout-next/pull/1451))
 
 
 ## 3.9.0-beta.8
