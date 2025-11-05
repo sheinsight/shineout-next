@@ -27,6 +27,20 @@
 
 - `Table` 新增 `strictRowHeight` 属性，强制统一行高，可提升虚拟滚动性能 ([#1415](https://github.com/sheinsight/shineout-next/pull/1415))
 
+## 3.8.9-beta.2
+2025-11-04
+
+### 🐞 BugFix
+- 修复 `Table` 在某些场景下因 Hooks 调用顺序不一致导致的渲染错误（Regression: since v3.8.8-beta.6）([#1446](https://github.com/sheinsight/shineout-next/pull/1446))
+
+
+## 3.8.9-beta.1
+2025-11-03
+
+### 🐞 BugFix
+- 修复 `Table` 有合并列的表头同时设置为右固定列时，可能出现表头的布局错乱的问题 ([#1445](https://github.com/sheinsight/shineout-next/pull/1445))
+- 修复 `Empty` 组件的 `emptyNoData` 图标在页面存在多个实例时，除第一个外其他图标的渐变和滤镜效果不生效的问题（SVG ID 冲突） ([#1445](https://github.com/sheinsight/shineout-next/pull/1445))
+
 
 ## 3.8.8-beta.6
 2025-10-29
