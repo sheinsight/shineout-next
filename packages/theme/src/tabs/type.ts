@@ -95,9 +95,15 @@ export interface TabsTokens {
   /**
    * @type {string}
    * @token Spacing-6
-   * @description 标签页长线条模式内边距（垂直方向）
+   * @description 标签页长线条模式内边距上
    */
-  tabsLinePaddingY: string;
+  tabsLinePaddingTop: string;
+  /**
+   * @type {string}
+   * @token Spacing-6
+   * @description 标签页长线条模式内边距下
+   */
+  tabsLinePaddingBottom: string;
   /**
    * @type {string}
    * @token Neutral-border-1

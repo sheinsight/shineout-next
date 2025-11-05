@@ -528,7 +528,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     '$headerWrapper[data-soui-shape="line"] &': {
       '& $tab': {
         position: 'relative',
-        padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
+        padding: `${Token.tabsLinePaddingTop} ${Token.tabsLinePaddingX} ${Token.tabsLinePaddingBottom}`,
         color: Token.tabsLineFontColor,
         fontSize: Token.tabsLineFontSize,
         fontWeight: Token.tabsLineFontWeight,
@@ -582,7 +582,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     },
     '$headerWrapper[data-soui-shape="dash"] &': {
       '& $tab': {
-        padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
+        padding: `${Token.tabsLinePaddingTop} ${Token.tabsLinePaddingX} ${Token.tabsLinePaddingBottom}`,
         color: Token.tabsLineFontColor,
         fontSize: Token.tabsLineFontSize,
         fontWeight: Token.tabsLineFontWeight,
