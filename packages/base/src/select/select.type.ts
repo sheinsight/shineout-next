@@ -584,7 +584,6 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Clears filter input after selecting an option
    * @cn 选中选项后清空过滤输入框
-   * @default false
    * @when For better UX in searchable multi-select
    */
   emptyAfterSelect?: boolean;

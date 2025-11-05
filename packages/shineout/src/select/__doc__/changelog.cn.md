@@ -1,3 +1,11 @@
+## 3.8.9-beta.3
+2025-11-05
+
+### 🐞 BugFix
+
+- 修复 `Select` 的 `emptyAfterSelect` 设置为 false 不生效的问题 ([#1449](https://github.com/sheinsight/shineout-next/pull/1449))
+
+
 ## 3.8.8-beta.4
 2025-10-29
 
