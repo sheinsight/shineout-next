@@ -1,3 +1,10 @@
+## 3.9.0-beta.18
+2025-11-05
+
+### 🐞 BugFix
+- 升级 `reactive` 包，修复潜在的Symbol变量覆盖问题 ([#1450](https://github.com/sheinsight/shineout-next/pull/1450))
+
+
 ## 3.9.0-beta.17
 2025-11-05
 
