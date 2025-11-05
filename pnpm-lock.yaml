@@ -240,8 +240,8 @@ importers:
         specifier: workspace:*
         version: link:../hooks
       '@shined/reactive':
-        specifier: ^0.3.2
-        version: 0.3.2(react@18.3.1)
+        specifier: ^0.3.3
+        version: 0.3.3(react@18.3.1)
       classnames:
         specifier: ^2.0.0
         version: 2.3.2
@@ -262,8 +262,8 @@ importers:
   packages/hooks:
     dependencies:
       '@shined/reactive':
-        specifier: ^0.3.2
-        version: 0.3.2(react@18.3.1)
+        specifier: ^0.3.3
+        version: 0.3.3(react@18.3.1)
       core-js:
         specifier: '>=3'
         version: 3.33.3
@@ -2296,8 +2296,8 @@ packages:
   '@rushstack/ts-command-line@4.17.1':
     resolution: {integrity: sha512-2jweO1O57BYP5qdBGl6apJLB+aRIn5ccIRTPDyULh0KMwVzFqWtw6IZWt1qtUoZD/pD2RNkIOosH6Cq45rIYeg==}
 
-  '@shined/reactive@0.3.2':
-    resolution: {integrity: sha512-m6AEOQJVXaPJ2ZHFS8AY0YUZyEO2PAxcGMHgT3QDyd5cawi7wDh8dYT78R5sRdfSyU16G4ODIIYZZTMh5LFrMw==}
+  '@shined/reactive@0.3.3':
+    resolution: {integrity: sha512-UltdJpQsiYOphDWWKjMtSn5jIXgqFc86R2YhcBrGlvivia59D3IGclO1SGqyPNTRyyECLlN/a7u0wZAM2RyDvA==}
     peerDependencies:
       '@shined/react-use': '>= 1.0.0'
       react: 18.3.1
@@ -10914,7 +10914,7 @@ snapshots:
       colors: 1.2.5
       string-argv: 0.3.2
 
-  '@shined/reactive@0.3.2(react@18.3.1)':
+  '@shined/reactive@0.3.3(react@18.3.1)':
     dependencies:
       use-sync-external-store: 1.6.0(react@18.3.1)
     optionalDependencies:
