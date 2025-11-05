@@ -206,7 +206,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   };
 
   const handleSelectChange = usePersistFn((value: Value, dataItem: any, checked?: boolean) => {
-    if (createdData || props.emptyAfterSelect) {
+    // why: props.emptyAfterSelect !== false 兼容之前的逻辑
+    if (props.emptyAfterSelect !== false && (props.emptyAfterSelect || createdData)) {
       onFilter?.('');
     }
     const shouldFocus = showInput && props.reFocus;
