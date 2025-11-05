@@ -19,7 +19,7 @@
     "@sheinx/hooks": "workspace:*",
     "immer": "^10.0.0",
     "classnames": "^2.0.0",
-    "@shined/reactive": "^0.1.3-alpha.0"
+    "@shined/reactive": "^0.3.3"
   },
   "devDependencies": {
     "@sheinx/shineout-style": "workspace:*"
