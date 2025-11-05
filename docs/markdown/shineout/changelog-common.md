@@ -1,3 +1,9 @@
+## 3.9.0-beta.17
+2025-11-05
+
+### 💅 Style
+- style包新增 normalizeStyle、normalizeStyleId、jssInsertionPointId的导出 ([#1448](https://github.com/sheinsight/shineout-next/pull/1448))
+
 ## 3.9.0-beta.9
 2025-10-24
 
