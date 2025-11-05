@@ -81,6 +81,7 @@ const tabsTokens: TabsTokens = {
   tabsActionHorizontalPaddingY: 'Spacing-8',
   tabsExtraFillHoverBackgroundColor: 'Neutral-fill-3',
   tabsArrowFontColor: 'Neutral-text-4',
+  tabsBadgeMargin: 'Spacing-0',
 };
 
 export default tabsTokens;

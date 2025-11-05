@@ -85,7 +85,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     ? props.disabled.isRealtime
     : false;
 
-  const [inited, setInited] = useState(false);
   const [dataFlat, setDataFlat] = useState<FlatNodeType<DataItem>[]>([]);
 
   const { value: expanded, onChange: onExpand } = useInputAble({
@@ -740,9 +739,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     setDataFlat(tiledFlatData);
   }, [props.tiledData]);
 
-  useEffect(() => {
-    setInited(true);
-  }, []);
 
   const datum: TreeDatum<DataItem> = useLatestObj({
     get,
@@ -777,7 +773,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   return {
-    inited,
     datum: props.datum || datum,
     expanded,
     onExpand,

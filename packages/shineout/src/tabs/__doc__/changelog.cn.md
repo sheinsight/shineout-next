@@ -1,3 +1,10 @@
+## 3.9.0-beta.8
+2025-10-23
+
+### 🆕 Feature
+- `Tabs` 支持设置css变量实现角标功能 ([#1420](https://github.com/sheinsight/shineout-next/pull/1420))
+
+
 ## 3.8.5-beta.4
 2025-09-29
 

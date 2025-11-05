@@ -231,6 +231,13 @@ export interface TableProps<DataItem, Value>
    *  @cn 启用虚拟滚动。设置为 'lazy' 可在滚动时避免重新渲染，提升性能
    */
   virtual?: boolean | 'lazy';
+
+  /**
+   * @en Enable virtual columns (horizontal virtual scrolling). Requires each column to have a width set
+   * @cn 启用虚拟列（横向虚拟滚动）。需要给每一列设置宽度
+   * @version 3.9.0
+   */
+  virtualColumn?: boolean;
   /**
    * @en Maximum rows rendered at once. Uses lazy rendering for performance with large datasets. Adjust if displaying more than 20 rows. Set to 0 to render all data.
    * @cn 单次渲染的最大行数。使用懒加载优化大数据量性能。若表格超过 20 行，可调整此值。设为 0 渲染全部数据
@@ -390,6 +397,14 @@ export interface TableProps<DataItem, Value>
    * @version 3.8.0
    */
   cellSortable?: boolean;
+
+  /**
+   * @en Enforce strict row height. When set, all rows will have the same height as specified. Improves performance in virtual mode when row heights are consistent
+   * @cn 强制统一行高。设置后所有行的高度将与指定值一致。在行高一致的情况下可提升虚拟模式下的性能
+   * @default null
+   * @version 3.9.0
+   */
+  strictRowHeight?: number
 }
 
 interface BottomScrollbarOption extends Pick<StickyProps, 'bottom' | 'scrollContainer'> {
