@@ -257,7 +257,7 @@ export interface TreeSelectProps<DataItem, Value>
   /**
    * @en The height of list
    * @cn 列表高度
-   * @default 300
+   * @default 250
    */
   height?: number;
   /**

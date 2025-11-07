@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { SelectClasses } from './select.type';
-import { StructKeygenStringType } from '@sheinx/hooks';
+import { StructKeygenStringType, KeygenResult } from '@sheinx/hooks';
 import { ListTreeProps } from './list-tree.type';
 import Tree from '../tree';
 
@@ -53,24 +54,50 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     return renderItemProp(item);
   };
 
+  const [virtualExpanded, setVirtualExpanded] = useState<KeygenResult[]>([]);
+
+  useEffect(() => {
+    if (props.virtual && expanded) {
+      setVirtualExpanded(expanded);
+    }
+  }, [expanded]);
+
+  const handleExpand = (expandedKeys: KeygenResult[]) => {
+    if (props.virtual) {
+      setVirtualExpanded(expandedKeys);
+    }
+
+    onExpand?.(expandedKeys);
+  }
+
+  const $tree = (
+    <Tree
+      line={false}
+      jssStyle={jssStyle as any}
+      onClick={handleClick}
+      data={data}
+      expanded={props.virtual ? (virtualExpanded?.length > 0 ? virtualExpanded : undefined) : expanded}
+      keygen={keygen as StructKeygenStringType<DataItem>}
+      defaultExpanded={defaultExpanded}
+      defaultExpandAll={defaultExpandAll}
+      childrenKey={childrenKey}
+      onExpand={handleExpand}
+      nodeClass={classNames(styles.treeOption)}
+      contentClass={getContentClass}
+      renderItem={renderItem}
+      expandIcons={props.expandIcons}
+      virtual={props.virtual}
+      height={props.height}
+    />
+  );
+
+  if (props.virtual) {
+    return $tree;
+  }
+
   return (
     <div className={rootClass} style={style}>
-      <Tree
-        line={false}
-        jssStyle={jssStyle as any}
-        onClick={handleClick}
-        data={data}
-        expanded={expanded}
-        keygen={keygen as StructKeygenStringType<DataItem>}
-        defaultExpanded={defaultExpanded}
-        defaultExpandAll={defaultExpandAll}
-        childrenKey={childrenKey}
-        onExpand={onExpand}
-        nodeClass={classNames(styles.treeOption)}
-        contentClass={getContentClass}
-        renderItem={renderItem}
-        expandIcons={props.expandIcons}
-      ></Tree>
+      {$tree}
     </div>
   );
 };

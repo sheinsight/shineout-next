@@ -319,7 +319,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Height of each option item. For fixed-height content, set a number. Use 'auto' for dynamic heights based on content (may impact performance with large datasets)
    * @cn 每个选项的高度。固定高度内容请设置数字；设为 'auto' 则根据内容自适应高度（大数据集时可能影响性能）
-   * @default 32
+   * @default 34
    * @version 3.4.0 added 'auto' mode
    * @when Set number for consistent height items; 'auto' for variable content
    */
@@ -671,6 +671,13 @@ export interface SelectPropsBase<DataItem, Value>
    * @when For custom clearing behavior
    */
   onClear?: () => void;
+
+  /**
+   * @en Enables virtual scrolling for tree-structured data
+   * @cn 是否启用树形数据的虚拟列表滚动
+   * @version 3.9.0
+   */
+  virtual?: boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>
