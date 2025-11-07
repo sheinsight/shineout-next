@@ -147,6 +147,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   });
 
   const { filteredData, filterInfo, onFilterChange } = useTableFilter<Item>({
+    keygen: props.keygen,
     data: props.data,
     columns: props.columns,
   });
