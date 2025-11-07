@@ -1,3 +1,9 @@
+## 3.9.0-beta.20
+2025-11-06
+
+### 💎 Enhancement
+- 增强 `Table` 的筛选功能：支持树形数据 ([#1452](https://github.com/sheinsight/shineout-next/pull/1452))
+
 ## 3.9.0-beta.16
 2025-10-31
 
