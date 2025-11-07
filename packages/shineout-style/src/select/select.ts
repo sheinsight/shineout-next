@@ -419,7 +419,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   hideTag: {},
   list: {},
   tree: {
-    padding: 4,
+    padding: '0 4px',
     overflow: 'auto',
   },
   treeOption: {
