@@ -2,13 +2,15 @@ import { useState, useMemo, useEffect } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 import { TableColumnItem, BaseTableProps } from './use-table.type';
 import { isFunc } from '../../utils/is';
+import { getFilterTree, getKey } from '../../utils'
 import { KeygenResult } from '../../common/type';
 
 export interface UseTableFilterProps<Item = any>
-  extends Pick<BaseTableProps<Item>, 'onSortCancel' | 'sorter' | 'data'> {
+  extends Pick<BaseTableProps<Item>, 'onSortCancel' | 'sorter' | 'data' | 'keygen'> {
   columns?: TableColumnItem<Item>[];
 }
 export interface FilterInfo<T> {
+
   value?: any
   onFilter?: (value: any, row: T) => boolean;
 }
@@ -27,7 +29,8 @@ const useTableFilter = <Item = any>(props: UseTableFilterProps<Item>) => {
   const filteredData = useMemo(() => {
     // why use slice: props.data引用不改变会导致后续的useMemo无法重新计算
     if(activeFilters.length === 0) return (props.data || []).slice();
-    return props.data?.filter((item) => {
+    const columnHasChildren = props.columns?.find((col) => col.treeColumnsName);
+    return getFilterTree<Item, any>(props.data, (item) => {
       return activeFilters.every((key) => {
         const filter = filterInfo.get(key);
 
@@ -41,7 +44,7 @@ const useTableFilter = <Item = any>(props: UseTableFilterProps<Item>) => {
 
         return true;
       });
-    });
+    }, undefined, (node: Item) => getKey(props.keygen, node), columnHasChildren?.treeColumnsName, false) as Item[];
   }, [activeFilters, props.data]);
 
   const onFilterChange = usePersistFn(
