@@ -3,7 +3,7 @@
 
 ### 🆕 Feature
 
-- `Select` 新增 `virtual`: 开启树形数据的虚拟列表 ([#1449](https://github.com/sheinsight/shineout-next/pull/1449))
+- `Select` 新增 `virtual`: 开启树形数据的虚拟列表 ([#1454](https://github.com/sheinsight/shineout-next/pull/1454))
 
 
 ## 3.8.9-beta.3
