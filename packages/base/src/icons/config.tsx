@@ -5,9 +5,9 @@ const config = {
     Info: icons.InfoCircleFill,
     Success: icons.CheckCircleFill,
     Warning: icons.WarningCircleFill,
-    Danger: icons.WarningCircleFill,
+    Danger: icons.CloseFill,
     ConfirmWarning: icons.WarningCircleFill,
-    Error: icons.WarningCircleFill,
+    Error: icons.CloseFill,
     Confirm: icons.HelpCircleFill,
   },
   form: {
