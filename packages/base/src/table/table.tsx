@@ -95,6 +95,8 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     setScrollAble(isScrollAble);
   }, [virtual]);
 
+
+  // TODO: 没用的tbodyHeight，有空移除了
   // 虚拟列表高度另外计算
   const { height: tbodyHeight } = useResize({ targetRef: virtual ? emptyRef : tbodyRef });
 
