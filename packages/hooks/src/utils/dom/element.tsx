@@ -49,6 +49,9 @@ export const addResizeObserver = (
       lastWidth = el.clientWidth;
       lastHeight = el.clientHeight;
       h = (entry: { contentRect: { width: number; height: number } }[]) => {
+        if (el?.offsetParent === null) {
+          return;
+        }
         const { width, height } = entry[0].contentRect;
         if (width && direction === 'x') {
           if (lastWidth !== width) {
