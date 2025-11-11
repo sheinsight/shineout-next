@@ -153,6 +153,17 @@ exports[`Tag[Base] should render correctly about color 1`] = `
         </span>
       </div>
     </div>
+    <div
+      class="soui-tag soui-tag-tag soui-tag-orange soui-tag-bright"
+    >
+      <div
+        class="soui-tag-wrapper"
+      >
+        <span>
+          Orange
+        </span>
+      </div>
+    </div>
   </div>
   <div
     style="margin-bottom: 24px;"
@@ -242,6 +253,17 @@ exports[`Tag[Base] should render correctly about color 1`] = `
       >
         <span>
           Brown
+        </span>
+      </div>
+    </div>
+    <div
+      class="soui-tag soui-tag-tag soui-tag-orange soui-tag-fill"
+    >
+      <div
+        class="soui-tag-wrapper"
+      >
+        <span>
+          Orange
         </span>
       </div>
     </div>
@@ -337,6 +359,17 @@ exports[`Tag[Base] should render correctly about color 1`] = `
         </span>
       </div>
     </div>
+    <div
+      class="soui-tag soui-tag-tag soui-tag-orange soui-tag-outline"
+    >
+      <div
+        class="soui-tag-wrapper"
+      >
+        <span>
+          Orange
+        </span>
+      </div>
+    </div>
   </div>
   <div
     style="margin-bottom: 24px;"
@@ -426,6 +459,17 @@ exports[`Tag[Base] should render correctly about color 1`] = `
       >
         <span>
           Brown
+        </span>
+      </div>
+    </div>
+    <div
+      class="soui-tag soui-tag-tag soui-tag-orange soui-tag-bright-outline"
+    >
+      <div
+        class="soui-tag-wrapper"
+      >
+        <span>
+          Orange
         </span>
       </div>
     </div>
