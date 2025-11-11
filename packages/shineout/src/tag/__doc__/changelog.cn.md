@@ -1,3 +1,10 @@
+## 3.9.0-beta.24
+2025-11-11
+
+### 🆕 Feature
+
+- `Tag` 新增 orange 颜色类型 ([#1457](https://github.com/sheinsight/shineout-next/pull/1457))
+
 ## 3.9.0-beta.11
 2025-10-24
 

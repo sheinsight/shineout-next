@@ -15,6 +15,7 @@ type TagType =
   | 'Cyan'
   | 'Neon'
   | 'Lemon'
+  | 'Orange'
   | 'Tangerine';
 
 type tagType =
@@ -30,6 +31,7 @@ type tagType =
   | 'cyan'
   | 'neon'
   | 'lemon'
+  | 'orange'
   | 'tangerine';
 
 const brightTag = (name: tagType, type: TagType) => ({
@@ -303,6 +305,9 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   lemon: {
     ...brightTag('lemon', 'Lemon'),
   },
+  orange: {
+    ...brightTag('orange', 'Orange'),
+  },
   tangerine: {
     ...brightTag('tangerine', 'Tangerine'),
   },
@@ -321,6 +326,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     ...fillTag('neon', 'Neon'),
     ...fillTag('lemon', 'Lemon'),
     ...fillTag('tangerine', 'Tangerine'),
+    ...fillTag('orange', 'Orange'),
   },
   bright: {},
   outline: {
@@ -337,6 +343,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     ...outlineTag('neon', 'Neon'),
     ...outlineTag('lemon', 'Lemon'),
     ...outlineTag('tangerine', 'Tangerine'),
+    ...outlineTag('orange', 'Orange'),
   },
   brightOutline: {
     ...brightOutlineTag('default', 'Default'),
@@ -352,6 +359,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     ...brightOutlineTag('neon', 'Neon'),
     ...brightOutlineTag('lemon', 'Lemon'),
     ...brightOutlineTag('tangerine', 'Tangerine'),
+    ...brightOutlineTag('orange', 'Orange'),
   },
   rounded: {
     borderRadius: Token.buttonRoundBorderRadius,
