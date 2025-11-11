@@ -1630,6 +1630,138 @@ export interface TagTokens {
   tagLemonIconHoverBackgroundColor: string;
   /**
    * @type {string}
+   * @token Orange-6
+   * @description 标签橙色字体颜色
+   */
+  tagOrangeFontColor: string;
+  /**
+   * @type {string}
+   * @token Orange-1
+   * @description 标签橙色背景颜色
+   */
+  tagOrangeBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Orange-1
+   * @description 标签橙色边框颜色
+   */
+  tagOrangeBorderColor: string;
+  /**
+   * @type {string}
+   * @token Orange-3
+   * @description 标签橙色禁用状态的字体颜色
+   */
+  tagOrangeDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Orange-1
+   * @description 标签橙色禁用状态的背景颜色
+   */
+  tagOrangeDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Orange-1
+   * @description 标签橙色禁用状态的边框颜色
+   */
+  tagOrangeDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token Orange-6
+   * @description 标签橙色线框风格字体颜色
+   */
+  tagOrangeOutlineFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 标签橙色线框风格背景颜色
+   */
+  tagOrangeOutlineBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Orange-6
+   * @description 标签橙色线框风格边框颜色
+   */
+  tagOrangeOutlineBorderColor: string;
+  /**
+   * @type {string}
+   * @token Orange-3
+   * @description 标签橙色线框风格禁用状态的字体颜色
+   */
+  tagOrangeOutlineDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 标签橙色线框风格禁用状态的背景颜色
+   */
+  tagOrangeOutlineDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Orange-3
+   * @description 标签橙色线框风格禁用状态的边框颜色
+   */
+  tagOrangeOutlineDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 标签橙色填充风格字体颜色
+   */
+  tagOrangeFillFontColor: string;
+  /**
+   * @type {string}
+   * @token Orange-6
+   * @description 标签橙色填充风格背景颜色
+   */
+  tagOrangeFillBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Orange-6
+   * @description 标签橙色填充风格边框颜色
+   */
+  tagOrangeFillBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 标签橙色填充风格禁用状态的字体颜色
+   */
+  tagOrangeFillDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Orange-3
+   * @description 标签橙色填充风格禁用状态的背景颜色
+   */
+  tagOrangeFillDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Orange-3
+   * @description 标签橙色填充风格禁用状态的边框颜色
+   */
+  tagOrangeFillDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token Orange-5
+   * @description 标签橙色填充风格图标鼠标移入时的背景颜色
+   */
+  tagOrangeFillIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Orange-6
+   * @description 标签橙色图标字体颜色
+   */
+  tagOrangeIconFontColor: string;
+  /**
+   * @type {string}
+   * @token Orange-3
+   * @description 标签橙色图标禁用状态的字体颜色
+   */
+  tagOrangeIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Orange-2
+   * @description 标签橙色图标鼠标移入时的背景颜色
+   */
+  tagOrangeIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Tangerine-6
    * @description 标签橘红色字体颜色
    */
