@@ -1,3 +1,11 @@
+## 3.9.0-beta.23
+2025-11-11
+
+### 💅 Style
+
+- 修改 `Alert` 的 danger 类型的图标 ([#1456](https://github.com/sheinsight/shineout-next/pull/1456))
+
+
 ## 3.7.5-beta.10
 2025-07-04
 
