@@ -15,7 +15,8 @@ export type TagColorType =
   | 'indigo'
   | 'tangerine'
   | 'lemon'
-  | 'neon';
+  | 'neon'
+  | 'orange';
 
 export type TagType = 'default' | 'info' | 'success' | 'warning' | 'danger';
 
@@ -47,6 +48,7 @@ export interface TagClasses {
   tangerine: string;
   neon: string;
   lemon: string;
+  orange: string;
 
   large: string;
   small: string;
