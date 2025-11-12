@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useMemo } from 'react';
 import classNames from 'classnames';
 import type { DescriptionsProps, DescriptionsClasses } from './descriptions.type';
 import { useDescriptions, usePersistFn, type DescriptionsItemProps } from '@sheinx/hooks';
@@ -26,6 +26,11 @@ const Descriptions = (props: DescriptionsProps) => {
     valueStyle,
     labelStyle,
   });
+
+  const longestItem = useMemo(
+    () => renderItem.reduce((prev, curr) => (prev.length >= curr.length ? prev : curr), []),
+    [renderItem],
+  );
 
   const jssStyle = jssStyleProps?.descriptions?.() || ({} as DescriptionsClasses);
 
@@ -128,7 +133,7 @@ const Descriptions = (props: DescriptionsProps) => {
         <table className={jssStyle?.table} cellPadding={0} cellSpacing={0}>
           {layout === 'inlineHorizontal' && typeof column === 'number' && column > 1 && (
             <colgroup>
-              {renderItem[0]?.map((_, index, arr) => (
+              {longestItem?.map((_, index, arr) => (
                 <col key={index} style={{ width: `${(1 / arr.length) * 100}%` }} />
               ))}
             </colgroup>
