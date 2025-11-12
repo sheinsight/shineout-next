@@ -28,7 +28,7 @@ const Descriptions = (props: DescriptionsProps) => {
   });
 
   const longestItem = useMemo(
-    () => renderItem.reduce((prev, curr) => (prev.length >= curr.length ? prev : curr)),
+    () => renderItem.reduce((prev, curr) => (prev.length >= curr.length ? prev : curr), []),
     [renderItem],
   );
 
