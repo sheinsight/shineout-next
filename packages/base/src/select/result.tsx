@@ -201,7 +201,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
     const content = renderResultContent(item, index, nodes);
 
-    if (!content) return null;
+    if (!content && content !== 0) return null;
 
     if (renderResultContentProp) {
       // cascader 不渲染tag

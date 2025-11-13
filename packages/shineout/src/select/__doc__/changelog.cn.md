@@ -1,3 +1,10 @@
+## 3.8.10-beta.2
+2025-11-13
+
+### 🐞 BugFix
+
+- 修复 `Select` 多选模式下，`renderItem` 返回的是数字0时不回显的问题 ([#1460](https://github.com/sheinsight/shineout-next/pull/1460))
+
 ## 3.8.9-beta.3
 2025-11-05
 
