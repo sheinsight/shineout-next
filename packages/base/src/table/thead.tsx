@@ -322,7 +322,7 @@ export default (props: TheadProps) => {
         )}
         style={style}
         key={colTemp2.key}
-        colSpan={colTemp2.colSpan}
+        colSpan={props.virtualColumn && typeof colTemp2.colSpan === 'function' ? undefined : colTemp2.colSpan}
         dir={config.direction}
       >
         <div>{colTemp2.name}</div>
