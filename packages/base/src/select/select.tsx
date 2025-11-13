@@ -20,7 +20,7 @@ import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
 import Spin from '../spin';
 import Result from './result';
-import List from './list';
+import List, { defaultRenderItem } from './list';
 import TreeList from './list-tree';
 import Icons from '../icons';
 import ColumnsList from './list-columns';
@@ -79,7 +79,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     emptyAfterSelect,
     autoAdapt,
     groupBy,
-    renderItem: renderItemProp = (d) => d as ReactNode,
+    renderItem: renderItemProp = defaultRenderItem,
     renderResult: renderResultProp,
     renderUnmatched,
     resultClassName,
@@ -329,7 +329,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const getRenderItem = (data: DataItem, index?: number): ReactNode => {
     return typeof renderItemProp === 'function'
       ? renderItemProp(data, index)
-      : ((data?.[renderItemProp] || '') as ReactNode);
+      : ((data?.[renderItemProp] ?? '') as ReactNode);
   };
 
   const renderItem = getRenderItem;

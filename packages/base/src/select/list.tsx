@@ -6,6 +6,7 @@ import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';
 import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
 
+export const defaultRenderItem = <DataItem,>(d: DataItem) => d as unknown as React.ReactNode;
 const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const {
     jssStyle,
@@ -23,7 +24,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     hideCreateOption,
     optionListRef,
     isAnimationFinish,
-    renderItem: renderItemProp = (d) => d as React.ReactNode,
+    renderItem: renderItemProp = defaultRenderItem,
     closePop,
     onControlTypeChange,
     onOptionClick,
