@@ -436,6 +436,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       radio: props.radio,
       treeColumnsName,
       treeCheckAll: props.treeCheckAll,
+      virtualColumn: props.virtualColumn,
     };
 
     const showFoot = props.summary?.length;
