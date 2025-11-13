@@ -1,3 +1,9 @@
+## 3.8.10-beta.3
+2025-11-13
+
+### 🐞 BugFix
+- 修复 `Cascader` 动态加载场景父级节点无法勾选的问题 （Regression: since v3.7.5）([#1461](https://github.com/sheinsight/shineout-next/pull/1461))
+
 ## 3.8.6-beta.7
 2025-10-13
 
