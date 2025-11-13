@@ -107,6 +107,8 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
         handleSelect(e);
       }
       hasHandleSelectRef.current = true;
+    } else {
+      hasHandleSelectRef.current = false;
     }
     return events;
   };
