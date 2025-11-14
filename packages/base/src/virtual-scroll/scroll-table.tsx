@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useEffect, useRef } from 'react';
 import { useForkRef, usePersistFn, useResize, util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
@@ -148,6 +148,27 @@ const Scroll = (props: ScrollProps) => {
       context.isMouseDown = false;
     },
   };
+
+  // 组件元素隐藏时，设置定高，解决恢复显示时滚动条位置未保持住的问题
+  useEffect(() => {
+    if (!props.tableRef.current) return;
+
+    const isVisible = props.tableRef.current.offsetParent !== null;
+    const wasHidden = props.tableRef.current.getAttribute('data-was-hidden') === 'true';
+
+    const h = context.lastTableHeight || props.tableRef.current.clientHeight;
+    if (h > 0) {
+      context.lastTableHeight = h;
+    }
+    if (isVisible && wasHidden) {
+      props.tableRef.current.style.height = '100%';
+      props.tableRef.current.removeAttribute('data-was-hidden');
+    } else if (!isVisible && props.tableRef.current.style.height === '100%') {
+      // 加height === '100%'判断是因为：多层父级flex嵌套才有这个问题
+      props.tableRef.current.style.height = `${context.lastTableHeight}px`;
+      props.tableRef.current.setAttribute('data-was-hidden', 'true');
+    }
+  }, [paddingTop]);
 
   // 非定高的Table但依旧采用了virtual渲染方式，需要渲染出全部的data
   useLayoutEffect(() => {

@@ -1,8 +1,8 @@
-## 3.9.0-beta.22
-2025-11-10
+## 3.9.0-beta.26
+2025-11-14
 
 ### 🐞 BugFix
-- 修复 `Table` 父容器从display:none切换回来时，之前的滚动条位置没有保持住的问题 ([#1455](https://github.com/sheinsight/shineout-next/pull/1455))
+- 修复 `Table` 的祖先元素从display:none切换回来时，之前的滚动条位置没有保持住的问题 ([#1455](https://github.com/sheinsight/shineout-next/pull/1455))([#1463](https://github.com/sheinsight/shineout-next/pull/1463))
 
 ## 3.9.0-beta.20
 2025-11-06
