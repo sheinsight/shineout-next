@@ -102,6 +102,9 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     '& $label': {
       width: '1px',
     },
+    '& $value:empty': {
+      width: '1px',
+    },
   },
   vertical: {
     '& $label': {

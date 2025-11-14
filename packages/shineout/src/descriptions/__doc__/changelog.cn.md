@@ -1,3 +1,10 @@
+## 3.8.10-beta.4
+2025-11-14
+
+### 🐞 BugFix
+- 修复 `Descriptions` 的 horizontal 排列方式时所有子项的value都为空时的布局样式问题 ([#1464](https://github.com/sheinsight/shineout-next/pull/1464))
+
+
 ## 3.8.10-beta.1
 2025-11-12
 
