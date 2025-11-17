@@ -172,7 +172,7 @@ export interface SwitchTokens {
   switchLoadingBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
+   * @token Neutral-fill-3
    * @description 开关加载模式下的圆形填充色
    */
   switchLoadingCircleFill: string;
