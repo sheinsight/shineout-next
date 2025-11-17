@@ -5,6 +5,7 @@ import { SpinTokens } from './type';
 
 const spinTokens: SpinTokens = {
   spinTipFontColor: 'Brand-6',
+  spinTipFontSize: 'Font-14',
   spinVerticalMargin: 'Spacing-4',
   spinHorizontalMargin: 'Spacing-4',
   spinColor: 'Brand-6',

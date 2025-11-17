@@ -94,6 +94,7 @@ const spinStyle: JsStyles<keyof SpinClasses> = {
   },
   tip: {
     color: Token.spinTipFontColor,
+    fontSize: Token.spinTipFontSize,
   },
   vertical: {},
   horizontal: {},
