@@ -453,13 +453,13 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     },
 
     '&:not($pickerCellDisabled):not($pickerCellActive):hover': {
-      '&  span': {
+      '& $pickerCellContent > span': {
         backgroundColor: token.datePickerCellHoverBackgroundColor,
         color: token.datePickerCellHoverColor,
       },
     },
     '&$pickerCellInRange:not($pickerCellActive):not($pickerCellDisabled):hover': {
-      '&  span': {
+      '& $pickerCellContent > span': {
         backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
@@ -474,7 +474,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     position: 'relative',
     height: token.datePickerCellHeight,
     lineHeight: token.datePickerCellHeight,
-    '& span': {
+    '& > span': {
       display: 'inline-block',
       minWidth: token.datePickerCellHotHeight,
       height: token.datePickerCellHotHeight,
