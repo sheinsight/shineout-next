@@ -55,7 +55,7 @@ const switchTokenExtraValue = {
   },
   loading: {
     background: { color: 'Neutral-fill-2' },
-    circle: { fill: 'Neutral-text-2', shadow: '' },
+    circle: { fill: 'Neutral-fill-3', shadow: '' },
     font: { color: 'Neutral-text-2' },
   },
   checked: {

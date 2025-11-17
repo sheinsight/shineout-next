@@ -1,3 +1,10 @@
+## 3.9.0-beta.27
+2025-11-17
+
+### 💅 Style
+- `Switch`、`Spin` 组件增强样式 token 配置([#1465](https://github.com/sheinsight/shineout-next/pull/1465))
+
+
 ## 3.9.0-beta.18
 2025-11-05
 
