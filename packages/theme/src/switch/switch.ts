@@ -32,7 +32,7 @@ const switchTokens: SwitchTokens = {
   switchDisabledCircleUncheckedFill: 'Neutral-fill-2',
   switchDisabledFontColor: 'Neutral-text-2',
   switchLoadingBackgroundColor: 'Neutral-fill-2',
-  switchLoadingCircleFill: 'Neutral-text-2',
+  switchLoadingCircleFill: 'Neutral-fill-3',
   switchLoadingFontColor: 'Neutral-text-2',
   switchCheckedBackgroundColor: 'Brand-6',
   switchCheckedCircleFill: 'Neutral-fill-1',
