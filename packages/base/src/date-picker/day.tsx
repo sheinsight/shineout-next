@@ -53,7 +53,7 @@ const Day = (props: DayProps) => {
     props.setCurrent(new Date(), areaType);
     props.onChange(new Date(), props.needConfirm || props.type === 'datetime');
     setTimeout(() => {
-      if (props.closeByConfirm && !props.range) props.closeByConfirm();
+      if (props.needConfirm && props.closeByConfirm && !props.range) props.closeByConfirm();
     }, 0);
   };
 

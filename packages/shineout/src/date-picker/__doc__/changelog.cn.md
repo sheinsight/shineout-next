@@ -1,3 +1,10 @@
+## 3.8.10-beta.5
+2025-11-17
+
+### 🐞 BugFix
+- 修复 `DatePicker` 的 `selNow` 在异步的 `onChange` 赋值场景下触发两次的问题 ([#1466](https://github.com/sheinsight/shineout-next/pull/1466))
+
+
 ## 3.8.5-beta.5
 2025-09-30
 
