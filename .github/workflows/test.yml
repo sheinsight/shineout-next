@@ -24,6 +24,8 @@ jobs:
 
       - name: dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          CYPRESS_INSTALL_BINARY: 0
 
       - name: Component Test
         run: pnpm run test
