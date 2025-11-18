@@ -79,10 +79,10 @@ const {
   wrapperMoveable,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const activeDefaultStyle = 'display: block; height: auto; pointer-events: initial; transition: height 240ms ease-in-out;';
-const noActiveDefaultStyle = 'display: block; height: 0px; overflow: hidden;';
+const activeDefaultStyle = 'display: block; height: auto; transition: height 240ms ease-in-out; pointer-events: initial;';
+const noActiveDefaultStyle = 'display: block; height: 0px; overflow: hidden; pointer-events: none;';
 const closeDefaultStyle = 'display: none; height: auto; pointer-events: initial; transition: height 240ms ease-in-out;'
-const noActiveTrueDefaultStyle = 'display: none; height: 0px; overflow: hidden;'
+const noActiveTrueDefaultStyle = 'display: none; pointer-events: none; height: 0px; overflow: hidden;'
 
 const testHeaderContent = 'Header';
 const testBodyContent = 'body';
