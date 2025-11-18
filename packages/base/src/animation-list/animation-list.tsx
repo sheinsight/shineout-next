@@ -140,7 +140,7 @@ const AnimationList = (props: AnimationListProps) => {
 
   const beforeLeave = () => {
     const el = ref.current!;
-    const newStyle: React.CSSProperties = {};
+    const newStyle: React.CSSProperties = { pointerEvents: 'none' };
     if (type.indexOf('collapse') >= 0) {
       context.height = el.offsetHeight;
       newStyle.height = `${context.height}px`;
@@ -172,7 +172,7 @@ const AnimationList = (props: AnimationListProps) => {
     setStatus('leave');
   };
   const afterLeave = () => {
-    const newStyle: React.CSSProperties = {};
+    const newStyle: React.CSSProperties = { pointerEvents: 'initial' };
     if (type.indexOf('collapse') >= 0) {
       newStyle.height = 'auto';
       newStyle.overflow = '';
