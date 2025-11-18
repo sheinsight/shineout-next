@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { UseDateProps } from './use-date.type';
+import { DatePickerAreaType } from './use-datepicker-format.type';
 import utils from './util';
 import useLatestObj from '../../common/use-latest-obj';
 import dateUtil from './util';
@@ -19,15 +20,15 @@ const useDate = (props: UseDateProps) => {
   });
 
   const current = props.current === undefined || !props.current ? currentState : props.current;
-  const setCurrent = (date: Date) => {
+  const setCurrent = (date: Date, type?: DatePickerAreaType) => {
     if (props.current !== undefined) {
-      props.onCurrentChange?.(date);
+      props.onCurrentChange?.(date, type);
     } else {
       if (date) {
         setCurrentState(date);
       }
     }
-    props.onCurrentChange?.(date);
+    props.onCurrentChange?.(date, type);
   };
 
   const isToday = (date: Date) => {
@@ -58,22 +59,22 @@ const useDate = (props: UseDateProps) => {
 
   const handleNextYear = usePersistFn(() => {
     const date = utils.addYears(current, 1, options);
-    setCurrent(date);
+    setCurrent(date, 'year');
   });
 
   const handlePrevYear = usePersistFn(() => {
     const date = utils.addYears(current, -1, options);
-    setCurrent(date);
+    setCurrent(date, 'year');
   });
 
   const handleNextMonth = usePersistFn(() => {
     const date = utils.addMonths(current, 1, options);
-    setCurrent(date);
+    setCurrent(date, 'month');
   });
 
   const handlePrevMonth = usePersistFn(() => {
     const date = utils.addMonths(current, -1, options);
-    setCurrent(date);
+    setCurrent(date, 'month');
   });
 
   const isCurrentMonth = (date: Date) => {

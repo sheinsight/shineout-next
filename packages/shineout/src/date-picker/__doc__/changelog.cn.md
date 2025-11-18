@@ -1,3 +1,9 @@
+## 3.8.10-beta.7
+2025-11-18
+
+### 🐞 BugFix
+- 修复 `DatePicker` 的 `onPickerChange` 在切换年月时第三参数 areaType 不正确的问题 ([#1471](https://github.com/sheinsight/shineout-next/pull/1471))
+
 ## 3.8.10-beta.5
 2025-11-17
 

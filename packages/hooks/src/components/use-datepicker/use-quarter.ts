@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { UseMonthProps } from './use-month.type';
+import { DatePickerAreaType } from './use-datepicker-format.type';
 import utils from './util';
 import useLatestObj from '../../common/use-latest-obj';
 import dateUtil from './util';
@@ -27,13 +28,13 @@ const useQuarter = (props: UseMonthProps) => {
   const current = props.current === undefined ? currentState : props.current;
   const startYear = utils.getDateInfo(current, 'year', options);
 
-  const setCurrent = (date: Date) => {
+  const setCurrent = (date: Date, type?: DatePickerAreaType) => {
     if (props.current !== undefined) {
-      props.onCurrentChange?.(date);
+      props.onCurrentChange?.(date, type);
     } else {
       setCurrentState(date);
     }
-    props.onCurrentChange?.(date);
+    props.onCurrentChange?.(date, type);
   };
 
   const isNow = (date: Date) => {
@@ -61,12 +62,12 @@ const useQuarter = (props: UseMonthProps) => {
 
   const handleNext = usePersistFn(() => {
     const date = utils.addYears(current, 1, options);
-    setCurrent(date);
+    setCurrent(date, 'year');
   });
 
   const handlePrev = usePersistFn(() => {
     const date = utils.addYears(current, -1, options);
-    setCurrent(date);
+    setCurrent(date, 'year');
   });
 
   const isDisabled = (date: Date) => {

@@ -1,9 +1,11 @@
+import { DatePickerAreaType } from './use-datepicker-format.type';
+
 export interface UseDateProps {
   current?: Date;
   range?: boolean | number;
   rangeDate?: Array<Date | undefined>;
   defaultCurrent?: Date;
-  onCurrentChange?: (date: Date) => void;
+  onCurrentChange?: (date: Date, type?: DatePickerAreaType) => void;
   onClearInputArr: (index?: number | undefined) => void;
   value?: Date;
   allowSingle?: boolean;
