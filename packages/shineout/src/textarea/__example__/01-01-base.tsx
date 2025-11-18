@@ -7,5 +7,5 @@
 import { Textarea } from 'shineout';
 
 export default () => {
-  return <Textarea placeholder='input something' />;
+  return <Textarea autoFocus placeholder='input something' />;
 };
