@@ -223,7 +223,7 @@ export default (props: TheadProps) => {
     );
     const isExpand = colTemp.type === 'expand' || colTemp.type === 'row-expand';
 
-    if (colTemp.title || isExpand) {
+    if (colTemp.title !== undefined || isExpand) {
       const sorter = renderSort(colTemp);
       const filter = renderFilter(colTemp, columnIndex);
       trs[level].push(
