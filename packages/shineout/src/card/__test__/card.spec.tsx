@@ -79,10 +79,14 @@ const {
   wrapperMoveable,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const activeDefaultStyle = 'display: block; height: auto; transition: height 240ms ease-in-out; pointer-events: initial;';
-const noActiveDefaultStyle = 'display: block; height: 0px; overflow: hidden; pointer-events: none;';
-const closeDefaultStyle = 'display: none; height: auto; pointer-events: initial; transition: height 240ms ease-in-out;'
-const noActiveTrueDefaultStyle = 'display: none; pointer-events: none; height: 0px; overflow: hidden;'
+// 动画完成后的展开状态: display block, height auto, pointer-events initial
+const activeDefaultStyle = ['display: block', 'height: auto', 'pointer-events: initial', 'transition: height 240ms ease-in-out'];
+// 动画过程中的收起状态: display block, height 0, overflow hidden, pointer-events none
+const noActiveDefaultStyle = ['display: block', 'height: 0px', 'overflow: hidden', 'pointer-events: none'];
+// 动画完成后的隐藏状态: display none, height auto, pointer-events initial
+const closeDefaultStyle = ['display: none', 'height: auto', 'pointer-events: initial', 'transition: height 240ms ease-in-out'];
+// 初始隐藏状态: display none, height 0, overflow hidden, pointer-events none
+const noActiveTrueDefaultStyle = ['display: none', 'height: 0px', 'overflow: hidden', 'pointer-events: none'];
 
 const testHeaderContent = 'Header';
 const testBodyContent = 'body';
