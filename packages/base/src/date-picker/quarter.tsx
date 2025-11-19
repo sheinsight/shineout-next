@@ -12,8 +12,8 @@ const Quarter = (props: QuarterProps) => {
   const config = useConfig();
   const styles = jssStyle?.datePicker?.();
 
-  const setCurrent = usePersistFn((date) => {
-    props.setCurrent(date, 'quarter');
+  const setCurrent = usePersistFn((date: Date, type?: string) => {
+    props.setCurrent(date, type || 'quarter');
   });
   const { currentYear, func } = useQuarterPick({
     current: props.current,

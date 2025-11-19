@@ -16,8 +16,8 @@ const Year = (props: YearProps) => {
     props.setMode('month');
   });
 
-  const setCurrent = usePersistFn((date) => {
-    props.setCurrent(date, 'year');
+  const setCurrent = usePersistFn((date: Date, type?: string) => {
+    props.setCurrent(date, type || 'year');
   });
   const { currentStart, currentEnd, func } = useYearPick({
     current: props.current,

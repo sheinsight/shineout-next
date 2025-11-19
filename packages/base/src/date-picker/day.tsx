@@ -21,8 +21,8 @@ const Day = (props: DayProps) => {
     props.setTarget(undefined);
   });
 
-  const setCurrent = usePersistFn((date) => {
-    props.setCurrent(date, areaType);
+  const setCurrent = usePersistFn((date: Date, type?: string) => {
+    props.setCurrent(date, type || areaType);
   });
   const { func, currentYear, currentMonth } = useDatePick({
     current: props.current,

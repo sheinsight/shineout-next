@@ -57,7 +57,7 @@ const useRangePick = (props: useRangeProps) => {
     });
   };
 
-  const setCurrent = usePersistFn((index: number, date: Date, ...args: any[]) => {
+  const setCurrent = usePersistFn((index: number, date: Date, type?: string) => {
     props.setCurrentArr((arr: Date[]) => {
       const newArr = [...arr];
       newArr[index] = date;
@@ -85,15 +85,15 @@ const useRangePick = (props: useRangeProps) => {
       }
 
       return newArr;
-    }, ...args);
+    }, type, undefined);
   });
 
-  const setCurrentStart = usePersistFn((date: Date, ...args: any[]) => {
-    setCurrent(0, date, ...args);
+  const setCurrentStart = usePersistFn((date: Date, type?: string) => {
+    setCurrent(0, date, type);
   });
 
-  const setCurrentEnd = usePersistFn((date: Date, ...args: any[]) => {
-    setCurrent(1, date, ...args);
+  const setCurrentEnd = usePersistFn((date: Date, type?: string) => {
+    setCurrent(1, date, type);
   });
 
   const setDateStart = usePersistFn((date: Date, noClose?: boolean) => {
