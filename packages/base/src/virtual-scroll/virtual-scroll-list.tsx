@@ -200,6 +200,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         wrapperRef={wrapperRef}
         onScroll={handleScroll}
         onMouseMove={handleMouseMove}
+        keepScrollTop={keepScrollTop}
       >
         <Tag className={tagClassName} style={innerStyle}>
           {items.map((d: DataItem, i: number) => {

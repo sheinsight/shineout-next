@@ -7,6 +7,7 @@ interface scrollProps {
   scrollWidth: number | string;
   height?: number | string;
   children: React.ReactNode;
+  keepScrollTop?: boolean;
   wrapperRef?: React.RefObject<HTMLDivElement>;
   onScroll?: (info: {
     scrollLeft: number;
@@ -36,7 +37,7 @@ const Scroll = (props: scrollProps) => {
     timer: null as any,
     isMouseDown: false,
   });
-  const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
+  const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0, keepScrollTop = false } = props;
   const { width, height: h } = useResize({ targetRef: containerRef, timer: 100 });
   const height = h || defaultHeight;
 
@@ -58,7 +59,9 @@ const Scroll = (props: scrollProps) => {
 
   // 当滚动容器的高度为 0 时，paddingTop 为 0，避免滚动条抖动现象
   const paddingTop = useMemo(() => {
-    return height === 0 ? 0 : Math.max(0, Math.floor(scrollHeight - height));
+    const maxHeight = Math.max(0, scrollHeight - height);
+    if (keepScrollTop) return maxHeight;
+    return height === 0 ? 0 : maxHeight;
   }, [scrollHeight, height]);
 
   const placeStyle = {
