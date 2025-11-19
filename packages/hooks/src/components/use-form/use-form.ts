@@ -65,6 +65,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     name: formName,
     scrollParent,
     isControl,
+    forceSyncInputValue,
   } = props;
   const deepSetOptions = {
     removeUndefined,
@@ -630,6 +631,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       size,
       formName,
       colon,
+      forceSyncInputValue: !!forceSyncInputValue,
     }),
     [
       labelWidth,
