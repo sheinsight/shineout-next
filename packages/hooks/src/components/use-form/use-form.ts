@@ -98,6 +98,15 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }
     return context.value;
   });
+  
+  const getInputValue = () => {
+    const inputs = props.formElRef.current?.getElementsByTagName('input')
+    const values:any = {}
+    for (const el of inputs as any) {
+      values[el.name] = el.value
+    }
+    return values
+  }
 
   const validateFields = usePersistFn(
     (fields?: string | string[], config: ValidateFnConfig = {}): Promise<T> => {
@@ -607,6 +616,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     insertError,
     spliceError,
     scrollToField,
+    getInputValue,
   });
 
   const formConfig: ProviderProps['formConfig'] = React.useMemo(

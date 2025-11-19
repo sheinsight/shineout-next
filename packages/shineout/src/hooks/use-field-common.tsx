@@ -37,7 +37,7 @@ const useFieldCommon = <
   Value,
   Name extends string | string[] = string,
 >(
-  props: GetWithFieldProps<Props, Value, Name>,
+  props: GetWithFieldProps<Props, Value, Name> & {htmlName?: string},
   Origin: React.ComponentType<Props>,
   type?: 'number' | 'string' | 'array',
 ) => {
@@ -66,6 +66,7 @@ const useFieldCommon = <
         {...(forwardProps as Props)}
         defaultValue={props.defaultValue}
         beforeChange={beforeChange}
+        htmlName={props.htmlName || props.name}
       />
     </FormField>
   );
