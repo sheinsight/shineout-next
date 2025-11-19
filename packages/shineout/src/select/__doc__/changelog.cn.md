@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Select` 的下拉框滚动后选中值关闭了，再次打开时下拉框未保持之前的滚动位置的问题 （Regression: since v3.7.1-beta.4）([#1473](https://github.com/sheinsight/shineout-next/pull/1473))
+- 修复 `Select` 下拉框滚动位置丢失问题 （Regression: since v3.7.1）([#1473](https://github.com/sheinsight/shineout-next/pull/1473))
 
 
 ## 3.8.10-beta.2
