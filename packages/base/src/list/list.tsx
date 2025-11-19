@@ -127,7 +127,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     setRowHeight?: (index: number, height: number) => void;
   }) => {
     const rowRef = useRef<HTMLDivElement>(null);
-    
+
     useLayoutEffect(() => {
       if (rowRef.current && setRowHeight) {
         const rect = rowRef.current.getBoundingClientRect();
@@ -228,6 +228,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
             style={{ flex: '1', minHeight: '0', display: 'flex' }}
             scrollerStyle={{ flex: 1, minHeight: 0, minWidth: 0, overflow: 'auto' }}
             dynamicVirtual={props.dynamicHeight}
+            keepScrollTop={!!props.scrollLoading}
           />
           {renderFooter()}
         </>
