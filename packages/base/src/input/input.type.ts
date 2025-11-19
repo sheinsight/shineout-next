@@ -202,6 +202,8 @@ export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'cla
    */
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   status?: CommonType['status'];
+
+  forceSyncInputValue?: boolean;
 }
 
 export type GetCommonProps<Props, V> = Omit<

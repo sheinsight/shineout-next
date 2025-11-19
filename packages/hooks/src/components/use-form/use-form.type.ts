@@ -129,6 +129,8 @@ export interface FormCommonConfig extends FormLabelConfig {
    * @private
    */
   formName?: string;
+
+  forceSyncInputValue?: boolean;
 }
 
 export interface FormFunc<T = any> {

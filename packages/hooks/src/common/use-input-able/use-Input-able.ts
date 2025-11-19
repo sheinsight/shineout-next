@@ -15,7 +15,16 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
   const { current: context } = useRef<{
     timer: NodeJS.Timeout | null;
     delayChange: null | (() => void);
-  }>({ timer: null, delayChange: null });
+    // pendingCount: number;
+    // executedCount: number;
+    // checkTimer: NodeJS.Timeout | null;
+  }>({
+    timer: null,
+    delayChange: null,
+    // pendingCount: 0,
+    // executedCount: 0,
+    // checkTimer: null,
+  });
 
   const latest = useLatestObj({ valuePo, stateValue });
 
@@ -41,12 +50,18 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
   }, [props.value, delay, control]);
 
   const forceDelayChange = usePersistFn(() => {
+    // if (context.checkTimer) {
+    //   clearTimeout(context.checkTimer);
+    //   context.checkTimer = null;
+    // }
     if (context.timer && context.delayChange) {
       clearTimeout(context.timer);
       context.delayChange();
       context.timer = null;
       context.delayChange = null;
     }
+    // context.pendingCount = 0;
+    // context.executedCount = 0;
   });
 
   const handleChange = usePersistFn((v: T, ...other: any[]) => {
@@ -70,14 +85,26 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
     context.delayChange = () => {
       context.timer = null;
       context.delayChange = null;
+      // context.executedCount++;
       onChange(vv, ...other);
       render();
     };
-    if (!delay) {
+    if (!delay || props.forceSyncInputValue) {
       onChange(vv, ...other);
     } else {
+      // const currentPendingCount = ++context.pendingCount;
       if (context.timer) clearTimeout(context.timer);
       context.timer = setTimeout(context.delayChange, delay);
+
+      // 设置检查定时器，在 delay 之后检查是否有丢失的 delayChange
+      // if (context.checkTimer) clearTimeout(context.checkTimer);
+      // context.checkTimer = setTimeout(() => {
+      //   const missedCount = currentPendingCount - context.executedCount;
+      //   if (missedCount > 0 && context.delayChange && valuePo !== vv) {
+      //     context.delayChange();
+      //   }
+      //   context.checkTimer = null;
+      // }, delay + 50);
     }
   }) as V;
 

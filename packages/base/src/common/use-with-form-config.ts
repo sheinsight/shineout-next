@@ -10,6 +10,7 @@ export const useWithFormConfig = <T>(props: T) => {
     ...(size !== undefined && { size }),
     ...(disabled !== undefined && { disabled }),
     ...(formConfig.formName !== undefined && { formName: formConfig.formName }),
+    forceSyncInputValue: formConfig.forceSyncInputValue,
   } as T
 };
 

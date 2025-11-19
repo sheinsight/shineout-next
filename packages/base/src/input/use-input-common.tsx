@@ -76,6 +76,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
     defaultValue,
     beforeChange,
     delay,
+    forceSyncInputValue: props.forceSyncInputValue,
   });
   const hasValue = (value: any) =>
     (util.isNumber(value) && !util.isNan(value)) || (value && value.length);

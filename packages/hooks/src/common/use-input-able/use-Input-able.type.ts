@@ -9,4 +9,5 @@ export interface InputAbleProps<T, V extends ChangeType<T>> {
   // 延迟时间
   delay?: number;
   filterSameChange?: boolean;
+  forceSyncInputValue?: boolean;
 }

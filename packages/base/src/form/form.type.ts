@@ -109,5 +109,11 @@ export interface FormProps<V extends ObjectType>
    * @deprecated 废弃属性
    */
   pending?: boolean;
+
+  /**
+   * @cn 当内部输入组件与form上的value不一致时，是否强制同步输入组件的值为form上的value
+   * @en Whether to forcibly synchronize the value of the input component to the value on the form when the internal input component is inconsistent with the value on the form
+   */
+  forceSyncInputValue?: boolean;
 }
 export default {};
