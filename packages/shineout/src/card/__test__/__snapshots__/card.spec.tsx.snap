@@ -157,7 +157,7 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
       class="soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
-      style="display: none; height: 0px; overflow: hidden;"
+      style="display: none; pointer-events: none; height: 0px; overflow: hidden;"
     >
       <div
         class="soui-card-body"
@@ -203,7 +203,7 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
       class="soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
-      style="display: block; height: 0px; overflow: hidden;"
+      style="display: block; pointer-events: none; height: 0px; overflow: hidden;"
     >
       <div
         class="soui-card-body"
@@ -249,7 +249,7 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
       class="soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
-      style="display: none; height: 0px; overflow: hidden;"
+      style="display: none; pointer-events: none; height: 0px; overflow: hidden;"
     >
       <div
         class="soui-card-body"
@@ -338,7 +338,7 @@ exports[`Card[Base] should render correctly about collapse 1`] = `
     class="soui-card-body-collapse"
     data-sheinx-animation-duration="fast"
     data-sheinx-animation-type="collapse"
-    style="display: none; height: 0px; overflow: hidden;"
+    style="display: none; pointer-events: none; height: 0px; overflow: hidden;"
   >
     <div
       class="soui-card-body"

@@ -14,6 +14,30 @@ const getDuration = (duration: AnimationListProps['duration']) => {
 };
 
 const mm = 30;
+
+/**
+ * AnimationList - 动画列表组件
+ *
+ * 动画状态流程:
+ *
+ * 展开动画 (show: false -> true):
+ *   beforeEnter: 设置初始状态(display, height: 0, opacity: 0 等)
+ *     ↓ 等待 mm(30ms) - 触发浏览器重绘
+ *   enter: 应用过渡动画(height: ${height}px, opacity: 1 等)
+ *     ↓ 等待 durationNum(240ms) - 动画执行
+ *   afterEnter: 清理动画状态(height: auto, pointer-events: initial)
+ *
+ * 收起动画 (show: true -> false):
+ *   beforeLeave: 固定当前状态(height: ${height}px, pointer-events: none)
+ *     ↓ 等待 mm(30ms) - 触发浏览器重绘
+ *   leave: 应用过渡动画(height: 0, opacity: 0 等)
+ *     ↓ 等待 durationNum(240ms) - 动画执行
+ *   afterLeave: 清理并隐藏(display: none, pointer-events: initial)
+ *
+ * pointer-events 控制:
+ *   - beforeLeave: 设置为 'none',防止动画过程中的误操作
+ *   - afterEnter/afterLeave: 恢复为 'initial',确保动画结束后可正常交互
+ */
 const AnimationList = (props: AnimationListProps) => {
   const {
     display = 'block',
@@ -87,6 +111,10 @@ const AnimationList = (props: AnimationListProps) => {
     return { height: 0, width: 0 };
   };
 
+  /**
+   * 展开动画阶段1: 设置初始状态
+   * 设置 display 显示元素,并将动画属性设为起始值(如 height: 0)
+   */
   const beforeEnter = () => {
     const newStyle: React.CSSProperties = {
       display: display,
@@ -112,6 +140,11 @@ const AnimationList = (props: AnimationListProps) => {
     }
     setStyle((s) => ({ ...s, ...newStyle }));
   };
+
+  /**
+   * 展开动画阶段2: 执行过渡动画
+   * 添加 transition 并将动画属性过渡到目标值
+   */
   const enter = () => {
     const newStyle: React.CSSProperties = { transition };
     if (type.indexOf('collapse') >= 0) {
@@ -127,8 +160,13 @@ const AnimationList = (props: AnimationListProps) => {
     setStyle((s) => ({ ...s, ...newStyle }));
     setStatus('enter');
   };
+
+  /**
+   * 展开动画阶段3: 清理动画状态
+   * 移除固定尺寸,恢复自动布局,恢复交互能力
+   */
   const afterEnter = () => {
-    const newStyle: React.CSSProperties = {};
+    const newStyle: React.CSSProperties = { pointerEvents: 'initial' };
     if (type.indexOf('collapse') >= 0) {
       newStyle.height = 'auto';
       newStyle.overflow = '';
@@ -138,9 +176,13 @@ const AnimationList = (props: AnimationListProps) => {
     onAnimationAfterEnter?.();
   };
 
+  /**
+   * 收起动画阶段1: 固定当前状态
+   * 禁用交互,固定当前高度,准备执行收起动画
+   */
   const beforeLeave = () => {
     const el = ref.current!;
-    const newStyle: React.CSSProperties = {};
+    const newStyle: React.CSSProperties = { pointerEvents: 'none' };
     if (type.indexOf('collapse') >= 0) {
       context.height = el.offsetHeight;
       newStyle.height = `${context.height}px`;
@@ -156,6 +198,11 @@ const AnimationList = (props: AnimationListProps) => {
     setStyle((s) => ({ ...s, ...newStyle }));
     setStatus('beforeLeave');
   };
+
+  /**
+   * 收起动画阶段2: 执行过渡动画
+   * 添加 transition 并将动画属性过渡到收起状态(如 height: 0)
+   */
   const leave = () => {
     const newStyle: React.CSSProperties = { transition };
     if (type.indexOf('collapse') >= 0) {
@@ -171,8 +218,13 @@ const AnimationList = (props: AnimationListProps) => {
     setStyle((s) => ({ ...s, ...newStyle }));
     setStatus('leave');
   };
+
+  /**
+   * 收起动画阶段3: 清理并隐藏
+   * 恢复交互能力,清理动画状态,设置 display: none 完全隐藏元素
+   */
   const afterLeave = () => {
-    const newStyle: React.CSSProperties = {};
+    const newStyle: React.CSSProperties = { pointerEvents: 'initial' };
     if (type.indexOf('collapse') >= 0) {
       newStyle.height = 'auto';
       newStyle.overflow = '';
