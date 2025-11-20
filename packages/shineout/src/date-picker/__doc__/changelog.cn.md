@@ -1,3 +1,10 @@
+## 3.9.0-beta.28
+2025-11-17
+
+### 🆕 Feature
+- `DatePicker` 新增 `renderDate` 属性：支持定制日期单元格内容 ([#1468](https://github.com/sheinsight/shineout-next/pull/1468))
+
+
 ## 3.8.10-beta.7
 2025-11-18
 
@@ -9,6 +16,7 @@
 
 ### 🐞 BugFix
 - 修复 `DatePicker` 的 `selNow` 在异步的 `onChange` 赋值场景下触发两次的问题 ([#1466](https://github.com/sheinsight/shineout-next/pull/1466))
+
 
 
 ## 3.8.5-beta.5

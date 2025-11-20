@@ -1,19 +1,23 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { DatePickerModeType, DatePickerProps, DateTimeType } from './date-picker.type';
 
-export interface PickerProps {
-  jssStyle: DatePickerProps<any>['jssStyle'];
-  defaultTime: DatePickerProps<any>['defaultTime'];
-  quickSelect: DatePickerProps<any>['quickSelect'];
-  showSelNow: DatePickerProps<any>['showSelNow'];
-  disabled: DatePickerProps<any>['disabled'];
-  disabledTime: DatePickerProps<any>['disabledTime'];
-  range: DatePickerProps<any>['range'];
-  hourStep?: DatePickerProps<any>['hourStep'];
-  minuteStep?: DatePickerProps<any>['minuteStep'];
-  secondStep?: DatePickerProps<any>['secondStep'];
-  children?: DatePickerProps<any>['children'];
-  allowSingle?: DatePickerProps<any>['allowSingle'];
+export interface PickerProps
+  extends Pick<
+    DatePickerProps<any>,
+    | 'jssStyle'
+    | 'defaultTime'
+    | 'quickSelect'
+    | 'showSelNow'
+    | 'disabled'
+    | 'disabledTime'
+    | 'renderDate'
+    | 'range'
+    | 'hourStep'
+    | 'minuteStep'
+    | 'secondStep'
+    | 'children'
+    | 'allowSingle'
+  > {
   onClearInputArr: (index?: number | undefined) => void;
   format: string;
   type: string;
