@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { isFunc } from '../../utils/is';
 import { shallowEqual } from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
@@ -39,7 +39,10 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
 
   const value = shouldUseState ? stateValue : valuePo;
 
-  useEffect(() => {
+  // const finnalEffect = xx ? useLayoutEffect : useEffect;
+
+  useLayoutEffect(() => {
+    console.log('执行useEffect')
     if (context.timer) {
       clearTimeout(context.timer);
       context.timer = null;
@@ -54,9 +57,10 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
     //   clearTimeout(context.checkTimer);
     //   context.checkTimer = null;
     // }
-    if (context.timer && context.delayChange) {
+
+    context.delayChange && context.delayChange();
+    if (context.timer) {
       clearTimeout(context.timer);
-      context.delayChange();
       context.timer = null;
       context.delayChange = null;
     }
@@ -84,17 +88,21 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
 
     context.delayChange = () => {
       context.timer = null;
+      console.log('执行onChange')
       context.delayChange = null;
       // context.executedCount++;
       onChange(vv, ...other);
       render();
     };
-    if (!delay || props.forceSyncInputValue) {
+    if (!delay) {
       onChange(vv, ...other);
     } else {
       // const currentPendingCount = ++context.pendingCount;
       if (context.timer) clearTimeout(context.timer);
       context.timer = setTimeout(context.delayChange, delay);
+
+      console.log('触发onChange')
+
 
       // 设置检查定时器，在 delay 之后检查是否有丢失的 delayChange
       // if (context.checkTimer) clearTimeout(context.checkTimer);
