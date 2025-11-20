@@ -64,8 +64,17 @@ export function styleContainTest(element: Element, styleObject: object) {
   expect((element as HTMLElement).style).toEqual(expect.objectContaining(styleObject));
 }
 
-export function styleContentTest(element: Element, name: string, bool: boolean = true) {
-  expect(element.getAttribute('style')?.includes(name)).toBe(bool);
+export function styleContentTest(element: Element, styles: string | string[], bool: boolean = true) {
+  const elementStyle = element.getAttribute('style');
+
+  if (Array.isArray(styles)) {
+    // 如果是数组,检查每个样式属性是否都存在
+    const allMatch = styles.every(style => elementStyle?.includes(style));
+    expect(allMatch).toBe(bool);
+  } else {
+    // 原有的字符串匹配方式
+    expect(elementStyle?.includes(styles)).toBe(bool);
+  }
 }
 
 export interface StyleProps {
