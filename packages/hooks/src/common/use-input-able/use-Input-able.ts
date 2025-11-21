@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { isFunc } from '../../utils/is';
 import { shallowEqual } from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
@@ -30,20 +30,19 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
 
   const value = shouldUseState ? stateValue : valuePo;
 
-  useEffect(() => {
-    if (context.timer) {
-      clearTimeout(context.timer);
-      context.timer = null;
-    }
+  useLayoutEffect(() => {
     if (delay && props.value !== stateValue) {
       changeStateValue(props.value);
+    } else if (context.timer) {
+      clearTimeout(context.timer);
+      context.timer = null;
     }
   }, [props.value, delay]);
 
   const forceDelayChange = usePersistFn(() => {
-    if (context.timer && context.delayChange) {
+    if (context.delayChange) context.delayChange();
+    if (context.timer) {
       clearTimeout(context.timer);
-      context.delayChange();
       context.timer = null;
       context.delayChange = null;
     }
