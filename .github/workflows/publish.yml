@@ -18,6 +18,11 @@ jobs:
           fetch-depth: 1
           ref: ${{ github.event.release.tag_name}}
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: Use Pnpm
         uses: pnpm/action-setup@v2
         with:
