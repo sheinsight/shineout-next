@@ -43,7 +43,7 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
   }, [props.value, delay, control]);
 
   const forceDelayChange = usePersistFn(() => {
-    context.delayChange && context.delayChange();
+    if (context.delayChange) context.delayChange();
     if (context.timer) {
       clearTimeout(context.timer);
       context.timer = null;
