@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.19.1]
+        node-version: [16.16.0]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -18,15 +18,18 @@ jobs:
           fetch-depth: 1
           ref: ${{ github.event.release.tag_name}}
 
-      - name: Use Pnpm
-        uses: pnpm/action-setup@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          version: 9.4.0
+          node-version: ${{ matrix.node-version }}
+
+      - name: Use Pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.2.0
 
       - name: dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          CYPRESS_INSTALL_BINARY: 0
 
       - name: build
         run: pnpm run build:pkg
