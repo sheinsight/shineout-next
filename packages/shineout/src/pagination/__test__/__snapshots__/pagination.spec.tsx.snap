@@ -794,6 +794,7 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
           >
             <span
               class="soui-select-ellipsis"
+              title="10  / page"
             >
               10  / page
             </span>
@@ -2090,6 +2091,7 @@ exports[`Pagination[Base] should render correctly about text 1`] = `
           >
             <span
               class="soui-select-ellipsis"
+              title="10  / page"
             >
               10  / page
             </span>

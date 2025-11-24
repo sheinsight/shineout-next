@@ -118,6 +118,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
         >
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 1-1-1"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -148,6 +149,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 1-1-2"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -178,6 +180,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 1-1"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -208,6 +211,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 1-2"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -238,6 +242,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 1"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -268,6 +273,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 2-1"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -298,6 +304,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 2-2"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -328,6 +335,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 2"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -358,6 +366,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 3-1"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -388,6 +397,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-treeSelect-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="node 3"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1189,6 +1199,7 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
         >
           <span
             class="soui-treeSelect-ellipsis"
+            title="I'm unmatched item"
           >
             I'm unmatched item
           </span>
