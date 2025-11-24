@@ -229,6 +229,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         jssStyle={jssStyle as any}
         inlineStyle={true}
         {...util.getDataAttribute({ type: disabled === true ? 'dark' : undefined })}
+        title={typeof content === 'string' ? content : undefined}
       >
         {content}
       </Tag>
@@ -258,7 +259,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     const content = renderResultContent(result[0]);
 
     return (
-      <span key='single' className={styles.ellipsis}>
+      <span key='single' className={styles.ellipsis} title={typeof content === 'string' ? content : undefined}>
         {content}
       </span>
     );

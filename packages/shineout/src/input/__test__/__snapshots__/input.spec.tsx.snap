@@ -320,6 +320,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
           >
             <span
               class="soui-select-ellipsis"
+              title="Option1"
             >
               Option1
             </span>
@@ -385,6 +386,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
           >
             <span
               class="soui-select-ellipsis"
+              title="Option1"
             >
               Option1
             </span>
@@ -495,6 +497,7 @@ exports[`Input[Base] should render correctly about group 1`] = `
           >
             <span
               class="soui-select-ellipsis"
+              title="Option1"
             >
               Option1
             </span>
