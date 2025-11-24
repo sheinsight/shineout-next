@@ -1,3 +1,9 @@
+## 3.9.0-beta.32
+2025-11-24
+
+### 💎 Enhancement
+-  框类选择组件的结果增加原生title属性的显示 ([#1479](https://github.com/sheinsight/shineout-next/pull/1479))
+
 ## 3.9.0-beta.29
 2025-11-18
 
