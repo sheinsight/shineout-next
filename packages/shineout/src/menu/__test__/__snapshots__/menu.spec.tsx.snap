@@ -77,6 +77,7 @@ exports[`Menu[Base] should render correctly  1`] = `
           <ul
             class="soui-menu-children"
             dir="ltr"
+            style="display: block; height: 0px; overflow: hidden;"
           >
             <li
               class="soui-menu-item"
@@ -169,6 +170,7 @@ exports[`Menu[Base] should render correctly  1`] = `
           <ul
             class="soui-menu-children soui-menu-children-has-expand"
             dir="ltr"
+            style="display: block; height: 0px; overflow: hidden;"
           >
             <li
               class="soui-menu-item"
@@ -239,6 +241,7 @@ exports[`Menu[Base] should render correctly  1`] = `
               <ul
                 class="soui-menu-children"
                 dir="ltr"
+                style="display: block; height: 0px; overflow: hidden;"
               >
                 <li
                   class="soui-menu-item"
