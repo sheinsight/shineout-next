@@ -110,6 +110,14 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @default 24
    */
   inlineIndent?: number;
+
+  /**
+   * @en whether to animate when inline menu expand or collapse
+   * @cn inline 模式下菜单展开或收起时是否启用动画
+   * @default false
+   * @version 3.9.1
+   */
+  inlineAnimate?: boolean;
   /**
    * @en menu item expandable if has children
    * @cn 如果 children 有设置则菜单项可展开
@@ -212,6 +220,7 @@ export interface MenuItemProps
       | 'caretColor'
       | 'jssStyle'
       | 'inlineIndent'
+      | 'inlineAnimate'
       | 'theme'
       | 'renderIcon'
     > {

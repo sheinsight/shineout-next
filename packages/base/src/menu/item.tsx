@@ -1,6 +1,6 @@
-import React, { cloneElement, useState } from 'react';
+import React, { cloneElement, useState, useRef } from 'react';
 import classNames from 'classnames';
-import { useMenuItem, usePersistFn, util } from '@sheinx/hooks';
+import { useMenuItem, usePersistFn, util, useCollapseAnimation } from '@sheinx/hooks';
 import Icons from '../icons';
 import { useConfig } from '../config';
 import Popover from '../popover';
@@ -18,7 +18,8 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const isSubHorizontal = mode === 'horizontal' && props.level > 0;
   const isRootHorizontal = mode === 'horizontal' && props.level === 0;
   const [popOpen, setOpen] = useState(false);
-  const liRef = React.useRef<HTMLLIElement>(null);
+  const liRef = useRef<HTMLLIElement>(null);
+  const childrenRef = useRef<HTMLUListElement>(null);
 
   const hasExpandAbleChildren = children.some(
     (item: any) => item && item.children && (props.looseChildren || item.children.length),
@@ -59,6 +60,12 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     scrollRef: props.scrollRef,
   });
 
+  // 为 inline 模式添加折叠动画（仅当 inlineAnimate 为 true 时启用）
+  useCollapseAnimation(childrenRef, {
+    isOpen,
+    disabled: !props.inlineAnimate || shoudPop || !children.length,
+  });
+
   const renderChildren = () => {
     let items = children;
     let isTitle = false;
@@ -73,6 +80,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
 
     const content = (close?: () => void) => (
       <ul
+        ref={!shoudPop && props.inlineAnimate ? childrenRef : undefined}
         className={classNames(
           shoudPop && classes?.childrenShow,
           classes?.children,
@@ -141,6 +149,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       );
     }
 
+    // inline 模式
     return content();
   };
 
