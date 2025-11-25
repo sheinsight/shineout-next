@@ -3,7 +3,7 @@ import { BaseFormControlProps, FormItemRule, ObjectType } from '@sheinx/hooks';
 
 export interface FieldControlProps<T> {
   value?: T;
-  onChange?: (value: T, ...rest: any) => void;
+  onChange: (value: T, ...rest: any) => void;
   status?: 'error';
   disabled?: boolean;
   error?: { message?: string } | string;
