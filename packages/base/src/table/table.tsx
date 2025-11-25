@@ -89,12 +89,14 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     if (!virtual) return;
     if (!tableRef.current) return;
     const maxHeight = tableRef.current.style.maxHeight;
-    if(!maxHeight) return;
+    if (!maxHeight) return;
 
     const isScrollAble = util.isScrollAble(tableRef.current);
     setScrollAble(isScrollAble);
   }, [virtual]);
 
+
+  // TODO: 没用的tbodyHeight，有空移除了
   // 虚拟列表高度另外计算
   const { height: tbodyHeight } = useResize({ targetRef: virtual ? emptyRef : tbodyRef });
 
@@ -113,8 +115,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     beforeChange: undefined,
   });
 
-  const { columns, expandHideCol } = useTableColumns({
+  const { columns, expandHideCol, columnInfo } = useTableColumns({
     columns: props.columns,
+    virtualColumn: props.virtualColumn,
+    scrollRef: scrollRef,
     showCheckbox: typeof props.onRowSelect === 'function',
   });
 
@@ -145,6 +149,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   });
 
   const { filteredData, filterInfo, onFilterChange } = useTableFilter<Item>({
+    keygen: props.keygen,
     data: props.data,
     columns: props.columns,
   });
@@ -228,7 +233,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       context.theadHeight = theadHeight;
       context.tfootHeight = tfootHeight;
     }
-  })
+  });
 
   useEffect(() => {
     handleTheadAndTfootHeight();
@@ -251,16 +256,18 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     return () => {
       cancelFunc1?.();
       cancelFunc2?.();
-    }
+    };
   }, [theadRef.current, tfootRef.current]);
 
   const virtualInfo = useTableVirtual({
+    virtual: props.virtual,
     disabled: !virtual,
     data: treeData,
     columns,
     colgroup,
     rowsInView: props.rowsInView || 20,
     rowHeight: props.rowHeight || 40,
+    strictRowHeight: props.strictRowHeight,
     scrollRef: scrollRef,
     innerRef: tbodyRef,
     scrollLeft: props.scrollLeft,
@@ -276,7 +283,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     const theads = tableRef?.current?.querySelectorAll(`[data-soui-role=${theadIdRef.current}]`);
     theads?.forEach((item: Element) => {
       item.scrollLeft = left;
-    })
+    });
   });
 
   // 简单表格的滚动事件
@@ -284,6 +291,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     const target = e.currentTarget;
     if (!target) return;
     layoutFunc.checkFloat();
+    if (props.virtualColumn) columnInfo.handleScroll({ scrollLeft: target.scrollLeft });
     if (headMirrorScrollRef.current) {
       headMirrorScrollRef.current.scrollLeft = target.scrollLeft;
     }
@@ -313,6 +321,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       width: number;
     }) => {
       virtualInfo.handleScroll(info);
+      if (props.virtualColumn) columnInfo.handleScroll(info);
       layoutFunc.checkFloat();
       if (headMirrorScrollRef.current) {
         headMirrorScrollRef.current.scrollLeft = info.scrollLeft;
@@ -326,7 +335,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
       syncHeaderScroll(info.scrollLeft);
 
-      if(props.virtual !== "lazy") return;
+      if (props.virtual !== 'lazy') return;
       if (context.scrollingTimer) {
         clearTimeout(context.scrollingTimer);
       }
@@ -340,12 +349,17 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
   const renderEmpty = () => {
     if (!props.data?.length || (filteredData !== undefined && filteredData.length === 0)) {
-      const empty = props.empty !== undefined ? <span>{props.empty}</span> : <Empty jssStyle={props.jssStyle} />
+      const empty =
+        props.empty !== undefined ? (
+          <span>{props.empty}</span>
+        ) : (
+          <Empty jssStyle={props.jssStyle} />
+        );
       return (
         <div
           className={classNames(
             tableClasses?.emptyWrapper,
-            isScrollX && tableClasses?.emptyNoBorder,
+            isScrollX && browserScrollbarWidth > 0 && tableClasses?.emptyNoBorder,
           )}
           ref={(el) => {
             context.emptyHeight = el?.clientHeight || 0;
@@ -360,7 +374,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
   const $empty = renderEmpty();
 
-  const tableStyle = { width, borderSpacing: 0 }
+  const tableStyle = { width, borderSpacing: 0 };
   const renderTable = () => {
     const Group = (
       <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
@@ -397,6 +411,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       resizeFlag: resizeFlag,
       treeCheckAll: props.treeCheckAll,
       onCellClick: props.onCellClick,
+      strictRowHeight: props.strictRowHeight,
     };
 
     const headCommonProps = {
@@ -421,6 +436,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       radio: props.radio,
       treeColumnsName,
       treeCheckAll: props.treeCheckAll,
+      virtualColumn: props.virtualColumn,
     };
 
     const showFoot = props.summary?.length;
@@ -442,14 +458,13 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       css: sticky?.css,
       parent: tableRef?.current,
       onChange: (isSticky: boolean) => {
-        if(isSticky){
+        if (isSticky) {
           syncHeaderScroll(scrollRef.current?.scrollLeft || 0);
         }
-      }
+      },
     };
 
     const isRenderVirtualTable = virtual || props.sticky || !props.data?.length;
-
 
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
@@ -503,7 +518,8 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
       const scrollRefWidth = scrollRef?.current?.clientWidth || 0;
       const scrollRefScrollWidth = scrollRef?.current?.scrollWidth || 0;
-      const hasVerticalScroll = (scrollRef?.current?.scrollHeight || 0) > (scrollRef?.current?.clientHeight || 0);
+      const hasVerticalScroll =
+        (scrollRef?.current?.scrollHeight || 0) > (scrollRef?.current?.clientHeight || 0);
       const mirrorScrollRefWidth = scrollRefWidth + (hasVerticalScroll ? 0 : scrollBarWidth);
       const showScroll = scrollRefScrollWidth > scrollRefWidth;
       // 开启了双滚，但是没有滚动条，不显示
@@ -549,15 +565,12 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     );
 
     if (isRenderVirtualTable) {
-
-      const showStickyHeader = !props.hideHeader && props.sticky
+      const showStickyHeader = !props.hideHeader && props.sticky;
       return (
         <>
           {renderHeadMirrorScroller()}
 
-          {showStickyHeader && (
-            <StickyWrapper {...stickyProps}>{$headTable}</StickyWrapper>
-          )}
+          {showStickyHeader && <StickyWrapper {...stickyProps}>{$headTable}</StickyWrapper>}
 
           <Scroll
             style={{ display: 'flex', minWidth: 0, minHeight: 0, flex: 1 }}
@@ -577,7 +590,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
             {/* tbody of virtual */}
             {!!props.data?.length && (
-              <table style={{ ...tableStyle, transform: virtualInfo.translateStyle }} ref={tbodyRef}>
+              <table
+                style={{ ...tableStyle, transform: virtualInfo.translateStyle }}
+                ref={tbodyRef}
+              >
                 {Group}
                 <Tbody
                   {...bodyCommonProps}
@@ -614,7 +630,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       <>
         {renderHeadMirrorScroller()}
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-          <table style={{...tableStyle, }} ref={tbodyRef}>
+          <table style={{ ...tableStyle }} ref={tbodyRef}>
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (
@@ -673,10 +689,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   });
 
   useEffect(() => {
-    if(!props.sticky || !scrollRef.current || !isScrollX) return;
+    if (!props.sticky || !scrollRef.current || !isScrollX) return;
     // sticky场景下，从空数据到有数据切换时，同步一次滚动条的位置
     syncHeaderScroll(scrollRef.current?.scrollLeft || 0);
-  }, [isScrollX, props.sticky, $empty])
+  }, [isScrollX, props.sticky, $empty]);
 
   useEffect(() => {
     // 绑定 wheel 事件

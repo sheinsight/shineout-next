@@ -115,6 +115,7 @@ const Picker = (props: PickerProps) => {
           key={position}
           {...commonProps}
           {...timeProps}
+          renderDate={props.renderDate}
           onDoubleClick={(item, type) => {
             // 双击同时设置开始和结束日期
             if (props.range && props.type === 'datetime') {

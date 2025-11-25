@@ -1,3 +1,19 @@
+## 3.9.0-beta.34
+2025-11-25
+
+### 🐞 BugFix
+
+- 修复 `Select` 的虚拟列表经历搜索之后，可滚动高度与实际内容不符的问题  ([#1482](https://github.com/sheinsight/shineout-next/pull/1482))
+
+
+## 3.9.0-beta.21
+2025-11-05
+
+### 🆕 Feature
+
+- `Select` 新增 `virtual`: 开启树形数据的虚拟列表 ([#1454](https://github.com/sheinsight/shineout-next/pull/1454))
+
+
 ## 3.8.10-beta.9
 2025-11-19
 

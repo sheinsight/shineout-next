@@ -18,6 +18,7 @@ export interface TheadProps
       | 'treeCheckAll'
       | 'sortDirections'
       | 'cellSortable'
+      | 'virtualColumn'
     >,
     Pick<ReturnType<typeof useTableSort<any>>, 'sortInfo' | 'onSorterChange'>,
     Pick<ReturnType<typeof useTableFilter<any>>, 'filterInfo' | 'onFilterChange'>,

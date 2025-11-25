@@ -107,9 +107,22 @@ const Day = (props: DayProps) => {
               }
         }
       >
-        <div className={styles?.pickerCellContent}>
-          <span>{func.getDayStr(item)}</span>
-        </div>
+        {props.renderDate ? (
+          props.renderDate({
+            date: item,
+            isDisabled,
+            isInRange,
+            isToday,
+            isCurrentMonth,
+            isActive,
+            position: props.position,
+            className: styles?.pickerCellContent,
+          })
+        ) : (
+          <div className={styles?.pickerCellContent}>
+            <span>{func.getDayStr(item)}</span>
+          </div>
+        )}
       </td>
     );
   };
@@ -137,8 +150,7 @@ const Day = (props: DayProps) => {
   };
 
   const renderFooter = () => {
-    const showLeft =
-      (props.type === 'datetime' || props.type === 'date' || props.type === 'week');
+    const showLeft = props.type === 'datetime' || props.type === 'date' || props.type === 'week';
 
     const timeStr = func.getTimeStr();
     if (!showLeft && !props.showSelNow) return null;
@@ -153,7 +165,7 @@ const Day = (props: DayProps) => {
 
     const showNeedConfirm = props.needConfirm && !props.range;
 
-    if(props.type !== 'datetime' && props.type !== 'date' && !showNeedConfirm) return null;
+    if (props.type !== 'datetime' && props.type !== 'date' && !showNeedConfirm) return null;
     return (
       <div
         className={styles?.pickerFooter}
@@ -165,10 +177,7 @@ const Day = (props: DayProps) => {
       >
         {props.type === 'datetime' && (
           <div
-            className={classNames(
-              styles?.pickerFooterTime,
-              styles?.datetime,
-            )}
+            className={classNames(styles?.pickerFooterTime, styles?.datetime)}
             style={{ paddingRight: showNeedConfirm ? 0 : undefined }}
           >
             {

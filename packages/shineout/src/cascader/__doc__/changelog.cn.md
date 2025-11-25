@@ -1,3 +1,15 @@
+## 3.9.0-beta.3
+2025-10-14
+
+### 🆕 Feature
+- `Cascader` 新增 `checkOnFiltered` 属性，开启后勾选操作仅针对筛选后的数据生效 ([#1411](https://github.com/sheinsight/shineout-next/pull/1411))
+
+
+## 3.9.0-beta.1
+2025-10-13
+### 💎 Enhancement
+- 增强 `Cascader` 的 `renderOptionList` 属性，支持其在搜索结果面板也生效 ([#1395](https://github.com/sheinsight/shineout-next/pull/1395))
+
 ## 3.8.10-beta.3
 2025-11-13
 
@@ -9,6 +21,7 @@
 
 ### 🐞 BugFix
 - 修复 `Cascader` 在大尺寸模式下的结果样式垂直不居中的问题 （Regression: since v3.7.2）([#1409](https://github.com/sheinsight/shineout-next/pull/1409))
+
 
 ## 3.8.2-beta.3
 2025-09-09

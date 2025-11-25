@@ -90,6 +90,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     virtual,
     filterSameChange,
     beforeChange,
+    checkOnFiltered,
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
@@ -141,7 +142,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   }, [path]);
 
   const { datum, value, onChange } = useCascader({
-    data,
+    data: checkOnFiltered ? filterData || [] : data,
     control: 'value' in props,
     keygen,
     unmatch,
@@ -636,10 +637,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderEmpty = () => {
+    const $empty = <div className={styles?.empty}>{emptyText || getLocale(locale, 'noData')}</div>;
     if (renderOptionList) {
-      return renderOptionList(null as any, { loading: !!loading });
+      return renderOptionList($empty as any, { loading: !!loading });
     }
-    return <div className={styles?.empty}>{emptyText || getLocale(locale, 'noData')}</div>;
+    return $empty;
   };
 
   const renderNormalList = () => {
@@ -659,7 +661,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderFilterList = () => {
     const listStyle = data && data.length === 0 ? { maxHeight: height } : { maxHeight: height };
-    return (
+    const $filterList = (
       <div className={classNames(styles.listContent, styles.filterList)} style={listStyle}>
         <CascaderFilterList
           jssStyle={jssStyle}
@@ -683,6 +685,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         ></CascaderFilterList>
       </div>
     );
+    if (renderOptionList) {
+      return renderOptionList($filterList, { loading: !!loading });
+    }
+    return $filterList;
   };
 
   const renderLoading = () => {

@@ -10,6 +10,12 @@ export interface SpinTokens {
   spinTipFontColor: string;
   /**
    * @type {string}
+   * @token Font-14
+   * @description 加载动画提示文案字体字号
+   */
+  spinTipFontSize: string;
+  /**
+   * @type {string}
    * @token Spacing-4
    * @description 加载动画垂直模式下与提示文字的外边距
    */

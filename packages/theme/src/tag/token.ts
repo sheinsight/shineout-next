@@ -19,6 +19,7 @@ const tagTokenDescription = {
   neon: '荧光色',
   lemon: '柠檬色',
   tangerine: '橘红色',
+  orange: '橙色',
   fill: '填充风格',
   input: '输入框',
 };
@@ -30,7 +31,10 @@ const tagTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 tagRules 强关联，非 tagRules 规则内的 token 需手动增加或删减。
  */
-const tagTokenValue = {
+const tagTokenValue = {};
+
+const tagTokenExtraValue = {
+
   info: {
     font: { color: 'Brand-6' },
     background: { color: 'Brand-1' },
@@ -80,6 +84,7 @@ const tagTokenValue = {
     },
   },
   default: {
+    line: { height: 'Line-height-dynamic' },
     font: { color: 'Neutral-text-5' },
     background: { color: 'Neutral-fill-2' },
     border: { color: 'Neutral-fill-2' },
@@ -607,6 +612,54 @@ const tagTokenValue = {
       hover: { background: { color: 'Lemon-2' }, font: { color: '' } },
     },
   },
+  orange: {
+    font: { color: 'Orange-6' },
+    background: { color: 'Orange-1' },
+    border: { color: 'Orange-1' },
+    disabled: {
+      font: { color: 'Orange-3' },
+      background: { color: 'Orange-1' },
+      border: { color: 'Orange-1' },
+    },
+    outline: {
+      font: { color: 'Orange-6' },
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Orange-6' },
+      disabled: {
+        font: { color: 'Orange-3' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Orange-3' },
+      },
+      icon: {
+        background: { color: '' },
+        font: { color: '' },
+        disabled: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: '' }, font: { color: '' } },
+      },
+    },
+    fill: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Orange-6' },
+      border: { color: 'Orange-6' },
+      disabled: {
+        font: { color: 'Neutral-text-1' },
+        background: { color: 'Orange-3' },
+        border: { color: 'Orange-3' },
+      },
+      icon: {
+        background: { color: '' },
+        font: { color: '' },
+        disabled: { background: { color: '' }, font: { color: '' } },
+        hover: { background: { color: 'Orange-5' }, font: { color: '' } },
+      },
+    },
+    icon: {
+      background: { color: '' },
+      font: { color: 'Orange-6' },
+      disabled: { background: { color: '' }, font: { color: 'Orange-3' } },
+      hover: { background: { color: 'Orange-2' }, font: { color: '' } },
+    },
+  },
   tangerine: {
     font: { color: 'Tangerine-6' },
     background: { color: 'Tangerine-1' },
@@ -665,6 +718,7 @@ const tagTokenValue = {
     padding: { x: 'Spacing-4', y: '' },
     height: 'Size-10',
     input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-12' } },
+    line: { height: 'Line-height-dynamic' },
   },
   large: {
     font: { size: 'Font-14', weight: 'Weight-regular' },
@@ -672,11 +726,10 @@ const tagTokenValue = {
     padding: { x: 'Spacing-12', y: 'Spacing-2' },
     height: 'Size-14',
     input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-14' } },
+    line: { height: 'Line-height-dynamic' },
   },
   input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-12' } },
 };
-
-const tagTokenExtraValue = {};
 
 module.exports = {
   tagTokenValue,

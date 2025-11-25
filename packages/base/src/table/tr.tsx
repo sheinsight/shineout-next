@@ -27,6 +27,7 @@ interface TrProps
     | 'isEmptyTree'
     | 'setRowHeight'
     | 'striped'
+    | 'strictRowHeight'
     | 'radio'
     | 'onRowClick'
     | 'rowClickAttr'
@@ -109,6 +110,7 @@ const Tr = (props: TrProps) => {
   });
 
   const setVirtualRowHeight = usePersistFn(() => {
+    if (props.strictRowHeight) return;
     if (props.setRowHeight && trRef.current) {
       const expandHeight = expandRef.current ? expandRef.current.getBoundingClientRect().height : 0;
       props.setRowHeight(
@@ -127,7 +129,7 @@ const Tr = (props: TrProps) => {
 
   useEffect(() => {
     // 祖先元素不可见时（display: none）
-    if (!trRef.current || !trRef.current.offsetParent) return;
+    if (props.strictRowHeight || !trRef.current || !trRef.current.offsetParent) return;
     const cancelObserver = addResizeObserver(trRef.current, setVirtualRowHeight, {
       direction: 'y',
     });
@@ -475,6 +477,7 @@ const Tr = (props: TrProps) => {
           props.isSelect && tableClasses?.rowChecked,
           props.hover && tableClasses?.rowHover,
         )}
+        style={{ height: props.strictRowHeight ? props.strictRowHeight : undefined }}
         {...props.rowEvents}
         onClick={handleRowClick}
       >

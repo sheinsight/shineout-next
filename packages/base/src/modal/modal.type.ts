@@ -81,6 +81,20 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
   bodyStyle?: React.CSSProperties;
 
   /**
+   * @en Extend pop-up header style
+   * @cn 扩展弹出层 header 的样式
+   * @version 3.9.0
+   */
+  headerStyle?: React.CSSProperties;
+
+  /**
+   * @en Extend pop-up footer style
+   * @cn 扩展弹出层 footer 的样式
+   * @version 3.9.0
+   */
+  footerStyle?: React.CSSProperties;
+
+  /**
    * @en The content at the bottom
    * @cn 底部内容
    */
@@ -234,4 +248,12 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn 弹出层内容
    */
   children?: React.ReactNode;
+
+  /**
+   * @en In multi-layer nesting, the parent automatically offsets to avoid being blocked (only left/right positions take effect)
+   * @cn 多层嵌套时，父级自动偏移避免被遮挡（仅 left/right 位置生效）；设置cascade为true时偏移量为180px，也可设置cascade.width自定义偏移量
+   * @default false
+   * @version 3.9.0
+   */
+  cascade?: boolean | { width?: number };
 }

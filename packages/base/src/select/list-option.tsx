@@ -53,7 +53,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
 
   const setVirtualRowHeight = usePersistFn(() => {
     if (!props.setRowHeight || !optionRef.current) return;
-    const optionHeight = optionRef.current.getBoundingClientRect().height;
+    const optionHeight = optionRef.current?.offsetHeight;
     if (optionHeight !== 0) {
       props.setRowHeight(index, optionHeight);
     }

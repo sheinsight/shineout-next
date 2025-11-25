@@ -1,3 +1,11 @@
+## 3.9.0-beta.7
+2025-10-20
+
+### 🆕 Feature
+
+- `Drawer` 新增 `cascade` 属性，多层嵌套时父级自动偏移避免被遮挡（仅 left/right 位置生效） ([#1419](https://github.com/sheinsight/shineout-next/pull/1419))
+
+
 ## 3.8.1-beta.1
 2025-09-01
 

@@ -11,6 +11,7 @@ export interface TbodyProps
     | 'data'
     | 'jssStyle'
     | 'rowClassName'
+    | 'strictRowHeight'
     | 'expandKeys'
     | 'keygen'
     | 'treeEmptyExpand'

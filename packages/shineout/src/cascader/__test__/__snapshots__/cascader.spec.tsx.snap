@@ -70,6 +70,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
         >
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="jiangning"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -81,6 +82,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="yuhuatai"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -92,6 +94,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="nanjing"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -103,6 +106,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="jiangsu"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -114,6 +118,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="feidong"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -125,6 +130,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="hefei"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -136,6 +142,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="anhui"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -308,6 +315,7 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright soui-tag-disabled"
             data-soui-type="dark"
+            title="jiangsu"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -320,6 +328,7 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright soui-tag-disabled"
             data-soui-type="dark"
+            title="nanjing"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1269,6 +1278,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
         >
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="jiangning"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1280,6 +1290,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="yuhuatai"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1291,6 +1302,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="nanjing"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1302,6 +1314,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="jiangsu"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1313,6 +1326,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="feidong"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1324,6 +1338,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="hefei"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1335,6 +1350,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
           </div>
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="anhui"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -1516,6 +1532,7 @@ exports[`Cascader[Base] should render correctly about unmatch 1`] = `
         >
           <div
             class="soui-cascader-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="Unmatched: shanghai"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"

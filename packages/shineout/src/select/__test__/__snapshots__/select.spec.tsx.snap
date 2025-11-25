@@ -611,6 +611,7 @@ exports[`Select[Base] should render correctly about custom unmatch 1`] = `
         >
           <span
             class="soui-select-ellipsis"
+            title="I am redddd color"
           >
             I am redddd color
           </span>
@@ -767,6 +768,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
           <div
             class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright soui-tag-disabled"
             data-soui-type="dark"
+            title="red"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -798,6 +800,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
           <div
             class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright soui-tag-disabled"
             data-soui-type="dark"
+            title="orange"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -877,6 +880,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         >
           <div
             class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright"
+            title="red"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"
@@ -907,6 +911,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
           </div>
           <div
             class="soui-select-tag soui-tag soui-tag-tag soui-tag-default soui-tag-bright soui-tag-disabled"
+            title="orange"
           >
             <div
               class="soui-tag-wrapper soui-tag-inline"

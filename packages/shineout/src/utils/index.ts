@@ -18,11 +18,11 @@ import * as position from './dom/popover';
 import ready from './dom/ready';
 import isJson from './validate/isJson';
 import * as type from './type';
-// import validate from './validate';
+import { util } from '@sheinx/hooks';
 
 import accept from './accept';
 
-const validate = () => {};
+const validate = util.validate;
 const cssAccessors = {};
 const cssInject = {};
 

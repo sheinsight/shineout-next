@@ -702,6 +702,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         closePop={closePop}
         renderItem={renderItem}
         expandIcons={tiledExpandIcons}
+        virtual={props.virtual}
       ></TreeList>
     );
   };

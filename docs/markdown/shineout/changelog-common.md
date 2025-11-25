@@ -1,10 +1,55 @@
+## 3.9.0-beta.33
+2025-11-25
+
+### 💎 Enhancement
+-  新增 utils.validate 方法的导出 ([#1479](https://github.com/sheinsight/shineout-next/pull/1479))
+
+
+## 3.9.0-beta.32
+2025-11-24
+
+### 💎 Enhancement
+-  框类选择组件的结果增加原生title属性的显示 ([#1479](https://github.com/sheinsight/shineout-next/pull/1479))
+
+## 3.9.0-beta.29
+2025-11-18
+
+### 💎 Enhancement
+- 优化组件动画过程中的交互响应，避免动画期间触发不必要的事件和重渲染([#1469](https://github.com/sheinsight/shineout-next/pull/1469))
+
+
+## 3.9.0-beta.27
+2025-11-17
+
+### 💅 Style
+- `Switch`、`Spin` 组件增强样式 token 配置([#1465](https://github.com/sheinsight/shineout-next/pull/1465))
+
+
+## 3.9.0-beta.18
+2025-11-05
+
+### 🚀 Performance
+- 升级 `reactive` 包，修复潜在的Symbol变量覆盖问题 ([#1450](https://github.com/sheinsight/shineout-next/pull/1450))
+
+
+## 3.9.0-beta.17
+2025-11-05
+
+### 💅 Style
+- style包新增 normalizeStyle、normalizeStyleId、jssInsertionPointId的导出 ([#1448](https://github.com/sheinsight/shineout-next/pull/1448))
+
+## 3.9.0-beta.9
+2025-10-24
+
+### 💎 Enhancement
+- 增强 `setToken` 功能,支持设置 CSS 自定义属性(CSS Variables)格式的变量(如 `--variable-name`) ([#1421](https://github.com/sheinsight/shineout-next/pull/1421))
+
 ## 3.8.8-beta.1
 2025-10-27
 
 ### 💎 Enhancement
 
 - 支持自定义 data 属性透传至对应 DOM 节点 ([#1429](https://github.com/sheinsight/shineout-next/pull/1429))
-
 
 ## 3.8.0-beta.16
 2025-07-08

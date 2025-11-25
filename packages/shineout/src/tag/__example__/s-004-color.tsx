@@ -13,7 +13,7 @@ type TagColorType = Exclude<TYPE.Tag.Props['color'], undefined>
 type TagModeType = Exclude<TYPE.Tag.Props['mode'], undefined>
 
 export default () => {
-  const TagColor: TagColorType[] = ['tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown'];
+  const TagColor: TagColorType[] = ['tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown', 'orange'];
   const TagMode: TagModeType[] = ['bright', 'fill', 'outline', 'brightOutline'];
 
   const capitalizeFirstLetter = (str: string) => {

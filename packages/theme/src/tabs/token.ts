@@ -22,6 +22,8 @@ const tabsTokenDescription = {
   vertical: '垂直模式',
   horizontal: '水平模式',
   checked: '选中状态',
+  top: '上',
+  bottom: '下',
 };
 
 /**
@@ -56,7 +58,7 @@ const tabsTokenExtraValue = {
   },
   nearly: { margin: 'Spacing-4' },
   line: {
-    padding: { x: 'Spacing-8', y: 'Spacing-6' },
+    padding: { x: 'Spacing-8', top: 'Spacing-6', bottom: 'Spacing-6' },
     hr: { background: { color: 'Neutral-border-1' } },
     after: { background: { color: 'Brand-6' } },
     inner: { padding: { x: 'Spacing-8', y: 'Spacing-4' } },
@@ -125,6 +127,7 @@ const tabsTokenExtraValue = {
   },
   extra: { fill: { hover: { background: { color: 'Neutral-fill-3' } } } },
   arrow: { font: { color: 'Neutral-text-4' } },
+  badge: { margin: 'Spacing-0' },
 };
 
 module.exports = {

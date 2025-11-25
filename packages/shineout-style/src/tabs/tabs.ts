@@ -301,7 +301,6 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
   },
   headerWrapper: {
     display: 'flex',
-    overflow: 'hidden',
     position: 'relative',
     '&[data-soui-position^="top-"],&[data-soui-position^="bottom-"]': {
       alignItems: 'center',
@@ -347,10 +346,12 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       '& $tab': {
         display: 'block',
       },
-      '& $tab + $tab': {
+      '&& $tab + $tab': {
         marginTop: Token.tabsNearlyMargin,
       },
       '& $next,& $prev': {
+        // 考虑垂直方向可滚动功能时一并修复zIndex
+        // zIndex: 1,
         padding: `${Token.tabsActionVerticalPaddingY} ${Token.tabsActionVerticalPaddingX}`,
         '&:after': {
           display: 'none',
@@ -493,7 +494,9 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     '$headerWrapper[data-soui-shape="card"] &': {
+      marginTop: `calc(-1 * ${Token.tabsBadgeMargin})`,
       '& $tab': {
+        marginTop: Token.tabsBadgeMargin,
         position: 'relative',
         border: `1px solid ${Token.tabsCardBorderColor}`,
         padding: `${Token.tabsCardPaddingY} ${Token.tabsCardPaddingX}`,
@@ -525,7 +528,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     '$headerWrapper[data-soui-shape="line"] &': {
       '& $tab': {
         position: 'relative',
-        padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
+        padding: `${Token.tabsLinePaddingTop} ${Token.tabsLinePaddingX} ${Token.tabsLinePaddingBottom}`,
         color: Token.tabsLineFontColor,
         fontSize: Token.tabsLineFontSize,
         fontWeight: Token.tabsLineFontWeight,
@@ -579,7 +582,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     },
     '$headerWrapper[data-soui-shape="dash"] &': {
       '& $tab': {
-        padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
+        padding: `${Token.tabsLinePaddingTop} ${Token.tabsLinePaddingX} ${Token.tabsLinePaddingBottom}`,
         color: Token.tabsLineFontColor,
         fontSize: Token.tabsLineFontSize,
         fontWeight: Token.tabsLineFontWeight,

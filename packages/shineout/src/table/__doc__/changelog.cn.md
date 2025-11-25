@@ -1,3 +1,52 @@
+## 3.9.0-beta.31
+2025-11-24
+
+### 🐞 BugFix
+- 修复 `Table` 的右固定列存在表头分组时，表头布局错乱的问题 ([#1478](https://github.com/sheinsight/shineout-next/pull/1478))
+
+
+## 3.9.0-beta.26
+2025-11-14
+
+### 🐞 BugFix
+- 修复 `Table` 的祖先元素从display:none切换回来时，之前的滚动条位置没有保持住的问题 ([#1455](https://github.com/sheinsight/shineout-next/pull/1455))([#1463](https://github.com/sheinsight/shineout-next/pull/1463))
+
+## 3.9.0-beta.20
+2025-11-06
+
+### 💎 Enhancement
+- 增强 `Table` 的筛选功能：支持树形数据 ([#1452](https://github.com/sheinsight/shineout-next/pull/1452))
+
+## 3.9.0-beta.16
+2025-10-31
+
+### 💎 Enhancement
+- 优化 `Table` 空数据场景下的底部边框显示逻辑，在浏览器滚动条宽度为 0 时（如 macOS overlay scrollbar）显示底部边框 ([#1444](https://github.com/sheinsight/shineout-next/pull/1444))
+
+
+## 3.9.0-beta.15
+2025-10-28
+
+### 🚀 Performance
+- 优化 `Table` 的行高亮过渡动画效果，提升勾选交互性能（INP）([#1431](https://github.com/sheinsight/shineout-next/pull/1431))
+
+
+## 3.9.0-beta.9
+2025-10-24
+
+### 🆕 Feature
+
+- `Table` 新增 `virtualColumn` 属性，设置后开启虚拟列能力 ([#1421](https://github.com/sheinsight/shineout-next/pull/1421))
+
+
+## 3.9.0-beta.5
+2025-10-16
+
+### 🆕 Feature
+
+- `Table` 新增 `strictRowHeight` 属性，强制统一行高，可提升虚拟滚动性能 ([#1415](https://github.com/sheinsight/shineout-next/pull/1415))
+
+
 ## 3.8.10-beta.6
 2025-11-18
 
@@ -48,8 +97,6 @@
 
 ## 3.8.4-beta.2
 2025-09-23
-
-
 
 ### 💎 Enhancement
 - 优化 `Table` 在设置了 `virtual` 且样式中有 maxHeight 但无 height 时的渲染性能，避免表格内容变化引起的不必要重新渲染 ([#1379](https://github.com/sheinsight/shineout-next/pull/1379))

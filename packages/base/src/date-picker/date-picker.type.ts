@@ -11,6 +11,16 @@ import type { DatePickerValueType, DateTimeType } from '@sheinx/hooks';
 
 export type { DateTimeType, DatePickerValueType, DatePickerModeType } from '@sheinx/hooks';
 export type AreaType = 'year' | 'month' | 'week' | 'day' | 'time' | 'quick' | 'quarter';
+export type DateRenderParams = {
+  date: Date;
+  isDisabled: boolean;
+  isInRange: false | "start-end" | "start" | "end" | "in";
+  isToday: boolean;
+  isActive: boolean;
+  isCurrentMonth: boolean;
+  position?: 'start' | 'end';
+  className?: string;
+};
 
 export interface DatePickerClasses {
   rootClass: string;
@@ -363,6 +373,23 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @version 3.4.0
    */
   needConfirm?: boolean;
+
+  /**
+   * @en Custom render date cell
+   * @cn 自定义日期单元格渲染。
+   * params 参数说明：
+   * - date: 当前日期对象;
+   * - isDisabled: 当前日期是否不可选;
+   * - isInRange: 当前日期在范围内的状态，false: 不在范围内; "start-end": 开始和结束是同一天; "start": 范围开始日期; "end": 范围结束日期; "in": 在范围内的日期(不包括开始和结束);
+   * - isToday: 当前日期是否为今天;
+   * - isActive: 当前日期是否被选中;
+   * - isCurrentMonth: 当前日期是否为当前月;
+   * - position: 当前日期在范围选择中的位置，可选值有 'start' | 'end';
+   * - className: 内部日期单元格的 className;
+   * @version 3.9.0
+   * @returns ReactNode
+   */
+  renderDate?: (params: DateRenderParams) => React.ReactNode;
 }
 export interface QuickSelectType {
   /**

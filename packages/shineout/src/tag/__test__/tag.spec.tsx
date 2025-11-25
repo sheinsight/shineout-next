@@ -28,7 +28,7 @@ import { useState } from 'react';
 
 const SO_PREFIX = 'tag';
 const originClasses = ['tag', 'inline', 'closeIcon', 'input'];
-const originItemClasses = ['small', 'bright', 'default', 'disabled', 'rounded', 'info', 'danger', 'warning', 'success', 'large', 'fill', 'outline', 'brightOutline', 'tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown',];
+const originItemClasses = ['small', 'bright', 'default', 'disabled', 'rounded', 'info', 'danger', 'warning', 'success', 'large', 'fill', 'outline', 'brightOutline', 'tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown', 'orange'];
 const {
   tag: tagClassName,
   inline: tagInlineClassName,
@@ -55,6 +55,7 @@ const {
   neon: tagNeonClassName,
   lemon: tagLemonClassName,
   brown: tagBrownClassName,
+  orange: tagOrangeClassName,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const TagColorArray = ['default', 'info', 'danger', 'warning', 'success'];
@@ -75,8 +76,9 @@ const TagColorMoreArray = [
   'neon',
   'lemon',
   'brown',
+  'orange'
 ];
-const TagColorMoreClasses = [tagTangerineClassName, tagMagentaClassName, tagPurpleClassName, tagIndigoClassName, tagCyanClassName, tagNeonClassName, tagLemonClassName, tagBrownClassName];
+const TagColorMoreClasses = [tagTangerineClassName, tagMagentaClassName, tagPurpleClassName, tagIndigoClassName, tagCyanClassName, tagNeonClassName, tagLemonClassName, tagBrownClassName, tagOrangeClassName];
 
 const closeAttributes = [
   {

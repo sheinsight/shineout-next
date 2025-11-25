@@ -1,3 +1,19 @@
+## 3.9.0-beta.24
+2025-11-11
+
+### 🆕 Feature
+
+- `Tag` 新增 orange 颜色类型 ([#1457](https://github.com/sheinsight/shineout-next/pull/1457))
+
+## 3.9.0-beta.11
+2025-10-24
+
+### 💎 Enhancement
+
+- 增加 `Tag` 的 lineHeight 样式变量，以支持主题编辑器设置 ([#1423](https://github.com/sheinsight/shineout-next/pull/1423))
+
+
+
 ## 3.6.3-beta.8
 2025-04-15
 

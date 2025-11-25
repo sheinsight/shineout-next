@@ -15,6 +15,7 @@ type TagType =
   | 'Cyan'
   | 'Neon'
   | 'Lemon'
+  | 'Orange'
   | 'Tangerine';
 
 type tagType =
@@ -30,6 +31,7 @@ type tagType =
   | 'cyan'
   | 'neon'
   | 'lemon'
+  | 'orange'
   | 'tangerine';
 
 const brightTag = (name: tagType, type: TagType) => ({
@@ -187,7 +189,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   wrapper: {
     flex: 1,
     minWidth: 0,
-    lineHeight: Token.lineHeightDynamic,
+    lineHeight: Token.tagDefaultLineHeight,
   },
   inline: {
     display: 'inline-block',
@@ -208,6 +210,12 @@ const TagStyle: JsStyles<keyof TagClasses> = {
         height: 14,
       },
     },
+    '& $wrapper': {
+      lineHeight: Token.tagLargeLineHeight,
+    },
+    '& $closeIcon': {
+      height: Token.tagLargeLineHeight,
+    },
   },
   small: {
     fontSize: Token.tagSmallFontSize,
@@ -216,10 +224,10 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     fontWeight: Token.tagSmallFontWeight,
     borderRadius: Token.tagSmallBorderRadius,
     '& $wrapper': {
-      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
+      lineHeight: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 6px))`,
     },
     '& $closeIcon': {
-      height: `calc(${Token.tagSmallFontSize} + 6px)`,
+      height: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 6px))`,
     },
     '& $closeIconWrapper': {
       width: `calc(${Token.tagSmallFontSize} + 6px)`,
@@ -244,7 +252,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     alignItems: 'center',
     display: 'inline-flex',
     cursor: 'pointer',
-    height: Token.lineHeightDynamic,
+    height: Token.tagDefaultLineHeight,
     maxHeight: '100%',
   },
 
@@ -297,6 +305,9 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   lemon: {
     ...brightTag('lemon', 'Lemon'),
   },
+  orange: {
+    ...brightTag('orange', 'Orange'),
+  },
   tangerine: {
     ...brightTag('tangerine', 'Tangerine'),
   },
@@ -315,6 +326,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     ...fillTag('neon', 'Neon'),
     ...fillTag('lemon', 'Lemon'),
     ...fillTag('tangerine', 'Tangerine'),
+    ...fillTag('orange', 'Orange'),
   },
   bright: {},
   outline: {
@@ -331,6 +343,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     ...outlineTag('neon', 'Neon'),
     ...outlineTag('lemon', 'Lemon'),
     ...outlineTag('tangerine', 'Tangerine'),
+    ...outlineTag('orange', 'Orange'),
   },
   brightOutline: {
     ...brightOutlineTag('default', 'Default'),
@@ -346,6 +359,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     ...brightOutlineTag('neon', 'Neon'),
     ...brightOutlineTag('lemon', 'Lemon'),
     ...brightOutlineTag('tangerine', 'Tangerine'),
+    ...brightOutlineTag('orange', 'Orange'),
   },
   rounded: {
     borderRadius: Token.buttonRoundBorderRadius,

@@ -1,3 +1,12 @@
+## 3.9.0-beta.12
+2025-10-27
+
+### 🆕 Feature
+
+- `Carousel` 新增 `defaultValue`、`value`、`onChange` 属性，支持受控/非受控模式以及索引变化回调 ([#1426](https://github.com/sheinsight/shineout-next/pull/1426))
+
+
+
 ## 3.7.0-beta.38
 2025-06-03
 

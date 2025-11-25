@@ -361,6 +361,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
             registerModeDisabled={func.registerModeDisabled}
             isDisabledDate={func.isDisabledDate}
             needConfirm={props.needConfirm}
+            renderDate={props.renderDate}
           >
             {props.children}
           </Picker>
