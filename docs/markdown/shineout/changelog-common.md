@@ -1,3 +1,10 @@
+## 3.9.0-beta.33
+2025-11-25
+
+### 💎 Enhancement
+-  新增 utils.validate 方法的导出 ([#1479](https://github.com/sheinsight/shineout-next/pull/1479))
+
+
 ## 3.9.0-beta.32
 2025-11-24
 
