@@ -108,6 +108,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     highlight,
     trigger = 'click',
     preventEnterSelect = false,
+    createOnBlur = true,
   } = props;
 
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
@@ -392,7 +393,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (multiple && !text) return;
     // 防止点击 option 后触发 blur 事件，先把要做的事情存起来，后面再看要不要执行
     if (createdData) {
-      if (!datum.check(createdData)) {
+      if (createOnBlur && !datum.check(createdData)) {
         datum.add(createdData as DataItem);
       }
       onClearCreatedData();

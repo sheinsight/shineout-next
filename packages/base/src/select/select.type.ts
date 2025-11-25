@@ -678,6 +678,14 @@ export interface SelectPropsBase<DataItem, Value>
    * @version 3.9.0
    */
   virtual?: boolean;
+
+  /**
+   * @en Whether to automatically create the option when input loses focus while onCreate is enabled. Only works when there is created data waiting to be added
+   * @cn 开启 onCreate 时，输入框失焦是否自动创建选项。仅在存在待添加的创建数据时生效
+   * @default true
+   * @version 3.9.1
+   */
+  createOnBlur?: boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>
