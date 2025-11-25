@@ -47,6 +47,7 @@ const Scroll = (props: ScrollProps) => {
   const { current: context } = useRef({
     isMouseDown: false,
     lastTableHeight: 0,
+    prevTableHeight: 0,
   });
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef, timer: 100 });
@@ -156,16 +157,16 @@ const Scroll = (props: ScrollProps) => {
     const isVisible = props.tableRef.current.offsetParent !== null;
     const wasHidden = props.tableRef.current.getAttribute('data-was-hidden') === 'true';
 
-    const h = context.lastTableHeight || props.tableRef.current.clientHeight;
+    const h = context.prevTableHeight || props.tableRef.current.clientHeight;
     if (h > 0) {
-      context.lastTableHeight = h;
+      context.prevTableHeight = h;
     }
     if (isVisible && wasHidden) {
       props.tableRef.current.style.height = '100%';
       props.tableRef.current.removeAttribute('data-was-hidden');
-    } else if (!isVisible && props.tableRef.current.style.height === '100%') {
+    } else if (!isVisible && props.tableRef.current.style.height === '100%' && context.prevTableHeight > 0) {
       // 加height === '100%'判断是因为：多层父级flex嵌套才有这个问题
-      props.tableRef.current.style.height = `${context.lastTableHeight}px`;
+      props.tableRef.current.style.height = `${context.prevTableHeight}px`;
       props.tableRef.current.setAttribute('data-was-hidden', 'true');
     }
   }, [paddingTop]);

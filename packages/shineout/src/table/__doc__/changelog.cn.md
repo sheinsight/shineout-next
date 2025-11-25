@@ -1,3 +1,10 @@
+## 3.9.1-beta.2
+2025-11-25
+
+### 🐞 BugFix
+- 修复 `Table` 可能出现高度为0的问题 (Regression: since v3.9.0-beta.26)([#1485](https://github.com/sheinsight/shineout-next/pull/1485))
+
+
 ## 3.9.0-beta.31
 2025-11-24
 
