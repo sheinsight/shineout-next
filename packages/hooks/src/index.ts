@@ -29,6 +29,7 @@ export * from './common/use-pagination-list';
 export * from './common/use-filter';
 export * from './common/use-scrollbar-width';
 export * from './common/use-component-memo';
+export * from './common/use-collapse-animation';
 
 //components
 export * from './components/use-input';

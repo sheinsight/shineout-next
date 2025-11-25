@@ -1,6 +1,6 @@
 /**
  * cn - 基本用法
- *    -- Menu 通过数据来生成菜单项
+ *    -- Menu 通过数据来生成菜单项，设置 `inlineAnimate` 属性可以开启展开收起动画效果。
  * en - Base
  *    -- Menu generates menu items through data
  */
@@ -84,6 +84,7 @@ const App: React.FC = () => {
       <Menu
         keygen='id'
         data={data}
+        inlineAnimate
         inlineIndent={14}
         active={checkActive}
         onClick={handleClick}
