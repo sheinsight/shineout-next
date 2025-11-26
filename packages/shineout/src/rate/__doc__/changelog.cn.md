@@ -1,3 +1,10 @@
+## 3.9.1-beta.5
+2025-11-26
+
+### 🐞 BugFix
+- 修复 `Rate` 只读状态下的小数显示 ([#1488](https://github.com/sheinsight/shineout-next/pull/1488))
+
+
 ## 3.5.2
 2024-11-28
 
