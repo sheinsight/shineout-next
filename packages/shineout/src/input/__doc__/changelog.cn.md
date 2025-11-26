@@ -1,3 +1,10 @@
+## 3.9.1-beta.4
+2025-11-26
+
+### 🐞 BugFix
+- 修复 `Input` 设置了 `delay` 为0后，失焦时触发了 `onChange` 的问题 ([#1487](https://github.com/sheinsight/shineout-next/pull/1487))
+
+
 ## 3.9.0-beta.4
 2025-10-14
 
