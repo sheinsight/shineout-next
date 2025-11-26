@@ -69,15 +69,15 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
 
     if (!isFunc(onChange)) return;
 
-    context.delayChange = () => {
-      context.timer = null;
-      context.delayChange = null;
-      onChange(vv, ...other);
-      render();
-    };
     if (!delay) {
       onChange(vv, ...other);
     } else {
+      context.delayChange = () => {
+        context.timer = null;
+        context.delayChange = null;
+        onChange(vv, ...other);
+        render();
+      };
       if (context.timer) clearTimeout(context.timer);
       context.timer = setTimeout(context.delayChange, delay);
     }
