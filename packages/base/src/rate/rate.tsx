@@ -36,7 +36,7 @@ const Rate = (props0: RateProps) => {
     const frontItem = Array.isArray(front) ? front[repeat ? currentIndex : index] : front;
     const backItem = Array.isArray(back) ? back[index] : back;
 
-    const isHalfChecked = props.allowHalf && showValue % 1 > 0 && index === currentIndex;
+    const isHalfChecked = (props.allowHalf || props.disabled) && showValue % 1 > 0 && index === currentIndex;
     const isChecked = !isHalfChecked && index <= currentIndex;
 
     const handleChange = (val: number) => {
@@ -50,6 +50,11 @@ const Rate = (props0: RateProps) => {
     };
 
     const showAnimation = animationIndex && index < currentIndex;
+
+    // 只读状态下支持 0.6 这样的小数显示具体百分比的半颗星，而非固定的 50% 半星显示
+    const halfStyle = props.disabled && value % 1 > 0 ? {
+      width: value % 1 * 100 + '%',
+    } : undefined;
 
     return (
       <div
@@ -90,7 +95,7 @@ const Rate = (props0: RateProps) => {
         >
           {frontItem}
         </span>
-        {props.allowHalf && (
+        {(props.allowHalf || props.disabled) && (
           <span
             onMouseEnter={
               !props.disabled
@@ -107,6 +112,7 @@ const Rate = (props0: RateProps) => {
                 : undefined
             }
             className={rateClasses?.itemHalf}
+            style={halfStyle}
             dir={config.direction}
           >
             {frontItem}
