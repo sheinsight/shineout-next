@@ -686,6 +686,13 @@ export interface SelectPropsBase<DataItem, Value>
    * @version 3.9.1
    */
   createOnBlur?: boolean;
+
+  /**
+   * @en CSS class name for the dropdown popover
+   * @cn 下拉框弹出框的 CSS 类名
+   * @version 3.9.1
+   */
+  popupClassName?: string;
 }
 
 export interface SelectPropsA<DataItem, Value>

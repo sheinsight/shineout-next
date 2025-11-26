@@ -760,7 +760,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
             <AnimationList
               onRef={popupRef}
               show={open}
-              className={classNames(styles?.pickerWrapper)}
+              className={classNames(styles?.pickerWrapper, props.popupclassName)}
               display={'block'}
               type='scale-y'
               duration={'fast'}

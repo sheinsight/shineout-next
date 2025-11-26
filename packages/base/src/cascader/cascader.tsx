@@ -810,7 +810,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           <AnimationList
             onRef={popupRef}
             show={open}
-            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow)}
+            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow, props.popupClassName)}
             display={'block'}
             type='scale-y'
             duration={'fast'}

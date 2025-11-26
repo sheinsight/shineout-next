@@ -810,6 +810,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
               styles?.pickerWrapper,
               size === 'small' && styles?.pickerSmall,
               size === 'large' && styles?.pickerLarge,
+              props.popupClassName,
             )}
             onAnimationAfterEnter={onAnimationAfterEnter}
             display={'block'}

@@ -427,4 +427,11 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @version 3.9.0
    */
   checkOnFiltered?: boolean;
+
+  /**
+   * @en Custom className for cascader popup
+   * @cn 级联弹出框自定义类名
+   * @version 3.9.1
+   */
+  popupClassName?: string;
 }
