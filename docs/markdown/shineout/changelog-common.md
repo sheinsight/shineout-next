@@ -1,3 +1,10 @@
+## 3.9.1-beta.6
+2025-11-26
+
+### 🆕 Feature
+-  `Select`、`TreeSelect`、`Cascader` 组件新增 `popupClassName` 属性 ([#1489](https://github.com/sheinsight/shineout-next/pull/1489))
+
+
 ## 3.9.0-beta.33
 2025-11-25
 

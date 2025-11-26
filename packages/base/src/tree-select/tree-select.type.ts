@@ -492,4 +492,11 @@ export interface TreeSelectProps<DataItem, Value>
    * @version 3.9.0
    */
   checkOnFiltered?: boolean;
+
+  /**
+   * @en Popup class name
+   * @cn 弹出框类名
+   * @version 3.9.1
+   */
+  popupclassName?: string;
 }
