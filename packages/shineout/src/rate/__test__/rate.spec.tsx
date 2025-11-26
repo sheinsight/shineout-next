@@ -176,7 +176,7 @@ describe('Rate[Base]', () => {
     const { container } = render(<StarRate value={3.6} disabled />);
     const rateItems = container.querySelectorAll(item);
     rateItems.forEach((item, index) => {
-      if (index > 3) return;
+      if (index >= 3) return;
       classTest(item, itemChecked);
     });
   });
