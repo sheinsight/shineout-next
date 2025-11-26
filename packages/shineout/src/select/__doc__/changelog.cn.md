@@ -1,3 +1,11 @@
+## 3.9.1-beta.3
+2025-11-26
+
+### 🆕 Feature
+
+- `Select` 新增 `createOnBlur` 属性，控制开启 onCreate 时输入框失焦是否自动创建选项 ([#1486](https://github.com/sheinsight/shineout-next/pull/1486))
+
+
 ## 3.9.0-beta.34
 2025-11-25
 
