@@ -20,6 +20,7 @@ type CascadeConfig = {
   instanceId: string;
   cascadeWidth: number;
   cascade: boolean;
+  position?: ModalContentProps['position'];
 }
 interface ModalConfig {
   instanceIds: string[];
@@ -42,11 +43,12 @@ const addModalInstance = (instanceId: string) => {
   state.mutate.instanceIds.push(instanceId)
 }
 
-const addModalCascadeConfig = (props: CascadeConfig) => {
+const addModalCascadeConfig = (options: CascadeConfig) => {
   state.mutate.cascadeConfigs.push({
-    cascade: props.cascade,
-    cascadeWidth: props.cascadeWidth,
-    instanceId: props.instanceId,
+    cascade: options.cascade,
+    cascadeWidth: options.cascadeWidth,
+    instanceId: options.instanceId,
+    position: options.position,
   });
 }
 
@@ -146,6 +148,7 @@ const Modal = (props: ModalContentProps) => {
       addModalInstance(context.instanceId);
       addModalCascadeConfig({
         instanceId: context.instanceId,
+        position: props.position,
         cascade: !!props.cascade && !!isPositionX,
         cascadeWidth: typeof props.cascade === 'object' ? (props.cascade.width || 180) : 180,
       });
@@ -155,7 +158,7 @@ const Modal = (props: ModalContentProps) => {
       removeModalInstance(context.instanceId);
       removeModalCascadeConfig(context.instanceId);
     }
-  }, [visible, animation, config.instanceIds])
+  }, [visible, props.position, animation, config.instanceIds])
 
   useEffect(handleMaskVisible, [visible]);
 
@@ -398,16 +401,13 @@ const Modal = (props: ModalContentProps) => {
     );
   };
 
-  if (!context.renderEd && !visible) return null;
-
-  context.renderEd = true;
-
   const cascadeStyle = useMemo(() => {
     if (!props.cascade) return;
-    const idx = config.instanceIds.findIndex(id => id === context.instanceId);
     let instance = 0;
     const curCascadeConfig = config.cascadeConfigs.find(c => c.instanceId === context.instanceId);
-    if(curCascadeConfig && idx < config.cascadeConfigs.length - 1) {
+    const samePositionConfigs = config.cascadeConfigs.filter(c => c.position === curCascadeConfig?.position);
+    const currentIndex = samePositionConfigs.findIndex(c => c.instanceId === context.instanceId);
+    if(curCascadeConfig && currentIndex < samePositionConfigs.length - 1) {
       instance = curCascadeConfig.cascadeWidth;
     }
 
@@ -416,6 +416,10 @@ const Modal = (props: ModalContentProps) => {
       transition: instance ? 'transform 0.3s ease 0.05s' : 'transform 0.2s ease',
     }
   }, [config.cascadeConfigs, config.instanceIds])
+
+  if (!context.renderEd && !visible) return null;
+
+  context.renderEd = true;
 
   const panelStyle: React.CSSProperties = {
     transformOrigin: origin,
