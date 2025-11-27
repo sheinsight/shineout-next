@@ -3,7 +3,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Drawer` 的 `cascade` 属性在相同 position 方位时才正确应用 transform 偏移 ([#1490](https://github.com/sheinsight/shineout-next/pull/1490))
+- 修复 `Drawer` 的 `cascade` 属性只对相同 position 方位的 Drawer 应用 transform 偏移 ([#1490](https://github.com/sheinsight/shineout-next/pull/1490))
 
 
 ## 3.9.0-beta.7
