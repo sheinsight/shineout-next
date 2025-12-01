@@ -572,6 +572,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       if (validateFieldSet.size === 0 && updateFieldSet.size === 0) {
         context.names.delete(n);
         delete context.defaultValues[n];
+        delete context.rulesMap[n];
       }
 
       const finalReserveAble = props.reserveAble ?? reserveAble;
