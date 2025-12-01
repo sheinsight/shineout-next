@@ -186,21 +186,26 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const update = (name?: string | string[]) => {
     if (!name) {
+      const needValidateParentKeys = new Set<string>();
       Object.keys(context.updateMap).forEach((key) => {
         context.updateMap[key]?.forEach((updateFn) => {
           updateFn(context.value, context.errors, context.serverErrors);
           if (context.errors[key]) {
             validateFields(key).catch(() => {});
-
-            const parentKeys = getParentKeys(key);
-            parentKeys.forEach((parentKey) => {
+            getParentKeys(key).forEach((parentKey) => {
               if (context.validateMap[parentKey] && context.rulesMap[parentKey]) {
-                validateFields(parentKey).catch(() => {});
+                needValidateParentKeys.add(parentKey);
               }
             });
           }
         });
       });
+      // fix issue's playground id: 0898fabb-a1b4-4453-a2aa-f5a92e7777c0
+      if (needValidateParentKeys.size > 0) {
+        needValidateParentKeys.forEach((parentKey) => {
+          validateFields(parentKey).catch(() => {});
+        });
+      }
       Object.keys(context.flowMap).forEach((key) => {
         context.flowMap[key].forEach((updateFn) => {
           updateFn();
