@@ -94,7 +94,7 @@ const method =
     const root = getRoot({ container: options.container });
     if (!root) return;
     const destroyModal = () => {
-      innerClose();
+      if (innerClose) innerClose();
       setTimeout(() => {
         destroy(root);
       }, 300);
