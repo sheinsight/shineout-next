@@ -161,12 +161,14 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
           if (isArray(e)) {
             e.forEach((error, index) => {
               if (error) {
-                const fieldSetName = Object.keys(error)?.[0];
-                const fieldSetError = Object.values(error)?.[0] as Error;
-                const na = `${name}[${index}].${fieldSetName}`;
-                if (fieldSetName && fieldSetError) {
-                  formFunc?.setError(na, fieldSetError);
-                }
+                const keys = Object.keys(error);
+                keys.forEach((fieldName) => {
+                  const fieldError = error?.[fieldName] as Error;
+                  const na = `${name}[${index}].${fieldName}`;
+                  if (fieldName && fieldError) {
+                    formFunc?.setError(na, fieldError);
+                  }
+                });
               }
             });
           } else {

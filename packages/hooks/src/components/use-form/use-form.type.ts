@@ -267,6 +267,7 @@ export type FormContext = {
   >;
   // flow 队列
   flowMap: ObjectType<Set<() => void>>;
+  rulesMap: ObjectType<FormItemRule<any>>;
   value: ObjectType;
   errors: ObjectType<Error | undefined>;
   serverErrors: ObjectType<Error | undefined>;

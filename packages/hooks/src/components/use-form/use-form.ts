@@ -23,6 +23,7 @@ import {
   wrapFormError,
   deepClone,
   getAllKeyPaths,
+  getParentKeys,
   getCompleteFieldKeys,
   devUseWarning,
   getFieldId,
@@ -80,6 +81,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     ignoreValidateFields: [],
     updateMap: {},
     flowMap: {},
+    rulesMap: {},
     removeArr: new Set<string>(),
     names: new Set<string>(),
     submitLock: false,
@@ -185,16 +187,23 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const update = (name?: string | string[]) => {
     if (!name) {
       Object.keys(context.updateMap).forEach((key) => {
-        context.updateMap[key]?.forEach((update) => {
-          update(context.value, context.errors, context.serverErrors);
+        context.updateMap[key]?.forEach((updateFn) => {
+          updateFn(context.value, context.errors, context.serverErrors);
           if (context.errors[key]) {
             validateFields(key).catch(() => {});
+
+            const parentKeys = getParentKeys(key);
+            parentKeys.forEach((parentKey) => {
+              if (context.validateMap[parentKey] && context.rulesMap[parentKey]) {
+                validateFields(parentKey).catch(() => {});
+              }
+            });
           }
         });
       });
       Object.keys(context.flowMap).forEach((key) => {
-        context.flowMap[key].forEach((update) => {
-          update();
+        context.flowMap[key].forEach((updateFn) => {
+          updateFn();
         });
       });
     } else {
@@ -204,21 +213,21 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         // 这里需要手动触发，否则会导致Input输入过程中光标跳到末尾的异常
         if (!context.updateMap[key]) {
           const parentKey = key.split('.')[0];
-          context.updateMap[parentKey]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors);
+          context.updateMap[parentKey]?.forEach((updateFn) => {
+            updateFn(context.value, context.errors, context.serverErrors);
           });
         } else {
-          context.updateMap[key]?.forEach((update) => {
-            update(context.value, context.errors, context.serverErrors);
+          context.updateMap[key]?.forEach((updateFn) => {
+            updateFn(context.value, context.errors, context.serverErrors);
           });
         }
-        context.flowMap[key]?.forEach((update) => {
-          update();
+        context.flowMap[key]?.forEach((updateFn) => {
+          updateFn();
         });
       });
     }
-    context.flowMap[globalKey]?.forEach((update) => {
-      update();
+    context.flowMap[globalKey]?.forEach((updateFn) => {
+      updateFn();
     });
   };
 
@@ -573,18 +582,21 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       if (isArray(propRules)) {
         newRules = newRules.concat(propRules);
       }
+      if (newRules.length > 0) {
+        context.rulesMap[name] = newRules;
+      }
       return newRules;
     },
-    watch: (names: string[] = [globalKey], update: () => void) => {
+    watch: (names: string[] = [globalKey], updateFn: () => void) => {
       names.forEach((name) => {
         context.flowMap[name] = context.flowMap[name] || new Set();
-        context.flowMap[name].add(update);
+        context.flowMap[name].add(updateFn);
       });
     },
-    unWatch: (names: string[] = [globalKey], update?: () => void) => {
+    unWatch: (names: string[] = [globalKey], updateFn?: () => void) => {
       names.forEach((name) => {
-        if (update) {
-          context.flowMap[name].delete(update);
+        if (updateFn) {
+          context.flowMap[name].delete(updateFn);
         } else {
           delete context.flowMap[name];
         }
