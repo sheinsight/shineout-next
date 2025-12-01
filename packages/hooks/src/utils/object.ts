@@ -267,7 +267,6 @@ export const getAllKeyPaths = (obj: ObjectType, parentKey: string = ''): string[
   }, []);
 };
 
-
 /**
  * 获取完整的字段key
  * @param fields 字段key
@@ -283,14 +282,14 @@ export const getCompleteFieldKeys = (fields: string | string[], allFields: strin
   const fieldsArray = isArray(fields) ? fields : [fields];
   let completeFields: string[] = [];
 
-  fieldsArray.forEach(field => {
+  fieldsArray.forEach((field) => {
     let na = `${field}[`;
-    if(field.endsWith(']')) {
-      na = field
+    if (field.endsWith(']')) {
+      na = field;
     }
     const no = `${field}.`;
     completeFields.push(field);
-    const childFields = allFields.filter(f => f.startsWith(na) || f.startsWith(no));
+    const childFields = allFields.filter((f) => f.startsWith(na) || f.startsWith(no));
     if (childFields.length) {
       completeFields.push(...childFields);
     }
@@ -298,8 +297,27 @@ export const getCompleteFieldKeys = (fields: string | string[], allFields: strin
 
   // 返回之前去重
   return Array.from(new Set(completeFields));
-}
+};
 
+/**
+ * 获取字段的所有父级key数组
+ * @param field 字段key
+ * @description 获取字段的所有父级key数组，并去掉数组下标部分, 结果按从近及远排序
+ * @example a.b[0].c => ['a.b', 'a']
+ */
+export const getParentKeys = (field: string): string[] => {
+  if (!field) return [];
+  const parts = field.split('.');
+  const parentKeys: string[] = [];
+  for (let i = parts.length - 1; i > 0; i--) {
+    const parentKey = parts.slice(0, i).join('.');
+    const cleanedKey = parentKey.replace(/\[\d+\]/g, '');
+    if (cleanedKey && !parentKeys.includes(cleanedKey)) {
+      parentKeys.push(cleanedKey);
+    }
+  }
+  return parentKeys;
+};
 
 /**
  * 将对象中的所有值设置为空, 如果值是数组，重置为空数组，如果是对象，重置为空对象，如果是基础类型，重置为undefined
@@ -307,10 +325,10 @@ export const getCompleteFieldKeys = (fields: string | string[], allFields: strin
  * @returns 空对象
  */
 export const clearValue = (obj: ObjectType): any => {
-  if(isArray(obj)){
-    return obj.map(item => clearValue(item));
+  if (isArray(obj)) {
+    return obj.map((item) => clearValue(item));
   }
-  if(isObject(obj)){
+  if (isObject(obj)) {
     return Object.keys(obj).reduce((acc: any, key) => {
       acc[key] = clearValue(obj[key]);
       return acc;

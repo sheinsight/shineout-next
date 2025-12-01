@@ -1,3 +1,9 @@
+## 3.9.2-beta.1
+2025-12-01
+### 🐞 BugFix
+- 修复 `Form` 的 `FieldSet` 上自定义 rules 校验错误信息在 children 值变化时未正常显示的问题  ([#1492](https://github.com/sheinsight/shineout-next/pull/1492))
+
+
 ## 3.8.10-beta.10
 2025-11-20
 
