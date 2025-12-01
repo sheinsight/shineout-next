@@ -24,6 +24,7 @@
     "immer": "10.0.2"
   },
   "peerDependencies": {
+    "@sheinx/base": ">=3.0.0",
     "react": ">=16.14.0",
     "react-dom": ">=16.14.0",
     "core-js": ">=3"
