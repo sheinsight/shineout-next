@@ -6,6 +6,49 @@
  */
 import React, { useState } from 'react';
 import { Form, Input, Radio, Rule, Button } from 'shineout';
+
+const rules0 = Rule()
+
+const InputChangeDemo = () => {
+
+  const [formValue, setFormValue] = useState({})
+
+  const handleChange = value => {
+    setFormValue(value)
+  }
+
+    const onInutChange = value => {
+      console.info(value)
+      setFormValue({
+        name: value,
+        password: '123'
+      })
+    }
+
+    return (
+      <Form
+        value={formValue}
+        onChange={handleChange}
+        onSubmit={data => {
+          console.log(data)
+        }}
+      >
+        <Form.Item label="name">
+          <Input name="name" rules={[rules0.required]} onChange={onInutChange} value={formValue.name}/>
+        </Form.Item>
+
+        <Form.Item label="Password">
+          <Input name="password"  rules={[rules0.required]} />
+        </Form.Item>
+
+        <Form.Item label="">
+          <Form.Submit>Submit</Form.Submit>
+          <Form.Reset>Reset</Form.Reset>
+        </Form.Item>
+      </Form>
+    )
+}
+
 const OldExample = () => {
   const [value, setValue] = useState({});
 
@@ -50,6 +93,9 @@ interface Value {
 const rules = Rule({
   attributeSumChecked: {
     func: (value = [], formData, callback, props) => {
+      console.log('======================')
+      console.log('自定义rules 触发了 attributeSumChecked: >>')
+      console.log('======================')
       const result = [];
       for (const [index, { attribute_value_id, attribute_extra_value }] of value.entries()) {
         if (!attribute_value_id && attribute_extra_value) {
@@ -167,7 +213,7 @@ const App: React.FC = () => {
       </Form.Item>
     </Form>
       <h4>老例子：</h4>
-      <OldExample />
+      <InputChangeDemo />
     </div>
   );
 };
