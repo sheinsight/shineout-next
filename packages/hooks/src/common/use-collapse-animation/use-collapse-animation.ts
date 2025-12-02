@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export interface UseCollapseAnimationOptions {
   /**
@@ -20,6 +20,22 @@ export interface UseCollapseAnimationOptions {
    * @default 'cubic-bezier(.2,0,0,1)'
    */
   timingFunction?: string;
+  /**
+   * 父元素的 open class 名称
+   * 用于在获取 scrollHeight 时临时添加,确保用户依赖此 class 的样式生效
+   */
+  parentOpenClassName?: string;
+}
+
+export interface UseCollapseAnimationResult {
+  /**
+   * 是否应该隐藏元素(动画结束后且 isOpen 为 false 时返回 true)
+   */
+  shouldHide: boolean;
+  /**
+   * 是否应该保持 open 状态(动画进行中时返回 true)
+   */
+  shouldKeepOpen: boolean;
 }
 
 /**
@@ -28,17 +44,20 @@ export interface UseCollapseAnimationOptions {
  * @example
  * ```tsx
  * const ref = useRef<HTMLDivElement>(null);
- * useCollapseAnimation(ref, { isOpen: true });
+ * const { shouldHide, shouldKeepOpen } = useCollapseAnimation(ref, { isOpen: true });
  *
- * return <div ref={ref}>Content</div>;
+ * return <div ref={ref} className={shouldHide ? 'hide' : ''}>Content</div>;
  * ```
+ * @returns 动画状态对象
  */
 export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
   elementRef: React.RefObject<T>,
   options: UseCollapseAnimationOptions,
-) {
-  const { isOpen, duration = 240, disabled = false, timingFunction = 'cubic-bezier(.2,0,0,1)' } = options;
+): UseCollapseAnimationResult {
+  const { isOpen, duration = 240, disabled = false, timingFunction = 'cubic-bezier(.2,0,0,1)', parentOpenClassName } = options;
   const isFirstRenderRef = useRef(true);
+  const [shouldHide, setShouldHide] = useState(!isOpen);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // 当 disabled 状态变化时，重置首次渲染标记
   useEffect(() => {
@@ -47,6 +66,7 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
     }
   }, [disabled]);
 
+  // 使用 useLayoutEffect 确保动画状态在 DOM 更新前同步设置
   useEffect(() => {
     if (!elementRef.current) return;
 
@@ -63,9 +83,6 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
 
     let timer: NodeJS.Timeout | null = null;
 
-    // 设置 display: block，让元素始终可见，由高度控制折叠
-    el.style.display = 'block';
-
     // 首次渲染时，直接设置初始状态，不做动画
     if (isFirstRenderRef.current) {
       isFirstRenderRef.current = false;
@@ -77,9 +94,14 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
     }
 
     if (isOpen) {
-      // 展开动画
+      // 展开动画 - 先显示元素
+      setShouldHide(false);
+      setIsAnimating(true);
+
+      el.style.display = 'block';
       el.style.height = '0px';
       el.style.overflow = 'hidden';
+      el.style.opacity = '0';
 
       // 强制重绘
       void el.offsetHeight;
@@ -89,8 +111,9 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
 
       // 启动动画
       requestAnimationFrame(() => {
-        el.style.transition = `height ${duration}ms ${timingFunction}`;
+        el.style.transition = `height ${duration}ms ${timingFunction}, opacity ${duration}ms ${timingFunction}`;
         el.style.height = `${scrollHeight}px`;
+        el.style.opacity = '1';
 
         // 动画结束后恢复 auto
         timer = setTimeout(() => {
@@ -98,21 +121,48 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
             el.style.height = '';
             el.style.overflow = '';
             el.style.transition = '';
+            el.style.opacity = '';
+            setIsAnimating(false);
           }
         }, duration);
       });
     } else {
       // 收起动画
+      setIsAnimating(true);
+
+      // 临时添加父元素的 open class,确保用户依赖此 class 的布局样式在获取高度时生效
+      const parentElement = el.parentElement;
+      const needTempClass = parentOpenClassName && parentElement;
+
+      if (needTempClass) {
+        parentElement.classList.add(parentOpenClassName);
+      }
+
+      // 强制重绘,确保临时 class 生效
+      void el.offsetHeight;
+
       const scrollHeight = el.scrollHeight;
       el.style.height = `${scrollHeight}px`;
       el.style.overflow = 'hidden';
+      el.style.opacity = '1';
 
       // 强制重绘
       void el.offsetHeight;
 
       requestAnimationFrame(() => {
-        el.style.transition = `height ${duration}ms ${timingFunction}`;
+        el.style.transition = `height ${duration}ms ${timingFunction}, opacity ${duration}ms ${timingFunction}`;
         el.style.height = '0px';
+        el.style.opacity = '0';
+
+        // 动画结束后隐藏元素
+        timer = setTimeout(() => {
+          // 移除临时 class
+          if (needTempClass) {
+            parentElement.classList.remove(parentOpenClassName);
+          }
+          setShouldHide(true);
+          setIsAnimating(false);
+        }, duration);
       });
     }
 
@@ -123,4 +173,16 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
       }
     };
   }, [isOpen, disabled, duration, timingFunction]);
+
+  if (disabled) {
+    return {
+      shouldHide: !isOpen,
+      shouldKeepOpen: false,
+    };
+  }
+
+  return {
+    shouldHide,
+    shouldKeepOpen: isAnimating && !isOpen,
+  };
 }

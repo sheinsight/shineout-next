@@ -155,17 +155,21 @@ const menuStyle: JsStyles<MenuClassType> = {
     flexDirection: 'row',
   },
   wrapperHasOpen: {},
+  wrapperInlineAnimate: {},
   children: {
     padding: '0',
     margin: '0',
-    display: 'none',
     minWidth: '100%',
     whiteSpace: 'nowrap',
-    '$itemOpen > &, $childrenShow&': {
+    '$childrenShow&': {
       display: 'block',
+    },
+    '$childrenHidden&': {
+      display: 'none',
     },
   },
   childrenShow: {},
+  childrenHidden: {},
   childrenUp: {},
   item: {
     listStyle: 'none',
@@ -174,6 +178,7 @@ const menuStyle: JsStyles<MenuClassType> = {
   itemActive: {},
   itemDisabled: {},
   itemOpen: {},
+  itemClosing: {},
   itemInPath: {},
   itemHasChildren: {},
   childrenHasExpand: {},
@@ -469,8 +474,14 @@ const menuStyle: JsStyles<MenuClassType> = {
       alignItems: 'center',
       display: 'flex',
       minHeight: `calc(${token.lineHeightDynamic} + ${token.menuTitlePaddingY}*2)`,
+      '$wrapperInlineAnimate$wrapper:not($wrapperVertical) &': {
+        transition: 'transform 240ms cubic-bezier(.2,0,0,1)',
+      },
       '$wrapper:not($wrapperVertical) $itemOpen > $itemContent &': {
         transform: 'rotate(180deg)',
+      },
+      '$wrapper:not($wrapperVertical) $itemClosing > $itemContent &': {
+        transform: 'rotate(0deg)',
       },
     },
   },

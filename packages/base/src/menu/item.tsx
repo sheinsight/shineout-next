@@ -61,9 +61,10 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   });
 
   // 为 inline 模式添加折叠动画（仅当 inlineAnimate 为 true 时启用）
-  useCollapseAnimation(childrenRef, {
+  const { shouldHide: shouldHideChildren, shouldKeepOpen } = useCollapseAnimation(childrenRef, {
     isOpen,
     disabled: !props.inlineAnimate || shoudPop || !children.length,
+    parentOpenClassName: classes?.itemOpen,
   });
 
   const renderChildren = () => {
@@ -80,12 +81,13 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
 
     const content = (close?: () => void) => (
       <ul
-        ref={!shoudPop && props.inlineAnimate ? childrenRef : undefined}
+        ref={childrenRef}
         className={classNames(
           shoudPop && classes?.childrenShow,
           classes?.children,
           isUp && classes?.childrenUp,
           hasExpandAbleChildren && classes?.childrenHasExpand,
+          shouldHideChildren && classes?.childrenHidden,
         )}
         // 子菜单点击弹出
         onClick={close}
@@ -251,7 +253,8 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         classes?.item,
         isDisabled && classes?.itemDisabled,
         isInPath && classes?.itemInPath,
-        (isOpen || popOpen) && classes?.itemOpen,
+        (isOpen || popOpen || shouldKeepOpen) && classes?.itemOpen,
+        shouldKeepOpen && classes?.itemClosing,
         isChecked && classes?.itemActive,
         expandAble && classes?.itemHasChildren,
       )}

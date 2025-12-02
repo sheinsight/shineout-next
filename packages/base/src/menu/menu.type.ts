@@ -16,15 +16,18 @@ export interface MenuClasses {
   wrapperDark: string;
   wrapperCollapse: string;
   wrapperInTransition: string;
+  wrapperInlineAnimate: string;
   header: string;
   root: string;
   children: string;
   childrenShow: string;
+  childrenHidden: string;
   childrenUp: string;
   item: string;
   itemActive: string;
   itemDisabled: string;
   itemOpen: string;
+  itemClosing: string;
   itemInPath: string;
   itemHasChildren: string;
   itemContent: string;
