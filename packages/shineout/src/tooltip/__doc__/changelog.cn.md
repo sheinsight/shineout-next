@@ -1,3 +1,9 @@
+## 3.9.2-beta.3
+2025-12-03
+
+### 🐞 BugFix
+- 修复 `Tooltip` 在快速 hover 多个组件时可能出现不消失的问题 ([#1496](https://github.com/sheinsight/shineout-next/pull/1496))
+
 ## 3.8.6-beta.2
 2025-10-10
 
