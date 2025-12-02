@@ -75,6 +75,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
         collapse && classes?.wrapperCollapse,
         context.inTransition && classes?.wrapperInTransition,
+        props.inlineAnimate && classes?.wrapperInlineAnimate,
       )}
       {...util.getDataAttribute({
         theme,

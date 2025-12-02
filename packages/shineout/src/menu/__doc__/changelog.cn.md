@@ -1,8 +1,8 @@
-## 3.9.1-beta.1
-2025-11-25
+## 3.9.2-beta.2
+2025-12-02
 
 ### 🆕 Feature
-- `Menu` 新增 `inlineAnimate` 属性，支持 inline 模式下的子菜单折叠展开动画 ([#1484](https://github.com/sheinsight/shineout-next/pull/1484))
+- `Menu` 新增 `inlineAnimate` 属性，支持 inline 模式下的子菜单折叠展开动画 ([#1484](https://github.com/sheinsight/shineout-next/pull/1484))([#1495](https://github.com/sheinsight/shineout-next/pull/1495))
 
 
 ## 3.8.6-beta.6
