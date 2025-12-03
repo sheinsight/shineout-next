@@ -4,19 +4,19 @@
 export interface LinkTokens {
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 链接组件的默认尺寸字体字号
    */
   linkDefaultFontSize: string;
   /**
    * @type {string}
-   * @token Size-6
+   * @token Font-12
    * @description 链接组件的小尺寸字体字号
    */
   linkSmallFontSize: string;
   /**
    * @type {string}
-   * @token Size-8
+   * @token Font-16
    * @description 链接组件的大尺寸字体字号
    */
   linkLargeFontSize: string;
