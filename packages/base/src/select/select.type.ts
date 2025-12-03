@@ -375,7 +375,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Automatically removes leading/trailing whitespace from input on blur
    * @cn 失去焦点时自动删除输入内容的首尾空白字符
-   * @default false
+   * @default true
    * @when For cleaner data when users may accidentally input spaces
    */
   trim?: boolean;

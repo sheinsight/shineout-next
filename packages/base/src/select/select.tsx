@@ -52,7 +52,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     columnsTitle,
     columnWidth = 160,
     width,
-    trim,
+    trim = true,
     maxLength,
     style,
     reFocus,
@@ -411,8 +411,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (hideCreate) {
       // optionListRef.current?.hoverMove(filterData.length - 1, true);
     }
-    // onFilter?.(trim ? text.trim() : text, from);
-    onFilter?.(text.trim(), from);
+    onFilter?.(trim ? text.trim() : text, from);
   };
 
   const handleOptionClick = () => {

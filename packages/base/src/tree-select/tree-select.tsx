@@ -71,7 +71,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     loader,
     renderResult: renderResultProp,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
-    trim = false,
+    trim = true,
     placeholder,
     renderUnmatched,
     resultClassName,
