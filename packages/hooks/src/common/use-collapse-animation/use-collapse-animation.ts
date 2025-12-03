@@ -135,7 +135,9 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
       const needTempClass = parentOpenClassName && parentElement;
 
       if (needTempClass) {
-        parentElement.classList.add(parentOpenClassName);
+        // 处理可能包含多个 class 的情况（用空格分隔）
+        const classNames = parentOpenClassName.split(/\s+/).filter(Boolean);
+        parentElement.classList.add(...classNames);
       }
 
       // 强制重绘,确保临时 class 生效
@@ -158,7 +160,8 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
         timer = setTimeout(() => {
           // 移除临时 class
           if (needTempClass) {
-            parentElement.classList.remove(parentOpenClassName);
+            const classNames = parentOpenClassName.split(/\s+/).filter(Boolean);
+            parentElement.classList.remove(...classNames);
           }
           setShouldHide(true);
           setIsAnimating(false);
