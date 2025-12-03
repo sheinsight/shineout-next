@@ -19,7 +19,7 @@ export default () => {
         <Badge
           count={100}
           overflowCount={99}
-          style={{ position: 'absolute', zIndex: 1, top: -24, right: -16 }}
+          style={{ position: 'absolute', zIndex: 1, top: -24, right: -16, fontSize: `var(--soui-font-14, 14px)` }}
         />
       )}
     </div>
@@ -30,7 +30,7 @@ export default () => {
       {tabs.map((tab, index) => {
         return (
           <Tabs.Panel key={index} tab={renderTab(tab)}>
-            <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>
+            <div style={{ padding: 16, height: '100%', fontSize: `var(--soui-font-14, 14px)` }}>{tab.content}</div>
           </Tabs.Panel>
         );
       })}
