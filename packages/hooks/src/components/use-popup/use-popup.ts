@@ -49,8 +49,9 @@ const usePopup = (props: BasePopupProps) => {
   const changeOpen = (openIn: boolean, delay?: number) => {
     if (context.triggerTimer) clearTimeout(context.triggerTimer);
     context.triggerTimer = setTimeout(() => {
-      if (open === openIn) return;
-      props.onCollapse?.(openIn);
+      if (open !== openIn) {
+        props.onCollapse?.(openIn);
+      }
       if (props.open === undefined) {
         setOpenState(openIn);
       }
