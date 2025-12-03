@@ -36,6 +36,7 @@ const Image = (props: ImageProps) => {
     onClick,
     componentRef,
     renderHoverMask,
+    inViewOnly,
     ...rest
   } = props;
 
@@ -48,6 +49,7 @@ const Image = (props: ImageProps) => {
     autoSSL,
     noImgDrag,
     fit,
+    inViewOnly,
     ...rest,
   });
 
