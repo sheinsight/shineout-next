@@ -568,7 +568,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     justifyContent: 'center',
     '& svg': {
       verticalAlign: 'middle',
-      width: 14,
+      width: token.cascaderOptionIconSize,
     },
   },
   optionSpin: {
