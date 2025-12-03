@@ -153,6 +153,9 @@ const tableStyle: JsStyles<TableClassType> = {
       right: 0,
       borderTop: `1px solid ${token.tableCellBorderColor}`,
     },
+    '&:has([data-soui-sticky])::before': {
+      zIndex: fixedFixedIndex + 4,
+    },
     '&::after': {
       position: 'absolute',
       zIndex: fixedFixedIndex + 3,
