@@ -400,7 +400,7 @@ export interface TreeSelectProps<DataItem, Value>
   /**
    * @en When trim is true, blank characters are automatically deleted when lose focus
    * @cn trim 为 true 时，失去焦点时会自动删除空白字符
-   * @default false
+   * @default true
    */
   trim?: boolean;
   /**

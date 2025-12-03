@@ -1,3 +1,10 @@
+## 3.9.2-beta.4
+2025-12-03
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` 的 `trim` 默认值与老版本不一致的问题 ([#1497](https://github.com/sheinsight/shineout-next/pull/1497))
+
 ## 3.9.0-beta.3
 2025-10-14
 
