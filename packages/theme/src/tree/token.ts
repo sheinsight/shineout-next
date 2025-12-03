@@ -56,6 +56,7 @@ const treeTokenValue = {
 const treeTokenExtraValue = {
   text: { padding: { y: 'Spacing-2', x: 'Spacing-4' } },
   checkbox: { margin: { x: 'Spacing-8' } },
+  icon: { size: 'Font-14' }
 };
 
 module.exports = {

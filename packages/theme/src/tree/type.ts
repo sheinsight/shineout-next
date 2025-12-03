@@ -23,6 +23,12 @@ export interface TreeTokens {
   /**
    * @type {string}
    * @token Font-14
+   * @description 树组件图标字号
+   */
+  treeIconSize: string;
+  /**
+   * @type {string}
+   * @token Font-14
    * @description 树组件字体字号
    */
   treeFontSize: string;

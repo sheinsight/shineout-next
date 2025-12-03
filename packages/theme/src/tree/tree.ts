@@ -7,6 +7,7 @@ const treeTokens: TreeTokens = {
   treeTextPaddingY: 'Spacing-2',
   treeTextPaddingX: 'Spacing-4',
   treeCheckboxMarginX: 'Spacing-8',
+  treeIconSize: 'Font-14',
   treeFontSize: 'Font-14',
   treeLineHeight: 'Size-18',
   treeSmallFontSize: 'Font-12',
