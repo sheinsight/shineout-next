@@ -6,14 +6,14 @@ import { PopoverTokens } from './type';
 const popoverTokens: PopoverTokens = {
   popoverFontSize: 'Font-14',
   popoverFontWeight: 'Weight-regular',
+  popoverFontColor: 'Neutral-text-5',
   popoverPaddingX: 'Spacing-8',
   popoverPaddingY: 'Spacing-8',
   popoverRadius: 'Radius-default',
   popoverBorderWidth: 'Border-1',
-  popoverFontColor: 'Neutral-text-5',
+  popoverBorderColor: 'Neutral-border-1',
   popoverBackgroundColor: 'Neutral-fill-1',
   popoverShadow: 'Shadow-2',
-  popoverBorderColor: 'Neutral-border-1',
   popoverSuccessBackgroundColor: 'Success-1',
   popoverSuccessBorderColor: 'Success-2',
   popoverWarningBackgroundColor: 'Warning-1',
@@ -29,6 +29,7 @@ const popoverTokens: PopoverTokens = {
   popoverConfirmPaddingY: 'Spacing-16',
   popoverConfirmMarginY: 'Spacing-16',
   popoverConfirmBackgroundColor: 'transparent',
+  popoverConfirmTitleFontSize: 'Font-14',
 };
 
 export default popoverTokens;

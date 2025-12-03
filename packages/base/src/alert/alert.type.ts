@@ -60,6 +60,13 @@ export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
    * @default 14
    */
   iconSize?: number;
+
+  /**
+   * @en The ClassName of the icon
+   * @cn 图标类名
+   */
+  iconClassName?: string;
+
   /**
    * @en The title of the alert
    * @cn 标题模式
@@ -72,6 +79,13 @@ export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
    * @private
    */
   titleStyle?: React.CSSProperties;
+
+  /**
+   * @en The className of the title
+   * @cn 标题类名
+   */
+  titleClassName?: string;
+
   /**
    * @en Whether to display the close button, when set to only, only the close button is displayed
    * @cn 是否可以关闭Alert，当设置为only的时候，点击按钮不会自动隐藏Alert

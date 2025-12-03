@@ -24,7 +24,7 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
   },
   header: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
     boxSizing: 'border-box',
     overflow: 'hidden',
@@ -67,7 +67,7 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
     cursor: 'pointer',
     position: 'relative',
     color: Token.collapseIconColor,
-    lineHeight: Token.lineHeightDynamic,
+    height: Token.lineHeightDynamic,
     zIndex: 0,
     marginRight: Token.collapseHeaderGap,
     '& svg': {

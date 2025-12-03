@@ -219,6 +219,14 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       marginBottom: token.popoverConfirmMarginY,
     },
   },
+  mentionTitle: {
+    fontSize: token.popoverConfirmTitleFontSize,
+  },
+  mentionIcon: {
+    '&&':{
+     fontSize: token.popoverConfirmTitleFontSize,
+  }
+  },
   footer: {
     textAlign: 'right',
   },

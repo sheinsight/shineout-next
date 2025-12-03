@@ -18,6 +18,7 @@ const Alert = (props: AlertProps) => {
     className,
     children,
     icon,
+    iconClassName,
     title,
     titleStyle,
     iconSize,
@@ -82,7 +83,7 @@ const Alert = (props: AlertProps) => {
       style.width = iconSize;
     }
     if (icon === true) {
-      return <AlertIcon jssStyle={props.jssStyle} style={style} type={props.type} />;
+      return <AlertIcon jssStyle={props.jssStyle} style={style} type={props.type} className={iconClassName} />;
     }
 
     return (
@@ -93,7 +94,7 @@ const Alert = (props: AlertProps) => {
   };
 
   const renderTitle = () => {
-    return <div className={alertStyle.title} style={titleStyle}>{title}</div>;
+    return <div className={classNames(alertStyle.title, props.titleClassName)} style={titleStyle}>{title}</div>;
   };
 
   const renderClose = () => {
