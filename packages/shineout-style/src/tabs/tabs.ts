@@ -387,6 +387,9 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       '& $header': { alignItems: 'flex-start' },
     },
 
+    '&:not([data-soui-shape="card"]) $prev, &:not([data-soui-shape="card"]) $next': {
+      border: '1px solid transparent',
+    },
     '&[data-soui-shape="card"] $prev, &[data-soui-shape="card"] $next': {
       background: '#FFFFFF',
       alignSelf: 'stretch',
@@ -468,7 +471,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         },
       },
       '& svg': {
-        width: 14,
+        width: Token.tabsArrowFontSize,
       },
     },
     ...getCardStyle(),
@@ -704,7 +707,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     position: 'relative',
     color: Token.tabsArrowFontColor,
     '& svg': {
-      width: 14,
+      width: Token.tabsArrowFontSize,
       textAlign: 'center',
       transform: 'rotate(-90deg)',
       transition: 'transform .2s',
