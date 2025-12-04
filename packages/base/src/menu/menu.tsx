@@ -91,6 +91,8 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
           render();
         }
       }}
+      // todo: 其实可以把scrollRef指向到这里，后续验证相关功能后重构
+      // ref={scrollRef}
     >
       {renderHeader()}
       <div className={classes?.scrollbox} ref={scrollRef}>

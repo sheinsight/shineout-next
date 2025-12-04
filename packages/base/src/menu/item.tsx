@@ -87,7 +87,8 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           classes?.children,
           isUp && classes?.childrenUp,
           hasExpandAbleChildren && classes?.childrenHasExpand,
-          shouldHideChildren && classes?.childrenHidden,
+          // 有close函数的是popover弹出的菜单，不需要childrenHidden类名
+          shouldHideChildren && !close && classes?.childrenHidden,
         )}
         // 子菜单点击弹出
         onClick={close}
