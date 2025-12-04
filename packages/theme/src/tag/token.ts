@@ -84,7 +84,7 @@ const tagTokenExtraValue = {
     },
   },
   default: {
-    line: { height: 'Line-height-dynamic' },
+    line: { height: 'Line-height-dynamic', base: 'Font-14' },
     font: { color: 'Neutral-text-5' },
     background: { color: 'Neutral-fill-2' },
     border: { color: 'Neutral-fill-2' },
