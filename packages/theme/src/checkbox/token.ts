@@ -29,7 +29,7 @@ const checkboxTokenValue = {};
 
 const checkboxTokenExtraValue = {
   icon: {
-    size: 'Size-7',
+    size: 'Font-14',
     border: { color: 'Neutral-border-2', radius: 'Radius-lesser', width: 'Border-1' },
     background: { color: 'Neutral-fill-1' },
     color: 'transparent',
@@ -63,11 +63,11 @@ const checkboxTokenExtraValue = {
   gap: 'Spacing-24',
   block: { gap: 'Spacing-12' },
   small: {
-    icon: { size: 'Size-6' },
+    icon: { size: 'Font-12' },
     label: { font: { size: 'Font-12' } },
   },
   large: {
-    icon: { size: 'Size-8' },
+    icon: { size: 'Font-16' },
     label: { font: { size: 'Font-16' } },
   },
 };

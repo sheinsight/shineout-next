@@ -4,7 +4,7 @@
 import { CheckboxTokens } from './type';
 
 const checkboxTokens: CheckboxTokens = {
-  checkboxIconSize: 'Size-7',
+  checkboxIconSize: 'Font-14',
   checkboxIconBorderColor: 'Neutral-border-2',
   checkboxIconBorderRadius: 'Radius-lesser',
   checkboxIconBorderWidth: 'Border-1',
@@ -30,9 +30,9 @@ const checkboxTokens: CheckboxTokens = {
   checkboxLabelDisabledFontColor: 'Neutral-text-2',
   checkboxGap: 'Spacing-24',
   checkboxBlockGap: 'Spacing-12',
-  checkboxSmallIconSize: 'Size-6',
+  checkboxSmallIconSize: 'Font-12',
   checkboxSmallLabelFontSize: 'Font-12',
-  checkboxLargeIconSize: 'Size-8',
+  checkboxLargeIconSize: 'Font-16',
   checkboxLargeLabelFontSize: 'Font-16',
 };
 
