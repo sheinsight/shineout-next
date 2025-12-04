@@ -210,6 +210,14 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     '& svg': {
       width: token.datePickerIconSize,
       height: token.datePickerIconSize,
+      '$wrapperSmall &': {
+        width: token.datePickerSmallIconSize,
+        height: token.datePickerSmallIconSize,
+      },
+      '$wrapperLarge &': {
+        width: token.datePickerLargeIconSize,
+        height: token.datePickerLargeIconSize,
+      },
     },
     // todo 暂时写死
     marginLeft: '8px',
@@ -374,6 +382,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       padding: `${token.datePickerSmallPanelFooterNowPaddingY} ${token.datePickerSmallPanelFooterNowPaddingX}`,
     },
   },
+  wrapperLarge: {},
   pickerFooterNow: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
     '&:only-child': {
