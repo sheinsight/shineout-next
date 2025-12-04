@@ -217,6 +217,14 @@ const input: JsStyles<keyof InputClasses> = {
     '&[dir=rtl]': {
       left: '0',
     },
+    '$wrapperSmall &': {
+      width: token.inputSmallIconSize,
+      height: token.inputSmallIconSize,
+    },
+    '$wrapperLarge &': {
+      width: token.inputLargeIconSize,
+      height: token.inputLargeIconSize,
+    },
   },
 
   group: {
@@ -275,7 +283,7 @@ const input: JsStyles<keyof InputClasses> = {
         borderBottom: `1px solid ${token.inputBorderColor}`,
       },
       '& svg': {
-        width: 14,
+        width: token.inputIconSize,
         transform: 'rotate(-90deg)',
       },
     },
@@ -291,13 +299,20 @@ const input: JsStyles<keyof InputClasses> = {
   passwordToggle: {
     display: 'flex',
     alignItems: 'center',
+    flexShrink: 0,
     width: token.inputIconSize,
     height: token.inputIconSize,
     color: token.inputToggleColor,
     cursor: 'pointer',
+    '$wrapperSmall &': {
+      width: token.inputSmallIconSize,
+      height: token.inputSmallIconSize,
+    },
+    '$wrapperLarge &': {
+      width: token.inputLargeIconSize,
+      height: token.inputLargeIconSize,
+    },
     '& > svg': {
-      width: token.inputIconSize,
-      height: token.inputIconSize,
       cursor: 'pointer',
       pointerEvents: 'none',
     },

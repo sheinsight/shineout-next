@@ -52,7 +52,7 @@ export interface InputTokens {
   inputPaddingY: string;
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 输入框图标字号
    */
   inputIconSize: string;
@@ -82,6 +82,12 @@ export interface InputTokens {
   inputSmallPaddingY: string;
   /**
    * @type {string}
+   * @token Font-12
+   * @description 输入框小尺寸图标字号
+   */
+  inputSmallIconSize: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 输入框大尺寸字体字号
    */
@@ -98,6 +104,12 @@ export interface InputTokens {
    * @description 输入框大尺寸内边距（垂直方向）
    */
   inputLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token Font-16
+   * @description 输入框大尺寸图标字号
+   */
+  inputLargeIconSize: string;
   /**
    * @type {string}
    * @token Neutral-text-2
