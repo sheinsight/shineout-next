@@ -16,7 +16,7 @@ export interface RadioTokens {
   radioBlockGap: string;
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 单选框图标宽度
    */
   radioIconWidth: string;
@@ -118,7 +118,7 @@ export interface RadioTokens {
   radioPaddingY: string;
   /**
    * @type {string}
-   * @token Size-6
+   * @token Font-12
    * @description 单选框小尺寸图标宽度
    */
   radioSmallIconWidth: string;
@@ -148,7 +148,7 @@ export interface RadioTokens {
   radioSmallPaddingY: string;
   /**
    * @type {string}
-   * @token Size-8
+   * @token Font-16
    * @description 单选框大尺寸图标宽度
    */
   radioLargeIconWidth: string;

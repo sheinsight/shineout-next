@@ -32,7 +32,7 @@ const radioTokenExtraValue = {
   gap: 'Spacing-24',
   block: { gap: 'Spacing-12' },
   icon: {
-    width: 'Size-7',
+    width: 'Font-14',
     gap: 'Spacing-8',
     border: { width: 'Border-2' },
     inner: { size: 'Size-3' },
@@ -49,12 +49,12 @@ const radioTokenExtraValue = {
   },
   padding: { y: 'Spacing-4' },
   small: {
-    icon: { width: 'Size-6', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },
+    icon: { width: 'Font-12', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },
     label: { font: { size: 'Font-12' } },
     padding: { y: 'Spacing-1' },
   },
   large: {
-    icon: { width: 'Size-8', gap: '', border: { width: 'Border-2' } },
+    icon: { width: 'Font-16', gap: '', border: { width: 'Border-2' } },
     label: { font: { size: 'Font-16' } },
     padding: { y: 'Spacing-7' },
   },
