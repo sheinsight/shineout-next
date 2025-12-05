@@ -75,7 +75,7 @@ const menuTokenExtraValue = {
   },
   expand: {
     width: 'Spacing-46',
-    size: 'Spacing-14',
+    size: 'Font-14',
     hover: {
       background: { color: 'Neutral-fill-3' },
     },
