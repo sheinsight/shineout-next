@@ -76,7 +76,7 @@ export interface AlertTokens {
   alertDangerFontColor: string;
   /**
    * @type {string}
-   * @token Size-8
+   * @token Font-16
    * @description 提示框图标字号
    */
   alertIconSize: string;
@@ -142,7 +142,7 @@ export interface AlertTokens {
   alertTitleMarginY: string;
   /**
    * @type {string}
-   * @token Size-8
+   * @token Font-16
    * @description 提示框标题模式图标宽度
    */
   alertTitleIconWidth: string;

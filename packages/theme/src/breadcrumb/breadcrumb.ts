@@ -22,6 +22,7 @@ const breadcrumbTokens: BreadcrumbTokens = {
   breadcrumbPrevFontWeight: 'Weight-regular',
   breadcrumbSeparatorMarginX: 'Spacing-8',
   breadcrumbIconBackgroundColor: 'Neutral-text-4',
+  breadcrumbDownIconSize: 'Font-14',
 };
 
 export default breadcrumbTokens;

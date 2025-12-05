@@ -110,4 +110,10 @@ export interface BreadcrumbTokens {
    * @description 面包屑图标背景颜色
    */
   breadcrumbIconBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 面包屑下拉图标字号
+   */
+  breadcrumbDownIconSize: string;
 }
