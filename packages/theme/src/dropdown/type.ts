@@ -4,16 +4,22 @@
 export interface DropdownTokens {
   /**
    * @type {string}
-   * @token Spacing-4
-   * @description 下拉菜单箭头icon的外边距（左侧）
-   */
-  dropdownCaretMarginLeft: string;
-  /**
-   * @type {string}
    * @token Radius-default
    * @description 下拉菜单列表边框圆角
    */
   dropdownListBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 下拉菜单列表边框颜色
+   */
+  dropdownListBorderColor: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 下拉菜单列表边框宽度
+   */
+  dropdownListBorderWidth: string;
   /**
    * @type {string}
    * @token Spacing-4
@@ -38,6 +44,12 @@ export interface DropdownTokens {
    * @description 下拉菜单列表字体字重
    */
   dropdownListFontWeight: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 下拉菜单列表字体颜色
+   */
+  dropdownListFontColor: string;
   /**
    * @type {string}
    * @token Radius-default
@@ -94,28 +106,10 @@ export interface DropdownTokens {
   dropdownListBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-1
-   * @description 下拉菜单列表边框颜色
-   */
-  dropdownListBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-5
-   * @description 下拉菜单列表字体颜色
-   */
-  dropdownListFontColor: string;
-  /**
-   * @type {string}
    * @token Shadow-2
    * @description 下拉菜单列表阴影
    */
   dropdownListBoxShadow: string;
-  /**
-   * @type {string}
-   * @token Border-1
-   * @description 下拉菜单列表边框宽度
-   */
-  dropdownListBorderWidth: string;
   /**
    * @type {string}
    * @token Spacing-8
@@ -164,6 +158,12 @@ export interface DropdownTokens {
    * @description 下拉菜单选项字体颜色
    */
   dropdownOptionFontColor: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 下拉菜单选项字体字重
+   */
+  dropdownOptionFontWeight: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
@@ -220,31 +220,13 @@ export interface DropdownTokens {
   dropdownOptionBorderRadius: string;
   /**
    * @type {string}
-   * @token Weight-regular
-   * @description 下拉菜单选项字体字重
-   */
-  dropdownOptionFontWeight: string;
-  /**
-   * @type {string}
-   * @token Spacing-4
-   * @description 下拉菜单多列平铺模式下每列的内边距（水平方向）
-   */
-  dropdownColumnPaddingX: string;
-  /**
-   * @type {string}
-   * @token Spacing-4
-   * @description 下拉菜单多列平铺模式下每列的内边距（垂直方向）
-   */
-  dropdownColumnPaddingY: string;
-  /**
-   * @type {string}
    * @token Spacing-8
    * @description 下拉菜单选项分组内边距（水平方向）
    */
   dropdownOptionGroupPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-10
+   * @token Font-14
    * @description 下拉菜单选项分组内边距（顶部）
    */
   dropdownOptionGroupPaddingTop: string;
@@ -292,7 +274,7 @@ export interface DropdownTokens {
   dropdownOptionGroupLargeX: string;
   /**
    * @type {string}
-   * @token Spacing-14
+   * @token Font-16
    * @description 下拉菜单选项分组大尺寸（顶部）
    */
   dropdownOptionGroupLargeTop: string;
@@ -302,6 +284,12 @@ export interface DropdownTokens {
    * @description 下拉菜单选项分组大尺寸（底部）
    */
   dropdownOptionGroupLargeBottom: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 下拉菜单选项分组大尺寸字体字号
+   */
+  dropdownOptionGroupLargeFontSize: string;
   /**
    * @type {string}
    * @token Neutral-border-1
@@ -326,4 +314,22 @@ export interface DropdownTokens {
    * @description 下拉菜单选项分割线高度
    */
   dropdownOptionDividerHeight: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 下拉菜单多列平铺模式下每列的内边距（水平方向）
+   */
+  dropdownColumnPaddingX: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 下拉菜单多列平铺模式下每列的内边距（垂直方向）
+   */
+  dropdownColumnPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 下拉菜单箭头icon的外边距（左侧）
+   */
+  dropdownCaretMarginLeft: string;
 }

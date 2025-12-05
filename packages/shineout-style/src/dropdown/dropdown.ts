@@ -176,10 +176,11 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
   },
   itemDisabled: {},
   optionGroup: {
-    padding: `${token.dropdownOptionGroupPaddingTop} ${token.dropdownOptionGroupPaddingX} ${token.dropdownOptionGroupPaddingBottom} ${token.dropdownOptionGroupPaddingX}`,
+    padding: `calc(${token.dropdownOptionGroupPaddingTop} - 4px) ${token.dropdownOptionGroupPaddingX} ${token.dropdownOptionGroupPaddingBottom} ${token.dropdownOptionGroupPaddingX}`,
     fontSize: token.dropdownOptionGroupFontSize,
     fontWeight: token.dropdownOptionGroupFontWeight,
     color: token.dropdownOptionGroupFontColor,
+    lineHeight: token.lineHeightDynamic,
     '$listSmall &': {
       padding: `${token.dropdownOptionGroupSmallTop} ${token.dropdownOptionGroupSmallX} 0 ${token.dropdownOptionGroupSmallX}`,
     },
