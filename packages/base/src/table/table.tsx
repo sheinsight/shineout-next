@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Scroll from '../virtual-scroll/scroll-table';
 import classNames from 'classnames';
 import Spin from '../spin';
@@ -23,6 +23,7 @@ import {
   useScrollbarWidth,
   util,
   addResizeObserver,
+  TableNestedContext,
 } from '@sheinx/hooks';
 import { TableClasses, TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -42,6 +43,7 @@ const emptyRef = { current: null };
 export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
   const config = useConfig();
+  const nestedContext = useContext(TableNestedContext);
 
   const isRtl = config.direction === 'rtl';
   const tableClasses = props?.jssStyle?.table?.() as TableClasses;
@@ -412,6 +414,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       treeCheckAll: props.treeCheckAll,
       onCellClick: props.onCellClick,
       strictRowHeight: props.strictRowHeight,
+      scrollRef: scrollRef
     };
 
     const headCommonProps = {
@@ -733,6 +736,22 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     return { absolute: true, scrollElRef: scrollRef };
   }, [scrollRef]);
 
+  const tableWrapperStyle = useMemo(() => {
+    if (nestedContext.parentTableWidth && props.width) {
+      return {
+        width: nestedContext.parentTableWidth,
+        position: 'sticky' as const,
+        left: 0,
+        height: defaultHeight,
+        ...props.style,
+      };
+    }
+    return {
+      height: defaultHeight,
+      ...props.style,
+    };
+  }, [nestedContext.parentTableWidth, defaultHeight, props.style, props.width]);
+
   const tableWrapperClass = classNames(
     props.className,
     tableClasses?.rootClass,
@@ -768,7 +787,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
           [tableClasses.floatLeft]: floatLeft,
           [tableClasses.floatRight]: floatRight,
         })}
-        style={{ height: defaultHeight, ...props.style }}
+        style={tableWrapperStyle}
         {...selection.getTableProps()}
         ref={tableRef}
         dir={config.direction}

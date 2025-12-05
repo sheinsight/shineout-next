@@ -49,4 +49,5 @@ export interface TbodyProps
     maxRowSpan: number;
   } | null;
   fullData?: any[];
+  scrollRef?: React.RefObject<HTMLDivElement>;
 }
