@@ -1,3 +1,10 @@
+## 3.9.2-beta.9
+2025-12-05
+
+### 🐞 BugFix
+- 修复 `Pagination` 传入负数 `total` 时不隐藏的问题 ([#1503](https://github.com/sheinsight/shineout-next/pull/1503))
+
+
 ## 3.8.0-beta.39
 2025-08-18
 

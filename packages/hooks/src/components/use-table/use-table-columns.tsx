@@ -150,14 +150,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
           colSpan = () => startIndex;
         }
 
-        const hiddenTitle = context.groupLevel > 0
-          ? () => (
-              <span style={{ visibility: 'hidden' }}>
-                {typeof col.title === 'function' ? col.title([]) : col.title}
-              </span>
-            )
-          : null;
-
+        const hiddenTitle = context.groupLevel > 0 ? col.title : null;
         return {
           ...col,
           colSpan,
