@@ -1,6 +1,6 @@
 import { TableColumnItem, TableFormatColumn } from './use-table.type';
 import { produce } from '../../utils/immer';
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 export interface UseColumnsProps<Data> {
   columns?: TableColumnItem<Data>[];
@@ -117,7 +117,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
 
         // 左侧也增加缓冲列，但不能小于0
         const bufferedStartIndex = Math.max(0, i - BUFFER_COUNT);
-        currentIndex = bufferedStartIndex + leftFixedColumns.length;
+        currentIndex = bufferedStartIndex;
         break;
       }
     }
@@ -146,7 +146,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
           ...col,
           colSpan: colSpan,
           render: () => null,
-          title: null,
+          title: () => <span style={{ visibility: 'hidden' }}>{typeof col.title === 'function' ? col.title([]) : col.title}</span>,
         };
       }
       return col;
