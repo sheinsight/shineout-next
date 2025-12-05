@@ -1,6 +1,6 @@
 import { TableColumnItem, TableFormatColumn } from './use-table.type';
 import { produce } from '../../utils/immer';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 export interface UseColumnsProps<Data> {
   columns?: TableColumnItem<Data>[];
@@ -92,8 +92,13 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
 
   const columns = getColumns(propsColumns) || [];
 
-  const leftFixedColumns = columns.filter(col => col.fixed === 'left');
-  const middleColumns = columns.filter(col => !col.fixed);
+  const { leftFixedColumns, middleColumns } = useMemo(() => {
+    if (!props.virtualColumn) return { leftFixedColumns: [], middleColumns: [] };
+    const leftFixedColumns = columns.filter((col) => col.fixed === 'left');
+    const middleColumns = columns.filter((col) => !col.fixed);
+    return { leftFixedColumns, middleColumns };
+  }, [columns, props.virtualColumn]);
+
   const handleScroll = (scrollInfo: { scrollLeft: number }) => {
     const { scrollLeft } = scrollInfo;
 
@@ -104,7 +109,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
       sum += (curCol.width as number) || 100;
       if (scrollLeft < sum) {
         // 计算可视区域内需要渲染的列数
-        for(let j = i + 1; j < len; j++) {
+        for (let j = i + 1; j < len; j++) {
           const nextCol = middleColumns[j];
           sum += (nextCol.width as number) || 100;
           if (props.scrollRef.current && sum - scrollLeft >= props.scrollRef.current?.clientWidth) {
@@ -123,34 +128,49 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
     }
 
     setStartIndex(currentIndex);
-  }
+  };
 
   useEffect(() => {
     if (!props.virtualColumn) return;
     handleScroll({ scrollLeft: 0 });
-  }, [])
+  }, []);
 
-  return {
-    columns: props.virtualColumn ? columns.map((col,index) => {
-      if(col.fixed) {
+  const processedColumns = useMemo(() => {
+    if (!props.virtualColumn) return columns;
+
+    return columns.map((col, index) => {
+      if (col.fixed) {
         return col;
       }
-      if(index < startIndex || index > startIndex + renderedCount) {
+      if (index < startIndex || index > startIndex + renderedCount) {
         let colSpan;
-        if(index > startIndex + renderedCount && index === startIndex + renderedCount + 1) {
+        if (index > startIndex + renderedCount && index === startIndex + renderedCount + 1) {
           colSpan = () => middleColumns.length - (startIndex + renderedCount) + 1;
-        } else if (index < startIndex && index === leftFixedColumns.length && startIndex > 0){
+        } else if (index < startIndex && index === leftFixedColumns.length && startIndex > 0) {
           colSpan = () => startIndex;
         }
+
+        const hiddenTitle = context.groupLevel > 0
+          ? () => (
+              <span style={{ visibility: 'hidden' }}>
+                {typeof col.title === 'function' ? col.title([]) : col.title}
+              </span>
+            )
+          : null;
+
         return {
           ...col,
-          colSpan: colSpan,
+          colSpan,
           render: () => null,
-          title: () => <span style={{ visibility: 'hidden' }}>{typeof col.title === 'function' ? col.title([]) : col.title}</span>,
+          title: hiddenTitle,
         };
       }
       return col;
-    }) : columns,
+    });
+  }, [columns, startIndex, renderedCount, props.virtualColumn, leftFixedColumns.length, middleColumns.length, context.groupLevel]);
+
+  return {
+    columns: processedColumns,
     columnInfo: {
       handleScroll,
     },
