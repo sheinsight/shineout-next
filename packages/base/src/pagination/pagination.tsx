@@ -46,6 +46,9 @@ const Pagination = (props: PaginationProps) => {
   });
 
   const paginationStyle = jssStyle?.pagination?.();
+
+  if (total < 0) return null;
+
   const rootClasses = classNames(
     className,
     paginationStyle?.rootClass,
