@@ -183,7 +183,29 @@ export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
   return false;
 }
 
+export function getCssVarValue(varName: string) {
+  if (isBrowser()) {
+    const style = getComputedStyle(document.documentElement);
+    return style.getPropertyValue(varName).trim();
+  }
+  return '';
+}
+
 export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, ''));
+
+let _baseFontSizeDiff: number = 0;
+const BASE_FONT_SIZE = 14;
+export function getBaseFontSizeDiff() {
+  if (_baseFontSizeDiff) return _baseFontSizeDiff;
+  const currentBaseFontSizeStr = getCssVarValue('--soui-font-14');
+  if (currentBaseFontSizeStr) {
+    const currentBaseFontSize = parsePxToNumber(currentBaseFontSizeStr);
+    _baseFontSizeDiff = BASE_FONT_SIZE - currentBaseFontSize;
+    return _baseFontSizeDiff
+  }
+  return 0;
+}
+
 
 export const getFieldId = (name?: string, formName?: string) => {
   if (!name) return undefined;

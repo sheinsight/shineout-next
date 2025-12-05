@@ -1,10 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
-import { KeygenResult, usePersistFn } from '@sheinx/hooks';
+import { KeygenResult, usePersistFn, util } from '@sheinx/hooks';
 import { SelectClasses, BaseListProps } from './select.type';
 import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';
 import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
+
+
 
 export const defaultRenderItem = <DataItem,>(d: DataItem) => d as unknown as React.ReactNode;
 const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
@@ -49,15 +51,12 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     return hoverIndex;
   });
 
-  const getLineHeight = () => {
+  const lineHeight = useMemo(() => {
     if (lineHeightProp && lineHeightProp !== 'auto') return lineHeightProp;
-    if (size === 'small') return 26;
-    if (size === 'default') return 34;
-    if (size === 'large') return 42;
-    return 34;
-  };
-
-  const lineHeight = getLineHeight();
+    const diff = util.getBaseFontSizeDiff();
+    const sizeMap = { small: 26, default: 34, large: 42 };
+    return (sizeMap[size as keyof typeof sizeMap] || 34) - diff;
+  }, [lineHeightProp, size]);
 
   const getHeight = () => {
     if (props.height) return props.height;

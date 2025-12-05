@@ -549,7 +549,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   optionGroupTitle: {
     fontSize: token.selectGroupTitleFontSize,
     lineHeight: token.lineHeightDynamic,
-    padding: `${token.selectGroupTitlePaddingTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
+    padding: `calc(${token.selectGroupTitleFontSize} - 4px) ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
     color: token.selectGroupTitleFontColor,
     fontWeight: token.selectGroupTitleFontWeight,
   },

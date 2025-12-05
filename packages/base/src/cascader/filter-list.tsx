@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { KeygenResult, util } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
 import { VirtualScrollList } from '../virtual-scroll';
@@ -40,15 +40,12 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     getHoverIndex: undefined,
   });
 
-  const getLineHeight = () => {
+  const lineHeight = useMemo(() => {
     // if (lineHeightProp && lineHeightProp !== 'auto') return lineHeightProp;
-    if (size === 'small') return 26;
-    if (size === 'default') return 34;
-    if (size === 'large') return 42;
-    return 34;
-  };
-
-  const lineHeight = getLineHeight();
+    const diff = util.getBaseFontSizeDiff();
+    const sizeMap = { small: 26, default: 34, large: 42 };
+    return (sizeMap[size as keyof typeof sizeMap] || 34) - diff;
+  }, [size]);
 
   const getKey = (path: DataItem[]) => {
     return path.map((d) => datum.getKey(d)).join('-');
