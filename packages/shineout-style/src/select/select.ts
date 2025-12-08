@@ -324,7 +324,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       fontSize: token.selectSmallFontSize,
     },
     '& $optionGroupTitle': {
-      padding: `${token.selectGroupTitleSmallTop} ${token.selectGroupTitlePaddingX} 0 ${token.selectGroupTitlePaddingX}`,
+      padding: `calc(${token.selectFontSize} - 10px) ${token.selectGroupTitlePaddingX} 0 ${token.selectGroupTitlePaddingX}`,
     },
   },
   pickerLarge: {
@@ -336,7 +336,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       fontSize: token.selectLargeFontSize,
     },
     '& $optionGroupTitle': {
-      padding: `${token.selectGroupTitleLargeTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitleLargeBottom} ${token.selectGroupTitlePaddingX}`,
+      padding: `calc(${token.selectFontSize} + 2px) ${token.selectGroupTitlePaddingX} ${token.selectGroupTitleLargeBottom} ${token.selectGroupTitlePaddingX}`,
     },
   },
   iconWrapper: {
@@ -549,7 +549,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   optionGroupTitle: {
     fontSize: token.selectGroupTitleFontSize,
     lineHeight: token.lineHeightDynamic,
-    padding: `calc(${token.selectGroupTitleFontSize} - 4px) ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
+    padding: `calc(${token.selectFontSize} - 4px) ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
     color: token.selectGroupTitleFontColor,
     fontWeight: token.selectGroupTitleFontWeight,
   },
