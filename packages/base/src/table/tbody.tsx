@@ -4,7 +4,7 @@ import Tr from './tr';
 import { TbodyProps } from './tbody.type';
 
 export default (props: TbodyProps) => {
-  const { columns = [], currentIndex = 0, hover = true } = props;
+  const { columns = [], currentRowIndex = 0, currentColIndex, hover = true } = props;
   const { isRowExpand, handleExpandClick } = useTableExpand({
     columns: props.columns,
     expandKeys: props.expandKeys,
@@ -14,7 +14,7 @@ export default (props: TbodyProps) => {
   const { rowData, handleCellHover, hoverIndex, rowSelectMergeStartData } = useTableRow({
     columns: props.columns,
     data: props.data,
-    currentIndex,
+    currentIndex: currentRowIndex,
     hover,
   });
 
@@ -24,7 +24,7 @@ export default (props: TbodyProps) => {
     )) as typeof props.expandHideCol;
 
   const renderRow = (item: any, index: number) => {
-    const rowIndex = index + currentIndex;
+    const rowIndex = index + currentRowIndex;
     const originKey = util.getKey(props.keygen, item, rowIndex);
     const trRenderKey =
       props.loader || props.rowEvents?.draggable ? originKey : `${originKey}-${rowIndex}`;
@@ -94,7 +94,7 @@ export default (props: TbodyProps) => {
   if (props.virtual === 'lazy') {
     return useComponentMemo(
       () => $tbody,
-      [props.data, currentIndex],
+      [currentRowIndex, currentColIndex, props.data],
       (prev: any, next: any) => {
         return (
           prev.some((_: any, index: number) => {

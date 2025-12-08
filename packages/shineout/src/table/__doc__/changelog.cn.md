@@ -1,3 +1,9 @@
+## 3.9.3-beta.4
+2025-12-08
+### 🚀 Performance
+- 优化 `Table` 同时设置 `virtualColumn` 虚拟列和 virtual=lazy 虚拟行后的滚动表现  ([#1508](https://github.com/sheinsight/shineout-next/pull/1508))
+
+
 ## 3.9.3-beta.3
 2025-12-08
 ### 🐞 BugFix
