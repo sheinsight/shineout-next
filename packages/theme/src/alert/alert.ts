@@ -26,7 +26,7 @@ const alertTokens: AlertTokens = {
   alertNearlyMargin: 'Spacing-8',
   alertTitleFontSize: 'Font-16',
   alertTitleFontWeight: 'Weight-medium',
-  alertTitleMarginY: 'Spacing-8',
+  alertTitleMarginY: 'Spacing-4',
   alertTitleIconWidth: 'Font-16',
   alertTitleIconHeight: 'Size-12',
   alertCloseFontColor: 'Neutral-text-4',

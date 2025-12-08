@@ -136,7 +136,7 @@ export interface AlertTokens {
   alertTitleFontWeight: string;
   /**
    * @type {string}
-   * @token Spacing-8
+   * @token Spacing-4
    * @description 提示框标题模式外边距（垂直方向）
    */
   alertTitleMarginY: string;
