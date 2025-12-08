@@ -7,7 +7,7 @@ export { default as useTableRow } from './use-table-row';
 export { default as useTableExpand } from './use-table-expand';
 export { default as useTableTree } from './use-table-tree';
 export { default as useTableVirtual } from './use-table-virtual';
-export { default as TableNestedContext } from './table-nested-context';
+export { default as TableContext } from './table-nested-context';
 
 export type {
   TableFormatColumn,
@@ -19,4 +19,4 @@ export type {
   TableColumnFilter,
   TableFilterData,
 } from './use-table.type';
-export type { TableNestedContextValue } from './table-nested-context';
+export type { TableContextValue } from './table-nested-context';

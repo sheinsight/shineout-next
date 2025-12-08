@@ -23,7 +23,7 @@ import {
   useScrollbarWidth,
   util,
   addResizeObserver,
-  TableNestedContext,
+  TableContext,
 } from '@sheinx/hooks';
 import { TableClasses, TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -43,7 +43,7 @@ const emptyRef = { current: null };
 export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
   const config = useConfig();
-  const nestedContext = useContext(TableNestedContext);
+  const nestedContext = useContext(TableContext);
 
   const isRtl = config.direction === 'rtl';
   const tableClasses = props?.jssStyle?.table?.() as TableClasses;

@@ -1,9 +1,9 @@
 import { createContext } from 'react';
 
-export interface TableNestedContextValue {
+export interface TableContextValue {
   parentTableWidth?: number;
 }
 
-const TableNestedContext = createContext<TableNestedContextValue>({});
+const TableContext = createContext<TableContextValue>({});
 
-export default TableNestedContext;
+export default TableContext;
