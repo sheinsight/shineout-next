@@ -1,3 +1,9 @@
+## 3.9.3-beta.3
+2025-12-08
+### 🐞 BugFix
+- 修复 `Table` 的可展开行中嵌套Table时，子Table的固定列失效的问题  ([#1507](https://github.com/sheinsight/shineout-next/pull/1507))
+
+
 ## 3.9.2-beta.5
 2025-12-03
 ### 🐞 BugFix

@@ -79,6 +79,7 @@ export default (props: TbodyProps) => {
         rowEvents={props.rowEvents}
         disabled={props.datum.disabledCheck(item)}
         bodyScrollWidth={props.bodyScrollWidth}
+        scrollRef={props.scrollRef}
         resizeFlag={props.resizeFlag}
         treeCheckAll={props.treeCheckAll}
         onCellClick={props.onCellClick}

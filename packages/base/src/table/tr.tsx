@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { usePersistFn, util } from '@sheinx/hooks';
+import { usePersistFn, util, TableContext } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import { addResizeObserver } from '@sheinx/hooks';
 import classNames from 'classnames';
@@ -37,6 +37,7 @@ interface TrProps
     | 'treeCheckAll'
     | 'onCellClick'
     | 'virtual'
+    | 'scrollRef'
   > {
   row: {
     data: any[];
@@ -395,7 +396,9 @@ const Tr = (props: TrProps) => {
               colSpan={props.columns.length}
               style={{ padding: 0 }}
             >
-              {renderFunc()}
+              <TableContext.Provider value={{ parentTableWidth: props.scrollRef?.current?.clientWidth }}>
+                {renderFunc()}
+              </TableContext.Provider>
             </td>
           </tr>
         );
