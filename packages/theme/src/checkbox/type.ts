@@ -4,7 +4,7 @@
 export interface CheckboxTokens {
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 单选框图标字号
    */
   checkboxIconSize: string;
@@ -160,7 +160,7 @@ export interface CheckboxTokens {
   checkboxBlockGap: string;
   /**
    * @type {string}
-   * @token Size-6
+   * @token Font-12
    * @description 单选框小尺寸图标字号
    */
   checkboxSmallIconSize: string;
@@ -172,7 +172,7 @@ export interface CheckboxTokens {
   checkboxSmallLabelFontSize: string;
   /**
    * @type {string}
-   * @token Size-8
+   * @token Font-16
    * @description 单选框大尺寸图标字号
    */
   checkboxLargeIconSize: string;

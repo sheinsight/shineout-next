@@ -30,6 +30,7 @@ const tagTokens: TagTokens = {
   tagInfoIconDisabledFontColor: 'Brand-3',
   tagInfoIconHoverBackgroundColor: 'Brand-2',
   tagDefaultLineHeight: 'Line-height-dynamic',
+  tagDefaultLineBase: 'Font-14',
   tagDefaultFontColor: 'Neutral-text-5',
   tagDefaultBackgroundColor: 'Neutral-fill-2',
   tagDefaultBorderColor: 'Neutral-fill-2',

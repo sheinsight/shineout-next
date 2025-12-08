@@ -33,6 +33,7 @@ type tagType =
   | 'lemon'
   | 'orange'
   | 'tangerine';
+const tagDefaultLineHeight = `calc(${Token.tagDefaultLineBase} + 6px)`
 
 const brightTag = (name: tagType, type: TagType) => ({
   color: Token[`tag${type}FontColor`],
@@ -189,7 +190,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   wrapper: {
     flex: 1,
     minWidth: 0,
-    lineHeight: Token.tagDefaultLineHeight,
+    lineHeight: tagDefaultLineHeight,
   },
   inline: {
     display: 'inline-block',
@@ -252,7 +253,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     alignItems: 'center',
     display: 'inline-flex',
     cursor: 'pointer',
-    height: Token.tagDefaultLineHeight,
+    height: tagDefaultLineHeight,
     maxHeight: '100%',
   },
 

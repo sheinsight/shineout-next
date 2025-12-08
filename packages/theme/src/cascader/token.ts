@@ -41,7 +41,7 @@ const cascaderTokenExtraValue = {
   border: { radius: 'Radius-default', color: 'Neutral-border-2' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: {
-    size: 'Size-7',
+    size: 'Font-14',
     color: 'Neutral-text-4',
   },
   tag: {
@@ -144,6 +144,7 @@ const cascaderTokenExtraValue = {
     },
     icon: {
       color: 'Neutral-text-4',
+      size: 'Font-14',
     },
     hover: {
       background: { color: 'Neutral-fill-2' },

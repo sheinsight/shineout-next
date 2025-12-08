@@ -280,7 +280,7 @@ export interface TableTokens {
   tableFilterInputMarginBottom: string;
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 表格undefinedundefined图标字号
    */
   tableFilterInputIconSize: string;
@@ -328,7 +328,7 @@ export interface TableTokens {
   tableFilterIconPadding: string;
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 表格undefined图标字号
    */
   tableFilterIconSize: string;

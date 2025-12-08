@@ -27,7 +27,7 @@ const menuTokens: MenuTokens = {
   menuTitlePaddingX: 'Spacing-16',
   menuTitlePaddingY: 'Spacing-9',
   menuExpandWidth: 'Spacing-46',
-  menuExpandSize: 'Spacing-14',
+  menuExpandSize: 'Font-14',
   menuExpandHoverBackgroundColor: 'Neutral-fill-3',
   menuChildrenBoxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
   menuHeaderBorderColor: 'Neutral-border-1',

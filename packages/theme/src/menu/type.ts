@@ -142,7 +142,7 @@ export interface MenuTokens {
   menuExpandWidth: string;
   /**
    * @type {string}
-   * @token Spacing-14
+   * @token Font-14
    * @description 菜单展开icon的字号
    */
   menuExpandSize: string;

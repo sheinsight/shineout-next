@@ -3,6 +3,17 @@ import App from './theme/index';
 import { setConfig } from 'shineout';
 import { setJssConfig } from '@sheinx/shineout-style';
 import './index.css'
+// import { setToken } from 'shineout';
+// setTimeout(() => {
+//   setToken({
+//     token: {
+//       '--soui-font-14': '12px',
+//       '--soui-font-16': '14px'
+//     },
+//     selector: 'html',
+//     update: true,
+//   })
+// }, 1000);
 
 if (process.env.NODE_ENV === 'development') {
   const camelToDash = (str: string) => str.replace(/([A-Z])/g, '-$1').toLowerCase();

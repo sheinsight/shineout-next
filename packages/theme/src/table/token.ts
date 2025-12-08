@@ -115,14 +115,14 @@ const tableTokenExtraValue = {
     },
     input: {
       margin: { bottom: 'Spacing-8' },
-      icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { right: 'Spacing-8' } },
+      icon: { size: 'Font-14', color: 'Neutral-text-4', margin: { right: 'Spacing-8' } },
     },
     icon: {
       color: 'Neutral-text-3',
       hover: { color: 'Neutral-text-4', background: { color: 'Neutral-fill-3' } },
       active: { color: 'Brand-6' },
       padding: 'Spacing-4',
-      size: 'Size-7',
+      size: 'Font-14',
     },
   },
   resize: {

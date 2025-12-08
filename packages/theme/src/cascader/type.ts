@@ -40,7 +40,7 @@ export interface CascaderTokens {
   cascaderPaddingY: string;
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 级联选择器图标字号
    */
   cascaderIconSize: string;
@@ -392,6 +392,12 @@ export interface CascaderTokens {
    * @description 级联选择器选项图标颜色
    */
   cascaderOptionIconColor: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 级联选择器选项图标字号
+   */
+  cascaderOptionIconSize: string;
   /**
    * @type {string}
    * @token Neutral-fill-2

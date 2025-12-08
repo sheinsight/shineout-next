@@ -160,6 +160,12 @@ export interface TagTokens {
   tagDefaultLineHeight: string;
   /**
    * @type {string}
+   * @token Font-14
+   * @description 标签默认尺寸行undefined
+   */
+  tagDefaultLineBase: string;
+  /**
+   * @type {string}
    * @token Neutral-text-5
    * @description 标签默认尺寸字体颜色
    */

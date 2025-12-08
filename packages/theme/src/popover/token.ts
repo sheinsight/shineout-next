@@ -22,7 +22,8 @@ const popoverTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 popoverRules 强关联，非 popoverRules 规则内的 token 需手动增加或删减。
  */
-const popoverTokenValue = {
+const popoverTokenValue = {};
+const popoverTokenExtraValue = {
   font: { size: 'Font-14', weight: 'Weight-regular', color: 'Neutral-text-5' },
   padding: { x: 'Spacing-8', y: 'Spacing-8' },
   radius: 'Radius-default',
@@ -64,10 +65,9 @@ const popoverTokenValue = {
     padding: { x: 'Spacing-16', y: 'Spacing-16' },
     margin: { y: 'Spacing-16' },
     background: { color: 'transparent' },
+    title: { font: { size: 'Font-14' } },
   },
 };
-
-const popoverTokenExtraValue = {};
 
 module.exports = {
   popoverTokenValue,

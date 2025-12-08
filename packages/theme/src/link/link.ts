@@ -4,9 +4,9 @@
 import { LinkTokens } from './type';
 
 const linkTokens: LinkTokens = {
-  linkDefaultFontSize: 'Size-7',
-  linkSmallFontSize: 'Size-6',
-  linkLargeFontSize: 'Size-8',
+  linkDefaultFontSize: 'Font-14',
+  linkSmallFontSize: 'Font-12',
+  linkLargeFontSize: 'Font-16',
   linkPrimaryFontColor: 'Brand-6',
   linkPrimaryDisabledFontColor: 'Brand-3',
   linkPrimaryHoverFontColor: 'Brand-5',

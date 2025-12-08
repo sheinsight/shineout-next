@@ -22,6 +22,8 @@ export interface PopoverClasses {
    */
   confirm: string;
   mention: string;
+  mentionTitle: string;
+  mentionIcon: string;
   footer: string;
 }
 

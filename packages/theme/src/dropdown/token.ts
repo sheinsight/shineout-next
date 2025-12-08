@@ -30,7 +30,9 @@ const dropdownTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 dropdownRules 强关联，非 dropdownRules 规则内的 token 需手动增加或删减。
  */
-const dropdownTokenValue = {
+const dropdownTokenValue = {};
+
+const dropdownTokenExtraValue = {
   list: {
     border: { radius: 'Radius-default', color: 'Neutral-border-1', width: 'Border-1' },
     padding: { x: 'Spacing-4', y: 'Spacing-4' },
@@ -60,10 +62,10 @@ const dropdownTokenValue = {
     disabled: { background: { color: 'Neutral-fill-1' }, font: { color: 'Neutral-text-2' } },
     border: { radius: 'Radius-2' },
     group: {
-      padding: { x: 'Spacing-8', top: 'Spacing-10', bottom: 'Spacing-2' },
+      padding: { x: 'Spacing-8', top: 'Font-14', bottom: 'Spacing-2' },
       font: { size: 'Font-12', color: 'Neutral-text-3', weight: 'Weight-regular' },
       small: { x: 'Spacing-8', top: 'Spacing-4', bottom: '' },
-      large: { x: 'Spacing-12', top: 'Spacing-14', bottom: 'Spacing-4' },
+      large: { x: 'Spacing-12', top: 'Font-16', bottom: 'Spacing-4', font: { size: 'Font-14' } },
     },
     divider: {
       background: { color: 'Neutral-border-1' },
@@ -72,9 +74,8 @@ const dropdownTokenValue = {
     },
   },
   column: { padding: { x: 'Spacing-4', y: 'Spacing-4' } },
+  caret: { margin: { left: 'Spacing-4' } },
 };
-
-const dropdownTokenExtraValue = { caret: { margin: { left: 'Spacing-4' } } };
 
 module.exports = {
   dropdownTokenValue,

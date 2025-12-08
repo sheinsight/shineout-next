@@ -40,7 +40,7 @@ export interface DatePickerTokens {
   datePickerPaddingY: string;
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 日期选择器图标字号
    */
   datePickerIconSize: string;
@@ -50,6 +50,12 @@ export interface DatePickerTokens {
    * @description 日期选择器图标颜色
    */
   datePickerIconColor: string;
+  /**
+   * @type {string}
+   * @token Font-12
+   * @description 日期选择器小尺寸图标字号
+   */
+  datePickerSmallIconSize: string;
   /**
    * @type {string}
    * @token Spacing-16
@@ -80,6 +86,12 @@ export interface DatePickerTokens {
    * @description 日期选择器小尺寸内边距（垂直方向）
    */
   datePickerSmallPaddingY: string;
+  /**
+   * @type {string}
+   * @token Font-16
+   * @description 日期选择器大尺寸图标字号
+   */
+  datePickerLargeIconSize: string;
   /**
    * @type {string}
    * @token Font-16
@@ -304,7 +316,7 @@ export interface DatePickerTokens {
   datePickerPanelHeaderIconColor: string;
   /**
    * @type {string}
-   * @token Size-7
+   * @token Font-14
    * @description 日期选择器面板头部图标宽度
    */
   datePickerPanelHeaderIconWidth: string;

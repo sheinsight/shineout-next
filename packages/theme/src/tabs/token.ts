@@ -126,7 +126,7 @@ const tabsTokenExtraValue = {
     horizontal: { padding: { x: 'Spacing-7', y: 'Spacing-8' } },
   },
   extra: { fill: { hover: { background: { color: 'Neutral-fill-3' } } } },
-  arrow: { font: { color: 'Neutral-text-4' } },
+  arrow: { font: { color: 'Neutral-text-4', size: 'Font-14' } },
   badge: { margin: 'Spacing-0' },
 };
 

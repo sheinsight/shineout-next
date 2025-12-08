@@ -14,6 +14,7 @@ const breadcrumbTokenDescription = {
   wrapper: '外部容器',
   separator: '分隔符',
   prev: '上级',
+  down: '下拉',
 };
 
 /**
@@ -73,6 +74,11 @@ const breadcrumbTokenExtraValue = {
   icon: {
     background: { color: 'Neutral-text-4' },
   },
+  down: {
+    icon: {
+      size: 'Font-14',
+    }
+  }
 };
 
 module.exports = {

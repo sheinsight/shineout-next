@@ -472,6 +472,12 @@ export interface TabsTokens {
   tabsArrowFontColor: string;
   /**
    * @type {string}
+   * @token Font-14
+   * @description 标签页箭头icon字体字号
+   */
+  tabsArrowFontSize: string;
+  /**
+   * @type {string}
    * @token Spacing-0
    * @description 标签页undefined外边距
    */

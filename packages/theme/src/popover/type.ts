@@ -16,6 +16,12 @@ export interface PopoverTokens {
   popoverFontWeight: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description 气泡字体颜色
+   */
+  popoverFontColor: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 气泡内边距（水平方向）
    */
@@ -40,10 +46,10 @@ export interface PopoverTokens {
   popoverBorderWidth: string;
   /**
    * @type {string}
-   * @token Neutral-text-5
-   * @description 气泡字体颜色
+   * @token Neutral-border-1
+   * @description 气泡边框颜色
    */
-  popoverFontColor: string;
+  popoverBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
@@ -56,12 +62,6 @@ export interface PopoverTokens {
    * @description 气泡阴影
    */
   popoverShadow: string;
-  /**
-   * @type {string}
-   * @token Neutral-border-1
-   * @description 气泡边框颜色
-   */
-  popoverBorderColor: string;
   /**
    * @type {string}
    * @token Success-1
@@ -152,4 +152,10 @@ export interface PopoverTokens {
    * @description 气泡确认背景颜色
    */
   popoverConfirmBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 气泡确认标题模式字体字号
+   */
+  popoverConfirmTitleFontSize: string;
 }
