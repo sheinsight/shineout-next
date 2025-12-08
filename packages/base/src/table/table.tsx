@@ -117,7 +117,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     beforeChange: undefined,
   });
 
-  const { columns, expandHideCol, columnInfo } = useTableColumns({
+  const { columns, expandHideCol, columnInfo, currentColIndex } = useTableColumns({
     columns: props.columns,
     virtualColumn: props.virtualColumn,
     scrollRef: scrollRef,
@@ -600,7 +600,8 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
                 {Group}
                 <Tbody
                   {...bodyCommonProps}
-                  currentIndex={virtualInfo.startIndex}
+                  currentRowIndex={virtualInfo.startIndex}
+                  currentColIndex={currentColIndex}
                   data={virtualInfo.data}
                   setRowHeight={virtualInfo.setRowHeight}
                   scrolling={scrolling}

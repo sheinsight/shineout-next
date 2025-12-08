@@ -167,6 +167,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
     columnInfo: {
       handleScroll,
     },
+    currentColIndex: startIndex,
     expandHideCol: context.expandHideCol,
   };
 };

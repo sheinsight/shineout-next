@@ -33,7 +33,8 @@ export interface TbodyProps
   data: any[];
   colgroup: (number | string | undefined)[];
   isScrollX: boolean;
-  currentIndex?: number;
+  currentRowIndex?: number;
+  currentColIndex?: number;
   expandHideCol: UseColumnsResult['expandHideCol'];
   datum: ListDatum;
   treeFunc: UseTreeResult['func'];

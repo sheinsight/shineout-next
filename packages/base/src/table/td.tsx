@@ -1,5 +1,4 @@
 import React from 'react';
-import { useComponentMemo, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import { TbodyProps } from './tbody.type';
 
@@ -27,14 +26,13 @@ export default function Td(props: TdProps): JSX.Element {
     className,
     direction,
     role,
-    data,
     onClick,
     onMouseEnter,
     onMouseLeave,
     renderContent,
   } = props;
 
-  const $td = (
+  return (
     <td
       key={col.key}
       colSpan={colSpan}
@@ -50,22 +48,4 @@ export default function Td(props: TdProps): JSX.Element {
       {renderContent(props.col, props.data)}
     </td>
   );
-
-  if (props.virtual === 'lazy') {
-    return useComponentMemo(
-      () => $td,
-      [data, className, props.style?.left, props.style?.right, col.type, col.treeColumnsName],
-      (prev: any, next: any) => {
-        if (col.type || col.treeColumnsName) {
-          return true;
-        }
-        return (
-          prev.some((_: any, index: any) => {
-            return !util.shallowEqual(prev?.[index], next?.[index]);
-          }) || !props.scrolling
-        );
-      },
-    ) as JSX.Element;
-  }
-  return $td;
 }
