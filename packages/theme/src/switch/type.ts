@@ -40,7 +40,7 @@ export interface SwitchTokens {
   switchCircleFill: string;
   /**
    * @type {string}
-   * @token Shadow-5
+   * @token Shadow-3
    * @description 开关圆形阴影
    */
   switchCircleShadow: string;

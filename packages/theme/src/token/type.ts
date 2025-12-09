@@ -1388,13 +1388,6 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default 'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px'
-   * @description Switch圆圈阴影
-   */
-  'Shadow-5': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default 'calc( 1em + 8px )'
    * @description 根据当前的字体大小 + 8px
    */
