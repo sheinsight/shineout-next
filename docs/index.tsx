@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import App from './theme/index';
-import { setConfig } from 'shineout';
-import { setJssConfig } from '@sheinx/shineout-style';
+import { setConfig, setJssConfig } from 'shineout';
 import './index.css'
 // import { setToken } from 'shineout';
 // setTimeout(() => {
