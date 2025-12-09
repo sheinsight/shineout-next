@@ -1,3 +1,9 @@
+## 3.9.3-beta.6
+2025-12-09
+### 🆕 Feature
+- `Tree` 新增 `filteredData` 属性，用于需过滤数据但勾选基于全量data的场景 ([#1510](https://github.com/sheinsight/shineout-next/pull/1510))
+
+
 ## 3.7.10-beta.3
 2025-08-14
 
