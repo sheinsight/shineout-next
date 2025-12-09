@@ -144,6 +144,7 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       backgroundColor: token.switchDisabledCircleCheckedFill,
     },
     '$wrapperDisabled &': {
+      boxShadow: 'none',
       backgroundColor: token.switchCheckedDisabledCircleFill,
     },
 
@@ -151,7 +152,7 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
     position: 'absolute',
 
     backgroundColor: token.switchCircleFill,
-    // boxShadow: token.switchCircleShadow,
+    boxShadow: token.switchCircleShadow,
     transition: `left ${transition}, right ${transition}`,
   },
   content: {
