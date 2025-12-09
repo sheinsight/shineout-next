@@ -227,7 +227,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
       return (
         <VirtualTree
           {...props}
-          data={data}
+          data={props.filteredData || data}
           line={line}
           rowsInView={rowsInView}
           expanded={expanded}

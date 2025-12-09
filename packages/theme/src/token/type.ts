@@ -1382,14 +1382,14 @@ export interface Tokens {
    * @type {string}
    * @categoty string
    * @default '0px -2px 10px rgba(232, 235, 240, 0.8)'
-   * @description 详情页底部按钮模块阴影
+   * @description 详情页底部按钮模块阴影（向上）
    */
   'Shadow-4': string;
   /**
    * @type {string}
    * @categoty string
-   * @default 'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px'
-   * @description Switch圆圈阴影
+   * @default '0px 2px 10px rgba(232, 235, 240, 0.8)'
+   * @description 详情页底部按钮模块阴影（向下）
    */
   'Shadow-5': string;
   /**

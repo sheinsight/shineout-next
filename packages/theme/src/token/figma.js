@@ -1381,15 +1381,14 @@ const figma = [
   {
     name: 'Shadow-4',
     value: '0px -2px 10px rgba(232, 235, 240, 0.8)',
-    describe: '详情页底部按钮模块阴影',
+    describe: '详情页底部按钮模块阴影（向上）',
     token: 'Shadow-4',
     locked: true,
   },
   {
     name: 'Shadow-5',
-    value:
-      'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
-    describe: 'Switch圆圈阴影',
+    value: '0px 2px 10px rgba(232, 235, 240, 0.8)',
+    describe: '详情页底部按钮模块阴影（向下）',
     token: 'Shadow-5',
     locked: true,
   },

@@ -27,7 +27,7 @@ const switchTokenValue = {};
 const switchTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-4' },
   padding: { x: 'Spacing-2', y: 'Spacing-2' },
-  circle: { size: 'Size-9', fill: 'Neutral-text-1', shadow: 'Shadow-5' },
+  circle: { size: 'Size-9', fill: 'Neutral-text-1', shadow: 'Shadow-3' },
   width: 'Size-21',
   text: {
     padding: { left: 'Spacing-8', right: 'Spacing-4' },
