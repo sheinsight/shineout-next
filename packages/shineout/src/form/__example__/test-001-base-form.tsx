@@ -1,8 +1,8 @@
 /**
- * cn - 调试用基础 Form
+ * cn - FormSchema
  *    -- 调试用的，在这个例子基础上随便改吧
- * en - Test Form
- *    -- Test Form
+ * en - FormSchema
+ *    -- FormSchema
  */
 import React from 'react';
 import {
@@ -74,6 +74,7 @@ export default () => {
             keygen="id"
             format="id"
             name='select3'
+            renderItem={d => d.color}
           />
         </Form.Item>
         <Form.Item label='下拉4' required>
@@ -83,6 +84,7 @@ export default () => {
             keygen="id"
             format={d => d.color}
             name='select4'
+            renderItem={d => d.color}
           />
         </Form.Item>
 
