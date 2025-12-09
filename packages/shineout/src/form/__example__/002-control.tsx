@@ -45,8 +45,23 @@ const App: React.FC = () => {
         <div><Button mode="outline"
           onClick={() =>
             form.current?.validate()
-            .then((values) => {
-              console.log('validate success', values);
+            .then((ok) => {
+              console.log('validate success', ok);
+              // TODO: 校验成功处理逻辑
+            })
+            .catch((errorInfo) => {
+              console.log('validate failed errorInfo: >>', errorInfo)
+              // TODO: 校验失败处理逻辑
+            })
+          }
+        >
+          Validate
+        </Button></div>
+        <div><Button mode="outline"
+          onClick={() =>
+            form.current?.validateFields(['name', 'password'])
+            .then((ok) => {
+              console.log('validate success', ok);
               // TODO: 校验成功处理逻辑
             })
             .catch((errorInfo) => {

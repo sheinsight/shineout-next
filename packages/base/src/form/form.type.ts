@@ -35,12 +35,12 @@ export interface FormRef<FormValue> {
   getValue: (name?: string) => any | FormValue;
   /**
    * @en Validate all fields in the entire form. Returns a Promise that resolves with the entire form data object (FormValue type) on successful validation, and rejects with error information on failure. Usually called before form submission to ensure all data validity
-   * @cn 校验整个表单的所有字段。返回一个 Promise，校验成功时 resolve 整个表单的数据对象（FormValue 类型），失败时 reject 错误信息。通常在提交表单前调用以确保所有数据的有效性
+   * @cn 校验整个表单的所有字段。返回一个 Promise，校验成功时 resolve(true)，失败时 reject 错误信息。通常在提交表单前调用以确保所有数据的有效性
    */
   validate: () => Promise<any>;
   /**
    * @en Validate specified form fields. The fields parameter is a field path, which can be a single path string or an array of paths. Field paths support: 'name' (top-level field), 'user.email' (nested object), 'list[0].name' (array element). Returns a Promise that resolves with the specified field data on success, and rejects with the first error encountered on failure. Suitable for step-by-step forms or partial validation scenarios
-   * @cn 校验指定的表单字段。fields 参数为字段路径，可以是单个路径字符串或路径数组。字段路径支持：'name'（顶层字段）、'user.email'（嵌套对象）、'list[0].name'（数组元素）。返回 Promise，成功时 resolve 指定字段的数据，失败时 reject 第一个遇到的错误。适用于分步表单或部分校验场景
+   * @cn 校验指定的表单字段。fields 参数为字段路径，可以是单个路径字符串或路径数组。字段路径支持：'name'（顶层字段）、'user.email'（嵌套对象）、'list[0].name'（数组元素）。返回 Promise，成功时 resolve(true)，失败时 reject 第一个遇到的错误。适用于分步表单或部分校验场景
    */
   validateFields: (fields: string | string[]) => Promise<any>;
 
