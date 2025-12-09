@@ -147,9 +147,10 @@ export class SchemaBuilder {
           if(componentElement.props.data.length > 0) {
             fieldSchemaInfo.description += `enumData: ${JSON.stringify(componentElement.props.data)};`
           }
+          fieldSchemaInfo.props = {...componentElement.props};
           break;
         }
-        case 'ShineoutDatePicker':
+        case 'ShineoutDatePicker': {
           if (componentElement.props.range) {
             if (finalFieldId?.includes(separator || '')) {
               fieldSchemaInfo.type = 'string';
@@ -189,7 +190,7 @@ export class SchemaBuilder {
                 dateformat = 'YYYY-MM';
                 break;
               case 'quarter':
-                dateformat = 'YYYY-\[Q]Q';
+                dateformat = 'YYYY-[Q]Q';
                 break;
               case 'year':
                 dateformat = 'YYYY';
@@ -207,6 +208,7 @@ export class SchemaBuilder {
             fieldSchemaInfo.description += `最小时间：${componentElement.props.min} `
           }
           break;
+        }
         case 'ShineoutCheckbox':
         case 'ShineoutCheckboxGroup': {
           if (typeof componentElement.props.keygen !== 'boolean') {
@@ -366,7 +368,7 @@ export class SchemaBuilder {
     }
 
     // 过滤掉 required 属性，items 对象不应该包含 required
-    const { required, ...itemsMeta } = meta;
+    const { required: _required, ...itemsMeta } = meta;
     this.mergeSchema(currentSchema.items, remainingSegments, itemsMeta);
   }
 
