@@ -136,6 +136,8 @@ export default () => {
             keygen='id'
             renderItem={renderItem}
             onChange={handleChange}
+            virtual
+            style={{ height: 200, marginTop: 12 }}
           />
         </div>
         <pre

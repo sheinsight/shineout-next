@@ -98,6 +98,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     virtual,
     onExpand: onExpandProp,
     datum: propsDatum,
+    tiledData: props.filteredData,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
@@ -227,7 +228,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
       return (
         <VirtualTree
           {...props}
-          data={props.filteredData || data}
+          data={data}
           line={line}
           rowsInView={rowsInView}
           expanded={expanded}
