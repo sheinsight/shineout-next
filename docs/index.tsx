@@ -28,6 +28,9 @@ if (process.env.NODE_ENV === 'development') {
       const prefix = 'soui-';
       return `${prefix}${ns}${camelToDash(rule.key)}`;
     },
+    styleAttributes: {
+      'data-alita-ignore': 'true'
+    }
   });
 }
 

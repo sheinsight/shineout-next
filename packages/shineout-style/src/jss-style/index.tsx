@@ -8,11 +8,17 @@ const prefix = 'soui';
 
 const config: {
   generateId?: GenerateId;
+  styleAttributes?: Record<string, string>;
 } = {};
 
-export const setJssConfig = (newConfig: { generateId?: GenerateId }) => {
+export const setJssConfig = (newConfig: {
+  generateId?: GenerateId;
+  styleAttributes?: Record<string, string>;
+}) => {
   Object.assign(config, newConfig);
 };
+
+export const getJssConfig = () => config;
 
 const stringToHash = (str: string) => {
   let hash = 0;
@@ -55,9 +61,22 @@ export type ClassStyle<K extends Record<string, any>> = {
 };
 
 export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
-  const hoc = createUseStyles(handleStyle(style), { name: ns, generateId: createClassname });
+  const styleElement = typeof window !== 'undefined' ? document.createElement('style') : undefined;
+  const hoc = createUseStyles(handleStyle(style), { name: ns, generateId: createClassname, element: styleElement });
   const styledCacheMap: Record<string, any> = {};
+
+  let attributesApplied = false;
   const getClassName = () => {
+    if (!attributesApplied && styleElement) {
+      const jssConfig = getJssConfig();
+      if (jssConfig.styleAttributes) {
+        Object.entries(jssConfig.styleAttributes).forEach(([key, value]) => {
+          styleElement.setAttribute(key, value);
+        });
+      }
+      attributesApplied = true;
+    }
+
     const classes = hoc();
     if (styledCacheMap[ns]) {
       return styledCacheMap[ns] as Classes<C>;
