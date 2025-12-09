@@ -201,6 +201,7 @@ const Token: Tokens = {
   'Shadow-2': '0px 4px 10px rgba(2, 11, 24, 0.1)',
   'Shadow-3': '0px 8px 20px rgba(2, 11, 24, 0.1)',
   'Shadow-4': '0px -2px 10px rgba(232, 235, 240, 0.8)',
+  'Shadow-5': '0px 2px 10px rgba(232, 235, 240, 0.8)',
   'Line-height-dynamic': 'calc( 1em + 8px )',
   'Line-height-dynamic-min': 'calc( max(1em, 14px) + 8px )',
   Transparent: 'transparent',
