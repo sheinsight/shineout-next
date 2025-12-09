@@ -2280,13 +2280,28 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
     </div>
   </div>
   <div
-    style="display: flex;"
+    style="display: flex; gap: 24px;"
   >
     <div
       style="flex: 1;"
     >
       <div
+        class="soui-input soui-input-wrapper"
+        data-soui-input-border="true"
+      >
+        <div
+          class="soui-input-wrapper-inner-title-top soui-input-wrapper-inner-title-bottom soui-input-wrapper-padding-box soui-input-content"
+        >
+          <input
+            class="soui-input-input"
+            placeholder="输入关键字过滤"
+            value=""
+          />
+        </div>
+      </div>
+      <div
         class="soui-tree soui-tree-tree soui-tree-noline"
+        filtereddata="[object Object],[object Object],[object Object],[object Object],[object Object]"
       >
         <div
           class="soui-tree-root"
@@ -2641,7 +2656,7 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </div>
     </div>
     <pre
-      style="flex: 1; margin: 10px; background: rgb(29, 29, 29); color: rgb(148, 213, 252); border-radius: 4px; padding: 10px;"
+      style="flex: 1; background: rgb(29, 29, 29); color: rgb(148, 213, 252); border-radius: 4px; padding: 12px;"
     >
       <div
         style="margin-bottom: 10px;"

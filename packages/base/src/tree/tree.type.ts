@@ -264,6 +264,13 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @version 3.7.0
    */
   size?: 'small' | 'default' | 'large';
+
+  /**
+   * @en Filtered data is passed in, but the check is still based on data
+   * @cn 传入过滤后的数据，但勾选依然基于 data 进行
+   * @version 3.9.3
+   */
+  filteredData?: DataItem[];
 }
 
 export interface VirtualTreeProps<DataItem, Value extends any[]>
