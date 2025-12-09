@@ -2,7 +2,7 @@
 2025-12-09
 
 ### 💅 Style
-- `setJssConfig` 支持设置 styleAttributes 属性 ([#1514](https://github.com/sheinsight/shineout-next/pull/1514))
+- `setJssConfig` 支持设置 styleAttributes 属性 ([#1515](https://github.com/sheinsight/shineout-next/pull/1515))
 
 
 ## 3.9.3-beta.1

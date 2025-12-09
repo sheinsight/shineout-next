@@ -119,6 +119,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
   const { columns, expandHideCol, columnInfo, currentColIndex } = useTableColumns({
     columns: props.columns,
+    data: props.data,
     virtualColumn: props.virtualColumn,
     scrollRef: scrollRef,
     showCheckbox: typeof props.onRowSelect === 'function',

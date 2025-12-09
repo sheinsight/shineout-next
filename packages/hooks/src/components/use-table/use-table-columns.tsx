@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 export interface UseColumnsProps<Data> {
   columns?: TableColumnItem<Data>[];
+  data?: Data[];
   showCheckbox?: boolean;
   virtualColumn?: boolean;
   scrollRef: React.RefObject<HTMLElement>;
@@ -134,6 +135,14 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
     if (!props.virtualColumn) return;
     handleScroll({ scrollLeft: 0 });
   }, []);
+
+  useEffect(() => {
+    if (!props.virtualColumn) return;
+
+    if(props.scrollRef.current?.scrollLeft === 0){
+      handleScroll({ scrollLeft: 0 });
+    }
+  }, [props.data?.length]);
 
   const processedColumns = useMemo(() => {
     if (!props.virtualColumn) return columns;
