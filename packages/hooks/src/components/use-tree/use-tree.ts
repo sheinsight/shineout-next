@@ -587,6 +587,26 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     });
   };
 
+  const getChildrenFromTiledData = (id: KeygenResult): DataItem[] | undefined => {
+    if (!props.tiledData) return undefined;
+
+    const findById = (data: DataItem[], targetId: KeygenResult): DataItem | undefined => {
+      for (let i = 0; i < data.length; i++) {
+        const current = data[i];
+        const currentId = getKey(current, '', i);
+        if (currentId === targetId) return current;
+        if (current[childrenKey]) {
+          const found = findById(current[childrenKey] as DataItem[], targetId);
+          if (found) return found;
+        }
+      }
+      return undefined;
+    };
+
+    const item = findById(props.tiledData, id);
+    return item?.[childrenKey] as DataItem[] | undefined;
+  };
+
   const insertFlat = (id: KeygenResult) => {
     const item = getDataById(id);
     if (isUnMatchedData(item)) return;
@@ -594,7 +614,12 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     const status = context.dataFlatStatusMap.get(id);
     if (!status) return;
-    const childrenData = item[childrenKey] as DataItem[];
+
+    // 优先从 tiledData 中获取子节点数据,如果不存在则使用原始数据
+    const childrenData = props.tiledData
+      ? (getChildrenFromTiledData(id) || [])
+      : (item[childrenKey] as DataItem[]);
+
     const insertStartNode = dataFlat.find((item) => item.id === id);
     context.dataFlatStatusMap.set(id, {
       ...status,
@@ -737,6 +762,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (!props.tiledData) return;
     const tiledFlatData = initFlatData(props.tiledData, [], 1);
     setDataFlat(tiledFlatData);
+    // context.dataFlatStatusMap = new Map();
   }, [props.tiledData]);
 
 
