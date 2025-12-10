@@ -81,7 +81,7 @@ const validateFile = (name) => {
 const publishPackage = (name) => {
   const distPath = path.resolve(__dirname, `../packages/${name}/dist`);
   exec(
-    'npm publish ' + distPath + ' --access public' + (tag ? ` --tag ${tag}` : ''),
+    'npm publish ' + distPath + ' --access public --provenance' + (tag ? ` --tag ${tag}` : ''),
     (error, stdout) => {
       if (error) {
         console.error(error);
