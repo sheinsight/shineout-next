@@ -5,6 +5,18 @@ export type TableColumnOrder = 'asc' | 'desc';
 export type TableColumnFix = 'left' | 'right';
 export type TableColumnType = 'expand' | 'row-expand' | 'checkbox';
 
+/**
+ * @title VirtualColumnConfig
+ */
+export interface VirtualColumnConfig {
+  /**
+   * @en Number of extra columns to render on each side of the visible area for smoother scrolling
+   * @cn 可视区域两侧额外渲染的列数，用于实现更平滑的滚动效果
+   * @default 2
+   */
+  overscan?: number;
+}
+
 export interface SortItem {
   order: 'desc' | 'asc';
   weight?: number;

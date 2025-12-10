@@ -1,4 +1,4 @@
-import { TableColumnItem, TableFormatColumn } from './use-table.type';
+import { TableColumnItem, TableFormatColumn, VirtualColumnConfig } from './use-table.type';
 import { produce } from '../../utils/immer';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
@@ -6,7 +6,7 @@ export interface UseColumnsProps<Data> {
   columns?: TableColumnItem<Data>[];
   data?: Data[];
   showCheckbox?: boolean;
-  virtualColumn?: boolean;
+  virtualColumn?: boolean | VirtualColumnConfig;
   scrollRef: React.RefObject<HTMLElement>;
 }
 
@@ -27,13 +27,20 @@ export type RxpandHideColType = {
   onClick?: (data: any, expand: boolean) => void;
 } | null;
 
-// 缓冲区列数：左右各2列
-const BUFFER_COUNT = 2;
+// 默认 overscan 值：可视区域两侧各额外渲染2列
+const DEFAULT_OVERSCAN = 2;
 
 const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
   const [startIndex, setStartIndex] = useState(0);
   const [renderedCount, setRenderedCount] = useState(20);
   const { columns: propsColumns = [] } = props;
+
+  // 获取 overscan 配置，支持布尔值和对象两种格式
+  const overscan = useMemo(() => {
+    if (!props.virtualColumn) return DEFAULT_OVERSCAN;
+    if (typeof props.virtualColumn === 'boolean') return DEFAULT_OVERSCAN;
+    return props.virtualColumn.overscan ?? DEFAULT_OVERSCAN;
+  }, [props.virtualColumn]);
 
   const { current: context } = useRef<{
     cachedColumns: TableFormatColumn<Data>[] | null;
@@ -116,13 +123,13 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
           if (props.scrollRef.current && sum - scrollLeft >= props.scrollRef.current?.clientWidth) {
             // 在原有基础上，右侧增加缓冲列
             const visibleCount = j - i;
-            setRenderedCount(Math.min(visibleCount + BUFFER_COUNT * 2, len));
+            setRenderedCount(Math.min(visibleCount + overscan * 2, len));
             break;
           }
         }
 
         // 左侧也增加缓冲列，但不能小于0
-        const bufferedStartIndex = Math.max(0, i - BUFFER_COUNT);
+        const bufferedStartIndex = Math.max(0, i - overscan);
         currentIndex = bufferedStartIndex;
         break;
       }

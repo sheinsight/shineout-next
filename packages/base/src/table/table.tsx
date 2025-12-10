@@ -45,6 +45,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const config = useConfig();
   const nestedContext = useContext(TableContext);
 
+  // 判断是否启用了虚拟列
+  const isVirtualColumnEnabled = !!props.virtualColumn;
+
   const isRtl = config.direction === 'rtl';
   const tableClasses = props?.jssStyle?.table?.() as TableClasses;
   const tbodyRef = useRef<HTMLTableElement | null>(null);
@@ -147,7 +150,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     onColumnResize: props.onColumnResize,
     width: props.width,
     isRtl,
-    scrolling: !!props.virtualColumn && scrolling,
+    scrolling: isVirtualColumnEnabled && scrolling,
   });
 
   const { filteredData, filterInfo, onFilterChange } = useTableFilter<Item>({
@@ -293,7 +296,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     const target = e.currentTarget;
     if (!target) return;
     layoutFunc.checkFloat();
-    if (props.virtualColumn) columnInfo.handleScroll({ scrollLeft: target.scrollLeft });
+    if (isVirtualColumnEnabled) columnInfo.handleScroll({ scrollLeft: target.scrollLeft });
     if (headMirrorScrollRef.current) {
       headMirrorScrollRef.current.scrollLeft = target.scrollLeft;
     }
@@ -323,7 +326,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       width: number;
     }) => {
       virtualInfo.handleScroll(info);
-      if (props.virtualColumn) columnInfo.handleScroll(info);
+      if (isVirtualColumnEnabled) columnInfo.handleScroll(info);
       layoutFunc.checkFloat();
       if (headMirrorScrollRef.current) {
         headMirrorScrollRef.current.scrollLeft = info.scrollLeft;
@@ -380,9 +383,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     () => ({
       width,
       borderSpacing: 0,
-      tableLayout: props.virtualColumn ? 'initial' : 'fixed',
+      tableLayout: isVirtualColumnEnabled ? 'initial' : 'fixed',
     } as React.CSSProperties),
-    [width],
+    [width, isVirtualColumnEnabled],
   );
   const renderTable = () => {
     const Group = (

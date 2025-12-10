@@ -18,5 +18,6 @@ export type {
   BaseTableProps,
   TableColumnFilter,
   TableFilterData,
+  VirtualColumnConfig,
 } from './use-table.type';
 export type { TableContextValue } from './table-nested-context';
