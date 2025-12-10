@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, useTree, util, ObjectKey } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
@@ -64,6 +64,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     tiledData,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     height,
+    leafIcon,
     ...rest
   } = props;
 
@@ -304,11 +305,13 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     context.mounted = true;
   }, []);
 
+  const providerValue = useMemo(() => ({ ...datum, size: props.size, leafIcon }), [datum, props.size, leafIcon]);
+
   const { fieldId } = useContext(FormFieldContext);
 
   return (
     <div ref={treeRef} className={rootClass} id={fieldId} {...rest}>
-      <Provider value={{...datum, size: props.size, leafIcon: props.leafIcon }}>{renderList()}</Provider>
+      <Provider value={providerValue}>{renderList()}</Provider>
     </div>
   );
 };
