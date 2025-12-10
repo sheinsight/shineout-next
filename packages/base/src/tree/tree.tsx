@@ -64,6 +64,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     tiledData,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     height,
+    leafIcon,
     ...rest
   } = props;
 
@@ -308,7 +309,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
 
   return (
     <div ref={treeRef} className={rootClass} id={fieldId} {...rest}>
-      <Provider value={{...datum, size: props.size, leafIcon: props.leafIcon }}>{renderList()}</Provider>
+      <Provider value={{ ...datum, size: props.size, leafIcon }}>{renderList()}</Provider>
     </div>
   );
 };
