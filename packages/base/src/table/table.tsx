@@ -97,7 +97,6 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     setScrollAble(isScrollAble);
   }, [virtual]);
 
-
   // TODO: 没用的tbodyHeight，有空移除了
   // 虚拟列表高度另外计算
   const { height: tbodyHeight } = useResize({ targetRef: virtual ? emptyRef : tbodyRef });
@@ -125,7 +124,6 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     showCheckbox: typeof props.onRowSelect === 'function',
   });
 
-
   const {
     func: layoutFunc,
     colgroup,
@@ -149,6 +147,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     onColumnResize: props.onColumnResize,
     width: props.width,
     isRtl,
+    scrolling: !!props.virtualColumn && scrolling,
   });
 
   const { filteredData, filterInfo, onFilterChange } = useTableFilter<Item>({
@@ -377,7 +376,14 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
   const $empty = renderEmpty();
 
-  const tableStyle = { width, borderSpacing: 0 };
+  const tableStyle = useMemo(
+    () => ({
+      width,
+      borderSpacing: 0,
+      tableLayout: props.virtualColumn ? 'initial' : 'fixed',
+    } as React.CSSProperties),
+    [width],
+  );
   const renderTable = () => {
     const Group = (
       <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
@@ -415,7 +421,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       treeCheckAll: props.treeCheckAll,
       onCellClick: props.onCellClick,
       strictRowHeight: props.strictRowHeight,
-      scrollRef: scrollRef
+      scrollRef: scrollRef,
     };
 
     const headCommonProps = {
@@ -803,4 +809,4 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       {renderPagination()}
     </>
   );
-};
+}

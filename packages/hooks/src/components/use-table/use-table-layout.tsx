@@ -55,6 +55,7 @@ export interface UseTableLayoutProps
   tbodyRef: React.RefObject<HTMLElement>;
   scrollRef: React.RefObject<HTMLElement>;
   isRtl?: boolean;
+  scrolling?: boolean;
 }
 
 const useTableLayout = (props: UseTableLayoutProps) => {
@@ -133,6 +134,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   };
 
   const changeColGroup = (cols: Array<number | string | undefined>, adjust: boolean | 'drag') => {
+    if (props.scrolling) return;
     // 修改`Table`被display:none时，表格头样式错乱的问题
     if (cols && cols.every((v) => v === 0)) return;
 
