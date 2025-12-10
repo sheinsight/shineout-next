@@ -1299,7 +1299,7 @@ describe('Table[Virtual]', () => {
     );
     const tableHead = container.querySelector(headWrapper)!;
     // const tableFoot = container.querySelector(footWrapper)!;
-    styleTest(tableHead.querySelector('table')!, 'border-spacing: 0;');
+    styleTest(tableHead.querySelector('table')!, 'border-spacing: 0; table-layout: fixed;');
     // const tableBody = tableHead.nextElementSibling;
     const tableSroll = container.querySelector('[data-soui-role="scroll"]') as Element;
     // attributesTest(tableSroll, 'data-soui-type', 'scroll');
