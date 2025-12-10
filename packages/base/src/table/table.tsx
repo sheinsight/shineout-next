@@ -45,6 +45,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const config = useConfig();
   const nestedContext = useContext(TableContext);
 
+  // 判断是否启用了虚拟列
+  const isVirtualColumnEnabled = !!props.virtualColumn;
+
   const isRtl = config.direction === 'rtl';
   const tableClasses = props?.jssStyle?.table?.() as TableClasses;
   const tbodyRef = useRef<HTMLTableElement | null>(null);
@@ -97,7 +100,6 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     setScrollAble(isScrollAble);
   }, [virtual]);
 
-
   // TODO: 没用的tbodyHeight，有空移除了
   // 虚拟列表高度另外计算
   const { height: tbodyHeight } = useResize({ targetRef: virtual ? emptyRef : tbodyRef });
@@ -119,11 +121,11 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
   const { columns, expandHideCol, columnInfo, currentColIndex } = useTableColumns({
     columns: props.columns,
+    data: props.data,
     virtualColumn: props.virtualColumn,
     scrollRef: scrollRef,
     showCheckbox: typeof props.onRowSelect === 'function',
   });
-
 
   const {
     func: layoutFunc,
@@ -148,6 +150,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     onColumnResize: props.onColumnResize,
     width: props.width,
     isRtl,
+    scrolling: isVirtualColumnEnabled && scrolling,
   });
 
   const { filteredData, filterInfo, onFilterChange } = useTableFilter<Item>({
@@ -293,7 +296,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     const target = e.currentTarget;
     if (!target) return;
     layoutFunc.checkFloat();
-    if (props.virtualColumn) columnInfo.handleScroll({ scrollLeft: target.scrollLeft });
+    if (isVirtualColumnEnabled) columnInfo.handleScroll({ scrollLeft: target.scrollLeft });
     if (headMirrorScrollRef.current) {
       headMirrorScrollRef.current.scrollLeft = target.scrollLeft;
     }
@@ -323,7 +326,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       width: number;
     }) => {
       virtualInfo.handleScroll(info);
-      if (props.virtualColumn) columnInfo.handleScroll(info);
+      if (isVirtualColumnEnabled) columnInfo.handleScroll(info);
       layoutFunc.checkFloat();
       if (headMirrorScrollRef.current) {
         headMirrorScrollRef.current.scrollLeft = info.scrollLeft;
@@ -376,7 +379,14 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
   const $empty = renderEmpty();
 
-  const tableStyle = { width, borderSpacing: 0 };
+  const tableStyle = useMemo(
+    () => ({
+      width,
+      borderSpacing: 0,
+      tableLayout: isVirtualColumnEnabled ? 'initial' : 'fixed',
+    } as React.CSSProperties),
+    [width, isVirtualColumnEnabled],
+  );
   const renderTable = () => {
     const Group = (
       <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
@@ -414,7 +424,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       treeCheckAll: props.treeCheckAll,
       onCellClick: props.onCellClick,
       strictRowHeight: props.strictRowHeight,
-      scrollRef: scrollRef
+      scrollRef: scrollRef,
     };
 
     const headCommonProps = {
@@ -802,4 +812,4 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       {renderPagination()}
     </>
   );
-};
+}

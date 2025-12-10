@@ -1,6 +1,6 @@
 import React from 'react';
 import { CommonType } from '../common/type';
-import type { ObjectType, TableColumnItem, BaseTableProps, ObjectKey } from '@sheinx/hooks';
+import type { ObjectType, TableColumnItem, BaseTableProps, ObjectKey, VirtualColumnConfig } from '@sheinx/hooks';
 import { useListSelect, useTableTree } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { PaginationProps } from '../pagination/pagination.type';
@@ -233,11 +233,11 @@ export interface TableProps<DataItem, Value>
   virtual?: boolean | 'lazy';
 
   /**
-   * @en Enable virtual columns (horizontal virtual scrolling). Requires each column to have a width set
-   * @cn 启用虚拟列（横向虚拟滚动）。需要给每一列设置宽度
+   * @en Enable virtual columns (horizontal virtual scrolling). Requires each column to have a width set. Can be boolean or config object with overscan
+   * @cn 启用虚拟列（横向虚拟滚动）。需要给每一列设置宽度。可以是布尔值或包含 overscan 的配置对象
    * @version 3.9.0
    */
-  virtualColumn?: boolean;
+  virtualColumn?: boolean | VirtualColumnConfig;
   /**
    * @en Maximum rows rendered at once. Uses lazy rendering for performance with large datasets. Adjust if displaying more than 20 rows. Set to 0 to render all data.
    * @cn 单次渲染的最大行数。使用懒加载优化大数据量性能。若表格超过 20 行，可调整此值。设为 0 渲染全部数据
