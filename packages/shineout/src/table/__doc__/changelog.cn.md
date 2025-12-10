@@ -1,3 +1,10 @@
+## 3.9.3-beta.11
+2025-12-10
+### 💎 Enhancement
+- `virtualColumn` 支持对象格式配置，新增 `overscan` 参数用于自定义虚拟列的预渲染数量 ([#1517](https://github.com/sheinsight/shineout-next/pull/1517))
+
+
+
 ## 3.9.3-beta.4
 2025-12-08
 ### 🚀 Performance
