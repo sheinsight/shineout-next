@@ -383,9 +383,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     () => ({
       width,
       borderSpacing: 0,
-      tableLayout: isVirtualColumnEnabled ? 'initial' : 'fixed',
+      tableLayout: 'fixed',
     } as React.CSSProperties),
-    [width, isVirtualColumnEnabled],
+    [width],
   );
   const renderTable = () => {
     const Group = (
