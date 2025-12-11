@@ -151,15 +151,26 @@ const useDate = (props: UseDateProps) => {
 
   const getTimeStr = () => {
     let { format, type } = props;
-    if (!props.value) return '';
     if (type !== 'datetime' || !format) return '';
-    if (/^[X|x]$/.test(format)) {
+    if (/^[X|x]$/.test(utils.compatibleFmt(format)!)) {
       format = 'HH:mm:ss';
     } else {
       const match = format.match(/[H|h].*/);
       // eslint-disable-next-line
       if (match) format = match[0];
     }
+
+    // 当不存在 props.value 时,根据 format 格式返回默认时间字符串
+    if (!props.value) {
+      return format
+        .replace(/[Hh]+/g, '00')  // HH/hh -> 00
+        .replace(/m+/g, '00')     // mm -> 00
+        .replace(/s+/g, '00')     // ss -> 00
+        .replace(/S+/g, '0')      // SSS -> 0
+        .replace(/A/g, 'AM')      // A -> AM
+        .replace(/a/g, 'am');     // a -> am
+    }
+
     return dateUtil.format(props.value, format, options);
   };
 
