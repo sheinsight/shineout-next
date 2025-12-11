@@ -41,12 +41,12 @@ jobs:
       - name: build
         run: pnpm run build:pkg
 
-      # Ensure npm 11.5.1 or later is installed
-      - name: Update npm
-        run: npm install -g npm@latest
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          # node-version-file: ".node-version"
+          node-version: "24" # npm must be >= 11.5.1 to support trusted publish
+          registry-url: "https://registry.npmjs.org"
+
       - name: publish
         run: pnpm run release
-        env:
-          NODE_AUTH_TOKEN: ''
-
-
