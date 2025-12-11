@@ -146,10 +146,10 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
   useEffect(() => {
     if (!props.virtualColumn) return;
 
-    if(props.scrollRef.current?.scrollLeft === 0){
-      handleScroll({ scrollLeft: 0 });
+    if (props.scrollRef.current) {
+      handleScroll({ scrollLeft: props.scrollRef.current?.scrollLeft });
     }
-  }, [props.data?.length]);
+  }, [props.data?.length, columns]);
 
   const processedColumns = useMemo(() => {
     if (!props.virtualColumn) return columns;
@@ -160,10 +160,17 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
       }
       if (index < startIndex || index > startIndex + renderedCount) {
         let colSpan;
+        let colSpanWidth;
         if (index > startIndex + renderedCount && index === startIndex + renderedCount + 1) {
           colSpan = () => middleColumns.length - (startIndex + renderedCount) + 1;
+          colSpanWidth = middleColumns.slice(startIndex + renderedCount).reduce((sum, c) => {
+            return sum + ((c.width as number) || 0);
+          }, 0);
         } else if (index < startIndex && index === leftFixedColumns.length && startIndex > 0) {
           colSpan = () => startIndex;
+          colSpanWidth = middleColumns.slice(0, startIndex).reduce((sum, c) => {
+            return sum + ((c.width as number) || 0);
+          }, 0);
         }
 
         const hiddenTitle = context.groupLevel > 0 ? col.title : null;
@@ -172,11 +179,20 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
           colSpan,
           render: () => null,
           title: hiddenTitle,
+          style: { width: colSpanWidth },
         };
       }
       return col;
     });
-  }, [columns, startIndex, renderedCount, props.virtualColumn, leftFixedColumns.length, middleColumns.length, context.groupLevel]);
+  }, [
+    columns,
+    startIndex,
+    renderedCount,
+    props.virtualColumn,
+    leftFixedColumns.length,
+    middleColumns.length,
+    context.groupLevel,
+  ]);
 
   return {
     columns: processedColumns,
