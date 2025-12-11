@@ -27,7 +27,12 @@ function extendName(
 export const useFieldSetConsumer = <T extends BaseFieldProps>(props: T) => {
   const { path, validateFieldSet } = React.useContext(FieldsetContext);
   const bind = React.useMemo(() => {
-    return path ? (props.bind || []).concat(path) : props.bind;
+    const _bind = path ? (props.bind || []).concat(path) : props.bind;
+    // 只有当路径中包含超过1个索引时才需要去掉最后一个索引
+    return _bind?.map((b) => {
+      const indexCount = (b.match(/\[\d+\]/g) || []).length;
+      return indexCount > 1 ? b.replace(/\[\d+\]$/, '') : b;
+    });
   }, [path, props.bind]);
   const name = React.useMemo(() => {
     return extendName(path, props.name as any);
