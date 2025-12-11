@@ -41,13 +41,15 @@ jobs:
       - name: build
         run: pnpm run build:pkg
 
+      - name: set token
+        run: echo -e //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.SHINEOUT_PUB_TOKEN }}
       # Ensure npm 11.5.1 or later is installed
       - name: Update npm
         run: sudo npm install -g npm@latest
 
       - name: publish
         run: pnpm run release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
