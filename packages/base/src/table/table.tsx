@@ -383,9 +383,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     () => ({
       width,
       borderSpacing: 0,
-      tableLayout: isVirtualColumnEnabled ? 'initial' : 'fixed',
+      // todo: 后续排查虚拟列的head部和body部分宽度不一致的问题
+      tableLayout: 'fixed',
     } as React.CSSProperties),
-    [width, isVirtualColumnEnabled],
+    [width],
   );
   const renderTable = () => {
     const Group = (
