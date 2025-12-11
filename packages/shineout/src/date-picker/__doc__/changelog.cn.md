@@ -1,3 +1,10 @@
+## 3.9.3-beta.14
+2025-12-11
+
+### 🐞 BugFix
+- 修复 `DatePicker` 时间格式匹配逻辑，正确处理时间戳格式 ([#1526](https://github.com/sheinsight/shineout-next/pull/1526))
+- 修复 `DatePicker` 无值时默认时间字符串未按 `format` 格式展示的问题 ([#1526](https://github.com/sheinsight/shineout-next/pull/1526))
+
 ## 3.9.0-beta.28
 2025-11-17
 
