@@ -1,3 +1,10 @@
+## 3.9.4-beta.1
+2025-12-15
+
+### 🆕 Feature
+- `TreeSelect` 新增 `renderOptionList` 属性  ([#1530](https://github.com/sheinsight/shineout-next/pull/1530))
+
+
 ## 3.9.2-beta.4
 2025-12-03
 
