@@ -117,12 +117,17 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
       sum += (curCol.width as number) || 100;
       if (scrollLeft < sum) {
         // 计算可视区域内需要渲染的列数
-        for (let j = i + 1; j < len; j++) {
+        for (let j = i + 1; j <= len; j++) {
           const nextCol = middleColumns[j];
           sum += (nextCol.width as number) || 100;
           if (props.scrollRef.current && sum - scrollLeft >= props.scrollRef.current?.clientWidth) {
             // 在原有基础上，右侧增加缓冲列
             const visibleCount = j - i;
+            setRenderedCount(Math.min(visibleCount + overscan * 2, len));
+            break;
+          } else if (j === len) {
+            // 到达最后一列
+            const visibleCount = j - i + 1;
             setRenderedCount(Math.min(visibleCount + overscan * 2, len));
             break;
           }
@@ -162,8 +167,8 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
         let colSpan;
         let colSpanWidth;
         if (index > startIndex + renderedCount && index === startIndex + renderedCount + 1) {
-          colSpan = () => middleColumns.length - (startIndex + renderedCount) + 1;
-          colSpanWidth = middleColumns.slice(startIndex + renderedCount).reduce((sum, c) => {
+          colSpan = () => middleColumns.length - index;
+          colSpanWidth = middleColumns.slice(index).reduce((sum, c) => {
             return sum + ((c.width as number) || 0);
           }, 0);
         } else if (index < startIndex && index === leftFixedColumns.length && startIndex > 0) {
