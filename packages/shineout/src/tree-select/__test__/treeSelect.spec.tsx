@@ -320,6 +320,43 @@ describe('TreeSelect[Base]', () => {
     expect(onChangeAddition).toHaveBeenCalledTimes(2);
   });
 
+  test('should render with renderOptionList', async () => {
+    const customHeaderText = 'Custom Header';
+    const customFooterText = 'Custom Footer';
+
+    const { container } = render(
+      <TreeSelectTest
+        renderOptionList={(list) => (
+          <div>
+            <div data-testid="custom-header">{customHeaderText}</div>
+            {list}
+            <div data-testid="custom-footer">{customFooterText}</div>
+          </div>
+        )}
+      />
+    );
+
+    const selectWrapper = container.querySelector(wrapper)!;
+
+    // 打开下拉框
+    fireEvent.click(selectWrapper.querySelector(result)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+
+    // 验证自定义 header 和 footer 是否渲染
+    expect(screen.getByTestId('custom-header')).toBeInTheDocument();
+    expect(screen.getByText(customHeaderText)).toBeInTheDocument();
+    expect(screen.getByTestId('custom-footer')).toBeInTheDocument();
+    expect(screen.getByText(customFooterText)).toBeInTheDocument();
+
+    // 验证树形列表依然正常渲染
+    const treeRoot = container.querySelector(root);
+    expect(treeRoot).toBeInTheDocument();
+    const treeNodes = treeRoot!.querySelectorAll(`:scope > ${node}`);
+    expect(treeNodes.length).toBe(2);
+  });
+
   test('should check on filtered data when checkOnFiltered is true', async () => {
     const onChange = jest.fn();
     const testData = [

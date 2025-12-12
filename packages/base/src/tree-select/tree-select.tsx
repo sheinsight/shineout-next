@@ -97,6 +97,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     beforeChange,
     filterSameChange,
     checkOnFiltered,
+    renderOptionList,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -645,6 +646,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   };
 
   const renderEmpty = () => {
+    if (props.emptyText === false) return null;
     return (
       <div className={styles?.option}>
         <div className={styles?.optionInner}>
@@ -657,7 +659,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     if (props.loading) return renderLoading();
 
     const isEmpty = !filterData?.length;
-    if (isEmpty) return renderEmpty();
 
     const treeProps: any = {};
 
@@ -682,7 +683,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       }
     }
 
-    return (
+    const tree = (
       <div className={classNames(styles.tree, styles.treeWrapper)} style={style}>
         <Tree
           rootStyle={rootStyle}
@@ -715,6 +716,14 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
         ></Tree>
       </div>
     );
+
+    if (renderOptionList) {
+      return renderOptionList(isEmpty ? renderEmpty() : tree);
+    }
+
+    if (isEmpty) return renderEmpty();
+
+    return tree;
   };
 
   useEffect(() => {

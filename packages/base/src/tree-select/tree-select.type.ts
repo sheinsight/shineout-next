@@ -150,10 +150,11 @@ export interface TreeSelectProps<DataItem, Value>
    */
   noCache?: boolean;
   /**
-   * @en custom empty copy
-   * @cn 自定义 empty 文案
+   * @en Custom empty state content. When used with renderOptionList, setting emptyText to false will disable this feature. You can render custom empty content in renderOptionList
+   * @cn 自定义空状态内容。与 renderOptionList 搭配使用时，将 emptyText 设置为 false 可禁用此功能，需要自定义空内容时可在 renderOptionList 中处理
+   * @when When no options match the filter or data array is empty
    */
-  emptyText?: string;
+  emptyText?: React.ReactNode;
   /**
    * @en When it is true, a default [Spin](/components/Spin) component will be displayed, a custom loading icon can be passed in to replace.
    * @cn 数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替
@@ -499,4 +500,12 @@ export interface TreeSelectProps<DataItem, Value>
    * @version 3.9.1
    */
   popupclassName?: string;
+
+  /**
+   * @en Custom render function for the entire dropdown list content. The parameter `list` contains the pre-rendered option list (including virtual scrolling if configured). Note: When using this prop with emptyText, setting emptyText to false will disable this feature. You can render custom empty content in renderOptionList
+   * @cn 自定义渲染整个下拉列表内容。参数 `list` 包含预渲染的选项列表（包括虚拟滚动等）。注意：与 emptyText 配合使用时，将 emptyText 设为 false 可禁用此功能，需要自定义空内容时可在 renderOptionList 中处理
+   * @when For complete control over dropdown content (e.g., custom wrapper, animations, additional UI elements around the option list)
+   * @version 3.9.4
+   */
+  renderOptionList?: (list: React.ReactNode) => React.ReactNode;
 }
