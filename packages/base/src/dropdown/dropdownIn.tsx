@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import Button from '../button';
 import { DropdownNode, MenuPosition, SimpleDropdownProps, DropdownSemanticKey, DropdownClassNamesInfo } from './dropdown.type';
 import { getDataset, usePopup, util } from '@sheinx/hooks';
@@ -9,6 +9,8 @@ import classNames from 'classnames';
 import Item from './Item';
 import { useConfig } from '../config';
 import { useSemantic } from '../common';
+
+const defaultBoundary = () => document.documentElement;
 
 const Dropdown = (props: SimpleDropdownProps) => {
   const {
@@ -33,6 +35,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     popupClassName,
     classNames: classNamesProp,
     styles: stylesProp,
+    boundary,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
   const config = useConfig();
@@ -75,6 +78,37 @@ const Dropdown = (props: SimpleDropdownProps) => {
     config.dropdown,
     semInfo,
   );
+  const [boundaryStyle, _setBoundaryStyle] = useState<React.CSSProperties>();
+  const finalBoundary = boundary === true ? defaultBoundary : (boundary === false ? undefined : boundary);
+  const {current: context} = useRef({
+    boundaryTimer: null as NodeJS.Timeout | null,
+  })
+  const setBoundaryStyle = (style?: React.CSSProperties) => {
+    console.log('======================')
+    console.log('setBoundaryStyle open, style, : >>', open, style)
+    console.log('======================')
+    if(!style) {
+      context.boundaryTimer = setTimeout(() => {
+        _setBoundaryStyle({});
+      }, 300);
+    } else{
+      if(context.boundaryTimer) {
+        clearTimeout(context.boundaryTimer);
+        context.boundaryTimer = null;
+      }
+      _setBoundaryStyle(style);
+    }
+  };
+
+  const contentStyle = useMemo(() => {
+    return {
+      width: width,
+      minWidth: 90,
+      gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
+      ...(!isSub ? semStyle('list') : undefined),
+      ...boundaryStyle,
+    } as React.CSSProperties;
+  }, [width, columns, boundaryStyle])
 
   // buttonProps
   let { type, text, outline, mode, shape } = props;
@@ -243,7 +277,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
         fixedWidth={'min'}
         popupGap={4}
         popupElRef={popupRef}
-        adjust={adjust}
+        adjust={finalBoundary ? false : adjust}
+        boundary={finalBoundary}
+        setBoundaryStyle={finalBoundary ? setBoundaryStyle : undefined}
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}
@@ -256,12 +292,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
             size === 'large' && dropdownClasses?.listLarge,
             !isSub && semClass('list'),
           )}
-          style={{
-            width: width,
-            minWidth: 90,
-            gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
-            ...(!isSub ? semStyle('list') : undefined),
-          }}
+          style={contentStyle}
           type={'fade'}
           duration={'fast'}
           show={open}

@@ -57,7 +57,7 @@ const Popover = (props: PopoverProps) => {
       mouseLeaveDelay: props.mouseLeaveDelay,
     });
   const [positionState, setPositionState] = React.useState<PopoverPosition>(position);
-  const [contentStyle, setContentStyle] = React.useState<React.CSSProperties>();
+  const [boundaryStyle, setBoundaryStyle] = React.useState<React.CSSProperties>();
 
   // Semantic DOM 访问器：合并用户 classNames / styles、setConfig 全局兜底与内部 JSS class
   // 优先级（高→低）：props > setConfig({ popover: { ... } }) > 内部默认
@@ -219,7 +219,7 @@ const Popover = (props: PopoverProps) => {
       lazy={props.lazy}
       offset={mergedOffset}
       updateKey={updateKey}
-      setSizingStyle={props.boundary ? setContentStyle : undefined}
+      setBoundaryStyle={props.boundary ? setBoundaryStyle : undefined}
     >
       <div
         className={classNames(
@@ -252,7 +252,7 @@ const Popover = (props: PopoverProps) => {
             (typeof childrened === 'string' || props.useTextStyle) && popoverStyle?.text,
             semClass('content'),
           )}
-          style={{ ...contentStyle, ...style, ...semStyle('content') }}
+          style={{ ...contentStyle, ...style, ...boundaryStyle, ...semStyle('content') }}
           onClick={emptyEvent}
         >
           <Provider value={providerValue}>{childrened}</Provider>
