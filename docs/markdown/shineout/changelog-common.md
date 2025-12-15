@@ -1,3 +1,10 @@
+## 3.9.4-beta.5
+2025-12-15
+
+### 🐞 BugFix
+-  修复 `Select`、`TreeSelect`、`Cascader` 设置 `onFilter` 时，非 string 类型的 `placeholder` 不显示的问题 ([#1534](https://github.com/sheinsight/shineout-next/pull/1534))
+
+
 ## 3.9.3-beta.9
 2025-12-09
 
