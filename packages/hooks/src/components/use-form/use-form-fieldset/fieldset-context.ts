@@ -1,7 +1,7 @@
 'use client';
 import React, { createContext } from 'react';
 
-export const FieldsetContext = createContext({ path: '', validateFieldSet: () => {} });
+export const FieldsetContext = createContext({ path: '' });
 FieldsetContext.displayName = 'FieldsetContext';
 
 interface BaseFieldProps {
@@ -25,7 +25,7 @@ function extendName(
   return `${path}${path.length > 0 ? '.' : ''}${name}`;
 }
 export const useFieldSetConsumer = <T extends BaseFieldProps>(props: T) => {
-  const { path, validateFieldSet } = React.useContext(FieldsetContext);
+  const { path } = React.useContext(FieldsetContext);
   const bind = React.useMemo(() => {
     const _bind = path ? (props.bind || []).concat(path) : props.bind;
     // 只有当路径中包含超过1个索引时才需要去掉最后一个索引
@@ -42,7 +42,6 @@ export const useFieldSetConsumer = <T extends BaseFieldProps>(props: T) => {
     ...props,
     name,
     bind,
-    validateFieldSet,
   };
 };
 

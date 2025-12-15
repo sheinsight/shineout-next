@@ -1,3 +1,9 @@
+## 3.9.4-beta.3
+2025-12-15
+### 🐞 BugFix
+- 修复 `Form` 的 `FieldSet` 嵌套使用时，某一项改变时触发了整个数组的校验的问题 (Regression: since v3.5.1) ([#1532](https://github.com/sheinsight/shineout-next/pull/1532))
+
+
 ## 3.9.3-beta.13
 2025-12-11
 ### 🐞 BugFix

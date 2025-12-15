@@ -46,7 +46,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     getValidateProps,
     clearToUndefined,
   } = props;
-  const { name, bind, validateFieldSet } = useFieldSetConsumer({
+  const { name, bind } = useFieldSetConsumer({
     name: props.name,
     bind: props.bind,
   });
@@ -210,7 +210,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       validateField('', v, undefined);
     }
     if (onChangePo) onChangePo(v, ...other);
-    if (validateFieldSet) validateFieldSet();
   });
 
   const initError = usePersistFn(() => {
