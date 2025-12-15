@@ -22,7 +22,6 @@ export const useFormFieldSet = <T>(props: BaseFormFieldSetProps<T>) => {
 
   const ProviderValue = {
     path: name,
-    validateFieldSet: () => {},
   };
 
   return {

@@ -6,7 +6,7 @@ import { FormSchemaContext } from './form-schema-context';
 import * as React from 'react';
 import { ProviderProps } from './use-form.type';
 
-const topPath = { path: '', validateFieldSet: () => {} };
+const topPath = { path: '' };
 export const Provider = (props: ProviderProps) => {
   const { children, formConfig, formValue, formFunc, formSchema } = props;
   return (

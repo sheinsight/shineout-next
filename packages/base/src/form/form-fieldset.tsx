@@ -5,13 +5,8 @@ const { produce } = util;
 
 const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   const { children, empty } = props;
-  // const { current: context } = React.useRef<{ ids: string[] }>({ ids: [] });
 
   const formFunc = useFormFunc();
-
-  const validateFieldSet = () => {
-    formFunc?.validateFields(props.name, { ignoreChildren: true}).catch((e) => e);
-  };
 
   const getValidateProps = usePersistFn(() => props);
   const { Provider, ProviderValue, error, onChange, name } = useFormFieldSet<T>({
@@ -23,7 +18,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
     getValidateProps,
   });
   if (typeof children !== 'function') {
-    return <Provider value={{ ...ProviderValue, validateFieldSet }}>{children}</Provider>;
+    return <Provider value={ProviderValue}>{children}</Provider>;
   }
   let valueArr = formFunc?.getValue(name) || [];
   valueArr = Array.isArray(valueArr) ? valueArr : [valueArr];
@@ -95,7 +90,7 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
     return (
       <Provider
         key={i}
-        value={{ path: `${ProviderValue.path}[${i}]`, validateFieldSet }}
+        value={{ path: `${ProviderValue.path}[${i}]` }}
       >
         {children({
           list: valueArr,
