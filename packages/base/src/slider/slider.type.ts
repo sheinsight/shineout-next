@@ -48,14 +48,14 @@ export interface SliderProps<Value>
    * @cn 格式化显示刻度，为 false 时，不显示刻度
    * @default v => v
    */
-  formatScale?: ((value: number, index?: number) => string | number) | false;
+  formatScale?: ((value: number, index?: number) => React.ReactNode) | false;
 
   /**
    * @en Format displayed current value. When it is false, the current value is not displayed.
    * @cn 格式化显示当前值，为 false 时，不显示当前值
    * @default v => v
    */
-  formatValue?: ((value: number) => string) | false;
+  formatValue?: ((value: number) => React.ReactNode) | false;
 
   /**
    * @en height. Only effect when vertical is true
