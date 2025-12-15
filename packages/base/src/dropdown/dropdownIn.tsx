@@ -29,6 +29,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     animation,
     hideArrow,
     zIndex,
+    popupClassName,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
   const config = useConfig();
@@ -224,6 +225,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         <AnimationList
           display={columns ? 'grid' : 'block'}
           className={classNames(
+            popupClassName,
             dropdownClasses?.list,
             hasChildren && dropdownClasses?.listHasChildren,
             columns !== undefined && columns > 1 && dropdownClasses?.boxList,

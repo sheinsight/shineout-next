@@ -1,9 +1,9 @@
 ## 3.9.4-beta.2
 2025-12-15
 
-### 💎 Enhancement
+### 🐞 BugFix
 
-- `Slider` 组件 `formatScale` 和 `formatValue` 返回类型支持 `ReactNode` ([#1531](https://github.com/sheinsight/shineout-next/pull/1531))
+- 修复 `Slider` 的 `formatScale` 和 `formatValue` 属性的TS类型 ([#1531](https://github.com/sheinsight/shineout-next/pull/1531))
 
 
 ## 3.1.27

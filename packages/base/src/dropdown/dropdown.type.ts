@@ -217,6 +217,13 @@ export interface SimpleDropdownProps
    * @version 3.4.0
    */
   zIndex?: number;
+
+  /**
+   * @en CSS class name for the dropdown popover
+   * @cn 下拉框弹出框的 CSS 类名
+   * @version 3.9.4
+   */
+  popupClassName?: string;
 }
 
 /**

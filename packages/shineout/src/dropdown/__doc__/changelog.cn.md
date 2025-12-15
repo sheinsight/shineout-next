@@ -1,3 +1,9 @@
+## 3.9.4-beta.4
+2025-12-15
+### 🆕 Feature
+- `Dropdown` 新增 `popupClassName`: 自定义弹出层的className [#1533](https://github.com/sheinsight/shineout-next/pull/1533)）
+
+
 ## 3.8.4-beta.7
 2025-09-25
 
