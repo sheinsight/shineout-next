@@ -1,7 +1,7 @@
-import React, { useMemo, useState, useRef } from 'react';
+import React, { useMemo } from 'react';
 import Button from '../button';
 import { DropdownNode, MenuPosition, SimpleDropdownProps, DropdownSemanticKey, DropdownClassNamesInfo } from './dropdown.type';
-import { getDataset, usePopup, util } from '@sheinx/hooks';
+import { getDataset, usePopup, util, useBoundary } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
 import Icons from '../icons';
@@ -78,27 +78,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
     config.dropdown,
     semInfo,
   );
-  const [boundaryStyle, _setBoundaryStyle] = useState<React.CSSProperties>();
+  const { boundaryStyle, setBoundaryStyle } = useBoundary({ clearDelay: 300 });
   const finalBoundary = boundary === true ? defaultBoundary : (boundary === false ? undefined : boundary);
-  const {current: context} = useRef({
-    boundaryTimer: null as NodeJS.Timeout | null,
-  })
-  const setBoundaryStyle = (style?: React.CSSProperties) => {
-    console.log('======================')
-    console.log('setBoundaryStyle open, style, : >>', open, style)
-    console.log('======================')
-    if(!style) {
-      context.boundaryTimer = setTimeout(() => {
-        _setBoundaryStyle({});
-      }, 300);
-    } else{
-      if(context.boundaryTimer) {
-        clearTimeout(context.boundaryTimer);
-        context.boundaryTimer = null;
-      }
-      _setBoundaryStyle(style);
-    }
-  };
 
   const contentStyle = useMemo(() => {
     return {
@@ -277,9 +258,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
         fixedWidth={'min'}
         popupGap={4}
         popupElRef={popupRef}
-        adjust={finalBoundary ? false : adjust}
+        adjust={!finalBoundary && adjust}
         boundary={finalBoundary}
-        setBoundaryStyle={finalBoundary ? setBoundaryStyle : undefined}
+        setBoundaryStyle={finalBoundary && setBoundaryStyle}
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}
