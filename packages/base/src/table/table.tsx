@@ -648,7 +648,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (
-              <TbodyEmpty>{renderEmpty()}</TbodyEmpty>
+              <TbodyEmpty columns={columns}>{renderEmpty()}</TbodyEmpty>
             ) : (
               <Tbody {...bodyCommonProps} />
             )}
