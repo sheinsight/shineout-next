@@ -1241,7 +1241,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <div
-      class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-inner-title soui-select-wrapper-small soui-select-clearable"
+      class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-inner-title soui-select-wrapper-small soui-select-clearable soui-select-multiple"
       data-soui-input-border="true"
       style="width: 300px;"
       tabindex="0"
@@ -1273,7 +1273,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
               class="soui-select-result"
             >
               <div
-                class="soui-select-result-text-wrapper"
+                class="soui-select-result-text-wrapper soui-select-multiple-result-wrapper"
               >
                 <div
                   class="soui-select-space"
@@ -1297,9 +1297,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                clip-rule="evenodd"
-                d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                fill-rule="evenodd"
+                d="M4.00195 10C5.10652 10 6.00195 10.8954 6.00195 12C6.00195 13.1046 5.10652 14 4.00195 14C2.89738 14 2.00195 13.1046 2.00195 12C2.00195 10.8954 2.89738 10 4.00195 10ZM12.002 10C13.1065 10 14.002 10.8954 14.002 12C14.002 13.1046 13.1065 14 12.002 14C10.8974 14 10.002 13.1046 10.002 12C10.002 10.8954 10.8974 10 12.002 10ZM20.002 10C21.1065 10 22.002 10.8954 22.002 12C22.002 13.1046 21.1065 14 20.002 14C18.8974 14 18.002 13.1046 18.002 12C18.002 10.8954 18.8974 10 20.002 10Z"
               />
             </svg>
           </span>
@@ -1312,7 +1310,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <div
-      class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-inner-title soui-select-clearable"
+      class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-inner-title soui-select-clearable soui-select-multiple"
       data-soui-input-border="true"
       style="width: 300px;"
       tabindex="0"
@@ -1344,7 +1342,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
               class="soui-select-result"
             >
               <div
-                class="soui-select-result-text-wrapper"
+                class="soui-select-result-text-wrapper soui-select-multiple-result-wrapper"
               >
                 <div
                   class="soui-select-space"
@@ -1368,9 +1366,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                clip-rule="evenodd"
-                d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                fill-rule="evenodd"
+                d="M4.00195 10C5.10652 10 6.00195 10.8954 6.00195 12C6.00195 13.1046 5.10652 14 4.00195 14C2.89738 14 2.00195 13.1046 2.00195 12C2.00195 10.8954 2.89738 10 4.00195 10ZM12.002 10C13.1065 10 14.002 10.8954 14.002 12C14.002 13.1046 13.1065 14 12.002 14C10.8974 14 10.002 13.1046 10.002 12C10.002 10.8954 10.8974 10 12.002 10ZM20.002 10C21.1065 10 22.002 10.8954 22.002 12C22.002 13.1046 21.1065 14 20.002 14C18.8974 14 18.002 13.1046 18.002 12C18.002 10.8954 18.8974 10 20.002 10Z"
               />
             </svg>
           </span>
@@ -1383,7 +1379,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <div
-      class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-inner-title soui-select-wrapper-large soui-select-clearable"
+      class="soui-select soui-select-wrapper soui-select-wrapper-empty soui-select-wrapper-inner-title soui-select-wrapper-large soui-select-clearable soui-select-multiple"
       data-soui-input-border="true"
       style="width: 300px;"
       tabindex="0"
@@ -1415,7 +1411,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
               class="soui-select-result"
             >
               <div
-                class="soui-select-result-text-wrapper"
+                class="soui-select-result-text-wrapper soui-select-multiple-result-wrapper"
               >
                 <div
                   class="soui-select-space"
@@ -1439,9 +1435,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                clip-rule="evenodd"
-                d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                fill-rule="evenodd"
+                d="M4.00195 10C5.10652 10 6.00195 10.8954 6.00195 12C6.00195 13.1046 5.10652 14 4.00195 14C2.89738 14 2.00195 13.1046 2.00195 12C2.00195 10.8954 2.89738 10 4.00195 10ZM12.002 10C13.1065 10 14.002 10.8954 14.002 12C14.002 13.1046 13.1065 14 12.002 14C10.8974 14 10.002 13.1046 10.002 12C10.002 10.8954 10.8974 10 12.002 10ZM20.002 10C21.1065 10 22.002 10.8954 22.002 12C22.002 13.1046 21.1065 14 20.002 14C18.8974 14 18.002 13.1046 18.002 12C18.002 10.8954 18.8974 10 20.002 10Z"
               />
             </svg>
           </span>
