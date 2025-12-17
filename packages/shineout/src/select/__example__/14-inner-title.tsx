@@ -11,9 +11,9 @@ export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
     <Gap style={{ flexDirection: 'column', gap: 24 }}>
-      <Select size="small" innerTitle='Select Color' width={300} data={data} keygen clearable />
-      <Select innerTitle='Select Color' width={300} data={data} keygen clearable />
-      <Select size="large" innerTitle='Select Color' width={300} data={data} keygen clearable />
+      <Select size="small" innerTitle='Select Color' width={300} data={data} keygen multiple clearable />
+      <Select innerTitle='Select Color' width={300} data={data} keygen multiple clearable />
+      <Select size="large" innerTitle='Select Color' width={300} data={data} keygen multiple clearable />
     </Gap>
   );
 };

@@ -94,6 +94,12 @@ export interface CascaderTokens {
   cascaderSmallOptionInnerPaddingY: string;
   /**
    * @type {string}
+   * @token Font-12
+   * @description 级联选择器小尺寸选项图标字号
+   */
+  cascaderSmallOptionIconSize: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 级联选择器大尺寸字体字号
    */
@@ -122,6 +128,12 @@ export interface CascaderTokens {
    * @description 级联选择器大尺寸选项内部容器的内边距（垂直方向）
    */
   cascaderLargeOptionInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Font-16
+   * @description 级联选择器大尺寸选项图标字号
+   */
+  cascaderLargeOptionIconSize: string;
   /**
    * @type {string}
    * @token Spacing-4

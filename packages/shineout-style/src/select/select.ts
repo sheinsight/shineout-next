@@ -58,14 +58,6 @@ const inputBorderToken = {
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
-const selectTagHeightCssvar = `--select-tag-height`;
-const selectSmallTagHeightCssvar = `--select-small-tag-height`;
-const selectLargeTagHeightCssvar = `--select-large-tag-height`;
-
-const selectTagHeight = `var(${selectTagHeightCssvar})`;
-const selectSmallTagHeight = `var(${selectSmallTagHeightCssvar})`;
-const selectLargeTagHeight = `var(${selectLargeTagHeightCssvar})`;
-
 const selectStyle: JsStyles<SelectClassType> = {
   rootClass: {},
   wrapper: {
@@ -75,9 +67,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     outline: 'none',
     cursor: 'pointer',
     ...wrapper,
-    [selectTagHeightCssvar]: token.selectTagHeight,
-    [selectSmallTagHeightCssvar]: token.selectSmallTagHeight,
-    [selectLargeTagHeightCssvar]: token.selectLargeTagHeight,
 
     '&$wrapperInnerTitle': {
       '& $placeholder,$ellipsis,$space,input': {
@@ -89,31 +78,17 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginBottom: token.selectInnerTitleMarginY,
         paddingTop: 0,
         paddingBottom: 0,
-        height: selectTagHeight,
         border: 'none',
-        '&  *': {
-          lineHeight: selectTagHeight,
-        },
       },
       '&$wrapperSmall $tag': {
-        height: selectSmallTagHeight,
         marginBottom: 2,
-        '&$tag  *': {
-          lineHeight: selectSmallTagHeight,
-        },
       },
       '&$wrapperLarge $tag': {
-        height: selectLargeTagHeight,
         marginBottom: 2,
-        '&$tag  *': {
-          lineHeight: selectLargeTagHeight,
-        },
       },
     },
     '&$wrapperSmall': {
       '& $tag': {
-        height: selectSmallTagHeight,
-        lineHeight: '16px',
         marginTop: 1,
         marginBottom: 1,
       },
@@ -336,7 +311,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       fontSize: token.selectLargeFontSize,
     },
     '& $optionGroupTitle': {
-      padding: `calc(${token.selectFontSize} + 2px) ${token.selectGroupTitlePaddingX} ${token.selectGroupTitleLargeBottom} ${token.selectGroupTitlePaddingX}`,
+      padding: `calc(${token.selectFontSize} + 2px) calc(${token.selectOptionPaddingX} + ${token.selectLargeOptionInnerPaddingX}) ${token.selectGroupTitleLargeBottom} calc(${token.selectOptionPaddingX} + ${token.selectLargeOptionInnerPaddingX})`,
     },
   },
   iconWrapper: {
