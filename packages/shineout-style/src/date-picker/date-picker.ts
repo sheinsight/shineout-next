@@ -57,7 +57,7 @@ const inputBorderToken = {
 };
 
 const inputBorder = border('wrapper', inputBorderToken);
-const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
+const { wrapper, wrapperDisabled, ...restWrapper } = inputBorder;
 
 const leftCircleBackground = `radial-gradient(circle closest-side, ${token.datePickerCellRangeBackgroundColor} 100%, transparent 0%),
 linear-gradient(to right, transparent 0%,transparent 50%, ${token.datePickerCellRangeBackgroundColor} 50%, ${token.datePickerCellRangeBackgroundColor} 100%)
@@ -96,7 +96,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       width: 420,
     },
   },
-  ...resetWrapper,
+  ...restWrapper,
   resultWrapper: {
     display: 'flex',
     flex: 1,
@@ -378,11 +378,11 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
   },
   wrapperSmall: {
+    ...restWrapper.wrapperSmall,
     '& $pickerFooterNow': {
       padding: `${token.datePickerSmallPanelFooterNowPaddingY} ${token.datePickerSmallPanelFooterNowPaddingX}`,
     },
   },
-  wrapperLarge: {},
   pickerFooterNow: {
     padding: `${token.datePickerPanelFooterPaddingY} ${token.datePickerPanelFooterPaddingX}`,
     '&:only-child': {

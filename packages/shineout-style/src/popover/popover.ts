@@ -225,6 +225,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
   mentionIcon: {
     '&&':{
      fontSize: token.popoverConfirmTitleFontSize,
+     width: `calc(${token.popoverConfirmTitleFontSize} + 2px)`,
   }
   },
   footer: {
