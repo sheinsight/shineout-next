@@ -169,14 +169,6 @@
 ### 🚀 Performance
 - 优化 `Select` 的 `compressed` 在大数据场景下的性能表现 ([#1226](https://github.com/sheinsight/shineout-next/pull/1226))
 
-
-## 3.7.2-beta.2
-2025-06-11
-
-### 💅 Style
-- 优化框类组件小尺寸字号下 `innerTitle` 的样式表现 ([#1169](https://github.com/sheinsight/shineout-next/pull/1169))
-
-
 ## 3.7.1-beta.9
 2025-06-11
 

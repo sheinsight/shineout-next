@@ -58,14 +58,6 @@ const inputBorderToken = {
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
-const selectTagHeightCssvar = `--select-tag-height`;
-const selectSmallTagHeightCssvar = `--select-small-tag-height`;
-const selectLargeTagHeightCssvar = `--select-large-tag-height`;
-
-const selectTagHeight = `var(${selectTagHeightCssvar})`;
-const selectSmallTagHeight = `var(${selectSmallTagHeightCssvar})`;
-const selectLargeTagHeight = `var(${selectLargeTagHeightCssvar})`;
-
 const cascaderStyle: JsStyles<CascaderClassType> = {
   rootClass: {},
   wrapperEmpty: {},
@@ -76,9 +68,6 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     outline: 'none',
     cursor: 'pointer',
     ...wrapper,
-    [selectTagHeightCssvar]: token.selectTagHeight,
-    [selectSmallTagHeightCssvar]: token.selectSmallTagHeight,
-    [selectLargeTagHeightCssvar]: token.selectLargeTagHeight,
 
     '&$wrapperInnerTitle': {
       '& $placeholder,$ellipsis,$space,input': {
@@ -90,30 +79,17 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
         marginBottom: token.selectInnerTitleMarginY,
         paddingTop: 0,
         paddingBottom: 0,
-        height: selectTagHeight,
         border: 'none',
-        '&  *': {
-          lineHeight: selectTagHeight,
-        },
       },
       '&$wrapperSmall $tag': {
-        height: selectSmallTagHeight,
         marginBottom: 2,
-        '&$tag  *': {
-          lineHeight: selectSmallTagHeight,
-        },
       },
       '&$wrapperLarge $tag': {
-        height: selectLargeTagHeight,
         marginBottom: 2,
-        '&$tag  *': {
-          lineHeight: selectLargeTagHeight,
-        },
       },
     },
     '&$wrapperSmall': {
       '& $tag': {
-        height: selectSmallTagHeight,
         lineHeight: '16px',
         marginTop: 1,
         marginBottom: 1,

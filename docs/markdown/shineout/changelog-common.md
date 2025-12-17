@@ -1,3 +1,9 @@
+## 3.9.4-beta.7
+2025-12-17
+### 💅 Style
+- 优化框类组件小尺寸字号下 `innerTitle` 的样式表现 ([#1536](https://github.com/sheinsight/shineout-next/pull/1536))
+
+
 ## 3.9.4-beta.5
 2025-12-15
 
