@@ -569,6 +569,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     '& svg': {
       verticalAlign: 'middle',
       width: token.cascaderOptionIconSize,
+
+      '$wrapperLarge &': {
+        width: token.cascaderLargeOptionIconSize,
+      },
+      '$wrapperSmall &': {
+        width: token.cascaderSmallOptionIconSize,
+      },
     },
   },
   optionSpin: {

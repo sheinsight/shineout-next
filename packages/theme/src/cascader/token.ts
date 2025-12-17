@@ -58,6 +58,9 @@ const cascaderTokenExtraValue = {
       inner: {
         padding: { x: 'Spacing-8', y: 'Spacing-2' },
       },
+      icon: {
+        size: 'Font-12',
+      }
     },
   },
   large: {
@@ -67,6 +70,9 @@ const cascaderTokenExtraValue = {
       inner: {
         padding: { x: 'Spacing-12', y: 'Spacing-8' },
       },
+      icon: {
+        size: 'Font-16',
+      }
     },
     placeholder: {
       margin: { y: 'Spacing-4' },
