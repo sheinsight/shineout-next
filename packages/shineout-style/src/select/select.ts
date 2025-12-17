@@ -311,7 +311,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       fontSize: token.selectLargeFontSize,
     },
     '& $optionGroupTitle': {
-      padding: `calc(${token.selectFontSize} + 2px) ${token.selectGroupTitlePaddingX} ${token.selectGroupTitleLargeBottom} ${token.selectGroupTitlePaddingX}`,
+      padding: `calc(${token.selectFontSize} + 2px) calc(${token.selectOptionPaddingX} + ${token.selectLargeOptionInnerPaddingX}) ${token.selectGroupTitleLargeBottom} calc(${token.selectOptionPaddingX} + ${token.selectLargeOptionInnerPaddingX})`,
     },
   },
   iconWrapper: {
