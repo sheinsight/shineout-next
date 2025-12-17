@@ -16,13 +16,23 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     '&:last-child': {
       marginRight: 0,
     },
+    'button&':{
+      padding: `${token.radioButtonPaddingY} ${token.radioButtonPaddingX}`,
+    }
   },
   wrapperSmall: {
     '[data-soui-role="form-control"] > $group > &': {
       marginTop: 1,
     },
+    'button&':{
+      padding: `${token.radioSmallButtonPaddingY} ${token.radioSmallButtonPaddingX}`,
+    }
   },
-  wrapperLarge: {},
+  wrapperLarge: {
+    'button&':{
+      padding: `${token.radioLargeButtonPaddingY} ${token.radioLargeButtonPaddingX}`,
+    }
+  },
   wrapperChecked: {},
   wrapperDisabled: {
     cursor: 'not-allowed',

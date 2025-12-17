@@ -16,7 +16,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
   const props = useWithFormConfig(props0);
   const { fieldId } = useContext(FormFieldContext);
 
-  const { children, className, button, block, keygen, jssStyle, style, size, disabled  } = props;
+  const { children, className, button, block, keygen, jssStyle, style, size, disabled, renderWrapper: externalRenderWrapper  } = props;
   const radioClasses = jssStyle?.radio?.();
 
   const inputAbleProps = useInputAble({
@@ -62,37 +62,44 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
     return '';
   };
 
-  const renderRadio = React.useCallback((info: any): React.ReactElement => {
-    const { children, content, checked, disabled, rootProps, inputProps } = info;
-    const checkedProps = {
-      mode: button === 'outline' ? 'outline' : undefined,
-      type: 'primary' as 'primary',
-    } as any;
-    const noCheckedProps = {
-      mode: button === 'outline' ? 'outline' : undefined,
-      type: 'secondary' as 'secondary',
+  const createInternalRenderWrapper = React.useCallback((data?: any, index?: number) => {
+    return (info: any): React.ReactElement => {
+      const { children, content, checked, disabled, wrapperProps, inputProps } = info;
+      const checkedProps = {
+        mode: button === 'outline' ? 'outline' : undefined,
+        type: 'primary' as 'primary',
+      } as any;
+      const noCheckedProps = {
+        mode: button === 'outline' ? 'outline' : undefined,
+        type: 'secondary' as 'secondary',
+      };
+      if (button) {
+        return (
+          <Button
+            jssStyle={jssStyle}
+            size={size}
+            disabled={disabled}
+            {...(checked ? checkedProps : noCheckedProps)}
+            {...wrapperProps}
+          >
+            <input type='radio' {...inputProps} />
+            {children}
+          </Button>
+        );
+      }
+      if (externalRenderWrapper) {
+        return externalRenderWrapper({ ...info, item: data, index });
+      }
+      return content;
     };
-    if (button) {
-      return (
-        <Button
-          jssStyle={jssStyle}
-          size={size}
-          disabled={disabled}
-          {...(checked ? checkedProps : noCheckedProps)}
-          {...rootProps}
-        >
-          <input type='radio' {...inputProps} />
-          {children}
-        </Button>
-      );
-    }
-    return content;
-  }, []);
+  }, [button, externalRenderWrapper]);
+
+  const internalRenderWrapper = React.useMemo(() => createInternalRenderWrapper(), [createInternalRenderWrapper]);
 
   const providerValue: any = {
     checked: isChecked,
     onChange: handleItemChange,
-    renderRadio,
+    renderWrapper: internalRenderWrapper,
     ...(size !== undefined && { size }),
     ...(disabled !== undefined && { disabled })
   };
@@ -119,7 +126,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
             htmlValue={i}
             size={size}
             onChange={handleIndexChange}
-            renderRadio={renderRadio}
+            renderWrapper={createInternalRenderWrapper(d, i)}
           >
             {getContent(d, i)}
           </Radio>

@@ -118,6 +118,18 @@ export interface RadioTokens {
   radioPaddingY: string;
   /**
    * @type {string}
+   * @token Spacing-4
+   * @description 单选框按钮模式内边距（垂直方向）
+   */
+  radioButtonPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 单选框按钮模式内边距（水平方向）
+   */
+  radioButtonPaddingX: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 单选框小尺寸图标宽度
    */
@@ -148,6 +160,18 @@ export interface RadioTokens {
   radioSmallPaddingY: string;
   /**
    * @type {string}
+   * @token Spacing-1
+   * @description 单选框小尺寸按钮模式内边距（垂直方向）
+   */
+  radioSmallButtonPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 单选框小尺寸按钮模式内边距（水平方向）
+   */
+  radioSmallButtonPaddingX: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 单选框大尺寸图标宽度
    */
@@ -170,6 +194,18 @@ export interface RadioTokens {
    * @description 单选框大尺寸内边距（垂直方向）
    */
   radioLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-7
+   * @description 单选框大尺寸按钮模式内边距（垂直方向）
+   */
+  radioLargeButtonPaddingY: string;
+  /**
+   * @type {string}
+   * @token Spacing-16
+   * @description 单选框大尺寸按钮模式内边距（水平方向）
+   */
+  radioLargeButtonPaddingX: string;
   /**
    * @type {string}
    * @token Neutral-text-5

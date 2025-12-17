@@ -48,15 +48,24 @@ const radioTokenExtraValue = {
     wrapper: { fill: 'Neutral-fill-2', dark: 'Neutral-fill-3' },
   },
   padding: { y: 'Spacing-4' },
+  button: {
+    padding: { y: 'Spacing-4', x: 'Spacing-12' },
+  },
   small: {
     icon: { width: 'Font-12', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },
     label: { font: { size: 'Font-12' } },
     padding: { y: 'Spacing-1' },
+    button: {
+      padding: { y: 'Spacing-1', x: 'Spacing-8' },
+    },
   },
   large: {
     icon: { width: 'Font-16', gap: '', border: { width: 'Border-2' } },
     label: { font: { size: 'Font-16' } },
     padding: { y: 'Spacing-7' },
+    button: {
+      padding: { y: 'Spacing-7', x: 'Spacing-16' },
+    },
   },
   label: {
     font: { color: 'Neutral-text-5', size: 'Font-14' },
