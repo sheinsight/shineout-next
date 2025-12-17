@@ -82,4 +82,21 @@ export interface RadioGroupProps<DataItem, Value>
    * @default false
    */
   disabled?: boolean | ((data: DataItem) => boolean);
+  /**
+   * @en Customize the entire radio rendering. Compared to renderItem which only renders text content, this allows full control over layout and styles
+   * @cn 完全自定义 radio 的渲染。相比 renderItem 只能渲染文本内容，renderWrapper 可以完全控制布局和样式
+   * @version 3.9.4
+   */
+  renderWrapper?: (info: {
+    content: React.ReactElement;
+    wrapperProps: any;
+    indicatorProps: any;
+    inputProps: any;
+    disabled?: boolean;
+    checked?: boolean;
+    children?: React.ReactNode;
+    indicator?: React.ReactElement;
+    item: DataItem;
+    index: number;
+  }) => React.ReactElement;
 }

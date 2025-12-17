@@ -5,7 +5,7 @@ import { RadioProps } from './radio.type';
 import GroupContext from './group-context';
 
 const Radio = <T,>(props: RadioProps<T>) => {
-  const { children, htmlValue = true as T, onChange, checked, jssStyle, ...rest } = props;
+  const { children, htmlValue = true as T, onChange, checked, jssStyle, renderWrapper, ...rest } = props;
   const handleChange = usePersistFn(() => {
     onChange?.(htmlValue);
   });
@@ -27,7 +27,7 @@ const Radio = <T,>(props: RadioProps<T>) => {
   };
 
   return (
-    <SimpleRadio jssStyle={jssStyle} {...rest} checked={getChecked()} onChange={handleChange} disabled={getDisabled()}>
+    <SimpleRadio jssStyle={jssStyle} {...rest} checked={getChecked()} onChange={handleChange} disabled={getDisabled()} renderWrapper={renderWrapper}>
       {children}
     </SimpleRadio>
   );
@@ -35,7 +35,16 @@ const Radio = <T,>(props: RadioProps<T>) => {
 
 const RadioWithContext = <T,>(props: RadioProps<T>) => {
   return (
-    <GroupContext.Consumer>{(value) => <Radio {...props} {...value} />}</GroupContext.Consumer>
+    <GroupContext.Consumer>
+      {(value) => {
+        const mergedProps = {
+          ...props,
+          ...value,
+          renderWrapper: props.renderWrapper !== undefined ? props.renderWrapper : value.renderWrapper,
+        };
+        return <Radio {...mergedProps} />;
+      }}
+    </GroupContext.Consumer>
   );
 };
 

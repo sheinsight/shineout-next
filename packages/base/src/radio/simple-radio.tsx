@@ -5,7 +5,7 @@ import { SimpleRadioProps } from './radio.type';
 import { FormFieldContext } from '../form/form-field-context';
 
 const Radio = (props: SimpleRadioProps) => {
-  const { jssStyle, className, style, children, renderRadio, size, theme, ...rest } = props;
+  const { jssStyle, className, style, children, renderWrapper, size, theme, ...rest } = props;
   const { fieldId } = useContext(FormFieldContext);
   const radioClasses = jssStyle?.radio?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
@@ -34,20 +34,27 @@ const Radio = (props: SimpleRadioProps) => {
   });
   const indicatorProps = getIndicatorProps();
 
-  const simpleRadio = (
-    <div id={fieldId} {...rootProps}>
+  const indicator = (
+    <>
       <input {...inputProps} type='radio' />
       <span className={indicatorClass}>
         <span {...indicatorProps} className={radioClasses?.indicator} />
       </span>
+    </>
+  );
+
+  const simpleRadio = (
+    <div id={fieldId} {...rootProps}>
+      {indicator}
       <span className={radioClasses?.desc}>{children}</span>
     </div>
   );
 
-  if (typeof renderRadio === 'function') {
-    return renderRadio({
+  if (typeof renderWrapper === 'function') {
+    return renderWrapper({
       content: simpleRadio,
-      rootProps,
+      wrapperProps: rootProps,
+      indicator,
       indicatorProps,
       inputProps,
       disabled,

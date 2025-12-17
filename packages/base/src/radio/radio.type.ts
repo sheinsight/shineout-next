@@ -43,9 +43,20 @@ export interface SimpleRadioProps
    */
   children?: React.ReactNode;
   /**
-   * @private 内部属性用于封装按钮单选框样式
+   * @en Customize the entire radio rendering. Compared to renderItem which only renders text content, this allows full control over layout and styles
+   * @cn 完全自定义 radio 的渲染。相比 renderItem 只能渲染文本内容，renderWrapper 可以完全控制布局和样式
+   * @version 3.9.4
    */
-  renderRadio?: (...args: any) => React.ReactElement;
+  renderWrapper?: (info: {
+    content: React.ReactElement;
+    wrapperProps: any;
+    indicatorProps: any;
+    inputProps: any;
+    disabled?: boolean;
+    checked?: boolean;
+    children?: React.ReactNode;
+    indicator?: React.ReactElement;
+  }) => React.ReactElement;
   /**
    * @private 内部属性用于控制热区样式
    */
