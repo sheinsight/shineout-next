@@ -91,6 +91,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       '& $tag': {
         marginTop: 1,
         marginBottom: 1,
+        border: 'none',
       },
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: 0,

@@ -207,8 +207,8 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     padding: `${Token.tagLargePaddingY} ${Token.tagLargePaddingX}`,
     '& $closeIconWrapper': {
       '& svg': {
-        width: 14,
-        height: 14,
+        width: Token.tagLargeFontSize,
+        height: Token.tagLargeFontSize,
       },
     },
     '& $wrapper': {
@@ -235,8 +235,8 @@ const TagStyle: JsStyles<keyof TagClasses> = {
       height: `calc(${Token.tagSmallFontSize} + 6px)`,
       lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
       '& svg': {
-        width: 12,
-        height: 12,
+        width: Token.tagSmallFontSize,
+        height: Token.tagSmallFontSize,
       },
     },
   },
@@ -249,7 +249,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   },
 
   closeIcon: {
-    marginLeft: 4,
+    marginLeft: 2,
     alignItems: 'center',
     display: 'inline-flex',
     cursor: 'pointer',
@@ -265,8 +265,8 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     width: `calc(1em + 4px)`,
     height: `calc(1em + 4px)`,
     '& svg': {
-      width: 12,
-      height: 12,
+      width: Token.tagFontSize,
+      height: Token.tagFontSize,
     },
   },
 
