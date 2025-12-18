@@ -89,9 +89,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     },
     '&$wrapperSmall': {
       '& $tag': {
-        lineHeight: '16px',
         marginTop: 1,
         marginBottom: 1,
+        border: 'none',
       },
       '& $placeholder,$ellipsis,$space,input': {
         marginTop: 0,
