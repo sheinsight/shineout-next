@@ -228,12 +228,9 @@ const TagStyle: JsStyles<keyof TagClasses> = {
       lineHeight: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 6px))`,
     },
     '& $closeIcon': {
-      height: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 6px))`,
+      height: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 4px))`,
     },
     '& $closeIconWrapper': {
-      width: `calc(${Token.tagSmallFontSize} + 6px)`,
-      height: `calc(${Token.tagSmallFontSize} + 6px)`,
-      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
       '& svg': {
         width: Token.tagSmallFontSize,
         height: Token.tagSmallFontSize,
