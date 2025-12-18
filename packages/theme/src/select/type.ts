@@ -112,6 +112,12 @@ export interface SelectTokens {
   selectSmallOptionInnerPaddingY: string;
   /**
    * @type {string}
+   * @token Font-12
+   * @description 选择器小尺寸清除按钮的图标字号
+   */
+  selectSmallClearIconSize: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 选择器大尺寸字体字号
    */
@@ -140,6 +146,12 @@ export interface SelectTokens {
    * @description 选择器大尺寸选项内部容器的内边距（垂直方向）
    */
   selectLargeOptionInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Font-16
+   * @description 选择器大尺寸清除按钮的图标字号
+   */
+  selectLargeClearIconSize: string;
   /**
    * @type {string}
    * @token Spacing-4
@@ -194,6 +206,12 @@ export interface SelectTokens {
    * @description 选择器清除按钮的内边距
    */
   selectClearPadding: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 选择器清除按钮的图标字号
+   */
+  selectClearIconSize: string;
   /**
    * @type {string}
    * @token Brand-6

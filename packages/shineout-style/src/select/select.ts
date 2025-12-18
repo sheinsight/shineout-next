@@ -325,13 +325,19 @@ const selectStyle: JsStyles<SelectClassType> = {
   clearable: {},
   clearIcon: {
     cursor: 'pointer',
-    width: token.selectFontSize,
+    width: token.selectClearIconSize,
     lineHeight: 0,
     color: token.selectClearColor,
     verticalAlign: 'middle',
     '&:hover': {
       color: token.selectIconColor,
     },
+    '$wrapperSmall &': {
+      width: token.selectSmallClearIconSize,
+    },
+    '$wrapperLarge &': {
+      width: token.selectLargeClearIconSize,
+    }
   },
   arrowIcon: {
     display: 'inline-block',

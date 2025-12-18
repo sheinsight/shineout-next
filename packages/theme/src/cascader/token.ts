@@ -62,6 +62,11 @@ const cascaderTokenExtraValue = {
         size: 'Font-12',
       }
     },
+    clear: {
+      icon: {
+        size: 'Font-12',
+      },
+    },
   },
   large: {
     font: { size: 'Font-16' },
@@ -73,6 +78,11 @@ const cascaderTokenExtraValue = {
       icon: {
         size: 'Font-16',
       }
+    },
+    clear: {
+      icon: {
+        size: 'Font-16',
+      },
     },
     placeholder: {
       margin: { y: 'Spacing-4' },
@@ -89,6 +99,9 @@ const cascaderTokenExtraValue = {
     hover: {
       color: 'Neutral-text-4',
     },
+    icon: {
+      size: 'Font-14',
+    }
   },
   hover: { border: { color: 'Brand-6' }, clear: { color: 'Neutral-text-4' } },
   focus: { border: { color: 'Brand-7' }, shadow: 'Brand-2' },

@@ -331,12 +331,18 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   clearable: {},
   clearIcon: {
     cursor: 'pointer',
-    width: token.cascaderFontSize,
+    width: token.cascaderClearIconSize,
     lineHeight: 0,
     color: token.cascaderClearColor,
     verticalAlign: 'middle',
     '&:hover': {
       color: token.cascaderClearHoverColor,
+    },
+    '$wrapperSmall &': {
+      width: token.cascaderSmallClearIconSize,
+    },
+    '$wrapperLarge &': {
+      width: token.cascaderLargeClearIconSize,
     },
   },
   compressedIcon: {},
