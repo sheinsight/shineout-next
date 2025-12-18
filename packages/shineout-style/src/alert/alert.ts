@@ -61,7 +61,6 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   withTitle: {
     '& $icon': {
       fontSize: Token.alertTitleFontSize,
-      // marginBottom: Token.alertNearlyMargin,
       width: `calc(${Token.alertTitleIconWidth} + 2px)`,
       height: Token.lineHeightDynamic,
     },
@@ -88,13 +87,17 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     cursor: 'pointer',
     color: Token.alertCloseFontColor,
     fontSize: Token.alertFontSize,
-    height: `calc(${Token.alertFontSize} + 2px)`,
-    width: `calc(${Token.alertFontSize} + 2px)`,
+    height: Token.alertFontSize,
+    width: Token.alertFontSize,
     flex: '0 0 auto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     // marginLeft: Token.alertNearlyMargin,
+    '$withTitle &': {
+      width: Token.alertTitleFontSize,
+      height: Token.alertTitleFontSize,
+    },
     '&:hover': {
       color: Token.alertCloseHoverColor,
     },

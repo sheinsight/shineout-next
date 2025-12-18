@@ -100,6 +100,12 @@ export interface CascaderTokens {
   cascaderSmallOptionIconSize: string;
   /**
    * @type {string}
+   * @token Font-12
+   * @description 级联选择器小尺寸清除按钮的图标字号
+   */
+  cascaderSmallClearIconSize: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 级联选择器大尺寸字体字号
    */
@@ -134,6 +140,12 @@ export interface CascaderTokens {
    * @description 级联选择器大尺寸选项图标字号
    */
   cascaderLargeOptionIconSize: string;
+  /**
+   * @type {string}
+   * @token Font-16
+   * @description 级联选择器大尺寸清除按钮的图标字号
+   */
+  cascaderLargeClearIconSize: string;
   /**
    * @type {string}
    * @token Spacing-4
@@ -188,6 +200,12 @@ export interface CascaderTokens {
    * @description 级联选择器清除按钮的鼠标移入时的颜色
    */
   cascaderClearHoverColor: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 级联选择器清除按钮的图标字号
+   */
+  cascaderClearIconSize: string;
   /**
    * @type {string}
    * @token Brand-6

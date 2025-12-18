@@ -100,6 +100,12 @@ export interface TreeSelectTokens {
   treeSelectSmallOptionInnerPaddingY: string;
   /**
    * @type {string}
+   * @token Font-12
+   * @description 树选择器小尺寸清除图标字号
+   */
+  treeSelectSmallClearIconSize: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 树选择器大尺寸字体字号
    */
@@ -128,6 +134,12 @@ export interface TreeSelectTokens {
    * @description 树选择器大尺寸选项容器的内边距（垂直方向）
    */
   treeSelectLargeOptionInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Font-16
+   * @description 树选择器大尺寸清除图标字号
+   */
+  treeSelectLargeClearIconSize: string;
   /**
    * @type {string}
    * @token Spacing-4
@@ -182,6 +194,12 @@ export interface TreeSelectTokens {
    * @description 树选择器清除鼠标移入时的颜色
    */
   treeSelectClearHoverColor: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 树选择器清除图标字号
+   */
+  treeSelectClearIconSize: string;
   /**
    * @type {string}
    * @token Brand-6
