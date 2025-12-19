@@ -5,7 +5,7 @@
  *    -- The form has built-in two-way binding mechanism, which automatically issues and collects data based on the name attribute of the form element
  */
 
-import { Form, Input, Upload, Radio, Checkbox, DatePicker, Rate, Textarea } from 'shineout';
+import { Form, Input, Upload, Radio, Checkbox, DatePicker, Rate, Textarea, Switch } from 'shineout';
 
 const star = (
   <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
@@ -49,7 +49,10 @@ export default () => {
           <DatePicker name='date' placeholder={'please select date'} clearable showSelNow />
         </Form.Item>
         <Form.Item label='Score'>
-          <StarRate name='score'></StarRate>
+          <StarRate name='score' style={{ verticalAlign: 'middle' }}></StarRate>
+        </Form.Item>
+        <Form.Item label='Switch'>
+          <Switch name='switch' />
         </Form.Item>
         <Form.Item label='upload avatar'>
           <Upload.Image
