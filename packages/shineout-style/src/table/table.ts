@@ -1,4 +1,4 @@
-import token from '@sheinx/theme';
+import token, { getTokenName } from '@sheinx/theme';
 import { TableClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 import { customScrollBar } from '../mixin';
@@ -401,6 +401,7 @@ const tableStyle: JsStyles<TableClassType> = {
   },
 
   filterIconContainer: {
+    [getTokenName('buttonSmallCircleSize')]: `calc(${token.tableFilterIconSize} + 8px)`,
     '&:hover $filterIcon': {
       color: token.tableFilterIconHoverColor,
     }

@@ -6,10 +6,10 @@ import './index.css'
 // setTimeout(() => {
 //   setToken({
 //     token: {
-//       '--soui-input-font-size': '12px',
-//       '--soui-select-padding-y': '3px',
-//       // '--soui-font-14': '12px',
-//       // '--soui-font-16': '14px',
+//       // '--soui-input-font-size': '12px',
+//       // '--soui-select-padding-y': '3px',
+//       '--soui-font-14': '12px',
+//       '--soui-font-16': '14px',
 //     },
 //     selector: 'html',
 //     update: true,
