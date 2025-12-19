@@ -1,4 +1,4 @@
-import token from '@sheinx/theme';
+import token, { getTokenName } from '@sheinx/theme';
 import { SwitchClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 
@@ -43,6 +43,7 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       backgroundColor: token.switchCheckedDisabledBackgroundColor,
       color: token.switchCheckedDisabledFontColor,
     },
+    [getTokenName('switchCircleSize')]: `calc(${token.switchFontSize} + 4px)`,
     height: `calc( ${token.switchCircleSize} + ${token.switchPaddingY} * 2 )`,
     padding: `${token.switchPaddingY} ${token.switchPaddingX}`,
     minWidth: token.switchWidth,
