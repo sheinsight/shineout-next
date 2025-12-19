@@ -18,7 +18,10 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     },
     'button&':{
       padding: `${token.radioButtonPaddingY} ${token.radioButtonPaddingX}`,
-    }
+    },
+    'button[data-soui-outline]&:not($wrapperChecked):not($wrapperDisabled):not(:hover)':{
+      borderColor: token.radioButtonBorderColor,
+    },
   },
   wrapperSmall: {
     '[data-soui-role="form-control"] > $group > &': {

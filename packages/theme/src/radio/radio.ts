@@ -25,6 +25,7 @@ const radioTokens: RadioTokens = {
   radioPaddingY: 'Spacing-4',
   radioButtonPaddingY: 'Spacing-4',
   radioButtonPaddingX: 'Spacing-12',
+  radioButtonBorderColor: 'Neutral-border-2',
   radioSmallIconWidth: 'Font-12',
   radioSmallIconBorderWidth: 'Border-1',
   radioSmallIconInnerSize: 'Size-3',

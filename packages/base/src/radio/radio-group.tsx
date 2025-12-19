@@ -65,21 +65,19 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
   const createInternalRenderWrapper = React.useCallback((data?: any, index?: number) => {
     return (info: any): React.ReactElement => {
       const { children, content, checked, disabled, wrapperProps, inputProps } = info;
+      const isOutline = button === 'outline';
       const checkedProps = {
-        mode: button === 'outline' ? 'outline' : undefined,
-        type: 'primary' as 'primary',
+        mode: isOutline ? 'outline' : undefined,
+        type: checked ? 'primary' : 'secondary',
       } as any;
-      const noCheckedProps = {
-        mode: button === 'outline' ? 'outline' : undefined,
-        type: 'secondary' as 'secondary',
-      };
       if (button) {
         return (
           <Button
             jssStyle={jssStyle}
             size={size}
             disabled={disabled}
-            {...(checked ? checkedProps : noCheckedProps)}
+            {...util.getDataAttribute({ ['outline']: isOutline ? 'true' : undefined })}
+            {...checkedProps}
             {...wrapperProps}
           >
             <input type='radio' {...inputProps} />
