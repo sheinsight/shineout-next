@@ -1,4 +1,4 @@
-import token from '@sheinx/theme';
+import token, { getTokenName } from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
 import { CascaderClasses } from '@sheinx/base';
@@ -434,6 +434,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     marginTop: token.cascaderTagMarginY,
     marginBottom: token.cascaderTagMarginY,
     textWrap: 'nowrap',
+    [getTokenName('tagDefaultLineBase')]: token.inputFontSize,
     '&$hideTag': {
       marginRight: 0,
     },

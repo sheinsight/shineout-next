@@ -1,4 +1,4 @@
-import token from '@sheinx/theme';
+import token, { getTokenName } from '@sheinx/theme';
 import { SelectClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
@@ -422,6 +422,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginTop: token.selectTagMarginY,
     marginBottom: token.selectTagMarginY,
     textWrap: 'nowrap',
+    [getTokenName('tagDefaultLineBase')]: token.inputFontSize,
     '&$hideTag': {
       marginRight: 0,
     },

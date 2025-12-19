@@ -417,6 +417,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     marginTop: token.treeSelectTagMarginY,
     marginBottom: token.treeSelectTagMarginY,
     textWrap: 'nowrap',
+    [getTokenName('tagDefaultLineBase')]: token.inputFontSize,
     '&$hideTag': {
       marginRight: 0,
     },
