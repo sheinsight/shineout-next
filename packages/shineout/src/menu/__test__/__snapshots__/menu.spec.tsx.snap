@@ -1198,6 +1198,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
   >
     <button
       class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-radio-wrapper-small soui-button soui-button-primary soui-button-button soui-button-outline soui-button-small"
+      data-soui-outline="true"
       dir="ltr"
       type="button"
     >
@@ -1213,6 +1214,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
     </button>
     <button
       class="soui-radio soui-radio-wrapper soui-radio-wrapper-small soui-button soui-button-secondary soui-button-button soui-button-outline soui-button-small"
+      data-soui-outline="true"
       dir="ltr"
       type="button"
     >
@@ -1227,6 +1229,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
     </button>
     <button
       class="soui-radio soui-radio-wrapper soui-radio-wrapper-small soui-button soui-button-secondary soui-button-button soui-button-outline soui-button-small"
+      data-soui-outline="true"
       dir="ltr"
       type="button"
     >

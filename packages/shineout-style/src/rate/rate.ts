@@ -39,8 +39,8 @@ const rateStyle: JsStyles<RateClassType> = {
     display: 'flex',
     boxSizing: 'border-box',
     alignItems: 'center',
-    width: token.rateSize,
-    fontSize: token.rateSize,
+    width: `calc(${token.rateFontSize} + 10px)`,
+    fontSize: `calc(${token.rateFontSize} + 10px)`,
     lineHeight: 1,
     '&:not($itemDisabled):hover': {
       cursor: 'pointer',

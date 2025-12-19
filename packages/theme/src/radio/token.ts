@@ -50,6 +50,7 @@ const radioTokenExtraValue = {
   padding: { y: 'Spacing-4' },
   button: {
     padding: { y: 'Spacing-4', x: 'Spacing-12' },
+    border: { color: 'Neutral-border-2' }
   },
   small: {
     icon: { width: 'Font-12', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },

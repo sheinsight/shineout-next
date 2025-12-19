@@ -130,6 +130,12 @@ export interface RadioTokens {
   radioButtonPaddingX: string;
   /**
    * @type {string}
+   * @token Neutral-border-2
+   * @description 单选框按钮模式边框颜色
+   */
+  radioButtonBorderColor: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 单选框小尺寸图标宽度
    */

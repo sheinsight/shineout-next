@@ -1381,14 +1381,14 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '0px -2px 10px rgba(232, 235, 240, 0.8)'
+   * @default '0,-2,10,rgb(102,108,124,0.08)'
    * @description 详情页底部按钮模块阴影（向上）
    */
   'Shadow-4': string;
   /**
    * @type {string}
    * @categoty string
-   * @default '0px 2px 10px rgba(232, 235, 240, 0.8)'
+   * @default '0,2,10,rgb(102,108,124,0.08)'
    * @description 详情页底部按钮模块阴影（向下）
    */
   'Shadow-5': string;

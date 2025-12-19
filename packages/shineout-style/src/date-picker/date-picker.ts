@@ -311,10 +311,15 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    width: token.datePickerPanelHeaderIconHotWidth,
-    height: token.datePickerPanelHeaderIconHotWidth,
+    width: `calc(${token.datePickerPanelHeaderFontSize} + 8px)`,
+    height: `calc(${token.datePickerPanelHeaderFontSize} + 8px)`,
     color: token.datePickerPanelHeaderIconColor,
     borderRadius: '50%',
+    '$pickerHeaderRight:has(&), $pickerHeaderLeft:has(&)': {
+      display: 'flex',
+      alignItems: 'center',
+      height: token.datePickerPanelHeaderIconHotWidth,
+    },
     '&[dir=rtl]': {
       transform: 'rotate(180deg)',
     },
@@ -367,6 +372,9 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     borderTop: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
     display: 'flex',
     justifyContent: 'space-between',
+    '&:empty': {
+      display: 'none',
+    },
     '&[dir=rtl] $pickerFooterConfirm': {
       'margin-right': 'auto',
     },
