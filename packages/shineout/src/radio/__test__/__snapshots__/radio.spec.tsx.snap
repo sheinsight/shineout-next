@@ -301,6 +301,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
 >
   <button
     class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-outline"
+    data-soui-outline="true"
     dir="ltr"
     type="button"
   >
@@ -315,6 +316,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
   </button>
   <button
     class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-outline"
+    data-soui-outline="true"
     dir="ltr"
     type="button"
   >
@@ -329,6 +331,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
   </button>
   <button
     class="soui-radio soui-radio-wrapper soui-radio-wrapper-checked soui-button soui-button-primary soui-button-button soui-button-outline"
+    data-soui-outline="true"
     dir="ltr"
     type="button"
   >
@@ -344,6 +347,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
   </button>
   <button
     class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-outline"
+    data-soui-outline="true"
     dir="ltr"
     type="button"
   >
@@ -358,6 +362,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
   </button>
   <button
     class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-outline"
+    data-soui-outline="true"
     dir="ltr"
     type="button"
   >
@@ -372,6 +377,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
   </button>
   <button
     class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-outline"
+    data-soui-outline="true"
     dir="ltr"
     type="button"
   >
@@ -386,6 +392,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
   </button>
   <button
     class="soui-radio soui-radio-wrapper soui-button soui-button-secondary soui-button-button soui-button-outline"
+    data-soui-outline="true"
     dir="ltr"
     type="button"
   >
