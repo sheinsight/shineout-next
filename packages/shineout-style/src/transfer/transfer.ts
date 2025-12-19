@@ -18,12 +18,12 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
   },
   small: {
-    '& $operations': { '& svg': { width: 12 } },
+    '& $operations': { '& svg': { width: Token.transferSmallFontSize } },
     '& $header': {
       height: Token.transferSmallHeaderHeight,
     },
     '& $title,$count,$simpleTarget,$removeAll': { fontSize: Token.transferSmallFontSize },
-    '& $close': { width: 20 },
+    '& $close': { width: `calc(${Token.transferSmallFontSize} + 8px)` },
     '& $left, & $right': {
       padding: 0,
     },
@@ -71,19 +71,19 @@ const TransferStyle: JsStyles<TransferClass> = {
     lineHeight: Token.lineHeightDynamic,
   },
   removeAll: {
-    width: 24,
-    height: 24,
+    width: `calc(${Token.transferFontSize} + 8px)`,
+    height: `calc(${Token.transferFontSize} + 8px)`,
     borderRadius: '50%',
-    minWidth: 24,
+    minWidth: `calc(${Token.transferFontSize} + 8px)`,
     fontSize: Token.transferFontSize,
-    lineHeight: '14px',
+    lineHeight: `calc(${Token.transferFontSize} + 8px)`,
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 3,
     '& svg': {
-      width: 14,
+      width: Token.transferFontSize,
       color: Token.transferRemoveIconColor,
     },
     '&:hover': {
@@ -91,12 +91,12 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
   },
   close: {
-    width: 22,
-    height: 22,
+    width: `calc(${Token.transferFontSize} + 8px)`,
+    height: `calc(${Token.transferFontSize} + 8px)`,
     flexShrink: 0,
     borderRadius: '50%',
-    minWidth: 12,
-    fontSize: 12,
+    minWidth: `calc(${Token.transferFontSize} + 8px)`,
+    fontSize: Token.transferFontSize,
     cursor: 'pointer',
     color: Token.transferIconColor,
     lineHeight: `calc(${Token.lineHeightDynamic} + 2px)`,
@@ -105,7 +105,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     alignItems: 'center',
     justifyContent: 'center',
     '& svg': {
-      width: 12,
+      width: Token.transferFontSize,
     },
     '&:hover': {
       background: Token.transferIconBackgroundColor,
@@ -118,7 +118,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     justifyContent: 'center',
     flexDirection: 'column',
     '& svg': {
-      width: 14,
+      width: Token.transferFontSize,
     },
   },
   inputWrapper: {
@@ -126,8 +126,8 @@ const TransferStyle: JsStyles<TransferClass> = {
   },
   input: {
     '& > div > svg': {
-      width: 14,
-      minWidth: 14,
+      width: Token.transferFontSize,
+      minWidth: Token.transferFontSize,
       color: Token.transferIconColor,
     },
   },

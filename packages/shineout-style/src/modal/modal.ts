@@ -356,8 +356,8 @@ const modalStyle: JsStyles<ModalClassType> = {
   headerClose: {
     marginLeft: token.modalHeaderCloseMarginXStart,
     marginTop: token.modalHeaderCloseTop,
-    width: token.modalHeaderCloseSize,
-    height: token.modalHeaderCloseSize,
+    width: token.modalHeaderFontSize,
+    height: token.modalHeaderFontSize,
     cursor: 'pointer',
     display: 'block',
     color: token.modalHeaderCloseColor,
