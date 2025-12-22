@@ -1,3 +1,9 @@
+## 3.9.5-beta.1
+2025-12-22
+### 🐞 BugFix
+- 修复 `Pagination` 在非受控模式下切换 pageSize 后点击页码会导致 pageSize 重置的问题 ([#1544](https://github.com/sheinsight/shineout-next/pull/1544))
+
+
 ## 3.9.2-beta.9
 2025-12-05
 
