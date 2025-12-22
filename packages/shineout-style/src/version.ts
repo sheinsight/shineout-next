@@ -1,1 +1,1 @@
-export default '3.9.3-beta.15';
+export default '3.9.4';
