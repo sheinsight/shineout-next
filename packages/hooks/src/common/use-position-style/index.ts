@@ -199,7 +199,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     } else {
       // absolute 场景下，右侧溢出判断需要考虑弹出层元素的尺寸
       const [, horizontalPosition] = position.split('-');
-      if (horizontalPosition === 'left' && context.parentRect.left + (popupElWidth || context.popUpWidth) > docSize.width) {
+      const bodyZoom = getRelativeZoom(document.body);
+      if (horizontalPosition === 'left' && context.parentRect.left + (popupElWidth || context.popUpWidth) > docSize.width * bodyZoom) {
         newPosition = newPosition.replace('left', 'right') as VerticalPosition;
       }
     }

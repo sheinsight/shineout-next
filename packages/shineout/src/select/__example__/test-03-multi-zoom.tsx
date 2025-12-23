@@ -7,7 +7,7 @@
 import React from 'react';
 import { Select } from 'shineout';
 
-// document.body.style.zoom = '1.125'
+// document.body.style.zoom = '2';
 
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green'];
@@ -24,9 +24,16 @@ export default () => {
         className='inner'
         style={{
           marginLeft: 100,
-          zoom: 0.88888889,
+          zoom: 0.5,
         }}
       >
+        <Select
+          data={data}
+          keygen
+          placeholder='Select Color'
+          absolute
+        />
+
         <div style={{ padding: 10 }} id='aaa'>
           <Select
             data={data}

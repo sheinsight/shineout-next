@@ -2,7 +2,7 @@
 2025-12-23
 
 ### 🐞 BugFix
-- 修复弹出层类组件在 CSS zoom 嵌套环境下使用 `absolute` 属性时位置偏移的问题 ([#1545](https://github.com/sheinsight/shineout-next/pull/1545))
+- 修复弹出层类组件在 CSS zoom 嵌套环境下使用 `absolute` 属性时位置偏移的问题 ([#1545](https://github.com/sheinsight/shineout-next/pull/1545))([#1546](https://github.com/sheinsight/shineout-next/pull/1546))
 
 
 ## 3.9.4-beta.7
