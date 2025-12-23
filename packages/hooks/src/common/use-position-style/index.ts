@@ -6,7 +6,7 @@ import { useCheckElementBorderWidth } from './check-border';
 import { useCheckElementSize } from './check-element-size'
 import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
-import { getCurrentCSSZoom, getScrollPosition } from '../../utils';
+import { getScrollPosition, getRelativeZoom } from '../../utils';
 import { docSize } from '../../utils';
 
 export type HorizontalPosition =
@@ -353,19 +353,23 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
     const { style } = getAbsolutePositionStyle(rect, position);
 
-    const currentCSSZoom = getCurrentCSSZoom()
-    if (currentCSSZoom && currentCSSZoom !== 1) {
+    // 计算从触发元素到挂载容器之间的相对 zoom 值
+    const rootContainer = getContainer() || document.body;
+    const relativeZoom = getRelativeZoom(parentElRef.current, rootContainer);
+
+    if (relativeZoom && relativeZoom !== 1) {
+      const zoomRatio = 1 / relativeZoom;
       if (style.left && typeof style.left === 'number') {
-        style.left = style.left * (1 / currentCSSZoom);
+        style.left = style.left * zoomRatio;
       }
       if (style.top && typeof style.top === 'number') {
-        style.top = style.top * (1 / currentCSSZoom);
+        style.top = style.top * zoomRatio;
       }
       if (style.right && typeof style.right === 'number') {
-        style.right = style.right * (1 / currentCSSZoom);
+        style.right = style.right * zoomRatio;
       }
       if (style.bottom && typeof style.bottom === 'number') {
-        style.bottom = style.bottom * (1 / currentCSSZoom);
+        style.bottom = style.bottom * zoomRatio;
       }
     }
     return { style };
