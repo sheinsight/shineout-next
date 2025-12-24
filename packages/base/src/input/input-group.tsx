@@ -46,7 +46,7 @@ export default (props: InputGroupProps) => {
     return ref.current.eventMap.get(child) || {};
   };
 
-  const { children, className, width, style, seperate, separate } = props;
+  const { children, className, width, style, seperate, separate, innerTitle, placeTitle } = props;
   const shouldSeparate = separate ?? seperate;
   const rootClass = classNames(
     className,
@@ -74,6 +74,8 @@ export default (props: InputGroupProps) => {
             ...getProps(child),
             disabled: child.props.disabled || disabled,
             size: child.props.size || size,
+            innerTitle: child.props.innerTitle || innerTitle,
+            placeTitle: child.props.placeTitle || placeTitle,
           });
         }
         return <span key={i}>{child}</span>;
