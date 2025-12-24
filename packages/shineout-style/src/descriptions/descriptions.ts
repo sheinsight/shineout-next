@@ -65,6 +65,9 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     boxSizing: 'border-box',
     color: token.descriptionsLabelColor,
     whiteSpace: 'nowrap',
+    '$wrapper $body:not($border) table &': {
+      border: 'none',
+    },
   },
   value: {
     paddingRight: token.descriptionsLabelPaddingRight,
@@ -72,6 +75,9 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsValueColor,
+    '$wrapper $body:not($border) table &': {
+      border: 'none',
+    },
     '&:last-child': {
       paddingRight: 0,
     },
