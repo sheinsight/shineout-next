@@ -59,4 +59,18 @@ export interface InputGroupProps extends Pick<CommonType, 'status' | 'style' | '
    * @version 3.9.0
    */
   seamless?: boolean;
+
+  /**
+   * @en Inner title, will be passed to child Input components
+   * @cn 内嵌标题，会传递给子 Input 组件
+   * @version 3.9.5
+   */
+  innerTitle?: React.ReactNode;
+
+  /**
+   * @en Placeholder title, needs to be used together with innerTitle, will be passed to child Input components
+   * @cn 占位标题，需要配合 innerTitle 一起使用，会传递给子 Input 组件
+   * @version 3.9.5
+   */
+  placeTitle?: React.ReactNode;
 }

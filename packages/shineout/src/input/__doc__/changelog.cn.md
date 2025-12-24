@@ -1,3 +1,8 @@
+## 3.9.5-beta.5
+2025-12-24
+### 🐞 BugFix
+- 修复 `Input.Group` 的 `innerTitle` 和 `placeTitle` 属性未能传递给子 Input 组件的问题 ([#1548](https://github.com/sheinsight/shineout-next/pull/1548))
+
 ## 3.9.1-beta.4
 2025-11-26
 
