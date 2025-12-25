@@ -26,12 +26,16 @@ const usePagination = (props: BasePaginationProps) => {
   }, [currentProp]);
 
   const handleChange = usePersistFn((c: number, size?: number) => {
-    if (c === current && size === undefined) return;
+    const newPageSize = size || pageSize;
+    const sizeChange = size !== undefined && pageSize !== size;
+
+    // Always update state and trigger onChange, even for the same page
+    // This allows handlers to re-execute logic when clicking the same page
     setCurrent(c);
-    setPageSize(size || pageSize);
+    setPageSize(newPageSize);
+
     if (onChange) {
-      const sizeChange = size !== undefined && pageSize !== size;
-      onChange(c, size || pageSize, sizeChange);
+      onChange(c, newPageSize, sizeChange);
     }
   });
 
