@@ -1,3 +1,9 @@
+## 3.9.5-beta.7
+2025-12-26
+### 🐞 BugFix
+- 修复 `Input` 在 `Form` 中按回车提交时 `onEnterPress` 事件触发两次的问题 ([#1550](https://github.com/sheinsight/shineout-next/pull/1550))
+
+
 ## 3.9.5-beta.5
 2025-12-24
 ### 🐞 BugFix

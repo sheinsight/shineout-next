@@ -38,6 +38,17 @@ const Input = (props: InputProps) => {
       hasSuffix={!!props.suffix}
       showClear={props.showClear}
       onKeyDown={(e) => {
+        // 在 Enter 键按下时,如果开启了 trim,先执行 trim 逻辑
+        if (e.key === 'Enter' && inputFormatParams.trim) {
+          const target = e.target as HTMLInputElement;
+          const value = target.value;
+          const trimmedValue = value.trim();
+          if (value !== trimmedValue) {
+            target.value = trimmedValue;
+            commonProps.onChange?.(trimmedValue);
+          }
+        }
+
         if (e.key === 'Enter' && !e.defaultPrevented) {
           const value = (e.target as HTMLInputElement).value;
           props.onChange?.(value);

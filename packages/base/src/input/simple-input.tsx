@@ -1,6 +1,6 @@
 import { getDataset, useInput, useKeyEvent, usePersistFn, util } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { KeyboardEvent, useContext, useRef } from 'react';
+import React, { KeyboardEvent, useContext } from 'react';
 import { SimpleInputProps } from './input.type';
 import Icons from '../icons';
 import { useConfig } from '../config';
@@ -25,10 +25,6 @@ const Input = (props: SimpleInputProps) => {
     ...rest
   } = props;
 
-  const { current: context } = useRef({
-    needTriggerEnter: false,
-  });
-
   const inputStyle = jssStyle?.input?.();
   const config = useConfig();
   const { fieldId } = useContext(FormFieldContext);
@@ -36,23 +32,7 @@ const Input = (props: SimpleInputProps) => {
   const { getRootProps, getClearProps, getInputProps, showClear: showClearFromClearable, focused, disabled } = useInput({
     ...rest,
     onFocusedChange,
-    // 由于form的原生submit事件是在keydown中触发的，submit校验后触发scrollToError会导致当前焦点的input立即失焦，导致input的回车事件无法触发
-    // 所以这里在onKeyDown时机记录下needTriggerEnter标志，在onBlur时机判断是否需要触发onEnterPress
-    onKeyDown: (e: KeyboardEvent<HTMLInputElement>) => {
-      if (e.key === 'Enter') {
-        context.needTriggerEnter = true;
-      }
-      props.onKeyDown?.(e);
-    },
-    onBlur: (e: any) => {
-      if (context.needTriggerEnter) {
-        context.needTriggerEnter = false;
-        onEnterPress?.(e.target.value || '', e);
-      }
-      props.onBlur?.(e);
-    },
   });
-
 
   const keyHandler = useKeyEvent<HTMLInputElement>({
     onEnterPress: (e) => {
@@ -61,9 +41,6 @@ const Input = (props: SimpleInputProps) => {
   });
 
   const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLInputElement> & { target: HTMLInputElement }) => {
-    if (e.key === 'Enter') {
-      context.needTriggerEnter = false;
-    };
     props.onKeyUp?.(e);
     keyHandler(e);
   });
