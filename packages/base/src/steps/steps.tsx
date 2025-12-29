@@ -51,6 +51,7 @@ const Steps = (props: StepsProps) => {
 
   const renderStep = () => {
     return Children.map(children, (child, index) => {
+      if (!child) return null;
       const Child = child as React.ReactElement<StepProps>;
       return cloneElement(Child, {
         id: 'id' in Child.props ? Child.props.id : index,
