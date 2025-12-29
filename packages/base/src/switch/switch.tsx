@@ -1,4 +1,4 @@
-import { useCheck, useInputAble } from '@sheinx/hooks';
+import { useCheck, useInputAble, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { useContext } from 'react';
 import { SwitchProps } from './switch.type';
@@ -9,7 +9,8 @@ import { FormFieldContext } from '../form/form-field-context';
 
 const Switch = (props0: SwitchProps) => {
   const props = useWithFormConfig(props0);
-  const { jssStyle, content, size, loading, className, style } = props;
+  const { jssStyle, content, size, loading, className, style, ...rest } = props;
+  const nativeProps = util.extractNativeProps(rest);
   const config = useConfig();
   const { fieldId } = useContext(FormFieldContext);
   const switchClasses = jssStyle?.switch?.();
@@ -50,7 +51,7 @@ const Switch = (props0: SwitchProps) => {
     size === 'large' && switchClasses?.wrapperLarge,
   );
 
-  const rootProps = getRootProps({ className: rootClassName, style });
+  const rootProps = getRootProps({ className: rootClassName, style, ...nativeProps });
   const inputProps = getInputProps();
 
   return (
