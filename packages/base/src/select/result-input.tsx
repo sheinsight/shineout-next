@@ -74,7 +74,7 @@ const ResultInput = (props: ResultInputProps) => {
   }, []);
 
   const renderResultPlaceholder = () => {
-    if (!inputText && !focus && props.placeholder && typeof props.placeholder !== 'string') {
+    if (props.isEmpty && !inputText && !focus && props.placeholder && typeof props.placeholder !== 'string') {
       return (
         <div className={styles.inputPlaceholder}>
           {props.placeholder}

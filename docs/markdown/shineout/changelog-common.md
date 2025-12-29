@@ -1,3 +1,10 @@
+## 3.9.5-beta.8
+2025-12-29
+
+### 🐞 BugFix
+-  修复 `Select`、`TreeSelect`、`Cascader` 非 string 类型的 `placeholder` 在有输入值时重复显示了的问题 ([#1551](https://github.com/sheinsight/shineout-next/pull/1551))
+
+
 ## 3.9.5-beta.2
 2025-12-23
 
