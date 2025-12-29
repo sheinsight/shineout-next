@@ -28,6 +28,10 @@ export const extractNativeProps = (props: Record<string, any>) => {
     'role',
   ]);
 
+  // Events that should be excluded to avoid conflicts with component logic
+  // onClick, onChange are typically managed by form components internally
+  const excludedEvents = new Set(['onClick', 'onChange', 'onFocus', 'onBlur']);
+
   Object.keys(props).forEach((key) => {
     // Allow data-* attributes
     if (key.startsWith('data-')) {
@@ -37,8 +41,8 @@ export const extractNativeProps = (props: Record<string, any>) => {
     else if (key.startsWith('aria-')) {
       result[key] = props[key];
     }
-    // Allow event handlers (onMouseEnter, onMouseLeave, etc.)
-    else if (key.startsWith('on') && typeof props[key] === 'function') {
+    // Allow event handlers (onMouseEnter, onMouseLeave, etc.) but exclude conflicting ones
+    else if (key.startsWith('on') && typeof props[key] === 'function' && !excludedEvents.has(key)) {
       result[key] = props[key];
     }
     // Allow specific HTML attributes

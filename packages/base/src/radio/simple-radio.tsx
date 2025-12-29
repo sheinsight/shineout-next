@@ -28,12 +28,14 @@ const Radio = (props: SimpleRadioProps) => {
   );
 
   const inputProps = getInputProps();
-  const rootProps = getRootProps({
+  const rootProps = {
     ...nativeProps,
-    className: rootClass,
-    style,
-    needStopPropagation: true,
-  });
+    ...getRootProps({
+      className: rootClass,
+      style,
+      needStopPropagation: true,
+    }),
+  };
   const indicatorProps = getIndicatorProps();
 
   const indicator = (

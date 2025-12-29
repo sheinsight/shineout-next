@@ -51,7 +51,10 @@ const Switch = (props0: SwitchProps) => {
     size === 'large' && switchClasses?.wrapperLarge,
   );
 
-  const rootProps = getRootProps({ className: rootClassName, style, ...nativeProps });
+  const rootProps = {
+    ...nativeProps,
+    ...getRootProps({ className: rootClassName, style }),
+  };
   const inputProps = getInputProps();
 
   return (

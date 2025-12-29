@@ -38,8 +38,8 @@ const Checkbox = (props: SimpleCheckboxProps) => {
   return (
     <div
       id={fieldId}
+      {...nativeProps}
       {...getRootProps({
-        ...nativeProps,
         className: rootClass,
         style,
         needStopPropagation: props.needStopPropagation,
