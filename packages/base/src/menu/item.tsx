@@ -1,4 +1,4 @@
-import React, { cloneElement, useState, useRef } from 'react';
+import React, { cloneElement, useState, useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import { useMenuItem, usePersistFn, util, useCollapseAnimation } from '@sheinx/hooks';
 import Icons from '../icons';
@@ -66,6 +66,26 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     disabled: !props.inlineAnimate || shoudPop || !children.length,
     parentOpenClassName: classes?.itemOpen,
   });
+
+  // 合并自定义属性：优先级 getItemProps > dataItem 中的 data-* 属性
+  const customAttributes = useMemo(() => {
+    // 1. 从 dataItem 中提取 data-* 和 aria-* 属性（方案2）
+    const dataAttrs = util.extractProps(props.dataItem, 'data-attr');
+
+    // 2. 通过 getItemProps 函数生成自定义属性（方案1，优先级更高）
+    const fnAttrs =
+      props.getItemProps?.(props.dataItem, {
+        level: props.level,
+        hasChildren: expandAble,
+        index: props.index,
+      }) || {};
+
+    return {
+      ...dataAttrs,
+      ...fnAttrs,
+    };
+  }, [props.dataItem, props.getItemProps, props.level, props.index, expandAble]);
+
 
   const renderChildren = () => {
     let items = children;
@@ -197,6 +217,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     if (props.frontCaret) {
       return (
         <div
+          {...(expandAble ? customAttributes : undefined)}
           className={classNames(classes?.itemContent, classes?.itemContentFront)}
           onClick={handleItemClick}
         >
@@ -225,6 +246,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     } else {
       return (
         <div
+          {...(expandAble ? customAttributes : undefined)}
           className={classNames(classes?.itemContent, classes?.itemContentBack)}
           onClick={handleItemClick}
         >
@@ -250,6 +272,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   };
   return (
     <li
+      {...(expandAble ? undefined : customAttributes)}
       className={classNames(
         classes?.item,
         isDisabled && classes?.itemDisabled,

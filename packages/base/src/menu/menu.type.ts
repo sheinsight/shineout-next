@@ -209,6 +209,22 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @cn 头部内容， 仅在 mode为 'inline' 时生效
    */
   header?: React.ReactNode;
+  /**
+   * @en Get custom props for each menu item (e.g., tracking attributes). The function will be called for each menu item with the data, level, hasChildren and index as parameters. Note: Properties returned by this function have higher priority than data-* attributes in the data item. For parent nodes, attributes will be applied to the clickable div element; for leaf nodes, attributes will be applied to the li element.
+   * @cn 获取每个菜单项的自定义属性（如埋点属性等）。该函数会为每个菜单项调用，参数包括数据项、层级、是否有子节点和索引。注意：该函数返回的属性优先级高于数据项中的 data-* 属性。对于父节点，属性会应用到可点击的 div 元素上；对于叶子节点，属性会应用到 li 元素上。
+   * @version 3.9.6
+   */
+  getItemProps?: (
+    data: DataItem,
+    info: {
+      /** 是否有子节点（父节点） */
+      hasChildren: boolean;
+      /** 在当前层级的索引 */
+      index: number;
+      /** 当前层级，0 为根节点 */
+      level: number;
+    },
+  ) => React.HTMLAttributes<HTMLElement> & Record<string, any>;
 }
 
 export interface MenuItemProps
@@ -226,6 +242,7 @@ export interface MenuItemProps
       | 'inlineAnimate'
       | 'theme'
       | 'renderIcon'
+      | 'getItemProps'
     > {
   index: number;
   level: number;

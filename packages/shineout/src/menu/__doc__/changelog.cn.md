@@ -1,3 +1,11 @@
+## 3.9.6-beta.2
+2025-12-30
+
+### 🆕 Feature
+- `Menu` 新增 `getItemProps` 属性，支持为每个菜单项添加自定义属性（如埋点属性） ([#1555](https://github.com/sheinsight/shineout-next/pull/1555))
+- `Menu` 支持在数据项中直接配置 `data-*` 属性并应用到对应的 DOM 元素上 ([#1555](https://github.com/sheinsight/shineout-next/pull/1555))
+
+
 ## 3.9.2-beta.2
 2025-12-02
 
