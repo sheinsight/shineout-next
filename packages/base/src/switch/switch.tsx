@@ -10,7 +10,7 @@ import { FormFieldContext } from '../form/form-field-context';
 const Switch = (props0: SwitchProps) => {
   const props = useWithFormConfig(props0);
   const { jssStyle, content, size, loading, className, style, ...rest } = props;
-  const nativeProps = util.extractNativeProps(rest);
+  const mouseEvents = util.extractProps(rest, 'mouse');
   const config = useConfig();
   const { fieldId } = useContext(FormFieldContext);
   const switchClasses = jssStyle?.switch?.();
@@ -52,7 +52,7 @@ const Switch = (props0: SwitchProps) => {
   );
 
   const rootProps = {
-    ...nativeProps,
+    ...mouseEvents,
     ...getRootProps({ className: rootClassName, style }),
   };
   const inputProps = getInputProps();

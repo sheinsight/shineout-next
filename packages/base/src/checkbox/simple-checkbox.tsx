@@ -8,7 +8,7 @@ const { getDataAttribute } = util;
 
 const Checkbox = (props: SimpleCheckboxProps) => {
   const { jssStyle, className, style, children, renderFooter, size, theme, ...rest } = props;
-  const nativeProps = util.extractNativeProps(rest);
+  const mouseEvents = util.extractProps(rest, 'mouse');
   const { fieldId } = useContext(FormFieldContext);
   const checkboxStyle = jssStyle?.checkbox?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
@@ -38,7 +38,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
   return (
     <div
       id={fieldId}
-      {...nativeProps}
+      {...mouseEvents}
       {...getRootProps({
         className: rootClass,
         style,

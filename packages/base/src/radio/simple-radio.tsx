@@ -6,7 +6,7 @@ import { FormFieldContext } from '../form/form-field-context';
 
 const Radio = (props: SimpleRadioProps) => {
   const { jssStyle, className, style, children, renderWrapper, size, theme, ...rest } = props;
-  const nativeProps = util.extractNativeProps(rest);
+  const mouseEvents = util.extractProps(rest, 'mouse');
   const { fieldId } = useContext(FormFieldContext);
   const radioClasses = jssStyle?.radio?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
@@ -29,7 +29,7 @@ const Radio = (props: SimpleRadioProps) => {
 
   const inputProps = getInputProps();
   const rootProps = {
-    ...nativeProps,
+    ...mouseEvents,
     ...getRootProps({
       className: rootClass,
       style,

@@ -12,44 +12,33 @@ export const getDataAttributeName = (name: string) => {
   return `data-soui-${name}`;
 };
 
+type ExtractType = 'mouse' | 'data-attr';
+
 /**
- * Extract native HTML attributes and event handlers from props
+ * Extract specific types of props from the props object
  * @param props - The props object to extract from
- * @returns An object containing only valid HTML attributes and event handlers
+ * @param type - The type of props to extract ('mouse' for mouse events, 'data-attr' for data-* attributes)
+ * @returns An object containing only the extracted props
  */
-export const extractNativeProps = (props: Record<string, any>) => {
+export const extractProps = (props: Record<string, any>, type: ExtractType) => {
   const result: Record<string, any> = {};
 
-  // Common HTML attributes that can be passed through
-  const allowedAttributes = new Set([
-    'id',
-    'title',
-    'tabIndex',
-    'role',
-  ]);
-
-  // Events that should be excluded to avoid conflicts with component logic
-  // onClick, onChange are typically managed by form components internally
-  const excludedEvents = new Set(['onClick', 'onChange', 'onFocus', 'onBlur']);
-
-  Object.keys(props).forEach((key) => {
-    // Allow data-* attributes
-    if (key.startsWith('data-')) {
-      result[key] = props[key];
+  if (type === 'mouse') {
+    // Only extract onMouseEnter and onMouseLeave for Tooltip support
+    if (props.onMouseEnter && typeof props.onMouseEnter === 'function') {
+      result.onMouseEnter = props.onMouseEnter;
     }
-    // Allow aria-* attributes
-    else if (key.startsWith('aria-')) {
-      result[key] = props[key];
+    if (props.onMouseLeave && typeof props.onMouseLeave === 'function') {
+      result.onMouseLeave = props.onMouseLeave;
     }
-    // Allow event handlers (onMouseEnter, onMouseLeave, etc.) but exclude conflicting ones
-    else if (key.startsWith('on') && typeof props[key] === 'function' && !excludedEvents.has(key)) {
-      result[key] = props[key];
-    }
-    // Allow specific HTML attributes
-    else if (allowedAttributes.has(key)) {
-      result[key] = props[key];
-    }
-  });
+  } else if (type === 'data-attr') {
+    // Extract all data-* attributes
+    Object.keys(props).forEach((key) => {
+      if (key.startsWith('data-')) {
+        result[key] = props[key];
+      }
+    });
+  }
 
   return result;
 };
