@@ -132,6 +132,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 renderIcon={props.renderIcon}
                 collapse={collapse}
                 isEdgeItem={false}
+                getItemProps={props.getItemProps}
               />
             );
           })}
