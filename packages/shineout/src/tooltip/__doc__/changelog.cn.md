@@ -1,3 +1,9 @@
+## 3.9.6-beta.1
+2025-12-30
+### 💎 Enhancement
+- 增强 `Tooltip` 与 `Switch`、`Radio`、`Checkbox` 的兼容性 ([#1554](https://github.com/sheinsight/shineout-next/pull/1554))
+
+
 ## 3.9.2-beta.3
 2025-12-03
 
