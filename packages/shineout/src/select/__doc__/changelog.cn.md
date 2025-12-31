@@ -1,3 +1,9 @@
+## 3.9.6-beta.5
+2025-12-31
+### 🐞 BugFix
+- 修复 `Select` 的 `renderItem` 函数第二参数 index 没有值的问题  ([#1560](https://github.com/sheinsight/shineout-next/pull/1560))
+
+
 ## 3.9.2-beta.4
 2025-12-03
 
