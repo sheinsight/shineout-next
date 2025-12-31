@@ -21,11 +21,13 @@ const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
 
     let every = true;
     let some = false;
-    const vaildData = listDatum.getVaildData();
 
-    if (vaildData.length === 0) return false;
+    if (data.length === 0) return false;
 
-    vaildData.forEach((item: DataItem) => {
+    data.forEach((item: DataItem) => {
+      // 跳过禁用的项,不计入复选框状态
+      if (listDatum.disabledCheck(item)) return;
+
       if (!listDatum.check(item)) {
         every = false;
       } else {
