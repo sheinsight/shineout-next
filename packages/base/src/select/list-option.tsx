@@ -70,7 +70,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   const { filterText, highlight } = useContext(FilterContext);
   const result = util.getHighlightText({
     enable: highlight,
-    nodeList: renderItem(data),
+    nodeList: renderItem(data, index),
     searchWords: filterText,
     highlightClassName: commonStyles?.highlight,
   });
