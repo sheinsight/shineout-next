@@ -306,8 +306,11 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     if (props.onScroll && typeof props.onScroll === 'function') {
       const maxWidth = target.scrollWidth - target.clientWidth;
       const maxHeight = target.scrollHeight - target.clientHeight;
-      const x = Math.min(target.scrollLeft / maxWidth, 1);
-      const y = Math.min(target.scrollTop / maxHeight, 1);
+      // 浏览器缩放时，scrollHeight/clientHeight 的取整方式不同，导致 scrollTop 最大值可能无法达到 maxHeight
+      // 例如：缩放到 80% 时，scrollTop 可能是 1981.25，而 maxHeight 是 1982
+      // 因此需要容错 1px 误差，当 scrollTop >= maxHeight - 1 时认为已滚动到底
+      const x = maxWidth > 0 ? (maxWidth - target.scrollLeft < 1 ? 1 : Math.min(target.scrollLeft / maxWidth, 1)) : 0;
+      const y = maxHeight > 0 ? (maxHeight - target.scrollTop < 1 ? 1 : Math.min(target.scrollTop / maxHeight, 1)) : 0;
       props.onScroll(x, y, target.scrollLeft, target.scrollTop);
     }
 
