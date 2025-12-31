@@ -1588,9 +1588,9 @@ describe('Table[Resizable]', () => {
       classLengthTest(item, resizeSpanner, 1);
     });
     const resizeSpannerWrapper = ths[0].querySelector(resizeSpanner)!;
-    fireEvent.mouseDown(resizeSpannerWrapper);
+    fireEvent.mouseDown(resizeSpannerWrapper, { clientX: 0 });
     fireEvent.mouseMove(resizeSpannerWrapper, { clientX: 100 });
-    fireEvent.mouseUp(resizeSpannerWrapper);
+    fireEvent.mouseUp(resizeSpannerWrapper, { clientX: 100 });
     expect(onColumnResizeFn.mock.calls.length).toBe(1);
   });
   test('should render when only set resizable', () => {
@@ -1613,10 +1613,35 @@ describe('Table[Resizable]', () => {
       classLengthTest(item, resizeSpanner, 1);
     });
     const resizeSpannerWrapper = ths[0].querySelector(resizeSpanner)!;
-    fireEvent.mouseDown(resizeSpannerWrapper);
+    fireEvent.mouseDown(resizeSpannerWrapper, { clientX: 0 });
     fireEvent.mouseMove(resizeSpannerWrapper, { clientX: deltaX });
-    fireEvent.mouseUp(resizeSpannerWrapper);
+    fireEvent.mouseUp(resizeSpannerWrapper, { clientX: deltaX });
     styleContentTest(container.querySelector('table')!, `width: ${originWidth + deltaX}px;`);
+  });
+  test('should not trigger resize when click without drag', () => {
+    const onColumnResizeFn = jest.fn();
+    const originWidth = 200;
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        columns={columns}
+        data={renderData}
+        columnResizable
+        onColumnResize={onColumnResizeFn}
+        width={originWidth}
+      />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const thead = tableWrapper.querySelector('thead')!;
+    const ths = thead.querySelectorAll('th');
+    const resizeSpannerWrapper = ths[0].querySelector(resizeSpanner)!;
+    // Click without drag (same position for mouseDown and mouseUp)
+    fireEvent.mouseDown(resizeSpannerWrapper, { clientX: 50 });
+    fireEvent.mouseUp(resizeSpannerWrapper, { clientX: 50 });
+    // onColumnResize should not be called when deltaX is 0
+    expect(onColumnResizeFn.mock.calls.length).toBe(0);
+    // Table width should remain unchanged
+    styleContentTest(container.querySelector('table')!, `width: ${originWidth}px;`);
   });
 });
 describe('Table[Rowspan]', () => {
