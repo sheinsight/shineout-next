@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import useStyle from '../style';
 import { Avatar, Button, Empty, Select, Skeleton, Steps, Tag, Tree } from 'shineout';
 import { userIcon } from '../svg';
@@ -236,7 +236,7 @@ const Dynamic = () => {
   );
 
   return (
-    <div className={classNames(styles.commonPageArea, styles.dynamic)}>
+    <div className={clsx(styles.commonPageArea, styles.dynamic)}>
       {'组件最新动态'}
       <div className={styles.dynamicList} ref={containerRef}>
         <div className={styles.dynamicListContent} ref={contentRef}>

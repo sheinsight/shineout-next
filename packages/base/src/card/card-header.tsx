@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { CardContext } from './card.context';
 import { useContext } from 'react';
 import Icons from '../icons';
@@ -23,12 +23,12 @@ const CardHeader = (props: CardHeaderProps) => {
     );
   };
 
-  const alignClass = classNames(
+  const alignClass = clsx(
     align === 'center' && cardClasses?.center,
     align === 'right' && cardClasses?.right,
   );
 
-  const headerContentClassName = classNames(
+  const headerContentClassName = clsx(
     cardClasses?.headerContent,
     alignClass
   );
@@ -40,7 +40,7 @@ const CardHeader = (props: CardHeaderProps) => {
   }
 
   if (!props.extra && !collapsible) {
-    const simpleHeaderClassName = classNames(
+    const simpleHeaderClassName = clsx(
       cardClasses?.header,
       cardClasses?.simpleHeader, 
       alignClass, 
@@ -59,7 +59,7 @@ const CardHeader = (props: CardHeaderProps) => {
 
   return (
     <div
-      className={classNames(props.className, cardClasses?.header)}
+      className={clsx(props.className, cardClasses?.header)}
       {...commonHeaderProps}
     >
       {renderIndicator()}

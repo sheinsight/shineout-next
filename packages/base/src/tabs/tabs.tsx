@@ -1,5 +1,5 @@
 import React, { Children, cloneElement, useLayoutEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useTabs, util } from '@sheinx/hooks';
 import { TabsClasses, TabsProps } from './tabs.type';
 import { TabData } from './tab.type';
@@ -78,7 +78,7 @@ const Tabs = (props: TabsProps) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const panelHeight = useRef<number>(0);
   const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
-  const rootClass = classNames(tabsStyle.rootClass, tabsStyle.tabs, tabsClassName, {
+  const rootClass = clsx(tabsStyle.rootClass, tabsStyle.tabs, tabsClassName, {
     [tabsStyle.autoFill]: isVertical || autoFill,
     [tabsStyle.collapsed]: collapse,
   });
@@ -220,7 +220,7 @@ const Tabs = (props: TabsProps) => {
       if (isObject(sticky)) {
         stickyProps = {
           ...(sticky as StickyProps),
-          className: classNames(stickyClassName, (sticky as StickyProps).className),
+          className: clsx(stickyClassName, (sticky as StickyProps).className),
         };
       }
 

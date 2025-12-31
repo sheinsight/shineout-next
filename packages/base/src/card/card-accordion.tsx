@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { usePersistFn } from '@sheinx/hooks';
 import { useState, useMemo, useRef } from 'react';
 import { CardAccordionContext } from './card-accordion-context';
@@ -32,7 +32,7 @@ const CardAccordion = <T,>(props: CardAccordionProps<T>) => {
   }, [activeId]);
 
   return (
-    <div className={classNames(props.className, cardClasses?.accordion)}>
+    <div className={clsx(props.className, cardClasses?.accordion)}>
       <CardAccordionContext.Provider value={contextValue}>
         {props.children}
       </CardAccordionContext.Provider>

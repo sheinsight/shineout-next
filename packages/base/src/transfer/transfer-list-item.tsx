@@ -1,5 +1,5 @@
 import { useContext, useRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TransferListItemProps } from './transfer-list-item.type';
 import { TransferClasses } from './transfer.type';
 import { util, TransferContext } from '@sheinx/hooks';
@@ -27,7 +27,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
   const isChecked = listDatum.check(data);
 
   const disabled = listDatum.disabledCheck(data);
-  const rootClass = classNames(styles.item, itemClass, disabled && styles.disabled);
+  const rootClass = clsx(styles.item, itemClass, disabled && styles.disabled);
 
   const renderItem = () => {
     if (util.isString(renderItemProp)) {
@@ -71,7 +71,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
   const renderCheckbox = () => {
     if (simple && listType === 'target')
       return (
-        <span className={classNames(styles.simpleTarget, disabled && styles.disabled)}>
+        <span className={clsx(styles.simpleTarget, disabled && styles.disabled)}>
           {$item}
           {renderRemove()}
         </span>

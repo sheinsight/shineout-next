@@ -1,7 +1,7 @@
 import { useImage, useLatestObj, usePersistFn } from '@sheinx/hooks';
 import { ImageClasses } from './image.type';
 import { getDefaultContainer } from '../config';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { useEffect } from 'react';
 import showGallery from './image-event';
 import { ImageProps } from './image.type';
@@ -66,7 +66,7 @@ const Image = (props: ImageProps) => {
     ...rest,
   });
 
-  const rootClass = classNames(className, imageStyle.rootClass, imageStyle.image, {
+  const rootClass = clsx(className, imageStyle.rootClass, imageStyle.image, {
     [imageStyle.href]: !!href,
     [imageStyle.fit]: fit === 'fit',
     [imageStyle.fill]: fit === 'fill',
@@ -79,13 +79,13 @@ const Image = (props: ImageProps) => {
     [imageStyle.download]: shouldDownload,
   });
 
-  const imgClass = classNames(imageStyle.img);
-  const imgInnerClass = classNames(imageStyle.inner);
-  const placeholderClass = classNames(imageStyle.placeholder);
-  const defaultPlaceholderClass = classNames(imageStyle.defaultPlaceholder);
-  const errorClass = classNames(imageStyle.error);
-  const defaultErrorClass = classNames(imageStyle.defaultError);
-  const maskClass = classNames(imageStyle.previewMask);
+  const imgClass = clsx(imageStyle.img);
+  const imgInnerClass = clsx(imageStyle.inner);
+  const placeholderClass = clsx(imageStyle.placeholder);
+  const defaultPlaceholderClass = clsx(imageStyle.defaultPlaceholder);
+  const errorClass = clsx(imageStyle.error);
+  const defaultErrorClass = clsx(imageStyle.defaultError);
+  const maskClass = clsx(imageStyle.previewMask);
 
   const handleOpenGallery = (e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>) => {
     // 2.0 逻辑为：如果有 onClick 事件，则不会触发 Modal

@@ -1,7 +1,7 @@
 import Icons from '../icons';
 import type { CommonType } from '../common/type';
 import { AlertJssStyle } from './alert.type';
-import classNames from 'classnames';
+import clsx from 'clsx';
 export interface AlertIconProps {
   type: CommonType['iconType'] | undefined;
   jssStyle?: AlertJssStyle;
@@ -29,7 +29,7 @@ const AlertIcon = (props: AlertIconProps) => {
   return (
     <span
       style={props.style}
-      className={classNames(
+      className={clsx(
         props.className,
         AlertClasses?.icon,
         AlertClasses && AlertClasses[(type + 'Icon') as keyof AlertJssStyle],

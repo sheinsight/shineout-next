@@ -1,5 +1,5 @@
 import { util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { SkeletonClasses, SkeletonProps } from './skeleton.type';
 import Text from './text';
 import Image from './image';
@@ -14,7 +14,7 @@ const Skeleton = (props: SkeletonProps) => {
 
   const classes = jssStyle?.skeleton?.() as SkeletonClasses;
 
-  const rootClass = classNames(classes.rootClass, classes.wrapper, props.className, {
+  const rootClass = clsx(classes.rootClass, classes.wrapper, props.className, {
     [classes.animation]: animation,
   });
 

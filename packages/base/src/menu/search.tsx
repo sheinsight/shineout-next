@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuSearchProps } from './search.type';
 import { Input } from '../input';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 
 const Search = (props: MenuSearchProps) => {
@@ -27,7 +27,7 @@ const Search = (props: MenuSearchProps) => {
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         classes?.wrapper,
         theme === 'light' && classes?.wrapperLight,
         theme === 'dark' && classes?.wrapperDark,

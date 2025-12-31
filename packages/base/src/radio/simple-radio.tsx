@@ -1,5 +1,5 @@
 import { useCheck, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { useContext } from 'react';
 import { SimpleRadioProps } from './radio.type';
 import { FormFieldContext } from '../form/form-field-context';
@@ -12,7 +12,7 @@ const Radio = (props: SimpleRadioProps) => {
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
   });
-  const rootClass = classNames([
+  const rootClass = clsx([
     radioClasses?.rootClass,
     radioClasses?.wrapper,
     className,
@@ -22,7 +22,7 @@ const Radio = (props: SimpleRadioProps) => {
     size === 'large' && radioClasses?.wrapperLarge,
   ]);
 
-  const indicatorClass = classNames(
+  const indicatorClass = clsx(
     radioClasses?.indicatorWrapper,
     theme === 'dark' && radioClasses?.darkIndicatorWrapper,
   );

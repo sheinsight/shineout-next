@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { KeygenResult, useTree, util, ObjectKey } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeProps } from './tree.type';
@@ -103,7 +103,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
-  const rootClass = classNames(treeStyle.rootClass, treeStyle.tree, className, {
+  const rootClass = clsx(treeStyle.rootClass, treeStyle.tree, className, {
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
     [treeStyle.virtual]: virtual,

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useState } from 'react';
 import { PaginationButtonsProps, PaginationMoreTypes } from './pagination-buttons.type';
 import Icons from '../icons';
@@ -27,7 +27,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
   const config = useConfig();
 
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.buttons);
+  const rootClasses = clsx(paginationStyle?.section, paginationStyle?.buttons);
 
   const getLinks = () => {
     if (total === 0) return { buttons: [], max: 0 };

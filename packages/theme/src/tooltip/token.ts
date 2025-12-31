@@ -15,8 +15,13 @@ const tooltipTokenDescription = { tooltip: '文字提示', shadow: '阴影', lig
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 tooltipRules 强关联，非 tooltipRules 规则内的 token 需手动增加或删减。
  */
-
-const tooltipTokenValue = {};
+const tooltipTokenValue = {
+  font: { size: '' },
+  padding: { x: '', y: '' },
+  border: { radius: '' },
+  color: '',
+  background: { color: '' },
+};
 
 const tooltipTokenExtraValue = {
   font: { size: 'Font-12' },
@@ -30,22 +35,10 @@ const tooltipTokenExtraValue = {
     background: { color: 'Neutral-fill-1' },
     border: { color: 'Neutral-border-1' },
   },
-  primary: {
-    color: 'Brand-6',
-    background: { color: 'Brand-1' },
-  },
-  success: {
-    color: 'Success-7',
-    background: { color: 'Success-1' },
-  },
-  warning: {
-    color: 'Warning-7',
-    background: { color: 'Warning-1' },
-  },
-  danger: {
-    color: 'Danger-7',
-    background: { color: 'Danger-1' },
-  },
+  primary: { color: 'Brand-6', background: { color: 'Brand-1' } },
+  success: { color: 'Success-7', background: { color: 'Success-1' } },
+  warning: { color: 'Warning-7', background: { color: 'Warning-1' } },
+  danger: { color: 'Danger-7', background: { color: 'Danger-1' } },
 };
 
 module.exports = {

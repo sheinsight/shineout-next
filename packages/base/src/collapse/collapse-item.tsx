@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import type { CollapseItemProps } from './collapse-item.type';
 import groupContext from './group-context';
 import { useConfig } from '../config';
@@ -44,7 +44,7 @@ const CollapseItem = (props: CollapseItemProps) => {
       onChange,
     });
   const headerIconItem = () => {
-    const collapseItemIconClassName = classNames(
+    const collapseItemIconClassName = clsx(
       jssStyle?.collapseItem.icon,
       jssStyle?.collapseItem.activeTransform,
       // expandIconPosition === 'right'
@@ -69,20 +69,20 @@ const CollapseItem = (props: CollapseItemProps) => {
     );
   };
 
-  const collapseItemClassName = classNames(
+  const collapseItemClassName = clsx(
     className,
     jssStyle?.collapseItem.wrapper,
     judgeExpanded && jssStyle?.collapseItem.active,
     (disabled || triggerRegion === 'disabled') && jssStyle?.collapseItem.disabled,
     !border && jssStyle?.collapseItem.borderLess,
   );
-  const collapseItemHeaderClassName = classNames(
+  const collapseItemHeaderClassName = clsx(
     jssStyle?.collapseItem.header,
     !showExpandIcon && jssStyle?.collapseItem.noIcon,
     triggerRegion !== 'icon' && jssStyle?.collapseItem.region,
   );
 
-  const collapseItemContentClassName = classNames(
+  const collapseItemContentClassName = clsx(
     jssStyle?.collapseItem.content,
     judgeExpanded && jssStyle?.collapseItem.expanded,
   );
@@ -116,7 +116,7 @@ const CollapseItem = (props: CollapseItemProps) => {
         {extraPosition === 'left' && extraItem()}
         <div
           {...getTitleProps({
-            className: classNames(
+            className: clsx(
               jssStyle?.collapseItem.title,
               triggerRegion === 'header' && jssStyle?.collapseItem.region,
             ),

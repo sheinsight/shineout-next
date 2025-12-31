@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { addResizeObserver, usePersistFn, util, FilterContext } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { ListOptionProps } from './list-option.type';
@@ -28,11 +28,11 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   const commonStyles = jssStyle?.common?.() as CommonClasses;
   const isChecked = datum.check(data);
   const isDisabled = datum.disabledCheck(data);
-  const rootClass = classNames(styles?.option, `option-${index}`, {
+  const rootClass = clsx(styles?.option, `option-${index}`, {
     [styles?.optionHover]: isHover,
   });
 
-  const innerClass = classNames(styles?.optionInner, {
+  const innerClass = clsx(styles?.optionInner, {
     [styles?.optionActive]: isChecked,
     [styles?.optionDisabled]: isDisabled,
   });

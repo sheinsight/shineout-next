@@ -1,5 +1,5 @@
 import { useContext, useMemo } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TransferProps } from './transfer.type';
 import { TransferClasses } from './transfer.type';
 import { TransferContext, useTransfer, TransferListType, KeygenResult, util, getDataset } from '@sheinx/hooks';
@@ -87,7 +87,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
   });
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
-  const rootClass = classNames(styles.rootClass, styles.transfer, className, {
+  const rootClass = clsx(styles.rootClass, styles.transfer, className, {
     [styles.simple]: simple,
     [styles.small]: size === 'small',
     [styles.large]: size === 'large',

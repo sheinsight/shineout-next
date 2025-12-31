@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useLayoutEffect, useRef } from 'react';
 import { TabsClasses } from './tabs.type';
 import { useTabsContext } from '@sheinx/hooks';
@@ -57,7 +57,7 @@ const TabsPanel = (props: TabsPanelProps) => {
   // 首次不加载，一旦加载后常驻
   keekAlive.current = true;
 
-  const panelClass = classNames(className, panelStyle.panel, {
+  const panelClass = clsx(className, panelStyle.panel, {
     [panelStyle.show]: isActive,
   });
 

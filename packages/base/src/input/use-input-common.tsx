@@ -3,7 +3,7 @@ import { useInputAble, usePersistFn, util } from '@sheinx/hooks';
 import useClear from '../common/use-clear';
 import useInnerTitle from '../common/use-inner-title';
 import useTip from '../common/use-tip';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 import { InputCommonProps } from './input.type';
 import useWithFormConfig from '../common/use-with-form-config';
@@ -161,7 +161,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
   return {
     ...rest,
     value: inputAbleProps.value,
-    className: classNames(props.className, innerTitle && inputClasses?.wrapperInnerTitle),
+    className: clsx(props.className, innerTitle && inputClasses?.wrapperInnerTitle),
     onChange: inputAbleProps.onChange,
     onBlur: handleBlur,
     ...clearProps,

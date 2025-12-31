@@ -1,5 +1,5 @@
 import { Children, cloneElement } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { StepsClasses } from './steps.type';
 import { StepsProps } from './steps.type';
 import { StepProps } from './step.type';
@@ -40,7 +40,7 @@ const Steps = (props: StepsProps) => {
   const labelPlacement = getLabelPlacement();
 
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
-  const rootClass = classNames(styles.rootClass, styles.steps, className, {
+  const rootClass = clsx(styles.rootClass, styles.steps, className, {
     [styles[type]]: type,
     [styles.small]: size === 'small',
     [styles.large]: size === 'large',

@@ -1,5 +1,5 @@
 import { FormContext, useForm, useInputAble, useLatestObj, usePersistFn, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useFormFooter } from './form-footer-context';
 import React, { useEffect, useRef } from 'react';
 
@@ -97,7 +97,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     }
   }, [props.disabled, props.pending]);
 
-  const rootClass = classNames([
+  const rootClass = clsx([
     formClasses?.rootClass,
     formClasses?.wrapper,
     className,

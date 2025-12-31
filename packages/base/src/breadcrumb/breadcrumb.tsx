@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { util } from '@sheinx/hooks';
 import React, { ReactNode } from 'react';
 import { BreadcrumbProps, StructureArray, BreadcrumbDataType, BreadcrumbClasses } from './breadcrumb.type';
@@ -19,7 +19,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
   const renderArray = (data: StructureArray<Item>) => {
     return <List data={data} renderItem={renderItem} jssStyle={props.jssStyle} maxHeight={maxHeight} />;
   };
-  const className = classNames(breadcrumbClasses?.rootClass, breadcrumbClasses?.wrapper, props.className);
+  const className = clsx(breadcrumbClasses?.rootClass, breadcrumbClasses?.wrapper, props.className);
 
   const getRenderData = () => {
     if (!maxCount) return data;
@@ -29,10 +29,10 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
     const reset = data.slice(sliceIndex);
     const moreData = data.slice(1, sliceIndex);
 
-    const moreClassName = classNames(props.className, breadcrumbClasses.wrapperPopover);
+    const moreClassName = clsx(props.className, breadcrumbClasses.wrapperPopover);
     const more = {
       title: (
-        <span className={classNames(breadcrumbClasses?.content, breadcrumbClasses?.ellipsis)}>
+        <span className={clsx(breadcrumbClasses?.content, breadcrumbClasses?.ellipsis)}>
           ...
           <Popover jssStyle={props.jssStyle} useTextStyle offset={[8, 0]} popupGap={-4}>
             <Breadcrumb {...props} className={moreClassName} data={moreData} max={undefined} />

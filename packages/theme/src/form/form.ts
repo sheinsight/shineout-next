@@ -6,9 +6,6 @@ import { FormTokens } from './type';
 const formTokens: FormTokens = {
   formItemFontSize: 'Font-14',
   formItemFontColor: 'Neutral-text-5',
-  formItemTooltipIconColor: 'Neutral-text-4',
-  formItemTooltipIconFontSize: 'Font-14',
-  formItemTooltipIconMarginXStart: 'Spacing-4',
   formItemMarginYEnd: 'Spacing-12',
   formItemMarginXEnd: 'Spacing-16',
   formItemLabelWidth: '140px',

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import useStyle from '../style';
 import { Icon, star, userIcon } from '../svg';
 import { Avatar, Button, Carousel, Progress, Rate, Switch, TYPE, useToken } from 'shineout';
@@ -63,12 +63,12 @@ const Content = (props: ContentProps) => {
 
   const renderButton = () => (
     <>
-      <div className={classNames(styles.buttons, styles.columnsAreaList)}>
+      <div className={clsx(styles.buttons, styles.columnsAreaList)}>
         <Button type='primary' >{'Primary'}</Button>
         <Button type='success' >{'Success'}</Button>
         <Button type='primary' mode='outline' >{'Outline'}</Button>
       </div>
-      <div className={classNames(styles.buttons, styles.columnsAreaList)}>
+      <div className={clsx(styles.buttons, styles.columnsAreaList)}>
         <Button type='danger' >{'Danger'}</Button>
         <Button type='warning' >{'Warning'}</Button>
         <Button type='primary' mode='dashed' >{'Dottedline'}</Button>
@@ -111,7 +111,7 @@ const Content = (props: ContentProps) => {
       (
         <div className={styles.columnsArea}>
           {renderArea(
-            <div className={classNames(styles.columnsAreaList, styles.progress)}>
+            <div className={clsx(styles.columnsAreaList, styles.progress)}>
               {
                 progresses.map((item, index) => (
                   <AutoProgress key={index} target={item.value} type={item.type as PropgressType} />

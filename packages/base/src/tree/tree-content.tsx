@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { KeygenResult, util, useRender } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeContextProps } from './tree-content.type';
@@ -52,12 +52,12 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
 
   const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
   const commonStyles = jssStyle?.common?.() || ({} as CommonClasses);
-  const rootClass = classNames(contentStyle.contentWrapper, {
+  const rootClass = clsx(contentStyle.contentWrapper, {
     [contentStyle.childnode]: data[childrenKey] && (data[childrenKey] as DataItem[]).length > 0,
     [contentStyle.inlineContent]: inlineNode,
     [contentStyle.contentDisabled]: disabled,
   });
-  const contentClass = classNames(
+  const contentClass = clsx(
     contentStyle.content,
     util.isString(contentClassProp) && contentClassProp,
     util.isFunc(contentClassProp) && contentClassProp(data),
@@ -161,7 +161,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass)}
+            className={clsx(contentStyle.icon, iconClass)}
             onClick={handleNodeExpand}
             dir={config.direction}
           >
@@ -179,7 +179,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass)}
+            className={clsx(contentStyle.icon, iconClass)}
             onClick={handleNodeExpand}
             dir={config.direction}
           >
@@ -210,7 +210,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass)}
+            className={clsx(contentStyle.icon, iconClass)}
             dir={config.direction}
           >
             {$iconContent}

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { CardContext } from './card.context';
 import { useContext } from 'react';
 
@@ -9,7 +9,7 @@ const CardHeader = (props: CardHeaderProps) => {
   const cardClasses = props.jssStyle?.card?.();
   const { onCollapse, handleDragMouseDown } = useContext(CardContext);
 
-  const footerClassName = classNames(
+  const footerClassName = clsx(
     props.className,
     align === 'center' && cardClasses?.center,
     align === 'right' && cardClasses?.right,

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { SkeletonClasses, SkeletonTextProps } from './skeleton.type';
 import { util } from '@sheinx/hooks';
 
@@ -7,7 +7,7 @@ interface TextProps extends SkeletonTextProps {
 }
 
 export default function Text({ classes, className, rows = 3, width, height, style }: TextProps): JSX.Element {
-  const cls = classNames(classes.text, className);
+  const cls = clsx(classes.text, className);
   const nodes = [];
 
   function getTextWidth(index: number) {

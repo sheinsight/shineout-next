@@ -28,7 +28,11 @@ const collapseTokenDescription = {
 const collapseTokenValue = {};
 
 const collapseTokenExtraValue = {
-  icon: { color: 'Neutral-text-4', hover: { background: { color: 'Neutral-fill-2' } }, active: { background: { color: 'Neutral-fill-3' } } },
+  icon: {
+    color: 'Neutral-text-4',
+    hover: { background: { color: 'Neutral-fill-2' } },
+    active: { background: { color: 'Neutral-fill-3' } },
+  },
   extra: { margin: 'Spacing-24' },
   wrapper: {
     border: { size: 'Border-1', radius: 'Radius-default', color: 'Neutral-border-1' },

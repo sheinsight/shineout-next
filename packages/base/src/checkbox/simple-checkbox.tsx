@@ -1,5 +1,5 @@
 import { getDataset, useCheck, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { useContext } from 'react';
 import { SimpleCheckboxProps } from './checkbox.type';
 import { FormFieldContext } from '../form/form-field-context';
@@ -17,7 +17,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     defaultChecked: props.defaultChecked === 'indeterminate' ? true : props.defaultChecked,
   });
 
-  const rootClass = classNames(
+  const rootClass = clsx(
     className,
     checkboxStyle?.rootClass,
     checkboxStyle?.wrapper,
@@ -28,7 +28,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     props.checked === 'indeterminate' && checkboxStyle?.wrapperIndeterminate,
   );
 
-  const indicatorClass = classNames(
+  const indicatorClass = clsx(
     checkboxStyle?.indicatorWrapper,
     theme === 'dark' && checkboxStyle?.darkIndicatorWrapper,
   );

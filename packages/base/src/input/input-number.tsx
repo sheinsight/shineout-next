@@ -4,7 +4,7 @@ import Icons from '../icons';
 import { useInputNumber, usePersistFn, util } from '@sheinx/hooks';
 
 import { InputNumberProps } from './input-number.type';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import useInputCommon from './use-input-common';
 
 const InputNumber = (props: InputNumberProps) => {
@@ -90,7 +90,7 @@ const InputNumber = (props: InputNumberProps) => {
       {...numberFormatProps}
       jssStyle={jssStyle}
       value={numberFormatProps.value || ''}
-      className={classNames(forwardProps.className, inputStyle?.wrapperNumber)}
+      className={clsx(forwardProps.className, inputStyle?.wrapperNumber)}
       onKeyDown={onKeyDown}
       addEnd={addEnd}
       showClear={props.showClear}

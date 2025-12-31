@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { util } from '@sheinx/hooks';
 import { StepsClasses } from './steps.type';
 import { StepStyleProps } from './steps.type';
@@ -20,7 +20,7 @@ const DefaultStep = (props: StepStyleProps) => {
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = styles.default;
   const config = useConfig();
-  const iconClass = classNames(styles.icon, {
+  const iconClass = clsx(styles.icon, {
     [styles.finish]: status === 'finish',
     [styles.error]: status === 'error',
     [styles.process]: status === 'process',

@@ -25,58 +25,25 @@ const cardTokenDescription = {
 const cardTokenValue = { font: { size: 'Font-14' } };
 
 const cardTokenExtraValue = {
-  background: {
-    color: 'Neutral-fill-1',
-  },
+  background: { color: 'Neutral-fill-1' },
   shadow: 'Shadow-2',
-  hover: {
-    shadow: 'Shadow-2',
-  },
-  border: {
-    width: 'Border-1',
-    color: 'Neutral-border-1',
-    radius: 'Radius-default',
-  },
-  font: {
-    color: 'Neutral-text-5',
-    size: 'Font-14',
-  },
+  hover: { shadow: 'Shadow-2' },
+  border: { width: 'Border-1', color: 'Neutral-border-1', radius: 'Radius-default' },
+  font: { color: 'Neutral-text-5', size: 'Font-14' },
   padding: { x: 'Spacing-12', y: 'Spacing-12' },
-  title: {
-    font: {
-      color: 'Neutral-text-5',
-      size: 'Font-16',
-      weight: 'Weight-medium',
-    },
-  },
+  title: { font: { color: 'Neutral-text-5', size: 'Font-16', weight: 'Weight-medium' } },
   header: {
     gap: '8px',
-    extra: {
-      margin: { x: 'Spacing-12' },
-    },
+    extra: { margin: { x: 'Spacing-12' } },
     padding: { x: 'Spacing-12', y: 'Spacing-12' },
   },
-  indicator: {
-    size: 'Size-7',
-    color: 'Neutral-text-4',
-  },
+  indicator: { size: 'Size-7', color: 'Neutral-text-4' },
   body: {
     padding: { x: 'Spacing-12', y: 'Spacing-12' },
-    font: {
-      size: 'Font-14',
-      color: 'Neutral-text-5',
-      weight: 'Weight-regular',
-    },
-    border: {
-      color: 'Neutral-border-1',
-    },
+    font: { size: 'Font-14', color: 'Neutral-text-5', weight: 'Weight-regular' },
+    border: { color: 'Neutral-border-1' },
   },
-  footer: {
-    padding: { x: 'Spacing-12', y: 'Spacing-12' },
-    border: {
-      color: 'Neutral-border-1',
-    },
-  },
+  footer: { padding: { x: 'Spacing-12', y: 'Spacing-12' }, border: { color: 'Neutral-border-1' } },
 };
 
 module.exports = {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { usePersistFn, usePrevious } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { CommonType } from './type';
 
 export interface InnerTitleClasses {
@@ -41,7 +41,7 @@ const useInnerTitle = (props: InnerTitleProps) => {
 
     return (
       <div
-        className={classNames(
+        className={clsx(
           innerTitleStyle?.wrapper,
           !!open && innerTitleStyle?.wrapperOpen,
           size === 'small' && innerTitleStyle?.wrapperSmall,
@@ -52,7 +52,7 @@ const useInnerTitle = (props: InnerTitleProps) => {
         onAnimationIteration={() => setAnimation(false)}
       >
         <div
-          className={classNames(innerTitleStyle?.title, innerTitleStyle?.top, props.titleClassName)}
+          className={clsx(innerTitleStyle?.title, innerTitleStyle?.top, props.titleClassName)}
         >
           {innerTitle}
         </div>
@@ -61,9 +61,9 @@ const useInnerTitle = (props: InnerTitleProps) => {
             e.preventDefault();
             e.stopPropagation();
           }}
-          className={classNames(innerTitleStyle?.place)}
+          className={clsx(innerTitleStyle?.place)}
         >
-          <div className={classNames(innerTitleStyle?.title, props.titleClassName)}>
+          <div className={clsx(innerTitleStyle?.title, props.titleClassName)}>
             {placeTitle || innerTitle}
           </div>
         </div>

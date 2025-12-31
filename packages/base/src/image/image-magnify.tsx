@@ -1,6 +1,6 @@
 import { useImageMagnify } from '@sheinx/hooks';
 import { ImageMagnifyProps } from './image.type';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 const ImageMagnify = (props: ImageMagnifyProps) => {
   const { jssStyle, ...rest } = props;
@@ -28,7 +28,7 @@ const ImageMagnify = (props: ImageMagnifyProps) => {
 
 
   return (
-    <div className={classNames(galleryStyle?.magnify, status === 1 && galleryStyle?.magnifyZoomOut)} style={rootStyle} {...rootProps}>
+    <div className={clsx(galleryStyle?.magnify, status === 1 && galleryStyle?.magnifyZoomOut)} style={rootStyle} {...rootProps}>
       <img style={imgStyle} src={src} alt='' />
       {loading && renderLoading()}
     </div>

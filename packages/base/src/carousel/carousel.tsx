@@ -1,5 +1,5 @@
 import { getDataset, useCarousel } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React from 'react';
 import { CarouselProps } from './carousel.type';
 import Icons from '../icons';
@@ -20,7 +20,7 @@ const Carousel = (props: CarouselProps) => {
     onMove: props.onMove,
   });
 
-  const wrapperClasses = classNames(
+  const wrapperClasses = clsx(
     carouselClasses?.rootClass,
     carouselClasses?.wrapper,
     props.className,
@@ -36,7 +36,7 @@ const Carousel = (props: CarouselProps) => {
     return (
       <div className={carouselClasses?.slider} style={{ height: props.style?.height }}>
         {React.Children.map(props.children, (child, index) => {
-          const itemClasses = classNames(
+          const itemClasses = clsx(
             carouselClasses?.item,
             index === current && carouselClasses?.itemCurrent,
             index === pre && pre !== current && carouselClasses?.itemPre,
@@ -67,21 +67,21 @@ const Carousel = (props: CarouselProps) => {
     }
     return (
       <div
-        className={classNames(
+        className={clsx(
           props.showArrow === 'hover' && carouselClasses?.arrowHover,
           carouselClasses?.arrowWrapper,
           props.arrowClassName,
         )}
       >
         <div
-          className={classNames(carouselClasses?.arrowLeft, carouselClasses?.arrowItem)}
+          className={clsx(carouselClasses?.arrowLeft, carouselClasses?.arrowItem)}
           key={'left'}
           onClick={handlePrev}
         >
           {Icons.carousel.Backward}
         </div>
         <div
-          className={classNames(carouselClasses?.arrowRight, carouselClasses?.arrowItem)}
+          className={clsx(carouselClasses?.arrowRight, carouselClasses?.arrowItem)}
           key={'right'}
           onClick={handleNext}
         >
@@ -126,7 +126,7 @@ const Carousel = (props: CarouselProps) => {
       content = (
         <>
           {Array.from({ length: total }).map((_, index) => {
-            const indicatorClasses = classNames(
+            const indicatorClasses = clsx(
               carouselClasses?.indicator,
               index === current && carouselClasses?.indicatorActive,
             );
@@ -140,7 +140,7 @@ const Carousel = (props: CarouselProps) => {
 
     return (
       <div
-        className={classNames(
+        className={clsx(
           carouselClasses?.indicatorWrapper,
           indicatorPosition === 'center' && carouselClasses?.indicatorCenter,
           indicatorPosition === 'left' && carouselClasses?.indicatorLeft,

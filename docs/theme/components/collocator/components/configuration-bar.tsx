@@ -6,7 +6,7 @@ import TextareaWithClear from './textarea-with-clear';
 import SwitchWithOther from './switch-with-other';
 import InputType from './input-type';
 import InputNumber from './input-number';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { infoIcon } from '../icon';
 import { isObject } from '../utils/is';
 
@@ -173,7 +173,7 @@ const ConfigurationBar = (props: ConfigurationBarProps) => {
     }, {})
 
     return (
-      <Form labelVerticalAlign={'middle'} value={config} onChange={(v) => setConfig(v)} labelAlign='left' className={classNames(styles.form, styles.formCollapse)}>
+      <Form labelVerticalAlign={'middle'} value={config} onChange={(v) => setConfig(v)} labelAlign='left' className={clsx(styles.form, styles.formCollapse)}>
         <Collapse border={false} className={styles.collapse}>
           {Object.keys(itemListFilter).map((type, index) => (
             <Collapse.Item title={type} keygen={`${index}`} key={index}>

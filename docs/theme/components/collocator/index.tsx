@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { Radio, Tooltip } from 'shineout';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import Locale from '../../locales';
@@ -43,17 +43,17 @@ const Collocator = (props: CollocatorProps) => {
   } = useCollocator({ api, name });
 
   const renderHeader = (children: String | React.ReactElement, className?: string) => (
-    <div className={classNames(styles.header, className)}>{children}</div>
+    <div className={clsx(styles.header, className)}>{children}</div>
   );
 
   const renderFunctions = () => (
     <div className={styles.functions}>
-      <Codesandbox code={examples.code} className={classNames(styles.icon, styles.codesandBox)} tip='更多组合用法, 可前往Playground...' />
+      <Codesandbox code={examples.code} className={clsx(styles.icon, styles.codesandBox)} tip='更多组合用法, 可前往Playground...' />
       {functions.map((item, index) => (
         <Tooltip tip={item.tip} trigger='hover' position='top'>
           <div
             key={index}
-            className={classNames(styles.icon, [item.type === attachedType && styles.active])}
+            className={clsx(styles.icon, [item.type === attachedType && styles.active])}
             onClick={item.onClick}
           >{item.name}</div>
         </Tooltip>
@@ -70,8 +70,8 @@ const Collocator = (props: CollocatorProps) => {
       [AttachedType.NONE]: null,
       [AttachedType.CODE]: (
         <div className={styles.code}>
-           <pre className={classNames(styles.codeWrapper, 'language-jsx')}>
-            <code className={classNames('language-jsx')}>{codeFile}</code>
+           <pre className={clsx(styles.codeWrapper, 'language-jsx')}>
+            <code className={clsx('language-jsx')}>{codeFile}</code>
           </pre>
         </div>
       ),
@@ -87,7 +87,7 @@ const Collocator = (props: CollocatorProps) => {
   const renderElement = useMemo(() => componentInfo.element ? componentInfo.element(config): null, [componentInfo.element, config])
 
   return (
-    <div className={classNames(styles.wrapper, className)}>
+    <div className={clsx(styles.wrapper, className)}>
       <div className={styles.main}>
         <div className={styles.content}>
           {renderHeader(

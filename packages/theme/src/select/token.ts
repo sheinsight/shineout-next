@@ -43,61 +43,25 @@ const selectTokenExtraValue = {
   border: { radius: 'Radius-default', color: 'Neutral-border-2', width: 'Border-1' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4', margin: { left: 'Spacing-8' } },
-  tag: {
-    margin: {
-      y: 'Spacing-2',
-      right: 'Spacing-4',
-    },
-  },
+  tag: { margin: { y: 'Spacing-2', right: 'Spacing-4' } },
   small: {
     font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Spacing-8', y: 'Spacing-1' },
-    option: {
-      inner: {
-        padding: { x: 'Spacing-8', y: 'Spacing-2' },
-      },
-    },
-    clear: {
-      icon: {
-        size: 'Font-12',
-      },
-    },
+    option: { inner: { padding: { x: 'Spacing-8', y: 'Spacing-2' } } },
+    clear: { icon: { size: 'Font-12' } },
   },
   large: {
     font: { size: 'Font-16' },
     padding: { x: 'Spacing-12', y: 'Spacing-3' },
-    option: {
-      inner: {
-        padding: { x: 'Spacing-12', y: 'Spacing-8' },
-      },
-    },
-    clear: {
-      icon: {
-        size: 'Font-16',
-      },
-    },
-    placeholder: {
-      margin: { y: 'Spacing-4' },
-    },
+    option: { inner: { padding: { x: 'Spacing-12', y: 'Spacing-8' } } },
+    clear: { icon: { size: 'Font-16' } },
+    placeholder: { margin: { y: 'Spacing-4' } },
   },
-  inner: {
-    padding: { x: 'Spacing-8', y: 'Spacing-5' },
-    title: {
-      margin: {
-        y: 'Spacing-2',
-      },
-    },
-  },
+  inner: { padding: { x: 'Spacing-8', y: 'Spacing-5' }, title: { margin: { y: 'Spacing-2' } } },
   placeholder: { color: 'Neutral-text-2', margin: { y: 'Spacing-2' } },
   background: { color: 'Neutral-fill-1' },
-  clear: {
-    color: 'Neutral-text-3',
-    padding: 'Spacing-8',
-    icon: {
-      size: 'Font-14',
-    },
-  },
+  clear: { color: 'Neutral-text-3', padding: 'Spacing-8', icon: { size: 'Font-14' } },
   hover: {
     border: { color: 'Brand-6' },
     clear: { color: 'Neutral-text-4' },
@@ -144,38 +108,18 @@ const selectTokenExtraValue = {
   option: {
     height: 'Size-16',
     background: { color: 'Neutral-fill-1' },
-    font: {
-      color: 'Neutral-text-5',
-    },
+    font: { color: 'Neutral-text-5' },
     padding: { x: 'Spacing-4', y: 'Spacing-1' },
-    active: {
-      color: 'Brand-6',
-      background: { color: 'Brand-1' },
-    },
+    active: { color: 'Brand-6', background: { color: 'Brand-1' } },
     inner: {
       padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },
       border: { radius: 'Radius-lesser' },
     },
-    hover: {
-      background: { color: 'Neutral-fill-2' },
-      font: {
-        color: 'Neutral-text-5',
-      },
-    },
+    hover: { background: { color: 'Neutral-fill-2' }, font: { color: 'Neutral-text-5' } },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },
-  more: {
-    padding: {
-      x: 'Spacing-8',
-      y: 'Spacing-6',
-    },
-  },
-  header: {
-    padding: { x: 'Spacing-8', y: 'Spacing-8' },
-    border: {
-      color: 'Neutral-border-1',
-    },
-  },
+  more: { padding: { x: 'Spacing-8', y: 'Spacing-6' } },
+  header: { padding: { x: 'Spacing-8', y: 'Spacing-8' }, border: { color: 'Neutral-border-1' } },
   group: {
     title: {
       font: { color: 'Neutral-text-3', size: 'Font-12', weight: 'Weight-regular' },
@@ -186,24 +130,12 @@ const selectTokenExtraValue = {
   },
   column: {
     padding: 'Spacing-8',
-    option: {
-      margin: 'Spacing-8',
-    },
-    border: {
-      radius: 'Radius-default',
-    },
+    option: { margin: 'Spacing-8' },
+    border: { radius: 'Radius-default' },
     background: { color: 'Neutral-fill-2' },
   },
-  loading: {
-    spin: {
-      color: 'Brand-6',
-    },
-  },
-  empty: {
-    font: {
-      color: 'Neutral-text-2',
-    },
-  },
+  loading: { spin: { color: 'Brand-6' } },
+  empty: { font: { color: 'Neutral-text-2' } },
 };
 
 module.exports = {

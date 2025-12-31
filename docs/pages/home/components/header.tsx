@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import useStyle from '../style';
 import { logo } from '../svg';
 import CustomDropdown from './custom-dropdown';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { ecologyList } from '../constants';
 
 const Header = () => {
@@ -31,7 +31,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className={classNames(styles.header, isScrolled && styles.headerScrolled)}>
+    <div className={clsx(styles.header, isScrolled && styles.headerScrolled)}>
       <div className={styles.headerContent}>
         {logo}
         <div className={styles.headerFunc}>

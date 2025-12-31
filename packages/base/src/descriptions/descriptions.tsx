@@ -1,5 +1,5 @@
 import React, { Fragment, useMemo } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import type { DescriptionsProps, DescriptionsClasses } from './descriptions.type';
 import { useDescriptions, usePersistFn, type DescriptionsItemProps } from '@sheinx/hooks';
 
@@ -110,14 +110,14 @@ const Descriptions = (props: DescriptionsProps) => {
     return layout === 'horizontal' ? renderHorizontal(d, i) : renderVertical(d, i);
   };
 
-  const rootClassName = classNames(
+  const rootClassName = clsx(
     className,
     jssStyle?.rootClass,
     jssStyle?.wrapper,
     size === 'small' && jssStyle?.small,
     size === 'large' && jssStyle?.large,
   );
-  const bodyClassName = classNames(
+  const bodyClassName = clsx(
     jssStyle?.body,
     border && jssStyle?.border,
     tableLayout === 'fixed' && jssStyle?.tableLayoutFixed,

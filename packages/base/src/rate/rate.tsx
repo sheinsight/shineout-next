@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { useContext, useState } from 'react';
 import { RateProps } from './rate.type';
 import Icons from '../icons';
@@ -59,7 +59,7 @@ const Rate = (props0: RateProps) => {
     return (
       <div
         key={index}
-        className={classNames(
+        className={clsx(
           rateClasses?.item,
           isHalfChecked && rateClasses?.itemCheckedHalf,
           isChecked && rateClasses?.itemChecked,
@@ -125,7 +125,7 @@ const Rate = (props0: RateProps) => {
   const text = Array.isArray(props.text) && props.text[Math.ceil(value - 1)];
   return (
     <div
-      className={classNames(props.className, rateClasses?.rootClass, rateClasses?.wrapper)}
+      className={clsx(props.className, rateClasses?.rootClass, rateClasses?.wrapper)}
       id={fieldId}
       style={props.style}
       onMouseLeave={() => {

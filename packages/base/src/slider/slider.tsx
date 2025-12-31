@@ -1,5 +1,5 @@
 import { useSlider, useInputAble } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { useContext } from 'react';
 import { useConfig } from '../config';
 import { SliderProps } from './slider.type';
@@ -45,7 +45,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
     return (
       <div
         dir={config.direction}
-        className={classNames(
+        className={clsx(
           c,
           sliderClasses?.value,
           tipType === 'hover' && sliderClasses?.valueHover,
@@ -63,7 +63,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
       <>
         <div
           onMouseDown={props.disabled ? undefined : handleEndMouseDown}
-          className={classNames(
+          className={clsx(
             sliderClasses?.indicator,
             position === 0 ? sliderClasses?.indicatorStart : sliderClasses?.indicatorEnd,
             dragIndex === position && sliderClasses?.indicatorActive,
@@ -89,7 +89,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
   return (
     <div
       id={fieldId}
-      className={classNames(
+      className={clsx(
         sliderClasses?.rootClass,
         sliderClasses?.wrapper,
         props.autoHide && sliderClasses?.autoHide,
@@ -115,8 +115,8 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
       {props.formatScale === false ? null : (
         <div className={sliderClasses?.scaleWrapper}>
           {scale?.map((item, index) => (
-            <div key={index} className={classNames(sliderClasses?.scale)}>
-              <div key={index} className={classNames(sliderClasses?.label)} dir={config.direction}>
+            <div key={index} className={clsx(sliderClasses?.scale)}>
+              <div key={index} className={clsx(sliderClasses?.label)} dir={config.direction}>
                 {renderScale(item)}
               </div>
             </div>

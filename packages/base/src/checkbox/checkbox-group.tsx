@@ -3,7 +3,7 @@ import { useInputAble, useListSelectMultiple, usePersistFn, util } from '@sheinx
 import GroupContext from './group-context';
 import Checkbox from './checkbox';
 import React, { useContext } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import useWithFormConfig from '../common/use-with-form-config';
 import { FormFieldContext } from '../form/form-field-context';
 
@@ -84,7 +84,7 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
     providerValue.disabled = disabled;
   }
 
-  const groupClass = classNames(
+  const groupClass = clsx(
     className,
     checkboxStyle?.group,
     !!block && checkboxStyle?.groupBlock,

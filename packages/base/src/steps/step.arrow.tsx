@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 import { StepsClasses } from './steps.type';
@@ -7,7 +7,7 @@ import { StepStyleProps } from './steps.type';
 const ArrowStep = (props: StepStyleProps) => {
   const { jssStyle, title, description, onChange, index, status } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
-  const rootClass = classNames(styles.arrow);
+  const rootClass = clsx(styles.arrow);
   const config = useConfig();
 
   const renderTitle = () => {

@@ -20,6 +20,79 @@ const textareaTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 textareaRules 强关联，非 textareaRules 规则内的 token 需手动增加或删减。
  */
+const textareaTokenValue = {
+  font: { size: '', color: '' },
+  border: { radius: '', color: '' },
+  padding: { x: '', y: '' },
+  small: { font: { size: '' }, border: { radius: '' }, padding: { x: '', y: '' } },
+  large: { font: { size: '' }, border: { radius: '' }, padding: { x: '', y: '' } },
+  placeholder: { color: '' },
+  background: { color: '' },
+  shadow: '',
+  hover: {
+    font: { color: '' },
+    placeholder: { color: '' },
+    border: { color: '' },
+    background: { color: '' },
+    shadow: '',
+  },
+  focus: {
+    font: { color: '' },
+    placeholder: { color: '' },
+    border: { color: '' },
+    background: { color: '' },
+    shadow: '',
+  },
+  disabled: {
+    font: { color: '' },
+    placeholder: { color: '' },
+    border: { color: '' },
+    background: { color: '' },
+    shadow: '',
+    hover: {
+      font: { color: '' },
+      placeholder: { color: '' },
+      border: { color: '' },
+      background: { color: '' },
+      shadow: '',
+    },
+    focus: {
+      font: { color: '' },
+      placeholder: { color: '' },
+      border: { color: '' },
+      background: { color: '' },
+      shadow: '',
+    },
+  },
+  error: {
+    font: { color: '' },
+    placeholder: { color: '' },
+    border: { color: '' },
+    background: { color: '' },
+    shadow: '',
+    hover: {
+      font: { color: '' },
+      placeholder: { color: '' },
+      border: { color: '' },
+      background: { color: '' },
+      shadow: '',
+    },
+    focus: {
+      font: { color: '' },
+      placeholder: { color: '' },
+      border: { color: '' },
+      background: { color: '' },
+      shadow: '',
+    },
+  },
+  info: {
+    font: { color: '' },
+    background: { color: '' },
+    border: { color: '' },
+    error: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+  },
+};
+
 const textareaTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-default', color: 'Neutral-border-2' },
@@ -103,16 +176,9 @@ const textareaTokenExtraValue = {
       border: { color: 'Danger-6' },
     },
   },
-  limit: {
-    font: {
-      color: 'Neutral-text-3',
-      size: 'Font-12',
-    },
-  },
-  clear: { color: 'Neutral-text-3', size: 'Size-7',  hover: { color: 'Neutral-text-4' }, },
+  limit: { font: { color: 'Neutral-text-3', size: 'Font-12' } },
+  clear: { color: 'Neutral-text-3', size: 'Size-7', hover: { color: 'Neutral-text-4' } },
 };
-
-const textareaTokenValue = {};
 
 module.exports = {
   textareaTokenValue,

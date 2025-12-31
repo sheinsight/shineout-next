@@ -1,5 +1,5 @@
 import React, { useState, useRef, isValidElement, useEffect, useContext } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { AvatarContext } from './context';
 import { AvatarProps, AvatarClasses } from './avatar.type';
 
@@ -35,7 +35,7 @@ const Avatar = (props: AvatarProps) => {
   const hasImageElement = isValidElement(src);
 
   const avatarClasses = jssStyle?.avatar?.() || ({} as AvatarClasses);
-  const rootClass = classNames(className, avatarClasses.wrapper, {
+  const rootClass = clsx(className, avatarClasses.wrapper, {
     [avatarClasses.circle]: shape === 'circle',
     [avatarClasses.square]: shape === 'square',
     [avatarClasses.image]: hasImageElement || src,
@@ -87,7 +87,7 @@ const Avatar = (props: AvatarProps) => {
       return icon;
     }
 
-    const className = classNames(icon ? avatarClasses.icon : avatarClasses.string);
+    const className = clsx(icon ? avatarClasses.icon : avatarClasses.string);
 
     if (mounted || scale !== 1) {
       const transform = `scale(${scale})`;

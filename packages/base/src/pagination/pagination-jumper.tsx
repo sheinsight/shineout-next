@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import Input from '../input';
 import { PaginationJumperProps } from './pagination-jumper.type';
@@ -6,7 +6,7 @@ import { PaginationJumperProps } from './pagination-jumper.type';
 const PaginationJumper = (props: PaginationJumperProps) => {
   const { jssStyle, simple, size, total, pageSize, disabled, text, current, onChange } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.jumper);
+  const rootClasses = clsx(paginationStyle?.section, paginationStyle?.jumper);
 
   let txt: string[] | React.ReactNode[] = text.jumper ? text.jumper.split('{input}') : [];
   const [value, setValue] = useState(String(current));
@@ -46,7 +46,7 @@ const PaginationJumper = (props: PaginationJumperProps) => {
     return (
       <Input
         jssStyle={jssStyle}
-        className={classNames(paginationStyle?.section, paginationStyle?.jumperInput)}
+        className={clsx(paginationStyle?.section, paginationStyle?.jumperInput)}
         width={56}
         value={value}
         digits={0}
@@ -72,7 +72,7 @@ const PaginationJumper = (props: PaginationJumperProps) => {
     return (
       <div className={rootClasses}>
         {renderInput()}
-        <span className={classNames(paginationStyle?.section, paginationStyle?.split)}>/</span>
+        <span className={clsx(paginationStyle?.section, paginationStyle?.split)}>/</span>
         <span className={paginationStyle?.section}>{getMax()}</span>
       </div>
     );

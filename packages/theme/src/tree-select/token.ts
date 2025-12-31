@@ -1,5 +1,5 @@
-// 此文件受脚本控制，修改后将自动同步 type.ts tree-select.ts 的内容
-// This file is script-controlled and any changes made will be automatically synchronized with the type.ts and tree-select.ts files.
+// 此文件受脚本控制，修改后将自动同步 type.ts treeSelect.ts 的内容
+// This file is script-controlled and any changes made will be automatically synchronized with the type.ts and treeSelect.ts files.
 
 /**
  * 描述词典
@@ -39,56 +39,29 @@ const treeSelectTokenExtraValue = {
   border: { radius: 'Radius-default', color: 'Neutral-border-2' },
   padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4', disabled: { color: 'Neutral-text-2' } },
-  tag: {
-    margin: {
-      y: 'Spacing-2',
-      right: 'Spacing-4',
-    },
-  },
+  tag: { margin: { y: 'Spacing-2', right: 'Spacing-4' } },
   small: {
     font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Spacing-8', y: 'Spacing-1' },
-    option: {
-      inner: {
-        padding: { x: 'Spacing-8', y: 'Spacing-2' },
-      },
-    },
-    clear: {
-      icon: {
-        size: 'Font-12',
-      },
-    },
+    option: { inner: { padding: { x: 'Spacing-8', y: 'Spacing-2' } } },
+    clear: { icon: { size: 'Font-12' } },
   },
   large: {
     font: { size: 'Font-16' },
     padding: { x: 'Spacing-12', y: 'Spacing-3' },
-    option: {
-      inner: {
-        padding: { x: 'Spacing-12', y: 'Spacing-8' },
-      },
-    },
-    clear: {
-      icon: {
-        size: 'Font-16',
-      },
-    },
-    placeholder: {
-      margin: { y: 'Spacing-4' },
-    },
+    option: { inner: { padding: { x: 'Spacing-12', y: 'Spacing-8' } } },
+    clear: { icon: { size: 'Font-16' } },
+    placeholder: { margin: { y: 'Spacing-4' } },
   },
-  inner: {
-    padding: { x: 'Spacing-8', y: 'Spacing-5' },
-  },
+  inner: { padding: { x: 'Spacing-8', y: 'Spacing-5' } },
   placeholder: { color: 'Neutral-text-2', margin: { y: 'Spacing-2' } },
   background: { color: 'Neutral-fill-1' },
   clear: {
     color: 'Neutral-text-3',
     padding: 'Spacing-8',
     hover: { color: 'Neutral-text-4' },
-    icon: {
-      size: 'Font-14',
-    },
+    icon: { size: 'Font-14' },
   },
   hover: { border: { color: 'Brand-6' }, clear: { color: 'Neutral-text-4' } },
   focus: { border: { color: 'Brand-7' }, shadow: 'Brand-2' },
@@ -116,32 +89,19 @@ const treeSelectTokenExtraValue = {
     border: 'Neutral-border-1',
   },
   content: {
-    hover: {
-      font: { color: 'Neutral-text-5' },
-      background: { color: 'Neutral-fill-2' },
-    },
-    active: {
-      font: { color: 'Brand-6' },
-      background: { color: 'Brand-1' },
-    },
+    hover: { font: { color: 'Neutral-text-5' }, background: { color: 'Neutral-fill-2' } },
+    active: { font: { color: 'Brand-6' }, background: { color: 'Brand-1' } },
     disabled: {
       font: { color: 'Neutral-text-2' },
       background: { color: 'Transprent' },
-      hover: {
-        background: { color: 'Neutral-fill-2' },
-      },
+      hover: { background: { color: 'Neutral-fill-2' } },
     },
   },
   option: {
     height: 'Size-16',
     padding: { x: 'Spacing-4', y: 'Spacing-1' },
-    active: {
-      color: 'Brand-6',
-      background: { color: 'Brand-1' },
-    },
-    font: {
-      color: 'Neutral-text-5',
-    },
+    active: { color: 'Brand-6', background: { color: 'Brand-1' } },
+    font: { color: 'Neutral-text-5' },
     inner: {
       padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },
       border: { radius: 'Radius-lesser' },
@@ -149,30 +109,15 @@ const treeSelectTokenExtraValue = {
     hover: { background: { color: 'Neutral-fill-2' } },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },
-  more: {
-    padding: {
-      x: 'Spacing-8',
-      y: 'Spacing-6',
-    },
-  },
-  header: {
-    padding: 'Spacing-8',
-    border: {
-      color: 'Neutral-border-1',
-    },
-  },
+  more: { padding: { x: 'Spacing-8', y: 'Spacing-6' } },
+  header: { padding: 'Spacing-8', border: { color: 'Neutral-border-1' } },
   group: {
     title: {
       font: { color: 'Neutral-text-3', size: 'Font-12' },
       padding: { x: 'Spacing-12', y: 'Spacing-6' },
     },
   },
-  column: {
-    padding: 'Spacing-8',
-    option: {
-      margin: 'Spacing-8',
-    },
-  },
+  column: { padding: 'Spacing-8', option: { margin: 'Spacing-8' } },
 };
 
 module.exports = {

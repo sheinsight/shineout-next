@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TabsHeaderProps } from './tabs-header.type';
 import { TabsClasses } from './tabs.type';
 import { ButtonClasses } from '../button/button.type';
@@ -55,7 +55,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const headerStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
-  const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
+  const headerWrapperClass = clsx(headerStyle.headerWrapper, {});
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
@@ -206,7 +206,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   };
 
   const renderTab = () => {
-    const headerClass = classNames(headerStyle.header);
+    const headerClass = clsx(headerStyle.header);
     return (
       <div ref={headerRef} className={headerClass}>
         <div
@@ -249,7 +249,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const renderPrevButton = () => {
     return (
       <div
-        className={classNames(headerStyle.prev)}
+        className={clsx(headerStyle.prev)}
         {...getDataProps({ state: atStart ? 'disabled' : '' })}
         onClick={handlePrev}
         dir={config.direction}

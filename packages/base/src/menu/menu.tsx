@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useMenu, util, useRender } from '@sheinx/hooks';
 import Item from './item';
-import classNames from 'classnames';
+import clsx from 'clsx';
 // import Scroll from './scroll';
 
 import type { MenuProps } from './menu.type';
@@ -64,7 +64,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         props.className,
         classes?.rootClass,
         classes?.wrapper,
@@ -96,7 +96,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     >
       {renderHeader()}
       <div className={classes?.scrollbox} ref={scrollRef}>
-        <ul className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}>
+        <ul className={clsx(classes?.root, hasExpand && classes?.childrenHasExpand)}>
           {data.map((item, index) => {
             const key = util.getKey(props.keygen, item, index);
             return (

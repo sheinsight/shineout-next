@@ -1,6 +1,6 @@
 import { util } from '@sheinx/hooks';
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { BadgeProps, BadgeClasses } from './badge.type';
 
 const Badge = (props: BadgeProps) => {
@@ -20,7 +20,7 @@ const Badge = (props: BadgeProps) => {
   } = props;
   const badgeStyle = jssStyle?.badge?.() || ({} as BadgeClasses);
   const isTextBadge = text !== undefined || (dot && children === undefined);
-  const rootClass = classNames(className, badgeStyle.rootClass, badgeStyle.badge, isTextBadge && badgeStyle.textBadge);
+  const rootClass = clsx(className, badgeStyle.rootClass, badgeStyle.badge, isTextBadge && badgeStyle.textBadge);
   const isOverflowCount = overflowCount !== undefined && Number(count) > overflowCount;
 
   const renderCount = () => {
@@ -68,7 +68,7 @@ const Badge = (props: BadgeProps) => {
     return (
       <sup
         style={{ ...style, background: color }}
-        className={classNames(
+        className={clsx(
           size === 'small' && badgeStyle.small,
           dot ? badgeStyle.dot : badgeStyle.count,
           supClass,
@@ -87,7 +87,7 @@ const Badge = (props: BadgeProps) => {
     return (
       <>
         <span
-          className={classNames(
+          className={clsx(
             badgeStyle.textDot,
             status && {
               [badgeStyle[status]]: true,

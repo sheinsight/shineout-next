@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useDragMock, usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useConfig } from '../config';
 
 import type { MenuJssStyle } from './menu.type';
@@ -90,7 +90,7 @@ const Scrollbar = (props: ScrollbarProps) => {
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         classes?.scrollbar,
         props.direction === 'x' && classes?.scrollbarX,
         props.direction === 'y' && classes?.scrollbarY,

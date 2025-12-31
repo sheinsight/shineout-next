@@ -1,6 +1,6 @@
 import { useTreeContext } from './tree-context';
 import { useRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TreeClasses } from './tree.type';
 import { TreeVirtualNodeProps } from './tree-node.type';
 import TreeVirtualContent from './tree-content';
@@ -63,7 +63,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
 
   const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
 
-  const rootClass = classNames(
+  const rootClass = clsx(
     contentStyle.node,
     isLeaf() && (util.isString(leafClass) ? leafClass : util.isFunc(leafClass) && leafClass(data)),
     util.isString(nodeClass) && nodeClass,

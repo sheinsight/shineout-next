@@ -22,17 +22,14 @@ const skeletonTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 skeletonRules 强关联，非 skeletonRules 规则内的 token 需手动增加或删减。
  */
-const skeletonTokenValue = {};
+const skeletonTokenValue = { font: { size: '' } };
 
 const skeletonTokenExtraValue = {
   margin: 'Spacing-12',
   height: 'Size-8',
   background: { color: 'Neutral-fill-2', radius: 'Radius-default' },
   button: { margin: { top: 'Spacing-32' } },
-  animation: {
-    from: {color: 'Neutral-fill-2' },
-    to: {color: 'Neutral-fill-3'}
-  },
+  animation: { from: { color: 'Neutral-fill-2' }, to: { color: 'Neutral-fill-3' } },
 };
 
 module.exports = {

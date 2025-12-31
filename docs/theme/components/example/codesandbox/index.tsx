@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Tooltip } from 'shineout';
 import { Link } from 'react-router-dom';
 import { strFromU8, strToU8, zlibSync } from 'fflate'
@@ -146,7 +146,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   }, [code, isMock, isIcon, isUtils, isSelectMock, isCode])
 
   return (
-    <div className={classNames('iconbox', className)}>
+    <div className={clsx('iconbox', className)}>
       <Tooltip tip={tip || '在 Shineout-Playground 打开'} trigger='hover' position='top'>
         <Link to={`https://shineout-playground.sheincorp.cn/#/playground?code=${codeUrl}`} target="_blank" rel="noopener noreferrer" >
           <div className='icon' style={{ color: '#000' }}>

@@ -3,7 +3,7 @@ import { Textarea } from '../textarea';
 import { EditableAreaProps } from './editable-area.type';
 import AbsoluteList from '../absolute-list';
 import { useInputAble, usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 import useInnerTitle from '../common/use-inner-title';
 import { FormFieldContext } from '../form/form-field-context';
@@ -102,7 +102,7 @@ const EditableArea = (props: EditableAreaProps) => {
         onClick={() => {
           updateShowTextarea(true);
         }}
-        className={classNames(
+        className={clsx(
           editableAreaStyle?.place,
           editableAreaStyle?.wrapperPaddingBox,
           editableAreaStyle?.wrapperInnerTitleTop,
@@ -134,7 +134,7 @@ const EditableArea = (props: EditableAreaProps) => {
           textareaRef={textareaRef}
           status={status}
           placeholder={placeholder}
-          className={classNames(editableAreaStyle?.popup, show && editableAreaStyle?.popupShow)}
+          className={clsx(editableAreaStyle?.popup, show && editableAreaStyle?.popupShow)}
           trim={trim}
           delay={delay}
           rows={1}
@@ -170,7 +170,7 @@ const EditableArea = (props: EditableAreaProps) => {
   return (
     <div
       id={fieldId}
-      className={classNames(
+      className={clsx(
         className,
         editableAreaStyle?.rootClass,
         editableAreaStyle?.wrapper,

@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { KeygenResult } from '@sheinx/hooks';
 import { VirtualScrollList } from '../virtual-scroll';
 import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
@@ -118,7 +118,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
   if (!data || data.length === 0) return renderEmpety();
 
   return (
-    <div className={classNames(styles.list, !virtual && styles.listSimple )}>
+    <div className={clsx(styles.list, !virtual && styles.listSimple )}>
       {virtual ? renderVritualList() : renderSimpleList()}
     </div>
   );

@@ -3,7 +3,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import rehypeRaw from 'rehype-raw';
-import classnames from 'classnames';
+import classnames from 'clsx';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { useStyles } from './style';
 // 解析 hash 后的查询参数

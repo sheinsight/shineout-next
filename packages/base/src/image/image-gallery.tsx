@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useImageGallery } from '@sheinx/hooks';
 import { ImageClasses } from './image.type';
 import Magnify from './image-magnify';
@@ -27,8 +27,8 @@ const ImageModal = (props: ImageGalleryProps) => {
   const galleryStyle = jssStyle?.image?.() || ({} as ImageClasses);
 
 
-  const overlayClass = classNames(galleryStyle?.overlay);
-  const closeClass = classNames(galleryStyle?.close);
+  const overlayClass = clsx(galleryStyle?.overlay);
+  const closeClass = clsx(galleryStyle?.close);
 
   const closeIconProps = getCloseIconProps();
 
@@ -41,7 +41,7 @@ const ImageModal = (props: ImageGalleryProps) => {
   };
 
   const renderImage = (image: Image, position: MagnifyPositionType) => {
-    const galleryClass = classNames({
+    const galleryClass = clsx({
       [galleryStyle.galleryInit]: direction === 'init',
       [galleryStyle.galleryForward]: direction === 'forward',
       [galleryStyle.galleryBackward]: direction === 'backward',
@@ -54,7 +54,7 @@ const ImageModal = (props: ImageGalleryProps) => {
     const index = position === 'left' ? -1 : 1;
 
     const galleryProps = getGalleryProps(index, position, {
-      className: classNames(galleryClass),
+      className: clsx(galleryClass),
     });
 
     const magnifyProps = getMaginfyProps(position, {

@@ -5,7 +5,7 @@ import {
   useListSelectMultiple,
   useInputAble,
 } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useMemo, useLayoutEffect, useRef } from 'react';
 import React from 'react';
 import { ListProps } from './list.type';
@@ -79,7 +79,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     };
 
     return (
-      <div key={key} className={classNames(listClasses?.item, rowClass)} style={listStyle}>
+      <div key={key} className={clsx(listClasses?.item, rowClass)} style={listStyle}>
         {shouldRenderCheckbox ? (
           <>
             <Checkbox
@@ -246,7 +246,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     );
   };
 
-  const wrapperClass = classNames(
+  const wrapperClass = clsx(
     props.className,
     listClasses?.rootClass,
     listClasses?.wrapper,

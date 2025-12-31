@@ -20,26 +20,15 @@ const listTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 listRules 强关联，非 listRules 规则内的 token 需手动增加或删减。
  */
-const listTokenValue = {};
+const listTokenValue = { font: { size: '' } };
 
 const listTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { color: 'Neutral-border-1', radius: 'Radius-lesser', width: 'Border-1' },
-  item: {
-    padding: { y: 'Spacing-12', x: 'Spacing-16' },
-    background: { color: 'Transparent' },
-  },
-  small: {
-    item: { padding: { y: 'Spacing-8', x: 'Spacing-12' } },
-    font: { size: 'Font-14' },
-  },
-  large: {
-    item: { padding: { y: 'Spacing-16', x: 'Spacing-20' } },
-    font: { size: 'Font-14' },
-  },
-  pagination: {
-    margin: { y: 'Spacing-12' },
-  },
+  item: { padding: { y: 'Spacing-12', x: 'Spacing-16' }, background: { color: 'Transparent' } },
+  small: { item: { padding: { y: 'Spacing-8', x: 'Spacing-12' } }, font: { size: 'Font-14' } },
+  large: { item: { padding: { y: 'Spacing-16', x: 'Spacing-20' } }, font: { size: 'Font-14' } },
+  pagination: { margin: { y: 'Spacing-12' } },
   striped: { background: { color: 'Neutral-fill-2' } },
 };
 

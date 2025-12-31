@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { usePersistFn, util, TableContext } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import { addResizeObserver } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Spin from '../spin';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
@@ -199,7 +199,7 @@ const Tr = (props: TrProps) => {
     let $expandIconWrapper;
     if ($expandIcon !== null) {
       $expandIconWrapper = (
-        <div className={classNames(tableClasses?.iconWrapper)}>
+        <div className={clsx(tableClasses?.iconWrapper)}>
           <span
             data-role='tree-expand-icon'
             className={tableClasses?.expandIcon}
@@ -235,7 +235,7 @@ const Tr = (props: TrProps) => {
 
       const expandInstance = (
         <div
-          className={classNames(tableClasses?.iconWrapper, tableClasses?.expandIconWrapper)}
+          className={clsx(tableClasses?.iconWrapper, tableClasses?.expandIconWrapper)}
           onClick={clickEvent}
         >
           <span data-role='expand-icon' className={tableClasses?.expandIcon}>
@@ -355,7 +355,7 @@ const Tr = (props: TrProps) => {
                 : undefined
             }
             onMouseLeave={shouldBindMouseEvent ? () => props.handleCellHover(-1, 0) : undefined}
-            className={classNames(
+            className={clsx(
               col.className,
               col.type === 'checkbox' && tableClasses?.cellCheckbox,
               col.fixed === 'left' && tableClasses?.cellFixedLeft,
@@ -474,7 +474,7 @@ const Tr = (props: TrProps) => {
     <>
       <tr
         ref={trRef}
-        className={classNames(
+        className={clsx(
           props?.rowClassName?.(props.rawData, props.rowIndex),
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
           props.isSelect && tableClasses?.rowChecked,

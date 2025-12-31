@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { KeygenResult, usePersistFn, util } from '@sheinx/hooks';
 import { SelectClasses, BaseListProps } from './select.type';
 import { VirtualScrollList } from '../virtual-scroll';
@@ -34,7 +34,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
 
   const dynamicVirtual = lineHeightProp === 'auto';
   const styles = jssStyle?.select?.() as SelectClasses;
-  const rootClass = classNames(styles.list, {
+  const rootClass = clsx(styles.list, {
     [styles.controlMouse]: controlType === 'mouse',
     [styles.controlKeyboard]: controlType === 'keyboard',
     [styles.dynamicList]: dynamicVirtual,

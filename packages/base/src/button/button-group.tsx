@@ -1,5 +1,5 @@
 import React, { Children, cloneElement } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useConfig } from '../config';
 import { ButtonClasses, ButtonGroupProps, ButtonProps } from './button.type';
 import { util } from '@sheinx/hooks';
@@ -19,7 +19,7 @@ const Group = (props: ButtonGroupProps) => {
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
   const buttonStyle = jssStyle?.button?.() || ({} as ButtonClasses);
-  const groupClass = classNames(
+  const groupClass = clsx(
     className,
     buttonStyle?.group,
     shape === 'round' && buttonStyle.round,
@@ -38,7 +38,7 @@ const Group = (props: ButtonGroupProps) => {
           mode: modeSetted || Child.props.mode,
           shape: shapeSetted,
           type: Child.props.type || type,
-          className: classNames(Child.props.className),
+          className: clsx(Child.props.className),
         });
       })}
     </div>

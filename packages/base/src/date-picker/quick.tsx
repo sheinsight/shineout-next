@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import type { QuickProps } from './quick.type';
 import type { QuickSelectType, DatePickerValueType } from './date-picker.type';
 import { dateUtil, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 const Quick = (props: QuickProps) => {
   const { jssStyle, quickSelect, format, onClearInputArr, options, children, type, closePop } =
@@ -54,13 +54,13 @@ const Quick = (props: QuickProps) => {
   };
 
   return (
-    <div className={classNames(styles?.quickPicker, styles?.picker)}>
+    <div className={clsx(styles?.quickPicker, styles?.picker)}>
       {quickSelect?.map((item, index) => {
         const isActive = compareDate(index);
         return (
           <div
             key={index}
-            className={classNames(
+            className={clsx(
               styles?.quickPickerItem,
               isActive && styles?.quickPickerActiveItem,
             )}

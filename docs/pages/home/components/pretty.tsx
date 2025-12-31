@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import useStyle from '../style';
 import { Icon, prettyIcon } from '../svg';
 import { Button, Menu } from 'shineout';
@@ -131,7 +131,7 @@ const Pretty = () => {
         {
           list.map(({title, color}) => (
             <div 
-              className={classNames(styles.prettyListAreaItem, [selectValue[name as keyof ISelectValue] === title && styles.prettyListAreaItemActive])} 
+              className={clsx(styles.prettyListAreaItem, [selectValue[name as keyof ISelectValue] === title && styles.prettyListAreaItemActive])} 
               key={title}
               onClick={() => handleItemClick(name as keyof ISelectValue, title)}
             >
@@ -166,7 +166,7 @@ const Pretty = () => {
 
   return (
     <div 
-      className={classNames(styles.commonPageArea, styles.prettyWrapper)}
+      className={clsx(styles.commonPageArea, styles.prettyWrapper)}
       style={{
         '--theme-primary-color': themeConfig.primaryColor,
         '--theme-light-color': themeConfig.lightColor,

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { PaginationActionButtonProps } from './pagination-buttons.type';
 import Button from './pagination-button';
 import Icons from '../icons';
@@ -7,7 +7,7 @@ import { useConfig } from '../config';
 const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
   const { jssStyle, disabled, current, mode, text, size, onChange } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section);
+  const rootClasses = clsx(paginationStyle?.section);
   const prev = current - 1;
   const hasText = text && text.prev;
 

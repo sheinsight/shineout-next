@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { util, addResizeObserver, UnMatchedData, useRender } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
 import ResultInput from './result-input';
@@ -70,7 +70,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const showInput = allowOnFilter;
   const mounted = useRef(false);
   const styles = props.classes;
-  const rootClass = classNames(
+  const rootClass = clsx(
     styles.resultTextWrapper,
     compressed && styles.compressedWrapper,
     compressedBound && compressedBound > 0 && styles.compressedBoundWrapper,
@@ -112,7 +112,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const basePlaceholder = useMemo(() => {
     return (
-      <span className={classNames(styles.placeholder, styles.ellipsis)}>
+      <span className={clsx(styles.placeholder, styles.ellipsis)}>
         <span>{placeholder}</span>
       </span>
     );
@@ -209,7 +209,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         key: index,
         size,
         disabled: isDisabled,
-        className: classNames(styles.tag, styles.hideTag, resultClassName),
+        className: clsx(styles.tag, styles.hideTag, resultClassName),
         children: content,
         onClick: handleClick,
         ...util.getDataAttribute({ type: disabled === true ? 'dark' : undefined }),
@@ -221,7 +221,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         key={index}
         disabled={isDisabled}
         size={size}
-        className={classNames(styles.tag, more === 1 && styles.tagOnly, resultClassName)}
+        className={clsx(styles.tag, more === 1 && styles.tagOnly, resultClassName)}
         closable={closeable && 'only'}
         onClose={closeable && handleClose}
         onMouseDown={closeable ? handleCloseMouseDown : undefined}
@@ -278,7 +278,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       if (renderResultContentProp && i !== datas.length - 1) {
         return [
           renderResultItem(d, i, datas, v),
-          <span key={`separator-${i}`} className={classNames(styles.tag, styles.hideTag)}>
+          <span key={`separator-${i}`} className={clsx(styles.tag, styles.hideTag)}>
             /
           </span>,
         ];

@@ -5,7 +5,7 @@ import { getDataset, usePopup, util } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
 import Icons from '../icons';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Item from './Item';
 import { useConfig } from '../config';
 
@@ -106,7 +106,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       return (
         <a
           key='button'
-          className={classNames(
+          className={clsx(
             dropdownClasses?.button,
             dropdownClasses?.item,
             !!disabled && dropdownClasses?.itemDisabled,
@@ -123,7 +123,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         disabled={disabled}
         jssStyle={jssStyle}
         outline={outline}
-        className={classNames(
+        className={clsx(
           dropdownClasses?.button,
           !placeholder && dropdownClasses?.splitButton,
         )}
@@ -173,7 +173,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           data={d}
           key={index}
           onClick={d.onClick || onClick}
-          itemClassName={classNames(dropdownClasses?.item)}
+          itemClassName={clsx(dropdownClasses?.item)}
           renderItem={renderItem}
           direction={config.direction}
           columns={columns}
@@ -196,7 +196,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
   const targetProps = getTargetProps();
   return (
     <div
-      className={classNames(
+      className={clsx(
         className,
         dropdownClasses?.rootClass,
         dropdownClasses?.wrapper,
@@ -224,7 +224,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}
-          className={classNames(
+          className={clsx(
             popupClassName,
             dropdownClasses?.list,
             hasChildren && dropdownClasses?.listHasChildren,

@@ -1,5 +1,5 @@
 import React, { cloneElement, useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TextareaClasses } from './textarea.type';
 
 const useAutoSize = (props: {
@@ -43,7 +43,7 @@ const useAutoSize = (props: {
             },
           })}
           {cloneElement(el, {
-            className: classNames(el.props.className, textareaClasses?.shadow),
+            className: clsx(el.props.className, textareaClasses?.shadow),
             ref: shadowRef,
             key: 'shadow',
           })}

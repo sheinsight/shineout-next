@@ -3,7 +3,7 @@ import { TheadProps } from './thead.type';
 import { useTableGroup, useDragMock, usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn, TableHeadColumn, TableGroupColumn } from '@sheinx/hooks';
 import Icons from '../icons';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Checkbox from '../checkbox';
 import { useConfig } from '../config';
 import { FilterSearch, FilterSelect } from './thead-filter';
@@ -80,7 +80,7 @@ export default (props: TheadProps) => {
           <>
             {renderedSortDirections.includes('asc') && (
               <div
-                className={classNames(
+                className={clsx(
                   tableClasses?.sorterAsc,
                   currentOrder === 'asc' && tableClasses?.sorterActive,
                 )}
@@ -94,7 +94,7 @@ export default (props: TheadProps) => {
             )}
             {renderedSortDirections.includes('desc') && (
               <div
-                className={classNames(
+                className={clsx(
                   tableClasses?.sorterDesc,
                   currentOrder === 'desc' && tableClasses?.sorterActive,
                 )}
@@ -153,7 +153,7 @@ export default (props: TheadProps) => {
     if (!props.columnResizable) return null;
     return (
       <div
-        className={classNames(
+        className={clsx(
           tableClasses?.resizeSpanner,
           isDragging && context.dragIndex === index && tableClasses?.resizeSpannerActive,
           isDragging && context.dragIndex !== index && tableClasses?.resizeSpannerInactive,
@@ -210,7 +210,7 @@ export default (props: TheadProps) => {
 
     const fixedStyle = getFixedStyle(col.fixed, col.index, colTemp2.colSpan || 1, level);
 
-    const cellClassName = classNames(
+    const cellClassName = clsx(
       colTemp.className,
       colTemp.type === 'checkbox' && tableClasses?.cellCheckbox,
       col.fixed === 'left' && tableClasses?.cellFixedLeft,
@@ -251,7 +251,7 @@ export default (props: TheadProps) => {
           }}
         >
           <div
-            className={classNames(
+            className={clsx(
               sorter && tableClasses?.hasSorter,
               filter && tableClasses?.hasFilter,
             )}
@@ -316,7 +316,7 @@ export default (props: TheadProps) => {
     }
     trs[level].push(
       <th
-        className={classNames(
+        className={clsx(
           cellClassName,
           tableClasses?.cellGroup,
           colTemp2?.groupProps?.className,

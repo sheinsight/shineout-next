@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { ButtonClasses, ButtonItemProps } from './button.type';
 
 const GroupItem = (props: ButtonItemProps) => {
@@ -7,7 +7,7 @@ const GroupItem = (props: ButtonItemProps) => {
 
   const buttonStyle = jssStyle?.button?.() || ({} as ButtonClasses);
 
-  const buttonItemClass = classNames(
+  const buttonItemClass = clsx(
     className,
     buttonStyle.groupItem,
     !!disabled && buttonStyle.disabled,

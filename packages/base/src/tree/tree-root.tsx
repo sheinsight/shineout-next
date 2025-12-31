@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { KeygenResult } from '@sheinx/hooks';
 import { TreeRootProps } from './tree-root.type';
 import { TreeClasses } from './tree.type';
@@ -20,7 +20,7 @@ const Root = <DataItem, Value extends KeygenResult[]>(props: TreeRootProps<DataI
       return false;
     });
   }, [props.data]);
-  const rootClass = classNames(treeStyle.root, notTree && treeStyle.notTree);
+  const rootClass = clsx(treeStyle.root, notTree && treeStyle.notTree);
   return (
     <TreeList
       {...rest}

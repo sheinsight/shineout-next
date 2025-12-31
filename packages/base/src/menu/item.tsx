@@ -1,5 +1,5 @@
 import React, { cloneElement, useState, useRef, useMemo } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useMenuItem, usePersistFn, util, useCollapseAnimation } from '@sheinx/hooks';
 import Icons from '../icons';
 import { useConfig } from '../config';
@@ -102,7 +102,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     const content = (close?: () => void) => (
       <ul
         ref={childrenRef}
-        className={classNames(
+        className={clsx(
           shoudPop && classes?.childrenShow,
           classes?.children,
           isUp && classes?.childrenUp,
@@ -147,14 +147,14 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
          // popover现在有出现动画了，避免快速切换子菜单时的动画太多，也加上toggleDuration
           mouseEnterDelay={toggleDuration}
           mouseLeaveDelay={toggleDuration}
-          className={classNames(classes?.popover)}
+          className={clsx(classes?.popover)}
           attributes={util.getDataAttribute({
             theme: props.theme || 'light',
             mode: isVertical ? 'vertical' : mode,
           })}
           onVisibleChange={handleVisibleChange}
           jssStyle={props.jssStyle}
-          arrowClass={classNames(
+          arrowClass={clsx(
             classes?.popArrow,
             props.theme === 'dark' && classes?.popArrowDark,
           )}
@@ -189,7 +189,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       : undefined;
     let title: React.ReactNode = null;
     if (util.isLink(item)) {
-      const mergeClass = classNames(classes?.title, item.props && item.props.className);
+      const mergeClass = clsx(classes?.title, item.props && item.props.className);
       title = cloneElement(item, {
         className: mergeClass,
         children: (
@@ -218,12 +218,12 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       return (
         <div
           {...(expandAble ? customAttributes : undefined)}
-          className={classNames(classes?.itemContent, classes?.itemContentFront)}
+          className={clsx(classes?.itemContent, classes?.itemContentFront)}
           onClick={handleItemClick}
         >
           <div
             style={{ color: props.caretColor }}
-            className={classNames(
+            className={clsx(
               classes?.expand,
               classes?.expandFront,
               (isVertical || isSubHorizontal) && classes?.expandVertical,
@@ -247,7 +247,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       return (
         <div
           {...(expandAble ? customAttributes : undefined)}
-          className={classNames(classes?.itemContent, classes?.itemContentBack)}
+          className={clsx(classes?.itemContent, classes?.itemContentBack)}
           onClick={handleItemClick}
         >
           {title}
@@ -255,7 +255,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             <div
               onClick={handleExpandClick}
               style={{ color: props.caretColor }}
-              className={classNames(
+              className={clsx(
                 classes?.expand,
                 classes?.expandBack,
                 (isVertical || isSubHorizontal) && classes?.expandVertical,
@@ -273,7 +273,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   return (
     <li
       {...(expandAble ? undefined : customAttributes)}
-      className={classNames(
+      className={clsx(
         classes?.item,
         isDisabled && classes?.itemDisabled,
         isInPath && classes?.itemInPath,

@@ -3,7 +3,7 @@ import { useInputAble, useListSelectSingle, usePersistFn, util } from '@sheinx/h
 import GroupContext from './group-context';
 import Radio from './radio';
 import React, { useContext } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import useWithFormConfig from '../common/use-with-form-config';
 import Button from '../button/button';
 import { FormFieldContext } from '../form/form-field-context';
@@ -102,7 +102,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
     ...(disabled !== undefined && { disabled })
   };
 
-  const groupClass = classNames(
+  const groupClass = clsx(
     className,
     radioClasses?.group,
     !!block && radioClasses?.groupBlock,

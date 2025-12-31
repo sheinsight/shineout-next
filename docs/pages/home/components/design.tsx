@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Button } from 'shineout';
 import useStyle from '../style';
 import { designArea, designBorder } from '../svg';
@@ -20,7 +20,7 @@ const Design = () => {
   )
 
   return (
-    <div className={classNames(styles.design, styles.commonPageArea)}>
+    <div className={clsx(styles.design, styles.commonPageArea)}>
       <div className={styles.designTitle}>
         {'B端设计规范 诠释专业与高效之美'}
         <Button onClick={() => window.open('https://sodoc.sheincorp.cn/doc-preview?columnId=187&originalId=1', '_blank', 'noopener,noreferrer')} type='primary' shape='round' className={styles.titleButton}>{'立即查看'}</Button>

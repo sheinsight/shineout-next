@@ -1,6 +1,6 @@
 import support from './support';
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { GapProps } from './gap.type';
 
 let supportFlexGap: boolean | undefined = undefined;
@@ -34,7 +34,7 @@ const Gap = (props: GapProps) => {
       };
 
   return (
-    <div className={classNames(className, styles?.rootClass, styles?.wrapper)} style={{ ...extendStyle, ...style }}>
+    <div className={clsx(className, styles?.rootClass, styles?.wrapper)} style={{ ...extendStyle, ...style }}>
       {React.Children.map(children, (child) => child && <div className={styles?.item} style={itemStyle}>{child}</div>)}
     </div>
   );

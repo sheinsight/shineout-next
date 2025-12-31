@@ -16,24 +16,6 @@ export interface FormTokens {
   formItemFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
-   * @description 表单项提示信息图标颜色
-   */
-  formItemTooltipIconColor: string;
-  /**
-   * @type {string}
-   * @token Font-14
-   * @description 表单项提示信息图标字号
-   */
-  formItemTooltipIconFontSize: string;
-  /**
-   * @type {string}
-   * @token Spacing-4
-   * @description 表单项提示信息图标外边距（水平方向）（前部）
-   */
-  formItemTooltipIconMarginXStart: string;
-  /**
-   * @type {string}
    * @token Spacing-12
    * @description 表单项外边距（垂直方向）（后部）
    */

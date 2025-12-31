@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Scroll from '../virtual-scroll/scroll-table';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Spin from '../spin';
 import Pagination, { PaginationProps } from '../pagination';
 import AbsoluteContext from '../absolute-list/absolute-context';
@@ -365,7 +365,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
         );
       return (
         <div
-          className={classNames(
+          className={clsx(
             tableClasses?.emptyWrapper,
             isScrollX && browserScrollbarWidth > 0 && tableClasses?.emptyNoBorder,
           )}
@@ -482,7 +482,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
     const isRenderVirtualTable = virtual || props.sticky || !props.data?.length;
 
-    const headWrapperClass = classNames(
+    const headWrapperClass = clsx(
       tableClasses?.headWrapper,
       !!$empty && tableClasses.emptyHeader,
       props.sticky && isScrollY && tableClasses.scrollY,
@@ -490,7 +490,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       props.sticky && !isScrollY && tableClasses.scrollX,
     );
 
-    const footWrapperClass = classNames(tableClasses?.footWrapper);
+    const footWrapperClass = clsx(tableClasses?.footWrapper);
 
     const renderHeadMirrorScroller = () => {
       if (!props.showTopScrollbar) return null;
@@ -666,7 +666,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const renderLoading = () => {
     if (!props.loading) return null;
     return (
-      <div className={classNames(tableClasses?.loading)}>
+      <div className={clsx(tableClasses?.loading)}>
         {props.loading === true ? (
           <Spin jssStyle={props.jssStyle} {...getSpinConfig()} />
         ) : (
@@ -766,7 +766,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     };
   }, [nestedContext.parentTableWidth, defaultHeight, props.style, props.width]);
 
-  const tableWrapperClass = classNames(
+  const tableWrapperClass = clsx(
     props.className,
     tableClasses?.rootClass,
     tableClasses?.wrapper,
@@ -781,7 +781,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   if (!props.columns || columns.length === 0)
     return (
       <div
-        className={classNames(
+        className={clsx(
           tableWrapperClass,
           tableClasses?.simple,
           props.striped && tableClasses?.striped,
@@ -796,7 +796,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   return (
     <>
       <div
-        className={classNames(tableWrapperClass, {
+        className={clsx(tableWrapperClass, {
           [tableClasses.sticky]: props.sticky,
           [tableClasses.floatLeft]: floatLeft,
           [tableClasses.floatRight]: floatRight,

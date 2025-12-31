@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import classnames from 'classnames';
+import classnames from 'clsx';
 import { useSnapshot } from 'valtio';
 import useStyles from '../style';
 import store from '../../store';

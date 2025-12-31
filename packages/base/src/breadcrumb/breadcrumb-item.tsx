@@ -1,5 +1,5 @@
 import React, { ReactNode, useLayoutEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { BreadcrumbClasses, BreadcrumbDataType, BreadcrumbJssStyle } from './breadcrumb.type';
 import Tooltip from '../tooltip';
 
@@ -21,7 +21,7 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
   }, [max, dataItem])
 
   const breadcrumbClasses = jssStyle?.breadcrumb?.() as BreadcrumbClasses;
-  const contentClass = classNames(breadcrumbClasses.content, isOverflow && breadcrumbClasses?.contentMaxWidth);
+  const contentClass = clsx(breadcrumbClasses.content, isOverflow && breadcrumbClasses?.contentMaxWidth);
 
   const d = dataItem as BreadcrumbDataType;
   let item = d.title;

@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useContext, useEffect } from 'react';
 import { usePersistFn, useDragMove, useDragResize, useRender } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { CardContext } from './card.context';
 import { CardAccordionContext, defualtCardAccordionContextValue } from './card-accordion-context';
 import { FormFooterProvider } from '../form/form-footer-context';
@@ -93,7 +93,7 @@ const Card = (props: CardProps) => {
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         props.className,
         cardClasses?.rootClass,
         cardClasses?.wrapper,

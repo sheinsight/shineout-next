@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import classnames from 'classnames';
+import classnames from 'clsx';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';

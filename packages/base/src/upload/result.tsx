@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Spin from '../spin';
 import { UploadProps } from './upload.type';
 import Image from '../image';
@@ -64,7 +64,7 @@ const Result = (props: ResultProps) => {
         </div>
         {props.removeAble && (
           <div
-            className={classNames(
+            className={clsx(
               uploadClasses?.resultClose,
               uploadClasses?.icon,
               uploadClasses?.iconHover,
@@ -89,7 +89,7 @@ const Result = (props: ResultProps) => {
   const renderImage = () => {
     const topBtn = (
       <div
-        className={classNames(
+        className={clsx(
           uploadClasses?.icon,
           uploadClasses?.imageResultTopBtn,
           uploadClasses?.customImageBtn,
@@ -129,7 +129,7 @@ const Result = (props: ResultProps) => {
           />
         )}
         <div
-          className={classNames(
+          className={clsx(
             uploadClasses?.imageResultMask,
             (isConfirm || status === 1) && uploadClasses?.imageResultMaskShow,
           )}
@@ -146,7 +146,7 @@ const Result = (props: ResultProps) => {
             )}
             {(status === 2 || status === -1) && src && (
               <div
-                className={classNames(uploadClasses?.icon)}
+                className={clsx(uploadClasses?.icon)}
                 onClick={() => {
                   if (props.onPreview) {
                     props.onPreview(src, props.values[props.index], props.index, props.values, {
@@ -162,7 +162,7 @@ const Result = (props: ResultProps) => {
             )}
             {status === 2 && props.removeAble && (
               <div
-                className={classNames(uploadClasses?.icon)}
+                className={clsx(uploadClasses?.icon)}
                 onClick={confirmProps ? undefined : props.onRemove}
               >
                 {confirmProps && (
@@ -191,7 +191,7 @@ const Result = (props: ResultProps) => {
   };
   return (
     <div
-      className={classNames(
+      className={clsx(
         listType === 'image' ? uploadClasses?.imageResult : uploadClasses?.result,
         status === 3 && uploadClasses?.resultError,
         status === 2 && uploadClasses?.resultSuccess,

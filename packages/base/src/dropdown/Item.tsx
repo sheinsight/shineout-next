@@ -3,7 +3,7 @@
 import React, { cloneElement, isValidElement } from 'react';
 import { util } from '@sheinx/hooks';
 import { DropdownNode, ItemProps } from './dropdown.type';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 const DefaultProps = {
   data: {},
@@ -70,7 +70,7 @@ class Item extends React.PureComponent<ItemProps> {
       const { className: contentPropsClassName = '', onClick: contentPropsOnClick, ...otherContentProps } =
         content.props as Props;
 
-      const className = classNames(
+      const className = clsx(
         // 如果content是Tooltip，则不传递className(就是dropdown-item的className)
         (content.type as any).displayName !== 'ShineoutTooltip' ? propsClassName : '',
         contentPropsClassName,

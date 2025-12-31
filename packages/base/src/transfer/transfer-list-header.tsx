@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { KeygenResult } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { Checkbox } from '../checkbox';
@@ -12,7 +12,7 @@ const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
     props;
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
-  const rootClass = classNames(styles.header);
+  const rootClass = clsx(styles.header);
 
   const getChecked = () => {
     if (value.length === 0) {

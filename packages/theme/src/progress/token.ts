@@ -44,21 +44,11 @@ const progressTokenExtraValue = {
     inner: { font: { color: 'Neutral-text-1' } },
   },
   circle: {
-    info: {
-      font: { color: 'Neutral-text-4' },
-    },
-    warning: {
-      font: { color: 'Warning-6' },
-    },
-    success: {
-      font: { color: 'success-6' },
-    },
-    danger: {
-      font: { color: 'danger-6' },
-    },
-    font: {
-      weight: 'Weight-regular',
-    },
+    info: { font: { color: 'Neutral-text-4' } },
+    warning: { font: { color: 'Warning-6' } },
+    success: { font: { color: 'success-6' } },
+    danger: { font: { color: 'danger-6' } },
+    font: { weight: 'Weight-regular' },
   },
   line: {
     height: 'Size-3',
@@ -69,30 +59,15 @@ const progressTokenExtraValue = {
       padding: { x: 'Spacing-8' },
       font: { color: 'Neutral-text-1', size: 'Font-12' },
       right: { font: { color: 'Neutral-text-5' } },
-
-      info: {
-        front: { background: { color: 'Brand-6' } },
-      },
-      warning: {
-        front: { background: { color: 'Warning-6' } },
-      },
-      success: {
-        front: { background: { color: 'Success-6' } },
-      },
-      danger: {
-        front: { background: { color: 'Danger-6' } },
-      },
+      info: { front: { background: { color: 'Brand-6' } } },
+      warning: { front: { background: { color: 'Warning-6' } } },
+      success: { front: { background: { color: 'Success-6' } } },
+      danger: { front: { background: { color: 'Danger-6' } } },
     },
-    pop: {
-      font: {
-        color: 'Neutral-text-1',
-      },
-    },
+    pop: { font: { color: 'Neutral-text-1' } },
     icon: { size: 'Size-7' },
     background: { color: 'Neutral-fill-9' },
-    font: {
-      weight: 'Weight-regular',
-    },
+    font: { weight: 'Weight-regular' },
   },
 };
 

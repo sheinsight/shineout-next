@@ -1,6 +1,6 @@
 import React from 'react';
 import { dateUtil, useDatePick, usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 import { getLocale, useConfig } from '../config';
 import TimePicker from './time';
@@ -66,7 +66,7 @@ const Day = (props: DayProps) => {
     return (
       <td
         dir={direction}
-        className={classNames(
+        className={clsx(
           styles?.pickerCell,
           isActive && styles?.pickerCellActive,
           !isCurrentMonth && styles?.pickerCellBound,
@@ -140,7 +140,7 @@ const Day = (props: DayProps) => {
     return (
       <th
         onClick={() => func.handleDayClick(item)}
-        className={classNames(styles?.pickerCell, styles?.pickerCellBound)}
+        className={clsx(styles?.pickerCell, styles?.pickerCellBound)}
         key={'week'}
         dir={direction}
       >
@@ -177,7 +177,7 @@ const Day = (props: DayProps) => {
       >
         {props.type === 'datetime' && (
           <div
-            className={classNames(styles?.pickerFooterTime, styles?.datetime)}
+            className={clsx(styles?.pickerFooterTime, styles?.datetime)}
             style={{ paddingRight: showNeedConfirm ? 0 : undefined }}
           >
             {
@@ -191,7 +191,7 @@ const Day = (props: DayProps) => {
         )}
         {props.showSelNow && (
           <div
-            className={classNames(styles?.pickerFooterNow)}
+            className={clsx(styles?.pickerFooterNow)}
             style={{
               marginRight: showNeedConfirm ? 'auto' : undefined,
               paddingLeft: showNeedConfirm ? (props.type === 'date' ? 22 : 6) : undefined,
@@ -227,7 +227,7 @@ const Day = (props: DayProps) => {
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         props.type === 'week' ? styles?.weekPicker : styles?.dayPicker,
         styles?.picker,
       )}
@@ -288,7 +288,7 @@ const Day = (props: DayProps) => {
               return (
                 <tr
                   key={index}
-                  className={classNames(
+                  className={clsx(
                     styles?.pickerRow,
                     props.type === 'week' && styles?.pickerRowWeek,
                   )}

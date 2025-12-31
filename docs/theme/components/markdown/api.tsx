@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { MarkdownProps } from 'docs/types';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
@@ -103,7 +103,7 @@ const SingleAPi = (props: SingleAPiProps) => {
     <>
       {title || subTitle ? (
         <>
-          <h3 className={classNames('anchor-title')} id={`api-${title}`}>
+          <h3 className={clsx('anchor-title')} id={`api-${title}`}>
             <span>{title}</span>
             {subTitle ? <em>{`${`  ${subTitle}`}`}</em> : null}
           </h3>

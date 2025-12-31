@@ -3,7 +3,7 @@ import AbsoluteList from '../absolute-list';
 import React, { useEffect } from 'react';
 import { PopoverProps, PopoverPosition } from './popover.type';
 import { useConfig } from '../config';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 const emptyEvent = <U extends { stopPropagation: () => void }>(e: U) => e.stopPropagation();
 
@@ -175,7 +175,7 @@ const Popover = (props: PopoverProps) => {
       setSizingStyle={props.boundary ? setContentStyle : undefined}
     >
       <div
-        className={classNames(
+        className={clsx(
           className,
           popoverStyle?.rootClass,
           popoverStyle?.wrapper,
@@ -192,14 +192,14 @@ const Popover = (props: PopoverProps) => {
       >
         {showArrow && (
           <div
-            className={classNames(popoverStyle?.arrow, props.arrowClass)}
+            className={clsx(popoverStyle?.arrow, props.arrowClass)}
             dir={config.direction}
           />
         )}
         <div
           style={{ ...contentStyle, ...style }}
           onClick={emptyEvent}
-          className={classNames(
+          className={clsx(
             popoverStyle?.content,
             (typeof childrened === 'string' || props.useTextStyle) && popoverStyle?.text,
           )}

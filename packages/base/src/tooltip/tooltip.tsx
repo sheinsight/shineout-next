@@ -1,5 +1,5 @@
 import { usePersistFn, usePopup, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { cloneElement, isValidElement, useEffect, useMemo } from 'react';
 import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
@@ -144,7 +144,7 @@ const Tooltip = (props: TooltipProps) => {
         updateKey={updateKey}
       >
         <div
-          className={classNames(
+          className={clsx(
             className,
             tooltipClasses?.rootClass,
             tooltipClasses?.wrapper,
@@ -162,7 +162,7 @@ const Tooltip = (props: TooltipProps) => {
               {...util.getDataAttribute({ role: 'arrow' })}
             />
           )}
-          <div style={style} className={classNames(tooltipClasses?.content)}>
+          <div style={style} className={clsx(tooltipClasses?.content)}>
             {tip}
           </div>
         </div>

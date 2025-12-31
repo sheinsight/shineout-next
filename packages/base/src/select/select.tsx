@@ -1,5 +1,5 @@
 import React, { ReactNode, useContext, useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import {
   util,
   usePersistFn,
@@ -306,7 +306,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     jssStyle: props.jssStyle,
   });
 
-  const rootClass = classNames(
+  const rootClass = clsx(
     className,
     styles?.rootClass,
     styles?.wrapper,
@@ -537,7 +537,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     const defaultIcon = multiple ? Icons.select.More : Icons.select.DropdownArrow;
     const arrow = (
       <span
-        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        className={clsx(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
         onClick={handleResultClick}
       >
         {defaultIcon}
@@ -565,7 +565,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     const defaultIcon = multiple ? Icons.select.More : Icons.select.DropdownArrow;
     return (
       <span
-        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        className={clsx(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
         onClick={handleResultClick}
       >
         {defaultIcon}
@@ -576,7 +576,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const { fieldId } = useContext(FormFieldContext);
   const renderResult = () => {
     const result = (
-      <div className={classNames(styles?.result)}>
+      <div className={clsx(styles?.result)}>
         <Result<DataItem, Value>
           trim={trim}
           jssStyle={jssStyle}
@@ -624,7 +624,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       <PopupProvider value={popupProviderValue}>
         <div
           id={fieldId}
-          className={classNames(
+          className={clsx(
             styles?.resultWrapper,
             styles?.wrapperPaddingBox,
             styles?.wrapperInnerTitleTop,
@@ -805,7 +805,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           <AnimationList
             onRef={popupRef}
             show={open}
-            className={classNames(
+            className={clsx(
               styles?.pickerWrapper,
               size === 'small' && styles?.pickerSmall,
               size === 'large' && styles?.pickerLarge,

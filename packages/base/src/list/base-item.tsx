@@ -2,7 +2,7 @@ import { isValidElement, Fragment } from 'react';
 import { BaseItemProps, ExtraProps, MetaProps } from './base-item.type';
 import { util } from '@sheinx/hooks';
 import Image from '../image';
-import classNames from 'classnames';
+import clsx from 'clsx';
 const { isFunc, isString } = util;
 
 const Meta = (props: MetaProps) => {
@@ -33,7 +33,7 @@ const Meta = (props: MetaProps) => {
     const flag = !desc;
     return (
       <div
-        className={classNames(
+        className={clsx(
           listClasses?.baseItemMetaTitle,
           flag && listClasses?.baseItemMetaCenter,
         )}
@@ -49,7 +49,7 @@ const Meta = (props: MetaProps) => {
     const flag = !title;
     return (
       <div
-        className={classNames(
+        className={clsx(
           listClasses?.baseItemMetaDesc,
           flag && listClasses?.baseItemMetaCenter,
         )}
@@ -68,11 +68,11 @@ const Meta = (props: MetaProps) => {
 
   const { className, content, title, desc } = props;
   if (!content && !title && !desc)
-    return <div className={classNames(listClasses?.baseItemMeta, className)}>{renderAvatar()}</div>;
+    return <div className={clsx(listClasses?.baseItemMeta, className)}>{renderAvatar()}</div>;
   if (!title && !desc)
     return (
       <div
-        className={classNames(
+        className={clsx(
           listClasses?.baseItemMeta,
           listClasses?.baseItemMetaIncludes,
           className,
@@ -83,7 +83,7 @@ const Meta = (props: MetaProps) => {
       </div>
     );
   return (
-    <div className={classNames(listClasses?.baseItemMeta, className)}>
+    <div className={clsx(listClasses?.baseItemMeta, className)}>
       <div className={listClasses?.baseItemMetaContainer}>
         {renderAvatar()}
         <div className={listClasses?.baseItemMetaMeta}>
@@ -116,7 +116,7 @@ const BaseItem = (props: BaseItemProps) => {
 
   if (!extra) return <Meta {...reset} className={className} />;
   return (
-    <div className={classNames(listClasses?.baseItem, className)}>
+    <div className={clsx(listClasses?.baseItem, className)}>
       <Meta {...reset} />
       <Extra extra={extra} jssStyle={props.jssStyle} />
     </div>

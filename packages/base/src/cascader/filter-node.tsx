@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { KeygenResult, MODE, FilterContext, util } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
 import { FilterNodeProps } from './filter-node.type';
@@ -53,8 +53,8 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
 
   const { filterText, highlight } = useContext(FilterContext);
   return (
-    <div className={classNames(styles.option, styles.filterOption)} onClick={handleSelect}>
-      <div className={classNames(styles.optionInner)}>
+    <div className={clsx(styles.option, styles.filterOption)} onClick={handleSelect}>
+      <div className={clsx(styles.optionInner)}>
         {data.map((item, index) => {
           const handleClick = (e: any) => {
             handleSelectItem(index, item, e);
@@ -72,7 +72,7 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
               <div
                 key='content'
                 onClick={handleClick}
-                className={classNames(
+                className={clsx(
                   styles.filterOptionItem,
                   isDisabled && styles.filterDisabledOption,
                 )}
@@ -86,7 +86,7 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
           if (index === 0) return content;
 
           return [
-            <span key='separator' className={classNames(styles.filterOptionSeparator)}>
+            <span key='separator' className={clsx(styles.filterOptionSeparator)}>
               /
             </span>,
             content,

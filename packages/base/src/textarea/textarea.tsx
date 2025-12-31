@@ -3,7 +3,7 @@ import SimpleTextarea from './simple-textarea';
 import { useInputAble, usePersistFn, useTextareaFormat, util } from '@sheinx/hooks';
 import { TextareaProps } from './textarea.type';
 import useAutoSize from './use-auto-size';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { useConfig } from '../config';
@@ -187,7 +187,7 @@ const Textarea = (props0: TextareaProps) => {
           onMouseDown={(e) => {
             e.preventDefault();
           }}
-          className={classNames(textareaClasses?.wrapperPaddingBox, textareaClasses?.footer)}
+          className={clsx(textareaClasses?.wrapperPaddingBox, textareaClasses?.footer)}
         >
           {renderFooter(inputAbleProps.value)}
         </div>
@@ -205,7 +205,7 @@ const Textarea = (props0: TextareaProps) => {
       jssStyle={jssStyle}
       {...forwardProps}
       {...formatProps}
-      className={classNames(
+      className={clsx(
         innerTitleProps.innerTitle && textareaClasses?.wrapperInnerTitle,
         props.clearable && textareaClasses?.wrapperWithClear,
         resetProps.className,

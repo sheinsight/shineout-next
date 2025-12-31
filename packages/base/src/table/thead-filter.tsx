@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import classnames from 'classnames';
+import classnames from 'clsx';
 import { KeygenResult, TableColumnFilter, useFilter, util, TableFilterData } from '@sheinx/hooks';
 import Icons from '../icons';
 import Tree from '../tree';

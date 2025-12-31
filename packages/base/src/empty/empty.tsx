@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { EmptyProps } from './empty.type';
 import Icons from '../icons';
 import { getLocale, useConfig } from '../config';
@@ -9,8 +9,8 @@ const Empty = (props: EmptyProps) => {
   const { locale, empty } = useConfig();
 
   const styles = jssStyle?.empty?.();
-  const rootClass = classNames(styles?.rootClass, styles?.empty, className);
-  const wrapperClass = classNames(styles?.wrapper);
+  const rootClass = clsx(styles?.rootClass, styles?.empty, className);
+  const wrapperClass = clsx(styles?.wrapper);
   const alt = typeof description === 'string' ? description : 'empty';
 
   const getRootProps = () => {

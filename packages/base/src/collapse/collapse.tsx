@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { CollapseProps } from './collapse.type';
 import groupContext from './group-context';
 import Icons from '../icons';
@@ -30,7 +30,7 @@ const Collapse = (props: CollapseProps) => {
     onChange: onChangeProps,
   });
 
-  const collapseRootClassName = classNames(
+  const collapseRootClassName = clsx(
     className,
     jssStyle?.collapse?.rootClass,
     jssStyle?.collapse?.wrapper,

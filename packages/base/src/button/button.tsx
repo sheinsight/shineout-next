@@ -1,5 +1,5 @@
 import { useButton } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { isValidElement } from 'react';
 import { useConfig } from '../config';
 import { ButtonClasses, ButtonProps } from './button.type';
@@ -61,7 +61,7 @@ const Button = (props: ButtonProps) => {
   const type = getType();
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
 
-  const rootClass = classNames(
+  const rootClass = clsx(
     className,
     buttonStyle?.rootClass,
     buttonStyle[type || 'default'],

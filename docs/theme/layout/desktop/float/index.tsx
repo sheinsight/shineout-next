@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import classnames from 'classnames';
+import classnames from 'clsx';
 import { Tooltip, setToken } from 'shineout';
 import { CommonTokenMap } from '@sheinx/theme';
 import { dark, compact } from './theme';

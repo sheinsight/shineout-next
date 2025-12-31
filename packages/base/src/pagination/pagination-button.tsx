@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { ButtonShape } from '@sheinx/hooks';
 import { PaginationMoreTypes } from './pagination-buttons.type';
 import { PaginationButtonProps } from './pagination-button.type';
@@ -50,7 +50,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
     } = {
       jssStyle,
       disabled,
-      className: classNames(className, paginationStyle?.buttonItem),
+      className: clsx(className, paginationStyle?.buttonItem),
       shape: shape,
       type,
       size,

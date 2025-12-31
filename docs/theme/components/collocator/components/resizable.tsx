@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import useStyle from "../style";
-import classNames from "classnames";
+import clsx from "clsx";
 
 export interface ResizableProps {
   children?: [React.ReactNode, React.ReactNode];
@@ -35,7 +35,7 @@ const Resizable = (props: ResizableProps) => {
   return (
     <div 
       ref={containerRef}
-      className={classNames(styles.container, className)}
+      className={clsx(styles.container, className)}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}

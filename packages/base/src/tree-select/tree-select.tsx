@@ -11,7 +11,7 @@ import {
   useTree,
   getDataset,
 } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TreeSelectProps, ResultItem } from './tree-select.type';
 import { TreeSelectClasses } from './tree-select.type';
 import { AbsoluteList } from '../absolute-list';
@@ -250,7 +250,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     jssStyle: props.jssStyle,
   });
 
-  const rootClass = classNames(
+  const rootClass = clsx(
     className,
     styles?.rootClass,
     styles?.wrapper,
@@ -355,7 +355,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
     const arrow = (
       <span
-        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        className={clsx(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
         onClick={handleResultClick}
       >
         {defaultIcon}
@@ -384,7 +384,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     const defaultIcon = multiple ? Icons.treeSelect.More : Icons.treeSelect.DropdownArrow;
     return (
       <span
-        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        className={clsx(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
         onClick={handleResultClick}
       >
         {defaultIcon}
@@ -448,11 +448,11 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     if (isDisabled) {
-      return classNames(styles.optionDisabled, contentClass);
+      return clsx(styles.optionDisabled, contentClass);
     }
 
-    const activeClassName = classNames(styles.optionActive, contentClass);
-    const inactiveClassName = classNames(contentClass);
+    const activeClassName = clsx(styles.optionActive, contentClass);
+    const inactiveClassName = clsx(contentClass);
 
     if (multiple) {
       return isCheck ? activeClassName : inactiveClassName;
@@ -571,7 +571,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const renderResult = () => {
     const result = (
-      <div className={classNames(styles?.result)}>
+      <div className={clsx(styles?.result)}>
         <Result
           trim={trim}
           jssStyle={jssStyle}
@@ -613,7 +613,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     return (
       <PopupProvider value={popupProviderValue}>
         <div
-          className={classNames(
+          className={clsx(
             styles?.resultWrapper,
             styles?.wrapperPaddingBox,
             styles?.wrapperInnerTitleTop,
@@ -684,7 +684,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     const tree = (
-      <div className={classNames(styles.tree, styles.treeWrapper)} style={style}>
+      <div className={clsx(styles.tree, styles.treeWrapper)} style={style}>
         <Tree
           rootStyle={rootStyle}
           jssStyle={jssStyle}
@@ -769,7 +769,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
             <AnimationList
               onRef={popupRef}
               show={open}
-              className={classNames(styles?.pickerWrapper, props.popupclassName)}
+              className={clsx(styles?.pickerWrapper, props.popupclassName)}
               display={'block'}
               type='scale-y'
               duration={'fast'}

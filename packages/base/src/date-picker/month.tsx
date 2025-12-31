@@ -1,6 +1,6 @@
 import { MonthProps } from './month.type';
 import { useMonthPick, usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 import React from 'react';
 import { useConfig } from '../config';
@@ -43,7 +43,7 @@ const Month = (props: MonthProps) => {
     return (
       <td
         dir={direction}
-        className={classNames(
+        className={clsx(
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
           isDisabled && styles?.pickerCellDisabled,
@@ -86,7 +86,7 @@ const Month = (props: MonthProps) => {
     <div
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
-      className={classNames(styles?.monthPicker, styles?.picker)}
+      className={clsx(styles?.monthPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
       <div className={styles?.pickerHeader} dir={direction}>

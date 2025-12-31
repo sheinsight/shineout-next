@@ -1,5 +1,5 @@
 import { useRender, usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useMemo, useRef } from 'react';
 import { CardGroupContext } from './card-group-context';
 
@@ -57,7 +57,7 @@ const CardGroup = (props: CardGroupProps) => {
 
   return (
     <div
-      className={classNames(props.className, classes?.rootClass, classes?.wrapper)}
+      className={clsx(props.className, classes?.rootClass, classes?.wrapper)}
       style={{
         height: props.height,
         ...props.style,

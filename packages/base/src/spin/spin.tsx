@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { SpinClasses, SpinProps } from './spin.type';
 import Spins from './spins';
 import { useConfig } from '../config';
@@ -90,14 +90,14 @@ const Spin = (props: SpinProps = {}) => {
 
   const renderTip = () => {
     return (
-      <div className={classNames(tipClassName, spinStyle.tip)} style={{ color }}>
+      <div className={clsx(tipClassName, spinStyle.tip)} style={{ color }}>
         {typeof tip === 'string' ? <span>{tip}</span> : tip}
       </div>
     );
   };
 
   const renderContent = (isRoot: boolean) => {
-    const contentClass = classNames(
+    const contentClass = clsx(
       isRoot && className,
       {
         [spinStyle.rootClass]: isRoot,
@@ -120,7 +120,7 @@ const Spin = (props: SpinProps = {}) => {
   };
   const renderContainer = () => {
     return (
-      <div className={classNames(className, spinStyle.rootClass, spinStyle.container)}>
+      <div className={clsx(className, spinStyle.rootClass, spinStyle.container)}>
         {children}
         {loading && <div className={spinStyle.loading}>{renderContent(false)}</div>}
       </div>

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import List from './pagination-size-list';
 import Jumper from './pagination-jumper';
 import Buttons from './pagination-buttons';
@@ -49,7 +49,7 @@ const Pagination = (props: PaginationProps) => {
 
   if (total < 0) return null;
 
-  const rootClasses = classNames(
+  const rootClasses = clsx(
     className,
     paginationStyle?.rootClass,
     paginationStyle?.pagination,
@@ -149,7 +149,7 @@ const Pagination = (props: PaginationProps) => {
           default:
             if (typeof section === 'function') {
               return (
-                <div key={i} className={classNames(paginationStyle?.section)}>
+                <div key={i} className={clsx(paginationStyle?.section)}>
                   <span>{section({ ...props, current, pageSize })}</span>
                 </div>
               );

@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classnames from 'clsx';
 import { config } from '@sheinx/base';
 
 interface CSSModule {

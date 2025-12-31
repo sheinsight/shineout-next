@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useFormItem, util } from '@sheinx/hooks';
 import { useTooltipStyle } from '@sheinx/shineout-style';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import ErrorTrans from './error-trans';
 import Tooltip, { TooltipProps } from '../tooltip';
 import Icons from '../icons';
@@ -92,7 +92,7 @@ const FormItem = (props: FormItemProps) => {
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         className,
         formItemClasses?.wrapper,
         {
@@ -112,7 +112,7 @@ const FormItem = (props: FormItemProps) => {
       {label !== undefined ? (
         <div
           ref={labelRef}
-          className={classNames(
+          className={clsx(
             formItemClasses?.label,
             {
               [formItemClasses?.labelLeft]: labelAlign === 'left',

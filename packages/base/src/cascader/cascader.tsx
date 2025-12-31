@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo, useContext } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import {
   util,
   usePersistFn,
@@ -210,7 +210,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const isEmpty = checkEmpty();
 
-  const rootClass = classNames(
+  const rootClass = clsx(
     className,
     styles?.rootClass,
     styles?.wrapper,
@@ -452,7 +452,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     const defaultIcon = compressed || multiple ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     const arrow = (
       <span
-        className={classNames(
+        className={clsx(
           compressed && styles.compressedIcon,
           styles.arrowIcon,
           open && !compressed && styles.arrowIconOpen,
@@ -484,7 +484,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     const defaultIcon = compressed || multiple ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     return (
       <span
-        className={classNames(
+        className={clsx(
           (compressed || multiple) && styles.compressedIcon,
           styles.arrowIcon,
           open && !compressed && styles.arrowIconOpen,
@@ -499,7 +499,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const renderResultContent = (contentProps: any) => {
     const { children } = contentProps;
     return (
-      <div {...contentProps} className={classNames(contentProps.className, styles.resultItem)}>
+      <div {...contentProps} className={clsx(contentProps.className, styles.resultItem)}>
         {children}
       </div>
     );
@@ -507,7 +507,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderResult = () => {
     const result = (
-      <div className={classNames(styles?.result)}>
+      <div className={clsx(styles?.result)}>
         <Result<DataItem, Value>
           jssStyle={jssStyle}
           size={size}
@@ -547,7 +547,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     return (
       <PopupProvider value={popupProviderValue}>
         <div
-          className={classNames(
+          className={clsx(
             styles?.resultWrapper,
             styles?.wrapperPaddingBox,
             styles?.wrapperInnerTitleTop,
@@ -630,7 +630,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     const listStyle =
       data && data.length === 0 ? { height: 'auto', minHeight: height, width: '100%' } : { height };
     return (
-      <div className={classNames(styles.listContent)} style={listStyle}>
+      <div className={clsx(styles.listContent)} style={listStyle}>
         {cascaderList}
       </div>
     );
@@ -662,7 +662,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const renderFilterList = () => {
     const listStyle = data && data.length === 0 ? { maxHeight: height } : { maxHeight: height };
     const $filterList = (
-      <div className={classNames(styles.listContent, styles.filterList)} style={listStyle}>
+      <div className={clsx(styles.listContent, styles.filterList)} style={listStyle}>
         <CascaderFilterList
           jssStyle={jssStyle}
           data={filterData!}
@@ -810,7 +810,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           <AnimationList
             onRef={popupRef}
             show={open}
-            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow, props.popupClassName)}
+            className={clsx(styles?.pickerWrapper, open && styles?.pickerWrapperShow, props.popupClassName)}
             display={'block'}
             type='scale-y'
             duration={'fast'}

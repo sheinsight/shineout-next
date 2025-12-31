@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { MarkdownWrapper } from '../markdown/index';
 import { useStyles } from '../markdown/style';
-import classNames from 'classnames';
+import clsx from 'clsx';
 //shineout replace variable
 import changelogs from '../../chunk/shineout/changelog';
 
@@ -89,7 +89,7 @@ const Changelog = () => {
     });
 
   return (
-    <div className={classNames(styles.wrapper)}>
+    <div className={clsx(styles.wrapper)}>
       <div onDoubleClick={() => setShowSubVersion(!showSubVersion)} style={{ userSelect: 'none', cursor: 'pointer' }}>
         <MarkdownWrapper>
           {'`````\n开发指南\n# 更新日志 \n这里会有详细的发版记录，版本号严格遵循 Semver 规范`````'}

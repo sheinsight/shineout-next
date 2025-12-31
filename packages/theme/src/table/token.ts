@@ -29,47 +29,30 @@ const tableTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 tableRules 强关联，非 tableRules 规则内的 token 需手动增加或删减。
  */
-const tableTokenValue = {};
+const tableTokenValue = { font: { size: '' } };
 
 const tableTokenExtraValue = {
-  font: {
-    size: 'Font-14',
-  },
+  font: { size: 'Font-14' },
   cell: {
-    padding: {
-      x: 'Spacing-12',
-      y: 'Spacing-8',
-    },
+    padding: { x: 'Spacing-12', y: 'Spacing-8' },
     border: { color: 'Neutral-border-1' },
     font: { size: 'Font-14', weight: 'Weight-regular' },
   },
   small: {
-    thead: {
-      font: { size: 'Font-14', weight: 'Weight-medium' },
-    },
+    thead: { font: { size: 'Font-14', weight: 'Weight-medium' } },
     cell: {
-      padding: {
-        x: 'Spacing-8',
-        y: 'Spacing-4',
-      },
+      padding: { x: 'Spacing-8', y: 'Spacing-4' },
       font: { size: 'Font-14', weight: 'Weight-regular' },
     },
   },
   large: {
-    thead: {
-      font: { size: 'Font-14', weight: 'Weight-medium' },
-    },
+    thead: { font: { size: 'Font-14', weight: 'Weight-medium' } },
     cell: {
-      padding: {
-        x: 'Spacing-16',
-        y: 'Spacing-16',
-      },
+      padding: { x: 'Spacing-16', y: 'Spacing-16' },
       font: { size: 'Font-14', weight: 'Weight-regular' },
     },
   },
-  fixed: {
-    shadow: 'rgba(2,11,24,.1)',
-  },
+  fixed: { shadow: 'rgba(2,11,24,.1)' },
   thead: {
     background: { color: 'Neutral-fill-2' },
     font: { size: 'Font-14', weight: 'Weight-medium', color: 'Neutral-text-5' },
@@ -89,11 +72,7 @@ const tableTokenExtraValue = {
     icon: {
       size: 'Size-7',
       color: 'Neutral-text-2',
-      hover: {
-        background: {
-          color: 'Neutral-fill-3',
-        },
-      },
+      hover: { background: { color: 'Neutral-fill-3' } },
     },
     background: { color: 'Neutral-fill-2' },
   },
@@ -103,16 +82,9 @@ const tableTokenExtraValue = {
     active: { color: 'Brand-6' },
   },
   filter: {
-    header: {
-      padding: {x: 'Spacing-12', y: 'Spacing-12' },
-    },
-    body: {
-      padding: { x: 'Spacing-12', y: 'Spacing-8' }
-    },
-    footer: {
-      padding: { x: 'Spacing-12', y: 'Spacing-8' },
-      border: { color: 'Neutral-border-1' },
-    },
+    header: { padding: { x: 'Spacing-12', y: 'Spacing-12' } },
+    body: { padding: { x: 'Spacing-12', y: 'Spacing-8' } },
+    footer: { padding: { x: 'Spacing-12', y: 'Spacing-8' }, border: { color: 'Neutral-border-1' } },
     input: {
       margin: { bottom: 'Spacing-8' },
       icon: { size: 'Font-14', color: 'Neutral-text-4', margin: { right: 'Spacing-8' } },
@@ -125,17 +97,9 @@ const tableTokenExtraValue = {
       size: 'Font-14',
     },
   },
-  resize: {
-    color: 'Brand-7',
-  },
-  selection: {
-    border: { color: 'Brand-6' },
-  },
-  pagination: {
-    margin: {
-      y: 'Spacing-12',
-    },
-  },
+  resize: { color: 'Brand-7' },
+  selection: { border: { color: 'Brand-6' } },
+  pagination: { margin: { y: 'Spacing-12' } },
 };
 
 module.exports = {

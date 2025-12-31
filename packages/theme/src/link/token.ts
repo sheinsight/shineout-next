@@ -16,10 +16,9 @@ const linkTokenDescription = { link: '链接组件的' };
  * 注意，该映射表的内容不与 linkRules 强关联，非 linkRules 规则内的 token 需手动增加或删减。
  */
 const linkTokenValue = {
-  default: { font: { size: 'Font-14' } },
+  default: { font: { size: 'Font-14', color: '' } },
   small: { font: { size: 'Font-12' } },
   large: { font: { size: 'Font-16' } },
-  font: { color: 'Neutral-text-5' },
   primary: {
     font: { color: 'Brand-6' },
     disabled: { font: { color: 'Brand-3' } },

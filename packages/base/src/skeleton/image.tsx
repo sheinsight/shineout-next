@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { SkeletonClasses, SkeletonImageProps } from './skeleton.type';
 
 interface ImageProps extends SkeletonImageProps {
@@ -6,7 +6,7 @@ interface ImageProps extends SkeletonImageProps {
 }
 
 export default function Image({ classes, className, size, position, shape = 'circle', style }: ImageProps): JSX.Element {
-  const cls = classNames(classes.image, {
+  const cls = clsx(classes.image, {
     [classes.imageLeft]: position !== 'right',
     [classes.imageRight]: position === 'right',
     [classes.imageCircle]: shape === 'circle',

@@ -43,23 +43,10 @@ const uploadTokenExtraValue = {
     },
     font: { size: 'Font-14', color: 'Neutral-text-5' },
     border: { radius: 'Radius-default' },
-    error: {
-      font: { color: 'Danger-6' },
-      icon: { color: 'Danger-6' },
-    },
-    success: {
-      icon: { color: 'Success-6' },
-    },
-    deleted: {
-      font: {
-        color: 'Neutral-text-3',
-      },
-    },
-    uploading: {
-      icon: {
-        color: 'Brand-6',
-      },
-    },
+    error: { font: { color: 'Danger-6' }, icon: { color: 'Danger-6' } },
+    success: { icon: { color: 'Success-6' } },
+    deleted: { font: { color: 'Neutral-text-3' } },
+    uploading: { icon: { color: 'Brand-6' } },
   },
   image: {
     border: { radius: 'Radius-default' },
@@ -67,46 +54,25 @@ const uploadTokenExtraValue = {
       border: { color: 'Neutral-border-2' },
       background: { color: 'Neutral-fill-1' },
       font: { color: 'Neutral-text-4' },
-      hover: {
-        border: { color: 'Brand-6' },
-        font: { color: 'Brand-6' },
-      },
-      active: {
-        border: { color: 'Brand-7' },
-        font: { color: 'Brand-7' },
-      },
-      error: {
-        border: { color: 'Danger-6' },
-        font: { color: 'Danger-6' },
-      },
+      hover: { border: { color: 'Brand-6' }, font: { color: 'Brand-6' } },
+      active: { border: { color: 'Brand-7' }, font: { color: 'Brand-7' } },
+      error: { border: { color: 'Danger-6' }, font: { color: 'Danger-6' } },
       disabled: {
         border: { color: 'Neutral-border-2' },
         background: { color: 'Neutral-fill-2' },
         font: { color: 'Neutral-text-2' },
       },
-      icon: {
-        color: 'Neutral-text-3',
-      }
+      icon: { color: 'Neutral-text-3' },
     },
     result: {
       border: { color: 'Neutral-border-1' },
-      btn: {
-        size: 'Size-7',
-        close: { color: 'Danger-6' },
-        recover: { color: 'Neutral-text-4' },
-      },
+      btn: { size: 'Size-7', close: { color: 'Danger-6' }, recover: { color: 'Neutral-text-4' } },
       mask: {
         background: { color: 'Mask-fill-1' },
         icon: { size: 'Size-8', color: 'Neutral-text-1' },
       },
-      error: {
-        border: { color: 'Danger-6' },
-        font: { color: 'Danger-6' },
-      },
-      tip: {
-        background: { color: 'Neutral-fill-1' },
-        font: { size: 'Font-12' },
-      },
+      error: { border: { color: 'Danger-6' }, font: { color: 'Danger-6' } },
+      tip: { background: { color: 'Neutral-fill-1' }, font: { size: 'Font-12' } },
     },
   },
 };

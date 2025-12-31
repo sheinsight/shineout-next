@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import { Carousel, TYPE } from 'shineout';
-import classnames from 'classnames';
+import classnames from 'clsx';
 
 // require('./style-2-custom-indicator.css');
 

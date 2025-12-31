@@ -1,5 +1,5 @@
 import { getDataset, useDatePickerFormat, useInputAble, usePersistFn, usePopup, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { AbsoluteList } from '../absolute-list';
 import React, { useEffect, useRef } from 'react';
 import { DatePickerProps, DatePickerValueType } from './date-picker.type';
@@ -208,7 +208,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   const renderResult = () => {
     const result = (
       <div
-        className={classNames(
+        className={clsx(
           styles?.result,
           props.align === 'right' && styles?.resultAlignRight,
           props.align === 'center' && styles?.resultAlignCenter,
@@ -238,7 +238,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     const canFocus = !(props.inputable || disabledStatus === 'all');
     return (
       <div
-        className={classNames(
+        className={clsx(
           styles?.resultWrapper,
           styles?.wrapperPaddingBox,
           styles?.wrapperInnerTitleTop,
@@ -268,7 +268,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
       >
         {renderInnerTitle(result)}
         {disabledStatus !== 'all' && !isEmpty && clearable && (
-          <div className={classNames(styles?.clear, styles?.icon)} onClick={func.handleClear}>
+          <div className={clsx(styles?.clear, styles?.icon)} onClick={func.handleClear}>
             {Icons.datepicker.Close}
           </div>
         )}
@@ -289,7 +289,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     <div
       {...util.getDataAttribute({ ['input-border']: 'true', type })}
       {...getDataset(props)}
-      className={classNames(
+      className={clsx(
         props.className,
         styles?.rootClass,
         styles?.wrapper,
@@ -321,7 +321,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
       >
         <AnimationList
           onRef={popupRef}
-          className={classNames(styles?.pickerWrapper)}
+          className={clsx(styles?.pickerWrapper)}
           display={'block'}
           type={'scale-y'}
           duration={'fast'}

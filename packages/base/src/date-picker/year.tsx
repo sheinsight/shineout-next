@@ -1,6 +1,6 @@
 import { YearProps } from './year.type';
 import { usePersistFn, useYearPick } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 import React from 'react';
 import PickerTitle from './pickerTitle';
@@ -43,7 +43,7 @@ const Year = (props: YearProps) => {
     return (
       <td
         dir={config.direction}
-        className={classNames(
+        className={clsx(
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
           (index === 0 || index === 11) && styles?.pickerCellBound,
@@ -87,7 +87,7 @@ const Year = (props: YearProps) => {
     <div
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
-      className={classNames(styles?.yearPicker, styles?.picker)}
+      className={clsx(styles?.yearPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
       <div className={styles?.pickerHeader} dir={config.direction}>

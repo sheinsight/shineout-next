@@ -1,5 +1,5 @@
 import React, { Children, cloneElement } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { getGrid } from './util';
 import { GridProps } from './grid.type';
 
@@ -18,7 +18,7 @@ const Grid = (props: GridProps) => {
 
   const gridClasses = jssStyle?.grid?.();
 
-  const className = classNames(
+  const className = clsx(
     props.className,
     gridClasses?.rootClass,
     gridClasses?.wrapper,

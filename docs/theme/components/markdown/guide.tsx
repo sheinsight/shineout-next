@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import store from '../../store';
 import useStyles from '../style';
 import { useSnapshot } from 'valtio';
@@ -50,7 +50,7 @@ const Guide = (props: GuideProps) => {
   const renderIcon = (icon: string) => {
     if (icon === 'success') {
       return (
-        <div className={classNames(classes.guideIcon, classes.guideIconSuccess)}>
+        <div className={clsx(classes.guideIcon, classes.guideIconSuccess)}>
           <svg viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'>
             <g clipPath='url(#clip0_1810_1612)'>
               <path d='M6.99998 13.4167C3.45615 13.4167 0.583313 10.5439 0.583313 7.00008C0.583313 3.45625 3.45615 0.583414 6.99998 0.583414C10.5438 0.583414 13.4166 3.45625 13.4166 7.00008C13.4166 10.5439 10.5438 13.4167 6.99998 13.4167ZM3.70015 8.06666L4.93676 9.30328C5.39296 9.75948 6.13212 9.75948 6.58833 9.30328L10.2998 5.59179C10.5275 5.3641 10.5275 4.99452 10.2998 4.76683C10.0721 4.53914 9.70254 4.53914 9.47485 4.76683L6.17585 8.06584C5.94775 8.29394 5.57734 8.29394 5.34924 8.06584L4.52511 7.24171C4.29742 7.01402 3.92784 7.01402 3.70015 7.24171C3.47246 7.46939 3.47246 7.83898 3.70015 8.06666Z' />
@@ -67,7 +67,7 @@ const Guide = (props: GuideProps) => {
 
     if (icon === 'warning') {
       return (
-        <div className={classNames(classes.guideIcon, classes.guideIconWarning)}>
+        <div className={clsx(classes.guideIcon, classes.guideIconWarning)}>
           {icons.WarningCircleFill}
         </div>
       );
@@ -81,7 +81,7 @@ const Guide = (props: GuideProps) => {
           return (
             <div className='guide' key={index}>
               <h2
-                className={classNames('title', 'anchor-title', index === 0 ? 'first' : '')}
+                className={clsx('title', 'anchor-title', index === 0 ? 'first' : '')}
                 id={`guide-${guide.title}`}
               >
                 {guide.title}
@@ -94,7 +94,7 @@ const Guide = (props: GuideProps) => {
                         return (
                           <p
                             key={paragraph_idx}
-                            className={classNames(
+                            className={clsx(
                               classes.paragraph,
                               idx === 0 && classes.firstParagraph,
                             )}

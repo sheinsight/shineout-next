@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TabProps } from './tab.type';
 import { TabsClasses } from './tabs.type';
 import { ButtonClasses } from '../button/button.type';
@@ -29,7 +29,7 @@ const Tab = (props: TabProps, ref: any) => {
   const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
-  const tabClass = classNames(tabsStyle.tab, {});
+  const tabClass = clsx(tabsStyle.tab, {});
 
   const isActive = active === id;
 

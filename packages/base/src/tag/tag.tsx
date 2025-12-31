@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 import { TagClasses, TagProps } from './tag.type';
 import useTag from './use-tag';
@@ -54,7 +54,7 @@ const Tag = (props: TagProps) => {
   const colorSet = type || color || 'default';
   const tagStyle = jssStyle?.tag?.() || ({} as TagClasses);
 
-  const tagClass = classNames(className, tagStyle.rootClass, tagStyle.tag, {
+  const tagClass = clsx(className, tagStyle.rootClass, tagStyle.tag, {
     [tagStyle.small]: size === 'small',
     [tagStyle.large]: size === 'large',
     [tagStyle.rounded]: shape === 'rounded',
@@ -80,14 +80,14 @@ const Tag = (props: TagProps) => {
   const renderChildren = () => {
     if (onClose) {
       return (
-        <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
+        <div className={clsx(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
           {util.wrapSpan(children)}
         </div>
       );
     }
 
     return (
-      <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
+      <div className={clsx(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
         {util.wrapSpan(children)}
       </div>
     );
@@ -98,7 +98,7 @@ const Tag = (props: TagProps) => {
       <TagInput
         size={size}
         value={value}
-        className={classNames(tagStyle.input)}
+        className={clsx(tagStyle.input)}
         jssStyle={jssStyle}
         onKeyUp={onKeyUp}
         onBlur={handleBlur}

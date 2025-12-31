@@ -1,6 +1,6 @@
 import { QuarterProps } from './quarter.type';
 import { usePersistFn, useQuarterPick } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 import React from 'react';
 import PickerTitle from './pickerTitle';
@@ -40,7 +40,7 @@ const Quarter = (props: QuarterProps) => {
     return (
       <td
         dir={config.direction}
-        className={classNames(
+        className={clsx(
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
           isDisabled && styles?.pickerCellDisabled,
@@ -83,7 +83,7 @@ const Quarter = (props: QuarterProps) => {
     <div
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
-      className={classNames(styles?.quarterPicker, styles?.picker)}
+      className={clsx(styles?.quarterPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
       <div className={styles?.pickerHeader} dir={config.direction}>

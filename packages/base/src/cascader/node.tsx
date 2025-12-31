@@ -1,5 +1,5 @@
 import { useState, useRef, useContext } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { KeygenResult, util, FilterContext } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
 import { CascaderNodeProps } from './node.type';
@@ -41,7 +41,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
   const commonStyles = jssStyle?.common?.() as CommonClasses;
-  const rootClass = classNames(
+  const rootClass = clsx(
     styles.option,
     active && styles.activeOption,
     isDisabled && mode !== 4 && styles.optionDisabled,
@@ -128,13 +128,13 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   const renderIcon = () => {
     if (loading && children === undefined) {
       return (
-        <span className={classNames(styles.optionIcon)} style={{ paddingTop: 2 }}>
+        <span className={clsx(styles.optionIcon)} style={{ paddingTop: 2 }}>
           <Spin jssStyle={jssStyle} size={10} name='ring' ignoreConfig />
         </span>
       );
     }
     if (hasChildren || uncertainChildren) {
-      return <span className={classNames(styles.optionIcon)}>{Icons.cascader.CollapseArrow}</span>;
+      return <span className={clsx(styles.optionIcon)}>{Icons.cascader.CollapseArrow}</span>;
     }
 
     return null;
@@ -144,7 +144,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
   return (
     <div className={rootClass} {...events}>
-      <div className={classNames(styles.optionInner)} role="button">
+      <div className={clsx(styles.optionInner)} role="button">
         {multiple && !(shouldFinal && hasChildren) && (
           <Checkbox
             // @ts-ignore

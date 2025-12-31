@@ -1,5 +1,5 @@
 import { getDataset, useInput, useKeyEvent, usePersistFn, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { KeyboardEvent, useContext } from 'react';
 import { SimpleInputProps } from './input.type';
 import Icons from '../icons';
@@ -46,7 +46,7 @@ const Input = (props: SimpleInputProps) => {
   });
 
   const inputProps = getInputProps({
-    className: classNames(inputStyle?.input),
+    className: clsx(inputStyle?.input),
     onKeyUp,
   });
 
@@ -58,7 +58,7 @@ const Input = (props: SimpleInputProps) => {
     inputEl = renderInput(inputEl);
   }
 
-  const rootClass = classNames(
+  const rootClass = clsx(
     className,
     inputStyle?.rootClass,
     inputStyle?.wrapper,
@@ -85,7 +85,7 @@ const Input = (props: SimpleInputProps) => {
       })}
     >
       <div
-        className={classNames(
+        className={clsx(
           inputStyle?.wrapperInnerTitleTop,
           inputStyle?.wrapperInnerTitleBottom,
           inputStyle?.wrapperPaddingBox,

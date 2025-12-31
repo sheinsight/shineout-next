@@ -1,5 +1,5 @@
 import { useRoutes, Navigate } from 'react-router-dom';
-import classnames from 'classnames';
+import classnames from 'clsx';
 import { dispatch } from '../../store';
 import useStyles from './style';
 import { useEffect, useRef } from 'react';

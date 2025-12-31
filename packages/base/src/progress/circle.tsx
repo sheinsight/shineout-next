@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgressProps } from './progress.type';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 import analyzeColor from './analyzeColor';
 
@@ -31,7 +31,7 @@ const Circle = (props: ProgressProps) => {
   const width = value === 0 && strokeLinecap === 'round' ? 0 : strokeWidth;
   const objColor = color && typeof color === 'object';
 
-  const mc = classNames(
+  const mc = clsx(
     props.className,
     progressClasses?.rootClass,
     progressClasses?.circle,

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { renderItemProps, SpinClasses, SpinProps } from './spin.type';
 import BaseSpin from './base';
 import { formatSize } from './utils';
@@ -8,7 +8,7 @@ const renderItem = (props: renderItemProps) => {
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
   const style = Object.assign({ backgroundColor: color }, itemStyle);
   return (
-    <div key={index} className={classNames(spinStyles?.item)}>
+    <div key={index} className={clsx(spinStyles?.item)}>
       <div style={style}></div>
     </div>
   );
@@ -19,7 +19,7 @@ const renderSvgItem = (props: renderItemProps) => {
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   return (
-    <div key={index} className={classNames(spinStyles.item, itemClass)}>
+    <div key={index} className={clsx(spinStyles.item, itemClass)}>
       <svg width={itemSize} height={itemSize} viewBox='0 0 100 100'>
         <circle fill={color} cx={50} cy={50} r={50} />
       </svg>
@@ -96,7 +96,7 @@ const FadingCircle = (props: SpinProps) => {
       count={12}
       uniqueClassName={spinStyles.fadingCircle}
       itemSize={itemSize}
-      itemClass={classNames(spinStyles.fade)}
+      itemClass={clsx(spinStyles.fade)}
       render={renderSvgItem}
     />
   );
@@ -114,7 +114,7 @@ const ScaleCircle = (props: SpinProps) => {
       count={12}
       uniqueClassName={spinStyles.fadingCircle}
       itemSize={itemSize}
-      itemClass={classNames(spinStyles.scaleCircle)}
+      itemClass={clsx(spinStyles.scaleCircle)}
       render={renderSvgItem}
     />
   );

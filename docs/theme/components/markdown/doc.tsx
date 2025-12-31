@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import classnames from 'classnames';
+import classnames from 'clsx';
 import Example from '../example';
 import store, { dispatch } from '../../store';
 import { useLocation } from 'react-router-dom';

@@ -31,36 +31,19 @@ const formTokenValue = {};
 const formTokenExtraValue = {
   item: {
     font: { size: 'Font-14', color: 'Neutral-text-5' },
-    margin: {
-      y: { end: 'Spacing-12' },
-      x: { end: 'Spacing-16' },
-    },
+    margin: { y: { end: 'Spacing-12' }, x: { end: 'Spacing-16' } },
     label: {
       width: '140px',
       padding: { y: 'Spacing-5' },
       margin: { x: { end: 'Spacing-8' } },
-      top: {
-        padding: { y: 'Spacing-4' },
-      },
+      top: { padding: { y: 'Spacing-4' } },
       font: { weight: 'Weight-regular', color: 'Neutral-text-5' },
     },
-    danger: {
-      font: {
-        size: 'Font-12',
-        color: 'Danger-6',
-        weight: 'Weight-regular',
-      },
-    },
+    danger: { font: { size: 'Font-12', color: 'Danger-6', weight: 'Weight-regular' } },
     tip: {
       min: { height: 'Size-10' },
-      font: {
-        size: 'Font-12',
-        color: 'Neutral-text-3',
-        weight: 'Weight-regular',
-      },
-      margin: {
-        top: 'Spacing-0',
-      },
+      font: { size: 'Font-12', color: 'Neutral-text-3', weight: 'Weight-regular' },
+      margin: { top: 'Spacing-0' },
     },
   },
 };

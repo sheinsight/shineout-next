@@ -1,5 +1,5 @@
 import { useCheck, useInputAble, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { useContext } from 'react';
 import { SwitchProps } from './switch.type';
 import { useConfig } from '../config';
@@ -41,7 +41,7 @@ const Switch = (props0: SwitchProps) => {
 
   const [checkedContent, unCheckedContent] = content || [];
 
-  const rootClassName = classNames(
+  const rootClassName = clsx(
     className,
     switchClasses?.rootClass,
     switchClasses?.wrapper,

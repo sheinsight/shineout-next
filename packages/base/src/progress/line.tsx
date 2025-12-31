@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgressProps } from './progress.type';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import analyzeColor from './analyzeColor';
 import Popup from './line-popup';
 import Icons from '../icons';
@@ -17,7 +17,7 @@ const Line = (props: ProgressProps) => {
 
   const iconStyle = { width: iconSize, height: iconSize };
 
-  const mc = classNames(
+  const mc = clsx(
     props.className,
     progressClasses?.rootClass,
     progressClasses?.line,
@@ -57,7 +57,7 @@ const Line = (props: ProgressProps) => {
   }
 
   const children = props.children ? (
-    <div className={classNames(progressClasses?.content)}>{props.children}</div>
+    <div className={clsx(progressClasses?.content)}>{props.children}</div>
   ) : null;
 
   return (

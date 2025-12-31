@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TagClasses, TagInputProps } from './tag.type';
 import Input from '../input/simple-input';
 
@@ -48,7 +48,7 @@ const TagInput = (props: TagInputProps) => {
       size={size}
       style={style}
       inputRef={inputRef}
-      className={classNames(tagStyle.input, {
+      className={clsx(tagStyle.input, {
         [tagStyle.small]: size === 'small',
         [tagStyle.large]: size === 'large',
       })}

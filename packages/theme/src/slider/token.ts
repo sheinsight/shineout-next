@@ -23,34 +23,22 @@ const sliderTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 sliderRules 强关联，非 sliderRules 规则内的 token 需手动增加或删减。
  */
-const sliderTokenValue = {};
+const sliderTokenValue = { font: { size: '' } };
 
 const sliderTokenExtraValue = {
-  font: {
-    size: 'Font-12',
-  },
+  font: { size: 'Font-12' },
   track: {
     size: 'Size-2',
     background: { color: 'Neutral-fill-2' },
-    active: {
-      background: { color: 'Brand-6' },
-    },
-    disabled: {
-      background: { color: 'Brand-3' },
-    },
+    active: { background: { color: 'Brand-6' } },
+    disabled: { background: { color: 'Brand-3' } },
   },
   indicator: {
     size: 'Size-6',
     background: { color: 'Neutral-fill-1' },
     border: { color: 'Brand-6', size: 'Border-2' },
-    active: {
-      background: { color: 'Brand-6' },
-      shadow: 'Shadow-1',
-    },
-    disabled: {
-      border: { color: 'Brand-3' },
-      background: { color: 'Neutral-fill-1' },
-    },
+    active: { background: { color: 'Brand-6' }, shadow: 'Shadow-1' },
+    disabled: { border: { color: 'Brand-3' }, background: { color: 'Neutral-fill-1' } },
   },
   value: {
     background: { color: 'Neutral-fill-1' },
@@ -58,24 +46,13 @@ const sliderTokenExtraValue = {
       background: { color: 'Neutral-fill-9' },
       font: { color: 'Neutral-text-1' },
       radius: 'Radius-lesser',
-      padding: {
-        x: 'Spacing-8',
-        y: 'Spacing-3',
-      },
+      padding: { x: 'Spacing-8', y: 'Spacing-3' },
     },
   },
   scale: {
-    line: {
-      size: 'Size-3',
-      background: { color: 'Neutral-border-1' },
-    },
-    margin: {
-      y: 'Spacing-4',
-    },
-    font: {
-      color: 'Neutral-text-4',
-      size: 'Font-12',
-    },
+    line: { size: 'Size-3', background: { color: 'Neutral-border-1' } },
+    margin: { y: 'Spacing-4' },
+    font: { color: 'Neutral-text-4', size: 'Font-12' },
   },
 };
 

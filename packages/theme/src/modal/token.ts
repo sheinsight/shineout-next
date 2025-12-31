@@ -34,12 +34,7 @@ const modalTokenDescription = {
 const modalTokenValue = { font: { size: 'Font-14' } };
 
 const modalTokenExtraValue = {
-  mask: {
-    background: 'rgba(2, 11, 24, 0.3)',
-    light: {
-      background: 'rgba(2, 11, 24, 0.01)',
-    },
-  },
+  mask: { background: 'rgba(2, 11, 24, 0.3)', light: { background: 'rgba(2, 11, 24, 0.01)' } },
   panel: {
     padding: { y: 'Spacing-24', x: 'Spacing-24' },
     background: 'Neutral-fill-1',
@@ -60,27 +55,15 @@ const modalTokenExtraValue = {
     },
     font: { size: 'Font-16', weight: 'Weight-medium', color: 'Neutral-text-5' },
   },
-  body: {
-    font: {
-      color: 'Neutral-text-5',
-      weight: 'Weight-regular',
-      size: 'Font-14',
-    },
-  },
+  body: { font: { color: 'Neutral-text-5', weight: 'Weight-regular', size: 'Font-14' } },
   drawer: {
     title: {
       padding: { y: 'Spacing-12', x: 'Spacing-16' },
       background: { color: 'Neutral-fill-2' },
     },
-    body: {
-      padding: { y: 'Spacing-16', x: 'Spacing-16' },
-    },
-    footer: {
-      padding: { y: 'Spacing-16', x: 'Spacing-16' },
-    },
-    close: {
-      background: { color: 'Neutral-fill-3' },
-    },
+    body: { padding: { y: 'Spacing-16', x: 'Spacing-16' } },
+    footer: { padding: { y: 'Spacing-16', x: 'Spacing-16' } },
+    close: { background: { color: 'Neutral-fill-3' } },
   },
 };
 

@@ -40,14 +40,22 @@ const treeTokenValue = {
   content: {
     background: { color: '' },
     font: { color: '' },
-    hover: { background: { color: 'Neutral-fill-2' }, font: { color: 'Neutral-text-5' } },
+    border: { radius: 'Radius-lesser' },
+    hover: {
+      background: { color: 'Neutral-fill-2' },
+      font: { color: 'Neutral-text-5' },
+      border: { radius: '' },
+    },
     active: {
       background: { color: 'Brand-1' },
       font: { color: 'Brand-6' },
       border: { radius: 'Radius-2' },
     },
-    disabled: { background: { color: 'Transprent' }, font: { color: 'Neutral-text-5' } },
-    border: { radius: 'Radius-lesser' },
+    disabled: {
+      background: { color: 'Transprent' },
+      font: { color: 'Neutral-text-5' },
+      border: { radius: '' },
+    },
   },
   drag: { border: { color: 'Brand-6' }, background: { color: 'Brand-1' } },
   nearly: { margin: '', small: { margin: '' }, large: { margin: '' } },
@@ -56,7 +64,7 @@ const treeTokenValue = {
 const treeTokenExtraValue = {
   text: { padding: { y: 'Spacing-2', x: 'Spacing-4' } },
   checkbox: { margin: { x: 'Spacing-8' } },
-  icon: { size: 'Font-14' }
+  icon: { size: 'Font-14' },
 };
 
 module.exports = {

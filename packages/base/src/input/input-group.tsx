@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Children, cloneElement, useRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { InputGroupProps } from './input-group.type';
 import useWithFormConfig from '../common/use-with-form-config';
 import { util } from '@sheinx/hooks';
@@ -48,7 +48,7 @@ export default (props: InputGroupProps) => {
 
   const { children, className, width, style, seperate, separate, innerTitle, placeTitle } = props;
   const shouldSeparate = separate ?? seperate;
-  const rootClass = classNames(
+  const rootClass = clsx(
     className,
     inputStyle?.group,
     shouldSeparate && inputStyle?.groupSeparate,

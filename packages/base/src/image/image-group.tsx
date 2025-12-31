@@ -4,7 +4,7 @@ import { ImageClasses } from './image.type';
 import { ImageGroupProps } from './image-group.type';
 import { Image, ImageProps } from './image.type';
 import showGallery from './image-event';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Icons from '../icons';
 
 const ImageGroup = (props: ImageGroupProps) => {
@@ -24,7 +24,7 @@ const ImageGroup = (props: ImageGroupProps) => {
   const targetSet = pile ? '_modal' : target;
   const shouldPreview = targetSet === '_modal';
 
-  const groupClass = classNames(imageClasses?.group, className, {
+  const groupClass = clsx(imageClasses?.group, className, {
     [imageClasses?.groupPile]: pile,
   });
 
@@ -44,7 +44,7 @@ const ImageGroup = (props: ImageGroupProps) => {
   // 渲染图片总数角标
   const renderGroupCount = () => {
     return (
-      <div className={classNames(imageClasses?.groupCount)}>
+      <div className={clsx(imageClasses?.groupCount)}>
         {Icons.image.Pics}
         <span>{Children.count(children)}</span>
       </div>
@@ -59,7 +59,7 @@ const ImageGroup = (props: ImageGroupProps) => {
     if (index > 2) return null;
 
     const pileProps = getPileProps(Child, index, {
-      className: classNames(imageClasses?.groupPileItem),
+      className: clsx(imageClasses?.groupPileItem),
     });
     return <div key={index} {...pileProps}></div>;
   };

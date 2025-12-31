@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { TimeProps } from './time.type';
 import { usePersistFn, useResize, useTimePick } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Link from '../link';
 import { getLocale, useConfig } from '../config';
 import PickerTitle from './pickerTitle';
@@ -96,7 +96,7 @@ const TimeScroll = (props: {
               onClick={() => {
                 changeToIndex(index);
               }}
-              className={classNames(
+              className={clsx(
                 styles?.timeItem,
                 index === currentIndex && styles?.timeItemActive,
                 item.disabled && styles?.timeItemDisabled,
@@ -181,7 +181,7 @@ const Time = (props: TimeProps) => {
     <div
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
-      className={classNames(styles?.timePicker, styles?.picker)}
+      className={clsx(styles?.timePicker, styles?.picker)}
       dir={direction}
     >
       {props.showTitle && <PickerTitle position={props.position} jssStyle={props.jssStyle} />}

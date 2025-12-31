@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 // import { util } from '@sheinx/hooks';
 import { KeygenResult } from '@sheinx/hooks';
 import TreeNode from './tree-node';
@@ -54,7 +54,7 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
   } = props;
 
   const listClass = jssStyle?.tree() || ({} as TreeClasses);
-  const rootClass = classNames(className || listClass.children, childrenClassName);
+  const rootClass = clsx(className || listClass.children, childrenClassName);
 
   const getKey = (data: DataItem, index: number) => {
     if (typeof keygen === 'function') return keygen(data, id as string);

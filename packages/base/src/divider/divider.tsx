@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { DividerProps } from './divider.type';
 
 const Divider = (props: DividerProps) => {
@@ -13,7 +13,7 @@ const Divider = (props: DividerProps) => {
   } = props;
   const styles = jssStyle?.divider?.();
   const showText = mode === 'horizontal' && children;
-  const mc = classNames(
+  const mc = clsx(
     className,
     styles?.rootClass,
     styles?.wrapper,

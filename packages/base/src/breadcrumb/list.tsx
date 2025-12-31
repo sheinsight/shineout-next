@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
 import { usePopup } from '@sheinx/hooks';
@@ -28,7 +28,7 @@ const List = (props: ListProps) => {
     return arr.map((item, index) => {
       return (
         <div key={index} className={classes?.itemWrapper}>
-          <div className={classNames(classes?.dropdownItem)} onClick={closePop}>
+          <div className={clsx(classes?.dropdownItem)} onClick={closePop}>
             {props.renderItem(item)}
           </div>
         </div>
@@ -40,7 +40,7 @@ const List = (props: ListProps) => {
   return (
     <div ref={targetRef} {...targetProps} className={classes?.itemWithDrop}>
       {props.renderItem(first)}
-      <div className={classNames(classes?.down, open && classes?.downOpen)}>{Icons.breadcrumb.DropdownArrow}</div>
+      <div className={clsx(classes?.down, open && classes?.downOpen)}>{Icons.breadcrumb.DropdownArrow}</div>
       <AbsoluteList
         position={position}
         focus={open}
@@ -51,7 +51,7 @@ const List = (props: ListProps) => {
         adjust={true}
       >
         <AnimationList
-          className={classNames(classes?.dropdown)}
+          className={clsx(classes?.dropdown)}
           type={'fade'}
           duration={'fast'}
           show={open}

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { PaginationSizeListProps } from './pagination-size-list.type';
 import Select from '../select';
 
@@ -16,7 +16,7 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
     onChange,
   } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sizeList);
+  const rootClasses = clsx(paginationStyle?.section, paginationStyle?.sizeList);
 
   const handleChange = (pageSize: number) => {
     const start = (current - 1) * props.pageSize + 1;

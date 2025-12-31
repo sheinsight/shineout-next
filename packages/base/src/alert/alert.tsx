@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { AlertClasses, AlertProps } from './alert.type';
 import Icons from '../icons';
 import AlertIcon from './alert-icon';
@@ -44,7 +44,7 @@ const Alert = (props: AlertProps) => {
   const type = getType();
 
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
-  const rootClass = classNames(className, alertStyle.rootClass, alertStyle.alert, {
+  const rootClass = clsx(className, alertStyle.rootClass, alertStyle.alert, {
     [alertStyle[type]]: true,
     [alertStyle.withTitle]: title,
     [alertStyle.pending]: dismiss === PENDING,
@@ -94,7 +94,7 @@ const Alert = (props: AlertProps) => {
   };
 
   const renderTitle = () => {
-    return <div className={classNames(alertStyle.title, props.titleClassName)} style={titleStyle}>{title}</div>;
+    return <div className={clsx(alertStyle.title, props.titleClassName)} style={titleStyle}>{title}</div>;
   };
 
   const renderClose = () => {

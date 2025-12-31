@@ -1,5 +1,5 @@
 import { getDataset, useKeyEvent, usePersistFn, useTextarea, util } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { KeyboardEvent, useContext, useEffect } from 'react';
 import { SimpleTextareaProps } from './textarea.type';
 import { FormFieldContext } from '../form/form-field-context';
@@ -31,7 +31,7 @@ const Textarea = (props: SimpleTextareaProps) => {
   });
   const { fieldId } = useContext(FormFieldContext);
 
-  const rootClass = classNames(
+  const rootClass = clsx(
     className,
     textareaClasses?.rootClass,
     textareaClasses?.wrapper,
@@ -56,7 +56,7 @@ const Textarea = (props: SimpleTextareaProps) => {
   });
 
   const textareaProps = getTextAreaProps({
-    className: classNames(
+    className: clsx(
       textareaClasses?.wrapperPaddingBox,
       textareaClasses?.wrapperInnerTitleBottom,
       textareaClasses?.textarea,

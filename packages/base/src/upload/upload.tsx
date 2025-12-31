@@ -2,7 +2,7 @@ import { getDataset, useInputAble, usePersistFn, useUpload, util } from '@sheinx
 import React, { useContext, useEffect } from 'react';
 import { UploadProps } from './upload.type';
 import Drop from './drop';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Result from './result';
 import { useInputClick } from './useInputClick';
 import { getLocale, useConfig } from '../config';
@@ -107,10 +107,10 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         onDrop={func.addFiles}
         beforeDrop={props.beforeDrop}
         multiple={!!props.multiple || limit > 1}
-        className={classNames(uploadClasses?.dropItem)}
+        className={clsx(uploadClasses?.dropItem)}
       >
         <span
-          className={classNames(
+          className={clsx(
             listType === 'image' ? uploadClasses?.imageHandler : uploadClasses?.handler,
           )}
           style={listType === 'image' ? imageStyle : undefined}
@@ -175,7 +175,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         <Drop
           drop={drop}
           multiple={false}
-          className={classNames(uploadClasses?.dropItem)}
+          className={clsx(uploadClasses?.dropItem)}
           key={index}
           accept={accept}
           dropData={index}
@@ -239,7 +239,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     <div
       id={fieldId}
       style={props.style}
-      className={classNames(
+      className={clsx(
         uploadClasses?.rootClass,
         uploadClasses?.wrapper,
         isImage && uploadClasses?.wrapperImage,

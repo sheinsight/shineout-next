@@ -25,7 +25,26 @@ const checkboxTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 checkboxRules 强关联，非 checkboxRules 规则内的 token 需手动增加或删减。
  */
-const checkboxTokenValue = {};
+const checkboxTokenValue = {
+  icon: {
+    border: { color: '', radius: '', width: '' },
+    background: { color: '' },
+    color: '',
+    disabled: { border: { color: '' }, background: { color: '' }, color: '' },
+    hover: { border: { color: '' }, background: { color: '' }, color: '' },
+    checked: {
+      border: { color: '' },
+      background: { color: '' },
+      color: '',
+      disabled: { border: { color: '' }, background: { color: '' }, color: '' },
+    },
+    gap: '',
+    circle: { fill: '' },
+  },
+  label: { font: { color: '', size: '' }, disabled: { font: { color: '' } } },
+  gap: '',
+  block: { gap: '' },
+};
 
 const checkboxTokenExtraValue = {
   icon: {
@@ -38,10 +57,7 @@ const checkboxTokenExtraValue = {
       background: { color: 'Neutral-fill-2' },
       color: 'transparent',
     },
-    hover: {
-      background: { color: 'Neutral-fill-1' },
-      color: 'transparent',
-    },
+    hover: { background: { color: 'Neutral-fill-1' }, color: 'transparent' },
     checked: {
       border: { color: 'Brand-6' },
       background: { color: 'Brand-6' },
@@ -62,14 +78,8 @@ const checkboxTokenExtraValue = {
   },
   gap: 'Spacing-24',
   block: { gap: 'Spacing-12' },
-  small: {
-    icon: { size: 'Font-12' },
-    label: { font: { size: 'Font-12' } },
-  },
-  large: {
-    icon: { size: 'Font-16' },
-    label: { font: { size: 'Font-16' } },
-  },
+  small: { icon: { size: 'Font-12' }, label: { font: { size: 'Font-12' } } },
+  large: { icon: { size: 'Font-16' }, label: { font: { size: 'Font-16' } } },
 };
 
 module.exports = {

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Alert from '../alert';
 import { MessageItemType, MessageProps } from './message.type';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { util } from '@sheinx/hooks';
 import { MessageOptions } from './func.type';
 
@@ -33,7 +33,7 @@ const MessagePure = (props: {
   // hooks
   const styles = jssStyle?.message?.();
   const handleClassName = (position: string | undefined, closeMsg: boolean) => {
-    return classNames(styles?.item, closeMsg ? styles?.itemDismissed : styles?.itemShow);
+    return clsx(styles?.item, closeMsg ? styles?.itemDismissed : styles?.itemShow);
   };
   const handleStyle = (closeMsg: boolean, h: number, position: string) => {
     // eslint-disable-next-line eqeqeq
@@ -59,7 +59,7 @@ const MessagePure = (props: {
   };
 
   return (
-    <div className={classNames(styles?.rootClass, styles?.wrapper)} {...getDataAttribute({ position })}>
+    <div className={clsx(styles?.rootClass, styles?.wrapper)} {...getDataAttribute({ position })}>
       {[
         messages.map(
           ({

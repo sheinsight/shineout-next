@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import Code from './code';
@@ -77,11 +77,11 @@ const Example = (props: ExampleProps) => {
   };
 
   return (
-    <div className={classNames(classes.example, className)}>
+    <div className={clsx(classes.example, className)}>
       <div className={classes.exampleHeader}>
         {(propName[state.locales] || defaultName) && (
           <h2
-            className={classNames(classes.exampleTitle, 'anchor-title', classes.exampleAnchorTitle)}
+            className={clsx(classes.exampleTitle, 'anchor-title', classes.exampleAnchorTitle)}
             id={`example-${propName[state.locales] || defaultName}`}
           >
             {propName[state.locales] || defaultName}

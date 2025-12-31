@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { util, KeygenResult } from '@sheinx/hooks';
 import { getLocale, useConfig } from '../config';
 import { TransferClasses } from './transfer.type';
@@ -49,11 +49,11 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   const { locale } = useConfig();
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
-  const rootClass = classNames(styles.view, {
+  const rootClass = clsx(styles.view, {
     [styles.source]: listType === 'source',
     [styles.target]: listType === 'target',
   });
-  const listClass = classNames(styles.list, listClassName);
+  const listClass = clsx(styles.list, listClassName);
 
   const [addonHeight, setAddonHeight] = useState(0);
   const listContainerRef = useRef<HTMLDivElement>(null);

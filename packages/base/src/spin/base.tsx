@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 import { BaseSpinProps } from './spin.type';
@@ -28,7 +28,7 @@ const Spin = (props: BaseSpinProps) => {
     props.style,
   );
 
-  const classname = classNames(className, styles?.rootClass, styles?.spin, uniqueClassName);
+  const classname = clsx(className, styles?.rootClass, styles?.spin, uniqueClassName);
 
   if (count < 1 || !render) {
     return <div style={style} className={classname} />;

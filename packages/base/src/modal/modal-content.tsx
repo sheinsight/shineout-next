@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
@@ -309,7 +309,7 @@ const Modal = (props: ModalContentProps) => {
 
   // render
   const renderIcon = (isEmptyTitle?: boolean) => {
-    const iconRoot = classNames(modalClasses?.headerIcon, isEmptyTitle && modalClasses?.emptyIcon);
+    const iconRoot = clsx(modalClasses?.headerIcon, isEmptyTitle && modalClasses?.emptyIcon);
 
     return <AlertIcon jssStyle={props.jssStyle} type={props.type} className={iconRoot} />;
   };
@@ -322,7 +322,7 @@ const Modal = (props: ModalContentProps) => {
     const isEmptyTitle = !props.title && props.title !== 0;
 
     if (isEmptyTitle) {
-      const closeRoot = classNames(modalClasses?.headerClose, modalClasses?.emptyClose);
+      const closeRoot = clsx(modalClasses?.headerClose, modalClasses?.emptyClose);
 
       return (
         <>
@@ -360,7 +360,7 @@ const Modal = (props: ModalContentProps) => {
     };
     return (
       <div
-        className={classNames(
+        className={clsx(
           modalClasses?.body,
           props.type && !!AlertIconMap[props.type] && modalClasses?.bodyWithIcon,
         )}
@@ -469,7 +469,7 @@ const Modal = (props: ModalContentProps) => {
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className={classNames(
+        className={clsx(
           props.rootClassName,
           modalClasses?.rootClass,
           modalClasses?.wrapper,
@@ -499,7 +499,7 @@ const Modal = (props: ModalContentProps) => {
         >
           <div
             ref={panelRef}
-            className={classNames(modalClasses?.panel, props.className)}
+            className={clsx(modalClasses?.panel, props.className)}
             style={panelStyle}
           >
             {content}

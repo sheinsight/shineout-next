@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useMemo, useRef } from 'react';
 import { KeygenResult, util } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
@@ -122,7 +122,7 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     if (loading) return renderLoading();
 
     return (
-      <div className={classNames(styles.list)}>
+      <div className={clsx(styles.list)}>
         {virtual ? renderVirtualList() : renderSimpleList()}
       </div>
     );

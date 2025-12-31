@@ -25,16 +25,9 @@ const dividerTokenValue = {};
 const dividerTokenExtraValue = {
   font: { size: 'Font-12', color: 'Neutral-text-5', weight: 'Weight-regular' },
   border: { color: 'Neutral-border-1', width: 'Border-1' },
-  horizontal: {
-    margin: { y: 'Spacing-24' },
-    text: { margin: { y: 'Spacing-16' } },
-  },
-  vertical: {
-    margin: { x: 'Spacing-12' },
-  },
-  text: {
-    padding: { x: 'Spacing-12' },
-  },
+  horizontal: { margin: { y: 'Spacing-24' }, text: { margin: { y: 'Spacing-16' } } },
+  vertical: { margin: { x: 'Spacing-12' } },
+  text: { padding: { x: 'Spacing-12' } },
 };
 
 module.exports = {

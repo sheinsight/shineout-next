@@ -4,7 +4,7 @@ import Button from '../button';
 import Spin from '../spin';
 import { ButtonUploadInnerPropsType, UploadButtonProps } from './button.type';
 import { usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useConfig } from '../config';
 
 const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -84,7 +84,7 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
         jssStyle={props.jssStyle}
         tabIndex={props.disabled ? -1 : 0}
         disabled={props.disabled}
-        className={classNames(uploadClasses?.button, uploading && uploadClasses?.buttonUploading)}
+        className={clsx(uploadClasses?.button, uploading && uploadClasses?.buttonUploading)}
         type={props.type || 'primary'}
         size={props.size}
         mode={props.mode}

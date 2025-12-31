@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { TfootProps, SummaryItem } from './tfoot.type';
 import { util } from '@sheinx/hooks';
 import { useConfig } from '../config';
@@ -57,7 +57,7 @@ export default (props: TfootProps) => {
         key={index}
         colSpan={colSpan}
         style={getFixedStyle(fixed.fixed, index, colSpan)}
-        className={classNames(
+        className={clsx(
           fixed['fixed'] === 'left' && tableClasses?.cellFixedLeft,
           fixed['fixed'] === 'right' && tableClasses?.cellFixedRight,
           fixed.firstFixed && tableClasses?.cellFixedLeft,

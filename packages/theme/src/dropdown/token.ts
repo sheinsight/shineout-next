@@ -30,7 +30,37 @@ const dropdownTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 dropdownRules 强关联，非 dropdownRules 规则内的 token 需手动增加或删减。
  */
-const dropdownTokenValue = {};
+const dropdownTokenValue = {
+  list: {
+    border: { radius: '', color: '', width: '' },
+    padding: { x: '', y: '' },
+    font: { size: '', weight: '', color: '' },
+    small: { border: { radius: '' }, padding: { x: '', y: '' }, font: { size: '', weight: '' } },
+    large: { border: { radius: '' }, padding: { x: '', y: '' }, font: { size: '', weight: '' } },
+    background: { color: '' },
+    box: { shadow: '' },
+  },
+  option: {
+    padding: { x: '', y: '' },
+    small: { padding: { x: '', y: '' } },
+    large: { padding: { x: '', y: '' } },
+    background: { color: '' },
+    font: { color: '', weight: '' },
+    hover: { background: { color: '' }, font: { color: '' } },
+    active: { background: { color: '' }, font: { color: '' } },
+    select: { background: { color: '' }, font: { color: '' } },
+    disabled: { background: { color: '' }, font: { color: '' } },
+    border: { radius: '' },
+    group: {
+      padding: { x: '', top: '', bottom: '' },
+      font: { size: '', color: '', weight: '' },
+      small: { x: '', top: '', bottom: '' },
+      large: { x: '', top: '', bottom: '' },
+    },
+    divider: { background: { color: '' }, padding: { x: '', y: '' }, height: '' },
+  },
+  column: { padding: { x: '', y: '' } },
+};
 
 const dropdownTokenExtraValue = {
   list: {

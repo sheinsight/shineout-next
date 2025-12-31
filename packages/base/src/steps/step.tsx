@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { StepsClasses } from './steps.type';
 import { util } from '@sheinx/hooks';
 import { StepPropsWidthContext, BaseStepProps } from './step.type';
@@ -57,7 +57,7 @@ const Step = (props: StepPropsWidthContext) => {
   const status = getStatus();
   const labelPlacement = getLabelPlacement();
 
-  const rootClass = classNames(styles.step, className, styles[status], {
+  const rootClass = clsx(styles.step, className, styles[status], {
     [styles.disabled]: isDisabled,
     // 即便是指定 status 也需要考虑是否为 finish 状态
     [styles.finish]: current > index,

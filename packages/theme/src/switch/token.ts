@@ -22,24 +22,37 @@ const switchTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 switchRules 强关联，非 switchRules 规则内的 token 需手动增加或删减。
  */
-const switchTokenValue = {};
+const switchTokenValue = {
+  font: { size: '', color: '' },
+  padding: { x: '', y: '' },
+  circle: { size: '', fill: '', shadow: '' },
+  width: '',
+  small: { font: { size: '' }, padding: { x: '', y: '' }, circle: { size: '' }, width: '' },
+  large: { font: { size: '' }, padding: { x: '', y: '' }, circle: { size: '' }, width: '' },
+  background: { color: '' },
+  disabled: { background: { color: '' }, circle: { fill: '', shadow: '' }, font: { color: '' } },
+  loading: { background: { color: '' }, circle: { fill: '', shadow: '' }, font: { color: '' } },
+  checked: {
+    background: { color: '' },
+    circle: { fill: '', shadow: '' },
+    font: { color: '' },
+    disabled: { background: { color: '' }, circle: { fill: '', shadow: '' }, font: { color: '' } },
+    loading: { background: { color: '' }, circle: { fill: '', shadow: '' }, font: { color: '' } },
+  },
+};
 
 const switchTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-4' },
   padding: { x: 'Spacing-2', y: 'Spacing-2' },
   circle: { size: 'Size-9', fill: 'Neutral-text-1', shadow: 'Shadow-3' },
   width: 'Size-21',
-  text: {
-    padding: { left: 'Spacing-8', right: 'Spacing-4' },
-  },
+  text: { padding: { left: 'Spacing-8', right: 'Spacing-4' } },
   small: {
     font: { size: 'Font-12' },
     padding: { x: 'Spacing-2', y: 'Spacing-2' },
     circle: { size: 'Size-6' },
     width: 'Size-14',
-    text: {
-      padding: { left: 'Spacing-4', right: 'Spacing-2' },
-    }
+    text: { padding: { left: 'Spacing-4', right: 'Spacing-2' } },
   },
   large: {
     font: { size: 'Font-16' },
@@ -50,7 +63,10 @@ const switchTokenExtraValue = {
   background: { color: 'Neutral-fill-4' },
   disabled: {
     background: { color: 'Neutral-fill-3' },
-    circle: { checked: {fill: 'Brand-1', shadow: ''}, unchecked: {fill: 'Neutral-fill-2', shadow: ''} },
+    circle: {
+      checked: { fill: 'Brand-1', shadow: '' },
+      unchecked: { fill: 'Neutral-fill-2', shadow: '' },
+    },
     font: { color: 'Neutral-text-2' },
   },
   loading: {

@@ -1,7 +1,7 @@
 import { getLocale, useConfig } from '../config';
 import { DatePickerProps } from './date-picker.type';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { FormFieldContext } from '../form/form-field-context';
 
 export const Input = (props: {
@@ -174,7 +174,7 @@ const Result = (props: ResultProps) => {
     index: number;
   }) => {
     const dis = info.index === 1 ? disabledRight : disabledLeft;
-    const className = classNames(
+    const className = clsx(
       styles?.resultText,
       info.target && styles?.placeholder,
       dis && styles?.resultTextDisabled,

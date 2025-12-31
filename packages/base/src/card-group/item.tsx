@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useEffect, useState } from 'react';
 import { useInView, usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { CardGroupContext } from './card-group-context';
 import Lazyload from './lazyload';
 import Checkbox from '../checkbox/checkbox';
@@ -38,7 +38,7 @@ const Item = <V,>(props: CardGroupItemProps<V>) => {
     );
   };
 
-  const cls = classNames(props.className, classes?.item);
+  const cls = clsx(props.className, classes?.item);
   const showCheck = props.checked !== undefined;
 
   const content = (

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { SkeletonClasses, SkeletonButtonProps } from './skeleton.type';
 
 interface ButtonProps extends SkeletonButtonProps {
@@ -13,7 +13,7 @@ export default function Button({
   count = 1,
   style,
 }: ButtonProps): JSX.Element {
-  const cls = classNames(classes.button, {
+  const cls = clsx(classes.button, {
     [classes.buttonLeft]: position !== 'right',
     [classes.buttonRight]: position === 'right',
     [classes.buttonSmall]: size === 'small',

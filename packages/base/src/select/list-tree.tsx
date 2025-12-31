@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { SelectClasses } from './select.type';
 import { StructKeygenStringType, KeygenResult } from '@sheinx/hooks';
 import { ListTreeProps } from './list-tree.type';
@@ -20,7 +20,7 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     onExpand,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
-  const rootClass = classNames(styles.tree);
+  const rootClass = clsx(styles.tree);
 
   const style = {
     maxHeight: height,
@@ -30,11 +30,11 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     const isDisabled = datum.disabledCheck(data);
 
     if (isDisabled) {
-      return classNames(styles.optionDisabled);
+      return clsx(styles.optionDisabled);
     }
     const isCheck = datum.check(data);
     if (isCheck) {
-      return classNames(styles.optionActive);
+      return clsx(styles.optionActive);
     }
     return '';
   };
@@ -82,7 +82,7 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
       defaultExpandAll={defaultExpandAll}
       childrenKey={childrenKey}
       onExpand={handleExpand}
-      nodeClass={classNames(styles.treeOption)}
+      nodeClass={clsx(styles.treeOption)}
       contentClass={getContentClass}
       renderItem={renderItem}
       expandIcons={props.expandIcons}
