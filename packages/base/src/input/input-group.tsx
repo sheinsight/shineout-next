@@ -7,6 +7,16 @@ import useWithFormConfig from '../common/use-with-form-config';
 import { util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 
+// Components that support innerTitle and placeTitle props
+const INNER_TITLE_SUPPORTED_COMPONENTS = [
+  'Input',
+  'Select',
+  'Cascader',
+  'DatePicker',
+  'Textarea',
+  'EditableArea',
+];
+
 export default (props: InputGroupProps) => {
   const [focus, setFocus] = React.useState(false);
   const config = useConfig();
@@ -70,13 +80,24 @@ export default (props: InputGroupProps) => {
           return <span key={i}>{child}</span>;
         }
         if (React.isValidElement(child)) {
-          return cloneElement(child, {
+          const additionalProps: any = {
             ...getProps(child),
             disabled: child.props.disabled || disabled,
             size: child.props.size || size,
-            innerTitle: child.props.innerTitle || innerTitle,
-            placeTitle: child.props.placeTitle || placeTitle,
-          });
+          };
+
+          // Only pass innerTitle and placeTitle to components that support them
+          // Check by displayName to identify form components that accept these props
+          const displayName = (child.type as any)?.displayName;
+          const supportsInnerTitle = displayName &&
+            INNER_TITLE_SUPPORTED_COMPONENTS.some(name => displayName.includes(name));
+
+          if (supportsInnerTitle) {
+            additionalProps.innerTitle = child.props.innerTitle || innerTitle;
+            additionalProps.placeTitle = child.props.placeTitle || placeTitle;
+          }
+
+          return cloneElement(child, additionalProps);
         }
         return <span key={i}>{child}</span>;
       })}
