@@ -35,8 +35,10 @@ export default (props: TheadProps) => {
     props?.dragCol(context.dragIndex, deltaX);
   });
 
-  const handleDragEnd = usePersistFn(() => {
-    props?.resizeCol(context.dragIndex);
+  const handleDragEnd = usePersistFn((deltaX) => {
+    if (deltaX !== 0) {
+      props?.resizeCol(context.dragIndex);
+    }
     context.dragIndex = -1;
   });
 
