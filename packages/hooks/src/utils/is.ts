@@ -80,7 +80,17 @@ export const isLink = (el: unknown): el is React.ReactElement => {
     if (!React.isValidElement(el)) return false;
     if (!el.type) return false;
     if (el.type === 'a') return true;
-    if (el.props && (el as React.ReactElement).props.to) return true;
+    // 只有当是已知的路由组件时才判断 to 属性
+    if (el.props && (el as React.ReactElement).props.to) {
+      const typeName = typeof el.type === 'function' ? el.type.name : '';
+      const displayName = typeof el.type === 'object' && el.type !== null ? (el.type as any).displayName : '';
+      // 检查是否为常见的路由链接组件
+      const isRouterComponent = typeName === 'Link' ||
+                                typeName === 'NavLink' ||
+                                displayName === 'Link' ||
+                                displayName === 'NavLink';
+      return isRouterComponent;
+    }
   }
 
   return false;
