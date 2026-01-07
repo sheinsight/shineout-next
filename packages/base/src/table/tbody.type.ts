@@ -45,10 +45,7 @@ export interface TbodyProps
   bodyScrollWidth?: number;
   resizeFlag?: number;
   scrolling?: boolean;
-  virtualRowSpanInfo?: {
-    rowSpanIndexArray: number[];
-    maxRowSpan: number;
-  } | null;
-  fullData?: any[];
   scrollRef?: React.RefObject<HTMLDivElement>;
+  originData?: any[];
+  rowSpanIndexArray?: number[];
 }

@@ -16,6 +16,8 @@ export default (props: TbodyProps) => {
     data: props.data,
     currentIndex: currentRowIndex,
     hover,
+    originData: props.originData,
+    rowSpanIndexArray: props.rowSpanIndexArray,
   });
 
   const expandCol = (props.expandHideCol ||
@@ -28,17 +30,6 @@ export default (props: TbodyProps) => {
     const originKey = util.getKey(props.keygen, item, rowIndex);
     const trRenderKey =
       props.loader || props.rowEvents?.draggable ? originKey : `${originKey}-${rowIndex}`;
-
-    // 在虚拟列表模式下，使用 virtualRowSpanInfo 来获取正确的选择数据
-    let selectData = item;
-    if (props.virtualRowSpanInfo && props.fullData) {
-      // rowSpanIndexArray[rowIndex] 表示第 rowIndex 行所属合并组的起始行索引
-      const selectIndex = props.virtualRowSpanInfo.rowSpanIndexArray[rowIndex];
-      selectData = props.fullData[selectIndex];
-    } else {
-      // 非虚拟列表模式使用原有逻辑
-      selectData = rowSelectMergeStartData[index];
-    }
 
     return (
       <Tr
@@ -69,10 +60,9 @@ export default (props: TbodyProps) => {
         striped={props.striped}
         radio={props.radio}
         hover={hover}
-        isSelect={props.datum.check(selectData)}
-        selectData={selectData}
+        isSelect={props.datum.check(rowSelectMergeStartData[index])}
+        rowSelectMergeStartData={rowSelectMergeStartData[index]}
         handleCellHover={handleCellHover}
-        // to update
         hoverIndex={hoverIndex}
         rowClickAttr={props.rowClickAttr}
         onRowClick={props.onRowClick}

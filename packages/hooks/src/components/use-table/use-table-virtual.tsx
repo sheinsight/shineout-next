@@ -56,7 +56,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       const _rowSpanInfo = rowSpanColumns.map((col) => {
         const { rowSpan } = col;
 
-        function getRowSpanCount(index: number, _count: number) {
+        function getRowSpanCount(index: number, _count: number): number {
           let count = _count;
           if (index === totalLength - 1) return count;
           let prevRowData = props.data[index];

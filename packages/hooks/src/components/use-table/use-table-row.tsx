@@ -8,6 +8,8 @@ export interface TableRowProps extends Pick<BaseTableProps<any>, 'data'> {
   columns: TableFormatColumn<any>[];
   currentIndex: number;
   hover: boolean;
+  originData?: any[];
+  rowSpanIndexArray?: number[];
 }
 
 export interface Row {
@@ -93,6 +95,40 @@ const useTableRow = (props: TableRowProps) => {
     const data = props.data || [];
     const columns = props.columns || [];
     const checkCol = columns.find((col) => col.type === 'checkbox');
+
+    // 计算 rowSelectMergeStartData
+    if (checkCol?.rowSpan) {
+      // checkbox 列有 rowSpan，需要计算合并起始数据
+      if (props.rowSpanIndexArray && props.originData) {
+        // 虚拟滚动：使用 rowSpanIndexArray（由 useTableVirtual 预计算）
+        const originData = props.originData;
+        for (let i = 0; i < data.length; i++) {
+          const globalIndex = currentIndex + i;
+          const startIndex = props.rowSpanIndexArray[globalIndex];
+          context.rowSelectMergeStartData[i] = originData[startIndex] || data[i];
+        }
+      } else {
+        // 非虚拟滚动：基于当前数据计算
+        for (let i = 0; i < data.length; i++) {
+          const currentData = data[i];
+          // 如果当前行还没有被设置起始数据，说明它是一个新的合并组的起始
+          if (context.rowSelectMergeStartData[i] === undefined) {
+            context.rowSelectMergeStartData[i] = currentData;
+          }
+          // 检查当前行是否应该和下一行合并
+          if (i < data.length - 1 && checkCol.rowSpan(currentData, data[i + 1])) {
+            // 下一行应该指向当前行的起始数据
+            context.rowSelectMergeStartData[i + 1] = context.rowSelectMergeStartData[i];
+          }
+        }
+      }
+    } else {
+      // checkbox 列无 rowSpan，每行都是自己的起始数据
+      for (let i = 0; i < data.length; i++) {
+        context.rowSelectMergeStartData[i] = data[i];
+      }
+    }
+
     for (let i = data.length - 1; i >= 0; i--) {
       const d = data[i];
       rows.unshift(
@@ -101,23 +137,9 @@ const useTableRow = (props: TableRowProps) => {
           return col;
         }),
       );
-
-
-      {
-        //记录合并行合并到的数据需要从0 开始
-        const i0 = data.length - 1 - i;
-        const d0 = data[i0];
-        context.rowSelectMergeStartData[i0] = d0;
-        if (i0  > 0 && checkCol && typeof checkCol.rowSpan === 'function') {
-          const beforeData = data[i0 - 1];
-          if (beforeData !== null && checkCol.rowSpan(beforeData, d0)) {
-            context.rowSelectMergeStartData[i0] =  context.rowSelectMergeStartData[i0 - 1] ?? beforeData;
-          }
-        }
-      }
     }
     return rows;
-  }, [props.columns, props.data]);
+  }, [props.columns, props.data, props.originData, props.rowSpanIndexArray, currentIndex]);
 
   return {
     rowData,

@@ -616,10 +616,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
                   currentRowIndex={virtualInfo.startIndex}
                   currentColIndex={currentColIndex}
                   data={virtualInfo.data}
+                  originData={treeData}
+                  rowSpanIndexArray={virtualInfo.rowSpanInfo?.rowSpanIndexArray}
                   setRowHeight={virtualInfo.setRowHeight}
                   scrolling={scrolling}
-                  virtualRowSpanInfo={virtualInfo.rowSpanInfo}
-                  fullData={treeData}
                 />
               </table>
             )}
