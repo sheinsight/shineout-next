@@ -35,6 +35,9 @@ const progressStyle: JsStyles<ProgressClassType> = {
     flex: 1,
     minWidth: 0,
     overflow: 'hidden',
+    '&:has($lineSuccess)': {
+      position: 'relative',
+    },
     '$lineDefault &': {
       height: token.progressLineHeight,
       borderRadius: token.progressLineHeight,
@@ -44,6 +47,20 @@ const progressStyle: JsStyles<ProgressClassType> = {
       borderRadius: token.progressLineInnerHeight,
     },
     background: token.progressBackground,
+  },
+  lineSuccess: {
+    position: 'absolute',
+    transition: 'width 0.32s linear',
+    left: 0,
+    top: 0,
+    height: '100%',
+    boxSizing: 'border-box',
+    borderRadius: 'inherit',
+    zIndex: 2,
+    backgroundColor: token.progressSuccessFrontBackgroundColor,
+    '& + $lineFront': {
+      zIndex: 1,
+    },
   },
   lineFront: {
     position: 'relative',
@@ -151,6 +168,13 @@ const progressStyle: JsStyles<ProgressClassType> = {
     '$wrapperWarning &': { stroke: token.progressWarningFrontBackgroundColor },
     '$wrapperInfo &': { stroke: token.progressInfoFrontBackgroundColor },
     '$wrapperDanger &': { stroke: token.progressDangerFrontBackgroundColor },
+  },
+  circleSuccess: {
+    transform: 'rotate(-90deg)',
+    transformOrigin: '50% 50%',
+    transition:
+      'stroke-dashoffset .32s ease 0s,stroke-dasharray .32s ease 0s,stroke .32s,stroke-width .06s ease .32s',
+    stroke: token.progressSuccessFrontBackgroundColor,
   },
 };
 
