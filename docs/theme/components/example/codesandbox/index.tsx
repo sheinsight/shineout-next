@@ -40,7 +40,7 @@ const Codesandbox = (props: CodesandboxProps) => {
     "react-dom/client": "react-dom@18.3.1",
     "react-router-dom": "6.11.2",
     "react-jss": "10.9.2",
-    "shineout": "latest",
+    "shineout": "3.9.4",
     "classnames": "2.3.2",
     "immer": "10.0.2"
   }
@@ -148,7 +148,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   return (
     <div className={classNames('iconbox', className)}>
       <Tooltip tip={tip || '在 Shineout-Playground 打开'} trigger='hover' position='top'>
-        <Link to={`https://shineout-playground.sheincorp.cn/#/playground?code=${codeUrl}`} target="_blank" rel="noopener noreferrer" >
+        <Link to={`https://shineout-playground.sheincorp.cn/#/playground?code=${codeUrl}`} target="_blank" rel="noopener noreferrer" style={{display: 'block'}}>
           <div className='icon' style={{ color: '#000' }}>
             <svg
               fill='none'
