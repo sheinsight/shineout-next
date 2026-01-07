@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useLayoutEffect, useRef } from 'react';
 import { TabsClasses } from './tabs.type';
-import { useTabsContext } from '@sheinx/hooks';
+import { useTabsContext, util } from '@sheinx/hooks';
 import { TabsPanelProps } from './tabs-panel.type';
 import { TabData } from './tab.type';
 
@@ -22,6 +22,7 @@ const TabsPanel = (props: TabsPanelProps) => {
       jssStyle,
       background: shape !== 'button' && shape !== 'fill' ? background : undefined,
       color: props.color || (active === id ? color : undefined),
+      ...util.extractProps(props, 'data-attr'),
     } as TabData;
 
     setTabs((prev) => {
