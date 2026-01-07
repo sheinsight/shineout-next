@@ -1,3 +1,8 @@
+## 3.9.6-beta.8
+2026-01-07
+### 🐞 BugFix
+- 修复 `Table` 虚拟滚动时 checkbox 列 `rowSpan` 合并行的勾选状态异常问题 ([#1564](https://github.com/sheinsight/shineout-next/pull/1564))
+
 ## 3.9.6-beta.6
 2026-01-04
 ### 🐞 BugFix

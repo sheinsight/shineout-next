@@ -61,7 +61,7 @@ interface TrProps
   isSelect: boolean;
   disabled?: boolean;
   scrolling?: boolean;
-  selectData?: any;
+  rowSelectMergeStartData?: any;
 }
 
 const Tr = (props: TrProps) => {
@@ -260,7 +260,8 @@ const Tr = (props: TrProps) => {
     }
 
     if (col.type === 'checkbox') {
-      const selectData = props.selectData || data;
+      // 对于合并行，使用合并起始数据进行选择操作
+      const selectData = props.rowSelectMergeStartData || data;
       const instance = (
         <div className={tableClasses?.iconWrapper}>
           {props.radio ? (
