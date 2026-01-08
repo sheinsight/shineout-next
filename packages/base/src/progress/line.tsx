@@ -4,9 +4,10 @@ import classNames from 'classnames';
 import analyzeColor from './analyzeColor';
 import Popup from './line-popup';
 import Icons from '../icons';
+import { util } from '@sheinx/hooks';
 
 const Line = (props: ProgressProps) => {
-  const { shape = 'line', value = 0, type = 'info', iconSize, popup } = props;
+  const { shape = 'line', value = 0, type = 'info', iconSize, popup, success } = props;
 
   const progressClasses = props.jssStyle?.progress();
 
@@ -56,13 +57,37 @@ const Line = (props: ProgressProps) => {
     )})`;
   }
 
+  // Success progress bar style
+  const successStyle: React.CSSProperties | undefined = success ? {
+    width: `${(success.value / 100) * 100}%`,
+    borderRadius: props.strokeWidth && props.strokeWidth / 2,
+  } : undefined;
+
+  if (successStyle && success) {
+    if (typeof success.color === 'string') {
+      successStyle.background = success.color;
+      successStyle.backgroundSize = '1em 1em';
+    } else if (typeof success.color === 'object') {
+      successStyle.background = `linear-gradient(to right, ${analyzeColor(success.color).reduce(
+        (p, v) => {
+          const col = `${v.color} ${v.pos}`;
+          return p ? `${p},${col}` : col;
+        },
+        '',
+      )})`;
+    }
+  }
+
   const children = props.children ? (
     <div className={classNames(progressClasses?.content)}>{props.children}</div>
   ) : null;
 
   return (
-    <div className={mc} style={props.style}>
+    <div {...util.extractProps(props, 'mouse')}  className={mc} style={props.style}>
       <div className={progressClasses?.lineBg} style={bgStyle}>
+        {success && successStyle && (
+          <div className={progressClasses?.lineSuccess} style={successStyle} />
+        )}
         <div className={progressClasses?.lineFront} style={frontStyle}>
           {isInner && children}
         </div>

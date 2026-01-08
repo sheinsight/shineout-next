@@ -3,6 +3,7 @@ import { ProgressProps } from './progress.type';
 import classNames from 'classnames';
 import Icons from '../icons';
 import analyzeColor from './analyzeColor';
+import { util } from '@sheinx/hooks';
 
 const Circle = (props: ProgressProps) => {
   const {
@@ -13,6 +14,7 @@ const Circle = (props: ProgressProps) => {
     size = 64,
     strokeLinecap = 'round',
     iconSize,
+    success,
   } = props;
 
   const progressClasses = props.jssStyle?.progress();
@@ -31,6 +33,11 @@ const Circle = (props: ProgressProps) => {
   const width = value === 0 && strokeLinecap === 'round' ? 0 : strokeWidth;
   const objColor = color && typeof color === 'object';
 
+  // Success circle calculation
+  const successDasharray = success ? [p * (success.value / 100), p * (1 - success.value / 100)] : null;
+  const successWidth = success && success.value === 0 && strokeLinecap === 'round' ? 0 : strokeWidth;
+  const objSuccessColor = success?.color && typeof success.color === 'object';
+
   const mc = classNames(
     props.className,
     progressClasses?.rootClass,
@@ -43,12 +50,21 @@ const Circle = (props: ProgressProps) => {
   );
 
   return (
-    <div className={mc} style={style}>
+    <div {...util.extractProps(props, 'mouse')} className={mc} style={style} >
       <svg viewBox={`0 0 ${size} ${size}`}>
         {objColor ? (
           <defs>
             <linearGradient id='progress-linear' x1='50%' x2='50%' y1='0%' y2='100%'>
               {analyzeColor(color).map((c) => (
+                <stop key={c.pos} offset={c.pos} stopColor={c.color} />
+              ))}
+            </linearGradient>
+          </defs>
+        ) : null}
+        {objSuccessColor && success?.color && typeof success.color === 'object' ? (
+          <defs>
+            <linearGradient id='progress-success-linear' x1='50%' x2='50%' y1='0%' y2='100%'>
+              {analyzeColor(success.color).map((c) => (
                 <stop key={c.pos} offset={c.pos} stopColor={c.color} />
               ))}
             </linearGradient>
@@ -74,6 +90,19 @@ const Circle = (props: ProgressProps) => {
           strokeLinecap={strokeLinecap}
           strokeWidth={width}
         />
+        {success && successDasharray && (
+          <circle
+            className={progressClasses?.circleSuccess}
+            cx={cx}
+            cy={cy}
+            r={r}
+            fill='transparent'
+            style={{ stroke: objSuccessColor ? "url('#progress-success-linear')" : (typeof success.color === 'string' ? success.color : undefined) }}
+            strokeDasharray={successDasharray as any}
+            strokeLinecap={strokeLinecap}
+            strokeWidth={successWidth}
+          />
+        )}
       </svg>
       {!showIcon && props.children && (
         <div className={progressClasses?.content}>{props.children}</div>

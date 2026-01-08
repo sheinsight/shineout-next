@@ -14,6 +14,7 @@ export interface ProgressClasses {
   content: string;
   lineBg: string;
   lineFront: string;
+  lineSuccess: string;
   lineDefault: string;
   lineInnerRight: string;
   linePopWrapper: string;
@@ -23,6 +24,7 @@ export interface ProgressClasses {
   circle: string;
   circleBg: string;
   circleFront: string;
+  circleSuccess: string;
 }
 
 export interface ColorStep {
@@ -122,4 +124,13 @@ export interface ProgressProps extends Pick<CommonType, 'className' | 'style'> {
    * @en Icon size
    */
   iconSize?: number;
+  /**
+   * @cn 成功进度配置，在主进度上层显示成功部分的进度
+   * @en Success progress configuration, display success part on top of main progress
+   * @version 3.9.7
+   */
+  success?: {
+    value: number;
+    color?: string | ColorStep;
+  };
 }
