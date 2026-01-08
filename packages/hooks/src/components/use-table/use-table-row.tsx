@@ -88,6 +88,32 @@ const useTableRow = (props: TableRowProps) => {
     setHoverIndex(hoverIndex);
   });
 
+  // 为虚拟滚动场景预计算 checkbox 列的 rowSpan 索引数组（缓存以提升性能）
+  const checkboxRowSpanIndexArray = useMemo(() => {
+    const columns = props.columns || [];
+    const checkCol = columns.find((col) => col.type === 'checkbox');
+
+    // 只在虚拟滚动 + checkbox 有 rowSpan 时才需要计算
+    if (!checkCol?.rowSpan || !props.rowSpanIndexArray || !props.originData) {
+      return null;
+    }
+
+    const originData = props.originData;
+    const indexArray: number[] = [];
+
+    for (let i = 0; i < originData.length; i++) {
+      if (indexArray[i] === undefined) {
+        indexArray[i] = i;
+      }
+      // 检查当前行是否应该和下一行合并
+      if (i < originData.length - 1 && checkCol.rowSpan(originData[i], originData[i + 1])) {
+        // 下一行应该指向当前行的起始索引
+        indexArray[i + 1] = indexArray[i];
+      }
+    }
+
+    return indexArray;
+  }, [props.columns, props.originData, props.rowSpanIndexArray]);
 
   const rowData = useMemo(() => {
     let rows: Row[][] = [];
@@ -97,29 +123,26 @@ const useTableRow = (props: TableRowProps) => {
     const checkCol = columns.find((col) => col.type === 'checkbox');
 
     // 计算 rowSelectMergeStartData
-    if (checkCol?.rowSpan) {
-      // checkbox 列有 rowSpan，需要计算合并起始数据
-      if (props.rowSpanIndexArray && props.originData) {
-        // 虚拟滚动：使用 rowSpanIndexArray（由 useTableVirtual 预计算）
-        const originData = props.originData;
-        for (let i = 0; i < data.length; i++) {
-          const globalIndex = currentIndex + i;
-          const startIndex = props.rowSpanIndexArray[globalIndex];
-          context.rowSelectMergeStartData[i] = originData[startIndex] || data[i];
+    if (checkboxRowSpanIndexArray && props.originData) {
+      // 虚拟滚动 + checkbox 有 rowSpan：使用预计算的 checkbox 专属索引数组
+      const originData = props.originData;
+      for (let i = 0; i < data.length; i++) {
+        const globalIndex = currentIndex + i;
+        const startIndex = checkboxRowSpanIndexArray[globalIndex];
+        context.rowSelectMergeStartData[i] = originData[startIndex] || data[i];
+      }
+    } else if (checkCol?.rowSpan) {
+      // 非虚拟滚动 + checkbox 有 rowSpan：基于当前数据计算
+      for (let i = 0; i < data.length; i++) {
+        const currentData = data[i];
+        // 如果当前行还没有被设置起始数据，说明它是一个新的合并组的起始
+        if (context.rowSelectMergeStartData[i] === undefined) {
+          context.rowSelectMergeStartData[i] = currentData;
         }
-      } else {
-        // 非虚拟滚动：基于当前数据计算
-        for (let i = 0; i < data.length; i++) {
-          const currentData = data[i];
-          // 如果当前行还没有被设置起始数据，说明它是一个新的合并组的起始
-          if (context.rowSelectMergeStartData[i] === undefined) {
-            context.rowSelectMergeStartData[i] = currentData;
-          }
-          // 检查当前行是否应该和下一行合并
-          if (i < data.length - 1 && checkCol.rowSpan(currentData, data[i + 1])) {
-            // 下一行应该指向当前行的起始数据
-            context.rowSelectMergeStartData[i + 1] = context.rowSelectMergeStartData[i];
-          }
+        // 检查当前行是否应该和下一行合并
+        if (i < data.length - 1 && checkCol.rowSpan(currentData, data[i + 1])) {
+          // 下一行应该指向当前行的起始数据
+          context.rowSelectMergeStartData[i + 1] = context.rowSelectMergeStartData[i];
         }
       }
     } else {
@@ -139,7 +162,7 @@ const useTableRow = (props: TableRowProps) => {
       );
     }
     return rows;
-  }, [props.columns, props.data, props.originData, props.rowSpanIndexArray, currentIndex]);
+  }, [props.columns, props.data, props.originData, props.rowSpanIndexArray, currentIndex, checkboxRowSpanIndexArray]);
 
   return {
     rowData,
