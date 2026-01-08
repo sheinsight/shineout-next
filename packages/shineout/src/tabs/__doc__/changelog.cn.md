@@ -1,8 +1,15 @@
+## 3.9.7-beta.1
+2026-01-07
+
+### 🆕 Feature
+- `Tabs.Panel` 支持透传 data-* 属性到 tabs-header 元素上 ([#1567](https://github.com/sheinsight/shineout-next/pull/1567))
+
+
 ## 3.9.6-beta.7
 2026-01-05
 
 ### 🐞 BugFix
-- 修复 `Tabs` 的 tab 属性传入带有 `to` 属性的自定义组件时渲染结构异常的问题 ([#1563](https://github.com/sheinsight/shineout-next/pull/1563))
+- 修复 `Tabs.Panel` 的 tab 属性传入带有 `to` 属性的自定义组件时渲染结构异常的问题 ([#1563](https://github.com/sheinsight/shineout-next/pull/1563))
 
 
 ## 3.9.0-beta.19

@@ -86,6 +86,7 @@ const Tab = (props: TabProps, ref: any) => {
   const containerProps = {
     className: tabClass,
     ...getStateProps(),
+    ...util.extractProps(props, "data-attr"),
     style: style,
     onClick: handleClick,
     ref: ref,
