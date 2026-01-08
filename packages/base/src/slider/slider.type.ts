@@ -112,11 +112,20 @@ export interface SliderProps<Value>
   range?: boolean;
 
   /**
-   * @en Disable component
-   * @cn 是否禁用组件
+   * @en Disable component. When it is a function, the value is the current value and the return value is whether to disable
+   * @cn 是否禁用组件。当值为函数时,参数为当前值,返回值表示是否禁用
    * @default false
+   * @version 3.9.7 增加函数格式支持
    */
-  disabled?: boolean;
+  disabled?: boolean | ((value: number) => boolean);
+
+  /**
+   * @en Whether to use discrete mode, snapping the indicator to step values during dragging
+   * @cn 是否使用离散模式，拖拽时对齐到步长值
+   * @default false
+   * @version 3.9.7
+   */
+  discrete?: boolean;
 
   /**
    * @en Drag over the maximum event

@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 
 const useDragMock = (props: {
   onDragStart?: (e: React.MouseEvent) => void;
-  onDragMove?: (deltaX: number, deltaY: number) => void;
+  onDragMove?: (deltaX: number, deltaY: number, event?: MouseEvent) => void;
   onDragEnd?: (deltaX: number, deltaY: number) => void;
 }) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -20,7 +20,7 @@ const useDragMock = (props: {
     const deltaY = event.clientY - dragInfo.lastY;
     dragInfo.lastX = event.clientX;
     dragInfo.lastY = event.clientY;
-    props.onDragMove?.(deltaX, deltaY);
+    props.onDragMove?.(deltaX, deltaY, event);
   });
 
   const handleMouseUp = usePersistFn((event: MouseEvent) => {

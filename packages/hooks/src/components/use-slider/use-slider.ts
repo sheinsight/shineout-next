@@ -77,6 +77,13 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
       context.clickLock = false;
     }, 100);
   });
+  const isDisabled = usePersistFn((value: number) => {
+    if (typeof props.disabled === 'function') {
+      return props.disabled(value);
+    }
+    return !!props.disabled;
+  });
+
   const handleDragEnd = usePersistFn(() => {
     lockClick();
     const start = getValueFromRate(rate[0], scale, step);
@@ -88,22 +95,62 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
       props.onChange(end as Value);
     }
   });
-  const handleDragMove = usePersistFn((deltaX: number, deltaY: number) => {
+  const handleDragMove = usePersistFn((deltaX: number, deltaY: number, mouseEvent?: MouseEvent) => {
     setRate((r) => {
       const target = trackRef.current;
       if (!target) return r;
       const newRate = [...r];
       const v = context.dragIndex === 0 ? r[0] : r[1];
 
-      const max = props.vertical ? target.clientHeight : target.clientWidth;
-      const delta = props.vertical ? deltaY * -1 : deltaX * (isReserve ? -1 : 1);
-      let rate = Math.max(v + delta / max, 0);
+      let rate: number;
+
+      // If disabled function is used and we have mouse event, use absolute position
+      if (typeof props.disabled === 'function' && mouseEvent) {
+        const rect = target.getBoundingClientRect();
+        const currentIndicatorRate = v;
+
+        // Calculate mouse position rate
+        let mouseRate: number;
+        if (props.vertical) {
+          mouseRate = (rect.bottom - mouseEvent.clientY) / rect.height;
+        } else {
+          mouseRate = isReserve
+            ? (rect.right - mouseEvent.clientX) / rect.width
+            : (mouseEvent.clientX - rect.left) / rect.width;
+        }
+
+        // Only allow movement if mouse crossed the indicator position
+        if (mouseRate > currentIndicatorRate) {
+          // Mouse is to the right/top, allow moving right/up
+          rate = Math.max(Math.min(mouseRate, 1), 0);
+        } else if (mouseRate < currentIndicatorRate) {
+          // Mouse is to the left/bottom, allow moving left/down
+          rate = Math.max(Math.min(mouseRate, 1), 0);
+        } else {
+          // Mouse is at same position, no change
+          return r;
+        }
+      } else {
+        // Normal delta-based movement
+        const max = props.vertical ? target.clientHeight : target.clientWidth;
+        const delta = props.vertical ? deltaY * -1 : deltaX * (isReserve ? -1 : 1);
+        rate = Math.max(v + delta / max, 0);
+      }
+
       if (rate > 1) {
         rate = 1;
         if (typeof props.onIncrease === 'function') props.onIncrease();
       }
 
       newRate[context.dragIndex] = rate;
+
+      // Check if the new value would be disabled
+      const newValue = getValueFromRate(newRate[context.dragIndex], scale, step);
+      if (isDisabled(newValue)) {
+        // Stay at current position to prevent flickering
+        return r;
+      }
+
       if (newRate[0] > newRate[1]) {
         context.dragIndex = context.dragIndex === 0 ? 1 : 0;
         const temp = newRate[0];
@@ -137,6 +184,10 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
       ? (isReserve ? rect.right - e.clientX : e.clientX - rect.left) / rect.width
       : (rect.bottom - e.clientY) / rect.height;
     const value = getValueFromRate(rate, scale, step);
+
+    // Check if the clicked value would be disabled
+    if (isDisabled(value)) return;
+
     if (props.range) {
       let start = startValue;
       let end = endValue;
@@ -177,8 +228,17 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
     handleTrackClick,
   });
 
-  const start = dragInfo.isDragging ? rate[0] : getRateFromValue(startValue, scale);
-  const end = dragInfo.isDragging ? rate[1] : getRateFromValue(endValue, scale);
+  // During dragging, optionally snap to quantized values in discrete mode
+  const start = dragInfo.isDragging
+    ? props.discrete
+      ? getRateFromValue(getValueFromRate(rate[0], scale, step), scale)
+      : rate[0]
+    : getRateFromValue(startValue, scale);
+  const end = dragInfo.isDragging
+    ? props.discrete
+      ? getRateFromValue(getValueFromRate(rate[1], scale, step), scale)
+      : rate[1]
+    : getRateFromValue(endValue, scale);
   const innerStyle = getTrackInnerStyle(start, end);
 
   return {

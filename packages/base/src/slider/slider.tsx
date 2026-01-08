@@ -32,6 +32,8 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
     vertical: !!props.vertical,
     onIncrease: props.onIncrease,
     direction: config.direction,
+    disabled: props.disabled,
+    discrete: props.discrete,
   });
 
   const renderIndicatorValue = (position: 0 | 1) => {
@@ -56,13 +58,22 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
     );
   };
 
+  const isDisabled = (value: number) => {
+    if (typeof props.disabled === 'function') {
+      return props.disabled(value);
+    }
+    return !!props.disabled;
+  };
+
   const renderIndicator = (position: 0 | 1) => {
     if (!props.range && position === 0) return null;
     const handleEndMouseDown = position === 0 ? func.handleStartMouseDown : func.handleEndMouseDown;
+    const value = position === 0 ? startValue : endValue;
+    const disabled = isDisabled(value);
     return (
       <>
         <div
-          onMouseDown={props.disabled ? undefined : handleEndMouseDown}
+          onMouseDown={disabled ? undefined : handleEndMouseDown}
           className={classNames(
             sliderClasses?.indicator,
             position === 0 ? sliderClasses?.indicatorStart : sliderClasses?.indicatorEnd,
@@ -86,6 +97,23 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
 
   const verticalStyle = props.vertical ? { height } : {};
 
+  // For boolean disabled, use it directly; for function disabled, check all values
+  const isWholeDisabled = () => {
+    if (typeof props.disabled === 'boolean' || props.disabled === undefined) {
+      return !!props.disabled;
+    }
+    // For function disabled, the component is not fully disabled (individual indicators are)
+    return false;
+  };
+
+  const shouldDisableTrackClick = () => {
+    if (typeof props.disabled === 'boolean' || props.disabled === undefined) {
+      return !!props.disabled;
+    }
+    // For function disabled, allow track clicks
+    return false;
+  };
+
   return (
     <div
       id={fieldId}
@@ -93,7 +121,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
         sliderClasses?.rootClass,
         sliderClasses?.wrapper,
         props.autoHide && sliderClasses?.autoHide,
-        props.disabled && sliderClasses?.disabled,
+        isWholeDisabled() && sliderClasses?.disabled,
         props.vertical && sliderClasses?.vertical,
         props.className,
       )}
@@ -105,7 +133,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
       <div
         className={sliderClasses?.track}
         ref={trackRef}
-        onClick={props.disabled ? undefined : func.handleTrackClick}
+        onClick={shouldDisableTrackClick() ? undefined : func.handleTrackClick}
       >
         <div className={sliderClasses?.trackInner} style={innerStyle} dir={config.direction}>
           {renderIndicator(0)}
