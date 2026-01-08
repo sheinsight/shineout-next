@@ -4,13 +4,17 @@ on:
   push:
     tags:
       - 'version-*'
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [16.16.0]
+        node-version: [20.17.0]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -18,22 +22,31 @@ jobs:
           fetch-depth: 1
           ref: ${{ github.event.release.tag_name}}
 
-      - name: Use Pnpm
-        uses: pnpm/action-setup@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          version: 8.2.0
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Use Pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.4.0
 
       - name: dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          CYPRESS_INSTALL_BINARY: 0
 
       - name: build
         run: pnpm run build:pkg
 
-      - name: set token
-        run: echo -e //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.SHINEOUT_PUB_TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          # node-version-file: ".node-version"
+          node-version: "24" # npm must be >= 11.5.1 to support trusted publish
+          registry-url: "https://registry.npmjs.org"
+
       - name: publish
         run: pnpm run release
-
-
