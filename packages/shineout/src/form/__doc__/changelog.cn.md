@@ -1,3 +1,9 @@
+## 3.9.8-beta.1
+2026-01-09
+### 🆕 Feature
+- `Form` 新增 `validateTrigger` 属性，支持配置校验触发时机（change | change-blur）  ([#1571](https://github.com/sheinsight/shineout-next/pull/1571))
+
+
 ## 3.9.4-beta.3
 2025-12-15
 ### 🐞 BugFix
