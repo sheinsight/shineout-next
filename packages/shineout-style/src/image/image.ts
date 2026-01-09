@@ -184,6 +184,9 @@ const ImageStyle: JsStyles<ImageClass> = {
   rounded: {
     borderRadius: Token.imageBorderRadius,
     outline: `1px solid ${Token.imageBorderColor}`,
+    'a&:hover': {
+      outline: `1px solid ${Token.imageBorderColor}`,
+    }
   },
 
   thumbnail: {
@@ -239,6 +242,10 @@ const ImageStyle: JsStyles<ImageClass> = {
     height: '100%',
     margin: 'auto',
     backgroundColor: Token.imageErrorBackgroundColor,
+
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   overlay: {
