@@ -1,3 +1,9 @@
+## 3.9.7-beta.4
+2026-01-09
+### 🐞 BugFix
+- 修复 `Image` 的 `error` 信息默认没有居中显示的问题 ([#1572](https://github.com/sheinsight/shineout-next/pull/1572))
+
+
 ## 3.8.0-beta.24
 2025-08-08
 
