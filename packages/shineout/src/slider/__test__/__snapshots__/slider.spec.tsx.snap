@@ -112,6 +112,174 @@ exports[`Slider[Base] should render correctly about disabled 1`] = `
 </div>
 `;
 
+exports[`Slider[Base] should render correctly about disabled function 1`] = `
+<div
+  class="soui-slider soui-slider-wrapper"
+>
+  <div
+    class="soui-slider-track"
+  >
+    <div
+      class="soui-slider-track-inner"
+      dir="ltr"
+      style="left: 0%; right: 100%;"
+    >
+      <div
+        class="soui-slider-indicator soui-slider-indicator-end"
+        dir="ltr"
+      />
+      <div
+        class="soui-slider-end-value soui-slider-value"
+        dir="ltr"
+      >
+        0
+      </div>
+    </div>
+  </div>
+  <div
+    class="soui-slider-scale-wrapper"
+  >
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="soui-slider-scale"
+    >
+      <div
+        class="soui-slider-label"
+        dir="ltr"
+      >
+        100
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about discrete 1`] = `
+<div>
+  <div
+    style="margin-bottom: 40px;"
+  >
+    <div
+      style="margin-bottom: 8px;"
+    >
+      Normal mode (default):
+    </div>
+    <div
+      class="soui-slider soui-slider-wrapper"
+    >
+      <div
+        class="soui-slider-track"
+      >
+        <div
+          class="soui-slider-track-inner"
+          dir="ltr"
+          style="left: 0%; right: 50%;"
+        >
+          <div
+            class="soui-slider-indicator soui-slider-indicator-end"
+            dir="ltr"
+          />
+          <div
+            class="soui-slider-end-value soui-slider-value"
+            dir="ltr"
+          >
+            50
+          </div>
+        </div>
+      </div>
+      <div
+        class="soui-slider-scale-wrapper"
+      >
+        <div
+          class="soui-slider-scale"
+        >
+          <div
+            class="soui-slider-label"
+            dir="ltr"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="soui-slider-scale"
+        >
+          <div
+            class="soui-slider-label"
+            dir="ltr"
+          >
+            100
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style="margin-bottom: 8px;"
+    >
+      Discrete mode:
+    </div>
+    <div
+      class="soui-slider soui-slider-wrapper"
+    >
+      <div
+        class="soui-slider-track"
+      >
+        <div
+          class="soui-slider-track-inner"
+          dir="ltr"
+          style="left: 0%; right: 50%;"
+        >
+          <div
+            class="soui-slider-indicator soui-slider-indicator-end"
+            dir="ltr"
+          />
+          <div
+            class="soui-slider-end-value soui-slider-value"
+            dir="ltr"
+          >
+            50
+          </div>
+        </div>
+      </div>
+      <div
+        class="soui-slider-scale-wrapper"
+      >
+        <div
+          class="soui-slider-scale"
+        >
+          <div
+            class="soui-slider-label"
+            dir="ltr"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="soui-slider-scale"
+        >
+          <div
+            class="soui-slider-label"
+            dir="ltr"
+          >
+            100
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Slider[Base] should render correctly about format 1`] = `
 <div
   class="soui-slider soui-slider-wrapper"

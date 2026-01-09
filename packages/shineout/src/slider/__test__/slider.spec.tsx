@@ -23,9 +23,11 @@ import SliderStepZero from '../__example__/06-2-step-0';
 import SliderHiderAuto from '../__example__/07-1-hide-auto';
 import SliderHiderAll from '../__example__/07-2-hide-all';
 import SliderDisabled from '../__example__/08-disabled';
+import SliderDisabledFunc from '../__example__/09-disabled-func';
 import SliderVirtual from '../__example__/09-virtual';
 import SliderIncrease from '../__example__/10-increase';
 import SliderValueHover from '../__example__/11-value-hover';
+import SliderDiscrete from '../__example__/12-discrete';
 
 const SO_PREFIX = 'slider';
 const originClasses = [
@@ -94,9 +96,11 @@ describe('Slider[Base]', () => {
   snapshotTest(<SliderHiderAuto />, 'about hider auto');
   snapshotTest(<SliderHiderAll />, 'about hider all');
   snapshotTest(<SliderDisabled />, 'about disabled');
+  snapshotTest(<SliderDisabledFunc />, 'about disabled function');
   snapshotTest(<SliderVirtual />, 'about virtual');
   snapshotTest(<SliderIncrease />, 'about increase');
   snapshotTest(<SliderValueHover />, 'about value hover');
+  snapshotTest(<SliderDiscrete />, 'about discrete');
   test('should render default', () => {
     const clientX = 100;
     const { container } = render(<Slider />);
@@ -285,6 +289,57 @@ describe('Slider[Base]', () => {
     fireEvent.mouseMove(sliderIndicator, { clientX });
     fireEvent.mouseUp(sliderIndicator);
     textContentTest(sliderWrapper.querySelector(value)!, '0');
+  });
+  test('should render when set disabled function', () => {
+    const threshold = 30;
+    const disabledFunc = (v: number) => v > threshold;
+    const { container } = render(<Slider disabled={disabledFunc} />);
+    const sliderWrapper = container.querySelector(wrapper)!;
+    const sliderTrack = sliderWrapper?.querySelector(track) as Element;
+    const sliderValue = sliderWrapper?.querySelector(value) as Element;
+
+    // Mock getBoundingClientRect for track
+    sliderTrack.getBoundingClientRect = jest.fn(() => ({
+      left: 0,
+      width: sliderWidth,
+      bottom: 50,
+      height: 200,
+      top: 0,
+      right: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    }));
+
+    // Click at position that would result in value = 25 (allowed)
+    const allowedClientX = 50; // 50/200 * 100 = 25
+    fireEvent.click(sliderTrack, { clientX: allowedClientX });
+    textContentTest(sliderValue, '25');
+
+    // Try to click at position that would result in value = 40 (disabled)
+    const disabledClientX = 80; // 80/200 * 100 = 40
+    fireEvent.click(sliderTrack, { clientX: disabledClientX });
+    // Value should still be 25 because 40 > 30 is disabled
+    textContentTest(sliderValue, '25');
+  });
+  test('should render when set discrete', () => {
+    const sliderStep = 10;
+    const { container } = render(<Slider step={sliderStep} discrete />);
+    const sliderWrapper = container.querySelector(wrapper)!;
+    const sliderIndicator = sliderWrapper?.querySelector(indicator) as Element;
+    const sliderValue = sliderWrapper?.querySelector(value) as Element;
+
+    // In discrete mode, the indicator should snap to step values during dragging
+    fireEvent.mouseDown(sliderIndicator);
+    // Move to position that would be 23 without discrete mode
+    const clientX = 46; // 46/200 * 100 = 23
+    fireEvent.mouseMove(sliderIndicator, { clientX });
+    // With discrete mode and step=10, it should snap to 20
+    const sliderTrackInner = sliderWrapper?.querySelector(trackInner) as Element;
+    // The position should reflect the snapped value during dragging
+    styleTest(sliderTrackInner, innerStyle(0, 80)); // 100 - 20 = 80
+    fireEvent.mouseUp(sliderIndicator);
+    textContentTest(sliderValue, '20');
   });
   test('should render when set onIncrease', () => {
     const clientX = 100;

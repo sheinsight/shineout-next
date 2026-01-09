@@ -7,4 +7,6 @@ export interface UseSliderProps<Value extends number | number[]> {
   vertical: boolean;
   onIncrease: (() => void) | undefined;
   direction?: 'ltr' | 'rtl';
+  disabled?: boolean | ((value: number) => boolean);
+  discrete?: boolean;
 }
