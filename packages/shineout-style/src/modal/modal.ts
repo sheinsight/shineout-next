@@ -366,6 +366,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     '& svg': {
       zIndex: 1,
       position: 'relative',
+      display: 'block',
     },
     '&:hover': {
       '&:after': {

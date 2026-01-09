@@ -43,11 +43,15 @@ const TransferStyle: JsStyles<TransferClass> = {
     '& $source': {
       borderRadius: `${Token.transferBorderRadius} 0 0 ${Token.transferBorderRadius}`,
       borderRight: 0,
+      '& $header': {
+        borderRadius: `${Token.transferBorderRadius} 0 0 0`,
+      },
     },
     '& $target': {
       borderRadius: `0 ${Token.transferBorderRadius} ${Token.transferBorderRadius} 0`,
       '& $header': {
         paddingRight: 6,
+        borderRadius: `0 ${Token.transferBorderRadius} 0 0`,
       },
     },
   },
