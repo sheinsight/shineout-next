@@ -7,14 +7,19 @@ import {
   FieldsetContext,
   FormItemContext,
   useFormSchema,
+  useFormFunc,
 } from '@sheinx/hooks';
 import { FieldControlProps, FormFieldProps } from './form-field.type';
 import { FormFieldContext } from './form-field-context';
 
 const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
-  const { children } = props;
+  const { children, validateTrigger: fieldValidateTrigger } = props;
 
   const formConfig = useFormConfig();
+  const formFunc = useFormFunc();
+
+  // 获取最终的 validateTrigger: 优先使用字段级配置,其次使用 Form 级配置,默认为 'change'
+  const validateTrigger = fieldValidateTrigger || formConfig.validateTrigger || 'change';
 
   const getValidateProps = usePersistFn(() => {
     if (props.getValidateProps) return props.getValidateProps();
@@ -40,6 +45,20 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
       formControl.onChange(value.target.value, ...args);
     } else {
       formControl.onChange(value, ...args);
+    }
+  });
+
+  const handleBlur = usePersistFn((e: React.FocusEvent<any>) => {
+    // 先调用原始的 onBlur
+    const originalOnBlur = React.isValidElement(children) ? children.props.onBlur : undefined;
+    originalOnBlur?.(e);
+
+    // 根据 validateTrigger 配置决定是否在失焦时触发校验
+    // 只有 'change-blur' 模式才在失焦时触发校验
+    const shouldValidateOnBlur = validateTrigger === 'change-blur';
+
+    if (shouldValidateOnBlur && formControl.inForm && formControl.name && formFunc?.validateFields) {
+      formFunc.validateFields(formControl.name as string | string[]).catch(() => {});
     }
   });
 
@@ -71,6 +90,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
 
   const cloneProps: FieldControlProps<T> = {
     onChange: handleChange,
+    onBlur: handleBlur,
     status,
     error,
   };

@@ -4,6 +4,7 @@ import { BaseFormControlProps, FormItemRule, ObjectType } from '@sheinx/hooks';
 export interface FieldControlProps<T> {
   value?: T;
   onChange: (value: T, ...rest: any) => void;
+  onBlur?: React.FocusEventHandler<any>;
   status?: 'error';
   disabled?: boolean;
   error?: { message?: string } | string;
@@ -33,6 +34,12 @@ export interface FormFieldProps<T> extends Partial<BaseFormControlProps<T>> {
    * @override RuleItem[]
    */
   rules?: FormItemRule<any>;
+  /**
+   * @en Controls when to trigger field validation. If not set, inherits from Form's validateTrigger. 'change' triggers validation on value change only, 'change-blur' triggers validation on both value change and blur. Overrides Form's global validateTrigger setting for this specific field
+   * @cn 控制字段校验的触发时机。如果未设置，则继承 Form 的 validateTrigger。'change' 仅在值改变时触发校验，'change-blur' 在值改变和失焦时都触发校验。会覆盖 Form 的全局 validateTrigger 设置
+   * @version 3.9.8
+   */
+  validateTrigger?: 'change' | 'change-blur';
   /**
    * @en The form control to render. Can be either a React element with value/onChange props or a render function. When using render function, it receives an object with: value (current field value), onChange (value change handler), error (validation error), disabled (inherited from form), status (field status). Perfect for custom components, third-party controls, or complex input scenarios
    * @cn 要渲染的表单控件。可以是具有 value/onChange 属性的 React 元素，或渲染函数。使用渲染函数时，会接收包含以下属性的对象：value（当前字段值）、onChange（值变更处理器）、error（校验错误）、disabled（继承自表单）、status（字段状态）。适用于自定义组件、第三方控件或复杂输入场景

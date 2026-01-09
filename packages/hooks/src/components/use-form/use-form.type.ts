@@ -131,6 +131,14 @@ export interface FormCommonConfig extends FormLabelConfig {
    * @private
    */
   formName?: string;
+
+  /**
+   * @en Controls when to trigger field validation. 'change' triggers validation on value change only (default), 'change-blur' triggers validation on both value change and blur. Suitable for different user experience requirements: 'change' provides immediate feedback, 'change-blur' provides the most comprehensive validation experience and is recommended for better UX. Can be overridden individually on Form.Field components or supported form components (such as Input, Select, DatePicker, etc.)
+   * @cn 控制字段校验的触发时机。'change' 仅在值改变时触发校验（默认），'change-blur' 在值改变和失焦时都触发校验。适用于不同的用户体验需求：'change' 提供即时反馈，'change-blur' 提供最全面的校验体验，推荐使用以获得更好的用户体验。可在 Form.Field 组件或支持的表单组件（如 Input、Select、DatePicker 等）上单独设置覆盖此全局配置
+   * @default 'change'
+   * @version 3.9.7
+   */
+  validateTrigger?: 'change' | 'change-blur';
 }
 
 export interface FormFunc<T = any> {
