@@ -321,7 +321,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
       let children: KeygenResult[] = [];
 
-      if (Array.isArray(item[childrenKey])) {
+      if (item && Array.isArray(item[childrenKey])) {
         const _children = initData(
           item[childrenKey] as DataItem[],
           [...path, id],
@@ -371,7 +371,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         }
       }
 
-      if (Array.isArray(item[childrenKey])) {
+      if (item && Array.isArray(item[childrenKey])) {
         initFlatData(item[childrenKey] as DataItem[], [...path, id], level + 1, id, result);
       }
     }

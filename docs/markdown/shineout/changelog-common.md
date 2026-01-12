@@ -1,3 +1,9 @@
+## 3.9.7-beta.6
+2026-01-12
+### 🐞 BugFix
+- 修复树形数据类的组件可能报 "Cannot read properties of undefined (reading 'children')" 错误的问题 ([#1575](https://github.com/sheinsight/shineout-next/pull/1575))
+
+
 ## 3.9.5-beta.8
 2025-12-29
 
