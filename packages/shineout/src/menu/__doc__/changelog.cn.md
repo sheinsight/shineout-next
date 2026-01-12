@@ -1,3 +1,9 @@
+## 3.9.7-beta.7
+2026-01-12
+### 🐞 BugFix
+- 修复 `Menu` 的折叠图标在Safari浏览器中不显示的问题 ([#1576](https://github.com/sheinsight/shineout-next/pull/1576))
+
+
 ## 3.9.6-beta.2
 2025-12-30
 
