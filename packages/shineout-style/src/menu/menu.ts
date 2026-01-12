@@ -489,7 +489,11 @@ const menuStyle: JsStyles<MenuClassType> = {
     '&[dir=ltr] svg': { transform: 'rotate(-90deg)' },
     '&[dir=rtl] svg': { transform: 'rotate(90deg)' },
   },
-  icon: {},
+  icon: {
+    '& > svg': {
+      width: '100%',
+    }
+  },
   expandHover: {
     '&:hover': {
       backgroundColor: token.menuExpandHoverBackgroundColor,
