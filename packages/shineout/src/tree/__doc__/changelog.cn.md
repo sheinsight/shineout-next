@@ -1,3 +1,9 @@
+## 3.9.7-beta.5
+2026-01-12
+### 🐞 BugFix
+- 修复 `Tree` 受控高亮模式下无法通过设置 `active` 为 undefined 取消高亮的问题 ([#1574](https://github.com/sheinsight/shineout-next/pull/1574))
+
+
 ## 3.9.3-beta.10
 2025-12-09
 ### 🆕 Feature
