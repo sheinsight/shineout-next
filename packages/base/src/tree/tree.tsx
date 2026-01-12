@@ -126,12 +126,17 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     return props.height || styleHeight;
   };
 
-  const handleUpdateActive = (active?: KeygenResult, item?: DataItem) => {
-    setActive(active);
-
-    if (active !== props.active) {
-      propSetActive?.(active, item);
+  const handleUpdateActive = (active?: KeygenResult, item?: DataItem, fromUser: boolean = false) => {
+    if (isActiveControlled && fromUser) {
+      // 受控模式下,用户点击时只调用外部回调,不更新内部状态
+      if (active !== props.active) {
+        propSetActive?.(active, item);
+      }
+      return;
     }
+
+    // 其他情况(非受控模式,或受控模式下由 props.active 变化触发),更新内部状态和节点
+    setActive(active);
 
     datum.updateMap.forEach((update, id) => {
       update('active', id === active);
@@ -139,7 +144,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   };
 
   const handleNodeClick = (node: DataItem, id: KeygenResult) => {
-    handleUpdateActive(id, node);
+    handleUpdateActive(id, node, true);
 
     if (onClick) {
       onClick(node, id, datum.getPath(id));
