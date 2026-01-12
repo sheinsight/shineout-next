@@ -86,9 +86,15 @@ const useInputFormat = (props: InputFormatProps) => {
       value = value
         // -.0 => -0.0 .123 => 0.123
         .replace(/^(-)?(\.\d+)(?!=\.).*/g, '$10$2')
-        //0001.123 => 1.123
+        //0001.123 => 1.123, 保留 -0. 的情况
         // eslint-disable-next-line no-useless-escape
-        .replace(/(-|^)0+(?=0\.?|[^0\.])/g, '$1')
+        .replace(/(-|^)0+(?=0\.?|[^0\.])/g, (match, p1) => {
+          // 如果是负号开头且后面跟着0和小数点,保留-0
+          if (p1 === '-' && value.startsWith('-0.')) {
+            return '-0';
+          }
+          return p1;
+        })
         //  1. => 1
         .replace(/\.$/, '');
 

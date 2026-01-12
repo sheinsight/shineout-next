@@ -28,8 +28,9 @@ const rightBtnStyle: React.CSSProperties = {
 };
 
 const iconStyle: React.CSSProperties = {
-  width: 16,
-  height: 16,
+  display: 'flex',
+  width: 'var(--soui-font-14, 14px)',
+  height: 'var(--soui-font-14, 14px)',
 };
 
 const App: React.FC = () => {
