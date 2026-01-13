@@ -80,8 +80,7 @@ export const isLink = (el: unknown): el is React.ReactElement => {
     if (!React.isValidElement(el)) return false;
     if (!el.type) return false;
     if (el.type === 'a') return true;
-    // 有 to 属性 和 render 函数 就认为是链接组件（react-router Link NavLink 的特征）
-    if (el.props && (el as React.ReactElement).props.to && (el as any).type?.render) return true;
+    if (el.props && (el as React.ReactElement).props.to) return true;
   }
 
   return false;
