@@ -381,6 +381,7 @@ export const jssInsertionPointId = 'shineout-next-jss-insertion-point__' + versi
 function appendNormalizeStyle(styleString: string, id: string){
   const style = document.createElement('style');
   style.setAttribute('name', id);
+  style.setAttribute('data-alita-ignore', 'true');
   style.innerHTML = styleString;
   document.head.insertBefore(style, document.head.firstChild);
 }
@@ -388,6 +389,7 @@ function appendNormalizeStyle(styleString: string, id: string){
 function appendJssInsertionPoint(){
   const insertionPoint = document.createElement('style');
   insertionPoint.setAttribute('name', jssInsertionPointId);
+  insertionPoint.setAttribute('data-alita-ignore', 'true');
   document.head.insertBefore(insertionPoint, document.head.firstChild);
 
   jss.setup({insertionPoint: insertionPoint})

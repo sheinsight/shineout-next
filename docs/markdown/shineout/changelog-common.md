@@ -1,3 +1,8 @@
+## 3.9.7-beta.9
+2026-01-13
+### 💅 Style
+- 优化 normalize 和 jss-insertion-point 标签，增加 data-alita-ignore 属性，避免被微前端框架删除 ([#1578](https://github.com/sheinsight/shineout-next/pull/1578))
+
 ## 3.9.7-beta.6
 2026-01-12
 ### 🐞 BugFix
