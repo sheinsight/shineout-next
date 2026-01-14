@@ -347,7 +347,7 @@ const treeStyle: JsStyles<TreeClassType> = {
     position: 'absolute',
     width: 24,
     height: 24,
-    margin: '1px 0',
+    margin: `calc((${Token.treeFontSize} - 12px)/2) 0`,
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
