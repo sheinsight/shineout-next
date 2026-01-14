@@ -4,8 +4,8 @@
 import { ModalTokens } from './type';
 
 const modalTokens: ModalTokens = {
-  modalMaskBackground: 'rgba(2, 11, 24, 0.3)',
-  modalMaskLightBackground: 'rgba(2, 11, 24, 0.01)',
+  modalMaskBackground: 'Mask-fill-1',
+  modalMaskLightBackground: 'Neutral-mask-2',
   modalPanelPaddingY: 'Spacing-24',
   modalPanelPaddingX: 'Spacing-24',
   modalPanelBackground: 'Neutral-fill-1',

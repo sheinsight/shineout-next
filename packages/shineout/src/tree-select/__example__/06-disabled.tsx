@@ -1,8 +1,8 @@
 /**
  * cn - 禁用
- *      -- 设置`disabled`属性禁用组件
+ *    -- 设置 `disabled` 属性禁用组件，也可以通过函数形式禁用部分节点
  * en - Disabled
- *     -- Set the disabled property to disable the component
+ *    -- Set the disabled property to disable the component, or disable some nodes through the function form
  */
 import React from 'react';
 import { TreeSelect } from 'shineout';
