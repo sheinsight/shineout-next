@@ -35,9 +35,9 @@ const modalTokenValue = { font: { size: 'Font-14' } };
 
 const modalTokenExtraValue = {
   mask: {
-    background: 'rgba(2, 11, 24, 0.3)',
+    background: 'Mask-fill-1',
     light: {
-      background: 'rgba(2, 11, 24, 0.01)',
+      background: 'Neutral-mask-2',
     },
   },
   panel: {

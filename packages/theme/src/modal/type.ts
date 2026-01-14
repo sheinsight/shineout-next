@@ -4,13 +4,13 @@
 export interface ModalTokens {
   /**
    * @type {string}
-   * @token rgba(2, 11, 24, 0.3)
+   * @token Mask-fill-1
    * @description 对话框遮罩层背景
    */
   modalMaskBackground: string;
   /**
    * @type {string}
-   * @token rgba(2, 11, 24, 0.01)
+   * @token Neutral-mask-2
    * @description 对话框遮罩层浅色背景
    */
   modalMaskLightBackground: string;
