@@ -499,8 +499,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     cursor: 'not-allowed',
     color: token.treeSelectOptionDisabledColor,
     backgroundColor: token.treeSelectOptionDisabledBackgroundColor,
-    '&>div': {
-      cursor: 'not-allowed',
+    '&>[data-role="text"]': {
       color: token.treeSelectOptionDisabledColor,
       backgroundColor: token.treeSelectOptionDisabledBackgroundColor,
     },
