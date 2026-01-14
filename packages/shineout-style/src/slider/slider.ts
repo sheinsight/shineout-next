@@ -210,8 +210,8 @@ const sliderStyle: JsStyles<SliderClassType> = {
     },
   },
   valueHover: {
-    backgroundColor: token.sliderValueHoverBackgroundColor,
-    color: token.sliderValueHoverFontColor,
+    backgroundColor: token.tooltipBackgroundColor,
+    color: token.tooltipColor,
     padding: `${token.sliderValueHoverPaddingY} ${token.sliderValueHoverPaddingX}`,
     lineHeight: token.lineHeightDynamic,
     borderRadius: token.sliderValueHoverRadius,
@@ -228,7 +228,7 @@ const sliderStyle: JsStyles<SliderClassType> = {
       height: 0,
       borderStyle: 'solid',
       borderWidth: '4px',
-      borderColor: `${token.sliderValueHoverBackgroundColor} transparent transparent transparent`,
+      borderColor: `${token.tooltipBackgroundColor} transparent transparent transparent`,
     },
     '$vertical &': {
       '&::after': {
@@ -236,7 +236,7 @@ const sliderStyle: JsStyles<SliderClassType> = {
         right: '100%',
         left: 'unset',
         transform: 'translate(0, -50%)',
-        borderColor: `transparent ${token.sliderValueHoverBackgroundColor} transparent transparent `,
+        borderColor: `transparent ${token.tooltipBackgroundColor} transparent transparent `,
       },
     },
     '$indicator:hover + &, $indicatorActive  + &': {
