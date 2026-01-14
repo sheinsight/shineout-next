@@ -68,7 +68,6 @@ export default () => {
         keygen='id'
         renderItem={(node) => `node ${node.title}`}
         data={data}
-        multiple
         placeholder='Please select content'
       />
     </div>
