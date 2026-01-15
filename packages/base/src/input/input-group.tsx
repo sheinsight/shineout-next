@@ -97,6 +97,12 @@ export default (props: InputGroupProps) => {
             additionalProps.placeTitle = child.props.placeTitle || placeTitle;
           }
 
+          // 兼容旧版 Input.Group 透传 name 和 rules 的行为
+          if (displayName && displayName.includes('Shineout')) {
+            additionalProps.name = child.props.name || (props as any).name;
+            additionalProps.rules = child.props.rules || (props as any).rules;
+          }
+
           return cloneElement(child, additionalProps);
         }
         return <span key={i}>{child}</span>;
