@@ -67,6 +67,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     name: formName,
     scrollParent,
     isControl,
+    validateTrigger = 'change',
   } = props;
   const deepSetOptions = {
     removeUndefined,
@@ -642,6 +643,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       size,
       formName,
       colon,
+      validateTrigger,
     }),
     [
       labelWidth,
@@ -653,6 +655,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       size,
       formName,
       colon,
+      validateTrigger,
     ],
   );
 
