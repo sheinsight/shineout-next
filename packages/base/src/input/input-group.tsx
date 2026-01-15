@@ -98,7 +98,7 @@ export default (props: InputGroupProps) => {
           }
 
           // 兼容旧版 Input.Group 透传 name 和 rules 的行为
-          if (displayName.includes('Shineout')) {
+          if (displayName && displayName.includes('Shineout')) {
             additionalProps.name = child.props.name || (props as any).name;
             additionalProps.rules = child.props.rules || (props as any).rules;
           }
