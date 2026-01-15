@@ -1,3 +1,9 @@
+## 3.9.8-beta.2
+2026-01-15
+### 🐞 BugFix
+- 修复 `Input.Group` 未能正确传递 `name` 和 `rules` 属性给子组件的问题 ([#1584](https://github.com/sheinsight/shineout-next/pull/1584))
+
+
 ## 3.9.7-beta.8
 2026-01-13
 ### 🐞 BugFix

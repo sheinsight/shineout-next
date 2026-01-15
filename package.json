@@ -1,7 +1,7 @@
 {
   "name": "sheinx",
   "private": true,
-  "version": "3.9.8-beta.1",
+  "version": "3.9.8-beta.2",
   "description": "A react library developed with sheinx",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
