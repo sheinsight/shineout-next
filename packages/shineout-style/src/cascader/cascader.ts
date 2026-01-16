@@ -369,7 +369,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     marginBottom: token.cascaderPlaceholderMarginY,
   },
   multiple: {
-    '& $optionInner': {
+    '& $optionInner:not($optionLeaf)': {
       paddingRight: token.cascaderOptionInnerPaddingRight,
     },
     '& $resultTextWrapper': {
@@ -541,7 +541,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   optionIcon: {
     position: 'absolute',
-    right: 8,
+    '[dir=rtl] &': {
+      left: 8,
+      transform: 'rotate(180deg)',
+    },
     top: 0,
     bottom: 0,
     fontSize: token.cascaderFontSize,
