@@ -7,6 +7,6 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const App: React.FC = () => <DatePicker showSelNow position='bottom-left' />
+const App: React.FC = () => <DatePicker showSelNow />
 
 export default App;
