@@ -1,3 +1,9 @@
+## 3.9.8-beta.3
+2026-01-16
+### 💅 Style
+- 优化多个组件的RTL模式样式 ([#1585](https://github.com/sheinsight/shineout-next/pull/1585))
+
+
 ## 3.9.7-beta.9
 2026-01-13
 ### 💅 Style
