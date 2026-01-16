@@ -78,7 +78,7 @@ const Tr = (props: TrProps) => {
       const left = props.colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         position: 'sticky',
-        left,
+        [isRtl ? 'right' : 'left']: left,
       } as React.CSSProperties;
     }
     if (fixed === 'right') {
@@ -86,7 +86,7 @@ const Tr = (props: TrProps) => {
 
       return {
         position: 'sticky',
-        right,
+        [isRtl ? 'left' : 'right']: right,
       } as React.CSSProperties;
     }
     return undefined;

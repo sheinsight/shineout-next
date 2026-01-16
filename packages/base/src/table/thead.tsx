@@ -169,6 +169,7 @@ export default (props: TheadProps) => {
     );
   };
 
+  const isRtl = config.direction === 'rtl';
   const getFixedStyle = (
     fixed: 'left' | 'right' | undefined,
     index: number,
@@ -180,7 +181,7 @@ export default (props: TheadProps) => {
     if (fixed === 'left') {
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
-        left: left,
+        [isRtl ? 'right' : 'left']: left,
         top: top,
         position: 'sticky',
       };
@@ -188,7 +189,7 @@ export default (props: TheadProps) => {
     if (fixed === 'right') {
       const right = colgroup.slice(index + (typeof colSpan === 'function' ? 1 : colSpan)).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
-        right: right,
+        [isRtl ? 'left' : 'right']: right,
         top: top,
         position: 'sticky',
       };
