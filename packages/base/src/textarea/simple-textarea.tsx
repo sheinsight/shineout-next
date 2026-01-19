@@ -88,7 +88,7 @@ const Textarea = (props: SimpleTextareaProps) => {
   }
 
   let clearEl = null;
-  if (clearable && props.value) {
+  if (clearable && props.value && !disabled) {
     clearEl = (
       <div
         className={textareaClasses?.clear}
