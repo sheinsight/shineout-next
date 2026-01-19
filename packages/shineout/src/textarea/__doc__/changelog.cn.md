@@ -1,3 +1,9 @@
+## 3.9.8-beta.4
+2026-01-19
+### 🐞 BugFix
+- 修复 `Textarea` 的 `clearable` 属性在禁用状态下仍然显示清除按钮的问题 ([#1586](https://github.com/sheinsight/shineout-next/pull/1586))
+
+
 ## 3.8.5-beta.4
 2025-09-29
 
