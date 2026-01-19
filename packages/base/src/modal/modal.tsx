@@ -4,6 +4,7 @@ import ModalContent from './modal-content';
 import { ModalProps } from './modal.type';
 import useContainer from '../absolute-list/use-container';
 import { util } from '@sheinx/hooks';
+import { useConfig } from '../config';
 
 const { devUseWarning } = util;
 
@@ -20,6 +21,7 @@ const Modal = (props: ModalProps) => {
   });
   const [canDestroy, seCanDestroy] = useState(true);
   const { current: context } = useRef({ rendered: false });
+  const config = useConfig();
 
   const destroyed = props.destroy && !props.visible && canDestroy;
   useEffect(() => {
@@ -36,7 +38,17 @@ const Modal = (props: ModalProps) => {
   }
   context.rendered = true;
 
-  const Content = <ModalContent {...props} shouldDestroy={seCanDestroy} autoShow={false} />;
+  const isRtl = config.direction === 'rtl';
+  let position = props.position;
+  if (isRtl) {
+    if (position === 'left') {
+      position = 'right';
+    } else if (position === 'right') {
+      position = 'left';
+    }
+  }
+
+  const Content = <ModalContent {...props} shouldDestroy={seCanDestroy} autoShow={false} position={position} />;
   const root = getRoot();
   if (!root) return null;
   return ReactDom.createPortal(Content, root);

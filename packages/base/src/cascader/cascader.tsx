@@ -36,6 +36,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const props = useWithFormConfig(props0);
   const { fieldId } = useContext(FormFieldContext);
   const defaultHeight = 250;
+  const { locale, direction } = useConfig();
+  const isRtl = direction === 'rtl';
   const {
     jssStyle,
     style,
@@ -76,7 +78,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     showArrow = true,
     compressed,
     compressedBound,
-    position: positionProp = 'bottom-left',
+    position: positionProp = isRtl ? 'bottom-right' : 'bottom-left',
     absolute,
     zIndex,
     emptyText,
@@ -104,7 +106,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
-  const { locale } = useConfig();
+
 
   const [focused, setFocused] = useState(false);
   const [path, setPath] = useState<KeygenResult[]>([]);
@@ -792,6 +794,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         onFocus={handleFocus}
         onKeyDown={handleKeyDown}
         ref={targetRef}
+        dir={direction}
       >
         {tipNode}
         {renderResult()}

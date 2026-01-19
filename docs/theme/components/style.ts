@@ -65,7 +65,7 @@ export default createUseStyles(
       animation: '$logoFadeDown .3s ease forwards',
       'body.rtl &': {
         transition: 'transform 0.3s ease',
-        transform: 'scaleX(-1)',
+        transform: 'scaleX(-1) !important',
       },
     },
 

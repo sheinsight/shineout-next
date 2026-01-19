@@ -12,8 +12,8 @@ import Code from './static/code';
 export default () => {
   const [value, setValue] = useState('orange~blue');
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: 100 }}>
+    <div style={{ display: 'flex', gap: 100 }}>
+      <div>
         <Select
           width={300}
           multiple

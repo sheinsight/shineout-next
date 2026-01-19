@@ -336,6 +336,7 @@ const tableStyle: JsStyles<TableClassType> = {
       },
       '&[dir=rtl]::after': {
         left: `-${shadowWidth}px`,
+        boxShadow: 'inset -8px 0 10px -6px rgba(2,11,24,.1)',
       },
     },
     '& table': {
@@ -366,6 +367,7 @@ const tableStyle: JsStyles<TableClassType> = {
       },
       '&[dir=rtl]::before': {
         right: `-${shadowWidth}px`,
+        boxShadow: 'inset 8px 0 10px -6px rgba(2,11,24,.1)',
       },
       '&[dir=ltr]::before': {
         left: `-${shadowWidth}px`,

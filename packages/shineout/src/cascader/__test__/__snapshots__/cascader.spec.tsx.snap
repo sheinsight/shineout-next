@@ -5,6 +5,7 @@ exports[`Cascader[Base] should render correctly  1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-clearable"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -56,6 +57,7 @@ exports[`Cascader[Base] should render correctly about compressed 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-clearable soui-cascader-multiple"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -210,6 +212,7 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-disabled"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
   >
     <div
@@ -255,6 +258,7 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-clearable"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -301,6 +305,7 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-disabled"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
   >
     <div
@@ -365,6 +370,7 @@ exports[`Cascader[Base] should render correctly about disabled 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-clearable"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -462,6 +468,7 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
     <div
       class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
       data-soui-input-border="true"
+      dir="ltr"
       style="width: 300px;"
     >
       <div
@@ -509,6 +516,7 @@ exports[`Cascader[Base] should render correctly about filter 1`] = `
     <div
       class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
       data-soui-input-border="true"
+      dir="ltr"
       style="width: 300px;"
     >
       <div
@@ -575,6 +583,7 @@ exports[`Cascader[Base] should render correctly about final 1`] = `
       <div
         class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
         data-soui-input-border="true"
+        dir="ltr"
       >
         <div
           class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
@@ -635,6 +644,7 @@ exports[`Cascader[Base] should render correctly about final 1`] = `
       <div
         class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
         data-soui-input-border="true"
+        dir="ltr"
       >
         <div
           class="soui-cascader-result-wrapper soui-cascader-wrapper-padding-box soui-cascader-wrapper-inner-title-top soui-cascader-wrapper-inner-title-bottom"
@@ -687,6 +697,7 @@ exports[`Cascader[Base] should render correctly about finalDismiss 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -738,6 +749,7 @@ exports[`Cascader[Base] should render correctly about hideTag 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-clearable"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -796,6 +808,7 @@ exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
     <div
       class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-wrapper-small soui-cascader-clearable"
       data-soui-input-border="true"
+      dir="ltr"
       style="width: 300px;"
       tabindex="0"
     >
@@ -869,6 +882,7 @@ exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
     <div
       class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-clearable"
       data-soui-input-border="true"
+      dir="ltr"
       style="width: 300px;"
       tabindex="0"
     >
@@ -942,6 +956,7 @@ exports[`Cascader[Base] should render correctly about innerTitle 1`] = `
     <div
       class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-wrapper-inner-title soui-cascader-wrapper-large soui-cascader-clearable"
       data-soui-input-border="true"
+      dir="ltr"
       style="width: 300px;"
       tabindex="0"
     >
@@ -1016,6 +1031,7 @@ exports[`Cascader[Base] should render correctly about loader 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -1189,6 +1205,7 @@ exports[`Cascader[Base] should render correctly about multiple 1`] = `
       <div
         class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-clearable soui-cascader-multiple"
         data-soui-input-border="true"
+        dir="ltr"
         style="width: 300px;"
         tabindex="0"
       >
@@ -1264,6 +1281,7 @@ exports[`Cascader[Base] should render correctly about noRepeat 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-clearable soui-cascader-multiple"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -1416,6 +1434,7 @@ exports[`Cascader[Base] should render correctly about renderResult 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty soui-cascader-clearable"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -1467,6 +1486,7 @@ exports[`Cascader[Base] should render correctly about trigger 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -1518,6 +1538,7 @@ exports[`Cascader[Base] should render correctly about unmatch 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
     tabindex="0"
   >
@@ -1576,6 +1597,7 @@ exports[`Cascader[Base] should render correctly about wide 1`] = `
   <div
     class="soui-cascader soui-cascader-wrapper soui-cascader-wrapper-empty"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 300px;"
   >
     <div
