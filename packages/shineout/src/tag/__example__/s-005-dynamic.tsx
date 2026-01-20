@@ -6,7 +6,7 @@
  */
 
 import { useState } from 'react';
-import { Tag, Modal } from 'shineout';
+import { Tag } from 'shineout';
 import { createUseStyles } from 'react-jss';
 
 const useStyle = createUseStyles(
@@ -65,25 +65,7 @@ export default () => {
     <div>
       <div style={{ display: 'flex', alignItems: 'center', height: 24 }}>
         {tags.map((a) => (
-          <Tag
-            key={a}
-            disabled={a === 'Tag 3' ? true : false}
-            onClose={() => {
-              return new Promise((resolve, reject) => {
-                Modal.confirm({
-                  title: '确认删除',
-                  content: `确定要删除标签 "${a}" 吗？`,
-                  onOk: () => {
-                    remove(a);
-                    resolve(true);
-                  },
-                  onCancel: () => {
-                    reject();
-                  },
-                });
-              });
-            }}
-          >
+          <Tag key={a} disabled={a === 'Tag 3' ? true : false} onClose={() => remove(a)}>
             {a}
           </Tag>
         ))}
