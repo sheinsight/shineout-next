@@ -26,7 +26,7 @@ export interface FormItemClasses {
   tip: string;
 }
 
-type LabelTooltip = Pick<TooltipProps, 'tip' | 'position'> & {
+type LabelTooltip = Omit<TooltipProps, 'children'> & {
   icon: React.ReactNode;
 }
 interface LabelConfig {
