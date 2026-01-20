@@ -2,8 +2,7 @@
 2026-01-20
 
 ### 🆕 Feature
-- `DatePicker` 新增 `startOfWeek` 属性：一周的第一天，0代表星期天，1代表星期一，依次类推 ([#1592](https://github.com/sheinsight/shineout-next/pull/1592))
-- `DatePicker` 新增 `weekShort` 属性：支持自定义星期显示，type 为 week 时生效，null 则代表不渲染当前默认的星期字符 ([#1592](https://github.com/sheinsight/shineout-next/pull/1592))
+- `DatePicker` 新增 `startOfWeek` 和 `weekShort` 属性，支持自定义一周的起始日和星期显示 ([#1592](https://github.com/sheinsight/shineout-next/pull/1592))
 
 ## 3.9.3-beta.14
 2025-12-11
