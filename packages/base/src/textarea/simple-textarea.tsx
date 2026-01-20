@@ -4,6 +4,7 @@ import React, { KeyboardEvent, useContext, useEffect } from 'react';
 import { SimpleTextareaProps } from './textarea.type';
 import { FormFieldContext } from '../form/form-field-context';
 import Icons from '../icons';
+import { useConfig } from '../config';
 
 const Textarea = (props: SimpleTextareaProps) => {
   const {
@@ -25,6 +26,7 @@ const Textarea = (props: SimpleTextareaProps) => {
     clearable,
     ...rest
   } = props;
+  const config = useConfig();
   const textareaClasses = jssStyle?.textarea?.();
   const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
     ...rest,
@@ -110,6 +112,7 @@ const Textarea = (props: SimpleTextareaProps) => {
         className: rootClass,
         style,
       })}
+      dir={config.direction}
     >
       {prefix}
       {textareaEl}
