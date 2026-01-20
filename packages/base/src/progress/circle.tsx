@@ -15,6 +15,7 @@ const Circle = (props: ProgressProps) => {
     strokeLinecap = 'round',
     iconSize,
     success,
+    animation = true,
   } = props;
 
   const progressClasses = props.jssStyle?.progress();
@@ -47,6 +48,7 @@ const Circle = (props: ProgressProps) => {
     type === 'info' && progressClasses?.wrapperInfo,
     type === 'warning' && progressClasses?.wrapperWarning,
     type === 'danger' && progressClasses?.wrapperDanger,
+    animation === false && progressClasses?.noAnimation,
   );
 
   return (

@@ -25,6 +25,7 @@ export interface ProgressClasses {
   circleBg: string;
   circleFront: string;
   circleSuccess: string;
+  noAnimation: string;
 }
 
 export interface ColorStep {
@@ -133,4 +134,11 @@ export interface ProgressProps extends Pick<CommonType, 'className' | 'style'> {
     value: number;
     color?: string | ColorStep;
   };
+  /**
+   * @cn 是否开启进度条动画效果
+   * @en Whether to enable progress bar animation effects
+   * @default true
+   * @version 3.9.8
+   */
+  animation?: boolean;
 }

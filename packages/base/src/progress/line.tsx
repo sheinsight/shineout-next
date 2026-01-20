@@ -7,7 +7,7 @@ import Icons from '../icons';
 import { util } from '@sheinx/hooks';
 
 const Line = (props: ProgressProps) => {
-  const { shape = 'line', value = 0, type = 'info', iconSize, popup, success } = props;
+  const { shape = 'line', value = 0, type = 'info', iconSize, popup, success, animation = true } = props;
 
   const progressClasses = props.jssStyle?.progress();
 
@@ -31,6 +31,7 @@ const Line = (props: ProgressProps) => {
     isDefaultPop && progressClasses?.linePop,
     isInner && progressClasses?.lineInner,
     isInnerRight && progressClasses?.lineInnerRight,
+    animation === false && progressClasses?.noAnimation,
   );
 
   const bgStyle: React.CSSProperties = {
