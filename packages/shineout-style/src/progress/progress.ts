@@ -61,6 +61,9 @@ const progressStyle: JsStyles<ProgressClassType> = {
     '& + $lineFront': {
       zIndex: 1,
     },
+    '$noAnimation &': {
+      transition: 'none',
+    },
   },
   lineFront: {
     position: 'relative',
@@ -82,6 +85,9 @@ const progressStyle: JsStyles<ProgressClassType> = {
       '$wrapperWarning&': { backgroundColor: token.progressLineInnerWarningFrontBackgroundColor },
       '$wrapperInfo&': { backgroundColor: token.progressLineInnerInfoFrontBackgroundColor },
       '$wrapperDanger&': { backgroundColor: token.progressLineInnerDangerFrontBackgroundColor },
+    },
+    '$noAnimation &': {
+      transition: 'none',
     },
   },
 
@@ -117,6 +123,9 @@ const progressStyle: JsStyles<ProgressClassType> = {
     color: token.progressLinePopFontColor,
     boxShadow:
       '0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05)',
+    '$noAnimation &': {
+      transition: 'none',
+    },
   },
   linePopValue: {},
   linePopArrow: {
@@ -168,6 +177,9 @@ const progressStyle: JsStyles<ProgressClassType> = {
     '$wrapperWarning &': { stroke: token.progressWarningFrontBackgroundColor },
     '$wrapperInfo &': { stroke: token.progressInfoFrontBackgroundColor },
     '$wrapperDanger &': { stroke: token.progressDangerFrontBackgroundColor },
+    '$noAnimation &': {
+      transition: 'none',
+    },
   },
   circleSuccess: {
     transform: 'rotate(-90deg)',
@@ -175,7 +187,11 @@ const progressStyle: JsStyles<ProgressClassType> = {
     transition:
       'stroke-dashoffset .32s ease 0s,stroke-dasharray .32s ease 0s,stroke .32s,stroke-width .06s ease .32s',
     stroke: token.progressSuccessFrontBackgroundColor,
+    '$noAnimation &': {
+      transition: 'none',
+    },
   },
+  noAnimation: {},
 };
 
 export default progressStyle;
