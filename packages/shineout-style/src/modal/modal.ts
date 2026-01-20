@@ -334,8 +334,8 @@ const modalStyle: JsStyles<ModalClassType> = {
     '$wrapper &': {
       marginRight: token.modalHeaderIconMarginEnd,
       marginTop: token.modalHeaderIconMarginTop,
-      width: token.modalHeaderIconSize,
-      height: token.modalHeaderIconSize,
+      width: `calc(${token.modalHeaderFontSize} + 2px)`,
+      height: `calc(${token.modalHeaderFontSize} + 2px)`,
       lineHeight: token.modalHeaderIconSize,
       display: 'block',
       alignItems: 'center',
