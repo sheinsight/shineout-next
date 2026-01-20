@@ -965,6 +965,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                 <div
                   class="soui-textarea soui-textarea-wrapper"
                   data-soui-input-border="true"
+                  dir="ltr"
                 >
                   <textarea
                     class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea"

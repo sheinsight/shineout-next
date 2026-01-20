@@ -541,8 +541,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   optionIcon: {
     position: 'absolute',
+    right: 8,
     '[dir=rtl] &': {
       left: 8,
+      right: 'auto',
       transform: 'rotate(180deg)',
     },
     top: 0,

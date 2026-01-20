@@ -151,6 +151,10 @@ const input: JsStyles<keyof TextareaClasses> = {
       display: 'block',
       width: token.textareaClearSize,
       height: token.textareaClearSize,
+    },
+    '[dir="rtl"] &': {
+      right: 'auto',
+      left: token.textareaPaddingX,
     }
   },
   wrapperWithClear: {
