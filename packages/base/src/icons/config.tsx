@@ -123,6 +123,7 @@ const config = {
   },
   tag: {
     Close: icons.Close,
+    Loading: icons.Loading,
   },
   textarea: {
     Close: icons.CloseFill,

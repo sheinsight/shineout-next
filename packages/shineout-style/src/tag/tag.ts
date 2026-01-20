@@ -33,7 +33,14 @@ type tagType =
   | 'lemon'
   | 'orange'
   | 'tangerine';
-const tagDefaultLineHeight = `calc(${Token.tagDefaultLineBase} + 6px)`
+const tagDefaultLineHeight = `calc(${Token.tagDefaultLineBase} + 6px)`;
+
+const animations = {
+  '@keyframes spin': {
+    '0%': { transform: 'rotate(0deg)' },
+    '100%': { transform: 'rotate(360deg)' },
+  },
+};
 
 const brightTag = (name: tagType, type: TagType) => ({
   color: Token[`tag${type}FontColor`],
@@ -252,6 +259,11 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     cursor: 'pointer',
     height: tagDefaultLineHeight,
     maxHeight: '100%',
+  },
+
+  ...animations,
+  closeIconPending: {
+    animation: `$spin 1s linear infinite`,
   },
 
   closeIconWrapper: {

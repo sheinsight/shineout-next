@@ -112,19 +112,14 @@ const Tag = (props: TagProps) => {
     if (!showClose) {
       return null;
     }
-
-    if (dismiss === Pending) {
-      // 后面用 Spin 替换
-      return <span></span>;
-    }
-
     return (
       <div
-        className={tagStyle.closeIcon}
+        className={classNames(tagStyle.closeIcon, dismiss === Pending && tagStyle.closeIconPending)}
         onClick={handleClose}
         onMouseDown={onMouseDown}
+        style={dismiss === Pending ? { opacity: 0.6, pointerEvents: 'none' } : undefined}
       >
-        <span className={tagStyle.closeIconWrapper}>{Icons.tag.Close}</span>
+        <span className={tagStyle.closeIconWrapper}>{dismiss === Pending ? Icons.tag.Loading : Icons.tag.Close}</span>
       </div>
     );
   };

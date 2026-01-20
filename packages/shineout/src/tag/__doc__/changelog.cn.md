@@ -1,3 +1,8 @@
+## 3.9.8-beta.8
+2026-01-20
+### 🐞 BugFix
+- 修复 `Tag` 在 Promise 关闭时图标隐藏了的问题 ([#1593](https://github.com/sheinsight/shineout-next/pull/1593))
+
 ## 3.9.0-beta.24
 2025-11-11
 
@@ -16,9 +21,6 @@
 
 ## 3.6.3-beta.8
 2025-04-15
-
-
-
 ### 🐞 BugFix
 
 - 调整 `Tag` 默认样式层级，新增 `Brown` 色系 token，纠正 `Tag` 中 `Orange` 色系为 `Brown` ([#1060](https://github.com/sheinsight/shineout-next/pull/1060))

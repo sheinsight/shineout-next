@@ -34,6 +34,7 @@ export interface TagClasses {
   wrapper: string;
   closeIcon: string;
   closeIconWrapper: string;
+  closeIconPending: string;
 
   info: string;
   default: string;
