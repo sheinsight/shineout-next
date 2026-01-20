@@ -4,6 +4,7 @@ exports[`Textarea[Base] should render correctly  1`] = `
 <div
   class="soui-textarea soui-textarea-wrapper soui-textarea-wrapper-focus"
   data-soui-input-border="true"
+  dir="ltr"
 >
   <textarea
     class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea"
@@ -17,6 +18,7 @@ exports[`Textarea[Base] should render correctly about autosize 1`] = `
 <div
   class="soui-textarea soui-textarea-wrapper"
   data-soui-input-border="true"
+  dir="ltr"
 >
   <textarea
     class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea soui-textarea-resize"
@@ -36,6 +38,7 @@ exports[`Textarea[Base] should render correctly about footer 1`] = `
 <div
   class="soui-textarea soui-textarea-wrapper"
   data-soui-input-border="true"
+  dir="ltr"
 >
   <textarea
     class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea"
@@ -61,6 +64,7 @@ exports[`Textarea[Base] should render correctly about info 1`] = `
 <div
   class="soui-textarea soui-textarea-wrapper"
   data-soui-input-border="true"
+  dir="ltr"
 >
   <textarea
     class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea"
@@ -74,6 +78,7 @@ exports[`Textarea[Base] should render correctly about info by function 1`] = `
 <div
   class="soui-textarea soui-textarea-wrapper"
   data-soui-input-border="true"
+  dir="ltr"
 >
   <textarea
     class="soui-textarea-wrapper-padding-box soui-textarea-wrapper-inner-title-bottom soui-textarea-textarea"
@@ -88,6 +93,7 @@ exports[`Textarea[Base] should render correctly about size 1`] = `
   <div
     class="soui-textarea soui-textarea-wrapper soui-textarea-wrapper-small"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
@@ -99,6 +105,7 @@ exports[`Textarea[Base] should render correctly about size 1`] = `
   <div
     class="soui-textarea soui-textarea-wrapper"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
@@ -110,6 +117,7 @@ exports[`Textarea[Base] should render correctly about size 1`] = `
   <div
     class="soui-textarea soui-textarea-wrapper soui-textarea-wrapper-large"
     data-soui-input-border="true"
+    dir="ltr"
     style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
