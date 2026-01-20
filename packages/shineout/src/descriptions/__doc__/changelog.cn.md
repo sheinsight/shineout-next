@@ -1,3 +1,8 @@
+## 3.9.8-beta.6
+2026-01-20
+### 🐞 BugFix
+- 修复 `Descriptions` 的非 border 模式的 inline 样式在 Table 组件内使用时显示多余边框的问题  ([#1589](https://github.com/sheinsight/shineout-next/pull/1589))
+
 ## 3.9.5-beta.4
 2025-12-24
 ### 🐞 BugFix

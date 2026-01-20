@@ -52,11 +52,9 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     lineHeight: token.lineHeightDynamic,
   },
   row: {
-    // '&>td': {
-    //   '&:not(:last-child)': {
-    //     paddingRight: token.descriptionsCellGap,
-    //   },
-    // },
+    '$body:not($border) & > td': {
+      border: 'none',
+    },
   },
   label: {
     paddingRight: token.descriptionsLabelPaddingRight,
