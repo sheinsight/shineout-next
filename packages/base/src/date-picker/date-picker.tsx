@@ -37,6 +37,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     size,
     adjust = true,
     startOfWeek,
+    weekShort,
   } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
   const [clickTimes, setClickTimes] = React.useState(0);
@@ -233,6 +234,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
           disabledLeft={disabledStatus === 'left'}
           disabledRight={disabledStatus === 'right'}
           placeholder={props.placeholder}
+          weekShort={weekShort}
           focused={focused}
           open={open}
           onFocus={handleFocus}

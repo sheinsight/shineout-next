@@ -1,4 +1,5 @@
 import { getLocale, useConfig } from '../config';
+import { util } from '@sheinx/hooks';
 import { DatePickerProps } from './date-picker.type';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
@@ -73,15 +74,16 @@ interface ResultProps
     DatePickerProps<string>,
     'jssStyle' | 'type' | 'inputable' | 'range' | 'placeholder'
   > {
-  focused: boolean;
-  open: boolean;
-  targetResultArr: Array<string | undefined>;
-  resultArr: Array<string | undefined>;
-  onChange: (value: string, index: number) => void;
-  disabledLeft?: boolean;
-  disabledRight?: boolean;
-  activeIndex?: number;
-  onRef: React.MutableRefObject<{
+    focused: boolean;
+    open: boolean;
+    targetResultArr: Array<string | undefined>;
+    resultArr: Array<string | undefined>;
+    onChange: (value: string, index: number) => void;
+    disabledLeft?: boolean;
+    disabledRight?: boolean;
+    activeIndex?: number;
+    weekShort?: null | string;
+    onRef: React.MutableRefObject<{
     inputRef: HTMLInputElement | null;
     inputRefs: (HTMLInputElement | null)[];
   }>;
@@ -105,6 +107,7 @@ const Result = (props: ResultProps) => {
     disabledLeft,
     disabledRight,
     activeIndex = -1,
+    weekShort,
     onClick: onClickProps,
   } = props;
   const { locale } = useConfig();
@@ -182,7 +185,7 @@ const Result = (props: ResultProps) => {
     );
     const formFieldId = fieldId?.split(separator) || [];
     const inputValue = info.target || info.value || ''
-    const displayValue = props.type === 'week' && inputValue ? `${inputValue}${getLocale(locale, 'weekShort')}` : inputValue;
+    const displayValue = props.type === 'week' && inputValue && weekShort !== null ? `${inputValue}${util.isEmpty(weekShort) ? getLocale(locale, 'weekShort') : weekShort}` : inputValue;
     return (
       <div className={className} id={formFieldId[info.index]}>
         <span className={styles?.resultTextPadding}>
