@@ -1,3 +1,8 @@
+## 3.9.8-beta.9
+2026-01-21
+### 🐞 BugFix
+- 修复 `Tooltip` 的 `type` 为 light 时，箭头未居中对齐的样式问题  ([#1595](https://github.com/sheinsight/shineout-next/pull/1595))
+
 ## 3.9.6-beta.1
 2025-12-30
 ### 💎 Enhancement

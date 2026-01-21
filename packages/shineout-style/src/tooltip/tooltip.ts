@@ -156,10 +156,10 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       boxSizing: 'border-box',
       '--tooltip-background-color': token.tooltipLightBackgroundColor,
       '&[data-soui-position^="top"] $arrow': {
-        transform: 'translate(0, -1px) rotate(-180deg)',
+        transform: 'translate(-50%, -1px) rotate(-180deg)',
       },
       '&[data-soui-position^="bottom"] $arrow': {
-        transform: 'translate(0, calc(-100% + 1px)) rotate(0deg)',
+        transform: 'translate(-50%, calc(-100% + 1px)) rotate(0deg)',
       },
       '& $arrow:before': {
         clipPath: 'none',
