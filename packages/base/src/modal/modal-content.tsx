@@ -1,11 +1,12 @@
 import classNames from 'classnames';
-import React, { useRef, useEffect, useState, useMemo } from 'react';
+import React, { useRef, useEffect, useState, useMemo, useContext, useLayoutEffect } from 'react';
 import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
 import { util } from '@sheinx/hooks';
 import { create } from '@shined/reactive';
 import { useDragMove, useDragResize, usePersistFn, useRender } from '@sheinx/hooks';
 import { FormFooterProvider } from '../form/form-footer-context';
+import { popupContext } from '@sheinx/hooks';
 
 import type { ModalContentProps } from './modal-content.type';
 
@@ -92,6 +93,8 @@ if (util.isBrowser()) {
 const Modal = (props: ModalContentProps) => {
   const modalClasses = props.jssStyle?.modal?.();
   const panelRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const popupCtx = useContext(popupContext);
 
   const isPositionX = ['left', 'right'].includes(props.position || '');
   const isPositionY = ['top', 'bottom'].includes(props.position || '');
@@ -248,7 +251,7 @@ const Modal = (props: ModalContentProps) => {
       setOriginDocumentStyle({
         overflow: doc.style.overflow,
         paddingRight: doc.style.paddingRight,
-      })
+      });
     }
     doc.style.overflow = 'hidden';
     if (!doc.style.paddingRight) {
@@ -306,6 +309,22 @@ const Modal = (props: ModalContentProps) => {
       });
     }
   }, [props.setInnerClose]);
+
+  // 将 Modal 的 ref 注册到父 Popover 的 chain 中，防止点击 Modal 时关闭 Popover
+  useLayoutEffect(() => {
+    // Modal 显示或关闭动画播放期间，都需要在 chain 中
+    if (wrapperRef.current) {
+      if(visible) {
+      popupCtx.bindChild(wrapperRef);
+      } else {
+        popupCtx.removeChild(wrapperRef);
+      }
+    }
+    return () => {
+      // 确保清理时移除
+      popupCtx.removeChild(wrapperRef);
+    };
+  }, [visible]);
 
   // render
   const renderIcon = (isEmptyTitle?: boolean) => {
@@ -466,6 +485,7 @@ const Modal = (props: ModalContentProps) => {
   return (
     <FormFooterProvider>
       <div
+        ref={wrapperRef}
         onClick={(e) => {
           e.stopPropagation();
         }}
