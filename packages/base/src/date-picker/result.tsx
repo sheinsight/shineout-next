@@ -1,5 +1,4 @@
 import { getLocale, useConfig } from '../config';
-import { util } from '@sheinx/hooks';
 import { DatePickerProps } from './date-picker.type';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
@@ -185,7 +184,7 @@ const Result = (props: ResultProps) => {
     );
     const formFieldId = fieldId?.split(separator) || [];
     const inputValue = info.target || info.value || ''
-    const displayValue = props.type === 'week' && inputValue && weekShort !== null ? `${inputValue}${util.isEmpty(weekShort) ? getLocale(locale, 'weekShort') : weekShort}` : inputValue;
+    const displayValue = props.type === 'week' && inputValue && weekShort !== null ? `${inputValue}${weekShort === undefined ? getLocale(locale, 'weekShort') : weekShort}` : inputValue;
     return (
       <div className={className} id={formFieldId[info.index]}>
         <span className={styles?.resultTextPadding}>

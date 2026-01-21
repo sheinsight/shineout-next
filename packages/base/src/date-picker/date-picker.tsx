@@ -73,7 +73,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   const options = {
     timeZone: props.timeZone,
     // 需要确保 weekStartsOn 是 number，否则后续的星期顺序计算都会出错
-    weekStartsOn: util.isEmpty(startOfWeek) ? Number(getLocale(locale, 'startOfWeek')) : startOfWeek as number,
+    weekStartsOn: (startOfWeek === null || startOfWeek === undefined) ? Number(getLocale(locale, 'startOfWeek')) : (startOfWeek as number),
   };
 
   const inputAbleResult = useInputAble({
