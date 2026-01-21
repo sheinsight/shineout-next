@@ -47,7 +47,7 @@ const Tooltip = (props: TooltipProps) => {
   const delay = props.delay || props.mouseEnterDelay || defaultDelay;
   const mouseLeaveDelay = props.mouseLeaveDelay || defaultDelay;
   const { open, position, getTargetProps, targetRef, popupRef, closePop } = usePopup({
-    position: popsitionProps,
+    position: util.getRTLPosition(popsitionProps, config.direction === 'rtl'),
     trigger: trigger,
     autoMode: 'popover',
     priorityDirection,

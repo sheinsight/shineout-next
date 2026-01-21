@@ -43,7 +43,7 @@ const Popover = (props: PopoverProps) => {
       open: props.visible,
       defaultOpen: props.defaultVisible,
       onCollapse: onVisibleChange,
-      position: props.position,
+      position: util.getRTLPosition(props.position, config.direction === 'rtl'),
       trigger: trigger,
       autoMode: 'popover',
       priorityDirection,

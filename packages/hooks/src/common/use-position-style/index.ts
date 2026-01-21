@@ -34,7 +34,7 @@ const horizontalPosition = [
 ];
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right', 'bottom', 'top'];
 
-type PositionType = HorizontalPosition | VerticalPosition | 'cover';
+export type PositionType = HorizontalPosition | VerticalPosition | 'cover';
 export interface PositionStyleConfig {
   position: PositionType | undefined;
   absolute: boolean;

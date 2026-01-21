@@ -34,7 +34,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
   const dropdownClasses = jssStyle?.dropdown?.();
   const config = useConfig();
   const isRtl = config.direction === 'rtl';
-  const dfp = isRtl ? 'bottom-right' : 'bottom-left';
+  const dfp = 'bottom-left';
 
   const positionMap = {
     'left-top': 'left-top',
@@ -57,7 +57,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     onCollapse: props.onCollapse,
     disabled,
     trigger,
-    position: props.position || dfp,
+    position: util.getRTLPosition(props.position || dfp, isRtl),
     autoMode: 'menu',
     priorityDirection: 'vertical',
     mouseLeaveDelay: 200,

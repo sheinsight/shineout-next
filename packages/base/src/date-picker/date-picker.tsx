@@ -50,7 +50,6 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   });
 
   const styles = jssStyle?.datePicker?.();
-  const isRTL = direction === 'rtl';
 
   const dfp = 'bottom-left';
   const [focused, setFocused] = React.useState(false);
@@ -59,13 +58,6 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     listPosition = listPosition.split('-').reverse().join('-');
   } else if (!verticalPosition.includes(listPosition)) {
     listPosition = dfp;
-  }
-
-  if (isRTL) {
-    if (listPosition === 'bottom-left') listPosition = 'bottom-right';
-    else if (listPosition === 'bottom-right') listPosition = 'bottom-left';
-    else if (listPosition === 'top-left') listPosition = 'top-right';
-    else if (listPosition === 'top-right') listPosition = 'top-left';
   }
 
   const options = {
@@ -150,7 +142,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     onCollapse: onCollapse,
     disabled: disabledStatus === 'all',
     trigger: 'click',
-    position: listPosition as DatePickerProps<Value>['position'],
+    position: util.getRTLPosition(listPosition as DatePickerProps<Value>['position'], direction === 'rtl'),
   });
 
   const tipNode = useTip({

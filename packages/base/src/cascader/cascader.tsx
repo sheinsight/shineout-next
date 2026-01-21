@@ -37,7 +37,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const { fieldId } = useContext(FormFieldContext);
   const defaultHeight = 250;
   const { locale, direction } = useConfig();
-  const isRtl = direction === 'rtl';
   const {
     jssStyle,
     style,
@@ -78,7 +77,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     showArrow = true,
     compressed,
     compressedBound,
-    position: positionProp = isRtl ? 'bottom-right' : 'bottom-left',
+    position: positionProp = 'bottom-left',
     absolute,
     zIndex,
     emptyText,
@@ -186,7 +185,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     onCollapse: onCollapse,
     disabled: false,
     trigger: 'click',
-    position: positionProp as any,
+    position: util.getRTLPosition(positionProp as any, direction === 'rtl'),
   });
 
   const tipNode = useTip({
