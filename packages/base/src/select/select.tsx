@@ -114,7 +114,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
   const showInput = hasFilter || util.isFunc(onCreateProp) || onCreateProp === true;
 
-  const positionProp = props.position || (direction === 'rtl' ? 'bottom-right' : 'bottom-left');
+  const positionProp = props.position || 'bottom-left';
 
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -197,7 +197,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onCollapse: onCollapse,
     disabled: false,
     trigger: trigger,
-    position: positionProp,
+    position: util.getRTLPosition(positionProp, direction === 'rtl'),
   });
 
   const preventDefault = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

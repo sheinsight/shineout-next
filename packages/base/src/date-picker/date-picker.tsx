@@ -150,7 +150,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     onCollapse: onCollapse,
     disabled: disabledStatus === 'all',
     trigger: 'click',
-    position: listPosition as DatePickerProps<Value>['position'],
+    position: util.getRTLPosition(listPosition as DatePickerProps<Value>['position'], isRTL),
   });
 
   const tipNode = useTip({
