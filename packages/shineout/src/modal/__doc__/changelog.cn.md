@@ -1,3 +1,9 @@
+## 3.9.8-beta.11
+2026-01-21
+### 🐞 BugFix
+- 修复 `Modal` 在 `Popover` 内部使用时，点击 Modal 会触发 Popover 的 clickAway 导致 Popover 意外关闭的问题  ([#1597](https://github.com/sheinsight/shineout-next/pull/1597))
+
+
 ## 3.9.2-beta.2
 2025-12-01
 ### 🐞 BugFix
