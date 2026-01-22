@@ -1,3 +1,9 @@
+## 3.9.8-beta.14
+2026-01-22
+### 🐞 BugFix
+- 修复 `Input` 上误传的 `required` 属性透传到了input元素上的问题 ([#1601](https://github.com/sheinsight/shineout-next/pull/1601))
+
+
 ## 3.9.8-beta.2
 2026-01-15
 ### 🐞 BugFix
