@@ -103,6 +103,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     defaultCurrent: props.defaultPickerValue || props.defaultRangeMonth,
     formatResult: props.formatResult,
     onPickerChange: props.onPickerChange,
+    min: props.min,
+    max: props.max,
   });
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
