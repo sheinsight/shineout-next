@@ -19,6 +19,7 @@ const Input = (props: InputProps) => {
     integerLimit: commonProps.integerLimit,
     numType: commonProps.numType,
     trim: commonProps.trim ?? config.trim ?? false,
+    required: false,
   };
   const inputFormatProps = useInputFormat({
     value: commonProps.value,
