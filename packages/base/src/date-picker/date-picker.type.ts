@@ -390,6 +390,18 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @returns ReactNode
    */
   renderDate?: (params: DateRenderParams) => React.ReactNode;
+
+  /**
+   * @en The first day of the week, 0 represents Sunday, 1 represents Monday, and so on
+   * @cn 一周的第一天，0代表星期天，1代表星期一，依次类推
+   */
+  startOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+
+  /**
+   * @en Custom week display, effective when type is week, null means not to render the current default week characters
+   * @cn 自定义星期显示，type 为 week 时生效，null 则代表不渲染当前默认的星期字符
+   */
+  weekShort?: null | string;
 }
 export interface QuickSelectType {
   /**

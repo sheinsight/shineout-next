@@ -1,3 +1,9 @@
+## 3.9.8-beta.8
+2026-01-20
+
+### 🆕 Feature
+- `DatePicker` 新增 `startOfWeek` 和 `weekShort` 属性，支持自定义一周的起始日和星期显示 ([#1592](https://github.com/sheinsight/shineout-next/pull/1592))
+
 ## 3.9.3-beta.14
 2025-12-11
 
