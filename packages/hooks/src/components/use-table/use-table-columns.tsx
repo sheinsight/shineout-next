@@ -167,11 +167,11 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
       const middleIndex = index - leftFixedColumns.length;
 
       // 如果不在可渲染范围内
-      if (middleIndex < startIndex || middleIndex > startIndex + renderedCount) {
+      if (middleIndex < startIndex || middleIndex >= startIndex + renderedCount) {
         let colSpan;
         let colSpanWidth;
         // 如果是可见范围后的第一列，合并后面所有隐藏的列
-        if (middleIndex > startIndex + renderedCount && middleIndex === startIndex + renderedCount + 1) {
+        if (middleIndex >= startIndex + renderedCount && middleIndex === startIndex + renderedCount) {
           colSpan = () => middleColumns.length - middleIndex;
           colSpanWidth = middleColumns.slice(middleIndex).reduce((sum, c) => {
             return sum + ((c.width as number) || 0);
