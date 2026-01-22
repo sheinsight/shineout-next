@@ -112,20 +112,20 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
 
     let sum = 0;
     let currentIndex = 0;
-    for (let i = 0, len = middleColumns.length - 1; i < len; i++) {
+    for (let i = 0, len = middleColumns.length; i < len; i++) {
       const curCol = middleColumns[i];
       sum += (curCol.width as number) || 100;
       if (scrollLeft < sum) {
         // 计算可视区域内需要渲染的列数
-        for (let j = i + 1; j <= len; j++) {
+        for (let j = i + 1; j < len; j++) {
           const nextCol = middleColumns[j];
           sum += (nextCol.width as number) || 100;
           if (props.scrollRef.current && sum - scrollLeft >= props.scrollRef.current?.clientWidth) {
             // 在原有基础上，右侧增加缓冲列
-            const visibleCount = j - i;
+            const visibleCount = j - i + 1;
             setRenderedCount(Math.min(visibleCount + overscan * 2, len));
             break;
-          } else if (j === len) {
+          } else if (j === len - 1) {
             // 到达最后一列
             const visibleCount = j - i + 1;
             setRenderedCount(Math.min(visibleCount + overscan * 2, len));
@@ -163,15 +163,22 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
       if (col.fixed) {
         return col;
       }
-      if (index < startIndex || index > startIndex + renderedCount) {
+      // 计算当前列在 middleColumns 中的索引
+      const middleIndex = index - leftFixedColumns.length;
+
+      // 如果不在可渲染范围内
+      if (middleIndex < startIndex || middleIndex > startIndex + renderedCount) {
         let colSpan;
         let colSpanWidth;
-        if (index > startIndex + renderedCount && index === startIndex + renderedCount + 1) {
-          colSpan = () => middleColumns.length - index;
-          colSpanWidth = middleColumns.slice(index).reduce((sum, c) => {
+        // 如果是可见范围后的第一列，合并后面所有隐藏的列
+        if (middleIndex > startIndex + renderedCount && middleIndex === startIndex + renderedCount + 1) {
+          colSpan = () => middleColumns.length - middleIndex;
+          colSpanWidth = middleColumns.slice(middleIndex).reduce((sum, c) => {
             return sum + ((c.width as number) || 0);
           }, 0);
-        } else if (index < startIndex && index === leftFixedColumns.length && startIndex > 0) {
+        }
+        // 如果是第一个中间列且前面有隐藏列，合并前面所有隐藏的列
+        else if (middleIndex < startIndex && middleIndex === 0 && startIndex > 0) {
           colSpan = () => startIndex;
           colSpanWidth = middleColumns.slice(0, startIndex).reduce((sum, c) => {
             return sum + ((c.width as number) || 0);

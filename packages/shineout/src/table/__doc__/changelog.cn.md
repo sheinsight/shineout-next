@@ -1,3 +1,8 @@
+## 3.9.8-beta.8
+2026-01-20
+### 🐞 BugFix
+- 修复 `Table` 开启 `virtualColumn` 渲染列不全 ([#1595](https://github.com/sheinsight/shineout-next/pull/1595))
+
 ## 3.9.6-beta.8
 2026-01-07
 ### 🐞 BugFix
