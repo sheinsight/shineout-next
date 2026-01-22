@@ -33,4 +33,6 @@ export interface UseDatePickerFormatProps<Value extends DatePickerValueType> {
     | ((date: Date, position?: 'start' | 'end', startDate?: Date, endDate?: Date) => boolean)
     | Array<boolean | ((date: Date) => boolean)>
     | undefined;
+  min?: DateTimeType;
+  max?: DateTimeType;
 }

@@ -295,7 +295,37 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       });
 
       const isDis = isDisabledInputDate(inputValue);
+
+      // Check min/max constraints for inputValue
+      let isOutOfRange = false;
       if (!isDis) {
+        for (let i = 0; i < inputValue.length; i++) {
+          const date = inputValue[i];
+          if (date) {
+            if (type === 'week') {
+              if (props.min && dateUtil.compareWeek(date, props.min as any, 0, options) < 0) {
+                isOutOfRange = true;
+                break;
+              }
+              if (props.max && dateUtil.compareWeek(date, props.max as any, 0, options) > 0) {
+                isOutOfRange = true;
+                break;
+              }
+            } else {
+              if (props.min && dateUtil.compareDay(date, props.min as any, 0, options) < 0) {
+                isOutOfRange = true;
+                break;
+              }
+              if (props.max && dateUtil.compareDay(date, props.max as any, 0, options) > 0) {
+                isOutOfRange = true;
+                break;
+              }
+            }
+          }
+        }
+      }
+
+      if (!isDis && !isOutOfRange) {
         formatValue = getFormatValueArr(inputValue);
       }
     }
