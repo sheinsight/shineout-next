@@ -40,6 +40,7 @@ const spinStyle: JsStyles<keyof SpinClasses> = {
 
   spin: {
     margin: 'auto',
+    flexShrink: 0,
   },
   content: {
     margin: 'auto',
