@@ -50,6 +50,7 @@ const AnimationList = (props: AnimationListProps) => {
     className: classNamePo,
     animation = true,
     onAnimationAfterEnter,
+    dir,
     ...forwardProps
   } = props;
 
@@ -315,6 +316,7 @@ const AnimationList = (props: AnimationListProps) => {
       data-sheinx-animation-type={type.join(' ')}
       data-sheinx-animation-duration={duration}
       style={wrapperStyle}
+      dir={dir}
       {...forwardProps}
     >
       {children}

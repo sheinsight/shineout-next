@@ -86,7 +86,6 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     };
   }, [props.dataItem, props.getItemProps, props.level, props.index, expandAble]);
 
-
   const renderChildren = () => {
     let items = children;
     let isTitle = false;
@@ -137,14 +136,14 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     if (shoudPop) {
       const position =
         isVertical || isSubHorizontal ? (isUp ? 'right-bottom' : 'right-top') : 'bottom-left';
-      const offset = isVertical && props.isEdgeItem ? [0, 4] as [number, number] : undefined;
+      const offset = isVertical && props.isEdgeItem ? ([0, 4] as [number, number]) : undefined;
       let popoverContentStyle: React.CSSProperties | undefined;
       if (mode === 'horizontal' && props.level === 0 && liRef.current) {
         popoverContentStyle = { minWidth: liRef.current.clientWidth };
       }
       return (
         <Popover
-         // popover现在有出现动画了，避免快速切换子菜单时的动画太多，也加上toggleDuration
+          // popover现在有出现动画了，避免快速切换子菜单时的动画太多，也加上toggleDuration
           mouseEnterDelay={toggleDuration}
           mouseLeaveDelay={toggleDuration}
           className={classNames(classes?.popover)}
@@ -183,6 +182,30 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       props.mode === 'inline' && props.level ? (
         <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
       ) : null;
+    let frontCaret: React.ReactNode = null;
+    if (props.frontCaret) {
+      frontCaret = (
+        <div
+          style={{ color: props.caretColor }}
+          className={classNames(
+            classes?.expand,
+            classes?.expandFront,
+            (isVertical || isSubHorizontal) && classes?.expandVertical,
+            props.parentSelectable && classes?.expandHover,
+          )}
+          onClick={handleExpandClick}
+          dir={config.direction}
+        >
+          {
+            <div className={classes?.icon}>
+              {frontCaretType === 'hollow'
+                ? Icons.menu.CollapseArrow
+                : Icons.menu.FrontSolidArrowDown}
+            </div>
+          }
+        </div>
+      );
+    }
     const item = util.render(props.renderItem, props.dataItem, props.index);
     const link = props.linkKey
       ? (util.getKey(props.linkKey, props.dataItem, props.index, true) as string)
@@ -195,6 +218,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         children: (
           <>
             {indent}
+            {frontCaret}
             {iconEl}
             <div className={classes?.titleContent}>{item.props.children}</div>
           </>
@@ -208,6 +232,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       title = (
         <a {...linkProps}>
           {indent}
+          {frontCaret}
           {iconEl}
           <div className={classes?.titleContent}>{util.wrapSpan(item)}</div>
         </a>
@@ -221,25 +246,6 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           className={classNames(classes?.itemContent, classes?.itemContentFront)}
           onClick={handleItemClick}
         >
-          <div
-            style={{ color: props.caretColor }}
-            className={classNames(
-              classes?.expand,
-              classes?.expandFront,
-              (isVertical || isSubHorizontal) && classes?.expandVertical,
-              props.parentSelectable && classes?.expandHover,
-            )}
-            onClick={handleExpandClick}
-            dir={config.direction}
-          >
-            {
-              <div className={classes?.icon}>
-                {frontCaretType === 'hollow'
-                  ? Icons.menu.CollapseArrow
-                  : Icons.menu.FrontSolidArrowDown}
-              </div>
-            }
-          </div>
           {title}
         </div>
       );

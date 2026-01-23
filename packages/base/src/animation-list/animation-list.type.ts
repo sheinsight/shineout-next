@@ -13,4 +13,5 @@ export interface AnimationListProps extends React.HTMLAttributes<HTMLDivElement>
   onRef?: React.Ref<HTMLDivElement | null>;
   animation?: boolean;
   onAnimationAfterEnter?: () => void;
+  dir?: 'ltr' | 'rtl';
 }

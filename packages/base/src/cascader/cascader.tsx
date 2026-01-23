@@ -817,6 +817,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             type='scale-y'
             duration={'fast'}
             style={pickerWrapperStyle}
+            dir={direction}
           >
             {renderPanel()}
           </AnimationList>

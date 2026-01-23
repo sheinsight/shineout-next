@@ -484,6 +484,9 @@ const menuStyle: JsStyles<MenuClassType> = {
         transform: 'rotate(0deg)',
       },
     },
+    '&$expandFront > $icon': {
+      minHeight: token.lineHeightDynamic,
+    }
   },
   expandVertical: {
     '&[dir=ltr] svg': { transform: 'rotate(-90deg)' },

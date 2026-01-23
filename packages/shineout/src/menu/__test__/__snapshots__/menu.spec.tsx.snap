@@ -1894,30 +1894,30 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           <div
             class="soui-menu-item-content soui-menu-item-content-front"
           >
-            <div
-              class="soui-menu-expand soui-menu-expand-front"
-              dir="ltr"
-            >
-              <div
-                class="soui-menu-icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
             <a
               class="soui-menu-title"
             >
+              <div
+                class="soui-menu-expand soui-menu-expand-front"
+                dir="ltr"
+              >
+                <div
+                  class="soui-menu-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 class="soui-menu-title-content"
               >
@@ -1935,30 +1935,30 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           <div
             class="soui-menu-item-content soui-menu-item-content-front"
           >
-            <div
-              class="soui-menu-expand soui-menu-expand-front"
-              dir="ltr"
-            >
-              <div
-                class="soui-menu-icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
             <a
               class="soui-menu-title"
             >
+              <div
+                class="soui-menu-expand soui-menu-expand-front"
+                dir="ltr"
+              >
+                <div
+                  class="soui-menu-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 class="soui-menu-title-content"
               >
@@ -1979,33 +1979,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
-                <div
-                  class="soui-menu-expand soui-menu-expand-front"
-                  dir="ltr"
-                >
-                  <div
-                    class="soui-menu-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <a
                   class="soui-menu-title"
                 >
                   <div
                     style="width: 14px; flex-shrink: 0;"
                   />
+                  <div
+                    class="soui-menu-expand soui-menu-expand-front"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-menu-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="soui-menu-title-content"
                   >
@@ -2023,33 +2023,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
-                <div
-                  class="soui-menu-expand soui-menu-expand-front"
-                  dir="ltr"
-                >
-                  <div
-                    class="soui-menu-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <a
                   class="soui-menu-title"
                 >
                   <div
                     style="width: 14px; flex-shrink: 0;"
                   />
+                  <div
+                    class="soui-menu-expand soui-menu-expand-front"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-menu-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="soui-menu-title-content"
                   >
@@ -2069,30 +2069,30 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           <div
             class="soui-menu-item-content soui-menu-item-content-front"
           >
-            <div
-              class="soui-menu-expand soui-menu-expand-front"
-              dir="ltr"
-            >
-              <div
-                class="soui-menu-icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
             <a
               class="soui-menu-title"
             >
+              <div
+                class="soui-menu-expand soui-menu-expand-front"
+                dir="ltr"
+              >
+                <div
+                  class="soui-menu-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 class="soui-menu-title-content"
               >
@@ -2113,33 +2113,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
-                <div
-                  class="soui-menu-expand soui-menu-expand-front"
-                  dir="ltr"
-                >
-                  <div
-                    class="soui-menu-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <a
                   class="soui-menu-title"
                 >
                   <div
                     style="width: 14px; flex-shrink: 0;"
                   />
+                  <div
+                    class="soui-menu-expand soui-menu-expand-front"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-menu-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="soui-menu-title-content"
                   >
@@ -2157,33 +2157,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
-                <div
-                  class="soui-menu-expand soui-menu-expand-front"
-                  dir="ltr"
-                >
-                  <div
-                    class="soui-menu-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <a
                   class="soui-menu-title"
                 >
                   <div
                     style="width: 14px; flex-shrink: 0;"
                   />
+                  <div
+                    class="soui-menu-expand soui-menu-expand-front"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-menu-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="soui-menu-title-content"
                   >
@@ -2204,33 +2204,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   <div
                     class="soui-menu-item-content soui-menu-item-content-front"
                   >
-                    <div
-                      class="soui-menu-expand soui-menu-expand-front"
-                      dir="ltr"
-                    >
-                      <div
-                        class="soui-menu-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            clip-rule="evenodd"
-                            d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    </div>
                     <a
                       class="soui-menu-title"
                     >
                       <div
                         style="width: 28px; flex-shrink: 0;"
                       />
+                      <div
+                        class="soui-menu-expand soui-menu-expand-front"
+                        dir="ltr"
+                      >
+                        <div
+                          class="soui-menu-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </div>
                       <div
                         class="soui-menu-title-content"
                       >
@@ -2248,33 +2248,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   <div
                     class="soui-menu-item-content soui-menu-item-content-front"
                   >
-                    <div
-                      class="soui-menu-expand soui-menu-expand-front"
-                      dir="ltr"
-                    >
-                      <div
-                        class="soui-menu-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            clip-rule="evenodd"
-                            d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    </div>
                     <a
                       class="soui-menu-title"
                     >
                       <div
                         style="width: 28px; flex-shrink: 0;"
                       />
+                      <div
+                        class="soui-menu-expand soui-menu-expand-front"
+                        dir="ltr"
+                      >
+                        <div
+                          class="soui-menu-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </div>
                       <div
                         class="soui-menu-title-content"
                       >
@@ -2296,30 +2296,30 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           <div
             class="soui-menu-item-content soui-menu-item-content-front"
           >
-            <div
-              class="soui-menu-expand soui-menu-expand-front"
-              dir="ltr"
-            >
-              <div
-                class="soui-menu-icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
             <a
               class="soui-menu-title"
             >
+              <div
+                class="soui-menu-expand soui-menu-expand-front"
+                dir="ltr"
+              >
+                <div
+                  class="soui-menu-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M18.262 9.92099L12.6754 15.4948C12.2851 15.8842 11.6531 15.8842 11.2628 15.4947L5.73891 9.98295C5.34796 9.59286 5.34727 8.95969 5.73736 8.56874C5.9236 8.3821 6.17601 8.27656 6.43967 8.27508L17.5501 8.2131C18.1024 8.21002 18.5526 8.65523 18.5556 9.2075C18.5571 9.47504 18.4514 9.73203 18.262 9.92099Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 class="soui-menu-title-content"
               >
@@ -2352,30 +2352,30 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           <div
             class="soui-menu-item-content soui-menu-item-content-front"
           >
-            <div
-              class="soui-menu-expand soui-menu-expand-front"
-              dir="ltr"
-            >
-              <div
-                class="soui-menu-icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
             <a
               class="soui-menu-title"
             >
+              <div
+                class="soui-menu-expand soui-menu-expand-front"
+                dir="ltr"
+              >
+                <div
+                  class="soui-menu-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 class="soui-menu-title-content"
               >
@@ -2393,30 +2393,30 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           <div
             class="soui-menu-item-content soui-menu-item-content-front"
           >
-            <div
-              class="soui-menu-expand soui-menu-expand-front"
-              dir="ltr"
-            >
-              <div
-                class="soui-menu-icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
             <a
               class="soui-menu-title"
             >
+              <div
+                class="soui-menu-expand soui-menu-expand-front"
+                dir="ltr"
+              >
+                <div
+                  class="soui-menu-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 class="soui-menu-title-content"
               >
@@ -2437,33 +2437,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
-                <div
-                  class="soui-menu-expand soui-menu-expand-front"
-                  dir="ltr"
-                >
-                  <div
-                    class="soui-menu-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <a
                   class="soui-menu-title"
                 >
                   <div
                     style="width: 14px; flex-shrink: 0;"
                   />
+                  <div
+                    class="soui-menu-expand soui-menu-expand-front"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-menu-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="soui-menu-title-content"
                   >
@@ -2481,33 +2481,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
-                <div
-                  class="soui-menu-expand soui-menu-expand-front"
-                  dir="ltr"
-                >
-                  <div
-                    class="soui-menu-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <a
                   class="soui-menu-title"
                 >
                   <div
                     style="width: 14px; flex-shrink: 0;"
                   />
+                  <div
+                    class="soui-menu-expand soui-menu-expand-front"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-menu-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="soui-menu-title-content"
                   >
@@ -2527,30 +2527,30 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           <div
             class="soui-menu-item-content soui-menu-item-content-front"
           >
-            <div
-              class="soui-menu-expand soui-menu-expand-front"
-              dir="ltr"
-            >
-              <div
-                class="soui-menu-icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
             <a
               class="soui-menu-title"
             >
+              <div
+                class="soui-menu-expand soui-menu-expand-front"
+                dir="ltr"
+              >
+                <div
+                  class="soui-menu-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 class="soui-menu-title-content"
               >
@@ -2571,33 +2571,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
-                <div
-                  class="soui-menu-expand soui-menu-expand-front"
-                  dir="ltr"
-                >
-                  <div
-                    class="soui-menu-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <a
                   class="soui-menu-title"
                 >
                   <div
                     style="width: 14px; flex-shrink: 0;"
                   />
+                  <div
+                    class="soui-menu-expand soui-menu-expand-front"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-menu-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="soui-menu-title-content"
                   >
@@ -2615,33 +2615,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               <div
                 class="soui-menu-item-content soui-menu-item-content-front"
               >
-                <div
-                  class="soui-menu-expand soui-menu-expand-front"
-                  dir="ltr"
-                >
-                  <div
-                    class="soui-menu-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
                 <a
                   class="soui-menu-title"
                 >
                   <div
                     style="width: 14px; flex-shrink: 0;"
                   />
+                  <div
+                    class="soui-menu-expand soui-menu-expand-front"
+                    dir="ltr"
+                  >
+                    <div
+                      class="soui-menu-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="soui-menu-title-content"
                   >
@@ -2662,33 +2662,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   <div
                     class="soui-menu-item-content soui-menu-item-content-front"
                   >
-                    <div
-                      class="soui-menu-expand soui-menu-expand-front"
-                      dir="ltr"
-                    >
-                      <div
-                        class="soui-menu-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            clip-rule="evenodd"
-                            d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    </div>
                     <a
                       class="soui-menu-title"
                     >
                       <div
                         style="width: 28px; flex-shrink: 0;"
                       />
+                      <div
+                        class="soui-menu-expand soui-menu-expand-front"
+                        dir="ltr"
+                      >
+                        <div
+                          class="soui-menu-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </div>
                       <div
                         class="soui-menu-title-content"
                       >
@@ -2706,33 +2706,33 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   <div
                     class="soui-menu-item-content soui-menu-item-content-front"
                   >
-                    <div
-                      class="soui-menu-expand soui-menu-expand-front"
-                      dir="ltr"
-                    >
-                      <div
-                        class="soui-menu-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            clip-rule="evenodd"
-                            d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    </div>
                     <a
                       class="soui-menu-title"
                     >
                       <div
                         style="width: 28px; flex-shrink: 0;"
                       />
+                      <div
+                        class="soui-menu-expand soui-menu-expand-front"
+                        dir="ltr"
+                      >
+                        <div
+                          class="soui-menu-icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </div>
                       <div
                         class="soui-menu-title-content"
                       >
@@ -2754,30 +2754,30 @@ exports[`Menu[Base] should render correctly about front 1`] = `
           <div
             class="soui-menu-item-content soui-menu-item-content-front"
           >
-            <div
-              class="soui-menu-expand soui-menu-expand-front"
-              dir="ltr"
-            >
-              <div
-                class="soui-menu-icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
             <a
               class="soui-menu-title"
             >
+              <div
+                class="soui-menu-expand soui-menu-expand-front"
+                dir="ltr"
+              >
+                <div
+                  class="soui-menu-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M6.00203 10.0605C5.6115 9.67002 5.6115 9.03686 6.00203 8.64633C6.39255 8.25581 7.02572 8.25581 7.41624 8.64633L12.002 13.2321L16.5878 8.64633C16.9783 8.25581 17.6115 8.25581 18.002 8.64633C18.3926 9.03686 18.3926 9.67002 18.002 10.0605L12.7091 15.3534C12.3186 15.744 11.6854 15.744 11.2949 15.3534L6.00203 10.0605Z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
               <div
                 class="soui-menu-title-content"
               >
