@@ -117,6 +117,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $title': {
       fontSize: Token.stepsSmallTitleFontSize,
     },
+    '& $content  $description': {
+      fontSize: Token.stepsSmallDescriptionFontSize,
+    },
     '&$default $iconWrapper': {
       fontSize: Token.stepsSmallTitleFontSize,
       lineHeight: Token.stepsSmallIconHeight,
@@ -247,6 +250,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
     '& $title': {
       fontSize: Token.stepsLargeTitleFontSize,
+    },
+    '& $content $description': {
+      fontSize: Token.stepsLargeDescriptionFontSize,
     },
     '&$default $iconWrapper': {
       fontSize: Token.stepsLargeTitleFontSize,
@@ -825,7 +831,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       lineHeight: Token.stepsIconHeight,
     },
     '& $description': {
-      fontSize: Token.stepsSmallDescriptionFontSize,
+      fontSize: Token.stepsDescriptionFontSize,
     },
     '& $icon svg': {
       padding: 6,

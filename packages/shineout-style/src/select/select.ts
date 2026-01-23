@@ -556,6 +556,10 @@ const selectStyle: JsStyles<SelectClassType> = {
       marginLeft: 4,
       width: 'auto',
     },
+    '$pickerLarge &': {
+      paddingLeft: token.selectLargeHeaderPaddingX,
+      paddingRight: token.selectLargeHeaderPaddingX,
+    }
   },
   footer: {},
   columnsTitle: {},
@@ -578,6 +582,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     height: '100%',
     display: 'flex',
     alignItems: 'center',
+    '$pickerLarge &': {
+      paddingLeft: token.selectLargeColumnPadding,
+      paddingRight: token.selectLargeColumnPadding,
+    },
     '& $columnsCheckbox': {
       marginRight: 0,
     },
