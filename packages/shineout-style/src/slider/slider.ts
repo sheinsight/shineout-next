@@ -69,6 +69,12 @@ const sliderStyle: JsStyles<SliderClassType> = {
   indicator: {
     position: 'absolute',
     zIndex: 100,
+    '&:hover::after': {
+      borderColor: token.sliderIndicatorHoverBoderColor,
+    },
+    '&:active::after': {
+      borderColor: token.sliderIndicatorBorderColor,
+    },
 
     '&::after': {
       content: '""',

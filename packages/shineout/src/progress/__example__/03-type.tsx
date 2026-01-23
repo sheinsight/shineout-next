@@ -9,10 +9,10 @@ import { Progress } from 'shineout';
 
 const App: React.FC = () => (
   <div style={{ width: 400, display: 'flex', flexDirection: "column", gap: 24 }}>
-    <Progress value={100} type='success'>100%</Progress>
-    <Progress value={90} type='info'>90%</Progress>
-    <Progress value={80} type='warning'>80%</Progress>
-    <Progress value={70} type='danger'>70%</Progress>
+    <Progress value={100} type='success' icon>100%</Progress>
+    <Progress value={90} type='info' icon>90%</Progress>
+    <Progress value={80} type='warning' icon>80%</Progress>
+    <Progress value={70} type='danger' icon>70%</Progress>
   </div>
 );
 

@@ -472,7 +472,7 @@ export interface DatePickerTokens {
   datePickerTimePanelPaddingX: string;
   /**
    * @type {string}
-   * @token Spacing-7
+   * @token Spacing-6
    * @description 日期选择器时间面板内边距（垂直方向）
    */
   datePickerTimePanelPaddingY: string;

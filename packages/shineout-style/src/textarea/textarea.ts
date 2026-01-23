@@ -69,6 +69,12 @@ const input: JsStyles<keyof TextareaClasses> = {
     flexWrap: 'wrap',
     minHeight: `calc(${token.lineHeightDynamic} + ${token.inputPaddingY} * 2)`,
     ...wrapper,
+    '$wrapperSmall&': {
+      minHeight: `calc(${token.lineHeightDynamic} + ${token.inputSmallPaddingY} * 2)`,
+    },
+    '$wrapperLarge&': {
+      minHeight: `calc(${token.lineHeightDynamic} + ${token.inputLargePaddingY} * 2)`,
+    },
   },
   ...resetWrapper,
   textarea: {
@@ -143,6 +149,13 @@ const input: JsStyles<keyof TextareaClasses> = {
     padding: 4,
     color: token.textareaClearColor,
 
+    '$wrapperSmall &': {
+      top: token.textareaSmallPaddingY,
+    },
+    '$wrapperLarge &': {
+      top: token.textareaLargePaddingY,
+    },
+
     '&:hover': {
       color: token.textareaClearHoverColor,
     },
@@ -151,6 +164,15 @@ const input: JsStyles<keyof TextareaClasses> = {
       display: 'block',
       width: token.textareaClearSize,
       height: token.textareaClearSize,
+
+      '$wrapperSmall &': {
+        width: token.textareaSmallClearSize,
+        height: token.textareaSmallClearSize,
+      },
+      '$wrapperLarge &': {
+        width: token.textareaLargeClearSize,
+        height: token.textareaLargeClearSize,
+      },
     },
     '[dir="rtl"] &': {
       right: 'auto',
@@ -159,7 +181,13 @@ const input: JsStyles<keyof TextareaClasses> = {
   },
   wrapperWithClear: {
     '&& $textarea': {
-      paddingRight: `calc(${token.textareaPaddingX} * 4)`
+      paddingRight: `calc(${token.textareaPaddingX} + ${token.textareaClearSize} + 12px)`,
+    },
+    '&&$wrapperSmall > $textarea': {
+      paddingRight: `calc(${token.textareaSmallPaddingX} + ${token.textareaSmallClearSize} + 12px)`,
+    },
+    '&&$wrapperLarge > $textarea': {
+      paddingRight: `calc(${token.textareaLargePaddingX} + ${token.textareaLargeClearSize} + 12px)`,
     },
   }
 };

@@ -14,7 +14,7 @@ const useStyles = createUseStyles(
   {
     item: {
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       padding: '4px 8px',
       gap: 4,
       marginTop: 2,
@@ -22,9 +22,18 @@ const useStyles = createUseStyles(
         borderRadius: 2,
         backgroundColor: 'var(---Neutral-fill-2-, #F4F5F8)',
       },
+      '& svg': {
+        width: 14,
+        flexShrink: 0,
+        lineHeight: '22px',
+        height: 22,
+      }
     },
     btn: {
+      display: 'flex',
       marginLeft: 'auto',
+      flexShrink: 0,
+      height: 22,
     }
   },
   { name: 'upload-custom' },
@@ -88,7 +97,7 @@ const App: React.FC = () => {
       return <div key={item.name} className={classnames.item} style={index === 0 ? { marginTop: 12 } : {}}>
         {renderFileIcon(item.name)}
         {item.name}
-        <Link type="secondary" onClick={() => onValueRemove(index)} style={{width: 14, height: 14}} className={classnames.btn}>
+        <Link type="secondary" onClick={() => onValueRemove(index)} style={{width: 14}} className={classnames.btn}>
           {icons.Delete}
         </Link>
       </div>

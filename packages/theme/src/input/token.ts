@@ -51,7 +51,7 @@ const inputTokenExtraValue = {
   hover: {
     font: { color: '' },
     placeholder: { color: '' },
-    border: { color: 'Brand-6' },
+    border: { color: 'Brand-5' },
     background: { color: 'Neutral-fill-1' },
     shadow: '',
     clear: { color: 'Neutral-text-4' },

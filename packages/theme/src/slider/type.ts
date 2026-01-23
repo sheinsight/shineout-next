@@ -58,6 +58,12 @@ export interface SliderTokens {
   sliderIndicatorBorderSize: string;
   /**
    * @type {string}
+   * @token Brand-5
+   * @description 滑块拖拽点的鼠标移入时的undefined颜色
+   */
+  sliderIndicatorHoverBoderColor: string;
+  /**
+   * @type {string}
    * @token Brand-6
    * @description 滑块拖拽点的已滑过的背景颜色
    */

@@ -1,3 +1,4 @@
+import { getTokenName } from '@sheinx/theme';
 import type { CSSProperties } from 'react';
 
 const supportsHas = () => {
@@ -216,6 +217,8 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       borderColor: token.disabledBorderColor,
       boxShadow: 'none',
       cursor: 'not-allowed',
+      [getTokenName('inputInnerPlaceFontColor')]: token.disabledFontColor,
+      [getTokenName('inputInnerFontColor')]: token.disabledFontColor,
       [`&:not($${name}Error):hover`]: {
         borderColor: token.disabledBorderColor,
       },

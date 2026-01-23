@@ -90,7 +90,7 @@ const config = {
     InfoLine: icons.InfoCircleFill,
     WarningLine: icons.WarningCircleFill,
     SuccessLine: icons.CheckCircleFill,
-    DangerLine: icons.Close,
+    DangerLine: icons.CloseFill,
   },
   rate: {
     Star: icons.StarFill,
