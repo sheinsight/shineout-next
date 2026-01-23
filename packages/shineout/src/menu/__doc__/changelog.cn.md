@@ -1,4 +1,4 @@
-## 3.9.8-beta.15
+## 3.9.8-beta.16
 2026-01-23
 ### 🐞 BugFix
 - 修复 `Menu` 的前置展开符的缩进问题 ([#1603](https://github.com/sheinsight/shineout-next/pull/1603))
