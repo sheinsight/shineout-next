@@ -11,6 +11,7 @@ export interface CollapseItemClasses {
   header: string;
   active: string;
   icon: string;
+  iconRight: string;
   title: string;
   extra: string;
   content: string;

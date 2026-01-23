@@ -94,6 +94,10 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
       },
     }
   },
+  iconRight: {
+    marginRight: 0,
+    marginLeft: Token.collapseHeaderGap,
+  },
   title: {
     flex: 1,
     lineHeight: Token.lineHeightDynamic,

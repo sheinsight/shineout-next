@@ -43,10 +43,11 @@ const CollapseItem = (props: CollapseItemProps) => {
       disabled,
       onChange,
     });
-  const headerIconItem = () => {
+  const headerIconItem = (direction: 'left' | 'right') => {
     const collapseItemIconClassName = classNames(
       jssStyle?.collapseItem.icon,
       jssStyle?.collapseItem.activeTransform,
+      direction === 'right' && jssStyle?.collapseItem.iconRight,
       // expandIconPosition === 'right'
       //   ? jssStyle?.collapseItem.activeTransformRight
       //   : jssStyle?.collapseItem.activeTransform,
@@ -112,7 +113,7 @@ const CollapseItem = (props: CollapseItemProps) => {
   return (
     <div className={collapseItemClassName} style={style}>
       <div {...getItemContentProps({ className: collapseItemHeaderClassName })}>
-        {expandIconPosition === 'left' && headerIconItem()}
+        {expandIconPosition === 'left' && headerIconItem('left')}
         {extraPosition === 'left' && extraItem()}
         <div
           {...getTitleProps({
@@ -125,7 +126,7 @@ const CollapseItem = (props: CollapseItemProps) => {
           {title}
         </div>
         {extraPosition === 'right' && extraItem()}
-        {expandIconPosition === 'right' && headerIconItem()}
+        {expandIconPosition === 'right' && headerIconItem('right')}
       </div>
       {renderContent()}
     </div>
