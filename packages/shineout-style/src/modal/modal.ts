@@ -386,9 +386,17 @@ const modalStyle: JsStyles<ModalClassType> = {
     top: 12,
     right: 12,
     marginTop: 0,
+    '[dir="rtl"] &': {
+      right: 'auto',
+      left: 12,
+    },
     '$wrapperDrawer &': {
       top: 4,
       right: 4,
+      '[dir="rtl"] &': {
+        right: 'auto',
+        left: 4,
+      },
     }
   },
   body: {
