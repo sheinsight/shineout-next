@@ -160,6 +160,18 @@ export interface SelectTokens {
   selectLargePlaceholderMarginY: string;
   /**
    * @type {string}
+   * @token Spacing-12
+   * @description 选择器大尺寸多列模式下内边距
+   */
+  selectLargeColumnPadding: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 选择器大尺寸列表头部的内边距（水平方向）
+   */
+  selectLargeHeaderPaddingX: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 选择器内部容器的内边距（水平方向）
    */

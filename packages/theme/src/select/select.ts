@@ -30,6 +30,8 @@ const selectTokens: SelectTokens = {
   selectLargeOptionInnerPaddingY: 'Spacing-8',
   selectLargeClearIconSize: 'Font-16',
   selectLargePlaceholderMarginY: 'Spacing-4',
+  selectLargeColumnPadding: 'Spacing-12',
+  selectLargeHeaderPaddingX: 'Spacing-12',
   selectInnerPaddingX: 'Spacing-8',
   selectInnerPaddingY: 'Spacing-5',
   selectInnerTitleMarginY: 'Spacing-2',

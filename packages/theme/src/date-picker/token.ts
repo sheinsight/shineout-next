@@ -139,7 +139,7 @@ const datePickerTokenExtraValue = {
     margin: { y: 'Spacing-4' },
   },
   time: {
-    panel: { padding: { x: 'Spacing-12', y: 'Spacing-7' } },
+    panel: { padding: { x: 'Spacing-12', y: 'Spacing-6' } },
     list: { gap: 'Spacing-8' },
     item: {
       height: 'Size-15',

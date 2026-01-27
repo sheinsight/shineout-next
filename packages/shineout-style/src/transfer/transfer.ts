@@ -50,7 +50,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     '& $target': {
       borderRadius: `0 ${Token.transferBorderRadius} ${Token.transferBorderRadius} 0`,
       '& $header': {
-        paddingRight: 6,
+        paddingRight: 8,
         borderRadius: `0 ${Token.transferBorderRadius} 0 0`,
       },
     },
@@ -68,7 +68,7 @@ const TransferStyle: JsStyles<TransferClass> = {
   target: {},
   simpleTarget: {
     display: 'flex',
-    padding: '5px 3px',
+    padding: '5px 4px',
     paddingLeft: 8,
     fontSize: Token.transferFontSize,
     justifyContent: 'space-between',
@@ -85,7 +85,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 3,
+    marginLeft: 4,
     '& svg': {
       width: Token.transferFontSize,
       color: Token.transferRemoveIconColor,

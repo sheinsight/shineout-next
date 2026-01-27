@@ -80,6 +80,12 @@ const selectTokenExtraValue = {
     placeholder: {
       margin: { y: 'Spacing-4' },
     },
+    column: {
+      padding: 'Spacing-12',
+    },
+    header: {
+      padding: { x: 'Spacing-12' },
+    }
   },
   inner: {
     padding: { x: 'Spacing-8', y: 'Spacing-5' },

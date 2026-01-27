@@ -178,7 +178,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const renderGroupTitle = (d: { [key: string]: any }) => {
     const title = d[groupKey as keyof typeof d];
     return (
-      <div className={styles.optionGroupTitle} title={typeof title === 'string' ? title : undefined}>
+      <div className={styles.optionGroupTitle} title={typeof title === 'string' ? title : undefined} style={{ height: 'var(--group-title-height)' }}>
         {title}
       </div>
     );
@@ -217,7 +217,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     }
   }, []);
 
-  return <div className={rootClass}>{renderList()}</div>;
+  return <div className={rootClass} style={{ '--group-title-height': `${lineHeight - 2}px` } as React.CSSProperties}>{renderList()}</div>;
 };
 
 export default List;

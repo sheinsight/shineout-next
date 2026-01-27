@@ -304,6 +304,9 @@ const input: JsStyles<keyof InputClasses> = {
     height: token.inputIconSize,
     color: token.inputToggleColor,
     cursor: 'pointer',
+    '$wrapperDisabled &': {
+      color: token.inputDisabledFontColor,
+    },
     '$wrapperSmall &': {
       width: token.inputSmallIconSize,
       height: token.inputSmallIconSize,

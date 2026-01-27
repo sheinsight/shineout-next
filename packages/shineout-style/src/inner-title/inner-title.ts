@@ -1,6 +1,7 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 import { InnerTitleClasses } from '@sheinx/base';
+import { getTokenName } from '@sheinx/theme';
 
 const moveOffset = '-10px';
 const moveTime = '120ms';

@@ -82,7 +82,7 @@ const datePickerTokens: DatePickerTokens = {
   datePickerCellHeaderColor: 'Neutral-text-4',
   datePickerCellMarginY: 'Spacing-4',
   datePickerTimePanelPaddingX: 'Spacing-12',
-  datePickerTimePanelPaddingY: 'Spacing-7',
+  datePickerTimePanelPaddingY: 'Spacing-6',
   datePickerTimeListGap: 'Spacing-8',
   datePickerTimeItemHeight: 'Size-15',
   datePickerTimeItemBorderRadius: 'Radius-default',

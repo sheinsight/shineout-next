@@ -9,6 +9,7 @@ import { FormFooterProvider } from '../form/form-footer-context';
 import { popupContext } from '@sheinx/hooks';
 
 import type { ModalContentProps } from './modal-content.type';
+import { useConfig } from '../config';
 
 let hasMask = false;
 
@@ -102,6 +103,7 @@ const Modal = (props: ModalContentProps) => {
   const defaultWidth = isPositionX ? 'auto' : 500;
   const { events = {}, maskCloseAble = true, esc = true, top = '10vh', style = {} } = props;
 
+  const globalConfig = useConfig()
   const width = style.width || props.width || defaultWidth;
   const height = style.height || props.height;
   const [origin, setOrigin] = useState('');
@@ -508,6 +510,7 @@ const Modal = (props: ModalContentProps) => {
         )}
         onAnimationEnd={handleAnimationEnd}
         style={{ background: props.maskBackground, zIndex: props.zIndex, display: !visible && !animation ? 'none' : undefined }}
+        dir={globalConfig.direction}
       >
         <div
           className={modalClasses?.mask}

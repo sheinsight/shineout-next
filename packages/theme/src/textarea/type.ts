@@ -58,6 +58,12 @@ export interface TextareaTokens {
   textareaSmallPaddingY: string;
   /**
    * @type {string}
+   * @token Font-12
+   * @description 多行文本框小尺寸清除字号
+   */
+  textareaSmallClearSize: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 多行文本框大尺寸字体字号
    */
@@ -76,6 +82,12 @@ export interface TextareaTokens {
   textareaLargePaddingY: string;
   /**
    * @type {string}
+   * @token Font-16
+   * @description 多行文本框大尺寸清除字号
+   */
+  textareaLargeClearSize: string;
+  /**
+   * @type {string}
    * @token Neutral-text-2
    * @description 多行文本框占位符颜色
    */
@@ -88,7 +100,7 @@ export interface TextareaTokens {
   textareaBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-5
    * @description 多行文本框鼠标移入时的边框颜色
    */
   textareaHoverBorderColor: string;

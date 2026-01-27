@@ -10,6 +10,12 @@ export interface StepsTokens {
   stepsDescriptionFontColor: string;
   /**
    * @type {string}
+   * @token Font-14
+   * @description 步骤条描述信息字体字号
+   */
+  stepsDescriptionFontSize: string;
+  /**
+   * @type {string}
    * @token Spacing-4
    * @description 步骤条描述信息标题模式外边距（水平方向）
    */
@@ -94,7 +100,7 @@ export interface StepsTokens {
   stepsLargeTitleFontSize: string;
   /**
    * @type {string}
-   * @token Font-12
+   * @token Font-14
    * @description 步骤条大尺寸描述信息字体字号
    */
   stepsLargeDescriptionFontSize: string;

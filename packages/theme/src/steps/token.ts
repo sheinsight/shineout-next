@@ -38,11 +38,10 @@ const stepsTokenValue = {
   large: {
     icon: { width: 'Size-16', height: 'Size-16', font: { size: 'Font-18' } },
     title: { font: { size: 'Font-18' } },
-    description: { font: { size: 'Font-12' } },
+    description: { font: { size: 'Font-14' } },
     arrow: { padding: { x: 'Spacing-16', y: 'Spacing-11' }, height: '' },
   },
   title: { font: { size: 'Font-16' } },
-  description: { font: { size: 'Font-12' } },
   wait: {
     font: { color: 'Neutral-text-4' },
     background: { color: 'Neutral-fill-2' },
@@ -69,7 +68,7 @@ const stepsTokenValue = {
 };
 
 const stepsTokenExtraValue = {
-  description: { font: { color: 'Neutral-text-3' }, title: { margin: { x: 'Spacing-4' } } },
+  description: { font: { color: 'Neutral-text-3', size: 'Font-14' }, title: { margin: { x: 'Spacing-4' } } },
 };
 
 module.exports = {

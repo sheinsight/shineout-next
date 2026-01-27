@@ -5,6 +5,7 @@ import { StepsTokens } from './type';
 
 const stepsTokens: StepsTokens = {
   stepsDescriptionFontColor: 'Neutral-text-3',
+  stepsDescriptionFontSize: 'Font-14',
   stepsDescriptionTitleMarginX: 'Spacing-4',
   stepsIconWidth: 'Size-14',
   stepsIconHeight: 'Size-14',
@@ -19,7 +20,7 @@ const stepsTokens: StepsTokens = {
   stepsSmallTitleFontSize: 'Font-14',
   stepsSmallDescriptionFontSize: 'Font-12',
   stepsLargeTitleFontSize: 'Font-18',
-  stepsLargeDescriptionFontSize: 'Font-12',
+  stepsLargeDescriptionFontSize: 'Font-14',
   stepsWaitFontColor: 'Neutral-text-4',
   stepsWaitBackgroundColor: 'Neutral-fill-2',
   stepsWaitHoverFontColor: 'Brand-6',

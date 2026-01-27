@@ -27,7 +27,7 @@ const inputTokens: InputTokens = {
   inputBackgroundColor: 'Neutral-fill-1',
   inputClearColor: 'Neutral-text-3',
   inputToggleColor: 'Neutral-text-4',
-  inputHoverBorderColor: 'Brand-6',
+  inputHoverBorderColor: 'Brand-5',
   inputHoverBackgroundColor: 'Neutral-fill-1',
   inputHoverClearColor: 'Neutral-text-4',
   inputHoverToggleColor: 'Neutral-text-5',

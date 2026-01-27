@@ -28,11 +28,13 @@ const textareaTokenExtraValue = {
     font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Spacing-8', y: 'Spacing-1' },
+    clear: { size: 'Font-12' },
   },
   large: {
     font: { size: 'Font-16' },
     border: { radius: '' },
     padding: { x: 'Spacing-12', y: 'Spacing-7' },
+    clear: { size: 'Font-16' },
   },
   placeholder: { color: 'Neutral-text-2' },
   background: { color: 'Neutral-fill-1' },
@@ -40,7 +42,7 @@ const textareaTokenExtraValue = {
   hover: {
     font: { color: '' },
     placeholder: { color: '' },
-    border: { color: 'Brand-6' },
+    border: { color: 'Brand-5' },
     background: { color: '' },
     shadow: '',
   },

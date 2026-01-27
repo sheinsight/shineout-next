@@ -102,7 +102,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
     if (item[groupKey]) {
       const title = item[groupKey];
       return (
-        <div className={styles.optionGroupTitle} key={key} title={typeof title === 'string' ? title as string : undefined}>
+        <div className={styles.optionGroupTitle} key={key} title={typeof title === 'string' ? title as string : undefined} style={{ height: 'var(--group-title-height)' }}>
           {title as React.ReactNode}
         </div>
       );

@@ -142,7 +142,7 @@ export interface InputTokens {
   inputToggleColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-5
    * @description 输入框鼠标移入时的边框颜色
    */
   inputHoverBorderColor: string;
