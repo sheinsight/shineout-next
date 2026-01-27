@@ -1,3 +1,9 @@
+## 3.9.9-beta.3
+2026-01-27
+### 🐞 BugFix
+- 修复 `Table` 的 `pagination.onChange` 第三个参数 `sizeChange` 为 `undefined` 的问题 ([#1608](https://github.com/sheinsight/shineout-next/pull/1608))
+
+
 ## 3.9.8-beta.12
 2026-01-22
 ### 🐞 BugFix
