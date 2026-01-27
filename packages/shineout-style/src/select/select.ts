@@ -552,6 +552,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     padding: `${token.selectHeaderPaddingY} ${token.selectHeaderPaddingX}`,
     borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
     '& $columnsCheckbox': {
+      padding: 0,
       marginRight: 0,
       marginLeft: 4,
       width: 'auto',
@@ -574,8 +575,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
   },
   columnsOption: {
-    paddingLeft: token.selectColumnPadding,
-    paddingRight: token.selectColumnPadding,
     lineHeight: 1,
     boxSizing: 'border-box',
     overflow: 'hidden',
@@ -596,6 +595,9 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   columnsRadio: {
     width: '100%',
+    height: '100%',
+    paddingLeft: token.selectColumnPadding,
+    paddingRight: token.selectColumnPadding,
     marginLeft: token.selectColumnOptionMargin,
     '& :last-child': {
       flex: 1,
@@ -606,6 +608,9 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   columnsCheckbox: {
     width: '100%',
+    height: '100%',
+    paddingLeft: token.selectColumnPadding,
+    paddingRight: token.selectColumnPadding,
     // marginLeft: token.selectColumnOptionMargin,
     marginLeft: 0,
     '& :last-child': {

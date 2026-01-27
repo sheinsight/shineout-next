@@ -68,7 +68,7 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
       },
   },
   darkIndicatorWrapper: {
-    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled) &:hover': {
+    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &&': {
       '&::before': {
         background: token.checkboxIconCircleDark,
       },
