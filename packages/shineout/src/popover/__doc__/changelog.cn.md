@@ -1,3 +1,9 @@
+## 3.9.9-beta.2
+2026-01-27
+### 🆕 Feature
+ - `Popover` 新增全局配置项 `animation`，用于配置是否启用弹出动画效果 ([#1607](https://github.com/sheinsight/shineout-next/pull/1607))
+
+
 ## 3.8.4-beta.7
 2025-09-25
 

@@ -18,6 +18,19 @@ type TooltipConfig = {
 }
 
 /**
+ * @en Global configuration for Popover component
+ * @cn Popover组件的全局配置
+ * @version 3.9.9
+ */
+export type PopoverConfig = {
+  /**
+   * @en Global default animation setting for Popover component
+   * @cn Popover组件的全局默认动画设置
+   */
+  animation?: boolean;
+}
+
+/**
  * @en Global configuration for Empty component
  * @cn Empty组件的全局配置
  * @version 3.8.0
@@ -42,6 +55,7 @@ export interface ConfigOption {
   trim?: boolean;
   spin?: SpinConfig;
   tooltip?: TooltipConfig;
+  popover?: PopoverConfig;
   /**
    * @en Global configuration for Empty component
    * @cn Empty组件的全局配置
@@ -61,6 +75,7 @@ export const defaultConfig: ConfigOption = {
   trim: undefined,
   spin: 'ring',
   tooltip: undefined,
+  popover: {},
   empty: {},
   direction: 'ltr',
   popupContainer: null,

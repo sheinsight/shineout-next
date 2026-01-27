@@ -11,6 +11,7 @@ export interface PopoverClasses {
    */
   wrapper: string;
   wrapperOpen: string;
+  wrapperNoAnimation: string;
   content: string;
   arrow: string;
   hideArrow: string;
@@ -197,6 +198,14 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @version 3.7.0
    */
   disabled?: boolean;
+
+  /**
+   * @en Whether to enable animation
+   * @cn 是否开启动画效果
+   * @default true
+   * @version 3.9.9
+   */
+  animation?: boolean;
 
   /**
    * @private 边界元素，内部使用
