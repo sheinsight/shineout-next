@@ -26,6 +26,9 @@ const Popover = (props: PopoverProps) => {
 
   const config = useConfig();
 
+  // Use global config animation if props.animation is not explicitly set
+  const animation = props.animation ?? config.popover?.animation ?? true;
+
   const popoverStyle = jssStyle?.popover?.();
 
   const render = useRender();
@@ -181,6 +184,7 @@ const Popover = (props: PopoverProps) => {
           popoverStyle?.wrapper,
           open && popoverStyle?.wrapperOpen,
           !showArrow && popoverStyle?.hideArrow,
+          animation === false && popoverStyle?.wrapperNoAnimation,
         )}
         style={containerStyle}
         {...util.getDataAttribute({ position: props.adjust ? positionState : position, type })}

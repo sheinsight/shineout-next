@@ -191,6 +191,11 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       animation: '$fadeIn 200ms ease, $moveRightBottom 200ms cubic-bezier(0.22, 0.61, 0.36, 1);',
     },
   },
+  wrapperNoAnimation: {
+    '&[data-soui-position]': {
+      animation: 'none',
+    }
+  },
   arrow: {},
   hideArrow: {},
   content: {
