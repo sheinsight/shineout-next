@@ -220,8 +220,8 @@ const buttonTokenValue = {
     },
     active: {
       font: { color: 'Neutral-text-5' },
-      background: { color: 'Neutral-fill-5' },
-      border: { color: 'Neutral-fill-5' },
+      background: { color: 'Neutral-fill-4' },
+      border: { color: 'Neutral-fill-4' },
     },
     focus: {
       font: { color: 'Neutral-text-5' },
