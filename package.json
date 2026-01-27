@@ -1,11 +1,7 @@
 {
   "name": "sheinx",
   "private": true,
-<<<<<<< HEAD
-  "version": "3.9.9-beta.1",
-=======
   "version": "3.9.9-beta.2",
->>>>>>> d436c5e18 (feat: 为 Popover 组件新增 animation 属性)
   "description": "A react library developed with sheinx",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
