@@ -3,6 +3,7 @@
 exports[`Modal[SnapShot] should render correctly  1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -70,6 +71,7 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
 exports[`Modal[SnapShot] should render correctly about close 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -137,6 +139,7 @@ exports[`Modal[SnapShot] should render correctly about close 1`] = `
 exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -204,6 +207,7 @@ exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
 exports[`Modal[SnapShot] should render correctly about container 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -271,6 +275,7 @@ exports[`Modal[SnapShot] should render correctly about container 1`] = `
 exports[`Modal[SnapShot] should render correctly about focus 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -338,6 +343,7 @@ exports[`Modal[SnapShot] should render correctly about focus 1`] = `
 exports[`Modal[SnapShot] should render correctly about form 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -405,6 +411,7 @@ exports[`Modal[SnapShot] should render correctly about form 1`] = `
 exports[`Modal[SnapShot] should render correctly about icon 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -472,6 +479,7 @@ exports[`Modal[SnapShot] should render correctly about icon 1`] = `
 exports[`Modal[SnapShot] should render correctly about move 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -539,6 +547,7 @@ exports[`Modal[SnapShot] should render correctly about move 1`] = `
 exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -606,6 +615,7 @@ exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
 exports[`Modal[SnapShot] should render correctly about position 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -673,6 +683,7 @@ exports[`Modal[SnapShot] should render correctly about position 1`] = `
 exports[`Modal[SnapShot] should render correctly about type 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
@@ -740,6 +751,7 @@ exports[`Modal[SnapShot] should render correctly about type 1`] = `
 exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
 <div
   class="soui-modal soui-modal-wrapper soui-modal-wrapper-animation soui-modal-wrapper-show soui-modal-wrapper-is-mask"
+  dir="ltr"
 >
   <div
     class="soui-modal-mask"
