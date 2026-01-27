@@ -6,7 +6,7 @@ interface ListPaginationProps {
   current: number | undefined;
   pageSize: number | undefined;
   defaultCurrent: number | undefined;
-  onChange: ((current: number, pageSize: number) => void) | undefined;
+  onChange: ((current: number, pageSize: number, sizeChange?: boolean) => void) | undefined;
   shouldPage: boolean;
   loading: boolean;
   total: number | undefined;
@@ -17,10 +17,10 @@ const usePaginationList = (props: ListPaginationProps) => {
   const [pageSize, setPageSize] = useState<number>(props.pageSize || 10);
   const { shouldPage = true } = props;
 
-  const handleChange = usePersistFn((current: number, pageSize: number) => {
+  const handleChange = usePersistFn((current: number, pageSize: number, sizeChange?: boolean) => {
     setCurrent(current);
     setPageSize(pageSize);
-    if (props.onChange) props.onChange(current, pageSize);
+    if (props.onChange) props.onChange(current, pageSize, sizeChange);
   });
 
   const getPager = (data: any[]) => {
