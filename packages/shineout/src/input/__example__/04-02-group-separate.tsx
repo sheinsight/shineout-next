@@ -14,7 +14,7 @@ const App: React.FC = () => (
   <div>
     <Input.Group separate style={style}>
       <Select keygen data={['Option1', 'Option2']} width={100} defaultValue="Option1" />
-      <Input placeholder='please enter' suffix={<div style={{width: 14}}>{icons.Search}</div>} />
+      <Input placeholder='please enter' suffix={<div style={{width: '1em', color: 'var(--soui-neutral-text-4,#666C7C)'}}>{icons.Search}</div>} />
     </Input.Group>
 
     <Input.Group separate style={style}>
