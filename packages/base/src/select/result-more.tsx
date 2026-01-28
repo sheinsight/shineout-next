@@ -166,13 +166,18 @@ const More = <DataItem, Value>(props: ResultMoreProps<DataItem, Value>) => {
     );
   };
 
+  // 当 compressed === 'no-repeat' 时，只传递未显示的数据
+  const validShowNum = showNum || 0;
+  const compressedData =
+    compressed === 'no-repeat' ? (datas || []).slice(validShowNum) : (datas as DataItem[]);
+
   return (
     <React.Fragment>
       {shouldShowMore ? data : before}
       <span style={{ display: 'inline-flex' }}>
         {renderCompressed
           ? renderCompressed({
-              data: datas as DataItem[],
+              data: compressedData as DataItem[],
               onRemove: onRemove as (item: DataItem) => void,
             })
           : renderCompressedTag()}
