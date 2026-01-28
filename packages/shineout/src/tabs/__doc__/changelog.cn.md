@@ -1,3 +1,9 @@
+## 3.9.9-beta.4
+2026-01-28
+### 🐞 BugFix
+- 修复 `Tabs` 动态添加 `Tabs.Panel` 时滚动位置重置而导致 active tab 不在视口内的问题 ([#1611](https://github.com/sheinsight/shineout-next/pull/1611))
+
+
 ## 3.9.7-beta.1
 2026-01-07
 
