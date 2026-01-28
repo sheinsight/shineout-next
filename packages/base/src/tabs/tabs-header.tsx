@@ -115,7 +115,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
     if (offset !== undefined) {
       setTransform(offset);
     }
-  }, [active, tabRef.current, headerRef.current, scrollRef.current, shouldScroll]);
+  }, [active, tabRef.current, headerRef.current, scrollRef.current, shouldScroll, tabs?.length]);
 
   const getDataProps = (options?: { state?: string; position?: string; shape?: string }) => {
     return util.getDataAttribute({
