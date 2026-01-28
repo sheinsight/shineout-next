@@ -9,7 +9,7 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
   wrapper: {
     display: 'inline-flex',
     position: 'relative',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     cursor: 'pointer',
     boxSizing: 'border-box',
     marginRight: token.checkboxGap,
@@ -32,6 +32,7 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
     boxSizing: 'border-box',
     width: token.checkboxIconSize,
     height: token.checkboxIconSize,
+    marginTop: 4,
     flexShrink: 0,
     '$wrapperSmall &': {
       width: token.checkboxSmallIconSize,

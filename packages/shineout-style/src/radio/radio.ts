@@ -9,7 +9,7 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
   wrapper: {
     display: 'inline-flex',
     position: 'relative',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     cursor: 'pointer',
     boxSizing: 'border-box',
     marginRight: token.radioGap,
@@ -47,6 +47,7 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     width: token.radioIconWidth,
     minWidth: token.radioIconWidth,
     height: token.radioIconWidth,
+    marginTop: 4,
     '$wrapperSmall &': {
       width: token.radioSmallIconWidth,
       minWidth: token.radioSmallIconWidth,
