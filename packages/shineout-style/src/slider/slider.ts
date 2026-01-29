@@ -29,14 +29,11 @@ const sliderStyle: JsStyles<SliderClassType> = {
   },
   track: {
     cursor: 'pointer',
-    borderRadius: '100px',
     height: token.sliderTrackSize,
     borderTop: `${token.sliderScaleMarginY} solid transparent`,
     borderBottom: `${token.sliderScaleMarginY} solid transparent`,
     boxSizing: 'content-box',
-    backgroundColor: token.sliderTrackBackgroundColor,
     position: 'relative',
-    backgroundClip: 'content-box',
     '$vertical &': {
       width: token.sliderTrackSize,
       height: '100%',
@@ -47,9 +44,14 @@ const sliderStyle: JsStyles<SliderClassType> = {
       cursor: 'not-allowed',
     }
   },
+  trackBackground: {
+    borderRadius: `calc(${token.sliderTrackSize} / 2)`,
+    height: '100%',
+    backgroundColor: token.sliderTrackBackgroundColor,
+  },
   trackInner: {
     position: 'absolute',
-    borderRadius: 'inherit',
+    borderRadius: `calc(${token.sliderTrackSize} / 2)`,
     top: '0',
     left: '0',
     right: '100%',

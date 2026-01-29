@@ -5,6 +5,7 @@ export interface SliderClasses {
   wrapper: string;
   track: string;
   trackInner: string;
+  trackBackground: string;
   indicator: string;
   indicatorStart: string;
   indicatorEnd: string;
