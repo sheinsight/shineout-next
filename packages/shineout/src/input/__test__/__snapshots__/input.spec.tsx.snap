@@ -1077,7 +1077,7 @@ exports[`Input[Base] should render correctly about number 2`] = `
         style="cursor: pointer; padding: 0px 8px; border-radius: 4px 0 0 4px;"
       >
         <div
-          style="display: flex;"
+          style="display: flex; width: 1em; height: 1em;"
         >
           <svg
             aria-hidden="true"
@@ -1111,7 +1111,7 @@ exports[`Input[Base] should render correctly about number 2`] = `
         style="cursor: pointer; padding: 0px 8px; border-radius: 0 4px 4px 0;"
       >
         <div
-          style="display: flex;"
+          style="display: flex; width: 1em; height: 1em;"
         >
           <svg
             aria-hidden="true"

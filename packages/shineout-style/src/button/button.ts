@@ -51,7 +51,37 @@ const beforeLine = () => ({
   '&[dir=rtl]::before': {
     right: -1,
   },
-  '&:not($disabled):hover': {
+  '&$dashed:hover': {
+    '&::before': {
+      height: '100%',
+      top: 0,
+      bottom: 0,
+      borderLeft: '1px dashed currentColor',
+      background: 'none',
+    },
+    // 使用 ::after 在右侧创建分割线，颜色使用当前按钮的 currentColor
+    '&:not(:last-child)::after': {
+      content: '" "',
+      position: 'absolute',
+      height: '100%',
+      top: 0,
+      width: 1,
+      borderLeft: '1px dashed currentColor',
+      background: 'none',
+      zIndex: 1,
+    },
+    '&:not(:last-child)[dir=ltr]::after': {
+      right: -1,
+    },
+    '&:not(:last-child)[dir=rtl]::after': {
+      left: -1,
+    },
+    // 隐藏相邻按钮的左侧分割线，因为已经被 ::after 覆盖了
+    '& + $button::before': {
+      opacity: 0,
+    },
+  },
+  '&:not($disabled):not($dashed):hover': {
     '&::before': {
       background: 'transparent',
     },
@@ -470,7 +500,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
       },
 
     // 填充型 button
-    '& $button:not($outline):not($dashed):not($text)': {
+    '& $button:not($outline):not($text)': {
       position: 'relative',
 
       '&::before': {
@@ -486,6 +516,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
           top: 'calc(25% + 1px)',
           width: 1,
           background: Token.buttonSplitlineOutlineBackgroundColor,
+          transition: 'none',
         },
         '&[dir=ltr]::before': {
           left: -1,

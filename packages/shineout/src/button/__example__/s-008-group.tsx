@@ -49,10 +49,10 @@ export default () => {
           </Button>
         </Button.Group>
 
-        <Button.Group type='secondary' mode="dashed">
+        <Button.Group type='secondary'>
           <Button>Publish</Button>
           <Button>
-            <Icon03 color='#666C7C'></Icon03>
+            <Icon03 color='currentColor'></Icon03>
           </Button>
         </Button.Group>
       </div>
