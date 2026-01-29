@@ -13,12 +13,16 @@ import {
   noInternet,
   web404,
   error,
+  systemMaintenanceMultic,
+  serverWrongMultic,
   noDataColorful,
   noResultColorful,
   noAuthColorful,
   noInternetColorful,
   web404Colorful,
   errorColorful,
+  systemMaintenanceColorful,
+  serverWrongColorful
 } from './static/icon';
 
 export default () => {
@@ -65,6 +69,8 @@ export default () => {
         {renderIcon(noInternet, 'noInternet', 'No network')}
         {renderIcon(web404, 'web404', '404')}
         {renderIcon(error, 'error', 'Failed to load')}
+        {renderIcon(systemMaintenanceMultic, 'systemMaintenanceMultic', 'System maintenance')}
+        {renderIcon(serverWrongMultic, 'serverWrongMultic', 'Server error')}
       </div>
       <div
         style={{
@@ -80,6 +86,8 @@ export default () => {
         {renderIcon(noInternetColorful, 'noInternetColorful', 'No network')}
         {renderIcon(web404Colorful, 'web404Colorful', '404')}
         {renderIcon(errorColorful, 'errorColorful', 'Failed to load')}
+        {renderIcon(systemMaintenanceColorful, 'systemMaintenanceColorful', 'System maintenance')}
+        {renderIcon(serverWrongColorful, 'serverWrongColorful', 'Server error')}
       </div>
     </div>
   );

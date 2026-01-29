@@ -92,6 +92,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
         shouldFinal={shouldFinal}
         parentId={parentId}
         path={path}
+        size={size}
       />
     );
   };

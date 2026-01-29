@@ -7,8 +7,8 @@ interface IconProps {
 const Icon01 = (props: IconProps) => (
   <svg
     style={props.style}
-    width={props.fontSize || 14}
-    height={props.fontSize || 14}
+    width={props.fontSize || '1em'}
+    height={props.fontSize || '1em'}
     viewBox='0 0 24 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
@@ -20,8 +20,8 @@ const Icon01 = (props: IconProps) => (
 
 const Icon02 = (props: IconProps) => (
   <svg
-    width={props.fontSize || 14}
-    height={props.fontSize || 14}
+    width={props.fontSize || '1em'}
+    height={props.fontSize || '1em'}
     viewBox='0 0 24 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
@@ -31,8 +31,8 @@ const Icon02 = (props: IconProps) => (
 );
 const Icon03 = (props: IconProps) => (
   <svg
-    width={props.fontSize || 14}
-    height={props.fontSize || 14}
+    width={props.fontSize || '1em'}
+    height={props.fontSize || '1em'}
     viewBox='0 0 24 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'

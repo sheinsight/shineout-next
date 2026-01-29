@@ -5,7 +5,7 @@ import { JssStyleType, CascaderProps } from './cascader.type';
 export interface CascaderNodeProps<DataItem, Value extends KeygenResult[]>
   extends Pick<
     CascaderProps<DataItem, Value>,
-    'loader' | 'multiple' | 'expandTrigger' | 'renderItem' | 'keygen' | 'mode'
+    'loader' | 'multiple' | 'expandTrigger' | 'renderItem' | 'keygen' | 'mode' | 'size'
   > {
   data: DataItem;
   active: boolean;

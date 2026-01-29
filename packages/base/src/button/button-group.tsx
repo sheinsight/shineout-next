@@ -36,7 +36,7 @@ const Group = (props: ButtonGroupProps) => {
         return cloneElement<ButtonProps>(Child, {
           size,
           mode: modeSetted || Child.props.mode,
-          shape: shapeSetted,
+          shape: shapeSetted || Child.props.shape,
           type: Child.props.type || type,
           className: classNames(Child.props.className),
         });

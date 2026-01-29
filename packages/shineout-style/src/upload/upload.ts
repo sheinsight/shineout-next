@@ -118,7 +118,6 @@ const uploadStyle: JsStyles<UploadClassType> = {
   },
   iconHover: {
     '&:hover': {
-      color: token.uploadResultIconHoverColor,
       borderRadius: '50%',
       backgroundColor: token.uploadResultIconHoverBackgroundColor,
     },
@@ -280,11 +279,9 @@ const uploadStyle: JsStyles<UploadClassType> = {
     boxSizing: 'border-box',
     width: token.uploadImageResultMaskIconSize,
     height: token.uploadImageResultMaskIconSize,
-    borderColor: token.uploadImageResultMaskIconColor,
-    borderTopColor: 'transparent',
+    borderColor: `transparent ${token.uploadImageResultMaskIconColor} ${token.uploadImageResultMaskIconColor} ${token.uploadImageResultMaskIconColor}`,
     '$resultText &': {
-      borderColor: token.uploadResultUploadingIconColor,
-      borderTopColor: 'transparent',
+      borderColor: `transparent ${token.uploadResultUploadingIconColor} ${token.uploadResultUploadingIconColor} ${token.uploadResultUploadingIconColor}`,
     }
   },
   imageResultMaskInfo: {

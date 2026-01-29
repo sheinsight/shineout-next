@@ -148,6 +148,11 @@ const input: JsStyles<keyof TextareaClasses> = {
     cursor: 'pointer',
     padding: 4,
     color: token.textareaClearColor,
+    opacity: 0,
+
+    '$wrapperWithClear:hover &': {
+      opacity: 1,
+    },
 
     '$wrapperSmall &': {
       top: token.textareaSmallPaddingY,

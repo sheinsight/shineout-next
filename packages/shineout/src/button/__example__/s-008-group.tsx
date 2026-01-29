@@ -6,7 +6,7 @@
  */
 
 import { Button } from 'shineout';
-import { Icon02, Icon03 } from './static/icon';
+import { Icon01, Icon02, Icon03 } from './static/icon';
 
 export default () => {
   return (
@@ -42,7 +42,14 @@ export default () => {
           </Button>
         </Button.Group>
 
-        <Button.Group type='secondary'>
+        <Button.Group type='primary'>
+          <Button>Publish</Button>
+          <Button shape='square'>
+            <Icon01></Icon01>
+          </Button>
+        </Button.Group>
+
+        <Button.Group type='secondary' mode="dashed">
           <Button>Publish</Button>
           <Button>
             <Icon03 color='#666C7C'></Icon03>

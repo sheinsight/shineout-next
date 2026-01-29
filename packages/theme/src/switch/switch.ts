@@ -12,7 +12,7 @@ const switchTokens: SwitchTokens = {
   switchCircleFill: 'Neutral-text-1',
   switchCircleShadow: 'Shadow-3',
   switchWidth: 'Size-21',
-  switchTextPaddingLeft: 'Spacing-8',
+  switchTextPaddingLeft: 'Spacing-6',
   switchTextPaddingRight: 'Spacing-4',
   switchSmallFontSize: 'Font-12',
   switchSmallPaddingX: 'Spacing-2',
