@@ -1,9 +1,12 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import { PopoverClasses } from '@sheinx/base';
-import { tooltipAnimation } from '../tooltip/tooltip';
+import { tooltipAnimation, arrowClipPath } from '../tooltip/tooltip';
 
 export type PopoverClassType = keyof PopoverClasses;
+
+const arrowGap = 12;
+const arrowHeight = 8;
 
 const cssvar = '--popover-arrow-gap';
 const hideArrowGap = `var(${cssvar}, 10px)`;
@@ -25,30 +28,32 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     border: `1px solid ${token.popoverBorderColor}`,
     wordWrap: 'break-word',
     '& > $arrow': {
-      'z-index': 1,
+      zIndex: 1,
       position: 'absolute',
-      content: '" "',
-      display: 'block',
-      border: `inherit`,
-      width: '8.4px',
-      height: '8.4px',
-      boxSizing: 'content-box',
-      background: 'inherit',
-      borderBottom: 'none',
-      '&[dir=ltr]': { borderLeftColor: 'transparent' },
-      '&[dir=rtl]': { borderRight: 'transparent' },
+      overflow: 'visible',
+      width: arrowHeight * 2,
+      height: arrowHeight,
+      pointerEvents: 'none',
+      transformOrigin: 'center center',
+      filter: `drop-shadow(0 1px 0 ${token.popoverBorderColor}) drop-shadow(0 -1px 0 ${token.popoverBorderColor}) drop-shadow(1px 0 0 ${token.popoverBorderColor}) drop-shadow(-1px 0 0 ${token.popoverBorderColor})`,
+      '&::before': {
+        display: 'block',
+        content: '""',
+        bottom: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: token.popoverBackgroundColor,
+        clipPath: `path('${arrowClipPath}')`,
+      },
     },
     '&$hideArrow': {
       [cssvar]: '4px',
     },
     '&[data-soui-position^="bottom"]': {
-      marginTop: `calc(${hideArrowGap} - 2px)`,
+      marginTop: arrowGap - 2,
       '& > $arrow': {
-        top: '0',
-        transform: 'translate(0, -50%) rotate(-45deg)',
-        left: '0',
-        right: '0',
-        margin: 'auto',
+        left: '50%',
+        transform: 'translate(-50%, calc(-100% + 1px)) rotate(0deg)',
       },
       '&::after': {
         top: poyfillPos,
@@ -61,37 +66,30 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="top"]': {
-      // marginTop: (arrowGap - 2) * -1,
-      marginTop: `calc((${hideArrowGap} - 2px) * -1)`,
-
+      marginTop: (arrowGap - 2) * -1,
       '& > $arrow': {
-        bottom: '0',
-        transform: 'translate(0, 50%) rotate(135deg)',
-        left: '0',
-        right: '0',
-        margin: 'auto',
+        top: '100%',
+        left: '50%',
+        transform: 'translate(-50%, -1px) rotate(-180deg)',
       },
       '&::after': {
-        // bottom: arrowGap * -1,
         bottom: poyfillPos,
         left: '0',
         right: '0',
         content: '" "',
         display: 'block',
-        // height: arrowGap,
         height: poyfillHeight,
         position: 'absolute',
       },
     },
     '&[data-soui-position^="left"]': {
-      '&[dir=ltr]': { marginRight: `calc((${hideArrowGap} - 2px))` },
-      '&[dir=rtl]': { marginLeft: `calc((${hideArrowGap} - 2px))` },
+      '&[dir=ltr]': { marginRight: arrowGap - 2 },
+      '&[dir=rtl]': { marginLeft: arrowGap - 2 },
       '& > $arrow': {
-        right: token.popoverBorderWidth,
-        transform: 'translate(50%, 0) rotate(45deg)',
-        top: '0',
-        bottom: '0',
-        margin: 'auto',
+        right: 0,
+        top: '50%',
+        transform: 'translate(11px, -50%) rotate(90deg)',
+        transformOrigin: 'center center',
       },
       '&::after': {
         right: poyfillPos,
@@ -104,52 +102,110 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="right"]': {
-      '&[dir=ltr]': { marginLeft: `calc(${hideArrowGap} - 2px)` },
-      '&[dir=rtl]': { marginRight: `calc(${hideArrowGap} - 2px)` },
+      '&[dir=ltr]': { marginLeft: arrowGap - 2 },
+      '&[dir=rtl]': { marginRight: arrowGap - 2 },
       '& > $arrow': {
-        left: '0',
-        transform: 'translate(-50%, 0) rotate(-135deg)',
-        top: '0',
-        bottom: '0',
-        margin: 'auto',
+        top: '50%',
+        left: 0,
+        transform: 'translate(-11px, -50%) rotate(-90deg)',
       },
       '&::after': {
-        // left: arrowGap * -1,
         left: poyfillPos,
         top: '0',
         bottom: '0',
         content: '" "',
         display: 'block',
-        // width: arrowGap,
         width: poyfillHeight,
         position: 'absolute',
       },
     },
-    '&&[data-soui-position$="-left"] > $arrow': { left: arrowMargin, right: 'auto' },
-    '&&[data-soui-position$="-right"] > $arrow': { right: arrowMargin, left: 'auto' },
-    '&&[data-soui-position$="-top"] > $arrow': { top: arrowMargin, bottom: 'auto' },
-    '&&[data-soui-position$="-bottom"] > $arrow': { bottom: arrowMargin, top: 'auto' },
+    '&&[data-soui-position="bottom-left"] > $arrow': {
+      left: 8,
+      transform: 'translate(0, calc(-100% + 1px)) rotate(0deg)'
+    },
+    '&&[data-soui-position="bottom-right"] > $arrow': {
+      right: 8,
+      left: 'auto',
+      transform: 'translate(0, calc(-100% + 1px)) rotate(0deg)'
+    },
+    '&&[data-soui-position="top-left"] > $arrow': {
+      left: 8,
+      transform: 'translate(0, -1px) rotate(-180deg)'
+    },
+    '&&[data-soui-position="top-right"] > $arrow': {
+      right: 8,
+      left: 'auto',
+      transform: 'translate(0, -1px) rotate(-180deg)'
+    },
+    '&&[data-soui-position="left-top"] > $arrow': {
+      top: 8,
+      transform: 'translate(11px, 0) rotate(90deg)'
+    },
+    '&&[data-soui-position="left-bottom"] > $arrow': {
+      bottom: 8,
+      top: 'auto',
+      transform: 'translate(11px, 0) rotate(90deg)'
+    },
+    '&&[data-soui-position="right-top"] > $arrow': {
+      top: 8,
+      transform: 'translate(-11px, 0) rotate(-90deg)'
+    },
+    '&&[data-soui-position="right-bottom"] > $arrow': {
+      bottom: 8,
+      top: 'auto',
+      transform: 'translate(-11px, 0) rotate(-90deg)'
+    },
 
     '&[data-soui-type="danger"]': {
       borderColor: token.popoverDangerBorderColor,
       backgroundColor: token.popoverDangerBackgroundColor,
+      '& > $arrow': {
+        filter: `drop-shadow(0 1px 0 ${token.popoverDangerBorderColor}) drop-shadow(0 -1px 0 ${token.popoverDangerBorderColor}) drop-shadow(1px 0 0 ${token.popoverDangerBorderColor}) drop-shadow(-1px 0 0 ${token.popoverDangerBorderColor})`,
+      },
+      '& > $arrow::before': {
+        backgroundColor: token.popoverDangerBackgroundColor,
+      },
     },
     '&[data-soui-type="info"]': {
       borderColor: token.popoverInfoBorderColor,
       backgroundColor: token.popoverInfoBackgroundColor,
+      '& > $arrow': {
+        filter: `drop-shadow(0 1px 0 ${token.popoverInfoBorderColor}) drop-shadow(0 -1px 0 ${token.popoverInfoBorderColor}) drop-shadow(1px 0 0 ${token.popoverInfoBorderColor}) drop-shadow(-1px 0 0 ${token.popoverInfoBorderColor})`,
+      },
+      '& > $arrow::before': {
+        backgroundColor: token.popoverInfoBackgroundColor,
+      },
     },
     '&[data-soui-type="warning"]': {
       borderColor: token.popoverWarningBorderColor,
       backgroundColor: token.popoverWarningBackgroundColor,
+      '& > $arrow': {
+        filter: `drop-shadow(0 1px 0 ${token.popoverWarningBorderColor}) drop-shadow(0 -1px 0 ${token.popoverWarningBorderColor}) drop-shadow(1px 0 0 ${token.popoverWarningBorderColor}) drop-shadow(-1px 0 0 ${token.popoverWarningBorderColor})`,
+      },
+      '& > $arrow::before': {
+        backgroundColor: token.popoverWarningBackgroundColor,
+      },
     },
     '&[data-soui-type="success"]': {
       borderColor: token.popoverSuccessBorderColor,
       backgroundColor: token.popoverSuccessBackgroundColor,
+      '& > $arrow': {
+        filter: `drop-shadow(0 1px 0 ${token.popoverSuccessBorderColor}) drop-shadow(0 -1px 0 ${token.popoverSuccessBorderColor}) drop-shadow(1px 0 0 ${token.popoverSuccessBorderColor}) drop-shadow(-1px 0 0 ${token.popoverSuccessBorderColor})`,
+      },
+      '& > $arrow::before': {
+        backgroundColor: token.popoverSuccessBackgroundColor,
+      },
     },
     '&[data-soui-type="error"]': {
       borderColor: token.popoverErrorBorderColor,
       backgroundColor: token.popoverErrorBackgroundColor,
       '& $content': { color: token.popoverErrorFontColor },
+      '& > $arrow': {
+        filter: `drop-shadow(0 1px 0 ${token.popoverErrorBorderColor}) drop-shadow(0 -1px 0 ${token.popoverErrorBorderColor}) drop-shadow(1px 0 0 ${token.popoverErrorBorderColor}) drop-shadow(-1px 0 0 ${token.popoverErrorBorderColor})`,
+      },
+      '& > $arrow::before': {
+        backgroundColor: token.popoverErrorBackgroundColor,
+      },
     },
   },
   wrapperOpen: {

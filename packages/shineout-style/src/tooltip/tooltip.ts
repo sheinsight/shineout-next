@@ -135,6 +135,9 @@ export const tooltipAnimation = {
     },
   },
 };
+
+export const arrowClipPath = 'M 0 8 A 4 4 0 0 0 2.82842712474619 6.82842712474619 L 6.585786437626905 3.0710678118654755 A 2 2 0 0 1 9.414213562373096 3.0710678118654755 L 13.17157287525381 6.82842712474619 A 4 4 0 0 0 16 8 Z';
+
 const tooltipStyle: JsStyles<keyof TooltipClasses> = {
   rootClass: {},
   ...tooltipAnimation,
@@ -364,7 +367,7 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
       width: '100%',
       height: '100%',
       backgroundColor: 'var(--tooltip-background-color)',
-      clipPath: "path('M 0 8 A 4 4 0 0 0 2.82842712474619 6.82842712474619 L 6.585786437626905 3.0710678118654755 A 2 2 0 0 1 9.414213562373096 3.0710678118654755 L 13.17157287525381 6.82842712474619 A 4 4 0 0 0 16 8 Z')",
+      clipPath: `path('${arrowClipPath}')`,
     },
   },
   content: {
