@@ -60,13 +60,31 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
         values.push(item.value);
         continue;
       }
-      if (disabledCheck(item)) continue;
-      values.push(formatData(item));
-      if (childrenKey && item && (item as any)[childrenKey]) {
-        const children = (item as any)[childrenKey];
-        if (children.length) {
-          values.push(...getFlatDataValue(children, childrenKey));
+
+      const isDisabled = disabledCheck(item);
+
+      // childrenKey 参数由 treeCheckAll 属性控制:
+      // - 当 Table 组件设置 treeCheckAll=true 时, thead 全选会传入 childrenKey
+      // - 当 treeCheckAll=false 或 undefined 时, childrenKey 为 undefined
+      if (childrenKey) {
+        // 树形递归模式 (treeCheckAll=true):
+        // 即使父节点 disabled, 也要递归处理其子节点
+        // 这样可以选中 disabled 父节点下未 disabled 的子节点
+        if (!isDisabled) {
+          values.push(formatData(item));
         }
+        // 递归处理子节点
+        if (item && (item as any)[childrenKey]) {
+          const children = (item as any)[childrenKey];
+          if (children.length) {
+            values.push(...getFlatDataValue(children, childrenKey));
+          }
+        }
+      } else {
+        // 非树形递归模式 (treeCheckAll=false 或 undefined):
+        // 保持原有逻辑, disabled 节点直接跳过, 不处理其子节点
+        if (isDisabled) continue;
+        values.push(formatData(item));
       }
     }
     return values;

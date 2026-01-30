@@ -1,3 +1,9 @@
+## 3.9.9-beta.7
+2026-01-30
+### 🐞 BugFix
+- 修复 `Table` 树形数据在 `treeCheckAll=true` 时，父节点 disabled 后无法通过 thead 全选勾选其未 disabled 的子节点的问题 ([#1613](https://github.com/sheinsight/shineout-next/pull/1613))
+
+
 ## 3.9.9-beta.3
 2026-01-27
 ### 🐞 BugFix
