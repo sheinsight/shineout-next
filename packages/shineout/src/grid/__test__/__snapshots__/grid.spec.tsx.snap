@@ -9,6 +9,9 @@ exports[`Grid[Base] should render correctly  1`] = `
       class="soui-slider-track"
     >
       <div
+        class="soui-slider-track-background"
+      />
+      <div
         class="soui-slider-track-inner"
         dir="ltr"
         style="left: 0%; right: 62.5%;"

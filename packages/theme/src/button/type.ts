@@ -346,13 +346,13 @@ export interface ButtonTokens {
   buttonSecondaryActiveFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-5
+   * @token Neutral-fill-4
    * @description 按钮次要色鼠标点击时的背景颜色
    */
   buttonSecondaryActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-5
+   * @token Neutral-fill-4
    * @description 按钮次要色鼠标点击时的边框颜色
    */
   buttonSecondaryActiveBorderColor: string;

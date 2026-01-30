@@ -8,6 +8,9 @@ exports[`Slider[Base] should render correctly  1`] = `
     class="soui-slider-track"
   >
     <div
+      class="soui-slider-track-background"
+    />
+    <div
       class="soui-slider-track-inner"
       dir="ltr"
       style="left: 0%; right: 50%;"
@@ -58,6 +61,9 @@ exports[`Slider[Base] should render correctly about disabled 1`] = `
   <div
     class="soui-slider-track"
   >
+    <div
+      class="soui-slider-track-background"
+    />
     <div
       class="soui-slider-track-inner"
       dir="ltr"
@@ -120,6 +126,9 @@ exports[`Slider[Base] should render correctly about disabled function 1`] = `
     class="soui-slider-track"
   >
     <div
+      class="soui-slider-track-background"
+    />
+    <div
       class="soui-slider-track-inner"
       dir="ltr"
       style="left: 0%; right: 100%;"
@@ -180,6 +189,9 @@ exports[`Slider[Base] should render correctly about discrete 1`] = `
         class="soui-slider-track"
       >
         <div
+          class="soui-slider-track-background"
+        />
+        <div
           class="soui-slider-track-inner"
           dir="ltr"
           style="left: 0%; right: 50%;"
@@ -235,6 +247,9 @@ exports[`Slider[Base] should render correctly about discrete 1`] = `
         class="soui-slider-track"
       >
         <div
+          class="soui-slider-track-background"
+        />
+        <div
           class="soui-slider-track-inner"
           dir="ltr"
           style="left: 0%; right: 50%;"
@@ -287,6 +302,9 @@ exports[`Slider[Base] should render correctly about format 1`] = `
   <div
     class="soui-slider-track"
   >
+    <div
+      class="soui-slider-track-background"
+    />
     <div
       class="soui-slider-track-inner"
       dir="ltr"
@@ -429,6 +447,9 @@ exports[`Slider[Base] should render correctly about hider all 1`] = `
     class="soui-slider-track"
   >
     <div
+      class="soui-slider-track-background"
+    />
+    <div
       class="soui-slider-track-inner"
       dir="ltr"
       style="left: 0%; right: 96%;"
@@ -449,6 +470,9 @@ exports[`Slider[Base] should render correctly about hider auto 1`] = `
   <div
     class="soui-slider-track"
   >
+    <div
+      class="soui-slider-track-background"
+    />
     <div
       class="soui-slider-track-inner"
       dir="ltr"
@@ -613,6 +637,9 @@ exports[`Slider[Base] should render correctly about increase 1`] = `
       class="soui-slider-track"
     >
       <div
+        class="soui-slider-track-background"
+      />
+      <div
         class="soui-slider-track-inner"
         dir="ltr"
         style="left: 0%; right: 50%;"
@@ -660,6 +687,9 @@ exports[`Slider[Base] should render correctly about increase 1`] = `
     <div
       class="soui-slider-track"
     >
+      <div
+        class="soui-slider-track-background"
+      />
       <div
         class="soui-slider-track-inner"
         dir="ltr"
@@ -726,6 +756,9 @@ exports[`Slider[Base] should render correctly about input 1`] = `
     <div
       class="soui-slider-track"
     >
+      <div
+        class="soui-slider-track-background"
+      />
       <div
         class="soui-slider-track-inner"
         dir="ltr"
@@ -826,6 +859,9 @@ exports[`Slider[Base] should render correctly about range 1`] = `
     class="soui-slider-track"
   >
     <div
+      class="soui-slider-track-background"
+    />
+    <div
       class="soui-slider-track-inner"
       dir="ltr"
       style="left: 25%; right: 25%;"
@@ -886,6 +922,9 @@ exports[`Slider[Base] should render correctly about scale 1`] = `
   <div
     class="soui-slider-track"
   >
+    <div
+      class="soui-slider-track-background"
+    />
     <div
       class="soui-slider-track-inner"
       dir="ltr"
@@ -978,6 +1017,9 @@ exports[`Slider[Base] should render correctly about step 1`] = `
     class="soui-slider-track"
   >
     <div
+      class="soui-slider-track-background"
+    />
+    <div
       class="soui-slider-track-inner"
       dir="ltr"
       style="left: 5%; right: 75%;"
@@ -1038,6 +1080,9 @@ exports[`Slider[Base] should render correctly about step zero 1`] = `
   <div
     class="soui-slider-track"
   >
+    <div
+      class="soui-slider-track-background"
+    />
     <div
       class="soui-slider-track-inner"
       dir="ltr"
@@ -1201,6 +1246,9 @@ exports[`Slider[Base] should render correctly about value hover 1`] = `
       class="soui-slider-track"
     >
       <div
+        class="soui-slider-track-background"
+      />
+      <div
         class="soui-slider-track-inner"
         dir="ltr"
         style="left: 0%; right: 50%;"
@@ -1248,6 +1296,9 @@ exports[`Slider[Base] should render correctly about value hover 1`] = `
     <div
       class="soui-slider-track"
     >
+      <div
+        class="soui-slider-track-background"
+      />
       <div
         class="soui-slider-track-inner"
         dir="ltr"
@@ -1303,6 +1354,9 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
       class="soui-slider-track"
     >
       <div
+        class="soui-slider-track-background"
+      />
+      <div
         class="soui-slider-track-inner"
         dir="ltr"
         style="bottom: 0%; top: 50%;"
@@ -1351,6 +1405,9 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     <div
       class="soui-slider-track"
     >
+      <div
+        class="soui-slider-track-background"
+      />
       <div
         class="soui-slider-track-inner"
         dir="ltr"
@@ -1410,6 +1467,9 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     <div
       class="soui-slider-track"
     >
+      <div
+        class="soui-slider-track-background"
+      />
       <div
         class="soui-slider-track-inner"
         dir="ltr"
@@ -1484,6 +1544,9 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
       class="soui-slider-track"
     >
       <div
+        class="soui-slider-track-background"
+      />
+      <div
         class="soui-slider-track-inner"
         dir="ltr"
         style="bottom: 12%; top: 30.000000000000004%;"
@@ -1542,6 +1605,9 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     <div
       class="soui-slider-track"
     >
+      <div
+        class="soui-slider-track-background"
+      />
       <div
         class="soui-slider-track-inner"
         dir="ltr"

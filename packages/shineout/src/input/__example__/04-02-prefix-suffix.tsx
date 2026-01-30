@@ -10,7 +10,7 @@ import { Input, icons } from 'shineout';
 
 function MyIcon(props: any){
   const style={
-    width: 14,
+    width: '1em',
     height: 20,
     display: 'flex',
     alignItems: 'center',

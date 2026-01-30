@@ -708,7 +708,7 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
           class="soui-collapseItem-extra"
         >
           <button
-            class="soui-button soui-button-primary soui-button-button"
+            class="soui-button soui-button-primary soui-button-button soui-button-small"
             dir="ltr"
             type="button"
           >

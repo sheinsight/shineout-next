@@ -68,8 +68,8 @@ const uploadTokenExtraValue = {
       background: { color: 'Neutral-fill-1' },
       font: { color: 'Neutral-text-4' },
       hover: {
-        border: { color: 'Brand-6' },
-        font: { color: 'Brand-6' },
+        border: { color: 'Brand-5' },
+        font: { color: 'Brand-5' },
       },
       active: {
         border: { color: 'Brand-7' },

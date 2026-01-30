@@ -20,7 +20,7 @@ describe('ButtonGroup[Base]', () => {
   });
   test('should render button Group base', () => {
     const { container } = render(<ButtonGroup />);
-    expect(container.querySelectorAll(group).length).toBe(5);
+    expect(container.querySelectorAll(group).length).toBe(6);
   });
   test('should render when set type and mode in button group', () => {
     const { container } = render(

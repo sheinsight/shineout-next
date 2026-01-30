@@ -29,6 +29,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     onChange,
     onPathChange,
     mode,
+    size,
   } = props;
 
   const [loading, setLoading] = useState(false);
@@ -153,6 +154,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
             className={styles.optionCheckbox}
             checked={datum.getChecked(id)}
             disabled={isDisabled}
+            size={size}
             onChange={hasHandleSelectRef.current ? undefined : handleChange}
           />
         )}

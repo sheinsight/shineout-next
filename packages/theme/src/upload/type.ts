@@ -136,13 +136,13 @@ export interface UploadTokens {
   uploadImageHandlerFontColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-5
    * @description 上传图片操作区鼠标移入时的边框颜色
    */
   uploadImageHandlerHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-5
    * @description 上传图片操作区鼠标移入时的字体颜色
    */
   uploadImageHandlerHoverFontColor: string;

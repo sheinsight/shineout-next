@@ -261,6 +261,9 @@ exports[`Gap[Base] should render correctly about custom 1`] = `
       class="soui-slider-track"
     >
       <div
+        class="soui-slider-track-background"
+      />
+      <div
         class="soui-slider-track-inner"
         dir="ltr"
         style="left: 0%; right: 92%;"

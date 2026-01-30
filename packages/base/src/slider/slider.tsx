@@ -135,6 +135,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
         ref={trackRef}
         onClick={shouldDisableTrackClick() ? undefined : func.handleTrackClick}
       >
+        <div className={sliderClasses?.trackBackground} />
         <div className={sliderClasses?.trackInner} style={innerStyle} dir={config.direction}>
           {renderIndicator(0)}
           {renderIndicator(1)}

@@ -52,7 +52,7 @@ export interface SwitchTokens {
   switchWidth: string;
   /**
    * @type {string}
-   * @token Spacing-8
+   * @token Spacing-6
    * @description 开关文案内边距undefined
    */
   switchTextPaddingLeft: string;

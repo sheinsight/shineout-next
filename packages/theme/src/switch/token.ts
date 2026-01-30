@@ -30,7 +30,7 @@ const switchTokenExtraValue = {
   circle: { size: 'Size-9', fill: 'Neutral-text-1', shadow: 'Shadow-3' },
   width: 'Size-21',
   text: {
-    padding: { left: 'Spacing-8', right: 'Spacing-4' },
+    padding: { left: 'Spacing-6', right: 'Spacing-4' },
   },
   small: {
     font: { size: 'Font-12' },
