@@ -172,10 +172,17 @@ const TabsHeader = (props: TabsHeaderProps) => {
       }, 16);
       return () => clearInterval(timer);
     } else {
-      setCurrentTabSize({
-        width,
-        height,
-      });
+      // why timeout: 依然是微前端下的问题，初始化线段不对齐
+      setTimeout(() => {
+        setCurrentTabSize({
+          width: currentTab.offsetWidth,
+          height: currentTab.offsetHeight,
+        });
+        setCurrentTabOffset({
+          offsetTop: currentTab.offsetTop || 0,
+          offsetLeft: currentTab.offsetLeft || 0,
+        });
+      }, 0);
     }
   }, [active, tabs]);
 
