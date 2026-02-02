@@ -610,36 +610,50 @@ describe('DatePicker[Event]', () => {
     });
     const datePickerPickerWrapper = container.querySelector(pickerWrapper)!;
     const pickers = datePickerPickerWrapper.querySelectorAll(`${picker}:not(${timePicker})`)!;
-    const cell = pickers[0]
-      .querySelector(pickerBody)
-      ?.querySelector('table')
-      ?.querySelector('tbody')
-      ?.querySelectorAll('tr')[3]
-      .querySelectorAll('td')[0] as Element;
+
+    // 查找第一个选择器（当前月）中不是跨月日期的单元格
+    const firstPickerBody = pickers[0].querySelector(pickerBody)?.querySelector('table')?.querySelector('tbody');
+    const allCells = Array.from(firstPickerBody?.querySelectorAll('td') || []);
+    const cell = allCells.find(cell => !cell.classList.contains(pickerCellBound.slice(1))) as Element;
+    const cellDay = getFormatTime(Number(cell.textContent));
+
+    // 单击选择开始日期
     fireEvent.click(cell);
     await waitFor(async () => {
       await delay(300);
     });
     const results = datePickerResultWrapper.querySelectorAll(`${resultText} input`);
-    inputValueTest(results[0], `${year}-${month}-${cell.textContent} 00:00:00`);
+    inputValueTest(results[0], `${year}-${month}-${cellDay} 00:00:00`);
+
+    // 双击开始日期，应该同时设置结束日期为相同值
     fireEvent.doubleClick(cell);
     await waitFor(async () => {
       await delay(300);
     });
-    inputValueTest(results[0], `${year}-${month}-${cell.textContent} 00:00:00`);
-    inputValueTest(results[1], `${year}-${month}-${cell.textContent} 00:00:00`);
-    const endCell = pickers[1]
-      .querySelector(pickerBody)
-      ?.querySelector('table')
-      ?.querySelector('tbody')
-      ?.querySelectorAll('tr')[4]
-      .querySelectorAll('td')[0] as Element;
+    inputValueTest(results[0], `${year}-${month}-${cellDay} 00:00:00`);
+    inputValueTest(results[1], `${year}-${month}-${cellDay} 00:00:00`);
+
+    // 在第二个选择器（下个月）中选择结束日期
+    // 获取下个月的年月信息
+    const nextMonthDate = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 1);
+    const nextYear = nextMonthDate.getFullYear();
+    const nextMonth = getFormatTime(nextMonthDate.getMonth() + 1);
+
+    const secondPickerBody = pickers[1].querySelector(pickerBody)?.querySelector('table')?.querySelector('tbody');
+    const allEndCells = Array.from(secondPickerBody?.querySelectorAll('td') || []);
+    // 选择第二个选择器中的当前月份日期（下个月的日期）
+    const endCell = allEndCells.filter(cell =>
+      !cell.classList.contains(pickerCellBound.slice(1))
+    ).slice(-1)[0] as Element;
+    const endCellDay = getFormatTime(Number(endCell.textContent));
+
+    // 双击结束日期，range模式下双击会让开始和结束都设置为该日期
     fireEvent.doubleClick(endCell);
     await waitFor(async () => {
       await delay(300);
     });
-    inputValueTest(results[0], `${year}-${month}-${endCell.textContent} 00:00:00`);
-    inputValueTest(results[1], `${year}-${month}-${endCell.textContent} 00:00:00`);
+    inputValueTest(results[0], `${nextYear}-${nextMonth}-${endCellDay} 00:00:00`);
+    inputValueTest(results[1], `${nextYear}-${nextMonth}-${endCellDay} 00:00:00`);
   });
 });
 describe('DatePicker[Type]', () => {
