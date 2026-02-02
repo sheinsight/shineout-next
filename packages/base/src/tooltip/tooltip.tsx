@@ -33,8 +33,6 @@ const Tooltip = (props: TooltipProps) => {
     return null;
   }
 
-  if (!tip) return children;
-
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
 
@@ -130,43 +128,45 @@ const Tooltip = (props: TooltipProps) => {
         key='ns'
       />
       {cloneElement(inner, innerProps)}
-      <AbsoluteList
-        focus={open}
-        parentElRef={targetRef}
-        popupElRef={popupRef}
-        absolute
-        position={position}
-        fixedWidth={false}
-        popupGap={popupGap}
-        zIndex={zIndex}
-        adjust={popsitionProps === 'auto'}
-        checkPosition
-        updateKey={updateKey}
-      >
-        <div
-          className={classNames(
-            className,
-            tooltipClasses?.rootClass,
-            tooltipClasses?.wrapper,
-            open && tooltipClasses?.wrapperOpen,
-          )}
-          style={{ pointerEvents: persistent ? 'initial' : undefined, display: open ? 'block' : 'none' }}
-          {...util.getDataAttribute({ type, position })}
-          ref={popupRef}
-          onMouseLeave={events.onMouseLeave}
-          dir={config.direction}
+      {tip && (
+        <AbsoluteList
+          focus={open}
+          parentElRef={targetRef}
+          popupElRef={popupRef}
+          absolute
+          position={position}
+          fixedWidth={false}
+          popupGap={popupGap}
+          zIndex={zIndex}
+          adjust={popsitionProps === 'auto'}
+          checkPosition
+          updateKey={updateKey}
         >
-          {showArrow && (
-            <span
-              className={tooltipClasses?.arrow}
-              {...util.getDataAttribute({ role: 'arrow' })}
-            />
-          )}
-          <div style={style} className={classNames(tooltipClasses?.content)}>
-            {tip}
+          <div
+            className={classNames(
+              className,
+              tooltipClasses?.rootClass,
+              tooltipClasses?.wrapper,
+              open && tooltipClasses?.wrapperOpen,
+            )}
+            style={{ pointerEvents: persistent ? 'initial' : undefined, display: open ? 'block' : 'none' }}
+            {...util.getDataAttribute({ type, position })}
+            ref={popupRef}
+            onMouseLeave={events.onMouseLeave}
+            dir={config.direction}
+          >
+            {showArrow && (
+              <span
+                className={tooltipClasses?.arrow}
+                {...util.getDataAttribute({ role: 'arrow' })}
+              />
+            )}
+            <div style={style} className={classNames(tooltipClasses?.content)}>
+              {tip}
+            </div>
           </div>
-        </div>
-      </AbsoluteList>
+        </AbsoluteList>
+      )}
     </>
   );
 };
