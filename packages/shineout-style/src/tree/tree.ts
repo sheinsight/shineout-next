@@ -286,13 +286,9 @@ const treeStyle: JsStyles<TreeClassType> = {
   },
   checkbox: {
     '&[class*="checkbox-wrapper"]': {
-      height: 26,
-      alignSelf: 'flex-start',
       marginRight: Token.treeCheckboxMarginX,
+      '--soui-checkbox-indicator-margin-top': '0px',
     },
-    '$sizeLarge &': {
-      marginTop: 4,
-    }
   },
   text: {
     cursor: 'pointer',
