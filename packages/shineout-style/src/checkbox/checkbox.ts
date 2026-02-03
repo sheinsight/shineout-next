@@ -32,7 +32,7 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
     boxSizing: 'border-box',
     width: token.checkboxIconSize,
     height: token.checkboxIconSize,
-    marginTop: 4,
+    marginTop: 'var(--soui-checkbox-indicator-margin-top, 4px)',
     flexShrink: 0,
     '$wrapperSmall &': {
       width: token.checkboxSmallIconSize,
