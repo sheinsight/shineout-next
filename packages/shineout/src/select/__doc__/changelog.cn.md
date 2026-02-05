@@ -1,8 +1,14 @@
+## 3.9.9-beta.12
+2026-02-05
+### 🐞 BugFix
+- 修复 `Select` 输入框内容过长时出现滚动条的问题 ([#1618](https://github.com/sheinsight/shineout-next/pull/1618))
+
+
 ## 3.9.9-beta.5
 2026-01-28
 
 ### 🐞 BugFix
-- 修复 `Select` 同时使用 `compressed='no-repeat'` 和 `renderCompressed` 时，`renderCompressed` 的 `data` 参数没有遵循 `no-repeat` 逻辑的问题 ([#1610](https://github.com/sheinsight/shineout-next/pull/1610))
+- 修复 `Select` 的 `renderCompressed` 在 `compressed='no-repeat'` 模式下 `data` 参数未去重的问题 ([#1610](https://github.com/sheinsight/shineout-next/pull/1610))
 
 
 ## 3.9.6-beta.5

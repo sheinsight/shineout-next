@@ -452,8 +452,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   inputMirror: {
     position: 'absolute',
-    left: 0,
-    top: 0,
+    left: -99999,
+    top: -99999,
     visibility: 'hidden',
   },
   moreWrapper: {
