@@ -133,6 +133,7 @@ const Tr = (props: TrProps) => {
     if (props.strictRowHeight || !trRef.current || !trRef.current.offsetParent) return;
     const cancelObserver = addResizeObserver(trRef.current, setVirtualRowHeight, {
       direction: 'y',
+      lazy: true,
     });
 
     return () => {

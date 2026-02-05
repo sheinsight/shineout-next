@@ -248,6 +248,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       cancelFunc1 = addResizeObserver(theadRef?.current, handleTheadAndTfootHeight, {
         direction: 'y',
         timer: 10,
+        lazy: true,
       });
     }
     let cancelFunc2: () => void | undefined;
@@ -255,6 +256,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       cancelFunc2 = addResizeObserver(tfootRef?.current, handleTheadAndTfootHeight, {
         direction: 'y',
         timer: 10,
+        lazy: true,
       });
     }
 
