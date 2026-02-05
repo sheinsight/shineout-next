@@ -37,7 +37,7 @@ type Handler = (this: Window, ev: UIEvent) => any;
 export const addResizeObserver = (
   el: HTMLElement,
   handler: any,
-  options: { direction?: 'x' | 'y' | boolean; timer?: number } = {},
+  options: { direction?: 'x' | 'y' | boolean; timer?: number, lazy?: boolean } = {},
 ) => {
   const { direction, timer } = options;
   const [debounceHandler, cleanTimer] = debounce(handler, timer);
@@ -50,6 +50,12 @@ export const addResizeObserver = (
       lastHeight = el.clientHeight;
       h = (entry: { contentRect: { width: number; height: number } }[]) => {
         if (el?.offsetParent === null) {
+          options.lazy && el.setAttribute('data-observer-hidden', 'true');
+          return;
+        }
+
+        if (options.lazy && el.getAttribute('data-observer-hidden') === 'true') {
+          el.removeAttribute('data-observer-hidden');
           return;
         }
         const { width, height } = entry[0].contentRect;

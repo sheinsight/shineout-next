@@ -1,3 +1,9 @@
+## 3.9.9-beta.11
+2026-02-04
+### 🚀 Performance
+- 优化 `Table` 的 ResizeObserver 性能，减少元素在显示/隐藏切换时的不必要回调触发 ([#1616](https://github.com/sheinsight/shineout-next/pull/1616))
+
+
 ## 3.9.9-beta.7
 2026-01-30
 ### 🐞 BugFix
