@@ -153,6 +153,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     filterDelay: props.filterDelay,
   });
 
+  const prevFilterTextRef = useRef(filterText);
+  const filterTextChanged = prevFilterTextRef.current !== filterText;
+  prevFilterTextRef.current = filterText;
+
   const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState('');
 
   const onCollapse = usePersistFn((collapse: boolean) => {
@@ -662,7 +666,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       renderItem,
       controlType,
       onLoadMore,
-      keepScrollTop: !!filterText ? false : true,
+      keepScrollTop: filterTextChanged ? false : true,
       isAnimationFinish,
       threshold,
       onControlTypeChange: setControlType,
