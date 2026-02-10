@@ -129,6 +129,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       },
     },
     '&:hover': {
+      ...wrapper['&:hover'],
       cursor: 'pointer',
       '&$clearable:not($wrapperEmpty)': {
         '& $clearIcon': {
