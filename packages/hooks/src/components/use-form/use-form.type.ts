@@ -87,6 +87,14 @@ export interface FormLabelConfig {
    * @version 3.7.0
    */
   keepErrorBelow?: boolean;
+
+  /**
+   * @en Whether to keep the error message above the tip of the form item, the default is false. Controls the display position of error messages. When enabled, error messages are always displayed above the tip property of the form item. The opposite of keepErrorBelow. Suitable for scenarios where error messages need to be displayed closer to the input. Note: When enabled, keepErrorHeight becomes invalid
+   * @cn 是否保持错误信息在提示信息上方。控制错误信息的显示位置。开启后错误信息始终显示在表单项的 tip 属性上方。与 keepErrorBelow 相反。适用于错误信息需要更靠近输入框的场景。注意：开启后会使 keepErrorHeight 失效
+   * @default false
+   * @version 3.9.10
+   */
+  keepErrorAbove?: boolean;
   /**
    * @en When inline is true, the form is horizontal layout. Arranges form items horizontally, suitable for simple single-line forms or filter forms. When enabled, form items will be displayed on the same line with automatic line wrapping. Usually used for search conditions, filters and other scenarios that need to save vertical space
    * @cn 是否水平布局。将表单项横向排列，适用于简单的单行表单或筛选表单。开启后表单项会在同一行显示，自动换行。通常用于搜索条件、筛选器等需要节省垂直空间的场景
