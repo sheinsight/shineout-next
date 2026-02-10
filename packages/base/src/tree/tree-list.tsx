@@ -119,7 +119,7 @@ const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataI
   hasExpanded.current = true;
   const newStyle = Object.assign(rootStyle, style, { display: expanded ? 'block' : 'none' });
   return (
-    <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass}>
+    <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass} key={data.length}>
       {data.map(renderNode)}
     </div>
   );
