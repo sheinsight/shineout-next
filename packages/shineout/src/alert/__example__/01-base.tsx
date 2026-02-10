@@ -7,6 +7,7 @@
 import React from 'react';
 import { Alert } from 'shineout';
 
+
 export default () => {
   return (
     <Alert icon type='info'>
