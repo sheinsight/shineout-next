@@ -12,7 +12,7 @@ const FormItem = (props: FormItemProps) => {
   const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
   const formItemClasses = jssStyle?.formItem?.() as FormItemClasses;
   const { Provider: FormItemContextProvider, ProviderValue, labelConfig, errors, showError, attributes } = useFormItem();
-  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight, keepErrorBelow, colon } = {
+  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight, keepErrorBelow, keepErrorAbove, colon } = {
     ...labelConfig,
     ...rest,
   };
@@ -131,9 +131,11 @@ const FormItem = (props: FormItemProps) => {
       >
         <FormItemContextProvider value={{ ...ProviderValue, label: labelText }}>{children}</FormItemContextProvider>
 
-        {!!tip && (!showError || keepErrorBelow) && <div ref={labelTipRef} className={formItemClasses?.tip}>{tip}</div>}
+        {keepErrorAbove && renderError()}
 
-        {renderError()}
+        {!!tip && (!showError || keepErrorBelow || keepErrorAbove) && <div ref={labelTipRef} className={formItemClasses?.tip}>{tip}</div>}
+
+        {!keepErrorAbove && renderError()}
       </div>
     </div>
   );

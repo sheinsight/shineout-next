@@ -1,10 +1,10 @@
 /**
  * cn - 校验样式
  *    -- 使用 `keepErrorHeight` 使得单行错误提示不会撑开页面高度
- *    -- 使用 `keepErrorBelow` 同时出现提示信息和校验错误信息时，提示信息不会被遮挡
+ *    -- 使用 `keepErrorAbove` 同时出现提示信息和校验错误信息时，错误信息显示在提示信息上方
  * en - validate style
  *    -- Use `keepErrorHeight` so that a single-line error prompt will not stretch the page height
- *    -- Use `keepErrorBelow` so that when both prompt information and validation error information appear, the prompt information will not be blocked
+ *    -- Use `keepErrorAbove` so that when both prompt information and validation error information appear, the error message is displayed above the tip
  */
 
 import React, { useState } from 'react';
@@ -147,7 +147,7 @@ const App: React.FC = () => {
         style={{ maxWidth: 500 }}
         onSubmit={(d) => console.log(d)}
       >
-        <Form.Item required label='Email' tip='88888' keepErrorBelow>
+        <Form.Item required label='Email' tip='88888' keepErrorAbove>
           <Input name='email' title='Email' rules={[rules.required, rules.email]} clearable />
         </Form.Item>
 
@@ -159,7 +159,7 @@ const App: React.FC = () => {
           required
           label='Password'
           tip='At least one letter, one numeral, and 6 - 20 characters.'
-          keepErrorBelow
+          keepErrorAbove
         >
           <Input
             name='password'
@@ -170,7 +170,7 @@ const App: React.FC = () => {
           />
         </Form.Item>
 
-        <Form.Item required label='Age' tip='between 18 and 60' keepErrorBelow>
+        <Form.Item required label='Age' tip='between 18 and 60' keepErrorAbove>
           <Input
             name='age'
             title='Age'
@@ -198,7 +198,7 @@ const App: React.FC = () => {
           required
           label='Favorite Colors'
           tip='select your favorite colors'
-          keepErrorBelow
+          keepErrorAbove
         >
           <Checkbox.Group
             name='colors'
