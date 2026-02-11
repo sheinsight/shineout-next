@@ -92,7 +92,7 @@ export interface FormLabelConfig {
    * @en Whether to keep the error message above the tip of the form item, the default is false. Controls the display position of error messages. When enabled, error messages are always displayed above the tip property of the form item. The opposite of keepErrorBelow. Suitable for scenarios where error messages need to be displayed closer to the input. Note: When enabled, keepErrorHeight becomes invalid
    * @cn 是否保持错误信息在提示信息上方。控制错误信息的显示位置。开启后错误信息始终显示在表单项的 tip 属性上方。与 keepErrorBelow 相反。适用于错误信息需要更靠近输入框的场景。注意：开启后会使 keepErrorHeight 失效
    * @default false
-   * @version 3.9.10
+   * @version 3.9.9
    */
   keepErrorAbove?: boolean;
   /**
