@@ -148,6 +148,12 @@ export interface CheckboxTokens {
   checkboxLabelDisabledFontColor: string;
   /**
    * @type {string}
+   * @token Spacing-4
+   * @description 单选框undefined外边距undefined
+   */
+  checkboxIndicatorMarginTop: string;
+  /**
+   * @type {string}
    * @token Spacing-24
    * @description 单选框间距
    */

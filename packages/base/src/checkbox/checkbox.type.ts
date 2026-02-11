@@ -25,6 +25,7 @@ export interface CheckboxClasses {
   darkIndicatorWrapper: string;
   desc: string;
   input: string;
+  wrapperTop: string;
   group: string;
   groupBlock: string;
 }
@@ -59,6 +60,14 @@ export interface SimpleCheckboxProps
    * @private 内部属性
    */
   needStopPropagation?: boolean;
+
+  /**
+   * @en Vertical align of checkbox indicator
+   * @cn 勾选框指示器的垂直对齐方式
+   * @default "middle"
+   * @version 3.9.9
+   */
+  verticalAlign?: 'middle' | 'top';
 }
 
 export interface CheckboxProps<T>

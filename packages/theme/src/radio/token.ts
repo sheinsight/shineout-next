@@ -47,6 +47,11 @@ const radioTokenExtraValue = {
     },
     wrapper: { fill: 'Neutral-fill-2', dark: 'Neutral-fill-3' },
   },
+  indicator: {
+    margin: {
+      top: 'Spacing-4',
+    }
+  },
   padding: { y: 'Spacing-4' },
   button: {
     padding: { y: 'Spacing-4', x: 'Spacing-12' },
@@ -72,6 +77,7 @@ const radioTokenExtraValue = {
     font: { color: 'Neutral-text-5', size: 'Font-14' },
     disabled: { font: { color: 'Neutral-text-2' } },
   },
+
 };
 
 module.exports = {

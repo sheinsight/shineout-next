@@ -1,3 +1,9 @@
+## 3.9.9-beta.15
+2026-02-11
+### 🆕 Feature
+- `Radio` 新增 `verticalAlign` 属性：支持指示器和文字的顶对齐 ([#1628](https://github.com/sheinsight/shineout-next/pull/1628))
+
+
 ## 3.9.4-beta.8
 2025-12-18
 ### 🆕 Feature

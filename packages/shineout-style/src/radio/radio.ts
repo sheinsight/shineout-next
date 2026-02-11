@@ -9,7 +9,7 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
   wrapper: {
     display: 'inline-flex',
     position: 'relative',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     cursor: 'pointer',
     boxSizing: 'border-box',
     marginRight: token.radioGap,
@@ -36,6 +36,12 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
       padding: `${token.radioLargeButtonPaddingY} ${token.radioLargeButtonPaddingX}`,
     }
   },
+  wrapperTop: {
+    alignItems: 'flex-start',
+    '& $indicatorWrapper': {
+      marginTop: token.radioIndicatorMarginTop,
+    },
+  },
   wrapperChecked: {},
   wrapperDisabled: {
     cursor: 'not-allowed',
@@ -47,7 +53,6 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
     width: token.radioIconWidth,
     minWidth: token.radioIconWidth,
     height: token.radioIconWidth,
-    marginTop: 4,
     '$wrapperSmall &': {
       width: token.radioSmallIconWidth,
       minWidth: token.radioSmallIconWidth,

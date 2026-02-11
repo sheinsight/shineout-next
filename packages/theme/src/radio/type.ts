@@ -113,6 +113,12 @@ export interface RadioTokens {
   /**
    * @type {string}
    * @token Spacing-4
+   * @description 单选框undefined外边距undefined
+   */
+  radioIndicatorMarginTop: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
    * @description 单选框内边距（垂直方向）
    */
   radioPaddingY: string;

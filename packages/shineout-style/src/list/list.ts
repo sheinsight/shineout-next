@@ -12,8 +12,6 @@ const listStyle: JsStyles<ListClassType> = {
     maxHeight: '100%',
     display: 'flex',
     flexDirection: 'column',
-    '--soui-checkbox-indicator-margin-top': 0,
-    '--soui-checkbox-align-items': 'center',
   },
   wrapperBordered: {
     border: `${token.listBorderWidth} solid ${token.listBorderColor}`,
