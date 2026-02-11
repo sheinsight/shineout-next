@@ -9,7 +9,7 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
   wrapper: {
     display: 'inline-flex',
     position: 'relative',
-    alignItems: 'flex-start',
+    alignItems: 'var(--soui-checkbox-align-items, flex-start)',
     cursor: 'pointer',
     boxSizing: 'border-box',
     marginRight: token.checkboxGap,

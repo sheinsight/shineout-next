@@ -1,3 +1,8 @@
+## 3.9.9-beta.10
+2026-02-03
+### 💅 Style
+- 优化 `Checkbox`、`Radio` 的文本对齐方式为顶对齐 ([#1612](https://github.com/sheinsight/shineout-next/pull/1612))
+
 ## 3.9.9-beta.6
 2026-01-30
 ### 💅 Style
