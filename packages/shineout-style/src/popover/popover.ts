@@ -5,13 +5,11 @@ import { tooltipAnimation, arrowClipPath } from '../tooltip/tooltip';
 
 export type PopoverClassType = keyof PopoverClasses;
 
-const arrowGap = 12;
 const arrowHeight = 8;
 
 const cssvar = '--popover-arrow-gap';
 const hideArrowGap = `var(${cssvar}, 10px)`;
 const extraArrowGap = 'var(--popover-arrow-gap-extra, 0px)';
-const arrowMargin = '8px';
 
 const poyfillPos = `calc((${hideArrowGap} + ${extraArrowGap}) * -1)`;
 const poyfillHeight = `calc((${hideArrowGap} + ${extraArrowGap}))`;
@@ -50,7 +48,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       [cssvar]: '4px',
     },
     '&[data-soui-position^="bottom"]': {
-      marginTop: arrowGap - 2,
+      marginTop: `calc(${hideArrowGap} - 2px)`,
       '& > $arrow': {
         left: '50%',
         transform: 'translate(-50%, calc(-100% + 1px)) rotate(0deg)',
@@ -66,7 +64,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="top"]': {
-      marginTop: (arrowGap - 2) * -1,
+      marginTop: `calc((${hideArrowGap} - 2px) * -1)`,
       '& > $arrow': {
         top: '100%',
         left: '50%',
@@ -83,8 +81,8 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="left"]': {
-      '&[dir=ltr]': { marginRight: arrowGap - 2 },
-      '&[dir=rtl]': { marginLeft: arrowGap - 2 },
+      '&[dir=ltr]': { marginRight: `calc(${hideArrowGap} - 2px)` },
+      '&[dir=rtl]': { marginLeft: `calc(${hideArrowGap} - 2px)` },
       '& > $arrow': {
         right: 0,
         top: '50%',
@@ -102,8 +100,8 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       },
     },
     '&[data-soui-position^="right"]': {
-      '&[dir=ltr]': { marginLeft: arrowGap - 2 },
-      '&[dir=rtl]': { marginRight: arrowGap - 2 },
+      '&[dir=ltr]': { marginLeft: `calc(${hideArrowGap} - 2px)` },
+      '&[dir=rtl]': { marginRight: `calc(${hideArrowGap} - 2px)` },
       '& > $arrow': {
         top: '50%',
         left: 0,
