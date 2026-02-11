@@ -60,6 +60,11 @@ const checkboxTokenExtraValue = {
     font: { color: 'Neutral-text-5', size: 'Font-14' },
     disabled: { font: { color: 'Neutral-text-2' } },
   },
+  indicator: {
+    margin: {
+      top: 'Spacing-4',
+    }
+  },
   gap: 'Spacing-24',
   block: { gap: 'Spacing-12' },
   small: {

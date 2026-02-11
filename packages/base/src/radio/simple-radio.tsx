@@ -5,7 +5,7 @@ import { SimpleRadioProps } from './radio.type';
 import { FormFieldContext } from '../form/form-field-context';
 
 const Radio = (props: SimpleRadioProps) => {
-  const { jssStyle, className, style, children, renderWrapper, size, theme, ...rest } = props;
+  const { jssStyle, className, style, children, renderWrapper, size, theme, verticalAlign, ...rest } = props;
   const mouseEvents = util.extractProps(rest, 'mouse');
   const { fieldId } = useContext(FormFieldContext);
   const radioClasses = jssStyle?.radio?.();
@@ -20,6 +20,7 @@ const Radio = (props: SimpleRadioProps) => {
     !!checked && radioClasses?.wrapperChecked,
     size === 'small' && radioClasses?.wrapperSmall,
     size === 'large' && radioClasses?.wrapperLarge,
+    verticalAlign === 'top' && radioClasses?.wrapperTop,
   ]);
 
   const indicatorClass = classNames(

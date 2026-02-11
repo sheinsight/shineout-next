@@ -7,7 +7,7 @@ import { FormFieldContext } from '../form/form-field-context';
 const { getDataAttribute } = util;
 
 const Checkbox = (props: SimpleCheckboxProps) => {
-  const { jssStyle, className, style, children, renderFooter, size, theme, ...rest } = props;
+  const { jssStyle, className, style, children, renderFooter, size, theme, verticalAlign, ...rest } = props;
   const mouseEvents = util.extractProps(rest, 'mouse');
   const { fieldId } = useContext(FormFieldContext);
   const checkboxStyle = jssStyle?.checkbox?.();
@@ -26,6 +26,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     !!disabled && checkboxStyle?.wrapperDisabled,
     !!checked && checkboxStyle?.wrapperChecked,
     props.checked === 'indeterminate' && checkboxStyle?.wrapperIndeterminate,
+    verticalAlign === 'top' && checkboxStyle?.wrapperTop,
   );
 
   const indicatorClass = classNames(

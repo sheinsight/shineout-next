@@ -24,6 +24,7 @@ export interface RadioClasses {
   indicatorWrapper: string;
   indicator: string;
   desc: string;
+  wrapperTop: string;
   // 组
   group: string;
   groupBlock: string;
@@ -61,6 +62,14 @@ export interface SimpleRadioProps
    * @private 内部属性用于控制热区样式
    */
   theme?: 'dark';
+
+  /**
+   * @en Vertical align of radio indicator
+   * @cn 单选框指示器的垂直对齐方式
+   * @default "middle"
+   * @version 3.9.9
+   */
+  verticalAlign?: 'middle' | 'top';
 }
 
 export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'checked' | 'theme' | 'disabled'> {
