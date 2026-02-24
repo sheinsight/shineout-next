@@ -1,5 +1,5 @@
 ## 3.9.9-beta.16
-2026-02-14
+2026-02-24
 ### 🆕 Feature
 - `Form` 新增 `keepErrorAbove` 属性，错误信息独占一行，不再覆盖提示信息 ([#1624](https://github.com/sheinsight/shineout-next/pull/1624))
 
