@@ -183,6 +183,10 @@ const modalStyle: JsStyles<ModalClassType> = {
       pointerEvents: 'none',
     },
   },
+  wrapperMaskBlur: {
+    backdropFilter: 'blur(4px)',
+    WebkitBackdropFilter: 'blur(4px)',
+  },
   wrapperMoveable: {
     '& $header': {
       cursor: 'move',

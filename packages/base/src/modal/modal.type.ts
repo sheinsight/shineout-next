@@ -17,6 +17,7 @@ export interface ModalClasses {
   wrapperZoom: string;
   wrapperIsMask: string;
   wrapperHideMask: string;
+  wrapperMaskBlur: string;
   wrapperDrawer: string;
   wrapperDrawerLeft: string;
   wrapperDrawerRight: string;
@@ -51,8 +52,16 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
    * @en Whether to hide mask
    * @cn 是否隐藏遮罩
    * @default false
+   * @deprecated 推荐使用 mask={false} 来隐藏遮罩
    */
   hideMask?: boolean;
+
+  /**
+   * @en Control mask display. false to hide mask, { blur: true } to show blurred mask
+   * @cn 控制遮罩显示。false 隐藏遮罩，{ blur: true } 显示模糊遮罩
+   * @version 3.9.10
+   */
+  mask?: boolean | { blur?: boolean };
   /**
    * @en Whether to force the mask transparency (in multi-layer Modal, the transparency of other Modal masks except the first layer will be adjusted to 0.01)
    * @cn 是否强制设置遮罩透明度（多层Modal中，除第一层外的其他弹出层遮罩透明度会被调整为0.01）

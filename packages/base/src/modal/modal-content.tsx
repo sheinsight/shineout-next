@@ -271,8 +271,11 @@ const Modal = (props: ModalContentProps) => {
     }
   })
 
+  const hideMask = props.hideMask || props.mask === false;
+  const maskBlur = typeof props.mask === 'object' && props.mask?.blur;
+
   useEffect(() => {
-    if (!props.hideMask) {
+    if (!hideMask) {
       if (visible) {
         setDocumentOverflow();
       } else {
@@ -500,7 +503,8 @@ const Modal = (props: ModalContentProps) => {
           showMask && modalClasses?.wrapperIsMask,
           props.fullScreen && modalClasses?.wrapperFullScreen,
           props.moveable && modalClasses?.wrapperMoveable,
-          props.hideMask && modalClasses?.wrapperHideMask,
+          hideMask && modalClasses?.wrapperHideMask,
+          maskBlur && modalClasses?.wrapperMaskBlur,
           props.zoom && !props.moveable && modalClasses?.wrapperZoom,
           (isPositionX || isPositionY) && modalClasses?.wrapperDrawer,
           props.position === 'left' && modalClasses?.wrapperDrawerLeft,

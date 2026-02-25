@@ -1,3 +1,8 @@
+## 3.9.10-beta.1
+2026-02-25
+### 🆕 Feature
+- `Modal` 新增 `mask` 属性支持设置为 `{ blur: true }` 来启用模糊遮罩效果 ([#1631](https://github.com/sheinsight/shineout-next/pull/1631))
+
 ## 3.9.8-beta.11
 2026-01-21
 ### 🐞 BugFix
