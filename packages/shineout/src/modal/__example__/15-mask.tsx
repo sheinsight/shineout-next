@@ -35,17 +35,29 @@ const App: React.FC = () => {
       <Button mode='outline' onClick={() => setVisible2(true)}>
         mask=false
       </Button>
-      <Modal title="Modal with blur mask" visible={visible2} onClose={() => setVisible1(false)} mask={{ blur: true }}>
+      <Modal
+        title='Modal with blur mask'
+        visible={visible2}
+        onClose={() => setVisible1(false)}
+        mask={{ blur: true }}
+        footer={<Button type="primary" onClick={() => setVisible1(false)}>Close</Button>}
+      >
         This modal has a blurred mask
       </Modal>
-      <Modal title="Modal without mask" visible={visible1} onClose={() => setVisible2(false)} mask={false}>
+      <Modal
+        title='Modal without mask'
+        visible={visible1}
+        onClose={() => setVisible2(false)}
+        mask={false}
+        footer={<Button type="primary" onClick={() => setVisible2(false)}>Close</Button>}
+      >
         This modal has no mask
       </Modal>
 
-      <Button type="primary" onClick={info1}>
+      <Button type='primary' onClick={info1}>
         info (blur)
       </Button>
-      <Button type="primary" onClick={info2}>
+      <Button type='primary' onClick={info2}>
         info (no mask)
       </Button>
     </div>
