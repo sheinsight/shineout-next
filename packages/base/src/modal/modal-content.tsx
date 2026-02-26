@@ -271,8 +271,9 @@ const Modal = (props: ModalContentProps) => {
     }
   })
 
-  const hideMask = props.hideMask || props.mask === false;
-  const maskBlur = typeof props.mask === 'object' && props.mask?.blur;
+  const maskProp = props.mask ?? globalConfig.modal?.mask;
+  const hideMask = props.hideMask || maskProp === false;
+  const maskBlur = typeof maskProp === 'object' && maskProp?.blur;
 
   useEffect(() => {
     if (!hideMask) {
