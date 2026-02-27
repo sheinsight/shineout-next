@@ -18,6 +18,19 @@ type TooltipConfig = {
 }
 
 /**
+ * @en Global configuration for Modal component
+ * @cn Modal组件的全局配置
+ * @version 3.9.10
+ */
+export type ModalConfig = {
+  /**
+   * @en Global default mask setting for Modal component. false to hide mask, { blur: true } to show blurred mask
+   * @cn Modal组件的全局默认遮罩设置。false 隐藏遮罩，{ blur: true } 显示模糊遮罩
+   */
+  mask?: boolean | { blur?: boolean };
+}
+
+/**
  * @en Global configuration for Popover component
  * @cn Popover组件的全局配置
  * @version 3.9.9
@@ -57,6 +70,12 @@ export interface ConfigOption {
   tooltip?: TooltipConfig;
   popover?: PopoverConfig;
   /**
+   * @en Global configuration for Modal component
+   * @cn Modal组件的全局配置
+   * @version 3.9.10
+   */
+  modal?: ModalConfig;
+  /**
    * @en Global configuration for Empty component
    * @cn Empty组件的全局配置
    * @version 3.8.0
@@ -76,6 +95,7 @@ export const defaultConfig: ConfigOption = {
   spin: 'ring',
   tooltip: undefined,
   popover: {},
+  modal: {},
   empty: {},
   direction: 'ltr',
   popupContainer: null,
