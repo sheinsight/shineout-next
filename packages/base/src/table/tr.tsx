@@ -472,6 +472,24 @@ const Tr = (props: TrProps) => {
     }
   });
 
+  // 虚拟列表下 tbody 仅渲染可见行，无法通过 DOM 索引获取真实行位置
+  // 因此在 virtual 模式下增强 rowEvents，将回调签名从 (event) 扩展为 (event, rowData, rowIndex)
+  let enhancedRowEvents: Record<string, any> | undefined = props.rowEvents;
+  if (props.virtual && enhancedRowEvents) {
+    const keys = Object.keys(enhancedRowEvents);
+    if (keys.some((key) => typeof enhancedRowEvents![key] === 'function')) {
+      const enhanced: Record<string, any> = {};
+      for (const key of keys) {
+        const val = enhancedRowEvents[key];
+        enhanced[key] =
+          typeof val === 'function'
+            ? (e: React.SyntheticEvent) => val(e, props.rawData, props.rowIndex)
+            : val;
+      }
+      enhancedRowEvents = enhanced;
+    }
+  }
+
   return (
     <>
       <tr
@@ -483,7 +501,7 @@ const Tr = (props: TrProps) => {
           props.hover && tableClasses?.rowHover,
         )}
         style={{ height: props.strictRowHeight ? props.strictRowHeight : undefined }}
-        {...props.rowEvents}
+        {...enhancedRowEvents}
         onClick={handleRowClick}
       >
         {renderTds(props.columns, props.row)}
