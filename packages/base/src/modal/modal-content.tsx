@@ -312,6 +312,7 @@ const Modal = (props: ModalContentProps) => {
     if (props.setInnerClose) {
       props.setInnerClose(() => {
         setVisible(false);
+        setAnimation(true);
       });
     }
   }, [props.setInnerClose]);

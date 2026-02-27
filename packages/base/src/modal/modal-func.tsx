@@ -91,13 +91,17 @@ const method =
   (type: MethodType, jssStyle: ModalJssStyle) => (options: Omit<ModalOptions, 'jssStyle'>) => {
     const id = util.getUidStr();
     let innerClose: () => void;
+    let destroyed = false;
     const root = getRoot({ container: options.container });
     if (!root) return;
+    const doDestroy = () => {
+      if (destroyed) return;
+      destroyed = true;
+      destroy(root);
+    };
     const destroyModal = () => {
       if (innerClose) innerClose();
-      setTimeout(() => {
-        destroy(root);
-      }, 300);
+      setTimeout(doDestroy, 300);
     };
     modals.add(root);
     const btnOptions = {
@@ -130,7 +134,7 @@ const method =
         type={type as any}
         footer={footer}
         shouldDestroy={(can) => {
-          if (can) destroyModal();
+          if (can) doDestroy();
         }}
         setInnerClose={(close) => {
           innerClose = close;
