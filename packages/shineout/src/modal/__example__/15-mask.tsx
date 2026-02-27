@@ -8,8 +8,8 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'shineout';
 
 const App: React.FC = () => {
-  const [visible1, setVisible2] = useState(false);
-  const [visible2, setVisible1] = useState(false);
+  const [visible1, setVisible1] = useState(false);
+  const [visible2, setVisible2] = useState(false);
 
   const info1 = () => {
     Modal.info({
@@ -37,7 +37,7 @@ const App: React.FC = () => {
       </Button>
       <Modal
         title='Modal with blur mask'
-        visible={visible2}
+        visible={visible1}
         onClose={() => setVisible1(false)}
         mask={{ blur: true }}
         footer={<Button type="primary" onClick={() => setVisible1(false)}>Close</Button>}
@@ -46,7 +46,7 @@ const App: React.FC = () => {
       </Modal>
       <Modal
         title='Modal without mask'
-        visible={visible1}
+        visible={visible2}
         onClose={() => setVisible2(false)}
         mask={false}
         footer={<Button type="primary" onClick={() => setVisible2(false)}>Close</Button>}
