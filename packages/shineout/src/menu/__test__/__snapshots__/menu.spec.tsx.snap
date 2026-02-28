@@ -1983,7 +1983,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 14px; flex-shrink: 0;"
+                    style="width: 22px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-expand soui-menu-expand-front"
@@ -2027,7 +2027,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 14px; flex-shrink: 0;"
+                    style="width: 22px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-expand soui-menu-expand-front"
@@ -2117,7 +2117,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 14px; flex-shrink: 0;"
+                    style="width: 22px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-expand soui-menu-expand-front"
@@ -2161,7 +2161,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 14px; flex-shrink: 0;"
+                    style="width: 22px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-expand soui-menu-expand-front"
@@ -2208,7 +2208,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 28px; flex-shrink: 0;"
+                        style="width: 36px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-expand soui-menu-expand-front"
@@ -2252,7 +2252,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 28px; flex-shrink: 0;"
+                        style="width: 36px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-expand soui-menu-expand-front"
@@ -2441,7 +2441,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 14px; flex-shrink: 0;"
+                    style="width: 22px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-expand soui-menu-expand-front"
@@ -2485,7 +2485,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 14px; flex-shrink: 0;"
+                    style="width: 22px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-expand soui-menu-expand-front"
@@ -2575,7 +2575,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 14px; flex-shrink: 0;"
+                    style="width: 22px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-expand soui-menu-expand-front"
@@ -2619,7 +2619,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="soui-menu-title"
                 >
                   <div
-                    style="width: 14px; flex-shrink: 0;"
+                    style="width: 22px; flex-shrink: 0;"
                   />
                   <div
                     class="soui-menu-expand soui-menu-expand-front"
@@ -2666,7 +2666,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 28px; flex-shrink: 0;"
+                        style="width: 36px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-expand soui-menu-expand-front"
@@ -2710,7 +2710,7 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="soui-menu-title"
                     >
                       <div
-                        style="width: 28px; flex-shrink: 0;"
+                        style="width: 36px; flex-shrink: 0;"
                       />
                       <div
                         class="soui-menu-expand soui-menu-expand-front"
