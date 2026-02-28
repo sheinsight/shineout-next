@@ -180,7 +180,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     const iconEl = icon ? <div className={classes?.titleIcon}>{icon}</div> : null;
     const indent =
       props.mode === 'inline' && props.level ? (
-        <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
+        <div style={{ width: props.level * inlineIndent + (props.frontCaret ? 8 : 0), flexShrink: 0 }} />
       ) : null;
     let frontCaret: React.ReactNode = null;
     if (props.frontCaret) {
