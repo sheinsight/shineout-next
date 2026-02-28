@@ -24,6 +24,7 @@ const Textarea = (props: SimpleTextareaProps) => {
     renderTextarea,
     limit,
     clearable,
+    showClear,
     ...rest
   } = props;
   const config = useConfig();
@@ -32,6 +33,8 @@ const Textarea = (props: SimpleTextareaProps) => {
     ...rest,
   });
   const { fieldId } = useContext(FormFieldContext);
+
+  const showClearFromProp = showClear && !disabled;
 
   const rootClass = classNames(
     className,
@@ -44,6 +47,7 @@ const Textarea = (props: SimpleTextareaProps) => {
     size === 'large' && textareaClasses?.wrapperLarge,
     !!underline && textareaClasses?.wrapperUnderline,
     !border && textareaClasses?.wrapperNoBorder,
+    showClearFromProp && textareaClasses?.wrapperShowClear,
   );
 
   const keyHandler = useKeyEvent({
@@ -90,7 +94,7 @@ const Textarea = (props: SimpleTextareaProps) => {
   }
 
   let clearEl = null;
-  if (clearable && props.value && !disabled) {
+  if ((showClearFromProp || clearable) && props.value && !disabled) {
     clearEl = (
       <div
         className={textareaClasses?.clear}

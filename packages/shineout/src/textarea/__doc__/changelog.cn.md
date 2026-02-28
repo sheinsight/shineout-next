@@ -1,3 +1,8 @@
+## 3.9.10-beta.3
+2026-02-28
+### 🆕 Feature
+- `Textarea` 新增 `showClear` 属性，支持显示清除按钮 ([#1634](https://github.com/sheinsight/shineout-next/pull/1634))
+
 ## 3.9.8-beta.4
 2026-01-19
 ### 🐞 BugFix

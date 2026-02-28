@@ -150,7 +150,7 @@ const input: JsStyles<keyof TextareaClasses> = {
     color: token.textareaClearColor,
     opacity: 0,
 
-    '$wrapperWithClear:hover &': {
+    '$wrapperWithClear:hover &, $wrapperWithClear$wrapperFocus &': {
       opacity: 1,
     },
 
@@ -194,7 +194,14 @@ const input: JsStyles<keyof TextareaClasses> = {
     '&&$wrapperLarge > $textarea': {
       paddingRight: `calc(${token.textareaLargePaddingX} + ${token.textareaLargeClearSize} + 12px)`,
     },
-  }
+  },
+  wrapperShowClear: {
+    '& $clear': {
+      display: 'block',
+      opacity: 1,
+    },
+  },
+  wrapperHasValue: {}
 };
 
 export default input;
