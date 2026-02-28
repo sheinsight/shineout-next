@@ -39,6 +39,8 @@ export interface TextareaClasses {
   limit: string;
   clear: string;
   wrapperWithClear: string;
+  wrapperShowClear: string;
+  wrapperHasValue: string;
 }
 
 export interface SimpleTextareaProps
@@ -110,6 +112,14 @@ export interface SimpleTextareaProps
    * @version 3.6.0
    */
   clearable?: boolean;
+
+  /**
+   * @en Whether to show the clear button when there is a value
+   * @cn 有值时是否常驻显示清除按钮
+   * @default false
+   * @version 3.9.10
+   */
+  showClear?: boolean;
 }
 
 type TextareaValueType = string;
