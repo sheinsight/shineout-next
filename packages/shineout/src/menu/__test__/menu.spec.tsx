@@ -224,19 +224,23 @@ describe('Menu[Base]', () => {
       const expandWrapper = item.querySelector(expand)!;
       classTest(expandWrapper, expandBack);
       classLengthTest(expandWrapper, 'svg', 1);
-      const children = item.querySelector('ul')!;
-      classTest(children, childrenClassName);
-      const childItemContent = children.querySelector(`.${title}`)!;
-      styleTest(childItemContent.firstElementChild as Element, defaultChildStyle);
-      textContentTest(childItemContent, testData[index].children![0].title);
+      // 懒渲染：未展开的子菜单不渲染 DOM
+      expect(item.querySelector('ul')).toBeNull();
     });
+    // 展开第一个子菜单
     fireEvent.click(items[0].querySelector(expand)!);
     await waitFor(async () => {
       await delay(200);
     });
     classTest(items[0], itemOpen);
     classTest(menuWrapper, wrapperHasOpen);
+    // 展开后子菜单 DOM 出现
     const child = items[0].querySelector('ul')!;
+    expect(child).not.toBeNull();
+    classTest(child, childrenClassName);
+    const childItemContent = child.querySelector(`.${title}`)!;
+    styleTest(childItemContent.firstElementChild as Element, defaultChildStyle);
+    textContentTest(childItemContent, testData[0].children![0].title);
     fireEvent.click(child.querySelector(itemContent)!);
     await waitFor(async () => {
       await delay(200);
@@ -247,6 +251,8 @@ describe('Menu[Base]', () => {
       await delay(200);
     });
     classTest(items[0], itemOpen, false);
+    // 折叠后 DOM 仍然保留
+    expect(items[0].querySelector('ul')).not.toBeNull();
   });
   test('should render when set link is href', () => {
     const { container } = render(<MenuTest data={testDataWithLink} linkKey='link' />);
@@ -381,9 +387,13 @@ describe('Menu[Base]', () => {
     classTest(items[0], itemActive);
     classTest(items[1], itemActive);
   });
-  test('should render when set inlineIndent', () => {
+  test('should render when set inlineIndent', async () => {
     const inlineIndent = 48;
-    const { container } = render(<MenuTest inlineIndent={inlineIndent} />);
+    // 使用 defaultOpenKeys 展开子菜单，使子菜单 DOM 渲染出来
+    const { container } = render(<MenuTest inlineIndent={inlineIndent} defaultOpenKeys={['1', '2']} />);
+    await waitFor(async () => {
+      await delay(200);
+    });
     const items = container.querySelectorAll(`.${root} > li`);
     items.forEach((item, index) => {
       if (!testData[index]?.children) return;
