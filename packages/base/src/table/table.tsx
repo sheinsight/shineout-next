@@ -744,7 +744,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
   useEffect(() => {
     if (props.tableRef) {
-      props.tableRef(tableFunc);
+      const ref = virtual
+        ? { ...tableFunc, getScrollContainer: () => scrollRef.current }
+        : tableFunc;
+      props.tableRef(ref);
     }
   }, []);
 

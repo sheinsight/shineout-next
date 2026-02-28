@@ -109,6 +109,8 @@ export interface TableRef {
   scrollColumnIntoView: (colKey: string | number) => void;
   scrollColumnByLeft: (left: number) => void;
   sortByColumn: (params: {columnKey: KeygenResult, direction: 'desc' | 'asc' | null, columnSorter: TableColumnItem<any>['sorter']}) => void;
+  /** 获取表格的滚动容器 DOM 元素，仅 virtual 模式下可用 */
+  getScrollContainer?: () => HTMLDivElement | null;
   [key: string]: any;
 }
 

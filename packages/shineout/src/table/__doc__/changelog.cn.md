@@ -1,3 +1,9 @@
+## 3.9.10-beta.2
+2026-02-28
+### 💎 Enhancement
+- `Table` 虚拟列表模式下 `rowEvents` 事件回调签名扩展为 `(event, rowData, rowIndex)`，支持直接获取行数据和真实索引 ([#1632](https://github.com/sheinsight/shineout-next/pull/1632))
+- `Table` 虚拟列表模式下 `tableRef` 新增 `getScrollContainer` 方法，用于获取滚动容器元素 ([#1632](https://github.com/sheinsight/shineout-next/pull/1632))
+
 ## 3.9.9-beta.11
 2026-02-04
 ### 🚀 Performance
