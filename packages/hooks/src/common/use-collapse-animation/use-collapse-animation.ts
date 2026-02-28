@@ -68,7 +68,12 @@ export function useCollapseAnimation<T extends HTMLElement = HTMLElement>(
 
   // 使用 useLayoutEffect 确保动画状态在 DOM 更新前同步设置
   useEffect(() => {
-    if (!elementRef.current) return;
+    if (!elementRef.current) {
+      // 元素不在 DOM 中（如懒渲染），清除首次渲染标记，
+      // 确保元素出现时状态变化被当作过渡（触发动画）而非初始化。
+      isFirstRenderRef.current = false;
+      return;
+    }
 
     const el = elementRef.current;
 

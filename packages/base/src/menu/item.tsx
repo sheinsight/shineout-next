@@ -60,6 +60,12 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     scrollRef: props.scrollRef,
   });
 
+  // inline 模式懒渲染：跟踪子菜单是否曾被展开过
+  const hasBeenOpened = useRef(isOpen);
+  if (isOpen) {
+    hasBeenOpened.current = true;
+  }
+
   // 为 inline 模式添加折叠动画（仅当 inlineAnimate 为 true 时启用）
   const { shouldHide: shouldHideChildren, shouldKeepOpen } = useCollapseAnimation(childrenRef, {
     isOpen,
@@ -96,6 +102,11 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       } else {
         return null;
       }
+    }
+
+    // inline 模式懒渲染：未曾展开过的子菜单不渲染 DOM
+    if (!shoudPop && !isOpen && !hasBeenOpened.current) {
+      return null;
     }
 
     const content = (close?: () => void) => (

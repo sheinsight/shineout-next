@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useMenu, util, useRender } from '@sheinx/hooks';
 import Item from './item';
 import classNames from 'classnames';
@@ -28,10 +28,33 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
   // const isHorizontal = mode === 'horizontal';
   const [hasOpen, setHasOpen] = useState(false);
+
+  // 当使用 active 函数且 openKeys 非受控时，自动展开激活项的父级菜单
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const mergedDefaultOpenKeys = useMemo(() => {
+    if (props.openKeys !== undefined || !props.active) return props.defaultOpenKeys;
+    const parentKeys: Key[] = [];
+    const walk = (items: DataItem[], ancestors: Key[]) => {
+      items.forEach((item: any, index: number) => {
+        const key = util.getKey(props.keygen, item, index) as Key;
+        if (props.active!(item)) {
+          parentKeys.push(...ancestors);
+        }
+        if (item.children?.length) {
+          walk(item.children, [...ancestors, key]);
+        }
+      });
+    };
+    walk(data, []);
+    if (!parentKeys.length) return props.defaultOpenKeys;
+    const merged = new Set([...(props.defaultOpenKeys || []), ...parentKeys]);
+    return Array.from(merged) as Key[];
+  }, []);
+
   const { openKeys, onOpenChange, bindUpdate, unbindUpdate, changeActiveId } = useMenu({
     data,
     active: props.active,
-    defaultOpenKeys: props.defaultOpenKeys,
+    defaultOpenKeys: mergedDefaultOpenKeys,
     openKeys: props.openKeys,
     onOpenChange: props.onOpenChange as any,
   });

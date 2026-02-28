@@ -1,3 +1,11 @@
+## 3.9.10-beta.4
+2026-02-28
+### 🚀 Performance
+- 优化 `Menu` inline 模式下子菜单的渲染性能，未展开的子菜单不渲染 DOM，展开后保留 ([#1635](https://github.com/sheinsight/shineout-next/pull/1635))
+
+### 💎 Enhancement
+- `Menu` 使用 `active` 且非受控时，自动展开激活项的父级菜单 ([#1635](https://github.com/sheinsight/shineout-next/pull/1635))
+
 ## 3.9.8-beta.16
 2026-01-23
 ### 🐞 BugFix
@@ -80,16 +88,3 @@
 - `Menu` 新增 `Collapse` 属性支持折叠功能 ([#505](https://github.com/sheinsight/shineout-next/pull/505))
 - `Menu` 支持 `renderIcon` 属性支持渲染图标  ([#505](https://github.com/sheinsight/shineout-next/pull/505))
 - `Menu` 支持 `header` 属性渲染顶部内容  ([#505](https://github.com/sheinsight/shineout-next/pull/505))
-
-
-### 🐞 BugFix
-
-### 💎 Enhancement
-
-### 💅 Style
-
-### 🆎 Type
-
-
-
-
