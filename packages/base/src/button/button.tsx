@@ -81,16 +81,6 @@ const Button = (props: ButtonProps) => {
 
   const { htmlType, onRef, ...buttonProps } = rootProps;
 
-  const getSpinSize = () => {
-    if (size === 'small') {
-      return 10;
-    }
-    if (size === 'large') {
-      return 14;
-    }
-    return 12;
-  };
-
   const childrenEl = React.Children.map(getSpaceChildren(children, space), (item, index) => {
     // 仅隐藏前置的icon
     if (loading && index ===0 && isValidElement(item) && (item.type as any).isShineoutIcon) return null;
@@ -105,7 +95,7 @@ const Button = (props: ButtonProps) => {
 
   let loadingEl: React.ReactNode = (
     <div className={buttonStyle.spin}>
-      <Spin size={getSpinSize()} jssStyle={jssStyle} name='ring' ignoreConfig></Spin>
+      <Spin size={'1em'} jssStyle={jssStyle} name='ring' ignoreConfig></Spin>
     </div>
   );
 
