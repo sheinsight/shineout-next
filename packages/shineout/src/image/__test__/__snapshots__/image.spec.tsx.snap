@@ -55,7 +55,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
-          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1;"
         />
       </div>
     </a>
@@ -69,7 +69,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
-          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1;"
         />
       </div>
     </a>
@@ -83,7 +83,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
-          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1;"
         />
       </div>
     </a>
@@ -97,7 +97,7 @@ exports[`Image[Group] should render correctly about group 1`] = `
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
-          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1;"
         />
       </div>
     </a>

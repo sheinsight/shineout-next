@@ -6,7 +6,7 @@ exports[`Spin[Base] should render correctly  1`] = `
 >
   <div
     class="soui-spin soui-spin-spin soui-spin-ring"
-    style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
+    style="width: 16px; height: 16px; border-width: 1.6px;"
   />
 </div>
 `;
@@ -473,7 +473,7 @@ exports[`Spin[Base] should render correctly  2`] = `
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
-          style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
+          style="width: 16px; height: 16px; border-width: 1.6px;"
         />
         <div
           class="soui-spin-tip"
@@ -851,7 +851,7 @@ exports[`Spin[Mode] should render correctly  1`] = `
     >
       <div
         class="soui-spin soui-spin-spin soui-spin-ring"
-        style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
+        style="width: 16px; height: 16px; border-width: 1.6px;"
       />
       <div
         class="soui-spin-tip"
@@ -872,7 +872,7 @@ exports[`Spin[Mode] should render correctly  1`] = `
     >
       <div
         class="soui-spin soui-spin-spin soui-spin-ring"
-        style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
+        style="width: 16px; height: 16px; border-width: 1.6px;"
       />
       <div
         class="soui-spin-tip"
@@ -897,7 +897,7 @@ exports[`Spin[Tip] should render correctly  1`] = `
   >
     <div
       class="soui-spin soui-spin-spin soui-spin-ring"
-      style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
+      style="width: 24px; height: 24px; border-width: 2.4px;"
     />
     <div
       class="soui-spin-tip"

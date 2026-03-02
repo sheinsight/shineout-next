@@ -5235,7 +5235,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
-          style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
+          style="width: 24px; height: 24px; border-width: 2.4px;"
         />
       </div>
     </div>
@@ -5548,7 +5548,7 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
-          style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
+          style="width: 24px; height: 24px; border-width: 2.4px;"
         />
       </div>
     </div>
@@ -5967,7 +5967,7 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
       >
         <div
           class="soui-spin soui-spin-spin soui-spin-ring"
-          style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
+          style="width: 24px; height: 24px; border-width: 2.4px;"
         />
       </div>
     </div>

@@ -87,9 +87,7 @@ const toNumber = (size: number | string) =>
 const styleRenderXY = (size: number | string) =>
   `width: ${toNumber(size)}px; height: ${toNumber(size)}px;`;
 const styleRender = (size: number | string) =>
-  `${styleRenderXY(size)} border-width: ${toNumber(size) / 10}px; font-size: ${
-    toNumber(size) / 10
-  }px;`;
+  `${styleRenderXY(size)} border-width: ${toNumber(size) / 10}px;`;
 const styleAuto = (size: number | string) => `width: ${toNumber(size) * 2}px; height: auto;`;
 const style = styleRenderXY(40);
 
