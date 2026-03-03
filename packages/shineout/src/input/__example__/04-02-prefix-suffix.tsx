@@ -27,7 +27,8 @@ const App: React.FC = () => (
     placeholder='please enter'
     width={300}
     prefix={<MyIcon style={{ marginRight: 8, flexShrink: 0 }}>{icons.Calendar}</MyIcon>}
-    suffix={<MyIcon style={{ marginLeft: 8, flexShrink: 0 }}>{icons.Search}</MyIcon>}
+    suffix={<MyIcon style={{ flexShrink: 0 }}>{icons.Search}</MyIcon>}
+    showClear
   />
 );
 
