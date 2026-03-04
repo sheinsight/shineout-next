@@ -41,39 +41,34 @@ export const addResizeObserver = (
 ) => {
   const { direction, timer } = options;
   const [debounceHandler, cleanTimer] = debounce(handler, timer);
-  let h = debounceHandler;
-  let lastWidth: number;
-  let lastHeight: number;
+  let lastWidth: number = el.clientWidth;
+  let lastHeight: number = el.clientHeight;
   if (window.ResizeObserver) {
-    if (direction) {
-      lastWidth = el.clientWidth;
-      lastHeight = el.clientHeight;
-      h = (entry: { contentRect: { width: number; height: number } }[]) => {
-        if (el?.offsetParent === null) {
-          options.lazy && el.setAttribute('data-observer-hidden', 'true');
-          return;
-        }
+    const h = (entry: { contentRect: { width: number; height: number } }[]) => {
+      if (el?.offsetParent === null) {
+        options.lazy && el.setAttribute('data-observer-hidden', 'true');
+        return;
+      }
 
-        if (options.lazy && el.getAttribute('data-observer-hidden') === 'true') {
-          el.removeAttribute('data-observer-hidden');
-          return;
+      if (options.lazy && el.getAttribute('data-observer-hidden') === 'true') {
+        el.removeAttribute('data-observer-hidden');
+        return;
+      }
+      const { width, height } = entry[0].contentRect;
+      if (width && direction === 'x') {
+        if (lastWidth !== width) {
+          debounceHandler(entry);
         }
-        const { width, height } = entry[0].contentRect;
-        if (width && direction === 'x') {
-          if (lastWidth !== width) {
-            debounceHandler(entry);
-          }
-        } else if (direction === 'y') {
-          if (height && lastHeight !== height) {
-            debounceHandler(entry);
-          }
-        } else if (lastWidth !== width || lastHeight !== height) {
-          debounceHandler(entry, { x: lastWidth !== width, y: lastHeight !== height });
+      } else if (direction === 'y') {
+        if (height && lastHeight !== height) {
+          debounceHandler(entry);
         }
-        lastWidth = width;
-        lastHeight = height;
-      };
-    }
+      } else if (lastWidth !== width || lastHeight !== height) {
+        debounceHandler(entry, { x: lastWidth !== width, y: lastHeight !== height });
+      }
+      lastWidth = width;
+      lastHeight = height;
+    };
     let observer: ResizeObserver | null = new ResizeObserver(h as ResizeObserverCallback);
     observer.observe(el);
     return () => {
