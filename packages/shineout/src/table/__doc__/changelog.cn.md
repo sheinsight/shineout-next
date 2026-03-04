@@ -1,3 +1,8 @@
+## 3.9.10-beta.6
+2026-03-04
+### 🚀 Performance
+- 优化 `Table` 在祖先元素 `display:none` 后恢复显示时不再触发多余的重新渲染 ([#1641](https://github.com/sheinsight/shineout-next/pull/1641))
+
 ## 3.9.10-beta.2
 2026-02-28
 ### 💎 Enhancement

@@ -15,7 +15,7 @@ export const useResize = (props: UseResizeProps) => {
   useEffect(() => {
     if (!targetRef.current) return;
     const el = targetRef.current;
-    if (el) {
+    if (el && el.offsetParent !== null) {
       setWidth(el.clientWidth);
       setHeight(el.clientHeight);
     }
