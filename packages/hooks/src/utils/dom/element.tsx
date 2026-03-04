@@ -45,7 +45,9 @@ export const addResizeObserver = (
   let lastHeight: number = el.clientHeight;
   if (window.ResizeObserver) {
     const h = (entry: { contentRect: { width: number; height: number } }[]) => {
-      if (el?.offsetParent === null) {
+      const { width, height } = entry[0].contentRect;
+      // 元素不可见（display:none）时跳过：offsetParent 为 null 且尺寸为 0
+      if (el?.offsetParent === null && !width && !height) {
         options.lazy && el.setAttribute('data-observer-hidden', 'true');
         return;
       }
@@ -54,7 +56,6 @@ export const addResizeObserver = (
         el.removeAttribute('data-observer-hidden');
         return;
       }
-      const { width, height } = entry[0].contentRect;
       if (width && direction === 'x') {
         if (lastWidth !== width) {
           debounceHandler(entry);
