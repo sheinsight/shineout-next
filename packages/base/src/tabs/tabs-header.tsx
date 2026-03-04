@@ -58,6 +58,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
+  const buttonGroupStyle = jssStyle?.buttonGroup;
 
   const calculateOffset = (
     currentScrollOffsetStartValue: number,
@@ -223,7 +224,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
           style={transformStyle}
         >
           {shape === 'button' && (
-            <Button.Group jssStyle={{ button: buttonStyle }}>
+            <Button.Group jssStyle={{ button: buttonStyle, buttonGroup: buttonGroupStyle }}>
               {tabs.map((tab, index) => {
                 return <Tab key={index} {...tab}></Tab>;
               })}

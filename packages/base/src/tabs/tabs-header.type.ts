@@ -1,11 +1,12 @@
 import { TabsAlignType, TabsClasses, TabsPositionType } from './tabs.type';
-import { ButtonClasses } from '../button/button.type';
+import { ButtonClasses, ButtonGroupClasses } from '../button/button.type';
 import { TabData } from './tab.type';
 
 export interface TabsHeaderProps {
   jssStyle: {
     tabs: () => TabsClasses;
     button: () => ButtonClasses;
+    buttonGroup?: () => ButtonGroupClasses;
   };
   tabs: TabData[];
   position?: TabsPositionType;
