@@ -1,3 +1,8 @@
+## 3.9.11-beta.1
+2026-03-05
+### 🚀 Performance
+- 将 `Button.Group` 的样式拆分为独立样式表，避免未使用 `Button.Group` 时加载多余样式 ([#1642](https://github.com/sheinsight/shineout-next/pull/1642))
+
 ## 3.7.0-beta.24
 2025-05-15
 
