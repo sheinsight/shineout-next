@@ -1,5 +1,5 @@
-## 3.9.11-beta.1
-2026-03-05
+## 3.9.11-beta.2
+2026-03-09
 ### 🚀 Performance
 - 优化 `Button.Group` 样式拆分为独立样式表，减少不必要的样式加载 ([#1642](https://github.com/sheinsight/shineout-next/pull/1642))
 
