@@ -5,7 +5,7 @@ export const FieldsetContext = createContext({ path: '' });
 FieldsetContext.displayName = 'FieldsetContext';
 
 interface BaseFieldProps {
-  bind?: string[];
+  bind?: string[] | string;
   name: string | string[];
 }
 
@@ -27,7 +27,10 @@ function extendName(
 export const useFieldSetConsumer = <T extends BaseFieldProps>(props: T) => {
   const { path } = React.useContext(FieldsetContext);
   const bind = React.useMemo(() => {
-    const _bind = path ? (props.bind || []).concat(path) : props.bind;
+    const propsBind = props.bind
+      ? Array.isArray(props.bind) ? props.bind : [props.bind]
+      : undefined;
+    const _bind = path ? (propsBind || []).concat(path) : propsBind;
     // 只有当路径中包含超过1个索引时才需要去掉最后一个索引
     return _bind?.map((b) => {
       const indexCount = (b.match(/\[\d+\]/g) || []).length;
