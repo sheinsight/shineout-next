@@ -1,3 +1,9 @@
+## 3.9.11-beta.1
+2026-03-06
+### 🐞 BugFix
+- 修复 `Form` 表单项的 `bind` 属性不支持传入字符串类型的问题 (Regression: since v3.9.3) ([#1644](https://github.com/sheinsight/shineout-next/pull/1644))
+
+
 ## 3.9.9-beta.16
 2026-02-24
 ### 🆕 Feature
