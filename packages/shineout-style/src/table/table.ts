@@ -43,24 +43,12 @@ const tableStyle: JsStyles<TableClassType> = {
         wordBreak: 'break-all',
         position: 'relative',
         borderBottom: `1px solid ${token.tableCellBorderColor}`,
+        borderRight: `var(--table-cell-border-width, 0px) solid ${token.tableCellBorderColor}`,
         boxSizing: 'border-box',
         lineHeight: token.lineHeightDynamic,
-        '$bordered&': {
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            zIndex: cellBaseIndex,
-            top: 0,
-            bottom: 0,
-            borderLeft: `1px solid ${token.tableCellBorderColor}`,
-          },
-          '[dir=ltr]&::after': {
-            right: 0,
-          },
-          '[dir=rtl]&::after': {
-            left: 0,
-          },
-        },
+        '&$cellIgnoreBorder': {
+          borderRight: 'none',
+         },
       },
 
       '& td': {
@@ -143,6 +131,7 @@ const tableStyle: JsStyles<TableClassType> = {
     borderRight: `1px solid ${token.tableCellBorderColor}`,
     borderBottom: 'none',
     borderTop: 'none',
+    '--table-cell-border-width': '1px',
     '&::before': {
       position: 'absolute',
       zIndex: fixedFixedIndex + 3,
@@ -309,12 +298,12 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   cellHover: {
-    'table tbody td&&': {
+    'table tbody td&': {
       background: `${token.tableTbodyHoverBackgroundColor}`,
     },
   },
   rowHover: {
-    '&&:hover td': {
+    '&:hover > td': {
       transition: 'background-color 0.2s',
       background: `${token.tableTbodyHoverBackgroundColor}`,
     },
@@ -574,11 +563,7 @@ const tableStyle: JsStyles<TableClassType> = {
       opacity: 0,
     },
   },
-  cellIgnoreBorder: {
-    '&::after': {
-      display: 'none',
-    },
-  },
+  cellIgnoreBorder: {},
   cellSortable: {
     cursor: 'pointer',
     '&:hover': {
@@ -639,17 +624,17 @@ const tableStyle: JsStyles<TableClassType> = {
     alignItems: 'center',
   },
   rowStriped: {
-    '&& td': {
+    'table & > td': {
       background: token.tableTbodyStripedBackgroundColor,
     },
   },
   rowChecked: {
-    '&& td': {
+    'table & > td': {
       background: token.tableTbodyActiveBackgroundColor,
     },
   },
   rowExpand: {
-    '&& > td': {
+    'table & > td': {
       background: token.tableExpandBackgroundColor,
     },
   },
@@ -666,11 +651,8 @@ const tableStyle: JsStyles<TableClassType> = {
       textAlign: 'left',
     },
     '$bordered&': {
-      '& th:last-child, & td:last-child': {
-        '&:after': {
-          display: 'none',
-        },
-      },
+      '& th:last-child[dir=ltr], & td:last-child[dir=ltr]': { borderRight: 'none' },
+      '& th:last-child[dir=rtl], & td:last-child[dir=rtl]': { borderLeft: 'none' },
     },
     '& table tr:hover td': {
       background: `${token.tableTbodyHoverBackgroundColor}`,

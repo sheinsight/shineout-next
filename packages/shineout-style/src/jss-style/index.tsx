@@ -4,7 +4,7 @@ import handleStyle from './handleStyle';
 import version from '../version';
 
 export { JssProvider, SheetsRegistry, jss };
-const prefix = 'soui';
+export const prefix = 'soui';
 
 const config: {
   generateId?: GenerateId;

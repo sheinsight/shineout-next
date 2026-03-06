@@ -2,13 +2,14 @@ import { ReactNode } from 'react';
 import { KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { RadioClasses } from './radio.type';
-import { ButtonClasses } from '../button/button.type';
+import { ButtonClasses, ButtonGroupClasses } from '../button/button.type';
 
 export interface RadioGroupProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'size' | 'style'> {
   jssStyle?: {
     radio?: () => RadioClasses;
     button?: () => ButtonClasses;
+    buttonGroup?: () => ButtonGroupClasses;
   };
   /**
    * @en You can pass in a set of Radio

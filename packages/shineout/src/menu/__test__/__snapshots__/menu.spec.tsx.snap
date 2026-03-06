@@ -667,7 +667,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
 exports[`Menu[Base] should render correctly about dark 1`] = `
 <div>
   <div
-    class="soui-radio-group soui-radio-group-button soui-button-group"
+    class="soui-radio-group soui-radio-group-button soui-button-group soui-button-group-group"
     dir="ltr"
     style="margin-block: 12px;"
   >
