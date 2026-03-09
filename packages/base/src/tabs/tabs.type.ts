@@ -1,6 +1,6 @@
 // import React from 'react';
 import { CommonType } from '../common/type';
-import { ButtonClasses } from '../button/button.type';
+import { ButtonClasses, ButtonGroupClasses } from '../button/button.type';
 import { BaseTabsProps, TabsShapeType } from '@sheinx/hooks';
 import type { StickyProps } from '../sticky';
 
@@ -52,6 +52,7 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
   jssStyle: {
     tabs: () => TabsClasses;
     button: () => ButtonClasses;
+    buttonGroup?: () => ButtonGroupClasses;
   };
   /**
    * @en Whether to enable lazy loading

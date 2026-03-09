@@ -199,7 +199,7 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 下拉列表高度
    * @default 300
    */
-  height?: number;
+  height?: number | 'auto';
   /**
    * @en render unmatch value
    * @cn 是否展示data中不存在的值

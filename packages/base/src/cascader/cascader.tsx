@@ -662,7 +662,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderFilterList = () => {
-    const listStyle = data && data.length === 0 ? { maxHeight: height } : { maxHeight: height };
+    const listStyle = { maxHeight: height };
     const $filterList = (
       <div className={classNames(styles.listContent, styles.filterList)} style={listStyle}>
         <CascaderFilterList

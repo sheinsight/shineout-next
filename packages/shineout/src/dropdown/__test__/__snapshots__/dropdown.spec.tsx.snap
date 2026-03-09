@@ -1450,7 +1450,7 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
 
 exports[`Dropdown[Base] should render correctly about split 1`] = `
 <div
-  class="soui-button-group"
+  class="soui-button-group soui-button-group-group"
   dir="ltr"
   style="margin-inline-end: 24px;"
 >

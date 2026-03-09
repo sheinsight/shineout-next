@@ -5,7 +5,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;"
 >
   <div
-    class="soui-button-group"
+    class="soui-button-group soui-button-group-group"
     dir="ltr"
   >
     <button
@@ -47,7 +47,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
   </div>
   <div
-    class="soui-button-group"
+    class="soui-button-group soui-button-group-group"
     dir="ltr"
   >
     <button
@@ -88,7 +88,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
   </div>
   <div
-    class="soui-button-group"
+    class="soui-button-group soui-button-group-group"
     dir="ltr"
   >
     <button
@@ -132,7 +132,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     style="display: flex; gap: 24px;"
   >
     <div
-      class="soui-button-group"
+      class="soui-button-group soui-button-group-group"
       dir="ltr"
     >
       <button
@@ -166,7 +166,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </button>
     </div>
     <div
-      class="soui-button-group"
+      class="soui-button-group soui-button-group-group"
       dir="ltr"
     >
       <button
@@ -200,7 +200,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </button>
     </div>
     <div
-      class="soui-button-group"
+      class="soui-button-group soui-button-group-group"
       dir="ltr"
     >
       <button

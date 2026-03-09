@@ -6,8 +6,6 @@ import React from 'react';
 export interface ButtonClasses {
   rootClass: string;
   button: string;
-  group: string;
-  groupItem: string;
 
   // 形状
   round: string;
@@ -35,9 +33,18 @@ export interface ButtonClasses {
   spin: string;
 }
 
+export interface ButtonGroupClasses {
+  rootClass: string;
+  group: string;
+}
+
 export interface ButtonJssStyle {
   button?: () => ButtonClasses;
   spin?: () => SpinClasses;
+}
+
+export interface ButtonGroupJssStyle extends ButtonJssStyle {
+  buttonGroup?: () => ButtonGroupClasses;
 }
 
 export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'> {
@@ -142,7 +149,7 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
    */
   id?: string;
 
-  jssStyle?: ButtonJssStyle;
+  jssStyle?: ButtonGroupJssStyle;
 }
 
 export type ButtonProps = ButtonBaseProps;
