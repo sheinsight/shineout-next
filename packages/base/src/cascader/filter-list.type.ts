@@ -18,7 +18,7 @@ export interface FilterListProps<DataItem, Value extends KeygenResult[]>
   jssStyle?: JssStyleType;
   data: DataItem[];
   datum: DatumType<DataItem>['datum'];
-  height: number;
+  height: number | 'auto';
   filterFunc?: (data: DataItem) => boolean;
   shouldFinal: boolean;
   renderItem: (data: DataItem, active?: boolean, id?: Value[0] | undefined) => React.ReactNode;
