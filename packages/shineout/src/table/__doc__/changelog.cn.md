@@ -1,4 +1,4 @@
-## 3.9.11-beta.2
+## 3.9.11-beta.4
 2026-03-09
 ### 🚀 Performance
 - 优化 `Table` bordered 模式下竖线的渲染方式，减少选择器匹配开销 ([#1642](https://github.com/sheinsight/shineout-next/pull/1642))
