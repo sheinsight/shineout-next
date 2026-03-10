@@ -1,3 +1,9 @@
+## 3.9.11-beta.3
+2026-03-10
+### 🐞 BugFix
+- 修复 `Popover` 设置 `disabled` 属性时在 React 17 下报错的问题 ([#1647](https://github.com/sheinsight/shineout-next/pull/1647))
+
+
 ## 3.9.9-beta.2
 2026-01-27
 ### 🆕 Feature
