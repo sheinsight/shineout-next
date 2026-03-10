@@ -1,3 +1,9 @@
+## 3.9.11-beta.3
+2026-03-10
+### 🐞 BugFix
+- 修复 `Input.Number` 设置 `defaultValue` 后，聚焦清空时值被立即回填导致无法删除的问题 ([#1646](https://github.com/sheinsight/shineout-next/pull/1646))
+
+
 ## 3.9.8-beta.14
 2026-01-22
 ### 🐞 BugFix
