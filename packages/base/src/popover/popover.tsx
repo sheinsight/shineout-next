@@ -118,7 +118,7 @@ const Popover = (props: PopoverProps) => {
     };
   });
 
-  if(disabled) return;
+  if (disabled) return null;
 
   const noRender = props.lazy && !open && !context.rendered;
 
