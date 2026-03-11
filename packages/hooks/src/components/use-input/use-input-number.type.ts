@@ -6,6 +6,11 @@ export interface InputNumberProps
   value: NumberValue;
   onChange: (value: NumberValue) => void | undefined;
   /**
+   * @en default value, restore on blur when input is empty
+   * @cn 默认值，输入为空失焦时恢复
+   */
+  defaultValue?: NumberValue;
+  /**
    * @en Minimum value
    * @cn 最小值
    */

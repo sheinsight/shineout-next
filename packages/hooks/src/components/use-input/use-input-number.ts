@@ -20,6 +20,7 @@ const useNumberFormat = (props: InputNumberProps) => {
     cancelBlurChange,
     disabled,
     coin,
+    defaultValue,
   } = props;
 
   const getStringValue = (value: string | number | null | undefined) => {
@@ -33,8 +34,11 @@ const useNumberFormat = (props: InputNumberProps) => {
 
   const [inernalInputValue, setInternalInputValue] = React.useState<string | undefined>(getStringValue(props.value));
 
+  const focusedRef = React.useRef(false);
+
   useEffect(() => {
-    if(props.value !== inernalInputValue){
+    // 聚焦编辑期间不同步外部值，避免 form 回填 defaultValue 覆盖用户输入
+    if(props.value !== inernalInputValue && !focusedRef.current){
       setInternalInputValue(getStringValue(props.value))
     }
   }, [props.value])
@@ -64,8 +68,10 @@ const useNumberFormat = (props: InputNumberProps) => {
       if (val.endsWith('.') || (val.includes('.') && val.endsWith('0'))) return;
       const num = parseFloat(val);
       if(val === '') {
-        // 如果允许空值，则返回 null，否则返回 undefined
-        onChange?.(allowNull ? null : undefined);
+        // 聚焦编辑期间清空发送 null 而非 undefined
+        // 因为 form 层的 defaultValue 回填仅检查 value === undefined
+        // 发送 null 可以让 form 数据跟随更新，同时避免触发回填
+        onChange?.(focusedRef.current ? null : (allowNull ? null : undefined));
         return;
       }
       if(isNaN(num)) return
@@ -76,8 +82,26 @@ const useNumberFormat = (props: InputNumberProps) => {
   })
 
   const onNumberBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
+    focusedRef.current = false;
     const target = e.target as HTMLInputElement;
     const newValue = target.value;
+
+    // 输入为空且有 defaultValue 时，失焦恢复为 defaultValue
+    if (newValue === '' && defaultValue != null) {
+      let num = typeof defaultValue === 'number' ? defaultValue : parseFloat(String(defaultValue));
+      if (isNaN(num)) num = 0;
+      if (typeof digits === 'number') {
+        num = parseFloat(num.toFixed(digits));
+      }
+      num = commonFormat(num) as number;
+      setInternalInputValue(getStringValue(num));
+      if (num !== value) {
+        target.value = String(num);
+        if (!cancelBlurChange) onInnerChange(num);
+      }
+      onBlur?.(e);
+      return;
+    }
 
     // 没有输入值
     if (newValue === '' && value === undefined) {
@@ -111,6 +135,11 @@ const useNumberFormat = (props: InputNumberProps) => {
       if (!cancelBlurChange) onInnerChange(num);
     }
     onBlur?.(e);
+  });
+
+  const onNumberFocus = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
+    focusedRef.current = true;
+    props.onFocus?.(e);
   });
 
   const onNumberChange = usePersistFn((value: string | undefined) => {
@@ -153,7 +182,7 @@ const useNumberFormat = (props: InputNumberProps) => {
       coin,
       onChange: onNumberChange,
       onBlur: onNumberBlur,
-      onFocus: props.onFocus,
+      onFocus: onNumberFocus,
       cancelBlurChange: true,
     }),
     onPlus: handlePlus,
