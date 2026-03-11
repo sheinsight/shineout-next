@@ -1,3 +1,8 @@
+## 3.9.11-beta.7
+2026-03-11
+### 🐞 BugFix
+- 修复竖向 `Menu` 子菜单弹出层的箭头方向显示异常的问题 ([#1650](https://github.com/sheinsight/shineout-next/pull/1650))
+
 ## 3.9.10-beta.4
 2026-02-28
 ### 🚀 Performance
