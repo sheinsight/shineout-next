@@ -1,3 +1,11 @@
+## 3.9.11-beta.6
+2026-03-11
+
+### 🐞 BugFix
+
+- 修复 `Drawer` 在嵌套使用 `Modal` 时面板样式选择器匹配异常的问题 ([#1649](https://github.com/sheinsight/shineout-next/pull/1649))
+
+
 ## 3.9.1-beta.7
 2025-11-28
 

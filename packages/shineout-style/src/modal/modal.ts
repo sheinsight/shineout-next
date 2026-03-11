@@ -281,26 +281,26 @@ const modalStyle: JsStyles<ModalClassType> = {
     },
   },
   wrapperDrawerLeft: {
-    '& $panel': {
+    '& > $mask > $panel': {
       left: 0,
       height: '100vh',
     },
   },
   wrapperDrawerRight: {
-    '& $panel': {
+    '& > $mask > $panel': {
       right: 0,
       height: '100vh',
     },
   },
   wrapperDrawerTop: {
-    '& $panel': {
+    '& > $mask > $panel': {
       top: 0,
       left: 0,
       width: '100vw',
     },
   },
   wrapperDrawerBottom: {
-    '& $panel': {
+    '& > $mask > $panel': {
       bottom: 0,
       left: 0,
       width: '100vw',
