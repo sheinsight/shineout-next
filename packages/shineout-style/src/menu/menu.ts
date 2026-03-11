@@ -84,15 +84,18 @@ const menuStyle: JsStyles<MenuClassType> = {
   },
   popArrow: {
     '&&&': {
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-      width: '6px',
-      height: '6px',
+      filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15))',
+      '&::before': {
+        backgroundColor: token.menuItemBackgroundColor,
+      },
     },
   },
   popArrowDark: {
     '&&&': {
-      backgroundColor: token.menuDarkItemBackgroundColor,
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+      filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15))',
+      '&::before': {
+        backgroundColor: token.menuDarkItemBackgroundColor,
+      },
     },
   },
   scrollbox: {
