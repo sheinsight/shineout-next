@@ -150,6 +150,7 @@ const Popover = (props: PopoverProps) => {
     display: open ? undefined : 'none',
     borderColor: props.border,
     backgroundColor: props.background,
+    '--popover-background-color': props.background,
   };
 
   if (popupGap) {

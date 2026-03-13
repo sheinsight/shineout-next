@@ -40,7 +40,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
         bottom: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: token.popoverBackgroundColor,
+        backgroundColor: `var(--popover-background-color, ${token.popoverBackgroundColor})`,
         clipPath: `path('${arrowClipPath}')`,
       },
     },
