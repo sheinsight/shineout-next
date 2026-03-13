@@ -89,6 +89,8 @@ const listStyle: JsStyles<ListClassType> = {
   pagination: {
     marginTop: token.listPaginationMarginTop,
     marginBottom: token.listPaginationMarginBottom,
+    marginLeft: 0,
+    marginRight: 0,
   },
 
   // baseItem
