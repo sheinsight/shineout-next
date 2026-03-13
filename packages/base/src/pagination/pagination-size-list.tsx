@@ -1,6 +1,9 @@
 import classNames from 'classnames';
+import { FormConfigContext } from '@sheinx/hooks';
 import { PaginationSizeListProps } from './pagination-size-list.type';
 import Select from '../select';
+
+const emptyFormConfig = {};
 
 const PaginationSizeList = (props: PaginationSizeListProps) => {
   const {
@@ -26,21 +29,23 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
 
   return (
     <div className={rootClasses}>
-      <Select
-        jssStyle={jssStyle}
-        disabled={disabled}
-        absolute
-        autoAdapt
-        keygen
-        size={size}
-        clearable={false}
-        value={pageSize}
-        onChange={handleChange}
-        data={pageSizeList}
-        renderItem={(d) => `${d} ${text.page || ''}`}
-        {...sizeListProps}
-        {...select}
-      />
+      <FormConfigContext.Provider value={emptyFormConfig}>
+        <Select
+          jssStyle={jssStyle}
+          disabled={disabled}
+          absolute
+          autoAdapt
+          keygen
+          size={size}
+          clearable={false}
+          value={pageSize}
+          onChange={handleChange}
+          data={pageSizeList}
+          renderItem={(d) => `${d} ${text.page || ''}`}
+          {...sizeListProps}
+          {...select}
+        />
+      </FormConfigContext.Provider>
     </div>
   );
 };
