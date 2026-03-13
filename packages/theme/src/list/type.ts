@@ -89,9 +89,15 @@ export interface ListTokens {
   /**
    * @type {string}
    * @token Spacing-12
-   * @description 列表分页器外边距（垂直方向）
+   * @description 列表分页器上外边距
    */
-  listPaginationMarginY: string;
+  listPaginationMarginTop: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 列表分页器下外边距
+   */
+  listPaginationMarginBottom: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
