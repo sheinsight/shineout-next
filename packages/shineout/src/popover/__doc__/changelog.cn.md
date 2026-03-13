@@ -1,3 +1,9 @@
+## 3.9.11-beta.9
+2026-03-13
+### 🐞 BugFix
+- 修复 `Popover` 设置 `background` 属性后，箭头背景色未跟随变化的问题 ([#1653](https://github.com/sheinsight/shineout-next/pull/1653))
+
+
 ## 3.9.11-beta.3
 2026-03-10
 ### 🐞 BugFix
