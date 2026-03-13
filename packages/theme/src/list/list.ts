@@ -18,7 +18,8 @@ const listTokens: ListTokens = {
   listLargeItemPaddingY: 'Spacing-16',
   listLargeItemPaddingX: 'Spacing-20',
   listLargeFontSize: 'Font-14',
-  listPaginationMarginY: 'Spacing-12',
+  listPaginationMarginTop: 'Spacing-12',
+  listPaginationMarginBottom: 'Spacing-12',
   listStripedBackgroundColor: 'Neutral-fill-2',
 };
 
