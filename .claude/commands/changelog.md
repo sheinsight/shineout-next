@@ -18,6 +18,8 @@
 - {description} ([#{pr-number}](https://github.com/sheinsight/shineout-next/pull/{pr-number}))
 ```
 
+pr-number的获取方式： 通过 `gh api "repos/sheinsight/shineout-next/pulls?state=all&sort=created&direction=desc&per_page=1" --jq '.[0].number'`
+
 6. **写入文件**：将条目插入到对应组件的 `packages/shineout/src/{component}/__doc__/changelog.cn.md` 文件**最顶部**
 
 格式规范：

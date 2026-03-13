@@ -1,3 +1,9 @@
+## 3.9.11-beta.8
+2026-03-13
+### 🐞 BugFix
+- 修复 `Pagination` 在 `Form` 内使用时，页码选择器受表单上下文影响导致行为异常的问题 ([#1652](https://github.com/sheinsight/shineout-next/pull/1652))
+
+
 ## 3.9.5-beta.6
 2025-12-25
 ### 🐞 BugFix
