@@ -1,3 +1,8 @@
+## 3.9.11-beta.11
+2026-03-16
+### 🚀 Performance
+- 优化 `Table` 点击交互时的布局计算性能，减少不必要的浏览器回流 ([#1655](https://github.com/sheinsight/shineout-next/pull/1655))
+
 ## 3.9.11-beta.4
 2026-03-09
 ### 🚀 Performance
