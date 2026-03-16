@@ -38,7 +38,8 @@ const useNumberFormat = (props: InputNumberProps) => {
 
   useEffect(() => {
     // 聚焦编辑期间不同步外部值，避免 form 回填 defaultValue 覆盖用户输入
-    if(props.value !== inernalInputValue && !focusedRef.current){
+    // 但当外部值被清空时(如 clearable 触发)，即使聚焦也需要同步
+    if(props.value !== inernalInputValue && (!focusedRef.current || props.value == null || props.value === '')){
       setInternalInputValue(getStringValue(props.value))
     }
   }, [props.value])
