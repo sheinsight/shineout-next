@@ -63,8 +63,8 @@ const Scroll = (props: scrollProps) => {
   const paddingTop = useMemo(() => {
     const maxHeight = Math.max(0, scrollHeight - stableHeight);
     if (keepScrollTop) return maxHeight;
-    return stableHeight === 0 ? 0 : maxHeight;
-  }, [scrollHeight, stableHeight]);
+    return height === 0 ? 0 : maxHeight;
+  }, [scrollHeight, stableHeight, height]);
 
   const placeStyle = {
     paddingTop,
