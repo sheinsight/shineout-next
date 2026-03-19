@@ -1,3 +1,10 @@
+## 3.9.11-beta.11
+2026-03-19
+### 🐞 BugFix
+- 修复 `TreeSelect` 虚拟列表模式下 `actionOnClick` 不生效的问题 ([#1656](https://github.com/sheinsight/shineout-next/pull/1656))
+- 修复 `TreeSelect` 虚拟列表模式下展开节点时滚动条闪烁的问题 ([#1656](https://github.com/sheinsight/shineout-next/pull/1656))
+
+
 ## 3.9.9-beta.14
 2026-02-10
 ### 🐞 BugFix

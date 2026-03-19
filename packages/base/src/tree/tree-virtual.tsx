@@ -43,6 +43,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
     iconClass,
     leafClass,
     nodeClass,
+    actionOnClick,
     onNodeClick,
     onToggle,
     onChange,
@@ -83,6 +84,7 @@ const TreeVirtual = <DataItem, Value extends KeygenResult[]>(
         parentClickExpand={parentClickExpand}
         doubleClickExpand={doubleClickExpand}
         expanded={expanded}
+        actionOnClick={actionOnClick}
         onNodeClick={onNodeClick}
         onToggle={onToggle}
         onChange={onChange}
