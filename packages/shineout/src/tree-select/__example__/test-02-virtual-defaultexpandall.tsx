@@ -154,7 +154,7 @@ export default () => {
         compressed
         renderItem={(node) => `node ${node.title}`}
         clearable
-        actionOnClick={'check'}
+        actionOnClick={config.actionOnClick}
         placeholder='Please select content'
       />
 
