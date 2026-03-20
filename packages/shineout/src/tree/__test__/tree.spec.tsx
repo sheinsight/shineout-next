@@ -427,6 +427,28 @@ describe('Tree[Expand]', () => {
     const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
     expect(treeRootNodeAll.length).toBe(getIdsLength(data));
   });
+  test('should only collapse clicked node when defaultExpandAll is set', async () => {
+    const expandFn = jest.fn();
+    const { container } = render(<TreeTest defaultExpandAll onExpand={expandFn} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const allNodes = treeWrapper.querySelectorAll(nodeClassName)!;
+    expect(allNodes.length).toBe(getIdsLength(data));
+    const rootNode = treeWrapper.querySelector(nodeClassName)!;
+    const expandIconWrapper = rootNode.querySelector(iconWrapperClassName)!;
+    const expandIcon = rootNode.querySelector(icon)!;
+    attributesTest(expandIconWrapper, 'data-expanded', 'true');
+    fireEvent.click(expandIcon);
+    await delay(100);
+    attributesTest(expandIconWrapper, 'data-expanded', 'false');
+    const lastCall = expandFn.mock.calls[expandFn.mock.calls.length - 1][0];
+    expect(lastCall).not.toContain('0');
+    expect(lastCall).toContain('0-0');
+    expect(lastCall).toContain('0-0-1');
+    expect(lastCall).toContain('0-1');
+    const childrenList = rootNode.querySelector(childrenClassName);
+    expect(childrenList).not.toBeNull();
+    expect((childrenList as HTMLElement).style.display).toBe('none');
+  });
   test('should render when set expandIcons', () => {
     const { container } = render(
       <TreeTest expandIcons={[() => <span>+</span>, () => <span>-</span>]} />,

@@ -730,17 +730,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (props.datum) return;
     if (!dataUpdate) return;
     setData(data);
-    const nextExpanded = props.expanded || props.defaultExpanded || [];
-    if (!defaultExpandAll && !shallowEqual(nextExpanded, expanded)) {
-      onExpand(nextExpanded);
-      updateExpanded(nextExpanded, true);
-    }
 
-    updateInnerCheckStatus();
-  }, [props.data]);
-
-  useEffect(() => {
     if (defaultExpandAll) {
+      // data 变化后 dataMap 已由 setData 填充，直接收集所有可展开节点
       const nextExpanded = [] as KeygenResult[];
       context.dataMap.forEach((item, k) => {
         if (item[childrenKey]) {
@@ -749,8 +741,16 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       });
       onExpand(nextExpanded);
       updateExpanded(nextExpanded, true);
+    } else {
+      const nextExpanded = props.expanded || props.defaultExpanded || [];
+      if (!shallowEqual(nextExpanded, expanded)) {
+        onExpand(nextExpanded);
+        updateExpanded(nextExpanded, true);
+      }
     }
-  }, [context.dataMap, props.data]);
+
+    updateInnerCheckStatus();
+  }, [props.data]);
 
   useEffect(() => {
     if (props.datum) return;

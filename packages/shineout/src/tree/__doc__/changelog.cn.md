@@ -1,3 +1,8 @@
+## 3.9.11-beta.12
+2026-03-20
+### 🐞 BugFix
+- 修复 `Tree` 设置 `defaultExpandAll` 后，异步更新数据时节点未能默认全部展开的问题（改进 [#1304](https://github.com/sheinsight/shineout-next/pull/1304) 的方案，同时修复其引入的 `TreeSelect` 虚拟列表折叠异常） ([#1657](https://github.com/sheinsight/shineout-next/pull/1657))
+
 ## 3.9.7-beta.5
 2026-01-12
 ### 🐞 BugFix
@@ -15,7 +20,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Tree` 在设置了 `defaultExpandAll` 后，组件初始化完再更改数据导致默认展开不生效的问题 ([#1261](https://github.com/sheinsight/shineout-next/pull/1261))
+- 修复 `Tree` 在设置了 `defaultExpandAll` 后，组件初始化完再更改数据导致默认展开不生效的问题（该方案在 [#1657](https://github.com/sheinsight/shineout-next/pull/1657) 中改进） ([#1304](https://github.com/sheinsight/shineout-next/pull/1304))
 
 
 ## 3.7.8-beta.4
