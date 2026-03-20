@@ -1,3 +1,8 @@
+## 3.9.11-beta.12
+2026-03-20
+### 🐞 BugFix
+- 修复 `TreeSelect` 虚拟列表模式下设置 `defaultExpandAll` 后，折叠某个父节点会导致其他父节点异常折叠的问题 ([#1657](https://github.com/sheinsight/shineout-next/pull/1657))
+
 ## 3.9.11-beta.11
 2026-03-19
 ### 🐞 BugFix

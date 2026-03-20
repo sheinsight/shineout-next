@@ -1,3 +1,8 @@
+## 3.9.11-beta.12
+2026-03-20
+### 🐞 BugFix
+- 修复 `Tree` 设置 `defaultExpandAll` 后，异步更新数据时节点未能默认全部展开的问题 ([#1657](https://github.com/sheinsight/shineout-next/pull/1657))
+
 ## 3.9.7-beta.5
 2026-01-12
 ### 🐞 BugFix

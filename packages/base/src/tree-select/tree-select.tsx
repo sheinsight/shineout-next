@@ -486,7 +486,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   };
 
   useEffect(() => {
-    if (virtual && expanded) {
+    if (virtual && expanded && expanded.length > 0) {
       setVirtualExpanded(expanded);
     }
   }, [expanded]);
