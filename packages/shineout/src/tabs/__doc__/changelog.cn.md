@@ -1,3 +1,8 @@
+## 3.9.12-beta.1
+2026-03-23
+### 🐞 BugFix
+- 修复 `Tabs` 在 line/dash 模式下，当 `active` 值对应的 tab 不存在时，下划线仍然残留显示在第一个 tab 位置的问题 ([#1659](https://github.com/sheinsight/shineout-next/pull/1659))
+
 ## 3.9.9-beta.8
 2026-02-02
 ### 🐞 BugFix
