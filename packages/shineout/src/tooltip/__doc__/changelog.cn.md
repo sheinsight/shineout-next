@@ -1,3 +1,8 @@
+## 3.9.12-beta.2
+2026-03-23
+### 🐞 BugFix
+- 修复 `Tooltip` 在 `tip` 为空且设置了 `disabledChild` 时，子元素被错误禁用导致不可点击的问题 ([#1660](https://github.com/sheinsight/shineout-next/pull/1660))
+
 ## 3.9.9-beta.9
 2026-02-02
 ### 🐞 BugFix
