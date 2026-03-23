@@ -105,7 +105,7 @@ const Tooltip = (props: TooltipProps) => {
     return events;
   }, [persistent, events, trigger]);
 
-  const inner = disabledChild ? (
+  const inner = disabledChild && tip ? (
     <span className={tooltipClasses?.target} style={{ cursor: 'not-allowed' }}>
       {cloneElement(children as React.ReactElement, {
         style: { ...childrenProps.style, pointerEvents: 'none' },
