@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tooltip from '..';
@@ -377,5 +378,50 @@ describe('Tooltip[Base]', () => {
     });
     const wrapper = document.querySelector(tooltipClassName) ! as HTMLDivElement
     expect(wrapper.style.top).toBe('100px');
+  });
+  test('should not disable children when disabledChild is set but tip is empty', () => {
+    const handleClick = jest.fn();
+    const { container } = render(
+      <Tooltip tip='' disabledChild>
+        <button onClick={handleClick}>Click me</button>
+      </Tooltip>,
+    );
+    const button = screen.getByText('Click me');
+    expect(button.style.pointerEvents).not.toBe('none');
+    expect(container.querySelector(tooltipTargetClassName)).toBeNull();
+    fireEvent.click(button);
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+  test('should disable children when disabledChild is set and tip has value', async () => {
+    const { container } = render(
+      <Tooltip tip='hello' disabledChild>
+        <button>Click me</button>
+      </Tooltip>,
+    );
+    expect(container.querySelector(tooltipTargetClassName)).not.toBeNull();
+    const button = screen.getByText('Click me');
+    expect(button.style.pointerEvents).toBe('none');
+  });
+  test('should show tooltip when tip changes from empty to value', async () => {
+    const Demo = () => {
+      const [tip, setTip] = React.useState('');
+      return (
+        <div>
+          <button onClick={() => setTip('dynamic tip')}>set tip</button>
+          <Tooltip tip={tip} trigger='hover'>
+            <span>hover target</span>
+          </Tooltip>
+        </div>
+      );
+    };
+    render(<Demo />);
+    fireEvent.click(screen.getByText('set tip'));
+    fireEvent.mouseEnter(screen.getByText('hover target'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName)!;
+    classContentTest(wrapper, tooltipWrapperOpenClassName);
+    textContentTest(wrapper.querySelector(tooltipContentClassName)!, 'dynamic tip');
   });
 });
