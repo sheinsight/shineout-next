@@ -1,3 +1,11 @@
+## 3.9.12-beta.3
+2026-03-23
+
+### 💅 Style
+
+- 优化 `Upload` 删除图标样式，从镂空改为实心，提升视觉辨识度 ([#1661](https://github.com/sheinsight/shineout-next/pull/1661))
+
+
 ## 3.8.4-beta.9
 2025-09-26
 
