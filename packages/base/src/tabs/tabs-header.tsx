@@ -142,6 +142,13 @@ const TabsHeader = (props: TabsHeaderProps) => {
     if (shape !== 'line' && shape !== 'dash') return;
 
     const currentTab = tabRef.current[active!];
+
+    if (!currentTab) {
+      setCurrentTabOffset({ offsetTop: 0, offsetLeft: 0 });
+      setCurrentTabSize({ width: 0, height: 0 });
+      return;
+    }
+
     setCurrentTabOffset({
       offsetTop: currentTab?.offsetTop || 0,
       offsetLeft: currentTab?.offsetLeft || 0,
