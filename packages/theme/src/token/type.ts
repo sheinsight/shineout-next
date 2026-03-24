@@ -72,42 +72,42 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#E3FEFA'
+   * @default '#e8fffb'
    * @description 浅色背景
    */
   'Cyan-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#051F24'
+   * @default '#00424d'
    * @description -10
    */
   'Cyan-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#ADF2E9'
+   * @default '#b7f1e9'
    * @description 聚焦
    */
   'Cyan-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#7DE3D9'
+   * @default '#8ae3da'
    * @description 禁用
    */
   'Cyan-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#54D4CC'
+   * @default '#62d5cd'
    * @description -4
    */
   'Cyan-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#34C6C1'
+   * @default '#3dc7c2'
    * @description 悬浮
    */
   'Cyan-5': string;
@@ -121,21 +121,21 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#158B90'
+   * @default '#13999e'
    * @description 点击
    */
   'Cyan-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#0D6169'
+   * @default '#0a7b83'
    * @description -8
    */
   'Cyan-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#093D45'
+   * @default '#045e68'
    * @description -9
    */
   'Cyan-9': string;
@@ -212,42 +212,42 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#EEF2FE'
+   * @default '#e8ecff'
    * @description 浅色背景
    */
   'Indigo-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#170F69'
+   * @default '#09004d'
    * @description -10
    */
   'Indigo-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#D7DDFF'
+   * @default '#c6cffd'
    * @description 聚焦
    */
   'Indigo-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#ABB4FB'
+   * @default '#a5affc'
    * @description 禁用
    */
   'Indigo-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#848FF9'
+   * @default '#848efa'
    * @description -4
    */
   'Indigo-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#6972F6'
+   * @default '#646bf9'
    * @description 悬浮
    */
   'Indigo-5': string;
@@ -261,28 +261,28 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#3431CD'
+   * @default '#2d2acc'
    * @description 点击
    */
   'Indigo-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#2822A6'
+   * @default '#1d16a2'
    * @description -8
    */
   'Indigo-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#1E1782'
+   * @default '#110877'
    * @description -9
    */
   'Indigo-9': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FCFADE'
+   * @default '#fffde8'
    * @description 浅色背景
    */
   'Lemon-1': string;
@@ -303,7 +303,7 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFE76C'
+   * @default '#fff196'
    * @description 禁用
    */
   'Lemon-3': string;
@@ -352,42 +352,42 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FCF1F6'
+   * @default '#ffe8f0'
    * @description 浅色背景
    */
   'Magenta-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#4B0C37'
+   * @default '#4d0033'
    * @description -10
    */
   'Magenta-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F8D8E6'
+   * @default '#f7c3d8'
    * @description 聚焦
    */
   'Magenta-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F3B1D0'
+   * @default '#efa0c2'
    * @description 禁用
    */
   'Magenta-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#EF8BBE'
+   * @default '#e87fb0'
    * @description -4
    */
   'Magenta-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#E564A8'
+   * @default '#e05fa0'
    * @description 悬浮
    */
   'Magenta-5': string;
@@ -401,28 +401,28 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#B4317D'
+   * @default '#b52a79'
    * @description 点击
    */
   'Magenta-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#912266'
+   * @default '#921661'
    * @description -8
    */
   'Magenta-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#6E164E'
+   * @default '#6f094a'
    * @description -9
    */
   'Magenta-9': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F1FAE1'
+   * @default '#f7ffe8'
    * @description 浅色背景
    */
   'Neon-1': string;
@@ -632,7 +632,7 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FAF4E3'
+   * @default '#fff9e8'
    * @description 浅色背景
    */
   'Brown-1': string;
@@ -702,42 +702,42 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#F8EEFE'
+   * @default '#f6e8ff'
    * @description 浅色背景
    */
   'Purple-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#150530'
+   * @default '#18004d'
    * @description -10
    */
   'Purple-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#EDD6FE'
+   * @default '#dcbaf4'
    * @description 聚焦
    */
   'Purple-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#CFA3F3'
+   * @default '#c08fe8'
    * @description 禁用
    */
   'Purple-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#AD72E4'
+   * @default '#a468dd'
    * @description -4
    */
   'Purple-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#8B48D5'
+   * @default '#8844d1'
    * @description 悬浮
    */
   'Purple-5': string;
@@ -751,21 +751,21 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#4E159E'
+   * @default '#5316a8'
    * @description 点击
    */
   'Purple-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#360C77'
+   * @default '#3c0c89'
    * @description -8
    */
   'Purple-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#220652'
+   * @default '#28056b'
    * @description -9
    */
   'Purple-9': string;
@@ -842,42 +842,42 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFF0E5'
+   * @default '#fff0e8'
    * @description 浅色背景
    */
   'Tangerine-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#56130A'
+   * @default '#4d0500'
    * @description -10
    */
   'Tangerine-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FED4B9'
+   * @default '#fdd5c1'
    * @description 聚焦
    */
   'Tangerine-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDB58F'
+   * @default '#fcb79a'
    * @description 禁用
    */
   'Tangerine-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FD9568'
+   * @default '#fa9874'
    * @description -4
    */
   'Tangerine-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FD7445'
+   * @default '#f9764e'
    * @description 悬浮
    */
   'Tangerine-5': string;
@@ -891,21 +891,21 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#CD3A1D'
+   * @default '#cc3719'
    * @description 点击
    */
   'Tangerine-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#A22614'
+   * @default '#a2210d'
    * @description -8
    */
   'Tangerine-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#7B1B0E'
+   * @default '#771005'
    * @description -9
    */
   'Tangerine-9': string;
@@ -940,7 +940,7 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDBB66'
+   * @default '#f9aa61'
    * @description -4
    */
   'Warning-4': string;
