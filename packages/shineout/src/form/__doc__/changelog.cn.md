@@ -1,3 +1,9 @@
+## 3.9.12-beta.7
+2026-03-24
+### 🐞 BugFix
+- 修复 `Form.Item` 嵌套使用时，中层设置 `required={false}` 会导致内层 `required` 的必填星号样式丢失的问题 ([#1665](https://github.com/sheinsight/shineout-next/pull/1665))
+
+
 ## 3.9.11-beta.1
 2026-03-06
 ### 🐞 BugFix

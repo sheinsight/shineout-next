@@ -127,7 +127,7 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
     },
   },
   wrapperHideRequired: {
-    '& $label::before': {
+    '& > $label::before': {
       display: 'none',
     },
   },
