@@ -147,8 +147,44 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
       // Check if the new value would be disabled
       const newValue = getValueFromRate(newRate[context.dragIndex], scale, step);
       if (isDisabled(newValue)) {
-        // Stay at current position to prevent flickering
-        return r;
+        // Binary search for the closest allowed boundary in the drag direction
+        const currentRate = v;
+        let lo: number, hi: number, boundaryRate: number;
+
+        if (rate > currentRate) {
+          // Dragging forward: find the largest non-disabled rate in [currentRate, rate]
+          lo = currentRate;
+          hi = rate;
+          for (let i = 0; i < 20; i++) {
+            const mid = (lo + hi) / 2;
+            if (isDisabled(getValueFromRate(mid, scale, step))) {
+              hi = mid;
+            } else {
+              lo = mid;
+            }
+          }
+          boundaryRate = lo;
+        } else {
+          // Dragging backward: find the smallest non-disabled rate in [rate, currentRate]
+          lo = rate;
+          hi = currentRate;
+          for (let i = 0; i < 20; i++) {
+            const mid = (lo + hi) / 2;
+            if (isDisabled(getValueFromRate(mid, scale, step))) {
+              lo = mid;
+            } else {
+              hi = mid;
+            }
+          }
+          boundaryRate = hi;
+        }
+
+        const boundaryValue = getValueFromRate(boundaryRate, scale, step);
+        const currentValue = getValueFromRate(v, scale, step);
+        if (isDisabled(boundaryValue) || boundaryValue === currentValue) {
+          return r;
+        }
+        newRate[context.dragIndex] = boundaryRate;
       }
 
       if (newRate[0] > newRate[1]) {
