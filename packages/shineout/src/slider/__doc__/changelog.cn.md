@@ -1,3 +1,9 @@
+## 3.9.12-beta.6
+2026-03-24
+### 🐞 BugFix
+- 修复 `Slider` 使用函数形式的 `disabled` 时，快速拖拽滑块无法精确停在允许范围边界值的问题([#1664](https://github.com/sheinsight/shineout-next/pull/1664))
+
+
 ## 3.9.7-beta.3
 2026-01-09
 ### 🆕 Feature
