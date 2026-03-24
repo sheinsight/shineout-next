@@ -144,6 +144,9 @@ const progressStyle: JsStyles<ProgressClassType> = {
     '$wrapperInfo &': { color: token.progressInfoFrontBackgroundColor },
     '$wrapperDanger &': { color: token.progressDangerFrontBackgroundColor },
     lineHeight: 1,
+    '& > svg': {
+      display: 'block',
+    },
   },
 
   circle: {

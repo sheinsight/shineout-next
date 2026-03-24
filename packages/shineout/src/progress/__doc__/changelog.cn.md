@@ -1,3 +1,9 @@
+## 3.9.12-beta.5
+2026-03-24
+### 🐞 BugFix
+- 修复 `Progress` 环形进度条在主题编辑器中修改字体大小相关主题变量后，图标不居中的问题 ([#1663](https://github.com/sheinsight/shineout-next/pull/1663))
+
+
 ## 3.9.8-beta.7
 2026-01-20
 ### 🆕 Feature
