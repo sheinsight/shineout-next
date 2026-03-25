@@ -1,8 +1,8 @@
 /**
  * cn - 只能选末级
- *    -- 设置 final 属性
+ *    -- 设置 `final` 为 true，仅末级节点可触发选择，value 包含完整路径
  * en - Can only choose the last level
- *   -- Set the final property
+ *   -- Set `final` to true, only the last level node can trigger selection, and the value contains the full path
  */
 
 import React from 'react'
