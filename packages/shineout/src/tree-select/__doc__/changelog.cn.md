@@ -1,3 +1,9 @@
+## 3.9.12-beta.9
+2026-03-25
+
+### 💎 Enhancement
+- 优化 `TreeSelect` 多选模式下获取选中值时的性能，使用浅拷贝替代深拷贝以减少不必要的开销 ([#1667](https://github.com/sheinsight/shineout-next/pull/1667))
+
 ## 3.9.12-beta.8
 2026-03-25
 
