@@ -75,6 +75,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     unmatch,
     isControlled,
     onExpand: onExpandProp,
+    sortBySelect,
   } = props;
 
   const disabledProps = isOptionalDisabled<DataItem>(props.disabled)
@@ -108,6 +109,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     data: [],
     cachedValue: [],
     valueDataCache: new Map<KeygenResult, DataItem>(),
+    selectOrder: [],
   });
 
   // 注册刷新方法
@@ -200,6 +202,15 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.unmatchedValueMap.forEach((unmatch, id) => {
       if (unmatch) values.push(id);
     });
+
+    if (sortBySelect && context.selectOrder.length > 0) {
+      const orderMap = new Map<KeygenResult, number>();
+      context.selectOrder.forEach((id, index) => {
+        orderMap.set(id, index);
+      });
+      values.sort((a, b) => (orderMap.get(a) ?? Infinity) - (orderMap.get(b) ?? Infinity));
+    }
+
     context.cachedValue = values;
     // why deep clone: 外部可能对数组做splice等操作，影响context.cachedValue在内部的判断逻辑
     // 表现出来的bug现象是：外部删除了某个叶子结点，但是Tree的勾选情况没有同步更新; 另外是为了对齐老版本的表现
@@ -251,6 +262,21 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
+    if (sortBySelect) {
+      const prevChecked = context.valueMap.get(id);
+      const wasChecked = prevChecked === 1 || prevChecked === 2;
+      const isChecked = checked === 1 || checked === 2;
+      if (!wasChecked && isChecked) {
+        if (!context.selectOrder.includes(id)) {
+          context.selectOrder.push(id);
+        }
+      } else if (wasChecked && !isChecked) {
+        const idx = context.selectOrder.indexOf(id);
+        if (idx >= 0) {
+          context.selectOrder.splice(idx, 1);
+        }
+      }
+    }
     context.valueMap.set(id, checked);
     const update = context.forceUpdateMap.get(id);
     if (update) update();
@@ -443,6 +469,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       initValue();
     }
     setUnmatedValue();
+
+    if (sortBySelect) {
+      context.selectOrder = (context.value || []).filter((id) => {
+        const status = context.valueMap.get(id);
+        return status === 1 || status === 2 || context.unmatchedValueMap.get(id);
+      });
+    }
   };
 
   const isDisabled = (id: KeygenResult) => {
@@ -483,6 +516,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.dataFlatStatusMap = new Map();
     context.valueMap = new Map();
     context.unmatchedValueMap = new Map();
+    context.selectOrder = [];
     context.data = toArray(data) as DataItem[];
     if (virtual) {
       context.dataFlat = [];

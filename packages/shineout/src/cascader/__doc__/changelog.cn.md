@@ -1,3 +1,13 @@
+## 3.9.12-beta.8
+2026-03-25
+
+### 🐞 BugFix
+- 修复 `Cascader` 开启 `multiple` 但未设置 `mode` 时，勾选节点后选中状态立即回弹的问题 ([#1666](https://github.com/sheinsight/shineout-next/pull/1666))
+
+### 🆕 Feature
+- `Cascader` 新增 `sortBySelect` 属性，开启后多选模式下的值数组将按照用户勾选的先后顺序排列 ([#1666](https://github.com/sheinsight/shineout-next/pull/1666))
+
+
 ## 3.9.0-beta.3
 2025-10-14
 

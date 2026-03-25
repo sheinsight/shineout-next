@@ -65,6 +65,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     height,
     leafIcon,
+    sortBySelect,
     ...rest
   } = props;
 
@@ -100,6 +101,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     onExpand: onExpandProp,
     datum: propsDatum,
     tiledData: props.filteredData,
+    sortBySelect,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);

@@ -92,6 +92,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     filterSameChange,
     beforeChange,
     checkOnFiltered,
+    sortBySelect,
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
@@ -141,6 +142,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   // fix: multiple=true 但未传 mode 时，mode 为 undefined 会导致 getValue() 的 switch-case
   // 走 default 分支返回空数组，进而在受控模式下 setValue → initValue 用空值重置勾选状态，
   // 表现为 checkbox 勾选后立即回弹。此问题由 #1364 引入 deepClone 后暴露。
+  // 默认值 1 与 Tree、TreeSelect 组件的 mode 解构默认值保持一致。
   const resolvedMode = isMultiple && mode === undefined ? 1 : mode;
 
   const updateKey = useMemo(() => {
@@ -160,6 +162,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     beforeChange,
     onChange: onChangeProp,
     filterSameChange,
+    sortBySelect,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {

@@ -96,6 +96,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     filterSameChange,
     checkOnFiltered,
     renderOptionList,
+    sortBySelect,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -202,6 +203,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     defaultExpanded: defaultExpanded,
     defaultExpandAll: defaultExpandAll,
     isControlled: controlExpanded !== undefined,
+    sortBySelect,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {
