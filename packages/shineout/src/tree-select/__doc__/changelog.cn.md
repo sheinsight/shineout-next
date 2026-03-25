@@ -1,8 +1,14 @@
+## 3.9.12-beta.9
+2026-03-25
+
+### 💎 Enhancement
+- 优化 `Tree`/`TreeSelect`/`Cascader` 多选模式下获取选中值时的性能，使用浅拷贝替代深拷贝以减少不必要的开销 ([#1667](https://github.com/sheinsight/shineout-next/pull/1667))
+
 ## 3.9.12-beta.8
 2026-03-25
 
 ### 🆕 Feature
-- `TreeSelect` 新增 `sortBySelect` 属性，开启后多选模式下的值数组将按照用户勾选的先后顺序排列 ([#1666](https://github.com/sheinsight/shineout-next/pull/1666))
+- `Tree`/`TreeSelect`/`Cascader` 新增 `sortBySelect` 属性，开启后多选模式下的值数组将按照用户勾选的先后顺序排列 ([#1666](https://github.com/sheinsight/shineout-next/pull/1666))
 
 
 ## 3.9.11-beta.12

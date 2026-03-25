@@ -23,7 +23,7 @@ import {
   isUnMatchedData,
   isOptionalDisabled,
 } from '../../utils/is';
-import { devUseWarning, produce, shallowEqual, deepClone } from '../../utils';
+import { devUseWarning, produce, shallowEqual } from '../../utils';
 
 function toArray<Value>(value: Value) {
   if (!value) return [];
@@ -212,9 +212,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     }
 
     context.cachedValue = values;
-    // why deep clone: 外部可能对数组做splice等操作，影响context.cachedValue在内部的判断逻辑
+    // why slice: 外部可能对数组做splice等操作，影响context.cachedValue在内部的判断逻辑
     // 表现出来的bug现象是：外部删除了某个叶子结点，但是Tree的勾选情况没有同步更新; 另外是为了对齐老版本的表现
-    return deepClone(values);
+    // 由于values是KeygenResult[]（string|number等原始值），slice()浅拷贝即可隔离引用，无需deepClone
+    return values.slice();
   };
 
   const getPath = (id: KeygenResult) => {
