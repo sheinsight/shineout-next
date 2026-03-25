@@ -138,6 +138,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const isDataEmpty = !filterData || filterData.length === 0;
   const isMultiple = multiple === true || mode !== undefined;
 
+  // fix: multiple=true 但未传 mode 时，mode 为 undefined 会导致 getValue() 的 switch-case
+  // 走 default 分支返回空数组，进而在受控模式下 setValue → initValue 用空值重置勾选状态，
+  // 表现为 checkbox 勾选后立即回弹。此问题由 #1364 引入 deepClone 后暴露。
+  const resolvedMode = isMultiple && mode === undefined ? 1 : mode;
+
   const updateKey = useMemo(() => {
     return path.join('-');
   }, [path]);
@@ -148,7 +153,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     keygen,
     unmatch,
     disabled: disabledProp,
-    mode,
+    mode: resolvedMode,
     defaultValue,
     childrenKey,
     value: valueProp,
@@ -584,7 +589,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         parentId=''
         virtual={virtual}
         path={[] as unknown as Value}
-        mode={mode}
+        mode={resolvedMode}
         size={size}
       />,
     ];
@@ -670,7 +675,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           data={filterData!}
           datum={datum}
           keygen={keygen}
-          mode={mode}
+          mode={resolvedMode}
           height={height}
           size={size}
           isRealtime={isRealtime}
