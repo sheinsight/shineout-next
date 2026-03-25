@@ -1,3 +1,10 @@
+## 3.9.12-beta.8
+2026-03-25
+
+### 🆕 Feature
+- `TreeSelect` 新增 `sortBySelect` 属性，开启后多选模式下的值数组将按照用户勾选的先后顺序排列 ([#1666](https://github.com/sheinsight/shineout-next/pull/1666))
+
+
 ## 3.9.11-beta.12
 2026-03-20
 ### 🐞 BugFix

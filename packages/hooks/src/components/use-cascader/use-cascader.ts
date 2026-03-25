@@ -19,6 +19,7 @@ const useCascader = <DataItem, Value extends KeygenResult[]>(
     onChange: onChangeProp,
     filterSameChange,
     childrenKey,
+    sortBySelect,
   } = props;
 
   const { value, onChange } = useInputAble({
@@ -39,6 +40,7 @@ const useCascader = <DataItem, Value extends KeygenResult[]>(
     disabled,
     isControlled: control,
     childrenKey,
+    sortBySelect,
   });
 
   return {

@@ -39,6 +39,7 @@ export interface TreeContext<DataItem> {
   cachedValue: KeygenResult[];
   data?: DataItem[];
   valueDataCache: Map<KeygenResult, DataItem>;
+  selectOrder: KeygenResult[];
 }
 
 export interface TreePathType {
@@ -135,6 +136,13 @@ export interface BaseTreeProps<DataItem> {
    * @cn 节点展开回调，参数为当前展开节点 key 数组
    */
   onExpand?: (value: KeygenResult[]) => void;
+  /**
+   * @en When enabled in multi-select mode, the value array is sorted by selection order instead of tree structure order
+   * @cn 开启后，多选模式下的 value 数组将按照用户勾选的先后顺序排列，而非数据在树中的位置顺序
+   * @default false
+   * @version 3.9.12
+   */
+  sortBySelect?: boolean;
   /**
    * @private 保持数据缓存
    */
