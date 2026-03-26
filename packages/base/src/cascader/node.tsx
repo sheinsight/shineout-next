@@ -53,7 +53,14 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   };
 
   const handleClick = (e: MouseEvent) => {
-    if (onPathChange) onPathChange(id, data, path, true);
+    // 多选模式下，checkbox 的点击事件会冒泡到节点行的 onClick（即 handleClick），
+    // 如果不拦截，onPathChange 会将 path 重置为当前节点层级，导致更深层级的面板消失。
+    // 例如：1/2/3 级都展开时勾选 1 级 checkbox，path 会从 ['1级','2级'] 被重置为 ['1级']，3 级面板丢失。
+    const isCheckboxClick = multiple && util.getParent(
+      e.target as HTMLElement,
+      `[${getDataAttributeName('role')}=checkbox-indicator]`,
+    );
+    if (onPathChange && !isCheckboxClick) onPathChange(id, data, path, true);
     if (!multiple) {
       // 单选设置了 final 属性后 如果不是末节点不触发onChange
       const shouldJump = shouldFinal && hasChildren;

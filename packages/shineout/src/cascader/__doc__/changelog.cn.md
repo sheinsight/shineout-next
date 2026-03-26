@@ -1,3 +1,9 @@
+## 3.9.12-beta.10
+2026-03-26
+
+### 🐞 BugFix
+- 修复 `Cascader` 多选模式下，展开多级面板后勾选非末级节点的 checkbox 时，已展开的深层面板意外收起的问题 ([#1669](https://github.com/sheinsight/shineout-next/pull/1669))
+
 ## 3.9.12-beta.9
 2026-03-25
 
