@@ -548,18 +548,29 @@ const selectStyle: JsStyles<SelectClassType> = {
     display: 'flex',
     alignItems: 'center',
     boxSizing: 'border-box',
-    height: 32,
-    padding: `${token.selectHeaderPaddingY} ${token.selectHeaderPaddingX}`,
+    padding: `${token.selectHeaderPaddingY} ${token.selectOptionPaddingX}`,
     borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
-    '& $columnsCheckbox': {
+    '& > $columnsCheckbox': {
       padding: 0,
       marginRight: 0,
-      marginLeft: 4,
+      marginLeft: token.selectColumnPadding,
       width: 'auto',
     },
+    '$pickerSmall &': {
+      paddingTop: token.selectSmallHeaderPaddingY,
+      paddingBottom: token.selectSmallHeaderPaddingY,
+      '& > $columnsCheckbox': {
+        padding: 0,
+        marginLeft: token.selectSmallColumnPadding,
+      }
+    },
     '$pickerLarge &': {
-      paddingLeft: token.selectLargeHeaderPaddingX,
-      paddingRight: token.selectLargeHeaderPaddingX,
+      paddingTop: token.selectLargeHeaderPaddingY,
+      paddingBottom: token.selectLargeHeaderPaddingY,
+      '& > $columnsCheckbox': {
+        padding: 0,
+        marginLeft: token.selectLargeColumnPadding,
+      }
     }
   },
   footer: {},
@@ -570,9 +581,19 @@ const selectStyle: JsStyles<SelectClassType> = {
     alignItems: 'center',
     padding: `0 ${token.selectOptionPaddingX}`,
     '& $optionGroupTitle': {
-      padding: `0 ${token.selectHeaderPaddingX}`,
-      marginLeft: token.selectColumnOptionMargin,
+      padding: 0,
+      marginLeft: token.selectColumnPadding,
     },
+    '$pickerSmall &': {
+      '& $optionGroupTitle': {
+        marginLeft: token.selectSmallColumnPadding,
+      }
+    },
+    '$pickerLarge &': {
+      '& $optionGroupTitle': {
+        marginLeft: token.selectLargeColumnPadding,
+      }
+    }
   },
   columnsOption: {
     lineHeight: 1,
@@ -581,10 +602,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    '$pickerLarge &': {
-      paddingLeft: token.selectLargeColumnPadding,
-      paddingRight: token.selectLargeColumnPadding,
-    },
+    // '$pickerLarge &': {
+    //   paddingLeft: token.selectLargeColumnPadding,
+    //   paddingRight: token.selectLargeColumnPadding,
+    // },
     '& $columnsCheckbox': {
       marginRight: 0,
     },
@@ -611,8 +632,15 @@ const selectStyle: JsStyles<SelectClassType> = {
     height: '100%',
     paddingLeft: token.selectColumnPadding,
     paddingRight: token.selectColumnPadding,
-    // marginLeft: token.selectColumnOptionMargin,
     marginLeft: 0,
+    '$pickerSmall &': {
+      paddingLeft: token.selectSmallColumnPadding,
+      paddingRight: token.selectSmallColumnPadding,
+    },
+    '$pickerLarge &': {
+      paddingLeft: token.selectLargeColumnPadding,
+      paddingRight: token.selectLargeColumnPadding,
+    },
     '& :last-child': {
       flex: 1,
       overflow: 'hidden',

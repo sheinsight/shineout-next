@@ -1,3 +1,9 @@
+## 3.9.12-beta.11
+2026-03-27
+
+### 💅 Style
+- 修复 `Select` 多列模式（columns）在不同尺寸（small/large）下列表头部、选项内边距和对齐样式异常的问题 ([#1671](https://github.com/sheinsight/shineout-next/pull/1671))
+
 ## 3.9.9-beta.13
 2026-02-06
 ### 🐞 BugFix
