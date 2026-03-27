@@ -1,7 +1,7 @@
 ## 3.9.12-beta.4
 2026-03-24
 ### 💅 Style
-- 修正多个色系的 Design Token 颜色值，对齐 Ai 组件库设计规范，涉及 `Cyan`、`Indigo`、`Lemon`、`Magenta`、`Neon`、`Brown`、`Purple`、`Tangerine`、`Warning` 等色系 ([#1662](https://github.com/sheinsight/shineout-next/pull/1662))
+- 修正多个色系的 Design Token 颜色值，对齐 Ai 组件库设计规范 ([#1662](https://github.com/sheinsight/shineout-next/pull/1662))
 
 ## 3.9.9-beta.6
 2026-01-30
