@@ -63,6 +63,12 @@ const selectTokenExtraValue = {
         size: 'Font-12',
       },
     },
+    column: {
+      padding: 'Spacing-8',
+    },
+    header: {
+      padding: { y: 'Spacing-4' },
+    },
   },
   large: {
     font: { size: 'Font-16' },
@@ -84,7 +90,7 @@ const selectTokenExtraValue = {
       padding: 'Spacing-12',
     },
     header: {
-      padding: { x: 'Spacing-12' },
+      padding: { y: 'Spacing-8' },
     }
   },
   inner: {
@@ -177,7 +183,7 @@ const selectTokenExtraValue = {
     },
   },
   header: {
-    padding: { x: 'Spacing-8', y: 'Spacing-8' },
+    padding: { y: 'Spacing-6' },
     border: {
       color: 'Neutral-border-1',
     },

@@ -5,7 +5,7 @@
  *    -- Set the `columns` property to make the selection box multi-column display, and `columns` is the number of items displayed per row.
  */
 import React, { useState, useEffect } from 'react';
-import { Select, TYPE } from 'shineout';
+import { Radio, Select, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
 
 type SelectProps = TYPE.Select.Props<DataItem, string>;
@@ -25,6 +25,7 @@ interface DataItem {
 }
 
 export default () => {
+  const [size, setSize] = useState<'default' | 'small' | 'large'>('default');
   const [data, setData] = useState<DataItem[]>([]);
 
   const renderItem: SelectProps['renderItem'] = (d) => `${d.firstName}-${d.lastName}`;
@@ -36,28 +37,39 @@ export default () => {
   }, []);
 
   return (
-    <div style={{ display: 'flex', gap: 24 }}>
-      <Select
-        width={300}
-        data={data}
-        keygen='id'
-        columns={4}
-        placeholder='Select Color'
-        renderItem={renderItem}
-        clearable
+    <>
+      <Radio.Group
+        keygen
+        data={['small', 'default', 'large']}
+        value={size}
+        onChange={setSize}
+        style={{ marginBottom: 16 }}
       />
-      <Select
-        multiple
-        compressed
-        // compressedBound={2}
-        width={300}
-        data={data}
-        keygen='id'
-        columns={4}
-        placeholder='Select Color'
-        renderItem={renderItem}
-        clearable
-      />
-    </div>
+      <div style={{ display: 'flex', gap: 24 }}>
+        <Select
+          width={300}
+          data={data}
+          keygen='id'
+          columns={4}
+          placeholder='Select Color'
+          renderItem={renderItem}
+          clearable
+          size={size}
+        />
+        <Select
+          multiple
+          compressed
+          // compressedBound={2}
+          width={300}
+          data={data}
+          keygen='id'
+          columns={4}
+          placeholder='Select Color'
+          renderItem={renderItem}
+          clearable
+          size={size}
+        />
+      </div>
+    </>
   );
 };

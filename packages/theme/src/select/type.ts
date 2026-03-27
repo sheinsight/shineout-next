@@ -118,6 +118,18 @@ export interface SelectTokens {
   selectSmallClearIconSize: string;
   /**
    * @type {string}
+   * @token Spacing-8
+   * @description 选择器小尺寸多列模式下内边距
+   */
+  selectSmallColumnPadding: string;
+  /**
+   * @type {string}
+   * @token Spacing-4
+   * @description 选择器小尺寸列表头部的内边距（垂直方向）
+   */
+  selectSmallHeaderPaddingY: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 选择器大尺寸字体字号
    */
@@ -166,10 +178,10 @@ export interface SelectTokens {
   selectLargeColumnPadding: string;
   /**
    * @type {string}
-   * @token Spacing-12
-   * @description 选择器大尺寸列表头部的内边距（水平方向）
+   * @token Spacing-8
+   * @description 选择器大尺寸列表头部的内边距（垂直方向）
    */
-  selectLargeHeaderPaddingX: string;
+  selectLargeHeaderPaddingY: string;
   /**
    * @type {string}
    * @token Spacing-8
@@ -496,13 +508,7 @@ export interface SelectTokens {
   selectMorePaddingY: string;
   /**
    * @type {string}
-   * @token Spacing-8
-   * @description 选择器列表头部的内边距（水平方向）
-   */
-  selectHeaderPaddingX: string;
-  /**
-   * @type {string}
-   * @token Spacing-8
+   * @token Spacing-6
    * @description 选择器列表头部的内边距（垂直方向）
    */
   selectHeaderPaddingY: string;
