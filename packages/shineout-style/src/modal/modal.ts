@@ -259,7 +259,7 @@ const modalStyle: JsStyles<ModalClassType> = {
   },
 
   wrapperDrawer: {
-    '& $panel': {
+    '& > $mask > $panel': {
       borderRadius: 0,
       position: 'absolute',
       padding: 0,
