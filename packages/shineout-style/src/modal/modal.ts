@@ -252,13 +252,14 @@ const modalStyle: JsStyles<ModalClassType> = {
   },
   wrapperHide: {
     opacity: 0,
+    pointerEvents: 'none',
     '&:not($wrapperAnimation)': {
       display: 'none',
     },
   },
 
   wrapperDrawer: {
-    '& $panel': {
+    '& > $mask > $panel': {
       borderRadius: 0,
       position: 'absolute',
       padding: 0,

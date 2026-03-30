@@ -1,3 +1,8 @@
+## 3.9.12-beta.14
+2026-03-30
+### 🐞 BugFix
+- 修复 `Drawer` 的面板样式穿透到嵌套子级 `Modal` 上导致样式异常的问题 ([#1675](https://github.com/sheinsight/shineout-next/pull/1675))
+
 ## 3.9.12-beta.12
 2026-03-30
 ### 🐞 BugFix
