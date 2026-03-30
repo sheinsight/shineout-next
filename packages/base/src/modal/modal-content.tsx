@@ -437,9 +437,11 @@ const Modal = (props: ModalContentProps) => {
       instance = curCascadeConfig.cascadeWidth;
     }
 
+    const marginProp = props.position === 'left' ? 'marginLeft' : 'marginRight';
     return {
-      transform: props.position === 'left' ? `translateX(${instance}px)` : `translateX(-${instance}px)`,
-      transition: instance ? 'transform 0.3s ease 0.05s' : 'transform 0.2s ease',
+      willChange: 'margin',
+      [marginProp]: `${instance}px`,
+      transition: instance ? 'margin 0.3s ease 0.05s' : 'margin 0.2s ease',
     }
   }, [config.cascadeConfigs, config.instanceIds])
 

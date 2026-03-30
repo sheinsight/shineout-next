@@ -70,7 +70,7 @@ describe('Drawer[Base]', () => {
     const drawerWrappers = document.querySelectorAll(panel);
     // 打印 drawerWrappers[0] 的html 以便调试
     console.log(drawerWrappers[0].outerHTML);
-    expect(drawerWrappers[0]).toHaveStyle({ transform: 'translateX(-180px)' });
+    expect(drawerWrappers[0]).toHaveStyle({ marginRight: '180px' });
   });
 
   test('should apply cascade offset with custom width', async () => {
@@ -96,7 +96,7 @@ describe('Drawer[Base]', () => {
 
     // 验证第一个 Drawer 有自定义偏移 200px
     const drawerWrappers = document.querySelectorAll(panel);
-    expect(drawerWrappers[0]).toHaveStyle({ transform: 'translateX(200px)' });
+    expect(drawerWrappers[0]).toHaveStyle({ marginLeft: '200px' });
   });
 
   // all tests can be reflected in Modal components

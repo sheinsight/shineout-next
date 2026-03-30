@@ -1,3 +1,8 @@
+## 3.9.12-beta.12
+2026-03-30
+### 🐞 BugFix
+- 修复 `Drawer` 使用 `cascade` 属性时，`transform` 样式导致内部 `position: fixed` 元素定位异常的问题 ([#1672](https://github.com/sheinsight/shineout-next/pull/1672))
+
 ## 3.9.11-beta.6
 2026-03-11
 
