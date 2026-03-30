@@ -1,3 +1,9 @@
+## 3.9.12-beta.13
+2026-03-30
+
+### 💅 Style
+- 修复 `Select`/`TreeSelect`/`Cascader` 鼠标移入移出时清除图标与箭头图标宽度不一致导致内容区域闪跳的问题 ([#1673](https://github.com/sheinsight/shineout-next/pull/1673))
+
 ## 3.9.12-beta.9
 2026-03-25
 
