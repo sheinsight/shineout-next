@@ -326,7 +326,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   clearable: {},
   clearIcon: {
     cursor: 'pointer',
-    width: token.selectClearIconSize,
+    width: token.selectFontSize,
     lineHeight: 0,
     color: token.selectClearColor,
     verticalAlign: 'middle',
@@ -334,10 +334,10 @@ const selectStyle: JsStyles<SelectClassType> = {
       color: token.selectIconColor,
     },
     '$wrapperSmall &': {
-      width: token.selectSmallClearIconSize,
+      width: token.selectSmallFontSize,
     },
     '$wrapperLarge &': {
-      width: token.selectLargeClearIconSize,
+      width: token.selectLargeFontSize,
     }
   },
   arrowIcon: {

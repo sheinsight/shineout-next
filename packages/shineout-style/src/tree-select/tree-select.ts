@@ -315,7 +315,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   clearable: {},
   clearIcon: {
     cursor: 'pointer',
-    width: token.treeSelectClearIconSize,
+    width: token.treeSelectFontSize,
     lineHeight: 0,
     color: token.treeSelectClearColor,
     verticalAlign: 'middle',
@@ -323,10 +323,10 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       color: token.treeSelectClearHoverColor,
     },
     '$wrapperSmall &': {
-      width: token.treeSelectSmallClearIconSize,
+      width: token.treeSelectSmallFontSize,
     },
     '$wrapperLarge &': {
-      width: token.treeSelectLargeClearIconSize,
+      width: token.treeSelectLargeFontSize,
     },
   },
   arrowIcon: {

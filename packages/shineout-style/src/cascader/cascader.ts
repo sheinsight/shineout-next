@@ -331,7 +331,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   clearable: {},
   clearIcon: {
     cursor: 'pointer',
-    width: token.cascaderClearIconSize,
+    width: token.cascaderFontSize,
     lineHeight: 0,
     color: token.cascaderClearColor,
     verticalAlign: 'middle',
@@ -339,10 +339,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       color: token.cascaderClearHoverColor,
     },
     '$wrapperSmall &': {
-      width: token.cascaderSmallClearIconSize,
+      width: token.cascaderSmallFontSize,
     },
     '$wrapperLarge &': {
-      width: token.cascaderLargeClearIconSize,
+      width: token.cascaderLargeFontSize,
     },
   },
   compressedIcon: {},
