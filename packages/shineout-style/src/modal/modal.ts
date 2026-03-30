@@ -252,6 +252,7 @@ const modalStyle: JsStyles<ModalClassType> = {
   },
   wrapperHide: {
     opacity: 0,
+    pointerEvents: 'none',
     '&:not($wrapperAnimation)': {
       display: 'none',
     },
