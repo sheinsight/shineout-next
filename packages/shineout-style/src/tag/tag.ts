@@ -1,5 +1,5 @@
 import { JsStyles } from '../jss-style';
-import Token from '@sheinx/theme';
+import Token, { getTokenName } from '@sheinx/theme';
 import { TagClasses } from '@sheinx/base';
 
 type TagType =
@@ -33,7 +33,7 @@ type tagType =
   | 'lemon'
   | 'orange'
   | 'tangerine';
-const tagDefaultLineHeight = `calc(${Token.tagDefaultLineBase} + 6px)`;
+const tagDefaultLineHeight = `var(${getTokenName('tagDefaultLineHeight')}, calc(${Token.tagDefaultLineBase} + 6px))`;
 
 const animations = {
   '@keyframes spin': {
@@ -219,10 +219,10 @@ const TagStyle: JsStyles<keyof TagClasses> = {
       },
     },
     '& $wrapper': {
-      lineHeight: Token.tagLargeLineHeight,
+      lineHeight: `var(${getTokenName('tagLargeLineHeight')}, calc(1em + 8px))`,
     },
     '& $closeIcon': {
-      height: Token.tagLargeLineHeight,
+      height: `var(${getTokenName('tagLargeLineHeight')}, calc(1em + 8px))`,
     },
   },
   small: {
@@ -232,10 +232,10 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     fontWeight: Token.tagSmallFontWeight,
     borderRadius: Token.tagSmallBorderRadius,
     '& $wrapper': {
-      lineHeight: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 6px))`,
+      lineHeight: `var(${getTokenName('tagSmallLineHeight')}, calc(1em + 6px))`,
     },
     '& $closeIcon': {
-      height: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 4px))`,
+      height: `var(${getTokenName('tagSmallLineHeight')}, calc(1em + 6px))`,
     },
     '& $closeIconWrapper': {
       '& svg': {
