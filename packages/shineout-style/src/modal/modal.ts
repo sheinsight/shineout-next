@@ -263,21 +263,23 @@ const modalStyle: JsStyles<ModalClassType> = {
       borderRadius: 0,
       position: 'absolute',
       padding: 0,
-      '& $header': {
+      '& > $header': {
         padding: `${token.modalDrawerTitlePaddingY} ${token.modalDrawerTitlePaddingX}`,
         background: token.modalDrawerTitleBackgroundColor,
         marginBottom: 0,
+        borderBottom: `${token.modalDrawerHeaderBorderWidth} solid ${token.modalDrawerHeaderBorderColor}`,
       },
-      '& $body': {
+      '& > $body': {
         padding: `${token.modalDrawerBodyPaddingY} ${token.modalDrawerBodyPaddingX}`,
         overflow: 'auto',
       },
-      '& $bodyWithIcon': {
+      '& > $bodyWithIcon': {
         paddingLeft: token.modalDrawerBodyPaddingX,
       },
-      '& $footer': {
+      '& > $footer': {
         padding: `${token.modalDrawerFooterPaddingY} ${token.modalDrawerFooterPaddingX}`,
         marginTop: 0,
+        borderTop: `${token.modalDrawerFooterBorderWidth} solid ${token.modalDrawerFooterBorderColor}`,
       },
     },
   },

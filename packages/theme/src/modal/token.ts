@@ -72,10 +72,14 @@ const modalTokenExtraValue = {
       padding: { y: 'Spacing-12', x: 'Spacing-16' },
       background: { color: 'Neutral-fill-2' },
     },
+    header: {
+      border: { color: 'Neutral-border-1', width: 'Border-0' },
+    },
     body: {
       padding: { y: 'Spacing-16', x: 'Spacing-16' },
     },
     footer: {
+      border: { color: 'Neutral-border-1', width: 'Border-0' },
       padding: { y: 'Spacing-16', x: 'Spacing-16' },
     },
     close: {
