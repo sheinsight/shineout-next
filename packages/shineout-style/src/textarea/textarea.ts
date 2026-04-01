@@ -31,6 +31,7 @@ const inputBorderToken = {
 
   fontColor: token.inputFontColor,
   disabledFontColor: token.inputDisabledFontColor,
+  disabledPlaceholderColor: token.inputDisabledPlaceholderColor,
 
   backgroundColor: token.inputBackgroundColor,
   hoverBackgroundColor: token.inputHoverBackgroundColor,
