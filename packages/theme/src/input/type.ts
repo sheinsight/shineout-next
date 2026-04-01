@@ -226,7 +226,7 @@ export interface InputTokens {
   inputErrorBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-6
+   * @token Danger-5
    * @description 输入框错误状态的鼠标移入时的边框颜色
    */
   inputErrorHoverBorderColor: string;
@@ -238,7 +238,7 @@ export interface InputTokens {
   inputErrorHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-6
+   * @token Danger-7
    * @description 输入框错误状态的鼠标聚焦时的边框颜色
    */
   inputErrorFocusBorderColor: string;

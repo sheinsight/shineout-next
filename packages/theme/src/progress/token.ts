@@ -30,18 +30,22 @@ const progressTokenExtraValue = {
   info: {
     front: { background: { color: 'Brand-6' } },
     inner: { font: { color: 'Neutral-text-1' } },
+    background: { color: 'Neutral-fill-3' },
   },
   warning: {
     front: { background: { color: 'Warning-6' } },
     inner: { font: { color: 'Neutral-text-1' } },
+    background: { color: 'Neutral-fill-3' },
   },
   success: {
     front: { background: { color: 'Success-6' } },
     inner: { font: { color: 'Neutral-text-1' } },
+    background: { color: 'Neutral-fill-3' },
   },
   danger: {
     front: { background: { color: 'Danger-6' } },
     inner: { font: { color: 'Neutral-text-1' } },
+    background: { color: 'Neutral-fill-3' },
   },
   circle: {
     info: {

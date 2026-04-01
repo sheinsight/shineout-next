@@ -47,6 +47,10 @@ const progressStyle: JsStyles<ProgressClassType> = {
       borderRadius: token.progressLineInnerHeight,
     },
     background: token.progressBackground,
+    '$wrapperSuccess &': { background: token.progressSuccessBackgroundColor },
+    '$wrapperWarning &': { background: token.progressWarningBackgroundColor },
+    '$wrapperInfo &': { background: token.progressInfoBackgroundColor },
+    '$wrapperDanger &': { background: token.progressDangerBackgroundColor },
   },
   lineSuccess: {
     position: 'absolute',

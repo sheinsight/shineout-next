@@ -1,3 +1,8 @@
+## 3.9.13-beta.1
+2026-04-01
+### 💅 Style
+- 优化多个组件（Tag、Tabs、Input、Modal、Progress）的 Design Token，支持主题编辑器配置更多样式细节 ([#1676](https://github.com/sheinsight/shineout-next/pull/1676))
+
 ## 3.9.12-beta.4
 2026-03-24
 ### 💅 Style

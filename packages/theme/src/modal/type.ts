@@ -166,6 +166,18 @@ export interface ModalTokens {
   modalDrawerTitleBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-border-1
+   * @description 对话框抽屉模式头部区域边框颜色
+   */
+  modalDrawerHeaderBorderColor: string;
+  /**
+   * @type {string}
+   * @token Border-0
+   * @description 对话框抽屉模式头部区域边框宽度
+   */
+  modalDrawerHeaderBorderWidth: string;
+  /**
+   * @type {string}
    * @token Spacing-16
    * @description 对话框抽屉模式主区域内边距（垂直方向）
    */
@@ -176,6 +188,18 @@ export interface ModalTokens {
    * @description 对话框抽屉模式主区域内边距（水平方向）
    */
   modalDrawerBodyPaddingX: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 对话框抽屉模式底部区域边框颜色
+   */
+  modalDrawerFooterBorderColor: string;
+  /**
+   * @type {string}
+   * @token Border-0
+   * @description 对话框抽屉模式底部区域边框宽度
+   */
+  modalDrawerFooterBorderWidth: string;
   /**
    * @type {string}
    * @token Spacing-16

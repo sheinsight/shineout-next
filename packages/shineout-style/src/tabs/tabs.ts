@@ -488,6 +488,12 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     position: 'absolute',
     background: Token.tabsActiveFontColor,
     transition: `left .2s ease-in-out, top .2s ease-in-out, width .2s ease-in-out, height .2s ease-in-out`,
+    '[data-soui-position^="top-"] &,[data-soui-position^="bottom-"] &': {
+      height: Token.tabsLineActiveHeight,
+    },
+    '[data-soui-position^="left-"] &,[data-soui-position^="right-"] &': {
+      width: Token.tabsLineActiveHeight,
+    },
   },
   header: {
     flex: 1,

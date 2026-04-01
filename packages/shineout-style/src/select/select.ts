@@ -431,8 +431,15 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginBottom: token.selectTagMarginY,
     textWrap: 'nowrap',
     [getTokenName('tagDefaultLineBase')]: token.inputFontSize,
+    [getTokenName('tagDefaultLineHeight')]: `calc(${token.inputFontSize} + 6px)`,
     '&$hideTag': {
       marginRight: 0,
+    },
+    '$wrapperSmall &': {
+      [getTokenName('tagSmallLineHeight')]: `calc(${token.inputSmallFontSize} + 6px)`,
+    },
+    '$wrapperLarge &': {
+      [getTokenName('tagLargeLineHeight')]: `calc(${token.inputLargeFontSize} + 6px)`,
     },
   },
   tagOnly: {

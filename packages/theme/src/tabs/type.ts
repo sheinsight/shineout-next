@@ -113,7 +113,7 @@ export interface TabsTokens {
   /**
    * @type {string}
    * @token Brand-6
-   * @description 标签页长线条模式undefined背景颜色
+   * @description 标签页长线条模式下划线指示器背景颜色
    */
   tabsLineAfterBackgroundColor: string;
   /**
@@ -158,6 +158,12 @@ export interface TabsTokens {
    * @description 标签页长线条模式鼠标点击时的背景颜色
    */
   tabsLineActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Border-2
+   * @description 标签页长线条模式鼠标点击时的高度
+   */
+  tabsLineActiveHeight: string;
   /**
    * @type {string}
    * @token Brand-6

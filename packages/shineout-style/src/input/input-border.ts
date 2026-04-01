@@ -35,6 +35,7 @@ interface Token {
 
   fontColor: string;
   disabledFontColor: string;
+  disabledPlaceholderColor: string;
 
   backgroundColor: string;
   hoverBackgroundColor: string;
@@ -202,10 +203,14 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
           backgroundColor: token.errorHoverBackgroundColor,
         }
       },
-      [`&$${name}Focus`]: {
+      [`&:not($${name}Disabled)$${name}Focus`]: {
         boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
         borderColor: token.errorFocusBorderColor,
         background: token.errorFocusBackgroundColor,
+        '&:hover': {
+          borderColor: token.errorFocusBorderColor,
+          background: token.errorFocusBackgroundColor,
+        }
         // '[data-soui-role="input-group-separate"]&': {
         //   boxShadow: 'none',
         // }
@@ -217,8 +222,8 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       borderColor: token.disabledBorderColor,
       boxShadow: 'none',
       cursor: 'not-allowed',
-      [getTokenName('inputInnerPlaceFontColor')]: token.disabledFontColor,
-      [getTokenName('inputInnerFontColor')]: token.disabledFontColor,
+      [getTokenName('inputInnerPlaceFontColor')]: token.disabledPlaceholderColor,
+      [getTokenName('inputInnerFontColor')]: token.disabledPlaceholderColor,
       [`&:not($${name}Error):hover`]: {
         borderColor: token.disabledBorderColor,
       },

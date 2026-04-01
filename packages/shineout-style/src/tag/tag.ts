@@ -1,5 +1,5 @@
 import { JsStyles } from '../jss-style';
-import Token from '@sheinx/theme';
+import Token, { getTokenName } from '@sheinx/theme';
 import { TagClasses } from '@sheinx/base';
 
 type TagType =
@@ -33,7 +33,7 @@ type tagType =
   | 'lemon'
   | 'orange'
   | 'tangerine';
-const tagDefaultLineHeight = `calc(${Token.tagDefaultLineBase} + 6px)`;
+const tagDefaultLineHeight = `var(${getTokenName('tagDefaultLineHeight')}, calc(${Token.tagDefaultLineBase} + 6px))`;
 
 const animations = {
   '@keyframes spin': {
@@ -45,7 +45,7 @@ const animations = {
 const brightTag = (name: tagType, type: TagType) => ({
   color: Token[`tag${type}FontColor`],
   backgroundColor: Token[`tag${type}BackgroundColor`],
-  border: `1px solid ${Token[`tag${type}BorderColor`]}`,
+  border: `1px solid ${Token[`tag${type}BackgroundColor`]}`,
 
   '& $closeIconWrapper': {
     '&:hover': {
@@ -62,7 +62,7 @@ const brightTag = (name: tagType, type: TagType) => ({
   '&$disabled': {
     color: Token[`tag${type}DisabledFontColor`],
     backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
-    border: `1px solid ${Token[`tag${type}DisabledBorderColor`]}`,
+    border: `1px solid ${Token[`tag${type}DisabledBackgroundColor`]}`,
 
     '& $closeIconWrapper': {
       fill: Token[`tag${type}IconDisabledFontColor`],
@@ -77,7 +77,7 @@ const fillTag = (name: tagType, type: TagType) => ({
   [`&$${name}`]: {
     color: Token[`tag${type}FillFontColor`],
     backgroundColor: Token[`tag${type}FillBackgroundColor`],
-    border: `1px solid ${Token[`tag${type}FillBorderColor`]}`,
+    border: `1px solid ${Token[`tag${type}FillBackgroundColor`]}`,
 
     '& $closeIconWrapper': {
       color: Token[`tag${type}FillFontColor`],
@@ -89,7 +89,7 @@ const fillTag = (name: tagType, type: TagType) => ({
     '&$disabled': {
       color: Token[`tag${type}FillDisabledFontColor`],
       backgroundColor: Token[`tag${type}FillDisabledBackgroundColor`],
-      border: `1px solid ${Token[`tag${type}FillDisabledBorderColor`]}`,
+      border: `1px solid ${Token[`tag${type}FillDisabledBackgroundColor`]}`,
 
       '& $closeIconWrapper': {
         color: Token[`tag${type}FillDisabledFontColor`],
@@ -219,10 +219,10 @@ const TagStyle: JsStyles<keyof TagClasses> = {
       },
     },
     '& $wrapper': {
-      lineHeight: Token.tagLargeLineHeight,
+      lineHeight: `var(${getTokenName('tagLargeLineHeight')}, calc(1em + 8px))`,
     },
     '& $closeIcon': {
-      height: Token.tagLargeLineHeight,
+      height: `var(${getTokenName('tagLargeLineHeight')}, calc(1em + 8px))`,
     },
   },
   small: {
@@ -232,10 +232,10 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     fontWeight: Token.tagSmallFontWeight,
     borderRadius: Token.tagSmallBorderRadius,
     '& $wrapper': {
-      lineHeight: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 6px))`,
+      lineHeight: `var(${getTokenName('tagSmallLineHeight')}, calc(1em + 6px))`,
     },
     '& $closeIcon': {
-      height: `var(${Token.tagSmallLineHeight}, calc(${Token.tagSmallFontSize} + 4px))`,
+      height: `var(${getTokenName('tagSmallLineHeight')}, calc(1em + 6px))`,
     },
     '& $closeIconWrapper': {
       '& svg': {
