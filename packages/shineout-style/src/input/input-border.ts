@@ -35,6 +35,7 @@ interface Token {
 
   fontColor: string;
   disabledFontColor: string;
+  disabledPlaceholderColor: string;
 
   backgroundColor: string;
   hoverBackgroundColor: string;
@@ -221,8 +222,8 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       borderColor: token.disabledBorderColor,
       boxShadow: 'none',
       cursor: 'not-allowed',
-      [getTokenName('inputInnerPlaceFontColor')]: token.disabledFontColor,
-      [getTokenName('inputInnerFontColor')]: token.disabledFontColor,
+      [getTokenName('inputInnerPlaceFontColor')]: token.disabledPlaceholderColor,
+      [getTokenName('inputInnerFontColor')]: token.disabledPlaceholderColor,
       [`&:not($${name}Error):hover`]: {
         borderColor: token.disabledBorderColor,
       },
