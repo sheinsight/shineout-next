@@ -45,7 +45,7 @@ const animations = {
 const brightTag = (name: tagType, type: TagType) => ({
   color: Token[`tag${type}FontColor`],
   backgroundColor: Token[`tag${type}BackgroundColor`],
-  border: `1px solid ${Token[`tag${type}BorderColor`]}`,
+  border: `1px solid ${Token[`tag${type}BackgroundColor`]}`,
 
   '& $closeIconWrapper': {
     '&:hover': {
@@ -77,7 +77,7 @@ const fillTag = (name: tagType, type: TagType) => ({
   [`&$${name}`]: {
     color: Token[`tag${type}FillFontColor`],
     backgroundColor: Token[`tag${type}FillBackgroundColor`],
-    border: `1px solid ${Token[`tag${type}FillBorderColor`]}`,
+    border: `1px solid ${Token[`tag${type}FillBackgroundColor`]}`,
 
     '& $closeIconWrapper': {
       color: Token[`tag${type}FillFontColor`],
