@@ -46,11 +46,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Brand-6' },
-      background: { color: 'Neutral-fill-1' },
+      background: { color: 'Transparent' },
       border: { color: 'Brand-6' },
       disabled: {
         font: { color: 'Brand-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Brand-3' },
       },
       icon: {
@@ -95,11 +95,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Neutral-text-5' },
-      background: { color: 'Neutral-fill-1' },
+      background: { color: 'Transparent' },
       border: { color: 'Neutral-border-2' },
       disabled: {
         font: { color: 'Neutral-text-2' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Neutral-border-2' },
       },
       icon: {
@@ -143,11 +143,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Success-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Success-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Success-3' },
       disabled: {
         font: { color: 'Success-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Success-3' },
       },
       icon: {
@@ -191,11 +191,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Warning-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Warning-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Warning-3' },
       disabled: {
         font: { color: 'Warning-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Warning-3' },
       },
       icon: {
@@ -239,11 +239,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Danger-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Danger-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Danger-3' },
       disabled: {
         font: { color: 'Danger-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Danger-3' },
       },
       icon: {
@@ -287,11 +287,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Magenta-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Magenta-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Magenta-3' },
       disabled: {
         font: { color: 'Magenta-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Magenta-3' },
       },
       icon: {
@@ -335,11 +335,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Brown-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Brown-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Brown-3' },
       disabled: {
         font: { color: 'Brown-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Brown-3' },
       },
       icon: {
@@ -383,11 +383,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Purple-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Purple-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Purple-3' },
       disabled: {
         font: { color: 'Purple-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Purple-3' },
       },
       icon: {
@@ -431,11 +431,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Indigo-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Indigo-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Indigo-3' },
       disabled: {
         font: { color: 'Indigo-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Indigo-3' },
       },
       icon: {
@@ -479,11 +479,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Cyan-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Cyan-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Cyan-3' },
       disabled: {
         font: { color: 'Cyan-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Cyan-3' },
       },
       icon: {
@@ -527,11 +527,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Neon-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Neon-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Neon-3' },
       disabled: {
         font: { color: 'Neon-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Neon-3' },
       },
       icon: {
@@ -575,11 +575,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Lemon-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Lemon-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Lemon-3' },
       disabled: {
         font: { color: 'Lemon-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Lemon-3' },
       },
       icon: {
@@ -623,11 +623,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Orange-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Orange-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Orange-3' },
       disabled: {
         font: { color: 'Orange-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Orange-3' },
       },
       icon: {
@@ -671,11 +671,11 @@ const tagTokenExtraValue = {
     },
     outline: {
       font: { color: 'Tangerine-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Tangerine-6' },
+      background: { color: 'Transparent' },
+      border: { color: 'Tangerine-3' },
       disabled: {
         font: { color: 'Tangerine-3' },
-        background: { color: 'Neutral-fill-1' },
+        background: { color: 'Transparent' },
         border: { color: 'Tangerine-3' },
       },
       icon: {

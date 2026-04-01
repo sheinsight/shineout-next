@@ -46,7 +46,7 @@ export interface TagTokens {
   tagInfoOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签提示色线框风格背景颜色
    */
   tagInfoOutlineBackgroundColor: string;
@@ -64,7 +64,7 @@ export interface TagTokens {
   tagInfoOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签提示色线框风格禁用状态的背景颜色
    */
   tagInfoOutlineDisabledBackgroundColor: string;
@@ -208,7 +208,7 @@ export interface TagTokens {
   tagDefaultOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签默认尺寸线框风格背景颜色
    */
   tagDefaultOutlineBackgroundColor: string;
@@ -226,7 +226,7 @@ export interface TagTokens {
   tagDefaultOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签默认尺寸线框风格禁用状态的背景颜色
    */
   tagDefaultOutlineDisabledBackgroundColor: string;
@@ -346,13 +346,13 @@ export interface TagTokens {
   tagSuccessOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签成功色线框风格背景颜色
    */
   tagSuccessOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-6
+   * @token Success-3
    * @description 标签成功色线框风格边框颜色
    */
   tagSuccessOutlineBorderColor: string;
@@ -364,7 +364,7 @@ export interface TagTokens {
   tagSuccessOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签成功色线框风格禁用状态的背景颜色
    */
   tagSuccessOutlineDisabledBackgroundColor: string;
@@ -490,13 +490,13 @@ export interface TagTokens {
   tagWarningOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签警告色线框风格背景颜色
    */
   tagWarningOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-6
+   * @token Warning-3
    * @description 标签警告色线框风格边框颜色
    */
   tagWarningOutlineBorderColor: string;
@@ -508,7 +508,7 @@ export interface TagTokens {
   tagWarningOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签警告色线框风格禁用状态的背景颜色
    */
   tagWarningOutlineDisabledBackgroundColor: string;
@@ -622,13 +622,13 @@ export interface TagTokens {
   tagDangerOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签危险色线框风格背景颜色
    */
   tagDangerOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-6
+   * @token Danger-3
    * @description 标签危险色线框风格边框颜色
    */
   tagDangerOutlineBorderColor: string;
@@ -640,7 +640,7 @@ export interface TagTokens {
   tagDangerOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签危险色线框风格禁用状态的背景颜色
    */
   tagDangerOutlineDisabledBackgroundColor: string;
@@ -754,13 +754,13 @@ export interface TagTokens {
   tagMagentaOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签洋红色线框风格背景颜色
    */
   tagMagentaOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Magenta-6
+   * @token Magenta-3
    * @description 标签洋红色线框风格边框颜色
    */
   tagMagentaOutlineBorderColor: string;
@@ -772,7 +772,7 @@ export interface TagTokens {
   tagMagentaOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签洋红色线框风格禁用状态的背景颜色
    */
   tagMagentaOutlineDisabledBackgroundColor: string;
@@ -886,13 +886,13 @@ export interface TagTokens {
   tagBrownOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签明黄色线框风格背景颜色
    */
   tagBrownOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brown-6
+   * @token Brown-3
    * @description 标签明黄色线框风格边框颜色
    */
   tagBrownOutlineBorderColor: string;
@@ -904,7 +904,7 @@ export interface TagTokens {
   tagBrownOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签明黄色线框风格禁用状态的背景颜色
    */
   tagBrownOutlineDisabledBackgroundColor: string;
@@ -1018,13 +1018,13 @@ export interface TagTokens {
   tagPurpleOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签紫色线框风格背景颜色
    */
   tagPurpleOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Purple-6
+   * @token Purple-3
    * @description 标签紫色线框风格边框颜色
    */
   tagPurpleOutlineBorderColor: string;
@@ -1036,7 +1036,7 @@ export interface TagTokens {
   tagPurpleOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签紫色线框风格禁用状态的背景颜色
    */
   tagPurpleOutlineDisabledBackgroundColor: string;
@@ -1150,13 +1150,13 @@ export interface TagTokens {
   tagIndigoOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签靛蓝色线框风格背景颜色
    */
   tagIndigoOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Indigo-6
+   * @token Indigo-3
    * @description 标签靛蓝色线框风格边框颜色
    */
   tagIndigoOutlineBorderColor: string;
@@ -1168,7 +1168,7 @@ export interface TagTokens {
   tagIndigoOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签靛蓝色线框风格禁用状态的背景颜色
    */
   tagIndigoOutlineDisabledBackgroundColor: string;
@@ -1282,13 +1282,13 @@ export interface TagTokens {
   tagCyanOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签青色线框风格背景颜色
    */
   tagCyanOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Cyan-6
+   * @token Cyan-3
    * @description 标签青色线框风格边框颜色
    */
   tagCyanOutlineBorderColor: string;
@@ -1300,7 +1300,7 @@ export interface TagTokens {
   tagCyanOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签青色线框风格禁用状态的背景颜色
    */
   tagCyanOutlineDisabledBackgroundColor: string;
@@ -1414,13 +1414,13 @@ export interface TagTokens {
   tagNeonOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签荧光色线框风格背景颜色
    */
   tagNeonOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neon-6
+   * @token Neon-3
    * @description 标签荧光色线框风格边框颜色
    */
   tagNeonOutlineBorderColor: string;
@@ -1432,7 +1432,7 @@ export interface TagTokens {
   tagNeonOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签荧光色线框风格禁用状态的背景颜色
    */
   tagNeonOutlineDisabledBackgroundColor: string;
@@ -1546,13 +1546,13 @@ export interface TagTokens {
   tagLemonOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签柠檬色线框风格背景颜色
    */
   tagLemonOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Lemon-6
+   * @token Lemon-3
    * @description 标签柠檬色线框风格边框颜色
    */
   tagLemonOutlineBorderColor: string;
@@ -1564,7 +1564,7 @@ export interface TagTokens {
   tagLemonOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签柠檬色线框风格禁用状态的背景颜色
    */
   tagLemonOutlineDisabledBackgroundColor: string;
@@ -1678,13 +1678,13 @@ export interface TagTokens {
   tagOrangeOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签橙色线框风格背景颜色
    */
   tagOrangeOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Orange-6
+   * @token Orange-3
    * @description 标签橙色线框风格边框颜色
    */
   tagOrangeOutlineBorderColor: string;
@@ -1696,7 +1696,7 @@ export interface TagTokens {
   tagOrangeOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签橙色线框风格禁用状态的背景颜色
    */
   tagOrangeOutlineDisabledBackgroundColor: string;
@@ -1810,13 +1810,13 @@ export interface TagTokens {
   tagTangerineOutlineFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签橘红色线框风格背景颜色
    */
   tagTangerineOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Tangerine-6
+   * @token Tangerine-3
    * @description 标签橘红色线框风格边框颜色
    */
   tagTangerineOutlineBorderColor: string;
@@ -1828,7 +1828,7 @@ export interface TagTokens {
   tagTangerineOutlineDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Transparent
    * @description 标签橘红色线框风格禁用状态的背景颜色
    */
   tagTangerineOutlineDisabledBackgroundColor: string;
