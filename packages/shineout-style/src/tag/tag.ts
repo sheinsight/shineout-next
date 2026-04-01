@@ -62,7 +62,7 @@ const brightTag = (name: tagType, type: TagType) => ({
   '&$disabled': {
     color: Token[`tag${type}DisabledFontColor`],
     backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
-    border: `1px solid ${Token[`tag${type}DisabledBorderColor`]}`,
+    border: `1px solid ${Token[`tag${type}DisabledBackgroundColor`]}`,
 
     '& $closeIconWrapper': {
       fill: Token[`tag${type}IconDisabledFontColor`],
@@ -89,7 +89,7 @@ const fillTag = (name: tagType, type: TagType) => ({
     '&$disabled': {
       color: Token[`tag${type}FillDisabledFontColor`],
       backgroundColor: Token[`tag${type}FillDisabledBackgroundColor`],
-      border: `1px solid ${Token[`tag${type}FillDisabledBorderColor`]}`,
+      border: `1px solid ${Token[`tag${type}FillDisabledBackgroundColor`]}`,
 
       '& $closeIconWrapper': {
         color: Token[`tag${type}FillDisabledFontColor`],
