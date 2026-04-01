@@ -110,7 +110,7 @@ const inputTokenExtraValue = {
     hover: {
       font: { color: '' },
       placeholder: { color: '' },
-      border: { color: 'Danger-6' },
+      border: { color: 'Danger-5' },
       background: { color: 'Neutral-fill-1' },
       shadow: '',
       clear: { color: '' },
@@ -120,7 +120,7 @@ const inputTokenExtraValue = {
     focus: {
       font: { color: '' },
       placeholder: { color: '' },
-      border: { color: 'Danger-6' },
+      border: { color: 'Danger-7' },
       background: { color: 'Neutral-fill-1' },
       shadow: 'Danger-1',
       clear: { color: '' },

@@ -202,10 +202,14 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
           backgroundColor: token.errorHoverBackgroundColor,
         }
       },
-      [`&$${name}Focus`]: {
+      [`&:not($${name}Disabled)$${name}Focus`]: {
         boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
         borderColor: token.errorFocusBorderColor,
         background: token.errorFocusBackgroundColor,
+        '&:hover': {
+          borderColor: token.errorFocusBorderColor,
+          background: token.errorFocusBackgroundColor,
+        }
         // '[data-soui-role="input-group-separate"]&': {
         //   boxShadow: 'none',
         // }
