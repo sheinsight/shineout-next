@@ -34,6 +34,12 @@ export interface ProgressTokens {
   progressInfoInnerFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-3
+   * @description 进度条基础色背景颜色
+   */
+  progressInfoBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Warning-6
    * @description 进度条警告色已完成进度的背景颜色
    */
@@ -44,6 +50,12 @@ export interface ProgressTokens {
    * @description 进度条警告色内嵌文案模式字体颜色
    */
   progressWarningInnerFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 进度条警告色背景颜色
+   */
+  progressWarningBackgroundColor: string;
   /**
    * @type {string}
    * @token Success-6
@@ -58,6 +70,12 @@ export interface ProgressTokens {
   progressSuccessInnerFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-3
+   * @description 进度条成功色背景颜色
+   */
+  progressSuccessBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Danger-6
    * @description 进度条危险色已完成进度的背景颜色
    */
@@ -68,6 +86,12 @@ export interface ProgressTokens {
    * @description 进度条危险色内嵌文案模式字体颜色
    */
   progressDangerInnerFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 进度条危险色背景颜色
+   */
+  progressDangerBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-4
