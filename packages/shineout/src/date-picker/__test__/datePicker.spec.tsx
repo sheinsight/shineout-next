@@ -614,7 +614,7 @@ describe('DatePicker[Event]', () => {
     // 查找第一个选择器（当前月）中不是跨月日期的单元格
     const firstPickerBody = pickers[0].querySelector(pickerBody)?.querySelector('table')?.querySelector('tbody');
     const allCells = Array.from(firstPickerBody?.querySelectorAll('td') || []);
-    const cell = allCells.find(cell => !cell.classList.contains(pickerCellBound.slice(1))) as Element;
+    const cell = allCells.find(cell => !cell.classList.contains(pickerCellBound)) as Element;
     const cellDay = getFormatTime(Number(cell.textContent));
 
     // 单击选择开始日期
@@ -633,17 +633,18 @@ describe('DatePicker[Event]', () => {
     inputValueTest(results[0], `${year}-${month}-${cellDay} 00:00:00`);
     inputValueTest(results[1], `${year}-${month}-${cellDay} 00:00:00`);
 
-    // 在第二个选择器（下个月）中选择结束日期
-    // 获取下个月的年月信息
-    const nextMonthDate = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 1);
-    const nextYear = nextMonthDate.getFullYear();
-    const nextMonth = getFormatTime(nextMonthDate.getMonth() + 1);
+    // 在第二个选择器中选择结束日期
+    // 从第二个选择器的 header 中读取实际显示的年月，避免因面板月份变化导致断言失败
+    const secondPickerHeaderMid = pickers[1].querySelector(pickerHeaderMid)!;
+    const secondHeaderInfos = secondPickerHeaderMid.querySelectorAll(pickerHeaderInfo);
+    const secondPickerYear = Number(secondHeaderInfos[0].textContent);
+    const secondPickerMonth = getFormatTime(Number(secondHeaderInfos[1].textContent));
 
     const secondPickerBody = pickers[1].querySelector(pickerBody)?.querySelector('table')?.querySelector('tbody');
     const allEndCells = Array.from(secondPickerBody?.querySelectorAll('td') || []);
-    // 选择第二个选择器中的当前月份日期（下个月的日期）
+    // 选择第二个选择器中不是跨月日期的最后一个单元格
     const endCell = allEndCells.filter(cell =>
-      !cell.classList.contains(pickerCellBound.slice(1))
+      !cell.classList.contains(pickerCellBound)
     ).slice(-1)[0] as Element;
     const endCellDay = getFormatTime(Number(endCell.textContent));
 
@@ -652,8 +653,8 @@ describe('DatePicker[Event]', () => {
     await waitFor(async () => {
       await delay(300);
     });
-    inputValueTest(results[0], `${nextYear}-${nextMonth}-${endCellDay} 00:00:00`);
-    inputValueTest(results[1], `${nextYear}-${nextMonth}-${endCellDay} 00:00:00`);
+    inputValueTest(results[0], `${secondPickerYear}-${secondPickerMonth}-${endCellDay} 00:00:00`);
+    inputValueTest(results[1], `${secondPickerYear}-${secondPickerMonth}-${endCellDay} 00:00:00`);
   });
 });
 describe('DatePicker[Type]', () => {
