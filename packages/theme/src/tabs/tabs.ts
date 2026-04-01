@@ -30,6 +30,7 @@ const tabsTokens: TabsTokens = {
   tabsLineFontSize: 'Font-14',
   tabsLineBackgroundColor: 'transparent',
   tabsLineActiveBackgroundColor: 'Neutral-fill-3',
+  tabsLineActiveHeight: 'Border-2',
   tabsLineCheckedFontColor: 'Brand-6',
   tabsLineCheckedFontSize: 'Font-14',
   tabsLineCheckedFontWeight: 'Weight-medium',

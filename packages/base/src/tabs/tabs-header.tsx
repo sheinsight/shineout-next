@@ -205,7 +205,6 @@ const TabsHeader = (props: TabsHeaderProps) => {
           left: getPosition?.startsWith('right') ? 0 : 'auto',
           top: currentTabOffset.offsetTop + currentTabSize.height / 2,
           height: shape === 'line' ? currentTabSize.height : 24,
-          width: 2,
           transform: 'translateY(-50%)',
         }
       : {
@@ -213,7 +212,6 @@ const TabsHeader = (props: TabsHeaderProps) => {
           top: getPosition?.startsWith('bottom') ? 0 : 'auto',
           left: currentTabOffset.offsetLeft + currentTabSize.width / 2,
           width: shape === 'line' ? currentTabSize.width : 24,
-          height: 2,
           transform: 'translateX(-50%)',
         };
 
