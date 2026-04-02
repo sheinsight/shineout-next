@@ -174,6 +174,10 @@ const progressStyle: JsStyles<ProgressClassType> = {
   },
   circleBg: {
     stroke: token.progressBackground,
+    '$wrapperSuccess &': { stroke: token.progressSuccessBackgroundColor },
+    '$wrapperWarning &': { stroke: token.progressWarningBackgroundColor },
+    '$wrapperInfo &': { stroke: token.progressInfoBackgroundColor },
+    '$wrapperDanger &': { stroke: token.progressDangerBackgroundColor },
   },
   circleFront: {
     transform: 'rotate(-90deg)',
