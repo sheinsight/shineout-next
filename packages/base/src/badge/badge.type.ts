@@ -22,6 +22,7 @@ export interface BadgeClasses {
   error: string;
   default: string;
   processing: string;
+  standalone: string;
 }
 
 export interface BadgeProps extends Pick<CommonType, 'className' | 'style'> {
