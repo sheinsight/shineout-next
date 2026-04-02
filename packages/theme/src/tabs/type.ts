@@ -118,7 +118,7 @@ export interface TabsTokens {
   tabsLineAfterBackgroundColor: string;
   /**
    * @type {string}
-   * @token Border-2
+   * @token Spacing-2
    * @description 标签页长线条模式下划线指示器高度
    */
   tabsLineAfterHeight: string;

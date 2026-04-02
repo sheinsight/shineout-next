@@ -23,7 +23,7 @@ const tabsTokens: TabsTokens = {
   tabsLinePaddingBottom: 'Spacing-6',
   tabsLineHrBackgroundColor: 'Neutral-border-1',
   tabsLineAfterBackgroundColor: 'Brand-6',
-  tabsLineAfterHeight: 'Border-2',
+  tabsLineAfterHeight: 'Spacing-2',
   tabsLineInnerPaddingX: 'Spacing-8',
   tabsLineInnerPaddingY: 'Spacing-4',
   tabsLineFontColor: 'Neutral-text-5',
