@@ -177,7 +177,7 @@ const input: JsStyles<keyof InputClasses> = {
   },
   clearWrapper: {
     position: 'relative',
-    flexBasis: `calc(${token.inputIconSize} + 8px)`,
+    flexBasis: `calc(${token.inputFontSize} + 8px)`,
     flexShrink: 0,
     display: 'none',
     '$wrapper:hover &, $wrapperFocus &': {
@@ -187,7 +187,7 @@ const input: JsStyles<keyof InputClasses> = {
 
   password: {
     '& $clearWrapper': {
-      flexBasis: `calc(${token.inputIconSize} + 12px)`,
+      flexBasis: `calc(${token.inputFontSize} + 12px)`,
     },
     '& $clear': {
       marginRight: 8,
@@ -203,8 +203,8 @@ const input: JsStyles<keyof InputClasses> = {
     top: '0',
     bottom: '0',
     margin: 'auto',
-    width: token.inputIconSize,
-    height: token.inputIconSize,
+    width: token.inputFontSize,
+    height: token.inputFontSize,
     boxSizing: 'border-box',
     display: 'flex',
     cursor: 'pointer',
@@ -219,12 +219,12 @@ const input: JsStyles<keyof InputClasses> = {
       left: '0',
     },
     '$wrapperSmall &': {
-      width: token.inputSmallIconSize,
-      height: token.inputSmallIconSize,
+      width: token.inputSmallFontSize,
+      height: token.inputSmallFontSize,
     },
     '$wrapperLarge &': {
-      width: token.inputLargeIconSize,
-      height: token.inputLargeIconSize,
+      width: token.inputLargeFontSize,
+      height: token.inputLargeFontSize,
     },
   },
 
@@ -284,7 +284,7 @@ const input: JsStyles<keyof InputClasses> = {
         borderBottom: `1px solid ${token.inputBorderColor}`,
       },
       '& svg': {
-        width: token.inputIconSize,
+        width: token.inputFontSize,
         transform: 'rotate(-90deg)',
       },
     },
@@ -301,20 +301,20 @@ const input: JsStyles<keyof InputClasses> = {
     display: 'flex',
     alignItems: 'center',
     flexShrink: 0,
-    width: token.inputIconSize,
-    height: token.inputIconSize,
+    width: token.inputFontSize,
+    height: token.inputFontSize,
     color: token.inputToggleColor,
     cursor: 'pointer',
     '$wrapperDisabled &': {
       color: token.inputDisabledFontColor,
     },
     '$wrapperSmall &': {
-      width: token.inputSmallIconSize,
-      height: token.inputSmallIconSize,
+      width: token.inputSmallFontSize,
+      height: token.inputSmallFontSize,
     },
     '$wrapperLarge &': {
-      width: token.inputLargeIconSize,
-      height: token.inputLargeIconSize,
+      width: token.inputLargeFontSize,
+      height: token.inputLargeFontSize,
     },
     '& > svg': {
       cursor: 'pointer',

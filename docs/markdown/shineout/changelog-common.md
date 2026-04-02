@@ -1,3 +1,10 @@
+## 3.9.13-beta.4
+2026-04-02
+
+### 💅 Style
+
+- 修复多个组件（Alert、Cascader、Checkbox、DatePicker、Input、Menu、Radio、Textarea、Tree）图标大小未跟随字号联动的问题 ([#1682](https://github.com/sheinsight/shineout-next/pull/1682))
+
 ## 3.9.13-beta.1
 2026-04-01
 ### 💅 Style

@@ -168,16 +168,16 @@ const input: JsStyles<keyof TextareaClasses> = {
 
     '& > svg': {
       display: 'block',
-      width: token.textareaClearSize,
-      height: token.textareaClearSize,
+      width: token.textareaFontSize,
+      height: token.textareaFontSize,
 
       '$wrapperSmall &': {
-        width: token.textareaSmallClearSize,
-        height: token.textareaSmallClearSize,
+        width: token.textareaSmallFontSize,
+        height: token.textareaSmallFontSize,
       },
       '$wrapperLarge &': {
-        width: token.textareaLargeClearSize,
-        height: token.textareaLargeClearSize,
+        width: token.textareaLargeFontSize,
+        height: token.textareaLargeFontSize,
       },
     },
     '[dir="rtl"] &': {
@@ -187,13 +187,13 @@ const input: JsStyles<keyof TextareaClasses> = {
   },
   wrapperWithClear: {
     '&& $textarea': {
-      paddingRight: `calc(${token.textareaPaddingX} + ${token.textareaClearSize} + 12px)`,
+      paddingRight: `calc(${token.textareaPaddingX} + ${token.textareaFontSize} + 12px)`,
     },
     '&&$wrapperSmall > $textarea': {
-      paddingRight: `calc(${token.textareaSmallPaddingX} + ${token.textareaSmallClearSize} + 12px)`,
+      paddingRight: `calc(${token.textareaSmallPaddingX} + ${token.textareaSmallFontSize} + 12px)`,
     },
     '&&$wrapperLarge > $textarea': {
-      paddingRight: `calc(${token.textareaLargePaddingX} + ${token.textareaLargeClearSize} + 12px)`,
+      paddingRight: `calc(${token.textareaLargePaddingX} + ${token.textareaLargeFontSize} + 12px)`,
     },
   },
   wrapperShowClear: {

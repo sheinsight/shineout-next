@@ -61,7 +61,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   withTitle: {
     '& $icon': {
       fontSize: Token.alertTitleFontSize,
-      width: `calc(${Token.alertTitleIconWidth} + 2px)`,
+      width: `calc(${Token.alertTitleFontSize} + 2px)`,
       height: Token.lineHeightDynamic,
     },
     '& $title': {
@@ -159,7 +159,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
     }
   },
   icon: {
-    width: Token.alertIconSize,
+    width: `calc(${Token.alertFontSize} + 2px)`,
     display: 'inline-flex',
     fontSize: Token.alertFontSize,
     height: Token.lineHeightDynamic,
