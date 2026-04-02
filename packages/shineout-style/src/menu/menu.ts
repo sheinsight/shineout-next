@@ -421,14 +421,14 @@ const menuStyle: JsStyles<MenuClassType> = {
     minWidth: 0,
     padding: `${token.menuTitlePaddingY} ${token.menuTitlePaddingX}`,
     '$wrapperInline $childrenHasExpand  $item:not($itemHasChildren)  $itemContentBack > &': {
-      paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuExpandSize})`,
+      paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuFontSize})`,
     },
     '$wrapperInline $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
     },
 
     '$childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
-      paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuExpandSize})`,
+      paddingRight: `calc(${token.menuIconMarginX} + ${token.menuTitlePaddingX} + ${token.menuFontSize})`,
     },
     '$wrapperHorizontal $childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
       paddingRight: token.menuTitlePaddingX,
@@ -471,8 +471,8 @@ const menuStyle: JsStyles<MenuClassType> = {
     },
     '& > $icon': {
       lineHeight: 1,
-      width: token.menuExpandSize,
-      height: token.menuExpandSize,
+      width: token.menuFontSize,
+      height: token.menuFontSize,
       alignSelf: 'flex-start',
       alignItems: 'center',
       display: 'flex',

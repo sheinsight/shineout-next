@@ -82,8 +82,8 @@ const editableAreaStyle: JsStyles<EditableAreaClassType> = {
   clear: {
     position: 'absolute',
     display: 'flex',
-    width: token.inputIconSize,
-    height: token.inputIconSize,
+    width: token.inputFontSize,
+    height: token.inputFontSize,
     top: 0,
     bottom: 0,
     margin: 'auto',

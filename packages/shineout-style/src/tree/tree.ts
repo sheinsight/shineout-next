@@ -376,9 +376,9 @@ const treeStyle: JsStyles<TreeClassType> = {
     },
 
     '& svg': {
-      width: Token.treeIconSize,
+      width: Token.treeFontSize,
       '$sizeLarge &': {
-        width: `calc(${Token.treeIconSize} + 2px)`,
+        width: `calc(${Token.treeFontSize} + 2px)`,
       }
     },
   },

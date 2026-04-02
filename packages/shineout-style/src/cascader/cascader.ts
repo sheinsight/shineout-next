@@ -557,13 +557,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     justifyContent: 'center',
     '& svg': {
       verticalAlign: 'middle',
-      width: token.cascaderOptionIconSize,
+      width: token.cascaderFontSize,
 
       '$wrapperLarge &': {
-        width: token.cascaderLargeOptionIconSize,
+        width: token.cascaderLargeFontSize,
       },
       '$wrapperSmall &': {
-        width: token.cascaderSmallOptionIconSize,
+        width: token.cascaderSmallFontSize,
       },
     },
   },

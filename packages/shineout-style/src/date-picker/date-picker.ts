@@ -209,15 +209,15 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     alignItems: 'center',
     color: token.datePickerIconColor,
     '& svg': {
-      width: token.datePickerIconSize,
-      height: token.datePickerIconSize,
+      width: token.datePickerFontSize,
+      height: token.datePickerFontSize,
       '$wrapperSmall &': {
-        width: token.datePickerSmallIconSize,
-        height: token.datePickerSmallIconSize,
+        width: token.datePickerSmallFontSize,
+        height: token.datePickerSmallFontSize,
       },
       '$wrapperLarge &': {
-        width: token.datePickerLargeIconSize,
-        height: token.datePickerLargeIconSize,
+        width: token.datePickerLargeFontSize,
+        height: token.datePickerLargeFontSize,
       },
     },
     // todo 暂时写死
@@ -692,8 +692,8 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       lineHeight: '0',
       marginRight: '8px',
       '& > svg': {
-        width: token.datePickerIconSize,
-        height: token.datePickerIconSize,
+        width: token.datePickerFontSize,
+        height: token.datePickerFontSize,
         color: token.datePickerIconColor,
       },
     },
