@@ -489,10 +489,10 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     background: Token.tabsActiveFontColor,
     transition: `left .2s ease-in-out, top .2s ease-in-out, width .2s ease-in-out, height .2s ease-in-out`,
     '[data-soui-position^="top-"] &,[data-soui-position^="bottom-"] &': {
-      height: Token.tabsLineCheckedHeight,
+      height: Token.tabsLineAfterHeight,
     },
     '[data-soui-position^="left-"] &,[data-soui-position^="right-"] &': {
-      width: Token.tabsLineCheckedHeight,
+      width: Token.tabsLineAfterHeight,
     },
   },
   header: {
