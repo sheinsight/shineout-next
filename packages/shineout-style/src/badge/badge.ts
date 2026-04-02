@@ -23,6 +23,7 @@ export type BadgeClasses = {
   processing: string;
 
   small: string;
+  standalone: string;
 
   '@keyframes animationZoom': string;
   '@keyframes animationProgressing': string;
@@ -47,6 +48,14 @@ const badgeStyle: JsStyles<BadgeClassType> = {
       transform: 'translate(50%, -50%)',
       transformOrigin: '100% 0',
       boxShadow: `0 0 0 1px #fff`,
+    },
+  },
+  standalone: {
+    fontSize: 0,
+    '& $count,$custom,$dot': {
+      position: 'static',
+      transform: 'none',
+      boxShadow: 'none',
     },
   },
   textBadge: {
