@@ -153,8 +153,7 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
     fontSize: token.formItemDangerFontSize,
     fontWeight: token.formItemDangerFontWeight,
     animation: '$appear 1s ease-in-out forwards',
-    // flexBasis: '100%',
-    // width: 0,
+    marginTop: token.formItemTipMarginTop,
   },
   tip: {
     color: token.formItemTipFontColor,
