@@ -112,18 +112,6 @@ export interface TabsTokens {
   tabsLineHrBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-6
-   * @description 标签页长线条模式下划线指示器背景颜色
-   */
-  tabsLineAfterBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Spacing-2
-   * @description 标签页长线条模式下划线指示器高度
-   */
-  tabsLineAfterHeight: string;
-  /**
-   * @type {string}
    * @token Spacing-8
    * @description 标签页长线条模式内部容器的内边距（水平方向）
    */
@@ -188,6 +176,18 @@ export interface TabsTokens {
    * @description 标签页长线条模式选中状态背景颜色
    */
   tabsLineCheckedBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 标签页长线条模式选中状态undefined颜色
+   */
+  tabsLineCheckedInkColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-2
+   * @description 标签页长线条模式选中状态undefined高度
+   */
+  tabsLineCheckedInkHeight: string;
   /**
    * @type {string}
    * @token Font-14
