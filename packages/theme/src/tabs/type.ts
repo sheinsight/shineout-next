@@ -388,12 +388,6 @@ export interface TabsTokens {
   tabsCardActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-1
-   * @description 标签页卡片模式边框颜色
-   */
-  tabsCardBorderColor: string;
-  /**
-   * @type {string}
    * @token Brand-6
    * @description 标签页卡片模式选中状态字体颜色
    */

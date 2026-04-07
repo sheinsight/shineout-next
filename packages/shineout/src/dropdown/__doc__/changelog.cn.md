@@ -1,3 +1,8 @@
+## 3.9.13-beta.5
+2026-04-03
+### 💅 Style
+- 修复 `Dropdown` 分列模式列表和分割线的内边距 token 引用错误的问题 ([#1685](https://github.com/sheinsight/shineout-next/pull/1685))
+
 ## 3.9.4-beta.4
 2025-12-15
 ### 🆕 Feature

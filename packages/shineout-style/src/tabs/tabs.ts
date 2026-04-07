@@ -507,7 +507,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       '& $tab': {
         marginTop: Token.tabsBadgeMargin,
         position: 'relative',
-        border: `1px solid ${Token.tabsCardBorderColor}`,
+        border: `1px solid ${Token.tabsBorderColor}`,
         padding: `${Token.tabsCardPaddingY} ${Token.tabsCardPaddingX}`,
         color: Token.tabsCardFontColor,
         fontSize: Token.tabsCardFontSize,

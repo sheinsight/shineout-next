@@ -107,6 +107,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
         // padding: `${token.cascaderSmallOptionInnerPaddingY} ${token.cascaderSmallOptionInnerPaddingX}`,
         fontSize: token.cascaderSmallFontSize,
       },
+      '& $arrowIcon': {
+        width: token.inputSmallFontSize,
+      },
       '& $clearIcon': {
         right: token.cascaderSmallPaddingX,
       },
@@ -117,7 +120,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
         marginBottom: token.cascaderLargePlaceholderMarginY,
       },
       '& $arrowIcon': {
-        width: token.cascaderLargeFontSize,
+        width: token.inputLargeFontSize,
       },
       '& $optionInner': {
         // padding: `${token.cascaderLargeOptionInnerPaddingY} ${token.cascaderLargeOptionInnerPaddingX}`,
@@ -224,7 +227,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',
       '&::placeholder': {
-        color: token.cascaderPlaceholderColor,
+        color: token.inputPlaceholderColor,
       },
     },
   },
@@ -274,7 +277,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       backgroundColor: 'transparent',
       width: '100%',
       '&::placeholder': {
-        color: token.cascaderPlaceholderColor,
+        color: token.inputPlaceholderColor,
       },
     },
   },
@@ -307,7 +310,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     },
   },
   placeholder: {
-    color: token.cascaderPlaceholderColor,
+    color: token.inputPlaceholderColor,
     lineHeight: token.lineHeightDynamic,
     marginTop: token.cascaderPlaceholderMarginY,
     marginBottom: token.cascaderPlaceholderMarginY,
@@ -332,25 +335,25 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   clearable: {},
   clearIcon: {
     cursor: 'pointer',
-    width: token.cascaderFontSize,
+    width: token.inputFontSize,
     lineHeight: 0,
-    color: token.cascaderClearColor,
+    color: token.inputClearColor,
     verticalAlign: 'middle',
     '&:hover': {
-      color: token.cascaderClearHoverColor,
+      color: token.inputHoverClearColor,
     },
     '$wrapperSmall &': {
-      width: token.cascaderSmallFontSize,
+      width: token.inputSmallFontSize,
     },
     '$wrapperLarge &': {
-      width: token.cascaderLargeFontSize,
+      width: token.inputLargeFontSize,
     },
   },
   compressedIcon: {},
   arrowIcon: {
     display: 'inline-block',
     verticalAlign: 'middle',
-    width: token.cascaderFontSize,
+    width: token.inputFontSize,
     lineHeight: 0,
     color: token.cascaderIconColor,
     transition: 'transform 0.3s',
@@ -386,13 +389,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   loading: {
     padding: 10,
-    color: token.cascaderPlaceholderColor,
+    color: token.inputPlaceholderColor,
     display: 'flex',
     justifyContent: 'center',
   },
   empty: {
     padding: `calc(${token.cascaderOptionPaddingY} + ${token.cascaderOptionInnerPaddingY}) calc(${token.cascaderOptionPaddingX} + ${token.cascaderOptionInnerPaddingX})`,
-    color: token.cascaderPlaceholderColor,
+    color: token.inputPlaceholderColor,
   },
   checkedIcon: {
     right: 8,

@@ -68,7 +68,6 @@ const tabsTokens: TabsTokens = {
   tabsCardActiveFontWeight: 'Weight-medium',
   tabsCardActiveFontSize: 'Font-14',
   tabsCardActiveBackgroundColor: 'Neutral-fill-4',
-  tabsCardBorderColor: 'Neutral-border-1',
   tabsCardCheckedFontColor: 'Brand-6',
   tabsCardCheckedFontSize: 'Font-14',
   tabsCardCheckedFontWeight: 'Weight-medium',

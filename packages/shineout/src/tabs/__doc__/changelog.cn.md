@@ -1,3 +1,8 @@
+## 3.9.13-beta.5
+2026-04-03
+### 💅 Style
+- 优化 `Tabs` 样式 token 结构，统一边框颜色和下划线指示器相关 token 命名 ([#1685](https://github.com/sheinsight/shineout-next/pull/1685))
+
 ## 3.9.12-beta.1
 2026-03-23
 ### 🐞 BugFix

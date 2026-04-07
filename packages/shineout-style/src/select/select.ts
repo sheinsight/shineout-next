@@ -98,6 +98,9 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginTop: 0,
         marginBottom: 0,
       },
+      '& $arrowIcon': {
+        width: token.inputSmallFontSize,
+      },
     },
     '&$wrapperLarge': {
       '& $placeholder,$ellipsis,$space,input': {
@@ -105,7 +108,7 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginBottom: token.selectLargePlaceholderMarginY,
       },
       '& $arrowIcon': {
-        width: token.selectLargeFontSize,
+        width: token.inputLargeFontSize,
       },
     },
     '&:hover': {
@@ -134,7 +137,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       color: token.selectDisabledIconColor,
     },
     '& $placeholder': {
-      color: token.selectDisabledPlaceholderColor,
+      color: token.inputDisabledPlaceholderColor,
     },
   },
   triggerHover: {
@@ -191,7 +194,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',
       '&::placeholder': {
-        color: token.selectPlaceholderColor,
+        color: token.inputPlaceholderColor,
       },
     },
   },
@@ -241,7 +244,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       backgroundColor: 'transparent',
       width: '100%',
       '&::placeholder': {
-        color: token.selectPlaceholderColor,
+        color: token.inputPlaceholderColor,
       },
     },
   },
@@ -274,7 +277,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
   },
   placeholder: {
-    color: token.selectPlaceholderColor,
+    color: token.inputPlaceholderColor,
     lineHeight: token.lineHeightDynamic,
     marginTop: token.selectPlaceholderMarginY,
     marginBottom: token.selectPlaceholderMarginY,
@@ -327,24 +330,24 @@ const selectStyle: JsStyles<SelectClassType> = {
   clearable: {},
   clearIcon: {
     cursor: 'pointer',
-    width: token.selectFontSize,
+    width: token.inputFontSize,
     lineHeight: 0,
-    color: token.selectClearColor,
+    color: token.inputClearColor,
     verticalAlign: 'middle',
     '&:hover': {
       color: token.selectIconColor,
     },
     '$wrapperSmall &': {
-      width: token.selectSmallFontSize,
+      width: token.inputSmallFontSize,
     },
     '$wrapperLarge &': {
-      width: token.selectLargeFontSize,
+      width: token.inputLargeFontSize,
     }
   },
   arrowIcon: {
     display: 'inline-block',
     verticalAlign: 'middle',
-    width: token.selectFontSize,
+    width: token.inputFontSize,
     lineHeight: 0,
     color: token.selectIconColor,
     transition: 'transform 0.3s',
@@ -619,7 +622,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '&:not($optionDisabled):hover': {
       background: token.selectOptionHoverBackgroundColor,
-      borderRadius: token.selectPanelRadius,
+      borderRadius: token.selectOptionInnerBorderRadius,
     },
   },
   columnsRadio: {

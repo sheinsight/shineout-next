@@ -110,7 +110,6 @@ const tabsTokenExtraValue = {
       font: { color: '', weight: 'Weight-medium', size: 'Font-14' },
       background: { color: 'Neutral-fill-4' },
     },
-    border: { color: 'Neutral-border-1' },
     checked: {
       font: { color: 'Brand-6', size: 'Font-14', weight: 'Weight-medium' },
       background: { color: 'Neutral-fill-1' },

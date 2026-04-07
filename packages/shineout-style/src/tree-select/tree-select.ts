@@ -109,6 +109,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       '& $clearIcon': {
         right: token.treeSelectSmallPaddingX,
       },
+      '& $arrowIcon': {
+        width: token.inputSmallFontSize,
+      },
     },
     '&$wrapperLarge': {
       '& $placeholder,$ellipsis,$space,input': {
@@ -123,7 +126,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
         fontSize: token.treeSelectLargeFontSize,
       },
       '& $arrowIcon': {
-        width: token.treeSelectLargeFontSize,
+        width: token.inputLargeFontSize,
       },
       '& $clearIcon': {
         right: token.treeSelectLargePaddingX,
@@ -206,7 +209,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',
       '&::placeholder': {
-        color: token.treeSelectPlaceholderColor,
+        color: token.inputPlaceholderColor,
       },
     },
   },
@@ -253,7 +256,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       backgroundColor: 'transparent',
       width: '100%',
       '&::placeholder': {
-        color: token.treeSelectPlaceholderColor,
+        color: token.inputPlaceholderColor,
       },
     },
   },
@@ -286,7 +289,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     },
   },
   placeholder: {
-    color: token.treeSelectPlaceholderColor,
+    color: token.inputPlaceholderColor,
     lineHeight: token.lineHeightDynamic,
     marginTop: token.treeSelectPlaceholderMarginY,
     marginBottom: token.treeSelectPlaceholderMarginY,
@@ -316,24 +319,24 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   clearable: {},
   clearIcon: {
     cursor: 'pointer',
-    width: token.treeSelectFontSize,
+    width: token.inputFontSize,
     lineHeight: 0,
-    color: token.treeSelectClearColor,
+    color: token.inputClearColor,
     verticalAlign: 'middle',
     '&:hover svg': {
       color: token.treeSelectClearHoverColor,
     },
     '$wrapperSmall &': {
-      width: token.treeSelectSmallFontSize,
+      width: token.inputSmallFontSize,
     },
     '$wrapperLarge &': {
-      width: token.treeSelectLargeFontSize,
+      width: token.inputLargeFontSize,
     },
   },
   arrowIcon: {
     display: 'inline-block',
     verticalAlign: 'middle',
-    width: token.treeSelectFontSize,
+    width: token.inputFontSize,
     lineHeight: 0,
     color: token.treeSelectIconColor,
     transition: 'transform 0.3s',
@@ -573,7 +576,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     },
   },
   empty: {
-    color: token.selectPlaceholderColor,
+    color: token.inputPlaceholderColor,
   },
 };
 export default treeSelectStyle;
