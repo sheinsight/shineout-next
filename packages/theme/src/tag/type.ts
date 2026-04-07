@@ -52,7 +52,7 @@ export interface TagTokens {
   tagInfoOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-3
    * @description 标签提示色线框风格边框颜色
    */
   tagInfoOutlineBorderColor: string;
