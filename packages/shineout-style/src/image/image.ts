@@ -216,6 +216,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    '--spin-color': Token.imageSpinColor,
     backgroundColor: Token.imagePlaceholderBackgroundColor,
   },
 
