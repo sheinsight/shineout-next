@@ -129,17 +129,6 @@ const getLineStyle = () => {
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="line"]': {
       '& $hr': { top: 0, height: 1, width: '100%' },
-      '& $tab': {
-        '&:after': {
-          position: 'absolute',
-          content: '""',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: 1,
-          background: Token.tabsBorderColor,
-        },
-      },
     },
   };
 };
@@ -158,12 +147,6 @@ const getFillStyle = () => {
   return {
     '&[data-soui-shape="fill"]': {
       '& $tab': {
-        '&[data-soui-state="active"]': {
-          '& $fillInner': {
-            background: '#FFFFFF',
-            color: Token.tabsActiveFontColor,
-          },
-        },
         '&:before': {
           content: '""',
           position: 'absolute',
@@ -284,12 +267,6 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     cursor: 'pointer',
     lineHeight: Token.lineHeightDynamic,
     fontSize: Token.tabsTabFontSize,
-
-    '&[data-soui-state="active"]': {
-      '&:after': {
-        background: Token.tabsActiveFontColor,
-      },
-    },
   },
   hr: {
     position: 'absolute',
@@ -486,7 +463,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
   },
   headerScrollBar: {
     position: 'absolute',
-    background: Token.tabsActiveFontColor,
+    background: Token.tabsLineCheckedInkColor,
     transition: `left .2s ease-in-out, top .2s ease-in-out, width .2s ease-in-out, height .2s ease-in-out`,
     '[data-soui-position^="top-"] &,[data-soui-position^="bottom-"] &': {
       height: Token.tabsLineCheckedInkHeight,
