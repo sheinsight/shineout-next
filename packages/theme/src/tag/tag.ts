@@ -12,7 +12,7 @@ const tagTokens: TagTokens = {
   tagInfoDisabledBorderColor: 'Brand-1',
   tagInfoOutlineFontColor: 'Brand-6',
   tagInfoOutlineBackgroundColor: 'Transparent',
-  tagInfoOutlineBorderColor: 'Brand-6',
+  tagInfoOutlineBorderColor: 'Brand-3',
   tagInfoOutlineDisabledFontColor: 'Brand-3',
   tagInfoOutlineDisabledBackgroundColor: 'Transparent',
   tagInfoOutlineDisabledBorderColor: 'Brand-3',

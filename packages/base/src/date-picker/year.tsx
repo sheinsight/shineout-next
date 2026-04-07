@@ -102,7 +102,7 @@ const Year = (props: YearProps) => {
         </div>
         <div className={styles?.pickerHeaderMid}>
           <span>{currentStart}</span>
-          <i>-</i>
+          <strong>-</strong>
           <span>{currentEnd}</span>
         </div>
         <div className={styles?.pickerHeaderRight}>

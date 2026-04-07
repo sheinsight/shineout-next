@@ -81,7 +81,7 @@ const input: JsStyles<keyof TextareaClasses> = {
   textarea: {
     padding: 0,
     '&::placeholder': {
-      color: token.textareaPlaceholderColor,
+      color: token.inputPlaceholderColor,
     },
     width: '100%',
     background: 'transparent',
@@ -144,11 +144,11 @@ const input: JsStyles<keyof TextareaClasses> = {
   },
   clear: {
     position: 'absolute',
-    right: token.textareaPaddingX,
-    top: token.textareaPaddingY,
+    right: token.inputPaddingX,
+    top: token.inputPaddingY,
     cursor: 'pointer',
     padding: 4,
-    color: token.textareaClearColor,
+    color: token.inputClearColor,
     opacity: 0,
 
     '$wrapperWithClear:hover &, $wrapperWithClear$wrapperFocus &': {
@@ -156,44 +156,44 @@ const input: JsStyles<keyof TextareaClasses> = {
     },
 
     '$wrapperSmall &': {
-      top: token.textareaSmallPaddingY,
+      top: token.inputSmallPaddingY,
     },
     '$wrapperLarge &': {
-      top: token.textareaLargePaddingY,
+      top: token.inputLargePaddingY,
     },
 
     '&:hover': {
-      color: token.textareaClearHoverColor,
+      color: token.inputHoverClearColor,
     },
 
     '& > svg': {
       display: 'block',
-      width: token.textareaFontSize,
-      height: token.textareaFontSize,
+      width: token.inputFontSize,
+      height: token.inputFontSize,
 
       '$wrapperSmall &': {
-        width: token.textareaSmallFontSize,
-        height: token.textareaSmallFontSize,
+        width: token.inputSmallFontSize,
+        height: token.inputSmallFontSize,
       },
       '$wrapperLarge &': {
-        width: token.textareaLargeFontSize,
-        height: token.textareaLargeFontSize,
+        width: token.inputLargeFontSize,
+        height: token.inputLargeFontSize,
       },
     },
     '[dir="rtl"] &': {
       right: 'auto',
-      left: token.textareaPaddingX,
+      left: token.inputPaddingX,
     }
   },
   wrapperWithClear: {
     '&& $textarea': {
-      paddingRight: `calc(${token.textareaPaddingX} + ${token.textareaFontSize} + 12px)`,
+      paddingRight: `calc(${token.inputPaddingX} + ${token.inputFontSize} + 12px)`,
     },
     '&&$wrapperSmall > $textarea': {
-      paddingRight: `calc(${token.textareaSmallPaddingX} + ${token.textareaSmallFontSize} + 12px)`,
+      paddingRight: `calc(${token.inputSmallPaddingX} + ${token.inputSmallFontSize} + 12px)`,
     },
     '&&$wrapperLarge > $textarea': {
-      paddingRight: `calc(${token.textareaLargePaddingX} + ${token.textareaLargeFontSize} + 12px)`,
+      paddingRight: `calc(${token.inputLargePaddingX} + ${token.inputLargeFontSize} + 12px)`,
     },
   },
   wrapperShowClear: {

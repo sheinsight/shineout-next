@@ -161,7 +161,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       backgroundColor: 'transparent',
       width: '100%',
       '&::placeholder': {
-        color: token.datePickerPlaceholderColor,
+        color: token.inputPlaceholderColor,
       },
     },
   },
@@ -184,7 +184,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       backgroundColor: 'transparent',
       width: '100%',
       '&::placeholder': {
-        color: token.datePickerPlaceholderColor,
+        color: token.inputPlaceholderColor,
       },
     },
   },
@@ -194,8 +194,11 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     },
   },
   resultTextDisabled: {
-    color: token.datePickerDisabledFontColor,
+    color: token.inputDisabledFontColor,
     cursor: 'not-allowed',
+    '& input::placeholder': {
+      color: token.inputDisabledPlaceholderColor,
+    },
   },
   placeholder: {
     color: token.datePickerPlaceholderColor,
@@ -325,8 +328,8 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       transform: 'rotate(180deg)',
     },
     '& svg': {
-      width: token.datePickerPanelHeaderIconWidth,
-      height: token.datePickerPanelHeaderIconWidth,
+      width: token.datePickerPanelHeaderFontSize,
+      height: token.datePickerPanelHeaderFontSize,
     },
     '&:hover': {
       backgroundColor: token.datePickerPanelHeaderIconHoverBackgroundColor,
@@ -335,10 +338,10 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   pickerHeaderMid: {
     display: 'flex',
     alignItems: 'center',
+    fontSize: token.datePickerPanelHeaderFontSize,
+    color: token.datePickerPanelHeaderFontColor,
     '& > span': {
       padding: `0 ${token.datePickerPanelHeaderTitlePaddingX}`,
-      fontSize: token.datePickerPanelHeaderFontSize,
-      color: token.datePickerPanelHeaderFontColor,
     },
   },
   pickerHeaderInfo: {
@@ -693,8 +696,8 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       lineHeight: '0',
       marginRight: '8px',
       '& > svg': {
-        width: token.datePickerFontSize,
-        height: token.datePickerFontSize,
+        width: token.datePickerPanelBodyFontSize,
+        height: token.datePickerPanelBodyFontSize,
         color: token.datePickerIconColor,
       },
     },
@@ -726,7 +729,8 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     },
     whiteSpace: 'nowrap',
     textAlign: 'left',
-    fontSize: token.datePickerQuickPanelItemFontSize,
+    color: token.buttonSecondaryTextFontColor,
+    fontSize: token.buttonSmallFontSize,
     padding: `${token.datePickerQuickPanelItemPaddingY} ${token.datePickerQuickPanelItemPaddingX}`,
     lineHeight: token.lineHeightDynamic,
     borderRadius: '4px',

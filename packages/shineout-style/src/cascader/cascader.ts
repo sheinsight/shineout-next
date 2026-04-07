@@ -287,8 +287,11 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     },
   },
   resultTextDisabled: {
-    color: token.cascaderDisabledFontColor,
+    color: token.inputDisabledFontColor,
     cursor: 'not-allowed',
+    '& input::placeholder': {
+      color: token.inputDisabledPlaceholderColor,
+    },
   },
   compressedWrapper: {
     width: 0,

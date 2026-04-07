@@ -47,7 +47,7 @@ const tagTokenExtraValue = {
     outline: {
       font: { color: 'Brand-6' },
       background: { color: 'Transparent' },
-      border: { color: 'Brand-6' },
+      border: { color: 'Brand-3' },
       disabled: {
         font: { color: 'Brand-3' },
         background: { color: 'Transparent' },

@@ -254,8 +254,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
   },
   resultTextDisabled: {
-    color: token.selectDisabledFontColor,
+    color: token.inputDisabledFontColor,
     cursor: 'not-allowed',
+    '& input::placeholder': {
+      color: token.inputDisabledPlaceholderColor,
+    },
   },
   compressedWrapper: {
     width: 0,
