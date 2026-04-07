@@ -266,8 +266,11 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     },
   },
   resultTextDisabled: {
-    color: token.treeSelectDisabledFontColor,
+    color: token.inputDisabledFontColor,
     cursor: 'not-allowed',
+    '& input::placeholder': {
+      color: token.inputDisabledPlaceholderColor,
+    },
   },
   compressedWrapper: {
     width: 0,
