@@ -212,7 +212,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const handleSelectChange = usePersistFn((value: Value, dataItem: any, checked?: boolean) => {
     // why: props.emptyAfterSelect !== false 兼容之前的逻辑
-    if (props.emptyAfterSelect !== false && (props.emptyAfterSelect || createdData)) {
+    // 只有选中了 createdData（创建项）时才清空过滤，选中普通过滤项不应清空
+    if (props.emptyAfterSelect !== false && (props.emptyAfterSelect || dataItem === createdData)) {
       onFilter?.('');
     }
     const shouldFocus = showInput && props.reFocus;
