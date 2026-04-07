@@ -80,7 +80,7 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
     },
   },
   boxList: {
-    padding: `${token.dropdownColumnPaddingY} ${token.dropdownColumnPaddingX}`,
+    padding: `${token.dropdownListPaddingY} ${token.dropdownListPaddingX}`,
     '& $item': {
       textAlign: 'center',
     },
@@ -189,7 +189,15 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
     },
   },
   optionDivider: {
-    padding: `${token.dropdownOptionDividerPaddingY} ${token.dropdownOptionDividerPaddingX}`,
+    padding: `${token.dropdownOptionDividerPaddingY} ${token.dropdownOptionPaddingX}`,
+    '$listSmall &': {
+      paddingLeft: token.dropdownOptionSmallPaddingX,
+      paddingRight: token.dropdownOptionSmallPaddingX,
+    },
+    '$listLarge &': {
+      paddingLeft: token.dropdownOptionLargePaddingX,
+      paddingRight: token.dropdownOptionLargePaddingX,
+    },
     '&::before': {
       content: '" "',
       height: token.dropdownOptionDividerHeight,

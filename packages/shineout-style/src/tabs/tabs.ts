@@ -489,10 +489,10 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     background: Token.tabsActiveFontColor,
     transition: `left .2s ease-in-out, top .2s ease-in-out, width .2s ease-in-out, height .2s ease-in-out`,
     '[data-soui-position^="top-"] &,[data-soui-position^="bottom-"] &': {
-      height: Token.tabsLineAfterHeight,
+      height: Token.tabsLineCheckedInkHeight,
     },
     '[data-soui-position^="left-"] &,[data-soui-position^="right-"] &': {
-      width: Token.tabsLineAfterHeight,
+      width: Token.tabsLineCheckedInkHeight,
     },
   },
   header: {
@@ -507,7 +507,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       '& $tab': {
         marginTop: Token.tabsBadgeMargin,
         position: 'relative',
-        border: `1px solid ${Token.tabsCardBorderColor}`,
+        border: `1px solid ${Token.tabsBorderColor}`,
         padding: `${Token.tabsCardPaddingY} ${Token.tabsCardPaddingX}`,
         color: Token.tabsCardFontColor,
         fontSize: Token.tabsCardFontSize,
@@ -602,7 +602,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
           background: Token.tabsLineCheckedBackgroundColor,
           fontWeight: Token.tabsLineCheckedFontWeight,
           '&:after': {
-            background: Token.tabsLineAfterBackgroundColor,
+            background: Token.tabsLineCheckedInkColor,
           },
         },
 

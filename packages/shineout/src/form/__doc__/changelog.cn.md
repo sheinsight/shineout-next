@@ -1,3 +1,8 @@
+## 3.9.13-beta.5
+2026-04-03
+### 💅 Style
+- 修复 `Form` error 类型提示信息未正确应用上边距 token 的问题 ([#1685](https://github.com/sheinsight/shineout-next/pull/1685))
+
 ## 3.9.12-beta.7
 2026-03-24
 ### 🐞 BugFix
