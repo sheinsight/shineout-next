@@ -148,7 +148,7 @@ const input: JsStyles<keyof TextareaClasses> = {
     top: token.textareaPaddingY,
     cursor: 'pointer',
     padding: 4,
-    color: token.textareaClearColor,
+    color: token.inputClearColor,
     opacity: 0,
 
     '$wrapperWithClear:hover &, $wrapperWithClear$wrapperFocus &': {
@@ -163,7 +163,7 @@ const input: JsStyles<keyof TextareaClasses> = {
     },
 
     '&:hover': {
-      color: token.textareaClearHoverColor,
+      color: token.inputHoverClearColor,
     },
 
     '& > svg': {
