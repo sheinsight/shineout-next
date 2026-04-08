@@ -1,3 +1,9 @@
+## 3.9.13-beta.7
+2026-04-08
+
+### 🐞 BugFix
+- 修复 `Select` 同时开启 `onFilter` 和 `onCreate` 时，搜索并选中项后关键词被意外清空的问题 ([#1689](https://github.com/sheinsight/shineout-next/pull/1689))
+
 ## 3.9.12-beta.13
 2026-03-30
 
