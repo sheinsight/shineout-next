@@ -1459,14 +1459,14 @@ const figma = [
     name: '较粗',
     value: '600',
     describe: '较粗 Semibold',
-    token: 'Weight-Semibold',
+    token: 'Weight-semibold',
     locked: true,
   },
   {
     name: '粗体',
     value: '700',
     describe: '粗体 Bold',
-    token: 'Weight-Bold',
+    token: 'Weight-bold',
     locked: true,
   },
   {

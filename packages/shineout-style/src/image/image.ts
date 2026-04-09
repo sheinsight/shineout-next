@@ -1,5 +1,5 @@
 import { JsStyles } from '../jss-style';
-import Token from '@sheinx/theme';
+import Token, { getTokenName } from '@sheinx/theme';
 import { ImageClasses } from '@sheinx/base';
 
 type ImageClass = keyof ImageClasses;
@@ -216,7 +216,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    '--spin-color': Token.imageSpinColor,
+    [getTokenName('spinColor')]: Token.imageSpinColor,
     backgroundColor: Token.imagePlaceholderBackgroundColor,
   },
 

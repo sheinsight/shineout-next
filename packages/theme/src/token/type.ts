@@ -1461,14 +1461,14 @@ export interface Tokens {
    * @default '600'
    * @description 较粗 Semibold
    */
-  'Weight-Semibold': string;
+  'Weight-semibold': string;
   /**
    * @type {string}
    * @categoty string
    * @default '700'
    * @description 粗体 Bold
    */
-  'Weight-Bold': string;
+  'Weight-bold': string;
   /**
    * @type {string}
    * @categoty string

@@ -155,9 +155,9 @@ const Ring = (props: SpinProps) => {
   const style = {
     ...styleProp,
     borderWidth: value / 10 + unit,
-    borderLeftColor: `var(--spin-color, ${color})`,
-    borderRightColor: `var(--spin-color, ${color})`,
-    borderBottomColor: `var(--spin-color, ${color})`,
+    borderLeftColor: color,
+    borderRightColor: color,
+    borderBottomColor: color,
   };
 
   return <BaseSpin {...props} count={0} style={style} uniqueClassName={spinStyles.ring} />;

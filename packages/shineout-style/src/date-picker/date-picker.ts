@@ -340,6 +340,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     alignItems: 'center',
     fontSize: token.datePickerPanelHeaderFontSize,
     color: token.datePickerPanelHeaderFontColor,
+    fontWeight: token.datePickerPanelHeaderFontWeight,
     '& > span': {
       padding: `0 ${token.datePickerPanelHeaderTitlePaddingX}`,
     },

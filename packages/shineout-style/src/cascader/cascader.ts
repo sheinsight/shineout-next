@@ -317,6 +317,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     lineHeight: token.lineHeightDynamic,
     marginTop: token.cascaderPlaceholderMarginY,
     marginBottom: token.cascaderPlaceholderMarginY,
+    '$wrapperDisabled &': {
+      color: token.inputDisabledPlaceholderColor,
+    },
   },
   pickerWrapper: {
     position: 'absolute',
