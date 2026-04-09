@@ -838,7 +838,9 @@ describe('Select[OnCreate/OnFilter]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    textContentTest(selectResultTextWrapper, onCreate(testValue));
+    const selectTags = selectResultTextWrapper.querySelectorAll(tag);
+    expect(selectTags.length).toBe(1);
+    textContentTest(selectTags[0], onCreate(testValue));
   });
   test('should render when set onCreate in single', async () => {
     const testValue = 'test';
