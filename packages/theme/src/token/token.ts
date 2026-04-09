@@ -197,7 +197,6 @@ const Token: Tokens = {
   Transparent: 'transparent',
   'Mask-fill-1': 'rgba(2, 11, 24, 0.3)',
   Size: '2',
-  'Radius-rect': '0px',
   'Radius-lesser': '2px',
   'Radius-small': '3px',
   'Radius-default': '4px',

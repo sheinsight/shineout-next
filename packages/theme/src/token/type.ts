@@ -1360,13 +1360,6 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '0px'
-   * @description 直角 Radius-rect (0px)
-   */
-  'Radius-rect': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default '2px'
    * @description 小 Radius-lesser (2px)
    */

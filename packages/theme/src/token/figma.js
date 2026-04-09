@@ -1358,13 +1358,6 @@ const figma = [
     locked: true,
   },
   {
-    name: 'borderRadiusRect',
-    value: '0px',
-    describe: '直角 Radius-rect (0px)',
-    token: 'Radius-rect',
-    locked: true,
-  },
-  {
     name: 'borderRadiusLesser',
     value: '2px',
     describe: '小 Radius-lesser (2px)',
