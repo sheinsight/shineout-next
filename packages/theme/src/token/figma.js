@@ -988,6 +988,20 @@ const figma = [
   },
   {
     name: '填充色',
+    token: 'Neutral-fill-11',
+    value: '#F7F8FA',
+    describe: '',
+    locked: true,
+  },
+  {
+    name: '填充色',
+    token: 'Neutral-fill-12',
+    value: '#000000',
+    describe: '',
+    locked: true,
+  },
+  {
+    name: '填充色',
     token: 'Neutral-fill-6',
     value: '#999DA8',
     describe: '',
@@ -1358,13 +1372,6 @@ const figma = [
     locked: true,
   },
   {
-    name: 'borderRadiusRect',
-    value: '0px',
-    describe: '直角 Radius-rect (0px)',
-    token: 'Radius-rect',
-    locked: true,
-  },
-  {
     name: 'borderRadiusLesser',
     value: '2px',
     describe: '小 Radius-lesser (2px)',
@@ -1390,6 +1397,20 @@ const figma = [
     value: '8px',
     describe: '大 Radius-large (8px)',
     token: 'Radius-large',
+    locked: true,
+  },
+  {
+    name: 'borderRadiusXL',
+    value: '12px',
+    describe: '超大 Radius-XL (12px)',
+    token: 'Radius-xl',
+    locked: true,
+  },
+  {
+    name: 'borderRadiusXXL',
+    value: '16px',
+    describe: '超大 Radius-XXL (16px)',
+    token: 'Radius-xxl',
     locked: true,
   },
   {

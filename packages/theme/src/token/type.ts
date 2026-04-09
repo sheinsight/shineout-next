@@ -989,6 +989,20 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#F7F8FA'
+   * @description
+   */
+  'Neutral-fill-11': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#000000'
+   * @description
+   */
+  'Neutral-fill-12': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#999DA8'
    * @description
    */
@@ -1360,13 +1374,6 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '0px'
-   * @description 直角 Radius-rect (0px)
-   */
-  'Radius-rect': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default '2px'
    * @description 小 Radius-lesser (2px)
    */
@@ -1392,6 +1399,20 @@ export interface Tokens {
    * @description 大 Radius-large (8px)
    */
   'Radius-large': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '12px'
+   * @description 超大 Radius-XL (12px)
+   */
+  'Radius-xl': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '16px'
+   * @description 超大 Radius-XXL (16px)
+   */
+  'Radius-xxl': string;
   /**
    * @type {string}
    * @categoty string
