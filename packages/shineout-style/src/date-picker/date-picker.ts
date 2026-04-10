@@ -163,6 +163,12 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       '&::placeholder': {
         color: token.inputPlaceholderColor,
       },
+      '$wrapperDisabled &': {
+        color: token.inputDisabledFontColor,
+        '&::placeholder': {
+          color: token.inputDisabledPlaceholderColor,
+        },
+      },
     },
   },
   resultTextBg: {

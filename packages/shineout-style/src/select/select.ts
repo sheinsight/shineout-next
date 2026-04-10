@@ -338,7 +338,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     color: token.inputClearColor,
     verticalAlign: 'middle',
     '&:hover': {
-      color: token.selectIconColor,
+      color: token.inputHoverClearColor,
     },
     '$wrapperSmall &': {
       width: token.inputSmallFontSize,
@@ -352,7 +352,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     verticalAlign: 'middle',
     width: token.inputFontSize,
     lineHeight: 0,
-    color: token.selectIconColor,
+    color: token.inputIconColor,
     transition: 'transform 0.3s',
   },
   arrowIconOpen: {
