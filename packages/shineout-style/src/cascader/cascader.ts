@@ -495,11 +495,17 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
         '& $optionInner': {
           color: token.cascaderOptionHoverFontColor,
           backgroundColor: token.cascaderOptionHoverBackgroundColor,
+          '& $optionIcon': {
+            color: token.cascaderOptionHoverIconColor,
+          },
         },
       },
       '&:hover $optionInner:active, & $optionInner:active': {
-        color: token.cascaderOptionHoverFontColor,
+        color: token.cascaderOptionFocusFontColor,
         backgroundColor: `${token.cascaderOptionFocusBackgroundColor}`,
+        '& $optionIcon': {
+          color: token.cascaderOptionFocusIconColor,
+        },
       },
     },
 

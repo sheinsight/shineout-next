@@ -170,9 +170,12 @@ const cascaderTokenExtraValue = {
       font: {
         color: 'Neutral-text-5',
       },
+      icon: { color: 'Neutral-text-4' },
     },
     focus: {
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-3' },
+      icon: { color: 'Neutral-text-4' },
     },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },
