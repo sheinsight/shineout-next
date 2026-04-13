@@ -91,7 +91,7 @@ const cascaderTokens: CascaderTokens = {
   cascaderColumnPadding: 'Spacing-8',
   cascaderColumnOptionMargin: 'Spacing-8',
   cascaderListBorderColor: 'Neutral-border-1',
-  cascaderListPaddingY: 'Spacing-3',
+  cascaderListPaddingY: 'Spacing-4',
 };
 
 export default cascaderTokens;

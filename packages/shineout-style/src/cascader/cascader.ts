@@ -506,6 +506,12 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     '& $optionCheckbox': {
       marginRight: 8,
     },
+    '&:first-child': {
+      paddingTop: 0,
+    },
+    '&:last-child': {
+      paddingBottom: 0,
+    },
   },
   filterOption: {
     display: 'flex',

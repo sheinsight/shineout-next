@@ -526,7 +526,7 @@ export interface CascaderTokens {
   cascaderListBorderColor: string;
   /**
    * @type {string}
-   * @token Spacing-3
+   * @token Spacing-4
    * @description 级联选择器下拉列表的内边距（垂直方向）
    */
   cascaderListPaddingY: string;

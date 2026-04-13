@@ -202,7 +202,7 @@ const cascaderTokenExtraValue = {
   },
   list: {
     border: { color: 'Neutral-border-1' },
-    padding: { y: 'Spacing-3' },
+    padding: { y: 'Spacing-4' },
   },
 };
 
