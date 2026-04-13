@@ -10,94 +10,28 @@ export interface DescriptionsTokens {
   descriptionsTitlePaddingBottom: string;
   /**
    * @type {string}
-   * @token Spacing-12
-   * @description 描述列表标签的内边距底部
-   */
-  descriptionsLabelPaddingBottom: string;
-  /**
-   * @type {string}
-   * @token Spacing-8
-   * @description 描述列表标签的内边距右部
-   */
-  descriptionsLabelPaddingRight: string;
-  /**
-   * @type {string}
-   * @token Spacing-12
-   * @description 描述列表值的内边距底部
-   */
-  descriptionsValuePaddingBottom: string;
-  /**
-   * @type {string}
    * @token Font-14
-   * @description 描述列表标题模式小尺寸字号
+   * @description 描述列表标题模式小尺寸字体字号
    */
-  descriptionsTitleSmallSize: string;
+  descriptionsTitleSmallFontSize: string;
   /**
    * @type {string}
    * @token Font-16
-   * @description 描述列表标题模式默认尺寸字号
+   * @description 描述列表标题模式默认尺寸字体字号
    */
-  descriptionsTitleDefaultSize: string;
+  descriptionsTitleDefaultFontSize: string;
   /**
    * @type {string}
    * @token Font-18
-   * @description 描述列表标题模式大尺寸字号
+   * @description 描述列表标题模式大尺寸字体字号
    */
-  descriptionsTitleLargeSize: string;
-  /**
-   * @type {string}
-   * @token Border-1
-   * @description 描述列表边框默认尺寸字号
-   */
-  descriptionsBorderDefaultSize: string;
-  /**
-   * @type {string}
-   * @token Font-12
-   * @description 描述列表字体小尺寸字号
-   */
-  descriptionsFontSmallSize: string;
-  /**
-   * @type {string}
-   * @token Font-14
-   * @description 描述列表字体默认尺寸字号
-   */
-  descriptionsFontDefaultSize: string;
-  /**
-   * @type {string}
-   * @token Font-16
-   * @description 描述列表字体大尺寸字号
-   */
-  descriptionsFontLargeSize: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-4
-   * @description 描述列表标签的颜色
-   */
-  descriptionsLabelColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-5
-   * @description 描述列表值的颜色
-   */
-  descriptionsValueColor: string;
+  descriptionsTitleLargeFontSize: string;
   /**
    * @type {string}
    * @token Neutral-text-5
    * @description 描述列表标题模式颜色
    */
   descriptionsTitleColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-2
-   * @description 描述列表背景颜色
-   */
-  descriptionsBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-border-1
-   * @description 描述列表边框颜色
-   */
-  descriptionsBorderColor: string;
   /**
    * @type {string}
    * @token Weight-medium
@@ -112,10 +46,46 @@ export interface DescriptionsTokens {
   descriptionsTitleGap: string;
   /**
    * @type {string}
-   * @token Spacing-0
-   * @description 描述列表undefined间距
+   * @token Spacing-12
+   * @description 描述列表标签的内边距底部
    */
-  descriptionsCellGap: string;
+  descriptionsLabelPaddingBottom: string;
+  /**
+   * @type {string}
+   * @token Spacing-8
+   * @description 描述列表标签的内边距右部
+   */
+  descriptionsLabelPaddingRight: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 描述列表标签的颜色
+   */
+  descriptionsLabelColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-12
+   * @description 描述列表值的内边距底部
+   */
+  descriptionsValuePaddingBottom: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 描述列表值的颜色
+   */
+  descriptionsValueColor: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 描述列表边框默认尺寸字号
+   */
+  descriptionsBorderDefaultSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 描述列表边框颜色
+   */
+  descriptionsBorderColor: string;
   /**
    * @type {string}
    * @token Radius-lesser
@@ -146,6 +116,36 @@ export interface DescriptionsTokens {
    * @description 描述列表边框内边距（垂直方向）
    */
   descriptionsBorderPaddingY: string;
+  /**
+   * @type {string}
+   * @token Font-14
+   * @description 描述列表默认尺寸字体字号
+   */
+  descriptionsDefaultFontSize: string;
+  /**
+   * @type {string}
+   * @token Font-12
+   * @description 描述列表小尺寸字体字号
+   */
+  descriptionsSmallFontSize: string;
+  /**
+   * @type {string}
+   * @token Font-16
+   * @description 描述列表大尺寸字体字号
+   */
+  descriptionsLargeFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 描述列表背景颜色
+   */
+  descriptionsBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Spacing-0
+   * @description 描述列表undefined间距
+   */
+  descriptionsCellGap: string;
   /**
    * @type {string}
    * @token Spacing-8
