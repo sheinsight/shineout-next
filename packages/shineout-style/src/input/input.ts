@@ -272,7 +272,7 @@ const input: JsStyles<keyof InputClasses> = {
       boxSizing: 'border-box',
       cursor: 'pointer',
       width: '18px',
-      borderLeft: `1px solid ${token.inputBorderColor}`,
+      borderLeft: `${token.inputBorderWidth} solid ${token.inputBorderColor}`,
       lineHeight: '1',
       color: token.inputIconColor,
       '&:hover': {
@@ -281,7 +281,7 @@ const input: JsStyles<keyof InputClasses> = {
         },
       },
       '&:first-child': {
-        borderBottom: `1px solid ${token.inputBorderColor}`,
+        borderBottom: `${token.inputBorderWidth} solid ${token.inputBorderColor}`,
       },
       '& svg': {
         width: token.inputFontSize,
