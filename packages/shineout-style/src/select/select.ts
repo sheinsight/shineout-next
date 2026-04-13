@@ -312,7 +312,6 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   pickerLarge: {
     '& $optionInner': {
-      // padding: `${token.selectLargeOptionInnerPaddingY} ${token.selectLargeOptionInnerPaddingX}`,
       paddingTop: token.selectLargeOptionInnerPaddingY,
       paddingBottom: token.selectLargeOptionInnerPaddingY,
       paddingLeft: token.selectLargeOptionInnerPaddingX,
@@ -503,12 +502,12 @@ const selectStyle: JsStyles<SelectClassType> = {
     '&:not($optionDisabled)': {
       cursor: 'pointer',
     },
-    // hover
-    // '&:hover': {
-    //   '& $optionInner': {
-    //     backgroundColor: token.selectOptionHoverBackgroundColor,
-    //   },
-    // },
+    '&:first-child': {
+      paddingTop: 0,
+    },
+    '&:last-child': {
+      paddingBottom: 0,
+    },
   },
   optionInner: {
     position: 'relative',

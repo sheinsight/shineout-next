@@ -202,7 +202,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         renderItem={renderItem}
         customRenderItem={renderGroupTitle}
         onControlTypeChange={onControlTypeChange}
-        paddingY={3}
+        paddingY={4}
       ></VirtualScrollList>
     );
   };
