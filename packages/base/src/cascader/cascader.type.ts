@@ -81,7 +81,6 @@ export interface CascaderClasses {
   optionInner: string;
   optionLeaf: string;
   optionHover: string;
-  optionActive: string;
   optionDisabled: string;
   multipleResultWrapper: string;
   multipleCompressedWrapper: string;

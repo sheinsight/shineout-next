@@ -24,12 +24,14 @@ const descriptionsTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 descriptionsRules 强关联，非 descriptionsRules 规则内的 token 需手动增加或删减。
  */
-const descriptionsTokenValue = {
+const descriptionsTokenValue = {}
+
+const descriptionsTokenExtraValue = {
   title: {
     padding: { top: '', bottom: 'Spacing-12', left: '', right: '' },
-    small: { size: 'Font-14' },
-    default: { size: 'Font-16' },
-    large: { size: 'Font-18' },
+    small: { font: { size: 'Font-14' } },
+    default: { font: { size: 'Font-16' } },
+    large: { font: { size: 'Font-18' } },
     color: 'Neutral-text-5',
     font: { weight: 'Weight-medium' },
     gap: 'Size-2',
@@ -52,15 +54,21 @@ const descriptionsTokenValue = {
     bottom: { size: '1px', x: '', y: '' },
     padding: { size: '', x: 'Spacing-12', y: 'Spacing-8' },
   },
-  font: { small: { size: 'Font-12' }, default: { size: 'Font-14' }, large: { size: 'Font-16' } },
+  default: {
+    font: { size: 'Font-14' },
+  },
+  small: {
+    font: { size: 'Font-12' },
+  },
+  large: {
+    font: { size: 'Font-16' },
+  },
   extra: { color: '' },
   background: { color: 'Neutral-fill-2' },
   cell: { gap: 'Spacing-0' },
   inline: { border: { padding: { x: 'Spacing-8', y: 'Spacing-12' } } },
   vertical: { padding: { bottom: 'Spacing-2' } },
 };
-
-const descriptionsTokenExtraValue = {};
 
 module.exports = {
   descriptionsTokenValue,

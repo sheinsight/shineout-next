@@ -442,10 +442,28 @@ export interface CascaderTokens {
   cascaderOptionHoverFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 级联选择器选项鼠标移入时的图标颜色
+   */
+  cascaderOptionHoverIconColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 级联选择器选项鼠标聚焦时的字体颜色
+   */
+  cascaderOptionFocusFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-3
    * @description 级联选择器选项鼠标聚焦时的背景颜色
    */
   cascaderOptionFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 级联选择器选项鼠标聚焦时的图标颜色
+   */
+  cascaderOptionFocusIconColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2
@@ -526,7 +544,7 @@ export interface CascaderTokens {
   cascaderListBorderColor: string;
   /**
    * @type {string}
-   * @token Spacing-3
+   * @token Spacing-4
    * @description 级联选择器下拉列表的内边距（垂直方向）
    */
   cascaderListPaddingY: string;

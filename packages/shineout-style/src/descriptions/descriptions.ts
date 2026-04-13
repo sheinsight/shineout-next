@@ -11,18 +11,18 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
   },
   small: {
     '& $title': {
-      fontSize: token.descriptionsTitleSmallSize,
+      fontSize: token.descriptionsTitleSmallFontSize,
     },
     '& $table': {
-      fontSize: token.descriptionsFontSmallSize,
+      fontSize: token.descriptionsSmallFontSize,
     },
   },
   large: {
     '& $title': {
-      fontSize: token.descriptionsTitleLargeSize,
+      fontSize: token.descriptionsTitleLargeFontSize,
     },
     '& $table': {
-      fontSize: token.descriptionsFontLargeSize,
+      fontSize: token.descriptionsLargeFontSize,
     },
   },
   header: {
@@ -30,7 +30,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingBottom: token.descriptionsTitlePaddingBottom,
-    fontSize: token.descriptionsTitleDefaultSize,
+    fontSize: token.descriptionsTitleDefaultFontSize,
   },
   title: {
     lineHeight: token.lineHeightDynamic,
@@ -43,7 +43,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     lineHeight: token.lineHeightDynamic,
   },
   body: {
-    fontSize: token.descriptionsFontDefaultSize,
+    fontSize: token.descriptionsDefaultFontSize,
     overflow: 'hidden',
   },
   table: {

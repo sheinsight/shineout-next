@@ -495,16 +495,28 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
         '& $optionInner': {
           color: token.cascaderOptionHoverFontColor,
           backgroundColor: token.cascaderOptionHoverBackgroundColor,
+          '& $optionIcon': {
+            color: token.cascaderOptionHoverIconColor,
+          },
         },
       },
       '&:hover $optionInner:active, & $optionInner:active': {
-        color: token.cascaderOptionHoverFontColor,
+        color: token.cascaderOptionFocusFontColor,
         backgroundColor: `${token.cascaderOptionFocusBackgroundColor}`,
+        '& $optionIcon': {
+          color: token.cascaderOptionFocusIconColor,
+        },
       },
     },
 
     '& $optionCheckbox': {
       marginRight: 8,
+    },
+    '&:first-child': {
+      paddingTop: 0,
+    },
+    '&:last-child': {
+      paddingBottom: 0,
     },
   },
   filterOption: {
@@ -580,18 +592,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     paddingTop: 2,
   },
   optionHover: {},
-  optionActive: {
-    color: token.cascaderOptionActiveColor,
-    backgroundColor: token.cascaderOptionActiveBackgroundColor,
-    '&>div': {
-      color: token.cascaderOptionActiveColor,
-    },
-  },
   optionDisabled: {
     cursor: 'not-allowed',
     color: token.cascaderOptionDisabledColor,
-    backgroundColor: token.cascaderOptionDisabledBackgroundColor,
-    '&>div': {
+    '& > $optionInner': {
       cursor: 'not-allowed',
       color: token.cascaderOptionDisabledColor,
       backgroundColor: token.cascaderOptionDisabledBackgroundColor,

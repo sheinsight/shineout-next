@@ -111,7 +111,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
         rowsInView={20}
         height={height}
         lineHeight={lineHeight}
-        paddingY={3}
+        paddingY={4}
       ></VirtualScrollList>
     );
   };

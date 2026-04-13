@@ -659,14 +659,16 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     flex: '1',
     position: 'relative',
     borderRadius: token.datePickerTimeItemBorderRadius,
+    color: token.datePickerCellColor,
     '&:not($timeItemDisabled):hover': {
-      backgroundColor: token.datePickerTimeItemHoverBackgroundColor,
+      color: token.datePickerCellHoverColor,
+      backgroundColor: token.datePickerCellHoverBackgroundColor,
     },
     '$timeItemDisabled&': {
       color: token.datePickerTimeItemDisabledColor,
       cursor: 'not-allowed',
     },
-    '$timeItemActive&': {
+    '$timeItemActive&, $timeItemActive&:hover': {
       color: token.datePickerTimeItemActiveColor,
       backgroundColor: token.datePickerTimeItemActiveBackgroundColor,
     },
@@ -700,6 +702,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
     '& > span': {
+      color: token.datePickerCellColor,
       lineHeight: '0',
       marginRight: '8px',
       '& > svg': {

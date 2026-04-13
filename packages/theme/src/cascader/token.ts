@@ -170,9 +170,12 @@ const cascaderTokenExtraValue = {
       font: {
         color: 'Neutral-text-5',
       },
+      icon: { color: 'Neutral-text-4' },
     },
     focus: {
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-3' },
+      icon: { color: 'Neutral-text-4' },
     },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },
@@ -202,7 +205,7 @@ const cascaderTokenExtraValue = {
   },
   list: {
     border: { color: 'Neutral-border-1' },
-    padding: { y: 'Spacing-3' },
+    padding: { y: 'Spacing-4' },
   },
 };
 
