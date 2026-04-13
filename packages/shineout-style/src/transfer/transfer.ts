@@ -176,6 +176,12 @@ const TransferStyle: JsStyles<TransferClass> = {
         background: Token.transferItemHoverBackgroundColor,
       },
     },
+    '&:first-child': {
+      paddingTop: 0,
+    },
+    '&:last-child': {
+      paddingBottom: 0,
+    },
   },
   disabled: {
     cursor: 'not-allowed',
