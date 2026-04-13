@@ -307,7 +307,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       fontSize: token.selectSmallFontSize,
     },
     '& $optionGroupTitle': {
-      padding: `calc(${token.selectFontSize} - 10px) ${token.selectGroupTitlePaddingX} 0 ${token.selectGroupTitlePaddingX}`,
+      padding: `calc(${token.selectFontSize} - 10px) calc(${token.selectSmallOptionInnerPaddingX} + ${token.selectOptionPaddingX}) 0`,
     },
   },
   pickerLarge: {
@@ -318,7 +318,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       fontSize: token.selectLargeFontSize,
     },
     '& $optionGroupTitle': {
-      padding: `${token.selectFontSize} calc(${token.selectOptionPaddingX} + ${token.selectLargeOptionInnerPaddingX}) ${token.selectGroupTitleLargeBottom} calc(${token.selectOptionPaddingX} + ${token.selectLargeOptionInnerPaddingX})`,
+      padding: `${token.selectFontSize} calc(${token.selectLargeOptionInnerPaddingX} + ${token.selectOptionPaddingX}) ${token.selectGroupTitleLargeBottom}`,
     },
   },
   iconWrapper: {
@@ -402,6 +402,14 @@ const selectStyle: JsStyles<SelectClassType> = {
     display: 'inline-flex',
     width: token.selectFontSize,
     fontSize: token.selectFontSize,
+    '$pickerSmall &': {
+      width: token.selectSmallFontSize,
+      fontSize: token.selectSmallFontSize,
+    },
+    '$pickerLarge &': {
+      width: token.selectLargeFontSize,
+      fontSize: token.selectLargeFontSize,
+    },
   },
   moreIcon: {},
   hideTag: {},
@@ -553,7 +561,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   optionGroupTitle: {
     fontSize: `var(--group-font-size, ${token.selectGroupTitleFontSize})`,
     lineHeight: token.lineHeightDynamic,
-    padding: `calc(${token.selectFontSize} - 2px) ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
+    padding: `calc(${token.selectFontSize} - 2px) calc(${token.selectOptionInnerPaddingX} + ${token.selectOptionPaddingX}) ${token.selectGroupTitlePaddingBottom}`,
     color: token.selectGroupTitleFontColor,
     fontWeight: token.selectGroupTitleFontWeight,
   },
@@ -566,7 +574,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     '& > $columnsCheckbox': {
       padding: 0,
       marginRight: 0,
-      marginLeft: token.selectColumnPadding,
+      marginLeft: token.selectOptionInnerPaddingX,
       width: 'auto',
     },
     '$pickerSmall &': {
@@ -595,7 +603,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     padding: `0 ${token.selectOptionPaddingX}`,
     '& $optionGroupTitle': {
       padding: 0,
-      marginLeft: token.selectColumnPadding,
+      marginLeft: token.selectOptionInnerPaddingX,
     },
     '$pickerSmall &': {
       '& $optionGroupTitle': {
@@ -630,8 +638,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   columnsRadio: {
     width: '100%',
     height: '100%',
-    paddingLeft: token.selectColumnPadding,
-    paddingRight: token.selectColumnPadding,
+    paddingLeft: token.selectOptionInnerPaddingX,
+    paddingRight: token.selectOptionInnerPaddingX,
     marginLeft: token.selectColumnOptionMargin,
     '& :last-child': {
       flex: 1,
@@ -643,8 +651,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   columnsCheckbox: {
     width: '100%',
     height: '100%',
-    paddingLeft: token.selectColumnPadding,
-    paddingRight: token.selectColumnPadding,
+    paddingLeft: token.selectOptionInnerPaddingX,
+    paddingRight: token.selectOptionInnerPaddingX,
     marginLeft: 0,
     '$pickerSmall &': {
       paddingLeft: token.selectSmallColumnPadding,
