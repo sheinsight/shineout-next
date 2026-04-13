@@ -36,17 +36,17 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
     display: 'block',
     position: 'relative',
     boxSizing: 'border-box',
-    width: token.checkboxLabelFontSize,
-    height: token.checkboxLabelFontSize,
+    width: token.checkboxIconSize,
+    height: token.checkboxIconSize,
     // marginTop: token.checkboxIndicatorMarginTop,
     flexShrink: 0,
     '$wrapperSmall &': {
-      width: token.checkboxSmallLabelFontSize,
-      height: token.checkboxSmallLabelFontSize,
+      width: token.checkboxSmallIconSize,
+      height: token.checkboxSmallIconSize,
     },
     '$wrapperLarge &': {
-      width: token.checkboxLargeLabelFontSize,
-      height: token.checkboxLargeLabelFontSize,
+      width: token.checkboxLargeIconSize,
+      height: token.checkboxLargeIconSize,
     },
     verticalAlign: 'middle',
     '&::before': {
