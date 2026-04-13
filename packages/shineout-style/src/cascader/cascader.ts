@@ -592,18 +592,10 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     paddingTop: 2,
   },
   optionHover: {},
-  optionActive: {
-    color: token.cascaderOptionActiveColor,
-    backgroundColor: token.cascaderOptionActiveBackgroundColor,
-    '&>div': {
-      color: token.cascaderOptionActiveColor,
-    },
-  },
   optionDisabled: {
     cursor: 'not-allowed',
     color: token.cascaderOptionDisabledColor,
-    backgroundColor: token.cascaderOptionDisabledBackgroundColor,
-    '&>div': {
+    '& > $optionInner': {
       cursor: 'not-allowed',
       color: token.cascaderOptionDisabledColor,
       backgroundColor: token.cascaderOptionDisabledBackgroundColor,
