@@ -478,7 +478,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   pickerCell: {
     color: token.datePickerCellColor,
     '&$pickerCellBound': {
-      color: token.datePickerCellOtherColor,
+      color: token.datePickerCellDisabledColor,
     },
 
     '&:not($pickerCellDisabled):not($pickerCellActive):hover': {
