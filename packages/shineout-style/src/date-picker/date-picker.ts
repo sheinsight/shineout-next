@@ -660,6 +660,8 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     position: 'relative',
     borderRadius: token.datePickerTimeItemBorderRadius,
     color: token.datePickerCellColor,
+    fontWeight: token.datePickerPanelFontWeight,
+    fontSize: token.datePickerPanelBodyFontSize,
     '&:not($timeItemDisabled):hover': {
       color: token.datePickerCellHoverColor,
       backgroundColor: token.datePickerCellHoverBackgroundColor,
