@@ -1,3 +1,9 @@
+## 3.9.13-beta.12
+2026-04-14
+### 🐞 BugFix
+- 修复 `Input.Number` 点击步进按钮（step）时仅首次生效，后续点击不再递增/递减的问题（Regression since v3.9.11） ([#1694](https://github.com/sheinsight/shineout-next/pull/1694))
+
+
 ## 3.9.11-beta.10
 2026-03-16
 ### 🐞 BugFix
