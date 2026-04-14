@@ -162,15 +162,18 @@ const useNumberFormat = (props: InputNumberProps) => {
     }
     num = commonFormat(num) as number;
     onChange?.(num);
+    return num;
   };
 
   const handlePlus = usePersistFn(() => {
     if (disabled) return;
-    changeValue(step);
+    const num = changeValue(step);
+    if (num !== undefined) setInternalInputValue(getStringValue(num));
   });
   const handleMinus = usePersistFn(() => {
     if (disabled) return;
-    changeValue(-step);
+    const num = changeValue(-step);
+    if (num !== undefined) setInternalInputValue(getStringValue(num));
   });
 
   return {
