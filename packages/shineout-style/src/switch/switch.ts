@@ -30,6 +30,7 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
     color: token.switchFontColor,
     verticalAlign: 'middle',
     outline: 'none',
+    lineHeight: token.switchCircleSize,
     '$wrapperDisabled&': {
       backgroundColor: token.switchDisabledBackgroundColor,
       color: token.switchDisabledFontColor,
@@ -55,6 +56,7 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       minWidth: token.switchSmallWidth,
       borderRadius: `calc( ${token.switchSmallCircleSize} / 2 + ${token.switchSmallPaddingY} )`,
       fontSize: token.switchSmallFontSize,
+      lineHeight: token.switchSmallCircleSize,
       '[data-soui-role="form-control"] > &': {
         marginTop: 8,
       }
@@ -65,6 +67,7 @@ const switchStyle: JsStyles<keyof SwitchClasses> = {
       minWidth: token.switchLargeWidth,
       borderRadius: `calc( ${token.switchLargeCircleSize} / 2 + ${token.switchLargePaddingY} )`,
       fontSize: token.switchLargeFontSize,
+      lineHeight: token.switchLargeCircleSize,
     },
   },
   wrapperChecked: {},
