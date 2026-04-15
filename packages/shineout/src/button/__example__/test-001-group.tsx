@@ -16,7 +16,7 @@ export default () => {
       <div>
         <Radio.Group
           keygen
-          data={['primary', 'secondary', 'outline', 'dashed', 'text']}
+          data={['primary', 'secondary', 'warning', 'danger', 'success', 'default']}
           value={buttonType}
           onChange={setButtonType}
           style={{ marginBottom: 16 }}
@@ -46,6 +46,15 @@ export default () => {
         <Button.Group
           type={buttonType}
           mode={buttonMode}
+          style={{ marginLeft: 'var(--soui-button-nearly-margin, 8px)' }}
+        >
+          <Button>按钮1</Button>
+          <Button>按钮2</Button>
+          <Button>按钮3</Button>
+        </Button.Group>
+
+        <Button.Group
+          mode='outline'
           style={{ marginLeft: 'var(--soui-button-nearly-margin, 8px)' }}
         >
           <Button>按钮1</Button>

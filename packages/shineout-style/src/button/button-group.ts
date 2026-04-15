@@ -114,8 +114,8 @@ const outlineBeforeLine = (type: ButtonTypeWithoutLink, styles: ButtonStyleType)
 
   [`&${bc('primary')},&${bc('success')},&${bc('warning')},&${bc('danger')},${bc('secondary')}`]: {
     '&::before': {
-      height: 'calc(100% + 2px)',
-      top: -1,
+      height: 'calc(50% - 2px)',
+      top:'calc(25% + 1px)',
       left: -1,
       width: 1,
       bottom: -1,
@@ -236,7 +236,7 @@ const ButtonGroupStyle: JsStyles<keyof ButtonGroupClasses> = {
       position: 'relative',
 
       '&::before': {
-        transition: 'all 0.3s',
+        // transition: 'all 0.3s',
       },
       // secondary 比较特殊，单独拎出来写覆盖掉 &::before
       [`&${bc('secondary')}`]: {
@@ -299,6 +299,7 @@ const ButtonGroupStyle: JsStyles<keyof ButtonGroupClasses> = {
           top: 'calc(25% + 1px)',
           width: 1,
           background: Token.buttonSplitlineOutlineBackgroundColor, // Neutral-border-1
+          transition: 'none',
         },
         '&[dir=ltr]::before': {
           left: -1,
