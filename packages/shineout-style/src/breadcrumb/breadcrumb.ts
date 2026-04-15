@@ -86,8 +86,8 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
     },
   },
   down: {
-    width: token.breadcrumbDownIconSize,
-    height: token.breadcrumbDownIconSize,
+    width: token.breadcrumbFontSize,
+    height: token.breadcrumbFontSize,
     lineHeight: '1',
     marginLeft: 4,
   },
