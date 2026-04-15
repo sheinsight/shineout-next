@@ -60,7 +60,7 @@ const dropdownTokenExtraValue = {
     active: { background: { color: 'Neutral-fill-3' }, font: { color: 'Neutral-text-5' } },
     select: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
     disabled: { background: { color: 'Neutral-fill-1' }, font: { color: 'Neutral-text-2' } },
-    border: { radius: 'Radius-2' },
+    border: { radius: 'Radius-lesser' },
     group: {
       padding: { x: 'Spacing-8', top: 'Font-14', bottom: 'Spacing-2' },
       font: { size: 'Font-12', color: 'Neutral-text-3', weight: 'Weight-regular' },

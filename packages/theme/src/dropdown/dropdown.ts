@@ -39,7 +39,7 @@ const dropdownTokens: DropdownTokens = {
   dropdownOptionSelectFontColor: 'Brand-6',
   dropdownOptionDisabledBackgroundColor: 'Neutral-fill-1',
   dropdownOptionDisabledFontColor: 'Neutral-text-2',
-  dropdownOptionBorderRadius: 'Radius-2',
+  dropdownOptionBorderRadius: 'Radius-lesser',
   dropdownOptionGroupPaddingX: 'Spacing-8',
   dropdownOptionGroupPaddingTop: 'Font-14',
   dropdownOptionGroupPaddingBottom: 'Spacing-2',

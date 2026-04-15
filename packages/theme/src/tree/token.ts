@@ -24,7 +24,9 @@ const treeTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 treeRules 强关联，非 treeRules 规则内的 token 需手动增加或删减。
  */
-const treeTokenValue = {
+const treeTokenValue = {};
+
+const treeTokenExtraValue = {
   font: { size: 'Font-14', weight: 'Weight-regular', color: 'Neutral-text-5' },
   line: { height: 'Size-18', background: { color: 'Neutral-fill-3' } },
   small: { font: { size: 'Font-12' }, line: { height: 'Size-14' } },
@@ -44,16 +46,13 @@ const treeTokenValue = {
     active: {
       background: { color: 'Brand-1' },
       font: { color: 'Brand-6' },
-      border: { radius: 'Radius-2' },
+      border: { radius: 'Radius-lesser' },
     },
     disabled: { background: { color: 'Transprent' }, font: { color: 'Neutral-text-5' } },
     border: { radius: 'Radius-lesser' },
   },
   drag: { border: { color: 'Brand-6' }, background: { color: 'Brand-1' } },
   nearly: { margin: '', small: { margin: '' }, large: { margin: '' } },
-};
-
-const treeTokenExtraValue = {
   text: { padding: { y: 'Spacing-2', x: 'Spacing-4' } },
   checkbox: { margin: { x: 'Spacing-8' } },
   icon: { size: 'Font-14' }
