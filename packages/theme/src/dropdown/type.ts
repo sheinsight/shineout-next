@@ -214,7 +214,7 @@ export interface DropdownTokens {
   dropdownOptionDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 下拉菜单选项边框圆角
    */
   dropdownOptionBorderRadius: string;

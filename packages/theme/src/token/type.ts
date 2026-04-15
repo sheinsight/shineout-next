@@ -1255,55 +1255,6 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '0px'
-   * @description 直角
-   */
-  'Radius-0': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '2px'
-   * @description 2 圆角
-   */
-  'Radius-2': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '3px'
-   * @description 3 圆角
-   */
-  'Radius-3': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '4px'
-   * @description 4 圆角
-   */
-  'Radius-4': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '8px'
-   * @description 8 圆角
-   */
-  'Radius-8': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '12px'
-   * @description 12 圆角
-   */
-  'Radius-12': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '1000px'
-   * @description 1000 大圆角
-   */
-  'Radius-1000': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default '0px 2px 5px rgba(2, 11, 24, 0.1)'
    * @description 表格拖拽、树组件拖拽
    */
