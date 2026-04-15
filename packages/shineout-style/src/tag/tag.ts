@@ -162,6 +162,7 @@ const TagStyle: JsStyles<keyof TagClasses> = {
     display: 'inline-flex',
     // 消除 inline-flex 看不见的空白高度
     verticalAlign: 'top',
+    alignItems: 'center',
     padding: `${Token.tagPaddingY} ${Token.tagPaddingX}`,
     fontSize: Token.tagFontSize,
     fontWeight: Token.tagFontWeight,
