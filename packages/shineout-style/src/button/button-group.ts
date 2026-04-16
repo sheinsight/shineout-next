@@ -9,12 +9,16 @@ type ButtonStyleType = 'Text' | 'Outline' | '';
 // 引用 button stylesheet 的常量类名（元素同时拥有 hash class 和常量 class）
 const bc = (key: string) => `.${prefix}-button-${key}`;
 
+const heightAndTop = {
+  height: `var(--button-before-line-height, calc(50% - 2px))`,
+  top: `var(--button-before-line-top, calc(25% + 1px))`,
+}
+
 const beforeLine = () => ({
   '&::before': {
     position: 'absolute',
     content: '" "',
-    height: 'calc(50% - 2px)',
-    top: 'calc(25% + 1px)',
+    ...heightAndTop,
     width: 1,
     background: Token.buttonSplitlineFullBackgroundColor,
   },
@@ -70,8 +74,7 @@ const outlineBeforeLine = (type: ButtonTypeWithoutLink, styles: ButtonStyleType)
   '&::before': {
     position: 'absolute',
     content: '" "',
-    height: 'calc(50% - 2px)',
-    top: 'calc(25% + 1px)',
+    ...heightAndTop,
     width: 1,
     background: Token[`button${type}${styles}BorderColor`],
   },
@@ -114,8 +117,8 @@ const outlineBeforeLine = (type: ButtonTypeWithoutLink, styles: ButtonStyleType)
 
   [`&${bc('primary')},&${bc('success')},&${bc('warning')},&${bc('danger')},${bc('secondary')}`]: {
     '&::before': {
-      height: 'calc(50% - 2px)',
-      top:'calc(25% + 1px)',
+      ...heightAndTop,
+      top: `var(--button-before-line-top, calc(25% + 1px))`,
       left: -1,
       width: 1,
       bottom: -1,
@@ -149,8 +152,7 @@ const textBeforeLine = () => ({
     transition: 'all 0.3s',
     position: 'absolute',
     content: '" "',
-    height: 'calc(50% - 2px)',
-    top: 'calc(25% + 1px)',
+    ...heightAndTop,
     width: 1,
     background: Token.buttonSplitlineOutlineBackgroundColor,
   },
@@ -232,7 +234,7 @@ const ButtonGroupStyle: JsStyles<keyof ButtonGroupClasses> = {
       },
 
     // 填充型 button
-    [`& ${bc('button')}:not(${bc('outline')}):not(${bc('text')})`]: {
+    [`& ${bc('button')}:not(${bc('outline')}):not(${bc('dashed')}):not(${bc('text')})`]: {
       position: 'relative',
 
       '&::before': {
@@ -244,8 +246,7 @@ const ButtonGroupStyle: JsStyles<keyof ButtonGroupClasses> = {
         '&::before': {
           position: 'absolute',
           content: '" "',
-          height: 'calc(50% - 2px)',
-          top: 'calc(25% + 1px)',
+          ...heightAndTop,
           width: 1,
           background: Token.buttonSplitlineOutlineBackgroundColor,
           transition: 'none',
@@ -292,21 +293,6 @@ const ButtonGroupStyle: JsStyles<keyof ButtonGroupClasses> = {
       // secondary 比较特殊，单独拎出来写覆盖掉 &::before
       [`&${bc('secondary')}`]: {
         ...outlineBeforeLine('Secondary', 'Outline'),
-        '&::before': {
-          position: 'absolute',
-          content: '" "',
-          height: 'calc(50% - 2px)',
-          top: 'calc(25% + 1px)',
-          width: 1,
-          background: Token.buttonSplitlineOutlineBackgroundColor, // Neutral-border-1
-          transition: 'none',
-        },
-        '&[dir=ltr]::before': {
-          left: -1,
-        },
-        '&[dir=rtl]::before': {
-          right: -1,
-        },
       },
       [`&${bc('primary')}`]: {
         ...outlineBeforeLine('Primary', 'Outline'),
@@ -329,9 +315,23 @@ const ButtonGroupStyle: JsStyles<keyof ButtonGroupClasses> = {
     },
 
     // dashed 型 button
-    [`&${bc('dashed')}`]: {
+    [`& ${bc('dashed')}`]: {
       position: 'relative',
-      borderStyle: 'none',
+      [`&${bc('secondary')}`]: {
+        ...outlineBeforeLine('Secondary', 'Outline'),
+      },
+      [`&${bc('primary')}`]: {
+        ...outlineBeforeLine('Primary', 'Outline'),
+      },
+      [`&${bc('success')}`]: {
+        ...outlineBeforeLine('Success', 'Outline'),
+      },
+      [`&${bc('warning')}`]: {
+        ...outlineBeforeLine('Warning', 'Outline'),
+      },
+      [`&${bc('danger')}`]: {
+        ...outlineBeforeLine('Danger', 'Outline'),
+      },
     },
   },
 };

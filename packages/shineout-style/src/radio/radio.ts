@@ -42,7 +42,10 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
       marginTop: token.radioIndicatorMarginTop,
     },
   },
-  wrapperChecked: {},
+  wrapperChecked: {
+    '--button-before-line-height': '100%',
+    '--button-before-line-top': 0,
+  },
   wrapperDisabled: {
     cursor: 'not-allowed',
   },

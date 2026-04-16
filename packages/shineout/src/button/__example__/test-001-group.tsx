@@ -6,81 +6,44 @@
  */
 
 import React from 'react';
-import { Button, Radio } from 'shineout';
+import { Button, Radio, Form } from 'shineout';
 export default () => {
-  const [buttonType, setButtonType] = React.useState('primary');
-  const [buttonMode, setButtonMode] = React.useState('outline');
+  const [buttonType, setButtonType] = React.useState('secondary');
+  const [buttonMode, setButtonMode] = React.useState('默认(填充模式)');
 
   return (
     <div>
-      <div>
-        <Radio.Group
-          keygen
-          data={['primary', 'secondary', 'warning', 'danger', 'success', 'default']}
-          value={buttonType}
-          onChange={setButtonType}
-          style={{ marginBottom: 16 }}
-        />
-        <Radio.Group
-          keygen
-          data={['outline', 'dashed', 'text']}
-          value={buttonMode}
-          onChange={setButtonMode}
-          style={{ marginBottom: 16 }}
-        />
-      </div>
-      <div>
-        <Button type={buttonType} mode={buttonMode}>
-          按钮
-        </Button>
-      </div>
-      <div>
+      <Form labelAlign='top' colon>
+        <Form.Item label={<strong>type</strong>}>
+          <Radio.Group
+            keygen
+            data={['secondary', 'primary', 'warning', 'danger', 'success']}
+            value={buttonType}
+            onChange={setButtonType}
+            style={{ marginBottom: 16 }}
+          />
+        </Form.Item>
+        <Form.Item label={<strong>mode</strong>}>
+          <Radio.Group
+            keygen
+            data={['默认(填充模式)', 'outline', 'dashed', 'text']}
+            value={buttonMode}
+            onChange={setButtonMode}
+            style={{ marginBottom: 16 }}
+          />
+        </Form.Item>
+      </Form>
+      <div style={{ marginTop: 'var(--soui-button-nearly-margin, 8px)' }}>
         <Button.Group
-          type={buttonType}
-          style={{ marginLeft: 'var(--soui-button-nearly-margin, 8px)' }}
+          type={buttonType as any}
+          mode={buttonMode === '默认(填充模式)' ? undefined : buttonMode as any}
         >
           <Button>按钮1</Button>
           <Button>按钮2</Button>
           <Button>按钮3</Button>
+          <Button>按钮4</Button>
+          <Button>按钮5</Button>
         </Button.Group>
-        <Button.Group
-          type={buttonType}
-          mode={buttonMode}
-          style={{ marginLeft: 'var(--soui-button-nearly-margin, 8px)' }}
-        >
-          <Button>按钮1</Button>
-          <Button>按钮2</Button>
-          <Button>按钮3</Button>
-        </Button.Group>
-
-        <Button.Group
-          mode='outline'
-          style={{ marginLeft: 'var(--soui-button-nearly-margin, 8px)' }}
-        >
-          <Button>按钮1</Button>
-          <Button>按钮2</Button>
-          <Button>按钮3</Button>
-        </Button.Group>
-{/*
-        <Button.Group
-          type={buttonType}
-          mode={buttonMode}
-          style={{ marginLeft: 'var(--soui-button-nearly-margin, 8px)' }}
-        >
-          <Button>按钮1</Button>
-          <Button>按钮2</Button>
-          <Button>按钮3</Button>
-        </Button.Group>
-
-        <Button.Group
-          type={buttonType}
-          mode={buttonMode}
-          style={{ marginLeft: 'var(--soui-button-nearly-margin, 8px)' }}
-        >
-          <Button>按钮1</Button>
-          <Button>按钮2</Button>
-          <Button>按钮3</Button>
-        </Button.Group> */}
       </div>
     </div>
   );
