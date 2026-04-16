@@ -1,3 +1,9 @@
+## 3.9.13-beta.15
+2026-04-16
+### 💅 Style
+- 优化 `Button.Group` 按钮之间分割线的样式，适配设计 token 配置 ([#1697](https://github.com/sheinsight/shineout-next/pull/1697))
+
+
 ## 3.9.11-beta.4
 2026-03-09
 ### 🚀 Performance
