@@ -26,7 +26,7 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
     borderRadius: token.dropdownListBorderRadius,
     padding: `${token.dropdownListPaddingY} ${token.dropdownListPaddingX}`,
-    background: token.dropdownListBackgroundColor,
+    background: token.colorBgPopup,
     boxShadow: token.dropdownListBoxShadow,
     width: 'max-content',
     boxSizing: 'border-box',

@@ -73,14 +73,14 @@ const figma = [
     name: 'colorBgLayout',
     value: '#F4F5F8',
     describe: '布局背景色',
-    token: 'Bg-layout',
+    token: 'Color-bg-layout',
     locked: false,
   },
   {
     name: 'colorBgPopup',
     value: '#FFFFFF',
     describe: '浮层容器背景色',
-    token: 'Bg-popup',
+    token: 'Color-bg-popup',
     locked: false,
   },
   {

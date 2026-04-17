@@ -1,3 +1,9 @@
+## 3.9.13-beta.16
+2026-04-17
+### 💅 Style
+- 新增全局弹出层背景色 token，统一 `Select`、`Cascader`、`DatePicker`、`Dropdown`、`TreeSelect`、`Breadcrumb` 等组件的弹出面板背景色配置 ([#1698](https://github.com/sheinsight/shineout-next/pull/1698))
+
+
 ## 3.9.13-beta.4
 2026-04-02
 

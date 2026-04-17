@@ -75,14 +75,14 @@ export interface Tokens {
    * @default '#F4F5F8'
    * @description 布局背景色
    */
-  'Bg-layout': string;
+  'Color-bg-layout': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#FFFFFF'
    * @description 浮层容器背景色
    */
-  'Bg-popup': string;
+  'Color-bg-popup': string;
   /**
    * @type {string}
    * @categoty color

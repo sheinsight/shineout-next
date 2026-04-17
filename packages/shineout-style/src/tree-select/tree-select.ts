@@ -299,7 +299,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   },
   pickerWrapper: {
     position: 'absolute',
-    backgroundColor: token.treeSelectPanelBackgroundColor,
+    backgroundColor: token.colorBgPopup,
     boxShadow: token.treeSelectPanelShadow,
     border: `1px solid ${token.treeSelectPanelBorder}`,
     borderRadius: token.treeSelectPanelRadius,
