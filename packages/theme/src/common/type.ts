@@ -40,12 +40,12 @@ export interface CommonTokens {
    * @default '#FFFFFF'
    * @description 弹出层背景色
    */
-  colorBgPopup: string;
+  backgroundPopup: string;
   /**
    * @type {string}
    * @categoty string
    * @default '#F4F5F8'
    * @description 布局背景色
    */
-  colorBgLayout: string;
+  backgroundLayout: string;
 }

@@ -288,7 +288,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   pickerWrapper: {
     position: 'absolute',
     overflow: 'hidden',
-    backgroundColor: token.colorBgPopup,
+    backgroundColor: token.backgroundPopup,
     boxShadow: token.selectPanelShadow,
     borderRadius: token.selectPanelRadius,
     transformOrigin: '0 0',

@@ -323,7 +323,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   pickerWrapper: {
     position: 'absolute',
-    backgroundColor: token.colorBgPopup,
+    backgroundColor: token.backgroundPopup,
     boxShadow: token.cascaderPanelShadow,
     border: `1px solid ${token.cascaderPanelBorder}`,
     borderRadius: token.cascaderPanelRadius,

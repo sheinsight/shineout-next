@@ -242,7 +242,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   },
   pickerWrapper: {
     position: 'absolute',
-    backgroundColor: token.colorBgPopup,
+    backgroundColor: token.backgroundPopup,
     boxShadow: token.datePickerPanelShadow,
     borderRadius: token.datePickerPanelRadius,
     border: `1px solid ${token.datePickerPanelBorder}`,
@@ -720,7 +720,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
       '&[dir=rtl]': { right: 0 },
       transformOrigin: 'bottom',
       animation: '$scale-y-top 0.2s ease-in-out forwards',
-      backgroundColor: token.colorBgPopup,
+      backgroundColor: token.backgroundPopup,
       boxShadow: token.datePickerPanelShadow,
       display: 'none',
     },
