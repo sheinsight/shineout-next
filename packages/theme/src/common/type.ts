@@ -34,4 +34,18 @@ export interface CommonTokens {
    * @description 透明
    */
   transparent: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '#FFFFFF'
+   * @description 弹出层背景色
+   */
+  colorBgPopup: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '#F4F5F8'
+   * @description 布局背景色
+   */
+  colorBgLayout: string;
 }
