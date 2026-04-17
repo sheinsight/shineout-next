@@ -40,7 +40,7 @@ const Codesandbox = (props: CodesandboxProps) => {
     "react-dom/client": "react-dom@18.3.1",
     "react-router-dom": "6.11.2",
     "react-jss": "10.9.2",
-    "shineout": "3.9.10-beta.5",
+    "shineout": "3.9.13-beta.18",
     "classnames": "2.3.2",
     "immer": "10.0.2"
   }
