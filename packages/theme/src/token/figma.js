@@ -70,17 +70,17 @@ const figma = [
     locked: true,
   },
   {
-    name: 'colorBgLayout',
+    name: 'backgroundLayout',
     value: '#F4F5F8',
     describe: '布局背景色',
-    token: 'Color-bg-layout',
+    token: 'Background-layout',
     locked: false,
   },
   {
-    name: 'colorBgPopup',
+    name: 'backgroundPopup',
     value: '#FFFFFF',
     describe: '浮层容器背景色',
-    token: 'Color-bg-popup',
+    token: 'Background-popup',
     locked: false,
   },
   {

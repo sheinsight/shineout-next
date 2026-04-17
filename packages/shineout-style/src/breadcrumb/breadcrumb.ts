@@ -96,7 +96,7 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
   },
   dropdown: {
     borderRadius: token.dropdownListBorderRadius,
-    backgroundColor: token.colorBgPopup,
+    backgroundColor: token.backgroundPopup,
     boxShadow: token.dropdownListBoxShadow,
     border: `1px solid ${token.dropdownListBorderColor}`,
     // padding: `${token.breadcrumbListPaddingY} 0`,

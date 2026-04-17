@@ -6,8 +6,8 @@ const common: CommonTokens = {
   defaultBorder: 'Border-1',
   iconCirclePadding: 'Padding-4',
   transparent: 'transparent',
-  colorBgPopup: 'Bg-popup',
-  colorBgLayout: 'Bg-layout',
+  backgroundPopup: 'Background-popup',
+  backgroundLayout: 'Background-layout',
 };
 
 export default common;
