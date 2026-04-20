@@ -138,7 +138,16 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     // 修改`Table`被display:none时，表格头样式错乱的问题
     if (cols && cols.every((v) => v === 0)) return;
 
-    setColgroup(shiftDecimalToLastColumn(cols));
+    const shifted = shiftDecimalToLastColumn(cols);
+    // 值未变化时跳过，避免触发不必要的 useLayoutEffect
+    if (
+      colgroup &&
+      shifted.length === colgroup.length &&
+      shifted.every((v, i) => v === colgroup[i])
+    ) {
+      return;
+    }
+    setColgroup(shifted);
     setAdjust(adjust);
     if (!adjust) {
       updateResizeFlag();
@@ -188,7 +197,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     let index = 0;
     let sum = 0;
     for (let i = 0, count = items.length; i < count; i++) {
-      const { width } = items[i].getBoundingClientRect();
+      const width = (items[i] as HTMLElement).offsetWidth;
       sum += width;
       const colspan = items[i].getAttribute('colspan');
       const colspanNum = parseInt(colspan || '1', 10);

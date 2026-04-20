@@ -1,3 +1,8 @@
+## 3.9.14-beta.1
+2026-04-20
+### 🚀 Performance
+- 优化 `Table` 布局计算逻辑，跳过未变化的 colgroup 更新并减少不必要的重排（reflow） ([#1655](https://github.com/sheinsight/shineout-next/pull/1655))
+
 ## 3.9.11-beta.4
 2026-03-09
 ### 🚀 Performance
