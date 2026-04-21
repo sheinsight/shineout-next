@@ -1,3 +1,9 @@
+## 3.9.14-beta.2
+2026-04-20
+### 🐞 BugFix
+- 修复 `Input.Group` 中子组件设置 `width` 不生效的问题 ([#1703](https://github.com/sheinsight/shineout-next/pull/1703))
+
+
 ## 3.9.13-beta.12
 2026-04-14
 ### 🐞 BugFix

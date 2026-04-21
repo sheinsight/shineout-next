@@ -80,7 +80,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         borderRadius: 0,
         boxShadow: 'none',
         backgroundColor: 'transparent',
-        flex: 1,
+        flex: '1 1 auto',
         minWidth: 0,
       },
       '[data-soui-role="input-group"]:not([data-soui-border="false"]) [data-soui-input-border] + &&&': {

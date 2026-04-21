@@ -1,3 +1,8 @@
+## 3.9.14-beta.2
+2026-04-21
+### 🐞 BugFix
+- 修复 `Form` 中带有延迟的表单元素（如 `Textarea`）输入内容后立即点击 `Form.Reset`，内容会短暂消失后又重新出现的问题 ([#1704](https://github.com/sheinsight/shineout-next/pull/1704))
+
 ## 3.9.13-beta.5
 2026-04-03
 ### 💅 Style
