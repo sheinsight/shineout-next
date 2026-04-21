@@ -360,6 +360,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       vals: { [key: string]: any },
       option: { validate?: boolean; forceUpdate?: boolean } = { validate: false },
     ) => {
+      // 重置保护期内（500ms），忽略子组件延迟 onChange 写回的旧值
+      if (context.resetTime && Date.now() - context.resetTime < 500) return;
       onChange((draft) => {
         const values = Object.keys(vals);
         // 针对 name 为数组模式，如 datepicker 的 name={['startTime', 'endTime']} 时，前者校验可能需要依赖后者，因此需要提前将后者数据整合至 draft 用于多字段整合校验
@@ -509,7 +511,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     onChange(getDefaultValue());
     clearValidate();
     update();
-    context.resetTime = 1;
+    context.resetTime = Date.now();
     props.onReset?.();
     other?.onReset?.(e);
   };
