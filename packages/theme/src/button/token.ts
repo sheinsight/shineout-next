@@ -735,7 +735,7 @@ const buttonTokenValue = {
 
 const buttonTokenExtraValue = {
   splitline: {
-    full: { background: { color: '#ffffff' } },
+    full: { background: { color: 'Neutral-fill-1' } },
     outline: { background: { color: 'Neutral-border-2' } },
   },
 };

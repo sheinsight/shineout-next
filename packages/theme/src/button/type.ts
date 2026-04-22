@@ -4,7 +4,7 @@
 export interface ButtonTokens {
   /**
    * @type {string}
-   * @token #ffffff
+   * @token Neutral-fill-1
    * @description 按钮按钮组分割线填充模式背景颜色
    */
   buttonSplitlineFullBackgroundColor: string;
