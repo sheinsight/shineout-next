@@ -1,3 +1,8 @@
+## 3.9.14-beta.3
+2026-04-22
+### 🐞 BugFix
+- 修复 `Select` 使用 `prediction` 配合远程搜索时，已选中项在搜索后显示丢失的问题 ([#1704](https://github.com/sheinsight/shineout-next/pull/1704))
+
 ## 3.9.13-beta.7
 2026-04-08
 
