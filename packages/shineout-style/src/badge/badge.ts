@@ -47,7 +47,7 @@ const badgeStyle: JsStyles<BadgeClassType> = {
       insetInlineEnd: 0,
       transform: 'translate(50%, -50%)',
       transformOrigin: '100% 0',
-      boxShadow: `0 0 0 1px #fff`,
+      boxShadow: `0 0 0 1px ${token.badgeBadgeShadowColor}`,
     },
   },
   standalone: {
