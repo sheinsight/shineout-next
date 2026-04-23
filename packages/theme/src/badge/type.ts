@@ -28,6 +28,12 @@ export interface BadgeTokens {
   badgeBadgeBorderRadius: string;
   /**
    * @type {string}
+   * @token Neutral-fill-1
+   * @description 徽标徽标undefined颜色
+   */
+  badgeBadgeShadowColor: string;
+  /**
+   * @type {string}
    * @token Spacing-4
    * @description 徽标数值内边距（水平方向）
    */

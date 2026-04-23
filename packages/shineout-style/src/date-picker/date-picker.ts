@@ -234,11 +234,11 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   },
   clear: {
     display: 'none',
-    color: token.datePickerClearColor,
-    '&: hover': {
-      color: token.datePickerHoverClearColor,
-    },
+    color: token.inputClearColor,
     cursor: 'pointer',
+    '&:hover': {
+      color: token.inputHoverClearColor,
+    },
   },
   pickerWrapper: {
     position: 'absolute',

@@ -351,7 +351,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     verticalAlign: 'middle',
     width: token.inputFontSize,
     lineHeight: 0,
-    color: token.inputIconColor,
+    color: token.selectIconColor,
     transition: 'transform 0.3s',
   },
   arrowIconOpen: {

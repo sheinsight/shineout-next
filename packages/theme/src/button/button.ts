@@ -4,7 +4,7 @@
 import { ButtonTokens } from './type';
 
 const buttonTokens: ButtonTokens = {
-  buttonSplitlineFullBackgroundColor: '#ffffff',
+  buttonSplitlineFullBackgroundColor: 'Neutral-fill-1',
   buttonSplitlineOutlineBackgroundColor: 'Neutral-border-2',
   buttonPrimaryFontColor: 'Neutral-text-1',
   buttonPrimaryBackgroundColor: 'Brand-6',

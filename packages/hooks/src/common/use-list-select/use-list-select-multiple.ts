@@ -244,9 +244,20 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
           for (let j = 0; j < raws.length; j++) {
             const item = raws[j] as DataItem;
             if (props.prediction(values[i], item)) {
+              if (props.keepCache) context.valueDataCache.set(values[i], item);
               result.push(item);
               raws.splice(j, 1);
               continue outer;
+            }
+          }
+          // 当前 data 找不到，从 valueDataCache 中回退匹配
+          if (props.keepCache && context.valueDataCache) {
+            const cacheValues = Array.from(context.valueDataCache.values());
+            for (let k = 0; k < cacheValues.length; k++) {
+              if (props.prediction(values[i], cacheValues[k])) {
+                result.push(cacheValues[k]);
+                continue outer;
+              }
             }
           }
           result.push({ IS_NOT_MATCHED_VALUE: true, value: values[i] });

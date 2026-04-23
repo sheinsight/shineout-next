@@ -1,3 +1,8 @@
+## 3.9.14-beta.3
+2026-04-22
+### 💅 Style
+- 修复 `Badge`、`Button.Group`、`Select`、`DatePicker` 部分样式属性未正确使用设计 token 的问题 ([#1704](https://github.com/sheinsight/shineout-next/pull/1704))
+
 ## 3.9.13-beta.16
 2026-04-17
 ### 💅 Style

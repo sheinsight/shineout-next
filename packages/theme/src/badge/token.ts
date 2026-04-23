@@ -29,6 +29,9 @@ const badgeTokenExtraValue = {
     border: {
       radius: 'Radius-full',
     },
+    shadow: {
+      color: 'Neutral-fill-1',
+    }
   },
   count: {
     padding: { x: 'Spacing-4' },
