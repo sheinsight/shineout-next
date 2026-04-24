@@ -136,7 +136,7 @@ const menuTokenExtraValue = {
       background: { color: 'Neutral-fill-1' },
     },
     disabled: {
-      background: { color: 'Neutral-fill-3' },
+      background: { color: 'Neutral-fill-2' },
     },
     dark: {
       font: { color: 'Neutral-text-1' },

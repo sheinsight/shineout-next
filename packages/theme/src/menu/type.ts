@@ -328,7 +328,7 @@ export interface MenuTokens {
   menuSearchHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-3
+   * @token Neutral-fill-2
    * @description 菜单undefined禁用时的背景颜色
    */
   menuSearchDisabledBackgroundColor: string;

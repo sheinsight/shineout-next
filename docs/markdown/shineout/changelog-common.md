@@ -1,3 +1,8 @@
+## 3.9.14-beta.4
+2026-04-24
+### 💅 Style
+- 优化 `closeFill` 图标路径，修复 `Button.Group` RTL 模式下的边框样式，调整 `Menu` 搜索框禁用态背景色 token ([#1705](https://github.com/sheinsight/shineout-next/pull/1705))
+
 ## 3.9.14-beta.3
 2026-04-22
 ### 💅 Style
