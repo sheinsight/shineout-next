@@ -218,11 +218,13 @@ const ButtonGroupStyle: JsStyles<keyof ButtonGroupClasses> = {
           borderTopLeftRadius: 0,
           borderBottomLeftRadius: 0,
           borderLeft: 'none',
+          borderInlineStartStyle: 'none',
         },
         '&[dir=rtl]': {
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
           borderLeft: 'none',
+          borderInlineEndStyle: 'none',
         },
       },
 
@@ -231,6 +233,7 @@ const ButtonGroupStyle: JsStyles<keyof ButtonGroupClasses> = {
         borderRadius: 0,
         borderLeft: 'none',
         borderRight: 'none',
+        borderInlineStyle: 'none',
       },
 
     // 填充型 button
