@@ -58,7 +58,7 @@ const menuTokens: MenuTokens = {
   menuSearchHoverClearColor: 'Neutral-text-4',
   menuSearchHoverBorderColor: 'Brand-5',
   menuSearchHoverBackgroundColor: 'Neutral-fill-1',
-  menuSearchDisabledBackgroundColor: 'Neutral-fill-3',
+  menuSearchDisabledBackgroundColor: 'Neutral-fill-2',
   menuSearchDarkFontColor: 'Neutral-text-1',
   menuSearchDarkBorderColor: 'Neutral-fill-8',
   menuSearchDarkBackgroundColor: 'Neutral-fill-8',
