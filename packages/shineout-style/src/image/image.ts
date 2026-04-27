@@ -191,7 +191,7 @@ const ImageStyle: JsStyles<ImageClass> = {
 
   thumbnail: {
     borderRadius: Token.imageBorderRadius,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Token.imageBackgroundColor,
     outline: `1px solid ${Token.imageBorderColor}`,
 
     '& $inner': {
