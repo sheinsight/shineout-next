@@ -139,8 +139,13 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     if (cols && cols.every((v) => v === 0)) return;
 
     const shifted = shiftDecimalToLastColumn(cols);
+    // 当 colgroup 中存在 undefined（说明从未被成功测量过），跳过相等判断，强制触发重新测量
+    // 场景：Table 在 display:none 容器中挂载时 getColgroup 测量失败，
+    // 后续 resetColGroup 产出值与初始值相同会被跳过，导致未设 width 的列永远无法获得实际宽度
+    const hasUndefined = shifted.some((v) => v === undefined);
     // 值未变化时跳过，避免触发不必要的 useLayoutEffect
     if (
+      !hasUndefined &&
       colgroup &&
       shifted.length === colgroup.length &&
       shifted.every((v, i) => v === colgroup[i])
