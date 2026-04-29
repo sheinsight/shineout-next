@@ -1,3 +1,8 @@
+## 3.9.14-beta.6
+2026-04-29
+### 🐞 BugFix
+- 修复 `Table` 在表头附着（sticky）模式下，从隐藏容器（如弹窗、标签页、折叠面板）中显示时，未设置宽度的列表头与表体内容错位的问题 ([#1707](https://github.com/sheinsight/shineout-next/pull/1707))
+
 ## 3.9.14-beta.1
 2026-04-20
 ### 🚀 Performance
