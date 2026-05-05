@@ -20,8 +20,7 @@ export function useClickAway<T extends Event = Event>(params: {
   const handleClickAway = usePersistFn((event: T) => {
     // composedPath() 兼容 Shadow DOM，包含事件传播路径上的所有元素
     const path = (event as unknown as MouseEvent).composedPath?.() ?? [event.target];
-    // @ts-ignore
-    if (target.findIndex((t) => t.current && path.some((n) => t.current!.contains(n as Node))) > -1) {
+    if (target.findIndex((t) => t.current && path.some((n) => n instanceof Node && t.current!.contains(n))) > -1) {
       return;
     }
     context.onClickAway(event);
