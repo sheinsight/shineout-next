@@ -1,3 +1,8 @@
+## 3.9.14-beta.8
+2026-05-06
+### 🐞 BugFix
+- 修复 `Select` 等含下拉组件在 Shadow DOM 内使用时，点击选项无法触发 onChange 的问题 ([#1708](https://github.com/sheinsight/shineout-next/pull/1708))
+
 ## 3.9.14-beta.3
 2026-04-22
 ### 🐞 BugFix
