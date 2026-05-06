@@ -320,6 +320,36 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     };
   }, [scrollRef.current]);
 
+  // 当祖先元素的 CSS 动画结束时（如 Modal 入场动画），重新测量列宽
+  // 解决 Table 在动画容器（如 Modal）中渲染时，动画期间测量的列宽不准确导致 sticky 表头与表体列宽错位的问题
+  useEffect(() => {
+    const scrollEl = scrollRef.current;
+    if (!scrollEl) return;
+
+    // 查找最近的 fixed 定位祖先（如 Modal wrapper），仅在该元素上监听动画结束
+    let fixedAncestor: HTMLElement | null = null;
+    let parent = scrollEl.parentElement;
+    while (parent) {
+      if (window.getComputedStyle(parent).position === 'fixed') {
+        fixedAncestor = parent;
+        break;
+      }
+      parent = parent.parentElement;
+    }
+
+    if (!fixedAncestor) return;
+
+    const handleAnimationEnd = () => {
+      getColgroup(false);
+    };
+
+    fixedAncestor.addEventListener('animationend', handleAnimationEnd);
+
+    return () => {
+      fixedAncestor!.removeEventListener('animationend', handleAnimationEnd);
+    };
+  }, [scrollRef.current]);
+
   useLayoutEffect(() => {
     if (adjust) {
       getColgroup(adjust === 'drag');

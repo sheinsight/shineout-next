@@ -1,3 +1,8 @@
+## 3.9.14-beta.7
+2026-04-30
+### 🐞 BugFix
+- 修复 `Table` 在表头附着（sticky）模式下，在 `Modal` 等带有入场动画的容器中渲染时，表头与表体列宽错位的问题 ([#1709](https://github.com/sheinsight/shineout-next/pull/1709))
+
 ## 3.9.14-beta.6
 2026-04-29
 ### 🐞 BugFix
