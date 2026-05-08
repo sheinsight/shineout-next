@@ -81,6 +81,7 @@ const groupSpace = (gap: string) => ({
     padding: `0 ${gap}`,
     display: 'flex',
     alignItems: 'center',
+    flexShrink: 0,
     borderLeft: `1px solid ${token.inputBorderColor}`,
     borderRight: `1px solid ${token.inputBorderColor}`,
     background: token.inputGroupFontBackgroundColor,
