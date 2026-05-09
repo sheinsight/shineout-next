@@ -1,7 +1,8 @@
-## 3.9.14-beta.9
+## 3.9.14-beta.10
 2026-05-09
 ### 🐞 BugFix
-- 修复 `Input.Number` 外部传入数字类型的 `value` 时，与内部字符串状态类型不匹配导致显示值未正确同步的问题 ([#1711](https://github.com/sheinsight/shineout-next/pull/1711))
+- 修复 `Input.Number` 在@shined/reactive状态管理中使用时，第一次输入后被清空的问题 ([#1711](https://github.com/sheinsight/shineout-next/pull/1711))
+- 修复 `Input.Number` 在设置 `clearable` 时，点击清除按钮未能正确清空值的问题 ([#1712](https://github.com/sheinsight/shineout-next/pull/1712))
 
 
 ## 3.9.14-beta.2
