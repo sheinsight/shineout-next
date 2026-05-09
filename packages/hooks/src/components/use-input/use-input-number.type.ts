@@ -25,6 +25,7 @@ export interface InputNumberProps
    * @cn 清空后值为 null
    */
   allowNull?: boolean;
+  clearToUndefined?: boolean;
   /**
    * @en Change the digital span. It can be decimal
    * @cn 改变数字跨度，可为小数

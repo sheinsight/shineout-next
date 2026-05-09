@@ -16,6 +16,7 @@ const useNumberFormat = (props: InputNumberProps) => {
     min,
     max,
     allowNull,
+    clearToUndefined,
     step = 1,
     cancelBlurChange,
     disabled,
@@ -177,7 +178,7 @@ const useNumberFormat = (props: InputNumberProps) => {
 
   const handleClear = usePersistFn(() => {
     setInternalInputValue('');
-    onChange?.(allowNull ? null : undefined);
+    onChange?.(clearToUndefined ? undefined : (allowNull ? null : ''));
   });
 
   return {
