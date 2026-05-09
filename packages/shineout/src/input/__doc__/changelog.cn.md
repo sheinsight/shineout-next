@@ -1,3 +1,9 @@
+## 3.9.14-beta.9
+2026-05-09
+### 🐞 BugFix
+- 修复 `Input.Number` 外部传入数字类型的 `value` 时，与内部字符串状态类型不匹配导致显示值未正确同步的问题 ([#1711](https://github.com/sheinsight/shineout-next/pull/1711))
+
+
 ## 3.9.14-beta.2
 2026-04-20
 ### 🐞 BugFix
