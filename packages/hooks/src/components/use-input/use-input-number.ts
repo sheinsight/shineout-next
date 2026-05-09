@@ -176,7 +176,8 @@ const useNumberFormat = (props: InputNumberProps) => {
   });
 
   const handleClear = usePersistFn(() => {
-    onInnerChange('');
+    setInternalInputValue('');
+    onChange?.(allowNull ? null : undefined);
   });
 
   return {
