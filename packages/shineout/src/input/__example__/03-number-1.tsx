@@ -67,6 +67,7 @@ const App: React.FC = () => {
           console.log('🚀outter Input.Number onChange', v);
         }}
         placeholder='please enter'
+        clearable
       />
     </Gap>
   );

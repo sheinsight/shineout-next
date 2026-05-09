@@ -42,6 +42,7 @@ const InputNumber = (props: InputNumberProps) => {
     onChange: commonProps.onChange,
     disabled: !!commonProps.disabled,
     defaultValue: props.defaultValue,
+    clearToUndefined: props.clearToUndefined,
     ...numberFormatParams,
   });
 
