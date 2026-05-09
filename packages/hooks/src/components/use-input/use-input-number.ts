@@ -37,10 +37,12 @@ const useNumberFormat = (props: InputNumberProps) => {
   const focusedRef = React.useRef(false);
 
   useEffect(() => {
+    // 将外部值转为字符串后再比较，避免 number 5 vs string "5" 的类型不匹配误判
+    const stringValue = getStringValue(props.value);
     // 聚焦编辑期间不同步外部值，避免 form 回填 defaultValue 覆盖用户输入
     // 但当外部值被清空时(如 clearable 触发)，即使聚焦也需要同步
-    if(props.value !== inernalInputValue && (!focusedRef.current || props.value == null || props.value === '')){
-      setInternalInputValue(getStringValue(props.value))
+    if(stringValue !== inernalInputValue && (!focusedRef.current || props.value == null || props.value === '')){
+      setInternalInputValue(stringValue)
     }
   }, [props.value])
 
