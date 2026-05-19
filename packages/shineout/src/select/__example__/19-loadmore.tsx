@@ -63,6 +63,7 @@ export default () => {
         renderItem={(d) => d.firstName}
         placeholder='Select User'
         onLoadMore={onLoadMore}
+        onFilter={(v) => (d) => d.firstName.indexOf(v) >= 0}
         renderOptionList={(List) => {
           return (
             <Spin loading={loading} name='ring' size={14}>
