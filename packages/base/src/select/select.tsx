@@ -153,9 +153,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     filterDelay: props.filterDelay,
   });
 
-  const prevFilterTextRef = useRef(filterText);
-  const filterTextChanged = prevFilterTextRef.current !== filterText;
-  prevFilterTextRef.current = filterText;
+  const prevListDataLengthRef = useRef<number>(0);
 
   const [absoluteListUpdateKey, setAbsoluteListUpdateKey] = useState('');
 
@@ -643,8 +641,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   };
 
   const renderList = () => {
+    const listData = (groupBy ? groupData : filterData) as DataItem[];
+    const listDataLength = listData?.length ?? 0;
+    const dataGrew = listDataLength > prevListDataLengthRef.current;
+    prevListDataLengthRef.current = listDataLength;
+
     const listProps = {
-      data: (groupBy ? groupData : filterData) as DataItem[],
+      data: listData,
       datum,
       value,
       size,
@@ -665,7 +668,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       renderItem,
       controlType,
       onLoadMore,
-      keepScrollTop: filterTextChanged ? false : true,
+      keepScrollTop: dataGrew,
       isAnimationFinish,
       threshold,
       onControlTypeChange: setControlType,

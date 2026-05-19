@@ -1,3 +1,8 @@
+## 3.9.14-beta.11
+2026-05-19
+### 🐞 BugFix
+- 修复 `Select` 开启 `onFilter` 后，在下拉列表中滚动再输入关键字时首项不可见的问题（Regression: since v3.9.9） ([#1713](https://github.com/sheinsight/shineout-next/pull/1713))
+
 ## 3.9.14-beta.8
 2026-05-06
 ### 🐞 BugFix
