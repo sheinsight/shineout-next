@@ -283,6 +283,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     tfootHeight: context.tfootHeight,
     virtualScrollContainer: props.virtualScrollContainer,
     tableRef: tableRef,
+    externalStickyHeader: !!props.virtualScrollContainer && !!props.sticky,
   });
 
   const syncHeaderScroll = usePersistFn((left: number) => {
@@ -588,24 +589,28 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       const showStickyHeader = !props.hideHeader && props.sticky;
 
       if (virtualInfo.isExternalScroll) {
-        const externalStickyTop = props.sticky
+        const stickyTopOffset = props.sticky
           ? (typeof props.sticky === 'object' ? props.sticky.top ?? 0 : 0)
-          : undefined;
+          : -virtualInfo.tableOffsetRef.current;
         const externalContainer = props.virtualScrollContainer?.();
         const stickyDivHeight = externalContainer
-          ? externalContainer.clientHeight - (externalStickyTop ?? 0)
+          ? externalContainer.clientHeight - stickyTopOffset
           : undefined;
         return (
           <div style={{ position: 'relative', height: virtualInfo.scrollHeight }}>
             <div
-              ref={props.sticky ? undefined : virtualInfo.externalStickyRef}
-              style={{ position: 'sticky', top: externalStickyTop ?? 0, height: stickyDivHeight, overflowX: 'auto', overflowY: 'hidden' }}
+              ref={virtualInfo.externalStickyRef}
+              style={{ position: 'sticky', top: stickyTopOffset, height: stickyDivHeight, overflowX: 'auto', overflowY: 'hidden' }}
             >
-              {!props.hideHeader && $headTable}
+              {!props.hideHeader && (
+                <div style={{ position: 'relative', zIndex: 1, marginTop: props.sticky ? 0 : -virtualInfo.headerOffset }}>
+                  {$headTable}
+                </div>
+              )}
 
               {!!props.data?.length && (
                 <table
-                  style={{ ...tableStyle, transform: virtualInfo.translateStyle }}
+                  style={{ ...tableStyle, transform: virtualInfo.translateStyle, willChange: 'transform' }}
                   ref={tbodyRef}
                 >
                   {Group}

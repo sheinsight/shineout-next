@@ -1,6 +1,7 @@
 import { usePersistFn } from '../../common/use-persist-fn';
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { TableFormatColumn } from './use-table.type';
+import useTableVirtualExternal from './use-table-virtual-external';
 
 // 找出最大的连续数字的个数
 function getMaxRowSpanLength(input: number[]) {
@@ -28,6 +29,7 @@ interface UseTableVirtualProps {
   tfootHeight: number;
   virtualScrollContainer?: () => HTMLElement | null;
   tableRef?: React.RefObject<HTMLDivElement>;
+  externalStickyHeader?: boolean;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerTop, setTop] = useState(0);
@@ -114,7 +116,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     preIndex: null as number | null,
     rowSpanRows: 0,
     autoAddRows: 0,
-    latestTop: 0,
   });
 
   const getContentHeight = (index: number) => {
@@ -137,12 +138,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     context.cachedHeight[index] = height;
 
     if (context.shouldUpdateHeight) {
-      const newHeight = getContentHeight(props.data.length - 1);
-      if (props.virtualScrollContainer) {
-        setHeight((prev) => Math.max(prev, newHeight));
-      } else {
-        setHeight(newHeight);
-      }
+      setHeight(getContentHeight(props.data.length - 1));
     }
     const { preIndex } = context;
     // 解决: 从下往上滚 由于高度变化会导致滚动条跳动（仅内部滚动需要）
@@ -219,7 +215,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
         }, 300);
       }
     }
-    context.latestTop = top;
     setTop(top);
   };
 
@@ -414,83 +409,18 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   }, [innerTop]);
 
   const isExternalScroll = !!props.virtualScrollContainer;
-  const externalStickyRef = useRef<HTMLDivElement>(null);
-  const tableOffsetRef = useRef<number | null>(null);
 
-  /**
-   * TODO: 外部滚动模式待修复的两个问题
-   * 1. 快速拖动滚动条到顶部时出现空白（松手后缓慢回弹）
-   *    - 原因: React state(innerTop/startIndex) 异步更新，scroll事件同步触发，导致旧的translateStyle在新位置生效
-   *    - 已尝试: 在handleExternalScroll末尾同步写入 innerRef.style.transform (context.latestTop)
-   *    - 结果: 反而更严重了，可能是同步DOM更新与React渲染的translateStyle冲突/闪烁
-   *    - 方向: 考虑外部滚动模式完全不用React state驱动transform，改为纯ref+DOM操作；
-   *           或者用 requestAnimationFrame 节流；或者用 CSS will-change 优化
-   * 2. 滚动到底部时到不了最后一条数据（停在约9318行左右）
-   *    - 原因: scrollHeight(撑高外部容器的div高度)可能不够，或 updateIndexAndTopFromTop 的 maxIndex 限制
-   *    - 已尝试: setHeight用Math.max只增不减、添加context.latestTop同步
-   *    - 结果: Math.max方案本身是对的，但配合同步DOM更新后问题更明显
-   *    - 方向: 去掉同步DOM更新(恢复之前的版本)，单独排查scrollHeight是否等于真实内容高度；
-   *           检查外部容器padding(24px)对最大rawScrollTop的影响
-   *
-   * 恢复方案: 去掉 context.latestTop 相关代码和 handleExternalScroll 末尾的同步DOM更新
-   */
-  const handleExternalScroll = usePersistFn(() => {
-    if (props.disabled || !isExternalScroll) return;
-    const container = props.virtualScrollContainer!();
-    const tableEl = props.tableRef?.current;
-    if (!container || !tableEl) return;
-
-    let rawScrollTop: number;
-    if (container === document.documentElement || container === document.body) {
-      const rect = tableEl.getBoundingClientRect();
-      rawScrollTop = -rect.top;
-    } else {
-      const containerRect = container.getBoundingClientRect();
-      const tableRect = tableEl.getBoundingClientRect();
-      rawScrollTop = containerRect.top - tableRect.top;
-    }
-
-    if (rawScrollTop < 0) rawScrollTop = 0;
-
-    if (externalStickyRef.current) {
-      if (tableOffsetRef.current === null) {
-        if (container === document.documentElement || container === document.body) {
-          tableOffsetRef.current = tableEl.getBoundingClientRect().top + window.scrollY;
-        } else {
-          tableOffsetRef.current =
-            tableEl.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
-        }
-      }
-      externalStickyRef.current.style.top = `${-(props.theadHeight + tableOffsetRef.current)}px`;
-    }
-
-    let scrollTop = rawScrollTop - props.theadHeight;
-    if (scrollTop < 0) scrollTop = 0;
-    const sumHeight = getContentHeight(props.data.length - 1);
-    if (scrollTop > sumHeight) scrollTop = sumHeight;
-
-    updateIndexAndTopFromTop(scrollTop);
-
-    // 同步更新 DOM transform，防止 React 异步渲染期间出现空白
-    if (props.innerRef?.current) {
-      const t = Math.max(0, context.latestTop);
-      props.innerRef.current.style.transform = `translate3d(0, ${-t}px, 0)`;
-    }
+  const externalInfo = useTableVirtualExternal({
+    disabled: props.disabled || !isExternalScroll,
+    dataLength: props.data.length,
+    theadHeight: props.theadHeight,
+    tfootHeight: props.tfootHeight,
+    externalStickyHeader: props.externalStickyHeader,
+    virtualScrollContainer: props.virtualScrollContainer || (() => null),
+    tableRef: props.tableRef,
+    getContentHeight,
+    updateIndexAndTopFromTop,
   });
-
-  useEffect(() => {
-    if (!isExternalScroll || props.disabled) return;
-    const container = props.virtualScrollContainer!();
-    if (!container) return;
-    const scrollTarget = (container === document.documentElement || container === document.body)
-      ? window
-      : container;
-    scrollTarget.addEventListener('scroll', handleExternalScroll, { passive: true });
-    handleExternalScroll();
-    return () => {
-      scrollTarget.removeEventListener('scroll', handleExternalScroll);
-    };
-  }, [isExternalScroll, props.disabled, props.data.length]);
 
   return {
     scrollHeight,
@@ -504,7 +434,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     scrollColumnIntoView,
     rowSpanInfo,
     isExternalScroll,
-    externalStickyRef,
+    externalStickyRef: externalInfo.externalStickyRef,
+    headerOffset: externalInfo.headerOffset,
+    tableOffsetRef: externalInfo.tableOffsetRef,
   };
 };
 
