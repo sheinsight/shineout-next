@@ -88,7 +88,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const virtual =
     !fakeVirtual &&
     props.rowsInView !== 0 &&
-    (!!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
+    (!!props.virtual || !!props.virtualScrollContainer || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
 
   useLayoutEffect(() => {
     if (!virtual) return;
@@ -105,7 +105,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const { height: tbodyHeight } = useResize({ targetRef: virtual ? emptyRef : tbodyRef });
 
   // default height
-  const defaultHeight = virtual && !props.height ? '100%' : props.height;
+  const defaultHeight = virtual && !props.height && !props.virtualScrollContainer ? '100%' : props.height;
 
   const selection = useTableSelect({
     cellSelectable: props.cellSelectable,
@@ -281,6 +281,8 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     isRtl,
     theadHeight: context.theadHeight,
     tfootHeight: context.tfootHeight,
+    virtualScrollContainer: props.virtualScrollContainer,
+    tableRef: tableRef,
   });
 
   const syncHeaderScroll = usePersistFn((left: number) => {
@@ -489,7 +491,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       !!$empty && tableClasses.emptyHeader,
       props.sticky && isScrollY && tableClasses.scrollY,
       props.sticky && isScrollY && browserScrollbarWidth === 0 && tableClasses.overlayScrollbar,
-      props.sticky && !isScrollY && tableClasses.scrollX,
+      props.sticky && !isScrollY && !virtualInfo.isExternalScroll && tableClasses.scrollX,
     );
 
     const footWrapperClass = classNames(tableClasses?.footWrapper);
@@ -584,6 +586,48 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
     if (isRenderVirtualTable) {
       const showStickyHeader = !props.hideHeader && props.sticky;
+
+      if (virtualInfo.isExternalScroll) {
+        const externalStickyTop = props.sticky
+          ? (typeof props.sticky === 'object' ? props.sticky.top ?? 0 : 0)
+          : undefined;
+        const externalContainer = props.virtualScrollContainer?.();
+        const stickyDivHeight = externalContainer
+          ? externalContainer.clientHeight - (externalStickyTop ?? 0)
+          : undefined;
+        return (
+          <div style={{ position: 'relative', height: virtualInfo.scrollHeight }}>
+            <div
+              ref={props.sticky ? undefined : virtualInfo.externalStickyRef}
+              style={{ position: 'sticky', top: externalStickyTop ?? 0, height: stickyDivHeight, overflowX: 'auto', overflowY: 'hidden' }}
+            >
+              {!props.hideHeader && $headTable}
+
+              {!!props.data?.length && (
+                <table
+                  style={{ ...tableStyle, transform: virtualInfo.translateStyle }}
+                  ref={tbodyRef}
+                >
+                  {Group}
+                  <Tbody
+                    {...bodyCommonProps}
+                    currentRowIndex={virtualInfo.startIndex}
+                    currentColIndex={currentColIndex}
+                    data={virtualInfo.data}
+                    originData={treeData}
+                    rowSpanIndexArray={virtualInfo.rowSpanInfo?.rowSpanIndexArray}
+                    setRowHeight={virtualInfo.setRowHeight}
+                    scrolling={scrolling}
+                  />
+                </table>
+              )}
+
+              {$empty}
+            </div>
+          </div>
+        );
+      }
+
       return (
         <>
           {renderHeadMirrorScroller()}

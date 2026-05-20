@@ -406,7 +406,13 @@ export interface TableProps<DataItem, Value>
    * @default null
    * @version 3.9.0
    */
-  strictRowHeight?: number
+  strictRowHeight?: number;
+
+  /**
+   * @en External scroll container for virtual scrolling. When set, the table won't have internal scroll but will be driven by the external container's scroll event. Pass a function that returns the scroll container element (e.g., () => document.body)
+   * @cn 虚拟滚动的外部滚动容器。设置后表格不再产生内部滚动，而是由外部容器的滚动事件驱动虚拟列表。传入一个函数，返回滚动容器元素（如 () => document.documentElement）
+   */
+  virtualScrollContainer?: () => HTMLElement | null;
 }
 
 interface BottomScrollbarOption extends Pick<StickyProps, 'bottom' | 'scrollContainer'> {
