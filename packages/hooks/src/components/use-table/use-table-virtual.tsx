@@ -1,6 +1,7 @@
 import { usePersistFn } from '../../common/use-persist-fn';
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { TableFormatColumn } from './use-table.type';
+import useTableVirtualExternal from './use-table-virtual-external';
 
 // 找出最大的连续数字的个数
 function getMaxRowSpanLength(input: number[]) {
@@ -26,6 +27,9 @@ interface UseTableVirtualProps {
   colgroup: (number | string | undefined)[];
   theadHeight: number;
   tfootHeight: number;
+  virtualScrollContainer?: () => HTMLElement | null;
+  tableRef?: React.RefObject<HTMLDivElement>;
+  externalStickyHeader?: boolean;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerTop, setTop] = useState(0);
@@ -137,8 +141,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       setHeight(getContentHeight(props.data.length - 1));
     }
     const { preIndex } = context;
-    // 解决: 从下往上滚 由于高度变化会导致滚动条跳动
-    if (preIndex && preIndex > startIndex && startIndex === index) {
+    // 解决: 从下往上滚 由于高度变化会导致滚动条跳动（仅内部滚动需要）
+    if (!props.virtualScrollContainer && preIndex && preIndex > startIndex && startIndex === index) {
       // 发生在顶部
       if (context.heightCallback) return;
       const offset = height - (beforeHeight || props.rowHeight);
@@ -404,6 +408,20 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     return `translate3d(0, ${0 - t}px, 0)`;
   }, [innerTop]);
 
+  const isExternalScroll = !!props.virtualScrollContainer;
+
+  const externalInfo = useTableVirtualExternal({
+    disabled: props.disabled || !isExternalScroll,
+    dataLength: props.data.length,
+    theadHeight: props.theadHeight,
+    tfootHeight: props.tfootHeight,
+    externalStickyHeader: props.externalStickyHeader,
+    virtualScrollContainer: props.virtualScrollContainer || (() => null),
+    tableRef: props.tableRef,
+    getContentHeight,
+    updateIndexAndTopFromTop,
+  });
+
   return {
     scrollHeight,
     startIndex,
@@ -415,6 +433,10 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     scrollColumnByLeft,
     scrollColumnIntoView,
     rowSpanInfo,
+    isExternalScroll,
+    externalStickyRef: externalInfo.externalStickyRef,
+    headerOffset: externalInfo.headerOffset,
+    tableOffsetRef: externalInfo.tableOffsetRef,
   };
 };
 

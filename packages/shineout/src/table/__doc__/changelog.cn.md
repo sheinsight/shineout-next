@@ -1,3 +1,9 @@
+## 3.9.15-beta.1
+2026-05-21
+### 🆕 Feature
+- `Table` 虚拟列表新增 `virtualScrollContainer` 属性，支持由外部滚动容器驱动虚拟滚动 ([#1715](https://github.com/sheinsight/shineout-next/pull/1715))
+
+
 ## 3.9.14-beta.7
 2026-04-30
 ### 🐞 BugFix
