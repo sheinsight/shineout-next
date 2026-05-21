@@ -589,9 +589,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       const showStickyHeader = !props.hideHeader && props.sticky;
 
       if (virtualInfo.isExternalScroll) {
-        const stickyTopOffset = props.sticky
-          ? (typeof props.sticky === 'object' ? props.sticky.top ?? 0 : 0)
-          : -virtualInfo.tableOffsetRef.current;
+        const tableOffset = virtualInfo.tableOffsetRef.current;
+        const stickyTop = typeof props.sticky === 'object' ? (props.sticky.top ?? 0) : 0;
+        const stickyTopOffset = stickyTop - tableOffset;
         const externalContainer = props.virtualScrollContainer?.();
         const stickyDivHeight = externalContainer
           ? externalContainer.clientHeight - stickyTopOffset

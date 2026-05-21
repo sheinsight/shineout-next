@@ -4,8 +4,8 @@
  * en - External Scroll
  *    -- Set `virtualScrollContainer` to drive the virtual list by an external container's scroll event
  */
-import React, { useRef } from 'react';
-import { Table, TYPE } from 'shineout';
+import React, { useRef, useState } from 'react';
+import { Table, Switch, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface TableRowData {
@@ -41,11 +41,16 @@ const columns: TableColumnItem[] = [
 
 const App: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [sticky, setSticky] = useState(false);
 
   return (
     <div>
-      <div style={{ marginBottom: 16 }}>
-        下方容器高度为 500px，表格通过外部容器的滚动事件驱动虚拟列表渲染（共 10000 条数据）
+      <div style={{ marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8 }}>
+        <span>Sticky Header:</span>
+        <Switch value={sticky} onChange={setSticky} />
+        <span style={{ marginLeft: 16 }}>
+          下方容器高度为 500px，表格通过外部容器的滚动事件驱动虚拟列表渲染（共 10000 条数据）
+        </span>
       </div>
       <div
         ref={containerRef}
@@ -64,7 +69,7 @@ const App: React.FC = () => {
           keygen='id'
           bordered
           data={data}
-          // sticky={{ top: -24 }}
+          sticky={sticky}
           width={1400}
           rowsInView={20}
           columns={columns}
