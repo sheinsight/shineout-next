@@ -41,10 +41,12 @@ const showGallery = (
   const container = getContainer();
   document.addEventListener('keydown', keyClose);
   container.className = containerClass || '';
-  ReactRender(
-    <ImageGallery jssStyle={jssStyle} onClose={close} current={current} images={Images} />,
-    container,
-  );
+  requestAnimationFrame(() => {
+    ReactRender(
+      <ImageGallery jssStyle={jssStyle} onClose={close} current={current} images={Images} />,
+      container,
+    );
+  });
 };
 
 export default showGallery;
